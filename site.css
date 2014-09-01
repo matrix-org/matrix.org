@@ -1,0 +1,79 @@
+/** Common layout **/
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: "Myriad Pro", "Myriad", Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+    margin: 0px;
+}
+
+h1 {
+    font-size: 20pt;
+}
+
+a:link    { color: #666; }
+a:visited { color: #666; }
+a:hover   { color: #000; }
+a:active  { color: #000; }
+
+#page {
+    min-height: 100%;
+    margin-bottom: -32px; /* to make room for the footer */
+}
+
+#wrapper {
+    margin: auto;
+    max-width: 1280px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#header
+{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background-color: #333;
+    height: 32px;
+}
+
+#headerContent {
+    color: #ccc;
+    max-width: 1280px;
+    margin: auto;
+    text-align: right;
+    height: 32px;
+    line-height: 32px;
+}
+
+#headerContent a:link,
+#headerContent a:visited,
+#headerContent a:hover,
+#headerContent a:active {
+    color: #fff;
+}
+
+#footer
+{
+    width: 100%;
+    border-top: #666 1px solid;
+    background-color: #aaa;
+    height: 32px;
+}
+
+#footerContent
+{
+    font-size: 8pt;
+    color: #fff;
+    max-width: 1280px;
+    margin: auto;
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+}
