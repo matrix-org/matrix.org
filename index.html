@@ -268,7 +268,7 @@
                             <li>Come talk on Matrix at <a href="/alpha">#matrix:matrix.org</a></li>
                             <li>...or find us on IRC at <a href="irc://irc.freenode.net/matrix">#matrix</a> on Freenode</li>
                             <li>Comment on our <a href="/blog">blog</a></li>
-                            <li>Follow <a href="http://twitter.com/@matrix.org">@matrixdotorg</a> on twitter</li>
+                            <li>Follow <a href="http://twitter.com/@matrixdotorg">@matrixdotorg</a> on twitter</li>
                             <li>Go retro and use the <a href="/mailman">mailing list</a></li>
                         </ul>
                     </td>
@@ -287,24 +287,14 @@
             <h2>About</h2>
             <p>
             Matrix.org's goal is to make real-time communication over IP as seamless
-            and interoperable as email by providing the world with open,
-            distributed, real time communications tools.
+            and interoperable as email by providing the world with a new open standard
+            which allows communication services themselves to interoperate.
             </p>
             <p>    
-            Today's VoIP and IM communications are fragmented. We all juggle
-            multiple apps and profiles to chat, call or video message. We have an
-            illusion of control because of the plethora of apps available, but in
-            reality we are forced to jump from island to island, hoping to find our
-            friends there, leaving our fragmented conversations and data scattered
-            with providers we are forced to trust.
-            </p>
-            <p>
-            Matrix is a new open standard which hopes to break the status-quo and
-            allow communication services themselves to interoperate. For the end
-            consumer this means they can choose to use their favourite app because
-            they get the most value from it and trust the provider with their data,
-            and still be able to communicate with friends using competing apps and
-            services.
+            For the end consumer this will mean they can choose to use their
+            favourite app because they get the most value from it and trust the
+            provider with their data, and still be able to communicate with
+            friends using competing apps and services.
             </p>
             <p>
             In practice Matrix specifies a set of pragmatic RESTful HTTP JSON APIs
@@ -316,7 +306,17 @@
             interoperable messaging and VoIP apps for the internet.
             </p>
             <p>
-            These APIs provide:
+            Matrix is being released as a work in progress as of Sept 4th 2014, in order
+            to gather feedback from the opensource and telecoms community and help
+            test and refine the APIs and reference implementations.  <b>The APIs are not
+            yet frozen and are in some places underspecified or incomplete - similarly
+            some functionality is not yet implemented in the reference implementations,
+            including key security features.</b>  That said, we believe it's useful enough
+            to experiment with - but please do not rely on it yet for any production usage
+            or to transmit any sensitive data.
+            </p>
+            <p>
+            Matrix's APIs provide:
             <ul>
                 <li>Creating and managing fully distributed chat rooms with no
                 single points of control or failure</li>
@@ -333,22 +333,28 @@
                 <li>Placing 1:1 VoIP and Video calls (in development)</li>
             </ul>
             <p>
-            A reference "homeserver" implementation of Matrix from the core
-            development team at matrix.org called Synapse is available, implemented
-            in Python/Twisted. It is
-            intended to showcase the concept of Matrix and let folks see the spec in
-            the context of a codebase, and let you run your own homeserver and
-            generally help bootstrap the ecosystem.
+            In Matrix, every user runs one or more Matrix clients, which connect
+            through to a Matrix "homeserver" which stores all their personal chat
+            history and user account information - much as a mail client connects
+            through to an IMAP/SMTP server.  Conversation history is stored on
+            all the homeservers who participate in a conversation, for as long as
+            the users involved wish to store it.  History can always be pulled in
+            from other participants if needed - and if all the participants decide
+            not to keep the history, it is by definition lost forever.
             </p>
             <p>
-            In Matrix, every user runs one or more Matrix clients, which connect
-            through to a Matrix homeserver which stores all their personal chat
-            history and user account information - much as a mail client connects
-            through to an IMAP/SMTP server. Just like email, you can either run your
+            Just like email, you can either run your
             own Matrix homeserver and control and own your own communications and
             history or use one hosted by someone else (e.g. matrix.org) - there is
             no single point of control or mandatory service provider in Matrix,
             unlike WhatsApp, Facebook, Hangouts, etc.
+            </p>
+            <p>
+            We provide a reference implementation of a Matrix server
+            called Synapse, written in Python/Twisted.  The intention is to
+            showcase the concept of Matrix, test and demonstrate the spec,
+            and let anyone and everyone run their own homeserver and
+            generally help bootstrap the ecosystem.
             </p>
             <p>
             Synapse ships with two basic demo Matrix clients: <a href="/alpha">webclient</a> (a basic
@@ -362,10 +368,15 @@
             people, services and devices to easily communicate with each other.
             </p>
             <p>
-            We'd like to invite you to take a look at the Matrix spec, try to run a
-            homeserver, join the existing Matrix chatrooms already out there,
-            experiment with the APIs and the demo clients. Please let us know your thoughts
-            on <a href="/mailman/listinfo/matrix-users">the mailing list</a> or <a href="http://twitter.com/@matrix.org">@matrixdotorg</a> or <a href="https://github.com/matrix-org/synapse/issues">Github</a>.
+            We'd like to invite you to take a look at the Matrix <a
+            href="/docs/spec">spec</a>, try to <a href="/docs/howtos">run a
+            homeserver</a>, join the existing Matrix chatrooms already out
+            there, experiment with the <a href="/docs/api">APIs</a> and the <a
+            href="http://github.com/matrix-org/synapse/tree/master/webclient">demo
+            clients</a>. Please let us know your thoughts on <a
+            href="/mailman/listinfo/matrix-users">the mailing list</a> or <a
+            href="http://twitter.com/@matrixdotorg">@matrixdotorg</a> or <a
+            href="https://github.com/matrix-org/synapse/issues">Github</a>.
             </p>
         </div>
     </div>
