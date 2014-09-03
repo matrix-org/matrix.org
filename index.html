@@ -94,24 +94,17 @@
         padding: 5px;
     }
     
-    .section table {
-        margin: auto;
-/*        background-color: #0f0;
-*/    }
-    
     .bigColumn {
+        width: 500px;
+        display: inline-block;
         vertical-align: top;
-        width: 66%;
     }
     
     .smallColumn {
-        padding-left: 3em; 
-        padding-right: 3em; 
-        vertical-align: top;
-        text-align: center;
-        width: 33%;
-/*        background-color: #f00;
-*/    }
+        margin: 30px ! important;
+        display: inline-block;
+        vertical-align: middle;
+    }
     
     #heading1,
     #nav,
@@ -205,80 +198,69 @@
     
     <div id="section1">
         <div class="section">
-            <table>
-                    <td class="bigColumn">
-                        <h3>Open APIs</h3>
-                        <ul>
-                            <li>Simple pragmatic <a href="/docs/api">RESTful HTTP/JSON APIs</a></li>
-                            <li><a href="/docs/spec">Open specification</a> of the Matrix standard</a></li>
-                            <li>Create and manage fully distributed (eventually consistent) conversations with no single points of control or failure</li>
-                            <li>Send and receive extensible messages with optional end-to-end encryption</li>
-                            <li>WebRTC VoIP/Video calling using Matrix signalling</li>
-                            <li>Real-time synchronised history and state across all clients</li>
-                            <li>Group conversation by default</li>
-                            <li>Use existing 3rd party IDs (e.g. email, phone numbers, Facebook) to authenticate, identify and discover users</li>
-                            <li>Trusted federation of identity servers, tracking public keys and 3rd party ID mappings</li>
-                            <li>TLS by default</li>
-                        </ul>
-                    </td>
-                    <td class="smallColumn">
-                        <a href="/docs/api">
-                            <img class="screenshot" src="img/apis.png" width="302" height="331" alt="APIs"/>
-                        </a>
-                    </td>
-                </tr>
-            </table>
+            <div class="bigColumn">
+                <h3>Open APIs</h3>
+                <ul>
+                    <li>Simple pragmatic <a href="/docs/api">RESTful HTTP/JSON APIs</a></li>
+                    <li><a href="/docs/spec">Open specification</a> of the Matrix standard</a></li>
+                    <li>Create and manage fully distributed (eventually consistent) conversations with no single points of control or failure</li>
+                    <li>Send and receive extensible messages with optional end-to-end encryption</li>
+                    <li>WebRTC VoIP/Video calling using Matrix signalling</li>
+                    <li>Real-time synchronised history and state across all clients</li>
+                    <li>Group conversation by default</li>
+                    <li>Use existing 3rd party IDs (e.g. email, phone numbers, Facebook) to authenticate, identify and discover users</li>
+                    <li>Trusted federation of identity servers, tracking public keys and 3rd party ID mappings</li>
+                    <li>TLS by default</li>
+                </ul>
+            </div>
+            <div class="smallColumn">
+                <a href="/docs/api">
+                    <img class="screenshot" src="img/apis.png" width="302" height="331" alt="APIs"/>
+                </a>
+            </div>
         </div>
     </div>
         
     <div id="section2">
         <div class="section">
-            <table>
-                <tr>
-                    <td class="smallColumn">
-                        <a href="http://github.com/matrix-org/synapse">
-                            <img class="screenshot" src="img/code.png" width="302" height="331" alt="code"/>
-                        </a>
-                    </td>
-                    <td class="bigColumn">
-                        <h3>Reference Open Source Implementations</h3>
-                        <ul>
-                            <li><a href="http://github.com/matrix-org/synapse">synapse</a> - reference Matrix homeserver in Python/Twisted</li>
-                            <li><a href="http://github.com/matrix-org/synapse/tree/master/webclient">synapse webclient</a> - example Matrix client in AngularJS</li>
-                            <li><a href="http://github.com/matrix-org/synapse/tree/master/cmdclient">synapse cmdclient</a> - example Matrix CLI in Python</li>
-                            <li><a href="http://github.com/matrix-org/sydent">sydent</a> - reference Matrix identity server in Python/Twisted)</li>
-                            <li><a href="https://metacpan.org/release/Net-Async-Matrix">Net::Async::Matrix</a> - Matrix client SDK for Perl</li>
-                            <li>...contributions for other platforms more than welcome!</li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
+            <div class="smallColumn">
+                <a href="http://github.com/matrix-org/synapse">
+                    <img class="screenshot" src="img/code.png" width="302" height="331" alt="code"/>
+                </a>
+            </div>
+            <div class="bigColumn">
+                <h3>Reference Open Source Implementations</h3>
+                <ul>
+                    <li><a href="http://github.com/matrix-org/synapse">synapse</a> - reference Matrix homeserver in Python/Twisted</li>
+                    <li><a href="http://github.com/matrix-org/synapse/tree/master/webclient">synapse webclient</a> - example Matrix client in AngularJS</li>
+                    <li><a href="http://github.com/matrix-org/synapse/tree/master/cmdclient">synapse cmdclient</a> - example Matrix CLI in Python</li>
+                    <li><a href="http://github.com/matrix-org/sydent">sydent</a> - reference Matrix identity server in Python/Twisted)</li>
+                    <li><a href="https://metacpan.org/release/Net-Async-Matrix">Net::Async::Matrix</a> - Matrix client SDK for Perl</li>
+                    <li>...contributions for other platforms more than welcome!</li>
+                </ul>
+            </div>
         </div>
     </div>
     
     <div id="section3">
         <div class="section">        
-            <table>
-                <tr>
-                    <td class="bigColumn">
-                        <h3>The Matrix Community</h3>
-                        <ul>
-                            <li><a href="/docs/howtos">Run a homeserver</a> and join the federation!</li>
-                            <li><a href="https://github.com/matrix-org/synapse/issues">File problems</a> on github</li>
-                            <li>Come talk on Matrix at <a href="/alpha">#matrix:matrix.org</a></li>
-                            <li>...or find us on IRC at <a href="irc://irc.freenode.net/matrix">#matrix</a> on Freenode</li>
-                            <li>Comment on our <a href="/blog">blog</a></li>
-                            <li>Follow <a href="http://twitter.com/@matrixdotorg">@matrixdotorg</a> on twitter</li>
-                            <li>Go retro and use the <a href="/mailman">mailing list</a></li>
-                        </ul>
-                    </td>
-                    <td class="smallColumn">
-                        <a href="/alpha">
-                            <img class="screenshot" src="img/community.jpg" width="302" height="331" alt="community"/>
-                        </a>
-                    </td>
-                </tr>
-            </table>
+            <div class="bigColumn">
+                <h3>The Matrix Community</h3>
+                <ul>
+                    <li><a href="/docs/howtos">Run a homeserver</a> and join the federation!</li>
+                    <li><a href="https://github.com/matrix-org/synapse/issues">File problems</a> on github</li>
+                    <li>Come talk on Matrix at <a href="/alpha">#matrix:matrix.org</a></li>
+                    <li>...or find us on IRC at <a href="irc://irc.freenode.net/matrix">#matrix</a> on Freenode</li>
+                    <li>Comment on our <a href="/blog">blog</a></li>
+                    <li>Follow <a href="http://twitter.com/@matrixdotorg">@matrixdotorg</a> on twitter</li>
+                    <li>Go retro and use the <a href="/mailman">mailing list</a></li>
+                </ul>
+            </div>
+            <div class="smallColumn">
+                <a href="/alpha">
+                    <img class="screenshot" src="img/community.jpg" width="302" height="331" alt="community"/>
+                </a>
+            </div>
         </div>
     </div>
     
