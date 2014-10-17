@@ -1157,36 +1157,38 @@
   margin-top: -4px;
   cursor: pointer;
 }
-.swagger-section #header {
+.swagger-section #swagger-header {
+  margin-top: 40px;
   background-color: #000;
   padding: 14px;
+  height: 24px;
 }
-.swagger-section #header a#logo {
+.swagger-section #swagger-header a#logo {
   font-size: 1.5em;
   font-weight: bold;
   text-decoration: none;
   background: transparent url(../images/logo_small.png) no-repeat left center;
-  padding: 20px 0 20px 40px;
+  /* padding: 20px 0 20px 40px; */
   color: white;
 }
-.swagger-section #header form#api_selector {
+.swagger-section #swagger-header form#api_selector {
   display: block;
   clear: none;
   float: right;
 }
-.swagger-section #header form#api_selector .input {
+.swagger-section #swagger-header form#api_selector .input {
   display: block;
   clear: none;
   float: left;
-  margin: 0 10px 0 0;
+  margin: 0 0px 0 0;
 }
-.swagger-section #header form#api_selector .input input#input_apiKey {
+.swagger-section #swagger-header form#api_selector .input input#input_apiKey {
   width: 200px;
 }
-.swagger-section #header form#api_selector .input input#input_baseUrl {
+.swagger-section #swagger-header form#api_selector .input input#input_baseUrl {
   width: 400px;
 }
-.swagger-section #header form#api_selector .input a#explore {
+.swagger-section #swagger-header form#api_selector .input a#explore {
   display: block;
   text-decoration: none;
   font-weight: bold;
@@ -1201,10 +1203,10 @@
   -khtml-border-radius: 4px;
   border-radius: 4px;
 }
-.swagger-section #header form#api_selector .input a#explore:hover {
+.swagger-section #swagger-header form#api_selector .input a#explore:hover {
   background-color: #547f00;
 }
-.swagger-section #header form#api_selector .input input {
+.swagger-section #swagger-header form#api_selector .input input {
   font-size: 0.9em;
   padding: 3px;
   margin: 0;

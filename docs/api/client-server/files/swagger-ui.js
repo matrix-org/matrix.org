@@ -1265,7 +1265,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
         return _this.onLoadFailure(d);
       };
       this.headerView = new HeaderView({
-        el: $('#header')
+        el: $('#swagger-header')
       });
       return this.headerView.on('update-swagger-ui', function(data) {
         return _this.updateSwaggerUi(data);
