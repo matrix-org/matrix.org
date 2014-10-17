@@ -40,7 +40,7 @@ a:active  { color: #000; }
     top: 0px;
     width: 100%;
     background-color: #000;
-    height: 40px;
+    min-height: 40px;
 }
 
 .navButton {
@@ -62,7 +62,7 @@ a:active  { color: #000; }
     text-align: center;
     max-width: 1280px;
     margin: auto;
-    height: 40px;
+    min-height: 40px;
     line-height: 40px;
 }
 
