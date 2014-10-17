@@ -47,7 +47,7 @@ a:active  { color: #000; }
     font-size: 20px;
     font-weight: bold;        
     padding: 10px 20px 10px 20px;
-    text-decoration: none; 
+    text-decoration: none ! important; 
 }
 
 #header .navButton {
@@ -55,10 +55,13 @@ a:active  { color: #000; }
 }
 
 #headerContent {
+    /*
     color: #ccc;
+    text-align: right;
+    */
+    text-align: center;
     max-width: 1280px;
     margin: auto;
-    text-align: right;
     height: 40px;
     line-height: 40px;
 }
