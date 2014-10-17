@@ -5,15 +5,35 @@
 <link rel="stylesheet" href="site.css">
 <link href="http://matrix.org/matrix.png" rel="image_src" />
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function () {
+    var navTop = $('#nav').offset().top;
+    $(window).scroll(function (event) {
+        if ($(this).scrollTop() >= navTop) {
+            $('#nav').addClass('fixed');
+        } else {
+            $('#nav').removeClass('fixed');
+        }
+    });
+});
+    
+</script>
+
 <style type="text/css">
     body {
         font-family: Helvetica, Arial, sans-serif;
     }
     
+    #header {
+        position: absolute;
+    }
+    
     #heading1 {
         margin: auto;
         margin-top: 100px;
-        margin-bottom: 40px;
+        margin-bottom: 80px;
         text-align: center;
     }
         
@@ -29,21 +49,80 @@
     
     #nav {
         text-align: center;
-        margin-bottom: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        position: absolute;
+        width: 100%;
+        top: 250px;
+        background-color: #fff;
+        color: #000;
+        -webkit-transition-property: background-color, color;
+        -moz-transition-property: background-color, color;
+        -o-transition-property: background-color, color;
+        transition-property: background-color, color;
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+    
+    #nav.fixed {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        background-color: #000;
+        border-bottom: 1px #888 solid;
+        color: #fff;
+        -webkit-transition-property: background-color, color;
+        -moz-transition-property: background-color, color;
+        -o-transition-property: background-color, color;
+        transition-property: background-color, color;
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+    
+    #nav.fixed .navButton {
+        color: #fff ! important;
+        -webkit-transition-property: color;
+        -moz-transition-property: color;
+        -o-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        transition-duration: 0.5s;
     }
     
     .navButton {
-        font-size: 20px;
-        font-weight: bold;        
-        padding: 10px 20px 10px 20px;
-        text-decoration: none; 
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         border-radius: 20px;
     }
     
-    .navButton:link    { color: #000; }
-    .navButton:visited { color: #000; }
+    .navButton:link {
+        color: #000;
+        -webkit-transition-property: color;
+        -moz-transition-property: color;
+        -o-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+    .navButton:visited {
+        color: #000;
+        -webkit-transition-property: color;
+        -moz-transition-property: color;
+        -o-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
     .navButton:hover   { color: #fff; background-color: #000; }
     .navButton:active  { color: #888; }
 
@@ -171,7 +250,8 @@
         <a href="/docs/howtos" class="navButton">HOWTOs</a>
         <a href="/docs/spec" class="navButton">Spec</a>
         <a href="/docs/api" class="navButton">APIs</a>
-        <a href="http://github.com/matrix-org/synapse" class="navButton">Code</a>
+        <a href="/code" class="navButton">Code</a>
+        <a href="/jira" class="navButton">JIRA</a>
         <a href="/blog/faq" class="navButton">FAQ</a>
         <a href="/blog" class="navButton">Blog</a>
     </div>

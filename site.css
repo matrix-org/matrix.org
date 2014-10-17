@@ -36,11 +36,22 @@ a:active  { color: #000; }
 
 #header
 {
-    position: absolute;
+    position: fixed;
     top: 0px;
     width: 100%;
-    background-color: #333;
-    height: 32px;
+    background-color: #000;
+    height: 40px;
+}
+
+.navButton {
+    font-size: 20px;
+    font-weight: bold;        
+    padding: 10px 20px 10px 20px;
+    text-decoration: none; 
+}
+
+#header .navButton {
+    color: #fff ! important;
 }
 
 #headerContent {
@@ -48,8 +59,8 @@ a:active  { color: #000; }
     max-width: 1280px;
     margin: auto;
     text-align: right;
-    height: 32px;
-    line-height: 32px;
+    height: 40px;
+    line-height: 40px;
 }
 
 #headerContent a:link,
