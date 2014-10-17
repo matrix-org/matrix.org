@@ -6,7 +6,7 @@ html {
 
 body {
     height: 100%;
-    font-family: "Myriad Pro", "Myriad", Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif ! important;
     font-size: 12pt;
     margin: 0px;
 }
