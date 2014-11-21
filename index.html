@@ -306,7 +306,9 @@ $(document).ready(function () {
                 <h3>Reference Open Source Implementations</h3>
                 <ul>
                     <li><a href="http://github.com/matrix-org/synapse">synapse</a> - reference Matrix homeserver in Python/Twisted</li>
-                    <li><a href="http://github.com/matrix-org/synapse/tree/master/webclient">synapse webclient</a> - example Matrix client in AngularJS</li>
+                    <li><a href="http://github.com/matrix-org/matrix-angular-sdk/tree/master">matrix-angular-sdk</a> - example Matrix client and SDK in AngularJS</li>
+                    <li><a href="http://github.com/matrix-org/matrix-ios-sdk/tree/master">matrix-ios-sdk</a> - example Matrix client and SDK for iOS</li>
+                    <li><a href="http://github.com/matrix-org/matrix-android-sdk/tree/master">matrix-android-sdk</a> - example Matrix client and SDK for Android/li>
                     <li><a href="http://github.com/matrix-org/synapse/tree/master/cmdclient">synapse cmdclient</a> - example Matrix CLI in Python</li>
                     <li><a href="http://github.com/matrix-org/sydent">sydent</a> - reference Matrix identity server in Python/Twisted)</li>
                     <li><a href="https://metacpan.org/release/Net-Async-Matrix">Net::Async::Matrix</a> - Matrix client SDK for Perl</li>
@@ -321,8 +323,8 @@ $(document).ready(function () {
             <div class="bigColumn">
                 <h3>The Matrix Community</h3>
                 <ul>
-                    <li><a href="/docs/howtos">Run a homeserver</a> and join the federation!</li>
-                    <li><a href="https://github.com/matrix-org/synapse/issues">File problems</a> on github</li>
+                    <li><a href="http://github.com/matrix-org/synapse">Run a homeserver</a> and join the federation!</li>
+                    <li><a href="http://matrix.org/jira">File problems</a> on JIRA</li>
                     <li>Come talk on Matrix at <a href="/alpha">#matrix:matrix.org</a></li>
                     <li>...or find us on IRC at <a href="irc://irc.freenode.net/matrix">#matrix</a> on Freenode</li>
                     <li>Comment on our <a href="/blog">blog</a></li>
@@ -355,23 +357,13 @@ $(document).ready(function () {
             friends using competing apps and services.
             </p>
             <p>
-            In practice Matrix specifies a set of pragmatic RESTful HTTP JSON APIs
+            In practice Matrix specifies a set of pragmatic HTTP JSON APIs
             as an open standard, intended to be implemented on a wide range of
             servers, services and clients, letting developers build messaging and
             VoIP functionality on top of the entirely open Matrix ecosystem rather
             than using closed or proprietary solutions. The hope is for Matrix to
             act as the building blocks for a new generation of fully open and
             interoperable messaging and VoIP apps for the internet.
-            </p>
-            <p>
-            Matrix is being released as a work in progress as of Sept 4th 2014, in order
-            to gather feedback from the opensource and telecoms community and help
-            test and refine the APIs and reference implementations.  <b>The APIs are not
-            yet frozen and are in some places underspecified or incomplete - similarly
-            some functionality is not yet implemented in the reference implementations,
-            including key security features.</b>  That said, we believe it's useful enough
-            to experiment with - but please do not rely on it yet for any production usage
-            or to transmit any sensitive data.
             </p>
             <p>
             Matrix's APIs provide:
@@ -382,19 +374,19 @@ $(document).ready(function () {
                 of room state across a global open network of federated servers and
                 services</li>
                 <li>Sending and receiving extensible messages in a room with
-                (optional) end-to-end encryption</li>
+                (optional) end-to-end encryption (in development)</li>
                 <li>Inviting, joining, leaving, kicking, banning room members</li>
                 <li>Managing user accounts (registration, login, logout)</li>
                 <li>Using 3rd Party IDs (3PIDs) such as email addresses, phone
                 numbers, Facebook accounts to authenticate, identify and discover
                 users on Matrix.</li>
-                <li>Placing 1:1 VoIP and Video calls (in development)</li>
+                <li>Placing 1:1 VoIP and Video calls</li>
             </ul>
             <p>
             In Matrix, every user runs one or more Matrix clients, which connect
-            through to a Matrix "homeserver" which stores all their personal chat
+            through to a Matrix <i>homeserver</i> which stores all their personal chat
             history and user account information - much as a mail client connects
-            through to an IMAP/SMTP server.  Conversation history is stored on
+            through to an IMAP server.  Conversation history is stored on
             all the homeservers who participate in a conversation, for as long as
             the users involved wish to store it.  History can always be pulled in
             from other participants if needed - and if all the participants decide
@@ -415,26 +407,29 @@ $(document).ready(function () {
             generally help bootstrap the ecosystem.
             </p>
             <p>
-            Synapse ships with two basic demo Matrix clients: <a href="/alpha">webclient</a> (a basic
-            group chat web client demo implemented in AngularJS) and <a href="http://github.com/matrix-org/synapse/tree/master/cmdclient">cmdclient</a> (a
-            basic Python commandline utility which lets you easily see what the JSON
-            APIs are up to).
+            We also provide multiple Matrix SDKs and clients:
+            <li>
+                <ul><a href="http://github.com/matrix-org/matrix-angular-sdk">matrix-angular-sdk</a> for the web</ul>
+                <ul><a href="http://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a> for iOS</ul>
+                <ul><a href="http://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a> for Android</ul>
+                <ul><a href="https://metacpan.org/release/Net-Async-Matrix">Net::Async::Matrix</a> for Perl</ul>
+                <ul><a href="http://github.com/matrix-org/synapse/tree/master/cmdclient">cmdclient</a> for experimentation at the CLI</ul>
+            </li>            
             </p>
             Matrix.org's initial inspiration and goal has been to fix the problem of
-            fragmented IP communications. But Matrix's real potential and ultimate
+            fragmented IP communications, but our real potential and ultimate
             mission is to be a new and truly open ecosystem on the Internet enabling
             people, services and devices to easily communicate with each other.
             </p>
             <p>
             We'd like to invite you to take a look at the Matrix <a
-            href="/docs/spec">spec</a>, try to <a href="/docs/howtos">run a
-            homeserver</a>, join the existing Matrix chatrooms already out
-            there, experiment with the <a href="/docs/api">APIs</a> and the <a
-            href="http://github.com/matrix-org/synapse/tree/master/webclient">demo
-            clients</a>. Please let us know your thoughts on <a
+            href="/docs/spec">spec</a>, <a href="http://github.com/matrix-org/synapse">run a
+            homeserver</a>, <a href="http://matrix.org/beta">join the existing Matrix chatrooms</a> already out
+            there, and experiment with the <a href="/docs/api">APIs</a> and the demo
+            clients. Please let us know your thoughts on <a href="http://matrix.org/beta">#matrix:matrix.org</a>, <a
             href="/mailman/listinfo/matrix-users">the mailing list</a> or <a
             href="http://twitter.com/@matrixdotorg">@matrixdotorg</a> or <a
-            href="https://github.com/matrix-org/synapse/issues">Github</a>.
+            href="http://matrix.org/jira">JIRA</a>.
             </p>
         </div>
     </div>
