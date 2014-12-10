@@ -11,47 +11,47 @@ $context = stream_context_create(array(
     )
 ));
 
-$resp = json_decode(file_get_contents('http://matrix.org/jenkins/job/MatrixConsoleiOS/lastSuccessfulBuild/api/json'), false, $context);
+$resp = json_decode(file_get_contents('http://matrix.org/jenkins/job/MatrixConsoleiOS/lastSuccessfulBuild/api/json', false, $context), true);
 
 $build = $resp['number'];
 
 $ipaName = null;
 $ipaPath = null;
 
-for ($resp['artifacts'] as $artifact) {
+foreach ($resp['artifacts'] as $artifact) {
     if (substr($artifact['fileName'], -4) == '.ipa') {
-        $ipaName = $artifact['fileName'];
-        $ipaPath = $artifact['relativePath'];
+        #$ipaRemoteFileName = $artifact['fileName'];
+        $ipaRemotePath = $artifact['relativePath'];
     }
 }
 
-
-$ipaFileName = "matrixConsole-$version-$bundleVersion-$build.ipa";
+$ipaFileName = "matrixConsole-build$build.ipa";
 $ipaPath = "cache/$ipaFileName";
 
-$plistFileName = "matrixConsole-$version-$bundleVersion-$build-Info.plist";
+$plistFileName = "matrixConsole-build$build-Info.plist";
 $plistPath = "cache/$plistFileName";
 
-$iconFileName = "matrixConsole-$version-$bundleVersion-$build-icon-57x57.png";
+$iconFileName = "matrixConsole-build$build-icon-57x57.png";
 $iconPath = "cache/$iconFileName";
 
-$retinaIconFileName = "matrixConsole-$version-$bundleVersion-$build-icon-57x57.png";
-$retinaIconPath = "cache/$retinaIconFileName";
+//$retinaIconFileName = "matrixConsole-$version-$bundleVersion-$build-icon-57x57.png";
+//$retinaIconPath = "cache/$retinaIconFileName";
 
 if (!file_exists($ipaPath)) {
-    file_put_contents($ipaPath, fopen("http://matrix.org/jenkins/job/MatrixConsoleiOS/$build/artifact/$ipaPath", 'r', $context));
+    file_put_contents($ipaPath, fopen("http://matrix.org/jenkins/job/MatrixConsoleiOS/$build/artifact/$ipaRemotePath", 'r', false, $context));
 }
 
 if (!file_exists($plistPath)) {
-    `unzip -p latest.ipa Payload/*/Info.plist > $plistPath`
+    `unzip -p $ipaPath Payload/*.app/Info.plist > $plistPath`;
 }
 
 if (!file_exists($iconPath)) {
-    `unzip -p latest.ipa Payload/*/Info.plist > $plistPath`
+    `unzip -p $ipaPath Payload/*.app/AppIcon57x57.png > $iconPath`;
 }
 
-$bundleVersion = `python plistget.py $plistPath CFBundleShortVersionString`
-$version = `python plistget.py $plistPath CFBundleVersion`
+$bundleVersion = trim(`python plistget.py $plistPath CFBundleVersion`);
+$version = trim(`python plistget.py $plistPath CFBundleShortVersionString`);
+$bundleId = trim(`python plistget.py $plistPath CFBundleIdentifier`);
 
 ?>
 <plist version="1.0">
@@ -65,7 +65,7 @@ $version = `python plistget.py $plistPath CFBundleVersion`
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-				<string>https://www.matrix.org/ios/download/<?php echo $plistPath; ?></string>
+				<string>https://matrix.org/console/ios/download/<?php echo $ipaPath; ?></string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -73,19 +73,19 @@ $version = `python plistget.py $plistPath CFBundleVersion`
 					<key>needs-shine</key>
 					<false/>
 					<key>url</key>
-					<string>https://www.matrix.org/ios/download/<?php echo $iconPath; ?></string>
+					<string>https://matrix.org/console/ios/download/<?php echo $iconPath; ?></string>
 				</dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>org.matrix.matrixConsole</string>
+                <string><?php echo $bundleId; ?></string>
 				<key>bundle-version</key>
 				<string><?php echo $bundleVersion; ?></string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>Matrix Console <?php echo $version; ?></string>
+                <string>Matrix Console <?php echo $version; ?> integration <?php echo $build; ?></string>
 			</dict>
 		</dict>
 	</array>
