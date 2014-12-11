@@ -65,7 +65,7 @@ $bundleId = trim(`python plistget.py $plistPath CFBundleIdentifier`);
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-				<string>https://matrix.org/console/ios/download/<?php echo $ipaPath; ?></string>
+				<string>https://matrix.org/console/download/<?php echo $ipaPath; ?></string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -73,7 +73,7 @@ $bundleId = trim(`python plistget.py $plistPath CFBundleIdentifier`);
 					<key>needs-shine</key>
 					<false/>
 					<key>url</key>
-					<string>https://matrix.org/console/ios/download/<?php echo $iconPath; ?></string>
+					<string>https://matrix.org/console/download/<?php echo $iconPath; ?></string>
 				</dict>
 			</array>
 			<key>metadata</key>
