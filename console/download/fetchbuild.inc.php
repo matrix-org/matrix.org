@@ -1,10 +1,10 @@
 <?php
 
-$username = 'dbkr';
-$password = '11d7ad76ed7471de59bd23a2d8795c6c';
-
 function _get_jenkins_stream_context() {
-    return = stream_context_create(array(
+    $username = 'dbkr';
+    $password = '11d7ad76ed7471de59bd23a2d8795c6c';
+
+    return stream_context_create(array(
         'http' => array(
             'header'  => "Authorization: Basic " . base64_encode("$username:$password")
         )
@@ -31,10 +31,10 @@ function fetch_ios_build() {
     $ipaFileName = "matrixConsole-ios-integration$build.ipa";
     $ipaPath = "cache/$ipaFileName";
 
-    $plistFileName = "matrixConsole-build$build-Info.plist";
+    $plistFileName = "matrixConsole-integration$build-Info.plist";
     $plistPath = "cache/$plistFileName";
 
-    $iconFileName = "matrixConsole-build$build-icon-57x57.png";
+    $iconFileName = "matrixConsole-integration$build-icon-57x57.png";
     $iconPath = "cache/$iconFileName";
 
     //$retinaIconFileName = "matrixConsole-$version-$bundleVersion-$build-icon-57x57.png";
@@ -61,7 +61,7 @@ function fetch_ios_build() {
         'plistPath' => $plistPath,
         'iconPath' => $iconPath,
         'bundleVersion' => $bundleVersion,
-        'version' => $bundleVersion,
+        'version' => $version,
         'bundleId' => $bundleId
     );
 }

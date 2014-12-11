@@ -4,7 +4,8 @@
 
 require_once('fetchbuild.inc.php');
 
-extract(fetch_ios_build());
+$buildInfo = fetch_ios_build();
+extract($buildInfo);
 
 ?>
 <plist version="1.0">
