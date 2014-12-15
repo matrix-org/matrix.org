@@ -44,7 +44,7 @@ extract($buildInfo);
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-                <string>Matrix Console <?php echo $version; ?> integration <?php echo $build; ?></string>
+                <string>Matrix Console, <?php echo $stream; ?> integration <?php echo $build; ?></string>
 			</dict>
 		</dict>
 	</array>
