@@ -57,6 +57,7 @@ function fetch_ios_build() {
     $bundleId = trim(`python plistget.py $plistPath CFBundleIdentifier`);
 
     return array(
+        'build' => $build,
         'ipaPath' => $ipaPath,
         'plistPath' => $plistPath,
         'iconPath' => $iconPath,
