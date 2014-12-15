@@ -5,7 +5,7 @@
 require_once('fetchbuild.inc.php');
 
 $stream = 'master';
-if isset($_GET['dev']) {
+if (isset($_GET['dev'])) {
     $stream = 'develop';
 }
 
