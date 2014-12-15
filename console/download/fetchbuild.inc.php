@@ -11,10 +11,17 @@ function _get_jenkins_stream_context() {
     ));
 }
 
-function fetch_ios_build() {
+function fetch_ios_build($stream) {
+    $streams = array(
+        'master' => 'MatrixConsoleiOS',
+        'develop' => 'MatrixConsoleiOSDevelop'
+    );
+
+    $jenkinsjob = $streams[$stream];
+
     $context = _get_jenkins_stream_context();
 
-    $resp = json_decode(file_get_contents('http://matrix.org/jenkins/job/MatrixConsoleiOS/lastSuccessfulBuild/api/json', false, $context), true);
+    $resp = json_decode(file_get_contents("http://matrix.org/jenkins/job/$jenkinsjob/lastSuccessfulBuild/api/json", false, $context), true);
 
     $build = $resp['number'];
 
@@ -28,20 +35,20 @@ function fetch_ios_build() {
         }
     }
 
-    $ipaFileName = "matrixConsole-ios-integration$build.ipa";
+    $ipaFileName = "matrixConsole-ios-$stream-integration$build.ipa";
     $ipaPath = "cache/$ipaFileName";
 
-    $plistFileName = "matrixConsole-integration$build-Info.plist";
+    $plistFileName = "matrixConsole-ios-$stream-integration$build-Info.plist";
     $plistPath = "cache/$plistFileName";
 
-    $iconFileName = "matrixConsole-integration$build-icon-57x57.png";
+    $iconFileName = "matrixConsole-ios-$stream-integration$build-icon-57x57.png";
     $iconPath = "cache/$iconFileName";
 
     //$retinaIconFileName = "matrixConsole-$version-$bundleVersion-$build-icon-57x57.png";
     //$retinaIconPath = "cache/$retinaIconFileName";
 
     if (!file_exists($ipaPath)) {
-        file_put_contents($ipaPath, fopen("http://matrix.org/jenkins/job/MatrixConsoleiOS/$build/artifact/$ipaRemotePath", 'r', false, $context));
+        file_put_contents($ipaPath, fopen("http://matrix.org/jenkins/job/$jenkinsjob/$build/artifact/$ipaRemotePath", 'r', false, $context));
     }
 
     if (!file_exists($plistPath)) {

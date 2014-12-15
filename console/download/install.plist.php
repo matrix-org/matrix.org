@@ -4,7 +4,12 @@
 
 require_once('fetchbuild.inc.php');
 
-$buildInfo = fetch_ios_build();
+$stream = 'master';
+if isset($_GET['dev']) {
+    $stream = 'develop';
+}
+
+$buildInfo = fetch_ios_build($stream);
 extract($buildInfo);
 
 ?>
