@@ -6,7 +6,7 @@
 require_once('fetchbuild.inc.php');
 
 if (ereg('iPhone|iPad|iPod',$_SERVER['HTTP_USER_AGENT'])) {
-    $url = "itms-services://?action=download-manifest&url=https://matrix.org/console/download/install.plist.php"+$_SERVER['QUERY_STRING'];
+    $url = "itms-services://?action=download-manifest&url=https://matrix.org/console/download/install.plist.php".$_SERVER['QUERY_STRING'];
     echo '<meta http-equiv="refresh" content="0; url='.$url.'">';
 }
 else if (ereg('Android|android',$_SERVER['HTTP_USER_AGENT'])) {
