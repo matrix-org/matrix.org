@@ -99,7 +99,7 @@ function fetch_android_build($stream) {
         }
     }
 
-    $apkFileName = "matrixConsole-android-develop-integration$build.apk";
+    $apkFileName = "matrixConsole-android-$stream-integration$build.apk";
     $apkPath = "cache/$apkFileName";
 
     if (!file_exists($apkPath)) {
