@@ -78,7 +78,7 @@ function fetch_ios_build($stream) {
 function fetch_android_build($stream) {
     $streams = array(
         'master' => 'MatrixAndroidSDK',
-        'develop' => 'MatrixConsoleiOSDevelop'
+        'develop' => 'MatrixAndroidSDKDevelop'
     );
 
     $jenkinsjob = $streams[$stream];
