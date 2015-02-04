@@ -103,7 +103,7 @@ function fetch_android_build($stream) {
     $apkPath = "cache/$apkFileName";
 
     if (!file_exists($apkPath)) {
-        file_put_contents($apkPath, fopen("http://matrix.org/jenkins/job/MatrixAndroidSDK/$build/artifact/$apkRemotePath", 'r', false, $context));
+        file_put_contents($apkPath, fopen("http://matrix.org/jenkins/job/$jenkinsjob/$build/artifact/$apkRemotePath", 'r', false, $context));
     }
     return array(
         'apkPath' => $apkPath,
