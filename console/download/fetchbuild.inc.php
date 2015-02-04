@@ -75,10 +75,17 @@ function fetch_ios_build($stream) {
 }
 
 // XXX: c+p tastic but probably not worth factoring out for this
-function fetch_android_build() {
+function fetch_android_build($stream) {
+    $streams = array(
+        'master' => 'MatrixAndroidSDK',
+        'develop' => 'MatrixAndroidSDKDevelop'
+    );
+
+    $jenkinsjob = $streams[$stream];
+
     $context = _get_jenkins_stream_context();
 
-    $resp = json_decode(file_get_contents('http://matrix.org/jenkins/job/MatrixAndroidSDK/lastSuccessfulBuild/api/json', false, $context), true);
+    $resp = json_decode(file_get_contents("http://matrix.org/jenkins/job/$jenkinsjob/lastSuccessfulBuild/api/json", false, $context), true);
 
     $build = $resp['number'];
 

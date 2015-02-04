@@ -10,7 +10,11 @@ if (ereg('iPhone|iPad|iPod',$_SERVER['HTTP_USER_AGENT'])) {
     echo '<meta http-equiv="refresh" content="0; url='.$url.'">';
 }
 else if (ereg('Android|android',$_SERVER['HTTP_USER_AGENT'])) {
-    $buildinfo = fetch_android_build();
+    $stream = 'master';
+    if (isset($_GET['dev'])) {
+        $stream = 'develop';
+    }
+    $buildinfo = fetch_android_build($stream);
 
     //$latest = trim(file_get_contents('LATEST-android'));
     $url = "http://matrix.org/console/download/{$buildinfo['apkPath']}";
