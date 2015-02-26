@@ -189,7 +189,7 @@ if(!window['pi']) { window['pi'] = {}; } pi = window['pi']; if(!pi['tracker']) {
 						<article class="text">
 <h2>Overview</h2> 
 <p>
-    <a href="matrix.org">Matrix.org</a> is a new open source project that defines standard HTTP APIs for decentralised communication.  It aims to make interoperable Instant Messaging, VoIP and IoT communication as ubiquitous and flexible as email or the web by creating a new ecosystem of federated communication applications and services.  As of February 2015, the Matrix <a href="http://matrix.org/code">reference implementations</a> and <a href="http://matrix.org/docs/spec">standard</a> are in early beta development, and are suitable for developers and power-users wanting to experiment with building Matrix-compatible clients, services and gateways between Matrix and existing communication products.  For more information, please see the main <a href="http://www.matrix.org">Matrix.org</a> website.
+    <a href="http://matrix.org">Matrix.org</a> is a new open source project that defines standard HTTP APIs for decentralised communication.  It aims to make interoperable Instant Messaging, VoIP and IoT communication as ubiquitous and flexible as email or the web by creating a new ecosystem of federated communication applications and services.  As of February 2015, the Matrix <a href="http://matrix.org/code">reference implementations</a> and <a href="http://matrix.org/docs/spec">standard</a> are in early beta development, and are suitable for developers and power-users wanting to experiment with building Matrix-compatible clients, services and gateways between Matrix and existing communication products.  For more information, please see the main <a href="http://www.matrix.org">Matrix.org</a> website.
 </p>
 <p>    
     OpenMarket is proud to power the first commercial gateway available to the Matrix ecosystem: the OpenMarket Matrix Gateway.  The Gateway gives Matrix users the ability to send and receive SMSes to normal phone users on the Public Switched Telephone Network (PSTN), massively extending the reach of the Matrix ecosystem to non-Matrix users.  The OpenMarket Matrix Gateway may also be used as an easy way for Matrix developers to send and receive text messages using precisely the same <a href="http://matrix.org/docs/api">APIs</a> they use for sending and receiving Matrix instant messages today.
@@ -210,13 +210,16 @@ if(!window['pi']) { window['pi'] = {}; } pi = window['pi']; if(!pi['tracker']) {
     Having <!-- added credit to your account --> done this, you may start an SMS conversation with a user using the 'Start Chat' button in your preferred Matrix-compatible client application or website.  PSTN users accessible via the OpenMarket Matrix Gateway have Matrix IDs of form <code>@+&lt;msisdn&gt;:matrix.openmarket.com</code> - e.g. <code>@+447700900123:matrix.openmarket.com</code>. Your client may give you a way to avoid manually entering the Matrix ID and allow you to directly talk to a given addressbook contact via SMS if that user is not on Matrix - this is up to the user interface of the client.
 </p>
 <p>
-    Whenever you send a SMS to a given user from Matrix for the first time, you are assigned a phone number from which the user will receive your message, which will allow them to respond to that message directly by SMS.  <b>Each user you converse with will receive a different number for contacting you.  Each contact number will only work for that specific Matrix SMS conversation - your contacts should not share your contact number, as it will only work when they message it.</b>.  OpenMarket reserves the right to recycle contact numbers if they are not used for more than 3 months.
+    Whenever you send a SMS to a given user from Matrix for the first time, you are assigned a phone number from which the user will receive your message, which will allow them to respond to that message directly by SMS.  <b>Each user you converse with will receive a different number for contacting you.  Your contacts should not share your contact number, as it will only work when they message it.</b>  OpenMarket reserves the right to recycle contact numbers if they have not been used to send or receive traffic for more than 2 months.
 </p>
 <p>
     On sending the first SMS to a user, they will receive an "opt-in" message from the OpenMarket Matrix Gateway to invite them to join the conversation.  This is equivalent to an invitation to join a room in Matrix.  The user will have to respond to this message in order to receive your messages.
 </p>
 <p>
-    If you are an enterprise company requiring higher volume or a more flexible service, please contact us for more details.
+    Use of the service requires acceptance of the <a href="http://openmarket.com/matrix/eula.html">OpenMarket Matrix API End User License Agreement</a>
+</p>
+<p>
+    If you are an enterprise company requiring higher volume or a more flexible service, please <a href="mailto:matrixsupport@openmarket.com">contact us</a> for more details.
 </p>
     
 <h2>Coverage</h2>
@@ -230,8 +233,8 @@ if(!window['pi']) { window['pi'] = {}; } pi = window['pi']; if(!pi['tracker']) {
 <!--    
     <table style="width: 80%">
         <tr><th style="font-weight: bold">Destination Country</th><th style="font-weight: bold">Price (USD)</th></tr>
-        <tr><td>USA</td><td>$0.0?</td></tr>
-        <tr><td>United Kingdom</td><td>$0.0?</td></tr>
+        <tr><td>USA</td><td>$0.012</td></tr>
+        <tr><td>United Kingdom</td><td>$0.06</td></tr>
     </table>
 </p>
 <p>
