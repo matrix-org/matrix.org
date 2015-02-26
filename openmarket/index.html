@@ -197,14 +197,17 @@ if(!window['pi']) { window['pi'] = {}; } pi = window['pi']; if(!pi['tracker']) {
     
 <h2>How to use the service</h2>
 <p>
+    <!--
     Sending SMS through the OpenMarket Matrix Gateway incurs a small transaction fee, so to use the service users must add some credit to their gateway account.
     This may be done via the settings page of any reference Matrix web client which has been configured to be aware of the OpenMarket Matrix Gateway.  To use the matrix.org hosted web client to add credit to your account, please visit <a href="https://matrix.org/beta/#/settings">https://matrix.org/beta/#/settings</a>.
+    -->
+    Sending SMS through the OpenMarket Matrix Gateway incurs no charge during our introductory beta testing period.  In order to send messages we do require that you associate a valid PayPal account with the service for security purposes. Openmarket will not (and cannot) ever charge this account without your consent.  Associating your PayPal account may be done via the settings page of any reference Matrix web client which has been configured to be aware of the OpenMarket Matrix Gateway.  To use the matrix.org hosted web client, please visit <a href="https://matrix.org/beta/#/settings">https://matrix.org/beta/#/settings</a>.
 </p>
 <p>
-    The settings page contains an "OpenMarket Matrix Gateway" section which tells your current account credit (if any) and guides you through the process of adding credit to the account via PayPal.
+    The settings page contains an "OpenMarket Matrix Gateway" section which <!-- tells your current account credit (if any) and guides you through the process of adding credit to the account via PayPal. --> guides you through the process of associating your PayPal account.
 </p>
 <p>
-    Having added credit to your account, you may start an SMS conversation with a user using the 'Start Chat' button in your preferred Matrix-compatible client application or website.  PSTN users accessible via the OpenMarket Matrix Gateway have Matrix IDs of form <code>@+&lt;msisdn&gt;:matrix.openmarket.com</code> - e.g. <code>@+447700900123:matrix.openmarket.com</code>. Your client may give you a way to avoid manually entering the Matrix ID and allow you to directly talk to a given addressbook contact via SMS if that user is not on Matrix - this is up to the user interface of the client.
+    Having <!-- added credit to your account --> done this, you may start an SMS conversation with a user using the 'Start Chat' button in your preferred Matrix-compatible client application or website.  PSTN users accessible via the OpenMarket Matrix Gateway have Matrix IDs of form <code>@+&lt;msisdn&gt;:matrix.openmarket.com</code> - e.g. <code>@+447700900123:matrix.openmarket.com</code>. Your client may give you a way to avoid manually entering the Matrix ID and allow you to directly talk to a given addressbook contact via SMS if that user is not on Matrix - this is up to the user interface of the client.
 </p>
 <p>
     Whenever you send a SMS to a given user from Matrix for the first time, you are assigned a phone number from which the user will receive your message, which will allow them to respond to that message directly by SMS.  <b>Each user you converse with will receive a different number for contacting you.  Each contact number will only work for that specific Matrix SMS conversation - your contacts should not share your contact number, as it will only work when they message it.</b>.  OpenMarket reserves the right to recycle contact numbers if they are not used for more than 3 months.
@@ -223,8 +226,8 @@ if(!window['pi']) { window['pi'] = {}; } pi = window['pi']; if(!pi['tracker']) {
 
 <h2>Pricing</h2>
 <p>
-    Price per sent SMS is:
-    
+    During beta testing, sending and receiving SMS incurs no cost - however it is subject to a per-user fair-usage policy.
+<!--    
     <table style="width: 80%">
         <tr><th style="font-weight: bold">Destination Country</th><th style="font-weight: bold">Price (USD)</th></tr>
         <tr><td>USA</td><td>$0.0?</td></tr>
@@ -242,6 +245,7 @@ if(!window['pi']) { window['pi'] = {}; } pi = window['pi']; if(!pi['tracker']) {
 </p>
 <p>
     Messages to inaccessible or invalid numbers may incur a per-message charge.
+    -->    
 </p>
 
 </article>
