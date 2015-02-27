@@ -93,7 +93,7 @@ function fetch_android_build($stream) {
     $apkRemotePath = null;
 
     foreach ($resp['artifacts'] as $artifact) {
-        if ($artifact['fileName'] == 'app-debug.apk') {
+        if ($artifact['fileName'] == 'app-alpha-debug.apk') {
             #$ipaRemoteFileName = $artifact['fileName'];
             $apkRemotePath = $artifact['relativePath'];
         }
