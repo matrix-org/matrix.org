@@ -77,8 +77,8 @@ function fetch_ios_build($stream) {
 // XXX: c+p tastic but probably not worth factoring out for this
 function fetch_android_build($stream) {
     $streams = array(
-        'master' => 'MatrixAndroidSDK',
-        'develop' => 'MatrixAndroidSDKDevelop'
+        'master' => 'AndroidConsole',
+        'develop' => 'AndroidConsoleDevelop'
     );
 
     $jenkinsjob = $streams[$stream];
@@ -93,13 +93,13 @@ function fetch_android_build($stream) {
     $apkRemotePath = null;
 
     foreach ($resp['artifacts'] as $artifact) {
-        if ($artifact['fileName'] == 'app-alpha-debug.apk') {
+        if ($artifact['fileName'] == 'console-alpha-debug.apk') {
             #$ipaRemoteFileName = $artifact['fileName'];
             $apkRemotePath = $artifact['relativePath'];
         }
     }
 
-    $apkFileName = "matrixConsole-android-$stream-integration$build.apk";
+    $apkFileName = "matrix-android-console-$stream-integration$build.apk";
     $apkPath = "cache/$apkFileName";
 
     if (!file_exists($apkPath)) {
