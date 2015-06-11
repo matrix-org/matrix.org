@@ -1,7 +1,7 @@
 Origin: matrix.org
 Suite: wheezy
 Codename: wheezy
-Architectures: amd64 source
+Architectures: amd64 i386 source
 Components: main
 SignWith: packages@matrix.org
 Contents: . .gz
@@ -9,7 +9,7 @@ Contents: . .gz
 Origin: matrix.org
 Suite: jessie
 Codename: jessie
-Architectures: amd64 source
+Architectures: amd64 i386 source
 Components: main
 SignWith: packages@matrix.org
 Contents: . .gz
