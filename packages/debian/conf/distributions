@@ -1,0 +1,15 @@
+Origin: matrix.org
+Suite: wheezy
+Codename: wheezy
+Architectures: amd64 source
+Components: main
+SignWith: packages@matrix.org
+Contents: . .gz
+
+Origin: matrix.org
+Suite: jessie
+Codename: jessie
+Architectures: amd64 source
+Components: main
+SignWith: packages@matrix.org
+Contents: . .gz
