@@ -1,0 +1,1057 @@
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+
+		<!--[if lt IE 9]>
+
+	<script src="http://matrix.org/blog/wp-content/themes/Divi-child/js/html5.js" type="text/javascript"></script>
+
+	<![endif]-->
+
+
+
+	<script type="text/javascript">
+
+		document.documentElement.className = 'js';
+
+	</script>
+
+
+
+	<link rel="alternate" type="application/rss+xml" title="Matrix.org &raquo; Feed" href="http://matrix.org/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Matrix.org &raquo; Comments Feed" href="http://matrix.org/blog/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/matrix.org\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.1"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<meta content="Divi Matrix v.2.2" name="generator"/><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='toc-screen-css'  href='http://matrix.org/blog/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=1509' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,700,800&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-css'  href='http://matrix.org/blog/wp-content/themes/Divi-child/style.css?ver=2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='et-shortcodes-css-css'  href='http://matrix.org/blog/wp-content/themes/Divi-child/epanel/shortcodes/css/shortcodes.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='et-shortcodes-responsive-css-css'  href='http://matrix.org/blog/wp-content/themes/Divi-child/epanel/shortcodes/css/shortcodes_responsive.css?ver=3.0' type='text/css' media='all' />
+<script type='text/javascript' src='http://matrix.org/blog/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://matrix.org/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://matrix.org/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://matrix.org/blog/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.3.1" />
+<style type="text/css">div#toc_container {background: #f9f9f9;border: 1px solid #aaaaaa;}</style><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />	<style>
+
+		a { color: #2EA3F2; }
+
+
+
+		body { color: #666666; }
+
+
+
+		.et_pb_counter_amount, .et_pb_featured_table .et_pb_pricing_heading, .et_quote_content, .et_link_content, .et_audio_content { background-color: #2EA3F2; }
+
+
+
+		#main-header, #main-header .nav li ul, .et-search-form, #main-header .et_mobile_menu { background-color: #ffffff; }
+
+
+
+		#top-header, #et-secondary-nav li ul { background-color: #2EA3F2; }
+
+
+
+		.woocommerce a.button.alt, .woocommerce-page a.button.alt, .woocommerce button.button.alt, .woocommerce-page button.button.alt, .woocommerce input.button.alt, .woocommerce-page input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce-page #respond input#submit.alt, .woocommerce #content input.button.alt, .woocommerce-page #content input.button.alt, .woocommerce a.button, .woocommerce-page a.button, .woocommerce button.button, .woocommerce-page button.button, .woocommerce input.button, .woocommerce-page input.button, .woocommerce #respond input#submit, .woocommerce-page #respond input#submit, .woocommerce #content input.button, .woocommerce-page #content input.button, .woocommerce-message, .woocommerce-error, .woocommerce-info { background: #2EA3F2 !important; }
+
+
+
+		#et_search_icon:hover, .mobile_menu_bar:before, .footer-widget h4, .et-social-icon a:hover, .comment-reply-link, .form-submit input, .et_pb_sum, .et_pb_pricing li a, .et_pb_pricing_table_button, .et_overlay:before, .entry-summary p.price ins, .woocommerce div.product span.price, .woocommerce-page div.product span.price, .woocommerce #content div.product span.price, .woocommerce-page #content div.product span.price, .woocommerce div.product p.price, .woocommerce-page div.product p.price, .woocommerce #content div.product p.price, .woocommerce-page #content div.product p.price, .et_pb_member_social_links a:hover { color: #2EA3F2 !important; }
+
+
+
+		.woocommerce .star-rating span:before, .woocommerce-page .star-rating span:before, .et_pb_widget li a:hover, .et_pb_bg_layout_light .et_pb_promo_button, .et_pb_bg_layout_light .et_pb_more_button, .et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active, .et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active, .et_pb_gallery .et_pb_gallery_pagination ul li a.active, .wp-pagenavi span.current, .wp-pagenavi a:hover, .et_pb_contact_submit, .et_pb_bg_layout_light .et_pb_newsletter_button, .nav-single a, .posted_in a { color: #2EA3F2 !important; }
+
+
+
+		.et-search-form, .nav li ul, .et_mobile_menu, .footer-widget li:before, .et_pb_pricing li:before, blockquote { border-color: #2EA3F2; }
+
+
+
+		#main-footer { background-color: #222222; }
+
+
+
+		#top-menu a { color: #666666; }
+
+
+
+		#top-menu li.current-menu-ancestor > a, #top-menu li.current-menu-item > a, .bottom-nav li.current-menu-item > a { color: #2EA3F2; }
+
+
+
+		</style>
+
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<script src="/js/d3.v3.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+
+<style type="text/css">
+
+#diagram {
+    max-width: 680px;
+    width: 100%;
+    float: left;
+}
+
+#legendBox {
+    float: left;
+    height: 520px;
+    font-size: 16px;
+}
+
+.legend {
+    position: absolute; 
+    padding-top: 70px;
+    opacity: 0;
+}
+
+.legend pre {
+    font-size: 14px;
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+ }
+ 
+.legendNav {
+    width: 100px;
+    left: 0px;
+    cursor: pointer;
+/*
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+*/
+}
+
+.networkNode circle {
+    stroke-width: 1px;
+    stroke: #ccc;
+}
+
+#diagram text {
+    font-size: 14px;
+}
+
+.message circle {
+    fill: #fff;
+    stroke-width: 3px;
+}
+
+.message text {
+    font-weight: bold;
+}
+
+.networkLink {
+    stroke: #ccc;
+    stroke-width: 3px;
+}
+
+.graphNode circle {
+    fill: #fff;
+    stroke-width: 3px;
+}
+
+.graphLink, .danglingGraphLink {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3px;
+}
+</style>
+
+<script>
+
+$(document).ready(function() {
+
+var width = 680,
+    height = 480;
+
+var color = {
+    'a': '#e77',
+    'b': '#7e7',
+    'c': '#77e',
+    'a1': '#faa',
+    'b1': '#afa',
+    'c1': '#aaf',
+}
+
+var plinthColor = {
+    'a': '#fdd',
+    'b': '#dfd',
+    'c': '#ddf',
+}
+
+var messageColor = {};
+
+var csDistance = 75;
+var ssDistance = 150;
+var cRadius = 10;
+var sRadius = 50;
+
+var network = {
+    nodes: [
+        {id: "a",  name: "matrix.alice.com",            type: "hs", // 0
+            fixed: true,
+            x: width/2 - .433*ssDistance,
+            y: height/2,
+        },
+        {id: "b",  name: "matrix.bob.com",              type: "hs", // 1
+            fixed: true,
+            x: width/2 + .433*ssDistance,
+            y: height/2 - .5*ssDistance,
+        },
+        {id: "c",  name: "matrix.charlie.com",          type: "hs", // 2
+            fixed: false,
+            x: width/2 + .433*ssDistance,
+            y: height/2 + .5*ssDistance
+        },
+        {id: "a1", name: "@alice:alice.com",     type: "client"}, // 3
+        {id: "b1", name: "@bob:bob.com",         type: "client"}, // 4
+        {id: "c1", name: "@charlie:charlie.com", type: "client"}, // 5
+    ],
+    links: [
+        // source's ID always needs to be lexicographically less than target's
+        {source: 0, target: 1},
+        {source: 1, target: 2},
+        {source: 0, target: 2},
+        {source: 0, target: 3, leaf: true},
+        {source: 1, target: 4, leaf: true},
+        {source: 2, target: 5, leaf: true},
+    ],
+};
+
+var graph;
+var forceSvg;
+
+var stepIndex;
+var pendingStages;
+var stageIndex;
+var animations;
+var unveiled = false;
+
+
+var steps = [
+    [], // step 0
+    [
+        { sid: 1, id: "m1", type: "msg", source: "a1", target: "a", msg: "1", pause: true },
+    ],
+    [
+        { sid: 2, id: "m1", type: "msg", source: "a", target: "b", target2: "b1", msg: "1", pause: true },
+        { sid: 3, id: "m1", type: "msg", source: "a", target: "c", target2: "c1", msg: "1", pause: true },
+    ],
+    [
+        { sid: 4, id: "m2", type: "msg", source: "b1", target: "b", msg: "2", parents: ["m1"] },
+    ],
+    [
+        { sid: 5, id: "m3", type: "msg", source: "c1", target: "c", msg: "3", parents: ["m1"] },
+    ],
+    [
+        { sid: 6, id: "m2", type: "msg", source: "b", target: "a", target2: "a1", msg: "2", parents: ["m1"] },
+        { sid: 7, id: "m2", type: "msg", source: "b", target: "c", target2: "c1", msg: "2", parents: ["m1"] },
+    ],
+    [
+        { sid: 8, id: "m3", type: "msg", source: "c", target: "a", target2: "a1", msg: "3", parents: ["m1"] },
+        { sid: 9, id: "m3", type: "msg", source: "c", target: "b", target2: "b1", msg: "3", parents: ["m1"] },
+    ],
+    [
+        { sid: 10, id: "m4", type: "msg", source: "a1", target: "a", msg: "4", parents: ["m2","m3"] },
+    ],
+    [
+        { sid: 11, id: "m4", type: "msg", source: "a", target: "b", target2: "b1", msg: "4", parents: ["m2", "m3"] },
+        { sid: 12, id: "m4", type: "msg", source: "a", target: "c", target2: "c1", msg: "4", parents: ["m2", "m3"] },
+    ],
+];
+
+function unveil() {
+    if (unveiled) return;
+    var $e = $("#diagram");
+    if ($e.length == 0) return;
+    var th = 100;
+
+    var wt = $(window).scrollTop(),
+        wb = wt + $(window).height(),
+        et = $e.offset().top,
+        eb = et + $e.height();
+
+    if (eb >= wt - th && et <= wb + th) {
+        initNetwork();
+        unveiled = true;
+    }
+}
+
+$(window).on("scroll.unveil resize.unveil lookup.unveil", unveil);
+unveil();
+
+function initNetwork() {
+
+    // reset state
+    graph = {};
+
+    // the animation is broken down into steps, then substeps, and then stages (which happen if you pause)
+    stepIndex = 0;
+    pendingStages = [];
+    stageIndex = 0;
+    animations = 0;
+    
+    var force = d3.layout.force()
+        .charge(-2000)
+        .friction(0.75)
+        .size([width, height]);
+
+    var svg = d3.select("#diagram");
+    if (!svg) return;
+
+    $('.legendNav').click(nextStage);
+
+    force
+        .nodes(network.nodes)
+        .links(network.links)
+        .gravity(-0.0)
+        .linkDistance(function(d) { return (d.leaf ? csDistance : ssDistance) })
+        .start();
+
+    forceSvg = svg.append("g");
+
+   function resize() {
+      newWidth = $("#diagram").width();
+      newHeight = (height * newWidth / width)|0;
+      svg.attr("width", newWidth).attr("height",newHeight);
+      forceSvg.attr("transform", "scale(" + newWidth / width + ")");
+   }
+
+   $(window).resize(resize);
+   resize();
+
+    var link = forceSvg.selectAll(".networkLink")
+        .data(network.links)
+        .enter().append("path")
+            .attr("class", "networkLink")
+            .attr("id", function(d) { return "link_" + d.source.id + "_" + d.target.id });
+
+    var node = forceSvg.selectAll(".networkNode")
+        .data(network.nodes)
+        .enter().append("g")
+            .attr("class", "networkNode")
+            .each(createGraph)
+            .call(force.drag);
+        
+    node.append("circle")
+            .attr("r", function(d) { return (d.type == "hs" ? 0 : 20 ); } )
+            .style("fill", function(d) { return color[d.id] })
+
+    node.append("title")
+        .text(function(d) { return d.name; });
+
+    node.append("text")
+        .attr("dx", function(d) { return ((d.id == "a1" ? -1 : 1) * (cRadius + 14)); } )
+        .attr("dy", 0)
+        .style("fill", function(d) { return d3.rgb(color[d.id]).darker(1) })
+        .attr("text-anchor", function(d) { return (d.id == "a1" ? "end" : "") })
+        .text(function(d) { return d.type == "client" ? d.name : "" })
+            
+    force.on("tick", function(e) {
+        //console.log("main: " + e.alpha);
+    
+        // link.attr("x1", function(d) { return d.source.x; })
+        //     .attr("y1", function(d) { return d.source.y; })
+        //     .attr("x2", function(d) { return d.target.x; })
+        //     .attr("y2", function(d) { return d.target.y; });
+    
+        link.attr("d", function(d) {
+            return "M" + d.source.x + "," + d.source.y
+                + " " + d.target.x + "," + d.target.y;
+        });
+
+        // node.attr("cx", function(d) { return d.x; })
+        //     .attr("cy", function(d) { return d.y; });
+    
+        node.attr("transform", function(d) {
+            return "translate(" + d.x + "," + d.y + ")";
+        });
+    });
+
+    nextStage();
+}
+
+function translateAlong(path, backwards) {
+    var node = path.node();
+    return function(d, i, a) {
+        return function(t) {
+            t = backwards ? (1.0 - t) : t;
+            var l = node.getTotalLength();
+            var p = node.getPointAtLength(t * l);
+            return "translate(" + p.x + "," + p.y + ")";
+        };
+    };
+}
+
+function transition(message, path, backwards) {
+    return message.transition()
+        .duration(1000)
+        .attrTween("transform", translateAlong(path, backwards));
+}
+
+function sendMessage(source, target, msg, id, sid) {
+    console.log("sendMessage " + source + " " + target + " " + msg);
+    var backwards = false;
+    if (source > target) { // we're going backwards
+        backwards = true;
+        var tmp = source;
+        source = target;
+        target = tmp;
+    }
+    
+    // reuse previous message if this is a two-step
+    var message = forceSvg.select("#m_" + sid);
+        
+    if (message.size() == 0) {
+        message = forceSvg.append("g")
+            .attr("id", "m_" + sid)
+            .attr("class", "message");
+    
+        message.append("circle")
+            .attr("r", 5)
+            .style("stroke", messageColor[id]);
+    
+        message.append("text")
+            .attr("dx", "8px")
+            .attr("dy", "-8px")
+            .text(msg);    
+    }
+    
+    var path = forceSvg.select("#link_" + source + "_" + target);
+    animations++;
+    return transition(message, path, backwards);
+//      .remove();
+//      .each("end", function() { message.remove() });
+}
+
+function createGraph(d) {
+    if (d.id.length != 1) return; // only put graphs in servers(!)
+    
+    var id = d.id;
+    
+    graph[id] = {
+        layout : {},
+        svg: {},
+        nodes: [],
+        links: [],
+        nodeMap: {},
+        nodeSel: {},
+        linkSel: {},
+    };
+
+    graph[id].layout = d3.layout.force()
+	    .size([sRadius * 2, sRadius * 2])
+	    .on("tick", function(e) {
+	        //console.log(id + ": " + e.alpha);
+            
+	        //updateGraph(id);
+            
+            graph[id].linkSel.attr("x1", function(d) { return d.source.x; })
+                             .attr("y1", function(d) { return d.source.y; })
+                             .attr("x2", function(d) { return d.target.x; })
+                             .attr("y2", function(d) { return d.target.y; });
+
+            graph[id].nodeSel.attr("transform",
+                function(d) { return "translate(" + d.x + "," + d.y +")"; });
+	    });
+	
+    graph[id].svg = d3.select(this).append("g")
+        .attr("transform", "translate(-" + sRadius + ", -" + sRadius + ")");
+        
+    var server = graph[id].svg.append("circle")
+        .attr("cx", sRadius)
+        .attr("cy", sRadius)
+        .attr("r",  sRadius)
+        .style("fill", plinthColor[id]);
+    
+    graph[id].svg.append("text")
+        .attr("dx", function(d) {
+            return d.id == "c" ? sRadius*2.5 :
+                   d.id == "b" ? sRadius/2 : sRadius;
+        })
+        .attr("dy", -10)
+        .style("fill", function(d) { return d3.rgb(color[d.id]).darker(1) })
+        .attr("text-anchor", "middle")
+        .text(d.name);
+
+    graph[id].linkSel = graph[id].svg.selectAll(".graphLink");
+    graph[id].nodeSel = graph[id].svg.selectAll(".graphNode");
+}
+
+function updateGraph(id) {
+    // Restart the force layout.
+    graph[id].layout
+        .nodes(graph[id].nodes)
+        .links(graph[id].links)
+        .linkDistance(35)
+        .charge(-100)
+        .start();
+
+    // cache for convenience
+    var linkSel = graph[id].linkSel;
+    var nodeSel = graph[id].nodeSel;
+    
+    // Update the links…
+    linkSel = linkSel.data(graph[id].links);
+
+    // Exit any old links.
+    linkSel.exit().remove();
+    
+    // Enter any new links.
+    var enter = linkSel.enter().insert("line", ".graphNode")
+        .attr("class", "graphLink")
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; })
+        .style("opacity", 1e-6)
+            .transition()
+            .duration(250)
+            .style("opacity", 1);    
+
+    // Update the nodes…
+    nodeSel = nodeSel.data(graph[id].nodes);
+
+    // Exit any old nodes.
+    nodeSel.exit().remove();
+
+    // Enter any new nodes.
+    var g = nodeSel.enter().append("svg:g")
+                   .attr("class", "graphNode")
+                   .attr("transform", 
+                        function(d) { return "translate(" + d.x + "," + d.y +")"; });
+                                                
+    g.style("opacity", 1e-6)
+        .transition()
+        .duration(250)
+        .style("opacity", 1);    
+
+    // special case to add a magical leading edge to the first node
+    if (nodeSel.size() == 1) {
+        g.append("line")
+        .attr("class", "danglingGraphLink")
+        .attr("x1", function(d) { return 0; })
+        .attr("y1", function(d) { return 0; })
+        .attr("x2", function(d) { return 0; })
+        .attr("y2", function(d) { return -19; })
+        .style("opacity", 1e-6)
+            .transition()
+            .duration(250)
+            .style("opacity", 1);            
+    }
+    
+    g.append("circle")
+        .attr("r", 5)
+        .style("stroke", function(d) { return messageColor[d.id]; } )
+        .call(graph[id].layout.drag);
+
+    g.append("text")
+        .attr("dx", "10px")
+        .attr("dy", ".35em")
+        .text(function(d) { return d.value; })
+        .style("fill-opacity", 1);
+
+    graph[id].linkSel = linkSel;
+    graph[id].nodeSel = nodeSel;
+}
+
+function updateState(graphId, nodeId, msg, parents) {
+    
+    // whenever we update state we don't want any other message bubbles hanging around
+    forceSvg.selectAll(".message").remove();
+    
+    var node = {
+        id: nodeId,
+        value: msg,
+    };
+    
+    if (nodeId == "m1") {
+        node.fixed = true;
+        node.x = sRadius + 0;
+        node.y = sRadius - 30;
+    }
+    if (nodeId == "m4") {
+        node.fixed = true;
+        node.x = sRadius + 0;
+        node.y = sRadius + 30;
+    }
+    
+    graph[graphId].nodes.push(node);
+    graph[graphId].nodeMap[nodeId] = node;
+    
+    if (parents) {
+        for (var i=0; i<parents.length; i++) {
+            graph[graphId].links.push({
+                source: graph[graphId].nodeMap[parents[i]],
+                target: node,
+            });
+        }
+    }
+    
+    updateGraph(graphId);
+}
+
+function performSubStep(subStep) {
+    // assign these all to local variables to capture them in the scope of this fn
+    var source =  subStep.source;
+    var target =  subStep.target;
+    var target2 = subStep.target2;
+    var msg =     subStep.msg;
+    var parents = subStep.parents;
+    var id =      subStep.id;
+    var pause =   subStep.pause;
+    var sid =     subStep.sid;
+    
+    if (!messageColor[id]) {
+        messageColor[id] = color[target];
+    }
+
+    function performUpdateState() {
+        updateState(target, id, msg, parents);
+        if (target2) { // 2nd hop
+            if (pause) {
+                pendingStages.push(performSecondHop);
+            }
+            else {
+                performSecondHop();
+            }
+        }
+    }
+    
+    function performSecondHop() {
+        console.log("2nd hop: " + target + " " + target2 + " " + msg);
+        sendMessage(target, target2, msg, id, sid).each("end", function() { animations--; });
+    }
+    
+    sendMessage(source, target, msg, id, sid)
+        .each("end", function () {
+            animations--;
+            if (pause) {
+                pendingStages.push(performUpdateState);
+            }
+            else {
+                performUpdateState();
+            }
+        });
+}
+
+function nextStage() {
+    if (animations) return;
+    
+    var dissolveTime = 500;
+    
+    d3.select("#legend" + stageIndex).style("opacity", 1)
+        .transition()
+        .duration(dissolveTime)
+        .style("opacity", 1e-6);    
+    d3.select("#legend" + (stageIndex + 1)).style("opacity", 1e-6)
+        .transition()
+        .duration(dissolveTime)
+        .style("opacity", 1);    
+    
+    if (pendingStages.length > 0) {
+        var c = pendingStages.length;
+        console.log("starting c=" + c);
+        for (i=0; i < c; i++) {
+            console.log("i=" + i + ", len=" + pendingStages.length);
+            pendingStages[0]();
+            pendingStages.shift();
+        }
+    }
+    else {
+        var step = steps[stepIndex];
+
+        if (steps[stepIndex]) {
+            // clean up messages from previous step
+            console.log("cleaning up messages");
+            forceSvg.selectAll(".message").remove();
+
+            for (var i=0; i < step.length; i++) {
+                performSubStep(step[i]);
+            }
+            
+            if (stepIndex == steps.length - 1) {
+                d3.select(".legendNav").html("Start over");
+            }
+        }
+        else {
+            d3.select(".legendNav").html("Next");            
+            forceSvg.selectAll("*").remove();
+            initNetwork();
+            return;
+        }
+        stepIndex++;
+    }
+    stageIndex++;
+}
+
+});
+
+</script>
+
+<style type="text/css">
+    .node {
+      stroke: #E0E0E0;	/* d8d8d8 - E6E6E6 */
+      stroke-width: 0.5px;	/* 1.5px */
+    }
+
+    .link {
+      fill: none;
+      stroke: #F3F3F3;	/* f0f0f0 - F5F5F5 */
+      stroke-width: 1.5px;
+    }
+
+    .fedlink {
+        fill: none;
+        stroke: #F3F3F3;	/* f0f0f0 - F5F5F5 */
+        stroke-width: 5px;
+    }
+</style>
+
+<script>
+
+$(document).ready(function() {
+
+if ($("#main_header_section").length == 0) return;
+
+var width = $(d3.select("#main_header").node()).width();
+    height = $(d3.select("#main_header").node()).height();
+
+var speed = 2.5; // up to 4x speed
+
+var force = d3.layout.force()
+    .size([width, height])
+    .charge(-200)
+    .on("tick", tick);
+
+var svg = d3.select("#main_header_section").insert("svg:svg", ":first-child")
+   .style("position", "absolute")
+   .attr("width", width)
+   .attr("height", height);
+
+var vis = svg.append("svg:g");
+
+$(window).resize(function() {
+    newWidth = $(d3.select("#main_header").node()).width();
+    newHeight = $(d3.select("#main_header").node()).height();
+    svg.attr("width", newWidth).attr("height",newHeight);
+    vis.attr("transform", "translate(" + ((newWidth-width)/2) + ", 0)");
+});
+    
+var link = vis.selectAll(".link"),
+    node = vis.selectAll(".node");
+
+/*    
+var mw = 789,
+    mh = 336,
+    ms = 0.5;
+    
+svg.append("svg:image")
+   .attr('x',width * 0.5 - mw * ms * 0.5)
+   .attr('y',height * 0.5 - mh * ms * 0.5)
+   .attr('width', mw * ms)
+   .attr('height', mh * ms)
+   .attr('pointer-events', "none")
+   .attr("xlink:href", "matrix logo.svg")
+*/
+
+var clusters = [
+    []    // [ "s1", "s2", "s3" ]
+];
+
+var nodeMap = {
+    // "s1" : { size : 0 }
+};
+
+var nodes = [
+    // {id: "s1" },     // 0
+    // {id: "c1" },
+];
+
+var links = [
+    // source's ID always needs to be lexicographically less than target's
+    // {source: {}, target: {}},
+];
+
+var time;
+var fps = 30; // assume we start at a decent fps
+var fpsDecay = 0.8;
+var stopped = false;
+
+var c20 = d3.scale.category20b();
+var serverColorRange = [];
+var clientColorRange = [];
+var serverBrightness = 0.80;
+var clientBrightness = 0.93;
+
+for (i = 0; i < 20; i++) {
+    var rgb;
+    
+    rgb = d3.rgb(c20(i));
+    rgb.r = ((1 - serverBrightness) * rgb.r + serverBrightness*255) | 0;
+    rgb.g = ((1 - serverBrightness) * rgb.g + serverBrightness*255) | 0;
+    rgb.b = ((1 - serverBrightness) * rgb.b + serverBrightness*255) | 0;
+    serverColorRange[i] = rgb.toString();
+
+    rgb = d3.rgb(c20(i));
+    rgb.r = ((1 - clientBrightness) * rgb.r + clientBrightness*255) | 0;
+    rgb.g = ((1 - clientBrightness) * rgb.g + clientBrightness*255) | 0;
+    rgb.b = ((1 - clientBrightness) * rgb.b + clientBrightness*255) | 0;
+    clientColorRange[i] = rgb.toString();
+}
+
+var clusterCount = 0;
+var serverCount = 0;
+var clientCount = 0;
+
+if (!Date.now) {
+    Date.now = function() { return new Date().getTime(); }
+}
+
+update();
+
+function update() {
+    // Restart the force layout.
+    force
+      .nodes(nodes)
+      .links(links)
+      .linkDistance(function(d) { return (d.source.s ? 60 : 50); })      
+      .start();
+
+    // Update the links…
+    link = link.data(links);
+
+    // Exit any old links.
+    link.exit().remove();
+
+    // Enter any new links.
+    link.enter().insert("line", ".node")
+        .attr("class", function(d) { return (d.source.s ? "fedlink" : "link") })
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; })
+        .style("opacity", 1e-6)
+            .transition()
+            .duration(500)
+            .style("opacity", 1);    
+
+    // Update the nodes…
+    node = node.data(nodes, function(d) { return d.id; })
+        .style("fill", color)
+        .attr("r", function(d) { return (10 + Math.sqrt(10 * ((nodeMap[d.id].size * 0.8) || 0.002))); }); 
+
+    // Exit any old nodes.
+    node.exit().remove();
+
+    // Enter any new nodes.
+    node.enter().append("circle")
+        .attr("class", "node")
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; })
+        .style("fill", color)
+        .call(force.drag)
+        .style("opacity", 1e-6)
+            .transition()
+            .duration(500)
+            .style("opacity", 1);    
+}
+
+function addCluster(overlapServers) {
+    clusters.push(overlapServers);
+    clusterCount++;
+}
+
+function addServer(clusterIndex) {
+    var id = "s" + serverCount;
+    serverCount++;
+    
+    var node = {
+        "id" : id,
+        "s" : true,
+        "cluster" : clusterIndex,
+        "size" : 0,
+    };
+    nodeMap[id] = node;
+    nodes.push(node);
+    
+    // add the server into the cluster and update full mesh with this cluster    
+    var cluster = clusters[clusterIndex];
+    for (var i=0; i < cluster.length; i++) {
+        links.push({
+            "source": nodeMap[cluster[i]],
+            "target": node,
+        });
+    }
+    cluster.push(id);
+}
+
+function addClient(serverIndex) {
+    if (!nodeMap["s" + serverIndex]) {
+        addServer(clusterCount);
+    }
+    
+    nodeMap["s" + serverIndex].size++;
+    //console.log(nodeMap["s" + serverIndex]);
+    
+    var node = {
+        "id" : "c" + clientCount,
+        "cluster" : nodeMap["s" + serverIndex].cluster,
+    };
+    nodeMap[node.id] = node;
+    nodes.push(node);
+    
+    links.push({
+        "source": node,
+        "target": nodeMap["s" + serverIndex],
+    });
+
+    clientCount++;
+}
+
+function tick(e) {
+    var now = Date.now();
+    if (time) {
+        fps = fpsDecay * fps + (1 - fpsDecay) * (1000 / (now - time));
+        //console.log(fps);
+    }
+    time = now;
+    
+    if (clientCount < 170 && fps > 20 & !stopped) {	
+        var r = Math.random();
+
+        if (r < 0.04 * speed) {	
+            var overlap = [];
+            overlap.push("s" + ((Math.random() * serverCount)|0));
+            if (Math.random() < 0.15) // cross-connect occasionally 
+                overlap.push("s" + ((Math.random() * serverCount)|0));
+            addCluster(overlap);
+        }
+        if (r < 0.02 * speed) {	
+            addServer( (Math.random() * clusterCount)|0 );
+        }
+				if (r < 0.10 * speed) {	
+            addClient( (Math.sqrt(Math.random()) * serverCount)|0 );
+        }
+        update();
+    }
+    else {
+        stopped = true;
+    }
+    
+    var k = 1 - e.alpha/3; // centralising factor
+    nodes.forEach(function(o, i) {
+        // nudge server nodes slightly towards the mid-section
+        if (o.s) {
+            o.y = o.y * k + (height * 0.5) * (1 - k);
+        }
+    });
+    
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node.attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+}
+
+function color(d) {
+    //return (d.s ? serverColorRange[d.cluster % 20] : clientColorRange[d.cluster % 20]);	//Colourful version
+    return (d.s ? "#E8E8E8" : "#FAFAFA");	//Amandine - Grey version  dark:"#E2E0E0" : "#FAF9F9"	light:"#F2F2F2" : "#FCFAFA"
+    //return (d.s ? "#B6BCD4" : "#EEEFFC");	//Amandine - Blue version
+}
+
+});
+
+</script>
+
+
+
+
+  <link rel="stylesheet" href="http://matrix.org/site.css">
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+
+  <link rel="stylesheet" href="{{ "/css/site_overrides.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/basic.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/nature.css" | prepend: site.baseurl }}">
+
+  <link rel='stylesheet' id='toc-screen-css'  href='https://matrix.org/blog/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=1509' type='text/css' media='all' />
+  <link rel='stylesheet' id='divi-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,700,800&#038;subset=latin,latin-ext' type='text/css' media='all' />
+  <link rel='stylesheet' id='divi-style-css'  href='https://matrix.org/blog/wp-content/themes/Divi-child/style.css?ver=2.2' type='text/css' media='all' />
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
+
+	<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/matrix.org\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.1"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54779209-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<style type="text/css">div#toc_container {background: #f9f9f9;border: 1px solid #aaaaaa;}</style><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />	<style>
+		a { color: #2EA3F2; }
+
+		body { color: #666666; }
+
+		.et_pb_counter_amount, .et_pb_featured_table .et_pb_pricing_heading, .et_quote_content, .et_link_content, .et_audio_content { background-color: #2EA3F2; }
+
+		#main-header, #main-header .nav li ul, .et-search-form, #main-header .et_mobile_menu { background-color: #ffffff; }
+
+		#top-header, #et-secondary-nav li ul { background-color: #2EA3F2; }
+
+		.woocommerce a.button.alt, .woocommerce-page a.button.alt, .woocommerce button.button.alt, .woocommerce-page button.button.alt, .woocommerce input.button.alt, .woocommerce-page input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce-page #respond input#submit.alt, .woocommerce #content input.button.alt, .woocommerce-page #content input.button.alt, .woocommerce a.button, .woocommerce-page a.button, .woocommerce button.button, .woocommerce-page button.button, .woocommerce input.button, .woocommerce-page input.button, .woocommerce #respond input#submit, .woocommerce-page #respond input#submit, .woocommerce #content input.button, .woocommerce-page #content input.button, .woocommerce-message, .woocommerce-error, .woocommerce-info { background: #2EA3F2 !important; }
+
+		#et_search_icon:hover, .mobile_menu_bar:before, .footer-widget h4, .et-social-icon a:hover, .comment-reply-link, .form-submit input, .et_pb_sum, .et_pb_pricing li a, .et_pb_pricing_table_button, .et_overlay:before, .entry-summary p.price ins, .woocommerce div.product span.price, .woocommerce-page div.product span.price, .woocommerce #content div.product span.price, .woocommerce-page #content div.product span.price, .woocommerce div.product p.price, .woocommerce-page div.product p.price, .woocommerce #content div.product p.price, .woocommerce-page #content div.product p.price, .et_pb_member_social_links a:hover { color: #2EA3F2 !important; }
+
+		.woocommerce .star-rating span:before, .woocommerce-page .star-rating span:before, .et_pb_widget li a:hover, .et_pb_bg_layout_light .et_pb_promo_button, .et_pb_bg_layout_light .et_pb_more_button, .et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active, .et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active, .et_pb_gallery .et_pb_gallery_pagination ul li a.active, .wp-pagenavi span.current, .wp-pagenavi a:hover, .et_pb_contact_submit, .et_pb_bg_layout_light .et_pb_newsletter_button, .nav-single a, .posted_in a { color: #2EA3F2 !important; }
+
+		.et-search-form, .nav li ul, .et_mobile_menu, .footer-widget li:before, .et_pb_pricing li:before, blockquote { border-color: #2EA3F2; }
+
+		#main-footer { background-color: #222222; }
+
+		#top-menu a { color: #666666; }
+
+		#top-menu li.current-menu-ancestor > a, #top-menu li.current-menu-item > a, .bottom-nav li.current-menu-item > a { color: #2EA3F2; }
+
+		</style>
