@@ -3,7 +3,20 @@ a {
 }
 
 ul {
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+ul ul {
     list-style-type: circle;
+}
+
+ul ul ul {
+    list-style-type: square;
+}
+
+li {
+    padding-left: 10px;
 }
 
 div.document p {
