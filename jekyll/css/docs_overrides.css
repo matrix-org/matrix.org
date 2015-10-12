@@ -15,6 +15,19 @@ ul ul ul {
     list-style-type: square;
 }
 
+ul ul ul ul {
+    list-style-type: disc;
+}
+
+ul ul ul ul ul {
+    list-style-type: circle;
+}
+
+ul ul ul ul ul ul {
+    list-style-type: square;
+}
+
+
 li {
     padding-left: 10px;
 }
