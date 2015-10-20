@@ -4,7 +4,7 @@ a {
 
 ul {
     list-style-type: disc;
-    padding-left: 30px;
+    padding-left: 60px;
 }
 
 ul ul {
@@ -25,11 +25,6 @@ ul ul ul ul ul {
 
 ul ul ul ul ul ul {
     list-style-type: square;
-}
-
-
-li {
-    padding-left: 10px;
 }
 
 div.document p {
