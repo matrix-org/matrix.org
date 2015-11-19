@@ -16,7 +16,7 @@ SITE_BASE="$(pwd)"
 cd matrix-doc/scripts
 INCLUDES="${SITE_BASE}/includes/from_jekyll"
 python gendoc.py
-./add-matrix-org-stylings.sh "${INCLUDES}/head.html" "${INCLUDES}/nav.html" "${INCLUDES}/footer.html"
+./add-matrix-org-stylings.sh "${INCLUDES}"
 
 mkdir -p "${SITE_BASE}/docs/"{api/client-server/json,howtos,spec}
 cp gen/specification.html  "${SITE_BASE}/docs/spec/index.html"
