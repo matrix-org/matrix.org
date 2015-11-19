@@ -1,5 +1,3 @@
-.svn
-jekyll/_site
-jekyll/_posts
-jekyll/.sass-cache
-matrix-doc
+docs/api/client-server/json
+docs/howtos/client-server.html
+docs/spec/index.html
