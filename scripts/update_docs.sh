@@ -16,13 +16,12 @@ SITE_BASE="$(pwd)"
 cd matrix-doc/scripts
 INCLUDES="${SITE_BASE}/includes/from_jekyll"
 python gendoc.py
+
+./generate-http-docs.sh
+
 ./add-matrix-org-stylings.sh "${INCLUDES}"
 
-mkdir -p "${SITE_BASE}/docs/"{api/client-server/json,howtos,spec}
+mkdir -p "${SITE_BASE}/docs/"{api/client-server,howtos,spec}
 cp gen/specification.html  "${SITE_BASE}/docs/spec/index.html"
 cp gen/howtos.html "${SITE_BASE}/docs/howtos/client-server.html"
-for f in "${SITE_BASE}"/matrix-doc/api/client-server/*; do
-  if [[ -f "${f}" ]]; then
-    cp "${f}" "${SITE_BASE}/docs/api/client-server/json/"
-  fi
-done
+cp gen/http_apis.html "${SITE_BASE}/docs/api/client-server/index.html"
