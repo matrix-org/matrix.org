@@ -2,6 +2,14 @@
 
 # Note that this file is world-readable unless someone plays some .htaccess hijinks
 
+# Optional first argument: client_release_label
+# e.g. update_docs.sh r0
+
+client_release_label="unstable"
+if [[ $# == 1 ]]; then
+  client_release_label="$1"
+fi
+
 echo >&2 "Make sure you have run \`git submodule update --remote\` to pull in the latest changes."
 
 SELF="${BASH_SOURCE[0]}"
@@ -15,14 +23,12 @@ SITE_BASE="$(pwd)"
 
 cd matrix-doc/scripts
 INCLUDES="${SITE_BASE}/includes/from_jekyll"
-python gendoc.py
+python gendoc.py -c "${client_release_label}"
 ./add-matrix-org-stylings.sh "${INCLUDES}"
 
 mkdir -p "${SITE_BASE}/docs/"{api/client-server/json,howtos,spec}
-cp gen/specification.html  "${SITE_BASE}/docs/spec/index.html"
+cp -r gen/*.html "${SITE_BASE}/docs/spec/"
 cp gen/howtos.html "${SITE_BASE}/docs/howtos/client-server.html"
-for f in "${SITE_BASE}"/matrix-doc/api/client-server/*; do
-  if [[ -f "${f}" ]]; then
-    cp "${f}" "${SITE_BASE}/docs/api/client-server/json/"
-  fi
-done
+
+mkdir -p "${SITE_BASE}/docs/api/client-server/json"
+python dump-swagger.py "${SITE_BASE}/docs/api/client-server/json" "${client_release_label}"
