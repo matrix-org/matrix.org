@@ -21,14 +21,18 @@ cd "$(dirname "$(dirname "${SELF}")")"
 
 SITE_BASE="$(pwd)"
 
+mkdir -p /docs/{api/client-server/json,howtos,spec}
+
+(
 cd matrix-doc/scripts
 INCLUDES="${SITE_BASE}/includes/from_jekyll"
 python gendoc.py -c "${client_release_label}"
 ./add-matrix-org-stylings.sh "${INCLUDES}"
+)
 
-mkdir -p "${SITE_BASE}/docs/"{api/client-server/json,howtos,spec}
-cp -r gen/*.html "${SITE_BASE}/docs/spec/"
-cp gen/howtos.html "${SITE_BASE}/docs/howtos/client-server.html"
+cp matrix-doc/scripts/gen/specification.html docs/spec/index.html
+cp matrix-doc/scripts/gen/howtos.html docs/howtos/client-server.html
+matrix-doc/scripts/dump-swagger.py "${SITE_BASE}/docs/api/client-server/json" "${client_release_label}"
 
-mkdir -p "${SITE_BASE}/docs/api/client-server/json"
-python dump-swagger.py "${SITE_BASE}/docs/api/client-server/json" "${client_release_label}"
+echo "generating docs/spec/olm.html"
+rst2html olm/docs/olm.rst > docs/spec/olm.html
