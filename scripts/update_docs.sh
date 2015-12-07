@@ -21,7 +21,7 @@ cd "$(dirname "$(dirname "${SELF}")")"
 
 SITE_BASE="$(pwd)"
 
-mkdir -p /docs/{api/client-server/json,howtos,spec}
+mkdir -p docs/{api/client-server/json,howtos,spec}
 
 (
 cd matrix-doc/scripts
