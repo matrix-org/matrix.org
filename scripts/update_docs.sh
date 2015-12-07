@@ -13,16 +13,21 @@ cd "$(dirname "$(dirname "${SELF}")")"
 
 SITE_BASE="$(pwd)"
 
+(
 cd matrix-doc/scripts
 INCLUDES="${SITE_BASE}/includes/from_jekyll"
 python gendoc.py
 ./add-matrix-org-stylings.sh "${INCLUDES}"
+)
 
-mkdir -p "${SITE_BASE}/docs/"{api/client-server/json,howtos,spec}
-cp gen/specification.html  "${SITE_BASE}/docs/spec/index.html"
-cp gen/howtos.html "${SITE_BASE}/docs/howtos/client-server.html"
-for f in "${SITE_BASE}"/matrix-doc/api/client-server/*; do
+mkdir -p "docs/"{api/client-server/json,howtos,spec}
+cp matrix-doc/scripts/gen/specification.html docs/spec/index.html
+cp matrix-doc/scripts/gen/howtos.html docs/howtos/client-server.html
+for f in matrix-doc/api/client-server/*; do
   if [[ -f "${f}" ]]; then
-    cp "${f}" "${SITE_BASE}/docs/api/client-server/json/"
+    cp "${f}" "docs/api/client-server/json/"
   fi
 done
+
+echo "generating docs/spec/olm.html"
+rst2html olm/docs/olm.rst > docs/spec/olm.html

@@ -1,3 +1,6 @@
 [submodule "matrix-doc"]
 	path = matrix-doc
 	url = git@github.com:matrix-org/matrix-doc.git
+[submodule "olm"]
+	path = olm
+	url = https://matrix.org/git/olm
