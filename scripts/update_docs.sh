@@ -21,7 +21,7 @@ cd "$(dirname "$(dirname "${SELF}")")"
 
 SITE_BASE="$(pwd)"
 
-mkdir -p docs/{api/client-server/json,howtos,spec}
+mkdir -p docs/{api/client-server/json,guides/css,howtos,spec}
 
 (
 cd matrix-doc/scripts
@@ -32,6 +32,7 @@ python gendoc.py -c "${client_release_label}"
 
 cp matrix-doc/scripts/gen/* docs/spec/
 cp matrix-doc/scripts/gen/howtos.html docs/howtos/client-server.html
+cp jekyll/css/docs_overrides.css docs/guides/css/docs_overrides.css
 matrix-doc/scripts/dump-swagger.py "${SITE_BASE}/docs/api/client-server/json" "${client_release_label}"
 
 echo "generating docs/spec/olm.html"
