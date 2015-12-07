@@ -35,4 +35,4 @@ cp matrix-doc/scripts/gen/howtos.html docs/howtos/client-server.html
 matrix-doc/scripts/dump-swagger.py "${SITE_BASE}/docs/api/client-server/json" "${client_release_label}"
 
 echo "generating docs/spec/olm.html"
-rst2html olm/docs/olm.rst > docs/spec/olm.html
+rst2html.py olm/docs/olm.rst > docs/spec/olm.html
