@@ -30,7 +30,7 @@ python gendoc.py -c "${client_release_label}"
 ./add-matrix-org-stylings.sh "${INCLUDES}"
 )
 
-cp matrix-doc/scripts/gen/specification.html docs/spec/index.html
+cp matrix-doc/scripts/gen/* docs/spec/
 cp matrix-doc/scripts/gen/howtos.html docs/howtos/client-server.html
 matrix-doc/scripts/dump-swagger.py "${SITE_BASE}/docs/api/client-server/json" "${client_release_label}"
 
