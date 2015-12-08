@@ -110,8 +110,8 @@
       function addApiKeyAuthorization(){
         var key = encodeURIComponent($('#input_apiKey')[0].value);
         if(key && key.trim() != "") {
-            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
-            window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
+            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("access_token", key, "query");
+            window.swaggerUi.api.clientAuthorizations.add("access_token", apiKeyAuth);
             log("added key " + key);
         }
       }
@@ -178,6 +178,7 @@
 
 <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
 <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+	     Set your access token: <div class='input'><input placeholder="access_token" id="input_apiKey" name="apiKey" type="text"/></div>
 
             </div>
           </div>
