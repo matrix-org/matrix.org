@@ -2,6 +2,14 @@
 
 # Note that this file is world-readable unless someone plays some .htaccess hijinks
 
+# Optional first argument: client_release_label
+# e.g. update_docs.sh r0
+
+client_release_label="unstable"
+if [[ $# == 1 ]]; then
+  client_release_label="$1"
+fi
+
 echo >&2 "Make sure you have run \`git submodule update --remote\` to pull in the latest changes."
 
 SELF="${BASH_SOURCE[0]}"
@@ -13,21 +21,19 @@ cd "$(dirname "$(dirname "${SELF}")")"
 
 SITE_BASE="$(pwd)"
 
+mkdir -p docs/{api/client-server/json,guides/css,howtos,spec}
+
 (
 cd matrix-doc/scripts
 INCLUDES="${SITE_BASE}/includes/from_jekyll"
-python gendoc.py
+python gendoc.py -c "${client_release_label}"
 ./add-matrix-org-stylings.sh "${INCLUDES}"
 )
 
-mkdir -p "docs/"{api/client-server/json,howtos,spec}
-cp matrix-doc/scripts/gen/specification.html docs/spec/index.html
+cp matrix-doc/scripts/gen/* docs/spec/
 cp matrix-doc/scripts/gen/howtos.html docs/howtos/client-server.html
-for f in matrix-doc/api/client-server/*; do
-  if [[ -f "${f}" ]]; then
-    cp "${f}" "docs/api/client-server/json/"
-  fi
-done
+cp jekyll/css/docs_overrides.css docs/guides/css/docs_overrides.css
+matrix-doc/scripts/dump-swagger.py "${SITE_BASE}/docs/api/client-server/json" "${client_release_label}"
 
 echo "generating docs/spec/olm.html"
-rst2html olm/docs/olm.rst > docs/spec/olm.html
+rst2html.py olm/docs/olm.rst > docs/spec/olm.html
