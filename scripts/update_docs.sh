@@ -22,7 +22,8 @@ cd "$(dirname "$(dirname "${SELF}")")"
 SITE_BASE="$(pwd)"
 
 rm -rf docs/api/client-server
-mkdir -p docs/{api/client-server/json,guides/css,howtos,spec}
+mkdir -p docs/{api/client-server/json,guides/css,howtos}
+mkdir -p "docs/spec/${client_release_label}"
 
 INCLUDES="${SITE_BASE}/includes/from_jekyll"
 (
@@ -31,7 +32,7 @@ python gendoc.py -c "${client_release_label}"
 ./add-matrix-org-stylings.sh "${INCLUDES}" gen/*.html
 )
 
-cp matrix-doc/scripts/gen/* docs/spec/
+cp matrix-doc/scripts/gen/* "docs/spec/${client_release_label}"
 cp matrix-doc/scripts/gen/howtos.html docs/howtos/client-server.html
 cp jekyll/css/docs_overrides.css docs/guides/css/docs_overrides.css
 
