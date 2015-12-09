@@ -1,5 +1,5 @@
-a {
-    color: #666 !important;
+a.reference {
+    color: #666;
 }
 
 ul {
@@ -43,4 +43,3 @@ blockquote {
 a.anchor {
     top: -15px;
 }
-
