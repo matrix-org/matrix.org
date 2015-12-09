@@ -16,7 +16,7 @@
  
  
  
--  <link rel="stylesheet" href="//matrix.org/docs/guides/css/docs_overrides.css">
+-  <link rel="stylesheet" href="/docs/guides/css/docs_overrides.css">
 -
    <meta charset="UTF-8">
    <title>Swagger UI</title>
