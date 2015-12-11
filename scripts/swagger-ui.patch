@@ -37,7 +37,7 @@
 -            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
 -            window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
 +            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("access_token", key, "query");
-+            window.swaggerUi.api.clientAuthorizations.add("access_token", apiKeyAuth);
++            window.swaggerUi.api.clientAuthorizations.add("accessToken", apiKeyAuth);
              log("added key " + key);
          }
        }
