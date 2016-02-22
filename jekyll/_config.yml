@@ -8,6 +8,11 @@ url: "http://matrix.org" # the base hostname & protocol for your site
 twitter_username: matrixdotorg
 github_username:  matrix-org
 
+exclude:
+  - "*.png"
+  - "*.jpg"
+  - "*.gif"
+
 # Build settings
 markdown: kramdown
 
