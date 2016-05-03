@@ -2,9 +2,8 @@ docs/api/client-server/json
 docs/howtos/client-server.html
 docs/spec/index.html
 docs/spec/olm.html
-jekyll/_site/
-jekyll/_posts
-jekyll/.sass-cache/
+/jekyll/_site/
+/jekyll/.sass-cache/
 blog/
 ~*/
 /packages/debian/db/
@@ -13,8 +12,6 @@ blog/
 olddocs/
 console/download/cache/
 includes/from_jekyll
-jekyll/backupsite/
-jekyll/inc_back/
 packages/npm/
 video/
 tmp/
