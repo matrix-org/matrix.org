@@ -14,7 +14,8 @@ function _get_jenkins_stream_context() {
 function fetch_ios_build($stream) {
     $streams = array(
         'master' => 'MatrixConsoleiOS',
-        'develop' => 'MatrixConsoleiOSDevelop'
+        'develop' => 'MatrixConsoleiOSDevelop',
+        'endpoint' => 'MatrixConsoleiOSEndpoint'
     );
 
     $jenkinsjob = $streams[$stream];

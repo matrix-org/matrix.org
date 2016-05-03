@@ -9,6 +9,10 @@ if (isset($_GET['dev'])) {
     $stream = 'develop';
 }
 
+if (isset($_GET['endpoint'])) {
+    $stream = 'endpoint';
+}
+
 $buildInfo = fetch_ios_build($stream);
 extract($buildInfo);
 
