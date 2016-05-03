@@ -29,7 +29,7 @@ INCLUDES="${SITE_BASE}/includes/from_jekyll"
 (
 cd matrix-doc/scripts
 python gendoc.py -c "${client_release_label}"
-./add-matrix-org-stylings.sh "${INCLUDES}" gen/*.html
+./add-matrix-org-stylings.pl "${INCLUDES}" gen/*.html
 )
 
 ./jekyll/generate.sh
@@ -38,9 +38,8 @@ cp matrix-doc/scripts/gen/* "docs/spec/${client_release_label}"
 cp matrix-doc/scripts/gen/howtos.html docs/howtos/client-server.html
 
 cp -r swagger-ui/dist/* docs/api/client-server/
-matrix-doc/scripts/dump-swagger.py "${SITE_BASE}/docs/api/client-server/json" "${client_release_label}"
-sed -e 's#<body class="swagger-section">#<body>#g' -i docs/api/client-server/index.html
-./matrix-doc/scripts/add-matrix-org-stylings.sh "${INCLUDES}" docs/api/client-server/index.html
+matrix-doc/scripts/dump-swagger.py "${SITE_BASE}/docs/api/client-server/json/api-docs.json" "${client_release_label}"
+./matrix-doc/scripts/add-matrix-org-stylings.pl "${INCLUDES}" docs/api/client-server/index.html
 patch -p0 <scripts/swagger-ui.patch
 
 echo "generating docs/spec/olm.html"
