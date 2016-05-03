@@ -22,25 +22,20 @@ cd "$(dirname "$(dirname "${SELF}")")"
 SITE_BASE="$(pwd)"
 
 rm -rf docs/api/client-server
-mkdir -p docs/{api/client-server/json,guides/css,howtos}
+mkdir -p docs/{api/client-server/json,howtos}
 mkdir -p "docs/spec/${client_release_label}"
 
-INCLUDES="${SITE_BASE}/includes/from_jekyll"
+INCLUDES="${SITE_BASE}/includes/new"
 (
 cd matrix-doc/scripts
 python gendoc.py -c "${client_release_label}"
 ./add-matrix-org-stylings.sh "${INCLUDES}" gen/*.html
 )
 
-cd /home/matrixsite/matrix.org/jekyll
-./generate.sh
-cd _site/guides
-ln -s ../css
-cd ../../..
+./jekyll/generate.sh
 
 cp matrix-doc/scripts/gen/* "docs/spec/${client_release_label}"
 cp matrix-doc/scripts/gen/howtos.html docs/howtos/client-server.html
-cp jekyll/css/docs_overrides.css docs/css/docs_overrides.css
 
 cp -r swagger-ui/dist/* docs/api/client-server/
 matrix-doc/scripts/dump-swagger.py "${SITE_BASE}/docs/api/client-server/json" "${client_release_label}"
@@ -52,4 +47,3 @@ patch -p0 <scripts/swagger-js-654.patch
 
 echo "generating docs/spec/olm.html"
 rst2html.py olm/docs/olm.rst > docs/spec/olm.html
-
