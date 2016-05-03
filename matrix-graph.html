@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel='stylesheet' id='open-sans-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1' type='text/css' media='all' />
+<style type="text/css">
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    
+}
+
+#diagram {
+    width: 680px;
+    height: 480px;
+    float: left;
+}
+
+#legendBox {
+    float: left;
+    width: 400px;
+    height: 480px;
+    font-size: 18px;
+}
+
+.legend {
+    position: absolute; 
+    width: 400px;
+    padding-top: 100px;
+    opacity: 0;
+}
+
+.legend pre {
+    font-size: 12px;
+ }
+ 
+.legendNav {
+    position: relative;
+    text-align: center;
+    top: 480px;
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    left: 100px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.networkNode circle {
+    stroke-width: 1px;
+    stroke: #ccc;
+}
+
+#diagram text {
+    font-size: 14px;
+}
+
+.message circle {
+    fill: #fff;
+    stroke-width: 3px;
+}
+
+.message text {
+    font-weight: bold;
+}
+
+.networkLink {
+    stroke: #ccc;
+    stroke-width: 3px;
+}
+
+.graphNode circle {
+    fill: #fff;
+    stroke-width: 3px;
+}
+
+.graphLink, .danglingGraphLink {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3px;
+}
+
+</style>
+</head>
+<body>
+
+    <svg id="diagram"/>
+    <div id="legendBox">
+        <div class="legend" id="legend1">
+            Here are three Matrix homeservers, each with one client connected.
+            <br/><br/>
+            The clients are all participating in the same Matrix room, which
+            is synchronised across the three participating servers.
+        </div>
+        <div class="legend" id="legend2">
+            Alice sends a JSON message to a room on her homeserver.
+            <br/>
+<pre>
+curl -XPOST
+  -d '{"msgtype":"m.text", "body":"hello"}'
+  "https://matrix.alice.com/_matrix/client
+          /v2/rooms/ROOM_ID/send/m.room.message
+          ?access_token=ACCESS_TOKEN"
+
+{
+    "event_id": "$YUwRidLecu:alice.com"
+}
+</pre>            
+        </div>
+        <div class="legend" id="legend3">
+            Alice's homeserver adds the JSON to its graph of history, linking
+            it to the most recent unlinked object(s) in the graph.
+            <br/><br/>
+            The server then signs the JSON <b>including the signatures of the
+            parent objects</b> to calculate a tamper-resistent signature for
+            the history.
+        </div>
+        <div class="legend" id="legend4">
+            The server then sends the signed JSON over HTTPS to any other
+            servers which are participating in the room.
+            <br/><br/>
+            <pre>
+curl –XPOST –H 'Authorization: X-Matrix origin=alice.com,...' –d '{
+    "ts": 1413414391521,
+    "origin": "alice.com",
+    "destination": "bob.com",
+    "pdus": [{
+        "event_id": "$YUwRidLecu:alice.com",
+        "content": {
+            "body": "hello world",
+            "msgtype": "m.text"
+        },
+        ...
+        "pdu_type": "m.room.message",<b>
+        "signatures": {
+            "matrix.org": {
+                "ed25519:auto": "jZXTwAH/7EZ..."
+            }
+        },</b>
+        "sender": "@alice:alice.com"
+    }]
+}' https://matrix.bob.com:8448/_matrix/federation/v1/send/916d...
+            </pre>
+        </div>
+        <div class="legend" id="legend5">
+            The destination servers perform a series of checks on the message:
+            <ul>
+                <li>Validate the message signature to protect against tampering with history</li>
+                <li>Validate the HTTP request's auth signature to protect against identity spoofing</li>
+                <li>Validate whether Alice's historical permissions allow her to send this particular message</li>
+            </ul>
+            If these checks pass, the JSON is added to the destination servers' graphs.
+        </div>
+        <div class="legend" id="legend6">
+            Destination clients receive Alice's message with a long-lived GET request.
+            (Clients are free to implement more efficient transports than polling as desired).
+            <pre>
+curl "https://matrix.bob.com/_matrix/client
+      /v2/sync?access_token=ACCESS_TOKEN"
+
+{
+    "next_batch": "s72595_4483_1934",
+    "rooms": [{       
+        "room_id": "!KrLWMLDnZAyTapqLWW:alice.com",
+        "events": {
+            "batch": [
+                {
+                    "event_id": "$YUwRidLecu:alice.com",
+                    "type": "m.room.message",
+                    "content": {
+                        "body": "I am a fish",
+                        "msgtype": "m.text",
+                    },
+                    "origin_server_ts": 1417731086797,
+                    "sender": "@alice:alice.com"    
+                }
+            ],
+        },
+    }]
+}
+            </pre>            
+        </div>
+        <div class="legend" id="legend7">
+            Bob sends a response to Alice's message, and his server adds his
+            message into his copy of the room's history, linking it to the most
+            recent unlinked object in the graph - Alice's last message.
+        </div>
+        <div class="legend" id="legend8">
+            Meanwhile, Charlie also responds to Alice's message - racing with
+            Bob's message.
+            <br/><br/>
+            Alice, Bob and Charlie's homeservers all have different views of
+            the message history at this point - but Matrix is designed to
+            handle this inconsistency.
+        </div>
+        <div class="legend" id="legend9">
+            Bob's homeserver relays his message through to Alice and Charlie's
+            servers, who accept it.
+            <br/><br/>
+            At this point Alice and Bob are in sync, but Charlie's room
+            history has split - both messages 2 and 3 follow on from message 1.
+            This is not a problem; Charlie's client will be told about Bob's
+            message and can handle it however it chooses.
+        </div>
+        <div class="legend" id="legend10">
+            Charlie's homeserver relays his message through as well, at which
+            point all 3 servers have a consistent view of history again
+            (including the race between Bob and Charlie). All three clients
+            have seen all three messages, and the room history is now back in
+            sync across the participating servers.
+        </div>
+        <div class="legend" id="legend11">
+            Later on, Alice sends another message - her homeserver adds it to
+            her history, and links it to the most recent unlinked objects in
+            the graph: Bob and Charlie's messages.
+            <br/><br/>
+            This effectively merges the
+            split in history and asserts the integrity of the room (or at
+            least her view of it).
+        </div>
+        <div class="legend" id="legend12">
+            Alice's message is then relayed to the other participating
+            servers, which accept it and update their own history with the
+            same rules, ensuring eventual consistency and integrity of the
+            distributed room history.
+        </div>
+        <div class="legendNav" onClick="nextStage()">
+            Next
+        </div>     
+    </div>
+    
+<script src="d3/d3.min.js"></script>
+<script>
+
+"use strict";
+
+var width = 680,
+    height = 480;
+
+var color = {
+    'a': '#e77',
+    'b': '#7e7',
+    'c': '#77e',
+    'a1': '#faa',
+    'b1': '#afa',
+    'c1': '#aaf',
+}
+
+var plinthColor = {
+    'a': '#fdd',
+    'b': '#dfd',
+    'c': '#ddf',
+}
+
+var messageColor = {};
+
+var csDistance = 75;
+var ssDistance = 150;
+var cRadius = 10;
+var sRadius = 50;
+
+var network = {
+    nodes: [
+        {id: "a",  name: "matrix.alice.com",            type: "hs", // 0
+            fixed: true,
+            x: width/2 - .433*ssDistance,
+            y: height/2,
+        },
+        {id: "b",  name: "matrix.bob.com",              type: "hs", // 1
+            fixed: true,
+            x: width/2 + .433*ssDistance,
+            y: height/2 - .5*ssDistance,
+        },
+        {id: "c",  name: "matrix.charlie.com",          type: "hs", // 2
+            fixed: false,
+            x: width/2 + .433*ssDistance,
+            y: height/2 + .5*ssDistance
+        },
+        {id: "a1", name: "@alice:alice.com",     type: "client"}, // 3
+        {id: "b1", name: "@bob:bob.com",         type: "client"}, // 4
+        {id: "c1", name: "@charlie:charlie.com", type: "client"}, // 5
+    ],
+    links: [
+        // source's ID always needs to be lexicographically less than target's
+        {source: 0, target: 1},
+        {source: 1, target: 2},
+        {source: 0, target: 2},
+        {source: 0, target: 3, leaf: true},
+        {source: 1, target: 4, leaf: true},
+        {source: 2, target: 5, leaf: true},
+    ],
+};
+
+var graph;
+var forceSvg;
+
+var stepIndex;
+var pendingStages;
+var stageIndex;
+var animations;
+
+initNetwork();
+
+function initNetwork() {
+
+    // reset state
+    graph = {};
+
+    // the animation is broken down into steps, then substeps, and then stages (which happen if you pause)
+    stepIndex = 0;
+    pendingStages = [];
+    stageIndex = 0;
+    animations = 0;
+    
+    var force = d3.layout.force()
+        .charge(-2000)
+        .friction(0.75)
+        .size([width, height]);
+
+    var svg = d3.select("#diagram");    
+
+    force
+        .nodes(network.nodes)
+        .links(network.links)
+        .gravity(-0.0)
+        .linkDistance(function(d) { return (d.leaf ? csDistance : ssDistance) })
+        .start();
+
+    forceSvg = svg.append("g");
+
+    var link = forceSvg.selectAll(".networkLink")
+        .data(network.links)
+        .enter().append("path")
+            .attr("class", "networkLink")
+            .attr("id", function(d) { return "link_" + d.source.id + "_" + d.target.id });
+
+    var node = forceSvg.selectAll(".networkNode")
+        .data(network.nodes)
+        .enter().append("g")
+            .attr("class", "networkNode")
+            .each(createGraph)
+            .call(force.drag);
+        
+    node.append("circle")
+            .attr("r", function(d) { return (d.type == "hs" ? 0 : 20 ); } )
+            .style("fill", function(d) { return color[d.id] })
+
+    node.append("title")
+        .text(function(d) { return d.name; });
+
+    node.append("text")
+        .attr("dx", function(d) { return ((d.id == "a1" ? -1 : 1) * (cRadius + 14)); } )
+        .attr("dy", 0)
+        .style("fill", function(d) { return d3.rgb(color[d.id]).darker(1) })
+        .attr("text-anchor", function(d) { return (d.id == "a1" ? "end" : "") })
+        .text(function(d) { return d.type == "client" ? d.name : "" })
+            
+    force.on("tick", function(e) {
+        //console.log("main: " + e.alpha);
+    
+        // link.attr("x1", function(d) { return d.source.x; })
+        //     .attr("y1", function(d) { return d.source.y; })
+        //     .attr("x2", function(d) { return d.target.x; })
+        //     .attr("y2", function(d) { return d.target.y; });
+    
+        link.attr("d", function(d) {
+            return "M" + d.source.x + "," + d.source.y
+                + " " + d.target.x + "," + d.target.y;
+        });
+
+        // node.attr("cx", function(d) { return d.x; })
+        //     .attr("cy", function(d) { return d.y; });
+    
+        node.attr("transform", function(d) {
+            return "translate(" + d.x + "," + d.y + ")";
+        });
+    });
+}
+
+function translateAlong(path, backwards) {
+    var node = path.node();
+    return function(d, i, a) {
+        return function(t) {
+            t = backwards ? (1.0 - t) : t;
+            var l = node.getTotalLength();
+            var p = node.getPointAtLength(t * l);
+            return "translate(" + p.x + "," + p.y + ")";
+        };
+    };
+}
+
+function transition(message, path, backwards) {
+    return message.transition()
+        .duration(1000)
+        .attrTween("transform", translateAlong(path, backwards));
+}
+
+function sendMessage(source, target, msg, id, sid) {
+    console.log("sendMessage " + source + " " + target + " " + msg);
+    var backwards = false;
+    if (source > target) { // we're going backwards
+        backwards = true;
+        var tmp = source;
+        source = target;
+        target = tmp;
+    }
+    
+    // reuse previous message if this is a two-step
+    var message = forceSvg.select("#m_" + sid);
+        
+    if (message.size() == 0) {
+        message = forceSvg.append("g")
+            .attr("id", "m_" + sid)
+            .attr("class", "message");
+    
+        message.append("circle")
+            .attr("r", 5)
+            .style("stroke", messageColor[id]);
+    
+        message.append("text")
+            .attr("dx", "8px")
+            .attr("dy", "-8px")
+            .text(msg);    
+    }
+    
+    var path = forceSvg.select("#link_" + source + "_" + target);
+    animations++;
+    return transition(message, path, backwards);
+//      .remove();
+//      .each("end", function() { message.remove() });
+}
+
+var steps = [
+    [], // step 0
+    [
+        { sid: 1, id: "m1", type: "msg", source: "a1", target: "a", msg: "1", pause: true },
+    ],
+    [
+        { sid: 2, id: "m1", type: "msg", source: "a", target: "b", target2: "b1", msg: "1", pause: true },
+        { sid: 3, id: "m1", type: "msg", source: "a", target: "c", target2: "c1", msg: "1", pause: true },
+    ],
+    [
+        { sid: 4, id: "m2", type: "msg", source: "b1", target: "b", msg: "2", parents: ["m1"] },
+    ],
+    [
+        { sid: 5, id: "m3", type: "msg", source: "c1", target: "c", msg: "3", parents: ["m1"] },
+    ],
+    [
+        { sid: 6, id: "m2", type: "msg", source: "b", target: "a", target2: "a1", msg: "2", parents: ["m1"] },
+        { sid: 7, id: "m2", type: "msg", source: "b", target: "c", target2: "c1", msg: "2", parents: ["m1"] },
+    ],
+    [
+        { sid: 8, id: "m3", type: "msg", source: "c", target: "a", target2: "a1", msg: "3", parents: ["m1"] },
+        { sid: 9, id: "m3", type: "msg", source: "c", target: "b", target2: "b1", msg: "3", parents: ["m1"] },
+    ],
+    [
+        { sid: 10, id: "m4", type: "msg", source: "a1", target: "a", msg: "4", parents: ["m2","m3"] },
+    ],
+    [
+        { sid: 11, id: "m4", type: "msg", source: "a", target: "b", target2: "b1", msg: "4", parents: ["m2", "m3"] },
+        { sid: 12, id: "m4", type: "msg", source: "a", target: "c", target2: "c1", msg: "4", parents: ["m2", "m3"] },
+    ],
+];
+
+function createGraph(d) {
+    if (d.id.length != 1) return; // only put graphs in servers(!)
+    
+    var id = d.id;
+    
+    graph[id] = {
+        layout : {},
+        svg: {},
+        nodes: [],
+        links: [],
+        nodeMap: {},
+        nodeSel: {},
+        linkSel: {},
+    };
+
+    graph[id].layout = d3.layout.force()
+	    .size([sRadius * 2, sRadius * 2])
+	    .on("tick", function(e) {
+	        //console.log(id + ": " + e.alpha);
+            
+	        //updateGraph(id);
+            
+            graph[id].linkSel.attr("x1", function(d) { return d.source.x; })
+                             .attr("y1", function(d) { return d.source.y; })
+                             .attr("x2", function(d) { return d.target.x; })
+                             .attr("y2", function(d) { return d.target.y; });
+
+            graph[id].nodeSel.attr("transform",
+                function(d) { return "translate(" + d.x + "," + d.y +")"; });
+	    });
+	
+    graph[id].svg = d3.select(this).append("g")
+        .attr("transform", "translate(-" + sRadius + ", -" + sRadius + ")");
+        
+    var server = graph[id].svg.append("circle")
+        .attr("cx", sRadius)
+        .attr("cy", sRadius)
+        .attr("r",  sRadius)
+        .style("fill", plinthColor[id]);
+    
+    graph[id].svg.append("text")
+        .attr("dx", function(d) {
+            return d.id == "c" ? sRadius*2.5 :
+                   d.id == "b" ? sRadius/2 : sRadius;
+        })
+        .attr("dy", -10)
+        .style("fill", function(d) { return d3.rgb(color[d.id]).darker(1) })
+        .attr("text-anchor", "middle")
+        .text(d.name);
+
+    graph[id].linkSel = graph[id].svg.selectAll(".graphLink");
+    graph[id].nodeSel = graph[id].svg.selectAll(".graphNode");
+}
+
+function updateGraph(id) {
+    // Restart the force layout.
+    graph[id].layout
+        .nodes(graph[id].nodes)
+        .links(graph[id].links)
+        .linkDistance(35)
+        .charge(-100)
+        .start();
+
+    // cache for convenience
+    var linkSel = graph[id].linkSel;
+    var nodeSel = graph[id].nodeSel;
+    
+    // Update the links…
+    linkSel = linkSel.data(graph[id].links);
+
+    // Exit any old links.
+    linkSel.exit().remove();
+    
+    // Enter any new links.
+    var enter = linkSel.enter().insert("line", ".graphNode")
+        .attr("class", "graphLink")
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; })
+        .style("opacity", 1e-6)
+            .transition()
+            .duration(250)
+            .style("opacity", 1);    
+
+    // Update the nodes…
+    nodeSel = nodeSel.data(graph[id].nodes);
+
+    // Exit any old nodes.
+    nodeSel.exit().remove();
+
+    // Enter any new nodes.
+    var g = nodeSel.enter().append("svg:g")
+                   .attr("class", "graphNode")
+                   .attr("transform", 
+                        function(d) { return "translate(" + d.x + "," + d.y +")"; });
+                                                
+    g.style("opacity", 1e-6)
+        .transition()
+        .duration(250)
+        .style("opacity", 1);    
+
+    // special case to add a magical leading edge to the first node
+    if (nodeSel.size() == 1) {
+        g.append("line")
+        .attr("class", "danglingGraphLink")
+        .attr("x1", function(d) { return 0; })
+        .attr("y1", function(d) { return 0; })
+        .attr("x2", function(d) { return 0; })
+        .attr("y2", function(d) { return -19; })
+        .style("opacity", 1e-6)
+            .transition()
+            .duration(250)
+            .style("opacity", 1);            
+    }
+    
+    g.append("circle")
+        .attr("r", 5)
+        .style("stroke", function(d) { return messageColor[d.id]; } )
+        .call(graph[id].layout.drag);
+
+    g.append("text")
+        .attr("dx", "10px")
+        .attr("dy", ".35em")
+        .text(function(d) { return d.value; })
+        .style("fill-opacity", 1);
+
+    graph[id].linkSel = linkSel;
+    graph[id].nodeSel = nodeSel;
+}
+
+function updateState(graphId, nodeId, msg, parents) {
+    
+    // whenever we update state we don't want any other message bubbles hanging around
+    forceSvg.selectAll(".message").remove();
+    
+    var node = {
+        id: nodeId,
+        value: msg,
+    };
+    
+    if (nodeId == "m1") {
+        node.fixed = true;
+        node.x = sRadius + 0;
+        node.y = sRadius - 30;
+    }
+    if (nodeId == "m4") {
+        node.fixed = true;
+        node.x = sRadius + 0;
+        node.y = sRadius + 30;
+    }
+    
+    graph[graphId].nodes.push(node);
+    graph[graphId].nodeMap[nodeId] = node;
+    
+    if (parents) {
+        for (var i=0; i<parents.length; i++) {
+            graph[graphId].links.push({
+                source: graph[graphId].nodeMap[parents[i]],
+                target: node,
+            });
+        }
+    }
+    
+    updateGraph(graphId);
+}
+
+function performSubStep(subStep) {
+    // assign these all to local variables to capture them in the scope of this fn
+    var source =  subStep.source;
+    var target =  subStep.target;
+    var target2 = subStep.target2;
+    var msg =     subStep.msg;
+    var parents = subStep.parents;
+    var id =      subStep.id;
+    var pause =   subStep.pause;
+    var sid =     subStep.sid;
+    
+    if (!messageColor[id]) {
+        messageColor[id] = color[target];
+    }
+
+    function performUpdateState() {
+        updateState(target, id, msg, parents);
+        if (target2) { // 2nd hop
+            if (pause) {
+                pendingStages.push(performSecondHop);
+            }
+            else {
+                performSecondHop();
+            }
+        }
+    }
+    
+    function performSecondHop() {
+        console.log("2nd hop: " + target + " " + target2 + " " + msg);
+        sendMessage(target, target2, msg, id, sid).each("end", function() { animations--; });
+    }
+    
+    sendMessage(source, target, msg, id, sid)
+        .each("end", function () {
+            animations--;
+            if (pause) {
+                pendingStages.push(performUpdateState);
+            }
+            else {
+                performUpdateState();
+            }
+        });
+}
+
+function nextStage() {
+    if (animations) return;
+    
+    var dissolveTime = 500;
+    
+    d3.select("#legend" + stageIndex).style("opacity", 1)
+        .transition()
+        .duration(dissolveTime)
+        .style("opacity", 1e-6);    
+    d3.select("#legend" + (stageIndex + 1)).style("opacity", 1e-6)
+        .transition()
+        .duration(dissolveTime)
+        .style("opacity", 1);    
+    
+    if (pendingStages.length > 0) {
+        var c = pendingStages.length;
+        console.log("starting c=" + c);
+        for (i=0; i < c; i++) {
+            console.log("i=" + i + ", len=" + pendingStages.length);
+            pendingStages[0]();
+            pendingStages.shift();
+        }
+    }
+    else {
+        var step = steps[stepIndex];
+
+        if (steps[stepIndex]) {
+            // clean up messages from previous step
+            console.log("cleaning up messages");
+            forceSvg.selectAll(".message").remove();
+
+            for (var i=0; i < step.length; i++) {
+                performSubStep(step[i]);
+            }
+            
+            if (stepIndex == steps.length - 1) {
+                d3.select(".legendNav").html("Start over");
+            }
+        }
+        else {
+            d3.select(".legendNav").html("Next");            
+            forceSvg.selectAll("*").remove();
+            initNetwork();
+            return;
+        }
+        stepIndex++;
+    }
+    stageIndex++;
+}
+          
+</script>
+</body>
+</html>

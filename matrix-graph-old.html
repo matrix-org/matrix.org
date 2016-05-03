@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+.node circle {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+text {
+    font: 14px sans-serif;
+}
+
+.message circle {
+    fill: transparent;
+    stroke-width: 3px;
+}
+
+.message text {
+    font-weight: bold;
+}
+
+.link {
+  stroke: #ccc;
+  stroke-width: 3px;
+}
+
+.treeNode circle {
+  fill: #fff;
+  stroke-width: 3px;
+}
+
+.treeLink {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 3px;
+}
+
+</style>
+</head>
+<body>
+<script src="d3/d3.min.js"></script>
+<script>
+
+var width = 960,
+    height = 600;
+
+var force = d3.layout.force()
+    .charge(-2000)
+    .friction(0.75)
+    .size([width, height]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+    
+var color = {
+    'a': '#e77',
+    'b': '#7e7',
+    'c': '#77e',
+    'a1': '#faa',
+    'b1': '#afa',
+    'c1': '#aaf',
+}
+
+var plinthColor = {
+    'a': '#fdd',
+    'b': '#dfd',
+    'c': '#ddf',
+}
+
+var messageColor = {};
+
+var graph = {
+    nodes: [
+        {id: "a",  name: "alice.com",            type: "hs"},     // 0
+        {id: "b",  name: "bob.com",              type: "hs"},     // 1
+        {id: "c",  name: "charlie.com",          type: "hs"},     // 2
+        {id: "a1", name: "@alice:alice.com",     type: "client"}, // 3
+        {id: "b1", name: "@bob:bob.com",         type: "client"}, // 4
+        {id: "c1", name: "@charlie:charlie.com", type: "client"}, // 5
+    ],
+    links: [
+        // source's ID always needs to be lexicographically less than target's
+        {source: 0, target: 1},
+        {source: 1, target: 2},
+        {source: 0, target: 2},
+        {source: 0, target: 3, leaf: true},
+        {source: 1, target: 4, leaf: true},
+        {source: 2, target: 5, leaf: true},
+    ],
+};
+
+force
+    .nodes(graph.nodes)
+    .links(graph.links)
+    .gravity(0.1)
+    .linkDistance(function(d) { return (d.leaf ? 50 : 200) })
+    .start();
+
+var forceSvg = svg.append("g").attr("transform", "translate(" + 0 + "," + 50 +")");
+
+var link = forceSvg.selectAll(".link")
+    .data(graph.links)
+    .enter().append("path")
+        .attr("class", "link")
+        .attr("id", function(d) { return "link_" + d.source.id + "_" + d.target.id });
+
+var node = forceSvg.selectAll(".node")
+    .data(graph.nodes)
+    .enter().append("g")
+        .attr("class", "node")
+        .call(force.drag);
+        
+node.append("circle")
+        .attr("r", function(d) { return (d.type == "hs" ? 8 : 6 ); } )
+        .style("fill", function(d) { return color[d.id] })
+
+node.append("title")
+    .text(function(d) { return d.name; });
+
+node.append("text")
+    .attr("dx", "8px")
+    .attr("dy", "10px")
+    .text(function(d) { return d.name });
+            
+force.on("tick", function() {      
+    // link.attr("x1", function(d) { return d.source.x; })
+    //     .attr("y1", function(d) { return d.source.y; })
+    //     .attr("x2", function(d) { return d.target.x; })
+    //     .attr("y2", function(d) { return d.target.y; });
+    
+    link.attr("d", function(d) {
+      return "M" + d.source.x + "," + d.source.y
+          + " " + d.target.x + "," + d.target.y;
+    });
+
+    // node.attr("cx", function(d) { return d.x; })
+    //     .attr("cy", function(d) { return d.y; });
+    
+    node.attr("transform", function(d) { 
+        return "translate(" + d.x + "," + d.y + ")";
+    });
+});
+
+function translateAlong(path, backwards) {
+    var node = path.node();
+    return function(d, i, a) {
+        return function(t) {
+            t = backwards ? (1.0 - t) : t;
+            var l = node.getTotalLength();
+            var p = node.getPointAtLength(t * l);
+            return "translate(" + p.x + "," + p.y + ")";
+        };
+    };
+}
+
+function transition(message, path, backwards) {
+    return message.transition()
+        .duration(1000)
+        .attrTween("transform", translateAlong(path, backwards));
+}
+
+function sendMessage(source, target, msg, id) {
+    console.log("sendMessage " + source + " " + target + " " + msg);
+    var backwards = false;
+    if (source > target) { // we're going backwards
+        backwards = true;
+        var tmp = source;
+        source = target;
+        target = tmp;
+    }
+
+    var message = forceSvg.append("g")
+        .attr("class", "message");
+    
+    message.append("circle")
+        .attr("r", 5)
+        .style("stroke", messageColor[id]);
+    
+    message.append("text")
+        .attr("dx", "8px")
+        .attr("dy", "-8px")
+        .text(msg);    
+
+    var path = forceSvg.select("#link_" + source + "_" + target);
+    return transition(message, path, backwards)
+       .remove();
+//        .each("end", function() { message.remove() });
+}
+
+var treeData = {};
+var treeDataIndex = {};
+
+function updateState(node, id, msg, parent) {
+    
+    if (!treeData[node]) treeData[node] = {};
+    if (!treeDataIndex[node]) treeDataIndex[node] = {};
+    
+    var parentState;
+    var state = {
+        "name": id,
+        "value": msg,
+        "children": [],
+    };
+
+    if (parent) {
+        parentState = treeDataIndex[node][parent];
+        //console.log("found parentState: " + JSON.stringify(parentState));
+        state.parent = parentState.name;
+        if (!parentState.children) {
+            parentState.children = [state];
+        }
+        else {
+            parentState.children.push(state);
+        }
+    }
+    else {
+        state.x0 = height / 2;
+        state.y0 = 0;        
+        treeData[node] = state;
+    }
+    treeDataIndex[node][state.name] = state;
+    
+    if (treeData[node]) {
+        updateTree(treeData[node], node);
+    }
+}
+
+var stepIndex = 0;
+var steps = [
+    [
+        { id: "m1", type: "msg", source: "a1", target: "a", msg: "<alice> Hi all!" },
+    ],
+    [
+        { id: "m1", type: "msg", source: "a", target: "b", target2: "b1", msg: "<alice> Hi all!" },
+        { id: "m1", type: "msg", source: "a", target: "c", target2: "c1", msg: "<alice> Hi all!" },
+    ],
+    [
+        { id: "m2", type: "msg", source: "b1", target: "b", msg: "<bob> Hi Alice", parent: "m1" },
+    ],
+    [
+        { id: "m3", type: "msg", source: "c1", target: "c", msg: "<charlie> Hey Alice", parent: "m1" },
+    ],
+    [
+        { id: "m2", type: "msg", source: "b", target: "a", target2: "a1", msg: "<bob> Hi Alice", parent: "m1" },
+        { id: "m2", type: "msg", source: "b", target: "c", target2: "c1", msg: "<bob> Hi Alice", parent: "m1" },
+    ],
+    [
+        { id: "m3", type: "msg", source: "c", target: "a", target2: "a1", msg: "<charlie> Hey Alice", parent: "m1" },
+        { id: "m3", type: "msg", source: "c", target: "b", target2: "b1", msg: "<charlie> Hey Alice", parent: "m1" },
+    ],
+    [
+        { id: "m4", type: "msg", source: "a1", target: "a", msg: "<alice> what's up?", parent: "m3" },
+    ],
+    [
+        { id: "m4", type: "msg", source: "a", target: "b", target2: "b1", msg: "<alice> what's up?", parent: "m3" },
+        { id: "m4", type: "msg", source: "a", target: "c", target2: "c1", msg: "<alice> what's up?", parent: "m3" },
+    ],
+];
+
+var diagonal = d3.svg.diagonal()
+	.projection(function(d) { return [d.x, d.y]; });
+
+// FIXME: this should be OOP per tree
+var tree = {}
+var treeSvg = {};
+var treeNodeIndex = {};
+
+createTree("a", -50, 50);
+createTree("b", 275, 50);
+createTree("c", 600, 50);
+
+function createTree(name, x, y) {
+
+    tree[name] = d3.layout.tree()
+	    .size([300, 200]);
+	
+    treeSvg[name] = svg.append("g")
+        .attr("transform", "translate(" + x + "," + y +")");
+
+    treeSvg[name].append("rect")
+        .attr("x", 60)
+        .attr("y", -10)
+        .attr("width",  300)
+        .attr("height", 120)
+        .style("fill", plinthColor[name]);
+    
+    treeSvg[name].append("text")
+        .attr("transform", "translate(150, -30)")
+        .style("fill", color[name])
+        .text({a:"Alice", b:"Bob", c:"Charlie"}[name] + "'s event graph");
+
+    treeNodeIndex[name] = 0;    
+}
+
+function updateTree(root, name) {
+    
+    var duration = 500;
+    
+    // Compute the new tree layout.
+    var treeNodes = tree[name].nodes(root).reverse(),
+        treeLinks = tree[name].links(treeNodes);
+
+    // Normalize for fixed-depth.
+    treeNodes.forEach(function(d) { d.y = d.depth * 50; });
+
+    // Declare the nodes…
+    var treeNode = treeSvg[name].selectAll("g.treeNode")
+        .data(treeNodes, function(d) { return d.id || (d.id = ++treeNodeIndex[name]); });
+
+    // Enter the nodes.
+    var treeNodeEnter = treeNode.enter().append("g")
+        .attr("class", "treeNode");
+                
+    treeNodeEnter.append("circle")
+        .attr("r", "5px")
+        .attr("stroke", function(d) { return messageColor[d.name] });
+        
+    treeNodeEnter.append("text")
+        .attr("dx", "10px")
+        .attr("dy", ".35em")
+        .text(function(d) { return d.value; })
+        .style("fill-opacity", 1);
+        
+    // update transform applies every time
+    treeNode.attr("transform", function(d) { 
+        // console.log("updating update transform for " + d.name + ": " + d.x + ", " + d.y);
+        return "translate(" + d.x + "," + d.y + ")";
+    });    
+
+    // Declare the links…
+    var treeLink = treeSvg[name].selectAll("path.treeLink")
+        .data(treeLinks, function(d) { return d.target.id; });
+
+    // Enter the links.
+    treeLink.enter().insert("path", "g")
+        .attr("class", "treeLink")
+        .attr("d", function(d) {
+            var o = {x: root.x0, y: root.y0};
+            return diagonal({source: o, target: o});
+        });
+    
+    // update geom every time, not just on enter
+    treeLink.transition()
+        .duration(duration)
+        .attr("d", diagonal);
+        
+    // Stash the old positions for transition.
+    treeNodes.forEach(function(d) {
+      	d.x0 = d.x;
+      	d.y0 = d.y;
+    });        
+}
+
+function performSubStep(subStep) {
+    // assign these all to local variables to capture them in the scope of this fn
+    var source =  subStep.source;
+    var target =  subStep.target;
+    var target2 = subStep.target2;
+    var msg =     subStep.msg;
+    var parent =  subStep.parent;
+    var id =      subStep.id;
+    
+    if (!messageColor[id]) {
+        messageColor[id] = color[target];
+    }
+    
+    sendMessage(source, target, msg, id)
+        .each("end", function () {
+            updateState(target, id, msg, parent);
+            if (target2) { // 2nd hop
+                console.log("2nd hop: " + target + " " + target2 + " " + msg);
+                sendMessage(target, target2, msg, id);
+            }
+        });
+}
+     
+function keydown() {
+    if (d3.event.keyCode === 32) {
+        d3.event.preventDefault();    
+        var step = steps[stepIndex];
+        if (steps[stepIndex]) {
+            for (var i=0; i < step.length; i++) {
+                performSubStep(step[i]);
+            }
+        }
+        else {
+            console.log("finished");
+        }
+        stepIndex++;
+    }
+}
+
+d3.select(window)
+    .on('keydown', keydown);
+     
+</script>
+</body>
+</html>
