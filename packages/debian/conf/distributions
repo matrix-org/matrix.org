@@ -1,15 +1,53 @@
 Origin: matrix.org
-Suite: wheezy
 Codename: wheezy
 Architectures: amd64 i386 source
 Components: main
 SignWith: packages@matrix.org
-Contents: . .gz
+Tracking: minimal
 
 Origin: matrix.org
-Suite: jessie
+Suite: stable
 Codename: jessie
 Architectures: amd64 i386 source
 Components: main
 SignWith: packages@matrix.org
-Contents: . .gz
+Tracking: minimal
+
+Origin: matrix.org
+Suite: testing
+Codename: stretch
+Architectures: amd64 i386 source
+Components: main
+SignWith: packages@matrix.org
+Tracking: minimal
+
+Origin: matrix.org
+Suite: unstable
+Codename: sid
+Architectures: amd64 i386 source
+Components: main
+SignWith: packages@matrix.org
+Tracking: minimal
+
+Origin: matrix.org
+Suite: trusty
+Codename: trusty
+Architectures: amd64 i386 source
+Components: main
+SignWith: packages@matrix.org
+Tracking: minimal
+
+Origin: matrix.org
+Codename: vivid
+Architectures: amd64 i386 source
+Components: main
+SignWith: packages@matrix.org
+Tracking: minimal
+
+Origin: matrix.org
+Codename: wily
+Architectures: amd64 i386 source
+Components: main
+SignWith: packages@matrix.org
+Tracking: minimal
+
