@@ -1,27 +1,18 @@
 --- docs/api/client-server/index.html
 +++ docs/api/client-server/index.html
-@@ -15,6 +15,11 @@
- 
-   <link rel='stylesheet' id='divi-fonts-css'  href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,700,800&#038;subset=latin,latin-ext' type='text/css' media='all'>
-   <link rel='stylesheet' id='divi-style-css'  href='//matrix.org/blog/wp-content/themes/Divi-child/style.css?ver=2.2' type='text/css' media='all'>
+@@ -31,6 +31,11 @@
+ }
+ </style>
+   <link rel='stylesheet' id='divi-style-css'  href='http://matrix.org/blog/wp-content/themes/Divi-child/style.css?ver=2.2' type='text/css' media='all' />
 +  <style type="text/css">
 +  #main-content .container:before {
 +    display: none;
 +  }
 +  </style>
  
- 
- <script>
-@@ -29,8 +34,6 @@
- 
- 
- 
--  <link rel="stylesheet" href="/docs/guides/css/docs_overrides.css">
--
-   <meta charset="UTF-8">
-   <title>Swagger UI</title>
-   <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
-@@ -63,7 +66,7 @@
+   <link rel='stylesheet' id='et-shortcodes-css-css'  href='http://matrix.org/blog/wp-content/themes/Divi-child/epanel/shortcodes/css/shortcodes.css?ver=3.0' type='text/css' media='all' />
+   <link rel='stylesheet' id='et-shortcodes-responsive-css-css'  href='http://matrix.org/blog/wp-content/themes/Divi-child/epanel/shortcodes/css/shortcodes_responsive.css?ver=3.0' type='text/css' media='all' />
+@@ -127,7 +132,7 @@
        if (url && url.length > 1) {
          url = decodeURIComponent(url[1]);
        } else {
@@ -29,19 +20,8 @@
 +        url = "json/api-docs";
        }
  
-       // Pre load translate...
-@@ -107,8 +110,8 @@
-       function addApiKeyAuthorization(){
-         var key = encodeURIComponent($('#input_apiKey')[0].value);
-         if(key && key.trim() != "") {
--            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
--            window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
-+            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("access_token", key, "query");
-+            window.swaggerUi.api.clientAuthorizations.add("accessToken", apiKeyAuth);
-             log("added key " + key);
-         }
-       }
-@@ -132,7 +135,7 @@
+       hljs.configure({
+@@ -178,7 +183,7 @@
    </script>
  </head>
  
@@ -50,24 +30,21 @@
     <div id="page-wrapper">
      <div class="page-content" id="page-container">
        <header id="main-header" class="et_nav_text_color_dark" style="top: 0px;">
-@@ -173,19 +176,9 @@
+@@ -219,17 +224,6 @@
           <div class="wrapper" id="wrapper">
             <div class="document_foo" id="document">
  
 -<div id='header'>
 -  <div class="swagger-ui-wrap">
--    <a id="logo" href="http://swagger.io">swagger</a>
+-    <a id="logo" href="http://swagger.io"><img class="logo__img" alt="swagger" height="30" width="30" src="images/logo_small.png" /><span class="logo__title">swagger</span></a>
 -    <form id='api_selector'>
 -      <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
--      <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
--      <div class='input'><a id="explore" href="#" data-sw-translate>Explore</a></div>
+-      <div id='auth_container'></div>
+-      <div class='input'><a id="explore" class="header__btn" href="#" data-sw-translate>Explore</a></div>
 -    </form>
 -  </div>
 -</div>
 -
  <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
  <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
-+	     Set your access token: <div class='input'><input placeholder="access_token" id="input_apiKey" name="apiKey" type="text"/></div>
  
-             </div>
-           </div>

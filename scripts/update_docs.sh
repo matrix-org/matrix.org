@@ -42,8 +42,6 @@ matrix-doc/scripts/dump-swagger.py "${SITE_BASE}/docs/api/client-server/json" "$
 sed -e 's#<body class="swagger-section">#<body>#g' -i docs/api/client-server/index.html
 ./matrix-doc/scripts/add-matrix-org-stylings.sh "${INCLUDES}" docs/api/client-server/index.html
 patch -p0 <scripts/swagger-ui.patch
-# Cherry-pick https://github.com/swagger-api/swagger-js/pull/654 until it's released
-patch -p0 <scripts/swagger-js-654.patch
 
 echo "generating docs/spec/olm.html"
 rst2html.py olm/docs/olm.rst > docs/spec/olm.html
