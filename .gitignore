@@ -7,8 +7,9 @@ jekyll/_posts
 jekyll/.sass-cache/
 blog/
 ~*/
-packages/debian/pool/
-packages/debian/dists/
+/packages/debian/db/
+/packages/debian/pool/
+/packages/debian/dists/
 olddocs/
 console/download/cache/
 includes/from_jekyll
