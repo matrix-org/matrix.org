@@ -1,39 +1,39 @@
 --- docs/api/client-server/index.html
 +++ docs/api/client-server/index.html
-@@ -31,6 +31,11 @@
- }
- </style>
-   <link rel='stylesheet' id='divi-style-css'  href='http://matrix.org/blog/wp-content/themes/Divi-child/style.css?ver=2.2' type='text/css' media='all' />
+@@ -15,6 +15,11 @@
+
+   <link rel='stylesheet' id='divi-fonts-css'  href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,700,800&#038;subset=latin,latin-ext' type='text/css' media='all'>
+   <link rel='stylesheet' id='divi-style-css'  href='//matrix.org/blog/wp-content/themes/Divi-child/style.css?ver=2.2' type='text/css' media='all'>
 +  <style type="text/css">
 +  #main-content .container:before {
 +    display: none;
 +  }
 +  </style>
- 
-   <link rel='stylesheet' id='et-shortcodes-css-css'  href='http://matrix.org/blog/wp-content/themes/Divi-child/epanel/shortcodes/css/shortcodes.css?ver=3.0' type='text/css' media='all' />
-   <link rel='stylesheet' id='et-shortcodes-responsive-css-css'  href='http://matrix.org/blog/wp-content/themes/Divi-child/epanel/shortcodes/css/shortcodes_responsive.css?ver=3.0' type='text/css' media='all' />
-@@ -127,7 +132,7 @@
+
+
+ <script>
+@@ -66,7 +71,7 @@
        if (url && url.length > 1) {
          url = decodeURIComponent(url[1]);
        } else {
 -        url = "http://petstore.swagger.io/v2/swagger.json";
 +        url = "json/api-docs";
        }
- 
+
        hljs.configure({
-@@ -178,7 +183,7 @@
+@@ -117,7 +122,7 @@
    </script>
  </head>
- 
+
 -  <body class="blog et_fixed_nav et_cover_background et_right_sidebar">
 +  <body class="swagger-section blog et_fixed_nav et_cover_background et_right_sidebar">
     <div id="page-wrapper">
      <div class="page-content" id="page-container">
        <header id="main-header" class="et_nav_text_color_dark" style="top: 0px;">
-@@ -219,17 +224,6 @@
+@@ -158,17 +163,6 @@
           <div class="wrapper" id="wrapper">
             <div class="document_foo" id="document">
- 
+
 -<div id='header'>
 -  <div class="swagger-ui-wrap">
 -    <a id="logo" href="http://swagger.io"><img class="logo__img" alt="swagger" height="30" width="30" src="images/logo_small.png" /><span class="logo__title">swagger</span></a>
@@ -47,4 +47,3 @@
 -
  <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
  <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
- 

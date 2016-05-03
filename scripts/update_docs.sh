@@ -25,7 +25,7 @@ rm -rf docs/api/client-server
 mkdir -p docs/{api/client-server/json,howtos}
 mkdir -p "docs/spec/${client_release_label}"
 
-INCLUDES="${SITE_BASE}/includes/new"
+INCLUDES="${SITE_BASE}/includes/from_jekyll"
 (
 cd matrix-doc/scripts
 python gendoc.py -c "${client_release_label}"
