@@ -1,18 +1,6 @@
 --- docs/api/client-server/index.html
 +++ docs/api/client-server/index.html
-@@ -15,6 +15,11 @@
- 
-   <link rel='stylesheet' id='divi-fonts-css'  href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,700,800&#038;subset=latin,latin-ext' type='text/css' media='all'>
-   <link rel='stylesheet' id='divi-style-css'  href='//matrix.org/blog/wp-content/themes/Divi-child/style.css?ver=2.2' type='text/css' media='all'>
-+  <style type="text/css">
-+  #main-content .container:before {
-+    display: none;
-+  }
-+  </style>
- 
- 
- <script>
-@@ -66,7 +71,7 @@
+@@ -65,7 +65,7 @@
        if (url && url.length > 1) {
          url = decodeURIComponent(url[1]);
        } else {
@@ -21,7 +9,17 @@
        }
  
        hljs.configure({
-@@ -158,16 +163,5 @@
+@@ -114,6 +114,9 @@
+       }
+   });
+   </script>
++
++<link rel="stylesheet" href="/swagger.css">
++
+ </head>
+ 
+ <body class="swagger-section blog et_fixed_nav et_cover_background et_right_sidebar">  <div id="page-wrapper">
+@@ -156,18 +159,11 @@
           <div class="wrapper" id="wrapper">
             <div class="document_foo" id="document">
  
@@ -37,4 +35,10 @@
 -</div>
 -
  <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
++
++<form id="api_selector">
++    <div id="auth_container"></div>
++</form>
  <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+             </div>
+           </div>
