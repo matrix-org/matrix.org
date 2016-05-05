@@ -72,4 +72,21 @@ body {
     height: 100%;
 }
 
+.literal-block, li pre, div pre {
+    border: 1px solid #C6C9CB;
+    padding: 8px;
 
+}
+
+div blockquote, .simple {
+    list-style: circle outside none;
+    border-left: 0px;
+    font-style: normal;
+    letter-spacing: normal;
+}
+
+blockquote ul li {
+    margin-bottom: 5px;
+    color: #666;
+
+}
