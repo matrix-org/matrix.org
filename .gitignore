@@ -2,7 +2,11 @@
 /console/download/cache/
 /docs/api/client-server/
 /docs/howtos/client-server.html
+/docs/spec/appendices.html
+/docs/spec/index.html
+/docs/spec/intro.html
 /docs/spec/unstable/
+/docs/spec/*/unstable.html
 /docs/spec/olm.html
 /jekyll/_site/
 /jekyll/.sass-cache/
