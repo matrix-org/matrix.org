@@ -31,22 +31,24 @@ if [ -z "$CS_VER" ]; then
     exit 1
 fi
 
-(
-cd matrix-doc/scripts
-rm -r gen
-python gendoc.py -c $CS_VER
 
-# don't overwrite the existing C-S spec
-rm -r gen/client_server
+# update the spec, except for the C-S API
+SCRIPTS_DIR='./matrix-doc/scripts'
+GENDOC="$SCRIPTS_DIR/gendoc.py"
+TARGETS=$($GENDOC --list_targets | grep -v 'client_server')
 
-find gen -name '*.html' | xargs ./add-matrix-org-stylings.pl "${INCLUDES}"
-)
+rm -r "$SCRIPTS_DIR/gen"
+$GENDOC -c $CS_VER $(for t in $TARGETS; do echo -t $t; done)
+find "$SCRIPTS_DIR/gen" -name '*.html' |
+    xargs "$SCRIPTS_DIR/add-matrix-org-stylings.pl" "${INCLUDES}"
 
+# move the generated docs into docs/
 mkdir -p docs/howtos
-mv matrix-doc/scripts/gen/howtos.html docs/howtos/client-server.html
-cp -r matrix-doc/scripts/gen/* docs/spec
+mv "$SCRIPTS_DIR/gen/howtos.html" docs/howtos/client-server.html
+cp -r "$SCRIPTS_DIR"/gen/* docs/spec
 
 
+# now update other bits of the site
 ./jekyll/generate.sh
 
 echo "generating docs/spec/olm.html"
