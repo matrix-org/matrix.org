@@ -6,7 +6,7 @@
     "host": "localhost:8008", 
     "info": {
         "title": "Matrix Client-Server API", 
-        "version": "r0.1.0"
+        "version": "r0.2.0"
     }, 
     "paths": {
         "/_matrix/client/r0/account/3pid": {
@@ -124,6 +124,148 @@
                     }
                 ], 
                 "summary": "Adds contact information to the user's account.", 
+                "tags": [
+                    "User data"
+                ]
+            }
+        }, 
+        "/_matrix/client/r0/account/deactivate": {
+            "post": {
+                "description": "Deactivate the user's account, removing all ability for the user to\nlogin again.\n\nThis API endpoint uses the `User-Interactive Authentication API`_.\n\nAn access token should be submitted to this endpoint if the client has\nan active session.\n\nThe homeserver may change the flows available depending on whether a\nvalid access token is provided.", 
+                "parameters": [
+                    {
+                        "in": "body", 
+                        "name": "body", 
+                        "schema": {
+                            "properties": {
+                                "auth": {
+                                    "additionalProperties": {
+                                        "description": "Keys dependent on the login type", 
+                                        "type": "object"
+                                    }, 
+                                    "description": "Additional authentication information for the user-interactive authentication API.", 
+                                    "example": {
+                                        "example_credential": "verypoorsharedsecret", 
+                                        "session": "xxxxx", 
+                                        "type": "example.type.foo"
+                                    }, 
+                                    "properties": {
+                                        "session": {
+                                            "description": "The value of the session key given by the homeserver.", 
+                                            "type": "string"
+                                        }, 
+                                        "type": {
+                                            "description": "The login type that the client is attempting to complete.", 
+                                            "type": "string"
+                                        }
+                                    }, 
+                                    "required": [
+                                        "type"
+                                    ], 
+                                    "title": "Authentication Data", 
+                                    "type": "object"
+                                }
+                            }, 
+                            "type": "object"
+                        }
+                    }
+                ], 
+                "responses": {
+                    "200": {
+                        "description": "The account has been deactivated.", 
+                        "examples": {
+                            "application/json": "{}"
+                        }, 
+                        "schema": {
+                            "type": "object"
+                        }
+                    }, 
+                    "401": {
+                        "description": "The homeserver requires additional authentication information.", 
+                        "schema": {
+                            "description": "Used by servers to indicate that additional authentication information is required,", 
+                            "properties": {
+                                "completed": {
+                                    "description": "A list of the stages the client has completed successfully", 
+                                    "items": {
+                                        "example": "example.type.foo", 
+                                        "type": "string"
+                                    }, 
+                                    "type": "array"
+                                }, 
+                                "flows": {
+                                    "description": "A list of the login flows supported by the server for this API.", 
+                                    "items": {
+                                        "properties": {
+                                            "stages": {
+                                                "description": "The login type of each of the stages required to complete this\nauthentication flow", 
+                                                "items": {
+                                                    "example": "example.type.foo", 
+                                                    "type": "string"
+                                                }, 
+                                                "type": "array"
+                                            }
+                                        }, 
+                                        "required": [
+                                            "stages"
+                                        ], 
+                                        "type": "object"
+                                    }, 
+                                    "title": "Flow information", 
+                                    "type": "array"
+                                }, 
+                                "params": {
+                                    "additionalProperties": {
+                                        "type": "object"
+                                    }, 
+                                    "description": "Contains any information that the client will need to know in order to\nuse a given type of authentication. For each login type presented,\nthat type may be present as a key in this dictionary. For example, the\npublic part of an OAuth client ID could be given here.", 
+                                    "example": {
+                                        "example.type.baz": {
+                                            "example_key": "foobar"
+                                        }
+                                    }, 
+                                    "type": "object"
+                                }, 
+                                "session": {
+                                    "description": "This is a session identifier that the client must pass back to the home\nserver, if one is provided, in subsequent attempts to authenticate in the\nsame API call.", 
+                                    "example": "xxxxxxyz", 
+                                    "type": "string"
+                                }
+                            }, 
+                            "required": [
+                                "flows"
+                            ], 
+                            "title": "Authentication response", 
+                            "type": "object"
+                        }
+                    }, 
+                    "429": {
+                        "description": "This request was rate-limited.", 
+                        "schema": {
+                            "description": "A Matrix-level Error", 
+                            "properties": {
+                                "errcode": {
+                                    "description": "An error code.", 
+                                    "type": "string"
+                                }, 
+                                "error": {
+                                    "description": "A human-readable error message.", 
+                                    "type": "string"
+                                }
+                            }, 
+                            "required": [
+                                "errcode"
+                            ], 
+                            "type": "object"
+                        }
+                    }
+                }, 
+                "security": [
+                    {
+                        "accessToken": []
+                    }
+                ], 
+                "summary": "Deactivate a user's account.", 
                 "tags": [
                     "User data"
                 ]
@@ -533,6 +675,7 @@
                 ]
             }, 
             "get": {
+                "description": "Requests that the server resolve a room alias to a room ID.\n\nThe server will use the federation API to resolve the alias if the\ndomain part of the alias does not correspond to the server's own\ndomain.", 
                 "parameters": [
                     {
                         "description": "The room alias.", 
@@ -571,12 +714,6 @@
                         "description": "There is no mapped room ID for this room alias.", 
                         "examples": {
                             "application/json": "{\n  \"errcode\": \"M_NOT_FOUND\",\n  \"error\": \"Room ID !abnjk1jdasj98:capuchins.com not found.\"\n}"
-                        }
-                    }, 
-                    "409": {
-                        "description": "A room alias with that name already exists.", 
-                        "examples": {
-                            "application/json": "{\n  \"errcode\": \"M_UNKNOWN\",\n  \"error\": \"Room alias #monkeys:matrix.org already exists.\"\n}"
                         }
                     }
                 }, 
@@ -621,6 +758,12 @@
                         "schema": {
                             "type": "object"
                         }
+                    }, 
+                    "409": {
+                        "description": "A room alias with that name already exists.", 
+                        "examples": {
+                            "application/json": "{\n  \"errcode\": \"M_UNKNOWN\",\n  \"error\": \"Room alias #monkeys:matrix.org already exists.\"\n}"
+                        }
                     }
                 }, 
                 "security": [
@@ -637,7 +780,7 @@
         "/_matrix/client/r0/events": {
             "get": {
                 "deprecated": true, 
-                "description": "This will listen for new events and return them to the caller. This will\nblock until an event is received, or until the ``timeout`` is reached.", 
+                "description": "This will listen for new events and return them to the caller. This will\nblock until an event is received, or until the ``timeout`` is reached.\n\nThis endpoint was deprecated in r0 of this specification. Clients\nshould instead call the |/sync|_ API with a ``since`` parameter. See\nthe `migration guide\n<https://matrix.org/docs/guides/client-server-migrating-from-v1.html#deprecated-endpoints>`_.", 
                 "parameters": [
                     {
                         "description": "The token to stream from. This token is either from a previous\nrequest to this API or from the initial sync API.", 
@@ -765,7 +908,7 @@
         "/_matrix/client/r0/events/{eventId}": {
             "get": {
                 "deprecated": true, 
-                "description": "Get a single event based on ``event_id``. You must have permission to\nretrieve this event e.g. by being a member in the room for this event.", 
+                "description": "Get a single event based on ``event_id``. You must have permission to\nretrieve this event e.g. by being a member in the room for this event.\n\nThis endpoint was deprecated in r0 of this specification. Clients\nshould instead call the |/rooms/{roomId}/context/{eventId}|_ API.", 
                 "parameters": [
                     {
                         "description": "The event ID to get.", 
@@ -821,7 +964,7 @@
         "/_matrix/client/r0/initialSync": {
             "get": {
                 "deprecated": true, 
-                "description": "This returns the full state for this user, with an optional limit on the\nnumber of messages per room to return.", 
+                "description": "This returns the full state for this user, with an optional limit on the\nnumber of messages per room to return.\n\nThis endpoint was deprecated in r0 of this specification. Clients\nshould instead call the |/sync|_ API with no ``since`` parameter. See\nthe `migration guide\n<https://matrix.org/docs/guides/client-server-migrating-from-v1.html#deprecated-endpoints>`_.", 
                 "parameters": [
                     {
                         "description": "The maximum number of messages to return for each room.", 
@@ -994,7 +1137,7 @@
                                                                 "type": "object"
                                                             }
                                                         ], 
-                                                        "description": "Adjusts the membership state for a user in a room. It is preferable to use the membership APIs (``/rooms/<room id>/invite`` etc) when performing membership actions rather than adjusting the state directly as there are a restricted set of valid transformations. For example, user A cannot force user B to join a room, and trying to force this state change directly will fail. \n\nThe following membership states are specified:\n\n- ``invite`` - The user has been invited to join a room, but has not yet joined it. They may not participate in the room until they join.\n\n- ``join`` - The user has joined the room (possibly after accepting an invite), and may participate in it.\n\n- ``leave`` - The user was once joined to the room, but has since left (possibly by choice, or possibly by being kicked).\n\n- ``ban`` - The user has been banned from the room, and is no longer allowed to join it until they are un-banned from the room (by having their membership state set to a value other than ``ban``).\n\n- ``knock`` - This is a reserved word, which currently has no meaning.\n\nThe ``third_party_invite`` property will be set if this invite is an ``invite`` event and is the successor of an ``m.room.third_party_invite`` event, and absent otherwise.\n\nThis event may also include an ``invite_room_state`` key **outside the** ``content`` **key**. If present, this contains an array of ``StrippedState`` Events. These events provide information on a subset of state events such as the room name.", 
+                                                        "description": "Adjusts the membership state for a user in a room. It is preferable to use the membership APIs (``/rooms/<room id>/invite`` etc) when performing membership actions rather than adjusting the state directly as there are a restricted set of valid transformations. For example, user A cannot force user B to join a room, and trying to force this state change directly will fail.\n\nThe following membership states are specified:\n\n- ``invite`` - The user has been invited to join a room, but has not yet joined it. They may not participate in the room until they join.\n\n- ``join`` - The user has joined the room (possibly after accepting an invite), and may participate in it.\n\n- ``leave`` - The user was once joined to the room, but has since left (possibly by choice, or possibly by being kicked).\n\n- ``ban`` - The user has been banned from the room, and is no longer allowed to join it until they are un-banned from the room (by having their membership state set to a value other than ``ban``).\n\n- ``knock`` - This is a reserved word, which currently has no meaning.\n\nThe ``third_party_invite`` property will be set if this invite is an ``invite`` event and is the successor of an ``m.room.third_party_invite`` event, and absent otherwise.\n\nThis event may also include an ``invite_room_state`` key **outside the** ``content`` **key**. If present, this contains an array of ``StrippedState`` Events. These events provide information on a subset of state events such as the room name.", 
                                                         "properties": {
                                                             "content": {
                                                                 "properties": {
@@ -1609,7 +1752,7 @@
                     "200": {
                         "description": "A list of presence events for this list.", 
                         "examples": {
-                            "application/json": "[\n  {\n    \"content\": {\n      \"avatar_url\": \"mxc://matrix.org/AfwefuigfWEfhuiPP\",\n      \"displayname\": \"Alice Margatroid\",\n      \"last_active_ago\": 395,\n      \"presence\": \"offline\",\n      \"user_id\": \"@alice:matrix.org\"\n    },\n    \"type\": \"m.presence\"\n  },\n  {\n    \"content\": {\n      \"avatar_url\": \"mxc://matrix.org/FWEhuiwegfWEfhuiwf\",\n      \"displayname\": \"Marisa Kirisame\",\n      \"last_active_ago\": 16874,\n      \"presence\": \"online\",\n      \"user_id\": \"@marisa:matrix.org\"\n    },\n    \"type\": \"m.presence\"\n  }\n]"
+                            "application/json": "[\n  {\n    \"content\": {\n      \"last_active_ago\": 395,\n      \"presence\": \"offline\",\n      \"user_id\": \"@alice:matrix.org\"\n    },\n    \"type\": \"m.presence\"\n  },\n  {\n    \"content\": {\n      \"last_active_ago\": 16874,\n      \"presence\": \"online\",\n      \"user_id\": \"@marisa:matrix.org\",\n      \"currently_active\": true\n    },\n    \"type\": \"m.presence\"\n  }\n]"
                         }, 
                         "schema": {
                             "items": {
@@ -1746,6 +1889,10 @@
                         }, 
                         "schema": {
                             "properties": {
+                                "currently_active": {
+                                    "description": "Whether the user is currently active", 
+                                    "type": "boolean"
+                                }, 
                                 "last_active_ago": {
                                     "description": "The length of time in milliseconds since an action was performed\nby this user.", 
                                     "type": "integer"
@@ -1755,8 +1902,7 @@
                                     "enum": [
                                         "online", 
                                         "offline", 
-                                        "unavailable", 
-                                        "free_for_chat"
+                                        "unavailable"
                                     ], 
                                     "type": "string"
                                 }, 
@@ -1768,6 +1914,9 @@
                                     ]
                                 }
                             }, 
+                            "required": [
+                                "presence"
+                            ], 
                             "type": "object"
                         }
                     }, 
@@ -1804,8 +1953,7 @@
                                     "enum": [
                                         "online", 
                                         "offline", 
-                                        "unavailable", 
-                                        "free_for_chat"
+                                        "unavailable"
                                     ], 
                                     "type": "string"
                                 }, 
@@ -2782,7 +2930,7 @@
                         "x-example": "#spam:example.com"
                     }, 
                     {
-                        "description": "Use 'before' with a ``rule_id`` as its value to make the new rule the\nnext-most important rule with respect to the given rule.", 
+                        "description": "Use 'before' with a ``rule_id`` as its value to make the new rule the\nnext-most important rule with respect to the given user defined rule.\nIt is not possible to add a rule relative to a predefined server rule.", 
                         "in": "query", 
                         "name": "before", 
                         "required": false, 
@@ -2790,7 +2938,7 @@
                         "x-example": "someRuleId"
                     }, 
                     {
-                        "description": "This makes the new rule the next-less important rule relative to the\ngiven rule.", 
+                        "description": "This makes the new rule the next-less important rule relative to the\ngiven user defined rule. It is not possible to add a rule relative\nto a predefined server rule.", 
                         "in": "query", 
                         "name": "after", 
                         "required": false, 
@@ -3731,7 +3879,7 @@
         "/_matrix/client/r0/rooms/{roomId}/initialSync": {
             "get": {
                 "deprecated": true, 
-                "description": "Get a copy of the current state and the most recent messages in a room.", 
+                "description": "Get a copy of the current state and the most recent messages in a room.\n\nThis endpoint was deprecated in r0 of this specification. There is no\ndirect replacement; the relevant information is returned by the\n|/sync|_ API. See the `migration guide\n<https://matrix.org/docs/guides/client-server-migrating-from-v1.html#deprecated-endpoints>`_.", 
                 "parameters": [
                     {
                         "description": "The room to get the data.", 
@@ -4500,7 +4648,7 @@
                                                         "type": "object"
                                                     }
                                                 ], 
-                                                "description": "Adjusts the membership state for a user in a room. It is preferable to use the membership APIs (``/rooms/<room id>/invite`` etc) when performing membership actions rather than adjusting the state directly as there are a restricted set of valid transformations. For example, user A cannot force user B to join a room, and trying to force this state change directly will fail. \n\nThe following membership states are specified:\n\n- ``invite`` - The user has been invited to join a room, but has not yet joined it. They may not participate in the room until they join.\n\n- ``join`` - The user has joined the room (possibly after accepting an invite), and may participate in it.\n\n- ``leave`` - The user was once joined to the room, but has since left (possibly by choice, or possibly by being kicked).\n\n- ``ban`` - The user has been banned from the room, and is no longer allowed to join it until they are un-banned from the room (by having their membership state set to a value other than ``ban``).\n\n- ``knock`` - This is a reserved word, which currently has no meaning.\n\nThe ``third_party_invite`` property will be set if this invite is an ``invite`` event and is the successor of an ``m.room.third_party_invite`` event, and absent otherwise.\n\nThis event may also include an ``invite_room_state`` key **outside the** ``content`` **key**. If present, this contains an array of ``StrippedState`` Events. These events provide information on a subset of state events such as the room name.", 
+                                                "description": "Adjusts the membership state for a user in a room. It is preferable to use the membership APIs (``/rooms/<room id>/invite`` etc) when performing membership actions rather than adjusting the state directly as there are a restricted set of valid transformations. For example, user A cannot force user B to join a room, and trying to force this state change directly will fail.\n\nThe following membership states are specified:\n\n- ``invite`` - The user has been invited to join a room, but has not yet joined it. They may not participate in the room until they join.\n\n- ``join`` - The user has joined the room (possibly after accepting an invite), and may participate in it.\n\n- ``leave`` - The user was once joined to the room, but has since left (possibly by choice, or possibly by being kicked).\n\n- ``ban`` - The user has been banned from the room, and is no longer allowed to join it until they are un-banned from the room (by having their membership state set to a value other than ``ban``).\n\n- ``knock`` - This is a reserved word, which currently has no meaning.\n\nThe ``third_party_invite`` property will be set if this invite is an ``invite`` event and is the successor of an ``m.room.third_party_invite`` event, and absent otherwise.\n\nThis event may also include an ``invite_room_state`` key **outside the** ``content`` **key**. If present, this contains an array of ``StrippedState`` Events. These events provide information on a subset of state events such as the room name.", 
                                                 "properties": {
                                                     "content": {
                                                         "properties": {
@@ -4648,12 +4796,19 @@
                         "x-example": "!636q39766251:example.com"
                     }, 
                     {
-                        "description": "The token to start returning events from. This token can be obtained\nfrom the initial sync API.", 
+                        "description": "The token to start returning events from. This token can be obtained\nfrom a ``prev_batch`` token returned for each room by the sync API,\nor from a ``start`` or ``end`` token returned by a previous request\nto this endpoint.", 
                         "in": "query", 
                         "name": "from", 
                         "required": true, 
                         "type": "string", 
                         "x-example": "s345_678_333"
+                    }, 
+                    {
+                        "description": "The token to stop returning events at. This token can be obtained from\na ``prev_batch`` token returned for each room by the sync endpoint,\nor from a ``start`` or ``end`` token returned by a previous request to\nthis endpoint.", 
+                        "in": "query", 
+                        "name": "to", 
+                        "required": false, 
+                        "type": "string"
                     }, 
                     {
                         "description": "The direction to return events from.", 
@@ -4697,7 +4852,7 @@
                                     "type": "string"
                                 }, 
                                 "start": {
-                                    "description": "The token to start paginating from. If ``dir=b`` this will be\nthe token supplied in ``from``.", 
+                                    "description": "The token the pagination starts from. If ``dir=b`` this will be\nthe token supplied in ``from``.", 
                                     "type": "string"
                                 }
                             }, 
@@ -5481,7 +5636,7 @@
                                                     "type": "object"
                                                 }, 
                                                 "filter": {
-                                                    "description": "This takes a `filter <https://matrix.org/docs/spec/r0.1.0/client_server.html#filtering>`_.", 
+                                                    "description": "This takes a `filter <https://matrix.org/docs/spec/r0.2.0/client_server.html#filtering>`_.", 
                                                     "title": "Filter", 
                                                     "type": "object"
                                                 }, 
@@ -6503,7 +6658,7 @@
                                                                         "type": "boolean"
                                                                     }, 
                                                                     "prev_batch": {
-                                                                        "description": "If the batch was limited then this is a token that can be supplied to the server to retrieve earlier events", 
+                                                                        "description": "A token that can be supplied to to the ``from`` parameter of the rooms/{roomId}/messages endpoint", 
                                                                         "type": "string"
                                                                     }
                                                                 }, 
@@ -6686,7 +6841,7 @@
                                                                         "type": "boolean"
                                                                     }, 
                                                                     "prev_batch": {
-                                                                        "description": "If the batch was limited then this is a token that can be supplied to the server to retrieve earlier events", 
+                                                                        "description": "A token that can be supplied to to the ``from`` parameter of the rooms/{roomId}/messages endpoint", 
                                                                         "type": "string"
                                                                     }
                                                                 }, 
