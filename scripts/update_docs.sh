@@ -51,5 +51,6 @@ find "$SCRIPTS_DIR/gen" -name '*.html' |
 # now update other bits of the site
 ./jekyll/generate.sh
 
-echo "generating docs/spec/olm.html"
+echo "generating olm specs"
 rst2html.py olm/docs/olm.rst > docs/spec/olm.html
+rst2html.py olm/docs/megolm.rst > docs/spec/megolm.html
