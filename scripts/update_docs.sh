@@ -43,9 +43,9 @@ find "$SCRIPTS_DIR/gen" -name '*.html' |
     xargs "$SCRIPTS_DIR/add-matrix-org-stylings.pl" "${INCLUDES}"
 
 # move the generated docs into docs/
-mkdir -p docs/howtos
-mv "$SCRIPTS_DIR/gen/howtos.html" docs/howtos/client-server.html
-cp -r "$SCRIPTS_DIR"/gen/* docs/spec
+#mkdir -p docs/howtos
+#mv "$SCRIPTS_DIR/gen/howtos.html" docs/howtos/client-server.html
+#cp -r "$SCRIPTS_DIR"/gen/* docs/spec
 
 
 # now update other bits of the site

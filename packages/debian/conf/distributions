@@ -51,3 +51,16 @@ Components: main
 SignWith: packages@matrix.org
 Tracking: minimal
 
+Origin: matrix.org
+Codename: xenial
+Architectures: amd64 i386 source
+Components: main
+SignWith: packages@matrix.org
+Tracking: minimal
+
+Origin: matrix.org
+Codename: yakkety
+Architectures: amd64 i386 source
+Components: main
+SignWith: packages@matrix.org
+Tracking: minimal
