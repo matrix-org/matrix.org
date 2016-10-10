@@ -1,5 +1,5 @@
---- docs/api/client-server/index.html
-+++ docs/api/client-server/index.html
+--- docs/api/client-server/index.html	2016-10-10 02:15:12.786282852 +0100
++++ docs/api/client-server/index.html	2016-10-10 03:06:25.015583304 +0100
 @@ -65,7 +65,7 @@
        if (url && url.length > 1) {
          url = decodeURIComponent(url[1]);
@@ -9,9 +9,36 @@
        }
  
        hljs.configure({
-@@ -114,6 +114,9 @@
+@@ -92,6 +92,11 @@
+             });
+           }
+ 
++          if (!window.hs_url) {
++            window.hs_url = swaggerUi.api.scheme + "://" + swaggerUi.api.host;
++          }
++          setHsUrl(window.hs_url);
++
+           if(window.SwaggerTranslator) {
+             window.SwaggerTranslator.translate();
+           }
+@@ -112,8 +117,23 @@
+           console.log.apply(console, arguments);
+         }
        }
-   });
+-  });
++
++      $("#url_selector").submit(function(ev) {
++        ev.preventDefault();
++        window.hs_url = $("#serverurl").attr("value");
++        setHsUrl(window.hs_url);
++      });
++    });
++    function setHsUrl(hs_url) {
++      var r = hs_url.split("://", 2);
++      $("#serverurl").attr("value", hs_url);
++      window.swaggerUi.api.setSchemes([r[0]]);
++      window.swaggerUi.api.setHost(r[1]);
++    }
    </script>
 +
 +<link rel="stylesheet" href="/swagger.css">
@@ -19,7 +46,7 @@
  </head>
  
  <body class="swagger-section blog et_fixed_nav et_cover_background et_right_sidebar">  <div id="page-wrapper">
-@@ -156,18 +159,11 @@
+@@ -156,18 +176,16 @@
           <div class="wrapper" id="wrapper">
             <div class="document_foo" id="document">
  
@@ -38,6 +65,11 @@
 +
 +<form id="api_selector">
 +    <div id="auth_container"></div>
++</form>
++<form id="url_selector" style="float: right; clear: right; margin: 10px 5px;">
++    <label for="serverurl">Home server URL:</label>
++    <input type="text" id="serverurl"/>
++    <input type="submit" value="Update"/>
 +</form>
  <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
              </div>
