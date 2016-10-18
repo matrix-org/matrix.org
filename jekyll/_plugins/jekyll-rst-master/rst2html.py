@@ -1,19 +1,11 @@
-#!/usr/bin/env python
+#!/home/rav/work/matrix-doc/env/bin/python2
 
-# :Author: David Goodger, the Pygments team, Guenter Milde
-# :Date: $Date: $
-# :Copyright: This module has been placed in the public domain.
-
-# This is a merge of the `Docutils`_ `rst2html` front end with an extension
-# suggestion taken from the `Pygments`_ documentation, reworked specifically
-# for `Octopress`_.
-#
-# .. _Pygments: http://pygments.org/
-# .. _Docutils: http://docutils.sourceforge.net/
-# .. _Octopress: http://octopress.org/
+# $Id: rst2html.py 4564 2006-05-21 20:44:42Z wiemann $
+# Author: David Goodger <goodger@python.org>
+# Copyright: This module has been placed in the public domain.
 
 """
-A front end to docutils, producing HTML with syntax colouring using pygments
+A minimal front end to the Docutils Publisher, producing HTML.
 """
 
 try:
@@ -22,18 +14,10 @@ try:
 except:
     pass
 
-from transform import transform
-from docutils.writers.html4css1 import Writer
-from docutils.core import default_description
-from directives import Pygments
+from docutils.core import publish_cmdline, default_description
+
 
 description = ('Generates (X)HTML documents from standalone reStructuredText '
-               'sources. Uses `pygments` to colorize the content of'
-               '"code-block" directives. Needs an adapted stylesheet' 
-               + default_description)
+               'sources.  ' + default_description)
 
-def main():
-    return transform(writer=Writer(), part='html_body')
-
-if __name__ == '__main__':
-    print(main())
+publish_cmdline(writer_name='html', description=description)
