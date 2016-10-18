@@ -2,6 +2,9 @@
 
 set -e
 
+# tell jekyll to parse things as utf-8
+export LANG="en_GB.UTF-8"
+
 cd `dirname $0`
 jekyll build
 python add_anchors.py _site/guides/faq.html >tmp && mv tmp _site/guides/faq.html
