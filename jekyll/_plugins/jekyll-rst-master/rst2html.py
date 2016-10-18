@@ -36,4 +36,7 @@ def main():
     return transform(writer=Writer(), part='html_body')
 
 if __name__ == '__main__':
-    print(main())
+    # rav 2016/10/18: encode the output as UTF-8, otherwise python will grumble
+    # when writing to a pipe, because it doesn't know how to encode unicode
+    # strings.
+    print(main().encode('utf-8'))
