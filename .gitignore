@@ -8,6 +8,7 @@
 /docs/spec/intro.html
 /docs/spec/megolm.html
 /docs/spec/olm.html
+/docs/spec/olm_signing.html
 /docs/spec/unstable/
 /docs/spec/*/unstable.html
 /jekyll/_site/
