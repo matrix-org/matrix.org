@@ -54,4 +54,4 @@ find "$SCRIPTS_DIR/gen" -name '*.html' |
 echo "generating olm specs"
 rst2html.py olm/docs/olm.rst > docs/spec/olm.html
 rst2html.py olm/docs/megolm.rst > docs/spec/megolm.html
-rst2html.py olm/docs/signing.rst > docs/spec/olm_signing.html
+rst2html.py olm/docs/signing.rst > docs/olm_signing.html
