@@ -1,7 +1,6 @@
 /.matrix-doc
 /console/download/cache/
-/docs/api/client-server/*
-!/docs/api/client-server/json
+/docs/api/client-server
 /docs/howtos/client-server.html
 /docs/spec/appendices.html
 /docs/spec/index.html

@@ -42,12 +42,7 @@ cp -r .matrix-doc/scripts/gen/client_server "docs/spec"
 ln -sfT "${client_release_label}.html" "docs/spec/client_server/latest.html"
 
 # generate the swagger doc
-# TODO: version this
-rm -fr docs/api/client-server
-mkdir -p docs/api/client-server/json
-cp -r swagger-ui/dist/* docs/api/client-server/
-./.matrix-doc/scripts/add-matrix-org-stylings.pl "${INCLUDES}" docs/api/client-server/index.html
-patch -p0 <scripts/swagger-ui.patch
-./.matrix-doc/scripts/dump-swagger.py "${SITE_BASE}/docs/api/client-server/json/api-docs.json" "${client_release_label}"
+./.matrix-doc/scripts/dump-swagger.py "${SITE_BASE}/docs/spec/client_server/${client_release_label}.json" "${client_release_label}"
+ln -sfT "${client_release_label}.json" "docs/spec/client_server/latest.json"
 
 echo "Client-server API spec updated successfully"
