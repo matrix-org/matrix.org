@@ -1,6 +1,14 @@
---- docs/api/client-server/index.html	2016-10-10 02:15:12.786282852 +0100
-+++ docs/api/client-server/index.html	2016-10-10 03:06:25.015583304 +0100
-@@ -65,7 +65,7 @@
+--- docs/api/client-server/index.html	2016-11-21 14:57:52.257930426 +0000
++++ docs/api/client-server/index.html	2016-11-21 14:57:13.445661736 +0000
+@@ -52,6 +52,7 @@
+   <script src='lib/highlight.9.1.0.pack.js' type='text/javascript'></script>
+   <script src='lib/highlight.9.1.0.pack_extended.js' type='text/javascript'></script>
+   <script src='lib/jsoneditor.min.js' type='text/javascript'></script>
++  <script src='lib/js-yaml.min.js' type='text/javascript'></script>
+   <script src='lib/marked.js' type='text/javascript'></script>
+   <script src='lib/swagger-oauth.js' type='text/javascript'></script>
+ 
+@@ -66,7 +67,7 @@
        if (url && url.length > 1) {
          url = decodeURIComponent(url[1]);
        } else {
@@ -9,7 +17,7 @@
        }
  
        hljs.configure({
-@@ -92,6 +92,11 @@
+@@ -93,6 +94,11 @@
              });
            }
  
@@ -21,7 +29,7 @@
            if(window.SwaggerTranslator) {
              window.SwaggerTranslator.translate();
            }
-@@ -112,8 +117,23 @@
+@@ -113,8 +119,23 @@
            console.log.apply(console, arguments);
          }
        }
@@ -46,7 +54,7 @@
  </head>
  
  <body class="swagger-section blog et_fixed_nav et_cover_background et_right_sidebar">  <div id="page-wrapper">
-@@ -156,18 +176,16 @@
+@@ -157,18 +178,16 @@
           <div class="wrapper" id="wrapper">
             <div class="document_foo" id="document">
  
