@@ -12,6 +12,7 @@ Architectures: amd64 i386 source
 Components: main
 SignWith: packages@matrix.org
 Tracking: minimal
+Update: jessie-backports
 
 Origin: matrix.org
 Suite: testing
