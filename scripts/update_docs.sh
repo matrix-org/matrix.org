@@ -44,12 +44,10 @@ find "$SCRIPTS_DIR/gen" -name '*.html' |
     xargs "$SCRIPTS_DIR/add-matrix-org-stylings.pl" "${INCLUDES}"
 
 # move the generated docs into docs/
-#mkdir -p docs/howtos
-#mv "$SCRIPTS_DIR/gen/howtos.html" docs/howtos/client-server.html
-#cp -r "$SCRIPTS_DIR"/gen/* docs/spec
+cp -r "$SCRIPTS_DIR"/gen/* docs/spec
 
-
-# now update other bits of the site
+# now update other bits of the site (guides, projects, etc).
+# This will generte stuff under ./jekyll/_site, which is symlinked into ./docs/.
 ./jekyll/generate.sh
 
 echo "generating olm specs"
