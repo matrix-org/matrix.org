@@ -50,11 +50,6 @@ cp -r "$SCRIPTS_DIR"/gen/* docs/spec
 # This will generte stuff under ./jekyll/_site, which is symlinked into ./docs/.
 ./jekyll/generate.sh
 
-echo "generating olm specs"
-rst2html.py olm/docs/olm.rst > docs/spec/olm.html
-rst2html.py olm/docs/megolm.rst > docs/spec/megolm.html
-rst2html.py olm/docs/signing.rst > docs/olm_signing.html
-
 echo "updating API docs UI"
 rm -fr docs/api/client-server
 mkdir docs/api/client-server docs/api/client-server/json
