@@ -1,9 +1,0 @@
-{
-  "type": "m.direct",
-  "content": {
-    "@bob:example.com": [
-        "!abcdefgh:example.com",
-        "!hgfedcba:example.com"
-      ]
-  }
-}
