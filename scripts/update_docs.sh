@@ -21,39 +21,35 @@ SELF="${SELF/\/.\///}"
 cd "$(dirname "$(dirname "${SELF}")")"
 
 SITE_BASE="$(pwd)"
-INCLUDES="${SITE_BASE}/includes/from_jekyll"
 
-# figure out the most recent version of the C-S API
-CS_VER=$(perl -ne 'if(/topic-title.*Version: (r\d+\.\d+.\d+)/) {print "$1\n"}' \
-            docs/spec/client_server/latest.html)
+# grab the latest matrix-docs build from jenkins
+rm -f assets.tar.gz
+wget https://matrix.org/jenkins/job/Docs/2099/artifact/assets.tar.gz
 
-if [ -z "$CS_VER" ]; then
-    echo >&2 "Unable to find version number in client-server spec"
-    exit 1
-fi
+# unpack the assets tarball
+tar -xzf assets.tar.gz
 
+# copy the swagger UI into place
+rm -fr unstyled_docs/api/client-server
+mkdir -p unstyled_docs/api/client-server/json
+cp -r swagger-ui/dist/* unstyled_docs/api/client-server/
+(cd unstyled_docs && patch -p0) <scripts/swagger-ui.patch
 
-# update the spec, except for the C-S API
-SCRIPTS_DIR='./matrix-doc/scripts'
-GENDOC="$SCRIPTS_DIR/gendoc.py"
-TARGETS=$($GENDOC --list_targets | grep -v 'client_server')
+# and the unstable spec docs
+cp -ar assets/spec unstyled_docs
+cp -r unstyled_docs/spec/client_server/latest.json unstyled_docs/api/client-server/json/api-docs.json
 
-rm -r "$SCRIPTS_DIR/gen"
-$GENDOC -c $CS_VER $(for t in $TARGETS; do echo -t $t; done)
-find "$SCRIPTS_DIR/gen" -name '*.html' |
-    xargs "$SCRIPTS_DIR/add-matrix-org-stylings.pl" "${INCLUDES}"
+# copy the unstyled docs and add the jekyll styling
+rm -rf docs
+cp -r unstyled_docs docs
+find "docs" -name '*.html' |
+    xargs "./scripts/add-matrix-org-stylings.pl" "./jekyll/_includes"
 
-# move the generated docs into docs/
-cp -r "$SCRIPTS_DIR"/gen/* docs/spec
-
-# now update other bits of the site (guides, projects, etc).
-# This will generte stuff under ./jekyll/_site, which is symlinked into ./docs/.
+# run jekyll to generate the rest of the site.
+# This will generate stuff under ./jekyll/_site.
+cp -Tr assets/jekyll-posts jekyll/_posts
 ./jekyll/generate.sh
 
-echo "updating API docs UI"
-rm -fr docs/api/client-server
-mkdir docs/api/client-server docs/api/client-server/json
-cp -r swagger-ui/dist/* docs/api/client-server/
-./.matrix-doc/scripts/add-matrix-org-stylings.pl "${INCLUDES}" docs/api/client-server/index.html
-patch -p0 <scripts/swagger-ui.patch
-ln -sT ../../../spec/client_server/latest.json docs/api/client-server/json/api-docs.json
+# ... and copy it into place
+cp -r jekyll/_site/{css,guides,howtos,projects} docs
+
