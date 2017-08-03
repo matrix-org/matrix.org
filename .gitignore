@@ -1,6 +1,7 @@
 /.matrix-doc
 /assets.tar.gz
 /console/download/cache/
+/content/docs
 /unstyled_docs/api
 /unstyled_docs/howtos/client-server.html
 /unstyled_docs/spec/appendices.html

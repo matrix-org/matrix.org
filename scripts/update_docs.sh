@@ -11,8 +11,6 @@
 
 # Note that this file is world-readable unless someone plays some .htaccess hijinks
 
-echo >&2 "Make sure you have run \`git submodule update --remote\` to pull in the latest changes."
-
 SELF="${BASH_SOURCE[0]}"
 if [[ "${SELF}" != /* ]]; then
   SELF="$(pwd)/${SELF}"
@@ -40,9 +38,9 @@ cp -ar assets/spec unstyled_docs
 cp -r unstyled_docs/spec/client_server/latest.json unstyled_docs/api/client-server/json/api-docs.json
 
 # copy the unstyled docs and add the jekyll styling
-rm -rf docs
-cp -r unstyled_docs docs
-find "docs" -name '*.html' |
+rm -rf content/docs
+cp -r unstyled_docs content/docs
+find "content/docs" -name '*.html' |
     xargs "./scripts/add-matrix-org-stylings.pl" "./jekyll/_includes"
 
 # run jekyll to generate the rest of the site.
@@ -51,5 +49,5 @@ cp -Tr assets/jekyll-posts jekyll/_posts
 ./jekyll/generate.sh
 
 # ... and copy it into place
-cp -r jekyll/_site/{css,guides,howtos,projects} docs
+cp -r jekyll/_site/{css,guides,howtos,projects} content/docs
 
