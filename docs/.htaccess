@@ -1,0 +1,19 @@
+RewriteBase /docs
+
+RewriteRule ^$ guides/ [R,L]
+
+# we used to keep the unstable spec under /docs/spec/unstable. Redirect the
+# pages to their new home.
+RewriteRule ^spec/unstable/appendices.html$ spec/appendices.html [R,L]
+RewriteRule ^spec/unstable/application_service.html$ spec/application_service/unstable.html [R,L]
+RewriteRule ^spec/unstable/client_server.html$ spec/client_server/unstable.html [R,L]
+RewriteRule ^spec/unstable/howtos.html$ howtos [R,L]
+RewriteRule ^spec/unstable/identity_service.html$ spec/identity_service/unstable.html [R,L]
+RewriteRule ^spec/unstable/index.html$ spec/index.html [R,L]
+RewriteRule ^spec/unstable/push_gateway.html$ spec/push_gateway/unstable.html [R,L]
+RewriteRule ^spec/unstable/server_server.html$ spec/server_server/unstable.html [R,L]
+
+# olm redirects
+Redirect olm_signing.html https://matrix.org/git/olm/about/docs/signing.rst
+Redirect spec/olm.html https://matrix.org/git/olm/about/docs/olm.rst
+Redirect spec/megolm.html https://matrix.org/git/olm/about/docs/megolm.rst
