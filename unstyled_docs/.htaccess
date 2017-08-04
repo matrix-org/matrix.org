@@ -14,6 +14,6 @@ RewriteRule ^spec/unstable/push_gateway.html$ spec/push_gateway/unstable.html [R
 RewriteRule ^spec/unstable/server_server.html$ spec/server_server/unstable.html [R,L]
 
 # olm redirects
-Redirect olm_signing.html https://matrix.org/git/olm/about/docs/signing.rst
-Redirect spec/olm.html https://matrix.org/git/olm/about/docs/olm.rst
-Redirect spec/megolm.html https://matrix.org/git/olm/about/docs/megolm.rst
+Redirect /docs/olm_signing.html https://matrix.org/git/olm/about/docs/signing.rst
+Redirect /docs/spec/olm.html https://matrix.org/git/olm/about/docs/olm.rst
+Redirect /docs/spec/megolm.html https://matrix.org/git/olm/about/docs/megolm.rst
