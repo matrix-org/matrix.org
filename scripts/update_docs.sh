@@ -35,7 +35,7 @@ cp -r swagger-ui/dist/* unstyled_docs/api/client-server/
 
 # and the unstable spec docs
 cp -ar assets/spec unstyled_docs
-cp -r unstyled_docs/spec/client_server/latest.json unstyled_docs/api/client-server/json/api-docs.json
+ln -s ../../../spec/client_server/latest.json unstyled_docs/api/client-server/json/api-docs.json
 
 # copy the unstyled docs and add the jekyll styling
 rm -rf content/docs
