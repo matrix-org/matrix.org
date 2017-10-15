@@ -13,6 +13,9 @@ RewriteRule ^spec/unstable/index.html$ spec/index.html [R,L]
 RewriteRule ^spec/unstable/push_gateway.html$ spec/push_gateway/unstable.html [R,L]
 RewriteRule ^spec/unstable/server_server.html$ spec/server_server/unstable.html [R,L]
 
+# there also exist some broken links to the r0.2.0 spec.
+RewriteRule ^spec/r0.2.0/client_server.html$ spec/client_server/r0.2.0.html [R,L]
+
 # olm redirects
 Redirect /docs/olm_signing.html https://matrix.org/git/olm/about/docs/signing.rst
 Redirect /docs/spec/olm.html https://matrix.org/git/olm/about/docs/olm.rst
