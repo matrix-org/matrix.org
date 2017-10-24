@@ -3,8 +3,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.13.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
 <title>Matrix Specification</title>
+<style type="text/css">
+
+pre.code .comment, code .comment { color: green }
+pre.code .keyword, code .keyword { color: darkred; font-weight: bold }
+pre.code .name.builtin, code .name.builtin { color: darkred; font-weight: bold }
+pre.code .name.tag, code .name.tag { color: darkgreen }
+pre.code .literal, code .literal { color: darkblue }
+pre.code .literal.number, code .literal.number { color: blue }
+
+
+/* HTTP Methods have class "name function" */
+pre.code.http .name.function,  code.http .name.function { color: black; font-weight: bold }
+/* HTTP Paths have class "name namespace" */
+pre.code.http .name.namespace, code.http .name.namespace { color: darkgreen }
+/* HTTP "HTTP" strings have class "keyword reserved" */
+pre.code.http .keyword.reserved, code.http .keyword.reserved { color: black; font-weight: bold }
+/* HTTP Header names have class "name attribute" */
+pre.code.http .name.attribute, code.http .name.attribute { color: black; font-weight: bold }
+
+</style>
 <style type="text/css">
 
 /*
@@ -521,26 +541,6 @@ span.eqno {
 </style>
 <style type="text/css">
 
-pre.code .comment, code .comment { color: green }
-pre.code .keyword, code .keyword { color: darkred; font-weight: bold }
-pre.code .name.builtin, code .name.builtin { color: darkred; font-weight: bold }
-pre.code .name.tag, code .name.tag { color: darkgreen }
-pre.code .literal, code .literal { color: darkblue }
-pre.code .literal.number, code .literal.number { color: blue }
-
-
-/* HTTP Methods have class "name function" */
-pre.code.http .name.function,  code.http .name.function { color: black; font-weight: bold }
-/* HTTP Paths have class "name namespace" */
-pre.code.http .name.namespace, code.http .name.namespace { color: darkgreen }
-/* HTTP "HTTP" strings have class "keyword reserved" */
-pre.code.http .keyword.reserved, code.http .keyword.reserved { color: black; font-weight: bold }
-/* HTTP Header names have class "name attribute" */
-pre.code.http .name.attribute, code.http .name.attribute { color: black; font-weight: bold }
-
-</style>
-<style type="text/css">
-
 /*
  * nature.css_t
  * ~~~~~~~~~~~~
@@ -866,11 +866,11 @@ federation of servers with no single point of control.  Uses include Instant Mes
 Voice over IP (VoIP) signalling, Internet of Things (IoT) communication, and bridging
 together existing communication silos - providing the basis of a new open real-time
 communication ecosystem.</p>
-<p><a class="reference external" href="intro.html">Introduction to Matrix</a> provides a full introduction to Matrix and the spec.</p>
 <p><a class="anchor" id="matrix-apis"></a></p>
 <div class="section" id="matrix-apis">
 <h1>Matrix APIs</h1>
-<p>The following APIs are documented in this specification:</p>
+<p>The specification consists of the following parts:</p>
+<p><a class="reference external" href="intro.html">Introduction to Matrix</a> provides a full introduction to Matrix and the spec.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="51%" />
@@ -884,8 +884,8 @@ communication ecosystem.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td><a class="reference external" href="client_server/r0.2.0.html">Client-Server API</a></td>
-<td>r0.2.0</td>
+<tr><td><a class="reference external" href="client_server/0.2.0.html">Client-Server API</a></td>
+<td>0.2.0</td>
 <td>Interaction between clients and servers</td>
 </tr>
 <tr><td><a class="reference external" href="server_server/unstable.html">Server-Server API</a></td>
@@ -906,8 +906,8 @@ communication ecosystem.</p>
 </tr>
 </tbody>
 </table>
-<p><a class="reference external" href="appendices.html">Appendices</a> with supplemental information not specific to
-one of the above APIs are also available.</p>
+<p>The <a class="reference external" href="appendices.html">Appendices</a> contain supplemental information not specific to
+one of the above APIs.</p>
 </div>
 <p><a class="anchor" id="specification-versions"></a></p>
 <div class="section" id="specification-versions">
