@@ -2,9 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
 <title>Client-Server API</title>
 <style type="text/css">
 
@@ -841,7 +840,6 @@ blockquote {
 </style>
 </head>
 <body>
-
 <div class="document" id="client-server-api">
 <h1 class="title">Client-Server API</h1>
 
@@ -1376,7 +1374,7 @@ section on syncing
 </div>
 <p>This version of the specification is generated from
 <a class="reference external" href="https://github.com/matrix-org/matrix-doc">matrix-doc</a> as of Git commit
-<a class="reference external" href="https://github.com/matrix-org/matrix-doc/tree/a64f9bb">HEAD,a64f9bb</a>.</p>
+<a class="reference external" href="https://github.com/matrix-org/matrix-doc/tree/b94c4a9">client_server/r0.2.0_updates,b94c4a9</a>.</p>
 <p>For the full historical changelog, see
 <a class="reference external" href="https://github.com/matrix-org/matrix-doc/blob/master/changelogs/client_server.rst">https://github.com/matrix-org/matrix-doc/blob/master/changelogs/client_server.rst</a></p>
 <p>If this is an unstable snapshot, any changes since the last release may be
@@ -1386,7 +1384,7 @@ viewed using <tt class="docutils literal">git log</tt>.</p>
 <h2><a class="toc-backref" href="#id87">1.1&nbsp;&nbsp;&nbsp;Other versions of this specification</a></h2>
 <p>The following other versions are also available, in reverse chronological order:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://matrix.org/speculator/spec/head/client_server.html">HEAD</a>: Includes all changes since the latest versioned release.</li>
+<li><a class="reference external" href="https://matrix.org/docs/spec/client_server/unstable.html">HEAD</a>: Includes all changes since the latest versioned release.</li>
 <li><a class="reference external" href="https://matrix.org/docs/spec/client_server/r0.1.0.html">r0.1.0</a></li>
 <li><a class="reference external" href="https://matrix.org/docs/spec/r0.0.1/client_server.html">r0.0.1</a></li>
 <li><a class="reference external" href="https://matrix.org/docs/spec/r0.0.0/client_server.html">r0.0.0</a></li>
@@ -1746,7 +1744,7 @@ follows:</p>
 </pre>
 <p>In the case that the homeserver does not know about the supplied 3pid, the
 homeserver must respond with 403 Forbidden.</p>
-<div class="warning">
+<div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Clients SHOULD enforce that the password provided is suitably complex. The
 password SHOULD include a lower-case letter, an upper-case letter, a number
@@ -2711,7 +2709,7 @@ that is not trusted by this Home Server.</li>
 <p><a class="anchor" id="notes-on-password-management"></a></p>
 <div class="section" id="notes-on-password-management">
 <h3><a class="toc-backref" href="#id112">3.3.6&nbsp;&nbsp;&nbsp;Notes on password management</a></h3>
-<div class="warning">
+<div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Clients SHOULD enforce that the password provided is suitably complex. The
 password SHOULD include a lower-case letter, an upper-case letter, a number
@@ -2934,7 +2932,7 @@ parameters and response is identical to that of the HS API
 <p><a class="anchor" id="pagination"></a></p>
 <div class="section" id="pagination">
 <h1><a class="toc-backref" href="#id117">4&nbsp;&nbsp;&nbsp;Pagination</a></h1>
-<div class="note">
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The paths referred to in this section are not actual endpoints. They only
 serve as examples to explain how pagination functions.</p>
@@ -3483,7 +3481,7 @@ looks like this:</p>
                                         |                        |
                                    prev_batch: 'd-e-f'       next_batch: 'u-v-w'
 </pre>
-<div class="warning">
+<div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Events are ordered in this API according to the arrival time of the event on
 the homeserver. This can conflict with other APIs which order events based on
@@ -3491,7 +3489,7 @@ their partial ordering in the event graph. This can result in duplicate events
 being received (once per distinct API called). Clients SHOULD de-duplicate
 events based on the event ID when this happens.</p>
 </div>
-<div class="note">
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>The <tt class="docutils literal">/sync</tt> API returns a <tt class="docutils literal">state</tt> list which is separate from the
 <tt class="docutils literal">timeline</tt>. This <tt class="docutils literal">state</tt> list allows clients to keep their model of the
@@ -3508,7 +3506,7 @@ unless the timeline was <tt class="docutils literal">limited</tt>.)</p>
 list did <strong>not</strong> necessarily take place just before the returned
 <tt class="docutils literal">timeline</tt>, so clients should not display them to the user in the timeline.</p>
 </div>
-<div class="admonition-rationale admonition">
+<div class="admonition admonition-rationale">
 <p class="first admonition-title">Rationale</p>
 <p>An early design of this specification made the <tt class="docutils literal">state</tt> list represent the
 room state at the end of the returned timeline, instead of the start. This
@@ -4123,7 +4121,7 @@ API.</td>
 <p><a class="anchor" id="get-matrix-client-r0-initialsync"></a></p>
 <div class="section" id="get-matrix-client-r0-initialsync">
 <h3><a class="toc-backref" href="#id127">6.2.2&nbsp;&nbsp;&nbsp;<tt class="docutils literal">GET /_matrix/client/r0/initialSync</tt></a></h3>
-<div class="warning">
+<div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This API is deprecated and will be removed from a future release.</p>
 </div>
@@ -4813,7 +4811,7 @@ similar to Java package naming conventions e.g.
 <p><a class="anchor" id="get-matrix-client-r0-events"></a></p>
 <div class="section" id="get-matrix-client-r0-events">
 <h3><a class="toc-backref" href="#id128">6.2.3&nbsp;&nbsp;&nbsp;<tt class="docutils literal">GET /_matrix/client/r0/events</tt></a></h3>
-<div class="warning">
+<div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This API is deprecated and will be removed from a future release.</p>
 </div>
@@ -5004,7 +5002,7 @@ it.</td>
 <p><a class="anchor" id="get-matrix-client-r0-events-eventid"></a></p>
 <div class="section" id="get-matrix-client-r0-events-eventid">
 <h3><a class="toc-backref" href="#id129">6.2.4&nbsp;&nbsp;&nbsp;<tt class="docutils literal">GET <span class="pre">/_matrix/client/r0/events/{eventId}</span></tt></a></h3>
-<div class="warning">
+<div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This API is deprecated and will be removed from a future release.</p>
 </div>
@@ -5814,7 +5812,7 @@ earlier events.</td>
 <p><a class="anchor" id="get-matrix-client-r0-rooms-roomid-initialsync"></a></p>
 <div class="section" id="get-matrix-client-r0-rooms-roomid-initialsync">
 <h3><a class="toc-backref" href="#id136">6.3.6&nbsp;&nbsp;&nbsp;<tt class="docutils literal">GET <span class="pre">/_matrix/client/r0/rooms/{roomId}/initialSync</span></tt></a></h3>
-<div class="warning">
+<div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This API is deprecated and will be removed from a future release.</p>
 </div>
@@ -6737,15 +6735,13 @@ which serves as the root of the event graph for this room. This event also has a
 <tt class="docutils literal">creator</tt> key which contains the user ID of the room creator. It will also
 generate several other events in order to manage permissions in this room. This
 includes:</p>
-<ul>
+<ul class="simple">
 <li><dl class="first docutils">
 <dt><tt class="docutils literal">m.room.power_levels</tt> <span class="classifier-delimiter">:</span> <span class="classifier">Sets the power levels of users and required power</span></dt>
-<dd><p class="first last">levels for various actions within the room such as sending events.</p>
-</dd>
+<dd>levels for various actions within the room such as sending events.</dd>
 </dl>
 </li>
-<li><p class="first"><tt class="docutils literal">m.room.join_rules</tt> : Whether the room is &quot;invite-only&quot; or not.</p>
-</li>
+<li><tt class="docutils literal">m.room.join_rules</tt> : Whether the room is &quot;invite-only&quot; or not.</li>
 </ul>
 <p>See <a class="reference internal" href="#room-events">Room Events</a> for more information on these events. To create a room, a
 client has to use the following API.</p>
@@ -7186,7 +7182,7 @@ domain.</p>
 <p><a class="anchor" id="permissions"></a></p>
 <div class="section" id="permissions">
 <h2><a class="toc-backref" href="#id153">7.3&nbsp;&nbsp;&nbsp;Permissions</a></h2>
-<div class="note">
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This section is a work in progress.</p>
 </div>
@@ -8668,7 +8664,7 @@ implied by the total 65 KB limit on events.</p>
 <p><a class="anchor" id="room-events"></a></p>
 <div class="section" id="room-events">
 <h2><a class="toc-backref" href="#id182">10.5&nbsp;&nbsp;&nbsp;Room Events</a></h2>
-<div class="note">
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This section is a work in progress.</p>
 </div>
@@ -12614,7 +12610,7 @@ changes to something other than <tt class="docutils literal">invite</tt> or <tt 
 they joined the room onwards. Events stop being accessible when the member's state
 changes to something other than <tt class="docutils literal">join</tt>.</li>
 </ul>
-<div class="warning">
+<div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">These options are applied at the point an event is <em>sent</em>. Checks are
 performed with the state of the <tt class="docutils literal">m.room.history_visibility</tt> event when the
