@@ -48,7 +48,6 @@ find "content/docs" -name '*.html' |
 
 # run jekyll to generate the rest of the site.
 # This will generate stuff under ./jekyll/_site.
-cp -Tr assets/jekyll-posts jekyll/_posts
 ./jekyll/generate.sh
 
 # ... and copy it into place
