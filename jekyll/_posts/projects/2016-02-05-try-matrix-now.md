@@ -58,7 +58,7 @@ The easiest way to get started is to pick a client that appeals and join #matrix
 </table>
 
 
-This page aims to collect all known Matrix projects - if you want to add a new one (or update an existing one), you can submit a PR to the [matrix-doc](https://github.com/matrix-org/matrix-doc) project on github - the existing projects can be found [here](https://github.com/matrix-org/matrix-doc/tree/master/supporting-docs/projects) - or just let us know in the #matrix:matrix.org room.
+This page aims to collect all known Matrix projects - if you want to add a new one (or update an existing one), you can submit a PR to the [matrix-doc](https://github.com/matrix-org/matrix.org) project on github - the existing projects can be found [here](https://github.com/matrix-org/matrix.org/tree/master/jekyll/_posts/projects) - or just let us know in the #matrix:matrix.org room.
 
 | 
 
