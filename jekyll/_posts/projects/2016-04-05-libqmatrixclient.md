@@ -2,11 +2,11 @@
 layout: project
 title: libqmatrixclient
 categories: projects sdk
-author: Kitsune Ral, Felix Rohrbach
-maturity: Late alpha
+author: QMatrixClient team
+maturity: Beta
 ---
 
 # {{ page.title }}
-libqmatrixclient is a Qt-based library to make IM clients for the Matrix protocol. It is used by [Quaternion](https://matrix.org/docs/projects/client/quaternion.html) and is a part of the QMatrixClient project. Recent builds of [Tensor](https://matrix.org/docs/projects/client/tensor.html) are also made on top of libqmatrixclient.
+libqmatrixclient is a Qt-based library to make IM clients for the Matrix protocol. [Quaternion](https://matrix.org/docs/projects/client/quaternion.html) is a reference client using its features; together with the library they form the [QMatrixClient](https://github.com/QMatrixClient) project. Recent builds of [Tensor](https://matrix.org/docs/projects/client/tensor.html) are made on top of this SDK; another notable client using it is [uMatriks](https://github.com/LarreaMikel/uMatriks).
 
-The project lives in QMatrixClient [github space](https://github.com/QMatrixClient/libqmatrixclient).
+The project lives in QMatrixClient [GitHub space](https://github.com/QMatrixClient/libqmatrixclient).
