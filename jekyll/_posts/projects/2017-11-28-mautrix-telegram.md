@@ -4,10 +4,10 @@ title: mautrix-telegram
 categories: projects as
 description: A Matrix-Telegram puppeting bridge.
 author: Tulir
-maturity: Alpha
+maturity: Early beta
 ---
 
 # {{ page.title }}
-A Matrix-Telegram puppeting bridge. Written in Node.js using [telegram-mtproto](https://github.com/zerobias/telegram-mtproto).
+A Matrix-Telegram puppeting bridge. Written in Python using [Telethon](https://github.com/LonamiWebs/Telethon).
 
-Check it out on [github](https://github.com/tulir/mautrix-telegram)
+Check it out on [GitHub](https://github.com/tulir/mautrix-telegram)
