@@ -32,7 +32,7 @@ If you already have an account, you must **login** into it.
 .. NOTE::
   `Try out the fiddle`__
 
-  .. __: http://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix-doc/tree/master/supporting-docs/howtos/jsfiddles/register_login
+  .. __: http://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix.org/tree/master/jekyll/_posts/howtos/jsfiddles/register_login
 
 Registration
 ------------
@@ -97,7 +97,7 @@ user and **send a message** to that room.
 .. NOTE::
   `Try out the fiddle`__
 
-  .. __: http://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix-doc/tree/master/supporting-docs/howtos/jsfiddles/create_room_send_msg
+  .. __: http://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix.org/tree/master/jekyll/_posts/howtos/jsfiddles/create_room_send_msg
 
 Creating a room
 ---------------
@@ -148,7 +148,7 @@ join a room **via a room alias** if one was set up.
 .. NOTE::
   `Try out the fiddle`__
 
-  .. __: http://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix-doc/tree/master/supporting-docs/howtos/jsfiddles/room_memberships
+  .. __: http://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix.org/tree/master/jekyll/_posts/howtos/jsfiddles/room_memberships
 
 Inviting a user to a room
 -------------------------
@@ -195,7 +195,7 @@ of getting events, depending on what the client already knows.
 .. NOTE::
   `Try out the fiddle`__
 
-  .. __: http://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix-doc/tree/master/supporting-docs/howtos/jsfiddles/event_stream
+  .. __: http://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix.org/tree/master/jekyll/_posts/howtos/jsfiddles/event_stream
 
 Getting all state
 -----------------
@@ -391,4 +391,4 @@ application.
 .. NOTE::
   `Try out the fiddle`__
 
-  .. __: http://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix-doc/tree/master/supporting-docs/howtos/jsfiddles/example_app
+  .. __: http://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix.org/tree/master/jekyll/_posts/howtos/jsfiddles/example_app
