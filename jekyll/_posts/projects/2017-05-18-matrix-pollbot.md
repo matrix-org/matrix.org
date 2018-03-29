@@ -1,7 +1,7 @@
 ---
 layout: project
 title: matrix-pollbot
-categories: projects other
+categories: projects bot
 description: A bot for creating polls
 author: Shawn Anastasio
 maturity: Early Beta

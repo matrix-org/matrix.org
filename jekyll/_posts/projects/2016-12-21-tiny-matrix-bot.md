@@ -1,7 +1,7 @@
 ---
 layout: project
 title: tiny-matrix-bot
-categories: projects other
+categories: projects bot
 description: Bot with plugins
 author: Ander Punnar
 maturity: Alpha
