@@ -2,7 +2,7 @@
 layout: project
 title: My First Matrix Client
 categories: projects client
-# valid categories are client, server, as (application service), sdk (client sdk), and other
+# valid categories are client, server, as (application service), sdk (client sdk), bot, and other
 thumbnail: /docs/projects/images/upload-a-thumbnail-image-to-the-images-subfolder.png
 description: Describe your project here
 author: Myself
