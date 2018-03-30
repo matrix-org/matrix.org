@@ -188,6 +188,34 @@ Client SDKs
 
 |
 
+Bots
+====
+
+<table>
+  {% assign post_nr = '0' %}
+  {% for post in site.categories.bot reversed limit:100 %}
+    {% assign add_new_row_test = post_nr | modulo:6 %}
+    {% if add_new_row_test == 0 %}<tr>{% endif %}
+      <td class='project'>
+        <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
+          {{ post.title }}
+        </a><br />
+        <div style='margin-bottom: 8px;'>
+          {{ post.description }}
+        </div>
+        Author: {{ post.author }}<br />
+        Maturity: {{ post.maturity }}
+      </td>
+      {% assign post_nr = post_nr | plus: '1' %}
+      {% assign add_new_row_test = post_nr | modulo:6 %}
+    {% if add_new_row_test == 0 %}</tr>{% endif %}
+  {% endfor %}
+
+ </tr>
+</table>
+
+|
+
 Other
 =====
 
