@@ -1,7 +1,7 @@
 ---
 layout: project
 title: rocket-sheep
-categories: projects other
+categories: projects bot
 description: A bot to connect makerspaces with their members
 author: Travis Ralston
 maturity: Released

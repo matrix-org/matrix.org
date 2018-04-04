@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Hello Matrix Bot
-categories: projects other
+categories: projects bot
 description: Bot with an array of plugins
 author: Alexander Rudyk
 maturity: Alpha

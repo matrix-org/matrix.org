@@ -1,7 +1,7 @@
 ---
 layout: project
 title: matrix-music-bot
-categories: projects other
+categories: projects bot
 description: last.fm scrobbler
 author: Falko
 maturity: Alpha

@@ -1,7 +1,7 @@
 ---
 layout: project
 title: matrix-mbot
-categories: projects other
+categories: projects bot
 description: Extensible bot based on Net::Async::Matrix
 author: Marko Punnar
 maturity: Beta
