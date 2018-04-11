@@ -1,4 +1,0 @@
-Name: incoming
-IncomingDir: incoming
-TempDir: tmp
-Allow: wheezy jessie stretch sid trusty vivid wily
