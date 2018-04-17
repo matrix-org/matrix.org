@@ -1,8 +1,8 @@
 ---
 layout: project
 title: Polynomial
-description: A Decentralized Webring
 categories: projects other
+description: A Decentralized Webring
 author: Ryan Rix
 maturity: Early beta
 ---

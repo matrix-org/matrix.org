@@ -8,7 +8,6 @@ maturity: Released
 ---
 
 # {{ page.title }}
-
 Rocket Sheep is a matrix bot intended for makerspaces/hackerspaces. Through use of a message queue, Rocket Sheep can announce when people enter the building. In combination with Blue Iris, Rocket Sheep can provide snapshots of your cameras for members to see what is going on at the space.
 
 More functionality is planned, and recommendations are welcome.

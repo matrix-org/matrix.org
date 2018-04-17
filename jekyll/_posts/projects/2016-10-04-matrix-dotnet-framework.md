@@ -8,7 +8,6 @@ maturity: Early beta
 ---
 
 # {{ page.title }}
-
 A .NET framework for making Matrix bots with [matrix-dotnet-sdk](https://github.com/Half-Shot/matrix-dotnet-sdk).
 
 The project lives on [GitHub](https://github.com/Half-Shot/matrix-dotnet-framework)

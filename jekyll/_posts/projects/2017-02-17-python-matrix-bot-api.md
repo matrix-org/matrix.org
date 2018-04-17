@@ -8,7 +8,6 @@ maturity: Early beta
 ---
 
 # {{ page.title }}
-
 A Python API for making Matrix bots.
 
 Requires [matrix-python-sdk](https://github.com/matrix-org/matrix-python-sdk).

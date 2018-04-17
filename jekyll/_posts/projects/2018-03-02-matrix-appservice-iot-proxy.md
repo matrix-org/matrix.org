@@ -8,8 +8,7 @@ maturity: Beta
 ---
 
 # {{ page.title }}
-
-Heavily inspired by the work done by Intents in the matrix-appservice-bridge JS library, matrix-appservice-iot-proxy is a server-side application which ensures that virtual users are created and joined to the applicable rooms for each request. 
+Heavily inspired by the work done by Intents in the matrix-appservice-bridge JS library, matrix-appservice-iot-proxy is a server-side application which ensures that virtual users are created and joined to the applicable rooms for each request.
 
 This makes your IoT device code as simple as posting to a room without having to worry about the user being registered by the appservice or even being in the room. This is fully intended to have some sort of appservice powering a fleet of IoT devices such that each device is part of a given namespace.
 
