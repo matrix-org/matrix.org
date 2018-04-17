@@ -44,7 +44,7 @@ h1,h2,h3,h4,h5 {
 
 #document {
     margin-top: 10px; /* We want a little whitespace before the page content starts */
-    width: 1080px;
+    /*width: 1080px;*/
 }
 
 #wrapper {

@@ -3,6 +3,84 @@ layout: project
 title: Try Matrix Now!
 categories: projects
 ---
+<script type="text/javascript">
+jQuery(document).ready(($) => {
+  {% assign maturities = '' | split: ',' %}
+  {% assign languages = '' | split: ',' %}
+  {% for post in site.categories.projects %}
+    {% assign maturities = maturities | push: post.maturity %}
+    {% assign languages = languages | push: post.language %}
+  {% endfor %}
+
+  /* Populate maturities list */
+  var maturities =  "{{ maturities | uniq | join: "," }}".split(',');
+  maturities.forEach((maturity => {
+    if (maturity.length === 0) return;
+
+    var item = $('<div>');
+    var checkboxId = 'chk-maturity-' + maturity.replace(/ /g, '');
+    item.append(
+      $('<input>')
+        .attr('id', checkboxId)
+        .attr('type', 'checkbox')
+        .attr('checked', 'checked')
+    );
+    item.append($('<label>').attr('for', checkboxId).text(" " + maturity.trim()))
+    $("#maturities").append(item);
+  }));
+
+  /* For each maturity, a click event */
+  $("[id^=chk-maturity]").click(function(a) {
+    var maturity = a.target.id.replace("chk-maturity-", "");
+    checkVisibility($('li.project[data-maturity="' + maturity + '"]').toArray());
+  });
+
+  /* Populate languages list */
+  var languages =  "{{ languages | uniq | join: "," }}".split(',');
+  languages.forEach((language => {
+    if (language.length === 0) return;
+
+    var item = $('<div>');
+    var checkboxId = 'chk-language-' + language.replace(/ /g, '');
+    item.append(
+      $('<input>')
+        .attr('id', checkboxId)
+        .attr('type', 'checkbox')
+        .attr('checked', 'checked')
+    );
+    item.append($('<label>').attr('for', checkboxId).text(" " + language.trim()))
+    $("#languages").append(item);
+  }));
+
+  /* For each language, a click event */
+  $("[id^=chk-language]").click(function(a) {
+    var language = a.target.id.replace("chk-language-", "");
+    checkVisibility($('li.project[data-language="' + language + '"]').toArray());
+  });
+
+  /* Make the visibility changes */
+  function checkVisibility(projects) {
+    projects.forEach(function(project) {
+      project = $(project);
+      var project_maturity = project.data("maturity");
+      var correct_maturity = $("#chk-maturity-" + project_maturity).prop("checked");
+      if (! correct_maturity) {
+        project.hide(400);
+        return;
+      }
+      var project_language = project.data("language");
+      var correct_language = $("#chk-language-" + project_language).prop("checked");
+      if (! correct_language) {
+        project.hide(400);
+        return;
+      }
+      project.show(400);
+    });
+  }
+});
+
+
+</script>
 
 <div class='font18'>
 Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, application services, bots, etc.
@@ -15,7 +93,6 @@ The easiest way to get started is to pick a client that appeals and join #matrix
 </div>
 
 <p>&nbsp;</p>
-
 <table class='bigtable'>
   <tr>
     <td class='bigproject'>
@@ -71,15 +148,21 @@ Projects using Matrix:
 
 |
 
+<div id="controls">
+  <div id="maturities" style="float:left;"></div>
+  <div id="languages" style="float:left;"></div>
+</div>
+
+<br clear="all" />
+
+|
+
 Clients
 =======
 
-<table>
-  {% assign post_nr = '0' %}
+<ul class='projectlist'>
   {% for post in site.categories.client reversed limit:100 %}
-    {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}<tr>{% endif %}
-      <td class='project'>
+      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'> 
           <img class='thumbnail' src='{{ post.thumbnail }}'>
         </a>
@@ -92,26 +175,18 @@ Clients
         </div> 
         Author: {{ post.author }}<br />
         Maturity: {{ post.maturity }} 
-      </td>
-      {% assign post_nr = post_nr | plus: '1' %}
-      {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}</tr>{% endif %}
-  {% endfor %}  
-
- </tr>
-</table>
+      </li>
+  {% endfor %}
+</ul>
 
 |
 
 Servers
 =======
 
-<table>
-  {% assign post_nr = '0' %}
+<ul class='projectlist'>
   {% for post in site.categories.server reversed limit:100 %}
-    {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}<tr>{% endif %}
-      <td class='project'>
+      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -120,14 +195,9 @@ Servers
         </div>
         Author: {{ post.author }}<br />
         Maturity: {{ post.maturity }}
-      </td>
-      {% assign post_nr = post_nr | plus: '1' %}
-      {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}</tr>{% endif %}
+      </li>
   {% endfor %}
-
- </tr>
-</table>
+</ul>
 
 
 |
@@ -135,12 +205,9 @@ Servers
 Application Services
 ====================
 
-<table>
-  {% assign post_nr = '0' %}
+<ul class='projectlist'>
   {% for post in site.categories.as reversed limit:100 %}
-    {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}<tr>{% endif %}
-      <td class='project'>
+      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -149,26 +216,19 @@ Application Services
         </div>
         Author: {{ post.author }}<br />
         Maturity: {{ post.maturity }}
-      </td>
-      {% assign post_nr = post_nr | plus: '1' %}
-      {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}</tr>{% endif %}
+      </li>
   {% endfor %}
 
- </tr>
-</table>
+ </ul>
 
 |
 
 Client SDKs
 ===========
 
-<table>
-  {% assign post_nr = '0' %}
+<ul class='projectlist'>
   {% for post in site.categories.sdk reversed limit:100 %}
-    {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}<tr>{% endif %}
-      <td class='project'>
+      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -177,26 +237,19 @@ Client SDKs
         </div>
         Author: {{ post.author }}<br />
         Maturity: {{ post.maturity }}
-      </td>
-      {% assign post_nr = post_nr | plus: '1' %}
-      {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}</tr>{% endif %}
+      </li>
   {% endfor %}
 
- </tr>
-</table>
+ </ul>
 
 |
 
 Bots
 ====
 
-<table>
-  {% assign post_nr = '0' %}
+<ul class='projectlist'>
   {% for post in site.categories.bot reversed limit:100 %}
-    {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}<tr>{% endif %}
-      <td class='project'>
+      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -205,26 +258,19 @@ Bots
         </div>
         Author: {{ post.author }}<br />
         Maturity: {{ post.maturity }}
-      </td>
-      {% assign post_nr = post_nr | plus: '1' %}
-      {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}</tr>{% endif %}
+      </li>
   {% endfor %}
 
- </tr>
-</table>
+ </ul>
 
 |
 
 Other
 =====
 
-<table>
-  {% assign post_nr = '0' %}
+<ul class='projectlist'>
   {% for post in site.categories.other reversed limit:100 %}
-    {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}<tr>{% endif %}
-      <td class='project'>
+      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -233,12 +279,8 @@ Other
         </div>
         Author: {{ post.author }}<br />
         Maturity: {{ post.maturity }}
-      </td>
-      {% assign post_nr = post_nr | plus: '1' %}
-      {% assign add_new_row_test = post_nr | modulo:6 %}
-    {% if add_new_row_test == 0 %}</tr>{% endif %}
+      </li>
   {% endfor %}
 
- </tr>
-</table>
+ </ul>
 

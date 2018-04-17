@@ -42,7 +42,13 @@ $on-laptop:        800px;
     }
 }
 
-
+.projectlist {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline; }
+  .projectlist li {
+    list-style: none;
+    display: inline-block; }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
