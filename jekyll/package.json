@@ -1,0 +1,18 @@
+{
+  "name": "jekyll",
+  "version": "0.0.0",
+  "description": "Jekyll converts markdown and reStructuredText and other text to .htmk using templates",
+  "main": "runner.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
