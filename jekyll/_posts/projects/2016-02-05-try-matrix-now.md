@@ -7,9 +7,11 @@ categories: projects
 jQuery(document).ready(($) => {
   {% assign maturities = '' | split: ',' %}
   {% assign languages = '' | split: ',' %}
+  {% assign licenses = '' | split: ',' %}
   {% for post in site.categories.projects %}
     {% assign maturities = maturities | push: post.maturity %}
     {% assign languages = languages | push: post.language %}
+    {% assign licenses = licenses | push: post.license %}
   {% endfor %}
 
   /* Populate maturities list */
@@ -60,6 +62,31 @@ jQuery(document).ready(($) => {
     checkVisibility($('li.project[data-language="' + language + '"]').toArray());
   });
 
+    /* Populate licenses list */
+  var licenses =  "{{ licenses | uniq | join: "," }}".split(',');
+  licenses.push("Unknown");
+  licenses.forEach((license => {
+    if (license.length === 0) return;
+
+    var item = $('<div>');
+    var checkboxId = 'chk-license-' + license.replace(/ /g, '');
+    item.append(
+      $('<input>')
+        .attr('id', checkboxId)
+        .attr('type', 'checkbox')
+        .attr('checked', 'checked')
+    );
+    item.append($('<label>').attr('for', checkboxId).text(" " + license.trim()))
+    $("#licenses").append(item);
+  }));
+
+  /* For each language, a click event */
+  $("[id^=chk-license]").click(function(a) {
+    var license = a.target.id.replace("chk-license-", "");
+    if (license === "Unknown") license = "";
+    checkVisibility($('li.project[data-license="' + license + '"]').toArray());
+  });
+
   /* Make the visibility changes */
   function checkVisibility(projects) {
     projects.forEach(function(project) {
@@ -74,6 +101,13 @@ jQuery(document).ready(($) => {
       if (project_language === "") project_language = "Unknown";
       var correct_language = $("#chk-language-" + project_language.toString()).prop("checked");
       if (! correct_language && project_language !== "") {
+        project.hide(400);
+        return;
+      }
+      var project_license = project.data("license");
+      if (project_license === "") project_license = "Unknown";
+      var correct_license = $("#chk-license-" + project_license.toString()).prop("checked");
+      if (! correct_license && project_license !== "") {
         project.hide(400);
         return;
       }
@@ -154,6 +188,7 @@ Projects using Matrix:
 <div id="controls">
   <div id="maturities" style="float:left;"></div>
   <div id="languages" style="float:left;"></div>
+  <div id="licenses" style="float:left;"></div>
 </div>
 
 <br clear="all" />
@@ -165,7 +200,10 @@ Clients
 
 <ul class='projectlist'>
   {% for post in site.categories.client reversed limit:100 %}
-      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
+      <li class='project' 
+        data-maturity='{{ post.maturity | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' }}'
+        data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'> 
           <img class='thumbnail' src='{{ post.thumbnail }}'>
         </a>
@@ -189,7 +227,10 @@ Servers
 
 <ul class='projectlist'>
   {% for post in site.categories.server reversed limit:100 %}
-      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
+      <li class='project' 
+        data-maturity='{{ post.maturity | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' }}'
+        data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -210,7 +251,10 @@ Application Services
 
 <ul class='projectlist'>
   {% for post in site.categories.as reversed limit:100 %}
-      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
+      <li class='project' 
+        data-maturity='{{ post.maturity | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' }}'
+        data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -231,7 +275,10 @@ Client SDKs
 
 <ul class='projectlist'>
   {% for post in site.categories.sdk reversed limit:100 %}
-      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
+      <li class='project' 
+        data-maturity='{{ post.maturity | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' }}'
+        data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -252,7 +299,10 @@ Bots
 
 <ul class='projectlist'>
   {% for post in site.categories.bot reversed limit:100 %}
-      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
+      <li class='project' 
+        data-maturity='{{ post.maturity | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' }}'
+        data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -273,7 +323,10 @@ Other
 
 <ul class='projectlist'>
   {% for post in site.categories.other reversed limit:100 %}
-      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
+      <li class='project' 
+        data-maturity='{{ post.maturity | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' }}'
+        data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
