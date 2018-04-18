@@ -16,9 +16,14 @@
 /packages/debian/pool/
 /packages/debian/dists/
 /packages/npm/
+scripts/node_modules/
 
 # undocumented crap which is sitting on the production server. Is any of it
 # needed? it needs documenting and/or cleaning up.
 /blog/
+
+# should not be committed
+site.css
+docs/
 
 .DS_Store
