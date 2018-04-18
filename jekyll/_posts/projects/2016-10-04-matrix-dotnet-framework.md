@@ -6,6 +6,7 @@ description: Bot framework for matrix-dotnet-sdk
 author: Half-Shot
 maturity: Early beta
 language: C#
+license: MIT
 ---
 
 # {{ page.title }}

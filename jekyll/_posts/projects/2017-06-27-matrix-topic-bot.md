@@ -5,6 +5,8 @@ categories: projects bot
 description: A simple bot that provides dynamic topics
 author: Travis Ralston
 maturity: Released
+language: 
+license: 
 ---
 
 # {{ page.title }}

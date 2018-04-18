@@ -6,6 +6,7 @@ description: This project bridges to Matrix, via the AS API on the Matrix side, 
 author: LeoNerd
 maturity: Early beta
 language: JavaScript
+license: 
 ---
 
 # {{ page.title }}

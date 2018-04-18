@@ -5,6 +5,8 @@ categories: projects other
 description: A replacement media repository for your homeserver
 author: Travis Ralston
 maturity: Late Beta
+language: 
+license: 
 ---
 
 # {{ page.title }}

@@ -6,6 +6,7 @@ description: A diaspora authenticator for synapse
 author: Shamil K Muhammed
 maturity: Stable
 language: Python
+license: GPL3
 ---
 
 # {{ page.title }}

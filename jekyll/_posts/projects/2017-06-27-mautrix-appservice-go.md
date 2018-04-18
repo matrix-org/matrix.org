@@ -5,6 +5,8 @@ categories: projects as
 description: An application service framework written in Go
 author: Tulir
 maturity: Alpha
+language: 
+license: 
 ---
 
 # {{ page.title }}

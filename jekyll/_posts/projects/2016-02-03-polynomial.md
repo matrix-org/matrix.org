@@ -5,6 +5,8 @@ categories: projects other
 description: A Decentralized Webring
 author: Ryan Rix
 maturity: Early beta
+language: 
+license: 
 ---
 
 # {{ page.title }}

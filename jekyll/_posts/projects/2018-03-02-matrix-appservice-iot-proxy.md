@@ -5,6 +5,8 @@ categories: projects other
 description: A proxy for the client/server API to make IoT virtual devices easier
 author: Travis Ralston
 maturity: Beta
+language: 
+license: 
 ---
 
 # {{ page.title }}

@@ -6,6 +6,7 @@ description: Bot for bridging Matrix and Mattermost, IRC, XMPP, Gitter, Slack, D
 author: 42wim
 maturity: Stable
 language: golang
+license: Apache
 ---
 
 # {{ page.title }}

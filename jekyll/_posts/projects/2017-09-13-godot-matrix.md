@@ -5,6 +5,8 @@ categories: projects sdk
 description: Godot Engine module for Matrix client
 author: vurpo
 maturity: Alpha
+language: 
+license: 
 ---
 
 # {{ page.title }}

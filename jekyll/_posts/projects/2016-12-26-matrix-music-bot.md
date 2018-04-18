@@ -6,6 +6,7 @@ description: last.fm scrobbler
 author: Falko
 maturity: Alpha
 language: JavaScript
+license: 
 ---
 
 # {{ page.title }}

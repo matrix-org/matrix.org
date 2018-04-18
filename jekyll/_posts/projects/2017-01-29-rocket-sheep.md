@@ -5,6 +5,8 @@ categories: projects bot
 description: A bot to connect makerspaces with their members
 author: Travis Ralston
 maturity: Released
+language: 
+license: 
 ---
 
 # {{ page.title }}

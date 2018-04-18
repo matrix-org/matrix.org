@@ -6,6 +6,7 @@ description: Extensible bot based on Net::Async::Matrix
 author: Marko Punnar
 maturity: Beta
 language: Perl
+license: GPL3
 ---
 
 # {{ page.title }}

@@ -5,6 +5,8 @@ categories: projects as
 description: Bridges Minecraft server chat to and from Matrix
 author: Travis Ralston
 maturity: Alpha
+language: 
+license: 
 ---
 
 # {{ page.title }}

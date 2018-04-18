@@ -6,6 +6,7 @@ description: Matrix Client for macOS
 author: Avery Pierce
 maturity: Alpha
 language: Swift
+license: Apache
 ---
 
 ![screenshot](/docs/projects/images/matrixclient.png "{{ page.title }}")

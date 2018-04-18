@@ -6,6 +6,7 @@ description: Relays messages between rooms using AS API
 author: Adam Beckmeyer
 maturity: Alpha
 language: Python
+license: GPL3
 ---
 
 # {{ page.title }}

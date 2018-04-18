@@ -6,6 +6,7 @@ description: A Python API for making Matrix bots
 author: Shawn Anastasio
 maturity: Early beta
 language: Python
+license: GPL3
 ---
 
 # {{ page.title }}

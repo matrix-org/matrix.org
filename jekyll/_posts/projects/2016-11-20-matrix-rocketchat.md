@@ -6,6 +6,7 @@ description: This is an application service that bridges Matrix to Rocket.Chat, 
 author: exul
 maturity: Alpha
 language: Rust
+license: MIT
 ---
 
 ![screenshot](/docs/projects/images/matrix-rocketchat.png "{{ page.title }}")

@@ -5,6 +5,8 @@ categories: projects bot
 description: Maps the Matrix network as it discovers rooms
 author: Travis Ralston
 maturity: Alpha
+language: 
+license: 
 ---
 
 # {{ page.title }}

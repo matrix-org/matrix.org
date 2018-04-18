@@ -5,6 +5,8 @@ categories: projects other
 description: A lightweight homeserver SDK intended for enhanced bridging
 author: Travis Ralston
 maturity: Alpha
+language: 
+license: 
 ---
 
 # {{ page.title }}

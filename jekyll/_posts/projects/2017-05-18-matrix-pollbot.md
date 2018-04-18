@@ -6,6 +6,7 @@ description: A bot for creating polls
 author: Shawn Anastasio
 maturity: Early Beta
 language: Python
+license: GPL3
 ---
 
 # {{ page.title }}

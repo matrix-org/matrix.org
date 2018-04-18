@@ -6,6 +6,7 @@ description: Python 2 application using Twisted that bridges the Matrix chat net
 author: Remi Rampin
 maturity: Alpha
 language: Python
+license: BSD
 ---
 
 # {{ page.title }}

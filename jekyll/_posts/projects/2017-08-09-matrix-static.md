@@ -6,6 +6,7 @@ description: A static golang generated preview of public world readable Matrix r
 author: Michael Telatynski
 maturity: Released
 language: Go
+license: Apache
 ---
 
 # {{ page.title }}
