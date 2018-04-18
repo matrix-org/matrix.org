@@ -37,6 +37,7 @@ jQuery(document).ready(($) => {
 
   /* Populate languages list */
   var languages =  "{{ languages | uniq | join: "," }}".split(',');
+  languages.push("Unknown");
   languages.forEach((language => {
     if (language.length === 0) return;
 
@@ -55,6 +56,7 @@ jQuery(document).ready(($) => {
   /* For each language, a click event */
   $("[id^=chk-language]").click(function(a) {
     var language = a.target.id.replace("chk-language-", "");
+    if (language === "Unknown") language = "";
     checkVisibility($('li.project[data-language="' + language + '"]').toArray());
   });
 
@@ -69,7 +71,8 @@ jQuery(document).ready(($) => {
         return;
       }
       var project_language = project.data("language");
-      var correct_language = $("#chk-language-" + project_language).prop("checked");
+      if (project_language === "") project_language = "Unknown";
+      var correct_language = $("#chk-language-" + project_language.toString()).prop("checked");
       if (! correct_language && project_language !== "") {
         project.hide(400);
         return;
@@ -207,7 +210,7 @@ Application Services
 
 <ul class='projectlist'>
   {% for post in site.categories.as reversed limit:100 %}
-      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}'>
+      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -228,7 +231,7 @@ Client SDKs
 
 <ul class='projectlist'>
   {% for post in site.categories.sdk reversed limit:100 %}
-      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}'>
+      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -249,7 +252,7 @@ Bots
 
 <ul class='projectlist'>
   {% for post in site.categories.bot reversed limit:100 %}
-      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}'>
+      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -270,7 +273,7 @@ Other
 
 <ul class='projectlist'>
   {% for post in site.categories.other reversed limit:100 %}
-      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}'>
+      <li class='project' data-maturity='{{ post.maturity | replace:' ', '' }}' data-language='{{ post.language | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
