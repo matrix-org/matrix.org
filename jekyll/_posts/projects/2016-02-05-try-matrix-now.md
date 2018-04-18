@@ -64,13 +64,13 @@ jQuery(document).ready(($) => {
       project = $(project);
       var project_maturity = project.data("maturity");
       var correct_maturity = $("#chk-maturity-" + project_maturity).prop("checked");
-      if (! correct_maturity) {
+      if (! correct_maturity && project_maturity !== "") {
         project.hide(400);
         return;
       }
       var project_language = project.data("language");
       var correct_language = $("#chk-language-" + project_language).prop("checked");
-      if (! correct_language) {
+      if (! correct_language && project_language !== "") {
         project.hide(400);
         return;
       }
