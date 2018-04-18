@@ -5,6 +5,7 @@ categories: projects as
 description: This project bridges Rocket Chat to Matrix.
 author: oddvar
 maturity: Early beta
+language: JavaScript
 ---
 
 # {{ page.title }}

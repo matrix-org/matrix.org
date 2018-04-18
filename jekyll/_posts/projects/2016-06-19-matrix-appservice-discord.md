@@ -5,6 +5,7 @@ categories: projects as
 description: This project bridges Discord to Matrix via the Application API
 author: Half-Shot
 maturity: Alpha
+language: TypeScript
 ---
 
 ![screenshot](/docs/projects/images/discord.png "{{ page.title }}")

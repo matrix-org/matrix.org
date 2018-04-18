@@ -5,6 +5,7 @@ categories: projects client
 description: A static golang generated preview of public world readable Matrix rooms
 author: Michael Telatynski
 maturity: Released
+language: Go
 ---
 
 # {{ page.title }}

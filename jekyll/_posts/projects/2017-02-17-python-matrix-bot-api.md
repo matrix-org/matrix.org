@@ -5,6 +5,7 @@ categories: projects other
 description: A Python API for making Matrix bots
 author: Shawn Anastasio
 maturity: Early beta
+language: Python
 ---
 
 # {{ page.title }}

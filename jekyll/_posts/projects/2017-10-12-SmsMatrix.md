@@ -5,6 +5,7 @@ categories: projects other
 description: A simple Android SMS (text message) <--> Matrix bridge.
 author: Gerben Droogers
 maturity: Alpha
+language: Java
 ---
 
 # {{ page.title }}

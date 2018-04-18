@@ -5,6 +5,7 @@ categories: projects other
 description: Ansible playbook for matrix/riot.im setup
 author: kultsinuppeli
 maturity: Alpha
+language: Playbook
 ---
 
 # {{ page.title }}

@@ -5,6 +5,7 @@ categories: projects bot
 description: Bot with plugins
 author: Ander Punnar
 maturity: Alpha
+language: Shell/Python
 ---
 
 # {{ page.title }}

@@ -5,6 +5,7 @@ categories: projects other
 description: A diaspora authenticator for synapse
 author: Shamil K Muhammed
 maturity: Stable
+language: Python
 ---
 
 # {{ page.title }}

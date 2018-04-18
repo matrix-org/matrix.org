@@ -5,6 +5,7 @@ categories: projects bot
 description: Extensible bot based on Net::Async::Matrix
 author: Marko Punnar
 maturity: Beta
+language: Perl
 ---
 
 # {{ page.title }}

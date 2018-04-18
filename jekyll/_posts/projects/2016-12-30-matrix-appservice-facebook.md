@@ -5,6 +5,7 @@ categories: projects as
 description: This is a puppeted Facebook bridge for Matrix.
 author: Keyvan Fatehi
 maturity: Alpha
+language: JavaScript
 ---
 
 # {{ page.title }}

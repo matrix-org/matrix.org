@@ -5,6 +5,7 @@ categories: projects client
 description: Matrix Client for macOS
 author: Avery Pierce
 maturity: Alpha
+language: Swift
 ---
 
 ![screenshot](/docs/projects/images/matrixclient.png "{{ page.title }}")

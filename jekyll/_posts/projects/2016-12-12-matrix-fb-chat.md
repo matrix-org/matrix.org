@@ -5,6 +5,7 @@ categories: projects other
 description: POC designed to bridge Matrix rooms to FB chat.
 author: Half-Shot
 maturity: Alpha
+language: TypeScript
 ---
 
 # {{ page.title }}

@@ -5,6 +5,7 @@ categories: projects bot
 description: A bot for creating polls
 author: Shawn Anastasio
 maturity: Early Beta
+language: Python
 ---
 
 # {{ page.title }}
