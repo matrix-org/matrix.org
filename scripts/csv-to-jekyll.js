@@ -13,7 +13,7 @@ fs.createReadStream('Matrix CRM - Projects.csv')
 
 function writeJekyllFile(project) {
   console.log(project);
-  var stream = fs.createWriteStream("../jekyll/_posts/projects-gen/" + project.Filename, {'flags': 'w', 'encoding':'utf8', 'mode': '0666'});
+  var stream = fs.createWriteStream("../projects-gen/" + project.Filename, {'flags': 'w', 'encoding':'utf8', 'mode': '0666'});
   stream.once('open', function(fd) {
     stream.write("---\n");
     stream.write("layout: project\n");
@@ -25,6 +25,8 @@ function writeJekyllFile(project) {
     stream.write("description: " + project.description + "\n");
     stream.write("author: " + project.author + "\n");
     stream.write("maturity: " + project.maturity + "\n");
+    stream.write("language: " + project.language + "\n");
+    stream.write("license: " + project.license + "\n");
     stream.write("---\n");
     stream.write("\n");
     if (project.Screenshot) {
