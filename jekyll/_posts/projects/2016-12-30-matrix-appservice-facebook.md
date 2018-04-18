@@ -2,6 +2,7 @@
 layout: project
 title: matrix-appservice-facebook
 categories: projects as
+description: This is a puppeted Facebook bridge for Matrix.
 author: Keyvan Fatehi
 maturity: Alpha
 ---

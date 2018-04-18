@@ -2,6 +2,7 @@
 layout: project
 title: telematrix
 categories: projects as
+description: This project bridges Telegram to Matrix.
 author: SijmenSchoon
 maturity: Alpha
 ---
