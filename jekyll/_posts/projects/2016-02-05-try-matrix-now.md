@@ -39,7 +39,7 @@ jQuery(document).ready(($) => {
 
   /* Populate languages list */
   var languages =  "{{ languages | uniq | join: "," }}".split(',');
-  languages.push("Unknown");
+  if (languages.indexOf("Unknown") === -1) languages.push("Unknown");
   languages.forEach((language => {
     if (language.length === 0) return;
 
@@ -58,13 +58,12 @@ jQuery(document).ready(($) => {
   /* For each language, a click event */
   $("[id^=chk-language]").click(function(a) {
     var language = a.target.id.replace("chk-language-", "");
-    if (language === "Unknown") language = "";
     checkVisibility($('li.project[data-language="' + language + '"]').toArray());
   });
 
     /* Populate licenses list */
   var licenses =  "{{ licenses | uniq | join: "," }}".split(',');
-  licenses.push("Unknown");
+  if (licenses.indexOf("Unknown") === -1) licenses.push("Unknown");
   licenses.forEach((license => {
     if (license.length === 0) return;
 
@@ -80,14 +79,45 @@ jQuery(document).ready(($) => {
     $("#licenses").append(item);
   }));
 
-  /* For each language, a click event */
+  /* For each license, a click event */
   $("[id^=chk-license]").click(function(a) {
     var license = a.target.id.replace("chk-license-", "");
-    if (license === "Unknown") license = "";
     checkVisibility($('li.project[data-license="' + license + '"]').toArray());
   });
 
-  /* Make the visibility changes */
+  /* Missing data is classed as 'Unknown' for now */
+  jQuery('li[data-language=""]').attr("data-language", "Unknown");
+  jQuery('li[data-license=""]').attr("data-license", "Unknown");
+
+  /* controls for the All/None selectors */
+  $("#maturities-all").click(() => {
+    $("[id^=chk-maturity]").prop("checked", true);
+    checkVisibility($('li.project').toArray());
+  });
+  $("#maturities-none").click(() => {
+    $("[id^=chk-maturity]").prop("checked", false);
+    checkVisibility($('li.project').toArray());
+  });
+
+  $("#languages-all").click(() => {
+    $("[id^=chk-language]").prop("checked", true);
+    checkVisibility($('li.project').toArray());
+  });
+  $("#languages-none").click(() => {
+    $("[id^=chk-language]").prop("checked", false);
+    checkVisibility($('li.project').toArray());
+  });
+
+  $("#licenses-all").click(() => {
+    $("[id^=chk-license]").prop("checked", true);
+    checkVisibility($('li.project').toArray());
+  });
+  $("#licenses-none").click(() => {
+    $("[id^=chk-license]").prop("checked", false);
+    checkVisibility($('li.project').toArray());
+  });
+
+  /* Make the visibility changes on click */
   function checkVisibility(projects) {
     projects.forEach(function(project) {
       project = $(project);
@@ -98,14 +128,12 @@ jQuery(document).ready(($) => {
         return;
       }
       var project_language = project.data("language");
-      if (project_language === "") project_language = "Unknown";
       var correct_language = $("#chk-language-" + project_language.toString()).prop("checked");
       if (! correct_language && project_language !== "") {
         project.hide(400);
         return;
       }
       var project_license = project.data("license");
-      if (project_license === "") project_license = "Unknown";
       var correct_license = $("#chk-license-" + project_license.toString()).prop("checked");
       if (! correct_license && project_license !== "") {
         project.hide(400);
@@ -185,10 +213,19 @@ Projects using Matrix:
 
 |
 
-<div id="controls">
-  <div id="maturities" style="float:left;"></div>
-  <div id="languages" style="float:left;"></div>
-  <div id="licenses" style="float:left;"></div>
+<div id="controls" style="user-select: none;">
+  <div id="maturities" style="float:left;">
+    <span id="maturities-all" style="font-size: smaller;">All</span>
+    <span id="maturities-none" style="font-size: smaller;">None</span>
+  </div>
+  <div id="languages" style="float:left;">
+    <span id="languages-all" style="font-size: smaller;">All</span>
+    <span id="languages-none" style="font-size: smaller;">None</span>
+  </div>
+  <div id="licenses" style="float:left;">
+    <span id="licenses-all" style="font-size: smaller;">All</span>
+    <span id="licenses-none" style="font-size: smaller;">None</span>
+  </div>
 </div>
 
 <br clear="all" />
