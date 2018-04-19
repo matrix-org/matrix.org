@@ -44,7 +44,7 @@ jQuery(document).ready(($) => {
     if (language.length === 0) return;
 
     var item = $('<div>');
-    var checkboxId = 'chk-language-' + language.replace(/ /g, '');
+    var checkboxId = 'chk-language-' + language.replace(/ /g, '').replace(/\+/g, '-').replace(/\//g, '-').replace(/#/g, '-');
     item.append(
       $('<input>')
         .attr('id', checkboxId)
@@ -239,7 +239,7 @@ Clients
   {% for post in site.categories.client reversed limit:100 %}
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
-        data-language='{{ post.language | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
         data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'> 
           <img class='thumbnail' src='{{ post.thumbnail }}'>
@@ -266,7 +266,7 @@ Servers
   {% for post in site.categories.server reversed limit:100 %}
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
-        data-language='{{ post.language | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
         data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
@@ -290,7 +290,7 @@ Application Services
   {% for post in site.categories.as reversed limit:100 %}
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
-        data-language='{{ post.language | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
         data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
@@ -314,7 +314,7 @@ Client SDKs
   {% for post in site.categories.sdk reversed limit:100 %}
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
-        data-language='{{ post.language | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
         data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
@@ -338,7 +338,7 @@ Bots
   {% for post in site.categories.bot reversed limit:100 %}
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
-        data-language='{{ post.language | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
         data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
@@ -362,7 +362,7 @@ Other
   {% for post in site.categories.other reversed limit:100 %}
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
-        data-language='{{ post.language | replace:' ', '' }}'
+        data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
         data-license='{{ post.license | replace:' ', '' }}'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
