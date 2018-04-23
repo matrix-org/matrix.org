@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Maunium GitLab Bot
-categories: projects other
+categories: projects bot
 description: A GitLab bot for Matrix
 author: Tulir
 maturity: Alpha

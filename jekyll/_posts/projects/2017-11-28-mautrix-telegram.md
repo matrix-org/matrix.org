@@ -9,6 +9,8 @@ language:
 license: 
 ---
 
+![screenshot](/docs/projects/images/mautrix-telegram.png "{{ page.title }}")
+
 # {{ page.title }}
 A Matrix-Telegram hybrid puppeting/relaybot bridge. Written in Python using [Telethon](https://github.com/LonamiWebs/Telethon).
 
