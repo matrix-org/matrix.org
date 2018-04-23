@@ -90,3 +90,8 @@ blockquote ul li {
     color: #666;
 
 }
+
+#languages-list div  {
+    width: 50%;
+    float: left;
+}

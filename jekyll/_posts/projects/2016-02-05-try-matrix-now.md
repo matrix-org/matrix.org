@@ -32,7 +32,7 @@ jQuery(document).ready(($) => {
         .attr('checked', 'checked')
     );
     item.append($('<label>').attr('for', checkboxId).text(" " + type[0]));
-    $("#types").append(item);
+    $("#types-list").append(item);
   });
 
   /* For each type, a click event */
@@ -55,7 +55,7 @@ jQuery(document).ready(($) => {
         .attr('checked', 'checked')
     );
     item.append($('<label>').attr('for', checkboxId).text(" " + maturity.trim()))
-    $("#maturities").append(item);
+    $("#maturities-list").append(item);
   }));
 
   /* For each maturity, a click event */
@@ -70,7 +70,7 @@ jQuery(document).ready(($) => {
   languages.forEach((language => {
     if (language.length === 0) return;
 
-    var item = $('<div>');
+    var item = $('<div>').addClass("item-language");
     var checkboxId = 'chk-language-' + language.replace(/ /g, '').replace(/\+/g, '-').replace(/\//g, '-').replace(/#/g, '-');
     item.append(
       $('<input>')
@@ -79,7 +79,7 @@ jQuery(document).ready(($) => {
         .attr('checked', 'checked')
     );
     item.append($('<label>').attr('for', checkboxId).text(" " + language.trim()))
-    $("#languages").append(item);
+    $("#languages-list").append(item);
   }));
 
   /* For each language, a click event */
@@ -103,7 +103,7 @@ jQuery(document).ready(($) => {
         .attr('checked', 'checked')
     );
     item.append($('<label>').attr('for', checkboxId).text(" " + license.trim()))
-    $("#licenses").append(item);
+    $("#licenses-list").append(item);
   }));
 
   /* For each license, a click event */
@@ -245,18 +245,23 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
   <div id="types" style="float:left;">
     <span id="types-all" style="font-size: smaller;">All</span>
     <span id="types-none" style="font-size: smaller;">None</span>
+    <div id="types-list"></div>
   </div>
   <div id="maturities" style="float:left;">
     <span id="maturities-all" style="font-size: smaller;">All</span>
     <span id="maturities-none" style="font-size: smaller;">None</span>
+    <div id="maturities-list"></div>
   </div>
   <div id="languages" style="float:left;">
     <span id="languages-all" style="font-size: smaller;">All</span>
     <span id="languages-none" style="font-size: smaller;">None</span>
+    <br />
+    <div id="languages-list" style="display: inline-table;column-count: 2;width: 400px;"></div>
   </div>
   <div id="licenses" style="float:left;">
     <span id="licenses-all" style="font-size: smaller;">All</span>
     <span id="licenses-none" style="font-size: smaller;">None</span>
+    <div id="licenses-list"></div>
   </div>
 </div>
 
