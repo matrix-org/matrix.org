@@ -14,6 +14,33 @@ jQuery(document).ready(($) => {
     {% assign licenses = licenses | push: post.license %}
   {% endfor %}
 
+  /* Populate types list */
+  var types = [
+    ['Clients', 'client'],
+    ['Servers', 'server'],
+    ['Application Services', 'as'],
+    ['Client SDKs', 'sdk'],
+    ['Bots', 'bot'],
+    ['Other', 'other']];
+  types.forEach(type => {
+    var item = $('<div>');
+    var checkboxId = 'chk-type-' + type[1];
+    item.append(
+      $('<input>')
+        .attr('id', checkboxId)
+        .attr('type', 'checkbox')
+        .attr('checked', 'checked')
+    );
+    item.append($('<label>').attr('for', checkboxId).text(" " + type[0]));
+    $("#types").append(item);
+  });
+
+  /* For each type, a click event */
+  $("[id^=chk-type]").click(function(a) {
+    var type = a.target.id.replace("chk-type-", "");
+    checkVisibility($('li.project[data-type="' + type + '"]').toArray());
+  });
+
   /* Populate maturities list */
   var maturities =  "{{ maturities | uniq | join: "," }}".split(',');
   maturities.forEach((maturity => {
@@ -90,6 +117,14 @@ jQuery(document).ready(($) => {
   jQuery('li[data-license=""]').attr("data-license", "Unknown");
 
   /* controls for the All/None selectors */
+  $("#types-all").click(() => {
+    $("[id^=chk-type]").prop("checked", true);
+    checkVisibility($('li.project').toArray());
+  });
+  $("#types-none").click(() => {
+    $("[id^=chk-type]").prop("checked", false);
+    checkVisibility($('li.project').toArray());
+  });
   $("#maturities-all").click(() => {
     $("[id^=chk-maturity]").prop("checked", true);
     checkVisibility($('li.project').toArray());
@@ -98,7 +133,6 @@ jQuery(document).ready(($) => {
     $("[id^=chk-maturity]").prop("checked", false);
     checkVisibility($('li.project').toArray());
   });
-
   $("#languages-all").click(() => {
     $("[id^=chk-language]").prop("checked", true);
     checkVisibility($('li.project').toArray());
@@ -121,6 +155,13 @@ jQuery(document).ready(($) => {
   function checkVisibility(projects) {
     projects.forEach(function(project) {
       project = $(project);
+
+      var project_type = project.data("type");
+      var correct_type = $("#chk-type-" + project_type).prop("checked");
+      if (! correct_type && project_type !== "") {
+        project.hide(400);
+        return;
+      }
       var project_maturity = project.data("maturity");
       var correct_maturity = $("#chk-maturity-" + project_maturity).prop("checked");
       if (! correct_maturity && project_maturity !== "") {
@@ -217,6 +258,10 @@ Projects using Matrix:
 |
 
 <div id="controls" style="user-select: none; display: none;">
+  <div id="types" style="float:left;">
+    <span id="types-all" style="font-size: smaller;">All</span>
+    <span id="types-none" style="font-size: smaller;">None</span>
+  </div>
   <div id="maturities" style="float:left;">
     <span id="maturities-all" style="font-size: smaller;">All</span>
     <span id="maturities-none" style="font-size: smaller;">None</span>
@@ -243,7 +288,8 @@ Clients
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' }}'>
+        data-license='{{ post.license | replace:' ', '' }}'
+        data-type='client'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'> 
           <img class='thumbnail' src='{{ post.thumbnail }}'>
         </a>
@@ -270,7 +316,8 @@ Servers
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' }}'>
+        data-license='{{ post.license | replace:' ', '' }}'
+        data-type='server'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -294,7 +341,8 @@ Application Services
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' }}'>
+        data-license='{{ post.license | replace:' ', '' }}'
+        data-type='as'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -318,7 +366,8 @@ Client SDKs
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' }}'>
+        data-license='{{ post.license | replace:' ', '' }}'
+        data-type='sdk'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -342,7 +391,8 @@ Bots
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' }}'>
+        data-license='{{ post.license | replace:' ', '' }}'
+        data-type='bot'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
@@ -366,7 +416,8 @@ Other
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' }}'>
+        data-license='{{ post.license | replace:' ', '' }}'
+        data-type='other'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
         </a><br />
