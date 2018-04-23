@@ -262,7 +262,7 @@ To get started using Matrix, pick a client and join #matrix:matrix.org:
   </tr>
 </table>
 
-<div class='font18'>Let's go deeper</div>
+<div class='font18 bold'>Let's go deeper</div>
 Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, application services, bots, etc. If you'd like to learn more, this page aims to collect all known Matrix projects. To add a new one (or update an existing one), you can submit a PR to the [matrix.org](https://github.com/matrix-org/matrix.org) project on github - the existing projects can be found [here](https://github.com/matrix-org/matrix.org/tree/master/jekyll/_posts/projects) - or just let us know in the #matrix:matrix.org room.
 
 
@@ -306,7 +306,7 @@ Clients
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' }}'
+        data-license='{{ post.license | replace:' ', '' | replace: '/', '-' }}'
         data-type='client'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'> 
           <img class='thumbnail' src='{{ post.thumbnail }}'>

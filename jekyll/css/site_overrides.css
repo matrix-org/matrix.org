@@ -101,4 +101,5 @@ blockquote ul li {
     border-color: black;
     border-left-style: solid;
     float:left;
+    padding: 5px;
 }
