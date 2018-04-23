@@ -142,6 +142,9 @@ jQuery(document).ready(($) => {
       project.show(400);
     });
   }
+
+  /* show contols if JS is actually available... */
+  $("#controls").show();
 });
 
 
@@ -213,7 +216,7 @@ Projects using Matrix:
 
 |
 
-<div id="controls" style="user-select: none;">
+<div id="controls" style="user-select: none; display: none;">
   <div id="maturities" style="float:left;">
     <span id="maturities-all" style="font-size: smaller;">All</span>
     <span id="maturities-none" style="font-size: smaller;">None</span>
