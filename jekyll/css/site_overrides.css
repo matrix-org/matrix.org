@@ -95,3 +95,10 @@ blockquote ul li {
     width: 50%;
     float: left;
 }
+
+.control-column {
+    border-width: 1px;
+    border-color: black;
+    border-left-style: solid;
+    float:left;
+}

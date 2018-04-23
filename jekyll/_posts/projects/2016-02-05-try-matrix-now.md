@@ -199,6 +199,29 @@ To get started using Matrix, pick a client and join #matrix:matrix.org:
 <table class='bigtable'>
   <tr>
     <td class='bigproject'>
+      <a href='./client/riot.html' class='font18 bold'>
+        Riot
+      </a><br />
+      If you like glossy and feature-rich web clients, try Riot. Available <a href='./client/riot.html'>on the web</a> and as a <a href='https://riot.im/desktop.html'>desktop client</a>.<br /><br />
+      <a href='./client/riot.html'>
+        <img src='/docs/projects/images/riot-web-featured.png' class='featured_screenshot'>
+      </a>
+    </td>
+    <td class='bigproject'>
+      <a href='./client/riot-android.html' class='font18 bold'>
+        Riot for Android and iOS
+      </a><br />
+      Riot is available on mobile devices<br /><br />
+      <a href='./client/riot-android.html' style="float:left; padding: 10px">
+        Android
+        <img src='/docs/projects/images/vector-android-featured.png' class='featured_screenshot'>
+      </a>
+      <a href='./client/riot-ios.html' style="float:left; padding: 10px">
+        iOS
+        <img src='/docs/projects/images/vector-iOS-featured.png' class='featured_screenshot'>
+      </a>
+    </td>
+    <td class='bigproject'>
       <a href='./client/weechat.html' class='font18 bold'>
         Weechat/Matrix
       </a><br />
@@ -207,31 +230,33 @@ To get started using Matrix, pick a client and join #matrix:matrix.org:
         <img src='https://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-08-07-at-13.31.29-300x209.png' class='featured_screenshot'>
       </a>
     </td>
+  </tr>
+  <tr>
     <td class='bigproject'>
-      <a href='./client/riot.html' class='font18 bold'>
-        Riot
+      <a href='./client/weechat.html' class='font18 bold'>
+        Quaternion
       </a><br />
-      If you like glossy and feature-rich web clients, try Riot.<br /><br />
-      <a href='./client/riot.html'>
-        <img src='/docs/projects/images/riot-web-featured.png' class='featured_screenshot'>
+      A cross-platform desktop client based on Qt5.<br /><br /><br />
+      <a href='./client/quaternion.html'>
+        <img src='https://raw.githubusercontent.com/QMatrixClient/Quaternion/master/quaternion.png' class='featured_screenshot'>
       </a>
     </td>
     <td class='bigproject'>
-      <a href='./client/riot-ios.html' class='font18 bold'>
-        Riot iOS
+      <a href='./client/nheko.html' class='font18 bold'>
+        Nheko
       </a><br />
-      You can also access Matrix on your iOS phone via Riot iOS.<br /><br />
-      <a href='./client/riot-ios.html'>
-        <img src='/docs/projects/images/vector-iOS-featured.png' class='featured_screenshot'>
+      Nheko aims to provide a native desktop app for Matrix.<br /><br />
+      <a href='./client/nheko.html'>
+        <img src='/docs/projects/images/nheko_thumb.png' class='featured_screenshot'>
       </a>
     </td>
     <td class='bigproject'>
-      <a href='./client/riot-android.html' class='font18 bold'>
-        Riot Android
+      <a href='./client/fractal.html' class='font18 bold'>
+        Fractal
       </a><br />
-      Riot is also available on Android devices!<br /><br />
-      <a href='./client/riot-android.html'>
-        <img src='/docs/projects/images/vector-android-featured.png' class='featured_screenshot'>
+      If you're looking for a client for Gnome, try Fractal.<br /><br />
+      <a href='./client/fractal.html'>
+        <img src='/docs/projects/images/fractal-featured.png' class='featured_screenshot'>
       </a>
     </td>
   </tr>
@@ -242,23 +267,27 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
 
 <div id="controls" style="user-select: none; display: none;">
-  <div id="types" style="float:left;">
+  <div id="types" class='control-column'>
+    <div class='font18'>Project Type</div>
     <span id="types-all" style="font-size: smaller;">All</span>
     <span id="types-none" style="font-size: smaller;">None</span>
     <div id="types-list"></div>
   </div>
-  <div id="maturities" style="float:left;">
+  <div id="maturities" class='control-column'>
+    <div class='font18'>Maturity</div>
     <span id="maturities-all" style="font-size: smaller;">All</span>
     <span id="maturities-none" style="font-size: smaller;">None</span>
     <div id="maturities-list"></div>
   </div>
-  <div id="languages" style="float:left;">
+  <div id="languages" class='control-column'>
+    <div class='font18'>Language</div>
     <span id="languages-all" style="font-size: smaller;">All</span>
     <span id="languages-none" style="font-size: smaller;">None</span>
     <br />
     <div id="languages-list" style="display: inline-table;column-count: 2;width: 400px;"></div>
   </div>
-  <div id="licenses" style="float:left;">
+  <div id="licenses" class='control-column'>
+    <div class='font18'>License</div>
     <span id="licenses-all" style="font-size: smaller;">All</span>
     <span id="licenses-none" style="font-size: smaller;">None</span>
     <div id="licenses-list"></div>
