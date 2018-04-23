@@ -191,14 +191,8 @@ jQuery(document).ready(($) => {
 
 </script>
 
-<div class='font18'>
-Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, application services, bots, etc.
-</div>
-
-|
-
 <div class='font18 bold'>
-The easiest way to get started is to pick a client that appeals and join #matrix:matrix.org:
+To get started using Matrix, pick a client and join #matrix:matrix.org:
 </div>
 
 <p>&nbsp;</p>
@@ -243,19 +237,9 @@ The easiest way to get started is to pick a client that appeals and join #matrix
   </tr>
 </table>
 
+<div class='font18'>Let's go deeper</div>
+Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, application services, bots, etc. If you'd like to learn more, this page aims to collect all known Matrix projects. To add a new one (or update an existing one), you can submit a PR to the [matrix.org](https://github.com/matrix-org/matrix.org) project on github - the existing projects can be found [here](https://github.com/matrix-org/matrix.org/tree/master/jekyll/_posts/projects) - or just let us know in the #matrix:matrix.org room.
 
-This page aims to collect all known Matrix projects - if you want to add a new one (or update an existing one), you can submit a PR to the [matrix-doc](https://github.com/matrix-org/matrix.org) project on github - the existing projects can be found [here](https://github.com/matrix-org/matrix.org/tree/master/jekyll/_posts/projects) - or just let us know in the #matrix:matrix.org room.
-
-| 
-
-<div class='font18'>
-Projects using Matrix:
-</div>
-
-* TOC
-{:toc .toc}
-
-|
 
 <div id="controls" style="user-select: none; display: none;">
   <div id="types" style="float:left;">
