@@ -6,7 +6,7 @@ description: Liveblogging based on Matrix
 author: ar
 maturity: Alpha
 language: JavaScript
-license: Apache 2.0
+license: Apache
 ---
 
 # {{ page.title }}
