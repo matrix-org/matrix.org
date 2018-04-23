@@ -190,8 +190,8 @@ jQuery(document).ready(($) => {
 
 
 </script>
-
-<div class='font18 bold'>
+# Get started
+<div class='font18'>
 To get started using Matrix, pick a client and join #matrix:matrix.org:
 </div>
 
@@ -262,7 +262,7 @@ To get started using Matrix, pick a client and join #matrix:matrix.org:
   </tr>
 </table>
 
-<div class='font18 bold'>Let's go deeper</div>
+# Let's go deeper
 Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, application services, bots, etc. If you'd like to learn more, this page aims to collect all known Matrix projects. To add a new one (or update an existing one), you can submit a PR to the [matrix.org](https://github.com/matrix-org/matrix.org) project on github - the existing projects can be found [here](https://github.com/matrix-org/matrix.org/tree/master/jekyll/_posts/projects) - or just let us know in the #matrix:matrix.org room.
 
 
@@ -298,8 +298,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
 |
 
-Clients
-=======
+## Clients
 
 <ul class='projectlist'>
   {% for post in site.categories.client reversed limit:100 %}
@@ -326,8 +325,7 @@ Clients
 
 |
 
-Servers
-=======
+## Servers
 
 <ul class='projectlist'>
   {% for post in site.categories.server reversed limit:100 %}
@@ -351,8 +349,7 @@ Servers
 
 |
 
-Application Services
-====================
+## Application Services
 
 <ul class='projectlist'>
   {% for post in site.categories.as reversed limit:100 %}
@@ -376,8 +373,7 @@ Application Services
 
 |
 
-Client SDKs
-===========
+## Client SDKs
 
 <ul class='projectlist'>
   {% for post in site.categories.sdk reversed limit:100 %}
@@ -401,8 +397,7 @@ Client SDKs
 
 |
 
-Bots
-====
+## Bots
 
 <ul class='projectlist'>
   {% for post in site.categories.bot reversed limit:100 %}
@@ -426,8 +421,7 @@ Bots
 
 |
 
-Other
-=====
+## Other
 
 <ul class='projectlist'>
   {% for post in site.categories.other reversed limit:100 %}
