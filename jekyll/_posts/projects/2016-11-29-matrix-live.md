@@ -1,10 +1,12 @@
 ---
 layout: project
 title: Matrix Live
-description: Liveblogging based on Matrix
 categories: projects other
+description: Liveblogging based on Matrix
 author: ar
 maturity: Alpha
+language: JavaScript
+license: Apache 2.0
 ---
 
 # {{ page.title }}

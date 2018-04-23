@@ -6,6 +6,8 @@ thumbnail: /docs/projects/images/concourse-ci-logo.png
 description: Post notifications from Concourse CI jobs
 author: freelock
 maturity: beta
+language: Shell
+license: Apache
 ---
 
 # {{ page.title }}

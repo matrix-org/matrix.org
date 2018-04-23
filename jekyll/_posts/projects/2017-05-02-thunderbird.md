@@ -1,10 +1,12 @@
 ---
 layout: project
 title: Mozilla Thunderbird
-description: A free email & chat app
 categories: projects client
+description: A free email & chat app
 author: Frédéric Wang
 maturity: Beta
+language: 
+license: 
 ---
 
 # {{ page.title }}
