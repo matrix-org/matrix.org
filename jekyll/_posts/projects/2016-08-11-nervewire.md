@@ -4,7 +4,7 @@ title: Nervewire
 categories: projects other
 description: A Matrix.org image deck
 author: Ryan Rix
-maturity: Early beta
+maturity: Early Beta
 language: 
 license: 
 ---

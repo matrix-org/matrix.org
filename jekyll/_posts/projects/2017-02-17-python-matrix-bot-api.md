@@ -4,7 +4,7 @@ title: python-matrix-bot-api
 categories: projects other
 description: A Python API for making Matrix bots
 author: Shawn Anastasio
-maturity: Early beta
+maturity: Early Beta
 language: Python
 license: GPL3
 ---

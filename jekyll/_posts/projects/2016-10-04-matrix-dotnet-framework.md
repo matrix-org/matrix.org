@@ -4,7 +4,7 @@ title: matrix-dotnet-framework
 categories: projects other
 description: Bot framework for matrix-dotnet-sdk
 author: Half-Shot
-maturity: Early beta
+maturity: Early Beta
 language: C#
 license: MIT
 ---
