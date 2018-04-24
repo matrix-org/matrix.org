@@ -5,8 +5,8 @@ categories: projects other
 description: An alternative integrations manager for Riot
 author: Travis Ralston
 maturity: Alpha
-language: 
-license: 
+language: TypeScript
+license: GPL3
 ---
 
 # {{ page.title }}
