@@ -4,7 +4,7 @@ title: matrix-email-bot
 categories: projects bot
 description: Posts links to emails in Matrix rooms. Ideal for newsletter distribution.
 author: Travis Ralston
-maturity: Early beta
+maturity: Early Beta
 language: 
 license: 
 ---
