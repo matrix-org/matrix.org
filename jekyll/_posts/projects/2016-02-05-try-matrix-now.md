@@ -189,6 +189,14 @@ jQuery(document).ready(($) => {
 
   /* show contols if JS is actually available... */
   $("#controls").show();
+  $("li.project a img").each(function(a, b) {
+    console.log($(b).attr("src"));
+    if ($(b).attr("src").length === 0) {
+      $(b).attr("src", "/docs/projects/images/noimage.png");
+      //$(b).attr("style", "opacity: 0.4;");
+      $(b).css({opacity:0.5, height:"120px"})
+    }
+  });
 });
 
 
@@ -239,7 +247,7 @@ To get started using Matrix, pick a client and join #matrix:matrix.org:
       <a href='./client/weechat.html' class='font18 bold'>
         Quaternion
       </a><br />
-      A cross-platform desktop client based on Qt5.<br /><br /><br />
+      A cross-platform desktop client based on Qt5/QML.<br /><br />
       <a href='./client/quaternion.html'>
         <img src='https://raw.githubusercontent.com/QMatrixClient/Quaternion/master/quaternion.png' class='featured_screenshot'>
       </a>
@@ -248,7 +256,7 @@ To get started using Matrix, pick a client and join #matrix:matrix.org:
       <a href='./client/nheko.html' class='font18 bold'>
         Nheko
       </a><br />
-      Nheko aims to provide a native desktop app for Matrix.<br /><br />
+      Nheko is a glossy native desktop app for Matrix, based on Qt5.<br /><br />
       <a href='./client/nheko.html'>
         <img src='/docs/projects/images/nheko_thumb.png' class='featured_screenshot'>
       </a>
@@ -257,7 +265,7 @@ To get started using Matrix, pick a client and join #matrix:matrix.org:
       <a href='./client/fractal.html' class='font18 bold'>
         Fractal
       </a><br />
-      If you're looking for a client for Gnome, try Fractal.<br /><br />
+      If you're looking for a client for GNOME, try Fractal.<br /><br />
       <a href='./client/fractal.html'>
         <img src='/docs/projects/images/fractal-featured.png' class='featured_screenshot'>
       </a>
