@@ -3,7 +3,7 @@ layout: project
 title: matrix-appservice-slack
 categories: projects as
 author: illicitonion
-maturity: Early beta
+maturity: Early Beta
 ---
 
 # {{ page.title }}

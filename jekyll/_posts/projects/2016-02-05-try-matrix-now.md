@@ -42,18 +42,21 @@ jQuery(document).ready(($) => {
   });
 
   /* Populate maturities list */
-  var maturities =  "{{ maturities | uniq | join: "," }}".split(',');
+  //var maturities =  "{{ maturities | uniq | join: "," }}".split(',');
+
+  var maturities =  "Released,Stable,Late Beta,Beta,Early Beta,Late Alpha,Alpha,Early Alpha,No longer maintained".split(',');
   maturities.forEach((maturity => {
     if (maturity.length === 0) return;
 
     var item = $('<div>');
     var checkboxId = 'chk-maturity-' + maturity.replace(/ /g, '');
-    item.append(
-      $('<input>')
+
+    var checkbox = $('<input>')
         .attr('id', checkboxId)
-        .attr('type', 'checkbox')
-        .attr('checked', 'checked')
-    );
+        .attr('type', 'checkbox');
+    if (maturity !== "No longer maintained") { checkbox.attr('checked', 'checked'); };
+    
+    item.append(checkbox);
     item.append($('<label>').attr('for', checkboxId).text(" " + maturity.trim()))
     $("#maturities-list").append(item);
   }));
