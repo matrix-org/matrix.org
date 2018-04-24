@@ -4,7 +4,7 @@ title: matrix-static
 categories: projects client
 description: A static golang generated preview of public world readable Matrix rooms
 author: Michael Telatynski
-maturity: Released
+maturity: Stable
 language: Go
 license: Apache
 ---
