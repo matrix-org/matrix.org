@@ -3,8 +3,8 @@ layout: project
 title: Matrix Live
 categories: projects other
 description: Liveblogging based on Matrix
-author: ar
-maturity: Alpha
+author: Alexander Rudyk
+maturity: Beta
 language: JavaScript
 license: Apache
 ---

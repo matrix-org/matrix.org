@@ -2,8 +2,11 @@
 layout: project
 title: Matrixcraft bridge
 categories: projects as
+description: Python 2 application using Twisted that bridges the Matrix chat network with the Gitter system.
 author: paftree
 maturity: Alpha
+language: Python
+license: MIT
 ---
 
 # {{ page.title }}

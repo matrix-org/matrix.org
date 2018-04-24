@@ -4,7 +4,7 @@ title: MatrixClient
 categories: projects client
 description: Matrix Client for macOS
 author: Avery Pierce
-maturity: Alpha
+maturity: No longer maintained
 language: Swift
 license: Apache
 ---

@@ -1,10 +1,12 @@
 ---
 layout: project
 title: Matrix bot nodes for Node-RED
-description: Visual bot creation using Node-RED
 categories: projects other
+description: Visual bot creation using Node-RED
 author: mlopezr
 maturity: Alpha
+language: JavaScript
+license: 
 ---
 
 # {{ page.title }}

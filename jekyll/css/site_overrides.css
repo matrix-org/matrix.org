@@ -98,7 +98,7 @@ blockquote ul li {
 
 .control-column {
     border-width: 1px;
-    border-color: black;
+    border-color: #666;
     border-left-style: solid;
     float:left;
     padding: 5px;

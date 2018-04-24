@@ -3,7 +3,7 @@ layout: project
 title: Matrix Recorder
 categories: projects other
 description: Enables you to keep a record of all messages you have received.
-author: ar
+author: Alexander Rudyk
 maturity: Alpha
 language: JavaScript
 license: MIT

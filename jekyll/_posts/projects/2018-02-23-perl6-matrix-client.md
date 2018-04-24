@@ -2,9 +2,11 @@
 layout: project
 title: Matrix::Client
 categories: projects sdk
-author: matiaslina
 description: Perl6 Matrix client SDK
+author: matiaslina
 maturity: Alpha
+language: Perl
+license: Artistic2
 ---
 
 # {{ page.title }}
