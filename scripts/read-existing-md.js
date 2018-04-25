@@ -1,3 +1,10 @@
+/*
+* read-existing-md.js: output all existing project markdown files
+* to an HTML table to simplify review.
+*
+* to run: node read-existing-md.js > output.html
+*/
+
 var fs = require('fs'),
 readline = require('readline');
 
