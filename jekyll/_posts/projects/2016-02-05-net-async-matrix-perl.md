@@ -1,9 +1,12 @@
 ---
 layout: project
-title: Net::Async::Matrix (Perl) 
+title: Net::Async::Matrix (Perl)
 categories: projects sdk
+description: 
 author: LeoNerd
 maturity: Late Beta
+language: Perl
+license: GPL1
 ---
 
 # {{ page.title }}

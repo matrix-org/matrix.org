@@ -2,7 +2,7 @@
 layout: project
 title: matrix-appservice-discord
 categories: projects as
-description: This project bridges Discord to Matrix via the Application API
+description: This project bridges Discord to Matrix via the Application Service API
 author: Half-Shot
 maturity: Alpha
 language: TypeScript
