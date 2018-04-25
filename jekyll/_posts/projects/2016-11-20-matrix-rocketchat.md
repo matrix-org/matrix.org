@@ -7,6 +7,7 @@ author: exul
 maturity: Alpha
 language: Rust
 license: MIT
+repo: https://github.com/exul/matrix-rocketchat
 ---
 
 ![screenshot](/docs/projects/images/matrix-rocketchat.png "{{ page.title }}")
@@ -15,3 +16,5 @@ license: MIT
 This is an application service that bridges Matrix to Rocket.Chat, written in Rust.
 
 Find it on [GitHub](https://github.com/exul/matrix-rocketchat).
+
+Repository: <{{page.repo}}>

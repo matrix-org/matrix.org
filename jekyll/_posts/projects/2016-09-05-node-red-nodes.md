@@ -7,6 +7,7 @@ author: mlopezr
 maturity: Alpha
 language: JavaScript
 license: 
+repo: https://github.com/mlopezr/node-red-contrib-matrixbot
 ---
 
 # {{ page.title }}
@@ -15,3 +16,5 @@ It's very easy to create simple interactions with a Matrix chatroom without prog
 ![image](https://github.com/mlopezr/node-red-contrib-matrixbot/raw/master/docs/nodered-twitter.png)
 
 Check it out on [GitHub](https://github.com/mlopezr/node-red-contrib-matrixbot).
+
+Repository: <{{page.repo}}>

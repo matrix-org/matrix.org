@@ -7,6 +7,7 @@ author: jaller94
 maturity: Beta
 language: JavaScript
 license: AGPL3
+repo: https://github.com/jaller94/silvy-matrix
 ---
 
 # {{ page.title }}
@@ -19,3 +20,5 @@ Her features include:
 * an advent calendar,
 * posting stickers (since Matrix.org doesn’t support our stickers) and
 * anniversary reminder.
+
+Repository: <{{page.repo}}>

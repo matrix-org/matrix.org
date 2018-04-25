@@ -7,6 +7,7 @@ author: Mobitel Ltd
 maturity: Beta
 language: JavaScript
 license: 
+repo: https://github.com/mobitel-ltd/jira-to-matrix
 ---
 
 # {{ page.title }}
@@ -22,3 +23,5 @@ Features
 + Appropriately renames the room if the issue was moved to another project;
 + Post new links to related rooms. Notifies when a related issue's status changes;
 + Talks in English or Russian only (easily extendible, see `src/locales`).
+
+Repository: <{{page.repo}}>

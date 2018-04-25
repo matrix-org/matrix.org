@@ -8,7 +8,10 @@ author: freelock
 maturity: Alpha
 language: PHP
 license: 
+repo: https://cgit.drupalcode.org/matrix_api
 ---
 
 # {{ page.title }}
 A Drupal API module to facilitate posting messages into Matrix rooms. [Drupal.org](https://drupal.org/project/matrix_api)
+
+Repository: <{{page.repo}}>

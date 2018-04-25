@@ -7,6 +7,7 @@ author: MartijnBraam
 maturity: Alpha
 language: C#
 license: 
+repo: https://github.com/MartijnBraam/Nebuchadnezzar
 ---
 
 # {{ page.title }}
@@ -23,3 +24,5 @@ Features
 - [ ] Sending images
 - [ ] Sending files
 - [ ] Support encrypted chatrooms
+
+Repository: <{{page.repo}}>

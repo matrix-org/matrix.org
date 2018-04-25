@@ -7,6 +7,7 @@ author: Alexander Rudyk
 maturity: Beta
 language: JavaScript
 license: Apache
+repo: https://gitlab.com/argit/matrix-live/
 ---
 
 # {{ page.title }}
@@ -17,3 +18,5 @@ With Matrix Live, you can create a room in Matrix, and while you use your favori
 How does it look like in practice? You can try it out. We have prepared two demo versions for you, which are both fully functional Matrix Live implementations - check them out [here](https://live.hello-matrix.net/live.html#matrix.hello-matrix.net/!sBcCeweWXOjVViEiIY%3Ahello-matrix.net/Hello%2C%20Matrix!) and [here](https://live.hello-matrix.net/demo2.html).
 
 For more information, visit [live.hello-matrix.net](https://live.hello-matrix.net/) or look at the source code on [gitlab](https://gitlab.com/argit/matrix-live).
+
+Repository: <{{page.repo}}>

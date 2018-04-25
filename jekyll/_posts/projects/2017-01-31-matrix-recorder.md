@@ -7,6 +7,7 @@ author: Alexander Rudyk
 maturity: Alpha
 language: JavaScript
 license: MIT
+repo: https://gitlab.com/argit/matrix-recorder/
 ---
 
 # {{ page.title }}
@@ -17,3 +18,5 @@ This is where Matrix Recorder jumps in. This tool (written in Node.js) retrieves
 All timeline events retrieved that way will be stored in an sqlite database which you can just keep as a backup or use to create your own archive. Matrix Recorder comes with a small utility that extracts messages from this database into HTML files that can be viewed in your browser.
 
 Follow the progress and grab the code from [GitLab](https://gitlab.com/argit/matrix-recorder).
+
+Repository: <{{page.repo}}>

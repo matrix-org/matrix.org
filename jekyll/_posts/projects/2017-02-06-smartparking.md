@@ -7,9 +7,12 @@ author: Natan Bagrov, Ran Moshe
 maturity: Alpha
 language: PowerShell
 license: 
+repo: https://github.com/NatanBagrov/SmartParking
 ---
 
 # {{ page.title }}
 A proof of concept of a Smart Parking system, where each parking space is monitored and connected to the Smart Parking Manager via Matrix. This project was written for a hackathon.
 
 Check it out on [GitHub](https://github.com/NatanBagrov/SmartParking).
+
+Repository: <{{page.repo}}>

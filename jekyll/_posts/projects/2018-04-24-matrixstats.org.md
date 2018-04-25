@@ -7,7 +7,10 @@ author: a13xmt
 maturity: Beta
 language: Python
 license: 
+repo: https://github.com/a13xmt/matrixstats.org
 ---
 
 # {{ page.title }}
 The first public catalog for matrix rooms, grouped by ratings or categories
+
+Repository: <{{page.repo}}>

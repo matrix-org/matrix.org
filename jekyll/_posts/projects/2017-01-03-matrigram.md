@@ -7,6 +7,7 @@ author: GalPressman & YuvalFatael
 maturity: Alpha
 language: Python
 license: MIT
+repo: https://github.com/GalPressman/matrigram/
 ---
 
 # {{ page.title }}
@@ -18,3 +19,5 @@ Our goal is to provide full matrix user experience, including support of
 all media types, relaying "typing..." messages, etc..
 
 Find the source on [GitHub](https://github.com/GalPressman/matrigram/).
+
+Repository: <{{page.repo}}>
