@@ -7,6 +7,7 @@ author: Max Dor
 maturity: 
 language: Python
 license: 
+repo: https://github.com/kamax-io/matrix-synapse-rest-auth
 ---
 
 # {{ page.title }}
@@ -18,3 +19,5 @@ This synapse authentication module (password provider) allows you to query ident
 
 It is mainly used with [mxisd](https://github.com/kamax-io/mxisd), the Federated Matrix Identity Server, to provide
 missing features and offer a fully integrated solution (directory, authentication, search).
+
+Repository: <{{page.repo}}>

@@ -7,6 +7,7 @@ author: Half-Shot
 maturity: Alpha
 language: TypeScript
 license: Apache
+repo: https://github.com/Half-Shot/matrix-appservice-discord
 ---
 
 ![screenshot](/docs/projects/images/discord.png "{{ page.title }}")
@@ -15,3 +16,5 @@ license: Apache
 This project bridges [Discord](https://discordapp.com) to Matrix via the Application API
 
 Get it from [GitHub](https://github.com/Half-Shot/matrix-appservice-discord).
+
+Repository: <{{page.repo}}>

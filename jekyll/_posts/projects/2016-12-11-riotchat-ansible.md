@@ -7,9 +7,12 @@ author: kultsinuppeli
 maturity: Alpha
 language: Playbook
 license: N/A
+repo: https://github.com/kultsinuppeli/riotchat
 ---
 
 # {{ page.title }}
 This playbook sets up Matrix and Riot.im on a single server or two separate servers. The servers will request Let's Encrypt certificates for the hostnames assigned to them.
 
 Find the source on [GitHub](https://github.com/kultsinuppeli/riotchat).
+
+Repository: <{{page.repo}}>

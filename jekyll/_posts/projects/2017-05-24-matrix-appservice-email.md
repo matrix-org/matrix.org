@@ -7,6 +7,7 @@ author: Kamax.io and Open-Xchange
 maturity: Alpha
 language: Java
 license: AGPL3
+repo: https://github.com/kamax-io/matrix-appservice-email
 ---
 
 # {{ page.title }}
@@ -19,3 +20,5 @@ Features:
 - Email <-> Matrix <-> Email forwarding, if several bridge users are present within a room
 - Fully configuration notification templates, per event
 - Subscription portal where E-mail users can manage their notifications
+
+Repository: <{{page.repo}}>

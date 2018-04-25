@@ -7,6 +7,7 @@ author: Remi Rampin
 maturity: Alpha
 language: Python
 license: BSD
+repo: https://github.com/remram44/matrix-appservice-gitter-twisted/
 ---
 
 # {{ page.title }}
@@ -17,3 +18,5 @@ This is supposed to be deployed as a Matrix application service alongside a home
 Contrary to other bridges, this doesn't link a public Matrix room with a Gitter one. You won't be able to join a Gitter room without a Gitter account. On the other hand, Gitter users won't see the difference between a Matrix user and a normal Gitter user, since they will appear to be chatting natively.
 
 Find it on [GitHub](https://github.com/remram44/matrix-appservice-gitter-twisted/).
+
+Repository: <{{page.repo}}>

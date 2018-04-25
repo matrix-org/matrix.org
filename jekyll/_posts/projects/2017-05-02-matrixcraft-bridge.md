@@ -7,9 +7,12 @@ author: paftree
 maturity: Alpha
 language: Python
 license: MIT
+repo: https://github.com/paftree/matrixcraft-bridge
 ---
 
 # {{ page.title }}
 Some Python code for plumbing together a Matrix room and a Minecraft server chat
 
 https://github.com/paftree/matrixcraft-bridge
+
+Repository: <{{page.repo}}>

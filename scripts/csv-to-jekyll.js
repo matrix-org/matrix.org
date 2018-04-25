@@ -35,6 +35,7 @@ function writeJekyllFile(project) {
     stream.write("maturity: " + project.maturity + "\n");
     stream.write("language: " + project.language + "\n");
     stream.write("license: " + project.license + "\n");
+    stream.write("repo: " + project.Repo + "\n");
     stream.write("---\n");
     stream.write("\n");
     if (project.Screenshot) {
@@ -48,6 +49,10 @@ function writeJekyllFile(project) {
       stream.write(line);
       if (id !== array.length - 1) stream.write("\n\n");
     });
+    if (project.Repo) {
+        stream.write("\n\n");
+        stream.write("Repository: <{{page.repo}}>");
+    }
     //stream.write(project.JekyllContent);
     stream.write("\n");
     stream.end();

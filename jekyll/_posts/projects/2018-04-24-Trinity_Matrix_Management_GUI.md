@@ -7,6 +7,7 @@ author: aminhusni
 maturity: Beta
 language: C#
 license: AGPL3
+repo: https://github.com/aminhusni/Trinity_Matrix_Management_GUI
 ---
 
 # {{ page.title }}
@@ -19,3 +20,5 @@ A management GUI for Matrix-Synapse server
 * Query rooms(publicly listed rooms only)
 * Purge room
 * View supported API versions
+
+Repository: <{{page.repo}}>

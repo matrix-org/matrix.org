@@ -7,6 +7,7 @@ author: Keyvan Fatehi
 maturity: 
 language: JavaScript
 license: 
+repo: https://github.com/matrix-hacks/matrix-puppet-slack
 ---
 
 # {{ page.title }}
@@ -21,3 +22,5 @@ The bridge uses that access token to connect as a client using the slack RTM API
 This technique does not require admin on the slack team; instead, the bridge is simply a custom slack client.
 
 The bridge supports multiple teams at once, see the config.sample.json
+
+Repository: <{{page.repo}}>

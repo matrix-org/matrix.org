@@ -7,6 +7,7 @@ author: spantaleev
 maturity: Beta
 language: Shell
 license: 
+repo: https://github.com/spantaleev/matrix-docker-ansible-deploy
 ---
 
 # {{ page.title }}
@@ -31,3 +32,5 @@ Using this playbook, you can get the following services configured on your serve
 - (optional default) an [nginx](http://nginx.org/) web server, listening on ports 80 and 443 - standing in front of all the other services. Using your own webserver [is possible](#using-your-own-webserver-instead-of-this-playbooks-nginx-proxy-optional)
 
 Basically, this playbook aims to get you up-and-running with all the basic necessities around Matrix, without you having to do anything else.
+
+Repository: <{{page.repo}}>
