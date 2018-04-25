@@ -1,3 +1,9 @@
+/*
+* runner.js: start a new localhost http server on port 300.
+* makes it easy to see the generated site.
+*
+* to run: node runner.js
+*/
 var express = require('express');
 var app = express();
 
