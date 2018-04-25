@@ -68,7 +68,8 @@ jQuery(document).ready(($) => {
   });
 
   /* Populate languages list */
-  var languages =  "{{ languages | uniq | join: "," }}".split(',');
+  //var languages =  "{{ languages | uniq | join: "," }}".split(',');
+  var languages =  ",C++/Qt/QML,Shell,JavaScript,Python,Kotlin,C++,Java,Perl,Go,Lisp,Lua,TypeScript,C#,Haxe,Rust,Swift,C++/Qt,PowerShell,Shell/Python,Playbook,Elixir,C,PHP,C#/Python,C++/QML".split(',');
   if (languages.indexOf("Unknown") === -1) languages.push("Unknown");
   languages.forEach((language => {
     if (language.length === 0) return;
@@ -91,8 +92,9 @@ jQuery(document).ready(($) => {
     checkVisibility($('li.project[data-language="' + language + '"]').toArray());
   });
 
-    /* Populate licenses list */
-  var licenses =  "{{ licenses | uniq | join: "," }}".split(',');
+  /* Populate licenses list */
+  //var licenses =  "{{ licenses | uniq | join: "," }}".split(',');
+  var licenses =  ",GPL3,AGPL3,Apache,Artistic2,MIT,CC0 1.0,Unknown,N/A,ISC,BSD,LGPL2.1".split(',');
   if (licenses.indexOf("Unknown") === -1) licenses.push("Unknown");
   licenses.forEach((license => {
     if (license.length === 0) return;
@@ -244,7 +246,7 @@ To get started using Matrix, pick a client and join #matrix:matrix.org:
   </tr>
   <tr>
     <td class='bigproject'>
-      <a href='./client/weechat.html' class='font18 bold'>
+      <a href='./client/quaternion.html' class='font18 bold'>
         Quaternion
       </a><br />
       A cross-platform desktop client based on Qt5/QML.<br /><br />
