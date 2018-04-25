@@ -2,8 +2,11 @@
 layout: project
 title: matrix-appservice-rocketchat
 categories: projects as
+description: This project bridges Rocket Chat to Matrix.
 author: oddvar
-maturity: Early beta
+maturity: Early Beta
+language: JavaScript
+license: 
 ---
 
 # {{ page.title }}

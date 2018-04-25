@@ -1,10 +1,12 @@
 ---
 layout: project
 title: Interlocutor
-description: Free, decentralized comment software for the web
 categories: projects other
+description: Free, decentralized comment software for the web
 author: Alexander Maznev
 maturity: Alpha
+language: JavaScript
+license: Unknown
 ---
 
 # {{ page.title }}

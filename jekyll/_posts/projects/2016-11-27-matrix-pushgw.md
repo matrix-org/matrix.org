@@ -1,10 +1,12 @@
 ---
 layout: project
 title: matrix-pushgw
-description: A custom push gateway
 categories: projects other
+description: A custom push gateway
 author: Sergio L. Pascual
 maturity: Alpha
+language: Go
+license: 
 ---
 
 # {{ page.title }}

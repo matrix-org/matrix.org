@@ -3,7 +3,7 @@ layout: project
 title: matrix-appservice-bridge
 categories: projects as
 author: Kegsay
-maturity: Early beta
+maturity: Early Beta
 ---
 
 # {{ page.title }}

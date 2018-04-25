@@ -5,7 +5,9 @@ categories: projects other
 thumbnail: /docs/projects/images/concourse-ci-logo.png
 description: Post notifications from Concourse CI jobs
 author: freelock
-maturity: beta
+maturity: Beta
+language: Shell
+license: Apache
 ---
 
 # {{ page.title }}

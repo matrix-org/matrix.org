@@ -5,6 +5,8 @@ categories: projects bot
 description: Bot for bridging Matrix and Mattermost, IRC, XMPP, Gitter, Slack, Discord, Telegram, Rocket.Chat, Hipchat(via xmpp), Steam.
 author: 42wim
 maturity: Stable
+language: Go
+license: Apache
 ---
 
 # {{ page.title }}

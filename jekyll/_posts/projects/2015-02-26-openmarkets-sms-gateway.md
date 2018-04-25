@@ -4,7 +4,7 @@ title: OpenMarket's SMS Gateway
 categories: projects as
 thumbnail: https://matrix.org/blog/wp-content/uploads/2015/04/omlogo-400x284.jpg
 author: OpenMarket
-maturity: Late beta
+maturity: Late Beta
 ---
 
 ![screenshot](https://matrix.org/blog/wp-content/uploads/2015/04/omlogo.jpg "{{ page.title }}")

@@ -5,6 +5,8 @@ categories: projects client
 description: An IRCd implementation backed by Matrix.
 author: Erik
 maturity: Alpha
+language: Rust
+license: Apache
 ---
 
 # {{ page.title }}

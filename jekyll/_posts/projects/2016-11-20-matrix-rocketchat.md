@@ -2,8 +2,11 @@
 layout: project
 title: matrix-rocketchat
 categories: projects as
+description: This is an application service that bridges Matrix to Rocket.Chat, written in Rust.
 author: exul
 maturity: Alpha
+language: Rust
+license: MIT
 ---
 
 ![screenshot](/docs/projects/images/matrix-rocketchat.png "{{ page.title }}")

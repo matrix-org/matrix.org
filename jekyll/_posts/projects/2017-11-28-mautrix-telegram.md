@@ -4,7 +4,9 @@ title: mautrix-telegram
 categories: projects as
 description: A Matrix-Telegram hybrid puppeting/relaybot bridge
 author: Tulir
-maturity: Early beta
+maturity: Early Beta
+language: 
+license: 
 ---
 
 ![screenshot](/docs/projects/images/mautrix-telegram.png "{{ page.title }}")

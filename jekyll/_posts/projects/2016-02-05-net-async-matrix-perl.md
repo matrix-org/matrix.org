@@ -3,7 +3,7 @@ layout: project
 title: Net::Async::Matrix (Perl) 
 categories: projects sdk
 author: LeoNerd
-maturity: Late beta
+maturity: Late Beta
 ---
 
 # {{ page.title }}

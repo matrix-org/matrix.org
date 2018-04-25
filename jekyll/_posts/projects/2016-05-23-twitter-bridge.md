@@ -2,8 +2,11 @@
 layout: project
 title: Twitter bridge
 categories: projects as
+description: 
 author: Half-Shot
-maturity: Alpha
+maturity: No longer maintained
+language: JavaScript
+license: Apache
 ---
 
 # {{ page.title }}

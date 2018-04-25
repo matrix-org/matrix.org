@@ -2,8 +2,11 @@
 layout: project
 title: matrix-appservice-gitter-twisted
 categories: projects as
+description: Python 2 application using Twisted that bridges the Matrix chat network with Gitter.
 author: Remi Rampin
 maturity: Alpha
+language: Python
+license: BSD
 ---
 
 # {{ page.title }}

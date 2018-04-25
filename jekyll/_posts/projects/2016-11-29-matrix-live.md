@@ -1,10 +1,12 @@
 ---
 layout: project
 title: Matrix Live
-description: Liveblogging based on Matrix
 categories: projects other
-author: ar
-maturity: Alpha
+description: Liveblogging based on Matrix
+author: Alexander Rudyk
+maturity: Beta
+language: JavaScript
+license: Apache
 ---
 
 # {{ page.title }}

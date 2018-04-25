@@ -6,6 +6,8 @@ thumbnail: /docs/projects/images/200px-druplicon.png
 description: A Drupal 8 integration module/SDK
 author: freelock
 maturity: Alpha
+language: PHP
+license: 
 ---
 
 # {{ page.title }}

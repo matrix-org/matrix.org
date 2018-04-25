@@ -3,9 +3,11 @@ layout: project
 title: Quaternion
 categories: projects client
 thumbnail: https://raw.githubusercontent.com/QMatrixClient/Quaternion/master/quaternion.png
-author: QMatrixClient team
 description: A Qt5-based IM client for the Matrix protocol
-maturity: Early beta
+author: QMatrixClient team
+maturity: Beta
+language: C++/Qt
+license: GPL3
 ---
 
 ![screenshot](https://raw.githubusercontent.com/QMatrixClient/Quaternion/master/quaternion.png "{{ page.title }}")

@@ -5,6 +5,8 @@ categories: projects bot
 description: Bot with an array of plugins
 author: Alexander Rudyk
 maturity: Alpha
+language: JavaScript
+license: Apache
 ---
 
 # {{ page.title }}

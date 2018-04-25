@@ -2,8 +2,11 @@
 layout: project
 title: libqmatrixclient
 categories: projects sdk
+description: libqmatrixclient is a Qt-based library to make IM clients for the Matrix protocol.
 author: QMatrixClient team
 maturity: Beta
+language: C++/Qt
+license: LGPL2.1
 ---
 
 # {{ page.title }}

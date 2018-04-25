@@ -1,10 +1,12 @@
 ---
 layout: project
 title: synapse-password-reset
-description: A tool to manage Synapse password resets
 categories: projects other
+description: A tool to manage Synapse password resets
 author: Euan Kemp
 maturity: Alpha
+language: Rust
+license: AGPL3
 ---
 
 # {{ page.title }}

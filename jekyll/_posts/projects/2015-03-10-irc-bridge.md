@@ -4,7 +4,7 @@ title: Matrix.org IRC Bridge
 categories: projects as
 description: 
 author: Matrix.org team
-maturity: Early beta
+maturity: Early Beta
 ---
 
 # {{ page.title }}
