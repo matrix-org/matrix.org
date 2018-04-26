@@ -8,6 +8,7 @@ maturity: Alpha
 language: Haxe
 license: AGPL3
 repo: https://notabug.org/Tamaimo/haxe-matrix-im
+home: https://lib.haxe.org/p/matrix-im/
 ---
 
 # {{ page.title }}
