@@ -4,7 +4,7 @@ title: matrix-puppet-slack
 categories: projects as
 description: puppet style slack bridge for matrix
 author: Keyvan Fatehi
-maturity: 
+maturity: Beta
 language: JavaScript
 license: 
 repo: https://github.com/matrix-hacks/matrix-puppet-slack
