@@ -4,9 +4,9 @@ title: matrix-redux-wrap
 categories: projects sdk
 description: A library that exposes matrix-js-sdk state via Redux
 author: Luke Barnard
-maturity: 
+maturity: Stable
 language: JavaScript
-license: 
+license: Apache
 repo: https://github.com/lukebarnard1/matrix-redux-wrap
 ---
 
