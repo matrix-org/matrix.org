@@ -36,6 +36,9 @@ function writeJekyllFile(project) {
     stream.write("language: " + project.language + "\n");
     stream.write("license: " + project.license + "\n");
     stream.write("repo: " + project.Repo + "\n");
+    if (project.Home) {
+        stream.write("home: " + project.Home + "\n");
+    }
     stream.write("---\n");
     stream.write("\n");
     if (project.Screenshot) {

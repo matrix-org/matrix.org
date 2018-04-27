@@ -8,6 +8,7 @@ maturity: Beta
 language: Python
 license: 
 repo: https://github.com/a13xmt/matrixstats.org
+home: https://matrixstats.org
 ---
 
 # {{ page.title }}

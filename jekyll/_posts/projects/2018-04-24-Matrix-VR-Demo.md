@@ -8,6 +8,7 @@ maturity: Alpha
 language: 
 license: 
 repo: 
+home: https://matrix.org/vrdemo
 ---
 
 # {{ page.title }}

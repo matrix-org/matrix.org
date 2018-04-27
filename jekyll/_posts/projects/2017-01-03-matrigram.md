@@ -8,6 +8,7 @@ maturity: Alpha
 language: Python
 license: MIT
 repo: https://github.com/GalPressman/matrigram/
+home: http://matrigram.readthedocs.io/en/latest/
 ---
 
 # {{ page.title }}
