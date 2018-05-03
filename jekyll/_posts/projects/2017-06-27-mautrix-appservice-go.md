@@ -2,9 +2,12 @@
 layout: project
 title: mautrix-appservice-go
 categories: projects as
-author: Tulir
 description: An application service framework written in Go
+author: Tulir
 maturity: Alpha
+language: 
+license: 
+repo: 
 ---
 
 # {{ page.title }}

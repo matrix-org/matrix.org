@@ -5,6 +5,9 @@ categories: projects bot
 description: A GitLab bot for Matrix
 author: Tulir
 maturity: Alpha
+language: 
+license: 
+repo: 
 ---
 
 # {{ page.title }}

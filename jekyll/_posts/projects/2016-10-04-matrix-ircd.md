@@ -5,6 +5,9 @@ categories: projects client
 description: An IRCd implementation backed by Matrix.
 author: Erik
 maturity: Alpha
+language: Rust
+license: Apache
+repo: https://github.com/matrix-org/matrix-ircd
 ---
 
 # {{ page.title }}
@@ -15,3 +18,5 @@ This is a work in progress. Matrix IRCd should be stable enough to hack on and t
 See the [GitHub issues page](https://github.com/matrix-org/matrix-ircd/issues) for a more detailed breakdown of what is left to do, and/or join the discussion on the Matrix channel: [#matrix-ircd:matrix.org](https://matrix.to/#/#matrix-ircd:matrix.org)
 
 You can check out the code from [GitHub](https://github.com/matrix-org/matrix-ircd).
+
+Repository: <{{page.repo}}>

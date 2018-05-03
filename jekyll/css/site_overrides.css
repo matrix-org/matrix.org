@@ -44,7 +44,7 @@ h1,h2,h3,h4,h5 {
 
 #document {
     margin-top: 10px; /* We want a little whitespace before the page content starts */
-    width: 1080px;
+    /*width: 1080px;*/
 }
 
 #wrapper {
@@ -89,4 +89,17 @@ blockquote ul li {
     margin-bottom: 5px;
     color: #666;
 
+}
+
+#languages-list div  {
+    width: 50%;
+    float: left;
+}
+
+.control-column {
+    border-width: 1px;
+    border-color: #666;
+    border-left-style: solid;
+    float:left;
+    padding: 5px;
 }

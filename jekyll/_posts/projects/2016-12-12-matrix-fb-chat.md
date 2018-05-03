@@ -2,8 +2,12 @@
 layout: project
 title: matrix-fb-chat
 categories: projects other
+description: POC designed to bridge Matrix rooms to FB chat.
 author: Half-Shot
 maturity: Alpha
+language: TypeScript
+license: MIT
+repo: https://github.com/Half-Shot/matrix-fb-chat/
 ---
 
 # {{ page.title }}
@@ -16,3 +20,5 @@ What can it do?
 * Recieve messages and urls from facebook.
 
 Find the source on [GitHub](https://github.com/Half-Shot/matrix-fb-chat/).
+
+Repository: <{{page.repo}}>

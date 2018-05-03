@@ -5,6 +5,9 @@ categories: projects bot
 description: Bot with an array of plugins
 author: Alexander Rudyk
 maturity: Alpha
+language: JavaScript
+license: Apache
+repo: https://gitlab.com/argit/hello-matrix-bot
 ---
 
 # {{ page.title }}
@@ -27,3 +30,5 @@ You can either use the "Hello Matrix" bot running on our server (just invite @he
 |
 
 Follow the progress and grab the code from [gitlab](https://gitlab.com/argit/hello-matrix-bot)!
+
+Repository: <{{page.repo}}>

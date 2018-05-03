@@ -3,7 +3,7 @@ layout: project
 title: newlisp-matrix-client
 categories: projects sdk
 author: Ingo Hohmann
-maturity: Early beta
+maturity: Early Beta
 ---
 
 # {{ page.title }}

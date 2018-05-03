@@ -5,6 +5,9 @@ categories: projects bot
 description: Bot with plugins
 author: Ander Punnar
 maturity: Alpha
+language: Shell/Python
+license: Unknown
+repo: https://github.com/4nd3r/tiny-matrix-bot
 ---
 
 # {{ page.title }}
@@ -28,3 +31,5 @@ manual:
 |
 
 Follow the progress and grab the code from [GitHub](https://github.com/4nd3r/tiny-matrix-bot/)!
+
+Repository: <{{page.repo}}>
