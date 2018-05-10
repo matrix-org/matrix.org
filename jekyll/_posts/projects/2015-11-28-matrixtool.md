@@ -4,6 +4,7 @@ title: MatrixTool
 categories: projects other
 description: Commands to interact with a Matrix homeserver
 author: LeoNerd
+language: Perl
 maturity: Alpha
 ---
 # {{ page.title }}

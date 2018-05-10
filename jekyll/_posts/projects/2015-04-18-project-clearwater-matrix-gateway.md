@@ -4,6 +4,7 @@ title: Project Clearwater / Matrix Gateway
 categories: projects as
 thumbnail: https://matrix.org/blog/wp-content/uploads/2015/04/clearwter-400x284.jpg
 author: Matt Williams
+language: C++
 maturity: Alpha
 ---
 

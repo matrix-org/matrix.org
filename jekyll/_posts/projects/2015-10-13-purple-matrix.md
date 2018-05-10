@@ -4,6 +4,7 @@ title: purple-matrix
 categories: projects client
 description: A plugin for libpurple
 author: Matrix.org team
+language: C
 maturity: Alpha
 ---
 

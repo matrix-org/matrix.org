@@ -3,6 +3,7 @@ layout: project
 title: Vertobridge
 categories: projects as
 author: Matthew / Kegan
+language: JavaScript
 maturity: Alpha
 ---
 

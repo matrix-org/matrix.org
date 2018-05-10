@@ -3,6 +3,7 @@ layout: project
 title: gomatrix IRC bridge
 categories: projects as
 author: Tor
+language: Go
 maturity: Alpha
 ---
 

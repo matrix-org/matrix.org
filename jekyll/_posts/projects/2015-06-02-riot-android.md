@@ -5,6 +5,7 @@ categories: projects client
 thumbnail: /docs/projects/images/vector-android-small.png
 description: Riot is a glossy client with an emphasis on performance and usability
 author: Riot.im
+language: Java
 maturity: Released
 ---
 

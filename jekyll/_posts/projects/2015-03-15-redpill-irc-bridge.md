@@ -3,6 +3,7 @@ layout: project
 title: redpill IRC bridge
 categories: projects as
 author: Tjgillies
+language: Ruby
 maturity: Alpha
 ---
 

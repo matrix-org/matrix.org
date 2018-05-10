@@ -4,6 +4,7 @@ title: Matrix.org IRC Bridge
 categories: projects as
 description: 
 author: Matrix.org team
+language: JavaScript
 maturity: Early Beta
 ---
 
