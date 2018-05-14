@@ -4,6 +4,7 @@ title: Perl Matrix-IRC Bridge
 categories: projects other
 description: The first Matrix/IRC bridge
 author: Tom Molesworth / Paul Evans
+language: Perl
 maturity: Beta
 ---
 

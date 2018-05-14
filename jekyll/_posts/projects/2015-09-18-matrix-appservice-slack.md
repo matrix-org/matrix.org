@@ -3,6 +3,7 @@ layout: project
 title: matrix-appservice-slack
 categories: projects as
 author: illicitonion
+language: JavaScript
 maturity: Early Beta
 ---
 

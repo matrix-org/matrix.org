@@ -4,6 +4,7 @@ title: ivar2 Matrix/IRC Bot
 categories: projects bot
 description: IRC bot with native Matrix support
 author: haste / Tor
+language: Lua
 maturity: Beta
 ---
 
