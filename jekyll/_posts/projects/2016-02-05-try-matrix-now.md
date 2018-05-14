@@ -282,27 +282,27 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 <div id="controls" style="user-select: none; display: none;">
   <div id="types" class='control-column'>
     <div class='font18'>Project Type</div>
-    <span id="types-all" style="font-size: smaller;">All</span>
-    <span id="types-none" style="font-size: smaller;">None</span>
+    <span id="types-all">All</span>
+    <span id="types-none">None</span>
     <div id="types-list"></div>
   </div>
   <div id="maturities" class='control-column'>
     <div class='font18'>Maturity</div>
-    <span id="maturities-all" style="font-size: smaller;">All</span>
-    <span id="maturities-none" style="font-size: smaller;">None</span>
+    <span id="maturities-all">All</span>
+    <span id="maturities-none">None</span>
     <div id="maturities-list"></div>
   </div>
   <div id="languages" class='control-column'>
     <div class='font18'>Language</div>
-    <span id="languages-all" style="font-size: smaller;">All</span>
-    <span id="languages-none" style="font-size: smaller;">None</span>
+    <span id="languages-all">All</span>
+    <span id="languages-none">None</span>
     <br />
     <div id="languages-list" style="display: inline-table;column-count: 2;width: 400px;"></div>
   </div>
   <div id="licenses" class='control-column'>
     <div class='font18'>License</div>
-    <span id="licenses-all" style="font-size: smaller;">All</span>
-    <span id="licenses-none" style="font-size: smaller;">None</span>
+    <span id="licenses-all">All</span>
+    <span id="licenses-none">None</span>
     <div id="licenses-list"></div>
   </div>
 </div>

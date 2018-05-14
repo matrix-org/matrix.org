@@ -103,3 +103,8 @@ blockquote ul li {
     float:left;
     padding: 5px;
 }
+
+.control-column span {
+    font-size: smaller;
+    cursor: pointer;
+}

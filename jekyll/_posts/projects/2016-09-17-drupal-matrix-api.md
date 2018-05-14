@@ -9,6 +9,7 @@ maturity: Alpha
 language: PHP
 license: 
 repo: https://cgit.drupalcode.org/matrix_api
+home: https://www.drupal.org/project/matrix_api
 ---
 
 # {{ page.title }}

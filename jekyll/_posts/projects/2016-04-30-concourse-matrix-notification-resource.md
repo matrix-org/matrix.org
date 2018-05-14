@@ -9,6 +9,7 @@ maturity: Beta
 language: Shell
 license: Apache
 repo: https://github.com/freelock/matrix-notification-resource
+home: https://hub.docker.com/r/freelock/matrix-notification-resource/
 ---
 
 # {{ page.title }}

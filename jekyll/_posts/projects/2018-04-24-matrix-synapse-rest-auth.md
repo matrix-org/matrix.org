@@ -4,9 +4,9 @@ title: matrix-synapse-rest-auth
 categories: projects other
 description: REST endpoint Authentication module for synapse
 author: Max Dor
-maturity: 
+maturity: Beta
 language: Python
-license: 
+license: AGPL3
 repo: https://github.com/kamax-io/matrix-synapse-rest-auth
 ---
 
