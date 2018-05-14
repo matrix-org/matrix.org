@@ -273,6 +273,17 @@ To get started using Matrix, pick a client and join #matrix:matrix.org:
       </a>
     </td>
   </tr>
+  <tr>
+    <td class='bigproject'>
+      <a href='./client/neo.html' class='font18 bold'>
+        Neo
+      </a><br />
+      A more lightweight webclient.<br /><br />
+      <a href='./client/neo.html'>
+        <img src='/docs/projects/images/neo.png' class='featured_screenshot'>
+      </a>
+    </td>
+  </tr>
 </table>
 
 # Let's go deeper
