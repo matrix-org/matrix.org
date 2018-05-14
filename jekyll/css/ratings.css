@@ -1,0 +1,35 @@
+
+
+/*
+    Ratings Stars
+    (with as little code as possible)
+    https://css-tricks.com/star-ratings/
+*/
+#rating-container {
+  margin-top: 1.5em;
+}
+#rating-container div {
+  margin-top:;
+  text-align: center;  
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  font-size: x-large;
+}
+.rating > span:hover,
+.rating > span:hover ~ span {
+  color: transparent;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   left: 0; 
+   color: black;
+}
