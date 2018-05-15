@@ -6,18 +6,30 @@
 * to run: node csv-to-jekyll.js
 */
 
-var csv = require('csv-parser')
-var fs = require('fs')
+var csv = require('csv-parser');
+var fs = require('fs');
+var https = require('https');
 
-fs.createReadStream('Matrix CRM - Projects.csv')
-  .pipe(csv())
-  .on('data', function (data) {
-    //console.log(data);
-    //if (! data.W) return;
-    if (data.JekyllContent === "#N/A") return;
-    if (data.Filename === "") return;
-    writeJekyllFile(data);
- })
+var file = fs.createWriteStream("Matrix CRM - Projects.csv");
+var request = https.get("https://docs.google.com/spreadsheets/d/1LC2b7Gh2n-PB0BUtOCkaoOHLfNvTTcY0ANHEXqzmmfY/export?format=csv", function(response) {
+  response.pipe(file);
+  file.on('finish', function() {
+    file.close(readCSV);
+  });
+});
+
+
+function readCSV() {
+  fs.createReadStream('Matrix CRM - Projects.csv')
+    .pipe(csv())
+    .on('data', function (data) {
+      //console.log(data);
+      //if (! data.W) return;
+      if (data.JekyllContent === "#N/A") return;
+      if (data.Filename === "") return;
+      writeJekyllFile(data);
+  });
+}
 
 function writeJekyllFile(project) {
   console.log(project);
