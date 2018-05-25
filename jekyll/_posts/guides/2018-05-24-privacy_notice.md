@@ -262,7 +262,7 @@ Please act in good faith towards our users’ privacy and data during your discl
 
 # 3. Making a Complaint
 
-We try to meet the highest standards when collecting and using personal information. For this reason, we take any complaints we receive about this very seriously. We encourage people to bring it to our attention if they think that our collection or use of information is unfair, misleading or inappropriate. We would also welcome any suggestions for improving our procedures.
+We try to meet the highest standards when collecting and using personal information. For this reason, we take any complaints we receive about this very seriously. We encourage people to bring it to our attention at [support@matrix.org](mailto:support@matrix.org) if they think that our collection or use of information is unfair, misleading or inappropriate. We would also welcome any suggestions for improving our procedures.
 
 If you want to make a complaint about the way we have processed your personal information to the supervisory authority, you can contact the ICO (the statutory body which oversees data protection law) at [https://www.ico.org.uk/concerns](https://www.ico.org.uk/concerns).
 
