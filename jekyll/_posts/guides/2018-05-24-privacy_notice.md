@@ -232,7 +232,7 @@ We use HTTPS to transfer all data. End-to-end encrypted messaging data is stored
 
 ## 2.10 Who Else Has Access to My Data?
 
-We host the majority the Service in [UpCloud](https://www.upcloud.com/) data centres. Here’s [UpCloud’s privacy policy](https://www.upcloud.com/blog/updated-terms-privacy-policy-gdpr/). UpCloud controls physical access to their locations.
+We host the majority of the Service in [UpCloud](https://www.upcloud.com/) data centres. Here’s [UpCloud’s privacy policy](https://www.upcloud.com/blog/updated-terms-privacy-policy-gdpr/). UpCloud controls physical access to their locations.
 
 We store some files shared through the Service on Amazon Web Services (AWS). Amazon employees have access to this data. Here’s [Amazon’s privacy policy](http://aws.amazon.com/privacy/). Amazon controls physical access to their locations.
 
