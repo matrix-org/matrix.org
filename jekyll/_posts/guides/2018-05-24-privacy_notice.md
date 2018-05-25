@@ -64,7 +64,7 @@ Your access and use of the Service is always subject to the most current version
 
 ### 2.1.1 Legal Basis for Processing
 
-New Vector processes your data under *[Legitimate Interes*t](https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/legitimate-interests/when-can-we-rely-on-legitimate-interests/). This means that we process your data only as necessary to deliver the Service, and in a manner that you understand and expect.
+New Vector processes your data under *[Legitimate Interest](https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/legitimate-interests/when-can-we-rely-on-legitimate-interests/)*. This means that we process your data only as necessary to deliver the Service, and in a manner that you understand and expect.
 
 The *Legitimate Interest* of our Service is the provision of decentralised, openly-federated and (optionally) end-to-end encrypted communication services. The processing of user data we undertake is necessary to provide the Service. The nature of the Service and its implementation results in some  caveats concerning this processing, particularly in terms of  GDPR Article 17 *Right to Erasure (Right to be Forgotten)*. We believe these caveats (discussed in the section below in detail) are in line with the broader societal interests served by providing the Service.
 
@@ -76,7 +76,7 @@ You can request that we forget your copy of message and files by instructing us 
 
 Any messages or files that were only accessible by your account will be deleted from our servers within 30 days.
 
-Where you shared shared messages or files with another registered Matrix user, that user will still have access to their copy of those messages or files. Apart from state events (see below), these messages and files will *not* be shared with any unregistered or new users who view the room after we have processed your request to be forgotten.
+Where you shared messages or files with another registered Matrix user, that user will still have access to their copy of those messages or files. Apart from state events (see below), these messages and files will *not* be shared with any unregistered or new users who view the room after we have processed your request to be forgotten.
 
 State events are processed differently to non-state events. State events are used by the Service to record, amongst other things, your membership in a room, the configuration of room settings, your changing of another user’s power level and your banning a user from a room. Were we to erase these state events from a room entirely, it would be very damaging to other users’ experience of the room, causing banned users to become unbanned, revoking legitimate administrator privileges, etc. We therefore share state events sent by your account with all non-essential data removed (‘redacted’), even after we have processed your request to be forgotten. This means that your username will continue to be publicly associated with rooms in which you have participated, even after we have processed your request to be forgotten. We are actively [working on a solution to ](https://matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix/#mxid_erasure)[work around](https://matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix/#mxid_erasure)[ this restriction](https://matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix/#mxid_erasure) and allow you to be fully forgotten while maintaining a high quality experience for other users. If this is not acceptable to you, please do not use the Service.
 
