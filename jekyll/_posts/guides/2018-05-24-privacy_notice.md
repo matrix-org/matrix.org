@@ -196,7 +196,7 @@ In exceptional circumstances, we may share information about you with a third pa
 
 ## 2.5 How Do You Handle Passwords?
 
-We never store password data in plain text. Passwords sent to the server are encrypted using SSL.
+We never store password data in plain text; instead they are stored hashed (with at least 12 rounds of bcrypt, including both a salt and a server-side pepper secret). Passwords sent to the server are encrypted using SSL.
 
 It is your sole responsibility to keep your user name, password and other sensitive information confidential. Actions taken using your credentials shall be deemed to be actions taken by you, with all consequences including service termination, civil and criminal penalties.
 
