@@ -4,7 +4,7 @@ title: matrix-appservice-discord
 categories: projects as
 description: This project bridges Discord to Matrix via the Application Service API
 author: Half-Shot
-maturity: Alpha
+maturity: Beta
 language: TypeScript
 license: Apache
 repo: https://github.com/Half-Shot/matrix-appservice-discord
