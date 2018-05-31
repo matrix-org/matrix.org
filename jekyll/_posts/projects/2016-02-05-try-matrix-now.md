@@ -322,7 +322,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
 |
 
-## Clients
+<h2 id="clients"><a href="#clients" class="nolink">Clients</a></h2>
 
 <ul class='projectlist'>
   {% for post in site.categories.client reversed limit:100 %}
@@ -349,7 +349,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
 |
 
-## Servers
+<h2 id="servers"><a href="#servers" class="nolink">Servers</a></h2>
 
 <ul class='projectlist'>
   {% for post in site.categories.server reversed limit:100 %}
@@ -373,7 +373,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
 |
 
-## Application Services
+<h2 id="application-services"><a href="#application-services" class="nolink">Application Services</a></h2>
 
 <ul class='projectlist'>
   {% for post in site.categories.as reversed limit:100 %}
@@ -397,7 +397,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
 |
 
-## Client SDKs
+<h2 id="client-sdks"><a href="#client-sdks" class="nolink">Client SDKs</a></h2>
 
 <ul class='projectlist'>
   {% for post in site.categories.sdk reversed limit:100 %}
@@ -421,7 +421,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
 |
 
-## Bots
+<h2 id="bots"><a href="#bots" class="nolink">Bots</a></h2>
 
 <ul class='projectlist'>
   {% for post in site.categories.bot reversed limit:100 %}
@@ -445,7 +445,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
 |
 
-## Other
+<h2 id="other"><a href="#other" class="nolink">Other</a></h2>
 
 <ul class='projectlist'>
   {% for post in site.categories.other reversed limit:100 %}
