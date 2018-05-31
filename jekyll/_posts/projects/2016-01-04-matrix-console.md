@@ -5,6 +5,7 @@ categories: projects client
 thumbnail: https://matrix.org/blog/wp-content/uploads/2015/04/syweb2-400x284.png
 description: Matrix.org’s legacy AngularJS web client.
 author: Matrix.org team
+language: JavaScript
 maturity: No longer maintained
 ---
 

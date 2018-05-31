@@ -108,3 +108,8 @@ blockquote ul li {
     font-size: smaller;
     cursor: pointer;
 }
+
+div#tables-of-tracked-proposals td:nth-of-type(2),
+div#tables-of-tracked-proposals td:nth-of-type(3) {
+    white-space: nowrap;
+}

@@ -3,6 +3,7 @@ layout: project
 title: matrix-appservice-respoke
 categories: projects as
 author: Matrix.org team
+language: JavaScript
 maturity: Alpha
 ---
 

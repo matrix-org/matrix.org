@@ -3,6 +3,7 @@ layout: project
 title: matrix-appservice-bridge
 categories: projects as
 author: Kegsay
+language: JavaScript
 maturity: Early Beta
 ---
 

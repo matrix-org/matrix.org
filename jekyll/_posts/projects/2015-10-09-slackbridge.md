@@ -3,6 +3,7 @@ layout: project
 title: slackbridge
 categories: projects as
 author: illicitonion
+language: Go
 maturity: Alpha
 ---
 

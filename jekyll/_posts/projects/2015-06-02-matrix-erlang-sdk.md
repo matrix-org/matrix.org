@@ -3,6 +3,7 @@ layout: project
 title: matrix-erlang-sdk
 categories: projects sdk
 author: Andreas Hallberg
+language: Erlang
 maturity: Alpha
 ---
 

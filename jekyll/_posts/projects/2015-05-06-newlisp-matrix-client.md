@@ -3,6 +3,7 @@ layout: project
 title: newlisp-matrix-client
 categories: projects sdk
 author: Ingo Hohmann
+language: Lisp
 maturity: Early Beta
 ---
 
