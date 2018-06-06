@@ -39,6 +39,14 @@
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 
+  function toggleRatings() {
+    if (jQuery("#rating-container").css("bottom") === "18px") {
+      jQuery("#rating-container").animate({bottom:"-32px"});
+    } else {
+      jQuery("#rating-container").animate({bottom:"18px"});
+    }
+  }
+
   function ratePage(rating) {
     _paq.push(['trackEvent', 'Rating', 'Rating', window.location.pathname, rating]);
     jQuery("#rating-container").empty();
