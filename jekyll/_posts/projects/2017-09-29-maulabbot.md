@@ -6,8 +6,8 @@ description: A GitLab bot for Matrix
 author: Tulir
 maturity: Alpha
 language: Go
-license: GPL3
-repo: https://github.com/tulir/maulabbot
+license: AGPL3
+repo: https://github.com/maubot/gitlab
 ---
 
 # {{ page.title }}

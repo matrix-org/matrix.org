@@ -4,7 +4,7 @@ title: mautrix-telegram
 categories: projects as
 description: A Matrix-Telegram hybrid puppeting/relaybot bridge
 author: Tulir
-maturity: Early Beta
+maturity: Beta
 language: Python
 license: AGPL3
 repo: https://github.com/tulir/mautrix-telegram

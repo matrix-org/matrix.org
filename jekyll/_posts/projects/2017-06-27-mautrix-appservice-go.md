@@ -6,7 +6,7 @@ description: An application service framework written in Go
 author: Tulir
 maturity: Alpha
 language: Go
-license: GPL3
+license: MIT
 repo: https://github.com/tulir/mautrix-appservice-go
 ---
 
