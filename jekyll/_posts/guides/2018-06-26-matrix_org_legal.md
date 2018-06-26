@@ -1,3 +1,7 @@
+---
+layout: default
+categories: guides
+---
 ## Legal
 
 Links to our legal documentation:
