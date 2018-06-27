@@ -16,3 +16,5 @@ Intended for multi-homeserver environments (ie: homeserver hosting providers), m
 People running single homeservers can still reap the benefits of matrix-media-repo thanks to it's deduplication approach. It deduplicates local media as well as any remote media that happens to get downloaded, saving you even more disk space if you happen to re-upload a file you downloaded from another homeserver.
 
 The source, and more information, can be found on [GitHub](https://github.com/turt2live/matrix-media-repo).
+
+Repository: <{{page.repo}}>

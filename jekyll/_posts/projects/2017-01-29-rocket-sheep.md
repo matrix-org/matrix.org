@@ -17,3 +17,5 @@ Rocket Sheep is a purpose-built matrix bot intended for makerspaces/hackerspaces
 * Interacting with Honeywell thermostats to show the current temperature in the space
 
 The source, and more information, can be found on [GitHub](https://github.com/ENTS-Source/rocket-sheep). Pop by [#ents:tang.ents.ca](https://matrix.to/#/#ents:tang.ents.ca) with any questions.
+
+Repository: <{{page.repo}}>

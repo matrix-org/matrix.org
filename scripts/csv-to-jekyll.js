@@ -27,6 +27,7 @@ function readCSV() {
       //if (! data.W) return;
       if (data.JekyllContent === "#N/A") return;
       if (data.Filename === "") return;
+      if (data.Removed === "Y") return;
       writeJekyllFile(data);
   });
 }
