@@ -1,9 +1,9 @@
 ---
 layout: project
-title: bettiah
+title: Transform
 categories: projects server
 description: Transform is a matrix homeserver built using Typescript and Redis.
-author: Transform
+author: bettiah
 maturity: Alpha
 language: TypeScript
 license: Apache
