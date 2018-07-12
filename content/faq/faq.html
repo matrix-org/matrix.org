@@ -1,0 +1,63 @@
+---
+layout: post
+title: FAQ
+date: 2015-08-19 16:58:07
+categories: guides
+---
+<link rel="stylesheet" type="text/css" href="../css/faq-style.css">
+
+<script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function() {
+        $("a").click(function(event){
+            if ($(event.target).hasClass("definition")) {
+                console.log("show definitions");
+                var element = $(event.target);
+                var definitionTarget = element[0].hash.replace('#', '');
+                while (! element.hasClass("question")) {
+                    element = element.parent();
+                }
+                console.log(element);
+                //element.find(".definition-list").show(200);
+                element.find(".definition-list").css('display', 'inline-block');
+                element.find(".highlighted-definition").removeClass("highlighted-definition");
+                element.find("." + definitionTarget).addClass("highlighted-definition");
+                return false;
+            }
+            
+        });
+        $(".definition-close").click(function(event) {
+            $(event.target).parent().hide()
+        });
+    });
+</script>
+
+<div class="top-menu-row">
+    <div class="top-menu-row-inner">
+        <div class="top-menu-item">
+            <a href="/docs/guides"><span class="title">Guides</span><br />
+            <img src="../css/external-link-symbol.png" class="external-link-symbol" /></a>
+        </div>
+        <div class="top-menu-item">
+            <a href="/docs/spec"><span class="title">Spec</span><br />
+            <img src="../css/external-link-symbol.png" class="external-link-symbol" /></a>
+        </div>
+        <div class="top-menu-item">
+            <a href="/docs/projects/try-matrix-now.html"><span class="title">Try Matrix Now</span><br />
+            <img src="../css/external-link-symbol.png" class="external-link-symbol" /></a>
+        </div>
+    </div>
+</div>
+
+<div class="top-menu-row">
+    <div class="top-menu-row-inner">
+        {{TOP-MENU}}
+        <div class="top-menu-item"><span class="title"><a href="#definitions">Definitions</a></span></div>
+    </div>
+</div>
+
+{{QUESTIONS}}
