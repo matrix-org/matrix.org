@@ -2598,7 +2598,7 @@
 			$( 'html, body' ).animate( { scrollTop :  $scroll_position }, $speed );
 		}
 
-		$( 'a[href*=#]:not([href=#])' ).click( function() {
+		$( 'a[href*="#"]:not([href="#"])' ).click( function() {
 		if ( $(this).closest( '.woocommerce-tabs' ).length && $(this).closest( '.tabs' ).length ) {
 				return false;
 			}
