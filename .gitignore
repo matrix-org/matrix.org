@@ -16,7 +16,7 @@
 /packages/debian/pool/
 /packages/debian/dists/
 /packages/npm/
-/scripts/node_modules
+/node_modules/
 .DS_Store
 
 # artefacts from the /blog part of the site
