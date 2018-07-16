@@ -2,7 +2,7 @@
 layout: project
 title: SmsMatrix
 categories: projects other
-description: A simple Android SMS (text message) <--> Matrix bridge.
+description: A simple Android SMS (text message) <--> Matrix bridge, implemented as a bot
 author: Gerben Droogers
 maturity: Alpha
 language: Java
