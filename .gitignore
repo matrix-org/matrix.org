@@ -23,3 +23,6 @@
 /blog/
 /site.css
 /docs
+
+# created when generating project .md files automatically
+projects-gen/
