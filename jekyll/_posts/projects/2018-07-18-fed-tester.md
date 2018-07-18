@@ -2,7 +2,7 @@
 layout: project
 title: fed-tester
 categories: projects other
-description: React.js frontend for the [federation-tester api](https://github.com/matrix-org/matrix-federation-tester)
+description: React.js frontend for the federation-tester api
 author: f0x
 maturity: Beta
 language: JavaScript
