@@ -11,6 +11,8 @@ repo: https://github.com/xwiki-labs/synapse_scripts
 ---
 
 # {{ page.title }}
+Various tools for maintaining a matrix synapse chat server
+
 ## synapse_janitor.sql
 Cleans a synapse Postgres database of deleted messages and abandoned rooms.
 
