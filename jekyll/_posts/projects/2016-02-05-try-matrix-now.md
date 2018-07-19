@@ -100,7 +100,7 @@ jQuery(document).ready(($) => {
     if (license.length === 0) return;
 
     var item = $('<div>');
-    var checkboxId = 'chk-license-' + license.replace(/ /g, '').replace(/\//g, '-');
+    var checkboxId = 'chk-license-' + license.replace(/ /g, '').replace(/\//g, '-').replace(/\./g, '-');
     item.append(
       $('<input>')
         .attr('id', checkboxId)
@@ -318,7 +318,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' | replace: '/', '-' }}'
+        data-license='{{ post.license | replace:' ', '' | replace: '/', '-'| replace: '.', '-' }}'
         data-type='client'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'> 
           <img class='thumbnail' src='{{ post.thumbnail }}'>
@@ -345,7 +345,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' }}'
+        data-license='{{ post.license | replace:' ', '' | replace: '/', '-'| replace: '.', '-' }}'
         data-type='server'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
@@ -369,7 +369,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' }}'
+        data-license='{{ post.license | replace:' ', '' | replace: '/', '-'| replace: '.', '-' }}'
         data-type='as'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
@@ -393,7 +393,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' }}'
+        data-license='{{ post.license | replace:' ', '' | replace: '/', '-'| replace: '.', '-' }}'
         data-type='sdk'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
@@ -417,7 +417,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' }}'
+        data-license='{{ post.license | replace:' ', '' | replace: '/', '-'| replace: '.', '-' }}'
         data-type='bot'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
@@ -441,7 +441,7 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
       <li class='project' 
         data-maturity='{{ post.maturity | replace:' ', '' }}'
         data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' | replace: '/', '-' }}'
+        data-license='{{ post.license | replace:' ', '' | replace: '/', '-'| replace: '.', '-' }}'
         data-type='other'>
         <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
           {{ post.title }}
