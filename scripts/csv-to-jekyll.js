@@ -37,7 +37,7 @@ function writeJekyllFile(project) {
   var stream = fs.createWriteStream("../projects-gen/" + project.Filename, {'flags': 'w', 'encoding':'utf8', 'mode': '0666'});
   stream.once('open', function(fd) {
     stream.write("---\n");
-    stream.write("layout: project\n");
+    stream.write("layout: projectimage\n");
     stream.write("title: " + project.Name + "\n");
     stream.write("categories: projects " + project.type + "\n");
     if (project.thumb) {
@@ -52,14 +52,14 @@ function writeJekyllFile(project) {
     if (project.Home) {
         stream.write("home: " + project.Home + "\n");
     }
+    if (project.Screenshot) {
+      stream.write(`screenshot: ${project.Screenshot}\n`)
+    }
+    if (project.Room) {
+      stream.write(`room: "${project.Room}"\n`)
+    }
     stream.write("---\n");
     stream.write("\n");
-    if (project.Screenshot) {
-        stream.write("![screenshot](" + project.Screenshot + " \"{{ page.title }}\")");
-        stream.write("\n");
-        stream.write("\n");
-    }
-    stream.write("# {{ page.title }}\n");
     var JekyllContent = project.JekyllContent.split(" \n\n")
     JekyllContent.forEach(function (line, id, array)  {
       stream.write(line);
