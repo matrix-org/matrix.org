@@ -13,7 +13,7 @@
          url = decodeURIComponent(url[1]);
        } else {
 -        url = "http://petstore.swagger.io/v2/swagger.json";
-+        url = "json/api-docs.json";
++        url = window.location.pathname.replace(/[^/]*$/, '') + "json/api-docs.json";
        }
  
        hljs.configure({
