@@ -14,7 +14,7 @@
             "parts": [
                 { "name": "As a user", "questions": ["examples-of-clients", 20, 23, 59, 60, 61, 62, "room-directory"] },
                 { "name": "Tech", "questions": [26, 27, 30, 45, 48] },
-                { "name": "Self-hosting", "questions": [50, 52, 51, 25, 53, 58] }
+                { "name": "Self-hosting", "questions": [50, 52, 51, 25, 53, 58, "synapse-scripts"] }
             ]
         },
         {
@@ -120,6 +120,10 @@
         {
             "name": "pubsub",
             "definition": "The publish-subscribe pattern describes an architecture in which message senders push messages to a location, without needing to know who the subscribers will be. For Matrix, this means a client can send a message to a room without knowing the members, and the members can read that message."
+        },
+        {
+            "name": "Postgres",
+            "definition": "While Synapse can be installed using, Sqlite Postgres is preferred for any significant use."
         }
     ]
 }
