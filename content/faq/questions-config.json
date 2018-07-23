@@ -20,11 +20,11 @@
         {
             "name": "Detail",
             "parts": [
-                { "name": "Position in the World", "questions": [21, 22, 31, 44 ] },
+                { "name": "Position in the World", "questions": [21, 22, "project-status", 44 ] },
                 { "name": "Comparisons", "questions": [ 14, 15, 18] },
                 { "name": "More Detail", "questions": [32, 33, 34, 35, 36, 37, 38, 39, 43, "what-are-communities"] },
                 { "name": "Architecture", "questions": [ "matrix-work-architecturally", "what-is-a-room"] },
-                { "name": "Encryption", "questions": ["e2e-meaning", "e2e-work", "e2e-status","e2e-clients"] },
+                { "name": "Encryption", "questions": ["e2e-meaning", "e2e-status","e2e-clients"] },
                 { "name": "The Spec", "questions": ["what-is-the-spec", "where-is-the-spec", "contribute-to-the-spec", "proposals-process", "whats-an-msc"] },
                 { "name": "Voip", "questions": [ 40, 41, 42 ] },
                 { "name": "Synapse", "questions": [ 49, 55, 56, 57 ] },
@@ -51,7 +51,7 @@
         },
         {
             "name": "interoperable",
-            "definition": "TODO-M interoperable definition to distinguish from federation/federated"
+            "definition": "A more general definition of interoperability is for systems to be able to freely exchange data with another by a known mechanism. In the case of matrix, we have openly documented how to communicate with our HTTP APIs."
         },
         {
             "name": "New Vector",
