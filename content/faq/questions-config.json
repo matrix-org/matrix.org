@@ -27,8 +27,7 @@
                 { "name": "Encryption", "questions": ["e2e-meaning", "e2e-status","e2e-clients"] },
                 { "name": "The Spec", "questions": ["what-is-the-spec", "where-is-the-spec", "contribute-to-the-spec", "proposals-process", "whats-an-msc"] },
                 { "name": "Voip", "questions": [ 40, 41, 42 ] },
-                { "name": "Synapse", "questions": [ 49, 55, 56, 57 ] },
-                { "name": "Unanswered Questions", "questions": ["unanswered-questions"] }
+                { "name": "Synapse", "questions": [ 49, 55, 56, 57 ] }
             ]
         }
     ],
