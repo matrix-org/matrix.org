@@ -1,0 +1,128 @@
+{
+    "sections": [
+        {
+            "name": "Intro",
+            "parts": [
+                { "name": "Basics", "questions": [1, 2, 4, 8, 3] },
+                { "name": "Who and How", "questions": [5, 6, 7] },
+                { "name": "Concept", "questions": [ 9, 10, 11, 12, 13 ] },
+                { "name": "Practical", "questions": [ 24, 28, 29 ] }
+            ]
+        },
+        {   
+            "name": "Usage",
+            "parts": [
+                { "name": "As a user", "questions": ["examples-of-clients", 20, 23, 59, 60, 61, 62, "room-directory"] },
+                { "name": "Tech", "questions": [26, 27, 30, 45, 48] },
+                { "name": "Self-hosting", "questions": [50, 52, 51, 25, 53, 58, "synapse-scripts"] }
+            ]
+        },
+        {
+            "name": "Detail",
+            "parts": [
+                { "name": "Position in the World", "questions": [21, 22, "project-status", 44 ] },
+                { "name": "Comparisons", "questions": [ 14, 15, 18] },
+                { "name": "More Detail", "questions": [32, 33, 34, 35, 36, 37, 38, 39, 43, "what-are-communities"] },
+                { "name": "Architecture", "questions": [ "matrix-work-architecturally", "what-is-a-room"] },
+                { "name": "Encryption", "questions": ["e2e-meaning", "e2e-status","e2e-clients"] },
+                { "name": "The Spec", "questions": ["what-is-the-spec", "where-is-the-spec", "contribute-to-the-spec", "proposals-process", "whats-an-msc"] },
+                { "name": "Voip", "questions": [ 40, 41, 42 ] },
+                { "name": "Synapse", "questions": [ 49, 55, 56, 57 ] }
+            ]
+        }
+    ],
+    "definitions": [
+        {
+            "name": "Client",
+            "definition": "Users in Matrix use one or more clients to communicate. This could be any combination of a web client, a command line client, a mobile client - or embedded clients built into existing apps. It could even be a piece of hardware (e.g. a drone) that is Matrix enabled."
+        },
+        {
+            "name": "matrixed together",
+            "definition": "In mathematics, a matrix is a lattice-like arrangement, in which expressions can be combined and treated as a single entity"
+        },
+        {
+            "name": "homeserver",
+            "definition": "Each account in the Matrix federation is associated with a single homeserver. The software running at this server stores the history and account information for that user. Homeservers synchronise message history with other homeservers."
+        },
+        {
+            "name": "Synapse",
+            "definition": "Synapse is a homeserver implemented in Python by the matrix.org core team. It is currently by far the most installed homeserver available."
+        },
+        {
+            "name": "interoperable",
+            "definition": "A more general definition of interoperability is for systems to be able to freely exchange data with another by a known mechanism. In the case of matrix, we have openly documented how to communicate with our HTTP APIs."
+        },
+        {
+            "name": "New Vector",
+            "definition": "New Vector is a company formed to build Matrix.org. It is a continuation of the original project team, and is focused on development and maintenance of matrix.org."
+        },
+        {
+            "name": "federation",
+            "definition": "Federation means that separate instances of a service communicate - the best example of this is email servers, in which it's possible to send mail between difference service providers. For Matrix, this means that data about rooms and message history is shared between servers of participating users."
+        },
+        {
+            "name": "SIP",
+            "definition": "[Session Initiation Protocol](https://en.wikipedia.org/wiki/Session_Initiation_Protocol) is a communications protocol for signaling and controlling multimedia communication sessions in applications of Internet telephony for voice and video calls."
+        },
+        {
+            "name": "XMPP",
+            "definition": "[XMPP](https://en.wikipedia.org/wiki/XMPP) is a communication protocol for message-oriented middleware based on XML. We think of Matrix and XMPP as being quite different; at its core Matrix can be thought of as an eventually consistent global JSON db, whilst XMPP can be thought of as a  message passing protocol."
+        },
+        {
+            "name": "RCS",
+            "definition": "[Rich Communication Services](https://en.wikipedia.org/wiki/Rich_Communication_Services) is a communication protocol between mobile-telephone carriers and between phone and carrier, aiming at replacing SMS messages with a text-message system that is richer, provides phonebook polling (for service discovery), and transmit in-call multimedia."
+        },
+        {
+            "name": "bridging",
+            "definition": "Bridging to Matrix means that it's possible to read and write to channels hosted outside matrix. For example, it's possible to speak in IRC and slack rooms."
+        },
+        {
+            "name": "Riot",
+            "definition": "Riot is a popular matrix client developed by the core matrix.org team. [It's available as a web app, on Android and on iOS](https://matrix.org/docs/projects/try-matrix-now.html)."
+        },
+        {
+            "name": "client SDK",
+            "definition": "A client SDK makes it easier to develop client applications using matrix. See: [How do I Matrix-enable my existing app?](#how-do-i-matrix-enable-my-existing-app%3F)"
+        },
+        {
+            "name": "MXID",
+            "definition": "Matrix user IDs (MXID) are unique user IDs. They are in the format ```@username:homeserver.tld```."
+        },
+        {
+            "name": "3PID",
+            "definition": "Third-party IDs (3PIDs) are IDs from other systems or contexts, such as email addresses, social network accounts and phone numbers."
+        },
+        {
+            "name": "the spec",
+            "definition": "The Matrix Specification describes the interactions between actors in the Matrix ecosystem, including Server-Server and Client-Server. [You can see the spec here.](https://matrix.org/docs/spec/)"
+        },
+        {
+            "name": "sigil",
+            "definition": "Sigils refer the symbols uses at the beginning of many matrix identifiers. For example '@' is used for users, '#' for rooms, and '+' for communities."
+        },
+        {
+            "name": "community",
+            "definition": "Communities are collections of rooms."
+        },
+        {
+            "name": "group",
+            "definition": "Groups are now known as communities, they are collections of rooms."
+        },
+        {
+            "name": "room",
+            "definition": "A room is a fundamental building bock of the matrix architecture: events are typically sent in the context of a room. A room is a conceptual place where users can send and receive events. Events are sent to a room, and all participants in that room with sufficient access will receive the event. [See more detail.](https://matrix.org/docs/spec/intro#room-structure)"
+        },
+        {
+            "name": "bot",
+            "definition": "A bot is an autonomous agent. In the context of matrix, it means software which is able to make automated posts in rooms."
+        },
+        {
+            "name": "pubsub",
+            "definition": "The publish-subscribe pattern describes an architecture in which message senders push messages to a location, without needing to know who the subscribers will be. For Matrix, this means a client can send a message to a room without knowing the members, and the members can read that message."
+        },
+        {
+            "name": "Postgres",
+            "definition": "While Synapse can be installed using, Sqlite Postgres is preferred for any significant use."
+        }
+    ]
+}

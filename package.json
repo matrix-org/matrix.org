@@ -9,6 +9,9 @@
   "author": "",
   "dependencies": {
     "csv-parser": "^1.12.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "markdown-it": "^8.4.1",
+    "markdown-it-anchor": "^5.0.2",
+    "markdown-it-attrs": "^2.3.1"
   }
 }

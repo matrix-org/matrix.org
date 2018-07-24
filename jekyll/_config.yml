@@ -9,7 +9,6 @@ twitter_username: matrixdotorg
 github_username:  matrix-org
 
 exclude:
-  - "*.png"
   - "*.jpg"
   - "*.gif"
 
