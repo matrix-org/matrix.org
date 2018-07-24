@@ -6,17 +6,13 @@ categories: guides
 ---
 <link rel="stylesheet" type="text/css" href="../css/faq-style.css">
 
-<script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
 
 <script>
-    $(document).ready(function() {
-        $("a").click(function(event){
-            if ($(event.target).hasClass("definition")) {
+    jQuery(document).ready(function() {
+        jQuery("a").click(function(event){
+            if (jQuery(event.target).hasClass("definition")) {
                 console.log("show definitions");
-                var element = $(event.target);
+                var element = jQuery(event.target);
                 var definitionTarget = element[0].hash.replace('#', '');
                 while (! element.hasClass("question")) {
                     element = element.parent();
@@ -30,41 +26,26 @@ categories: guides
             }
             
         });
-        $(".definition-close").click(function(event) {
-            $(event.target).parent().hide()
+        jQuery(".definition-close").click(function(event) {
+            jQuery(event.target).parent().hide()
         });
     });
+
+    if ("onhashchange" in window) { // event supported?
+        window.onhashchange = function () {
+            window.scrollTo(0, window.scrollY-60);
+        }
+    }
+
 </script>
 
-<h1>Frequently Asked Questions</h1>
-
 <div class="top-menu-row">
+    <h1>Frequently<br />Asked<br />Questions</h1>
     <div class="top-menu-row-inner">
-        <div class="top-menu-item">
-            <a href="/docs/guides"><span class="title">Guides</span><br />
-            <img src="../css/external-link-symbol.png" class="external-link-symbol" /></a>
-        </div>
-        <div class="top-menu-item">
-            <a href="/docs/spec"><span class="title">Spec</span><br />
-            <img src="../css/external-link-symbol.png" class="external-link-symbol" /></a>
-        </div>
-        <div class="top-menu-item">
-            <a href="/docs/projects/try-matrix-now.html"><span class="title">Try Matrix Now</span><br />
-            <img src="../css/external-link-symbol.png" class="external-link-symbol" /></a>
-        </div>
-    </div>
-</div>
-
-<div class="top-menu-row">
-    <div class="top-menu-row-inner">
+        {{TOP-MENU}}
         <div class="top-menu-item"><span class="title"><a href="#definitions">Definitions</a></span></div>
     </div>
 </div>
-
-<div class="top-menu-row">
-    <div class="top-menu-row-inner">
-        {{TOP-MENU}}
-    </div>
+<div id="questions-wrapper">
+    {{QUESTIONS}}
 </div>
-
-{{QUESTIONS}}

@@ -1,20 +1,16 @@
 div.top-menu-row {
-    width: 100%;
-    text-align: center;
-    /* border: black 1px solid; */
     margin: 2px;
+    width: 200px;
+    position: fixed;
 }
 div.top-menu-row-inner {
     display: inline-block;
 }
 div.top-menu-row-inner span.title {
-    font-size: larger;
+    font-size: large;
 }
 div.top-menu-item {
-    float:left;
-    padding: 5px;
-    margin: 5px;
-    border: solid 1px #666;
+    padding-top: 15px;
 }
 div.definition-item {
     float:left;
@@ -61,6 +57,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 1em;
+    font-weight: 500;
+}
+
+
 h1 {
     font-size: 30px;
 }
@@ -70,16 +75,7 @@ h2 {
 h3 {
     font-size: 22px;
 }
-h1, h2, h3, h4, h5, h6 {
-    color: #333;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    line-height: 1em;
-    font-weight: 500;
-}
-.external-link-symbol {
-    width: 30px
-}
+
 .permalink {
     font-size: small;
     text-decoration: none;
@@ -91,4 +87,13 @@ p, p:last-of-type {
 
 ul {
     list-style: initial;
+}
+
+div#questions-wrapper {
+    margin-left: 200px;
+}
+
+@media (max-width: 800px) {
+    div#questions-wrapper { margin-left: initial; }
+    div.top-menu-row { position: initial; }
 }
