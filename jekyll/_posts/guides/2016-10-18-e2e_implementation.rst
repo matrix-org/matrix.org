@@ -146,7 +146,7 @@ then signed with ``olm_account_sign``; the signature should be added to
 the JSON as ``signatures.<user_id>.ed25519:<device_id>``.
 
 The signed JSON is then uploaded via
-``POST /_matrix/client/unstable/keys/upload``.
+``POST /_matrix/client/r0/keys/upload``.
 
 Creating and registering one-time keys
 --------------------------------------
@@ -155,7 +155,7 @@ At first start, the client should check how many one-time keys the homeserver
 has stored for it, and, if necessary, generate and upload some more.
 
 The number of one-time keys currently stored is returned by
-``POST /_matrix/client/unstable/keys/upload``. (Post an empty JSON object
+``POST /_matrix/client/r0/keys/upload``. (Post an empty JSON object
 ``{}`` if you don’t want to upload the device keys.)
 
 However, a client should not rely on this in order to find out how many
@@ -235,7 +235,7 @@ To generate new one-time keys:
       }
     }
 
-* Upload the object via ``POST /_matrix/client/unstable/keys/upload``.
+* Upload the object via ``POST /_matrix/client/r0/keys/upload``.
 
 * Call ``olm_account_mark_keys_as_published`` to tell the olm library not to
   return the same keys from a future call to ``olm_account_one_time_keys``.
@@ -454,7 +454,7 @@ The client should build a JSON query object as follows:
   }
 
 Each member in the room should be included in the query. This is then
-sent via ``POST /_matrix/client/unstable/keys/query.``
+sent via ``POST /_matrix/client/r0/keys/query.``
 
 The result includes, for each listed user id, a map from device ID to an
 object containing information on the device, as follows:
@@ -579,7 +579,7 @@ __ `blocking`_
 
 Once all of the key-sharing event contents have been assembled, the
 events should be sent to the corresponding devices via
-``PUT /_matrix/client/unstable/sendToDevice/m.room.encrypted/<txnId>``.
+``PUT /_matrix/client/r0/sendToDevice/m.room.encrypted/<txnId>``.
 
 Rotating Megolm sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -663,7 +663,7 @@ create a query object as follows:
     ...
   }
 
-and send this via ``POST /_matrix/client/unstable/keys/claim``. Claims
+and send this via ``POST /_matrix/client/r0/keys/claim``. Claims
 for multiple devices should be aggregated into a single request.
 
 This will return a result as follows:
@@ -746,7 +746,7 @@ follows:
 Once all of these have been constructed, they should be sent to all of the
 relevant user's devices (using the wildcard ``*`` in place of the
 ``device_id``) via ``PUT
-/_matrix/client/unstable/sendToDevice/m.new_device/<txnId>.``
+/_matrix/client/r0/sendToDevice/m.new_device/<txnId>.``
 
 Handling an ``m.new_device`` event
 ----------------------------------
