@@ -151,16 +151,17 @@ The signed JSON is then uploaded via
 Creating and registering one-time keys
 --------------------------------------
 
-At first start, and at regular intervals
-thereafter\ [#]_, the client should check how
-many one-time keys the homeserver has stored for it, and, if necessary,
-generate and upload some more.
-
-.. [#] Every 10 minutes is suggested.
+At first start, the client should check how many one-time keys the homeserver
+has stored for it, and, if necessary, generate and upload some more.
 
 The number of one-time keys currently stored is returned by
 ``POST /_matrix/client/unstable/keys/upload``. (Post an empty JSON object
 ``{}`` if you don’t want to upload the device keys.)
+
+However, a client should not rely on this in order to find out how many
+one-time keys are left on the homeserver during runtime. Instead, it should do
+so by inspecting the ``device_one_time_keys_count`` property of a ``/sync/``
+response, and upload more when it deems necessary.
 
 The maximum number of active keys supported by libolm is returned by
 ``olm_account_max_number_of_one_time_keys``. The client should try to
