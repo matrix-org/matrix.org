@@ -605,6 +605,50 @@ __ https://matrix.org/docs/spec/client_server/unstable.html#sending-encrypted-at
 Currently, the files are encrypted using AES-CTR, which is not included in
 libolm. Clients have to rely on a third party library.
 
+Key sharing
+===========
+
+When an event cannot be decrypted due to missing keys, a client may want to
+request them from other clients which may have them. Similarly, a client may
+want to reply to a key request with the associated key if it can assert that
+the requesting device is allowed to see the messages encrypted with this key.
+
+Those capabilities are achieved using |m.room_key_request| and
+|m.forwarded_room_key| events.
+
+The ``session_key`` property of a |m.forwarded_room_key| event differs from the
+one of a |room_key| event, as it does not include the Ed25519 signature of the
+original sender. It should be obtained from
+``olm_export_inbound_group_session`` at the desired ``message index``, and the
+session can be restored with ``olm_import_inbound_group_session``.
+
+The ``forwarded_room_key`` property starts out empty, but each time a key is
+forwarded to another device, the previous sender in the chain is added to the
+end of the list. Consider the following example:
+
+  - A -> B : m.room_key
+  - B -> C : m.forwarded_room_key
+  - C -> D : m.forwarded_room_key
+
+In the message B -> C ``forwarded_room_key`` is empty, but in the message C ->
+D it contains B's Curve25519 key. In order for D to believe that the session
+came from A,  D must trust the direct sender C and every entry in this chain.
+
+In order to securely implement key sharing, clients must not reply to every key
+request they receive. The recommended strategy is to share the keys
+automatically only to **verified** devices of the **same user**. Requests
+coming from unverified devices should prompt a dialog, allowing the user to
+verify the device, share the keys without verifying, or not to share them (and
+ignore future requests).
+A client should also check whether requests coming from devices of other users
+are legitimate. This can be done by keeping track of the users a session was
+shared with, and at which ``message index``.
+
+Key requests can be sent to all of the current user's devices, as well as the
+original sender of the session, and other devices present in the room. When the
+client receives the requested key, it should send a |m.room_key_request| event
+to all the devices it requested the key from, setting the ``action`` property
+to ``"cancel_request"`` and ``request_id`` to the ID of the initial request.
 
 
 .. |m.room.encryption| replace:: ``m.room.encryption``
@@ -615,6 +659,12 @@ libolm. Clients have to rely on a third party library.
 
 .. |room_key| replace:: ``m.room_key``
 .. _`room_key`: https://matrix.org/docs/spec/client_server/unstable.html#m-room-key
+
+.. |m.room_key_request| replace:: ``m.room_key_request``
+.. _`room_key_request`: https://matrix.org/docs/spec/client_server/unstable.html#m-room-key-request
+
+.. |m.forwarded_room_key| replace:: ``m.forwarded_room_key``
+.. _`forwarded_room_key`: https://matrix.org/docs/spec/client_server/unstable.html#m-forwarded-room-key
 
 .. _`Signing JSON`: https://matrix.org/docs/spec/appendices.html#signing-json
 .. _/keys/query: https://matrix.org/docs/spec/client_server/unstable.html#post-matrix-client-r0-keys-query
