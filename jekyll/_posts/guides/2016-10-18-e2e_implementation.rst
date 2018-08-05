@@ -594,6 +594,17 @@ m.room.encrypted event`_ for notes on how to do this
 for each algorithm. Events sent from a verified device can be decorated
 in the UI to show that they have been sent from a verified device.
 
+Encrypted attachments
+=====================
+
+Homeservers must not be able to read files shared in encrypted rooms.
+Clients should implement a strategy described `in the spec`__.
+
+__ https://matrix.org/docs/spec/client_server/unstable.html#sending-encrypted-attachments
+
+Currently, the files are encrypted using AES-CTR, which is not included in
+libolm. Clients have to rely on a third party library.
+
 
 
 .. |m.room.encryption| replace:: ``m.room.encryption``
