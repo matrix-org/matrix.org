@@ -11,6 +11,8 @@ md.use(markdownItAnchor, {
     permalinkBefore: true
 });
 
+process.chdir(__dirname);
+
 console.log(html());
 function html() {
     var root = "../content/faq/";
