@@ -4,7 +4,7 @@ title: mautrix-appservice-go
 categories: projects as
 description: An application service framework written in Go
 author: Tulir
-maturity: Alpha
+maturity: Early beta
 language: Go
 license: MIT
 repo: https://github.com/tulir/mautrix-appservice-go
