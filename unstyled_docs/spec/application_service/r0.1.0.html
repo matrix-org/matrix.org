@@ -926,7 +926,7 @@ given it is VERY implementation specific. -->
 </div>
 <p>This version of the specification is generated from
 <a class="reference external" href="https://github.com/matrix-org/matrix-doc">matrix-doc</a> as of Git commit
-<a class="reference external" href="https://github.com/matrix-org/matrix-doc/tree/70f72b5b">application_service/release-r0.1.0,70f72b5b,dirty</a>.</p>
+<a class="reference external" href="https://github.com/matrix-org/matrix-doc/tree/4630c067">application_service/release-r0.1.0,4630c067</a>.</p>
 <p>For the full historical changelog, see
 <a class="reference external" href="https://github.com/matrix-org/matrix-doc/blob/master/changelogs/application_service.rst">https://github.com/matrix-org/matrix-doc/blob/master/changelogs/application_service.rst</a></p>
 <p><a class="anchor" id="other-versions-of-this-specification"></a></p>
@@ -1185,6 +1185,13 @@ via the event type.</p>
 </tr>
 </thead>
 <tbody valign="top">
+<tr><td colspan="3"><em>JSON body parameters</em></td>
+</tr>
+<tr><td>events</td>
+<td>[Event]</td>
+<td><strong>Required.</strong> A list of events, formatted as per
+the Client-Server API.</td>
+</tr>
 <tr><td colspan="3"><em>path parameters</em></td>
 </tr>
 <tr><td>txnId</td>
@@ -1192,13 +1199,6 @@ via the event type.</p>
 <td><strong>Required.</strong> The transaction ID for this set of
 events. Homeservers generate these IDs and they
 are used to ensure idempotency of requests.</td>
-</tr>
-<tr><td colspan="3"><em>JSON body parameters</em></td>
-</tr>
-<tr><td>events</td>
-<td>[Event]</td>
-<td><strong>Required.</strong> A list of events, formatted as per
-the Client-Server API.</td>
 </tr>
 </tbody>
 </table>
@@ -1210,32 +1210,36 @@ the Client-Server API.</td>
 <span class="punctuation">{</span>
   <span class="name tag">&quot;events&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span>
     <span class="punctuation">{</span>
-      <span class="name tag">&quot;age&quot;</span><span class="punctuation">:</span> <span class="literal number integer">242352</span><span class="punctuation">,</span>
       <span class="name tag">&quot;content&quot;</span><span class="punctuation">:</span> <span class="punctuation">{</span>
         <span class="name tag">&quot;membership&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;join&quot;</span><span class="punctuation">,</span>
-        <span class="name tag">&quot;avatar_url&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;mxc://localhost/SEsfnsuifSDFSSEF#auto&quot;</span><span class="punctuation">,</span>
+        <span class="name tag">&quot;avatar_url&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;mxc://domain.com/SEsfnsuifSDFSSEF#auto&quot;</span><span class="punctuation">,</span>
         <span class="name tag">&quot;displayname&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;Alice Margatroid&quot;</span>
       <span class="punctuation">},</span>
-      <span class="name tag">&quot;state_key&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;&#64;alice:localhost&quot;</span><span class="punctuation">,</span>
-      <span class="name tag">&quot;origin_server_ts&quot;</span><span class="punctuation">:</span> <span class="literal number integer">1431961217939</span><span class="punctuation">,</span>
-      <span class="name tag">&quot;event_id&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;$WLGTSEFSEF:localhost&quot;</span><span class="punctuation">,</span>
       <span class="name tag">&quot;type&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;m.room.member&quot;</span><span class="punctuation">,</span>
-      <span class="name tag">&quot;room_id&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;!Cuyf34gef24t:localhost&quot;</span><span class="punctuation">,</span>
-      <span class="name tag">&quot;sender&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;&#64;example:localhost&quot;</span>
+      <span class="name tag">&quot;event_id&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;$143273582443PhrSn:domain.com&quot;</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;room_id&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;!jEsUZKDJdhlrceRyVU:domain.com&quot;</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;sender&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;&#64;example:domain.com&quot;</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;origin_server_ts&quot;</span><span class="punctuation">:</span> <span class="literal number integer">1432735824653</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;unsigned&quot;</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+        <span class="name tag">&quot;age&quot;</span><span class="punctuation">:</span> <span class="literal number integer">1234</span>
+      <span class="punctuation">},</span>
+      <span class="name tag">&quot;state_key&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;&#64;alice:domain.com&quot;</span>
     <span class="punctuation">},</span>
     <span class="punctuation">{</span>
-      <span class="name tag">&quot;age&quot;</span><span class="punctuation">:</span> <span class="literal number integer">242352</span><span class="punctuation">,</span>
       <span class="name tag">&quot;content&quot;</span><span class="punctuation">:</span> <span class="punctuation">{</span>
         <span class="name tag">&quot;body&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;This is an example text message&quot;</span><span class="punctuation">,</span>
         <span class="name tag">&quot;msgtype&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;m.text&quot;</span><span class="punctuation">,</span>
         <span class="name tag">&quot;format&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;org.matrix.custom.html&quot;</span><span class="punctuation">,</span>
         <span class="name tag">&quot;formatted_body&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;&lt;b&gt;This is an example text message&lt;/b&gt;&quot;</span>
       <span class="punctuation">},</span>
-      <span class="name tag">&quot;origin_server_ts&quot;</span><span class="punctuation">:</span> <span class="literal number integer">1431961217939</span><span class="punctuation">,</span>
-      <span class="name tag">&quot;event_id&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;$WLGTSEFSEF:localhost&quot;</span><span class="punctuation">,</span>
       <span class="name tag">&quot;type&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;m.room.message&quot;</span><span class="punctuation">,</span>
-      <span class="name tag">&quot;room_id&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;!Cuyf34gef24t:localhost&quot;</span><span class="punctuation">,</span>
-      <span class="name tag">&quot;sender&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;&#64;example:localhost&quot;</span>
+      <span class="name tag">&quot;event_id&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;$143273582443PhrSn:domain.com&quot;</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;room_id&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;!jEsUZKDJdhlrceRyVU:domain.com&quot;</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;sender&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;&#64;example:domain.com&quot;</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;origin_server_ts&quot;</span><span class="punctuation">:</span> <span class="literal number integer">1432735824653</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;unsigned&quot;</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+        <span class="name tag">&quot;age&quot;</span><span class="punctuation">:</span> <span class="literal number integer">1234</span>
+      <span class="punctuation">}</span>
     <span class="punctuation">}</span>
   <span class="punctuation">]</span>
 <span class="punctuation">}</span>
@@ -2393,6 +2397,14 @@ users who are not identified as application services.</p>
 </tr>
 </thead>
 <tbody valign="top">
+<tr><td colspan="3"><em>JSON body parameters</em></td>
+</tr>
+<tr><td>visibility</td>
+<td>enum</td>
+<td><strong>Required.</strong> Whether the room should be visible
+(public) in the directory or not (private). One
+of: [&quot;public&quot;, &quot;private&quot;]</td>
+</tr>
 <tr><td colspan="3"><em>path parameters</em></td>
 </tr>
 <tr><td>networkId</td>
@@ -2405,14 +2417,6 @@ supported protocol.</td>
 <tr><td>roomId</td>
 <td>string</td>
 <td><strong>Required.</strong> The room ID to add to the directory.</td>
-</tr>
-<tr><td colspan="3"><em>JSON body parameters</em></td>
-</tr>
-<tr><td>visibility</td>
-<td>enum</td>
-<td><strong>Required.</strong> Whether the room should be visible
-(public) in the directory or not (private). One
-of: [&quot;public&quot;, &quot;private&quot;]</td>
 </tr>
 </tbody>
 </table>
