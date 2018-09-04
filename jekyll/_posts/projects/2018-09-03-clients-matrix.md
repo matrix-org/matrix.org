@@ -63,23 +63,23 @@ jQuery(document).ready(function () {
 
 ## Platform Availability
 
-||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Matrique    |    uMatriks
+||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Matrique    |    uMatriks    |
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-Linux|&#10003;<br /><small>Electron</small>    |            |          | &#10003;  | &#10003;     | &#10003;        | &#10003;    | 
-Mac|&#10003;<br /><small>Electron</small>||                    | &#10003;   | &#10003;    | Build from source | WIP      | &#10003;
-Windows|&#10003;<br /><small>Electron</small>||           |         &#10003;|      &#10003;|&#10003;||
+Linux|&#10003;<br /><small>Electron</small>| |          |   &#10003;  | &#10003;     |  &#10003;        |   &#10003;    |                |        &#10003;|
+Mac|&#10003;<br /><small>Electron</small>||             |  &#10003;   |      &#10003;| Build from source|            WIP|        &#10003;|
+Windows|&#10003;<br /><small>Electron</small>||         |     &#10003;|      &#10003;|          &#10003;|               |                |        &#10003;|
 Android||&#10003;||||||
 iOS|||&#10003;|||||
+Ubuntu Touch||||||||||&#10003;
 
 ## Technical
 
-||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Matrique    |    uMatriks
+||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Matrique    |    uMatriks    |
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-Platform| Web (React)|Android|iOS|Qt|Go|Qt|GTK+|Cocoa
-Language| JavaScript (React)|Java|Objective-C|C++|Go|C++|Rust|Swift
-SDK | matrix-js-sdk, matrix-react-sdk| matrix-android-sdk|matrix-ios-sdk||gomatrix (fork)|libqmatrixclient|||libqmatrixclient|
-Platform|Web|Android|iOS|Qt|Terminal|Qt|GTK+|macOS
-supported matrix spec|r0|r0|r0|r0|r0|r0|r0|r0
+Platform| Web (React)|          Android|             iOS|           Qt|Go<br />Terminal|              Qt|           GTK+|macOS<br />Cocoa|              Qt|    Ubuntu Touch|
+Language| JavaScript (React)|      Java|     Objective-C|          C++|            Go|               C++|           Rust|           Swift|             C++|             C++|
+SDK | matrix-js-sdk, matrix-react-sdk| matrix-android-sdk|matrix-ios-sdk||gomatrix (fork)|libqmatrixclient|             |                |libqmatrixclient|
+supported matrix spec|r0|             r0|             r0|           r0|            r0|                r0|             r0|              r0|              r0|              r0|
 
 ## Features
 
@@ -91,10 +91,10 @@ Room tag showing| &#10003;|  Predefined|      Predefined|     &#10007;|      &#1
 Room tag editing|Predefined| Predefined|      Predefined|     &#10007;|      &#10007;|          &#10003;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Search joined rooms| &#10003;| &#10003;|        &#10003;|     &#10003;|      &#10003;|          &#10007;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
 <br/>*Room Features*|
-Room user list| &#10003;|      &#10003;|        &#10003;|     &#10003;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
+Room user list| &#10003;|      &#10003;|        &#10003;|     &#10003;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10007;|        &#10007;|
 Display Room Description|&#10003;|&#10003;|     &#10003;|     &#10003;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10003;|
 Edit Room Description|&#10003;|&#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10003;|       &#10003;|        &#10007;|        &#10003;|        &#10007;|
-Highlights |&#10003;|          &#10003;|        &#10003;|     &#10007;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10003;|
+Highlights |&#10003;|          &#10003;|        &#10003;|     &#10007;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10007;|        &#10003;|
 Pushrules | &#10003;|          &#10003;|        &#10003;|     &#10007;|      &#10003;|          &#10003;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Send read markers| &#10003;|   &#10003;|        &#10003;|     &#10003;|      &#10003;|          &#10003;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Display read markers |&#10003;|&#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
@@ -104,13 +104,13 @@ Typing Notification|&#10003;|  &#10003;|        &#10003;|             |         
 <br/>*Message Features*|
 E2E|&#10003;|                  &#10003;|        &#10003;|      Partial|      &#10007;|          &#10007;|       &#10007;|        &#10003;|        &#10007;|        &#10007;|
 Replies| &#10003;|             &#10003;|        &#10003;|     &#10007;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
-Attachment uploading|&#10003;| &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10003;|        &#10007;|        &#10007;|        &#10007;|
+Attachment uploading|&#10003;| &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10003;|        &#10007;|        &#10003;|        &#10007;|
 Attachment downloading| &#10003;| &#10003;|     &#10003;|     &#10003;|        Images|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
 Send stickers| &#10003;|       &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Send formatted messages (markdown)|&#10003;|&#10003;|&#10003;|&#10007;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
 Rich Text Editor for formatted messages| &#10003;|&#10007;|&#10007;|&#10007;|&#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
-Display formatted messages| &#10003;| &#10003;| &#10003;|     &#10007;|      &#10003;|          &#10007;|       &#10007;|        &#10003;|        &#10007;|        &#10007;|
-Redacting | &#10003;|          &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10003;|        &#10003;|        &#10007;|        &#10007;|
+Display formatted messages| &#10003;| &#10003;| &#10003;|     &#10007;|      &#10003;|          &#10007;|       &#10007;|        &#10003;|        &#10003;|        &#10007;|
+Redacting | &#10003;|          &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
 <br/>*Other Features*|
 New user registration|&#10003;|&#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 voip|&#10003;|                 &#10003;|        &#10003;|     &#10007;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
