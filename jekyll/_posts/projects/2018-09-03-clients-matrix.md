@@ -76,9 +76,9 @@ Ubuntu Touch||||||||||&#10003;
 
 ||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Matrique    |    uMatriks    |
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-Platform| Web (React)|          Android|             iOS|           Qt|Go<br />Terminal|              Qt|           GTK+|macOS<br />Cocoa|              Qt|    Ubuntu Touch|
+Platform| Web (React)|          Android|             iOS|           Qt|Go<br />Terminal|              Qt|           GTK+|macOS<br />Cocoa|              Qt|    Qt - Ubuntu Touch|
 Language| JavaScript (React)|      Java|     Objective-C|          C++|            Go|               C++|           Rust|           Swift|             C++|             C++|
-SDK | matrix-js-sdk, matrix-react-sdk| matrix-android-sdk|matrix-ios-sdk||gomatrix (fork)|libqmatrixclient|             |                |libqmatrixclient|
+SDK | matrix-js-sdk, matrix-react-sdk| matrix-android-sdk|matrix-ios-sdk||gomatrix (fork)|libqmatrixclient|             |                |libqmatrixclient|libqmatrixclient|
 supported matrix spec|r0|             r0|             r0|           r0|            r0|                r0|             r0|              r0|              r0|              r0|
 
 ## Features
@@ -91,7 +91,7 @@ Room tag showing| &#10003;|  Predefined|      Predefined|     &#10007;|      &#1
 Room tag editing|Predefined| Predefined|      Predefined|     &#10007;|      &#10007;|          &#10003;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Search joined rooms| &#10003;| &#10003;|        &#10003;|     &#10003;|      &#10003;|          &#10007;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
 <br/>*Room Features*|
-Room user list| &#10003;|      &#10003;|        &#10003;|     &#10003;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10007;|        &#10007;|
+Room user list| &#10003;|      &#10003;|        &#10003;|     &#10003;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10007;|        &#10003;|
 Display Room Description|&#10003;|&#10003;|     &#10003;|     &#10003;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10003;|
 Edit Room Description|&#10003;|&#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10003;|       &#10003;|        &#10007;|        &#10003;|        &#10007;|
 Highlights |&#10003;|          &#10003;|        &#10003;|     &#10007;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10007;|        &#10003;|
@@ -105,7 +105,7 @@ Typing Notification|&#10003;|  &#10003;|        &#10003;|             |         
 E2E|&#10003;|                  &#10003;|        &#10003;|      Partial|      &#10007;|          &#10007;|       &#10007;|        &#10003;|        &#10007;|        &#10007;|
 Replies| &#10003;|             &#10003;|        &#10003;|     &#10007;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Attachment uploading|&#10003;| &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10003;|        &#10007;|        &#10003;|        &#10007;|
-Attachment downloading| &#10003;| &#10003;|     &#10003;|     &#10003;|        Images|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
+Attachment downloading| &#10003;| &#10003;|     &#10003;|     &#10003;|        Images|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10003;|
 Send stickers| &#10003;|       &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Send formatted messages (markdown)|&#10003;|&#10003;|&#10003;|&#10007;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
 Rich Text Editor for formatted messages| &#10003;|&#10007;|&#10007;|&#10007;|&#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
