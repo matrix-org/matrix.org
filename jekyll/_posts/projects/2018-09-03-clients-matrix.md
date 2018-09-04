@@ -100,7 +100,7 @@ Replies|Yes|Yes|Yes|No|                      No|No|No|No
 Attachment uploading|Yes|Yes|Yes|Yes|No|No|Yes|No
 Attachment downloading|Yes|Yes|Yes|Yes|Partial (images only)|No|Yes|Yes
 Send stickers|Yes|Yes|Yes|Yes|No|No|No|No
-Send formatted messages|Yes|No|No|No|Yes|No|Yes|Yes
+Send formatted messages|Yes|Partial (markdown)|Partial (markdown)|No|Yes|No|Yes|Yes
 Display formatted messages|Yes|Yes|Yes|No|Yes|No|No|Yes
 Redacting |Yes|Yes|Yes|Yes|No|No|Yes|Yes
 *Other Features*|
@@ -111,5 +111,5 @@ voip|Yes|Yes|Yes|No|No|No|No|No
 
 || Riot Web | Riot Android | Riot iOS | Nheko | Gomuks | Quaternion | Fractal | Seaglass
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-Communities Display|&#10003;|&#10007;|&#10007;|&#10003;|&#10007;|&#10007;|&#10007;|&#10007;
+Communities Display|&#10003;|&#10003;|&#10003;|&#10003;|&#10007;|&#10007;|&#10007;|&#10007;
 Communities Creation|&#10003;|&#10007;|&#10007;|&#10007;|&#10007;|&#10007;|&#10007;|&#10007;
