@@ -68,7 +68,7 @@ jQuery(document).ready(function () {
 
 # Matrix Clients Matrix
 
-To use connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  [try-matrix-now](try-matrix-now). To get started using Matrix, pick a client and join [#matrix:matrix.org](https://matrix.to/#/#matrix:matrix.org)
+To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  [try-matrix-now](try-matrix-now). To get started using Matrix, pick a client and join [#matrix:matrix.org](https://matrix.to/#/#matrix:matrix.org)
 
 ## Platform Availability
 
