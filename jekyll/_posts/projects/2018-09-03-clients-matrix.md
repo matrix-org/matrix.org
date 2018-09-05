@@ -13,7 +13,7 @@ table tr td {
 }
 
 table tr td:nth-child(1) {
-    width: 20%
+    width: 18% !important;
 }
 
 #document table:first-of-type tr td:nth-child(1) {
@@ -22,6 +22,10 @@ table tr td:nth-child(1) {
 
 table tr:nth-child(even) {
   background-color: #f5f5f5;
+}
+
+table:nth-of-type(2) tr:nth-child(5)  {
+    font-size: small;
 }
 
 .green {
@@ -84,7 +88,7 @@ Matrix Room|<small>[#riot:<br />matrix.org](https://matrix.to/#/#riot:matrix.org
 Platform| Web (React)|          Android|             iOS|           Qt|Go<br />Terminal|              Qt|           GTK+|macOS<br />Cocoa|              Qt|Qt<br />Ubuntu Touch|
 Language| JavaScript (React)|      Java|     Objective-C|          C++|            Go|               C++|           Rust|           Swift|             C++|             C++|
 SDK | matrix-js-sdk, matrix-react-sdk| matrix-android-sdk|matrix-ios-sdk||gomatrix (fork)|libqmatrixclient|             |  matrix-ios-sdk|libqmatrixclient|libqmatrixclient|
-supported matrix spec|r0|             r0|             r0|           r0|            r0|                r0|             r0|              r0|              r0|              r0|
+Supported Spec|r0|             r0|             r0|           r0|            r0|                r0|             r0|              r0|              r0|              r0|
 
 ## Features
 
