@@ -76,6 +76,9 @@ Ubuntu Touch||||||||||&#10003;
 
 ||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Matrique    |    uMatriks    |
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
+Repo|web|and|ios|[nheko on github](https://github.com/mujx/nheko)|[gomuks on github](https://github.com/tulir/gomuks)
+Website|
+Matrix Room|<small>[#riot:<br />matrix.org](https://matrix.to/#/#riot:matrix.org)</small>|<small>[#riot:<br />matrix.org](https://matrix.to/#/#riot:matrix.org)</small>|<small>[#riot:<br />matrix.org](https://matrix.to/#/#riot:matrix.org)</small>|<small>[#nheko:<br />matrix.org](https://matrix.to/#/##nheko:matrix.org)</small>|<small>[#gomuks:<br />maunium.net](https://matrix.to/#/#gomuks:maunium.net)</small>
 Platform| Web (React)|          Android|             iOS|           Qt|Go<br />Terminal|              Qt|           GTK+|macOS<br />Cocoa|              Qt|Qt<br />Ubuntu Touch|
 Language| JavaScript (React)|      Java|     Objective-C|          C++|            Go|               C++|           Rust|           Swift|             C++|             C++|
 SDK | matrix-js-sdk, matrix-react-sdk| matrix-android-sdk|matrix-ios-sdk||gomatrix (fork)|libqmatrixclient|             |                |libqmatrixclient|libqmatrixclient|
@@ -107,7 +110,7 @@ Replies| &#10003;|             &#10003;|        &#10003;|     &#10007;|      &#1
 Attachment uploading|&#10003;| &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10003;|        &#10007;|        &#10003;|        &#10007;|
 Attachment downloading| &#10003;| &#10003;|     &#10003;|     &#10003;|        Images|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10003;|
 Send stickers| &#10003;|       &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
-Send formatted messages (markdown)|&#10003;|&#10003;|&#10003;|&#10007;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
+Send formatted messages (markdown)|&#10003;|&#10003;|&#10003;|&#10007;|      &#10003;|          &#10007;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
 Rich Text Editor for formatted messages| &#10003;|&#10007;|&#10007;|&#10007;|&#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Display formatted messages| &#10003;| &#10003;| &#10003;|     &#10007;|      &#10003;|          &#10007;|       &#10007;|        &#10003;|        &#10003;|        &#10007;|
 Redacting | &#10003;|          &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
