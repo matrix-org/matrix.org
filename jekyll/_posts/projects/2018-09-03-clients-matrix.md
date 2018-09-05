@@ -51,7 +51,7 @@ jQuery(document).ready(function () {
         if (text.startsWith("Yes") || text.startsWith("✓")) {
             jQuery(this).addClass("green");
         }
-        if (text.match(/Build from source|WIP|Predefined|Images|Partial/))
+        if (text.match(/Build from source|WIP|Predefined|Images|Partial|Text only/))
         {
             jQuery(this).addClass("orange");
         }
@@ -79,7 +79,7 @@ Ubuntu Touch||||||||||&#10003;
 
 ||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Matrique    |    uMatriks    |
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-Repo|[riot-web on GitHub](https://github.com/vector-im/riot-web/)|[riot-android on GitHub](https://github.com/vector-im/riot-android/)|[riot-ios on GitHub](https://github.com/vector-im/riot-ios/)|[nheko on github](https://github.com/mujx/nheko)|[gomuks on github](https://github.com/tulir/gomuks)|[Quaternion on GitHub](https://github.com/QMatrixClient/Quaternion/)|[Fractal on Gnome GitLab](https://gitlab.gnome.org/World/fractal)|[Seaglass on GitHub](https://github.com/neilalexander/seaglass)|[Matrique on GitLab](https://gitlab.com/b0/matrique)|[uMatriks on GitHub](https://github.com/uMatriks/uMatriks)
+Repo|[riot-web](https://github.com/vector-im/riot-web/)|[riot-android](https://github.com/vector-im/riot-android/)|[riot-ios](https://github.com/vector-im/riot-ios/)|[nheko](https://github.com/mujx/nheko)|[gomuks](https://github.com/tulir/gomuks)|[Quaternion](https://github.com/QMatrixClient/Quaternion/)|[Fractal](https://gitlab.gnome.org/World/fractal)|[Seaglass](https://github.com/neilalexander/seaglass)|[Matrique](https://gitlab.com/b0/matrique)|[uMatriks](https://github.com/uMatriks/uMatriks)
 Matrix Room|<small>[#riot:<br />matrix.org](https://matrix.to/#/#riot:matrix.org)</small>|<small>[#riot:<br />matrix.org](https://matrix.to/#/#riot:matrix.org)</small>|<small>[#riot:<br />matrix.org](https://matrix.to/#/#riot:matrix.org)</small>|<small>[#nheko:<br />matrix.org](https://matrix.to/#/##nheko:matrix.org)</small>|<small>[#gomuks:<br />maunium.net](https://matrix.to/#/#gomuks:maunium.net)</small>|<small>[#qmatrixclient:<br />matrix.org](https://matrix.to/#/#qmatrixclient:matrix.org)</small>|<small>[#fractal-gtk:<br />matrix.org](https://matrix.to/#/#fractal-gtk:matrix.org)</small>|<small>[#seaglass:<br />matrix.org](https://matrix.to/#/#seaglass:matrix.org)</small>|<small>[#matrique:<br />matrix.org](https://matrix.to/#/#matrique:matrix.org)</small>|<small>[#uMatriks:<br />matrix.org](https://matrix.to/#/#uMatriks:matrix.org)</small>
 Platform| Web (React)|          Android|             iOS|           Qt|Go<br />Terminal|              Qt|           GTK+|macOS<br />Cocoa|              Qt|Qt<br />Ubuntu Touch|
 Language| JavaScript (React)|      Java|     Objective-C|          C++|            Go|               C++|           Rust|           Swift|             C++|             C++|
@@ -98,7 +98,7 @@ Search joined rooms| &#10003;| &#10003;|        &#10003;|     &#10003;|      &#1
 <br/>*Room Features*|
 Room user list| &#10003;|      &#10003;|        &#10003;|     &#10003;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10007;|        &#10003;|
 Display Room Description|&#10003;|&#10003;|     &#10003;|     &#10003;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10003;|
-Edit Room Description|&#10003;|&#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10003;|       &#10003;|        &#10007;|        &#10003;|        &#10007;|
+Edit Room Description|&#10003;|&#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
 Highlights |&#10003;|          &#10003;|        &#10003;|     &#10007;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10007;|        &#10003;|
 Pushrules | &#10003;|          &#10003;|        &#10003;|     &#10007;|      &#10003;|          &#10003;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Send read markers| &#10003;|   &#10003;|        &#10003;|     &#10003;|      &#10003;|          &#10003;|       &#10003;|        &#10007;|        &#10007;|        &#10007;|
@@ -107,11 +107,11 @@ Sending Invites| &#10003;| &#10003;|            &#10003;|     &#10003;|      &#1
 Accepting Invites| &#10003;| &#10003;|          &#10003;|     &#10003;|      &#10007;|          &#10003;|       &#10003;|        &#10003;|        &#10007;|        &#10007;|
 Typing Notification|&#10003;|  &#10003;|        &#10003;|     &#10003;|      &#10003;|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
 <br/>*Message Features*|
-E2E|&#10003;|                  &#10003;|        &#10003;|      Partial|      &#10007;|          &#10007;|       &#10007;|        &#10003;|        &#10007;|        &#10007;|
+E2E|&#10003;|                  &#10003;|        &#10003;|    Text only|      &#10007;|          &#10007;|       &#10007;|        &#10003;|        &#10007;|        &#10007;|
 Replies| &#10003;|             &#10003;|        &#10003;|     &#10007;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Attachment uploading|&#10003;| &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10003;|        &#10007;|        &#10003;|        &#10007;|
 Attachment downloading| &#10003;| &#10003;|     &#10003;|     &#10003;|        Images|          &#10003;|       &#10003;|        &#10003;|        &#10003;|        &#10003;|
-Send stickers| &#10003;|       &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
+Send stickers| &#10003;|       &#10003;|        &#10003;|     &#10007;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Send formatted messages (markdown)|&#10003;|&#10003;|&#10003;|&#10007;|      &#10003;|          &#10007;|       &#10003;|        &#10003;|        &#10003;|        &#10007;|
 Rich Text Editor for formatted messages| &#10003;|&#10007;|&#10007;|&#10007;|&#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Display formatted messages| &#10003;| &#10003;| &#10003;|     &#10007;|      &#10003;|          &#10007;|       &#10007;|        &#10003;|        &#10003;|        &#10007;|
@@ -125,6 +125,6 @@ voip|&#10003;|                 &#10003;|        &#10003;|     &#10007;|      &#1
 ||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Matrique    |    uMatriks
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 Communities Display|&#10003;|  &#10003;|        &#10003;|     &#10003;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
-Communities Creation|&#10003;| &#10003;|        &#10003;|     &#10007;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
+Communities Creation|&#10003;| &#10007;|        &#10007;|     &#10007;|      &#10007;|          &#10007;|       &#10007;|        &#10007;|        &#10007;|        &#10007;|
 
 *These features are in common usage in the Matrix ecosystem and could be added to a feature version of the spec.*
