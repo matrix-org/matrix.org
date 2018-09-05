@@ -68,6 +68,8 @@ jQuery(document).ready(function () {
 
 # Matrix Clients Matrix
 
+To use connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  [try-matrix-now](try-matrix-now). To get started using Matrix, pick a client and join [#matrix:matrix.org](https://matrix.to/#/#matrix:matrix.org)
+
 ## Platform Availability
 
 ||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Matrique    |    uMatriks    |
@@ -88,7 +90,7 @@ Matrix Room|<small>[#riot:<br />matrix.org](https://matrix.to/#/#riot:matrix.org
 Platform| Web (React)|          Android|             iOS|           Qt|Go<br />Terminal|              Qt|           GTK+|macOS<br />Cocoa|              Qt|Qt<br />Ubuntu Touch|
 Language| JavaScript (React)|      Java|     Objective-C|          C++|            Go|               C++|           Rust|           Swift|             C++|             C++|
 SDK | matrix-js-sdk, matrix-react-sdk| matrix-android-sdk|matrix-ios-sdk||gomatrix (fork)|libqmatrixclient|             |  matrix-ios-sdk|libqmatrixclient|libqmatrixclient|
-Supported Spec|r0.4.0|             r0.4.0|             r0.4.0|           r0.4.0|            r0.4.0|                r0.4.0|             r0.4.0|              r0.4.0|              r0.4.0|              r0.4.0|
+Target Spec Version|r0.4.0|             r0.4.0|             r0.4.0|           r0.4.0|            r0.4.0|                r0.4.0|             r0.4.0|              r0.4.0|              r0.4.0|              r0.4.0|
 
 ## Features
 
