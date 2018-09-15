@@ -137,7 +137,7 @@ should construct a JSON object as follows:
       "curve25519:<device_id>": "<curve25519_key>",
       "ed25519:<device_id>": "<ed25519_key>"
     },
-    "user_id: <user_id>"
+    "user_id": "<user_id>"
   }
 
 The object should be formatted as `Canonical
