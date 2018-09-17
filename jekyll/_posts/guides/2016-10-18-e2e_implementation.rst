@@ -226,8 +226,8 @@ There are currently two defined algorithms:
 In the spec, this algorithm is detailed `here`__ and an example payload can be
 seen `here`__ .
 
-__ https://matrix.org/docs/spec/client_server/unstable.html#m-olm-v1-curve25519-aes-sha2
-__ https://matrix.org/docs/spec/client_server/unstable.html#m-room-encrypted
+__ https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2
+__ `m.room.encrypted`_
 
 The ``sender_key`` property of the event content gives the Curve25519
 identity key of the sender. Clients should maintain a list of known Olm
@@ -311,8 +311,8 @@ as follows [#]_.
 In the spec, this algorithm is detailed `here`__ and an example payload can be
 seen `here`__.
 
-__ https://matrix.org/docs/spec/client_server/unstable.html#m-megolm-v1-aes-sha2
-__ https://matrix.org/docs/spec/client_server/unstable.html#m-room-encrypted
+__ https://matrix.org/docs/spec/client_server/r0.4.0.html#m-megolm-v1-aes-sha2
+__ `m.room.encrypted`_
 
 Encrypted events using this algorithm should have ``sender_key``,
 ``session_id`` and ``ciphertext`` content properties. If the
@@ -495,7 +495,7 @@ When encrypting an event using Olm, the client should:
 
 -  Build an encryption payload as illustrated in the `spec`__.
 
-   __ `https://matrix.org/docs/spec/client_server/unstable.html#m-olm-v1-curve25519-aes-sha2`
+   __ `https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2`
 
 -  Check if it has an existing Olm session; if it does not, `start a new
    one`__. If it has several (as may happen due to
@@ -561,7 +561,7 @@ with a new member.
 
 The device tracking process which should be implemented is documented `in the
 spec
-<https://matrix.org/docs/spec/client_server/unstable.html#tracking-the-device-list-for-a-user>`__.
+<https://matrix.org/docs/spec/client_server/r0.4.0.html#tracking-the-device-list-for-a-user>`__.
 
 .. _`blocking`:
 
@@ -572,7 +572,7 @@ It should be possible for a user to mark each device belonging to
 another user as 'Blocked' or 'Verified', through a process detailed
 `in the spec`__.
 
-__ https://matrix.org/docs/spec/client_server/unstable.html#device-verification
+__ https://matrix.org/docs/spec/client_server/r0.4.0.html#device-verification
 
 When a user chooses to block a device, this means that no further
 encrypted messages should be shared with that device. In short, it
@@ -600,7 +600,7 @@ Encrypted attachments
 Homeservers must not be able to read files shared in encrypted rooms.
 Clients should implement a strategy described `in the spec`__.
 
-__ https://matrix.org/docs/spec/client_server/unstable.html#sending-encrypted-attachments
+__ https://matrix.org/docs/spec/client_server/r0.4.0.html#sending-encrypted-attachments
 
 Currently, the files are encrypted using AES-CTR, which is not included in
 libolm. Clients have to rely on a third party library.
@@ -652,21 +652,21 @@ to ``"cancel_request"`` and ``request_id`` to the ID of the initial request.
 
 
 .. |m.room.encryption| replace:: ``m.room.encryption``
-.. _`m.room.encryption`: https://matrix.org/docs/spec/client_server/unstable.html#m-room-encryption
+.. _`m.room.encryption`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-encryption
 
 .. |m.room.encrypted| replace:: ``m.room.encrypted``
-.. _`m.room.encrypted`: https://matrix.org/docs/spec/client_server/unstable.html#m-room-encrypted
+.. _`m.room.encrypted`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-encrypted
 
 .. |room_key| replace:: ``m.room_key``
-.. _`room_key`: https://matrix.org/docs/spec/client_server/unstable.html#m-room-key
+.. _`room_key`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-key
 
 .. |m.room_key_request| replace:: ``m.room_key_request``
-.. _`room_key_request`: https://matrix.org/docs/spec/client_server/unstable.html#m-room-key-request
+.. _`room_key_request`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-key-request
 
 .. |m.forwarded_room_key| replace:: ``m.forwarded_room_key``
-.. _`forwarded_room_key`: https://matrix.org/docs/spec/client_server/unstable.html#m-forwarded-room-key
+.. _`forwarded_room_key`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-forwarded-room-key
 
 .. _`Signing JSON`: https://matrix.org/docs/spec/appendices.html#signing-json
-.. _/keys/query: https://matrix.org/docs/spec/client_server/unstable.html#post-matrix-client-r0-keys-query
-.. _`/keys/upload`: https://matrix.org/docs/spec/client_server/unstable.html#post-matrix-client-r0-keys-upload
-.. _/keys/claim: https://matrix.org/docs/spec/client_server/unstable.html#post-matrix-client-r0-keys-claim
+.. _/keys/query: https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-query
+.. _`/keys/upload`: https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-upload
+.. _/keys/claim: https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-claim
