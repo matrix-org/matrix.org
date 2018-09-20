@@ -43,7 +43,7 @@ ln -s ../../../spec/client_server/latest.json unstyled_docs/api/client-server/js
 # copy the unstyled docs and add the jekyll styling
 rm -rf content/docs
 cp -r unstyled_docs content/docs
-find "content/docs" -name '*.html' |
+find "content/docs" -name '*.html' -type f |
     xargs "./scripts/add-matrix-org-stylings.pl" "./jekyll/_includes"
 
 # run jekyll to generate the rest of the site.
