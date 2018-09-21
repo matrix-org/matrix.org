@@ -72,7 +72,7 @@ To connect to the Matrix federation, you will use a client. These are some of th
 
 ## Platform Availability
 
-||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Matrique    |    uMatriks    |
+||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Spectral    |    uMatriks    |
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 Linux|&#10003;<br /><small>Electron</small>| |          |   &#10003;  | &#10003;     |  &#10003;        |   &#10003;    |                |        &#10003;|
 Mac|&#10003;<br /><small>Electron</small>||             |  &#10003;   |      &#10003;| Build from source|            WIP|        &#10003;|
@@ -83,10 +83,10 @@ Ubuntu Touch||||||||||&#10003;
 
 ## Details
 
-||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Matrique    |    uMatriks    |
+||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Spectral    |    uMatriks    |
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-Repo|[riot-web](https://github.com/vector-im/riot-web/)|[riot-android](https://github.com/vector-im/riot-android/)|[riot-ios](https://github.com/vector-im/riot-ios/)|[nheko](https://github.com/mujx/nheko)|[gomuks](https://github.com/tulir/gomuks)|[Quaternion](https://github.com/QMatrixClient/Quaternion/)|[Fractal](https://gitlab.gnome.org/World/fractal)|[Seaglass](https://github.com/neilalexander/seaglass)|[Matrique](https://gitlab.com/b0/matrique)|[uMatriks](https://github.com/uMatriks/uMatriks)
-Matrix Room|<small>[#riot:<br />matrix.org](https://matrix.to/#/#riot:matrix.org)</small>|<small>[#riot-android:<br />matrix.org](https://matrix.to/#/#riot-android:matrix.org)</small>|<small>[#riot-ios:<br />matrix.org](https://matrix.to/#/#riot-ios:matrix.org)</small>|<small>[#nheko:<br />matrix.org](https://matrix.to/#/##nheko:matrix.org)</small>|<small>[#gomuks:<br />maunium.net](https://matrix.to/#/#gomuks:maunium.net)</small>|<small>[#qmatrixclient:<br />matrix.org](https://matrix.to/#/#qmatrixclient:matrix.org)</small>|<small>[#fractal-gtk:<br />matrix.org](https://matrix.to/#/#fractal-gtk:matrix.org)</small>|<small>[#seaglass:<br />matrix.org](https://matrix.to/#/#seaglass:matrix.org)</small>|<small>[#matrique:<br />matrix.org](https://matrix.to/#/#matrique:matrix.org)</small>|<small>[#uMatriks:<br />matrix.org](https://matrix.to/#/#uMatriks:matrix.org)</small>
+Repo|[riot-web](https://github.com/vector-im/riot-web/)|[riot-android](https://github.com/vector-im/riot-android/)|[riot-ios](https://github.com/vector-im/riot-ios/)|[nheko](https://github.com/mujx/nheko)|[gomuks](https://github.com/tulir/gomuks)|[Quaternion](https://github.com/QMatrixClient/Quaternion/)|[Fractal](https://gitlab.gnome.org/World/fractal)|[Seaglass](https://github.com/neilalexander/seaglass)|[Spectral](https://gitlab.com/b0/spectral)|[uMatriks](https://github.com/uMatriks/uMatriks)
+Matrix Room|<small>[#riot:<br />matrix.org](https://matrix.to/#/#riot:matrix.org)</small>|<small>[#riot-android:<br />matrix.org](https://matrix.to/#/#riot-android:matrix.org)</small>|<small>[#riot-ios:<br />matrix.org](https://matrix.to/#/#riot-ios:matrix.org)</small>|<small>[#nheko:<br />matrix.org](https://matrix.to/#/##nheko:matrix.org)</small>|<small>[#gomuks:<br />maunium.net](https://matrix.to/#/#gomuks:maunium.net)</small>|<small>[#qmatrixclient:<br />matrix.org](https://matrix.to/#/#qmatrixclient:matrix.org)</small>|<small>[#fractal-gtk:<br />matrix.org](https://matrix.to/#/#fractal-gtk:matrix.org)</small>|<small>[#seaglass:<br />matrix.org](https://matrix.to/#/#seaglass:matrix.org)</small>|<small>[#spectral:<br />encom.eu.org](https://matrix.to/#/#spectral:encom.eu.org)</small>|<small>[#uMatriks:<br />matrix.org](https://matrix.to/#/#uMatriks:matrix.org)</small>
 Platform| Web (React)|          Android|             iOS|           Qt|Go<br />Terminal|              Qt|           GTK+|macOS<br />Cocoa|              Qt|Qt<br />Ubuntu Touch|
 Language| JavaScript (React)|      Java|     Objective-C|          C++|            Go|               C++|           Rust|           Swift|             C++|             C++|
 SDK | matrix-js-sdk, matrix-react-sdk| matrix-android-sdk|matrix-ios-sdk||gomatrix (fork)|libqmatrixclient|             |  matrix-ios-sdk|libqmatrixclient|libqmatrixclient|
@@ -94,7 +94,7 @@ Target Spec Version|r0.4.0|             r0.4.0|             r0.4.0|           r0
 
 ## Features
 
-|                      |    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    | Quaternion |    Fractal |    Seaglass    |    Matrique    |    uMatriks
+|                      |    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    | Quaternion |    Fractal |    Seaglass    |    Spectral    |    uMatriks
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 <br/>*Room Management*|
 Room directory|                 &#10003;|            &#10003;|        &#10003;|     &#10007;|      &#10007;|    &#10007;|    &#10003;|        &#10007;|        &#10007;|        &#10007;|
@@ -129,7 +129,7 @@ voip|                           &#10003;|            &#10003;|        &#10003;| 
 
 ## Future-specification Features
 
-|                      |    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    | Quaternion |    Fractal |    Seaglass    |    Matrique    |    uMatriks
+|                      |    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    | Quaternion |    Fractal |    Seaglass    |    Spectral    |    uMatriks
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 Communities Display|            &#10003;|            &#10003;|        &#10003;|     &#10003;|      &#10007;|    &#10007;|    &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Communities Creation|           &#10003;|            &#10007;|        &#10007;|     &#10007;|      &#10007;|    &#10007;|    &#10007;|        &#10007;|        &#10007;|        &#10007;|
