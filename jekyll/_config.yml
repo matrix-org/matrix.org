@@ -14,7 +14,7 @@ exclude:
 
 # Build settings
 markdown: kramdown
-coderay_line_numbers: :table
+coderay_line_numbers: table
 
 #defaults:
 permalink: /:categories/:title.html # can use this when/if we use jekyll for all docs
