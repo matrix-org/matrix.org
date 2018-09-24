@@ -74,9 +74,9 @@ app = Flask(__name__)
 def on_receive_events(transaction):
     events = request.get_json()["events"]
     for event in events:
-	print "User: %s Room: %s" % (event["user_id"], event["room_id"])
-	print "Event Type: %s" % event["type"]
-	print "Content: %s" % event["content"]
+        print "User: %s Room: %s" % (event["user_id"], event["room_id"])
+        print "Event Type: %s" % event["type"]
+        print "Content: %s" % event["content"]
     return jsonify({})
 
 if __name__ == "__main__":
@@ -137,12 +137,12 @@ To test everything is working correctly, go ahead and explicitly create a room w
 def query_alias(alias):
     alias_localpart = alias.split(":")[0][1:]
     requests.post(
-	# NB: "TOKEN" is the as_token referred to in registration.yaml
-	"http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN",
-	json.dumps({
-	    "room_alias_name": alias_localpart
-	}),
-	headers={"Content-Type":"application/json"}
+        # NB: "TOKEN" is the as_token referred to in registration.yaml
+        "http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN",
+        json.dumps({
+            "room_alias_name": alias_localpart
+        }),
+        headers={"Content-Type":"application/json"}
     )
     return jsonify({})
 ~~~
