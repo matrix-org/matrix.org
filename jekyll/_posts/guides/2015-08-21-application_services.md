@@ -63,25 +63,23 @@ A very basic application service may want to log all messages in rooms which hav
 
 Here's an example of a very basic application service using Python (with Flask and Requests) which logs room activity:
 
-```
-# app_service.py:
+        # app_service.py:
 
-import json, requests  # we will use this later
-from flask import Flask, jsonify, request
-app = Flask(__name__)
+        import json, requests  # we will use this later
+        from flask import Flask, jsonify, request
+        app = Flask(__name__)
 
-@app.route("/transactions/&lt;transaction&gt;", methods=["PUT"])
-def on_receive_events(transaction):
-    events = request.get_json()["events"]
-    for event in events:
-	print "User: %s Room: %s" % (event["user_id"], event["room_id"])
-	print "Event Type: %s" % event["type"]
-	print "Content: %s" % event["content"]
-    return jsonify({})
+        @app.route("/transactions/&lt;transaction&gt;", methods=["PUT"])
+        def on_receive_events(transaction):
+            events = request.get_json()["events"]
+            for event in events:
+                print "User: %s Room: %s" % (event["user_id"], event["room_id"])
+                print "Event Type: %s" % event["type"]
+                print "Content: %s" % event["content"]
+            return jsonify({})
 
-if __name__ == "__main__":
-    app.run()
-```
+        if __name__ == "__main__":
+            app.run()
 
 Set your new application service running on port 5000 with:
 
@@ -89,40 +87,36 @@ Set your new application service running on port 5000 with:
 
 The homeserver needs to know that the application service exists before it will send requests to it. This is done via a registration YAML file which is specified in Synapse's main config file e.g. <code>homeserver.yaml</code>. The server admin needs to add the application service registration configuration file as an entry to this file.
 
-```
-# homeserver.yaml
-app_service_config_files:
-  - "/path/to/appservice/registration.yaml"
-```
+        # homeserver.yaml
+        app_service_config_files:
+          - "/path/to/appservice/registration.yaml"
 
 NB: Note the "-" at the start; this indicates a list element. The registration file <code>registration.yaml</code> should look like:
 
-```
-# registration.yaml
+        # registration.yaml
+        
+	# An ID which is unique across all application services on your homeserver. This should never be changed once set.
+	id: "something-good"
 
-# An ID which is unique across all application services on your homeserver. This should never be changed once set.
-id: "something-good"
-
-# this is the base URL of the application service
-url: "http://localhost:5000"
-
-# This is the token that the AS should use as its access_token when using the Client-Server API
-# This can be anything you want.
-as_token: wfghWEGh3wgWHEf3478sHFWE
-
-# This is the token that the HS will use when sending requests to the AS.
-# This can be anything you want.
-hs_token: ugw8243igya57aaABGFfgeyu
-
-# this is the local part of the desired user ID for this AS (in this case @logging:localhost)
-sender_localpart: logging
-namespaces:
-  users: []
-  rooms: []
-  aliases:
-    - exclusive: false
-      regex: "#logged_.*"
-```
+        # this is the base URL of the application service
+        url: "http://localhost:5000"
+        
+        # This is the token that the AS should use as its access_token when using the Client-Server API
+        # This can be anything you want.
+        as_token: wfghWEGh3wgWHEf3478sHFWE
+        
+        # This is the token that the HS will use when sending requests to the AS.
+        # This can be anything you want.
+        hs_token: ugw8243igya57aaABGFfgeyu
+        
+        # this is the local part of the desired user ID for this AS (in this case @logging:localhost)
+        sender_localpart: logging
+        namespaces:
+          users: []
+          rooms: []
+          aliases:
+            - exclusive: false
+              regex: "#logged_.*"
 
 **You will need to restart the homeserver after editing the config file before it will take effect.**
 
@@ -130,20 +124,18 @@ namespaces:
 
 To test everything is working correctly, go ahead and explicitly create a room with the alias "#logged_test:localhost" and send a message into the room: the HS will relay the message to the AS by PUTing to /transactions/&lt;tid&gt; and you should see your AS print the event on the terminal. This will monitor any room which has an alias prefix of "#logged_", but it won't lazily create room aliases if they don't already exist. This means it will only log messages in the room you created before: #logged_test:localhost. Try joining the room "#logged_test2:localhost" without creating it, and it will fail. Let's fix that and add in lazy room creation:
 
-```
-@app.route("/rooms/&lt;alias&gt;")
-def query_alias(alias):
-    alias_localpart = alias.split(":")[0][1:]
-    requests.post(
-	# NB: "TOKEN" is the as_token referred to in registration.yaml
-	"http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN",
-	json.dumps({
-	    "room_alias_name": alias_localpart
-	}),
-	headers={"Content-Type":"application/json"}
-    )
-    return jsonify({})
-```
+        @app.route("/rooms/&lt;alias&gt;")
+        def query_alias(alias):
+            alias_localpart = alias.split(":")[0][1:]
+            requests.post(
+                # NB: "TOKEN" is the as_token referred to in registration.yaml
+                "http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN",
+                json.dumps({
+                    "room_alias_name": alias_localpart
+                }),
+                headers={"Content-Type":"application/json"}
+            )
+            return jsonify({})
 
 This makes the application service lazily create a room with the requested alias whenever the HS queries the AS for the existence of that alias (when users try to join that room), allowing any room with the alias prefix #logged_ to be sent to the AS. Now try joining the room "#logged_test2:localhost" and it will work as you'd expect.  You can see that if this were a real bridge, the AS would have checked for the existence of #logged_test2 in the remote network, and then lazily-created it in Matrix as required.
 
