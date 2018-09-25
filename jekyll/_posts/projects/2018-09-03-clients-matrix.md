@@ -134,4 +134,4 @@ voip|                           &#10003;|            &#10003;|        &#10003;| 
 Communities Display|            &#10003;|            &#10003;|        &#10003;|     &#10003;|      &#10007;|    &#10007;|    &#10007;|        &#10007;|        &#10007;|        &#10007;|
 Communities Creation|           &#10003;|            &#10007;|        &#10007;|     &#10007;|      &#10007;|    &#10007;|    &#10007;|        &#10007;|        &#10007;|        &#10007;|
 
-*These features are in common usage in the Matrix ecosystem and could be added to a feature version of the spec.*
+*These features are in common usage in the Matrix ecosystem and could be added to a future version of the spec.*
