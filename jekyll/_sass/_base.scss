@@ -103,6 +103,13 @@ a {
 }
 
 
+.nolink, .nolink:link, .nolink:hover, .nolink:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
 
 /**
  * Blockquotes
