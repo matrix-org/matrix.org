@@ -611,10 +611,10 @@ request them from other clients which may have them. Similarly, a client may
 want to reply to a key request with the associated key if it can assert that
 the requesting device is allowed to see the messages encrypted with this key.
 
-Those capabilities are achieved using |m.room_key_request| and
-|m.forwarded_room_key| events.
+Those capabilities are achieved using |m.room_key_request|_ and
+|m.forwarded_room_key|_ events.
 
-The ``session_key`` property of a |m.forwarded_room_key| event differs from the
+The ``session_key`` property of a |m.forwarded_room_key|_ event differs from the
 one of a |room_key| event, as it does not include the Ed25519 signature of the
 original sender. It should be obtained from
 ``olm_export_inbound_group_session`` at the desired ``message index``, and the
@@ -644,7 +644,7 @@ shared with, and at which ``message index``.
 
 Key requests can be sent to all of the current user's devices, as well as the
 original sender of the session, and other devices present in the room. When the
-client receives the requested key, it should send a |m.room_key_request| event
+client receives the requested key, it should send a |m.room_key_request|_ event
 to all the devices it requested the key from, setting the ``action`` property
 to ``"cancel_request"`` and ``request_id`` to the ID of the initial request.
 
@@ -659,10 +659,10 @@ to ``"cancel_request"`` and ``request_id`` to the ID of the initial request.
 .. _`room_key`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-key
 
 .. |m.room_key_request| replace:: ``m.room_key_request``
-.. _`room_key_request`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-key-request
+.. _`m.room_key_request`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-key-request
 
 .. |m.forwarded_room_key| replace:: ``m.forwarded_room_key``
-.. _`forwarded_room_key`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-forwarded-room-key
+.. _`m.forwarded_room_key`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-forwarded-room-key
 
 .. _`Signing JSON`: https://matrix.org/docs/spec/appendices.html#signing-json
 .. _/keys/query: https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-query
