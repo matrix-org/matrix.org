@@ -224,8 +224,7 @@ There are currently two defined algorithms:
 ``m.olm.v1.curve25519-aes-sha2``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the spec, this algorithm is detailed `here`__ and an example payload can be
-seen `here`__ .
+The spec gives `details on this algorithm`__ and an `example payload`__ .
 
 __ https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2
 __ `m.room.encrypted`_
@@ -309,8 +308,7 @@ as follows [#]_.
 ``m.megolm.v1.aes-sha2``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the spec, this algorithm is detailed `here`__ and an example payload can be
-seen `here`__.
+The spec gives `details on this algorithm`__ and an `example payload`__ .
 
 __ https://matrix.org/docs/spec/client_server/r0.4.0.html#m-megolm-v1-aes-sha2
 __ `m.room.encrypted`_
@@ -460,13 +458,12 @@ __ `m.room_key`_
 
 The client must then share the keys for this session with each device in the
 room. It must therefore `download the device list`_ if it hasn't already done
-so. and for each device in the room which has not been `blocked`__, the client
-Then it should build a unique |room_key|_ event, and send it encrypted to each
-device in the room which has not been `blocked`__, `using Olm`__.
+so.
+Then it should build a unique |room_key|_ event, and send it encrypted `using
+Olm`__ to each device in the room which has not been `blocked`__, .
 
-__ `blocking`_
-__ `blocking`_
 __ `olm_encrypt`_
+__ `blocking`_
 
 Once all of the key-sharing event contents have been assembled, the
 events should be sent to the corresponding devices via
