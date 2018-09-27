@@ -134,18 +134,11 @@ clients should call ``olm_account_sign``.
 Creating and registering one-time keys
 --------------------------------------
 
-At first start, the client should check how many one-time keys the homeserver
+The client should keep track of how many one-time keys the homeserver
 has stored for it, and, if necessary, generate and upload some more.
 
-The number of one-time keys currently stored is returned by
-``POST /_matrix/client/r0/keys/upload``. (Post an empty JSON object
-``{}`` if you don’t want to upload the device keys.)
-
-However, a client should not rely on this in order to keep track of how many
-one-time keys are left on the homeserver during runtime, for performance
-reasons. Instead, it should do so by inspecting the
-``device_one_time_keys_count`` property of a ``/sync/`` response, and upload
-more when it deems necessary.
+This can be achieved by inspecting the ``device_one_time_keys_count``
+property of a ``/sync/`` response.
 
 The maximum number of active keys supported by libolm is returned by
 ``olm_account_max_number_of_one_time_keys``. The client should try to
