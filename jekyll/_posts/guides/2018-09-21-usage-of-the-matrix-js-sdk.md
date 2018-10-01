@@ -44,7 +44,7 @@ npm install matrix-js-sdk
 We include the SDK in our source exactly as expected:
 
 ```javascript
-var sdk = require("matrix-js-sdk");
+import sdk from 'matrix-js-sdk';
 ```
 
 ## Login with an access token
@@ -52,7 +52,7 @@ var sdk = require("matrix-js-sdk");
 Instantiate a new client object and use an `access token` to login:
 
 ```javascript
-var client = sdk.createClient({
+const client = sdk.createClient({
     baseUrl: "https://matrix.org",
     accessToken: "....MDAxM2lkZW50aWZpZXIga2V5CjAwMTBjaWQgZ2Vu....",
     userId: "@USERID:matrix.org"
@@ -62,13 +62,14 @@ var client = sdk.createClient({
 
 If you are logged into Riot, you can find an `access token` for the logged-in user on the Settings page.
 
-We can also retrieve an `access token` programmatically using the API:
+If the homeserver you're logging in to supports logging in with a password, ye can also retrieve an `access token` programmatically using the API. To do this, create a new `client` with no authentication parameters, then call `client.login()` with `"m.login.password"`:
 
 ```javascript
-var client = sdk.createClient("https://matrix.org");
-client.login("m.login.password", {"user": "USERID", "password":"hunter2"}, function(err, response){
+const client = sdk.createClient("https://matrix.org");
+client.login("m.login.password", {"user": "USERID", "password":"hunter2"}).then((response) => {
     console.log(response.access_token);
 });
+
 ```
 
 In any case, once logged in either with a password or an access token, the client can get the current access token via:
@@ -83,13 +84,7 @@ Let's perform a first sync, and listen for the response:
 
 ```javascript
 client.once('sync', function(state, prevState, res) {
-    //console.log(res);
-    if(state === 'PREPARED') {
-        console.log("prepared");
-    } else {
-        console.log(state);
-        process.exit(1);
-    }
+    console.log(state); // state will be 'PREPARED' when the client is ready to use
 });
 ```
 
@@ -114,22 +109,22 @@ client.on("Room.timeline", function(event, room, toStartOfTimeline) {
 
 When we created a new client with `sdk.createClient()`, an instance of the default store, `MatrixInMemoryStore` was created and enabled.
 
-To access it, we use `client.store`. For example, to get a list of rooms in which our user is joined:
+To access the store, we use accessor methods. For example, to get a list of rooms in which our user is joined:
 
 ```javascript
-// client.store.rooms is an object with room IDs as property keys
-var roomIds = Object.keys(client.store.rooms);
-roomIds.forEach(roomId => {
-    console.log(roomId);
+// client.client.getRooms() returns an array of room objects
+var rooms = client.getRooms();
+rooms.forEach(room => {
+    console.log(room.roomId);
 });
 ```
 
 More usefully, we could get a list of members for each of these rooms:
 
 ```javascript
-var roomIds = Object.keys(client.store.rooms);
-roomIds.forEach(roomId => {
-    var members = client.store.rooms[roomId].getJoinedMembers();
+var rooms = client.getRooms();
+rooms.forEach(room => {
+    var members = room.getJoinedMembers();
     members.forEach(member => {
         console.log(member.name);
     });
@@ -139,9 +134,9 @@ roomIds.forEach(roomId => {
 For each room, we can inspect the timeline in the store:
 
 ```javascript
-var roomIds = Object.keys(client.store.rooms);
-roomIds.forEach(roomId => {
-    client.store.rooms[roomId].timeline.forEach(t => {
+var rooms = client.getRooms();
+rooms.forEach(room => {
+    room.timeline.forEach(t => {
         console.log(JSON.stringify(t.event.content));
     });
 });
@@ -157,9 +152,11 @@ var content = {
     "msgtype": "m.text"
 };
 
-client.sendEvent("!jhpZBTbckszblMYjMK:matrix.org", "m.room.message", content, "", (err, res) => {
+client.sendEvent("!jhpZBTbckszblMYjMK:matrix.org", "m.room.message", content, "").then((res) => {
+   // message sent successfully
+}).catch((err) => {
     console.log(err);
-});
+}
 ```
 
 Knowing this, we can build a bot which just echos back any message starting with a "!"
@@ -174,7 +171,7 @@ client.on("Room.timeline", function(event, room, toStartOfTimeline) {
     }
 
     // we are only intested in messages from the test room, which start with "!"
-    if (event.event.room_id === testRoomId && event.event.content.body[0] === '!') {
+    if (event.getRoomId() === testRoomId && event.getContent().body[0] === '!') {
         sendNotice(event.event.content.body);
     }
 });
