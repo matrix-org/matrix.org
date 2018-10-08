@@ -21,6 +21,10 @@ h2 {
 
 # Usage of the matrix-js-sdk
 
+Matrix allows real-time communications over the Internet using HTTP and JSON. This makes developing clients to connect to Matrix servers really easy! Because it's open, and uses simple syntax for messages, you can connect Matrix to anything that communicates over a standard HTTP interface - later projects in this series will explore ideas such as building bots, performing machine learning on message content, and connecting IoT devices such as Philips Hue lights.
+
+## Making a Matrix Client
+
 Let's explore how we would make a very simple Matrix client, with only the ability to perform an initial sync, and to get member lists and the timeline for rooms of our choice.
 
 This article will explore the [Matrix Client-Server API], making use of the [matrix-js-sdk]. Later articles may discuss making the underlying calls. Specifically we will cover:
@@ -62,7 +66,7 @@ const client = sdk.createClient({
 
 If you are logged into Riot, you can find an `access token` for the logged-in user on the Settings page.
 
-If the homeserver you're logging in to supports logging in with a password, ye can also retrieve an `access token` programmatically using the API. To do this, create a new `client` with no authentication parameters, then call `client.login()` with `"m.login.password"`:
+If the homeserver you're logging in to supports logging in with a password, you can also retrieve an `access token` programmatically using the API. To do this, create a new `client` with no authentication parameters, then call `client.login()` with `"m.login.password"`:
 
 ```javascript
 const client = sdk.createClient("https://matrix.org");
@@ -189,7 +193,7 @@ function sendNotice(body) {
 
 ## Further
 
-There is much, much more to Matrix, the Client-Server API and the [matrix-js-sdk], but this guide should give some understanding of simple usage. We'll cover more detail in subsequent guides, but for now you can take a look at [other examples in the matrix-js-sdk itself](https://github.com/matrix-org/matrix-js-sdk/tree/master/examples), and also the [Matrix Client-Server API] which it implements.
+There is much, much more to Matrix, the Client-Server API and the [matrix-js-sdk], but this guide should give some understanding of simple usage. In subsequent guides we'll cover more detail and also explore projects you can build on top, such as IoT controls and chatbot interfaces. For now you can take a look at [other examples in the matrix-js-sdk itself](https://github.com/matrix-org/matrix-js-sdk/tree/master/examples), and also the [Matrix Client-Server API] which it implements.
 
 [Matrix Client-Server API]: https://matrix.org/docs/spec/client_server/latest.html
 [matrix-js-sdk]: https://github.com/matrix-org/matrix-js-sdk/
