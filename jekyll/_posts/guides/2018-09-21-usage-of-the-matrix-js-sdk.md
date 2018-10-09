@@ -21,7 +21,7 @@ h2 {
 
 # Usage of the matrix-js-sdk
 
-Matrix allows real-time communications over the Internet using HTTP and JSON. This makes developing clients to connect to Matrix servers really easy! Because it's open, and uses simple syntax for messages, you can connect Matrix to anything that communicates over a standard HTTP interface - later projects in this series will explore ideas such as building bots, performing machine learning on message content, and connecting IoT devices such as Philips Hue lights.
+Matrix allows open real-time communications over the Internet using HTTP and JSON. This makes developing clients to connect to Matrix servers really easy! Because it's open, and uses simple syntax for messages, you can connect Matrix to anything that communicates over a standard HTTP interface - later projects in this series will explore ideas such as building bots, performing machine learning on message content, and connecting IoT devices such as Philips Hue lights.
 
 ## Making a Matrix Client
 
@@ -37,9 +37,16 @@ This article will explore the [Matrix Client-Server API], making use of the [mat
 
 We'll use Node.js as our environment, though the [matrix-js-sdk] can also be used directly in the browser.
 
+Before we start, make sure you have Node.js and NPM installed: follow instructions at [nodejs.org](https://nodejs.org/) for your platform. Then create a new directory to work in:
+
+```unix
+mkdir my-first-matrix-client
+cd my-first-matrix-client
+```
+
 ## Let's write JavaScript
 
-The first thing to do is install the [matrix-js-sdk] from NPM:
+Once you're ready, the first thing to do is install the [matrix-js-sdk] from NPM:
 
 ```unix
 npm install matrix-js-sdk
@@ -64,13 +71,15 @@ const client = sdk.createClient({
 // note that we use the full MXID for the userId value
 ```
 
+<small>([jsdoc for `createClient`](http://matrix-org.github.io/matrix-js-sdk/0.11.1/global.html#createClient))</small>
+
 If you are logged into Riot, you can find an `access token` for the logged-in user on the Settings page.
 
 If the homeserver you're logging in to supports logging in with a password, you can also retrieve an `access token` programmatically using the API. To do this, create a new `client` with no authentication parameters, then call `client.login()` with `"m.login.password"`:
 
 ```javascript
 const client = sdk.createClient("https://matrix.org");
-client.login("m.login.password", {"user": "USERID", "password":"hunter2"}).then((response) => {
+client.login("m.login.password", {"user": "USERID", "password": "hunter2"}).then((response) => {
     console.log(response.access_token);
 });
 
@@ -81,6 +90,8 @@ In any case, once logged in either with a password or an access token, the clien
 ```javascript
 console.log(client.getAccessToken());
 ```
+
+**Note:** it is essential to keep this access token safe, as it allows complete access to your Matrix account!
 
 ## Sync and Listen
 
@@ -123,6 +134,8 @@ rooms.forEach(room => {
 });
 ```
 
+<small>([jsdoc for `client.getRooms`](http://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#getRooms))</small>
+
 More usefully, we could get a list of members for each of these rooms:
 
 ```javascript
@@ -163,6 +176,8 @@ client.sendEvent("!jhpZBTbckszblMYjMK:matrix.org", "m.room.message", content, ""
 }
 ```
 
+<small>([jsdoc for `client.sendEvent`](http://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#sendEvent))</small>
+
 Knowing this, we can build a bot which just echos back any message starting with a "!"
 
 ```javascript
@@ -190,6 +205,8 @@ function sendNotice(body) {
     });
 }
 ```
+
+Take a look at the `msgtype` in the object above. In the previous example, we used "m.text" for this field, but now we're using "m.notice". Bots will often use "m.notice" to differentiate their messages. This allows the client to render notices differently, for example Riot, the most popular client, renders notices with a more pale text colour.
 
 ## Further
 
