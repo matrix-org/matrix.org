@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: guides
+title: Usage of the matrix-js-sdk
 ---
 
 <style>
