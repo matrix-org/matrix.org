@@ -50,6 +50,8 @@ find "content/docs" -name '*.html' -type f |
 # This will generate stuff under ./jekyll/_site.
 ./jekyll/generate.sh
 
+cp -rf ./pre-generated/* jekyll/_site/
+
 # ... and copy it into place
 cp -r jekyll/_site/{css,guides,howtos,projects} content/docs
 
