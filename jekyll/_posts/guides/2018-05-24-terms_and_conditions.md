@@ -87,7 +87,7 @@ You acknowledge and agree that we have no liability of any kind should anyone yo
 
 We may pre-screen user messages or files to prevent spam and other abuse, and we may remove any messages or files (including entire rooms) from the matrix.org homeserver for any reason without notice at our sole discretion. By posting or uploading your messages or files, you represent and warrant that you own or otherwise control all of the intellectual property rights and other rights to your user materials as described in these Terms of Use, including all the rights necessary for you to post or upload said messages or files.
 
-You are solely and entirely responsible for all of your messages and files that you post or otherwise submit via the Service. You shall assume all risks associated with the use of said content including any reliance on the accuracy, completeness or usefulness. New Vector does not guarantee the accuracy, integrity or quality of your messages or files. 
+You are solely and entirely responsible for all of your messages and files that you post or otherwise submit via the Service. You shall assume all risks associated with the use of said content including any reliance on the accuracy, completeness or usefulness. New Vector does not guarantee the accuracy, integrity or quality of your messages or files.
 
 You acknowledge and agree that by accessing or using the Service, you may be exposed to user materials from others that are offensive, indecent or otherwise objectionable.
 
@@ -142,6 +142,10 @@ You agree that you shall not:
 * Violate the rights of New Vector or any third party (including rights of privacy and publicity) or abuse, defame, harass, stalk or threaten another.
 
 Materials and Services provided by third parties are governed by separate agreements accompanying such materials and services. New Vector Ltd. offers no guarantees and assumes no responsibility or liability of any type with respect to the third-party services, including any liability resulting from incompatibility between a third-party service, the matrix.org service or another third-party service. You agree that you will not hold New Vector Ltd. responsible or liable with respect to the third-party services.
+
+## 6.1.1 Room Alias Ownership
+
+An outside organisation can claim ownership over room aliases bearing that organisation's names or identifiers. If you represent an organisation, and would like to take over a room alias for it, please [contact us](mailto:support@matrix.org).
 
 ## 6.2 Illegal Content
 
