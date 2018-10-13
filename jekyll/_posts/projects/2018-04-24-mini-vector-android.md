@@ -1,6 +1,6 @@
 ---
 layout: project
-title: mini-vector-android
+title: miniVector
 categories: projects client
 description: A simpler Matrix client for Android, with fewer permissions and dependencies
 author: LiMium
@@ -8,6 +8,7 @@ maturity: Beta
 language: Java
 license: Apache
 repo: https://github.com/LiMium/mini-vector-android
+room: "#miniVectorAndroid:matrix.org"
 ---
 
 # {{ page.title }}
@@ -22,7 +23,7 @@ Full credit goes to the original developers. This fork just shaves-off the follo
  
 Links
 * [PlayStore](https://play.google.com/store/apps/details?id=com.lavadip.miniVector)
-* FDroid build, coming soon. Issue [#3](https://github.com/LiMium/mini-vector-android/issues/3)
+* [F-Droid](https://f-droid.org/packages/com.lavadip.miniVector/)
 * Matrix chat room: [#miniVectorAndroid:matrix.org](https://matrix.to/#/#miniVectorAndroid:matrix.org)
 
 Repository: <{{page.repo}}>
