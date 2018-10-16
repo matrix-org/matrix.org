@@ -72,6 +72,7 @@
 <li id="menu-item-351" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-351"><a href="/code">Code</a></li>
 <li id="menu-item-347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347"><a href="/docs/guides/faq.html">FAQ</a></li>
 <li id="menu-item-353" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-353"><a href="/blog">Blog</a></li>
+<li id="menu-item-3612" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3612"><a href="https://status.matrix.org/">Status</a></li>
 <li id="menu-item-3354" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3354"><a href="/docs/guides/matrix_org_legal.html">Legal</a></li>
         </ul>
       </nav>
@@ -127,6 +128,7 @@ h2 {
   <li>listening for timeline events</li>
   <li>access the <code class="highlighter-rouge">MatrixInMemoryStore</code></li>
   <li>sending messages to rooms</li>
+  <li>how to respond to specific messages, as a bot would</li>
 </ul>
 
 <p>We’ll use Node.js as our environment, though the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a> can also be used directly in the browser.</p>
@@ -183,14 +185,15 @@ cd my-first-matrix-client
 
 <h2 id="sync-and-listen">Sync and Listen</h2>
 
-<p>Let’s perform a first sync, and listen for the response:</p>
+<p>Next we start the client, perform a first sync, and listen for the response, to get the latest state from the homeserver:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">'sync'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">startClient</span><span class="p">({});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">'sync'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span> <span class="c1">// state will be 'PREPARED' when the client is ready to use</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>Once the sync is complete, we can add listeners for events. To listen to ALL incoming events:</p>
+<p>Once the sync is complete, we can add listeners for events. We could listen to ALL incoming events, but that would be a lot of traffic, and too much for our simple example. If you want to listen to all events, you can add a listen as follows:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"event"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">getType</span><span class="p">());</span>
@@ -198,7 +201,7 @@ cd my-first-matrix-client
 <span class="p">})</span>
 </code></pre></div></div>
 
-<p>But that would be a lot of traffic, and too much for our simple example. Let’s just listen to events happening on the timeline of rooms for which our user is a member:</p>
+<p>Instead, let’s just listen to events happening on the timeline of rooms for which our user is a member:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"Room.timeline"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">room</span><span class="p">,</span> <span class="nx">toStartOfTimeline</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">event</span><span class="p">);</span>
@@ -207,7 +210,7 @@ cd my-first-matrix-client
 
 <h2 id="access-the-store">Access the Store</h2>
 
-<p>When we created a new client with <code class="highlighter-rouge">sdk.createClient()</code>, an instance of the default store, <code class="highlighter-rouge">MatrixInMemoryStore</code> was created and enabled.</p>
+<p>When we created a new client with <code class="highlighter-rouge">sdk.createClient()</code>, an instance of the default store, <code class="highlighter-rouge">MatrixInMemoryStore</code> was created and enabled. When we sync, or instruct otherwise our client to fetch data, the data is automatically added to the store.</p>
 
 <p>To access the store, we use accessor methods. For example, to get a list of rooms in which our user is joined:</p>
 
@@ -243,14 +246,16 @@ cd my-first-matrix-client
 
 <h2 id="send-messages-to-rooms">Send messages to rooms</h2>
 
-<p>To send a message, we create a content object, and specify a room to send to:</p>
+<p>To send a message, we create a content object, and specify a room to send to. In this case, I’ve taken the room ID of <code class="highlighter-rouge">#test:matrix.org</code>, and used it as an example:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">testRoomId</span> <span class="o">=</span> <span class="s2">"!jhpZBTbckszblMYjMK:matrix.org"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"body"</span><span class="p">:</span> <span class="s2">"Hello World"</span><span class="p">,</span>
     <span class="s2">"msgtype"</span><span class="p">:</span> <span class="s2">"m.text"</span>
 <span class="p">};</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">sendEvent</span><span class="p">(</span><span class="s2">"!jhpZBTbckszblMYjMK:matrix.org"</span><span class="p">,</span> <span class="s2">"m.room.message"</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="s2">""</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">sendEvent</span><span class="p">(</span><span class="nx">testRoomId</span><span class="p">,</span> <span class="s2">"m.room.message"</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="s2">""</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
    <span class="c1">// message sent successfully</span>
 <span class="p">}).</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
@@ -259,7 +264,7 @@ cd my-first-matrix-client
 
 <p><small>(<a href="http://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#sendEvent">jsdoc for <code class="highlighter-rouge">client.sendEvent</code></a>)</small></p>
 
-<p>Knowing this, we can build a bot which just echos back any message starting with a “!”</p>
+<p>Knowing this, we can put together message listening and message sending, to build a bot which just echos back any message starting with a “!”:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">testRoomId</span> <span class="o">=</span> <span class="s2">"!jhpZBTbckszblMYjMK:matrix.org"</span><span class="p">;</span>
 

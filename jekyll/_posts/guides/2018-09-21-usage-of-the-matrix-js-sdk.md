@@ -35,6 +35,7 @@ This article will explore the [Matrix Client-Server API], making use of the [mat
 * listening for timeline events
 * access the `MatrixInMemoryStore`
 * sending messages to rooms
+* how to respond to specific messages, as a bot would
 
 We'll use Node.js as our environment, though the [matrix-js-sdk] can also be used directly in the browser.
 
@@ -96,15 +97,16 @@ console.log(client.getAccessToken());
 
 ## Sync and Listen
 
-Let's perform a first sync, and listen for the response:
+Next we start the client, perform a first sync, and listen for the response, to get the latest state from the homeserver:
 
 ```javascript
+client.startClient({});
 client.once('sync', function(state, prevState, res) {
     console.log(state); // state will be 'PREPARED' when the client is ready to use
 });
 ```
 
-Once the sync is complete, we can add listeners for events. To listen to ALL incoming events:
+Once the sync is complete, we can add listeners for events. We could listen to ALL incoming events, but that would be a lot of traffic, and too much for our simple example. If you want to listen to all events, you can add a listen as follows:
 
 ```javascript
 client.on("event", function(event){
@@ -113,7 +115,7 @@ client.on("event", function(event){
 })
 ```
 
-But that would be a lot of traffic, and too much for our simple example. Let's just listen to events happening on the timeline of rooms for which our user is a member:
+Instead, let's just listen to events happening on the timeline of rooms for which our user is a member:
 
 ```javascript
 client.on("Room.timeline", function(event, room, toStartOfTimeline) {
@@ -123,7 +125,7 @@ client.on("Room.timeline", function(event, room, toStartOfTimeline) {
 
 ## Access the Store
 
-When we created a new client with `sdk.createClient()`, an instance of the default store, `MatrixInMemoryStore` was created and enabled.
+When we created a new client with `sdk.createClient()`, an instance of the default store, `MatrixInMemoryStore` was created and enabled. When we sync, or instruct otherwise our client to fetch data, the data is automatically added to the store.
 
 To access the store, we use accessor methods. For example, to get a list of rooms in which our user is joined:
 
@@ -162,15 +164,17 @@ rooms.forEach(room => {
 
 ## Send messages to rooms
 
-To send a message, we create a content object, and specify a room to send to:
+To send a message, we create a content object, and specify a room to send to. In this case, I've taken the room ID of `#test:matrix.org`, and used it as an example:
 
 ```javascript
+var testRoomId = "!jhpZBTbckszblMYjMK:matrix.org";
+
 var content = {
     "body": "Hello World",
     "msgtype": "m.text"
 };
 
-client.sendEvent("!jhpZBTbckszblMYjMK:matrix.org", "m.room.message", content, "").then((res) => {
+client.sendEvent(testRoomId, "m.room.message", content, "").then((res) => {
    // message sent successfully
 }).catch((err) => {
     console.log(err);
@@ -179,7 +183,7 @@ client.sendEvent("!jhpZBTbckszblMYjMK:matrix.org", "m.room.message", content, ""
 
 <small>([jsdoc for `client.sendEvent`](http://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#sendEvent))</small>
 
-Knowing this, we can build a bot which just echos back any message starting with a "!"
+Knowing this, we can put together message listening and message sending, to build a bot which just echos back any message starting with a "!":
 
 ```javascript
 var testRoomId = "!jhpZBTbckszblMYjMK:matrix.org";
