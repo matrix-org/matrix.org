@@ -84,7 +84,6 @@ const client = sdk.createClient("https://matrix.org");
 client.login("m.login.password", {"user": "USERID", "password": "hunter2"}).then((response) => {
     console.log(response.access_token);
 });
-
 ```
 
 In any case, once logged in either with a password or an access token, the client can get the current access token via:
@@ -97,10 +96,15 @@ console.log(client.getAccessToken());
 
 ## Sync and Listen
 
-Next we start the client, perform a first sync, and listen for the response, to get the latest state from the homeserver:
+Next we start the client, this sets up the connection to the server and allows us to begin syncing:
 
 ```javascript
-client.startClient({});
+client.startClient();
+```
+
+Perform a first sync, and listen for the response, to get the latest state from the homeserver:
+
+```javascript
 client.once('sync', function(state, prevState, res) {
     console.log(state); // state will be 'PREPARED' when the client is ready to use
 });

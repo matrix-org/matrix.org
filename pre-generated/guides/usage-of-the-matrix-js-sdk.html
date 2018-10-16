@@ -173,7 +173,6 @@ cd my-first-matrix-client
 <span class="nx">client</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="s2">"m.login.password"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"user"</span><span class="p">:</span> <span class="s2">"USERID"</span><span class="p">,</span> <span class="s2">"password"</span><span class="p">:</span> <span class="s2">"hunter2"</span><span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span><span class="p">);</span>
 <span class="p">});</span>
-
 </code></pre></div></div>
 
 <p>In any case, once logged in either with a password or an access token, the client can get the current access token via:</p>
@@ -185,10 +184,14 @@ cd my-first-matrix-client
 
 <h2 id="sync-and-listen">Sync and Listen</h2>
 
-<p>Next we start the client, perform a first sync, and listen for the response, to get the latest state from the homeserver:</p>
+<p>Next we start the client, this sets up the connection to the server and allows us to begin syncing:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">startClient</span><span class="p">({});</span>
-<span class="nx">client</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">'sync'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">startClient</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Perform a first sync, and listen for the response, to get the latest state from the homeserver:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">'sync'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span> <span class="c1">// state will be 'PREPARED' when the client is ready to use</span>
 <span class="p">});</span>
 </code></pre></div></div>
