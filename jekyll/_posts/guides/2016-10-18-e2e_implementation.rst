@@ -125,42 +125,20 @@ libolm. The (base64-encoded) keys are retrieved by calling
 ``olm_account_identity_keys``. The account should be stored for future
 use.
 
-It should then publish these keys to the homeserver. To do this, it
-should construct a JSON object as follows:
+It should then publish these keys to the homeserver, which is done by using
+the ``device_keys`` property of the `/keys/upload`_ endpoint.
 
-.. code:: json
-
-  {
-    "algorithms": ["m.olm.v1.curve25519-aes-sha2", "m.megolm.v1.aes-sha2"],
-    "device_id": "<device_id>",
-    "keys": {
-      "curve25519:<device_id>": "<curve25519_key>",
-      "ed25519:<device_id>": "<ed25519_key>"
-    },
-    "user_id: <user_id>"
-  }
-
-The object should be formatted as `Canonical
-JSON <http://matrix.org/docs/spec/server_server/unstable.html#canonical-json>`__,
-then signed with ``olm_account_sign``; the signature should be added to
-the JSON as ``signatures.<user_id>.ed25519:<device_id>``.
-
-The signed JSON is then uploaded via
-``POST /_matrix/client/unstable/keys/upload``.
+In order to sign the ``device_keys`` payload as described in `Signing JSON`_,
+clients should call ``olm_account_sign``.
 
 Creating and registering one-time keys
 --------------------------------------
 
-At first start, and at regular intervals
-thereafter\ [#]_, the client should check how
-many one-time keys the homeserver has stored for it, and, if necessary,
-generate and upload some more.
+The client should keep track of how many one-time keys the homeserver
+has stored for it, and, if necessary, generate and upload some more.
 
-.. [#] Every 10 minutes is suggested.
-
-The number of one-time keys currently stored is returned by
-``POST /_matrix/client/unstable/keys/upload``. (Post an empty JSON object
-``{}`` if you don’t want to upload the device keys.)
+This can be achieved by inspecting the ``device_one_time_keys_count``
+property of a ``/sync/`` response.
 
 The maximum number of active keys supported by libolm is returned by
 ``olm_account_max_number_of_one_time_keys``. The client should try to
@@ -184,57 +162,9 @@ To generate new one-time keys:
       }
     }
 
-* Each key should be signed with the account key. To do this:
-
-  * Construct a JSON object as follows:
-
-    .. code:: json
-
-       {
-         "key": "<curve25519_key>"
-       }
-
-  * Call ``olm_account_sign`` to calculate the signature.
-
-  * Add the signature should be added to the JSON as
-    ``signatures.<user_id>.ed25519:<device_id>``.
-
-  * The complete key object should now look like:
-
-    .. code:: json
-
-       {
-         "key": "wo76WcYtb0Vk/pBOdmduiGJ0wIEjW4IBMbbQn7aSnTo",
-         "signatures": {
-           "@alice:example.com": {
-             "ed25519:JLAFKJWSCS": "dSO80A01XiigH3uBiDVx/EjzaoycHcjq9lfQX0uWsqxl2giMIiSPR8a4d291W1ihKJL/a+myXS367WT6NAIcBA"
-           }
-         }
-       }
-
-
-* Aggregate all the signed one-time keys into a single JSON object as follows:
-
-  .. code:: json
-
-    {
-      "one_time_keys": {
-        "signed_curve25519:<key_id>": {
-          "key": "<curve25519_key>",
-          "signatures": {
-            "<user_id>": {
-              "ed25519:<device_id>": "<signature>"
-            }
-          }
-        },
-        "signed_curve25519:<key_id>": {
-          ...
-        },
-        ...
-      }
-    }
-
-* Upload the object via ``POST /_matrix/client/unstable/keys/upload``.
+* Each key should be signed in the same way as the previous identity keys payload,
+  and uploaded using the ``one_time_keys`` property of the `/keys/upload`_
+  endpoint.
 
 * Call ``olm_account_mark_keys_as_published`` to tell the olm library not to
   return the same keys from a future call to ``olm_account_one_time_keys``.
@@ -243,20 +173,17 @@ Configuring a room to use encryption
 ------------------------------------
 
 To enable encryption in a room, a client should send a state event of
-type ``m.room.encryption``, and content ``{ "algorithm":
+type |m.room.encryption|_, and content ``{ "algorithm":
 "m.megolm.v1.aes-sha2" }``.
-
-.. |m.room.encryption| replace:: ``m.room.encryption``
-.. _`m.room.encryption`:
 
 Handling an ``m.room.encryption`` state event
 ---------------------------------------------
 
-When a client receives an ``m.room.encryption`` event as above, it
+When a client receives an |m.room.encryption|_ event as above, it
 should set a flag to indicate that messages sent in the room should be
 encrypted.
 
-This flag should **not** be cleared if a later ``m.room.encryption``
+This flag should **not** be cleared if a later |m.room.encryption|_
 event changes the configuration. This is to avoid a situation where a
 MITM can simply ask participants to disable encryption. In short: once
 encryption is enabled in a room, it can never be disabled.
@@ -267,12 +194,12 @@ encryption algorithm should be used for encryption. Currently only
 
 The event may also include other settings for how messages sent in the room
 should be encrypted (for example, ``rotation_period_ms`` to define how often
-the session should be replaced).
+the session should be replaced). See the spec for more details.
 
 Handling an ``m.room.encrypted`` event
 --------------------------------------
 
-Encrypted events have a type of ``m.room.encrypted``. They have a
+Encrypted events have a type of |m.room.encrypted|_. They have a
 content property ``algorithm`` which gives the encryption algorithm in
 use, as well as other properties specific to the algorithm [#]_.
 
@@ -290,8 +217,10 @@ There are currently two defined algorithms:
 ``m.olm.v1.curve25519-aes-sha2``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encrypted events using this algorithm should have a ``sender_key`` and a
-``ciphertext`` property.
+The spec gives `details on this algorithm`__ and an `example payload`__ .
+
+__ https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2
+__ `m.room.encrypted`_
 
 The ``sender_key`` property of the event content gives the Curve25519
 identity key of the sender. Clients should maintain a list of known Olm
@@ -334,19 +263,19 @@ done as follows:
 
 -  If the session was established successfully:
 
-   -  call ``olm_remove_one_time_keys`` to ensure that the same
+   -  Call ``olm_remove_one_time_keys`` to ensure that the same
       one-time-key cannot be reused.
 
-   -  Call ``olm_decrypt`` with the new session
+   -  Call ``olm_decrypt`` with the new session.
 
-   -  Store the session for future use
+   -  Store the session for future use.
 
 At the end of this, the client will hopefully have successfully
 decrypted the payload.
 
-As well as the ``type`` and ``content`` properties, the payload should
-contain a number of other properties. Each of these should be checked as
-follows [#]_.
+As well as the ``type`` and ``content`` properties, the plaintext payload
+should contain a number of other properties. Each of these should be checked
+as follows [#]_.
 
 ``sender``
   The user ID of the sender. The client should check that this matches the
@@ -357,7 +286,7 @@ follows [#]_.
   local user ID.
 
 ``keys``
-  an object with a property ``ed25519``, The client should check that the
+  an object with a property ``ed25519``. The client should check that the
   value of this property matches the sender's fingerprint key when `marking
   the event as verified`_\ .
 
@@ -371,6 +300,11 @@ follows [#]_.
 
 ``m.megolm.v1.aes-sha2``
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+The spec gives `details on this algorithm`__ and an `example payload`__ .
+
+__ https://matrix.org/docs/spec/client_server/r0.4.0.html#m-megolm-v1-aes-sha2
+__ `m.room.encrypted`_
 
 Encrypted events using this algorithm should have ``sender_key``,
 ``session_id`` and ``ciphertext`` content properties. If the
@@ -403,7 +337,7 @@ when `marking the event as verified`_.
 
 .. _`m.room_key`:
 
-Handling an ``m.room_key`` event
+Handling an |room_key| event
 --------------------------------
 
 These events contain key data to allow decryption of other messages.
@@ -413,20 +347,14 @@ also be encrypted, so will need decrypting as above before they can be
 seen. (These events are generated by other clients - see `starting a megolm
 session`_).
 
-The event content will contain an 'algorithm' property, indicating the
-encryption algorithm the key data is to be used for. Currently, this
-will always be ``m.megolm.v1.aes-sha2``.
-
-Room key events for Megolm will also have ``room_id``, ``session_id``, and
-``session_key`` keys. They are used to establish a Megolm session.  The
-``room_id`` identifies which room the session will be used in. The ``room_id``,
-together with the ``sender_key`` of the ``room_key`` event before it was
-decrypted, and the ``session_id``, uniquely identify a Megolm session. If they
-do not represent a known session, the client should start a new inbound Megolm
-session by calling ``olm_init_inbound_group_session`` with the ``session_key``.
+The ``room_id``, together with the ``sender_key`` of the |room_key|_ event
+before it was decrypted, and the ``session_id``, uniquely identify a Megolm
+session. If they do not represent a known session, the client should start
+a new inbound Megolm session by calling ``olm_init_inbound_group_session`` with
+the ``session_key``.
 
 The client should remember the value of the keys property of the payload
-of the encrypted ``m.room_key`` event and store it with the inbound
+of the encrypted |room_key|_ event and store it with the inbound
 session. This is used as above when marking the event as verified.
 
 .. _`download the device list`:
@@ -441,50 +369,15 @@ required to allow users to `verify or block devices`__.
 
 __ `blocking`_
 
-The client should build a JSON query object as follows:
+The client should use the `/keys/query`_ endpoint, passing the IDs of the
+members of the room in the ``device_keys`` property of the request.
 
-.. code:: json
-
-  {
-    "device_keys": {
-      "<user_id>": {},
-      [...]
-    }
-  }
-
-Each member in the room should be included in the query. This is then
-sent via ``POST /_matrix/client/unstable/keys/query.``
-
-The result includes, for each listed user id, a map from device ID to an
-object containing information on the device, as follows:
-
-.. code:: json
-
-  {
-    "algorithms": [...],
-    "device_id": "<device_id>",
-    "keys": {
-      "curve25519:<device_id>": "<curve25519_key>",
-      "ed25519:<device_id>": "<ed25519_key>"
-    },
-    "signatures": {
-      "<userId>": {
-        "ed25519:<device_id>": "<signature>"
-      },
-    },
-    "unsigned": {
-      "device_display_name": "<display name>"
-    },
-    "user_id: <user_id>"
-  }
-
-The client should first check the signature on this object. To do this,
-it should remove the ``signatures`` and ``unsigned`` properties, format
-the remainder as Canonical JSON, and pass the result into
-``olm_ed25519_verify``, using the Ed25519 key for the ``key`` parameter,
-and the corresponding signature for the ``signature`` parameter. If the
-signature check fails, no further processing should be done on the
-device.
+The client must first check the signatures on the ``DeviceKeys`` objects
+returned by `/keys/query`_. To do this, it should remove the ``signatures`` and
+``unsigned`` properties, format the remainder as Canonical JSON, and pass the
+result into ``olm_ed25519_verify``, using the Ed25519 key for the ``key``
+parameter, and the corresponding signature for the ``signature`` parameter. If
+the signature check fails, no further processing should be done on the device.
 
 The client must also check that the ``user_id`` and ``device_id`` fields in the
 object match those in the top-level map [#]_.
@@ -499,8 +392,8 @@ Otherwise the client stores the information about this device.
 .. [#] This prevents a malicious or compromised homeserver replacing the keys
        for the device with those of another.
 
-Sending an encrypted event
---------------------------
+Sending an encrypted message event
+----------------------------------
 
 When sending a message in a room `configured to use encryption`__, a client
 first checks to see if it has an active outbound Megolm session. If not, it
@@ -558,44 +451,28 @@ __ `m.room_key`_
 
 The client must then share the keys for this session with each device in the
 room. It must therefore `download the device list`_ if it hasn't already done
-so, and for each device in the room which has not been `blocked`__, the client
-should:
+so.
+Then it should build a unique |room_key|_ event, and send it encrypted `using
+Olm`__ to each device in the room which has not been `blocked`__, .
 
+__ `olm_encrypt`_
 __ `blocking`_
-
-* Build a content object as follows:
-
-  .. code:: json
-
-    {
-      "algorithm": "m.megolm.v1.aes-sha2",
-      "room_id": "<id of destination room>",
-      "session_id": "<session id>",
-      "session_key": "<session_key>"
-    }
-
--  Encrypt the content as an ``m.room_key`` event using Olm, as below.
 
 Once all of the key-sharing event contents have been assembled, the
 events should be sent to the corresponding devices via
-``PUT /_matrix/client/unstable/sendToDevice/m.room.encrypted/<txnId>``.
+``PUT /_matrix/client/r0/sendToDevice/m.room.encrypted/<txnId>``.
 
 Rotating Megolm sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Megolm sessions may not be reused indefinitely.
-
-The number of messages which can be sent before a session should be rotated is
-given by the ``rotation_period_msgs`` property of the |m.room.encryption|_
-event, or ``100`` if that property isn't present.
-
-Similarly, the maximum age of a megolm session is given, in milliseconds, by
-the ``rotation_period_ms`` property of the ``m.room.encryption``
-event. ``604800000`` (a week) is the recommended default here.
+Megolm sessions may not be reused indefinitely. The parameters which define
+how often a session should be rotated are defined in the |m.room.encryption|_
+state event of a room.
 
 Once either the message limit or time limit have been reached, the client
 should start a new session before sending any more messages.
 
+.. _`olm_encrypt`:
 
 Encrypting an event with Olm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -607,23 +484,9 @@ encrypting key-sharing events for Megolm.
 
 When encrypting an event using Olm, the client should:
 
--  Build an encryption payload as follows:
+-  Build an encryption payload as illustrated in the `spec`__.
 
-   .. code:: json
-
-     {
-       "type": "<event type>",
-       "content": "<event content>",
-       "sender": "<our user ID>",
-       "sender_device": "<our device ID>",
-       "keys": {
-         "ed25519": "<our ed25519 fingerprint key>"
-       },
-       "recipient": "<recipient user ID>",
-       "recipient_keys": {
-         "ed25519": "<recipient's ed25519 fingerprint key>"
-       },
-     }
+   __ `https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2`
 
 -  Check if it has an existing Olm session; if it does not, `start a new
    one`__. If it has several (as may happen due to
@@ -635,64 +498,20 @@ When encrypting an event using Olm, the client should:
 
 -  Encrypt the payload by calling ``olm_encrypt``.
 
--  Package the payload into event content as follows:
-
-   .. code:: json
-
-     {
-       "algorithm": "m.olm.v1.curve25519-aes-sha2",
-       "sender_key": "<our curve25519 identity key>",
-       "ciphertext": "<encrypted payload>"
-     }
+-  Package the payload into an Olm |m.room.encrypted|_ event.
 
 Starting an Olm session
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 To start a new Olm session with another device, a client must first
 claim one of the other device's one-time keys. To do this, it should
-create a query object as follows:
+initiate a request to `/keys/claim`_.
 
-.. code:: json
-
-  {
-    "<user id>": {
-      "<device_id>": "signed_curve25519",
-      ...
-    },
-    ...
-  }
-
-and send this via ``POST /_matrix/client/unstable/keys/claim``. Claims
-for multiple devices should be aggregated into a single request.
-
-This will return a result as follows:
-
-.. code:: json
-
-  {
-    "one_time_keys": {
-      "<user id>": {
-        "<device_id>": {
-          "signed_curve25519:<key_id>": {
-            "key": "<curve25519_key>",
-            "signatures": {
-              "<user_id>": {
-                "ed25519:<device_id>": "<signature>"
-              }
-            }
-          },
-        },
-        ...
-      },
-      ...
-    }
-  }
-
-The client should first check the signatures on the signed key objects. As with
-checking the signatures on the device keys, it should remove the ``signatures``
-and (if present) ``unsigned`` properties, format the remainder as Canonical
-JSON, and pass the result into ``olm_ed25519_verify``, using the Ed25519 device
-key for the ``key`` parameter.
+The client should check the signatures on the signed key objects in the
+response. As with checking the signatures on the device keys, it should remove
+the ``signatures`` and (if present) ``unsigned`` properties, format the
+remainder as Canonical JSON, and pass the result into ``olm_ed25519_verify``,
+using the Ed25519 device key for the ``key`` parameter.
 
 Provided the key object passes verification, the client should then pass the
 key, along with the Curve25519 Identity key for the remote device, into
@@ -723,47 +542,17 @@ next sends a message.
 __ `blocking`_
 __ `Starting a Megolm session`_
 
-Sending New Device announcements
---------------------------------
+Handling new devices
+--------------------
 
 When a user logs in on a new device, it is necessary to make sure that
 other devices in any rooms with encryption enabled are aware of the new
-device. This is done as follows.
+device, so that they can share their outbound sessions with it as they would
+with a new member.
 
-Once the initial call to the ``/sync`` API completes, the client should
-iterate through each room where encryption is enabled. For each user
-(including the client's own user), it should build a content object as
-follows:
-
-.. code:: json
-
-  {
-    "device_id": "<our device ID>",
-    "rooms": ["<shared room id 1>", "<room id 2>", ... ]
-  }
-
-Once all of these have been constructed, they should be sent to all of the
-relevant user's devices (using the wildcard ``*`` in place of the
-``device_id``) via ``PUT
-/_matrix/client/unstable/sendToDevice/m.new_device/<txnId>.``
-
-Handling an ``m.new_device`` event
-----------------------------------
-
-As with ``m.room_key`` events, these will appear in the ``to_device``
-section of the ``/sync`` response.
-
-The client should `download the device list`_ of the sender, to get the details
-of the new device.
-
-The event content will contain a ``rooms`` property, as well as the
-``device_id`` of the new device. For each room in the list, the client
-should check if encryption is enabled, and if the sender of the event is
-a member of that room. If so, the client should share the keys for the
-outbound Megolm session with the new device, in the same way as
-`handling a new user in the room`__.
-
-__ `Handling membership changes`_
+The device tracking process which should be implemented is documented `in the
+spec
+<https://matrix.org/docs/spec/client_server/r0.4.0.html#tracking-the-device-list-for-a-user>`__.
 
 .. _`blocking`:
 
@@ -771,19 +560,19 @@ Blocking / Verifying devices
 ----------------------------
 
 It should be possible for a user to mark each device belonging to
-another user as 'Blocked' or 'Verified'.
+another user as 'Blocked' or 'Verified', through a process detailed
+`in the spec`__.
+
+__ https://matrix.org/docs/spec/client_server/r0.4.0.html#device-verification
 
 When a user chooses to block a device, this means that no further
 encrypted messages should be shared with that device. In short, it
 should be excluded when sharing room keys when `starting a new Megolm
-session <#_p5d1esx6gkrc>`__. Any active outbound Megolm sessions whose
+session`__. Any active outbound Megolm sessions whose
 keys have been shared with the device should also be invalidated so that
 no further messages are sent over them.
 
-Verifying a device involves ensuring that the device belongs to the
-claimed user. Currently this must be done by showing the user the
-Ed25519 fingerprint key for the device, and prompting the user to verify
-out-of-band that it matches the key shown on the other user's device.
+__ `Starting a Megolm session`_
 
 .. _`marking the event as verified`:
 
@@ -795,3 +584,80 @@ have been sent from a particular device. See the section on `Handling an
 m.room.encrypted event`_ for notes on how to do this
 for each algorithm. Events sent from a verified device can be decorated
 in the UI to show that they have been sent from a verified device.
+
+Encrypted attachments
+=====================
+
+Homeservers must not be able to read files shared in encrypted rooms.
+Clients should implement a strategy described `in the spec`__.
+
+__ https://matrix.org/docs/spec/client_server/r0.4.0.html#sending-encrypted-attachments
+
+Currently, the files are encrypted using AES-CTR, which is not included in
+libolm. Clients have to rely on a third party library.
+
+Key sharing
+===========
+
+When an event cannot be decrypted due to missing keys, a client may want to
+request them from other clients which may have them. Similarly, a client may
+want to reply to a key request with the associated key if it can assert that
+the requesting device is allowed to see the messages encrypted with this key.
+
+Those capabilities are achieved using |m.room_key_request|_ and
+|m.forwarded_room_key|_ events.
+
+The ``session_key`` property of a |m.forwarded_room_key|_ event differs from the
+one of a |room_key| event, as it does not include the Ed25519 signature of the
+original sender. It should be obtained from
+``olm_export_inbound_group_session`` at the desired ``message index``, and the
+session can be restored with ``olm_import_inbound_group_session``.
+
+The ``forwarded_room_key`` property starts out empty, but each time a key is
+forwarded to another device, the previous sender in the chain is added to the
+end of the list. Consider the following example:
+
+  - A -> B : m.room_key
+  - B -> C : m.forwarded_room_key
+  - C -> D : m.forwarded_room_key
+
+In the message B -> C ``forwarded_room_key`` is empty, but in the message C ->
+D it contains B's Curve25519 key. In order for D to believe that the session
+came from A,  D must trust the direct sender C and every entry in this chain.
+
+In order to securely implement key sharing, clients must not reply to every key
+request they receive. The recommended strategy is to share the keys
+automatically only to **verified** devices of the **same user**. Requests
+coming from unverified devices should prompt a dialog, allowing the user to
+verify the device, share the keys without verifying, or not to share them (and
+ignore future requests).
+A client should also check whether requests coming from devices of other users
+are legitimate. This can be done by keeping track of the users a session was
+shared with, and at which ``message index``.
+
+Key requests can be sent to all of the current user's devices, as well as the
+original sender of the session, and other devices present in the room. When the
+client receives the requested key, it should send a |m.room_key_request|_ event
+to all the devices it requested the key from, setting the ``action`` property
+to ``"cancel_request"`` and ``request_id`` to the ID of the initial request.
+
+
+.. |m.room.encryption| replace:: ``m.room.encryption``
+.. _`m.room.encryption`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-encryption
+
+.. |m.room.encrypted| replace:: ``m.room.encrypted``
+.. _`m.room.encrypted`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-encrypted
+
+.. |room_key| replace:: ``m.room_key``
+.. _`room_key`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-key
+
+.. |m.room_key_request| replace:: ``m.room_key_request``
+.. _`m.room_key_request`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-key-request
+
+.. |m.forwarded_room_key| replace:: ``m.forwarded_room_key``
+.. _`m.forwarded_room_key`: https://matrix.org/docs/spec/client_server/r0.4.0.html#m-forwarded-room-key
+
+.. _`Signing JSON`: https://matrix.org/docs/spec/appendices.html#signing-json
+.. _/keys/query: https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-query
+.. _`/keys/upload`: https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-upload
+.. _/keys/claim: https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-claim
