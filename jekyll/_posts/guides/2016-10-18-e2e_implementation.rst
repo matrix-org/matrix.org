@@ -367,7 +367,7 @@ list of devices for each user in the room. This can be done proactively,
 or deferred until the first message is sent. The information is also
 required to allow users to `verify or block devices`__.
 
-__ `blocking`
+__ `blocking`_
 
 The client should use the `/keys/query`_ endpoint, passing the IDs of the
 members of the room in the ``device_keys`` property of the request.
