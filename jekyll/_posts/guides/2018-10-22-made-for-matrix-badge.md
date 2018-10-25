@@ -3,22 +3,43 @@ layout: post
 categories: guides
 title: Made for Matrix Badge Guidelines
 ---
+<style>
+img {
+    max-width: 30%;
+}
+img.approved {
+    max-width: 55%;
+}
+
+@media only screen and ( max-width: 767px ) {
+    img {
+        max-width: 50%;
+    }
+    img.approved {
+        max-width: 85%;
+    }
+}
+</style>
 
 # Made for Matrix Badge Guidelines
 
 Include the Made for Matrix badge to communicate that your client, server, SDK, bot or service is made using the Matrix protocol.
 
-[Download](https://drive.google.com/open?id=1VX-4R6nqKbKGZX0qS_k8QLzlzynJZIlu)
+<p><a class="recommend" href="https://drive.google.com/open?id=1VX-4R6nqKbKGZX0qS_k8QLzlzynJZIlu">Download</a></p>
 
 ## Preferred Badge
 
 ![made for matrix](/docs/projects/images//made-for-matrix.png)
+
+|
 
 Use the preferred black badge in your marketing materials. When using the badge on your website, link the badge to https://matrix.org using the `target=”_blank”` attribute.
 
 ## Inverted Badge
 
 ![made for matrix](/docs/projects/images//made-for-matrix-inverted.png)
+
+|
 
 If the preferred black badge isn’t legible in your layout, for example because your background is too dark, instead use the inverted badge, displayed above on a grey background.
 
@@ -30,4 +51,4 @@ If the preferred black badge isn’t legible in your layout, for example because
 
 Minimum clear space is equal to one-quarter the height of the badge. Don’t place photos, typography, or other graphic elements inside the minimum clear space. Do not stretch or alter the aspect ratio of the badge.  
 
-![made for matrix](/docs/projects/images//made-for-matrix-approved.png)
+<img class="approved" src="/docs/projects/images//made-for-matrix-approved.png" alt="made for matrix">
