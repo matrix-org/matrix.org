@@ -3,7 +3,7 @@
     "consumes": [
         "application/json"
     ], 
-    "host": "matrix.org:8448", 
+    "host": "matrix.org",
     "info": {
         "title": "Matrix Client-Server API", 
         "version": "r0.3.0"
