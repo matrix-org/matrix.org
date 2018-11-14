@@ -7,7 +7,7 @@ author: jaller94
 maturity: Beta
 language: JavaScript
 license: AGPL3
-repo: https://github.com/jaller94/silvy-matrix
+repo: https://gitlab.com/jaller94/silvy-matrix
 ---
 
 # {{ page.title }}
