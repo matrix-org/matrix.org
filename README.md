@@ -9,3 +9,13 @@ to the [images](./jekyll/_posts/projects/images/) subfolder - these will be acce
 https://matrix.org/docs/projects/images/
 
 Jekyll requires a date in the project filename; we use the date to sort the various project lists (oldest projects first). Please submit new entries with the starting date of the project.
+
+### How to build
+
+```
+cd jekyll
+bundle install
+bundle exec jekyll serve
+```
+
+Now you can visit the page you want to work on in the browser. For example: http://127.0.0.1:4000/docs/projects/try-matrix-now.html or http://127.0.0.1:4000/docs/guides/
