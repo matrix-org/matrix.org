@@ -7,7 +7,7 @@ author: Jason Volk
 maturity: Alpha
 language: C++
 license: BSD
-repo: https://github.com/jevolk/charybdis
+repo: https://github.com/matrix-construct/construct
 ---
 
 Construct is a fork of the charybdis ircd which adds support for Matrix's federation and client-server APIs.
