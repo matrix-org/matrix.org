@@ -20,6 +20,8 @@ You can find the playbooks at <https://github.com/spantaleev/matrix-docker-ansib
 
 To talk about the playbooks or get installation support, talk in [#matrix-docker-ansible-deploy:devture.com](https://matrix.to/#/#matrix-docker-ansible-deploy:devture.com).
 
+It's also possible to use Docker containers without Ansible, just follow the intructions in [the Synapse Docker README](https://github.com/matrix-org/synapse/tree/master/docker).
+
 ## Installation guide for Ubuntu
 
 matrix.org recommends [this guide hosted by natrius.eu](https://www.natrius.eu/dokuwiki/doku.php?id=digital:server:matrixsynapse) as a guide to installing Synapse manually. It is written specifically for Ubuntu 18.04 LTS, but many of the steps can be generalised to any Linux distro.
