@@ -1,4 +1,7 @@
 # Matrix Projects
+
+To discuss maintenance of this site, please come talk to the team in [#matrix.org-website:matrix.org](https://matrix.to/#/#matrix.org-website:matrix.org).
+
 We are using [jekyll](https://jekyllrb.com/) to generate the [try matrix now](https://matrix.org/docs/projects/try-matrix-now.html) page and the project pages.
 
 The sources for these pages are in the
