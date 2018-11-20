@@ -486,7 +486,7 @@ When encrypting an event using Olm, the client should:
 
 -  Build an encryption payload as illustrated in the `spec`__.
 
-   __ `https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2`
+   __ https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2
 
 -  Check if it has an existing Olm session; if it does not, `start a new
    one`__. If it has several (as may happen due to
