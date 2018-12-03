@@ -50,6 +50,19 @@ $footer = <<EOT;
     </div>
 EOT
 
+$proposalscssinjection = <<EOT;
+<style>
+    table.colwidths-auto tr td:nth-child(3), 
+    table.colwidths-auto tr td:nth-child(2) {
+        width: initial;
+    }
+    table.colwidths-auto tr td:nth-child(3), 
+    table.colwidths-auto tr td:nth-child(4) {
+        white-space: nowrap;
+    }
+</style>
+EOT
+
 my $oldargv;
 while(<>) {
     if (!$oldargv || $ARGV ne $oldargv) {
@@ -63,6 +76,7 @@ while(<>) {
     s/<head>/$&$header/;
 
     s/\%outdatedspecwarning\%/$outdatedspecwarning/;
+    s/\%proposalscssinjection\%/$proposalscssinjection/;
 
     if (/<body.*?>/) {
         my $match = $&;
