@@ -6,9 +6,16 @@
 */
 var express = require('express');
 var app = express();
+var fs = require('fs');
+
 
 app.get('*', function (req, res) {
-    res.sendfile('.' + req.path);
+    var path = process.cwd() + req.path;
+    if (fs.existsSync(path)) {
+        res.sendFile(path);
+    } else {
+        res.sendFile(path + '.html');
+    }
 });
 
 var server = app.listen(3000, function () {
