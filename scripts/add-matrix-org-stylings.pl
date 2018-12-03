@@ -50,7 +50,7 @@ $footer = <<EOT;
     </div>
 EOT
 
-$proposalscssinjection = <<EOT;
+my $proposalscssinjection = <<EOT;
 <style>
     table.colwidths-auto tr td:nth-child(3), 
     table.colwidths-auto tr td:nth-child(2) {
