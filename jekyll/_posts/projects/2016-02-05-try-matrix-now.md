@@ -200,15 +200,12 @@ jQuery(document).ready(($) => {
     }
   });
 });
-
-
 </script>
-# Get started
-<div class='font18'>
-To get started using Matrix, pick a client and join #matrix:matrix.org:
-</div>
 
-<p>&nbsp;</p>
+# Get started
+
+To get started using Matrix, pick a client and join [#matrix:matrix.org]. You can also check the [Matrix Clients Matrix][clients] to see more detail.
+
 <table class='bigtable'>
   <tr>
     <td class='bigproject'>
@@ -275,7 +272,13 @@ To get started using Matrix, pick a client and join #matrix:matrix.org:
   </tr>
 </table>
 
+# Types of Project
+
+* to find a client, choose from the above or browse the **[Matrix Clients Matrix][clients]**
+* to bridge to Matrix from another platform, take a look at the **[list of bridges][bridges]**
+
 # Let's go deeper
+
 Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, application services, bots, etc. If you'd like to learn more, this page aims to collect all known Matrix projects. To add a new one (or update an existing one), you can submit a PR to the [matrix.org](https://github.com/matrix-org/matrix.org) project on github - the existing projects can be found [here](https://github.com/matrix-org/matrix.org/tree/master/jekyll/_posts/projects) - or just let us know in the #matrix:matrix.org room.
 
 
@@ -456,3 +459,6 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
  </ul>
 
+[#matrix:matrix.org]: https://matrix.to/#/#matrix:matrix.org
+[clients]: https://matrix.org/docs/projects/clients-matrix
+[bridges]: https://matrix.org/docs/projects/bridges
