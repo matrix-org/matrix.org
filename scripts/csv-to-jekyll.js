@@ -62,6 +62,9 @@ function writeJekyllFile(project) {
     if (project.Featured) {
       stream.write(`featured: "${project.Featured}"\n`);
     }
+    if (project.E2E) {
+      stream.write(`e2e: "${project.E2E}"\n`);
+    }
     stream.write("---\n");
     stream.write("\n");
     var JekyllContent = project.JekyllContent.split(" \n\n")

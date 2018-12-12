@@ -9,6 +9,7 @@ language: JavaScript
 license: Apache
 repo: https://github.com/frankgerhardt/botkit-matrix
 featured: "TRUE"
+e2e: "Yes"
 ---
 
 A Botkit connector for Matrix

@@ -8,6 +8,7 @@ maturity: Alpha
 language: Java
 license: AGPL3
 repo: https://github.com/kamax-io/matrix-java-sdk
+room: "#matrix-java-sdk:kamax.io"
 featured: "TRUE"
 ---
 
