@@ -9,6 +9,7 @@
 var csv = require('csv-parser');
 var fs = require('fs');
 var https = require('https');
+process.chdir(__dirname);
 
 var file = fs.createWriteStream("Matrix CRM - Projects.csv");
 var request = https.get("https://docs.google.com/spreadsheets/d/1LC2b7Gh2n-PB0BUtOCkaoOHLfNvTTcY0ANHEXqzmmfY/export?format=csv", function(response) {
@@ -57,6 +58,9 @@ function writeJekyllFile(project) {
     }
     if (project.Room) {
       stream.write(`room: "${project.Room}"\n`)
+    }
+    if (project.Featured) {
+      stream.write(`featured: "${project.Featured}"\n`);
     }
     stream.write("---\n");
     stream.write("\n");
