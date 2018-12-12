@@ -8,6 +8,7 @@ maturity: Alpha
 language: C#
 license: 
 repo: https://github.com/VRocker/MatrixAPI
+featured: "TRUE"
 ---
 
 A Matrix library for C# UWP.

@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: projectimage
 title: Ruby Matrix SDK
 categories: projects sdk
 description: An SDK for building Matrix communication applications in Ruby
@@ -8,9 +8,9 @@ maturity: Alpha
 language: Ruby
 license: MIT
 repo: https://github.com/ananace/ruby-matrix-sdk
+featured: "TRUE"
 ---
 
-# {{ page.title }}
 {{ page.description }}
 
 Available on [github]({{ page.repo }}), and on rubygems.org as [`matrix_sdk`](https://rubygems.org/gems/matrix_sdk).

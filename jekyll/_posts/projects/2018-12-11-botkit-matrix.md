@@ -8,6 +8,7 @@ maturity: Alpha
 language: JavaScript
 license: Apache
 repo: https://github.com/frankgerhardt/botkit-matrix
+featured: "TRUE"
 ---
 
 A Botkit connector for Matrix

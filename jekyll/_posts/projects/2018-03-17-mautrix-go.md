@@ -1,16 +1,17 @@
 ---
-layout: project
+layout: projectimage
 title: mautrix-go
 categories: projects sdk
-description: A Matrix client framework written in Go
+description: A Golang Matrix framework
 author: Tulir
 maturity: Beta
 language: Go
 license: Apache
 repo: https://github.com/tulir/mautrix-go
+room: "#maunium.net:maunium.net"
+featured: "TRUE"
 ---
 
-# {{ page.title }}
-mautrix-go is a fork of gomatrix with more features and other things.
+A Golang Matrix framework.
 
 Repository: <{{page.repo}}>

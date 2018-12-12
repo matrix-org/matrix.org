@@ -1,16 +1,17 @@
 ---
-layout: project
+layout: projectimage
 title: mautrix-python
-categories: projects as sdk
+categories: projects sdk
 description: An asyncio Matrix framework written in Python
-author: Tulir
+author: tulir
 maturity: Alpha
 language: Python
 license: MIT
 repo: https://github.com/tulir/mautrix-python
+room: "#maunium.net:maunium.net"
+featured: "TRUE"
 ---
 
-# {{ page.title }}
 mautrix-python is a Python 3 asyncio Matrix framework.
 
 Repository: <{{page.repo}}>

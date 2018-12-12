@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: projectimage
 title: Matrix on Haxe
 categories: projects sdk
 description: 
@@ -9,9 +9,9 @@ language: Haxe
 license: AGPL3
 repo: https://notabug.org/Tamaimo/haxe-matrix-im
 home: https://lib.haxe.org/p/matrix-im/
+featured: "TRUE"
 ---
 
-# {{ page.title }}
 Implementation of client-server matrix API in [haxe](https://haxe.org/) using HaxeHttpClient.
 
 [haxelib](https://lib.haxe.org/p/matrix-im/)
