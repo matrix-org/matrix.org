@@ -72,10 +72,10 @@ function writeJekyllFile(project) {
       stream.write(line);
       if (id !== array.length - 1) stream.write("\n\n");
     });
-    if (project.Repo) {
-        stream.write("\n\n");
-        stream.write("Repository: <{{page.repo}}>");
-    }
+    // if (project.Repo) {
+    //     stream.write("\n\n");
+    //     stream.write("Repository: <{{page.repo}}>");
+    // }
     //stream.write(project.JekyllContent);
     stream.write("\n");
     stream.end();
