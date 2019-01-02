@@ -19,7 +19,7 @@ The libolm library
 
 End-to-end encryption in Matrix is based on the Olm and Megolm
 cryptographic ratchets. The recommended starting point for any client
-authors is with the `libolm <http://matrix.org/git/olm>`__ library,
+authors is with the `libolm <https://matrix.org/git/olm>`__ library,
 which contains implementations of all of the cryptographic primitives
 required. The library itself is written in C/C++, but is architected in
 a way which makes it easy to write wrappers for higher-level languages.

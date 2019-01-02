@@ -11,13 +11,13 @@ repo: https://github.com/spantaleev/matrix-docker-ansible-deploy
 ---
 
 # {{ page.title }}
-This Ansible playbook is meant to easily let you run your own [Matrix](http://matrix.org/) homeserver.
+This Ansible playbook is meant to easily let you run your own [Matrix](https://matrix.org/) homeserver.
 
 That is, it lets you join the Matrix network with your own `@<username>:<your-domain>` identifier, all hosted on your own server.
 
 Using this playbook, you can get the following services configured on your server:
 
-- a [Matrix Synapse](https://github.com/matrix-org/synapse) homeserver - storing your data and managing your presence in the [Matrix](http://matrix.org/) network
+- a [Matrix Synapse](https://github.com/matrix-org/synapse) homeserver - storing your data and managing your presence in the [Matrix](https://matrix.org/) network
 
 - (optional) [Amazon S3](https://aws.amazon.com/s3/) storage for your Matrix Synapse's content repository (`media_store`) files using [Goofys](https://github.com/kahing/goofys)
 

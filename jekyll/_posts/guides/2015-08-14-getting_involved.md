@@ -64,9 +64,9 @@ You can also implement your own client or server - after all, Matrix is at its c
 ### Write your own client:
 
 The [client-server API
-spec](http://matrix.org/docs/spec/client_server/latest.html) describes what API
+spec](https://matrix.org/docs/spec/client_server/latest.html) describes what API
 calls are available to clients, and there is a [HOWTO
-guide](http://matrix.org/docs/guides/client-server.html) which provides an
+guide](https://matrix.org/docs/guides/client-server.html) which provides an
 introduction to using the API along with some common operations. A quick
 step-by-step guide would include:
 
@@ -130,7 +130,7 @@ step-by-step guide would include:
 
 We are still working on the server-server spec, so the best thing to do if you are interested in writing a server, is to come talk to us in [#matrix:matrix.org](https://matrix.to/#/#matrix:matrix.org).
 
-If you are interested in how federation works, please see the [Server-Server API spec](http://matrix.org/docs/spec/server_server/unstable.html).
+If you are interested in how federation works, please see the [Server-Server API spec](https://matrix.org/docs/spec/server_server/unstable.html).
 
 |
 

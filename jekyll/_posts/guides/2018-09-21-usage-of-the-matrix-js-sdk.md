@@ -73,7 +73,7 @@ const client = sdk.createClient({
 // note that we use the full MXID for the userId value
 ```
 
-<small>([jsdoc for `createClient`](http://matrix-org.github.io/matrix-js-sdk/0.11.1/global.html#createClient))</small>
+<small>([jsdoc for `createClient`](https://matrix-org.github.io/matrix-js-sdk/0.11.1/global.html#createClient))</small>
 
 If you are logged into Riot, you can find an `access token` for the logged-in user on the Settings page.
 
@@ -141,7 +141,7 @@ rooms.forEach(room => {
 });
 ```
 
-<small>([jsdoc for `client.getRooms`](http://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#getRooms))</small>
+<small>([jsdoc for `client.getRooms`](https://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#getRooms))</small>
 
 More usefully, we could get a list of members for each of these rooms:
 
@@ -185,7 +185,7 @@ client.sendEvent(testRoomId, "m.room.message", content, "").then((res) => {
 }
 ```
 
-<small>([jsdoc for `client.sendEvent`](http://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#sendEvent))</small>
+<small>([jsdoc for `client.sendEvent`](https://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#sendEvent))</small>
 
 Knowing this, we can put together message listening and message sending, to build a bot which just echos back any message starting with a "!":
 
