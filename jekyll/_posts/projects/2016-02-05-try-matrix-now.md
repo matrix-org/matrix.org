@@ -276,6 +276,7 @@ To get started using Matrix, pick a client and join [#matrix:matrix.org]. You ca
 
 * to find a client, choose from the above or browse the **[Matrix Clients Matrix][clients]**
 * to bridge to Matrix from another platform, take a look at the **[list of bridges][bridges]**
+* to start developing on Matrix using an SDK, check out our **[list of SDKs][sdks]**
 
 # Let's go deeper
 
@@ -462,3 +463,4 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 [#matrix:matrix.org]: https://matrix.to/#/#matrix:matrix.org
 [clients]: https://matrix.org/docs/projects/clients-matrix
 [bridges]: https://matrix.org/docs/projects/bridges
+[sdks]: https://matrix.org/docs/projects/sdks
