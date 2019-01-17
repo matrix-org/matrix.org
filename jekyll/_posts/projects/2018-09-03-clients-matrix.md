@@ -75,7 +75,7 @@ To connect to the Matrix federation, you will use a client. These are some of th
 ||    Riot Web    |    Riot Android    |    Riot iOS    |    Nheko    |    Gomuks    |    Quaternion    |    Fractal    |    Seaglass    |    Spectral    |    uMatriks    | FluffyChat|
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 Linux|&#10003;<br /><small>Electron</small>| |          |   &#10003;  | &#10003;     |  &#10003;        |   &#10003;    |                |        &#10003;|
-Mac|&#10003;<br /><small>Electron</small>||             |  &#10003;   |      &#10003;| Build from source|            WIP|        &#10003;|        &#10003;|
+Mac|&#10003;<br /><small>Electron</small>||             |  &#10003;   |      &#10003;|  &#10003;        |            WIP|        &#10003;|        &#10003;|
 Windows|&#10003;<br /><small>Electron</small>||         |     &#10003;|      &#10003;|          &#10003;|               |                |        &#10003;|
 Android||&#10003;||||||
 iOS|||&#10003;|||||
