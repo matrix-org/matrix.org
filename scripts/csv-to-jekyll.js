@@ -65,6 +65,9 @@ function writeJekyllFile(project) {
     if (project.E2E) {
       stream.write(`e2e: "${project.E2E}"\n`);
     }
+    if (project.example_mxid) {
+      stream.write(`example_mxid: "${project.example_mxid}"\n`);
+    }
     stream.write("---\n");
     stream.write("\n");
     var JekyllContent = project.JekyllContent.split(" \n\n")
