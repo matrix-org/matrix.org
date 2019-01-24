@@ -2,29 +2,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
 <title>Matrix Specification</title>
-<style type="text/css">
 
-pre.code .comment, code .comment { color: green }
-pre.code .keyword, code .keyword { color: darkred; font-weight: bold }
-pre.code .name.builtin, code .name.builtin { color: darkred; font-weight: bold }
-pre.code .name.tag, code .name.tag { color: darkgreen }
-pre.code .literal, code .literal { color: darkblue }
-pre.code .literal.number, code .literal.number { color: blue }
-
-
-/* HTTP Methods have class "name function" */
-pre.code.http .name.function,  code.http .name.function { color: black; font-weight: bold }
-/* HTTP Paths have class "name namespace" */
-pre.code.http .name.namespace, code.http .name.namespace { color: darkgreen }
-/* HTTP "HTTP" strings have class "keyword reserved" */
-pre.code.http .keyword.reserved, code.http .keyword.reserved { color: black; font-weight: bold }
-/* HTTP Header names have class "name attribute" */
-pre.code.http .name.attribute, code.http .name.attribute { color: black; font-weight: bold }
-
-</style>
 <style type="text/css">
 
 /*
@@ -347,6 +329,46 @@ table.citation td {
     border-bottom: none;
 }
 
+table.colwidths-auto caption {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 800;
+    font-size: 120%;
+    padding: 5px;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+.section ol, .section li {
+    margin: 0px 0px 0px 30px !important;
+}
+
+p.httpheaders {
+    font-weight: 800;
+    font-size: 120%;
+    padding: 5px;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+table.colwidths-auto {
+    width:100%;
+    margin-top: 20px;
+}
+
+table.colwidths-auto tr td:nth-child(1) {
+    width: 15%;
+}
+
+table.colwidths-auto tr td:nth-child(2) {
+    width: 15%;
+    font-family: 'Inconsolata', monospace;
+}
+
+table.colwidths-auto tr td:nth-child(3) {
+    width: 70%;
+}
+
+
 /* -- other body styles ----------------------------------------------------- */
 
 ol.arabic {
@@ -451,6 +473,28 @@ dl.glossary dt {
     font-style: oblique;
 }
 
+/* -- proposals page -------------------------------------------------------- */
+
+#tables-of-tracked-proposals h2 {
+    padding-left: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+/* Move sticky headers below header bar on desktop */
+@media all and (min-width:980px) {
+    #tables-of-tracked-proposals h2 {
+        top: 52px;
+    }
+}
+
+/* Sticky headers stick to the top on mobile */
+@media all and (min-width:0px) and (max-width: 980px) {
+    #tables-of-tracked-proposals h2 {
+        top: 0px;
+    }
+}
+
 /* -- code displays --------------------------------------------------------- */
 
 pre {
@@ -537,6 +581,34 @@ span.eqno {
     }
 }
 
+
+</style>
+<style type="text/css">
+
+blockquote {
+    margin: 20px 0 30px;
+    padding-left: 20px;
+}
+
+</style>
+<style type="text/css">
+
+pre.code .comment, code .comment { color: green }
+pre.code .keyword, code .keyword { color: darkred; font-weight: bold }
+pre.code .name.builtin, code .name.builtin { color: darkred; font-weight: bold }
+pre.code .name.tag, code .name.tag { color: darkgreen }
+pre.code .literal, code .literal { color: darkblue }
+pre.code .literal.number, code .literal.number { color: blue }
+
+
+/* HTTP Methods have class "name function" */
+pre.code.http .name.function,  code.http .name.function { color: black; font-weight: bold }
+/* HTTP Paths have class "name namespace" */
+pre.code.http .name.namespace, code.http .name.namespace { color: darkgreen }
+/* HTTP "HTTP" strings have class "keyword reserved" */
+pre.code.http .keyword.reserved, code.http .keyword.reserved { color: black; font-weight: bold }
+/* HTTP Header names have class "name attribute" */
+pre.code.http .name.attribute, code.http .name.attribute { color: black; font-weight: bold }
 
 </style>
 <style type="text/css">
@@ -816,6 +888,7 @@ table {
 
 td[colspan]:not([colspan="1"]) {
     background: #eeeeee;
+    text-transform: capitalize;
 }
 
 thead {
@@ -827,21 +900,21 @@ div.admonition-rationale {
     border: 1px solid #ccc;
 }
 
-
-</style>
-<style type="text/css">
-
-blockquote {
-    margin: 20px 0 30px;
-    border-left: 5px solid;
-    padding-left: 20px;
+div.admonition-example {
+    background-color: #eef;
+    border: 1px solid #ccc;
 }
 
+
 </style>
+
 </head>
 <body>
 <div class="document" id="matrix-specification">
+
 <h1 class="title">Matrix Specification</h1>
+
+
 
 <!-- Copyright 2016 OpenMarket Ltd -->
 <!--  -->
@@ -890,20 +963,20 @@ communication ecosystem.</p>
 <li><a class="reference internal" href="#private-user-data" id="id15">3.8&nbsp;&nbsp;&nbsp;Private User Data</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#specification-versions" id="id16">4&nbsp;&nbsp;&nbsp;Specification Versions</a></li>
-<li><a class="reference internal" href="#license" id="id17">5&nbsp;&nbsp;&nbsp;License</a></li>
+<li><a class="reference internal" href="#room-versions" id="id16">4&nbsp;&nbsp;&nbsp;Room Versions</a><ul class="auto-toc">
+<li><a class="reference internal" href="#room-version-grammar" id="id17">4.1&nbsp;&nbsp;&nbsp;Room version grammar</a></li>
+<li><a class="reference internal" href="#complete-list-of-room-versions" id="id18">4.2&nbsp;&nbsp;&nbsp;Complete list of room versions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#specification-versions" id="id19">5&nbsp;&nbsp;&nbsp;Specification Versions</a></li>
+<li><a class="reference internal" href="#license" id="id20">6&nbsp;&nbsp;&nbsp;License</a></li>
 </ul>
 </div>
 <p><a class="anchor" id="matrix-apis"></a></p>
 <div class="section" id="matrix-apis">
 <h1><a class="toc-backref" href="#id3">1&nbsp;&nbsp;&nbsp;Matrix APIs</a></h1>
 <p>The specification consists of the following parts:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="51%" />
-<col width="8%" />
-<col width="41%" />
-</colgroup>
+<table border="1" class="colwidths-auto docutils">
 <thead valign="bottom">
 <tr><th class="head">API</th>
 <th class="head">Version</th>
@@ -935,6 +1008,7 @@ communication ecosystem.</p>
 </table>
 <p>The <a class="reference external" href="appendices.html">Appendices</a> contain supplemental information not specific to
 one of the above APIs.</p>
+<p>The <a class="reference external" href="https://matrix.org/docs/api/client-server/">Matrix Client-Server API Swagger Viewer</a> is useful for browsing the Client-Server API.</p>
 </div>
 <p><a class="anchor" id="introduction-to-the-matrix-apis"></a></p>
 <div class="section" id="introduction-to-the-matrix-apis">
@@ -1000,7 +1074,7 @@ mediated by a power-level based user privilege system.</li>
 <li>Managing user accounts (registration, login, logout)</li>
 <li>Use of 3rd Party IDs (3PIDs) such as email addresses, phone numbers,
 Facebook accounts to authenticate, identify and discover users on Matrix.</li>
-<li>Trusted federation of Identity servers for:<ul>
+<li>Trusted federation of identity servers for:<ul>
 <li>Publishing user public keys for PKI</li>
 <li>Mapping of 3PIDs to Matrix IDs</li>
 </ul>
@@ -1152,7 +1226,7 @@ the structure of a room ID.</p>
 <p>The following conceptual diagram shows an
 <tt class="docutils literal">m.room.message</tt> event being sent to the room <tt class="docutils literal">!qporfwt:matrix.org</tt>:</p>
 <pre class="literal-block">
- { &#64;alice:matrix.org }                             { &#64;bob:domain.com }
+ { &#64;alice:matrix.org }                             { &#64;bob:example.org }
          |                                                 ^
          |                                                 |
 [HTTP POST]                                  [HTTP GET]
@@ -1163,7 +1237,7 @@ Content: { JSON object }                     Content: { JSON object }
          V                                                 |
  +------------------+                          +------------------+
  |   homeserver     |                          |   homeserver     |
- |   matrix.org     |                          |   domain.com     |
+ |   matrix.org     |                          |   example.org    |
  +------------------+                          +------------------+
          |                                                 ^
          |         [HTTP PUT]                              |
@@ -1175,18 +1249,18 @@ Content: { JSON object }                     Content: { JSON object }
                    Transaction-layer metadata
                    PKI Authorization header
 
-               ...................................
-              |           Shared Data             |
-              | State:                            |
-              |   Room ID: !qporfwt:matrix.org    |
-              |   Servers: matrix.org, domain.com |
-              |   Members:                        |
-              |    - &#64;alice:matrix.org            |
-              |    - &#64;bob:domain.com              |
-              | Messages:                         |
-              |   - &#64;alice:matrix.org             |
-              |     Content: { JSON object }      |
-              |...................................|
+               ....................................
+              |           Shared Data              |
+              | State:                             |
+              |   Room ID: !qporfwt:matrix.org     |
+              |   Servers: matrix.org, example.org |
+              |   Members:                         |
+              |    - &#64;alice:matrix.org             |
+              |    - &#64;bob:example.org              |
+              | Messages:                          |
+              |   - &#64;alice:matrix.org              |
+              |     Content: { JSON object }       |
+              |....................................|
 </pre>
 <p>Federation maintains <em>shared data structures</em> per-room between multiple home
 servers. The data is split into <tt class="docutils literal">message events</tt> and <tt class="docutils literal">state events</tt>.</p>
@@ -1231,11 +1305,11 @@ room ID once and then use that ID on subsequent requests.</p>
 that are in the room that can be used to join via.</p>
 <pre class="literal-block">
      HTTP GET
-#matrix:domain.com      !aaabaa:matrix.org
+#matrix:example.org      !aaabaa:matrix.org
         |                    ^
         |                    |
  _______V____________________|____
-|          domain.com            |
+|          example.org           |
 | Mappings:                      |
 | #matrix &gt;&gt; !aaabaa:matrix.org  |
 | #golf   &gt;&gt; !wfeiofh:sport.com  |
@@ -1256,7 +1330,7 @@ network accounts and phone numbers to their user ID. Linking 3PIDs creates a
 mapping from a 3PID to a user ID. This mapping can then be used by Matrix
 users in order to discover the user IDs of their contacts.
 In order to ensure that the mapping from 3PID to user ID is genuine, a globally
-federated cluster of trusted &quot;Identity Servers&quot; (IS) are used to verify the 3PID
+federated cluster of trusted &quot;identity servers&quot; (IS) are used to verify the 3PID
 and persist and replicate the mappings.</p>
 <p>Usage of an IS is not required in order for a client application to be part of
 the Matrix ecosystem. However, without one clients will not be able to look up
@@ -1283,9 +1357,71 @@ Would it really be overengineered to use the same API for both profile &
 private user data, but with different ACLs? -->
 </div>
 </div>
+<p><a class="anchor" id="room-versions"></a></p>
+<div class="section" id="room-versions">
+<h1><a class="toc-backref" href="#id16">4&nbsp;&nbsp;&nbsp;Room Versions</a></h1>
+<p>Rooms are central to how Matrix operates, and have strict rules for what
+is allowed to be contained within them. Rooms can also have various
+algorithms that handle different tasks, such as what to do when two or
+more events collide in the underlying DAG. To allow rooms to be improved
+upon through new algorithms or rules, &quot;room versions&quot; are employed to
+manage a set of expectations for each room. New room versions are assigned
+as needed.</p>
+<p>There is no implicit ordering or hierarchy to room versions, and their principles
+are immutable once placed in the specification. Although there is a recommended
+set of versions, some rooms may benefit from features introduced by other versions.
+Rooms move between different versions by &quot;upgrading&quot; to the desired version. Due
+to versions not being ordered or hierarchical, this means a room can &quot;upgrade&quot;
+from version 2 to version 1, if it is so desired.</p>
+<p><a class="anchor" id="room-version-grammar"></a></p>
+<div class="section" id="room-version-grammar">
+<h2><a class="toc-backref" href="#id17">4.1&nbsp;&nbsp;&nbsp;Room version grammar</a></h2>
+<p>Room versions are used to change properties of rooms that may not be compatible
+with other servers. For example, changing the rules for event authorization would
+cause older servers to potentially end up in a split-brain situation due to not
+understanding the new rules.</p>
+<p>A room version is defined as a string of characters which MUST NOT exceed 32
+codepoints in length. Room versions MUST NOT be empty and SHOULD contain only
+the characters <tt class="docutils literal"><span class="pre">a-z</span></tt>, <tt class="docutils literal"><span class="pre">0-9</span></tt>, <tt class="docutils literal">.</tt>, and <tt class="docutils literal">-</tt>.</p>
+<p>Room versions are not intended to be parsed and should be treated as opaque
+identifiers. Room versions consisting only of the characters <tt class="docutils literal"><span class="pre">0-9</span></tt> and <tt class="docutils literal">.</tt>
+are reserved for future versions of the Matrix protocol.</p>
+<p>The complete grammar for a legal room version is:</p>
+<pre class="literal-block">
+room_version = 1*room_version_char
+room_version_char = DIGIT
+                  / %x61-7A         ; a-z
+                  / &quot;-&quot; / &quot;.&quot;
+</pre>
+<p>Examples of valid room versions are:</p>
+<ul class="simple">
+<li><tt class="docutils literal">1</tt> (would be reserved by the Matrix protocol)</li>
+<li><tt class="docutils literal">1.2</tt> (would be reserved by the Matrix protocol)</li>
+<li><tt class="docutils literal"><span class="pre">1.2-beta</span></tt></li>
+<li><tt class="docutils literal">com.example.version</tt></li>
+</ul>
+</div>
+<p><a class="anchor" id="complete-list-of-room-versions"></a></p>
+<div class="section" id="complete-list-of-room-versions">
+<h2><a class="toc-backref" href="#id18">4.2&nbsp;&nbsp;&nbsp;Complete list of room versions</a></h2>
+<p>Room versions are divided into two distinct groups: stable and unstable. Stable
+room versions may be used by rooms safely. Unstable room versions are everything
+else which is either not listed in the specification or flagged as unstable for
+some other reason. Versions can switch between stable and unstable periodically
+for a variety of reasons, including discovered security vulnerabilites and age.</p>
+<p>Clients should not ask room administrators to upgrade their rooms if the room is
+running a stable version. Servers SHOULD use room version 1 as the default room
+version when creating new rooms.</p>
+<p>The available room versions are:</p>
+<ul class="simple">
+<li><a class="reference external" href="rooms/v1.html">Version 1</a> - <strong>Stable</strong>. The current version of most rooms.</li>
+<li><a class="reference external" href="rooms/v2.html">Version 2</a> - <strong>Stable</strong>. Implements State Resolution Version 2.</li>
+</ul>
+</div>
+</div>
 <p><a class="anchor" id="specification-versions"></a></p>
 <div class="section" id="specification-versions">
-<h1><a class="toc-backref" href="#id16">4&nbsp;&nbsp;&nbsp;Specification Versions</a></h1>
+<h1><a class="toc-backref" href="#id19">5&nbsp;&nbsp;&nbsp;Specification Versions</a></h1>
 <dl class="docutils">
 <dt>The specification for each API is versioned in the form <tt class="docutils literal">rX.Y.Z</tt>.</dt>
 <dd><ul class="first last simple">
@@ -1306,9 +1442,10 @@ than a change which must be implemented.</li>
 </div>
 <p><a class="anchor" id="license"></a></p>
 <div class="section" id="license">
-<h1><a class="toc-backref" href="#id17">5&nbsp;&nbsp;&nbsp;License</a></h1>
+<h1><a class="toc-backref" href="#id20">6&nbsp;&nbsp;&nbsp;License</a></h1>
 <p>The Matrix specification is licensed under the <a class="reference external" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.</p>
 </div>
+
 </div>
 </body>
 </html>
