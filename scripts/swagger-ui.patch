@@ -71,7 +71,7 @@
 +    <div id="auth_container"></div>
 +</form>
 +<form id="url_selector" style="float: right; clear: right; margin: 10px 5px;">
-+    <label for="serverurl">Home server URL:</label>
++    <label for="serverurl">Homeserver URL:</label>
 +    <input type="text" id="serverurl"/>
 +    <input type="submit" value="Update"/>
 +</form>

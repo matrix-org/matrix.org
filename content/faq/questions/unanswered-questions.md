@@ -31,7 +31,7 @@
 
 > e-mail abuse@matrix.org as per <https://matrix.org/docs/guides/code_of_conduct#reporting-issues>
 
-* what is the point of creating your own matrix home server ?
+* what is the point of creating your own matrix homeserver ?
 
 > The same as it would be to host your own email. You can have an address that ends in your own domain, and you are in control of your data
 
