@@ -988,8 +988,8 @@ communication ecosystem.</p>
 <td>r0.4.0</td>
 <td>Interaction between clients and servers</td>
 </tr>
-<tr><td><a class="reference external" href="server_server/unstable.html">Server-Server API</a></td>
-<td>unstable</td>
+<tr><td><a class="reference external" href="server_server/r0.1.0.html">Server-Server API</a></td>
+<td>r0.1.0</td>
 <td>Federation between servers</td>
 </tr>
 <tr><td><a class="reference external" href="application_service/r0.1.0.html">Application Service API</a></td>
@@ -1262,7 +1262,7 @@ Content: { JSON object }                     Content: { JSON object }
               |     Content: { JSON object }       |
               |....................................|
 </pre>
-<p>Federation maintains <em>shared data structures</em> per-room between multiple 
+<p>Federation maintains <em>shared data structures</em> per-room between multiple
 homeservers. The data is split into <tt class="docutils literal">message events</tt> and <tt class="docutils literal">state events</tt>.</p>
 <dl class="docutils">
 <dt>Message events:</dt>
@@ -1408,7 +1408,7 @@ room_version_char = DIGIT
 room versions may be used by rooms safely. Unstable room versions are everything
 else which is either not listed in the specification or flagged as unstable for
 some other reason. Versions can switch between stable and unstable periodically
-for a variety of reasons, including discovered security vulnerabilites and age.</p>
+for a variety of reasons, including discovered security vulnerabilities and age.</p>
 <p>Clients should not ask room administrators to upgrade their rooms if the room is
 running a stable version. Servers SHOULD use room version 1 as the default room
 version when creating new rooms.</p>
@@ -1416,6 +1416,7 @@ version when creating new rooms.</p>
 <ul class="simple">
 <li><a class="reference external" href="rooms/v1.html">Version 1</a> - <strong>Stable</strong>. The current version of most rooms.</li>
 <li><a class="reference external" href="rooms/v2.html">Version 2</a> - <strong>Stable</strong>. Implements State Resolution Version 2.</li>
+<li><a class="reference external" href="rooms/v3.html">Version 3</a> - <strong>Stable</strong>. Introduces events whose IDs are the event's hash.</li>
 </ul>
 </div>
 </div>
