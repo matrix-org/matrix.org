@@ -944,37 +944,37 @@ communication ecosystem.</p>
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title first">Table of Contents</p>
 <ul class="auto-toc simple">
-<li><a class="reference internal" href="#matrix-apis" id="id3">1&nbsp;&nbsp;&nbsp;Matrix APIs</a></li>
-<li><a class="reference internal" href="#introduction-to-the-matrix-apis" id="id4">2&nbsp;&nbsp;&nbsp;Introduction to the Matrix APIs</a><ul class="auto-toc">
-<li><a class="reference internal" href="#spec-change-proposals" id="id5">2.1&nbsp;&nbsp;&nbsp;Spec Change Proposals</a></li>
+<li><a class="reference internal" href="#matrix-apis" id="id5">1&nbsp;&nbsp;&nbsp;Matrix APIs</a></li>
+<li><a class="reference internal" href="#introduction-to-the-matrix-apis" id="id6">2&nbsp;&nbsp;&nbsp;Introduction to the Matrix APIs</a><ul class="auto-toc">
+<li><a class="reference internal" href="#spec-change-proposals" id="id7">2.1&nbsp;&nbsp;&nbsp;Spec Change Proposals</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#architecture" id="id6">3&nbsp;&nbsp;&nbsp;Architecture</a><ul class="auto-toc">
-<li><a class="reference internal" href="#users" id="id7">3.1&nbsp;&nbsp;&nbsp;Users</a></li>
-<li><a class="reference internal" href="#devices" id="id8">3.2&nbsp;&nbsp;&nbsp;Devices</a></li>
-<li><a class="reference internal" href="#events" id="id9">3.3&nbsp;&nbsp;&nbsp;Events</a></li>
-<li><a class="reference internal" href="#event-graphs" id="id10">3.4&nbsp;&nbsp;&nbsp;Event Graphs</a></li>
-<li><a class="reference internal" href="#room-structure" id="id11">3.5&nbsp;&nbsp;&nbsp;Room structure</a><ul class="auto-toc">
-<li><a class="reference internal" href="#room-aliases" id="id12">3.5.1&nbsp;&nbsp;&nbsp;Room Aliases</a></li>
+<li><a class="reference internal" href="#id2" id="id8">3&nbsp;&nbsp;&nbsp;Architecture</a><ul class="auto-toc">
+<li><a class="reference internal" href="#users" id="id9">3.1&nbsp;&nbsp;&nbsp;Users</a></li>
+<li><a class="reference internal" href="#devices" id="id10">3.2&nbsp;&nbsp;&nbsp;Devices</a></li>
+<li><a class="reference internal" href="#events" id="id11">3.3&nbsp;&nbsp;&nbsp;Events</a></li>
+<li><a class="reference internal" href="#event-graphs" id="id12">3.4&nbsp;&nbsp;&nbsp;Event Graphs</a></li>
+<li><a class="reference internal" href="#room-structure" id="id13">3.5&nbsp;&nbsp;&nbsp;Room structure</a><ul class="auto-toc">
+<li><a class="reference internal" href="#room-aliases" id="id14">3.5.1&nbsp;&nbsp;&nbsp;Room Aliases</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#identity" id="id13">3.6&nbsp;&nbsp;&nbsp;Identity</a></li>
-<li><a class="reference internal" href="#profiles" id="id14">3.7&nbsp;&nbsp;&nbsp;Profiles</a></li>
-<li><a class="reference internal" href="#private-user-data" id="id15">3.8&nbsp;&nbsp;&nbsp;Private User Data</a></li>
+<li><a class="reference internal" href="#identity" id="id15">3.6&nbsp;&nbsp;&nbsp;Identity</a></li>
+<li><a class="reference internal" href="#profiles" id="id16">3.7&nbsp;&nbsp;&nbsp;Profiles</a></li>
+<li><a class="reference internal" href="#private-user-data" id="id17">3.8&nbsp;&nbsp;&nbsp;Private User Data</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#room-versions" id="id16">4&nbsp;&nbsp;&nbsp;Room Versions</a><ul class="auto-toc">
-<li><a class="reference internal" href="#room-version-grammar" id="id17">4.1&nbsp;&nbsp;&nbsp;Room version grammar</a></li>
-<li><a class="reference internal" href="#complete-list-of-room-versions" id="id18">4.2&nbsp;&nbsp;&nbsp;Complete list of room versions</a></li>
+<li><a class="reference internal" href="#id4" id="id18">4&nbsp;&nbsp;&nbsp;Room Versions</a><ul class="auto-toc">
+<li><a class="reference internal" href="#room-version-grammar" id="id19">4.1&nbsp;&nbsp;&nbsp;Room version grammar</a></li>
+<li><a class="reference internal" href="#complete-list-of-room-versions" id="id20">4.2&nbsp;&nbsp;&nbsp;Complete list of room versions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#specification-versions" id="id19">5&nbsp;&nbsp;&nbsp;Specification Versions</a></li>
-<li><a class="reference internal" href="#license" id="id20">6&nbsp;&nbsp;&nbsp;License</a></li>
+<li><a class="reference internal" href="#specification-versions" id="id21">5&nbsp;&nbsp;&nbsp;Specification Versions</a></li>
+<li><a class="reference internal" href="#license" id="id22">6&nbsp;&nbsp;&nbsp;License</a></li>
 </ul>
 </div>
 <p><a class="anchor" id="matrix-apis"></a></p>
 <div class="section" id="matrix-apis">
-<h1><a class="toc-backref" href="#id3">1&nbsp;&nbsp;&nbsp;Matrix APIs</a></h1>
+<h1><a class="toc-backref" href="#id5">1&nbsp;&nbsp;&nbsp;Matrix APIs</a></h1>
 <p>The specification consists of the following parts:</p>
 <table border="1" class="colwidths-auto docutils">
 <thead valign="bottom">
@@ -1006,13 +1006,17 @@ communication ecosystem.</p>
 </tr>
 </tbody>
 </table>
+<p>Additionally, this introduction page contains the key baseline information required to
+understand the specific APIs, including the sections on <a class="reference internal" href="#room-versions">room versions</a>
+and <a class="reference external" href="#architecture">overall architecture</a>.</p>
 <p>The <a class="reference external" href="appendices.html">Appendices</a> contain supplemental information not specific to
 one of the above APIs.</p>
-<p>The <a class="reference external" href="https://matrix.org/docs/api/client-server/">Matrix Client-Server API Swagger Viewer</a> is useful for browsing the Client-Server API.</p>
+<p>The <a class="reference external" href="https://matrix.org/docs/api/client-server/">Matrix Client-Server API Swagger Viewer</a>
+is useful for browsing the Client-Server API.</p>
 </div>
 <p><a class="anchor" id="introduction-to-the-matrix-apis"></a></p>
 <div class="section" id="introduction-to-the-matrix-apis">
-<h1><a class="toc-backref" href="#id4">2&nbsp;&nbsp;&nbsp;Introduction to the Matrix APIs</a></h1>
+<h1><a class="toc-backref" href="#id6">2&nbsp;&nbsp;&nbsp;Introduction to the Matrix APIs</a></h1>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">The Matrix specification is still evolving: the APIs are not yet frozen
@@ -1087,14 +1091,14 @@ reliably and persistently pushed from A to B in an interoperable and federated
 manner.</p>
 <p><a class="anchor" id="spec-change-proposals"></a></p>
 <div class="section" id="spec-change-proposals">
-<h2><a class="toc-backref" href="#id5">2.1&nbsp;&nbsp;&nbsp;Spec Change Proposals</a></h2>
+<h2><a class="toc-backref" href="#id7">2.1&nbsp;&nbsp;&nbsp;Spec Change Proposals</a></h2>
 <p>To propose a change to the Matrix Spec, see the explanations at <a class="reference external" href="proposals">Proposals
 for Spec Changes to Matrix</a>.</p>
 </div>
 </div>
-<p><a class="anchor" id="architecture"></a></p>
-<div class="section" id="architecture">
-<h1><a class="toc-backref" href="#id6">3&nbsp;&nbsp;&nbsp;Architecture</a></h1>
+<p><a class="anchor" id="id2"></a></p>
+<div class="section" id="id2">
+<span id="architecture"></span><h1><a class="toc-backref" href="#id8">3&nbsp;&nbsp;&nbsp;Architecture</a></h1>
 <p>Matrix defines APIs for synchronising extensible JSON objects known as
 &quot;events&quot; between compatible clients, servers and services. Clients are
 typically messaging/VoIP applications or IoT devices/hubs and communicate by
@@ -1141,7 +1145,7 @@ a long-lived GET request.</p>
 </pre>
 <p><a class="anchor" id="users"></a></p>
 <div class="section" id="users">
-<h2><a class="toc-backref" href="#id7">3.1&nbsp;&nbsp;&nbsp;Users</a></h2>
+<h2><a class="toc-backref" href="#id9">3.1&nbsp;&nbsp;&nbsp;Users</a></h2>
 <p>Each client is associated with a user account, which is identified in Matrix
 using a unique &quot;user ID&quot;. This ID is namespaced to the homeserver which
 allocated the account and has the form:</p>
@@ -1153,7 +1157,7 @@ the structure of user IDs.</p>
 </div>
 <p><a class="anchor" id="devices"></a></p>
 <div class="section" id="devices">
-<h2><a class="toc-backref" href="#id8">3.2&nbsp;&nbsp;&nbsp;Devices</a></h2>
+<h2><a class="toc-backref" href="#id10">3.2&nbsp;&nbsp;&nbsp;Devices</a></h2>
 <p>The Matrix specification has a particular meaning for the term &quot;device&quot;. As a
 user, I might have several devices: a desktop client, some web browsers, an
 Android device, an iPhone, etc. They broadly relate to a real device in the
@@ -1177,7 +1181,7 @@ manage their devices.</p>
 </div>
 <p><a class="anchor" id="events"></a></p>
 <div class="section" id="events">
-<h2><a class="toc-backref" href="#id9">3.3&nbsp;&nbsp;&nbsp;Events</a></h2>
+<h2><a class="toc-backref" href="#id11">3.3&nbsp;&nbsp;&nbsp;Events</a></h2>
 <p>All data exchanged over Matrix is expressed as an &quot;event&quot;. Typically each client
 action (e.g. sending a message) correlates with exactly one event. Each event
 has a <tt class="docutils literal">type</tt> which is used to differentiate different kinds of data. <tt class="docutils literal">type</tt>
@@ -1190,7 +1194,7 @@ of a &quot;Room&quot;.</p>
 </div>
 <p><a class="anchor" id="event-graphs"></a></p>
 <div class="section" id="event-graphs">
-<h2><a class="toc-backref" href="#id10">3.4&nbsp;&nbsp;&nbsp;Event Graphs</a></h2>
+<h2><a class="toc-backref" href="#id12">3.4&nbsp;&nbsp;&nbsp;Event Graphs</a></h2>
 <p id="sect-event-graph">Events exchanged in the context of a room are stored in a directed acyclic graph
 (DAG) called an &quot;event graph&quot;. The partial ordering of this graph gives the
 chronological ordering of events within the room. Each event in the graph has a
@@ -1210,7 +1214,7 @@ before another, then it must have a strictly smaller depth.</p>
 </div>
 <p><a class="anchor" id="room-structure"></a></p>
 <div class="section" id="room-structure">
-<h2><a class="toc-backref" href="#id11">3.5&nbsp;&nbsp;&nbsp;Room structure</a></h2>
+<h2><a class="toc-backref" href="#id13">3.5&nbsp;&nbsp;&nbsp;Room structure</a></h2>
 <p>A room is a conceptual place where users can send and receive events. Events are
 sent to a room, and all participants in that room with sufficient access will
 receive the event. Rooms are uniquely identified internally via &quot;Room IDs&quot;,
@@ -1288,7 +1292,7 @@ full mesh topology. Servers may also request backfill of events over federation
 from the other servers participating in a room.</p>
 <p><a class="anchor" id="room-aliases"></a></p>
 <div class="section" id="room-aliases">
-<h3><a class="toc-backref" href="#id12">3.5.1&nbsp;&nbsp;&nbsp;Room Aliases</a></h3>
+<h3><a class="toc-backref" href="#id14">3.5.1&nbsp;&nbsp;&nbsp;Room Aliases</a></h3>
 <p>Each room can also have multiple &quot;Room Aliases&quot;, which look like:</p>
 <pre class="literal-block">
 #room_alias:domain
@@ -1320,7 +1324,7 @@ that are in the room that can be used to join via.</p>
 </div>
 <p><a class="anchor" id="identity"></a></p>
 <div class="section" id="identity">
-<h2><a class="toc-backref" href="#id13">3.6&nbsp;&nbsp;&nbsp;Identity</a></h2>
+<h2><a class="toc-backref" href="#id15">3.6&nbsp;&nbsp;&nbsp;Identity</a></h2>
 <p>Users in Matrix are identified via their Matrix user ID. However,
 existing 3rd party ID namespaces can also be used in order to identify Matrix
 users. A Matrix &quot;Identity&quot; describes both the user ID and any other existing IDs
@@ -1338,7 +1342,7 @@ user IDs using 3PIDs.</p>
 </div>
 <p><a class="anchor" id="profiles"></a></p>
 <div class="section" id="profiles">
-<h2><a class="toc-backref" href="#id14">3.7&nbsp;&nbsp;&nbsp;Profiles</a></h2>
+<h2><a class="toc-backref" href="#id16">3.7&nbsp;&nbsp;&nbsp;Profiles</a></h2>
 <p>Users may publish arbitrary key/value data associated with their account - such
 as a human readable display name, a profile photo URL, contact information
 (email address, phone numbers, website URLs etc).</p>
@@ -1348,7 +1352,7 @@ names allowed to be? -->
 </div>
 <p><a class="anchor" id="private-user-data"></a></p>
 <div class="section" id="private-user-data">
-<h2><a class="toc-backref" href="#id15">3.8&nbsp;&nbsp;&nbsp;Private User Data</a></h2>
+<h2><a class="toc-backref" href="#id17">3.8&nbsp;&nbsp;&nbsp;Private User Data</a></h2>
 <p>Users may also store arbitrary private key/value data in their account - such as
 client preferences, or server configuration settings which lack any other
 dedicated API.  The API is symmetrical to managing Profile data.</p>
@@ -1357,9 +1361,9 @@ Would it really be overengineered to use the same API for both profile &
 private user data, but with different ACLs? -->
 </div>
 </div>
-<p><a class="anchor" id="room-versions"></a></p>
-<div class="section" id="room-versions">
-<h1><a class="toc-backref" href="#id16">4&nbsp;&nbsp;&nbsp;Room Versions</a></h1>
+<p><a class="anchor" id="id4"></a></p>
+<div class="section" id="id4">
+<span id="room-versions"></span><h1><a class="toc-backref" href="#id18">4&nbsp;&nbsp;&nbsp;Room Versions</a></h1>
 <p>Rooms are central to how Matrix operates, and have strict rules for what
 is allowed to be contained within them. Rooms can also have various
 algorithms that handle different tasks, such as what to do when two or
@@ -1375,7 +1379,7 @@ to versions not being ordered or hierarchical, this means a room can &quot;upgra
 from version 2 to version 1, if it is so desired.</p>
 <p><a class="anchor" id="room-version-grammar"></a></p>
 <div class="section" id="room-version-grammar">
-<h2><a class="toc-backref" href="#id17">4.1&nbsp;&nbsp;&nbsp;Room version grammar</a></h2>
+<h2><a class="toc-backref" href="#id19">4.1&nbsp;&nbsp;&nbsp;Room version grammar</a></h2>
 <p>Room versions are used to change properties of rooms that may not be compatible
 with other servers. For example, changing the rules for event authorization would
 cause older servers to potentially end up in a split-brain situation due to not
@@ -1403,7 +1407,7 @@ room_version_char = DIGIT
 </div>
 <p><a class="anchor" id="complete-list-of-room-versions"></a></p>
 <div class="section" id="complete-list-of-room-versions">
-<h2><a class="toc-backref" href="#id18">4.2&nbsp;&nbsp;&nbsp;Complete list of room versions</a></h2>
+<h2><a class="toc-backref" href="#id20">4.2&nbsp;&nbsp;&nbsp;Complete list of room versions</a></h2>
 <p>Room versions are divided into two distinct groups: stable and unstable. Stable
 room versions may be used by rooms safely. Unstable room versions are everything
 else which is either not listed in the specification or flagged as unstable for
@@ -1422,7 +1426,7 @@ version when creating new rooms.</p>
 </div>
 <p><a class="anchor" id="specification-versions"></a></p>
 <div class="section" id="specification-versions">
-<h1><a class="toc-backref" href="#id19">5&nbsp;&nbsp;&nbsp;Specification Versions</a></h1>
+<h1><a class="toc-backref" href="#id21">5&nbsp;&nbsp;&nbsp;Specification Versions</a></h1>
 <dl class="docutils">
 <dt>The specification for each API is versioned in the form <tt class="docutils literal">rX.Y.Z</tt>.</dt>
 <dd><ul class="first last simple">
@@ -1443,7 +1447,7 @@ than a change which must be implemented.</li>
 </div>
 <p><a class="anchor" id="license"></a></p>
 <div class="section" id="license">
-<h1><a class="toc-backref" href="#id20">6&nbsp;&nbsp;&nbsp;License</a></h1>
+<h1><a class="toc-backref" href="#id22">6&nbsp;&nbsp;&nbsp;License</a></h1>
 <p>The Matrix specification is licensed under the <a class="reference external" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.</p>
 </div>
 
