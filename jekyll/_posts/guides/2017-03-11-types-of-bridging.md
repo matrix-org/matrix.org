@@ -3,6 +3,7 @@ layout: post
 version: v1.0
 title: Types of Bridging
 categories: guides
+new_docs: true
 ---
 <link href="/docs/css/faq.css" type="text/css" rel="stylesheet" />
 
