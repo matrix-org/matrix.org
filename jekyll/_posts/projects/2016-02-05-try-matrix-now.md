@@ -274,9 +274,10 @@ To get started using Matrix, pick a client and join [#matrix:matrix.org]. You ca
 
 # Types of Project
 
-* to find a client, choose from the above or browse the **[Matrix Clients Matrix][clients]**
-* to bridge to Matrix from another platform, take a look at the **[list of bridges][bridges]**
-* to start developing on Matrix using an SDK, check out our **[list of SDKs][sdks]**
+|[Clients][clients]|[Bridges][bridges]|[SDKs][sdks]|[Bots][bots]|
+|:---:|:---:|:---:|:---:|
+|[![Clients](images/tmn-client.svg)][clients]|[![Bridges](images/tmn-bridge.svg)][bridges]|[![SDKs](images/tmn-sdk.svg)][sdks]|[![Bots](images/tmn-bot.svg)][bots]|
+|to find a client, choose from the above or browse the **[Matrix Clients Matrix][clients]**|to bridge to Matrix from another platform, take a look at the **[list of bridges][bridges]**|to start developing on Matrix using an SDK, check out our **[list of SDKs][sdks]**|to find a bot to use on Matrix, look at the **[list of Bots][bots]**
 
 # Let's go deeper
 
@@ -464,3 +465,4 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 [clients]: https://matrix.org/docs/projects/clients-matrix
 [bridges]: https://matrix.org/docs/projects/bridges
 [sdks]: https://matrix.org/docs/projects/sdks
+[bots]: https://matrix.org/docs/projects/bots
