@@ -8,10 +8,15 @@
   },
   "author": "",
   "dependencies": {
+    "@toycode/markdown-it-class": "^1.0.3",
     "csv-parser": "^1.12.1",
     "express": "^4.16.3",
+    "js-yaml": "^3.12.1",
     "markdown-it": "^8.4.1",
     "markdown-it-anchor": "^5.0.2",
-    "markdown-it-attrs": "^2.3.1"
+    "markdown-it-attrs": "^2.3.1",
+    "markdown-it-front-matter": "^0.1.2",
+    "markdown-it-header-sections": "^1.0.0",
+    "markdown-it-named-headings": "^1.1.0"
   }
 }
