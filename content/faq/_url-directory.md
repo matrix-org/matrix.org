@@ -121,3 +121,8 @@
 [poljar]: https://github.com/poljar
 [ananace]: https://github.com/ananace/
 [sideboat]: https://matrix.to/#/@sideboat:matrix.org
+[Seaglass]: https://matrix.org/docs/projects/client/seaglass
+[Nheko_reborn]: https://github.com/Nheko-Reborn/nheko
+[Riot Android]: https://github.com/vector-im/riot-android/
+[Riot iOS]: https://github.com/vector-im/riot-ios/
+[matrix-android-sdk]: https://github.com/matrix-org/matrix-android-sdk
