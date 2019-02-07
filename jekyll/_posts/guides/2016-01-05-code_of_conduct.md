@@ -13,7 +13,7 @@ categories: guides
 This code of conduct outlines our expectations for participants within the Matrix community, as well as steps for reporting unacceptable behaviour. We are committed to providing a welcoming and inspiring community for all, and expect our code of conduct to be honoured. Anyone who violates this code of conduct may be banned from the community.
 
 This applies to conversation in the any room in the matrix community ([+matrix:matrix.org](https://matrix.to/#/+matrix:matrix.org)) and commits and comments relating to any project in the [matrix-org](https://github.com/matrix-org) github space.
- 
+
 Our open source community strives to:
 
 * **Be friendly and patient.**
@@ -63,6 +63,8 @@ We encourage everyone to participate and are committed to building a community f
 
 Although this list cannot be exhaustive, we explicitly honour diversity in age, gender, gender identity or expression, culture, ethnicity, language, national origin, political beliefs, profession, race, religion, sexual orientation, socioeconomic status, and technical ability. We will not tolerate discrimination based on any of the protected
 characteristics above, including participants with disabilities.
+
+Matrix.org and The Matrix.org Foundation takes a position on acceptable behaviour for its community as defined by the CoC, and we will not endorse behaviour which is counter to that. Matrix.org does not have a mandate to promote content which is associated with an entity whose position is incompatible with this CoC.
 
 |
 
