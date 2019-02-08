@@ -17,6 +17,7 @@ process.chdir(__dirname + "/..");
 
 var guides = fs.readdirSync('jekyll/_posts/guides/');
 guides = guides.filter(filename => {return filename.endsWith('.md')})
+var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/";
 
 var front_matter;
 
@@ -54,11 +55,11 @@ guides.forEach(guide => {
 });
 pages.forEach(page => {
     console.log(page);
-    var templateHtml = fs.readFileSync('/Users/benp/projects/PrettyDocs-Theme/template.html', 'utf-8');
+    var templateHtml = fs.readFileSync(`${newDocsPath}template.html`, 'utf-8');
     templateHtml = templateHtml.replace("<!-- ###NAVIGATION### -->", generateNavigationHtml(page.title.id));
     templateHtml = templateHtml.replace("<!-- ###CONTENT### -->", md.renderer.render(page.tokens, {langPrefix: 'language-'}));
     templateHtml = templateHtml.replace(/<!-- ###TITLE### -->/g, page.title.content);
-    fs.writeFileSync(`/Users/benp/projects/PrettyDocs-Theme/${page.title.id}.html`, templateHtml);
+    fs.writeFileSync(`${newDocsPath}${page.title.id}.html`, templateHtml);
 });
 
 function generateNavigationHtml(forTitle) {
