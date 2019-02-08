@@ -13,10 +13,10 @@ md.use(markdownItAnchor, {
 }).use(require('@toycode/markdown-it-class'), mapping);
 
 process.chdir(__dirname);
+var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/";
 
 var htmlOutput = html();
 console.log(htmlOutput);
-var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/";
 fs.writeFileSync(`${newDocsPath}faq-out.html`, htmlOutput);
 function html() {
     var root = "../content/faq/";
