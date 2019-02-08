@@ -16,11 +16,12 @@ process.chdir(__dirname);
 
 var htmlOutput = html();
 console.log(htmlOutput);
-fs.writeFileSync(`/Users/benp/projects/PrettyDocs-Theme/faq-out.html`, htmlOutput);
+var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/";
+fs.writeFileSync(`${newDocsPath}faq-out.html`, htmlOutput);
 function html() {
     var root = "../content/faq/";
 
-    var outline = fs.readFileSync("/Users/benp/projects/PrettyDocs-Theme/template-faq.html", 'utf-8');
+    var outline = fs.readFileSync(`${newDocsPath}template-faq.html`, 'utf-8');
 
     var markdownSource = "";
     var topMenuHtmlSource = "";
