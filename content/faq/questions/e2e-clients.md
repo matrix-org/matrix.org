@@ -6,5 +6,6 @@ End-to-end encryption is currently available in:
 * [Riot Android] (and the [matrix-android-sdk])
 * [Riot iOS] (and the [matrix-ios-sdk])
 * [Seaglass]
+* [nheko]
 
-E2E is also available in and more recently in [Nheko_reborn]. E2E will also presently be available in the [matrix-python-sdk].
+E2E will also presently be available in the [matrix-python-sdk].
