@@ -79,7 +79,7 @@
 [mxisd]: https://github.com/kamax-io/mxisd
 [neilalexander]: https://matrix.to/#/@neilalexander:matrix.org
 [neo]:  https://github.com/f0x52/neo
-[nheko]: https://github.com/mujx/nheko
+[nheko]: https://github.com/Nheko-Reborn/nheko
 [NixOS]: https://nixos.org/
 [notafile]: https://matrix.to/#/@notafile:matrix.org
 [opsdroid]: https://opsdroid.github.io/
@@ -122,7 +122,6 @@
 [ananace]: https://github.com/ananace/
 [sideboat]: https://matrix.to/#/@sideboat:matrix.org
 [Seaglass]: https://matrix.org/docs/projects/client/seaglass
-[Nheko_reborn]: https://github.com/Nheko-Reborn/nheko
 [Riot Android]: https://github.com/vector-im/riot-android/
 [Riot iOS]: https://github.com/vector-im/riot-ios/
 [matrix-android-sdk]: https://github.com/matrix-org/matrix-android-sdk
