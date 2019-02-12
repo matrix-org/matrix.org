@@ -1,16 +1,21 @@
 ---
-layout: project
+layout: projectimage
 title: matrix-trello-bot
 categories: projects bot
+thumbnail: /docs/projects/images/trello.svg
 description: Interact with Trello in matrix
 author: Travis Ralston
-maturity: Early Beta
+maturity: Beta
 language: TypeScript
-license: GPL3
+license: GPL-3.0-only
 repo: https://github.com/turt2live/matrix-trello-bot
+home: https://t2bot.io/trellobot
+screenshot: /docs/projects/images/trello.svg
+room: "#trellobot:t2bot.io"
+featured: "TRUE"
+example_mxid: "@trello:t2bot.io"
 ---
 
-# {{ page.title }}
 Trello is a useful tool for planning and organization. Having access to all your boards in matrix makes it easier to update your boards and receive updates when your team makes changes.
 
 The source, and more information, can be found on [GitHub](https://github.com/turt2live/matrix-trello-bot).
