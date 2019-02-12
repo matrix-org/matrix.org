@@ -8,6 +8,7 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 
+process.chdir(__dirname + "/..");
 
 app.get('*', function (req, res) {
     var path = process.cwd() + req.path;
