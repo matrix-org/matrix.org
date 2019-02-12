@@ -12,5 +12,3 @@ featured: "TRUE"
 ---
 
 Module for [Godot Engine](https://godotengine.org) that lets you easily integrate a Matrix client into a game developed using Godot (for example for in-game chat, matchmaking, lobbies, or something else entirely). [Source](https://gitlab.com/vurpo/godot-matrix)
-
-Repository: <{{page.repo}}>

@@ -12,5 +12,3 @@ featured: "TRUE"
 ---
 
 SDK built on top of Boost.Asio
-
-Repository: <{{page.repo}}>

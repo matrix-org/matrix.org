@@ -12,5 +12,3 @@ featured: "TRUE"
 ---
 
 Available on [GitLab]({{ page.repo }}).  Still very early stages and only useful to developers already familiar with both the Matrix client API and the Racket language.
-
-Repository: <{{page.repo}}>

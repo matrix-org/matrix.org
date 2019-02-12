@@ -14,5 +14,3 @@ featured: "TRUE"
 ---
 
 A Drupal API module to facilitate posting messages into Matrix rooms. [Drupal.org](https://drupal.org/project/matrix_api)
-
-Repository: <{{page.repo}}>

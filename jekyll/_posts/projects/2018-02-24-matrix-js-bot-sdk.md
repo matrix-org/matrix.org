@@ -16,5 +16,3 @@ e2e: "Yes"
 Bots on matrix often have very different requirements than regular clients or users. This SDK is aimed towards making bots more lightweight and responsive. Much of the library is a direct proxy to the client/server API, however it abstracts away the HTTP part as much as possible.
 
 The source, and more information, can be found on [GitHub](https://github.com/turt2live/matrix-js-bot-sdk).
-
-Repository: <{{page.repo}}>

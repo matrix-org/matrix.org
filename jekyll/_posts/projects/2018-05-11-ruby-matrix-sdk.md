@@ -16,5 +16,3 @@ featured: "TRUE"
 Available on [github]({{ page.repo }}), and on rubygems.org as [`matrix_sdk`](https://rubygems.org/gems/matrix_sdk).
 
 Some examples can be found on [github]({{ page.repo }}/tree/master/examples) as well.
-
-Repository: <{{page.repo}}>

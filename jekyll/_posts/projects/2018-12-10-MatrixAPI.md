@@ -12,5 +12,3 @@ featured: "TRUE"
 ---
 
 A Matrix library for C# UWP.
-
-Repository: <{{page.repo}}>

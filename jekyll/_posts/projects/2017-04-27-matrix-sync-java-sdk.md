@@ -17,5 +17,3 @@ The Java SDK provides a low level (I/O synchronous) object oriented library to i
 It is currently work in progress, is incomplete and is early alpha.
 
 [Github](https://github.com/kamax-io/matrix-java-sdk)
-
-Repository: <{{page.repo}}>

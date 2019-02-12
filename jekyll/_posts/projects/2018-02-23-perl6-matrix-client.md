@@ -12,5 +12,3 @@ featured: "TRUE"
 ---
 
 Perl6 Matrix client. [github](https://github.com/matiaslina/perl6-matrix-client)
-
-Repository: <{{page.repo}}>

@@ -6,7 +6,7 @@ description: A Botkit connector for Matrix
 author: frankgerhardt
 maturity: Alpha
 language: JavaScript
-license: Apache
+license: Apache-2.0
 repo: https://github.com/frankgerhardt/botkit-matrix
 featured: "TRUE"
 e2e: "Yes"
@@ -40,5 +40,3 @@ require('botkit-matrix').MatrixController(config)
 You can get a sample bot at [botkit-matrix-sample](https://github.com/frankgerhardt/botkit-matrix-sample)
 
 For more features see [Botkit Core](https://botkit.ai/docs/core.html)
-
-Repository: <{{page.repo}}>
