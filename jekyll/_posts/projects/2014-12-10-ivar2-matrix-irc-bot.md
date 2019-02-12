@@ -1,12 +1,14 @@
 ---
-layout: project
-title: ivar2 Matrix/IRC Bot 
+layout: projectimage
+title: ivar2 Matrix/IRC Bot
 categories: projects bot
-description: IRC bot with native Matrix support
+description: ivar2 is an IRC/Matrix bot on speed
 author: haste / Tor
-language: Lua
 maturity: Beta
+language: Lua
+license: MIT
+repo: https://github.com/torhve/ivar2
+featured: "TRUE"
 ---
 
-# {{ page.title }}
-ivar2 is a very comprehensive IRC bot written in Lua which has native support for Matrix! [https://github.com/torhve/ivar2](https://github.com/torhve/ivar2)
+ivar2 is an IRC/Matrix bot on speed, with a mentally unstable mind. Partially because its written in Lua, which could make the most sane mind go unstable. If that's not obscure enough for you, ivar2 also supports running MoonScript modules.
