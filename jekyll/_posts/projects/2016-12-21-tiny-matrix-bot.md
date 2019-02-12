@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: projectimage
 title: tiny-matrix-bot
 categories: projects bot
 description: Bot with plugins
@@ -8,9 +8,9 @@ maturity: Alpha
 language: Shell/Python
 license: Unknown
 repo: https://github.com/4nd3r/tiny-matrix-bot
+featured: "TRUE"
 ---
 
-# {{ page.title }}
 Simple and dirty matrix.org bot based on matrix-python-sdk
 
 <del>no manual</del>, no support, no warranty
@@ -31,5 +31,3 @@ manual:
 |
 
 Follow the progress and grab the code from [GitHub](https://github.com/4nd3r/tiny-matrix-bot/)!
-
-Repository: <{{page.repo}}>
