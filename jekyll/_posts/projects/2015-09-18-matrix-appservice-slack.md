@@ -7,7 +7,6 @@ language: JavaScript
 maturity: Beta
 repo: https://github.com/matrix-org/matrix-appservice-slack
 screenshot: /docs/projects/images/slack-bridge.png
-language: JavaScript
 license: Apache
 description: This project bridges Slack to Matrix
 ---

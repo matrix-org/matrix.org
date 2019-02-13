@@ -17,6 +17,7 @@
     "markdown-it-attrs": "^2.3.1",
     "markdown-it-front-matter": "^0.1.2",
     "markdown-it-header-sections": "^1.0.0",
-    "markdown-it-named-headings": "^1.1.0"
+    "markdown-it-named-headings": "^1.1.0",
+    "markdown-wiki": "git+https://github.com/benparsons/markdown-wiki.git"
   }
 }
