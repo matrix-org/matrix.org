@@ -5,7 +5,7 @@ categories: projects client
 thumbnail: /docs/projects/images/matrix-el-thumb.png
 description: A Matrix client for Emacs!
 author: alphapapa, rrix, jgkamat
-maturity: Stable/Alpha
+maturity: Stable
 language: Emacs Lisp
 license: GPL3
 repo: https://github.com/alphapapa/matrix-client.el
