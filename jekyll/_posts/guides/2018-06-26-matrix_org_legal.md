@@ -1,9 +1,10 @@
 ---
+title: Legal Docs Index
 layout: default
 categories: guides
 section: legal
 ---
-## Legal
+# Legal Docs Index
 
 Links to our legal documentation:
 
