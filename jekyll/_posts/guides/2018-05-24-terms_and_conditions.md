@@ -12,9 +12,9 @@ section: legal
 
 Please read this document carefully before accessing or using this service!
 
-# 1. Introduction
+## 1. Introduction
 
-## 1.1 English, Not Legalese
+### 1.1 English, Not Legalese
 
 Most Terms of Use and Privacy Policy documents are unreadable. They are written by lawyers and for lawyers, and in our opinion are not very effective.
 
@@ -42,13 +42,13 @@ EC4R 1AG
 
 Should you have other questions or concerns about this document, please send us an email at [support@matrix.org](mailto:support@matrix.org).
 
-## 1.2 Using The Service Means Accepting These Terms
+### 1.2 Using The Service Means Accepting These Terms
 
 By accessing or using the Service in any way, whether you have created a Matrix account on the matrix.org homeserver, or whether you are accessing content federated from the matrix.org homeserver to another Matrix homeserver, or are just browsing rooms as an unauthenticated guest, you agree to and are bound by the terms and conditions written in this document.
 
 If you do not agree to all of the terms and conditions contained in this document, please use a Matrix server provided by someone else and refrain from accessing content federated from this server.
 
-## 1.3 This Is a Living Document
+### 1.3 This Is a Living Document
 
 This is a living document. With your help, we want to make it the best in the industry.
 
@@ -60,7 +60,7 @@ We will likely improve this document over time. By continuing to use the Service
 
 Your access and use of the Service is always subject to the most current version of this document.
 
-## 1.4 Breach of Terms
+### 1.4 Breach of Terms
 
 If you breach any of the terms and conditions in this document, your authorization to access or use the Service automatically terminates. 
 
@@ -68,7 +68,7 @@ We may block, restrict, disable, suspend or terminate your access to all or part
 
 If you think we removed your access by mistake, send an email to [support@matrix.org](mailto:support@matrix.org) and we’ll give you our reasoning.
 
-# 2. Support
+## 2. Support
 
 Support for the matrix.org homeserver is provided on a best effort basis by New Vector Ltd - however, support is often available from the wider Matrix Community in the public Matrix Support rooms (as listed in the [+matrix:matrix.org](https://matrix.to/#/+matrix:matrix.org) community).
 
@@ -76,11 +76,11 @@ Queries sent to [support@matrix.org](mailto:support@matrix.org) will be addresse
 
 We love Matrix and will support our users as much as we can, but we are also a small team and value our work/life balance. This means that although we’ll try our best, we do not provide 24/7 support.
 
-# 3. Intellectual Property Rights
+## 3. Intellectual Property Rights
 
 *Note on Plain English: We know that the language in this section still reads like legalese - this will be improved in later revisions of this document.*
 
-## 3.1 Who Owns the IP of My Messages and Files?
+### 3.1 Who Owns the IP of My Messages and Files?
 
 We do not claim intellectual property rights over rooms, message content or files uploaded to the Service.
 
@@ -92,9 +92,9 @@ You are solely and entirely responsible for all of your messages and files that 
 
 You acknowledge and agree that by accessing or using the Service, you may be exposed to user materials from others that are offensive, indecent or otherwise objectionable.
 
-# 4. Reliability
+## 4. Reliability
 
-## 4.1 Do You Guarantee That The Service Will Be Accessible at All Times?
+### 4.1 Do You Guarantee That The Service Will Be Accessible at All Times?
 
 In short, we do not. Like all other cloud-based applications, we are vulnerable to the inherent unreliability of the Internet. We do not offer contracted SLA for availability of the Service and your data.
 
@@ -102,7 +102,7 @@ We monitor the Service closely and have set up automated alarms to be notified (
 
 You acknowledge and agree that New Vector Ltd. shall not be liable for any failure to store your materials on the matrix.org homeserver at any time.
 
-# 5. App Developers
+## 5. App Developers
 
 We encourage you to write software that uses the Matrix Protocol and interfaces with the Service! 
 
@@ -110,11 +110,11 @@ The Matrix Protocol and our implementation will change over time, and we may cha
 
 Provided that you comply with the terms of this Agreement and our policies and procedures, you may use the Service to execute Applications owned by you. You are solely responsible for your Applications, including any data, text, images or content they contain.
 
-# 6. Play Nice Clauses
+## 6. Play Nice Clauses
 
 *Note on Plain English: We know that the language in this section still reads like legalese - this will be improved in later revisions of this document.*
 
-## 6.1 Use of The Service
+### 6.1 Use of The Service
 
 You agree that you shall not:
 
@@ -144,28 +144,28 @@ You agree that you shall not:
 
 Materials and Services provided by third parties are governed by separate agreements accompanying such materials and services. New Vector Ltd. offers no guarantees and assumes no responsibility or liability of any type with respect to the third-party services, including any liability resulting from incompatibility between a third-party service, the matrix.org service or another third-party service. You agree that you will not hold New Vector Ltd. responsible or liable with respect to the third-party services.
 
-## 6.1.1 Room Aliases on the Matrix.org Homeserver
+### 6.1.1 Room Aliases on the Matrix.org Homeserver
 An outside organisation can claim ownership over room aliases bearing that organisation's names or identifiers. If you represent an organisation, and would like to take over a room alias for it, please [contact us](mailto:support@matrix.org).
 
 We want users on the matrix.org homeserver to be able to engage in a healthy, approachable community. To maintain a good user experience we reserve the right to remove or modify room aliases.
 
-## 6.2 Illegal Content
+### 6.2 Illegal Content
 
 Any content containing or promoting indecent images/depictions of children is illegal and utterly prohibited on the Service. When we become aware of such content, we refer the details to the relevant authorities. If you’ve found an account, room or group being used for the distribution or promotion of child sexual exploitation, please share the details in an email to [abuse@matrix.org](mailto:abuse@matrix.org).
 
-# 7. Restriction and Termination of Use
+## 7. Restriction and Termination of Use
 
 We may block, restrict, disable, suspend or terminate your access to all or part of the Service at any time in our sole discretion, without prior notice or liability to you.
 
-# 8. Encryption
+## 8. Encryption
 
 The Services may allow you to encrypt your communications end-to-end between devices. There may be restrictions and limitations on the import, possession, use, transfer and/or export of strong encryption technology under the laws of the country in which you intend to use the Service. It is your sole obligation and responsibility to check such restrictions and limitations before using the Service and to comply with them. We reserve the right to suspend the Service immediately and without notice if we determine, in our sole judgment, that the Service is being used in violation of local regulations governing the use of cryptographic technologies (even though we have no responsibility to make such determination).
 
-# 9. Links to Third Party Sites
+## 9. Links to Third Party Sites
 
 The Service may include links that will take you to other sites outside of the the Service. The linked sites are provided as a convenience and the inclusion of the links do not imply any endorsement by us of any linked site. We have no control of the linked sites and you therefore acknowledge and agree that we are not responsible for the contents of any linked site, any link contained in a linked site or any changes or updates to a linked site. You further acknowledge and agree that we are not responsible for any form of transmission (e.g. webcasting) received from any linked site.
 
-# 10. Warranties and Disclaimers
+## 10. Warranties and Disclaimers
 
 The matrix.org service is provided by New Vector under these terms of use "as is" without warranty of any kind, either express, implied, statutory or otherwise, including, but not limited to, the implied warranties of title, non-infringement, merchantability or fitness for a particular purpose. Without limiting the foregoing, New Vector makes no warranty that:
 
@@ -193,7 +193,7 @@ The use of the Service is done at your own discretion and risk and with your agr
 
 Some states or jurisdictions do not allow the exclusion of implied warranties or limitations on how long an implied warranty may last, so the above limitations may not apply to you. To the extent permissible, any implied warranties are limited to ninety days.
 
-# 11. Indemnity and Liability
+## 11. Indemnity and Liability
 
 *Note on Plain English: We know that the language in this section still reads like legalese - this will be improved in later revisions of this document.*
 
@@ -215,11 +215,11 @@ You agree to indemnify and hold New Vector and its officers, co-branders, other 
 
 8. any dealings between you and any third parties advertising or promoting via the Service.
 
-# 12. Emergency Service Calls
+## 12. Emergency Service Calls
 
 The Service does not and is not intended to support or carry emergency calls to any emergency services (e.g. E911 or 112 numbers). We are not liable for any claims, damages or loss which arise from this limitation.
 
-# 13. Limitation of Liability
+## 13. Limitation of Liability
 
 *Note on Plain English: We know that the language in this section still reads like legalese - this will be improved in later revisions of this document.*
 
@@ -245,21 +245,21 @@ In no event shall New Vector, its officers, directors, employees, partners or su
 
 Some jurisdictions prohibit the exclusion or limitation of liability for consequential or incidental damages. Accordingly, the limitations and exclusions set forth above may not apply to you.
 
-# 14. Governing Law and Jurisdiction
+## 14. Governing Law and Jurisdiction
 
 This Agreement shall be governed by the laws of England and Wales, excluding its conflict of law provisions. Unless contrary to the law where you reside, all disputes relating to this Agreement are subject to the exclusive jurisdiction of the courts of England and Wales and you expressly consent to the exercise of personal jurisdiction in the courts of England and Wales in connection with any such dispute. This Agreement shall not be governed by the United Nations Convention on Contracts for the International Sale of Goods.
 
-# 15. General
+## 15. General
 
 The Service is licensed, not sold, to you by New Vector Ltd for use strictly in accordance with the terms and conditions of this Agreement. Ownership of the Service shall at all times remain with New Vector Ltd. Access to the Service is provided to you only to allow you to exercise your rights under this Agreement.
 
-## 15.1 Grant of Licence
+### 15.1 Grant of Licence
 
 Subject to your acceptance of, and compliance with, this Agreement and any payment requirements for the Service (if applicable), New Vector Ltd hereby grants you a limited, non-exclusive, non-transferable, revocable, non-sublicensable licence, in and under our intellectual property rights, to access and use the Services, solely in accordance with the terms and conditions of this Agreement. Unless explicitly stated otherwise, any new features provided by us that augment or enhance the current Service shall also constitute "Service" and shall be subject to these terms and conditions. All rights not expressly granted under this Agreement are retained by New Vector Ltd.
 
 You may also be subject to additional terms and conditions that may apply when you use other New Vector services, third party content or third party software. If for any reason a court of competent jurisdiction finds any provision of the Terms of Use, or portion thereof, to be unenforceable, that provision shall be enforced to the maximum extent permissible so as to effect the intent of the parties as reflected by that provision, and the remainder of the Terms of Use shall continue in full force and effect. Any failure by New Vector to enforce or exercise any provision of the Terms of Use or related right shall not constitute a waiver of that right or provision. The section titles used in the Terms of Use are purely for convenience and carry with them no legal or contractual effect.
 
-# 16. Document History
+## 16. Document History
 
 * 2018, March 28: created.
 
