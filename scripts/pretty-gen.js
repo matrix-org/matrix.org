@@ -55,7 +55,7 @@ guides.forEach(guide => {
 });
 pages.forEach(page => {
     console.log(page);
-    var templateHtml = fs.readFileSync(`${newDocsPath}template.html`, 'utf-8');
+    var templateHtml = fs.readFileSync(`${newDocsPath}template-documentation.html`, 'utf-8');
     templateHtml = templateHtml.replace("<!-- ###NAVIGATION### -->", generateNavigationHtml(page.title.id));
     templateHtml = templateHtml.replace("<!-- ###CONTENT### -->", md.renderer.render(page.tokens, {langPrefix: 'language-'}));
     templateHtml = templateHtml.replace(/<!-- ###TITLE### -->/g, page.title.content);
