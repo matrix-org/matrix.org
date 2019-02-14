@@ -3,6 +3,7 @@ layout: post
 title: Getting involved
 categories: guides
 new_docs: true
+section: docs
 ---
 
 # How can I get involved?
