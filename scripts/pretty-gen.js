@@ -21,7 +21,7 @@ var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/";
 
 var front_matter;
 
-var pages = [];
+var pages = {};
 
 guides.forEach(guide => {
     var guideMd = fs.readFileSync('jekyll/_posts/guides/' + guide, 'utf-8');
@@ -45,7 +45,8 @@ guides.forEach(guide => {
         }
         previous_token = token;
     })
-    pages.push({
+    if (! pages[front_matter.section]) pages[front_matter.section] = [];
+    pages[front_matter.section].push({
         title: title,
         headers: headers,
         tokens: tokens,
@@ -53,18 +54,21 @@ guides.forEach(guide => {
         front_matter: front_matter
     })
 });
-pages.forEach(page => {
-    console.log(page);
-    var templateHtml = fs.readFileSync(`${newDocsPath}template-documentation.html`, 'utf-8');
-    templateHtml = templateHtml.replace("<!-- ###NAVIGATION### -->", generateNavigationHtml(page.title.id));
-    templateHtml = templateHtml.replace("<!-- ###CONTENT### -->", md.renderer.render(page.tokens, {langPrefix: 'language-'}));
-    templateHtml = templateHtml.replace(/<!-- ###TITLE### -->/g, page.title.content);
-    fs.writeFileSync(`${newDocsPath}${page.title.id}.html`, templateHtml);
+Object.keys(pages).forEach(section => {
+    
+    pages[section].forEach(page => {
+        console.log(page);
+        var templateHtml = fs.readFileSync(`${newDocsPath}template-documentation.html`, 'utf-8');
+        templateHtml = templateHtml.replace("<!-- ###NAVIGATION### -->", generateNavigationHtml(page.title.id, section));
+        templateHtml = templateHtml.replace("<!-- ###CONTENT### -->", md.renderer.render(page.tokens, {langPrefix: 'language-'}));
+        templateHtml = templateHtml.replace(/<!-- ###TITLE### -->/g, page.title.content);
+        fs.writeFileSync(`${newDocsPath}${page.title.id}.html`, templateHtml);
+    });
 });
 
-function generateNavigationHtml(forTitle) {
+function generateNavigationHtml(forTitle, section) {
     var output = "";
-    pages.forEach(page => {
+    pages[section].forEach(page => {
         var linkClass = page.title.id === forTitle ? "nav-link scrollto" : "nav-link";
         var linkPath = page.title.id === forTitle ? "" : page.title.id + '.html';
         var containerClass = page.title.id === forTitle ? "collapse show selectedPage" : "collapse";
