@@ -12,6 +12,7 @@ repo: https://github.com/vector-im/riot-android
 home: https://riot.im/
 screenshot: /docs/projects/images/vector-android-large.png
 room: "#riot:matrix.org"
+getting_started: true
 ---
 
 The Android version of the [Riot](https://matrix.org/docs/projects/client/riot.html) web client. Riot is a glossy client with focus on performance and usability.
