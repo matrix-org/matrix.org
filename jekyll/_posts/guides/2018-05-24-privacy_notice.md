@@ -4,6 +4,7 @@ layout: post
 version: v1.0
 title: Privacy Notice
 categories: guides
+section: legal
 ---
 <link href="/docs/css/faq.css" type="text/css" rel="stylesheet" />
 

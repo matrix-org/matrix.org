@@ -2,7 +2,6 @@
 layout: post
 categories: guides
 title: Made for Matrix Badge Guidelines
-new_docs: true
 section: docs
 ---
 <style>

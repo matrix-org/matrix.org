@@ -2,7 +2,6 @@
 layout: post
 categories: guides
 title: Usage of the matrix-js-sdk
-new_docs: true
 section: docs
 ---
 
