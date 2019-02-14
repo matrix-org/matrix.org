@@ -4,6 +4,7 @@ version: v1.0
 title: Types of Bridging
 categories: guides
 new_docs: true
+section: docs
 ---
 <link href="/docs/css/faq.css" type="text/css" rel="stylesheet" />
 

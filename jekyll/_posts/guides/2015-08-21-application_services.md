@@ -3,6 +3,7 @@ layout: post
 title: Application services
 categories: guides
 new_docs: true
+section: docs
 ---
 
 # Application services
