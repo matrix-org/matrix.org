@@ -26,7 +26,7 @@ var pages = {};
 guides.forEach(guide => {
     var guideMd = fs.readFileSync('jekyll/_posts/guides/' + guide, 'utf-8');
     var tokens = md.parse(guideMd, {});
-    if (! front_matter.new_docs) return;
+    if (! front_matter.section) return;
     var title = {};
     var headers = [];
     var previous_token = "";
