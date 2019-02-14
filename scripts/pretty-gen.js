@@ -62,7 +62,7 @@ Object.keys(pages).forEach(section => {
         templateHtml = templateHtml.replace("<!-- ###NAVIGATION### -->", generateNavigationHtml(page.title.id, section));
         templateHtml = templateHtml.replace("<!-- ###CONTENT### -->", md.renderer.render(page.tokens, {langPrefix: 'language-'}));
         templateHtml = templateHtml.replace(/<!-- ###TITLE### -->/g, page.title.content);
-        fs.writeFileSync(`${newDocsPath}${page.title.id}.html`, templateHtml);
+        fs.writeFileSync(`${newDocsPath}/guides/${page.title.id}.html`, templateHtml);
     });
 });
 
