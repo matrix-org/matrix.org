@@ -1,6 +1,7 @@
 ---
 layout: default
 categories: guides
+section: legal
 ---
 ## Legal
 

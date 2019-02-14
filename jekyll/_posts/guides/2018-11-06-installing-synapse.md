@@ -2,7 +2,6 @@
 layout: post
 categories: guides
 title: Installing Synapse
-new_docs: true
 section: docs
 ---
 
