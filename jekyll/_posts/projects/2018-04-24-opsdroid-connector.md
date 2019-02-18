@@ -1,6 +1,6 @@
 ---
 layout: projectimage
-title: opsdroid connector
+title: opsdroid
 categories: projects bot sdk
 thumbnail: /docs/projects/images/opsdroid.png
 description: A connector for opsdroid to receive and respond to messages
@@ -8,9 +8,11 @@ author: opsdroid
 maturity: Beta
 language: Python
 license: Apache-2.0
-repo: https://github.com/opsdroid/connector-matrix
+repo: https://github.com/opsdroid/opsdroid
 screenshot: /docs/projects/images/opsdroid.png
 featured: "TRUE"
 ---
 
-A connector for [opsdroid](https://github.com/opsdroid/opsdroid) to receive and respond to messages
+[opsdroid](https://opsdroid.github.io/) is a simple and extensible bot framework and has built-in support for matrix.
+
+There is also a plugin which allows you to use the matrix room state as a store for opsdroid's memory. [database-matrix](https://github.com/SolarDrew/database-matrix)
