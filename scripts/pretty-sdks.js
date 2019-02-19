@@ -13,7 +13,7 @@ var wiki = markdownWiki.getWiki();
 
 var pages = wiki.pages.filter(p => p.name != "template" && p.fm.categories && p.fm.categories.split(" ").indexOf("sdk") != -1);
 
-    var bridgesTemplate = fs.readFileSync(`template-bridges.html`, 'utf-8');
+var bridgesTemplate = fs.readFileSync(`template-bridges.html`, 'utf-8');
 var raw = `
 |                                   |       Language/Platform|       Maintainer|           Repo|          Matrix Room|      Supports E2E|
 |                              :---:|                   :---:|            :---:|          :---:|                :---:|             :---:|

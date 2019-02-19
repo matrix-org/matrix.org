@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const MarkdownIt = require('markdown-it');
-const md = MarkdownIt().use(require('markdown-it-front-matter'), () => {});
+const md = MarkdownIt({html: true}).use(require('markdown-it-front-matter'), () => {});
 const util = require("./pretty-util.js");
 process.chdir(__dirname);
 
