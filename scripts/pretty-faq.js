@@ -13,15 +13,11 @@ md.use(markdownItAnchor, {
 }).use(require('@toycode/markdown-it-class'), mapping);
 
 process.chdir(__dirname);
-var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/";
 
-var htmlOutput = html();
-console.log(htmlOutput);
-fs.writeFileSync(`${newDocsPath}faq-out.html`, htmlOutput);
 function html() {
     var root = "../content/faq/";
 
-    var outline = fs.readFileSync(`${newDocsPath}template-faq.html`, 'utf-8');
+    var outline = fs.readFileSync('template-faq.html', 'utf-8');
 
     var markdownSource = "";
     var topMenuHtmlSource = "";

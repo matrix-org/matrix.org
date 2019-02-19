@@ -6,46 +6,50 @@ process.chdir(__dirname);
 
 markdownWiki.loadPages("../jekyll/_posts/projects/");
 var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/";
-var templateHtml = fs.readFileSync(`${newDocsPath}template-try-matrix-now.html`, 'utf-8');
-var templateHtmlProject = fs.readFileSync(`${newDocsPath}template-project.html`, 'utf-8');
+var templateHtml = fs.readFileSync(`template-try-matrix-now.html`, 'utf-8');
+var templateHtmlProject = fs.readFileSync(`template-project.html`, 'utf-8');
 
 var wiki = markdownWiki.getWiki();
 
 var pages = wiki.pages.filter(p => p.name != "template");
 
 var languagesList = Array.from(new Set(pages.map(p => {return p.fm.language}))).join(",");
+var licensesList = Array.from(new Set(pages.map(p => {return p.fm.license}))).join(",");
 
 var gettingStarted = pages.filter(p => p.fm.getting_started);
 var gettingStartedHtml = "";
 gettingStarted.forEach(project => {
-    gettingStartedHtml += getProjectCard(project.fm, null, 3, false);
+    var categories = project.fm.categories.split(" ");
+    categories = categories.filter(c => c !== "projects")
+    gettingStartedHtml += getProjectCard(project.fm, `projects/${categories[0]}/${project.name}.html`, 3, false);
 });
 
 var clients = pages.filter(p => 
     p.fm.categories && p.fm.categories.indexOf("client") != -1);
 var clientsHtml = "";
-clients.forEach(client => {
-    clientsHtml += getProjectCard(client.fm, null, 4, true);
-    //createProjectHtml("client", client);
+clients.forEach(project => {
+    clientsHtml += getProjectCard(project.fm, `projects/client/${project.name}.html`, 4, true);
+    createProjectHtml("client", project);
 });
 
 var bots = pages.filter(p => 
     p.fm.categories && p.fm.categories.indexOf("bot") != -1);
 var botsHtml = "";
-bots.forEach(bot => {
-    botsHtml += getProjectCard(bot.fm, null, 3, true);
+bots.forEach(project => {
+    botsHtml += getProjectCard(project.fm, `projects/bot/${project.name}.html`, 3, true);
+    createProjectHtml("bot", project);
 });
 
 var servers = pages.filter(p => p.fm.categories && p.fm.categories.indexOf("server") != -1);
 var serversHtml = "";
 servers.forEach(project => {
-    serversHtml += getProjectCard(project.fm, null, 3, true);
+    serversHtml += getProjectCard(project.fm, `projects/server/${project.name}.html`, 3, true);
 });
 
 var sdks = pages.filter(p => p.fm.categories && p.fm.categories.indexOf("server") != -1);
 var sdksHtml = "";
 sdks.forEach(project => {
-    sdksHtml += getProjectCard(project.fm, null, 3, true);
+    sdksHtml += getProjectCard(project.fm, `projects/sdk/${project.name}.html`, 3, true);
 });
 
 function getProjectCard(fm, url, bootstrap12ths, filterable) {
@@ -74,13 +78,17 @@ function getProjectCard(fm, url, bootstrap12ths, filterable) {
 }
 
 function createProjectHtml(type, project) {
+    if (! project.fm.screenshot) project.fm.screenshot = "/docs/projects/images/no_image.svg";
     var localPath = "../../../../matrix.org-gh/matrix.org";
     var projectHtml = templateHtmlProject;
     projectHtml = projectHtml.replace("<!--TITLE-->", project.fm.title);
     projectHtml = projectHtml.replace("<!--IMAGE-->", localPath + project.fm.screenshot);
     projectHtml = projectHtml.replace("<!--DETAILS-->", getDetailsTable(project.fm));
     projectHtml = projectHtml.replace("<!--DESCRIPTION-->", project.fm.description);
-    projectHtml = projectHtml.replace("<!--TEXTCONTENT-->", markdownit.renderer.render(project.tokens, {}));
+    var textContent = markdownit.renderer.render(project.tokens, {});
+    textContent = textContent.replace("<h1>{{ page.title }}</h1>", "");
+    textContent = textContent.replace("<p>Repository: &lt;{{page.repo}}&gt;</p>", "");
+    projectHtml = projectHtml.replace("<!--TEXTCONTENT-->", textContent);
     fs.writeFileSync(`${newDocsPath}/projects/${type}/${project.name}.html`, projectHtml);
 }
 
@@ -121,6 +129,6 @@ templateHtml = templateHtml.replace("<!-- ###SDKS### -->", botsHtml);
 templateHtml = templateHtml.replace("<!-- ###OTHERS### -->", botsHtml);
 
 templateHtml = templateHtml.replace('<!--LANGUAGES-->', languagesList);
+templateHtml = templateHtml.replace('<!--LICENSES-->', licensesList);
 
 fs.writeFileSync(`${newDocsPath}try-matrix-now.html`, templateHtml);
-console.log('written');

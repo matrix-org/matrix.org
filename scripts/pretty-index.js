@@ -1,35 +1,35 @@
 #! /usr/local/bin/node
 
 const fs = require('fs');
-var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/";
 const MarkdownIt = require('markdown-it');
 const md = MarkdownIt().use(require('markdown-it-front-matter'), () => {});
+const util = require("./pretty-util.js");
 process.chdir(__dirname);
 
 
-var indexTemplate = fs.readFileSync(`${newDocsPath}/template-index.html`, 'utf-8');
-
-var cards = [];
-cards.push(new Card("how-can-i-get-involved.html", "", "Get Involved", ""));
-cards.push(new Card("usage-of-the-js-sdk.html", "", "Start Making", ""));
-cards.push(new Card("installing-synapse.html", "", "Install Synapse", ""));
-cards.push(new Card("faq-out.html", "", "FAQs", ""));
-cards.push(new Card("try-matrix-now.html", "", "Try Matrix Now", ""));
-cards.push(new Card("legal.html", "", "Legal", ""));
-
-var indexCardsHtml = "";
-cards.forEach(card => {
-    indexCardsHtml += getHomepageCard(card);
-})
-
-indexTemplate = indexTemplate.replace("<!--INDEXCARDS-->", indexCardsHtml);
-
-var guidesIndexMd = fs.readFileSync("../jekyll/_posts/guides/2016-01-01-index.md", 'utf-8');
-var guidesIndexHtml = md.render(guidesIndexMd);
-
-indexTemplate = indexTemplate.replace("<!--GUIDESLIST-->", guidesIndexHtml);
-
-fs.writeFileSync(`${newDocsPath}index.html`, indexTemplate);
+var indexTemplate = fs.readFileSync(`template-index.html`, 'utf-8');
+function html() {
+    var cards = [];
+    cards.push(new Card("how-can-i-get-involved.html", "", "Get Involved", ""));
+    cards.push(new Card("usage-of-the-js-sdk.html", "", "Start Making", ""));
+    cards.push(new Card("installing-synapse.html", "", "Install Synapse", ""));
+    cards.push(new Card("faq-out.html", "", "FAQs", ""));
+    cards.push(new Card("try-matrix-now.html", "", "Try Matrix Now", ""));
+    cards.push(new Card("legal.html", "", "Legal", ""));
+    
+    var indexCardsHtml = "";
+    cards.forEach(card => {
+        indexCardsHtml += util.getCard(card);
+    })
+    
+    indexTemplate = indexTemplate.replace("<!--INDEXCARDS-->", indexCardsHtml);
+    
+    var guidesIndexMd = fs.readFileSync("../jekyll/_posts/guides/2016-01-01-index.md", 'utf-8');
+    var guidesIndexHtml = md.render(guidesIndexMd);
+    
+    indexTemplate = indexTemplate.replace("<!--GUIDESLIST-->", guidesIndexHtml);
+    return indexTemplate;
+}
 
 function getHomepageCard(card) {
     return `
@@ -50,4 +50,8 @@ function Card(url, img, title, description) {
     this.img = img;
     this.title = title;
     this.description = description;
+}
+
+module.exports = {
+    html: html
 }
