@@ -1,18 +1,15 @@
 ---
-home: https://github.com/kamax-matrix/matrix-appservice-voip
-language: Java
-layout: project
-license: https://spdx.org/licenses/AGPL-3.0-or-later.html
+layout: projectimage
 title: matrix-appservice-voip
-categories: projects as
-repo: https://github.com/kamax-matrix/matrix-appservice-voip
-room: "#mxasd-voip:kamax.io"
-description: Describe your project here
+categories: projects bridge
+description: a Voice/Video/SMS bridge for Matrix
 author: Kamax.io
 maturity: Beta
+language: Java
+license: AGPL-3.0-or-later
+repo: https://github.com/kamax-matrix/matrix-appservice-voip
+room: "#mxasd-voip:kamax.io"
 ---
-
-# {{ page.title }}
 
 [matrix-appservice-voip](https://github.com/kamax-matrix/matrix-appservice-voip)
 is a Voice/Video/SMS bridge for Matrix using the Application Services (AS) API.
