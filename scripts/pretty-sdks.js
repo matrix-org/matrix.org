@@ -5,7 +5,7 @@ const MarkdownIt = require('markdown-it');
 const md = MarkdownIt()
     .use(require('markdown-it-front-matter'), () => {})
     .use(require('markdown-it-named-headings'));
-var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/";
+var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/docs/";
 
 var markdownWiki = require('markdown-wiki');
 markdownWiki.loadPages("../jekyll/_posts/projects/");

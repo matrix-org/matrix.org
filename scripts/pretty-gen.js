@@ -17,7 +17,7 @@ process.chdir(__dirname + "/..");
 
 var guides = fs.readdirSync('jekyll/_posts/guides/');
 guides = guides.filter(filename => {return filename.endsWith('.md')})
-var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/";
+var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/docs/";
 
 var front_matter;
 

@@ -17,7 +17,7 @@ var wiki = markdownWiki.getWiki();
 
 var pages = wiki.pages.filter(p => p.name != "template" && p.fm.bridges);
 
-var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/";
+var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/docs/";
 fs.writeFileSync(`${newDocsPath}bridges.html`, html());
 
 function html() {
@@ -51,14 +51,13 @@ function html() {
         bridgeMd += "\n\n## " + bridge.fm.title + "\n\n";
 
         bridgeMd += 
-`|ss|           Author|                              Repo|         Language|                                       Matrix Room|         Maturity|
-|:--:|            :---:|                             :---:|            :---:|                                             :---:|            :---:|
-|![](${bridge.fm.thumbnail})|[${bridge.fm.author}]|[${bridge.fm.reponame}](${bridge.fm.repo})|${bridge.fm.language}| |${bridge.fm.maturity}|
-\n\n`;
+`|           Author|                              Repo|         Language|                                       Matrix Room|         Maturity|
+|            :---:|                             :---:|            :---:|                                             :---:|            :---:|
+|[${bridge.fm.author}]|[${bridge.fm.reponame}](${bridge.fm.repo})|${bridge.fm.language}| |${bridge.fm.maturity}|
+\n\n![](${bridge.fm.thumbnail})`;
         //bridgeMd += 
         bridgeListHtml += md.render(bridgeMd);
         bridgeListHtml += md.renderer.render(bridge.tokens, {});
-        console.log(bridge);
     })
     bridgesTemplate = bridgesTemplate.replace("<!--BRIDGESLIST-->", bridgeListHtml);
     
