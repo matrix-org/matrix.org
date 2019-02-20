@@ -2,16 +2,17 @@
 layout: projectimage
 title: matrix-appservice-discord
 categories: projects bridge
+thumbnail: /docs/projects/images/discord-logo.svg
 description: This project bridges Discord to Matrix via the Application Service API
 author: Half-Shot
 maturity: Beta
 language: TypeScript
-license: Apache
+license: Apache-2.0
 repo: https://github.com/Half-Shot/matrix-appservice-discord
 screenshot: /docs/projects/images/discord.png
 room: "#discord:half-shot.uk"
 featured: "TRUE"
-bridges: discord
+bridges: "Discord"
 ---
 
 This project bridges [Discord](https://discordapp.com) to Matrix via the Application API.

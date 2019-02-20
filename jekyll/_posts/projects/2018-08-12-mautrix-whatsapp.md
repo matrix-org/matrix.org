@@ -1,16 +1,17 @@
 ---
-layout: project
+layout: projectimage
 title: mautrix-whatsapp
-categories: projects as
+categories: projects bridge
+thumbnail: /docs/projects/images/whatsapp-logo.png
 description: A Matrix-WhatsApp puppeting bridge
 author: Tulir
 maturity: Alpha
 language: Go
-license: AGPL3
+license: AGPL-3.0-or-later
 repo: https://github.com/tulir/mautrix-whatsapp
+room: "#whatsapp:maunium.net"
+featured: "TRUE"
+bridges: "WhatsApp"
 ---
 
-# {{ page.title }}
 A Matrix-WhatsApp puppeting bridge. Written in the [Rhymen/go-whatsapp](https://github.com/Rhymen/go-whatsapp) implementation of the [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) project.
-
-Repository: <{{page.repo}}>
