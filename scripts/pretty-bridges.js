@@ -4,7 +4,8 @@ const fs = require('fs');
 const MarkdownIt = require('markdown-it');
 const md = MarkdownIt()
     .use(require('markdown-it-front-matter'), () => {})
-    .use(require('markdown-it-named-headings'));
+    .use(require('markdown-it-named-headings'))
+    .use(require('markdown-it-header-sections'));
 process.chdir(__dirname);
 const util = require("./pretty-util.js");
 var Card = util.Card;
@@ -48,13 +49,13 @@ function html() {
     var bridgeListHtml = "";
     pages.forEach((bridge) => {
         var bridgeMd = "\n\n# " + bridge.fm.bridges + "\n\n";
-        bridgeMd += "\n\n## " + bridge.fm.title + "\n\n";
+        bridgeMd += "\n\n## " + bridge.fm.title + `\n\n![](${bridge.fm.thumbnail})\n\n`;
 
         bridgeMd += 
 `|           Author|                              Repo|         Language|                                       Matrix Room|         Maturity|
 |            :---:|                             :---:|            :---:|                                             :---:|            :---:|
-|[${bridge.fm.author}]|[${bridge.fm.reponame}](${bridge.fm.repo})|${bridge.fm.language}| |${bridge.fm.maturity}|
-\n\n![](${bridge.fm.thumbnail})`;
+|[${bridge.fm.author}]|[${bridge.fm.reponame ? bridge.fm.reponame : bridge.fm.title}](${bridge.fm.repo})|${bridge.fm.language}| |${bridge.fm.maturity}|
+\n\n`;
         //bridgeMd += 
         bridgeListHtml += md.render(bridgeMd);
         bridgeListHtml += md.renderer.render(bridge.tokens, {});
