@@ -8,7 +8,8 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 
-process.chdir(__dirname + "/..");
+//process.chdir(__dirname + "/..");
+process.chdir("/Users/benp/projects/matrix.org-docs-2019/");
 
 app.get('*', function (req, res) {
     var path = process.cwd() + req.path;
