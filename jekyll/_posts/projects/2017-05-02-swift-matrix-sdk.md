@@ -13,5 +13,3 @@ repo: https://github.com/gperdomor/matrix-sdk
 Unofficial SDK to build apps compatible with Matrix using swift
 
 https://github.com/gperdomor/matrix-sdk
-
-Repository: <{{page.repo}}>

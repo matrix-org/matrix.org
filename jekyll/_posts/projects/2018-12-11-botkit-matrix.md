@@ -20,7 +20,7 @@ A Botkit connector for Matrix
 
 ### Usage
 
-```JavaScript
+```javascript
 let config = {
     'baseUrl': 'https://matrix.org',
     'botUserId': '@youruserid:matrix.org',

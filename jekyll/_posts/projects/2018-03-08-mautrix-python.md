@@ -13,5 +13,3 @@ featured: "TRUE"
 ---
 
 mautrix-python is a Python 3 asyncio Matrix framework.
-
-Repository: <{{page.repo}}>
