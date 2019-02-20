@@ -59,6 +59,7 @@ function html() {
         //bridgeMd += 
         bridgeListHtml += md.render(bridgeMd);
         bridgeListHtml += md.renderer.render(bridge.tokens, {});
+        bridgeListHtml += `<br clear="all" />`;
     })
     bridgesTemplate = bridgesTemplate.replace("<!--BRIDGESLIST-->", bridgeListHtml);
     
