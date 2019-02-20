@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: projectimage
 title: jira-to-matrix
 categories: projects bot
 description: A bot which listens to JIRA Webhooks and sends stuff between Matrix and Jira.
@@ -10,7 +10,6 @@ license:
 repo: https://github.com/mobitel-ltd/jira-to-matrix
 ---
 
-# {{ page.title }}
 A bot (web-service) which:
 
 * listens to JIRA Webhooks and sends some stuff to Matrix;
@@ -23,5 +22,3 @@ Features
 + Appropriately renames the room if the issue was moved to another project;
 + Post new links to related rooms. Notifies when a related issue's status changes;
 + Talks in English or Russian only (easily extendible, see `src/locales`).
-
-Repository: <{{page.repo}}>

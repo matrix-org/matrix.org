@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: projectimage
 title: silvy-matrix
 categories: projects bot
 description: A personal chatbot
@@ -7,10 +7,9 @@ author: jaller94
 maturity: Beta
 language: JavaScript
 license: AGPL3
-repo: https://gitlab.com/jaller94/silvy-matrix
+repo: https://github.com/jaller94/silvy-matrix
 ---
 
-# {{ page.title }}
 Silvy is a personal chatbot and most modules are specifically written for (the author.)
 
 Her features include:
@@ -20,5 +19,3 @@ Her features include:
 * an advent calendar,
 * posting stickers (since Matrix.org doesn’t support our stickers) and
 * anniversary reminder.
-
-Repository: <{{page.repo}}>
