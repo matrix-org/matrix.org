@@ -14,17 +14,22 @@ var wiki = markdownWiki.getWiki();
 
 var pages = wiki.pages.filter(p => p.name != "template" && p.fm.categories && p.fm.categories.split(" ").indexOf("bot") != -1);
 
-var sdkListHtml = "";
-pages.forEach(sdk => {
-    var sdkMd = "\n\n## " + sdk.fm.title + "\n\n";
-    sdkMd += `Repository: <${sdk.fm.repo}>\n\n`;
-    sdkMd += `![ ${sdk.fm.repo} ](${sdk.fm.screenshot})`
-    sdkListHtml += md.render(sdkMd);
-    sdkListHtml += md.renderer.render(sdk.tokens, {});
+var botListHtml = "";
+pages.forEach(bot => {
+    var botMd = "\n\n## " + bot.fm.title + "\n\n";
+    botMd += `Repository: <${bot.fm.repo}>\n\n`;
+    if (bot.fm.screenshot) {
+        botMd += `![ ${bot.fm.title} ](${bot.fm.screenshot})`;
+    } else if (bot.fm.thumbnail) {
+        botMd += `![ ${bot.fm.title} ](${bot.fm.thumbnail})`;
+    }
+    botListHtml += md.render(botMd);
+    botListHtml += md.renderer.render(bot.tokens, {});
+    botListHtml += `<br clear="all" />`;
     
 })
 var bridgesTemplate = fs.readFileSync(`template-bots.html`, 'utf-8');
 
-bridgesTemplate = bridgesTemplate.replace("<!--BOTSLIST-->", sdkListHtml);
+bridgesTemplate = bridgesTemplate.replace("<!--BOTSLIST-->", botListHtml);
 
 fs.writeFileSync(`${newDocsPath}bots.html`, bridgesTemplate);
