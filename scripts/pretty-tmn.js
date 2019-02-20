@@ -46,18 +46,29 @@ servers.forEach(project => {
     serversHtml += getProjectCard(project.fm, `projects/server/${project.name}.html`, 3, true);
 });
 
-var sdks = pages.filter(p => p.fm.categories && p.fm.categories.indexOf("server") != -1);
+var sdks = pages.filter(p => p.fm.categories && p.fm.categories.indexOf("sdk") != -1);
 var sdksHtml = "";
 sdks.forEach(project => {
     sdksHtml += getProjectCard(project.fm, `projects/sdk/${project.name}.html`, 3, true);
 });
 
+var bridges = pages.filter(p => p.fm.categories && p.fm.categories.indexOf("bridge") != -1);
+var bridgesHtml = "";
+bridges.forEach(project => {
+    bridgesHtml += getProjectCard(project.fm, `projects/bridge/${project.name}.html`, 3, true);
+});
+
+var others = pages.filter(p => p.fm.categories && p.fm.categories.indexOf("other") != -1);
+var othersHtml = "";
+others.forEach(project => {
+    othersHtml += getProjectCard(project.fm, `projects/other/${project.name}.html`, 3, true);
+});
+
 function getProjectCard(fm, url, bootstrap12ths, filterable) {
     filterable = filterable ? "filterableProject" : "";
     var image = "";
-    var localPath = "../../matrix.org-gh/matrix.org";
     if (fm.thumbnail) {
-        image = `<a href="${url}" target="_blank"><img class="img-fluid" src="${localPath}${fm.thumbnail}" alt="screenshot" /></a>`;
+        image = `<a href="${url}" target="_blank"><img class="img-fluid" src="${fm.thumbnail}" alt="screenshot" /></a>`;
     }
     return `
     <div class="col-md-${bootstrap12ths} col-12 mb-3 ${filterable}"
@@ -79,10 +90,9 @@ function getProjectCard(fm, url, bootstrap12ths, filterable) {
 
 function createProjectHtml(type, project) {
     if (! project.fm.screenshot) project.fm.screenshot = "/docs/projects/images/no_image.svg";
-    var localPath = "../../../../matrix.org-gh/matrix.org";
     var projectHtml = templateHtmlProject;
     projectHtml = projectHtml.replace("<!--TITLE-->", project.fm.title);
-    projectHtml = projectHtml.replace("<!--IMAGE-->", localPath + project.fm.screenshot);
+    projectHtml = projectHtml.replace("<!--IMAGE-->", project.fm.screenshot);
     projectHtml = projectHtml.replace("<!--DETAILS-->", getDetailsTable(project.fm));
     projectHtml = projectHtml.replace("<!--DESCRIPTION-->", project.fm.description);
     var textContent = markdownit.renderer.render(project.tokens, {});
@@ -125,8 +135,9 @@ templateHtml = templateHtml.replace("<!-- ###GETSTARTED### -->", gettingStartedH
 templateHtml = templateHtml.replace("<!-- ###SERVERS### -->", serversHtml);
 templateHtml = templateHtml.replace("<!-- ###CLIENTS### -->", clientsHtml);
 templateHtml = templateHtml.replace("<!-- ###BOTS### -->", botsHtml);
-templateHtml = templateHtml.replace("<!-- ###SDKS### -->", botsHtml);
-templateHtml = templateHtml.replace("<!-- ###OTHERS### -->", botsHtml);
+templateHtml = templateHtml.replace("<!-- ###SDKS### -->", sdksHtml);
+templateHtml = templateHtml.replace("<!-- ###BRIDGES### -->", bridgesHtml);
+templateHtml = templateHtml.replace("<!-- ###OTHERS### -->", othersHtml);
 
 templateHtml = templateHtml.replace('<!--LANGUAGES-->', languagesList);
 templateHtml = templateHtml.replace('<!--LICENSES-->', licensesList);
