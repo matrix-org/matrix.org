@@ -21,5 +21,5 @@ bridges: "Gitter"
 &#10007; Read Receipts  
 &#10007; Typing notifications 
 
-When using [Riot on riot.im], you can enable Gitter integration per-room. Click
+When using [Riot on riot.im](https://riot.im/app/), you can enable Gitter integration per-room. Click
 the "Manage Integrations" (nine squares) button at the top of the page.

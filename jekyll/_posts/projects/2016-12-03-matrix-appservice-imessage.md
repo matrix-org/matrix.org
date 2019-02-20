@@ -15,8 +15,6 @@ bridges: "iMessage"
 
 This is a Matrix bridge for Apple iMessage. It connects your homeserver to Messages.app
 
-Requires a Mac with a functional
-Messages.app, already authenticated. Full setup instructions are provided at
-[matrix-puppet-imessage].
+Requires a Mac with a functional Messages.app, already authenticated.
 
 Find the source on [GitHub](https://github.com/kfatehi/matrix-appservice-imessage).
