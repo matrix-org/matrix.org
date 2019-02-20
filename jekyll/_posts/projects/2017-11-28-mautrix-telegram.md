@@ -2,6 +2,7 @@
 layout: projectimage
 title: mautrix-telegram
 categories: projects as
+thumbnail: /docs/projects/images/telegram-logo.svg
 description: A Matrix-Telegram hybrid puppeting/relaybot bridge
 author: Tulir
 maturity: Beta
