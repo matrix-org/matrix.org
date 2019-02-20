@@ -5,6 +5,14 @@ const { exec } = require('child_process');
 
 var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/docs/";
 
+process.stdout.write("Writing clients page...\t");
+var clients = require("./pretty-clients.js");
+var clientsHtml = clients.html();
+var clientsTemplate = fs.readFileSync(`template-clients.html`, 'utf-8');
+clientsTemplate = clientsTemplate.replace("<!--CLIENTSFULL-->", clientsHtml)
+fs.writeFileSync(`${newDocsPath}clients.html`, clientsTemplate);
+process.stdout.write("clients page writen\n");
+
 process.stdout.write("Writing FAQ...\t");
 var faq = require("./pretty-faq.js");
 fs.writeFileSync(`${newDocsPath}faq-out.html`, faq.html());
