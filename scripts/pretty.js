@@ -1,6 +1,7 @@
 #! /usr/local/bin/node
 
 const fs = require('fs');
+const { exec } = require('child_process');
 
 var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/docs/";
 
@@ -33,3 +34,5 @@ process.stdout.write("sdks writen\n");
 process.stdout.write("Writing bots...\t");
 var bots = require("./pretty-bots.js");
 process.stdout.write("bots writen\n");
+
+exec(`cp ${__dirname}/../jekyll/_posts/projects/images/* /Users/benp/projects/matrix.org-docs-2019/docs/projects/images`);
