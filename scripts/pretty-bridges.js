@@ -23,25 +23,25 @@ fs.writeFileSync(`${newDocsPath}bridges.html`, html());
 function html() {
 
     var cards = [];
-    cards.push(new Card("#telegram", "images/telegram-logo.svg", "Telegram", ""));
-    cards.push(new Card("#slack", "images/slack-logo.svg", "Slack", ""));
+    cards.push(new Card("#telegram", "/docs/projects/images/telegram-logo.svg", "Telegram", ""));
+    cards.push(new Card("#slack", "/docs/projects/images/slack-logo.svg", "Slack", ""));
     cards.push(new Card("#irc", "<pre>IRC</pre>", "IRC", ""));
-    cards.push(new Card("#discord", "images/discord-logo.svg", "Discord", ""));
-    cards.push(new Card("#whatsapp", "whatsapp-logo.png", "WhatsApp", ""));
-    cards.push(new Card("#gitter", "images/gitter-logo.svg", "Gitter", ""));
-    cards.push(new Card("#email", "images/email-icon.svg", "Email", ""));
-    cards.push(new Card("#sms", "images/sms-icon.svg", "SMS", ""));
-    cards.push(new Card("#imessage", "images/imessage-logo.jpg", "iMessage", ""));
-    cards.push(new Card("#hangouts", "images/hangouts-icon.svg", "Hangouts", ""));
-    cards.push(new Card("#facebook-messenger", "images/messenger-logo.svg", "Facebook Messenger", ""));
-    cards.push(new Card("#groupme", "images/groupme-icon.png", "GroupMe", ""));
-    cards.push(new Card("#skype", "images/skype-icon.svg", "Skype", ""));
-    cards.push(new Card("#mastodon", "images/mastodon-logo.svg", "Mastodon", ""));
-    cards.push(new Card("#rocket-chat", "images/rocketchat-logo.png", "Rocket Chat", ""));
+    cards.push(new Card("#discord", "/docs/projects/images/discord-logo.svg", "Discord", ""));
+    cards.push(new Card("#whatsapp", "/docs/projects/images/whatsapp-logo.png", "WhatsApp", ""));
+    cards.push(new Card("#gitter", "/docs/projects/images/gitter-logo.svg", "Gitter", ""));
+    cards.push(new Card("#email", "/docs/projects/images/email-icon.svg", "Email", ""));
+    cards.push(new Card("#sms", "/docs/projects/images/sms-icon.svg", "SMS", ""));
+    cards.push(new Card("#imessage", "/docs/projects/images/imessage-logo.jpg", "iMessage", ""));
+    cards.push(new Card("#hangouts", "/docs/projects/images/hangouts-icon.svg", "Hangouts", ""));
+    cards.push(new Card("#facebook-messenger", "/docs/projects/images/messenger-logo.svg", "Facebook Messenger", ""));
+    cards.push(new Card("#groupme", "/docs/projects/images/groupme-icon.png", "GroupMe", ""));
+    cards.push(new Card("#skype", "/docs/projects/images/skype-icon.svg", "Skype", ""));
+    cards.push(new Card("#mastodon", "/docs/projects/images/mastodon-logo.svg", "Mastodon", ""));
+    cards.push(new Card("#rocket-chat", "/docs/projects/images/rocketchat-logo.png", "Rocket Chat", ""));
 
     var bridgeIconsHtml = "";
     cards.forEach(card => {
-        bridgeIconsHtml += util.getCard(card, null, 3);
+        bridgeIconsHtml += util.getCard(card, null, 2);
     })
     bridgesTemplate = bridgesTemplate.replace("<!--BRIDGEICONS-->", bridgeIconsHtml);
 
