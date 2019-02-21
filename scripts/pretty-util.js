@@ -2,10 +2,11 @@ var exports = module.exports = {};
 
 function getCard(card, fm, bootstrap12ths) {
     if (! bootstrap12ths) bootstrap12ths = 4;
+    var imgElement = card.img ? `<a href="${card.url}"><img class="img-fluid" src="${card.img}" alt="screenshot" /></a>` : ``;
     return `
 <div class="col-md-${bootstrap12ths} col-12 mb-3">
     <div class="theme-card">
-        <a href="${card.url}"><img class="img-fluid" src="${card.img}" alt="screenshot" /></a>
+        ${imgElement}
         <div class="card-block">
             <h4 class="card-title">${card.title}</h4>
             <p class="card-text">${card.description}</p>
