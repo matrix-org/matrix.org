@@ -15,7 +15,7 @@ process.stdout.write("clients page writen\n");
 
 process.stdout.write("Writing FAQ...\t");
 var faq = require("./pretty-faq.js");
-fs.writeFileSync(`${newDocsPath}faq-out.html`, faq.html());
+fs.writeFileSync(`${newDocsPath}/guides/faq.html`, faq.html());
 process.stdout.write("FAQ writen\n");
 
 process.stdout.write("Writing index...\t");
