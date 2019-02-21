@@ -72,7 +72,7 @@ if __name__ == "__main__":
 
 Set your new application service running on port 5000 with:
 
-~~~
+~~~unix
 python app_service.py
 ~~~
 

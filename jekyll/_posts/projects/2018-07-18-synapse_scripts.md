@@ -26,7 +26,7 @@ This can improve performance significantly.
 ### Using this script
 This script should be run from the command line while synapse server is stopped.
 
-```
+```unix
 psql -Umatrix synapse < synapse_janitor.sql
 ```
 
@@ -41,7 +41,7 @@ worker enabled, if you do not use the synchrotron, just comment the block at the
 
 The startloop and the dumper are appropriate for use in crontab:
 
-```
+```unix
 * * * * * /home/matrix/synapse_scripts/synapse_startloop.sh 2>&1 >>/home/matrix/synapse_startloop.log
 0 3 * * * /home/matrix/synapse_scripts/synapse_dumper.sh 2>&1 >>/home/matrix/synapse_dumper.log
 ```
