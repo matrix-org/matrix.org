@@ -12,10 +12,7 @@ const md = MarkdownIt()
     .use(require('markdown-it-named-headings'))
     .use(require('@toycode/markdown-it-class'), mapping);
 
-
-process.chdir(__dirname + "/..");
-
-var guides = fs.readdirSync('jekyll/_posts/guides/');
+var guides = fs.readdirSync('../jekyll/_posts/guides/');
 guides = guides.filter(filename => {return filename.endsWith('.md')})
 var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/docs/";
 
@@ -24,7 +21,7 @@ var front_matter;
 var pages = {};
 
 guides.forEach(guide => {
-    var guideMd = fs.readFileSync('jekyll/_posts/guides/' + guide, 'utf-8');
+    var guideMd = fs.readFileSync('../jekyll/_posts/guides/' + guide, 'utf-8');
     var tokens = md.parse(guideMd, {});
     if (! front_matter.section) return;
     var title = {};
@@ -57,7 +54,7 @@ guides.forEach(guide => {
 Object.keys(pages).forEach(section => {
     
     pages[section].forEach(page => {
-        var templateHtml = fs.readFileSync(`${newDocsPath}template-documentation.html`, 'utf-8');
+        var templateHtml = fs.readFileSync(`template-documentation.html`, 'utf-8');
         templateHtml = templateHtml.replace("<!-- ###NAVIGATION### -->", generateNavigationHtml(page.title.id, section));
         templateHtml = templateHtml.replace("<!-- ###CONTENT### -->", md.renderer.render(page.tokens, {langPrefix: 'language-'}));
         templateHtml = templateHtml.replace(/<!-- ###TITLE### -->/g, page.title.content);
