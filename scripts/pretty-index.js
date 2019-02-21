@@ -13,7 +13,7 @@ function html() {
     cards.push(new Card("guides/how-can-i-get-involved.html", "", "Get Involved", ""));
     cards.push(new Card("guides/usage-of-the-js-sdk.html", "", "Start Making", ""));
     cards.push(new Card("guides/installing-synapse.html", "", "Install Synapse", ""));
-    cards.push(new Card("guides/faq-out.html", "", "FAQs", ""));
+    cards.push(new Card("guides/faq.html", "", "FAQs", ""));
     cards.push(new Card("try-matrix-now.html", "", "Try Matrix Now", ""));
     cards.push(new Card("guides/legal-docs-index.html", "", "Legal", ""));
     
