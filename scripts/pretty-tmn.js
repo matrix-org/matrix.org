@@ -68,7 +68,7 @@ function getProjectCard(fm, url, bootstrap12ths, filterable) {
     filterable = filterable ? "filterableProject" : "";
     var image = "";
     if (fm.thumbnail) {
-        image = `<a href="${url}" target="_blank"><img class="img-fluid" src="${fm.thumbnail}" alt="screenshot" /></a>`;
+        image = `<a href="${url}"><img class="img-fluid" src="${fm.thumbnail}" alt="screenshot" /></a>`;
     }
     return `
     <div class="col-md-${bootstrap12ths} col-12 mb-3 ${filterable}"
@@ -82,7 +82,7 @@ function getProjectCard(fm, url, bootstrap12ths, filterable) {
                 <h4 class="card-title">${fm.title}</h4>
                 <p class="card-text">${fm.description}</p>
             </div><!--//card-block-->
-            <a class="mask" href="${url}" target="_blank"><i class="icon fa fa-search-plus"></i></a>
+            <a class="mask" href="${url}"><i class="icon fa fa-search-plus"></i></a>
         </div><!--//theme-card-->
     </div>
     `;
