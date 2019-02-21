@@ -314,8 +314,6 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
 <br clear="all" />
 
-|
-
 ## Clients
 
 <ul class='projectlist'>
@@ -341,8 +339,6 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
   {% endfor %}
 </ul>
 
-|
-
 ## Servers
 
 <ul class='projectlist'>
@@ -364,8 +360,6 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
   {% endfor %}
 </ul>
 
-
-|
 
 ## Application Services
 
@@ -389,8 +383,6 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
  </ul>
 
-|
-
 ## Client SDKs
 
 <ul class='projectlist'>
@@ -413,8 +405,6 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
  </ul>
 
-|
-
 ## Bots
 
 <ul class='projectlist'>
@@ -436,8 +426,6 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
   {% endfor %}
 
  </ul>
-
-|
 
 ## Other
 

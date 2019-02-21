@@ -8,15 +8,9 @@ section: docs
 # How can I get involved?
 Matrix is an ecosystem consisting of several apps written by lots of people. We at Matrix.org have written one server and a few clients, and people in the community have also written several clients, servers, and Application Services. We are collecting [a list of all known Matrix-apps](https://matrix.org/blog/try-matrix-now/).
 
-|
-
 You have a few options when it comes to getting involved: if you just want to use Matrix, you can [register an account on a public server using a public webclient](#reg). If you have a virtual private server (VPS) or similar, you might want to [run a server and/or client yourself](#run). If you want to look under the hood, you can [checkout the code and modify it - or write your own client or server](#checkout). Or you can write an [Application Service](#as), for example a bridge to an existing ecosystem.
 
-|
-
 We very much welcome [contributions](https://github.com/matrix-org/synapse/blob/master/CONTRIBUTING.rst) to any of our projects, which you can find in our [github space](https://github.com/matrix-org/).
-
-|
 
 <a class="anchor" id="reg"></a>
 
@@ -44,11 +38,7 @@ Riot.im web client.
 
 One of the core features of Matrix is that anyone can run a homeserver and join the federated network on equal terms (there is no hierarchy). If you want to set up your own homeserver, please see the relevant docs of the server you want to run. If you want to run Matrix.org's reference homeserver, please consult the [readme of the Synapse project](https://github.com/matrix-org/synapse/blob/master/README.rst).
 
-|
-
 Note that Synapse comes with a bundled Matrix.org webclient - but you can tell it to use your [development checkout snapshot instead](https://github.com/matrix-org/matrix-angular-sdk#matrix-angular-sdk) (or to not run a webclient at all via the "web_client: false" config option).
-
-|
 
 <a class="anchor" id="checkout"></a>
 
@@ -56,11 +46,7 @@ Note that Synapse comes with a bundled Matrix.org webclient - but you can tell i
 
 As described above, you can clone our code and [run a server and/or client yourself](#run). Infact, all the code that we at Matrix.org write is available from [our github](http://github.com/matrix-org) - and other servers and clients may also be open sourced - see [our list of all known Matrix-apps](https://matrix.org/blog/try-matrix-now/).
 
-|
-
 You can also implement your own client or server - after all, Matrix is at its core "just" a specification of a protocol.
-
-|
 
 ### Write your own client:
 
@@ -70,8 +56,6 @@ calls are available to clients, and there is a [HOWTO
 guide](https://matrix.org/docs/guides/client-server.html) which provides an
 introduction to using the API along with some common operations. A quick
 step-by-step guide would include:
-
-|
 
 1. Get a user either by registering your user in an existing client or running the [new-user script](https://github.com/matrix-org/synapse/blob/master/scripts/register_new_matrix_user) if you are running your own Synapse homeserver.
 
@@ -132,8 +116,6 @@ step-by-step guide would include:
 We are still working on the server-server spec, so the best thing to do if you are interested in writing a server, is to come talk to us in [#matrix:matrix.org](https://matrix.to/#/#matrix:matrix.org).
 
 If you are interested in how federation works, please see the [Server-Server API spec](https://matrix.org/docs/spec/server_server/unstable.html).
-
-|
 
 <a class="anchor" id="as"></a>
 

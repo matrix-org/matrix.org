@@ -28,6 +28,4 @@ manual:
 * screen ./tiny-matrix-bot.py tiny-matrix-bot.cfg
 * scripts must have execute bit - chmod +x
 
-|
-
 Follow the progress and grab the code from [GitHub](https://github.com/4nd3r/tiny-matrix-bot/)!
