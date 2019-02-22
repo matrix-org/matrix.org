@@ -8,6 +8,7 @@ maturity: Alpha
 language: Ruby
 license: MIT
 repo: https://github.com/ananace/ruby-matrix-sdk
+room: "#ruby-matrix-sdk:kittenface.studio"
 featured: "TRUE"
 ---
 
