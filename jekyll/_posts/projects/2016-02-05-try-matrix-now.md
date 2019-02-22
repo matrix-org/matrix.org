@@ -232,12 +232,14 @@ To get started using Matrix, pick a client and join [#matrix:matrix.org]. You ca
       </a>
     </td>
     <td class='bigproject'>
-      <a href='./client/weechat.html' class='font18 bold'>
+      <a href='./client/weechat-matrix.html' class='font18 bold'>
         Weechat/Matrix
       </a><br />
-      If you like command line clients, try the Weechat plugin.<br /><br />
+      If you like command line clients, try this
+      Weechat Matrix protocol script written in python
+      <br /><br />
       <a href='./client/weechat.html'>
-        <img src='https://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-08-07-at-13.31.29-300x209.png' class='featured_screenshot'>
+        <img src='/docs/projects/images/weechat_logo_large.png' class='featured_screenshot'>
       </a>
     </td>
   </tr>
