@@ -55,7 +55,9 @@ Launch the Virtual Device, the open the Play Store and sign in. Now use the Play
 
 You will be asked to verify your phone number, use your number on another device to complete this step.
 
+<center>
 ![](/docs/projects/images/nexus5.png)
+</center>
 
 ## Setup mautrix-whatsapp bridge
 
@@ -65,6 +67,7 @@ Per the instructions at [mautrix-whatsapp/wiki], you must start a new chat with 
 
 mautrix-whatsapp operates by using the WhatsApp Web feature of WhatsApp - which means it uses a QR code that you must now scan on the device running WhatsApp - which in your case is the AVD. In order to scan the presented QR code, set your AVD camera to passthrough the camera device on your host machine - see the images below.
 
+
 ![](/docs/projects/images/camera1.png)
 ![](/docs/projects/images/camera2.png)
 
@@ -72,7 +75,11 @@ Once this is complete, you can type `sync`, to start bridging contacts, and `syn
 
 And that's it! You may need to take a little time to watch the sync happen, particularly if you have a very large number of chats on the WhatsApp side, but there is no further configuration needed.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/edSgP2dEZ1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Demo!
+
+<center>
+<iframe width="960" height="540" src="https://www.youtube.com/embed/edSgP2dEZ1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 
 [installing-synapse]: https://matrix.org/docs/guides/installing-synapse
 [mautrix-whatsapp]: https://github.com/tulir/mautrix-whatsapp
