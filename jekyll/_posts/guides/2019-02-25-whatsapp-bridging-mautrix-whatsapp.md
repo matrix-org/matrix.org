@@ -56,9 +56,7 @@ Launch the Virtual Device, the open the Play Store and sign in. Now use the Play
 You will be asked to verify your phone number, use your number on another device to complete this step.
 
 <center>
-
-![](/docs/projects/images/nexus5.png)
-
+<img src="/docs/projects/images/nexus5.png"/>
 </center>
 
 ## Setup mautrix-whatsapp bridge
