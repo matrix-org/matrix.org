@@ -14,7 +14,7 @@ const md = MarkdownIt()
 
 var guides = fs.readdirSync('../jekyll/_posts/guides/');
 guides = guides.filter(filename => {return filename.endsWith('.md')})
-var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/docs/";
+var newDocsPath = "../pretty-docs/";
 
 var front_matter;
 

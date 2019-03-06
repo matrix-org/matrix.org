@@ -5,7 +5,7 @@ process.chdir(__dirname);
 
 
 markdownWiki.loadPages("../jekyll/_posts/projects/");
-var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/docs/";
+var newDocsPath = "../pretty-docs/";
 var templateHtml = fs.readFileSync(`template-try-matrix-now.html`, 'utf-8');
 var templateHtmlProject = fs.readFileSync(`template-project.html`, 'utf-8');
 

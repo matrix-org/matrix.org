@@ -18,7 +18,7 @@ var wiki = markdownWiki.getWiki();
 
 var pages = wiki.pages.filter(p => p.name != "template" && p.fm.bridges);
 
-var newDocsPath = "/Users/benp/projects/matrix.org-docs-2019/docs/";
+var newDocsPath = "../pretty-docs/";
 
 function html() {
 

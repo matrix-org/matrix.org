@@ -1,0 +1,50 @@
+#guides-list .section-block table,
+#sdks-top-section .section-block table,
+#clients-section .section-block table {
+    width: 100%;
+}
+
+section img {
+    float: right;
+    max-width: 200px;
+}
+
+#bridges-top-section .theme-card {
+    border: initial;
+}
+
+#clients-section table tr td {
+    width: 6%
+}
+
+#clients-sectiontable tr td:nth-child(1) {
+    width: 18% !important;
+}
+
+.green {
+    color: #78A830;
+    font-weight: bold;
+     font-size: x-large;
+}
+.orange {
+    color: #F0A800;
+}
+.red {
+    color: #D84830;
+}
+small {
+    font-size: small;
+    font-weight: normal;
+}
+h2 {
+    padding-top: 10px;
+}
+
+.try-matrix-now-container img {
+    max-height: 200px;
+    float: initial;
+}
+
+.documentation-container img {
+    max-width: 100%;
+}
