@@ -1,7 +1,7 @@
 ---
 home: https://github.com/nim65s/matrix-webhook
 language: Python
-layout: project
+layout: projectimage
 license: https://spdx.org/licenses/BSD-2-Clause.html
 title: Matrix Webhook
 categories: projects bot
