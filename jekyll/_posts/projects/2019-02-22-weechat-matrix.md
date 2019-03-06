@@ -2,14 +2,14 @@
 layout: projectimage
 title: weechat-matrix
 categories: projects client
-thumbnail: /docs/projects/images/weechat_logo_large.png
+thumbnail: https://raw.githubusercontent.com/benparsons/matrix-notes/master/twim/weechat-matrix.png
 description: Weechat Matrix protocol script written in python
 author: poljar
 maturity: Beta
 language: Python
 license: 
 repo: https://github.com/poljar/weechat-matrix
-screenshot: /docs/projects/images/weechat_logo_large.png
+screenshot: https://raw.githubusercontent.com/benparsons/matrix-notes/master/twim/weechat-matrix.png
 featured: "TRUE"
 ---
 
