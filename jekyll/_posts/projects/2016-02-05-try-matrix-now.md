@@ -69,7 +69,7 @@ jQuery(document).ready(($) => {
 
   /* Populate languages list */
   //var languages =  "{{ languages | uniq | join: "," }}".split(',');
-  var languages =  ",C++/Qt/QML,Shell,JavaScript,Python,Kotlin,C++,Java,Perl,Go,Lisp,Lua,TypeScript,C#,Haxe,Rust,Swift,C++/Qt,PowerShell,Shell/Python,Playbook,Elixir,C,PHP,C#/Python,C++/QML".split(',');
+  var languages =  ",C++/Qt/QML,Shell,JavaScript,Python,Kotlin,C++,Java,Perl,Go,Lisp,Lua,TypeScript,C#,Haxe,Rust,Swift,C++/Qt,PowerShell,Shell/Python,Playbook,Elixir,C,PHP,C#/Python,C++/QML,Objective-C".split(',');
   if (languages.indexOf("Unknown") === -1) languages.push("Unknown");
   languages.forEach((language => {
     if (language.length === 0) return;
@@ -94,7 +94,7 @@ jQuery(document).ready(($) => {
 
   /* Populate licenses list */
   //var licenses =  "{{ licenses | uniq | join: "," }}".split(',');
-  var licenses =  ",GPL3,AGPL3,Apache,Artistic2,MIT,CC0 1.0,Unknown,N/A,ISC,BSD,LGPL2.1".split(',');
+  var licenses =  ",AGPL-3.0-only,MIT,GPL-3.0-only,Apache,Apache-2.0,GPL3,LGPL,AGPL3,Unlicense,GNU GPL v3,BSD,EUPL,N/A,Artistic2,CC0-1.0,ISC,MPL2,LGPL-2.1-only,GPL-1.0-or-later,Unknown".split(',');
   if (licenses.indexOf("Unknown") === -1) licenses.push("Unknown");
   licenses.forEach((license => {
     if (license.length === 0) return;
@@ -199,6 +199,7 @@ jQuery(document).ready(($) => {
       $(b).css({opacity:0.5, height:"120px"})
     }
   });
+  checkVisibility($('li.project').toArray());
 });
 </script>
 
@@ -232,12 +233,14 @@ To get started using Matrix, pick a client and join [#matrix:matrix.org]. You ca
       </a>
     </td>
     <td class='bigproject'>
-      <a href='./client/weechat.html' class='font18 bold'>
+      <a href='./client/weechat-matrix.html' class='font18 bold'>
         Weechat/Matrix
       </a><br />
-      If you like command line clients, try the Weechat plugin.<br /><br />
-      <a href='./client/weechat.html'>
-        <img src='https://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-08-07-at-13.31.29-300x209.png' class='featured_screenshot'>
+      If you like command line clients, try this
+      Weechat Matrix protocol script written in python
+      <br /><br />
+      <a href='./client/weechat-matrix.html'>
+        <img src='https://raw.githubusercontent.com/benparsons/matrix-notes/master/twim/weechat-matrix.png' class='featured_screenshot'>
       </a>
     </td>
   </tr>

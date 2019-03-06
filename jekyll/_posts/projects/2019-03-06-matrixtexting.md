@@ -1,0 +1,17 @@
+---
+layout: projectimage
+title: MatrixTexting
+categories: projects bridge
+description: Android App that will bridge SMS/MMS messages
+author: untidylamp
+maturity: Alpha
+language: Java
+license: 
+repo: https://gitlab.com/untidylamp/MatrixTexting
+---
+
+This is an Android App that will bridge SMS/MMS messages between your cellphone and a matrix server.
+The app will watch for incoming messages and forward them to a matrix room based on the cellphone
+number. If there is no existing room the app will create a new room and invite the user to a
+conversation. You may also create a room, invite the bot, and set the topic to the cellphone number
+to start a new conversation.
