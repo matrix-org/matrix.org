@@ -43,4 +43,4 @@ process.stdout.write("Writing bots...\t");
 var bots = require("./pretty-bots.js");
 process.stdout.write("bots writen\n");
 
-exec(`cp ${__dirname}/../jekyll/_posts/projects/images/* ${newDocsPath}docs/projects/images`);
+exec(`cp ${__dirname}/../jekyll/_posts/projects/images/* ${newDocsPath}projects/images`);
