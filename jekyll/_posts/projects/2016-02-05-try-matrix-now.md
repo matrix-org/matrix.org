@@ -239,7 +239,7 @@ To get started using Matrix, pick a client and join [#matrix:matrix.org]. You ca
       Weechat Matrix protocol script written in python
       <br /><br />
       <a href='./client/weechat-matrix.html'>
-        <img src='/docs/projects/images/weechat_logo_large.png' class='featured_screenshot'>
+        <img src='https://raw.githubusercontent.com/benparsons/matrix-notes/master/twim/weechat-matrix.png' class='featured_screenshot'>
       </a>
     </td>
   </tr>
