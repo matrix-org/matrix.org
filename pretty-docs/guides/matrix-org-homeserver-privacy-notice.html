@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css"> 
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="../assets/css/newdocs.css">
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1>
+                        <img src="../assets/images/matrix logo.png" style="width: 120px;" />
+                        <span class="text-bold">Docs</span>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
+                    <li class="breadcrumb-item active">Matrix.org Homeserver Privacy Notice</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container documentation-container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title">Matrix.org Homeserver Privacy Notice</h1>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            
+<p>&lt;link href=&quot;/docs/css/faq.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;</p>
+<section class="doc-section">
+<h1 id="matrix-org-homeserver-privacy-notice">Matrix.org Homeserver Privacy Notice</h1>
+<p>Please read this document carefully before accessing or using this service!</p>
+<section class="doc-section">
+<h2 id="1-introduction">1. Introduction</h2>
+<section class="doc-section">
+<h3 id="1-1-english-not-legalese">1.1 English, Not Legalese</h3>
+<p>Most Terms of Use and Privacy Policy documents are unreadable. They are written by lawyers and for lawyers, and in our opinion are not very effective.</p>
+<p>Data privacy is important, and we want you to understand the issues involved. For that reason we decided to use plain English instead as much as possible, to make our terms as clear as possible. Some sections still have room for improvement - we plan to tackle these over time.</p>
+<p>When you read ‘the matrix.org homeserver’ or ‘the Service’ below, it refers to the services made available at <strong>matrix.org</strong> which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.</p>
+<p>Where you read <em>New Vector</em>, <em>New Vector Ltd.</em> or <em>we <em>or</em> us</em> below, it refers to the company we created in July 2017 to hire the Matrix core team and support Matrix’s development and so run the matrix.org homeserver: New Vector Ltd., and its French subsidiary: New Vector SARL and their agents. <strong>This agreement does not apply to Matrix servers run by anyone else - Matrix is an open network like the Web and this agreement only applies to the server (matrix.org) provided by New Vector Ltd.</strong></p>
+<p>If this agreement is not acceptable, please use a Matrix server provided by someone else!</p>
+<p>New Vector Ltd. is the Data Controller for the Service. We can be contacted as per the details below:</p>
+<p>Email: <a href="mailto:support@matrix.org">support@matrix.org</a></p>
+<p>Postal address:</p>
+<p>10 Queen Street Place</p>
+<p>London</p>
+<p>United Kingdom</p>
+<p>EC4R 1AG</p>
+<p>Should you have other questions or concerns about this document, please send us an email at <a href="mailto:support@matrix.org">support@matrix.org</a>.</p>
+</section>
+<section class="doc-section">
+<h3 id="1-2-using-the-service-means-accepting-these-terms">1.2 Using The Service Means Accepting These Terms</h3>
+<p>By accessing or using the Service in any way, whether you have created a Matrix account on the matrix.org homeserver, or whether you are accessing content federated from the matrix.org homeserver to another Matrix homeserver, or are just browsing rooms as an unauthenticated guest, you agree to and are bound by the terms and conditions written in this document.</p>
+<p>If you do not agree to all of the terms and conditions contained in this document, please use a Matrix server provided by someone else and refrain from accessing content federated from this server.</p>
+</section>
+<section class="doc-section">
+<h3 id="1-3-this-is-a-living-document">1.3 This Is a Living Document</h3>
+<p>This is a living document. With your help, we want to make it the best in the industry.</p>
+<p>If you read something that rubs you the wrong way, or if you think of something that should be added, please get in touch! We’re all ears! Email support@matrix.org and we’ll chat.</p>
+<p>We don’t amend this document for any specific users or use case, but if your proposed changes apply to all of our users, we’ll be happy to update it for everyone. Scroll to the bottom to see the history so far.</p>
+<p>We will likely improve this document over time. By continuing to use the Service, you will implicitly accept the changes we make.</p>
+<p>Your access and use of the Service is always subject to the most current version of this document.</p>
+</section>
+</section>
+<section class="doc-section">
+<h2 id="2-access-to-your-data-privacy-policy">2. Access to Your Data / Privacy Policy</h2>
+<section class="doc-section">
+<h3 id="2-1-what-is-the-legal-basis-for-processing-my-data-and-how-does-this-affect-my-rights-under-gdpr-general-data-protection-regulation">2.1 What is the legal basis for processing my data and how does this affect my rights under GDPR (General Data Protection Regulation)?</h3>
+<section class="doc-section">
+<h4 id="2-1-1-legal-basis-for-processing">2.1.1 Legal Basis for Processing</h4>
+<p>New Vector processes your data under <em><a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/legitimate-interests/when-can-we-rely-on-legitimate-interests/">Legitimate Interest</a></em>. This means that we process your data only as necessary to deliver the Service, and in a manner that you understand and expect.</p>
+<p>The <em>Legitimate Interest</em> of our Service is the provision of decentralised, openly-federated and (optionally) end-to-end encrypted communication services. The processing of user data we undertake is necessary to provide the Service. The nature of the Service and its implementation results in some  caveats concerning this processing, particularly in terms of  GDPR Article 17 <em>Right to Erasure (Right to be Forgotten)</em>. We believe these caveats (discussed in the section below in detail) are in line with the broader societal interests served by providing the Service.</p>
+<p>In situations where the interests of the individual appear to be in conflict with the broader societal interests, we will seek to reconcile those differences guided by our policy.</p>
+</section>
+<section class="doc-section">
+<h4 id="2-1-2-right-to-erasure">2.1.2 Right to Erasure</h4>
+<p>You can request that we forget your copy of message and files by instructing us to deactivate your account (using a matrix client such as <a href="https://riot.im/app">https://riot.im/app</a>) and selecting the option instructing us to forget your messages. What happens next depends on who else had access to the messages and files you had shared.</p>
+<p>Any messages or files that were only accessible by your account will be deleted from our servers within 30 days.</p>
+<p>Where you shared messages or files with another registered Matrix user, that user will still have access to their copy of those messages or files. Apart from state events (see below), these messages and files will <em>not</em> be shared with any unregistered or new users who view the room after we have processed your request to be forgotten.</p>
+<p>State events are processed differently to non-state events. State events are used by the Service to record, amongst other things, your membership in a room, the configuration of room settings, your changing of another user’s power level and your banning a user from a room. Were we to erase these state events from a room entirely, it would be very damaging to other users’ experience of the room, causing banned users to become unbanned, revoking legitimate administrator privileges, etc. We therefore share state events sent by your account with all non-essential data removed (‘redacted’), even after we have processed your request to be forgotten. This means that your username will continue to be publicly associated with rooms in which you have participated, even after we have processed your request to be forgotten. We are actively <a href="https://matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix/#mxid_erasure">working on a solution to </a><a href="https://matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix/#mxid_erasure">work around</a><a href="https://matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix/#mxid_erasure"> this restriction</a> and allow you to be fully forgotten while maintaining a high quality experience for other users. If this is not acceptable to you, please do not use the Service.</p>
+</section>
+<section class="doc-section">
+<h4 id="2-1-3-data-portability">2.1.3 Data Portability</h4>
+<p>Under GDPR you have a right to request a copy of your data in a commonly-accepted format. If you would like a copy of your data, please send a request over Matrix to <a href="https://matrix.to/#/@gdpr:matrix.org">@gdpr:matrix.org</a>. In the future we will provide a better interface for this!</p>
+</section>
+<section class="doc-section">
+<h4 id="2-1-4-your-rights-as-data-subject">2.1.4 Your Rights as Data Subject</h4>
+<p>You have rights in relation to the personal data we hold about you. Some of these only apply in certain circumstances. Some of these rights are explored in more detail elsewhere in this document. For completeness, your rights under GDPR are:</p>
+<ol>
+<li>
+<p>The right to be informed</p>
+</li>
+<li>
+<p>The right of access</p>
+</li>
+<li>
+<p>The right to rectification</p>
+</li>
+<li>
+<p>The right to erasure</p>
+</li>
+<li>
+<p>The right to restrict processing</p>
+</li>
+<li>
+<p>The right to data portability</p>
+</li>
+<li>
+<p>The right to object</p>
+</li>
+<li>
+<p>Rights in relation to automated decision making and profiling.</p>
+</li>
+</ol>
+<p>For more details about these rights, please see <a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/">the guidance provided by the ICO</a>. If you have any questions or are unsure how to exercise your rights, please contact us at <a href="mailto:support@matrix.org">support@matrix.org</a>.</p>
+</section>
+</section>
+<section class="doc-section">
+<h3 id="2-2-what-information-do-you-collect-about-me-and-why">2.2 What Information Do You Collect About Me and Why?</h3>
+<p><strong>The information we collect is purely for the purpose of providing your communication service via Matrix. We do <strong><strong>not</strong></strong> profile users or their data on the Service.</strong></p>
+<p>Be aware that while we do not profile users on the Service, Matrix clients may gather usage data - for instance Riot.im (the Matrix client provided by New Vector Ltd) optionally gathers anonymised opt-in usage data in order to improve the app.</p>
+<section class="doc-section">
+<h4 id="2-2-1-information-you-provide-to-us">2.2.1 Information you provide to us:</h4>
+<p>We collect information about you when you input it into the Service or otherwise provide it directly to us.</p>
+<section class="doc-section">
+<h5 id="account-and-profile-information">Account and Profile Information</h5>
+<p>We collect information about you when you register for an account. This information is kept to a minimum on purpose, and is restricted to:</p>
+<ul>
+<li>
+<p>Username</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Display Name (if you choose to provide one)</p>
+</li>
+<li>
+<p>Your email address (if you choose to provide it)</p>
+</li>
+<li>
+<p>Your verified telephone number (if you choose to provide it)</p>
+</li>
+</ul>
+<p>Your username and password is used to authenticate your access to the Service and to uniquely identify you within the Service.</p>
+<p>Your email address and/or telephone number, if you choose to provide them, are used so that other users can look up your Matrix ID from these identifiers. We will also use your email address to let you reset your password if you forget it, and to send you notifications about missed messages from users trying to contact you on Matrix if you enable the option. We may also send you infrequent urgent messages about platform updates.</p>
+</section>
+<section class="doc-section">
+<h5 id="content-you-provide-through-using-the-service">Content you provide through using the Service</h5>
+<p>We store and distribute the messages and files you share using the Service (and across the wider Matrix ecosystem via federation) as described by the Matrix protocol and according to the access rules configured within the system. <strong>Storing and sharing this content is the reason the Service exists.</strong></p>
+<p>This content includes any information about yourself that you choose to share.</p>
+</section>
+</section>
+<section class="doc-section">
+<h4 id="2-2-2-information-we-collect-automatically-as-you-use-the-service">2.2.2 Information we collect automatically as you use the service:</h4>
+<section class="doc-section">
+<h5 id="device-and-connection-information">Device and Connection Information</h5>
+<p>Each device you use to access the Service is allocated a (user-configurable) identifier. When you access the Service, we record the device identifier, the IP address it used to connect, user agent, and the time at which it last connected to the service.</p>
+<p>This information is gathered to help you to manage your devices - you can view and manage the list of devices by connecting to the Service with a Matrix client such as <a href="https://riot.im/app">https://riot.im/app</a>.</p>
+<p>Currently, we log the IP addresses of everyone who accesses the Service. This data is used in order to mitigate abuse, debug operational issues, and monitor traffic patterns. Our logs are kept for not longer than 180 days. Once Matrix is out of beta we will consider implementing log minimisation.</p>
+</section>
+</section>
+</section>
+<section class="doc-section">
+<h3 id="2-3-what-information-is-shared-with-third-parties-and-why">2.3 What Information is Shared With Third Parties and Why?</h3>
+<section class="doc-section">
+<h4 id="2-3-1-sharing-data-with-connected-services">2.3.1 Sharing Data with Connected Services</h4>
+<p>The matrix.org homeserver is a <em>decentralised</em> and <em>open</em> service. This means that, to support communication between users on different homeservers or different messaging platforms, your username, display name and messages and files are sometimes shared with other services that are connected with the matrix.org homeserver.</p>
+<section class="doc-section">
+<h5 id="federation">Federation</h5>
+<p>Matrix homeservers share user data with the wider ecosystem over federation.</p>
+<ul>
+<li>
+<p>When you send messages or files in a room, a copy of the data is sent to all participants in the room. If these participants are on remote homeservers, your username, display name, messages and files may be replicated across each participating homeserver.</p>
+</li>
+<li>
+<p>We will forget your copy of your data upon your request. We will also forward your request to be forgotten onto federated homeservers. However - these homeservers are outside our span of control, so we cannot guarantee they will forget your data.</p>
+</li>
+<li>
+<p>Federated homeservers can be located anywhere in the world, and are subject to local laws and regulations.</p>
+</li>
+</ul>
+<p>Access control settings are shared between homeservers, as well as any requests to remove messages by &quot;redactions&quot;, or remove personal data under GDPR Article 17 <em>Right to Erasure (Right to be Forgotten)</em>. Federated homeservers and Matrix clients which respect the Matrix protocol are asked to honour these controls and redaction/erasure requests, but other federated homeservers are outside of the span of control of New Vector Ltd., and we cannot guarantee how this data will be processed. Federated homeservers can also be located in any territory, and will be subject to the local regulations of that territory. We recommend the use of end-to-end encryption to protect your message and file data over federation, and in future <a href="https://github.com/vector-im/riot-web/issues/6779">intend to enable end-to-end encryption by default</a>. If the way in which data is shared is not acceptable to you, please use a different server or service.</p>
+</section>
+<section class="doc-section">
+<h5 id="bridging">Bridging</h5>
+<p>Some Matrix rooms are bridged to third-party services, such as IRC networks, twitter or email. When a room has been bridged, your username, display name, messages and file transfers may be duplicated on the bridged service where supported.</p>
+<ul>
+<li>
+<p>It may not be technically possible to support your management of your data once it has been copied onto a bridged service.</p>
+</li>
+<li>
+<p>Bridged services can be located anywhere in the world, and are subject to local laws and regulations.</p>
+</li>
+</ul>
+<p>Access control settings, requests to remove messages by &quot;redactions&quot; or remove personal data under GDPR Article 17 <em>Right to Erasure (Right to be Forgotten)</em> are shared to bridging services, which are expected to honour them to the best of their ability. Be aware that not all bridged networks or bridges support the necessary technical capabilities to limit, remove or erase messages. If this is not acceptable to you, please do not use bridged rooms.</p>
+</section>
+<section class="doc-section">
+<h5 id="integration-services-bots-and-widgets">Integration Services (Bots and Widgets)</h5>
+<p>The matrix.org homeserver provides a range of integrations in the form of Widgets (miniature web applications accessed as part of a Matrix Client) and Bots (automated participants in rooms). Bots and Widgets currently have access to all the messages and files in any room in which they participate, although we are adding a more sophisticated access control system.</p>
+</section>
+</section>
+</section>
+<section class="doc-section">
+<h3 id="2-4-sharing-data-in-compliance-with-enforcement-requests-and-applicable-laws-enforcement-of-our-rights">2.4 Sharing Data in Compliance with Enforcement Requests and Applicable Laws; Enforcement of Our Rights</h3>
+<p>In exceptional circumstances, we may share information about you with a third party if we believe that sharing is reasonably necessary to</p>
+<p>(a) comply with any applicable law, regulation, legal process or governmental request,</p>
+<p>(b) protect the security or integrity of our products and services (e.g. for a security audit),</p>
+<p>(c) protect New Vector Ltd. and our users from harm or illegal activities, or</p>
+<p>(d) respond to an emergency which we believe in good faith requires us to disclose information to assist in preventing the serious bodily harm of any person.</p>
+</section>
+<section class="doc-section">
+<h3 id="2-5-how-do-you-handle-passwords">2.5 How Do You Handle Passwords?</h3>
+<p>We never store password data in plain text; instead they are stored hashed (with at least 12 rounds of bcrypt, including both a salt and a server-side pepper secret). Passwords sent to the server are encrypted using SSL.</p>
+<p>It is your sole responsibility to keep your user name, password and other sensitive information confidential. Actions taken using your credentials shall be deemed to be actions taken by you, with all consequences including service termination, civil and criminal penalties.</p>
+<p>If you become aware of any unauthorized use of your account or any other breach of security, you must notify New Vector Ltd. immediately by sending an email to <a href="mailto:security@matrix.org">security@matrix.org</a>. Suspicious devices can be deleted using the User Settings management tools in a Matrix client such as <a href="https://riot.im/app">https://riot.im/app</a>, and users should manage good password hygiene (e.g. using a password manager) and change their password if they believe their account is compromised.</p>
+<p>If you forget your password (and you have registered an email address) you can use the password reset facility to reset it.</p>
+<p>You can manage your account by using a Matrix client such as <a href="https://riot.im/app">https://riot.im/app</a>.</p>
+<p>We will never change a password for you.</p>
+</section>
+<section class="doc-section">
+<h3 id="2-6-our-commitment-to-childrens-privacy">2.6 Our Commitment to Children’s Privacy</h3>
+<p>We never knowingly collect or maintain information in the Service from those we know are under 16, and no part of the Service is structured to attract anyone under 16. If you are under 16, please do not use the Service.</p>
+</section>
+<section class="doc-section">
+<h3 id="2-7-how-can-i-access-or-correct-my-information">2.7 How Can I Access or Correct My Information?</h3>
+<p>You can access all your personally identifiable information that we collect by using any compatible Matrix client (such as <a href="https://riot.im/app">https://riot.im/app</a>) and managing your User Settings. You can download a copy of all your data as per section 2.1.3.</p>
+</section>
+<section class="doc-section">
+<h3 id="2-8-who-can-see-my-messages-and-files">2.8 Who Can See My Messages and Files?</h3>
+<p>In unencrypted and encrypted rooms, users connecting to the matrix.org homeserver (directly or over federation) will be able to see messages and files according to the access permissions configuration of the relevant room. This data is stored in the format it was received on our servers, and can be viewed by New Vector engineers (employees and contractors) under the conditions outlined below.</p>
+<p>In encrypted rooms, the data is stored in our databases but the encryption keys are stored only on your devices or by yourself. In future we may allow users to optionally backup an encrypted copy of their keys on the Service to aid recovery if they lose all their keys and devices. This key backup would be encrypted by a recovery key that only the user has access to. This means that nobody, even New Vector engineers (employees and contractors) can see your message content in our database, and if you lose access to your encryption keys you lose access to your messages forever.</p>
+<p>We use HTTPS to transfer all data. End-to-end encrypted messaging data is stored encrypted using AES-256, using message keys generated using the <a href="https://matrix.org/blog/2016/11/21/matrixs-olm-end-to-end-encryption-security-assessment-released-and-implemented-cross-platform-on-riot-at-last/">Olm and Megolm cryptographic ratchets</a>.</p>
+</section>
+<section class="doc-section">
+<h3 id="2-9-what-are-the-guidelines-new-vector-follows-when-accessing-my-data">2.9 What Are the Guidelines New Vector Follows When Accessing My Data?</h3>
+<ul>
+<li>
+<p>We restrict who at New Vector Ltd. (employees and contractors) can access user data to roles which require access in order to maintain the health of the Service.</p>
+</li>
+<li>
+<p>We never share what we see with other users or the general public.</p>
+</li>
+</ul>
+</section>
+<section class="doc-section">
+<h3 id="2-10-who-else-has-access-to-my-data">2.10 Who Else Has Access to My Data?</h3>
+<p>We host the majority of the Service in <a href="https://www.upcloud.com/">UpCloud</a> data centres. Here’s <a href="https://www.upcloud.com/blog/updated-terms-privacy-policy-gdpr/">UpCloud’s privacy policy</a>. UpCloud controls physical access to their locations.</p>
+<p>We store some files shared through the Service on Amazon Web Services (AWS). Amazon employees have access to this data. Here’s <a href="http://aws.amazon.com/privacy/">Amazon’s privacy policy</a>. Amazon controls physical access to their locations.</p>
+<p>We use Cloudflare to mitigate the risk of DDoS attacks. Here’s <a href="https://www.cloudflare.com/privacypolicy/">CloudFlare’s privacy policy</a>.</p>
+<p>Physical access to our offices and locations use typical physical access restrictions.</p>
+<p>We use secure private keys when accessing servers via SSH, and protect our AWS console passwords locally with a password management tool.</p>
+<p>We log application data (username, user IP and user agent). We keep logs for no longer than 180 days.</p>
+</section>
+<section class="doc-section">
+<h3 id="2-11-what-happens-if-new-vector-is-sold">2.11 What happens if New Vector is sold?</h3>
+<p>In the event that we sell or buy any business or assets, we may disclose your personal data to the prospective seller or buyer of such business or assets.</p>
+<p>If we or substantially all of our assets are acquired by a third party, personal data held by us about our users will be one of the transferred assets.</p>
+</section>
+<section class="doc-section">
+<h3 id="2-12-how-is-my-data-protected-from-another-users-data">2.12 How Is My Data Protected from Another User’s Data?</h3>
+<p>All of our users’ data for the Service currently resides in the same database cluster. We use software best practices to guarantee that only people who you designate as viewers of your data can access it. In other words, we segment our user data via software. We do our best and are very confident we’re doing a good job at it, but, like every other service that hosts their user data on the same database, we cannot guarantee that it is immune to a sophisticated attack.</p>
+</section>
+<section class="doc-section">
+<h3 id="2-13-what-should-i-do-if-i-find-a-security-vulnerability-in-the-service">2.13 What Should I Do If I Find a Security Vulnerability in the Service?</h3>
+<p>If you have discovered a security concern, please email us at <a href="mailto:security@matrix.org">security@matrix.org</a>. We’ll work with you to make sure that we understand the scope of the issue, and that we fully address your concern. We consider correspondence sent to <a href="mailto:security@matrix.org">security@matrix.org</a> our highest priority, and work to address any issues that arise as quickly as possible.</p>
+<p>Please act in good faith towards our users’ privacy and data during your disclosure. White hat security researchers are always appreciated.</p>
+</section>
+</section>
+<section class="doc-section">
+<h2 id="3-making-a-complaint">3. Making a Complaint</h2>
+<p>We try to meet the highest standards when collecting and using personal information. For this reason, we take any complaints we receive about this very seriously. We encourage people to bring it to our attention at <a href="mailto:support@matrix.org">support@matrix.org</a> if they think that our collection or use of information is unfair, misleading or inappropriate. We would also welcome any suggestions for improving our procedures.</p>
+<p>If you want to make a complaint about the way we have processed your personal information to the supervisory authority, you can contact the ICO (the statutory body which oversees data protection law) at <a href="https://www.ico.org.uk/concerns">https://www.ico.org.uk/concerns</a>.</p>
+</section>
+<section class="doc-section">
+<h2 id="4-document-history">4. Document History</h2>
+<ul>
+<li>2018, March 28: created.</li>
+</ul>
+<p><strong>A note to other startups:</strong> this document was heavily inspired by <a href="https://docs.balsamiq.com/mybalsamiq/tos/">Balsamiq’s plain English ToS document</a>. We were impressed by their championing of plain English, and wanted to reproduce that as much as possible in our own legal documentation. Feel free to draw similar inspiration from this document, though be sure to get any documents you produce checked over by a lawyer. Good luck!</p>
+</section>
+</section>
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a data-toggle="collapse" href="#matrix-code-of-conduct" role="button" aria-expanded="false" aria-controls="matrix-code-of-conduct" class="">
+	<h4>Matrix Code of Conduct</h4>
+</a>
+<div id="matrix-code-of-conduct" class="collapse">
+	<a class="nav-link" href="matrix-code-of-conduct.html">Matrix Code of Conduct</a>
+	<a class="nav-link" href="matrix-code-of-conduct.html#definitions">Definitions</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="matrix-code-of-conduct.html#diversity-statement">Diversity Statement</a>
+	<a class="nav-link" href="matrix-code-of-conduct.html#reporting-issues">Reporting Issues</a>
+	<a class="nav-link" href="matrix-code-of-conduct.html#attribution-amp-acknowledgements">Attribution & Acknowledgements</a>
+</div>
+<a data-toggle="collapse" href="#matrix-org-copyright-notice" role="button" aria-expanded="false" aria-controls="matrix-org-copyright-notice" class="">
+	<h4>Matrix.org Copyright Notice</h4>
+</a>
+<div id="matrix-org-copyright-notice" class="collapse">
+	<a class="nav-link" href="matrix-org-copyright-notice.html">Matrix.org Copyright Notice</a>
+	<a class="nav-link" href="matrix-org-copyright-notice.html#reporting-claims-of-copyright-infringement">Reporting Claims of Copyright Infringement</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="matrix-org-copyright-notice.html#counter-notification-procedures">Counter-notification procedures</a>
+	<a class="nav-link" href="matrix-org-copyright-notice.html#repeat-infringers">Repeat infringers</a>
+</div>
+<a data-toggle="collapse" href="#matrix-org-policy-for-exceptional-exercising-of-right-to-erasure-on-state-events" role="button" aria-expanded="false" aria-controls="matrix-org-policy-for-exceptional-exercising-of-right-to-erasure-on-state-events" class="">
+	<h4>Matrix.org Policy for Exceptional Exercising of Right To Erasure on State Events</h4>
+</a>
+<div id="matrix-org-policy-for-exceptional-exercising-of-right-to-erasure-on-state-events" class="collapse">
+	<a class="nav-link" href="matrix-org-policy-for-exceptional-exercising-of-right-to-erasure-on-state-events.html">Matrix.org Policy for Exceptional Exercising of Right To Erasure on State Events</a>
+	<a class="nav-link" href="matrix-org-policy-for-exceptional-exercising-of-right-to-erasure-on-state-events.html#1-introduction">1. Introduction</a>
+	<a class="nav-link" href="matrix-org-policy-for-exceptional-exercising-of-right-to-erasure-on-state-events.html#2-how-we-decide">2. How we decide</a>
+	<a class="nav-link" href="matrix-org-policy-for-exceptional-exercising-of-right-to-erasure-on-state-events.html#3-contacting-us">3. Contacting Us</a>
+</div>
+<a data-toggle="collapse" href="#matrix-org-homeserver-privacy-notice" role="button" aria-expanded="false" aria-controls="matrix-org-homeserver-privacy-notice" class="selectedPage">
+	<h4>Matrix.org Homeserver Privacy Notice</h4>
+</a>
+<div id="matrix-org-homeserver-privacy-notice" class="collapse show selectedPage">
+	<a class="nav-link scrollto" href="">Matrix.org Homeserver Privacy Notice</a>
+	<a class="nav-link scrollto" href="#1-introduction">1. Introduction</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link scrollto" href="#1-1-english-not-legalese">1.1 English, Not Legalese</a>
+	<a class="nav-link scrollto" href="#1-2-using-the-service-means-accepting-these-terms">1.2 Using The Service Means Accepting These Terms</a>
+	<a class="nav-link scrollto" href="#1-3-this-is-a-living-document">1.3 This Is a Living Document</a>
+</nav>
+	<a class="nav-link scrollto" href="#2-access-to-your-data-privacy-policy">2. Access to Your Data / Privacy Policy</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link scrollto" href="#2-1-what-is-the-legal-basis-for-processing-my-data-and-how-does-this-affect-my-rights-under-gdpr-general-data-protection-regulation">2.1 What is the legal basis for processing my data and how does this affect my rights under GDPR (General Data Protection Regulation)?</a>
+	<a class="nav-link scrollto" href="#2-1-1-legal-basis-for-processing">2.1.1 Legal Basis for Processing</a>
+	<a class="nav-link scrollto" href="#2-1-2-right-to-erasure">2.1.2 Right to Erasure</a>
+	<a class="nav-link scrollto" href="#2-1-3-data-portability">2.1.3 Data Portability</a>
+	<a class="nav-link scrollto" href="#2-1-4-your-rights-as-data-subject">2.1.4 Your Rights as Data Subject</a>
+	<a class="nav-link scrollto" href="#2-2-what-information-do-you-collect-about-me-and-why">2.2 What Information Do You Collect About Me and Why?</a>
+	<a class="nav-link scrollto" href="#2-2-1-information-you-provide-to-us">2.2.1 Information you provide to us:</a>
+	<a class="nav-link scrollto" href="#account-and-profile-information">Account and Profile Information</a>
+	<a class="nav-link scrollto" href="#content-you-provide-through-using-the-service">Content you provide through using the Service</a>
+	<a class="nav-link scrollto" href="#2-2-2-information-we-collect-automatically-as-you-use-the-service">2.2.2 Information we collect automatically as you use the service:</a>
+	<a class="nav-link scrollto" href="#device-and-connection-information">Device and Connection Information</a>
+	<a class="nav-link scrollto" href="#2-3-what-information-is-shared-with-third-parties-and-why">2.3 What Information is Shared With Third Parties and Why?</a>
+	<a class="nav-link scrollto" href="#2-3-1-sharing-data-with-connected-services">2.3.1 Sharing Data with Connected Services</a>
+	<a class="nav-link scrollto" href="#federation">Federation</a>
+	<a class="nav-link scrollto" href="#bridging">Bridging</a>
+	<a class="nav-link scrollto" href="#integration-services-bots-and-widgets">Integration Services (Bots and Widgets)</a>
+	<a class="nav-link scrollto" href="#2-4-sharing-data-in-compliance-with-enforcement-requests-and-applicable-laws-enforcement-of-our-rights">2.4 Sharing Data in Compliance with Enforcement Requests and Applicable Laws; Enforcement of Our Rights</a>
+	<a class="nav-link scrollto" href="#2-5-how-do-you-handle-passwords">2.5 How Do You Handle Passwords?</a>
+	<a class="nav-link scrollto" href="#2-6-our-commitment-to-childrens-privacy">2.6 Our Commitment to Children’s Privacy</a>
+	<a class="nav-link scrollto" href="#2-7-how-can-i-access-or-correct-my-information">2.7 How Can I Access or Correct My Information?</a>
+	<a class="nav-link scrollto" href="#2-8-who-can-see-my-messages-and-files">2.8 Who Can See My Messages and Files?</a>
+	<a class="nav-link scrollto" href="#2-9-what-are-the-guidelines-new-vector-follows-when-accessing-my-data">2.9 What Are the Guidelines New Vector Follows When Accessing My Data?</a>
+	<a class="nav-link scrollto" href="#2-10-who-else-has-access-to-my-data">2.10 Who Else Has Access to My Data?</a>
+	<a class="nav-link scrollto" href="#2-11-what-happens-if-new-vector-is-sold">2.11 What happens if New Vector is sold?</a>
+	<a class="nav-link scrollto" href="#2-12-how-is-my-data-protected-from-another-users-data">2.12 How Is My Data Protected from Another User’s Data?</a>
+	<a class="nav-link scrollto" href="#2-13-what-should-i-do-if-i-find-a-security-vulnerability-in-the-service">2.13 What Should I Do If I Find a Security Vulnerability in the Service?</a>
+</nav>
+	<a class="nav-link scrollto" href="#3-making-a-complaint">3. Making a Complaint</a>
+	<a class="nav-link scrollto" href="#4-document-history">4. Document History</a>
+</div>
+<a data-toggle="collapse" href="#our-use-of-cookies-and-similar-technologies" role="button" aria-expanded="false" aria-controls="our-use-of-cookies-and-similar-technologies" class="">
+	<h4>Our use of cookies and similar technologies</h4>
+</a>
+<div id="our-use-of-cookies-and-similar-technologies" class="collapse">
+	<a class="nav-link" href="our-use-of-cookies-and-similar-technologies.html">Our use of cookies and similar technologies</a>
+	<a class="nav-link" href="our-use-of-cookies-and-similar-technologies.html#what-are-cookies-and-why-do-we-use-them">What are cookies and why do we use them?</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="our-use-of-cookies-and-similar-technologies.html#cookies-for-analytics">Cookies for analytics</a>
+	<a class="nav-link" href="our-use-of-cookies-and-similar-technologies.html#cookies-for-security">Cookies for security</a>
+</nav>
+	<a class="nav-link" href="our-use-of-cookies-and-similar-technologies.html#what-are-local-storage-and-indexed-db-and-why-do-we-use-them">What are local storage and IndexedDB and why do we use them?</a>
+</div>
+<a data-toggle="collapse" href="#riot-im-privacy-notice" role="button" aria-expanded="false" aria-controls="riot-im-privacy-notice" class="">
+	<h4>Riot.im Privacy Notice</h4>
+</a>
+<div id="riot-im-privacy-notice" class="collapse">
+	<a class="nav-link" href="riot-im-privacy-notice.html">Riot.im Privacy Notice</a>
+</div>
+<a data-toggle="collapse" href="#matrix-org-homeserver-terms-and-conditions" role="button" aria-expanded="false" aria-controls="matrix-org-homeserver-terms-and-conditions" class="">
+	<h4>Matrix.org Homeserver Terms and Conditions</h4>
+</a>
+<div id="matrix-org-homeserver-terms-and-conditions" class="collapse">
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html">Matrix.org Homeserver Terms and Conditions</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#1-introduction">1. Introduction</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#1-1-english-not-legalese">1.1 English, Not Legalese</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#1-2-using-the-service-means-accepting-these-terms">1.2 Using The Service Means Accepting These Terms</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#1-3-this-is-a-living-document">1.3 This Is a Living Document</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#1-4-breach-of-terms">1.4 Breach of Terms</a>
+</nav>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#2-support">2. Support</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#3-intellectual-property-rights">3. Intellectual Property Rights</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#3-1-who-owns-the-ip-of-my-messages-and-files">3.1 Who Owns the IP of My Messages and Files?</a>
+</nav>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#4-reliability">4. Reliability</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#4-1-do-you-guarantee-that-the-service-will-be-accessible-at-all-times">4.1 Do You Guarantee That The Service Will Be Accessible at All Times?</a>
+</nav>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#5-app-developers">5. App Developers</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#6-play-nice-clauses">6. Play Nice Clauses</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#6-1-use-of-the-service">6.1 Use of The Service</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#6-1-1-room-aliases-on-the-matrix-org-homeserver">6.1.1 Room Aliases on the Matrix.org Homeserver</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#6-2-illegal-content">6.2 Illegal Content</a>
+</nav>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#7-restriction-and-termination-of-use">7. Restriction and Termination of Use</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#8-encryption">8. Encryption</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#9-links-to-third-party-sites">9. Links to Third Party Sites</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#10-warranties-and-disclaimers">10. Warranties and Disclaimers</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#11-indemnity-and-liability">11. Indemnity and Liability</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#12-emergency-service-calls">12. Emergency Service Calls</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#13-limitation-of-liability">13. Limitation of Liability</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#14-governing-law-and-jurisdiction">14. Governing Law and Jurisdiction</a>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#15-general">15. General</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#15-1-grant-of-licence">15.1 Grant of Licence</a>
+</nav>
+	<a class="nav-link" href="matrix-org-homeserver-terms-and-conditions.html#16-document-history">16. Document History</a>
+</div>
+<a data-toggle="collapse" href="#legal-docs-index" role="button" aria-expanded="false" aria-controls="legal-docs-index" class="">
+	<h4>Legal Docs Index</h4>
+</a>
+<div id="legal-docs-index" class="collapse">
+	<a class="nav-link" href="legal-docs-index.html">Legal Docs Index</a>
+</div>
+
+                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="../assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    
+</body>
+</html> 
+

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/lightbox/dist/ekko-lightbox.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/newdocs.css">
+
+</head> 
+
+<body>
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="/docs/">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Pretty</span><span class="text-bold">Docs</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
+                    <li class="breadcrumb-item active">Showcase</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="showcase" class="doc-body row">
+                    <div class="doc-content col-md-12 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="sdks-top-section" class="doc-section">
+                                <div class="section-block">
+                                    <div class="row">
+                                        <table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Language/Platform</th>
+<th style="text-align:center">Maintainer</th>
+<th style="text-align:center">Repo</th>
+<th style="text-align:center">Matrix Room</th>
+<th style="text-align:center">Supports E2E</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="#matrix-client-sdk-for-glib">Matrix Client SDK for GLib</a></td>
+<td style="text-align:center">C</td>
+<td style="text-align:center"><a href="https://github.com/gergelypolonkai/">Gergely Polonkai</a></td>
+<td style="text-align:center"><a href="https://github.com/gergelypolonkai/matrix-glib-sdk">matrix-glib-sdk</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#matrixapi">MatrixAPI</a></td>
+<td style="text-align:center">C#</td>
+<td style="text-align:center"><a href="https://github.com/VRocker/">VRocker</a></td>
+<td style="text-align:center"><a href="https://github.com/VRocker/MatrixAPI">MatrixAPI</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#godot-matrix">godot-matrix</a></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><a href="https://gitlab.com/vurpo/">vurpo</a></td>
+<td style="text-align:center"><a href="https://gitlab.com/vurpo/godot-matrix">godot-matrix</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#mtxclient">mtxclient</a></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><a href="https://github.com/mujx/">mujx</a></td>
+<td style="text-align:center"><a href="https://github.com/mujx/mtxclient">mtxclient</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#libqmatrixclient">libqmatrixclient</a></td>
+<td style="text-align:center">C++/Qt</td>
+<td style="text-align:center"><a href="https://github.com/QMatrixClient/">QMatrixClient team</a></td>
+<td style="text-align:center"><a href="https://github.com/QMatrixClient/libqmatrixclient">libqmatrixclient</a></td>
+<td style="text-align:center"><a href="https://matrix.to/#/#qmatrixclient:matrix.org">#qmatrixclient:matrix.org</a></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#mautrix-go">mautrix-go</a></td>
+<td style="text-align:center">Go</td>
+<td style="text-align:center"><a href="https://github.com/tulir/">Tulir</a></td>
+<td style="text-align:center"><a href="https://github.com/tulir/mautrix-go">mautrix-go</a></td>
+<td style="text-align:center"><a href="https://matrix.to/#/#maunium.net:maunium.net">#maunium.net:maunium.net</a></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#gomatrix">gomatrix</a></td>
+<td style="text-align:center">Go</td>
+<td style="text-align:center"><a href="https://matrix.org/">Matrix.org</a></td>
+<td style="text-align:center"><a href="https://github.com/matrix-org/gomatrix">gomatrix</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#matrix-on-haxe">Matrix on Haxe</a></td>
+<td style="text-align:center">Haxe</td>
+<td style="text-align:center"><a href="https://notabug.org/Tamaimo/">endes</a></td>
+<td style="text-align:center"><a href="https://notabug.org/Tamaimo/haxe-matrix-im">haxe-matrix-im</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#matrixorg-android-sdk">Matrix.org Android SDK</a></td>
+<td style="text-align:center">Java</td>
+<td style="text-align:center"><a href="https://matrix.org/">Matrix.org team</a></td>
+<td style="text-align:center"><a href="https://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a></td>
+<td style="text-align:center"><a href="https://matrix.to/#/#riot-android:matrix.org">#riot-android:matrix.org</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#matrix-java-sdk">Matrix Java SDK</a></td>
+<td style="text-align:center">Java</td>
+<td style="text-align:center"><a href="https://kamax.io/">Kamax.io</a></td>
+<td style="text-align:center"><a href="https://github.com/kamax-io/matrix-java-sdk">matrix-java-sdk</a></td>
+<td style="text-align:center"><a href="https://matrix.to/#/#matrix-java-sdk:kamax.io">#matrix-java-sdk:kamax.io</a></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#botkit-matrix">botkit-matrix</a></td>
+<td style="text-align:center">JavaScript</td>
+<td style="text-align:center"><a href="https://github.com/frankgerhardt/">frankgerhardt</a></td>
+<td style="text-align:center"><a href="https://github.com/frankgerhardt/botkit-matrix">botkit-matrix</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#matrixorg-js-sdk">Matrix.org JS SDK</a></td>
+<td style="text-align:center">JavaScript</td>
+<td style="text-align:center"><a href="https://matrix.org/">Matrix.org team</a></td>
+<td style="text-align:center"><a href="https://github.com/matrix-org/matrix-js-sdk">matrix-js-sdk</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#matrixorg-matrixkit-ios">Matrix.org MatrixKit (iOS)</a></td>
+<td style="text-align:center">Objective-C</td>
+<td style="text-align:center"><a href="https://matrix.org/">Matrix.org team</a></td>
+<td style="text-align:center"><a href="https://github.com/matrix-org/matrix-ios-kit">matrix-ios-kit</a></td>
+<td style="text-align:center"><a href="https://matrix.to/#/#riot-ios:matrix.org">#riot-ios:matrix.org</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#matrixorg-ios-sdk">Matrix.org iOS SDK</a></td>
+<td style="text-align:center">Objective-C</td>
+<td style="text-align:center"><a href="https://matrix.org/">Matrix.org team</a></td>
+<td style="text-align:center"><a href="https://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a></td>
+<td style="text-align:center"><a href="https://matrix.to/#/#riot-ios:matrix.org">#riot-ios:matrix.org</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#drupal-matrix_api-module">Drupal matrix_api module</a></td>
+<td style="text-align:center">PHP</td>
+<td style="text-align:center"><a href="http://www.freelock.com">freelock</a></td>
+<td style="text-align:center"><a href="https://cgit.drupalcode.org/matrix_api">matrix_api</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#netasyncmatrix-perl">Net::Async::Matrix (Perl)</a></td>
+<td style="text-align:center">Perl</td>
+<td style="text-align:center"><a href="https://github.com/leonerd/">LeoNerd</a></td>
+<td style="text-align:center"><a href="https://metacpan.org/release/Net-Async-Matrix">Net-Async-Matrix</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#matrixclient">Matrix::Client</a></td>
+<td style="text-align:center">Perl</td>
+<td style="text-align:center"><a href="https://github.com/matiaslina/">matiaslina</a></td>
+<td style="text-align:center"><a href="https://github.com/matiaslina/perl6-matrix-client">perl6-matrix-client</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#maubot">maubot</a></td>
+<td style="text-align:center">Python</td>
+<td style="text-align:center">[tulir]</td>
+<td style="text-align:center">[maubot]</td>
+<td style="text-align:center">[#maubot:maunium.net]</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#mautrix-python">mautrix-python</a></td>
+<td style="text-align:center">Python</td>
+<td style="text-align:center">[tulir]</td>
+<td style="text-align:center"><a href="https://github.com/tulir/mautrix-python">mautrix-python</a></td>
+<td style="text-align:center"><a href="https://matrix.to/#/#maunium.net:maunium.net">#maunium.net:maunium.net</a></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#opsdroid">opsdroid</a></td>
+<td style="text-align:center">Python</td>
+<td style="text-align:center">[SolarDrew]</td>
+<td style="text-align:center">[opsdroid]</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#matrixorg-python-sdk">Matrix.org Python SDK</a></td>
+<td style="text-align:center">Python</td>
+<td style="text-align:center"><a href="https://matrix.org/">Matrix.org team</a></td>
+<td style="text-align:center"><a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a></td>
+<td style="text-align:center"><a href="https://matrix.to/#/#matrix-python-sdk:matrix.org">#matrix-python-sdk:matrix.org</a></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#racket-matrix-sdk">Racket Matrix SDK</a></td>
+<td style="text-align:center">Racket</td>
+<td style="text-align:center"><a href="https://gitlab.com/aidalgol/">Aidan Gauland</a></td>
+<td style="text-align:center"><a href="https://gitlab.com/aidalgol/racket-matrix-sdk/">racket-matrix-sdk</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#ruby-matrix-sdk">Ruby Matrix SDK</a></td>
+<td style="text-align:center">Ruby</td>
+<td style="text-align:center"><a href="https://github.com/ananace/">Ananace</a></td>
+<td style="text-align:center"><a href="https://github.com/ananace/ruby-matrix-sdk">ruby-matrix-sdk</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#glitch-in-the-matrix">Glitch in the Matrix</a></td>
+<td style="text-align:center">Rust</td>
+<td style="text-align:center"><a href="https://github.com/eeeeeta/">eta</a></td>
+<td style="text-align:center"><a href="https://github.com/eeeeeta/glitch-in-the-matrix">glitch-in-the-matrix</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#matrix-js-bot-sdk">matrix-js-bot-sdk</a></td>
+<td style="text-align:center">TypeScript</td>
+<td style="text-align:center"><a href="https://github.com/turt2live/">Travis Ralston</a></td>
+<td style="text-align:center"><a href="https://github.com/turt2live/matrix-js-bot-sdk">matrix-js-bot-sdk</a></td>
+<td style="text-align:center"><a href="https://matrix.to/#/#matrix-bot-sdk:t2bot.io">#matrix-bot-sdk:t2bot.io</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+
+                                    </div><!--//row-->
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+
+                            <section id="bridges-list" class="doc-section">
+                                <div class="section-block">
+                                        <h2 id="matrix-org-android-sdk">Matrix.org Android SDK</h2>
+<p>Repository: <a href="https://github.com/matrix-org/matrix-android-sdk">https://github.com/matrix-org/matrix-android-sdk</a></p>
+
+<p>Matrix.org's Android SDK (<a href="https://github.com/matrix-org/matrix-android-sdk">github</a>)</p>
+<h2 id="matrix-org-i-os-sdk">Matrix.org iOS SDK</h2>
+<p>Repository: <a href="https://github.com/matrix-org/matrix-ios-sdk">https://github.com/matrix-org/matrix-ios-sdk</a></p>
+
+<p>Matrix.org's iOS SDK.</p>
+<h2 id="matrix-org-angular-js-sdk">Matrix.org AngularJS SDK</h2>
+<p>Repository: <a href="https://github.com/matrix-org/matrix-angular-sdk">https://github.com/matrix-org/matrix-angular-sdk</a></p>
+
+<p>AngularJS services from Matrix.org for building communication apps in Angular based on Matrix: <a href="https://github.com/matrix-org/matrix-angular-sdk">https://github.com/matrix-org/matrix-angular-sdk</a></p>
+<p>These are no longer being actively maintained.</p>
+<h2 id="matrix-org-python-sdk">Matrix.org Python SDK</h2>
+<p>Repository: <a href="https://github.com/matrix-org/matrix-python-sdk">https://github.com/matrix-org/matrix-python-sdk</a></p>
+
+<p>This is a Matrix client-server SDK for Python 2.7 and 3.4+</p>
+<p>Community discussion on usage of this SDK and development of this SDK
+can be found at
+<a href="https://matrix.to/#/%23matrix-python-sdk:matrix.org">#matrix-python-sdk:matrix.org</a>.</p>
+<p>Documentation can be found at
+<a href="https://matrix-org.github.io/matrix-python-sdk/">https://matrix-org.github.io/matrix-python-sdk/</a></p>
+<h2 id="matrix-org-js-sdk">Matrix.org JS SDK</h2>
+<p>Repository: <a href="https://github.com/matrix-org/matrix-js-sdk">https://github.com/matrix-org/matrix-js-sdk</a></p>
+
+<p>Matrix.org's JS SDK.</p>
+<h2 id="matrix-org-matrix-kit-i-os">Matrix.org MatrixKit (iOS)</h2>
+<p>Repository: <a href="https://github.com/matrix-org/matrix-ios-kit">https://github.com/matrix-org/matrix-ios-kit</a></p>
+
+<p>Matrix.org's reusable UI interfaces for iOS.</p>
+<h2 id="newlisp-matrix-client">newlisp-matrix-client</h2>
+<p>Repository: <a href="https://github.com/IngoHohmann/newlisp-matrix-client">https://github.com/IngoHohmann/newlisp-matrix-client</a></p>
+
+<p>Client SDK for newlisp available at <a href="https://github.com/IngoHohmann/newlisp-matrix-client">https://github.com/IngoHohmann/newlisp-matrix-client</a></p>
+<h2 id="matrix-erlang-sdk">matrix-erlang-sdk</h2>
+<p>Repository: <a href="https://github.com/anhallbe/matrix-erlang-sdk">https://github.com/anhallbe/matrix-erlang-sdk</a></p>
+
+<p>Andreas Hallberg's client SDK for Erlang <a href="https://github.com/anhallbe/matrix-erlang-sdk">https://github.com/anhallbe/matrix-erlang-sdk</a></p>
+<h2 id="matrix-org-react-sdk">Matrix.org React SDK</h2>
+<p>Repository: <a href="https://github.com/matrix-org/matrix-react-sdk">https://github.com/matrix-org/matrix-react-sdk</a></p>
+
+<p><a href="https://github.com/matrix-org/matrix-react-sdk">matrix-react-sdk</a> is our next-generation Web SDK for Matrix, providing both a large hierarchy of reusable UI components and a simple neutral reference application. It's suitable both for building standalone applications and embedding Matrix clients into existing web apps, irrespective of the host app's framework.</p>
+<h2 id="matrix-client-sdk-for-g-lib">Matrix Client SDK for GLib</h2>
+<p>Repository: <a href="https://github.com/gergelypolonkai/matrix-glib-sdk">https://github.com/gergelypolonkai/matrix-glib-sdk</a></p>
+
+<p>A Matrix.org client-server SDK for GLib &gt;= 2.40. It contains both raw API calls and a signal based asynchronous client.</p>
+<h2 id="net-async-matrix-perl">Net::Async::Matrix (Perl)</h2>
+<p>Repository: <a href="https://metacpan.org/release/Net-Async-Matrix">https://metacpan.org/release/Net-Async-Matrix</a></p>
+
+<p>LeoNerd's Net::Async::Matrix client SDK library for Perl: <a href="https://metacpan.org/release/Net-Async-Matrix">https://metacpan.org/release/Net-Async-Matrix</a></p>
+<h2 id="matrix-net-sdk">Matrix .NET SDK</h2>
+<p>Repository: <a href="https://github.com/Half-Shot/matrix-dotnet-sdk">https://github.com/Half-Shot/matrix-dotnet-sdk</a></p>
+
+<p>The .NET SDK provides an object oriented library to interact with Matrix. It is currently mature enough to be used for simple clients and bots.</p>
+<p><a href="https://github.com/Half-Shot/matrix-dotnet-sdk">Github</a></p>
+<h2 id="lib-q-matrix-client">libQMatrixClient</h2>
+<p>Repository: <a href="https://github.com/QMatrixClient/libQMatrixClient">https://github.com/QMatrixClient/libQMatrixClient</a></p>
+
+<p>libqmatrixclient is a Qt-based library to make IM clients for Matrix. <a href="https://matrix.org/docs/projects/client/quaternion.html">Quaternion</a> is a reference client using its features; together with the library they form the <a href="https://github.com/QMatrixClient">QMatrixClient</a> project. The SDK is also used by <a href="https://matrix.org/docs/projects/client/spectral.html">Spectral</a> and <a href="https://github.com/uMatriks/uMatriks">uMatriks</a>.</p>
+<p>The project lives in QMatrixClient <a href="https://github.com/QMatrixClient/libqmatrixclient">GitHub space</a>. Aside from the dedicated Matrix room (see above), news about the library are regularly posted to <a href="https://matrix.org/blog/category/this-week-in-matrix/">This Week in Matrix</a>.</p>
+<h2 id="go-matrix">goMatrix</h2>
+<p>Repository: <a href="https://github.com/geir54/goMatrix">https://github.com/geir54/goMatrix</a></p>
+
+<p>A Matrix library for go currently in development. <a href="https://github.com/geir54/goMatrix">https://github.com/geir54/goMatrix</a></p>
+<h2 id="drupal-matrix-api-module">Drupal matrix_api module</h2>
+<p>Repository: <a href="https://cgit.drupalcode.org/matrix_api">https://cgit.drupalcode.org/matrix_api</a></p>
+
+<p>A Drupal API module to facilitate posting messages into Matrix rooms. <a href="https://drupal.org/project/matrix_api">Drupal.org</a></p>
+<h2 id="gomatrix">gomatrix</h2>
+<p>Repository: <a href="https://github.com/matrix-org/gomatrix">https://github.com/matrix-org/gomatrix</a></p>
+
+<p>Official Golang Matrix client SDK, as used by <a href="https://github.com/matrix-org/go-neb">go-neb</a> and others</p>
+<h2 id="matrix-java-sdk">Matrix Java SDK</h2>
+<p>Repository: <a href="https://github.com/kamax-io/matrix-java-sdk">https://github.com/kamax-io/matrix-java-sdk</a></p>
+
+<p>The Java SDK provides a low level (I/O synchronous) object oriented library to interact with Matrix. It is aimed to regular clients, bots, bridges and generic Application Services.</p>
+<p>It is currently work in progress, is incomplete and is early alpha.</p>
+<p><a href="https://github.com/kamax-io/matrix-java-sdk">Github</a></p>
+<h2 id="glitch-in-the-matrix">Glitch in the Matrix</h2>
+<p>Repository: <a href="https://github.com/eeeeeta/glitch-in-the-matrix">https://github.com/eeeeeta/glitch-in-the-matrix</a></p>
+
+<p>Glitch in the Matrix is a set of (minimal) Matrix bindings for Rust.</p>
+<p>https://github.com/eeeeeta/glitch-in-the-matrix</p>
+<h2 id="swift-matrix-sdk">Swift MatrixSDK</h2>
+<p>Repository: <a href="https://github.com/gperdomor/matrix-sdk">https://github.com/gperdomor/matrix-sdk</a></p>
+
+<p>Unofficial SDK to build apps compatible with Matrix using swift</p>
+<p>https://github.com/gperdomor/matrix-sdk</p>
+<h2 id="godot-matrix">godot-matrix</h2>
+<p>Repository: <a href="https://gitlab.com/vurpo/godot-matrix">https://gitlab.com/vurpo/godot-matrix</a></p>
+
+<p>Module for <a href="https://godotengine.org">Godot Engine</a> that lets you easily integrate a Matrix client into a game developed using Godot (for example for in-game chat, matchmaking, lobbies, or something else entirely). <a href="https://gitlab.com/vurpo/godot-matrix">Source</a></p>
+<h2 id="matrix-on-haxe">Matrix on Haxe</h2>
+<p>Repository: <a href="https://notabug.org/Tamaimo/haxe-matrix-im">https://notabug.org/Tamaimo/haxe-matrix-im</a></p>
+
+<p>Implementation of client-server matrix API in <a href="https://haxe.org/">haxe</a> using HaxeHttpClient.</p>
+<p><a href="https://lib.haxe.org/p/matrix-im/">haxelib</a>
+<a href="https://notabug.org/Tamaimo/haxe-matrix-im">Source</a></p>
+<h2 id="matrix-client">Matrix::Client</h2>
+<p>Repository: <a href="https://github.com/matiaslina/perl6-matrix-client">https://github.com/matiaslina/perl6-matrix-client</a></p>
+
+<p>Perl6 Matrix client. <a href="https://github.com/matiaslina/perl6-matrix-client">github</a></p>
+<h2 id="matrix-js-bot-sdk">matrix-js-bot-sdk</h2>
+<p>Repository: <a href="https://github.com/turt2live/matrix-js-bot-sdk">https://github.com/turt2live/matrix-js-bot-sdk</a></p>
+
+<p>Bots on matrix often have very different requirements than regular clients or users. This SDK is aimed towards making bots more lightweight and responsive. Much of the library is a direct proxy to the client/server API, however it abstracts away the HTTP part as much as possible.</p>
+<p>The source, and more information, can be found on <a href="https://github.com/turt2live/matrix-js-bot-sdk">GitHub</a>.</p>
+<h2 id="mautrix-python">mautrix-python</h2>
+<p>Repository: <a href="https://github.com/tulir/mautrix-python">https://github.com/tulir/mautrix-python</a></p>
+
+<p>mautrix-python is a Python 3 asyncio Matrix framework.</p>
+<h2 id="mautrix-go">mautrix-go</h2>
+<p>Repository: <a href="https://github.com/tulir/mautrix-go">https://github.com/tulir/mautrix-go</a></p>
+
+<p>A Golang Matrix framework.</p>
+<h2 id="operator">Operator</h2>
+<p>Repository: <a href="https://vcs.uhoreg.ca/git/cgit/operator/">https://vcs.uhoreg.ca/git/cgit/operator/</a></p>
+
+<p>Operator is a C++ library for plugging into the Matrix</p>
+<h2 id="matrix-redux-wrap">matrix-redux-wrap</h2>
+<p>Repository: <a href="https://github.com/lukebarnard1/matrix-redux-wrap">https://github.com/lukebarnard1/matrix-redux-wrap</a></p>
+
+<p>Matrix Redux Wrap was motivated by the need to expose the Matrix protocol via a Redux store. The matrix-js-sdk API does not expose a Redux-like pattern through which data flows but rather a number of asyncronous HTTP-request wrappers and a number of models that encapsulate the objects within the Matrix protocol. These models are updated by a mixture of server responses and API calls and do not necessarily lend themselves to simple mental models or the ability to be incorporated into frameworks such as Flux and Redux.</p>
+<h2 id="opsdroid">opsdroid</h2>
+<p>Repository: <a href="https://github.com/opsdroid/opsdroid">https://github.com/opsdroid/opsdroid</a></p>
+
+<p><a href="https://opsdroid.github.io/">opsdroid</a> is a simple and extensible bot framework and has built-in support for matrix.</p>
+<p>There is also a plugin which allows you to use the matrix room state as a store for opsdroid's memory. <a href="https://github.com/SolarDrew/database-matrix">database-matrix</a></p>
+<h2 id="mtxclient">mtxclient</h2>
+<p>Repository: <a href="https://github.com/mujx/mtxclient">https://github.com/mujx/mtxclient</a></p>
+
+<p>SDK built on top of Boost.Asio</p>
+<h2 id="ruby-matrix-sdk">Ruby Matrix SDK</h2>
+<p>Repository: <a href="https://github.com/ananace/ruby-matrix-sdk">https://github.com/ananace/ruby-matrix-sdk</a></p>
+
+<p>{{ page.description }}</p>
+<p>Available on [github]({{ page.repo }}), and on rubygems.org as <a href="https://rubygems.org/gems/matrix_sdk"><code>matrix_sdk</code></a>.</p>
+<p>Some examples can be found on [github]({{ page.repo }}/tree/master/examples) as well.</p>
+<h2 id="maubot">maubot</h2>
+<p>Repository: <a href="https://github.com/maubot/maubot">https://github.com/maubot/maubot</a></p>
+
+<p>A plugin-based Matrix bot system written in Python.</p>
+<h2 id="racket-matrix-sdk">Racket Matrix SDK</h2>
+<p>Repository: <a href="https://gitlab.com/aidalgol/racket-matrix-sdk/">https://gitlab.com/aidalgol/racket-matrix-sdk/</a></p>
+
+<p>Available on [GitLab]({{ page.repo }}).  Still very early stages and only useful to developers already familiar with both the Matrix client API and the Racket language.</p>
+<h2 id="matrix-api">MatrixAPI</h2>
+<p>Repository: <a href="https://github.com/VRocker/MatrixAPI">https://github.com/VRocker/MatrixAPI</a></p>
+
+<p>A Matrix library for C# UWP.</p>
+<h2 id="botkit-matrix">botkit-matrix</h2>
+<p>Repository: <a href="https://github.com/frankgerhardt/botkit-matrix">https://github.com/frankgerhardt/botkit-matrix</a></p>
+
+<p>A Botkit connector for Matrix</p>
+<h3>Install</h3>
+<p><code>$ npm install botkit-matrix</code></p>
+<h3>Usage</h3>
+<pre><code class="language-javascript">let config = {
+    'baseUrl': 'https://matrix.org',
+    'botUserId': '@youruserid:matrix.org',
+    'password': 'yourpassword',
+    'localStorage': 'filepath'
+};
+
+require('botkit-matrix').MatrixController(config)
+.then((controller) =&gt; {
+
+    controller.hears(['hi', 'hello'], 'message_received', function (bot, message) {
+        bot.reply(message, &quot;Hello, world!&quot;);
+    });
+});
+</code></pre>
+<p>You can get a sample bot at <a href="https://github.com/frankgerhardt/botkit-matrix-sample">botkit-matrix-sample</a></p>
+<p>For more features see <a href="https://botkit.ai/docs/core.html">Botkit Core</a></p>
+
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                                          
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>  
+    <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>     
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                          
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+

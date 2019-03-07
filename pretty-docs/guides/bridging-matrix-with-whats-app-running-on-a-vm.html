@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css"> 
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="../assets/css/newdocs.css">
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1>
+                        <img src="../assets/images/matrix logo.png" style="width: 120px;" />
+                        <span class="text-bold">Docs</span>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
+                    <li class="breadcrumb-item active">Bridging Matrix with WhatsApp running on a VM</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container documentation-container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title">Bridging Matrix with WhatsApp running on a VM</h1>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            
+<section class="doc-section">
+<h1 id="bridging-matrix-with-whats-app-running-on-a-vm">Bridging Matrix with WhatsApp running on a VM</h1>
+<p>Matrix is:</p>
+<blockquote>
+<p>an open standard for <em>interoperable</em>, <em>decentralised</em>, <em>real-time communication</em>.</p>
+</blockquote>
+<p>In this article we'll benefit from all three of these attributes:</p>
+<ul>
+<li><em>interoperable:</em> we'll see how Matrix can be made to interact with WhatsApp</li>
+<li><em>decentralised</em>: you can perform this on your own server while still enjoying the benefits of being connected to the rest of the Matrix federation</li>
+<li><em>real-time communication</em>: we'll see how to send and receive messages in real-time</li>
+</ul>
+<section class="doc-section">
+<h2 id="install-your-homeserver-and-install-mautrix-whatsapp-the-whats-app-bridge">Install your homeserver and install mautrix-whatsapp, the WhatsApp bridge</h2>
+<p>Firstly, you need to have a Matrix homeserver installed. If you don't currently have one, take a look at the instructions at <a href="https://matrix.org/docs/guides/installing-synapse">Installing Synapse</a>, and also in the <a href="https://github.com/matrix-org/synapse">Synapse README</a>.</p>
+<p>Next, install <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> by following the instructions at <a href="https://github.com/tulir/mautrix-whatsapp/wiki">mautrix-whatsapp/wiki</a>.</p>
+<p>If you are starting from scratch, I suggest you take a look at <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/">matrix-docker-ansible-deploy</a>, as this project will enable you to deploy Synapse, <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> and other components easily.</p>
+<p>For example, if you have an existing deployment using <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/">matrix-docker-ansible-deploy</a>, you can add <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> simply by adding the following line to your configuration file:</p>
+<pre><code class="language-yaml">matrix_mautrix_whatsapp_enabled: true
+</code></pre>
+<p>... and re-running the setup:</p>
+<pre><code class="language-unix">ansible-playbook -i inventory/hosts setup.yml --tags=setup-all
+</code></pre>
+<p>Either way, you will soon have a functioning Matrix Synapse homeserver and <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> installed with it. Next, we will set up an Android VM.</p>
+</section>
+<section class="doc-section">
+<h2 id="set-up-an-android-vm">Set up an Android VM</h2>
+<p>The best way to run an Android Virtual Machine is to use the Android Studio tools from Google. First, <a href="https://developer.android.com/studio/install">install Android Studio</a>, making sure to follow the post-install steps, as they will install additional tools we need, including AVD Manager.</p>
+<p>Once installed, run AVD manager by choosing <code>Tools -&gt; AVD Manager</code> from the menu.</p>
+<p>Follow the steps to create a new virtual machine, in this example I have a Nexus 5X running Android 9, but almost any configuration is fine here. Make sure that you give the device access to the Play Store.</p>
+<p><img src="/docs/projects/images/avd.png" alt=""></p>
+</section>
+<section class="doc-section">
+<h2 id="install-whats-app-and-sign-in">Install WhatsApp and sign-in</h2>
+<p>Launch the Virtual Device, the open the Play Store and sign in. Now use the Play Store to install WhatsApp on the Virtual Device.</p>
+<p>You will be asked to verify your phone number, use your number on another device to complete this step.</p>
+<p>&lt;center&gt;
+&lt;img src=&quot;/docs/projects/images/nexus5.png&quot;/&gt;
+&lt;/center&gt;</p>
+</section>
+<section class="doc-section">
+<h2 id="setup-mautrix-whatsapp-bridge">Setup mautrix-whatsapp bridge</h2>
+<p>Now that you have WhatsApp working in a VM, and Matrix working on your server, it's time to bridge them togther!</p>
+<p>Per the instructions at <a href="https://github.com/tulir/mautrix-whatsapp/wiki">mautrix-whatsapp/wiki</a>, you must start a new chat with <strong>@whatsappbot:<em>yourdomain</em>&gt;</strong>. Type <code>login</code> to begin the authentication process.</p>
+<p>mautrix-whatsapp operates by using the WhatsApp Web feature of WhatsApp - which means it uses a QR code that you must now scan on the device running WhatsApp - which in your case is the AVD. In order to scan the presented QR code, set your AVD camera to passthrough the camera device on your host machine - see the images below.</p>
+<p><img src="/docs/projects/images/camera1.png" alt="">
+<img src="/docs/projects/images/camera2.png" alt=""></p>
+<p>Once this is complete, you can type <code>sync</code>, to start bridging contacts, and <code>sync --create</code> to automatically create room invites.</p>
+<p>And that's it! You may need to take a little time to watch the sync happen, particularly if you have a very large number of chats on the WhatsApp side, but there is no further configuration needed.</p>
+</section>
+<section class="doc-section">
+<h2 id="demo">Demo!</h2>
+<p>&lt;center&gt;
+&lt;iframe width=&quot;960&quot; height=&quot;540&quot; src=&quot;https://www.youtube.com/embed/edSgP2dEZ1o&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/center&gt;</p>
+</section>
+</section>
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a data-toggle="collapse" href="#bridging-matrix-with-whats-app-running-on-a-vm" role="button" aria-expanded="false" aria-controls="bridging-matrix-with-whats-app-running-on-a-vm" class="selectedPage">
+	<h4>Bridging Matrix with WhatsApp running on a VM</h4>
+</a>
+<div id="bridging-matrix-with-whats-app-running-on-a-vm" class="collapse show selectedPage">
+	<a class="nav-link scrollto" href="">Bridging Matrix with WhatsApp running on a VM</a>
+	<a class="nav-link scrollto" href="#install-your-homeserver-and-install-mautrix-whatsapp-the-whats-app-bridge">Install your homeserver and install mautrix-whatsapp, the WhatsApp bridge</a>
+	<a class="nav-link scrollto" href="#set-up-an-android-vm">Set up an Android VM</a>
+	<a class="nav-link scrollto" href="#install-whats-app-and-sign-in">Install WhatsApp and sign-in</a>
+	<a class="nav-link scrollto" href="#setup-mautrix-whatsapp-bridge">Setup mautrix-whatsapp bridge</a>
+	<a class="nav-link scrollto" href="#demo">Demo!</a>
+</div>
+
+                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="../assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    
+</body>
+</html> 
+

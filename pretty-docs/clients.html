@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/lightbox/dist/ekko-lightbox.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/newdocs.css">
+
+</head> 
+
+<body>
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="/docs/">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Pretty</span><span class="text-bold">Docs</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
+                    <li class="breadcrumb-item active">Showcase</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="showcase" class="doc-body row">
+                    <div class="doc-content col-md-12 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="clients-section" class="doc-section">
+                                <div class="section-block">
+                                    <div class="row">
+                                        <h1 id="matrix-clients-matrix">Matrix Clients Matrix</h1>
+<p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="try-matrix-now">try-matrix-now</a>. To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a></p>
+<h2 id="platform-availability">Platform Availability</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Riot Web</th>
+<th style="text-align:center">Riot Android</th>
+<th style="text-align:center">Riot iOS</th>
+<th style="text-align:center">Nheko</th>
+<th style="text-align:center">Gomuks</th>
+<th style="text-align:center">Quaternion</th>
+<th style="text-align:center">Fractal</th>
+<th style="text-align:center">Seaglass</th>
+<th style="text-align:center">Spectral</th>
+<th style="text-align:center">uMatriks</th>
+<th style="text-align:center">FluffyChat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Linux</td>
+<td style="text-align:center">✓<br /><small>Electron</small></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Mac</td>
+<td style="text-align:center">✓<br /><small>Electron</small></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">WIP</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Windows</td>
+<td style="text-align:center">✓<br /><small>Electron</small></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Android</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">iOS</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Ubuntu Touch</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+</tbody>
+</table>
+<h2 id="details">Details</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Riot Web</th>
+<th style="text-align:center">Riot Android</th>
+<th style="text-align:center">Riot iOS</th>
+<th style="text-align:center">Nheko</th>
+<th style="text-align:center">Gomuks</th>
+<th style="text-align:center">Quaternion</th>
+<th style="text-align:center">Fractal</th>
+<th style="text-align:center">Seaglass</th>
+<th style="text-align:center">Spectral</th>
+<th style="text-align:center">uMatriks</th>
+<th style="text-align:center">FluffyChat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Repo</td>
+<td style="text-align:center"><a href="https://github.com/vector-im/riot-web/">riot-web</a></td>
+<td style="text-align:center"><a href="https://github.com/vector-im/riot-android/">riot-android</a></td>
+<td style="text-align:center"><a href="https://github.com/vector-im/riot-ios/">riot-ios</a></td>
+<td style="text-align:center"><a href="https://github.com/Nheko-Reborn/nheko">nheko</a></td>
+<td style="text-align:center"><a href="https://github.com/tulir/gomuks">gomuks</a></td>
+<td style="text-align:center"><a href="https://github.com/QMatrixClient/Quaternion/">Quaternion</a></td>
+<td style="text-align:center"><a href="https://gitlab.gnome.org/World/fractal">Fractal</a></td>
+<td style="text-align:center"><a href="https://github.com/neilalexander/seaglass">Seaglass</a></td>
+<td style="text-align:center"><a href="https://gitlab.com/b0/spectral">Spectral</a></td>
+<td style="text-align:center"><a href="https://github.com/uMatriks/uMatriks">uMatriks</a></td>
+<td style="text-align:center"><a href="https://github.com/ChristianPauly/fluffychat">FluffyChat</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Matrix Room</td>
+<td style="text-align:center"><small><a href="https://matrix.to/#/#riot:matrix.org">#riot:<br />matrix.org</a></small></td>
+<td style="text-align:center"><small><a href="https://matrix.to/#/#riot-android:matrix.org">#riot-android:<br />matrix.org</a></small></td>
+<td style="text-align:center"><small><a href="https://matrix.to/#/#riot-ios:matrix.org">#riot-ios:<br />matrix.org</a></small></td>
+<td style="text-align:center"><small><a href="https://matrix.to/#/##nheko:matrix.org">#nheko:<br />matrix.org</a></small></td>
+<td style="text-align:center"><small><a href="https://matrix.to/#/#gomuks:maunium.net">#gomuks:<br />maunium.net</a></small></td>
+<td style="text-align:center"><small><a href="https://matrix.to/#/#qmatrixclient:matrix.org">#qmatrixclient:<br />matrix.org</a></small></td>
+<td style="text-align:center"><small><a href="https://matrix.to/#/#fractal-gtk:matrix.org">#fractal-gtk:<br />matrix.org</a></small></td>
+<td style="text-align:center"><small><a href="https://matrix.to/#/#seaglass:matrix.org">#seaglass:<br />matrix.org</a></small></td>
+<td style="text-align:center"><small><a href="https://matrix.to/#/#spectral:encom.eu.org">#spectral:<br />encom.eu.org</a></small></td>
+<td style="text-align:center"><small><a href="https://matrix.to/#/#uMatriks:matrix.org">#uMatriks:<br />matrix.org</a></small></td>
+<td style="text-align:center"><small><a href="https://matrix.to/#/#fluffychat:matrix.org">#fluffychat:<br />matrix.org</a></small></td>
+</tr>
+<tr>
+<td style="text-align:center">Platform</td>
+<td style="text-align:center">Web (React)</td>
+<td style="text-align:center">Android</td>
+<td style="text-align:center">iOS</td>
+<td style="text-align:center">Qt</td>
+<td style="text-align:center">Go<br />Terminal</td>
+<td style="text-align:center">Qt</td>
+<td style="text-align:center">GTK+</td>
+<td style="text-align:center">macOS<br />Cocoa</td>
+<td style="text-align:center">Qt</td>
+<td style="text-align:center">Qt<br />Ubuntu Touch</td>
+<td style="text-align:center">Qt<br />Ubuntu Touch</td>
+</tr>
+<tr>
+<td style="text-align:center">Language</td>
+<td style="text-align:center">JavaScript (React)</td>
+<td style="text-align:center">Java</td>
+<td style="text-align:center">Objective-C</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">Go</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">Rust</td>
+<td style="text-align:center">Swift</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">QML</td>
+</tr>
+<tr>
+<td style="text-align:center">SDK</td>
+<td style="text-align:center">matrix-js-sdk, matrix-react-sdk</td>
+<td style="text-align:center">matrix-android-sdk</td>
+<td style="text-align:center">matrix-ios-sdk</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">gomatrix (fork)</td>
+<td style="text-align:center">libqmatrixclient</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">matrix-ios-sdk</td>
+<td style="text-align:center">libqmatrixclient</td>
+<td style="text-align:center">libqmatrixclient</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Target Spec Version</td>
+<td style="text-align:center">r0.4.0</td>
+<td style="text-align:center">r0.4.0</td>
+<td style="text-align:center">r0.4.0</td>
+<td style="text-align:center">r0.4.0</td>
+<td style="text-align:center">r0.4.0</td>
+<td style="text-align:center">r0.4.0</td>
+<td style="text-align:center">r0.4.0</td>
+<td style="text-align:center">r0.4.0</td>
+<td style="text-align:center">r0.4.0</td>
+<td style="text-align:center">r0.4.0</td>
+<td style="text-align:center">r0.4.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="features">Features</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Riot Web</th>
+<th style="text-align:center">Riot Android</th>
+<th style="text-align:center">Riot iOS</th>
+<th style="text-align:center">Nheko</th>
+<th style="text-align:center">Gomuks</th>
+<th style="text-align:center">Quaternion</th>
+<th style="text-align:center">Fractal</th>
+<th style="text-align:center">Seaglass</th>
+<th style="text-align:center">Spectral</th>
+<th style="text-align:center">uMatriks</th>
+<th style="text-align:center">FluffyChat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><br/><em>Room Management</em></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Room directory</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Room tag showing</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">Predefined</td>
+<td style="text-align:center">Predefined</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Room tag editing</td>
+<td style="text-align:center">Predefined</td>
+<td style="text-align:center">Predefined</td>
+<td style="text-align:center">Predefined</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Search joined rooms</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">Partial</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">Partial</td>
+</tr>
+<tr>
+<td style="text-align:center"><br/><em>Room Features</em></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Room user list</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Display Room Description</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Edit Room Description</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Highlights</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Pushrules</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Send read markers</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Display read markers</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">Only own</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">Partial</td>
+</tr>
+<tr>
+<td style="text-align:center">Sending Invites</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Accepting Invites</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Typing Notification</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center"><br/><em>Message Features</em></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">E2E</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">Text only</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+</tr>
+<tr>
+<td style="text-align:center">Replies</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Attachment uploading</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Attachment downloading</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">Images</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Send stickers</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">Send formatted messages (markdown)</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+</tr>
+<tr>
+<td style="text-align:center">Rich Text Editor for formatted messages</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+</tr>
+<tr>
+<td style="text-align:center">Display formatted messages</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+</tr>
+<tr>
+<td style="text-align:center">Redacting</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center"><br/><em>Other Features</em></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Multiple Matrix Accounts</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+</tr>
+<tr>
+<td style="text-align:center">New user registration</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✓</td>
+</tr>
+<tr>
+<td style="text-align:center">voip</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+</tr>
+</tbody>
+</table>
+<h2 id="future-specification-features">Future-specification Features</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Riot Web</th>
+<th style="text-align:center">Riot Android</th>
+<th style="text-align:center">Riot iOS</th>
+<th style="text-align:center">Nheko</th>
+<th style="text-align:center">Gomuks</th>
+<th style="text-align:center">Quaternion</th>
+<th style="text-align:center">Fractal</th>
+<th style="text-align:center">Seaglass</th>
+<th style="text-align:center">Spectral</th>
+<th style="text-align:center">uMatriks</th>
+<th style="text-align:center">FluffyChat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Communities Display</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+</tr>
+<tr>
+<td style="text-align:center">Communities Creation</td>
+<td style="text-align:center">✓</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">✗</td>
+</tr>
+</tbody>
+</table>
+<p><em>These features are in common usage in the Matrix ecosystem and could be added to a future version of the spec.</em></p>
+
+                                    </div><!--//row-->
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>  
+    <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>     
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                          
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("td").each(function( index ) {
+                var text = $( this ).text();
+                if (text.startsWith("Yes") || text.startsWith("✓")) {
+                    $(this).addClass("green");
+                }
+                if (text.match(/Build from source|WIP|Predefined|Images|Partial|Text only/))
+                {
+                    $(this).addClass("orange");
+                }
+                if (text === "No" || text.startsWith("✗")) {
+                    $(this).addClass("red");
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
+

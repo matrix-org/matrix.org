@@ -1,0 +1,3596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/lightbox/dist/ekko-lightbox.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/newdocs.css">
+    <style>
+    #languages-list div {
+        width: 40%;
+        float: left;
+    }
+    .option-list {
+        text-align: initial;
+    }
+    </style>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(($) => {
+  /* Populate maturities list */
+  //var maturities =  "".split(',');
+
+  var maturities =  "Released,Stable,Late Beta,Beta,Early Beta,Late Alpha,Alpha,Early Alpha,No longer maintained".split(',');
+  maturities.forEach((maturity => {
+    if (maturity.length === 0) return;
+
+    var item = $('<div>');
+    var checkboxId = 'chk-maturity-' + slugify(maturity);
+
+    var checkbox = $('<input>')
+        .attr('id', checkboxId)
+        .attr('type', 'checkbox');
+    if (maturity !== "No longer maintained") { checkbox.attr('checked', 'checked'); };
+    
+    item.append(checkbox);
+    item.append($('<label>').attr('for', checkboxId).text(" " + maturity.trim()))
+    $("#maturities-list").append(item);
+  }));
+
+  /* For each maturity, a click event */
+  $("[id^=chk-maturity]").click(function(a) {
+    var maturity = a.target.id.replace("chk-maturity-", "");
+    checkVisibility($('.filterableProject[data-maturity="' + maturity + '"]').toArray());
+  });
+
+  /* Populate languages list */
+  //var languages =  "".split(',');
+  var languages =  'JavaScript,,Python,Java,Objective-C,Go,Perl,Lua,Ruby,C++,Lisp,Erlang,C++/QML,C++/Qt,C,Elixir,Rust,,Kotlin,C#,C#/Python,Shell,TypeScript,PHP,Swift,Playbook,Shell/Python,PowerShell,Haxe,C++/Qt/QML,Emacs Lisp,Racket,elixir,Qml,Crystal'.split(',');
+  if (languages.indexOf("Unknown") === -1) languages.push("Unknown");
+  languages.forEach((language => {
+    if (language.length === 0) return;
+
+    var item = $('<div>').addClass("item-language");
+    var checkboxId = 'chk-language-' + slugify(language);
+    item.append(
+      $('<input>')
+        .attr('id', checkboxId)
+        .attr('type', 'checkbox')
+        .attr('checked', 'checked')
+    );
+    item.append($('<label>').attr('for', checkboxId).text(" " + language.trim()))
+    $("#languages-list").append(item);
+  }));
+
+  /* For each language, a click event */
+  $("[id^=chk-language]").click(function(a) {
+    var language = a.target.id.replace("chk-language-", "");
+    checkVisibility($('.filterableProject[data-language="' + language + '"]').toArray());
+  });
+
+  /* Populate licenses list */
+  var licenses =  'Apache,,Apache-2.0,MIT,GPL3,,LGPL,GPL-1.0-or-later,LGPL-2.1-only,MPL2,BSD,Unknown,ISC,AGPL3,N/A,GPL-3.0-only,CC0-1.0,AGPL-3.0-only,GPL3-only,Artistic2,EUPL,GNU GPL v3,AGPL-3.0-or-later,Unlicense,https://spdx.org/licenses/BSD-2-Clause.html'.split(',');
+  //var licenses =  ",GPL3,AGPL3,Apache,Artistic2,MIT,CC0 1.0,Unknown,N/A,ISC,BSD,LGPL2.1".split(',');
+  if (licenses.indexOf("Unknown") === -1) licenses.push("Unknown");
+  licenses.forEach((license => {
+    if (license.length === 0) return;
+
+    var item = $('<div>');
+    var checkboxId = 'chk-license-' + slugify(license);
+    item.append(
+      $('<input>')
+        .attr('id', checkboxId)
+        .attr('type', 'checkbox')
+        .attr('checked', 'checked')
+    );
+    item.append($('<label>').attr('for', checkboxId).text(" " + license.trim()))
+    $("#licenses-list").append(item);
+  }));
+
+  /* For each license, a click event */
+  $("[id^=chk-license]").click(function(a) {
+    var license = a.target.id.replace("chk-license-", "");
+    checkVisibility($('.filterableProject[data-license="' + license + '"]').toArray());
+  });
+
+
+  $("#chk-featured").click(function(a) {
+    checkVisibility($('.filterableProject').toArray());
+  });
+
+  /* Missing data is classed as 'Unknown' for now */
+  jQuery('li[data-language=""]').attr("data-language", "Unknown");
+  jQuery('li[data-license=""]').attr("data-license", "Unknown");
+
+  /* controls for the All/None selectors */
+  $("#maturities-all").click(() => {
+    $("[id^=chk-maturity]").prop("checked", true);
+    checkVisibility($('.filterableProject').toArray());
+  });
+  $("#maturities-none").click(() => {
+    $("[id^=chk-maturity]").prop("checked", false);
+    checkVisibility($('.filterableProject').toArray());
+  });
+  $("#languages-all").click(() => {
+    $("[id^=chk-language]").prop("checked", true);
+    checkVisibility($('.filterableProject').toArray());
+  });
+  $("#languages-none").click(() => {
+    $("[id^=chk-language]").prop("checked", false);
+    checkVisibility($('.filterableProject').toArray());
+  });
+
+  $("#licenses-all").click(() => {
+    $("[id^=chk-license]").prop("checked", true);
+    checkVisibility($('.filterableProject').toArray());
+  });
+  $("#licenses-none").click(() => {
+    $("[id^=chk-license]").prop("checked", false);
+    checkVisibility($('.filterableProject').toArray());
+  });
+
+  /* Make the visibility changes on click */
+  function checkVisibility(projects) {
+    projects.forEach(function(project) {
+      project = $(project);
+      var project_maturity = project.data("maturity");
+      var correct_maturity = $("#chk-maturity-" + project_maturity).prop("checked");
+      if (! correct_maturity && project_maturity !== "") {
+        project.hide(400);
+        return;
+      }
+      var project_language = project.data("language");
+      var correct_language = $("#chk-language-" + project_language.toString()).prop("checked");
+      if (! correct_language && project_language !== "") {
+        project.hide(400);
+        return;
+      }
+      var project_license = project.data("license");
+      var correct_license = $("#chk-license-" + project_license.toString()).prop("checked");
+      if (! correct_license && project_license !== "") {
+        project.hide(400);
+        return;
+      }
+      var project_featured = project.data("featured");
+      var correct_featured = $("#chk-featured").prop("checked");
+      if (correct_featured && project_featured === false) {
+        project.hide(400);
+        return;
+      }
+      project.show(400);
+    });
+  }
+
+  function slugify(str) {
+    if (!str) return "";
+    const a = 'àáäâãåèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;'
+    const b = 'aaaaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------'
+    const p = new RegExp(a.split('').join('|'), 'g')
+    return str.toString().toLowerCase()
+      .replace(/\s+/g, '-') // Replace spaces with
+      .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+      .replace(/&/g, '-and-') // Replace & with ‘and’
+      .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+      .replace(/\-\-+/g, '-') // Replace multiple — with single -
+      .replace(/^-+/, '') // Trim — from start of text .replace(/-+$/, '') // Trim — from end of text
+  }
+
+  /* show contols if JS is actually available... */
+  $("#controls").show();
+  $("li.project a img").each(function(a, b) {
+    console.log($(b).attr("src"));
+    if ($(b).attr("src").length === 0) {
+      $(b).attr("src", "/docs/projects/images/noimage.png");
+      //$(b).attr("style", "opacity: 0.4;");
+      $(b).css({opacity:0.5, height:"120px"})
+    }
+  });
+});
+</script>
+
+</head> 
+
+<body>
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="/docs/">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Pretty</span><span class="text-bold">Docs</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
+                    <li class="breadcrumb-item active">Try Matrix Now</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container try-matrix-now-container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><span aria-hidden="true" class="icon icon_genius"></span> Try Matrix Now</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Last updated: July 18th, 2018</div>
+                </div><!--//doc-header-->
+                <div id="showcase" class="doc-body row">
+                    <div class="doc-content col-md-12 col-12 order-1">
+                        <div class="content-inner">
+                            <section class="doc-section">
+                                <h2 id="getstarted" class="section-title">Get Started</h2>
+                                <div class="section-block">
+                                    <div class="row">
+                                    
+    <div class="col-md-3 col-12 mb-3 "
+        data-featured="true"
+        data-maturity="stable"
+        data-language="javascript"
+        data-license="apache">
+        <div class="theme-card">
+            <a href="projects/client/2014-06-09-riot.html"><img class="img-fluid" src="/docs/projects/images/riot-web-small.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Riot</h4>
+                <p class="card-text">Riot is a glossy web client with an emphasis on performance and usability</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2014-06-09-riot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 "
+        data-featured="false"
+        data-maturity="no-longer-maintained"
+        data-language="lua"
+        data-license="mit">
+        <div class="theme-card">
+            <a href="projects/client/2015-02-26-weechat.html"><img class="img-fluid" src="https://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-22-at-21.43.01-400x284.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">WeeChat script</h4>
+                <p class="card-text">For fans of command line interfaces, a nice Matrix script for WeeChat, an IRSSI like CLI</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2015-02-26-weechat.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 "
+        data-featured="false"
+        data-maturity="released"
+        data-language="objective-c"
+        data-license="apache">
+        <div class="theme-card">
+            <a href="projects/client/2015-04-02-riot-ios.html"><img class="img-fluid" src="/docs/projects/images/vector-iOS-small.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Riot iOS</h4>
+                <p class="card-text">Riot is a glossy client with an emphasis on performance and usability</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2015-04-02-riot-ios.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 "
+        data-featured="false"
+        data-maturity="released"
+        data-language="java"
+        data-license="apache">
+        <div class="theme-card">
+            <a href="projects/client/2015-06-02-riot-android.html"><img class="img-fluid" src="/docs/projects/images/vector-android-small.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Riot Android</h4>
+                <p class="card-text">Riot is a glossy client with an emphasis on performance and usability</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2015-06-02-riot-android.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 "
+        data-featured="false"
+        data-maturity="beta"
+        data-language="c-qt"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2015-06-27-quaternion.html"><img class="img-fluid" src="https://raw.githubusercontent.com/QMatrixClient/Quaternion/master/quaternion.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Quaternion</h4>
+                <p class="card-text">A Qt5-based IM client for Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2015-06-27-quaternion.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 "
+        data-featured="false"
+        data-maturity="beta"
+        data-language="c-qt"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2017-05-02-nheko.html"><img class="img-fluid" src="/docs/projects/images/nheko_thumb.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">nheko Reborn</h4>
+                <p class="card-text">A Qt/C++14 desktop client for Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-05-02-nheko.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 "
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2018-04-24-spectral.html"><img class="img-fluid" src="/docs/projects/images/spectral.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Spectral</h4>
+                <p class="card-text">A glossy client for Matrix, written in QtQuick Controls 2 and C++</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-04-24-spectral.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 "
+        data-featured="false"
+        data-maturity="released"
+        data-language="qml"
+        data-license="gpl-30-only">
+        <div class="theme-card">
+            <a href="projects/client/2018-12-27-fluffychat.html"><img class="img-fluid" src="https://christianpauly.github.io/fluffychat/assets/images/screenshot.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">FluffyChat</h4>
+                <p class="card-text">Open, nonprofit and cute client for Ubuntu Touch</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-12-27-fluffychat.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+                                    </div><!--//row-->
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                            <section class="doc-section">
+                                <h2 id="getstarted" class="section-title">Let's Go Deeper</h2>
+                            </section><!--//doc-section-->
+                                                        
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->                    
+                </div><!--//doc-body-->
+                
+                <div id="showcase" class="doc-body row">
+                        <div class="doc-content col-md-9 col-12 order-1">
+                            <div class="content-inner">
+
+                                <section class="doc-section">
+                                    <div class="section-block">
+                                        <div class="row">
+                                            <div class="col-md-4 col-12 mb-3">
+                                                <div class="theme-card">
+                                                    <div class="card-block">
+                                                        <div id="maturities" class="control-column nav-link">
+                                                            <h4>Maturity</h4>
+                                                            <span id="maturities-all">All</span>
+                                                            <span id="maturities-none">None</span>
+                                                            <div id="maturities-list" class="option-list"></div>
+                                                        </div>
+
+                                                        <hr />
+
+                                                        <div id="featured" class="control-column nav-link">
+                                                                <h4>Featured</h4>
+                                                                <div id="maturities-list" class="option-list">
+                                                                        <div>
+                                                                            <input id="chk-featured" type="checkbox">
+                                                                            <label for="chk-featured"> Featured Projects Only</label>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                    </div><!--//card-block-->
+                                                </div><!--//theme-card-->
+                                            </div>
+                                            <div class="col-md-5 col-12 mb-3">
+                                                <div class="theme-card">
+                                                    <div class="card-block">
+                                                        <div id="languages" class="control-column nav-link">
+                                                            <h4>Language</h4>
+                                                            <span id="languages-all">All</span>
+                                                            <span id="languages-none">None</span>
+                                                            <br />
+                                                            <div id="languages-list" class="option-list" style="display: inline-table;column-count: 2;width: 400px;"></div>
+                                                        </div>
+                                                    </div><!--//card-block-->
+                                                </div><!--//theme-card-->
+                                            </div>
+                                            <div class="col-md-3 col-12 mb-3">
+                                                <div class="theme-card">
+                                                    <div class="card-block">
+                                                        <div id="licenses" class="control-column nav-link">
+                                                            <h4>License</h4>
+                                                            <span id="licenses-all">All</span>
+                                                            <span id="licenses-none">None</span>
+                                                            <div id="licenses-list" class="option-list"></div>
+                                                        </div>
+                                                    </div><!--//card-block-->
+                                                </div><!--//theme-card-->
+                                            </div>
+                                            
+                                        </div><!--//row-->
+                                    </div><!--//section-block-->
+                                </section><!--//doc-section-->
+
+                                <section class="doc-section">
+                                    <h3 id="clients" class="section-title">Clients</h3>
+                                    <div class="section-block">
+                                        <div class="row">
+                                        
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="stable"
+        data-language="javascript"
+        data-license="apache">
+        <div class="theme-card">
+            <a href="projects/client/2014-06-09-riot.html"><img class="img-fluid" src="/docs/projects/images/riot-web-small.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Riot</h4>
+                <p class="card-text">Riot is a glossy web client with an emphasis on performance and usability</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2014-06-09-riot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="no-longer-maintained"
+        data-language="lua"
+        data-license="mit">
+        <div class="theme-card">
+            <a href="projects/client/2015-02-26-weechat.html"><img class="img-fluid" src="https://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-22-at-21.43.01-400x284.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">WeeChat script</h4>
+                <p class="card-text">For fans of command line interfaces, a nice Matrix script for WeeChat, an IRSSI like CLI</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2015-02-26-weechat.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="released"
+        data-language="objective-c"
+        data-license="apache">
+        <div class="theme-card">
+            <a href="projects/client/2015-04-02-riot-ios.html"><img class="img-fluid" src="/docs/projects/images/vector-iOS-small.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Riot iOS</h4>
+                <p class="card-text">Riot is a glossy client with an emphasis on performance and usability</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2015-04-02-riot-ios.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="released"
+        data-language="java"
+        data-license="apache">
+        <div class="theme-card">
+            <a href="projects/client/2015-06-02-riot-android.html"><img class="img-fluid" src="/docs/projects/images/vector-android-small.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Riot Android</h4>
+                <p class="card-text">Riot is a glossy client with an emphasis on performance and usability</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2015-06-02-riot-android.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="c-qml"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2015-06-26-tensor.html"><img class="img-fluid" src="https://matrix.org/blog/wp-content/uploads/2015/11/tensor1-400x284.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Tensor</h4>
+                <p class="card-text">QML-based Matrix client</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2015-06-26-tensor.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="c-qt"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2015-06-27-quaternion.html"><img class="img-fluid" src="https://raw.githubusercontent.com/QMatrixClient/Quaternion/master/quaternion.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Quaternion</h4>
+                <p class="card-text">A Qt5-based IM client for Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2015-06-27-quaternion.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">purple-matrix</h4>
+                <p class="card-text">A plugin for libpurple</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2015-10-13-purple-matrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="no-longer-maintained"
+        data-language="rust"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Perpetually Talking Online (PTO)</h4>
+                <p class="card-text">PTO is an IRC frontend to the federated Matrix network.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2015-12-10-pto.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="no-longer-maintained"
+        data-language="objective-c"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/client/2016-01-02-matrix-console-ios.html"><img class="img-fluid" src="/docs/projects/images/matrix-console-ios-2016-02-16-cropped.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Matrix Console iOS</h4>
+                <p class="card-text">A neutral iOS client showcasing Matrix capabilities and implementation.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-01-02-matrix-console-ios.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="no-longer-maintained"
+        data-language="java"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/client/2016-01-03-matrix-console-android.html"><img class="img-fluid" src="/docs/projects/images/matrix-console-android-2016-02-16-cropped.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Matrix Console Android</h4>
+                <p class="card-text">A neutral Android client showcasing Matrix capabilities and implementation.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-01-03-matrix-console-android.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="no-longer-maintained"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/client/2016-01-04-matrix-console.html"><img class="img-fluid" src="https://matrix.org/blog/wp-content/uploads/2015/04/syweb2-400x284.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Matrix Console Web</h4>
+                <p class="card-text">Matrix.org’s legacy AngularJS web client.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-01-04-matrix-console.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="late-beta"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/client/2016-01-05-glowing-bear-and-weechat-plugin.html"><img class="img-fluid" src="https://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-21-at-17.36.43-400x284.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Glowing Bear + WeeChat Script</h4>
+                <p class="card-text">A great IRC-style web interface to Matrix.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-01-05-glowing-bear-and-weechat-plugin.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="kotlin"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/client/2016-02-01-unplug.html"><img class="img-fluid" src="https://matrix.org/blog/wp-content/uploads/2015/04/unplug-0.1.5-400x284.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Unplug</h4>
+                <p class="card-text">Experimental Kotlin client</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-02-01-unplug.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="python"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/client/2016-02-03-redpill.html"><img class="img-fluid" src="https://matrix.org/blog/wp-content/uploads/2015/04/redpill0.7-400x284.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">redpill</h4>
+                <p class="card-text">A Python2 CLI client</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-02-03-redpill.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="javascript"
+        data-license="apache">
+        <div class="theme-card">
+            <a href="projects/client/2016-02-05-headjack.html"><img class="img-fluid" src="https://matrix.org/blog/wp-content/uploads/2015/05/headjack-400x284.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Headjack</h4>
+                <p class="card-text">Experimental Chrome App client</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-02-05-headjack.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix Blog</h4>
+                <p class="card-text">Read-only blog-style Matrix interface</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-02-08-h4x.no-blog.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="c-qt"
+        data-license="apache">
+        <div class="theme-card">
+            <a href="projects/client/2016-07-03-nachat.html"><img class="img-fluid" src="/docs/projects/images/nachat005-150.jpg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">NaChat</h4>
+                <p class="card-text">Desktop Qt client</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-07-03-nachat.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="python"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2016-07-05-revolt.html"><img class="img-fluid" src="/docs/projects/images/revolt.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Revolt</h4>
+                <p class="card-text">Revolt wraps Riot to provide better integration with desktop environments.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-07-05-revolt.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="rust"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-ircd</h4>
+                <p class="card-text">An IRCd implementation backed by Matrix.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-10-04-matrix-ircd.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="go"
+        data-license="isc">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">mm</h4>
+                <p class="card-text">A minimalistic client written in Go</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-10-07-mm.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="swift"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Riotic</h4>
+                <p class="card-text">macOS native webkitwrapper of Riot</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-10-18-riotic.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="early-beta"
+        data-language="javascript"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">journal</h4>
+                <p class="card-text">A web client for writing news stories, personal blogs and more, built on matrix.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2016-10-22-journal.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="no-longer-maintained"
+        data-language="swift"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">MatrixClient</h4>
+                <p class="card-text">Matrix Client for macOS</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-02-06-matrixclient.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="perl"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/client/2017-05-02-circle.html"><img class="img-fluid" src="/docs/projects/images/circle-fe-term+matrix-small.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Circle</h4>
+                <p class="card-text">A thin client and server for group chat, supporting IRC & Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-05-02-circle.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="early-alpha"
+        data-language="rust"
+        data-license="gpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Fest</h4>
+                <p class="card-text">A Gtk/Rust Matrix client using ruma-client-api</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-05-02-fest-im.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="javascript"
+        data-license="agpl3">
+        <div class="theme-card">
+            <a href="projects/client/2017-05-02-neo.html"><img class="img-fluid" src="/docs/projects/images/neo.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Neo</h4>
+                <p class="card-text">A Lightweight Webclient</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-05-02-neo.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="c-qt"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2017-05-02-nheko.html"><img class="img-fluid" src="/docs/projects/images/nheko_thumb.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">nheko Reborn</h4>
+                <p class="card-text">A Qt/C++14 desktop client for Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-05-02-nheko.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Mozilla Thunderbird</h4>
+                <p class="card-text">A free email & chat app</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-05-02-thunderbird.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="kotlin"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2017-06-20-koma-im.html"><img class="img-fluid" src="/docs/projects/images/koma-preview-thumbnail.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Koma</h4>
+                <p class="card-text">A modern client designed to launch fast and help you find information in large amounts of messages</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-06-20-koma-im.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="stable"
+        data-language="go"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-static</h4>
+                <p class="card-text">A static golang generated preview of public world readable Matrix rooms</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-08-09-matrix-static.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="rust"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2017-08-31-fractal.html"><img class="img-fluid" src="/docs/projects/images/fractal-small.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Fractal</h4>
+                <p class="card-text">Fractal is a Matrix Client written in Rust.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-08-31-fractal.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="no-longer-maintained"
+        data-language="go"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2017-10-14-morpheus.html"><img class="img-fluid" src="/docs/projects/images/morpheus.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Morpheus</h4>
+                <p class="card-text">A windows focused QT Client written in Golang.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-10-14-morpheus.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="go"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">mycete</h4>
+                <p class="card-text">Matrix Twitter / Mastodon client</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2017-11-16-mycete.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="go"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2018-03-15-gomuks.html"><img class="img-fluid" src="/docs/projects/images/gomuks-thumbnail.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">gomuks</h4>
+                <p class="card-text">A terminal Matrix client written in Go</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-03-15-gomuks.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Nebuchadnezzar</h4>
+                <p class="card-text">Linux native chat client (GTK2)</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-04-24-Nebuchadnezzar.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="kotlin"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">kacki</h4>
+                <p class="card-text">Simple chatbot for matrix.org, inspired by rbot.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-04-24-kacki.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="lisp"
+        data-license="gpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-client-legacy-el</h4>
+                <p class="card-text">An attempt to maintain the legacy matrix-client.el a little bit longer</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-04-24-matrix-client-legacy-el.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="java"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-java</h4>
+                <p class="card-text">A Java client for Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-04-24-matrix-java.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="java"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">miniVector</h4>
+                <p class="card-text">A simpler Matrix client for Android, with fewer permissions and dependencies</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-04-24-mini-vector-android.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="kotlin"
+        data-license="gpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">palaver</h4>
+                <p class="card-text">Palaver is a chat client for Matrix written in Kotlin.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-04-24-palaver.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2018-04-24-spectral.html"><img class="img-fluid" src="/docs/projects/images/spectral.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Spectral</h4>
+                <p class="card-text">A glossy client for Matrix, written in QtQuick Controls 2 and C++</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-04-24-spectral.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="c-qt-qml"
+        data-license="gpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">uMatriks</h4>
+                <p class="card-text">uMatriks is a native matrix client being developed for Ubuntu Touch</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-04-24-uMatriks.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">xonotic</h4>
+                <p class="card-text">In-game chat</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-04-24-xonotic.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="stable"
+        data-language="javascript"
+        data-license="gnu-gpl-v3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Rambox</h4>
+                <p class="card-text">Cross Platform multi-protocol messaging app that combines common web applications into one</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-05-31-rambox.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="swift"
+        data-license="gpl-30-only">
+        <div class="theme-card">
+            <a href="projects/client/2018-06-28-seaglass.html"><img class="img-fluid" src="/docs/projects/images/seaglass_image.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Seaglass</h4>
+                <p class="card-text">A truly native Matrix client for macOS</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-06-28-seaglass.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="stable"
+        data-language="emacs-lisp"
+        data-license="gpl3">
+        <div class="theme-card">
+            <a href="projects/client/2018-07-16-matrix-client-el.html"><img class="img-fluid" src="/docs/projects/images/matrix-el-thumb.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">matrix-client.el</h4>
+                <p class="card-text">A Matrix client for Emacs!</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-07-16-matrix-client-el.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="kotlin"
+        data-license="agpl-30-only">
+        <div class="theme-card">
+            <a href="projects/client/2018-09-13-SimpleMatrix.html"><img class="img-fluid" src="/docs/projects/images/simplematrix-stitched.jpg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">SimpleMatrix</h4>
+                <p class="card-text">An Android client with the goal of having a simple UI and UX</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-09-13-SimpleMatrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="lisp"
+        data-license="gpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Emacs Maelstrom</h4>
+                <p class="card-text">Library and client for the Matrix protocol for Emacs</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-12-10-EmacsMaelstrom.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="released"
+        data-language="qml"
+        data-license="gpl-30-only">
+        <div class="theme-card">
+            <a href="projects/client/2018-12-27-fluffychat.html"><img class="img-fluid" src="https://christianpauly.github.io/fluffychat/assets/images/screenshot.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">FluffyChat</h4>
+                <p class="card-text">Open, nonprofit and cute client for Ubuntu Touch</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2018-12-27-fluffychat.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="crystal"
+        data-license="mit">
+        <div class="theme-card">
+            <a href="projects/client/2019-01-02-agentsmith.html"><img class="img-fluid" src="https://raw.githubusercontent.com/nilsding/AgentSmith/master/misc/img/kvirc_channel.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">AgentSmith</h4>
+                <p class="card-text">communicate with the Matrix using your favourite IRC client (or bot)</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2019-01-02-agentsmith.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-4 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/client/2019-02-22-weechat-matrix.html"><img class="img-fluid" src="https://raw.githubusercontent.com/benparsons/matrix-notes/master/twim/weechat-matrix.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">weechat-matrix</h4>
+                <p class="card-text">Weechat Matrix protocol script written in python</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/client/2019-02-22-weechat-matrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+                                        </div><!--//row-->
+                                    </div><!--//section-block-->
+                                </section><!--//doc-section-->
+
+                                <section class="doc-section">
+                                    <h3 id="servers" class="section-title">Servers</h3>
+                                    <div class="section-block">
+                                        <div class="row">
+                                        
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="apache-20">
+        <div class="theme-card">
+            <a href="projects/server/2014-08-12-synapse.html"><img class="img-fluid" src="https://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-29-at-00.28.25-400x284.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Synapse</h4>
+                <p class="card-text">Matrix.org homeserver</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/server/2014-08-12-synapse.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="go"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/server/2014-11-03-pallium.html"><img class="img-fluid" src="https://matrix.org/blog/wp-content/uploads/2015/04/pallium.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Pallium</h4>
+                <p class="card-text">undefined</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/server/2014-11-03-pallium.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="java"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/server/2015-03-17-jsynapse.html"><img class="img-fluid" src="https://matrix.org/blog/wp-content/uploads/2015/04/jsynapse2.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">jSynapse</h4>
+                <p class="card-text">undefined</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/server/2015-03-17-jsynapse.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="go"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">bullettime</h4>
+                <p class="card-text">An experimental golang Matrix homeserver</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/server/2015-09-17-bullettime.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="rust"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Ruma</h4>
+                <p class="card-text">Ruma is a server written in Rust.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/server/2015-11-29-ruma.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="no-longer-maintained"
+        data-language="go"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Dendron</h4>
+                <p class="card-text">Discontinued in favour of Dendrite ("Dendron, done right")</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/server/2016-01-13-dendron.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="elixir"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrex</h4>
+                <p class="card-text">A WIP toy Matrix server implementation in Elixir.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/server/2016-11-12-matrex.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="go"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Dendrite</h4>
+                <p class="card-text">Dendrite (aka 'Dendron done Right') is a next-generation homeserver written in Golang</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/server/2017-05-02-dendrite.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="early-beta"
+        data-language="java"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">mxhsd</h4>
+                <p class="card-text">mxhsd is Matrix Homeserver aimed towards entities who want to have in-depth control of their servers</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/server/2018-04-24-mxhsd.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="bsd">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Construct</h4>
+                <p class="card-text">Construct is a C++ Matrix Homeserver</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/server/2018-05-19-construct.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="typescript"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Transform</h4>
+                <p class="card-text">Transform is a matrix homeserver built using Typescript and Redis.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/server/2018-06-27-transform.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+                                        </div><!--//row-->
+                                    </div><!--//section-block-->
+                                </section><!--//doc-section-->
+                                
+                                <section class="doc-section">
+                                    <h3 id="bots" class="section-title">Bots</h3>
+                                    <div class="section-block">
+                                        <div class="row">
+                                        
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="late-beta"
+        data-language="python"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">NEB (N. E. Bot)</h4>
+                <p class="card-text">Our dear Matrix Bot (v1)</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2014-09-10-neb.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="lua"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">ivar2 Matrix/IRC Bot</h4>
+                <p class="card-text">ivar2 is an IRC/Matrix bot on speed</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2014-12-10-ivar2-matrix-irc-bot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Hubot-Matrix</h4>
+                <p class="card-text">A Matrix-adapter for Hubot</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2015-12-04-hubot-matrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/bot/2016-02-03-feedbot.html"><img class="img-fluid" src="/docs/projects/images/rss.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">feedbot</h4>
+                <p class="card-text">Connects to RSS and Twitter feeds</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2016-02-03-feedbot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="c-python"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">MPD DJ</h4>
+                <p class="card-text">A bot for controlling MPD over matrix.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2016-03-19-mpd-dj.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="late-beta"
+        data-language="go"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Go-NEB</h4>
+                <p class="card-text">Our dear Matrix Bot (v2)</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2016-07-29-go-neb.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="javascript"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Hello Matrix Bot</h4>
+                <p class="card-text">Bot with an array of plugins</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2016-09-04-hello-matrix-bot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="no-longer-maintained"
+        data-language="python"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">mxpp</h4>
+                <p class="card-text">Bot for bridging Matrix and one-to-one XMPP chats</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2016-10-30-mxpp.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="gpl-30-only">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-email-bot</h4>
+                <p class="card-text">Posts links to emails in Matrix rooms. Ideal for newsletter distribution.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2016-12-17-matrix-email-bot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="shell-python"
+        data-license="unknown">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">tiny-matrix-bot</h4>
+                <p class="card-text">Bot with plugins</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2016-12-21-tiny-matrix-bot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-music-bot</h4>
+                <p class="card-text">last.fm scrobbler</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2016-12-26-matrix-music-bot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="stable"
+        data-language="javascript"
+        data-license="gpl-30-only">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">rocket-sheep</h4>
+                <p class="card-text">A bot to connect makerspaces with their members</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2017-01-29-rocket-sheep.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="python"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Navi</h4>
+                <p class="card-text">A minimal Matrix notification bot</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2017-02-05-navi.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="gpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-voyager-bot</h4>
+                <p class="card-text">Maps the Matrix network as it discovers rooms</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2017-03-19-matrix-voyager-bot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="early-beta"
+        data-language="python"
+        data-license="gpl-30-only">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-pollbot</h4>
+                <p class="card-text">A bot for creating polls</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2017-05-18-matrix-pollbot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="stable"
+        data-language="go"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matterbridge</h4>
+                <p class="card-text">Bot for bridging Matrix and Mattermost, IRC, XMPP, Gitter, Slack, Discord, Telegram, Rocket.Chat, Hipchat(via xmpp), Steam.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2017-08-21-matterbridge.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="go"
+        data-license="agpl-30-only">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Maunium GitLab Bot</h4>
+                <p class="card-text">A GitLab bot for Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2017-09-29-maulabbot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="perl"
+        data-license="gpl-30-only">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-mbot</h4>
+                <p class="card-text">Extensible bot based on Net::Async::Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2018-03-08-matrix-mbot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="stable"
+        data-language="go"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-monitor-bot</h4>
+                <p class="card-text">Measures latency between homeservers as perceived by users</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2018-04-10-matrix-monitor-bot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="typescript"
+        data-license="gpl-30-only">
+        <div class="theme-card">
+            <a href="projects/bot/2018-04-23-matrix-trello-bot.html"><img class="img-fluid" src="/docs/projects/images/trello.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">matrix-trello-bot</h4>
+                <p class="card-text">Interact with Trello in matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2018-04-23-matrix-trello-bot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">jira-to-matrix</h4>
+                <p class="card-text">A bot which listens to JIRA Webhooks and sends stuff between Matrix and Jira.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2018-04-24-jira-to-matrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="apache-20">
+        <div class="theme-card">
+            <a href="projects/bot/2018-04-24-opsdroid-connector.html"><img class="img-fluid" src="/docs/projects/images/opsdroid.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">opsdroid</h4>
+                <p class="card-text">A connector for opsdroid to receive and respond to messages</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2018-04-24-opsdroid-connector.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="agpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">silvy-matrix</h4>
+                <p class="card-text">A personal chatbot</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2018-04-24-silvy-matrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="agpl-30-only">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">maubot</h4>
+                <p class="card-text">A plugin-based Matrix bot system written in Python.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2018-06-14-maubot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="rust"
+        data-license="unlicense">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">devilish-d20</h4>
+                <p class="card-text">A bot for playing D&D.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2018-07-18-devilish-d20.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="mit">
+        <div class="theme-card">
+            <a href="projects/bot/2018-07-18-matrix-dialogflow.html"><img class="img-fluid" src="/docs/projects/images/Dialogflow_logo.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">matrix-dialogflow</h4>
+                <p class="card-text">Connect a DialogFlow agent to Matrix as a chatbot</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2018-07-18-matrix-dialogflow.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="elixir"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">MxBridge</h4>
+                <p class="card-text">A non-puppeting (i.e. bot) bridge between Matrix and XMPP group chats.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2018-09-05-mxbridge.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">FAQBot</h4>
+                <p class="card-text">FAQBot answers questions</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2018-10-23-faqbot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="agpl-30-only">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">maubot / xkcd</h4>
+                <p class="card-text">A maubot plugin to view xkcd comics</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2019-01-22-maubot-xkcd.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="agpl-30-only">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">dice</h4>
+                <p class="card-text">A maubot that rolls dice. Has built-in calculator.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2019-02-12-dice.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">elizabot</h4>
+                <p class="card-text">This bot runs Eliza, a chatbot from the 1960s</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2019-02-12-elizabot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="agpl-30-only">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">karma</h4>
+                <p class="card-text">A maubot that tracks the karma of users.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2019-02-12-karma.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="late-beta"
+        data-language="python"
+        data-license="https-spdxorg-licenses-bsd-2-clausehtml">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix Webhook</h4>
+                <p class="card-text">Post a message to a matrix room with a simple HTTP POST</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bot/2019-02-23-matrix-webhook.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+                                        </div><!--//row-->
+                                    </div><!--//section-block-->
+                                </section><!--//doc-section-->
+                                
+                                <section class="doc-section">
+                                    <h3 id="sdks" class="section-title">SDKs</h3>
+                                    <div class="section-block">
+                                        <div class="row">
+                                        
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="java"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix.org Android SDK</h4>
+                <p class="card-text">Matrix.org's Android SDK</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2014-09-30-matrix.org-android-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="objective-c"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix.org iOS SDK</h4>
+                <p class="card-text">Matrix.org's iOS SDK</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2014-09-30-matrix.org-ios-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="no-longer-maintained"
+        data-language="javascript"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix.org AngularJS SDK</h4>
+                <p class="card-text">AngularJS SDK is deprecated.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2014-11-04-matrix.org-angularjs-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix.org Python SDK</h4>
+                <p class="card-text">Python SDK from matrix.org</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2015-01-06-matrix.org-python-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix.org JS SDK</h4>
+                <p class="card-text">Matrix.org's JS SDK</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2015-03-04-matrix.org-js-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="objective-c"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix.org MatrixKit (iOS)</h4>
+                <p class="card-text">Matrix.org's reusable UI interfaces for iOS</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2015-04-01-matrix.org-matrixkit-ios.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="early-beta"
+        data-language="lisp"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">newlisp-matrix-client</h4>
+                <p class="card-text">undefined</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2015-05-06-newlisp-matrix-client.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="erlang"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-erlang-sdk</h4>
+                <p class="card-text">undefined</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2015-06-02-matrix-erlang-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="early-beta"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix.org React SDK</h4>
+                <p class="card-text">undefined</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2015-06-09-matrix.org-react-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="lgpl">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix Client SDK for GLib</h4>
+                <p class="card-text">Matrix Client SDK for GLib</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2015-12-10-glib-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="perl"
+        data-license="gpl-10-or-later">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Net::Async::Matrix (Perl)</h4>
+                <p class="card-text">null</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2016-02-05-net-async-matrix-perl.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix .NET SDK</h4>
+                <p class="card-text">null</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2016-03-18-matrix-dotnet-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="c-qt"
+        data-license="lgpl-21-only">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">libQMatrixClient</h4>
+                <p class="card-text">A Qt-based library to make IM clients for Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2016-04-05-libqmatrixclient.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="go"
+        data-license="mpl2">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">goMatrix</h4>
+                <p class="card-text">A Matrix library for go currently in development.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2016-05-11-goMatrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="php"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/sdk/2016-09-17-drupal-matrix-api.html"><img class="img-fluid" src="/docs/projects/images/200px-druplicon.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Drupal matrix_api module</h4>
+                <p class="card-text">A Drupal 8 integration module/SDK</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2016-09-17-drupal-matrix-api.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="stable"
+        data-language="go"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">gomatrix</h4>
+                <p class="card-text">Official Golang Matrix client SDK</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2016-11-29-gomatrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="java"
+        data-license="agpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix Java SDK</h4>
+                <p class="card-text">null</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2017-04-27-matrix-sync-java-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="rust"
+        data-license="cc0-10">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Glitch in the Matrix</h4>
+                <p class="card-text">null</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2017-05-02-glitch-in-the-matrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="swift"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Swift MatrixSDK</h4>
+                <p class="card-text">null</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2017-05-02-swift-matrix-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">godot-matrix</h4>
+                <p class="card-text">Godot Engine module for Matrix client</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2017-09-13-godot-matrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="haxe"
+        data-license="agpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix on Haxe</h4>
+                <p class="card-text">null</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-02-02-matrix-haxe.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="perl"
+        data-license="artistic2">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix::Client</h4>
+                <p class="card-text">Perl6 Matrix client SDK</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-02-23-perl6-matrix-client.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="typescript"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-js-bot-sdk</h4>
+                <p class="card-text">A bot-focused SDK for matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-02-24-matrix-js-bot-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="python"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">mautrix-python</h4>
+                <p class="card-text">An asyncio Matrix framework written in Python</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-03-08-mautrix-python.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="go"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">mautrix-go</h4>
+                <p class="card-text">A Golang Matrix framework</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-03-17-mautrix-go.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Operator</h4>
+                <p class="card-text">Operator is a C++ library for plugging into the Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-04-24-Operator.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="stable"
+        data-language="javascript"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-redux-wrap</h4>
+                <p class="card-text">A library that exposes matrix-js-sdk state via Redux</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-04-24-matrix-redux-wrap.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="apache-20">
+        <div class="theme-card">
+            <a href="projects/sdk/2018-04-24-opsdroid-connector.html"><img class="img-fluid" src="/docs/projects/images/opsdroid.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">opsdroid</h4>
+                <p class="card-text">A connector for opsdroid to receive and respond to messages</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-04-24-opsdroid-connector.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">mtxclient</h4>
+                <p class="card-text">SDK built on top of Boost.Asio</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-04-26-mtxclient.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="ruby"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Ruby Matrix SDK</h4>
+                <p class="card-text">An SDK for building Matrix communication applications in Ruby</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-05-11-ruby-matrix-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="agpl-30-only">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">maubot</h4>
+                <p class="card-text">A plugin-based Matrix bot system written in Python.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-06-14-maubot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="racket"
+        data-license="lgpl">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Racket Matrix SDK</h4>
+                <p class="card-text">A Matrix client library written in Racket</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-09-03-racket-matrix-sdk.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">MatrixAPI</h4>
+                <p class="card-text">A Matrix library for C# UWP</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-12-10-MatrixAPI.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="javascript"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">botkit-matrix</h4>
+                <p class="card-text">A Botkit connector for Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/sdk/2018-12-11-botkit-matrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+                                        </div><!--//row-->
+                                    </div><!--//section-block-->
+                                </section><!--//doc-section-->
+
+                                <section class="doc-section">
+                                        <h3 id="bridges" class="section-title">Bridges</h3>
+                                        <div class="section-block">
+                                            <div class="row">
+                                            
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-appservice-irc</h4>
+                <p class="card-text">for bridging between IRC networks and Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2015-03-10-irc-bridge.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="apache-20">
+        <div class="theme-card">
+            <a href="projects/bridge/2015-09-18-matrix-appservice-slack.html"><img class="img-fluid" src="/docs/projects/images/slack-logo.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">matrix-appservice-slack</h4>
+                <p class="card-text">This project bridges Slack to Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2015-09-18-matrix-appservice-slack.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="python"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/bridge/2016-02-03-feedbot.html"><img class="img-fluid" src="/docs/projects/images/rss.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">feedbot</h4>
+                <p class="card-text">Connects to RSS and Twitter feeds</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2016-02-03-feedbot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="apache-20">
+        <div class="theme-card">
+            <a href="projects/bridge/2016-02-10-matrix-appservice-gitter.html"><img class="img-fluid" src="/docs/projects/images/gitter-logo.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">matrix-appservice-gitter</h4>
+                <p class="card-text">This project bridges to Matrix, via the AS API on the Matrix side, and a Gitter user on the Gitter side.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2016-02-10-matrix-appservice-gitter.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="typescript"
+        data-license="apache-20">
+        <div class="theme-card">
+            <a href="projects/bridge/2016-06-19-matrix-appservice-discord.html"><img class="img-fluid" src="/docs/projects/images/discord-logo.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">matrix-appservice-discord</h4>
+                <p class="card-text">This project bridges Discord to Matrix via the Application Service API</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2016-06-19-matrix-appservice-discord.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="rust"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-rocketchat</h4>
+                <p class="card-text">This is an application service that bridges Matrix to Rocket.Chat, written in Rust.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2016-11-20-matrix-rocketchat.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/bridge/2016-12-03-matrix-appservice-imessage.html"><img class="img-fluid" src="/docs/projects/images/imessage-logo.jpg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">imessage bridge</h4>
+                <p class="card-text">Matrix bridge for Apple iMessage</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2016-12-03-matrix-appservice-imessage.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="java"
+        data-license="agpl3">
+        <div class="theme-card">
+            <a href="projects/bridge/2017-05-24-matrix-appservice-email.html"><img class="img-fluid" src="/docs/projects/images/email-icon.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Matrix Email Bridge</h4>
+                <p class="card-text">Two ways Email<->Matrix bridge</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2017-05-24-matrix-appservice-email.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="java"
+        data-license="gpl3-only">
+        <div class="theme-card">
+            <a href="projects/bridge/2017-10-12-SmsMatrix.html"><img class="img-fluid" src="/docs/projects/images/sms-icon.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">SmsMatrix</h4>
+                <p class="card-text">A simple Android SMS (text message) <--> Matrix bridge, implemented as a bot</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2017-10-12-SmsMatrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="java"
+        data-license="agpl-30-or-later">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-appservice-voip</h4>
+                <p class="card-text">a Voice/Video/SMS bridge for Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2018-07-02-matrix-appservice-voip.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="go"
+        data-license="agpl-30-or-later">
+        <div class="theme-card">
+            <a href="projects/bridge/2018-08-12-mautrix-whatsapp.html"><img class="img-fluid" src="/docs/projects/images/whatsapp-logo.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">mautrix-whatsapp</h4>
+                <p class="card-text">A Matrix-WhatsApp puppeting bridge</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2018-08-12-mautrix-whatsapp.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="python"
+        data-license="mit">
+        <div class="theme-card">
+            <a href="projects/bridge/2018-12-10-matrix-appservice-hangouts.html"><img class="img-fluid" src="/docs/projects/images/hangouts-icon.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">matrix-appservice-hangouts</h4>
+                <p class="card-text">Hangouts appservice written in Python 3.6 using asyncio.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2018-12-10-matrix-appservice-hangouts.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="alpha"
+        data-language="java"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">MXToot</h4>
+                <p class="card-text">A Matrix<->Mastodon bot written in Java.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2018-12-13-mxtoot.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="java"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix/Minecraft Bridge</h4>
+                <p class="card-text">Bridges Minecraft to Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2019-01-04-matrix-minecraft.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/bridge/2019-02-20-matrix-puppet-facebook-messenger.html"><img class="img-fluid" src="/docs/projects/images/messenger-logo.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">matrix-puppet-facebook</h4>
+                <p class="card-text">Bridge Matrix to Facebook Messenger</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2019-02-20-matrix-puppet-facebook-messenger.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/bridge/2019-02-20-matrix-puppet-groupme.html"><img class="img-fluid" src="/docs/projects/images/groupme-icon.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">matrix-puppet-groupme</h4>
+                <p class="card-text">Bridge Matrix to Groupme</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2019-02-20-matrix-puppet-groupme.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity=""
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/bridge/2019-02-20-matrix-puppet-hangouts.html"><img class="img-fluid" src="/docs/projects/images/hangouts-icon.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">matrix-puppet-hangouts</h4>
+                <p class="card-text">matrix-puppet-hangouts can be self-hosted, full setup instructions are available on the repo.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2019-02-20-matrix-puppet-hangouts.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            <a href="projects/bridge/2019-02-20-matrix-puppet-skype.html"><img class="img-fluid" src="/docs/projects/images/skype-icon.svg" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">matrix-puppet-skype</h4>
+                <p class="card-text">Bridge Matrix to Skype</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2019-02-20-matrix-puppet-skype.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="true"
+        data-maturity="beta"
+        data-language="typescript"
+        data-license="apache-20">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-bifrost</h4>
+                <p class="card-text">bridging with a variety of backends including libpurple and xmpp.js</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2019-03-06-matrix-bifrost.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="java"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">MatrixTexting</h4>
+                <p class="card-text">Android App that will bridge SMS/MMS messages</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/bridge/2019-03-06-matrixtexting.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+                                            </div><!--//row-->
+                                        </div><!--//section-block-->
+                                    </section><!--//doc-section-->
+                                
+                                <section class="doc-section">
+                                    <h3 id="sdks" class="section-title">Other</h3>
+                                    <div class="section-block">
+                                        <div class="row">
+                                        
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="perl"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Perl Matrix-IRC Bridge</h4>
+                <p class="card-text">The first Matrix/IRC bridge</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2014-12-06-perl-matrix-irc-bridge.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="elixir"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Bender</h4>
+                <p class="card-text">A simple/flexible bot framework</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2015-10-23-bender.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="perl"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">MatrixTool</h4>
+                <p class="card-text">Commands to interact with a Matrix homeserver</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2015-11-28-matrixtool.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Lightrix</h4>
+                <p class="card-text">Drive Adafruit Neopixels over Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-02-03-lightrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">mcat</h4>
+                <p class="card-text">Pipe to/from a Matrix room via the Python SDK</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-02-03-mcat.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="early-beta"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Polynomial</h4>
+                <p class="card-text">A Decentralized Webring</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-02-03-polynomial.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="shell"
+        data-license="apache">
+        <div class="theme-card">
+            <a href="projects/other/2016-04-30-concourse-matrix-notification-resource.html"><img class="img-fluid" src="/docs/projects/images/concourse-ci-logo.png" alt="screenshot" /></a>
+            <div class="card-block">
+                <h4 class="card-title">Concourse/Matrix notification resource</h4>
+                <p class="card-text">Post notifications from Concourse CI jobs</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-04-30-concourse-matrix-notification-resource.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="early-beta"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Synapse HDD space calculator</h4>
+                <p class="card-text">Hard Disk Space Capacity Calculation for Matrix.org Synapse Homeserver</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-06-30-hdd-space-calc-for-synapse.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="early-beta"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Nervewire</h4>
+                <p class="card-text">A Matrix.org image deck</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-08-11-nervewire.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="javascript"
+        data-license="unknown">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Interlocutor</h4>
+                <p class="card-text">Free, decentralized comment software for the web</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-08-27-interlocutor.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix bot nodes for Node-RED</h4>
+                <p class="card-text">Visual bot creation using Node-RED</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-09-05-node-red-nodes.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="early-beta"
+        data-language="c"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-dotnet-framework</h4>
+                <p class="card-text">Bot framework for matrix-dotnet-sdk</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-10-04-matrix-dotnet-framework.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Freebird</h4>
+                <p class="card-text">Matrix based Twitter clone</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-10-12-freebird.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="c"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-esp8266</h4>
+                <p class="card-text">Tiny matrix client for the esp8266 microcontroller</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-10-16-matrix-esp8266.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="go"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-pushgw</h4>
+                <p class="card-text">A custom push gateway</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-11-27-matrix-pushgw.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="rust"
+        data-license="agpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">synapse-password-reset</h4>
+                <p class="card-text">A tool to manage Synapse password resets</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-11-27-synapse-password-reset.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix Live</h4>
+                <p class="card-text">Liveblogging based on Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-11-29-matrix-live.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="playbook"
+        data-license="n-a">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">riotchat-ansible</h4>
+                <p class="card-text">Ansible playbook for matrix/riot.im setup</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-12-11-riotchat-ansible.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="typescript"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-fb-chat</h4>
+                <p class="card-text">POC designed to bridge Matrix rooms to FB chat.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2016-12-12-matrix-fb-chat.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="python"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrigram</h4>
+                <p class="card-text">This project bridges between matrix and telegram.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-01-03-matrigram.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="python"
+        data-license="gpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">synpurge</h4>
+                <p class="card-text">Purges Matrix room history room using the HTTP API</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-01-05-synpurge.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="stable"
+        data-language="java"
+        data-license="agpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">mxisd</h4>
+                <p class="card-text">Federated Identity server</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-01-23-mxisd.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="python"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">sygnaler</h4>
+                <p class="card-text">sygnaler is an alternative Push Gateway for Matrix written in swift.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-01-27-sygnaler.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="javascript"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix Recorder</h4>
+                <p class="card-text">Enables you to keep a record of all messages you have received.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-01-31-matrix-recorder.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="powershell"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">SmartParking</h4>
+                <p class="card-text">A parking system PoC using Matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-02-06-smartparking.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="early-beta"
+        data-language="python"
+        data-license="gpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">python-matrix-bot-api</h4>
+                <p class="card-text">A Python API for making Matrix bots</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-02-17-python-matrix-bot-api.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix Knowledge Base</h4>
+                <p class="card-text">FAQs and more. Bot-friendly collection of Matrix knowledge. Also suitable for humans.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-05-02-matrix-knowledge-base.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="stable"
+        data-language="python"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">sydent</h4>
+                <p class="card-text">The official Matrix Identity Server implementation</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-05-02-sydent.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="stable"
+        data-language="python"
+        data-license="gpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">synapse-diaspora-auth</h4>
+                <p class="card-text">A diaspora authenticator for synapse</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-05-02-synapse-diaspora-auth.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="typescript"
+        data-license="gpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Dimension</h4>
+                <p class="card-text">An alternative integrations manager for matrix clients</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-05-25-matrix-dimension.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="stable"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix Wishlist</h4>
+                <p class="card-text">A github repository tracking community requests for bridges, bots, and more.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-07-03-matrix-wishlist.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="late-beta"
+        data-language="go"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-media-repo</h4>
+                <p class="card-text">A replacement media repository for your homeserver</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-11-10-matrix-media-repo.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="c"
+        data-license="agpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Trinity</h4>
+                <p class="card-text">A management GUI for Matrix-Synapse server</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2017-11-23-Trinity.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="go"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-appservice-iot-proxy</h4>
+                <p class="card-text">A proxy for the client/server API to make IoT virtual devices easier</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-03-02-matrix-appservice-iot-proxy.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language=""
+        data-license="n-a">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Mage.matrix-stack</h4>
+                <p class="card-text">Mage is a set of Ansible roles are constructed around LXD containers and Ubuntu</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-24-Mage.matrix-stack.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language=""
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">Matrix VR Demo</h4>
+                <p class="card-text">This demo showcases Matrix as an open decentralised comms layer for the open VR web</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-24-Matrix-VR-Demo.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="shell"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-docker-ansible-deploy</h4>
+                <p class="card-text">Matrix server setup using Ansible and Docker</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-24-matrix-docker-ansible-deploy.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="c"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-olm-cpp</h4>
+                <p class="card-text">Provides a C++ wrapper for the libolm library, used in Matrix's end-to-end encryption</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-24-matrix-olm-cpp.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="shell"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-synapse-docker</h4>
+                <p class="card-text">The Matrix Synapse homeserver for Docker / k8s</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-24-matrix-synapse-docker.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="python"
+        data-license="agpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-synapse-rest-auth</h4>
+                <p class="card-text">REST endpoint Authentication module for synapse</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-24-matrix-synapse-rest-auth.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="perl"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrixmon</h4>
+                <p class="card-text">A small end-to-end prober and Prometheus stats exporter for a Matrix homeserver</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-24-matrixmon.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="python"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrixstats.org</h4>
+                <p class="card-text">The first public catalog for matrix rooms, grouped by ratings or categories</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-24-matrixstats.org.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="stable"
+        data-language="c"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">olm</h4>
+                <p class="card-text">An implementation of the Double Ratchet cryptographic ratchet in C++</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-24-olm.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="python"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">picard</h4>
+                <p class="card-text">Tools for handling slack channels and converting them to matrix</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-24-picard.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="shell"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">synapse-appservice-docker</h4>
+                <p class="card-text">Docker Compose setup for development of Synapse and Matrix appservices</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-24-synapse-appservice-docker.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="python"
+        data-license="eupl">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-synapse-pam</h4>
+                <p class="card-text">Allows Synapse to use UNIX accounts through PAM</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-26-matrix-synapse-pam.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="alpha"
+        data-language="python"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-synapse-smf</h4>
+                <p class="card-text">Allows synapse to use SMF 2.1 forum accounts from its database as a password provider</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-04-26-matrix-synapse-smf.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="go"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">terraform-provider-matrix</h4>
+                <p class="card-text">Terraform your matrix homeserver</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-06-17-terraform-provider-matrix.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="python"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">python-olm</h4>
+                <p class="card-text">Python bindings for the Olm C library.</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-06-28-python-olm.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">matrix-stfu</h4>
+                <p class="card-text">Spam / Trolling Filtration Utility</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-07-11-matrix-stfu.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="rust"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">olm-rs</h4>
+                <p class="card-text">olm, implemented in Rust</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-07-16-olm-rs.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="javascript"
+        data-license="agpl3">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">fed-tester</h4>
+                <p class="card-text">React.js frontend for the federation-tester api</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-07-18-fed-tester.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="stable"
+        data-language="go"
+        data-license="apache">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">libolm-go</h4>
+                <p class="card-text">Go Bindings for libolm</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-07-18-libolm-go.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="shell"
+        data-license="">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">synapse_scripts</h4>
+                <p class="card-text">Various tools for maintaining a matrix synapse chat server</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2018-07-18-synapse_scripts.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+    <div class="col-md-3 col-12 mb-3 filterableProject"
+        data-featured="false"
+        data-maturity="beta"
+        data-language="shell"
+        data-license="mit">
+        <div class="theme-card">
+            
+            <div class="card-block">
+                <h4 class="card-title">docker-riot-web</h4>
+                <p class="card-text">riot.im docker image generator</p>
+            </div><!--//card-block-->
+            <a class="mask" href="projects/other/2019-03-06-docker-riot-web.html"><i class="icon fa fa-search-plus"></i></a>
+        </div><!--//theme-card-->
+    </div>
+    
+                                        </div><!--//row-->
+                                    </div><!--//section-block-->
+                                </section><!--//doc-section-->
+                                                            
+                            </div><!--//content-inner-->
+                        </div><!--//doc-content-->
+                        <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                                <div id="doc-nav" class="doc-nav">
+                                    <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                        <a class="nav-link scrollto" href="#clients">Clients</a>
+                                        <a class="nav-link scrollto" href="#servers">Servers</a>
+                                        <a class="nav-link scrollto" href="#bots">Bots</a> 
+                                        <a class="nav-link scrollto" href="#sdks">SDKs</a> 
+                                        <a class="nav-link scrollto" href="#bridges">Bridges</a> 
+                                        <a class="nav-link scrollto" href="#other">Other</a> 
+
+                                        
+
+                                        
+                                    </nav><!--//doc-menu-->
+                                </div>
+                            </div><!--//doc-sidebar-->
+                    </div><!--//doc-body-->               
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>  
+    <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>     
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                          
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css"> 
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="../assets/css/newdocs.css">
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1>
+                        <img src="../assets/images/matrix logo.png" style="width: 120px;" />
+                        <span class="text-bold">Docs</span>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
+                    <li class="breadcrumb-item active">Installing Synapse</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container documentation-container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title">Installing Synapse</h1>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            
+<section class="doc-section">
+<h1 id="installing-synapse">Installing Synapse</h1>
+<p><a href="https://github.com/matrix-org/synapse/">Synapse</a> is the most widely installed Matrix homeserver implementation. It is written in Python - originally Python 2, but a Python 3 implementation is available and is set to become the new standard.</p>
+<p><a href="https://matrix.org/docs/guides/#installing-synapse">Many guides have been written</a> explaining how to install Synapse, but there is sometimes confusion about the exact steps.</p>
+<p>matrix.org has two recommended methods for installing Synapse:</p>
+<section class="doc-section">
+<h2 id="matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</h2>
+<p>First, Slavi has created a very useful set of Ansible playbooks which install containerised instances of multiple Matrix-ecosystem packages, the Synapse container being the centerpiece of these.</p>
+<p>You can find the playbooks at <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">https://github.com/spantaleev/matrix-docker-ansible-deploy</a>, and there are instructions included in the repo.</p>
+<p>To talk about the playbooks or get installation support, talk in <a href="https://matrix.to/#/#matrix-docker-ansible-deploy:devture.com">#matrix-docker-ansible-deploy:devture.com</a>.</p>
+<p>It's also possible to use Docker containers without Ansible, just follow the intructions in <a href="https://github.com/matrix-org/synapse/tree/master/docker">the Synapse Docker README</a>.</p>
+</section>
+<section class="doc-section">
+<h2 id="installation-guide-for-ubuntu">Installation guide for Ubuntu</h2>
+<p>matrix.org recommends <a href="https://www.natrius.eu/dokuwiki/doku.php?id=digital:server:matrixsynapse">this guide hosted by natrius.eu</a> as a guide to installing Synapse manually. It is written specifically for Ubuntu 18.04 LTS, but many of the steps can be generalised to any Linux distro.</p>
+<p>For further help join <a href="https://matrix.to/#/#synapse:matrix.org">#synapse:matrix.org</a>, or to give feedback about this guide visit <a href="https://matrix.to/#/#synapseguide:matrix.org">#synapseguide:matrix.org</a>.</p>
+</section>
+</section>
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a data-toggle="collapse" href="#how-can-i-get-involved" role="button" aria-expanded="false" aria-controls="how-can-i-get-involved" class="">
+	<h4>How can I get involved?</h4>
+</a>
+<div id="how-can-i-get-involved" class="collapse">
+	<a class="nav-link" href="how-can-i-get-involved.html">How can I get involved?</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#access-matrix-via-a-public-webclient-server">Access Matrix via a public webclient/server</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#run-a-server-and-or-client-yourself">Run a server and/or client yourself</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="how-can-i-get-involved.html#running-your-own-client">Running your own client:</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#running-your-own-homeserver">Running your own homeserver:</a>
+</nav>
+	<a class="nav-link" href="how-can-i-get-involved.html#checkout-our-code-or-write-your-own">Checkout our code - or write your own</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="how-can-i-get-involved.html#write-your-own-client">Write your own client:</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#write-your-own-server">Write your own server:</a>
+</nav>
+	<a class="nav-link" href="how-can-i-get-involved.html#write-an-application-service">Write an Application Service:</a>
+</div>
+<a data-toggle="collapse" href="#what-application-services-can-do-for-you" role="button" aria-expanded="false" aria-controls="what-application-services-can-do-for-you" class="">
+	<h4>What Application services can do for you</h4>
+</a>
+<div id="what-application-services-can-do-for-you" class="collapse">
+	<a class="nav-link" href="what-application-services-can-do-for-you.html">What Application services can do for you</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#some-of-the-features-of-the-irc-application-service-we-have-since-implemented-include">Some of the features of the IRC application service we have since implemented include:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#the-use-of-the-application-services-api-means">The use of the Application Services API means:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#implementation-details">Implementation details:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#example">Example</a>
+</div>
+<a data-toggle="collapse" href="#types-of-bridging" role="button" aria-expanded="false" aria-controls="types-of-bridging" class="">
+	<h4>Types of bridging</h4>
+</a>
+<div id="types-of-bridging" class="collapse">
+	<a class="nav-link" href="types-of-bridging.html">Types of bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#types-of-rooms">Types of rooms</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="types-of-bridging.html#portal-rooms">Portal rooms</a>
+	<a class="nav-link" href="types-of-bridging.html#plumbed-rooms">Plumbed rooms</a>
+</nav>
+	<a class="nav-link" href="types-of-bridging.html#types-of-bridges-simplest-first">Types of bridges (simplest first):</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="types-of-bridging.html#bridgebot-based-bridges">Bridgebot-based bridges</a>
+	<a class="nav-link" href="types-of-bridging.html#bot-api-aka-virtual-user-based-bridges">Bot-API (aka Virtual user) based bridges</a>
+	<a class="nav-link" href="types-of-bridging.html#simple-puppeted-bridge">Simple puppeted bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#double-puppeted-bridge">Double-puppeted bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#hybrid-relaybot-puppet-bridge">Hybrid Relaybot Puppet Bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#server-to-server-bridging">Server-to-server bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#one-way-bridging">One-way bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#sidecar-bridge">Sidecar bridge</a>
+</div>
+<a data-toggle="collapse" href="#usage-of-the-matrix-js-sdk" role="button" aria-expanded="false" aria-controls="usage-of-the-matrix-js-sdk" class="">
+	<h4>Usage of the matrix-js-sdk</h4>
+</a>
+<div id="usage-of-the-matrix-js-sdk" class="collapse">
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html">Usage of the matrix-js-sdk</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#making-a-matrix-client">Making a Matrix Client</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#lets-write-java-script">Let's write JavaScript</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#login-with-an-access-token">Login with an access token</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#sync-and-listen">Sync and Listen</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#access-the-store">Access the Store</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#send-messages-to-rooms">Send messages to rooms</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#further">Further</a>
+</div>
+<a data-toggle="collapse" href="#made-for-matrix-badge-guidelines" role="button" aria-expanded="false" aria-controls="made-for-matrix-badge-guidelines" class="">
+	<h4>Made for Matrix Badge Guidelines</h4>
+</a>
+<div id="made-for-matrix-badge-guidelines" class="collapse">
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html">Made for Matrix Badge Guidelines</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#preferred-badge">Preferred Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#inverted-badge">Inverted Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#graphic-standards">Graphic Standards</a>
+</div>
+<a data-toggle="collapse" href="#installing-synapse" role="button" aria-expanded="false" aria-controls="installing-synapse" class="selectedPage">
+	<h4>Installing Synapse</h4>
+</a>
+<div id="installing-synapse" class="collapse show selectedPage">
+	<a class="nav-link scrollto" href="">Installing Synapse</a>
+	<a class="nav-link scrollto" href="#matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a>
+	<a class="nav-link scrollto" href="#installation-guide-for-ubuntu">Installation guide for Ubuntu</a>
+</div>
+<a data-toggle="collapse" href="#using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" role="button" aria-expanded="false" aria-controls="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="">
+	<h4>Using Matrix to make Chatbot software from the 1960s available in 2018</h4>
+</a>
+<div id="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="collapse">
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html">Using Matrix to make Chatbot software from the 1960s available in 2018</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#what-is-eliza">What is ELIZA?</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#2005-online-java-script-version-appeared">2005, online JavaScript version appeared</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#making-the-bot">Making the bot</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#using-the-library">Using the library</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#using-matrix-to-make-a-modern-chatbot">Using Matrix to make a modern Chatbot</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#code-walkthrough">Code Walkthrough</a>
+</nav>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#deploying-on-a-raspberry-pi">Deploying on a Raspberry Pi</a>
+</div>
+
+                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="../assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    
+</body>
+</html> 
+

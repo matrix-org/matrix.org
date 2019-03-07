@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css"> 
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="../assets/css/newdocs.css">
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1>
+                        <img src="../assets/images/matrix logo.png" style="width: 120px;" />
+                        <span class="text-bold">Docs</span>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
+                    <li class="breadcrumb-item active">Types of bridging</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container documentation-container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title">Types of bridging</h1>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            
+<p>&lt;link href=&quot;/docs/css/faq.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;</p>
+<section class="doc-section">
+<h1 id="types-of-bridging">Types of bridging</h1>
+<p>Bridges come in many flavours, and we need consistent terminology within the Matrix community to ensure everyone (users, developers, core team) is on the same page.  This post is primarily intended for bridge developers to refer to when building bridges.</p>
+<p><em>The most recent version of this document is <a href="https://matrix.org/docs/guides/types-of-bridging.html">here</a> (<a href="https://github.com/matrix-org/matrix-doc/blob/master/supporting-docs/guides/2017-03-11-types-of-bridging.md">source</a>) but we’re also posting it as a blog post for visibility.</em></p>
+<section class="doc-section">
+<h2 id="types-of-rooms">Types of rooms</h2>
+<section class="doc-section">
+<h3 id="portal-rooms">Portal rooms</h3>
+<p>Bridges can register themselves as controlling chunks of room aliases namespace, letting Matrix users join remote rooms transparently if they /join #freenode_#wherever:matrix.org or similar.  The resulting Matrix room is typically automatically bridged to the single target remote room. Access control for Matrix users is typically managed by the remote network’s side of the room. This is called a portal room, and is useful for jumping into remote rooms without any configuration needed whatsoever - using Matrix as a ‘bouncer’ for the remote network.</p>
+</section>
+<section class="doc-section">
+<h3 id="plumbed-rooms">Plumbed rooms</h3>
+<p>Alternatively, an existing Matrix room can be can plumbed into one or more specific remote rooms by configuring a bridge (which can be run by anyone).  For instance, #matrix:matrix.org is plumbed into #matrix on Freenode, matrixdotorg/#matrix on Slack, etc.  Access control for Matrix users is necessarily managed by the Matrix side of the room. This is useful for using Matrix to link together different communities.</p>
+<p>Migrating rooms between a portal &amp; plumbed room is currently a bit of a mess, as there’s not yet a way for users to remove portal rooms once they’re created, so you can end up with a mix of portal &amp; plumbed users bridged into a room, which looks weird from both the Matrix and non-Matrix viewpoints. https://github.com/matrix-org/matrix-appservice-irc/issues/387 tracks this.</p>
+</section>
+</section>
+<section class="doc-section">
+<h2 id="types-of-bridges-simplest-first">Types of bridges (simplest first):</h2>
+<section class="doc-section">
+<h3 id="bridgebot-based-bridges">Bridgebot-based bridges</h3>
+<p>The simplest way to exchange messages with a remote network is to have the bridge log into the network using one or more predefined users called bridge bots - typically called MatrixBridge or MatrixBridge[123] etc.  These relay traffic on behalf of the users on the other side, but it’s a terrible experience as all the metadata about the messages and senders is lost.  This is how the <a href="https://github.com/SijmenSchoon/telematrix">telematrix</a> matrix&lt;-&gt;telegram bridge currently works.</p>
+</section>
+<section class="doc-section">
+<h3 id="bot-api-aka-virtual-user-based-bridges">Bot-API (aka Virtual user) based bridges</h3>
+<p>Some remote systems support the idea of injecting messages from ‘fake’ or ‘virtual’ users, which can be used to represent the Matrix-side users as unique entities in the remote network.  For instance, Slack’s inbound webhooks lets remote bots be created on demand, letting Matrix users be shown cosmetically correctly in the timeline as virtual users.  However, the resulting virtual users aren’t real users on the remote system, so don’t have presence/profile and can’t be tab-completed or direct-messaged etc.  They also have no way to receive typing notifs or other richer info which may not be available via bot APIs.  This is how the current <a href="https://github.com/matrix-org/matrix-appservice-slack">matrix-appservice-slack</a> bridge works.</p>
+</section>
+<section class="doc-section">
+<h3 id="simple-puppeted-bridge">Simple puppeted bridge</h3>
+<p>This is a richer form of bridging, where the bridge logs into the remote service as if it were a real 3rd party client for that service.  As a result, the Matrix user has to already have a valid account on the remote system.  In exchange, the Matrix user ‘puppets’ their remote user, such that other users on the remote system aren’t even aware they are speaking to a user via Matrix.  The full semantics of the remote system are available to the bridge to expose into Matrix.  However, the bridge has to handle the authentication process to log the user into the remote bridge.</p>
+<p>This is essentially how the current <a href="https://github.com/matrix-org/matrix-appservice-irc">matrix-appservice-irc</a> bridge works (if you configure it to log into the remote IRC network as your ‘real’ IRC nickname).  <a href="https://github.com/matrix-org/matrix-appservice-gitter">matrix-appservice-gitter</a> is being extended to support both puppeted and bridgebot-based operation.  It’s how the experimental <a href="https://github.com/matrix-org/matrix-appservice-tg">matrix-appservice-tg</a> bridge works.</p>
+<p>Going forwards we’re aiming for all bridges to be at least simple puppeted, if not double-puppeted.</p>
+</section>
+<section class="doc-section">
+<h3 id="double-puppeted-bridge">Double-puppeted bridge</h3>
+<p>A simple ‘puppeted bridge’ allows the Matrix user to control their account on their remote network. However, ideally this puppeting should work in both directions, so if the user logs into (say) their native telegram client and starts conversations, sends messages etc, these should be reflected back into Matrix as if the user had done them there. This requires the bridge to be able to puppet the Matrix side of the bridge on behalf of the user.</p>
+<p>This is the holy-grail of bridging because both the Matrix account and the third party account are accurately represented on their respective networks, with all user metadata intact. This is in contrast to a relaybot which would appear as a separate user from whom it represents.</p>
+<p>Several obstacles exist to the proper implementation of double-puppeted bridges. On the Matrix side, we need an elegant way of having the bridge auth with Matrix as the matrix user (which requires some kind of scoped access_token delegation). On the third-party network, unique problems exist depending on the limitations of that particular network network. For example, many third party networks will lack the ability to represent other Matrix users than the one being puppeted (see hybrid relaybot).</p>
+<p><a href="https://github.com/matrix-hacks/matrix-puppet-bridge">matrix-puppet-bridge</a> is a community project that tries to facilitate development of double-puppeted bridges, having done so, without a bridgebot feature, for <a href="https://github.com/matrix-hacks/matrix-puppet-bridge#examples">several networks</a>. A downside to their approach is the assumption that an individual will run the bridge on their own homeserver, thus working around the problem of sharing auth credentials on a shared homeserver.</p>
+</section>
+<section class="doc-section">
+<h3 id="hybrid-relaybot-puppet-bridge">Hybrid Relaybot Puppet Bridge</h3>
+<p>This type of bridge is a combination single or double puppet bridge which tries to solve the problem of representing other users by means of the bridgebot technique. <a href="https://github.com/matrix-org/matrix-appservice-gitter">matrix-appservice-gitter</a> works in this way.</p>
+</section>
+<section class="doc-section">
+<h3 id="server-to-server-bridging">Server-to-server bridging</h3>
+<p>Some remote protocols (IRC, XMPP, SIP, SMTP, NNTP, GnuSocial etc) support federation - either open or closed.  The most elegant way of bridging to these protocols would be to have the bridge participate in the federation as a server, directly bridging the entire namespace into Matrix.</p>
+<p>We’re not aware of anyone who’s done this yet.</p>
+</section>
+<section class="doc-section">
+<h3 id="one-way-bridging">One-way bridging</h3>
+<p>One-way bridging is rare, but can be used to represent a bridge that is bridging from the remote system into matrix. This is common when the remote system does not permit message posting, or is simply not capable of handling posting outside their system. The users bridged from the remote system often appear as virtual users in matrix, as is the case with <a href="https://github.com/turt2live/matrix-appservice-instagram">matrix-appservice-instagram</a>.</p>
+</section>
+<section class="doc-section">
+<h3 id="sidecar-bridge">Sidecar bridge</h3>
+<p>Finally: the types of bridging described above assume that you are synchronising the conversation history of the remote system into Matrix, so it may be decentralised and exposed to multiple users within the wider Matrix network.</p>
+<p>This can cause problems where the remote system may have arbitrarily complicated permissions (ACLs) controlling access to the history, which will then need to be correctly synchronised with Matrix’s ACL model, without introducing security issues such as races.  We already see some problems with this on the IRC bridge, where history visibility for +i and +k channels have to be carefully synchronised with the Matrix rooms.</p>
+<p>You can also hit problems with other network-specific features not yet having equivalent representation in the Matrix protocol (e.g. ephemeral messages, or op-only messages - although arguably that’s a type of ACL).</p>
+<p>One solution could be to support an entirely different architecture of bridging, where the Matrix client-server API is mapped directly to the remote service, meaning that ACL decisions are delegated to the remote service, and conversations are not exposed into the wider Matrix. This is effectively using the bridge purely as a 3rd party client for the network (similar to Bitlbee).  The bridge is only available to a single user, and conversations cannot be shared with other Matrix users as they aren’t actually Matrix rooms.  (Another solution could be to use Active Policy Servers at last as a way of centralising and delegating ACLs for a room)</p>
+<p>This is essentially an entirely different product to the rest of Matrix, and whilst it could be a solution for some particularly painful ACL problems, we’re focusing on non-sidecar bridges for now.</p>
+</section>
+</section>
+</section>
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a data-toggle="collapse" href="#how-can-i-get-involved" role="button" aria-expanded="false" aria-controls="how-can-i-get-involved" class="">
+	<h4>How can I get involved?</h4>
+</a>
+<div id="how-can-i-get-involved" class="collapse">
+	<a class="nav-link" href="how-can-i-get-involved.html">How can I get involved?</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#access-matrix-via-a-public-webclient-server">Access Matrix via a public webclient/server</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#run-a-server-and-or-client-yourself">Run a server and/or client yourself</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="how-can-i-get-involved.html#running-your-own-client">Running your own client:</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#running-your-own-homeserver">Running your own homeserver:</a>
+</nav>
+	<a class="nav-link" href="how-can-i-get-involved.html#checkout-our-code-or-write-your-own">Checkout our code - or write your own</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="how-can-i-get-involved.html#write-your-own-client">Write your own client:</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#write-your-own-server">Write your own server:</a>
+</nav>
+	<a class="nav-link" href="how-can-i-get-involved.html#write-an-application-service">Write an Application Service:</a>
+</div>
+<a data-toggle="collapse" href="#what-application-services-can-do-for-you" role="button" aria-expanded="false" aria-controls="what-application-services-can-do-for-you" class="">
+	<h4>What Application services can do for you</h4>
+</a>
+<div id="what-application-services-can-do-for-you" class="collapse">
+	<a class="nav-link" href="what-application-services-can-do-for-you.html">What Application services can do for you</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#some-of-the-features-of-the-irc-application-service-we-have-since-implemented-include">Some of the features of the IRC application service we have since implemented include:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#the-use-of-the-application-services-api-means">The use of the Application Services API means:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#implementation-details">Implementation details:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#example">Example</a>
+</div>
+<a data-toggle="collapse" href="#types-of-bridging" role="button" aria-expanded="false" aria-controls="types-of-bridging" class="selectedPage">
+	<h4>Types of bridging</h4>
+</a>
+<div id="types-of-bridging" class="collapse show selectedPage">
+	<a class="nav-link scrollto" href="">Types of bridging</a>
+	<a class="nav-link scrollto" href="#types-of-rooms">Types of rooms</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link scrollto" href="#portal-rooms">Portal rooms</a>
+	<a class="nav-link scrollto" href="#plumbed-rooms">Plumbed rooms</a>
+</nav>
+	<a class="nav-link scrollto" href="#types-of-bridges-simplest-first">Types of bridges (simplest first):</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link scrollto" href="#bridgebot-based-bridges">Bridgebot-based bridges</a>
+	<a class="nav-link scrollto" href="#bot-api-aka-virtual-user-based-bridges">Bot-API (aka Virtual user) based bridges</a>
+	<a class="nav-link scrollto" href="#simple-puppeted-bridge">Simple puppeted bridge</a>
+	<a class="nav-link scrollto" href="#double-puppeted-bridge">Double-puppeted bridge</a>
+	<a class="nav-link scrollto" href="#hybrid-relaybot-puppet-bridge">Hybrid Relaybot Puppet Bridge</a>
+	<a class="nav-link scrollto" href="#server-to-server-bridging">Server-to-server bridging</a>
+	<a class="nav-link scrollto" href="#one-way-bridging">One-way bridging</a>
+	<a class="nav-link scrollto" href="#sidecar-bridge">Sidecar bridge</a>
+</div>
+<a data-toggle="collapse" href="#usage-of-the-matrix-js-sdk" role="button" aria-expanded="false" aria-controls="usage-of-the-matrix-js-sdk" class="">
+	<h4>Usage of the matrix-js-sdk</h4>
+</a>
+<div id="usage-of-the-matrix-js-sdk" class="collapse">
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html">Usage of the matrix-js-sdk</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#making-a-matrix-client">Making a Matrix Client</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#lets-write-java-script">Let's write JavaScript</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#login-with-an-access-token">Login with an access token</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#sync-and-listen">Sync and Listen</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#access-the-store">Access the Store</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#send-messages-to-rooms">Send messages to rooms</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#further">Further</a>
+</div>
+<a data-toggle="collapse" href="#made-for-matrix-badge-guidelines" role="button" aria-expanded="false" aria-controls="made-for-matrix-badge-guidelines" class="">
+	<h4>Made for Matrix Badge Guidelines</h4>
+</a>
+<div id="made-for-matrix-badge-guidelines" class="collapse">
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html">Made for Matrix Badge Guidelines</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#preferred-badge">Preferred Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#inverted-badge">Inverted Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#graphic-standards">Graphic Standards</a>
+</div>
+<a data-toggle="collapse" href="#installing-synapse" role="button" aria-expanded="false" aria-controls="installing-synapse" class="">
+	<h4>Installing Synapse</h4>
+</a>
+<div id="installing-synapse" class="collapse">
+	<a class="nav-link" href="installing-synapse.html">Installing Synapse</a>
+	<a class="nav-link" href="installing-synapse.html#matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a>
+	<a class="nav-link" href="installing-synapse.html#installation-guide-for-ubuntu">Installation guide for Ubuntu</a>
+</div>
+<a data-toggle="collapse" href="#using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" role="button" aria-expanded="false" aria-controls="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="">
+	<h4>Using Matrix to make Chatbot software from the 1960s available in 2018</h4>
+</a>
+<div id="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="collapse">
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html">Using Matrix to make Chatbot software from the 1960s available in 2018</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#what-is-eliza">What is ELIZA?</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#2005-online-java-script-version-appeared">2005, online JavaScript version appeared</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#making-the-bot">Making the bot</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#using-the-library">Using the library</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#using-matrix-to-make-a-modern-chatbot">Using Matrix to make a modern Chatbot</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#code-walkthrough">Code Walkthrough</a>
+</nav>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#deploying-on-a-raspberry-pi">Deploying on a Raspberry Pi</a>
+</div>
+
+                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="../assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    
+</body>
+</html> 
+

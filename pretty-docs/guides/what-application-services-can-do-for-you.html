@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css"> 
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="../assets/css/newdocs.css">
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1>
+                        <img src="../assets/images/matrix logo.png" style="width: 120px;" />
+                        <span class="text-bold">Docs</span>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
+                    <li class="breadcrumb-item active">What Application services can do for you</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container documentation-container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title">What Application services can do for you</h1>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            
+<section class="doc-section">
+<h1 id="application-services">Application services</h1>
+<p>Application services are distinct modules which sit alongside a homeserver providing arbitrary extensible functionality decoupled from the homeserver implementation. Just like the rest of Matrix, they communicate via HTTP using JSON. Application services function in a very similar way to traditional clients, but they are given much more power than a normal client. They can reserve entire namespaces of room aliases and user IDs for their own purposes. They can silently monitor events in rooms, or any events directed at any user ID. This power allows application services to have extremely useful abilities which overall enhance the end user experience.</p>
+<p>One of the main use cases for application services is protocol bridges. Our Matrix server on Matrix.org links in to various IRC channels and networks. This functionality was initially implemented as a simple bot which resided as a user on the Matrix rooms we wanted to link to freenode channels (#matrix, #matrix-dev, #openwebrtc and #vuc etc). There was nothing special about this bot; it is just treated as a client. However, as we started to rely on it more and more though, we realised that there were things that were impossible for simple client-side bots to do by themselves - for example, the bot could not reserve the virtual user IDs it wanted to create, and could not lazily bridge arbitrary IRC rooms on-the-fly - and this spurred the development of Application Services.</p>
+<section class="doc-section">
+<h3 id="some-of-the-features-of-the-irc-application-service-we-have-since-implemented-include">Some of the features of the IRC application service we have since implemented include:</h3>
+<ul>
+<li>Specific channel-to-matrix room bridging : This is what the original IRC bot did. You can specify specific channels and specific room IDs, and messages will be bridged.</li>
+<li>Dynamic channel-to-matrix room bridging : This allows Matrix users to join any channel on an IRC network, rather than being forced to use one of the specific channels configured.</li>
+<li>Two-way PM support : IRC users can PM the virtual &quot;M-&quot; users and private Matrix rooms will be created. Likewise, Matrix users can invite the virtual &quot;@irc_Nick:domain&quot; user IDs to a room and a PM to the IRC nick will be made.</li>
+<li>IRC nick changing support: Matrix users are no longer forced to use &quot;M-&quot; nicks and can change them by sending &quot;!nick&quot; messages directly to the bridge.</li>
+<li>Ident support: This allows usernames to be authenticated for virtual IRC clients, which means IRC bans can be targeted at the Matrix user rather than the entire application service.</li>
+</ul>
+</section>
+<section class="doc-section">
+<h3 id="the-use-of-the-application-services-api-means">The use of the Application Services API means:</h3>
+<ul>
+<li>The bot can reserve user IDs. This prevents humans from registering for @irc_... user IDs which would then clash with the operation of the bot.</li>
+<li>The bot can reserve room aliases. This prevents humans from register for #irc_... aliases which would then clash with the operation of the bot.</li>
+<li>The bot can trivially manage hundreds of users. Events are pushed to the application service directly. If you tried to do this as a client-side bot, you would need one event stream connection per virtual user.</li>
+<li>The bot can lazily create rooms on demand. This means Matrix users can join non-existent room aliases and have the application service quickly track an IRC channel and create a room with that alias, allowing the join request to succeed.</li>
+</ul>
+</section>
+<section class="doc-section">
+<h3 id="implementation-details">Implementation details:</h3>
+<ul>
+<li>Written in Node.js, designed to be run using &lt;code&gt;forever&lt;/code&gt;.</li>
+<li>Built on the generic &lt;a href=&quot;http://github.com/matrix-org/matrix-appservice-node&quot;&gt;matrix-appservice-node&lt;/a&gt; framework.</li>
+<li>Supports sending metrics in statsd format.</li>
+<li>Uses matrix-appservice-node to provide a standardised interface when writing application services, rather than an explicit web framework (though under the hood matrix-appservice-node is using Express).</li>
+</ul>
+<p>At present, the IRC application service is in beta, and is being run on #matrix and #matrix-dev. If you want to give it a go, &lt;a title=&quot;Matrix-IRC Application Service&quot; href=&quot;https://github.com/matrix-org/matrix-appservice-irc&quot;&gt;check it out on Github&lt;/a&gt;!</p>
+</section>
+</section>
+<section class="doc-section">
+<h1 id="what-application-services-can-do-for-you">What Application services can do for you</h1>
+<p>Application services have enormous potential for creating new and exciting ways to transform and enhance the core Matrix protocol. For example, you could aggregate information from multiple rooms into a summary room, or create throwaway virtual user accounts to proxy messages for a fixed user ID on-the-fly. As you may expect, all of this power assumes a high degree of trust between application services and homeservers. Only homeserver admins can allow an application service to link up with their homeserver, and the application service is in no way federated to other homeservers. You can think of application services as additional logic on the homeserver itself, without messing around with the book-keeping that homeservers have to do. This makes adding useful functionality very easy.</p>
+<section class="doc-section">
+<h3 id="example">Example</h3>
+<p>The application service (AS) API itself uses webhooks to communicate from the homeserver to the AS:</p>
+<ul>
+<li>Room Alias Query API : The homeserver hits a URL on your application server to see if a room alias exists.</li>
+<li>User Query API : The homeserver hits a URL on your application server to see if a user ID exists.</li>
+<li>Push API : The homeserver hits a URL on your application server to notify you of new events for your users and rooms.</li>
+</ul>
+<p>A very basic application service may want to log all messages in rooms which have an alias starting with &quot;#logged_&quot; (side note: logging won't work if these rooms are using end-to-end encryption).</p>
+<p>Here's an example of a very basic application service using Python (with Flask and Requests) which logs room activity:</p>
+<pre><code class="language-python"># app_service.py:
+
+import json, requests  # we will use this later
+from flask import Flask, jsonify, request
+app = Flask(__name__)
+
+@app.route(&quot;/transactions/&amp;lt;transaction&amp;gt;&quot;, methods=[&quot;PUT&quot;])
+def on_receive_events(transaction):
+    events = request.get_json()[&quot;events&quot;]
+    for event in events:
+        print &quot;User: %s Room: %s&quot; % (event[&quot;user_id&quot;], event[&quot;room_id&quot;])
+        print &quot;Event Type: %s&quot; % event[&quot;type&quot;]
+        print &quot;Content: %s&quot; % event[&quot;content&quot;]
+    return jsonify({})
+
+if __name__ == &quot;__main__&quot;:
+    app.run()
+</code></pre>
+<p>Set your new application service running on port 5000 with:</p>
+<pre><code class="language-unix">python app_service.py
+</code></pre>
+<p>The homeserver needs to know that the application service exists before it will send requests to it. This is done via a registration YAML file which is specified in Synapse's main config file e.g. &lt;code&gt;homeserver.yaml&lt;/code&gt;. The server admin needs to add the application service registration configuration file as an entry to this file.</p>
+<pre><code class="language-yaml"># homeserver.yaml
+app_service_config_files:
+  - &quot;/path/to/appservice/registration.yaml&quot;
+</code></pre>
+<p>NB: Note the &quot;-&quot; at the start; this indicates a list element. The registration file &lt;code&gt;registration.yaml&lt;/code&gt; should look like:</p>
+<pre><code class="language-yaml"># registration.yaml
+
+# An ID which is unique across all application services on your homeserver. This should never be changed once set.
+id: &quot;something-good&quot;
+
+# this is the base URL of the application service
+url: &quot;http://localhost:5000&quot;
+
+# This is the token that the AS should use as its access_token when using the Client-Server API
+# This can be anything you want.
+as_token: wfghWEGh3wgWHEf3478sHFWE
+
+# This is the token that the HS will use when sending requests to the AS.
+# This can be anything you want.
+hs_token: ugw8243igya57aaABGFfgeyu
+
+# this is the local part of the desired user ID for this AS (in this case @logging:localhost)
+sender_localpart: logging
+namespaces:
+  users: []
+  rooms: []
+  aliases:
+    - exclusive: false
+      regex: &quot;#logged_.*&quot;
+</code></pre>
+<p><strong>You will need to restart the homeserver after editing the config file before it will take effect.</strong></p>
+<p>To test everything is working correctly, go ahead and explicitly create a room with the alias &quot;#logged_test:localhost&quot; and send a message into the room: the HS will relay the message to the AS by PUTing to /transactions/&lt;tid&gt; and you should see your AS print the event on the terminal. This will monitor any room which has an alias prefix of &quot;#logged_&quot;, but it won't lazily create room aliases if they don't already exist. This means it will only log messages in the room you created before: #logged_test:localhost. Try joining the room &quot;#logged_test2:localhost&quot; without creating it, and it will fail. Let's fix that and add in lazy room creation:</p>
+<pre><code class="language-python">@app.route(&quot;/rooms/&amp;lt;alias&amp;gt;&quot;)
+def query_alias(alias):
+    alias_localpart = alias.split(&quot;:&quot;)[0][1:]
+    requests.post(
+        # NB: &quot;TOKEN&quot; is the as_token referred to in registration.yaml
+        &quot;http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN&quot;,
+        json.dumps({
+            &quot;room_alias_name&quot;: alias_localpart
+        }),
+        headers={&quot;Content-Type&quot;:&quot;application/json&quot;}
+    )
+    return jsonify({})
+</code></pre>
+<p>This makes the application service lazily create a room with the requested alias whenever the HS queries the AS for the existence of that alias (when users try to join that room), allowing any room with the alias prefix #logged_ to be sent to the AS. Now try joining the room &quot;#logged_test2:localhost&quot; and it will work as you'd expect.  You can see that if this were a real bridge, the AS would have checked for the existence of #logged_test2 in the remote network, and then lazily-created it in Matrix as required.</p>
+<p>Application services are powerful components which extend the functionality of homeservers, but they are limited. They can only ever function in a &quot;passive&quot; way. For example, you cannot implement an application service which censors swear words in rooms, because there is no way to prevent the event from being sent. Aside from the fact that censoring will not work when using end-to-end encryption, all federated homeservers would also need to reject the event in order to stop developing an inconsistent event graph. To &quot;actively&quot; monitor events, another component called a &quot;Policy Server&quot; is required, which is beyond the scope of this post.  Also, Application Services can result in a performance bottleneck, as all events on the homeserver must be ordered and sent to the registered application services.  If you are bridging huge amounts of traffic, you may be better off having your bridge directly talk the Server-Server federation API rather than the simpler Application Service API.</p>
+<p>I hope this demonstrates how easy it is to create an application service, along with a few ideas of the kinds of things you can do with them. Obvious uses include build protocol bridges, search engines, invisible bots, etc. For more information on the AS HTTP API, check out the new &lt;a href=&quot;https://matrix.org/docs/spec/#application-service-api&quot;&gt;Application Service API&lt;/a&gt; section in the spec, or the raw drafts and spec in &lt;a href=&quot;https://github.com/matrix-org/matrix-doc/&quot; target=&quot;_blank&quot;&gt;https://github.com/matrix-org/matrix-doc/&lt;/a&gt;.</p>
+</section>
+</section>
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a data-toggle="collapse" href="#how-can-i-get-involved" role="button" aria-expanded="false" aria-controls="how-can-i-get-involved" class="">
+	<h4>How can I get involved?</h4>
+</a>
+<div id="how-can-i-get-involved" class="collapse">
+	<a class="nav-link" href="how-can-i-get-involved.html">How can I get involved?</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#access-matrix-via-a-public-webclient-server">Access Matrix via a public webclient/server</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#run-a-server-and-or-client-yourself">Run a server and/or client yourself</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="how-can-i-get-involved.html#running-your-own-client">Running your own client:</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#running-your-own-homeserver">Running your own homeserver:</a>
+</nav>
+	<a class="nav-link" href="how-can-i-get-involved.html#checkout-our-code-or-write-your-own">Checkout our code - or write your own</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="how-can-i-get-involved.html#write-your-own-client">Write your own client:</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#write-your-own-server">Write your own server:</a>
+</nav>
+	<a class="nav-link" href="how-can-i-get-involved.html#write-an-application-service">Write an Application Service:</a>
+</div>
+<a data-toggle="collapse" href="#what-application-services-can-do-for-you" role="button" aria-expanded="false" aria-controls="what-application-services-can-do-for-you" class="selectedPage">
+	<h4>What Application services can do for you</h4>
+</a>
+<div id="what-application-services-can-do-for-you" class="collapse show selectedPage">
+	<a class="nav-link scrollto" href="">What Application services can do for you</a>
+	<a class="nav-link scrollto" href="#some-of-the-features-of-the-irc-application-service-we-have-since-implemented-include">Some of the features of the IRC application service we have since implemented include:</a>
+	<a class="nav-link scrollto" href="#the-use-of-the-application-services-api-means">The use of the Application Services API means:</a>
+	<a class="nav-link scrollto" href="#implementation-details">Implementation details:</a>
+	<a class="nav-link scrollto" href="#example">Example</a>
+</div>
+<a data-toggle="collapse" href="#types-of-bridging" role="button" aria-expanded="false" aria-controls="types-of-bridging" class="">
+	<h4>Types of bridging</h4>
+</a>
+<div id="types-of-bridging" class="collapse">
+	<a class="nav-link" href="types-of-bridging.html">Types of bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#types-of-rooms">Types of rooms</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="types-of-bridging.html#portal-rooms">Portal rooms</a>
+	<a class="nav-link" href="types-of-bridging.html#plumbed-rooms">Plumbed rooms</a>
+</nav>
+	<a class="nav-link" href="types-of-bridging.html#types-of-bridges-simplest-first">Types of bridges (simplest first):</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="types-of-bridging.html#bridgebot-based-bridges">Bridgebot-based bridges</a>
+	<a class="nav-link" href="types-of-bridging.html#bot-api-aka-virtual-user-based-bridges">Bot-API (aka Virtual user) based bridges</a>
+	<a class="nav-link" href="types-of-bridging.html#simple-puppeted-bridge">Simple puppeted bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#double-puppeted-bridge">Double-puppeted bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#hybrid-relaybot-puppet-bridge">Hybrid Relaybot Puppet Bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#server-to-server-bridging">Server-to-server bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#one-way-bridging">One-way bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#sidecar-bridge">Sidecar bridge</a>
+</div>
+<a data-toggle="collapse" href="#usage-of-the-matrix-js-sdk" role="button" aria-expanded="false" aria-controls="usage-of-the-matrix-js-sdk" class="">
+	<h4>Usage of the matrix-js-sdk</h4>
+</a>
+<div id="usage-of-the-matrix-js-sdk" class="collapse">
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html">Usage of the matrix-js-sdk</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#making-a-matrix-client">Making a Matrix Client</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#lets-write-java-script">Let's write JavaScript</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#login-with-an-access-token">Login with an access token</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#sync-and-listen">Sync and Listen</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#access-the-store">Access the Store</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#send-messages-to-rooms">Send messages to rooms</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#further">Further</a>
+</div>
+<a data-toggle="collapse" href="#made-for-matrix-badge-guidelines" role="button" aria-expanded="false" aria-controls="made-for-matrix-badge-guidelines" class="">
+	<h4>Made for Matrix Badge Guidelines</h4>
+</a>
+<div id="made-for-matrix-badge-guidelines" class="collapse">
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html">Made for Matrix Badge Guidelines</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#preferred-badge">Preferred Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#inverted-badge">Inverted Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#graphic-standards">Graphic Standards</a>
+</div>
+<a data-toggle="collapse" href="#installing-synapse" role="button" aria-expanded="false" aria-controls="installing-synapse" class="">
+	<h4>Installing Synapse</h4>
+</a>
+<div id="installing-synapse" class="collapse">
+	<a class="nav-link" href="installing-synapse.html">Installing Synapse</a>
+	<a class="nav-link" href="installing-synapse.html#matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a>
+	<a class="nav-link" href="installing-synapse.html#installation-guide-for-ubuntu">Installation guide for Ubuntu</a>
+</div>
+<a data-toggle="collapse" href="#using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" role="button" aria-expanded="false" aria-controls="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="">
+	<h4>Using Matrix to make Chatbot software from the 1960s available in 2018</h4>
+</a>
+<div id="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="collapse">
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html">Using Matrix to make Chatbot software from the 1960s available in 2018</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#what-is-eliza">What is ELIZA?</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#2005-online-java-script-version-appeared">2005, online JavaScript version appeared</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#making-the-bot">Making the bot</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#using-the-library">Using the library</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#using-matrix-to-make-a-modern-chatbot">Using Matrix to make a modern Chatbot</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#code-walkthrough">Code Walkthrough</a>
+</nav>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#deploying-on-a-raspberry-pi">Deploying on a Raspberry Pi</a>
+</div>
+
+                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="../assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    
+</body>
+</html> 
+

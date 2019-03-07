@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css"> 
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="../assets/css/newdocs.css">
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1>
+                        <img src="../assets/images/matrix logo.png" style="width: 120px;" />
+                        <span class="text-bold">Docs</span>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
+                    <li class="breadcrumb-item active">Usage of the matrix-js-sdk</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container documentation-container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title">Usage of the matrix-js-sdk</h1>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            
+<p>&lt;style&gt;
+ul {
+list-style: circle;
+margin-left: 30px;
+}
+p {
+padding-bottom: 1em;
+line-height: 1.7em;
+}
+h2 {
+margin-bottom: 15px;
+margin-top: 30px;
+}</p>
+<p>&lt;/style&gt;</p>
+<section class="doc-section">
+<h1 id="usage-of-the-matrix-js-sdk">Usage of the matrix-js-sdk</h1>
+<p>Matrix allows open real-time communications over the Internet using HTTP and JSON. This makes developing clients to connect to Matrix servers really easy! Because it's open, and uses simple syntax for messages, you can connect Matrix to anything that communicates over a standard HTTP interface - later projects in this series will explore ideas such as building bots, performing machine learning on message content, and connecting IoT devices such as Philips Hue lights.</p>
+<section class="doc-section">
+<h2 id="making-a-matrix-client">Making a Matrix Client</h2>
+<p>Let's explore how we would make a very simple Matrix client, with only the ability to perform an initial sync, and to get member lists and the timeline for rooms of our choice.</p>
+<p>This article will explore the <a href="https://matrix.org/docs/spec/client_server/latest.html">Matrix Client-Server API</a>, making use of the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a>. Later articles may discuss making the underlying calls. Specifically we will cover:</p>
+<ul>
+<li>login</li>
+<li>simple syncing</li>
+<li>listening for timeline events</li>
+<li>access the <code>MatrixInMemoryStore</code></li>
+<li>sending messages to rooms</li>
+<li>how to respond to specific messages, as a bot would</li>
+</ul>
+<p>We'll use Node.js as our environment, though the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a> can also be used directly in the browser.</p>
+<p>Before we start, make sure you have Node.js and NPM installed: follow instructions at <a href="https://nodejs.org/">nodejs.org</a> for your platform. Then create a new directory to work in:</p>
+<pre><code class="language-unix">mkdir my-first-matrix-client
+cd my-first-matrix-client
+</code></pre>
+</section>
+<section class="doc-section">
+<h2 id="lets-write-java-script">Let's write JavaScript</h2>
+<p>Once you're ready, the first thing to do is install the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a> from NPM:</p>
+<pre><code class="language-unix">npm install matrix-js-sdk
+</code></pre>
+<p>We include the SDK in our source exactly as expected:</p>
+<pre><code class="language-javascript">import sdk from 'matrix-js-sdk';
+</code></pre>
+</section>
+<section class="doc-section">
+<h2 id="login-with-an-access-token">Login with an access token</h2>
+<p>Instantiate a new client object and use an <code>access token</code> to login:</p>
+<pre><code class="language-javascript">const client = sdk.createClient({
+    baseUrl: &quot;https://matrix.org&quot;,
+    accessToken: &quot;....MDAxM2lkZW50aWZpZXIga2V5CjAwMTBjaWQgZ2Vu....&quot;,
+    userId: &quot;@USERID:matrix.org&quot;
+});
+// note that we use the full MXID for the userId value
+</code></pre>
+<p>&lt;small&gt;(<a href="https://matrix-org.github.io/matrix-js-sdk/0.11.1/global.html#createClient">jsdoc for <code>createClient</code></a>)&lt;/small&gt;</p>
+<p>If you are logged into Riot, you can find an <code>access token</code> for the logged-in user on the Settings page.</p>
+<p>If the homeserver you're logging in to supports logging in with a password, you can also retrieve an <code>access token</code> programmatically using the API. To do this, create a new <code>client</code> with no authentication parameters, then call <code>client.login()</code> with <code>&quot;m.login.password&quot;</code>:</p>
+<pre><code class="language-javascript">const client = sdk.createClient(&quot;https://matrix.org&quot;);
+client.login(&quot;m.login.password&quot;, {&quot;user&quot;: &quot;USERID&quot;, &quot;password&quot;: &quot;hunter2&quot;}).then((response) =&gt; {
+    console.log(response.access_token);
+});
+</code></pre>
+<p>In any case, once logged in either with a password or an access token, the client can get the current access token via:</p>
+<pre><code class="language-javascript">console.log(client.getAccessToken());
+</code></pre>
+<p><strong>Note:</strong> it is essential to keep this access token safe, as it allows complete access to your Matrix account!</p>
+</section>
+<section class="doc-section">
+<h2 id="sync-and-listen">Sync and Listen</h2>
+<p>Next we start the client, this sets up the connection to the server and allows us to begin syncing:</p>
+<pre><code class="language-javascript">client.startClient();
+</code></pre>
+<p>Perform a first sync, and listen for the response, to get the latest state from the homeserver:</p>
+<pre><code class="language-javascript">client.once('sync', function(state, prevState, res) {
+    console.log(state); // state will be 'PREPARED' when the client is ready to use
+});
+</code></pre>
+<p>Once the sync is complete, we can add listeners for events. We could listen to ALL incoming events, but that would be a lot of traffic, and too much for our simple example. If you want to listen to all events, you can add a listen as follows:</p>
+<pre><code class="language-javascript">client.on(&quot;event&quot;, function(event){
+    console.log(event.getType());
+    console.log(event);
+})
+</code></pre>
+<p>Instead, let's just listen to events happening on the timeline of rooms for which our user is a member:</p>
+<pre><code class="language-javascript">client.on(&quot;Room.timeline&quot;, function(event, room, toStartOfTimeline) {
+    console.log(event.event);
+});
+</code></pre>
+</section>
+<section class="doc-section">
+<h2 id="access-the-store">Access the Store</h2>
+<p>When we created a new client with <code>sdk.createClient()</code>, an instance of the default store, <code>MatrixInMemoryStore</code> was created and enabled. When we sync, or instruct otherwise our client to fetch data, the data is automatically added to the store.</p>
+<p>To access the store, we use accessor methods. For example, to get a list of rooms in which our user is joined:</p>
+<pre><code class="language-javascript">// client.client.getRooms() returns an array of room objects
+var rooms = client.getRooms();
+rooms.forEach(room =&gt; {
+    console.log(room.roomId);
+});
+</code></pre>
+<p>&lt;small&gt;(<a href="https://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#getRooms">jsdoc for <code>client.getRooms</code></a>)&lt;/small&gt;</p>
+<p>More usefully, we could get a list of members for each of these rooms:</p>
+<pre><code class="language-javascript">var rooms = client.getRooms();
+rooms.forEach(room =&gt; {
+    var members = room.getJoinedMembers();
+    members.forEach(member =&gt; {
+        console.log(member.name);
+    });
+});
+</code></pre>
+<p>For each room, we can inspect the timeline in the store:</p>
+<pre><code class="language-javascript">var rooms = client.getRooms();
+rooms.forEach(room =&gt; {
+    room.timeline.forEach(t =&gt; {
+        console.log(JSON.stringify(t.event.content));
+    });
+});
+</code></pre>
+</section>
+<section class="doc-section">
+<h2 id="send-messages-to-rooms">Send messages to rooms</h2>
+<p>To send a message, we create a content object, and specify a room to send to. In this case, I've taken the room ID of <code>#test:matrix.org</code>, and used it as an example:</p>
+<pre><code class="language-javascript">var testRoomId = &quot;!jhpZBTbckszblMYjMK:matrix.org&quot;;
+
+var content = {
+    &quot;body&quot;: &quot;Hello World&quot;,
+    &quot;msgtype&quot;: &quot;m.text&quot;
+};
+
+client.sendEvent(testRoomId, &quot;m.room.message&quot;, content, &quot;&quot;).then((res) =&gt; {
+   // message sent successfully
+}).catch((err) =&gt; {
+    console.log(err);
+}
+</code></pre>
+<p>&lt;small&gt;(<a href="https://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#sendEvent">jsdoc for <code>client.sendEvent</code></a>)&lt;/small&gt;</p>
+<p>Knowing this, we can put together message listening and message sending, to build a bot which just echos back any message starting with a &quot;!&quot;:</p>
+<pre><code class="language-javascript">var testRoomId = &quot;!jhpZBTbckszblMYjMK:matrix.org&quot;;
+
+client.on(&quot;Room.timeline&quot;, function(event, room, toStartOfTimeline) {
+    // we know we only want to respond to messages
+    if (event.getType() !== &quot;m.room.message&quot;) {
+        return;
+    }
+
+    // we are only intested in messages from the test room, which start with &quot;!&quot;
+    if (event.getRoomId() === testRoomId &amp;&amp; event.getContent().body[0] === '!') {
+        sendNotice(event.event.content.body);
+    }
+});
+
+function sendNotice(body) {
+    var content = {
+        &quot;body&quot;: body.substring(1),
+        &quot;msgtype&quot;: &quot;m.notice&quot;
+    };
+    client.sendEvent(testRoomId, &quot;m.room.message&quot;, content, &quot;&quot;, (err, res) =&gt; {
+        console.log(err);
+    });
+}
+</code></pre>
+<p>Take a look at the <code>msgtype</code> in the object above. In the previous example, we used &quot;m.text&quot; for this field, but now we're using &quot;m.notice&quot;. Bots will often use &quot;m.notice&quot; to differentiate their messages. This allows the client to render notices differently, for example Riot, the most popular client, renders notices with a more pale text colour.</p>
+</section>
+<section class="doc-section">
+<h2 id="further">Further</h2>
+<p>There is much, much more to Matrix, the Client-Server API and the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a>, but this guide should give some understanding of simple usage. In subsequent guides we'll cover more detail and also explore projects you can build on top, such as IoT controls and chatbot interfaces. For now you can take a look at <a href="https://github.com/matrix-org/matrix-js-sdk/tree/master/examples">other examples in the matrix-js-sdk itself</a>, and also the <a href="https://matrix.org/docs/spec/client_server/latest.html">Matrix Client-Server API</a> which it implements.</p>
+</section>
+</section>
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a data-toggle="collapse" href="#how-can-i-get-involved" role="button" aria-expanded="false" aria-controls="how-can-i-get-involved" class="">
+	<h4>How can I get involved?</h4>
+</a>
+<div id="how-can-i-get-involved" class="collapse">
+	<a class="nav-link" href="how-can-i-get-involved.html">How can I get involved?</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#access-matrix-via-a-public-webclient-server">Access Matrix via a public webclient/server</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#run-a-server-and-or-client-yourself">Run a server and/or client yourself</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="how-can-i-get-involved.html#running-your-own-client">Running your own client:</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#running-your-own-homeserver">Running your own homeserver:</a>
+</nav>
+	<a class="nav-link" href="how-can-i-get-involved.html#checkout-our-code-or-write-your-own">Checkout our code - or write your own</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="how-can-i-get-involved.html#write-your-own-client">Write your own client:</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#write-your-own-server">Write your own server:</a>
+</nav>
+	<a class="nav-link" href="how-can-i-get-involved.html#write-an-application-service">Write an Application Service:</a>
+</div>
+<a data-toggle="collapse" href="#what-application-services-can-do-for-you" role="button" aria-expanded="false" aria-controls="what-application-services-can-do-for-you" class="">
+	<h4>What Application services can do for you</h4>
+</a>
+<div id="what-application-services-can-do-for-you" class="collapse">
+	<a class="nav-link" href="what-application-services-can-do-for-you.html">What Application services can do for you</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#some-of-the-features-of-the-irc-application-service-we-have-since-implemented-include">Some of the features of the IRC application service we have since implemented include:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#the-use-of-the-application-services-api-means">The use of the Application Services API means:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#implementation-details">Implementation details:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#example">Example</a>
+</div>
+<a data-toggle="collapse" href="#types-of-bridging" role="button" aria-expanded="false" aria-controls="types-of-bridging" class="">
+	<h4>Types of bridging</h4>
+</a>
+<div id="types-of-bridging" class="collapse">
+	<a class="nav-link" href="types-of-bridging.html">Types of bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#types-of-rooms">Types of rooms</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="types-of-bridging.html#portal-rooms">Portal rooms</a>
+	<a class="nav-link" href="types-of-bridging.html#plumbed-rooms">Plumbed rooms</a>
+</nav>
+	<a class="nav-link" href="types-of-bridging.html#types-of-bridges-simplest-first">Types of bridges (simplest first):</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="types-of-bridging.html#bridgebot-based-bridges">Bridgebot-based bridges</a>
+	<a class="nav-link" href="types-of-bridging.html#bot-api-aka-virtual-user-based-bridges">Bot-API (aka Virtual user) based bridges</a>
+	<a class="nav-link" href="types-of-bridging.html#simple-puppeted-bridge">Simple puppeted bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#double-puppeted-bridge">Double-puppeted bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#hybrid-relaybot-puppet-bridge">Hybrid Relaybot Puppet Bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#server-to-server-bridging">Server-to-server bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#one-way-bridging">One-way bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#sidecar-bridge">Sidecar bridge</a>
+</div>
+<a data-toggle="collapse" href="#usage-of-the-matrix-js-sdk" role="button" aria-expanded="false" aria-controls="usage-of-the-matrix-js-sdk" class="selectedPage">
+	<h4>Usage of the matrix-js-sdk</h4>
+</a>
+<div id="usage-of-the-matrix-js-sdk" class="collapse show selectedPage">
+	<a class="nav-link scrollto" href="">Usage of the matrix-js-sdk</a>
+	<a class="nav-link scrollto" href="#making-a-matrix-client">Making a Matrix Client</a>
+	<a class="nav-link scrollto" href="#lets-write-java-script">Let's write JavaScript</a>
+	<a class="nav-link scrollto" href="#login-with-an-access-token">Login with an access token</a>
+	<a class="nav-link scrollto" href="#sync-and-listen">Sync and Listen</a>
+	<a class="nav-link scrollto" href="#access-the-store">Access the Store</a>
+	<a class="nav-link scrollto" href="#send-messages-to-rooms">Send messages to rooms</a>
+	<a class="nav-link scrollto" href="#further">Further</a>
+</div>
+<a data-toggle="collapse" href="#made-for-matrix-badge-guidelines" role="button" aria-expanded="false" aria-controls="made-for-matrix-badge-guidelines" class="">
+	<h4>Made for Matrix Badge Guidelines</h4>
+</a>
+<div id="made-for-matrix-badge-guidelines" class="collapse">
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html">Made for Matrix Badge Guidelines</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#preferred-badge">Preferred Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#inverted-badge">Inverted Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#graphic-standards">Graphic Standards</a>
+</div>
+<a data-toggle="collapse" href="#installing-synapse" role="button" aria-expanded="false" aria-controls="installing-synapse" class="">
+	<h4>Installing Synapse</h4>
+</a>
+<div id="installing-synapse" class="collapse">
+	<a class="nav-link" href="installing-synapse.html">Installing Synapse</a>
+	<a class="nav-link" href="installing-synapse.html#matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a>
+	<a class="nav-link" href="installing-synapse.html#installation-guide-for-ubuntu">Installation guide for Ubuntu</a>
+</div>
+<a data-toggle="collapse" href="#using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" role="button" aria-expanded="false" aria-controls="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="">
+	<h4>Using Matrix to make Chatbot software from the 1960s available in 2018</h4>
+</a>
+<div id="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="collapse">
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html">Using Matrix to make Chatbot software from the 1960s available in 2018</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#what-is-eliza">What is ELIZA?</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#2005-online-java-script-version-appeared">2005, online JavaScript version appeared</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#making-the-bot">Making the bot</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#using-the-library">Using the library</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#using-matrix-to-make-a-modern-chatbot">Using Matrix to make a modern Chatbot</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#code-walkthrough">Code Walkthrough</a>
+</nav>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#deploying-on-a-raspberry-pi">Deploying on a Raspberry Pi</a>
+</div>
+
+                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="../assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    
+</body>
+</html> 
+

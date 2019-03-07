@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css"> 
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="../assets/css/newdocs.css">
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1>
+                        <img src="../assets/images/matrix logo.png" style="width: 120px;" />
+                        <span class="text-bold">Docs</span>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
+                    <li class="breadcrumb-item active">How can I get involved?</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container documentation-container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title">How can I get involved?</h1>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            
+<section class="doc-section">
+<h1 id="how-can-i-get-involved">How can I get involved?</h1>
+<p>Matrix is an ecosystem consisting of several apps written by lots of people. We at Matrix.org have written one server and a few clients, and people in the community have also written several clients, servers, and Application Services. We are collecting <a href="https://matrix.org/blog/try-matrix-now/">a list of all known Matrix-apps</a>.</p>
+<p>You have a few options when it comes to getting involved: if you just want to use Matrix, you can <a href="#reg">register an account on a public server using a public webclient</a>. If you have a virtual private server (VPS) or similar, you might want to <a href="#run">run a server and/or client yourself</a>. If you want to look under the hood, you can <a href="#checkout">checkout the code and modify it - or write your own client or server</a>. Or you can write an <a href="#as">Application Service</a>, for example a bridge to an existing ecosystem.</p>
+<p>We very much welcome <a href="https://github.com/matrix-org/synapse/blob/master/CONTRIBUTING.rst">contributions</a> to any of our projects, which you can find in our <a href="https://github.com/matrix-org/">github space</a>.</p>
+<p>&lt;a class=&quot;anchor&quot; id=&quot;reg&quot;&gt;&lt;/a&gt;</p>
+<section class="doc-section">
+<h2 id="access-matrix-via-a-public-webclient-server">Access Matrix via a public webclient/server</h2>
+<p>The easiest thing to do if you want to just have a play, is to use the <a href="https://riot.im">Riot.im
+webclient</a>. You can use it as a guest, or register for an
+account. For details of other clients, see
+<a href="https://matrix.org/blog/try-matrix-now">https://matrix.org/blog/try-matrix-now</a>.</p>
+<p>&lt;a class=&quot;anchor&quot; id=&quot;run&quot;&gt;&lt;/a&gt;</p>
+</section>
+<section class="doc-section">
+<h2 id="run-a-server-and-or-client-yourself">Run a server and/or client yourself</h2>
+<p>You can clone our open source projects and run clients and servers yourself. Here is how:</p>
+<section class="doc-section">
+<h3 id="running-your-own-client">Running your own client:</h3>
+<p>You can run your own Matrix client; there are <a href="https://matrix.org/blog/try-matrix-now/">numerous clients
+available</a>. You can easily <a href="https://github.com/vector-im/vector-web#getting-started">run your
+own copy</a> of the
+Riot.im web client.</p>
+</section>
+<section class="doc-section">
+<h3 id="running-your-own-homeserver">Running your own homeserver:</h3>
+<p>One of the core features of Matrix is that anyone can run a homeserver and join the federated network on equal terms (there is no hierarchy). If you want to set up your own homeserver, please see the relevant docs of the server you want to run. If you want to run Matrix.org's reference homeserver, please consult the <a href="https://github.com/matrix-org/synapse/blob/master/README.rst">readme of the Synapse project</a>.</p>
+<p>Note that Synapse comes with a bundled Matrix.org webclient - but you can tell it to use your <a href="https://github.com/matrix-org/matrix-angular-sdk#matrix-angular-sdk">development checkout snapshot instead</a> (or to not run a webclient at all via the &quot;web_client: false&quot; config option).</p>
+<p>&lt;a class=&quot;anchor&quot; id=&quot;checkout&quot;&gt;&lt;/a&gt;</p>
+</section>
+</section>
+<section class="doc-section">
+<h2 id="checkout-our-code-or-write-your-own">Checkout our code - or write your own</h2>
+<p>As described above, you can clone our code and <a href="#run">run a server and/or client yourself</a>. Infact, all the code that we at Matrix.org write is available from <a href="http://github.com/matrix-org">our github</a> - and other servers and clients may also be open sourced - see <a href="https://matrix.org/blog/try-matrix-now/">our list of all known Matrix-apps</a>.</p>
+<p>You can also implement your own client or server - after all, Matrix is at its core &quot;just&quot; a specification of a protocol.</p>
+<section class="doc-section">
+<h3 id="write-your-own-client">Write your own client:</h3>
+<p>The <a href="https://matrix.org/docs/spec/client_server/latest.html">client-server API
+spec</a> describes what API
+calls are available to clients, and there is a <a href="https://matrix.org/docs/guides/client-server.html">HOWTO
+guide</a> which provides an
+introduction to using the API along with some common operations. A quick
+step-by-step guide would include:</p>
+<ol>
+<li>
+<p>Get a user either by registering your user in an existing client or running the <a href="https://github.com/matrix-org/synapse/blob/master/scripts/register_new_matrix_user">new-user script</a> if you are running your own Synapse homeserver.</p>
+</li>
+<li>
+<p>Assuming the homeserver you are using allows logins by password, log in via the login API:</p>
+<pre><code class="language-json">curl -XPOST -d '{&quot;type&quot;:&quot;m.login.password&quot;, &quot;user&quot;:&quot;example&quot;, &quot;password&quot;:&quot;wordpass&quot;}' &quot;http://localhost:8008/_matrix/client/api/v1/login&quot;
+</code></pre>
+</li>
+<li>
+<p>If successful, this returns the following, including an <code>access_token</code>:</p>
+</li>
+</ol>
+<pre><code class="language-json">{
+    &quot;access_token&quot;: &quot;QGV4YW1wbGU6bG9jYWxob3N0.vRDLTgxefmKWQEtgGd&quot;,
+    &quot;home_server&quot;: &quot;localhost&quot;,
+    &quot;user_id&quot;: &quot;@example:localhost&quot;
+}
+</code></pre>
+<ol start="4">
+<li>
+<p>This <code>access_token</code> will be used for authentication for the rest of your API calls. Potentially the next step you want is to make a call to the sync API and get the last few events from each room your user is in:</p>
+<pre><code class="language-unix">curl -XGET &quot;http://localhost:8008/_matrix/client/r0/sync?access_token=YOUR_ACCESS_TOKEN&quot;
+</code></pre>
+</li>
+<li>
+<p>The above will return something like this:</p>
+</li>
+</ol>
+<pre><code class="language-json">{
+    &quot;next_batch&quot;: &quot;s72595_4483_1934&quot;,
+    &quot;rooms&quot;: {
+        &quot;join&quot;: {
+            &quot;!726s6s6q:example.com&quot;: {
+                &quot;state&quot;: {
+                    &quot;events&quot;: [
+                        ...
+                    ]
+                },
+                &quot;timeline&quot;: {
+                    &quot;events&quot;: [
+                        ...
+                    ]
+                }
+            },
+            ...
+        }
+    }
+}
+</code></pre>
+<p>You can then use the &quot;next_batch&quot; token to start listening for new events like so:</p>
+<pre><code class="language-unix">curl -XGET &quot;http://localhost:8008/_matrix/client/r0/sync?access_token=YOUR_ACCESS_TOKEN&amp;since=s72595_4483_1934&quot;
+</code></pre>
+<ol start="6">
+<li>This request will block waiting for an incoming event, timing out after several seconds if there is no event. This ensures that you only get new events. Now you have the initial room states, and a stream of events - a good client should be able to process all these events and present them to the user. And potentially you might want to add functionality to generate events as well (such as messages from the user, for example)!</li>
+</ol>
+</section>
+<section class="doc-section">
+<h3 id="write-your-own-server">Write your own server:</h3>
+<p>We are still working on the server-server spec, so the best thing to do if you are interested in writing a server, is to come talk to us in <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>.</p>
+<p>If you are interested in how federation works, please see the <a href="https://matrix.org/docs/spec/server_server/unstable.html">Server-Server API spec</a>.</p>
+<p>&lt;a class=&quot;anchor&quot; id=&quot;as&quot;&gt;&lt;/a&gt;</p>
+</section>
+</section>
+<section class="doc-section">
+<h2 id="write-an-application-service">Write an Application Service:</h2>
+<p>Information about Application services and how they can be used can be found in the <a href="./application_services.html">Application services</a> document! (This is based on Kegan's excellent blog posts, but now lives here so it can be kept up-to-date!)</p>
+</section>
+</section>
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a data-toggle="collapse" href="#how-can-i-get-involved" role="button" aria-expanded="false" aria-controls="how-can-i-get-involved" class="selectedPage">
+	<h4>How can I get involved?</h4>
+</a>
+<div id="how-can-i-get-involved" class="collapse show selectedPage">
+	<a class="nav-link scrollto" href="">How can I get involved?</a>
+	<a class="nav-link scrollto" href="#access-matrix-via-a-public-webclient-server">Access Matrix via a public webclient/server</a>
+	<a class="nav-link scrollto" href="#run-a-server-and-or-client-yourself">Run a server and/or client yourself</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link scrollto" href="#running-your-own-client">Running your own client:</a>
+	<a class="nav-link scrollto" href="#running-your-own-homeserver">Running your own homeserver:</a>
+</nav>
+	<a class="nav-link scrollto" href="#checkout-our-code-or-write-your-own">Checkout our code - or write your own</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link scrollto" href="#write-your-own-client">Write your own client:</a>
+	<a class="nav-link scrollto" href="#write-your-own-server">Write your own server:</a>
+</nav>
+	<a class="nav-link scrollto" href="#write-an-application-service">Write an Application Service:</a>
+</div>
+<a data-toggle="collapse" href="#what-application-services-can-do-for-you" role="button" aria-expanded="false" aria-controls="what-application-services-can-do-for-you" class="">
+	<h4>What Application services can do for you</h4>
+</a>
+<div id="what-application-services-can-do-for-you" class="collapse">
+	<a class="nav-link" href="what-application-services-can-do-for-you.html">What Application services can do for you</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#some-of-the-features-of-the-irc-application-service-we-have-since-implemented-include">Some of the features of the IRC application service we have since implemented include:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#the-use-of-the-application-services-api-means">The use of the Application Services API means:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#implementation-details">Implementation details:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#example">Example</a>
+</div>
+<a data-toggle="collapse" href="#types-of-bridging" role="button" aria-expanded="false" aria-controls="types-of-bridging" class="">
+	<h4>Types of bridging</h4>
+</a>
+<div id="types-of-bridging" class="collapse">
+	<a class="nav-link" href="types-of-bridging.html">Types of bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#types-of-rooms">Types of rooms</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="types-of-bridging.html#portal-rooms">Portal rooms</a>
+	<a class="nav-link" href="types-of-bridging.html#plumbed-rooms">Plumbed rooms</a>
+</nav>
+	<a class="nav-link" href="types-of-bridging.html#types-of-bridges-simplest-first">Types of bridges (simplest first):</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="types-of-bridging.html#bridgebot-based-bridges">Bridgebot-based bridges</a>
+	<a class="nav-link" href="types-of-bridging.html#bot-api-aka-virtual-user-based-bridges">Bot-API (aka Virtual user) based bridges</a>
+	<a class="nav-link" href="types-of-bridging.html#simple-puppeted-bridge">Simple puppeted bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#double-puppeted-bridge">Double-puppeted bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#hybrid-relaybot-puppet-bridge">Hybrid Relaybot Puppet Bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#server-to-server-bridging">Server-to-server bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#one-way-bridging">One-way bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#sidecar-bridge">Sidecar bridge</a>
+</div>
+<a data-toggle="collapse" href="#usage-of-the-matrix-js-sdk" role="button" aria-expanded="false" aria-controls="usage-of-the-matrix-js-sdk" class="">
+	<h4>Usage of the matrix-js-sdk</h4>
+</a>
+<div id="usage-of-the-matrix-js-sdk" class="collapse">
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html">Usage of the matrix-js-sdk</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#making-a-matrix-client">Making a Matrix Client</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#lets-write-java-script">Let's write JavaScript</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#login-with-an-access-token">Login with an access token</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#sync-and-listen">Sync and Listen</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#access-the-store">Access the Store</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#send-messages-to-rooms">Send messages to rooms</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#further">Further</a>
+</div>
+<a data-toggle="collapse" href="#made-for-matrix-badge-guidelines" role="button" aria-expanded="false" aria-controls="made-for-matrix-badge-guidelines" class="">
+	<h4>Made for Matrix Badge Guidelines</h4>
+</a>
+<div id="made-for-matrix-badge-guidelines" class="collapse">
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html">Made for Matrix Badge Guidelines</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#preferred-badge">Preferred Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#inverted-badge">Inverted Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#graphic-standards">Graphic Standards</a>
+</div>
+<a data-toggle="collapse" href="#installing-synapse" role="button" aria-expanded="false" aria-controls="installing-synapse" class="">
+	<h4>Installing Synapse</h4>
+</a>
+<div id="installing-synapse" class="collapse">
+	<a class="nav-link" href="installing-synapse.html">Installing Synapse</a>
+	<a class="nav-link" href="installing-synapse.html#matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a>
+	<a class="nav-link" href="installing-synapse.html#installation-guide-for-ubuntu">Installation guide for Ubuntu</a>
+</div>
+<a data-toggle="collapse" href="#using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" role="button" aria-expanded="false" aria-controls="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="">
+	<h4>Using Matrix to make Chatbot software from the 1960s available in 2018</h4>
+</a>
+<div id="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="collapse">
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html">Using Matrix to make Chatbot software from the 1960s available in 2018</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#what-is-eliza">What is ELIZA?</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#2005-online-java-script-version-appeared">2005, online JavaScript version appeared</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#making-the-bot">Making the bot</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#using-the-library">Using the library</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#using-matrix-to-make-a-modern-chatbot">Using Matrix to make a modern Chatbot</a>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#code-walkthrough">Code Walkthrough</a>
+</nav>
+	<a class="nav-link" href="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018.html#deploying-on-a-raspberry-pi">Deploying on a Raspberry Pi</a>
+</div>
+
+                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="../assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    
+</body>
+</html> 
+

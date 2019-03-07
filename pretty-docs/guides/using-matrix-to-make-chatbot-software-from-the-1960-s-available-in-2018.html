@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css"> 
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="../assets/css/newdocs.css">
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1>
+                        <img src="../assets/images/matrix logo.png" style="width: 120px;" />
+                        <span class="text-bold">Docs</span>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/docs/">Home</a></li>
+                    <li class="breadcrumb-item active">Using Matrix to make Chatbot software from the 1960s available in 2018</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container documentation-container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title">Using Matrix to make Chatbot software from the 1960s available in 2018</h1>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            
+<section class="doc-section">
+<h1 id="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018">Using Matrix to make Chatbot software from the 1960s available in 2018</h1>
+<p>In this article, we'll use Matrix, a Raspberry Pi and JavaScript to bring back
+chatbot software from the 1960s: ELIZA.</p>
+<section class="doc-section">
+<h2 id="what-is-eliza">What is ELIZA?</h2>
+<p>ELIZA is a computer program written between 1964 and 1966, which imitates the
+conversation style of a psychotherapist of the era. It behaves like what we
+would now call a <em>chatbot</em>, but there was no such concept at the time - in fact
+there were only the first glimpses of text chat as we would recognise it today.</p>
+<p>The original program was designed and at the MIT Artificial Intelligence
+Laboratory by Joseph Weizenbaum. ELIZA was first implemented on the IBM 7094
+and written in MAD-SLIP, where
+<a href="https://en.wikipedia.org/wiki/MAD_(programming_language)">MAD</a> was a popular
+programming system for IBM mainframes of the time, and
+<a href="https://en.wikipedia.org/wiki/SLIP_(programming_language)">SLIP</a> was a
+list-processing extension of Weizenbaum's own creation.</p>
+<p>Seeing the results, in which users were highly willing to interact with ELIZA,
+Weizenbaum was disturbed by just how effective the apparently simple bot was. He
+was motivated to write a book explaining the way people tend to anthropomorphise
+technology by applying their own experiences to their usage.</p>
+</section>
+<section class="doc-section">
+<h2 id="2005-online-java-script-version-appeared">2005, online JavaScript version appeared</h2>
+<p>In 2005, <a href="https://twitter.com/mass_werk">Norbert Landsteiner</a> created a
+JavaScript program which he made available as <em>elizabot.js</em>, and made ELIZA
+available online through a web interface: <a href="https://www.masswerk.at/elizabot/">https://www.masswerk.at/elizabot/</a>.</p>
+<p>Now we'll make this available on Matrix.</p>
+</section>
+<section class="doc-section">
+<h2 id="making-the-bot">Making the bot</h2>
+<section class="doc-section">
+<h3 id="using-the-library">Using the library</h3>
+<p>For this project I have chosen to use an adaptation of the elizabot.js library:
+<a href="https://github.com/natelewis/eliza-as-promised">eliza-as-promised</a>, which
+exposes the bot as a promise-based node.js module. This module makes working
+with ELIZA very simple. First we create an instance of the bot object:</p>
+<pre><code class="language-javascript">const Eliza = require('eliza-as-promised');
+var eliza = new Eliza();
+</code></pre>
+<p>We can get an initial greeting as follows:</p>
+<pre><code class="language-javascript">console.log(eliza.getInitial());
+</code></pre>
+<p>The <code>getResponse()</code> function takes a string from the user, and returns a
+<code>Promise</code> with a response, with either a <code>reply</code> or <code>final</code> field. If the
+response is a reply, we can give another string to get a response, if the
+response is final, the session is over. For example:</p>
+<pre><code class="language-javascript">eliza.getResponse(&quot;Help me Eliza!&quot;)
+.then((response) =&gt; {
+    if (response.reply) {
+        console.log(response.reply);
+    }
+    if (response.final) {
+        console.log(response.final);
+        process.exit(0);
+    }
+});
+</code></pre>
+</section>
+<section class="doc-section">
+<h3 id="using-matrix-to-make-a-modern-chatbot">Using Matrix to make a modern Chatbot</h3>
+<p>Matrix is an open standard for real-time communication over IP. It is often used
+to enable Instant Messaging. Matrix is not just  Open Source, it is also designed to
+be interoperable, which makes it easy to take existing projects and integrate
+them.</p>
+<p>Matrix provides a decentralised architecture, in which servers connect to one
+another, but as a user your client connects to a single homeserver, as described
+in the diagram below.</p>
+<p><img src="/docs/projects/images/matrix-diagram.png" alt="Matrix Design"></p>
+<p>However, for this project we only need to look at the Client-Server API, which
+is the way in which clients and servers communicate with one another. To make it
+easier to connect the ELIZA library to Matrix, I chose to use a JavaScript
+library designed to access the Matrix Client-Server API: <a href="https://github.com/turt2live/matrix-js-bot-sdk">matrix-js-bot-sdk</a>
+from <a href="https://github.com/turt2live">TravisR</a>.</p>
+</section>
+<section class="doc-section">
+<h3 id="code-walkthrough">Code Walkthrough</h3>
+<p>First, we'll need a new instance of the Bot SDK, which we can obtain from NPM as
+follows:</p>
+<pre><code class="language-unix">npm install matrix-bot-sdk
+</code></pre>
+<p>Then, in our application code, we will instantiate and start a new client. Note
+that you can obtain an access token for the bot <a href="https://t2bot.io/docs/access_tokens/">using
+Riot</a>.</p>
+<pre><code class="language-javascript">const MatrixClient = require(&quot;matrix-bot-sdk&quot;).MatrixClient;
+const AutojoinRoomsMixin = require(&quot;matrix-bot-sdk&quot;).AutojoinRoomsMixin;
+const client = new MatrixClient(&quot;https://matrix.org&quot;, access_token);
+AutojoinRoomsMixin.setupOnClient(client);
+client.start().then(() =&gt; console.log(&quot;Client started!&quot;));
+</code></pre>
+<p>I also added the AutojoinRoomsMixin at this point, which instructs the bot to
+accept any room invitation it recieves.</p>
+<p>Knowing that we can use
+<a href="https://github.com/natelewis/eliza-as-promised"><code>eliza-as-promised</code></a> to create
+new instances of Eliza, let's start by doing so whenever the bot joins a new
+room.</p>
+<pre><code class="language-javascript">var elizas = {};
+client.on(&quot;room.join&quot;, (roomId) =&gt; {
+    elizas[roomId] = {
+        eliza: new Eliza(),
+        last: (new Date()).getTime()
+    }
+    client.sendMessage(roomId, {
+        &quot;msgtype&quot;: &quot;m.notice&quot;,
+        &quot;body&quot;: elizas[roomId].eliza.getInitial()
+    });
+});
+</code></pre>
+<p>What's happening here? First we make a new object to contain a mapping of room
+IDs to <code>Eliza</code> objects. When we get a room join event, we assign a new <code>Eliza</code>
+object and the current time to the room ID. Next, we use the newly created
+object to send the initial greeting to the room, using the same call to
+<code>getInitial()</code> we used earlier.</p>
+<p>Next, we'll accept messages from the user and provide a response:</p>
+<pre><code class="language-javascript">client.on(&quot;room.message&quot;, (roomId, event) =&gt; {
+    if (event[&quot;sender&quot;] === await client.getUserId()) return;
+    if (! event.content || ! event.content.body) return;
+
+    elizas[roomId].eliza.getResponse(event.content.body)
+        .then((response) =&gt; {
+            var responseText = '';
+            if (response.reply) { responseText = response.reply; }
+            if (response.final) { responseText = response.final; }
+
+            client.sendMessage(roomId, {
+                &quot;msgtype&quot;: &quot;m.notice&quot;,
+                &quot;body&quot;: responseText,
+                &quot;responds&quot;: {
+                    &quot;sender&quot;: event.sender,
+                    &quot;message&quot;: event.content.body
+                }
+            }).then((eventId) =&gt; {
+                if (response.final) {
+                    client.leaveRoom(roomId);
+                }
+            });
+    });
+});
+</code></pre>
+<p>It looks like a lot of code, but in fact we can break down what is happening here quite simply.</p>
+<ol>
+<li>When an event is received in a room, we react to the event with a function
+that takes the <code>roomId</code> and <code>event</code> received as parameters.</li>
+<li>If the user is our own, or the event does not contain a body, we must
+return.</li>
+<li>We use the <code>roomId</code> to access the specific <code>Eliza</code> instance, as previously
+created.</li>
+<li>As above, we call <code>getResponse()</code> on the Eliza object, and we pass the
+message string we just received.</li>
+<li>We handle the promise returned by <code>getResponse()</code> by extracting the response
+string into <code>responseText</code>, and use that string as a message to send back
+into the room as a response.</li>
+<li>Finally, if the response text we took from our Eliza is &quot;final&quot;, we have
+Eliza leave the room. (The bot can always be re-invited!)</li>
+</ol>
+<p>That all the code needed to get a working version of the bot running. If you look at <a href="https://github.com/benparsons/elizabot">https://github.com/benparsons/elizabot</a>, you can find a simple implementation as described here in <code>simple.js</code>, and a more robust implementation in <code>index.js</code>.</p>
+</section>
+</section>
+<section class="doc-section">
+<h2 id="deploying-on-a-raspberry-pi">Deploying on a Raspberry Pi</h2>
+<p>To run the bot, we simply run <code>node index.js</code>. However, part of this project is
+to get the bot running on a Raspberry Pi - and for convenience the way to do
+this is to have it run as soon as the device boots. Luckily, there are standard
+ways of achieving this, one of which is to use <code>systemd</code>. <a href="https://www.raspberrypi.org/documentation/usage/terminal/">Open a shell on your
+Pi</a> (possibly using a
+graphical desktop if one is installed, or using ssh) and enter this command to
+access the correct directory:</p>
+<pre><code class="language-unix">cd /etc/systemd/system
+</code></pre>
+<p>Now, we'll use vim to create a file describing the service we want to create:</p>
+<pre><code class="language-unix">vim elizabot.service
+</code></pre>
+<p>Finally, enter the following text (you may need to change paths depending on
+where your script is located):</p>
+<pre><code class="language-unix">[Unit]
+Description=Elizabot
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/node /home/pi/elizabot/index.js &gt; /home/pi/elizabot/log.log 2&gt;&amp;1
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>... and run the following to enable the service:</p>
+<pre><code class="language-unix">sudo systemctl enable elizabot.service
+</code></pre>
+<p>Now, whenever you plug in your Pi, your bot will be launched and ready to go. Of
+course, it is quite possible to run this software on a server, but having a
+separate box makes it more fun. The physicality of a Raspberry Pi means it gets
+more attention and understanding from people who see it.</p>
+<p><img src="/docs/projects/images/elizabot-pi.png" alt="Physical Pi"></p>
+<p>To learn more about Matrix development, take a look at the <a href="https://matrix.org/docs/guides">Matrix Guides</a>
+page, and join us in the <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:matrix.org</a> room!</p>
+</section>
+</section>
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a data-toggle="collapse" href="#how-can-i-get-involved" role="button" aria-expanded="false" aria-controls="how-can-i-get-involved" class="">
+	<h4>How can I get involved?</h4>
+</a>
+<div id="how-can-i-get-involved" class="collapse">
+	<a class="nav-link" href="how-can-i-get-involved.html">How can I get involved?</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#access-matrix-via-a-public-webclient-server">Access Matrix via a public webclient/server</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#run-a-server-and-or-client-yourself">Run a server and/or client yourself</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="how-can-i-get-involved.html#running-your-own-client">Running your own client:</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#running-your-own-homeserver">Running your own homeserver:</a>
+</nav>
+	<a class="nav-link" href="how-can-i-get-involved.html#checkout-our-code-or-write-your-own">Checkout our code - or write your own</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="how-can-i-get-involved.html#write-your-own-client">Write your own client:</a>
+	<a class="nav-link" href="how-can-i-get-involved.html#write-your-own-server">Write your own server:</a>
+</nav>
+	<a class="nav-link" href="how-can-i-get-involved.html#write-an-application-service">Write an Application Service:</a>
+</div>
+<a data-toggle="collapse" href="#what-application-services-can-do-for-you" role="button" aria-expanded="false" aria-controls="what-application-services-can-do-for-you" class="">
+	<h4>What Application services can do for you</h4>
+</a>
+<div id="what-application-services-can-do-for-you" class="collapse">
+	<a class="nav-link" href="what-application-services-can-do-for-you.html">What Application services can do for you</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#some-of-the-features-of-the-irc-application-service-we-have-since-implemented-include">Some of the features of the IRC application service we have since implemented include:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#the-use-of-the-application-services-api-means">The use of the Application Services API means:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#implementation-details">Implementation details:</a>
+	<a class="nav-link" href="what-application-services-can-do-for-you.html#example">Example</a>
+</div>
+<a data-toggle="collapse" href="#types-of-bridging" role="button" aria-expanded="false" aria-controls="types-of-bridging" class="">
+	<h4>Types of bridging</h4>
+</a>
+<div id="types-of-bridging" class="collapse">
+	<a class="nav-link" href="types-of-bridging.html">Types of bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#types-of-rooms">Types of rooms</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="types-of-bridging.html#portal-rooms">Portal rooms</a>
+	<a class="nav-link" href="types-of-bridging.html#plumbed-rooms">Plumbed rooms</a>
+</nav>
+	<a class="nav-link" href="types-of-bridging.html#types-of-bridges-simplest-first">Types of bridges (simplest first):</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link" href="types-of-bridging.html#bridgebot-based-bridges">Bridgebot-based bridges</a>
+	<a class="nav-link" href="types-of-bridging.html#bot-api-aka-virtual-user-based-bridges">Bot-API (aka Virtual user) based bridges</a>
+	<a class="nav-link" href="types-of-bridging.html#simple-puppeted-bridge">Simple puppeted bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#double-puppeted-bridge">Double-puppeted bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#hybrid-relaybot-puppet-bridge">Hybrid Relaybot Puppet Bridge</a>
+	<a class="nav-link" href="types-of-bridging.html#server-to-server-bridging">Server-to-server bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#one-way-bridging">One-way bridging</a>
+	<a class="nav-link" href="types-of-bridging.html#sidecar-bridge">Sidecar bridge</a>
+</div>
+<a data-toggle="collapse" href="#usage-of-the-matrix-js-sdk" role="button" aria-expanded="false" aria-controls="usage-of-the-matrix-js-sdk" class="">
+	<h4>Usage of the matrix-js-sdk</h4>
+</a>
+<div id="usage-of-the-matrix-js-sdk" class="collapse">
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html">Usage of the matrix-js-sdk</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#making-a-matrix-client">Making a Matrix Client</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#lets-write-java-script">Let's write JavaScript</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#login-with-an-access-token">Login with an access token</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#sync-and-listen">Sync and Listen</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#access-the-store">Access the Store</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#send-messages-to-rooms">Send messages to rooms</a>
+	<a class="nav-link" href="usage-of-the-matrix-js-sdk.html#further">Further</a>
+</div>
+<a data-toggle="collapse" href="#made-for-matrix-badge-guidelines" role="button" aria-expanded="false" aria-controls="made-for-matrix-badge-guidelines" class="">
+	<h4>Made for Matrix Badge Guidelines</h4>
+</a>
+<div id="made-for-matrix-badge-guidelines" class="collapse">
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html">Made for Matrix Badge Guidelines</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#preferred-badge">Preferred Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#inverted-badge">Inverted Badge</a>
+	<a class="nav-link" href="made-for-matrix-badge-guidelines.html#graphic-standards">Graphic Standards</a>
+</div>
+<a data-toggle="collapse" href="#installing-synapse" role="button" aria-expanded="false" aria-controls="installing-synapse" class="">
+	<h4>Installing Synapse</h4>
+</a>
+<div id="installing-synapse" class="collapse">
+	<a class="nav-link" href="installing-synapse.html">Installing Synapse</a>
+	<a class="nav-link" href="installing-synapse.html#matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a>
+	<a class="nav-link" href="installing-synapse.html#installation-guide-for-ubuntu">Installation guide for Ubuntu</a>
+</div>
+<a data-toggle="collapse" href="#using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" role="button" aria-expanded="false" aria-controls="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="selectedPage">
+	<h4>Using Matrix to make Chatbot software from the 1960s available in 2018</h4>
+</a>
+<div id="using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018" class="collapse show selectedPage">
+	<a class="nav-link scrollto" href="">Using Matrix to make Chatbot software from the 1960s available in 2018</a>
+	<a class="nav-link scrollto" href="#what-is-eliza">What is ELIZA?</a>
+	<a class="nav-link scrollto" href="#2005-online-java-script-version-appeared">2005, online JavaScript version appeared</a>
+	<a class="nav-link scrollto" href="#making-the-bot">Making the bot</a>
+<nav class="doc-sub-menu nav flex-column">
+	<a class="nav-link scrollto" href="#using-the-library">Using the library</a>
+	<a class="nav-link scrollto" href="#using-matrix-to-make-a-modern-chatbot">Using Matrix to make a modern Chatbot</a>
+	<a class="nav-link scrollto" href="#code-walkthrough">Code Walkthrough</a>
+</nav>
+	<a class="nav-link scrollto" href="#deploying-on-a-raspberry-pi">Deploying on a Raspberry Pi</a>
+</div>
+
+                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="../assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    
+</body>
+</html> 
+
