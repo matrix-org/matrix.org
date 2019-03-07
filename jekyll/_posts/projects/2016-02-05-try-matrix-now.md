@@ -235,7 +235,7 @@ To get started using Matrix, pick a client and join [#matrix:matrix.org]. You ca
     <td class='bigproject'>
       <a href='./client/weechat-matrix.html' class='font18 bold'>
         Weechat/Matrix
-      </a><br />
+      </a> <small style="color: red">new!</small><br />
       If you like command line clients, try this
       Weechat Matrix protocol script written in python
       <br /><br />
