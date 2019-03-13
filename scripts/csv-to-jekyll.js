@@ -70,6 +70,9 @@ function writeJekyllFile(project) {
     if (project.example_mxid) {
       stream.write(`example_mxid: "${project.example_mxid}"\n`);
     }
+    if (project.platform) {
+      stream.write(`platform: ${project.platform}\n`);
+    }
     stream.write("---\n");
     stream.write("\n");
     var JekyllContent = project.JekyllContent.split(" \n\n")
