@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /*
 * csv-to-jekyll.js: takes a CSV file of projects bound for the try-matrix-now
 * page and generates a markdown file for each line. Writes to a temp dir to
