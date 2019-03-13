@@ -94,7 +94,7 @@ jQuery(document).ready(($) => {
 
   /* Populate licenses list */
   //var licenses =  "{{ licenses | uniq | join: "," }}".split(',');
-  var licenses =  ",AGPL-3.0-only,MIT,GPL-3.0-only,Apache,Apache-2.0,GPL3,LGPL,AGPL3,Unlicense,GNU GPL v3,BSD,EUPL,N/A,Artistic2,CC0-1.0,ISC,MPL2,LGPL-2.1-only,GPL-1.0-or-later,AGPL-3-0-or-later,Unknown".split(',');
+  var licenses =  "AGPL-3.0-only,AGPL-3.0-or-later,AGPL3,Apache-2.0,Apache,Artistic2,BSD,EUPL,CC0-1.0,GNU GPL v3,GPL-1.0-or-later,GPL3,ISC,LGPL-2.1-only,LGPL,MIT,GPL-3.0-only,MPL2,Unlicense,N/A,Unknown".split(',');
   if (licenses.indexOf("Unknown") === -1) licenses.push("Unknown");
   licenses.forEach((license => {
     if (license.length === 0) return;
