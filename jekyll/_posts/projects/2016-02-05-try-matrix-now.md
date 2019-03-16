@@ -69,7 +69,7 @@ jQuery(document).ready(($) => {
 
   /* Populate languages list */
   //var languages =  "{{ languages | uniq | join: "," }}".split(',');
-  var languages =  ",C++/Qt/QML,Shell,JavaScript,Python,Kotlin,C++,Java,Perl,Go,Lisp,Lua,TypeScript,C#,Haxe,Rust,Swift,C++/Qt,PowerShell,Shell/Python,Playbook,Elixir,C,PHP,C#/Python,C++/QML,Objective-C".split(',');
+  var languages =  "C,C++,C++/QML,C++/Qt/QML,QML,C++/Qt,Shell,JavaScript,Python,Kotlin,Java,Perl,Go,Lisp,Lua,TypeScript,C#,Haxe,Rust,Swift,PowerShell,Shell/Python,Playbook,Elixir,PHP,C#/Python,Objective-C".split(',');
   if (languages.indexOf("Unknown") === -1) languages.push("Unknown");
   languages.forEach((language => {
     if (language.length === 0) return;

@@ -6,7 +6,7 @@ thumbnail: https://christianpauly.github.io/fluffychat/assets/images/screenshot.
 description: Open, nonprofit and cute client for Ubuntu Touch
 author: Christian Pauly
 maturity: Released
-language: Qml
+language: QML
 license: GPL-3.0-only
 repo: https://github.com/ChristianPauly/fluffychat
 screenshot: https://christianpauly.github.io/fluffychat/assets/images/screenshot.png
