@@ -188,26 +188,6 @@ input {
         border: 0;
     }
 
-#search {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.2em;
-    padding: 10px;
-    width: 250px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    -webkit-appearance: textfield;
-    -webkit-transition: all 300ms ease-in;
-    -moz-transition: all 300ms ease-in;
-    -ms-transition: all 300ms ease-in;
-    -o-transition: all 300ms ease-in;
-    transition: all 300ms ease-in;
-}
-
 table {
     border-collapse: collapse;
     font-size: 1em;
