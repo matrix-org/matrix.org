@@ -1,0 +1,121 @@
+---
+date: '2019-04-12'
+title: 'This Week in Matrix 2019-04-12'
+categories:
+  - General
+---
+
+<h2 id="matrixlivefeaturingslavicreatorofmatrixdockeransibledeploy">Matrix Live featuring Slavi, creator of <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ubD1QrNegIo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>This week, as you may have seen, <a href="https://matrix.org/blog/2019/04/11/security-incident/">there was some downtime on matrix.org</a>. With matrix.org being such a large homeserver, there was some disruption to the ecosystem, but Matrix was not "down", since so many people are running their own homeservers. In fact - many rooms were not heavily affected by the downtime.</p>
+<p>If you'd like to run your own server, now is a great time to get started because of projects like <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a>, which allow you to use Docker and Ansible to massively simplify installation and maintenance.</p>
+<h2 id="famedlystartupwithinvestmentmakinguseofmatrix">Famedly, start-up with investment making use of Matrix</h2>
+<p><a href="https://matrix.to/#/@jan.christian:gruenhage.xyz">jcgruenhage</a> shared this exciting news:</p>
+<blockquote>
+  <p>Some of you might have heard that there's a Berlin startup called famedly (see <a href="https://famedly.com">https://famedly.com</a> if you can read German), that employed some people from the German matrix community (including MTRNord from SimpleMatrix, krille from Fluffychat and myself), working on getting matrix into the German health sector. We won startup competition yesterday, giving us more funding for continuing our work on matrix and connecting to potential users and investors.</p>
+  <p>Our main work right now is writing a matrix client focussed on simplicity and the specific needs of the health sector and building the surrounding infrastructure. On the client side we look forward to working with the two other Dart/Flutter clients, to reduce duplicated work on the SDK side.</p>
+  <p>For questions and general chat, please join <a href="https://matrix.to/#/#famedly:famedly.de">#famedly:famedly.de</a>  Code will follow later once we have more to show off. Contributions to existing codebases will be licensed under their license, new stuff that we write will be (A)GPLv3.</p>
+</blockquote>
+<p><img src="famedly1.jpg" alt="" /></p>
+<blockquote>
+  <p>The two people on the left are <a href="https://matrix.to/#/@larodar:famedly.de">larodar</a> and <a href="https://matrix.to/#/@phill.short:matrix.org">phill.short</a>, the two doctors who originally came up with the concept after being very dissatisfied with the existing comms solutions in that sector.<br />
+  The one on the right is one of the people organizing the competition from a German bank.</p>
+</blockquote>
+<h2 id="synapse">Synapse</h2>
+<blockquote>
+  <ul>
+  <li>More progress against server key validity periods</li>
+  <li>MSC1711 (ensure valid S2S CA certs) support ready for final review</li>
+  <li>Started work on reactions</li>
+  <li>Started work on optimising small homeserver instances</li>
+  </ul>
+</blockquote>
+<h2 id="constructupdate">Construct update</h2>
+<blockquote>
+  <p><a href="https://github.com/jevolk/charybdis">Construct</a> made lots of progress this week toward the 1.0 release. One highlight of interest is the new experimental approach to initial sync called phased initial sync or "crazy loading" for short. Construct sends a very small amount of data to the client at first so it loads very quickly. It then feeds a sequence of since tokens which act to update the client live with small chunks until the initial sync is complete. This allows client developers to build a progress meter for initial sync.<br />
+  This is just one of the many innovations for performance to enhance your user experience that we love building here. We need your support and contributions at <a href="https://github.com/matrix-construct/construct">https://github.com/matrix-construct/construct</a> and in <a href="https://matrix.to/#/#test:zemos.net">#test:zemos.net</a></p>
+</blockquote>
+<h2 id="introducingbluepillanewclientforsailfishos">Introducing bluepill, a new client for Sailfish OS</h2>
+<p>If you're using Sailfish, you might be interested in this very <a href="https://talk.maemo.org/showpost.php?p=1556056&postcount=72">early announcement</a> from <a href="https://matrix.to/#/@baer:g3la.de">Cy8aer</a> about <a href="https://gitlab.com/cy8aer/bluepill">bluepill</a>, a new Matrix Client for Sailfish written in Python.</p>
+<blockquote>
+  <p>hi benpa it is getting into pre-alpha state and let the community on it. It is far away from release but now I cannot cancel it anymore</p>
+</blockquote>
+<p>YOU CANNOT CANCEL IT ANYMORE</p>
+<p>If you're not using Sailfish on a device and want to try bluepill, Cy8aer has you covered:</p>
+<blockquote>
+  <p>you can already test it with the sdk emulator https://sailfishos.org/wiki/ApplicationDevelopment#Gettingstarted and the Readme from the repo</p>
+</blockquote>
+<h2 id="ananaceatfossnorth2019">Ananace at foss-north 2019</h2>
+<p><a href="https://github.com/ananace/">Ananace</a> has been at <a href="https://foss-north.se/2019/">foss-north 2019</a>, sharing the love and knowledge about Matrix:</p>
+<blockquote>
+  <p>I've now held a lightning talk about Matrix at FOSS-North, and am discussing with the Gothenburg FOSS community about setting up a homeserver for them</p>
+</blockquote>
+<p><img src="ananace-foss-north.jpg" alt="" /></p>
+<h2 id="majorgomuksupdate">Major gomuks update</h2>
+<p><a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> has been storming work on <a href="https://github.com/tulir/gomuks">gomuks</a>, his Go CLI client this week:</p>
+<blockquote>
+  <p>While waiting for <a href="https://gitlab.gnome.org/World/metaolm">metaolm</a> to be functional, I've been developing gomuks again for the past couple of weeks. So far the changes are mostly internal, but there were a few visible changes too.</p>
+  <ul>
+  <li>Switched to my own TUI component library. The main visible change from this is that the input bar now supports multiline input. Sadly most terminals don't send ctrl/shift modifiers for enter and alt+enter is being used by the quick room switcher, so the temporary-ish way to input newlines is ctrl+n.</li>
+  <li>Changed history storage to store raw event data instead of parsed data.</li>
+  <li>Improved HTML parser/renderer. The old parser parsed HTML into a string with style information, whereas the new parser parses it into my custom renderable structs. The new style should make it possible to add scrolling to code blocks and other such things in the future.</li>
+  <li>Added syntax highlighting support for code blocks.</li>
+  <li>Improved reply rendering. The old reply rendering just put some HTML into the new event before parsing. Now it actually renders the original event separately.</li>
+  <li>Added commands for inviting, kicking, banning, unbanning and sending raw events in the current room (thanks to <a href="https://matrix.to/#/@lowee:matrix.org">nepugia</a>)</li>
+  </ul>
+</blockquote>
+<h2 id="riotweb">Riot Web</h2>
+<blockquote>
+  <ul>
+  <li>Finishing touches to breadcrumbs</li>
+  <li>More redesign activity</li>
+  <li>Planning for Message Editing and Reactions</li>
+  </ul>
+</blockquote>
+<h2 id="riotios">Riot iOS</h2>
+<blockquote>
+  <ul>
+  <li>Grouped notifications have landed</li>
+  <li>Fix upgraded rooms that appeared twice in room</li>
+  <li>Interactive device verification is still in progress</li>
+  </ul>
+</blockquote>
+<h2 id="riotandroid">Riot Android</h2>
+<blockquote>
+  <ul>
+  <li>We have fixed several issue related to the integration of the last Jitsi  library.</li>
+  <li>SAS PRs are in review</li>
+  </ul>
+</blockquote>
+<h2 id="riotxandroid">RiotX (Android)</h2>
+<blockquote>
+  <ul>
+  <li>It’s now possible to create a room</li>
+  <li>Send file to a room is now supported</li>
+  <li>Some slash commands are now supported: send emote, invite people to a room</li>
+  <li>Slash command and people completion is here, but there are still a few issue with it</li>
+  </ul>
+</blockquote>
+<h2 id="yuforiahascontinuedworkoncontinuum"><a href="https://matrix.to/#/@uforia:matrix.org">yuforia</a> has continued work on <a href="https://github.com/koma-im/continuum-desktop">continuum</a></h2>
+<blockquote>
+  <p><a href="https://github.com/koma-im/continuum-desktop">continuum</a> completely removed plaintext file-based storage; now working to complete database-based local storage</p>
+</blockquote>
+<h2 id="f0xworkingonneo"><a href="https://matrix.to/#/@f0x:lain.haus">f0x</a> working on <a href="https://git.lain.haus/f0x/iris">neo</a></h2>
+<blockquote>
+  <p>I did some bugfixes in the <a href="https://git.lain.haus/f0x/iris">Neo</a> login process, testing is welcomed. There's not much of a functional client after login yet, but there's full .well-known discovery :)</p>
+</blockquote>
+<p><a href="https://neo.lain.haus/neo">See a working version of neo here</a>.</p>
+<h2 id="libaqueous">libaqueous</h2>
+<p><a href="https://matrix.to/#/@bhat:encom.eu.org">Black Hat</a>:</p>
+<blockquote>
+  <p>I implemented more strongly-typed event types in <a href="https://gitlab.com/b0/libaqueous">libaqueous</a>. Also applied some performance tweaks in the sqlite store.  I am still stabilizing and documenting the API for now.<br />
+  Dart's serialization framework is still a bit inconvenient to use, but the language's flexibility is great. Also fast prototyping!</p>
+</blockquote>
+<h2 id="stillmore">Still more</h2>
+<p><a href="https://matrix.to/#/@afranke:matrix.org">Alexandre Franke</a> gave a talk last Sunday at <a href="https://jdll.org/">Journées Du Logiciel Libre</a> in Lyon. He gave a tour of Matrix and encouraged attendees to switch to it. In future we'll link to a video of the talk and his blog of the event!</p>
+<blockquote>
+  <p>The talk was recorded and I would have given a link, but they haven’t been published yet.</p>
+</blockquote>
+<p>GSOC student applications ended on Tuesday - Matrix received some great entries and we're looking forward to welcoming them to the project this summer!</p>
+<h2 id="thatsalliknow">That's all I know</h2>
+<p>If you have something to say here, something to add, come chat to us in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> - I love that this is a supportive and engaged project ecosystem, so come share what you have!</p>
