@@ -25,3 +25,5 @@
 
 # created when generating project .md files automatically
 projects-gen/
+gatsby/node_modules
+gatsby/public/static
