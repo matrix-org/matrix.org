@@ -43,8 +43,22 @@ const Content = styled.div`
 `
 
 
-const HallOfFame = () => (
-    <Layout>
+const HallOfFame = () => {
+    const hallOfFameEntries = [
+        {
+            date:'2019-04-20',
+            who: 'Matrix McMatrix',
+            profile: 'https://twitter.com/matrixdotorg',
+            description:"Some nasty vuln"
+        },
+        {
+            date:'2019-04-18',
+            who: 'Rioter',
+            profile: 'https://twitter.com/riotchat',
+            description:"Some other nasty vuln"
+        }
+    ];
+    return (<Layout>
         <Wrapper>
             <Helmet title={`Security Hall Of Fame | ${config.siteTitle}`} />
             <Header />
@@ -65,11 +79,19 @@ const HallOfFame = () => (
                 </p>
                 <p>Our enduring thanks to:-</p>
                 <ul>
-                    <HallOfFameEntry date="2019-04-23" description="thanks to bob for ...."></HallOfFameEntry>
+                    {hallOfFameEntries.map(entry => {
+                        return <HallOfFameEntry
+                                    date={entry.date}
+                                    who={entry.who}
+                                    profile={entry.profile}
+                                    description={entry.description}
+                                />
+                    })}
+
                 </ul>
             </Content>
         </Wrapper>
-    </Layout>
-)
-
+    </Layout>)
+}
+//<HallOfFameEntry date="2019-04-23" description="thanks to bob for ...."></HallOfFameEntry>
 export default HallOfFame

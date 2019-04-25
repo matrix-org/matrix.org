@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 
 
 const HallOfFameEntry = ({ date, description }) => (
-    <div><div>{date}</div><div>{description}</div></div>
+    <div>
+        <div>{date}</div>
+        <div dangerouslySetInnerHTML={{__html: description}} />
+    </div>
 )
 
 export default HallOfFameEntry
