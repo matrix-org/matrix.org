@@ -1,13 +1,21 @@
 const config = require('./config')
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
+const mdxFeed = require("gatsby-mdx/feed")
+
 
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
+    title: `Matrix.org`,
+    description: `Blog for the Matrix project`,
     siteUrl: config.siteUrl + pathPrefix,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: mdxFeed
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sharp',
