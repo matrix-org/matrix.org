@@ -22,24 +22,6 @@ const Content = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.phone}) {
     padding: 2rem 1.5rem;
   }
-  form {
-    p {
-      label,
-      input {
-        display: block;
-      }
-      input {
-        min-width: 275px;
-        margin-top: 0.5rem;
-      }
-      textarea {
-        resize: vertical;
-        min-height: 150px;
-        width: 100%;
-        margin-top: 0.5rem;
-      }
-    }
-  }
 `
 
 
@@ -49,13 +31,15 @@ const HallOfFame = () => {
             date:'2019-04-20',
             who: 'Matrix McMatrix',
             profile: 'https://twitter.com/matrixdotorg',
-            description:"Some nasty vuln"
+            description:"Some nasty vuln",
+            service:"Synapse"
         },
         {
             date:'2019-04-18',
             who: 'Rioter',
             profile: 'https://twitter.com/riotchat',
-            description:"Some other nasty vuln"
+            description:"Some other nasty vuln",
+            service:"Riot Web"
         }
     ];
     return (<Layout>
@@ -71,12 +55,13 @@ const HallOfFame = () => {
                    necessary to validate the vulnerability before agreeing a
                    timeline for public disclosure.
                 </p>
-                <p>At the current time we do not provide a bounty programme
-                   ourselves as we are a <a href='https://github.com/matrix-org/matrix-doc/blob/matthew/msc1779/proposals/1779-open-governance.md'>
-                   non-profit open source project. </a>
-                   However, we do maintain a hall-of-fame to recognise those
-                   who have responsibly disclosed security issues to us :)
-                </p>
+                <p><a href='https://github.com/matrix-org/matrix-doc/blob/matthew/msc1779/proposals/1779-open-governance.md'>
+                    The Matrix.org Foundation</a> does not currently provide a bug bounty,
+                    though organisations building on top of Matrix are likely
+                    to do so in future. However, we do maintain a hall-of-fame
+                    to recognise those who have responsibly disclosed security
+                    issues to us :)</p>
+
                 <p>Our enduring thanks to:-</p>
                 <ul>
                     {hallOfFameEntries.map(entry => {
@@ -85,6 +70,7 @@ const HallOfFame = () => {
                                     who={entry.who}
                                     profile={entry.profile}
                                     description={entry.description}
+                                    service={entry.service}
                                 />
                     })}
 
@@ -93,5 +79,5 @@ const HallOfFame = () => {
         </Wrapper>
     </Layout>)
 }
-//<HallOfFameEntry date="2019-04-23" description="thanks to bob for ...."></HallOfFameEntry>
+
 export default HallOfFame
