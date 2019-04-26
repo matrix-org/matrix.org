@@ -27,3 +27,4 @@
 projects-gen/
 gatsby/node_modules
 gatsby/public/static
+gatsby/.cache
