@@ -61,7 +61,7 @@ const HallOfFame = () => {
                     to recognise those who have responsibly disclosed security
                     issues to us. :)</p>
 
-                <p>Our enduring thanks to:-</p>
+                <h3>Credits-</h3>
                 <ul>
                     {hallOfFameEntries.map(entry => {
                         return <HallOfFameEntry

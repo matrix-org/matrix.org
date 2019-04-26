@@ -8,19 +8,15 @@ const Content = styled.section`
 `
 
 
-const HallOfFameEntry = ({ date, who, profile, description, service }) => {
-    const thanks = "<div className='who'>We would like to thank <a href={profile}>{who}</a> for reporting this issue</div>"
-
-    return(
+const HallOfFameEntry = ({ date, who, profile, description, service }) => (
     <Content>
     <section>
-        <div><i>{date} - {service}</i></div>
+        <div><i>{date} - {service} - <a href={profile}>{who}</a></i></div>
         <div dangerouslySetInnerHTML={{__html: description}}/>
-        <div>We would like to thank <a href={profile}>{who}</a> for reporting this issue</div>
     </section>
     </Content>
-    )
-}
+
+)
 
 export default HallOfFameEntry
 
