@@ -1,0 +1,17 @@
+steps:
+  - label: "Fetch artifacts"
+    command:
+      - scripts/fetch-buildkite-artifact matrix-dot-org matrix-doc assets.tar.gz
+  - label: ":books: Build site"
+    plugins:
+      - docker#v3.0.1:
+          image: "python:3.6"
+    command:
+      - python3 -m venv env
+      - env/bin/pip install docutils pygments
+      - ". env/bin/activate; scripts/update_docs.sh"
+  - label: ":compression: Build tarball"
+    command:
+      - tar -czf content.tar.gz content
+    artifact_paths:
+      - content.tar.gz
