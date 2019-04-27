@@ -3,6 +3,8 @@ steps:
     plugins:
       - docker#v3.0.1:
           image: "python:3.6"
+          environment:
+            - "BUILDKITE_ACCESS_TOKEN"
     command:
       - python3 -m venv env
       - env/bin/pip install requests docutils pygments
