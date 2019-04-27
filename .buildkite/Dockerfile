@@ -13,7 +13,6 @@ RUN apt-get -q update && apt-get -q install -y \
 
 # we need a working UTF-8 locale
 RUN echo "en_GB.UTF-8 UTF-8" >> /etc/locale.gen
-RUN tail /etc/locale.gen
 RUN locale-gen
 RUN update-locale LANG=en_GB.UTF-8
 
