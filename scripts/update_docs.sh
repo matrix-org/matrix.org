@@ -21,9 +21,9 @@ cd "$(dirname "$(dirname "${SELF}")")"
 
 SITE_BASE="$(pwd)"
 
-# grab and unpack the latest matrix-docs build from jenkins
+# grab and unpack the latest matrix-docs build from buildkite
 rm -rf assets.tar.gz assets
-wget 'https://matrix.org/jenkins/job/Docs/lastSuccessfulBuild/artifact/assets.tar.gz'
+scripts/fetch-buildkite-artifact matrix-dot-org matrix-doc assets.tar.gz
 tar -xzf assets.tar.gz
 
 # copy the swagger UI into place

@@ -8,7 +8,6 @@ steps:
     command:
       - python3 -m venv env
       - env/bin/pip install requests docutils pygments
-      - env/bin/python scripts/fetch-buildkite-artifact matrix-dot-org matrix-doc assets.tar.gz
       - ". env/bin/activate; scripts/update_docs.sh"
       - tar -czf content.tar.gz content
     artifact_paths:
