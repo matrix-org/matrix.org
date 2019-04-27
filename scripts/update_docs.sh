@@ -46,12 +46,3 @@ cp -r unstyled_docs content/docs
 find "content/docs" -name '*.html' -type f |
     xargs "./scripts/add-matrix-org-stylings.pl" "./jekyll/_includes"
 
-# run jekyll to generate the rest of the site.
-# This will generate stuff under ./jekyll/_site.
-./jekyll/generate.sh
-
-cp -rf ./pre-generated/* jekyll/_site/
-
-# ... and copy it into place
-cp -r jekyll/_site/{css,guides,howtos,projects} content/docs
-

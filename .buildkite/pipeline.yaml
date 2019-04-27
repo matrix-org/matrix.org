@@ -16,7 +16,7 @@ steps:
   - label: "jekyll"
     plugins:
       - docker#v3.0.1:
-          image: "jekyll/jekyll:3.8"
+          image: "matrixdotorg/matrixdotorg-build"
     command:
       # run jekyll to generate the rest of the site.
       # This will generate stuff under ./jekyll/_site.
