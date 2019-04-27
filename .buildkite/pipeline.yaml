@@ -10,7 +10,7 @@ steps:
       - env/bin/pip install requests
       - ". env/bin/activate; scripts/update_docs.sh"
       - tar -czf styled-docs.tar.gz content/docs
-    artifacts:
+    artifact_paths:
       - styled-docs.tar.gz
 
   - label: "jekyll"
@@ -23,6 +23,8 @@ steps:
       - ./jekyll/generate.sh
       - cp -rf ./pre-generated/* jekyll/_site/
       - tar -czf jekyll-site.tar.gz jekyll/_site
+    artifact_paths:
+      - jekyll-site.tar.gz
 
   - wait
 
