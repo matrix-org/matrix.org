@@ -20,6 +20,8 @@ steps:
     command:
       # run jekyll to generate the rest of the site.
       # This will generate stuff under ./jekyll/_site.
+      - gem install rbst
+      - . /env/bin/activate
       - ./jekyll/generate.sh
       - cp -rf ./pre-generated/* jekyll/_site/
       - tar -czf jekyll-site.tar.gz jekyll/_site
