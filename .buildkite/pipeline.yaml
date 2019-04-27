@@ -31,8 +31,8 @@ steps:
 
   - label: "complete"
     command:
-      - buildkite-agent artifact download styled-docs.tar.gz /
-      - buildkite-agent artifact download jekyll-site.tar.gz /
+      - buildkite-agent artifact download styled-docs.tar.gz .
+      - buildkite-agent artifact download jekyll-site.tar.gz .
       - tar -xzvf styled-docs.tar.gz
       - tar -xzvf jekyll-site.tar.tz
       - cp -r jekyll/_site/{css,guides,howtos,projects} content/docs
