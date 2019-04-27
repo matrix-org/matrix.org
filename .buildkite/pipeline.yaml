@@ -20,6 +20,7 @@ steps:
     command:
       # run jekyll to generate the rest of the site.
       # This will generate stuff under ./jekyll/_site.
+      - ls /var/lib/gems/2.3.0
       - . /env/bin/activate
       - ./jekyll/generate.sh
       - cp -rf ./pre-generated/* jekyll/_site/
