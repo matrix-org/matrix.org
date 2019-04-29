@@ -9,6 +9,13 @@ section: guides
 p {
     padding-bottom: 5px;
 }
+img {
+    float: left;
+    max-height: 600px;
+}
+thead {
+    background: inherit;
+}
 </style>
 
 # Moderation in Matrix
@@ -55,31 +62,19 @@ The next line of defence when moderating a room is the concept of ‘power level
 
 In Riot, Admins are shown in the membership list with a golden shield, and Moderators are shown with a silver shield.  Other clients use similar metaphors.
 
+|&nbsp;|&nbsp;|
+|---|---|
+|![moderation1](/docs/projects/images/moderation1.png)|![moderation2](/docs/projects/images/moderation2.png)|
 
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Moderation-in0.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Moderation-in0.png "image_tooltip")
-	
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Moderation-in1.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Moderation-in1.png "image_tooltip")
-
+<br clear="all" />
 
 To change the power level of a given user in Riot, you can use the dropdown in their user info panel, having selected them from the membership list or timeline.  Alternatively you can change their level directly from the message composer by typing `/op @username:domain 50 `or similar`.`
 
 Power levels are used to define who has permission to do what actions in a room.  By default, the power levels for a public chatroom are as shown below:
 
+![moderation3](/docs/projects/images/moderation3.png)
 
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Moderation-in2.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Moderation-in2.png "image_tooltip")
-
+<br clear="all" />
 
 Users with sufficient power to change settings (i.e. Moderator, by default) can edit the power level configuration for a given room in Riot via Room Settings using this interface.
 
@@ -92,13 +87,9 @@ For a the full spec of power levels, please see: [https://matrix.org/docs/spec/c
 
 The next line of defence in policing your rooms is the ability to remove users. By default, moderators with power level 50 or higher have permission to remove users with lower power from rooms.  You can either kick or ban, specifying an optional reason which should be visible in the room’s timeline:
 
+![moderation4](/docs/projects/images/moderation4.png)
 
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Moderation-in3.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Moderation-in3.png "image_tooltip")
-
+<br clear="all" />
 
 This can be done via the Kick or Ban buttons from the user info panel, or by typing `/kick @user:domain.com <reason goes here>` or `/ban @user:domain.com <reason goes here>` in the message composer.
 
@@ -128,13 +119,9 @@ The typical reason to exclude a server from a room is if it is a source of malic
 
 Setting server ACLs on a room is a relative rare operation, and Riot does not currently provide a user interface for doing so.  Instead, these can be set either by script or by manually creating a server ACL state event via Riot/Web’s developer tools UI.  You must be at least a moderator (by default) to set server ACLs.  To set via devtools, type `/devtools` at the message composer in the room in question, and create or edit the room’s `m.room.server_acl` state event.  (Click on the red ‘message event’ button to toggle to state event mode).  To ban servers named evil.com and *.evil.com from participating in the room, you would enter:
 
+![moderation5](/docs/projects/images/moderation5.png)
 
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Moderation-in4.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Moderation-in4.png "image_tooltip")
-
+<br clear="all" />
 
 If enforcing server ACLs on a room, it is wise to prevent servers whose names are numeric IP addresses from participating in the room, as well as preventing all subdomains of the problematic server from participating.  This ensures that a malicious admin cannot create a new server on a numeric IP or a subdomain in order to circumvent the ban, and will instead have to source an alternative top level domain.
 
@@ -323,13 +310,9 @@ In the medium/long term, we are hoping to rely more extensively on reputation da
 
 We are currently in the process of implementing emoji reactions in Matrix, and the current UX proposal looks roughly like this:
 
+![moderation6](/docs/projects/images/moderation6.png)
 
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Moderation-in5.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Moderation-in5.png "image_tooltip")
-
+<br clear="all" />
 
 Critically, this provides upvote/downvote semantics on a given message on the axes both of whether you agree with the content, and whether you like it (as well as supporting specifying freeform emoji).
 
