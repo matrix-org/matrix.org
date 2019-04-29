@@ -55,7 +55,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
+            output: "/blog/feed/rss.xml",
             title: "Your Site's RSS Feed",
           },
         ],
