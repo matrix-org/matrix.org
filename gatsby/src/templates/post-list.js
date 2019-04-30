@@ -47,6 +47,7 @@ const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } 
               categories={post.node.frontmatter.categories}
               key={post.node.fields.slug}
               body={post.node.code.body}
+              author={post.node.frontmatter.author}
             />
           ))}
           <PrevNext
@@ -87,6 +88,7 @@ export const postQuery = graphql`
             title
             date(formatString: "MM/DD/YYYY")
             categories
+            author
           }
           fields {
             slug
