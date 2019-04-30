@@ -39,9 +39,9 @@ steps:
       - cd gatsby
       - npm install
       - ./node_modules/.bin/gatsby build
-      - tar -C public -czf gatsby-site.tar.gz blog
+      - tar -C public -czf ../gatsby-site.tar.gz blog
     artifact_paths:
-      - gatsby/gatsby-site.tar.gz
+      - gatsby-site.tar.gz
       
   - wait
 
