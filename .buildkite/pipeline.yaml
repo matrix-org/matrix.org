@@ -30,16 +30,31 @@ steps:
     artifact_paths:
       - jekyll-site.tar.gz
 
+  # Run gatsby
+  - label: "gatsby"
+    plugins:
+      - docker#v3.0.1:
+          image: "node:10"
+    command:
+      - cd gatsby
+      - npm install
+      - ./node_modules/.bin/gatsby build
+      - tar -C public -czf ../gatsby-site.tar.gz blog
+    artifact_paths:
+      - gatsby-site.tar.gz
+      
   - wait
 
-  # Merge the two sets of outputs together
+  # Merge the three sets of outputs together
   - label: "complete"
     command:
       - buildkite-agent artifact download styled-docs.tar.gz .
       - buildkite-agent artifact download jekyll-site.tar.gz .
+      - buildkite-agent artifact download gatsby-site.tar.gz .
       - tar -xzvf styled-docs.tar.gz
       - tar -xzvf jekyll-site.tar.gz
       - cp -r jekyll/_site/{css,guides,howtos,projects} content/docs
+      - tar -C content -xzf gatsby-site.tar.gz
       - tar -czf content.tar.gz content
     artifact_paths:
       - content.tar.gz
