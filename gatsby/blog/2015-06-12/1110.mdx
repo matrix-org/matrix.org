@@ -17,24 +17,24 @@ However, this poses a major problem if you want a richer client SDK but don't wa
 This SDK provides a full object model around the Matrix Client-Server API and emits events for incoming data and state changes. Aside from wrapping the HTTP API, it:
 
 <ul>
-<li>Handles syncing (via /initialSync and /events)
-<li>Handles the generation of "friendly" room and member names.
-<li>Handles historical RoomMember information (e.g. display names).
-<li>Manages room member state across multiple events (e.g. it handles typing, power levels and membership changes).
-<li>Exposes high-level objects like Rooms, RoomState, RoomMembers and Users which can be listened to for things like name changes, new messages, membership changes, presence changes, and more.
+<li>Handles syncing (via /initialSync and /events)</li>
+<li>Handles the generation of "friendly" room and member names.</li>
+<li>Handles historical RoomMember information (e.g. display names).</li>
+<li>Manages room member state across multiple events (e.g. it handles typing, power levels and membership changes).</li>
+<li>Exposes high-level objects like Rooms, RoomState, RoomMembers and Users which can be listened to for things like name changes, new messages, membership changes, presence changes, and more.</li>
 </ul>
 
 Later versions of the SDK will:
 
 <ul>
-<li>Automatically retry requests to send messages due to network errors.
-<li>Automatically retry requests to send messages due to rate limiting errors.
-<li>Mark events' sent status (e.g. 'not sent').
-<li>Handle "local echo" of messages sent.
-<li>Handle queueing of messages.
-<li>Handle pagination.
-<li>Expose a RoomSummary which would be suitable for a recents page.
-<li>Provide different pluggable storage layers (e.g. local storage, database-backed)
+<li>Automatically retry requests to send messages due to network errors.</li>
+<li>Automatically retry requests to send messages due to rate limiting errors.</li>
+<li>Mark events' sent status (e.g. 'not sent').</li>
+<li>Handle "local echo" of messages sent.</li>
+<li>Handle queueing of messages.</li>
+<li>Handle pagination.</li>
+<li>Expose a RoomSummary which would be suitable for a recents page.</li>
+<li>Provide different pluggable storage layers (e.g. local storage, database-backed)</li>
 </ul>
 
 </blockquote>

@@ -24,10 +24,10 @@ You can read the full presentation that we gave at <a href="https://matrix.org/~
 Things then stalled for a bit, but as of this month they're moving again, and if you're interested in the progress you can read all about it at:
 
 <ul>
-<li><a href="https://matrix.org/jira/browse/SPEC-162">https://matrix.org/jira/browse/SPEC-162</a>
-<li>and a full draft spec at <a href="http://matrix.org/speculator/spec/drafts%2Fe2e/client_server.html#end-to-end-encryption">http://matrix.org/speculator/spec/drafts%2Fe2e/client_server.html#end-to-end-encryption</a>
-<li>the Olm git repo at <a href="http://matrix.org/git/olm/about/">http://matrix.org/git/olm/about/</a>
-<li>and the formal Olm spec at <a href="https://matrix.org/docs/spec/olm.html">https://matrix.org/docs/spec/olm.html</a>
+<li><a href="https://matrix.org/jira/browse/SPEC-162">https://matrix.org/jira/browse/SPEC-162</a></li>
+<li>and a full draft spec at <a href="http://matrix.org/speculator/spec/drafts%2Fe2e/client_server.html#end-to-end-encryption">http://matrix.org/speculator/spec/drafts%2Fe2e/client_server.html#end-to-end-encryption</a></li>
+<li>the Olm git repo at <a href="http://matrix.org/git/olm/about/">http://matrix.org/git/olm/about/</a></li>
+<li>and the formal Olm spec at <a href="https://matrix.org/docs/spec/olm.html">https://matrix.org/docs/spec/olm.html</a></li>
 </ul>
 
 The main stuff remaining is basically key management (in Synapse and the matrix spec), group conversation ratchets, and UX for wiring it properly into various Matrix clients.  We expect to make progress on this over the next few months :)
@@ -51,19 +51,19 @@ Somehow we've failed to blog about the amazing <a href="https://github.com/matri
 
 <img src="/blog/wp-content/uploads/2015/12/bridge2.jpg" alt="bridge2" width="720" height="540" class="aligncenter size-full wp-image-1430" />
 
-matrix-appservice-bridge is still in development, but there are a bunch of really cool bridges already using it - and a great howto that shows how you can use it to <a href="https://github.com/matrix-org/matrix-appservice-bridge/blob/master/HOWTO.md">write a Matrix<->Slack bridge in under 100 lines of code<a/>.
+matrix-appservice-bridge is still in development, but there are a bunch of really cool bridges already using it - and a great howto that shows how you can use it to <a href="https://github.com/matrix-org/matrix-appservice-bridge/blob/master/HOWTO.md">write a Matrix{'<->'}Slack bridge in under 100 lines of code</a>.
 
 <ul>
-  <li><a href="https://github.com/matrix-org/matrix-appservice-verto">the Matrix/Verto Bridge</a> uses it to hook FreeSWITCH up to Matrix - currently used to provide multiway video and voice conferencing for <a href="https://vector.im">Vector</a>.  It could be easily extended to do generic Matrix<->SIP or Matrix<->anything-that-FreeSWITCH-can-speak though.
-  <li><a href="https://github.com/matrix-org/matrix-appservice-slack">a basic Matrix/Slack Bridge</a>, which works well enough for hardcoding bridges between specific Matrix and Slack rooms.
-  <li><a href="https://github.com/matrix-org/matrix-appservice-respoke">matrix-appservice-respoke</a> - a crazy experiment that bridges Asterisk to Matrix by implementing the Respoke API such that Asterisk can connect to Matrix using chan_respoke.
-  <li><a href="https://github.com/matrix-org/node-purple/tree/master/appservice">matrix-appservice-purple</a> - another crazy experiment that hooks libpurple up to matrix-appservice-bridge such that *any* network that libpurple can talk to can be bridged into Matrix.  So far we've experimented with Lync, Skype and Facebook (and AIM(!)) and it works - but it needs a lot more love to be usable other than as a toy.
+  <li><a href="https://github.com/matrix-org/matrix-appservice-verto">the Matrix/Verto Bridge</a> uses it to hook FreeSWITCH up to Matrix - currently used to provide multiway video and voice conferencing for <a href="https://vector.im">Vector</a>.  It could be easily extended to do generic Matrix{'<->'}SIP or Matrix{'<->'}anything-that-FreeSWITCH-can-speak though.</li>
+  <li><a href="https://github.com/matrix-org/matrix-appservice-slack">a basic Matrix/Slack Bridge</a>, which works well enough for hardcoding bridges between specific Matrix and Slack rooms.</li>
+  <li><a href="https://github.com/matrix-org/matrix-appservice-respoke">matrix-appservice-respoke</a> - a crazy experiment that bridges Asterisk to Matrix by implementing the Respoke API such that Asterisk can connect to Matrix using chan_respoke.</li>
+  <li><a href="https://github.com/matrix-org/node-purple/tree/master/appservice">matrix-appservice-purple</a> - another crazy experiment that hooks libpurple up to matrix-appservice-bridge such that *any* network that libpurple can talk to can be bridged into Matrix.  So far we've experimented with Lync, Skype and Facebook (and AIM(!)) and it works - but it needs a lot more love to be usable other than as a toy.</li>
 </ul>
 
 Meanwhile, there's also:
 <ul>
- <li><a href="https://github.com/matrix-org/matrix-appservice-irc">the Matrix/IRC Bridge</a>, which doesn't actually use it yet, but will do soon.
- <li><a href="https://github.com/illicitonion/slackbridge">an experimental Golang Matrix/Slack Bridge</a>, which looks at whether we should be doing this all in Golang rather than Node.
+ <li><a href="https://github.com/matrix-org/matrix-appservice-irc">the Matrix/IRC Bridge</a>, which doesn't actually use it yet, but will do soon.</li>
+ <li><a href="https://github.com/illicitonion/slackbridge">an experimental Golang Matrix/Slack Bridge</a>, which looks at whether we should be doing this all in Golang rather than Node.</li>
 </ul>
 
 As of right now our work on bridging has been on hiatus for a month or so, and we would *love* support from the community in advancing and extending the stuff we've built so far.  Otherwise we'll get back to it ourselves in the new year.
@@ -118,7 +118,7 @@ There's also loads of cool stuff that Ryan's been doing with Matrix on <a href="
 
 Then there's <a href="https://github.com/tdfischer/pto">Power Take-Off</a> from Torrie Fischer - an early lets-IRC-clients-connect-to-Matrix project in Rust...
 
-...and there's <a href="https://github.com/Xe/morpheus">Morpheus</a> from Christine Dodrill (Xena) - a Matrix client and bot framework for Haskell; part of a more over-arching IRC<->Matrix unification project.  Xena also wrote <a href="https://christine.website/blog/matrix-has-u-2015-11-27">a great call to arms for Matrix</a> :)
+...and there's <a href="https://github.com/Xe/morpheus">Morpheus</a> from Christine Dodrill (Xena) - a Matrix client and bot framework for Haskell; part of a more over-arching IRC{'<->'}Matrix unification project.  Xena also wrote <a href="https://christine.website/blog/matrix-has-u-2015-11-27">a great call to arms for Matrix</a> :)
 
 Very recently there's the <a href="https://github.com/ruma/ruma">Ruma</a> project from Jimmy Cuadra - an ambitious mission to build Matrix components (up to and including a homeserver) in Rust!
 
@@ -163,17 +163,17 @@ Some of the stuff going into react-sdk is *incredibly* cool - recent Matrix stuf
 
 <ul>
  <li>Animated read receipts.  If you haven't seen these, you haven't lived.  They are a <a href="http://matrix.org/docs/spec/r0.0.0/client_server.html#id15">relatively new addition to the Matrix spec.</a>
- <li>Full server-side search.  We now have <a href="http://matrix.org/docs/spec/r0.0.0/client_server.html#id42">full-text search</a> in the Matrix spec, and implemented on synapse both on sqlite and postgres - and now in Vector too.  Having good search over all of your chat history makes Matrix *so* much more usable.
- <li>Video conferencing.  We have full multi-way conferencing in Vector via matrix-appservice-verto and FreeSWITCH.  The intention is to add this to the core Matrix spec (having first made it a bit more generic) - see the <a href="https://github.com/vector-im/vector-web/blob/master/docs/conferencing.md">draft spec</a> for details.
- <li><a href="http://matrix.org/docs/spec/r0.0.0/client_server.html#third-party-invites">3rd party invites</a>.  You can now invite users into Matrix by email address as well as matrix ID, and it works.  Vector implements this.
- <li><a href="http://matrix.org/docs/spec/r0.0.0/client_server.html#room-tagging">Room tagging</a>.  You can now tag rooms as favourites, low priority, or with arbitrary namespaced metadata.  Vector implements this through a swanky drag & drop UI.
- <li>"V2" Sync API.  Now part of the 'r0.0.0' spec, this lets Matrix support much smarter incremental and partial <a href="http://matrix.org/docs/spec/r0.0.0/client_server.html#get-matrix-client-r0-sync">synchronisation patterns</a>.  Vector now implements this, meaning that browser windows sync much faster after being offline for a bit, and no longer hammer the user with stale desktop notifications.
- <li>Accessing 'historical' rooms.  Matrix now lets you keep track of rooms you've left, so you can view and search the conversation logs even after you've left the conversation.  Vector now implements this (as of Monday!)
- <li>Tab-complete that doesn't suck.  This is a purely client-side feature which landed on Thursday!
- <li>Roll-overable animated GIFs.  'nuff said.
- <li>Markdown support. yay!
- <li>Synchronised read and notification history.  This hasn't landed yet (in vector or synapse or even the spec), but finally provides a way to keep read and notification state in sync in realtime across all your clients and a meaningful favicon 'badge' telling you how many notifications you missed!
- <li>Guest access.  This hasn't landed in Vector yet, but it's in <a href="http://matrix.org/docs/spec/r0.0.0/client_server.html#guest-access">the spec</a> and Synapse.  It will let folks use Matrix without having to create an account (at least for rooms which support 'guest access' from the public).
+ </li><li>Full server-side search.  We now have <a href="http://matrix.org/docs/spec/r0.0.0/client_server.html#id42">full-text search</a> in the Matrix spec, and implemented on synapse both on sqlite and postgres - and now in Vector too.  Having good search over all of your chat history makes Matrix *so* much more usable.
+ </li><li>Video conferencing.  We have full multi-way conferencing in Vector via matrix-appservice-verto and FreeSWITCH.  The intention is to add this to the core Matrix spec (having first made it a bit more generic) - see the <a href="https://github.com/vector-im/vector-web/blob/master/docs/conferencing.md">draft spec</a> for details.
+ </li><li><a href="http://matrix.org/docs/spec/r0.0.0/client_server.html#third-party-invites">3rd party invites</a>.  You can now invite users into Matrix by email address as well as matrix ID, and it works.  Vector implements this.
+ </li><li><a href="http://matrix.org/docs/spec/r0.0.0/client_server.html#room-tagging">Room tagging</a>.  You can now tag rooms as favourites, low priority, or with arbitrary namespaced metadata.  Vector implements this through a swanky drag & drop UI.
+ </li><li>"V2" Sync API.  Now part of the 'r0.0.0' spec, this lets Matrix support much smarter incremental and partial <a href="http://matrix.org/docs/spec/r0.0.0/client_server.html#get-matrix-client-r0-sync">synchronisation patterns</a>.  Vector now implements this, meaning that browser windows sync much faster after being offline for a bit, and no longer hammer the user with stale desktop notifications.
+ </li><li>Accessing 'historical' rooms.  Matrix now lets you keep track of rooms you've left, so you can view and search the conversation logs even after you've left the conversation.  Vector now implements this (as of Monday!)
+ </li><li>Tab-complete that doesn't suck.  This is a purely client-side feature which landed on Thursday!
+ </li><li>Roll-overable animated GIFs.  'nuff said.
+ </li><li>Markdown support. yay!
+ </li><li>Synchronised read and notification history.  This hasn't landed yet (in vector or synapse or even the spec), but finally provides a way to keep read and notification state in sync in realtime across all your clients and a meaningful favicon 'badge' telling you how many notifications you missed!
+ </li><li>Guest access.  This hasn't landed in Vector yet, but it's in <a href="http://matrix.org/docs/spec/r0.0.0/client_server.html#guest-access">the spec</a> and Synapse.  It will let folks use Matrix without having to create an account (at least for rooms which support 'guest access' from the public).</li>
 </ul>
 
 If you haven't given Vector a spin, it's well worth heading over to <a href="https://vector.im">https://vector.im</a> and taking a look.
@@ -187,11 +187,11 @@ Okay, this has got a lot longer than it was meant to be - but hopefully makes up
 2015 has been an epic year as we've taken Matrix from a very early beta to the advanced stage that it's at now.  Obviously there's still a lot of stuff to do though.  Right now we expect the focus in 2016 to be:
 
 <ul>
- <li>Vector - making sure the Matrix protocol has a flagship glossy FOSS client that normal (non-geek) users can use.
- <li> Dendron - making Synapse more reliable, scalable and maintainable.
- <li>Bridging - wiring as much of the rest of the world into Matrix as accurately and efficiently as possible.
- <li>Federation Spec - finishing and releasing the Server-Server API.
- <li>End-to-end crypto - finishing it off.
+ <li>Vector - making sure the Matrix protocol has a flagship glossy FOSS client that normal (non-geek) users can use.</li>
+ <li> Dendron - making Synapse more reliable, scalable and maintainable.</li>
+ <li>Bridging - wiring as much of the rest of the world into Matrix as accurately and efficiently as possible.</li>
+ <li>Federation Spec - finishing and releasing the Server-Server API.</li>
+ <li>End-to-end crypto - finishing it off.</li>
 </ul>
 
 ...and obviously continuing to refine and extend the core of Matrix itself with features like threading, editable messages, and possibly even distributed accounts.

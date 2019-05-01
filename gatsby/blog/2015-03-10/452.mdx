@@ -24,7 +24,9 @@ Changes in Matrix Android SDK in 0.2.3 (2015-03-10)
 -----------------
  Matrix Console
 -----------------
+
 Improvements:
+
  * Avoid refreshing the home page when it is not displayed.
  * Display a piechart while uploading a media.
  * Refresh the display when some messages are automatically resent (after retrieving a data network connection for example).
@@ -37,6 +39,7 @@ Improvements:
  * The animated GIFs are now supported.
 
 Features:
+
  * Add the rate limits error management. The server could request to delay the messages sending because they were too many messages sent in a short time (to avoid spam).
  * Can take a photo to send it.
  * A chat room page is automatically paginated to fill. It used to get only the ten latest messages : it displayed half filled page on tablet.
@@ -46,6 +49,7 @@ Features:
  * Add various accessibility tweaks.
 
 Bug fixes:
+
  * The media downloads/uploads were sometimes stuck.
  * The private room creation was broken.
  * SYAND-33 : number of unread messages disappears when entering another room.
@@ -54,4 +58,5 @@ Bug fixes:
  * The account creation used to fail if the home server had a trailing slash.
  * SYAND-44 In progress text entry could be saved across crashes.
  * SYAND-38 Inline image viewer in Android app.
+
 </code>
