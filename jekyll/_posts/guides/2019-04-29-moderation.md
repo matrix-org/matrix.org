@@ -10,11 +10,15 @@ p {
     padding-bottom: 5px;
 }
 img {
-    float: left;
     max-height: 600px;
+    display: block;
+    margin: 0 auto;
 }
 thead {
     background: inherit;
+}
+table {
+    margin: 0 auto;
 }
 </style>
 
@@ -273,7 +277,7 @@ Riot/Web also exposes the ability to delete a room alias from the Room Directory
 
 
 *   In addition to the existing admin API, it would be good to have a server admin GUI for the various server admin functions above.
-*   Ability to block a server from federating to your server (as rooms are replicated over _all** **_participating servers and do not have a single owner, the criteria you would use to block rooms “from a server” en masse is not well defined. One could be found if needed however.)
+*   Ability to block a server from federating to your server (as rooms are replicated over _all_ participating servers and do not have a single owner, the criteria you would use to block rooms “from a server” en masse is not well defined. One could be found if needed however.)
 
 
 ## Handling unwanted content as a user {#handling-unwanted-content-as-a-user}
@@ -328,7 +332,7 @@ Thus users could choose which content filters to adopt, and visualise how they a
 
 After all, the challenge of filtering objectionable/misleading content on the internet is not specific to Matrix, nor even to decentralised systems, and we hope that this work will be directly applicable elsewhere.  It is also becoming more of a legal concern, with certain governments mandating content filtering rules to messaging providers - meaning that servers running in affected territories may be legally obligated to provide their users with content filtering tools of this nature.
 
-See #matrix-reputation:matrix.org and [https://docs.google.com/document/d/1rijGLs9-RJ9Mz2Yk5wWycMbErrCDK1VJkACdUPMN0-M/](https://docs.google.com/document/d/1rijGLs9-RJ9Mz2Yk5wWycMbErrCDK1VJkACdUPMN0-M/)  for more details on this.
+See [#matrix-reputation:matrix.org](https://matrix.to/#/#matrix-reputation:matrix.org) and [https://docs.google.com/document/d/1rijGLs9-RJ9Mz2Yk5wWycMbErrCDK1VJkACdUPMN0-M/](https://docs.google.com/document/d/1rijGLs9-RJ9Mz2Yk5wWycMbErrCDK1VJkACdUPMN0-M/)  for more details on this.
 
 
 ### Outstanding issues
@@ -341,6 +345,6 @@ See #matrix-reputation:matrix.org and [https://docs.google.com/document/d/1rijGL
 
 ## Conclusion {#conclusion}
 
-Matrix provides a comprehensive set of moderation tools today, with scope for further refinements in future as detailed in the ‘outstanding issues’ sections above (as of April 2019).  As the Matrix.org team, In practice we use the features above to relatively successfully admin one of the largest servers on the network (matrix.org itself, with ~70K concurrent users), and to moderate one of the larger communities on the network (+matrix:matrix.org; ~30 rooms with over 10K users present).
+Matrix provides a comprehensive set of moderation tools today, with scope for further refinements in future as detailed in the ‘outstanding issues’ sections above (as of April 2019).  As the Matrix.org team, In practice we use the features above to relatively successfully admin one of the largest servers on the network (matrix.org itself, with ~70K concurrent users), and to moderate one of the larger communities on the network ([+matrix:matrix.org](https://matrix.to/#/+matrix:matrix.org); ~30 rooms with over 10K users present).
 
 
