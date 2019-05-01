@@ -25,17 +25,17 @@ Restart synapse
 <dt>4: Add <code>synapse.html</code> and <code>synapse.rules</code></dt><dd>The <code>.html</code> file needs to appear in prometheus's <code>consoles</code> directory, and the <code>.rules</code> file needs to be invoked somewhere in the main config file. A symlink to each from the git checkout into the prometheus directory might be easiest to ensure <code>git pull</code> keeps it updated.</dd>
 
 <dt>5: Add a prometheus target for synapse</dt><dd>This is easiest if prometheus runs on the same machine as synapse, as it can then just use localhost:
-<pre>global: {
+<pre>global: {'{'}
   rule_file: "synapse.rules"
-}
+{'}'}
 
-job: {
+job: {'{'}
   name: "synapse"
 
-  target_group: {
+  target_group: {'{'}
     target: "http://localhost:9092/"
-  }
-}
+  {'}'}
+{'}'}
 </pre>
 
 </dd>

@@ -19,7 +19,7 @@ Now, you should have a webroot for your new web server somewhere. Hopefully your
 <pre># nano /etc/nginx/nginx.conf
 </pre>
 We're looking for the 'server' section of that file. We need to make it look something like this:
-<pre>    server {
+<pre>    server {'{'}
         # Make sure this is 0.0.0.0: no use listening on 127.0.0.1 or we'll only be
         # serving to ourselves! There's no port here, which means we'll listen on
         # port 80
@@ -36,10 +36,10 @@ We're looking for the 'server' section of that file. We need to make it look som
         # Here's where it gets interesting: This will send any path that starts
         # with /_matrix to our Synapse!
 
-        location /_matrix {
+        location /_matrix {'{'}
             proxy_pass http://localhost:8008;
-        }
-    }
+        {'}'}
+    {'}'}
 </pre>
 When you're happy with the look of that file, let's restart the server:
 <pre># nginx -s reload
@@ -47,7 +47,7 @@ When you're happy with the look of that file, let's restart the server:
 <p class="p1">Before we go any further, let's test our new configuration:</p>
 
 <pre>$ curl http://example.com/_matrix/key/v2/server/auto
-{"old_verify_keys":{},"server_name":"example.com","signatures":{"example.com":{"ed25519:auto":"RWb+w6vHUUokoDgElwG6Cg50ezZvBrzXtJmJIH8jEwI5x0JQ7prn3FwjhbgKTH5jE7J8Ily3HEc4COn4JCCvCA"}},"tls_fingerprints":[{"sha256":"DMbzSZ5Uj7/6p/RT/UtQYJLHm5o0TwBSVYXsqpDdVDs"}],"valid_until_ts":1455203001035,"verify_keys":{"ed25519:auto":{"key":"1YiTDjmE86AlmrbIYE2lyqauV9wPo8jw2kxZAZFfl/Q"}}}
+{'{'}"old_verify_keys":{'{'}{'}'},"server_name":"example.com","signatures":{'{'}"example.com":{'{'}"ed25519:auto":"RWb+w6vHUUokoDgElwG6Cg50ezZvBrzXtJmJIH8jEwI5x0JQ7prn3FwjhbgKTH5jE7J8Ily3HEc4COn4JCCvCA"{'}'}{'}'},"tls_fingerprints":[{'{'}"sha256":"DMbzSZ5Uj7/6p/RT/UtQYJLHm5o0TwBSVYXsqpDdVDs"{'}'}],"valid_until_ts":1455203001035,"verify_keys":{'{'}"ed25519:auto":{'{'}"key":"1YiTDjmE86AlmrbIYE2lyqauV9wPo8jw2kxZAZFfl/Q"{'}'}{'}'}{'}'}
 </pre>
 <p class="p1">Those are your server's public keys! Now we have a web server running, we can get our SSL certificate. Let's Encrypt have their own client which will automate everything including rewriting your NGINX config file, however that means it has a large number of dependencies and needs to be run as root. For this example, we're going to use the much simpler <a href="https://github.com/diafygi/acme-tiny" target="_blank">acme_tiny.py</a>. I'm going to assume you have a user called, 'letsencrypt', so, as root, let's set up the place for it to write its challenge files:</p>
 
@@ -151,7 +151,7 @@ $ scp examplecom_dhparams.pem root@example.com:/etc/ssl/nginx/examplecom_dhparam
 </pre>
 <p class="p1">Now, let's get our new certificate in action! Open up your NGINX config file again, and add another server block that look like this:</p>
 
-<pre>    server {
+<pre>    server {'{'}
         listen 0.0.0.0:443;
         server_name example.com www.example.com;
         ssl on;
@@ -166,10 +166,10 @@ $ scp examplecom_dhparams.pem root@example.com:/etc/ssl/nginx/examplecom_dhparam
         access_log /var/log/nginx/examplecom.ssl_access_log main;
         error_log /var/log/nginx/examplecom.ssl_error_log info;
         root /var/www/examplecom/htdocs;
-        location /_matrix {
+        location /_matrix {'{'}
             proxy_pass http://localhost:8008;
-        }
-    }
+        {'}'}
+    {'}'}
 </pre>
 <p class="p2">It looks pretty similar to our previous server block, except for all that stuff about SSL in the middle. We're pointing NGINX at our certificate, key and Diffie Hellman parameter files and specifying what protocols and ciphers we want our server to talk. The long list here is taken from <a href="https://wiki.mozilla.org/Security/Server_Side_TLS" target="_blank">Mozilla's Server Side TLS guidelines</a> and is their 'Intermediate' list. See that page for more information on what that means, and choose a different list of ciphers if you prefer: just remember we must support at least the ephemeral Diffie Hellman ciphers, or other home servers won't talk to us!</p>
 <p class="p2">Now let's restart our NGINX and see if it works:</p>
@@ -179,7 +179,7 @@ $ scp examplecom_dhparams.pem root@example.com:/etc/ssl/nginx/examplecom_dhparam
 <p class="p2">...and that command again, this time with https:</p>
 
 <pre>$ curl https://example.com/_matrix/key/v2/server/auto
-{"old_verify_keys":{},"server_name":"example.com","signatures":{"example.com":{"ed25519:auto":"RWb+w6vHUUokoDgElwG6Cg50ezZvBrzXtJmJIH8jEwI5x0JQ7prn3FwjhbgKTH5jE7J8Ily3HEc4COn4JCCvCA"}},"tls_fingerprints":[{"sha256":"DMbzSZ5Uj7/6p/RT/UtQYJLHm5o0TwBSVYXsqpDdVDs"}],"valid_until_ts":1455203001035,"verify_keys":{"ed25519:auto":{"key":"1YiTDjmE86AlmrbIYE2lyqauV9wPo8jw2kxZAZFfl/Q"}}}
+{'{'}"old_verify_keys":{'{'}{'}'},"server_name":"example.com","signatures":{'{'}"example.com":{'{'}"ed25519:auto":"RWb+w6vHUUokoDgElwG6Cg50ezZvBrzXtJmJIH8jEwI5x0JQ7prn3FwjhbgKTH5jE7J8Ily3HEc4COn4JCCvCA"{'}'}{'}'},"tls_fingerprints":[{'{'}"sha256":"DMbzSZ5Uj7/6p/RT/UtQYJLHm5o0TwBSVYXsqpDdVDs"{'}'}],"valid_until_ts":1455203001035,"verify_keys":{'{'}"ed25519:auto":{'{'}"key":"1YiTDjmE86AlmrbIYE2lyqauV9wPo8jw2kxZAZFfl/Q"{'}'}{'}'}{'}'}
 </pre>
 <p class="p1">Hooray! You should now be able to open a browser to https://example.com/matrix/ and log in securely over SSL!</p>
 
@@ -219,7 +219,7 @@ $ cat examplecom/examplecom.crt lets-encrypt-x3-cross-signed.pem &gt;examplecom/
 <p class="p1">Now, we need to do a couple of things to make this work: were you looking carefully at the JSON those curl commands returned? If you were, you might have noticed a key called, 'tls_fingerprints'. Our home server serves up a fingerprint of the TLS certificate its using from this API, and we've just given our web server a different certificate, so we need to give Synapse our new certificate.</p>
 <p class="p1">How are we going to tell other home servers to talk to our NGINX instead? Well, ultimately we're going to change our DNS SRV record to point at port 443 instead of port 8448, but that change could take a while to propagate through caches, so let's test it by having our NGINX listen on port 8448 temporarily. We can do this by copying that same block from above, but with a different port:</p>
 
-<pre>    server {
+<pre>    server {'{'}
         listen 0.0.0.0:8448;
         server_name example.com www.example.com;
     [etc]
@@ -259,7 +259,7 @@ no_tls: True
 <p class="p2">Now let's try that test again on port 8448:</p>
 
 <pre>$ curl https://example.com:8448/_matrix/key/v2/server/auto
-{"old_verify_keys":{},"server_name":"example.com","signatures":{"example.com":{"ed25519:auto":"bdca31805e4209f6ff4d644251a29d0cb1dc828a4d6131c57cf8305288f337c0"}},"tls_fingerprints":[{"sha256":"1d9ec66599e229654a79f28e26675fdeb585027553af6d581926e821a6b6527c"}],"valid_until_ts":1455203001035,"verify_keys":{"ed25519:auto":{"key":"1YiTDjmE86AlmrbIYE2lyqauV9wPo8jw2kxZAZFfl/Q"}}}
+{'{'}"old_verify_keys":{'{'}{'}'},"server_name":"example.com","signatures":{'{'}"example.com":{'{'}"ed25519:auto":"bdca31805e4209f6ff4d644251a29d0cb1dc828a4d6131c57cf8305288f337c0"{'}'}{'}'},"tls_fingerprints":[{'{'}"sha256":"1d9ec66599e229654a79f28e26675fdeb585027553af6d581926e821a6b6527c"{'}'}],"valid_until_ts":1455203001035,"verify_keys":{'{'}"ed25519:auto":{'{'}"key":"1YiTDjmE86AlmrbIYE2lyqauV9wPo8jw2kxZAZFfl/Q"{'}'}{'}'}{'}'}
 </pre>
 <p class="p1">Notice anything different? The tls_fingerprints part has changed because we now have a different certificate. The signatures/example.com/ed25519:auto value has changed too: that's because that part is a signature of the rest of JSON object, so changing the tls_fingerprints has caused this to change too.</p>
 <p class="p1">And that's it! If you're happy everything is working, you can then change your DNS SRV record to point at port 443 instead of 8448, then after leaving a few days for the change to propagate through caches, remove the extra server block from your nginx.conf and restart to stop your nginx listening on port 8448.</p>

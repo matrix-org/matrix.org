@@ -121,13 +121,13 @@ QMAKE_OBJCOPY           = arm-linux-gnueabihf-objcopy
 QMAKE_NM                = arm-linux-gnueabihf-nm -P
 QMAKE_STRIP             = arm-linux-gnueabihf-strip
 
-!host_build {
+!host_build {'{'}
         QMAKE_INCDIR_OPENGL     = $ROOTFS/usr/include/GL
         QMAKE_LIBDIR_OPENGL     = $ROOTFS/usr/lib/arm-linux-gnueabihf
         # GCC 4.9 apparently doesn't know where its own libstdc++ headers are when cross-compiling...
         QMAKE_INCDIR            = /usr/arm-linux-gnueabihf/include/c++/4.9.3 \\
                                   /usr/arm-linux-gnueabihf/include/c++/4.9.3/arm-linux-gnueabihf
-}
+{'}'}
 
 load(qt_config)
 EOT
@@ -241,12 +241,12 @@ SET(CMAKE_SYSROOT  $ROOTFS)
 SET(CMAKE_FIND_ROOT_PATH  $ROOTFS)
 
 # sort out our includes...
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \\
+SET(CMAKE_CXX_FLAGS "${'{'}CMAKE_CXX_FLAGS{'}'} \\
     -I$ROOTFS/usr/include/c++/4.9 \\
     -I$ROOTFS/usr/include/arm-linux-gnueabihf \\
     -I$ROOTFS/usr/include/arm-linux-gnueabihf/c++/4.9")
 
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} \\
+SET(CMAKE_EXE_LINKER_FLAGS "${'{'}CMAKE_EXE_LINKER_FLAGS{'}'} \\
   $ROOTFS/lib/arm-linux-gnueabihf/libc.so.6 \\
   $ROOTFS/usr/lib/arm-linux-gnueabihf/libm.so \\
   $ROOTFS/usr/lib/arm-linux-gnueabihf/libhybris-egl/libGLESv2.so.2")
