@@ -67,7 +67,8 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
                 {!!i && ', '}
                 <Link to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
               </React.Fragment>
-            ))}
+            ))} &mdash;&nbsp;
+            {post.author}
           </Subline>
           <PostContent>
             <MDXRenderer>{postNode.code.body}</MDXRenderer>
@@ -109,7 +110,8 @@ export const postQuery = graphql`
       frontmatter {
         title
         date(formatString: "MM/DD/YYYY")
-        categories
+        categories,
+        author
       }
       timeToRead
       rawBody
