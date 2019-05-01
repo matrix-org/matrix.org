@@ -3,6 +3,7 @@ date: '2016-03-30'
 title: Synapse 0.14 is released!
 categories:
   - General
+author: Matthew Hodgson
 ---
 
 We just released Synapse 0.14.0 - a major update which incorporates lots of work on making Synapse more RAM efficient. There's still a lot of room for further improvements, but the main headlines are reducing the resident memory footprint dramatically by interning strings and deduplicating events across the many different caches. It also adds a much-needed <code>SYNAPSE_CACHE_FACTOR</code> environment variable that can be used to globally decrease or increase the sizing of all of Synapse's various caches (with an associated slow-down or speed-up in performance). Quite how improved the new memory footprint seems to very much depend on your own use case, but it's certainly a step in the right direction.
