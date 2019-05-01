@@ -43,7 +43,7 @@ def on_receive_events(transaction):
         print "User: %s Room: %s" % (event["user_id"], event["room_id"])
         print "Event Type: %s" % event["type"]
         print "Content: %s" % event["content"]
-    return jsonify({})
+    return jsonify({'{'}{'}'})
 
 if __name__ == "__main__":
     app.run()
@@ -88,12 +88,12 @@ def query_alias(alias):
     requests.post(
         # NB: "TOKEN" is the as_token referred to in registration.yaml
         "<a href="http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN" target="_blank">http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN</a>",
-        json.dumps({
+        json.dumps({'{'}
             "room_alias_name": alias_localpart
-        }),
-        headers={"Content-Type":"application/json"}
+        {'}'}),
+        headers={'{'}"Content-Type":"application/json"{'}'}
     )
-    return jsonify({})
+    return jsonify({'{'}{'}'})
 </pre>
 This makes the application service lazily create a room with the requested alias whenever the HS queries the AS for the existence of that alias (when users try to join that room), allowing any room with the alias prefix #logged_ to be sent to the AS. Now try joining the room "#logged_test2:localhost" and it will work as you'd expect.  You can see that if this were a real bridge, the AS would have checked for the existence of #logged_test2 in the remote network, and then lazily-created it in Matrix as required.
 
