@@ -414,7 +414,7 @@ const Layout = ({ children, customSEO }) => {
             <a className="footer-highlight__link" href="https://matrix.org/docs/api">
               Client-Server APIs
             </a>
-            <a className="footer-highlight__link" href="/hall-of-fame">
+            <a className="footer-highlight__link" href="/security-disclosure-policy">
               Security
             </a>
             <a className="footer-highlight__right" href="https://matrix.org/docs/guides/matrix_org_legal.html">
