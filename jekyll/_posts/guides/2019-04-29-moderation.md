@@ -57,8 +57,7 @@ It is common for servers not to immediately delete redacted messages from their 
 
 ### Managing abusive display names, avatars etc {#managing-abusive-display-names-avatars-etc}
 
-As well as being able to redact abusive content, moderators can also override ‘state events’ such as name changes, avatars, room names, topics, etc.  This is generally just a matter of using Room Settings to update the necessary data, although for the special case of profile changes, the moderator can edit the underlying room membership event by typing /devtools in Riot/Web and selecting ‘explore room state’.  Overriding another user’s profile is considered bad etiquette however (even as a moderator) - it is better to redact.
-
+As well as being able to redact abusive content, moderators can also override ‘state events’ such as room names, topics, etc.  This is generally just a matter of using Room Settings to update the necessary data.  In future we will also support the special case of overriding profile changes - however, overriding another user’s profile is considered bad etiquette (even as a moderator) - it is better to redact.
 
 ### Power levels {#power-levels}
 
