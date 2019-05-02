@@ -22,23 +22,23 @@ cd "$(dirname "$(dirname "${SELF}")")"
 SITE_BASE="$(pwd)"
 
 # grab and unpack the latest matrix-docs build from jenkins
-rm -rf assets.tar.gz assets
-wget 'https://matrix.org/jenkins/job/Docs/lastSuccessfulBuild/artifact/assets.tar.gz'
-tar -xzf assets.tar.gz
+#rm -rf assets.tar.gz assets
+#wget 'https://matrix.org/jenkins/job/Docs/lastSuccessfulBuild/artifact/assets.tar.gz'
+#tar -xzf assets.tar.gz
 
 # copy the swagger UI into place
-rm -fr unstyled_docs/api/client-server
-mkdir -p unstyled_docs/api/client-server/json
+#rm -fr unstyled_docs/api/client-server
+#mkdir -p unstyled_docs/api/client-server/json
 #cp -r swagger-ui/dist/* unstyled_docs/api/client-server/
 #(cd unstyled_docs && patch -p0) <scripts/swagger-ui.patch
 
 # and the unstable spec docs, but not the spec index (because we want to keep
 # the git version, which points to a specific c-s version)
-rm assets/spec/index.html || true
-cp -r assets/spec unstyled_docs
+#rm assets/spec/index.html || true
+#cp -r assets/spec unstyled_docs
 
 # add a link to the stable swagger doc
-ln -s ../../../spec/client_server/latest.json unstyled_docs/api/client-server/json/api-docs.json
+#ln -s ../../../spec/client_server/latest.json unstyled_docs/api/client-server/json/api-docs.json
 
 # copy the unstyled docs and add the jekyll styling
 rm -rf content/docs

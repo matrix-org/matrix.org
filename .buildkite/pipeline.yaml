@@ -1,0 +1,60 @@
+steps:
+  # fetch the latest spec build, and apply styling to it.
+  # This step also sets up the swagger API.
+  - label: ":books: Spec"
+    plugins:
+      - docker#v3.0.1:
+          image: "python:3.6"
+          environment:
+            - "BUILDKITE_ACCESS_TOKEN"
+    command:
+      - python3 -m venv env
+      - env/bin/pip install requests
+      - ". env/bin/activate; scripts/update_docs.sh"
+      - tar -czf styled-docs.tar.gz content/docs
+    artifact_paths:
+      - styled-docs.tar.gz
+
+  # Run jekyll. We run this is a custom docker image - see dockerfile in this directory.
+  - label: "jekyll"
+    plugins:
+      - docker#v3.0.1:
+          image: "matrixdotorg/matrixdotorg-build:0.2"
+    command:
+      # run jekyll to generate the rest of the site.
+      # This will generate stuff under ./jekyll/_site.
+      - . /env/bin/activate
+      - ./jekyll/generate.sh
+      - cp -rf ./pre-generated/* jekyll/_site/
+      - tar -czf jekyll-site.tar.gz jekyll/_site
+    artifact_paths:
+      - jekyll-site.tar.gz
+
+  # Run gatsby
+  - label: "gatsby"
+    plugins:
+      - docker#v3.0.1:
+          image: "node:10"
+    command:
+      - cd gatsby
+      - npm install
+      - ./node_modules/.bin/gatsby build
+      - tar -C public -czf ../gatsby-site.tar.gz blog
+    artifact_paths:
+      - gatsby-site.tar.gz
+      
+  - wait
+
+  # Merge the three sets of outputs together
+  - label: "complete"
+    command:
+      - buildkite-agent artifact download styled-docs.tar.gz .
+      - buildkite-agent artifact download jekyll-site.tar.gz .
+      - buildkite-agent artifact download gatsby-site.tar.gz .
+      - tar -xzvf styled-docs.tar.gz
+      - tar -xzvf jekyll-site.tar.gz
+      - cp -r jekyll/_site/{css,guides,howtos,projects} content/docs
+      - tar -C content -xzf gatsby-site.tar.gz
+      - tar -czf content.tar.gz content
+    artifact_paths:
+      - content.tar.gz

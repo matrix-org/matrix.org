@@ -3,8 +3,6 @@
 use strict;
 use warnings;
 
-use File::Slurp qw/read_file/;
-
 if (scalar(@ARGV) < 1) {
     die "Usage: $0 include_dir file_to_replace...";
 }
@@ -93,4 +91,15 @@ while(<>) {
     s#</body>#$footer$&#;
 
     print;
+}
+
+sub read_file {
+    # http://perl-begin.org/tutorials/bad-elements/#slurp
+    my $filename = shift;
+    open my $in, '<', $filename
+        or die "Cannot open '$filename' for slurping - $!";
+    local $/;
+    my $contents = <$in>;
+    close($in);
+    return $contents;
 }
