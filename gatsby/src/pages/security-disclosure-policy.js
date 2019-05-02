@@ -91,6 +91,7 @@ const HallOfFame = () => {
                     })}
 
                 </ul>
+                <p>If you think you should be on the list, apologies if we missed you, please mail us at <a href='mailto:security@matrix.org'> security@matrix.org</a></p>
             </Content>
         </Wrapper>
     </Layout>)
