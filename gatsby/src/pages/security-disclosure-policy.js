@@ -37,7 +37,7 @@ const HallOfFame = () => {
             date:'2019-04-18',
             who: 'fs0c131y',
             profile: 'https://fs0c131y.com/',
-            description:"An email validation exploit in Sydent. For more details see <a href='https://matrix.org/blog/2019/04/18/security-update-sydent-1-0-2/'>here</a> and <a href='https://www.cvedetails.com/cve/CVE-2019-11340/'>here</a>",
+            description:"An email validation exploit in Sydent. For more details see <a href='https://matrix.org/blog/2019/04/18/security-update-sydent-1-0-2/'>here</a> and <a href='https://www.cvedetails.com/cve/CVE-2019-11340/'>CVE-2019-11340</a>.",
             service:"Sydent",
         },
 
