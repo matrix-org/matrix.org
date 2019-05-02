@@ -26,6 +26,7 @@ Big update from <a href="https://matrix.to/#/@slavi:devture.com">Slavi</a> this 
 <blockquote><a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> has received some updates in the past few weeks - fixing minor bugs, improving documentation, adding support for additional <a href="https://github.com/matrix-org/synapse">Synapse</a>/<a href="https://github.com/vector-im/riot-web">Riot</a> features, etc.
 
 Most notably (in oldest to most-recent order):
+
 <ul>
  	<li><a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a> heard you like playbooks, so he made it possible to <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/commit/67e2bf285d44c0cb392ba1e28e615053b748c03c">run the playbook from another playbook</a>. Thanks Cadair!</li>
  	<li>some <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#bc-break-renaming-playbook-variables">configuration renaming</a> to make things more consistent. Most people would likely be unaffected.</li>
@@ -35,9 +36,13 @@ Most notably (in oldest to most-recent order):
  	<li><a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#ability-to-set-synapse-log-levels">better control over Synapse logging</a>. Thanks Aaron Raimist!</li>
  	<li>the ability to <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#support-for-controlling-public-registration-and-room-auto-join">set up a public server</a> and the ability to make use of Synapse's \\"auto-join\\" feature. Until now, the playbook was only suited for setting up a private server, but with this, setting up public servers is now a possibility. Thanks <a href="https://github.com/anadahz">@anadahz</a></li>
 </ul>
+
 I'm quite happy that the playbook is getting more contributions from others now and is improving in such diverse ways!
 
-Additionally, the <a href="https://matrix.to/#/#matrix-docker-ansible-deploy:devture.com">#matrix-docker-ansible-deploy:devture.com</a> support room in Matrix is now bridged to the <code>#matrix-docker-ansible-deploy</code> IRC Freenode channel, making it easier for people to get support when they don't have a working homeserver.</blockquote>
+Additionally, the <a href="https://matrix.to/#/#matrix-docker-ansible-deploy:devture.com">#matrix-docker-ansible-deploy:devture.com</a> support room in Matrix is now bridged to the <code>#matrix-docker-ansible-deploy</code> IRC Freenode channel, making it easier for people to get support when they don't have a working homeserver.
+
+</blockquote>
+
 <h2 id="libqmatrixclient">libQMatrixClient</h2>
 <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> has been working on <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a>:
 <blockquote>the work on lazy-loading in <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> has advanced to the point when client authors may start trying to integrate it in their applications (welcome to <a href="https://matrix.to/#/#qmatrixclient:matrix.org">#qmatrixclient:matrix.org</a> for details - it's a bit rough around the edges yet).</blockquote>
