@@ -230,7 +230,13 @@ const Footer = styled.footer`
   .footer-highlight__link {
     margin: 1rem;
   }
-  .footer-highlight__small {
+  .footer-highlight__right {
+    position: absolute;
+    margin-right: 1rem;
+    right: 0;
+  }
+  .footer-highlight__hidden {
+    display: none;
     position: absolute;
     margin-right: 1rem;
     right: 0;
@@ -405,13 +411,16 @@ const Layout = ({ children, customSEO }) => {
         <Footer>
           <div className="footer__text">&copy; 2019 Matrix.org. All rights reserved.</div>
           <div className="footer-highlight">
-            <a className="footer-highlight__link" href="https://matrix.org/docs/guides/matrix_org_legal.html">
-              Legal
-            </a>
             <a className="footer-highlight__link" href="https://matrix.org/docs/api">
               Client-Server APIs
             </a>
-            <span className="footer-highlight__small">Last build: {buildTime}</span>
+            <a className="footer-highlight__link" href="/security-disclosure-policy">
+              Security
+            </a>
+            <a className="footer-highlight__right" href="https://matrix.org/docs/guides/matrix_org_legal.html">
+              Legal
+            </a>
+            <span className="footer-highlight__hidden">Last build: {buildTime}</span>
           </div>
         </Footer>
       </>
