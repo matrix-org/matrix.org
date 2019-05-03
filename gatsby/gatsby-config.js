@@ -54,7 +54,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/blog/feed/rss.xml",
+            output: "/blog/feed",
             title: "matrix.org RSS Feed",
           },
         ],
