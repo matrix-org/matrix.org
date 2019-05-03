@@ -5,8 +5,8 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 
-import { Layout, Wrapper, Header, SectionTitle } from '../components'
-import config from '../../config'
+import { Layout, Wrapper, Header, SectionTitle } from '../../components'
+import config from '../../../config'
 
 const Content = styled.div`
   grid-column: 2;
@@ -43,7 +43,7 @@ const Category = ({
         <SectionTitle>Categories</SectionTitle>
         {group.map(category => (
           <Title key={category.fieldValue}>
-            <Link to={`/categories/${kebabCase(category.fieldValue)}`}>{category.fieldValue}</Link> (
+            <Link to={`/blog/category/${kebabCase(category.fieldValue)}`}>{category.fieldValue}</Link> (
             {category.totalCount})
           </Title>
         ))}
