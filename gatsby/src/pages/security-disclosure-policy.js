@@ -58,7 +58,7 @@ const HallOfFame = () => {
             date:'2019-04-22',
             who: 'Julien Thomas',
             profile: 'https://twitter.com/julien_thomas',
-            company: 'Protectoid Project',
+            company: 'Protektoid Project',
             companyUrl: 'https://protektoid.com',
             description: "Obsolete and buggy ContentProvider in Riot/Android meant that a malicious local app could compromise account data. Mitigated <a href='https://github.com/vector-im/riot-android/commit/096dfbef39bf0ce53ea2e80225a85e74d75aefa0'>here</a>.",
             service:"Riot/Android"
