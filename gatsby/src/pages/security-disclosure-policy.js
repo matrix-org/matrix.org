@@ -27,6 +27,43 @@ const Content = styled.div`
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date:'2019-05-02',
+            who: 'Enguerran Gillier',
+            profile: 'https://twitter.com/opnsec',
+            description: "HTML injection in email invites. A malicious 3rd party invite could inject unescaped HTML into the email template.  Fixed in Sydent 1.0.3",
+            service: "sydent"
+        },
+        {
+            date:'2019-05-02',
+            who: 'Enguerran Gillier',
+            profile: 'https://twitter.com/opnsec',
+            description: "SSRF in the URL preview API, which did not blacklist access to 0.0.0.0/32 or ::/128 by default.  Fixed in Synapse 0.99.3.1",
+            service: "synapse"
+        },
+        {
+            date:'2019-05-02',
+            who: 'Enguerran Gillier',
+            profile: 'https://twitter.com/opnsec',
+            description: "Insecure pseudo-random number generator in synapse meant that an attacker might be able to predict random values.  Fixed in Synapse 0.99.3.1",
+            service: "synapse"
+        },
+        {
+            date:'2019-05-02',
+            who: 'Enguerran Gillier',
+            profile: 'https://twitter.com/opnsec',
+            description: "Insecure pseudo-random number generator in sydent meant that an attacker could predict authentication tokens.  Fixed in Sydent 1.0.3",
+            service: "sydent"
+        },
+        {
+            date:'2019-04-22',
+            who: 'Julien Thomas',
+            profile: 'https://twitter.com/julien_thomas',
+            company: 'Protectoid Project',
+            companyUrl: 'https://protektoid.com',
+            description: "Obsolete and buggy ContentProvider in Riot/Android meant that a malicious local app could compromise account data. Mitigated <a href='https://github.com/vector-im/riot-android/commit/096dfbef39bf0ce53ea2e80225a85e74d75aefa0'>here</a>.",
+            service:"Riot/Android"
+        },
+        {
             date:'2019-04-20',
             who: 'fs0c131y',
             profile: 'https://fs0c131y.com/',
@@ -40,7 +77,6 @@ const HallOfFame = () => {
             description:"An email validation exploit in Sydent. For more details see <a href='https://matrix.org/blog/2019/04/18/security-update-sydent-1-0-2/'>here</a> and <a href='https://www.cvedetails.com/cve/CVE-2019-11340/'>CVE-2019-11340</a>.",
             service:"Sydent",
         },
-
         {
             date:'2018-12-06',
             who: 'Brian Hyde',
@@ -51,7 +87,7 @@ const HallOfFame = () => {
         {
             date:'2018-02-19',
             who: 'rugk',
-            profile: 'github.com/rugk',
+            profile: 'https://github.com/rugk',
             description:"Origin check of ScalarMessaging postmessage API was insufficient. Mitigated <a href='https://github.com/matrix-org/matrix-react-sdk/pull/1760'> here.</a>",
             service:"Matrix React SDK",
         },
@@ -85,6 +121,8 @@ const HallOfFame = () => {
                                     date={entry.date}
                                     who={entry.who}
                                     profile={entry.profile}
+                                    company={entry.company}
+                                    companyUrl={entry.companyUrl}
                                     description={entry.description}
                                     service={entry.service}
                                 />

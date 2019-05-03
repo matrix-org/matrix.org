@@ -8,15 +8,17 @@ const Content = styled.section`
 `
 
 
-const HallOfFameEntry = ({ date, who, profile, description, service }) => (
+const HallOfFameEntry = ({ date, who, profile, description, company, companyUrl, service }) => {
+  const companyLink = company ? (<span> - <a href={companyUrl}>{company}</a></span>) : '';
+  return (
     <Content>
     <section>
-        <div><i>{date} - {service} - <a href={profile}>{who}</a></i></div>
+        <div><i>{date} - {service} - <a href={profile}>{who}</a>{companyLink}</i></div>
         <div dangerouslySetInnerHTML={{__html: description}}/>
     </section>
     </Content>
-
-)
+  );
+}
 
 export default HallOfFameEntry
 
@@ -25,5 +27,7 @@ HallOfFameEntry.propTypes = {
   description: PropTypes.string.isRequired,
   who: PropTypes.string.isRequired,
   profile: PropTypes.string,
+  company: PropTypes.string,
+  companyUrl: PropTypes.string,
   service: PropTypes.string.isRequired,
 }
