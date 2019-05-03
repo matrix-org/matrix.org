@@ -54,7 +54,7 @@ const LineBreak = styled.div`
   background-color: rgba(1, 1, 1, 0.1);
 `
 
-const Article = ({ title, date, excerpt, slug, timeToRead, categories, body }) => (
+const Article = ({ title, date, excerpt, slug, timeToRead, categories, body, author }) => (
   <Post>
     <Title>
       <Link to={slug}>{title}</Link>
@@ -66,7 +66,8 @@ const Article = ({ title, date, excerpt, slug, timeToRead, categories, body }) =
           {!!i && ', '}
           <Link to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
         </React.Fragment>
-      ))}
+      ))} &mdash;&nbsp;
+      {author}
     </Subline>
     <PostContent>
       <MDXRenderer>{body}</MDXRenderer>

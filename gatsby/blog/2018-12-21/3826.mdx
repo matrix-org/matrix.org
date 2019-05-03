@@ -3,6 +3,7 @@ date: '2018-12-21'
 title: Porting Synapse to Python 3
 categories:
   - General
+author: Neil Johnson
 ---
 
 <span style="font-weight: 400;">Matrix's reference homeserver, Synapse, is written in Python and uses the Twisted networking framework to power its bitslinging across the Internet. The Python version used has been strictly Python 2.7, the last supported version of Python 2, but as of this week that changes! Since Twisted and our other upstream dependencies now support the newest version of Python, Python 3, we are now able to finish the jump and port Synapse to use it by default. The port has been done in a backwards compatible way, written in a subset of Python that is usable in both Python 2 and Python 3, meaning your existing Synapse installs still work on Python 2, while preparing us for a Python 3 future.</span>

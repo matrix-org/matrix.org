@@ -3,6 +3,7 @@ date: '2017-10-02'
 title: Synapse 0.23 is out!
 categories:
   - General
+author: Matthew Hodgson
 ---
 
 We've just released <a href="https://github.com/matrix-org/synapse/releases/tag/v0.23.0">Synapse 0.23</a> - which contains a bunch of significant performance improvements, bug and stability fixes - as well as a few new features: basic spam checking (the ability to configure your homeserver to reject events which match arbitrary rules, both from users and other servers) - and long-awaited support for privacy-preserving ('event_id_only') push notifications.  This means that apps can choose to register themselves to receive push notifications which do *not* contain any information about the actual push, but instead act as a simple "wake up!" event, which triggers the app to then sync via the client-server API in order to display the actual push notification details.  This is particularly useful for push notifications for E2E encrypted rooms, as it means the client has a chance of decrypting the message in order to display the push notification details in the UI (if the user wants that).  matrix-ios-sdk and matrix-android-sdk are in the process of being moved over to use the new 'event_id_only' push format.
