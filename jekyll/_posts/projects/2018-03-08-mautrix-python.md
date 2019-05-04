@@ -6,7 +6,7 @@ description: An asyncio Matrix framework written in Python
 author: tulir
 maturity: Alpha
 language: Python
-license: MIT
+license: MPL2
 repo: https://github.com/tulir/mautrix-python
 room: "#maunium.net:maunium.net"
 featured: "TRUE"
