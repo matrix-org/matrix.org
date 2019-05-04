@@ -78,6 +78,13 @@ const HallOfFame = () => {
             service:"Sydent",
         },
         {
+            date:'2019-04-09',
+            who: 'Jaikey Sarraf',
+            profile: 'https://twitter.com/jaikeysarraf/',
+            description:"Identified a unpatched RCE vulnerability in Matrix.org's public-facing Jenkins.  It transpired the vulnerability had been <a href='https://matrix.org/blog/2019/04/11/security-incident/'>exploited by an attacker</a>.",
+            service:"Infrastructure",
+        },
+        {
             date:'2018-12-06',
             who: 'Brian Hyde',
             profile: 'https://hyde.solutions/',
