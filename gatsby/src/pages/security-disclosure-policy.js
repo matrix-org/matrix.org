@@ -100,7 +100,7 @@ const HallOfFame = () => {
             <Header />
             <Content>
                 <h1>Security Disclosure Policy</h1>
-                <p>Matrix greatly appreciates investigative work into security vulnerabilities carried out by well-intentioned, ethical security researchers. We follow the practice of <a href='https://en.wikipedia.org/wiki/Responsible_disclosure'>responsible disclosure</a> in order to best protect Matrix’s user-base from the impact of security issues.  On Matrix’s side, this means:</p>
+                <p>Matrix.org greatly appreciates investigative work into security vulnerabilities carried out by well-intentioned, ethical security researchers. We follow the practice of <a href='https://en.wikipedia.org/wiki/Responsible_disclosure'>responsible disclosure</a> in order to best protect Matrix’s user-base from the impact of security issues.  On our side, this means:</p>
                 <ul>
                     <li>We will respond to security incidents as a priority.</li>
                     <li>We will fix the issue as soon as is practical, keeping in mind that not all risks are created equal.</li>
