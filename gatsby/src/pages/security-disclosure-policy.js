@@ -68,7 +68,7 @@ const HallOfFame = () => {
             who: 'fs0c131y',
             profile: 'https://fs0c131y.com/',
             description:"Sydent sesssion ids were predictable, meaning it was possible to infer the total number of validations and also check if an address had been validated. Mitigated <a href=https://github.com/matrix-org/sydent/pull/143> here.</a>",
-            service:"Synapse"
+            service:"Sydent"
         },
         {
             date:'2019-04-18',
