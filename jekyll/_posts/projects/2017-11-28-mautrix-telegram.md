@@ -4,10 +4,11 @@ title: mautrix-telegram
 categories: projects as
 description: A Matrix-Telegram hybrid puppeting/relaybot bridge
 author: Tulir
-maturity: Beta
+maturity: Late Beta
 language: Python
-license: AGPL3
+license: AGPL-3.0-or-later
 repo: https://github.com/tulir/mautrix-telegram
+room: "#telegram:maunium.net"
 ---
 
 ![screenshot](/docs/projects/images/mautrix-telegram.png "{{ page.title }}")

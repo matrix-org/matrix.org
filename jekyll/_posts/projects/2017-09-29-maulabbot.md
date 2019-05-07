@@ -4,10 +4,11 @@ title: Maunium GitLab Bot
 categories: projects bot
 description: A GitLab bot for Matrix
 author: Tulir
-maturity: Alpha
+maturity: Stable
 language: Go
-license: AGPL-3.0-only
+license: GPL-3.0-or-later
 repo: https://github.com/maubot/gitlab
+room: "#maulabbot:maunium.net"
 screenshot: /docs/projects/images/gitlab-logo-gray-rgb.png
 featured: "TRUE"
 example_mxid: "@gitlab:t2bot.io"
