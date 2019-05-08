@@ -9,16 +9,18 @@ const SEO = props => {
 
   let title
   let description
+  let image
 
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
   const homeURL = `${config.siteUrl}${realPrefix}`
   const URL = `${homeURL}${postPath || ''}`
-  const image = `${homeURL}${config.siteBanner}`
+  image = `${homeURL}${config.siteBanner}`
 
   if (article) {
     const postMeta = postNode.frontmatter
     title = `${postMeta.title} | ${config.siteTitle}`
     description = postNode.excerpt
+    image = postMeta.image || image
   } else {
     title = config.siteTitleAlt
     description = config.siteDescription

@@ -111,7 +111,8 @@ export const postQuery = graphql`
         title
         date(formatString: "MM/DD/YYYY")
         categories,
-        author
+        author,
+        image
       }
       timeToRead
       rawBody

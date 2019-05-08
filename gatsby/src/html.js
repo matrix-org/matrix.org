@@ -15,11 +15,6 @@ export default function HTML(props) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@matrixdotorg" />
         <meta name="twitter:creator" content="@matrixdotorg" />
-        <meta name="twitter:title" content="Matrix.org blog" />
-        <meta name="twitter:description" content="Matrix.org blog" />
-        <meta name="twitter:image" content="https://matrix.org/blog/wp-content/uploads/2015/01/logo1.png" />
-        <meta name="twitter:image:alt" content="Matrix.org blog" />
-        <meta property="og:image" content="https://matrix.org/blog/wp-content/uploads/2015/01/logo1.png" />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
