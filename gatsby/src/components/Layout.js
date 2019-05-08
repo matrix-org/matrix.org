@@ -136,7 +136,7 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: middle;
     max-width: 100%;
     height: auto !important;
-    max-height: 600px;
+    /* max-height: 600px; */
   }
   [role='button'] {
     cursor: pointer;
