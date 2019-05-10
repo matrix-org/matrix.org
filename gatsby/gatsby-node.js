@@ -43,6 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const postTemplate = require.resolve('./src/templates/post.js')
   const categoryTemplate = require.resolve('./src/templates/category.js')
   const postListTemplate = require.resolve('./src/templates/post-list.js')
+  const feedTemplate = require.resolve('./src/templates/feed.js')
 
   const result = await wrapper(
     graphql(`
@@ -112,5 +113,14 @@ exports.createPages = async ({ graphql, actions }) => {
       component: postListTemplate,
       context: { limit: postsPerPage, skip: i * postsPerPage, numPages, currentPage: i + 1 },
     })
+
+  })
+
+  Array.from({ length: 1 }).forEach((x, i) => {
+    createPage({
+      path: `/blog/feed2`,
+      component: feedTemplate,
+      context: { limit: postsPerPage, skip: i * postsPerPage, numPages, currentPage: i + 1 },
+    },)
   })
 }
