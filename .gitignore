@@ -15,4 +15,5 @@
 /unstyled_docs/howtos/client-server.html
 /unstyled_docs/spec/appendices.html
 /unstyled_docs/spec/*/unstable.html
-        
+
+/node_modules
