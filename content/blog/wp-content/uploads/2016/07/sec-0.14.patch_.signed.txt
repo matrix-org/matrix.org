@@ -1,0 +1,68 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+diff --git a/synapse/api/auth.py b/synapse/api/auth.py
+index 4f9c3c9..2d38240 100644
+- --- a/synapse/api/auth.py
++++ b/synapse/api/auth.py
+@@ -617,17 +617,22 @@ class Auth(object):
+     def get_user_from_macaroon(self, macaroon_str):
+         try:
+             macaroon = pymacaroons.Macaroon.deserialize(macaroon_str)
+- -            self.validate_macaroon(macaroon, "access", False)
+ 
+             user_prefix = "user_id = "
+             user = None
++            user_id = None
+             guest = False
+             for caveat in macaroon.caveats:
+                 if caveat.caveat_id.startswith(user_prefix):
+- -                    user = UserID.from_string(caveat.caveat_id[len(user_prefix):])
++                    user_id = caveat.caveat_id[len(user_prefix):]
++                    user = UserID.from_string(user_id)
+                 elif caveat.caveat_id == "guest = true":
+                     guest = True
+ 
++            self.validate_macaroon(
++                macaroon, "access", False, user_id=user_id,
++            )
++
+             if user is None:
+                 raise AuthError(
+                     self.TOKEN_NOT_FOUND_HTTP_STATUS, "No user caveat in macaroon",
+@@ -665,7 +670,7 @@ class Auth(object):
+                 errcode=Codes.UNKNOWN_TOKEN
+             )
+ 
+- -    def validate_macaroon(self, macaroon, type_string, verify_expiry):
++    def validate_macaroon(self, macaroon, type_string, verify_expiry, user_id):
+         """
+         validate that a Macaroon is understood by and was signed by this server.
+ 
+@@ -679,7 +684,7 @@ class Auth(object):
+         v = pymacaroons.Verifier()
+         v.satisfy_exact("gen = 1")
+         v.satisfy_exact("type = " + type_string)
+- -        v.satisfy_general(lambda c: c.startswith("user_id = "))
++        v.satisfy_exact("user_id = %s" % user_id)
+         v.satisfy_exact("guest = true")
+         if verify_expiry:
+             v.satisfy_general(self._verify_expiry)
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQIcBAEBAgAGBQJXf6ZCAAoJEDraBu3HU9EemO8P/AhowBBBMGnuK9V8VYJfXMhJ
+OBHKZOrYmtm7NicdL6NJuVZuz8aCEOh8oOgNeUuSjlw5utesmliksmWWzpnt3Hky
+ggzvjLK5+P44xXHDWg5GCyXrW3lud42DNUoCY9S3P++LBe7askgUuXpkXeO1H1Bq
+6tAJ0gqAUXMbPM3YEsuIojDv+VNpV5JxP8nUOwY0fzdeKAca0INkeIPSkUlvRMYS
+K0W1NOdjo/CuSdq1r+HhKatuoUk45zQTjQX3UqmjZKSGstNsaLbrP2YS5n9pUGEZ
+ZwCzMV1WmUs+6xiqsNe1cr+bCyKDPod8lzZlh/OR1Gof6H7Z5xB6WG57T5jLRESD
+86LZ3z4ix1yXSASGltY+uPeDK+rZUCAaE30kiEz1T8Q0EjNjHL35Xy0WFLGGvK4G
+vwLv2VX3Vd2K5S8z7+/GrQz63onEKCkO7DPBawNXp0iBmIYv/5uhrTpqMWWUTnPx
+uifeGlKNDf/j519sth3IjrAjFVdodpKfMOKlKr6f38eHroTgTbKEaTvCZYElRFJ0
+bl9GLJ8aviiuodIRieWQBo0m57qoAO7d9mU5Lbv3QO5bqGD3MguDIoPOQVIvZJeS
++a749qTfoCb6SHxulZMGHZVva4XY0SI0WjfDxp6tmwWaSYtvUN08Dv28B0akbe7f
+3cXGfskQPF5FKJ8Mno1j
+=JgTW
+-----END PGP SIGNATURE-----

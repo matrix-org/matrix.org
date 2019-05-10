@@ -1,0 +1,26 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+We have recently been made aware of a critical security issue in Synapse. Full disclosure of the issue and patch will be made at 2016-07-08 13:00 UTC. We are coordinating with package maintainers to ensure that patched versions of the packages will be available at that time.
+
+Thank you for your time, patience and understanding while we resolve this issue,
+The Matrix Team
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQIcBAEBAgAGBQJXfownAAoJEDraBu3HU9EeyTIP/1dcG9nLMo7MsR8jhPC1ZrbC
+KUTsW4Y7pT8L6vA/VD1/CkxgcPtCowCuMwKiGtMmD+QUL1Qftrn6Udvg7AdhVeiQ
+736R7DeuygLdmL/5Y49a+XKfQsPdElaB+wwELDOyrz/8+i1BDmOQ2ySs9iWA5pQY
+Mx/1qvPWosap+LlrxmuYL+fqrOpJrU0p/DSnhXCJs2yITUVOkm/CD/hUXq7sbOTS
+MK//fvjaL6WZqmTEVgBKMZ6mHdmgKq31UR4t3ji1EwGU3wuEgj+mtZPMiV0/PIM2
+hoqlT7WTrtt3k+1pgZfYo86hAi0+DKtDCjLPkU+cqhOBE/6sVI/A8qW8ok3n6F2a
+qOkrb4uisHzDmr6jY16ZR//b8NDajWNFwGYU2/bL2oBSKcaY9SDr7ie6cdvpVT4Y
+/UxmjmbM6TVpqbdoh5LI8uLwIHSyMWGlMWyeRhDsxikcotlzJBgYuoduXNAOX8IY
+l2auUrKKVzCDcO/WTRE1MmXL0vYdCKAX1d3FvvPms2EHBt71xGmoHuywt9aMiwNw
+ATHcXJveZ6Hb9JGATGxh0SVf1cYAPmEeU8kgpLx7QqX2ujRF17a7PF9cl8R/IBFq
+kiBVZuvn9s+Q5NUwsP+9AtNdMDhWIMjrx4ZLVp8DXhK0bWFPanqGhKikjyFLAZg0
+Njnsta8dRJCQqlqrPu9t
+=oWKV
+-----END PGP SIGNATURE-----
