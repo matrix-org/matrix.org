@@ -10,7 +10,11 @@ title: Installing Synapse
 
 [Many guides have been written](https://matrix.org/docs/guides/#installing-synapse) explaining how to install Synapse, but there is sometimes confusion about the exact steps.
 
-matrix.org has two recommended methods for installing Synapse:
+matrix.org has recommended methods for installing Synapse:
+
+## Install from source
+
+[INSTALL.md](https://github.com/matrix-org/synapse/blob/master/INSTALL.md) in the Synapse repo itself has clear instructions on installation.
 
 ## matrix-docker-ansible-deploy
 
