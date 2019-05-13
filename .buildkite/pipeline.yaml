@@ -46,8 +46,7 @@ steps:
       - tar -czf gatsby-site.tar.gz public
     artifact_paths:
       - gatsby/public
-
-#    gatsby-site.tar.gz
+      - gatsby/gatsby-site.tar.gz
       
   - wait
 
