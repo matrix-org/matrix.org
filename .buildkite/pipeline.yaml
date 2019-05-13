@@ -53,7 +53,7 @@ steps:
       - buildkite-agent artifact download jekyll-site.tar.gz .
       - buildkite-agent artifact download gatsby-site.tar.gz .
       - tar -xzvf styled-docs.tar.gz
-      - tar -xzvf jekyll-site.tar.zg
+      - tar -xzvf jekyll-site.tar.gz
       - cp -r jekyll/_site/{css,guides,howtos,projects} content/docs
       - tar -C content --strip-components=1 -xzf gatsby-site.tar.gz
       - tar -czf content.tar.gz content
