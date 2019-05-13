@@ -45,7 +45,6 @@ steps:
       - gatsby build
       - tar -czf gatsby-site.tar.gz public
     artifact_paths:
-      - gatsby/public
       - gatsby/gatsby-site.tar.gz
       
   - wait
@@ -56,7 +55,7 @@ steps:
     command:
       - buildkite-agent artifact download styled-docs.tar.gz .
       - buildkite-agent artifact download jekyll-site.tar.gz .
-      - buildkite-agent artifact download gatsby-site.tar.gz .
+      - buildkite-agent artifact download gatsby/gatsby-site.tar.gz .
       - tar -xzvf styled-docs.tar.gz
       - tar -xzvf jekyll-site.tar.gz
       - cp -r jekyll/_site/{css,guides,howtos,projects} content/docs
