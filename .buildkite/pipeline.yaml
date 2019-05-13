@@ -36,9 +36,9 @@ steps:
     plugins:
       - docker#v3.0.1:
           image: "matrixdotorg/matrixdotorg-gatsby:latest"
-    mount-checkout: false
-    volumes:
-      - "./gatsby:/workdir"
+          mount-checkout: false
+          volumes:
+            - "./gatsby:/workdir"
     commands:
       - gatsby
       - tar -czf gatsby-site.tar.gz public
