@@ -41,6 +41,7 @@ steps:
             - "./gatsby:/workdir"
           always_pull: true
     commands:
+      - ln -s /opt/gatsby/node_modules .
       - gatsby build
       - tar -czf gatsby-site.tar.gz public
     artifact_paths:
