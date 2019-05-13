@@ -39,11 +39,13 @@ steps:
           mount-checkout: false
           volumes:
             - "./gatsby:/workdir"
-    commands:
-      - gatsby build
-      - tar -czf gatsby-site.tar.gz public
+#    commands:
+#      - gatsby build
+#      - tar -czf gatsby-site.tar.gz public
     artifact_paths:
-      - gatsby/gatsby-site.tar.gz
+      - gatsby/public
+
+#    gatsby-site.tar.gz
       
   - wait
 
