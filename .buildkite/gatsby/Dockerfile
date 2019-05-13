@@ -14,4 +14,4 @@ RUN cd /opt/gatsby && npm install
 WORKDIR /workdir
 
 ENV PATH="/opt/gatsby/node_modules/.bin:${PATH}"
-ENTRYPOINT ["gatsby"]
+# ENTRYPOINT ["gatsby"]

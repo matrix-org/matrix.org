@@ -39,9 +39,10 @@ steps:
           mount-checkout: false
           volumes:
             - "./gatsby:/workdir"
-#    commands:
-#      - gatsby build
-#      - tar -czf gatsby-site.tar.gz public
+          always_pull: true
+    commands:
+      - gatsby build
+      - tar -czf gatsby-site.tar.gz public
     artifact_paths:
       - gatsby/public
 
