@@ -40,7 +40,7 @@ steps:
           volumes:
             - "./gatsby:/workdir"
     commands:
-      - gatsby
+      - gatsby build
       - tar -czf gatsby-site.tar.gz public
     artifact_paths:
       - gatsby/gatsby-site.tar.gz
