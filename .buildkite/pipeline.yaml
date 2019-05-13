@@ -15,7 +15,7 @@ steps:
     artifact_paths:
       - styled-docs.tar.gz
 
-  # Run jekyll. We run this is a custom docker image - see dockerfile in this directory.
+  # Run jekyll. We run this in a custom docker image - see dockerfile in this directory.
   - label: ":jekyll: jekyll"
     plugins:
       - docker#v3.0.1:
@@ -30,18 +30,20 @@ steps:
     artifact_paths:
       - jekyll-site.tar.gz
 
-  # Run gatsby
+  # Run gatsby. We also use a custom docker image for this, to avoid
+  # installing the entirety of npmjs for each build.
   - label: ":gatsby: gatsby"
     plugins:
       - docker#v3.0.1:
-          image: "node:10"
-    command:
-      - cd gatsby
-      - npm install
-      - ./node_modules/.bin/gatsby build
-      - tar -czf ../gatsby-site.tar.gz public
+          image: "matrixdotorg/matrixdotorg-gatsby:latest"
+    mount-checkout: false
+    volumes:
+      - "./gatsby:/workdir"
+    commands:
+      - gatsby
+      - tar -czf gatsby-site.tar.gz public
     artifact_paths:
-      - gatsby-site.tar.gz
+      - gatsby/gatsby-site.tar.gz
       
   - wait
 
