@@ -33,6 +33,13 @@ exports.onCreateNode = ({ node, actions }) => {
     ) {
       slug = `/blog/${node.frontmatter.date.replace(/-/g, '/')}${slug}`
     }
+
+    if (
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+      ! Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')
+    ) {
+      slug = `/docs${slug}`
+    }
     createNodeField({ node, name: 'slug', value: slug })
   }
 }
@@ -47,7 +54,10 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await wrapper(
     graphql(`
       {
-        allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+        allMdx(
+          sort: { fields: [frontmatter___date], order: DESC },
+          filter: {frontmatter: {date: {ne: null}}} 
+        ) {
           edges {
             node {
               fields {
@@ -75,7 +85,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: edge.node.fields.slug,
       component: postTemplate,
       context: {
-        slug: edge.node.fields.slug,
+        slug: edge.node.
+        fields.slug,
         prev,
         next,
       },
@@ -111,6 +122,56 @@ exports.createPages = async ({ graphql, actions }) => {
       path: i === 0 ? `/blog/posts` : `/blog/posts/${i + 1}`,
       component: postListTemplate,
       context: { limit: postsPerPage, skip: i * postsPerPage, numPages, currentPage: i + 1 },
+    })
+  })
+
+
+
+
+
+
+
+  /* DOCS (https://matrix.org/docs/ */
+
+  const docsResult = await wrapper(
+    graphql(`
+      {
+        allMdx(
+          sort: { fields: [frontmatter___date], order: DESC },
+          filter: {frontmatter: {date: {eq: null}}} 
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                categories
+                author
+              }
+            }
+          }
+        }
+      }
+    `)
+  )
+
+  const docs = docsResult.data.allMdx.edges
+
+  docs.forEach((edge, index) => {
+    const next = index === 0 ? null : docs[index - 1].node
+    const prev = index === docs.length - 1 ? null : docs[index + 1].node
+
+    createPage({
+      path: edge.node.fields.slug,
+      component: postTemplate,
+      context: {
+        slug: edge.node.
+        fields.slug,
+        prev,
+        next,
+      },
     })
   })
 }
