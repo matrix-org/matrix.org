@@ -61,5 +61,6 @@ steps:
       - cp -r jekyll/_site/{css,guides,howtos,projects} content/docs
       - tar -C content --strip-components=1 -xzf gatsby/gatsby-site.tar.gz
       - tar -czf content.tar.gz content
+      - free        # debug for buildkite oom issue
     artifact_paths:
       - content.tar.gz
