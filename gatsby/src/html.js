@@ -15,6 +15,9 @@ export default function HTML(props) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@matrixdotorg" />
         <meta name="twitter:creator" content="@matrixdotorg" />
+        <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="/css/webflow.css" />
+        <link rel="stylesheet" type="text/css" href="/css/matrix-org.webflow.css" />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
@@ -27,6 +30,8 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <script src="https://d1tdp7z6w94jbb.cloudfront.net/js/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js/webflow.js" type="text/javascript"></script>
       </body>
     </html>
   )

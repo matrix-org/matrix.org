@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="23px" viewBox="0 0 24 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>gitlab</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy-2" transform="translate(-3479.000000, -2476.000000)" fill="#999999" fill-rule="nonzero">
+            <g id="Group-3" transform="translate(1953.000000, 243.000000)">
+                <g id="Group-4" transform="translate(0.000000, 61.000000)">
+                    <g id="Group-9" transform="translate(762.000000, 1999.000000)">
+                        <g id="Stacked-Group-Copy" transform="translate(720.000000, 173.000000)">
+                            <g id="gitlab" transform="translate(44.000000, 0.000000)">
+                                <path d="M23.955,13.587 L22.613,9.452 L19.949,1.263 C19.814,0.84 19.219,0.84 19.082,1.263 L16.418,9.45 L7.582,9.45 L4.919,1.263 C4.783,0.84 4.185,0.84 4.05,1.26 L1.386,9.449 L0.044,13.587 C-0.077,13.962 0.058,14.376 0.375,14.61 L12,23.054 L23.625,14.611 C23.943,14.376 24.078,13.964 23.955,13.587" id="Path"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
