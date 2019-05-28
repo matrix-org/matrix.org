@@ -6,7 +6,7 @@
     "host": "matrix.org",
     "info": {
         "title": "Matrix Client-Server API",
-        "version": "unstable"
+        "version": "r0.4.0"
     },
     "paths": {
         "/.well-known/matrix/client": {
@@ -78,7 +78,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/account/3pid": {
+        "/_matrix/client/r0/account/3pid": {
             "get": {
                 "description": "Gets a list of the third party identifiers that the homeserver has\nassociated with the user's account.\n\nThis is *not* the same as the list of third party identifiers bound to\nthe user's Matrix ID in identity servers.\n\nIdentifiers in this list may be used by the homeserver as, for example,\nidentifiers that it will accept to reset the user's account password.",
                 "operationId": "getAccount3PIDs",
@@ -255,7 +255,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/account/3pid/delete": {
+        "/_matrix/client/r0/account/3pid/delete": {
             "post": {
                 "description": "Removes a third party identifier from the user's account. This might not\ncause an unbind of the identifier from the identity server.",
                 "operationId": "delete3pidFromAccount",
@@ -308,7 +308,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/account/deactivate": {
+        "/_matrix/client/r0/account/deactivate": {
             "post": {
                 "description": "Deactivate the user's account, removing all ability for the user to\nlogin again.\n\nThis API endpoint uses the `User-Interactive Authentication API`_.\n\nAn access token should be submitted to this endpoint if the client has\nan active session.\n\nThe homeserver may change the flows available depending on whether a\nvalid access token is provided.",
                 "operationId": "deactivateAccount",
@@ -458,7 +458,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/account/password": {
+        "/_matrix/client/r0/account/password": {
             "post": {
                 "description": "Changes the password for an account on this homeserver.\n\nThis API endpoint uses the `User-Interactive Authentication API`_.\n\nAn access token should be submitted to this endpoint if the client has\nan active session.\n\nThe homeserver may change the flows available depending on whether a\nvalid access token is provided.",
                 "operationId": "changePassword",
@@ -616,7 +616,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/account/whoami": {
+        "/_matrix/client/r0/account/whoami": {
             "get": {
                 "description": "Gets information about the owner of a given access token. \n\nNote that, as with the rest of the Client-Server API, \nApplication Services may masquerade as users within their \nnamespace by giving a ``user_id`` query parameter. In this \nsituation, the server should verify that the given ``user_id``\nis registered by the appservice, and return it in the response \nbody.",
                 "operationId": "getTokenOwner",
@@ -737,7 +737,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/admin/whois/{userId}": {
+        "/_matrix/client/r0/admin/whois/{userId}": {
             "get": {
                 "description": "Gets information about a particular user.\n\nThis API may be restricted to only be called by the user being looked\nup, or by a server admin. Server-local administrator privileges are not\nspecified in this document.",
                 "operationId": "getWhoIs",
@@ -844,7 +844,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/createRoom": {
+        "/_matrix/client/r0/createRoom": {
             "post": {
                 "description": "Create a new room with various configuration options.\n\nThe server MUST apply the normal state resolution rules when creating\nthe new room, including checking power levels for each event. It MUST\napply the events implied by the request in the following order:\n\n0. A default ``m.room.power_levels`` event, giving the room creator\n   (and not other members) permission to send state events. Overridden\n   by the ``power_level_content_override`` parameter.\n\n1. Events set by the ``preset``. Currently these are the ``m.room.join_rules``,\n   ``m.room.history_visibility``, and ``m.room.guest_access`` state events.\n\n2. Events listed in ``initial_state``, in the order that they are\n   listed.\n\n3. Events implied by ``name`` and ``topic`` (``m.room.name`` and ``m.room.topic``\n   state events).\n\n4. Invite events implied by ``invite`` and ``invite_3pid`` (``m.room.member`` with\n   ``membership: invite`` and ``m.room.third_party_invite``).\n\nThe available presets do the following with respect to room state:\n\n========================  ==============  ======================  ================  =========\n         Preset           ``join_rules``  ``history_visibility``  ``guest_access``  Other\n========================  ==============  ======================  ================  =========\n``private_chat``          ``invite``      ``shared``              ``can_join``\n``trusted_private_chat``  ``invite``      ``shared``              ``can_join``      All invitees are given the same power level as the room creator.\n``public_chat``           ``public``      ``shared``              ``forbidden``\n========================  ==============  ======================  ================  =========\n\nThe server will create a ``m.room.create`` event in the room with the\nrequesting user as the creator, alongside other keys provided in the\n``creation_content``.",
                 "operationId": "createRoom",
@@ -1033,7 +1033,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/delete_devices": {
+        "/_matrix/client/r0/delete_devices": {
             "post": {
                 "description": "This API endpoint uses the `User-Interactive Authentication API`_.\n\nDeletes the given devices, and invalidates any access token associated with them.",
                 "operationId": "deleteDevices",
@@ -1171,7 +1171,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/devices": {
+        "/_matrix/client/r0/devices": {
             "get": {
                 "description": "Gets information about all devices for the current user.",
                 "operationId": "getDevices",
@@ -1248,7 +1248,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/devices/{deviceId}": {
+        "/_matrix/client/r0/devices/{deviceId}": {
             "delete": {
                 "description": "This API endpoint uses the `User-Interactive Authentication API`_.\n\nDeletes the given device, and invalidates any access token associated with it.",
                 "operationId": "deleteDevice",
@@ -1507,7 +1507,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/directory/list/appservice/{networkId}/{roomId}": {
+        "/_matrix/client/r0/directory/list/appservice/{networkId}/{roomId}": {
             "put": {
                 "description": "Updates the visibility of a given room on the application service's room\ndirectory.\n\nThis API is similar to the room directory visibility API used by clients\nto update the homeserver's more general room directory.\n\nThis API requires the use of an application service access token (``as_token``)\ninstead of a typical client's access_token. This API cannot be invoked by\nusers who are not identified as application services.",
                 "operationId": "updateAppserviceRoomDirectoryVsibility",
@@ -1573,7 +1573,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/directory/room/{roomAlias}": {
+        "/_matrix/client/r0/directory/room/{roomAlias}": {
             "delete": {
                 "description": "Remove a mapping of room alias to room ID.\n\nServers may choose to implement additional access control checks here, for instance that room aliases can only be deleted by their creator or a server administrator.",
                 "operationId": "deleteRoomAlias",
@@ -1769,7 +1769,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/events": {
+        "/_matrix/client/r0/events": {
             "get": {
                 "deprecated": true,
                 "description": "This will listen for new events and return them to the caller. This will\nblock until an event is received, or until the ``timeout`` is reached.\n\nThis endpoint was deprecated in r0 of this specification. Clients\nshould instead call the |/sync|_ API with a ``since`` parameter. See\nthe `migration guide\n<https://matrix.org/docs/guides/client-server-migrating-from-v1.html#deprecated-endpoints>`_.",
@@ -1936,7 +1936,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/events/{eventId}": {
+        "/_matrix/client/r0/events/{eventId}": {
             "get": {
                 "deprecated": true,
                 "description": "Get a single event based on ``event_id``. You must have permission to\nretrieve this event e.g. by being a member in the room for this event.\n\nThis endpoint was deprecated in r0 of this specification. Clients\nshould instead call the |/rooms/{roomId}/event/{eventId}|_ API\nor the |/rooms/{roomId}/context/{eventId}|_ API.",
@@ -2005,7 +2005,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/initialSync": {
+        "/_matrix/client/r0/initialSync": {
             "get": {
                 "deprecated": true,
                 "description": "This returns the full state for this user, with an optional limit on the\nnumber of messages per room to return.\n\nThis endpoint was deprecated in r0 of this specification. Clients\nshould instead call the |/sync|_ API with no ``since`` parameter. See\nthe `migration guide\n<https://matrix.org/docs/guides/client-server-migrating-from-v1.html#deprecated-endpoints>`_.",
@@ -2952,7 +2952,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/join/{roomIdOrAlias}": {
+        "/_matrix/client/r0/join/{roomIdOrAlias}": {
             "post": {
                 "description": "*Note that this API takes either a room ID or alias, unlike* ``/room/{roomId}/join``.\n\nThis API starts a user participating in a particular room, if that user\nis allowed to participate in that room. After this call, the client is\nallowed to see all current state events in the room, and all subsequent\nevents associated with the room until the user leaves the room.\n\nAfter a user has joined a room, the room will appear as an entry in the\nresponse of the |/initialSync|_ and |/sync|_ APIs.\n\nIf a ``third_party_signed`` was supplied, the homeserver must verify\nthat it matches a pending ``m.room.third_party_invite`` event in the\nroom, and perform key validity checking if required by the event.",
                 "operationId": "joinRoom",
@@ -3120,7 +3120,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/joined_rooms": {
+        "/_matrix/client/r0/joined_rooms": {
             "get": {
                 "description": "This API returns a list of the user's current rooms.",
                 "operationId": "getJoinedRooms",
@@ -3162,7 +3162,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/keys/changes": {
+        "/_matrix/client/r0/keys/changes": {
             "get": {
                 "description": "Gets a list of users who have updated their device identity keys since a\nprevious sync token.\n\nThe server should include in the results any users who:\n\n* currently share a room with the calling user (ie, both users have\n  membership state ``join``); *and*\n* added new device identity keys or removed an existing device with\n  identity keys, between ``from`` and ``to``.",
                 "operationId": "getKeysChanges",
@@ -3227,7 +3227,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/keys/claim": {
+        "/_matrix/client/r0/keys/claim": {
             "post": {
                 "description": "Claims one-time keys for use in pre-key messages.",
                 "operationId": "claimKeys",
@@ -3324,7 +3324,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/keys/query": {
+        "/_matrix/client/r0/keys/query": {
             "post": {
                 "description": "Returns the current devices and identity keys for the given users.",
                 "operationId": "queryKeys",
@@ -3504,7 +3504,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/keys/upload": {
+        "/_matrix/client/r0/keys/upload": {
             "post": {
                 "description": "Publishes end-to-end encryption keys for the device.",
                 "operationId": "uploadKeys",
@@ -3650,7 +3650,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/login": {
+        "/_matrix/client/r0/login": {
             "get": {
                 "description": "Gets the homeserver's supported login types to authenticate users. Clients\nshould pick one of these and supply it as the ``type`` when logging in.",
                 "operationId": "getLoginFlows",
@@ -3917,7 +3917,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/logout": {
+        "/_matrix/client/r0/logout": {
             "post": {
                 "description": "Invalidates an existing access token, so that it can no longer be used for\nauthorization.",
                 "operationId": "logout",
@@ -3941,7 +3941,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/logout/all": {
+        "/_matrix/client/r0/logout/all": {
             "post": {
                 "description": "Invalidates all access tokens for a user, so that they can no longer be used for\nauthorization. This includes the access token that made this request. \n\nThis endpoint does not require UI authorization because UI authorization is\ndesigned to protect against attacks where the someone gets hold of a single access\ntoken then takes over the account. This endpoint invalidates all access tokens for\nthe user, including the token used in the request, and therefore the attacker is\nunable to take over the account in this way.",
                 "operationId": "logout_all",
@@ -3965,7 +3965,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/notifications": {
+        "/_matrix/client/r0/notifications": {
             "get": {
                 "description": "This API is used to paginate through the list of events that the\nuser has been, or would have been notified about.",
                 "operationId": "getNotifications",
@@ -4159,7 +4159,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/presence/list/{userId}": {
+        "/_matrix/client/r0/presence/list/{userId}": {
             "get": {
                 "description": "Retrieve a list of presence events for every user on this list.",
                 "operationId": "getPresenceForList",
@@ -4329,7 +4329,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/presence/{userId}/status": {
+        "/_matrix/client/r0/presence/{userId}/status": {
             "get": {
                 "description": "Get the given user's presence state.",
                 "operationId": "getPresence",
@@ -4539,7 +4539,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/profile/{userId}": {
+        "/_matrix/client/r0/profile/{userId}": {
             "get": {
                 "description": "Get the combined profile information for this user. This API may be used\nto fetch the user's own profile information or other users; either\nlocally or on remote homeservers. This API may return keys which are not\nlimited to ``displayname`` or ``avatar_url``.",
                 "operationId": "getUserProfile",
@@ -4586,7 +4586,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/profile/{userId}/avatar_url": {
+        "/_matrix/client/r0/profile/{userId}/avatar_url": {
             "get": {
                 "description": "Get the user's avatar URL. This API may be used to fetch the user's\nown avatar URL or to query the URL of other users; either locally or\non remote homeservers.",
                 "operationId": "getAvatarUrl",
@@ -4707,7 +4707,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/profile/{userId}/displayname": {
+        "/_matrix/client/r0/profile/{userId}/displayname": {
             "get": {
                 "description": "Get the user's display name. This API may be used to fetch the user's\nown displayname or to query the name of other users; either locally or\non remote homeservers.",
                 "operationId": "getDisplayName",
@@ -4828,7 +4828,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/publicRooms": {
+        "/_matrix/client/r0/publicRooms": {
             "get": {
                 "description": "Lists the public rooms on the server.\n\nThis API returns paginated responses. The rooms are ordered by the number\nof joined members, with the largest rooms first.",
                 "operationId": "getPublicRooms",
@@ -5131,7 +5131,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/pushers": {
+        "/_matrix/client/r0/pushers": {
             "get": {
                 "description": "Gets all currently active pushers for the authenticated user.",
                 "operationId": "getPushers",
@@ -5237,7 +5237,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/pushers/set": {
+        "/_matrix/client/r0/pushers/set": {
             "post": {
                 "description": "This endpoint allows the creation, modification and deletion of `pushers`_\nfor this user ID. The behaviour of this endpoint varies depending on the\nvalues in the JSON body.",
                 "operationId": "postPusher",
@@ -5403,7 +5403,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/pushrules/": {
+        "/_matrix/client/r0/pushrules/": {
             "get": {
                 "description": "Retrieve all push rulesets for this user. Clients can \"drill-down\" on\nthe rulesets by suffixing a ``scope`` to this path e.g.\n``/pushrules/global/``. This will return a subset of this data under the\nspecified key e.g. the ``global`` key.",
                 "operationId": "getPushRules",
@@ -6058,7 +6058,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/pushrules/{scope}/{kind}/{ruleId}": {
+        "/_matrix/client/r0/pushrules/{scope}/{kind}/{ruleId}": {
             "delete": {
                 "description": "This endpoint removes the push rule defined in the path.",
                 "operationId": "deletePushRule",
@@ -6465,7 +6465,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/pushrules/{scope}/{kind}/{ruleId}/actions": {
+        "/_matrix/client/r0/pushrules/{scope}/{kind}/{ruleId}/actions": {
             "put": {
                 "description": "This endpoint allows clients to change the actions of a push rule.\nThis can be used to change the actions of builtin rules.",
                 "operationId": "setPushRuleActions",
@@ -6556,7 +6556,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/pushrules/{scope}/{kind}/{ruleId}/enabled": {
+        "/_matrix/client/r0/pushrules/{scope}/{kind}/{ruleId}/enabled": {
             "put": {
                 "description": "This endpoint allows clients to enable or disable the specified push rule.",
                 "operationId": "setPushRuleEnabled",
@@ -6636,7 +6636,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/register": {
+        "/_matrix/client/r0/register": {
             "post": {
                 "description": "This API endpoint uses the `User-Interactive Authentication API`_.\n\nRegister for an account on this homeserver.\n\nThere are two kinds of user account:\n\n- `user` accounts. These accounts may use the full API described in this specification.\n\n- `guest` accounts. These accounts may have limited permissions and may not be supported by all servers.\n\nIf registration is successful, this endpoint will issue an access token\nthe client can use to authorize itself in subsequent requests.\n\nIf the client does not supply a ``device_id``, the server must\nauto-generate one.\n\nThe server SHOULD register an account with a User ID based on the\n``username`` provided, if any. Note that the grammar of Matrix User ID\nlocalparts is restricted, so the server MUST either map the provided\n``username`` onto a ``user_id`` in a logical manner, or reject\n``username``\\s which do not comply to the grammar, with\n``M_INVALID_USERNAME``.\n\nMatrix clients MUST NOT assume that localpart of the registered\n``user_id`` matches the provided ``username``.\n\nThe returned access token must be associated with the ``device_id``\nsupplied by the client or generated by the server. The server may\ninvalidate any access token previously associated with that device. See\n`Relationship between access tokens and devices`_.",
                 "operationId": "register",
@@ -6877,7 +6877,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/register/available": {
+        "/_matrix/client/r0/register/available": {
             "get": {
                 "description": "Checks to see if a username is available, and valid, for the server.\n\nThe server should check to ensure that, at the time of the request, the\nusername requested is available for use. This includes verifying that an\napplication service has not claimed the username and that the username\nfits the server's desired requirements (for example, a server could dictate\nthat it does not permit usernames with underscores).\n\nMatrix clients may wish to use this API prior to attempting registration,\nhowever the clients must also be aware that using this API does not normally\nreserve the username. This can mean that the username becomes unavailable\nbetween checking its availability and attempting to register it.",
                 "operationId": "checkUsernameAvailability",
@@ -6972,7 +6972,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/ban": {
+        "/_matrix/client/r0/rooms/{roomId}/ban": {
             "post": {
                 "description": "Ban a user in the room. If the user is currently in the room, also kick them.\n\nWhen a user is banned from a room, they may not join it or be invited to it until they are unbanned.\n\nThe caller must have the required power level in order to perform this operation.",
                 "operationId": "ban",
@@ -7061,7 +7061,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/context/{eventId}": {
+        "/_matrix/client/r0/rooms/{roomId}/context/{eventId}": {
             "get": {
                 "description": "This API returns a number of events that happened just before and\nafter the specified event. This allows clients to get the context\nsurrounding an event.",
                 "operationId": "getEventContext",
@@ -7634,7 +7634,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/event/{eventId}": {
+        "/_matrix/client/r0/rooms/{roomId}/event/{eventId}": {
             "get": {
                 "description": "Get a single event based on ``roomId/eventId``. You must have permission to\nretrieve this event e.g. by being a member in the room for this event.",
                 "operationId": "getOneRoomEvent",
@@ -7710,7 +7710,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/forget": {
+        "/_matrix/client/r0/rooms/{roomId}/forget": {
             "post": {
                 "description": "This API stops a user remembering about a particular room.\n\nIn general, history is a first class citizen in Matrix. After this API\nis called, however, a user will no longer be able to retrieve history\nfor this room. If all users on a homeserver forget a room, the room is\neligible for deletion from that homeserver.\n\nIf the user is currently joined to the room, they must leave the room\nbefore calling this API.",
                 "operationId": "forgetRoom",
@@ -7801,7 +7801,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/initialSync": {
+        "/_matrix/client/r0/rooms/{roomId}/initialSync": {
             "get": {
                 "deprecated": true,
                 "description": "Get a copy of the current state and the most recent messages in a room.\n\nThis endpoint was deprecated in r0 of this specification. There is no\ndirect replacement; the relevant information is returned by the\n|/sync|_ API. See the `migration guide\n<https://matrix.org/docs/guides/client-server-migrating-from-v1.html#deprecated-endpoints>`_.",
@@ -8321,7 +8321,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/invite": {
+        "/_matrix/client/r0/rooms/{roomId}/invite": {
             "post": {
                 "description": ".. _invite-by-third-party-id-endpoint:\n\n*Note that there are two forms of this API, which are documented separately.\nThis version of the API does not require that the inviter know the Matrix\nidentifier of the invitee, and instead relies on third party identifiers.\nThe homeserver uses an identity server to perform the mapping from\nthird party identifier to a Matrix identifier. The other is documented in the*\n`joining rooms section`_.\n\nThis API invites a user to participate in a particular room.\nThey do not start participating in the room until they actually join the\nroom.\n\nOnly users currently in a particular room can invite other users to\njoin that room.\n\nIf the identity server did know the Matrix user identifier for the\nthird party identifier, the homeserver will append a ``m.room.member``\nevent to the room.\n\nIf the identity server does not know a Matrix user identifier for the\npassed third party identifier, the homeserver will issue an invitation\nwhich can be accepted upon providing proof of ownership of the third\nparty identifier. This is achieved by the identity server generating a\ntoken, which it gives to the inviting homeserver. The homeserver will\nadd an ``m.room.third_party_invite`` event into the graph for the room,\ncontaining that token.\n\nWhen the invitee binds the invited third party identifier to a Matrix\nuser ID, the identity server will give the user a list of pending\ninvitations, each containing:\n\n- The room ID to which they were invited\n\n- The token given to the homeserver\n\n- A signature of the token, signed with the identity server's private key\n\n- The matrix user ID who invited them to the room\n\nIf a token is requested from the identity server, the homeserver will\nappend a ``m.room.third_party_invite`` event to the room.\n\n.. _joining rooms section: `invite-by-user-id-endpoint`_",
                 "operationId": "inviteBy3PID",
@@ -8444,7 +8444,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/invite ": {
+        "/_matrix/client/r0/rooms/{roomId}/invite ": {
             "post": {
                 "description": ".. _invite-by-user-id-endpoint:\n\n*Note that there are two forms of this API, which are documented separately.\nThis version of the API requires that the inviter knows the Matrix\nidentifier of the invitee. The other is documented in the*\n`third party invites section`_.\n\nThis API invites a user to participate in a particular room.\nThey do not start participating in the room until they actually join the\nroom.\n\nOnly users currently in a particular room can invite other users to\njoin that room.\n\nIf the user was invited to the room, the homeserver will append a\n``m.room.member`` event to the room.\n\n.. _third party invites section: `invite-by-third-party-id-endpoint`_",
                 "operationId": "inviteUser",
@@ -8555,7 +8555,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/join": {
+        "/_matrix/client/r0/rooms/{roomId}/join": {
             "post": {
                 "description": "*Note that this API requires a room ID, not alias.* ``/join/{roomIdOrAlias}`` *exists if you have a room alias.*\n\nThis API starts a user participating in a particular room, if that user\nis allowed to participate in that room. After this call, the client is\nallowed to see all current state events in the room, and all subsequent\nevents associated with the room until the user leaves the room.\n\nAfter a user has joined a room, the room will appear as an entry in the\nresponse of the |/initialSync|_ and |/sync|_ APIs.\n\nIf a ``third_party_signed`` was supplied, the homeserver must verify\nthat it matches a pending ``m.room.third_party_invite`` event in the\nroom, and perform key validity checking if required by the event.",
                 "operationId": "joinRoomById",
@@ -8699,7 +8699,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/joined_members": {
+        "/_matrix/client/r0/rooms/{roomId}/joined_members": {
             "get": {
                 "description": "This API returns a map of MXIDs to member info objects for members of the room. The current user must be in the room for it to work, unless it is an Application Service in which case any of the AS's users must be in the room. This API is primarily for Application Services and should be faster to respond than ``/members`` as it can be implemented more efficiently on the server.",
                 "operationId": "getJoinedMembersByRoom",
@@ -8765,7 +8765,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/kick": {
+        "/_matrix/client/r0/rooms/{roomId}/kick": {
             "post": {
                 "description": "Kick a user from the room.\n\nThe caller must have the required power level in order to perform this operation.\n\nKicking a user adjusts the target member's membership state to be ``leave`` with an\noptional ``reason``. Like with other membership changes, a user can directly adjust\nthe target member's state by making a request to ``/rooms/<room id>/state/m.room.member/<user id>``.",
                 "operationId": "kick",
@@ -8854,7 +8854,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/leave": {
+        "/_matrix/client/r0/rooms/{roomId}/leave": {
             "post": {
                 "description": "This API stops a user participating in a particular room.\n\nIf the user was already in the room, they will no longer be able to see\nnew events in the room. If the room requires an invite to join, they\nwill need to be re-invited before they can re-join.\n\nIf the user was invited to the room, but had not joined, this call\nserves to reject the invite.\n\nThe user will still be allowed to retrieve history from the room which\nthey were previously allowed to see.",
                 "operationId": "leaveRoom",
@@ -8917,7 +8917,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/members": {
+        "/_matrix/client/r0/rooms/{roomId}/members": {
             "get": {
                 "description": "Get the list of members for this room.",
                 "operationId": "getMembersByRoom",
@@ -9304,7 +9304,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/messages": {
+        "/_matrix/client/r0/rooms/{roomId}/messages": {
             "get": {
                 "description": "This API returns a list of message and state events for a room. It uses\npagination query parameters to paginate history in the room.",
                 "operationId": "getRoomEvents",
@@ -9525,7 +9525,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/read_markers": {
+        "/_matrix/client/r0/rooms/{roomId}/read_markers": {
             "post": {
                 "description": "Sets the position of the read marker for a given room, and optionally\nthe read receipt's location.",
                 "operationId": "setReadMarker",
@@ -9610,7 +9610,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/receipt/{receiptType}/{eventId}": {
+        "/_matrix/client/r0/rooms/{roomId}/receipt/{receiptType}/{eventId}": {
             "post": {
                 "description": "This API updates the marker for the given receipt type to the event ID\nspecified.",
                 "operationId": "postReceipt",
@@ -9701,7 +9701,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/redact/{eventId}/{txnId}": {
+        "/_matrix/client/r0/rooms/{roomId}/redact/{eventId}/{txnId}": {
             "put": {
                 "description": "Strips all information out of an event which isn't critical to the\nintegrity of the server-side representation of the room.\n\nThis cannot be undone.\n\nUsers may redact their own events, and any user with a power level\ngreater than or equal to the `redact` power level of the room may\nredact events there.",
                 "operationId": "redactEvent",
@@ -9777,7 +9777,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/report/{eventId}": {
+        "/_matrix/client/r0/rooms/{roomId}/report/{eventId}": {
             "post": {
                 "description": "Reports an event as inappropriate to the server, which may then notify\nthe appropriate people.",
                 "operationId": "reportContent",
@@ -9846,7 +9846,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/send/{eventType}/{txnId}": {
+        "/_matrix/client/r0/rooms/{roomId}/send/{eventType}/{txnId}": {
             "put": {
                 "description": "This endpoint is used to send a message event to a room. Message events\nallow access to historical events and pagination, making them suited\nfor \"once-off\" activity in a room.\n\nThe body of the request should be the content object of the event; the\nfields in this object will vary depending on the type of event. See\n`Room Events`_ for the m. event specification.",
                 "operationId": "sendMessage",
@@ -9917,7 +9917,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/state": {
+        "/_matrix/client/r0/rooms/{roomId}/state": {
             "get": {
                 "description": "Get the state events for the current state of a room.",
                 "operationId": "getRoomState",
@@ -10218,7 +10218,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/state/{eventType}": {
+        "/_matrix/client/r0/rooms/{roomId}/state/{eventType}": {
             "get": {
                 "description": "Looks up the contents of a state event in a room. If the user is\njoined to the room then the state is taken from the current\nstate of the room. If the user has left the room then the state is\ntaken from the state of the room when they left.\n\nThis looks up the state event with the empty state key.",
                 "operationId": "getRoomStateByType",
@@ -10358,7 +10358,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/state/{eventType}/{stateKey}": {
+        "/_matrix/client/r0/rooms/{roomId}/state/{eventType}/{stateKey}": {
             "get": {
                 "description": "Looks up the contents of a state event in a room. If the user is\njoined to the room then the state is taken from the current\nstate of the room. If the user has left the room then the state is\ntaken from the state of the room when they left.",
                 "operationId": "getRoomStateWithKey",
@@ -10516,7 +10516,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/typing/{userId}": {
+        "/_matrix/client/r0/rooms/{roomId}/typing/{userId}": {
             "put": {
                 "description": "This tells the server that the user is typing for the next N\nmilliseconds where N is the value specified in the ``timeout`` key.\nAlternatively, if ``typing`` is ``false``, it tells the server that the\nuser has stopped typing.",
                 "operationId": "setTyping",
@@ -10613,7 +10613,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/rooms/{roomId}/unban": {
+        "/_matrix/client/r0/rooms/{roomId}/unban": {
             "post": {
                 "description": "Unban a user from the room. This allows them to be invited to the room,\nand join if they would otherwise be allowed to join according to its join rules.\n\nThe caller must have the required power level in order to perform this operation.",
                 "operationId": "unban",
@@ -10697,7 +10697,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/search": {
+        "/_matrix/client/r0/search": {
             "post": {
                 "description": "Performs a full text search across different categories.",
                 "operationId": "search",
@@ -11562,7 +11562,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/sendToDevice/{eventType}/{txnId}": {
+        "/_matrix/client/r0/sendToDevice/{eventType}/{txnId}": {
             "put": {
                 "description": "This endpoint is used to send send-to-device events to a set of\nclient devices.",
                 "operationId": "sendToDevice",
@@ -11633,7 +11633,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/sync": {
+        "/_matrix/client/r0/sync": {
             "get": {
                 "description": "Synchronise the client's state with the latest state on the server.\nClients use this API when they first log in to get an initial snapshot\nof the state on the server, and then continue to call this API to get\nincremental deltas to the state, and to receive new messages.",
                 "operationId": "sync",
@@ -12598,7 +12598,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/user/{userId}/account_data/{type}": {
+        "/_matrix/client/r0/user/{userId}/account_data/{type}": {
             "put": {
                 "description": "Set some account_data for the client. This config is only visible to the user\nthat set the account_data. The config will be synced to clients in the\ntop-level ``account_data``.",
                 "operationId": "setAccountData",
@@ -12648,7 +12648,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/user/{userId}/filter": {
+        "/_matrix/client/r0/user/{userId}/filter": {
             "post": {
                 "description": "Uploads a new filter definition to the homeserver.\nReturns a filter ID that may be used in future requests to\nrestrict which events are returned to the client.",
                 "operationId": "defineFilter",
@@ -13168,7 +13168,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/user/{userId}/filter/{filterId}": {
+        "/_matrix/client/r0/user/{userId}/filter/{filterId}": {
             "get": {
                 "operationId": "getFilter",
                 "parameters": [
@@ -13681,7 +13681,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/user/{userId}/openid/request_token": {
+        "/_matrix/client/r0/user/{userId}/openid/request_token": {
             "post": {
                 "description": "Gets an OpenID token object that the requester may supply to another\nservice to verify their identity in Matrix. The generated token is only\nvalid for exchanging for user information from the federation API for\nOpenID.\n\nThe access token generated is only valid for the OpenID API. It cannot\nbe used to request another OpenID access token or call ``/sync``, for\nexample.",
                 "operationId": "requestOpenIdToken",
@@ -13783,7 +13783,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/user/{userId}/rooms/{roomId}/account_data/{type}": {
+        "/_matrix/client/r0/user/{userId}/rooms/{roomId}/account_data/{type}": {
             "put": {
                 "description": "Set some account_data for the client on a given room. This config is only\nvisible to the user that set the account_data. The config will be synced to\nclients in the per-room ``account_data``.",
                 "operationId": "setAccountDataPerRoom",
@@ -13841,7 +13841,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/user/{userId}/rooms/{roomId}/tags": {
+        "/_matrix/client/r0/user/{userId}/rooms/{roomId}/tags": {
             "get": {
                 "description": "List the tags set by a user on a room.",
                 "operationId": "getRoomTags",
@@ -13912,7 +13912,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/user/{userId}/rooms/{roomId}/tags/{tag}": {
+        "/_matrix/client/r0/user/{userId}/rooms/{roomId}/tags/{tag}": {
             "delete": {
                 "description": "Remove a tag from the room.",
                 "operationId": "deleteRoomTag",
@@ -14034,7 +14034,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/user_directory/search": {
+        "/_matrix/client/r0/user_directory/search": {
             "post": {
                 "description": "Performs a search for users on the homeserver. The homeserver may\ndetermine which subset of users are searched, however the homeserver\nMUST at a minimum consider the users the requesting user shares a\nroom with and those who reside in public rooms (known to the homeserver).\nThe search MUST consider local users to the homeserver, and SHOULD\nquery remote users as part of the search.\n\nThe search is performed case-insensitively on user IDs and display\nnames preferably using a collation determined based upon the \n``Accept-Language`` header provided in the request, if present.",
                 "operationId": "searchUserDirectory",
@@ -14158,7 +14158,7 @@
                 ]
             }
         },
-        "/_matrix/client/unstable/voip/turnServer": {
+        "/_matrix/client/r0/voip/turnServer": {
             "get": {
                 "description": "This API provides credentials for the client to use when initiating\ncalls.",
                 "operationId": "getTurnServer",
@@ -14282,7 +14282,7 @@
                 ]
             }
         },
-        "/_matrix/media/unstable/config": {
+        "/_matrix/media/r0/config": {
             "get": {
                 "description": "This endpoint allows clients to retrieve the configuration of the content\nrepository, such as upload limitations.\nClients SHOULD use this as a guide when using content repository endpoints.\nAll values are intentionally left optional. Clients SHOULD follow\nthe advice given in the field description when the field is not available.\n\n**NOTE:** Both clients and server administrators should be aware that proxies\nbetween the client and the server may affect the apparent behaviour of content\nrepository APIs, for example, proxies may enforce a lower upload size limit\nthan is advertised by the server on this endpoint.",
                 "operationId": "getConfig",
@@ -14342,7 +14342,7 @@
                 ]
             }
         },
-        "/_matrix/media/unstable/download/{serverName}/{mediaId}": {
+        "/_matrix/media/r0/download/{serverName}/{mediaId}": {
             "get": {
                 "operationId": "getContent",
                 "parameters": [
@@ -14426,7 +14426,7 @@
                 ]
             }
         },
-        "/_matrix/media/unstable/download/{serverName}/{mediaId}/{fileName}": {
+        "/_matrix/media/r0/download/{serverName}/{mediaId}/{fileName}": {
             "get": {
                 "operationId": "getContentOverrideName",
                 "parameters": [
@@ -14518,7 +14518,7 @@
                 ]
             }
         },
-        "/_matrix/media/unstable/preview_url": {
+        "/_matrix/media/r0/preview_url": {
             "get": {
                 "operationId": "getUrlPreview",
                 "parameters": [
@@ -14610,7 +14610,7 @@
                 ]
             }
         },
-        "/_matrix/media/unstable/thumbnail/{serverName}/{mediaId}": {
+        "/_matrix/media/r0/thumbnail/{serverName}/{mediaId}": {
             "get": {
                 "operationId": "getContentThumbnail",
                 "parameters": [
@@ -14720,7 +14720,7 @@
                 ]
             }
         },
-        "/_matrix/media/unstable/upload": {
+        "/_matrix/media/r0/upload": {
             "post": {
                 "operationId": "uploadContent",
                 "parameters": [
