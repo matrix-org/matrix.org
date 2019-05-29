@@ -5,11 +5,7 @@ import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
-import { Layout, Header, Subline, SEO, PrevNext } from '../components'
-import config from '../../config'
-
-const Content = styled.article`
-`
+import { Layout, Header, Subline, SEO, PrevNext, MXContentMain, MXContentNav } from '../components'
 
 const Title = styled.h1`
 `
@@ -24,7 +20,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
   return (
     <Layout customSEO>
         <SEO postPath={slug} postNode={postNode} article />
-        <Content>
+        <MXContentMain>
           <Title>{post.title}</Title>
           <Subline>
             {post.date} &mdash;&nbsp;
@@ -40,7 +36,8 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
             <MDXRenderer>{postNode.code.body}</MDXRenderer>
           </PostContent>
           <PrevNext prev={prev} next={next} />
-        </Content>
+        </MXContentMain>
+        <MXContentNav></MXContentNav>
     </Layout>
   )
 }
