@@ -7,16 +7,6 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import Subline from './Subline'
 
-const Post = styled.article`
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: ${props => props.theme.breakpoints.phone}) {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-`
-
 const Title = styled.h1`
   position: relative;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
@@ -55,7 +45,7 @@ const LineBreak = styled.div`
 `
 
 const Article = ({ title, date, excerpt, slug, timeToRead, categories, body, author }) => (
-  <Post>
+  <div className="mxcontent__main__post">
     <Title>
       <Link to={slug}>{title}</Link>
     </Title>
@@ -73,7 +63,7 @@ const Article = ({ title, date, excerpt, slug, timeToRead, categories, body, aut
       <MDXRenderer>{body}</MDXRenderer>
     </PostContent>
     <LineBreak />
-  </Post>
+  </div>
 )
 
 export default Article
