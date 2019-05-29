@@ -75,7 +75,9 @@ exports.createPages = async ({ graphql, actions }) => {
   )
 
   const posts = resultPosts.data.allMdx.edges
-
+  const postsForArchiveList = posts.map(p => {return {
+    slug: p.node.fields.slug, title: p.node.frontmatter.title
+   }})
   posts.forEach((edge, index) => {
     const next = index === 0 ? null : posts[index - 1].node
     const prev = index === posts.length - 1 ? null : posts[index + 1].node
@@ -87,6 +89,7 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: edge.node.fields.slug,
         prev,
         next,
+        posts: postsForArchiveList,
       },
     })
   })
@@ -119,7 +122,13 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: i === 0 ? `/blog/posts` : `/blog/posts/${i + 1}`,
       component: postListTemplate,
-      context: { limit: postsPerPage, skip: i * postsPerPage, numPages, currentPage: i + 1 },
+      context: { 
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+        posts: postsForArchiveList,
+      },
     })
   })
 
@@ -149,6 +158,9 @@ exports.createPages = async ({ graphql, actions }) => {
   )
 
   const pages = resultPages.data.allMdx.edges
+  const pagesForGuidesList = pages.map(p => {return {
+    slug: p.node.fields.slug, title: p.node.frontmatter.title
+   }})
 
   pages.forEach((edge, index) => {
 
@@ -156,7 +168,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: edge.node.fields.slug,
       component: guideTemplate,
       context: {
-        slug: edge.node.fields.slug
+        slug: edge.node.fields.slug,
+        pages: pagesForGuidesList
       },
     })
   })

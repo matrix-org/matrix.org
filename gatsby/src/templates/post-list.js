@@ -10,7 +10,7 @@ import config from '../../config'
 const Content = styled.div`
 `
 
-const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } }) => {
+const PostList = ({ pageContext: { limit, skip, currentPage, posts }, data: { allMdx } }) => {
   const { edges, totalCount } = allMdx
 
   const prevTitle = `Page ${currentPage - 1}`
@@ -44,7 +44,7 @@ const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } 
             }}
           />
         </MXContentMain>
-        <MXContentNav></MXContentNav>
+        <MXContentNav title="All posts" content={posts}></MXContentNav>
     </Layout>
   )
 }

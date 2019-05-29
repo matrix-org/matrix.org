@@ -13,10 +13,10 @@ const Title = styled.h1`
 const PostContent = styled.div`
 `
 
-const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) => {
+const Post = ({ pageContext: { slug, prev, next, posts }, data: { mdx: postNode } }) => {
   const post = postNode.frontmatter
   const rawBody = postNode.rawBody.replace(/---(\n.*)*---/, '')
-
+  
   return (
     <Layout customSEO>
         <SEO postPath={slug} postNode={postNode} article />
@@ -37,7 +37,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
           </PostContent>
           <PrevNext prev={prev} next={next} />
         </MXContentMain>
-        <MXContentNav></MXContentNav>
+        <MXContentNav title="All posts" content={posts} currentSlug={slug}></MXContentNav>
     </Layout>
   )
 }
