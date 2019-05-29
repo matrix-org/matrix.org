@@ -33,6 +33,12 @@ exports.onCreateNode = ({ node, actions }) => {
     ) {
       slug = `/blog/${node.frontmatter.date.replace(/-/g, '/')}${slug}`
     }
+    if (
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+      ! Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')
+    ) {
+      slug = `/docs/guides${slug}`
+    }
     createNodeField({ node, name: 'slug', value: slug })
   }
 }
@@ -41,13 +47,15 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const postTemplate = require.resolve('./src/templates/post.js')
+  const guideTemplate = require.resolve('./src/templates/guide.js')
   const categoryTemplate = require.resolve('./src/templates/category.js')
   const postListTemplate = require.resolve('./src/templates/post-list.js')
 
-  const result = await wrapper(
+  const resultPosts = await wrapper(
     graphql(`
       {
-        allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+        allMdx(sort: { fields: [frontmatter___date], order: DESC },
+          filter: {frontmatter: {date: {ne: null}}}) {
           edges {
             node {
               fields {
@@ -66,7 +74,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `)
   )
 
-  const posts = result.data.allMdx.edges
+  const posts = resultPosts.data.allMdx.edges
 
   posts.forEach((edge, index) => {
     const next = index === 0 ? null : posts[index - 1].node
@@ -112,6 +120,44 @@ exports.createPages = async ({ graphql, actions }) => {
       path: i === 0 ? `/blog/posts` : `/blog/posts/${i + 1}`,
       component: postListTemplate,
       context: { limit: postsPerPage, skip: i * postsPerPage, numPages, currentPage: i + 1 },
+    })
+  })
+
+  
+
+  const resultPages = await wrapper(
+    graphql(`
+      {
+        allMdx(sort: { fields: [frontmatter___date], order: DESC },
+          filter: {frontmatter: {date: {eq: null}}}) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                categories
+                author
+                slug
+              }
+            }
+          }
+        }
+      }
+    `)
+  )
+
+  const pages = resultPages.data.allMdx.edges
+
+  pages.forEach((edge, index) => {
+
+    createPage({
+      path: edge.node.fields.slug,
+      component: guideTemplate,
+      context: {
+        slug: edge.node.fields.slug
+      },
     })
   })
 }
