@@ -13,13 +13,13 @@ const Title = styled.h1`
 const PostContent = styled.div`
 `
 
-const Page = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
+const Page = ({ pageContext: { slug, pages }, data: { mdx: postNode } }) => {
   const post = postNode.frontmatter
 
   return (
     <Layout customSEO>
         <SEO postPath={slug} postNode={postNode} article />
-        <MXContentNav></MXContentNav>
+        <MXContentNav title="Docs" content={pages} currentSlug={slug}></MXContentNav>
         <MXContentMain>
           <Title>{post.title}</Title>
           <PostContent>
