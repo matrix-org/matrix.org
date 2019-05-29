@@ -47,8 +47,11 @@ const Layout = ({ children, customSEO }) => {
       <>
         <Navigation />
         {!customSEO && <SEO buildTime={buildTime} />}
-        
-        {children}
+        <div class="mxcontentwrapper">
+          <div class="mxcontent">
+            {children}
+          </div>
+        </div>
         <Footer>
           <div className="footer__text">&copy; 2019 Matrix.org. All rights reserved.</div>
           <div className="footer-highlight">
