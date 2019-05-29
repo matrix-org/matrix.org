@@ -19,7 +19,7 @@ export default function HTML(props) {
         <link rel="stylesheet" type="text/css" href="/css/webflow.css" />
         <link rel="stylesheet" type="text/css" href="/css/matrix-org.webflow.css" />
       </head>
-      <body {...props.bodyAttributes}>
+      <body className="body" {...props.bodyAttributes}>
         {props.preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
