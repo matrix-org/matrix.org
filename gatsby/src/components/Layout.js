@@ -7,37 +7,7 @@ import theme from '../../config/theme'
 import useBuildTime from '../hooks/useBuildTime'
 
 import Navigation from './Navigation'
-
-const Footer = styled.footer`
-  text-align: center;
-  padding: 0;
-  font-size: 0.9rem;
-  .footer__text {
-    margin: 2rem;
-  }
-  .footer-highlight {
-    background-color: #ebebeb;
-    padding: 1rem 0.5rem;
-    text-align: left;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .footer-highlight__link {
-    margin: 1rem;
-  }
-  .footer-highlight__right {
-    position: absolute;
-    margin-right: 1rem;
-    right: 0;
-  }
-  .footer-highlight__hidden {
-    display: none;
-    position: absolute;
-    margin-right: 1rem;
-    right: 0;
-    font-size: 0.6rem;
-  }
-`
+import Footer from './Footer'
 
 const Layout = ({ children, customSEO }) => {
   const buildTime = useBuildTime()
