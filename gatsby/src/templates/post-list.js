@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { Layout, Header, Article, PrevNext, MXContentMain } from '../components'
+import { Layout, Article, PrevNext, MXContentMain, MXContentNav } from '../components'
 import config from '../../config'
 
 const Content = styled.div`
@@ -44,6 +44,7 @@ const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } 
             }}
           />
         </MXContentMain>
+        <MXContentNav></MXContentNav>
     </Layout>
   )
 }
