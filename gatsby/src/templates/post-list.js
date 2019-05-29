@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { Layout, Header, Article, PrevNext } from '../components'
+import { Layout, Header, Article, PrevNext, MXContentMain } from '../components'
 import config from '../../config'
 
 const Content = styled.div`
@@ -22,8 +22,7 @@ const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } 
   return (
     <Layout>
         <Helmet />
-        <Header />
-        <Content>
+        <MXContentMain>
           {edges.map(post => (
             <Article
               title={post.node.frontmatter.title}
@@ -44,7 +43,7 @@ const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } 
               fields: { slug: nextSlug },
             }}
           />
-        </Content>
+        </MXContentMain>
     </Layout>
   )
 }
