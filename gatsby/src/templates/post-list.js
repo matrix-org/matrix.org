@@ -4,22 +4,10 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { Layout, Wrapper, Header, Article, PrevNext } from '../components'
+import { Layout, Header, Article, PrevNext } from '../components'
 import config from '../../config'
 
 const Content = styled.div`
-  grid-column: 2;
-  box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  padding: 2rem 4rem;
-  background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    padding: 3rem 3rem;
-  }
-  @media (max-width: ${props => props.theme.breakpoints.phone}) {
-    padding: 2rem 1.5rem;
-  }
 `
 
 const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } }) => {
@@ -33,7 +21,6 @@ const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } 
 
   return (
     <Layout>
-      <Wrapper>
         <Helmet />
         <Header />
         <Content>
@@ -58,7 +45,6 @@ const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } 
             }}
           />
         </Content>
-      </Wrapper>
     </Layout>
   )
 }
