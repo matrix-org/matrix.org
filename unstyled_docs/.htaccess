@@ -17,6 +17,6 @@ RewriteRule ^spec/unstable/server_server.html$ spec/server_server/unstable.html 
 RewriteRule ^spec/r0.2.0/client_server.html$ spec/client_server/r0.2.0.html [R,L]
 
 # olm redirects
-Redirect /docs/olm_signing.html https://matrix.org/git/olm/about/docs/signing.rst
-Redirect /docs/spec/olm.html https://matrix.org/git/olm/about/docs/olm.rst
-Redirect /docs/spec/megolm.html https://matrix.org/git/olm/about/docs/megolm.rst
+Redirect /docs/olm_signing.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/signing.md
+Redirect /docs/spec/olm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/olm.md
+Redirect /docs/spec/megolm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/megolm.md
