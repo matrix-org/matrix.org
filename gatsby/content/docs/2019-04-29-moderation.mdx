@@ -1,32 +1,8 @@
 ---
 layout: post
-categories: guides
 title: Moderation in Matrix
 section: guides
 ---
-
-<style>
-p {
-    padding-bottom: 5px;
-}
-img {
-    max-height: 600px;
-    display: block;
-    margin: 0 auto;
-}
-thead {
-    background: inherit;
-}
-table {
-    margin: 0 auto;
-}
-</style>
-
-# Moderation in Matrix
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## Introduction {#introduction}
 
@@ -189,7 +165,9 @@ Removing abusive rooms is done by calling the /admin/shutdown API, e.g:
 
 
 ```
-curl 'https://matrix.org/_matrix/client/r0/admin/shutdown_room/!roomid:matrix.org' -H "Authorization: Bearer $token" -XPOST -d'{"new_room_user_id": "@abuse:matrix.org", "message": "This room has been removed from the matrix.org homeserver due to violating the terms of use.", "room_name": "Room unavailable"}'
+curl 'https://matrix.org/_matrix/client/r0/admin/shutdown_room/!roomid:matrix.org' \
+-H "Authorization: Bearer $token" -XPOST \
+-d'{"new_room_user_id": "@abuse:matrix.org", "message": "This room has been removed from the matrix.org homeserver due to violating the terms of use.", "room_name": "Room unavailable"}'
 ```
 
 
