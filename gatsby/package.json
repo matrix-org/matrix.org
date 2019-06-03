@@ -7,7 +7,7 @@
     "@mdx-js/tag": "^0.20.3",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.4.2",
-    "gatsby-cli": "^2.5.12",
+    "gatsby-cli": "^2.6.4",
     "gatsby-mdx": "0.6.2",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-feed": "^2.2.0",
