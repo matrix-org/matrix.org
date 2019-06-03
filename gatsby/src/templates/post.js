@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
-import { Layout, Header, Subline, SEO, PrevNext, MXContentMain, MXContentNav } from '../components'
+import { Layout, Subline, SEO, PrevNext, MXContentMain, MXContentNav } from '../components'
 
 const Title = styled.h1`
 `
@@ -15,7 +15,6 @@ const PostContent = styled.div`
 
 const Post = ({ pageContext: { slug, prev, next, posts }, data: { mdx: postNode } }) => {
   const post = postNode.frontmatter
-  const rawBody = postNode.rawBody.replace(/---(\n.*)*---/, '')
   
   return (
     <Layout customSEO>

@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import {  graphql } from 'gatsby'
 import styled from 'styled-components'
-import kebabCase from 'lodash/kebabCase'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
-import { Layout, Header, Subline, SEO, MXContentMain, MXContentNav } from '../components'
+import { Layout, SEO, MXContentMain, MXContentNav } from '../components'
 
 const Title = styled.h1`
 `

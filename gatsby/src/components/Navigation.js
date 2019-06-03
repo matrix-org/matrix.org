@@ -1,22 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { darken, lighten } from 'polished'
-
-
-const Content = styled.div`
-  max-width: ${props => props.theme.maxWidth};
-  margin: 0 auto;
-
-  a {
-    color: ${props => props.theme.colors.primary};
-    font-size: 3.2rem;
-    &:hover {
-      opacity: 0.85;
-      color: ${props => props.theme.colors.primaryLight};
-    }
-  }
-`
 
 const Navigation = () => (
   <nav>

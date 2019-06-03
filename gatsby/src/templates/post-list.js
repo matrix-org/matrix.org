@@ -1,17 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
+import { graphql } from 'gatsby'
 
 import { Layout, Article, PrevNext, MXContentMain, MXContentNav } from '../components'
-import config from '../../config'
-
-const Content = styled.div`
-`
 
 const PostList = ({ pageContext: { limit, skip, currentPage, posts }, data: { allMdx } }) => {
-  const { edges, totalCount } = allMdx
+  const { edges } = allMdx
 
   const prevTitle = `Page ${currentPage - 1}`
   const prevSlug = currentPage === 2 ? `blog/posts/` : `blog/posts/${currentPage - 1}`
