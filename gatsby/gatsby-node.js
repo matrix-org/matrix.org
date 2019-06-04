@@ -27,17 +27,27 @@ exports.onCreateNode = ({ node, actions }) => {
     ) {
       slug = `/${_.kebabCase(node.frontmatter.slug)}`
     }
+
     if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')
     ) {
       slug = `/blog/${node.frontmatter.date.replace(/-/g, '/')}${slug}`
     }
-    if (
+    else if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       ! Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')
     ) {
-      slug = `/docs/guides${slug}`
+      if(node.frontmatter.layout && 
+        (node.frontmatter.layout === "project" || node.frontmatter.layout === "projectimage")) {
+          if (node.frontmatter.categories && node.frontmatter.categories[0]) {
+            slug = `/docs/projects/${node.frontmatter.categories[0]}${slug}`
+          } else {
+            slug = `/docs/projects/error${slug}`
+          }
+      } else {
+        slug = `/docs/guides${slug}`
+      }
     }
     createNodeField({ node, name: 'slug', value: slug })
   }
@@ -50,6 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const guideTemplate = require.resolve('./src/templates/guide.js')
   const categoryTemplate = require.resolve('./src/templates/category.js')
   const postListTemplate = require.resolve('./src/templates/post-list.js')
+  const projectTemplate = require.resolve('./src/templates/project.js')
 
   const resultPosts = await wrapper(
     graphql(`
@@ -138,7 +149,7 @@ exports.createPages = async ({ graphql, actions }) => {
     graphql(`
       {
         allMdx(sort: { fields: [frontmatter___date], order: DESC },
-          filter: {frontmatter: {date: {eq: null}}}) {
+          filter: {frontmatter: {date: {eq: null}, layout: {nin:["project", "projectimage"]}}}) {
           edges {
             node {
               fields {
@@ -170,6 +181,45 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: edge.node.fields.slug,
         pages: pagesForGuidesList
+      },
+    })
+  })
+
+
+const resultProjects = await wrapper(
+  graphql(`
+{
+    allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
+        
+        edges {
+            node {
+                childMdx {
+                    frontmatter {
+                        title
+                        maturity
+                        description
+                        thumbnail
+                        featured
+                        layout
+                    }
+                    fields {
+                      slug
+                    }
+                }
+                absolutePath
+            }
+        }
+    }
+}`))
+
+  const projects = resultProjects.data.allFile.edges
+
+  projects.forEach((edge, index) => {
+    createPage({
+      path: edge.node.childMdx.fields.slug,
+      component: projectTemplate,
+      context: {
+        slug: edge.node.childMdx.fields.slug
       },
     })
   })
