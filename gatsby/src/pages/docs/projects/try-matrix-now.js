@@ -5,18 +5,16 @@ import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-import { Layout, Wrapper, Header } from '../../../components'
+import { Layout, MXContentMain, Header } from '../../../components'
 import config from '../../../../config'
 
 const TryMatrixNow = ({data}) => {
 
     
     return (<Layout navmode="discover">
-        <Wrapper>
+        <MXContentMain>
             <Helmet title={`Try Matrix Now | ${config.siteTitle}`} />
             <h1>Try Matrix Now</h1>
-            <p>dsfs</p>
-            <p>test {JSON.stringify(data.allFile.edges[0])}</p>
             {data.allFile.edges.map(function(edge) {
                 const project = edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
                 return (
@@ -24,7 +22,7 @@ const TryMatrixNow = ({data}) => {
                 data-featured={project.frontmatter.featured}
                 data-maturity={project.frontmatter.maturity}
                 data-language={project.frontmatter.language}
-                data-license="">
+                data-license={project.frontmatter.license}>
                 <div class="theme-card">
                     
                     <div class="card-block">
@@ -35,7 +33,7 @@ const TryMatrixNow = ({data}) => {
                 </div>
             </div>)
             })}
-        </Wrapper>
+        </MXContentMain>
     </Layout>)
 }
 
@@ -53,6 +51,7 @@ export const query = graphql`
                         description
                         thumbnail
                         featured
+                        license
                     }
                 }
                 absolutePath
