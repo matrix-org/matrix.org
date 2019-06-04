@@ -27,7 +27,7 @@ const Category = ({ pageContext: { category }, data: { allMdx } }) => {
   const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${category}"`
 
   return (
-    <Layout>
+    <Layout navmode="blog">
       <Wrapper>
         <Helmet title={`Category: ${category} | ${config.siteTitle}`} />
         <Header />

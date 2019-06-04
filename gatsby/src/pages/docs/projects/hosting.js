@@ -9,7 +9,7 @@ import config from '../../../../config'
 
 const Hosting = ({data}) => {
  
-    return (<Layout>
+    return (<Layout navmode="discover">
         <MXContentMain>
           <Helmet title={`SDKs | ${config.siteTitle}`} />
           <h1 id="matrix-hosting">Matrix Hosting</h1>

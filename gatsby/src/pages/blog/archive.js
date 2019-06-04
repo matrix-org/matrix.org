@@ -34,7 +34,7 @@ const Category = ({
     allMdx: { edges },
   },
 }) => (
-  <Layout>
+  <Layout navmode="blog">
       <Helmet title={`Blog Archive ${config.siteTitle}`} />
       <MXContentMain>
         <h1>Blog Archive</h1>

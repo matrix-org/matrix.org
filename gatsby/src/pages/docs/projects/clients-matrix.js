@@ -9,7 +9,7 @@ import config from '../../../../config'
 const ClientsMatrix = ({data}) => {
 
  
-    return (<Layout>
+    return (<Layout navmode="discover">
         <MXContentMain>
             <Helmet title={`Clients | ${config.siteTitle}`} />
             <h1>Clients Matrix</h1>

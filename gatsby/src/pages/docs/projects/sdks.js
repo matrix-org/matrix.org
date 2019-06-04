@@ -15,7 +15,7 @@ const Bridges = ({data}) => {
       s.node.childMdx.frontmatter.categories[0] === 'sdk' &&
       s.node.childMdx.frontmatter.featured);
  
-    return (<Layout>
+    return (<Layout navmode="discover">
         <MXContentMain>
           <Helmet title={`SDKs | ${config.siteTitle}`} />
           <h1 id="SDKs">SDKs</h1>

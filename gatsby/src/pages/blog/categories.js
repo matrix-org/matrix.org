@@ -34,7 +34,7 @@ const Category = ({
     allMdx: { group },
   },
 }) => (
-  <Layout>
+  <Layout navmode="blog">
     <Wrapper>
       <Helmet title={`Categories | ${config.siteTitle}`} />
       <Header>

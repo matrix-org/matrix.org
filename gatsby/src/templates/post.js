@@ -17,7 +17,7 @@ const Post = ({ pageContext: { slug, prev, next, posts }, data: { mdx: postNode 
   const post = postNode.frontmatter
   
   return (
-    <Layout customSEO>
+    <Layout navmode="blog" customSEO>
         <SEO postPath={slug} postNode={postNode} article />
         <MXContentMain>
           <Title>{post.title}</Title>

@@ -9,13 +9,12 @@ import useBuildTime from '../hooks/useBuildTime'
 import Navigation from './Navigation'
 import Footer from './Footer'
 
-const Layout = ({ children, customSEO }) => {
+const Layout = ({ children, customSEO, navmode }) => {
   const buildTime = useBuildTime()
-
   return (
     <ThemeProvider theme={theme}>
       <>
-        <Navigation />
+        <Navigation navmode={navmode} />
         {!customSEO && <SEO buildTime={buildTime} />}
         <div class="mxcontentwrapper">
           <div class="mxcontent">
@@ -47,6 +46,7 @@ export default Layout
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
   customSEO: PropTypes.bool,
+  navmode: PropTypes.string
 }
 
 Layout.defaultProps = {

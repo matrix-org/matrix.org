@@ -9,7 +9,7 @@ import config from '../../../../config'
 const Bridges = ({data}) => {
 
  
-    return (<Layout>
+    return (<Layout navmode="discover">
         <MXContentMain>
             <Helmet title={`Bridges | ${config.siteTitle}`} />
             <h1 id="bridges">Bridges</h1>

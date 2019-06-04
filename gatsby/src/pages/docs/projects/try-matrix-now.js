@@ -11,7 +11,7 @@ import config from '../../../../config'
 const TryMatrixNow = ({data}) => {
 
     
-    return (<Layout>
+    return (<Layout navmode="discover">
         <Wrapper>
             <Helmet title={`Try Matrix Now | ${config.siteTitle}`} />
             <h1>Try Matrix Now</h1>

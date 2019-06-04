@@ -15,7 +15,7 @@ const PostList = ({ pageContext: { limit, skip, currentPage, posts }, data: { al
   const nextSlug = `blog/posts/${currentPage + 1}`
 
   return (
-    <Layout>
+    <Layout navmode="blog">
         <Helmet />
         <MXContentMain>
           {edges.map(post => (
