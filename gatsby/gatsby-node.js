@@ -88,7 +88,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = resultPosts.data.allMdx.edges
   const postsForArchiveList = posts.map(p => {return {
     slug: p.node.fields.slug, title: p.node.frontmatter.title
-   }})
+   }}).slice(0, 20)
   posts.forEach((edge, index) => {
     const next = index === 0 ? null : posts[index - 1].node
     const prev = index === posts.length - 1 ? null : posts[index + 1].node
