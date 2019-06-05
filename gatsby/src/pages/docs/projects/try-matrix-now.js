@@ -15,10 +15,14 @@ const TryMatrixNow = ({data}) => {
         <MXContentMain>
             <Helmet title={`Try Matrix Now | ${config.siteTitle}`} />
             <h1>Try Matrix Now</h1>
+            <h2>Clients</h2>
             <div class="mxblock">
             <div class="mxgrid mxgrid--discover">
             {data.allFile.edges.map(function(edge) {
                 const project = edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
+                if (!project.frontmatter.categories || project.frontmatter.categories[0] !== "client") {
+                    return null;
+                }
                 return (
             <div class="mxgrid__item20 filterableProject"
                 data-featured={project.frontmatter.featured}
@@ -30,7 +34,7 @@ const TryMatrixNow = ({data}) => {
                     <h4 class="mxgrid__item__bg__hx">{project.frontmatter.title}</h4>
                     <p class="mxgrid__item__bg__p">{project.frontmatter.description}</p>
                     <div class="mxgrid__item__bg__vert">
-                        <img src="images/basic_elaboration_message_happy.svg" alt="" class="mxgrid__item__bg__img" />
+                        <img src={project.frontmatter.thumbnail} alt="" class="mxgrid__item__bg__img" />
                     </div>
                 </div>
             </div>)
@@ -56,6 +60,7 @@ export const query = graphql`
                         thumbnail
                         featured
                         license
+                        categories
                     }
                 }
                 absolutePath
