@@ -17,7 +17,7 @@ const Guides = ({data}) => {
           <div class="mxgrid">
             <div class="mxgrid__item50">
               <div class="mxgrid__item__bg mxgrid__item__bg--develop">
-<img src="images/music_play_button.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+<img src="/images/music_play_button.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                 <div class="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
                   <h4 class="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Get Started</h4>
                   <p class="mxgrid__item__bg__p">How to get started with Matrix<br /></p>
@@ -26,7 +26,7 @@ const Guides = ({data}) => {
             </div>
             <div class="mxgrid__item50">
               <div class="mxgrid__item__bg mxgrid__item__bg--develop">
-<img src="images/basic_server_upload.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+<img src="/images/basic_server_upload.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                 <div class="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
                   <h4 class="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Synapse Installation</h4>
                   <p class="mxgrid__item__bg__p">Installing Synapse, a homeserver implementation written in Python<br /></p>
@@ -35,7 +35,7 @@ const Guides = ({data}) => {
             </div>
             <div class="mxgrid__item50">
               <div class="mxgrid__item__bg mxgrid__item__bg--develop">
-<img src="images/basic_server.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+<img src="/images/basic_server.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                 <div class="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
                   <h4 class="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Synapse Management </h4>
                   <p class="mxgrid__item__bg__p">How to manage Synapse, and tips &amp; tricks<br /></p>
@@ -44,7 +44,7 @@ const Guides = ({data}) => {
             </div>
             <div class="mxgrid__item50">
               <div class="mxgrid__item__bg mxgrid__item__bg--develop">
-<img src="images/basic_elaboration_message_happy.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+<img src="/images/basic_elaboration_message_happy.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                 <div class="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
                   <h4 class="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Moderation</h4>
                   <p class="mxgrid__item__bg__p">How to manage and moderate Matrix rooms<br /></p>

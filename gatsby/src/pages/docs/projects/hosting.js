@@ -18,7 +18,7 @@ const Hosting = ({data}) => {
 
             <h2 id="modularim">Modular.im</h2>
 
-            <p><img src="/docs/projects/images/modularlogo.png" alt="" /></p>
+            <p><img width="50%" src="/images/modularlogo.png" alt="" /></p>
             <p><a href="https://www.modular.im/">www.modular.im</a></p>
 
             <p>
