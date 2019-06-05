@@ -5,3 +5,17 @@
 label {
     display: initial;
 }
+
+body {  
+    font-family: "Helvetica Neue",
+        -apple-system, 
+        BlinkMacSystemFont, 
+        "Segoe UI", 
+        Roboto, 
+        Helvetica,
+        Arial,
+        sans-serif,
+        "Apple Color Emoji",  /* Emojis*/
+        "Segoe UI Emoji", /* Emojis*/
+        "Segoe UI Symbol"; /* Emojis*/
+}
