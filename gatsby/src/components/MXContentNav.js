@@ -2,7 +2,7 @@ import React from 'react'
 
 const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
     var navClass = "mxcontent__nav"
-    if (currentSlug.indexOf("/docs") === 0) {
+    if (currentSlug && currentSlug.indexOf("/docs") === 0) {
         navClass += " mxcontent__nav--left";
     }
     var tocRendered = false;
@@ -12,7 +12,7 @@ const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
         {
         content.map(p => {
             var itemClass = "mxcontent__nav__link mxcontent__nav__link--title";
-            if (currentSlug === p.slug) {
+            if (currentSlug === p.slug && currentSlug.indexOf("/docs") === 0) {
                 itemClass += " mxcontent__nav__link--active";
                 tocRendered = true;
                 return (
