@@ -5,11 +5,13 @@ import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-import { Layout, MXContentMain, Header } from '../../../components'
+import { Layout, MXContentMain, MXTryMatrixNowSection } from '../../../components'
 import config from '../../../../config'
 
 const TryMatrixNow = ({data}) => {
-
+    const servers = data.allFile.edges.map(function(edge) {
+        return edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
+    }).filter(project => project.frontmatter.categories && project.frontmatter.categories[0] === "server")
     
     return (<Layout navmode="discover">
         <MXContentMain>
@@ -41,6 +43,8 @@ const TryMatrixNow = ({data}) => {
             })}
             </div>
         </div>
+            <h2>Servers</h2>
+            <MXTryMatrixNowSection items={servers} />
         </MXContentMain>
     </Layout>)
 }
