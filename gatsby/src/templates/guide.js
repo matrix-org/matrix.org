@@ -18,13 +18,15 @@ const Page = ({ pageContext: { slug, pages }, data: { mdx: postNode } }) => {
   return (
     <Layout navmode="develop" customSEO>
         <SEO postPath={slug} postNode={postNode} article />
-        <MXContentNav title="Docs" content={pages} currentSlug={slug}></MXContentNav>
         <MXContentMain>
-          <Title>{post.title}</Title>
-          <PostContent>
-            <MDXRenderer>{postNode.code.body}</MDXRenderer>
-          </PostContent>
+          <div class="mxcontent__main__doc">
+            <Title>{post.title}</Title>
+            <PostContent>
+              <MDXRenderer>{postNode.code.body}</MDXRenderer>
+            </PostContent>
+          </div>
         </MXContentMain>
+        <MXContentNav title="Docs" content={pages} currentSlug={slug}></MXContentNav>
     </Layout>
   )
 }

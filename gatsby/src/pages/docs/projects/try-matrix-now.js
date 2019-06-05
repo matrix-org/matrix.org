@@ -15,24 +15,28 @@ const TryMatrixNow = ({data}) => {
         <MXContentMain>
             <Helmet title={`Try Matrix Now | ${config.siteTitle}`} />
             <h1>Try Matrix Now</h1>
+            <div class="mxblock">
+            <div class="mxgrid mxgrid--discover">
             {data.allFile.edges.map(function(edge) {
                 const project = edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
                 return (
-            <div class="col-md-4 col-12 mb-3 filterableProject"
+            <div class="mxgrid__item20 filterableProject"
                 data-featured={project.frontmatter.featured}
                 data-maturity={project.frontmatter.maturity}
                 data-language={project.frontmatter.language}
                 data-license={project.frontmatter.license}>
-                <div class="theme-card">
+                <div class="mxgrid__item__bg mxgrid__item__bg--clear">
                     
-                    <div class="card-block">
-                        <h4 class="card-title">{project.frontmatter.title}</h4>
-                        <p class="card-text">{project.frontmatter.description}</p>
+                    <h4 class="mxgrid__item__bg__hx">{project.frontmatter.title}</h4>
+                    <p class="mxgrid__item__bg__p">{project.frontmatter.description}</p>
+                    <div class="mxgrid__item__bg__vert">
+                        <img src="images/basic_elaboration_message_happy.svg" alt="" class="mxgrid__item__bg__img" />
                     </div>
-                    <a class="mask" href="projects/client/2018-04-24-matrix-java.html"><i class="icon fa fa-search-plus"></i></a>
                 </div>
             </div>)
             })}
+            </div>
+        </div>
         </MXContentMain>
     </Layout>)
 }
