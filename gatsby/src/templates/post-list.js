@@ -15,9 +15,9 @@ const PostList = ({ pageContext: { limit, skip, currentPage, posts }, data: { al
   const nextSlug = `blog/posts/${currentPage + 1}`
 
   return (
-    <Layout navmode="blog">
+    <Layout hasSideNavigation="true" navmode="blog">
         <Helmet />
-        <MXContentMain>
+        <MXContentMain hasSideNavigation="true">
           {edges.map(post => (
             <Article
               title={post.node.frontmatter.title}

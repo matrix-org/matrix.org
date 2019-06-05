@@ -16,9 +16,9 @@ const Page = ({ pageContext: { slug, pages }, data: { mdx: postNode } }) => {
   const post = postNode.frontmatter
 
   return (
-    <Layout navmode="develop" customSEO>
+    <Layout hasSideNavigation="true" navmode="develop" customSEO>
         <SEO postPath={slug} postNode={postNode} article />
-        <MXContentMain>
+        <MXContentMain hasSideNavigation="true">
           <div class="mxcontent__main__doc">
             <Title>{post.title}</Title>
             <PostContent>
