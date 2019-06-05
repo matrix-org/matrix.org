@@ -1,7 +1,12 @@
 import React from 'react'
 
-const MXContentNav = ({title, content, currentSlug}) => (
-    <div class="mxcontent__nav">
+const MXContentNav = ({title, content, currentSlug}) => {
+    var navClass = "mxcontent__nav"
+    if (currentSlug.indexOf("/docs") === 0) {
+        navClass += " mxcontent__nav--left";
+    }
+    return (
+    <div class={navClass}>
         <h3>{title}</h3>
         {
         content.map(p => {
@@ -14,6 +19,6 @@ const MXContentNav = ({title, content, currentSlug}) => (
         })
         }
     </div>
-)
+)}
 
 export default MXContentNav
