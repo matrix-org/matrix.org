@@ -26,7 +26,7 @@ const Page = ({ pageContext: { slug, pages }, data: { mdx: postNode } }) => {
             </PostContent>
           </div>
         </MXContentMain>
-        <MXContentNav title="Docs" content={pages} currentSlug={slug}></MXContentNav>
+        <MXContentNav title="Guides" content={pages} currentSlug={slug} tableOfContents={postNode.tableOfContents}></MXContentNav>
     </Layout>
   )
 }
@@ -59,6 +59,7 @@ export const pageQuery = graphql`
         author,
         image
       }
+      tableOfContents
       timeToRead
       rawBody
       parent {

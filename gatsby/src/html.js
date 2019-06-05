@@ -18,6 +18,7 @@ export default function HTML(props) {
         <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="/css/webflow.css" />
         <link rel="stylesheet" type="text/css" href="/css/matrix-org.webflow.css" />
+        <link rel="stylesheet" type="text/css" href="/css/webflow-overrides.css" />
       </head>
       <body className="body" {...props.bodyAttributes}>
         {props.preBodyComponents}
