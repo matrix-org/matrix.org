@@ -77,8 +77,7 @@ const Navigation = (navmode) => (
 </a>
         <nav role="navigation" class="mxnavbar__navmenu w-nav-menu">
           <a href="/docs/projects/try-matrix-now" class={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "discover" ? "w--current":"")}>Discover</a>
-          <a href="guides.html" class={"mxnavbar__navlink w-nav-link"}>Guides</a>
-          <a href="develop.html" class={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "develop" ? "w--current":"")}>Develop</a>
+          <a href="/docs/guides" class={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "develop" ? "w--current":"")}>Develop</a>
           <a href="/blog/posts" class={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "blog" ? "w--current":"")}>Blog</a>
           <a href="#" class="mxnavbar__navlink w-nav-link">FAQ&#x27;s</a>
           <a href="try-now.html" class="mxnavbar__navlink mxnavbar__navlink--try w-nav-link">Try Now</a>
