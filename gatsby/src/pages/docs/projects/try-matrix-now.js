@@ -9,42 +9,50 @@ import { Layout, MXContentMain, MXTryMatrixNowSection } from '../../../component
 import config from '../../../../config'
 
 const TryMatrixNow = ({data}) => {
+    const clients = data.allFile.edges.map(function(edge) {
+        return edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
+    }).filter(project => project.frontmatter.categories && project.frontmatter.categories[0] === "client")
+
     const servers = data.allFile.edges.map(function(edge) {
         return edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
     }).filter(project => project.frontmatter.categories && project.frontmatter.categories[0] === "server")
+
+    const applicationServers = data.allFile.edges.map(function(edge) {
+        return edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
+    }).filter(project => project.frontmatter.categories && project.frontmatter.categories[0] === "as")
+
+    const sdks = data.allFile.edges.map(function(edge) {
+        return edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
+    }).filter(project => project.frontmatter.categories && project.frontmatter.categories[0] === "sdk")
+
+    const bots = data.allFile.edges.map(function(edge) {
+        return edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
+    }).filter(project => project.frontmatter.categories && project.frontmatter.categories[0] === "bot")
+
+    const bridges = data.allFile.edges.map(function(edge) {
+        return edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
+    }).filter(project => project.frontmatter.categories && project.frontmatter.categories[0] === "bridge")
+
+    const others = data.allFile.edges.map(function(edge) {
+        return edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
+    }).filter(project => project.frontmatter.categories && project.frontmatter.categories[0] === "other")
     
     return (<Layout navmode="discover">
         <MXContentMain>
             <Helmet title={`Try Matrix Now | ${config.siteTitle}`} />
             <h1>Try Matrix Now</h1>
             <h2>Clients</h2>
-            <div class="mxblock">
-            <div class="mxgrid mxgrid--discover">
-            {data.allFile.edges.map(function(edge) {
-                const project = edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
-                if (!project.frontmatter.categories || project.frontmatter.categories[0] !== "client") {
-                    return null;
-                }
-                return (
-            <div class="mxgrid__item20 filterableProject"
-                data-featured={project.frontmatter.featured}
-                data-maturity={project.frontmatter.maturity}
-                data-language={project.frontmatter.language}
-                data-license={project.frontmatter.license}>
-                <div class="mxgrid__item__bg mxgrid__item__bg--clear">
-                    
-                    <h4 class="mxgrid__item__bg__hx">{project.frontmatter.title}</h4>
-                    <p class="mxgrid__item__bg__p">{project.frontmatter.description}</p>
-                    <div class="mxgrid__item__bg__vert">
-                        <img src={project.frontmatter.thumbnail} alt="" class="mxgrid__item__bg__img" />
-                    </div>
-                </div>
-            </div>)
-            })}
-            </div>
-        </div>
+            <MXTryMatrixNowSection items={clients} />
             <h2>Servers</h2>
             <MXTryMatrixNowSection items={servers} />
+            <h2>SDKs</h2>
+            <MXTryMatrixNowSection items={sdks} />
+            <h2>Bots</h2>
+            <MXTryMatrixNowSection items={bots} />
+            <h2>Bridges</h2>
+            <MXTryMatrixNowSection items={bridges} />
+            <h2>Other</h2>
+            <MXTryMatrixNowSection items={others} />
         </MXContentMain>
     </Layout>)
 }
