@@ -5,7 +5,7 @@ section: guides
 slug: moderation
 ---
 
-## Introduction {#introduction}
+## Introduction
 
 Matrix is an open protocol and network for decentralised communication, where users can participate in public and private chat rooms through servers (‘homeservers’) and clients of their choice, similar to email.  The goal is to provide a free and open global network for interoperable e2e-encrypted communication, without sacrificing usability, and so liberate users from being trapped in the proprietary communication silos which have become commonplace today.
 
@@ -20,10 +20,10 @@ A large open communication network (much like email or the web itself) comes wit
 We consider effective content management to be the single biggest remaining risk to the long-term success of Matrix as a project, and we’re investing as much time as we can into building out and improving our moderation & reputation tools.  We would like to focus on this even more during 2019, and are currently looking for dedicated funding to achieve this - please email us at funding-at-matrix.org if you have the interest and resources to sponsor this work.
 
 
-## Moderating rooms {#moderating-rooms}
+## Moderating rooms
 
 
-### Redactions (aka Removing messages) {#redactions-aka-removing-messages}
+### Redactions (aka Removing messages)
 
 The first line of defence when moderating a room is the ability to remove undesirable content as a moderator.  Matrix implements the concept of redactions (called ‘remove message’ in Riot’s UI), which allows a moderator to send a ‘redaction event’ to a room which requests all the participating servers to remove the human-readable information about a given message.  Users can also redact their own messages from a room.  Redactions may be applied both to normal room messages as well as to remove the human-visible aspects of state events (e.g. offensive display names, avatars, etc).
 
@@ -32,11 +32,11 @@ Redactions are a best-effort system - there is no way to force other servers or 
 It is common for servers not to immediately delete redacted messages from their database - this is a deliberate moderation feature, letting server admins handle redaction-abuse (e.g. users sending and then immediately redacting obnoxious messages) by checking their databases if needed.
 
 
-### Managing abusive display names, avatars etc {#managing-abusive-display-names-avatars-etc}
+### Managing abusive display names, avatars etc
 
 As well as being able to redact abusive content, moderators can also override ‘state events’ such as room names, topics, etc.  This is generally just a matter of using Room Settings to update the necessary data.  In future we will also support the special case of overriding profile changes - however, overriding another user’s profile is considered bad etiquette (even as a moderator) - it is better to redact.
 
-### Power levels {#power-levels}
+### Power levels
 
 The next line of defence when moderating a room is the concept of ‘power levels’. Every user in a room has a power level - a number generally between 0 and 100.  The higher the number the more power the user has that room.  By default, the creator of the room gets the highest power level of 100 (typically called ‘Admin’), and newly joined users get a power level of 0.  You can change the power level of less powerful users than yourself - for instance, an Admin (with power 100) could promote a normal user to a power level of 50 (typically called ‘Moderator’).  You cannot give users a higher power level than your own.  You can demote yourself, but be aware that this is irreversible unless there are other users in the room with high enough power to subsequently re-promote you.
 
@@ -63,7 +63,7 @@ For instance, if you wanted to stop normal users from being able to talk in a ro
 For a the full spec of power levels, please see: [https://matrix.org/docs/spec/client_server/latest.html#m-room-power-levels](https://matrix.org/docs/spec/client_server/latest.html#m-room-power-levels).  If you’re wondering where the term comes from, you should [watch more anime](https://knowyourmeme.com/memes/power-level)...
 
 
-### Kicking and banning users {#kicking-and-banning-users}
+### Kicking and banning users
 
 The next line of defence in policing your rooms is the ability to remove users. By default, moderators with power level 50 or higher have permission to remove users with lower power from rooms.  You can either kick or ban, specifying an optional reason which should be visible in the room’s timeline:
 
@@ -91,7 +91,7 @@ We don’t currently support banning based on patterns of matrix IDs.  This is b
 There isn’t currently a way of bulk-banning or bulk-kicking users from within Riot, although one can use a simple script to do so.  _[TODO: release our bulk-banning script.]_
 
 
-### Banning servers from rooms (Server ACLs) {#banning-servers-from-rooms-server-acls}
+### Banning servers from rooms (Server ACLs)
 
 The next line of defense in moderating a room is stopping unwanted servers from participating.  This is done by setting a ‘server ACL’ (access control list) on a room.  It’s important to understand that despite the name, server ACLs block a server from participating in a **room** - rather than blocking them from interacting in general with a server
 
@@ -110,19 +110,19 @@ Server ACLs can also be used to restrict the set of servers which are allowed to
 For further detailed info about server ACLs, see [https://matrix.org/docs/spec/client_server/latest.html#server-access-control-lists-acls-for-rooms](https://matrix.org/docs/spec/client_server/latest.html#server-access-control-lists-acls-for-rooms)
 
 
-### A note on state resets {#a-note-on-state-resets}
+### A note on state resets
 
 Prior to Matrix 1.0, a bug existed which caused room state (e.g. membership, power levels, bans/kick data) to intermittently be reset to a historical value due to a bad merge conflict resolution - a so-called ‘state reset’, or the ‘hotel california bug’.  This was improved in v2 and later of the room algorithm, which will be used as the default when creating new rooms in Matrix 1.0.  However, as of April 2019 most existing rooms still use the original buggy v1 algorithm.  The best way for now to handle a state reset is to manually re-apply any bans & ACLs if they are reset.  However, if state resets keep happening, it is possible to upgrade the room algorithm via Riot/Web with the undocumented `/upgraderoom 3` command - but please note this is **not** recommended, as we are still testing the final room algorithm and upgrade mechanism for Matrix 1.0.
 
 
-### Bridged rooms {#bridged-rooms}
+### Bridged rooms
 
 Moderating rooms which are bridged to other chat systems is a somewhat special case, as it’s hard to accurately bridge all possible moderation semantics into Matrix, and different bridges have different levels of sophistication.  As a general rule, bans are generally best applied on the native platform where the target exists.  For instance: when bridging a Matrix room with IRC, no effort is made to synchronise bans between the two platforms, given the entirely different banning criteria.
 
 If an IRC user is kicked from the Matrix side of the bridge, then if the kicking user is a chanop on the IRC side, they will be kicked there also - and vice versa.  However, if the user is then banned on the Matrix side, it will just stop users with that IRC username from participating in the Matrix view of the room, and does not result in a change of chanmode +b on the IRC side. However, if a Matrix user is banned from a room on the IRC side, then the bridge will stop the user from being able to re-join the Matrix room.
 
 
-### Policy servers {#policy-servers}
+### Policy servers
 
 In the early days of Matrix we proposed the concept of ‘active application servers’, aka ‘policy servers’, which could be used for imposing arbitrary policy decisions on a given room beyond the semantics given by power levels.  This would allow a central point of control to apply whatever logic it liked to what messages may be sent within a room.  In practice, this idea has not progressed beyond the idea phase, especially as it undermines Matrix’s core principles of decentralisation, and does not play well with E2E encryption.  However, such a system could be used in future if more exotic room moderation semantics were required.
 
@@ -136,19 +136,19 @@ In the early days of Matrix we proposed the concept of ‘active application ser
 *   UI for setting server ACLs ([https://github.com/vector-im/riot-web/issues/7084](https://github.com/vector-im/riot-web/issues/7084))
 
 
-## Enforcing server terms of use {#enforcing-server-terms-of-use}
+## Enforcing server terms of use
 
 The previous sections cover off the tools a room admin has available to enforce the code of conduct for a given room.  An entirely separate problem is empowering server admins to control how users use their server - particularly to comply with any legal or policy requirements their server might have.
 
 
-### Consenting to Terms and Conditions {#consenting-to-terms-and-conditions}
+### Consenting to Terms and Conditions
 
 Firstly, as a server administer, you need to ensure your users know the terms of use they are bound by when using the server.  The server should provide terms of use which users must click-through on registration.  This is configured in Synapse via the `user_content` config options - see [https://github.com/matrix-org/synapse/blob/master/docs/consent_tracking.md](https://github.com/matrix-org/synapse/blob/master/docs/consent_tracking.md) for details.
 
 We publish the policy documents for use of the Matrix.org server at [https://github.com/vector-im/policies/tree/master/docs/matrix-org](https://github.com/vector-im/policies/tree/master/docs/matrix-org) - please feel free to use these as the basis for your own server’s terms of use if needed.
 
 
-### Removing users, rooms and content {#removing-users-rooms-and-content}
+### Removing users, rooms and content
 
 Currently, administration of matrix servers is done by implementation-specific API, although we are working on providing a web GUI for administration as well as providing a standardised admin API as part of the Matrix spec.  The documentation of the API exposed by Synapse is: [https://github.com/matrix-org/synapse/tree/master/docs/admin_api](https://github.com/matrix-org/synapse/tree/master/docs/admin_api).
 
@@ -185,7 +185,7 @@ curl 'https://matrix.org/_matrix/client/r0/admin/quarantine_media/!room_id:matri
 This flags all content in the room as quarantined in the media repository and stops it being served to other clients or servers until the server admin can investigate and delete.
 
 
-### Banning clients by IP {#banning-clients-by-ip}
+### Banning clients by IP
 
 While we deliberately do not expose client IP addresses to room admins, it is of course critical for server admins to be able to restrict access to their servers based on IP to handle abuse.
 
@@ -221,14 +221,14 @@ See [https://github.com/matrix-org/synapse/blob/master/docs/admin_api/user_admin
 Synapse does not currently provide tools to block connections by IP - instead we suggest this is done in the load balancer or firewall in order to drop the connection as early as possible.
 
 
-### Banning servers {#banning-servers}
+### Banning servers
 
 “Defederating” your server from another server is currently done on a room by room basis - either using server ACLs if you have control of the room in question, or by using the /shutdown_room API if you do not.
 
 In future, this may be refined to let servers automatically implement /shutdown_room semantics on any room which matches a given pattern (e.g. whose room admins are on a given server).
 
 
-### Moderating the room directory {#moderating-the-room-directory}
+### Moderating the room directory
 
 Each Matrix server maintains a publicly viewable directory of rooms.  By default, any user can publish rooms to the directory, which can be an abuse vector.
 
@@ -237,7 +237,7 @@ The server admin can limit which users are allowed to publish rooms to the publi
 The server admin can moderate the directory by delisting rooms by calling the /directory/list/room API with visibility: private ([https://matrix.org/docs/spec/client_server/r0.4.0.html#put-matrix-client-r0-directory-list-room-roomid](https://matrix.org/docs/spec/client_server/r0.4.0.html#put-matrix-client-r0-directory-list-room-roomid)).
 
 
-### Moderating room aliases {#moderating-room-aliases}
+### Moderating room aliases
 
 Rooms in Matrix are joined via an alias which resides on a given server - e.g. #matrix:matrix.org.  It is common for a room to have multiple aliases, which in turn may be spread across different servers.  For instance, #matrix:matrix.org is also #matrixhq:tchncs.de and many others.
 
@@ -258,24 +258,24 @@ Riot/Web also exposes the ability to delete a room alias from the Room Directory
 *   Ability to block a server from federating to your server (as rooms are replicated over _all_ participating servers and do not have a single owner, the criteria you would use to block rooms “from a server” en masse is not well defined. One could be found if needed however.)
 
 
-## Handling unwanted content as a user {#handling-unwanted-content-as-a-user}
+## Handling unwanted content as a user
 
 No matter how great your room moderators and server admins happen to be, it is inevitable that in a massive open network like Matrix there will be content that you as a user do not wish to see - whether it’s yet to be moderated, or because it’s irrelevant, or you personally find it objectionable, etc.  Moderators and server admins often depend on support from the wider community to identify issues that need to be addressed.
 
 
-### Reporting bad content {#reporting-bad-content}
+### Reporting bad content
 
 We provide two mechanisms today to let users report abusive content to their server admin (i.e. content which is against the terms of use of their server).  On Riot/iOS and Riot/Android, this is the “Report Content” menu button, which calls the /report API ([https://matrix.org/docs/spec/client_server/latest.html#reporting-content](https://matrix.org/docs/spec/client_server/latest.html#reporting-content)) on the server to flag the message in question.
 
 Alternatively, server admins should advertise an abuse email address for gathering reports of abusive content (e.g. abuse-at-matrix.org is Matrix.org’s abuse contact address).
 
 
-### Blocking users {#blocking-users}
+### Blocking users
 
 Another vital tool is the ability to block users from contacting you.  Matrix supports this through the ‘ignore’ feature ([https://matrix.org/docs/spec/client_server/latest.html#ignoring-users](https://matrix.org/docs/spec/client_server/latest.html#ignoring-users)), which is available in the user info panel in Riot/Web and equivalent on Riot/Mobile.
 
 
-### Filtering the room directory {#filtering-the-room-directory}
+### Filtering the room directory
 
 Currently the room directory for a large server can contain a massive number of entirely unrelated rooms.  A common request is to provide tools to let the user filter this list to only rooms they are interested in.  We are currently looking into ways of doing this - options on the table include:
 
@@ -286,7 +286,7 @@ Currently the room directory for a large server can contain a massive number of 
 *   Using decentralised reputation data to let the user decide which view of the room directory to see (e.g. “show me rooms which folks +matrix:matrix.org have upvoted”)
 
 
-### Using reactions to filter content {#using-reactions-to-filter-content}
+### Using reactions to filter content
 
 In the medium/long term, we are hoping to rely more extensively on reputation data gathered from emoji reactions to help users curate their content filters.  It’s critical to understand that this is similar but different to Reddit or HackerNews style upvoting/downvoting - in that in Matrix you would be maintaining and curating your _own_ personal filtering criteria, rather than being obligated to use a single official centralised filter calculated by Reddit/HN/etc.
 
@@ -321,7 +321,7 @@ See [#matrix-reputation:matrix.org](https://matrix.to/#/#matrix-reputation:matri
 *   Ability for users to apply their own personal filters to content in Matrix does not yet exist, whether by curating their own preferences or subscribing to a blend of someone else’s.
 
 
-## Conclusion {#conclusion}
+## Conclusion
 
 Matrix provides a comprehensive set of moderation tools today, with scope for further refinements in future as detailed in the ‘outstanding issues’ sections above (as of April 2019).  As the Matrix.org team, In practice we use the features above to relatively successfully admin one of the largest servers on the network (matrix.org itself, with ~70K concurrent users), and to moderate one of the larger communities on the network ([+matrix:matrix.org](https://matrix.to/#/+matrix:matrix.org); ~30 rooms with over 10K users present).
 
