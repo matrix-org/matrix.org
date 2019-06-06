@@ -54,8 +54,18 @@ pre {
   padding-bottom: 8px;
 }
 
+.overscroll {
+  overflow-x: scroll;
+  width: 100%;
+  max-width: calc(100vw - 20px);
+}
+
 .tmn-two-column {
     display: 'inline-table';
     column-count: 2;
     text-align: left;
+}
+
+.width-100 {
+  width: 100%;
 }
