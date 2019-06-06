@@ -168,8 +168,6 @@ const resultLegal = await wrapper(
 }`))
 
   resultLegal.data.allFile.edges.forEach((edge, index) => {
-    if (! edge.node.childMdx) return
-    console.log(edge)
     createPage({
       path: "/legal/" + _.kebabCase(edge.node.childMdx.frontmatter.title),
       component: noNavTemplate,
