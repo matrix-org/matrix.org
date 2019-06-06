@@ -19,3 +19,9 @@ body {
         "Segoe UI Emoji", /* Emojis*/
         "Segoe UI Symbol"; /* Emojis*/
 }
+
+.tmn-two-column {
+    display: 'inline-table';
+    column-count: 2;
+    text-align: left;
+}
