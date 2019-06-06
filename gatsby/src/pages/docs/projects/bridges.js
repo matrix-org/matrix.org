@@ -12,7 +12,7 @@ const Bridges = ({data}) => {
         <MXContentMain>
             <Helmet title={`Bridges | ${config.siteTitle}`} />
             <h1 id="bridges">Bridges</h1>
-
+            <div class="bridgesPage">
 <table>
   <thead>
     <tr>
@@ -711,7 +711,7 @@ setup instructions are available on the repo. It uses
 
 <p>Check it out from <a href="https://code.rix.si/rrix/matrix-feedbot">Ryan’s git repo</a></p>
 
-
+</div>
 
         </MXContentMain>
     </Layout>)

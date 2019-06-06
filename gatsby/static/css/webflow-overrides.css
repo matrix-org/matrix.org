@@ -25,3 +25,11 @@ body {
     column-count: 2;
     text-align: left;
 }
+
+.bridgesPage img {
+    max-width: 100px;
+}
+
+.bridgesPage table {
+    width: 100%;
+}
