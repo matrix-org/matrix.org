@@ -61,6 +61,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const categoryTemplate = require.resolve('./src/templates/category.js')
   const postListTemplate = require.resolve('./src/templates/post-list.js')
   const projectTemplate = require.resolve('./src/templates/project.js')
+  const noNavTemplate = require.resolve('./src/templates/noNavPage.js')
 
   const resultPosts = await wrapper(
     graphql(`
@@ -145,11 +146,50 @@ exports.createPages = async ({ graphql, actions }) => {
 
   
 
+const resultLegal = await wrapper(
+  graphql(`
+{
+    allFile(filter: { sourceInstanceName: { eq: "legal" } }) {
+        
+        edges {
+            node {
+                childMdx {
+                    frontmatter {
+                        title
+                    }
+                    fields {
+                      slug
+                    }
+                }
+                absolutePath
+            }
+        }
+    }
+}`))
+
+  resultLegal.data.allFile.edges.forEach((edge, index) => {
+    if (! edge.node.childMdx) return
+    console.log(edge)
+    createPage({
+      path: "/legal/" + _.kebabCase(edge.node.childMdx.frontmatter.title),
+      component: noNavTemplate,
+      context: {
+        slug: edge.node.childMdx.fields.slug
+      },
+    })
+  })
+
   const resultPages = await wrapper(
     graphql(`
       {
         allMdx(sort: { fields: [frontmatter___date], order: DESC },
-          filter: {frontmatter: {date: {eq: null}, layout: {nin:["project", "projectimage"]}}}) {
+          filter: {
+            frontmatter: {
+              date: {eq: null},
+              layout: {nin:["project", "projectimage"]},
+              section: {nin:["legal"]}
+            }
+          }) {
           edges {
             node {
               fields {

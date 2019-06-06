@@ -17,19 +17,19 @@ const Legal = () => {
                 Links to our legal documentation:
                 <ul>
                     <li>
-                        <a href="https://matrix.org/docs/guides/privacy_notice.html">Privacy Notice</a>
+                        <a href="/legal/privacy-notice">Privacy Notice</a>
                     </li>
                     <li>
-                        <a href="https://matrix.org/docs/guides/terms_and_conditions.html">Terms and Conditions</a>
+                        <a href="/legal/terms-and-conditions">Terms and Conditions</a>
                     </li>
                     <li>
-                        <a href="https://matrix.org/docs/guides/code_of_conduct">Code of Conduct</a>
+                        <a href="/legal/code-of-conduct">Code of Conduct</a>
                     </li>
                     <li>
-                        <a href="https://matrix.org/docs/guides/copyright_notice">Copyright Notice</a>
+                        <a href="/legal/copyright-notice">Copyright Notice</a>
                     </li>
                     <li>
-                        <a href="https://matrix.org/docs/guides/exceptional_erasure_policy">Exceptional Erasure Policy</a>
+                        <a href="/legal/exceptional-erasure-policy">Exceptional Erasure Policy</a>
                     </li>
                 </ul>
                 </div>
