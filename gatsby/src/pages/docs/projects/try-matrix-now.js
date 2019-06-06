@@ -32,6 +32,63 @@ const TryMatrixNow = ({data}) => {
         <MXContentMain>
             <Helmet title={`Try Matrix Now | ${config.siteTitle}`} />
             <h1>Try Matrix Now</h1>
+            <p>To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>. You can also check the <a href="https://matrix.org/docs/projects/clients-matrix">Matrix Clients Matrix</a> to see more detail.</p>
+        <div class="mxblock">
+          <div class="mxgrid mxgrid--discover">
+            <div class="mxgrid_item33">
+              <div class="mxgrid__item__bg mxgrid__item__bg--clear">
+                <h4 class="mxgrid__item__bg__hx">
+                    <a href="/docs/projects/client/riot">Riot</a>
+                </h4>
+                <p class="mxgrid__item__bg__p">If you like glossy and feature-rich web clients, try Riot. Available <a href="./client/riot.html">on the web</a> and as a <a href="https://riot.im/desktop.html">desktop client</a>.</p>
+                <div class="mxgrid__item__bg__vert">
+                    <img src="/docs/projects/images/riot-web-featured.png" alt="" class="mxgrid__item__bg__img" />
+                </div>
+              </div>
+            </div>
+            <div class="mxgrid_item33">
+              <div class="mxgrid__item__bg mxgrid__item__bg--clear">
+                <h4 class="mxgrid__item__bg__hx">Riot for Android and iOS</h4>
+                <p class="mxgrid__item__bg__p"> Riot is available on <a href="/docs/projects/client/riot-android">Android</a> and <a href="/docs/projects/client/riot-ios">iOS</a></p>
+                <div class="mxgrid__item__bg__vert">
+                    <img src="/docs/projects/images/vector-android-featured.png" alt="" class="mxgrid__item__bg__img"/>
+                </div>
+              </div>
+            </div>
+            <div class="mxgrid_item33">
+              <div class="mxgrid__item__bg mxgrid__item__bg--clear">
+                <h4 class="mxgrid__item__bg__hx">
+                    <a href="/docs/projects/client/weechat-matrix">Weechat/Matrix</a></h4>
+                <p class="mxgrid__item__bg__p"> If you like command line clients, try this Weechat Matrix protocol script written in python </p>
+                <div class="mxgrid__item__bg__vert"><img src="https://raw.githubusercontent.com/benparsons/matrix-notes/master/twim/weechat-matrix.png" alt="" class="mxgrid__item__bg__img"/></div>
+              </div>
+            </div>
+            <div class="mxgrid_item33">
+              <div class="mxgrid__item__bg mxgrid__item__bg--clear">
+                <h4 class="mxgrid__item__bg__hx">
+                <a href="/docs/projects/client/quaternion">Quaternion</a></h4>
+                <p class="mxgrid__item__bg__p">A cross-platform desktop client based on Qt5/QML.</p>
+                <div class="mxgrid__item__bg__vert"><img src="https://raw.githubusercontent.com/QMatrixClient/Quaternion/master/quaternion.png" alt="" class="mxgrid__item__bg__img"/></div>
+              </div>
+            </div>
+            <div class="mxgrid_item33">
+              <div class="mxgrid__item__bg mxgrid__item__bg--clear">
+                <h4 class="mxgrid__item__bg__hx">
+                <a href="/docs/projects/client/nheko-reborn">Nheko</a></h4>
+                <p class="mxgrid__item__bg__p">Nheko is a glossy native desktop app for Matrix, based on Qt5.</p>
+                <div class="mxgrid__item__bg__vert"><img src="/docs/projects/images/nheko_thumb.png" alt="" class="mxgrid__item__bg__img"/></div>
+              </div>
+            </div>
+            <div class="mxgrid_item33">
+              <div class="mxgrid__item__bg mxgrid__item__bg--clear">
+                <h4 class="mxgrid__item__bg__hx">
+                <a href="/docs/projects/client/fractal">Fractal</a></h4>
+                <p class="mxgrid__item__bg__p"> If you're looking for a client for GNOME, try Fractal.</p>
+                <div class="mxgrid__item__bg__vert"><img src="/docs/projects/images/fractal-featured.png" alt="" class="mxgrid__item__bg__img"/></div>
+              </div>
+            </div>
+          </div>
+        </div>
             <h2>Let's go deeper</h2>
             <p>Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, application services, bots, etc. If you’d like to learn more, this page aims to collect all known Matrix projects. To add a new one (or update an existing one), you can submit a PR to the <a href="https://github.com/matrix-org/matrix.org">matrix.org</a> project on github - the existing projects can be found <a href="https://github.com/matrix-org/matrix.org/tree/master/jekyll/_posts/projects">here</a> - or just let us know in the #matrix:matrix.org room.<br /></p>
             <div class="mxblock">
