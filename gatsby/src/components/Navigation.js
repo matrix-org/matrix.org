@@ -73,7 +73,7 @@ const Navigation = (navmode) => (
     <div data-collapse="medium" data-animation="default" data-duration="400" class="mxnavbar w-nav">
       <div class="mxnavbar__container w-container">
         <a href="index.html" class="mxnavbar__brand w-nav-brand">
-<img src="/images/matrix-logo.svg" alt="" class="mxnavbar__logo" />
+<img src="/images/matrix-logo.svg" alt="" className="mxnavbar__logo" />
 </a>
         <nav role="navigation" class="mxnavbar__navmenu w-nav-menu">
           <a href="/docs/projects/try-matrix-now" class={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "discover" ? "w--current":"")}>Discover</a>

@@ -97,32 +97,32 @@ const TryMatrixNow = ({data}) => {
                     <div class="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--left_align">
                         <h4 class="mxgrid__item__bg__hx">Project type</h4>
                         <p class="mxgrid__item__bg__p">
-                            <input type="checkbox" id="chk-type-client" checked="checked" />
-                            <label for="chk-type-client"> Clients</label>
+                            <input type="checkbox" id="chk-type-client" />
+                            <label htmlFor="chk-type-client"> Clients</label>
                         </p>
                         <p class="mxgrid__item__bg__p">
-                            <input type="checkbox" id="chk-type-server" checked="checked" />
-                            <label for="chk-type-client"> Servers</label>
+                            <input type="checkbox" id="chk-type-server" />
+                            <label htmlFor="chk-type-client"> Servers</label>
                         </p>
                         <p class="mxgrid__item__bg__p">
-                            <input type="checkbox" id="chk-type-as" checked="checked" />
-                            <label for="chk-type-client"> Application Services</label>
+                            <input type="checkbox" id="chk-type-as" />
+                            <label htmlFor="chk-type-client"> Application Services</label>
                         </p>
                         <p class="mxgrid__item__bg__p">
-                            <input type="checkbox" id="chk-type-sdk" checked="checked" />
-                            <label for="chk-type-client"> Client SDKs</label>
+                            <input type="checkbox" id="chk-type-sdk" />
+                            <label htmlFor="chk-type-client"> Client SDKs</label>
                         </p>
                         <p class="mxgrid__item__bg__p">
-                            <input type="checkbox" id="chk-type-bot" checked="checked" />
-                            <label for="chk-type-client"> Bots</label>
+                            <input type="checkbox" id="chk-type-bot" />
+                            <label htmlFor="chk-type-client"> Bots</label>
                         </p>
                         <p class="mxgrid__item__bg__p">
-                            <input type="checkbox" id="chk-type-bridge" checked="checked" />
-                            <label for="chk-type-client"> Bridges</label>
+                            <input type="checkbox" id="chk-type-bridge" />
+                            <label htmlFor="chk-type-client"> Bridges</label>
                         </p>
                         <p class="mxgrid__item__bg__p">
-                            <input type="checkbox" id="chk-type-other" checked="checked" />
-                            <label for="chk-type-client"> Other</label>
+                            <input type="checkbox" id="chk-type-other" />
+                            <label htmlFor="chk-type-client"> Other</label>
                         </p>
                     </div>
                 </div>
@@ -134,9 +134,9 @@ const TryMatrixNow = ({data}) => {
                             "Late Alpha","Alpha","Early Alpha","No longer maintained"].map(function(maturity) {
                                 const id = "chk-maturity-" + maturity.replace(/ /g, '')
                                 return (
-                                    <p class="mxgrid__item__bg__p">
-                                        <input type="checkbox" id={id} name={id} checked="checked" />
-                                        <label for={id}> {maturity}</label>
+                                    <p key={id} class="mxgrid__item__bg__p">
+                                        <input type="checkbox" id={id} name={id} />
+                                        <label htmlFor={id}> {maturity}</label>
                                     </p>)
                             })
                         }
@@ -147,12 +147,16 @@ const TryMatrixNow = ({data}) => {
                         <h4 class="mxgrid__item__bg__hx">Language</h4>
                         <div class="tmn-two-column">
                         {
-                            languages.map(function(maturity) {
-                                const id = "chk-language-" + maturity.replace(/ /g, '')
+                            languages.map(function(language) {
+                                const id = "chk-language-" + language
+                                    .replace(/ /g, '')
+                                    .replace(/\+/g, '-')
+                                    .replace(/\//g, '-')
+                                    .replace(/#/g, '-')
                                 return (
-                                    <p class="mxgrid__item__bg__p">
-                                        <input type="checkbox" id={id} name={id} checked="checked" />
-                                        <label for={id}> {maturity}</label>
+                                    <p key={id} class="mxgrid__item__bg__p">
+                                        <input type="checkbox" id={id} name={id} />
+                                        <label htmlFor={id}> {language}</label>
                                     </p>)
                             })
                         }
@@ -166,9 +170,9 @@ const TryMatrixNow = ({data}) => {
                         licenses.map(function(maturity) {
                             const id = "chk-license-" + maturity.replace(/ /g, '')
                             return (
-                                <p class="mxgrid__item__bg__p">
-                                    <input type="checkbox" id={id} name={id} checked="checked" />
-                                    <label for={id}> {maturity}</label>
+                                <p key={id} class="mxgrid__item__bg__p">
+                                    <input type="checkbox" id={id} name={id} />
+                                    <label htmlFor={id}> {maturity}</label>
                                 </p>)
                         })
                     }
