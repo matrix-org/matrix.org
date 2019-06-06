@@ -2,14 +2,14 @@
 
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Layout, Wrapper, Header, MXContentMain} from '../components'
+import { Layout, MXContentMain} from '../components'
 
 import config from '../../config'
 
 
 
 const Legal = () => {
-    return (<Layout navmode="develop">
+    return (<Layout hasNavPadding="true">
             <Helmet title={`Legal | ${config.siteTitle}`} />
             <MXContentMain>
           <div class="mxcontent__main__doc">

@@ -9,15 +9,16 @@ import useBuildTime from '../hooks/useBuildTime'
 import Navigation from './Navigation'
 import Footer from './Footer'
 
-const Layout = ({ children, customSEO, navmode,  hasSideNavigation }) => {
+const Layout = ({ children, customSEO, navmode,  hasSideNavigation, hasNavPadding }) => {
   const buildTime = useBuildTime()
-  const mxContentClass = "mxcontent" +  (hasSideNavigation === "true" ?  " mxcontent--docs" : "")
+  const mxContentWrapperClass = "mxcontentwrapper" + (hasNavPadding === "true" ? " mxcontentwrapper--navpadding" : "")
+  const mxContentClass = "mxcontent" + (hasSideNavigation === "true" ?  " mxcontent--docs" : "")
   return (
     <ThemeProvider theme={theme}>
       <>
         <Navigation navmode={navmode} />
         {!customSEO && <SEO buildTime={buildTime} />}
-        <div class="mxcontentwrapper">
+        <div class={mxContentWrapperClass}>
           <div className={mxContentClass}>
             {children}
           </div>
@@ -48,7 +49,8 @@ Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
   customSEO: PropTypes.bool,
   navmode: PropTypes.string,
-  hasSideNavigation: PropTypes.string
+  hasSideNavigation: PropTypes.string,
+  hasNavPadding: PropTypes.string
 }
 
 Layout.defaultProps = {
