@@ -1,17 +1,9 @@
-.mxcontent__nav__link--title a, .mxcontent__nav__link a {
-    color: inherit;
-}
-
-label {
-    display: initial;
-}
-
-body {  
+body {
     font-family: "Helvetica Neue",
-        -apple-system, 
-        BlinkMacSystemFont, 
-        "Segoe UI", 
-        Roboto, 
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
         Helvetica,
         Arial,
         sans-serif,
@@ -20,10 +12,18 @@ body {
         "Segoe UI Symbol"; /* Emojis*/
 }
 
-.tmn-two-column {
-    display: 'inline-table';
-    column-count: 2;
-    text-align: left;
+label {
+    display: initial;
+}
+
+pre {
+  overflow-x: scroll;
+  width: 100%;
+  max-width: calc(100vw - 20px);
+}
+
+.mxcontent__nav__link--title a, .mxcontent__nav__link a {
+    color: inherit;
 }
 
 .bridgesPage img {
@@ -32,4 +32,30 @@ body {
 
 .bridgesPage table {
     width: 100%;
+}
+
+.overscroll {
+  overflow-x: scroll;
+  width: 100%;
+  max-width: calc(100vw - 20px);
+}
+
+.sdk-table {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.sdk-table td, tr, th {
+  padding-right: 20px;
+  padding-bottom: 4px;
+}
+
+.sdk-table th {
+  padding-bottom: 8px;
+}
+
+.tmn-two-column {
+    display: 'inline-table';
+    column-count: 2;
+    text-align: left;
 }

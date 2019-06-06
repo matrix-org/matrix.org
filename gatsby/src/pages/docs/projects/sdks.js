@@ -13,33 +13,35 @@ const Bridges = ({data}) => {
       s.node.childMdx.frontmatter.categories &&
       s.node.childMdx.frontmatter.categories[0] === 'sdk' &&
       s.node.childMdx.frontmatter.featured);
- 
+
     return (<Layout navmode="discover">
         <MXContentMain>
           <Helmet title={`SDKs | ${config.siteTitle}`} />
           <h1 id="SDKs">SDKs</h1>
-          <table>
-            <tr>
-              <th></th>
-              <th>Language/Platform</th>
-              <th>Maintainer</th>
-              <th>Repo</th>
-              <th>Matrix Room</th>
-              <th>Supports E2E</th>
-            </tr>
-            {sdks.map(function(edge) {
-              const s = edge.node.childMdx.frontmatter
-              const slugLink = "#" + _.kebabCase(s.title)
-              return (<tr>
-                <td><a href={slugLink}>{s.title}</a></td>
-                <td>{s.language}</td>
-                <td>{s.author}</td>
-                <td><a href={s.repo}>{s.repo}</a></td>
-                <td>{s.room}</td>
-                <td>{s.e2e}</td>
-              </tr>)
-          })}
-          </table>
+          <div class="overscroll">
+              <table class="sdk-table">
+                <tr>
+                  <th></th>
+                  <th>Language / Platform</th>
+                  <th>Maintainer</th>
+                  <th class="repo">Repo</th>
+                  <th>Matrix Room</th>
+                  <th>Supports E2E</th>
+                </tr>
+                {sdks.map(function(edge) {
+                  const s = edge.node.childMdx.frontmatter
+                  const slugLink = "#" + _.kebabCase(s.title)
+                  return (<tr>
+                    <td><a href={slugLink}>{s.title}</a></td>
+                    <td>{s.language}</td>
+                    <td>{s.author}</td>
+                    <td><a href={s.repo}>{s.repo}</a></td>
+                    <td>{s.room}</td>
+                    <td>{s.e2e}</td>
+                  </tr>)
+              })}
+              </table>
+          </div>
 
           {sdks.map(function(edge) {
             const s = edge.node.childMdx.frontmatter
@@ -50,7 +52,7 @@ const Bridges = ({data}) => {
               </div>
               )
           })}
-          
+
         </MXContentMain>
     </Layout>)
 }
@@ -59,7 +61,7 @@ const Bridges = ({data}) => {
 export const query = graphql`
 {
     allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
-        
+
         edges {
             node {
                 childMdx {
