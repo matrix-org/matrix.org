@@ -19,21 +19,6 @@ const Title = styled.h1`
   }
 `
 
-const Initiale = styled.span`
-  position: absolute;
-  font-size: 7rem;
-  transform: translate(-50%, -50%);
-  opacity: 0.08;
-  user-select: none;
-  z-index: -1;
-`
-
-const Excerpt = styled.p`
-  grid-column: -1 / 1;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-`
-
 const PostContent = styled.div`
   margin-top: 1rem;
 `

@@ -4,7 +4,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
 import { Layout, MXContentMain, MXTryMatrixNowSection } from '../../../components'
 import config from '../../../../config'
 
