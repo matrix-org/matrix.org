@@ -43,6 +43,8 @@ exports.onCreateNode = ({ node, actions }) => {
           if (node.frontmatter.categories && node.frontmatter.categories[0]) {
             slug = `/docs/projects/${node.frontmatter.categories[0]}${slug}`
           } else {
+            console.log("===ERROR===")
+            console.log(node)
             slug = `/docs/projects/error${slug}`
           }
       } else {
