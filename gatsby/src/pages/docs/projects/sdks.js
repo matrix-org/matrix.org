@@ -19,7 +19,7 @@ const Bridges = ({data}) => {
           <Helmet title={`SDKs | ${config.siteTitle}`} />
           <h1 id="SDKs">SDKs</h1>
           <div class="overscroll">
-              <table class="sdk-table">
+              <table class="legacy-table">
                 <tr>
                   <th></th>
                   <th>Language / Platform</th>

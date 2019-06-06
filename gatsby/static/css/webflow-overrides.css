@@ -34,23 +34,17 @@ pre {
     width: 100%;
 }
 
-.overscroll {
-  overflow-x: scroll;
-  width: 100%;
-  max-width: calc(100vw - 20px);
-}
-
-.sdk-table {
+.legacy-table {
   text-align: left;
   margin-bottom: 10px;
 }
 
-.sdk-table td, tr, th {
+.legacy-table td, tr, th {
   padding-right: 20px;
   padding-bottom: 4px;
 }
 
-.sdk-table th {
+.legacy-table th {
   padding-bottom: 8px;
 }
 
