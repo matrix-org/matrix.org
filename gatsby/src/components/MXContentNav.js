@@ -11,7 +11,7 @@ const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
         <h3>{title}</h3>
         {
         content.map(p => {
-            var itemClass = "mxcontent__nav__link mxcontent__nav__link--title";
+            var itemClass = "mxcontent__nav__link";
             if (currentSlug === p.slug && currentSlug.indexOf("/docs") === 0) {
                 itemClass += " mxcontent__nav__link--active";
                 tocRendered = true;
