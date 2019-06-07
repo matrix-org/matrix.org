@@ -822,6 +822,10 @@ a {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .mxgrid__item__bg.mxgrid__item__bg--clear.mxgrid__item__bg--guardian.mxgrid__item__bg--guardian--invert {
@@ -1307,8 +1311,15 @@ a {
 }
 
 .mxgrid__item--guardian__content__hx {
+  margin-top: 0px;
+  margin-bottom: 10px;
   font-size: 24px;
   line-height: 30px;
+}
+
+.mxgrid__item--guardian__content__p {
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 
 .mxblock--foundation__p {
@@ -1317,6 +1328,10 @@ a {
 
 .mxgrid__item--guardian__content {
   margin-left: 40px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
   text-align: left;
 }
 
