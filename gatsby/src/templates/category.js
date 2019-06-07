@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from '../components'
+import { Layout, Wrapper, Header, Subline, Article, SectionTitle, MXContentMain } from '../components'
 import config from '../../config'
 
 const Content = styled.div`
@@ -28,28 +28,25 @@ const Category = ({ pageContext: { category }, data: { allMdx } }) => {
 
   return (
     <Layout navmode="blog">
-      <Wrapper>
-        <Helmet title={`Category: ${category} | ${config.siteTitle}`} />
-        <Header />
-        <Content>
-          <SectionTitle>Category &ndash; {category}</SectionTitle>
-          <Subline sectionTitle>
-            {subline} (See <Link to="/blog/categories">all categories</Link>)
-          </Subline>
-          {edges.map(post => (
-            <Article
-              title={post.node.frontmatter.title}
-              date={post.node.frontmatter.date}
-              excerpt={post.node.excerpt}
-              timeToRead={post.node.timeToRead}
-              slug={post.node.fields.slug}
-              categories={post.node.frontmatter.categories}
-              key={post.node.fields.slug}
-              body={post.node.code.body}
-            />
-          ))}
-        </Content>
-      </Wrapper>
+      <Helmet title={`Category: ${category} | ${config.siteTitle}`} />
+      <MXContentMain>
+        <SectionTitle>Category &ndash; {category}</SectionTitle>
+        <Subline sectionTitle>
+          {subline} (See <Link to="/blog/categories">all categories</Link>)
+        </Subline>
+        {edges.map(post => (
+          <Article
+            title={post.node.frontmatter.title}
+            date={post.node.frontmatter.date}
+            excerpt={post.node.excerpt}
+            timeToRead={post.node.timeToRead}
+            slug={post.node.fields.slug}
+            categories={post.node.frontmatter.categories}
+            key={post.node.fields.slug}
+            body={post.node.code.body}
+          />
+        ))}
+      </MXContentMain>
     </Layout>
   )
 }
