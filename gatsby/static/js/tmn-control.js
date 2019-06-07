@@ -2,6 +2,7 @@ $(document).ready(function () {
     console.log("tmn-control loaded")
     console.log($("[id^=chk-language]"))
     setTimeout(() =>{
+      $.getScript("/js/webflow.js");
         /* For each type, a click event */
         $("[id^=chk-type]").click(function(a) {
         var type = a.target.id.replace("chk-type-", "");
