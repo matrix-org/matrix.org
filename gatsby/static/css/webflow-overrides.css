@@ -63,3 +63,11 @@ pre {
 .width-100 {
   width: 100%;
 }
+
+.definition-list {
+  display: none;
+}
+
+div.title {
+  font-size: large;
+}
