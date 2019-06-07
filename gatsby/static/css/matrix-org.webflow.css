@@ -672,6 +672,10 @@ a {
   align-items: center;
 }
 
+.mxblock.mxblock--foundation {
+  text-align: center;
+}
+
 .mxblock--hero__hx {
   margin-bottom: 40px;
   line-height: 48px;
@@ -750,6 +754,14 @@ a {
   max-width: 1200px;
 }
 
+.mxgrid.mxgrid--guardians {
+  margin-bottom: 40px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .mxgrid__item__bg {
   display: -webkit-box;
   display: -webkit-flex;
@@ -799,6 +811,25 @@ a {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
+}
+
+.mxgrid__item__bg.mxgrid__item__bg--clear.mxgrid__item__bg--guardian {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.mxgrid__item__bg.mxgrid__item__bg--clear.mxgrid__item__bg--guardian.mxgrid__item__bg--guardian--invert {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .mxgrid__item__bg__img {
@@ -876,6 +907,13 @@ a {
 }
 
 .mxgrid__item__bg__vert.mxgrid__item__bg__vert--project {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.mxgrid__item__bg__vert.mxgrid__item__bg__vert--guardian {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
@@ -1255,6 +1293,38 @@ a {
   margin-bottom: 40px;
 }
 
+.mxblock--foundation__hx {
+  margin-bottom: 40px;
+}
+
+.mxgrid__item--guardian__bg__img {
+  width: 128px;
+  height: 128px;
+  min-height: 128px;
+  min-width: 128px;
+  border-radius: 128px;
+  background-color: #f4f4f4;
+}
+
+.mxgrid__item--guardian__content__hx {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.mxblock--foundation__p {
+  margin-bottom: 20px;
+}
+
+.mxgrid__item--guardian__content {
+  margin-left: 40px;
+  text-align: left;
+}
+
+.mxgrid__item--guardian__content.mxgrid__item--guardian__content--invert {
+  margin-right: 40px;
+  margin-left: 0px;
+}
+
 @media (max-width: 991px) {
   .mxnavbar__container {
     margin-right: 20px;
@@ -1387,6 +1457,17 @@ a {
     height: 600px;
     background-size: cover;
   }
+  .mxgrid__support {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
   .mxgrid__support__item {
     width: 50%;
   }
@@ -1397,6 +1478,9 @@ a {
     padding-right: 40px;
   }
   .mxblock--try__hx {
+    margin-bottom: 20px;
+  }
+  .mxblock--foundation__hx {
     margin-bottom: 20px;
   }
 }
@@ -1465,6 +1549,20 @@ a {
   .mxgrid__item50 {
     width: 100%;
   }
+  .mxgrid__item__bg.mxgrid__item__bg--clear.mxgrid__item__bg--guardian {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .mxgrid__item__bg.mxgrid__item__bg--clear.mxgrid__item__bg--guardian.mxgrid__item__bg--guardian--invert {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
   .mxgrid__item33 {
     width: 100%;
   }
@@ -1504,6 +1602,13 @@ a {
     padding-right: 0px;
     padding-bottom: 10px;
   }
+  .mxgrid__item--guardian__content {
+    margin-left: 0px;
+    text-align: center;
+  }
+  .mxgrid__item--guardian__content.mxgrid__item--guardian__content--invert {
+    margin-right: 0px;
+  }
 }
 
 @media (max-width: 479px) {
@@ -1514,6 +1619,9 @@ a {
   .mxblock--hero__hx {
     font-size: 32px;
     line-height: 44px;
+  }
+  .mxgrid.mxgrid--guardians {
+    margin-bottom: 0px;
   }
   .mxgrid__sponsors__item {
     width: 100%;
