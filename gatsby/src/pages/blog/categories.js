@@ -5,7 +5,7 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 
-import { Layout, Wrapper, Header, SectionTitle } from '../../components'
+import { Layout, MXContentMain, Header, SectionTitle } from '../../components'
 import config from '../../../config'
 
 const Content = styled.div`
@@ -35,11 +35,10 @@ const Category = ({
   },
 }) => (
   <Layout navmode="blog">
-    <Wrapper>
       <Helmet title={`Categories | ${config.siteTitle}`} />
       <Header>
       </Header>
-      <Content>
+      <MXContentMain>
         <SectionTitle>Categories</SectionTitle>
         {group.map(category => (
           <Title key={category.fieldValue}>
@@ -47,8 +46,7 @@ const Category = ({
             {category.totalCount})
           </Title>
         ))}
-      </Content>
-    </Wrapper>
+      </MXContentMain>
   </Layout>
 )
 
@@ -64,7 +62,9 @@ Category.propTypes = {
 
 export const postQuery = graphql`
   query CategoriesPage {
-    allMdx {
+    allMdx (
+      filter: {frontmatter: {date: {ne: null} } }
+    ){
       group(field: frontmatter___categories) {
         fieldValue
         totalCount
