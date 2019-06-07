@@ -10,7 +10,7 @@ import config from '../../config'
 
 const TryNow = () => {
     return (<Layout hasNavPadding="true">
-            <Helmet title={`Legal | ${config.siteTitle}`} />
+            <Helmet title={`Try Now | ${config.siteTitle}`} />
             <MXContentMain>
             <div class="mxblock mxblock--try">
                 <h1 class="mxblock--try__hx">Try Now</h1>
