@@ -165,8 +165,7 @@ const Foundation = () => {
               "https://matrix.org/blog/2018/06/20/towards-open-governance-for-matrix-org">
             https://matrix.org/blog/2018/06/20/towards-open-governance-for-matrix-org</a></li>
             <li><a href=
-            "https://github.com/matrix-org/matrix-doc/issues/1318">https://github.com/matrix-org/matrix-doc/issues/1318</a>
-          (v1 proposal)</li>
+            "https://github.com/matrix-org/matrix-doc/issues/1318">https://github.com/matrix-org/matrix-doc/issues/1318</a> (v1 proposal)</li>
             <li><a href=
               "https://matrix.org/blog/2018/10/29/introducing-the-matrix-org-foundation-part-1-of-2">
             https://matrix.org/blog/2018/10/29/introducing-the-matrix-org-foundation-part-1-of-2</a></li>
