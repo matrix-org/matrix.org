@@ -121,12 +121,21 @@ exports.createPages = async ({ graphql, actions }) => {
   const categories = Array.from(categorySet)
 
   categories.forEach(category => {
-    createPage({
-      path: `/blog/category/${_.kebabCase(category)}`,
-      component: categoryTemplate,
-      context: {
-        category,
-      },
+    const postsPerPage = 6
+    const numPages = Math.ceil(posts.length / postsPerPage)
+
+    Array.from({ length: numPages }).forEach((x, i) => {
+      createPage({
+        path: i === 0 ? `/blog/category/${_.kebabCase(category)}` : `/blog/category/${_.kebabCase(category)}/${i + 1}`,
+        component: categoryTemplate,
+        context: {
+          category,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
     })
   })
 
