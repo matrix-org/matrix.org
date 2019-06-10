@@ -31,7 +31,6 @@
 }
 
 #main-header nav#top-menu-nav {
-    padding-top: 10px;
     float: left;
 }
 
@@ -44,11 +43,9 @@ nav#top-menu-nav, #top-menu {
     list-style: none;
 }
 
-#top-menu li {
-    display: inline-block;
+.top-menu li {
     font-size: 14px;
 	padding-right: 11px;
-	margin-top: 10px;
 	margin-bottom: 10px;
 	padding: 0px 30px;
 	font-family: "Helvetica Neue",
@@ -64,7 +61,9 @@ nav#top-menu-nav, #top-menu {
         "Segoe UI Symbol"; /* Emojis*/
 
     font-size: 16px;
-    line-height: 1.5em;
+	line-height: 1.5em;
+	float: left;
+	list-style-type: none;
 }
 .nav li {
     position: relative;
