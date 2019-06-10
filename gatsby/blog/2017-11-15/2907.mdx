@@ -41,9 +41,11 @@ The full changelog for 0.3 of the spec is:
  	<li>New endpoints:
 <ul>
  	<li><tt class="docutils literal">GET /joined_rooms</tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/999">#999</a>).</li>
- 	<li><tt class="docutils literal">GET <span class="pre">/rooms/{'{'}roomId{'}'}/joined_members</span></tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/999">#999</a>).</li>
+ 	<li><tt class="docutils literal">GET <span class="pre">/rooms/{'{'}roomId{'}'}/joined_members</span>
+</tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/999">#999</a>).</li>
  	<li><tt class="docutils literal">GET /account/whoami</tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1063">#1063</a>).</li>
- 	<li><tt class="docutils literal">GET <span class="pre">/media/{'{'}version{'}'}/preview_url</span></tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1064">#1064</a>).</li>
+ 	<li><tt class="docutils literal">GET <span class="pre">/media/{'{'}version{'}'}/preview_url</span>
+</tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1064">#1064</a>).</li>
 </ul>
 </li>
 </ul>
@@ -61,7 +63,8 @@ The full changelog for 0.3 of the spec is:
  	<li>Correct inconsistent specification of <tt class="docutils literal">redacted_because</tt> fields and their values (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/378">#378</a>).</li>
  	<li>Mark required fields in response objects as such (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/394">#394</a>).</li>
  	<li>Make <tt class="docutils literal">m.notice</tt> description a bit harder in its phrasing to try to dissuade the same issues that occurred with IRC (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/750">#750</a>).</li>
- 	<li><tt class="docutils literal">GET <span class="pre">/user/{'{'}userId{'}'}/filter/{'{'}filterId{'}'}</span></tt> requires authentication (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1003">#1003</a>).</li>
+ 	<li><tt class="docutils literal">GET <span class="pre">/user/{'{'}userId{'}'}/filter/{'{'}filterId{'}'}</span>
+</tt> requires authentication (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1003">#1003</a>).</li>
  	<li>Add some clarifying notes on the behaviour of rooms with no <tt class="docutils literal">m.room.power_levels</tt> event (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1026">#1026</a>).</li>
  	<li>Clarify the relationship between <tt class="docutils literal">username</tt> and <tt class="docutils literal">user_id</tt> in the <tt class="docutils literal">/register</tt> API (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1032">#1032</a>).</li>
  	<li>Clarify rate limiting and security for content repository. (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1064">#1064</a>).</li>
