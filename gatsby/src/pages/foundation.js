@@ -29,8 +29,6 @@ const Foundation = () => {
             track.
           </p>
 
-        </div>
-        <div class="mxblock mxblock--foundation">
           <h2>The Guardians</h2>
 
           <p class="mxblock--foundation__p">
