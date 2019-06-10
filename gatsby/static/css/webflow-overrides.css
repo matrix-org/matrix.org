@@ -72,8 +72,22 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
+.mxblock.mxblock--foundation {
+  text-align: left;
+  padding-bottom: 0px;
+}
+
+.mxgrid__item--guardian__bg__img {
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.mxgrid__item--guardian__bg__img:hover {
+  filter: none;
+}
+
 .mxcontent__nav__link--title a, .mxcontent__nav__link a {
-    color: inherit;
+  color: inherit;
 }
 
 .bridgesPage img {
