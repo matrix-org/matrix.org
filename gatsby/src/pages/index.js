@@ -67,7 +67,11 @@ const example3 = `curl "https://matrix.bob.com/_matrix/client
 }
 `;
 
-const Index = () => {
+const Index = ({
+  data: {
+    allMdx: { edges },
+  },
+}) => {
     return (
          <ThemeProvider theme={theme}>
             <div>
@@ -453,54 +457,18 @@ const Index = () => {
         <div className="mxblock">
           <h2 className="mxblock__hx">Latest News</h2>
           <div className="mxgrid mxgrid--news">
+          {edges.map(edge => (
             <div className="mxgrid__item50 mxgrid__item50--news">
-              <div className="mxgrid__item__bg mxgrid__item__bg--news">
-                <h3 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--news">Security Incident</h3>
-                <div className="mxgrid__item__bg__vert">
-                  <p className="mxgrid__item__bg__p mxgrid__item__bg__p--byline">2019-05-10 by Matthew Hodgson<br />
-</p>
-                  <p className="mxgrid__item__bg__p">Excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post<br />
-</p>
-                </div>
-<a href="#" className="mxgrid__item__bg__btn w-button">Read more</a>
-</div>
+            <div className="mxgrid__item__bg mxgrid__item__bg--news">
+              <h3 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--news">{edge.node.frontmatter.title}</h3>
+              <div className="mxgrid__item__bg__vert">
+                <p className="mxgrid__item__bg__p mxgrid__item__bg__p--byline">{edge.node.frontmatter.date} by {edge.node.frontmatter.author}<br /></p>
+                <p className="mxgrid__item__bg__p">{edge.node.excerpt}<br /></p>
+              </div>
+            <a href={edge.node.fields.slug} className="mxgrid__item__bg__btn w-button">Read more</a>
             </div>
-            <div className="mxgrid__item50 mxgrid__item50--news">
-              <div className="mxgrid__item__bg mxgrid__item__bg--news">
-                <h3 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--news">Security Incident</h3>
-                <div className="mxgrid__item__bg__vert">
-                  <p className="mxgrid__item__bg__p mxgrid__item__bg__p--byline">2019-05-10 by Matthew Hodgson<br />
-</p>
-                  <p className="mxgrid__item__bg__p">Excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post<br />
-</p>
-                </div>
-<a href="#" className="mxgrid__item__bg__btn w-button">Read more</a>
-</div>
             </div>
-            <div className="mxgrid__item50 mxgrid__item50--news">
-              <div className="mxgrid__item__bg mxgrid__item__bg--news">
-                <h3 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--news">Security Incident</h3>
-                <div className="mxgrid__item__bg__vert">
-                  <p className="mxgrid__item__bg__p mxgrid__item__bg__p--byline">2019-05-10 by Matthew Hodgson<br />
-</p>
-                  <p className="mxgrid__item__bg__p">Excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post<br />
-</p>
-                </div>
-<a href="#" className="mxgrid__item__bg__btn w-button">Read more</a>
-</div>
-            </div>
-            <div className="mxgrid__item50 mxgrid__item50--news">
-              <div className="mxgrid__item__bg mxgrid__item__bg--news">
-                <h3 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--news">Security Incident</h3>
-                <div className="mxgrid__item__bg__vert">
-                  <p className="mxgrid__item__bg__p mxgrid__item__bg__p--byline">2019-05-10 by Matthew Hodgson<br />
-</p>
-                  <p className="mxgrid__item__bg__p">Excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post, excerpt of blog post<br />
-</p>
-                </div>
-<a href="#" className="mxgrid__item__bg__btn w-button">Read more</a>
-</div>
-            </div>
+          ))}
           </div>
 <a href="#" className="mxgrid__item__bg__btn w-button">View all posts</a>
 </div>
@@ -789,5 +757,28 @@ const Index = () => {
   </div>
     </ThemeProvider>)
 }
+
+export const postQuery = graphql`
+  query IndexBlogPage {
+    allMdx(sort: { fields: [frontmatter___date, fileAbsolutePath], order: DESC },
+      limit:4,
+      filter: {frontmatter: {date: {ne: null}}}) {
+      totalCount
+      edges {
+        node {
+          excerpt
+          frontmatter {
+            title
+            date
+            author
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`
 
 export default Index
