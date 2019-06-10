@@ -18,7 +18,7 @@ const Guides = ({data}) => {
               <div className="mxgrid__item__bg mxgrid__item__bg--develop">
 <img src="/images/music_play_button.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                 <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Get Started</h4>
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/guides/getting-involved">Get Started</a></h4>
                   <p className="mxgrid__item__bg__p">How to get started with Matrix<br /></p>
                 </div>
               </div>
@@ -27,17 +27,17 @@ const Guides = ({data}) => {
               <div className="mxgrid__item__bg mxgrid__item__bg--develop">
 <img src="/images/basic_server_upload.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                 <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Synapse Installation</h4>
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/guides/installing-synapse">Synapse Installation</a></h4>
                   <p className="mxgrid__item__bg__p">Installing Synapse, a homeserver implementation written in Python<br /></p>
                 </div>
               </div>
             </div>
             <div className="mxgrid__item50">
               <div className="mxgrid__item__bg mxgrid__item__bg--develop">
-<img src="/images/basic_server.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+<img src="/images/basic_signs.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                 <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Synapse Management </h4>
-                  <p className="mxgrid__item__bg__p">How to manage Synapse, and tips &amp; tricks<br /></p>
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/faq">FAQ</a></h4>
+                  <p className="mxgrid__item__bg__p">Matrix FAQ<br /></p>
                 </div>
               </div>
             </div>
@@ -45,7 +45,7 @@ const Guides = ({data}) => {
               <div className="mxgrid__item__bg mxgrid__item__bg--develop">
 <img src="/images/basic_elaboration_message_happy.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                 <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Moderation</h4>
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/guides/moderation">Moderation</a></h4>
                   <p className="mxgrid__item__bg__p">How to manage and moderate Matrix rooms<br /></p>
                 </div>
               </div>
@@ -65,11 +65,13 @@ const Guides = ({data}) => {
     <tbody>
       <tr>
         <td>Just get started!</td>
-        <td><strong><a href="/docs/guides/getting-involved">Getting Involved</a></strong>, which explains various ways of getting started with Matrix<br /><br />or<br /><br /><strong><a href="./faq.html">the FAQ</a></strong>, where we try to answer all your questions relating to Matrix</td>
+        <td>
+          <strong><a href="/docs/guides/getting-involved">Getting Involved</a></strong>, which explains various ways of getting started with Matrix<br /><br />or<br /><br />
+          <strong><a href="/faq">the FAQ</a></strong>, where we try to answer all your questions relating to Matrix</td>
       </tr>
       <tr>
         <td>Understand the CS API</td>
-        <td><strong><a href="https://matrix.org/docs/guides/client-server.html">How to use the client-server API</a></strong>, which explains in detail how to use the CS API.<br />Useful if you want to write a client (or modify an existing one) - or if you’re just interested in how it works “under the hood”</td>
+        <td><strong><a href="/docs/guides/client-server-api">How to use the client-server API</a></strong>, which explains in detail how to use the CS API.<br />Useful if you want to write a client (or modify an existing one) - or if you’re just interested in how it works “under the hood”</td>
       </tr>
       <tr>
         <td>Get started with the CS API using …</td>
@@ -77,7 +79,7 @@ const Guides = ({data}) => {
       </tr>
       <tr>
         <td>   … JavaScript</td>
-        <td><strong><a href="https://matrix.org/docs/guides/usage-of-the-matrix-js-sdk">Usage of the matrix-js-sdk</a></strong></td>
+        <td><strong><a href="/docs/guides/usage-of-the-matrix-js-sdk">Usage of the matrix-js-sdk</a></strong></td>
       </tr>
       <tr>
         <td>   … Python</td>
@@ -85,7 +87,7 @@ const Guides = ({data}) => {
       </tr>
       <tr>
         <td>Understand Application Services</td>
-        <td>The <strong><a href="./application_services.html">Application services</a></strong> guide introduces them and explains what they can be used for</td>
+        <td>The <strong><a href="/docs/guides/application-services">Application services</a></strong> guide introduces them and explains what they can be used for</td>
       </tr>
       <tr>
         <td>See an example of a simple bot</td>
@@ -93,19 +95,19 @@ const Guides = ({data}) => {
       </tr>
       <tr>
         <td>Create a complete working chatbot</td>
-        <td><strong><a href="/docs/guides/elizabot">Using Matrix to make Chatbot software from the 1960s available in 2018</a></strong> goes from the basics, brings in <a href="https://github.com/turt2live/matrix-js-bot-sdk">matrix-js-bot-sdk</a>, and ends with deployment on a Raspberry Pi</td>
+        <td><strong><a href="/docs/guides/using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018">Using Matrix to make Chatbot software from the 1960s available in 2018</a></strong> goes from the basics, brings in <a href="https://github.com/turt2live/matrix-js-bot-sdk">matrix-js-bot-sdk</a>, and ends with deployment on a Raspberry Pi</td>
       </tr>
       <tr>
         <td>Work on Bridges to Matrix</td>
-        <td><strong><a href="./types-of-bridging.html">Types of Bridging</a></strong> should be read by all bridge developers to ensure everyone has the same mental map of terminology when implementing bridges</td>
+        <td><strong><a href="/docs/guides/types-of-bridging">Types of Bridging</a></strong> should be read by all bridge developers to ensure everyone has the same mental map of terminology when implementing bridges</td>
       </tr>
       <tr>
         <td>Migrate from the old v1 CS API</td>
-        <td>the <strong><a href="./client-server-migrating-from-v1.html">v1 migration guide</a></strong> which justs lists the changes from v1 to r0</td>
+        <td>the <strong><a href="/docs/guides/migrating-from-client-server-api-v-1">v1 migration guide</a></strong> which justs lists the changes from v1 to r0</td>
       </tr>
       <tr>
         <td>Use E2E in a client application</td>
-        <td>The <strong><a href="./e2e_implementation.html">End-to-end Encryption Implementation Guide</a></strong> is intended for client developers who wish to add support for end-to-end encryption to their clients</td>
+        <td>The <strong><a href="/docs/guides/end-to-end-encryption-implementation-guide">End-to-end Encryption Implementation Guide</a></strong> is intended for client developers who wish to add support for end-to-end encryption to their clients</td>
       </tr>
       <tr>
         <td>Install Synapse</td>
