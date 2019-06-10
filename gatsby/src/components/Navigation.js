@@ -58,9 +58,9 @@ navTypes["discover"] = (
     <img src="/images/software_layers2.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">SDKs</div>
   </a>
-  <a href="/docs/projects/servers" className="mxnavsection__item w-inline-block">
-    <img src="/images/basic_server.svg" alt="" className="mxnavsection__icon" />
-    <div className="mxnavsection__text">Servers</div>
+  <a href="/docs/projects/bridges" className="mxnavsection__item w-inline-block">
+    <img src="/images/basic_share.svg" alt="" className="mxnavsection__icon" />
+    <div className="mxnavsection__text">Bridges</div>
   </a>
   <a href="/docs/projects/hosting" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_cloud.svg" alt="" className="mxnavsection__icon" />
