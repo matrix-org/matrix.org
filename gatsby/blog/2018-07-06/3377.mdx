@@ -6,25 +6,25 @@ categories:
 author: Neil Johnson
 ---
 
-<span style="font-weight: 400;">Folks, Synapse 0.32.0 is an important security update: please upgrade as soon as you can.</span>
+Folks, Synapse 0.32.0 is an important security update: please upgrade as soon as you can.
 
 
-<span style="font-weight: 400;">The release focuses on security; fixing several federation bugs and adding new features for countering abuse. Notably it includes the ability to blacklist &amp; whitelist servers allowed to send events to a room on a per-room basis via the new </span>
-<span style="font-weight: 400;">m.room.server_acl</span>
-<span style="font-weight: 400;"> state event: see </span>
-<a href="https://docs.google.com/document/d/1aiuROf1__7ZFkJvDdAZQfBNxyzjYd-ijiRAcHJYqJCM/edit"><span style="font-weight: 400;">MSC1383</span></a><span style="font-weight: 400;"> for details.  This also closes out </span>
-<a href="https://github.com/matrix-org/matrix-doc/issues/709"><span style="font-weight: 400;">https://github.com/matrix-org/matrix-doc/issues/709</span></a><span style="font-weight: 400;"> - one of our oldest feature requests from users who wish to be able to limit the servers allowed to participate in a given room.</span>
+The release focuses on security; fixing several federation bugs and adding new features for countering abuse. Notably it includes the ability to blacklist &amp; whitelist servers allowed to send events to a room on a per-room basis via the new 
+m.room.server_acl
+ state event: see 
+<a href="https://docs.google.com/document/d/1aiuROf1__7ZFkJvDdAZQfBNxyzjYd-ijiRAcHJYqJCM/edit">MSC1383</a> for details.  This also closes out 
+<a href="https://github.com/matrix-org/matrix-doc/issues/709">https://github.com/matrix-org/matrix-doc/issues/709</a> - one of our oldest feature requests from users who wish to be able to limit the servers allowed to participate in a given room.
 
 
-<span style="font-weight: 400;">It's important to understand that server ACLs only work if all the servers participating in the room honour them.  In future this will be handled better (as part of ongoing work in making it easier to incrementally version and upgrade the federation protocol).  This means that for the ACLs to work, any servers which don't yet implement ACLs (e.g. older Synapses) have to be ACL'd from the room for the access control to work.  </span>
+It's important to understand that server ACLs only work if all the servers participating in the room honour them.  In future this will be handled better (as part of ongoing work in making it easier to incrementally version and upgrade the federation protocol).  This means that for the ACLs to work, any servers which don't yet implement ACLs (e.g. older Synapses) have to be ACL'd from the room for the access control to work.  
 <b>Therefore please upgrade as soon as possible to avoid this problem.</b>
 
-<span style="font-weight: 400;">This ongoing flurry of security work is in general all part of moving towards the long-awaited stable release of the Server-Server API. In parallel we've been working on the other main outstanding point: State Resets (i.e. scenarios where you get unexpected results when resolving conflicts between different servers' copies of a room).  There will be a few more major changes and upgrades on the horizon as we fix these, but then we'll finally be able to cut an r0 release of the Server-Server API and Matrix will be one massive step closer to being out of beta!</span>
+This ongoing flurry of security work is in general all part of moving towards the long-awaited stable release of the Server-Server API. In parallel we've been working on the other main outstanding point: State Resets (i.e. scenarios where you get unexpected results when resolving conflicts between different servers' copies of a room).  There will be a few more major changes and upgrades on the horizon as we fix these, but then we'll finally be able to cut an r0 release of the Server-Server API and Matrix will be one massive step closer to being out of beta!
 
 
-<span style="font-weight: 400;">As always, you can get the new update from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.32.1">https://github.com/matrix-org/synapse/releases/tag/v0.32.1</a></span>
-<span style="font-weight: 400;"> or any of the sources mentioned at </span>
-<a href="https://github.com/matrix-org/synapse"><span style="font-weight: 400;">https://github.com/matrix-org/synapse</span></a><span style="font-weight: 400;">.</span>
+As always, you can get the new update from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.32.1">https://github.com/matrix-org/synapse/releases/tag/v0.32.1</a>
+ or any of the sources mentioned at 
+<a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>.
 
 <h2>Changes in synapse v0.32.0 (2018-07-06)</h2>
 No changes since 0.32.0rc1
