@@ -72,7 +72,7 @@ const Navigation = (navmode) => (
   <nav>
     <div data-collapse="medium" data-animation="default" data-duration="400" class="mxnavbar w-nav">
       <div class="mxnavbar__container w-container">
-        <a href="index.html" class="mxnavbar__brand w-nav-brand">
+        <a href="/" class="mxnavbar__brand w-nav-brand">
 <img src="/images/matrix-logo.svg" alt="" className="mxnavbar__logo" />
 </a>
         <nav role="navigation" class="mxnavbar__navmenu w-nav-menu">
