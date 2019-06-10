@@ -12,90 +12,90 @@ const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
     <Layout navmode="discover" customSEO>
         <SEO postPath={slug} postNode={postNode} article />
         <MXContentMain>
-        <div class="mxblock mxblock--project">
-          <h1 class="mxblock--project__hx">{post.title}</h1>
-          <div class="mxblock--project__content">
-            <div class="mxblock--project__content__img" hidden={!post.screenshot}>
-              <img src={post.screenshot} width="1120" alt="" class="mxblock--project__img" />
+        <div className="mxblock mxblock--project">
+          <h1 className="mxblock--project__hx">{post.title}</h1>
+          <div className="mxblock--project__content">
+            <div className="mxblock--project__content__img" hidden={!post.screenshot}>
+              <img src={post.screenshot} width="1120" alt="" className="mxblock--project__img" />
             </div>
-            <div class="mxblock--project__content__info">
-              <div class="mxblock--project__content__info__row">
-                <div class="mxblock--project__content__info__row__b">
+            <div className="mxblock--project__content__info">
+              <div className="mxblock--project__content__info__row">
+                <div className="mxblock--project__content__info__row__b">
                   <p>Name</p>
                 </div>
-                <div class="mxblock--project__content__info__row__p">
+                <div className="mxblock--project__content__info__row__p">
                   <p>{post.title}</p>
                 </div>
               </div>
-              <div class="mxblock--project__content__info__row">
-                <div class="mxblock--project__content__info__row__b">
+              <div className="mxblock--project__content__info__row">
+                <div className="mxblock--project__content__info__row__b">
                   <p>Project Type</p>
                 </div>
-                <div class="mxblock--project__content__info__row__p">
+                <div className="mxblock--project__content__info__row__p">
                   <p>{post.categories[0]}</p>
                 </div>
               </div>
-              <div class="mxblock--project__content__info__row">
-                <div class="mxblock--project__content__info__row__b">
+              <div className="mxblock--project__content__info__row">
+                <div className="mxblock--project__content__info__row__b">
                   <p>Description</p>
                 </div>
-                <div class="mxblock--project__content__info__row__p">
+                <div className="mxblock--project__content__info__row__p">
                   <p>{post.description}</p>
                 </div>
               </div>
-              <div class="mxblock--project__content__info__row">
-                <div class="mxblock--project__content__info__row__b">
+              <div className="mxblock--project__content__info__row">
+                <div className="mxblock--project__content__info__row__b">
                   <p>Author</p>
                 </div>
-                <div class="mxblock--project__content__info__row__p">
+                <div className="mxblock--project__content__info__row__p">
                   <p>{post.author}<br /></p>
                 </div>
               </div>
-              <div class="mxblock--project__content__info__row">
-                <div class="mxblock--project__content__info__row__b">
+              <div className="mxblock--project__content__info__row">
+                <div className="mxblock--project__content__info__row__b">
                   <p>Maturity</p>
                 </div>
-                <div class="mxblock--project__content__info__row__p">
+                <div className="mxblock--project__content__info__row__p">
                   <p>{post.maturity}</p>
                 </div>
               </div>
-              <div class="mxblock--project__content__info__row">
-                <div class="mxblock--project__content__info__row__b">
+              <div className="mxblock--project__content__info__row">
+                <div className="mxblock--project__content__info__row__b">
                   <p>Language</p>
                 </div>
-                <div class="mxblock--project__content__info__row__p">
+                <div className="mxblock--project__content__info__row__p">
                   <p>{post.language}</p>
                 </div>
               </div>
-              <div class="mxblock--project__content__info__row">
-                <div class="mxblock--project__content__info__row__b">
+              <div className="mxblock--project__content__info__row">
+                <div className="mxblock--project__content__info__row__b">
                   <p>License</p>
                 </div>
-                <div class="mxblock--project__content__info__row__p">
+                <div className="mxblock--project__content__info__row__p">
                   <p>{post.license}</p>
                 </div>
               </div>
-              <div class="mxblock--project__content__info__row">
-                <div class="mxblock--project__content__info__row__b">
+              <div className="mxblock--project__content__info__row">
+                <div className="mxblock--project__content__info__row__b">
                   <p>Repo</p>
                 </div>
-                <div class="mxblock--project__content__info__row__p">
+                <div className="mxblock--project__content__info__row__p">
                   <p><a href={post.repo}>{post.repo}</a><br /></p>
                 </div>
               </div>
-              <div class="mxblock--project__content__info__row">
-                <div class="mxblock--project__content__info__row__b">
+              <div className="mxblock--project__content__info__row">
+                <div className="mxblock--project__content__info__row__b">
                   <p>Homepage</p>
                 </div>
-                <div class="mxblock--project__content__info__row__p">
+                <div className="mxblock--project__content__info__row__p">
                   <p><a href={post.home}>{post.home}</a><br /></p>
                 </div>
               </div>
-              <div class="mxblock--project__content__info__row">
-                <div class="mxblock--project__content__info__row__b">
+              <div className="mxblock--project__content__info__row">
+                <div className="mxblock--project__content__info__row__b">
                   <p>Matrix Room</p>
                 </div>
-                <div class="mxblock--project__content__info__row__p">
+                <div className="mxblock--project__content__info__row__p">
                   <p><a href={"https://matrix.to/#/" + post.room}>{post.room}</a><br /></p>
                 </div>
               </div>

@@ -44,16 +44,16 @@ const Footer = () => (
     <div className="mxfooter__container mxfooter__container--heel">
       <div className="mxfooter__iconwrapper">
         <a href="/code" className="w-inline-block">
-          <img src="images/github.svg" alt="" className="mxfooter__icon" />
+          <img src="/images/github.svg" alt="" className="mxfooter__icon" />
         </a>
         <a href="https://gitlab.com/" className="w-inline-block">
-          <img src="images/gitlab.svg" alt="" className="mxfooter__icon" />
+          <img src="/images/gitlab.svg" alt="" className="mxfooter__icon" />
         </a>
         <a href="https://youtube.com/" className="w-inline-block">
-          <img src="images/youtube.svg" alt="" className="mxfooter__icon" />
+          <img src="/images/youtube.svg" alt="" className="mxfooter__icon" />
         </a>
         <a href="https://twitter.com/matrixdotorg" className="w-inline-block">
-          <img src="images/twitter.svg" alt="" className="mxfooter__icon" />
+          <img src="/images/twitter.svg" alt="" className="mxfooter__icon" />
         </a>
       </div>
       <p className="mxfooter__text">© 2019 The Matrix.org Foundation C.I.C.</p>

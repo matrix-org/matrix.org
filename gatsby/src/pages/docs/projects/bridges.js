@@ -12,7 +12,7 @@ const Bridges = ({data}) => {
         <MXContentMain>
             <Helmet title={`Bridges | ${config.siteTitle}`} />
             <h1 id="bridges">Bridges</h1>
-            <div class="bridgesPage">
+            <div className="bridgesPage">
 <table>
   <thead>
     <tr>
@@ -32,7 +32,7 @@ const Bridges = ({data}) => {
     <tr>
       <td><a href="#telegram"><img src="images/telegram-logo.svg" alt="Telegram" /></a></td>
       <td><a href="#slack"><img src="images/slack-logo.svg" alt="Slack" /></a></td>
-      <td><a href="#irc"><code class="highlighter-rouge">IRC</code></a></td>
+      <td><a href="#irc"><code className="highlighter-rouge">IRC</code></a></td>
       <td><a href="#discord"><img src="images/discord-logo.svg" alt="Discord" /></a></td>
     </tr>
     <tr>
@@ -210,7 +210,7 @@ bridges. It can be used for existing chats, rather than initiating new ones.</p>
 
 <h2 id="irc">IRC</h2>
 
-<p><code class="highlighter-rouge">IRC</code></p>
+<p><code className="highlighter-rouge">IRC</code></p>
 
 <h3 id="matrix-appservice-irc">matrix-appservice-irc</h3>
 
