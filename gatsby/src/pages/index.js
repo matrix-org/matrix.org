@@ -84,26 +84,7 @@ const Index = ({
               <script async="" src="https://c6.patreon.com/becomePatronButton.bundle.js"/>
               <script async="" defer="" src="https://buttons.github.io/buttons.js"/>
             </Helmet>
-
-            <div data-collapse="medium" data-animation="default" data-duration="400" className="mxnavbar w-nav">
-    <div className="mxnavbar__container w-container">
-<a href="index.html" className="mxnavbar__brand w-nav-brand w--current">
-<img src="images/matrix-logo.svg" alt="" className="mxnavbar__logo" />
-</a>
-      <nav role="navigation" className="mxnavbar__navmenu w-nav-menu">
-<a href="discover.html" className="mxnavbar__navlink w-nav-link">Discover</a>
-<a href="develop.html" className="mxnavbar__navlink w-nav-link">Docs</a>
-<a href="blog.html" className="mxnavbar__navlink w-nav-link">Blog</a>
-<a href="faqs.html" className="mxnavbar__navlink w-nav-link">FAQs</a>
-<a href="try-now.html" className="mxnavbar__navlink mxnavbar__navlink--try w-nav-link">Try Now</a>
-<a href="try-now.html" className="mxnavbar__navlink mxnavbar__navlink--primary w-nav-link">Try Now</a>
-</nav>
-      <div className="mxnavbar__menubutton w-nav-button">
-        <div className="mxnavbar__icon w-icon-nav-menu">
-</div>
-      </div>
-    </div>
-  </div>
+            <Navigation />
   <div className="mxherobackground">
     <div className="mxherobackground__img">
 </div>
