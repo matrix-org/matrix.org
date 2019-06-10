@@ -11,42 +11,42 @@ const Guides = ({data}) => {
     return (<Layout navmode="develop">
         <MXContentMain>
           <Helmet title={`Guides | ${config.siteTitle}`} />
-          <div class="mxblock mxblock--develop">
-          <h1 class="mxblock__hx">Top Links</h1>
-          <div class="mxgrid">
-            <div class="mxgrid__item50">
-              <div class="mxgrid__item__bg mxgrid__item__bg--develop">
-<img src="/images/music_play_button.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
-                <div class="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                  <h4 class="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Get Started</h4>
-                  <p class="mxgrid__item__bg__p">How to get started with Matrix<br /></p>
+          <div className="mxblock mxblock--develop">
+          <h1 className="mxblock__hx">Top Links</h1>
+          <div className="mxgrid">
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--develop">
+<img src="/images/music_play_button.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Get Started</h4>
+                  <p className="mxgrid__item__bg__p">How to get started with Matrix<br /></p>
                 </div>
               </div>
             </div>
-            <div class="mxgrid__item50">
-              <div class="mxgrid__item__bg mxgrid__item__bg--develop">
-<img src="/images/basic_server_upload.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
-                <div class="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                  <h4 class="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Synapse Installation</h4>
-                  <p class="mxgrid__item__bg__p">Installing Synapse, a homeserver implementation written in Python<br /></p>
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--develop">
+<img src="/images/basic_server_upload.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Synapse Installation</h4>
+                  <p className="mxgrid__item__bg__p">Installing Synapse, a homeserver implementation written in Python<br /></p>
                 </div>
               </div>
             </div>
-            <div class="mxgrid__item50">
-              <div class="mxgrid__item__bg mxgrid__item__bg--develop">
-<img src="/images/basic_server.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
-                <div class="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                  <h4 class="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Synapse Management </h4>
-                  <p class="mxgrid__item__bg__p">How to manage Synapse, and tips &amp; tricks<br /></p>
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--develop">
+<img src="/images/basic_server.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Synapse Management </h4>
+                  <p className="mxgrid__item__bg__p">How to manage Synapse, and tips &amp; tricks<br /></p>
                 </div>
               </div>
             </div>
-            <div class="mxgrid__item50">
-              <div class="mxgrid__item__bg mxgrid__item__bg--develop">
-<img src="/images/basic_elaboration_message_happy.svg" alt="" class="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
-                <div class="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                  <h4 class="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Moderation</h4>
-                  <p class="mxgrid__item__bg__p">How to manage and moderate Matrix rooms<br /></p>
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--develop">
+<img src="/images/basic_elaboration_message_happy.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop">Moderation</h4>
+                  <p className="mxgrid__item__bg__p">How to manage and moderate Matrix rooms<br /></p>
                 </div>
               </div>
             </div>
@@ -54,8 +54,8 @@ const Guides = ({data}) => {
         </div>
         <h2 id="recommended-by-matrixorg">Recommended by matrix.org</h2>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <thead>
       <tr>
         <th>If you want to…</th>
@@ -127,8 +127,8 @@ const Guides = ({data}) => {
 
 <p>This collection of guides is taken from around the web. If you have used a guide, and recommend it, please go ahead and click “Recommend” on the right, and we’ll use this to sort the articles by recommendations.</p>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <tbody>
       <tr>
       </tr>
@@ -138,8 +138,8 @@ const Guides = ({data}) => {
 
 <h3 id="introduction-for-users">Introduction for Users</h3>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>
@@ -171,8 +171,8 @@ const Guides = ({data}) => {
   </table>
 </div>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <tbody>
       <tr>
       </tr>
@@ -182,8 +182,8 @@ const Guides = ({data}) => {
 
 <h3 id="introduction-for-developers">Introduction for Developers</h3>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>
@@ -221,8 +221,8 @@ const Guides = ({data}) => {
   </table>
 </div>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <tbody>
       <tr>
       </tr>
@@ -234,8 +234,8 @@ const Guides = ({data}) => {
 
 <p>To install Synapse, we recommend taking a look at the <a href="/docs/guides/installing-synapse">Installing Synapse</a> guide page. Other articles are listed below.</p>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>
@@ -321,8 +321,8 @@ const Guides = ({data}) => {
   </table>
 </div>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <tbody>
       <tr>
       </tr>
@@ -332,8 +332,8 @@ const Guides = ({data}) => {
 
 <h3 id="understanding-end-to-end-encryption">Understanding End-to-End Encryption</h3>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>
@@ -353,8 +353,8 @@ const Guides = ({data}) => {
   </table>
 </div>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <tbody>
       <tr>
       </tr>
@@ -364,8 +364,8 @@ const Guides = ({data}) => {
 
 <h3 id="riot-customisation">Riot Customisation</h3>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>
@@ -387,8 +387,8 @@ const Guides = ({data}) => {
 
 <h2 id="video-guides">Video Guides</h2>
 
-<div class="overscroll">
-  <table class="legacy-table">
+<div className="overscroll">
+  <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>

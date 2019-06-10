@@ -19,7 +19,7 @@ const Page = ({ pageContext: { slug, pages }, data: { mdx: postNode } }) => {
     <Layout hasSideNavigation="true" navmode="develop" customSEO>
         <SEO postPath={slug} postNode={postNode} article />
         <MXContentMain hasSideNavigation="true">
-          <div class="mxcontent__main__doc">
+          <div className="mxcontent__main__doc">
             <Title>{post.title}</Title>
             <PostContent>
               <MDXRenderer>{postNode.code.body}</MDXRenderer>

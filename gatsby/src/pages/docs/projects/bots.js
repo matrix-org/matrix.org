@@ -17,18 +17,18 @@ const Bots = ({data}) => {
     return (<Layout navmode="discover">
         <MXContentMain>
           <Helmet title={`Bots | ${config.siteTitle}`} />
-          <div class="mxblock mxblock--project">
-          <h1 class="mxblock--project__hx">Bots</h1>
-          <div class="mxgrid">
+          <div className="mxblock mxblock--project">
+          <h1 className="mxblock--project__hx">Bots</h1>
+          <div className="mxgrid">
             
             {bots.map(function(edge) {
             const s = edge.node.childMdx.frontmatter
             return (
-                <div class="mxgrid__item50">
-              <div class="mxgrid__item__bg mxgrid__item__bg--clear">
-                <h2 id={_.kebabCase(s.title)} class="mxgrid__item--project__bg__hx">{s.title}</h2>
-                <img src={s.screenshot} alt="" class="mxgrid__item--project__bg__img" />
-                <div class="mxgrid__item__bg__vert mxgrid__item__bg__vert--project">
+                <div key={_.kebabCase(s.title) + s.repo} className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--clear">
+                <h2 id={_.kebabCase(s.title)} className="mxgrid__item--project__bg__hx">{s.title}</h2>
+                <img src={s.screenshot} alt="" className="mxgrid__item--project__bg__img" />
+                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--project">
                     <p><span hidden={!s.example_mxid}>Example mxid: <a href={"https://matrix.to/#/"+s.example_mxid}>{s.example_mxid}</a></span><br />
                     Repo: <a href={s.repo}>{s.repo}</a></p>
                     <MDXRenderer>{edge.node.childMdx.code.body}</MDXRenderer>

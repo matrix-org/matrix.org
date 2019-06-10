@@ -7,9 +7,9 @@ const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
     }
     var tocRendered = false;
     return (
-    <div class={navClass}>
+    <div className={navClass}>
         <h3>{title}</h3>
-        <div class="mxcontent__nav__section">
+        <div className="mxcontent__nav__section">
         {
         content.map(p => {
             var itemClass = "mxcontent__nav__link";
@@ -17,12 +17,12 @@ const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
                 itemClass += " mxcontent__nav__link--active";
                 tocRendered = true;
                 return (
-                <div>
-                <div class="mxcontent__nav__section"></div>
-                <div class="mxcontent__nav__section">
-                    <div class={itemClass}>{p.title}</div>
+                <div key={p.slug}>
+                <div className="mxcontent__nav__section"></div>
+                <div className="mxcontent__nav__section">
+                    <div className={itemClass}>{p.title}</div>
                     {tableOfContents.items.map(tocItem => {
-                        return (<div class="mxcontent__nav__link">
+                        return (<div key={p.slug + tocItem.url} className="mxcontent__nav__link">
                             <a href={tocItem.url}>{tocItem.title}<br /></a>
                         </div>)
                     })}
@@ -32,7 +32,7 @@ const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
                 if (tocRendered) {
                     itemClass += " mxcontent__nav__link--last";
                 }
-                return <div class={itemClass}>
+                return <div key={p.slug} className={itemClass}>
                     <a href={p.slug}>{p.title}</a><br />
                 </div>
             }
@@ -41,9 +41,9 @@ const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
 </div>
         {currentSlug && currentSlug.indexOf("/blog") === 0 && (
             <div>
-                <div class="mxcontent__nav__link"><a href="/blog/archive">View all</a></div>
-                <div class="mxcontent__nav__section mxcontent__nav__section--last">
-                    <div class="mxcontent__nav__link"><a href="/blog/feed">RSS Feed</a><br /></div>
+                <div className="mxcontent__nav__link"><a href="/blog/archive">View all</a></div>
+                <div className="mxcontent__nav__section mxcontent__nav__section--last">
+                    <div className="mxcontent__nav__link"><a href="/blog/feed">RSS Feed</a><br /></div>
                 </div>
             </div>)
         }
