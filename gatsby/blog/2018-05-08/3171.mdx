@@ -13,8 +13,7 @@ author: Matthew Hodgson
 
 
 <span style="font-weight: 400;">The main controversial point is how to handle Article 17 of the GDPR: ‘</span>
-<a href="https://gdpr-info.eu/art-17-gdpr/"><span style="font-weight: 400;">Right to Erasure</span>
-</a><span style="font-weight: 400;">' (aka Right to be Forgotten).  The question is particularly interesting for Matrix, because as a relatively new protocol with somewhat distinctive semantics it's not always clear how the rules apply - and there's no case law to seek inspiration from.</span>
+<a href="https://gdpr-info.eu/art-17-gdpr/"><span style="font-weight: 400;">Right to Erasure</span></a><span style="font-weight: 400;">' (aka Right to be Forgotten).  The question is particularly interesting for Matrix, because as a relatively new protocol with somewhat distinctive semantics it's not always clear how the rules apply - and there's no case law to seek inspiration from.</span>
 
 
 <span style="font-weight: 400;">The key question boils down to whether Matrix should be considered more like email (where people would be horrified if senders could erase their messages from your mail spool), or should it be considered more like Facebook (where people would be horrified if their posts were visible <em>anywhere</em> after they avail themselves of their right to erasure).</span>
@@ -34,8 +33,7 @@ author: Matthew Hodgson
 <h3><span style="font-weight: 400;">Right to Erasure</span>
 </h3>
 <span style="font-weight: 400;">We're opting to follow the email model, where the act of sending an event (i.e. message) into a room shares a copy of that message to everyone who is <strong><em>currently</em></strong> in that room.  This means that in the privacy policy (see Consent below) users will have to consent to agreeing that a copy of their messages will be transferred to whoever they are addressing.  This is also the model followed by IM systems such as WhatsApp, Twitter DMs or (</span>
-<a href="https://www.theinquirer.net/inquirer/news/3029749/facebook-zuckerberg-can-delete-old-messenger-conversations-you-cant"><span style="font-weight: 400;">almost</span>
-</a><span style="font-weight: 400;">) Facebook Messenger.</span>
+<a href="https://www.theinquirer.net/inquirer/news/3029749/facebook-zuckerberg-can-delete-old-messenger-conversations-you-cant"><span style="font-weight: 400;">almost</span></a><span style="font-weight: 400;">) Facebook Messenger.</span>
 
 
 <span style="font-weight: 400;">This means that if a user invokes their right to erasure, we will need to ensure that their events will only ever be visible to users who already have a copy - and must </span>
@@ -83,8 +81,7 @@ author: Matthew Hodgson
 
 
 <span style="font-weight: 400;">We've spent quite a lot time reasoning through how to fix this situation, and a full technical spec proposal for removing MXIDs from events can be found at </span>
-<a href="https://docs.google.com/document/d/1ni4LnC_vafX4h4K4sYNpmccS7QeHEFpAcYcbLS-J21Q"><span style="font-weight: 400;">https://docs.google.com/document/d/1ni4LnC_vafX4h4K4sYNpmccS7QeHEFpAcYcbLS-J21Q</span>
-</a><span style="font-weight: 400;">.  The high level proposal is to switch to giving each user a different ID in the form of a cryptographic public key for every room it participates in, and maintaining a mapping of today's MXIDs to these per-user-per-room keys.  In the event of a GDPR erasure, these mappings can be discarded, pseudonymising the user and avoiding correlation across different rooms. We'd also switch to using cryptographic public keys as the identifiers for Rooms, Events and Users (for cross-room APIs like presence).</span>
+<a href="https://docs.google.com/document/d/1ni4LnC_vafX4h4K4sYNpmccS7QeHEFpAcYcbLS-J21Q"><span style="font-weight: 400;">https://docs.google.com/document/d/1ni4LnC_vafX4h4K4sYNpmccS7QeHEFpAcYcbLS-J21Q</span></a><span style="font-weight: 400;">.  The high level proposal is to switch to giving each user a different ID in the form of a cryptographic public key for every room it participates in, and maintaining a mapping of today's MXIDs to these per-user-per-room keys.  In the event of a GDPR erasure, these mappings can be discarded, pseudonymising the user and avoiding correlation across different rooms. We'd also switch to using cryptographic public keys as the identifiers for Rooms, Events and Users (for cross-room APIs like presence).</span>
 
 
 <span style="font-weight: 400;">This is obviously a significant protocol change, and we're not going to do it lightly - we're still waiting for legal confirmation on whether we need it for May 25th (it may be covered as an intrinsic technical limitation of the system).  However, the good news is that it paves the way towards many other desirable features: the ability to migrate accounts between homeservers; the ability to solve the problem of how to handle domain names being reused (or hijacked); the ability to decouple homeservers from DNS so that they can run clientside (for p2p matrix); etc.  The chances are high that this proposal will land in the relatively near future (especially if mandated by GDPR), so input is very appreciated at this point!</span>
@@ -92,8 +89,7 @@ author: Matthew Hodgson
 <h3><span style="font-weight: 400;">Consent</span>
 </h3>
 <span style="font-weight: 400;">GDPR describes </span>
-<a href="https://gdpr-info.eu/art-6-gdpr/"><span style="font-weight: 400;">six lawful bases for processing</span>
-</a><span style="font-weight: 400;"> personal data.  For those running Matrix servers, it seems the best route to compliance is the most explicit and active one: </span>
+<a href="https://gdpr-info.eu/art-6-gdpr/"><span style="font-weight: 400;">six lawful bases for processing</span></a><span style="font-weight: 400;"> personal data.  For those running Matrix servers, it seems the best route to compliance is the most explicit and active one: </span>
 <i><span style="font-weight: 400;">consent</span>
 </i><span style="font-weight: 400;">.</span>
 
@@ -128,8 +124,7 @@ author: Matthew Hodgson
 </ul>
 </li>
  	<li style="font-weight: 400;"><span style="font-weight: 400;">Making our anonymised user analytics for Riot.im ‘opt in' rather than ‘opt out' - this isn't a requirement of GDPR (since our analytics are </span>
-<a href="https://gdpr-info.eu/recitals/no-26/"><span style="font-weight: 400;">fully anonymised</span>
-</a><span style="font-weight: 400;">) but reflects our commitment to user data sovereignty</span>
+<a href="https://gdpr-info.eu/recitals/no-26/"><span style="font-weight: 400;">fully anonymised</span></a><span style="font-weight: 400;">) but reflects our commitment to user data sovereignty</span>
 </li>
 </ul>
 <span style="font-weight: 400;">Long-term:</span>
@@ -197,10 +192,8 @@ author: Matthew Hodgson
 <h3><span style="font-weight: 400;">Conclusion</span>
 </h3>
 <span style="font-weight: 400;">So, there you have it.  We'll be tracking progress in github issues and an associated dashboard over the coming weeks; for now </span>
-<a href="https://github.com/matrix-org/synapse/issues/1941"><span style="font-weight: 400;">https://github.com/matrix-org/synapse/issues/1941</span>
-</a><span style="font-weight: 400;"> (for Right to Erasure) or </span>
-<a href="https://github.com/vector-im/riot-meta/issues/149"><span style="font-weight: 400;">https://github.com/vector-im/riot-meta/issues/149</span>
-</a><span style="font-weight: 400;"> (GDPR in general) is as good as place as any to gather feedback.  Alternatively, feel free to comment on the original text of this blog post: <a href="https://docs.google.com/document/d/1JTEI6RENnOlnCwcU2hwpg3P6LmTWuNS9S-ZYDdjqgzA">https://docs.google.com/document/d/1JTEI6RENnOlnCwcU2hwpg3P6LmTWuNS9S-ZYDdjqgzA</a>.</span>
+<a href="https://github.com/matrix-org/synapse/issues/1941"><span style="font-weight: 400;">https://github.com/matrix-org/synapse/issues/1941</span></a><span style="font-weight: 400;"> (for Right to Erasure) or </span>
+<a href="https://github.com/vector-im/riot-meta/issues/149"><span style="font-weight: 400;">https://github.com/vector-im/riot-meta/issues/149</span></a><span style="font-weight: 400;"> (GDPR in general) is as good as place as any to gather feedback.  Alternatively, feel free to comment on the original text of this blog post: <a href="https://docs.google.com/document/d/1JTEI6RENnOlnCwcU2hwpg3P6LmTWuNS9S-ZYDdjqgzA">https://docs.google.com/document/d/1JTEI6RENnOlnCwcU2hwpg3P6LmTWuNS9S-ZYDdjqgzA</a>.</span>
 
 
 <span style="font-weight: 400;">It's worth noting that we feel that GDPR is an excellent piece of legislation from the perspective of forcing us to think more seriously about our privacy - it has forced us to re-prioritise all sorts of long-term deficiencies in Matrix (e.g. dependence on DNS; improving User Interactive authentication; improving logout semantics etc).  There's obviously a lot of work to be done here, but hopefully it should all be worth it!</span>

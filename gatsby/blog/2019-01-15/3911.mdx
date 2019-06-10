@@ -13,8 +13,7 @@ author: Neil Johnson
 
 
 <span style="font-weight: 400;">In Synapse 0.11 (Nov 2015) we added a configuration parameter called “macaroon_secret_key” which relates to our use of </span>
-<a href="https://ai.google/research/pubs/pub41892"><span style="font-weight: 400;">macaroons</span>
-</a><span style="font-weight: 400;"> in authentication. Macaroons are authentication tokens which must be signed by the server which generates them, to prevent them being forged by attackers. “macaroon_secret_key” defines the key which is used for this signature, and it must therefore be kept secret to preserve the security of the server.</span>
+<a href="https://ai.google/research/pubs/pub41892"><span style="font-weight: 400;">macaroons</span></a><span style="font-weight: 400;"> in authentication. Macaroons are authentication tokens which must be signed by the server which generates them, to prevent them being forged by attackers. “macaroon_secret_key” defines the key which is used for this signature, and it must therefore be kept secret to preserve the security of the server.</span>
 
 
 <span style="font-weight: 400;">If the option is not set, Synapse will attempt to derive a secret key from other secrets specified in the configuration file. However, in all versions of Synapse up to and including 0.34.0, this process was faulty and a predictable value was used instead.</span>
