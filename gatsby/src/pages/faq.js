@@ -1122,7 +1122,7 @@ Usage of an IS is not required in order for a client application to be part of t
 <div class="definition-close">close</div>
 </div>
 </div>
-<h2 id="definitions"><a class="permalink" href="#definitions">&#128279;</a> Definitions</h2>
+<h2 id="definitions"><a class="permalink" href="#definitions" aria-hidden="true">&#128279;</a> Definitions</h2>
 <table>
 <thead>
 <tr>

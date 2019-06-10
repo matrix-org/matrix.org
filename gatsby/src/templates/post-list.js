@@ -48,8 +48,8 @@ export default PostList
 
 PostList.propTypes = {
   pageContext: PropTypes.shape({
-    limit: PropTypes.string.isRequired,
-    skip: PropTypes.string.isRequired,
+    limit: PropTypes.number.isRequired,
+    skip: PropTypes.number.isRequired,
   }).isRequired,
   data: PropTypes.shape({
     allMdx: PropTypes.shape({

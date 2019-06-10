@@ -9,6 +9,8 @@ import Footer from '../components/Footer'
 import { ThemeProvider } from 'styled-components'
 import theme from '../../config/theme'
 
+import { graphql } from 'gatsby'
+
 const example1 = `curl -XPOST
  -d '{"msgtype":"m.text", "body":"hello"}'
  "https://matrix.alice.com/_matrix/client
@@ -122,7 +124,7 @@ const Index = ({
             vibrant and evolving as the Web itself... but for communication.
           </p>
           <p className="mxp mxmatrixdescription">
-            As of June 2019, Matrix is <a href="">out of beta</a>, and the protocol is fully suitable for production usage.
+            As of June 2019, Matrix is <a href="/blog/">out of beta</a>, and the protocol is fully suitable for production usage.
           </p>
           <div className="mxgrid">
             <div className="mxgrid__item50">

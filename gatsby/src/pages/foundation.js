@@ -46,7 +46,7 @@ const Foundation = () => {
           <div class="mxgrid mxgrid--guardians">
             <div class="mxgrid__item100">
               <div class="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian">
-                <img class="mxgrid__item--guardian__bg__img" src="/images/guardians/crowcroft.jpg"/>
+                <img class="mxgrid__item--guardian__bg__img" alt="Prof. Jon Crowcroft" src="/images/guardians/crowcroft.jpg"/>
                 <div class="mxgrid__item--guardian__content">
                   <h2 class="mxgrid__item--guardian__content__hx">Prof. Jon Crowcroft</h2>
                   <p class="mxgrid__item--guardian__content__p">
@@ -62,7 +62,7 @@ const Foundation = () => {
             </div>
             <div class="mxgrid__item100">
               <div class="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian mxgrid__item__bg--guardian--invert">
-                <img class="mxgrid__item--guardian__bg__img" src="/images/guardians/matthew.jpg"/>
+                <img class="mxgrid__item--guardian__bg__img" alt="Matthew Hodgson" src="/images/guardians/matthew.jpg"/>
                 <div class="mxgrid__item--guardian__content mxgrid__item--guardian__content--invert">
                   <h2 class="mxgrid__item--guardian__content__hx">Matthew Hodgson</h2>
                   <p class="mxgrid__item--guardian__content__p">
@@ -76,7 +76,7 @@ const Foundation = () => {
             </div>
             <div class="mxgrid__item100">
               <div class="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian">
-                <img class="mxgrid__item--guardian__bg__img" src="/images/guardians/amandine.jpg"/>
+                <img class="mxgrid__item--guardian__bg__img" alt="Amandine Le Pape" src="/images/guardians/amandine.jpg"/>
                 <div class="mxgrid__item--guardian__content">
                   <h2 class="mxgrid__item--guardian__content__hx">Amandine Le Pape</h2>
                   <p class="mxgrid__item--guardian__content__p">
@@ -90,7 +90,7 @@ const Foundation = () => {
             </div>
             <div class="mxgrid__item100">
               <div class="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian mxgrid__item__bg--guardian--invert">
-                <img class="mxgrid__item--guardian__bg__img" src="/images/guardians/ross.jpg"/>
+                <img class="mxgrid__item--guardian__bg__img" alt="Ross Schulman" src="/images/guardians/ross.jpg"/>
                 <div class="mxgrid__item--guardian__content mxgrid__item--guardian__content--invert">
                   <h2 class="mxgrid__item--guardian__content__hx">Ross Schulman</h2>
                   <p class="mxgrid__item--guardian__content__p">
@@ -106,7 +106,7 @@ const Foundation = () => {
             </div>
             <div class="mxgrid__item100">
               <div class="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian">
-                <img class="mxgrid__item--guardian__bg__img" src="/images/guardians/jutta.jpg"/>
+                <img class="mxgrid__item--guardian__bg__img" alt="Dr. Jutta Steiner" src="/images/guardians/jutta.jpg"/>
                 <div class="mxgrid__item--guardian__content">
                   <h2 class="mxgrid__item--guardian__content__hx">Dr. Jutta Steiner</h2>
                   <p class="mxgrid__item--guardian__content__p">
