@@ -39,7 +39,7 @@ const PostList = ({ pageContext: { limit, skip, currentPage, posts }, data: { al
             }}
           />
         </MXContentMain>
-        <MXContentNav title="All posts" content={posts}></MXContentNav>
+        <MXContentNav title="All posts" content={posts} currentSlug="/blog"></MXContentNav>
     </Layout>
   )
 }

@@ -9,6 +9,7 @@ const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
     return (
     <div class={navClass}>
         <h3>{title}</h3>
+        <div class="mxcontent__nav__section">
         {
         content.map(p => {
             var itemClass = "mxcontent__nav__link";
@@ -37,7 +38,16 @@ const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
             }
         })
         }
+</div>
+        {currentSlug && currentSlug.indexOf("/blog") === 0 && (
+            <div>
+                <div class="mxcontent__nav__link"><a href="/blog/archive">View all</a></div>
+                <div class="mxcontent__nav__section mxcontent__nav__section--last">
+                    <div class="mxcontent__nav__link"><a href="/blog/feed">RSS Feed</a><br /></div>
+                </div>
+            </div>)
+        }
     </div>
 )}
-//<div class="mxcontent__nav__link mxcontent__nav__link--title">Getting involved<br></div>
+//
 export default MXContentNav
