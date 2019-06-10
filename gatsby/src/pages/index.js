@@ -475,27 +475,23 @@ const Index = ({
         <div className="mxblock">
           <h2 className="mxblock__hx">Explore Matrix</h2>
           <div className="mxblock__explore">
-<a href="http://www.google.com" className="mxblock__explore__item w-inline-block">
+<a href="/docs/projects/try-matrix-now" className="mxblock__explore__item w-inline-block">
 <img src="images/basic_elaboration_message_happy.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Try Matrix</div>
 </a>
-<a href="http://www.google.com" className="mxblock__explore__item w-inline-block">
+<a href="/docs/projects/clients-matrix" className="mxblock__explore__item w-inline-block">
 <img src="images/software_layout_header_sideleft.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Cients</div>
 </a>
-<a href="http://www.google.com" className="mxblock__explore__item w-inline-block">
+<a href="/docs/projects/bots" className="mxblock__explore__item w-inline-block">
 <img src="images/basic_calculator.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Bots</div>
 </a>
-<a href="http://www.google.com" className="mxblock__explore__item w-inline-block">
+<a href="/docs/projects/sdks" className="mxblock__explore__item w-inline-block">
 <img src="images/software_layers2.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">SDKs</div>
 </a>
-<a href="http://www.google.com" className="mxblock__explore__item w-inline-block">
-<img src="images/basic_server.svg" alt="" className="mxblock__explore__item__img" />
-<div className="mxblock__explore__item__p">Servers</div>
-</a>
-<a href="http://www.google.com" className="mxblock__explore__item w-inline-block">
+<a href="/docs/projects/hosting" className="mxblock__explore__item w-inline-block">
 <img src="images/basic_cloud.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Hosting</div>
 </a>
@@ -505,19 +501,19 @@ const Index = ({
           <h2 className="mxblock__hx">SDKs</h2>
           <p>Native SDKs for multiple platforms, including:</p>
           <div className="mxblock__explore">
-<a href="http://www.google.com" className="mxblock__explore__item w-inline-block">
+<a href="https://github.com/poljar/matrix-nio" className="mxblock__explore__item w-inline-block">
 <img src="images/python.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Python</div>
 </a>
-<a href="http://www.google.com" className="mxblock__explore__item w-inline-block">
+<a href="https://github.com/matrix-org/matrix-js-sdk" className="mxblock__explore__item w-inline-block">
 <img src="images/js.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">JavaScript</div>
 </a>
-<a href="http://www.google.com" className="mxblock__explore__item w-inline-block">
+<a href="https://github.com/matrix-org/matrix-android-sdk" className="mxblock__explore__item w-inline-block">
 <img src="images/android.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Android</div>
 </a>
-<a href="http://www.google.com" className="mxblock__explore__item w-inline-block">
+<a href="https://github.com/matrix-org/matrix-ios-sdk" className="mxblock__explore__item w-inline-block">
 <img src="images/iOS.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">iOS</div>
 </a>

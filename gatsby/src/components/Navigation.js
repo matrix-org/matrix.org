@@ -15,7 +15,7 @@ navTypes["blog"] = (
     <img src="/images/basic_lock.svg" alt="" class="mxnavsection__icon" />
     <div class="mxnavsection__text">Security</div>
   </a>
-  <a href="http://www.google.com" class="mxnavsection__item w-inline-block">
+  <a href="/blog/feed" class="mxnavsection__item w-inline-block">
     <img src="/images/basic_rss.svg" alt="" class="mxnavsection__icon" />
     <div class="mxnavsection__text">RSS Feed</div>
   </a>
@@ -31,7 +31,7 @@ navTypes["develop"] = (
     <img src="/images/basic_pencil_ruler.svg" alt="" class="mxnavsection__icon" />
     <div class="mxnavsection__text">Spec</div>
   </a>
-  <a href="http://www.google.com" class="mxnavsection__item w-inline-block">
+  <a href="https://matrix.org/docs/api/client-server/" class="mxnavsection__item w-inline-block">
     <img src="/images/basic_cards_hearts.svg" alt="" class="mxnavsection__icon" />
     <div class="mxnavsection__text">API Playground</div>
   </a>
