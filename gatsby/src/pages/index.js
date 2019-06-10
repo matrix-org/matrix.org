@@ -2,9 +2,10 @@
 
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Layout, Footer} from '../components'
+import { Layout} from '../components'
 
 import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
 
 import config from '../../config'
 
@@ -783,64 +784,8 @@ const Index = () => {
       </div>
     </div>
   </div>
-  <div className="mxfooter">
-    <div className="mxfooter__container">
-      <div className="mxfooter__column">
-<a href="#" className="mxfooter__link mxfooter__link--primary">Discover</a>
-<a href="#" className="mxfooter__link">Try Matrix</a>
-<a href="#" className="mxfooter__link">Clients</a>
-<a href="#" className="mxfooter__link">Bots</a>
-<a href="#" className="mxfooter__link">SDKs</a>
-<a href="#" className="mxfooter__link">Servers</a>
-<a href="#" className="mxfooter__link">Hosting</a>
-</div>
-      <div className="mxfooter__column">
-<a href="#" className="mxfooter__link mxfooter__link--primary">Guides</a>
-<a href="#" className="mxfooter__link">Getting Started</a>
-<a href="#" className="mxfooter__link">Client-Server API</a>
-<a href="#" className="mxfooter__link">Install Synapse</a>
-<a href="#" className="mxfooter__link">Bridges</a>
-<a href="#" className="mxfooter__link">All guides</a>
-</div>
-      <div className="mxfooter__column">
-<a href="#" className="mxfooter__link mxfooter__link--primary">Develop</a>
-<a href="docs-nav.html" className="mxfooter__link">Docs</a>
-<a href="#" className="mxfooter__link">Spec</a>
-<a href="#" className="mxfooter__link">API Playground</a>
-<a href="#" className="mxfooter__link">Code</a>
-</div>
-      <div className="mxfooter__column">
-<a href="#" className="mxfooter__link mxfooter__link--primary">Blog</a>
-<a href="#" className="mxfooter__link">All posts</a>
-<a href="#" className="mxfooter__link">This week in Matrix</a>
-<a href="#" className="mxfooter__link">Security</a>
-<a href="#" className="mxfooter__link">RSS</a>
-</div>
-      <div className="mxfooter__column">
-<a href="#" className="mxfooter__link mxfooter__link--primary">More</a>
-<a href="#" className="mxfooter__link">FAQs</a>
-<a href="#" className="mxfooter__link">Security</a>
-<a href="#" className="mxfooter__link">Legal</a>
-</div>
-    </div>
-    <div className="mxfooter__container mxfooter__container--heel">
-      <div className="mxfooter__iconwrapper">
-<a href="#" className="w-inline-block">
-<img src="images/github.svg" alt="" className="mxfooter__icon" />
-</a>
-<a href="#" className="w-inline-block">
-<img src="images/gitlab.svg" alt="" className="mxfooter__icon" />
-</a>
-<a href="#" className="w-inline-block">
-<img src="images/youtube.svg" alt="" className="mxfooter__icon" />
-</a>
-<a href="#" className="w-inline-block">
-<img src="images/twitter.svg" alt="" className="mxfooter__icon" />
-</a>
-</div>
-      <p className="mxfooter__text">© 2019 The Matrix.org Foundation C.I.C.</p>
-    </div>
-  </div>
+  <Footer />
+
   </div>
     </ThemeProvider>)
 }
