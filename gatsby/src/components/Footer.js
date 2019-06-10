@@ -8,7 +8,7 @@ const Footer = () => (
         <a href="/docs/projects/try-matrix-now" class="mxfooter__link">Try Matrix</a>
         <a href="/docs/projects/clients-matrix" class="mxfooter__link">Clients</a>
         <a href="/docs/projects/bots" class="mxfooter__link">Bots</a>
-        <a href="/docs/projects/sdks" class="mxfooter__link">SDK&#x27;s</a>
+        <a href="/docs/projects/sdks" class="mxfooter__link">SDKs</a>
         <a href="/docs/projects/servers" class="mxfooter__link">Servers</a>
         <a href="/docs/projects/hosting" class="mxfooter__link">Hosting</a>
       </div>
@@ -36,7 +36,7 @@ const Footer = () => (
       </div>
       <div class="mxfooter__column">
         <a href="/" class="mxfooter__link mxfooter__link--primary">More</a>
-        <a href="/docs/guides/faq" class="mxfooter__link">FAQ&#x27;s</a>
+        <a href="/docs/guides/faq" class="mxfooter__link">FAQs</a>
         <a href="/security" class="mxfooter__link">Security</a>
         <a href="/legal" class="mxfooter__link">Legal</a>
       </div>
@@ -56,7 +56,7 @@ const Footer = () => (
           <img src="images/twitter.svg" alt="" class="mxfooter__icon" />
         </a>
       </div>
-      <p class="mxfooter__text">© 2019 The Matrix.org Foundation</p>
+      <p class="mxfooter__text">© 2019 The Matrix.org Foundation C.I.C.</p>
     </div>
   </div>
 

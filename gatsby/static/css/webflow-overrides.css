@@ -1,15 +1,18 @@
 body {
     font-family: "Helvetica Neue",
+        "Helvetica",
+        Arial,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
         Roboto,
-        Helvetica,
-        Arial,
         sans-serif,
         "Apple Color Emoji",  /* Emojis*/
         "Segoe UI Emoji", /* Emojis*/
         "Segoe UI Symbol"; /* Emojis*/
+
+    font-size: 16px;
+    line-height: 1.5em;
 }
 
 label {
@@ -20,6 +23,53 @@ pre {
   overflow-x: scroll;
   width: 100%;
   max-width: calc(100vw - 20px);
+}
+
+img {
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+.mximagine {
+  font-size: 18x;
+  font-weight: bold;
+  line-height: 1.5em;
+  text-align: left;
+  list-style: none;
+  margin-top: -40px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  left: -35px;
+  max-width: 780px;
+}
+
+.mximagine li {
+  margin-left: 7.1em;
+}
+
+.mximagine li:first-child {
+  margin-left: 0em;
+}
+
+.mxthisismatrix {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 1em;
+}
+
+.mxmatrixdescription {
+  font-size: 18px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mxhow {
+  text-align: left;
 }
 
 .mxcontent__nav__link--title a, .mxcontent__nav__link a {

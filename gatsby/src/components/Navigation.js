@@ -56,7 +56,7 @@ navTypes["discover"] = (
   </a>
   <a href="/docs/projects/sdks" class="mxnavsection__item w-inline-block">
     <img src="/images/software_layers2.svg" alt="" class="mxnavsection__icon" />
-    <div class="mxnavsection__text">SDK&#x27;s</div>
+    <div class="mxnavsection__text">SDKs</div>
   </a>
   <a href="/docs/projects/servers" class="mxnavsection__item w-inline-block">
     <img src="/images/basic_server.svg" alt="" class="mxnavsection__icon" />
@@ -79,7 +79,7 @@ const Navigation = (navmode) => (
           <a href="/docs/projects/try-matrix-now" class={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "discover" ? "w--current":"")}>Discover</a>
           <a href="/docs/guides" class={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "develop" ? "w--current":"")}>Develop</a>
           <a href="/blog/posts" class={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "blog" ? "w--current":"")}>Blog</a>
-          <a href="/docs/guides/faq" class="mxnavbar__navlink w-nav-link">FAQ&#x27;s</a>
+          <a href="/docs/guides/faq" class="mxnavbar__navlink w-nav-link">FAQs</a>
           <a href="/try-now" class="mxnavbar__navlink mxnavbar__navlink--try w-nav-link">Try Now</a>
           <a href="/try-now" class="mxnavbar__navlink mxnavbar__navlink--primary w-nav-link">Try Now</a>
         </nav>
