@@ -2,12 +2,9 @@
 
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Layout} from '../components'
 
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
-
-import config from '../../config'
 
 import { ThemeProvider } from 'styled-components'
 import theme from '../../config/theme'
@@ -93,7 +90,7 @@ const Index = ({
         <div className="mxblock mxblock--hero">
 <img src="images/matrix-logo-white.svg" alt="" className="mxblock--hero__logo" />
           <h1 className="mxblock--hero__hx delete">An open network for secure, decentralized communication</h1>
-<a href="#" className="mxblock__btn mxblock--hero__btn mxblock--hero__btn--mctesto w-button">Get started</a>
+<a href="#about" className="mxblock__btn mxblock--hero__btn mxblock--hero__btn--mctesto w-button">Get started</a>
 </div>
       </div>
     </div>
@@ -104,7 +101,7 @@ const Index = ({
         <div className="mxblock mxblock--hero mxblock--hidden">
 <img src="images/matrix-logo.svg" alt="" className="mxblock--hero__logo" />
           <h1 className="mxblock--hero__hx">An open network for secure, decentralized communication</h1>
-<a href="#" className="mxblock__btn mxblock--hero__btn w-button">Get started</a>
+<a href="#about" className="mxblock__btn mxblock--hero__btn w-button">Get started</a>
 </div>
         <div className="mxblock">
           <ul className="mximagine">
@@ -118,7 +115,7 @@ const Index = ({
             This is Matrix.
           </p>
           <p className="mxp mxmatrixdescription">
-            Matrix is an open source project that publishes the <a href="#">Matrix open standard</a> for secure,
+            Matrix is an open source project that publishes the <a href="/docs/spec">Matrix open standard</a> for secure,
             decentralised, real-time communication, and its Apache licensed <a
             href="https://github.com/matrix-org">reference implementations</a>. Maintained by the non-profit <a
             href="/foundation">Matrix.org Foundation</a>, we aim to create an open platform which is as independent,
@@ -439,7 +436,7 @@ const Index = ({
           <h2 className="mxblock__hx">Latest News</h2>
           <div className="mxgrid mxgrid--news">
           {edges.map(edge => (
-            <div className="mxgrid__item50 mxgrid__item50--news">
+            <div key={edge.node.fields.slug} className="mxgrid__item50 mxgrid__item50--news">
             <div className="mxgrid__item__bg mxgrid__item__bg--news">
               <h3 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--news">{edge.node.frontmatter.title}</h3>
               <div className="mxgrid__item__bg__vert">
@@ -451,7 +448,7 @@ const Index = ({
             </div>
           ))}
           </div>
-<a href="#" className="mxgrid__item__bg__btn w-button">View all posts</a>
+<a href="/blog/posts" className="mxgrid__item__bg__btn w-button">View all posts</a>
 </div>
         <div className="mxblock">
           <h2 className="mxblock__hx">Explore Matrix</h2>
@@ -499,7 +496,7 @@ const Index = ({
 <div className="mxblock__explore__item__p">iOS</div>
 </a>
 </div>
-<a href="#" className="mxgrid__item__bg__btn w-button">View all SDKs</a>
+<a href="/docs/projects/sdks" className="mxgrid__item__bg__btn w-button">View all SDKs</a>
 </div>
         <div className="mxblock">
           <div className="mxgrid">
@@ -551,7 +548,7 @@ const Index = ({
                       </div>
                     </div>
                   </div>
-<a href="#" className="mxgrid__item__bg__btn w-button">View all on GitHub</a>
+<a href="https://github.com/matrix-org/" className="mxgrid__item__bg__btn w-button">View all on GitHub</a>
 </div>
               </div>
             </div>
@@ -664,7 +661,7 @@ const Index = ({
                     <div className="mxgrid__item__bg__vert">
                       <h4>Status</h4>
                       <p className="mxgrid__sponsors__item__p">A Mobile OS, Built for Ethereum.</p>
-<a href="#">Learn more</a>
+<a href="https://status.im/">Learn more</a>
 </div>
                   </div>
                   <div className="mxgrid__sponsors__item">
@@ -674,7 +671,7 @@ const Index = ({
                     <div className="mxgrid__item__bg__vert">
                       <h4>UpCloud</h4>
                       <p className="mxgrid__sponsors__item__p">Matrix.org is generously hosted by UpCloud! Host your homeserver via UpCloud and &amp; get a $25 credit.</p>
-<a href="#">Learn more</a>
+<a href="https://upcloud.com/">Learn more</a>
 </div>
                   </div>
                   <div className="mxgrid__sponsors__item">
@@ -685,7 +682,7 @@ const Index = ({
                       <h4>Private Internet Access</h4>
                       <p className="mxgrid__sponsors__item__p">Private Internet Access™ VPN Service encrypts your connection and provides you with an anonymous IP to protect your privacy. <br />
 </p>
-<a href="#">Learn more</a>
+<a href="https://www.privateinternetaccess.com/">Learn more</a>
 </div>
                   </div>
                   <div className="mxgrid__sponsors__item">
@@ -697,7 +694,7 @@ const Index = ({
 <br />
 </strong>
 </p>
-<a href="#">Learn more</a>
+<a href="http://www.inblockchain.com/">Learn more</a>
 </div>
                   <div className="mxgrid__sponsors__item">
                     <div className="mxgrid__sponsors__logo">
@@ -708,7 +705,7 @@ const Index = ({
 <br />
 </strong>
 </p>
-<a href="#">Learn more</a>
+<a href="https://omisego.network/">Learn more</a>
 </div>
                   <div className="mxgrid__sponsors__item">
                     <div className="mxgrid__sponsors__logo">
@@ -719,7 +716,7 @@ const Index = ({
 <br />
 </strong>
 </p>
-<a href="#">Learn more</a>
+<a href="https://tendermint.com/">Learn more</a>
 </div>
                 </div>
               </div>

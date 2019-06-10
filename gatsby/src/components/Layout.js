@@ -18,7 +18,7 @@ const Layout = ({ children, customSEO, navmode,  hasSideNavigation, hasNavPaddin
       <>
         <Navigation navmode={navmode} />
         {!customSEO && <SEO buildTime={buildTime} />}
-        <div class={mxContentWrapperClass}>
+        <div className={mxContentWrapperClass}>
           <div className={mxContentClass}>
             {children}
           </div>
