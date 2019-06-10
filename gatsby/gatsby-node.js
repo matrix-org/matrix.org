@@ -209,6 +209,7 @@ const resultLegal = await wrapper(
                 categories
                 author
                 slug
+                sort_order
               }
             }
           }
@@ -219,9 +220,14 @@ const resultLegal = await wrapper(
 
   const pages = resultPages.data.allMdx.edges
   const pagesForGuidesList = pages.map(p => {return {
-    slug: p.node.fields.slug, title: p.node.frontmatter.title
+    slug: p.node.fields.slug, title: p.node.frontmatter.title, sort_order: p.node.frontmatter.sort_order
    }})
-
+  pagesForGuidesList.sort(function(a, b) {
+    if (a.sort_order && ! b.sort_order) return -1;
+    if (! a.sort_order && b.sort_order) return 1;
+    if (! a.sort_order && ! b.sort_order) return 0;
+    return a.sort_order - b.sort_order;
+    });
   pages.forEach((edge, index) => {
 
     createPage({
