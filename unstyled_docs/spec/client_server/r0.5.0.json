@@ -7208,7 +7208,7 @@
         },
         "/_matrix/client/r0/rooms/{roomId}/context/{eventId}": {
             "get": {
-                "description": "This API returns a number of events that happened just before and\nafter the specified event. This allows clients to get the context\nsurrounding an event.\n\n*Note*: This endpoint supports lazy-loading of room member events. See `Filtering <#lazy-loading-room-members>`_\nfor more information.",
+                "description": "This API returns a number of events that happened just before and\nafter the specified event. This allows clients to get the context\nsurrounding an event.\n\n*Note*: This endpoint supports lazy-loading of room member events. See\n`Lazy-loading room members <#lazy-loading-room-members>`_ for more information.",
                 "operationId": "getEventContext",
                 "parameters": [
                     {
@@ -9566,7 +9566,7 @@
         },
         "/_matrix/client/r0/rooms/{roomId}/messages": {
             "get": {
-                "description": "This API returns a list of message and state events for a room. It uses\npagination query parameters to paginate history in the room.\n\n*Note*: This endpoint supports lazy-loading of room member events. See `Filtering <#lazy-loading-room-members>`_\nfor more information.",
+                "description": "This API returns a list of message and state events for a room. It uses\npagination query parameters to paginate history in the room.\n\n*Note*: This endpoint supports lazy-loading of room member events. See\n`Lazy-loading room members <#lazy-loading-room-members>`_ for more information.",
                 "operationId": "getRoomEvents",
                 "parameters": [
                     {
