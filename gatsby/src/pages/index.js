@@ -74,7 +74,7 @@ const Index = ({
     return (
          <ThemeProvider theme={theme}>
             <div>
-            <Helmet>
+            <Helmet title={`Matrix.org`}>
               <link rel="stylesheet" type="text/css" href="/css/how-it-works.css"/>
               <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
               <script type="text/javascript" src="/js/d3.v3.min.js"></script>
