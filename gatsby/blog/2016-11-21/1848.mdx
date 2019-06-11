@@ -9,8 +9,8 @@ author: Matthew Hodgson
 ---
 
 TL;DR: We're officially starting the cross-platform beta of end-to-end encryption in Matrix today, with matrix-js-sdk, matrix-android-sdk and matrix-ios-sdk all supporting e2e via the 
-<a href="https://matrix.org/docs/spec/olm.html">Olm</a> and 
-<a href="https://matrix.org/docs/spec/megolm.html">Megolm</a> cryptographic ratchets.  Meanwhile, 
+<a href="/docs/spec/olm.html">Olm</a> and 
+<a href="/docs/spec/megolm.html">Megolm</a> cryptographic ratchets.  Meanwhile, 
 <a href="https://www.nccgroup.trust/us/our-research/matrix-olm-cryptographic-review">NCC Group have publicly released their security assessment</a> of the underlying libolm library, kindly funded by the 
 <a href="https://www.opentech.fund/">Open Technology Fund</a>, giving a full and independent transparent report on where the core implementation is at. The assessment was incredibly useful, finding some interesting issues, which have all been solved either in libolm itself or at the Matrix client SDK level.
 
@@ -28,7 +28,7 @@ We are ridiculously excited about adding an open decentralised e2e-encrypted pub
 Ever since the beginning of the Matrix we've been promising end-to-end (E2E) encryption, which is rather vital given conversations in Matrix are replicated over every server participating in a room.  This is no different to SMTP and IMAP, where emails are typically stored unencrypted in the IMAP spools of all the participating mail servers, but we can and should do much better with Matrix: there is no reason to have to trust all the participating servers not to snoop on your conversations.  Meanwhile, the internet is screaming out for an open decentralised e2e-encrypted pubsub data store - which we're now finally able to provide :)
 
 
-Today marks the start of a formal public beta for our <a href="https://matrix.org/docs/spec/megolm.html">Megolm</a> and <a href="https://matrix.org/docs/spec/olm.html">Olm</a>-based end-to-end encryption across Web, Android and iOS. New builds of the 
+Today marks the start of a formal public beta for our <a href="/docs/spec/megolm.html">Megolm</a> and <a href="/docs/spec/olm.html">Olm</a>-based end-to-end encryption across Web, Android and iOS. New builds of the 
 <a href="https://riot.im">Riot</a> matrix client have just been released on top of the newly 
 Megolm
 -capable 
@@ -38,7 +38,7 @@ Megolm
 .  The stuff that ships today is:
 
 <ul>
- 	<li style="font-weight: 400;"><b>E2E encryption, based on the <a href="https://matrix.org/git/olm/about">Olm</a> <a href="https://en.wikipedia.org/wiki/Double_Ratchet_Algorithm">Double Ratchet</a> and Megolm ratchet, working in beta on all three platforms</b>.  We're still chasing a few nasty bugs which can cause ‘unknown inbound session IDs', but in general it should be stable: please report these via Github if you see them.
+ 	<li style="font-weight: 400;"><b>E2E encryption, based on the <a href="/git/olm/about">Olm</a> <a href="https://en.wikipedia.org/wiki/Double_Ratchet_Algorithm">Double Ratchet</a> and Megolm ratchet, working in beta on all three platforms</b>.  We're still chasing a few nasty bugs which can cause ‘unknown inbound session IDs', but in general it should be stable: please report these via Github if you see them.
 </li>
  	<li style="font-weight: 400;"><b>Encrypted attachments are here!</b> (limited to ~2MB on web, but as soon as 
 <a href="https://github.com/matrix-org/matrix-react-sdk/pull/562">https://github.com/matrix-org/matrix-react-sdk/pull/562</a> lands this limit will go away)
@@ -76,15 +76,15 @@ In practice the system is working very usably, especially for 1:1 chats.  Big g
 In Riot you can turn it on a per-room basis if you're an administrator that room by flipping the little padlock button in Room Settings.  Warning: once enabled, you cannot turn it off again for that room (to avoid the race condition of people suddenly decrypting a room before someone says something sensitive):
 
 
-<img class="aligncenter wp-image-1849" src="https://matrix.org/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-21-at-15.21.15-1024x646.png" alt="screen-shot-2016-11-21-at-15-21-15" width="552" height="348" />
+<img class="aligncenter wp-image-1849" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-21-at-15.21.15-1024x646.png" alt="screen-shot-2016-11-21-at-15-21-15" width="552" height="348" />
 
 The journey to end-to-end encryption has been a bit convoluted, with work beginning in Feb 2015 by the Matrix team on 
-<a href="https://matrix.org/git/olm"><b>Olm</b></a>: an independent Apache-licensed implementation in C/C++11 of the Double Ratchet algorithm designed by Trevor Perrin and Moxie Marlinspike (
+<a href="/git/olm"><b>Olm</b></a>: an independent Apache-licensed implementation in C/C++11 of the Double Ratchet algorithm designed by Trevor Perrin and Moxie Marlinspike (
 <a href="https://github.com/trevp/double_ratchet/wiki">https://github.com/trevp/double_ratchet/wiki</a> - then called ‘axolotl').  We picked the Double Ratchet in its capacity as the most ubiquitous, respected and widely studied e2e algorithm out there - mainly thanks to Open Whisper Systems implementing it in Signal, and subsequently licensing it to Facebook for WhatsApp and Messenger, Google for Allo, etc.  And we reasoned that if we are ever to link huge networks like WhatsApp into Matrix whilst preserving end-to-end encrypted semantics, we'd better be using at least roughly the same technology :D
 
 
 One of the first things we did was to write a 
-<a href="https://matrix.org/docs/spec/olm.html">terse but formal spec</a> for the Olm implementation of the Double Ratchet, fleshing out the original sketch from Trevor &amp; Moxie, especially as at the time there wasn't a formal spec from Open Whisper Systems (until yesterday! Congratulations to Trevor &amp; co for publishing their 
+<a href="/docs/spec/olm.html">terse but formal spec</a> for the Olm implementation of the Double Ratchet, fleshing out the original sketch from Trevor &amp; Moxie, especially as at the time there wasn't a formal spec from Open Whisper Systems (until yesterday! Congratulations to Trevor &amp; co for publishing their 
 <a href="https://whispersystems.org/docs/specifications/doubleratchet/">super-comprehensive spec</a> :).  We wrote a first cut of the ratchet over the course of a few weeks, which looked pretty promising but then the team got pulled into improving Synapse performance and features as our traffic started to accelerate faster than we could have possibly hoped.  We then got back to it again in June-Aug 2015 and basically finished it off and added a basic implementation to matrix-react-sdk (and picked up by Vector, now Riot)… before getting side-tracked again.  After all, there wasn't any point in adding e2e to clients if the rest of the stack is on fire!
 
 
@@ -95,9 +95,9 @@ For Matrix we also require the ability to explicitly decide how much conversatio
 
 
 The end result is an entirely new ratchet that we've called 
-<a href="https://matrix.org/docs/spec/megolm.html"><b>Megolm</b></a> - which is included in the same 
-<a href="https://matrix.org/git/olm">libolm library</a> as Olm.  The way Megolm works is to give every sender in the room its own encrypted ratchet (‘outbound session'), so every device encrypts each message once based on the current key given by their ratchet (and then advances the ratchet to generate a new key).  Meanwhile, the device shares the state of their ‘outbound session' to every other device in the room via the normal Olm ratchet in a 1:1 exchange between the devices.  The other devices maintain an ‘inbound session' for each of the devices they know about, and so can decrypt their messages.  Meanwhile, when new devices join a room, senders can share their sessions according to taste to the new device - either giving access to old history or not depending on the configuration of the room.  You can read more in the 
-<a href="https://matrix.org/docs/spec/megolm.html">formal spec for Megolm</a>.
+<a href="/docs/spec/megolm.html"><b>Megolm</b></a> - which is included in the same 
+<a href="/git/olm">libolm library</a> as Olm.  The way Megolm works is to give every sender in the room its own encrypted ratchet (‘outbound session'), so every device encrypts each message once based on the current key given by their ratchet (and then advances the ratchet to generate a new key).  Meanwhile, the device shares the state of their ‘outbound session' to every other device in the room via the normal Olm ratchet in a 1:1 exchange between the devices.  The other devices maintain an ‘inbound session' for each of the devices they know about, and so can decrypt their messages.  Meanwhile, when new devices join a room, senders can share their sessions according to taste to the new device - either giving access to old history or not depending on the configuration of the room.  You can read more in the 
+<a href="/docs/spec/megolm.html">formal spec for Megolm</a>.
 
 
 We finished the combination of Olm and Megolm back in September 2016, and shipped the very first implementation in the matrix-js-sdk and matrix-react-sdk as used in 
@@ -137,13 +137,13 @@ Further reading:
 
 <ul>
  	<li>Libolm website: 
-<a href="https://matrix.org/git/olm/about">https://matrix.org/git/olm/about</a></li>
+<a href="/git/olm/about">https://matrix.org/git/olm/about</a></li>
  	<li>Libolm implementor's guide: 
 <a href="http://matrix.org/docs/guides/e2e_implementation.html">http://matrix.org/docs/guides/e2e_implementation.html</a></li>
  	<li>Formal specification for Olm: 
-<a href="https://matrix.org/docs/spec/olm.html">https://matrix.org/docs/spec/olm.html</a></li>
+<a href="/docs/spec/olm.html">https://matrix.org/docs/spec/olm.html</a></li>
  	<li>Formal specification for Megolm: 
-<a href="https://matrix.org/docs/spec/megolm.html">https://matrix.org/docs/spec/megolm.html</a></li>
+<a href="/docs/spec/megolm.html">https://matrix.org/docs/spec/megolm.html</a></li>
  	<li>Formal specification for E2E in Matrix (WIP, yet to be merged): 
 <a href="http://matrix.org/speculator/spec/drafts%2Fe2e/client_server/unstable.html#end-to-end-encryption">http://matrix.org/speculator/spec/drafts%2Fe2e/client_server/unstable.html#end-to-end-encryption</a></li>
  	<li>The full security assessment: 

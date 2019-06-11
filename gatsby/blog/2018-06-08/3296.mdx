@@ -37,7 +37,7 @@ It is not ready...Yet. PRs and issues are welcomed!</blockquote>
 <h2 id="neilalexander-and-the-hard-to-name-osx-client-now--seaglass"><a href="https://matrix.to/#/@neilalexander:matrix.org">neilalexander</a> has a new macOS Client: seaglass</h2>
 <a href="https://matrix.to/#/@neilalexander:matrix.org">neilalexander</a> has begun work on "<a href="https://github.com/neilalexander/seaglass">seaglass</a>", a client for macOS using <a href="https://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a>, he's only just begun, but for now see the screenshot below:
 
-<a href="https://matrix.org/blog/wp-content/uploads/2018/06/neilalexander-osx-client-1.png"><img class="alignnone size-full wp-image-3301" src="https://matrix.org/blog/wp-content/uploads/2018/06/neilalexander-osx-client-1.png" alt="" width="1896" height="1336" /></a>
+<a href="/blog/wp-content/uploads/2018/06/neilalexander-osx-client-1.png"><img class="alignnone size-full wp-image-3301" src="/blog/wp-content/uploads/2018/06/neilalexander-osx-client-1.png" alt="" width="1896" height="1336" /></a>
 <h2 id="kitsune--gtad-and-libqmatrixclient"><a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>: <a href="https://github.com/KitsuneRal/gtad">GTAD</a> and <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a></h2>
 <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> has announced <a href="https://github.com/KitsuneRal/gtad">GTAD</a> v0.6 and <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> v0.3. We've covered <a href="https://github.com/KitsuneRal/gtad">GTAD</a> before, but I think it's worth including this note from the readme:
 <blockquote>GTAD (Generate Things from an API Description) is a generator of code from a Swagger/OpenAPI specification. Initially made to generate marshalling/unmarshalling C++ code for Matrix CS API, it can be extended to support other API descriptions and other programming languages with static type checking.</blockquote>
@@ -70,7 +70,7 @@ The community on android adds a more readable display of keys and a floating act
 <a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> appeared with an extremely ambitious piece of work. His goal:
 <blockquote>I want to create a full spec's implementation on java (all 5 specification). After that I want try to write a homeserver (2 variants: distributed on java+kafka and simple which can run on a ligth vps). But it's a long-term goal.</blockquote>
 So far work has begun on an implementation of the Matrix API in Java:
-<blockquote><a href="https://gitlab.com/ma1uta/jeon">https://gitlab.com/ma1uta/jeon</a> - another java implementation of the matrix api (client-server, server-server, application server, push server, identity server) using jax-ws. It corresponds the specification on <a href="https://matrix.org/docs/spec">https://matrix.org/docs/spec</a>. On the next step I want dive deep into synapse to parse it's api and fill the gaps of the spec with sending pull request. May be I will write something like a TCK (test compability kit).</blockquote>
+<blockquote><a href="https://gitlab.com/ma1uta/jeon">https://gitlab.com/ma1uta/jeon</a> - another java implementation of the matrix api (client-server, server-server, application server, push server, identity server) using jax-ws. It corresponds the specification on <a href="/docs/spec">https://matrix.org/docs/spec</a>. On the next step I want dive deep into synapse to parse it's api and fill the gaps of the spec with sending pull request. May be I will write something like a TCK (test compability kit).</blockquote>
 And an SDK for which there is a sample bot for mastodon:
 <blockquote>Also this project has a very early sdk (client, bot). I will fix it after finishing works with the spec.
 <a href="https://gitlab.com/ma1uta/mxtoot">https://gitlab.com/ma1uta/mxtoot</a> - matrix-mastodon bridge.
@@ -108,12 +108,12 @@ matrix-search mimics the standard /search API</blockquote>
 <blockquote>Switched the <a href="https://github.com/ananace/matrix-synapse">Kubernetes-oriented Synapse image</a> over to running on the official one as a base, seems to still work quite well. Even if there were some issues at first due to Alpine and busybox.</blockquote>
 <blockquote>I've been building slightly specialized Synapse docker images since 0.25.1 - and running them on my Kubernetes cluster at home. Moved them to being based on the official images now instead of building them on CentOS as I used to.</blockquote>
 <h2 id="synapse-0310-and-0311-released">Synapse 0.31.0 and 0.31.1 released</h2>
-Changes for <a href="https://matrix.org/blog/2018/06/06/synapse-v0-31-0-released/">Synapse 0.31.0</a>
+Changes for <a href="/blog/2018/06/06/synapse-v0-31-0-released/">Synapse 0.31.0</a>
 <ul>
  	<li>Most notable change from v0.30.0 is to switch to python prometheus library to improve system stats reporting. WARNING this changes a number of prometheus metrics in a backwards-incompatible manner.</li>
  	<li>There are still many changes being made relating to the Python 3 migration.</li>
 </ul>
-For <a href="https://matrix.org/blog/2018/06/08/synapse-0-31-1-released/">Synapse 0.31.1</a>
+For <a href="/blog/2018/06/08/synapse-0-31-1-released/">Synapse 0.31.1</a>
 <blockquote>v0.31.1 fixes a security bug in the “get_missing_events“ federation API where event visibility rules were not applied correctly.</blockquote>
 <a href="https://matrix.to/#/@andrew:shadura.me">andrewsh</a> has been packaging synapse for Debian.
 <h2 id="guides-index">Guides index</h2>

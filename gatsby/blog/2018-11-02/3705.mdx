@@ -8,7 +8,7 @@ slug: user-experience-preview-end-to-end-encryption-by-default
 ---
 
 <span style="font-weight: 400">It's been a long-standing goal to enable end-to-end encryption by default for private communication in Matrix. The technical effort so far has included </span>
-<a href="https://matrix.org/docs/guides/e2e_implementation.html"><span style="font-weight: 400">our libolm library</span></a><span style="font-weight: 400">, </span>
+<a href="/docs/guides/e2e_implementation.html"><span style="font-weight: 400">our libolm library</span></a><span style="font-weight: 400">, </span>
 <a href="https://www.nccgroup.trust/us/our-research/matrix-olm-cryptographic-review/"><span style="font-weight: 400">an independent cryptographic review</span></a><span style="font-weight: 400"> and </span>
 <a href="https://github.com/vector-im/riot-web/issues/6779"><span style="font-weight: 400">a massive backlog of feature development and bug fixes</span></a><span style="font-weight: 400">. Today, instead I'd like to focus on some of the User Experience challenges and goals we're facing.</span>
 
@@ -38,7 +38,7 @@ When using encrypted messages, most existing services fall short in one or all o
 <b> work-in-progress wireframes</b><span style="font-weight: 400">, in the spirit of designing in the open and gathering feedback from the wider Matrix community. Please note that these don't represent the actual interface design.</span>
 
 <h2>Cross-signing personal devices</h2>
-<a href="https://matrix.org/blog/wp-content/uploads/2018/11/E2E-UX-Cross-signing.png"><img class="alignnone wp-image-3708 size-large" src="https://matrix.org/blog/wp-content/uploads/2018/11/E2E-UX-Cross-signing-1024x576.png" alt="" width="1024" height="576" /></a>
+<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Cross-signing.png"><img class="alignnone wp-image-3708 size-large" src="/blog/wp-content/uploads/2018/11/E2E-UX-Cross-signing-1024x576.png" alt="" width="1024" height="576" /></a>
 
 <span style="font-weight: 400">When logging in to a new device, you'll be able to use an existing device to verify your new one. Verification is done by </span>
 <a href="https://github.com/matrix-org/matrix-doc/issues/1543"><span style="font-weight: 400">scanning a QR code</span></a><span style="font-weight: 400"> on whichever device has the most convenient camera to use, or by </span>
@@ -49,7 +49,7 @@ When using encrypted messages, most existing services fall short in one or all o
 
 
 <h2>Secure Message Recovery</h2>
-<a href="https://matrix.org/blog/wp-content/uploads/2018/11/E2E-UX-Secure-Message-Recovery.gif.gif"><img class="alignnone size-large wp-image-3725" src="https://matrix.org/blog/wp-content/uploads/2018/11/E2E-UX-Secure-Message-Recovery.gif.gif" alt="" width="1024" height="577" /></a>
+<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Secure-Message-Recovery.gif.gif"><img class="alignnone size-large wp-image-3725" src="/blog/wp-content/uploads/2018/11/E2E-UX-Secure-Message-Recovery.gif.gif" alt="" width="1024" height="577" /></a>
 
 <span style="font-weight: 400">To the end user, Secure Message Recovery works a lot like setting up disk encryption or a password manager. A user can optionally secure their message history using a recovery passphrase and/or key. If logged out, or using another device, the user can use the recovery passphrase or key to access their encrypted message history.</span>
 
@@ -62,7 +62,7 @@ When using encrypted messages, most existing services fall short in one or all o
 </span>
 
 <h2>People should trust people</h2>
-<a href="https://matrix.org/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif"><img class="alignnone size-large wp-image-3726" src="https://matrix.org/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif" alt="" width="1024" height="577" /></a>
+<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif"><img class="alignnone size-large wp-image-3726" src="/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif" alt="" width="1024" height="577" /></a>
 
 <span style="font-weight: 400">With both cross-signing and Secure Message Recovery in place, we think that people should trust people, instead of individual devices. Now, when you verify a device, it'll mark all of that users trusted devices as trusted.</span>
 
@@ -70,7 +70,7 @@ When using encrypted messages, most existing services fall short in one or all o
 <span style="font-weight: 400">Gone are the days of every person you talk to having to independently verify your new device upgrade. Like cross-signing, you can verify a device by scanning a QR code or comparing a short text string.</span>
 
 <h2>Sensible and extensible</h2>
-<a href="https://matrix.org/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif"><img class="alignnone size-large wp-image-3727" src="https://matrix.org/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif" alt="" width="1024" height="577" /></a>
+<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif"><img class="alignnone size-large wp-image-3727" src="/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif" alt="" width="1024" height="577" /></a>
 
 <span style="font-weight: 400">In Riot, we're implementing these features with a sensible default experience that strikes a balance between usability and security. We think most people would prefer to trust cross-signed devices, and that user trust shouldn't block encryption. However, if you aren't most people, you'll be free to configure whatever level of security you need.
 </span>

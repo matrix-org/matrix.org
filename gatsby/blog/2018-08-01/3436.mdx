@@ -12,7 +12,7 @@ Following on from the previous post, we have an update from zil0 on his <a href=
 
 The goal of my project is to implement Matrix's end-to-end encryption protocol in Python, as part of <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a>. My mentors are Richard van der Hoff (richvdh) and Hubert Chathi (uhoreg).
 
-It was easy to get started on the project, since the simple parts came first (adding API calls), and then the whole process to follow is documented in an <a href="https://matrix.org/docs/guides/e2e_implementation.html">implementation guide</a>, while there is also the reference implementation in JavaScript. And most importantly, the community is nice. :)
+It was easy to get started on the project, since the simple parts came first (adding API calls), and then the whole process to follow is documented in an <a href="/docs/guides/e2e_implementation.html">implementation guide</a>, while there is also the reference implementation in JavaScript. And most importantly, the community is nice. :)
 
 Some parts of the work consist in wrapping around the cryptographic primitives implemented in <a href="https://git.matrix.org/git/olm/">libolm</a> (via <a href="https://github.com/poljar/python-olm">Python bindings</a>), in order to handle encrypted events. Others are less straightforward, such as tracking device lists of users, or finding the right way to persist keys and related data between startups.
 

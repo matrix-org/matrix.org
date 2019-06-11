@@ -13,7 +13,7 @@ slug: matrix-irc-application-service
 
 &nbsp;
 
-Like a lot of open source projects, we use IRC a lot. Naturally, we also use Matrix to communicate with each other. For some time now we've had an IRC bot sitting on specific channels to "bridge" together IRC and Matrix. This bot simply sent IRC messages when it received Matrix messages and vice versa. As we started to rely on it more and more though, we realised that there were things that were impossible for simple client-side bots to do by themselves. This spurred the development of Application Services which <a href="https://matrix.org/blog/2015/03/02/introduction-to-application-services/">I introduced in my previous post</a>. In this blog post, I want to outline some of the features and techniques of the IRC application service which we've been working on over the past few weeks.
+Like a lot of open source projects, we use IRC a lot. Naturally, we also use Matrix to communicate with each other. For some time now we've had an IRC bot sitting on specific channels to "bridge" together IRC and Matrix. This bot simply sent IRC messages when it received Matrix messages and vice versa. As we started to rely on it more and more though, we realised that there were things that were impossible for simple client-side bots to do by themselves. This spurred the development of Application Services which <a href="/blog/2015/03/02/introduction-to-application-services/">I introduced in my previous post</a>. In this blog post, I want to outline some of the features and techniques of the IRC application service which we've been working on over the past few weeks.
 
 Features:
 <ul>
@@ -39,4 +39,4 @@ Implementation details:
 </ul>
 At present, the IRC application service is in beta, and is being run on #matrix and #matrix-dev. If you want to give it a go, <a title="Matrix-IRC Application Service" href="https://github.com/matrix-org/matrix-appservice-irc">check it out on Github</a> - it is not currently released on npm. <b>N.B. it requires features from the develop branch of synapse; either run your own synapse off the develop branch or wait a few days for us to release Synapse 0.9.0</b>.
 
-Needless to say, we look forward to this being the first of many full network<->network bridges into Matrix - come chat on <a href="https://matrix.org/beta/#/room/#matrix:matrix.org">#matrix:matrix.org</a> if you'd like to write or run your own!  Next up is Lync and XMPP...
+Needless to say, we look forward to this being the first of many full network<->network bridges into Matrix - come chat on <a href="/beta/#/room/#matrix:matrix.org">#matrix:matrix.org</a> if you'd like to write or run your own!  Next up is Lync and XMPP...

@@ -20,20 +20,20 @@ The Python 3 port has benefits other than just preparing for the End of Life of 
 </i>
 <h2>When will the port be released?
 </h2>
-The port is has been released in a “production ready” form in <a href="https://matrix.org/blog/2018/12/20/synapse-0-34-0-released/">Synapse 0.34.0</a>, supporting Python 3.5, 3.6, and 3.7. This will work on installations with and without workers.
+The port is has been released in a “production ready” form in <a href="/blog/2018/12/20/synapse-0-34-0-released/">Synapse 0.34.0</a>, supporting Python 3.5, 3.6, and 3.7. This will work on installations with and without workers.
 
 <h2>What's it like in the real world?
 </h2>
 Beta testers of the Python 3 port have reported lower memory usage, including lower memory “spikes” and slower memory growth. You can see this demonstrated on matrix.org:
 
 
-<a href="https://matrix.org/blog/wp-content/uploads/2018/12/image3.png"><img class="alignnone size-large wp-image-3830" src="https://matrix.org/blog/wp-content/uploads/2018/12/image3-1024x223.png" alt="" width="1024" height="223" /></a>
+<a href="/blog/wp-content/uploads/2018/12/image3.png"><img class="alignnone size-large wp-image-3830" src="/blog/wp-content/uploads/2018/12/image3-1024x223.png" alt="" width="1024" height="223" /></a>
 
 
 See 10/15, ~20:00 for the Python 3 migration. This is on some of the Synchrotrons on matrix.org.
 
 
-<a href="https://matrix.org/blog/wp-content/uploads/2018/12/image1.png"><img class="alignnone size-large wp-image-3824" src="https://matrix.org/blog/wp-content/uploads/2018/12/image1-1024x237.png" alt="" width="1024" height="237" /></a>
+<a href="/blog/wp-content/uploads/2018/12/image1.png"><img class="alignnone size-large wp-image-3824" src="/blog/wp-content/uploads/2018/12/image1-1024x237.png" alt="" width="1024" height="237" /></a>
 
 See ~11/8 for the Python 3 migration. This is on the Synapse master on matrix.org.
 
@@ -41,12 +41,12 @@ See ~11/8 for the Python 3 migration. This is on the Synapse master on matrix.or
 We have also noticed some better CPU utilisation:
 
 
-<span style="font-weight: 400;"><a href="https://matrix.org/blog/wp-content/uploads/2018/12/image2.png"><img class="alignnone size-large wp-image-3822" src="https://matrix.org/blog/wp-content/uploads/2018/12/image2-1024x296.png" alt="" width="1024" height="296" /></a>
+<span style="font-weight: 400;"><a href="/blog/wp-content/uploads/2018/12/image2.png"><img class="alignnone size-large wp-image-3822" src="/blog/wp-content/uploads/2018/12/image2-1024x296.png" alt="" width="1024" height="296" /></a>
 </span>
 See 21:30 for the migration of federation reader 1, and 21:55 for the others. The federation reader is a particular pathological case, where the replacement of lists with iterators internally on Python 3 has given us some big boosts.
 
 
-<a href="https://matrix.org/blog/wp-content/uploads/2018/12/image4.png"><img class="alignnone size-large wp-image-3829" src="https://matrix.org/blog/wp-content/uploads/2018/12/image4-1024x296.png" alt="" width="1024" height="296" /></a>
+<a href="/blog/wp-content/uploads/2018/12/image4.png"><img class="alignnone size-large wp-image-3829" src="/blog/wp-content/uploads/2018/12/image4-1024x296.png" alt="" width="1024" height="296" /></a>
 
 See 10/15, 4:00.The CPU utilisation has gone down on synchrotron 1 after the Python 3 migration, but not as dramatically as the federation reader. Synchrotron 3 was migrated a few days later.
 

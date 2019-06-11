@@ -214,7 +214,7 @@ const Guides = ({data}) => {
         <td> </td>
       </tr>
       <tr>
-        <td><a href="https://matrix.org/docs/guides/made-for-matrix-badge">Made for Matrix Badge Guidelines</a> (add this to your project page)</td>
+        <td><a href="/docs/guides/made-for-matrix-badge">Made for Matrix Badge Guidelines</a> (add this to your project page)</td>
         <td>matrix.org</td>
         <td>English</td>
         <td> </td>

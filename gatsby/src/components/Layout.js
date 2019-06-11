@@ -26,13 +26,13 @@ const Layout = ({ children, customSEO, navmode,  hasSideNavigation, hasNavPaddin
         <Footer>
           <div className="footer__text">&copy; 2019 Matrix.org. All rights reserved.</div>
           <div className="footer-highlight">
-            <a className="footer-highlight__link" href="https://matrix.org/docs/api">
+            <a className="footer-highlight__link" href="/docs/api">
               Client-Server APIs
             </a>
             <a className="footer-highlight__link" href="/security-disclosure-policy">
               Security
             </a>
-            <a className="footer-highlight__right" href="https://matrix.org/docs/guides/matrix_org_legal.html">
+            <a className="footer-highlight__right" href="/docs/guides/matrix_org_legal.html">
               Legal
             </a>
             <span className="footer-highlight__hidden">Last build: {buildTime}</span>

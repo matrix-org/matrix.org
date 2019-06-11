@@ -18,10 +18,10 @@ In practice, our target has been to cut stable releases of all the primary Matri
 
 
 However, as of the end of Friday Aug 31, we're proud to announce the first ever stable releases of the 
-<a href="https://matrix.org/docs/spec">IS, AS and Push APIs</a>!
+<a href="/docs/spec">IS, AS and Push APIs</a>!
 
 
-<a href="https://matrix.org/docs/spec"><img src="https://matrix.org/_matrix/media/v1/download/t2l.io/587a1a86905b1e0e8f9342d76e57ffbe" /></a>
+<a href="/docs/spec"><img src="/_matrix/media/v1/download/t2l.io/587a1a86905b1e0e8f9342d76e57ffbe" /></a>
 To the best of our knowledge, these API specs are now complete and accurately describe all the current behaviour implemented in the reference implementations (sydent, synapse and sygnal) and are fit for purpose. Any deviation from the spec in the reference implementations should probably be considered a bug in the impl. All changes take the form of filling in spec omissions and adding clarifications to the existing behaviour in order to get things to the point that an independent party can implement these APIs without having to refer to anything other than the spec.
 
 
@@ -35,8 +35,8 @@ Alongside the work on the IS/AS/Push APIs, there has also been a massive attempt
 
 
 The result is the release of 
-<a href="https://matrix.org/docs/spec/client_server/r0.4.0.html">Client Server API version 0.4</a>. This is a huge update - increasing the size of the CS API by ~40%. The biggest new stuff includes fully formalising support for end-to-end encryption (thanks to Zil0!), versioning for rooms (so we can upgrade rooms to new versions of the protocol), synchronised read markers, user directories, server ACLs, MSISDN 3rd party ids, and .well-known server discovery (not that it's widely used yet), but for the full picture, best bet is to look at 
-<a href="https://matrix.org/docs/spec/client_server/r0.4.0.html#changelog">the changelog</a> (now managed by 
+<a href="/docs/spec/client_server/r0.4.0.html">Client Server API version 0.4</a>. This is a huge update - increasing the size of the CS API by ~40%. The biggest new stuff includes fully formalising support for end-to-end encryption (thanks to Zil0!), versioning for rooms (so we can upgrade rooms to new versions of the protocol), synchronised read markers, user directories, server ACLs, MSISDN 3rd party ids, and .well-known server discovery (not that it's widely used yet), but for the full picture, best bet is to look at 
+<a href="/docs/spec/client_server/r0.4.0.html#changelog">the changelog</a> (now managed by 
 <a href="https://pypi.org/project/towncrier/">towncrier</a>!).  It's probably fair to say that the CS API is growing alarmingly large at this point - Chrome says that it'd be 223 A4 pages if printed. Our solution to this will be to refactor it somehow (and perhaps switch to a more compact representation of the contents).
 
 
@@ -45,7 +45,7 @@ Some things got deliberately missed from the CS 0.4 release: particularly member
 
 Meanwhile, on the Server to Server API, there has also been a massive amount of work.  Since the beginning of July it's 
 <b>tripled</b> in size as we've filled in the gaps, over the course of &gt;200 commits (&gt;150 of which from Travis).  If you take a look at the 
-<a href="https://matrix.org/docs/spec/server_server/unstable.html">current snapshot</a> it's pretty unrecognisable from the historical draft; with the main changes being:
+<a href="/docs/spec/server_server/unstable.html">current snapshot</a> it's pretty unrecognisable from the historical draft; with the main changes being:
 
 <ul>
  	<li style="font-weight: 400;">Adding the new State Resolution algorithm to address flaws in the original one.  This has been where much of our time has gone - see 
@@ -82,7 +82,7 @@ Meanwhile, on the Server to Server API, there has also been a massive amount of 
 </li>
 </ul>
 However, we haven't finished it all: despite our best efforts we're running slightly past the original target of Aug 31.  The current state of play for the r0 release overall (in terms of pending issues) is:
-<a href="https://matrix.org/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-16.56.18.png"><img class="aligncenter size-full wp-image-3525" src="https://matrix.org/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-16.56.18.png" alt="" width="576" height="214" /></a>...and you can see the full breakdown over at the 
+<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-16.56.18.png"><img class="aligncenter size-full wp-image-3525" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-16.56.18.png" alt="" width="576" height="214" /></a>...and you can see the full breakdown over at the 
 <a href="https://github.com/matrix-org/matrix-doc/projects/1">public Github project dashboard</a>.
 
 
@@ -111,22 +111,22 @@ The plan here is to continue speccing and implementing these at top priority (wi
 In terms of visualising progress on this spec mission it's interesting to look at the rate at which we've been closing PRs: this graph shows the total number of PRs which are in state ‘open' or ‘closed' on any given day:
 
 
-<a href="https://matrix.org/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-00.56.38.png"><img class="aligncenter size-large wp-image-3526" src="https://matrix.org/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-00.56.38-1024x722.png" alt="" width="1024" height="722" /></a>
+<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-00.56.38.png"><img class="aligncenter size-large wp-image-3526" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-00.56.38-1024x722.png" alt="" width="1024" height="722" /></a>
 
 ...which clearly shows the original sprint to get the r0 of the CS API out the door at the end 2015, and then a more leisurely pace until the beginning of July 2018 since which the pace has picked up massively.  Other ways of looking at include the number of open issues...
 
 
-<a href="https://matrix.org/blog/wp-content/uploads/2018/09/image-1.png"><img class="aligncenter size-large wp-image-3527" src="https://matrix.org/blog/wp-content/uploads/2018/09/image-1-1024x691.png" alt="" width="1024" height="691" /></a>
+<a href="/blog/wp-content/uploads/2018/09/image-1.png"><img class="aligncenter size-large wp-image-3527" src="/blog/wp-content/uploads/2018/09/image-1-1024x691.png" alt="" width="1024" height="691" /></a>
 ...or indeed the number of commits per week…
 
 
-<a href="https://matrix.org/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.02.27.png"><img class="aligncenter wp-image-3528" src="https://matrix.org/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.02.27-1024x195.png" alt="" width="710" height="135" /></a>
+<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.02.27.png"><img class="aligncenter wp-image-3528" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.02.27-1024x195.png" alt="" width="710" height="135" /></a>
 ...or the overall Github Project activity for August.  (It's impressive to see Zil0 sneaking in there on second place on the commit count, thanks to all his GSoC work documenting E2E encryption in the spec as part of implementing it in matrix-python-sdk!)
 
 
-<a href="https://matrix.org/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.03.57.png"><img class="aligncenter wp-image-3529" src="https://matrix.org/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.03.57-1024x925.png" alt="" width="744" height="672" /></a>
+<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.03.57.png"><img class="aligncenter wp-image-3529" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.03.57-1024x925.png" alt="" width="744" height="672" /></a>
 Anyway, enough numerology.  It's worth noting that all of the dev for r0 has generally followed the proposed 
-<a href="https://matrix.org/blog/2018/06/20/towards-open-governance-for-matrix-org/">Open Governance Model for Matrix</a>, with the core spec team made up of both historical core team folk (erik, richvdh, dave &amp; matthew), new core team folk (uhoreg &amp; travis) and community folk (kitsune, anoa &amp; mujx) working together to review and approve the changes - and we've been doing MSCs (albeit with an accelerated pace) for anything which we feel requires input from the wider community.  Once the Server/Server r0 release is out the door we'll be finalising the open governance model and switching to a slightly more measured (but productive!) model of spec development as outlined there.
+<a href="/blog/2018/06/20/towards-open-governance-for-matrix-org/">Open Governance Model for Matrix</a>, with the core spec team made up of both historical core team folk (erik, richvdh, dave &amp; matthew), new core team folk (uhoreg &amp; travis) and community folk (kitsune, anoa &amp; mujx) working together to review and approve the changes - and we've been doing MSCs (albeit with an accelerated pace) for anything which we feel requires input from the wider community.  Once the Server/Server r0 release is out the door we'll be finalising the open governance model and switching to a slightly more measured (but productive!) model of spec development as outlined there.
 
 
 Meanwhile, Matrix 1.0 gets ever closer.  With (almost) all this spec mission done, our plan is to focus more on improving the reference implementations - particularly performance in Synapse, 

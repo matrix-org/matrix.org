@@ -6,7 +6,7 @@ categories:
 author: Ben Parsons
 ---
 
-We have a brand new, exciting guide page offering an introduction to <a href="https://github.com/matrix-org/matrix-js-sdk">matrix-js-sdk</a>. This guide will live with the documentation at <a href="https://matrix.org/docs/guides/usage-of-the-matrix-js-sdk">https://matrix.org/docs/guides/usage-of-the-matrix-js-sdk</a>,  but you can find the text below.
+We have a brand new, exciting guide page offering an introduction to <a href="https://github.com/matrix-org/matrix-js-sdk">matrix-js-sdk</a>. This guide will live with the documentation at <a href="/docs/guides/usage-of-the-matrix-js-sdk">https://matrix.org/docs/guides/usage-of-the-matrix-js-sdk</a>,  but you can find the text below.
 
 <hr />
 
@@ -14,7 +14,7 @@ Matrix allows open real-time communications over the Internet using HTTP and JSO
 <h2 id="making-a-matrix-client">Making a Matrix Client</h2>
 Let's explore how we would make a very simple Matrix client, with only the ability to perform an initial sync, and to get member lists and the timeline for rooms of our choice.
 
-This article will explore the <a href="https://matrix.org/docs/spec/client_server/latest.html">Matrix Client-Server API</a>, making use of the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a>. Later articles may discuss making the underlying calls. Specifically we will cover:
+This article will explore the <a href="/docs/spec/client_server/latest.html">Matrix Client-Server API</a>, making use of the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a>. Later articles may discuss making the underlying calls. Specifically we will cover:
 <ul>
  	<li>login</li>
  	<li>simple syncing</li>
@@ -620,4 +620,4 @@ Knowing this, we can put together message listening and message sending, to buil
 </div>
 Take a look at the <code class="highlighter-rouge">msgtype</code> in the object above. In the previous example, we used "m.text" for this field, but now we're using "m.notice". Bots will often use "m.notice" to differentiate their messages. This allows the client to render notices differently, for example Riot, the most popular client, renders notices with a more pale text colour.
 <h2 id="further">Further</h2>
-There is much, much more to Matrix, the Client-Server API and the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a>, but this guide should give some understanding of simple usage. In subsequent guides we'll cover more detail and also explore projects you can build on top, such as IoT controls and chatbot interfaces. For now you can take a look at <a href="https://github.com/matrix-org/matrix-js-sdk/tree/master/examples">other examples in the matrix-js-sdk itself</a>, and also the <a href="https://matrix.org/docs/spec/client_server/latest.html">Matrix Client-Server API</a> which it implements.
+There is much, much more to Matrix, the Client-Server API and the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a>, but this guide should give some understanding of simple usage. In subsequent guides we'll cover more detail and also explore projects you can build on top, such as IoT controls and chatbot interfaces. For now you can take a look at <a href="https://github.com/matrix-org/matrix-js-sdk/tree/master/examples">other examples in the matrix-js-sdk itself</a>, and also the <a href="/docs/spec/client_server/latest.html">Matrix Client-Server API</a> which it implements.

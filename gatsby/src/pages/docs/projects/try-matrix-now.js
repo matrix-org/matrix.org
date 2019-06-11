@@ -32,7 +32,7 @@ const TryMatrixNow = ({data}) => {
         <MXContentMain>
             <Helmet title={`Try Matrix Now | ${config.siteTitle}`} />
             <h1>Try Matrix Now</h1>
-            <p>To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>. You can also check the <a href="https://matrix.org/docs/projects/clients-matrix">Matrix Clients Matrix</a> to see more detail.</p>
+            <p>To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>. You can also check the <a href="/docs/projects/clients-matrix">Matrix Clients Matrix</a> to see more detail.</p>
         <div className="mxblock">
           <div className="mxgrid mxgrid--discover">
             <div className="mxgrid_item33">

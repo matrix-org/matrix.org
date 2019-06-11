@@ -8,7 +8,7 @@ author: Matthew Hodgson
 
 We just released Synapse 0.14.0 - a major update which incorporates lots of work on making Synapse more RAM efficient. There's still a lot of room for further improvements, but the main headlines are reducing the resident memory footprint dramatically by interning strings and deduplicating events across the many different caches. It also adds a much-needed <code>SYNAPSE_CACHE_FACTOR</code> environment variable that can be used to globally decrease or increase the sizing of all of Synapse's various caches (with an associated slow-down or speed-up in performance). Quite how improved the new memory footprint seems to very much depend on your own use case, but it's certainly a step in the right direction.
 
-For more details on recent Synapse performance work (and a general state of the union for the whole Matrix ecosystem), check out <a href="https://matrix.org/blog/2016/03/26/the-matrix-spring-special/">our Spring update</a>.
+For more details on recent Synapse performance work (and a general state of the union for the whole Matrix ecosystem), check out <a href="/blog/2016/03/26/the-matrix-spring-special/">our Spring update</a>.
 
 Get all new synapse from <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a> - we recommend upgrading (or installing!) asap :)
 
