@@ -22,7 +22,7 @@ On the Synapse side, our focus has been exclusively on ensuring that Synapse cor
 All this means that the main headline features which land in Matrix 1.0 are vitally important but relatively dry:
 
 *   Using X.509 certificates to trust servers rather than perspective notaries, to simplify and improve server-side trust.  This is a **breaking change** across Matrix, and we’ve given the community several months now to ensure their homeservers run a valid TLS certificate.  See [MSC1711](https://github.com/matrix-org/synapse/blob/master/docs/MSC1711_certificates_FAQ.md) for full details, and the [2 week warning](https://matrix.org/blog/2019/05/24/final-countdown-to-1-0) we gave.  As of ~9am UTC today, the matrix.org homeserver is running Synapse 1.0 and enforcing valid TLS certificates - the transition has begun (and so far we haven’t spotted any major breakage :).  Thank you to everyone who [got ready](https://arewereadyyet.com) in advance!
-*   Using .well-known URIs to discover servers, in case you can’t get a valid TLS certificate for your sever’s domain.
+*   Using .well-known URIs to discover servers, in case you can’t get a valid TLS certificate for your server’s domain.
 *   Switching to **[room version 4](https://matrix.org/docs/spec/rooms/v4.html) by default** for creating new rooms.  This fixes the most important defects that the core room algorithm has historically encountered, particularly:
     *   The new State Resolution algorithm to fix the [Hotel California bug](https://github.com/matrix-org/synapse/issues/2432) and many others: [State Resolution Reloaded](https://github.com/matrix-org/matrix-doc/issues/1442)
     *   [Collision resistant event IDs](https://github.com/matrix-org/matrix-doc/pull/1659)
