@@ -10,7 +10,7 @@ import config from '../../config'
 
 const Foundation = () => {
     return (<Layout hasNavPadding="true">
-            <Helmet title={`Legal | ${config.siteTitle}`} />
+            <Helmet title={`The Matrix.org Foundation | ${config.siteTitle}`} />
             <MXContentMain>
             <div class="mxblock mxblock--foundation">
           <h1 class="mxblock--foundation__hx">The Matrix.org Foundation</h1>
