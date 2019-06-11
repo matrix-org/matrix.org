@@ -11,7 +11,6 @@
     "gatsby-mdx": "0.6.2",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-feed": "^2.2.0",
-    "gatsby-plugin-google-analytics": "^2.0.18",
     "gatsby-plugin-lodash": "^3.0.5",
     "gatsby-plugin-manifest": "^2.0.26",
     "gatsby-plugin-netlify": "^2.0.13",
