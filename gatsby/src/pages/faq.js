@@ -122,7 +122,7 @@ page</a>.</p>
 </ul>
 <p>If you would like to sponsor the
 team as a corporation, or are interested in paying for prioritised or custom
-development, please <a href="/cdn-cgi/l/email-protection#d0bdb1a4a4b8b5a790bdb1a4a2b9a8febfa2b7">get in touch</a>.</p>
+development, please <a href="mailto:support@matrix.org">get in touch</a>.</p>
 <p>For the first three years of Matrix's development (2014-2017), most of the core
 contributors worked for <a href="https://www.amdocs.com">Amdocs</a>, who paid for them to
 work fulltime on Matrix.  In July 2017, Amdocs considered the project to be

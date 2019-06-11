@@ -308,12 +308,6 @@ const Guides = ({data}) => {
         <td> </td>
       </tr>
       <tr>
-        <td><a href="https://wiki.giveth.io/tutorials/riot-migration/">Introduction and tutorials for Riot.im</a></td>
-        <td><a href="https://matrix.to/#/@geleeroyale:matrix.org">@geleeroyale:matrix.org</a></td>
-        <td>English</td>
-        <td> </td>
-      </tr>
-      <tr>
         <td><a href="https://linuxconfig.org/install-riot-matrix-chat-client-on-debian-and-ubuntu">Install Riot Matrix Chat Client On Debian and Ubuntu</a></td>
         <td>Nick Congleton</td>
         <td>English</td>

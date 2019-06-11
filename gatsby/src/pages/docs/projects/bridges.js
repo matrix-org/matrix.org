@@ -30,10 +30,10 @@ const Bridges = ({data}) => {
       <td><a href="#discord">Discord</a></td>
     </tr>
     <tr>
-      <td><a href="#telegram"><img src="images/telegram-logo.svg" alt="Telegram" /></a></td>
-      <td><a href="#slack"><img src="images/slack-logo.svg" alt="Slack" /></a></td>
+      <td><a href="#telegram"><img src="/images/telegram-logo.svg" alt="Telegram" /></a></td>
+      <td><a href="#slack"><img src="/images/slack-logo.svg" alt="Slack" /></a></td>
       <td><a href="#irc"><code className="highlighter-rouge">IRC</code></a></td>
-      <td><a href="#discord"><img src="images/discord-logo.svg" alt="Discord" /></a></td>
+      <td><a href="#discord"><img src="/images/discord-logo.svg" alt="Discord" /></a></td>
     </tr>
     <tr>
       <td> </td>
@@ -48,10 +48,10 @@ const Bridges = ({data}) => {
       <td><a href="#sms">SMS</a></td>
     </tr>
     <tr>
-      <td><a href="#whatsapp"><img src="images/whatsapp-logo.png" alt="WhatsApp" /></a></td>
-      <td><a href="#gitter"><img src="images/gitter-logo.svg" alt="Gitter" /></a></td>
-      <td><a href="#email"><img src="images/email-icon.svg" alt="Email" /></a></td>
-      <td><a href="#sms"><img src="images/sms-icon.svg" alt="SMS" /></a></td>
+      <td><a href="#whatsapp"><img src="/images/whatsapp-logo.png" alt="WhatsApp" /></a></td>
+      <td><a href="#gitter"><img src="/images/gitter-logo.svg" alt="Gitter" /></a></td>
+      <td><a href="#email"><img src="/images/email-icon.svg" alt="Email" /></a></td>
+      <td><a href="#sms"><img src="/images/sms-icon.svg" alt="SMS" /></a></td>
     </tr>
     <tr>
       <td> </td>
@@ -66,10 +66,10 @@ const Bridges = ({data}) => {
       <td><a href="#groupme">GroupMe</a></td>
     </tr>
     <tr>
-      <td><a href="#imessage"><img src="images/imessage-logo.jpg" alt="iMessage" /></a></td>
-      <td><a href="#hangouts"><img src="images/hangouts-icon.svg" alt="Hangouts" /></a></td>
-      <td><a href="#facebook-messenger"><img src="images/messenger-logo.svg" alt="Facebook Messenger" /></a></td>
-      <td><a href="#groupme"><img src="images/groupme-icon.png" alt="GroupMe" /></a></td>
+      <td><a href="#imessage"><img src="/images/imessage-logo.jpg" alt="iMessage" /></a></td>
+      <td><a href="#hangouts"><img src="/images/hangouts-icon.svg" alt="Hangouts" /></a></td>
+      <td><a href="#facebook-messenger"><img src="/images/messenger-logo.svg" alt="Facebook Messenger" /></a></td>
+      <td><a href="#groupme"><img src="/images/groupme-icon.png" alt="GroupMe" /></a></td>
     </tr>
     <tr>
       <td> </td>
@@ -84,9 +84,9 @@ const Bridges = ({data}) => {
       <td> </td>
     </tr>
     <tr>
-      <td><a href="#skype"><img src="images/skype-icon.svg" alt="Skype" /></a></td>
-      <td><a href="#mastodon"><img src="images/mastodon-logo.svg" alt="Mastodon" /></a></td>
-      <td><a href="#rocket-chat"><img src="images/rocketchat-logo.png" alt="Rocket Chat" /></a></td>
+      <td><a href="#skype"><img src="/images/skype-icon.svg" alt="Skype" /></a></td>
+      <td><a href="#mastodon"><img src="/images/mastodon-logo.svg" alt="Mastodon" /></a></td>
+      <td><a href="#rocket-chat"><img src="/images/rocketchat-logo.png" alt="Rocket Chat" /></a></td>
       <td> </td>
     </tr>
   </tbody>
@@ -96,7 +96,7 @@ const Bridges = ({data}) => {
 
 <h2 id="telegram">Telegram</h2>
 
-<p><img src="images/telegram-logo.svg" alt="Telegram" /></p>
+<p><img src="/images/telegram-logo.svg" alt="Telegram" /></p>
 
 <h3 id="mautrix-telegram">mautrix-telegram</h3>
 
@@ -133,7 +133,7 @@ const Bridges = ({data}) => {
 
 <h2 id="slack">Slack</h2>
 
-<p><img src="images/slack-logo.svg" alt="Slack" /></p>
+<p><img src="/images/slack-logo.svg" alt="Slack" /></p>
 
 <p>There are two projects available to bridge Slack, <a href="https://github.com/matrix-org/matrix-appservice-slack">matrix-appservice-slack</a>
 from matrix.org and <a href="https://github.com/matrix-hacks/matrix-puppet-slack">matrix-puppet-slack</a>.</p>
@@ -244,7 +244,7 @@ find a <a href="https://github.com/matrix-org/matrix-appservice-irc/wiki/Bridged
 
 <h2 id="discord">Discord</h2>
 
-<p><img src="images/discord-logo.svg" alt="Discord" /></p>
+<p><img src="/images/discord-logo.svg" alt="Discord" /></p>
 
 <h3 id="matrix-appservice-discord">matrix-appservice-discord</h3>
 
@@ -324,7 +324,7 @@ from Discord, it is also available from t2bot.io at <a href="https://t2bot.io/di
 
 <h2 id="gitter">Gitter</h2>
 
-<p><img src="images/gitter-logo.svg" alt="Gitter" /></p>
+<p><img src="/images/gitter-logo.svg" alt="Gitter" /></p>
 
 <h3 id="matrix-appservice-gitter">matrix-appservice-gitter</h3>
 
@@ -362,7 +362,7 @@ the “Manage Integrations” (four squares) button at the top of the page.</p>
 
 <h2 id="email">Email</h2>
 
-<p><img src="images/email-icon.svg" alt="Email" /></p>
+<p><img src="/images/email-icon.svg" alt="Email" /></p>
 
 <h3 id="matrix-appservice-email">matrix-appservice-email</h3>
 
@@ -417,7 +417,7 @@ Matrix and a specified Email address.</p>
 
 <h2 id="sms">SMS</h2>
 
-<p><img src="images/sms-icon.svg" alt="SMS" /></p>
+<p><img src="/images/sms-icon.svg" alt="SMS" /></p>
 
 <h3 id="smsmatrix">SmsMatrix</h3>
 
