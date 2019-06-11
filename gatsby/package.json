@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-minimal-blog",
-  "description": "Typography driven blog, focus on the content & minimal style. Powered by MDX. Live Preview with react-live.",
+  "name": "matrix.org",
+  "description": "",
   "version": "3.0.0",
-  "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
+  "author": "",
   "dependencies": {
     "@mdx-js/tag": "^0.20.3",
     "babel-plugin-styled-components": "^1.10.0",
@@ -36,11 +36,6 @@
     "typeface-bitter": "^0.0.71",
     "typeface-open-sans": "^0.0.54"
   },
-  "keywords": [
-    "gatsby",
-    "gatsby-starter",
-    "lekoarts"
-  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
