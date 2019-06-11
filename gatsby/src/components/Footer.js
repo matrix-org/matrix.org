@@ -16,15 +16,15 @@ const Footer = () => (
         <a href="/docs/guides/getting-involved" className="mxfooter__link">Getting Started</a>
         <a href="/docs/guides" className="mxfooter__link">Client-Server API</a>
         <a href="/docs/guides/installing-synapse" className="mxfooter__link">Install Synapse</a>
-        <a href="/docs/guides" className="mxfooter__link">Bridges</a>
+        <a href="/docs/guides/types-of-bridging" className="mxfooter__link">Bridges</a>
         <a href="/docs/guides" className="mxfooter__link">All guides</a>
       </div>
       <div className="mxfooter__column">
         <a href="/docs/guides" className="mxfooter__link mxfooter__link--primary">Develop</a>
         <a href="/docs/" className="mxfooter__link">Docs</a>
         <a href="/docs/spec" className="mxfooter__link">Spec</a>
-        <a href="/docs/" className="mxfooter__link">API Playground</a>
-        <a href="/code" className="mxfooter__link">Code</a>
+        <a href="https://matrix.org/docs/api/client-server/" className="mxfooter__link">API Playground</a>
+        <a href="https://matrix.org/code" className="mxfooter__link">Code</a>
       </div>
       <div className="mxfooter__column">
         <a href="/blog" className="mxfooter__link mxfooter__link--primary">Blog</a>
@@ -42,7 +42,7 @@ const Footer = () => (
     </div>
     <div className="mxfooter__container mxfooter__container--heel">
       <div className="mxfooter__iconwrapper">
-        <a href="/code" className="w-inline-block">
+        <a href="https://matrix.org/code" className="w-inline-block">
           <img src="/images/github.svg" alt="" className="mxfooter__icon" />
         </a>
         <a href="https://gitlab.com/" className="w-inline-block">
