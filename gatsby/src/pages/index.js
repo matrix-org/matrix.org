@@ -611,33 +611,32 @@ const Index = ({
               <div className="mxgrid__item__bg">
                 <h2 className="mxblock__hx">Support Matrix</h2>
                 <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating...</p>
+                <p className="mxp">Support us on Patreon for great rewards including access to the supporters-only podcast, and even a voice at our weekly meetings.<br /><a href="https://www.patreon.com/matrixdotorg">Find out more at our Patreon page</a>.</p>
                 <div className="mxgrid__support">
                   <div className="mxgrid__support__item">
                     <div className="mxgrid__item__bg__vert">
                       <h4>Patreon</h4>
-                      <p className="mxgrid__support__item__p">Support us on Patreon. Support us on Patreon. Support us on Patreon. Support us on Patreon. </p>
                       <div className="mxgrid__item__bg__vert">
-                        <div className="mxgrid__item__bg__vert__embed w-embed w-script">
-<a href="https://www.patreon.com/bePatron?u=6269205" data-patreon-widget-type="become-patron-button">Become a Patron!</a>
-                        </div>
+                      <a href="https://www.patreon.com/matrixdotorg">
+                        <img src="/images/patreon.png" />
+                      </a>
                       </div>
                     </div>
                   </div>
                   <div className="mxgrid__support__item">
                     <div className="mxgrid__item__bg__vert">
                       <h4>Liberapay</h4>
-                      <p className="mxgrid__support__item__p">Support us on Liberapay. Support us on Liberapay. Support us on Liberapay. Support us on Liberapay.</p>
                       <div className="mxgrid__item__bg__vert">
-                        <div className="mxgrid__item__bg__vert__embed w-embed w-script">
-                          <script src="https://liberapay.com/matrixdotorg/widgets/receiving.js"></script>
-                        </div>
+                      <a href="https://liberapay.com/matrixdotorg">
+                        <img src="/images/fund-via-liberapay.png" />
+                      </a>
                       </div>
                     </div>
                   </div>
                   <div className="mxgrid__support__item">
                     <div className="mxgrid__item__bg__vert">
                       <h4>Cryptocurrency</h4>
-                      <p className="mxgrid__support__item__p">Donate via Crypto. Donate via Crypto. Donate via Crypto. Donate via Crypto. Donate via Crypto. </p>
+                      <p className="mxgrid__support__item__p">You can also send us cryptocurrency:<br />BTC 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE<br />ETH 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485</p>
                       <div className="mxgrid__item__bg__vert">
                         <div className="mxgrid__item__bg__vert__embed w-embed w-script">
                         </div>
