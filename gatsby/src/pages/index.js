@@ -92,7 +92,7 @@ const Index = ({
         <div className="mxblock mxblock--hero">
 <img src="images/matrix-logo-white.svg" alt="" className="mxblock--hero__logo" />
           <h1 className="mxblock--hero__hx delete">An open network for secure, decentralized communication</h1>
-<a href="/docs/guides/getting-involved" className="mxblock__btn mxblock--hero__btn mxblock--hero__btn--mctesto w-button">Get started</a>
+<a href="/docs/guides/getting-involved" className="mxblock__btn mxblock--hero__btn mxblock--hero__btn--mctesto w-button">Learn More</a>
 </div>
       </div>
     </div>
@@ -106,26 +106,41 @@ const Index = ({
 <a href="#about" className="mxblock__btn mxblock--hero__btn w-button">Get started</a>
 </div>
         <div className="mxblock">
-          <ul className="mximagine">
-            <li>Imagine a world where it is as simple to message or call <i>anyone</i> as it is to send them an email.</li>
-            <li>...where you can communicate without being forced to install the same app.</li>
-            <li>...where you can choose who hosts your communication.</li>
-            <li>...where your conversations are secured by end-to-end encryption.</li>
-            <li>...where there’s a simple standard HTTP API for sharing real-time data on the web.</li>
-          </ul>
-          <p className="mxp mxthisismatrix">
-            This is Matrix.
-          </p>
-          <p className="mxp mxmatrixdescription">
-            Matrix is an open source project that publishes the <a href="/docs/spec">Matrix open standard</a> for secure,
-            decentralised, real-time communication, and its Apache licensed <a
-            href="https://github.com/matrix-org">reference implementations</a>. Maintained by the non-profit <a
-            href="/foundation">Matrix.org Foundation</a>, we aim to create an open platform which is as independent,
-            vibrant and evolving as the Web itself... but for communication.
-          </p>
-          <p className="mxp mxmatrixdescription">
-            As of June 2019, Matrix is <a href="/blog/">out of beta</a>, and the protocol is fully suitable for production usage.
-          </p>
+            <div className="mxgrid mxgrid--imagine">
+                <div className="mxgrid__item50">
+                    <div className="mxgrid__item__bg mxgrid__item__bg--imagine">
+                      <ul className="mximagine">
+                        <li>Imagine a world...</li>
+                        <li>...where it is as simple to message or call anyone<br/>&nbsp;&nbsp;&nbsp;as it is to send them an email.</li>
+                        <li>...where you can communicate without being<br/>&nbsp;&nbsp;&nbsp;forced to install the same app.</li>
+                        <li>...where you can choose who hosts your communication.</li>
+                        <li>...where your conversations are secured by E2E encryption.</li>
+                        <li>...where there’s a simple standard HTTP API<br/>&nbsp;&nbsp;&nbsp;for sharing real-time data on the web.</li>
+                      </ul>
+                    </div>
+                </div>
+                <div className="mxgrid__item50">
+                    <div className="mxgrid__item__bg mxgrid__item__bg--imagine">
+                        <p className="mxp mxthisismatrix">
+                            This is Matrix.
+                        </p>
+                        <p className="mxp mxmatrixdescription">
+                          Matrix is an open source project
+                          that publishes the <br /><a href="/docs/spec">Matrix open standard</a> for
+                          secure, decentralised, real-time communication,
+                          and its Apache licensed <br /><a href="https://github.com/matrix-org">reference implementations</a>.
+                        </p>
+                        <p className="mxp mxmatrixdescription">  Maintained by the non-profit <a href="/foundation">Matrix.org Foundation</a>, we aim <br />
+                          to create an open platform which is as
+                          independent, vibrant and evolving
+                          as the Web itself... but for communication.
+                        </p>
+                        <p className="mxp mxmatrixdescription">
+                          As of June 2019, Matrix is <a href="/blog/">out of beta</a>, and the protocol is fully suitable for production usage.
+                        </p>
+                    </div>
+                </div>
+            </div>
           <div className="mxgrid">
             <div className="mxgrid__item50">
               <div className="mxgrid__item__bg">
