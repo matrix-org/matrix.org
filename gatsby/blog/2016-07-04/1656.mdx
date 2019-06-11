@@ -31,7 +31,7 @@ Future work on Vector is focused on showcasing end-to-end encryption, providing 
 
 If you haven't checked it out recently, it's really worth a look :)
 
-<a href="https://vector.im"><img class="aligncenter size-large wp-image-1658" src="https://matrix.org/blog/wp-content/uploads/2016/07/Screen-Shot-2016-07-04-at-12.18.10-1024x591.png" alt="Vector" width="1024" height="591" /></a>
+<a href="https://vector.im"><img class="aligncenter size-large wp-image-1658" src="/blog/wp-content/uploads/2016/07/Screen-Shot-2016-07-04-at-12.18.10-1024x591.png" alt="Vector" width="1024" height="591" /></a>
 <h2>Matrix Spec 0.1.0</h2>
 In case you didn't notice, we also released <a href="http://matrix.org/docs/spec/">v0.1.0 of the Matrix spec</a> itself in May - this is a fairly minor update which improves the layout of the document somewhat (thanks to a PR from Jimmy Cuadra) and a some bugfixes.  You can see the <a href="http://matrix.org/docs/spec/client_server/r0.1.0.html#changelog">full changelog here</a>. We're overdue a new release since then (albeit again with relatively minor changes).
 <h2>Google Summer of Code</h2>
@@ -41,7 +41,7 @@ Lots of exciting stuff has been happening recently over at <a href="https://ruma
 
 Also, Ruma just released some <a href="https://www.ruma.io/docs/matrix">truly excellent documentation</a> as a high-level introduction to Matrix (thanks to Leah and Jimmy) - much better than anything we have on the official Matrix.org site.  Go check it out if you haven't already!
 <h2>End to End Encryption</h2>
-There has been *LOADS* of work happening on End to End encryption: finalising the core 1:1 "<a href="https://matrix.org/git/olm">Olm</a>" cryptographic ratchet; implementing the group "<a href="http://matrix.org/git/olm/tree/src/megolm.c">Megolm</a>" ratchet (which shares a single ratchet over all the participants of a room for scalability); fully hooking Olm into matrix-js-sdk and Vector-web at last, and preparing for a formal and published-to-the-public 3rd party security audit on Olm which will be happening during July.
+There has been *LOADS* of work happening on End to End encryption: finalising the core 1:1 "<a href="/git/olm">Olm</a>" cryptographic ratchet; implementing the group "<a href="http://matrix.org/git/olm/tree/src/megolm.c">Megolm</a>" ratchet (which shares a single ratchet over all the participants of a room for scalability); fully hooking Olm into matrix-js-sdk and Vector-web at last, and preparing for a formal and published-to-the-public 3rd party security audit on Olm which will be happening during July.
 
 This deserves a post in its own right, but the key thing to know is that Olm is almost ready - and indeed the work-in-progress E2E UX is even available on the <a href="https://vector.im/develop">develop branch of vector</a> if you enable E2E in the new 'Labs' section in User Settings.  Olm itself is usable only for 'burn after reading' strictly PFS messages, but Megolm integration with Vector &amp; Synapse will follow shortly afterwards which will finally provide the E2E nirvana we've all been waiting for :)
 <h2>Decentralised Web Summit</h2>
@@ -49,7 +49,7 @@ Matrix had a major presence as a sponsor at the first ever <a href="http://www.d
 
 We strongly recommend checking out the videos which have all been published at <a href="http://www.decentralizedweb.net/">Decentralised Web Summit</a>, including <a href="https://archive.org/details/DWebSummit2016_Lightning_Talks_Session_B">lightning talks introducing both Matrix and Vector</a>, and digging into as many of the projects advertised as possible.  It was particularly interesting for us to get to know Tim Berners-Lee's latest project at MIT: <a href="https://solid.mit.edu/">Solid</a> - which shares quite a lot of the same goals as Matrix, and subsequently seeing Tim pop up on <a href="https://vector.im/develop/#/room/#decentralizedweb-general:matrix.org/$146549767249761pyAQF:matrix.org">Matrix via Vector</a>.  We're really looking forward to working out how Matrix &amp; Solid can complement each other in future.
 
-<a href="https://twitter.com/parkan/status/740324969884700672"><img class="aligncenter wp-image-1660 size-large" src="https://matrix.org/blog/wp-content/uploads/2016/07/timbl-768x1024.jpg" alt="Matthew, Tim Berners-Lee and Matrix" width="384" height="512" /></a>
+<a href="https://twitter.com/parkan/status/740324969884700672"><img class="aligncenter wp-image-1660 size-large" src="/blog/wp-content/uploads/2016/07/timbl-768x1024.jpg" alt="Matthew, Tim Berners-Lee and Matrix" width="384" height="512" /></a>
 
 &nbsp;
 <h2>Matrix.to</h2>
@@ -100,7 +100,7 @@ I'm sure there's a lot of stuff missing from the quick summary above - suffice i
  	<li>Threading</li>
  	<li>Editable messages</li>
  	<li>Synapse scaling and stability - this is massively improved, but there's still work to be done.  Meanwhile projects like <a href="https://ruma.io">Ruma</a> give us hope for light at the end of the Synapse tunnel!</li>
- 	<li>Spec refinements - there are still a <a href="https://matrix.org/jira/browse/SPEC">lot of open spec bugs</a> which we need to resolve so we can declare the spec (and thus Matrix!) out of beta.</li>
+ 	<li>Spec refinements - there are still a <a href="/jira/browse/SPEC">lot of open spec bugs</a> which we need to resolve so we can declare the spec (and thus Matrix!) out of beta.</li>
  	<li>More clients - especially desktop ones; helping out with <a href="https://github.com/Fxrh/Quaternion">Quaternion</a>, <a href="https://github.com/davidar/tensor">Tensor</a>, <a href="https://pto.im">PTO</a>, etc.</li>
 </ul>
 ...and then all the pieces of the jigsaw will finally be in place, and Matrix should hopefully fulfil its potential as an invaluable, open and decentralised data fabric for the web.

@@ -1,0 +1,64 @@
+#diagram {
+    max-width: 680px;
+    width: 100%;
+    float: left;
+}
+
+#legendBox {
+    float: left;
+    height: 520px;
+    font-size: 16px;
+}
+
+.legend {
+    position: absolute;
+    padding-top: 20px;
+    opacity: 0;
+    max-width: 570px;
+}
+
+.legend pre {
+    font-size: 14px;
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+ }
+
+.legendNav {
+}
+
+.networkNode circle {
+    stroke-width: 1px;
+    stroke: #ccc;
+}
+
+#diagram text {
+    font-size: 14px;
+}
+
+.message circle {
+    fill: #fff;
+    stroke-width: 3px;
+}
+
+.message text {
+    font-weight: bold;
+}
+
+.networkLink {
+    stroke: #ccc;
+    stroke-width: 3px;
+}
+
+.graphNode circle {
+    fill: #fff;
+    stroke-width: 3px;
+}
+
+.graphLink, .danglingGraphLink {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3px;
+}

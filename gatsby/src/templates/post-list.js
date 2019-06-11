@@ -1,29 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
+import { graphql } from 'gatsby'
 
-import { Layout, Wrapper, Header, Article, PrevNext } from '../components'
-import config from '../../config'
+import { Layout, Article, PrevNext, MXContentMain, MXContentNav } from '../components'
 
-const Content = styled.div`
-  grid-column: 2;
-  box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  padding: 2rem 4rem;
-  background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    padding: 3rem 3rem;
-  }
-  @media (max-width: ${props => props.theme.breakpoints.phone}) {
-    padding: 2rem 1.5rem;
-  }
-`
-
-const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } }) => {
-  const { edges, totalCount } = allMdx
+const PostList = ({ pageContext: { limit, skip, currentPage, posts }, data: { allMdx } }) => {
+  const { edges } = allMdx
 
   const prevTitle = `Page ${currentPage - 1}`
   const prevSlug = currentPage === 2 ? `blog/posts/` : `blog/posts/${currentPage - 1}`
@@ -32,11 +15,9 @@ const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } 
   const nextSlug = `blog/posts/${currentPage + 1}`
 
   return (
-    <Layout>
-      <Wrapper>
+    <Layout hasSideNavigation="true" navmode="blog">
         <Helmet />
-        <Header />
-        <Content>
+        <MXContentMain hasSideNavigation="true">
           {edges.map(post => (
             <Article
               title={post.node.frontmatter.title}
@@ -57,8 +38,8 @@ const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } 
               fields: { slug: nextSlug },
             }}
           />
-        </Content>
-      </Wrapper>
+        </MXContentMain>
+        <MXContentNav title="All posts" content={posts} currentSlug="/blog"></MXContentNav>
     </Layout>
   )
 }
@@ -67,8 +48,8 @@ export default PostList
 
 PostList.propTypes = {
   pageContext: PropTypes.shape({
-    limit: PropTypes.string.isRequired,
-    skip: PropTypes.string.isRequired,
+    limit: PropTypes.number.isRequired,
+    skip: PropTypes.number.isRequired,
   }).isRequired,
   data: PropTypes.shape({
     allMdx: PropTypes.shape({
@@ -80,7 +61,8 @@ PostList.propTypes = {
 
 export const postQuery = graphql`
   query PostListPage($skip: Int!, $limit: Int!) {
-    allMdx(sort: { fields: [frontmatter___date, fileAbsolutePath], order: DESC }, limit: $limit, skip: $skip) {
+    allMdx(sort: { fields: [frontmatter___date, fileAbsolutePath], order: DESC }, limit: $limit, skip: $skip,
+      filter: {frontmatter: {date: {ne: null}}}) {
       totalCount
       edges {
         node {

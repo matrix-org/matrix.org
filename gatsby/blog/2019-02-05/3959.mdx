@@ -8,7 +8,8 @@ author: Neil Johnson
 
 Hey hey, Synapse 0.99.0 is here!
 
-You may have heard that we recently published the first stable release of the <a href="https://matrix.org/docs/spec/server_server/r0.1.0.html">Server to Server Spec (r0.1)</a>. The spec makes some changes which are not compatible with the protocol of the past - particularly, <strong>self-signed certificates are no longer valid for homeservers. </strong><span style="font-weight: 400;">Synapse 1.0.0 will be compliant with r0.1 and the goal of Synapse 0.99.0 is to act as a stepping stone to Synapse 1.0. Synapse 0.99.0 supports the r0.1 release of the server to server specification, but is compatible with both the legacy Matrix federation behaviour (pre-r0.1) as well as post-r0.1 behaviour, in order to allow for a smooth upgrade across the federation.</span>
+You may have heard that we recently published the first stable release of the <a href="/docs/spec/server_server/r0.1.0.html">Server to Server Spec (r0.1)</a>. The spec makes some changes which are not compatible with the protocol of the past - particularly, <strong>self-signed certificates are no longer valid for homeservers. </strong>Synapse 1.0.0 will be compliant with r0.1 and the goal of Synapse 0.99.0 is to act as a stepping stone to Synapse 1.0. Synapse 0.99.0 supports the r0.1 release of the server to server specification, but is compatible with both the legacy Matrix federation behaviour (pre-r0.1) as well as post-r0.1 behaviour, in order to allow for a smooth upgrade across the federation.
+
 
 <strong>It is critical that all admins upgrade to 0.99.0 and configure a valid TLS certificate. </strong>Admins will have 1 month to do so, after which 1.0.0 will be released and those servers without a valid certificate will no longer be able to federate with &gt;= 1.0.0 servers.
 
@@ -16,7 +17,7 @@ First of all, please don't panic :) We have taken steps to make this process as 
 
 For more details on exactly what you need to do (and also why this change is essential), we have provided an <strong>extensive <a href="https://github.com/matrix-org/synapse/blob/master/docs/MSC1711_certificates_FAQ.md">FAQ</a></strong> as well as the <a href="https://github.com/matrix-org/synapse/blob/release-v0.99.0/UPGRADE.rst">Upgrade notes for Synapse</a>
 
-As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.99.0">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. Also, check out our new <a href="https://matrix.org/docs/guides/installing-synapse">Synapse installation guide page.</a>
+As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.99.0">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. Also, check out our new <a href="/docs/guides/installing-synapse">Synapse installation guide page.</a>
 
 This was a huge effort! Congratulations to all involved, especially those of you in the community who contributed to spec MSCs and tested our release candidates. Thank you for bearing with us as we move the whole public Matrix Federation onto r0.1 compliant servers.
 

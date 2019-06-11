@@ -5,23 +5,8 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 
-import { Layout, Wrapper, Header, SectionTitle } from '../../components'
+import { Layout, MXContentMain, Header, SectionTitle } from '../../components'
 import config from '../../../config'
-
-const Content = styled.div`
-  grid-column: 2;
-  box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  padding: 2rem 4rem;
-  background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    padding: 3rem 3rem;
-  }
-  @media (max-width: ${props => props.theme.breakpoints.phone}) {
-    padding: 2rem 1.5rem;
-  }
-`
 
 const Title = styled.h3`
   position: relative;
@@ -34,12 +19,11 @@ const Category = ({
     allMdx: { group },
   },
 }) => (
-  <Layout>
-    <Wrapper>
+  <Layout navmode="blog">
       <Helmet title={`Categories | ${config.siteTitle}`} />
       <Header>
       </Header>
-      <Content>
+      <MXContentMain>
         <SectionTitle>Categories</SectionTitle>
         {group.map(category => (
           <Title key={category.fieldValue}>
@@ -47,8 +31,7 @@ const Category = ({
             {category.totalCount})
           </Title>
         ))}
-      </Content>
-    </Wrapper>
+      </MXContentMain>
   </Layout>
 )
 
@@ -64,7 +47,9 @@ Category.propTypes = {
 
 export const postQuery = graphql`
   query CategoriesPage {
-    allMdx {
+    allMdx (
+      filter: {frontmatter: {date: {ne: null} } }
+    ){
       group(field: frontmatter___categories) {
         fieldValue
         totalCount

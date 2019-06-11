@@ -105,7 +105,7 @@ There is also a spec proposal room: <a>#uri-scheme-proposal:matrix.org</a>.
 <h4 id="synapse">Synapse</h4>
 <ul>
  	<li>Operational firefighting continues: stopping malformed events from impacting federation; investigating thundering herds of presence EDUs; trying to keep Freenode joins from lagging;</li>
- 	<li>Meanwhile, Erik has been working hard on the problem of Incremental State Resolution (the big algorithmic win which could massively improve HS performance, especially for Synapse); this is looking promising and has ended up taking the form of a formal mathematical proof that the proposed algorithm works: <a href="https://matrix.org/_matrix/media/v1/download/jki.re/hSmkLkFGVUnrXjtYcjsCUsyS">https://matrix.org/_matrix/media/v1/download/jki.re/hSmkLkFGVUnrXjtYcjsCUsyS</a> (aka <a href="https://github.com/matrix-org/synapse/pull/3122">https://github.com/matrix-org/synapse/pull/3122</a>) is where that's happening! Warning: contains maths.</li>
+ 	<li>Meanwhile, Erik has been working hard on the problem of Incremental State Resolution (the big algorithmic win which could massively improve HS performance, especially for Synapse); this is looking promising and has ended up taking the form of a formal mathematical proof that the proposed algorithm works: <a href="/_matrix/media/v1/download/jki.re/hSmkLkFGVUnrXjtYcjsCUsyS">https://matrix.org/_matrix/media/v1/download/jki.re/hSmkLkFGVUnrXjtYcjsCUsyS</a> (aka <a href="https://github.com/matrix-org/synapse/pull/3122">https://github.com/matrix-org/synapse/pull/3122</a>) is where that's happening! Warning: contains maths.</li>
  	<li>...and also wrote a Rust testjig for state resolution to help reason about it: <a href="https://github.com/erikjohnston/rust-matrix-state">https://github.com/erikjohnston/rust-matrix-state</a></li>
  	<li>Official Ansible playbook repository dev is progressing on the develop branch at <a href="https://github.com/matrix-org/matrix-ansible">https://github.com/matrix-org/matrix-ansible</a> thanks to massive work from Michael K. We'll blog properly about this when ready for use in earnest.</li>
  	<li>Dave has been doing an interesting experiment in syncing user profile data from HSes into ISes (useful for folks running a private federation with its own IS who want to use the IS as a global user directory); almost complete - we'll see how this goes.</li>
@@ -143,7 +143,7 @@ Huge thank you to <a href="http://matrix.to/#/@nouts:matrix.org">nouts</a> who p
 <h1>And Finally...</h1>
 Check out Matrix Live, now available at <a class="linkified" href="https://youtu.be/EstVaVUWkdw" rel="noopener">https://youtu.be/EstVaVUWkdw</a>
 
-<div class="video-container"><iframe src="https://www.youtube.com/embed/EstVaVUWkdw" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/EstVaVUWkdw" width="560" height="315" frameBorder="0" allowFullScreen="allowfullscreen"></iframe></div>
 
 Thanks for reading the very first This Week in Matrix! There will be another post next week, so if you'd like to be included join us in <a class="linkified" href="https://matrix.to/#/#twim:matrix.org" rel="noopener">#twim:matrix.org</a>. See you next week!
 

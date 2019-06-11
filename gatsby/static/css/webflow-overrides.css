@@ -1,0 +1,187 @@
+body {
+    font-family: "Helvetica Neue",
+        "Helvetica",
+        Arial,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif,
+        "Apple Color Emoji",  /* Emojis*/
+        "Segoe UI Emoji", /* Emojis*/
+        "Segoe UI Symbol"; /* Emojis*/
+
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+label {
+    display: initial;
+}
+
+pre {
+  overflow-x: scroll;
+  width: 100%;
+  max-width: calc(100vw - 20px);
+}
+
+img {
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+.mximagine {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.5em;
+  text-align: left;
+  list-style: none;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  left: -35px;
+  max-width: 780px;
+}
+
+.mxgrid__item__bg--imagine {
+  background: none;
+}
+
+.mximagine li {
+  margin-left: 0em;
+  margin-bottom: .5em;
+}
+
+.mximagine li:first-child {
+  margin-left: 0em;
+  font-weight: bold;
+}
+
+.mxthisismatrix {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 0em;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.mxmatrixdescription {
+  font-size: 20px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mxhow {
+  text-align: left;
+}
+
+.mxblock.mxblock--foundation {
+  text-align: left;
+}
+
+.mxgrid__item--guardian__bg__img {
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.mxgrid__item--guardian__bg__img:hover {
+  filter: none;
+}
+
+.mxcontent__nav__link--title a, .mxcontent__nav__link a {
+  color: inherit;
+}
+
+.bridgesPage img {
+    max-width: 100px;
+}
+
+.bridgesPage table {
+    width: 100%;
+}
+
+.legacy-table {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.legacy-table td, tr, th {
+  padding-right: 20px;
+  padding-bottom: 4px;
+}
+
+.legacy-table th {
+  padding-bottom: 8px;
+}
+
+.overscroll {
+  overflow-x: scroll;
+  width: 100%;
+  max-width: calc(100vw - 20px);
+}
+
+.tmn-two-column {
+    display: 'inline-table';
+    column-count: 2;
+    text-align: left;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.definition-list {
+  display: none;
+}
+
+div.title {
+  font-size: large;
+}
+
+.mxherobackground {
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 10s ease infinite;
+	-moz-animation: Gradient 10s ease infinite;
+	animation: Gradient 10s ease infinite;
+}
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}

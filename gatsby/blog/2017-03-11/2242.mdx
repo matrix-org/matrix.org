@@ -6,9 +6,9 @@ categories:
 author: Matthew Hodgson
 ---
 
-<a href="https://xkcd.com/1810"><img class="aligncenter wp-image-2297" src="https://matrix.org/blog/wp-content/uploads/2017/03/xkcd1810-matrixified-v2-1024x842.png" width="753" height="619" /></a>
+<a href="https://xkcd.com/1810"><img class="aligncenter wp-image-2297" src="/blog/wp-content/uploads/2017/03/xkcd1810-matrixified-v2-1024x842.png" width="753" height="619" /></a>
 <p id="types-of-bridging">Bridges come in many flavours, and we need consistent terminology within the Matrix community to ensure everyone (users, developers, core team) is on the same page. This post is primarily intended for bridge developers to refer to when building bridges.</p>
-<em>The most recent version of this document is <a href="https://matrix.org/docs/guides/types-of-bridging.html">here</a> (<a href="https://github.com/matrix-org/matrix-doc/blob/master/supporting-docs/guides/2017-03-11-types-of-bridging.md">source</a>) but we're also posting it as a blog post for visibility.</em>
+<em>The most recent version of this document is <a href="/docs/guides/types-of-bridging.html">here</a> (<a href="https://github.com/matrix-org/matrix-doc/blob/master/supporting-docs/guides/2017-03-11-types-of-bridging.md">source</a>) but we're also posting it as a blog post for visibility.</em>
 <h3 id="types-of-rooms">Types of rooms</h3>
 <h4>Portal rooms</h4>
 Bridges can register themselves as controlling chunks of room aliases namespace, letting Matrix users join remote rooms transparently if they /join #freenode_#wherever:matrix.org or similar. The resulting Matrix room is typically automatically bridged to the single target remote room. Access control for Matrix users is typically managed by the remote network's side of the room. This is called a portal room, and is useful for jumping into remote rooms without any configuration needed whatsoever - using Matrix as a ‘bouncer' for the remote network.

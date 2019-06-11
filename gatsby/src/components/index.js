@@ -8,5 +8,8 @@ import SEO from './SEO'
 import Subline from './Subline'
 import Wrapper from './Wrapper'
 import HallOfFameEntry from './HallOfFameEntry'
+import MXContentMain from './MXContentMain'
+import MXContentNav from './MXContentNav'
+import MXTryMatrixNowSection from './MXTryMatrixNowSection'
 
-export { Article, Button, Header, Layout, PrevNext, SectionTitle, SEO, Subline, Wrapper, HallOfFameEntry }
+export { Article, Button, Header, Layout, PrevNext, SectionTitle, SEO, Subline, Wrapper, HallOfFameEntry, MXContentMain, MXContentNav, MXTryMatrixNowSection }

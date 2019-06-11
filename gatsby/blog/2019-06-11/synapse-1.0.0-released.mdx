@@ -1,0 +1,25 @@
+---
+date: '2019-06-11'
+title: Synapse 1.0.0 released
+categories:
+  - General
+author: Neil Johnson
+---
+
+Well here it is: Synapse 1.0.
+
+Synapse 1.0 is the reference implementation of the [Matrix 1.0 spec](https://matrix.org/docs/spec). The goal of the release overall has been to focus on security and stability, such that we can officially declare Synapse (and Matrix) out of beta and recommended for production use. This means changing the default room protocol version used for new rooms to be [v4](https://github.com/matrix-org/matrix-doc/blob/37871106c6fc6013c17b5711fb93853fff140267/proposals/2002-rooms-v4.md), which includes the new [state resolution algorithm](https://github.com/matrix-org/matrix-doc/blob/f714aaadd011ac736d779f8460202a8d95799123/proposals/1442-state-resolution.md), as well as [collision-resistant event IDs](https://github.com/matrix-org/matrix-doc/blob/erikj/event_id_hashes/proposals/1659-event-id-as-hashes.md), which are now formatted to be [URL safe](https://github.com/matrix-org/matrix-doc/blob/rav/proposal/no_slash_in_event_id/proposals/1884-replace-slashes-in-event_ids.md).
+
+Synapse 1.0 also ships with support for the upcoming [v5 room protocol](https://matrix.org/docs/spec/rooms/v5.html) (which enforces honouring server key validity periods), but this will not be used as the default for new rooms until a sufficient number of servers support it.
+
+Please note that Synapse 1.0 does **not** include significant performance work or new features - our focus has been almost exclusively on providing a reference implementation of the Matrix 1.0 protocol. But having cleared our backlog on security/stability issues we will finally be now unblocked to pursue work around reducing RAM footprint, eliminating forward-extremity build up, and shipping new features like Edits, Reactions & E2E cross-signing support.
+
+As part of the security work, Synapse 1.0 contains a [breaking change](https://github.com/matrix-org/synapse/blob/master/docs/MSC1711_certificates_FAQ.md#it-used-to-work-just-fine-why-are-you-breaking-everything) that requires a valid TLS certificate on the federation API endpoint. **Servers that do not configure their certificate will no longer be able to federate post 1.0.**
+
+It is also worth noting that Synapse 1.0.0 is the last release that will support Python 2.x and Postgres 9.4. For more information see [here](/blog/2019/04/08/synapse-deprecating-postgres-9-4-and-python-2-x) but the TL;DR is that you should upgrade asap.
+
+This release has been a long time coming. Many thanks indeed to everyone who helped test the release candidates and provided feedback along the way.
+
+Synapse 1.0 is just one component of a larger Matrix 1.0 release, which you can [read all about here](/blog/2019/06/11/introducing-matrix-1-0-and-the-matrix-org-foundation).
+
+As ever, you can get the new update [here](https://github.com/matrix-org/synapse/releases/tag/v1.0.0) or any of the sources mentioned at [https://github.com/matrix-org/synapse](https://github.com/matrix-org/synapse). Note, Synapse is now available from PyPI, pick it up [here](https://pypi.org/project/matrix-synapse/). Also, check out our [Synapse installation guide page](https://matrix.org/docs/guides/installing-synapse)

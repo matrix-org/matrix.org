@@ -79,9 +79,24 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        trackingId: config.googleAnalyticsID,
+        name: 'docs',
+        path: `${__dirname}/content/docs`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: `${__dirname}/content/projects`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'legal',
+        path: `${__dirname}/content/legal`,
       },
     },
     {

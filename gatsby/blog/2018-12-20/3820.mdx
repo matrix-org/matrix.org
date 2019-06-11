@@ -12,19 +12,20 @@ The big news for 0.34.0 is that we now <strong>recommend Python 3 for production
 
 Performance improvements have been marked, in some contexts we have seen 50% reductions in RAM and CPU usage. Here are some illustrative graphs to get you going but look out for a dedicated post delving into much more detail on the port. You can also see a Matrix Live interview with the project lead Amber (hawkowl) <a href="https://www.youtube.com/watch?v=Ad3oqEo5leM">here</a>.
 
-<a href="https://matrix.org/blog/wp-content/uploads/2018/12/image2.png"><img class="alignnone wp-image-3822 size-large" src="https://matrix.org/blog/wp-content/uploads/2018/12/image2-1024x296.png" alt="" width="1024" height="296" /></a>
+<a href="/blog/wp-content/uploads/2018/12/image2.png"><img class="alignnone wp-image-3822 size-large" src="/blog/wp-content/uploads/2018/12/image2-1024x296.png" alt="" width="1024" height="296" /></a>
 
 Matrix.org federation reader workers, the big drops signify roll over to python 3
 
-<a href="https://matrix.org/blog/wp-content/uploads/2018/12/image1.png"><img class="alignnone size-large wp-image-3824" src="https://matrix.org/blog/wp-content/uploads/2018/12/image1-1024x237.png" alt="" width="1024" height="237" /></a>
+<a href="/blog/wp-content/uploads/2018/12/image1.png"><img class="alignnone size-large wp-image-3824" src="/blog/wp-content/uploads/2018/12/image1-1024x237.png" alt="" width="1024" height="237" /></a>
 
-<span style="font-weight: 400;">Synapse master on matrix.org, again the drop in RAM signifies the roll over to python 3</span>
+Synapse master on matrix.org, again the drop in RAM signifies the roll over to python 3
+
 
 Many thanks to Amber for leading the effort, Rich and Erik for providing support as well as Notafile and Krombel from the community for pushing this effort right from the early days of the project.
 
 If that wasn't enough, 0.34.0 also all the usual bug fixes and perf improvements. In particular the media repository now no longer fails to decode UTF-8 filenames when downloading remote media and auto joining rooms now work on servers with consent requirements enabled.
 
-As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.34.0">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. Also, check out our new <a href="https://matrix.org/docs/guides/installing-synapse">Synapse installation guide page.</a>
+As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.34.0">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. Also, check out our new <a href="/docs/guides/installing-synapse">Synapse installation guide page.</a>
 
 In particular, if you want to run Synapse 0.34.0 on Python 3 take a look at the <a href="https://github.com/matrix-org/synapse/blob/release-v0.34.0/UPGRADE.rst#upgrading-to-v0340">upgrade notes</a>.
 

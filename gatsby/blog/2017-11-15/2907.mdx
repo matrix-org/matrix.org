@@ -41,9 +41,11 @@ The full changelog for 0.3 of the spec is:
  	<li>New endpoints:
 <ul>
  	<li><tt class="docutils literal">GET /joined_rooms</tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/999">#999</a>).</li>
- 	<li><tt class="docutils literal">GET <span class="pre">/rooms/{'{'}roomId{'}'}/joined_members</span></tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/999">#999</a>).</li>
+ 	<li><tt class="docutils literal">GET <span class="pre">/rooms/{'{'}roomId{'}'}/joined_members</span>
+</tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/999">#999</a>).</li>
  	<li><tt class="docutils literal">GET /account/whoami</tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1063">#1063</a>).</li>
- 	<li><tt class="docutils literal">GET <span class="pre">/media/{'{'}version{'}'}/preview_url</span></tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1064">#1064</a>).</li>
+ 	<li><tt class="docutils literal">GET <span class="pre">/media/{'{'}version{'}'}/preview_url</span>
+</tt> (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1064">#1064</a>).</li>
 </ul>
 </li>
 </ul>
@@ -61,14 +63,15 @@ The full changelog for 0.3 of the spec is:
  	<li>Correct inconsistent specification of <tt class="docutils literal">redacted_because</tt> fields and their values (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/378">#378</a>).</li>
  	<li>Mark required fields in response objects as such (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/394">#394</a>).</li>
  	<li>Make <tt class="docutils literal">m.notice</tt> description a bit harder in its phrasing to try to dissuade the same issues that occurred with IRC (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/750">#750</a>).</li>
- 	<li><tt class="docutils literal">GET <span class="pre">/user/{'{'}userId{'}'}/filter/{'{'}filterId{'}'}</span></tt> requires authentication (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1003">#1003</a>).</li>
+ 	<li><tt class="docutils literal">GET <span class="pre">/user/{'{'}userId{'}'}/filter/{'{'}filterId{'}'}</span>
+</tt> requires authentication (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1003">#1003</a>).</li>
  	<li>Add some clarifying notes on the behaviour of rooms with no <tt class="docutils literal">m.room.power_levels</tt> event (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1026">#1026</a>).</li>
  	<li>Clarify the relationship between <tt class="docutils literal">username</tt> and <tt class="docutils literal">user_id</tt> in the <tt class="docutils literal">/register</tt> API (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1032">#1032</a>).</li>
  	<li>Clarify rate limiting and security for content repository. (<a class="reference external" href="https://github.com/matrix-org/matrix-doc/pull/1064">#1064</a>).</li>
 </ul>
 </li>
 </ul>
-...and you can read the spec itself of course over at <a href="https://matrix.org/docs/spec">https://matrix.org/docs/spec</a>.  It's worth noting that we have slightly bent the rules by including three very minor 'breaking changes' in 0.3, but all for features which to our knowledge nobody is depending on in the wild.  Technically this should mean bumping the major version prefix (i.e. moving to r1), but given how minor and nonimpacting these are we're turning a blind eye this time.
+...and you can read the spec itself of course over at <a href="/docs/spec">https://matrix.org/docs/spec</a>.  It's worth noting that we have slightly bent the rules by including three very minor 'breaking changes' in 0.3, but all for features which to our knowledge nobody is depending on in the wild.  Technically this should mean bumping the major version prefix (i.e. moving to r1), but given how minor and nonimpacting these are we're turning a blind eye this time.
 <h3>Meanwhile, Synapse 0.25 is out!</h3>
 This is a medium-sized release; the main thing being to support configurable room visibility within groups (so that whenever you add a room to a group, you're not forced into sharing their existence with the general public, but can choose to just tell group members about them).  There's also a bunch of useful bug fixes and some performance improvements, including lots of contributions from the community this release (thank you!).  Full release notes are:
 <h5>Changes in synapse v0.25.0 (2017-11-15)</h5>

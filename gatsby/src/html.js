@@ -15,8 +15,12 @@ export default function HTML(props) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@matrixdotorg" />
         <meta name="twitter:creator" content="@matrixdotorg" />
+        <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="/css/webflow.css" />
+        <link rel="stylesheet" type="text/css" href="/css/matrix-org.webflow.css" />
+        <link rel="stylesheet" type="text/css" href="/css/webflow-overrides.css" />
       </head>
-      <body {...props.bodyAttributes}>
+      <body className="body" {...props.bodyAttributes}>
         {props.preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
@@ -27,6 +31,8 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="/js/tmn-control.js"></script>
       </body>
     </html>
   )
