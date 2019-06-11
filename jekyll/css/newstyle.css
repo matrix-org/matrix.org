@@ -65,6 +65,7 @@ nav#top-menu-nav, #top-menu {
 	float: left;
 	list-style-type: none;
 	font-weight: initial;
+	color: initial;
 }
 .nav li {
     position: relative;
