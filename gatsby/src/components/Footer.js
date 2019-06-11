@@ -14,7 +14,7 @@ const Footer = () => (
       </div>
       <div className="mxfooter__column">
         <a href="/docs/guides" className="mxfooter__link mxfooter__link--primary">Guides</a>
-        <a href="/docs/guides/getting-started" className="mxfooter__link">Getting Started</a>
+        <a href="/docs/guides/getting-involved" className="mxfooter__link">Getting Started</a>
         <a href="/docs/guides" className="mxfooter__link">Client-Server API</a>
         <a href="/docs/guides/installing-synapse" className="mxfooter__link">Install Synapse</a>
         <a href="/docs/guides" className="mxfooter__link">Bridges</a>
