@@ -626,7 +626,7 @@ const Index = ({
                   <div className="mxgrid__support__item">
                     <div className="mxgrid__item__bg__vert">
                       <h4>Cryptocurrency</h4>
-                      <p className="mxgrid__support__item__p">You can also send us cryptocurrency:<br />BTC 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE<br />ETH 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485</p>
+                      <p className="mxgrid__support__item__p">You can also send us cryptocurrency:<br /><small>BTC 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE<br />ETH 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485</small></p>
                       <div className="mxgrid__item__bg__vert">
                         <div className="mxgrid__item__bg__vert__embed w-embed w-script">
                         </div>
