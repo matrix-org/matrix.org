@@ -27,6 +27,7 @@ All this means that the main headline features which land in Matrix 1.0 are vita
     *   [Collision resistant event IDs](https://github.com/matrix-org/matrix-doc/pull/1659)
 *   Specifying the ability to upgrade between room versions
 *   Full specification of lazy loading room members
+*   [Short Authentication String](https://github.com/matrix-org/matrix-doc/issues/1267) (Emoji!) interactive verification of E2EE devices
 *   ...and lots and lots and lots of bugfixes and spec omission fixes.
 
 That said, there is a *lot* of really exciting stuff in flight right now which sadly didn’t stabilise in time for Matrix 1.0, but will be landing as fast as we can finalise it now that 1.0 is at last out the door.  This includes:
@@ -34,7 +35,7 @@ That said, there is a *lot* of really exciting stuff in flight right now which s
 *   Editable messages!  (These are in Synapse 1.0 and Riot already, but still stabilising so not enabled by default)
 *   Reactions! (Similarly these are in develop)
 *   Threading!! (We’ve planted the seeds for this in the new ‘aggregations’ support which powers edits & reactions - but full thread support is still a bit further out).
-*   Cross-signed verification for end-to-end encryption (This is on a branch, but due to land any day now).  We’ve also held off merging E2E backups into the Matrix 1.0 spec until cross-signing lands, given it may change the backup behaviour a bit.  Once this is done, we can seriously talk about turning on E2E by default everywhere.
+*   [Cross-signed verification for end-to-end encryption](https://github.com/uhoreg/matrix-doc/blob/cross-signing2/proposals/1756-cross-signing.md) (This is on a branch, but due to land any day now).  We’ve also held off merging E2E backups into the Matrix 1.0 spec until cross-signing lands, given it may change the backup behaviour a bit.  Once this is done, we can seriously talk about turning on E2E by default everywhere.
 *   Live-tracking of room statistics and state in Synapse!  (This is in Synapse 1.0 already if you check out the new room_stats and room_state tables, but we need to provide a nice admin interface for it).
 *   Support for smaller footprint homeservers by reducing memory usage and stopping them from joining overly complex rooms.
 
