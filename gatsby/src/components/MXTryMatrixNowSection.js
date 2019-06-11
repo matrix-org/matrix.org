@@ -19,7 +19,7 @@ const MXTryMatrixNowSection = ({items}) => {
             data-type={project.frontmatter.categories[0]}>
             <div className="mxgrid__item__bg mxgrid__item__bg--clear">
                 
-                <h4 className="mxgrid__item__bg__hx">{project.frontmatter.title}</h4>
+                <a href={project.fields.slug}><h4 className="mxgrid__item__bg__hx">{project.frontmatter.title}</h4></a>
                 <p className="mxgrid__item__bg__p">{project.frontmatter.description}</p>
                 <div className="mxgrid__item__bg__vert">
                     <img src={project.frontmatter.thumbnail} alt="" className="mxgrid__item__bg__img" />

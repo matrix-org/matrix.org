@@ -216,6 +216,9 @@ export const query = graphql`
                         categories
                         language
                     }
+                    fields {
+                        slug
+                    }
                 }
                 absolutePath
             }
