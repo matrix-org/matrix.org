@@ -170,7 +170,7 @@ const Index = ({
                     audited by NCC Group</a>.
                   </p>
                 </div>
-                <a href="/docs/guides/e2e_implementation.html" className="mxgrid__item__bg__btn w-button">Learn more</a>
+                <a href="/docs/guides/end-to-end-encryption-implementation-guide" className="mxgrid__item__bg__btn w-button">Learn more</a>
               </div>
             </div>
             <div className="mxgrid__item50">

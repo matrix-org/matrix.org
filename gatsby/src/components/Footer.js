@@ -9,7 +9,6 @@ const Footer = () => (
         <a href="/docs/projects/clients-matrix" className="mxfooter__link">Clients</a>
         <a href="/docs/projects/bots" className="mxfooter__link">Bots</a>
         <a href="/docs/projects/sdks" className="mxfooter__link">SDKs</a>
-        <a href="/docs/projects/servers" className="mxfooter__link">Servers</a>
         <a href="/docs/projects/hosting" className="mxfooter__link">Hosting</a>
       </div>
       <div className="mxfooter__column">
@@ -22,7 +21,7 @@ const Footer = () => (
       </div>
       <div className="mxfooter__column">
         <a href="/docs/guides" className="mxfooter__link mxfooter__link--primary">Develop</a>
-        <a href="docs-example.html" className="mxfooter__link">Docs</a>
+        <a href="/docs/" className="mxfooter__link">Docs</a>
         <a href="/docs/spec" className="mxfooter__link">Spec</a>
         <a href="/docs/" className="mxfooter__link">API Playground</a>
         <a href="/code" className="mxfooter__link">Code</a>
@@ -30,14 +29,14 @@ const Footer = () => (
       <div className="mxfooter__column">
         <a href="/blog" className="mxfooter__link mxfooter__link--primary">Blog</a>
         <a href="/blog/archive" className="mxfooter__link">All posts</a>
-        <a href="/blog/categories/this-week-in-matrix" className="mxfooter__link">This week in Matrix</a>
-        <a href="/blog/categories/security" className="mxfooter__link">Security</a>
+        <a href="/blog/category/this-week-in-matrix" className="mxfooter__link">This week in Matrix</a>
+        <a href="/blog/category/security" className="mxfooter__link">Security</a>
         <a href="/blog/feed" className="mxfooter__link">RSS</a>
       </div>
       <div className="mxfooter__column">
         <a href="/" className="mxfooter__link mxfooter__link--primary">More</a>
-        <a href="/docs/guides/faq" className="mxfooter__link">FAQs</a>
-        <a href="/security" className="mxfooter__link">Security</a>
+        <a href="/faq" className="mxfooter__link">FAQs</a>
+        <a href="/security-disclosure-policy/" className="mxfooter__link">Security</a>
         <a href="/legal" className="mxfooter__link">Legal</a>
       </div>
     </div>

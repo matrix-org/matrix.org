@@ -156,7 +156,7 @@ const Foundation = () => {
               process.</p>
           <p>The Proposal for Open Governance was then formalised into legal form and incorporated into the Articles of
             Association and a matching Rules document, which is canonically versioned in <a href=
-            "https://docs.google.com/document/d/1MhqsuIUxPc7Vf_y8D250mKZlLeQS6E39DPY6Azpc2NY/edit%23"> this Google
+            "https://docs.google.com/document/d/1MhqsuIUxPc7Vf_y8D250mKZlLeQS6E39DPY6Azpc2NY/edit"> this Google
             Doc</a> (for ease of use by lawyers). This is the official canonical version of the rulebook referred
             to by the Foundation’s Articles.</p>
           <p>The full history of the rules can be followed via:</p>

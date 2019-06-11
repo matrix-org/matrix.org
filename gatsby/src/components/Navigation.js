@@ -80,7 +80,7 @@ const Navigation = (navmode) => (
           <a href="/docs/projects/try-matrix-now" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "discover" ? "w--current":"")}>Discover</a>
           <a href="/docs/guides" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "develop" ? "w--current":"")}>Develop</a>
           <a href="/blog/posts" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "blog" ? "w--current":"")}>Blog</a>
-          <a href="/docs/guides/faq" className="mxnavbar__navlink w-nav-link">FAQs</a>
+          <a href="/faq" className="mxnavbar__navlink w-nav-link">FAQs</a>
           <a href="/try-now" className="mxnavbar__navlink mxnavbar__navlink--try w-nav-link">Try Now</a>
           <a href="/try-now" className="mxnavbar__navlink mxnavbar__navlink--primary w-nav-link">Try Now</a>
         </nav>

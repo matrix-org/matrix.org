@@ -40,7 +40,7 @@ const TryMatrixNow = ({data}) => {
                 <h4 className="mxgrid__item__bg__hx">
                     <a href="/docs/projects/client/riot">Riot</a>
                 </h4>
-                <p className="mxgrid__item__bg__p">If you like glossy and feature-rich web clients, try Riot. Available <a href="./client/riot.html">on the web</a> and as a <a href="https://riot.im/desktop.html">desktop client</a>.</p>
+                <p className="mxgrid__item__bg__p">If you like glossy and feature-rich web clients, try Riot. Available <a href="/docs/projects/client/riot">on the web</a> and as a <a href="https://riot.im/desktop.html">desktop client</a>.</p>
                 <div className="mxgrid__item__bg__vert">
                     <img src="/docs/projects/images/riot-web-featured.png" alt="" className="mxgrid__item__bg__img" />
                 </div>
