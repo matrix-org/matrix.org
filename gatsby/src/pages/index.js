@@ -476,7 +476,7 @@ const Index = ({
 </a>
 <a href="/docs/projects/clients-matrix" className="mxblock__explore__item w-inline-block">
 <img src="images/software_layout_header_sideleft.svg" alt="" className="mxblock__explore__item__img" />
-<div className="mxblock__explore__item__p">Cients</div>
+<div className="mxblock__explore__item__p">Clients</div>
 </a>
 <a href="/docs/projects/bots" className="mxblock__explore__item w-inline-block">
 <img src="images/basic_calculator.svg" alt="" className="mxblock__explore__item__img" />

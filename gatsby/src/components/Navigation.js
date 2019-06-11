@@ -48,7 +48,7 @@ navTypes["discover"] = (
   </a>
   <a href="/docs/projects/clients-matrix" className="mxnavsection__item w-inline-block">
     <img src="/images/software_layout_header_sideleft.svg" alt="" className="mxnavsection__icon" />
-    <div className="mxnavsection__text">Cients</div>
+    <div className="mxnavsection__text">Clients</div>
   </a>
   <a href="/docs/projects/bots" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_calculator.svg" alt="" className="mxnavsection__icon" />
