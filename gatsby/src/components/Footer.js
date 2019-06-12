@@ -45,10 +45,10 @@ const Footer = () => (
         <a href="/code" className="w-inline-block">
           <img src="/images/github.svg" alt="" className="mxfooter__icon" />
         </a>
-        <a href="https://gitlab.com/" className="w-inline-block">
+        <a href="https://gitlab.matrix.org/" className="w-inline-block">
           <img src="/images/gitlab.svg" alt="" className="mxfooter__icon" />
         </a>
-        <a href="https://youtube.com/" className="w-inline-block">
+        <a href="https://www.youtube.com/channel/UCVFkW-chclhuyYRbmmfwt6w" className="w-inline-block">
           <img src="/images/youtube.svg" alt="" className="mxfooter__icon" />
         </a>
         <a href="https://twitter.com/matrixdotorg" className="w-inline-block">
