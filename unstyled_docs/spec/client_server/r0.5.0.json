@@ -6,7 +6,7 @@
     "host": "matrix.org",
     "info": {
         "title": "Matrix Client-Server API",
-        "version": "unstable"
+        "version": "r0.5.0"
     },
     "paths": {
         "/.well-known/matrix/client": {
@@ -10683,7 +10683,7 @@
         },
         "/_matrix/client/r0/rooms/{roomId}/state/{eventType}/{stateKey}": {
             "get": {
-                "description": ".. For backwards compatibility with older links...\n.. _`get-matrix-client-unstable-rooms-roomid-state-eventtype`:\n\nLooks up the contents of a state event in a room. If the user is\njoined to the room then the state is taken from the current\nstate of the room. If the user has left the room then the state is\ntaken from the state of the room when they left.",
+                "description": ".. For backwards compatibility with older links...\n.. _`get-matrix-client-r0-rooms-roomid-state-eventtype`:\n\nLooks up the contents of a state event in a room. If the user is\njoined to the room then the state is taken from the current\nstate of the room. If the user has left the room then the state is\ntaken from the state of the room when they left.",
                 "operationId": "getRoomStateWithKey",
                 "parameters": [
                     {
@@ -10741,7 +10741,7 @@
                 ]
             },
             "put": {
-                "description": ".. For backwards compatibility with older links...\n.. _`put-matrix-client-unstable-rooms-roomid-state-eventtype`:\n\nState events can be sent using this endpoint.  These events will be\noverwritten if ``<room id>``, ``<event type>`` and ``<state key>`` all\nmatch.\n\nRequests to this endpoint **cannot use transaction IDs**\nlike other ``PUT`` paths because they cannot be differentiated from the\n``state_key``. Furthermore, ``POST`` is unsupported on state paths.\n\nThe body of the request should be the content object of the event; the\nfields in this object will vary depending on the type of event. See\n`Room Events`_ for the ``m.`` event specification.\n",
+                "description": ".. For backwards compatibility with older links...\n.. _`put-matrix-client-r0-rooms-roomid-state-eventtype`:\n\nState events can be sent using this endpoint.  These events will be\noverwritten if ``<room id>``, ``<event type>`` and ``<state key>`` all\nmatch.\n\nRequests to this endpoint **cannot use transaction IDs**\nlike other ``PUT`` paths because they cannot be differentiated from the\n``state_key``. Furthermore, ``POST`` is unsupported on state paths.\n\nThe body of the request should be the content object of the event; the\nfields in this object will vary depending on the type of event. See\n`Room Events`_ for the ``m.`` event specification.\n",
                 "operationId": "setRoomStateWithKey",
                 "parameters": [
                     {
