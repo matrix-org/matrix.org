@@ -112,11 +112,11 @@ const Index = ({
                     <div className="mxgrid__item__bg mxgrid__item__bg--imagine">
                       <ul className="mximagine">
                         <li>Imagine a world...</li>
-                        <li>...where it is as simple to message or call anyone<br/>&nbsp;&nbsp;&nbsp;as it is to send them an email.</li>
-                        <li>...where you can communicate without being<br/>&nbsp;&nbsp;&nbsp;forced to install the same app.</li>
+                        <li>...where it is as simple to message or call anyone as it is to send them an email.</li>
+                        <li>...where you can communicate without being forced to install the same app.</li>
                         <li>...where you can choose who hosts your communication.</li>
                         <li>...where your conversations are secured by E2E encryption.</li>
-                        <li>...where there’s a simple standard HTTP API<br/>&nbsp;&nbsp;&nbsp;for sharing real-time data on the web.</li>
+                        <li>...where there’s a simple standard HTTP API for sharing real-time data on the web.</li>
                       </ul>
                     </div>
                 </div>

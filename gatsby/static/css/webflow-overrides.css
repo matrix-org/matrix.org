@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
   position: relative;
   left: -35px;
-  max-width: 780px;
+  max-width: 400px;
 }
 
 .mxgrid__item__bg--imagine {
@@ -53,6 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mximagine li {
+  text-indent: -.8em;
   margin-left: 0em;
   margin-bottom: .5em;
 }
