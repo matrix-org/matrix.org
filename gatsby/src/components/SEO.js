@@ -10,17 +10,23 @@ const SEO = props => {
   let title
   let description
   let image
+  let twitter_card_mode
 
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
   const homeURL = `${config.siteUrl}${realPrefix}`
   const URL = `${homeURL}${postPath || ''}`
-  image = `${homeURL}${config.siteBanner}`
+  const defaultImage = `${homeURL}${config.siteBanner}`
+  image = defaultImage
+  twitter_card_mode = "summary"
 
   if (article) {
     const postMeta = postNode.frontmatter
     title = `${postMeta.title} | ${config.siteTitle}`
     description = postNode.excerpt
     image = postMeta.image || image
+    if (image !== defaultImage) {
+      twitter_card_mode = "summary_large_image"
+    }
   } else {
     title = config.siteTitleAlt
     description = config.siteDescription
@@ -160,7 +166,7 @@ const SEO = props => {
       <meta property="og:image" content={image} />
       <meta property="og:image:alt" content={description} />
       {config.siteFBAppID && <meta property="fb:app_id" content={config.siteFBAppID} />}
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content={twitter_card_mode} />
       <meta name="twitter:creator" content={config.userTwitter ? config.userTwitter : ''} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:url" content={config.siteUrl} />
