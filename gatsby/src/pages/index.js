@@ -10,6 +10,7 @@ import { ThemeProvider } from 'styled-components'
 import theme from '../../config/theme'
 
 import { graphql } from 'gatsby'
+import { Link } from "gatsby"
 
 const example1 = `curl -XPOST
  -d '{"msgtype":"m.text", "body":"hello"}'
@@ -136,7 +137,7 @@ const Index = ({
                           as the Web itself... but for communication.
                         </p>
                         <p className="mxp mxmatrixdescription">
-                          As of June 2019, Matrix is <a href="/blog/">out of beta</a>, and the protocol is fully suitable for production usage.
+                          As of June 2019, Matrix is <Link to="/blog/2019/06/11/introducing-matrix-1-0-and-the-matrix-org-foundation">out of beta</Link>, and the protocol is fully suitable for production usage.
                         </p>
                     </div>
                 </div>
