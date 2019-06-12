@@ -609,7 +609,10 @@ let us know on <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:
 </div>
 <div class="question">
 <h4 id="how-do-i-connect-my-homeserver-to-the-public-matrix-network%3F"><a class="permalink" href="#how-do-i-connect-my-homeserver-to-the-public-matrix-network%3F" aria-hidden="true">&#128279;</a> How do I connect my homeserver to the public Matrix network?</h4>
-<p>If you have a successfully running Synapse instance and want to <a href="#definitions">the specific documentation</a> for details.</p>
+<p>If you have a successfully running Synapse instance and want
+to <a href="#definitions">federate</a> with the rest of the public network, take a look at
+the <a href="https://github.com/matrix-org/synapse/blob/master/docs/federate.md">federation
+documentation</a>.</p>
 <div class="definition-list">
 <div class="definition-item definition-federation">
 <p><strong>federation</strong></p>
