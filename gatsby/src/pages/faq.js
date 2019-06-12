@@ -524,7 +524,6 @@ let us know on <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:
 <li><a href="https://gitlab.com/beerfactory.org/plasma/">Plasma</a></li>
 <li><a href="https://gitlab.com/ma1uta/jeon">jeon</a></li>
 </ul>
-<p>The <a href="/docs/spec/server_server/unstable.html">S2S spec</a> is still being finalised for r0, so if you are planning on doing work in this area, come chat to us in <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:matrix.org</a>. You can also read about the <a href="/docs/spec/server_server/unstable.html">Federation API here</a>.</p>
 <div class="definition-list">
 <div class="definition-item definition-thespec">
 <p><strong>the spec</strong></p>
