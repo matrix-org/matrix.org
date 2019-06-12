@@ -9,7 +9,7 @@ import config from '../../config'
 
 
 const Foundation = () => {
-    return (<Layout hasNavPadding="true">
+    return (<Layout hasNavPadding="true" excerptOverride="The Foundation defines the manifesto, mission and values of the project, the open governance process that determines how the specification develops, and provides a safety-net to ensure the project stays independent and true to its goals.">
             <Helmet title={`The Matrix.org Foundation | ${config.siteTitle}`} />
             <MXContentMain>
             <div class="mxblock mxblock--foundation">
