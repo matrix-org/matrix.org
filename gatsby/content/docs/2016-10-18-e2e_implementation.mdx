@@ -71,7 +71,7 @@ the public part is signed with the Ed25519 fingerprint key and published
 to the network.
 
 Theoretically we should rotate the Curve25519 identity key from time to
-time, but we haven\'t implemented this yet.
+time, but we haven't implemented this yet.
 
 ### Curve25519 one-time keys
 
@@ -215,13 +215,13 @@ by Curve25519 identity key.
 Olm messages are encrypted separately for each recipient device.
 `ciphertext` is an object mapping from the Curve25519 identity key for
 the recipient device. The receiving client should, of course, look for
-its own identity key in this object. (If it isn\'t listed, the message
-wasn\'t sent for it, and the client can\'t decrypt it; it should show an
+its own identity key in this object. (If it isn't listed, the message
+wasn't sent for it, and the client can't decrypt it; it should show an
 error instead, or similar).
 
 This should result in an object with the properties `type` and `body`.
-Messages of type \'0\' are \'prekey\' messages which are used to
-establish a new Olm session between two devices; type \'1\' are normal
+Messages of type '0' are 'prekey' messages which are used to
+establish a new Olm session between two devices; type '1' are normal
 messages which are used once a message has been received on the session.
 
 When a message (of either type) is received, a client should first
@@ -238,7 +238,7 @@ There are two steps to this:
 
 If the client was unable to decrypt the message using any known sessions
 (or if there are no known sessions yet), **and** the message had type 0,
-**and** `olm_matches_inbound_session` wasn\'t true for any existing
+**and** `olm_matches_inbound_session` wasn't true for any existing
 sessions, then the client can try establishing a new session. This is
 done as follows:
 
@@ -270,9 +270,9 @@ checked as follows[^2].
 `keys`
 
 :   an object with a property `ed25519`. The client should check that
-    the value of this property matches the sender\'s fingerprint key
+    the value of this property matches the sender's fingerprint key
     when [marking the event as
-    verified](#marking the event as verified).
+    verified](#marking-events-as-verified).
 
 `recipient_keys`
 
@@ -290,7 +290,7 @@ payload](https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-encrypted
 Encrypted events using this algorithm should have `sender_key`,
 `session_id` and `ciphertext` content properties. If the `room_id`,
 `sender_key` and `session_id` correspond to a known Megolm session (see
-[below](#m.room_key)), the ciphertext can be decrypted by passing the
+[below](#handling-an-mroom_key-event)), the ciphertext can be decrypted by passing the
 ciphertext into `olm_group_decrypt`.
 
 In order to avoid replay attacks a client should remember the megolm
@@ -300,23 +300,23 @@ decrypt for each session. If the client decrypts an event with the same
 then it should treat the message as invalid. However, care must be taken
 when an event is decrypted multiple times that it is not flagged as a
 replay attack. For example, this may happen when the client decrypts an
-event, the event gets purged from the client\'s cache, and then the
+event, the event gets purged from the client's cache, and then the
 client backfills and re-decrypts the event. One way to handle this case
 is to ensure that the record of `message_index`es is appropriately
-purged when the client\'s cache of events is purged. Another way is to
-remember the event\'s `event_id` and `origin_server_ts` along with its
+purged when the client's cache of events is purged. Another way is to
+remember the event's `event_id` and `origin_server_ts` along with its
 `message_index`. When the client decrypts an event with a
 `message_index` matching that of a previously-decrypted event, it can
 then compare the `event_id` and `origin_server_ts` that it remembered
 for that `message_index`, and if those fields match, then the message
 should be decrypted as normal.
 
-The client should check that the sender\'s fingerprint key matches the
+The client should check that the sender's fingerprint key matches the
 `keys.ed25519` property of the event which established the Megolm
 session when [marking the event as
-verified](#marking the event as verified).
+verified](#marking-events-as-verified).
 
-### Handling an `m.room_key` event {#m.room_key}
+### Handling an `m.room_key` event
 
 These events contain key data to allow decryption of other messages.
 They are sent to specific devices, so they appear in the `to_device`
@@ -335,12 +335,12 @@ The client should remember the value of the keys property of the payload
 of the encrypted `m.room_key`\_ event and store it with the inbound
 session. This is used as above when marking the event as verified.
 
-### Downloading the device list for users in the room {#download the device list}
+### Downloading the device list for users in the room
 
 Before an encrypted message can be sent, it is necessary to retrieve the
 list of devices for each user in the room. This can be done proactively,
 or deferred until the first message is sent. The information is also
-required to allow users to [verify or block devices](#blocking).
+required to allow users to [verify or block devices](#blocking--verifying-devices).
 
 The client should use the
 [/keys/query](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-query)
@@ -362,7 +362,7 @@ the object match those in the top-level map[^3].
 
 The client should check if the `user_id`/`device_id` correspond to a
 device it had seen previously. If it did, the client **must** check that
-the Ed25519 key hasn\'t changed. Again, if it has changed, no further
+the Ed25519 key hasn't changed. Again, if it has changed, no further
 processing should be done on the device.
 
 Otherwise the client stores the information about this device.
@@ -416,14 +416,14 @@ The client should then call `olm_outbound_group_session_id` to get the
 unique ID of the new session, and `olm_outbound_group_session_key` to
 retrieve the current ratchet key and index. It should store these
 details as an inbound session, just as it would when [receiving them via
-an m.room\_key event](#m.room_key).
+an m.room_key event](#handling-an-mroom_key-event).
 
 The client must then share the keys for this session with each device in
 the room. It must therefore [download the device
-list](#download the device list) if it hasn\'t already done so. Then it
-should build a unique `m.room_key`\_ event, and send it encrypted [using
-Olm](#olm_encrypt) to each device in the room which has not been
-[blocked](#blocking), .
+list](#downloading-the-device-list-for-users-in-the-room) if it hasn't already done so. Then it
+should build a unique `m.room_key` event, and send it encrypted [using
+Olm](#encrypting-an-event-with-olm) to each device in the room which has not been
+[blocked](#blocking--verifying-devices), .
 
 Once all of the key-sharing event contents have been assembled, the
 events should be sent to the corresponding devices via
@@ -438,7 +438,7 @@ define how often a session should be rotated are defined in the
 Once either the message limit or time limit have been reached, the
 client should start a new session before sending any more messages.
 
-### Encrypting an event with Olm {#olm_encrypt}
+### Encrypting an event with Olm
 
 Olm is not used for encrypting room events, as it requires a separate
 copy of the ciphertext for each device, and because the receiving device
@@ -447,27 +447,22 @@ encrypting key-sharing events for Megolm.
 
 When encrypting an event using Olm, the client should:
 
--   Build an encryption payload as illustrated in the [spec](#blocking).
-
-    \_\_
-    <https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2>
-
--   Check if it has an existing Olm session; if it does not, [start a
+- Build an encryption payload as illustrated in the [spec](#blocking--verifying-devices). <https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2>
+- Check if it has an existing Olm session; if it does not, [start a
     new one](#starting-a-megolm-session). If it has several (as may
     happen due to races when establishing sessions), it should use the
-    one with the first session\_id when sorted by their ASCII codepoints
-    (ie, \'A\' would be before \'Z\', which would be before \'a\').
+    one with the first session_id when sorted by their ASCII codepoints
+    (ie, 'A' would be before 'Z', which would be before 'a').
 
-    \_\_ [Starting an Olm session](#starting-an-olm-session)
+[Starting an Olm session](#starting-an-olm-session)
 
--   Encrypt the payload by calling `olm_encrypt`.
-
--   Package the payload into an Olm `m.room.encrypted`\_ event.
+- Encrypt the payload by calling `olm_encrypt`.
+- Package the payload into an Olm `m.room.encrypted` event.
 
 ### Starting an Olm session
 
 To start a new Olm session with another device, a client must first
-claim one of the other device\'s one-time keys. To do this, it should
+claim one of the other device's one-time keys. To do this, it should
 initiate a request to
 [/keys/claim](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-claim).
 
@@ -492,13 +487,13 @@ outbound Megolm session, to ensure that a new session is used next time
 the user sends a message.
 
 When a new member joins a room, the client should first [download the
-device list](#download the device list) for the new member, if it
-doesn\'t already have it.
+device list](#downloading-the-device-list-for-users-in-the-room) for the new member, if it
+doesn't already have it.
 
 After giving the user an opportunity to
 [block](https://matrix.org/docs/spec/client_server/r0.4.0.html#device-verification)
 any suspicious devices, the client should share the keys for the
-outbound Megolm session with all the new member\'s devices. This is done
+outbound Megolm session with all the new member's devices. This is done
 in the same way as [creating a new session](#starting-a-megolm-session),
 except that there is no need to start a new Megolm session: due to the
 design of the Megolm ratchet, the new user will only be able to decrypt
@@ -517,21 +512,21 @@ The device tracking process which should be implemented is documented
 [in the
 spec](https://matrix.org/docs/spec/client_server/r0.4.0.html#tracking-the-device-list-for-a-user).
 
-### Blocking / Verifying devices {#blocking}
+### Blocking / Verifying devices
 
 It should be possible for a user to mark each device belonging to
-another user as \'Blocked\' or \'Verified\', through a process detailed
+another user as 'Blocked' or 'Verified', through a process detailed
 [in the
 spec](https://matrix.org/docs/spec/client_server/r0.4.0.html#sending-encrypted-attachments).
 
 When a user chooses to block a device, this means that no further
 encrypted messages should be shared with that device. In short, it
 should be excluded when sharing room keys when [starting a new Megolm
-session]{.title-ref}\_\_. Any active outbound Megolm sessions whose keys
+session](starting-a-megolm-session). Any active outbound Megolm sessions whose keys
 have been shared with the device should also be invalidated so that no
 further messages are sent over them.
 
-### Marking events as \'verified\' {#marking the event as verified}
+### Marking events as 'verified'
 
 Once a device has been verified, it is possible to verify that events
 have been sent from a particular device. See the section on [Handling an
@@ -544,7 +539,7 @@ verified device.
 
 Homeservers must not be able to read files shared in encrypted rooms.
 Clients should implement a strategy described [in the
-spec]{.title-ref}\_\_.
+spec]{.title-ref}.
 
 Currently, the files are encrypted using AES-CTR, which is not included
 in libolm. Clients have to rely on a third party library.
@@ -575,7 +570,7 @@ added to the end of the list. Consider the following example:
 > -   C -\> D : m.forwarded\_room\_key
 
 In the message B -\> C `forwarded_room_key` is empty, but in the message
-C -\> D it contains B\'s Curve25519 key. In order for D to believe that
+C -\> D it contains B's Curve25519 key. In order for D to believe that
 the session came from A, D must trust the direct sender C and every
 entry in this chain.
 
@@ -589,7 +584,7 @@ whether requests coming from devices of other users are legitimate. This
 can be done by keeping track of the users a session was shared with, and
 at which `message index`.
 
-Key requests can be sent to all of the current user\'s devices, as well
+Key requests can be sent to all of the current user's devices, as well
 as the original sender of the session, and other devices present in the
 room. When the client receives the requested key, it should send a
 `m.room_key_request`\_ event to all the devices it requested the key
@@ -601,9 +596,9 @@ from, setting the `action` property to `"cancel_request"` and
     check whether an event is redacted before checking for the
     `algorithm` property.
 
-[^2]: These tests prevent an attacker publishing someone else\'s
+[^2]: These tests prevent an attacker publishing someone else's
     curve25519 keys as their own and subsequently claiming to have sent
-    messages which they didn\'t.
+    messages which they didn't.
 
 [^3]: This prevents a malicious or compromised homeserver replacing the
     keys for the device with those of another.
