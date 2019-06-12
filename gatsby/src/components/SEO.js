@@ -160,7 +160,7 @@ const SEO = props => {
       <meta property="og:image" content={image} />
       <meta property="og:image:alt" content={description} />
       {config.siteFBAppID && <meta property="fb:app_id" content={config.siteFBAppID} />}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content={config.userTwitter ? config.userTwitter : ''} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:url" content={config.siteUrl} />
