@@ -54,7 +54,7 @@ const Guides = ({data}) => {
         </div>
         <h2 id="recommended-by-matrixorg">Recommended by matrix.org</h2>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <thead>
       <tr>
@@ -75,7 +75,7 @@ const Guides = ({data}) => {
       </tr>
       <tr>
         <td>Get started with the CS API using …</td>
-        <td> </td>
+        <td>&nbsp;</td>
       </tr>
       <tr>
         <td>   … JavaScript</td>
@@ -129,7 +129,7 @@ const Guides = ({data}) => {
 
 <p>This collection of guides is taken from around the web. If you have used a guide, and recommend it, please go ahead and click “Recommend” on the right, and we’ll use this to sort the articles by recommendations.</p>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <tbody>
       <tr>
@@ -140,14 +140,13 @@ const Guides = ({data}) => {
 
 <h3 id="introduction-for-users">Introduction for Users</h3>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>
         <th>Author</th>
         <th>Language</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -155,25 +154,22 @@ const Guides = ({data}) => {
         <td><a href="https://www.snoyman.com/blog/2018/05/guide-to-matrix-riot">Guide to matrix.org and riot.im</a></td>
         <td>Michael Snoyman</td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="http://laforesta.net/riot-matrix/">Riot Matrix from La Foresta</a></td>
         <td>La Foresta team</td>
         <td>Italian</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://opensource.com/article/17/5/introducing-riot-IRC">IRC for the 21st Century: Introducing Riot</a></td>
         <td>Justin W. Flory</td>
         <td>English</td>
-        <td> </td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <tbody>
       <tr>
@@ -184,14 +180,13 @@ const Guides = ({data}) => {
 
 <h3 id="introduction-for-developers">Introduction for Developers</h3>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>
         <th>Author</th>
         <th>Language</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -199,31 +194,27 @@ const Guides = ({data}) => {
         <td><a href="https://brendan.abolivier.bzh/enter-the-matrix/">Enter the Matrix</a></td>
         <td>Brendan</td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://t2bot.io/docs/access_tokens/">Obtain Access Tokens from Riot</a></td>
         <td>TravisR</td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://gist.github.com/RickCogley/69f430d4418ae5498e8febab44d241c9">Testing the matrix.org client-server API</a> using cURL</td>
         <td><a href="https://github.com/RickCogley">Rick Cogley</a></td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="/docs/guides/made-for-matrix-badge">Made for Matrix Badge Guidelines</a> (add this to your project page)</td>
         <td>matrix.org</td>
         <td>English</td>
-        <td> </td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <tbody>
       <tr>
@@ -236,14 +227,13 @@ const Guides = ({data}) => {
 
 <p>To install Synapse, we recommend taking a look at the <a href="/docs/guides/installing-synapse">Installing Synapse</a> guide page. Other articles are listed below.</p>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>
         <th>Author</th>
         <th>Language</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -251,73 +241,62 @@ const Guides = ({data}) => {
         <td><a href="https://www.natrius.eu/dokuwiki/doku.php?id=digital:server:matrixsynapse">Install Matrix Synapse</a></td>
         <td><a href="https://matrix.to/#/#synapseguide:matrix.org">Stefan</a></td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://www.foxypossibilities.com/2018/02/04/running-matrix-synapse-on-nixos/">Running Matrix Synapse on NixOS</a></td>
         <td><a href="https://www.foxypossibilities.com/">Kiba Fox</a></td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://blog.cryptoaustralia.org.au/2017/03/21/run-your-end-to-end-encrypted-chat-server-matrix-riot/">Run your end-to-end encrypted chat server using Matrix and Riot</a></td>
         <td>Gabor Szathmari</td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://www.howtoforge.com/tutorial/how-to-install-matrix-synapse-on-ubuntu-1804/">How to Install Matrix Synapse Chat on Ubuntu 18.04 LTS</a></td>
         <td>Muhammad Arul</td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://www.vultr.com/docs/create-a-chat-server-using-matrix-synapse-and-riot-on-centos-7">Create a Chat Server Using Matrix Synapse and Riot on CentOS 7</a></td>
         <td>Vultr Docs</td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://www.alibabacloud.com/blog/how-to-create-a-chat-server-using-matrix-synapse-on-ubuntu-16-04_593809">How to Create a Chat Server Using Matrix Synapse on Ubuntu 16.04</a></td>
         <td>alibabacloud.com</td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://www.upcloud.com/support/install-matrix-synapse/">How to install Matrix Synapse Homeserver</a></td>
         <td>UpCloud Tutorials</td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://www.digitalocean.com/community/tutorials/how-to-install-matrix-synapse-on-ubuntu-16-04">How To Install Matrix Synapse on Ubuntu 16.04</a></td>
         <td>Oliver Lumby for DigitalOcean</td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://gist.github.com/attacus/cb5c8a53380ca755b10a5b37a636a0b9">Running your own encrypted chat service with Matrix and Riot</a></td>
         <td><a href="https://github.com/attacus">github.com/attacus</a></td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://www.gigenet.com/blog/how-to-secure-your-chats-with-matrix/">How to secure your chats with Matrix</a></td>
         <td>Zachary Muller</td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://linuxconfig.org/install-riot-matrix-chat-client-on-debian-and-ubuntu">Install Riot Matrix Chat Client On Debian and Ubuntu</a></td>
         <td>Nick Congleton</td>
         <td>English</td>
-        <td> </td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <tbody>
       <tr>
@@ -328,14 +307,13 @@ const Guides = ({data}) => {
 
 <h3 id="understanding-end-to-end-encryption">Understanding End-to-End Encryption</h3>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>
         <th>Author</th>
         <th>Language</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -343,13 +321,12 @@ const Guides = ({data}) => {
         <td><a href="https://www.uhoreg.ca/blog/20170910-2110">An introduction to end-to-end encryption in Matrix and Riot</a></td>
         <td>Hubert Chathi</td>
         <td>English</td>
-        <td> </td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <tbody>
       <tr>
@@ -360,14 +337,13 @@ const Guides = ({data}) => {
 
 <h3 id="riot-customisation">Riot Customisation</h3>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>
         <th>Author</th>
         <th>Language</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -375,7 +351,6 @@ const Guides = ({data}) => {
         <td><a href="https://gist.github.com/turt2live/f7e33017e72a83905f7f6acae31f4143">Setting a default color scheme (tint) for Riot on your account</a></td>
         <td>TravisR</td>
         <td>English</td>
-        <td> </td>
       </tr>
     </tbody>
   </table>
@@ -383,14 +358,13 @@ const Guides = ({data}) => {
 
 <h2 id="video-guides">Video Guides</h2>
 
-<div className="overscroll">
+<div className="width-100">
   <table className="legacy-table">
     <thead>
       <tr>
         <th>Article</th>
         <th>Author</th>
         <th>Language</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -398,13 +372,11 @@ const Guides = ({data}) => {
         <td><a href="https://www.youtube.com/watch?v=ZNEzgYRLj8g">Matrix Bridging to IRC, Slack and Telegram</a></td>
         <td>Jon Spriggs</td>
         <td>English</td>
-        <td> </td>
       </tr>
       <tr>
         <td><a href="https://www.youtube.com/watch?v=TUgQ7Qh754w">Riot - Messagerie Instantanée Décentralisée &amp; Sécurisée !</a></td>
         <td>Nouts</td>
         <td>French</td>
-        <td> </td>
       </tr>
     </tbody>
   </table>
