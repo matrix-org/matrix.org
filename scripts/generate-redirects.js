@@ -7,6 +7,14 @@ const redirects = [
     {from: "/docs/guides/made-for-matrix-badge", to: "/docs/guides/made-for-matrix-badge-guidelines"},
     {from: "/docs/guides/terms_and_conditions", to: "/legal/terms-and-conditions"},
     {from: "/docs/guides/client-server", to: "/docs/guides/client-server-api"},
+    {from: "/docs/projects/as/mautrix-whatsapp", to: "/docs/projects/bridge/mautrix-whatsapp"},
+    {from: "/docs/projects/as/matrix-appservice-slack", to: "/docs/projects/bridge/matrix-appservice-slack"},
+    {from: "/docs/guides/getting_involved", to: "/docs/guides/getting-involved"},
+    {from: "/docs/guides/copyright_notice", to: "/legal/copyright-notice"},
+    {from: "/docs/projects/as/matrix-appservice-imessage", to: "/docs/projects/bridge/matrix-appservice-imessage"},
+    {from: "/docs/projects/as/matrix-appservice-gitter", to: "/docs/projects/bridge/matrix-appservice-gitter"},
+    {from: "/docs/projects/as/matrix-appservice-facebook", to: "/docs/projects/bridge/matrix-appservice-facebook"},
+    {from: "/docs/projects/clients-matrix/try-matrix-now", to: "/docs/projects/try-matrix-now"},
 ];
 
 const template = `import React from 'react'
