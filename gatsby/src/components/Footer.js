@@ -36,7 +36,7 @@ const Footer = () => (
       <div className="mxfooter__column">
         <a href="/" className="mxfooter__link mxfooter__link--primary">More</a>
         <a href="/faq" className="mxfooter__link">FAQs</a>
-        <a href="/security-disclosure-policy/" className="mxfooter__link">Security</a>
+        <a href="/security-disclosure-policy/" className="mxfooter__link">Security Disclosure Policy</a>
         <a href="/legal" className="mxfooter__link">Legal</a>
       </div>
     </div>
