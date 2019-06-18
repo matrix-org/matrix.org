@@ -2,7 +2,11 @@ const fs = require('fs');
 
 const redirects = [
     {from: "/docs/projects/as/matrix-appservice-email", to: "/docs/projects/as/matrix-email-bridge/"},
-    {from: "/docs/guides/client-server-migrating-from-v1", to: "/docs/guides/migrating-from-client-server-api-v-1"}
+    {from: "/docs/guides/client-server-migrating-from-v1", to: "/docs/guides/migrating-from-client-server-api-v-1"},
+    {from: "/docs/projects/client/nheko", to: "/docs/projects/client/nheko-reborn"},
+    {from: "/docs/guides/made-for-matrix-badge", to: "/docs/guides/made-for-matrix-badge-guidelines"},
+    {from: "/docs/guides/terms_and_conditions", to: "/legal/terms-and-conditions"},
+    {from: "/docs/guides/client-server", to: "/docs/guides/client-server-api"},
 ];
 
 const template = `import React from 'react'

@@ -12,7 +12,7 @@ const ClientsMatrix = ({data}) => {
         <MXContentMain>
             <Helmet title={`Clients | ${config.siteTitle}`} />
             <h1>Clients Matrix</h1>
-            <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="try-matrix-now">try-matrix-now</a>. To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a></p>
+            <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="/docs/projects/try-matrix-now/">try-matrix-now</a>. To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a></p>
 
 <h2 id="platform-availability">Platform Availability</h2>
 <div class="overscroll">
