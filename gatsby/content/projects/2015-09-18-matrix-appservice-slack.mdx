@@ -2,7 +2,7 @@
 layout: projectimage
 title: matrix-appservice-slack
 categories: 
- - as
+ - bridge
 author: leonerd, Half-Shot, illicitonion, Cadair and others
 language: JavaScript
 maturity: Beta
@@ -10,11 +10,23 @@ repo: https://github.com/matrix-org/matrix-appservice-slack
 screenshot: /docs/projects/images/slack-bridge.png
 license: Apache
 description: This project bridges Slack to Matrix
+bridges: Slack
+featured: "TRUE"
+thumbnail: /docs/projects/images/slack-logo.svg
 ---
-
 
 This project bridges [Slack](https://slack.com) to Matrix.
 
 The bridge allows you to connect Matrix rooms and Slack channels together. It supports bridging via webhooks or via a dedicated slack integration (using the Events API). Currently the bridge supports sending text and files, with more advanced features like threading and sending direct messages coming in the future. matrix-appservice-slack is regularly hacked on and is accepting PRs for bug fixes and new features.
+
+✓ Direct (1:1) Chats  
+✓ Group (‘Channel’) Chats  
+✗ History  
+✗ Typing notifications and read receipts  
+✓ Text Messages  
+✗ Formatted Text Content  
+✗ Image Content
+
+When using [Riot on riot.im](https://riot.im/app/), you can enable Slack integration per-room. Click the “Manage Integrations” (four squares) button at the top of the page.
 
 Get it from [github](https://github.com/matrix-org/matrix-appservice-slack)!

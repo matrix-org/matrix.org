@@ -624,7 +624,7 @@ const Index = ({
                       <h4>Patreon</h4>
                       <div className="mxgrid__item__bg__vert">
                       <a href="https://www.patreon.com/matrixdotorg">
-                        <img src="/images/patreon.png" />
+                        <img alt="Patreon" src="/images/patreon.png" />
                       </a>
                       </div>
                     </div>
@@ -634,7 +634,7 @@ const Index = ({
                       <h4>Liberapay</h4>
                       <div className="mxgrid__item__bg__vert">
                       <a href="https://liberapay.com/matrixdotorg">
-                        <img src="/images/fund-via-liberapay.png" />
+                        <img alt="Liberapay" src="/images/fund-via-liberapay.png" />
                       </a>
                       </div>
                     </div>

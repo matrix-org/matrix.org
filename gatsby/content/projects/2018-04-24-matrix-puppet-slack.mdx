@@ -2,13 +2,16 @@
 layout: project
 title: matrix-puppet-slack
 categories: 
- - as
+ - bridge
 description: puppet style slack bridge for matrix
 author: Keyvan Fatehi
 maturity: Beta
 language: JavaScript
 license: 
 repo: https://github.com/matrix-hacks/matrix-puppet-slack
+bridges: Slack
+featured: "TRUE"
+thumbnail: /docs/projects/images/slack-logo.svg
 ---
 
 This is an unofficial matrix slack bridge that works by means of [user puppetting](https://github.com/AndrewJDR/matrix-puppet-bridge).
@@ -23,4 +26,15 @@ This technique does not require admin on the slack team; instead, the bridge is 
 
 The bridge supports multiple teams at once, see the config.sample.json
 
+✓ Direct (1:1) Chats  
+✓ Group (‘Channel’) Chats  
+✗ History  
+✓ Typing notifications (Slack → Matrix Only)  
+✗ Read receipts  
+✓ Text Messages  
+✓ Formatted Text Content  
+✓ Image Content  
+✓ Multi-team
 
+[matrix-puppet-slack](https://github.com/matrix-hacks/matrix-puppet-slack) is part of the [matrix-puppet-bridge](https://github.com/matrix-hacks/matrix-puppet-bridge) suite of puppetting
+bridges. It can be used for existing chats, rather than initiating new ones.
