@@ -1,7 +1,8 @@
 const fs = require('fs');
 
 const redirects = [
-    {from: "/docs/projects/as/matrix-appservice-email", to: "/docs/projects/as/matrix-email-bridge/"}
+    {from: "/docs/projects/as/matrix-appservice-email", to: "/docs/projects/as/matrix-email-bridge/"},
+    {from: "/docs/guides/client-server-migrating-from-v1", to: "/docs/guides/migrating-from-client-server-api-v-1"}
 ];
 
 const template = `import React from 'react'
