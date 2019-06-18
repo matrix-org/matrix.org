@@ -6,6 +6,8 @@ import { Layout, MXContentMain } from '../../../components'
 import config from '../../../../config'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
+import kebabCase from 'lodash/kebabCase'
+
 const Bridges = ({data}) => {
   const bridges = data.allMdx.edges;
   var toc = {};
@@ -24,9 +26,9 @@ const Bridges = ({data}) => {
           return (
       <div key={Math.random().toString()} className="mxgrid__item20">
           <div className="mxgrid__item__bg mxgrid__item__bg--clear">
-              <a href={'#' + project.bridges}><h4 className="mxgrid__item__bg__hx">{project.bridges}</h4></a>
+              <a href={'#' + kebabCase(project.bridges)}><h4 className="mxgrid__item__bg__hx">{project.bridges}</h4></a>
               <div className="mxgrid__item__bg__vert" style={{"width": "100px"}}>
-                  <img src={project.thumbnail} alt="" className="mxgrid__item__bg__img" />
+              <a href={'#' + kebabCase(project.bridges)}><img src={project.thumbnail} alt="" className="mxgrid__item__bg__img" /></a>
               </div>
           </div>
       </div>)
@@ -40,12 +42,12 @@ const Bridges = ({data}) => {
   var projects = bridges.filter(x => x.node.frontmatter.bridges === tocitem.bridges);
   return (
   <div>
-    <h2>{tocitem.bridges}</h2>
+    <h2 id={kebabCase(tocitem.bridges)}>{tocitem.bridges}</h2>
     {projects.map(function(project, i) {
       const fm = project.node.frontmatter;
       return (
         <div>
-          <h3>{fm.title}</h3>
+          <h3 id={kebabCase(fm.title)}>{fm.title}</h3>
           <div className="mxblock">
             <table style={{"width": "100%"}}>
               <thead>
