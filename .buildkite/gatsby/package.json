@@ -1,21 +1,21 @@
 {
-  "name": "gatsby-starter-minimal-blog",
-  "description": "Typography driven blog, focus on the content & minimal style. Powered by MDX. Live Preview with react-live.",
+  "name": "matrix.org",
+  "description": "",
   "version": "3.0.0",
-  "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
+  "author": "",
   "dependencies": {
     "@mdx-js/tag": "^0.20.3",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.4.2",
-    "gatsby-cli": "^2.5.13",
+    "gatsby-cli": "^2.6.4",
     "gatsby-mdx": "0.6.2",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-feed": "^2.2.0",
     "gatsby-plugin-lodash": "^3.0.5",
     "gatsby-plugin-manifest": "^2.0.26",
     "gatsby-plugin-netlify": "^2.0.13",
-    "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-plugin-sitemap": "^2.0.11",
     "gatsby-plugin-styled-components": "^3.0.7",
@@ -36,11 +36,6 @@
     "typeface-bitter": "^0.0.71",
     "typeface-open-sans": "^0.0.54"
   },
-  "keywords": [
-    "gatsby",
-    "gatsby-starter",
-    "lekoarts"
-  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
