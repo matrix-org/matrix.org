@@ -158,7 +158,7 @@ const Index = ({
                     Conversations are replicated over all the servers participating in them, meaning there are no single
                     point of control or failure.  You can reach any other user in the global Matrix ecosystem of over 9M
                     users, even including those on other networks via <a
-                    href="/docs/projects/bridges">bridges</a>.
+                    href="/bridges">bridges</a>.
                   </p>
                 </div>
                 <a href="/docs/guides/" className="mxgrid__item__bg__btn w-button">Learn more</a>
@@ -225,7 +225,7 @@ const Index = ({
                     many more.
                   </p>
                 </div>
-              <a href="/docs/projects/bridges" className="mxgrid__item__bg__btn w-button">Learn more</a>
+              <a href="/bridges" className="mxgrid__item__bg__btn w-button">Learn more</a>
               </div>
             </div>
             <div className="mxgrid__item100">

@@ -466,6 +466,6 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
 
 [#matrix:matrix.org]: https://matrix.to/#/#matrix:matrix.org
 [clients]: https://matrix.org/docs/projects/clients-matrix
-[bridges]: https://matrix.org/docs/projects/bridges
+[bridges]: https://matrix.org/bridges
 [sdks]: https://matrix.org/docs/projects/sdks
 [bots]: https://matrix.org/docs/projects/bots

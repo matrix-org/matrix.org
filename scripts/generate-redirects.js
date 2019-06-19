@@ -22,6 +22,7 @@ const redirects = [
     {from: "/docs/projects/as/mautrix-telegram", to: "/docs/projects/bridge/mautrix-telegram"},
     {from: "/docs/projects/as/matrix-rocketchat", to: "/docs/projects/bridge/matrix-rocketchat"},
     {from: "/docs/projects/servers", to: "/docs/projects/try-matrix-now"},
+    {from: "/docs/projects/bridges", to: "/bridges"},
 ];
 
 const template = `import React from 'react'
