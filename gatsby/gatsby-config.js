@@ -47,6 +47,13 @@ module.exports = {
                     order: DESC,
                     fields: [frontmatter___date]
                   },
+                  filter: {
+                    frontmatter: {
+                      date: {
+                        ne: null
+                      }
+                    }
+                  }
                 ) {
                   edges {
                     node {
