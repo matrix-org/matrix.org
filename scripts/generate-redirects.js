@@ -19,6 +19,9 @@ const redirects = [
     {from: "/docs/projects/client/weechat", to: "/docs/projects/client/weechat-matrix"},
     {from: "/docs/projects/other/go-neb", to: "/docs/projects/bot/go-neb"},
     {from: "/docs/projects/as/irc-bridge", to: "/docs/projects/bridge/matrix-org-irc-bridge"},
+    {from: "/docs/projects/as/mautrix-telegram", to: "/docs/projects/bridge/mautrix-telegram"},
+    {from: "/docs/projects/as/matrix-rocketchat", to: "/docs/projects/bridge/matrix-rocketchat"},
+    {from: "/docs/projects/servers", to: "/docs/projects/try-matrix-now"},
 ];
 
 const template = `import React from 'react'
