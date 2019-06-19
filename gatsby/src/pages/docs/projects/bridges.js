@@ -28,7 +28,10 @@ const Bridges = ({data}) => {
           <div className="mxgrid__item__bg mxgrid__item__bg--clear">
               <a href={'#' + kebabCase(project.bridges)}><h4 className="mxgrid__item__bg__hx">{project.bridges}</h4></a>
               <div className="mxgrid__item__bg__vert" style={{"width": "100px"}}>
-              <a href={'#' + kebabCase(project.bridges)}><img src={project.thumbnail} alt="" className="mxgrid__item__bg__img" /></a>
+              <a href={'#' + kebabCase(project.bridges)}>
+                <img src={project.thumbnail} alt="" className="mxgrid__item__bg__img"
+                  style={{minWidth: "100px", minHeight: "100px"}} />
+              </a>
               </div>
           </div>
       </div>)
