@@ -15,6 +15,8 @@ const redirects = [
     {from: "/docs/projects/as/matrix-appservice-gitter", to: "/docs/projects/bridge/matrix-appservice-gitter"},
     {from: "/docs/projects/as/matrix-appservice-facebook", to: "/docs/projects/bridge/matrix-appservice-facebook"},
     {from: "/docs/projects/clients-matrix/try-matrix-now", to: "/docs/projects/try-matrix-now"},
+    {from: "/docs/guides/application_services", to: "/docs/guides/application-services"},
+    {from: "/docs/projects/client/weechat", to: "/docs/projects/client/weechat-matrix"},
 ];
 
 const template = `import React from 'react'
