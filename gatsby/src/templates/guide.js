@@ -4,7 +4,7 @@ import {  graphql } from 'gatsby'
 import styled from 'styled-components'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
-import { Layout, SEO, MXContentMain, MXContentNav } from '../components'
+import { Layout, SEO, MXContentMain, MXContentNav, MXInPageTOC } from '../components'
 
 const Title = styled.h1`
 `
@@ -21,6 +21,8 @@ const Page = ({ pageContext: { slug, pages }, data: { mdx: postNode } }) => {
         <MXContentMain hasSideNavigation="true">
           <div className="mxcontent__main__doc">
             <Title>{post.title}</Title>
+            {post.showTableOfContents &&
+            <MXInPageTOC tableOfContents={postNode.tableOfContents} />}
             <PostContent>
               <MDXRenderer>{postNode.code.body}</MDXRenderer>
             </PostContent>
@@ -58,6 +60,7 @@ export const pageQuery = graphql`
         date(formatString: "YYYY-MM-DD")
         author,
         image
+        showTableOfContents
       }
       tableOfContents
       timeToRead

@@ -11,5 +11,6 @@ import HallOfFameEntry from './HallOfFameEntry'
 import MXContentMain from './MXContentMain'
 import MXContentNav from './MXContentNav'
 import MXTryMatrixNowSection from './MXTryMatrixNowSection'
+import MXInPageTOC from './MXInPageTOC'
 
-export { Article, Button, Header, Layout, PrevNext, SectionTitle, SEO, Subline, Wrapper, HallOfFameEntry, MXContentMain, MXContentNav, MXTryMatrixNowSection }
+export { Article, Button, Header, Layout, PrevNext, SectionTitle, SEO, Subline, Wrapper, HallOfFameEntry, MXContentMain, MXContentNav, MXTryMatrixNowSection,MXInPageTOC }
