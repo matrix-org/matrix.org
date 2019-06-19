@@ -23,6 +23,9 @@ const redirects = [
     {from: "/docs/projects/as/matrix-rocketchat", to: "/docs/projects/bridge/matrix-rocketchat"},
     {from: "/docs/projects/servers", to: "/docs/projects/try-matrix-now"},
     {from: "/docs/projects/bridges", to: "/bridges"},
+    {from: "/docs/projects/other/synapse_scripts", to: "/docs/projects/other/synapse-scripts"},
+    {from: "/docs/projects/as/matrix-appservice-discord", to: "/docs/projects/bridge/matrix-appservice-discord"},
+    {from: "/docs/guides/end-to-end-encryption-implementation-guide/starting-a-megolm-session", to: "/docs/guides/end-to-end-encryption-implementation-guide"},
 ];
 
 const template = `import React from 'react'
