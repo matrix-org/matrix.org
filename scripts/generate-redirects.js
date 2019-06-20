@@ -26,6 +26,8 @@ const redirects = [
     {from: "/docs/projects/other/synapse_scripts", to: "/docs/projects/other/synapse-scripts"},
     {from: "/docs/projects/as/matrix-appservice-discord", to: "/docs/projects/bridge/matrix-appservice-discord"},
     {from: "/docs/guides/end-to-end-encryption-implementation-guide/starting-a-megolm-session", to: "/docs/guides/end-to-end-encryption-implementation-guide"},
+    {from: "/docs/projects/client/thunderbird", to: "/docs/projects/client/mozilla-thunderbird"},
+    {from: "/docs/projects/as/matrix-puppet-slack", to: "/docs/projects/bridge/matrix-puppet-slack"},
 ];
 
 const template = `import React from 'react'
