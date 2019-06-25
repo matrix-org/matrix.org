@@ -190,3 +190,7 @@ div.title {
 	}
 }
 
+#questions-wrapper h2, #questions-wrapper h3, #questions-wrapper h4 {
+  padding-top: 75px;
+  margin-top: -75px;
+} 
