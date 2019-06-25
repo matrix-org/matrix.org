@@ -20,7 +20,7 @@ const Faq = () => {
 <div class="question">
 <h4 id="what-is-matrix%3F"><a class="permalink" href="#what-is-matrix%3F" aria-hidden="true">&#128279;</a> What is Matrix?</h4>
 <p>Matrix is an open standard for interoperable, decentralised, real-time communication over IP. It can be used to power Instant Messaging, VoIP/WebRTC signalling, Internet of Things communication - or anywhere you need a standard HTTP API for publishing and subscribing to data whilst tracking the conversation history.</p>
-<p>Matrix defines the standard, and provides open source reference implementations of Matrix-compatible Servers, <a href="#definitions">Client SDKs</a> and Application Services to help you create new communication solutions or extend the capabilities and reach of existing ones.</p>
+<p>Matrix defines the standard, and provides open source reference implementations of Matrix-compatible Servers, <a href="https://matrix.org/docs/projects/sdks">Client SDKs</a> and Application Services to help you create new communication solutions or extend the capabilities and reach of existing ones.</p>
 <div class="definition-list">
 <div class="definition-item definition-client">
 <p><strong>Client</strong></p>
@@ -43,7 +43,7 @@ const Faq = () => {
 </div>
 <div class="question">
 <h4 id="what-does-this-mean-for-users%3F"><a class="permalink" href="#what-does-this-mean-for-users%3F" aria-hidden="true">&#128279;</a> What does this mean for users?</h4>
-<p>The aim is to provide an analogous ecosystem to email - one where you can communicate with pretty much anyone, without caring what app or server they are using, using whichever <a href="#definitions">client</a> app &amp; server you chose, and use a neutral identity system like an e-mail address or phone number to discover people to talk to.</p>
+<p>The aim is to provide an analogous ecosystem to email - one where you can communicate with pretty much anyone, without caring what app or server they are using, using whichever <a href="https://matrix.org/docs/projects/clients-matrix">client</a> app &amp; server you chose, and use a neutral identity system like an e-mail address or phone number to discover people to talk to.</p>
 <div class="definition-list">
 <div class="definition-item definition-client">
 <p><strong>Client</strong></p>
@@ -78,7 +78,7 @@ const Faq = () => {
 <li>Open source reference implementations of:
 <ul>
 <li>Clients (Web (React), iOS, Android)</li>
-<li><a href="#definitions">Client SDKs</a> (Javascript, Web (React), iOS, Android)</li>
+<li><a href="/docs/projects/sdks">Client SDKs</a> (Javascript, Web (React), iOS, Android)</li>
 <li>Homeservers (Synapse)</li>
 <li>Application Services (bridges to IRC, Slack, Skype, Lync and more...)</li>
 </ul>
@@ -127,11 +127,11 @@ development, please <a href="mailto:support@matrix.org">get in touch</a>.</p>
 contributors worked for <a href="https://www.amdocs.com">Amdocs</a>, who paid for them to
 work fulltime on Matrix.  In July 2017, Amdocs considered the project to be
 sufficiently successful that it could now self-support and so stopped funding.
-The majority of the core team is now employed by <a href="#definitions">New Vector</a>, an independent company
+The majority of the core team is now employed by <a href="https://vector.im/">New Vector</a>, an independent company
 set up to hire the team and support Matrix's development.  Other contributors
 are funded by their own employers or donate their own time to the project.</p>
 <p>In January 2018, <a href="/blog/2018/01/29/status-partners-up-with-new-vector-fueling-decentralised-comms-and-the-matrix-ecosystem/">Matrix.org announced that Status.im made a major strategic investment</a>
-in <a href="#definitions">New Vector</a>, meaning we now have the financial
+in <a href="https://vector.im/">New Vector</a>, meaning we now have the financial
 backing to let us focus entirely on improving the Matrix ecosystem.</p>
 <div class="definition-list">
 <div class="definition-item definition-newvector">
@@ -148,7 +148,7 @@ backing to let us focus entirely on improving the Matrix ecosystem.</p>
 <div class="question">
 <h4 id="who-is-building-matrix%3F"><a class="permalink" href="#who-is-building-matrix%3F" aria-hidden="true">&#128279;</a> Who is building Matrix?</h4>
 <p>The core team is ~12 people with extensive experience in building custom
-VoIP and Messaging apps for mobile network operators. Most of us work for <a href="#definitions">New Vector</a>,
+VoIP and Messaging apps for mobile network operators. Most of us work for <a href="https://vector.im/">New Vector</a>,
 but there are an increasing number of contributors from other companies and
 folks all over the internet.</p>
 <div class="definition-list">
@@ -260,7 +260,7 @@ actually uses RCS.</p>
 <h3 id="practical"><a class="permalink" href="#practical" aria-hidden="true">&#128279;</a> Practical</h3>
 <div class="question">
 <h4 id="what-can-i-actually-do-with-this%3F"><a class="permalink" href="#what-can-i-actually-do-with-this%3F" aria-hidden="true">&#128279;</a> What can I actually do with this?</h4>
-<p>A typical <a href="#definitions">client</a> provides a simple chatroom interface to Matrix -
+<p>A typical <a href="/docs/projects/clients-matrix">client</a> provides a simple chatroom interface to Matrix -
 letting the user interact with users and rooms anywhere within the
 Matrix <a href="#definitions">federation</a>.  Text and image messages are supported, and basic
 voice-only VoIP calling via WebRTC is supported in one-to-one rooms.
@@ -283,10 +283,10 @@ on Riot.im).</p>
 <p>There are plenty of ways to get involved. First, <a href="#how-do-i-get-an-account-and-get-started%3F">create a user account</a> and come say hi on <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>!</p>
 <p>Then...</p>
 <ul>
-<li>Install <a href="#definitions">synapse</a> and tell us how you get on.</li>
-<li>Critique <a href="#definitions">what has been proposed</a>.</li>
-<li>Write <a href="#definitions">clients</a>.</li>
-<li>Write <a href="#definitions">bridges</a>! Run bridges!</li>
+<li><a href="/docs/guides/installing-synapse">Install synapse</a> and tell us how you get on.</li>
+<li>Critique <a href="/docs/spec/proposals">what has been proposed</a>.</li>
+<li>Write <a href="/docs/projects/clients-matrix">clients</a>.</li>
+<li>Write <a href="/bridges">bridges</a>! Run bridges!</li>
 <li>Nose around in the repositories in our
 <a href="https://github.com/matrix-org">GitHub organization</a> and send us some pull requests
 to fix some bugs or add some features!</li>
@@ -318,9 +318,9 @@ full details on how to contribute to the project.  All are welcome!</p>
 </div>
 <div class="question">
 <h4 id="where-can-i-get-support%3F"><a class="permalink" href="#where-can-i-get-support%3F" aria-hidden="true">&#128279;</a> Where can I get support?</h4>
-<p>The point of entry for everything matrix is the <a href="#definitions">#matrix:matrix.org</a> aka #matrix on irc.freenode.</p>
+<p>The point of entry for everything matrix is <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a> aka #matrix on irc.freenode.</p>
 <p>If you're a developer and are looking to get involved with building something on Matrix, try <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:matrix.org</a>.</p>
-<p>If you host a <a href="#definitions">#synapse-community:matrix.org</a>.</p>
+<p>If you host a <a href="https://matrix.to/#/#synapse-community:matrix.org">#synapse-community:matrix.org</a>.</p>
 <div class="definition-list">
 <div class="definition-item definition-room">
 <p><strong>room</strong></p>
@@ -363,7 +363,7 @@ full details on how to contribute to the project.  All are welcome!</p>
 </div>
 <div class="question">
 <h4 id="what-bridges-to-other-networks-are-available%3F"><a class="permalink" href="#what-bridges-to-other-networks-are-available%3F" aria-hidden="true">&#128279;</a> What bridges to other networks are available?</h4>
-<p>There are a large number of '<a href="#definitions">bridges</a>' which integrate existing communication networks into
+<p>There are a large number of '<a href="/bridges">bridges</a>' which integrate existing communication networks into
 Matrix. This list is growing rapidly, and you can find bridges both written by the Matrix core team
 and contributed by the wider community.  The full list can be seen at
 <a href="/blog/try-matrix-now">https://matrix.org/blog/try-matrix-now</a></p>
@@ -402,7 +402,7 @@ for an example of how to write a fully functional Slack bridge in less than 100 
 </div>
 <div class="question">
 <h4 id="where-can-i-find-a-mobile-app%3F"><a class="permalink" href="#where-can-i-find-a-mobile-app%3F" aria-hidden="true">&#128279;</a> Where can I find a mobile app?</h4>
-<p><a href="#definitions">Riot</a> is available for Android and iOS.</p>
+<p><a href="https://riot.im">Riot</a> is available for Android and iOS.</p>
 <p>The iOS version can be downloaded from the <a href="https://itunes.apple.com/us/app/vector.im/id1083446067">Apple store</a>.</p>
 <p>The Android version can be downloaded from the <a href="https://play.google.com/store/apps/details?id=im.vector.app">Google Play store</a> or <a href="https://f-droid.org/repository/browse/?fdid=im.vector.alpha">F-Droid</a>. If you are not sure which one to choose, install Riot from the <a href="https://play.google.com/store/apps/details?id=im.vector.app">Google Play store</a>.</p>
 <p>For the Android app, you can also install the latest development version
@@ -453,7 +453,7 @@ built by <a href="/jenkins/job/VectorAndroidDevelop">Jenkins</a>. Use it at your
 </div>
 <div class="question">
 <h4 id="how-can-i-get-a-rooms-list-from-matrix.org%3F"><a class="permalink" href="#how-can-i-get-a-rooms-list-from-matrix.org%3F" aria-hidden="true">&#128279;</a> How can I get a rooms list from matrix.org?</h4>
-<p>If you're using <a href="#definitions">Riot</a>, you can use the &quot;Room directory&quot; screen, which you open from a button in the bottom left.</p>
+<p>If you're using <a href="https://riot.im">Riot</a>, you can use the &quot;Room directory&quot; screen, which you open from a button in the bottom left.</p>
 <p>It you're working on a client, you can use the <a href="/docs/guides/client-server.html">Client-Server API</a> to <a href="/docs/spec/client_server/r0.3.0.html#listing-rooms">get a list of public rooms</a>.</p>
 <div class="definition-list">
 <div class="definition-item definition-riot">
@@ -467,7 +467,7 @@ built by <a href="/jenkins/job/VectorAndroidDevelop">Jenkins</a>. Use it at your
 <div class="question">
 <h4 id="how-do-i-matrix-enable-my-existing-app%3F"><a class="permalink" href="#how-do-i-matrix-enable-my-existing-app%3F" aria-hidden="true">&#128279;</a> How do I Matrix-enable my existing app?</h4>
 <p>If your app doesn't have any communication capability already, you'll want
-to use one of the Matrix <a href="#definitions">client SDK</a>s to add it in.   These come in different levels of sophistication - ranging from a simple HTTP API wrapper through to reusable UI components.</p>
+to use one of the Matrix <a href="/docs/projects/sdks">client SDK</a>s to add it in.   These come in different levels of sophistication - ranging from a simple HTTP API wrapper through to reusable UI components.</p>
 <ul>
 <li><a href="https://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a></li>
 <li><a href="https://github.com/matrix-org/matrix-react-sdk">matrix-react-sdk</a></li>
@@ -515,7 +515,7 @@ let us know on <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:
 </div>
 <div class="question">
 <h4 id="can-i-write-a-matrix-homeserver%3F"><a class="permalink" href="#can-i-write-a-matrix-homeserver%3F" aria-hidden="true">&#128279;</a> Can I write a Matrix homeserver?</h4>
-<p>Yes. Matrix is just a spec, and implementations of <a href="#definitions">the spec</a> are very welcome!</p>
+<p>Yes. Matrix is just a spec, and implementations of <a href="/docs/spec">the spec</a> are very welcome!</p>
 <p>The most well-distributed <a href="#definitions">client</a>, but  other projects aiming to implement the server component include:</p>
 <ul>
 <li><a href="https://github.com/matrix-org/dendrite">Dendrite</a></li>
@@ -583,7 +583,7 @@ let us know on <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:
 </div>
 <div class="question">
 <h4 id="how-do-i-run-my-own-homeserver%3F"><a class="permalink" href="#how-do-i-run-my-own-homeserver%3F" aria-hidden="true">&#128279;</a> How do I run my own homeserver?</h4>
-<p>Follow the instructions for the <a href="#definitions">these instructions</a>.</p>
+<p>Follow <a href="https://matrix.org/docs/guides/installing-synapse">these instructions</a> to install Synapse.</p>
 <div class="definition-list">
 <div class="definition-item definition-homeserver">
 <p><strong>homeserver</strong></p>
@@ -724,7 +724,7 @@ many bridges and is under active development.</p>
 <h3 id="comparisons"><a class="permalink" href="#comparisons" aria-hidden="true">&#128279;</a> Comparisons</h3>
 <div class="question">
 <h4 id="what-is-the-difference-between-matrix-and-irc%3F"><a class="permalink" href="#what-is-the-difference-between-matrix-and-irc%3F" aria-hidden="true">&#128279;</a> What is the difference between Matrix and IRC?</h4>
-<p>We love IRC. In fact, prior to the point where <a href="#definitions">Riot</a> was stable enough for daily use IRC was
+<p>We love IRC. In fact, prior to the point where <a href="https://riot.im">Riot</a> was stable enough for daily use IRC was
 our primary communication tool. Between us we've written IRCds, IRC bots
 and admined dreamforge, UnrealIRCd, epona, ircservices and several
 others.  That said, it has some limitations that Matrix seeks to improve
@@ -913,7 +913,7 @@ Usage of an IS is not required in order for a client application to be part of t
 </div>
 <div class="question">
 <h4 id="what-are-communities%3F"><a class="permalink" href="#what-are-communities%3F" aria-hidden="true">&#128279;</a> What are communities?</h4>
-<p><a href="#definitions">+matrix:matrix.org</a>.</p>
+<p><a href="https://matrix.to/#/+matrix:matrix.org">+matrix:matrix.org</a>.</p>
 <div class="definition-list">
 <div class="definition-item definition-community">
 <p><strong>community</strong></p>
@@ -967,7 +967,7 @@ Usage of an IS is not required in order for a client application to be part of t
 <h4 id="which-matrix-clients-support-e2e%3F"><a class="permalink" href="#which-matrix-clients-support-e2e%3F" aria-hidden="true">&#128279;</a> Which matrix clients support E2E?</h4>
 <p>End-to-end encryption is currently available in:</p>
 <ul>
-<li><a href="#definitions">matrix-react-sdk</a>)</li>
+<li><a href="https://github.com/matrix-org/matrix-react-sdk">matrix-react-sdk</a>)</li>
 <li><a href="https://github.com/vector-im/riot-android/">Riot Android</a> (and the <a href="https://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a>)</li>
 <li><a href="https://github.com/vector-im/riot-ios/">Riot iOS</a> (and the <a href="https://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a>)</li>
 <li><a href="https://github.com/neilalexander/seaglass">Seaglass</a></li>
