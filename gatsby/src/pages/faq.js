@@ -563,9 +563,8 @@ let us know on <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:
 <h3 id="self-hosting"><a class="permalink" href="#self-hosting" aria-hidden="true">&#128279;</a> Self-hosting</h3>
 <div class="question">
 <h4 id="how-do-i-join-the-global-matrix-federation%3F"><a class="permalink" href="#how-do-i-join-the-global-matrix-federation%3F" aria-hidden="true">&#128279;</a> How do I join the global Matrix federation?</h4>
-<p>You can <a href="#matrix-compliant-apps">choose a client</a> and create a user account on an existing homeserver.</p>
-<p>To host your own <a href="#definitions">this guide</a> for details!</p>
-<p>To better understand how to enable <a href="#definitions">the specific docs</a>.</p>
+<p>You can <a href="https://matrix.org/docs/projects/clients-matrix">choose a client</a> and create a user account on an existing homeserver.</p>
+<p>To host your own, start by looking at <a href="https://matrix.org/docs/guides/installing-synapse">recommended guides for installing Synapse.</a></p>
 <div class="definition-list">
 <div class="definition-item definition-homeserver">
 <p><strong>homeserver</strong></p>
