@@ -32,7 +32,7 @@ const Layout = ({ children, customSEO, navmode,  hasSideNavigation, hasNavPaddin
             <a className="footer-highlight__link" href="/security-disclosure-policy">
               Security
             </a>
-            <a className="footer-highlight__right" href="/docs/guides/matrix_org_legal.html">
+            <a className="footer-highlight__right" href="/legal">
               Legal
             </a>
             <span className="footer-highlight__hidden">Last build: {buildTime}</span>
