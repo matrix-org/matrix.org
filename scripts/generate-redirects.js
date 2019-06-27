@@ -28,6 +28,7 @@ const redirects = [
     {from: "/docs/guides/end-to-end-encryption-implementation-guide/starting-a-megolm-session", to: "/docs/guides/end-to-end-encryption-implementation-guide"},
     {from: "/docs/projects/client/thunderbird", to: "/docs/projects/client/mozilla-thunderbird"},
     {from: "/docs/projects/as/matrix-puppet-slack", to: "/docs/projects/bridge/matrix-puppet-slack"},
+    {from: "/docs/guides/faq-ru", to: "/faq-ru"},
 ];
 
 const template = `import React from 'react'
