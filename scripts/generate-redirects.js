@@ -29,7 +29,7 @@ const redirects = [
     {from: "/docs/projects/client/thunderbird", to: "/docs/projects/client/mozilla-thunderbird"},
     {from: "/docs/projects/as/matrix-puppet-slack", to: "/docs/projects/bridge/matrix-puppet-slack"},
     {from: "/docs/guides/faq-ru", to: "/faq-ru"},
-    {from: "/discover", to: "/docs/try-matrix-now"},
+    {from: "/discover", to: "/docs/projects/try-matrix-now"},
     {from: "/develop", to: "/docs/guides"},
     {from: "/spec", to: "/docs/spec"},
 ];
