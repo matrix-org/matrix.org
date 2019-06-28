@@ -346,3 +346,6 @@
 [#ma1sd:ru-matrix.org]: https://matrix.to/#/#ma1sd:ru-matrix.org
 [@dandellion:dodsorf.as]: https://matrix.to/#/@dandellion:dodsorf.as
 [aa13q]: https://matrix.to/#/@aa13q:matrix.org
+[wilko]: https://matrix.to/#/@wilko:pattle.im
+[anoa]: https://matrix.to/#/@andrewm:amorgan.xyz
+[Cnly]: https://matrix.to/#/@cnly:matrix.org
