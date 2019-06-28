@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
-import { Layout, Subline, SEO, PrevNext, MXContentMain, MXContentNav } from '../components'
+import { Layout, Subline, SEO, PrevNext, MXContentMain, MXContentNav, MXInPageTOC } from '../components'
 
 const Title = styled.h1`
 `
@@ -31,6 +31,8 @@ const Post = ({ pageContext: { slug, prev, next, posts }, data: { mdx: postNode 
             ))} &mdash;&nbsp;
             {post.author}
           </Subline>
+          {post.showTableOfContents &&
+            <MXInPageTOC tableOfContents={postNode.tableOfContents} />}
           <PostContent>
             <MDXRenderer>{postNode.code.body}</MDXRenderer>
           </PostContent>
@@ -74,7 +76,9 @@ export const postQuery = graphql`
         categories,
         author,
         image
+        showTableOfContents
       }
+      tableOfContents
       timeToRead
       rawBody
       parent {
