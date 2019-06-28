@@ -32,6 +32,7 @@ const redirects = [
     {from: "/discover", to: "/docs/projects/try-matrix-now"},
     {from: "/develop", to: "/docs/guides"},
     {from: "/spec", to: "/docs/spec"},
+    {from: "/docs/guides/riot_im_cookie_policy", to: "/legal/riot-im-cookie-policy"},
 ];
 
 const template = `import React from 'react'
