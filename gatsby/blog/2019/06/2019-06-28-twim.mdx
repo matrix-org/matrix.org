@@ -4,9 +4,15 @@ title: 'This Week in Matrix 2019-06-28'
 categories:
   - This Week in Matrix
 author: Ben Parsons
-image: 
+image: https://matrix.org/blog/img/2019-06-28-award.jpg
 showTableOfContents: true
 ---
+
+## Matrix Live 🎙
+
+Matthew & Amandine talk to Ross Schulman; new Matrix.org Foundation Guardian!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eUA7nPEy0ig" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Dept of *Status of Matrix* 🌡
 
@@ -16,12 +22,23 @@ New Vector won [Hottest GovTech Startup in Europe](https://theeuropas2019.thepat
 
 It was mainly judge-based, but public votes were used to filter.
 
-<blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">We&#39;re super proud to have won the hottest Gov/Reg/Civic Tech startup at <a href="https://twitter.com/TheEuropas?ref_src=twsrc%5Etfw">@TheEuropas</a> for creating self-sovereign secure communications on top of <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a> for the Public Sector - particularly with <a href="https://twitter.com/_DINSIC?ref_src=twsrc%5Etfw">@_DINSIC</a> and <a href="https://twitter.com/tchap_dinsic?ref_src=twsrc%5Etfw">@tchap_dinsic</a>! (So proud we created a twitter account at last :D) <a href="https://t.co/PGqoHx007T">pic.twitter.com/PGqoHx007T</a></p>&mdash; New Vector (@NewVectorHQ) <a href="https://twitter.com/NewVectorHQ/status/1144383786303524869?ref_src=twsrc%5Etfw">June 27, 2019</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We&#39;re super proud to have won the hottest Gov/Reg/Civic Tech startup at <a href="https://twitter.com/TheEuropas?ref_src=twsrc%5Etfw">@TheEuropas</a> for creating self-sovereign secure communications on top of <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a> for the Public Sector - particularly with <a href="https://twitter.com/_DINSIC?ref_src=twsrc%5Etfw">@_DINSIC</a> and <a href="https://twitter.com/tchap_dinsic?ref_src=twsrc%5Etfw">@tchap_dinsic</a>! (So proud we created a twitter account at last :D) <a href="https://t.co/PGqoHx007T">pic.twitter.com/PGqoHx007T</a></p>&mdash; New Vector (@NewVectorHQ) <a href="https://twitter.com/NewVectorHQ/status/1144383786303524869?ref_src=twsrc%5Etfw">June 27, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ### Rust Embedded community is moving to Matrix
 
 They held a public vote, and Matrix won [very convincingly](https://github.com/rust-embedded/wg/issues/357).
+
+## Dept of Spec 📜
+
+> * [MSC2134](https://github.com/matrix-org/matrix-doc/pull/2134) Identity Hash Lookups is making steady progress
+>   * Readers who like crypto/hashing are encouraged to join in the fun
+> * [MSC2140](https://github.com/matrix-org/matrix-doc/pull/2140) Terms of Service for ISes and IMs is nearing a conclusion
+> * [MSC2108](https://github.com/matrix-org/matrix-doc/pull/2108) Sync over Server Sent Events hopes to add an alternative sync method to long-polling
+>   * Finally servers pushing events!
+> * [MSC2010](https://github.com/matrix-org/matrix-doc/pull/2010) Adding client-side spoilers is a small feature but requires a lot of thought to integrate it seamlessly
+>   * Sorunome thought this would be easy
+> * Lots of small fixes across the board.
 
 ## Dept of Servers 🏢
 
@@ -42,6 +59,14 @@ Here's Neil:
 > Finally finally, look out for a DAG visualisation tool written by GSOCer Eisha referenced elsewhere in TWIM  - we consider this to be seriously cool, and can’t wait to start using it in anger.
 >
 > Note: 1.0 is the last release to support python 2 and postgres 9.4, the next Synapse release will drop support for both, see <https://matrix.org/blog/2019/04/08/synapse-deprecating-postgres-9-4-and-python-2-x> for more.
+
+### Dendrite
+
+> Dendrite received a few updates this week. Notably:
+>
+> * [Cnly] has been implementing typing notifications support in [#718](https://github.com/matrix-org/dendrite/pull/718/)
+> * [anoa] has been fixing up the flaky sytests in [#631](https://github.com/matrix-org/sytest/pull/631). The team is considering moving from CircleCI to BuildKite for tests in the future.
+> * [Cnly] has added a few issues for odd bits and bobs they’ve found around the codebase. This is much appreciated!
 
 ### Construct
 
@@ -114,6 +139,13 @@ Remember you can [check TWIM from last week](https://matrix.org/blog/2019/06/21/
 
 ## Dept of Bridges 🌉
 
+### freenode IRC bridge restarted
+
+> The freenode IRC bridge was restarted with the following fixes:
+>
+> * Some characters in IRC usernames (such as “|”) would cause IRC user’s messages to not appear on the Matrix side.
+> * Room upgrades are now handled a bit more cleanly
+
 ### mx-puppet-bridge platform
 
 [Sorunome] has been working on her all-new bridge platform, [mx-puppet-bridge]:
@@ -159,11 +191,79 @@ There is already [substantial documentation available](https://github.com/Soruno
 
 ## Dept of Clients 📱
 
+### RiotX (Android)
+
+> * We are finalizing the MVP of RiotX. Many new features, along with many bug fixes this week:
+>   * Notifications for version with or without Firebase Cloud Messaging
+>   * Reply in e2e rooms
+>   * Change of DI tool (We are now using dagger2)
+>   * New settings, split into categories
+>   * New set of Emojis for quick reactions
+>   * New application icon
+>   * And many other little features
+>   * New disclaimer screen, displayed at first startup
+>   * New suggestion screen (based on bug report screen)
+>   * Min SDK version has been set to API 19 (Kitkat), mainly for security reasons, but also because we are using MotionLayout which is available only on API 18+.
+> * Remaining work to do before we can release the first beta version on the PlayStore:
+>   * Encrypt/Decrypt attachment in e2e rooms
+>   * Last event display in the room list
+>   * Test, test, test, and fix, fix, fix :)
+
+### Integration of Matrix into Delphus
+
+[Pneumaticat](https://matrix.to/#/@kevin:potatofrom.space):
+
+> Our company, Scintillating, has integrated Riot as an end-to-end encrypted chat, video, and voice call provider for our decentralized scientific study management system [Delphus](https://delph.us/). We have created a method of linking Matrix IDs with Ethereum addresses to allow scientific researchers to look up participants and create chat rooms to talk with individuals in a privacy-preserving manner.
+
 ### Spectral
 
 We didn't get a [Spectral] update for a few weeks! [Black Hat] reported:
 
 > Quite a few changes in [Spectral] in the past few weeks. The room list filter is improved, and it only shows rooms with unread notifications by default. User can optionally hide join/leave events. Empty avatar in direct chats is fixed. Each user now has a unique message bubble background color in the timeline.
+
+### Pattle: version 0.8.0
+
+[Wilko], chief Pattler:
+
+> A new version of Pattle has been pushed to F-droid!
+>
+> Although this isn't the biggest release, it's still a big step: the first release of iOS will be available! The build is currently still in review by Apple.
+>
+> You can download the iOS app via TestFlight soon, join [#app:pattle.im](https://matrix.to/#/#app:pattle.im) to get the link immediately when it's available!
+>
+> #### Other changes
+>
+> * Add `.well-known` support!
+> * Automatically update homeserver property in 'Advanced' while typing username
+> * Fix messages being wrongly grouped by sender
+> * Fix direct chats staying marked as direct when someone else joins
+>
+> #### Install this release
+>
+> F-Droid:
+>
+> 1. Add the following repo in F-droid:  
+> <https://fdroid.pattle.im/?fingerprint=E91F63CA6AE04F8E7EA53E52242EAF8779559209B8A342F152F9E7265E3EA729>
+> 2. Install 'Pattle'
+>
+> APK: Download from the assets of this release
+>
+> #### Issues
+>
+> If you stumble upon any issues, [please report them](https://git.pattle.im/pattle/app/issues)!
+> You can [login via GitHub and Gitlab.com](https://git.pattle.im/users/sign_in), so it's really easy to do!
+>
+> #### Follow Pattle
+>
+> Follow development in [#app:pattle.im](https://matrix.to/#/#app:pattle.im)!
+>
+> #### Support me
+>
+> If you would like to support me, you can now do so
+> via [Liberapay](https://liberapay.com/wilko/) and [Patreon](https://www.patreon.com/pattle_app).
+>
+> I've invested a lot of money in making Pattle happen on iOS: MacBook, Apple Developer Program, and an iPhone.
+> Pretty costly, so any donations will be greatly appreciated!
 
 ### continuum updates placeholder avatars
 
@@ -185,9 +285,21 @@ Not available in the released version yet, but join [#fluffychat:matrix.org] for
 
 ### Fractal released 4.1 dev version
 
-[Alexander Franke]:
+[Alexandre Franke]:
 
 > [Fractal] released a 4.1 development version, which was added to the beta channel of flathub. [danigm] is eager to get 4.2 out soon and is trying to fix the last few bugs we want to see gone before then. He already opened a few merge requests.
+
+### riot-web
+
+> * Updated the reactions UX with a new tooltip-style interaction
+> * Added edit history dialogue and other small editing tweaks
+> * Riot Desktop config options (such as default HS, theme, etc.) can now be overridden for easy customisation
+
+### riot-iOS
+
+> * New reactions in the event contextual menu
+> * Edits in e2e rooms
+> * Still refining reactions and edits
 
 ### matrix-enact, read-only client which performs the contents of rooms with Web Audio API
 
@@ -210,7 +322,7 @@ Get the source code here: <https://github.com/benparsons/matrix-enact>
 > Besides this, with Synapse v1.0 already out, we've taken the opportunity to simplify the installation instructions a bit.  
 > If you haven't upgraded recently, now would be a great time. As always, be sure to take a look at the CHANGELOG before doing so.
 
-### Update from the *Matrix on Debian* team
+### Update from the *Matrix on Debian* team
 
 <https://matrix-team.pages.debian.net/blogue/2019/06/26/june-2019-matrix-on-debian-update/>
 
@@ -265,3 +377,45 @@ The Europas awards ceremony was held at a venue next to my old flat. Small world
 ## That's all I know 🏁
 
 See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#quaternion:matrix.org]: https://matrix.to/#/#quaternion:matrix.org
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
+[Alexandre Franke]: https://matrix.to/#/@afranke:matrix.org
+[ananace]: https://github.com/ananace/
+[Black Hat]: https://matrix.to/#/@bhat:encom.eu.org
+[Brendan]: https://matrix.to/#/@brendan:abolivier.bzh
+[continuum]: https://github.com/koma-im/continuum-desktop
+[Dandellion]: https://matrix.to/#/@dandellion:dodsorf.as
+[Fractal]: https://wiki.gnome.org/Apps/Fractal
+[jeon]: https://gitlab.com/ma1uta/jeon
+[jeonserver]: https://gitlab.com/ma1uta/jeonserver
+[Krille]: https://matrix.to/#/@krille:chat.regionetz.net
+[ma1uta]: https://matrix.to/#/@ma1uta:matrix.org
+[Ruby SDK]: https://github.com/ananace/ruby-matrix-sdk
+[matrix-docker-ansible-deploy]: https://github.com/spantaleev/matrix-docker-ansible-deploy
+[matrix-media-repo]: https://github.com/turt2live/matrix-media-repo
+[maubot]: https://github.com/maubot/maubot
+[Quaternion]: https://github.com/QMatrixClient/Quaternion
+[ruma-events]: https://github.com/ruma/ruma-events
+[Slavi]: https://matrix.to/#/@slavi:devture.com
+[Sorunome]: https://matrix.to/#/@sorunome:sorunome.de
+[Spectral]: https://gitlab.com/b0/spectral
+[TravisR]: https://github.com/turt2live
+[tulir]: https://matrix.to/#/@tulir:maunium.net
+[yuforia]: https://matrix.to/#/@uforia:matrix.org
+[#ruma:matrix.org]: https://matrix.to/#/#ruma:matrix.org
+[#media-repo:t2bot.io]: https://matrix.to/#/#media-repo:t2bot.io
+[Eisha]: https://matrix.to/#/@eisha:matrix.org
+[#matrix-bot-sdk:t2bot.io]: https://matrix.to/#/#matrix-bot-sdk:t2bot.io
+[libQuotient]: https://github.com/quotient-im/libQuotient
+[mx-puppet-bridge]: https://github.com/Sorunome/mx-puppet-bridge
+[#mx-puppet-bridge:sorunome.de]: https://matrix.to/#/#mx-puppet-bridge:sorunome.de
+[#fluffychat:matrix.org]: https://matrix.to/#/#fluffychat:matrix.org
+[danigm]: https://matrix.to/#/@danigm:matrix.org
+[@poll-bot:abolivier.bzh]: https://matrix.to/#/@poll-bot:abolivier.bzh
+[#ma1sd:ru-matrix.org]: https://matrix.to/#/#ma1sd:ru-matrix.org
+[@dandellion:dodsorf.as]: https://matrix.to/#/@dandellion:dodsorf.as
+[aa13q]: https://matrix.to/#/@aa13q:matrix.org
+[wilko]: https://matrix.to/#/@wilko:pattle.im
+[anoa]: https://matrix.to/#/@andrewm:amorgan.xyz
+[Cnly]: https://matrix.to/#/@cnly:matrix.org
