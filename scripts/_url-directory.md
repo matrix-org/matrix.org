@@ -136,6 +136,7 @@
 [Jason Robinson]: https://matrix.to/#/@jaywink:feneas.org
 [jcgruenhage]: https://matrix.to/#/@jan.christian:gruenhage.xyz
 [jeon]: https://gitlab.com/ma1uta/jeon
+[jeonserver]: https://gitlab.com/ma1uta/jeonserver
 [jmsdk]: https://github.com/ma1uta/jmsdk
 [joenas]: https://matrix.to/#/@joenas:gottsnack.net
 [JonTheNiceGuy]: https://matrix.to/#/@JonTheNiceGuy:matrix.org
@@ -163,6 +164,7 @@
 [Matrix plugin for Weechat]: https://matrix.org/docs/projects/client/weechat.html
 [Matrix Python SDK]: https://github.com/matrix-org/matrix-python-sdk
 [Matrix Ruby SDK]: https://github.com/ananace/ruby-matrix-sdk
+[Ruby SDK]: https://github.com/ananace/ruby-matrix-sdk
 [Matrix Spec Change Proposals]: https://matrix.org/docs/spec/proposals
 [Matrix Spec]: https://matrix.org/docs/spec
 [Matrix Synapse Docker]: https://hub.docker.com/r/matrixdotorg/synapse/
@@ -331,3 +333,16 @@
 [metaolm]: https://gitlab.gnome.org/World/metaolm
 [#famedly:famedly.de]: https://matrix.to/#/#famedly:famedly.de
 [bluepill]: https://gitlab.com/cy8aer/bluepill
+[#ruma:matrix.org]: https://matrix.to/#/#ruma:matrix.org
+[#media-repo:t2bot.io]: https://matrix.to/#/#media-repo:t2bot.io
+[Eisha]: https://matrix.to/#/@eisha:matrix.org
+[#matrix-bot-sdk:t2bot.io]: https://matrix.to/#/#matrix-bot-sdk:t2bot.io
+[libQuotient]: https://github.com/quotient-im/libQuotient
+[mx-puppet-bridge]: https://github.com/Sorunome/mx-puppet-bridge
+[#mx-puppet-bridge:sorunome.de]: https://matrix.to/#/#mx-puppet-bridge:sorunome.de
+[#fluffychat:matrix.org]: https://matrix.to/#/#fluffychat:matrix.org
+[danigm]: https://matrix.to/#/@danigm:matrix.org
+[@poll-bot:abolivier.bzh]: https://matrix.to/#/@poll-bot:abolivier.bzh
+[#ma1sd:ru-matrix.org]: https://matrix.to/#/#ma1sd:ru-matrix.org
+[@dandellion:dodsorf.as]: https://matrix.to/#/@dandellion:dodsorf.as
+[aa13q]: https://matrix.to/#/@aa13q:matrix.org

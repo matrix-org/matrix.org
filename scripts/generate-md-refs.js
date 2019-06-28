@@ -12,7 +12,7 @@ urlDirectory.forEach(item => {
 });
 
 Object.keys(refs).forEach(ref => {
-    if (postContent.indexOf(ref) !== -1) {
+    if (postContent.toLowerCase().indexOf(ref.toLowerCase()) !== -1) {
         console.log(ref + ": " + refs[ref]);
     }
 })
