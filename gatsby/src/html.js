@@ -19,6 +19,8 @@ export default function HTML(props) {
         <link rel="stylesheet" type="text/css" href="/css/webflow.css" />
         <link rel="stylesheet" type="text/css" href="/css/matrix-org.webflow.css" />
         <link rel="stylesheet" type="text/css" href="/css/webflow-overrides.css" />
+        <script type="text/javascript" src="/js/matomo.js"></script>
+        <noscript><p><img src="//matomo.riot.im/matomo.php?idsite=3&amp;rec=1" style={{"border": 0}} alt="" /></p></noscript>
       </head>
       <body className="body" {...props.bodyAttributes}>
         {props.preBodyComponents}
