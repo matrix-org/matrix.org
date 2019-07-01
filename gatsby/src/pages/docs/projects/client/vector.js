@@ -7,7 +7,7 @@ const Redirect = () => {
 
     return (<Layout>
         <Helmet>
-            <meta http-equiv="refresh" content="0; url=/docs/projects/bridge/matrix-email-bridge/" />
+            <meta http-equiv="refresh" content="0; url=/docs/projects/client/riot" />
         </Helmet>
     </Layout>)
 }

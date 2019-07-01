@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const redirects = [
-    {from: "/docs/projects/as/matrix-appservice-email", to: "/docs/projects/as/matrix-email-bridge/"},
+    {from: "/docs/projects/as/matrix-appservice-email", to: "/docs/projects/bridge/matrix-email-bridge/"},
     {from: "/docs/guides/client-server-migrating-from-v1", to: "/docs/guides/migrating-from-client-server-api-v-1"},
     {from: "/docs/projects/client/nheko", to: "/docs/projects/client/nheko-reborn"},
     {from: "/docs/guides/made-for-matrix-badge", to: "/docs/guides/made-for-matrix-badge-guidelines"},
@@ -32,6 +32,11 @@ const redirects = [
     {from: "/discover", to: "/docs/projects/try-matrix-now"},
     {from: "/develop", to: "/docs/guides"},
     {from: "/spec", to: "/docs/spec"},
+    {from: "/docs/guides/riot_im_cookie_policy", to: "/legal/riot-im-cookie-policy"},
+    {from: "/docs/projects/client/mini-vector", to: "/docs/projects/client/minivector"},
+    {from: "/docs/projects/client/mini-vector-android", to: "/docs/projects/client/minivector"},
+    {from: "/docs/projects/client/vector", to: "/docs/projects/client/riot"},
+    {from: "/docs/projects/client/Scylla", to: "/docs/projects/client/scylla"},
     {from: "/docs/guides/riot_im_cookie_policy", to: "/legal/riot-im-cookie-policy"},
 ];
 
