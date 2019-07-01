@@ -8,12 +8,12 @@ const MXInPageTOC = ({tableOfContents, i}) => {
             if (item.items) {
                 subitems = (<ul>
                     {item.items.map(item =>{
-                        return <li><a href={item.url}>{item.title}</a></li>
+                        return <li key={item.url}><a href={item.url}>{item.title}</a></li>
                     })}
                 </ul>)
             }
             return(
-                <li><a href={item.url}>{item.title}</a>
+                <li key={item.url}><a href={item.url}>{item.title}</a>
                 {subitems}
                 </li>
             )            
