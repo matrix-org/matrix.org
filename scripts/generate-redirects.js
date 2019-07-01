@@ -37,7 +37,7 @@ const redirects = [
     {from: "/docs/projects/client/mini-vector-android", to: "/docs/projects/client/minivector"},
     {from: "/docs/projects/client/vector", to: "/docs/projects/client/riot"},
     {from: "/docs/projects/client/Scylla", to: "/docs/projects/client/scylla"},
-    {from: "/docs/guides/riot_im_cookie_policy", to: "/legal/riot-im-cookie-policy"},
+    {from: "/docs/projects/as/mautrix-facebook", to: "/docs/projects/bridge/mautrix-facebook"},
 ];
 
 const template = `import React from 'react'

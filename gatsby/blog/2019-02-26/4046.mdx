@@ -40,14 +40,14 @@ Once installed, run AVD manager by choosing <code>Tools -&gt; AVD Manager</code>
 
 Follow the steps to create a new virtual machine, in this example I have a Nexus 5X running Android 9, but almost any configuration is fine here. Make sure that you give the device access to the Play Store.
 
-<img src="/docs/projects/images/avd.png" alt="" />
+<img src="/docs/img/avd.png" alt="" />
 <h2 id="installwhatsappandsignin">Install WhatsApp and sign-in</h2>
 Launch the Virtual Device, the open the Play Store and sign in. Now use the Play Store to install WhatsApp on the Virtual Device.
 
 You will be asked to verify your phone number, use your number on another device to complete this step.
 
 <center>
-<img src="/docs/projects/images/nexus5.png" /></center>
+<img src="/docs/img/nexus5.png" /></center>
 <h2 id="setupmautrixwhatsappbridge">Setup mautrix-whatsapp bridge</h2>
 Now that you have WhatsApp working in a VM, and Matrix working on your server, it's time to bridge them togther!
 
@@ -55,8 +55,8 @@ Per the instructions at <a href="https://github.com/tulir/mautrix-whatsapp/wiki"
 
 mautrix-whatsapp operates by using the WhatsApp Web feature of WhatsApp - which means it uses a QR code that you must now scan on the device running WhatsApp - which in your case is the AVD. In order to scan the presented QR code, set your AVD camera to passthrough the camera device on your host machine - see the images below.
 
-<img src="/docs/projects/images/camera1.png" alt="" />
-<img src="/docs/projects/images/camera2.png" alt="" />
+<img src="/docs/img/camera1.png" alt="" />
+<img src="/docs/img/camera2.png" alt="" />
 
 Once this is complete, you can type <code>sync</code>, to start bridging contacts, and <code>sync --create</code> to automatically create room invites.
 
