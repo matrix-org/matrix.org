@@ -189,32 +189,31 @@ const resultLegal = await wrapper(
   })
 
   const resultPages = await wrapper(
-    graphql(`
-      {
-        allMdx(sort: { fields: [frontmatter___date], order: DESC },
-          filter: {
-            frontmatter: {
-              date: {eq: null},
-              layout: {nin:["project", "projectimage"]},
-              section: {nin:["legal"]}
-            }
-          }) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                categories
-                author
-                slug
-                sort_order
-              }
-            }
+    graphql(`{
+    allMdx(sort: { fields: [frontmatter___date], order: DESC },
+      filter: {
+        frontmatter: {
+          date: {eq: null},
+          layout: {nin:["project", "projectimage"], in: ["post"]},
+          section: {nin:["legal"]}
+        }
+      }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            categories
+            author
+            slug
+            sort_order
           }
         }
       }
+    }
+  }
     `)
   )
 
