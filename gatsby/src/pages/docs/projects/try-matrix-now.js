@@ -30,7 +30,9 @@ const TryMatrixNow = ({data}) => {
     
     return (<Layout navmode="discover">
         <MXContentMain>
-            <Helmet title={`Try Matrix Now | ${config.siteTitle}`} />
+            <Helmet title={`Try Matrix Now | ${config.siteTitle}`}>
+                <script type="text/javascript" src="/js/tmn-control.js"></script>
+            </Helmet>
             <h1>Try Matrix Now</h1>
             <p>To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>. You can also check the <a href="/docs/projects/clients-matrix">Matrix Clients Matrix</a> to see more detail.</p>
         <div className="mxblock">
@@ -96,39 +98,47 @@ const TryMatrixNow = ({data}) => {
                 <div className="mxgrid__item20">
                     <div className="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--left_align">
                         <h4 className="mxgrid__item__bg__hx">Project type</h4>
+                        <div className="mxgrid">
+                            <div className="mxgrid__item50"><button id="types-all">All</button></div>
+                            <div className="mxgrid__item50"><button id="types-none">None</button></div>
+                        </div>
                         <p className="mxgrid__item__bg__p">
                             <input type="checkbox" id="chk-type-client" />
                             <label htmlFor="chk-type-client"> Clients</label>
                         </p>
                         <p className="mxgrid__item__bg__p">
                             <input type="checkbox" id="chk-type-server" />
-                            <label htmlFor="chk-type-client"> Servers</label>
+                            <label htmlFor="chk-type-server"> Servers</label>
                         </p>
                         <p className="mxgrid__item__bg__p">
                             <input type="checkbox" id="chk-type-as" />
-                            <label htmlFor="chk-type-client"> Application Services</label>
+                            <label htmlFor="chk-type-as"> Application Services</label>
                         </p>
                         <p className="mxgrid__item__bg__p">
                             <input type="checkbox" id="chk-type-sdk" />
-                            <label htmlFor="chk-type-client"> Client SDKs</label>
+                            <label htmlFor="chk-type-sdk"> Client SDKs</label>
                         </p>
                         <p className="mxgrid__item__bg__p">
                             <input type="checkbox" id="chk-type-bot" />
-                            <label htmlFor="chk-type-client"> Bots</label>
+                            <label htmlFor="chk-type-bot"> Bots</label>
                         </p>
                         <p className="mxgrid__item__bg__p">
                             <input type="checkbox" id="chk-type-bridge" />
-                            <label htmlFor="chk-type-client"> Bridges</label>
+                            <label htmlFor="chk-type-bridge"> Bridges</label>
                         </p>
                         <p className="mxgrid__item__bg__p">
                             <input type="checkbox" id="chk-type-other" />
-                            <label htmlFor="chk-type-client"> Other</label>
+                            <label htmlFor="chk-type-other"> Other</label>
                         </p>
                     </div>
                 </div>
                 <div className="mxgrid__item20">
                     <div className="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--left_align">
                         <h4 className="mxgrid__item__bg__hx">Maturity</h4>
+                        <div className="mxgrid">
+                            <div className="mxgrid__item50"><button id="maturities-all">All</button></div>
+                            <div className="mxgrid__item50"><button id="maturities-none">None</button></div>
+                        </div>
                         {
                             ["Released","Stable","Late Beta","Beta","Early Beta",
                             "Late Alpha","Alpha","Early Alpha","No longer maintained"].map(function(maturity) {
@@ -145,6 +155,10 @@ const TryMatrixNow = ({data}) => {
                 <div className="mxgrid__item40">
                     <div className="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--left_align">
                         <h4 className="mxgrid__item__bg__hx">Language</h4>
+                        <div className="mxgrid">
+                            <div className="mxgrid__item50"><button id="languages-all">All</button></div>
+                            <div className="mxgrid__item50"><button id="languages-none">None</button></div>
+                        </div>
                         <div className="tmn-two-column">
                         {
                             languages.map(function(language) {
@@ -166,9 +180,13 @@ const TryMatrixNow = ({data}) => {
                 <div className="mxgrid__item20">
                 <div className="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--left_align">
                     <h4 className="mxgrid__item__bg__hx">License</h4>
+                        <div className="mxgrid">
+                            <div className="mxgrid__item50"><button id="licenses-all">All</button></div>
+                            <div className="mxgrid__item50"><button id="licenses-none">None</button></div>
+                        </div>
                     {
                         licenses.map(function(maturity) {
-                            const id = "chk-license-" + maturity.replace(/ /g, '')
+                            const id = "chk-license-" + maturity.replace(/ /g, '').replace(/\//g, '-')
                             return (
                                 <p key={id} className="mxgrid__item__bg__p">
                                     <input type="checkbox" id={id} name={id} />

@@ -1,8 +1,7 @@
 $(document).ready(function () {
-    console.log("tmn-control loaded")
+    console.log("tmn-control loaded v2")
     console.log($("[id^=chk-language]"))
-    setTimeout(() =>{
-      $.getScript("/js/webflow.js");
+    
         /* For each type, a click event */
         $("[id^=chk-type]").click(function(a) {
         var type = a.target.id.replace("chk-type-", "");
@@ -36,38 +35,38 @@ $(document).ready(function () {
         /* controls for the All/None selectors */
         $("#types-all").click(() => {
         $("[id^=chk-type]").prop("checked", true);
-        checkVisibility($('li.project').toArray());
+        checkVisibility($('.filterableProject').toArray());
         });
         $("#types-none").click(() => {
         $("[id^=chk-type]").prop("checked", false);
-        checkVisibility($('li.project').toArray());
+        checkVisibility($('.filterableProject').toArray());
         });
         $("#maturities-all").click(() => {
         $("[id^=chk-maturity]").prop("checked", true);
-        checkVisibility($('li.project').toArray());
+        checkVisibility($('.filterableProject').toArray());
         });
         $("#maturities-none").click(() => {
         $("[id^=chk-maturity]").prop("checked", false);
-        checkVisibility($('li.project').toArray());
+        checkVisibility($('.filterableProject').toArray());
         });
         $("#languages-all").click(() => {
         $("[id^=chk-language]").prop("checked", true);
-        checkVisibility($('li.project').toArray());
+        checkVisibility($('.filterableProject').toArray());
         });
         $("#languages-none").click(() => {
         $("[id^=chk-language]").prop("checked", false);
-        checkVisibility($('li.project').toArray());
+        checkVisibility($('.filterableProject').toArray());
         });
     
         $("#licenses-all").click(() => {
         $("[id^=chk-license]").prop("checked", true);
-        checkVisibility($('li.project').toArray());
+        checkVisibility($('.filterableProject').toArray());
         });
         $("#licenses-none").click(() => {
         $("[id^=chk-license]").prop("checked", false);
-        checkVisibility($('li.project').toArray());
+        checkVisibility($('.filterableProject').toArray());
         });
-    }, 1000)
+    
     /* Make the visibility changes on click */
     window.checkVisibility = function(projects) {
         console.log("checkVisibility start")
@@ -93,7 +92,8 @@ $(document).ready(function () {
           return;
         }
         var project_license = project.data("license");
-        var correct_license = $("#chk-license-" + project_license.toString()).prop("checked");
+        var license_string = project_license ? project_license.toString().replace(/\//g, '-') : "Unknown";
+        var correct_license = $("#chk-license-" + license_string).prop("checked");
         if (! correct_license && project_license !== "") {
           project.hide(400);
           return;
@@ -102,15 +102,5 @@ $(document).ready(function () {
       });
     }
   
-    /* show contols if JS is actually available... */
-    $("#controls").show();
-    $("li.project a img").each(function(a, b) {
-      console.log($(b).attr("src"));
-      if ($(b).attr("src").length === 0) {
-        $(b).attr("src", "/docs/projects/images/noimage.png");
-        //$(b).attr("style", "opacity: 0.4;");
-        $(b).css({opacity:0.5, height:"120px"})
-      }
-    });
-    checkVisibility($('li.project').toArray());
+    checkVisibility($('.filterableProject').toArray());
   });
