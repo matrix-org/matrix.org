@@ -17,6 +17,18 @@ Note that there is a audio hiccup around 2m30 - video is ok otherwise.
 
 ## Dept of Spec 📜
 
+### Highlights
+
+* [MSC2140: Terms of Service for ISes and IMs](https://github.com/matrix-org/matrix-doc/pull/2140)
+  * Largely complete
+* [MSC2134: Identity Hash Lookups](https://github.com/matrix-org/matrix-doc/pull/2134)
+  * Largely complete
+  * Going ahead with the simple hash lookup method
+* [Matthew/msc1849 rewrite](https://github.com/matrix-org/matrix-doc/pull/2154)
+  * Rewrite of the [Proposal for m.relates_to aggregations](https://github.com/matrix-org/matrix-doc/pull/1849) MSC with new updates
+* [MSC2153: Add a default push rule to ignore m.reaction events](https://github.com/matrix-org/matrix-doc/pull/2153)
+  * Will help prevent ghost notifications appearing when a reaction is the last event in the room
+
 ### Movement on Matrix URIs
 
 Sudden interest in [matrix-org/matrix.to/pull#47](https://github.com/matrix-org/matrix.to/pull/47) means we're getting a lot closer to agreement on Matrix URIs. [Kitsune] even added support for them in [Quaternion] (see below).
@@ -115,7 +127,7 @@ We've also got plans now! Plans for how to properly ship this thing over the com
 >
 > mx-puppet-discord does only DMs, for non-DMs please use matrix-appservice-discord
 >
-> If you have any questions for any of these, please join our channel > [#mx-puppet-bridge:sorunome.de](https://matrix.to/#/) #mx-puppet-bridge:sorunome.de). Software doesn't write itself, please consider > [donating on liberapay](https://liberapay.com/Sorunome/donate)!
+> If you have any questions for any of these, please join our channel > [#mx-puppet-bridge:sorunome.de]. Software doesn't write itself, please consider > [donating on liberapay](https://liberapay.com/Sorunome/donate)!
 
 ### matrix-appservice-slack
 
@@ -128,6 +140,22 @@ They mention,
 > warning may contain ranting about the codebase
 
 But that could be any room, so it seems ok to me.
+
+`WARNING: LATE ADDITION`
+
+> Hi everyone! [Myself][Half-Shot] and [Cadair] have been working hard on a new Slack bridge release, and we are finally ready to push out a release candidate for **0.3**.
+>
+> The headline features are:
+>
+> * Implement message deletion.
+> * Add support for edits.
+> * Add support for reactions.
+> * Add support for threading (using replies).
+> * Support displayname and avatar lookups for Slack bots.
+> * Replace channel mentions with canonical aliases for bridged rooms.
+> * Support for slack attachments (Thanks @umitalp for the inital groundwork and @Cadair for the cleanup)
+>
+> The new release is having very final minute checks, and will be avilable at <https://github.com/matrix-org/matrix-appservice-slack/releases> shortly.
 
 ## Dept of Clients 📱
 
@@ -241,6 +269,16 @@ This will be so much easier to use! Also:
 
 <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">The wait is almost over ... We&#39;re now rolling out our trial of Small Hosted Homeservers for Matrix. Have you got your golden ticket yet? 😀🎟️ <a href="https://t.co/iUkAIHW9MY">pic.twitter.com/iUkAIHW9MY</a></p>&mdash; Modular (@ModularIM) <a href="https://twitter.com/ModularIM/status/1146477464488730624?ref_src=twsrc%5Etfw">July 3, 2019</a></blockquote>
 
+> we've been working on a v1 admin dashboard for managing your Synapse instances through Modular. This is now live on the site and provides a basic suite of functionality including:
+>
+> * Viewing users of your synapse homeserver(s)
+> * Creating users
+> * Deleting users
+> * Resetting user passwords
+> * Viewing user profile and server access / activity
+> * Sending messages to all system users as the system alerts user
+> * Information about the synapse instance versions
+
 ## Final thoughts 💭
 
 [Ananace] is "continuing the rewrite of [the release tracker project](https://github.com/ananace/matrix-releasetracker). Working towards getting it to only store state in Matrix so it can be run in a read-only environment like a K8s deployment."
@@ -284,3 +322,4 @@ See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
 [lino]: https://matrix.to/#/@lino:m.l1f.de
 [ananace-matrix-synapse-k8s]: https://github.com/ananace/matrix-synapse
 [avhost-docker-matrix]: https://hub.docker.com/r/avhost/docker-matrix
+[Cadair]: https://matrix.to/#/@cadair:cadair.com
