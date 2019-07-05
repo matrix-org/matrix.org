@@ -127,7 +127,7 @@ const Index = ({
                         </p>
                         <p className="mxp mxmatrixdescription">
                           Matrix is an open source project
-                          that publishes the <br /><a href="/docs/spec">Matrix open standard</a> for
+                          that publishes the <br /><a href="/docs/spec" onClick={()=>{window.location='https://matrix.org//docs/spec'; return false;}}>Matrix open standard</a> for
                           secure, decentralised, real-time communication,
                           and its Apache licensed <br /><a href="https://github.com/matrix-org">reference implementations</a>.
                         </p>
@@ -149,7 +149,7 @@ const Index = ({
                 <h4 className="mxgrid__item__bg__hx">Messaging</h4>
                 <div className="mxgrid__item__bg__vert">
                   <p className="mxgrid__item__bg__p">
-                    Matrix gives you simple <a href="/docs/spec/">HTTP APIs</a> and <a
+                    Matrix gives you simple <a href="/docs/spec/" onClick={()=>{window.location='https://matrix.org//docs/spec'; return false;}}>HTTP APIs</a> and <a
                     href="/docs/projects/sdks">SDKs</a> (iOS, Android, Web) to create chatrooms,
                     direct chats and chat bots, complete with end-to-end encryption, file transfer, synchronised
                     conversation history, formatted messages, read receipts and more.
@@ -269,7 +269,7 @@ const Index = ({
             communication.
           </p>
           <p className="mxp mxhow">
-            By default, Matrix uses simple <a href="/docs/spec/client_server/latest.html#api-standards">HTTPS+JSON APIs
+            By default, Matrix uses simple <a href="/docs/spec/client_server/latest.html#api-standards" onClick={()=>{window.location='https://matrix.org//docs/spec/client_server/latest.html#api-standards'; return false;}}>HTTPS+JSON APIs
             </a> as its baseline transport, but also embraces more
             sophisticated transports such as <a href="https://github.com/matrix-org/matrix-doc/blob/master/drafts/websockets.rst">WebSockets
             </a> or <a href="/blog/2019/03/12/breaking-the-100-bps-barrier-with-matrix-meshsim-coap-proxy">ultra-low-bandwidth Matrix</a> via CoAP+Noise.
@@ -385,7 +385,7 @@ const Index = ({
         <div className="mxgrid__item__bg mxgrid__item__bg--clear">
 <img src="images/basic_spread_text.svg" alt="" className="mxgrid__item__bg__img" />
           <div className="mxgrid__item__bg__vert">
-            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--open_standard"><a href="/docs/spec">Open specification</a> of the Matrix standard<br/><br/></h4>
+            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--open_standard"><a href="/docs/spec" onClick={()=>{window.location='https://matrix.org//docs/spec'; return false;}}>Open specification</a> of the Matrix standard<br/><br/></h4>
           </div>
         </div>
       </div>
