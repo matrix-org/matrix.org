@@ -349,3 +349,8 @@
 [wilko]: https://matrix.to/#/@wilko:pattle.im
 [anoa]: https://matrix.to/#/@andrewm:amorgan.xyz
 [Cnly]: https://matrix.to/#/@cnly:matrix.org
+[Brian Ó]: https://matrix.to/#/@blacksam:matrix.gibberfish.org
+[python-matrixbot]: https://pypi.org/project/python-matrixbot/
+[#matrix_appservice_slack:cadair.com]: https://matrix.to/#/#matrix_appservice_slack:cadair.com
+[lino]: https://matrix.to/#/@lino:m.l1f.de
+[avhost-docker-matrix]: https://hub.docker.com/r/avhost/docker-matrix
