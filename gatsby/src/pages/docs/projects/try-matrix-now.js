@@ -15,8 +15,8 @@ const TryMatrixNow = ({data}) => {
     const clients = projects.filter(project => project.frontmatter.categories[0] === "client")
     const servers = projects.filter(project => project.frontmatter.categories[0] === "server")
     const applicationServices = projects.filter(project => project.frontmatter.categories[0] === "as")
-    const sdks = projects.filter(project => project.frontmatter.categories[0] === "sdk")
-    const bots = projects.filter(project => project.frontmatter.categories[0] === "bot")
+    const sdks = projects.filter(project => project.frontmatter.categories.indexOf("sdk") !== -1)
+    const bots = projects.filter(project => project.frontmatter.categories.indexOf("bot") !== -1)
     const bridges = projects.filter(project => project.frontmatter.categories[0] === "bridge")
     const others = projects.filter(project => project.frontmatter.categories[0] === "other")
 
