@@ -335,27 +335,6 @@ const Guides = ({data}) => {
   </table>
 </div>
 
-<h3 id="riot-customisation">Riot Customisation</h3>
-
-<div className="width-100">
-  <table className="legacy-table">
-    <thead>
-      <tr>
-        <th>Article</th>
-        <th>Author</th>
-        <th>Language</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="https://gist.github.com/turt2live/f7e33017e72a83905f7f6acae31f4143">Setting a default color scheme (tint) for Riot on your account</a></td>
-        <td>TravisR</td>
-        <td>English</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
 <h2 id="video-guides">Video Guides</h2>
 
 <div className="width-100">
