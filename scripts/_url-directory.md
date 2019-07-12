@@ -77,6 +77,7 @@
 [+matrix:matrix.org]: https://matrix.to/#/+matrix:matrix.org
 [35c3]: https://events.ccc.de/congress/2018/wiki/index.php/Main_Page
 [Aaron Raimist]: https://matrix.to/#/@aaron:raim.ist
+[Aaron]: https://matrix.to/#/@aaron:raim.ist
 [Alejandro Domínguez]: https://matrix.to/#/@aledomu:matrix.org
 [Alexandre Franke]: https://matrix.to/#/@afranke:matrix.org
 [alphapapa]: https://matrix.to/#/@alphapapa:matrix.org
@@ -354,3 +355,11 @@
 [#matrix_appservice_slack:cadair.com]: https://matrix.to/#/#matrix_appservice_slack:cadair.com
 [lino]: https://matrix.to/#/@lino:m.l1f.de
 [avhost-docker-matrix]: https://hub.docker.com/r/avhost/docker-matrix
+[synapse-janitor]: https://github.com/xwiki-labs/synapse_scripts
+[Alexey Murz Korepov]: https://matrix.to/#/@murz:ru-matrix.org
+[synapse-purge]: https://github.com/djmaze/synapse-purge
+[kai]: https://matrix.to/#/@kai:nasnotfound.de
+[Pneumaticat]: https://matrix.to/#/@kevin:potatofrom.space
+[Jimmy]: https://matrix.to/#/@jimmycuadra:matrix.org
+[matrix-enact]: https://play.matrix.org/matrix-enact/
+[#tkmc:matrix.org]: https://matrix.to/#/)#tkmc:matrix.org
