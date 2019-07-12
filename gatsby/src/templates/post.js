@@ -15,6 +15,13 @@ const PostContent = styled.div`
 
 const Post = ({ pageContext: { slug, prev, next, posts }, data: { mdx: postNode } }) => {
   const post = postNode.frontmatter
+
+  var toc
+  
+  if (postNode.tableOfContents && postNode.tableOfContents.items) {
+    toc = postNode.tableOfContents.items
+      .map(item => {return ({slug: item.url, title: item.title})})
+  }
   
   return (
     <Layout hasSideNavigation="true" navmode="blog" customSEO>
@@ -31,14 +38,16 @@ const Post = ({ pageContext: { slug, prev, next, posts }, data: { mdx: postNode 
             ))} &mdash;&nbsp;
             {post.author}
           </Subline>
-          {post.showTableOfContents &&
-            <MXInPageTOC tableOfContents={postNode.tableOfContents} />}
           <PostContent>
             <MDXRenderer>{postNode.code.body}</MDXRenderer>
           </PostContent>
           <PrevNext prev={prev} next={next} />
         </MXContentMain>
+        <div className="mxcontent__nav">{
+          toc &&
+        <MXContentNav title="Contents" content={toc} currentSlug={slug}></MXContentNav>}
         <MXContentNav title="All posts" content={posts} currentSlug={slug}></MXContentNav>
+        </div>
     </Layout>
   )
 }

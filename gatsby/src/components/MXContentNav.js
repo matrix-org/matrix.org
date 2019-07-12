@@ -5,6 +5,9 @@ const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
     if (currentSlug && currentSlug.indexOf("/docs") === 0) {
         navClass += " mxcontent__nav--left";
     }
+    if (currentSlug && currentSlug.indexOf("/blog") === 0) {
+        navClass = "";
+    }
     var tocRendered = false;
     return (
     <div className={navClass}>
@@ -39,7 +42,7 @@ const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
         })
         }
 </div>
-        {currentSlug && currentSlug.indexOf("/blog") === 0 && (
+        {currentSlug && currentSlug.indexOf("/blog") === 0 && title === "All Posts" && (
             <div>
                 <div className="mxcontent__nav__link"><a href="/blog/archive">View all</a></div>
                 <div className="mxcontent__nav__section mxcontent__nav__section--last">
