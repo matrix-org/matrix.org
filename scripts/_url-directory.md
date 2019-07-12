@@ -354,3 +354,6 @@
 [#matrix_appservice_slack:cadair.com]: https://matrix.to/#/#matrix_appservice_slack:cadair.com
 [lino]: https://matrix.to/#/@lino:m.l1f.de
 [avhost-docker-matrix]: https://hub.docker.com/r/avhost/docker-matrix
+[synapse-janitor]: https://github.com/xwiki-labs/synapse_scripts
+[Alexey Murz Korepov]: https://matrix.to/#/@murz:ru-matrix.org
+[synapse-purge]: https://github.com/djmaze/synapse-purge

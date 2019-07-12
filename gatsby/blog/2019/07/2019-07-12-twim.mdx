@@ -1,0 +1,88 @@
+---
+date: '2019-07-12'
+title: 'This Week in Matrix 2019-07-12'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: 
+---
+
+## Matrix Live
+
+## Dept of Spec 📜
+
+## Dept of Servers 🏢
+
+### This Week in Ruma
+
+[Jimmy] provided [This Week in Ruma](https://www.ruma.io/news/this-week-in-ruma-2019-07-07/):
+
+> Work continues on the major revamp of ruma-events mentioned in the last update.  
+> ...
+> There are also a few modules that are somewhat blocked on an issue in ring. Some of the types in ruma-events contain types from ruma-signatures which don't implement Clone and PartialEq because they contain types from ring which don't.
+> ...
+> Rust 1.36 was released, and it includes stabilization of the Future trait, one of the long-awaited building blocks for first-class async support in Rust. [...] the biggest reason for Ruma's development hiatus is waiting for async networking in Rust to mature, and this is one of the final pieces of foundational support we've been waiting for. The remaining pieces are async/await syntax, which is expected in either the next version or the one following it, and finally, waiting for important libraries like Hyper and Tokio, as well as web frameworks, to adopt the new stuff.
+
+## Dept of Bridges 🌉
+
+### mautrix-telegram v0.6.0
+
+[tulir]:
+
+> [mautrix-telegram] v0.6.0 was released. Recent changes include bridging strikethrough, underline and nested formatting to telegram and some bug fixes, including one security fix. [Full changelog on GitHub](https://github.com/tulir/mautrix-telegram/releases/tag/v0.6.0).
+>
+> Debian 10 was also released recently, which means v0.6 is the last version with Python 3.5 support. Starting from v0.7.0, mautrix-telegram will only support Python 3.6 and up.
+
+[mautrix-telegram] v0.6.0 also includes Native Matrix edit support, message editing between platforms.
+
+### matrix-appservice-slack 0.3.0-rc2
+
+[Half-Shot] and the Slack-bridge-gang have announced [matrix-appservice-slack 0.3.0-rc2](https://github.com/matrix-org/matrix-appservice-slack/tree/release-0.3.0)
+
+> Hi folks, [the slack bridge][matrix-appservice-slack] has had another RC release this week 0.3.0-rc2 which has been deployed onto matrix.org :). In other news, we are nearly done with the port of the bridge to Typescript (slated for the 0.4 release) which has allowed us to clean up the codebase significantly and **splat** a lot of bugs.
+
+I'm for any movement toward TypeScript - seems to be a winner in the JS-world. Says Half-Shot:
+
+> I'm a bit fanatical about Typescript, it's objectively better to write things in TS than JS if you have the freedom to do so. It's also allowed us to keep the bug count down on the [Discord bridge], so I'm starting to look at the other bridges for typescript support too.
+
+## Dept of Clients 📱
+
+### RiotX announced TODO
+
+https://medium.com/@RiotChat/introducing-the-riotx-beta-for-android-b17952e8f771
+
+### Continuum
+
+[yuforia] has continued work on [Continuum], a desktop client written in Kotlin:
+
+> Continuum now preserves media content URI (mxc://) internally in order to treat them specially, instead of converting to all URI to http (or https) upon receiving.  
+> This week's version never considers cached mxc resources stale and no network request will be performed for refreshing.  
+> Continuum also loads previews for http image links in text messages automatically. The usual http cache control rules are still followed in those cases.
+
+Join [#tkmc:matrix.org] to chat more about Continuum, or about [koma], the underlying library.
+
+## Dept of Ops 🛠
+
+### matrix-docker-ansible-deploy: synapse-janitor now available
+
+[Slavi]:
+
+> §Thanks to [Aaron]'s frequent mention of [synapse-janitor] and other such cleanup methods, I've finally gotten inspired enough to give it a try.
+>
+> The playbook now contains a new **Synapse Maintenance** documentation page and an easy/safe way to run [synapse-janitor].
+>
+> To give an example, using [synapse-janitor] and a full Postgres `VACUUM` yielded a 29% reduction in disk space used by Postgres on my personal homeserver (5.3GB -> 3.8GB).
+
+[Alexey Murz Korepov] also reminded us about [synapse-purge], which we've mentioned here before - but is designed for a similar purpose.
+
+### avhost/docker-matrix
+
+[Mathijs]:
+
+> the [avhost/docker-matrix](https://hub.docker.com/r/avhost/docker-matrix/tags) image has moved to a debian buster base image, which got us an upgrade from python 3.5 to python 3.7.3 and jemalloc1 to jemalloc2, which should improve the performance of synapse.
+
+## Final thoughts 💭
+
+TODO my ascii cinema bot
+
+Mention new guide to bot sdk
