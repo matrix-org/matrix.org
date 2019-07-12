@@ -7,7 +7,7 @@
 [@slavi:devture.com]: https://matrix.to/#/@slavi:devture.com
 [@Sorunome]: https://github.com/Sorunome
 [@turt2live]: https://github.com/turt2live
-[@tvo6]: ttps://github.com/tvo6
+[@tvo6]: https://github.com/tvo6
 [&Adam]: https://matrix.to/#/@adam:thebeckmeyers.xyz
 [#:maunium.net]: https://matrix.to/#/#:maunium.net
 [#bifrost:half-shot.uk]: https://matrix.to/#/#bifrost:half-shot.uk
@@ -362,4 +362,4 @@
 [Pneumaticat]: https://matrix.to/#/@kevin:potatofrom.space
 [Jimmy]: https://matrix.to/#/@jimmycuadra:matrix.org
 [matrix-enact]: https://play.matrix.org/matrix-enact/
-[#tkmc:matrix.org]: https://matrix.to/#/)#tkmc:matrix.org
+[#tkmc:matrix.org]: https://matrix.to/#/#tkmc:matrix.org
