@@ -114,6 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 .legacy-table td, tr, th {
   padding-right: 20px;
   padding-bottom: 4px;
+  text-align: center;
 }
 
 .legacy-table th {
@@ -122,6 +123,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .legacy-table > tbody > tr:nth-child(odd) {
   background-color: #ddd;
+}
+
+.legacy-table td:nth-child(1) {
+  text-align: left;
 }
 
 .overscroll {
@@ -194,3 +199,15 @@ div.title {
   padding-top: 75px;
   margin-top: -75px;
 } 
+
+.green {
+  color: #78A830;
+  font-weight: bold;
+  font-size: x-large;
+}
+.orange {
+  color: #F0A800;
+}
+.red {
+  color: #D84830;
+}
