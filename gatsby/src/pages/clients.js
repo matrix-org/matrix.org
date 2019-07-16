@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
-import { Layout, MXContentMain } from '../../../components'
-import config from '../../../../config'
+import { Layout, MXContentMain } from '../components'
+import config from '../../config'
 
 const ClientsMatrix = ({data}) => {
   const clients = data.allMdx.edges.map((edge => (edge.node.frontmatter)));
