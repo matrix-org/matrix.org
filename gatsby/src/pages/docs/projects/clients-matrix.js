@@ -46,6 +46,7 @@ const ClientsMatrix = ({data}) => {
           </div>
 
           <h2 id="platform-availability">Platform Availability</h2>
+          <div className="overscroll">
           <table className="legacy-table width-100">
             <thead>
               <tr>
@@ -77,8 +78,9 @@ const ClientsMatrix = ({data}) => {
               })}
             </tbody>
           </table>
-
+          </div>
           <h2 id="details">Details</h2>
+          <div className="overscroll">
           <table className="legacy-table width-100">
             <thead>
               <tr>
@@ -124,8 +126,9 @@ const ClientsMatrix = ({data}) => {
               })}
             </tbody>
           </table>
-          
+          </div>
           <h2 id="features">Features</h2>
+          <div className="overscroll">
           <table className="legacy-table width-100">
             <thead>
               <tr>
@@ -161,6 +164,7 @@ const ClientsMatrix = ({data}) => {
               })}
             </tbody>
           </table>
+          </div>
         </MXContentMain>
     </Layout>)
 }

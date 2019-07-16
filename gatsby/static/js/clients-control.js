@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $('input[type=radio][name=platform]').change(function() {
-        console.log(this.id);
         const selectedPlatform = this.id;
         $('td,th').toArray().forEach(function(cell) {
             cell = $(cell);
