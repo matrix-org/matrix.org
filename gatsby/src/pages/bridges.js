@@ -104,7 +104,7 @@ const Bridges = ({data}) => {
 
 
 export const query = graphql`{
-  allMdx(filter: {frontmatter: {categories: {in: ["bridge"]}, featured: {eq: "TRUE"}}}) {
+  allMdx(filter: {frontmatter: {categories: {in: ["bridge"]}, featured: {eq: true}}}) {
     edges {
       node {
         frontmatter {

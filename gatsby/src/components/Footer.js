@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="mxfooter__column">
         <a href="/docs/projects/try-matrix-now" className="mxfooter__link mxfooter__link--primary">Discover</a>
         <a href="/docs/projects/try-matrix-now" className="mxfooter__link">Try Matrix</a>
-        <a href="/docs/projects/clients-matrix" className="mxfooter__link">Clients</a>
+        <a href="/clients" className="mxfooter__link">Clients</a>
         <a href="/docs/projects/bots" className="mxfooter__link">Bots</a>
         <a href="/docs/projects/sdks" className="mxfooter__link">SDKs</a>
         <a href="/docs/projects/hosting" className="mxfooter__link">Hosting</a>
