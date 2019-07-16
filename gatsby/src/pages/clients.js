@@ -15,6 +15,7 @@ const ClientsMatrix = ({data}) => {
   return (<Layout navmode="discover">
       <MXContentMain>
           <Helmet title={`Clients | ${config.siteTitle}`}>
+            <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
             <script type="text/javascript" src="/js/clients-control.js"></script>
           </Helmet>
           <h1>Clients Matrix</h1>
