@@ -21,6 +21,7 @@ export default function HTML(props) {
         <link rel="stylesheet" type="text/css" href="/css/webflow-overrides.css" />
         <link rel="stylesheet" type="text/css" href="/css/prism.css" />
 
+        <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="/js/matomo.js"></script>
         <noscript><p><img src="//matomo.riot.im/matomo.php?idsite=3&amp;rec=1" style={{"border": 0}} alt="" /></p></noscript>
       </head>
@@ -35,7 +36,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
         <script src="/js/webflow-loader.js" type="text/javascript"></script>
       </body>
     </html>
