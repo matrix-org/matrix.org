@@ -31,6 +31,7 @@ const TryMatrixNow = ({data}) => {
     return (<Layout navmode="discover">
         <MXContentMain>
             <Helmet title={`Try Matrix Now | ${config.siteTitle}`}>
+                <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
                 <script type="text/javascript" src="/js/tmn-control.js"></script>
             </Helmet>
             <h1>Try Matrix Now</h1>
