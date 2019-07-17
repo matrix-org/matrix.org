@@ -10,12 +10,19 @@ const MXTryMatrixNowSection = ({items}) => {
                 .replace(/\+/g, '-')
                 .replace(/\//g, '-')
                 .replace(/#/g, '-') : ""
+            const maturity = project.frontmatter.maturity ?
+            project.frontmatter.maturity.replace(/ /g, '') : ""
+            const license  = project.frontmatter.license ?
+            project.frontmatter.license
+                .replace(/ /g, '')
+                .replace(/\//g, '-')
+                .replace(/\./g, '') : ""
             return (
         <div key={Math.random().toString()} className="mxgrid__item20 filterableProject"
             data-featured={project.frontmatter.featured}
-            data-maturity={project.frontmatter.maturity}
+            data-maturity={maturity}
             data-language={language}
-            data-license={project.frontmatter.license}
+            data-license={license}
             data-type={project.frontmatter.categories[0]}>
             <div className="mxgrid__item__bg mxgrid__item__bg--clear">
                 

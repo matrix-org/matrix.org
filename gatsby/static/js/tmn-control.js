@@ -80,7 +80,8 @@ $(document).ready(function () {
           return;
         }
         var project_maturity = project.data("maturity");
-        var correct_maturity = $("#chk-maturity-" + project_maturity).prop("checked");
+        project_maturity = project_maturity ? project_maturity : "";
+        var correct_maturity = $("#chk-maturity-" + project_maturity.replace(/ /g, '')).prop("checked");
         if (! correct_maturity && project_maturity !== "") {
           project.hide(400);
           return;
@@ -92,9 +93,9 @@ $(document).ready(function () {
           return;
         }
         var project_license = project.data("license");
-        var license_string = project_license ? project_license.toString().replace(/\//g, '-') : "Unknown";
+        var license_string = project_license ? project_license.toString().replace(/ /g, '').replace(/\//g, '-').replace(/\./g, '') : "";
         var correct_license = $("#chk-license-" + license_string).prop("checked");
-        if (! correct_license && project_license !== "") {
+        if (! correct_license) {
           project.hide(400);
           return;
         }
