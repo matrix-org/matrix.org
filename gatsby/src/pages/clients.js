@@ -109,7 +109,7 @@ const ClientsMatrix = ({data}) => {
                 {clients.map(function(client, i) {                    
                     return (
                       <td data-platforms={client.platformString}>
-                        <small><a href={client.room}>{client.room}</a></small>
+                        <small><a href={"https://matrix.to/#/" + client.room}>{client.room}</a></small>
                       </td>
                     )
                   })}
