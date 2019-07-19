@@ -85,7 +85,6 @@
 [ananace]: https://github.com/ananace/
 [andrewsh]: https://matrix.to/#/@andrew:shadura.me
 [anoa]: https://matrix.to/#/@andrewm:amorgan.xyz
-[anoa]: https://matrix.to/#/@andrewm:amorgan.xyz
 [apwhitehat]: @apwhitehat:matrix.org
 [Arne]: https://matrix.to/#/@arne:matrix.localtoast.de
 [avecho]: https://github.com/koma-im/kotlin-matrix-userbots
@@ -135,6 +134,7 @@
 [informo]: https://github.com/Informo
 [IRC Connection Tracker]: https://github.com/Half-Shot/irc-conntrack/
 [Jason Robinson]: https://matrix.to/#/@jaywink:feneas.org
+[jaywink]: https://matrix.to/#/@jaywink:feneas.org
 [jcgruenhage]: https://matrix.to/#/@jan.christian:gruenhage.xyz
 [jeon]: https://gitlab.com/ma1uta/jeon
 [jeonserver]: https://gitlab.com/ma1uta/jeonserver
@@ -363,3 +363,11 @@
 [Jimmy]: https://matrix.to/#/@jimmycuadra:matrix.org
 [matrix-enact]: https://play.matrix.org/matrix-enact/
 [#tkmc:matrix.org]: https://matrix.to/#/#tkmc:matrix.org
+[Tim]: https://matrix.to/#/@thosgood:matrix.org
+[ruma-signatures]: https://github.com/ruma/ruma-signatures/
+[Madic]: https://matrix.to/#/@madic:geekbundle.org
+[matrix-shell-suite]: https://gitlab.com/darnir/matrix-shell-suite
+[#matrix-shell-suite:matrix.org]: https://matrix.to/#/#matrix-shell-suite:matrix.org
+[#news:t2bot.io]: https://matrix.to/#/#news:t2bot.io
+[#help:t2bot.io]:https://matrix.to/#/#help:t2bot.io
+[#status:t2bot.io]: https://matrix.to/#/#status:t2bot.io

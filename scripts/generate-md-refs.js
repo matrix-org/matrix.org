@@ -8,6 +8,7 @@ const refs = {};
 
 urlDirectory.forEach(item => {
     item = item.split("]:");
+    if (item.length !== 2) return;
     refs[item[0] + ']'] = item[1].trim();
 });
 
