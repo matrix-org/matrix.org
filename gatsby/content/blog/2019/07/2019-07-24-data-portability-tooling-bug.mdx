@@ -6,8 +6,6 @@ categories:
 author: Thomas Lant
 ---
 
-# Data Portability Tooling Bug
-
 It was drawn to our attention this afternoon that there is a bug in our GDPR data portability tooling that resulted in the data dump including some events that should not have been included. 
 
 This tooling has recently been updated ([here is the new code](https://github.com/matrix-org/synapse/blob/baf081cd3b040926e2d14dfd1c555307bba59245/synapse/handlers/admin.py#L98)), and the bug only affects reports generated with the updated tool. So far we have generated one report using the updated tooling.
