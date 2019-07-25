@@ -30,6 +30,7 @@ const Category = ({ pageContext: { category, limit, skip, currentPage }, data: {
           <Article
             title={post.node.frontmatter.title}
             date={post.node.frontmatter.date}
+            author={post.node.frontmatter.author}
             excerpt={post.node.excerpt}
             timeToRead={post.node.timeToRead}
             slug={post.node.fields.slug}
@@ -80,6 +81,7 @@ export const postQuery = graphql`
             title
             date(formatString: "YYYY-MM-DD")
             categories
+            author
           }
           fields {
             slug
