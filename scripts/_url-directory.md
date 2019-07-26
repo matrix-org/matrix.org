@@ -371,3 +371,5 @@
 [#news:t2bot.io]: https://matrix.to/#/#news:t2bot.io
 [#help:t2bot.io]:https://matrix.to/#/#help:t2bot.io
 [#status:t2bot.io]: https://matrix.to/#/#status:t2bot.io
+[ma1sd]: https://github.com/ma1uta/ma1sd
+[darnir]: https://matrix.to/#/@darnir:talk.go7box.xyz
