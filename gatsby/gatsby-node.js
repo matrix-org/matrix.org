@@ -17,15 +17,15 @@ exports.onCreateNode = ({ node, actions }) => {
   if (node.internal.type === 'Mdx') {
     if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.slug)}`
-    }
-    if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
     ) {
       slug = `/${_.kebabCase(node.frontmatter.title)}`
+    }
+    if (
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
+    ) {
+      slug = `/${_.kebabCase(node.frontmatter.slug)}`
     }
     if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
@@ -67,6 +67,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 title
                 categories
                 author
+                slug
               }
             }
           }
