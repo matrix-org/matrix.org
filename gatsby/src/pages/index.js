@@ -574,12 +574,9 @@ const Index = ({
               <div className="mxgrid__item__bg">
                 <h2 className="mxblock__hx">The Matrix Foundation</h2>
                 <div className="mxgrid__item__bg__vert">
-                  <p className="mxp">Matrix.org is a non-profit initiative, currently being incorporated as a dedicated non-profit Matrix.org Foundation in the UK.<br />
-</p>
-                  <p className="mxp">It acts as a neutral guardian of the Matrix spec, nurturing and growing Matrix for the benefit of the whole ecosystem.<br />
-</p>
-                  <p>The board of Matrix.org Foundation will be made up of key participants in the Matrix community as well as independent advisors from the wider internet and telco industries.<br />
-</p>
+                  <p className="mxp">Matrix is managed through an open governance process, looked after by <a href="/foundation">The Matrix.org Foundation</a> - a non-profit UK Community Interest Company.<br /></p>
+                  <p className="mxp">It acts as a neutral guardian of the Matrix spec, nurturing and growing Matrix for the benefit of the whole ecosystem.<br /></p>
+                  <p className="mxp">The Guardians are the legal directors of the <a href="/foundation">Foundation</a>, responsible for ensuring that it keeps on mission and neutrally protects the development of Matrix.<br /></p>
                 </div>
               </div>
             </div>
