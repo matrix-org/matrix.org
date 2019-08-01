@@ -292,6 +292,11 @@ const Guides = ({data}) => {
         <td>Nick Congleton</td>
         <td>English</td>
       </tr>
+      <tr>
+        <td><a href="https://jonnev.se/matrix-homeserver-synapse-v0-99-1-1-with-traefik/">Matrix homeserver (v1.0.0) with Docker and Traefik</a></td>
+        <td>Jon Neverland</td>
+        <td>English</td>
+      </tr>
     </tbody>
   </table>
 </div>
