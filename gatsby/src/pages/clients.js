@@ -144,7 +144,7 @@ const ClientsMatrix = ({data}) => {
             <tbody>{
               Object.keys(clients[0].features).map(function(feature) {
                 return (<tr>
-                  <td>{feature.replace(/\_/g, ' ')}</td>
+                  <td>{feature.replace(/_/g, ' ')}</td>
                   {clients.map(function(client, i) {
                     if (!client.features) client.features = {}
                     var featureSupport = client.features[feature];

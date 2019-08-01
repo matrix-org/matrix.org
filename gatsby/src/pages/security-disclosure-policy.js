@@ -2,8 +2,7 @@
 
 import React from 'react'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
-import { Layout, Wrapper, Header, HallOfFameEntry} from '../components'
+import { Layout, HallOfFameEntry} from '../components'
 
 import config from '../../config'
 

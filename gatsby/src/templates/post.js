@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
-import { Layout, Subline, SEO, PrevNext, MXContentMain, MXContentNav, MXInPageTOC } from '../components'
+import { Layout, Subline, SEO, PrevNext, MXContentMain, MXContentNav } from '../components'
 
 const Title = styled.h1`
 `
