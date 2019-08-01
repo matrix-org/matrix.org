@@ -47,6 +47,8 @@ exports.onCreateNode = ({ node, actions }) => {
             console.log(node)
             slug = `/docs/projects/error${slug}`
           }
+      } else if (node.frontmatter.section === "legal") {
+        slug = `/legal${slug}`
       } else {
         slug = `/docs/guides${slug}`
       }
@@ -180,7 +182,7 @@ const resultLegal = await wrapper(
 
   resultLegal.data.allFile.edges.forEach((edge, index) => {
     createPage({
-      path: "/legal/" + _.kebabCase(edge.node.childMdx.frontmatter.title),
+      path: edge.node.childMdx.fields.slug,
       component: noNavTemplate,
       context: {
         slug: edge.node.childMdx.fields.slug
