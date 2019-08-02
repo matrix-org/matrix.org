@@ -373,3 +373,5 @@
 [#status:t2bot.io]: https://matrix.to/#/#status:t2bot.io
 [ma1sd]: https://github.com/ma1uta/ma1sd
 [darnir]: https://matrix.to/#/@darnir:talk.go7box.xyz
+[#jwt-bot:famedly.de]: https://matrix.to/#/#jwt-bot:famedly.de
+[#cli_federation-tester_de:matrix.chat-secure.de]: https://matrix.to/#/#cli_federation-tester_de:matrix.chat-secure.de
