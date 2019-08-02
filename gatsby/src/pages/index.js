@@ -93,7 +93,7 @@ const Index = ({
         <div className="mxblock mxblock--hero">
 <img src="images/matrix-logo-white.svg" alt="" className="mxblock--hero__logo" />
           <h1 className="mxblock--hero__hx delete">An open network for secure, decentralized communication</h1>
-<a href="/docs/guides/getting-involved" className="mxblock__btn mxblock--hero__btn mxblock--hero__btn--mctesto w-button">Learn More</a>
+<a href="/docs/guides/introduction" className="mxblock__btn mxblock--hero__btn mxblock--hero__btn--mctesto w-button">Learn More</a>
 </div>
       </div>
     </div>
