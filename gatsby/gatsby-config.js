@@ -138,6 +138,10 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {}
           },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {}
+          },
         ],
       },
     },
