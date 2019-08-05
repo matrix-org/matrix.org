@@ -29,14 +29,6 @@ const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
               </div>
               <div className="mxblock--project__content__info__row">
                 <div className="mxblock--project__content__info__row__b">
-                  <p>Project Type</p>
-                </div>
-                <div className="mxblock--project__content__info__row__p">
-                  <p>{post.categories[0]}</p>
-                </div>
-              </div>
-              <div className="mxblock--project__content__info__row">
-                <div className="mxblock--project__content__info__row__b">
                   <p>Description</p>
                 </div>
                 <div className="mxblock--project__content__info__row__p">
@@ -83,6 +75,7 @@ const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
                   <p><a href={post.repo}>{post.repo}</a><br /></p>
                 </div>
               </div>
+              {post.home &&
               <div className="mxblock--project__content__info__row">
                 <div className="mxblock--project__content__info__row__b">
                   <p>Homepage</p>
@@ -90,7 +83,8 @@ const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
                 <div className="mxblock--project__content__info__row__p">
                   <p><a href={post.home}>{post.home}</a><br /></p>
                 </div>
-              </div>
+              </div>}
+              {post.room &&
               <div className="mxblock--project__content__info__row">
                 <div className="mxblock--project__content__info__row__b">
                   <p>Matrix Room</p>
@@ -98,7 +92,7 @@ const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
                 <div className="mxblock--project__content__info__row__p">
                   <p><a href={"https://matrix.to/#/" + post.room}>{post.room}</a><br /></p>
                 </div>
-              </div>
+              </div>}
               <MDXRenderer>{postNode.code.body}</MDXRenderer>
             </div>
           </div>
