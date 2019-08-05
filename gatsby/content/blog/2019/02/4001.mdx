@@ -9,7 +9,7 @@ author: Ben Parsons
 <h2 id="matrixlivesynapseroadmapandsynapse09911">Matrix Live, Synapse roadmap and Synapse 0.99.1.1</h2>
 As you may have seen, Matrix Live this week features Neil and Matthew <a href="/blog/2019/02/15/publishing-the-backend-roadmap/">discussing the newly announced backend roadmap</a>.
 
-<div class="video-container"><iframe src="https://www.youtube.com/embed/LfyQ6cNGbLk" width="560" height="315" frameBorder="0" allowFullScreen="allowfullscreen"></iframe></div>
+<iframe src="https://www.youtube.com/embed/LfyQ6cNGbLk" width="560" height="315" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
 
 We also have <a href="https://github.com/matrix-org/synapse/releases/tag/v0.99.1.1">Synapse v0.99.1.1</a> available, as the race to Synapse v1.0 gets closer and closer and closer!
 
@@ -58,7 +58,7 @@ As if this wasn't enough! <a href="https://github.com/poljar/python-olm">python-
 
 In my role as editor of this particular blog post, I enjoy certain luxuries that others might envy. For example, today, I tried a new preview build of FluffyChat. This I installed on my barely-repaired OnePlus One running Ubuntu Touch 16.04.
 
-<div class="video-container"><iframe src="https://www.youtube.com/embed/OMQf-afRZEU" width="560" height="315" frameBorder="0" allowFullScreen="allowfullscreen"></iframe></div>
+<iframe src="https://www.youtube.com/embed/OMQf-afRZEU" width="560" height="315" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
 <h2 id="fractal">Fractal</h2>
 <a href="https://matrix.to/#/@brainblasted:disroot.org">Chris from Fractal</a>:
 <blockquote>Over the past week, <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a> has adapted its main view and room settings views for mobile phones, and implemented long-press for right-clicks on messages for touch devices. It's also received some changes in the backend to use the serde_derive Rust crate instead of parsing JSON by hand.</blockquote><br /><h2 id="matrixtagmanager">matrix-tag-manager</h2><br />To celebrate tags being available again in riot-web, TravisR has created <a href="https://github.com/turt2live/matrix-tag-manager">matrix-tag-manager</a>:<br /><blockquote>If you're a power user which uses room tagging to organize your rooms, I've made a web UI for you: <a href="https://tags.t2bot.io/">https://tags.t2bot.io/</a></blockquote>
@@ -112,6 +112,7 @@ sudo sh -c 'apt update &amp;&amp; apt install matrix-synapse-py3
 </code></pre>
 <blockquote>If you are a Debian or Ubuntu user and Synapse homeserver operator using Matrix.org repositories, I'll be towncrying when this package becomes available as much as I can. All you should need to do then is <code>apt install matrix-archive-keyring</code> and it should patch the security holes in your operating system if you've formerly installed packages from Matrix.org or Riot.im! (The command may change a bit, because next Debian operating system release "Buster" has entered soft-freeze just today (2019-02-12) and not accepting new packages into that release.)<br />PS: I'm at <a href="https://matrix.to/#/#debian-matrix:matrix.org">#debian-matrix:matrix.org</a>, please come talk to us if Debian packaging interests you!</blockquote>
 &nbsp;
+
 <blockquote>For the eager early testers not afraid of building from source, <code>matrix-archive-keyring</code> version <code>2015.12.09+debian0.10</code> is available for early testing (attached).
 <pre><code># Something like this!
 sudo apt install devscripts
@@ -128,10 +129,15 @@ See also:
  	<li><a href="https://wiki.debian.org/DebianRepository/UseThirdParty">DebianRepository/UseThirdParty</a> at Debian Wiki",</li>
 </ul>
 </blockquote>
+
 <a href="/blog/wp-content/uploads/2019/02/keyring-1.png"><img class="alignnone size-full wp-image-4007" src="/blog/wp-content/uploads/2019/02/keyring-1.png" alt="" width="804" height="508" /></a> <a href="/blog/wp-content/uploads/2019/02/keyring-2.png"><img class="alignnone size-full wp-image-4008" src="/blog/wp-content/uploads/2019/02/keyring-2.png" alt="" width="804" height="508" /></a>
+
 <h2 id="gridepo">Gridepo</h2>
+
 <a href="https://matrix.to/#/@max:kamax.io">Max</a> again:
+
 <blockquote><a href="https://gitlab.com/kamax-io/grid/gridepo">Gridepo</a>, as a Matrix Homeserver, is gaining basic support for Matrix Client API. We have basic login, room creationg, message sending and sync working! A little screen recording of the progress can be viewed <a href="https://kamax.io/_matrix/media/v1/download/kamax.io/EOMDDlNERTqalHvADhokyItG">here</a> for live action with Riot. As a reminder, Gridepo is a clean rewrite of <a href="https://github.com/kamax-io/mxhsd">mxhsd</a>.<br /><br />This is not usable yet outside of a dev environment but we should have a first usable version with federation in a couple of weeks!</blockquote>
+
 <h2 id="mentionbotspage">Mention Bots page</h2>
 We have a new location for listing bots: <a href="/docs/projects/bots">https://matrix.org/docs/projects/bots</a>, message <a href="https://matrix.to/#/@benpa:matrix.org">benpa</a> with any you think should be included!
 <h2 id="thatsalliknow">That's all I know</h2>
