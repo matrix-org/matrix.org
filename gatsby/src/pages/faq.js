@@ -913,7 +913,7 @@ Usage of an IS is not required in order for a client application to be part of t
 </div>
 <div class="question">
 <h4 id="what-are-communities%3F"><a class="permalink" href="#what-are-communities%3F" aria-hidden="true">&#128279;</a> What are communities?</h4>
-<p><a href="https://matrix.to/#/+matrix:matrix.org">+matrix:matrix.org</a>.</p>
+<p>Groups are now known as communities, they are collections of rooms. <a href="https://matrix.to/#/+matrix:matrix.org">+matrix:matrix.org</a> is the official community containing rooms managed by the core Matrix team.</p>
 <div class="definition-list">
 <div class="definition-item definition-community">
 <p><strong>community</strong></p>
