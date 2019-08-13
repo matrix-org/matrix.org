@@ -351,7 +351,7 @@ full details on how to contribute to the project.  All are welcome!</p>
 <ul>
 <li>if you're using GNOME, try <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a></li>
 <li><a href="https://github.com/Nheko-Reborn/nheko">Nheko</a> is a glossy native desktop app for Matrix, based on Qt5.</li>
-<li><a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> is a cross-platform desktop client based on Qt5/QML</li>
+<li><a href="https://github.com/quotient-im/Quaternion">Quaternion</a> is a cross-platform desktop client based on Qt5/QML</li>
 <li>if you prefer a command line client, there is a <a href="/docs/projects/client/weechat.html">Matrix plugin for Weechat</a></li>
 <li><a href="https://github.com/f0x52/neo">neo</a> is a Matrix React.js webclient</li>
 <li><a href="https://github.com/neilalexander/seaglass">Seaglass</a> is a recently announced (as of July 2018) client written as a native macOS app</li>
@@ -443,7 +443,7 @@ built by <a href="/jenkins/job/VectorAndroidDevelop">Jenkins</a>. Use it at your
 <ul>
 <li>if you're using GNOME, try <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a></li>
 <li><a href="https://github.com/Nheko-Reborn/nheko">Nheko</a> is a glossy native desktop app for Matrix, based on Qt5.</li>
-<li><a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> is a cross-platform desktop client based on Qt5/QML</li>
+<li><a href="https://github.com/quotient-im/Quaternion">Quaternion</a> is a cross-platform desktop client based on Qt5/QML</li>
 <li><a href="https://github.com/neilalexander/seaglass">Seaglass</a> is a recently announced (as of July 2018) client written as a native macOS app</li>
 </ul>
 <p>There are also other desktop clients - check the list of clients on <a href="/docs/projects/try-matrix-now.html#clients">matrix.org</a>.</p>

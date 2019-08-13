@@ -71,7 +71,7 @@ const TryMatrixNow = ({data}) => {
                 <h4 className="mxgrid__item__bg__hx">
                 <a href="/docs/projects/client/quaternion">Quaternion</a></h4>
                 <p className="mxgrid__item__bg__p">A cross-platform desktop client based on Qt5/QML.</p>
-                <div className="mxgrid__item__bg__vert"><img src="https://raw.githubusercontent.com/QMatrixClient/Quaternion/master/quaternion.png" alt="" className="mxgrid__item__bg__img"/></div>
+                <div className="mxgrid__item__bg__vert"><img src="https://raw.githubusercontent.com/quotient-im/Quaternion/master/quaternion.png" alt="" className="mxgrid__item__bg__img"/></div>
               </div>
             </div>
             <div className="mxgrid_item33">
