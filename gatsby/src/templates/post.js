@@ -43,9 +43,9 @@ const Post = ({ pageContext: { slug, prev, next, posts }, data: { mdx: postNode 
           </PostContent>
           <PrevNext prev={prev} next={next} />
         </MXContentMain>
-        <div className="mxcontent__nav">{
+        <div>{
           toc &&
-        <MXContentNav title="Contents" content={toc} currentSlug={slug}></MXContentNav>}
+        <MXContentNav title="Post Contents" content={toc} currentSlug={slug}></MXContentNav>}
         <MXContentNav title="All posts" content={posts} currentSlug={slug}></MXContentNav>
         </div>
     </Layout>
