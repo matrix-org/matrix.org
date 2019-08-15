@@ -8,7 +8,7 @@ import config from '../../../config'
 
 const Guides = ({data}) => {
 
-    return (<Layout navmode="develop">
+    return (<Layout navmode="discover">
         <MXContentMain>
           <Helmet title={`Guides | ${config.siteTitle}`} />
           <div className="mxblock mxblock--develop">
@@ -18,7 +18,7 @@ const Guides = ({data}) => {
               <div className="mxgrid__item__bg mxgrid__item__bg--develop">
 <img src="/images/music_play_button.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                 <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/guides/getting-involved">Get Started</a></h4>
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/guides/introduction">Introduction</a></h4>
                   <p className="mxgrid__item__bg__p">How to get started with Matrix<br /></p>
                 </div>
               </div>
@@ -47,6 +47,44 @@ const Guides = ({data}) => {
                 <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
                   <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/guides/moderation">Moderation</a></h4>
                   <p className="mxgrid__item__bg__p">How to manage and moderate Matrix rooms<br /></p>
+                </div>
+              </div>
+            </div>
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--develop">
+<img src="/images/basic_elaboration_message_happy.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/projects/try-matrix-now">Try Matrix Now</a></h4>
+                  <p className="mxgrid__item__bg__p">Find a comprehensive list of Matrix-related projects<br /></p>
+                </div>
+              </div>
+            </div>
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--develop">
+<img src="/images/software_layout_header_sideleft.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/clients">Clients</a></h4>
+                  <p className="mxgrid__item__bg__p">Find a Matrix Client for you<br /></p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--develop">
+<img src="/images/basic_share.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/bridges">Bridges</a></h4>
+                  <p className="mxgrid__item__bg__p">Bridge to platforms outside Matrix<br /></p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--develop">
+<img src="/images/basic_spread_text.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="https://matrix.org/docs/spec">Spec</a></h4>
+                  <p className="mxgrid__item__bg__p">The Matrix Specification<br /></p>
                 </div>
               </div>
             </div>
@@ -125,10 +163,6 @@ const Guides = ({data}) => {
   </table>
 </div>
 
-<h2 id="guides-list">Guides List</h2>
-
-<p>This collection of guides is taken from around the web. If you have used a guide, and recommend it, please go ahead and click “Recommend” on the right, and we’ll use this to sort the articles by recommendations.</p>
-
 <div className="width-100">
   <table className="legacy-table">
     <tbody>
@@ -138,7 +172,7 @@ const Guides = ({data}) => {
   </table>
 </div>
 
-<h3 id="introduction-for-users">Introduction for Users</h3>
+<h2 id="introduction-for-users">Introduction for Users</h2>
 
 <div className="width-100">
   <table className="legacy-table">
@@ -169,61 +203,7 @@ const Guides = ({data}) => {
   </table>
 </div>
 
-<div className="width-100">
-  <table className="legacy-table">
-    <tbody>
-      <tr>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<h3 id="introduction-for-developers">Introduction for Developers</h3>
-
-<div className="width-100">
-  <table className="legacy-table">
-    <thead>
-      <tr>
-        <th>Article</th>
-        <th>Author</th>
-        <th>Language</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="https://brendan.abolivier.bzh/enter-the-matrix/">Enter the Matrix</a></td>
-        <td>Brendan</td>
-        <td>English</td>
-      </tr>
-      <tr>
-        <td><a href="https://t2bot.io/docs/access_tokens/">Obtain Access Tokens from Riot</a></td>
-        <td>TravisR</td>
-        <td>English</td>
-      </tr>
-      <tr>
-        <td><a href="https://gist.github.com/RickCogley/69f430d4418ae5498e8febab44d241c9">Testing the matrix.org client-server API</a> using cURL</td>
-        <td><a href="https://github.com/RickCogley">Rick Cogley</a></td>
-        <td>English</td>
-      </tr>
-      <tr>
-        <td><a href="/docs/guides/made-for-matrix-badge">Made for Matrix Badge Guidelines</a> (add this to your project page)</td>
-        <td>matrix.org</td>
-        <td>English</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div className="width-100">
-  <table className="legacy-table">
-    <tbody>
-      <tr>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<h3 id="installing-synapse">Installing Synapse</h3>
+<h2 id="installing-synapse">Installing Synapse</h2>
 
 <p>To install Synapse, we recommend taking a look at the <a href="/docs/guides/installing-synapse">Installing Synapse</a> guide page. Other articles are listed below.</p>
 
@@ -301,16 +281,55 @@ const Guides = ({data}) => {
   </table>
 </div>
 
+<h2 id="synapse-maintenance">Synapse Maintenance</h2>
+
 <div className="width-100">
   <table className="legacy-table">
+    <thead>
+      <tr>
+        <th>Article</th>
+        <th>Author</th>
+        <th>Language</th>
+      </tr>
+    </thead>
     <tbody>
       <tr>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/metrics-howto.rst">How to monitor Synapse metrics using Prometheus</a></td>
+          <td>Synapse Team</td>
+          <td>English</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/postgres.rst">Using Postgres</a></td>
+          <td>Synapse Team</td>
+          <td>English</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.rst">How to enable VoIP relaying on your Home Server with TURN</a></td>
+          <td>Synapse Team</td>
+          <td>English</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/federate.md">Setting up Federation</a></td>
+          <td>Synapse Team</td>
+          <td>English</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/server_notices.md">Use of Server Notices</a></td>
+          <td>Synapse Team</td>
+          <td>English</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/opentracing.rst">Use of OpenTracing</a></td>
+          <td>Synapse Team</td>
+          <td>English</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<h3 id="understanding-end-to-end-encryption">Understanding End-to-End Encryption</h3>
+There are many other <a href="https://github.com/matrix-org/synapse/tree/master/docs">howtos and documents in the Synapse repo</a>.
+
+<h2 id="understanding-end-to-end-encryption">Understanding End-to-End Encryption</h2>
 
 <div className="width-100">
   <table className="legacy-table">

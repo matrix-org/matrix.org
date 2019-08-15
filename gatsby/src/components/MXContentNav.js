@@ -5,9 +5,9 @@ const MXContentNav = ({title, content, currentSlug, tableOfContents}) => {
     if (currentSlug && currentSlug.indexOf("/docs") === 0) {
         navClass += " mxcontent__nav--left";
     }
-    if (currentSlug && currentSlug.indexOf("/blog") === 0) {
-        navClass = "";
-    }
+    //if (currentSlug && currentSlug.indexOf("/blog") === 0) {
+    //    navClass = "";
+    //}
     var tocRendered = false;
     return (
     <div className={navClass}>
