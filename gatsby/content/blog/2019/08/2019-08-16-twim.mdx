@@ -80,6 +80,22 @@ Jason said:
 
 Learn more in [#construct:zemos.net]
 
+### Dendrite
+
+[anoa]:
+
+> Progress for Dendrite this week has been a bit starved due to ongoing privacy work from the backend team. However it continues to move forwards with the excellent help of [cnly](https://matrix.to/#/@cnly:matrix.org) reviewing and merging PRs.
+>
+> We had **3 authors** have pushed **5 commits** to master and **6 commits** to all branches. On master, **14 files** have changed and there have been [298 additions and 121 deletions](https://github.com/matrix-org/dendrite/compare/master@%7B1565369184%7D...master).
+>
+> Notably we had [trion129](https://matrix.to/#/@trion129:matrix.org)’s work on [providing a fallback webpage for recaptcha authentication](https://github.com/matrix-org/dendrite/pull/405) finally merged! This was another early PR that was dragged up from the bottom of the list to be modernised and integrated into the current codebase.
+>
+> Also this week was [some work](https://github.com/matrix-org/dendrite/pull/785) from cnly on refactoring gomatrixserverlib and exposing some more of its internal constants to deduplicate code between itself and Dendrite.
+>
+> Finally, we had some more work on [an unmerged PR](https://github.com/matrix-org/dendrite/pull/781) from cnly, which adds some internal query APIs for which servers are currently joined to a room, for use by other components later down the line.
+>
+> No new Sytests are passing this week. We’re still currently at **172 tests** passing out of **761 tests** in total.
+
 ### Matrixmon updated
 
 Matrixmon, the perl C2S testing utility [has been updated](https://github.com/matrix-org/matrixmon/releases/tag/v0.2.0) to v0.2.0 with support for SSL connections.
@@ -219,3 +235,4 @@ See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
 [#construct:zemos.net]: https://matrix.to/#/#construct:zemos.net
 [mautrix-facebook]: https://github.com/tulir/mautrix-facebook
 [#FrOSCon:fiksel.info]: https://matrix.to/#/#FrOSCon:fiksel.info
+[anoa]: https://matrix.to/#/@andrewm:amorgan.xyz
