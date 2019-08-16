@@ -280,8 +280,7 @@
 [Spectral]: https://gitlab.com/b0/spectral
 [status.matrix.org]: https://status.matrix.org/
 [Stefan]: https://matrix.to/#/@natrius:matrix.org
-[swedneck]: https://matrix.to/#/@swedneck:swedneck.xyz
-[swedneck]: https://matrix.to/#/@swedneck:swedneck.xyz
+[swedneck]: https://matrix.to/#/@swedneck:permaweb.io
 [synapse-netcore-workers]: https://github.com/turt2live/synapse-netcore-workers
 [synapse]: https://github.com/matrix-org/synapse/
 [t2bot.io]: https://t2bot.io/
@@ -376,3 +375,5 @@
 [#jwt-bot:famedly.de]: https://matrix.to/#/#jwt-bot:famedly.de
 [#cli_federation-tester_de:matrix.chat-secure.de]: https://matrix.to/#/#cli_federation-tester_de:matrix.chat-secure.de
 [#quotient:matrix.org]: https://matrix.to/#/#quotient:matrix.org
+[#construct:zemos.net]: https://matrix.to/#/#construct:zemos.net
+[mautrix-facebook]: https://github.com/tulir/mautrix-facebook
