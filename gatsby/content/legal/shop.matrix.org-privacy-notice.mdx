@@ -30,9 +30,9 @@ Email: [support@vector.im](mailto:support@vector.im)
 
 Postal address:
 
-10 Queen Street Place<BR>
-London<BR>
-United Kingdom<BR>
+10 Queen Street Place  
+London  
+United Kingdom  
 EC4R 1AG
 
 ##### The Matrix.org Foundation C.I.C.
