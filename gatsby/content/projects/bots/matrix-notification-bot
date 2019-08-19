@@ -1,0 +1,14 @@
+---
+layout: project
+title: Matrix-remind-me-bot
+categories: 
+ - bot
+description: A remind me bot for Matrix.org's synapse.
+author: joakimvonanka
+maturity: Beta
+language: Javascript
+license: MIT
+repo: https://github.com/joakimvonanka/Matrix-Remind-me-bot
+---
+
+A Matrix bot using matrix-bot-sdk to send reminders to users.
