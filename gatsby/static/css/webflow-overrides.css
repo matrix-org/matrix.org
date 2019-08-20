@@ -113,8 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .legacy-table td, tr, th {
-  padding-right: 20px;
-  padding-bottom: 4px;
+  padding: 10px 20px;
   text-align: center;
 }
 
@@ -123,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .legacy-table > tbody > tr:nth-child(odd) {
-  background-color: #ddd;
+  background-color: #f4f4f4;
 }
 
 .legacy-table td:nth-child(1) {
@@ -199,7 +198,7 @@ div.title {
 #questions-wrapper h2, #questions-wrapper h3, #questions-wrapper h4 {
   padding-top: 75px;
   margin-top: -75px;
-} 
+}
 
 .green {
   color: #78A830;
@@ -211,4 +210,23 @@ div.title {
 }
 .red {
   color: #D84830;
+}
+
+.mxgrid.mxgrid--clients {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  background-color: #f4f4f4;
+  padding: 10px 20px;
+  margin: 20px 0px 40px 0px;
+}
+
+.mxgrid_item33.mxgrid_item33--clients {
+  padding: 10px;
+}
+
+label {
+  font-weight: normal;
+  margin: 10px 0px;
 }
