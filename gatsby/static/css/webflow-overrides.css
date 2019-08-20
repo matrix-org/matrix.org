@@ -230,3 +230,7 @@ label {
   font-weight: normal;
   margin: 10px 0px;
 }
+
+.mxcontent {
+  width: 100%;
+}
