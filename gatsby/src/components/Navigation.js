@@ -80,12 +80,12 @@ const Navigation = (navmode) => (
 <img src="/images/matrix-logo.svg" alt="" className="mxnavbar__logo" />
 </a>
         <nav role="navigation" className="mxnavbar__navmenu w-nav-menu">
-          <a href="https://shop.matrix.org" className={"mxnavbar__navlink w-nav-link "}>Shop</a>
           <a href="/docs/guides" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "discover" ? "w--current":"")}>Discover</a>
           <a href="/docs/develop" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "develop" ? "w--current":"")}>Develop</a>
+          <a href="/foundation" className="mxnavbar__navlink w-nav-link ">Foundation</a>
           <a href="/blog/posts" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "blog" ? "w--current":"")}>Blog</a>
           <a href="/faq" className="mxnavbar__navlink w-nav-link">FAQs</a>
-          <a href="/foundation" className="mxnavbar__navlink w-nav-link ">Foundation</a>
+          <a href="https://shop.matrix.org" className={"mxnavbar__navlink w-nav-link "}>Shop</a>
           <a href="/try-now" className="mxnavbar__navlink mxnavbar__navlink--try w-nav-link">Try Now</a>
           <a href="/try-now" className="mxnavbar__navlink mxnavbar__navlink--primary w-nav-link">Try Now</a>
         </nav>
