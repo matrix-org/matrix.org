@@ -20,28 +20,30 @@ const ClientsMatrix = ({data}) => {
           </Helmet>
           <h1>Clients Matrix</h1>
           <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="/docs/projects/try-matrix-now/">try-matrix-now</a>. To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a></p>
-          <div className="mxgrid mxgrid--discover" style={{"border": "solid 1px black","padding": "10px"}}>
+          <div className="mxgrid mxgrid--clients">
             <div className="mxgrid_item33">
-              Select your platform:
+              <h3 style={{"line-height": "0px", "padding-bottom": "10px"}}>
+                Select your platform:
+              </h3>
             </div>
-            <div className="mxgrid_item33"></div>
-            <div className="mxgrid_item33"></div>
-            <div className="mxgrid_item33">
+            <div className="mxgrid_item33 mxgrid_item33--clients"></div>
+            <div className="mxgrid_item33 mxgrid_item33--clients"></div>
+            <div className="mxgrid_item33 mxgrid_item33--clients">
               <input type="radio" name="platform" id="linux" /><label htmlFor="linux"> Linux</label>
             </div>
-            <div className="mxgrid_item33">
+            <div className="mxgrid_item33 mxgrid_item33--clients">
               <input type="radio" name="platform" id="mac" /><label htmlFor="mac"> MacOS</label>
             </div>
-            <div className="mxgrid_item33">
+            <div className="mxgrid_item33 mxgrid_item33--clients">
               <input type="radio" name="platform" id="windows" /><label htmlFor="windows"> Windows</label>
             </div>
-            <div className="mxgrid_item33">
+            <div className="mxgrid_item33 mxgrid_item33--clients">
               <input type="radio" name="platform" id="android" /><label htmlFor="android"> Android</label>
             </div>
-            <div className="mxgrid_item33">
+            <div className="mxgrid_item33 mxgrid_item33--clients">
               <input type="radio" name="platform" id="ios" /><label htmlFor="ios"> iOS</label>
             </div>
-            <div className="mxgrid_item33">
+            <div className="mxgrid_item33 mxgrid_item33--clients">
               <input type="radio" name="platform" id="ubuntutouch" /><label htmlFor="ubuntutouch"> Ubuntu Touch</label>
             </div>
           </div>
@@ -70,7 +72,7 @@ const ClientsMatrix = ({data}) => {
                       platformClass = "green";
                       platformSupport = "✓";
                     }
-                    
+
                     return (
                       <td className={platformClass} data-platforms={client.platformString}>{platformSupport}</td>
                     )
@@ -96,7 +98,7 @@ const ClientsMatrix = ({data}) => {
             <tbody>
               <tr>
                 <td>Repo</td>
-                {clients.map(function(client, i) {                    
+                {clients.map(function(client, i) {
                     return (
                       <td data-platforms={client.platformString}>
                         <a href={client.repo}>{client.repo.split('/')[2]}</a>
@@ -106,7 +108,7 @@ const ClientsMatrix = ({data}) => {
               </tr>
               <tr>
                 <td>Matrix Room</td>
-                {clients.map(function(client, i) {                    
+                {clients.map(function(client, i) {
                     return (
                       <td data-platforms={client.platformString}>
                         <small><a href={"https://matrix.to/#/" + client.room}>{client.room}</a></small>
@@ -118,7 +120,7 @@ const ClientsMatrix = ({data}) => {
               ["language","SDK"].map(function(detail) {
                 return (<tr>
                   <td>{detail.charAt(0).toUpperCase() + detail.slice(1)}</td>
-                  {clients.map(function(client, i) {                    
+                  {clients.map(function(client, i) {
                     return (
                       <td data-platforms={client.platformString}>{client[detail]}</td>
                     )
@@ -171,7 +173,7 @@ const ClientsMatrix = ({data}) => {
 }
 
 
-export const query = graphql`{ 
+export const query = graphql`{
  allMdx(filter: {
    frontmatter: {
      categories: {in: ["client"]},
