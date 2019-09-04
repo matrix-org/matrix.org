@@ -63,7 +63,7 @@ It is an online store at which you can purchase Matrix.org-branded merchandise, 
 
 ## 3. Access to Your Data / Privacy Policy
 
-### 3.1 What is the legal basis for processing my data and how does this affect my rights under GDPR (General Data Protection Regulation
+### 3.1 What is the legal basis for processing my data and how does this affect my rights under GDPR (General Data Protection Regulation)
 
 #### 3.1.1 Legal Basis for Processing
 
