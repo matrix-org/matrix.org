@@ -377,3 +377,4 @@
 [#quotient:matrix.org]: https://matrix.to/#/#quotient:matrix.org
 [#construct:zemos.net]: https://matrix.to/#/#construct:zemos.net
 [mautrix-facebook]: https://github.com/tulir/mautrix-facebook
+[shop.matrix.org]: https://shop.matrix.org
