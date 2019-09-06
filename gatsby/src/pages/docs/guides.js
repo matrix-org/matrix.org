@@ -373,7 +373,7 @@ There are many other <a href="https://github.com/matrix-org/synapse/tree/master/
     <tbody>
       <tr>
         <td><a href="https://github.com/vector-im/riot-web/blob/develop/docs/translating.md">How to translate Riot-Web</a></td>
-        <td>Riot-Web Team/td>
+        <td>Riot-Web Team</td>
         <td>English</td>
       </tr>
     </tbody>
