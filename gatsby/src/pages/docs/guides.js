@@ -359,6 +359,27 @@ There are many other <a href="https://github.com/matrix-org/synapse/tree/master/
   </table>
 </div>
 
+<h2 id="translations">Translations</h2>
+
+<div className="width-100">
+  <table className="legacy-table">
+    <thead>
+      <tr>
+        <th>Article</th>
+        <th>Author</th>
+        <th>Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://github.com/vector-im/riot-web/blob/develop/docs/translating.md">How to translate Riot-Web</a></td>
+        <td>Riot-Web Team/td>
+        <td>English</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <h2 id="video-guides">Video Guides</h2>
 
 <div className="width-100">
