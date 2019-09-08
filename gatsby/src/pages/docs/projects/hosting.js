@@ -10,7 +10,7 @@ const Hosting = ({data}) => {
  
     return (<Layout navmode="discover">
         <MXContentMain>
-          <Helmet title={`SDKs | ${config.siteTitle}`} />
+          <Helmet title={`Hosting | ${config.siteTitle}`} />
           <h1 id="matrix-hosting">Matrix Hosting</h1>
 
             <div class="hosting-provider">
