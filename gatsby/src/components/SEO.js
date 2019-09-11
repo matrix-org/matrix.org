@@ -15,7 +15,7 @@ const SEO = props => {
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
   const homeURL = `${config.siteUrl}${realPrefix}`
   const URL = `${homeURL}${postPath || ''}`
-  const defaultImage = `${homeURL}${config.siteBanner}`
+  const defaultImage = `https://matrix.org/blog/img/splash.jpg`
   image = defaultImage
   twitter_card_mode = "summary"
 
