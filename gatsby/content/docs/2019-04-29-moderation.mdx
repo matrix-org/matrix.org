@@ -32,6 +32,7 @@ Redactions are a best-effort system - there is no way to force other servers or 
 
 It is common for servers not to immediately delete redacted messages from their database - this is a deliberate moderation feature, letting server admins handle redaction-abuse (e.g. users sending and then immediately redacting obnoxious messages) by checking their databases if needed.
 
+If you're using Riot, clicking on a user to bring up more information about them will show a 'remove recent messages' button which allows you to redact the user's events. It'll only get the events that Riot can see, but can help when a room is being spammed by a bad actor.
 
 ### Managing abusive display names, avatars etc
 
@@ -132,7 +133,7 @@ In the early days of Matrix we proposed the concept of ‘active application ser
 
 
 
-*   Support for bulk redactions (looping over individual redactions is a viable workaround however) 
+*   Support for bulk redactions (looping over individual redactions is a viable workaround however)
 *   Ability for room moderators to delete content from the media repository when redacting the event which refers to it. (this can be improved in future)
 *   UI for setting server ACLs ([https://github.com/vector-im/riot-web/issues/7084](https://github.com/vector-im/riot-web/issues/7084))
 
@@ -153,33 +154,35 @@ We publish the policy documents for use of the Matrix.org server at [https://git
 
 Currently, administration of matrix servers is done by implementation-specific API, although we are working on providing a web GUI for administration as well as providing a standardised admin API as part of the Matrix spec.  The documentation of the API exposed by Synapse is: [https://github.com/matrix-org/synapse/tree/master/docs/admin_api](https://github.com/matrix-org/synapse/tree/master/docs/admin_api).
 
-The most important admin features from a moderation perspective are deactivating abusive users from your server, removing abusive rooms, and removing abusive content. 
+The most important admin features from a moderation perspective are deactivating abusive users from your server, removing abusive rooms, and removing abusive content.
 
-Deactivating users is done by calling the /admin/deactivate API - see [https://github.com/matrix-org/synapse/blob/master/docs/admin_api/user_admin_api.rst#deactivate-account](https://github.com/matrix-org/synapse/blob/master/docs/admin_api/user_admin_api.rst#deactivate-account) for details.  An example is:
-
-
-```
-curl -X POST -H "Authorization: Bearer $token" "https://matrix.org/_matrix/client/r0/admin/deactivate/$user" --data '{}'
-```
-
-
-Removing abusive rooms is done by calling the /admin/shutdown API, e.g:
+Deactivating users is done by calling the /deactivate API - see [https://github.com/matrix-org/synapse/blob/master/docs/admin_api/user_admin_api.rst#deactivate-account](https://github.com/matrix-org/synapse/blob/master/docs/admin_api/user_admin_api.rst#deactivate-account) for details.  An example is:
 
 
 ```
-curl 'https://matrix.org/_matrix/client/r0/admin/shutdown_room/!roomid:matrix.org' \
+curl -X POST -H "Authorization: Bearer $token" "https://matrix.org/_synapse/admin/v1/deactivate/$user" --data '{}'
+```
+
+If you're using Riot, when you go to view more information about a particular user there will be a 'deactivate user' button which does this for you. Note that only users on your homeserver can be deactivated, provided you have the admin permissions to do so.
+
+
+Removing abusive rooms is done by calling the /shutdown_room API, e.g:
+
+
+```
+curl 'https://matrix.org/_synapse/admin/v1/shutdown_room/!roomid:matrix.org' \
 -H "Authorization: Bearer $token" -XPOST \
 -d'{"new_room_user_id": "@abuse:matrix.org", "message": "This room has been removed from the matrix.org homeserver due to violating the terms of use.", "room_name": "Room unavailable"}'
 ```
 
 
-This removes all local users from the room, routing them into a new room (called ‘Room unavailable’ in this example), repoints any local aliases to the new room, and blacklists the server from participating in the original room going forwards.
+This removes all local users from the room, routing them into a new room (called ‘Room unavailable’ in this example), repoints any local aliases to the new room, and blacklists the server from participating in the original room going forwards. This is particularly useful if the room in question is spamming invites at your users: blocking the room will stop the invites from getting through, and allow your users to reject the invite they had prior.
 
 Removing abusive content en masse from a room is done by calling the /admin/quarantine_media API, e.g.
 
 
 ```
-curl 'https://matrix.org/_matrix/client/r0/admin/quarantine_media/!room_id:matrix.org' -H "Authorization: Bearer $token" -XPOST
+curl 'https://matrix.org/_synapse/admin/v1/quarantine_media/!room_id:matrix.org' -H "Authorization: Bearer $token" -XPOST
 ```
 
 
@@ -194,7 +197,7 @@ Synapse exposes the history of a given user’s IP to the server admin via the /
 
 
 ```
-curl 'https://matrix.org/_matrix/client/r0/admin/whois/@test:matrix.org' -H "Authorization: Bearer $token" | jq .
+curl 'https://matrix.org/_synapse/admin/v1/whois/@test:matrix.org' -H "Authorization: Bearer $token" | jq .
 {
   "user_id": "@test:matrix.org",
   "devices": {
@@ -223,6 +226,8 @@ Synapse does not currently provide tools to block connections by IP - instead we
 
 
 ### Banning servers
+
+Synapse supports a module-like system which can be used to block servers from doing certain actions, such as sending invites to your users. [t2bot/synapse-simple-antispam](https://github.com/t2bot/synapse-simple-antispam) is one example of how this works - see the code for a bit more information on what is possible. Although this won't prevent servers from interacting with your server, it can help with reducing the amount of spam/malicious content.
 
 “Defederating” your server from another server is currently done on a room by room basis - either using server ACLs if you have control of the room in question, or by using the /shutdown_room API if you do not.
 
@@ -266,7 +271,7 @@ No matter how great your room moderators and server admins happen to be, it is i
 
 ### Reporting bad content
 
-We provide two mechanisms today to let users report abusive content to their server admin (i.e. content which is against the terms of use of their server).  On Riot/iOS and Riot/Android, this is the “Report Content” menu button, which calls the /report API ([https://matrix.org/docs/spec/client_server/latest.html#reporting-content](https://matrix.org/docs/spec/client_server/latest.html#reporting-content)) on the server to flag the message in question.
+We provide two mechanisms today to let users report abusive content to their server admin (i.e. content which is against the terms of use of their server).  In Riot, this is the “Report Content” menu button, which calls the /report API ([https://matrix.org/docs/spec/client_server/latest.html#reporting-content](https://matrix.org/docs/spec/client_server/latest.html#reporting-content)) on the server to flag the message in question.
 
 Alternatively, server admins should advertise an abuse email address for gathering reports of abusive content (e.g. abuse-at-matrix.org is Matrix.org’s abuse contact address).
 
@@ -325,5 +330,3 @@ See [#matrix-reputation:matrix.org](https://matrix.to/#/#matrix-reputation:matri
 ## Conclusion
 
 Matrix provides a comprehensive set of moderation tools today, with scope for further refinements in future as detailed in the ‘outstanding issues’ sections above (as of April 2019).  As the Matrix.org team, In practice we use the features above to relatively successfully admin one of the largest servers on the network (matrix.org itself, with ~70K concurrent users), and to moderate one of the larger communities on the network ([+matrix:matrix.org](https://matrix.to/#/+matrix:matrix.org); ~30 rooms with over 10K users present).
-
-
