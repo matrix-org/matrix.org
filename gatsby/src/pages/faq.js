@@ -861,7 +861,7 @@ a non-Matrix client from one of the networks which has been bridged in).</p>
 </div>
 <div class="question">
 <h4 id="what-is-an-identity-server%3F"><a class="permalink" href="#what-is-an-identity-server%3F" aria-hidden="true">&#128279;</a> What is an identity server?</h4>
-<p>Users in Matrix are identified internally via their <a href="#definitions">3PID</a>) namespaces such as email addresses or phone numbers should be used publicly to identify Matrix users, at least for invitation purposes.  A Matrix &quot;Identity&quot; describes both the user ID and any other existing IDs from third party namespaces linked to their account.</p>
+<p>Users in Matrix are identified internally via their <a href="#definitions">3PID</a> namespaces such as email addresses or phone numbers should be used publicly to identify Matrix users, at least for invitation purposes.  A Matrix &quot;Identity&quot; describes both the user ID and any other existing IDs from third party namespaces linked to their account.</p>
 <p>Matrix users can link third-party IDs (3PIDs) to their user ID. Linking 3PIDs creates a mapping from a 3PID to a user ID. This mapping can then be used by Matrix users in order to discover the MXIDs of their contacts.</p>
 <p>In order to ensure that the mapping from 3PID to user ID is genuine, the intention is for a globally federated cluster of trusted &quot;Identity Servers&quot; (IS) be used to verify the 3PID and persist and replicate the mappings.
 Usage of an IS is not required in order for a client application to be part of the Matrix ecosystem. However, without one clients will not be able to look up user IDs using 3PIDs.</p>
