@@ -6,9 +6,14 @@ import { Layout, MXContentMain} from '../components'
 
 import config from '../../config'
 
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { graphql } from 'gatsby'
 
-
-const Faq = () => {
+const Faq = ({data}) => {
+    const sections = data.allMdx.edges;
+    const encryption = sections.find((element) => {    
+        return element.node.frontmatter.faq_section === "encryption";
+    });
     return (<Layout hasNavPadding="true">
             <Helmet title={`FAQ | ${config.siteTitle}`} />
             <MXContentMain>
@@ -974,14 +979,8 @@ Usage of an IS is not required in order for a client application to be part of t
 <li><a href="https://github.com/Nheko-Reborn/nheko">nheko</a></li>
 </ul>
 <p>E2E will also presently be available in the <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a>.</p>
-<div class="definition-list">
-<div class="definition-item definition-riot">
-<p><strong>Riot</strong></p>
-<p>Riot is a popular matrix client developed by the core matrix.org team. <a href="/docs/projects/try-matrix-now.html">It's available as a web app, on Android and on iOS</a>.</p>
 </div>
-<div class="definition-close">close</div>
-</div>
-</div>
+<MDXRenderer>{encryption.node.code.body}</MDXRenderer>
 <h3 id="the-spec"><a class="permalink" href="#the-spec" aria-hidden="true">&#128279;</a> The Spec</h3>
 <div class="question">
 <h4 id="what-is-the-spec%3F"><a class="permalink" href="#what-is-the-spec%3F" aria-hidden="true">&#128279;</a> What is The Spec?</h4>
@@ -1262,5 +1261,20 @@ Usage of an IS is not required in order for a client application to be part of t
         </div>
     </Layout>)
 }
+
+export const query = graphql`{
+    allMdx(filter: {frontmatter: {section: {in: ["faq"]}}}) {
+      edges {
+        node {
+          frontmatter{
+            faq_section
+          }
+          code {
+            body
+          }
+        }
+      }
+    }
+  }`
 
 export default Faq

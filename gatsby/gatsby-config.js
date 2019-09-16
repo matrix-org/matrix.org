@@ -107,6 +107,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'faq',
+        path: `${__dirname}/content/faq`,
+      },
+    },
+    {
       resolve: 'gatsby-mdx',
       options: {
         gatsbyRemarkPlugins: [

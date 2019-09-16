@@ -1,0 +1,12 @@
+---
+section: faq
+faq_section: encryption
+---
+
+#### Why does Riot say "Send a message (unencrypted)" in the text field?
+
+If a room is not using End-to-End Encryption, Riot will signal this by reminding you before you type a message. Note that Matrix messages are still transmitted using HTTPS: "unencrypted" in this case means that the messages are stored unencrypted on participating servers.
+
+#### Why are large public rooms like #matrix:matrix.org not encrypted?
+
+There is no value in encrypting public rooms. If anyone can join the room then encryption does not protect the contents, and may offer inconvenience for some users.
