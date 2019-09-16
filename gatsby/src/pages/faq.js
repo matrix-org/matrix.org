@@ -14,6 +14,9 @@ const Faq = ({data}) => {
     const encryption = sections.find((element) => {    
         return element.node.frontmatter.faq_section === "encryption";
     });
+    const position = sections.find((element) => {    
+        return element.node.frontmatter.faq_section === "position-in-the-world";
+    });
     return (<Layout hasNavPadding="true">
             <Helmet title={`FAQ | ${config.siteTitle}`} />
             <MXContentMain>
@@ -691,33 +694,7 @@ standard body to maintain it going forwards.</p>
 <div class="definition-close">close</div>
 </div>
 </div>
-<div class="question">
-<h4 id="what-is-the-current-project-status%3F"><a class="permalink" href="#what-is-the-current-project-status%3F" aria-hidden="true">&#128279;</a> What is the current project status?</h4>
-<p>A very quick recap by-the-numbers:</p>
-<ul>
-<li>Started out in Sept 2014</li>
-<li>Currently in very late beta</li>
-<li>~3.6M user accounts on the Matrix.org homeserver</li>
-<li>~2.0M messages per day</li>
-<li>~1M unbridged accounts</li>
-<li>~500K unbridged messages per day</li>
-<li>~900K rooms that Matrix.org participates in</li>
-<li>~6000 federated servers</li>
-<li>~2000 msgs/s out, ~20 msgs/s in on Matrix.org</li>
-<li>~60 companies building on Matrix</li>
-</ul>
-<p>As of July 2018, the Matrix ecosystem has <a href="https://www.hello-matrix.net">dozens of independent homeserver hosts</a>,
-many bridges and is under active development.</p>
-<p>Current development focus is &quot;The Road to 1.0&quot;, which means:</p>
-<ul>
-<li>The aim is to get all APIs to a stable release by end of August 2018</li>
-<li>Finalising Server/Server API currently</li>
-<li>Heavy emphasis on security work.</li>
-</ul>
-<div class="definition-list">
-<div class="definition-close">close</div>
-</div>
-</div>
+<MDXRenderer>{position.node.code.body}</MDXRenderer>
 <div class="question">
 <h4 id="why-apache-licence%3F"><a class="permalink" href="#why-apache-licence%3F" aria-hidden="true">&#128279;</a> Why Apache Licence?</h4>
 <p>See also: <a href="#what-do-you-mean-by-open%3F">What do you mean by open?</a></p>
