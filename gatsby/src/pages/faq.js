@@ -17,6 +17,9 @@ const Faq = ({data}) => {
     const position = sections.find((element) => {    
         return element.node.frontmatter.faq_section === "position-in-the-world";
     });
+    const asAUser = sections.find((element) => {    
+        return element.node.frontmatter.faq_section === "as-a-user";
+    });
     return (<Layout hasNavPadding="true">
             <Helmet title={`FAQ | ${config.siteTitle}`} />
             <MXContentMain>
@@ -463,14 +466,8 @@ built by <a href="/jenkins/job/VectorAndroidDevelop">Jenkins</a>. Use it at your
 <h4 id="how-can-i-get-a-rooms-list-from-matrix.org%3F"><a class="permalink" href="#how-can-i-get-a-rooms-list-from-matrix.org%3F" aria-hidden="true">&#128279;</a> How can I get a rooms list from matrix.org?</h4>
 <p>If you're using <a href="https://riot.im">Riot</a>, you can use the &quot;Room directory&quot; screen, which you open from a button in the bottom left.</p>
 <p>It you're working on a client, you can use the <a href="/docs/guides/client-server.html">Client-Server API</a> to <a href="/docs/spec/client_server/r0.3.0.html#listing-rooms">get a list of public rooms</a>.</p>
-<div class="definition-list">
-<div class="definition-item definition-riot">
-<p><strong>Riot</strong></p>
-<p>Riot is a popular matrix client developed by the core matrix.org team. <a href="/docs/projects/try-matrix-now.html">It's available as a web app, on Android and on iOS</a>.</p>
 </div>
-<div class="definition-close">close</div>
-</div>
-</div>
+<MDXRenderer>{asAUser.node.code.body}</MDXRenderer>
 <h3 id="tech"><a class="permalink" href="#tech" aria-hidden="true">&#128279;</a> Tech</h3>
 <div class="question">
 <h4 id="how-do-i-matrix-enable-my-existing-app%3F"><a class="permalink" href="#how-do-i-matrix-enable-my-existing-app%3F" aria-hidden="true">&#128279;</a> How do I Matrix-enable my existing app?</h4>
