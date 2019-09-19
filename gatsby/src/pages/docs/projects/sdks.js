@@ -19,7 +19,7 @@ const Bridges = ({data}) => {
           <Helmet title={`SDKs | ${config.siteTitle}`} />
           <h1 id="SDKs">SDKs</h1>
           <div class="overscroll">
-              <table class="legacy-table">
+              <table style={{"width": "100%"}}>
                 <tr>
                   <th></th>
                   <th>Language / Platform</th>
@@ -28,31 +28,31 @@ const Bridges = ({data}) => {
                   <th>Matrix Room</th>
                   <th>Supports E2E</th>
                 </tr>
-                {sdks.map(function(edge) {
+                {sdks.map(function(edge, i) {
                   const s = edge.node.childMdx.frontmatter
-                  const slugLink = "#" + _.kebabCase(s.title)
-                  return (<tr>
-                    <td><a href={slugLink}>{s.title}</a></td>
+                  const slugLink = "/docs/projects/sdk/" + (s.slug ? s.slug : _.kebabCase(s.title))
+                  var e2eSupport =  "";
+                  var e2eClass = "";
+                  if (s.e2e === "Yes") {
+                    e2eClass = "green";
+                    e2eSupport = "✓";
+                  }
+                  return (<tbody style={i % 2 == 0 ? {"backgroundColor": "#eee"} : {}}>
+                  <tr>
+                    <td style={{"textAlign": "left"}}><a href={slugLink}>{s.title}</a></td>
                     <td>{s.language}</td>
                     <td>{s.author}</td>
-                    <td><a href={s.repo}>{s.repo}</a></td>
-                    <td>{s.room}</td>
-                    <td>{s.e2e}</td>
-                  </tr>)
+                    <td><a href={s.repo}>{s.repo.split('/')[2]}</a></td>
+                    <td><a href={"https://matrix.to/#/" + s.room}>{s.room}</a></td>
+                    <td className={e2eClass}>{e2eSupport}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan="6" style={{"textAlign": "left", "paddingBottom": "50px"}}>{s.description}</td>
+                  </tr>
+                  </tbody>)
               })}
               </table>
           </div>
-
-          {sdks.map(function(edge) {
-            const s = edge.node.childMdx.frontmatter
-            return (
-              <div>
-              <h2 id={_.kebabCase(s.title)}>{s.title}</h2>
-                <MDXRenderer>{edge.node.childMdx.code.body}</MDXRenderer>
-              </div>
-              )
-          })}
-
         </MXContentMain>
     </Layout>)
 }
@@ -77,6 +77,7 @@ export const query = graphql`
                         repo
                         room
                         e2e
+                        slug
                     }
                     code {
                       body
