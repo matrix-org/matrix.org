@@ -926,34 +926,6 @@ Usage of an IS is not required in order for a client application to be part of t
 </div>
 </div>
 <h3 id="encryption"><a class="permalink" href="#encryption" aria-hidden="true">&#128279;</a> Encryption</h3>
-<div class="question">
-<h4 id="what-does-end-to-end-(e2e)-encryption-mean%3F"><a class="permalink" href="#what-does-end-to-end-(e2e)-encryption-mean%3F" aria-hidden="true">&#128279;</a> What does End-to-End (E2E) encryption mean?</h4>
-<p>End-to-End encryption describes a scenario where a message is encrypted at the device or client of the sender, and is only decrypted by the device or client of the receiver, with no decryption or reading performed on the server.</p>
-<div class="definition-list">
-<div class="definition-close">close</div>
-</div>
-</div>
-<div class="question">
-<h4 id="what-is-the-status-of-e2e%3F"><a class="permalink" href="#what-is-the-status-of-e2e%3F" aria-hidden="true">&#128279;</a> What is the status of E2E?</h4>
-<p>End-to-End Encryption is currently in late beta. Rooms can have encryption enabled, but it is not by default.</p>
-<p>Regarding client support, see <a href="#which-matrix-clients-support-e2e%3F">Which matrix clients support E2E?</a></p>
-<p>As of July 2018, work is progressing to add E2E support in the <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a>.</p>
-<div class="definition-list">
-<div class="definition-close">close</div>
-</div>
-</div>
-<div class="question">
-<h4 id="which-matrix-clients-support-e2e%3F"><a class="permalink" href="#which-matrix-clients-support-e2e%3F" aria-hidden="true">&#128279;</a> Which matrix clients support E2E?</h4>
-<p>End-to-end encryption is currently available in:</p>
-<ul>
-<li><a href="https://github.com/matrix-org/matrix-react-sdk">matrix-react-sdk</a>)</li>
-<li><a href="https://github.com/vector-im/riot-android/">Riot Android</a> (and the <a href="https://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a>)</li>
-<li><a href="https://github.com/vector-im/riot-ios/">Riot iOS</a> (and the <a href="https://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a>)</li>
-<li><a href="https://github.com/neilalexander/seaglass">Seaglass</a></li>
-<li><a href="https://github.com/Nheko-Reborn/nheko">nheko</a></li>
-</ul>
-<p>E2E will also presently be available in the <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a>.</p>
-</div>
 <MDXRenderer>{encryption.node.code.body}</MDXRenderer>
 <h3 id="the-spec"><a class="permalink" href="#the-spec" aria-hidden="true">&#128279;</a> The Spec</h3>
 <div class="question">
