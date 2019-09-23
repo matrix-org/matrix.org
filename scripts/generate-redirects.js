@@ -39,6 +39,12 @@ const redirects = [
     {from: "/docs/projects/client/Scylla", to: "/docs/projects/client/scylla"},
     {from: "/docs/projects/as/mautrix-facebook", to: "/docs/projects/bridge/mautrix-facebook"},
     {from: "/docs/projects/clients-matrix", to: "/clients"},
+    {from: "/legal/privacy-notice", to: "/legal/privacy-notice-1"},
+    {from: "/legal/terms-and-conditions", to: "/legal/terms-and-conditions-1"},
+    {from: "/legal/code-of-conduct", to: "/legal/code-of-conduct-1"},
+    {from: "/legal/copyright-notice", to: "/legal/copyright-notice-1"},
+    {from: "/legal/exceptional-erasure-policy", to: "/legal/exceptional-erasure-policy-1"},
+    {from: "/legal/matrix-org-shop-privacy-notice", to: "/legal/matrix-org-shop-privacy-notice-1"},
 ];
 
 const template = `import React from 'react'
