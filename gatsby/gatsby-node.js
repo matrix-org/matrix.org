@@ -169,6 +169,7 @@ const resultLegal = await wrapper(
                 childMdx {
                     frontmatter {
                         title
+                        version
                     }
                     fields {
                       slug
@@ -181,8 +182,9 @@ const resultLegal = await wrapper(
 }`))
 
   resultLegal.data.allFile.edges.forEach((edge, index) => {
+    const majorVersion = edge.node.childMdx.frontmatter.version.split('.')[0];
     createPage({
-      path: edge.node.childMdx.fields.slug,
+      path: edge.node.childMdx.fields.slug + "-" + majorVersion,
       component: noNavTemplate,
       context: {
         slug: edge.node.childMdx.fields.slug
