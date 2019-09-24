@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import { Layout, MXContentMain } from '../../../components'
 import config from '../../../../config'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 const _ = require('lodash')
 
@@ -37,7 +36,7 @@ const Bridges = ({data}) => {
                     e2eClass = "green";
                     e2eSupport = "✓";
                   }
-                  return (<tbody style={i % 2 == 0 ? {"backgroundColor": "#eee"} : {}}>
+                  return (<tbody style={i % 2 === 0 ? {"backgroundColor": "#eee"} : {}}>
                   <tr>
                     <td style={{"textAlign": "left"}}><a href={slugLink}>{s.title}</a></td>
                     <td>{s.language}</td>
