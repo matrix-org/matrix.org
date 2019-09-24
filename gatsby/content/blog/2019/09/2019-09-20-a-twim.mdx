@@ -37,9 +37,9 @@ Otherwise this week has been continuing to iterate on existing MSCs, as well as 
 
 Notes from Jason:
 
-> Construct did a round of performance work and pursued some of the easier opportunities with the most effective returns. At present, the biggest performance bottleneck Construct experiences is with I/O, specifically latency from accessing disks in a random pattern. This week a few open opportunities to prefetch pipelines were taken, allowing the server to stream data directly from the disk to the client with minimal buffering. This was implemented in several places, mostly for the `/media/` system, and also for the `/members` lists, improving the performance of requesting the members of a room like #whalepool:ericmartindale.com .
+> Construct did a round of performance work and pursued some of the easier opportunities with the most effective returns. At present, the biggest performance bottleneck Construct experiences is with I/O, specifically latency from accessing disks in a random pattern. This week a few open opportunities for prefetch pipelines were taken, allowing the server to stream data directly from the disk to the client with minimal buffering. This was implemented in several places, mostly for the `/media/` system, and also for the `/members` lists, improving the performance of requesting the members of a room like #whalepool:ericmartindale.com .
 >
-> There is one area though that requires a special mention for being an order of magnitude more impactful than any other area where a pipeline streams was placed. We have analyzed the way Riot conducts a room change, and by the simple placement of a prefetch operation when the server receives an `im.vector.breadcrumb_rooms`, which comes early during the room change, Construct is able to populate the room's timeline significantly faster. That has a compounding effect, as the browser initiates several requests based on (and after) the received timeline data- meaning *those* responses come significantly faster.
+> There is one area though that requires a special mention for being an order of magnitude more impactful than any other area where a pipelined stream was placed. We have analyzed the way Riot conducts a room change, and by the simple placement of a prefetch operation when the server receives an `im.vector.breadcrumb_rooms`, which comes early during the room change, Construct is able to populate the room's timeline significantly faster. That has a compounding effect, as the browser initiates several requests based on (and after) the received timeline data- meaning those responses come significantly faster.
 >
 > Construct is the community driven Matrix server written in C++ for maximum performance. Swing by [#test:zemos.net](https://matrix.to/#/#test:zemos.net) or <https://github.com/matrix-construct/construct/> for more.
 
@@ -135,7 +135,7 @@ Notes from Jason:
 [krombel](https://matrix.to/#/@krombel:msg-net.de) reported:
 
 > It might be interesting to some of you that the F-Droid repo for RiotX is finally working again.
-> There was an issue with buildkite which in the end let to the situation the the built apk had a lower versionCode as the apps already in the repo. The repo was then "intelligent enough" to no offer it as update.
+> There was an issue with buildkite which in the end led to the situation that the built apk had a lower versionCode as the apps already in the repo. The repo was then "intelligent enough" to no offer it as update.
 > benoit was able to resolve that so the repos are updating again.
 
 ## Dept of Ping 🏓
