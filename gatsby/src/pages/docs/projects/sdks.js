@@ -36,19 +36,18 @@ const Bridges = ({data}) => {
                     e2eClass = "green";
                     e2eSupport = "✓";
                   }
-                  return (<tbody style={i % 2 === 0 ? {"backgroundColor": "#eee"} : {}}>
-                  <tr>
-                    <td style={{"textAlign": "left"}}><a href={slugLink}>{s.title}</a></td>
+                  return (
+                  <tr style={i % 2 === 0 ? {"backgroundColor": "#eee"} : { }}>
+                    <td style={{"textAlign": "left"}}>
+                      <a href={slugLink}>{s.title}</a><br />
+                      {s.description}
+                      </td>
                     <td>{s.language}</td>
                     <td>{s.author}</td>
                     <td><a href={s.repo}>{s.repo.split('/')[2]}</a></td>
                     <td><a href={"https://matrix.to/#/" + s.room}>{s.room}</a></td>
                     <td className={e2eClass}>{e2eSupport}</td>
-                  </tr>
-                  <tr>
-                    <td colSpan="6" style={{"textAlign": "left", "paddingBottom": "50px"}}>{s.description}</td>
-                  </tr>
-                  </tbody>)
+                  </tr>)
               })}
               </table>
           </div>
