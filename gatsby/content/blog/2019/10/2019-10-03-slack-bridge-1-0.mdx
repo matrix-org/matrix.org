@@ -7,7 +7,7 @@ categories:
 author: Half-Shot
 ---
 
-Hello Matrix enthusiasts! Today we released matrix-appservice-slack 1.0. This marks a major milestone
+Hello Matrix enthusiasts! Today we released [matrix-appservice-slack 1.0](https://github.com/matrix-org/matrix-appservice-slack/releases/tag/1.0.0). This marks a major milestone
 in bridge development for the Matrix.org team, being our first bridge to ever reach 1.0. The decision to
 release this version came after we decided that the bridge had gained enough features and reached a point
 of stability where it could be deployed in the wild with minimal risk.
@@ -30,7 +30,7 @@ Threading & Reactions!
 
 The bridge has undergone some pretty serious code surgery as well. The whole codebase has been rewritten in
 TypeScript to take advantage of type checking and generic types. The bridge is currently based upon the
-[matrix-appservice-bridge](https://github.com/matrix-org/matrix-appservice-bridge/) library. The datastore interface now supports PostgreSQL, wich allows for administrators to inspect and edit the database while the bridge is running, as well as offering  helpful performance boost over the NeDB datastore format that was used previously. Finally, the codebase has proper Unit and Integration Tests to ensure new changes will not cause any regressions in behaviour. In short, **now is an excellent time to get involved and hack on the bridge**.
+[matrix-appservice-bridge](https://github.com/matrix-org/matrix-appservice-bridge/) library. The datastore interface now supports PostgreSQL, wich allows for administrators to inspect and edit the database while the bridge is running, as well as offering  helpful performance boost over the NeDB datastore format that was used previously. Finally, the codebase has proper Unit and Integration Tests to ensure new changes will not cause any regressions in behaviour. In short, **now is an excellent time to get involved and hack on the bridge**. There is already a [crafted list of easy issues](https://github.com/matrix-org/matrix-appservice-slack/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) for new and experienced bridge devs.
 
 ![Grafana memory usage graph](/blog/img/2019-10-03-slack1.0-perfmem.png)
 Memory usage of the bridge comparison
@@ -52,3 +52,9 @@ so whole Slack workspaces can be bridged across with a single click.
 That’s all from me, and I would like to say a massive thank you to [Cadair](https://matrix.to/#/@Cadair:matrix.org)
 and [Ben](https://matrix.to/#/@benpa:matrix.org) for both their code and review work on the project and as always,
 thank you to the community for using the bridge and reporting issues. 🙂
+
+Useful links:
+
+- [Matrix Room](https://matrix.to/#/#matrix_appservice_slack:matrix.org)
+- [Project Home](https://github.com/matrix-org/matrix-appservice-slack)
+- [Docs](https://matrix-appservice-slack.readthedocs.io/en/stable/)
