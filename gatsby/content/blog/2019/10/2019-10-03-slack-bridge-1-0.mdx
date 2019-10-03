@@ -1,6 +1,6 @@
 ---
 date: '2019-10-03'
-title: 'Slack Bridge 1.0'
+title: 'matrix-appservice-slack bridge 1.0 is here!'
 categories:
   - General
   - Bridges
@@ -13,25 +13,27 @@ release this version came after we decided that the bridge had gained enough fea
 of stability where it could be deployed in the wild with minimal risk.
 
 For those not in the know, the Slack bridge is Node.JS based, and bridges slack channels & users into Matrix
-seamlessly. In previous versions only a limited subset of features were supported, making heavy usage of Slack’s
+seamlessly. And for those wondering, yes it works with Mattermost too (since their API is comapatible with Slack)!
+In previous versions only a limited subset of features were supported, making heavy usage of Slack’s
 webhook API. As of 1.0, the bridge now makes use of the newer Slack Events/RTM API which gives us all we need for
 a richer bridging experience. Everything from edits and reactions to typing notifications is supported in the 1.0 release.
+
+Finally for those who are self hosting, we are pleased to offer the ability to "puppet" your Slack account using the
+bridge. Puppeting is the process in which the bridge will send messages as if you were sending them from the Slack client
+directly, when you talk using your Matrix account. This opens the door to seamless bridging and direct messaging support.
+
+For those wishing to bridge their whole workspace across, [picard](https://github.com/SolarDrew/skill-picard) exists
+as a tool to mangement large scale Slack bridge deployments. This tool is provided by [Cadair](https://matrix.to/#/@Cadair:matrix.org) and [SolarDrew](https://matrix.to/#/@SolarDrew:matrix.org)
 
 ![Slack Screenshot](/blog/img/2019-10-03-slack1.0-threading.png)
 Threading & Reactions!
 
-
 The bridge has undergone some pretty serious code surgery as well. The whole codebase has been rewritten in
-TypeScript to take advantage of type checking and generic types. The datastore interface now supports PostgreSQL,
-which allows for administrators to inspect and edit the database while the bridge is running, as well as offering
-a helpful performance boost over the NeDB datastore format that was used previously. Finally, the codebase has proper
-Unit and Integration Tests to ensure new changes will not cause any regressions in behaviour.
-In short, **now is an excellent time to get involved and hack on the bridge**.
-
+TypeScript to take advantage of type checking and generic types. The bridge is currently based upon the
+[matrix-appservice-bridge](https://github.com/matrix-org/matrix-appservice-bridge/) library. The datastore interface now supports PostgreSQL, wich allows for administrators to inspect and edit the database while the bridge is running, as well as offering  helpful performance boost over the NeDB datastore format that was used previously. Finally, the codebase has proper Unit and Integration Tests to ensure new changes will not cause any regressions in behaviour. In short, **now is an excellent time to get involved and hack on the bridge**.
 
 ![Grafana memory usage graph](/blog/img/2019-10-03-slack1.0-perfmem.png)
 Memory usage of the bridge comparison
-
 
 ![Grafana CPU usage graph](/blog/img/2019-10-03-slack1.0-perfcpi.png)
 CPU usage of the bridge comparison
@@ -47,5 +49,6 @@ an ever richer experience. Obvious features are things like topic changes, and s
 across the bridge. In the long term future we would also like to add community support to the bridge,
 so whole Slack workspaces can be bridged across with a single click.
 
-That’s all from me, and I would like to say a massive thank you to Cadair and Ben for both their
-code and review work on the project and as always, thank you to the community for using the bridge and reporting issues. 🙂
+That’s all from me, and I would like to say a massive thank you to [Cadair](https://matrix.to/#/@Cadair:matrix.org)
+and [Ben](https://matrix.to/#/@benpa:matrix.org) for both their code and review work on the project and as always,
+thank you to the community for using the bridge and reporting issues. 🙂
