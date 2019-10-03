@@ -70,7 +70,7 @@ module.exports = {
               }
             `,
             output: "/blog/feed",
-            title: "matrix.org RSS Feed",
+            title: "matrix.org",
           },
         ],
       },
