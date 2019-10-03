@@ -1,0 +1,51 @@
+---
+date: '2019-10-03'
+title: 'Slack Bridge 1.0'
+categories:
+  - General
+  - Bridges
+author: Half-Shot
+---
+
+Hello Matrix enthusiasts! Today we released matrix-appservice-slack 1.0. This marks a major milestone
+in bridge development for the Matrix.org team, being our first bridge to ever reach 1.0. The decision to
+release this version came after we decided that the bridge had gained enough features and reached a point
+of stability where it could be deployed in the wild with minimal risk.
+
+For those not in the know, the Slack bridge is Node.JS based, and bridges slack channels & users into Matrix
+seamlessly. In previous versions only a limited subset of features were supported, making heavy usage of Slack’s
+webhook API. As of 1.0, the bridge now makes use of the newer Slack Events/RTM API which gives us all we need for
+a richer bridging experience. Everything from edits and reactions to typing notifications is supported in the 1.0 release.
+
+![Slack Screenshot](/blog/img/2019-10-03-slack1.0-threading.png)
+Threading & Reactions!
+
+
+The bridge has undergone some pretty serious code surgery as well. The whole codebase has been rewritten in
+TypeScript to take advantage of type checking and generic types. The datastore interface now supports PostgreSQL,
+which allows for administrators to inspect and edit the database while the bridge is running, as well as offering
+a helpful performance boost over the NeDB datastore format that was used previously. Finally, the codebase has proper
+Unit and Integration Tests to ensure new changes will not cause any regressions in behaviour.
+In short, **now is an excellent time to get involved and hack on the bridge**.
+
+
+![Grafana memory usage graph](/blog/img/2019-10-03-slack1.0-perfmem.png)
+Memory usage of the bridge comparison
+
+
+![Grafana CPU usage graph](/blog/img/2019-10-03-slack1.0-perfcpi.png)
+CPU usage of the bridge comparison
+
+In terms of how many users matrix.org is currently serving at the moment, we present to you some figures:
+- 2562 bridged rooms
+- 764 teams connected to the bridge
+- 103711 events have passed through the bridge since the launch of 0.3.2
+
+Of course, our work doesn’t stop at 1.0. The plan for the immediate future of the bridge
+is to continue adding support for other event types coming from Matrix and Slack to create
+an ever richer experience. Obvious features are things like topic changes, and syncing membership
+across the bridge. In the long term future we would also like to add community support to the bridge,
+so whole Slack workspaces can be bridged across with a single click.
+
+That’s all from me, and I would like to say a massive thank you to Cadair and Ben for both their
+code and review work on the project and as always, thank you to the community for using the bridge and reporting issues. 🙂
