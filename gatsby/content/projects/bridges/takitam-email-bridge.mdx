@@ -1,0 +1,41 @@
+---
+layout: projectimage
+title: Matrix-email Bridge from taki tam	
+categories: 
+ - bridge
+thumbnail: /docs/projects/images/email-icon.svg
+description: An (almost) transparent matrix gateway. Sending and receiving emails, both plaintext and HTML.
+author: https://gitlab.com/takitam_matrix
+maturity: Alpha
+language: Python
+license: Unknown
+repo: https://gitlab.com/takitam_matrix/matrix-email-bridge
+featured: true
+bridges: Email
+---
+
+This repo contains (almost) transparent matrix gateway.
+Following features are implemented:
+
+* Sending and receiving emails, both plaintext and HTML.  
+   Bridge will dynamically create rooms and invite matrix users/mail puppets when new message appears, see 'Usage' section.
+* Turning matrix room into *something like* mailing list.
+* Sending and receiving attachments (looks ugly, see end of file).
+
+## Architecture overview
+
+```
++-----------+                                        +-----------+
+|           |             +---------------+          |           |
+|           >===AS=API====>               >===SMTP===>           |
+| Matrix HS |             |  Matrix-email |          |   Email   |
+|           <===Client/===<     Bridge    <===LMTP===<   Server  |
+|           |   AS API    |               |          |           |
+|           |             +-------A-------+          |           |
+|           |                     |                  |           |
++-----------+                     |                  +-----------+
+                             +----V----+
+                             |Bridge DB|
+                             |  (SQL)  |
+                             +---------+
+```
