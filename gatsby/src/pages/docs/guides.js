@@ -299,7 +299,7 @@ const Guides = ({data}) => {
           <td>English</td>
       </tr>
       <tr>
-          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/postgres.rst">Using Postgres</a></td>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/postgres.md">Using Postgres</a></td>
           <td>Synapse Team</td>
           <td>English</td>
       </tr>
