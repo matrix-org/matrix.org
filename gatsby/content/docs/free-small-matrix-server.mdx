@@ -184,6 +184,21 @@ matrix_synapse_configuration_extension_yaml: |
 Point your browser to https://riot.$domain or use [another
 client](https://matrix.org/clients).
 
+## Maintenance
+
+Remember to keep your VM up to date!
+
+```sh
+apt update
+apt upgrade
+reboot # e.g. kernel,dbus,systemd updates
+```
+
+To keep the matrix services upgraded, start by reading the [maintenance docs],
+but really, take a brief look at all the documentation.
+
+[maintenance docs]: https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/maintenance-upgrading-services.md
+
 Come join [#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org) to
 discuss homeservers. Or say hi to
 [@ptman:ptman.name](https://matrix.to/#/@ptman:ptman.name)
