@@ -7,7 +7,8 @@ license: CC-BY-NC-SA ?
 slug: free-small-matrix-server
 ---
 
-*Canonical version of this article at <https://gitlab.com/ptman/matrix-docs/tree/master/free-matrix-server>*
+*Canonical version of this article at
+<https://gitlab.com/ptman/matrix-docs/tree/master/free-matrix-server>*
 
 # Free Small Matrix Server
 
@@ -21,8 +22,8 @@ Ingredients:
 ## Free domain name
 
 Get one from [Freenom] for free or any other place you wish. Freenom only gives
-free domains for a year. A Matrix server cannot be migrated (yet?) from one
-domain to another, so you might want to get a longer-lived one.
+free domains for a year. A Matrix server cannot be migrated from one domain to
+another, so you might want to get a longer-lived one.
 
 - https://tld-list.com/ - find cheap domains, look at renewal fees also
 - https://www.namecheap.com/promos/amazing98s/ - cheap first year
@@ -81,8 +82,9 @@ Open incoming for CIDR 0.0.0.0/0:
 - 80/tcp for HTTP
 - 443/tcp for HTTPS
 - 8448/tcp for Matrix federation
-- 3478/tcp, 5349/tcp, 3478/udp, 5349/udp, 49152-49172/udp for TURN/STUN (you can
-  omit this if you don't run coturn for audio and video calls)
+- 3478/tcp, 5349/tcp, 3478/udp, 5349/udp, 49152-49172/udp for TURN/STUN (this is
+  used to get through firewalls or NAT for 1-on-1 audio/video calls and can be
+  omitted)
 
 ### Ubuntu iptables
 
@@ -97,7 +99,7 @@ apt purge netfilter-persistent iptables-persistent
 ## Remove useless stuff (optional)
 
 Oracle cloud includes a somewhat heavy monitoring daemon. We have better use for
-that memory since current versions of synapse, the Matrix homeserver, can be
+that memory since current versions of Synapse, the Matrix homeserver, can be
 memory hungry.
 
 ```sh
@@ -161,10 +163,14 @@ matrix_nginx_proxy_base_domain_serving_enabled: true
 matrix_dimension_enabled: false
 matrix_mxisd_enabled: false
 matrix_mailer_enabled: false
-matrix_coturn_enabled: true # disable to save more ram, affects audio/video
+matrix_coturn_enabled: true # disable to save more RAM, enables NAT/firewall
+                            # traversal for 1-on-1 audio/video calls
 ```
 
 ### Configure the public IP address for coturn
+
+Optional if you want to provide NAT/firewall traversal for 1-to-1 audio/video
+calls.
 
 ```yaml
 matrix_coturn_turn_external_ip_address: $instance_external_ip_address
@@ -176,7 +182,8 @@ matrix_coturn_turn_external_ip_address: $instance_external_ip_address
 matrix_synapse_configuration_extension_yaml: |
   limit_remote_rooms:
     enabled: true
-    complexity: 1.0
+    complexity: 1.0 # this limits joining complex (~large) rooms, can be
+                    # increased, but larger values can require more RAM
 ```
 
 ## Done!
@@ -201,4 +208,5 @@ but really, take a brief look at all the documentation.
 
 Come join [#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org) to
 discuss homeservers. Or say hi to
-[@ptman:ptman.name](https://matrix.to/#/@ptman:ptman.name)
+[@ptman:ptman.name](https://matrix.to/#/@ptman:ptman.name), who wrote this
+guide.
