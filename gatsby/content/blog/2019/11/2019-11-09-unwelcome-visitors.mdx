@@ -57,6 +57,11 @@ to scan the whole internet for Matrix servers, and then trying to join (say)
 #finance on each discovered domain (either by signing up on that
 server or by trying to join over federation) to cause problems.
 
+Finally, if you don't want the general public reading your room directory,
+please also remember to turn off public registration on your homeserver.
+Otherwise even with the changes above, if randoms can sign up on your server
+to view & join rooms then all bets are off.
+
 We'll be rethinking the security model of room directories in future (e.g.
 whether to default them to being only visible to registered users on the local
 server, or whether to replace per-server directories with per-community
