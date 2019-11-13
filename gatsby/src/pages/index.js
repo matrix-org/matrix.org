@@ -80,9 +80,9 @@ const Index = ({
               <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
               <script type="text/javascript" src="/js/d3.v3.min.js"></script>
               <script type="text/javascript" src="/js/how-it-works.js"></script>
-              <script type="text/javascript" src="/js/github-buttons.2.6.0.js"></script>
-              <script type="text/javascript" src="/js/twitter-widgets.js"></script>
-              <script type="text/javascript" src="/js/becomePatronButton.bundle.js"></script>
+              <script async="" src="https://platform.twitter.com/widgets.js" charSet="utf-8"/>
+              <script async="" src="https://c6.patreon.com/becomePatronButton.bundle.js"/>
+              <script async="" defer="" src="https://buttons.github.io/buttons.js"/>
             </Helmet>
             <Navigation />
   <div className="mxherobackground">
