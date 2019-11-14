@@ -42,7 +42,7 @@ const Footer = () => (
     </div>
     <div className="mxfooter__container mxfooter__container--heel">
       <div className="mxfooter__iconwrapper">
-        <a href="/code" className="w-inline-block">
+        <a href="https://github.com/matrix-org/matrix.org" className="w-inline-block">
           <img src="/images/github.svg" alt="" className="mxfooter__icon" />
         </a>
         <a href="https://gitlab.matrix.org/" className="w-inline-block">
