@@ -5,7 +5,13 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
-        <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://buttons.github.io https://platform.twitter.com https://*.twimg.com; script-src 'self' https://matomo.riot.im https://*.twitter.com https://c6.patreon.com https://buttons.github.io https://*.twimg.com; img-src 'self' data: https://matomo.riot.im https://*.twitter.com https://*.twimg.com; connect-src 'self' https://api.github.com; font-src 'self' data:; media-src 'self'; child-src 'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com; form-action 'self' https://syndication.twitter.com; object-src 'self'" />
+        <meta httpEquiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' https://buttons.github.io https://platform.twitter.com https://*.twimg.com 'unsafe-inline';
+        script-src 'self' https://matomo.riot.im https://*.twitter.com https://c6.patreon.com https://buttons.github.io https://*.twimg.com;
+        img-src 'self' data: https://matomo.riot.im https://*.twitter.com https://*.twimg.com;
+        connect-src 'self' https://api.github.com; font-src 'self' data:; media-src 'self';
+        child-src 'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com;
+        form-action 'self' https://syndication.twitter.com;
+        object-src 'self'" />
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
