@@ -10,6 +10,8 @@ export default function HTML(props) {
         img-src 'self' data: https://matomo.riot.im https://*.twitter.com https://*.twimg.com;
         connect-src 'self' https://api.github.com; font-src 'self' data:; media-src 'self';
         child-src 'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com;
+        worker-src 'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com;
+        frame-src 'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com;
         form-action 'self' https://syndication.twitter.com;
         object-src 'self'" />
         <meta charSet="utf-8" />
