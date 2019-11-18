@@ -530,9 +530,7 @@ const Index = ({
                         <p className="paragraph">Synapse</p>
                       </div>
                       <div className="mxblock__github__right">
-                        <div className="w-embed">
-<a className="github-button" href="https://github.com/matrix-org/synapse" data-show-count="true" aria-label="Star matrix-org/synapse on GitHub">Star</a>
-</div>
+                        <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=synapse&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
                       </div>
                     </div>
                     <div className="mxblock__github">
@@ -541,8 +539,8 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-<a className="github-button" href="https://github.com/matrix-org/matrix-js-sdk" data-show-count="true" aria-label="Star matrix-org/matrix-js-sdk on GitHub">Star</a>
-</div>
+                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-js-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        </div>
                       </div>
                     </div>
                     <div className="mxblock__github">
@@ -551,8 +549,8 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-<a className="github-button" href="https://github.com/matrix-org/matrix-android-sdk" data-show-count="true" aria-label="Star matrix-org/matrix-android-sdk on GitHub">Star</a>
-</div>
+                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-android-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        </div>
                       </div>
                     </div>
                     <div className="mxblock__github">
@@ -561,8 +559,8 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-<a className="github-button" href="https://github.com/matrix-org/matrix-ios-sdk" data-show-count="true" aria-label="Star matrix-org/matrix-ios-sdk on GitHub">Star</a>
-</div>
+                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-ios-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        </div>
                       </div>
                     </div>
                   </div>
