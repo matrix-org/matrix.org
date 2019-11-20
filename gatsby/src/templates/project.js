@@ -1,16 +1,14 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import {  graphql } from 'gatsby'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import { Layout, SEO, MXContentMain } from '../components'
 
-const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
+const Project = ({ pageContext: { postNode } }) => {
   const post = postNode.frontmatter
 
   return (
     <Layout navmode="discover" customSEO>
-        <SEO postPath={slug} postNode={postNode} article />
+        <SEO postPath={postNode.fields.slug} postNode={postNode} article />
         <MXContentMain>
         <div className="mxblock mxblock--project">
           <h1 className="mxblock--project__hx">{post.title}</h1>
@@ -103,50 +101,3 @@ const Project = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
 }
 
 export default Project
-
-Project.propTypes = {
-  pageContext: PropTypes.shape({
-    slug: PropTypes.string.isRequired
-  }),
-  data: PropTypes.shape({
-    mdx: PropTypes.object.isRequired,
-  }).isRequired,
-}
-
-Project.defaultProps = {
-  pageContext: PropTypes.shape({  }),
-}
-
-export const projectQuery = graphql`
-  query projectBySlug($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
-      excerpt
-      frontmatter {
-        title
-        date(formatString: "YYYY-MM-DD")
-        author,
-        image
-        description
-        categories
-        maturity
-        language
-        license
-        repo
-        home
-        room
-        screenshot
-      }
-      timeToRead
-      rawBody
-      parent {
-        ... on File {
-          mtime
-          birthtime
-        }
-      }
-    }
-  }
-`
