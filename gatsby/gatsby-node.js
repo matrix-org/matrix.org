@@ -77,11 +77,24 @@ exports.createPages = async ({ graphql, actions }) => {
               fields {
                 slug
               }
+              code {
+                body
+              }
               frontmatter {
                 title
+                date(formatString: "YYYY-MM-DD")
                 categories
                 author
+                image
                 slug
+                showTableOfContents
+              }
+              tableOfContents
+              parent {
+                ... on File {
+                  mtime
+                  birthtime
+                }
               }
             }
           }
@@ -102,7 +115,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: edge.node.fields.slug,
       component: postTemplate,
       context: {
-        slug: edge.node.fields.slug,
+        postNode: edge.node,
         prev,
         next,
         posts: postsForArchiveList,
@@ -251,18 +264,35 @@ const resultProjects = await wrapper(
             node {
                 childMdx {
                     frontmatter {
-                        title
-                        maturity
-                        description
-                        thumbnail
-                        featured
-                        layout
+                      title
+                      date(formatString: "YYYY-MM-DD")
+                      author,
+                      image
+                      description
+                      categories
+                      maturity
+                      language
+                      license
+                      repo
+                      home
+                      room
+                      screenshot
                     }
                     fields {
                       slug
                     }
+                    parent {
+                      ... on File {
+                        mtime
+                        birthtime
+                      }
+                    }
+                    code {
+                      body
+                    }
                 }
                 absolutePath
+                
             }
         }
     }
@@ -275,7 +305,7 @@ const resultProjects = await wrapper(
       path: edge.node.childMdx.fields.slug,
       component: projectTemplate,
       context: {
-        slug: edge.node.childMdx.fields.slug
+        postNode: edge.node.childMdx
       },
     })
   })
