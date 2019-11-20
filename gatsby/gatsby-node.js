@@ -77,11 +77,24 @@ exports.createPages = async ({ graphql, actions }) => {
               fields {
                 slug
               }
+              code {
+                body
+              }
               frontmatter {
                 title
+                date(formatString: "YYYY-MM-DD")
                 categories
                 author
+                image
                 slug
+                showTableOfContents
+              }
+              tableOfContents
+              parent {
+                ... on File {
+                  mtime
+                  birthtime
+                }
               }
             }
           }
@@ -102,7 +115,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: edge.node.fields.slug,
       component: postTemplate,
       context: {
-        slug: edge.node.fields.slug,
+        postNode: edge.node,
         prev,
         next,
         posts: postsForArchiveList,
