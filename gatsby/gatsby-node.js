@@ -281,7 +281,6 @@ const resultProjects = await wrapper(
                     fields {
                       slug
                     }
-                    tableOfContents
                     parent {
                       ... on File {
                         mtime
