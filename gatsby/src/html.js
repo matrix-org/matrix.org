@@ -6,7 +6,7 @@ export default function HTML(props) {
     <html {...props.htmlAttributes}>
       <head>
         <meta httpEquiv="Content-Security-Policy" content="default-src 'self';
-        style-src 'self' blob: https://buttons.github.io https://platform.twitter.com https://*.twimg.com 'unsafe-inline';
+        style-src 'self' blob: https://buttons.github.io https://platform.twitter.com https://*.twimg.com;
         script-src 'self' https://matomo.riot.im https://*.twitter.com https://c6.patreon.com https://buttons.github.io https://*.twimg.com;
         img-src 'self' data: https://matomo.riot.im https://*.twitter.com https://*.twimg.com https://github.com;
         connect-src 'self' https://api.github.com; font-src 'self' data:; media-src 'self';
