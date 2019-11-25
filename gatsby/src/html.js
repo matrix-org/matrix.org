@@ -7,7 +7,7 @@ export default function HTML(props) {
       <head>
         <meta httpEquiv="Content-Security-Policy" content="default-src 'self';
         style-src 'self' blob: https://buttons.github.io https://platform.twitter.com https://*.twimg.com 'unsafe-inline';
-        script-src 'self' https://matomo.riot.im https://*.twitter.com https://c6.patreon.com https://buttons.github.io https://*.twimg.com 'sha256-pD1fF0DQAQie/Y2UCqHA6ZxffBH0UgYt5VkIHHTeojs=' 'sha256-vMES1RKljsMoFhP4fx0IgeCz4ZnbvftW+rgS4DJW0vc=' 'sha256-s1FhdRLpNJaajwf2drK24ROJ0uDYE+sjwi7Q8D1A2Xs=';
+        script-src 'self' https://matomo.riot.im https://*.twitter.com https://c6.patreon.com https://buttons.github.io https://*.twimg.com 'sha256-pD1fF0DQAQie/Y2UCqHA6ZxffBH0UgYt5VkIHHTeojs=' 'sha256-vMES1RKljsMoFhP4fx0IgeCz4ZnbvftW+rgS4DJW0vc=' 'sha256-s1FhdRLpNJaajwf2drK24ROJ0uDYE+sjwi7Q8D1A2Xs=' 'sha256-5SEaGSFepkf1TwA0bhpr9p92fFBN0ZcfPfMIABa+t5k=';
         img-src 'self' data: https://matomo.riot.im https://*.twitter.com https://*.twimg.com https://github.com;
         connect-src 'self' https://api.github.com; font-src 'self' data:; media-src 'self';
         child-src 'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com;
