@@ -39,7 +39,7 @@ const Post = ({ pageContext: { postNode, prev, next, posts } }) => {
             {post.author}
           </Subline>
           <PostContent>
-            <MDXRenderer>{postNode.code.body}</MDXRenderer>
+            <MDXRenderer>{postNode.body}</MDXRenderer>
           </PostContent>
           <PrevNext prev={prev} next={next} />
         </MXContentMain>

@@ -31,7 +31,7 @@ const Bots = ({data}) => {
                 <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--project">
                     <p><span hidden={!s.example_mxid}>Example mxid: <a href={"https://matrix.to/#/"+s.example_mxid}>{s.example_mxid}</a></span><br />
                     Repo: <a href={s.repo}>{s.repo}</a></p>
-                    <MDXRenderer>{edge.node.childMdx.code.body}</MDXRenderer>
+                    <MDXRenderer>{edge.node.childMdx.body}</MDXRenderer>
                 </div>
               </div>
             </div>
@@ -66,9 +66,7 @@ export const query = graphql`
                         screenshot
                         example_mxid
                     }
-                    code {
-                      body
-                    }
+                    body
                 }
                 absolutePath
             }

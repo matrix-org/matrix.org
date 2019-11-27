@@ -24,7 +24,7 @@ const Page = ({ pageContext: { slug, pages }, data: { mdx: postNode } }) => {
             {post.showTableOfContents &&
             <MXInPageTOC tableOfContents={postNode.tableOfContents} />}
             <PostContent>
-              <MDXRenderer>{postNode.code.body}</MDXRenderer>
+              <MDXRenderer>{postNode.body}</MDXRenderer>
             </PostContent>
           </div>
         </MXContentMain>
@@ -51,9 +51,7 @@ Page.defaultProps = {
 export const pageQuery = graphql`
   query pageBySlug($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
+      body
       excerpt
       frontmatter {
         title

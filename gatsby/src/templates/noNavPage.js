@@ -22,7 +22,7 @@ const Page = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
           <div class="mxcontent__main__doc">
             <Title>{post.title}</Title>
             <PostContent>
-              <MDXRenderer>{postNode.code.body}</MDXRenderer>
+              <MDXRenderer>{postNode.body}</MDXRenderer>
             </PostContent>
           </div>
         </MXContentMain>
@@ -48,9 +48,7 @@ Page.defaultProps = {
 export const pageQuery = graphql`
   query noNavPageBySlug($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
+      body
       excerpt
       frontmatter {
         title

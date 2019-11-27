@@ -467,7 +467,7 @@ built by <a href="/jenkins/job/VectorAndroidDevelop">Jenkins</a>. Use it at your
 <p>If you're using <a href="https://riot.im">Riot</a>, you can use the &quot;Room directory&quot; screen, which you open from a button in the bottom left.</p>
 <p>It you're working on a client, you can use the <a href="/docs/guides/client-server.html">Client-Server API</a> to <a href="/docs/spec/client_server/r0.3.0.html#listing-rooms">get a list of public rooms</a>.</p>
 </div>
-<MDXRenderer>{asAUser.node.code.body}</MDXRenderer>
+<MDXRenderer>{asAUser.node.body}</MDXRenderer>
 <h3 id="tech"><a class="permalink" href="#tech" aria-hidden="true">&#128279;</a> Tech</h3>
 <div class="question">
 <h4 id="how-do-i-matrix-enable-my-existing-app%3F"><a class="permalink" href="#how-do-i-matrix-enable-my-existing-app%3F" aria-hidden="true">&#128279;</a> How do I Matrix-enable my existing app?</h4>
@@ -691,7 +691,7 @@ standard body to maintain it going forwards.</p>
 <div class="definition-close">close</div>
 </div>
 </div>
-<MDXRenderer>{position.node.code.body}</MDXRenderer>
+<MDXRenderer>{position.node.body}</MDXRenderer>
 <div class="question">
 <h4 id="why-apache-licence%3F"><a class="permalink" href="#why-apache-licence%3F" aria-hidden="true">&#128279;</a> Why Apache Licence?</h4>
 <p>See also: <a href="#what-do-you-mean-by-open%3F">What do you mean by open?</a></p>
@@ -926,7 +926,7 @@ Usage of an IS is not required in order for a client application to be part of t
 </div>
 </div>
 <h3 id="encryption"><a class="permalink" href="#encryption" aria-hidden="true">&#128279;</a> Encryption</h3>
-<MDXRenderer>{encryption.node.code.body}</MDXRenderer>
+<MDXRenderer>{encryption.node.body}</MDXRenderer>
 <h3 id="the-spec"><a class="permalink" href="#the-spec" aria-hidden="true">&#128279;</a> The Spec</h3>
 <div class="question">
 <h4 id="what-is-the-spec%3F"><a class="permalink" href="#what-is-the-spec%3F" aria-hidden="true">&#128279;</a> What is The Spec?</h4>
@@ -1215,9 +1215,7 @@ export const query = graphql`{
           frontmatter{
             faq_section
           }
-          code {
-            body
-          }
+          body
         }
       }
     }

@@ -91,7 +91,7 @@ const Bridges = ({data}) => {
               </tbody>
             </table>
           </div>
-          <MDXRenderer>{project.node.code.body}</MDXRenderer>
+          <MDXRenderer>{project.node.body}</MDXRenderer>
         </div>
       )
     })}
@@ -118,9 +118,7 @@ export const query = graphql`{
           language
           room
         }
-        code {
-          body
-        }
+        body
       }
     }
   }

@@ -77,9 +77,7 @@ exports.createPages = async ({ graphql, actions }) => {
               fields {
                 slug
               }
-              code {
-                body
-              }
+              body
               frontmatter {
                 title
                 date(formatString: "YYYY-MM-DD")
@@ -287,9 +285,7 @@ const resultProjects = await wrapper(
                         birthtime
                       }
                     }
-                    code {
-                      body
-                    }
+                    body
                 }
                 absolutePath
                 
