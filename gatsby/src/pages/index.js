@@ -81,7 +81,6 @@ const Index = ({
               <script type="text/javascript" src="/js/d3.v3.min.js"></script>
               <script type="text/javascript" src="/js/how-it-works.js"></script>
               <script async="" src="https://platform.twitter.com/widgets.js" charSet="utf-8"/>
-              <script async="" src="https://c6.patreon.com/becomePatronButton.bundle.js"/>
               <script async="" defer="" src="https://buttons.github.io/buttons.js"/>
             </Helmet>
             <Navigation />
