@@ -39,6 +39,8 @@ const redirects = [
     {from: "/docs/projects/client/Scylla", to: "/docs/projects/client/scylla"},
     {from: "/docs/projects/as/mautrix-facebook", to: "/docs/projects/bridge/mautrix-facebook"},
     {from: "/docs/projects/clients-matrix", to: "/clients"},
+    {from: "/docs/spec-redirect", to: "/docs/spec"},
+    {from: "/code", to: "/code"},
 ];
 
 const template = `import React from 'react'

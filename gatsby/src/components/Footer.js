@@ -20,9 +20,8 @@ const Footer = () => (
         <a href="/docs/guides" className="mxfooter__link">All guides</a>
       </div>
       <div className="mxfooter__column">
-        <a href="/docs/guides" className="mxfooter__link mxfooter__link--primary">Develop</a>
-        <a href="/docs/" className="mxfooter__link">Docs</a>
-        <a href="/docs/spec" className="mxfooter__link">Spec</a>
+        <a href="/docs/develop" className="mxfooter__link mxfooter__link--primary">Develop Docs</a>
+        <a href="/docs/spec-redirect" className="mxfooter__link">Spec</a>
         <a href="/docs/api/client-server/" className="mxfooter__link">API Playground</a>
         <a href="/code" className="mxfooter__link">Code</a>
       </div>
