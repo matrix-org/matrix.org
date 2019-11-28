@@ -41,6 +41,8 @@ const redirects = [
     {from: "/docs/projects/clients-matrix", to: "/clients"},
     {from: "/docs/spec-redirect", to: "/docs/spec"},
     {from: "/code", to: "/code"},
+    {from: "/docs/spec-api-playground-redirect", to: "/docs/api/client-server/"},
+    {from: "/blog/feed-redirect", to: "/blog/feed"},
 ];
 
 const template = `import React from 'react'
