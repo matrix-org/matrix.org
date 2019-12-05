@@ -4,7 +4,7 @@ _paq.push(["disableCookies"]);
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 (function() {
-  var u="//matomo.riot.im/";
+  var u="https://matomo.riot.im/";
   _paq.push(['setTrackerUrl', u+'matomo.php']);
   _paq.push(['setSiteId', '3']);
   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];

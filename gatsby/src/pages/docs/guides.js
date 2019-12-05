@@ -431,9 +431,7 @@ export const query = graphql`
                         room
                         e2e
                     }
-                    code {
-                      body
-                    }
+                    body
                 }
                 absolutePath
             }

@@ -77,9 +77,7 @@ export const query = graphql`
                         e2e
                         slug
                     }
-                    code {
-                      body
-                    }
+                    body
                 }
                 absolutePath
             }

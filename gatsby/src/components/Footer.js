@@ -20,10 +20,9 @@ const Footer = () => (
         <a href="/docs/guides" className="mxfooter__link">All guides</a>
       </div>
       <div className="mxfooter__column">
-        <a href="/docs/guides" className="mxfooter__link mxfooter__link--primary">Develop</a>
-        <a href="/docs/" className="mxfooter__link">Docs</a>
-        <a href="/docs/spec" className="mxfooter__link">Spec</a>
-        <a href="/docs/api/client-server/" className="mxfooter__link">API Playground</a>
+        <a href="/docs/develop" className="mxfooter__link mxfooter__link--primary">Develop Docs</a>
+        <a href="/docs/spec-redirect" className="mxfooter__link">Spec</a>
+        <a href="/docs/spec-api-playground-redirect" className="mxfooter__link">API Playground</a>
         <a href="/code" className="mxfooter__link">Code</a>
       </div>
       <div className="mxfooter__column">
@@ -31,12 +30,13 @@ const Footer = () => (
         <a href="/blog/archive" className="mxfooter__link">All posts</a>
         <a href="/blog/category/this-week-in-matrix" className="mxfooter__link">This week in Matrix</a>
         <a href="/blog/category/security" className="mxfooter__link">Security</a>
-        <a href="/blog/feed" className="mxfooter__link">RSS</a>
+        <a href="/blog/feed-redirect" className="mxfooter__link">RSS</a>
       </div>
       <div className="mxfooter__column">
         <a href="/" className="mxfooter__link mxfooter__link--primary">More</a>
         <a href="/faq" className="mxfooter__link">FAQs</a>
         <a href="/security-disclosure-policy/" className="mxfooter__link">Security Disclosure Policy</a>
+        <a href="/legal/code-of-conduct/" className="mxfooter__link">Code of Conduct for Matrix.org</a>
         <a href="/legal" className="mxfooter__link">Legal</a>
       </div>
     </div>

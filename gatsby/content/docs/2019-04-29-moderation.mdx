@@ -140,6 +140,16 @@ In the early days of Matrix we proposed the concept of ‘active application ser
 *   UI for setting server ACLs ([https://github.com/vector-im/riot-web/issues/7084](https://github.com/vector-im/riot-web/issues/7084))
 
 
+### Moderation tooling
+
+Larger communities often have many rooms which need moderation, and generally have a single set of rules
+or Code of Conduct for members to follow. This also means that a ban in one room is usually applied
+in all of the community's rooms. [Mjolnir](https://github.com/matrix-org/mjolnir) is a set of tools to help
+make this process easier for community moderators by subscribing to [ban lists (MSC2313)](https://github.com/matrix-org/matrix-doc/pull/2313)
+and applying the rules across the resources it is protecting. Currently the project is capable of protecting
+individual rooms through the Mjolnir bot and a whole homeserver through its Synapse antispam module.
+
+
 ## Enforcing server terms of use
 
 The previous sections cover off the tools a room admin has available to enforce the code of conduct for a given room.  An entirely separate problem is empowering server admins to control how users use their server - particularly to comply with any legal or policy requirements their server might have.

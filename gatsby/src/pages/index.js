@@ -81,7 +81,6 @@ const Index = ({
               <script type="text/javascript" src="/js/d3.v3.min.js"></script>
               <script type="text/javascript" src="/js/how-it-works.js"></script>
               <script async="" src="https://platform.twitter.com/widgets.js" charSet="utf-8"/>
-              <script async="" src="https://c6.patreon.com/becomePatronButton.bundle.js"/>
               <script async="" defer="" src="https://buttons.github.io/buttons.js"/>
             </Helmet>
             <Navigation />
@@ -530,9 +529,7 @@ const Index = ({
                         <p className="paragraph">Synapse</p>
                       </div>
                       <div className="mxblock__github__right">
-                        <div className="w-embed">
-<a className="github-button" href="https://github.com/matrix-org/synapse" data-show-count="true" aria-label="Star matrix-org/synapse on GitHub">Star</a>
-</div>
+                        <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=synapse&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
                       </div>
                     </div>
                     <div className="mxblock__github">
@@ -541,8 +538,8 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-<a className="github-button" href="https://github.com/matrix-org/matrix-js-sdk" data-show-count="true" aria-label="Star matrix-org/matrix-js-sdk on GitHub">Star</a>
-</div>
+                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-js-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        </div>
                       </div>
                     </div>
                     <div className="mxblock__github">
@@ -551,8 +548,8 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-<a className="github-button" href="https://github.com/matrix-org/matrix-android-sdk" data-show-count="true" aria-label="Star matrix-org/matrix-android-sdk on GitHub">Star</a>
-</div>
+                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-android-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        </div>
                       </div>
                     </div>
                     <div className="mxblock__github">
@@ -561,8 +558,8 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-<a className="github-button" href="https://github.com/matrix-org/matrix-ios-sdk" data-show-count="true" aria-label="Star matrix-org/matrix-ios-sdk on GitHub">Star</a>
-</div>
+                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-ios-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -591,17 +588,17 @@ const Index = ({
   <div className="mxblock mxblock--tweets">
     <div className="mxgrid mxgrid--tweets">
       <div className="mxgrid__tweet w-embed w-script">
-      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I have seen the future of distributed collaboration and it is Matrix.   The .NET binding looks old, incomplete and I maintained.   If we get GSoC students this year, I’ll be happy to mentor, in the meantime I should probably contribute to it: <a href="https://t.co/nJY4iNHaLQ">https://t.co/nJY4iNHaLQ</a></p>&mdash; Miguel de Icaza (@migueldeicaza) <a href="https://twitter.com/migueldeicaza/status/1093148021980889088?ref_src=twsrc%5Etfw">February 6, 2019</a></blockquote>
+      <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I have seen the future of distributed collaboration and it is Matrix.   The .NET binding looks old, incomplete and I maintained.   If we get GSoC students this year, I’ll be happy to mentor, in the meantime I should probably contribute to it: <a href="https://t.co/nJY4iNHaLQ">https://t.co/nJY4iNHaLQ</a></p>&mdash; Miguel de Icaza (@migueldeicaza) <a href="https://twitter.com/migueldeicaza/status/1093148021980889088?ref_src=twsrc%5Etfw">February 6, 2019</a></blockquote>
       </div>
       <div className="mxgrid__tweet w-embed w-script">
-      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I finally started a spreadsheet to compare relative security, privacy, compatibility, and features of various messenger systems. TL;DR <a href="https://twitter.com/RiotChat?ref_src=twsrc%5Etfw">@RiotChat</a> / <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a> is winning on all fronts. <a href="https://t.co/7zxczdjwwJ">https://t.co/7zxczdjwwJ</a></p>&mdash; Lance R. Vick (@lrvick) <a href="https://twitter.com/lrvick/status/1051260991479013376?ref_src=twsrc%5Etfw">October 13, 2018</a></blockquote>
+      <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I finally started a spreadsheet to compare relative security, privacy, compatibility, and features of various messenger systems. TL;DR <a href="https://twitter.com/RiotChat?ref_src=twsrc%5Etfw">@RiotChat</a> / <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a> is winning on all fronts. <a href="https://t.co/7zxczdjwwJ">https://t.co/7zxczdjwwJ</a></p>&mdash; Lance R. Vick (@lrvick) <a href="https://twitter.com/lrvick/status/1051260991479013376?ref_src=twsrc%5Etfw">October 13, 2018</a></blockquote>
       </div>
       <div className="mxgrid__tweet w-embed w-script">
-      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I certainly wouldn&#39;t trust a proprietary software driven by some Russian crypto millionaires any more (or any less) than Whatsapp. Or Threema, Wire, Keybase, and not even Signal.<br /><br />Friends tell their friends to choose open, federated protocols. Like <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@Matrixdotorg</a> and <a href="https://twitter.com/RiotChat?ref_src=twsrc%5Etfw">@RiotChat</a>. <a href="https://t.co/gOUwFwCcra">https://t.co/gOUwFwCcra</a></p>&mdash; martin ➬ (@martinkrafft) <a href="https://twitter.com/martinkrafft/status/1130695713057148928?ref_src=twsrc%5Etfw">May 21, 2019</a></blockquote>
+      <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I certainly wouldn&#39;t trust a proprietary software driven by some Russian crypto millionaires any more (or any less) than Whatsapp. Or Threema, Wire, Keybase, and not even Signal.<br /><br />Friends tell their friends to choose open, federated protocols. Like <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@Matrixdotorg</a> and <a href="https://twitter.com/RiotChat?ref_src=twsrc%5Etfw">@RiotChat</a>. <a href="https://t.co/gOUwFwCcra">https://t.co/gOUwFwCcra</a></p>&mdash; martin ➬ (@martinkrafft) <a href="https://twitter.com/martinkrafft/status/1130695713057148928?ref_src=twsrc%5Etfw">May 21, 2019</a></blockquote>
 
       </div>
       <div className="mxgrid__tweet w-embed w-script">
-      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We are spending more and more time in <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a>. <a href="https://twitter.com/RiotChat?ref_src=twsrc%5Etfw">@RiotChat</a> works like a charm, better than <a href="https://twitter.com/SlackHQ?ref_src=twsrc%5Etfw">@SlackHQ</a> for many things and of course way better than IRC. It&#39;s awesome to have so many open communities forming and being able to jump from one channel to the other. Give it a try! 📢 <a href="https://t.co/5uL1D4ryQo">pic.twitter.com/5uL1D4ryQo</a></p>&mdash; poliastro (@poliastro_py) <a href="https://twitter.com/poliastro_py/status/1102912894260469760?ref_src=twsrc%5Etfw">March 5, 2019</a></blockquote>
+      <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We are spending more and more time in <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a>. <a href="https://twitter.com/RiotChat?ref_src=twsrc%5Etfw">@RiotChat</a> works like a charm, better than <a href="https://twitter.com/SlackHQ?ref_src=twsrc%5Etfw">@SlackHQ</a> for many things and of course way better than IRC. It&#39;s awesome to have so many open communities forming and being able to jump from one channel to the other. Give it a try! 📢 <a href="https://t.co/5uL1D4ryQo">pic.twitter.com/5uL1D4ryQo</a></p>&mdash; poliastro (@poliastro_py) <a href="https://twitter.com/poliastro_py/status/1102912894260469760?ref_src=twsrc%5Etfw">March 5, 2019</a></blockquote>
       </div>
     </div>
   </div>

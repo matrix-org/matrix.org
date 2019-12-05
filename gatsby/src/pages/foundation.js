@@ -80,7 +80,7 @@ const Foundation = () => {
                 <div class="mxgrid__item--guardian__content">
                   <h2 class="mxgrid__item--guardian__content__hx">Amandine Le Pape</h2>
                   <p class="mxgrid__item--guardian__content__p">
-                    Amandine is co-founder of Matrix, and Head of Product & Operations for New Vector. She previously
+                    Amandine is co-founder of Matrix, and COO of New Vector. She previously
                     ran the business side of Amdocs’ UC unit with Matthew. She has an engineering degree in Telecoms,
                     Electronics and Computer Science and uses it most to translate the technicalities of Matrix to
                     humans and businesses, and make sure we keep the users at heart when making decisions!

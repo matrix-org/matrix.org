@@ -27,7 +27,7 @@ const PostList = ({ pageContext: { limit, skip, currentPage, posts }, data: { al
               slug={post.node.fields.slug}
               categories={post.node.frontmatter.categories}
               key={post.node.fields.slug}
-              body={post.node.code.body}
+              body={post.node.body}
               author={post.node.frontmatter.author}
             />
           ))}
@@ -77,9 +77,7 @@ export const postQuery = graphql`
           }
           excerpt(pruneLength: 200)
           timeToRead
-          code {
-            body
-          }
+          body
         }
       }
     }

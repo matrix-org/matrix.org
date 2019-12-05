@@ -13,7 +13,7 @@ const Title = styled.h1`
 const PostContent = styled.div`
 `
 
-const Post = ({ pageContext: { slug, prev, next, posts }, data: { mdx: postNode } }) => {
+const Post = ({ pageContext: { postNode, prev, next, posts } }) => {
   const post = postNode.frontmatter
 
   var toc
@@ -25,7 +25,7 @@ const Post = ({ pageContext: { slug, prev, next, posts }, data: { mdx: postNode 
   
   return (
     <Layout hasSideNavigation="true" navmode="blog" customSEO>
-        <SEO postPath={slug} postNode={postNode} article />
+        <SEO postPath={postNode.fields.slug} postNode={postNode} article />
         <MXContentMain hasSideNavigation="true">
           <Title>{post.title}</Title>
           <Subline>
@@ -39,14 +39,14 @@ const Post = ({ pageContext: { slug, prev, next, posts }, data: { mdx: postNode 
             {post.author}
           </Subline>
           <PostContent>
-            <MDXRenderer>{postNode.code.body}</MDXRenderer>
+            <MDXRenderer>{postNode.body}</MDXRenderer>
           </PostContent>
           <PrevNext prev={prev} next={next} />
         </MXContentMain>
         <div>{
           toc &&
-        <MXContentNav title="Post Contents" content={toc} currentSlug={slug}></MXContentNav>}
-        <MXContentNav title="All posts" content={posts} currentSlug={slug}></MXContentNav>
+        <MXContentNav title="Post Contents" content={toc} currentSlug={postNode.fields.slug}></MXContentNav>}
+        <MXContentNav title="All posts" content={posts} currentSlug={postNode.fields.slug}></MXContentNav>
         </div>
     </Layout>
   )
@@ -71,31 +71,3 @@ Post.defaultProps = {
     prev: null,
   }),
 }
-
-export const postQuery = graphql`
-  query postBySlug($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
-      excerpt
-      frontmatter {
-        title
-        date(formatString: "YYYY-MM-DD")
-        categories,
-        author,
-        image
-        showTableOfContents
-      }
-      tableOfContents
-      timeToRead
-      rawBody
-      parent {
-        ... on File {
-          mtime
-          birthtime
-        }
-      }
-    }
-  }
-`
