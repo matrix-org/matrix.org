@@ -4,7 +4,7 @@ import {  graphql } from 'gatsby'
 import styled from 'styled-components'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
-import { Layout, SEO, MXContentMain, MXContentNav, MXInPageTOC } from '../components'
+import { Layout, SEO, MXContentMain, MXGuidesNav, MXInPageTOC } from '../components'
 
 const Title = styled.h1`
 `
@@ -12,7 +12,7 @@ const Title = styled.h1`
 const PostContent = styled.div`
 `
 
-const Page = ({ pageContext: { slug, pages }, data: { mdx: postNode } }) => {
+const Page = ({ pageContext: { slug, pages, pagesBySection }, data: { mdx: postNode } }) => {
   const post = postNode.frontmatter
 
   return (
@@ -28,7 +28,7 @@ const Page = ({ pageContext: { slug, pages }, data: { mdx: postNode } }) => {
             </PostContent>
           </div>
         </MXContentMain>
-        <MXContentNav title="Guides" content={pages} currentSlug={slug} tableOfContents={postNode.tableOfContents}></MXContentNav>
+        <MXGuidesNav title="Guides" content={pages} pagesBySection={pagesBySection} currentSlug={slug} tableOfContents={postNode.tableOfContents}></MXGuidesNav>
     </Layout>
   )
 }
@@ -59,10 +59,9 @@ export const pageQuery = graphql`
         author,
         image
         showTableOfContents
+        section
       }
       tableOfContents
-      timeToRead
-      rawBody
       parent {
         ... on File {
           mtime
