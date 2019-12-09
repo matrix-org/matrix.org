@@ -644,7 +644,7 @@ const Index = ({
                     </div>
                   </div>
                 </div>
-                <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating...</p>
+                <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating. See our current <a href="/supporters">Elliptic supporters</a>!</p>
               </div>
             </div>
           </div>
