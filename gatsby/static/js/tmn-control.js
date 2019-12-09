@@ -27,6 +27,7 @@ $(document).ready(function () {
         });
         
         $("[id^=chk]").prop('checked', true);
+        $("#chk-maturity-Nolongermaintained").prop('checked', false);
 
         /* Missing data is classed as 'Unknown' for now */
         jQuery('li[data-language=""]').attr("data-language", "Unknown");
