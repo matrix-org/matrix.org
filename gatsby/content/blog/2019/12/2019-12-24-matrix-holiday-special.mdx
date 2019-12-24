@@ -102,6 +102,7 @@ We’re currently sprinting to try to get RiotX ready for FOSDEM in February - h
 🏗 It’s cheating a bit, but Manu (the lead developer on Riot/iOS and delivery manager of Riot/Mobile in general) has been hacking on an entirely new client called [Messagerie](https://github.com/manuroe/messagerie) in his spare time, using SwiftUI.  The idea of throwing away the whole UI layer and replacing it with the latest best practices sounds suspiciously like RiotX - it’ll be interesting to see how RiotX/iOS takes shape next year! 
 
 *   _Scaling synapse via sharding the master process_
+
 We ended up bottlenecked on IO rather than CPU in 2019, and as a result we worked on splitting synapse’s database across multiple database instances on a per-table granularity.  However, the master process itself doesn’t shard yet; so we’re now bottlenecked on CPU and need to get on and do this asap to unlock further Synapse scalability for mega-monolithic-deployments like the Matrix.org homeserver. 
 
 *   _Bridge UI for discovery of users/rooms and bridge status_ 
