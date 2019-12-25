@@ -19,17 +19,17 @@ So, our immediate priorities for 2019 were:
 *   _r0 spec releases across the board (aka Matrix 1.0)_
 *   _Implementing them in Synapse_
 
-Well, unless you’ve been floating in a sensory deprivation tank for the last year, hopefully you spotted that Matrix (as a protocol) finally exited beta - starting off with the announcement at FOSDEM in February of the [first stable release of the Server-Server API](https://matrix.org/blog/2019/02/04/matrix-at-fosdem-2019/), alongside the Synapse 0.99.x series as we began the process of migrating to the 1.0 APIs.
+✅ Well, unless you’ve been floating in a sensory deprivation tank for the last year, hopefully you spotted that Matrix (as a protocol) finally exited beta - starting off with the announcement at FOSDEM in February of the [first stable release of the Server-Server API](https://matrix.org/blog/2019/02/04/matrix-at-fosdem-2019/), alongside the Synapse 0.99.x series as we began the process of migrating to the 1.0 APIs.
 
 Specifically this meant killing off self-signed certificates, adding .well-known server discovery and implementing room version semantics so we could upgrade the underlying room version algorithm to fix the residual flaws.  This culminated in June with the [official release of Matrix 1.0](https://matrix.org/blog/2019/06/11/introducing-matrix-1-0-and-the-matrix-org-foundation/) - now including the remaining APIs and a stable release of Synapse 1.0.  The emphasis was on addressing all the main pre-1.0 design flaws rather than adding features or performance, but with 1.0 out the door at last we’ve been able to make progress there too.
 
 *   _Landing the Riot redesign_
 
-The full redesign of Riot’s UI on Web/Desktop landed shortly after FOSDEM in Feb with [The Big 1.0](https://medium.com/@RiotChat/the-big-1-0-68fa7c6050be). Cosmetically we got most of the new look & feel in place, and have had very positive feedback overall - although some of the UX thinkos of the old app remain and coming up on the radar for fixing.
+✅ The full redesign of Riot’s UI on Web/Desktop landed shortly after FOSDEM in Feb with [The Big 1.0](https://medium.com/@RiotChat/the-big-1-0-68fa7c6050be). Cosmetically we got most of the new look & feel in place, and have had very positive feedback overall - although some of the UX thinkos of the old app remain and coming up on the radar for fixing.
 
 *   _Finalising the Matrix.org Foundation_ 
 
-This happened too, coincident with releasing Matrix 1.0 in June - read all about it at [https://matrix.org/foundation](https://matrix.org/foundation). So far the governance and legal infrastructure the Foundation provides has helped the project significantly, and while it was a mammoth task to organise, we’re very glad it’s here!  Huge thanks go out to Jon, Ross and Jutta for agreeing to join the foundation as Guardians - they have been excellent in patiently listening to the various dramas of the year and ensuring Matrix’s neutrality and that we keep an even keel.
+✅ This happened too, coincident with releasing Matrix 1.0 in June - read all about it at [https://matrix.org/foundation](https://matrix.org/foundation). So far the governance and legal infrastructure the Foundation provides has helped the project significantly, and while it was a mammoth task to organise, we’re very glad it’s here!  Huge thanks go out to Jon, Ross and Jutta for agreeing to join the foundation as Guardians - they have been excellent in patiently listening to the various dramas of the year and ensuring Matrix’s neutrality and that we keep an even keel.
 
 *   _Landing all the new E2E encryption UX and features_
 
@@ -202,7 +202,7 @@ All that remains now is to make some predictions for 2020.  Our main priorities 
 
 *   Dendrite & P2P Matrix: the plan currently is to use Dendrite as the basis for our P2P Matrix experiments.  In practice this means making it federate using [MSC1228](https://github.com/matrix-org/matrix-doc/blob/rav/proposal/remove_mxids_from_events/proposals/1228-removing-mxids-from-events.md)-semantics (no point in wasting time implementing the ‘legacy’ key management), and then experiment with hooking it up to various P2P transports (e.g. our low-bandwidth CoAP transport) and discovery systems (e.g. mDNS; libp2p; etc).  How we go about actually getting it into production depends entirely on how well the experiment goes; we could evolve Matrix to be hybrid CS/P2P; we could treat it as a new protocol and bridge to it; who knows.  Watch this space...  
 
-*   MLS: figure out our plan for next-generation E2E - for better scaling, and better reliability, and what (if anything) to do with [MLS](https://datatracker.ietf.org/wg/mls/charter/). 
+*   MLS: figure out our plan for next-generation E2E - for better scaling, and better reliability, and what (if anything) we should do with [MLS](https://datatracker.ietf.org/wg/mls/charter/). 
 
 *   Bridges: loads of work on the horizon to put a better UX on Bridging.  Bridge stability has improved enormously over the last year (thanks Half-Shot!) but we need to transition from being robust but ugly to being robust and polished... 
 
