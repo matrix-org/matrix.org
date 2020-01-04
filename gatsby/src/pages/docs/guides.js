@@ -12,7 +12,32 @@ const Guides = ({data}) => {
         <MXContentMain>
           <Helmet title={`Guides | ${config.siteTitle}`} />
 
+<<<<<<< HEAD
         <h2 id="recommended-by-matrixorg">Guides Recommended by matrix.org</h2>
+=======
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--develop">
+<img src="/images/basic_share.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/bridges">Bridges</a></h4>
+                  <p className="mxgrid__item__bg__p">Bridge to platforms outside Matrix<br /></p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--develop">
+<img src="/images/basic_spread_text.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
+                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
+                  <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="https://matrix.org/docs/spec" onClick={(e) => {window.location = e.relatedTarget.href}}>Spec</a></h4>
+                  <p className="mxgrid__item__bg__p">The Matrix Specification<br /></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 id="recommended-by-matrixorg">Recommended by matrix.org</h2>
+>>>>>>> Override navigation to /docs/spec
 
 <div className="width-100">
   <table className="legacy-table">
