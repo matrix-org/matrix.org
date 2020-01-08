@@ -529,7 +529,7 @@ const Index = ({
                         <p className="paragraph">Synapse</p>
                       </div>
                       <div className="mxblock__github__right">
-                        <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=synapse&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        <iframe title="gh-synapse" src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=synapse&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
                       </div>
                     </div>
                     <div className="mxblock__github">
@@ -538,7 +538,7 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-js-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                          <iframe title="gh-jssdk" src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-js-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
                         </div>
                       </div>
                     </div>
@@ -548,7 +548,7 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-android-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                          <iframe title="gh-androidsdk" src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-android-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
                         </div>
                       </div>
                     </div>
@@ -558,7 +558,7 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-ios-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                          <iframe title="gh-iossdk" src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-ios-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
                         </div>
                       </div>
                     </div>
