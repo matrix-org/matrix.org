@@ -375,7 +375,7 @@ const Index = ({
         <div className="mxgrid__item__bg mxgrid__item__bg--clear">
 <img src="images/basic_signs.svg" alt="" className="mxgrid__item__bg__img" />
           <div className="mxgrid__item__bg__vert">
-            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--open_standard">Simple pragmatic<a href="/docs/api"> RESTful HTTP/JSON APIs</a> by default
+            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--open_standard">Simple pragmatic<a href="/docs/api" onClick={()=>{window.location='https://matrix.org//docs/api'; return false;}}> RESTful HTTP/JSON APIs</a> by default
 </h4>
           </div>
         </div>
