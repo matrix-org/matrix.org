@@ -142,7 +142,7 @@ const TryMatrixNow = ({data}) => {
                         </div>
                         {
                             ["Released","Stable","Late Beta","Beta","Early Beta",
-                            "Late Alpha","Alpha","Early Alpha","No longer maintained"].map(function(maturity) {
+                            "Late Alpha","Alpha","Early Alpha","Not actively maintained"].map(function(maturity) {
                                 const id = "chk-maturity-" + maturity.replace(/ /g, '')
                                 return (
                                     <p key={id} className="mxgrid__item__bg__p">

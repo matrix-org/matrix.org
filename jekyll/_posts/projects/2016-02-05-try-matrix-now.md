@@ -44,7 +44,7 @@ jQuery(document).ready(($) => {
   /* Populate maturities list */
   //var maturities =  "{{ maturities | uniq | join: "," }}".split(',');
 
-  var maturities =  "Released,Stable,Late Beta,Beta,Early Beta,Late Alpha,Alpha,Early Alpha,No longer maintained".split(',');
+  var maturities =  "Released,Stable,Late Beta,Beta,Early Beta,Late Alpha,Alpha,Early Alpha,Not actively maintained".split(',');
   maturities.forEach((maturity => {
     if (maturity.length === 0) return;
 
@@ -54,7 +54,7 @@ jQuery(document).ready(($) => {
     var checkbox = $('<input>')
         .attr('id', checkboxId)
         .attr('type', 'checkbox');
-    if (maturity !== "No longer maintained") { checkbox.attr('checked', 'checked'); };
+    if (maturity !== "Not actively maintained") { checkbox.attr('checked', 'checked'); };
     
     item.append(checkbox);
     item.append($('<label>').attr('for', checkboxId).text(" " + maturity.trim()))
