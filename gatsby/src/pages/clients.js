@@ -29,6 +29,11 @@ const ClientsMatrix = ({data}) => {
             <div className="mxgrid_item33 mxgrid_item33--clients"></div>
             <div className="mxgrid_item33 mxgrid_item33--clients"></div>
             <div className="mxgrid_item33 mxgrid_item33--clients">
+              <input type="radio" name="platform" id="all" /><label htmlFor="all"> All</label>
+            </div>
+            <div className="mxgrid_item33 mxgrid_item33--clients"></div>
+            <div className="mxgrid_item33 mxgrid_item33--clients"></div>
+            <div className="mxgrid_item33 mxgrid_item33--clients">
               <input type="radio" name="platform" id="linux" /><label htmlFor="linux"> Linux</label>
             </div>
             <div className="mxgrid_item33 mxgrid_item33--clients">
