@@ -23,7 +23,6 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@matrixdotorg" />
         <meta name="twitter:creator" content="@matrixdotorg" />
         <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
