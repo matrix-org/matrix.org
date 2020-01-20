@@ -355,7 +355,7 @@ full details on how to contribute to the project.  All are welcome!</p>
 <h3 id="as-a-user"><a class="permalink" href="#as-a-user" aria-hidden="true">&#128279;</a> As a user</h3>
 <div class="question">
 <h4 id="what-clients-are-available%3F"><a class="permalink" href="#what-clients-are-available%3F" aria-hidden="true">&#128279;</a> What clients are available?</h4>
-<p>See also: <a href="#which-matrix-clients-support-e2e%3F">Which matrix clients support E2E?</a></p>
+<p>See also: <a href="#which-matrix-clients-support-e2e">Which matrix clients support E2E?</a></p>
 <p>There are many clients available, ranging from the glossy mass-market to the geeky command-line.  There's even an emacs macro.</p>
 <p>The most popular and established client is Riot, available on web, desktop, Android and iOS.</p>
 <p>Alternatively you can find a client suitable for you:</p>
