@@ -195,7 +195,8 @@ div.title {
 	}
 }
 
-#questions-wrapper h2, #questions-wrapper h3, #questions-wrapper h4 {
+#questions-wrapper h2, #questions-wrapper h3, #questions-wrapper h4,
+.mxcontent__main__doc h2, .mxcontent__main__doc h3, .mxcontent__main__doc h4 {
   padding-top: 75px;
   margin-top: -75px;
 }
