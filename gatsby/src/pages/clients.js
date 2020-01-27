@@ -5,8 +5,22 @@ import Helmet from 'react-helmet'
 import { Layout, MXContentMain } from '../components'
 import config from '../../config'
 
+const MXClientCard = ({client}) => {
+  return <div className="mxclientcard">
+      <h3><a href={client.slug}>{client.title}</a></h3>
+      <a href={client.slug}>
+        <img src={client.thumbnail} style={{"max-width": "300px", "max-height": "300px"}} />
+      </a><br />
+      {client.description}
+    </div>
+}
+
 const ClientsMatrix = ({data}) => {
-  const clients = data.allMdx.edges.map((edge => (edge.node.frontmatter)));
+  const clients = data.allMdx.edges.map((edge => {
+    var result = edge.node.frontmatter;
+    result.slug = edge.node.fields.slug;
+    return result;
+  }));
   clients.forEach((client, i) => {
     clients[i].platforms = clients[i].platforms ? clients[i].platforms : []
     clients[i].platformString = clients[i].platforms.join(',').replace(' ', '');
@@ -14,10 +28,72 @@ const ClientsMatrix = ({data}) => {
 
   return (<Layout navmode="discover">
       <MXContentMain>
-          <Helmet title={`Clients | ${config.siteTitle}`}>
-            <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
-            <script type="text/javascript" src="/js/clients-control.js"></script>
-          </Helmet>
+        <Helmet title={`Clients | ${config.siteTitle}`}>
+          <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+          <script type="text/javascript" src="/js/clients-control.js"></script>
+        </Helmet>
+
+        <h1>Clients</h1>
+        <h2>Mobile</h2>
+        <div className="mxgrid">
+          {clients
+            .filter(c =>
+              c.featured  && (
+              c.platforms.indexOf("iOS") !== -1 ||
+              c.platforms.indexOf("Android") !== -1 ||
+              c.platforms.indexOf("Ubuntu Touch") !== -1))
+            .map(function (client, i) {
+              return (
+                <div className="mxgrid_item33">
+                  <MXClientCard client={client} />
+                </div>
+              )
+            })}
+        </div>
+        <h2>Desktop</h2>
+        <div className="mxgrid">
+          {clients
+            .filter(c =>
+              c.platforms.indexOf("Linux") !== -1 ||
+              c.platforms.indexOf("Mac") !== -1 ||
+              c.platforms.indexOf("Windows") !== -1)
+            .map(function (client, i) {
+              return (
+                <div className="mxgrid_item33">
+                  <MXClientCard client={client} />
+                </div>
+              )
+            })}
+        </div>
+        <h2>Web</h2>
+        <div className="mxgrid">
+          {clients
+            .filter(c =>
+              c.platforms.indexOf("Web") !== -1)
+            .map(function (client, i) {
+              return (
+                <div className="mxgrid_item33">
+                <MXClientCard client={client} />
+              </div>
+              )
+            })}
+        </div>
+        <h2>Nintendo 3DS</h2>
+        <div className="mxgrid">
+          {clients
+            .filter(c =>
+              c.platforms.indexOf("Nintendo 3DS") !== -1)
+            .map(function (client, i) {
+              return (
+                <div className="mxgrid_item33">
+                <MXClientCard client={client} />
+              </div>
+              )
+            })}
+        </div>
+        
+
+
           <h1>Clients Matrix</h1>
           <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="/docs/projects/try-matrix-now/">try-matrix-now</a>. To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a></p>
           <div className="mxgrid mxgrid--clients">
@@ -67,7 +143,7 @@ const ClientsMatrix = ({data}) => {
               </tr>
             </thead>
             <tbody>{
-              ["Linux","Mac","Windows","Android","iOS","Ubuntu Touch","Web"].map(function(platform) {
+              ["Linux","Mac","Windows","Android","iOS","Ubuntu Touch","Web","Nintendo 3DS"].map(function(platform) {
                 return (<tr>
                   <td>{platform}</td>
                   {clients.map(function(client, i) {
@@ -182,7 +258,7 @@ export const query = graphql`{
  allMdx(filter: {
    frontmatter: {
      categories: {in: ["client"]},
-     featured: {eq: true}
+     platforms: {ne: null}
    }
  }) {
    edges {
@@ -199,6 +275,7 @@ export const query = graphql`{
          room
          platforms
          SDK
+         featured
          features {
            Room_directory
            Room_tag_showing
@@ -227,6 +304,9 @@ export const query = graphql`{
            New_user_registration
            voip
          }
+       }
+       fields {
+         slug
        }
      }
    }
