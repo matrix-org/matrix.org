@@ -2,179 +2,111 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
-import { Layout, MXContentMain } from '../components'
+import { Layout, MXContentMain, MXProjectCard } from '../components'
 import config from '../../config'
 
-const ClientsMatrix = ({data}) => {
-  const clients = data.allMdx.edges.map((edge => (edge.node.frontmatter)));
+const ClientsMatrix = ({ data }) => {
+  const clients = data.allMdx.edges.map((edge => {
+    var result = edge.node.frontmatter;
+    result.slug = edge.node.fields.slug;
+    return result;
+  }));
+  clients.sort(function (a, b) {
+    if (a.sort_order && !b.sort_order) return -1;
+    if (!a.sort_order && b.sort_order) return 1;
+    if (!a.sort_order && !b.sort_order) return 0;
+    return a.sort_order - b.sort_order;
+  });
   clients.forEach((client, i) => {
     clients[i].platforms = clients[i].platforms ? clients[i].platforms : []
     clients[i].platformString = clients[i].platforms.join(',').replace(' ', '');
   });
 
   return (<Layout navmode="discover">
-      <MXContentMain>
-          <Helmet title={`Clients | ${config.siteTitle}`}>
-            <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
-            <script type="text/javascript" src="/js/clients-control.js"></script>
-          </Helmet>
-          <h1>Clients Matrix</h1>
-          <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="/docs/projects/try-matrix-now/">try-matrix-now</a>. To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a></p>
-          <div className="mxgrid mxgrid--clients">
-            <div className="mxgrid_item33">
-              <h3 style={{"line-height": "0px", "padding-bottom": "10px"}}>
-                Select your platform:
-              </h3>
-            </div>
-            <div className="mxgrid_item33 mxgrid_item33--clients"></div>
-            <div className="mxgrid_item33 mxgrid_item33--clients"></div>
-            <div className="mxgrid_item33 mxgrid_item33--clients">
-              <input type="radio" name="platform" id="all" /><label htmlFor="all"> All</label>
-            </div>
-            <div className="mxgrid_item33 mxgrid_item33--clients"></div>
-            <div className="mxgrid_item33 mxgrid_item33--clients"></div>
-            <div className="mxgrid_item33 mxgrid_item33--clients">
-              <input type="radio" name="platform" id="linux" /><label htmlFor="linux"> Linux</label>
-            </div>
-            <div className="mxgrid_item33 mxgrid_item33--clients">
-              <input type="radio" name="platform" id="mac" /><label htmlFor="mac"> MacOS</label>
-            </div>
-            <div className="mxgrid_item33 mxgrid_item33--clients">
-              <input type="radio" name="platform" id="windows" /><label htmlFor="windows"> Windows</label>
-            </div>
-            <div className="mxgrid_item33 mxgrid_item33--clients">
-              <input type="radio" name="platform" id="android" /><label htmlFor="android"> Android</label>
-            </div>
-            <div className="mxgrid_item33 mxgrid_item33--clients">
-              <input type="radio" name="platform" id="ios" /><label htmlFor="ios"> iOS</label>
-            </div>
-            <div className="mxgrid_item33 mxgrid_item33--clients">
-              <input type="radio" name="platform" id="ubuntutouch" /><label htmlFor="ubuntutouch"> Ubuntu Touch</label>
-            </div>
-          </div>
+    <MXContentMain>
+      <Helmet title={`Clients | ${config.siteTitle}`}>
+        <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/js/clients-control.js"></script>
+      </Helmet>
 
-          <h2 id="platform-availability">Platform Availability</h2>
-          <div className="overscroll">
-          <table className="legacy-table width-100">
-            <thead>
-              <tr>
-                <th style={{'width': '15%'}}> </th>
-                {clients.map(function(client, i) {
-                  return (
-                    <th data-platforms={client.platformString}>{client.title}</th>
-                  )
-                })}
-              </tr>
-            </thead>
-            <tbody>{
-              ["Linux","Mac","Windows","Android","iOS","Ubuntu Touch","Web"].map(function(platform) {
-                return (<tr>
-                  <td>{platform}</td>
-                  {clients.map(function(client, i) {
-                    var platformSupport =  "";
-                    var platformClass = "";
-                    if (client.platforms.indexOf(platform) !== -1) {
-                      platformClass = "green";
-                      platformSupport = "✓";
-                    }
+      <h1>Clients</h1>
+      <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="/docs/projects/try-matrix-now/">try-matrix-now</a>.
+          To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>.
+          To see more clients in a features matrix, see the <a href="/clients-matrix">Clients Matrix</a>.</p>
+      <h2>Mobile</h2>
+      <div className="mxgrid">
+        {clients
+          .filter(c =>
+            c.featured && (
+              c.platforms.indexOf("iOS") !== -1 ||
+              c.platforms.indexOf("Android") !== -1 ||
+              c.platforms.indexOf("Ubuntu Touch") !== -1))
+          .map(function (client, i) {
+            return (
+              <div className="mxgrid_item33">
+                <MXProjectCard client={client} />
+              </div>
+            )
+          })}
+      </div>
+      <h2>Desktop</h2>
+      <div className="mxgrid">
+        {clients
+          .filter(c =>
+            c.client_type !== "terminal" && (
+            c.platforms.indexOf("Linux") !== -1 ||
+            c.platforms.indexOf("Mac") !== -1 ||
+            c.platforms.indexOf("Windows") !== -1))
+          .map(function (client, i) {
+            return (
+              <div className="mxgrid_item33">
+                <MXProjectCard client={client} />
+              </div>
+            )
+          })}
+      </div>
+      <h2>Terminal-based / Command Line</h2>
+      <div className="mxgrid">
+        {clients
+          .filter(c =>
+            c.client_type === "terminal")
+          .map(function (client, i) {
+            return (
+              <div className="mxgrid_item33">
+                <MXProjectCard client={client} />
+              </div>
+            )
+          })}
+      </div>
+      <h2>Web</h2>
+      <div className="mxgrid">
+        {clients
+          .filter(c =>
+            c.platforms.indexOf("Web") !== -1)
+          .map(function (client, i) {
+            return (
+              <div className="mxgrid_item33">
+                <MXProjectCard client={client} />
+              </div>
+            )
+          })}
+      </div>
+      <h2>Nintendo 3DS</h2>
+      <div className="mxgrid">
+        {clients
+          .filter(c =>
+            c.platforms.indexOf("Nintendo 3DS") !== -1)
+          .map(function (client, i) {
+            return (
+              <div className="mxgrid_item33">
+                <MXProjectCard client={client} />
+              </div>
+            )
+          })}
+      </div>
 
-                    return (
-                      <td className={platformClass} data-platforms={client.platformString}>{platformSupport}</td>
-                    )
-                  })}
-                </tr>)
-              })}
-            </tbody>
-          </table>
-          </div>
-          <h2 id="details">Details</h2>
-          <div className="overscroll">
-          <table className="legacy-table width-100">
-            <thead>
-              <tr>
-                <th style={{'width': '15%'}}> </th>
-                {clients.map(function(client, i) {
-                  return (
-                    <th data-platforms={client.platformString}>{client.title}</th>
-                  )
-                })}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Repo</td>
-                {clients.map(function(client, i) {
-                    return (
-                      <td data-platforms={client.platformString}>
-                        <a href={client.repo}>{client.repo.split('/')[2]}</a>
-                      </td>
-                    )
-                  })}
-              </tr>
-              <tr>
-                <td>Matrix Room</td>
-                {clients.map(function(client, i) {
-                    return (
-                      <td data-platforms={client.platformString}>
-                        <small><a href={"https://matrix.to/#/" + client.room}>{client.room}</a></small>
-                      </td>
-                    )
-                  })}
-              </tr>
-            {
-              ["language","SDK"].map(function(detail) {
-                return (<tr>
-                  <td>{detail.charAt(0).toUpperCase() + detail.slice(1)}</td>
-                  {clients.map(function(client, i) {
-                    return (
-                      <td data-platforms={client.platformString}>{client[detail]}</td>
-                    )
-                  })}
-                </tr>)
-              })}
-            </tbody>
-          </table>
-          </div>
-          <h2 id="features">Features</h2>
-          <div className="overscroll">
-          <table className="legacy-table width-100">
-            <thead>
-              <tr>
-                <th style={{'width': '15%'}}> </th>
-                {clients.map(function(client, i) {
-                  return (
-                    <th data-platforms={client.platformString}>{client.title}</th>
-                  )
-                })}
-              </tr>
-            </thead>
-            <tbody>{
-              Object.keys(clients[0].features).map(function(feature) {
-                return (<tr>
-                  <td>{feature.replace(/_/g, ' ')}</td>
-                  {clients.map(function(client, i) {
-                    if (!client.features) client.features = {}
-                    var featureSupport = client.features[feature];
-                    var featureClass = "";
-                    if (client.features[feature] === "yes") {
-                      featureClass = "green";
-                      featureSupport = "✓";
-                    }
-                    if (client.features[feature] === "no") {
-                      featureClass = "red";
-                      featureSupport = "✗";
-                    }
-                    return (
-                      <td className={featureClass} data-platforms={client.platformString}>{featureSupport}</td>
-                    )
-                  })}
-                </tr>)
-              })}
-            </tbody>
-          </table>
-          </div>
-        </MXContentMain>
-    </Layout>)
+    </MXContentMain>
+  </Layout>)
 }
 
 
@@ -182,7 +114,7 @@ export const query = graphql`{
  allMdx(filter: {
    frontmatter: {
      categories: {in: ["client"]},
-     featured: {eq: true}
+     platforms: {ne: null}
    }
  }) {
    edges {
@@ -199,6 +131,9 @@ export const query = graphql`{
          room
          platforms
          SDK
+         featured
+         sort_order
+         client_type
          features {
            Room_directory
            Room_tag_showing
@@ -227,6 +162,9 @@ export const query = graphql`{
            New_user_registration
            voip
          }
+       }
+       fields {
+         slug
        }
      }
    }
