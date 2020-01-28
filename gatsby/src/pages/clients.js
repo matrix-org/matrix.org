@@ -2,18 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
-import { Layout, MXContentMain } from '../components'
+import { Layout, MXContentMain, MXProjectCard } from '../components'
 import config from '../../config'
-
-const MXClientCard = ({client}) => {
-  return <div className="mxclientcard">
-      <h3><a href={client.slug}>{client.title}</a></h3>
-      <a href={client.slug}>
-        <img src={client.thumbnail} style={{"max-width": "300px", "max-height": "300px"}} />
-      </a><br />
-      {client.description}
-    </div>
-}
 
 const ClientsMatrix = ({data}) => {
   const clients = data.allMdx.edges.map((edge => {
@@ -45,7 +35,7 @@ const ClientsMatrix = ({data}) => {
             .map(function (client, i) {
               return (
                 <div className="mxgrid_item33">
-                  <MXClientCard client={client} />
+                  <MXProjectCard client={client} />
                 </div>
               )
             })}
@@ -60,7 +50,7 @@ const ClientsMatrix = ({data}) => {
             .map(function (client, i) {
               return (
                 <div className="mxgrid_item33">
-                  <MXClientCard client={client} />
+                  <MXProjectCard client={client} />
                 </div>
               )
             })}
@@ -73,7 +63,7 @@ const ClientsMatrix = ({data}) => {
             .map(function (client, i) {
               return (
                 <div className="mxgrid_item33">
-                <MXClientCard client={client} />
+                <MXProjectCard client={client} />
               </div>
               )
             })}
@@ -86,7 +76,7 @@ const ClientsMatrix = ({data}) => {
             .map(function (client, i) {
               return (
                 <div className="mxgrid_item33">
-                <MXClientCard client={client} />
+                <MXProjectCard client={client} />
               </div>
               )
             })}
