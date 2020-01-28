@@ -53,9 +53,23 @@ const ClientsMatrix = ({ data }) => {
       <div className="mxgrid">
         {clients
           .filter(c =>
+            c.client_type !== "terminal" && (
             c.platforms.indexOf("Linux") !== -1 ||
             c.platforms.indexOf("Mac") !== -1 ||
-            c.platforms.indexOf("Windows") !== -1)
+            c.platforms.indexOf("Windows") !== -1))
+          .map(function (client, i) {
+            return (
+              <div className="mxgrid_item33">
+                <MXProjectCard client={client} />
+              </div>
+            )
+          })}
+      </div>
+      <h2>Terminal-based / Command Line</h2>
+      <div className="mxgrid">
+        {clients
+          .filter(c =>
+            c.client_type === "terminal")
           .map(function (client, i) {
             return (
               <div className="mxgrid_item33">
@@ -119,6 +133,7 @@ export const query = graphql`{
          SDK
          featured
          sort_order
+         client_type
          features {
            Room_directory
            Room_tag_showing
