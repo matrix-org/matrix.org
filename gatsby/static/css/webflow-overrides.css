@@ -235,3 +235,14 @@ label {
 .mxcontent {
   width: 100%;
 }
+
+.mxclientcard {
+  margin: 2px;
+  background:#f4f4f4;
+  padding: 2px;
+  text-align: center;
+}
+
+.mxclientcard h3 {
+  margin-top: 0px;
+}
