@@ -9,6 +9,7 @@ const _ = require('lodash')
 
 const Bridges = ({ data }) => {
   const sdks = data.allFile.edges.filter(s =>
+    s.node.childMdx &&
     s.node.childMdx.frontmatter.categories &&
     s.node.childMdx.frontmatter.categories[0] === 'sdk' &&
     s.node.childMdx.frontmatter.maturity !== "Not actively maintained"
@@ -27,7 +28,7 @@ const Bridges = ({ data }) => {
   return (<Layout navmode="discover">
     <MXContentMain>
       <Helmet title={`SDKs | ${config.siteTitle}`} />
-      <h1 id="SDKs">SDKs {sdks.length}</h1>
+      <h1 id="SDKs">SDKs</h1>
       <div className="mxgrid">
         {
           sdks
@@ -36,11 +37,13 @@ const Bridges = ({ data }) => {
 
             return (
               <div className="mxgrid_item33">
-                <MXProjectCard client={client} />
+                <MXProjectCard project={client} imageSize={200} />
               </div>
             )
           })}
       </div>
+
+      <hr />
 
       <div class="overscroll">
         <table style={{ "width": "100%" }}>
@@ -101,6 +104,7 @@ export const query = graphql`
                         room
                         e2e
                         slug
+                        sort_order
                     }
                     fields {
                       slug
