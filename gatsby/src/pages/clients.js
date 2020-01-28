@@ -5,88 +5,94 @@ import Helmet from 'react-helmet'
 import { Layout, MXContentMain, MXProjectCard } from '../components'
 import config from '../../config'
 
-const ClientsMatrix = ({data}) => {
+const ClientsMatrix = ({ data }) => {
   const clients = data.allMdx.edges.map((edge => {
     var result = edge.node.frontmatter;
     result.slug = edge.node.fields.slug;
     return result;
   }));
+  clients.sort(function (a, b) {
+    if (a.sort_order && !b.sort_order) return -1;
+    if (!a.sort_order && b.sort_order) return 1;
+    if (!a.sort_order && !b.sort_order) return 0;
+    return a.sort_order - b.sort_order;
+  });
   clients.forEach((client, i) => {
     clients[i].platforms = clients[i].platforms ? clients[i].platforms : []
     clients[i].platformString = clients[i].platforms.join(',').replace(' ', '');
   });
 
   return (<Layout navmode="discover">
-      <MXContentMain>
-        <Helmet title={`Clients | ${config.siteTitle}`}>
-          <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
-          <script type="text/javascript" src="/js/clients-control.js"></script>
-        </Helmet>
+    <MXContentMain>
+      <Helmet title={`Clients | ${config.siteTitle}`}>
+        <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/js/clients-control.js"></script>
+      </Helmet>
 
-        <h1>Clients</h1>
-          <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="/docs/projects/try-matrix-now/">try-matrix-now</a>.
+      <h1>Clients</h1>
+      <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="/docs/projects/try-matrix-now/">try-matrix-now</a>.
           To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>.
           To see more clients in a features matrix, see the <a href="/clients-matrix">Clients Matrix</a>.</p>
-        <h2>Mobile</h2>
-        <div className="mxgrid">
-          {clients
-            .filter(c =>
-              c.featured  && (
+      <h2>Mobile</h2>
+      <div className="mxgrid">
+        {clients
+          .filter(c =>
+            c.featured && (
               c.platforms.indexOf("iOS") !== -1 ||
               c.platforms.indexOf("Android") !== -1 ||
               c.platforms.indexOf("Ubuntu Touch") !== -1))
-            .map(function (client, i) {
-              return (
-                <div className="mxgrid_item33">
-                  <MXProjectCard client={client} />
-                </div>
-              )
-            })}
-        </div>
-        <h2>Desktop</h2>
-        <div className="mxgrid">
-          {clients
-            .filter(c =>
-              c.platforms.indexOf("Linux") !== -1 ||
-              c.platforms.indexOf("Mac") !== -1 ||
-              c.platforms.indexOf("Windows") !== -1)
-            .map(function (client, i) {
-              return (
-                <div className="mxgrid_item33">
-                  <MXProjectCard client={client} />
-                </div>
-              )
-            })}
-        </div>
-        <h2>Web</h2>
-        <div className="mxgrid">
-          {clients
-            .filter(c =>
-              c.platforms.indexOf("Web") !== -1)
-            .map(function (client, i) {
-              return (
-                <div className="mxgrid_item33">
+          .map(function (client, i) {
+            return (
+              <div className="mxgrid_item33">
                 <MXProjectCard client={client} />
               </div>
-              )
-            })}
-        </div>
-        <h2>Nintendo 3DS</h2>
-        <div className="mxgrid">
-          {clients
-            .filter(c =>
-              c.platforms.indexOf("Nintendo 3DS") !== -1)
-            .map(function (client, i) {
-              return (
-                <div className="mxgrid_item33">
+            )
+          })}
+      </div>
+      <h2>Desktop</h2>
+      <div className="mxgrid">
+        {clients
+          .filter(c =>
+            c.platforms.indexOf("Linux") !== -1 ||
+            c.platforms.indexOf("Mac") !== -1 ||
+            c.platforms.indexOf("Windows") !== -1)
+          .map(function (client, i) {
+            return (
+              <div className="mxgrid_item33">
                 <MXProjectCard client={client} />
               </div>
-              )
-            })}
-        </div>
-        
-        </MXContentMain>
-    </Layout>)
+            )
+          })}
+      </div>
+      <h2>Web</h2>
+      <div className="mxgrid">
+        {clients
+          .filter(c =>
+            c.platforms.indexOf("Web") !== -1)
+          .map(function (client, i) {
+            return (
+              <div className="mxgrid_item33">
+                <MXProjectCard client={client} />
+              </div>
+            )
+          })}
+      </div>
+      <h2>Nintendo 3DS</h2>
+      <div className="mxgrid">
+        {clients
+          .filter(c =>
+            c.platforms.indexOf("Nintendo 3DS") !== -1)
+          .map(function (client, i) {
+            return (
+              <div className="mxgrid_item33">
+                <MXProjectCard client={client} />
+              </div>
+            )
+          })}
+      </div>
+
+    </MXContentMain>
+  </Layout>)
 }
 
 
@@ -112,6 +118,7 @@ export const query = graphql`{
          platforms
          SDK
          featured
+         sort_order
          features {
            Room_directory
            Room_tag_showing
