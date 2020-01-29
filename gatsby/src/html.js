@@ -12,7 +12,7 @@ export default function HTML(props) {
         connect-src 'self' https://api.github.com; font-src 'self' data:; media-src 'self';
         child-src 'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com;
         worker-src 'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com;
-        frame-src 'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com https://ghbtns.com;
+        frame-src 'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com https://ghbtns.com https://duckduckgo.com;
         form-action 'self' https://*.twitter.com;
         object-src 'self'" />
         <meta name="twitter:widgets:csp" content="on" />
