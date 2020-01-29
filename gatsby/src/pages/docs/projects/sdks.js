@@ -7,7 +7,7 @@ import config from '../../../../config'
 
 const _ = require('lodash')
 
-const Bridges = ({ data }) => {
+const SDKs = ({ data }) => {
   const sdks = data.allFile.edges.filter(s =>
     s.node.childMdx &&
     s.node.childMdx.frontmatter.categories &&
@@ -115,4 +115,4 @@ export const query = graphql`
     }
 }
 `
-export default Bridges
+export default SDKs
