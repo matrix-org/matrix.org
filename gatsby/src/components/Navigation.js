@@ -62,7 +62,7 @@ navTypes["discover"] = (
     <img src="/images/basic_calculator.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Bots</div>
   </a>
-  <a href="/docs/projects/sdks" className="mxnavsection__item w-inline-block">
+  <a href="/sdks" className="mxnavsection__item w-inline-block">
     <img src="/images/software_layers2.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">SDKs</div>
   </a>
