@@ -8,6 +8,12 @@ const MXProjectCard = ({ project, imageSize }) => {
             style={{ "max-width": `${imageSize}px`, "max-height": `${imageSize}px` }} />
         </a><br />
         {project.description}
+        {project.example_mxid &&
+            <div>
+                Example mxid: <a href={"https://matrix.to/#/"+project.example_mxid}>{project.example_mxid}</a>
+            </div>
+        }
+        
     </div>
 }
 export default MXProjectCard

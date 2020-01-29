@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
-import { Layout, MXContentMain } from '../../../components'
+import { Layout, MXContentMain, MXProjectCard } from '../../../components'
 import config from '../../../../config'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
@@ -10,33 +10,38 @@ const _ = require('lodash')
 
 const Bots = ({data}) => {
     const bots = data.allFile.edges.filter(s =>
+      s.node.childMdx &&
       s.node.childMdx.frontmatter.categories &&
       s.node.childMdx.frontmatter.categories[0] === 'bot' &&
-      s.node.childMdx.frontmatter.featured);
- 
+      s.node.childMdx.frontmatter.featured)
+      .map((edge => {
+      var result = edge.node.childMdx.frontmatter;
+      result.slug = edge.node.childMdx.fields.slug;
+      return result;
+    }));
+    bots.sort(function (a, b) {
+      if (a.sort_order && !b.sort_order) return -1;
+      if (!a.sort_order && b.sort_order) return 1;
+      if (!a.sort_order && !b.sort_order) return 0;
+      return a.sort_order - b.sort_order;
+    });
     return (<Layout navmode="discover">
         <MXContentMain>
           <Helmet title={`Bots | ${config.siteTitle}`} />
           <div className="mxblock mxblock--project">
           <h1 className="mxblock--project__hx">Bots</h1>
           <div className="mxgrid">
-            
-            {bots.map(function(edge) {
-            const s = edge.node.childMdx.frontmatter
+          {
+          bots
+            .filter(s => s.featured)
+            .map(function (bot, i) {
+
             return (
-                <div key={_.kebabCase(s.title) + s.repo} className="mxgrid__item50">
-              <div className="mxgrid__item__bg mxgrid__item__bg--clear">
-                <h2 id={_.kebabCase(s.title)} className="mxgrid__item--project__bg__hx">{s.title}</h2>
-                <img src={s.screenshot} alt="" className="mxgrid__item--project__bg__img" />
-                <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--project">
-                    <p><span hidden={!s.example_mxid}>Example mxid: <a href={"https://matrix.to/#/"+s.example_mxid}>{s.example_mxid}</a></span><br />
-                    Repo: <a href={s.repo}>{s.repo}</a></p>
-                    <MDXRenderer>{edge.node.childMdx.body}</MDXRenderer>
-                </div>
+              <div className="mxgrid_item33">
+                <MXProjectCard project={bot} imageSize={200} />
               </div>
-            </div>
-              )
-            })}
+            )
+          })}
           </div>
         </div>
         </MXContentMain>
@@ -65,6 +70,10 @@ export const query = graphql`
                         e2e
                         screenshot
                         example_mxid
+                        sort_order
+                    }
+                    fields {
+                      slug
                     }
                     body
                 }
