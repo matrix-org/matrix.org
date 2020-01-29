@@ -42,6 +42,10 @@ navTypes["develop"] = (
 </div>)
 navTypes["discover"] = (
 <div className="mxnavsection">
+  <a href="/discover" className="mxnavsection__item w-inline-block">
+    <img src="/images/basic_world.svg" alt="" className="mxnavsection__icon" />
+    <div className="mxnavsection__text">Discover</div>
+  </a>
   <a href="/docs/guides" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_spread_text.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Guides</div>
@@ -80,7 +84,7 @@ const Navigation = (navmode) => (
 <img src="/images/matrix-logo.svg" alt="" className="mxnavbar__logo" />
 </a>
         <nav role="navigation" className="mxnavbar__navmenu w-nav-menu">
-          <a href="/docs/guides" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "discover" ? "w--current":"")}>Discover</a>
+          <a href="/discover" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "discover" ? "w--current":"")}>Discover</a>
           <a href="/docs/develop" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "develop" ? "w--current":"")}>Develop</a>
           <a href="/foundation" className="mxnavbar__navlink w-nav-link ">Foundation</a>
           <a href="/blog/posts" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "blog" ? "w--current":"")}>Blog</a>
