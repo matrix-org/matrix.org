@@ -43,6 +43,7 @@ const redirects = [
     {from: "/docs/spec-api-playground-redirect", to: "/docs/api/client-server/"},
     {from: "/blog/feed-redirect", to: "/blog/feed"},
     {from: "/docs/projects/sdks", to: "/sdks"},
+    {from: "/docs/projects/bots", to: "/bots"},
 ];
 
 const template = `import React from 'react'
