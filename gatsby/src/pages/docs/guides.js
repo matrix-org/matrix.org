@@ -323,6 +323,16 @@ const Guides = ({data}) => {
           <td>Synapse Team</td>
           <td>English</td>
       </tr>
+      <tr>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/workers.md">Scaling synapse via workers</a></td>
+          <td>Synapse Team</td>
+          <td>English</td>
+      </tr>
+      <tr>
+          <td><a href="https://hub.netzgemeinde.eu/articles/buckaroo/synapseworkers">Boosting matrix/synapse by using workers </a></td>
+          <td>Mark Nowiasz</td>
+          <td>English</td>
+      </tr>
     </tbody>
   </table>
 </div>
