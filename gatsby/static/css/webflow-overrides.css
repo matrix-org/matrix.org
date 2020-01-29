@@ -249,6 +249,8 @@ label {
   background:#f4f4f4;
   padding: 2px;
   text-align: center;
+  height: 100%;
+  border: 2px solid white;
 }
 
 .mxclientcard h3 {
