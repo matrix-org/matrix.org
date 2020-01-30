@@ -5,7 +5,7 @@ const MXProjectCard = ({ project, imageSize }) => {
         <h3><a href={project.slug}>{project.title}</a></h3>
         <a href={project.slug}>
             <img alt={project.title} src={project.thumbnail}
-            style={{ "max-width": `${imageSize}px`, "max-height": `${imageSize}px` }} />
+            style={{ "maxWidth": `${imageSize}px`, "maxHeight": `${imageSize}px` }} />
         </a><br />
         {project.description}
         {project.example_mxid &&

@@ -36,7 +36,7 @@ const SDKs = ({ data }) => {
             .map(function (client, i) {
 
             return (
-              <div className="mxgrid_item33">
+              <div className="mxgrid_item33" key={client.slug}>
                 <MXProjectCard project={client} imageSize={200} />
               </div>
             )
@@ -45,13 +45,14 @@ const SDKs = ({ data }) => {
 
       <hr />
 
-      <div class="overscroll">
+      <div className="overscroll">
         <table style={{ "width": "100%" }}>
+        <tbody>
           <tr>
             <th></th>
             <th>Language / Platform</th>
             <th>Maintainer</th>
-            <th class="repo">Repo</th>
+            <th className="repo">Repo</th>
             <th>Matrix Room</th>
             <th>Supports E2E</th>
           </tr>
@@ -65,7 +66,7 @@ const SDKs = ({ data }) => {
               e2eSupport = "✓";
             }
             return (
-              <tr style={i % 2 === 0 ? { "backgroundColor": "#eee" } : {}}>
+              <tr style={i % 2 === 0 ? { "backgroundColor": "#eee" } : {}} key={slugLink}>
                 <td style={{ "textAlign": "left" }}>
                   <a href={slugLink}>{s.title}</a><br />
                   {s.description}
@@ -77,6 +78,7 @@ const SDKs = ({ data }) => {
                 <td className={e2eClass}>{e2eSupport}</td>
               </tr>)
           })}
+          </tbody>
         </table>
       </div>
     </MXContentMain>
