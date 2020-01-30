@@ -16,12 +16,6 @@ const Bots = ({data}) => {
       result.slug = edge.node.childMdx.fields.slug;
       return result;
     }));
-    bots.sort(function (a, b) {
-      if (a.sort_order && !b.sort_order) return -1;
-      if (!a.sort_order && b.sort_order) return 1;
-      if (!a.sort_order && !b.sort_order) return 0;
-      return a.sort_order - b.sort_order;
-    });
     return (<Layout navmode="discover">
         <MXContentMain>
           <Helmet title={`Bots | ${config.siteTitle}`} />
@@ -48,8 +42,9 @@ const Bots = ({data}) => {
 
 export const query = graphql`
 {
-    allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
-        
+    allFile(
+      sort: {fields:childMdx___frontmatter___sort_order, order: ASC}
+      filter: { sourceInstanceName: { eq: "projects" } }) {        
         edges {
             node {
                 childMdx {
