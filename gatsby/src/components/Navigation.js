@@ -27,7 +27,7 @@ navTypes["develop"] = (
     <img src="/images/basic_spread_text.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Docs</div>
   </a>
-  <a href="https://matrix.org/docs/spec" className="mxnavsection__item w-inline-block" onClick={()=>{window.location='https://matrix.org/docs/spec'; return false;}}>
+  <a href="https://matrix.org/spec" className="mxnavsection__item w-inline-block" onClick={()=>{window.location='https://matrix.org/docs/spec'; return false;}}>
     <img src="/images/basic_pencil_ruler.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Spec</div>
   </a>
@@ -54,19 +54,19 @@ navTypes["discover"] = (
     <img src="/images/basic_elaboration_message_happy.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Try Matrix</div>
   </a>
-  <a href="/clients" className="mxnavsection__item w-inline-block">
+  <a href="/clients/" className="mxnavsection__item w-inline-block">
     <img src="/images/software_layout_header_sideleft.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Clients</div>
   </a>
-  <a href="/bots" className="mxnavsection__item w-inline-block">
+  <a href="/bots/" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_calculator.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Bots</div>
   </a>
-  <a href="/sdks" className="mxnavsection__item w-inline-block">
+  <a href="/sdks/" className="mxnavsection__item w-inline-block">
     <img src="/images/software_layers2.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">SDKs</div>
   </a>
-  <a href="/bridges" className="mxnavsection__item w-inline-block">
+  <a href="/bridges/" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_share.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Bridges</div>
   </a>
