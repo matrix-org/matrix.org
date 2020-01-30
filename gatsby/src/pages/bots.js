@@ -4,9 +4,6 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import { Layout, MXContentMain, MXProjectCard } from '../components'
 import config from '../../config'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-
-const _ = require('lodash')
 
 const Bots = ({data}) => {
     const bots = data.allFile.edges.filter(s =>

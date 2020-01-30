@@ -4,7 +4,7 @@ const MXProjectCard = ({ project, imageSize }) => {
     return <div className="mxclientcard">
         <h3><a href={project.slug}>{project.title}</a></h3>
         <a href={project.slug}>
-            <img src={project.thumbnail}
+            <img alt={project.title} src={project.thumbnail}
             style={{ "max-width": `${imageSize}px`, "max-height": `${imageSize}px` }} />
         </a><br />
         {project.description}
