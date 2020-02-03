@@ -277,7 +277,7 @@
 [SMSMatrix]: https://github.com/tijder/SmsMatrix
 [SolarDrew]: https://matrix.to/#/@SolarDrew:matrix.org
 [Sorunome]: https://matrix.to/#/@sorunome:sorunome.de
-[Spectral]: https://gitlab.com/b0/spectral
+[Spectral]: https://gitlab.com/spectral-im/spectral
 [status.matrix.org]: https://status.matrix.org/
 [Stefan]: https://matrix.to/#/@natrius:matrix.org
 [swedneck]: https://matrix.to/#/@swedneck:permaweb.io
