@@ -15,6 +15,10 @@ navTypes["blog"] = (
     <img src="/images/basic_lock.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Security</div>
   </a>
+  <a href="/blog/categories" className="mxnavsection__item w-inline-block">
+    <img src="/images/basic_spread_text.svg" alt="" className="mxnavsection__icon" />
+    <div className="mxnavsection__text">Categories</div>
+  </a>
   <a href="/blog/feed" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_rss.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">RSS Feed</div>
