@@ -39,6 +39,8 @@ const Footer = () => (
         <a href="/legal/code-of-conduct/" className="mxfooter__link">Code of Conduct for Matrix.org</a>
         <a href="/legal/" className="mxfooter__link">Legal</a>
         <a href="/contact/" className="mxfooter__link">Contact</a>
+        <a href="https://github.com/matrix-org/matrix.org/" className="mxfooter__link">Site Source</a>
+        
       </div>
     </div>
     <div className="mxfooter__container mxfooter__container--heel">
