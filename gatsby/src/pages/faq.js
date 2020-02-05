@@ -305,7 +305,7 @@ to fix some bugs or add some features!</li>
 (but be warned, Matrix's architecture makes homeservers orders of magnitude harder
 than clients or bridges.)</li>
 </ul>
-<p>See <a href="http://github.com/matrix-org/synapse/tree/master/CONTRIBUTING.rst">CONTRIBUTING.rst</a> for
+<p>See <a href="http://github.com/matrix-org/synapse/tree/master/CONTRIBUTING.md">CONTRIBUTING.md</a> for
 full details on how to contribute to the project.  All are welcome!</p>
 <div class="definition-list">
 <div class="definition-item definition-synapse">

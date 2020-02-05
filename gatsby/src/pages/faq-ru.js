@@ -421,7 +421,7 @@ NodeJS для написания «мостов»</li>
 Вы даже можете попробовать написать реализацию сервера (но имейте в виду, архитектура 
 Matrix делает реализацию серверов куда более сложной, чем клиентов и «мостов»).</p>
 
-<p>Почитайте <a href="http://github.com/matrix-org/synapse/tree/master/CONTRIBUTING.rst">CONTRIBUTING.rst</a> 
+<p>Почитайте <a href="http://github.com/matrix-org/synapse/tree/master/CONTRIBUTING.md">CONTRIBUTING.md</a> 
 для подробностей, как вы можете помочь проекту. Мы рады всем!</p>
 
 <h5 id="-12">Где я могу получить помощь?</h5>
