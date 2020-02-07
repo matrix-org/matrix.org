@@ -16,17 +16,18 @@ module.exports = {
         disableOnDev: true,
         reportOnly: false, // 
         mergeScriptHashes: true, // you can disable scripts sha256 hashes
-        mergeStyleHashes: true, // you can disable styles sha256 hashes
+        mergeStyleHashes: false, // you can disable styles sha256 hashes
         mergeDefaultDirectives: true,
         directives: {
           "script-src": "'self' https://matomo.riot.im https://*.twitter.com https://buttons.github.io https://*.twimg.com",
           "style-src": " 'self' blob: https://buttons.github.io https://platform.twitter.com https://*.twimg.com 'unsafe-inline'",
           "img-src": "'self' data: https://matomo.riot.im https://*.twitter.com https://*.twimg.com https://github.com https://*.githubusercontent.com https://*.gitlab.io",
-          "connect-src": "'self' https://api.github.com; font-src 'self' data:; media-src 'self'",
+          "connect-src": "'self' https://api.github.com",
           "worker-src": "'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com",
           "frame-src": "'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com https://ghbtns.com https://duckduckgo.com",
           "form-action": "'self' https://*.twitter.com",
-          "object-src": "'self'"
+          "object-src": "'self'",
+          "font-src": "'self' data:"
         }
       }
     },
