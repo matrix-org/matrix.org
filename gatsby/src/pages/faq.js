@@ -627,8 +627,7 @@ documentation</a>.</p>
 <div class="question">
 <h4 id="can-i-run-my-own-identity-server%3F"><a class="permalink" href="#can-i-run-my-own-identity-server%3F" aria-hidden="true">&#128279;</a> Can I run my own identity server?</h4>
 <p>See also: <a href="#what-is-an-identity-server%3F">What is an identity server?</a></p>
-<p>Yes - the reference implementation is
-<a href="https://github.com/matrix-org/sydent">sydent</a> and you can run your own ID server cluster that tracks 3rd party to Matrix ID mappings.  This won't be very useful right now, though, and we don't recommend it.</p>
+<p>Yes - the reference implementation is <a href="https://github.com/matrix-org/sydent">sydent</a> and you can run your own ID server cluster that tracks 3rd party to Matrix ID mappings.  This won't be very useful right now, though, and we don't recommend it.</p>
 <p>If you want your server to participate in the global replicated Matrix ID
 service then please get in touch with us. Meanwhile, we are looking at
 ways of decentralising the 'official' Matrix identity service so that
