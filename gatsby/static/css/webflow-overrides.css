@@ -227,6 +227,14 @@ div.title {
   padding: 10px;
 }
 
+.mxgrid__item33 {
+  width: 33%;
+}
+
+.mxgrid__item33.mxgrid__item33--discover {
+  padding: 10px;
+}
+
 label {
   font-weight: normal;
   margin: 10px 0px;
@@ -241,6 +249,8 @@ label {
   background:#f4f4f4;
   padding: 2px;
   text-align: center;
+  height: 100%;
+  border: 2px solid white;
 }
 
 .mxclientcard h3 {

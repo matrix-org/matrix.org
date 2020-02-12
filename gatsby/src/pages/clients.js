@@ -44,7 +44,7 @@ const ClientsMatrix = ({ data }) => {
           .map(function (client, i) {
             return (
               <div className="mxgrid_item33">
-                <MXProjectCard client={client} />
+                <MXProjectCard project={client} />
               </div>
             )
           })}
@@ -60,7 +60,7 @@ const ClientsMatrix = ({ data }) => {
           .map(function (client, i) {
             return (
               <div className="mxgrid_item33">
-                <MXProjectCard client={client} />
+                <MXProjectCard project={client} />
               </div>
             )
           })}
@@ -73,7 +73,7 @@ const ClientsMatrix = ({ data }) => {
           .map(function (client, i) {
             return (
               <div className="mxgrid_item33">
-                <MXProjectCard client={client} />
+                <MXProjectCard project={client} />
               </div>
             )
           })}
@@ -86,7 +86,7 @@ const ClientsMatrix = ({ data }) => {
           .map(function (client, i) {
             return (
               <div className="mxgrid_item33">
-                <MXProjectCard client={client} />
+                <MXProjectCard project={client} />
               </div>
             )
           })}
@@ -99,7 +99,7 @@ const ClientsMatrix = ({ data }) => {
           .map(function (client, i) {
             return (
               <div className="mxgrid_item33">
-                <MXProjectCard client={client} />
+                <MXProjectCard project={client} />
               </div>
             )
           })}

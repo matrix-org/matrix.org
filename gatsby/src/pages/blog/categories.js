@@ -15,22 +15,35 @@ const Title = styled.h3`
 `
 
 const Category = ({
-  data: {
-    allMdx: { group },
+  data: { 
+    categories: { group },
+    archive: { edges }
   },
 }) => (
   <Layout navmode="blog">
       <Helmet title={`Categories | ${config.siteTitle}`} />
-      <Header>
-      </Header>
       <MXContentMain>
         <SectionTitle>Categories</SectionTitle>
+
+        <div className="mxgrid">
         {group.map(category => (
+          <div className="mxgrid_item33">
           <Title key={category.fieldValue}>
             <Link to={`/blog/category/${kebabCase(category.fieldValue)}`}>{category.fieldValue}</Link> (
             {category.totalCount})
           </Title>
+            <ul style={{"fontSize": "smaller"}}>
+              {edges
+                .filter(post => post.node.frontmatter.categories.includes(category.fieldValue))
+                .slice(0,5)
+                .map(post =>(
+                <li><a href={post.node.fields.slug}>{post.node.frontmatter.title}</a></li>
+              ))}
+              <li><Link to={`/blog/category/${kebabCase(category.fieldValue)}`}>... more "{category.fieldValue}" posts</Link></li>
+            </ul>
+          </div>
         ))}
+        </div>
       </MXContentMain>
   </Layout>
 )
@@ -47,7 +60,7 @@ Category.propTypes = {
 
 export const postQuery = graphql`
   query CategoriesPage {
-    allMdx (
+    categories: allMdx (
       filter: {frontmatter: {date: {ne: null} } }
     ){
       group(field: frontmatter___categories) {
@@ -55,5 +68,22 @@ export const postQuery = graphql`
         totalCount
       }
     }
-  }
+    archive: allMdx(
+      sort: { fields: [frontmatter___date, fileAbsolutePath], order: DESC },
+        filter: {frontmatter: {date: {ne: null}}}) {
+        totalCount
+        edges {
+          node {
+            frontmatter {
+              title
+              date
+              categories
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
 `

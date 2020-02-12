@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
-import { Layout, MXContentMain, MXProjectCard } from '../components'
+import { Layout, MXContentMain } from '../components'
 import config from '../../config'
 
 const ClientsMatrix = ({data}) => {

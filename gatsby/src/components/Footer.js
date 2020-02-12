@@ -2,8 +2,8 @@ import React from 'react'
 
 const Footer = () => (
   <div className="mxfooter">
-  <div className="mxfooter__container">
-    <div className="mxfooter__column">
+    <div className="mxfooter__container">
+      <div className="mxfooter__column">
         <a href="/docs/projects/try-matrix-now" className="mxfooter__link mxfooter__link--primary">Discover</a>
         <a href="/docs/projects/try-matrix-now" className="mxfooter__link">Try Matrix</a>
         <a href="/clients" className="mxfooter__link">Clients</a>
@@ -37,7 +37,10 @@ const Footer = () => (
         <a href="/faq" className="mxfooter__link">FAQs</a>
         <a href="/security-disclosure-policy/" className="mxfooter__link">Security Disclosure Policy</a>
         <a href="/legal/code-of-conduct/" className="mxfooter__link">Code of Conduct for Matrix.org</a>
-        <a href="/legal" className="mxfooter__link">Legal</a>
+        <a href="/legal/" className="mxfooter__link">Legal</a>
+        <a href="/contact/" className="mxfooter__link">Contact</a>
+        <a href="https://github.com/matrix-org/matrix.org/" className="mxfooter__link">Site Source</a>
+        
       </div>
     </div>
     <div className="mxfooter__container mxfooter__container--heel">

@@ -39,7 +39,12 @@ const PostList = ({ pageContext: { limit, skip, currentPage, posts }, data: { al
             }}
           />
         </MXContentMain>
-        <MXContentNav title="All posts" content={posts} currentSlug="/blog"></MXContentNav>
+        <div>
+        <iframe title="DDGSearch" src="https://duckduckgo.com/search.html?width=250&site=matrix.org&prefill=Search Matrix.org with DDG"
+      style={{"overflow":"hidden","margin":0,"padding":0,"width":"308px","height":"40px"}} 
+      frameBorder="0"></iframe>
+      <MXContentNav title="All posts" content={posts} currentSlug="/blog"></MXContentNav>
+        </div>
     </Layout>
   )
 }
