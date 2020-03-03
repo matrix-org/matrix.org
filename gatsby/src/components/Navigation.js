@@ -19,7 +19,7 @@ navTypes["blog"] = (
     <img src="/images/basic_spread_text.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Categories</div>
   </a>
-  <a href="/blog/feed" className="mxnavsection__item w-inline-block">
+  <a target="_blank" href="/blog/feed" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_rss.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">RSS Feed</div>
   </a>
@@ -31,15 +31,15 @@ navTypes["develop"] = (
     <img src="/images/basic_spread_text.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Docs</div>
   </a>
-  <a href="https://matrix.org/spec" className="mxnavsection__item w-inline-block" onClick={()=>{window.location='https://matrix.org/docs/spec'; return false;}}>
+  <a href="https://matrix.org/docs/spec" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_pencil_ruler.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Spec</div>
   </a>
-  <a href="https://matrix.org/docs/api/client-server/" className="mxnavsection__item w-inline-block" onClick=  {()=>{window.location='https://matrix.org/docs/api/client-server/'; return false;}}>
+  <a href="https://matrix.org/docs/api/client-server/" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_cards_hearts.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">API Playground</div>
   </a>
-  <a href="https://matrix.org/code" className="mxnavsection__item w-inline-block" onClick={()=>{window.location='https://matrix.org/code'; return false;}}>
+  <a href="https://matrix.org/code" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_settings.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Code</div>
   </a>
