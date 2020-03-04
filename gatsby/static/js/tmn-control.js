@@ -1,6 +1,5 @@
 $(document).ready(function () {
     console.log("tmn-control loaded v2")
-    console.log($("[id^=chk-language]"))
     
         /* For each type, a click event */
         $("[id^=chk-type]").click(function(a) {

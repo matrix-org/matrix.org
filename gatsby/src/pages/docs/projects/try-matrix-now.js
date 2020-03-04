@@ -192,7 +192,7 @@ const TryMatrixNow = ({data}) => {
                                         return (
                                             <p key={id} className="mxgrid__item__bg__p">
                                                 <input type="checkbox" id={id} name={id} />
-                                                <label style={{ "white-space": "nowrap" }} htmlFor={id}> {maturity}</label>
+                                                <label style={{ "whiteSpace": "nowrap" }} htmlFor={id}> {maturity}</label>
                                             </p>)
                                     })
                                 }

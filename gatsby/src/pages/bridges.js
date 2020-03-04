@@ -61,13 +61,13 @@ const Bridges = ({data}) => {
 {toc.map(function(tocitem, i) {
   var projects = bridges.filter(x => x.node.frontmatter.bridges === tocitem.bridges);
   return (
-  <div>
+  <div key={i}>
     <hr />
     <h2 id={kebabCase(tocitem.bridges)}>{tocitem.bridges}</h2>
     {projects.map(function(project, i) {
       const fm = project.node.frontmatter;
       return (
-        <div>
+        <div key={fm.title}>
           <h3 id={kebabCase(fm.title)}>{fm.title}</h3>
           <div className="mxblock">
             <table style={{"width": "100%"}}>

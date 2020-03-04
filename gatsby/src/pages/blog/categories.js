@@ -5,7 +5,7 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 
-import { Layout, MXContentMain, Header, SectionTitle } from '../../components'
+import { Layout, MXContentMain, SectionTitle } from '../../components'
 import config from '../../../config'
 
 const Title = styled.h3`

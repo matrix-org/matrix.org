@@ -43,7 +43,7 @@ const ClientsMatrix = ({ data }) => {
               c.platforms.indexOf("Ubuntu Touch") !== -1))
           .map(function (client, i) {
             return (
-              <div className="mxgrid_item33">
+              <div key={client.slug} className="mxgrid_item33">
                 <MXProjectCard project={client} />
               </div>
             )
@@ -59,7 +59,7 @@ const ClientsMatrix = ({ data }) => {
             c.platforms.indexOf("Windows") !== -1))
           .map(function (client, i) {
             return (
-              <div className="mxgrid_item33">
+              <div key={client.slug} className="mxgrid_item33">
                 <MXProjectCard project={client} />
               </div>
             )
@@ -72,7 +72,7 @@ const ClientsMatrix = ({ data }) => {
             c.client_type === "terminal")
           .map(function (client, i) {
             return (
-              <div className="mxgrid_item33">
+              <div key={client.slug} className="mxgrid_item33">
                 <MXProjectCard project={client} />
               </div>
             )
@@ -85,7 +85,7 @@ const ClientsMatrix = ({ data }) => {
             c.platforms.indexOf("Web") !== -1)
           .map(function (client, i) {
             return (
-              <div className="mxgrid_item33">
+              <div key={client.slug} className="mxgrid_item33">
                 <MXProjectCard project={client} />
               </div>
             )
@@ -98,7 +98,7 @@ const ClientsMatrix = ({ data }) => {
             c.platforms.indexOf("Nintendo 3DS") !== -1)
           .map(function (client, i) {
             return (
-              <div className="mxgrid_item33">
+              <div key={client.slug} className="mxgrid_item33">
                 <MXProjectCard project={client} />
               </div>
             )
