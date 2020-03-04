@@ -11,6 +11,8 @@ import theme from '../../config/theme'
 
 import { graphql } from 'gatsby'
 import { Link } from "gatsby"
+import SEO from '../components/SEO'
+import useBuildTime from '../hooks/useBuildTime'
 
 const example1 = `curl -XPOST
  -d '{"msgtype":"m.text", "body":"hello"}'
@@ -72,6 +74,7 @@ const Index = ({
     allMdx: { edges },
   },
 }) => {
+    const buildTime = useBuildTime()
     return (
          <ThemeProvider theme={theme}>
             <div>
@@ -84,6 +87,7 @@ const Index = ({
               <script async="" defer="" src="https://buttons.github.io/buttons.js"/>
             </Helmet>
             <Navigation />
+            <SEO buildTime={buildTime} />
   <div className="mxherobackground">
     <div className="mxherobackground__img">
 </div>
