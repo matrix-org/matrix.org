@@ -84,14 +84,6 @@ const SEO = props => {
       },
       position: 1,
     },
-    {
-      '@type': 'ListItem',
-      item: {
-        '@id': `${homeURL}/contact`,
-        name: 'Contact',
-      },
-      position: 2,
-    },
   ]
 
   let schemaArticle = null
@@ -141,7 +133,7 @@ const SEO = props => {
         '@id': URL,
         name: title,
       },
-      position: 3,
+      position: 2,
     })
   }
 
