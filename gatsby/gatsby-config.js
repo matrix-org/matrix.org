@@ -189,5 +189,13 @@ module.exports = {
     },
     'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '3',
+        matomoUrl: 'https://matomo.riot.im',
+        siteUrl: 'https://matrix.org'
+      }
+    }
   ],
 }
