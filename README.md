@@ -21,8 +21,8 @@ Now you can visit the page you want to work on in the browser. For example: http
      but not necessary)
    - `git clone https://github.com/matrix-org/matrix.org && cd matrix.org`
 1. `cd gatsby`
-1. `cp project-template.mdx content/projects/date-project-name.mdx` The name of the file should be the start date of your project followed by the name of the project. For example: `2019-03-13-pattle.mdx`
+1. `cp project-template.mdx content/{bots|bridges|clients|sdks|other}/project-name.mdx`
 1. Edit the file to include information about your project
-1. To include images in your posting, add them to `static/docs/projects/images/`. Avoid linking to images on other websites.
+1. To include images in your posting, add them to `gatsby/static/docs/projects/images/`. Avoid linking to images on other websites.
 1. To check how the rendered result looks (strongly recommended), follow "How to build" steps.
 1. Once it looks good, submit a pull request!
