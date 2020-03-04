@@ -10,6 +10,13 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date:'2020-03-03',
+            who: 'Rhys Davies',
+            profile: 'https://twitter.com/rhysmdnz',
+            description: "An open redirect vulnerability affecting single sign-on flows. Fixed in Synapse 1.11.1",
+            service: "Synapse"
+        },
+        {
             date:'2019-05-02',
             who: 'Enguerran Gillier',
             profile: 'https://twitter.com/opnsec',
