@@ -172,6 +172,7 @@ const SEO = props => {
       {!article && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
       {article && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
       <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+      <link title="Matrix.org" type="application/opensearchdescription+xml" rel="search" href="/opensearch.xml" />
       <script async="" src="https://platform.twitter.com/widgets.js" charSet="utf-8"/>
     </Helmet>
   )
