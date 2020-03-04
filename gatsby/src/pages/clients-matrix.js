@@ -164,8 +164,7 @@ const ClientsMatrix = ({data}) => {
                     if (client.features[feature] === "yes") {
                       featureClass = "green";
                       featureSupport = "✓";
-                    }
-                    if (client.features[feature] === "no") {
+                    } else {
                       featureClass = "red";
                       featureSupport = "✗";
                     }
@@ -184,7 +183,9 @@ const ClientsMatrix = ({data}) => {
 
 
 export const query = graphql`{
- allMdx(filter: {
+ allMdx(
+  sort: {fields:frontmatter___sort_order, order: ASC} 
+  filter: {
    frontmatter: {
      categories: {in: ["client"]},
      platforms: {ne: null}
@@ -193,6 +194,7 @@ export const query = graphql`{
    edges {
      node {
        frontmatter {
+         sort_order
          title
          author
          maturity
@@ -232,6 +234,11 @@ export const query = graphql`{
            Multiple_Matrix_Accounts
            New_user_registration
            voip
+           Reactions
+           Message_editing
+           Room_upgrades
+           Localisations
+           SSO_Support
          }
        }
        fields {
