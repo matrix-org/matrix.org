@@ -24,7 +24,7 @@ const Legal = () => {
                 <li><a href="/">Homepage</a></li>
                 <li><a href="/blog/posts">Matrix Blog</a></li>
                 <li><a href="/faq">FAQ</a></li>
-                <li><a href="https://matrix.org/spec">The Matrix Spec</a></li>
+                <li><a href="https://matrix.org/docs/spec">The Matrix Spec</a></li>
             </ul>
         </div>
     </Layout>)
