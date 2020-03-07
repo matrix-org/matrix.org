@@ -16,7 +16,7 @@ const Hosting = ({ data }) => {
 
                 <div className="mxgrid__item50">
                     <h2 id="modularim">Modular.im</h2>
-                    <p><img width="75%" src="/images/modularlogo.png" alt="" /></p>
+                    <p><img style={{"height": "130px"}} src="/images/modularlogo.png" alt="" /></p>
                     <p><a href="https://www.modular.im/">www.modular.im</a></p>
                     <ul>
                         <li>Hosted Homeservers</li>
@@ -27,13 +27,15 @@ const Hosting = ({ data }) => {
                 </div>
 
                 <div className="mxgrid__item50">
-                    <h2 id="ungleich">ungleich.ch</h2>
-                    <p><span style={{"backgroundColor": "black", "height": "120px", "width":"75%", "display": "inline-block"}}><br /><img width="75%" src="https://ungleich.ch/static/ungleich_page/img/logo_white.svg" alt="" /></span></p>
-                    <p><a href="https://ungleich.ch/u/products/hosted-matrix-chat/">https://ungleich.ch/u/products/hosted-matrix-chat/</a></p>
+                    <h2 id="ungleich">Ungleich.ch</h2>
+                    <p><img style={{"border-radius": "9px", "height": "130px"}} src="/images/ungleich_zerocarbonmatrix.jpg" alt="" /></p>
+                    <p><a href="https://matrix.zerocarbon.shop/">matrix.zerocarbon.shop</a></p>
                     <ul>
-                        <li>Hosted in Switzerland</li>
+                        <li>Hosted Homeservers</li>
                     </ul>
-                    <p>Service provided by <a href="https://ungleich.ch">ungleich.ch</a>.</p>
+                    <p>Service provided by <a href="https://ungleich.ch">ungleich.ch</a> in their own datacenter
+                    in Linthal, Switzerland. They use an old building, second-hand servers, passive cooling and
+                    are directly plugged into an on-site hydroelectric power plant!</p>
                 </div>
             </div>
         </MXContentMain>
