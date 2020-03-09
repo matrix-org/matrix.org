@@ -11,13 +11,13 @@ import { graphql } from 'gatsby'
 
 const Faq = ({data}) => {
     const sections = data.allMdx.edges;
-    const encryption = sections.find((element) => {    
+    const encryption = sections.find((element) => {
         return element.node.frontmatter.faq_section === "encryption";
     });
-    const position = sections.find((element) => {    
+    const position = sections.find((element) => {
         return element.node.frontmatter.faq_section === "position-in-the-world";
     });
-    const asAUser = sections.find((element) => {    
+    const asAUser = sections.find((element) => {
         return element.node.frontmatter.faq_section === "as-a-user";
     });
     return (<Layout hasNavPadding="true">
@@ -999,7 +999,7 @@ Usage of an IS is not required in order for a client application to be part of t
 <div className="question">
 <h4 id="do-i-need-a-turn-server%3F"><a className="permalink" href="#do-i-need-a-turn-server%3F" aria-hidden="true">&#128279;</a> Do I need a TURN server?</h4>
 <p>VoIP calls should work if both parties are on public networks. However, in practice one (or both) devices are often behind NAT, and so having a <a href="https://en.wikipedia.org/wiki/Traversal_Using_Relays_around_NAT">TURN</a> server is important to help set up the call.</p>
-<p>See <a href="https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.rst">this guide</a> for setting up a TURN server with Synapse.</p>
+<p>See <a href="https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md">this guide</a> for setting up a TURN server with Synapse.</p>
 <div className="definition-list">
 <div className="definition-close">close</div>
 </div>
