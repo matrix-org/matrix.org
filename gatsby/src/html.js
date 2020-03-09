@@ -22,8 +22,6 @@ export default function HTML(props) {
         <link rel="stylesheet" type="text/css" href="/css/prism.css" />
 
         <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="/js/matomo.js"></script>
-        <noscript><p><img src="//matomo.riot.im/matomo.php?idsite=3&amp;rec=1" style={{"border": 0}} alt="" /></p></noscript>
       </head>
       <body className="body" {...props.bodyAttributes}>
         {props.preBodyComponents}

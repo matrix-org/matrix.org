@@ -28,7 +28,7 @@ const Bots = ({data}) => {
             .map(function (bot, i) {
 
             return (
-              <div className="mxgrid_item33">
+              <div key={bot.slug} className="mxgrid_item33">
                 <MXProjectCard project={bot} imageSize={200} />
               </div>
             )

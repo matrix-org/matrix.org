@@ -12,15 +12,15 @@ const Foundation = () => {
     return (<Layout hasNavPadding="true" excerptOverride="The Foundation defines the manifesto, mission and values of the project, the open governance process that determines how the specification develops, and provides a safety-net to ensure the project stays independent and true to its goals.">
             <Helmet title={`The Matrix.org Foundation | ${config.siteTitle}`} />
             <MXContentMain>
-            <div class="mxblock mxblock--foundation">
-          <h1 class="mxblock--foundation__hx">The Matrix.org Foundation</h1>
+            <div className="mxblock mxblock--foundation">
+          <h1 className="mxblock--foundation__hx">The Matrix.org Foundation</h1>
           <h2>Introduction</h2>
-          <p class="mxblock--foundation__p">
+          <p className="mxblock--foundation__p">
             The evolution of Matrix is managed through an open governance process, looked after by The Matrix.org
             Foundation - a non-profit UK Community Interest Company, incorporated to act as the neutral guardian of the
             standard on behalf of the whole Matrix community.
           </p>
-          <p class="mxblock--foundation__p">
+          <p className="mxblock--foundation__p">
             The Foundation defines the manifesto, mission and values of the project, the open governance process that
             determines how the specification develops, and provides a safety-net to ensure the project stays independent
             and true to its goals.  The constitution of the project is defined in the Foundation’s legal Articles of
@@ -31,7 +31,7 @@ const Foundation = () => {
 
           <h2>The Guardians</h2>
 
-          <p class="mxblock--foundation__p">
+          <p className="mxblock--foundation__p">
             The Guardians are the legal directors of the non-profit Foundation, and are responsible for ensuring that
             the Foundation (and by extension the Spec Core Team) keeps on mission and neutrally protects the development
             of Matrix. Guardians are typically independent of the commercial Matrix ecosystem and may even not be
@@ -39,17 +39,17 @@ const Foundation = () => {
             selected to be respected and trusted by the wider community to uphold the guiding principles of the
             Foundation and keep the other Guardians honest.
           </p>
-          <p class="mxblock--foundation__p">
+          <p className="mxblock--foundation__p">
             In alphabetical order:
           </p>
 
-          <div class="mxgrid mxgrid--guardians">
-            <div class="mxgrid__item100">
-              <div class="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian">
-                <img class="mxgrid__item--guardian__bg__img" alt="Prof. Jon Crowcroft" src="/images/guardians/crowcroft.jpg"/>
-                <div class="mxgrid__item--guardian__content">
-                  <h2 class="mxgrid__item--guardian__content__hx">Prof. Jon Crowcroft</h2>
-                  <p class="mxgrid__item--guardian__content__p">
+          <div className="mxgrid mxgrid--guardians">
+            <div className="mxgrid__item100">
+              <div className="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian">
+                <img className="mxgrid__item--guardian__bg__img" alt="Prof. Jon Crowcroft" src="/images/guardians/crowcroft.jpg"/>
+                <div className="mxgrid__item--guardian__content">
+                  <h2 className="mxgrid__item--guardian__content__hx">Prof. Jon Crowcroft</h2>
+                  <p className="mxgrid__item--guardian__content__p">
                     Jon Crowcroft is the Marconi Professor of Communications Systems in the Computer Lab at the
                     University of Cambridge, and the Turing Institute. Jon is a pioneer in the field of decentralised
                     communication, and a fellow of the Royal Society, the ACM, the British Computer Society, the
@@ -60,12 +60,12 @@ const Foundation = () => {
                 </div>
               </div>
             </div>
-            <div class="mxgrid__item100">
-              <div class="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian mxgrid__item__bg--guardian--invert">
-                <img class="mxgrid__item--guardian__bg__img" alt="Matthew Hodgson" src="/images/guardians/matthew.jpg"/>
-                <div class="mxgrid__item--guardian__content mxgrid__item--guardian__content--invert">
-                  <h2 class="mxgrid__item--guardian__content__hx">Matthew Hodgson</h2>
-                  <p class="mxgrid__item--guardian__content__p">
+            <div className="mxgrid__item100">
+              <div className="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian mxgrid__item__bg--guardian--invert">
+                <img className="mxgrid__item--guardian__bg__img" alt="Matthew Hodgson" src="/images/guardians/matthew.jpg"/>
+                <div className="mxgrid__item--guardian__content mxgrid__item--guardian__content--invert">
+                  <h2 className="mxgrid__item--guardian__content__hx">Matthew Hodgson</h2>
+                  <p className="mxgrid__item--guardian__content__p">
                     Matthew is technical co-founder of Matrix, and CEO/CTO of New Vector - the company formed in 2017 to
                     let the core Matrix dev team work on Matrix full-time as their day job. He came up with the idea of
                     Matrix with Amandine in 2013 while they were running Amdocs’ Unified Communication unit. He has a
@@ -74,12 +74,12 @@ const Foundation = () => {
                 </div>
               </div>
             </div>
-            <div class="mxgrid__item100">
-              <div class="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian">
-                <img class="mxgrid__item--guardian__bg__img" alt="Amandine Le Pape" src="/images/guardians/amandine.jpg"/>
-                <div class="mxgrid__item--guardian__content">
-                  <h2 class="mxgrid__item--guardian__content__hx">Amandine Le Pape</h2>
-                  <p class="mxgrid__item--guardian__content__p">
+            <div className="mxgrid__item100">
+              <div className="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian">
+                <img className="mxgrid__item--guardian__bg__img" alt="Amandine Le Pape" src="/images/guardians/amandine.jpg"/>
+                <div className="mxgrid__item--guardian__content">
+                  <h2 className="mxgrid__item--guardian__content__hx">Amandine Le Pape</h2>
+                  <p className="mxgrid__item--guardian__content__p">
                     Amandine is co-founder of Matrix, and COO of New Vector. She previously
                     ran the business side of Amdocs’ UC unit with Matthew. She has an engineering degree in Telecoms,
                     Electronics and Computer Science and uses it most to translate the technicalities of Matrix to
@@ -88,12 +88,12 @@ const Foundation = () => {
                 </div>
               </div>
             </div>
-            <div class="mxgrid__item100">
-              <div class="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian mxgrid__item__bg--guardian--invert">
-                <img class="mxgrid__item--guardian__bg__img" alt="Ross Schulman" src="/images/guardians/ross.jpg"/>
-                <div class="mxgrid__item--guardian__content mxgrid__item--guardian__content--invert">
-                  <h2 class="mxgrid__item--guardian__content__hx">Ross Schulman</h2>
-                  <p class="mxgrid__item--guardian__content__p">
+            <div className="mxgrid__item100">
+              <div className="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian mxgrid__item__bg--guardian--invert">
+                <img className="mxgrid__item--guardian__bg__img" alt="Ross Schulman" src="/images/guardians/ross.jpg"/>
+                <div className="mxgrid__item--guardian__content mxgrid__item--guardian__content--invert">
+                  <h2 className="mxgrid__item--guardian__content__hx">Ross Schulman</h2>
+                  <p className="mxgrid__item--guardian__content__p">
                     Ross Schulman is a senior counsel and senior policy technologist at New America’s Open Technology
                     Institute, where he focuses on internet measurement, emerging technologies, surveillance, and
                     decentralization. Prior to joining OTI, Ross worked for Google. Ross brings a unique perspective as
@@ -104,19 +104,19 @@ const Foundation = () => {
                 </div>
               </div>
             </div>
-            <div class="mxgrid__item100">
-              <div class="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian">
-                <img class="mxgrid__item--guardian__bg__img" alt="Dr. Jutta Steiner" src="/images/guardians/jutta.jpg"/>
-                <div class="mxgrid__item--guardian__content">
-                  <h2 class="mxgrid__item--guardian__content__hx">Dr. Jutta Steiner</h2>
-                  <p class="mxgrid__item--guardian__content__p">
+            <div className="mxgrid__item100">
+              <div className="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--guardian">
+                <img className="mxgrid__item--guardian__bg__img" alt="Dr. Jutta Steiner" src="/images/guardians/jutta.jpg"/>
+                <div className="mxgrid__item--guardian__content">
+                  <h2 className="mxgrid__item--guardian__content__hx">Dr. Jutta Steiner</h2>
+                  <p className="mxgrid__item--guardian__content__p">
                     As co-founder and CEO of Parity Technologies, Dr. Jutta Steiner is dedicated to building a better
                     internet - Web 3.0 - where users’ privacy & control come first. Parity Technologies is a leader in
                     the blockchain space – known to many as the creator of one of the most popular Ethereum clients, it
                     is also the creator of two ambitious new blockchain technlogies, Polkadot and Substrate, that make
                     it easier to experiment and innovate on scalability, encryption and governance.
                   </p>
-                  <p class="mxgrid__item--guardian__content__p">
+                  <p className="mxgrid__item--guardian__content__p">
                     Parity Technologies have been pioneering Matrix enterprise use since the moment they decided to rely
                     on Matrix for their internal and external communication back in 2016 and now run their own
                     high-volume deployment, with end-to-end encryption enabled by default. Jutta represents
