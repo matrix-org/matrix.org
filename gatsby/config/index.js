@@ -9,13 +9,13 @@ module.exports = {
   siteHeadline: 'Writing and publishing content', // Headline for schema.org JSONLD
   siteBanner: '/blog/wp-content/uploads/2015/01/logo1.png', // Your image for og:image tag. You can find it in the /static folder
   favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
-  siteDescription: 'Matrix.org.', // Your site description
+  siteDescription: 'Matrix.org', // Your site description
   author: 'Matrix.org', // Author for schemaORGJSONLD
   siteLogo: '/social/logo.png', // Image for schemaORGJSONLD
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@matrixdotorg', // Twitter Username - Optional
-  ogSiteName: 'Matrix.org blog', // Facebook Site Name - Optional
+  ogSiteName: 'Matrix.org', // Facebook Site Name - Optional
   ogLanguage: 'en_US', // Facebook Language
 
   // Manifest and Progress color
