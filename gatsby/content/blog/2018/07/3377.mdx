@@ -12,9 +12,7 @@ Folks, Synapse 0.32.0 is an important security update: please upgrade as soon as
 
 The release focuses on security; fixing several federation bugs and adding new features for countering abuse. Notably it includes the ability to blacklist &amp; whitelist servers allowed to send events to a room on a per-room basis via the new 
 m.room.server_acl
- state event: see 
-<a href="https://docs.google.com/document/d/1aiuROf1__7ZFkJvDdAZQfBNxyzjYd-ijiRAcHJYqJCM/edit">MSC1383</a> for details.  This also closes out 
-<a href="https://github.com/matrix-org/matrix-doc/issues/709">https://github.com/matrix-org/matrix-doc/issues/709</a> - one of our oldest feature requests from users who wish to be able to limit the servers allowed to participate in a given room.
+ state event: see <a href="https://docs.google.com/document/d/1aiuROf1__7ZFkJvDdAZQfBNxyzjYd-ijiRAcHJYqJCM/edit">MSC1383</a> for details.  This also closes out <a href="https://github.com/matrix-org/matrix-doc/issues/709">https://github.com/matrix-org/matrix-doc/issues/709</a> - one of our oldest feature requests from users who wish to be able to limit the servers allowed to participate in a given room.
 
 
 It's important to understand that server ACLs only work if all the servers participating in the room honour them.  In future this will be handled better (as part of ongoing work in making it easier to incrementally version and upgrade the federation protocol).  This means that for the ACLs to work, any servers which don't yet implement ACLs (e.g. older Synapses) have to be ACL'd from the room for the access control to work.  
@@ -24,8 +22,7 @@ This ongoing flurry of security work is in general all part of moving towards th
 
 
 As always, you can get the new update from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.32.1">https://github.com/matrix-org/synapse/releases/tag/v0.32.1</a>
- or any of the sources mentioned at 
-<a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>.
+ or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>.
 
 <h2>Changes in synapse v0.32.0 (2018-07-06)</h2>
 No changes since 0.32.0rc1

@@ -80,16 +80,14 @@ In practice, this could be quite serious: imagine that you join a public chatroo
 Mitigating this is a hard problem, as MXIDs are baked into the DAG for a room in many places - not least to identify which servers are participating in a room.  The problem is made even worse by the fact that in Matrix, server hostnames themselves are often personally identifying (for one-person homeservers sitting on a personal domain).
 
 
-We've spent quite a lot time reasoning through how to fix this situation, and a full technical spec proposal for removing MXIDs from events can be found at 
-<a href="https://docs.google.com/document/d/1ni4LnC_vafX4h4K4sYNpmccS7QeHEFpAcYcbLS-J21Q">https://docs.google.com/document/d/1ni4LnC_vafX4h4K4sYNpmccS7QeHEFpAcYcbLS-J21Q</a>.  The high level proposal is to switch to giving each user a different ID in the form of a cryptographic public key for every room it participates in, and maintaining a mapping of today's MXIDs to these per-user-per-room keys.  In the event of a GDPR erasure, these mappings can be discarded, pseudonymising the user and avoiding correlation across different rooms. We'd also switch to using cryptographic public keys as the identifiers for Rooms, Events and Users (for cross-room APIs like presence).
+We've spent quite a lot time reasoning through how to fix this situation, and a full technical spec proposal for removing MXIDs from events can be found at <a href="https://docs.google.com/document/d/1ni4LnC_vafX4h4K4sYNpmccS7QeHEFpAcYcbLS-J21Q">https://docs.google.com/document/d/1ni4LnC_vafX4h4K4sYNpmccS7QeHEFpAcYcbLS-J21Q</a>.  The high level proposal is to switch to giving each user a different ID in the form of a cryptographic public key for every room it participates in, and maintaining a mapping of today's MXIDs to these per-user-per-room keys.  In the event of a GDPR erasure, these mappings can be discarded, pseudonymising the user and avoiding correlation across different rooms. We'd also switch to using cryptographic public keys as the identifiers for Rooms, Events and Users (for cross-room APIs like presence).
 
 
 This is obviously a significant protocol change, and we're not going to do it lightly - we're still waiting for legal confirmation on whether we need it for May 25th (it may be covered as an intrinsic technical limitation of the system).  However, the good news is that it paves the way towards many other desirable features: the ability to migrate accounts between homeservers; the ability to solve the problem of how to handle domain names being reused (or hijacked); the ability to decouple homeservers from DNS so that they can run clientside (for p2p matrix); etc.  The chances are high that this proposal will land in the relatively near future (especially if mandated by GDPR), so input is very appreciated at this point!
 
 <h3>Consent
 </h3>
-GDPR describes 
-<a href="https://gdpr-info.eu/art-6-gdpr/">six lawful bases for processing</a> personal data.  For those running Matrix servers, it seems the best route to compliance is the most explicit and active one: 
+GDPR describes <a href="https://gdpr-info.eu/art-6-gdpr/">six lawful bases for processing</a> personal data.  For those running Matrix servers, it seems the best route to compliance is the most explicit and active one: 
 <i>consent
 </i>.
 
@@ -123,8 +121,7 @@ The (immediate-term) todo list for gathering consent is:
 </li>
 </ul>
 </li>
- 	<li style="font-weight: 400;">Making our anonymised user analytics for Riot.im ‘opt in' rather than ‘opt out' - this isn't a requirement of GDPR (since our analytics are 
-<a href="https://gdpr-info.eu/recitals/no-26/">fully anonymised</a>) but reflects our commitment to user data sovereignty
+ 	<li style="font-weight: 400;">Making our anonymised user analytics for Riot.im ‘opt in' rather than ‘opt out' - this isn't a requirement of GDPR (since our analytics are <a href="https://gdpr-info.eu/recitals/no-26/">fully anonymised</a>) but reflects our commitment to user data sovereignty
 </li>
 </ul>
 Long-term:
@@ -191,9 +188,7 @@ GDPR mandates rules for all the personal data stored by a business, so there are
 </ul>
 <h3>Conclusion
 </h3>
-So, there you have it.  We'll be tracking progress in github issues and an associated dashboard over the coming weeks; for now 
-<a href="https://github.com/matrix-org/synapse/issues/1941">https://github.com/matrix-org/synapse/issues/1941</a> (for Right to Erasure) or 
-<a href="https://github.com/vector-im/riot-meta/issues/149">https://github.com/vector-im/riot-meta/issues/149</a> (GDPR in general) is as good as place as any to gather feedback.  Alternatively, feel free to comment on the original text of this blog post: <a href="https://docs.google.com/document/d/1JTEI6RENnOlnCwcU2hwpg3P6LmTWuNS9S-ZYDdjqgzA">https://docs.google.com/document/d/1JTEI6RENnOlnCwcU2hwpg3P6LmTWuNS9S-ZYDdjqgzA</a>.
+So, there you have it.  We'll be tracking progress in github issues and an associated dashboard over the coming weeks; for now <a href="https://github.com/matrix-org/synapse/issues/1941">https://github.com/matrix-org/synapse/issues/1941</a> (for Right to Erasure) or <a href="https://github.com/vector-im/riot-meta/issues/149">https://github.com/vector-im/riot-meta/issues/149</a> (GDPR in general) is as good as place as any to gather feedback.  Alternatively, feel free to comment on the original text of this blog post: <a href="https://docs.google.com/document/d/1JTEI6RENnOlnCwcU2hwpg3P6LmTWuNS9S-ZYDdjqgzA">https://docs.google.com/document/d/1JTEI6RENnOlnCwcU2hwpg3P6LmTWuNS9S-ZYDdjqgzA</a>.
 
 
 It's worth noting that we feel that GDPR is an excellent piece of legislation from the perspective of forcing us to think more seriously about our privacy - it has forced us to re-prioritise all sorts of long-term deficiencies in Matrix (e.g. dependence on DNS; improving User Interactive authentication; improving logout semantics etc).  There's obviously a lot of work to be done here, but hopefully it should all be worth it!
