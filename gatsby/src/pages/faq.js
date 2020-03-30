@@ -401,12 +401,7 @@ for an example of how to write a fully functional Slack bridge in less than 100 
 <div className="question">
 <h4 id="how-do-i-get-an-account-and-get-started%3F"><a className="permalink" href="#how-do-i-get-an-account-and-get-started%3F" aria-hidden="true">&#128279;</a> How do I get an account and get started?</h4>
 <p>The quickest way is to <a href="/blog/try-matrix-now">pick a client</a> and sign up.</p>
-<p>Clients can access any <a href="#definitions">homeserver</a>—you don't have to use matrix.org, though historically it is the largest public homeserver.  There are a few websites that maintain lists of other homeservers:</p>
-<ul>
-<li>hello-matrix.net curates a <a href="https://www.hello-matrix.net/public_servers.php">list of public Matrix servers</a> which they believe are suitable for Matrix newcomers.</li>
-<li>the-federation.info <a href="https://the-federation.info/protocol/matrix">lists thousands of Matrix nodes</a>. Sort by the <i>Open signups</i> column to find open communities.</li>
-<li>anchel.nl lists <a href="https://www.anchel.nl/matrix-publiclist/">free public homeservers</a>, and a few other resources for getting started.</li>
-</ul>
+<p>Clients can access any <a href="#definitions">homeserver</a>—you don't have to use matrix.org, though historically it is the largest public homeserver. anchel.nl lists <a href="https://www.anchel.nl/matrix-publiclist/">free public homeservers</a>, and a few other resources for getting started.</p>
 <div className="definition-list">
 <div className="definition-item definition-homeserver">
 <p><strong>homeserver</strong></p>
