@@ -10,7 +10,7 @@ import config from '../../config'
 
 const Legal = () => {
     return (<Layout hasNavPadding="true">
-            <Helmet title={`Legal | ${config.siteTitle}`} />
+            <Helmet title={`Open Tech Will Save Us | ${config.siteTitle}`} />
         <div>
             <h1>Open Tech Will Save Us</h1>
             
