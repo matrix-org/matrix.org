@@ -12,7 +12,7 @@ Note that although the SDK is written in TypeScript, we'll use JavaScript in our
 
 Let's make a new folder, and import our only npm dependency. The following examples are all meant to be run in a bash terminal.
 
-```unix
+```shell
 mkdir matrix-js-echo-bot
 cd matrix-js-echo-bot
 npm install matrix-bot-sdk
@@ -85,7 +85,7 @@ client.start().then(() => console.log("Client started!"));
 
 Let's run it:
 
-```unix
+```shell
 node index.js
 ```
 
@@ -167,13 +167,13 @@ This SDK uses TypeScript, which provides a lot of benefits. In this example, we 
 
 First let's install `tsc`, which compiles from TypeScript to JavaScript:
 
-```unix
+```shell
 npm install tsc
 ```
 
 Now, start tsc in watch-mode (`-w`), and leave it to compile our code:
 
-```unix
+```shell
 npx tsc --watch *.ts
 ```
 
