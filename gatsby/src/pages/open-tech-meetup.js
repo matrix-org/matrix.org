@@ -24,7 +24,7 @@ const Legal = () => {
 
             <h3>Agenda</h3>
             <ul>
-                <li>Matthew Hodgson to introduce and speak anout the importance of decentralisation and privacy</li>
+                <li>Matthew Hodgson to introduce and speak about the importance of decentralisation and privacy</li>
                 <li>Saúl Ibarra Corretgé from Jitsi on the rapid growth they've experienced since the start of the 2020 crisis</li>
                 <li>David Dias from IPFS introducing gossipsub in libp2p, including the security hardening work that they've been putting into v1.1!</li>
                 <li>Valere, from Matrix and Riot, who will present the importance of UX and cross-signing keys in end-to-end encrypted communications.</li>
