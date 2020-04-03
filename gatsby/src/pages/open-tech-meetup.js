@@ -22,8 +22,24 @@ const Legal = () => {
             
             <p>The first event will be held on <b>Wednesday 8th April 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
 
-            <p><b>Agenda TBA</b></p>
+            <h3>Agenda</h3>
+            <ul>
+                <li>Matthew Hodgson to introduce and speak anout the importance of decentralisation and privacy</li>
+                <li>Saúl Ibarra Corretgé from Jitsi on the rapid growth they've experienced since the start of the 2020 crisis</li>
+                <li>David Dias from IPFS introducing libp2p Gossipsub v1.1, set of security hardening extensions</li>
+                <li>Valere, from Matrix and Riot, who will present the importance of UX and cross-signing keys in end-to-end encrypted communications.</li>
+            </ul>
 
+            <h3>Important note on timezones</h3>
+
+            5pm UTC is:
+            <ul>
+                <li>7pm in Berlin</li>
+                <li>6pm in the UK</li>
+                <li>1pm in New York</li>
+                <li>10am in California</li>
+            </ul>
+            <h3>How to join</h3>
             <p>Check back here for more information, including links to the live stream and chat room.</p>
 
         </div>
