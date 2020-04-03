@@ -26,7 +26,7 @@ const Legal = () => {
             <ul>
                 <li>Matthew Hodgson to introduce and speak anout the importance of decentralisation and privacy</li>
                 <li>Saúl Ibarra Corretgé from Jitsi on the rapid growth they've experienced since the start of the 2020 crisis</li>
-                <li>David Dias from IPFS introducing libp2p Gossipsub v1.1, set of security hardening extensions</li>
+                <li>David Dias from IPFS introducing gossipsub in libp2p, including the security hardening work that they've been putting into v1.1!</li>
                 <li>Valere, from Matrix and Riot, who will present the importance of UX and cross-signing keys in end-to-end encrypted communications.</li>
             </ul>
 
@@ -40,9 +40,39 @@ const Legal = () => {
                 <li>10am in California</li>
             </ul>
             <h3>How to join</h3>
-            <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation.</p>
+            <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation.</p>
             <p>Check back here for more information, including links to the live stream and chat room.</p>
-
+            <div className="mxgrid mxgrid--open_standard">
+                <div className="mxgrid__item33">
+                    <div style={{"padding": "20px"}}>
+                        <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank">
+                            <img src="/images/meetup.png" />
+                        </a>
+                    </div>
+                </div>
+                <div className="mxgrid__item33">
+                    <div style={{"padding": "20px"}}>
+                        <a target="_blank">
+                            <img src="/images/yt_logo_rgb_light.png" />
+                        </a>
+                    </div>
+                </div>
+                <div className="mxgrid__item33">
+                    <div style={{"padding": "20px"}}>
+                        <a target="_blank">
+                            <img src="/images/matrix-logo.svg" style={{"width": "300px"}} />
+                        </a>
+                    </div>
+                </div>
+                <div className="mxgrid__item33">
+                </div>
+                <div className="mxgrid__item33">
+                    Livestream coming soon
+                </div>
+                <div className="mxgrid__item33">
+                    Live chat coming soon
+                </div>
+            </div>
         </div>
     </Layout>)
 }
