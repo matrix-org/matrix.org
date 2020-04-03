@@ -40,6 +40,7 @@ const Legal = () => {
                 <li>10am in California</li>
             </ul>
             <h3>How to join</h3>
+            <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation.</p>
             <p>Check back here for more information, including links to the live stream and chat room.</p>
 
         </div>
