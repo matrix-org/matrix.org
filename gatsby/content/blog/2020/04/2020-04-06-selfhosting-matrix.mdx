@@ -98,13 +98,26 @@ cat '{ "m.server": "matrix.dangerousdemos.net:443" }' > server
 mkdir /var/www/riot.dangerousdemos.net
 cd /var/www/riot.dangerousdemos.net
 wget https://github.com/vector-im/riot-web/releases/download/v1.5.15/riot-v1.5.15.tar.gz
-wget https://github.com/vector-im/riot-web/releases/download/v1.5.15/riot-v1.5.15.tar.gz.asc
-wget https://packages.riot.im/riot-release-key.asc # ideally we'd get this from a keyserver
-apt install -y gpg
-gpg --import riot-release-key.asc
-gpg --verify riot-v1.5.15.tar.gz.asc
 
+# check its GnuPG signature (particularly advisable, given Riot is what stores
+# your end-to-end encryption keys)
+apt install -y gpg
+wget https://github.com/vector-im/riot-web/releases/download/v1.5.15/riot-v1.5.15.tar.gz.asc
+
+# grab the signing key for the riot releases repository, ideally from a keyserver
+# e.g. https://keyserver.ubuntu.com/ and search for releases@riot.im.
+# This should give a keyID like 74692659bda3d940, which you can then import:
+gpg --keyserver keyserver.ubuntu.com --recv-keys 74692659bda3d940
+
+# alternatively, you can grab or cross-check the signing key from packages.riot.im
+wget https://packages.riot.im/riot-release-key.asc
+gpg --import riot-release-key.asc
+
+gpg --verify riot-v1.5.15.tar.gz.asc
 # hopefully this will report "Good signature", even though it won't know to trust the riot release key.
+
+# you could also choose to explicitly trust the key by editing it, entering 'trust' and then '5' for ultimate trust.
+gpg --edit-key 74692659bda3d940
 
 tar -xzvf riot-v1.5.15.tar.gz
 ln -s riot-v1.5.15 riot
