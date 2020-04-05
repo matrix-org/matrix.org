@@ -13,8 +13,8 @@ wanting the security and autonomy of running their remote collaboration
 services, rather than being at the mercy of traditional proprietary
 centralised apps.  Meanwhile, the Matrix.org homeserver has been very
 overloaded (although we're at last making excellent progress in radically
-improving Synapse's performance) - so it's more important than ever to help
-folks run their own servers.
+improving Synapse's performance) - so it's particularly important right now to
+help folks run their own servers.
 
 Therefore we're very happy to announce that it's easier than ever before now to
 self-host your own video conferencing alongside Riot & Synapse: as of Riot/Web
@@ -36,7 +36,7 @@ administration.  If you're not, then we'd recommend using a Matrix hosting
 provider such as [Modular.im](https://modular.im) (which directly supports development of the core team),
 [Ungleich.ch](https://ungleich.ch/u/products/hosted-matrix-chat/), or [StartupStack](https://startupstack.tech/).
 
-Finally, while the video shows how to install on Debian via Debian packaages,
+Finally, while the video shows how to install on Debian via Debian packages,
 there are many many other environments and architectures (e.g. installing
 under Docker) - this is just one relatively easy way to skin the cat.  Perhaps
 there will be other 'speed-run' videos in future :)
@@ -54,12 +54,12 @@ If you want to follow along at home without listening to the video (and I can't 
    * `riot.dangerousdemos.net` (Riot/Web)
    * `jitsi.dangerousdemos.net` (Jitsi video conferencing)
    * In practice, we used a `*.dangerousdemos.net` wildcard DNS record for the three subdomains in this instance.
- 
+
 ### Nginx and LetsEncrypt
 
  * Install nginx as a webserver: `apt-get update && apt -y install nginx`
  * Go to `/etc/nginx/sites-enabled` and copy the vhost configuration block from the bottom of `default` to new files called `dangerousdemos.net`, `matrix.dangerousdemos.net`, and `riot.dangerousdemos.net`.
-   * Rename the `server_name` field in the new files match the hostname of each host, and point `root` to an appropriate location per domain (e.g. `/var/www/dangerousdemos.net`)
+   * Rename the `server_name` field in the new files to match the hostname of each host, and point `root` to an appropriate location per domain (e.g. `/var/www/dangerousdemos.net`)
    * For the Synapse domain (`matrix.dangerousdemos.net` here), you should replace the contents of the `location` block with `proxy_pass http://localhost:8008;` - telling nginx to pass the traffic through to synapse, which listens by default for plaintext HTTP traffic on port 8008.  (N.B. do **not** put a trailing slash on the URL here, otherwise nginx will mangle the forwarded URLs.)
  * Enable TLS via LetsEncrypt on nginx, by: `apt install -y python3-certbot-nginx && certbot --nginx -d dangerousdemos.net -d riot.dangerousdemos.net -d matrix.dangerousdemos.net` (or whatever your domains are).
  * You should be able to go to https://dangerousdemos.net at this point and see a page with valid HTTPS.
@@ -126,9 +126,9 @@ apt-get update
 apt-get -y install jitsi-meet
 ```
 
- * We give the install the hostname `jitsi.dangerousdemos.net`.
+ * We give the installer the hostname `jitsi.dangerousdemos.net`.
  * The installer magically detects you have nginx installed and adds in an appropriate vhost!
- * We select a self-signed certificate for now, and then upgrade it to LetsEncrypt after the event with `/usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh`.
+ * We select a self-signed certificate for now, and then upgrade it to LetsEncrypt after the fact with `/usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh`.
    * Alternatively, you could have specified manual certificates, and then used `certbot` alongside the rest of nginx to create a certificate for `jitsi.dangerousdemos.net` - both work.
  * You should now be able to go to https://jitsi.dangerousdemos.net and use the Jitsi directly.
 
@@ -146,4 +146,4 @@ Matrix nowadays provides an excellent alternative to the centralised solutions. 
 
 Hopefully this gives some confidence that it's pretty easy to run your own fully functional Matrix instance these days.
 If not, then hopefully someone will do a similar one to show off Docker!
-And if that's still too scary, please take a look at one of the hosting services.
+And if that's still too scary, please take a look at a hosting services like [Modular.im](https://modular.im).
