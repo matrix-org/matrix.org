@@ -58,7 +58,7 @@ If you want to follow along at home without listening to the video (and I can't 
 ### Nginx and LetsEncrypt
 
  * Install nginx as a webserver: `apt-get update && apt -y install nginx`
- * Go to `/etc/nginx/sites-enabled` and copy the vhost configuration block from the bottom of `default` to new files called `dangerousdemos.net`, `matrix.dangerousdemos.net`, and `riot.dangerousdemos.net`.
+ * Go to `/etc/nginx/sites-enabled` and copy the vhost configuration block from the bottom of `default` to new files called `dangerousdemos.net`, `matrix.dangerousdemos.net`, and `riot.dangerousdemos.net`.  We don't set up `jitsi.dangerousdemos.net` at this point as the jitsi installer handles it for us.
    * Rename the `server_name` field in the new files to match the hostname of each host, and point `root` to an appropriate location per domain (e.g. `/var/www/dangerousdemos.net`)
    * For the Synapse domain (`matrix.dangerousdemos.net` here), you should replace the contents of the `location` block with `proxy_pass http://localhost:8008;` - telling nginx to pass the traffic through to synapse, which listens by default for plaintext HTTP traffic on port 8008.  (N.B. do **not** put a trailing slash on the URL here, otherwise nginx will mangle the forwarded URLs.)
  * Enable TLS via LetsEncrypt on nginx, by: `apt install -y python3-certbot-nginx && certbot --nginx -d dangerousdemos.net -d riot.dangerousdemos.net -d matrix.dangerousdemos.net` (or whatever your domains are).
@@ -66,7 +66,7 @@ If you want to follow along at home without listening to the video (and I can't 
 
 ### Synapse
 
- * Then, install Synapse via Debian packages using the instructions at https://github.com/matrix-org/synapse/blob/master/INSTALL.md#debianubuntu (see below)
+ * Then, install Synapse via Debian packages using the instructions at https://github.com/matrix-org/synapse/blob/master/INSTALL.md#debianubuntu (see below).  If you're not on Debian, keep an eye out for all the other OSes we support too!
    * You should specify the server name to be the domain you want in your matrix IDs - i.e. `dangerousdemos.net` in this example.
    * Please report anonymous aggregate stats to us so we can gauge uptake and help justify funding for Matrix!
 
@@ -90,6 +90,11 @@ cd /var/www/dangerousdemos.net/.well-known/matrix
 cat '{ "m.server": "matrix.dangerousdemos.net:443" }' > server
 ```
 
+ * Alternatively, you could advertise the server via DNS, if you don't have write access to `/.well-known` on your main domain.  However, to prove you are allowed to host the Matrix traffic for dangerousdemos.net, you would have to configure nginx to use the dangerousdemos.net TLS certificate for the matrix.dangerousdemos.net vhost (i.e. the "wrong" one).  In this case you would advertise the server with an SRV record like this:
+```
+_matrix._tcp.dangerousdemos.net. 300    IN  SRV 10 5 443 matrix.dangerousdemoes.net.
+```
+
 ### Riot/Web
 
  * Then, install Riot/Web.  Grab the latest .tgz release from https://github.com/vector-im/riot-web/releases.  You should check its GnuPG signature too:
@@ -101,15 +106,13 @@ wget https://github.com/vector-im/riot-web/releases/download/v1.5.15/riot-v1.5.1
 
 # check its GnuPG signature (particularly advisable, given Riot is what stores
 # your end-to-end encryption keys)
-apt install -y gpg
+apt install -y gnupg
 wget https://github.com/vector-im/riot-web/releases/download/v1.5.15/riot-v1.5.15.tar.gz.asc
 
-# grab the signing key for the riot releases repository, ideally from a keyserver
-# e.g. https://keyserver.ubuntu.com/ and search for releases@riot.im.
-# This should give a keyID like 74692659bda3d940, which you can then import:
-gpg --keyserver keyserver.ubuntu.com --recv-keys 74692659bda3d940
+# grab the signing key for the riot releases repository, ideally from a keyserver...
+gpg --keyserver keyserver.ubuntu.com --search-keys releases@riot.im
 
-# alternatively, you can grab or cross-check the signing key from packages.riot.im
+# ...and/or you can grab or cross-check the signing key from packages.riot.im
 wget https://packages.riot.im/riot-release-key.asc
 gpg --import riot-release-key.asc
 
@@ -139,7 +142,7 @@ apt-get update
 apt-get -y install jitsi-meet
 ```
 
- * We give the installer the hostname `jitsi.dangerousdemos.net`.
+ * We give the installer the hostname `jitsi.dangerousdemos.net`.  **Make sure this DNS is already set up, otherwise the installer will fail!**
  * The installer magically detects you have nginx installed and adds in an appropriate vhost!
  * We select a self-signed certificate for now, and then upgrade it to LetsEncrypt after the fact with `/usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh`.
    * Alternatively, you could have specified manual certificates, and then used `certbot` alongside the rest of nginx to create a certificate for `jitsi.dangerousdemos.net` - both work.
