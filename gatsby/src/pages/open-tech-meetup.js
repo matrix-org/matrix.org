@@ -48,37 +48,6 @@ const Legal = () => {
             <h3>How to join</h3>
             <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation. (But it's fun if you want to sign up for sentimental value!)</p>
             <p>Check back here for more information, including links to the live stream and chat room.</p>
-            <div className="mxgrid mxgrid--open_standard">
-                <div className="mxgrid__item33">
-                    <div style={{"padding": "20px"}}>
-                        <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank">
-                            <img src="/images/meetup.png" />
-                        </a>
-                    </div>
-                </div>
-                <div className="mxgrid__item33">
-                    <div style={{"padding": "20px"}}>
-                        <a target="_blank">
-                            <img src="/images/yt_logo_rgb_light.png" />
-                        </a>
-                    </div>
-                </div>
-                <div className="mxgrid__item33">
-                    <div style={{"padding": "20px"}}>
-                        <a target="_blank">
-                            <img src="/images/matrix-logo.svg" style={{"width": "300px"}} />
-                        </a>
-                    </div>
-                </div>
-                <div className="mxgrid__item33">
-                </div>
-                <div className="mxgrid__item33">
-                    Livestream coming soon
-                </div>
-                <div className="mxgrid__item33">
-                    Live chat coming soon
-                </div>
-            </div>
         </div>
     </Layout>)
 }
