@@ -10,8 +10,14 @@ import config from '../../config'
 
 const Legal = () => {
     return (<Layout hasNavPadding="true">
-            <Helmet title={`Open Tech Will Save Us | ${config.siteTitle}`} />
+            <Helmet title={`Open Tech Will Save Us | ${config.siteTitle}`}>
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta property="twitter:image" content="https://matrix.org/images/open-tech-1-full.jpg" />
+                
+            </Helmet>
         <div>
+            <img src="/images/open-tech-1-banner.jpg" />
+
             <h1>Open Tech Will Save Us</h1>
             
             <p>Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the second Wednesday of every month at 5pm UTC.</p>
@@ -40,7 +46,7 @@ const Legal = () => {
                 <li>10am in California</li>
             </ul>
             <h3>How to join</h3>
-            <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation.</p>
+            <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation. (But it's fun if you want to sign up for sentimental value!)</p>
             <p>Check back here for more information, including links to the live stream and chat room.</p>
             <div className="mxgrid mxgrid--open_standard">
                 <div className="mxgrid__item33">
