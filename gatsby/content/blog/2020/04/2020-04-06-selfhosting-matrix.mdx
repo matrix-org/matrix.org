@@ -4,6 +4,7 @@ title: Running your own secure communication service with Matrix and Jitsi
 categories:
   - General
 author: Matthew Hodgson
+image: https://matrix.org/blog/img/runthru.jpg
 ---
 
 Hi all,
@@ -90,9 +91,9 @@ cd /var/www/dangerousdemos.net/.well-known/matrix
 cat '{ "m.server": "matrix.dangerousdemos.net:443" }' > server
 ```
 
- * Alternatively, you could advertise the server via DNS, if you don't have write access to `/.well-known` on your main domain.  However, to prove you are allowed to host the Matrix traffic for dangerousdemos.net, you would have to configure nginx to use the dangerousdemos.net TLS certificate for the matrix.dangerousdemos.net vhost (i.e. the "wrong" one).  In this case you would advertise the server with an SRV record like this:
+ * **Alternatively**, you could advertise the server via DNS, if you don't have write access to `/.well-known` on your main domain.  However, to prove you are allowed to host the Matrix traffic for dangerousdemos.net, you would have to configure nginx to use the dangerousdemos.net TLS certificate for the matrix.dangerousdemos.net vhost (i.e. the "wrong" one), and in general we think that `/.well-known` is much easier to reason about.  In this case you would advertise the server with an SRV record like this:
 ```
-_matrix._tcp.dangerousdemos.net. 300    IN  SRV 10 5 443 matrix.dangerousdemoes.net.
+_matrix._tcp.dangerousdemos.net. 300    IN  SRV 10 5 443 matrix.dangerousdemos.net.
 ```
 
 ### Riot/Web
@@ -163,3 +164,5 @@ Matrix nowadays provides an excellent alternative to the centralised solutions. 
 Hopefully this gives some confidence that it's pretty easy to run your own fully functional Matrix instance these days.
 If not, then hopefully someone will do a similar one to show off Docker!
 And if that's still too scary, please take a look at a hosting services like [Modular.im](https://modular.im).
+
+(Comments over at [HN](https://news.ycombinator.com/item?id=22793239))
