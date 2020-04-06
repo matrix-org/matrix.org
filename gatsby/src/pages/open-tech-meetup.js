@@ -13,27 +13,27 @@ const Legal = () => {
             <Helmet title={`Open Tech Will Save Us | ${config.siteTitle}`}>
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta property="twitter:image" content="https://matrix.org/images/open-tech-1-full.jpg" />
-                
+
             </Helmet>
         <div>
-            <img src="/images/open-tech-1-banner.jpg" />
+            <img src="/images/open-tech-1-banner.jpg" alt='Open Tech Will Save Us'/>
 
             <h1>Open Tech Will Save Us</h1>
-            
+
             <p>Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the second Wednesday of every month at 5pm UTC.</p>
-            
+
             <p>We discuss issues relating to technology, especially the importance of Open, Interoperable standards, and how they can enable decentralised tech to keep our data private while still enabling communication.</p>
 
             <h2>Next Event</h2>
-            
+
             <p>The first event will be held on <b>Wednesday 8th April 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
 
             <h3>Agenda</h3>
             <ul>
-                <li>Matthew Hodgson to introduce and speak about the importance of decentralisation and privacy</li>
-                <li>Saúl Ibarra Corretgé from Jitsi on the rapid growth they've experienced since the start of the 2020 crisis</li>
-                <li>David Dias from IPFS introducing gossipsub in libp2p, including the security hardening work that they've been putting into v1.1!</li>
-                <li>Valere, from Matrix and Riot, who will present the importance of UX and cross-signing keys in end-to-end encrypted communications.</li>
+                <li><a href="https://https://twitter.com/ara4n" target="_blank" rel="noopener noreferrer">Matthew Hodgson</a> technical co-founder of <a href="https://matrix.org" target="_blank" rel="noopener noreferrer">Matrix.org</a> to introduce and speak about the importance of decentralisation and privacy</li>
+                <li><a href="https://twitter.com/saghul" target="_blank" rel="noopener noreferrer">Saúl Ibarra Corretgé</a> from <a href="https://jitsi.org" target="_blank" rel="noopener noreferrer">Jitsi</a> on the rapid growth they've experienced since the start of the 2020 crisis</li>
+                <li><a href="https://twitter.com/daviddias" target="_blank" rel="noopener noreferrer">David Dias</a> from <a href="https://ipfs.io/" target="_blank" rel="noopener noreferrer">IPFS</a>  IPFS introducing gossipsub in libp2p, including the security hardening work that they've been putting into v1.1!</li>
+                <li><a href="https://twitter.com/valereonmobile" target="_blank" rel="noopener noreferrer">Valère</a>, from <a href="https://matrix.org" target="_blank" rel="noopener noreferrer">Matrix</a> and <a href="https://riot.im" target="_blank" rel="noopener noreferrer">Riot</a>, who will present the importance of UX and cross-signing keys in end-to-end encrypted communications.</li>
             </ul>
 
             <h3>Important note on timezones</h3>
@@ -46,7 +46,7 @@ const Legal = () => {
                 <li>10am in California</li>
             </ul>
             <h3>How to join</h3>
-            <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation. (But it's fun if you want to sign up for sentimental value!)</p>
+            <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank" rel="noopener noreferrer">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation. (But it's fun if you want to sign up for sentimental value!)</p>
             <p>Check back here for more information, including links to the live stream and chat room.</p>
         </div>
     </Layout>)
