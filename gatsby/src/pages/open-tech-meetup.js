@@ -14,9 +14,10 @@ const Legal = () => {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta property="twitter:image" content="https://matrix.org/images/open-tech-1-full.jpg" />
 
+                <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
             </Helmet>
         <div>
-            <img src="/images/open-tech-1-banner.jpg" alt='Open Tech Will Save Us'/>
+            <video style={{"width": "640px", "height": "360"}}  data-dashjs-player src="https://stream.matrix.org/dash/live.mpd" controls></video>
 
             <h1>Open Tech Will Save Us</h1>
 
