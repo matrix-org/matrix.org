@@ -29,6 +29,11 @@ const Legal = () => {
             <h2>Next Event</h2>
 
             <p>The first event will be held on <b>Wednesday 8th April 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
+            
+            <h3>How to join</h3>
+            <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank" rel="noopener noreferrer">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation. (But it's fun if you want to sign up for sentimental value!)</p>
+            <p><strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">Join the live chat now! #open-tech-meetup:matrix.org</a></strong></p>
+            <p>Once we're live there will be a video stream available on this page. You can also <strong><a href="https://www.youtube.com/watch?v=VZISaxFXvv8">join the stream via YouTube</a></strong>.</p>
 
             <h3>Agenda</h3>
             <ul>
@@ -47,9 +52,6 @@ const Legal = () => {
                 <li>1pm in New York</li>
                 <li>10am in California</li>
             </ul>
-            <h3>How to join</h3>
-            <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank" rel="noopener noreferrer">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation. (But it's fun if you want to sign up for sentimental value!)</p>
-            <p>Check back here for more information, including links to the live stream and chat room.</p>
         </div>
     </Layout>)
 }
