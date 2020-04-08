@@ -34,7 +34,7 @@ const Legal = () => {
             <h3>How to join</h3>
             <p><strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">Join the live chat now! #open-tech-meetup:matrix.org</a></strong></p>
             <p>From the live chat, you can ask questions to the presenters! We can invite you to join the broadcast, or if you prefer we'll read them out for you.</p>
-            <p>Once we're live there will be a video stream available on this page. You can also <strong><a href="https://www.youtube.com/watch?v=VZISaxFXvv8">join the stream via YouTube</a></strong>.</p>
+            <p>Once we're live there will be a video stream available on this page. You can also <strong><a href="https://www.youtube.com/watch?v=APVp-20ATLk">join the stream via YouTube</a></strong>.</p>
             <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank" rel="noopener noreferrer">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation. (But it's fun if you want to sign up for sentimental value!)</p>
 
             <h3>Agenda</h3>
