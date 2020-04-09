@@ -31,7 +31,7 @@ const Legal = () => {
 
             <p>The first event was held on <b>Wednesday 8th April 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/APVp-20ATLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe title="APVp-20ATLk" width="560" height="315" src="https://www.youtube.com/embed/APVp-20ATLk" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             <h3>Agenda</h3>
             <ul>
