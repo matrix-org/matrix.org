@@ -400,9 +400,8 @@ for an example of how to write a fully functional Slack bridge in less than 100 
 </div>
 <div className="question">
 <h4 id="how-do-i-get-an-account-and-get-started%3F"><a className="permalink" href="#how-do-i-get-an-account-and-get-started%3F" aria-hidden="true">&#128279;</a> How do I get an account and get started?</h4>
-<p>The quickest way is to pick a client from <a href="/blog/try-matrix-now">https://matrix.org/blog/try-matrix-now</a> and sign up.</p>
-<p>Clients can access any <a href="#definitions">homeserver</a> - you don't have to use matrix.org, though as of July 2018 matrix.org is the largest public homeserver.</p>
-<p>hello-matrix.net maintains a <a href="https://www.hello-matrix.net/public_servers.php">list of public Matrix servers</a>.</p>
+<p>The quickest way is to <a href="/blog/try-matrix-now">pick a client</a> and sign up.</p>
+<p>Clients can access any <a href="#definitions">homeserver</a>—you don't have to use matrix.org, though historically it is the largest public homeserver. anchel.nl lists <a href="https://www.anchel.nl/matrix-publiclist/">free public homeservers</a>, and a few other resources for getting started.</p>
 <div className="definition-list">
 <div className="definition-item definition-homeserver">
 <p><strong>homeserver</strong></p>
