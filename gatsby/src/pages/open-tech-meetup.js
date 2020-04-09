@@ -17,7 +17,7 @@ const Legal = () => {
                 <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
             </Helmet>
         <div>
-            <video style={{"width": "640px", "height": "360"}}  data-dashjs-player src="https://stream.matrix.org/dash/live.mpd" controls></video>
+            <img src="/images/open-tech-1-banner.jpg" alt='Open Tech Will Save Us'/>
 
             <h1>Open Tech Will Save Us</h1>
 
