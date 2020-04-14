@@ -375,7 +375,7 @@ const Index = ({
   <div className="mxblock mxblock--open_standard">
     <h2 className="mxblock__hx mxblock__hx--open_standard">An Open Standard</h2>
     <div className="mxgrid mxgrid--open_standard">
-      <div className="mxgrid__item33">
+      <div className="mxgrid__item33 mxgrid__item33--bullet">
         <div className="mxgrid__item__bg mxgrid__item__bg--clear">
 <img src="images/basic_signs.svg" alt="" className="mxgrid__item__bg__img" />
           <div className="mxgrid__item__bg__vert">
