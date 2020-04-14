@@ -102,7 +102,7 @@ Now that we have a set of _conflicted_ events, we also need to make sure that we
 
 For example, imagine the case that Alice gives some power to Bob (in event `A`), Bob gives some power to Charlie (in event `B`) and then Charlie changes the ban level (in event `C`):
 
-![drawing showing an example flow of power level changes](/blog/img/2020-04-14-stateresv2-1.svg)
+![drawing showing an example flow of power level changes](/docs/guides/img/2020-04-14-stateresv2-1.svg)
 
 However, in another fork, event `A` is known (so Bob has received power from Alice) but `B` was not, therefore in the fork, Charlie never received power and therefore was not authorised to change the ban level. When the two forks converge, we would need to know about `B` in order to successfully authorise `C`.
 
@@ -244,7 +244,7 @@ We refer to the time period between any two given power level events as an _epoc
 
 In the below illustration, the "resolved" event is the event that appears in the partial state from the previous section.
 
-![drawing showing partial state example](/blog/img/2020-04-14-stateresv2-2.svg)
+![drawing showing partial state example](/docs/guides/img/2020-04-14-stateresv2-2.svg)
 
 ### Mainline ordering of normal state events
 
@@ -276,7 +276,7 @@ func get_closest_mainline_event(e as event) returns event:
 
 In the following illustration, _Event B_ happens in a more recent epoch than _Event A_ as the closest mainline event referred to by _Event A_ is older than the closest mainline event referred to by _Event B_:
 
-![drawing showing an example of mainline ordering](/blog/img/2020-04-14-stateresv2-3.svg)
+![drawing showing an example of mainline ordering](/docs/guides/img/2020-04-14-stateresv2-3.svg)
 
 To sort the events, we use a method very similar to that used in the reverse topological ordering of control events, only instead of initially sorting by power level, we use the position of the nearest mainline power level event on the mainline. When sorting, you can assert that **x &lt; y** by running the following tests in order:
 
