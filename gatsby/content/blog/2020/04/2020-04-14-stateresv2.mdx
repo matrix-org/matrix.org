@@ -3,7 +3,7 @@ date: '2020-04-14'
 title: 'State Resolution v2 for the Hopelessly Unmathematical'
 categories:
   - Tutorials
-author: Neil Alexander
+author: Neil Alexander Twigg
 slug: implementing-stateres
 ---
 
@@ -76,9 +76,7 @@ var unconflicted_events: list(event)
 
 ### Partial state
 
-We refer to the state as _partial_ when we have not yet completed the state resolution algorithm, therefore the result is incomplete.
-
-In the first stage, the partial state is equal to the unconflicted state:
+We refer to the state as _partial_ when we have not yet completed the state resolution algorithm, therefore the result is incomplete. In the first stage, the partial state is equal to the unconflicted state:
 
 ```
 var partial_state: map(event_type -> map(state_key -> event))
@@ -128,6 +126,7 @@ The _full conflicted set_ is effectively the conflicted events combined with the
 
 ```
 var full_conflicted_set: list(event)
+
 full_conflicted_set = conflicted_events + auth_difference
 ```
 
