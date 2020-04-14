@@ -130,7 +130,7 @@ const GuidesDevelop = ({data}) => {
     </thead>
     <tbody>
       <tr>
-        <td><a href="/docs/guides/implementing-stateresv2">State Resolution v2 for the Hopelessly Unmathematical</a></td>
+        <td><a href="/docs/guides/implementing-stateres">State Resolution v2 for the Hopelessly Unmathematical</a></td>
         <td>Neil Alexander Twigg</td>
         <td>English</td>
       </tr>
