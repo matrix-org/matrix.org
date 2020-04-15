@@ -1,0 +1,63 @@
+---
+layout: post
+title: Running online events with Open Source communication tools
+section: Introduction
+slug: running-online-events
+---
+
+Starting in 2020, team Matrix planned to start running regular meetup events, 
+with speakers, talks, Q+A, beer, pizza etc.
+
+We hosted one, in London, in February. Around that time and immediately 
+afterward, much of the world shut down due to a global pandemic, and hosting 
+in-person meetups became infeasible.
+
+Rather than drop the idea, we decided to make use of the technologies we 
+regularly promote to host a *virtual* meetup event. The idea being to try to 
+recreate the fun and atmosphere of a real meetup in a decentralised way.
+
+## Use Jitsi for Video
+
+It's important to us, wherever possible, to use Open tools. Jitsi Meet is Open 
+Source, self-hostable video conferencing platform. [Installing Jitsi is a 
+much-documented experience](https://github.com/jitsi/jitsi-meet/blob/master/doc/
+quick-install.md) that I won't delve into here, but for our purpose we used our 
+installation at <https://jitsi.modular.im>.
+
+First, we want to get our speakers all connected. To do this, we created a new 
+room on Jitsi (the name doesn't matter), and made sure to add a password, since 
+this is not the default. All the speakers for the session will connect to this 
+room.
+
+![add a password to a jitsi room](/docs/img/jitsi-add-password.png)
+
+Next, we configured the Jitsi Meet server to stream to YouTube, and also made 
+the stream available directly via a video control on https://stream.matrix.org.
+
+Note that we did not make the call itself available for the entire audience to 
+join - this would likely have been a impossible moderation task, and would not 
+have added to the experience.
+
+## Use Matrix for live chat
+
+We created a dedicated "watching" matrix room, where users could join to talk 
+to each other about the streamed presentations. They can also talk to each 
+other more generally about the topics - or about anything else. We were pleased 
+to see conversations flowing, since these "unofficial" exchanges are a big part 
+of in-person meetups we wanted to recreate.
+
+The other thing the viewers can do in the room is ask questions of the 
+speakers. To do this, the host pulls questions out of the room, and collects 
+them ready to ask the presenter. In our event, we waited until the end of the 
+presentations, but a host could choose to interrupt the speaker to ask.
+
+With a dedicated room created, it's possible to add a widget to the room 
+containing only the video embed. To do this, make a page (like <https://stream.
+matrix.org>) which contains ONLY the video, then create a new custom widget in 
+the matrix room in Riot.
+
+![click-widget-button](/docs/img/1-click-widget-button.png)
+
+![click-custom-widget](/docs/img/2-click-custom-widget.png)
+
+![add-the-url](/docs/img/3-add-the-url.png)
