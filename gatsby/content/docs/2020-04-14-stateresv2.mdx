@@ -134,7 +134,7 @@ full_conflicted_set = conflicted_events + auth_difference
 
 Now that we have calculated the _full conflicted set_, which also includes the _auth difference_, we now can start to work out the order in which power was given or taken away from specific users.
 
-When resolving state conflicts, it's important to work out who really had power to do certain things at a given point in time. Working this out for control events takes priority over working out the order of normal state events - these will be sorted based on the power levels from this step.
+When resolving state conflicts, it's important to work out who really had power to do certain things at a given point in time. Working this out for control events takes priority over working out the order of normal state events - those will be sorted based on the power levels from this step.
 
 To work out the timeline of control events, we implement reverse topological ordering, which results in a list of events in which the order guarantees that auth events _always_ come before the events that refer to them. This is done using an adaptation of Kahn's algorithm.
 
