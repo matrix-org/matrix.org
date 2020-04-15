@@ -167,7 +167,7 @@ for each full_conflicted_set as e:
 The Matrix-specific details of our implementation of Kahn's algorithm lie in the tie-break between events. The tie-break ensures that we get a deterministic ordering and that we also meet our two guidelines from the beginning: that we will always try to prefer events from the more powerful, and we will always try to process older events first. When sorting, you can assert that **x &lt; y** by running the following tests in order:
 
 1. The effective power level at **x** is greater than the effective power level at **y**
-2. The event origin server timestamp of **x** is less than the event origin server timestamp of **y **(that is, event **x** is older than** y**)
+2. The event origin server timestamp of **x** is less than the event origin server timestamp of **y **(that is, event **x** is older than **y**)
 3. The event ID of **x** is less than the event ID of **y**, as computed by a lexicographical comparison, as a fallback
 
 To ensure that the algorithm is deterministic (that is, running in the same order) for a given set of inputs, we must ensure that the map of incoming edges has been sorted using the above rules before we do anything with it:
