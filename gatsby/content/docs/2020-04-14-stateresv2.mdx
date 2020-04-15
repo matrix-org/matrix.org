@@ -24,7 +24,7 @@ It's worth mentioning that concepts such as "earlier" and "later" are difficult 
 
 First of all, a state event is a Matrix event which contains a `state_key`. The state key defines _what_ the state applies to (or is often an empty string if the state should apply to the entire room). Examples of state events are `m.room.create`, `m.room.join_rules`, `m.room.power_level`, `m.room.member` etc.
 
-Given that state events are also a part of the room history, state can be different at different points in time. Therefore, the state at a specific event contains a snapshot of all state events that apply to the room at the time of that given event and won't include state events that came after it.
+Given that state events are also a part of the room history, state can be different at different points in time. Therefore, the state at a specific event contains a snapshot of all state events that apply to the room at the time of that given event and won't include state events that came after it. In the case of state events, the state at the time of that given event includes the changes in state as provided by the event.
 
 A state tuple is a `(event type, state key)` tuple. For example:
 
@@ -213,9 +213,11 @@ The output list is now sorted such that all referred events now appear before th
 
 ### Iteratively apply resolved control events
 
-Now that our control events have been sorted into reverse topological order, where the first events in the list are the "oldest", we can now start to layer these resolved control events on top of the partial state.
+Now that our control events have been sorted into reverse topological order, where the first events in the list are the "oldest", we can now start to layer these resolved control events in order to build the partial state.
 
-To update the partial state, start at the oldest event and loop through the list, authing each event against the current partial state. If the event passes auth checks then update the partial state to include the event before moving onto the next iteration:
+To build up the partial state, start at the oldest event and loop through the list, authing each event against the current `partial_state` (with this behaviour defined as `auth_against_partial_state` in the below example). It is expected that `partial_state` is an empty list for the first iteration, as the oldest event (which is the room create event) does not have auth events. The partial state will grow with each iteration.
+
+If the event passes auth checks then update the partial state to include the newly authed event before moving onto the next iteration:
 
 ```
 for each output_event as e:
@@ -255,17 +257,11 @@ Since the mainline will be ordered based on when the power level changes happene
 Note that events may appear that refer to power level events which don't appear in the mainline, in which case it is necessary to step through the power level events iteratively until you encounter one that is on the mainline. It is referred to as the _closest mainline event_:
 
 ```
-func is_in_mainline(e as event) returns boolean:
-    if e in power_level_mainline:
-        return true
-    else:
-        return false
-
 func get_closest_mainline_event(e as event) returns event:
     var closest_mainline_event: event
 
     func closest_iterate(e as event):
-        if is_in_mainline(e):
+        if e in power_level_mainline:
             closest_mainline_event = e
         else:
             for each e.auth_events as auth_event:
@@ -329,3 +325,9 @@ At this point, the partial state is now effectively _complete_, therefore it now
 ### Finishing up
 
 Now that you have completed all of the above steps, you have successfully implemented State Resolution v2! If you have any questions, please feel free to join us in the [Homeserver Developers](https://matrix.to/#/#homeservers-dev:matrix.org) channel.
+
+Further reading:
+
+- [Matrix Specification - Room Version 2](https://matrix.org/docs/spec/rooms/v2)
+- [State Resolution: Reloaded (in Haskell)](https://matrix.uhoreg.ca/stateres/reloaded.html)
+- [MSC1442 - State Resolution: Reloaded](https://github.com/matrix-org/matrix-doc/blob/erikj/state_res_msc/proposals/1442-state-resolution.md) 
