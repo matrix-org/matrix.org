@@ -122,7 +122,7 @@ combination of community support (via
 <a href="https://liberapay.com/matrixdotorg">Liberapay</a>, Bitcoin and Ethereum),
 corporate sponsorship, and grant funding.</p>
 <p>Current Elliptic-level supporters on
-Patreon and corporate sponsors can be found on our <a href="/blog/supporters">supporters
+Patreon and corporate sponsors can be found on our <a href="/supporters">supporters
 page</a>.</p>
 <p>If you would like to support the core Matrix team as a member of the community, you can do so via:</p>
 <ul>
@@ -415,8 +415,6 @@ for an example of how to write a fully functional Slack bridge in less than 100 
 <p><a href="https://riot.im">Riot</a> is available for Android and iOS.</p>
 <p>The iOS version can be downloaded from the <a href="https://itunes.apple.com/us/app/vector.im/id1083446067">Apple store</a>.</p>
 <p>The Android version can be downloaded from the <a href="https://play.google.com/store/apps/details?id=im.vector.app">Google Play store</a> or <a href="https://f-droid.org/repository/browse/?fdid=im.vector.alpha">F-Droid</a>. If you are not sure which one to choose, install Riot from the <a href="https://play.google.com/store/apps/details?id=im.vector.app">Google Play store</a>.</p>
-<p>For the Android app, you can also install the latest development version
-built by <a href="/jenkins/job/VectorAndroidDevelop">Jenkins</a>. Use it at your own risk and only if you know what you are doing.</p>
 <div className="definition-list">
 <div className="definition-item definition-riot">
 <p><strong>Riot</strong></p>
