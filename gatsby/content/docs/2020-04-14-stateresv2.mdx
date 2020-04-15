@@ -174,7 +174,7 @@ To ensure that the algorithm is deterministic (that is, running in the same orde
 
 ```
 func sorted_incoming_edges() as list(event):
-    sort incoming_edges that x < y when:
+    sort incoming_edges where x < y when:
         x.power_level > y.power_level or
             x.origin_server_ts < y.origin_server_ts or
         lexographic_compare(x.event_id, y.event_id) < 0
@@ -207,7 +207,7 @@ Each time we add a node into the output list, we can "remove" its outgoing edges
 
 Now we repeat the process, continuously, until the algorithm eventually exhausts the entire incoming edges map. Once the map is empty, all edges have been removed and the earliest events will appear at the beginning of the output list.
 
-The output list is now sorted such that all referred events now appear before the events that refer to them.
+The output list is now sorted such that all referred events now appear before the events that refer to them. It is sorted in _reverse topological order_.
 
 ### Iteratively apply resolved control events
 
@@ -250,7 +250,7 @@ In the below illustration, the "resolved" event is the event that appears in the
 
 Since the mainline will be ordered based on when the power level changes happened, and other state events use power level events as auth events, it is possible to sort the order of normal state events based on which mainline power level event they most closely refer to, or by definition, which epoch the event happened in.
 
-Note that events may appear that refer to power level events which don't appear in the mainline, in which case it is necessary to step through the power level events iteratively until you encounter one that is on the mainline. This is referred to as the _closest mainline event_:
+Note that events may appear that refer to power level events which don't appear in the mainline, in which case it is necessary to step through the power level events iteratively until you encounter one that is on the mainline. It is referred to as the _closest mainline event_:
 
 ```
 func is_in_mainline(e as event) returns boolean:
@@ -274,13 +274,13 @@ func get_closest_mainline_event(e as event) returns event:
     return closest_mainline_event
 ```
 
-In the following illustration, _Event B_ happens in a more recent epoch than _Event A_ as the closest mainline event referred to by _Event A_ is older than the closest mainline event referred to by _Event B_:
+In the following illustration, _Event B_ happens in a more recent epoch than _Event A_ as the closest mainline event referred to by _Event A_ is older (closer to the room's create event) than the closest mainline event referred to by _Event B_:
 
 ![drawing showing an example of mainline ordering](/docs/guides/img/2020-04-14-stateresv2-3.svg)
 
 To sort the events, we use a method very similar to that used in the reverse topological ordering of control events, only instead of initially sorting by power level, we use the position of the nearest mainline power level event on the mainline. When sorting, you can assert that **x &lt; y** by running the following tests in order:
 
-1. The closest mainline event to **x** is later in the mainline then the closest mainline event to **y** (for example, in the above diagram, **A** is less than **B **as **B **refers to a more recent mainline power level event)
+1. The closest mainline event to **x** is later in the mainline then the closest mainline event to **y** (for example, in the above diagram, **A** is less than **B** as **B** refers to a more recent mainline power level event)
 2. The event origin server timestamp of **x** is less than the event origin server timestamp of **y**
 3. The event ID of **x** is less than the event ID of **y**, as computed by a lexicographical comparison
 
@@ -288,7 +288,7 @@ To ensure that the algorithm is deterministic (that is, running in the same orde
 
 ```
 func sorted_normal_state_events() as list(event):
-    sort normal_events that x < y when:
+    sort normal_events where x < y when:
         x.position_on_mainline < y.position_on_mainline or
             x.origin_server_ts < y.origin_server_ts or
         lexographic_compare(x.event_id, y.event_id) < 0
@@ -306,7 +306,7 @@ Just as with the control events, each normal state event should be authed agains
 ```
 for each sorted_normal_state_events() as e:
     if auth_against_partial_state(e):
-        partial_state[e.event_type()][e.state_key()] = e
+        partial_state[e.event_type][e.state_key] = e
 ```
 
 Any event that fails to auth against the current partial state should be ignored and should not be applied to the partial state.
@@ -319,7 +319,7 @@ Reapply the unconflicted state events onto the partial state to complete the sta
 
 ```
 for each unconflicted_events as e:
-    partial_state[e.event_type()][e.state_key()] = e
+    partial_state[e.event_type][e.state_key] = e
 ```
 
 At this point, the partial state is now effectively _complete_, therefore it now represents the final resolved state.
