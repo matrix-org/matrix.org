@@ -11,7 +11,7 @@ const Discover = () => {
             <Helmet title={`Discover Matrix | ${config.siteTitle}`} />
             <h2 className="mxblock__hx">Discover Matrix</h2>
             <div className="mxgrid">
-                <div className="mxgrid__item33 mxgrid__item33--discover">
+                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/music_play_button.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
@@ -20,7 +20,7 @@ const Discover = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mxgrid__item33 mxgrid__item33--discover">
+                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_spread_text.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
@@ -29,7 +29,7 @@ const Discover = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mxgrid__item33 mxgrid__item33--discover">
+                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_server_upload.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
@@ -39,7 +39,7 @@ const Discover = () => {
                     </div>
                 </div>
                 
-                <div className="mxgrid__item33 mxgrid__item33--discover">
+                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_spread_text.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
@@ -48,7 +48,7 @@ const Discover = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mxgrid__item33 mxgrid__item33--discover">
+                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_signs.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
@@ -59,7 +59,7 @@ const Discover = () => {
                 </div>
 
 
-                <div className="mxgrid__item33 mxgrid__item33--discover">
+                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_elaboration_message_happy.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
@@ -68,7 +68,7 @@ const Discover = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mxgrid__item33 mxgrid__item33--discover">
+                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_spread_text.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
@@ -80,7 +80,7 @@ const Discover = () => {
             </div>
             <h2 className="mxblock__hx">Find Projects</h2>
             <div className="mxgrid">
-                <div className="mxgrid__item33 mxgrid__item33--discover">
+                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/software_layout_header_sideleft.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
@@ -89,7 +89,7 @@ const Discover = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mxgrid__item33 mxgrid__item33--discover">
+                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_share.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
@@ -98,7 +98,7 @@ const Discover = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mxgrid__item33 mxgrid__item33--discover">
+                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_elaboration_message_happy.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">

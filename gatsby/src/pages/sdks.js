@@ -52,7 +52,7 @@ const SDKs = ({ data }) => {
           </tr>
           {sdks.map(function (s, i) {
             s.repo = s.repo ? s.repo : "";
-            const slugLink = "/docs/projects/sdk/" + (s.slug ? s.slug : _.kebabCase(s.title))
+            const slugLink = s.slug ? s.slug : _.kebabCase(s.title);
             var e2eSupport = "";
             var e2eClass = "";
             if (s.e2e === "Yes") {

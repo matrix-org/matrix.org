@@ -17,7 +17,7 @@ const Legal = () => {
                 <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
             </Helmet>
         <div>
-            <video style={{"width": "640px", "height": "360"}}  data-dashjs-player src="https://stream.matrix.org/dash/live.mpd" controls></video>
+            <img src="/images/open-tech-1-banner.jpg" alt='Open Tech Will Save Us'/>
 
             <h1>Open Tech Will Save Us</h1>
 
@@ -27,16 +27,11 @@ const Legal = () => {
 
             <p>We discuss issues relating to technology, especially the importance of Open, Interoperable standards, and how they can enable decentralised tech to keep our data private while still enabling communication.</p>
 
-            <h2>Next Event</h2>
+            <h2>Previous Event</h2>
 
-            <p>The first event will be held on <b>Wednesday 8th April 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
+            <p>The first event was held on <b>Wednesday 8th April 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
 
-            <h3>How to join</h3>
-            <p><strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">Join the live chat now! #open-tech-meetup:matrix.org</a></strong></p>
-            <p>From the live chat, you can ask questions to the presenters! We can invite you to join the broadcast, or if you prefer we'll read them out for you.</p>
-            <p>Once we're live there will be a video stream available on this page. You can also <strong><a href="https://www.youtube.com/watch?v=APVp-20ATLk">join the stream via YouTube</a></strong>.</p>
-            <p>Issues with this stream? Try <a href="https://stream.matrix.org/">https://stream.matrix.org/</a></p>
-            <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank" rel="noopener noreferrer">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation. (But it's fun if you want to sign up for sentimental value!)</p>
+            <iframe title="APVp-20ATLk" width="560" height="315" src="https://www.youtube.com/embed/APVp-20ATLk" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             <h3>Agenda</h3>
             <ul>
@@ -45,6 +40,13 @@ const Legal = () => {
                 <li><a href="https://twitter.com/daviddias" target="_blank" rel="noopener noreferrer">David Dias</a> from <a href="https://ipfs.io/" target="_blank" rel="noopener noreferrer">IPFS</a>  IPFS introducing gossipsub in libp2p, including the security hardening work that they've been putting into v1.1!</li>
                 <li><a href="https://twitter.com/valereonmobile" target="_blank" rel="noopener noreferrer">Valère</a>, from <a href="https://matrix.org" target="_blank" rel="noopener noreferrer">Matrix</a> and <a href="https://riot.im" target="_blank" rel="noopener noreferrer">Riot</a>, who will present the importance of UX and cross-signing keys in end-to-end encrypted communications.</li>
             </ul>
+
+            <h3>How to join</h3>
+            <p><strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">Join the live chat now! #open-tech-meetup:matrix.org</a></strong></p>
+            <p>From the live chat, you can ask questions to the presenters! We can invite you to join the broadcast, or if you prefer we'll read them out for you.</p>
+            <p>Once we're live there will be a video stream available on this page. You can also <strong><a href="https://www.youtube.com/watch?v=APVp-20ATLk">join the stream via YouTube</a></strong>.</p>
+            <p>Issues with this stream? Try <a href="https://stream.matrix.org/">https://stream.matrix.org/</a></p>
+            <p>(Optional) Sign up to attend our event on <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/269787804/" target="_blank" rel="noopener noreferrer">Meetup</a>, to give us an idea of numbers. Registration on Meetup.com is not required for participation. (But it's fun if you want to sign up for sentimental value!)</p>
 
             <h3>Important note on timezones</h3>
 
