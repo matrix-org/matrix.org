@@ -51,11 +51,13 @@ Any _state event_ that does not match the above definition is, instead, classed 
 
 ### Conflicted and unconflicted state sets
 
-The ultimate goal of state resolution is to take some _conflicted_ inputs and give _unconflicted_ output, and to do so in a consistent way such that all servers will agree on the same state. In effect, we may have been given multiple sets of state, and when we combine them together, we can end up with multiple different values for one or more given state tuples. The goal is to ensure that our final state only contains a single value for each state tuple.
+The ultimate goal of state resolution is to take some _conflicted_ inputs and give _unconflicted_ output, and to do so in a consistent way such that all servers will agree on the same state. In effect, we may have been given multiple sets of state due to forks in the room and, when we combine them together, we can end up with multiple different values for one or more given state tuples. The goal is to ensure that our final state only contains a single value for each state tuple.
+
+Forks typically happen when servers that are participating in a room are no longer able to keep each other up-to-date over federation. It's possible that users on different servers will continue to send any number of events into the room, including state events, resulting in state drifting across those servers. When the servers are able to federate again, i.e. after network connectivity is restored, then we can work out the conflicted and unconflicted state by merging the forks.
 
 Conflicted state happens when:
 
-* We have _more than one_ different value for a given state tuple in each fork
+* We have _more than one_ different value for a given state tuple in each fork 
 * We have _only one_ value for a given state tuple but it happened in only one fork and not the other
 
 Unconflicted state happens when:
@@ -119,7 +121,7 @@ for each conflicted_events as e:
             found = false
 
     if not found:
-        auth_difference += e
+        auth_difference.append(e)
 ```
 
 The _full conflicted set_ is effectively the conflicted events combined with the auth difference:
@@ -173,12 +175,12 @@ The Matrix-specific details of our implementation of Kahn's algorithm lie in the
 To ensure that the algorithm is deterministic (that is, running in the same order) for a given set of inputs, we must ensure that the map of incoming edges has been sorted using the above rules before we do anything with it:
 
 ```
-func sorted_incoming_edges() as list(event):
+func sorted_incoming_edges() returns list(event):
     sort incoming_edges where x < y when:
         x.power_level > y.power_level or
-            x.origin_server_ts < y.origin_server_ts or
+        x.origin_server_ts < y.origin_server_ts or
         lexographic_compare(x.event_id, y.event_id) < 0
-        return incoming_edges
+    return incoming_edges
 ```
 
 Once the incoming edges have been sorted, iterate through the input list to count how many incoming edges each event has and update the incoming edges map with those values:
@@ -193,14 +195,14 @@ Then look for events that have no incoming edges and insert them into the beginn
 
 ```
 while len(incoming_edges) > 0:
-    for each sorted_incoming_edges() as id -> count:
-        if count == 0:
-            output_event = (event_map[id], output_event...)
+    for each sorted_incoming_edges() as key -> value:
+        if value == 0:
+            output_event.prepend(event_map[key])
 
-    for each event.auth_events as auth_event:
+    for each event_map[key].auth_events as auth_event:
         incoming_edges[auth_event.event_id] -= 1
 
-    remove(incoming_edges, id)
+    remove(incoming_edges, key)
 ```
 
 Each time we add a node into the output list, we can "remove" its outgoing edges. This means that every auth event referred to by this event has one less incoming edge. Once it has been exhausted, we also remove the event from the incoming edge map, so that we won't try to process it again.
@@ -211,14 +213,14 @@ The output list is now sorted such that all referred events now appear before th
 
 ### Iteratively apply resolved control events
 
-Now that our control events have been sorted into topological order, where the first events in the list are the "oldest", we can now start to layer these resolved control events on top of the partial state.
+Now that our control events have been sorted into reverse topological order, where the first events in the list are the "oldest", we can now start to layer these resolved control events on top of the partial state.
 
 To update the partial state, start at the oldest event and loop through the list, authing each event against the current partial state. If the event passes auth checks then update the partial state to include the event before moving onto the next iteration:
 
 ```
-for each sorted_control_events() as e:
+for each output_event as e:
     if auth_against_partial_state(e):
-        partial_state[e.event_type()][e.state_key()] = e
+        partial_state[e.event_type][e.state_key] = e
 ```
 
 Events that fail the auth check should be ignored and should not find their way into the partial state.
@@ -263,7 +265,7 @@ func get_closest_mainline_event(e as event) returns event:
     var closest_mainline_event: event
 
     func closest_iterate(e as event):
-    if is_in_mainline(e):
+    	if is_in_mainline(e):
             closest_mainline_event = e
         else:
             for each e.auth_events as auth_event:
@@ -290,9 +292,9 @@ To ensure that the algorithm is deterministic (that is, running in the same orde
 func sorted_normal_state_events() as list(event):
     sort normal_events where x < y when:
         x.position_on_mainline < y.position_on_mainline or
-            x.origin_server_ts < y.origin_server_ts or
+		x.origin_server_ts < y.origin_server_ts or
         lexographic_compare(x.event_id, y.event_id) < 0
-        return normal_events
+	return normal_events
 ```
 
 In the event that multiple candidate events refer to the same mainline power level event, the remaining two tests will allow the sorting to be deterministic.
