@@ -215,7 +215,7 @@ The output list is now sorted such that all referred events now appear before th
 
 Now that our control events have been sorted into reverse topological order, where the first events in the list are the "oldest", we can now start to layer these resolved control events in order to build the partial state.
 
-To build up the partial state, start at the oldest event and loop through the list, authing each event against the current `partial_state` (with this behaviour defined as `auth_against_partial_state` in the below example). It is expected that `partial_state` is an empty list for the first iteration, as the oldest event (which is the room create event) does not have auth events. The partial state will grow with each iteration.
+To build up the partial state, start at the oldest event and loop through the list, authing each event by using the current `partial_state` as an allowed set of auth events (with this behaviour defined as `auth_against_partial_state` in the below example). It is expected that `partial_state` is an empty list for the first iteration, as the oldest event (which is the room create event) does not require auth events. The partial state (and, by extension, the selection of allowed auth events) will grow with each iteration.
 
 If the event passes auth checks then update the partial state to include the newly authed event before moving onto the next iteration:
 
