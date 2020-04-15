@@ -27,7 +27,7 @@ const ClientsMatrix = ({data}) => {
           <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="/docs/projects/try-matrix-now/">try-matrix-now</a>. To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a></p>
           <div className="mxgrid mxgrid--clients">
             <div className="mxgrid_item33">
-              <h3 style={{"line-height": "0px", "padding-bottom": "10px"}}>
+              <h3 style={{"lineHeight": "0px", "paddingBottom": "10px"}}>
                 Select your platform:
               </h3>
             </div>
@@ -66,14 +66,14 @@ const ClientsMatrix = ({data}) => {
                 <th style={{'width': '15%'}}> </th>
                 {clients.map(function(client, i) {
                   return (
-                    <th data-platforms={client.platformString}>{client.title}</th>
+                    <th key={client.title} data-platforms={client.platformString}>{client.title}</th>
                   )
                 })}
               </tr>
             </thead>
             <tbody>{
               ["Linux","Mac","Windows","Android","iOS","Ubuntu Touch","Web","Nintendo 3DS"].map(function(platform) {
-                return (<tr>
+                return (<tr key={platform}>
                   <td>{platform}</td>
                   {clients.map(function(client, i) {
                     var platformSupport =  "";
@@ -84,7 +84,7 @@ const ClientsMatrix = ({data}) => {
                     }
 
                     return (
-                      <td className={platformClass} data-platforms={client.platformString}>{platformSupport}</td>
+                      <td key={client.title} className={platformClass} data-platforms={client.platformString}>{platformSupport}</td>
                     )
                   })}
                 </tr>)
@@ -100,7 +100,7 @@ const ClientsMatrix = ({data}) => {
                 <th style={{'width': '15%'}}> </th>
                 {clients.map(function(client, i) {
                   return (
-                    <th data-platforms={client.platformString}>{client.title}</th>
+                    <th key={client.title} data-platforms={client.platformString}>{client.title}</th>
                   )
                 })}
               </tr>
@@ -110,7 +110,7 @@ const ClientsMatrix = ({data}) => {
                 <td>Repo</td>
                 {clients.map(function(client, i) {
                     return (
-                      <td data-platforms={client.platformString}>
+                      <td key={client.title} data-platforms={client.platformString}>
                         <a href={client.repo}>{client.repo.split('/')[2]}</a>
                       </td>
                     )
@@ -120,7 +120,7 @@ const ClientsMatrix = ({data}) => {
                 <td>Matrix Room</td>
                 {clients.map(function(client, i) {
                     return (
-                      <td data-platforms={client.platformString}>
+                      <td key={client.title} data-platforms={client.platformString}>
                         <small><a href={"https://matrix.to/#/" + client.room}>{client.room}</a></small>
                       </td>
                     )
@@ -128,11 +128,11 @@ const ClientsMatrix = ({data}) => {
               </tr>
             {
               ["language","SDK"].map(function(detail) {
-                return (<tr>
+                return (<tr key={detail}>
                   <td>{detail.charAt(0).toUpperCase() + detail.slice(1)}</td>
                   {clients.map(function(client, i) {
                     return (
-                      <td data-platforms={client.platformString}>{client[detail]}</td>
+                      <td key={client.title} data-platforms={client.platformString}>{client[detail]}</td>
                     )
                   })}
                 </tr>)
@@ -148,14 +148,14 @@ const ClientsMatrix = ({data}) => {
                 <th style={{'width': '15%'}}> </th>
                 {clients.map(function(client, i) {
                   return (
-                    <th data-platforms={client.platformString}>{client.title}</th>
+                    <th key={client.title} data-platforms={client.platformString}>{client.title}</th>
                   )
                 })}
               </tr>
             </thead>
             <tbody>{
               Object.keys(clients[0].features).map(function(feature) {
-                return (<tr>
+                return (<tr key={feature}>
                   <td>{feature.replace(/_/g, ' ')}</td>
                   {clients.map(function(client, i) {
                     if (!client.features) client.features = {}
@@ -169,7 +169,7 @@ const ClientsMatrix = ({data}) => {
                       featureSupport = "✗";
                     }
                     return (
-                      <td className={featureClass} data-platforms={client.platformString}>{featureSupport}</td>
+                      <td key={client.title} className={featureClass} data-platforms={client.platformString}>{featureSupport}</td>
                     )
                   })}
                 </tr>)
