@@ -195,14 +195,14 @@ Then look for events that have no incoming edges and insert them into the beginn
 
 ```
 while len(incoming_edges) > 0:
-    for each sorted_incoming_edges() as key -> value:
-        if value == 0:
-            output_event.prepend(event_map[key])
+    for each sorted_incoming_edges() as id, count:
+        if count == 0:
+            output_event.prepend(event_map[id])
 
-    for each event_map[key].auth_events as auth_event:
+    for each event_map[id].auth_events as auth_event:
         incoming_edges[auth_event.event_id] -= 1
 
-    remove(incoming_edges, key)
+    remove(incoming_edges, id)
 ```
 
 Each time we add a node into the output list, we can "remove" its outgoing edges. This means that every auth event referred to by this event has one less incoming edge. Once it has been exhausted, we also remove the event from the incoming edge map, so that we won't try to process it again.
