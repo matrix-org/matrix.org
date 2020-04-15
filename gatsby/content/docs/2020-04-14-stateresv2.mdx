@@ -265,7 +265,7 @@ func get_closest_mainline_event(e as event) returns event:
     var closest_mainline_event: event
 
     func closest_iterate(e as event):
-    	if is_in_mainline(e):
+        if is_in_mainline(e):
             closest_mainline_event = e
         else:
             for each e.auth_events as auth_event:
@@ -292,9 +292,9 @@ To ensure that the algorithm is deterministic (that is, running in the same orde
 func sorted_normal_state_events() as list(event):
     sort normal_events where x < y when:
         x.position_on_mainline < y.position_on_mainline or
-		x.origin_server_ts < y.origin_server_ts or
+        x.origin_server_ts < y.origin_server_ts or
         lexographic_compare(x.event_id, y.event_id) < 0
-	return normal_events
+    return normal_events
 ```
 
 In the event that multiple candidate events refer to the same mainline power level event, the remaining two tests will allow the sorting to be deterministic.
