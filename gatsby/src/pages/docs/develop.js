@@ -117,6 +117,26 @@ const GuidesDevelop = ({data}) => {
   </table>
 </div>
 
+<h2 id="application-services">Homeserver Development</h2>
+
+<div className="width-100">
+  <table className="legacy-table">
+    <thead>
+      <tr>
+        <th>Article</th>
+        <th>Author</th>
+        <th>Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/docs/guides/implementing-stateres">State Resolution v2 for the Hopelessly Unmathematical</a></td>
+        <td>Neil Alexander Twigg</td>
+        <td>English</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <h2 id="application-services">Application Services</h2>
 
@@ -190,9 +210,7 @@ export const query = graphql`
                         room
                         e2e
                     }
-                    code {
-                      body
-                    }
+                    body
                 }
                 absolutePath
             }

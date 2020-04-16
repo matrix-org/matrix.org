@@ -16,7 +16,9 @@ const Category = ({
       <MXContentMain>
         <h1>Blog Archive</h1>
         {edges.map(edge => (
-          <p><a href={edge.node.fields.slug}>{edge.node.frontmatter.title}</a></p>
+          <p>
+            {edge.node.frontmatter.date} <a href={edge.node.fields.slug}>{edge.node.frontmatter.title}</a>
+          </p>
           
         ))}
       </MXContentMain>
@@ -42,6 +44,7 @@ export const postQuery = graphql`
         node {
           frontmatter {
             title
+            date
           }
           fields {
             slug

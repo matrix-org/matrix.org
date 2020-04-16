@@ -29,7 +29,6 @@ const redirects = [
     {from: "/docs/projects/client/thunderbird", to: "/docs/projects/client/mozilla-thunderbird"},
     {from: "/docs/projects/as/matrix-puppet-slack", to: "/docs/projects/bridge/matrix-puppet-slack"},
     {from: "/docs/guides/faq-ru", to: "/faq-ru"},
-    {from: "/discover", to: "/docs/projects/try-matrix-now"},
     {from: "/develop", to: "/docs/guides"},
     {from: "/spec", to: "/docs/spec"},
     {from: "/docs/guides/riot_im_cookie_policy", to: "/legal/riot-im-cookie-policy"},
@@ -39,6 +38,12 @@ const redirects = [
     {from: "/docs/projects/client/Scylla", to: "/docs/projects/client/scylla"},
     {from: "/docs/projects/as/mautrix-facebook", to: "/docs/projects/bridge/mautrix-facebook"},
     {from: "/docs/projects/clients-matrix", to: "/clients"},
+    {from: "/docs/spec-redirect", to: "/docs/spec"},
+    {from: "/code", to: "/code"},
+    {from: "/docs/spec-api-playground-redirect", to: "/docs/api/client-server/"},
+    {from: "/blog/feed-redirect", to: "/blog/feed"},
+    {from: "/docs/projects/sdks", to: "/sdks"},
+    {from: "/docs/projects/bots", to: "/bots"},
 ];
 
 const template = `import React from 'react'

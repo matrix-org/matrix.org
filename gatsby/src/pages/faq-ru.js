@@ -103,7 +103,7 @@ const Faq = () => {
 <a href="https://liberapay.com/matrixdotorg">Liberapay</a>, Bitcoin and Ethereum),
 корпоративного спонсорства и получения грантов. Посмотреть текущих спонсоров уровня Elliptic на 
 площадке Patreon и корпоративных спонсоров можно на 
-<a href="https://matrix.org/blog/supporters">странице наших сторонников</a>. Если вы желаете поддержать команду 
+<a href="https://matrix.org/supporters">странице наших сторонников</a>. Если вы желаете поддержать команду 
 Matrix в качестве члена сообщества, пожалуйста, посетите нашу страницу 
 на <a href="https://patreon.com/matrixdotorg">Patreon</a> и <a href="https://liberapay.com/matrixdotorg">Liberapay</a>, 
 или вы можете внести пожертвование в биткоинах на адрес 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE или эфир 
@@ -421,7 +421,7 @@ NodeJS для написания «мостов»</li>
 Вы даже можете попробовать написать реализацию сервера (но имейте в виду, архитектура 
 Matrix делает реализацию серверов куда более сложной, чем клиентов и «мостов»).</p>
 
-<p>Почитайте <a href="http://github.com/matrix-org/synapse/tree/master/CONTRIBUTING.rst">CONTRIBUTING.rst</a> 
+<p>Почитайте <a href="http://github.com/matrix-org/synapse/tree/master/CONTRIBUTING.md">CONTRIBUTING.md</a> 
 для подробностей, как вы можете помочь проекту. Мы рады всем!</p>
 
 <h5 id="-12">Где я могу получить помощь?</h5>
@@ -705,10 +705,6 @@ event<em>cache</em>size: чем больше событий в кеше, тем 
 ли <a href="https://f-droid.org/repository/browse/?fdid=im.vector.alpha">F-Droid</a>. 
 Если не знаете, какую из версий выбрать, установите Riot из 
 <a href="https://play.google.com/store/apps/details?id=im.vector.app">Google Play</a>.</p>
-
-<p>Для Android также можно установить последнюю разрабатываемую версию, построенную 
-<a href="https://matrix.org/jenkins/job/VectorAndroidDevelop">Jenkinss</a>. Используйте её на свой страх и риск 
-и только в том случае, если знаете, что делаете.</p>
 
 <h5 id="riotfdroid">Я установил Riot из F-droid, почему он сажает мне батарею?</h5>
 

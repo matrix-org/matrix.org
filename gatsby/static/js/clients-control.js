@@ -5,12 +5,12 @@ $(document).ready(function () {
             cell = $(cell);
             const platforms = cell.data("platforms");
             if (! platforms) return;
-            if (platforms.toLowerCase().indexOf(selectedPlatform) === -1) {
+            if (platforms.toLowerCase().indexOf(selectedPlatform) === -1 && selectedPlatform !== "all") {
                 cell.hide();
             } else {
                 cell.show();
             }
         });
     });
-    $("#linux").click();
+    $("#all").click();
 });

@@ -24,7 +24,7 @@ const Bridges = ({data}) => {
               <h1 id="bridges">Bridges</h1>
               <p>An important idea in Matrix is <em>Interoperability</em>. This means that Matrix is open to exchanging data and messages with other platforms using an <a href="https://matrix.org/docs/spec">Open Standard</a>. We refer to the connection to other platforms as <em>bridging</em>.</p>
               <p>For a thorough examination of the different methods of bridging, and a discussion of the terminology involved, check out <em><a href="https://matrix.org/blog/2017/03/11/how-do-i-bridge-thee-let-me-count-the-ways">How do I bridge thee? Let me count the ways...</a></em></p>
-              <p>Currently recommened bridges are shown in the grid below.</p>
+              <p>Currently recommended bridges are shown in the grid below.</p>
             </div>
             <div className="mxgrid__item50">
               <h3>Quick bridging concepts</h3>
@@ -61,13 +61,13 @@ const Bridges = ({data}) => {
 {toc.map(function(tocitem, i) {
   var projects = bridges.filter(x => x.node.frontmatter.bridges === tocitem.bridges);
   return (
-  <div>
+  <div key={i}>
     <hr />
     <h2 id={kebabCase(tocitem.bridges)}>{tocitem.bridges}</h2>
     {projects.map(function(project, i) {
       const fm = project.node.frontmatter;
       return (
-        <div>
+        <div key={fm.title}>
           <h3 id={kebabCase(fm.title)}>{fm.title}</h3>
           <div className="mxblock">
             <table style={{"width": "100%"}}>
@@ -91,7 +91,7 @@ const Bridges = ({data}) => {
               </tbody>
             </table>
           </div>
-          <MDXRenderer>{project.node.code.body}</MDXRenderer>
+          <MDXRenderer>{project.node.body}</MDXRenderer>
         </div>
       )
     })}
@@ -118,9 +118,7 @@ export const query = graphql`{
           language
           room
         }
-        code {
-          body
-        }
+        body
       }
     }
   }

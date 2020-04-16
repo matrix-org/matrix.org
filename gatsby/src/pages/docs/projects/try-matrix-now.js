@@ -93,7 +93,7 @@ const TryMatrixNow = ({data}) => {
           </div>
         </div>
             <h2>Let's go deeper</h2>
-            <p>Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, application services, bots, etc. If you’d like to learn more, this page aims to collect all known Matrix projects. To add a new one (or update an existing one), you can submit a PR to the <a href="https://github.com/matrix-org/matrix.org">matrix.org</a> project on github - the existing projects can be found <a href="https://github.com/matrix-org/matrix.org/tree/master/jekyll/_posts/projects">here</a> - or just let us know in the #matrix:matrix.org room.<br /></p>
+            <p>Matrix is a whole ecosystem of Matrix-enabled clients, servers, gateways, application services, bots, etc. If you’d like to learn more, this page aims to collect all known Matrix projects. To add a new one (or update an existing one), you can submit a PR to the <a href="https://github.com/matrix-org/matrix.org">matrix.org</a> project on github - the existing projects can be found <a href="https://github.com/matrix-org/matrix.org/tree/master/gatsby/content/projects">here</a> - or just let us know in the <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a> room.<br /></p>
             <div className="mxblock">
             <div className="mxgrid mxgrid--discover">
                 <div className="mxgrid__item20">
@@ -142,7 +142,7 @@ const TryMatrixNow = ({data}) => {
                         </div>
                         {
                             ["Released","Stable","Late Beta","Beta","Early Beta",
-                            "Late Alpha","Alpha","Early Alpha","No longer maintained"].map(function(maturity) {
+                            "Late Alpha","Alpha","Early Alpha","Not actively maintained"].map(function(maturity) {
                                 const id = "chk-maturity-" + maturity.replace(/ /g, '')
                                 return (
                                     <p key={id} className="mxgrid__item__bg__p">
@@ -178,25 +178,27 @@ const TryMatrixNow = ({data}) => {
                         </div>
                     </div>
                 </div>
-                <div className="mxgrid__item20">
-                <div className="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--left_align">
-                    <h4 className="mxgrid__item__bg__hx">License</h4>
-                        <div className="mxgrid">
-                            <div className="mxgrid__item50"><button id="licenses-all">All</button></div>
-                            <div className="mxgrid__item50"><button id="licenses-none">None</button></div>
+                    <div className="mxgrid__item20">
+                        <div className="mxgrid__item__bg mxgrid__item__bg--clear mxgrid__item__bg--left_align">
+                            <h4 className="mxgrid__item__bg__hx">License</h4>
+                            <div className="mxgrid">
+                                <div className="mxgrid__item50"><button id="licenses-all">All</button></div>
+                                <div className="mxgrid__item50"><button id="licenses-none">None</button></div>
+                            </div>
+                            <div className="tmn-two-column">
+                                {
+                                    licenses.map(function (maturity) {
+                                        const id = "chk-license-" + maturity.replace(/ /g, '').replace(/\//g, '-').replace(/\./g, '')
+                                        return (
+                                            <p key={id} className="mxgrid__item__bg__p">
+                                                <input type="checkbox" id={id} name={id} />
+                                                <label style={{ "whiteSpace": "nowrap" }} htmlFor={id}> {maturity}</label>
+                                            </p>)
+                                    })
+                                }
+                            </div>
                         </div>
-                    {
-                        licenses.map(function(maturity) {
-                            const id = "chk-license-" + maturity.replace(/ /g, '').replace(/\//g, '-').replace(/\./g, '')
-                            return (
-                                <p key={id} className="mxgrid__item__bg__p">
-                                    <input type="checkbox" id={id} name={id} />
-                                    <label htmlFor={id}> {maturity}</label>
-                                </p>)
-                        })
-                    }
-                </div>
-                </div>
+                    </div>
             </div>
             </div>
             <h2>Clients</h2>

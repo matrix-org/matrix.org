@@ -91,7 +91,7 @@ const Project = ({ pageContext: { postNode } }) => {
                   <p><a href={"https://matrix.to/#/" + post.room}>{post.room}</a><br /></p>
                 </div>
               </div>}
-              <MDXRenderer>{postNode.code.body}</MDXRenderer>
+              <MDXRenderer>{postNode.body}</MDXRenderer>
             </div>
           </div>
         </div>

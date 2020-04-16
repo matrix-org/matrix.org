@@ -1,0 +1,50 @@
+---
+layout: project
+title: Matrix Dart SDK
+categories:
+  - sdk
+description: A Dart implementation of the federated communications protocol
+repo: https://git.pattle.im/pattle/library/matrix-dart-sdk
+featured: true
+language: Dart
+author: Wilko
+license: MPL-2.0
+home: https://git.pattle.im/pattle/library/matrix-dart-sdk
+room: "#app:pattle.im"
+e2e: "No"
+thumbnail: /docs/projects/images/dart.png
+screenshot: /docs/projects/images/dart.png
+sort_order: 600
+maturity: Beta
+---
+
+A Dart implementation of the federated communications protocol, Matrix.
+
+This SDK is for general use, but mainly being developed for [Pattle](https://pattle.im), an easy to use Matrix app.
+
+## Usage
+   
+   ```dart
+   import 'package:matrix_sdk/matrix_sdk.dart';
+   import 'package:url/url.dart';
+
+   void main() async {
+     final sqfliteStore = SqfliteStore();
+     final homeserver = Homeserver(Url.parse('https://pattle.im'));
+
+     final user = await homeserver.login(Username('pat'), 'pattle', store: sqfliteStore);
+
+     await for(SyncState syncState in user.sync()) {
+       await for (final room in user.rooms.all()) {
+         // Do something
+       }
+     }
+   }
+   ```
+   This example uses the
+   [`SqfliteStore`](https://git.pattle.im/pattle/library/matrix-dart-sdk-sqflite)
+   , which is a seperate dependency and only works on Flutter.
+
+   Note that using a store is optional.
+
+   Also uses the [`url`](https://pub.dev/packages/url) package for `Url.parse(..)`.

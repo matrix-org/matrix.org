@@ -77,9 +77,7 @@ exports.createPages = async ({ graphql, actions }) => {
               fields {
                 slug
               }
-              code {
-                body
-              }
+              body
               frontmatter {
                 title
                 date(formatString: "YYYY-MM-DD")
@@ -224,6 +222,7 @@ const resultLegal = await wrapper(
             author
             slug
             sort_order
+            section
           }
         }
       }
@@ -234,7 +233,10 @@ const resultLegal = await wrapper(
 
   const pages = resultPages.data.allMdx.edges
   const pagesForGuidesList = pages.map(p => {return {
-    slug: p.node.fields.slug, title: p.node.frontmatter.title, sort_order: p.node.frontmatter.sort_order
+    slug: p.node.fields.slug,
+    title: p.node.frontmatter.title,
+    sort_order: p.node.frontmatter.sort_order,
+    section: p.node.frontmatter.section
    }})
   pagesForGuidesList.sort(function(a, b) {
     if (a.sort_order && ! b.sort_order) return -1;
@@ -242,6 +244,13 @@ const resultLegal = await wrapper(
     if (! a.sort_order && ! b.sort_order) return 0;
     return a.sort_order - b.sort_order;
     });
+  const pagesForGuidesListBySection = {};
+  pagesForGuidesList.forEach(page=>{
+    if (!pagesForGuidesListBySection[page.section]) {
+      pagesForGuidesListBySection[page.section] = [];
+    }
+    pagesForGuidesListBySection[page.section].push(page);
+  })
   pages.forEach((edge, index) => {
 
     createPage({
@@ -249,7 +258,8 @@ const resultLegal = await wrapper(
       component: guideTemplate,
       context: {
         slug: edge.node.fields.slug,
-        pages: pagesForGuidesList
+        pages: pagesForGuidesList,
+        pagesBySection: pagesForGuidesListBySection
       },
     })
   })
@@ -287,9 +297,7 @@ const resultProjects = await wrapper(
                         birthtime
                       }
                     }
-                    code {
-                      body
-                    }
+                    body
                 }
                 absolutePath
                 

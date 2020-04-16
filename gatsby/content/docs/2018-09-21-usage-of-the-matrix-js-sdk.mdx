@@ -2,6 +2,7 @@
 layout: post
 title: Usage of the matrix-js-sdk
 sort_order: 300
+section: Client-Server API
 ---
 
 Matrix allows open real-time communications over the Internet using HTTP and JSON. This makes developing clients to connect to Matrix servers really easy! Because it's open, and uses simple syntax for messages, you can connect Matrix to anything that communicates over a standard HTTP interface - later projects in this series will explore ideas such as building bots, performing machine learning on message content, and connecting IoT devices such as Philips Hue lights.
@@ -23,7 +24,7 @@ We'll use Node.js as our environment, though the [matrix-js-sdk] can also be use
 
 Before we start, make sure you have Node.js and NPM installed: follow instructions at [nodejs.org](https://nodejs.org/) for your platform. Then create a new directory to work in:
 
-```unix
+```shell
 mkdir my-first-matrix-client
 cd my-first-matrix-client
 ```
@@ -32,7 +33,7 @@ cd my-first-matrix-client
 
 Once you're ready, the first thing to do is install the [matrix-js-sdk] from NPM:
 
-```unix
+```shell
 npm install matrix-js-sdk
 ```
 
@@ -55,7 +56,7 @@ const client = sdk.createClient({
 // note that we use the full MXID for the userId value
 ```
 
-<small>([jsdoc for `createClient`](https://matrix-org.github.io/matrix-js-sdk/0.11.1/global.html#createClient))</small>
+<small>(<a href="http://matrix-org.github.io/matrix-js-sdk/0.11.1/global.html#createClient">jsdoc for <code class="highlighter-rouge">createClient</code></a>)</small>
 
 If you are logged into Riot, you can find an `access token` for the logged-in user on the Settings page.
 

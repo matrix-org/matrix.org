@@ -27,7 +27,7 @@ const PostList = ({ pageContext: { limit, skip, currentPage, posts }, data: { al
               slug={post.node.fields.slug}
               categories={post.node.frontmatter.categories}
               key={post.node.fields.slug}
-              body={post.node.code.body}
+              body={post.node.body}
               author={post.node.frontmatter.author}
             />
           ))}
@@ -39,7 +39,12 @@ const PostList = ({ pageContext: { limit, skip, currentPage, posts }, data: { al
             }}
           />
         </MXContentMain>
-        <MXContentNav title="All posts" content={posts} currentSlug="/blog"></MXContentNav>
+        <div>
+        <iframe title="DDGSearch" src="https://duckduckgo.com/search.html?width=250&site=matrix.org&prefill=Search Matrix.org with DDG"
+      style={{"overflow":"hidden","margin":0,"padding":0,"width":"308px","height":"40px"}} 
+      frameBorder="0"></iframe>
+      <MXContentNav title="All posts" content={posts} currentSlug="/blog"></MXContentNav>
+        </div>
     </Layout>
   )
 }
@@ -77,9 +82,7 @@ export const postQuery = graphql`
           }
           excerpt(pruneLength: 200)
           timeToRead
-          code {
-            body
-          }
+          body
         }
       }
     }

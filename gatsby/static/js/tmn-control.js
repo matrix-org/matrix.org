@@ -1,6 +1,5 @@
 $(document).ready(function () {
     console.log("tmn-control loaded v2")
-    console.log($("[id^=chk-language]"))
     
         /* For each type, a click event */
         $("[id^=chk-type]").click(function(a) {
@@ -27,6 +26,7 @@ $(document).ready(function () {
         });
         
         $("[id^=chk]").prop('checked', true);
+        $("#chk-maturity-Notactivelymaintained").prop('checked', false);
 
         /* Missing data is classed as 'Unknown' for now */
         jQuery('li[data-language=""]').attr("data-language", "Unknown");

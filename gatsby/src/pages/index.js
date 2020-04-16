@@ -11,6 +11,8 @@ import theme from '../../config/theme'
 
 import { graphql } from 'gatsby'
 import { Link } from "gatsby"
+import SEO from '../components/SEO'
+import useBuildTime from '../hooks/useBuildTime'
 
 const example1 = `curl -XPOST
  -d '{"msgtype":"m.text", "body":"hello"}'
@@ -72,6 +74,7 @@ const Index = ({
     allMdx: { edges },
   },
 }) => {
+    const buildTime = useBuildTime()
     return (
          <ThemeProvider theme={theme}>
             <div>
@@ -81,10 +84,10 @@ const Index = ({
               <script type="text/javascript" src="/js/d3.v3.min.js"></script>
               <script type="text/javascript" src="/js/how-it-works.js"></script>
               <script async="" src="https://platform.twitter.com/widgets.js" charSet="utf-8"/>
-              <script async="" src="https://c6.patreon.com/becomePatronButton.bundle.js"/>
               <script async="" defer="" src="https://buttons.github.io/buttons.js"/>
             </Helmet>
             <Navigation />
+            <SEO buildTime={buildTime} />
   <div className="mxherobackground">
     <div className="mxherobackground__img">
 </div>
@@ -372,11 +375,11 @@ const Index = ({
   <div className="mxblock mxblock--open_standard">
     <h2 className="mxblock__hx mxblock__hx--open_standard">An Open Standard</h2>
     <div className="mxgrid mxgrid--open_standard">
-      <div className="mxgrid__item33">
+      <div className="mxgrid__item33 mxgrid__item33--bullet">
         <div className="mxgrid__item__bg mxgrid__item__bg--clear">
 <img src="images/basic_signs.svg" alt="" className="mxgrid__item__bg__img" />
           <div className="mxgrid__item__bg__vert">
-            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--open_standard">Simple pragmatic<a href="/docs/api"> RESTful HTTP/JSON APIs</a> by default
+            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--open_standard">Simple pragmatic<a href="/docs/api" onClick={()=>{window.location='https://matrix.org//docs/api'; return false;}}> RESTful HTTP/JSON APIs</a> by default
 </h4>
           </div>
         </div>
@@ -530,7 +533,7 @@ const Index = ({
                         <p className="paragraph">Synapse</p>
                       </div>
                       <div className="mxblock__github__right">
-                        <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=synapse&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        <iframe title="gh-synapse" src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=synapse&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
                       </div>
                     </div>
                     <div className="mxblock__github">
@@ -539,7 +542,7 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-js-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                          <iframe title="gh-jssdk" src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-js-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
                         </div>
                       </div>
                     </div>
@@ -549,7 +552,7 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-android-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                          <iframe title="gh-androidsdk" src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-android-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
                         </div>
                       </div>
                     </div>
@@ -559,7 +562,7 @@ const Index = ({
                       </div>
                       <div className="mxblock__github__right">
                         <div className="w-embed">
-                          <iframe src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-ios-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
+                          <iframe title="gh-iossdk" src="https://ghbtns.com/github-btn.html?user=matrix-org&repo=matrix-ios-sdk&type=star&count=true" frameBorder="0" scrolling="0" width="170px" height="20px"></iframe>
                         </div>
                       </div>
                     </div>
@@ -645,7 +648,7 @@ const Index = ({
                     </div>
                   </div>
                 </div>
-                <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating...</p>
+                <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating. See our current <a href="/supporters">Elliptic supporters</a>!</p>
               </div>
             </div>
           </div>

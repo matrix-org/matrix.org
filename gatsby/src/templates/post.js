@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
@@ -39,11 +39,15 @@ const Post = ({ pageContext: { postNode, prev, next, posts } }) => {
             {post.author}
           </Subline>
           <PostContent>
-            <MDXRenderer>{postNode.code.body}</MDXRenderer>
+            <MDXRenderer>{postNode.body}</MDXRenderer>
           </PostContent>
           <PrevNext prev={prev} next={next} />
         </MXContentMain>
-        <div>{
+        <div>
+        <iframe title="DDGSearch" src="https://duckduckgo.com/search.html?width=250&site=matrix.org&prefill=Search Matrix.org with DDG"
+      style={{"overflow":"hidden","margin":0,"padding":0,"width":"308px","height":"40px"}} 
+      frameBorder="0"></iframe>
+          {
           toc &&
         <MXContentNav title="Post Contents" content={toc} currentSlug={postNode.fields.slug}></MXContentNav>}
         <MXContentNav title="All posts" content={posts} currentSlug={postNode.fields.slug}></MXContentNav>

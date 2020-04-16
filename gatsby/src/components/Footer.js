@@ -2,8 +2,8 @@ import React from 'react'
 
 const Footer = () => (
   <div className="mxfooter">
-  <div className="mxfooter__container">
-    <div className="mxfooter__column">
+    <div className="mxfooter__container">
+      <div className="mxfooter__column">
         <a href="/docs/projects/try-matrix-now" className="mxfooter__link mxfooter__link--primary">Discover</a>
         <a href="/docs/projects/try-matrix-now" className="mxfooter__link">Try Matrix</a>
         <a href="/clients" className="mxfooter__link">Clients</a>
@@ -20,11 +20,10 @@ const Footer = () => (
         <a href="/docs/guides" className="mxfooter__link">All guides</a>
       </div>
       <div className="mxfooter__column">
-        <a href="/docs/guides" className="mxfooter__link mxfooter__link--primary">Develop</a>
-        <a href="/docs/" className="mxfooter__link">Docs</a>
+        <a href="/docs/develop" className="mxfooter__link mxfooter__link--primary">Develop Docs</a>
         <a href="/docs/spec" className="mxfooter__link">Spec</a>
-        <a href="/docs/api/client-server/" className="mxfooter__link">API Playground</a>
-        <a href="/code" className="mxfooter__link">Code</a>
+        <a href="/docs/api/client-server" className="mxfooter__link">API Playground</a>
+        <a href="https://matrix.org/code" className="mxfooter__link">Code</a>
       </div>
       <div className="mxfooter__column">
         <a href="/blog" className="mxfooter__link mxfooter__link--primary">Blog</a>
@@ -37,7 +36,11 @@ const Footer = () => (
         <a href="/" className="mxfooter__link mxfooter__link--primary">More</a>
         <a href="/faq" className="mxfooter__link">FAQs</a>
         <a href="/security-disclosure-policy/" className="mxfooter__link">Security Disclosure Policy</a>
-        <a href="/legal" className="mxfooter__link">Legal</a>
+        <a href="/legal/code-of-conduct/" className="mxfooter__link">Code of Conduct for Matrix.org</a>
+        <a href="/legal/" className="mxfooter__link">Legal</a>
+        <a href="/contact/" className="mxfooter__link">Contact</a>
+        <a href="https://github.com/matrix-org/matrix.org/" className="mxfooter__link">Site Source</a>
+        
       </div>
     </div>
     <div className="mxfooter__container mxfooter__container--heel">

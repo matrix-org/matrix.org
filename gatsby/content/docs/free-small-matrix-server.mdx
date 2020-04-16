@@ -2,15 +2,13 @@
 title: 'Free Small Matrix Server'
 author: Paul Tötterman <paul.totterman@iki.fi>
 layout: post
-section: guides
-license: CC-BY-NC-SA ?
+section: Server Setup
+license: CC-BY-NC-SA
 slug: free-small-matrix-server
 ---
 
 *Canonical version of this article at
 <https://gitlab.com/ptman/matrix-docs/tree/master/free-matrix-server>*
-
-# Free Small Matrix Server
 
 Ingredients:
 
@@ -99,7 +97,7 @@ The Oracle Cloud Ubuntu images come with somewhat restrictive iptables rules by
 default. Docker manages the instance firewall and we have the Oracle Cloud
 firewall in front, so let's remove the current firewall to avoid trouble:
 
-```sh
+```shell
 apt purge netfilter-persistent iptables-persistent
 ```
 
@@ -109,7 +107,7 @@ Oracle cloud includes a somewhat heavy monitoring daemon. We have better use for
 that memory since current versions of Synapse, the Matrix homeserver, can be
 memory hungry.
 
-```sh
+```shell
 snap remove oracle-cloud-agent
 apt remove snapd open-iscsi lxd lxcfs
 ```
@@ -118,7 +116,7 @@ apt remove snapd open-iscsi lxd lxcfs
 
 I suggest enabling swap, since there's only 1 GB of RAM.
 
-```sh
+```shell
 dd if=/dev/zero of=/swap bs=1M count=1k
 chmod 0600 /swap
 mkswap /swap
@@ -144,7 +142,7 @@ Follow the [guide], with some tweaks:
 
 ### Guide in a nutshell, TL;DR
 
-```sh
+```shell
 git clone https://github.com/spantaleev/matrix-docker-ansible-deploy/
 cd matrix-docker-ansible-deploy
 mkdir inventory/host_vars/matrix.$domain
@@ -197,7 +195,7 @@ client](https://matrix.org/clients).
 
 Remember to keep your VM up to date!
 
-```sh
+```shell
 apt update
 apt upgrade
 reboot # e.g. kernel,dbus,systemd updates

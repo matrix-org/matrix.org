@@ -44,7 +44,7 @@ jQuery(document).ready(($) => {
   /* Populate maturities list */
   //var maturities =  "{{ maturities | uniq | join: "," }}".split(',');
 
-  var maturities =  "Released,Stable,Late Beta,Beta,Early Beta,Late Alpha,Alpha,Early Alpha,No longer maintained".split(',');
+  var maturities =  "Released,Stable,Late Beta,Beta,Early Beta,Late Alpha,Alpha,Early Alpha,Not actively maintained".split(',');
   maturities.forEach((maturity => {
     if (maturity.length === 0) return;
 
@@ -54,7 +54,7 @@ jQuery(document).ready(($) => {
     var checkbox = $('<input>')
         .attr('id', checkboxId)
         .attr('type', 'checkbox');
-    if (maturity !== "No longer maintained") { checkbox.attr('checked', 'checked'); };
+    if (maturity !== "Not actively maintained") { checkbox.attr('checked', 'checked'); };
     
     item.append(checkbox);
     item.append($('<label>').attr('for', checkboxId).text(" " + maturity.trim()))
@@ -94,7 +94,7 @@ jQuery(document).ready(($) => {
 
   /* Populate licenses list */
   //var licenses =  "{{ licenses | uniq | join: "," }}".split(',');
-  var licenses =  "AGPL-3.0-only,AGPL-3.0-or-later,AGPL3,Apache-2.0,Apache,Artistic2,BSD,EUPL,CC0-1.0,GNU GPL v3,GPL-1.0-or-later,GPL3,ISC,LGPL-2.1-only,LGPL,MIT,GPL-3.0-only,MPL2,Unlicense,N/A,Unknown".split(',');
+  var licenses =  "AGPL-3.0-only,AGPL-3.0-or-later,AGPL3,Apache-2.0,Apache,Artistic2,BSD,EUPL,CC0-1.0,GPL-1.0-or-later,GPL3,ISC,LGPL-2.1-only,LGPL,MIT,GPL-3.0-only,Unlicense,N/A,Unknown".split(',');
   if (licenses.indexOf("Unknown") === -1) licenses.push("Unknown");
   licenses.forEach((license => {
     if (license.length === 0) return;

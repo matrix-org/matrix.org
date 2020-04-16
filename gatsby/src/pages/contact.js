@@ -2,77 +2,26 @@
 
 import React from 'react'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
-import { Layout, Wrapper, Header, Button } from '../components'
+import { Layout, MXContentMain  } from '../components'
 
 import config from '../../config'
 
-const Content = styled.div`
-  grid-column: 2;
-  box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  padding: 2rem 4rem;
-  background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
-  margin-top: -3rem;
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    padding: 3rem 3rem;
-  }
-  @media (max-width: ${props => props.theme.breakpoints.phone}) {
-    padding: 2rem 1.5rem;
-  }
-  form {
-    p {
-      label,
-      input {
-        display: block;
-      }
-      input {
-        min-width: 275px;
-        margin-top: 0.5rem;
-      }
-      textarea {
-        resize: vertical;
-        min-height: 150px;
-        width: 100%;
-        margin-top: 0.5rem;
-      }
-    }
-  }
-`
-
 const Contact = () => (
-  <Layout>
-    <Wrapper>
+  <Layout hasNavPadding="true">
+  <MXContentMain>
       <Helmet title={`Contact | ${config.siteTitle}`} />
-      <Header />
-      <Content>
         <h1>Contact</h1>
-        <p>Super cool intro text to get people contacting me! It uses Netlify's form feature.</p>
-        <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
-          <p>
-            <label htmlFor="contact-name">
-              Name
-              <input name="name" id="contact-name" type="text" required />
-            </label>
-          </p>
-          <p>
-            <label htmlFor="contact-email">
-              E-Mail <input name="email" id="contact-email" type="email" required />
-            </label>
-          </p>
-          <p>
-            <label htmlFor="contact-message">
-              Your Message <textarea name="message" id="contact-message" required />
-            </label>
-          </p>
-          <p>
-            <Button>Send</Button>
-          </p>
-          <input type="hidden" name="form-name" value="contact-form" />
-        </form>
-      </Content>
-    </Wrapper>
+        <p>The best place to get information and connect is on Matrix itself - starting in <a href="https://matrix.to/#/#matrix:matrix.org">Matrix HQ (#matrix:matrix.org)</a>.<br />
+        However, if you prefer email, or have a need to be more direct:</p>
+        <ul>
+          <li>
+            <a href="mailto:abuse@matrix.org">abuse@matrix.org</a> if you need to urgently report abuse on the platform
+          </li>
+          <li>
+            <a href="mailto:support@matrix.org">support@matrix.org</a> for more general support and commercial queries
+          </li>
+        </ul>
+        </MXContentMain>
   </Layout>
 )
 

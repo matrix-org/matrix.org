@@ -36,7 +36,7 @@ const Category = ({ pageContext: { category, limit, skip, currentPage }, data: {
             slug={post.node.fields.slug}
             categories={post.node.frontmatter.categories}
             key={post.node.fields.slug}
-            body={post.node.code.body}
+            body={post.node.body}
           />
         ))}
         <PrevNext
@@ -88,9 +88,7 @@ export const postQuery = graphql`
           }
           excerpt(pruneLength: 200)
           timeToRead
-          code {
-            body
-          }
+          body
         }
       }
     }

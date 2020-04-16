@@ -1,0 +1,8 @@
+<OpenSearchDescription>
+     <ShortName>Matrix.org</ShortName>
+     <Description>Search Matrix.org</Description>
+     <InputEncoding>UTF-8</InputEncoding>
+     <LongName>Matrix.org Search</LongName>
+     <Image width="16" height="16">https://matrix.org/icons/icon-48x48.png</Image>
+     <Url type="text/html" method="get" template="https://duckduckgo.com/?q=site%3Amatrix.org+{searchTerms}" />
+</OpenSearchDescription>
