@@ -145,6 +145,11 @@ const Guides = ({data}) => {
         <td>English</td>
       </tr>
       <tr>
+        <td><a href="https://www.mytinydc.com/en/blog/matrix-synapse-installationserver-riotclient/">Matrix-Riot.im : How to install Synapse-Matrix server - Raspberry PI - Rock64</a></td>
+        <td>dHENRY</td>
+        <td>English</td>
+      </tr>
+      <tr>
         <td><a href="https://www.foxypossibilities.com/2018/02/04/running-matrix-synapse-on-nixos/">Running Matrix Synapse on NixOS</a></td>
         <td><a href="https://www.foxypossibilities.com/">Kiba Fox</a></td>
         <td>English</td>
@@ -199,6 +204,12 @@ const Guides = ({data}) => {
         <td>Jon Neverland</td>
         <td>English</td>
       </tr>
+      <tr>
+        <td><a href="https://www.topbug.net/blog/2016/12/05/set-up-synapse-matrix-homeserver-on-ubuntu-16-04/">Set up Synapse (Matrix Homeserver) on Ubuntu 16.04</a></td>
+        <td>Hong Xu</td>
+        <td>English</td>
+      </tr>
+      
     </tbody>
   </table>
 </div>
