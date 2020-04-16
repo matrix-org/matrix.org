@@ -117,8 +117,8 @@ const Faq = ({data}) => {
 <div className="question">
 <h4 id="how-is-matrix.org-funded%3F"><a className="permalink" href="#how-is-matrix.org-funded%3F" aria-hidden="true">&#128279;</a> How is Matrix.org funded?</h4>
 <p>Matrix.org is currently funded by the community, through a
-combination of community support (via
-<a href="https://patreon.com/matrixdotorg">Patreon</a>,
+combination of community support (via 
+<a href="https://patreon.com/matrixdotorg">Patreon</a>, 
 <a href="https://liberapay.com/matrixdotorg">Liberapay</a>, Bitcoin and Ethereum),
 corporate sponsorship, and grant funding.</p>
 <p>Current Elliptic-level supporters on
