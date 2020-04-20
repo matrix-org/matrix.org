@@ -648,17 +648,7 @@ addresses) to matrix IDs to aid user discovery</strong>.</p>
 <div className="definition-close">close</div>
 </div>
 </div>
-<div className="question">
-<h4 id="where-can-i-find-tools-to-get-starting-maintaining-a-synapse-installation%3F"><a className="permalink" href="#where-can-i-find-tools-to-get-starting-maintaining-a-synapse-installation%3F" aria-hidden="true">&#128279;</a> Where can I find tools to get starting maintaining a Synapse installation?</h4>
-<p>There is a collection of utilities provided by xwiki-labs simply called <a href="https://github.com/xwiki-labs/synapse_scripts">synapse scripts</a>. This collection features the popular <code>synapse_janitor.sql</code> script, which can help clean up a <a href="#definitions">Postgres</a> database.</p>
-<div className="definition-list">
-<div className="definition-item definition-postgres">
-<p><strong>Postgres</strong></p>
-<p>While Synapse can be installed using, Sqlite Postgres is preferred for any significant use.</p>
-</div>
-<div className="definition-close">close</div>
-</div>
-</div>
+
 <h2 id="detail"><a className="permalink" href="#detail" aria-hidden="true">&#128279;</a> Detail</h2>
 <h3 id="position-in-the-world"><a className="permalink" href="#position-in-the-world" aria-hidden="true">&#128279;</a> Position in the World</h3>
 <div className="question">
