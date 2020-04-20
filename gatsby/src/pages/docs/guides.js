@@ -237,7 +237,7 @@ const Guides = ({data}) => {
           <td>English</td>
       </tr>
       <tr>
-          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.rst">How to enable VoIP relaying on your Home Server with TURN</a></td>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md">How to enable VoIP relaying on your Home Server with TURN</a></td>
           <td>Synapse Team</td>
           <td>English</td>
       </tr>
