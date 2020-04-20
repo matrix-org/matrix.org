@@ -164,7 +164,10 @@ const ClientsMatrix = ({data}) => {
                     if (client.features[feature] === "yes") {
                       featureClass = "green";
                       featureSupport = "✓";
-                    } else {
+                    } else if (typeof(client.features[feature]) == 'number') {
+                      featureSupport = client.features[feature];
+                    }
+                    else {
                       featureClass = "red";
                       featureSupport = "✗";
                     }
