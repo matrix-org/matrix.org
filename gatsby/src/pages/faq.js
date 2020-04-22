@@ -10,16 +10,13 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { graphql } from 'gatsby'
 
 const Faq = ({data}) => {
+  function getSection(section) {
     const sections = data.allMdx.edges;
-    const encryption = sections.find((element) => {
-        return element.node.frontmatter.faq_section === "encryption";
-    });
-    const position = sections.find((element) => {
-        return element.node.frontmatter.faq_section === "position-in-the-world";
-    });
-    const asAUser = sections.find((element) => {
-        return element.node.frontmatter.faq_section === "as-a-user";
-    });
+    return sections.find((element) => {
+      return element.node.frontmatter.faq_section === section;
+  });
+  }
+    
     return (<Layout hasNavPadding="true">
             <Helmet title={`FAQ | ${config.siteTitle}`} />
             <MXContentMain>
@@ -464,7 +461,7 @@ for an example of how to write a fully functional Slack bridge in less than 100 
 <p>If you're using <a href="https://riot.im">Riot</a>, you can use the &quot;Room directory&quot; screen, which you open from a button in the bottom left.</p>
 <p>It you're working on a client, you can use the <a href="/docs/guides/client-server.html">Client-Server API</a> to <a href="/docs/spec/client_server/r0.3.0.html#listing-rooms">get a list of public rooms</a>.</p>
 </div>
-<MDXRenderer>{asAUser.node.body}</MDXRenderer>
+<MDXRenderer>{getSection("as-a-user").node.body}</MDXRenderer>
 <h3 id="tech"><a className="permalink" href="#tech" aria-hidden="true">&#128279;</a> Tech</h3>
 <div className="question">
 <h4 id="how-do-i-matrix-enable-my-existing-app%3F"><a className="permalink" href="#how-do-i-matrix-enable-my-existing-app%3F" aria-hidden="true">&#128279;</a> How do I Matrix-enable my existing app?</h4>
@@ -677,7 +674,7 @@ standard body to maintain it going forwards.</p>
 <div className="definition-close">close</div>
 </div>
 </div>
-<MDXRenderer>{position.node.body}</MDXRenderer>
+<MDXRenderer>{getSection("position-in-the-world").node.body}</MDXRenderer>
 <div className="question">
 <h4 id="why-apache-licence%3F"><a className="permalink" href="#why-apache-licence%3F" aria-hidden="true">&#128279;</a> Why Apache Licence?</h4>
 <p>See also: <a href="#what-do-you-mean-by-open%3F">What do you mean by open?</a></p>
@@ -911,8 +908,10 @@ Usage of an IS is not required in order for a client application to be part of t
 <div className="definition-close">close</div>
 </div>
 </div>
+<h3 id="bridging"><a className="permalink" href="#encryption" aria-hidden="true">&#128279;</a> Bridging</h3>
+<MDXRenderer>{getSection("bridging").node.body}</MDXRenderer>
 <h3 id="encryption"><a className="permalink" href="#encryption" aria-hidden="true">&#128279;</a> Encryption</h3>
-<MDXRenderer>{encryption.node.body}</MDXRenderer>
+<MDXRenderer>{getSection("encryption").node.body}</MDXRenderer>
 <h3 id="the-spec"><a className="permalink" href="#the-spec" aria-hidden="true">&#128279;</a> The Spec</h3>
 <div className="question">
 <h4 id="what-is-the-spec%3F"><a className="permalink" href="#what-is-the-spec%3F" aria-hidden="true">&#128279;</a> What is The Spec?</h4>
@@ -1181,6 +1180,7 @@ Usage of an IS is not required in order for a client application to be part of t
             <div className="mxcontent__nav__link"><a href="#comparisons">Comparisons</a></div>
             <div className="mxcontent__nav__link"><a href="#more-detail">More Detail</a></div>
             <div className="mxcontent__nav__link"><a href="#architecture">Architecture</a></div>
+            <div className="mxcontent__nav__link"><a href="#bridging">Bridging</a></div>
             <div className="mxcontent__nav__link"><a href="#encryption">Encryption</a></div>
             <div className="mxcontent__nav__link"><a href="#the-spec">The Spec</a></div>
             <div className="mxcontent__nav__link"><a href="#voip">Voip</a></div>
