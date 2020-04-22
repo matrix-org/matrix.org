@@ -2,3 +2,15 @@
 section: faq
 faq_section: bridging
 ---
+
+#### Why don't you use separate homeserver instances to improve bridging performance?
+
+For example:
+
+> Is there any merit in a proposal that the current matrix.org Freenode bridge could be taken off matrix.org and put on a new HS (at a new server-name domain such as freenode.matrix.org) so as to not be bogged down in performance?
+
+In this case you are now maintaining two high traffic homeservers rather than one: Freenode handles enough traffic that it's intensive just by itself.
+
+Running the bridge on another homeserver means the same traffic will be hitting matrix.org, except it now has to be handled by the federation inbound workers too. Now you have two hosts handling the same amount of traffic. You might see a benefit to federated homeservers, but the new homeserver will struggle just as much with inbound/outbound federation slowness as it does now with bridging.
+
+Further, it may turn out that the ongoing work on Synapse to introduce shared master processes actually makes it so much more efficent that whole benefit of creating two homeservers is now moot.
