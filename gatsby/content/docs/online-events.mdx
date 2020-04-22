@@ -37,6 +37,25 @@ Note that we did not make the call itself available for the entire audience to
 join - this would likely have been a impossible moderation task, and would not 
 have added to the experience.
 
+## Configuring the Live stream
+
+Jitsi itself comes with the ability to stream to YouTube, but only YouTube. An open-source
+alternative is to capture the jitsi meet screen and broadcast it as a video stream using
+[OBS](https://obsproject.com/) to capture the screen.
+
+For the streaming server, one option is to use the
+[nginx RTMP plugin](https://github.com/arut/nginx-rtmp-module) set up to receive a stream
+via RTMP and then convert this into an HLS stream for viewing on the web. This can also relay
+the stream to another RTMP server so you can make the stream available on another platform
+like YouTube. 
+
+When you start streaming to your RTMP server, it will create a playlist file. Some players
+and browsers support this natively, but to make it playable in any web browser, you'll need
+to use a [Javascript player like Google's shaka playe](https://github.com/google/shaka-player).
+
+This gets your stream up and running, but if you are expecting a larger audience you can also
+look at putting caching web servers in front of the nginx to cache the media (*.ts) files.
+
 ## Use Matrix for live chat
 
 We created a dedicated "watching" matrix room, where users could join to talk 
@@ -60,3 +79,4 @@ new custom widget in the matrix room in Riot.
 ![click-custom-widget](/docs/img/2-click-custom-widget.png)
 
 ![add-the-url](/docs/img/3-add-the-url.png)
+
