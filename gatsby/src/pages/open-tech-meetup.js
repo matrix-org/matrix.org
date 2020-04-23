@@ -27,6 +27,12 @@ const Legal = () => {
 
             <p>We discuss issues relating to technology, especially the importance of Open, Interoperable standards, and how they can enable decentralised tech to keep our data private while still enabling communication.</p>
 
+            <h2>Next Event</h2>
+
+            <p>The second event will be held on <b>Wednesday 13th May 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
+
+            <p>More details will be annouced.</p>
+
             <h2>Previous Event</h2>
 
             <p>The first event was held on <b>Wednesday 8th April 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
