@@ -20,6 +20,9 @@ const Contact = () => (
           <li>
             <a href="mailto:support@matrix.org">support@matrix.org</a> for more general support and commercial queries
           </li>
+          <li>
+            <a href="mailto:security@matrix.org">security@matrix.org</a> to disclose security issues. Also see our <a href="https://matrix.org/security-disclosure-policy/">Security Disclosure Policy</a>
+          </li>
         </ul>
         </MXContentMain>
   </Layout>
