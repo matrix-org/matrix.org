@@ -3,13 +3,13 @@ layout: project
 title: Matrix Dart SDK
 categories:
   - sdk
-description: A Dart implementation of the federated communications protocol
+description: An SDK written in Dart to connect to Matrix, usable in Flutter
 repo: https://git.pattle.im/pattle/library/matrix-dart-sdk
 featured: true
 language: Dart
-author: Wilko
+author: Wilko Manger
 license: MPL-2.0
-home: https://git.pattle.im/pattle/library/matrix-dart-sdk
+home: https://pub.dev/packages/matrix_sdk
 room: "#app:pattle.im"
 e2e: "No"
 thumbnail: /docs/projects/images/dart.png
@@ -18,33 +18,92 @@ sort_order: 600
 maturity: Beta
 ---
 
-A Dart implementation of the federated communications protocol, Matrix.
+An SDK written in Dart to connect to Matrix, usable for Flutter.
 
 This SDK is for general use, but mainly being developed for [Pattle](https://pattle.im), an easy to use Matrix app.
 
+Please note that this SDK is still pre-1.0 and in development. Things may still change a lot!
+
 ## Usage
-   
+
+   Set the initial `MyUser`, either by logging in to a homeserver:
+
    ```dart
-   import 'package:matrix_sdk/matrix_sdk.dart';
-   import 'package:url/url.dart';
+   final homeserver = Homeserver(Uri.parse('https://pattle.im'));
 
-   void main() async {
-     final sqfliteStore = SqfliteStore();
-     final homeserver = Homeserver(Url.parse('https://pattle.im'));
+   var user = await homeserver.login(
+     Username('pat'),
+     'pattle',
+     store: MemoryStore(),
+   );
+   ```
 
-     final user = await homeserver.login(Username('pat'), 'pattle', store: sqfliteStore);
+   Or, from a `Store`, for example, the included `MoorStore`, which uses
+   [moor](https://pub.dev/packages/moor):
 
-     await for(SyncState syncState in user.sync()) {
-       await for (final room in user.rooms.all()) {
-         // Do something
-       }
-     }
+   ```dart
+   var user = await MyUser.fromStore(
+     MoorStore(
+       LazyDatabase(
+         () => VmDatabase(File('/somewhere')),
+       ),
+     ),
+   );
+   ```
+
+   Once a `MyUser` has been set up, you can start syncing with:
+
+   ```dart
+   user.startSync();
+   ```
+
+   All data objects such as `MyUser`, `Room`, etc. are immutable.
+
+   The user has a stream of `Update`s, `user.updates`. An `Update` contains
+   the latest 'snapshot' of data associated with the user. It also contains
+   a `delta` `MyUser`, where all properties are `null`, except those that
+   are changed. For example, if a user started typing in a certain room, and we're
+   syncing, there will be an `Update` in `user.updates`, where `delta` has 1
+   `Room` in `delta.rooms`, with only the room where the user started typing,
+   reflected in `room.typingUserIds`. All other properties of the `Room` will
+   be null. This is all assuming that this is the only change in the sync.
+   If more happened, it will be reflected in `delta`.
+
+   Use `update.user` to get the complete up-to date copy of all data.
+   Note that `rooms`, `timeline`s and `memberTimeline`s may not be a
+   complete set of the data, more might need to be retrieved from the
+   `Store` or remotely.  You can use `load` on `rooms`, `timeline` and
+   `memberTimeline`, to load more items.
+
+   ```dart
+   user.startSync();
+
+   // Do something after the first received sync specifically.
+   var update = await user.updates.firstSync;
+
+   // ALWAYS use the MyUser from the latest update.
+   // It will have the latest data.
+   user = update.user;
+
+   print(user.rooms.length);
+
+   // Get more events from the timeline. This also returns an update.
+   // Note that because we're doing things before we listen to updates, we
+   // might miss some syncs. Even though we've missed some syncs, the update
+   // received from the load is the most up to date one, and will contain a
+   // user with data from processed syncs in the background.
+   update = await user.rooms.first.timeline.load(count: 50);
+   user = update.user;
+
+   // Because we called load, the update is a RequestUpdate<Timeline>,
+   // which means data is the updated Timeline, now with more items.
+   print(update.data.timeline.length);
+
+   // Do something every sync. If you don't use onlySync, you will also
+   // receive updates that are caused by a request (such as above, load).
+   // If you do a request (such as timeline.load) inside a Stream with all
+   // updates, and await for it also in the stream, you will use it twice.
+   await for (update in user.updates.onlySync) {
+     user = update.user;
    }
    ```
-   This example uses the
-   [`SqfliteStore`](https://git.pattle.im/pattle/library/matrix-dart-sdk-sqflite)
-   , which is a seperate dependency and only works on Flutter.
-
-   Note that using a store is optional.
-
-   Also uses the [`url`](https://pub.dev/packages/url) package for `Url.parse(..)`.
