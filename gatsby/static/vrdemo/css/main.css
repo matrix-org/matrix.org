@@ -1,0 +1,190 @@
+/*
+Copyright 2017 Vector Creations Ltd
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+
+body {
+    background-color: #000;
+    color: #eee;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('../images/aurora.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0px;
+}
+
+a,
+a:link,
+a:hover,
+a:visited {
+    color: #afa;
+}
+
+.login {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    background-color: rgba(0,0,0,0.2);
+    padding: 50px;
+    font-size: 18px;
+}
+
+.login .description {
+    font-size: 14px;
+}
+
+.login .description table {
+    border-collapse: collapse;
+}
+
+.login .description table td {
+    border: 1px solid #444;
+    background-color: rgba(0,0,0,0.5);
+    padding: 4px;
+}
+
+.login .screenies {
+    text-align: center;
+}
+
+.login .login_share {
+    margin: 10px;
+}
+
+.login .login_logo {
+    float: right;
+}
+
+.login label {
+    display: block;
+    position: relative;
+    height: 32px;
+}
+
+.login label input[type=text],
+.login label input[type=password] {
+    position: absolute;
+    left: 180px;
+    margin-top: -4px;
+}
+
+.login input[type=radio] {
+    margin-right: 10px;
+}
+
+.login input[type=text],
+.login input[type=password],
+.login button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+.login input[type=submit] {
+    font-family: 'Open Sans', sans-serif;
+    border-color: #888;
+    background-color: #eee;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 2em;
+}
+
+.login .screenies img {
+    margin: 10px;
+}
+
+.login .login_go {
+    margin: 20px;
+    text-align: center;
+}
+
+.login .video {
+    margin: 20px;
+    text-align: center;
+}
+
+.login input[type=submit],
+.login button {
+    cursor: pointer;
+}
+
+.login h1 {
+    margin-top: 0px;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #888;
+}
+
+.panel {
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 5px;
+    line-height: 1.5em;
+}
+
+.infoPanel {
+    background-color: #9dc1e0;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.infoPanel-trans {
+    background-color: rgba(157, 193, 224, 0.35);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.infoPanel a, .infoPanel-trans a {
+    color: #ffffff;
+}
+
+.warningPanel {
+    background-color: #fcf8e3;
+    color: #f0ad4e;
+    border: 1px solid #f0ad4e;
+}
+
+.warningPanel a {
+    color: #f0ad4e;
+}
+
+.errorPanel {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #a94442;
+}
+
+.small {
+    font-size: 85%;
+}
+
+div.oneToOneMessages {
+    overflow: hidden!important;
+    word-wrap: break-word;
+    width: 1200px;
+    height: 450px;
+    z-index: -1;
+}
+
+p.message {
+    color: #ffffff;
+    font-size: 72px;
+    margin: 0px;
+    width: 100%;
+}
