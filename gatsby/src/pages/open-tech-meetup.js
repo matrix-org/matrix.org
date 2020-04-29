@@ -12,12 +12,12 @@ const Legal = () => {
     return (<Layout hasNavPadding="true">
             <Helmet title={`Open Tech Will Save Us | ${config.siteTitle}`}>
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta property="twitter:image" content="https://matrix.org/images/open-tech-1-full.jpg" />
+                <meta property="twitter:image" content="https://matrix.org/images/Open-Tech-2-Dark@2x.png" />
 
                 <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
             </Helmet>
         <div>
-            <img src="/images/open-tech-1-banner.jpg" alt='Open Tech Will Save Us'/>
+            <img src="/images/Open-Tech-2-Dark@2x.png" alt='Open Tech Will Save Us'/>
 
             <h1>Open Tech Will Save Us</h1>
 
@@ -28,10 +28,11 @@ const Legal = () => {
             <p>We discuss issues relating to technology, especially the importance of Open, Interoperable standards, and how they can enable decentralised tech to keep our data private while still enabling communication.</p>
 
             <h2>Next Event</h2>
+            <p>The next event will be held on <b>Wednesday 13th May 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
 
-            <p>The second event will be held on <b>Wednesday 13th May 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
-
-            <p>More details will be annouced.</p>
+            <p>
+                Agenda and more details to follow, <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
+                join the live chat</a></strong> or check back here for updates.</p>
 
             <h2>Previous Event</h2>
 
