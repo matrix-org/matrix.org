@@ -62,7 +62,7 @@ Dendrite is a next-generation homeserver written in Go
 
 [Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) announced:
 
-> * Room version 5 support added - Dendrite now supports all current room versions! 
+> * Room version 5 support added - Dendrite now supports all current room versions!
 >
 > * Room version 5 will now be used by default when creating new rooms.
 > * Backfill over federation as been implemented and it honours `history_visibility` correctly.
@@ -91,9 +91,7 @@ v5 rooms! this is a sign of huge progress in Dendrite!
 >
 > Our sharding project continues, and Erik has been trying to move the event stream entirely away from the master process which in itself could be significant for overall perf once ready for production.
 >
-> Aside from that we continue to improve SSO support and we have a really great community PR from [sandhose](https://github.com/sandhose)
->
-> that [implements open ID support](https://github.com/matrix-org/synapse/pull/7256). We are really looking forward to getting that merged. The admin API is also getting plenty of community love with [awesome-manual](https://github.com/matrix-org/synapse/pull/6881) and [dklimpel](https://github.com/matrix-org/synapse/pulls/dklimpel) leading the charge.
+> Aside from that we continue to improve SSO support and we have a really great community PR from [sandhose](https://github.com/sandhose) that [implements OpenID Connect support](https://github.com/matrix-org/synapse/pull/7256). We are really looking forward to getting that merged. The admin API is also getting plenty of community love with [awesome-manual](https://github.com/matrix-org/synapse/pull/6881) and [dklimpel](https://github.com/matrix-org/synapse/pulls/dklimpel) leading the charge.
 >
 > Next week, look out for 1.13.0 and hopefully some more good news on sharding.
 
@@ -253,7 +251,7 @@ Pattle is a client written for Flutter using Dart
 
 What megolm implementation are you using?
 
-> My own based on matrix-nio, [the e2ee implementation guide](https://matrix.org/docs/guides/end-to-end-encryption-implementation-guide) and the spec.  
+> My own based on matrix-nio, [the e2ee implementation guide](https://matrix.org/docs/guides/end-to-end-encryption-implementation-guide) and the spec.
 > libolm bindings stolen from <https://github.com/Dhole/go-olm>
 
 ### Nio
