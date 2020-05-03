@@ -60,7 +60,7 @@ If you want to follow along at home without listening to the video (and I can't 
 
  * Install nginx as a webserver: `apt-get update && apt -y install nginx`
  * Go to `/etc/nginx/sites-enabled` and copy the vhost configuration block from the bottom of `default` to new files called `dangerousdemos.net`, `matrix.dangerousdemos.net`, and `riot.dangerousdemos.net`.  We don't set up `jitsi.dangerousdemos.net` at this point as the jitsi installer handles it for us.
-   * Rename the `server_name` field in the new files to match the hostname of each host, and point `root` to an appropriate location per domain (e.g. `/var/www/dangerousdemos.net`)
+   * Rename the `server_name` field in the new files to match the hostname of each host, and point `root` to an appropriate location per domain (e.g. `/var/www/dangerousdemos.net` for the main domain, or `/var/www/riot.dangerousdemos.net/riot` for riot)
    * For the Synapse domain (`matrix.dangerousdemos.net` here), you should replace the contents of the `location` block with `proxy_pass http://localhost:8008;` - telling nginx to pass the traffic through to synapse, which listens by default for plaintext HTTP traffic on port 8008.  (N.B. do **not** put a trailing slash on the URL here, otherwise nginx will mangle the forwarded URLs.)
  * Enable TLS via LetsEncrypt on nginx, by: `apt install -y python3-certbot-nginx && certbot --nginx -d dangerousdemos.net -d riot.dangerousdemos.net -d matrix.dangerousdemos.net` (or whatever your domains are).
  * You should be able to go to https://dangerousdemos.net at this point and see a page with valid HTTPS.
@@ -125,6 +125,7 @@ gpg --edit-key 74692659bda3d940
 
 tar -xzvf riot-v1.5.15.tar.gz
 ln -s riot-v1.5.15 riot
+chown www-data:www-data -R riot
 cd riot
 cp config.sample.json config.json
 ```
