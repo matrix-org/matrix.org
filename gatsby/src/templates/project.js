@@ -8,7 +8,7 @@ const Project = ({ pageContext: { postNode } }) => {
 
   return (
     <Layout navmode="discover" customSEO>
-        <SEO postPath={postNode.fields.slug} postNode={postNode} article />
+        <SEO postPath={postNode.fields.slug} postNode={postNode} article excerptOverride={post.description} />
         <MXContentMain>
         <div className="mxblock mxblock--project">
           <h1 className="mxblock--project__hx">{post.title}</h1>

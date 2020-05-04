@@ -7,10 +7,12 @@ import { Layout } from '../components'
 import config from '../../config'
 
 
+const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
 const Legal = () => {
-    return (<Layout hasNavPadding="true">
-            <Helmet title={`Open Tech Will Save Us | ${config.siteTitle}`}>
+    return (<Layout hasNavPadding="true" excerptOverride="excerptOverrideexcerptOverrideexcerptOverrideexcerptOverride"
+    titleOverride={title}>
+            <Helmet title={title}>
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta property="twitter:image" content="https://matrix.org/images/Open-Tech-2-Dark@2x.png" />
 

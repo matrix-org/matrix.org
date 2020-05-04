@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import config from '../../config'
 
 const SEO = props => {
-  const { postNode, postPath, article, buildTime, excerptOverride } = props
+  const { postNode, postPath, article, buildTime, excerptOverride, titleOverride } = props
 
   let title
   let description
@@ -33,6 +33,9 @@ const SEO = props => {
   }
   if (excerptOverride) {
     description = excerptOverride
+  }
+  if (titleOverride) {
+    title = titleOverride;
   }
 
   // schema.org in JSONLD format
