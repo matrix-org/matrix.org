@@ -175,11 +175,6 @@ const Guides = ({data}) => {
         <td>English</td>
       </tr>
       <tr>
-        <td><a href="https://www.upcloud.com/support/install-matrix-synapse/">How to install Matrix Synapse Homeserver</a></td>
-        <td>UpCloud Tutorials</td>
-        <td>English</td>
-      </tr>
-      <tr>
         <td><a href="https://www.digitalocean.com/community/tutorials/how-to-install-matrix-synapse-on-ubuntu-16-04">How To Install Matrix Synapse on Ubuntu 16.04</a></td>
         <td>Oliver Lumby for DigitalOcean</td>
         <td>English</td>
