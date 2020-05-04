@@ -65,7 +65,7 @@ Dendrite is a next-generation homeserver written in Go
 > * Room version 5 support added - Dendrite now supports all current room versions!
 >
 > * Room version 5 will now be used by default when creating new rooms.
-> * Backfill over federation as been implemented and it honours `history_visibility` correctly.
+> * Backfill over federation has been implemented and it honours `history_visibility` correctly.
 >
 > * Strict key validity checking has been fully implemented in gomatrixserverlib in support of room version 5. Some key expiry bugs have also been fixed.
 > * Back-pagination tokens are now generated correctly for events that have the same depth.
@@ -156,25 +156,6 @@ Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
 > * Implement skype quotes / matrix replies
 >
 > * various stability fixes
-
-### Opsdroid
-
-[Cadair](https://matrix.to/#/@cadair:cadair.com) said:
-
-> Opsdroid has released v0.18 this week, which contains [a load of stuff](https://github.com/opsdroid/opsdroid/releases/tag/v0.18.0). The main matrix related changes are:
->
->  * A generic event type for all unsupported matrix events, so you can now react to and send any custom events.
->
->  * Implementation of the join room event in the matrix connector so you can react to users joining a matrix room.
->  * A fix for mxc urls in messages, so inline images etc work.
->
->  * A fix for the opsdroid memory to allow per-room matrix room state databases. This will hopefully be merged into core for the next release.
->
-> #### Picard Opsdroid Skill
->
-> Related to this release the [picard]() skill for bridged slack/matrix community management has been updated, and now (for the first time) works with a release version of opsdroid rather than some random branch 🤣. This involved adding support for lots of different events to the slack connector in opsdroid.
-
-See Matrix Live this week for a neat introduction to OpsDroid
 
 ## Dept of Clients 📱
 
@@ -280,7 +261,7 @@ What megolm implementation are you using?
 
 > RiotX will finally be an update of Riot-Android on the PlayStore and RiotX beta will then be removed from the PlayStore. We will implement everything to let users upgrade their application without being forced to log in again.
 >
-> While we are finalizing cross-signing, quadS, bootstrap, etc. on RiotX, we have started studying and implementing the main missing features: identity server and related functionality (terms of service consent, invite by email, search in contact list, bind emails and phone numbers, etc.), integration manager (terms of service consent,widgets, send stickers), WebRTC audio and video calls, Jitsi conference integration, and other important missing features like UI and UX to invite people to a room, etc. We are also fighting annoying bug related to the navigation inside a timeline.
+> While we are finalizing cross-signing, quadS, bootstrap, etc. on RiotX, we have started studying and implementing the main missing features: identity server and related functionality (terms of service consent, invite by email, search in contact list, bind emails and phone numbers, etc.), integration manager (terms of service consent,widgets, send stickers), WebRTC audio and video calls, Jitsi conference integration, and other important missing features like UI and UX to invite people to a room, etc. We are also fighting an annoying bug related to the navigation inside a timeline.
 >
 > It's also now possible to deactivate your account using RiotX.
 >
@@ -406,6 +387,25 @@ Join [#sdk:pattle.im](https://matrix.to/#/#sdk:pattle.im) to learn more!
 > * available on [PyPi](https://pypi.org/project/buildbot-matrix/), install with `pip install buildbot-matrix`
 
 ## Dept of Bots 🤖
+
+### Opsdroid
+
+[Cadair](https://matrix.to/#/@cadair:cadair.com) said:
+
+> Opsdroid has released v0.18 this week, which contains [a load of stuff](https://github.com/opsdroid/opsdroid/releases/tag/v0.18.0). The main matrix related changes are:
+>
+>  * A generic event type for all unsupported matrix events, so you can now react to and send any custom events.
+>
+>  * Implementation of the join room event in the matrix connector so you can react to users joining a matrix room.
+>  * A fix for mxc urls in messages, so inline images etc work.
+>
+>  * A fix for the opsdroid memory to allow per-room matrix room state databases. This will hopefully be merged into core for the next release.
+>
+> #### Picard Opsdroid Skill
+>
+> Related to this release the [picard]() skill for bridged slack/matrix community management has been updated, and now (for the first time) works with a release version of opsdroid rather than some random branch 🤣. This involved adding support for lots of different events to the slack connector in opsdroid.
+
+See Matrix Live this week for a neat introduction to OpsDroid
 
 ### New bot to share Jitsi call URLs
 
