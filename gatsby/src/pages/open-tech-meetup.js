@@ -32,6 +32,13 @@ const Legal = () => {
             <h2>Next Event</h2>
             <p>The next event will be held on <b>Wednesday 13th May 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
 
+            <h3>Agenda</h3>
+            <ul>
+                <li><a href="http://exple.tive.org/blarg/" target="_blank" rel="noopener noreferrer">Mike Hoye</a> from Mozilla will be talking about "Verbs in the fediverse"</li>
+                <li>Euhen (<a href="https://mastodon.social/@Gargron" target="_blank" rel="noopener noreferrer">@Gargron@mastodon.social</a>) will talk about "how we keep mastodon.social running at scale" as a Q&A</li>
+                <li>... and more to be announced!</li>
+            </ul>
+
             <p>
                 Agenda and more details to follow, <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
                 join the live chat</a></strong> or check back here for updates.</p>
