@@ -134,13 +134,6 @@ const Foundation = () => {
               "https://beta.companieshouse.gov.uk/company/11648710">11648710</a>.</li>
             <li>The official articles of association of the Foundation may be
               downloaded <a href="/media/2019-06-10 - Matrix.org Foundation CIC Articles of Association.pdf">here</a>.</li>
-            <ul>
-            <li>(As of June 7th 2019, Companies House has not yet published the current articles, but they should also be
-              visible <a href= "https://beta.companieshouse.gov.uk/company/11648710/filing-history"> here</a> in the
-              near future).</li>
-            </ul>
-          </ul>
-          <ul>
             <li>The official Rules for the Foundation may be downloaded <a href="/media/2019-06-10 - Matrix.org Foundation CIC Rules.pdf">here</a>.</li>
             </ul>
             <h2>The Rules of the Foundation</h2>
