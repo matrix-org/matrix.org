@@ -104,69 +104,7 @@ const Faq = ({data}) => {
 </div>
 </div>
 <h3 id="who-and-how"><a className="permalink" href="#who-and-how" aria-hidden="true">&#128279;</a> Who and How</h3>
-<div className="question">
-<h4 id="what-kind-of-company-is-matrix.org%3F"><a className="permalink" href="#what-kind-of-company-is-matrix.org%3F" aria-hidden="true">&#128279;</a> What kind of company is Matrix.org?</h4>
-<p>Matrix.org is an open initiative which acts as a neutral and independent custodian of the Matrix standard. As of Sept 2017 we are finally in the process of incorporating it as a dedicated non-profit entity (most likely a limited by guarantee UK private company called the Matrix.org Foundation).</p>
-<div className="definition-list">
-<div className="definition-close">close</div>
-</div>
-</div>
-<div className="question">
-<h4 id="how-is-matrix.org-funded%3F"><a className="permalink" href="#how-is-matrix.org-funded%3F" aria-hidden="true">&#128279;</a> How is Matrix.org funded?</h4>
-<p>Matrix.org is currently funded by the community, through a
-combination of community support (via 
-<a href="https://patreon.com/matrixdotorg">Patreon</a>, 
-<a href="https://liberapay.com/matrixdotorg">Liberapay</a>, Bitcoin and Ethereum),
-corporate sponsorship, and grant funding.</p>
-<p>Current Elliptic-level supporters on
-Patreon and corporate sponsors can be found on our <a href="/supporters">supporters
-page</a>.</p>
-<p>If you would like to support the core Matrix team as a member of the community, you can do so via:</p>
-<ul>
-<li><a href="https://patreon.com/matrixdotorg">Patreon</a></li>
-<li><a href="https://liberapay.com/matrixdotorg">Liberapay</a></li>
-<li>Bitcoin (address: 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE)</li>
-<li>Ethereum (address: 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485)</li>
-</ul>
-<p>If you would like to sponsor the
-team as a corporation, or are interested in paying for prioritised or custom
-development, please <a href="mailto:support@matrix.org">get in touch</a>.</p>
-<p>For the first three years of Matrix's development (2014-2017), most of the core
-contributors worked for <a href="https://www.amdocs.com">Amdocs</a>, who paid for them to
-work fulltime on Matrix.  In July 2017, Amdocs considered the project to be
-sufficiently successful that it could now self-support and so stopped funding.
-The majority of the core team is now employed by <a href="https://vector.im/">New Vector</a>, an independent company
-set up to hire the team and support Matrix's development.  Other contributors
-are funded by their own employers or donate their own time to the project.</p>
-<p>In January 2018, <a href="/blog/2018/01/29/status-partners-up-with-new-vector-fueling-decentralised-comms-and-the-matrix-ecosystem/">Matrix.org announced that Status.im made a major strategic investment</a>
-in <a href="https://vector.im/">New Vector</a>, meaning we now have the financial
-backing to let us focus entirely on improving the Matrix ecosystem.</p>
-<div className="definition-list">
-<div className="definition-item definition-newvector">
-<p><strong>New Vector</strong></p>
-<p>New Vector is a company formed to build Matrix.org. It is a continuation of the original project team, and is focused on development and maintenance of matrix.org.</p>
-</div>
-<div className="definition-item definition-newvector">
-<p><strong>New Vector</strong></p>
-<p>New Vector is a company formed to build Matrix.org. It is a continuation of the original project team, and is focused on development and maintenance of matrix.org.</p>
-</div>
-<div className="definition-close">close</div>
-</div>
-</div>
-<div className="question">
-<h4 id="who-is-building-matrix%3F"><a className="permalink" href="#who-is-building-matrix%3F" aria-hidden="true">&#128279;</a> Who is building Matrix?</h4>
-<p>The core team is ~12 people with extensive experience in building custom
-VoIP and Messaging apps for mobile network operators. Most of us work for <a href="https://vector.im/">New Vector</a>,
-but there are an increasing number of contributors from other companies and
-folks all over the internet.</p>
-<div className="definition-list">
-<div className="definition-item definition-newvector">
-<p><strong>New Vector</strong></p>
-<p>New Vector is a company formed to build Matrix.org. It is a continuation of the original project team, and is focused on development and maintenance of matrix.org.</p>
-</div>
-<div className="definition-close">close</div>
-</div>
-</div>
+<MDXRenderer>{getSection("who-and-how").node.body}</MDXRenderer>
 <h3 id="concept"><a className="permalink" href="#concept" aria-hidden="true">&#128279;</a> Concept</h3>
 <div className="question">
 <h4 id="why-have-you-released-this-as-open-source%3F"><a className="permalink" href="#why-have-you-released-this-as-open-source%3F" aria-hidden="true">&#128279;</a> Why have you released this as open source?</h4>
