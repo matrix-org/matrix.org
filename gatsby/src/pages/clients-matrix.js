@@ -21,6 +21,7 @@ const ClientsMatrix = ({data}) => {
         <Helmet title={`Clients | ${config.siteTitle}`}>
           <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
           <script type="text/javascript" src="/js/clients-control.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/clients-matrix.css" />
         </Helmet>
         
           <h1>Clients Matrix</h1>
@@ -59,14 +60,15 @@ const ClientsMatrix = ({data}) => {
           </div>
 
           <h2 id="platform-availability">Platform Availability</h2>
-          <div className="overscroll">
+          <div style={{"max-height": "80vh", "overflow": "scroll"}}>
+
           <table className="legacy-table width-100">
             <thead>
               <tr>
                 <th style={{'width': '15%'}}> </th>
                 {clients.map(function(client, i) {
                   return (
-                    <th key={client.title} data-platforms={client.platformString}>{client.title}</th>
+                    <th style={{"position": "sticky"}} key={client.title} data-platforms={client.platformString}>{client.title}</th>
                   )
                 })}
               </tr>
@@ -92,8 +94,9 @@ const ClientsMatrix = ({data}) => {
             </tbody>
           </table>
           </div>
+
           <h2 id="details">Details</h2>
-          <div className="overscroll">
+          <div style={{"max-height": "80vh", "overflow": "scroll"}}>
           <table className="legacy-table width-100">
             <thead>
               <tr>
@@ -140,8 +143,9 @@ const ClientsMatrix = ({data}) => {
             </tbody>
           </table>
           </div>
+
           <h2 id="features">Features</h2>
-          <div className="overscroll">
+          <div style={{"max-height": "80vh", "overflow": "scroll"}}>
           <table className="legacy-table width-100">
             <thead>
               <tr>
@@ -151,6 +155,7 @@ const ClientsMatrix = ({data}) => {
                     <th key={client.title} data-platforms={client.platformString}>{client.title}</th>
                   )
                 })}
+                <th style={{'width': '15%'}}> </th>
               </tr>
             </thead>
             <tbody>{
@@ -175,6 +180,7 @@ const ClientsMatrix = ({data}) => {
                       <td key={client.title} className={featureClass} data-platforms={client.platformString}>{featureSupport}</td>
                     )
                   })}
+                  <td>{feature.replace(/_/g, ' ')}</td>
                 </tr>)
               })}
             </tbody>
