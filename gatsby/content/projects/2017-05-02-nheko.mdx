@@ -5,7 +5,7 @@ categories:
  - client
 thumbnail: /docs/projects/images/nheko_thumb.png
 description: A Qt/C++14 desktop client for Matrix
-author: mujx and red_sky
+author: mujx, red_sky, deepbluev7
 maturity: Beta
 language: C++/Qt
 license: GPL-3.0-or-later
@@ -28,14 +28,14 @@ features:
     Display Room Description: yes
     Edit Room Description: yes
     Highlights: no
-    Pushrules: no
+    Pushrules: yes
     Send read markers: yes
     Display read markers: yes
     Sending Invites: yes
     Accepting Invites: yes
     Typing Notification: yes
-    E2E: Text only
-    Replies: no
+    E2E: yes
+    Replies: yes
     Attachment uploading: yes
     Attachment downloading: yes
     Send stickers: no
@@ -46,6 +46,11 @@ features:
     Multiple Matrix Accounts: no
     New user registration: yes
     voip: no
+    Reactions: no
+    Message editing: no
+    Room upgrades: no
+    Localisations: 9
+    SSO Support: yes
 ---
 
 The motivation behind the project is to provide a native desktop app for Matrix that feels more like a mainstream chat app (Riot, Telegram etc) and less like an IRC client.
