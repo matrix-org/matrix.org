@@ -9,17 +9,28 @@ import config from '../../config'
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
+const SHOW_LIVE_STREAM = false;
+
+let liveStream;
+if (SHOW_LIVE_STREAM) {
+    liveStream = <div>
+        <video id="videoStream" style={{width: '640px', height: '360px'}} src="https://stream.matrix.org/hls/live.m3u8" controls></video>
+        <script src="/js/hls.light.min.js"></script>
+        <script src="/js/livestream.js"></script>
+    </div>;
+} else {
+    liveStream = <img src="/images/Open-Tech-2-Dark@2x.png" alt='Open Tech Will Save Us'/>;
+}
+
 const Legal = () => {
     return (<Layout hasNavPadding="true" excerptOverride="Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the second Wednesday of every month at 5pm UTC"
     titleOverride={title}>
             <Helmet title={title}>
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta property="twitter:image" content="https://matrix.org/images/Open-Tech-2-Dark@2x.png" />
-
-                <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
             </Helmet>
         <div>
-            <img src="/images/Open-Tech-2-Dark@2x.png" alt='Open Tech Will Save Us'/>
+            {liveStream}
 
             <h1>Open Tech Will Save Us</h1>
 
