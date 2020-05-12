@@ -52,7 +52,9 @@ const Legal = () => {
 
             <p>
                 Agenda and more details to follow, <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
-                join the live chat</a></strong> or check back here for updates.</p>
+                join the live chat</a></strong> or check back here for updates.
+                You can optionally <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/270580171/">join the event on meetup.com</a>,
+                but this is not required.</p>
 
             <h2>Previous Event</h2>
 
