@@ -2,11 +2,9 @@ import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
-import { Layout, MXContentMain, MXProjectCard } from '../components'
+import { Layout, MXContentMain } from '../components'
 import config from '../../config'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-
-const _ = require('lodash')
 
 const SDKs = ({ data }) => {
   const sdks = data.allFile.edges.filter(s =>
@@ -24,7 +22,9 @@ const SDKs = ({ data }) => {
   var [selected, setSelected] = useState(sdks[0]);
 
   const clickHandler = (el) => {
-    setSelected(sdks.find(s => s.slug == el.target.dataset["sdk"]));
+    setSelected(sdks.find(s => s.slug === el.target.dataset["sdk"]));
+
+    document.getElementById("sdk-content").scrollIntoView();
   };
 
   const selectItemRender = (sdk) => {
@@ -48,16 +48,17 @@ const SDKs = ({ data }) => {
     ["Objective-C", ["Objective-C"]],
     ["Dart", ["Dart"]],
     ["Perl", ["Perl"]],
+    ["C/C++", ["C", "C++", "C++/Qt"]],
   ]
   return (<Layout navmode="discover">
     <MXContentMain>
       <Helmet title={`SDKs | ${config.siteTitle}`} />
-      <h1 id="SDKs">SDKs</h1>
       <div className="mxgrid">
         <div className="mxgrid__item25">
+          <h1 id="SDKs">SDKs</h1>
           {
             languages.map(l => {
-              return(<div>
+              return(<div key={l[0]}>
                 <h3>{l[0]}</h3>
                 {
             sdks
@@ -77,10 +78,10 @@ const SDKs = ({ data }) => {
 
         <div className="mxgrid__item50">{
           selected &&
-          <div>
+          <div id="sdk-content" style={{"paddingTop": "75px", "marginTop": "-75px"}}>
             <h2>{selected.title}</h2>
             <div>
-              <div style={{ "float": "left" }}>
+              <div style={{ "float": "left", "marginRight": "20px" }}>
                 <a href={selected.slug}>{selected.title} on matrix.org</a><br />
                 <a href={selected.repo}>{selected.repo}</a><br />
                 <a href={"https://matrix.to/#/" + selected.room}>{selected.room}</a>
