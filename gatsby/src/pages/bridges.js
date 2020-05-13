@@ -19,15 +19,27 @@ const Bridges = ({data}) => {
   return (<Layout navmode="discover">
       <MXContentMain>
           <Helmet title={`Bridges | ${config.siteTitle}`} />
+          <h1 id="bridges">Bridges</h1>
           <div className="mxgrid">
             <div className="mxgrid__item50">
-              <h1 id="bridges">Bridges</h1>
-              <p>An important idea in Matrix is <em>Interoperability</em>. This means that Matrix is open to exchanging data and messages with other platforms using an <a href="https://matrix.org/docs/spec">Open Standard</a>. We refer to the connection to other platforms as <em>bridging</em>.</p>
-              <p>For a thorough examination of the different methods of bridging, and a discussion of the terminology involved, check out <em><a href="https://matrix.org/blog/2017/03/11/how-do-i-bridge-thee-let-me-count-the-ways">How do I bridge thee? Let me count the ways...</a></em></p>
-              <p>Currently recommended bridges are shown in the grid below.</p>
+              <div className="mxgrid mxgrid--discover">
+              {toc.map(function(project, i) {            
+                  return (
+              <div key={Math.random().toString()} className="mxgrid__item20">
+                      <div className="mxgrid__item__bg__vert" style={{"width": "100px"}}>
+                      <a href={'#' + kebabCase(project.bridges)}>
+                        <img src={project.thumbnail} alt="" className="mxgrid__item__bg__img"
+                          style={{minWidth: "100px", minHeight: "100px"}} />
+                      </a>
+                      </div>
+              </div>)
+              })}
+              </div>
             </div>
             <div className="mxgrid__item50">
-              <h3>Quick bridging concepts</h3>
+              <p>An important idea in Matrix is <em>Interoperability</em>. This means that Matrix is open to exchanging data and messages with other platforms using an <a href="https://matrix.org/docs/spec">Open Standard</a>. We refer to the connection to other platforms as <em>bridging</em>.</p>
+              <p>For a thorough examination of the different methods of bridging, and a discussion of the terminology involved, check out <em><a href="https://matrix.org/blog/2017/03/11/how-do-i-bridge-thee-let-me-count-the-ways">How do I bridge thee? Let me count the ways...</a></em></p>
+              
               <p><strong>Portal rooms</strong>: these control chunks of room aliases namespace. For example, <code>#freenode_<i>#channelname</i>:matrix.org</code> corresponds to <i>#channelname</i> on Freenode. In this way, Matrix users can transparently join IRC channels on Freenode. Portal rooms are typically managed by the remote network's side of the room.</p>
 
               <p><strong>Plumbed rooms</strong>: these rooms are "plumbed" into one or more specific remote rooms by configuring a bridge (which can be run by anyone). For instance, #matrix:matrix.org is plumbed into #matrix on Freenode, matrixdotorg/#matrix on Slack, etc. Access control for Matrix users is necessarily managed by the Matrix side of the room. This is useful for using Matrix to link together different communities.</p>
@@ -38,22 +50,6 @@ const Bridges = ({data}) => {
             </div>
           </div>
           <div className="mxblock">
-      <div className="mxgrid mxgrid--discover">
-      {toc.map(function(project, i) {            
-          return (
-      <div key={Math.random().toString()} className="mxgrid__item20">
-          <div className="mxgrid__item__bg mxgrid__item__bg--clear">
-              <a href={'#' + kebabCase(project.bridges)}><h4 className="mxgrid__item__bg__hx">{project.bridges}</h4></a>
-              <div className="mxgrid__item__bg__vert" style={{"width": "100px"}}>
-              <a href={'#' + kebabCase(project.bridges)}>
-                <img src={project.thumbnail} alt="" className="mxgrid__item__bg__img"
-                  style={{minWidth: "100px", minHeight: "100px"}} />
-              </a>
-              </div>
-          </div>
-      </div>)
-      })}
-      </div>
   </div>
 
 <br clear="all" />
