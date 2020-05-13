@@ -47,7 +47,7 @@ const Legal = () => {
             <ul>
                 <li><a href="http://exple.tive.org/blarg/" target="_blank" rel="noopener noreferrer">Mike Hoye</a> from Mozilla will be talking about "Verbs in the fediverse"</li>
                 <li>Eugen (<a href="https://mastodon.social/@Gargron" target="_blank" rel="noopener noreferrer">@Gargron@mastodon.social</a>) will talk about "how we keep mastodon.social running at scale" as a Q&A</li>
-                <li>... and more to be announced!</li>
+                <li>... and a new VIP tour of Dendrite, the next-gen Matrix Homeserver!</li>
             </ul>
 
             <p>
