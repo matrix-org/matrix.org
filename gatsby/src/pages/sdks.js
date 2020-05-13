@@ -19,7 +19,7 @@ const SDKs = ({ data }) => {
     return result;
   }));
 
-  var [selected, setSelected] = useState(sdks[0]);
+  var [selected, setSelected] = useState(sdks.find(s => s.title === "matrix-nio"));
 
   const clickHandler = (el) => {
     setSelected(sdks.find(s => s.slug === el.target.dataset["sdk"]));
@@ -50,6 +50,8 @@ const SDKs = ({ data }) => {
     ["Perl", ["Perl"]],
     ["C/C++", ["C", "C++", "C++/Qt"]],
   ]
+  let flattened = []; // build server has no .flat()
+  languages.map(l => l[1]).forEach(l => flattened = flattened.concat(l));
   return (<Layout navmode="discover">
     <MXContentMain>
       <Helmet title={`SDKs | ${config.siteTitle}`} />
@@ -72,7 +74,7 @@ const SDKs = ({ data }) => {
           {
             sdks
               .filter(s => s.featured)
-              .filter(s => !languages.flat().flat().includes(s.language))
+              .filter(s => !flattened.includes(s.language))
               .map(selectItemRender)}
         </div>
 
