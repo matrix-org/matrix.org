@@ -9,7 +9,7 @@ import config from '../../config'
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
-const SHOW_LIVE_STREAM = true;
+const SHOW_LIVE_STREAM = false;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
@@ -40,7 +40,41 @@ const Legal = () => {
 
             <p>We discuss issues relating to technology, especially the importance of Open, Interoperable standards, and how they can enable decentralised tech to keep our data private while still enabling communication.</p>
 
-            <h3>How to join</h3>
+            <h2>Next Event</h2>
+            <p>The next event will be held on <b>Wednesday 10th June 2020</b> at <b>5PM UTC</b> (6PM UK time). Agenda and more details to follow, <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
+                join the live chat</a></strong> or check back here for updates.
+            </p>
+
+            <h2>Previous Events</h2>
+
+            <h3>13th May 2020</h3>
+
+            <p>The second event was held on <b>Wednesday 13th May 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/O3YP1TU-L_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <h4>Agenda</h4>
+            <ul>
+                <li><a href="http://exple.tive.org/blarg/" target="_blank" rel="noopener noreferrer">Mike Hoye</a> from Mozilla will be talking about "Verbs in the fediverse"</li>
+                <li>Eugen (<a href="https://mastodon.social/@Gargron" target="_blank" rel="noopener noreferrer">@Gargron@mastodon.social</a>) will talk about "how we keep mastodon.social running at scale" as a Q&A</li>
+                <li>... and a new VIP tour of Dendrite, the next-gen Matrix Homeserver!</li>
+            </ul>
+
+            <h3>8th April 2020</h3>
+
+            <p>The first event was held on <b>Wednesday 8th April 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
+
+            <iframe title="APVp-20ATLk" width="560" height="315" src="https://www.youtube.com/embed/APVp-20ATLk" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <h4>Agenda</h4>
+            <ul>
+                <li><a href="https://https://twitter.com/ara4n" target="_blank" rel="noopener noreferrer">Matthew Hodgson</a> technical co-founder of <a href="https://matrix.org" target="_blank" rel="noopener noreferrer">Matrix.org</a> to introduce and speak about the importance of decentralisation and privacy</li>
+                <li><a href="https://twitter.com/saghul" target="_blank" rel="noopener noreferrer">Saúl Ibarra Corretgé</a> from <a href="https://jitsi.org" target="_blank" rel="noopener noreferrer">Jitsi</a> on the rapid growth they've experienced since the start of the 2020 crisis</li>
+                <li><a href="https://twitter.com/daviddias" target="_blank" rel="noopener noreferrer">David Dias</a> from <a href="https://ipfs.io/" target="_blank" rel="noopener noreferrer">IPFS</a>  IPFS introducing gossipsub in libp2p, including the security hardening work that they've been putting into v1.1!</li>
+                <li><a href="https://twitter.com/valereonmobile" target="_blank" rel="noopener noreferrer">Valère</a>, from <a href="https://matrix.org" target="_blank" rel="noopener noreferrer">Matrix</a> and <a href="https://riot.im" target="_blank" rel="noopener noreferrer">Riot</a>, who will present the importance of UX and cross-signing keys in end-to-end encrypted communications.</li>
+            </ul>
+
+            <h2>How to join</h2>
             <p><strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">Join the live chat now! #open-tech-meetup:matrix.org</a></strong></p>
             <p>From the live chat, you can ask questions to the presenters! We can invite you to join the broadcast, or if you prefer we'll read them out for you.</p>
             <p>Once we're live there will be a video stream available on this page. You can also <strong><a href="https://www.youtube.com/watch?v=O3YP1TU-L_8">join the stream via YouTube</a></strong>.</p>
@@ -54,36 +88,6 @@ const Legal = () => {
                 <li>6pm in the UK</li>
                 <li>1pm in New York</li>
                 <li>10am in California</li>
-            </ul>
-
-            <h2>Next Event</h2>
-            <p>The next event will be held on <b>Wednesday 13th May 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
-
-            <h3>Agenda</h3>
-            <ul>
-                <li><a href="http://exple.tive.org/blarg/" target="_blank" rel="noopener noreferrer">Mike Hoye</a> from Mozilla will be talking about "Verbs in the fediverse"</li>
-                <li>Eugen (<a href="https://mastodon.social/@Gargron" target="_blank" rel="noopener noreferrer">@Gargron@mastodon.social</a>) will talk about "how we keep mastodon.social running at scale" as a Q&A</li>
-                <li>... and a new VIP tour of Dendrite, the next-gen Matrix Homeserver!</li>
-            </ul>
-
-            <p>
-                Agenda and more details to follow, <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
-                join the live chat</a></strong> or check back here for updates.
-                You can optionally <a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/270580171/">join the event on meetup.com</a>,
-                but this is not required.</p>
-
-            <h2>Previous Event</h2>
-
-            <p>The first event was held on <b>Wednesday 8th April 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
-
-            <iframe title="APVp-20ATLk" width="560" height="315" src="https://www.youtube.com/embed/APVp-20ATLk" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <h3>Agenda</h3>
-            <ul>
-                <li><a href="https://https://twitter.com/ara4n" target="_blank" rel="noopener noreferrer">Matthew Hodgson</a> technical co-founder of <a href="https://matrix.org" target="_blank" rel="noopener noreferrer">Matrix.org</a> to introduce and speak about the importance of decentralisation and privacy</li>
-                <li><a href="https://twitter.com/saghul" target="_blank" rel="noopener noreferrer">Saúl Ibarra Corretgé</a> from <a href="https://jitsi.org" target="_blank" rel="noopener noreferrer">Jitsi</a> on the rapid growth they've experienced since the start of the 2020 crisis</li>
-                <li><a href="https://twitter.com/daviddias" target="_blank" rel="noopener noreferrer">David Dias</a> from <a href="https://ipfs.io/" target="_blank" rel="noopener noreferrer">IPFS</a>  IPFS introducing gossipsub in libp2p, including the security hardening work that they've been putting into v1.1!</li>
-                <li><a href="https://twitter.com/valereonmobile" target="_blank" rel="noopener noreferrer">Valère</a>, from <a href="https://matrix.org" target="_blank" rel="noopener noreferrer">Matrix</a> and <a href="https://riot.im" target="_blank" rel="noopener noreferrer">Riot</a>, who will present the importance of UX and cross-signing keys in end-to-end encrypted communications.</li>
             </ul>
         </div>
     </Layout>)
