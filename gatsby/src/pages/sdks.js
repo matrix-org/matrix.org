@@ -28,8 +28,15 @@ const SDKs = ({ data }) => {
   };
 
   const selectItemRender = (sdk) => {
+    var selectableItemStyle = {
+      cursor: "pointer"
+    };
+    if (selected && sdk.slug === selected.slug) {
+      selectableItemStyle.background = "#f4f4f4";
+      selectableItemStyle.fontWeight = "bold";
+    }
     return (
-      <div style={selected && sdk.slug === selected.slug ? { "background": "#f4f4f4", "fontWeight": "bold" } : {}}
+      <div style={selectableItemStyle}
         data-sdk={sdk.slug}
         key={"selector_" + sdk.slug}
         onClick={clickHandler}>
