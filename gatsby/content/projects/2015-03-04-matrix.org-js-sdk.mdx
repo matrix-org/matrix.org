@@ -17,3 +17,95 @@ sort_order: 400
 ---
 
 Matrix.org's JS SDK.
+
+### Quickstart
+
+#### In a browser
+
+Download the browser version from
+https://github.com/matrix-org/matrix-js-sdk/releases/latest and add that as a
+``<script>`` to your page. There will be a global variable ``matrixcs``
+attached to ``window`` through which you can access the SDK. See below for how to
+include libolm to enable end-to-end-encryption.
+
+The browser bundle supports recent versions of browsers. Typically this is ES2015
+or `> 0.5%, last 2 versions, Firefox ESR, not dead` if using 
+[browserlists](https://github.com/browserslist/browserslist).
+
+Please check [the working browser example](examples/browser) for more information.
+
+#### In Node.js
+
+Ensure you have the latest LTS version of Node.js installed.
+
+This SDK targets Node 10 for compatibility, which translates to ES6. If you're using
+a bundler like webpack you'll likely have to transpile dependencies, including this
+SDK, to match your target browsers.
+
+Using `yarn` instead of `npm` is recommended. Please see the Yarn [install guide](https://yarnpkg.com/docs/install/) 
+if you do not have it already.
+
+``yarn add matrix-js-sdk``
+
+```javascript
+  import * as sdk from "matrix-js-sdk";
+  const client = sdk.createClient("https://matrix.org");
+  client.publicRooms(function(err, data) {
+    console.log("Public Rooms: %s", JSON.stringify(data));
+  });
+```
+
+See below for how to include libolm to enable end-to-end-encryption. Please check
+[the Node.js terminal app](examples/node) for a more complex example.
+
+To start the client:
+
+```javascript
+await client.startClient({initialSyncLimit: 10});
+```
+
+You can perform a call to `/sync` to get the current state of the client:
+
+```javascript
+client.once('sync', function(state, prevState, res) {
+    if(state === 'PREPARED') {
+        console.log("prepared");
+    } else {
+        console.log(state);
+        process.exit(1);
+    }
+});
+```
+
+To send a message:
+
+```javascript
+const content = {
+    "body": "message text",
+    "msgtype": "m.text"
+};
+client.sendEvent("roomId", "m.room.message", content, "", (err, res) => {
+    console.log(err);
+});
+```
+
+To listen for message events:
+
+```javascript
+client.on("Room.timeline", function(event, room, toStartOfTimeline) {
+  if (event.getType() !== "m.room.message") {
+    return; // only use messages
+  }
+  console.log(event.event.content.body);
+});
+```
+
+By default, the `matrix-js-sdk` client uses the `MemoryStore` to store events as they are received. For example to iterate through the currently stored timeline for a room:
+
+```javascript
+Object.keys(client.store.rooms).forEach((roomId) => {
+  client.getRoom(roomId).timeline.forEach(t => {
+      console.log(t.event);
+  });
+});
+```
