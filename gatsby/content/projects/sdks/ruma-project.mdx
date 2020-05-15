@@ -11,20 +11,53 @@ author: Ruma team
 license: MIT
 room: "#ruma:matrix.org"
 e2e: "No"
-thumbnail: /docs/projects/images/rust.png
-screenshot: /docs/projects/images/rust.png
+thumbnail: /docs/projects/images/ruma.png
+screenshot: /docs/projects/images/ruma.png
 sort_order: 800
-maturity: Beta
+maturity: Released
 ---
 
-## ruma-events
+## ruma-client
 
-[ruma-events](https://github.com/ruma/ruma-events) contains serializable types for the events in the Matrix specification that can be shared by client and server code.
+[ruma-client](https://github.com/ruma/ruma-client) is a bare-bones Matrix client library with
+support for all of the r0.6.0 client-server API, but without any bookkeeping apart from storing
+authentication data.
 
-##  ruma-api
+## Matrix API crates
+
+These crates (Rust parlance for packages) contain endpoint definitions for the various Matrix APIs.
+They can be used both for clients (ruma-client, matrix-rust-sdk) as well as servers (Conduit,
+Maelstrom).
+
+### ruma-client-api
+
+[ruma-client-api](https://github.com/ruma/ruma-client-api) contains serializable types for the requests and responses for each endpoint in the Matrix client API specification.
+
+### ruma-appservice-api
+
+[ruma-appservice-api](https://github.com/ruma/ruma-appservice-api) contains serializable types for the requests and responses for each endpoint in the Matrix appservice API specification.
+
+### ruma-federation-api
+
+[ruma-federation-api](https://github.com/ruma/ruma-federation-api) contains serializable types for the requests and responses for endpoints in the Matrix server-server (federation) API specification.
+As of the time of writing (15.05.2020), it is still very incomplete.
+
+## Foundational crates
+
+These crates are the foundation for the API crates above and other Matrix-related applications written in Rust.
+
+### ruma-api
 
 [ruma-api](https://github.com/ruma/ruma-api) contains core types used to define the requests and responses for each endpoint in the various Matrix API specifications. These types can be shared by client and server code for all Matrix APIs.
 
-## ruma-client-api
+### ruma-identifiers
 
-[ruma-client-api](https://github.com/ruma/ruma-client-api) contains serializable types for the requests and responses for each endpoint in the Matrix client API specification. These types can be shared by client and server code.
+[ruma-identifiers](https://github.com/ruma/ruma-identifiers) contains types for user IDs, room IDs and other identifiers defined by the Matrix API specifications.
+
+### ruma-events
+
+[ruma-events](https://github.com/ruma/ruma-events) contains serializable types for the events in the Matrix specification.
+
+### ruma-signatures
+
+[ruma-signatures](https://github.com/ruma/ruma-signatures) contains implementations of cryptographic signing, hashing and verification algorithms defined by the Matrix specification.
