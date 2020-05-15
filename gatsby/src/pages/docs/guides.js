@@ -121,6 +121,11 @@ const Guides = ({data}) => {
         <td>Justin W. Flory</td>
         <td>English</td>
       </tr>
+      <tr>
+        <td><a href="https://zinz.dev">Introduction à Matrix et guide d'utilisation</a></td>
+        <td><a href="https://luxeylab.net">Adrien Luxey</a></td>
+        <td>French</td>
+      </tr>
     </tbody>
   </table>
 </div>
