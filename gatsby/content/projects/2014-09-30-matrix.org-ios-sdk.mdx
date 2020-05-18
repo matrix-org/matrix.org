@@ -17,4 +17,101 @@ screenshot: /docs/projects/images/ios.png
 sort_order: 200
 ---
 
-Matrix.org's iOS SDK.
+This open-source library allows you to build iOS apps compatible with
+Matrix (<http://www.matrix.org>), an open standard for interoperable
+Instant Messaging and VoIP.
+
+This SDK implements an interface to communicate with the Matrix
+Client/Server API which is defined at
+<http://matrix.org/docs/api/client-server/>.
+
+### Use the SDK in your app
+
+The SDK uses CocoaPods (<http://cocoapods.org/>) as library dependency
+manager. In order to set this up:
+
+    sudo gem install cocoapods
+    pod setup
+
+The best way to add the last release of the Matrix SDK to your
+application project is to add the MatrixSDK dependency to your Podfile:
+
+> Obj-C:
+> pod 'MatrixSDK'
+
+> Swift:
+> pod 'SwiftMatrixSDK'
+
+If you want to use the develop version of the SDK, use instead:
+
+> Obj-C pod: 'MatrixSDK', :git => 'https://github.com/matrix-org/matrix-ios-sdk.git', :branch => 'develop'
+
+> Swift pod: 'SwiftMatrixSDK', :git => 'https://github.com/matrix-org/matrix-ios-sdk.git', :branch => 'develop'
+
+
+### Options
+
+If you want to enable VoIP using the <http://webrtc.org> VoIP stack, add
+the following pod to you app Podfile:
+
+    pod 'MatrixSDK/JingleCallStack'
+
+### Overview
+
+As a quick overview, there are the classes to know to use the SDK.
+
+#### Matrix API level
+
+`MXRestClient`
+
+:   Exposes the Matrix Client-Server API as specified by the Matrix
+    standard to make requests to a homeserver.
+
+#### Business logic and data model
+
+These classes are higher level tools to handle responses from a
+homeserver. They contain logic to maintain consistent chat room data.
+
+`MXSession`
+
+:   This class handles all data arriving from the homeserver. It uses a
+    MXRestClient instance to fetch data from the homeserver, forwarding
+    it to MXRoom, MXRoomState, MXRoomMember and MXUser objects.
+
+`MXRoom`
+
+:   This class provides methods to get room data and to interact with
+    the room (join, leave\...).
+
+`MXRoomState`
+
+:   This is the state of room at a certain point in time: its name,
+    topic, visibility (public/private), members, etc.
+
+`MXRoomMember`
+
+:   Represents a member of a room.
+
+`MXUser`
+
+:   This is a user known by the current user, outside of the context of
+    a room. MXSession exposes and maintains the list of MXUsers. It
+    provides the user id, displayname and the current presence state
+
+### Usage
+
+The sample app (<https://github.com/matrix-org/matrix-ios-console>)
+demonstrates how to build a chat app on top of Matrix. You can refer to
+it, play with it, hack it to understand the full integration of the
+Matrix SDK. This section comes back to the basics with sample codes for
+basic use cases.
+
+One file to import:
+
+**Obj-C**:
+
+    #import <MatrixSDK/MatrixSDK.h>
+
+**Swift**:
+
+    import SwiftMatrixSDK
