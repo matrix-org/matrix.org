@@ -6,6 +6,8 @@ import { Layout, MXContentMain } from '../components'
 import config from '../../config'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
+const title = `SDKs | ${config.siteTitle}`;
+
 const SDKs = ({ data }) => {
   const sdks = data.allFile.edges.filter(s =>
     s.node.childMdx &&
@@ -59,9 +61,10 @@ const SDKs = ({ data }) => {
   ]
   let flattened = []; // build server has no .flat()
   languages.map(l => l[1]).forEach(l => flattened = flattened.concat(l));
-  return (<Layout navmode="discover">
+  return (<Layout titleOverride={title} navmode="discover"
+    excerptOverride="Browse Matrix SDKs for various languages and platforms">
     <MXContentMain>
-      <Helmet title={`SDKs | ${config.siteTitle}`} />
+      <Helmet title={title} />
       <div className="mxgrid">
         <div className="mxgrid__item25">
           <h1 id="SDKs">SDKs</h1>
