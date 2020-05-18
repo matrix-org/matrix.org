@@ -98,21 +98,25 @@ const Bridges = ({ data }) => {
                   <h3 id={kebabCase(fm.title)}>{fm.title}</h3>
                   <div className="mxblock">
                     <table style={{ "width": "100%" }}>
-                      <thead>
-                        <tr>
-                          <th>Author</th>
-                          <th>Repo</th>
-                          <th>Language</th>
-                          <th>Matrix Room</th>
-                          <th>Maturity</th>
-                        </tr>
-                      </thead>
                       <tbody>
                         <tr>
+                          <td>Author</td>
                           <td>{fm.author}</td>
+                        </tr>
+                        <tr>
+                          <td>Repo</td>
                           <td><a href={fm.repo}>{fm.repo}</a></td>
+                        </tr>
+                        <tr>
+                          <td>Language</td>
                           <td>{fm.language}</td>
+                        </tr>
+                        <tr>
+                          <td>Matrix Room</td>
                           <td><a href={"https://matrix.to/#/" + fm.room}>{fm.room}</a></td>
+                        </tr>
+                        <tr>
+                          <td>Maturity</td>
                           <td>{fm.maturity}</td>
                         </tr>
                       </tbody>
