@@ -273,5 +273,8 @@ label {
     float: left;
     padding: 5px;
   }
-  
+
+  .bridgesToc {
+    display: none;
+  }
 }
