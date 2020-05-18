@@ -9,6 +9,8 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import kebabCase from 'lodash/kebabCase'
 
 
+const title = `SDKs | ${config.siteTitle}`;
+
 const Bridges = ({ data }) => {
 
 
@@ -46,9 +48,10 @@ const Bridges = ({ data }) => {
   })
   toc = Object.values(toc)
 
-  return (<Layout navmode="discover">
+  return (<Layout titleOverride={title} navmode="discover"
+  excerptOverride="Browse Matrix bridging options">
     <MXContentMain>
-      <Helmet title={`Bridges | ${config.siteTitle}`} />
+      <Helmet title={title} />
       <h1 id="bridges">Bridges</h1>
       <div className="mxgrid">
         <div className="mxgrid__item50">

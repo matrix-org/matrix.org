@@ -18,7 +18,7 @@ export default function HTML(props) {
         <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="/css/webflow.css" />
         <link rel="stylesheet" type="text/css" href="/css/matrix-org.webflow.css" />
-        <link rel="stylesheet" type="text/css" href="/css/webflow-overrides.css" />
+        <link rel="stylesheet" type="text/css" href="/css/webflow-overrides.css?1" />
         <link rel="stylesheet" type="text/css" href="/css/prism.css" />
 
         <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
