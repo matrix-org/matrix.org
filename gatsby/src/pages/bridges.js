@@ -135,7 +135,8 @@ const Bridges = ({ data }) => {
 
 
 export const query = graphql`{
-  allMdx(filter: {frontmatter: {categories: {in: ["bridge"]}, featured: {eq: true}}}) {
+  allMdx( filter: {frontmatter: {categories: {in: ["bridge"]},
+    featured: {eq: true}}}, sort:{fields: frontmatter___sort_order, order: ASC}) {
     edges {
       node {
         frontmatter {
@@ -148,10 +149,12 @@ export const query = graphql`{
           repo
           language
           room
+          sort_order
         }
         body
       }
     }
   }
-}`
+}
+`
 export default Bridges
