@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
@@ -8,7 +8,37 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import kebabCase from 'lodash/kebabCase'
 
+
 const Bridges = ({data}) => {
+
+
+  var [selected, setSelected] = useState("IRC");
+  const clickHandler = (el) => {
+    setSelected(el.target.dataset["bridge"]);
+    document.getElementById("bridges-content").scrollIntoView();
+  };
+  
+  const selectItemRender = (bridge) => {
+    var selectableItemStyle = {
+      cursor: "pointer"
+    };
+    if (selected && bridge === selected) {
+      selectableItemStyle.background = "#f4f4f4";
+      selectableItemStyle.fontWeight = "bold";
+    }
+    return (
+      <h3 style={selectableItemStyle}
+        data-bridge={bridge}
+        key={"selector_" + bridge}
+        onClick={clickHandler}>
+        {bridge}
+      </h3>
+    )
+  }
+
+
+
+
   const bridges = data.allMdx.edges;
   var toc = {};
   bridges.forEach(bridge => {
@@ -27,10 +57,10 @@ const Bridges = ({data}) => {
                   return (
               <div key={Math.random().toString()} className="mxgrid__item20">
                       <div className="mxgrid__item__bg__vert" style={{"width": "100px"}}>
-                      <a href={'#' + kebabCase(project.bridges)}>
                         <img src={project.thumbnail} alt="" className="mxgrid__item__bg__img"
-                          style={{minWidth: "100px", minHeight: "100px"}} />
-                      </a>
+                          style={{minWidth: "100px", minHeight: "100px", cursor: "pointer"}}
+                          data-bridge={project.bridges}
+                          onClick={clickHandler} />
                       </div>
               </div>)
               })}
@@ -49,18 +79,19 @@ const Bridges = ({data}) => {
               <p><strong>Puppeting</strong>: solves the problems of Bot-based bridging by "puppeting", meaning controlling, a user on the other side of the bridge. This means that to native users, they see messages as being sent from the correct sender. <strong>Double-puppeting</strong> means this is done in both directions of the bridge. This is the most preferred way of implementing a Matrix bridge.</p>
             </div>
           </div>
-          <div className="mxblock">
-  </div>
 
 <br clear="all" />
 
-{toc.map(function(tocitem, i) {
-  var projects = bridges.filter(x => x.node.frontmatter.bridges === tocitem.bridges);
-  return (
-  <div key={i}>
-    <hr />
-    <h2 id={kebabCase(tocitem.bridges)}>{tocitem.bridges}</h2>
-    {projects.map(function(project, i) {
+
+<div className="mxgrid">
+        <div className="mxgrid__item25">
+          {toc.map(function(tocitem, i) {
+            return selectItemRender(tocitem.bridges);
+          })}
+        </div>
+        <div className="mxgrid__item50">
+          {selected && <div id="bridges-content" style={{"paddingTop": "75px", "marginTop": "-75px"}}>
+        {bridges.filter(x => x.node.frontmatter.bridges === selected).map(function(project, i) {
       const fm = project.node.frontmatter;
       return (
         <div key={fm.title}>
@@ -90,10 +121,9 @@ const Bridges = ({data}) => {
           <MDXRenderer>{project.node.body}</MDXRenderer>
         </div>
       )
-    })}
-  </div>
-      )
-      })}
+    })}</div>}
+        </div>
+</div>
         </MXContentMain>
     </Layout>)
 }
