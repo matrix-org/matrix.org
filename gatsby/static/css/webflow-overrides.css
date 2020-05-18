@@ -256,3 +256,22 @@ label {
 .mxclientcard h3 {
   margin-top: 0px;
 }
+
+
+/* Bridges */
+.bridgeIcon {
+  width: 100px;
+  height: 100px;
+  float: left;
+  padding: 10px;
+}
+
+@media (max-width: 767px) {
+  .bridgeIcon {
+    width: 75px;
+    height: 75px;
+    float: left;
+    padding: 5px;
+  }
+  
+}

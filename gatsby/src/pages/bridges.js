@@ -52,13 +52,13 @@ const Bridges = ({ data }) => {
       <h1 id="bridges">Bridges</h1>
       <div className="mxgrid">
         <div className="mxgrid__item50">
-          <div className="mxgrid mxgrid--discover">
+          <div>
             {toc.map(function (project, i) {
               return (
-                <div key={Math.random().toString()} className="mxgrid__item20">
-                  <div className="mxgrid__item__bg__vert" style={{ "width": "100px" }}>
-                    <img src={project.thumbnail} alt="" className="mxgrid__item__bg__img"
-                      style={{ minWidth: "100px", minHeight: "100px", cursor: "pointer" }}
+                <div key={Math.random().toString()}>
+                  <div className="bridgeIcon">
+                    <img src={project.thumbnail} alt="" 
+                      style={{ width: "100%", height: "100%", cursor: "pointer" }}
                       data-bridge={project.bridges}
                       onClick={clickHandler} />
                   </div>
