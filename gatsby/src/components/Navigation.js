@@ -74,7 +74,7 @@ navTypes["discover"] = (
     <img src="/images/basic_share.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Bridges</div>
   </a>
-  <a href="/docs/projects/hosting" className="mxnavsection__item w-inline-block">
+  <a href="/hosting" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_cloud.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Hosting</div>
   </a>

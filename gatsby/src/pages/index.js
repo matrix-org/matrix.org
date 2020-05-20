@@ -490,7 +490,7 @@ const Index = ({
 <img src="images/software_layers2.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">SDKs</div>
 </a>
-<a href="/docs/projects/hosting" className="mxblock__explore__item w-inline-block">
+<a href="/hosting" className="mxblock__explore__item w-inline-block">
 <img src="images/basic_cloud.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Hosting</div>
 </a>
