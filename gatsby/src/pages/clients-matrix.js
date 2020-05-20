@@ -5,6 +5,9 @@ import Helmet from 'react-helmet'
 import { Layout, MXContentMain } from '../components'
 import config from '../../config'
 
+
+const title = `Clients Matrix | ${config.siteTitle}`
+
 const ClientsMatrix = ({data}) => {
   const clients = data.allMdx.edges.map((edge => {
     var result = edge.node.frontmatter;
@@ -16,9 +19,10 @@ const ClientsMatrix = ({data}) => {
     clients[i].platformString = clients[i].platforms.join(',').replace(' ', '');
   });
 
-  return (<Layout navmode="discover">
-      <MXContentMain>
-        <Helmet title={`Clients | ${config.siteTitle}`}>
+  return (<Layout titleOverride={title} navmode="discover"
+  excerptOverride="Clients for Matrix, decentralised communications">
+    <MXContentMain>
+      <Helmet title={title}>
           <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
           <script type="text/javascript" src="/js/clients-control.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/clients-matrix.css" />

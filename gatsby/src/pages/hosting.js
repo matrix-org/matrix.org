@@ -10,7 +10,7 @@ const title= `Hosting | ${config.siteTitle}`;
 const Hosting = ({ data }) => {
 
     return (<Layout titleOverride={title} navmode="discover"
-    excerptOverride="Browse Matrix bridging options">
+    excerptOverride="Browse Matrix hosting options">
       <MXContentMain>
         <Helmet title={title} />
             <h1 id="matrix-hosting">Matrix Hosting</h1>
