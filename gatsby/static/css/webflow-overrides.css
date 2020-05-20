@@ -235,6 +235,16 @@ div.title {
   padding: 10px;
 }
 
+.mxgrid__item25 {
+  width: 25%;
+  padding: 10px;
+}
+
+.mxgrid__item75 {
+  width: 75%;
+  padding: 10px;
+}
+
 label {
   font-weight: normal;
   margin: 10px 0px;
@@ -266,7 +276,24 @@ label {
   padding: 10px;
 }
 
+
+@media (max-width: 991px) {
+  .mxgrid__item75 {
+    width: 50%;
+    padding: 10px;
+  }
+
+}
+
 @media (max-width: 767px) {
+  .mxgrid__item25 {
+    width: 100%;
+  }
+
+  .mxgrid__item75 {
+    width: 100%;
+  }
+
   .bridgeIcon {
     width: 75px;
     height: 75px;

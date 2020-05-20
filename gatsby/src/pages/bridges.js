@@ -2,14 +2,12 @@ import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
-import { Layout, MXContentMain } from '../components'
+import { Layout, MXContentMain, MXProjectHeader } from '../components'
 import config from '../../config'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
-import kebabCase from 'lodash/kebabCase'
 
-
-const title = `SDKs | ${config.siteTitle}`;
+const title = `Bridges | ${config.siteTitle}`;
 
 const Bridges = ({ data }) => {
 
@@ -99,33 +97,8 @@ const Bridges = ({ data }) => {
               const fm = project.node.frontmatter;
               return (
                 <div key={fm.title}>
-                  <h3 id={kebabCase(fm.title)}>{fm.title}</h3>
-                  <div className="mxblock">
-                    <table style={{ "width": "100%" }}>
-                      <tbody>
-                        <tr>
-                          <td>Author</td>
-                          <td>{fm.author}</td>
-                        </tr>
-                        <tr>
-                          <td>Repo</td>
-                          <td><a href={fm.repo}>{fm.repo}</a></td>
-                        </tr>
-                        <tr>
-                          <td>Language</td>
-                          <td>{fm.language}</td>
-                        </tr>
-                        <tr>
-                          <td>Matrix Room</td>
-                          <td><a href={"https://matrix.to/#/" + fm.room}>{fm.room}</a></td>
-                        </tr>
-                        <tr>
-                          <td>Maturity</td>
-                          <td>{fm.maturity}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                  <MXProjectHeader project={fm} imageSize="100" />
+                  <br clear="all" />
                   <MDXRenderer>{project.node.body}</MDXRenderer>
                 </div>
               )

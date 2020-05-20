@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
-import { Layout, MXContentMain } from '../components'
+import { Layout, MXContentMain, MXProjectHeader } from '../components'
 import config from '../../config'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
@@ -88,23 +88,11 @@ const SDKs = ({ data }) => {
               .map(selectItemRender)}
         </div>
 
-        <div className="mxgrid__item50">{
+        <div className="mxgrid__item75">{
           selected &&
           <div id="sdk-content" style={{"paddingTop": "75px", "marginTop": "-75px"}}>
-            <h2>{selected.title}</h2>
-            <div>
-              <div style={{ "float": "left", "marginRight": "20px" }}>
-                <a href={selected.slug}>{selected.title} on matrix.org</a><br />
-                <a href={selected.repo}>{selected.repo}</a><br />
-                <a href={"https://matrix.to/#/" + selected.room}>{selected.room}</a>
-
-              </div>
-              <div style={{ "float": "left" }}>
-                <img alt={selected.title} src={selected.thumbnail}
-                  style={{ "maxWidth": `${100}px`, "maxHeight": `${100}px` }} />
-              </div>
-              <br clear="all" />
-            </div>
+            <MXProjectHeader project={selected} imageSize={100} />
+            <br clear="all" />
             <MDXRenderer>{selected.body}</MDXRenderer>
           </div>
         }

@@ -14,5 +14,6 @@ import MXTryMatrixNowSection from './MXTryMatrixNowSection'
 import MXInPageTOC from './MXInPageTOC'
 import MXGuidesNav from './MXGuidesNav'
 import MXProjectCard from './MXProjectCard'
+import MXProjectHeader from './MXProjectHeader'
 
-export { Article, Button, Header, Layout, PrevNext, SectionTitle, SEO, Subline, Wrapper, HallOfFameEntry, MXContentMain, MXContentNav, MXTryMatrixNowSection,MXInPageTOC, MXGuidesNav, MXProjectCard }
+export { Article, Button, Header, Layout, PrevNext, SectionTitle, SEO, Subline, Wrapper, HallOfFameEntry, MXContentMain, MXContentNav, MXTryMatrixNowSection,MXInPageTOC, MXGuidesNav, MXProjectCard, MXProjectHeader }
