@@ -583,7 +583,8 @@ addresses) to matrix IDs to aid user discovery</strong>.</p>
 <div className="definition-close">close</div>
 </div>
 </div>
-
+<h3 id="bots"><a className="permalink" href="#bots" aria-hidden="true">&#128279;</a> Bots</h3>
+<MDXRenderer>{getSection("bots").node.body}</MDXRenderer>
 <h2 id="detail"><a className="permalink" href="#detail" aria-hidden="true">&#128279;</a> Detail</h2>
 <h3 id="position-in-the-world"><a className="permalink" href="#position-in-the-world" aria-hidden="true">&#128279;</a> Position in the World</h3>
 <div className="question">
@@ -846,7 +847,7 @@ Usage of an IS is not required in order for a client application to be part of t
 <div className="definition-close">close</div>
 </div>
 </div>
-<h3 id="bridging"><a className="permalink" href="#encryption" aria-hidden="true">&#128279;</a> Bridging</h3>
+<h3 id="bridging"><a className="permalink" href="#bridging" aria-hidden="true">&#128279;</a> Bridging</h3>
 <MDXRenderer>{getSection("bridging").node.body}</MDXRenderer>
 <h3 id="encryption"><a className="permalink" href="#encryption" aria-hidden="true">&#128279;</a> Encryption</h3>
 <MDXRenderer>{getSection("encryption").node.body}</MDXRenderer>
@@ -1111,6 +1112,7 @@ Usage of an IS is not required in order for a client application to be part of t
             <div className="mxcontent__nav__link"><a href="#as-a-user">As a user</a></div>
             <div className="mxcontent__nav__link"><a href="#tech">Tech</a></div>
             <div className="mxcontent__nav__link"><a href="#self-hosting">Self-hosting</a></div>
+            <div className="mxcontent__nav__link"><a href="#bots">Bots</a></div>
         </div>
         <div className="mxcontent__nav__section">
             <div className="mxcontent__nav__link title"><a href="#detail">Detail</a></div>
