@@ -1,0 +1,569 @@
+---
+layout: post
+title: Implementing more advanced e2ee features, such as cross-signing
+section: Encryption
+---
+
+PLEASE NOTE THAT THIS GUIDE IS STILL A WIP!
+
+# A guide to more advanced e2ee features of matrix
+So, you successfully implemented end-to-end encryption in your matrix client? Congratulations! This
+is a real step to be proud of and reason to celebrate!
+
+You might have noticed, however, that some things are still on the rough edge: You have to manually
+verify every other device by comparing the public keys, decryption keys aren't shared between your
+devices, etc. In comparison, riot has cross-signing so that you have to only verify people in a user-
+friendly way, and it has things like online key backup. If you want to implement these features into
+your own client (or only some of them), then this guide is for you!
+
+This guide will be using libolm. Of course, the general ideas etc. and process flows behind it will
+be the same, no matter if you use libolm or not. So, if you use something else than libolm, simply
+substitute those parts with whatever other libraries / algorithms you are using.
+
+Here is a general road map of what is needed in order implement all of the following:
+
+1. Emoji verification (SAS or Short Authentication Strings)
+2. Display verification status based on cross signing status
+3. SSSS (Secure Secret Storage and Sharing)
+4. Signing of other keys
+5. In-room verification (Verification through messages in a room)
+6. Bootstrapping SSSS and cross-signing
+7. Online key backup
+
+Wow, that's a lot of steps... but don't worry, we'll tackle them one at a time. Each step (apart
+from perhaps #3) will greatly improve the user experience, so that should be a lot of motivation
+to keep going!
+
+As a general warning, at the point of writing this guide (May 2020) not everything discussed here is
+in the spec yet, and some of the information can only be found scattered across multiple MSCs and
+reading through the source code of [matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk).
+
+## 1. Implement emoji verification (SAS)
+Emoji verification is part of a verification model called SAS, for Short Authentication String. In
+addition to emoji verification, there is also numerical verification. It is expected that all clients
+that support SAS support *at least* numerical verification. This is to ensure that clients that may
+not be able to display emoji (perhaps some CLI application or embedded device display) can still be
+verified. Fortunately, the way these verification methods work is almost identical.
+
+Unfortunately, due to legacy reasons, there are multiple ways you can receive a verification request
+for SAS. However, all of the cryptographically methods are already a part of libolm, so if you already
+use libolm bindings, it will be a breeze to implement!
+
+There are two ways to verify other devices (and, by extension, other people): One way is via to_device
+messages, and the other is via messages in rooms. While in-room verification will be added in this
+guide only later on, it is a good idea to think about how to structure your code to already support
+this from the start.
+
+### A general look at the verification process
+Verification works via two devices sending each other messages, either via to_device messaging or through
+messages in a room. A device (Alice) that wants to verify another device (Bob) sends a `m.key.verification.request`
+message along with the methods it supports. Bob
+answers with a `m.key.verification.ready`, also informing Alice of which methods it support. In the
+client UI, Bob would get a new verification request popup after receiving a `m.key.verification.request`
+message. After both have accepted to start, the actual verification begins by having
+the first person (Alice) send a `m.key.verification.start`, which is specific to the verification
+method shown. Some verification process happens, before both send `m.key.verification.done` to
+each other.
+
+To make all this work, each verification request has a unique transaction ID, which is an
+opaque string used to identify the specific verification request. In case of room verification, this
+is the event ID of the first sent message (`m.key.verification.request`). A verification request can
+be canceled at any time by either party by sending an `m.key.verification.cancel`, along with some
+information on the reason for cancellation.
+
+As all messages sent get some common metadata added, it might be a good idea to write a `send` wrapper
+function to send key verification data. This function could also handle sending events as either to_device
+messages or as room events. The contents of the message differ slightly between to_device and for
+room verification:
+
+For to_device messages, the `transaction_id` and `from_device` is simply added to the object sent.
+`transaction_id` denotes the unique ID of the transaction, whereas `from_device` is simply a string
+containing your own device ID. A payload such as
+
+```json
+{
+  "foo": "bar"
+}
+```
+would thus look like:
+```json
+{
+  "foo": "bar",
+  "transaction_id": "some-awesome-id",
+  "from_device": "DXKKF"
+}
+```
+
+For room messages, the transaction ID, which is the event Id of the first event, is added in the
+`m.relates_to` section of the event. The device ID is the same as to_device massages; it should be
+set to the ID of the sending device. So the above payload becomes:
+```json
+{
+  "foo": "bar",
+  "from_device": "DXKKF",
+  "m.relates_to": {
+    "rel_type": "m.reference",
+    "event_id": "$firstEventId"
+  }
+}
+```
+
+For simplicity, all payloads mentioned below will be shown without those extra keys.
+
+#### `m.key.verification.request`
+Sending this starts a verification request. It sends all the verification methods you know (in the
+case of SAS that is only `m.sas.v1`), along with the current timestamp in milliseconds.
+```json
+{
+  "methods": ["m.sas.v1"],
+  "timestamp": 1590314157821
+}
+```
+A receiving client is expected to reject the request if it is more than 10 minutes in the past or more
+than 5 minutes in the future.
+
+#### `m.key.verification.ready`
+Sending this indicates that you accept the key verification request and additionally reveals which
+methods you support yourself. That way both verification partners will be able to figure out which
+methods they have in common.
+```json
+{
+  "methods": ["m.sas.v1"],
+}
+```
+
+#### `m.key.verification.start`
+Sending this indicates that you are starting verification with a specific method. The exact payload
+is dependent on the verification method.
+```json
+{
+  "method": "m.sas.v1",
+  // additional keys specific to m.sas.v1
+}
+```
+
+#### `m.key.verification.done`
+Sending this indicates that the verification process is *fully* done.
+```json
+{}
+```
+
+#### `m.key.verification.cancel`
+Sending this cancels the verification (timeout, key mismatch, user cancellation, etc.). It has a
+human-readable reason, along with a cancellation code.
+```json
+{
+  "reason": "The verification timed out",
+  "code": "m.timeout"
+}
+```
+
+A list of all cancellation codes and their use can be found in
+[the Client-Server Spec](https://matrix.org/docs/spec/client_server/latest#m-key-verification-cancel).
+
+#### Recap
+To recap, the *general* verification process of Alice wanting to verify Bob works as follows:
+
+1. Alice sends Bob an `m.key.verification.request` along with the methods she supports.
+2. Bob receives that request. His device asks him if he wants to verify with Alice. He hits accept.
+3. Bob sends an `m.key.verification.ready` along with the methods he supports.
+4. Alice receives Bob's methods, and based on that and her own, she sends
+an `m.key.verification.start` for a method that they have in common.
+5. The specific verification method follows here.
+6. When Alice and Bob are fully done with verification, they send each other an `m.key.verification.done`.
+
+### Taking a look at SAS
+Okay, now that we took a look at how the verification process framework works in general, lets take a
+look at SAS specifically.
+
+For legacy reasons there are unfortunately clients that directly want to start SAS verification with
+`m.key.verification.start`, so that will need to be handled. If such a start request comes in, and
+it is SAS, prompt the user if they want to accept the verification or not. Then simply continue with
+the SAS flow as normal.
+
+The general idea of SAS verification is that both parties wanting to verify each other, Alice and Bob,
+generate an ephemeral public/private keypair and exchange the public keys. Using
+[Elliptic-curve Diffie-Hellman](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman) (ECDH)
+they both generate the same key, provided that there was no man in the middle. This generated
+key is then compared, using either emoji or numbers. After it is verified that they both match up on
+either side, it is then known that the output of ECDH is the same. Thus the ephemeral public keys for
+ECDH sent to each other got successfully verified. With these keys, a secure channel can be formed,
+where the actual device keys that want to verify to each other are sent over. Upon receipt, the
+verification process is complete!
+
+In practice, this works as follows: Alice sends Bob a `m.key.verification.start` along with a bunch
+of different parameters she supports (hash method, emoji/number verification, which specific ECDH to
+use, etc.) and Bob will reply with a `m.key.verification.accept`, which will, based on the capabilies
+Alice advertised and based on what Bob knows he can do himself, determine which exact method to use.
+Afterwards, they both generate and send to each other the ephemeral public keys for ECDH, and the
+emojis or numbers are displayed on screen. Once they both verified that they match using some secure
+third-party channel like meeting up in person, they will send each other a `m.key.verification.mac`,
+containing a mac of the keys they should verify. After verifying them, they both send each other a
+`m.key.verification.done` and they are verified!
+
+SAS introduces a few more cancellation codes, specific to SAS verification,
+[as seen in the client-server spec](https://matrix.org/docs/spec/client_server/latest#verification-messages-specific-to-sas).
+
+#### `m.key.verification.start`
+This sends a bunch of parameters that the sending device supports. Please note that you will have to
+remember this object while performing a commitment check (explained in the next section), of the one
+that *includes* the metadata of `transaction_id` and `from_device` keys, omitted in these examples.
+```json
+{
+  "method": "m.sas.v1",
+  "key_agreement_protocols": ["curve25519-hkdf-sha256", "curve25519"], // while "curve25519" is depricated, it is still wildly used and thus needs to be supported
+  "hashes": ["sha256"],
+  "message_authentication_codes": ["hkdf-hmac-sha256"],
+  "short_authentication_string": ["emoji", "decimal"]
+}
+```
+
+#### Commitment generation
+A commitment is an additional verification process. It is the hash (based on the hash method
+specified) of the concatenated ephemeral public key you generate and the canonical json of the
+`m.key.verification.start` body. Libolm provides both the hashing method and the public/private key
+generation. Code for calculating the commitment could look as follows:
+```dart
+var sas = olm.SAS(); // save for later. This will generate our ephemeral public/private keypair
+var canonicalJson = ""; // the canonical json of the `m.key.verification.start` request
+
+var commitment = "";
+if (hashMethod == "sha256") {
+  var olmutil = olm.Utility();
+  commitment = olmutil.sha256(sas.get_pubkey() + canonicalJson);
+  olmutil.free();
+} else {
+  throw "Unknown hash method";
+}
+```
+
+#### `m.key.verification.accept`
+This accepts the `m.key.verification.start` request, and sends the parameters that both parties support.
+Along with that, it also sends a `commitment`, as defined above.
+```json
+{
+  "method": "m.sas.v1",
+  "key_agreement_protocol": "curve25519-hkdf-sha256", // if other party doesn't support this, pick "curve25519" instead
+  "hash": "sha256",
+  "message_authentication_code": "hkdf-hmac-sha256",
+  "short_authentication_string": ["emoji", "decimal"],
+  "commitment": "the-commitment-calculated"
+}
+```
+
+#### `m.key.verification.key`
+This sends the ephemeral *public* key to each other. If you haven't generated it yet (due to not having
+calculated the commitment), do so now with `var sas = olm.SAS();` and read it with `sas.get_pubkey();`.
+Be sure that if you received the commitment, you use the received public key to verify the commitment
+you received earlier. The public key is both added to the `sas` object with `sas.set_their_key(payload["key"]);`
+and also saved in a separate variable, as you'll need it later, as unfortunately the `sas` object does
+not allow for it to be retrieved again.
+```json
+{
+  "key": "your-public-key"
+}
+```
+
+#### Display Emojis / Numbers
+Based on the agreed upon `key_agreement_protocol` and which `short_authentication_string`s are supported,
+the user should now be prompted with the emojis/numbers, so that they can verify that they match. For
+that, you will have to generate bytes to derive the emojis from for comparison. For that, a "sas info"
+is created:
+
+##### `curve25519-hkdf-sha256`
+The sas info is `MATRIX_KEY_VERIFICATION_SAS|` concatenated with the user ID of whomever started the
+verification plus `|` plus the device ID who started the verification plus `|` plus the public key
+who started the verification plus `|` plus the user ID who received the verification plus `|` plus
+the device ID who received the verification plus `|` plus the public key of who received the verification
+plus `|` plus the transaction ID. In code that could look as follows:
+
+```dart
+var ourInfo = '${client.userID}|${client.deviceID}|${sas.get_pubkey()}|';
+var theirInfo = '${request.userId}|${request.deviceId}|${theirPublicKey}|';
+var sasInfo = 'MATRIX_KEY_VERIFICATION_SAS|' +
+    (request.startedVerification
+        ? ourInfo + theirInfo
+        : theirInfo + ourInfo) +
+    request.transactionId;
+```
+
+##### `curve25519`
+The sas info is `MATRIX_KEY_VERIFICATION_SAS` concatenated with the user ID who started the verification
+plus the device ID who started the verification plus the user ID who received the verification plus
+the device ID who received the verification plus the transaction id. The difference to `curve25519-hkdf-sha256`
+is the lack of public keys and the lack of a `|` deliminator. In code that could look as follows:
+
+```dart
+var ourInfo = client.userID + client.deviceID;
+var theirInfo = request.userId + request.deviceId;
+var sasInfo = 'MATRIX_KEY_VERIFICATION_SAS' +
+    (request.startedVerification
+        ? ourInfo + theirInfo
+        : theirInfo + ourInfo) +
+    request.transactionId;
+```
+
+##### Generate bytes
+Once you have that sas info, you use it to generate bytes through `sas.generate_bytes(sasInfo, bytes)`.
+For emoji verification, 6 bytes are needed, for number verification 5 are needed.
+
+If both parties said they can display emoji, display those! If one party only supports numbers, then
+display numbers. It might be a good idea to have a button to switch back and forth between emoji and
+numbers, just in case.
+
+##### Numbers
+To get the numbers you compare, you need to generate 5 bytes using the above method. Split these into
+three chunks of 13 bits each, discarding the last bit. Then add 1000 to each number, meaning they can
+be in the range of 1000 to 9191. It is expected to to display the numbers with some separator in between,
+e.g. `1337-4242-9001`.
+
+##### Emoji
+To get the emoji to compare, you need to generate 6 bytes using the method above. Split these into 7
+chunks of 6 bits each, discarding the last 6 bits. Then use the appropriate table
+[in the client-server spec](https://matrix.org/docs/spec/client_server/latest#sas-method-emoji) to
+display the emoji, along with their name.
+
+#### Emojis / Numbers match: Calculating the mac
+Once the user says that their emojis / numbers match, that means that they have a secure channel! A
+mac is then calculated out of the device IDs and the public keys you want the other party to verify.
+For now, only send your own public key using that method. Later on in this guide, you will also send your
+master cross-signing key. For that, a base information is created, which is the concatenated string of
+`MATRIX_KEY_VERIFICATION_MAC`, your own user ID, your own device ID, the other user's ID, the other
+device's ID, and the transaction ID. Note how, unlike SAS, no `|` deliminator is used and the
+order does *not* depend on who started the verification:
+```dart
+var baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
+    client.userID +
+    client.deviceID +
+    request.userId +
+    request.deviceId +
+    request.transactionId;
+```
+
+Next calculate the mac of your device IDs and the fingerprints that you want to send:
+```dart
+String _calculateMac(String input, String info) {
+  if (messageAuthenticationCode == "hkdf-hmac-sha256") { // this is from the m.key.verification.accept call
+    return sas.calculate_mac(input, info); // the same sas object we used previously, from libolm
+  } else {
+    throw "Unknown message authentification code";
+  }
+}
+
+Map<String, String> mac = {}; // create the map for the macs
+List<String> keyList = []; // the list / array holding all the key Ids to verify
+
+// now add all the keys we want to verify
+var deviceKeyId = "ed25519:${client.deviceID}";
+mac[deviceKeyId] = _calculateMac(client.fingerprintKey, baseInfo + deviceKeyId); // client.fingerprintKey is here the public key string for our device
+keyList.add(deviceKeyId);
+
+// now we still need to sort the key list
+keyList.sort();
+var keys = _calculateMac(keyList.join(","), baseInfo + "KEY_IDS");
+
+// send off the stuff!
+```
+
+#### `m.key.verification.mac`
+Sends the mac of the keys to verify off to the other party.
+
+```json
+{
+  "mac": { // is the "mac" object calculated above
+    "ed25519:CCKDF": "<calculated mac here>"
+  },
+  "keys": "<mac for keys here>" // is the calculated "keys" string above
+}
+```
+
+#### Receiving / verifying the mac
+After receiving the mac and and having the user verify that the emoji match (and thus also sending
+your own mac), you have to verify that the received macs are valid, and only verify the keys if the
+macs are valid. For that, generate the base info from the perspective of the other party; essentially
+placing other person's information before your own:
+```dart
+final baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
+    request.userId +
+    request.deviceId +
+    client.userID +
+    client.deviceID +
+    request.transactionId;
+```
+Then generate the key list out of the dictionary keys of the `mac` object received and verify that
+the mac matches up:
+```dart
+final keyList = payload["mac"].keys.toList();
+keyList.sort();
+if (payload["keys"] != _calculateMac(keyList.join(","), baseInfo + "KEY_IDS")) {
+  await request.cancel("m.key_mismatch");
+  return;
+}
+```
+Then verify the macs of the keys themselves by iterating over the objects, and calculating the macs
+of the keys again as above. You should have the public key yourself already, as you are just verifying
+if the key matches. If you received the mac of a key you don't know, just ignore it. It is likely to
+be a cross-signing key that you don't know how to handle yet. If only *one* of the macs mismatch,
+however, don't verify *any* devices and cancel the entire request.
+
+Finally send a `m.key.verification.done`, and you are done!
+
+#### Recap
+So, the entire SAS verification flow in short is as follows:
+
+1. (Optional) Alice sends Bob a `m.key.verification.request` along with the methods she supports, including
+   `m.sas.v1`.
+2. (Optional) Bob receives that request. His device asks him if he wants to verify with Alice. He hits accept.
+3. (Optional) Bob sends a `m.key.verification.ready` along with the methods he supports, including `m.sas.v1`.
+4. Alice receives Bob's methods, and based on that, and the ones she knows how to do herself, she sends
+   a `m.key.verification.start` for `m.sas.v1`. This will contain a bunch of parameters for how the
+   SAS will specifically work. Alice's device notes down the canonical json of the request for later
+   commitment verification.
+5. Bob received the `m.key.verification.start`, and generates his own ephemeral keypair with `var sas = olm.SAS();`. He then
+   calculates the commitment using the canonical json of the `m.key.verification.start` request, before sending a
+   `m.key.verification.accept` back to Alice, along with specific parameters to use for this SAS
+   verificaton.
+6. Alice receives the `m.key.verification. accept` and stores the commitment to verify it later. She now creates her own
+   ephemeral key pair with `var sas = olm.SAS();` and sends Bob the public key, via `m.key.verification.key`.
+7. Bob receives the public key from Alice and sends his own public key. Bob's device displays
+   the emoji / numbers for verification now.
+8. Alice receives Bob's public key, and can finally verify the commitment she saved earlier. If all
+   matches, Alice's device will now display the emoji / numbers for verification.
+9. If the emoji / numbers both match up, they will send each other an `m.key.verification.mac` with
+   the mac'd information of the keys that should be verified.
+10. Finally, if all checks out, they send each other a `m.key.verification.done` and
+    the verification process is concluded.
+
+### Things to look out for
+1. *Always* verify that an incoming message has a valid, known transaction ID.
+2. *Always* verify that an incoming message is no more than 10 minutes in the past.
+3. *Always* stop the verification process as soon as you receive a `m.key.verification.cancel`, be
+   it for whatever reason.
+4. *Don't* just blindly assume that methods, `message_authentication_code`, etc. are as outlined here.
+   More might be added in the future (e.g. to fix a discovered security flaw), as such *always* verify
+   which ones you actually support and act accordingly.
+5. Don't forget to `sas.free();` your generated sas object all at the end of verification or when timing
+   out or when it is being canceled.
+6. Don't forget to calculate *and verify* the commitment!
+7. It might be a good idea to generalize the code handling the verification flow so that you can easily
+   add other methods than `m.sas.v1` later on.
+
+## 2. Display verification status based on signatures
+Don't worry, after having implemented SAS this should be a breeze, it's way simpler and way less of a
+hassle to implement!
+
+### General ideas of Cross-Signing
+The general idea of cross-signing is that instead of every device having to verify every other device,
+people will only have to verify other people, and you will have to verify each of your own new sessions
+(logins) only once. For this, each *user* has three keys: A master key, a self-signing key and a
+user-signing key. The master key will sign both the self-signing and the user-signing key. The
+self-signing key will then sign your own device keys, and the user-signing key will sign other people's
+master keys. The purpose of splitting this up into three keys is that in the case of either the
+self-signing key or the user-signing key getting compromised, you can easily exchange them, while
+still keeping the master key. As the master key is *only* used for signing your *own* user-signing and
+self-signing key, it is rarely used, so the attack surface to obtain it is minimal. Optionally, device
+keys themselves can sign their own master key.
+
+![](https://raw.githubusercontent.com/uhoreg/matrix-doc/cross-signing2/proposals/images/1756-graph2.dot.png)
+Graph from [MSC1756](https://github.com/matrix-org/matrix-doc/pull/1756).
+
+So, in addition to the device keys of others, we also need to fetch their cross-signing
+keys. We can then verify their signatures!
+
+### Cross-Signing keys
+In addition to device keys, cross-signing keys are introduced. Instead of being identified by a
+key ID, they are identified via their public key. In order to prevent collisions, homeservers
+*must* make sure that no user has a key ID that is the same as a cross-signing key's public key. That
+is handy, as it means that as clients, we don't have to care about that part!
+
+### Keeping track of cross-signing keys
+Keeping track of cross-signing keys should be simple if you already do so for device keys. When a
+user is flagged as out-of-date, you should already query their keys again with `POST /_matrix/client/r0/keys/query`
+and update your `device_keys` dictionary accordingly, just as before. This endpoint should now also
+return the `master_keys`, `self_signing_keys` and `user_signing_keys` of a user, given they are using
+cross-signing. Simply update and store this information locally as well. The format of these are
+pretty similar to the `device_keys` dictionary:
+```json
+{
+  "self_signing_keys": {
+    "@bob:example.org": {
+      "user_id": "@bob:example.org",
+      "usage": ["self_signing"],
+      "keys": {
+        "ed25519:base64+self+signing+public+key": "base64+self+signing+public+key"
+      },
+      "signatures": {
+        "@bob:example.org": {
+          "ed25519:base64+master+public+key": "signature+of+self+signing+key"
+        }
+      }
+    }
+  }
+}
+```
+In this example we have Bob's self-signing key which has a signature of Bob's master key. The `usage`
+array additionally indicates the usage of the key, which is `master`, `self_signing` or `user_signing`.
+While for cross-signing there should only be one item in `usage`, in the future some other keys might be added
+that could have multiple uses. As such, an array is used here to future-proof things.
+
+The `master_keys` and `user_signing_keys` sections look the same.
+
+### Changes to key verification
+Now, there is a slight change you need to perform to the key verification, specifically SAS, that we previously
+implemented: In the `m.key.verification.mac` reply, there will be a dictionary of macs to verify certain
+keys. These don't only contain device keys, but also contain cross-signing keys, identified by
+`ed25519:base64+master+public+key`, etc. Be sure to flag those cross-signing keys as verified, too.
+
+### Getting the verification level based on cross-signing status
+If you want to know if a device key is verified, just recursively check all of the *valid* signatures
+of the keys, until you hit a key that is already verified! This means that given a signature chain as
+follows (assuming you are Alice):
+
+Alice' Master Key --> Alice' User-Signing Key --> Bob's Master Key --> Bob's Self-Signing Key --> Bob's Tablet
+
+And you have previously (via e.g. emoji verification) verified Alice's (your own) master key, and want
+to know if Bob's Tablet is verified, you propagate that chain backwards, provided all the signatures
+are valid, until you hit your verified master Key.
+
+### Verifying a signature
+Libolm to the rescue! It has a method which makes verifying signatures easy! If you have key A and want
+to verify the signature that key B added, you will have to do the following:
+
+1. In the key A `signatures` dict, find the entry for key B and note down the signature.
+2. Create the string for verification: take key A's complete dictionary, strip off of the `unsigned`
+   and `signature` dictionaries and convert it into canonical json.
+3. Use `olmutil.ed25519_verify(key_b_pub_key, canonical_json, signature);` to verify the signature:
+   note that this will throw an error if invalid, and none if valid.
+4. That's it, you have verified the signatrue!
+
+### Check if a *user* is verified
+To see if a user is verified, simply check if their master key is verified! You can find the master
+key of a user by looking for a cross-signing key which has `master` within their `usage` array.
+
+If a user is verified but all of their devices are not, it is a good idea to display a warning.
+
+### Things to look out for
+1. *Never* trust invalid signatures. Just treat them as if there was no signature at all.
+2. Signature loops *will* exist. Add infinite recursion protection to your signature loop checking.
+3. While signature checking doesn't seem to be expensive, it might be a good idea to cache the results
+   in-memory while the program is running.
+4. Be sure to query the keys for a user if you are told in the sync loop they need updating (if you
+   implemented this correctly previously, nothing changes here).
+5. Instead of recursing until you have found a valid key, you could also recurse until you find your own,
+   verified master key. This in practice, however, does not allow easy migration between device-device verification and
+   cross-signing verification. Recursing until you hit a verified device is thus preferred.
+
+## 3. Implementing SSSS
+SSSS is short for Secure Secret Storage and Sharing, which provides a method of storing secret data
+on the server, without the server administrator or anyone else having access to that data. As such,
+this is optimal for storing the private keys for cross-signing on the server so that all your devices
+can use them later on to generate signatures, and thus verify other people.
+
+Unfortunately there doesn't seem to be any help from libolm for implementing SSSS (yet?) so this will
+become rather cryptographic-y to implement. You will mainly need to find libraries for the following
+functions:
+
+1. AES-CTR encryption and decryption
+2. SHA256 HMAC calculation
+3. Base58 encoding and decoding
+4. PBKDF2
