@@ -21,7 +21,10 @@ const SDKs = ({ data }) => {
     return result;
   }));
 
-  var dvar = window.location.hash ? window.location.hash.replace('#', '') : "matrix-nio";
+  var dvar = "matrix-nio"
+  if (typeof window !== `undefined` && window.location.hash) {
+    dvar = window.location.hash.replace('#', '');
+  }
   var [selected, setSelected] = useState(sdks.find(s => s.slug === "/docs/projects/sdk/" + dvar));
 
   const clickHandler = (el) => {

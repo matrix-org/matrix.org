@@ -43,7 +43,10 @@ const Bridges = ({ data }) => {
 ["Keybase", "keybase"],
   ];
 
-  var dvar = window.location.hash ? window.location.hash.replace('#', '') : "irc";
+  var dvar = "irc";
+  if (typeof window !== `undefined` && window.location.hash) {
+    dvar = window.location.hash.replace('#', '');
+  }
   dvar = urlMap.find(i => i[1] ==dvar)[0]
   var [selected, setSelected] = useState(dvar);
   const clickHandler = (el) => {
