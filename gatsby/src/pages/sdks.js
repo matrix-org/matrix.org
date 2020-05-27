@@ -21,14 +21,17 @@ const SDKs = ({ data }) => {
     return result;
   }));
 
-  var [selected, setSelected] = useState(sdks.find(s => s.title === "matrix-nio"));
+  var dvar = window.location.hash ? window.location.hash.replace('#', '') : "matrix-nio";
+  var [selected, setSelected] = useState(sdks.find(s => s.slug === "/docs/projects/sdk/" + dvar));
 
   const clickHandler = (el) => {
-    setSelected(sdks.find(s => s.slug === el.target.dataset["sdk"]));
+    var sdk = el.target.dataset["sdk"];
+    setSelected(sdks.find(s => s.slug === sdk));
+    window.history.pushState(null, null, "#" + sdk.split("/")[4]);
 
     document.getElementById("sdk-content").scrollIntoView();
   };
-
+  
   const selectItemRender = (sdk) => {
     var selectableItemStyle = {
       cursor: "pointer"
@@ -65,7 +68,7 @@ const SDKs = ({ data }) => {
     excerptOverride="Browse Matrix SDKs for various languages and platforms">
     <MXContentMain>
       <Helmet title={title} />
-      <div className="mxgrid">
+      <div className="mxgrid" id="sdk-content" style={{"paddingTop": "75px", "marginTop": "-75px"}}>
         <div className="mxgrid__item25">
           <h1 id="SDKs">SDKs</h1>
           {
@@ -90,7 +93,7 @@ const SDKs = ({ data }) => {
 
         <div className="mxgrid__item75">{
           selected &&
-          <div id="sdk-content" style={{"paddingTop": "75px", "marginTop": "-75px"}}>
+          <div>
             <MXProjectHeader project={selected} imageSize={100} />
             <br clear="all" />
             <MDXRenderer>{selected.body}</MDXRenderer>
