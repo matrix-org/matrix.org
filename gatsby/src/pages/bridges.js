@@ -11,11 +11,46 @@ const title = `Bridges | ${config.siteTitle}`;
 
 const Bridges = ({ data }) => {
 
+  const bridges = data.allMdx.edges;
+  var toc = {};
+  bridges.forEach(bridge => {
+    toc[bridge.node.frontmatter.bridges] = bridge.node.frontmatter
+  })
+  toc = Object.values(toc)
 
-  var [selected, setSelected] = useState("IRC");
+  var urlMap = [
+["IRC", "irc"],
+["Slack", "slack"],
+["RSS", "rss"],
+["Gitter", "gitter"],
+["Discord", "discord"],
+["RocketChat", "rocketchat"],
+["iMessage", "imessage"],
+["Facebook Messenger", "facebook-messenger"],
+["Email", "email"],
+["SMS", "sms"],
+["Telegram", "telegram"],
+["WhatsApp", "whatsapp"],
+["Google Hangouts", "google-hangouts"],
+["Mastodon", "mastodon"],
+["libpurple", "libpurple"],
+["GroupMe", "groupme"],
+["Skype", "skype"],
+["WeChat", "wechat"],
+["Mumble", "mumble"],
+["Tox", "tox"],
+["Twitter", "twitter"],
+["Keybase", "keybase"],
+  ];
+
+  var dvar = window.location.hash ? window.location.hash.replace('#', '') : "irc";
+  dvar = urlMap.find(i => i[1] ==dvar)[0]
+  var [selected, setSelected] = useState(dvar);
   const clickHandler = (el) => {
     setSelected(el.target.dataset["bridge"]);
     document.getElementById("bridges-content").scrollIntoView();
+
+    window.history.pushState(null, null, "#" + urlMap.find(i => i[0] ==el.target.dataset["bridge"])[1]);
   };
 
   const selectItemRender = (bridge) => {
@@ -35,16 +70,6 @@ const Bridges = ({ data }) => {
       </h3>
     )
   }
-
-
-
-
-  const bridges = data.allMdx.edges;
-  var toc = {};
-  bridges.forEach(bridge => {
-    toc[bridge.node.frontmatter.bridges] = bridge.node.frontmatter
-  })
-  toc = Object.values(toc)
 
   return (<Layout titleOverride={title} navmode="discover"
   excerptOverride="Browse Matrix bridging options">
