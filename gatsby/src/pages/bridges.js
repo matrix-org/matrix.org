@@ -43,12 +43,17 @@ const Bridges = ({ data }) => {
 ["Keybase", "keybase"],
   ];
 
-  var dvar = "irc";
+  
+  var [selected, setSelected] = useState("");
   if (typeof window !== `undefined` && window.location.hash) {
+    var dvar = "irc";
     dvar = window.location.hash.replace('#', '');
+    dvar = urlMap.find(i => i[1] ==dvar)[0]
+    setImmediate(() => setSelected(dvar));
   }
-  dvar = urlMap.find(i => i[1] ==dvar)[0]
-  var [selected, setSelected] = useState(dvar);
+  else {
+    setImmediate(() => setSelected("IRC"));
+  }
   const clickHandler = (el) => {
     setSelected(el.target.dataset["bridge"]);
     document.getElementById("bridges-content").scrollIntoView();

@@ -21,11 +21,16 @@ const SDKs = ({ data }) => {
     return result;
   }));
 
-  var dvar = "matrix-nio"
-  if (typeof window !== `undefined` && window.location.hash) {
-    dvar = window.location.hash.replace('#', '');
+  var [selected, setSelected] = useState(sdks.find(s => s.slug === ""));
+  if (typeof window !== `undefined`) {
+    var dvar;
+      if (window.location.hash) {
+        dvar = window.location.hash.replace('#', '');
+      } else {
+        dvar = "matrix-nio"
+      }
+    setImmediate(() => setSelected(sdks.find(s => s.slug === "/docs/projects/sdk/" + dvar)));
   }
-  var [selected, setSelected] = useState(sdks.find(s => s.slug === "/docs/projects/sdk/" + dvar));
 
   const clickHandler = (el) => {
     var sdk = el.target.dataset["sdk"];
