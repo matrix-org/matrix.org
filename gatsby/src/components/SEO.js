@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import config from '../../config'
 
 const SEO = props => {
-  const { postNode, postPath, article, buildTime, excerptOverride, titleOverride } = props
+  const { postNode, postPath, article, buildTime, excerptOverride, titleOverride, imageOverride } = props
 
   let title
   let description
@@ -36,6 +36,10 @@ const SEO = props => {
   }
   if (titleOverride) {
     title = titleOverride;
+  }
+  if (imageOverride) {
+    image = imageOverride;
+    twitter_card_mode = "summary_large_image"
   }
 
   // schema.org in JSONLD format
