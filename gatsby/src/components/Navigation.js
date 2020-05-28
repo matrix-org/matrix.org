@@ -81,7 +81,6 @@ const Navigation = (navmode) => (
           <a href="/foundation" className="mxnavbar__navlink w-nav-link ">Foundation</a>
           <a href="/blog/posts" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "blog" ? "w--current":"")}>Blog</a>
           <a href="/faq" className="mxnavbar__navlink w-nav-link">FAQs</a>
-          <a href="https://shop.matrix.org" className={"mxnavbar__navlink w-nav-link "}>Shop</a>
           <a href="/try-now" className="mxnavbar__navlink mxnavbar__navlink--try w-nav-link">Try Now</a>
           <a href="/try-now" className="mxnavbar__navlink mxnavbar__navlink--primary w-nav-link">Try Now</a>
         </nav>
