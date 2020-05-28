@@ -11,8 +11,13 @@ const GuidesDevelop = ({data}) => {
     return (<Layout navmode="develop">
 <MXContentMain>
   <Helmet title={`Guides | ${config.siteTitle}`} />
-  <h1>Guides for Developers</h1>
-          
+  <h1>Documentation and Guides for Developers</h1>
+  <p>
+    Matrix is an open system by design. You're welcome to contribute
+    to <a href="/discover">existing projects</a>, start
+    new ones or work on the spec!
+    Get started by reading the Developer Guides below:
+  </p>
 <h2 id="introduction-for-developers">Introduction for Developers</h2>
 
 

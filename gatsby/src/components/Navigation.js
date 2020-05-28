@@ -27,10 +27,6 @@ navTypes["blog"] = (
 )
 navTypes["develop"] = (
 <div className="mxnavsection">
-  <a href="/docs/develop" className="mxnavsection__item w-inline-block">
-    <img src="/images/basic_spread_text.svg" alt="" className="mxnavsection__icon" />
-    <div className="mxnavsection__text">Docs</div>
-  </a>
   <a href="https://matrix.org/docs/spec" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_pencil_ruler.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Spec</div>
@@ -46,10 +42,6 @@ navTypes["develop"] = (
 </div>)
 navTypes["discover"] = (
 <div className="mxnavsection">
-  <a href="/discover" className="mxnavsection__item w-inline-block">
-    <img src="/images/basic_world.svg" alt="" className="mxnavsection__icon" />
-    <div className="mxnavsection__text">Discover</div>
-  </a>
   <a href="/docs/guides" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_spread_text.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Guides</div>

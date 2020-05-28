@@ -38,7 +38,7 @@ const Discover = ({data}) => {
                         <img src="/images/music_play_button.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
                             <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/guides/introduction">Introduction</a></h4>
-                            <p className="mxgrid__item__bg__p">How to get started with Matrix<br /></p>
+                            <p className="mxgrid__item__bg__p">Understand the Matrix Ecosystem<br /></p>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ const Discover = ({data}) => {
                         <img src="/images/basic_spread_text.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
                             <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/guides">Guides</a></h4>
-                            <p className="mxgrid__item__bg__p">Guides to usage of Matrix<br /></p>
+                            <p className="mxgrid__item__bg__p">Guides for Matrix Users<br /></p>
                         </div>
                     </div>
                 </div>
@@ -55,27 +55,18 @@ const Discover = ({data}) => {
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_server_upload.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/guides/installing-synapse">Synapse Installation</a></h4>
-                            <p className="mxgrid__item__bg__p">Installing Synapse, a homeserver implementation written in Python<br /></p>
+                            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/guides/installing-synapse">Host your own homeserver</a></h4>
+                            <p className="mxgrid__item__bg__p">Install Synapse, a homeserver implementation written in Python<br /></p>
                         </div>
                     </div>
                 </div>
 
                 <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
-                        <img src="/images/basic_spread_text.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
-                        <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/docs/develop">Guides for Developers</a></h4>
-                            <p className="mxgrid__item__bg__p">How to develop for Matrix<br /></p>
-                        </div>
-                    </div>
-                </div>
-                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
-                    <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_signs.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/faq">FAQ</a></h4>
-                            <p className="mxgrid__item__bg__p">Matrix FAQ<br /></p>
+                            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/faq">Matrix FAQ</a></h4>
+                            <p className="mxgrid__item__bg__p">Frequently Asked Questions<br /></p>
                         </div>
                     </div>
                 </div>
@@ -90,18 +81,10 @@ const Discover = ({data}) => {
                         </div>
                     </div>
                 </div>
-                <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">
-                    <div className="mxgrid__item__bg mxgrid__item__bg--develop">
-                        <img src="/images/basic_spread_text.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
-                        <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="https://matrix.org/docs/spec">Spec</a></h4>
-                            <p className="mxgrid__item__bg__p">The Matrix Specification<br /></p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
-            <h2>Let's go deeper</h2>
+            <h2>Find a project</h2>
             <p>
               The community has built tons of Matrix-enabled projects: Clients, servers, bridges to other platforms outside Matrix, application services, bots, etc.
               This page aims to showcase all known Matrix projects, including experimental and discontinued ones.
