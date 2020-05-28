@@ -54,10 +54,6 @@ navTypes["discover"] = (
     <img src="/images/basic_spread_text.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Guides</div>
   </a>
-  <a href="/docs/projects/try-matrix-now" className="mxnavsection__item w-inline-block">
-    <img src="/images/basic_elaboration_message_happy.svg" alt="" className="mxnavsection__icon" />
-    <div className="mxnavsection__text">Try Matrix</div>
-  </a>
   <a href="/clients/" className="mxnavsection__item w-inline-block">
     <img src="/images/software_layout_header_sideleft.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Clients</div>
@@ -104,7 +100,7 @@ const Navigation = (navmode) => (
       </div>
     </div>
     {navTypes[navmode.navmode]}
-    
+
   </nav>
 
 )

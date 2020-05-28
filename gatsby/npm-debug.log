@@ -1,0 +1,58 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'uninstall' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly uninstall loadAllDepsIntoIdealtree
+19 silly loadAllDepsIntoIdealTree Finishing
+20 silly idealTree:prePrune lib
+21 silly loadIdealTree Finishing
+22 silly currentTree lib
+23 silly idealTree lib
+24 silly generateActionsToTake Starting
+25 silly install generateActionsToTake
+26 silly generateActionsToTake Finishing
+27 silly diffTrees action count 0
+28 silly decomposeActions action count 0
+29 silly executeActions Starting
+30 silly install executeActions
+31 silly doSerial global-install 0
+32 silly doParallel fetch 0
+33 verbose lock using /home/ludwig/.npm/_locks/staging-3a08f0df5026584d.lock for /usr/local/lib/node_modules/.staging
+34 verbose unlock done using /home/ludwig/.npm/_locks/staging-3a08f0df5026584d.lock for /usr/local/lib/node_modules/.staging
+35 silly rollbackFailedOptional Starting
+36 silly rollbackFailedOptional Finishing
+37 silly runTopLevelLifecycles Starting
+38 silly runTopLevelLifecycles Finishing
+39 silly install printInstalled
+40 verbose stack Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/.staging'
+41 verbose cwd /mnt/c/users/ludwi/documents/repos/matrix.org/gatsby
+42 error Linux 4.4.0-18362-Microsoft
+43 error argv "/usr/bin/node" "/usr/bin/npm" "uninstall"
+44 error node v8.10.0
+45 error npm  v3.5.2
+46 error path /usr/local/lib/node_modules/.staging
+47 error code EACCES
+48 error errno -13
+49 error syscall mkdir
+50 error Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/.staging'
+50 error  { Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/.staging'
+50 error   errno: -13,
+50 error   code: 'EACCES',
+50 error   syscall: 'mkdir',
+50 error   path: '/usr/local/lib/node_modules/.staging' }
+51 error Please try running this command again as root/Administrator.
+52 verbose exit [ -13, true ]

@@ -27,7 +27,7 @@ const TryMatrixNow = ({data}) => {
     const licenses = Array.from(new Set( projects.map(project => project.frontmatter.license) ))
         .sort()
         .filter(l => l !== null)
-    
+
     return (<Layout navmode="discover">
         <MXContentMain>
             <Helmet title={`Try Matrix Now | ${config.siteTitle}`}>
@@ -223,7 +223,7 @@ const TryMatrixNow = ({data}) => {
 export const query = graphql`
 {
     allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
-        
+
         edges {
             node {
                 childMdx {

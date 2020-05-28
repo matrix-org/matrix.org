@@ -24,11 +24,10 @@ const MXTryMatrixNowSection = ({items}) => {
             data-language={language}
             data-license={license}
             data-type={project.frontmatter.categories[0]}>
-            <div className="mxgrid__item__bg mxgrid__item__bg--clear">
-                
+            <div className="mxgrid__item__bg mxgrid__item__bg--bullet">
                 <a href={project.fields.slug}><h4 className="mxgrid__item__bg__hx">{project.frontmatter.title}</h4></a>
                 <p className="mxgrid__item__bg__p">{project.frontmatter.description}</p>
-                <div className="mxgrid__item__bg__vert">
+                <div className="mxgrid__item__bg__vert--project">
                     <img src={project.frontmatter.thumbnail} alt="" className="mxgrid__item__bg__img" />
                 </div>
             </div>

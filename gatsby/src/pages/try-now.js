@@ -22,18 +22,21 @@ const TryNow = () => {
                 </p>
                 <p class="mxblock--try__p">
                   The easiest way to try Matrix is to use
-                  the <a href="https://about.riot.im/" rel="noopener noreferrer" target="_blank">Riot Web</a> client
-                  in your browser, which is configured by default to connect to the matrix.org homeserver.
+                  the client <a href="https://about.riot.im/" rel="noopener noreferrer" target="_blank">Riot</a> in
+                  your browser, which is configured by default to connect to the matrix.org homeserver.
                 </p>
 
                 <a href="https://about.riot.im/" rel="noopener noreferrer" target="_blank">
                   <img src="/images/riot-ensemble.png" width="1120" srcset="/images/riot-ensemble-p-500.png 500w, /images/riot-ensemble-p-800.png 800w, /images/riot-ensemble-p-1080.png 1080w, /images/riot-ensemble.png 1803w" sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 95vw, 800px" alt="" class="mxblock--try__img" />
                 </a>
-                <a href="https://about.riot.im/" rel="noopener noreferrer" target="_blank" class="mxblock__btn mxblock--hero__btn mxblock--hero_btn--try w-button">
+                <a href="https://riot.im/app/" rel="noopener noreferrer" target="_blank" class="mxblock__btn mxblock--hero__btn mxblock--hero_btn--try w-button">
                   Start Riot Web
                 </a>
 
-                <p class="mxblock--try__p">Alternatively, you can find more clients and servers in <a href="/docs/projects/try-matrix-now">Discover</a>.</p>
+                <p class="mxblock--try__p">
+                  Alternatively, take a look at <a href="/clients">all clients</a> and
+                  a non-exhaustive, community-maintained <a href="https://www.hello-matrix.net/public_servers.php">list of  homeservers</a>.
+                </p>
             </div>
             </MXContentMain>
     </Layout>)
