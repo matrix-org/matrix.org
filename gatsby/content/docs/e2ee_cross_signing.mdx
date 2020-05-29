@@ -567,3 +567,342 @@ functions:
 2. SHA256 HMAC calculation
 3. Base58 encoding and decoding
 4. PBKDF2
+
+As the "sharing" aspect is simpler to implement, here it will be implemented first. It can later on
+also be easily used to debug & verify the functionality of the "secure secret storage" part. It is,
+however, still crucial to look at the general structure of the SSSS first.
+
+TODO: This section doesn't list yet how to *create* keys, add this later on.
+
+### General Structure of SSSS storage
+SSSS depends on keys with which the actual secrets are being encrypted to be stored. These keys need
+to be provided by the client. There is, however, metadata information on the keys in a users account_data.
+For that, there are entries `m.secret_storage.key.<keyId>`, where the keyId is the unique ID of said
+key. In addition, there is an `m.secret_storage.default_key` which denotes the default key to use.
+
+The `m.secret_storage.<keyId>` objects contain a mac and an iv to easily verify if you have the correct
+key, and, in case if there is also a password associated with it, some information on how to generate
+the key out of the password. More specific on that later.
+
+Secrets, such as the private keys for cross-signing, can only be strings (not binary data) and are
+stored encrypted in the account data of your account. For example, the `m.cross_signing.master` entry
+in account data is the private key of your master cross-signing key. Each secret can be encrypted by
+multiple SSS keys. Inside the `encrypted` object there is a mapping of key ID to the ciphertext, iv
+and mac of the secret. A content could look as following:
+
+```json
+{
+  "encrypted": {
+    "awesomeKeyId": {
+      "iv": "supercooliv",
+      "ciphertext": "secretciphertext",
+      "mac": "macthingy"
+    }
+  }
+}
+```
+
+### Caching of secrets
+You have to access some secrets comparatively often. As fetching from the store requires to get a key
+for said secret, that requires user interaction. As such, if a client can store a secret seasonably
+securely client-sided, it is recommended to cache some secrets locally. For cross-signing that would
+be `m.cross_signing.self_signing`, `m.cross_signing.user_signing` and for online key backup that would
+be `m.megolm_backup.v1`. Blindly caching all secrets is a security risk, as some secrets such as
+`m.cross_signing.master` are highly sensitive and shouldn't be stored in plaintext on any disk, ever.
+
+You should always keep a whitelist of what secrets to cache, never a blacklist, as in the future some
+new highly-sensitive secret may be added.
+
+### Sharing
+The same limitations of caching apply to sharing: It only makes sense to request secrets or share
+secrets that are cacheable, as else potentially sensitive data is leaked, or it requires user interaction
+to load those secrets in the first place anyways.
+
+Secrets can only be requested from other devices of your account that you already have verified, be
+it via cross-signing or directly. As such, it might be a good idea to request all cacheable secrets
+after successfully completing verification with yourself, as far as that also verifies your own master
+key (else the other client likely doesn't have cross signing and thus requesting secrets doesn't make
+much sense).
+
+You request a secret by sending an `m.secret.request`, and you receive it back via an `m.secret.send`
+to_device event. Please keep in mind that these all should be encrypted! To do your part in the sharing
+of secrets, you should also appropriately reply to a sharing request of another of your verified devices,
+provided you have that secret cached.
+
+#### `m.secret.request`
+This requests a secret from another device, or cancels a pending request.
+```json
+{
+  "action": "request", // or request_cancellation
+  "name": "m.cross_signing.self_signing", // the name of the secret you are trying to receive
+  "requesting_device_id": "<your own device id>",
+  "request_id": "<unique string to identify this request>"
+}
+```
+
+#### `m.secret.send`
+This sends / shares a secret with another device
+```json
+{
+  "request_id": "<same request id as received in m.secret.request>",
+  "secret": "<contents of the secret>"
+}
+```
+
+#### Asking for a secret
+1. Only ask your own, verified devices for a secret. Be reasonably sure that they might have it (e.g.
+   the other device sent you your master key to verify).
+2. When receiving a secret, verify that it was encrypted
+3. When receiving a secret, verify that it was from one of the devices you sent the secret to (possible
+   via `sender_key` of the encrypted to_device content).
+4. Optionally, validate the secrets you received: In the case of the cross-signing and the online key
+   backup secrets, calculate the public key out of the received private key and compare them with the
+   advertised values.
+5. Send a request cancellation to all other devices you sent the request to but haven't heard back from
+   yet.
+
+#### Sharing a secret
+1. Make sure the request is coming from ourself
+2. Make sure that that particular device is verified
+3. Make sure we have the secret cached
+4. Make sure the request hasn't been canceled yet
+5. Make sure that the shared secret is verified
+
+### Opening keys
+To be able to access stored secrets, or store some yourself, you need to be able to access the SSSS
+keys. This is done either by password or by keyfile, afterwards the `m.secret_storage.key.<keyId>` is
+used to verify the validity of the key.
+
+#### Keyfile
+The contents of the keyfile is just base58-encoded data. They consist of two prefix bytes, `0x8B` and
+`0x01`. Additionally they contain a parity byte all at the end, which is all other bytes XOR'd onto
+each other. The key itself is base58-encoded chunked into characters of four. As such, the key can
+easily be decoded like the following:
+
+```dart
+Uint8List decodeRecoveryKey(String recoveryKey) {
+  // don't forget to strip all spaces before base58 decoding!
+  final result = base58.decode(recoveryKey.replaceAll(' ', ''));
+
+  // check the parity byte
+  var parity = 0;
+  for (final b in result) {
+    parity ^= b;
+  }
+  // as we xor'd ALL the bytes, including the parity byte, the result should be zero!
+  if (parity != 0) {
+    throw 'Incorrect parity';
+  }
+
+  // check if we have the correct header prefix
+  var OLM_RECOVERY_KEY_PREFIX = [0x8B, 0x01];
+  for (var i = 0; i < OLM_RECOVERY_KEY_PREFIX.length; i++) {
+    if (result[i] != OLM_RECOVERY_KEY_PREFIX[i]) {
+      throw 'Incorrect prefix';
+    }
+  }
+
+  // verify that the length of the key is correct
+  var OLM_PRIVATE_KEY_LENGTH = 32; // can also be fetched from olm somehow...
+  if (result.length !=
+      OLM_RECOVERY_KEY_PREFIX.length + OLM_PRIVATE_KEY_LENGTH + 1) {
+    throw 'Incorrect length';
+  }
+
+  // and finally, strip the prefix and the parity byte to return the raw key
+  return Uint8List.fromList(result.sublist(OLM_RECOVERY_KEY_PREFIX.length,
+      OLM_RECOVERY_KEY_PREFIX.length + OLM_PRIVATE_KEY_LENGTH));
+  }
+}
+```
+
+#### Password
+The `passphrase` block of the key information in the account data specifies information on how to
+generate the key off of the password. It an look as follows:
+
+```json
+"passphrase": {
+  "algorithm": "m.pbkdf2", // currently only this one is supported
+  "iterations": 500000,
+  "salt": "<some-random-string>",
+  "bits": 256 // optional, defaults to 256
+}
+```
+
+Out of this information we need the iteration, the salt and the number of bits for pbkdf2. Simply use
+these parameters with the hash algorithm sha512 to generate a key:
+
+```dart
+Uint8List keyFromPassword(String password, _PasswordInfo info) {
+  if (info.algorithm != 'm.pbkdf2') {
+    throw 'Unknown algorithm';
+  }
+  var generator = PBKDF2(hashAlgorithm: sha512);
+  return Uint8List.fromList(generator.generateKey(password, info.salt,
+      info.iterations, info.bits != null ? info.bits / 8 : 32));
+}
+```
+
+Important: Some PBKDF2 algorithms take as length the length in bytes (like here), while others take
+the length in bits. Divide by 8 appropriately, and only when needed.
+
+#### Validating the generated key
+To know if the right keyfile was supplied or if the user entered the right password, we need to verify
+the resulting keys validity. For that, the other information of the keys object in account data is
+relevant:
+
+```json
+{
+  "algorithm": "m.secret_storage.v1.aes-hmac-sha2", // some old accounts might use a different algorithm, which is not covered in this guide
+  "iv": "<base64 encoded iv>",
+  "mac": "<bae64 encoded mac>"
+}
+```
+
+To verify the key, encrypt 32 bytes of 0 with a blank name and the IV of the key information. Compare
+the resulting macs with each other. Be sure to compare the *unpadded* base64-encoded macs, so strip
+all the trailing `=`'s! The encryption itself will be outlined below.
+
+```dart
+bool checkKey(Uint8List key, AccountData keyData) {
+  var info = keyData.content;
+  if (info['algorithm'] == 'm.secret_storage.v1.aes-hmac-sha2') {
+    if ((info['mac'] is String) && (info['iv'] is String)) {
+      // ZERO_STR are 32 bytes of zero. We encrypt with our generated key, a blank name and the iv of the event
+      var encrypted = encryptAes(ZERO_STR, key, '', info['iv']);
+      // stripping all the trailing = of the macs prior comparing
+      return info['mac'].replaceAll(RegExp(r'=+$'), '') ==
+          encrypted.mac.replaceAll(RegExp(r'=+$'), '');
+    } else {
+      // no real information about the key, assume it is valid
+      return true;
+    }
+  } else {
+    throw 'Unknown Algorithm';
+  }
+}
+```
+
+### Encrypting and decrypting
+Both encrypting and decrypting is done with AES-CTR. Out of the secret key and the name of the secret
+using [HKDF](https://en.wikipedia.org/wiki/HKDF) with SHA-256 both the actual AES key and the key for
+the MAC integrity is generated. IVs are randomly generated 16 bytes, with bit 63 set to 0. In the
+account data events of the secrets, the mac, the IV and the ciphertext are all base64 encoded.
+
+Note: Encrypting and decrypting both uses *unpadded* AES-CTR. If your library does not have an option
+for unpadded AES-CTR en/decryption, simply append prior en/decryption 0's to your data to fill up the
+input to a full number of blocks. One block here is typically 32? bytes in size. After en/decrypting,
+strip the extra bytes again. Please note that this method will *not* work with all ciphers (e.g. XTS), it is
+something specific to CTR.
+
+#### Deriving the keys using HKDF
+As key deriving is needed for both encrypting and decrypting it makes sense to implement this first.
+It is a series of specific sha256 hmac hashes, as following:
+
+```dart
+_DerivedKeys deriveKeys(Uint8List key, String name) {
+  var zerosalt = Uint8List(8); // generate 8 bytes of zero
+  // hash the key with the zeros as secret
+  var prk = Hmac(sha256, zerosalt).convert(key);
+
+  var b = Uint8List(1); // generate one byte
+  b[0] = 1; // and set it to one
+  // use the previously resulted mac as key, and hash the name, with the one-byte added to the end
+  // the result is the aes key
+  final aesKey = Hmac(sha256, prk.bytes).convert(utf8.encode(name) + b);
+
+  b[0] = 2; // set the byte to 2
+  // use the first computed mac as a key, this time hashing the aes key plus the name plus the byte two
+  // the result is the hmac key
+  var hmacKey = Hmac(sha256, prk.bytes).convert(aesKey.bytes + utf8.encode(name) + b);
+
+  // this just returns the raw, derived aes and hmac keys in an object
+  return _DerivedKeys(aesKey: aesKey.bytes, hmacKey: hmacKey.bytes);
+}
+```
+
+#### Decrypting
+Now, to decrypt, you just create a mac with the hmac key of the raw ciphertext, and compare it with
+the mac stored in the account data secret. If it matches, you decrypt using AES-CTR. The name here
+is the name of the secret we want to decrypt. The resulting code could look as follows:
+
+```dart
+String decryptAes(_Encrypted data, Uint8List key, String name) {
+  // derive our keys using the before written function
+  var keys = deriveKeys(key, name);
+
+  // decode our ciphertext, as it is base64 encoded
+  var cipher = base64.decode(data.ciphertext);
+
+  // hmac our cipher with the generated hmac key, base64'ing it afterwards
+  var hmac = base64.encode(Hmac(sha256, keys.hmacKey).convert(cipher).bytes);
+
+  // compare the resulted mac with with the one stored, unpadding both encoded values
+  if (hmac.replaceAll(RegExp(r'=+$'), '') != data.mac.replaceAll(RegExp(r'=+$'), '')) {
+    throw 'Bad MAC';
+  }
+
+  // decrypt the cipher with the generated aesKey, using unpadded AES-CTR and the supplied IV
+  var decipher = AES(Key(keys.aesKey), mode: AESMode.ctr, padding: null)
+      .decrypt(Encrypted(cipher), iv: IV(base64.decode(data.iv)));
+
+  // and return the decrypted secret
+  return String.fromCharCodes(decipher);
+}
+```
+
+#### Encrypting
+Encrypting is rather similar. If no IV is specified, you have to randomly generate 16 bytes and set
+bit 63 to 0, as mentioned above. Again, we derive our aes and hmac keys off of the supplied key and
+the name. Then the ciphertext and the hmac is computed, which is can be then stored later on. The name
+here is the name of the secret we want to encrypt. The resulting code could look as follows:
+
+```dart
+_Encrypted encryptAes(String data, Uint8List key, String name, [String ivStr]) {
+  Uint8List iv;
+  if (ivStr != null) {
+    // if we have an IV already, let's just use this
+    iv = base64.decode(ivStr);
+  } else {
+    // if we don't have one, generate a random 16-byte IV
+    iv = Uint8List.fromList(SecureRandom(16).bytes);
+  }
+  // And don't forget to set bit 63 of the IV to zero
+  iv[8] &= 0x7f;
+
+  // derive our aes and hmac keys using the before written function
+  var keys = deriveKeys(key, name);
+ciphertext
+  // get our plain string (utf8) into bytes
+  var plain = Uint8List.fromList(utf8.encode(data));
+
+  // encrypt our plain text, using unpadded AES-CTR, with our aesKey and our (possibly generated) IV
+  var cipher = AES(Key(keys.aesKey), mode: AESMode.ctr, padding: null).encrypt(plain, iv: IV(iv)).bytes;
+
+  // calculate the hmac of the resulting cipher, using the hmacKey 
+  var hmac = Hmac(sha256, keys.hmacKey).convert(cipher);
+
+  // base64 the iv, the cipher and the mac, returning it all
+  return _Encrypted(
+    iv: base64.encode(iv),
+    ciphertext: base64.encode(cipher),
+    mac: base64.encode(hmac.bytes),
+  );
+}
+```
+
+#### Storing a secret
+To store a secret, just encrypt it and save the outcome to the account data, using the format mentioned
+above.
+
+#### Debugging hints
+Debugging can be hard. If you successfully encrypt and decrypt a secret using your methods, how do
+you know that you followed through implementation correctly and didn't just e.g. derive the keys wrong?
+To mitigate that, you could receive a secret (e.g. `m.cross_signing.self_signing`) via sharing from
+another device, and then compare that received value with what is stored in SSSS. If your decryption
+works properly, they should match up. If you *then* can successfully encrypt and decrypt something,
+that means your encryption is working, too.
+
+As using a keyfile is simpler in implementation than using password, you could also test with keyfile
+first, and only after that is working fine, debug any errors you might have in deriving the key from
+the password.
