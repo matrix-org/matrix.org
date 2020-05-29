@@ -613,6 +613,11 @@ be `m.megolm_backup.v1`. Blindly caching all secrets is a security risk, as some
 You should always keep a whitelist of what secrets to cache, never a blacklist, as in the future some
 new highly-sensitive secret may be added.
 
+As a secret might change in the future, it might be a good idea to store in the secret cache some more
+information along with the secret - perhaps its ciphertext with key id? So that if either key id or
+ciphertext changes, you know that you'll have to fetch the secret from the store again, and your cache
+is out-of-date.
+
 ### Sharing
 The same limitations of caching apply to sharing: It only makes sense to request secrets or share
 secrets that are cacheable, as else potentially sensitive data is leaked, or it requires user interaction
@@ -906,3 +911,10 @@ that means your encryption is working, too.
 As using a keyfile is simpler in implementation than using password, you could also test with keyfile
 first, and only after that is working fine, debug any errors you might have in deriving the key from
 the password.
+
+### Things to look out for
+ - *Only* cache a whitelisted set of secrets, that is `m.cross_signing.self_signing`,
+   `m.cross_signing.user_signing` and `m.megolm_backup.v1`.
+ - When fetching a secret from the store that is cacheable - cache it!
+ - Only share secrets with own devices you trust.
+ - Only request secrets from own devices you trust.
