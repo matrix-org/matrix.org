@@ -44,6 +44,14 @@ This week we have demos from our core team remote sync!
 
 ![2020-05-29-s6ujI-plot.png](/blog/img/2020-05-29-s6ujI-plot.png)
 
+### Spec releases: Room Version 6, Client-Server r0.6.1, and Federation r0.1.4
+
+Says TravisR:
+
+> It's been a little while since we've done a round of spec releases, so we have a bunch of spec releases to share. If you're implementing something from the spec, please have a look at the news: https://matrix.org/blog/2020/05/27/room-version-6-client-server-r-0-6-1-and-federation-r-0-1-4-spec-releases/
+>
+> As always, any questions about the spec itself can be answered in [#matrix-spec:matrix.org](https://matrix.to/#/#matrix-spec:matrix.org), [#matrix-dev:matrix.org](https://matrix.to/#/#matrix-dev:matrix.org), or in the various area-specific rooms floating around the federation.
+
 ## Dept of Servers 🏢
 
 ### conduit
@@ -95,6 +103,18 @@ Dendrite is a next-generation homeserver written in Go
 >
 > * Federation APIs: 34% (35/103 tests)
 
+### Synapse
+
+Says Neil:
+
+> The main news this week is that we switched event persistence away from the matrix.org master process which has made a big difference to overall performance. The impact is best demonstrated by graphing message send times.
+
+![synapse perf](/blog/img/2020-05-29-synapse-perf.png)
+
+> We also shipped [1.14.0](https://matrix.org/blog/2020/05/28/synapse-1-14-0-released) which includes OpenId Connect support and improved cache control granularity. It also contains rooms v6. 
+> 
+> Next week will be having a think about what to do next for matrix.org performance. Watch this space.
+
 ### TARDIS (Time Agnostic Room DAG Inspection Service)
 
 [Matthew](https://matrix.to/#/@matthew:matrix.org) offered:
@@ -135,6 +155,16 @@ Dendrite is a next-generation homeserver written in Go
 > * [ruma-events 0.21.3](https://github.com/ruma/ruma-events/releases/tag/0.21.3) fixes an event serialization issue
 >
 > * ruma-serde 0.2.2 (an internal dependency) fixed an incomplete part of querystring deserialization, so Conduit (and other future homeservers building on ruma-*-api) can properly handle querystrings in which parameters are repeated (like the `server_name` in [/join/{roomIdOrAlias}](https://matrix.org/docs/spec/client_server/r0.6.1#post-matrix-client-r0-join-roomidoralias))
+
+### buildbot-matrix v0.0.5
+
+Thanks [haywo](https://matrix.to/#/@haywo:nct08.de) for this update:
+
+> buildbot-matrix v0.0.5 has been released:
+> * Option to only get notifications on finished builds was added.
+>
+> buildbot-matrix is a small plugin for the Buildbot CI framework which sends notifications to matrix rooms.
+> It's available an GitHub and PyPi, take a look at [https://github.com/HayWo/buildbot-matrix](https://github.com/HayWo/buildbot-matrix) for more informations.
 
 ## Dept of Bridges 🌉
 
@@ -178,6 +208,35 @@ I read recently that Minecraft still has [126 million MAU](https://news.xbox.com
 
 ![2020-05-29-ATL-f-grafik.png](/blog/img/2020-05-29-ATL-f-grafik.png)
 
+### RumaTui
+
+Thanks [devinr528](https://matrix.to/#/@devinr528:matrix.org) for sharing this 
+WIP Command line Matrix client using matrix-rust-sdk:
+
+* Display read receipts for the last few messages
+* Display membership status when updated
+* Join a room you have been invited to
+* Client sends read receipts to server
+* Display when messages have been read
+* Leave a room by pressing Delete key (this should probably be a Ctrl-some key deal...)
+* Specify homeserver to join on start up (before the login screen)
+  * Simply run `rumatui [HOMESERVER]`, defaults to \"http://matrix.org\"
+* Displays errors, albeit not very helpful or specific
+* Receive and display messages
+  * formatted messages display as rendered markdown
+* Send messages
+  * local echo is removed
+  * Send textbox grows as more lines of text are added
+* Selectable rooms list
+  * change rooms using the arrow keys, making this clickable may be difficult
+* Login widget is click/arrow key navigable
+  * hides password
+
+![rumatui-demo](https://github.com/DevinR528/rumatui/blob/master/resources/rumatui-notice.gif)
+
+A new notification bar under the message window displays notifications such as membership changes, typing, and read notices.
+I am hoping to have an actual release on crates.io by the end of the day. If you have any thoughts join #rumatui:matrix.org  or check it out on [github](https://github.com/DevinR528/RumaTui).
+
 ### Riot-web
 
 [Bruno](https://matrix.to/#/@bwindels:matrix.org) said:
@@ -193,6 +252,13 @@ I read recently that Minecraft still has [126 million MAU](https://news.xbox.com
 > * iterating on the (also still experimental) new room list
 >
 > * looking into some issues that arose from the cross-signing release
+
+### Riot-iOS
+
+Says Manu:
+
+> Riot-iOS (and MatrixSDK and MatrixKit) is now fully compatible with iOS13 SDK.  A TestFlight 0.12.0 will be available soon.  
+> The work is still on its branches (xcode11). It comes with the new notification service mechanism and we want to run a lot of tests next week before going to production.
 
 ### Nheko
 
