@@ -21,28 +21,28 @@ const HallOfFame = () => {
             who: 'Enguerran Gillier',
             profile: 'https://twitter.com/opnsec',
             description: "HTML injection in email invites. A malicious 3rd party invite could inject unescaped HTML into the email template.  Fixed in Sydent 1.0.3",
-            service: "sydent"
+            service: "Sydent"
         },
         {
             date:'2019-05-02',
             who: 'Enguerran Gillier',
             profile: 'https://twitter.com/opnsec',
             description: "SSRF in the URL preview API, which did not blacklist access to 0.0.0.0/32 or ::/128 by default.  Fixed in Synapse 0.99.3.1",
-            service: "synapse"
+            service: "Synapse"
         },
         {
             date:'2019-05-02',
             who: 'Enguerran Gillier',
             profile: 'https://twitter.com/opnsec',
             description: "Insecure pseudo-random number generator in synapse meant that an attacker might be able to predict random values.  Fixed in Synapse 0.99.3.1",
-            service: "synapse"
+            service: "Synapse"
         },
         {
             date:'2019-05-02',
             who: 'Enguerran Gillier',
             profile: 'https://twitter.com/opnsec',
             description: "Insecure pseudo-random number generator in sydent meant that an attacker could predict authentication tokens.  Fixed in Sydent 1.0.3",
-            service: "sydent"
+            service: "Sydent"
         },
         {
             date:'2019-04-22',
