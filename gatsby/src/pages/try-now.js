@@ -15,7 +15,7 @@ const TryNow = () => {
             <div class="mxblock mxblock--try">
                 <h1 class="mxblock--try__hx">Try Now</h1>
                 <p class="mxblock--try_p">
-                  In order to communicate through matrix, you need to chose a client,
+                  In order to communicate through matrix, you need to choose a client,
                   register an account on a homeserver, and join a room.
                   While your account is tied to your homeserver, you can switch to a different client later,
                   so go and have a play!
