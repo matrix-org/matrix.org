@@ -40,7 +40,7 @@ const SDKs = ({ data }) => {
     document.getElementById("sdk-content").scrollIntoView();
   };
   
-  const selectItemRender = (sdk) => {
+  const selectItemRender = (sdk, i) => {
     var selectableItemStyle = {
       cursor: "pointer"
     };
@@ -52,7 +52,10 @@ const SDKs = ({ data }) => {
       <div style={selectableItemStyle}
         data-sdk={sdk.slug}
         key={"selector_" + sdk.slug}
-        onClick={clickHandler}>
+        onClick={clickHandler}
+        onKeyPress={clickHandler}
+        role="button"
+        tabIndex={i}>
         {sdk.title} <small data-sdk={sdk.slug}>({sdk.language})</small>
       </div>
     )
@@ -80,14 +83,14 @@ const SDKs = ({ data }) => {
         <div className="mxgrid__item25">
           <h1 id="SDKs">SDKs</h1>
           {
-            languages.map(l => {
+            languages.map((l, j) => {
               return(<div key={l[0]}>
                 <h3>{l[0]}</h3>
                 {
             sdks
               .filter(s => s.featured)
               .filter(s => l[1].includes(s.language))
-              .map(selectItemRender)}
+              .map((s, i) => selectItemRender(s, j*10 + i))}
                 </div>);
             })
           }
@@ -96,7 +99,7 @@ const SDKs = ({ data }) => {
             sdks
               .filter(s => s.featured)
               .filter(s => !flattened.includes(s.language))
-              .map(selectItemRender)}
+              .map((s, i) => selectItemRender(s, 200 + i))}
         </div>
 
         <div className="mxgrid__item75">{

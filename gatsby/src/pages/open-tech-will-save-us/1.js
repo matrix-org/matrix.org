@@ -14,7 +14,7 @@ const OTWSU = () => (
   <MXContentMain>
       <Helmet title={title + config.siteTitle} />
         <h1>{title}</h1>
-        <iframe width="1120" height="630" src="https://www.youtube.com/embed/APVp-20ATLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title="APVp-20ATLk" width="1120" height="630" src="https://www.youtube.com/embed/APVp-20ATLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <ul>
             <li>5:01 Welcome from Matthew</li>
             <li>14:10 Saúl Ibarra Corretgé from Jitsi on the rapid growth they've experienced since the start of the 2020 crisis</li>

@@ -48,7 +48,7 @@ const Bridges = ({ data }) => {
   if (typeof window !== `undefined` && window.location.hash) {
     var dvar = "irc";
     dvar = window.location.hash.replace('#', '');
-    dvar = urlMap.find(i => i[1] ==dvar)[0]
+    dvar = urlMap.find(i => i[1] === dvar)[0]
     setImmediate(() => setSelected(dvar));
   }
   else {
@@ -58,7 +58,7 @@ const Bridges = ({ data }) => {
     setSelected(el.target.dataset["bridge"]);
     document.getElementById("bridges-content").scrollIntoView();
 
-    window.history.pushState(null, null, "#" + urlMap.find(i => i[0] ==el.target.dataset["bridge"])[1]);
+    window.history.pushState(null, null, "#" + urlMap.find(i => i[0] === el.target.dataset["bridge"])[1]);
   };
 
   const selectItemRender = (bridge) => {
@@ -73,7 +73,10 @@ const Bridges = ({ data }) => {
       <h3 style={selectableItemStyle}
         data-bridge={bridge}
         key={"selector_" + bridge}
-        onClick={clickHandler}>
+        onClick={clickHandler}
+        onKeyPress={clickHandler}
+        role="button"
+        >
         {bridge}
       </h3>
     )
@@ -107,7 +110,10 @@ const Bridges = ({ data }) => {
                     <img src={project.thumbnail} alt="" 
                       style={{ width: "100%", height: "100%", cursor: "pointer" }}
                       data-bridge={project.bridges}
-                      onClick={clickHandler} />
+                      onClick={clickHandler}
+                      onKeyPress={clickHandler}
+                      role="button"
+                      tabIndex={100 + i} />
                   </div>
                 </div>)
             })}

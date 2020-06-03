@@ -51,7 +51,7 @@ const Legal = () => {
 
             <p>The second event was held on <b>Wednesday 13th May 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/O3YP1TU-L_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe title="O3YP1TU-L_8" width="560" height="315" src="https://www.youtube.com/embed/O3YP1TU-L_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             <h4>Agenda</h4>
             <ul>

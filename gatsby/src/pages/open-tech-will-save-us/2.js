@@ -14,7 +14,7 @@ const OTWSU = () => (
   <MXContentMain>
       <Helmet title={title + config.siteTitle} />
         <h1>{title}</h1>
-        <iframe width="1120" height="630" src="https://www.youtube.com/embed/O3YP1TU-L_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title="O3YP1TU-L_8" width="1120" height="630" src="https://www.youtube.com/embed/O3YP1TU-L_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <ul>
           <li>3:00 Mike Hoye From Mozilla</li>
           <li>34:32 Eugen from Mastodon</li>
