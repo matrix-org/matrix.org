@@ -19,7 +19,7 @@ if (SHOW_LIVE_STREAM) {
         <script src="/js/livestream.js"></script>
     </div>;
 } else {
-    liveStream = <img src="/images/Open-Tech-2-Dark@2x.png" alt='Open Tech Will Save Us'/>;
+    liveStream = <img src="/images/Open-Tech-3-Light@2x.png" alt='Open Tech Will Save Us'/>;
 }
 
 const Legal = () => {
@@ -27,7 +27,7 @@ const Legal = () => {
     titleOverride={title}>
             <Helmet title={title}>
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta property="twitter:image" content="https://matrix.org/images/Open-Tech-2-Dark@2x.png" />
+                <meta property="twitter:image" content="https://matrix.org/images/Open-Tech-3-Light-Social@2x.png" />
             </Helmet>
         <div>
             {liveStream}
