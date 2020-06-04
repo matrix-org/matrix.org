@@ -13,7 +13,7 @@ const HallOfFame = () => {
             date: '2020-05-10',
             who: 'Quentin Gliech',
             profile: 'https://sandhose.fr',
-            description: 'A CSRF attack leading to potential unauthorised access to accounts on servers using single-sign-on flows. Fixed as part of <a href="https://github.com/matrix-org/matrix-react-sdk/pull/4685">matrix-react-sdk#4685</a>, released in Riot/Web 1.6.3.'
+            description: 'A CSRF attack leading to potential unauthorised access to accounts on servers using single-sign-on flows. Fixed as part of <a href="https://github.com/matrix-org/matrix-react-sdk/pull/4685">matrix-react-sdk#4685</a>, released in Riot/Web 1.6.3.',
             service: 'Matrix React SDK'
         },
         {
