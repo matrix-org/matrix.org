@@ -10,6 +10,13 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date: '2020-05-10',
+            who: 'Quentin Gliech',
+            profile: 'https://sandhose.fr',
+            description: 'A CSRF attack leading to potential unauthorised access to accounts on servers using single-sign-on flows. Fixed as part of <a href="https://github.com/matrix-org/matrix-react-sdk/pull/4685">matrix-react-sdk#4685</a>, released in Riot/Web 1.6.3.'
+            service: 'Matrix React SDK'
+        },
+        {
             date:'2020-03-03',
             who: 'Rhys Davies',
             profile: 'https://twitter.com/rhysmdnz',
