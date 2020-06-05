@@ -9,7 +9,7 @@ navTypes["blog"] = (
   </a>
   <a href="/blog/category/this-week-in-matrix" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_elaboration_calendar_star.svg" alt="" className="mxnavsection__icon" />
-    <div className="mxnavsection__text">This week in Matrix</div>
+    <div className="mxnavsection__text">This Week In Matrix</div>
   </a>
   <a href="/blog/category/security" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_lock.svg" alt="" className="mxnavsection__icon" />
