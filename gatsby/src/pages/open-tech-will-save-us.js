@@ -19,7 +19,7 @@ if (SHOW_LIVE_STREAM) {
         <script src="/js/livestream.js"></script>
     </div>;
 } else {
-    liveStream = <img src="/images/Open-Tech-2-Dark@2x.png" alt='Open Tech Will Save Us'/>;
+    liveStream = <img src="/images/Open-Tech-3-Light@2x.png" alt='Open Tech Will Save Us'/>;
 }
 
 const Legal = () => {
@@ -27,7 +27,7 @@ const Legal = () => {
     titleOverride={title}>
             <Helmet title={title}>
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta property="twitter:image" content="https://matrix.org/images/Open-Tech-2-Dark@2x.png" />
+                <meta property="twitter:image" content="https://matrix.org/images/Open-Tech-3-Light-Social@2x.png" />
             </Helmet>
         <div>
             {liveStream}
@@ -41,17 +41,35 @@ const Legal = () => {
             <p>We discuss issues relating to technology, especially the importance of Open, Interoperable standards, and how they can enable decentralised tech to keep our data private while still enabling communication.</p>
 
             <h2>Next Event</h2>
-            <p>The next event will be held on <b>Wednesday 10th June 2020</b> at <b>5PM UTC</b> (6PM UK time). Agenda and more details to follow, <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
+            <p>Following two great events, we're looking forward to presenting the third!</p>
+            <p>The next event will be held on <b>Wednesday 10th June 2020</b> at <b>5PM UTC</b> (6PM UK time).
+            Agenda and more details to follow, <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
                 join the live chat</a></strong> or check back here for updates.
             </p>
+
+            <h3>Agenda</h3>
+
+            <ul>
+                <li><strong><a href="https://annie.elequin.io/">Annie Elequin</a></strong>, creator
+                    of <a href="https://dittochat.org/">Ditto Chat</a> will discuss her
+                    work to produce great UX in an Open Source messenger with React Native.</li>
+                <li>Our very own <strong>Erik Johnson</strong> will give an overview of the recent
+                    sharding work being done to improve Synapse performance. Users of the Matrix.org
+                    homeserver may have already seen these benefits!</li>
+                <li>
+                    PLUS (you know it!) special speakers who will proclaim, announce or inform on
+                    topics that <em>you</em> will find exciting and insightful!
+                </li>
+            </ul>
 
             <h2>Previous Events</h2>
 
             <h3>13th May 2020</h3>
 
-            <p>The second event was held on <b>Wednesday 13th May 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
-
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/O3YP1TU-L_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>
+                The second event was held on <b>Wednesday 13th May 2020</b>
+                at <b>5PM UTC</b> (6PM UK time). <a href="/open-tech-will-save-us/2">Watch the recording here.</a>
+            </p>
 
             <h4>Agenda</h4>
             <ul>
@@ -62,9 +80,9 @@ const Legal = () => {
 
             <h3>8th April 2020</h3>
 
-            <p>The first event was held on <b>Wednesday 8th April 2020</b> at <b>5PM UTC</b> (6PM UK time).</p>
-
-            <iframe title="APVp-20ATLk" width="560" height="315" src="https://www.youtube.com/embed/APVp-20ATLk" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>
+                The first event was held on <b>Wednesday 8th April 2020</b> at <b>5PM UTC</b> (6PM UK time).  <a href="/open-tech-will-save-us/1">Watch the recording here.</a>
+            </p>
 
             <h4>Agenda</h4>
             <ul>

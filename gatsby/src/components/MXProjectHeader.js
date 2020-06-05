@@ -11,7 +11,7 @@ const MXProjectHeader = ({ project, imageSize }) => {
                     "padding": "20px" }} />
         </div>
         <div style={{ "float": "left", "marginRight": "20px" }}>
-            <h3 id={kebabCase(project.title)}>{project.title}</h3>
+            <h3 id={"title-" + kebabCase(project.title)}>{project.title}</h3>
             <a href={project.slug}>{project.title} on matrix.org</a><br />
             <a href={project.repo}>{project.repo}</a><br />
             <a href={"https://matrix.to/#/" + project.room}>{project.room}</a><br />
