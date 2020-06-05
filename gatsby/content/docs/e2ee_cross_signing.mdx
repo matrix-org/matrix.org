@@ -12,7 +12,7 @@ is a real step to be proud of and reason to celebrate!
 
 You might have noticed, however, that some things are still on the rough edge: You have to manually
 verify every other device by comparing the public keys, decryption keys aren't shared between your
-devices, etc. In comparison, riot has cross-signing so that you have to only verify people in a user-
+devices, etc. In comparison, Riot has cross-signing so that you have to only verify people in a user-
 friendly way, and it has things like online key backup. If you want to implement these features into
 your own client (or only some of them), then this guide is for you!
 
@@ -34,9 +34,9 @@ Wow, that's a lot of steps... but don't worry, we'll tackle them one at a time. 
 from perhaps #3) will greatly improve the user experience, so that should be a lot of motivation
 to keep going!
 
-As a general warning, at the point of writing this guide (May 2020) not everything discussed here is
-in the spec yet, and some of the information can only be found scattered across multiple MSCs and
-reading through the source code of [matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk).
+As a general warning, at the point of writing this guide (May, June 2020) not everything discussed
+here is in the spec yet, and some of the information can only be found scattered across multiple MSCs
+and reading through the source code of [matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk).
 
 ## 1. Implement emoji verification (SAS)
 Emoji verification is part of a verification model called SAS, for Short Authentication String. In
@@ -50,9 +50,10 @@ for SAS. However, all of the cryptographically methods are already a part of lib
 use libolm bindings, it will be a breeze to implement!
 
 There are two ways to verify other devices (and, by extension, other people): One way is via to_device
-messages, and the other is via messages in rooms. While in-room verification will be added in this
-guide only later on, it is a good idea to think about how to structure your code to already support
-this from the start.
+messages, and the other is via messages in rooms. Verification via to_device messages is typically
+done to verify *devices*, while verification via messages in a room is typically done to verify
+*people*. While in-room verification will be added in this guide only later on, it is a good idea to
+think about how to structure your code to already support this from the start.
 
 ### A general look at the verification process
 Verification works via two devices sending each other messages, either via to_device messaging or through
@@ -109,6 +110,9 @@ set to the ID of the sending device. So the above payload becomes:
 ```
 
 For simplicity, all payloads mentioned below will be shown without those extra keys.
+
+While the to_device messages are sent encrypted, the room messages don't *have* to be encrypted - it
+depends on if the room they are sent in is encrypted or not.
 
 #### `m.key.verification.request`
 Sending this starts a verification request. It sends all the verification methods you know (in the
@@ -193,12 +197,12 @@ verification process is complete!
 
 In practice, this works as follows: Alice sends Bob a `m.key.verification.start` along with a bunch
 of different parameters she supports (hash method, emoji/number verification, which specific ECDH to
-use, etc.) and Bob will reply with a `m.key.verification.accept`, which will, based on the capabilies
+use, etc.) and Bob will reply with a `m.key.verification.accept`, which will, based on the capabilities
 Alice advertised and based on what Bob knows he can do himself, determine which exact method to use.
 Afterwards, they both generate and send to each other the ephemeral public keys for ECDH, and the
 emojis or numbers are displayed on screen. Once they both verified that they match using some secure
 third-party channel like meeting up in person, they will send each other a `m.key.verification.mac`,
-containing a mac of the keys they should verify. After verifying them, they both send each other a
+containing a MAC of the keys they should verify. After verifying them, they both send each other a
 `m.key.verification.done` and they are verified!
 
 SAS introduces a few more cancellation codes, specific to SAS verification,
@@ -211,7 +215,11 @@ that *includes* the metadata of `transaction_id` and `from_device` keys, omitted
 ```json
 {
   "method": "m.sas.v1",
-  "key_agreement_protocols": ["curve25519-hkdf-sha256", "curve25519"], // while "curve25519" is depricated, it is still wildly used and thus needs to be supported
+  "key_agreement_protocols": ["curve25519-hkdf-sha256", "curve25519"], // while "curve25519" is deprecated, it is still wildly used and thus needs to be supported
+  // Please note that "curve25519" should not be implemented - this guide in pull-request form still covers it
+  // in case someone is using the pull request guide to implement stuff.
+  // You should probably remove "curve25519" completely after approximately September 2020, as then a reasonable
+  // long time passed for other clients to update.
   "hashes": ["sha256"],
   "message_authentication_codes": ["hkdf-hmac-sha256"],
   "short_authentication_string": ["emoji", "decimal"]
@@ -267,14 +275,14 @@ not allow for it to be retrieved again.
 #### Display Emojis / Numbers
 Based on the agreed upon `key_agreement_protocol` and which `short_authentication_string`s are supported,
 the user should now be prompted with the emojis/numbers, so that they can verify that they match. For
-that, you will have to generate bytes to derive the emojis from for comparison. For that, a "sas info"
+that, you will have to generate bytes to derive the emojis from for comparison. For that, a "SAS info"
 is created:
 
 ##### `curve25519-hkdf-sha256`
-The sas info is `MATRIX_KEY_VERIFICATION_SAS|` concatenated with the user ID of whomever started the
-verification plus `|` plus the device ID who started the verification plus `|` plus the public key
+The SAS info is `MATRIX_KEY_VERIFICATION_SAS|` concatenated with the user ID of whomever started the
+verification plus `|` plus the device ID who started the verification plus `|` plus the SAS public key
 who started the verification plus `|` plus the user ID who received the verification plus `|` plus
-the device ID who received the verification plus `|` plus the public key of who received the verification
+the device ID who received the verification plus `|` plus the SAS public key of who received the verification
 plus `|` plus the transaction ID. In code that could look as follows:
 
 ```dart
@@ -288,10 +296,13 @@ var sasInfo = 'MATRIX_KEY_VERIFICATION_SAS|' +
 ```
 
 ##### `curve25519`
+IMPORTANT! This section will be removed before the guide is published. If it is after September 2020,
+**DO NOT IMPLEMENT THIS**.
+
 The sas info is `MATRIX_KEY_VERIFICATION_SAS` concatenated with the user ID who started the verification
 plus the device ID who started the verification plus the user ID who received the verification plus
 the device ID who received the verification plus the transaction id. The difference to `curve25519-hkdf-sha256`
-is the lack of public keys and the lack of a `|` deliminator. In code that could look as follows:
+is the lack of public keys and the lack of a `|` delimiter. In code that could look as follows:
 
 ```dart
 var ourInfo = client.userID + client.deviceID;
@@ -304,8 +315,9 @@ var sasInfo = 'MATRIX_KEY_VERIFICATION_SAS' +
 ```
 
 ##### Generate bytes
-Once you have that sas info, you use it to generate bytes through `sas.generate_bytes(sasInfo, bytes)`.
-For emoji verification, 6 bytes are needed, for number verification 5 are needed.
+Once you have that SAS info, you use it to generate bytes through `sas.generate_bytes(sasInfo, bytes)`.
+For emoji verification, 6 bytes are needed, for number verification 5 are needed. You could, however,
+always generate 6 bytes and, for number verification, only use the first 5.
 
 If both parties said they can display emoji, display those! If one party only supports numbers, then
 display numbers. It might be a good idea to have a button to switch back and forth between emoji and
@@ -323,14 +335,14 @@ chunks of 6 bits each, discarding the last 6 bits. Then use the appropriate tabl
 [in the client-server spec](https://matrix.org/docs/spec/client_server/latest#sas-method-emoji) to
 display the emoji, along with their name.
 
-#### Emojis / Numbers match: Calculating the mac
+#### Emojis / Numbers match: Calculating the MAC
 Once the user says that their emojis / numbers match, that means that they have a secure channel! A
-mac is then calculated out of the device IDs and the public keys you want the other party to verify.
+MAC is then calculated out of the device IDs and the public keys you want the other party to verify.
 For now, only send your own public key using that method. Later on in this guide, you will also send your
 master cross-signing key. For that, a base information is created, which is the concatenated string of
 `MATRIX_KEY_VERIFICATION_MAC`, your own user ID, your own device ID, the other user's ID, the other
-device's ID, and the transaction ID. Note how, unlike SAS, no `|` deliminator is used and the
-order does *not* depend on who started the verification:
+device's ID, and the transaction ID. Note how, unlike SAS, no `|` delimiter is used and the order
+does *not* depend on who started the verification:
 ```dart
 var baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
     client.userID +
@@ -340,7 +352,7 @@ var baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
     request.transactionId;
 ```
 
-Next calculate the mac of your device IDs and the fingerprints that you want to send:
+Next calculate the MAC of your device IDs and the fingerprints that you want to send:
 ```dart
 String _calculateMac(String input, String info) {
   if (messageAuthenticationCode == "hkdf-hmac-sha256") { // this is from the m.key.verification.accept call
@@ -350,7 +362,7 @@ String _calculateMac(String input, String info) {
   }
 }
 
-Map<String, String> mac = {}; // create the map for the macs
+Map<String, String> mac = {}; // create the map for the MACs
 List<String> keyList = []; // the list / array holding all the key Ids to verify
 
 // now add all the keys we want to verify
@@ -366,21 +378,21 @@ var keys = _calculateMac(keyList.join(","), baseInfo + "KEY_IDS");
 ```
 
 #### `m.key.verification.mac`
-Sends the mac of the keys to verify off to the other party.
+Sends the MAC of the keys to verify off to the other party.
 
 ```json
 {
   "mac": { // is the "mac" object calculated above
-    "ed25519:CCKDF": "<calculated mac here>"
+    "ed25519:CCKDF": "<calculated MAC here>"
   },
-  "keys": "<mac for keys here>" // is the calculated "keys" string above
+  "keys": "<MAC for keys here>" // is the calculated "keys" string above
 }
 ```
 
-#### Receiving / verifying the mac
-After receiving the mac and and having the user verify that the emoji match (and thus also sending
-your own mac), you have to verify that the received macs are valid, and only verify the keys if the
-macs are valid. For that, generate the base info from the perspective of the other party; essentially
+#### Receiving / verifying the MAC
+After receiving the MAC and having the user verify that the emoji match (and thus also sending
+your own MAC), you have to verify that the received MACs are valid, and only verify the keys if the
+MACs are valid. For that, generate the base info from the perspective of the other party; essentially
 placing other person's information before your own:
 ```dart
 final baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
@@ -391,7 +403,7 @@ final baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
     request.transactionId;
 ```
 Then generate the key list out of the dictionary keys of the `mac` object received and verify that
-the mac matches up:
+the MAC matches up:
 ```dart
 final keyList = payload["mac"].keys.toList();
 keyList.sort();
@@ -400,10 +412,10 @@ if (payload["keys"] != _calculateMac(keyList.join(","), baseInfo + "KEY_IDS")) {
   return;
 }
 ```
-Then verify the macs of the keys themselves by iterating over the objects, and calculating the macs
+Then verify the MACs of the keys themselves by iterating over the objects, and calculating the MACs
 of the keys again as above. You should have the public key yourself already, as you are just verifying
-if the key matches. If you received the mac of a key you don't know, just ignore it. It is likely to
-be a cross-signing key that you don't know how to handle yet. If only *one* of the macs mismatch,
+if the key matches. If you received the MAC of a key you don't know, just ignore it. It is likely to
+be a cross-signing key that you don't know how to handle yet. If only *one* of the MACs mismatch,
 however, don't verify *any* devices and cancel the entire request.
 
 Finally send a `m.key.verification.done`, and you are done!
@@ -423,14 +435,14 @@ So, the entire SAS verification flow in short is as follows:
    calculates the commitment using the canonical json of the `m.key.verification.start` request, before sending a
    `m.key.verification.accept` back to Alice, along with specific parameters to use for this SAS
    verificaton.
-6. Alice receives the `m.key.verification. accept` and stores the commitment to verify it later. She now creates her own
+6. Alice receives the `m.key.verification.accept` and stores the commitment to verify it later. She now creates her own
    ephemeral key pair with `var sas = olm.SAS();` and sends Bob the public key, via `m.key.verification.key`.
 7. Bob receives the public key from Alice and sends his own public key. Bob's device displays
    the emoji / numbers for verification now.
 8. Alice receives Bob's public key, and can finally verify the commitment she saved earlier. If all
    matches, Alice's device will now display the emoji / numbers for verification.
 9. If the emoji / numbers both match up, they will send each other an `m.key.verification.mac` with
-   the mac'd information of the keys that should be verified.
+   the MAC'd information of the keys that should be verified.
 10. Finally, if all checks out, they send each other a `m.key.verification.done` and
     the verification process is concluded.
 
@@ -442,7 +454,7 @@ So, the entire SAS verification flow in short is as follows:
 4. *Don't* just blindly assume that methods, `message_authentication_code`, etc. are as outlined here.
    More might be added in the future (e.g. to fix a discovered security flaw), as such *always* verify
    which ones you actually support and act accordingly.
-5. Don't forget to `sas.free();` your generated sas object all at the end of verification or when timing
+5. Don't forget to `sas.free();` your generated SAS object all at the end of verification or when timing
    out or when it is being canceled.
 6. Don't forget to calculate *and verify* the commitment!
 7. It might be a good idea to generalize the code handling the verification flow so that you can easily
@@ -510,7 +522,7 @@ The `master_keys` and `user_signing_keys` sections look the same.
 
 ### Changes to key verification
 Now, there is a slight change you need to perform to the key verification, specifically SAS, that we previously
-implemented: In the `m.key.verification.mac` reply, there will be a dictionary of macs to verify certain
+implemented: In the `m.key.verification.mac` reply, there will be a dictionary of MACs to verify certain
 keys. These don't only contain device keys, but also contain cross-signing keys, identified by
 `ed25519:base64+master+public+key`, etc. Be sure to flag those cross-signing keys as verified, too.
 
@@ -534,7 +546,7 @@ to verify the signature that key B added, you will have to do the following:
    and `signature` dictionaries and convert it into canonical json.
 3. Use `olmutil.ed25519_verify(key_b_pub_key, canonical_json, signature);` to verify the signature:
    note that this will throw an error if invalid, and none if valid.
-4. That's it, you have verified the signatrue!
+4. That's it, you have verified the signature!
 
 ### Check if a *user* is verified
 To see if a user is verified, simply check if their master key is verified! You can find the master
@@ -559,7 +571,7 @@ on the server, without the server administrator or anyone else having access to 
 this is optimal for storing the private keys for cross-signing on the server so that all your devices
 can use them later on to generate signatures, and thus verify other people.
 
-Unfortunately there doesn't seem to be any help from libolm for implementing SSSS (yet?) so this will
+Unfortunately there doesn't seem to be any help from libolm for implementing SSSS so this will
 become rather cryptographic-y to implement. You will mainly need to find libraries for the following
 functions:
 
@@ -580,7 +592,7 @@ to be provided by the client. There is, however, metadata information on the key
 For that, there are entries `m.secret_storage.key.<keyId>`, where the keyId is the unique ID of said
 key. In addition, there is an `m.secret_storage.default_key` which denotes the default key to use.
 
-The `m.secret_storage.<keyId>` objects contain a mac and an iv to easily verify if you have the correct
+The `m.secret_storage.<keyId>` objects contain a MAC and an IV to easily verify if you have the correct
 key, and, in case if there is also a password associated with it, some information on how to generate
 the key out of the password. More specific on that later.
 
@@ -588,7 +600,7 @@ Secrets, such as the private keys for cross-signing, can only be strings (not bi
 stored encrypted in the account data of your account. For example, the `m.cross_signing.master` entry
 in account data is the private key of your master cross-signing key. Each secret can be encrypted by
 multiple SSS keys. Inside the `encrypted` object there is a mapping of key ID to the ciphertext, iv
-and mac of the secret. A content could look as following:
+and MAC of the secret. A content could look as following:
 
 ```json
 {
@@ -630,7 +642,7 @@ key (else the other client likely doesn't have cross signing and thus requesting
 much sense).
 
 You request a secret by sending an `m.secret.request`, and you receive it back via an `m.secret.send`
-to_device event. Please keep in mind that these all should be encrypted! To do your part in the sharing
+to_device event. Please keep in mind that `m.secret.send` has to be encrypted! To do your part in the sharing
 of secrets, you should also appropriately reply to a sharing request of another of your verified devices,
 provided you have that secret cached.
 
@@ -658,7 +670,7 @@ This sends / shares a secret with another device
 1. Only ask your own, verified devices for a secret. Be reasonably sure that they might have it (e.g.
    the other device sent you your master key to verify).
 2. When receiving a secret, verify that it was encrypted
-3. When receiving a secret, verify that it was from one of the devices you sent the secret to (possible
+3. When receiving a secret, verify that it was from one of the devices you sent the request to (possible
    via `sender_key` of the encrypted to_device content).
 4. Optionally, validate the secrets you received: In the case of the cross-signing and the online key
    backup secrets, calculate the public key out of the received private key and compare them with the
@@ -675,7 +687,7 @@ This sends / shares a secret with another device
 
 ### Opening keys
 To be able to access stored secrets, or store some yourself, you need to be able to access the SSSS
-keys. This is done either by password or by keyfile, afterwards the `m.secret_storage.key.<keyId>` is
+keys. This is done either by passphrase or by keyfile, afterwards the `m.secret_storage.key.<keyId>` is
 used to verify the validity of the key.
 
 #### Keyfile
@@ -721,7 +733,7 @@ Uint8List decodeRecoveryKey(String recoveryKey) {
 }
 ```
 
-#### Password
+#### Passphrase
 The `passphrase` block of the key information in the account data specifies information on how to
 generate the key off of the password. It an look as follows:
 
@@ -734,21 +746,21 @@ generate the key off of the password. It an look as follows:
 }
 ```
 
-Out of this information we need the iteration, the salt and the number of bits for pbkdf2. Simply use
-these parameters with the hash algorithm sha512 to generate a key:
+Out of this information we need the iteration, the salt and the number of bits for PBKDF2. Simply use
+these parameters with the hash algorithm SHA-512 to generate a key:
 
 ```dart
-Uint8List keyFromPassword(String password, _PasswordInfo info) {
+Uint8List keyFromPassphrase(String passphrase, _PassphraseInfo info) {
   if (info.algorithm != 'm.pbkdf2') {
     throw 'Unknown algorithm';
   }
   var generator = PBKDF2(hashAlgorithm: sha512);
-  return Uint8List.fromList(generator.generateKey(password, info.salt,
+  return Uint8List.fromList(generator.generateKey(passphrase, info.salt,
       info.iterations, info.bits != null ? info.bits / 8 : 32));
 }
 ```
 
-Important: Some PBKDF2 algorithms take as length the length in bytes (like here), while others take
+Important: Some PBKDF2 implementations take as length the length in bytes (like here), while others take
 the length in bits. Divide by 8 appropriately, and only when needed.
 
 #### Validating the generated key
@@ -760,12 +772,12 @@ relevant:
 {
   "algorithm": "m.secret_storage.v1.aes-hmac-sha2", // some old accounts might use a different algorithm, which is not covered in this guide
   "iv": "<base64 encoded iv>",
-  "mac": "<bae64 encoded mac>"
+  "mac": "<bae64 encoded MAC>"
 }
 ```
 
 To verify the key, encrypt 32 bytes of 0 with a blank name and the IV of the key information. Compare
-the resulting macs with each other. Be sure to compare the *unpadded* base64-encoded macs, so strip
+the resulting MACs with each other. Be sure to compare the *unpadded* Base64-encoded MACs, so strip
 all the trailing `=`'s! The encryption itself will be outlined below.
 
 ```dart
@@ -775,7 +787,7 @@ bool checkKey(Uint8List key, AccountData keyData) {
     if ((info['mac'] is String) && (info['iv'] is String)) {
       // ZERO_STR are 32 bytes of zero. We encrypt with our generated key, a blank name and the iv of the event
       var encrypted = encryptAes(ZERO_STR, key, '', info['iv']);
-      // stripping all the trailing = of the macs prior comparing
+      // stripping all the trailing = of the MACs prior comparing
       return info['mac'].replaceAll(RegExp(r'=+$'), '') ==
           encrypted.mac.replaceAll(RegExp(r'=+$'), '');
     } else {
@@ -792,17 +804,19 @@ bool checkKey(Uint8List key, AccountData keyData) {
 Both encrypting and decrypting is done with AES-CTR. Out of the secret key and the name of the secret
 using [HKDF](https://en.wikipedia.org/wiki/HKDF) with SHA-256 both the actual AES key and the key for
 the MAC integrity is generated. IVs are randomly generated 16 bytes, with bit 63 set to 0. In the
-account data events of the secrets, the mac, the IV and the ciphertext are all base64 encoded.
+account data events of the secrets, the MAC, the IV and the ciphertext are all base64 encoded.
 
-Note: Encrypting and decrypting both uses *unpadded* AES-CTR. If your library does not have an option
-for unpadded AES-CTR en/decryption, simply append prior en/decryption 0's to your data to fill up the
-input to a full number of blocks. One block here is typically 32? bytes in size. After en/decrypting,
-strip the extra bytes again. Please note that this method will *not* work with all ciphers (e.g. XTS), it is
-something specific to CTR.
+Note: AES-CTR is a stream cipher, not a block cipher. As such, the input data is *unpadded*. If your
+library (incorrectly) does not properly handle that due to an invalid block, simply append prior
+en/decryption 0's to your data to fill up the input to a full number of blocks. One block here is
+typically 16 bytes in size. After en/decrypting, strip the extra bytes again. Please note that this
+method will *not* work with block ciphers (e.g. XTS), it is something specific to stream ciphers, such
+as CTR.
 
 #### Deriving the keys using HKDF
 As key deriving is needed for both encrypting and decrypting it makes sense to implement this first.
-It is a series of specific sha256 hmac hashes, as following:
+If you have a working HKDF implementation, you can use that. If not, you can implement it yourself.
+HKDF is a series of specific HMAC-SHA256 MACs, as following:
 
 ```dart
 _DerivedKeys deriveKeys(Uint8List key, String name) {
@@ -812,23 +826,23 @@ _DerivedKeys deriveKeys(Uint8List key, String name) {
 
   var b = Uint8List(1); // generate one byte
   b[0] = 1; // and set it to one
-  // use the previously resulted mac as key, and hash the name, with the one-byte added to the end
+  // use the previously resulted MAC as key, and hash the name, with the one-byte added to the end
   // the result is the aes key
   final aesKey = Hmac(sha256, prk.bytes).convert(utf8.encode(name) + b);
 
   b[0] = 2; // set the byte to 2
-  // use the first computed mac as a key, this time hashing the aes key plus the name plus the byte two
-  // the result is the hmac key
+  // use the first computed MAC as a key, this time hashing the aes key plus the name plus the byte two
+  // the result is the HMAC key
   var hmacKey = Hmac(sha256, prk.bytes).convert(aesKey.bytes + utf8.encode(name) + b);
 
-  // this just returns the raw, derived aes and hmac keys in an object
+  // this just returns the raw, derived aes and HMAC keys in an object
   return _DerivedKeys(aesKey: aesKey.bytes, hmacKey: hmacKey.bytes);
 }
 ```
 
 #### Decrypting
-Now, to decrypt, you just create a mac with the hmac key of the raw ciphertext, and compare it with
-the mac stored in the account data secret. If it matches, you decrypt using AES-CTR. The name here
+Now, to decrypt, you just create a MAC with the HMAC key of the raw ciphertext, and compare it with
+the MAC stored in the account data secret. If it matches, you decrypt using AES-CTR. The name here
 is the name of the secret we want to decrypt. The resulting code could look as follows:
 
 ```dart
@@ -839,15 +853,15 @@ String decryptAes(_Encrypted data, Uint8List key, String name) {
   // decode our ciphertext, as it is base64 encoded
   var cipher = base64.decode(data.ciphertext);
 
-  // hmac our cipher with the generated hmac key, base64'ing it afterwards
+  // HMAC our cipher with the generated HMAC key, base64'ing it afterwards
   var hmac = base64.encode(Hmac(sha256, keys.hmacKey).convert(cipher).bytes);
 
-  // compare the resulted mac with with the one stored, unpadding both encoded values
+  // compare the resulted MAC with with the one stored, unpadding both encoded values
   if (hmac.replaceAll(RegExp(r'=+$'), '') != data.mac.replaceAll(RegExp(r'=+$'), '')) {
     throw 'Bad MAC';
   }
 
-  // decrypt the cipher with the generated aesKey, using unpadded AES-CTR and the supplied IV
+  // decrypt the cipher with the generated aesKey, using AES-CTR and the supplied IV
   var decipher = AES(Key(keys.aesKey), mode: AESMode.ctr, padding: null)
       .decrypt(Encrypted(cipher), iv: IV(base64.decode(data.iv)));
 
@@ -858,8 +872,8 @@ String decryptAes(_Encrypted data, Uint8List key, String name) {
 
 #### Encrypting
 Encrypting is rather similar. If no IV is specified, you have to randomly generate 16 bytes and set
-bit 63 to 0, as mentioned above. Again, we derive our aes and hmac keys off of the supplied key and
-the name. Then the ciphertext and the hmac is computed, which is can be then stored later on. The name
+bit 63 to 0, as mentioned above. Again, we derive our AES and HMAC keys off of the supplied key and
+the name. Then the ciphertext and the HMAC is computed, which is can be then stored later on. The name
 here is the name of the secret we want to encrypt. The resulting code could look as follows:
 
 ```dart
@@ -875,7 +889,7 @@ _Encrypted encryptAes(String data, Uint8List key, String name, [String ivStr]) {
   // And don't forget to set bit 63 of the IV to zero
   iv[8] &= 0x7f;
 
-  // derive our aes and hmac keys using the before written function
+  // derive our AES and HMAC keys using the before written function
   var keys = deriveKeys(key, name);
 ciphertext
   // get our plain string (utf8) into bytes
@@ -884,10 +898,10 @@ ciphertext
   // encrypt our plain text, using unpadded AES-CTR, with our aesKey and our (possibly generated) IV
   var cipher = AES(Key(keys.aesKey), mode: AESMode.ctr, padding: null).encrypt(plain, iv: IV(iv)).bytes;
 
-  // calculate the hmac of the resulting cipher, using the hmacKey 
+  // calculate the HMAC of the resulting cipher, using the hmacKey 
   var hmac = Hmac(sha256, keys.hmacKey).convert(cipher);
 
-  // base64 the iv, the cipher and the mac, returning it all
+  // base64 the iv, the cipher and the MAC, returning it all
   return _Encrypted(
     iv: base64.encode(iv),
     ciphertext: base64.encode(cipher),
