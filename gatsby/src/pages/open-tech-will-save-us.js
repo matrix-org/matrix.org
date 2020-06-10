@@ -50,6 +50,7 @@ const Legal = () => {
             <h3>Agenda</h3>
 
             <ul>
+                <li><strong><a href="https://twitter.com/rabble">rabble</a></strong>, who has worked on a whole lot of things, will be discussing <a href="https://planetary.social">Planetary</a>, his in-beta Secure Scuttlebutt (SSB) venture!</li>
                 <li><strong><a href="https://annie.elequin.io/">Annie Elequin</a></strong>, creator
                     of <a href="https://dittochat.org/">Ditto Chat</a> will discuss her
                     work to produce great UX in an Open Source messenger with React Native.</li>
