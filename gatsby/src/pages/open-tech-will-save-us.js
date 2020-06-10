@@ -57,10 +57,6 @@ const Legal = () => {
                 <li>Our very own <strong>Erik Johnson</strong> will give an overview of the recent
                     sharding work being done to improve Synapse performance. Users of the Matrix.org
                     homeserver may have already seen these benefits!</li>
-                <li>
-                    PLUS (you know it!) special speakers who will proclaim, announce or inform on
-                    topics that <em>you</em> will find exciting and insightful!
-                </li>
             </ul>
 
             <h2>Previous Events</h2>
