@@ -61,10 +61,16 @@ messages in a room. A device (Alice) that wants to verify another device (Bob) s
 message along with the methods it supports. Bob
 answers with a `m.key.verification.ready`, also informing Alice of which methods it support. In the
 client UI, Bob would get a new verification request popup after receiving a `m.key.verification.request`
-message. After both have accepted to start, the actual verification begins by having
-the first person (Alice) send a `m.key.verification.start`, which is specific to the verification
-method shown. Some verification process happens, before both send `m.key.verification.done` to
-each other.
+message. After both have accepted to start, either party (Alice and/or Bob) can send a `m.key.verification.start`,
+which is specific to the verification method used. In the case that both Alice and Bob send a
+`m.key.verification.start` and the verification method does *not* match, the verification request is
+canceled. If the verification matches, the `m.key.verification.start` of the lexicographically smaller
+user ID is used. If those also match up (as in, if you are verifying your own device), then the
+lexicographically smaller device ID is used. This ensures that unambiguous which `m.key.verification.start`
+is used. From now on, the device whos `m.key.verification.start` is used is the one who started the
+request (This is important as some things in SAS depend on who started the request). After that, some
+verification process happens, which is specific the specified verification method. If all is successful,
+both send a `m.key.verification.done` to each other.
 
 To make all this work, each verification request has a unique transaction ID, which is an
 opaque string used to identify the specific verification request. In case of room verification, this
@@ -172,7 +178,10 @@ To recap, the *general* verification process of Alice wanting to verify Bob work
 2. Bob receives that request. His device asks him if he wants to verify with Alice. He hits accept.
 3. Bob sends an `m.key.verification.ready` along with the methods he supports.
 4. Alice receives Bob's methods, and based on that and her own, she sends
-an `m.key.verification.start` for a method that they have in common.
+   an `m.key.verification.start` for a method that they have in common.
+  1. Bob also sends an `m.key.verification.start`, which happens to be the same method as alices
+  2. As Alices user ID is lexicographically smaller (`@alice:example.org` vs `@bob:example.org`), the
+     start command sent by Alice is used.
 5. The specific verification method follows here.
 6. When Alice and Bob are fully done with verification, they send each other an `m.key.verification.done`.
 
@@ -251,7 +260,7 @@ Along with that, it also sends a `commitment`, as defined above.
 ```json
 {
   "method": "m.sas.v1",
-  "key_agreement_protocol": "curve25519-hkdf-sha256", // if other party doesn't support this, pick "curve25519" instead
+  "key_agreement_protocol": "curve25519-hkdf-sha256", // if the other party doesn't support this, pick "curve25519" instead
   "hash": "sha256",
   "message_authentication_code": "hkdf-hmac-sha256",
   "short_authentication_string": ["emoji", "decimal"],
@@ -431,6 +440,8 @@ So, the entire SAS verification flow in short is as follows:
    a `m.key.verification.start` for `m.sas.v1`. This will contain a bunch of parameters for how the
    SAS will specifically work. Alice's device notes down the canonical json of the request for later
    commitment verification.
+  1. Bob could also send an `m.key.verification.start` for `m.sas.v1`. As Alice user ID is lexicographically
+     smaller it is discarded, though.
 5. Bob received the `m.key.verification.start`, and generates his own ephemeral keypair with `var sas = olm.SAS();`. He then
    calculates the commitment using the canonical json of the `m.key.verification.start` request, before sending a
    `m.key.verification.accept` back to Alice, along with specific parameters to use for this SAS
@@ -616,11 +627,14 @@ and MAC of the secret. A content could look as following:
 
 ### Caching of secrets
 You have to access some secrets comparatively often. As fetching from the store requires to get a key
-for said secret, that requires user interaction. As such, if a client can store a secret seasonably
-securely client-sided, it is recommended to cache some secrets locally. For cross-signing that would
-be `m.cross_signing.self_signing`, `m.cross_signing.user_signing` and for online key backup that would
-be `m.megolm_backup.v1`. Blindly caching all secrets is a security risk, as some secrets such as
-`m.cross_signing.master` are highly sensitive and shouldn't be stored in plaintext on any disk, ever.
+for said secret, that requires user interaction. As such, if a client can store a secret reasonably
+securely client-sided, the client could cache some secrets locally. As this introduces an attack surface
+of a third party manually reading out the clients cache, but also improves user experience to not have
+to ask the user for their secret store passphrase, each client will have to decide which secrets to
+cache and which not, based on what kind of security it can offer. For cross-signing that needed secrets
+would be `m.cross_signing.self_signing`, `m.cross_signing.user_signing` and for online key backup that
+would be `m.megolm_backup.v1`. Blindly caching all secrets is a security risk, as some secrets such
+as `m.cross_signing.master` are highly sensitive and shouldn't be stored in plaintext on any disk, ever.
 
 You should always keep a whitelist of what secrets to cache, never a blacklist, as in the future some
 new highly-sensitive secret may be added.
@@ -639,7 +653,8 @@ Secrets can only be requested from other devices of your account that you alread
 it via cross-signing or directly. As such, it might be a good idea to request all cacheable secrets
 after successfully completing verification with yourself, as far as that also verifies your own master
 key (else the other client likely doesn't have cross signing and thus requesting secrets doesn't make
-much sense).
+much sense). For that you would also want to add a short delay prior requesting secrets, just to be
+sure that the other device has already finished processing the verification.
 
 You request a secret by sending an `m.secret.request`, and you receive it back via an `m.secret.send`
 to_device event. Please keep in mind that `m.secret.send` has to be encrypted! To do your part in the sharing
