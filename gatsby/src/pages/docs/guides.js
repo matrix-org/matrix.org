@@ -227,6 +227,11 @@ const Guides = ({data}) => {
     </thead>
     <tbody>
       <tr>
+          <td><a href="https://levans.fr/shrink-synapse-database.html">Compressing Synapse database</a></td>
+          <td>Victor Berger / Levans</td>
+          <td>English</td>
+      </tr>
+      <tr>
           <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/metrics-howto.rst">How to monitor Synapse metrics using Prometheus</a></td>
           <td>Synapse Team</td>
           <td>English</td>
