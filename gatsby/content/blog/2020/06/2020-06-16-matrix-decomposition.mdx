@@ -4,7 +4,7 @@ title: 'Matrix Decomposition: an independent academic analysis of Matrix State R
 categories:
   - General
 author: Matthew Hodgson
-image: https://matrix.org/blog/img/decomposition.png
+image: https://matrix.org/blog/img/decomposition.jpg
 ---
 
 Hi all,
@@ -15,7 +15,11 @@ Last week, they released an entirely new paper: [Matrix Decomposition: Analysis 
 
 Now, the new paper is an absolutely fascinating deep dive analysis into [State Resolution v2](https://github.com/matrix-org/matrix-doc/blob/master/proposals/1442-state-resolution.md) - the algorithm at the heart of Matrix which defines how servers merge together their potentially conflicting copies of a given room, such that everyone ends up eventually with a consistent view… even in the face of bad actors. This means that Matrix effectively implements a decentralised access control system - ensuring that users stay banned, and only users with permission can ban, etc.  You can see the slides below, and read the [full paper](https://dl.acm.org/doi/pdf/10.1145/3381991.3395399) here. The video of Florian’s talk from SACMAT should be published shortly.
 
+<br/>
+
 <object data="https://matrix.org/blog/img/SACMAT_2020_Talk_Matrix_Decomposition.pdf" type="application/pdf" width="1024" height="768"></object>
+
+<br/>
 
 To give some context from the Matrix side: designing and implementing State Resolution v2 back in 2018 was a bit of a mission. Our original v1 implementation had some bugs which meant that the result of the merge could unexpectedly favour historical state over the current state (so called ‘state resets’) - thus giving an attacker a way to maliciously revert the state of the room.  In v2 we thought much more carefully about the algorithm, considering state present in one version of the room but not the other as a conflict, separating and applying access control events from regular events, and adding additional ordering of the state in the room by considering events in the context of their authorisation chain (the ‘auth DAG’).  The end result is that we feel confident in v2 State Res, and we haven’t seen any problems with it in the wild since we shipped it in July 2018.
 
