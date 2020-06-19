@@ -369,6 +369,22 @@ Wowow that's a lot this time!
 >
 > Expect more news in the coming weeks, including continued work on matrix: URI proposal and its implementation in Quotient.
 
+### ruma-events' Google Summer of Code project
+
+[devinr528](https://matrix.to/#/@devinr528:matrix.org) sent us this late entry!
+
+> This week in ruma-events' Google Summer of Code project, after trying out the new `Any*Event` enums [`matrix-rust-sdk`](https://github.com/DevinR528/matrix-rust-sdk/pull/2), we found a few big flaws. There was no easy way to go from `StateEvent<AnyStateEventContent>` to `StateEvent<SpecificEventContent>`, the other issue was one could create a `StateEvent` with differing `content` and `prev_content` fields using the `AnyStateEventContent` enum. The [0.22 ruma-events](https://github.com/ruma/ruma/pull/68) will be similar to the existing API; each event type has a corresponding event enum variant.
+
+```rust
+pub enum AnyStateEvent {
+    RoomMember(StateEvent<MemberEventContent>),
+    RoomAliases(StateEvent<RoomAliases>),
+    // ...
+}
+```
+
+> There were a few minor fixes during the week also. Unknown field deserialization is [fixed](https://github.com/ruma/ruma/pull/57), allowing deserialization of a JSON blob that has extra fields which are ignored. [Custom events](https://github.com/ruma/ruma/pull/59) are now present in the `Any*EventContent` enums, although now they have to be moved up to be included in `Any*Event` enums. [Benchmarks](https://github.com/ruma/ruma/pull/52) for deserialization have been added and used to increase performance.
+
 ### 🧙 Polyjuice Client
 
 [Polyjuice Client](https://hex.pm/packages/polyjuice_client) is a Matrix library for Elixir
