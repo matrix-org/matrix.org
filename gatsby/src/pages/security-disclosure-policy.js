@@ -17,7 +17,7 @@ const HallOfFame = () => {
             service: 'Matrix React SDK'
         },
         {
-            date: '2020-05-03'
+            date: '2020-05-03',
             who: 'David Wong',
             profile: 'https://twitter.com/cryptodavidw',
             description: 'A vulnerability in the SAS verification protocol failing to bind the ephemeral public keys. Fixed in <a href="https://github.com/matrix-org/matrix-doc/pull/2630">MSC2630</a>, which lists the fixed client versions.',
