@@ -232,7 +232,7 @@ const Guides = ({data}) => {
           <td>English</td>
       </tr>
       <tr>
-          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/metrics-howto.rst">How to monitor Synapse metrics using Prometheus</a></td>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/metrics-howto.md">How to monitor Synapse metrics using Prometheus</a></td>
           <td>Synapse Team</td>
           <td>English</td>
       </tr>
