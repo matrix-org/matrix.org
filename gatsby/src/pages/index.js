@@ -134,7 +134,7 @@ const Index = ({
                           secure, decentralised, real-time communication,
                           and its Apache licensed <br /><a href="https://github.com/matrix-org">reference implementations</a>.
                         </p>
-                        <p className="mxp mxmatrixdescription">  Maintained by the non-profit <a href="/foundation">Matrix.org Foundation</a>, we aim <br />
+                        <p className="mxp mxmatrixdescription">  Maintained by the non-profit <a href="/foundation/">Matrix.org Foundation</a>, we aim <br />
                           to create an open platform which is as
                           independent, vibrant and evolving
                           as the Web itself... but for communication.
@@ -153,7 +153,7 @@ const Index = ({
                 <div className="mxgrid__item__bg__vert">
                   <p className="mxgrid__item__bg__p">
                     Matrix gives you simple <a href="/docs/spec/" onClick={()=>{window.location='https://matrix.org//docs/spec'; return false;}}>HTTP APIs</a> and <a
-                    href="/docs/projects/sdks">SDKs</a> (iOS, Android, Web) to create chatrooms,
+                    href="/sdks/">SDKs</a> (iOS, Android, Web) to create chatrooms,
                     direct chats and chat bots, complete with end-to-end encryption, file transfer, synchronised
                     conversation history, formatted messages, read receipts and more.
                   </p>
@@ -161,7 +161,7 @@ const Index = ({
                     Conversations are replicated over all the servers participating in them, meaning there are no single
                     point of control or failure.  You can reach any other user in the global Matrix ecosystem of over 9M
                     users, even including those on other networks via <a
-                    href="/bridges">bridges</a>.
+                    href="/bridges/">bridges</a>.
                   </p>
                 </div>
                 <a href="/docs/guides/" className="mxgrid__item__bg__btn w-button">Learn more</a>
@@ -228,7 +228,7 @@ const Index = ({
                     many more.
                   </p>
                 </div>
-              <a href="/bridges" className="mxgrid__item__bg__btn w-button">Learn more</a>
+              <a href="/bridges/" className="mxgrid__item__bg__btn w-button">Learn more</a>
               </div>
             </div>
             <div className="mxgrid__item100">
@@ -436,7 +436,7 @@ const Index = ({
         <div className="mxgrid__item__bg mxgrid__item__bg--clear">
 <img src="images/basic_heart.svg" alt="" className="mxgrid__item__bg__img" />
           <div className="mxgrid__item__bg__vert">
-            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--open_standard">Maintained by the non-profit <a href="/foundation">Matrix.org Foundation</a></h4>
+            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--open_standard">Maintained by the non-profit <a href="/foundation/">Matrix.org Foundation</a></h4>
           </div>
         </div>
       </div>
@@ -478,7 +478,7 @@ const Index = ({
 <img src="images/basic_elaboration_message_happy.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Try Matrix</div>
 </a>
-<a href="/docs/projects/clients-matrix" className="mxblock__explore__item w-inline-block">
+<a href="/clients-matrix/" className="mxblock__explore__item w-inline-block">
 <img src="images/software_layout_header_sideleft.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Clients</div>
 </a>
@@ -486,11 +486,11 @@ const Index = ({
 <img src="images/basic_calculator.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Bots</div>
 </a>
-<a href="/docs/projects/sdks" className="mxblock__explore__item w-inline-block">
+<a href="/sdks/" className="mxblock__explore__item w-inline-block">
 <img src="images/software_layers2.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">SDKs</div>
 </a>
-<a href="/hosting" className="mxblock__explore__item w-inline-block">
+<a href="/hosting/" className="mxblock__explore__item w-inline-block">
 <img src="images/basic_cloud.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Hosting</div>
 </a>
@@ -517,7 +517,7 @@ const Index = ({
 <div className="mxblock__explore__item__p">iOS</div>
 </a>
 </div>
-<a href="/docs/projects/sdks" className="mxgrid__item__bg__btn w-button">View all SDKs</a>
+<a href="/sdks/" className="mxgrid__item__bg__btn w-button">View all SDKs</a>
 </div>
         <div className="mxblock">
           <div className="mxgrid">
@@ -575,9 +575,9 @@ const Index = ({
               <div className="mxgrid__item__bg">
                 <h2 className="mxblock__hx">The Matrix Foundation</h2>
                 <div className="mxgrid__item__bg__vert">
-                  <p className="mxp">Matrix is managed through an open governance process, looked after by <a href="/foundation">The Matrix.org Foundation</a> - a non-profit UK Community Interest Company.<br /></p>
+                  <p className="mxp">Matrix is managed through an open governance process, looked after by <a href="/foundation/">The Matrix.org Foundation</a> - a non-profit UK Community Interest Company.<br /></p>
                   <p className="mxp">It acts as a neutral guardian of the Matrix spec, nurturing and growing Matrix for the benefit of the whole ecosystem.<br /></p>
-                  <p className="mxp">The Guardians are the legal directors of the <a href="/foundation">Foundation</a>, responsible for ensuring that it keeps on mission and neutrally protects the development of Matrix.<br /></p>
+                  <p className="mxp">The Guardians are the legal directors of the <a href="/foundation/">Foundation</a>, responsible for ensuring that it keeps on mission and neutrally protects the development of Matrix.<br /></p>
                 </div>
               </div>
             </div>

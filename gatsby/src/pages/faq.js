@@ -28,7 +28,7 @@ const Faq = ({data}) => {
 <div className="question">
 <h4 id="what-is-matrix%3F"><a className="permalink" href="#what-is-matrix%3F" aria-hidden="true">&#128279;</a> What is Matrix?</h4>
 <p>Matrix is an open standard for interoperable, decentralised, real-time communication over IP. It can be used to power Instant Messaging, VoIP/WebRTC signalling, Internet of Things communication - or anywhere you need a standard HTTP API for publishing and subscribing to data whilst tracking the conversation history.</p>
-<p>Matrix defines the standard, and provides open source reference implementations of Matrix-compatible Servers, <a href="https://matrix.org/docs/projects/sdks">Client SDKs</a> and Application Services to help you create new communication solutions or extend the capabilities and reach of existing ones.</p>
+<p>Matrix defines the standard, and provides open source reference implementations of Matrix-compatible Servers, <a href="https://matrix.org/sdks/">Client SDKs</a> and Application Services to help you create new communication solutions or extend the capabilities and reach of existing ones.</p>
 <div className="definition-list">
 <div className="definition-item definition-client">
 <p><strong>Client</strong></p>
@@ -86,7 +86,7 @@ const Faq = ({data}) => {
 <li>Open source reference implementations of:
 <ul>
 <li>Clients (Web (React), iOS, Android)</li>
-<li><a href="/docs/projects/sdks">Client SDKs</a> (Javascript, Web (React), iOS, Android)</li>
+<li><a href="/sdks/">Client SDKs</a> (Javascript, Web (React), iOS, Android)</li>
 <li>Homeservers (Synapse)</li>
 <li>Application Services (bridges to IRC, Slack, Skype, Lync and more...)</li>
 </ul>
@@ -231,8 +231,8 @@ on Riot.im).</p>
 <ul>
 <li><a href="/docs/guides/installing-synapse">Install synapse</a> and tell us how you get on.</li>
 <li>Critique <a href="/docs/spec/proposals">what has been proposed</a>.</li>
-<li>Write <a href="/docs/projects/clients-matrix">clients</a>.</li>
-<li>Write <a href="/bridges">bridges</a>! Run bridges!</li>
+<li>Write <a href="/clients-matrix/">clients</a>.</li>
+<li>Write <a href="/bridges/">bridges</a>! Run bridges!</li>
 <li>Nose around in the repositories in our
 <a href="https://github.com/matrix-org">GitHub organization</a> and send us some pull requests
 to fix some bugs or add some features!</li>
@@ -309,7 +309,7 @@ full details on how to contribute to the project.  All are welcome!</p>
 </div>
 <div className="question">
 <h4 id="what-bridges-to-other-networks-are-available%3F"><a className="permalink" href="#what-bridges-to-other-networks-are-available%3F" aria-hidden="true">&#128279;</a> What bridges to other networks are available?</h4>
-<p>There are a large number of '<a href="/bridges">bridges</a>' which integrate existing communication networks into
+<p>There are a large number of '<a href="/bridges/">bridges</a>' which integrate existing communication networks into
 Matrix. This list is growing rapidly, and you can find bridges both written by the Matrix core team
 and contributed by the wider community.  The full list can be seen at
 <a href="/blog/try-matrix-now">https://matrix.org/blog/try-matrix-now</a></p>
@@ -404,7 +404,7 @@ for an example of how to write a fully functional Slack bridge in less than 100 
 <div className="question">
 <h4 id="how-do-i-matrix-enable-my-existing-app%3F"><a className="permalink" href="#how-do-i-matrix-enable-my-existing-app%3F" aria-hidden="true">&#128279;</a> How do I Matrix-enable my existing app?</h4>
 <p>If your app doesn't have any communication capability already, you'll want
-to use one of the Matrix <a href="/docs/projects/sdks">client SDK</a>s to add it in.   These come in different levels of sophistication - ranging from a simple HTTP API wrapper through to reusable UI components.</p>
+to use one of the Matrix <a href="/sdks/">client SDK</a>s to add it in.   These come in different levels of sophistication - ranging from a simple HTTP API wrapper through to reusable UI components.</p>
 <ul>
 <li><a href="https://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a></li>
 <li><a href="https://github.com/matrix-org/matrix-react-sdk">matrix-react-sdk</a></li>

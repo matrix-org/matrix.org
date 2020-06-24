@@ -27,7 +27,7 @@ const Guides = ({data}) => {
         <td>Just get started!</td>
         <td>
           <strong><a href="/docs/guides/getting-involved">Getting Involved</a></strong>, which explains various ways of getting started with Matrix<br /><br />or<br /><br />
-          <strong><a href="/faq">the FAQ</a></strong>, where we try to answer all your questions relating to Matrix</td>
+          <strong><a href="/faq/">the FAQ</a></strong>, where we try to answer all your questions relating to Matrix</td>
       </tr>
       <tr>
         <td>Understand the CS API</td>

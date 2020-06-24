@@ -46,7 +46,7 @@ navTypes["develop"] = (
 </div>)
 navTypes["discover"] = (
 <div className="mxnavsection">
-  <a href="/discover" className="mxnavsection__item w-inline-block">
+  <a href="/discover/" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_world.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Discover</div>
   </a>
@@ -74,7 +74,7 @@ navTypes["discover"] = (
     <img src="/images/basic_share.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Bridges</div>
   </a>
-  <a href="/hosting" className="mxnavsection__item w-inline-block">
+  <a href="/hosting/" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_cloud.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Hosting</div>
   </a>
@@ -88,14 +88,14 @@ const Navigation = (navmode) => (
 <img src="/images/matrix-logo.svg" alt="" className="mxnavbar__logo" />
 </a>
         <nav role="navigation" className="mxnavbar__navmenu w-nav-menu">
-          <a href="/discover" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "discover" ? "w--current":"")}>Discover</a>
+          <a href="/discover/" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "discover" ? "w--current":"")}>Discover</a>
           <a href="/docs/develop" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "develop" ? "w--current":"")}>Develop</a>
-          <a href="/foundation" className="mxnavbar__navlink w-nav-link ">Foundation</a>
+          <a href="/foundation/" className="mxnavbar__navlink w-nav-link ">Foundation</a>
           <a href="/blog/posts" className={"mxnavbar__navlink w-nav-link " + (navmode.navmode === "blog" ? "w--current":"")}>Blog</a>
-          <a href="/faq" className="mxnavbar__navlink w-nav-link">FAQs</a>
+          <a href="/faq/" className="mxnavbar__navlink w-nav-link">FAQs</a>
           <a href="https://shop.matrix.org" className={"mxnavbar__navlink w-nav-link "}>Shop</a>
-          <a href="/try-now" className="mxnavbar__navlink mxnavbar__navlink--try w-nav-link">Try Now</a>
-          <a href="/try-now" className="mxnavbar__navlink mxnavbar__navlink--primary w-nav-link">Try Now</a>
+          <a href="/try-now/" className="mxnavbar__navlink mxnavbar__navlink--try w-nav-link">Try Now</a>
+          <a href="/try-now/" className="mxnavbar__navlink mxnavbar__navlink--primary w-nav-link">Try Now</a>
         </nav>
         <div className="mxnavbar__menubutton w-nav-button">
           <div className="mxnavbar__icon w-icon-nav-menu">

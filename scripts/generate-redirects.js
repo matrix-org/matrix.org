@@ -22,7 +22,7 @@ const redirects = [
     {from: "/docs/projects/as/mautrix-telegram", to: "/docs/projects/bridge/mautrix-telegram"},
     {from: "/docs/projects/as/matrix-rocketchat", to: "/docs/projects/bridge/matrix-rocketchat"},
     {from: "/docs/projects/servers", to: "/docs/projects/try-matrix-now"},
-    {from: "/docs/projects/bridges", to: "/bridges"},
+    {from: "/docs/projects/bridges", to: "/bridges/"},
     {from: "/docs/projects/other/synapse_scripts", to: "/docs/projects/other/synapse-scripts"},
     {from: "/docs/projects/as/matrix-appservice-discord", to: "/docs/projects/bridge/matrix-appservice-discord"},
     {from: "/docs/guides/end-to-end-encryption-implementation-guide/starting-a-megolm-session", to: "/docs/guides/end-to-end-encryption-implementation-guide"},
@@ -37,12 +37,12 @@ const redirects = [
     {from: "/docs/projects/client/vector", to: "/docs/projects/client/riot"},
     {from: "/docs/projects/client/Scylla", to: "/docs/projects/client/scylla"},
     {from: "/docs/projects/as/mautrix-facebook", to: "/docs/projects/bridge/mautrix-facebook"},
-    {from: "/docs/projects/clients-matrix", to: "/clients"},
+    {from: "/docs/projects/clients-matrix", to: "/clients/"},
     {from: "/docs/spec-redirect", to: "/docs/spec"},
     {from: "/code", to: "/code"},
     {from: "/docs/spec-api-playground-redirect", to: "/docs/api/client-server/"},
     {from: "/blog/feed-redirect", to: "/blog/feed"},
-    {from: "/docs/projects/sdks", to: "/sdks"},
+    {from: "/docs/projects/sdks", to: "/sdks/"},
     {from: "/docs/projects/bots", to: "/bots"},
 ];
 
