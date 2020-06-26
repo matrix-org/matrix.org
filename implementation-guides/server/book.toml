@@ -6,7 +6,7 @@ src = "src"
 title = "Matrix HomeServer Implementation Guide"
 
 [output.html]
-theme = "src/theme"
+theme = "../theme"
 git-repository-url = "https://github.com/matrix-org/matrix.org/tree/erikj/imple_guide/implementation-guides/server"
 
 [preprocessor.links]

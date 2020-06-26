@@ -14,3 +14,6 @@ The source of the books are in `src/` with each page being a markdown file. To
 create a new page edit `SUMMARY.md` pointing to the new markdown file (you can
 also run `mdbook build` after adding new pages to `SUMMARY.md` and the files
 will be created for you).
+
+The folder `theme/` includes the templates and resources used to build the
+books.
