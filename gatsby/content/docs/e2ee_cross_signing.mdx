@@ -27,8 +27,9 @@ Here is a general road map of what is needed in order implement all of the follo
 3. SSSS (Secure Secret Storage and Sharing)
 4. Signing of other keys
 5. In-room verification (Verification through messages in a room)
-6. Bootstrapping SSSS and cross-signing
-7. Online key backup
+6. Miscellaneous cross-signing things
+7. Bootstrapping SSSS and cross-signing
+8. Online key backup
 
 Wow, that's a lot of steps... but don't worry, we'll tackle them one at a time. Each step (apart
 from perhaps #3) will greatly improve the user experience, so that should be a lot of motivation
@@ -949,3 +950,256 @@ the password.
  - When fetching a secret from the store that is cacheable - cache it!
  - Only share secrets with own devices you trust.
  - Only request secrets from own devices you trust.
+
+## 4. Signing of other keys
+At this point you already display the verification status of others based on cross signing and are
+able to access your own private keys - either cached in some way, or you decrypt them from SSSS, or
+you request them from other devices via SSSS as outlined above.
+
+This means that now you have the ability to sign other peoples keys! This is an important step - that
+way when you verify other people, you can also sign their master key, so that other of your own devices
+will see all of their other devices verified.
+
+### Which keys to sign
+This step is rather simple: When successfully verifying either another of your own devices or another
+person via interactive verification, you take all the devices you verify and (potentially) all the
+devices you receive, be it device keys or cross signing keys, and sign them with one of your own keys:
+
+1. If you receive your own master key, you sign it with your own device key
+2. If you receive a device key of your own account, you sign it with your own self-signing key
+3. If you receive another persons master key, you sign it with your own user-signing key
+
+All other keys received, that is device keys of other people, are *not* signed.
+
+### How to sign a key
+To sign a key, you take the device key object, or the cross signing key object, remove the `unsigned`
+and `signature` keys and sign the canonical json encoded object. Afterwards you upload them to the
+server.
+
+For example, you want to sign the following device key:
+```json
+{
+  "user_id": "@alice:example.com",
+  "device_id": "JLAFKJWSCS",
+  "algorithms": [
+    "m.olm.v1.curve25519-aes-sha2",
+    "m.megolm.v1.aes-sha2"
+  ],
+  "keys": {
+    "curve25519:JLAFKJWSCS":
+        "3C5BFWi2Y8MaVvjM8M22DBmh24PmgR0nPvJOIArzgyI",
+    "ed25519:JLAFKJWSCS":
+        "lEuiRJBit0IG6nUf5pUzWTUEsRVVe/HJkoKuEww9ULI"
+  },
+  "signatures": {
+    "@alice:example.com": {
+      "ed25519:JLAFKJWSCS":
+          "dSO80A01XiigH3uBiDVx/EjzaoycHcjq9lfQX0uWsqxl2giMIiSPR8a4d291W1ihKJL/a+myXS367WT6NAIcBA"
+    }
+  },
+  "unsigned": {"device_display_name": "Alices mobile phone"}
+}
+```
+
+Then you strip the `signatures` and `unsigned` keys:
+```json
+{
+  "user_id": "@alice:example.com",
+  "device_id": "JLAFKJWSCS",
+  "algorithms": [
+    "m.olm.v1.curve25519-aes-sha2",
+    "m.megolm.v1.aes-sha2"
+  ],
+  "keys": {
+    "curve25519:JLAFKJWSCS":
+        "3C5BFWi2Y8MaVvjM8M22DBmh24PmgR0nPvJOIArzgyI",
+    "ed25519:JLAFKJWSCS":
+        "lEuiRJBit0IG6nUf5pUzWTUEsRVVe/HJkoKuEww9ULI"
+  }
+}
+```
+
+And then the canonical json you need to sign is:
+```
+{"algorithms":["m.olm.v1.curve25519-aes-sha2","m.megolm.v1.aes-sha2"],"device_id":"JLAFKJWSCS","keys":{"curve25519:JLAFKJWSCS":"3C5BFWi2Y8MaVvjM8M22DBmh24PmgR0nPvJOIArzgyI","ed25519:JLAFKJWSCS":"lEuiRJBit0IG6nUf5pUzWTUEsRVVe/HJkoKuEww9ULI"},"user_id":"@alice:example.com"}
+```
+
+You can easily sign a key with libolm:
+```dart
+String sign(String canonicalJson, Uint8List key) {
+  final keyObj = olm.PkSigning();
+  try {
+    keyObj.init_with_seed(key);
+    return keyObj.sign(canonicalJson);
+  } finally {
+    keyObj.free();
+  }
+}
+```
+
+Keep in mind that the keys coming from SSSS are base64 encoded and olm needs a raw byte array, so you
+will have to base64 decode that!
+
+### Uploading signatures
+After creating the signatures, you need to upload them! For that you bundle all the key objects with
+only your *new* signatures together and POST them to `/_matrix/client/unstable/keys/signatures/upload`.
+The payload is bundled by user ID, mapped to device ID or cross signing public key, which then contains
+the key objects with the new signatures. An example payload could thus look as following (taken from
+the spec):
+
+```
+POST /_matrix/client/unstable/keys/signatures/upload HTTP/1.1
+Content-Type: application/json
+
+{
+  "@alice:example.com": {
+    "HIJKLMN": {
+      "user_id": "@alice:example.com",
+      "device_id": "HIJKLMN",
+      "algorithms": [
+        "m.olm.curve25519-aes-sha256",
+        "m.megolm.v1.aes-sha"
+      ],
+      "keys": {
+        "curve25519:HIJKLMN": "base64+curve25519+key",
+        "ed25519:HIJKLMN": "base64+ed25519+key"
+      },
+      "signatures": {
+        "@alice:example.com": {
+          "ed25519:base64+self+signing+public+key": "base64+signature+of+HIJKLMN"
+        }
+      }
+    },
+    "base64+master+public+key": {
+      "user_id": "@alice:example.com",
+      "usage": [
+        "master"
+      ],
+      "keys": {
+        "ed25519:base64+master+public+key": "base64+master+public+key"
+      },
+      "signatures": {
+        "@alice:example.com": {
+          "ed25519:HIJKLMN": "base64+signature+of+master+key"
+        }
+      }
+    }
+  },
+  "@bob:example.com": {
+    "bobs+base64+master+public+key": {
+      "user_id": "@bob:example.com",
+      "keys": {
+        "ed25519:bobs+base64+master+public+key": "bobs+base64+master+public+key"
+      },
+      "usage": [
+        "master"
+      ],
+      "signatures": {
+        "@alice:example.com": {
+          "ed25519:base64+user+signing+public+key": "base64+signature+of+bobs+master+key"
+        }
+      }
+    }
+  }
+}
+```
+
+### Things to look out for
+1. *Only* sign the keys mentioned above, do *not* sign any other keys.
+2. Use the correct key to sign the correct key type - self_signing for your own things, user_signing
+   for other users and your own device key for your own master key.
+3. If you don't have the self_signing or user_signing keys cached, you might have to propmpt the user
+   to open their SSSS with their recovery passphrase / key.
+4. If you are doing the first verification with an own device you don't have any cross-signing keys
+   yet. Signing the other persons device key doesn't make much sense, as it is likely already signed.
+   Instead, only sign your own master key in that specific case. In a following section will be discussed
+   how you can detect wether you should do this behaviour - for now you could only sign other own
+   device keys if you have your own self_signing key cached.
+5. Don't forget to request SSSS secrets over share requests when verifying an own device and you don't
+   have them yet.
+
+## 5. In-room verification
+The idea of cross-signing is that users verify other users. So far we only talked about devices
+verifying devices, though. For that, in-room verification is introduced. In-room verification is
+typically used when verifying *other* users. To not confused the user it should be considered to
+hide device verification for other users all-together, and to only show device verification for
+verification with yourself.
+
+### Starting in-room verification
+In-room verification happens in a direct message room between two users. So, when Alice wants to verify
+Bob she has to find an existing direct message room she has with Bob, and, if there is none, create
+it and invite him.
+
+Afterwards, as with the to_device verification flow, messages are sent in the room specific to the
+verification flow chosen. There are, however, a few changes.
+
+### Sending a verification request
+Instead of sending an event with type `m.verification.key.request`, a normal message event with the
+msgtype of `m.verification.key.request` is sent. As normal room messages already have an `origin_server_ts`
+the `timestamp` field is omitted. As transaction ID the event of this message sent is used. Additionally,
+a `from_device` and `to` field are added. A `body` is present as fallback for clients that do not
+support in-room verification.
+
+As the content of such an `m.room.message` for Alice to start an in-room verification request with Bob
+could look as follows:
+```json
+{
+  "methods": [
+    "m.sas.v1"
+  ],
+  "from_device": "MPLIJIXIIF", // The device ID of Alice device starting the request
+  "msgtype": "m.key.verification.request",
+  "to": "@bob:example.org", // Bobs mxid
+  "body": "Attempting verification request. (m.key.verification.request) Apparently your client doesn't support this"
+}
+```
+
+### Sending other payloads
+Next messages are sent with the type being the type of that specific step, e.g. instead of sending
+a message as `m.room.message` as above, you send it as `m.key.verification.accept`. The `from_device`
+property is still added as usual.
+
+As transaction ID the event ID of the original request is used. That, however, is added in an `m.relates_to`
+block as follows:
+```json
+{
+  // other content of that specific type
+  "from_device": "DEVICE_ID",
+  "m.relates_to": {
+    "rel_type": "m.reference",
+    "event_id": "$event_id_of_the_original_request"
+  }
+}
+```
+
+### Things to look out for
+1. Don't allow to directly verify other users devices
+2. Use in-room verification to verify other users, not specific devices
+3. Don't use in-room verification for self-verification, use device verification for that
+4. If Alice starts an in-room verification with Bob and Bob has two devices, only one of the devices,
+   probably the one Bob uses to accept the verification, should send verification messages.
+
+## 6. Miscellaneous cross-signing things
+Apart from bootstrapping cross-signing there are a few miscellaneous things that you can optionally
+implement to smoothen out the cross-signing experience for the user, things that don't justify their
+own section. As such, they are listed here.
+
+### Detect if you are verified for others
+Your client might want to introduce a popup or something saying "This session isn't verified for others.
+Please verify it with one of your devices.". For that, you need to detect if that is the case.
+
+To do so, you have to check the valid signature of your own device to your own master key. It should
+look as following, where `->` denotes "is signed by":
+`Own device -> Own self-signing key -> Own master key`
+
+You could re-use the same recursive method to determine if a device is verified as previously imlemented,
+but only cut off if it reaches at your own verified master key, not at any verified key.
+
+### Migration of previous verifications
+Let's say Alice and Bob previously met, before cross-signing and had manually verified their devices
+specifically. And now, both have enabled cross signing. Alice could detect Bobs master key as verified
+with the following signature chain, where `->` denotes "is signed by":
+`Bobs master key -> Bobs device key, previously verified`
+
+Alice could then, based on this trust establishment, sign bobs master key with her own user-signing
+key, thus bootstrapping a cross-signing relationship from Alice to Bob.
