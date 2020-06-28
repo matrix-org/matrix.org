@@ -117,8 +117,10 @@ set to the ID of the sending device. So the above payload becomes:
 
 For simplicity, all payloads mentioned below will be shown without those extra keys.
 
-While the to_device messages are sent encrypted, the room messages don't *have* to be encrypted - it
-depends on if the room they are sent in is encrypted or not.
+The to_devices sent don't have to be encrypted, as the entire idea of verification requests is that
+they could be out in the open. The client may, however, chose to do so anyways, if e.g. their function
+for sending to_device messages defaults to sending them encrypted. Whether room messages are encrypted
+typically depends on whether the room they are sent in is encrypted or not.
 
 #### `m.key.verification.request`
 Sending this starts a verification request. It sends all the verification methods you know (in the
@@ -631,7 +633,7 @@ for said secret, that requires user interaction. As such, if a client can store 
 securely client-sided, the client could cache some secrets locally. As this introduces an attack surface
 of a third party manually reading out the clients cache, but also improves user experience to not have
 to ask the user for their secret store passphrase, each client will have to decide which secrets to
-cache and which not, based on what kind of security it can offer. For cross-signing that needed secrets
+cache and which not, based on what kind of security it can offer. For cross-signing the needed secrets
 would be `m.cross_signing.self_signing`, `m.cross_signing.user_signing` and for online key backup that
 would be `m.megolm_backup.v1`. Blindly caching all secrets is a security risk, as some secrets such
 as `m.cross_signing.master` are highly sensitive and shouldn't be stored in plaintext on any disk, ever.
@@ -775,7 +777,7 @@ Uint8List keyFromPassphrase(String passphrase, _PassphraseInfo info) {
 }
 ```
 
-Important: Some PBKDF2 implementations take as length the length in bytes (like here), while others take
+Important: Some PBKDF2 implementations take the length in bytes (like here), while others take
 the length in bits. Divide by 8 appropriately, and only when needed.
 
 #### Validating the generated key
@@ -835,7 +837,7 @@ HKDF is a series of specific HMAC-SHA256 MACs, as following:
 
 ```dart
 _DerivedKeys deriveKeys(Uint8List key, String name) {
-  var zerosalt = Uint8List(8); // generate 8 bytes of zero
+  var zerosalt = Uint8List(32); // generate 32 bytes of zero
   // hash the key with the zeros as secret
   var prk = Hmac(sha256, zerosalt).convert(key);
 
@@ -906,7 +908,7 @@ _Encrypted encryptAes(String data, Uint8List key, String name, [String ivStr]) {
 
   // derive our AES and HMAC keys using the before written function
   var keys = deriveKeys(key, name);
-ciphertext
+
   // get our plain string (utf8) into bytes
   var plain = Uint8List.fromList(utf8.encode(data));
 
