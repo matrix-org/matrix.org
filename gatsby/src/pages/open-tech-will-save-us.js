@@ -19,7 +19,7 @@ if (SHOW_LIVE_STREAM) {
         <script src="/js/livestream.js"></script>
     </div>;
 } else {
-    liveStream = <img src="/images/Open-Tech-3-Light@2x.png" alt='Open Tech Will Save Us'/>;
+    liveStream = <img src="/images/Open-Tech-2-Dark@2x.png" alt='Open Tech Will Save Us'/>;
 }
 
 const Legal = () => {
@@ -27,12 +27,14 @@ const Legal = () => {
     titleOverride={title}>
             <Helmet title={title}>
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta property="twitter:image" content="https://matrix.org/images/Open-Tech-3-Light-Social@2x.png" />
+                <meta property="twitter:image" content="https://matrix.org/images/Open-Tech-2-Dark@2x.png" />
             </Helmet>
         <div>
             {liveStream}
 
             <h1>Open Tech Will Save Us</h1>
+
+            <h2>Next Event: Wednesday 8th July 2020 at 5PM UTC</h2>
 
             <p><strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">Join the live chat now! #open-tech-meetup:matrix.org</a></strong></p>
 
@@ -41,13 +43,17 @@ const Legal = () => {
             <p>We discuss issues relating to technology, especially the importance of Open, Interoperable standards, and how they can enable decentralised tech to keep our data private while still enabling communication.</p>
 
             <h2>Next Event</h2>
-            <p>Following two great events, we're looking forward to presenting the third!</p>
-            <p>The next event will be held on <b>Wednesday 10th June 2020</b> at <b>5PM UTC</b> (6PM UK time).
+            <p>Following three great events, we're looking forward to presenting the fourth!</p>
+            <p>The next event will be held on <b>Wednesday 8th July 2020</b> at <b>5PM UTC</b> (6PM UK time).
             Agenda and more details to follow, <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
                 join the live chat</a></strong> or check back here for updates.
             </p>
 
-            <h3>Agenda</h3>
+            <h2>Previous Events</h2>
+
+            <h3>10th June 2020</h3>
+
+            <h4>Agenda</h4>
 
             <ul>
                 <li><strong><a href="https://twitter.com/rabble">rabble</a></strong>, who has worked on a whole lot of things, will be discussing <a href="https://planetary.social">Planetary</a>, his in-beta Secure Scuttlebutt (SSB) venture!</li>
@@ -58,8 +64,6 @@ const Legal = () => {
                     sharding work being done to improve Synapse performance. Users of the Matrix.org
                     homeserver may have already seen these benefits!</li>
             </ul>
-
-            <h2>Previous Events</h2>
 
             <h3>13th May 2020</h3>
 
