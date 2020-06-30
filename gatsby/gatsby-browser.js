@@ -6,7 +6,8 @@ import { wrapRootElement as wrap } from './wrap-root-element'
 export const wrapRootElement = wrap
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
-    setTimeout("openN()", 1000);
+    clearTimeout(window.notyfTimeout);
+    window.notyfTimeout =  setTimeout("openN()", 15 * 1000);
 
     var links = document.getElementsByTagName('a');
     for (var i = 0; i < links.length; i++) {

@@ -1,7 +1,7 @@
 var notyf;
 
-function rating(rating) {
-    console.log(rating);
+function rating(e) {
+    rating = e.target.getAttribute("data-score");
     _paq.push(['trackEvent', 'Rating', 'Rating', window.location.pathname, rating]);
     notyf.dismissAll();
     return;
@@ -12,7 +12,7 @@ function openN() {
         types: [{
                 dismissible: true,
                 ripple: false,
-                duration: 20 * 1000,
+                duration: 10 * 1000,
                 type: 'info',
                 background: 'black',
                 icon: false
@@ -22,11 +22,15 @@ function openN() {
         type: 'info',
         message: `Feedback?<br />Click to rate this page
         <div class="rating">
-        <span onclick="rating(5);notyf.dismissAll();">☆</span>
-        <span onclick="rating(4)">☆</span>
-        <span onclick="rating(3)">☆</span>
-        <span onclick="rating(2)">☆</span>
-        <span onclick="rating(1)">☆</span>
+        <span class="ratingStar" data-score="5">☆</span>
+        <span class="ratingStar" data-score="4">☆</span>
+        <span class="ratingStar" data-score="3">☆</span>
+        <span class="ratingStar" data-score="2">☆</span>
+        <span class="ratingStar" data-score="1">☆</span>
         </div>`
       });
+      for (d of document.getElementsByClassName("ratingStar")) {
+        d.addEventListener('click', rating);
+      }
+
 }
