@@ -18,7 +18,7 @@ export default function HTML(props) {
         <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="/css/webflow.css" />
         <link rel="stylesheet" type="text/css" href="/css/matrix-org.webflow.css" />
-        <link rel="stylesheet" type="text/css" href="/css/webflow-overrides.css?1" />
+        <link rel="stylesheet" type="text/css" href="/css/webflow-overrides.css" />
         <link rel="stylesheet" type="text/css" href="/css/prism.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"></link>
 
@@ -36,7 +36,7 @@ export default function HTML(props) {
         />
         {props.postBodyComponents}
         <script src="/js/webflow-loader.js" type="text/javascript"></script>
-        <script src="/js/rating.js" type="text/javascript"></script>
+        <script src="/js/rating.js?no-cache" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
       </body>
     </html>
