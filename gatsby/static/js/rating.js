@@ -1,8 +1,8 @@
 var notyf;
 
 function rating(e) {
-    rating = e.target.getAttribute("data-score");
-    _paq.push(['trackEvent', 'Rating', 'Rating', window.location.pathname, rating]);
+    var score = e.target.getAttribute("data-score");
+    _paq.push(['trackEvent', 'Rating', 'Rating', window.location.pathname, score]);
     notyf.dismissAll();
     return;
   }
