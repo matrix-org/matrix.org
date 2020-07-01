@@ -18,6 +18,7 @@ function openN() {
                 icon: false
             }]
     });
+    // nb the star ratings are reversed by CSS
     notyf.open({
         type: 'info',
         message: `Feedback?<br />Click to rate this page
