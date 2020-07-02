@@ -13,7 +13,7 @@ const HallOfFame = () => {
             date: '2020-07-02',
             who: 'Quentin Gliech',
             profile: 'https://sandhose.fr',
-            description: 'A clickjacking vulnerability in the single-sign-on flow Synapse. Fixed in <a href="https://github.com/matrix-org/synapse/releases/tag/v1.15.2">Synapse 1.15.2</a>.',
+            description: 'A clickjacking vulnerability in the single-sign-on flow in Synapse. Fixed in <a href="https://github.com/matrix-org/synapse/releases/tag/v1.15.2">Synapse 1.15.2</a>.',
             service: 'Synapse'
         },
         {
