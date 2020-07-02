@@ -10,6 +10,13 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date: '2020-07-02',
+            who: 'Quentin Gliech',
+            profile: 'https://sandhose.fr',
+            description: 'A clickjacking vulnerability in the single-sign-on flow Synapse. Fixed in <a href="https://github.com/matrix-org/synapse/releases/tag/v1.15.2">Synapse 1.15.2</a>.',
+            service: 'Synapse'
+        },
+        {
             date: '2020-05-10',
             who: 'Quentin Gliech',
             profile: 'https://sandhose.fr',
