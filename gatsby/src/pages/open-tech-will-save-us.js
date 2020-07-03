@@ -48,16 +48,18 @@ const Legal = () => {
                 Join the live chat</a></strong> or check back here for updates.
             </p>
 
+            <img src="/images/otwsu4-heads.jpg" alt='Open Tech Will Save Us 4 Guest Headshots'/>
+
             <h3>Agenda</h3>
             <ul>
                 <li>
                     <strong>Jay Gruber</strong> (<a href="https://twitter.com/arcalinea">@arcalinea</a>, <a href="https://matrix.to/#/@arcalinea:matrix.org">@arcalinea:matrix.org</a>), creator of <a href="https://happening.net/">Happening</a> and <a href="https://medium.com/decentralized-web/decentralized-social-networks-e5a7a2603f53">all-around decentralisation fan</a> will summarize an overview of the decentralized social media ecosystem that they're working on.
                 </li>
                 <li>
-                    <strong>Burak Nehbit</strong> (<a href="https://twitter.com/nehbit">@nehbit</a>, <a href="https://matrix.to/#/@burak:tomesh.net">@burak:tomesh.net</a>) will give a deep dive into his work on <a href="https://getaether.net/">Aether P2P</a>.
+                    <strong>Ania M. Piotrowska</strong> (<a href="https://twitter.com/aniampiotrowska">@aniampiotrowska</a>), known for her work on <a href="https://nymtech.net/">Nym</a>, Loopix, and at UCL will present "Building private future for the internet with the Nym mixnet".
                 </li>
                 <li>
-                    +1 TBC
+                    <strong>Burak Nehbit</strong> (<a href="https://twitter.com/nehbit">@nehbit</a>, <a href="https://matrix.to/#/@burak:tomesh.net">@burak:tomesh.net</a>) will give a deep dive into his work on <a href="https://getaether.net/">Aether P2P</a>.
                 </li>
             </ul>
 
