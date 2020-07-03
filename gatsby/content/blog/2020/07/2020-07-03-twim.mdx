@@ -46,6 +46,8 @@ The next [Open Tech Will Save Us](https://matrix.org/open-tech-will-save-us/) ev
 
 ## Dept of GSoC 🎓️
 
+This week was the first evaluations, we'll have results to share next week.
+
 ### matrix-ircd (GSOC)
 
 [karlik](https://matrix.to/#/@karlik:matrix.org) offered:
@@ -56,6 +58,15 @@ The next [Open Tech Will Save Us](https://matrix.org/open-tech-will-save-us/) ev
 >
 > * Update all tests to use async / await
 > * Begin merging updated `futures` to `async_await` branch
+
+### go-neb
+
+From [nikofil](https://matrix.to/#/@nikofil:matrix.org):
+
+> - e2ee merged and some bugs fixed (pr #324)! You should be able to use neb normally in an encrypted room now, if that's not the case please let us know!
+> - Added integration tests for both encrypted and unencrypted rooms to neb in order to catch things that might break some core functionality in a subtle way (issue #326)
+> - Similarly, created a PR for mautrix-go for testing the Olm and Megolm session establishment and message encryption / decryption (pr #12)
+> - Next up, working on a service for neb for testing the crypto functionality of other clients: neb will send messages to a room, rotate keys etc. and your client is supposed to respond!
 
 ## Dept of Servers 🏢
 
