@@ -44,10 +44,22 @@ const Legal = () => {
 
             <h2>Next Event</h2>
             <p>Following three great events, we're looking forward to presenting the fourth!</p>
-            <p>The next event will be held on <b>Wednesday 8th July 2020</b> at <b>5PM UTC</b> (6PM UK time).
-            Agenda and more details to follow, <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
-                join the live chat</a></strong> or check back here for updates.
+            <p>The next event will be held on <b>Wednesday 8th July 2020</b> at <b>5PM UTC</b> (6PM UK time). <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
+                Join the live chat</a></strong> or check back here for updates.
             </p>
+
+            <h3>Agenda</h3>
+            <ul>
+                <li>
+                    <strong>Jay Gruber</strong> (<a href="https://twitter.com/arcalinea">@arcalinea</a>, <a href="https://matrix.to/#/@arcalinea:matrix.org">@arcalinea:matrix.org</a>), creator of <a href="https://happening.net/">Happening</a> and <a href="https://medium.com/decentralized-web/decentralized-social-networks-e5a7a2603f53">all-around decentralisation fan</a> will summarize an overview of the decentralized social media ecosystem that they're working on.
+                </li>
+                <li>
+                    <strong>Burak Nehbit</strong> (<a href="https://twitter.com/nehbit">@nehbit</a>, <a href="https://matrix.to/#/@burak:tomesh.net">@burak:tomesh.net</a>) will give a deep dive into his work on <a href="https://getaether.net/">Aether P2P</a>.
+                </li>
+                <li>
+                    +1 TBC
+                </li>
+            </ul>
 
             <h2>Previous Events</h2>
 
