@@ -1203,3 +1203,17 @@ with the following signature chain, where `->` denotes "is signed by":
 
 Alice could then, based on this trust establishment, sign bobs master key with her own user-signing
 key, thus bootstrapping a cross-signing relationship from Alice to Bob.
+
+### Self-Verification
+Let's say you log into a new device but don't have any other device to verify with around. Don't worry,
+this is where self-verification comes in: You prompt the user their SSSS passphrase / recovery key
+and use that to verify and sign yourself:
+
+1. Ask for SSSS credentials
+2. Decrypt your master key (`m.cross_signing.master`), generate the public key out of it and compare
+   it with your own advertised master ed25519 key. You can do this with libolms `olm.PkSigning()`,
+   property `init_with_seed`. Keep in mind that you have to base64-decode the secret of SSSS!
+3. Decrypt your own self-signing key, and sign your own device key with it.
+4. Sign your own master key with your own device key.
+5. Upload the signatures.
+6. Fetch all entries from SSSS that you want to cache and cache them.
