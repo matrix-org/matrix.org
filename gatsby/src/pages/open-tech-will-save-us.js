@@ -9,7 +9,7 @@ import config from '../../config'
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
-const SHOW_LIVE_STREAM = false;
+const SHOW_LIVE_STREAM = true;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
@@ -32,6 +32,8 @@ const Legal = () => {
         <div>
             {liveStream}
 
+            <a href="https://www.youtube.com/watch?v=_2DQ_iYZi5U" target="_blank">YouTube Stream here</a>
+
             <h1>Open Tech Will Save Us</h1>
 
             <h2>Next Event: Wednesday 8th July 2020 at 5PM UTC</h2>
@@ -47,6 +49,8 @@ const Legal = () => {
             <p>The next event will be held on <b>Wednesday 8th July 2020</b> at <b>5PM UTC</b> (6PM UK time). <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
                 Join the live chat</a></strong> or check back here for updates.
             </p>
+            
+            <a href="https://www.youtube.com/watch?v=_2DQ_iYZi5U" target="_blank">YouTube Stream here</a>
 
             <img src="/images/otwsu4-heads.jpg" alt='Open Tech Will Save Us 4 Guest Headshots'/>
 
