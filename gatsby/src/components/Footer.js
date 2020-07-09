@@ -58,7 +58,7 @@ const Footer = () => (
           <img src="/images/twitter.svg" alt="" className="mxfooter__icon" />
         </a>
       </div>
-      <p className="mxfooter__text">© 2019 The Matrix.org Foundation C.I.C.</p>
+      <p className="mxfooter__text">© 2020 The Matrix.org Foundation C.I.C.</p>
     </div>
   </div>
 
