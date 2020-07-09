@@ -9,7 +9,7 @@ import config from '../../config'
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
-const SHOW_LIVE_STREAM = true;
+const SHOW_LIVE_STREAM = false;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
@@ -32,11 +32,9 @@ const Legal = () => {
         <div>
             {liveStream}
 
-            <a href="https://www.youtube.com/watch?v=_2DQ_iYZi5U" target="_blank">YouTube Stream here</a>
-
             <h1>Open Tech Will Save Us</h1>
 
-            <h2>Next Event: Wednesday 8th July 2020 at 5PM UTC</h2>
+            <h2>Next Event: Wednesday 12th August 2020 at 5PM UTC</h2>
 
             <p><strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">Join the live chat now! #open-tech-meetup:matrix.org</a></strong></p>
 
@@ -46,15 +44,14 @@ const Legal = () => {
 
             <h2>Next Event</h2>
             <p>Following three great events, we're looking forward to presenting the fourth!</p>
-            <p>The next event will be held on <b>Wednesday 8th July 2020</b> at <b>5PM UTC</b> (6PM UK time). <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
+            <p>The next event will be held on <b>Wednesday 12th August 2020</b> at <b>5PM UTC</b> (6PM UK time). <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
                 Join the live chat</a></strong> or check back here for updates.
             </p>
-            
-            <a href="https://www.youtube.com/watch?v=_2DQ_iYZi5U" target="_blank">YouTube Stream here</a>
+            <h2>Previous Events</h2>
 
-            <img src="/images/otwsu4-heads.jpg" alt='Open Tech Will Save Us 4 Guest Headshots'/>
+            <h3>8th July 2020</h3>
 
-            <h3>Agenda</h3>
+            <h4>Agenda</h4>
             <ul>
                 <li>
                     <strong>Jay Graber</strong> (<a href="https://twitter.com/arcalinea">@arcalinea</a>, <a href="https://matrix.to/#/@arcalinea:matrix.org">@arcalinea:matrix.org</a>), creator of <a href="https://happening.net/">Happening</a> and <a href="https://medium.com/decentralized-web/decentralized-social-networks-e5a7a2603f53">all-around decentralisation fan</a> will summarize an overview of the decentralized social media ecosystem that they're working on.
@@ -66,8 +63,6 @@ const Legal = () => {
                     <strong>Burak Nehbit</strong> (<a href="https://twitter.com/nehbit">@nehbit</a>, <a href="https://matrix.to/#/@burak:tomesh.net">@burak:tomesh.net</a>) will give a deep dive into his work on <a href="https://getaether.net/">Aether P2P</a>.
                 </li>
             </ul>
-
-            <h2>Previous Events</h2>
 
             <h3>10th June 2020</h3>
 
