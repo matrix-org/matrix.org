@@ -44,6 +44,7 @@ const redirects = [
     {from: "/blog/feed-redirect", to: "/blog/feed"},
     {from: "/docs/projects/sdks", to: "/sdks/"},
     {from: "/docs/projects/bots", to: "/bots"},
+    {from: "/matrix-live", to: "/matrixlive"},
 ];
 
 const template = `import React from 'react'
