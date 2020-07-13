@@ -8,10 +8,10 @@ import config from '../../config'
 const title = "Internet of Things (IoT)";
 
 const Iot = ({ data }) => {
-  const projects = data.allFile.edges
+  const projects = data.allMdx.edges
     .map((edge => {
-      var result = edge.node.childMdx.frontmatter;
-      result.slug = edge.node.childMdx.fields.slug;
+      var result = edge.node.frontmatter;
+      result.slug = edge.node.fields.slug;
       return result;
     }));
   return (<Layout navmode="discover">
@@ -55,32 +55,26 @@ const Iot = ({ data }) => {
 }
 
 
-export const query = graphql`
-{
-  allFile(sort: {fields: childMdx___frontmatter___sort_order, order: ASC},
-    filter: {
-      sourceInstanceName: {eq: "projects"},
-      childMdx: {frontmatter: {categories: {in: "iot"}}}}) {
+export const query = graphql`{
+  allMdx(sort: {fields: frontmatter___sort_order, order: ASC},
+    filter: {frontmatter: {categories: {in: ["iot"]}}}) {
     edges {
       node {
-        childMdx {
-          frontmatter {
-            title
-            maturity
-            description
-            thumbnail
-            language
-            author
-            repo
-            room
-            screenshot
-            sort_order
-          }
-          fields {
-            slug
-          }
+        frontmatter {
+          title
+          maturity
+          description
+          thumbnail
+          language
+          author
+          repo
+          room
+          screenshot
+          sort_order
         }
-        absolutePath
+        fields {
+          slug
+        }
       }
     }
   }
