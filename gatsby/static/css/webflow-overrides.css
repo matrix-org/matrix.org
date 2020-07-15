@@ -199,6 +199,7 @@ div.title {
 .mxcontent__main__doc h2, .mxcontent__main__doc h3, .mxcontent__main__doc h4 {
   padding-top: 75px;
   margin-top: -75px;
+  position: initial !important;
 }
 
 .green {
