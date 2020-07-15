@@ -65,7 +65,7 @@ const ClientsMatrix = ({data}) => {
           </div>
 
           <h2 id="platform-availability">Platform Availability</h2>
-          <div style={{"max-height": "80vh", "overflow": "scroll"}}>
+          <div style={{"maxHeight": "80vh", "overflow": "scroll"}}>
 
           <table className="legacy-table width-100">
             <thead>
@@ -101,7 +101,7 @@ const ClientsMatrix = ({data}) => {
           </div>
 
           <h2 id="details">Details</h2>
-          <div style={{"max-height": "80vh", "overflow": "scroll"}}>
+          <div style={{"maxHeight": "80vh", "overflow": "scroll"}}>
           <table className="legacy-table width-100">
             <thead>
               <tr>
@@ -150,7 +150,7 @@ const ClientsMatrix = ({data}) => {
           </div>
 
           <h2 id="features">Features</h2>
-          <div style={{"max-height": "80vh", "overflow": "scroll"}}>
+          <div style={{"maxHeight": "80vh", "overflow": "scroll"}}>
           <table className="legacy-table width-100">
             <thead>
               <tr>
@@ -201,6 +201,7 @@ export const query = graphql`{
   sort: {fields:frontmatter___sort_order, order: ASC} 
   filter: {
    frontmatter: {
+     featured: {eq: true},
      categories: {in: ["client"]},
      platforms: {ne: null}
    }
