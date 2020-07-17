@@ -55,7 +55,7 @@ steps:
       - cd implementation-guides
       - wget https://github.com/rust-lang/mdBook/releases/download/v0.4.1/mdbook-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
       - tar -xf mdbook-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
-      - ./mdbook build server -d /workdir/implementation-guides/server
+      - ./mdbook build server -d /workdir/iimplementation-guides/mplementation-guides/server
       - tar -czf implementation-guides.tar.gz implementation-guides
     artifact_paths:
       - implementation-guides/implementation-guides.tar.gz
