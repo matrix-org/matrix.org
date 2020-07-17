@@ -51,16 +51,14 @@ steps:
     plugins:
       - docker#v3.0.1:
           image: "buildpack-deps"
-          mount-checkout: false
-          volumes:
-            - "./implementation-guides:/workdir"
     commands:
+      - cd implementation-guides
       - wget https://github.com/rust-lang/mdBook/releases/download/v0.4.1/mdbook-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
       - tar -xf mdbook-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
       - ./mdbook build server -d /workdir/implementation-guides/server
       - tar -czf implementation-guides.tar.gz implementation-guides
     artifact_paths:
-      - implementation-guides.tar.gz
+      - implementation-guides/implementation-guides.tar.gz
 
   - wait
 
