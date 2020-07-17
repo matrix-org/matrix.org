@@ -51,6 +51,7 @@ steps:
     plugins:
       - docker#v3.0.1:
           image: "buildpack-deps"
+          mount-checkout: false
           volumes:
             - "./implementation-guides:/workdir"
     commands:
