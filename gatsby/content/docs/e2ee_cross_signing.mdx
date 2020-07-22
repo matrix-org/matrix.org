@@ -12,7 +12,7 @@ is a real step to be proud of and reason to celebrate!
 
 You might have noticed, however, that some things are still on the rough edge: You have to manually
 verify every other device by comparing the public keys, decryption keys aren't shared between your
-devices, etc. In comparison, Riot has cross-signing so that you have to only verify people in a user-
+devices, etc. In comparison, Element has cross-signing so that you have to only verify people in a user-
 friendly way, and it has things like online key backup. If you want to implement these features into
 your own client (or only some of them), then this guide is for you!
 
@@ -67,8 +67,8 @@ which is specific to the verification method used. In the case that both Alice a
 `m.key.verification.start` and the verification method does *not* match, the verification request is
 canceled. If the verification matches, the `m.key.verification.start` of the lexicographically smaller
 user ID is used. If those also match up (as in, if you are verifying your own device), then the
-lexicographically smaller device ID is used. This ensures that unambiguous which `m.key.verification.start`
-is used. From now on, the device whos `m.key.verification.start` is used is the one who started the
+lexicographically smaller device ID is used. This ensures that it is unambiguous which `m.key.verification.start`
+is used. From now on, the device whose `m.key.verification.start` is used is the one who started the
 request (This is important as some things in SAS depend on who started the request). After that, some
 verification process happens, which is specific the specified verification method. If all is successful,
 both send a `m.key.verification.done` to each other.
@@ -227,11 +227,7 @@ that *includes* the metadata of `transaction_id` and `from_device` keys, omitted
 ```json
 {
   "method": "m.sas.v1",
-  "key_agreement_protocols": ["curve25519-hkdf-sha256", "curve25519"], // while "curve25519" is deprecated, it is still wildly used and thus needs to be supported
-  // Please note that "curve25519" should not be implemented - this guide in pull-request form still covers it
-  // in case someone is using the pull request guide to implement stuff.
-  // You should probably remove "curve25519" completely after approximately September 2020, as then a reasonable
-  // long time passed for other clients to update.
+  "key_agreement_protocols": ["curve25519-hkdf-sha256"],
   "hashes": ["sha256"],
   "message_authentication_codes": ["hkdf-hmac-sha256"],
   "short_authentication_string": ["emoji", "decimal"]
@@ -288,9 +284,8 @@ not allow for it to be retrieved again.
 Based on the agreed upon `key_agreement_protocol` and which `short_authentication_string`s are supported,
 the user should now be prompted with the emojis/numbers, so that they can verify that they match. For
 that, you will have to generate bytes to derive the emojis from for comparison. For that, a "SAS info"
-is created:
+is created. For the key agreement protocol `curve25519-hkdf-sha256` it works as follows:
 
-##### `curve25519-hkdf-sha256`
 The SAS info is `MATRIX_KEY_VERIFICATION_SAS|` concatenated with the user ID of whomever started the
 verification plus `|` plus the device ID who started the verification plus `|` plus the SAS public key
 who started the verification plus `|` plus the user ID who received the verification plus `|` plus
@@ -307,24 +302,8 @@ var sasInfo = 'MATRIX_KEY_VERIFICATION_SAS|' +
     request.transactionId;
 ```
 
-##### `curve25519`
-IMPORTANT! This section will be removed before the guide is published. If it is after September 2020,
-**DO NOT IMPLEMENT THIS**.
-
-The sas info is `MATRIX_KEY_VERIFICATION_SAS` concatenated with the user ID who started the verification
-plus the device ID who started the verification plus the user ID who received the verification plus
-the device ID who received the verification plus the transaction id. The difference to `curve25519-hkdf-sha256`
-is the lack of public keys and the lack of a `|` delimiter. In code that could look as follows:
-
-```dart
-var ourInfo = client.userID + client.deviceID;
-var theirInfo = request.userId + request.deviceId;
-var sasInfo = 'MATRIX_KEY_VERIFICATION_SAS' +
-    (request.startedVerification
-        ? ourInfo + theirInfo
-        : theirInfo + ourInfo) +
-    request.transactionId;
-```
+The key agreement protocol `curve25519` is deprecated and should not be implemented. As such, it isn't
+outlined here.
 
 ##### Generate bytes
 Once you have that SAS info, you use it to generate bytes through `sas.generate_bytes(sasInfo, bytes)`.
@@ -490,8 +469,8 @@ still keeping the master key. As the master key is *only* used for signing your 
 self-signing key, it is rarely used, so the attack surface to obtain it is minimal. Optionally, device
 keys themselves can sign their own master key.
 
-![](https://raw.githubusercontent.com/uhoreg/matrix-doc/cross-signing2/proposals/images/1756-graph2.dot.png)
-Graph from [MSC1756](https://github.com/matrix-org/matrix-doc/pull/1756).
+![](./matrix-cross-signing-key-diagram.svg)
+Graph from [jcgruenhage's blog](https://jcg.re/blog/quick-overview-matrix-cross-signing/), licensed as `CC-BY-SA-4.0`.
 
 So, in addition to the device keys of others, we also need to fetch their cross-signing
 keys. We can then verify their signatures!
