@@ -258,7 +258,7 @@ Along with that, it also sends a `commitment`, as defined above.
 ```json
 {
   "method": "m.sas.v1",
-  "key_agreement_protocol": "curve25519-hkdf-sha256", // if the other party doesn't support this, pick "curve25519" instead
+  "key_agreement_protocol": "curve25519-hkdf-sha256",
   "hash": "sha256",
   "message_authentication_code": "hkdf-hmac-sha256",
   "short_authentication_string": ["emoji", "decimal"],
