@@ -6,7 +6,6 @@ section: Encryption
 
 PLEASE NOTE THAT THIS GUIDE IS STILL A WIP!
 
-# A guide to more advanced e2ee features of matrix
 So, you successfully implemented end-to-end encryption in your matrix client? Congratulations! This
 is a real step to be proud of and reason to celebrate!
 
@@ -469,7 +468,7 @@ still keeping the master key. As the master key is *only* used for signing your 
 self-signing key, it is rarely used, so the attack surface to obtain it is minimal. Optionally, device
 keys themselves can sign their own master key.
 
-![](./matrix-cross-signing-key-diagram.svg)
+![](/docs/guides/img/matrix-cross-signing-key-diagram.svg)
 Graph from [jcgruenhage's blog](https://jcg.re/blog/quick-overview-matrix-cross-signing/), licensed as [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 So, in addition to the device keys of others, we also need to fetch their cross-signing
