@@ -1,0 +1,503 @@
+---
+date: '2020-07-24'
+title: 'This Week in Matrix 2020-07-24'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2020-07-24-ml.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FWcx3OJHLGc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of *Status of Matrix* 🌡️
+
+### New guide for client e2ee implementation, including cross-signing
+
+Thanks and congratulations to Sorunome this week for releasing a new guide: [Implementing more advanced e2ee features, such as cross-signing](https://matrix.org/docs/guides/implementing-more-advanced-e-2-ee-features-such-as-cross-signing). This is a hugely detailed guide detailing the necessary steps to enable Cross-Signing and verification. Thanks as well to uhoreg and poljar for their work in reviewing the text!
+
+### New Masters Thesis written on Matrix
+
+[Julian Sparber](https://matrix.to/#/@jsparber:gnome.org) announced:
+
+> I wrote a master thesis that tries to create e2e encryption based on Ethereum on top of Matrix. It may not solve all problems but it's an interesting experiment
+>
+> <https://blogs.gnome.org/jsparber/2020/07/20/i-finished-my-masters-degree/>
+
+I didn't get to look at this yet but it's exciting!
+
+## Dept of Spec 📜
+
+[kitsune](https://matrix.to/#/@kitsune:matrix.org) (guess who's back!?) said:
+
+> I have put the long-awaited MSC2312 out of WIP - this is about matrix: URIs in case you haven't heard - and it's already in active discussion at [#uri-scheme-proposal:matrix.org](https://matrix.to/#/#uri-scheme-proposal:matrix.org)! Join the fun to make it the most awesome! The upcoming Quotient 0.6 has an implementation of those so adventurous Quaternion users can start experimenting right away.
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) reported:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals>.
+>
+> #### MSC Status
+>
+> **Abandoned MSCs:**
+>
+> * [MSC2579: Improved tagging support](https://github.com/matrix-org/matrix-doc/pull/2579)
+>
+> **MSCs in Final Comment Period:**
+>
+> * [MSC2689: Fix E2EE for guests](https://github.com/matrix-org/matrix-doc/pull/2689) (merge)
+> * [MSC2663: Errors for dealing with non-existent push rules](https://github.com/matrix-org/matrix-doc/pull/2663) (merge)
+>
+> * [MSC2611: Remove m.login.token User-Interactive Authentication type from the specification](https://github.com/matrix-org/matrix-doc/pull/2611) (merge)
+> * [MSC2610: Remove m.login.oauth2 User-Interactive Authentication type from the specification](https://github.com/matrix-org/matrix-doc/pull/2610) (merge)
+>
+> **New MSCs:**
+>
+> * [MSC2695: Get event by ID over federation](https://github.com/matrix-org/matrix-doc/pull/2695)
+> #### Spec Core Team
+>
+> In terms of Spec Core Team MSC focus, we've reduced last week's list of 5 MSCs down to one, [MSC2674](https://github.com/matrix-org/matrix-doc/issues/2674) (aggregations part 1: relationships). Next week, we're going to focus entirely on that MSC to make some headway on finally getting aggregations into the spec.
+
+![2020-07-24-oRVoi-stacked_area_chart.png](/blog/img/2020-07-24-oRVoi-stacked_area_chart.png)
+
+## Dept of GSoC 🎓️
+
+### HTML embeddable Matrix client
+
+[arnav-t](https://matrix.to/#/@arnav-t:matrix.org) announced:
+
+> For the GSoC project HTML embeddable Matrix client this week:
+>
+> * Added status bar for connection errors
+>
+> * Added support for displaying typing notifications
+
+## Dept of P2P 👥
+
+### P2P / Dendrite
+
+Dendrite is a next-generation homeserver written in Go
+
+[kegan](https://matrix.to/#/@kegan:matrix.org) announced:
+
+> The P2P Yggdrasil iOS demo has seen some improvements:
+>
+>  * Federation sender blacklists are now persisted which is important as the iOS app will be frequently terminated.
+>  * SQLite3 now uses `TransactionWriters` in more places to reduce the amount of 'database is locked' issues.
+>
+>  * Federation sender has had much of its storage code refactored and de-duplicated.
+>
+> In addition, there has been much work getting Dendrite to support E2E rooms, which it now mostly does.
+>
+> You can create and join E2E rooms and have a conversation locally, though there's issues with it over federation. In addition,
+> Dendrite currently lacks device lists so adding new devices may result in unable-to-decrypt errors:
+>
+>  * Send-to-device events now work over federation.
+>  * Device key uploads and querying now work both locally and over federation.
+>
+>  * One-time key uploads and claiming now work both locally and over federation.
+>
+> Spec compliance is up from last week:
+>
+>  * Client Server APIs: 49%, up from 48%.
+>  * Federation APIs: 53%, up from 51%.
+
+Doesn't it feel like we'll be using Dendrite in the wild really soon now?
+
+## Dept of Servers 🏢
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
+
+[timo](https://matrix.to/#/@timo:koesters.xyz) offered:
+
+> Another quiet week. Next week should be more exciting again.
+>
+> * Moved to stable rust (rocket now compiles on stable!)
+>
+> * Implement /joined_rooms (thanks @aura)
+> * Add max_request_size config option to set the maximum size for file uploads and other requests (thanks @CapsizeGlimmer)
+
+### Synapse
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) said:
+
+> This week we continued on our async/await athon, you can track progress [here](https://patrick.cloke.us/areweasyncyet/), expect steady progress over the coming weeks.
+>
+> We dusted off the notifications project working with our pals in the Element client teams to ensure that the push rule defaults make sense. On the flip side we made further improvements to Sygnal and will merge the ability to have it sit behind a proxy rsn. 
+>
+> We are also trying to figure out how media retention limits should work in Synapse.
+>
+> Up next is to continue our performance push. We need to spend time between pulling things off the master process as well sharding the event persister. We will continue with notifications and maybe finally squash <https://github.com/matrix-org/synapse/issues/2528>
+
+## Dept of Bridges 🌉
+
+### Introducing matrix-figma
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) reported:
+
+> Hello people. It's been a while since I've talked about a new bridge...or actually any bridges. Fear not, now you can hear both! Today I'm announcing the birth of another project `matrix-figma`.  [Figma](https://www.figma.com) is an online collaborative design tool. It was created to scratch an itch with the Element design team, who wanted to see comments appear in their Matrix rooms in realtime when someone commented on a Figma file.
+>
+> The bridge works by first joining it to an "admin room", which functions as a permitted user list. The bot can then be invited to any other room so long as the invitee is in that admin room, and can then ask the bot to start directing comment notifications into the room.
+>
+> The room uses room state to hold configuration, so you can host the bot as a docker container anywhere without the need for any support files!
+>
+> I can announce that the bridge is now functional for simple use cases such as these, with more interesting functionality in the future.
+>
+> Please check out <https://github.com/Half-Shot/matrix-figma> to see if the bridge is right for you :)
+
+### slack-matrix-migration
+
+[Sven](https://matrix.to/#/@rda:phys.ethz.ch) offered:
+
+> I opened a [PR](https://github.com/Awesome-Technologies/slack-matrix-migration/pull/5) for <https://github.com/Awesome-Technologies/slack-matrix-migration>, which makes it compatible with recent [Synapse](https://github.com/matrix-org/synapse) versions and adds new config options allowing to effectively import a Slack workspace history to an existing homeserver via federation.
+>
+> This Python project was initially intended for a full migration from Slack to a new Matrix homeserver and allows reusing the imported user accounts. We have some research groups using Slack that would like to import their Slack workspace history to our Matrix homeserver. This PR allows to import a (free) Slack export to a fresh and empty Synapse instance that is federated with our main homeserver. We do not need a full "migration": we kick all imported users and invite the existing Matrix users from our homeserver.
+>
+> Two groups already imported the history and switched to Matrix, one more is in queue and probably more to come.
+
+This is a really, really exciting development, and the context for which Sven is expecting to use it is BIG, I can't wait til we can share more about it!
+
+### mautrix-twitter
+
+[Tulir](https://matrix.to/#/@tulir:maunium.net) said:
+
+> The Twitter DM bridge I announced last week mostly works now. It does text and reaction bridging in both directions, twitter->matrix media bridging, end-to-bridge encryption and backfilling. I also added support for it in [mautrix-manager](https://github.com/tulir/mautrix-manager) for web-based login.
+
+If it mostly works, I guess it's time to mostly start trying it out!
+
+## Dept of Clients 📱
+
+### Fluffychat
+
+[sorunome](https://matrix.to/#/@sorunome:sorunome.de) offered:
+
+> Fluffy 0.16.0 has been released! It is already available on F-Droid, Google Play and IOS Testflight will follow. You can also try it out in the webbrowser. Visit <https://fluffychat.im>
+>
+> #### Features
+>
+> * Implement web notifications
+>
+> * Implement a connection status header	
+> #### Changes
+>
+> * Switch out database engine for faster performance
+>
+> * Greatly improve startup time
+> * Added languages: Galician, Croatian, Japanese, Russian, Ukrainian - Thanks a lot to all the weblate users!
+>
+> * Only show the microg toast once, if you have play services disabled
+> * Homeserver URL input now strips trailing whitespace and slash - Thanks @Katerina
+>
+> * Also use prev_content to determine profile of a user: This allows the username and avatar of people who left a group to still be displayed
+> #### Fixes:
+>
+> * Fix not being able to initiate key verification properly
+>
+> * Fix message sending being weird on slow networks
+> * Fix a few HTML rendering bugs
+>
+> * Various other fixes
+> * Fix the 12h clock showing 00:15am, instead of 12:15am	- Thanks @not_chicken
+>
+> * Fix an issue with replies and invalid HTML
+> * Fix messages getting lost when retrieving chat history
+>
+> * Fix a bug where an incorrect string encoding from the server is assumed
+> * Fix a bug where people couldn't log in if they had email notifications enabled
+
+### Mirage
+
+[miruka](https://matrix.to/#/@miruka:privacytools.io) reported:
+
+> 0.6.0 is out today:
+>
+> #### Added
+>
+> * **Room member profiles**:
+>
+>   * Can be accessed by clicking on a user in the room's right pane, or focusing
+>     the filter field and navigating with up/down/enter/escape
+>
+>   * Includes large avatar, display name, user ID, **presence info**,
+>
+>     **power level control** and **E2E sessions list**
+>
+> * **E2E Verification**:
+>
+>   * Sessions for room members can now be (manually) verified from
+>     their profile
+>
+>   * Sessions for different accounts within the same client will automatically
+>
+>     verify each others based on session keys
+>
+>   * Verifying a session will automatically verify it for all connected accounts,
+>
+>     as long as the session keys are identical
+>
+> * **Presence**:
+>
+>   * Added presence (online, unavailable, invisible, offline) and status
+>     message control to the accounts context menu in the room list
+>
+>   * Added `togglePresence{Unavailable,Invisible,Offline}` keybinds bound by 
+>
+>     default to `Ctrl+Alt+{A/U,I,O}`
+>
+>   * Added `openPresenceMenu` keybind to open the current account's context
+>
+>     menu, `Alt+P` by default
+>
+>   * The room member list is now sorted by power level, then presence, then name
+>
+>   * The room member list will display presence orbs and last seen time for
+>
+>     members if the server supports it. Last seen times for offline members
+>     are also automatically retrieved as needed.
+>
+>   * Set logged in accounts offline when closing Mirage
+>
+>   * Linux/X11 specific: Add auto-away feature configurable by the
+>
+>     `beUnavailableAfterSecondsIdle` setting (default 600 for 10mn),
+>     can be disabled by setting it to `-1`.  
+>
+> * **Session sign out**: you can now sign out your other sessions from the 
+>
+>   account settings. This currently only supports password authentification.
+>
+> * **Pasting images** via Ctrl+V or composer context menu, shows a preview of
+>
+>   the image before uploading
+>
+> * Added basic keyboard navigation for account settings session list
+>
+> * Add a verified devices indicator to encrypted room headers
+>
+> * Add experimental support for rendering of inline images and custom emotes in
+>
+>   messages
+>
+> * Add `kineticScrollingMaxSpeed` and `kineticScrollingDeceleration` settings
+>
+> * When highlighting accounts, rooms or members in lists 
+>
+>   (focus filter field and use up/down), the highlighted item's context menu
+>   can now be accessed with the keyboard Menu key
+>
+> * Support for Menu key when keyboard-navigating messages in the timeline
+>
+> * Add context menus to text field and areas
+>
+> * Add a button to quickly expand the room pane when collapsed and focus
+>
+>   the filter field
+>
+> * Clicking on the current tab button for the room pane now fully hides it,
+>
+>   this can also be toggled with the new `toggleHideRoomPane` keybind 
+>   (default Ctrl+Alt+R)
+>
+> #### Changed
+>
+> * When panes are smaller than their default width due to user resizing or
+>
+>   window size constraints, focusing certain elements will auto-expand them
+>   until the focus is lost: filter fields, member profile and room settings
+>
+> * Reduced the default kinetic scrolling speed, which was hardcoded to an
+>
+>   aggressive `4000` before.
+>   This can be restored with the `kineticScrollingMaxSpeed` setting.
+>
+> * Improve key verification popup texts and make the session details copiable
+>
+> * Power levels/room permission change events will now show a line of text or
+>
+>   table containing the details of what exactly changed 
+>
+> * Messages containing tables will no longer be width-limited
+>
+> * Using the `sendFileFromPathInClipboard` keybind (default Alt+Shift+S)
+>
+>   now shows a preview of the file if it's an image and asks for confirmation
+>
+> * Image messages now show spinners when loading the thumbnail
+>
+> * Clicking on a GIF message will now open it externally like other images
+>
+>   instead of pausing it. A dedicated play/pause button is now displayed in 
+>   the corner.
+>
+> And more: [full changelog](https://github.com/mirukana/mirage/releases/tag/v0.6.0)
+
+### Riot-iOS, no sorry, Element-iOS
+
+[Manu](https://matrix.to/#/@Manu:matrix.org) offered:
+
+> Last week, we forgot to announce that we renamed the Riot-iOS app to Element but this is not a surprise anymore. The app version is now 1.0.0. This change came with a lot of UI tweaks like new icons and new colors.
+>
+> Since then, we made bug fixes we will release soon. This week, we also worked on PIN protection for the app, including support of Touch ID and Face ID.
+
+### Element Android
+
+[Francis](https://matrix.to/#/@ganfra:matrix.org) offered:
+
+> This week has been focused on bug fixing, there will be a release next week. We also started to work on PIN protection for the app.
+
+### quotient
+
+[kitsune](https://matrix.to/#/@kitsune:matrix.org) offered:
+
+> Quotient 0.6 released! The release notes are somewhat long, since it's been 4 months since the last stable version update, and more than a year since the 0.5 release - thanking two heros of this release, and giving a nod to the original Quaternion author who happened to contribute using an inverted time machine. Read here: <https://github.com/quotient-im/libQuotient/releases/tag/0.6.0>
+
+Big news - first release in a year. Do take a look at the full notes, they're very readable. In particular, they call out contributions from Black Hat, Alexey Andreyev and the original project creator, Felix Rohrbach aka @fxrh.
+
+## Dept of SDKs and Frameworks 🧰
+
+### ruma
+
+Ruma is a Rust project to create a comprehensive set of APIs for Matrix. Previously there was a Ruma homeserver project.
+
+[jplatte](https://matrix.to/#/@jplatte:matrix.org) said:
+
+> We weren't in TWIM for a while, but that doesn't mean no progress! Apart from Devin's constant work on ruma-events, there was also some movement in ruma-identifiers and ruma-client-api, with the former seeing a new release, [0.17.0](https://github.com/ruma/ruma/releases/tag/ruma-identifiers-0.17.0).
+>
+> We're planning to do more releases next week, and hopefully a 0.1 release of the ruma crate that provides a simpler entry point by re-exporting everything else, in one of the weeks after that. Stay tuned!
+
+## Dept of Ops 🛠
+
+### matrix-docker-ansible-deploy
+
+This [Ansible playbook](https://github.com/spantaleev/matrix-docker-ansible-deploy) is meant to easily let you run your own Matrix homeserver.
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) said:
+
+> [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) just gained support for its first bot - [matrix-reminder-bot](https://github.com/anoadragon453/matrix-reminder-bot).
+>
+> See our [Setting up matrix-reminder-bot](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-bot-matrix-reminder-bot.md) documentation to get started.
+
+Then, another report:
+
+> [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) has gained support for [synapse-admin](https://github.com/Awesome-Technologies/synapse-admin).
+>
+> See our [Setting up Synapse Admin](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-synapse-admin.md) documentation to get started.
+
+## Dept of Bots 🤖
+
+### matrix-wug
+
+[dandellion](https://matrix.to/#/@dandellion:dodsorf.as) said:
+
+> It's been a while since it's come up, but [matrix-wug](https://github.com/dali99/matrix-wug) is a bot capable of transcribing characters writable via normal keyboards to scripts from other languages/notation systems
+>
+> It supports: x-sampa, z-sampa, proto-indo-european, Inuktitut, and Iñupiatun.
+>
+> Now it also supports hiragana! The romanization system is something like [Wāpuro rōmaji](https://en.wikipedia.org/wiki/W%C4%81puro_r%C5%8Dmaji), but sticks to Nihon-shiki when in doubt.
+>
+> I want this transcription to be forgiving, so if you find it not transcribing something in a way you'd expect it to, feel free to DM me!
+>
+> To use it use the `hi` key with a delimiter like `/x/` or `[]`
+>
+> hi/konnichiwa maatorikusu!/
+>
+> vøgg is also behind pantalaimon now so it now works in encrypted rooms 😀
+
+If you need to convert swiggles into a different type of swiggle, dandellion has you covered here.
+
+### Jitsi Token Service
+
+[kinta](https://matrix.to/#/@kinta:communia.org) reported:
+
+> <https://gitlab.com/communia/matrix-jitsi-token-service>
+>
+> This bot is not about adapting the current jitsi integration provided by Element IM as widget.
+>
+> If you have a configured jitsi server to be authenticated with jwt tokens as in <https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/tokens.md> , this bot will assist you when claiming for a jwt instead of going to jwt.io each time.
+> You'll need to create a user and invite you in each room where you want to create a jitsi room url respecting the matrix power levels in the room.
+>
+> When the service is running invite the bot and send message `!jitsi-jwt` 
+>
+> If you are a moderator in the room (alias you have enough power levels to redact messages), then you will get a direct message from bot with the url to jitsi
+> room with the jwt get parameter.
+
+### cody 0.7.0
+
+[carl](https://matrix.to/#/@carl:bordum.dk) told us:
+
+> New cody release. @cody:bordum.dk is a chat bot that works as a REPL for your matrix rooms. This week I worked on metrics. I host a Grafana instance with anonymous access allowed, so codys charts are now embedded the [#cody:bordum.dk](https://matrix.to/#/#cody:bordum.dk) chat room.
+
+### Announcing The Very First Release of sMythbot
+
+[ssorbom](https://matrix.to/#/@ssorbom:matrix.org) told us:
+
+> I am proud to announce the very first release of sMythbot, the Matrix chatbot designed to control your Myth Tv DVR remotely. This release should be considered a tech preview. I welcome feedback and Bug reports. More information on installation and setup is available in the project wiki.
+>
+> It currently supports the following commands
+>
+> * `!smythbot help`: Display this message 
+> * `!smythbot set mythbackend address`: Sets the Myth Tv backend address to use for this room.  
+> * `!smythbot set mythbacked port`: Sets the Myth Tv backend port to use for this room. 
+> * `!smythbot view mythbackend address`: Allows you to view the Myth Tv backend address set for this room 
+> * `!smythbot view mythbackend port`: Allows you to view the Myth Tv backend port set for this room 
+> * `!smythbot view mythbackend info`: Allows you to view various pieces of information for the Myth Tv backend connected to this room. It will not work if the address and port are not set.  
+> * `!smythbot display upcoming recordings`: Displays the upcoming recordings on your Myth Tv Backend.  
+>
+> * `!smythbot display recorded programs`: Displays the recordings from the default recording group that are stored on your Myth Tv Backend.  
+>
+> You can find out more information at [my Github Page](https://github.com/shsorbom/sMythbot)
+
+I *love* a project designed to scratch the author's own itch!
+
+## Dept of Interesting Projects 🛰️
+
+### Noteworthy Elements for Mobile Web
+
+[balaa](https://matrix.to/#/@balaa:a.noteworthy.im) said:
+
+> The team behind [Noteworthy](https://noteworthy.tech) (Matrix over WireGuard overlay networks) has started work on bringing better mobile web support for Element (riot-web).
+>
+> [Noteworthy Elements](https://github.com/decentralabs/noteworthy-element) is a lightweight shim powered by the [Ionic Framework](https://ionicframework.com) thats goal is to bring first-class support for Element running on mobile devices.
+>
+> #### What we have so far
+>
+> * Usable version of Element wrapped in native iOS / Android app
+>
+> * Ability to run multiple instances of Element in a native iOS / Android app (ie connect to multiple home servers simultaneously)
+>
+> Our initial experimentation has been positive and our goal is to make Element the best mobile client for Matrix with minimal fuss. With minimal changes to Element's codebase our goal is to land (significantly better) support for mobile web in upstream Element. Join us over at [#noteworthy:tincan.community](https://matrix.to/#/#noteworthy:tincan.community) to get involved!
+
+![2020-07-24-fH9Fl-ScreenShot2020-07-23at5.04.31PM.png](/blog/img/2020-07-24-fH9Fl-ScreenShot2020-07-23at5.04.31PM.png)
+
+### Trust-based Moderation Using Distributed Chat Systems for Transitive Trust Propagation
+
+[Florian](https://matrix.to/#/@florian:dsn.tm.kit.edu) said:
+
+> I just stumbled over the master thesis [TrustNet: Trust-based Moderation Using Distributed Chat Systems for Transitive Trust Propagation](https://lup.lub.lu.se/student-papers/search/publication/9020253). While it is mainly targeted at systems like Secure Scuttlebut and Cabal, I think it is also of interest for the people thinking about trust-based moderation for Matrix.
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|fairydust.space|309|
+|2|bardiharborow.com|545|
+|3|nicoll.xyz|647.5|
+|4|grant.org|667.5|
+|5|elsmussols.net|694|
+|6|heitkoetter.net|871.5|
+|7|ragon.xyz|876|
+|8|acmelabs.space|906.5|
+|9|opensuse.org|915.5|
+|10|matrix.vgorcum.com|1017|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: <https://matrix.to/#/#TWIM:matrix.org>
