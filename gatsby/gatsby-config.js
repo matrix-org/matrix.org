@@ -136,6 +136,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'case-studies',
+        path: `${__dirname}/content/using-matrix/case-studies`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         gatsbyRemarkPlugins: [

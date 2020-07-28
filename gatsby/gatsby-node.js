@@ -49,6 +49,8 @@ exports.onCreateNode = ({ node, actions }) => {
           }
       } else if (node.frontmatter.section === "legal") {
         slug = `/legal${slug}`
+      } else if (node.frontmatter.section === "Case Studies") {
+        slug = `/using-matrix/case-studies${slug}`
       } else {
         slug = `/docs/guides${slug}`
       }
@@ -263,6 +265,39 @@ const resultLegal = await wrapper(
       },
     })
   })
+  const resultCaseStudies = await wrapper(
+    graphql(`{
+    allMdx(filter: {frontmatter: {section: {eq: "Case Studies"}}}) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          body
+          frontmatter {
+            title
+            section
+          }
+        }
+      }
+    }
+  }`));
+  
+  const caseStudies = resultCaseStudies.data.allMdx.edges;
+
+  caseStudies.forEach((edge, index) => {
+
+    createPage({
+      path: edge.node.fields.slug,
+      component: noNavTemplate,
+      context: {
+        slug: edge.node.fields.slug
+      },
+    })
+  })
+
+
+  
 
 
 const resultProjects = await wrapper(
