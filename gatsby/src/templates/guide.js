@@ -12,11 +12,11 @@ const Title = styled.h1`
 const PostContent = styled.div`
 `
 
-const Page = ({ pageContext: { slug, pages, pagesBySection }, data: { mdx: postNode } }) => {
+const Page = ({ pageContext: { slug, pages, pagesBySection, pagesListTitle, navMode }, data: { mdx: postNode } }) => {
   const post = postNode.frontmatter
 
   return (
-    <Layout hasSideNavigation="true" navmode="develop" customSEO>
+    <Layout hasSideNavigation="true" navmode={navMode} hasNavPadding={navMode ? "false" : "true"}  customSEO>
         <SEO postPath={slug} postNode={postNode} article />
         <MXContentMain hasSideNavigation="true">
           <div className="mxcontent__main__doc">
@@ -28,7 +28,14 @@ const Page = ({ pageContext: { slug, pages, pagesBySection }, data: { mdx: postN
             </PostContent>
           </div>
         </MXContentMain>
-        <MXGuidesNav title="Guides" content={pages} pagesBySection={pagesBySection} currentSlug={slug} tableOfContents={postNode.tableOfContents}></MXGuidesNav>
+        <MXGuidesNav 
+          title="Guides"
+          content={pages}
+          pagesBySection={pagesBySection}
+          currentSlug={slug}
+          tableOfContents={postNode.tableOfContents}
+          pagesListTitle={pagesListTitle}>
+        </MXGuidesNav>
     </Layout>
   )
 }

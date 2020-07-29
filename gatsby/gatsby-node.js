@@ -261,7 +261,9 @@ const resultLegal = await wrapper(
       context: {
         slug: edge.node.fields.slug,
         pages: pagesForGuidesList,
-        pagesBySection: pagesForGuidesListBySection
+        pagesBySection: pagesForGuidesListBySection,
+        pagesListTitle: "Other Guides",
+        navMode: "develop"
       },
     })
   })
@@ -286,15 +288,19 @@ const resultLegal = await wrapper(
   const caseStudies = resultCaseStudies.data.allMdx.edges;
 
   caseStudies.forEach((edge, index) => {
-
     createPage({
       path: edge.node.fields.slug,
-      component: noNavTemplate,
+      component: guideTemplate,
       context: {
-        slug: edge.node.fields.slug
+        slug: edge.node.fields.slug,
+        pages: [],
+        pagesBySection: { "Case Studies": caseStudies.map(c => 
+          { return { slug: c.node.fields.slug, title: c.node.frontmatter.title } }) 
+        },
+        pagesListTitle: "Using Matrix"
       },
     })
-  })
+  });
 
 
   
