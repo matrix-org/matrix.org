@@ -10,19 +10,24 @@ language: Python
 license: AGPL-3.0-or-later
 repo: https://github.com/tulir/mautrix-telegram
 room: "#telegram:maunium.net"
-bridges: Telegram
 featured: true
+bridges: Telegram
 thumbnail: /docs/projects/images/telegram-logo.svg
 screenshot: /docs/projects/images/mautrix-telegram.png
 ---
 
 A Matrix-Telegram hybrid puppeting/relaybot bridge. Written in Python using [Telethon](https://github.com/LonamiWebs/Telethon) and [mautrix-python](https://matrix.org/docs/projects/sdk/mautrix-python.html).
 
-✓ Send message content (text, formatting, files, etc..)  
-✓ Redact/delete messages  
-✓ Provide typing notifications and read receipts  
-✓ Read receipts (where applicable - Telegram does not support this in group chats)  
-✓ Images/Audio/Video/files
+✓ Private chats, groups, supergroups and channels  
+✗ Secret chats  
+✓ Plain text and formatted messages
+✓ Most message media (photos, videos, voice messages, documents, locations, stickers, polls, dice rolls)  
+✓ Replies and mentions
+✓ Message redaction/deletion  
+✓ Typing notifications and read receipts  
+✓ Double puppeting
+✓ Backfilling history and missed messages  
+✓ End-to-bridge encryption
 
 ...and much more. Read the current feature list at <https://github.com/tulir/mautrix-telegram>.
 
