@@ -257,7 +257,7 @@ const Guides = ({data}) => {
           <td>English</td>
       </tr>
       <tr>
-          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/opentracing.rst">Use of OpenTracing</a></td>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/opentracing.md">Use of OpenTracing</a></td>
           <td>Synapse Team</td>
           <td>English</td>
       </tr>
