@@ -138,8 +138,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'case-studies',
-        path: `${__dirname}/content/using-matrix/case-studies`,
+        name: 'using-matrix',
+        path: `${__dirname}/content/using-matrix`,
       },
     },
     {
