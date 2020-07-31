@@ -132,16 +132,14 @@ Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
 > We also shipped a security and feature release of [Sygnal](https://github.com/matrix-org/sygnal/releases) (actually two each…). The main new feature being the ability to run behind an HTTP proxy which is useful in environments that mandate that all traffic go through a proxy.
 >
 > Aside from that week we continued our async/await-athon and Patrick provided a visual update
->
-> [Graph]
->
+
+![2020-07-31-m2KRg-image.png](/blog/img/2020-07-31-m2KRg-image.png)
+
 > We’ve been documenting worker support and diving into sharding the event persisters. This is not a small job since it means every other part of the code base that assumes an integer stream id will need to be updated to be aware of multiple stream ids from multiple persisters.
 >
 > Over in feature land we’ve been working on the notifications project and most of the backend support is done. The project will mean more intuitive defaults as well as a much better client UX in configuring notification settings.
 >
 > Finally special thanks to [Aaron Raimist](https://github.com/aaronraimist) for a bumper [docs PR](https://github.com/matrix-org/synapse/pull/7899)
-
-![2020-07-31-m2KRg-image.png](/blog/img/2020-07-31-m2KRg-image.png)
 
 ## Synapse Deployment 📥️
 
