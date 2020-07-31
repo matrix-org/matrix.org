@@ -51,6 +51,11 @@ const Legal = () => {
 
             <h3>8th July 2020</h3>
 
+            <p>
+                The fourth event was held on <b>Wednesday 8th July 2020</b>
+                at <b>5PM UTC</b> (6PM UK time). <a href="/open-tech-will-save-us/4">Watch the recording here.</a>
+            </p>
+
             <h4>Agenda</h4>
             <ul>
                 <li>
@@ -65,6 +70,11 @@ const Legal = () => {
             </ul>
 
             <h3>10th June 2020</h3>
+
+            <p>
+                The third event was held on <b>Wednesday 10th June 2020</b>
+                at <b>5PM UTC</b> (6PM UK time). <a href="/open-tech-will-save-us/3">Watch the recording here.</a>
+            </p>
 
             <h4>Agenda</h4>
 
