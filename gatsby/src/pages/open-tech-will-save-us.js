@@ -49,6 +49,8 @@ const Legal = () => {
 
             <h3>Agenda</h3>
             <ul>
+                <li><strong>Jonathan Beri, known Maker of Things</strong> (<a href="https://toot.cafe/@jberi">@jberi@toot.cafe</a>) will be presenting <em>Making it easier to make Things: WebAssembly and the Internet of Things</em>
+                <br />WebAssembly is moving beyond the browser - but is it ready for IoT apps and tiny embedded devices? Yes...ish. In this talk, learn about the state of running Wasm on embedded devices and what's left to solve.</li>
                 <li><strong>Matthew Petry from Pine64</strong> (<a href="https://matrix.to/#/@fire219:matrix.org">@fire219:matrix.org</a>)
                     presents his experience with running Synapse on RockPro64 cluster, plus some thoughts on his time with Pine64!</li>
                 <li><strong>Nad from Element</strong> dives into the recent rebrand, in which he worked to combine three brands into one,
