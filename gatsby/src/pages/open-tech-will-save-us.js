@@ -47,7 +47,7 @@ const Legal = () => {
             <p>The next event will be held on <b>Wednesday 12th August 2020</b> at <b>5PM UTC</b> (6PM UK time). <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
                 Join the live chat</a></strong> or check back here for updates.
 
-            <h4>Agenda</h4>
+            <h3>Agenda</h3>
             <ul>
                 <li><strong>Matthew Petry from Pine64</strong> (<a href="https://matrix.to/#/@fire219:matrix.org">@fire219:matrix.org</a>)
                     presents his experience with running Synapse on RockPro64 cluster, plus some thoughts on his time with Pine64!</li>
