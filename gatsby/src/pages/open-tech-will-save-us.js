@@ -46,10 +46,23 @@ const Legal = () => {
             <p>Following three great events, we're looking forward to presenting the fourth!</p>
             <p>The next event will be held on <b>Wednesday 12th August 2020</b> at <b>5PM UTC</b> (6PM UK time). <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
                 Join the live chat</a></strong> or check back here for updates.
+
+            <h4>Agenda</h4>
+            <ul>
+                <li><strong>Matthew Petry from Pine64</strong> (<a href="https://matrix.to/#/@fire219:matrix.org">@fire219:matrix.org</a>)
+                    presents his experience with running Synapse on RockPro64 cluster, plus some thoughts on his time with Pine64!</li>
+                <li><strong>Nad from Element</strong> dives into the recent rebrand, in which he worked to combine three brands into one,
+                    all while working to maintain a strong identity - highly recommended for Design and Product <del>nerds</del> fans</li>
+            </ul>
             </p>
             <h2>Previous Events</h2>
 
             <h3>8th July 2020</h3>
+
+            <p>
+                The fourth event was held on <b>Wednesday 8th July 2020</b> at <b>5PM
+                    UTC</b> (6PM UK time). <a href="/open-tech-will-save-us/4/">Watch the recording here.</a>
+            </p>
 
             <h4>Agenda</h4>
             <ul>
@@ -66,6 +79,11 @@ const Legal = () => {
 
             <h3>10th June 2020</h3>
 
+            <p>
+                The third event was held on <b>Wednesday 10th June 2020</b> at <b>5PM
+                    UTC</b> (6PM UK time). <a href="/open-tech-will-save-us/3/">Watch the recording here.</a>
+            </p>
+
             <h4>Agenda</h4>
 
             <ul>
@@ -81,8 +99,8 @@ const Legal = () => {
             <h3>13th May 2020</h3>
 
             <p>
-                The second event was held on <b>Wednesday 13th May 2020</b>
-                at <b>5PM UTC</b> (6PM UK time). <a href="/open-tech-will-save-us/2">Watch the recording here.</a>
+                The second event was held on <b>Wednesday 13th May 2020</b> at <b>5PM
+                    UTC</b> (6PM UK time). <a href="/open-tech-will-save-us/2">Watch the recording here.</a>
             </p>
 
             <h4>Agenda</h4>
