@@ -10,11 +10,25 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date:'2020-07-20',
+            who: 'SakiiR',
+            profile: 'https://twitter.com/sakiirsecurity',
+            description: 'An issue where an unexpected language ID in a code block could cause Element to crash. Fixed in <a href="https://github.com/vector-im/element-web/releases/tag/v1.7.3">Element 1.7.3</a>',
+            service: "Element"
+        },
+        {
             date: '2020-07-02',
             who: 'Quentin Gliech',
             profile: 'https://sandhose.fr',
             description: 'A clickjacking vulnerability in the single-sign-on flow in Synapse. Fixed in <a href="https://github.com/matrix-org/synapse/releases/tag/v1.15.2">Synapse 1.15.2</a>.',
             service: 'Synapse'
+        },
+        {
+            date:'2020-06-18',
+            who: 'Sorunome',
+            profile: 'placeholder',
+            description: 'An issue where replying to a specially formatted message would make it seem like the replier said something they did not. Fixed in <a href="https://github.com/vector-im/element-web/releases/tag/v1.7.3">Element 1.7.3</a>',
+            service: "Element"
         },
         {
             date: '2020-05-10',
