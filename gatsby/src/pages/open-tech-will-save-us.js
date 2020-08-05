@@ -19,7 +19,7 @@ if (SHOW_LIVE_STREAM) {
         <script src="/js/livestream.js"></script>
     </div>;
 } else {
-    liveStream = <img src="/images/otwsu4.png" alt='Open Tech Will Save Us'/>;
+    liveStream = <img src="/images/otwsu5.png" alt='Open Tech Will Save Us'/>;
 }
 
 const Legal = () => {
