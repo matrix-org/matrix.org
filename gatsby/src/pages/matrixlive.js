@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
 import { Layout, MXContentMain } from '../components'
@@ -19,13 +18,14 @@ const MatrixLive = () => {
                     <h2 id="modularim">Matrix Live Video</h2>
                     <p>
                         <strong>
-                        <a href="https://www.youtube.com/playlist?list=PLl5dnxRMP1hXZJtaE1Q3_ztrfIMJgrgZM" target="_blank">
+                        <a href="https://www.youtube.com/playlist?list=PLl5dnxRMP1hXZJtaE1Q3_ztrfIMJgrgZM" 
+                            target="_blank" rel="noreferrer" >
                             Catch up and subscribe on our YouTube channel
                         </a>
                         </strong>
                     </p>
                     <p>
-                        <img src="/blog/img/2020-06-26-ml.png" />
+                        <img src="/blog/img/2020-06-26-ml.png" alt="Matrix Live" />
                     </p>
                     <p>
                         Every Friday we release a new episode of Matrix Live,
@@ -34,7 +34,8 @@ const MatrixLive = () => {
                     </p>
                     <p>
                         <strong>
-                        <a href="https://www.youtube.com/playlist?list=PLl5dnxRMP1hXZJtaE1Q3_ztrfIMJgrgZM" target="_blank">
+                        <a href="https://www.youtube.com/playlist?list=PLl5dnxRMP1hXZJtaE1Q3_ztrfIMJgrgZM"
+                            target="_blank" rel="noreferrer" >
                             Catch up and subscribe on our YouTube channel
                         </a>
                         </strong>

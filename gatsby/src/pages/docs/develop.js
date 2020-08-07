@@ -18,7 +18,7 @@ const GuidesDevelop = ({ data }) => {
   });
 
   function addArticleToGroup(group, title, author, slug) {
-    var group = groups.find(g => g.edges[0].node.frontmatter.section === group);
+    group = groups.find(g => g.edges[0].node.frontmatter.section === group);
     group.edges.push({
       "node": {
         "frontmatter": {

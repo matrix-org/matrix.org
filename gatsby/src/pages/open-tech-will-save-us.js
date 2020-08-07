@@ -45,6 +45,7 @@ const Legal = () => {
             <h2>Next Event</h2>
             <p>The next event will be held on <b>Wednesday 12th August 2020</b> at <b>5PM UTC</b> (6PM UK time). <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
                 Join the live chat</a></strong> or check back here for updates.
+            </p>
 
             <img src="/images/otwsu5-heads.png" alt="OTWSU5 Headshots" />
 
@@ -57,7 +58,7 @@ const Legal = () => {
                 <li><strong>Nad from Element</strong> dives into the recent rebrand, in which he worked to combine three brands into one,
                     all while working to maintain a strong identity - highly recommended for Design and Product <del>nerds</del> fans</li>
             </ul>
-            </p>
+
             <h2>Previous Events</h2>
 
             <h3>8th July 2020</h3>
@@ -67,7 +68,7 @@ const Legal = () => {
                     UTC</b> (6PM UK time). <a href="/open-tech-will-save-us/4/">Watch the recording here.</a>
             </p>
 
-            <img src="/images/otwsu4-heads.jpg" alt="OTWSU4 Headshots" />
+            <img src="/images/otwsu4-heads.jpg" alt="OTWSU4 Headshots" id="otwsu4-heads" />
 
             <h4>Agenda</h4>
             <ul>
@@ -89,7 +90,7 @@ const Legal = () => {
                     UTC</b> (6PM UK time). <a href="/open-tech-will-save-us/3/">Watch the recording here.</a>
             </p>
 
-            <img src="/images/otwsu3-heads.jpg" alt="OTWSU3 Headshots" />
+            <img src="/images/otwsu3-heads.jpg" alt="OTWSU3 Headshots" id="otwsu3-heads" />
 
             <h4>Agenda</h4>
 
