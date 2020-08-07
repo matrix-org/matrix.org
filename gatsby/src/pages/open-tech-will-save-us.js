@@ -27,7 +27,7 @@ const Legal = () => {
     titleOverride={title}>
             <Helmet title={title}>
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta property="twitter:image" content="https://matrix.org/images/otwsu4-card.png" />
+                <meta property="twitter:image" content="https://matrix.org/images/otwsu5-heads.png" />
             </Helmet>
         <div>
             {liveStream}
@@ -45,6 +45,8 @@ const Legal = () => {
             <h2>Next Event</h2>
             <p>The next event will be held on <b>Wednesday 12th August 2020</b> at <b>5PM UTC</b> (6PM UK time). <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
                 Join the live chat</a></strong> or check back here for updates.
+
+            <img src="/images/otwsu5-heads.png" alt="OTWSU5 Headshots" />
 
             <h3>Agenda</h3>
             <ul>
@@ -65,6 +67,8 @@ const Legal = () => {
                     UTC</b> (6PM UK time). <a href="/open-tech-will-save-us/4/">Watch the recording here.</a>
             </p>
 
+            <img src="/images/otwsu4-heads.jpg" alt="OTWSU4 Headshots" />
+
             <h4>Agenda</h4>
             <ul>
                 <li>
@@ -84,6 +88,8 @@ const Legal = () => {
                 The third event was held on <b>Wednesday 10th June 2020</b> at <b>5PM
                     UTC</b> (6PM UK time). <a href="/open-tech-will-save-us/3/">Watch the recording here.</a>
             </p>
+
+            <img src="/images/otwsu3-heads.jpg" alt="OTWSU3 Headshots" />
 
             <h4>Agenda</h4>
 
