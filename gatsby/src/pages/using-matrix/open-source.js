@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import { Layout, MXContentMain } from '../../components'
 import config from '../../../config'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 const title = "Open Source Users";
 
@@ -19,25 +20,27 @@ const OpenSource = ({ data }) => {
             const fm = user.node.frontmatter;
             const left = i % 2 === 0;
             const image = <div className="mxgrid__item25"><img src={fm.thumbnail} alt={fm.title} /></div>;
-            const body = <div className="mxgrid__item75">
+            const body = <div className="mxgrid__item75"  style={{"textAlign": left?"left" : "right"}}>
                   <h2>{fm.title}</h2>
                   {fm.homeserver &&
-                    <p>Homeserver: {fm.homeserver}</p>
+                    <p>{fm.title} have their own homeserver at {fm.homeserver}.</p>
                   }
-                  <p>Main room: {fm.main_room}</p>
+                  <MDXRenderer>{user.node.body}</MDXRenderer>
+                  <h3>Rooms</h3>
+                  <p>Join their main room: <a href={"https://matrix.to/#/" +fm.main_room}>{fm.main_room}</a></p>
+                  {fm.rooms && <h4>Other rooms</h4>}
                   {fm.rooms &&
-                    <ul>
-                      {fm.rooms.map(room => {
-                        return (<li>{room}</li>)
-                      })}
-                    </ul>
+                    fm.rooms.map(room => {
+                        return (<div key={fm.title + room}><a href={"https://matrix.to/#/" + room}>{room}</a></div>)
+                      })
                   }
                 </div>;
             return (
-              <div className="mxgrid">
-                {left &&
-                (image &&
-                body)}
+              <div className="mxgrid" key={fm.title}>
+                {left && image}
+                {left && body}
+                {!left && body}
+                {!left && image}
               </div>
             )
           })}
@@ -60,6 +63,7 @@ export const query = graphql`{
             rooms
             thumbnail
           }
+          body
         }
       }
     }
