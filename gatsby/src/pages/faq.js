@@ -1209,32 +1209,6 @@ const Faq = ({ data }) => {
                 <div className="definition-close">close</div>
               </div>
             </div>
-            <div className="question">
-              <h4 id="how-can-i-get-a-rooms-list-from-matrix.org%3F">
-                <a
-                  className="permalink"
-                  href="#how-can-i-get-a-rooms-list-from-matrix.org%3F"
-                  aria-hidden="true"
-                >
-                  &#128279;
-                </a>{" "}
-                How can I get a rooms list from matrix.org?
-              </h4>
-              <p>
-                If you're using <a href="https://riot.im">Riot</a>, you can use
-                the &quot;Room directory&quot; screen, which you open from a
-                button in the bottom left.
-              </p>
-              <p>
-                It you're working on a client, you can use the{" "}
-                <a href="/docs/guides/client-server.html">Client-Server API</a>{" "}
-                to{" "}
-                <a href="/docs/spec/client_server/r0.3.0.html#listing-rooms">
-                  get a list of public rooms
-                </a>
-                .
-              </p>
-            </div>
             <MDXRenderer>{getSection("as-a-user").node.body}</MDXRenderer>
             <h3 id="tech">
               <a className="permalink" href="#tech" aria-hidden="true">
