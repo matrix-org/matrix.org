@@ -16,12 +16,12 @@ const Hosting = ({ data }) => {
             <h1 id="matrix-hosting">Matrix Hosting</h1>
             <div className="mxgrid">
                 <div className="mxgrid__item50">
-                    <h2 id="modularim">Modular.im</h2>
-                    <p><img style={{"height": "130px"}} src="/images/modularlogo.png" alt="" /></p>
-                    <p><a href="https://www.modular.im/">www.modular.im</a></p>
+                    <h2 id="ems">Element Matrix Services</h2>
+                    <p><img style={{"height": "130px"}} src="/images/ems-logo.svg" alt="" /></p>
+                    <p><a href="https://ems.element.io/">ems.element.io</a></p>
                     <ul>
                         <li>Hosted Homeservers</li>
-                        <li><a href="https://www.modular.im/services/matrix-integrations">Hosted Integrations including Slack, IRC, Github bridging</a></li>
+                        <li><a href="https://element.io/element-matrix-store">Hosted Integrations including Slack, IRC, Github bridging</a></li>
                     </ul>
                     <p>Brought to you by the creators of Matrix, who have been running the biggest homeserver
                         in the network since 2014. Every homeserver comes with a custom instance of Riot.</p>
