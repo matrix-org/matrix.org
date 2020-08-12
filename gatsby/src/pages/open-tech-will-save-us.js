@@ -9,7 +9,7 @@ import config from '../../config'
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
-const SHOW_LIVE_STREAM = false;
+const SHOW_LIVE_STREAM = true;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
