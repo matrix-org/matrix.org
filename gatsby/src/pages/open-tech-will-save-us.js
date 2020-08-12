@@ -9,7 +9,7 @@ import config from '../../config'
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
-const SHOW_LIVE_STREAM = true;
+const SHOW_LIVE_STREAM = false;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
@@ -34,24 +34,22 @@ const Legal = () => {
 
             <h1>Open Tech Will Save Us</h1>
 
-            <h2>Next Event: Wednesday 12th August 2020 at 5PM UTC</h2>
+            <p>OTWSU #5 took place on 12th August 2020!</p>
+
+            <p><strong><a href="https://www.youtube.com/watch?v=tJ8tthkVAOQ">Watch OTWSU #5 on YouTube</a></strong></p>
 
             <p><strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">Join the live chat now! #open-tech-meetup:matrix.org</a></strong></p>
 
-            <p><strong><a href="https://www.youtube.com/watch?v=tJ8tthkVAOQ">Join YouTube if you have any trouble with the stream: https://www.youtube.com/watch?v=tJ8tthkVAOQ</a></strong></p>
 
             <p>Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the second Wednesday of every month at 5pm UTC.</p>
 
-            <p>We discuss issues relating to technology, especially the importance of Open, Interoperable standards, and how they can enable decentralised tech to keep our data private while still enabling communication.</p>
+            <p>We discuss issues relating to technology, especially the importance of Open, Interoperable standards, and how they can enable decentralised tech to keep our data private while still enabling communication.</p>            
 
-            <h2>Next Event</h2>
-            <p>The next event will be held on <b>Wednesday 12th August 2020</b> at <b>5PM UTC</b> (6PM UK time). <strong><a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
-                Join the live chat</a></strong> or check back here for updates.
-            </p>
-
+            <h2>Previous Events</h2>
+            <h3>12th August 2020</h3>
             <img src="/images/otwsu5-heads.png" alt="OTWSU5 Headshots" />
 
-            <h3>Agenda</h3>
+            <h4>Agenda</h4>
             <ul>
                 <li><strong>Jonathan Beri, known Maker of Things</strong> (<a href="https://toot.cafe/@jberi">@jberi@toot.cafe</a>) will be presenting <em>Making it easier to make Things: WebAssembly and the Internet of Things</em>
                 <br />WebAssembly is moving beyond the browser - but is it ready for IoT apps and tiny embedded devices? Yes...ish. In this talk, learn about the state of running Wasm on embedded devices and what's left to solve.</li>
@@ -60,9 +58,6 @@ const Legal = () => {
                 <li><strong>Nad from Element</strong> dives into the recent rebrand, in which he worked to combine three brands into one,
                     all while working to maintain a strong identity - highly recommended for Design and Product <del>nerds</del> fans</li>
             </ul>
-
-            <h2>Previous Events</h2>
-
             <h3>8th July 2020</h3>
 
             <p>
