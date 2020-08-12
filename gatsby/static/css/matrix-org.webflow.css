@@ -147,6 +147,7 @@ a {
   color: #000;
   text-align: center;
   text-decoration: none;
+  z-index: 99;
 }
 
 .mxnavsection__item:hover {
