@@ -45,6 +45,8 @@ const redirects = [
     {from: "/docs/projects/sdks", to: "/sdks/"},
     {from: "/docs/projects/bots", to: "/bots"},
     {from: "/matrix-live", to: "/matrixlive"},
+    {from: "/legal/exceptional-erasure-policy", to: "/legal/privacy-notice"},
+    {from: "/legal/matrix-org-shop-privacy-notice", to: "/legal/privacy-notice"},
 ];
 
 const template = `import React from 'react'
