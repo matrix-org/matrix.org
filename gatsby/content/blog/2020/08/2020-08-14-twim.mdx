@@ -1,6 +1,6 @@
 ---
-date: '2020-08-14'
-title: 'This Week in Matrix 2020-08-14'
+date: "2020-08-14"
+title: "This Week in Matrix 2020-08-14"
 categories:
   - This Week in Matrix
 author: Ben Parsons
@@ -11,11 +11,18 @@ image: https://matrix.org/blog/img/2020-08-14-hydrogen.png
 
 No new Matrix Live this week, we have Open Tech Will Save Us #5:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tJ8tthkVAOQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/tJ8tthkVAOQ"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
 Also, I recommend Matrix Live from last week, with [Timo and Matthew discussing Conduit/Rust/Homeserver dev](https://youtu.be/cIOKD9xM3F0). Conduit is absolutely motoring, as you will read below.
 
-## Dept of *Status of Matrix* 🌡️
+## Dept of _Status of Matrix_ 🌡️
 
 ### Linköping University has now soft-launched Matrix
 
@@ -23,7 +30,7 @@ Also, I recommend Matrix Live from last week, with [Timo and Matthew discussing 
 
 > In _completely unrelated_ news to my earlier K8s updates, Linköping University has now soft-launched Matrix for use both internally - and hopefully with other universities and institutions in the future.
 
-Se the k8s updates from *Ananace* below. Is this the first .se university offering Matrix? Also, great hostname!
+Se the k8s updates from _Ananace_ below. Is this the first .se university offering Matrix? Also, great hostname!
 
 ## Dept of Spec 📜
 
@@ -45,16 +52,16 @@ Se the k8s updates from *Ananace* below. Is this the first .se university offeri
 >
 > **Merged MSCs:**
 >
-> * _No MSCs were merged this week._
+> - _No MSCs were merged this week._
 >
 > **MSCs in Final Comment Period:**
 >
-> * _No MSCs are in FCP._
+> - _No MSCs are in FCP._
 >
 > **New MSCs:**
 >
-> * [MSC2730: Verifiable forwarded events](https://github.com/matrix-org/matrix-doc/pull/2730)
-> * [MSC2723: Forwarded message metadata](https://github.com/matrix-org/matrix-doc/pull/2723)
+> - [MSC2730: Verifiable forwarded events](https://github.com/matrix-org/matrix-doc/pull/2730)
+> - [MSC2723: Forwarded message metadata](https://github.com/matrix-org/matrix-doc/pull/2723)
 >
 > #### Spec Core Team
 >
@@ -70,19 +77,19 @@ Se the k8s updates from *Ananace* below. Is this the first .se university offeri
 
 > #### Matrix database
 >
-> * The port to nio is complete and most of the functionality has been worked out
+> - The port to nio is complete and most of the functionality has been worked out
 >
-> * Encryption support is being worked on
-> * The module now has a `delete` method
+> - Encryption support is being worked on
+> - The module now has a `delete` method
 >
-> * Some testing is remaining
-> * Check out the progress [here](https://github.com/opsdroid/opsdroid/pull/1587)
+> - Some testing is remaining
+> - Check out the progress [here](https://github.com/opsdroid/opsdroid/pull/1587)
 >
 > #### End to End Encryption with matrix
 >
-> * Opsdroid will soon get a new release with the new connector
+> - Opsdroid will soon get a new release with the new connector
 >
-> * For now it can be used through the [master branch](https://github.com/opsdroid/opsdroid) of opsdroid
+> - For now it can be used through the [master branch](https://github.com/opsdroid/opsdroid) of opsdroid
 
 ## Dept of Servers 🏢
 
@@ -90,23 +97,23 @@ Se the k8s updates from *Ananace* below. Is this the first .se university offeri
 
 [Neil](https://matrix.to/#/@neilj:matrix.org) reported:
 
-> We have [a new RC out](https://github.com/matrix-org/synapse/releases/tag/v1.19.0rc1), edited highlights include 
+> We have [a new RC out](https://github.com/matrix-org/synapse/releases/tag/v1.19.0rc1), edited highlights include
 >
->  * _lots_ of async/await changes, 27 separate PRs (thanks Patrick)
->  * improved logging performance, this is in part to reduce IO but also to reduce the total amount logged. We’d be really interested to get some feedback on if the changes help. You may also want to take a look at our new logging defaults to see if they would help reduce total disk space usage. 
+> - _lots_ of async/await changes, 27 separate PRs (thanks Patrick)
+> - improved logging performance, this is in part to reduce IO but also to reduce the total amount logged. We’d be really interested to get some feedback on if the changes help. You may also want to take a look at our new logging defaults to see if they would help reduce total disk space usage.
 >
->  * Further improvements to the Admin API allowing admin to optionally purge rooms on deletion.
+> - Further improvements to the Admin API allowing admin to optionally purge rooms on deletion.
 >
 > Expect 1.19.0 to land early next week.
 >
 > Aside from that Erik has been continuing with sharding the event persister, this is a big job, so we’re still a little way off having something to ship, but I’ll keep you updated.
 >
-> Big news this week, after spending a good chunk of time trying to rework notifications to make the UX more intuitive, we have decided that the best (and only) way forward is to completely rethink how the push rules work. Rich is currently redesigning the whole thing, and once done we’ll resume on the client side. 
+> Big news this week, after spending a good chunk of time trying to rework notifications to make the UX more intuitive, we have decided that the best (and only) way forward is to completely rethink how the push rules work. Rich is currently redesigning the whole thing, and once done we’ll resume on the client side.
 >
 > Having spent much of the past 3 months trying to improve the performance of large scale instances we will soon start looking at improving the out of the box experience for smaller installs and are in the early stages of thinking about what that might look like. I’ll update more over time, but the two obvious use cases to target are
 >
->  * Federating instance, with 1-5 users, resource constrained.
->  * Federating instance with a few hundred users.
+> - Federating instance, with 1-5 users, resource constrained.
+> - Federating instance with a few hundred users.
 >
 > Our (relatively small) changes to logging in 1.19.0 are the first signs of this shift. We still need to ship event persistence sharding and also move more functionality from the main process (dependent on async/await), but once done it clears the way for new projects.
 
@@ -122,10 +129,10 @@ Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
 
 > This week I worked a bit on federation! Last week we were able to query room directories over federation; This week I looked into what's needed to join one of those rooms:
 >
-> * Resolve room aliases over federation
+> - Resolve room aliases over federation
 >
-> * Send make_join request when a user tries to join an unknown room
-> * Use make_join response to create send_join request (insert origin, origin_server_ts and add hashes and signatures)
+> - Send make_join request when a user tries to join an unknown room
+> - Use make_join response to create send_join request (insert origin, origin_server_ts and add hashes and signatures)
 >
 > After implementing all those things, I could actually see Conduit's join event on Synapse!
 
@@ -138,9 +145,9 @@ Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
 >
 > Other news:
 >
-> * Docker support (thanks to @weasy, @valkum and @paul)
+> - Docker support (thanks to @weasy, @valkum and @paul)
 >
-> * Room upgrade support (almost done, thanks to @Faelar)
+> - Room upgrade support (almost done, thanks to @Faelar)
 >
 > Thanks to everyone who supports me on [Liberapay](https://liberapay.com/timokoesters) or Bitcoin!
 
@@ -154,21 +161,21 @@ Dendrite is a next-generation homeserver written in Go
 >
 > Changes this week include:
 >
-> * New format for the Dendrite configuration file, which is correctly broken up into configuration per-component
+> - New format for the Dendrite configuration file, which is correctly broken up into configuration per-component
 >
-> * Support for server ACLs has been added
-> * Significant refactoring of the HTTP routing and API setup to improve flexibility and separation of internal and external APIs
+> - Support for server ACLs has been added
+> - Significant refactoring of the HTTP routing and API setup to improve flexibility and separation of internal and external APIs
 >
-> * A number of improvements to device list handling
-> * Key updates are now sent when handling device display name changes
+> - A number of improvements to device list handling
+> - Key updates are now sent when handling device display name changes
 >
-> * Deleted devices are now propagated correctly over federation
+> - Deleted devices are now propagated correctly over federation
 >
 > Spec compliance is improving:
 >
-> * Client-Server APIs: 54%, up from 51% last week
+> - Client-Server APIs: 54%, up from 51% last week
 >
-> * Server-Server APIs: 70%, up from 54% last week
+> - Server-Server APIs: 70%, up from 54% last week
 >
 > As always, feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for the latest!
 
@@ -222,10 +229,10 @@ and then:
 >
 > Some caveats apply at the moment, but will be resolved in the near future:
 >
-> * Currently you will need to have a patched version of GStreamer. The current releases of GStreamer have a [bug](https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad/-/issues/831) when your turnserver uses a password, that contains a ':'. Since this is the default for coturn, I'm guessing this affects everyone.
+> - Currently you will need to have a patched version of GStreamer. The current releases of GStreamer have a [bug](https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad/-/issues/831) when your turnserver uses a password, that contains a ':'. Since this is the default for coturn, I'm guessing this affects everyone.
 >
-> * You will need to build Nheko yourself. Currently we do not have GStreamer available in our CI pipeline, so we disabled support for voice calls in those builds (apart from the flatpak build, but that also needs some further validation and a new GStreamer release). We will release proper builds with VOIP support once GStreamer is actually released and available with the fixes we need.
-> * There are still some other issues, when relying on a turnserver to connect a call. We will fix them one at a time.
+> - You will need to build Nheko yourself. Currently we do not have GStreamer available in our CI pipeline, so we disabled support for voice calls in those builds (apart from the flatpak build, but that also needs some further validation and a new GStreamer release). We will release proper builds with VOIP support once GStreamer is actually released and available with the fixes we need.
+> - There are still some other issues, when relying on a turnserver to connect a call. We will fix them one at a time.
 >
 > Big shoutout to trilene for implementing all of this! I can finally call people from Nheko, which is super awesome!
 >
@@ -249,10 +256,10 @@ BIG update! Looking forward to trying out voice calls. ☎️ Maybe we'll be cal
 >
 > It includes following changes since the last TWIM:
 >
-> * The single-list overview screen is now optional. If you prefer the tabbed layout for separating direct messages and rooms, as known from Element for Android, but still want SchildiChat's message bubbles, you can get that combination now too!
+> - The single-list overview screen is now optional. If you prefer the tabbed layout for separating direct messages and rooms, as known from Element for Android, but still want SchildiChat's message bubbles, you can get that combination now too!
 >
-> * Push notifications have been enabled for the Play Store variant
-> * Some theme fixes for old Android versions
+> - Push notifications have been enabled for the Play Store variant
+> - Some theme fixes for old Android versions
 
 ### Hydrogen
 
@@ -292,28 +299,29 @@ Ruma is a Rust project to create a comprehensive set of APIs for Matrix. Previou
 
 > Lots of exciting things happened in Ruma this week:
 >
-> * We have officially implemented over half (18/31) of the Federation API endpoints!
+> - We have officially implemented over half (18/31) of the Federation API endpoints!
 >
 > Special thanks to @agraven and @q-b!
 >
-> * We've added the only new endpoint from r0.6.1 of the C2S spec.
+> - We've added the only new endpoint from r0.6.1 of the C2S spec.
 >
-> * We have begun work on adding support for borrowed types for requests. This
-> should reduce the memory allocations required for clients to send requests to
+> - We have begun work on adding support for borrowed types for requests. This
+>   should reduce the memory allocations required for clients to send requests to
 >
 > a server.
 >
-> * Exported some macros to make creating custom endpoints and events that
+> - Exported some macros to make creating custom endpoints and events that
 >
 > much easier.
+>
 > #### New Contributors
 >
 > This week, we have gotten help from a few new contributors:
 >
-> * [@agraven](https://github.com/agraven)
+> - [@agraven](https://github.com/agraven)
 >
-> * [@lieuwex](https://github.com/lieuwex)
-> * [@q-b](https://github.com/q-b)
+> - [@lieuwex](https://github.com/lieuwex)
+> - [@q-b](https://github.com/q-b)
 >
 > Thanks for your help!
 >
@@ -332,7 +340,7 @@ Great to see new contributors here.
 
 > There's news from ansible land! Ansible recently introduced a new packaging format, the "collection", and we've now started moving our ansible content into collections. This means the matrix modules I twim'ed a few months back are now easier to install than ever before, and the synapse/element roles are included in there as well (thanks to [madonius](https://matrix.to/#/@madonius:entropia.de) for the contributions there). The roles have been regularly updated for a while now, and the element role isn't even called riot anymore! You can get the collection on [Ansible Galaxy](https://galaxy.ansible.com/famedly/matrix), with the source being available over on [GitLab](https://gitlab.com/famedly/ansible/collections/matrix). In case of any questions, feel free to hop over into [#ansible:famedly.de](https://matrix.to/#/#ansible:famedly.de)
 
-If *Ansible* were a film franchise "Ansible: The Collection" would be the long awaited boxset.
+If _Ansible_ were a film franchise "Ansible: The Collection" would be the long awaited boxset.
 
 ## Dept of Bots 🤖
 
@@ -363,12 +371,12 @@ Seems to work well!
 
 [terry_hello](https://matrix.to/#/@terry_hello:matrix.org) said:
 
-> Hi All, 
+> Hi All,
 >
-> I’ve created a compact and portable home server based on Matrix protocol, it’s a piece of hardware which is easy to use and set up. I’m working on a new client APP similar to other typical messenger GUI, but this server we named it ‘Privee’ supports any messenger developed with Matrix protocol. I’ve launched a campaign on Kickstarter this week, please come and support us! Thank you! 
+> I’ve created a compact and portable home server based on Matrix protocol, it’s a piece of hardware which is easy to use and set up. I’m working on a new client APP similar to other typical messenger GUI, but this server we named it ‘Privee’ supports any messenger developed with Matrix protocol. I’ve launched a campaign on Kickstarter this week, please come and support us! Thank you!
 > <https://www.kickstarter.com/projects/privee/privee?ref=beibnw>
 
-Privee is an *interesting project* alright! The project creators are based in Hong Kong, and are working from a desire to have more control over their communications. The plan is to run homeservers on a small computer physically located with the user, similar to plans outlined by [NovaChat](https://nova.chat/).
+Privee is an _interesting project_ alright! The project creators are based in Hong Kong, and are working from a desire to have more control over their communications. The plan is to run homeservers on a small computer physically located with the user, similar to plans outlined by [NovaChat](https://nova.chat/).
 
 This is an early-stage project (hence starting on KickStarter.) While exciting and ambitious, I encourage everyone to do their own research! Learn more and chat with terry_hello (who has done a good job handling questions already!) in [#Privee:matrix.org](https://matrix.to/#/#Privee:matrix.org).
 
@@ -376,21 +384,21 @@ This is an early-stage project (hence starting on KickStarter.) While exciting a
 
 Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
-|Rank|Hostname|Median MS|
-|:---:|:---:|:---:|
-|1|helderferreira.io|470|
-|2|maescool.be|486.5|
-|3|matrix.vgorcum.com|570.5|
-|4|mchus.pro|730|
-|5|envs.net|770|
-|6|maunium.net|983|
-|7|matrix.org|1261|
-|8|acmelabs.space|1282.5|
-|9|chatserver.ca|1387|
-|10|productionservers.net|1433.5|
+| Rank |       Hostname        | Median MS |
+| :--: | :-------------------: | :-------: |
+|  1   |   helderferreira.io   |    470    |
+|  2   |      maescool.be      |   486.5   |
+|  3   |  matrix.vgorcum.com   |   570.5   |
+|  4   |       mchus.pro       |    730    |
+|  5   |       envs.net        |    770    |
+|  6   |      maunium.net      |    983    |
+|  7   |      matrix.org       |   1261    |
+|  8   |    acmelabs.space     |  1282.5   |
+|  9   |     chatserver.ca     |   1387    |
+|  10  | productionservers.net |  1433.5   |
 
 ## That's all I know 🏁
 
 See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
 
-[#TWIM:matrix.org]: <https://matrix.to/#/#TWIM:matrix.org>
+[#twim:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
