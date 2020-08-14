@@ -33,6 +33,7 @@ const Bridges = ({ data }) => {
 ["WhatsApp", "whatsapp"],
 ["Google Hangouts", "google-hangouts"],
 ["Mastodon", "mastodon"],
+["Mattermost", "mattermost"],
 ["libpurple", "libpurple"],
 ["GroupMe", "groupme"],
 ["Skype", "skype"],
