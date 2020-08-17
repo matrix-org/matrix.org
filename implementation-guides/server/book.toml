@@ -3,11 +3,11 @@ authors = ["Erik Johnston"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Matrix HomeServer Implementation Guide"
+title = "Matrix Homeserver Implementation Guide"
 
 [output.html]
 theme = "../theme"
-git-repository-url = "https://github.com/matrix-org/matrix.org/tree/erikj/imple_guide/implementation-guides/server"
+git-repository-url = "https://github.com/matrix-org/matrix.org/tree/master/server"
 
 [preprocessor.links]
 
