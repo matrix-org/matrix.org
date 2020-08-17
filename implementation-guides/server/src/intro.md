@@ -1,3 +1,3 @@
 # Introduction
 
-Welcome to this HomeServer implementation guide!
+Welcome to this Homeserver implementation guide!
