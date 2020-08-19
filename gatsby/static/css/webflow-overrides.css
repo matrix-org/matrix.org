@@ -324,3 +324,28 @@ label {
    content: "\2605";
    position: absolute;
 }
+
+.verticalHelper {
+  position: relative;
+  height: 100%;
+  min-height: 250px;
+}
+.verticalHelperImage {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+@media (max-width: 767px) {
+  .verticalHelper {
+  min-height: 150px;
+  }
+}
+
+@media (max-width: 479px) {
+  .verticalHelper {
+  min-height: 100px;
+  }
+}

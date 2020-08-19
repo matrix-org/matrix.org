@@ -76,7 +76,7 @@ export const query = graphql`
   {
     allMdx(
       filter: {
-        frontmatter: { section: { eq: "User" }, featured: { ne: false } }
+        frontmatter: { section: { eq: "User" }, featured: { eq: true } }
       }
       sort: { fields: frontmatter___sort_order, order: ASC }
     ) {
