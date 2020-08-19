@@ -23,8 +23,8 @@ const UsingMatrix = ({ data }) => {
                             return (
                                 <div className="mxgrid__item50" key={fm.title}>
                                     <a href={user.node.fields.slug}>
+                                        <h3>{fm.title}</h3>
                                         {fm.thumbnail && <img src={fm.thumbnail} alt={fm.title} style={{"width": "100%"}} />}
-                                        {fm.title}
                                     </a>
                                 </div>
                             );

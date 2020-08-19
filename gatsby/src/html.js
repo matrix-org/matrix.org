@@ -18,7 +18,7 @@ export default function HTML(props) {
         <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="/css/webflow.css" />
         <link rel="stylesheet" type="text/css" href="/css/matrix-org.webflow.css" />
-        <link rel="stylesheet" type="text/css" href="/css/webflow-overrides.css" />
+        <link rel="stylesheet" type="text/css" href="/css/webflow-overrides.css?2020-08-19" />
         <link rel="stylesheet" type="text/css" href="/css/prism.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"></link>
 
