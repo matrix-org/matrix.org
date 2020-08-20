@@ -47,6 +47,8 @@ const redirects = [
     {from: "/matrix-live", to: "/matrixlive"},
     {from: "/legal/exceptional-erasure-policy", to: "/legal/privacy-notice"},
     {from: "/legal/matrix-org-shop-privacy-notice", to: "/legal/privacy-notice"},
+    {from: "/using-matrix/open-source", to: "/using-matrix"},
+    {from: "/using-matrix/case-studies", to: "/using-matrix"},
 ];
 
 const template = `import React from 'react'
