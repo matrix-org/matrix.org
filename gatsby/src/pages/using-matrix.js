@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import { Layout, MXContentMain } from "../components";
 import config from "../../config";
+import MDXRenderer from "gatsby-mdx/mdx-renderer";
 
 const title = "Using Matrix";
 
@@ -14,6 +15,10 @@ const UsingMatrix = ({ data }) => {
       <MXContentMain>
         <Helmet title={`${title} | ${config.siteTitle}`} />
         <h1>{title}</h1>
+        <p>Matrix is used by everyone from Universities, Governments, Small
+            Businesses and Open Source communities.<br />
+            Let's collect some
+            examples and case studies of how it's used today.</p>
         <h2>Case Studies</h2>
         <div className="mxgrid">
           {nodes
@@ -38,34 +43,57 @@ const UsingMatrix = ({ data }) => {
         </div>
 
         <h2>Open Source Users</h2>
-        <p>
-          See more details on our{" "}
-          <a href="/using-matrix/open-source/">list of Open Source users</a>.
-        </p>
-        <div className="mxgrid">
-          {nodes
-            .filter(n => n.node.frontmatter.section === "User")
-            .map(function(user, i) {
-              const fm = user.node.frontmatter;
-              return (
-                <div
-                  className="mxgrid__item25"
-                  style={{ width: "25%" }}
-                  key={fm.title}
-                >
-                  <div className="verticalHelper">
-                    {fm.thumbnail && (
-                      <img
-                        className="verticalHelperImage"
-                        src={fm.thumbnail}
-                        alt={fm.title}
-                      />
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-        </div>
+        {nodes
+            .filter(n => n.node.frontmatter.section === "User").map(function(user, i) {
+            const fm = user.node.frontmatter;
+            const left = i % 2 === 0;
+            const image = (
+              <div
+                className="mxgrid__item25"
+                style={{ textAlign: left ? "right" : "left" }}
+              >
+                {fm.thumbnail && <img src={fm.thumbnail} alt={fm.title} />}
+              </div>
+            );
+            const body = (
+              <div
+                className="mxgrid__item75"
+                style={{ textAlign: left ? "left" : "right" }}
+              >
+                <h2>{fm.title}</h2>
+                {fm.homeserver && (
+                  <p>
+                    {fm.title} have their own homeserver at {fm.homeserver}.
+                  </p>
+                )}
+                <MDXRenderer>{user.node.body}</MDXRenderer>
+                <h3>Rooms</h3>
+                <p>
+                  Join their main room:{" "}
+                  <a href={"https://matrix.to/#/" + fm.main_room}>
+                    {fm.main_room}
+                  </a>
+                </p>
+                {fm.rooms && <h4>Other rooms</h4>}
+                {fm.rooms &&
+                  fm.rooms.map(room => {
+                    return (
+                      <div key={fm.title + room}>
+                        <a href={"https://matrix.to/#/" + room}>{room}</a>
+                      </div>
+                    );
+                  })}
+              </div>
+            );
+            return (
+              <div className="mxgrid" key={fm.title}>
+                {left && image}
+                {left && body}
+                {!left && body}
+                {!left && image}
+              </div>
+            );
+          })}
       </MXContentMain>
     </Layout>
   );
