@@ -1,0 +1,393 @@
+---
+date: '2020-08-21'
+title: 'This Week in Matrix 2020-08-21'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2020-08-21-ml.jpg
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LE-1s9h8YT4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Nico, one of the Nheko client maintainers, discusses the state of the project and shares various opinions about Matrix, chat clients, physics, the local weather and so on.
+
+## Dept of Spec 📜
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) offered:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals>.
+>
+> #### MSC Status
+>
+> **Closed MSCs:**
+>
+> * [Visibility of groups to group members and their non-members](https://github.com/matrix-org/matrix-doc/issues/1217)
+> * [Set defaults for m.federate](https://github.com/matrix-org/matrix-doc/issues/1213)
+>
+> * [Server Side Profile API](https://github.com/matrix-org/matrix-doc/issues/1209)
+> * [Homeservers as OAuth authorization endpoints (resource owners) (SPEC-206)](https://github.com/matrix-org/matrix-doc/issues/531)
+>
+> **MSCs in Final Comment Period:**
+>
+> * [MSC2033: Adding a device_id to /account/whoami](https://github.com/matrix-org/matrix-doc/pull/2033)
+>   * Accidentally merged on github, [#2738](https://github.com/matrix-org/matrix-doc/pull/2738) opened to re-merge after FCP ends
+>
+> **New MSCs:**
+>
+> * [\[WIP\] MSC2745 : Add hCaptcha as captcha provider](https://github.com/matrix-org/matrix-doc/pull/2745)
+> * [MSC2732: Olm fallback keys](https://github.com/matrix-org/matrix-doc/pull/2732)
+>
+> #### Spec Core Team
+>
+> In terms of Spec Core Team MSC focus for this week, [MSC1960](https://github.com/matrix-org/matrix-doc/pull/1960) will be the only one on the list. The two MSCs from last time will be put aside for this week while we focus on implementation.
+
+![2020-08-21-WX3fG-stacked_area_chart.png](/blog/img/2020-08-21-WX3fG-stacked_area_chart.png)
+
+## Dept of GSoC 🎓️
+
+### Nheko(GSoC)
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at
+
+[Chethan](https://matrix.to/#/@crdy2k1:matrix.org) offered:
+
+> * Room Verification works in Nheko! Still needs some Improvement,working on it.
+>
+> * Improving and fixing some caching issues.
+> * Fixing some breaking stuff with the new event store Nico is working on.
+
+## Dept of Servers 🏢
+
+### Dendrite / gomatrixserverlib
+
+Dendrite is a next-generation homeserver written in Go
+
+[Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) told us:
+
+> This week we have largely been working on bug fixes and performance issues.
+>
+> Changes this week include:
+>
+> * The room server now handles input events for multiple rooms in parallel when running with PostgreSQL, which helps a lot with perceived latency
+>
+> * Device key queries now obey federation backoffs, so that we don't spend a lot of time making unnecessary requests
+> * The key server now only emits changes for `/users/devices` which reduces database hits significantly
+>
+> * The client API now tries to guarantee message ordering on a per-user basis (thanks Anand!)
+> * Federated invites are now more reliable and are performed synchronously
+>
+> * Invite room metadata is now sent correctly in all cases
+> * Accepting and rejecting invites is also now much more reliable
+>
+> * A bug has been fixed that caused excessive memory usage in the sync API (bringing the memory usage of my own instance down to less than 100mb)
+> * A massive amount of work has been done to reduce database locks in SQLite mode across the entire codebase
+>
+> * Some unnecessary code has been removed from the roomserver updaters
+>
+> Spec compliance has improved slightly:
+>
+> * Client-Server APIs: 54%, same as last week
+>
+> * Server-Server APIs: 71%, up from 70% last week
+>
+> As always, feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for the latest!
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
+
+[timo](https://matrix.to/#/@timo:koesters.xyz) told us:
+
+> While work on federation is going on in the background, here are some other things we worked on this week
+>
+> * Arch AUR support (thanks to @s7evink)
+>
+> * Very efficient searching through rooms (custom implementation based on <https://artem.krylysov.com/blog/2020/07/28/lets-build-a-full-text-search-engine/>)
+>
+> Also check out the [Romeo and Juliet Benchmark](https://github.com/timokoesters/romeo-and-juliet-benchmark)!
+>
+> Thanks to everyone who supports me on [Liberapay](https://liberapay.com/timokoesters) or Bitcoin!
+
+### Synapse
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) said:
+
+> This week we added some more federation readers to matrix.org which should noticeably improve federation lag.
+
+![2020-08-21-2HGwe-Screenshot2020-08-21at14.59.34.png](/blog/img/2020-08-21-2HGwe-Screenshot2020-08-21at14.59.34.png)
+
+> Patrick has continued on with the async/await-a-thon and we are starting to enter the home stretch. Of the things we care about only ```runInteraction``` remains. Once done we can get on with profiling the main process.
+
+![2020-08-21-u40Ex-Screenshot2020-08-21at15.08.51.png](/blog/img/2020-08-21-u40Ex-Screenshot2020-08-21at15.08.51.png)
+
+> On the sharding side the last big milestone is to get the event persister to shard. I know this comes up every week, but we now have a rough working implementation for non-backfilled events. Next steps are to get backfill working, get the tests passing, go through review and then ship. I asked Erik if it would be live on matrix.org within 2 weeks. He didn’t say, at least I didn’t hear him say no…>
+> Aside from that Rich is working on the push rules redesign, the next steps are to design the APIs in more detail and then make a formal spec proposal. Brendan is also in notifications land and his work on room unread counts is going through final review. 
+>
+> Finally, Andrew has been working with Sorunome to dust off the knock feature, both on the spec and [the Synapse side](https://github.com/matrix-org/synapse/pull/6739).
+
+### Romeo and Juliet benchmark to compare Matrix server implementations
+
+[timo](https://matrix.to/#/@timo:koesters.xyz) offered:
+
+> This week I created the first(?) Matrix server benchmark and ran it on Synapse, Dendrite and Conduit. The test will go through the entire Romeo and Juliet play and create users for each character and sends messages for each line they say.
+>
+> The results are very interesting:
+>
+> ```
+> Synapse:
+> 
+>      timo         neilalexander    Half-Shot
+> 
+> # default (sqlite)
+> time 5m0.870s
+> 
+> # postgres:
+> time 1m46.319s                     1m8s
+> 
+> 
+> Dendrite:
+> 
+> # default (sqlite)
+> time 6m8.802s     0m38.502s
+> 
+> # postgres:
+> time 2m45.387s    0m53.691s
+> 
+> 
+> Conduit:
+> 
+> # default (sled)
+> time 0m4.184s     0m2.776s         0m2.935s
+> 
+> ```
+
+![2020-08-21-KRqaI-Screenshot_20200818_223636.png](/blog/img/2020-08-21-KRqaI-Screenshot_20200818_223636.png)
+
+There is some question here about how federation and state resolution will affect performance on these tests.
+
+## Synapse Deployment 📥️
+
+There is rather a lot in this section this week (see also Ops 🛠  section below.) I'll consider making this a more structured (table?) feature in future.
+
+### SELinux policy module
+
+[0xC0ncord](https://matrix.to/#/@concord:fuwafuwatime.moe) reported:
+
+> Hello! Just recently I made public an SELinux policy module I developed for Synapse. This policy is one I developed early on during my trip down the SELinux rabbit hole, and I have been using it in production for some time. At the moment, this policy module is built for the Gentoo SELinux policy (not RHEL/CentOS/Fedora) and does not currently have systemd support, nor has it been tested in all environments, i.e. with workers. I am publishing this policy in the hopes that it will be useful and I am open to any contributions, even those to help tighten the policy if possible. Finally, I have also made public a policy module for coturn, which I am also using in my own personal environment under the same conditions. Both the [Synapse](https://github.com/0xC0ncord/synapse-selinux) policy and the [coturn](https://github.com/0xC0ncord/turnserver-selinux) policy can be found on Github. Thank you!
+
+### Ansible
+
+[JCG](https://matrix.to/#/@jan.christian:gruenhage.xyz) said:
+
+> The ansible collection `famedly.matrix` has seen another release, 0.1.2, which updates the element role to 1.7.4 and the synapse role to 1.19.0. As always, get it from [Ansible Galaxy](https://galaxy.ansible.com/famedly/matrix), source from [Gitlab](gitlab.com/famedly/ansible/collections/matrix), and for any questions join [#ansible:famedly.de](https://matrix.to/#/#ansible:famedly.de).
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) announced:
+
+> Just pushed the 1.19 tags for the [K8s-optimized Synapse image](https://github.com/ananace/matrix-synapse), as well as an updated [chart](https://gitlab.com/ananace/charts) version for it that also takes advantage of the added `/health` endpoint.
+
+### Void Linux
+
+[JCG](https://matrix.to/#/@jan.christian:gruenhage.xyz) announced:
+
+> Element 1.7.4 and Synapse 1.19.0 have been packaged for Void Linux, packages are already available from mirrors.
+
+### dacruz21/matrix-chart Kubernetes Helm Chart
+
+[Typo Kign](https://matrix.to/#/@david:typokign.com) told us:
+
+> v2.5.0 of [dacruz21/matrix-chart](https://hub.helm.sh/charts/dacruz21/matrix) has been released with Synapse 1.19 support and some new configuration options.
+
+### YunoHost
+
+[Pierre](https://matrix.to/#/@pierre:mamieserv.fr) reported:
+
+> [YunoHost](https://yunohost.org) is an operating system aiming for the simplest administration of a server, and therefore democratize self-hosting.
+>
+> [Synapse](https://github.com/YunoHost-Apps/synapse_ynh/tree/master) integration is still 1.18.0, 1.19.0 is available en branch `testing`
+>
+> [Element Web](https://github.com/YunoHost-Apps/element_ynh/tree/master) integration is still 1.7.3, 1.7.4 is available en branch `testing`
+
+## Dept of Bridges 🌉
+
+### Telegram public channel mirror
+
+[bo41](https://matrix.to/#/@bo41:matrix.org) reported:
+
+> As channels are really popular in Telegram, I wrote a quick and dirty program/bot which can mirror (text and image) public Telegram channels to Matrix rooms. This should make it easier for Telegram users to consider a switch.
+>
+> Making the rooms read-only via permissions prevents messages from users.
+> It provides a good basis for someone trying to make a real 1to1 mirror. Please fork this project and host some channels publicly ;)
+>
+> <https://git.sr.ht/~bo41/matrix-channel-mirror>
+
+This project is functionally quite different from the more established mautrix-telegram: it is purely designed to mirror content from Telegram public rooms.
+
+### matrix-appservice-irc release 0.20.1
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) said:
+
+> Hello all, I'm going to be quick off the mark and announce matrix-appservice-irc release `0.20.1`! This release contains a ton of bug fixes and quality of life changes that you never knew you were missing. Please update and report back in the usual channels as always. Thanks!
+
+## Dept of Clients 📱
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) reported:
+
+> I've been working on trying to finish the event store (when I wasn't distracted by video calls with some people). This should allow limited offline use and reduce memory use as well as allow some other features in the future. If you want to try it out, you can build [this PR](https://github.com/Nheko-Reborn/nheko/pull/251) or try out the nightlies with `new-event-store` in their name.
+>
+> If you decide to try it out, backup your cache or at least BACKUP YOUR ENCRYPTION KEYS! I won't be responding to feedback immediately, since I am currently hiking, but I should get to it this weekend or next week. Come discuss it in [#nheko:ocean.joedonofry.com](https://matrix.to/#/#nheko:ocean.joedonofry.com), if you have some feedback or issues.
+
+See also Matrix Live this week!
+
+### Element Android
+
+[benoit](https://matrix.to/#/@benoit.marty:matrix.org) announced:
+
+> We are still fixing issues on Element Android. Hopefully we will release version 1.0.5 of the application and of the Matrix SDK in the coming days!
+
+later, fidèle a sa parole:
+
+> Element Android 1.0.5 has been published on the beta channel of the PlayStore. If everything is fine it will be pushed to production next week. I've also published SDK v1.0.5, and push translations of the PlayStore home page of Element to German, Chinese, English US, Hungarian, Portuguese (Brazil), Russian, Slovak, Swedish and Ukrainian.
+
+### Element-iOS
+
+[steve](https://matrix.to/#/@stevio:matrix.org) offered:
+
+> This week, we improved customisation for forks. We add possibility to customize default HTTP headers (like "User-Agent") and improve login and room settings screens customisation. We started to improve project documentation. We also made some fixes like fixing registration validation link in email.
+
+### Element Web
+
+[Ryan](https://matrix.to/#/@jryans:matrix.org) announced:
+
+> * Released 1.7.4
+>
+>   * Updated various links and strings for the new brand
+>   * Renewed Windows code signing cert
+>
+>   * Removed rebranding toast
+>   * All cross-signing keys now shared with other devices during verification
+>
+> * This week
+>
+>   * Mode to require secure backup during registration
+>   * Continue work on deferred cross-signing setup
+>
+>   * Light weight Hydrogen client continues, adding key features and design tweaks
+>   * Notifications continues in background while push rules evolve
+>
+>   * Matrix.to link previews in progress
+
+### Hydrogen
+
+Hydrogen is a web-based client designed to be very lightweight, and with few dependencies.
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) told us:
+
+> Added several features this week:
+>
+>  * avatars and display names in the timeline and for rooms
+>  * implemented the logic for the member list, but no UI for this yet
+>
+>  * room list sorting by last message timestamp, unread state and badge count
+>  * clear unread state when reading a room
+>
+>  * some visual tweaks in the timeline and room list
+>  * bug fixes
+>
+> If you have checked out hydrogen before, **you'll need to clear your session** (the little clear button in the session picker) to get correct avatars and display names everywhere.
+>
+> Next week I'll get started on E2EE, which should make the project a lot more useful. I'll look into leveraging the nice rust matrix-crypto-sdk for this.
+
+![2020-08-21-qAi-A-image.png](/blog/img/2020-08-21-qAi-A-image.png)
+
+## Dept of SDKs and Frameworks 🧰
+
+### Ruma
+
+[iinuwa](https://matrix.to/#/@iinuwa:matrix.org) offered:
+
+> We wanted to take a little bit of time to show off a state resolution library for Ruma, courtesy of @DevinR528 and @Timo. Ruma has a new crate to make resolving state easier, [state-res](https://github.com/ruma/state-res)! The goal of this crate is to be the base for federation, it provides the necessary utilities to resolve state, sort power events (reverse topological ordering), sort events (based on mainline depth), and a lot of event authentication functions. It is still in the early stages of development, but will be hopefully proved out in [Conduit](https://git.koesters.xyz/timo/conduit).
+>
+> Other things that happened this week:
+>
+> * Added the invite endpoints from the Federation API
+>
+> * Started requiring strong types for event-sending endpoints
+> * Augmented error types with error-specific fields (see the [livestream here](https://www.twitch.tv/videos/713341462?t=00h35m42s))
+>
+> Speaking of livestreams, @jplatte streams coding sessions from time to time on [Twitch](https://twitch.tv/jplatte). If you're interested in watching some coding streams to get more familiar with the Ruma codebase or learn Rust in general, follow us at [[#ruma-livestreams:matrix.org](https://matrix.to/#/#ruma-livestreams:matrix.org)](https://matrix.to/#/[#ruma-livestreams:matrix.org](https://matrix.to/#/#ruma-livestreams:matrix.org))!
+
+Very impressed that these features are landing in Ruma first, with the intention of getting them into Conduit.
+
+### mautrix-go
+
+[nikofil](https://matrix.to/#/@nikofil:matrix.org) reported:
+
+> * SSSS and cross-signing are slowly making their way to mautrix-go! A [WIP PR](https://github.com/tulir/mautrix-go/pull/18) exists for both features and is being developed upon. This will allow any clients that use the library to eventually be able to use SSSS and verify the trustworthiness of other devices based on cross-signing.
+
+### Ruby
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) announced:
+
+> Just pushed version 2.1.1 of the [Ruby Matrix SDK](https://github.com/ananace/ruby-matrix-sdk), mainly including a couple of fixes for various minor issues.
+
+## Dept of Ops 🛠
+
+### matrix-docker-ansible-deploy
+
+This [Ansible playbook](https://github.com/spantaleev/matrix-docker-ansible-deploy) is meant to easily let you run your own Matrix homeserver.
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) said:
+
+> [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) now makes it incredibly easy to use [rust-synapse-compress-state](https://github.com/matrix-org/rust-synapse-compress-state) to compress the state groups in your Synapse database.
+>
+> See our [Compressing state with rust-synapse-compress-state](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/maintenance-synapse.md#compressing-state-with-rust-synapse-compress-state) documentation page to get started.
+
+## Dept of Bots 🤖
+
+### go-neb
+
+[nikofil](https://matrix.to/#/@nikofil:matrix.org) said:
+
+> * Device verification was merged to neb! It needs human intervention to approve that the SAS match, of course.
+>
+> * A new service called "cryptotest" was added that allows other clients to exchange e2e-related events with neb to test their capabilities (such as encryption, room key forwarding, SAS verification)
+
+## Final Thoughts 💭
+
+[Christian](https://matrix.to/#/@christianp:vector.modular.im) told us:
+
+> Residents of Germany can apply for the [Prototype Fund](https://prototypefund.de/) until the end of September. They are looking for new open source ideas or features and fund about 20 projects twice a year with 47,500 EUR for six months (starting in April for this round).
+>
+> Previously funded chat-related projects include Briar and OpenPush.
+> It would be great to see a project building on Matrix.
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|fairydust.space|345|
+|2|maescool.be|865|
+|3|chatserver.ca|985|
+|4|nuclearlimes.co.uk|1206|
+|5|utzutzutz.net|1826|
+|6|nct08.de|1885|
+|7|kapsi.fi|1994.5|
+|8|mailstation.de|2324|
+|9|envs.net|4053|
+|10|kittenface.studio|4076|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: <https://matrix.to/#/#TWIM:matrix.org>
