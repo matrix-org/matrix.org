@@ -32,10 +32,6 @@ E2E is available in [matrix-nio](https://github.com/poljar/matrix-nio), a Client
 All clients (and SDK/libs) can benefit from E2EE by using [pantalaimon
 ](https://github.com/matrix-org/pantalaimon), which functions as a proxy daemon.
 
-#### Why does Riot say "Send a message (unencrypted)" in the text field?
-
-If a room is not using End-to-End Encryption, Riot will signal this by reminding you before you type a message. Note that Matrix messages are still transmitted using HTTPS: "unencrypted" in this case means that the messages are stored unencrypted on participating servers.
-
 #### Why are large public rooms like #matrix:matrix.org not encrypted?
 
 There is no value in encrypting public rooms. If anyone can join the room then encryption does not protect the contents, and may offer inconvenience for some users.
