@@ -10,6 +10,13 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date:'2020-08-14',
+            who: 'awesome-michael',
+            profile: 'https://github.com/awesome-michael',
+            description: '<a href="https://github.com/Awesome-Technologies">Awesome Technologies</a><br />An issue where encrypted state events could break incoming call handling. Fixed in <a href="https://github.com/vector-im/element-web/releases/tag/v1.7.5">Element 1.7.5</a>',
+            service: "Element"
+        },
+        {
             date:'2020-07-20',
             who: 'SakiiR',
             profile: 'https://twitter.com/sakiirsecurity',
