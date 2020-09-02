@@ -570,7 +570,7 @@ const Faq = ({ data }) => {
                 <a href="#definitions">federation</a>. Text and image messages
                 are supported, and basic voice-only VoIP calling via WebRTC is
                 supported in one-to-one rooms. (As of October 2015, experimental
-                multi-way calling is also available on Riot.im).
+                multi-way calling is also available on Element Web).
               </p>
               <div className="definition-list">
                 <div className="definition-item definition-client">
@@ -827,7 +827,7 @@ const Faq = ({ data }) => {
                 macro.
               </p>
               <p>
-                The most popular and established client is Riot, available on
+                The most popular and established client is Element, available on
                 web, desktop, Android and iOS.
               </p>
               <p>Alternatively you can find a client suitable for you:</p>
@@ -1014,7 +1014,7 @@ const Faq = ({ data }) => {
                 Where can I find a mobile app?
               </h4>
               <p>
-                <a href="https://riot.im">Riot</a> is available for Android and
+                <a href="https://element.io">Element</a> is available for Android and
                 iOS.
               </p>
               <p>
@@ -1033,19 +1033,19 @@ const Faq = ({ data }) => {
                 <a href="https://f-droid.org/repository/browse/?fdid=im.vector.alpha">
                   F-Droid
                 </a>
-                . If you are not sure which one to choose, install Riot from the{" "}
+                . If you are not sure which one to choose, install Element from the{" "}
                 <a href="https://play.google.com/store/apps/details?id=im.vector.app">
                   Google Play store
                 </a>
                 .
               </p>
               <div className="definition-list">
-                <div className="definition-item definition-riot">
+                <div className="definition-item definition-element">
                   <p>
-                    <strong>Riot</strong>
+                    <strong>Element</strong>
                   </p>
                   <p>
-                    Riot is a popular matrix client developed by the core
+                    Element is a popular matrix client developed by the core
                     matrix.org team.{" "}
                     <a href="/docs/projects/try-matrix-now.html">
                       It's available as a web app, on Android and on iOS
@@ -1057,30 +1057,30 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="i-installed-riot-via-f-droid%2C-why-is-it-draining-my-battery%3F">
+              <h4 id="i-installed-element-via-f-droid%2C-why-is-it-draining-my-battery%3F">
                 <a
                   className="permalink"
-                  href="#i-installed-riot-via-f-droid%2C-why-is-it-draining-my-battery%3F"
+                  href="#i-installed-element-via-f-droid%2C-why-is-it-draining-my-battery%3F"
                   aria-hidden="true"
                 >
                   &#128279;
                 </a>{" "}
-                I installed Riot via F-Droid, why is it draining my battery?
+                I installed Element via F-Droid, why is it draining my battery?
               </h4>
               <p>
                 The{" "}
                 <a href="https://f-droid.org/repository/browse/?fdid=im.vector.alpha">
                   F-Droid
                 </a>{" "}
-                release of Riot does not use{" "}
+                release of Element does not use{" "}
                 <a href="https://developers.google.com/cloud-messaging/">
                   Google Cloud Messaging
                 </a>
                 . This allows users that do not have or want Google Services
-                installed to use Riot.
+                installed to use Element.
               </p>
               <p>
-                The drawback is that Riot has to pull for new messages, which
+                The drawback is that Element has to pull for new messages, which
                 can drain your battery. To counter this, you can change the
                 delay between polls in the settings. Higher delay means better
                 battery life (but may delay receiving messages). You can also
@@ -1116,14 +1116,14 @@ const Faq = ({ data }) => {
                   What clients are available?
                 </a>
               </p>
-              <h5 id="riot">
-                <a className="permalink" href="#riot" aria-hidden="true">
+              <h5 id="element">
+                <a className="permalink" href="#element" aria-hidden="true">
                   &#128279;
                 </a>{" "}
-                Riot
+                Element
               </h5>
               <p>
-                You can use <a href="https://riot.im/app/">Riot.im</a> - a
+                You can use <a href="https://app.element.io/">Element Web</a> - a
                 glossy web client written on top of{" "}
                 <a href="https://github.com/matrix-org/matrix-react-sdk">
                   matrix-react-sdk
@@ -1131,9 +1131,9 @@ const Faq = ({ data }) => {
                 .
               </p>
               <p>
-                You can also host Riot on your own server. It's a static web
+                You can also host Element on your own server. It's a static web
                 application, just download the{" "}
-                <a href="https://github.com/vector-im/riot-web/">
+                <a href="https://github.com/vector-im/element-web/">
                   last release
                 </a>{" "}
                 and unpack it.
@@ -1146,7 +1146,7 @@ const Faq = ({ data }) => {
               </h5>
               <p>
                 <a href="https://github.com/f0x52/neo">neo</a> is a Matrix
-                React.js webclient which aims to be lighter than Riot while
+                React.js webclient which aims to be lighter than Element while
                 still feature complete.
               </p>
               <div className="definition-list">
@@ -1172,7 +1172,7 @@ const Faq = ({ data }) => {
               </p>
               <p>
                 You can use the desktop build of{" "}
-                <a href="https://riot.im/desktop.html">Riot.im</a>.
+                <a href="https://element.io/get-started">Element Web</a>.
               </p>
               <ul>
                 <li>
@@ -1915,7 +1915,7 @@ const Faq = ({ data }) => {
               </h4>
               <p>
                 We love IRC. In fact, prior to the point where{" "}
-                <a href="https://riot.im">Riot</a> was stable enough for daily
+                <a href="https://element.io/">Element</a> was stable enough for daily
                 use IRC was our primary communication tool. Between us we've
                 written IRCds, IRC bots and admined dreamforge, UnrealIRCd,
                 epona, ircservices and several others. That said, it has some
@@ -1950,12 +1950,12 @@ const Faq = ({ data }) => {
                 is currently used by matrix.org to bridge with FreeNode.
               </p>
               <div className="definition-list">
-                <div className="definition-item definition-riot">
+                <div className="definition-item definition-element">
                   <p>
-                    <strong>Riot</strong>
+                    <strong>Element</strong>
                   </p>
                   <p>
-                    Riot is a popular matrix client developed by the core
+                    Element is a popular matrix client developed by the core
                     matrix.org team.{" "}
                     <a href="/docs/projects/try-matrix-now.html">
                       It's available as a web app, on Android and on iOS
@@ -3112,9 +3112,9 @@ const Faq = ({ data }) => {
                   </td>
                 </tr>
                 <tr>
-                  <td>Riot</td>
+                  <td>Element</td>
                   <td>
-                    Riot is a popular matrix client developed by the core
+                    Element is a popular matrix client developed by the core
                     matrix.org team.{" "}
                     <a href="/docs/projects/try-matrix-now.html">
                       It's available as a web app, on Android and on iOS
