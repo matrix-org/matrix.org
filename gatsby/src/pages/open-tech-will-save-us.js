@@ -70,6 +70,24 @@ const Legal = () => {
           Open, Interoperable standards, and how they can enable decentralised
           tech to keep our data private while still enabling communication.
         </p>
+        <h2>Next Event</h2>
+        <h3>9th September 2020</h3>
+        <ul>
+          <li>
+            <strong>Ag3m</strong>, from <a href="https://www.laquadrature.net">La Quadrature du Net</a> will
+            join us to present <em>
+              "Some thoughts on moderation and censorship in a decentralised world"
+              </em>.<br />
+              As a member at LQDN for three years and a volunteer for more than that, Ag3m cofounded a queer 
+              feminist hackerspace in Paris called <em>le Reset</em>.
+          </li>
+          <li>
+            Element encryption team, represented by <strong>Damir Jelić</strong> (and channeling others), will 
+            discuss the latest and greatest thoughts on encryption, including: <em>E2EE protocol changes 
+              (touching on cross-signing, SSSS, dehydration) and future ideas for improving E2EE (e.g. 
+              cryptographic logins, MLS)</em>!
+          </li>
+        </ul>
         <h2>Previous Events</h2>
         <h3>12th August 2020</h3>
         <img src="/images/otwsu5-heads.png" alt="OTWSU5 Headshots" />
