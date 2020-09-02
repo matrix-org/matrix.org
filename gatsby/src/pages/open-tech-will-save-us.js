@@ -25,7 +25,7 @@ if (SHOW_LIVE_STREAM) {
     </div>
   );
 } else {
-  liveStream = <img src="/images/otwsu5.png" alt="Open Tech Will Save Us" />;
+  liveStream = <img src="/images/otwsu6.png" alt="Open Tech Will Save Us" />;
 }
 
 const Legal = () => {
@@ -39,7 +39,7 @@ const Legal = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:image"
-          content="https://matrix.org/images/otwsu5-heads.png"
+          content="https://matrix.org/images/otwsu6-social.png"
         />
       </Helmet>
       <div>
