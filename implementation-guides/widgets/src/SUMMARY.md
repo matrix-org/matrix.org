@@ -2,5 +2,5 @@
 
 [Introduction](./intro.md)
 
-- [State Resolution](./state/readme.md)
-    - [State Res V2](./state/v2.md)
+- [Widget basics](./basics/readme.md)
+    - [URL templating](./basics/url-templating.md)
