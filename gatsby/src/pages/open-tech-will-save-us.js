@@ -39,7 +39,7 @@ const Legal = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:image"
-          content="https://matrix.org/images/otwsu6-social.png"
+          content="https://matrix.org/images/otwsu6-heads.png"
         />
       </Helmet>
       <div>
@@ -82,12 +82,18 @@ const Legal = () => {
               feminist hackerspace in Paris called <em>le Reset</em>.
           </li>
           <li>
+            <strong>Sean DuBois</strong> (<a href="https://github.com/Sean-Der">Sean-Der</a>,&nbsp;
+            <a href="https://matrix.to/#/@sean-der:matrix.org">@sean-der:matrix.org</a>), WebRTC-knower and author of&nbsp;
+            <a href="https://webrtcforthecurious.com">WebRTC for the Curious</a> will discuss his recent work in the space.
+          </li>
+          <li>
             Element encryption team, represented by <strong>Damir Jelić</strong> (and channeling others), will 
             discuss the latest and greatest thoughts on encryption, including: <em>E2EE protocol changes 
               (touching on cross-signing, SSSS, dehydration) and future ideas for improving E2EE (e.g. 
               cryptographic logins, MLS)</em>!
           </li>
         </ul>
+        <img src="/images/otwsu6-heads.png" alt="OTWSU6 Headshots" />
         <h2>Previous Events</h2>
         <h3>12th August 2020</h3>
         <img src="/images/otwsu5-heads.png" alt="OTWSU5 Headshots" />
