@@ -55,7 +55,7 @@ const Guides = ({data}) => {
       </tr>
       <tr>
         <td>Create a complete working chatbot</td>
-        <td><strong><a href="/docs/guides/using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018">Using Matrix to make Chatbot software from the 1960s available in 2018</a></strong> goes from the basics, brings in <a href="https://github.com/turt2live/matrix-js-bot-sdk">matrix-js-bot-sdk</a>, and ends with deployment on a Raspberry Pi</td>
+        <td><strong><a href="/docs/guides/using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018">Using Matrix to make Chatbot software from the 1960s available in 2018</a></strong> goes from the basics, brings in <a href="https://github.com/turt2live/matrix-bot-sdk">matrix-bot-sdk</a>, and ends with deployment on a Raspberry Pi</td>
       </tr>
       <tr>
         <td>Work on Bridges to Matrix</td>
