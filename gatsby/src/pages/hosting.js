@@ -24,7 +24,7 @@ const Hosting = ({ data }) => {
                         <li><a href="https://element.io/element-matrix-store">Hosted Integrations including Slack, IRC, Github bridging</a></li>
                     </ul>
                     <p>Brought to you by the creators of Matrix, who have been running the biggest homeserver
-                        in the network since 2014. Every homeserver comes with a custom instance of Riot.</p>
+                        in the network since 2014. Every homeserver comes with a custom instance of Element.</p>
                 </div>
 
                 <div className="mxgrid__item50">
