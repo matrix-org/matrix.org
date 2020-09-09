@@ -8,7 +8,7 @@ import config from "../../config";
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
-const SHOW_LIVE_STREAM = false;
+const SHOW_LIVE_STREAM = true;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
@@ -44,6 +44,9 @@ const Legal = () => {
       </Helmet>
       <div>
         {liveStream}
+        <strong><a href="https://www.youtube.com/watch?v=AGs4ZC24Q1Y">Watch on YouTube</a></strong>
+        <br />
+        <strong><a href="https://stream.matrix.org">Watch on stream.matrix.org</a></strong>
         <h1>Open Tech Will Save Us</h1>
         <p>OTWSU #5 took place on 12th August 2020!</p>
         <p>
