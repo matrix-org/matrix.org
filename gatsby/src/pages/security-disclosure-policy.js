@@ -13,7 +13,7 @@ const HallOfFame = () => {
             date:'2020-09-09',
             who: 'Pritam Mukherjee',
             profile: 'https://www.linkedin.com/in/pritam-mukherjee-urvil-b75ab9b9/',
-            description: 'Misconfigured X-Frame in internal could lead to Clickjacking',
+            description: 'Misconfigured X-Frame in New Vector internal infrastructure could lead to Clickjacking',
             service: "New Vector Infrastructure"
         },
         {
