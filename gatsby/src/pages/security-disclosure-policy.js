@@ -10,10 +10,26 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date:'2020-09-09',
+            who: 'Pritam Mukherjee',
+            profile: 'https://www.linkedin.com/in/pritam-mukherjee-urvil-b75ab9b9/',
+            description: 'Misconfigured X-Frame in internal could lead to Clickjacking',
+            service: "New Vector Infrastructure"
+        },
+        {
             date:'2020-08-14',
             who: 'awesome-michael',
             profile: 'https://github.com/awesome-michael',
-            description: '<a href="https://github.com/Awesome-Technologies">Awesome Technologies</a><br />An issue where encrypted state events could break incoming call handling. Fixed in <a href="https://github.com/vector-im/element-web/releases/tag/v1.7.5">Element 1.7.5</a>',
+            company: 'Awesome Technologies',
+            companyUrl: 'https://github.com/Awesome-Technologies',
+            description: 'An issue where encrypted state events could break incoming call handling. Fixed in <a href="https://github.com/vector-im/element-web/releases/tag/v1.7.5">Element 1.7.5</a>',
+            service: "Element"
+        },
+        {
+            date:'2020-07-29',
+            who: 'TR_SLimey',
+            profile: 'https://github.com/TR-SLimey/',
+            description: 'An issue where Element Android was leaking PII. Fixed in <a href="https://github.com/vector-im/element-android/releases/tag/v1.0.5">Element Android 1.0.5</a>',
             service: "Element"
         },
         {
