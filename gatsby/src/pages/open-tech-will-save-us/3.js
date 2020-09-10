@@ -20,6 +20,11 @@ const OTWSU = () => (
           <li>31:19 Annie on Ditto</li>
           <li>1:10:20 Erik on Synapse Perf</li>
         </ul>
+        <img
+          src="/images/otwsu3-heads.jpg"
+          alt="OTWSU3 Headshots"
+          id="otwsu3-heads"
+        />
         </MXContentMain>
   </Layout>
 )

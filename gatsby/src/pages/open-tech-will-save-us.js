@@ -8,7 +8,7 @@ import config from "../../config";
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
-const SHOW_LIVE_STREAM = true;
+const SHOW_LIVE_STREAM = false;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
@@ -44,18 +44,9 @@ const Legal = () => {
       </Helmet>
       <div>
         {liveStream}
-        <strong><a href="https://www.youtube.com/watch?v=AGs4ZC24Q1Y">Watch on YouTube</a></strong>
         <br />
         <strong><a href="https://stream.matrix.org">Watch on stream.matrix.org</a></strong>
         <h1>Open Tech Will Save Us</h1>
-        <p>OTWSU #5 took place on 12th August 2020!</p>
-        <p>
-          <strong>
-            <a href="https://www.youtube.com/watch?v=tJ8tthkVAOQ">
-              Watch OTWSU #5 on YouTube
-            </a>
-          </strong>
-        </p>
         <p>
           <strong>
             <a href="https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca">
@@ -74,7 +65,13 @@ const Legal = () => {
           tech to keep our data private while still enabling communication.
         </p>
         <h2>Next Event</h2>
+        <h3>14th October 2020</h3>
+        <p>
+          Stay on this page to find out more. You may need to refresh and wait some time.
+        </p>
+        <h2>Previous Events</h2>
         <h3>9th September 2020</h3>
+        <a href="/open-tech-will-save-us/6/">Watch the recording here.</a>
         <ul>
           <li>
             <strong>Ag3m</strong>, from <a href="https://www.laquadrature.net">La Quadrature du Net</a> will
@@ -96,10 +93,11 @@ const Legal = () => {
               cryptographic logins, MLS)</em>!
           </li>
         </ul>
-        <img src="/images/otwsu6-heads.png" alt="OTWSU6 Headshots" />
-        <h2>Previous Events</h2>
+        <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/AGs4ZC24Q1Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
         <h3>12th August 2020</h3>
-        <img src="/images/otwsu5-heads.png" alt="OTWSU5 Headshots" />
+          <a href="/open-tech-will-save-us/5/">Watch the recording here.</a>
         <h4>Agenda</h4>
         <ul>
           <li>
@@ -137,11 +135,6 @@ const Legal = () => {
           <b>5PM UTC</b> (6PM UK time).{" "}
           <a href="/open-tech-will-save-us/4/">Watch the recording here.</a>
         </p>
-        <img
-          src="/images/otwsu4-heads.jpg"
-          alt="OTWSU4 Headshots"
-          id="otwsu4-heads"
-        />
         <h4>Agenda</h4>
         <ul>
           <li>
@@ -180,11 +173,6 @@ const Legal = () => {
           <b>5PM UTC</b> (6PM UK time).{" "}
           <a href="/open-tech-will-save-us/3/">Watch the recording here.</a>
         </p>
-        <img
-          src="/images/otwsu3-heads.jpg"
-          alt="OTWSU3 Headshots"
-          id="otwsu3-heads"
-        />
         <h4>Agenda</h4>
         <ul>
           <li>
@@ -345,20 +333,6 @@ const Legal = () => {
           From the live chat, you can ask questions to the presenters! We can
           invite you to join the broadcast, or if you prefer we'll read them out
           for you.
-        </p>
-        <p>
-          Once we're live there will be a video stream available on this page.
-          You can also{" "}
-          <strong>
-            <a href="https://www.youtube.com/watch?v=O3YP1TU-L_8">
-              join the stream via YouTube
-            </a>
-          </strong>
-          .
-        </p>
-        <p>
-          Issues with this stream? Try{" "}
-          <a href="https://stream.matrix.org/">https://stream.matrix.org/</a>
         </p>
         <h3>Important note on timezones</h3>
         5pm UTC is:

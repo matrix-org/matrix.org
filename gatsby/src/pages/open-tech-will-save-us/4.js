@@ -12,7 +12,7 @@ const OTWSU = () => (
   <Layout hasNavPadding="true" excerptOverride="Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the second Wednesday of every month at 5pm UTC"
   titleOverride={title} imageOverride="https://matrix.org/images/otwsu2-card.png">
   <MXContentMain>
-      <Helmet title={title + config.siteTitle} />
+      <Helmet title={title + " " + config.siteTitle} />
         <h1>{title}</h1>
         <iframe title="_2DQ_iYZi5U" width="1120" height="630" src="https://www.youtube.com/embed/_2DQ_iYZi5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
@@ -27,6 +27,12 @@ const OTWSU = () => (
                     <strong>Burak Nehbit</strong> (<a href="https://twitter.com/nehbit">@nehbit</a>, <a href="https://matrix.to/#/@burak:tomesh.net">@burak:tomesh.net</a>) will give a deep dive into his work on <a href="https://getaether.net/">Aether P2P</a>.
                 </li>
             </ul>
+
+        <img
+          src="/images/otwsu4-heads.jpg"
+          alt="OTWSU4 Headshots"
+          id="otwsu4-heads"
+        />
         </MXContentMain>
   </Layout>
 )
