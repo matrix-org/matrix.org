@@ -189,7 +189,7 @@
 [matrix-docker-ansible-deploy]: https://github.com/spantaleev/matrix-docker-ansible-deploy
 [matrix-ios-sdk]: https://github.com/matrix-org/matrix-ios-sdk
 [matrix-java-sdk]: https://github.com/kamax-io/matrix-java-sdk
-[matrix-js-bot-sdk]: https://github.com/turt2live/matrix-js-bot-sdk
+[matrix-bot-sdk]: https://github.com/turt2live/matrix-bot-sdk
 [matrix-js-sdk]: https://github.com/matrix-org/matrix-js-sdk
 [matrix-media-repo]: https://github.com/turt2live/matrix-media-repo
 [matrix-nio]: https://github.com/poljar/matrix-nio
