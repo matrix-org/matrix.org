@@ -68,6 +68,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const postListTemplate = require.resolve('./src/templates/post-list.js')
   const projectTemplate = require.resolve('./src/templates/project.js')
   const noNavTemplate = require.resolve('./src/templates/noNavPage.js')
+  const otwsuTemplate = require.resolve('./src/templates/otwsuTemplate.js')
 
   const resultPosts = await wrapper(
     graphql(`
@@ -303,7 +304,7 @@ const resultLegal = await wrapper(
   });
 
 
-  
+
 
 
 const resultProjects = await wrapper(
@@ -358,4 +359,42 @@ const resultProjects = await wrapper(
       },
     })
   })
+
+  const otwsuResults = await wrapper(
+    graphql(`{
+      allMdx(
+        filter: {
+          frontmatter: { section: { eq: "otwsu" } }
+        }
+        sort: { fields: frontmatter___sort_order, order: ASC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              section
+              edition
+              youtube
+              date
+            }
+            fields {
+              slug
+            }
+            body
+          }
+        }
+      }
+    }`));
+  const otwsu = otwsuResults.data.allMdx.edges;
+  otwsu.forEach((edge, index) => {
+    const slug = '/open-tech-will-save-us/' + edge.node.frontmatter.edition
+    createPage({
+      path: slug,
+      component: otwsuTemplate,
+      context: {
+        postNode: edge.node
+      },
+    })
+  })
+
 }
+
