@@ -24,7 +24,7 @@ free domains for a year. A Matrix server cannot be [migrated] from one domain to
 another, so you might want to get a longer-lived one.
 
 - https://tld-list.com/ - find cheap domains, look at renewal fees also
-- https://www.namecheap.com/promos/amazing98s/ - cheap first year
+- https://www.namecheap.com/promos/99-cent-domain-names/ - cheap first year
 
 You also need to specify subdomains (which is why most dynamic dns services
 aren't sufficient). To do this I added the domain on the free [Cloudflare] plan.
@@ -109,7 +109,7 @@ memory hungry.
 
 ```shell
 snap remove oracle-cloud-agent
-apt remove snapd open-iscsi lxd lxcfs
+apt purge snapd open-iscsi lxd lxcfs
 ```
 
 ## Tune server (optional)
@@ -131,7 +131,7 @@ records:
 
 - A record `$domain` pointing to `$instance_external_ip_address`
 - CNAME record `matrix.$domain` pointing to `$domain`
-- CNAME record `riot.$domain` pointing to `$domain`
+- CNAME record `element.$domain` pointing to `$domain`
 
 
 ## Use matrix-docker-ansible-deploy
@@ -146,7 +146,7 @@ Follow the [guide], with some tweaks:
 git clone https://github.com/spantaleev/matrix-docker-ansible-deploy/
 cd matrix-docker-ansible-deploy
 mkdir inventory/host_vars/matrix.$domain
-cp examples/host-vars inventory/host_vars/matrix.$domain/vars.yaml
+cp examples/host-vars.yml inventory/host_vars/matrix.$domain/vars.yaml
 cp examples/hosts inventory/hosts
 $EDITOR inventory/hosts
 $EDITOR inventory/host_vars/matrix.$domain/vars.yaml
@@ -188,7 +188,7 @@ matrix_synapse_configuration_extension_yaml: |
 
 ## Done!
 
-Point your browser to https://riot.$domain or use [another
+Point your browser to https://element.$domain or use [another
 client](https://matrix.org/clients).
 
 ## Maintenance
