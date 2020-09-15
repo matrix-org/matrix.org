@@ -74,7 +74,7 @@ exports.createPages = async ({ graphql, actions }) => {
     graphql(`
       {
         allMdx(sort: { fields: [frontmatter___date], order: DESC },
-          filter: {frontmatter: {date: {ne: null}}}) {
+          filter: {frontmatter: {date: {ne: null}, author: {ne: null}}}) {
           edges {
             node {
               fields {
