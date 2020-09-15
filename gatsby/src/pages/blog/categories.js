@@ -61,7 +61,7 @@ Category.propTypes = {
 export const postQuery = graphql`
   query CategoriesPage {
     categories: allMdx (
-      filter: {frontmatter: {date: {ne: null} } }
+      filter: {frontmatter: {date: {ne: null}, author: {ne: null} } }
     ){
       group(field: frontmatter___categories) {
         fieldValue
@@ -70,7 +70,7 @@ export const postQuery = graphql`
     }
     archive: allMdx(
       sort: { fields: [frontmatter___date, fileAbsolutePath], order: DESC },
-        filter: {frontmatter: {date: {ne: null}}}) {
+        filter: {frontmatter: {date: {ne: null}, author: {ne: null}}}) {
         totalCount
         edges {
           node {

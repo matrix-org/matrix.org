@@ -67,7 +67,7 @@ PostList.propTypes = {
 export const postQuery = graphql`
   query PostListPage($skip: Int!, $limit: Int!) {
     allMdx(sort: { fields: [frontmatter___date, fileAbsolutePath], order: DESC }, limit: $limit, skip: $skip,
-      filter: {frontmatter: {date: {ne: null}}}) {
+      filter: {frontmatter: {date: {ne: null}, author: {ne: null}}}) {
       totalCount
       edges {
         node {
