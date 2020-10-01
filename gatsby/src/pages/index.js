@@ -679,7 +679,7 @@ const Index = ({
 </div>
                     <div className="mxgrid__item__bg__vert">
                       <h4>UpCloud</h4>
-                      <p className="mxgrid__sponsors__item__p">Matrix.org is generously hosted by UpCloud! Host your homeserver via UpCloud and &amp; get a $25 credit.</p>
+                      <p className="mxgrid__sponsors__item__p">Matrix.org is generously hosted by UpCloud! Host your homeserver via UpCloud and get a $25 credit.</p>
 <a href="https://upcloud.com/">Learn more</a>
 </div>
                   </div>
