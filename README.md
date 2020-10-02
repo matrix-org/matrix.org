@@ -14,7 +14,7 @@ To discuss maintenance of this site, please come talk to the team in [#matrix.or
 
 Now you can visit the page you want to work on in the browser. For example: http://127.0.0.1:8000/docs/projects/try-matrix-now/
 
-### How to add your project to Try Matrix Now
+### How to add your project to Try Matrix Now and  setup installation
 
 0. Prerequisites:
    - Text editor or web IDE ([MDX](https://mdxjs.com/) support is nice to have
