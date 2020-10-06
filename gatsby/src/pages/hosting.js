@@ -17,7 +17,7 @@ const Hosting = ({ data }) => {
             <div className="mxgrid">
                 <div className="mxgrid__item50">
                     <h2 id="ems">Element Matrix Services</h2>
-                    <p><img style={{"height": "130px"}} src="/images/ems-logo.svg" alt="" /></p>
+                    <p><img style={{"height": "130px"}} src="/images/logo-ems-primary.png" alt="" /></p>
                     <p><a href="https://ems.element.io/">ems.element.io</a></p>
                     <ul>
                         <li>Hosted Homeservers</li>
