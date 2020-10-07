@@ -374,7 +374,7 @@ const resultProjects = await wrapper(
               section
               edition
               youtube
-              date
+              eventdate
             }
             fields {
               slug
