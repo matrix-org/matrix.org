@@ -71,7 +71,7 @@ const OTWSU = ({ data }) => {
           tech to keep our data private while still enabling communication.
         </p>
         <h2>Next Event</h2>
-        <h3>{moment(nextEvent.node.frontmatter.eventdate).format('Do MMMM YYYY')}</h3>
+        <h3>{moment.utc(nextEvent.node.frontmatter.eventdate).format('Do MMMM YYYY')}</h3>
         <MDXRenderer>{nextEvent.node.body}</MDXRenderer>
         <h2>Previous Events</h2>
         {events.filter(event => event.node.frontmatter.edition < NEXT_EVENT).map(event => {
@@ -87,10 +87,10 @@ const OTWSU = ({ data }) => {
                 }
               </div>
               <div className="mxgrid__item75">
-                <h3>Edition {fm.edition}: {moment(fm.eventdate).format('Do MMMM YYYY')}</h3>
+                <h3>Edition {fm.edition}: {moment.utc(fm.eventdate).format('Do MMMM YYYY')}</h3>
                 {fm.youtube && 
                 <p>
-                  Event #{fm.edition} was held on <strong>{moment(fm.eventdate).format('Do MMMM YYYY')}</strong>. <a href={fm.edition}>Watch the recording here.</a>
+                  Event #{fm.edition} was held on <strong>{moment.utc(fm.eventdate).format('Do MMMM YYYY')}</strong>. <a href={fm.edition}>Watch the recording here.</a>
                 </p>
                 }
                 <MDXRenderer>{event.node.body}</MDXRenderer>
