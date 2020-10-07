@@ -1,0 +1,14 @@
+[book]
+authors = ["Erik Johnston"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Matrix Application Services Implementation Guide"
+
+[output.html]
+theme = "../theme"
+git-repository-url = "https://github.com/matrix-org/matrix.org/tree/master/implementation-guides/application-services"
+
+[preprocessor.links]
+
+[preprocessor.index]
