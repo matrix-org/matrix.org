@@ -126,6 +126,11 @@ const Guides = ({data}) => {
         <td><a href="https://luxeylab.net">Adrien Luxey</a></td>
         <td>French</td>
       </tr>
+      <tr>
+        <td><a href="https://blog.sp-codes.de/werde-teil-der-matrix-matrix-teil-1/">Werde Teil der Matrix</a></td>
+        <td><a href="https://sp-codes.de">Samuel</a></td>
+        <td>German</td>
+      </tr>
     </tbody>
   </table>
 </div>
