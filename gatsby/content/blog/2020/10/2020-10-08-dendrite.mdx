@@ -1,4 +1,10 @@
-# Dendrite is entering Beta!
+---
+date: '2020-10-08'
+title: 'Dendrite is entering Beta!'
+categories:
+  - This Week in Matrix
+author: Matthew Hodgson
+---
 
 Hi all,
 
@@ -6,7 +12,9 @@ We’re very excited to announce that Dendrite, the next-generation Matrix homes
 
 The path we’ve taken to get here has been quite a curious one, and it’s worth recapping to give context on why it’s taken reality a little while to catch up with the dream. :)
 
-The Dendrite project has its roots in 2016 as [Dendron](https://github.com/matrix-org/dendron): an attempt to write a next-generation homeserver in Golang rather than Python, in order to benefit from Go’s stronger typing, ease of profiling (no twisted stack-shredding via deferredInlineCallbacks), multithreading and faster GC performance.  The idea for Dendron was to do a [strangler pattern](https://martinfowler.com/bliki/StranglerFigApplication.html) rewrite of Synapse - where we’d insert Dendron in front of Synapse as a load balancer, and incrementally replace Synapse’s API endpoints with ones implemented by Dendron. However, as the project started to progress, it became clear that this was going to end up with many of Synapse’s architectural choices being baked into the project - particularly the DB schema and data flow architecture, such that the new endpoints could interoperate with the existing Python ones.  We got as far as putting Dendron live on matrix.org and moving some of the login/registration APIs over to it… but then work fizzled out due to Synapse demanding more urgent attention as traffic grew on Matrix.org, combined with concerns about whether Dendron was the right approach in general.
+The Dendrite project has its roots in 2016 as [Dendron](https://github.com/matrix-org/dendron): an attempt to write a next-generation homeserver in Golang rather than Python, in order to benefit from Go’s stronger typing, ease of profiling (no twisted stack-shredding via deferredInlineCallbacks), multithreading and faster GC performance.  The idea for Dendron was to do a [strangler pattern](https://martinfowler.com/bliki/StranglerFigApplication.html) rewrite of Synapse - where we’d insert Dendron in front of Synapse as a load balancer, and incrementally replace Synapse’s API endpoints with ones implemented by Dendron.
+
+However, as the project started to progress, it became clear that this was going to end up with many of Synapse’s architectural choices being baked into the project - particularly the DB schema and data flow architecture, such that the new endpoints could interoperate with the existing Python ones.  We got as far as putting Dendron live on matrix.org and moving some of the login/registration APIs over to it… but then work fizzled out due to Synapse demanding more urgent attention as traffic grew on Matrix.org, combined with concerns about whether Dendron was the right approach in general.
 
 So, towards the end of 2016 (after the rush to launch ~~Vector~~ ~~Riot~~ Element that summer), we went back to the drawing board to devise Dendrite—“Dendron done right!”—as opposed to Dendron, which in retrospect was Dendrite done wrong. ;) The new vision was:
 
@@ -14,11 +22,13 @@ So, towards the end of 2016 (after the rush to launch ~~Vector~~ ~~Riot~~ Elemen
 *   Do so by splitting the server into well-defined microservice components, each of which could independently horizontally scale, each with its own DB (if desired)
 *   Connect the components together with a set of append-only logs via [Kafka](https://kafka.apache.org/) or similar, easily letting components shard and maintain their databases from the logs, allowing rolling upgrades, possibly schema upgrades, and all sorts of other niceties.  The logs effectively become a primary source of truth rather than putting all the onus on a massive monolithic ever-growing database
 
-Rather than Dendron’s top-down approach, instead Dendrite started bottom-up with the very hardest bit: [gomatrixserverlib](https://github.com/matrix-org/gomatrixserverlib), a standalone Go library implementing the state resolution algorithms and performing federation requests (such that it might also someday be used as a general purpose way to add Matrix federation support to an existing Go codebase). Then we started building out the various components to implement the various services, starting with the roomserver (the service which models the history and state of one or more rooms in the server), then the syncserver (the service which implements the /sync API to let clients receive messages), etc. We even implemented a simplified in-memory version of Kafka named [naffka](https://github.com/matrix-org/naffka)—useful for glueing together the microservice components when running them all within a single binary.
+Rather than Dendron’s top-down approach, instead Dendrite started bottom-up with the very hardest bit: [gomatrixserverlib](https://github.com/matrix-org/gomatrixserverlib), a standalone Go library implementing the state resolution algorithms and performing federation requests (such that it might also someday be used as a general purpose way to add Matrix federation support to an existing Go codebase).
+
+Then we started building out the various components to implement the various services, starting with the roomserver (the service which models the history and state of one or more rooms in the server), then the syncserver (the service which implements the /sync API to let clients receive messages), etc. We even implemented a simplified in-memory version of Kafka named [naffka](https://github.com/matrix-org/naffka)—useful for glueing together the microservice components when running them all within a single binary.
 
 Things were looking pretty positive by the summer of 2017: we had the server sending/receiving messages, federating with Synapse, and looking tantalisingly close:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We just sent the first ever synapse-&gt;dendrite federated traffic, including full dendrite media API (thumbnailing, fed, etc)!!! :D :D :D <a href="https://t.co/sBcM2jMAr6">pic.twitter.com/sBcM2jMAr6</a></p>&mdash; Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/872861579141947392?ref_src=twsrc%5Etfw">June 8, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">We just sent the first ever synapse-&gt;dendrite federated traffic, including full dendrite media API (thumbnailing, fed, etc)!!! :D :D :D <a href="https://t.co/sBcM2jMAr6">pic.twitter.com/sBcM2jMAr6</a></p>&mdash; Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/872861579141947392?ref_src=twsrc%5Etfw">June 8, 2017</a></blockquote>
 
 However, we then hit three fairly major obstacles:
 
@@ -46,7 +56,7 @@ Throughout 2020 there’s been a huge amount of stabilisation work and polish:
 *   Created all-new user server, key server, signing key server microservices
 *   Moving some work from existing microservices (ultimately superseding the former currentstateserver, publicroomsapi and typingserver microservices altogether)
 *   Developing new testing infrastructure:
-    *   [Complement](https://github.com/matrix-org/complement), our brand new Golang Matrix integration test harness
+    *   [Complement](https://github.com/matrix-org/complement) - our brand new Golang Matrix integration test harness
     *   [Are We Synapse Yet](https://github.com/matrix-org/dendrite/blob/master/are-we-synapse-yet.py) - an aggregator which parses sytest/complement output to compare how close Dendrite is to passing
 *   All the Matrix 1.0 work - particularly state res v2 & room version support
 *   Making it work with more P2P transports for [all the exciting P2P experiments](https://matrix.org/blog/2020/06/02/introducing-p-2-p-matrix/)
@@ -61,7 +71,7 @@ Throughout 2020 there’s been a huge amount of stabilisation work and polish:
 *   Rejecting / soft-failing events properly
 *   Support for database schema upgrades
 
-...which brings us at last to the present day (Oct 2020), as we declare Dendrite sufficiently stable that we consider it ready for beta testing!
+... which brings us at last to the present day (Oct 2020), as we declare Dendrite sufficiently stable that we consider it ready for beta testing!
 
 In practice, this means **Dendrite is now ready for experimentation by adventurous Matrix sysadmins. It is *NOT* ready for production usage yet, but we need folks to test it and help us iron out the remaining bugs!  **Please do not trust it with sensitive data yet, and we don’t recommend trying to run it at scale yet as we haven’t done any serious optimisation work yet.
 
