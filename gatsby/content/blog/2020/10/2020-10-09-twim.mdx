@@ -1,0 +1,373 @@
+---
+date: '2020-10-09'
+title: 'This Week in Matrix 2020-10-09'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2020-10-09-twim.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DOHTmJFrvbM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of *Status of Matrix* 🌡️
+
+### Matrix in use at IETF and TeamSpeak
+
+[Matthew](https://matrix.to/#/@matthew:matrix.org) said:
+
+> IETF is trialling Matrix as a replacement to Slack and a complement to XMPP: <https://mailarchive.ietf.org/arch/msg/tools-discuss/cUd9P35cj-nGsaioZ9HmMLmf1G4/>
+
+ALSO
+
+[Matthew](https://matrix.to/#/@matthew:matrix.org) commented:
+
+> looks like teamspeak is using Matrix (a Matrix endpoint was previously noticed at https://tschat-1.teamspeak.com/)
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) offered:
+
+> More info here: <https://community.teamspeak.com/t/teamspeak-development-status-update/11419/36>
+
+## Dept of Spec 📜
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) told us:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals>
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * [MSC2788: Room version 6 as the default room version](https://github.com/matrix-org/matrix-doc/pull/2788)
+> * [MSC2414: Make reason and score parameters optional for reporting content](https://github.com/matrix-org/matrix-doc/pull/2414)
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **New MSCs:**
+>
+> * [\[WIP\] MSC2812: Role-based power/permissions](https://github.com/matrix-org/matrix-doc/pull/2812)
+> * [MSC2810: Consistent globs specification](https://github.com/matrix-org/matrix-doc/pull/2810)
+>
+> * [\[WIP\] MSC2802: Flip The Table for Full Room Abstraction](https://github.com/matrix-org/matrix-doc/pull/2802)
+>
+> #### Spec Core Team
+>
+> In terms of Spec Core Team MSC focus for this week, we're going to be keeping the same three MSCs as last week, as their review is still a work in progress. As a reminder, those are [MSC2774](https://github.com/matrix-org/matrix-doc/issues/2774) (widget URL template parameters), [MSC2765](https://github.com/matrix-org/matrix-doc/issues/2765) (widget avatars), and [MSC2790](https://github.com/matrix-org/matrix-doc/issues/2790) (modal widgets).
+
+![2020-10-09--3RtA-stacked_area_chart.png](/blog/img/2020-10-09--3RtA-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Dendrite goes beta
+
+Dendrite is a next-generation homeserver written in Go
+
+[kegan](https://matrix.to/#/@kegan:matrix.org) told us:
+
+> Dendrite [has officially entered beta](https://matrix.org/blog/2020/10/08/dendrite-is-entering-beta)!
+>
+> It aims to be an efficient, reliable and scalable alternative to Synapse.
+>
+> We encourage early adopters to try it out starting with v0.1.0 in Monolith/Postgres mode.
+>
+> Dendrite supports a large amount of the Matrix spec including:
+>
+> * All room versions
+>
+> * E2E encryption (but not cross-signing)
+> * Federation
+>
+> * and many others!
+>
+> We'll be hard at work in the coming weeks ironing out any issues that crop up as Dendrite enters the global
+>
+> federation of Matrix servers. At present, Dendrite has not been optimised for memory/CPU usage, nor does it
+> fully support sharding, so there is still much scope to improve the already impressive resource usage whilst
+>
+> heading towards 100% spec compliance.
+>
+> Spec compliance:
+>
+> * Client-Server APIs: 56%, same as last week
+>
+> * Server-Server APIs: 77%, same as last week
+
+[stefan](https://matrix.to/#/@rumpelsepp:hackbrettl.de) announced:
+
+> I created an [AUR package](https://aur.archlinux.org/packages/dendrite/) for dendrite. So it is easy to get it running on Arch Linux.
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
+
+[timo](https://matrix.to/#/@timo:koesters.xyz) told us:
+
+> This week I worked on a new feature: the Admin Room. This is a room that is
+>
+> automatically created for the first user of a new homeserver. This room will be
+> used to send warnings to server admins in the future and can be used to control
+>
+> Conduit (like querying information, running cleanup, banning servers, hiding
+> public rooms or restarting Conduit). Power levels can be used to control who in
+>
+> the room has access to which commands. The admin room will work over
+> federation, so it's easy to help someone fix his server.
+>
+> Other news:
+>
+> * Federation is now disabled by default and can be enabled in the config
+>
+> * Bug with typing notifications is fixed
+>
+> Thanks to everyone who supports me on [Liberapay](https://liberapay.com/timokoesters) or Bitcoin!
+
+## Synapse
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) told us:
+
+> This week we put out [v1.21.0rc3](https://github.com/matrix-org/synapse/releases/tag/v1.21.0rc3), which fixes a duplicate messages bug. We expect the full release to go out early next week. 
+>
+> After a long and sometimes painful journey we plan to run sharded event persisters on matrix.org from Monday. All being well we will start running background processes on their own worker to free up the main process.
+These two projects combined should noticeably improve performance of matrix.org and any large scale deployments.
+>
+> Aside from that we are continuing to work on room knocking as a feature and have been considering ways to reduce load attributable to state resolution.
+>
+> We will also dust off the notifications project.
+
+## Dept of Bridges 🌉
+
+### Gitter
+
+[Eric Eastwood](https://matrix.to/#/@madlittlemods:matrix.org) told us:
+
+> The native Gitter <-> Matrix bridge is underway and we're working on [virtual users](https://gitlab.com/gitlab-org/gitter/webapp/-/merge_requests/2027) which is the first piece to making the bridge feel native. You can see what this will look like in this ominous and exciting tweet: <https://twitter.com/gitchat/status/1314252991705292800>
+>
+> There is also a [GitLab epic](https://gitlab.com/groups/gitlab-org/gitter/-/epics/10#note_426385967) you can track which breaks down some of the tasks and holds more details of what we're thinking of for the bridge.
+
+### 🌈 Once more into the Bifrost
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) announced:
+
+> Asgardians rejoice, for Bifrost development resumed this week! We've worked extremely hard this week to improve general gateway performance, edge case bugs and basically plowing on with the project. A 0.2.0 release will shortly be due with the new changes, and matrix.org is already running the latest and greatest. You can checkout the project over at <https://github.com/matrix-org/matrix-bifrost>
+
+## Dept of Clients 📱
+
+
+
+### Fractal
+
+[Alexandre Franke](https://matrix.to/#/@afranke:matrix.org) reported:
+
+> Former Fractal GSoC intern Alejandro Dominguez 😎️ got his [Integrate matrix-sdk (I)](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/626) merge request in “Ready for review” state. That’s a +3910/-5439, 38 commits diff‼️ poljar, who is the main contributor of matrix-rust-sdk, already had a look and provided some insights, but given 😱️ the sheer size of the changeset, the moar 👀️ we can get on it the better.
+
+
+
+### fluffychat
+
+[krille](https://matrix.to/#/@krille:janian.de) offered:
+
+> FluffyChat now runs on native Linux desktop (x86).
+>
+> You can download Linux tarballs from the CI and run them on any system which has sqlite3 installed (which all distros may have). If you have libolm3 installed, you can also use e2ee.  
+> Oh and by the way. Its NOT electron or any html5 stuff! Its a native Linux app.  
+> We are working on packaging solutions like snap and Flatpak. 😊
+
+### Vtx
+
+[CraftedCart](https://matrix.to/#/@craftedcart:matrix.org) offered:
+
+> I've started to make a Matrix client over the past few weeks, just as a hobby project for now, using Qt and a 'lil C++20! :D
+>
+> There's not a whole lot to show right now - currently we've got password login, and a simple timeline that can show plain text or `m.image` thumbnails.
+>
+> Source code's up at <https://gitlab.com/CraftedCart/vtx>
+
+![2020-10-09-TATmq-vtx_main.png](/blog/img/2020-10-09-TATmq-vtx_main.png)
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) reported:
+
+> This week we finally cleaned up the remaining parts of Chethans GSoC work and merged it. This means Nheko now has partial support for cross-signing. You can either start the verification from another client or when viewing the profile of a user. There are a few things still missing though:
+>
+> * Nheko does not use the verification status at all at the moment. So while you can verify your master key and let others verify your master key, from Nhekos perspective there is not much benefit yet. You will however show up with a green checkmark in other clients.
+>
+> * While nheko supports verifying your own master key and after that will also let others verify your master key, it does not yet download the self and user signing keys. This means you won't be able to upload cross-signing signatures for your own devices and other users master keys yet. I'll see if I can implement in the next weeks or so (since literally only the private key download or sharing is missing).
+> * Nheko can't bootstrap cross-signing yet. This means you need to bootstrap it from Element or another client once. That will probably take a bit until this is complete.
+>
+> * The UX is still WIP. Currently it shows a lot of unnecessary buttons, that are a bit confusing as well as not enough green checkmarks, so that needs some work.
+>
+> Other things that happened in the mean time or are work in progress:
+>
+> * Decryption errors should be reduced by a bit now. This is still work in progress though. With device trust landed now, we should be able to do automatic key requests, sharing and key backup soon.
+>
+> * Lurkki is currently cleaning up the design of the built in video player.
+> * manu_kamath is improving the design when showing images at the same time.
+>
+> * LorenDB has been updating our screenshots and working on an Esperanto translation.
+> * trilene has been ever busy improving edge cases around the Voip support in Nheko.
+>
+> So far Hacktoberfest seems to be going well with quite a few people trying to clean up some of the rougher edges in Nheko. If you are using Nheko and think some things could be better, why not try to fix it yourself? October is the perfect time for that!
+>
+> Featurework of this cycle is also slowly nearing its end. Once cross-signing, voip and the new event store are stable, we plan to improve the UX a bit more as well as some other annoyances and maybe we can do a new release then! A nice and spooky Hacktober everyone!
+
+[David Mehren](https://matrix.to/#/@davebloggt:kif.rocks) told us:
+
+> I just built `nheko-git 0.7.2.r2021.517a126a-1` from the AUR and cross-signing works
+
+
+### Element Web
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) offered:
+
+> This week we put out 1.7.9-rc.1 which is available at <https://staging.element.io>
+>
+> Highlights include
+>
+> * Many small fixes with edits and replies
+>
+> * Fixed a race during cross-signing key upload at registration time
+> * Clarified when you have unsaved changes in profile settings
+>
+> Work on the typescriptification project continues, we are tracking progress [here](https://arewetsyet.bit.ovh/)
+>
+> Finally, the improved widget support is looking very exciting. Here is a design grab to give you an idea of what to expect. Note this is not a real Element screen shot, the base functionality is there, but the look and feel of the final version is subject to change.
+
+![2020-10-09-oANj9-widgets.png](/blog/img/2020-10-09-oANj9-widgets.png)
+
+[Michael (t3chguy)](https://matrix.to/#/@x:riot.ovh) added:
+
+> Element Web is currently transitioning the codebase over to TypeScript - track our progress at <http://arewetsyet.bit.ovh/>
+
+### Hydrogen
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) told us:
+
+> This week, Hydrogen gained better caching (and a little over-eager on Safari), room list filtering, a grid layout to show up to 6 rooms simultaneously (see screenshot) and work is well on its way for url-based navigation within the app.
+
+![2020-10-09-taU-L-hydrogen-grid.png](/blog/img/2020-10-09-taU-L-hydrogen-grid.png)
+
+> also adding the screenshot on iOS that I didn't get in last week, showing the full range of display formats supported 🙂
+
+![2020-10-09-OJHmu-hydrogen-ios.jpg](/blog/img/2020-10-09-OJHmu-hydrogen-ios.jpg)
+
+> The app also received some visual polish, thanks to Nad, our designer.
+
+### Element-iOS
+
+[Manu](https://matrix.to/#/@Manu:matrix.org) offered:
+
+> We blocked the last week release (1.0.14) because of 2 issues: [Unable to decrypt errors](https://github.com/vector-im/element-ios/issues/3721) and [timeline not updating when coming from a notification](https://github.com/vector-im/element-ios/issues/3672#issuecomment-703510893).
+>
+> [1.0.15](https://github.com/vector-im/element-ios/releases/tag/v1.0.15) fixes those issues and more. The release should be available in TF soon. Hopefully, we will be able to publish it on the App Store on Monday
+
+
+
+
+
+
+
+## Dept of VoIP 🤙
+
+### Matrix VoIP Tester
+
+[reivilibre](https://matrix.to/#/@reivilibre:librepush.net) said:
+
+> <https://github.com/matrix-org/voip-tester/pull/18> (updated demo: <https://test.voip.librepush.net)>
+>
+> This week, I have improved the scoring rubric, so that the verdict given to you by the tester more accurately reflects the likelihood of connection establishment.
+>
+> I have also added more hints on what the verdicts mean.
+>
+> Finally, I have added workarounds to support Chromium browsers that decided to break their WebRTC API so that they could pedantically rename `ip` to `address`. In any case, it now seems to be on par with Firefox.
+>
+> The VoIP tester is now roughly 'usable' but please note that IPv6 support is totally untested (I don't have IPv6) — it is also suspected that some browsers won't try IPv6 anyway.
+>
+> There are also some more features on the wish list, such as screenshot safety and extra help when things go wrong.
+>
+> For discussion, feel free to join [#voip-tester:librepush.net](https://matrix.to/#/#voip-tester:librepush.net) .
+
+
+
+## Dept of Encryption 🔐
+
+### Olm 🦎
+
+[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) reported:
+
+> Versions 3.2.0 and 3.2.1 of libolm have been released.  3.2.0 supports fallback keys ([MSC2732](https://github.com/matrix-org/matrix-doc/pull/2732)) in the C library and the JavaScript binding, and includes several JavaScript/TypeScript fixes and improvements.  3.2.1 was just a fix to the TypeScript definition file.
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### Ruma
+
+Ruma is a Rust project to create a comprehensive set of APIs for Matrix. Previously there was a Ruma homeserver project.
+
+[jplatte](https://matrix.to/#/@jplatte:matrix.org) said:
+
+> This week, q-b [implemented](https://github.com/ruma/ruma/pull/289) moderation policy events, bringing us to full compatibility with r0.6.1 of the client-server API. iinuwa [added](https://github.com/ruma/ruma/pull/288) the only endpoint we were missing from the appservice API. Additionally, I [improved](https://github.com/ruma/ruma/pull/286) Ruma's JSON canonicalization, making it both simpler and more efficient.
+>
+> Due to [two](https://github.com/ruma/ruma/issues/215) [issues](https://github.com/ruma/ruma/issues/171) regarding future-compatibility, we're still a while away from our next set of releases, but we're working on it!
+
+
+
+## Dept of Ops 🛠
+
+### famedly.matrix ansible collection
+
+[JCG](https://matrix.to/#/@jan.christian:gruenhage.xyz) told us:
+
+> the `famedly.matrix` ansible collection has seen a release v0.2.0. Highlights since the last TWIM mention:
+>
+>  * **synapse_register**: a new module for registering users using synapse's admin API.
+>
+> * **matrix_member**: another new module, for inviting/kicking/banning people to/from rooms.
+>
+> * updates to synapse and element have been merged into their roles
+> * support deploying release candidates of synapse and element
+
+
+
+## Dept of Guides 🧭
+
+### Noteworthy Hub Guide
+
+[balaa](https://matrix.to/#/@balaa:a.noteworthy.im) told us:
+
+> We’ve put together a write up on how to deploy a Noteworthy Hub (transparent TLS proxy) in order to make it easy to run a federation capable matrix home server behind a firewall or NAT: <https://noteworthy.tech/hub>
+
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|helderferreira.io|487|
+|2|heitkoetter.net|627|
+|3|asra.gr|802|
+|4|conduit.rs|1178|
+|5|matrix.thedisco.zone|1275.5|
+|6|shortestpath.dev|1803|
+|7|lelux.net|2419|
+|8|elcyb.org|2685|
+|9|test.zemos.net|2800|
+|10|blob.cat|2882|
+
+## That's all I know 🏁
+
+Thanks anoa for TCB* the last two weeks! Was fun to be the one to read TWIM for myself. :D
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+\* Taking Care of Business
+
+[#TWIM:matrix.org]: <https://matrix.to/#/#TWIM:matrix.org>
