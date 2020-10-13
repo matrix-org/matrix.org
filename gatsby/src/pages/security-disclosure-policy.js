@@ -10,6 +10,13 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date:'2020-09-20',
+            who: 'Denis Kasak',
+            profile: 'https://github.com/dkasak',
+            description: 'HTML injection in reCAPTCHA endpoint leads to reflected XSS',
+            service: "Synapse"
+        },
+        {
             date:'2020-09-09',
             who: 'Pritam Mukherjee',
             profile: 'https://www.linkedin.com/in/pritam-mukherjee-urvil-b75ab9b9/',
