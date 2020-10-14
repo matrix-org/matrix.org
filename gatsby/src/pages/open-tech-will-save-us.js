@@ -11,7 +11,7 @@ import moment from "moment";
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
-const SHOW_LIVE_STREAM = false;
+const SHOW_LIVE_STREAM = true;
 const NEXT_EVENT = 7;
 
 let liveStream;
@@ -51,7 +51,8 @@ const OTWSU = ({ data }) => {
       <div>
         {liveStream}
         <br />
-        <strong><a href="https://stream.matrix.org">Watch on stream.matrix.org</a></strong>
+        <strong><a href="https://stream.matrix.org">Watch on stream.matrix.org</a></strong><br />
+        <strong><a href="https://www.youtube.com/watch?v=AeNuEWW4aVU">Find the stream at https://www.youtube.com/watch?v=AeNuEWW4aVU</a></strong>
         <h1>Open Tech Will Save Us</h1>
         <p>
           <strong>
