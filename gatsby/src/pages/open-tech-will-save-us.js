@@ -52,7 +52,7 @@ const OTWSU = ({ data }) => {
         {liveStream}
         <br />
         <strong><a href="https://stream.matrix.org">Watch on stream.matrix.org</a></strong><br />
-        <strong><a href="https://www.youtube.com/watch?v=xJ2Tjc1Aj0A">Find the stream at https://www.youtube.com/watch?v=AeNuEWW4aVU</a></strong>
+        <strong><a href="https://www.youtube.com/watch?v=xJ2Tjc1Aj0A">Find the stream at https://www.youtube.com/watch?v=xJ2Tjc1Aj0A</a></strong>
         <h1>Open Tech Will Save Us</h1>
         <p>
           <strong>
