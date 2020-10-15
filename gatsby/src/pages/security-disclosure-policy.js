@@ -13,7 +13,7 @@ const HallOfFame = () => {
             date:'2020-09-20',
             who: 'Denis Kasak',
             profile: 'https://github.com/dkasak',
-            description: 'HTML injection in reCAPTCHA endpoint leads to reflected XSS',
+            description: 'HTML injection in login fallback endpoints could be used for a Cross-site-scripting attack (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26891">CVE-2020-26891</a>). Fixed in Synapse 1.21.0.',
             service: "Synapse"
         },
         {
