@@ -58,6 +58,7 @@ steps:
       - ./mdbook build server -d /workdir/implementation-guides/implementation-guides/server
       - ./mdbook build client -d /workdir/implementation-guides/implementation-guides/client
       - ./mdbook build application-services -d /workdir/implementation-guides/implementation-guides/application-services
+      - cp index.html /workdir/implementation-guides/implementation-guides/
       - tar -czf implementation-guides.tar.gz implementation-guides
     artifact_paths:
       - implementation-guides/implementation-guides.tar.gz
