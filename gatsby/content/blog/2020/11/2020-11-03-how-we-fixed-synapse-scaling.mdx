@@ -45,7 +45,9 @@ and for quite a while we made it scale by adding more and more in-memory
 caches to speed things up by avoiding hitting the database (at the expense of
 RAM).  It looked like this:
 
+<div style="margin: auto; max-width: 640px;">
 ![2020-11-03-synapse1.png](/blog/img/2020-11-03-synapse1.png)
+</div>
 
 Eventually the caches stopped helping and we needed more than one thread of
 execution in order to spread CPU across multiple cores. Python’s Global
@@ -120,7 +122,7 @@ offloading the main event stream off the main process:
 
 ![2020-11-03-synapse4.png](/blog/img/2020-11-03-synapse4.png)
 
-## Sharding events stream
+## Sharding the events stream
 
 Eventually the worker responsible for doing nothing but persisting events
 started maxing out CPU. This meant that we had to look at sharding the events
