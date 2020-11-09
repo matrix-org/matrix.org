@@ -1639,10 +1639,10 @@ const Faq = ({ data }) => {
               <p>
                 We recommend servers use port 8448 for server&lt;-&gt;server
                 HTTPS traffic. Look at{" "}
-                <a href="https://github.com/matrix-org/synapse#setting-up-federation">
+                <a href="https://github.com/matrix-org/synapse/blob/develop/docs/federate.md">
                   &quot;Setting up Federation&quot;
                 </a>{" "}
-                in the Synapse readme file for details.
+                in the Synapse docs for details.
               </p>
               <p>
                 Client&lt;-&gt;Server traffic can talk directly to Synapse via
