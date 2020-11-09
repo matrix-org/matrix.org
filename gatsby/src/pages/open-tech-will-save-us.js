@@ -38,7 +38,7 @@ const OTWSU = ({ data }) => {
   return (
     <Layout
       hasNavPadding="true"
-      excerptOverride="Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the second Wednesday of every month at 5pm UTC"
+      excerptOverride="Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the second Wednesday of every month at 6pm UTC"
       titleOverride={title}
     >
       <Helmet title={title}>
