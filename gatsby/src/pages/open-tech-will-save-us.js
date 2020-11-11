@@ -11,7 +11,7 @@ import moment from "moment";
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
-const SHOW_LIVE_STREAM = false;
+const SHOW_LIVE_STREAM = true;
 const NEXT_EVENT = 8;
 
 let liveStream;
@@ -52,7 +52,7 @@ const OTWSU = ({ data }) => {
         {liveStream}
         <br />
         <strong><a href="https://stream.matrix.org">Watch on stream.matrix.org</a></strong><br />
-        <strong><a href="https://www.youtube.com/watch?v=xJ2Tjc1Aj0A">Find the stream at https://www.youtube.com/watch?v=xJ2Tjc1Aj0A</a></strong>
+        <strong><a href="https://www.youtube.com/watch?v=D4CprdzE2lY">Find the stream at https://www.youtube.com/watch?v=D4CprdzE2lY</a></strong>
         <h1>Open Tech Will Save Us</h1>
         <p>
           <strong>
@@ -64,7 +64,7 @@ const OTWSU = ({ data }) => {
         <p>
           Open Tech Will Save Us is a virtual meetup, taking the form of a
           monthly live video stream broadcasting on the second Wednesday of
-          every month at 5pm UTC.
+          every month at 6pm UK time.
         </p>
         <p>
           We discuss issues relating to technology, especially the importance of
