@@ -569,7 +569,7 @@ Matrix для определения MXID по его контакту.</p>
 Ключи серверов распределяются с использованием системы 
 <a href="https://web.archive.org/web/20170702024706/https://perspectives-project.org/">Перспектив</a>.</p>
 
-<p>Сквозное (оконечное) шифрование доступно в различных сборках <a href="https://Riot.im">Riot.im</a>. 
+<p>Сквозное (оконечное) шифрование доступно в различных сборках <a href="https://app.element.io/">app.element.io</a>. 
 Это позволяет вам шифровать личные и групповые чаты для защиты пользовательских данных, которые сохраняются 
 на сервере, используя библиотеку <a href="https://matrix.org/git/olm">Olm</a> с реализацией ratchet. Узнайте больше в 
 <a href="https://matrix.org/blog/2016/11/21/matrixs-olm-end-to-end-encryption-security-assessment-released-and-implemented-cross-platform-on-riot-at-last/">блоге</a>, в котором объявлена данная функциональность.</p>
@@ -697,21 +697,21 @@ event<em>cache</em>size: чем больше событий в кеше, тем 
 
 <h5 id="-27">Где я могу найти мобильное приложение?</h5>
 
-<p>Riot доступен для Android и iOS.</p>
+<p>Element доступен для Android и iOS.</p>
 
 <p>Версию для iOS можно скачать с <a href="https://itunes.apple.com/us/app/vector.im/id1083446067">Apple store</a>.</p>
 
 <p>Версию для Android можно скачать с <a href="https://play.google.com/store/apps/details?id=im.vector.app">Google Play</a> 
 ли <a href="https://f-droid.org/repository/browse/?fdid=im.vector.alpha">F-Droid</a>. 
-Если не знаете, какую из версий выбрать, установите Riot из 
+Если не знаете, какую из версий выбрать, установите Element из 
 <a href="https://play.google.com/store/apps/details?id=im.vector.app">Google Play</a>.</p>
 
-<h5 id="riotfdroid">Я установил Riot из F-droid, почему он сажает мне батарею?</h5>
+<h5 id="elementfdroid">Я установил Element из F-droid, почему он сажает мне батарею?</h5>
 
 <p>Версия F-Droid не использует Google <a href="https://developers.google.com/cloud-messaging/">Cloud Messaging</a>. 
-Это даёт пользователям возможность использовать Riot, если они не хотят или не могут установить Google Services. </p>
+Это даёт пользователям возможность использовать Element, если они не хотят или не могут установить Google Services. </p>
 
-<p>Недостаток заключается в том, что Riot вынужден регулярно запрашивать новые сообщения, 
+<p>Недостаток заключается в том, что Element вынужден регулярно запрашивать новые сообщения, 
 что может разряжать батарею. Чтобы противостоять этому, вы можете изменить интервал запросов 
 в настройках приложения. Более высокая задержка - способ продлить работу от батареи 
 (но может вызвать задержку получения сообщений). Также вы можете полностью выключить 
@@ -722,12 +722,12 @@ event<em>cache</em>size: чем больше событий в кеше, тем 
 
 <h5 id="-28">Где я могу найти веб клиент?</h5>
 
-<p>Вы можете использовать <a href="https://Riot.im">Riot.im</a> - современный веб-клиент, построенный на 
+<p>Вы можете использовать <a href="https://app.element.io/">app.element.io</a> - современный веб-клиент, построенный на 
 <a href="https://github.com/matrix-org/matrix-react-sdk">matrix-react-sdk</a>.</p>
 
 <h5 id="-29">Где я могу найти десктопный клиент?</h5>
 
-<p>Вы можете воспользоваться десктопной сборкой <a href="https://riot.im/desktop.html">Riot.im</a>. </p>
+<p>Вы можете воспользоваться десктопной сборкой <a href="https://element.io/get-started">element.io</a>. </p>
 
 <p>Есть также другие десктопные клиенты - посмотрите список 
 на <a href="https://matrix.org/docs/projects/try-matrix-now.html#clients">matrix.org</a>.</p>
