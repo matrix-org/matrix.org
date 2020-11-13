@@ -1,0 +1,326 @@
+---
+date: '2020-11-13'
+title: 'This Week in Matrix 2020-11-13'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2020-11-13-ml.jpg
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/boQGjG9bkt8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This marks the start of Season 6 of Matrix Live (S06E01), a decision M+A apparently made on the fly just now. Incrementing a mostly-arbitrary counter... Imagine wielding that kind of raw power!
+
+## Dept of *Status of Matrix* 🌡️
+
+### IETF three-way bridge
+
+[Matthew](https://matrix.to/#/@matthew:matrix.org) reported:
+
+> The IETF have been continuing to experiment with new chat systems, and [#xmpp_bridgingmeta_jabber.ietf.org:matrix.org](https://matrix.to/#/#xmpp_bridgingmeta_jabber.ietf.org:matrix.org) exists as a three-way bridge to discuss the initiative spanning Matrix, XMPP & Zulip.  Really fun to see open chat converging like this :)
+
+
+## Dept of Science 🧪
+
+### Analysis of the Matrix Event Graph Replicated Data Type
+
+[Florian](https://matrix.to/#/@florian:dsn.tm.kit.edu) announced:
+
+> Fresh off the arXiv presses comes our
+>
+> [“Analysis of the Matrix Event Graph Replicated Data Type”](https://arxiv.org/abs/2011.06488) preprint!
+> This time, it is a deep dive into the data structure properties of the event graph:
+>
+> What type of consistency guarantees does it provide,
+> how many of the other homeservers you share a room with can be faulty or malicious without violating those guarantees (short answer: all of them!),
+>
+> and how is it possible that a frayed-out event graph ever laces back to just a few current events,
+> while there is a probability larger than zero for growth to arbitrarily high limits?
+>
+> To shed light on those questions, we had a great cooperation between my [Decentralized Systems and Network Services
+> Research Group](https://dsn.tm.kit.edu/) and [Prof. Dr. Norbert Henze from the Institute of Stochastics](https://www.math.kit.edu/stoch/~henze/).
+>
+> While we are still in search of the right venue for peer-reviewd publication,
+> we went for a preprint this time to share our results with the scientific and the Matrix community in a timely manner.
+
+![2020-11-13-WTJwJ-next-step-expectations.png](/blog/img/2020-11-13-WTJwJ-next-step-expectations.png)
+
+In this figure, k is the number of participating servers, U_n is the current width of the event graph.
+
+> For example, with a current width of U_n = 1000 events and k = 200 servers,
+> we can expect that the width goes below E(U_{n+1}) < 600 events in just one step.*
+
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) reported:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals>.
+>
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * [MSC2774: Expose the widget ID to the widget](https://github.com/matrix-org/matrix-doc/pull/2774)
+> * [MSC2765: Widget avatars](https://github.com/matrix-org/matrix-doc/pull/2765)
+>
+> **MSCs in Final Comment Period:**
+>
+> * *No MSCs are in FCP.*
+>
+> **New MSCs:**
+>
+> * [MSC2858: Multiple SSO Identity Providers](https://github.com/matrix-org/matrix-doc/pull/2858)
+> * [MSC2855: Server-Initiated Client Clear-Cache & Reload](https://github.com/matrix-org/matrix-doc/pull/2855)
+>
+> #### Spec Core Team
+>
+> In terms of Spec Core Team MSC focus for this week, [MSC2744](https://github.com/matrix-org/matrix-doc/issues/2744) has entered FCP. As such we're switching it out for [MSC2844](https://github.com/matrix-org/matrix-doc/issues/2844), which aims to define a global versioning system for all spec documents. Note that MSC2844 does not currently have FCP proposed. Its purpose for being in the focus this time around is for asking the team whether ideas proposed are plausible.
+>
+> Thus this week's focus is [MSC1544](https://github.com/matrix-org/matrix-doc/issues/1544) (QR Code verification), [MSC2790](https://github.com/matrix-org/matrix-doc/issues/2790) (modal widgets) and [MSC2844](https://github.com/matrix-org/matrix-doc/issues/2844) (global versioning).
+>
+> We've also started making use of a Github board to track the state of an MSC through the currently somewhat ambiguous process of putting up an MSC that is ready for review to starting FCP. You can find the board here: [SCT Backlog](https://github.com/orgs/matrix-org/projects/31).
+>
+> Some explanation of the columns:
+>
+> * Awaiting SCT Input - These are MSCs that are deemed reviewable by the MSC author, and require review by a subsection of the Spec Core Team (usually one or two people) that are most familiar with the scope of Matrix that the MSC is relevant to.
+>
+> * Ready for FCP ticks - At least one individual from the Spec Core Team has signed off on the MSC. It is not time for others to give a cursory review - mainly sanity checking from the perspective of the part of Matrix that they work on. Note that fundamental flaws may still be found in this stage, requiring the MSC to be reworked.
+> * In FCP - The MSC is in Final Comment Period, where everyone has a last chance to get their ideas in. This happens after most of the Spec Core Team have given their ticks from the previous column.
+>
+> * Done - These MSCs no longer need immediate attention by some portion of the Spec Core Team.
+>
+> These definitions are all flexible as we continue to see what works for the limited resources we have available for review.
+>
+> Do not be alarmed if a particular MSC is not on this board, we're placing things on here as deemed necessary, and more will certainly be added in time.
+
+
+
+![2020-11-13-IBXkM-stacked_area_chart.png](/blog/img/2020-11-13-IBXkM-stacked_area_chart.png)
+
+### New spec platform
+
+[wbamberg](https://matrix.to/#/@wbamberg:matrix.org) reported:
+
+> Working on the [new spec platform](https://adoring-einstein-5ea514.netlify.app/spec/): this week we've been simplifying the toolchain that builds and renders the spec, to make spec authoring easier and faster.
+
+
+
+## Dept of Servers 🏢
+
+### Synapse
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) offered:
+
+> **Note:** We are aware of a trivially exploitable denial of service vulnerability in versions of Synapse prior to 1.20.0. Complete details will be disclosed on Monday, November 23rd. If you have not upgraded recently, please do so.
+>
+> Happy RC day! The first release candidate of Synapse 1.23 is [now available](https://github.com/matrix-org/synapse/releases/tag/v1.23.0rc1). For Synapse admins, we've added numerous new APIs thanks to contributions by [@dklimpel](https://github.com/dklimpel), and we now support generating [structured logs](https://github.com/matrix-org/synapse/blob/v1.23.0rc1/docs/structured_logging.md) in a standard manner. The `structured` and `drains` logging options are now deprecated in Synapse's configuration.
+>
+> [Synapse 1.23.0rc1](https://github.com/matrix-org/synapse/releases/tag/v1.23.0rc1) also includes several significant bugfixes, especially around regressions in the SQLite-to-PostgreSQL database porting script, as well a fix to an issue that would prevent Synapse from recovering after losing its connection to the database. Synapse will also now reject modifications to access control lists which would otherwise result in a server blocking itself from a room. This is a particularly interesting case of unintended consequences in protocol design, and we hope to write more about it soon.
+>
+> Next week should see the full release of 1.23, followed by a first implementation of [*MSC2403: Add "knock" feature*](https://github.com/matrix-org/matrix-doc/pull/2403) landing in the development branch for 1.24. Look for more information in next week's edition of TWiM!
+
+
+
+### Dendrite
+
+Dendrite is a next-generation homeserver written in Go
+
+[kegan](https://matrix.to/#/@kegan:matrix.org) said:
+
+> Neil is still working on P2P routing schemes and I am still working on [Cerulean](https://github.com/matrix-org/cerulean), but that doesn't mean nothing has happened this week! We've been busy reviewing PRs and have landed a big one this week:
+>
+> * Read receipts are now implemented (thanks [@S7evinK](https://github.com/S7evinK)!).
+>
+> * Usernames with `=` can now be created, in accordance with the spec.
+>
+> Spec compliance has improved as a result:
+>
+> * Client-server APIs: 58%, up from 57% last week.
+>
+> * Server-server APIs: 83%, up from 81% last week.
+
+
+
+## Synapse Deployment 📥️
+
+### YunoHost
+
+[Pierre](https://matrix.to/#/@pierre:mamieserv.fr) offered:
+
+> [YunoHost](https://yunohost.org) is an operating system aiming for the simplest administration of a server, and therefore democratize self-hosting.
+>
+> [Synapse](https://github.com/YunoHost-Apps/synapse_ynh/tree/master) integration had been updated to 1.21.2 (1.22.1 available in branch `testing`)
+>
+> [Element Web](https://github.com/YunoHost-Apps/element_ynh/tree/master) integration had been updated to 1.7.12 (1.7.13 available in branch `testing`)
+
+
+
+## Dept of Clients 📱
+
+### Hydrogen
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) said:
+
+> Hello all. Hydrogen gained emotes (/me) this week, together with file uploads and downloads! Also, encryption keys are setup while typing instead of after sending, so you should see less momentary "the sender hasn't sent the keys yet". Also a good number of bugs were solved. Next up: image uploads!
+
+As expected, `/me` commands brought a chorus of:
+
+> now that you support commands, you must add the single most important command in any decent Matrix client
+
+\- tulir
+
+Bruno got the idea pretty quickly:
+
+<font color="#ff00be">/</font><font color="#ff006e">r</font><font color="#ff4608">a</font><font color="#ff8600">i</font><font color="#f1ad00">n</font><font color="#a6c700">b</font><font color="#28d600">o</font><font color="#00df22">w</font> <font color="#00e7e1">p</font><font color="#00e7ff">e</font><font color="#00e3ff">r</font><font color="#00d9ff">h</font><font color="#00c3ff">a</font><font color="#69a0ff">p</font><font color="#ff68ff">s</font><font color="#ff00ff">?</font>
+
+### Element
+
+[Nad](https://matrix.to/#/@nadonomy:matrix.org) announced:
+
+> Hello TWIM! From this week on we're changing how we're reporting updates on the Element clients. Each week, we'll include a section for cross-platform feature work the Element team is working on, and some sections for platform specific work too.
+>
+> **Spaces (previously known as Communities)**
+>
+> Communities are back! They've been renamed to Spaces, and on the Element team we've been busy exploring user experience and critical thinking for [MSC1772](https://github.com/matrix-org/matrix-doc/pull/1772), to allow users to organise rooms into useful groups.
+>
+> **Social Login**
+>
+> In an effort to reduce friction in authentication, we've been R&Ding how to allow homeservers & Matrix clients to support multiple SSO providers.. Most of the work so far is captured in [MSC2858](https://github.com/matrix-org/matrix-doc/pull/2858) and we're starting initial implementations in Element web next week.
+>
+> **VoIP: Voice & Video Calls**
+>
+> We've started foundational research, design and engineering to improve both the usability and stability of native matrix VoIP in Element. We've also started to look at how we can improve the continuity of the user experience between native Matrix calls and our current implementation of Jitsi.
+>
+> **Usability**
+>
+> We've been focusing on improving post-registration actions all round to make Element provide better prompts for first actions, and empty states for views on all platforms, with a multitude of fixes having landed on Element Web, iOS & Android in the last week. We've also started paid user testing to better understand specific pain points in the first time user experience, which we're looking to improve significantly in the coming weeks. 
+>
+> **Web platform**
+>
+> v1.7.13 is now live! Which includes a bunch of fixes & improvements on VoIP.
+>
+> **Android platform**
+>
+> v1.0.10 is now available on the Play Store. We're also doing ongoing work to catch up with feature parity to Element Web, and [Dominaezzz](https://github.com/Dominaezzz) is migrating SDK APIs to suspend functions: no more MatrixCallback!
+>
+> **iOS platform**
+>
+> v1.1.0 is soon to be live on TestFlight for beta testers, and we'll soon be turning our attention to fixing end-to-end encryption regressions.
+
+
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) reported:
+
+> * You can now see yourself too during a video call.
+>
+> * You can change the ringtone, as the default can be a bit annoying.
+> * Avatars should now not look as pixelated in some weird edge cases.
+>
+> * You can now add text after a /shrug command.
+>
+> That's all, thank you trilene and MayeulC for the contributions!
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### matrix_app_service.ex (Elixir SDK)
+
+[pierre](https://matrix.to/#/@pierre:matrix.asso-fare.fr) told us:
+
+> We've (finally) released a first version of matrix_app_service.ex, an Elixir library for the application service API ([hex](https://hex.pm/packages/matrix_app_service/0.1.0), [GitLab](https://gitlab.com/kazarma/matrix_app_service.ex/))
+
+uhoreg (known Elixir fan, asked):
+
+> that's cool.  Do you have any projects that are using it?
+
+Pierre:
+
+> I don't want to "sell" it before there's some kind of poc, but with a few friends we're trying to build a bridge for ActivityPub. we're using the library of the same name by the people behind CommonsPub, of which a lot of code comes from Pleroma, so the application service appears as an ActivityPub server. it's still the beginning, and I'm just starting to think about which information a bridge needs to keep (I guess sometime I'll ask Half-Shot a big list of questions 😁)
+
+Today might be our highest-ever Pierre-ratio in TWIM!
+
+### matrix-spring-boot-sdk
+
+[Benedict](https://matrix.to/#/@benedict:imbitbu.de) announced:
+
+> A new release integrates an embedded h2 database into [matrix-spring-boot-bot](https://github.com/benkuly/matrix-spring-boot-sdk), which makes it a lot easier to write bots with persistency. You only need a few lines of code to write simple bots ([e. g. a ping bot](https://github.com/benkuly/matrix-spring-boot-sdk/blob/master/matrix-spring-boot-bot-examples/ping-bot/src/main/kotlin/net/folivo/matrix/bot/examples/pingappservice/PingHandler.kt)). I also changed a lot under the hood (e. g. using type-safe Matrix-Id-classes instead of Strings).
+>
+> #### matrix-sms-bridge
+>
+> The [matrix-sms-bridge](https://github.com/benkuly/matrix-sms-bridge) now uses the h2 database from [matrix-spring-boot-bot](https://github.com/benkuly/matrix-spring-boot-sdk) instead of neo4j, which makes it a lot more stable and fixes some bugs. We are using it in production with hundreds of target telephone numbers without problems. I also added an optional feature to use room aliases (e. g. #sms_4901234567:homeserver) to prevent multiple rooms with one target telephone number (which is still possible).
+>
+> In a few weeks you can use this bridge with an old Android-Smartphone, which acts as an sms gateway with rest api.
+
+
+
+## Dept of Ops 🛠
+
+### matrix-docker-ansible-deploy
+
+This [Ansible playbook](https://github.com/spantaleev/matrix-docker-ansible-deploy) is meant to easily let you run your own Matrix homeserver.
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) announced:
+
+> Thanks to [Scott Crossen](https://github.com/scottcrossen)'s work, [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) can now manage Dynamic DNS using [ddclient](https://ddclient.net/).
+>
+> To learn more, follow our [Dynamic DNS docs page](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-dynamic-dns.md).
+
+
+
+## Dept of Bots 🤖
+
+### New Matrix chat bot, Mozilla-focus first
+
+[bnjbvr](https://matrix.to/#/@bnjbvr:delire.party) announced:
+
+> I've written a small [blog post](https://blog.benj.me/2020/11/12/botzilla/) about a Matrix chat bot I've developed with [matrix-js-bot-sdk](https://github.com/turt2live/matrix-js-bot-sdk), it was started to address Mozilla specific features first, but then I've added a few other generally useful features too! Hope you'll like it and find it useful!
+
+[#botzilla:delire.party](https://matrix.to/#/#botzilla:delire.party) is the room for discussion (thanks Davo)
+
+
+## Dept of *Built on Matrix* 🏗️
+
+### gurlic.com, new social network getting Matrix integration
+
+[ahq](https://matrix.to/#/@ahq:matrix.org) said:
+
+> Hello Matrix friends. I've been asked to share this here. I'm currently building a platform for building communities. I'm focused on deeper matrix integration with communities, private messaging built on top of matrix, and custom domain support. Feel free to check out <https://gurlic.com>. The matrix community is at <https://gurlic.com/matrix>, but I haven't had the time to post much. 
+>
+> We have communities (https://gurlic.com/space -> <https://gurlic.space>)
+>
+> We have galleries (https://gurlic.com/art -> <https://gurlic.art>)
+> We have publications (https://gurlic.com/classics -> <https://classics.wtf>)
+>
+> We have user pages (https://gurlic.com/bob -> https://bob.monster)
+>
+> The UI is a little confusing now because we have longform articles (https://gurlic.com/homer/the-iliad-book-ii) and short social media posts (https://gurlic.com/privacy/post/324848317844422661).
+>
+> I pretty much want all resources to have custom domain support, and matrix rooms for all communities, and nested communities. In the near future, I hope to have matrix servers for custom domains too. And of course, the source will also be open if folks want to host.
+>
+> Right now, users on gurlic get a matrix account, and communities/galleries/publications get a room too, but i'm hoping to take some time to look at much deeper integration. Dendrite and hydrogen are great to build on top off...
+
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: <https://matrix.to/#/#TWIM:matrix.org>
