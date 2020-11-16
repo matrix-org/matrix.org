@@ -21,7 +21,7 @@ module.exports = {
         directives: {
           "script-src": "'self' 'unsafe-eval' https://matomo.riot.im https://*.twitter.com https://buttons.github.io https://*.twimg.com https://cdn.jsdelivr.net 'sha256-s1FhdRLpNJaajwf2drK24ROJ0uDYE+sjwi7Q8D1A2Xs='",
           "style-src": " 'self' blob: https://buttons.github.io https://platform.twitter.com https://*.twimg.com https://cdn.jsdelivr.net 'unsafe-inline'",
-          "img-src": "'self' data: https://matomo.riot.im https://*.twitter.com https://*.twimg.com https://github.com https://*.githubusercontent.com https://*.gitlab.io",
+          "img-src": "'self' data: https://matomo.riot.im https://*.twitter.com https://*.twimg.com https://github.com https://*.githubusercontent.com https://*.gitlab.io https://fluffychat.im",
           "connect-src": "'self' https://api.github.com https://stream.matrix.org",
           "worker-src": "'self' blob: https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com",
           "frame-src": "'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com https://ghbtns.com https://duckduckgo.com",
