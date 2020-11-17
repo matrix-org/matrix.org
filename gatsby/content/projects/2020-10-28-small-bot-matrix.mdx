@@ -1,0 +1,40 @@
+---
+layout: project
+title: smallbot-matrix
+categories: 
+ - sdk
+description: Small Matrix Little Bot
+author: cybertim
+maturity: Beta
+language: TypeScript
+license: MIT
+repo: https://github.com/cybertim/SmallBotMatrix
+room: "#smallbot:bakki.es"
+featured: true
+thumbnail: /docs/projects/images/deno.svg
+screenshot: /docs/projects/images/deno.svg
+---
+
+# SmallBot
+**S**mall **Ma**trix **L**itt**l**e Bot
+
+Very small implementation (bare essential) to quickly setup a Matrix Bot in Deno/Typescript/Web.
+
+## Quick Setup
+
+```typescript
+const client = new SmallBot({
+    accessToken: "mysecretaccesstoken",
+    homeserverUrl: "https://matrix.org/",
+    eventHandler: async (client, roomId, event) => {
+        if (event.sender !== client.ownUserId) {        
+            await client.sendRoomNotice(roomId, "You said: <b>" + event.content.body + "</b>");
+        }
+    }
+});
+
+await client.start();
+```
+
+## Deno
+You can find this modules on deno.land https://deno.land/x/smallbot_matrix
