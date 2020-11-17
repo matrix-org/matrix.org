@@ -8,27 +8,16 @@ author: Meutraa
 maturity: Alpha
 language: Go
 license: ISC
-repo: https://gitlab.com/meutraa/mm/tree/master
+repo: https://git.lost.host/meutraa/mm
 ---
 
-A minimalistic client written in Go
+A simple filesystem based client.
 
-Features
-
-* Less than 250 lines of code.
-* Fetching last ten messages of each room on start.
-* Receiving messages by long polling sync call.
+* Around 250 lines of code.
 * Sending messages through named pipes.
-* Marking latest event as read (the recommendation to only mark this as read when the user has read the message seems iffy here. An IMAP type tagging system could work, but would be as complex as the program itself). At least this way, users of other clients will know your computer has recieved the message.
-* Online presence.
-* Message modification time set to message timestamp minus five seconds.
-* List of new messages (file paths) written to stdout
+* Online presence & sending typing notifications.
 
-Planned
+Companion Programs
 
-* Syncing all message history without gaps.
-
-
-Above list fetched from [gitlab](https:///gitlab.com/meutraa/mm/tree/master)!
-
-
+TUI receiving client can be found at https://git.lost.host/meutraa/mm-client
+dmenu sending client can be found in the repository readme.
