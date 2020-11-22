@@ -54,7 +54,7 @@ const TryMatrixNow = ({data}) => {
                 <h4 className="mxgrid__item__bg__hx">Element for Android and iOS</h4>
                 <p className="mxgrid__item__bg__p">Element is available on <a href="/docs/projects/client/element-android">Android</a> and <a href="/docs/projects/client/element-ios">iOS</a></p>
                 <div className="mxgrid__item__bg__vert">
-                    <img src="/docs/projects/images/vector-android-featured.png" alt="" className="mxgrid__item__bg__img"/>
+                    <img src="/docs/projects/images/element-android-featured.png" alt="" className="mxgrid__item__bg__img"/>
                 </div>
               </div>
             </div>
