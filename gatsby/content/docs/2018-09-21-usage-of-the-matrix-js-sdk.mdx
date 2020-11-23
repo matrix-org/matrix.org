@@ -58,7 +58,7 @@ const client = sdk.createClient({
 
 <small>(<a href="http://matrix-org.github.io/matrix-js-sdk/0.11.1/global.html#createClient">jsdoc for <code class="highlighter-rouge">createClient</code></a>)</small>
 
-If you are logged into Riot, you can find an `access token` for the logged-in user on the Settings page.
+If you are logged into Element, you can find an `access token` for the logged-in user on the Settings page.
 
 If the homeserver you're logging in to supports logging in with a password, you can also retrieve an `access token` programmatically using the API. To do this, create a new `client` with no authentication parameters, then call `client.login()` with `"m.login.password"`:
 
@@ -198,7 +198,7 @@ function sendNotice(body) {
 }
 ```
 
-Take a look at the `msgtype` in the object above. In the previous example, we used "m.text" for this field, but now we're using "m.notice". Bots will often use "m.notice" to differentiate their messages. This allows the client to render notices differently, for example Riot, the most popular client, renders notices with a more pale text colour.
+Take a look at the `msgtype` in the object above. In the previous example, we used "m.text" for this field, but now we're using "m.notice". Bots will often use "m.notice" to differentiate their messages. This allows the client to render notices differently, for example Element, the most popular client, renders notices with a more pale text colour.
 
 ## Further
 
