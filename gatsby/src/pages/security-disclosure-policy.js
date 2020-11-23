@@ -47,6 +47,13 @@ const HallOfFame = () => {
             service: "Element"
         },
         {
+            date:'2020-07-14',
+            who: 'Denis Kasak',
+            profile: 'https://github.com/dkasak',
+            description: 'Invalid JSON could become part of the room state, acting as a denial of service vector (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26890">CVE-2020-26890</a>). Fixed in Synapse 1.20.0. Disclosed 2020-11-23.',
+            service: "Synapse"
+        },
+        {
             date: '2020-07-02',
             who: 'Quentin Gliech',
             profile: 'https://sandhose.fr',
