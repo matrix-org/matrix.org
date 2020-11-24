@@ -26,15 +26,15 @@ We consider effective content management to be the single biggest remaining risk
 
 ### Redactions (aka Removing messages)
 
-The first line of defence when moderating a room is the ability to remove undesirable content as a moderator.  Matrix implements the concept of redactions (called ‘remove message’ in Riot’s UI), which allows a moderator to send a ‘redaction event’ to a room which requests all the participating servers to remove the human-readable information about a given message.  Users can also redact their own messages from a room.  Redactions may be applied both to normal room messages as well as to remove the human-visible aspects of state events (e.g. offensive display names, avatars, etc).
+The first line of defence when moderating a room is the ability to remove undesirable content as a moderator.  Matrix implements the concept of redactions (called ‘remove message’ in Element’s UI), which allows a moderator to send a ‘redaction event’ to a room which requests all the participating servers to remove the human-readable information about a given message.  Users can also redact their own messages from a room.  Redactions may be applied both to normal room messages as well as to remove the human-visible aspects of state events (e.g. offensive display names, avatars, etc).
 
 Redactions are a best-effort system - there is no way to force other servers or clients to actually uphold them, and indeed if a room is bridged to a system which doesn’t support them (e.g. IRC) then the messages will inevitably remain visible.
 
 It is common for servers not to immediately delete redacted messages from their database - this is a deliberate moderation feature, letting server admins handle redaction-abuse (e.g. users sending and then immediately redacting obnoxious messages) by checking their databases if needed.
 
-If you're using Riot, clicking on a user to bring up more information about them will show a 'remove recent messages' button (shown below) which allows you to redact the user's events. It'll only get the events that Riot has downloaded and cached, but can help when a room is being spammed by a bad actor.
+If you're using Element, clicking on a user to bring up more information about them will show a 'remove recent messages' button (shown below) which allows you to redact the user's events. It'll only get the events that Element has downloaded and cached, but can help when a room is being spammed by a bad actor.
 
-![riot-remove-recent-btn](/docs/projects/images/moderation7.png)
+![Element-remove-recent-btn](/docs/projects/images/moderation7.png)
 
 ### Managing abusive display names, avatars etc
 
@@ -44,7 +44,7 @@ As well as being able to redact abusive content, moderators can also override �
 
 The next line of defence when moderating a room is the concept of ‘power levels’. Every user in a room has a power level - a number generally between 0 and 100.  The higher the number the more power the user has that room.  By default, the creator of the room gets the highest power level of 100 (typically called ‘Admin’), and newly joined users get a power level of 0.  You can change the power level of less powerful users than yourself - for instance, an Admin (with power 100) could promote a normal user to a power level of 50 (typically called ‘Moderator’).  You cannot give users a higher power level than your own.  You can demote yourself, but be aware that this is irreversible unless there are other users in the room with high enough power to subsequently re-promote you.
 
-In Riot, Admins are shown in the membership list with a golden shield, and Moderators are shown with a silver shield.  Other clients use similar metaphors.
+In Element, Admins are shown in the membership list with a golden shield, and Moderators are shown with a silver shield.  Other clients use similar metaphors.
 
 |&nbsp;|&nbsp;|
 |---|---|
@@ -52,7 +52,7 @@ In Riot, Admins are shown in the membership list with a golden shield, and Moder
 
 <br clear="all" />
 
-To change the power level of a given user in Riot, you can use the dropdown in their user info panel, having selected them from the membership list or timeline.  Alternatively you can change their level directly from the message composer by typing `/op @username:domain 50` or similar.
+To change the power level of a given user in Element, you can use the dropdown in their user info panel, having selected them from the membership list or timeline.  Alternatively you can change their level directly from the message composer by typing `/op @username:domain 50` or similar.
 
 Power levels are used to define who has permission to do what actions in a room.  By default, the power levels for a public chatroom are as shown below:
 
@@ -60,7 +60,7 @@ Power levels are used to define who has permission to do what actions in a room.
 
 <br clear="all" />
 
-Users with sufficient power to change settings (i.e. Moderator, by default) can edit the power level configuration for a given room in Riot via Room Settings using this interface.
+Users with sufficient power to change settings (i.e. Moderator, by default) can edit the power level configuration for a given room in Element via Room Settings using this interface.
 
 For instance, if you wanted to stop normal users from being able to talk in a room, a moderator or admin could change the “Send messages” power level for that room from 0 to 50.  This would mean that only moderators and higher can speak.  Alternatively, if you wanted to mute a particular user in a room without changing any of the settings, you might set them to a negative power level, so they didn’t even meet the “Send messages” threshold of 0.
 
@@ -92,7 +92,7 @@ Unlike other systems, bans are enforced purely on the basis of a user’s matrix
 
 We don’t currently support banning based on patterns of matrix IDs.  This is because we want to keep the logic for enforcing bans to be as simple and bug-free as possible (as it is on the critical path of the room state resolution algorithm), and because in general matrix IDs do not follow any specific pattern.  This may be reviewed in future.
 
-There isn’t currently a way of bulk-banning or bulk-kicking users from within Riot, although one can use a simple script to do so.  _[TODO: release our bulk-banning script.]_
+There isn’t currently a way of bulk-banning or bulk-kicking users from within Element, although one can use a simple script to do so.  _[TODO: release our bulk-banning script.]_
 
 
 ### Banning servers from rooms (Server ACLs)
@@ -101,7 +101,7 @@ The next line of defense in moderating a room is stopping unwanted servers from 
 
 The typical reason to exclude a server from a room is if it is a source of malicious traffic - e.g. if it does not enforce a CAPTCHA on account registration, thus easily allowing bots or users to register and circumvent room bans or flood traffic, or if the server is behaving in a buggy or malicious manner (e.g. being a source of bots or spam itself).  One might also want to ban servers whose terms of service are incompatible with the code of conduct of your rooms from participating in your rooms.  Finally, server ACLs only work if all the servers in the room uphold the ACL, otherwise old or buggy servers will leak traffic on behalf of the ACLed server into the room.  Therefore if you use server ACLs in a room, you have to also ban any servers which empirically do not uphold the ACL.  _[TODO: release our server-ACL enforcing scripts]_
 
-Setting server ACLs on a room is a relative rare operation, and Riot does not currently provide a user interface for doing so.  Instead, these can be set either by script or by manually creating a server ACL state event via Riot/Web’s developer tools UI.  You must be at least a moderator (by default) to set server ACLs.  To set via devtools, type `/devtools` at the message composer in the room in question, and create or edit the room’s `m.room.server_acl` state event.  (Click on the red ‘message event’ button to toggle to state event mode).  To ban servers named evil.com and *.evil.com from participating in the room, you would enter:
+Setting server ACLs on a room is a relative rare operation, and Element does not currently provide a user interface for doing so.  Instead, these can be set either by script or by manually creating a server ACL state event via Element/Web’s developer tools UI.  You must be at least a moderator (by default) to set server ACLs.  To set via devtools, type `/devtools` at the message composer in the room in question, and create or edit the room’s `m.room.server_acl` state event.  (Click on the red ‘message event’ button to toggle to state event mode).  To ban servers named evil.com and *.evil.com from participating in the room, you would enter:
 
 ![moderation5](/docs/projects/images/moderation5.png)
 
@@ -116,7 +116,7 @@ For further detailed info about server ACLs, see [https://matrix.org/docs/spec/c
 
 ### A note on state resets
 
-Prior to Matrix 1.0, a bug existed which caused room state (e.g. membership, power levels, bans/kick data) to intermittently be reset to a historical value due to a bad merge conflict resolution - a so-called ‘state reset’, or the ‘hotel california bug’.  This was improved in v2 and later of the room algorithm, which will be used as the default when creating new rooms in Matrix 1.0.  However, as of April 2019 most existing rooms still use the original buggy v1 algorithm.  The best way for now to handle a state reset is to manually re-apply any bans & ACLs if they are reset.  However, if state resets keep happening, it is possible to upgrade the room algorithm via Riot/Web with the undocumented `/upgraderoom 6` command - but please note this is **not** recommended, as we are still testing the final room algorithm and upgrade mechanism for Matrix 1.0.
+Prior to Matrix 1.0, a bug existed which caused room state (e.g. membership, power levels, bans/kick data) to intermittently be reset to a historical value due to a bad merge conflict resolution - a so-called ‘state reset’, or the ‘hotel california bug’.  This was improved in v2 and later of the room algorithm, which will be used as the default when creating new rooms in Matrix 1.0.  However, as of April 2019 most existing rooms still use the original buggy v1 algorithm.  The best way for now to handle a state reset is to manually re-apply any bans & ACLs if they are reset.  However, if state resets keep happening, it is possible to upgrade the room algorithm via Element/Web with the undocumented `/upgraderoom 6` command - but please note this is **not** recommended, as we are still testing the final room algorithm and upgrade mechanism for Matrix 1.0.
 
 
 ### Bridged rooms
@@ -137,7 +137,7 @@ In the early days of Matrix we proposed the concept of ‘active application ser
 
 *   Support for bulk redactions (looping over individual redactions is a viable workaround however)
 *   Ability for room moderators to delete content from the media repository when redacting the event which refers to it. (this can be improved in future)
-*   UI for setting server ACLs ([https://github.com/vector-im/riot-web/issues/7084](https://github.com/vector-im/riot-web/issues/7084))
+*   UI for setting server ACLs ([https://github.com/vector-im/Element-web/issues/7084](https://github.com/vector-im/Element-web/issues/7084))
 
 
 ### Moderation tooling
@@ -175,9 +175,9 @@ Deactivating users is done by calling the /deactivate API - see [https://github.
 curl -X POST -H "Authorization: Bearer $token" "https://matrix.org/_synapse/admin/v1/deactivate/$user" --data '{}'
 ```
 
-If you're using Riot, when you go to view more information about a particular user there will be a 'deactivate user' button (shown below) which does this for you. Note that only users on your homeserver can be deactivated, provided you have the admin permissions to do so.
+If you're using Element, when you go to view more information about a particular user there will be a 'deactivate user' button (shown below) which does this for you. Note that only users on your homeserver can be deactivated, provided you have the admin permissions to do so.
 
-![riot-deactivate-btn](/docs/projects/images/moderation8.png)
+![Element-deactivate-btn](/docs/projects/images/moderation8.png)
 
 
 Removing abusive rooms is done by calling the /shutdown_room API, e.g:
@@ -267,7 +267,7 @@ The server admin can limit which users are allowed to create room aliases via th
 
 The server admin can moderate the aliases that exist on their server by calling the /directory/room API with DELETE: ([https://matrix.org/docs/spec/client_server/r0.4.0.html#delete-matrix-client-r0-directory-room-roomalias](https://matrix.org/docs/spec/client_server/r0.4.0.html#delete-matrix-client-r0-directory-room-roomalias)).
 
-Riot/Web also exposes the ability to delete a room alias from the Room Directory view as an easter egg for server administrators - shift-clicking on the entry in the Room Directory will call the above API to remove the alias and the room from the directory.
+Element/Web also exposes the ability to delete a room alias from the Room Directory view as an easter egg for server administrators - shift-clicking on the entry in the Room Directory will call the above API to remove the alias and the room from the directory.
 
 
 ### Outstanding issues
@@ -285,14 +285,14 @@ No matter how great your room moderators and server admins happen to be, it is i
 
 ### Reporting bad content
 
-We provide two mechanisms today to let users report abusive content to their server admin (i.e. content which is against the terms of use of their server).  In Riot, this is the “Report Content” menu button, which calls the /report API ([https://matrix.org/docs/spec/client_server/latest.html#module-report-content](https://matrix.org/docs/spec/client_server/latest.html#module-report-content)) on the server to flag the message in question.
+We provide two mechanisms today to let users report abusive content to their server admin (i.e. content which is against the terms of use of their server).  In Element, this is the “Report Content” menu button, which calls the /report API ([https://matrix.org/docs/spec/client_server/latest.html#module-report-content](https://matrix.org/docs/spec/client_server/latest.html#module-report-content)) on the server to flag the message in question.
 
 Alternatively, server admins should advertise an abuse email address for gathering reports of abusive content (e.g. abuse-at-matrix.org is Matrix.org’s abuse contact address).
 
 
 ### Blocking users
 
-Another vital tool is the ability to block users from contacting you.  Matrix supports this through the ‘ignore’ feature ([https://matrix.org/docs/spec/client_server/latest.html#ignoring-users](https://matrix.org/docs/spec/client_server/latest.html#ignoring-users)), which is available in the user info panel in Riot/Web and equivalent on Riot/Mobile.
+Another vital tool is the ability to block users from contacting you.  Matrix supports this through the ‘ignore’ feature ([https://matrix.org/docs/spec/client_server/latest.html#ignoring-users](https://matrix.org/docs/spec/client_server/latest.html#ignoring-users)), which is available in the user info panel in Element/Web and equivalent on Element/Mobile.
 
 
 ### Filtering the room directory
@@ -337,7 +337,7 @@ See [#matrix-reputation:matrix.org](https://matrix.to/#/#matrix-reputation:matri
 
 
 
-*   Riot/Web should implement UI for reporting abusive content to server admins much as Riot/Mobile does ([bug 3359](https://github.com/vector-im/riot-web/issues/3359)), but it does not yet.
+*   Element/Web should implement UI for reporting abusive content to server admins much as Element/Mobile does ([bug 3359](https://github.com/vector-im/Element-web/issues/3359)), but it does not yet.
 *   Ability for users to apply their own personal filters to content in Matrix does not yet exist, whether by curating their own preferences or subscribing to a blend of someone else’s.
 
 
