@@ -1,0 +1,27 @@
+---
+layout: project
+title: matrix-sms-bridge
+categories: 
+ - bridge
+description: A Matrix-SMS bridge, where you need one telephone number only 
+author: benkuly
+maturity: Late Beta
+language: Kotlin
+license: AGPL-3.0-or-later
+repo: https://github.com/benkuly/matrix-sms-bridge
+room: "#matrix-sms-bridge:imbitbu.de"
+featured: true
+bridges: SMS
+---
+
+A Matrix puppeting bridge, which allows you to bridge matrix rooms to SMS with one outgoing telephone number only. It is build on top of [matrix-spring-boot-sdk](https://github.com/benkuly/matrix-spring-boot-sdk) and written in Kotlin.
+
+* Private chats and groups on matrix-side
+* Send and receive SMS text messages   
+* Puppeting
+* Use room aliases to have one room for each incoming telephone number
+* Bot for automated sms sending
+  * Creates rooms for you
+  * Writes messages for you
+  * Allows you to send SMS at a specific time and date
+  * Invites users for you, when room gets created
