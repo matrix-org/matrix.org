@@ -1,0 +1,271 @@
+---
+date: '2020-11-27'
+title: 'This Week in Matrix 2020-11-27'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2020-11-27-ml.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r_gIBo41zng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) reported:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals>.
+>
+> #### MSC Status
+>
+> **Closed MSCs**
+>
+> * [MSC1958: Widget architecture changes](https://github.com/matrix-org/matrix-doc/pull/1958)
+>   * Closed in favour of newer widget MSCs
+>
+> **Merged MSCs:**
+>
+> * [MSC1544: Key verification using QR codes](https://github.com/matrix-org/matrix-doc/pull/1544)
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **New MSCs:**
+>
+> * [MSC2881: Message Attachments](https://github.com/matrix-org/matrix-doc/pull/2881)
+> * [MSC2880: extend event and state API to allow sending to all rooms](https://github.com/matrix-org/matrix-doc/pull/2880)
+>
+> * [MSC2876: Allowing widgets to read events in a room](https://github.com/matrix-org/matrix-doc/pull/2876)
+> * [MSC2875: room descriptions](https://github.com/matrix-org/matrix-doc/pull/2875)
+>
+> * [MSC2874: Single SSSS](https://github.com/matrix-org/matrix-doc/pull/2874)
+> * [MSC2873: Identifying clients and user settings in widgets](https://github.com/matrix-org/matrix-doc/pull/2873)
+>
+> * [MSC2872: Move the widget title to the top level of the definition](https://github.com/matrix-org/matrix-doc/pull/2872)
+> * [MSC2871: Give widgets an indication of which capabilities they were approved for](https://github.com/matrix-org/matrix-doc/pull/2871)
+>
+> #### Spec Core Team
+>
+> In terms of Spec Core Team MSC focus for this week, we're switching from QR Code verification to key verification additions. Otherwise things remain the same: [MSC2844](https://github.com/matrix-org/matrix-doc/issues/2844) (global versioning), [MSC2366](https://github.com/matrix-org/matrix-doc/issues/2366) (ready and done in key verification) and [MSC2790](https://github.com/matrix-org/matrix-doc/issues/2790) (modal widgets).
+
+
+
+![2020-11-27-4wL5N-stacked_area_chart.png](/blog/img/2020-11-27-4wL5N-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Synapse
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) offered:
+
+> On behalf of the Americans on the Synapse team: Happy Thanksgiving! This past week saw us land some improvements to the OpenID Connect SSO provider, bringing it closer to parity with the SAML provider. In particular, [#8801](https://github.com/matrix-org/synapse/pull/8801) made it possible to gracefully handle username collisions when creating a new account over SSO.
+>
+> We've also merged a pull request ([#8785](https://github.com/matrix-org/synapse/pull/8785/)) from @dklimpel which removes deprecated paths for the Synapse Admin APIs. As of the next Synapse release, all Admin APIs will be accessibly only under the `/_synapse/admin/v1` path prefix.
+>
+> Otherwise, much of our time has been spent on getting pull requests like [#6739](https://github.com/matrix-org/synapse/pull/6739), implementing [MSC2403: Add "knock" feature](https://github.com/matrix-org/matrix-doc/pull/2403), ready to merge. It's coming to a Synapse release soon!
+>
+> Speaking of releases, we're looking forward to cutting a first release candidate of 1.24.0 early next week; keep your eyes peeled for that!
+>
+> I'd be remiss in not mentioning that we started the week by [disclosing CVE-2020-26890](https://matrix.org/blog/2020/11/23/synapse-disclosing-cve-2020-26890), which is a denial of service affecting Synapse versions prior to 1.20.0. If you've not upgraded, _please_ do.
+
+
+
+## Dept of Bridges 🌉
+
+### Gitter
+
+[Eric Eastwood](https://matrix.to/#/@madlittlemods:matrix.org) offered:
+
+> Lots of features added this week including Gitter threaded conversations and Matrix reply bridging, image/file uploads, transforming mentions so notifications flow, and better looking flairs!
+>
+> Not everything is available on production yet but you can try out the bridge for yourself at <https://gitter.im/gitter/testing-matrix-bridge>: #5faa0809d73408ce4ff3ad8e:gitter.im
+>
+> We'll be working through some of the bridge oddities and hoping to open up the bridge to all public rooms on Gitter soon. You can track our full progress from the [GitLab epic for the native Gitter-Matrix bridge](https://gitlab.com/groups/gitterHQ/-/epics/10).
+
+![2020-11-27-sCDuB-ScreenShot2020-11-27at1.37.40AM.png](/blog/img/2020-11-27-sCDuB-ScreenShot2020-11-27at1.37.40AM.png)
+
+### MX-Puppet-VK (Na Zdorovie!)
+
+[Alexey](https://matrix.to/#/@murz:ru-matrix.org) offered:
+
+> The [MX-Puppet-VK](https://github.com/innereq/mx-puppet-vk) bridge for [VK (Vkontakte)](https://vk.com/) social network via [this commit](https://github.com/innereq/mx-puppet-vk/commit/73042f8e93843e555408ad509921339d00e39dcc) have added initial support for User tokens. This means that we now can use it for puppeting the real user account, to automatically bridge all "VK Messenger" private dialogs and groups into Matrix. Previously bridge worked only with VK community tokens as bot, to bridge only conversation with specific communities.
+>
+> To get the `VK User token` without registering new app ([and waiting approve from admins](https://vk.com/dev/messages_api)), users can reuse the "[Kate Mobile](https://vk.com/kate_mobile)" app token (or other app, that have access to [Messages API](https://vk.com/dev/messages)) and receive it via <https://vkhost.github.io/> service.
+>
+> Support room: [#mx-puppet-vk:inex.rocks](https://matrix.to/#/#mx-puppet-vk:inex.rocks)
+
+
+
+### matrix-sms-bridge
+
+
+[Benedict](https://matrix.to/#/@benedict:imbitbu.de) offered:
+
+> The [matrix-sms-bridge](https://github.com/benkuly/matrix-sms-bridge) can finally be used with an Android smartphone as SMS-Gateway instead of gammu and a modem. @rebekka:imbitbu.de developed the app [android-sms-gateway-server](https://github.com/RebekkaMa/android-sms-gateway-server), that the bridge uses to send and receive sms messages. The new bridge version is used in combination with the app in production (medical care centre) for a week now. We have a throughput of 50-100 SMS message a day. The update is also integrated in [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy).
+
+
+
+## Dept of Clients 📱
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) offered:
+
+> The new completer is now on master. Please try it out and report any issues you may find. It now actually inserts a user link, keeps a per room message history and should look quite a bit nicer and be faster,  when completing emojis or user names.
+>
+> There were also quite a few cleanups, most of them done by Kirillpt! Some spacing here and there, saturation changes, the login page should now be less confusing, when you don't enter a valid mxid and toggles should now not get stuck in confusing intermediate states. There is also a russian translation now and some VOIP fixes. Pretty busy week, but I like it!
+
+
+
+![2020-11-27-LCo9S-Screenshot_20201127_162000.png](/blog/img/2020-11-27-LCo9S-Screenshot_20201127_162000.png)
+
+
+
+
+### FluffyChat
+
+[FluffyChat](https://fluffychat.im) is a cute cross-platform matrix client. It is available for Andorid, iOS, Web and Desktop.
+
+[krille](https://matrix.to/#/@krille:janian.de) reported:
+
+> FluffyChat 0.23.0 is out now with password recovery options and a lot of minor fixes and UX improvements. Now also available on Flathub!! 🙂  Learn more at: <https://fluffychat.im>
+
+
+
+![2020-11-27-nO6wZ-fluffychat-screenshot.png](/blog/img/2020-11-27-nO6wZ-fluffychat-screenshot.png)
+
+### Element
+
+[Nad](https://matrix.to/#/@nadonomy:matrix.org) offered:
+
+> #### In development
+>
+> **Improving usability**
+>
+> On mobile, we’re busy adding better suggestions to empty/starting views of screens, improving searching for contacts, improving adding other users by QR code scanning, and improving deep link integrations on Android. Expect releases for iOS & Android soon!
+>
+> **Spaces**
+>
+> Spaces UI designs & user research testing are underway, with initial development for the Element Web client kicked off too. We've been doing research & testing in private to avoid advance bias from the people we're testing with, but hope to share things publicly soon.
+>
+> **Social login**
+>
+> Social login is in review for [Element Web](https://github.com/matrix-org/matrix-react-sdk/pull/5426), with synapse & mobile support hot on the tails for next week prior to releasing.
+>
+> **VoIP**
+>
+> We’ve been focusing on implementing UI for call holding, and general UI polish across the VoIP experience, to be released soon!
+> #### Releases
+>
+> **Element Web**
+>
+> Element Web 1.7.14 was released this week, which includes:
+>
+> * Several tweaks and improvements to the room list filter
+>
+> * Improved registration based on user feedback
+> * Improved invite / create DM flow.
+>
+> * Future releases will no longer publish element-web to NPM, and the package is marked as deprecated
+> * Renamed build artifacts from riot-_.tar.gz to element-_.tar.gz
+>
+> * Experimental LaTeX maths rendering support is available via a labs flag on develop. Thanks to akissinger, thosgood, uhoreg, and others who have worked on various pieces of this puzzle!
+>
+> **Element iOS**
+>
+> Element iOS 1.1.1 has been released:
+>
+> * It contains contains several major bug fixes, including end-to-end encryption bug fixes.
+>
+> * Full history available on GitHub viewing the [1.1.1](https://github.com/vector-im/element-ios/releases/tag/v1.1.1) & [1.1.0](https://github.com/vector-im/element-ios/releases/tag/v1.1.0) tags.
+>
+> **Element Android**
+>
+> The Element Android 1.0.11 release is pending:
+>
+> * We're working through final bug fixes.
+>
+> * Separately, we’re also working on adding missing features to the client like; managing room aliases, room history visibility, join rules, etc.
+> * In the SDK, the migration of the services API from MatrixCallback to coroutines is going well, tracked [here](https://github.com/vector-im/element-android/issues/2449).
+
+
+
+### Vtx
+
+[CraftedCart](https://matrix.to/#/@craftedcart:matrix.org) offered:
+
+> In addition to boring stuff like being able to persist events (hopefully) right, so we don't have to initial-sync every launch, I've been making a start towards multi-account support!
+>
+> You can sign in as multiple users and switch between the "active" user you want to send messages as - iit's a bit flaky for now, esp. when scrolling up to read past messages, but hey it's a start I guess
+
+Asked if they were using an SDK:
+
+> Preeetty much doing it from scratch, though I am loosely basing the matrix-api side of it on Ruma
+>
+> Source is at <https://gitlab.com/CraftedCart/vtx>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EV9yjE2axJY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of SDKs and Frameworks 🧰
+
+### Ruma
+
+Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
+
+[jplatte](https://matrix.to/#/@jplatte:privacytools.io) announced:
+
+> We gained a new contributor, kiwidu38, who [added](https://github.com/ruma/ruma/pull/353) the server-default push rules, paving the way to Conduit supporting push notifications.
+>
+> I improved compatibility with some commonly-broken DAG events and added rudimentary support for message edits to help Fractal finish their move onto matrix-rust-sdk.
+
+
+
+## Dept of Guides 🧭
+
+### Matrix introduction series (German)
+
+[Samuel](https://matrix.to/#/@samuel-p:matrix.sp-codes.de) offered:
+
+> I published the second part of the Matrix introduction series on my blog (in German). It deals with end-to-end encryption, contact verification and cross signing. <https://blog.sp-codes.de/sichere-chats-mit-matrix-matrix-teil-2/>.
+
+I have not read this series so I must trust that Samuel is saying nice things! Anyway it seems like a useful resource for telling kameraden about getting started with Matrix.
+
+## Matrix in the News 📰
+
+### Famedly featured in Gründerszene
+
+
+[Niklas Zender](https://matrix.to/#/@larodar:famedly.de) offered:
+
+> Today there is a German article about Famedly on Gründerszene -> <https://www.gruenderszene.de/health/famedly-kommunikation-app-gesundheitswesen>. Famedly is developing a solution based on Matrix to enable healthcare providers to communicate securely with each other and to facilitate intersectoral processes such as patient transfers or the integration of IomT devices. We have also almost completed a successful financing round and hope to support the Matrix ecosystem more and more. It would be so cool to use FluffyChat, Element, or a Matrix Messenger of your choice to start a video consultation with the doctor of your choice, or to be integrated into existing clinical communication flows concerning you!
+
+Congratulations to Famedly on the progress they're making! If you're ready to graduate from TLAs (Three-Letter-Abbreviations) to the next stage, you'll be please to learn "IomT", which means "Internet of medical Things".
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|maescool.be|357|
+|2|heitkoetter.net|367|
+|3|matrix.47q.de|445|
+|4|matrix.thedisco.zone|455|
+|5|kif.rocks|477.5|
+|6|matrix.sp-codes.de|605|
+|7|matrix.rubberboat.xyz|713|
+|8|nuclearlemons.uk|732.5|
+|9|casavant.org|754|
+|10|dodsorf.as|764|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
