@@ -73,7 +73,12 @@ const OTWSU = ({ data }) => {
         </p>
         <h2>Next Event</h2>
         <h3>{moment.utc(nextEvent.node.frontmatter.eventdate).format('Do MMMM YYYY')}</h3>
+        <p>
+          Return to this page at the specified time to watch the stream.
+          You can also <a href="https://user.fm/calendar/v1-2f5c614bd642751481ef4aedc83fee95/Matrix%20Public%20Events.ics">add us to your calendar</a>.
+        </p>
         <MDXRenderer>{nextEvent.node.body}</MDXRenderer>
+        <strong><a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/274965095/">Optional! Sign up on Meetup.com</a></strong>
         <h2>Previous Events</h2>
         {events.filter(event => event.node.frontmatter.edition < NEXT_EVENT).map(event => {
           const fm = event.node.frontmatter;
