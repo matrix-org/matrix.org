@@ -524,8 +524,8 @@ const Faq = ({ data }) => {
                     communication protocol for message-oriented middleware based
                     on XML. We think of Matrix and XMPP as being quite
                     different; at its core Matrix can be thought of as an
-                    eventually consistent global JSON db, whilst XMPP can be
-                    thought of as a message passing protocol.
+                    eventually consistent global JSON database, whilst XMPP can
+                    be thought of as a message passing protocol.
                   </p>
                 </div>
                 <div className="definition-item definition-rcs">
@@ -1993,26 +1993,26 @@ const Faq = ({ data }) => {
               <p>
                 We think of Matrix and <a href="#definitions">XMPP</a> as being
                 quite different; at its core Matrix can be thought of as an
-                eventually consistent global JSON db with an HTTP API and{" "}
-                <a href="#definitions">pubsub</a> semantics - whilst XMPP can be
-                thought of as a message passing protocol. You can use them both
-                to build chat systems; you can use them both to build pubsub
-                systems; each comes with different tradeoffs. Matrix has a
-                deliberately extensive 'kitchen sink' baseline of functionality;
-                XMPP has a deliberately minimal baseline set of functionality.
-                If XMPP does what you need it to do, then we're genuinely happy
-                for you! Meanwhile, rather than competing, an XMPP Bridge like
-                <a href="https://github.com/SkaveRat/xmpptrix">
+                eventually consistent global JSON database with an HTTP API
+                and <a href="#definitions">pubsub</a> semantics - whilst XMPP
+                can be thought of as a message passing protocol. You can use
+                them both to build chat systems; you can use them both to build
+                pubsub systems; each comes with different tradeoffs. Matrix has
+                a deliberately extensive 'kitchen sink' baseline of
+                functionality; XMPP has a deliberately minimal baseline set of
+                functionality. If XMPP does what you need it to do, then we're
+                genuinely happy for you! Meanwhile, rather than competing, an 
+                XMPP Bridge like <a href="https://github.com/SkaveRat/xmpptrix">
                   Skaverat's xmpptrix beta
                 </a>{" "}
-                or
+                or{" "}
                 <a href="https://github.com/jfrederickson/matrix-xmpp-bridge">
                   jfred's matrix-xmpp-bridge
-                </a>
+                </a>{" "}
                 or Matrix.org's own{" "}
                 <a href="https://github.com/matrix-org/purple-matrix/">
                   purple-matrix
-                </a>
+                </a>{" "}
                 has potential to let both environments coexist and make the most
                 of each other's benefits.
               </p>
@@ -3086,8 +3086,8 @@ const Faq = ({ data }) => {
                     communication protocol for message-oriented middleware based
                     on XML. We think of Matrix and XMPP as being quite
                     different; at its core Matrix can be thought of as an
-                    eventually consistent global JSON db, whilst XMPP can be
-                    thought of as a message passing protocol.
+                    eventually consistent global JSON database, whilst XMPP can
+                    be thought of as a message passing protocol.
                   </td>
                 </tr>
                 <tr>
