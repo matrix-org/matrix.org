@@ -43,6 +43,7 @@ const Bridges = ({ data }) => {
 ["Twitter", "twitter"],
 ["Keybase", "keybase"],
 ["Signal", "signal"],
+["Instagram", "instagram"],
   ];
 
   
