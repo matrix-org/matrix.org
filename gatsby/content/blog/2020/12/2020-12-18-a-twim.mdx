@@ -1,0 +1,406 @@
+---
+date: '2020-12-18'
+title: 'This Week in Matrix 2020-12-18'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2020-12-18-7E797-stacked_area_chart.png
+---
+
+## Matrix Live 🎙
+
+This week we're all about video content! So you get Matrix Live AND Demos - you are so lucky! 🥰
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uv91F1Sh4aU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Demos
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_Ade0FZfnWo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+uhoreg added a late improvement to his MLS demo:
+
+> This is how my demo would have looked if I had managed to finish debugging in time.
+
+![2020-12-18-mls.png](/blog/img/2020-12-18-mls.png)
+
+So, now you need to watch the video to make sense of this iamge!
+
+## Dept of *Status of Matrix* 🌡️
+
+### Introducing Cerulean
+
+[Matthew](https://matrix.to/#/@matthew:matrix.org) reported:
+
+> Introducing Cerulean - highly experimental threaded microblogging for Matrix.  Read all about it at https://matrix.org/blog/2020/12/18/introducing-cerulean
+
+Cerulean [is being discussed on the front page of Hacker News](https://news.ycombinator.com/item?id=25467545).
+
+### Community Demos
+
+The last set of [community demos](https://matrix.org/blog/2020/11/20/this-week-in-matrix-2020-11-20) were well received, so if you have an idea for a demo, get it ready for 2021-01-15, which will be the next demo session!
+
+## Dept of Spec 📜
+
+### New spec platform
+
+[wbamberg](https://matrix.to/#/@wbamberg:matrix.org) said:
+
+> The spec core team has been trying out the new spec this week to decide if it's ready to ship. And we've been applying Dean's design updates (currently in a separate branch at https://friendly-yonath-3de225.netlify.app/).
+
+
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) told us:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+>
+> #### MSC Status
+>
+> **Closed MSCs:**
+>
+> * [MSC2912: Setting cross-signing keys during registration](https://github.com/matrix-org/matrix-doc/pull/2912)
+>   * Withdrawn with promise of a better solution in the future.
+>
+> #### Spec Core Team
+>
+> In terms of Spec Core Team MSC focus for this week, we made a healthy amount of progress on the MSCs in focus. A few members have also been iterating quite a bit on [MSC1772](https://github.com/matrix-org/matrix-doc/pull/1772) for Spaces. Look for these MSCs to start landing come the first few weeks of the New Year as implementation work starts to relax a bit. The focus for next week is... Christmas! 🎄
+>
+> But first week of January will be [MSC2844](https://github.com/matrix-org/matrix-doc/issues/2844), [MSC2366](https://github.com/matrix-org/matrix-doc/issues/2366) (ready and done in key verification) and [MSC2790](https://github.com/matrix-org/matrix-doc/issues/2790) (modal widgets).
+
+
+
+![2020-12-18-7E797-stacked_area_chart.png](/blog/img/2020-12-18-7E797-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Dendrite / gomatrixserverlib
+
+Dendrite is a next-generation homeserver written in Go
+
+[neilalexander](https://matrix.to/#/@neilalexander:dendrite.matrix.org) announced:
+
+> If you haven't already seen it, we wrote a [Dendrite 2020 Progress Update blog post](https://matrix.org/blog/2020/12/15/dendrite-2020-progress-update) detailing our year in Dendrite. It also includes an announcement for our new public `dendrite.matrix.org` homeserver, which is open for registration!
+>
+> Today we released [Dendrite 0.3.4](https://github.com/matrix-org/dendrite/releases/tag/v0.3.4), which is a performance and bug-fix release, including the following changes from the last two weeks:
+>
+> * The stream tokens for `/sync` have been refactored, giving PDUs, typing notifications, read receipts, invites and send-to-device messages their own respective stream positions, greatly improving the correctness of sync
+>
+> * A new roominfo cache has been added, which results in less database hits in the roomserver
+> * Prometheus metrics have been added for sync requests, destination queues and client API event send perceived latency
+>
+> * Event IDs are no longer recalculated so often in `/sync`, which reduces CPU usage
+> * Sync requests are now woken up correctly for our own device list updates
+>
+> * The device list stream position is no longer lost, so unnecessary device updates no longer appear in every other sync
+> * A crash on concurrent map read/writes has been fixed in the stream token code
+>
+> * The roomserver input API no longer starts more worker goroutines than needed
+> * The roomserver no longer uses the request context for queued tasks which could lead to send requests failing to be processed
+>
+> * A new index has been added to the sync API current state table, which improves lookup performance significantly
+> * The client API `/joined_rooms` endpoint no longer incorrectly returns `null` if there are 0 rooms joined
+>
+> * The roomserver will now query appservices when looking up a local room alias that isn't known
+> * The check on registration for appservice-exclusive namespaces has been fixed
+>
+> If you are running a Dendrite server, it is highly recommended that you upgrade to the latest version!
+>
+> Spec compliance is unchanged:
+>
+> * Client-server APIs: 58%, same as last week
+>
+> * Server-server APIs: 83%, same as last week
+>
+> As always, feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for general Dendrite chat or [#dendrite-dev:matrix.org](https://matrix.to/#/#dendrite-dev:matrix.org) for development discussion.
+
+Dendrite also powers Cerulean, mentioned above!
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) announced:
+
+> Hello again from Synapse land! This is our last TWiM of 2020, but we're hard at work landing our last patches before going on holiday. Expect 1.25.0rc1 in early January with loads of fixes, performance improvements, and a few new features. In particular:
+>
+> * [@dklimpel](https://github.com/dklimpel) continues to [expand](https://github.com/matrix-org/synapse/pull/8886) and [improve](https://github.com/matrix-org/synapse/pull/8931) our Admin APIs, including [deprecating the shutdown and purge room APIs](https://github.com/matrix-org/synapse/pull/8829) in favor of the [delete room API](https://github.com/matrix-org/synapse/issues/8663), and helping [consolidate our docs](https://github.com/matrix-org/synapse/pull/8839) — Thank you, Dirk
+>
+> * [@yoric](https://github.com/Yoric) landed his first contribution to Synapse [allowing spam-checker modules to be async](https://github.com/matrix-org/synapse/pull/8890) — Thank you, David
+> * [@erikjohnston](https://github.com/erikjohnston) landed loads of performance fixes, including [automatically dropping stale extremities](https://github.com/matrix-org/synapse/pull/8929) and [fixing mainline ordering in State Resolution v2](https://github.com/matrix-org/synapse/pull/8971) with more to come next year — Thank you, Erik
+>
+> * [@richvdh](https://github.com/richvdh) notably landed [a username picker in Synapase](https://github.com/matrix-org/synapse/pull/8942) earlier this week, among other contributions — Thank you, Rich
+> * [@clokep](https://github.com/clokep) fixed dozens of bugs and paper cuts, including a very visible enhancement for folks self-hosting Element Web: Synapse can now specify [the location of the web client when inviting new users by email](https://github.com/matrix-org/synapse/pull/8930) — Thank you, Patrick
+>
+> * [@anoadragon453](https://github.com/anoadragon453) has been hard at work implementing [knocking](https://github.com/matrix-org/synapse/pull/6739), while also chipping away at getting Synapse to pass the [complement test suite](https://github.com/matrix-org/complement) for Matrix homeservers — Thank you, Andrew
+> * [@babolivier](https://github.com/babolivier) resolved a [thorny issue with user directory search](https://github.com/matrix-org/synapse/pull/8959), where we were mistakenly ignoring English *[stop words](https://en.wikipedia.org/wiki/Stop_word)* like "be" and "the" when searching for users... so if you were trying to look up your colleague Theresa, you'd start getting results at `Th`, lose them at `The`, get them back at `Ther`, lose them again at `There`, and so on — Thank you, Brendan 
+>
+> You can look forward to all of this and more next year, but until then, happy holidays from all of us over here at Element and in the broader Synapse community!
+
+
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust https://conduit.rs
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) said:
+
+> Hey, I'm back! I was busy with University. I also forgot to TWIM this last week, so here you go:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uc0bFQKhDUU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> * Conduit is beginning to support appservices
+> * Devin R and I are currently working on a better state store and improving federation
+
+
+
+## Homeserver Deployment 📥️
+
+### YunoHost
+
+[Pierre](https://matrix.to/#/@pierre:mamieserv.fr) said:
+
+> [YunoHost](https://yunohost.org) is an operating system aiming for the simplest administration of a server, and therefore democratize self-hosting.
+>
+> [Synapse](https://github.com/YunoHost-Apps/synapse_ynh/tree/master) integration had been updated to 1.23.1
+>
+> [Element Web](https://github.com/YunoHost-Apps/element_ynh/tree/master) integration had been updated to 1.7.15
+
+
+
+## Dept of Bridges 🌉
+
+### GitHub / Gitlab bridge
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) told us:
+
+> Hello everyone! It's been ages since I've talked about a personal project on here. I've been working on the [matrix-github](https://github.com/Half-Shot/matrix-github) bridge, which is an all singing all dancing service to connect you to Github AND Gitlab. (Yes, it's now poorly named).
+>
+> I've landed the initial bits to make GitLab work, so that you can join issues and MRs as rooms in the UI but there is more work to do to make that solid and more interactive. The thing I am most looking forward to is notifications for GitLab so I can get away from emails.
+>
+> ALSO, off the back of TravisR's fantastic widget work, I've landed initial support for widgets in admin rooms and soon issue/PR rooms. The idea here being that widgets give you a nicer UI to control the bridge or render details like commits going past or diffs. All the groundwork for authenticating widgets against the bridge and rendering them is done, now it just needs features.
+>
+> That's the highlights this week. I'm hoping to really tighten the documentation to get more people spun up on it as the notifications features have turned out to be a killer feature for me :)
+
+![2020-12-18-x7YaI-image.png](/blog/img/2020-12-18-x7YaI-image.png)
+
+I've been using this (the bridge, rather than the upcoming widgets) for a couple of months now and find it really really powerful. I'm not in GitHub most of the day, so getting notifs piped direct into Matrix is great!
+
+### mautrix-instagram
+
+[Tulir](https://matrix.to/#/@tulir:maunium.net) said:
+
+> I added bridging of typing notifications and read receipts from Matrix to Instagram and fixed a bunch of bugs. Only thing that's still missing is presence and Matrix->Instagram non-image files.
+
+This is now almost feature complete! Nice one Tulir.
+
+### Gitter
+
+[Eric Eastwood](https://matrix.to/#/@madlittlemods:matrix.org) said:
+
+> A few updates to the Gitter bridge itself this week handling Matrix edits outside of the 5 minute edit window on Gitter and fixing up @mentions being mangled by `:` colons on the Gitter side when someone mentions you from Element. We also strip the redundant Matrix reply quote when it goes into a Gitter threaded conversation because it's already easily viewable in the thread.
+>
+> We're also getting started on some of the [Element feature parity with Gitter issues](https://github.com/vector-im/roadmap/issues/26). First directly tackling [backfilling existing message history](https://github.com/matrix-org/matrix-doc/pull/2716).
+>
+> Other teams are already underway working on Spaces, Social login for Github which will ship in the new year!
+
+## Dept of Clients 📱
+
+### Element Clients
+
+Compiled by the team.
+
+* Spaces
+    *   We’ve been [progressing spaces on Web](https://github.com/vector-im/element-web/issues/15930), focusing on managing spaces, members and rooms. Meanwhile, we’ve also been iterating on designs for all platforms.
+* Social login
+    *   Synapse support for picking a username should be [landing in develop today](https://github.com/matrix-org/synapse/pull/8942) focusing next on supporting multiple identity providers. On iOS, we’ve implemented SSO redirect authentication mechanisms which also should land soon.
+* VoIP
+    *   We’ve been making progress all round on all platforms, with the next web release including improvements to holding & resuming calls and multiple line support!
+
+#### Web
+
+*   1.7.16-rc.1 available on staging
+    *   Added ability to put a VoIP call on hold and answer another
+    *   Added a special visual effect for confetti
+    *   Improved the login flow
+*   Investigating changelog options in the background
+
+#### Android
+
+
+
+*   Element Android 1.0.13 has been released: URL Preview, new Emoji keyboard, new room settings capabilities, and snow for Christmas! Full changelog: [https://github.com/vector-im/element-android/releases/tag/v1.0.12](https://github.com/vector-im/element-android/releases/tag/v1.0.12) and [https://github.com/vector-im/element-android/releases/tag/v1.0.13](https://github.com/vector-im/element-android/releases/tag/v1.0.13)  
+
+#### iOS
+
+*   We’re prepping [1.1.3](https://github.com/vector-im/element-ios/pull/3888) after ironing out final kinks relating to the new background service, hoping to release before Christmas.
+
+### Nheko
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) offered:
+
+> In celebration of the cross-signing MSC being finally merged, Nheko master now supports cross signing other users and your own devices. 🎉 The UX is currently not final, you have to manually fetch the cross signing keys in the settings, if you don't have them after a verification. You are also not yet prompted to verify new logins and can't bootstrap cross-signing from Nheko, but the functional bits and bobs are there now. We are also still investigating, if prompting for your recovery key/passphrase is less confusing by using just one input field or if we should prompt for them separately. Currently Nheko just asks you to unlook and will accept whatever you input (if it can decrypt the secrets with it). FluffyChat does that and I think it is really nice!
+>
+> There are also a few smaller features added recently:
+>
+> * Nheko now uses the icon from your theme on the login page
+>
+> * You can react instead of reply with a (very) short text using /react
+> * A few improvements(?) regarding whitespace and code rendering.
+
+
+
+### SchildiChat Web/Desktop
+
+[qg](https://matrix.to/#/@qg:supercable.onl) reported:
+
+> Today, we can announce the web/desktop variant of SchildiChat is **out of beta**!
+>
+> [SchildiChat](https://schildi.chat/) is a fork of Element, which focuses on UI changes such as message bubbles and a unified chat list for both direct messages and groups, which is a more familiar approach to users of other popular instant messengers.
+>
+> Since the last announcement on TWIM, we have not only fixed most of the layout bugs caused by the message bubbles, but can also report the following:
+>
+> * Settings for layouts work, so you can also use SchildiChat if you only want the unified overview and no message bubbles
+>
+> * All information about desktop is now on our new website: https://schildi.chat/desktop
+> * The hosted instance is now here: https://app.schildi.chat
+>
+> * For Linux, SchildiChat is now available from AUR, apt repo for debian, flathub and as AppImage
+> * There's a portable Windows version now too
+>
+> Code on GitHub: https://github.com/SchildiChat/schildichat-desktop
+>
+> Matrix room: [#schildichat-web:matrix.org](https://matrix.to/#/#schildichat-web:matrix.org)
+
+
+
+![2020-12-18-bIasy-2.png](/blog/img/2020-12-18-bIasy-2.png)
+
+### FluffyChat
+
+[FluffyChat](https://fluffychat.im) is a cute cross-platform matrix client. It is available for Andorid, iOS, Web and Desktop.
+
+[krille](https://matrix.to/#/@krille:janian.de) reported:
+
+> FluffyChat 0.24.0 is released with new features and fixes.
+>
+>
+> What is new:
+>
+> * A new public room discovery page, where you can find and join public rooms
+>
+> * Experimental bootstrap support for cross-signing and keybackup and something really weird that is named SSSS
+>
+> * Enhanced power level managing for rooms
+>
+> * Minor design changes like a new icon set
+>
+>
+> Beside of that we have of course a lot of bug fixes and stability improvements. All languages should now also work on iOS.
+>
+>
+> Also we are looking forward to publish the app in the AppStore for iOS but we will do this under the hood of Famedly. Btw. FluffyChat will soon move to the Famedly GitLab project and we will move the app in the PlayStore to the Famedly account too. This doesn't mean that anything will change there. It is just that Famedly will now handle the legal stuff for us and may offer paid customer support for businesses, which have interest in FluffyChat. But the app will still be available under the same AGPL3 license. This will just make it easier for us to publish the app in the official stores as we don't need to pay so much for the developer accounts.
+
+
+
+![2020-12-18-JruOC-screenshot_20201218-144554.png](/blog/img/2020-12-18-JruOC-screenshot_20201218-144554.png)
+
+
+## Dept of Bots 🤖
+
+### Timetracking Bot by famedly
+
+[MTRNord](https://matrix.to/#/@mtrnord:nordgedanken.dev) reported:
+
+> Find it at: https://gitlab.com/famedly/bots/timetracking or join us at [#timetracking-bot:famedly.de](https://matrix.to/#/#timetracking-bot:famedly.de)
+>
+> Numerous new features and fixes arrived this week. Getting closer to production readiness. Famedly also started daily internal testing for the bot to find more issues and fixing them.
+>
+> #### [v0.1.5](https://gitlab.com/famedly/bots/timetracking/-/releases/v0.1.5)
+> #### New Features
+>
+> * Implement !setTimezoneDefault
+>
+> * Add timezone conversion to !in and !out
+> * Write admin status to table in Database
+>
+> * Add `default_timezone` field to Config which defines the bot wide default. If not set UTC is assumed.
+> * Add !stats command
+>
+> * Use Unix timestamps in database (migrated automaticly)
+> #### Fixes
+>
+> * Make sure Version sha actually gets generated in CI
+>
+> * Make tests work again in the CI
+> * Fix that !help and !version work without the database in case of issues
+>
+> #### !record command polish
+>
+> * Only accept positive durations greater than 1
+>
+> * Only accept durations less than 24h
+> * Check if duration is numeric
+>
+> #### Refactoring
+>
+> * Move message templates where needed to templates folder
+>
+> * Use color-eyre instead of anyhow
+>
+> #### [v0.2.0](https://gitlab.com/famedly/bots/timetracking/-/releases/v0.2.0)
+>
+> #### Refactoring
+>
+> * All new command definition. Allowing for much easy adding of commands and helptext
+>
+> * New `!help` response
+>
+> #### Fixes
+>
+> * Add the missing default for `!stats`
+>
+> * Check for required amount of arguments in `!delete`
+>
+> #### Chore
+>
+> * Fix typos in responses
+>
+> * Remove some dead code
+
+
+
+### GDQBot
+
+[daenney](https://matrix.to/#/@daenney:g33k.se) told us:
+
+> It's the most wonderful time of the year! The ⛄️ winter edition of [Games Done Quick](https://gamesdonequick.com/) is almost upon us. This recurring [speedrunning](https://en.wikipedia.org/wiki/Speedrun) event helps raise money for charity each year. As usual, the proceeds of the week long [AGDQ](https://gamesdonequick.com/schedule) are going to the Prevent Cancer Foundation. With some luck we might break last year's $3.13 million record.
+>
+> To help you keep track of the event I've created [GDQBot](https://github.com/daenney/gdqbot). Right now you can use it to query for the schedule. Next week should see the code land to add the announcer routine so the bot will announce events as they happen to channels its invited to.
+>
+> Also a big thank you to tulir for patiently answering my questions as I was trying to find my way around mautrix-go.
+
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|neko.dev|322|
+|2|bridges.matrix.linux.pizza|420|
+|3|almum.de|474|
+|4|envs.net|598.5|
+|5|saces.de|627|
+|6|kb1rd.net|722|
+|7|matrix.sp-codes.de|905|
+|8|casavant.org|943|
+|9|aria-net.org|1034|
+|10|flobob.ovh|1050|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
