@@ -51,6 +51,7 @@ Obviously, there’s a huge amount of stuff needed for parity with a proper Twit
 *   Configurable follows.  Currently the act of viewing someone’s timeline automatically follows them.  This is because Dendrite doesn’t peek over federation yet (but [it’s close](https://github.com/matrix-org/dendrite/pull/1391)), so you have to join a room to view its contents - and the act of viewing someone’s timeline room is how you follow them in Cerulean. 
 *   Likes (i.e. plain old Matrix reactions, although we might need to finally sort out federating them as aggregations rather than individually, if people use them like they use them on Twitter!)
 *   Retweets (dead easy)
+*   Pagination / infinite scrolling (just need to hook it up)
 *   Protect your posts (dead easy; you just switch your timeline room to invite-only!)
 *   Show (some) replies to messages in the Home view
 *   Show parent and sibling context as well as child context in the Thread view
