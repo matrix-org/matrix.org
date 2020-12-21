@@ -3208,7 +3208,7 @@ const Faq = ({ data }) => {
                 <tr>
                   <td>Postgres</td>
                   <td>
-                    While Synapse can be installed using, Sqlite Postgres is
+                    While Synapse can be installed using Sqlite, Postgres is
                     preferred for any significant use.
                   </td>
                 </tr>
