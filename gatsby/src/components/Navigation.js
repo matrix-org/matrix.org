@@ -95,8 +95,8 @@ const Navigation = (navmode) => (
           <a href="/faq/" className="mxnavbar__navlink w-nav-link">FAQs</a>
           <a href="/matrixlive/" className="mxnavbar__navlink w-nav-link">Matrix Live</a>
           <a href="https://shop.matrix.org" className={"mxnavbar__navlink w-nav-link "}>Shop</a>
-          <a href="/try-now/" className="mxnavbar__navlink mxnavbar__navlink--try w-nav-link">Try Now</a>
-          <a href="/try-now/" className="mxnavbar__navlink mxnavbar__navlink--primary w-nav-link">Try Now</a>
+          <a href="https://element.io/get-started" className="mxnavbar__navlink mxnavbar__navlink--try w-nav-link">Try Now</a>
+          <a href="https://element.io/get-started" className="mxnavbar__navlink mxnavbar__navlink--primary w-nav-link">Try Now</a>
         </nav>
         <div className="mxnavbar__menubutton w-nav-button">
           <div className="mxnavbar__icon w-icon-nav-menu">
