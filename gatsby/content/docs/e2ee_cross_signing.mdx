@@ -895,7 +895,7 @@ _Encrypted encryptAes(String data, Uint8List key, String name, [String ivStr]) {
   // encrypt our plain text, using unpadded AES-CTR, with our aesKey and our (possibly generated) IV
   var cipher = AES(Key(keys.aesKey), mode: AESMode.ctr, padding: null).encrypt(plain, iv: IV(iv)).bytes;
 
-  // calculate the HMAC of the resulting cipher, using the hmacKey 
+  // calculate the HMAC of the resulting cipher, using the hmacKey
   var hmac = Hmac(sha256, keys.hmacKey).convert(cipher);
 
   // base64 the iv, the cipher and the MAC, returning it all
@@ -1196,3 +1196,223 @@ and use that to verify and sign yourself:
 4. Sign your own master key with your own device key.
 5. Upload the signatures.
 6. Fetch all entries from SSSS that you want to cache and cache them.
+
+## 7. Bootstrapping SSSS and cross-signing
+By now your client should be able to cross-sign other devices, use SSSS if it is set up and sign other
+people via verification. To set up all the things that means to *bootstrap* them, you still rely on
+other clients, such as element.
+
+Bootstrapping is actually pretty straight-forward: You create all the keys, encrypt the cross-signing
+keys and set the events. So, a rough roadmap of what to do can look as following:
+
+1. Create a new SSSS key, be it via a randomly generated key or from a passphrase
+2. Generate a new, random, key ID for that key
+3. Set the information for that key in your account data
+4. Set the new key as default key
+5. Do other things (generate cross-signing keys, etc.) with that new key
+
+### Creating the SSSS key information
+Creating the key information for the new `m.secret_storage.key.<keyid>` event is basically just doing
+what you did before to verify if an entered key is correct, but now using the data to set the account
+data event. In the case of a passphrase you will have to generate a salt and iteration times yourself.
+All keys have 256 bits.
+
+**Important**: Make sure that all random things generated here, be it keys or salts, are as securely
+random as possible. Many languages have libraries for creating more securely random data than the
+default pseudo random number generator.
+
+#### Key from passphrase
+A reasonably-secure iteration number for PBKDF2 is `500000` (That is five-hundred thousand). The salt
+needs as much random data as our hash function. While PBKDF2 uses sha512 as hash, the generated key
+is only 256 bits long, so 256 bits should be reasonably secure. To make sure that the salt is usable,
+you can just base64 the randomly generated salt.
+
+After that, you use PBKDF2 to get the key from the passphrase, and calculate the MAC and IV.
+
+Code for generating the key could look as follows:
+```dart
+// "passphrase" is the passphrase by the user
+
+var passphraseInfo = {
+  "algorithm": "m.pbkdf2",
+  "iterations": 500000,
+  "salt": base64.encode(SecureRandom(32).bytes), // we use secure random! 32 bytes = 256 bits
+  "bits": 256,
+};
+var generator = PBKDF2(hashAlgorithm: sha512);
+var key = Uint8List.fromList(generator.generateKey(passphrase, passphraseInfo["salt"],
+      passphraseInfo["iterations"], passphraseInfo["bits"] / 8));
+```
+
+#### Generating a random key without a passphrase
+Just generate a 256-bit long key.
+
+```dart
+var key = SecureRandom(32).bytes; // 32 bytes = 256 bits
+```
+
+#### Calculating the key information
+You still need an IV to be able to calculate the MAC you later on use to verify the key. For that,
+generate 16 bytes and base64-encode them. Afterwards you just generate the MAC like you would for
+verifying the key, and then store the account data event.
+
+```dart
+// "key" is the key
+var iv = base64.encode(SecureRandom(16).bytes);
+// ZERO_STR are 32 bytes of zero. We encrypt with our generated key, a blank name and the iv of the event
+var encrypted = encryptAes(ZERO_STR, key, '', iv);
+var info = {
+  "algorithm": "m.secret_storage.v1.aes-hmac-sha2",
+  "iv": iv,
+  "mac": encrypted.mac,
+  "passphrase": passphraseInfo,
+};
+```
+
+#### Generating the key ID
+The key ID is just a short, random string which doesn't contain a dot. For that, you can e.g. generate
+a few random bytes and base64 encode them. Make sure no key with such an ID exists yet! After you have
+the key ID, set your key information object to account data `m.secret_storage.key.<keyId>`.
+
+To set the newly generated key as default key, simply set the `m.secret_storage.default_key` account
+data to the key ID (*NOT* the full account data type):
+
+```json
+{
+  "key": "<keyId>"
+}
+```
+
+### Bootstrappning cross-signing
+Now that you bootstrapped SSSS, it is time to bootstrap cross-signing! For that, you generate an
+ed25519 keypair for master key, self-signing key and user-signing key. Afterwards you store the
+base64-encoded private keys in SSSS, generate the key objects with the public keys for uploading,
+sign the self-signing and user-signing key with the master key, and upload them. While you are at it,
+you can also sign your own device with the newly generated self-signing key and sign the newly
+generated master key with your own device key. Don't forget to mark the master key you just generated
+as verified!
+
+Fortunately libolm gives us methods for creating an ed25519 keypair. We already showed how to sign
+key objects with libolm above, when creating new signatures after verifying.
+
+```dart
+var master = olm.PkSigning();
+try {
+  var masterPrivateKey = master.generate_seed();
+  var masterPublicKey = master.init_with_seed(masterPrivateKey);
+  // generate key object (and save for later)
+  var json = {
+    "user_id": "@alice:example.com",
+    "user": ["master"], // adjust to "self_signing" and "user_signing" for the other keys
+    "keys": {
+      "ed25519:$masterPublicKey": masterPublicKey,
+    },
+  };
+
+  // self_signing and user_signing ONLY! Generate signature:
+  var signature = signWithMasterKey(json);
+  json["signatures"] = {
+    "@alice:example.com": {
+      // as it was the *master* key that made the signature, we always need to put the master key
+      // here
+      "ed25519:<base64-of-master-public-key>": signature,
+    },
+  };
+
+  // store in SSSS
+  var secret = base64.encode(masterPrivateKey);
+  storeInSsss("m.cross_signing.master", secret); // adjust to "m.cross_signing.self_signing" and "m.cross_signing.user_signing" for the other keys.
+} finally {
+  master.free();
+}
+```
+
+After you generated all the json key objects you can POST them to `/_matrix/client/unstable/keys/device_signing/upload`.
+Keep in mind that this endpoint uses user-interactive authentification, so you will also have to send
+an additional `auth` array with the needed information to complete stages. Hereby `master_key` holds
+the master key object, `self_signing_key` the self-signing key and `user_signing_key` the user-signing
+key. An example request could look as following (taken from the spec):
+
+```
+POST /_matrix/client/unstable/keys/device_signing/upload HTTP/1.1
+Content-Type: application/json
+
+{
+  "master_key": {
+    "user_id": "@alice:example.com",
+    "usage": [
+      "master"
+    ],
+    "keys": {
+      "ed25519:base64+master+public+key": "base64+master+public+key"
+    }
+  },
+  "self_signing_key": {
+    "user_id": "@alice:example.com",
+    "usage": [
+      "self_signing"
+    ],
+    "keys": {
+      "ed25519:base64+self+signing+public+key": "base64+self+signing+master+public+key"
+    },
+    "signatures": {
+      "@alice:example.com": {
+        "ed25519:base64+master+public+key": "signature+of+self+signing+key"
+      }
+    }
+  },
+  "user_signing_key": {
+    "user_id": "@alice:example.com",
+    "usage": [
+      "user_signing"
+    ],
+    "keys": {
+      "ed25519:base64+user+signing+public+key": "base64+user+signing+master+public+key"
+    },
+    "signatures": {
+      "@alice:example.com": {
+        "ed25519:base64+master+public+key": "signature+of+user+signing+key"
+      }
+    }
+  }
+}
+```
+
+### Changing SSSS passphrase / key
+Along with bootstrapping you can implement other things, such as the ability to change the SSSS passphrase.
+When doing so, keep in mind that keeping an in-tact SSSS is crucial for having a functional account,
+as such an algorithm is needed where any single step can fail and no data at all is lost. For this,
+it is helpful to utilize that an encrypted SSSS secret in account data can be encrypted by *multiple*
+keys at once, by setting multiple ciphertexts:
+
+```json
+{
+  "encrypted": {
+    "firstKeyId": {
+      "iv": "supercooliv",
+      "ciphertext": "secretciphertext",
+      "mac": "macthingy"
+    },
+    "secondKeyId": {
+      "iv": "othersupercooliv",
+      "ciphertext": "othersecretciphertext",
+      "mac": "othermacthingy"
+    }
+  }
+}
+```
+
+Now, the following algorithm could be used to change the SSSS passphrase:
+
+1. Scan all account data for things that look like they could be stored SSSS secrets
+2. Gather all needed SSSS keys needed to decrypt them (typically only one - the current default)
+3. Prompt the user to unlock all of those keys
+4. Decrypt and cache all secrets
+5. Prompt the user for a new passphrase / key
+6. Generate the new SSSS key
+7. Re-encrypt all cached secrets with the new SSSS key, putting the new ciphertext there *in addition*
+   to the old ciphertext
+8. (Optional) Re-verify that all account data events have been set correctly, e.g. by attempting to
+   decrypt with the new key and comparing with the cached secrets
+9. Set the new key as default key
+10. Remove from the account data events the old ciphertext, as only the new one is needed anymore
