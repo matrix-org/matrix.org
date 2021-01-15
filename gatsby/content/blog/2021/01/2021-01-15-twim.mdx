@@ -1,0 +1,306 @@
+---
+date: '2021-01-15'
+title: 'This Week in Matrix 2021-01-15'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-01-15-1m-hE-image.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aBWCOjysSmU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of Servers 🏢
+
+### Dendrite / gomatrixserverlib
+
+[Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) announced:
+
+> Earlier this week we released Dendrite 0.3.5, our first release of 2021, which includes a fairly significant refactor of parts of the sync API, along with other fixes. More work has since been merged into `master` too.
+>
+> Changes in the last two weeks include:
+>
+> * Sync streams are now logically separate, with a lot of behaviour fixed
+>
+> * Forward extremities are now deep-checked properly, which should significantly reduce the peaks of CPU and RAM when handling the current room state
+> * Pagination tokens in `/messages` have been fixed, which should improve the reliability of scrolling back in the timeline
+>
+> * A number of fixes have been made to the `/sync` response, largely avoiding `null`s, which should make some clients happier
+> * Send-to-device messaging has been refactored, which should improve E2EE stability
+>
+> * Well-known/DNS records for federated servers are now cached rather than performing lots of lookups, speeding up outbound federation
+> * Device list requests to remote servers now time out quicker, so as to not block `/send` transactions
+>
+> * Experimental support for MSC2946 has been merged (gated behind the `mscs` configuration)
+> * Request context is no longer reused for `/send`, which should help in cases where the remote sending server gives up waiting or the connection breaks
+>
+> If you are running a Dendrite server, it is highly recommended that you upgrade to the latest version!
+>
+> Spec compliance is at:
+>
+> * Client-server APIs: 58%
+>
+> * Server-server APIs: 83%
+>
+> As always, feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for general Dendrite chat or [#dendrite-dev:matrix.org](https://matrix.to/#/#dendrite-dev:matrix.org) for development discussion.
+
+I asked:
+
+> Can you explain something: Dendrite federation is basically working fine, AIUI, what does it mean that `Server-server APIs` is <100%?
+
+[Neil](https://matrix.to/#/@neilalexander:matrix.org) helpfully replied:
+
+> There are still some edge-case tests that we haven't got passing yet, but I think that's only ~20 tests or so.  
+> There are also a few tests which are quite sensitive to exactly what Synapse does/returns, even though Dendrite is probably doing the right thing but maybe taking a different amount of time to do it or returning something slightly different, so there'll be some tests we need to fix too
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) announced:
+
+> Happy Friday!
+>
+> * 🎉 [Synapse 1.25.0](https://matrix.org/blog/2021/01/13/synapse-1-25-0-released) is out! It includes a pretty significant speedup for state resolution in bridged IRC rooms, as well as the usual assortment of bug fixes and improvements.
+>
+> * 🕵️ For a limited time, and thanks to funding from the European Commission, paid bug bounties are now available for Synapse and other Matrix.org projects via the [Intigriti bug bounty platform](https://app.intigriti.com/company/programs/matrix/matrix/detail).
+> * 👋 If you're wondering about the face behind these updates, scroll up and check out Matrix Live!
+>
+> We're on track for 1.26.0rc1 next week, which includes a massive speedup for message redaction in large rooms, as well as finally landing [fundamental algorithmic improvements](https://github.com/matrix-org/synapse/issues/8622#issuecomment-729620021) to state resolution.
+>
+> Otherwise, we remain hard at work preparing for FOSDEM-on-Matrix, with special emphasis on improving our stability and moderation capabilities at scale. See y'all next week!
+
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) offered:
+
+> Just pushed version 1.25.0 of Synapse for my Kubernetes [image](https://github.com/ananace/matrix-synapse) and [chart](https://gitlab.com/ananace/charts). Haven't quite had the time to finish up the redo of the scripts, but expect that 1.25.0 will be the last version with a specific image, I'm hoping to have generalized the chart enough that it should work with any reasonable image at that point.
+
+## Dept of Bridges 🌉
+
+### Gitter
+
+[Eric Eastwood](https://matrix.to/#/@madlittlemods:matrix.org) offered:
+
+> A few improvements to the Gitter bridge this week so that when a room updates and the avatar or topic changes, it now propagates across to Matrix automatically. We also handle updating the name whenever we have to rename a room or a group.
+>
+> We're also thinking about how best to tackle self-service plumbing so you can pipe a Gitter room into your existing Matrix room. And the bigger idea of connecting various bridged portal rooms together. So can can connect your community on Gitter <-> Matrix <-> IRC seamlessly for example. The current thinking is introducing this as a native Matrix concept so you can easily connect any Matrix room to another Matrix room. We'd love to hear your thoughts in [MSC2923](https://github.com/matrix-org/matrix-doc/pull/2923).
+
+
+
+### [mx-puppet-groupme](https://gitlab.com/robintown/mx-puppet-groupme)
+
+[Robin](https://matrix.to/#/@robintown:townsendandsmith.ml) said:
+
+> Version 2 of mx-puppet-groupme is here! This week I did some reverse engineering of the GroupMe Android app with mitmproxy so that I could work out the remaining undocumented features of GroupMe's API. As a result, typing notifications, read receipts, and videos are now working! Though note that due to limitations of the platform, read receipts are a DMs-only feature.
+>
+> We also now have a Dockerfile (thanks, Trey B.!), double puppeting support was added, the code was ported to Typescript, and it should now work with older versions of Node. So at this point the bridge is basically feature-complete! As usual, send any questions, bugs, or feature requests to [GitLab](https://gitlab.com/robintown/mx-puppet-groupme) or [Matrix]([#mx-puppet-groupme:townsendandsmith.ml](https://matrix.to/#/#mx-puppet-groupme:townsendandsmith.ml)). 💜
+
+
+
+### mautrix-facebook
+
+[Tulir](https://matrix.to/#/@tulir:maunium.net) told us:
+
+> I've been working on moving mautrix-facebook to act as a Messenger mobile app instead of the web app in order to hopefully make it more reliable. The initial version is starting to work now.
+>
+> It's currently in the [mobile](https://github.com/tulir/mautrix-facebook/tree/mobile) branch. I'm not actually sure if it helps with facebook forcing password resets (for some reason they've never done that to my account), but if it does, I'll merge it into master in the near future.
+>
+> The new version only supports Postgres like my newer bridges, but I'll invent a SQLite migration tool before merging to master.
+
+
+
+## Dept of Clients 📱
+
+### NeoChat 1.0.1 released
+
+[Carl Schwan](https://matrix.to/#/@carl:kde.org) told us:
+
+> NeoChat 1.0.1 was released with a few important bugfixes. https://carlschwan.eu/2021/01/13/neochat-1.0.1-first-bugfix-release/. On the unstable branch, we continued to improve the integration with Plasma. We now display the unread count in the taskbar and we are getting inline replies too thanks to the work of [Kai Uwe Broulik](https://invent.kde.org/frameworks/knotifications/-/merge_requests/28) in Knotifications. Another important change is that rooms can now be opened in a new separate window.
+
+
+
+![2021-01-15-1m-hE-image.png](/blog/img/2021-01-15-1m-hE-image.png)
+
+![2021-01-15-N_xQv-image.png](/blog/img/2021-01-15-N_xQv-image.png)
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) offered:
+
+> Bugfixing for the next release is in progress, fixing various issues and instabilities introduced with the new features, but some smaller features also still made it in:
+>
+> * There is now a call invite screen more fitting for mobile devices, when you enable the "Touchscreen mode" in the settings.
+>
+> * Various clickable elements now have a ripple effect again to give feedback, when a click was registered.
+> * Nheko now handles the Matrix URI scheme. This means opening a link starting with `matrix:` should open Nheko (at least on Linux) and redirect to the appropriate room and matrix URIs inside of Nheko are also handled. This currently does not support navigating to a specific event, but opening user profiles, starting chats with specific users and opening or joining rooms should work. Nheko also does not automatically linkify links starting with `matrix:`, so you need to do that manually.
+>
+> * Verification dialogs were cleaned up a bit and hopefully are easier to understand now.
+> * The flatpak nightlies now support VOIP calls, but as a result are now a few MB more to download.
+>
+> Since we are nearing the next release, it would be appreciated, if you could check the [translations for your platform are up to date](https://weblate.nheko.im/projects/nheko/nheko-master/) and try the [current nightlies](https://matrix-static.neko.dev/room/!TshDrgpBNBDmfDeEGN:neko.dev/) and check them for bugs your experience and want to have fixed before release. If you find anything, please report it on [GitHub](https://github.com/Nheko-Reborn/nheko/issues/new/choose) or discuss it in [#nheko:ocean.joedonofry.com](https://matrix.to/#/#nheko:ocean.joedonofry.com). Thank you!
+
+### Quaternion
+
+[kitsune](https://matrix.to/#/@kitsune:matrix.org) told us:
+
+> I'd like to have announced the next beta release for Quaternion 0.0.9.5 - unfortunately, [migrating from Travis CI](https://travis-ci.community/t/org-com-migration-unexpectedly-comes-with-a-plan-change-for-oss-what-exactly-is-the-new-deal/10567) took more than I wanted; but adventurous souls are welcome to test the master branch that's basically ready for beta 3.
+>
+> Meanwhile, it surfaced that Quaternion 0.0.9.4e Windows binaries have been expecting (very old and no more supported) OpenSSL 1.0. This is now fixed in [Quaternion 0.0.9.4f](https://github.com/quotient-im/Quaternion/releases/tag/0.0.9.4f) (hopefully this will be the last 0.0.9.4 rebuild and I won't chase the above-mentioned OpenSSL project in trying to expire Latin letters).
+
+
+
+### Element Clients
+
+Various updates from the teams:
+
+#### Spaces
+
+On Web, we’re progressing on Spaces on our [big checklist of doom](https://github.com/vector-im/element-web/issues/15930), most recently on implementing invites to Spaces. On Android, [we’re also progressing](https://github.com/vector-im/element-android/issues/2495), iterating on the UX. Meanwhile, we’re also experimenting with different ways to explore, manage and navigate nested spaces.
+
+#### Social Login
+
+We’ve now merged [support for multiple identity providers](https://github.com/matrix-org/synapse/issues/8927) on Synapse, and are getting dangerously close to finishing the rest of the implementation. Watch this space for more news soon!
+
+#### Web
+
+Element Web 1.7.17-rc.1 is now available at https://staging.element.io, including:
+
+* Fixed avatar upload prompt layering issues
+* Added VoIP call transfer
+
+#### iOS
+
+Element iOS [1.1.4](https://github.com/vector-im/element-ios/releases/tag/v1.1.4) has been submitted to the AppStore. A TestFlight build will be available during the week-end. Main things the release offers are:
+
+* Social login
+* New SSO login management
+* Several bug fixes
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### libQuotient
+
+[kitsune](https://matrix.to/#/@kitsune:matrix.org) announced:
+
+> [Version 0.6.4 is out](https://github.com/quotient-im/libQuotient/releases/tag/0.6.4), with a few fixes around homeserver resolution (particularly when a `.well-known` record is not there). These has been made in tight collaboration with the folks behind [Neochat](https://invent.kde.org/network/neochat) - thanks a lot! 0.6.4 is also the best version to build the just-released Neochat 1.0.1 with.
+>
+> Meanwhile, work on the next version (0.7) is proceeding in the unstable branch (not in the least pushed by Neochat activity) - expect more news in the next weeks.
+
+
+
+### Ruma
+
+[Ruma](https://www.ruma.io/) is a set of Rust library crates around Matrix
+
+[jplatte](https://matrix.to/#/@jplatte:privacytools.io) announced:
+
+> Since our last update on 2020-11-20,
+>
+> * [@elegaanz](https://github.com/elegaanz) added [constructors for default push rules](https://github.com/ruma/ruma/pull/353)
+>
+> * I added [rudimentary support for m.new_content](https://github.com/ruma/ruma/pull/356)
+> * [@elegaanz](https://github.com/elegaanz) refactored [push rulesets](https://github.com/ruma/ruma/pull/358)
+>
+> * [@iinuwa](https://github.com/iinuwa) and I added [types for key and signature identifers](https://github.com/ruma/ruma/commit/1ceade7b610df259c394cb9e3a14c447e454a16c)
+> * [@poljar](https://github.com/poljar) added [unstable support for in-room verification events](https://github.com/ruma/ruma/pull/361)
+>
+> * [@auscompgeek](https://github.com/auscompgeek) added [unstable support for MSC2448 (BlurHashes)](https://github.com/ruma/ruma/pull/363)
+> * [@DevinR528](https://github.com/DevinR528) improved [the documentation for ruma-serde and ruma-events](https://github.com/ruma/ruma/pull/362)
+>
+> * [@iinuwa](https://github.com/iinuwa) added [endpoint definitions for the Identity Service API's authentication module](https://github.com/ruma/ruma/pull/347)
+> * [@lanker](https://github.com/lanker) added [some Debug formatting implementations for identifier types and improved existing ones](https://github.com/ruma/ruma/pull/383)
+>
+> * [@iinuwa](https://github.com/iinuwa) improved [out contributing documentation](https://github.com/ruma/ruma/pull/382)
+> * [@V02460](https://github.com/V02460) added [unstable support for bundled relations](https://github.com/ruma/ruma/pull/391) (part of MSC2677)
+>
+> * We started work on a new crate: [synapse-admin-api](https://github.com/ruma/synapse-admin-api)
+> * I added a new page to our website: [Projects using Ruma](https://www.ruma.io/projects/)
+>
+> * A whole bunch of smaller bugs and papercuts were fixed
+
+[jplatte](https://matrix.to/#/@jplatte:privacytools.io) also just added a new page to ruma.io: [Projects using Ruma](https://www.ruma.io/projects/)
+
+`\o/`
+
+
+
+## Dept of Ops 🛠
+
+### [PingPong: End-to-end latency monitoring for Matrix](https://github.com/p-e-w/pingpong)
+
+[p-e-w](https://matrix.to/#/@p-e-w:matrix.org) announced:
+
+> PingPong measures transport latencies on Matrix networks. It connects to two Matrix accounts simultaneously, and bounces messages back and forth between them. It aggregates all information in an intuitive terminal user interface, and automatically computes statistics. Source code and more information are available at https://github.com/p-e-w/pingpong.
+>
+> I have been working on this for a while now and I believe it is ready for others to use at this point. No binary releases yet, the program must be built from source. I only have a Linux development system currently, so feedback on whether it works on macOS and especially Windows is very welcome.
+
+![2021-01-15-mZQHt-screenshot.png](/blog/img/2021-01-15-mZQHt-screenshot.png)
+
+Very interesting new project! I'm thinking of setting this up as I'd planned to write something similar to track perf on bpulse.org.
+
+## Dept of Interesting Projects 🛰️
+
+### Keymaker Serverlist Project
+
+[MTRNord](https://matrix.to/#/@mtrnord:nordgedanken.dev) said:
+
+> A small update on what is happening after a long time of nothing:
+>
+> * Bot has first part of the registration process (essentially the required automated tests) implemented. Next is the manual verification half.
+>
+> * Domains are bought and the web page is deployed (No servers listed yet)
+> * Code of Conduct writing will start soonish.
+>
+> As you will see there are only empty categories. This is due to the registration bot still being in work as well as missing documentation for it.
+>
+> For the progress you can also take a look at https://github.com/keymaker-mx/keymaker/projects/1
+>
+> Check the current page out at: https://homeservers.mx https://joinmatrix.rocks/
+>
+> Join development and discussions at [#serverlist:nordgedanken.dev](https://matrix.to/#/#serverlist:nordgedanken.dev)
+> Check out the Code at: https://github.com/keymaker-mtx
+
+![2021-01-15-HNiKj-Screenshot_20210113_225623.png](/blog/img/2021-01-15-HNiKj-Screenshot_20210113_225623.png)
+
+This is really awesome progress! Not quite there but we'll keep a close watch. 👀 
+
+## Dept of Guides 🧭
+
+### e2ee implementation guide
+
+[sorunome](https://matrix.to/#/@sorunome:sorunome.de) told us:
+
+> Soru worked on updating her e2ee implementation guide, so far it contains a new section on bootstrapping and hopefully soon on online key backup! You can find the WIP MR [here](https://github.com/matrix-org/matrix.org/pull/928).
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|maclemon.at|318|
+|2|nicoll.xyz|366|
+|3|imninja.net|457|
+|4|aragon.sh|637|
+|5|kif.rocks|665|
+|6|matrix.sp-codes.de|727.5|
+|7|matrix.vgorcum.com|766|
+|8|envs.net|775|
+|9|fairydust.space|820|
+|10|mtx.liftm.de|833|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
