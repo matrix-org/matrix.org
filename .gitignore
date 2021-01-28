@@ -5,6 +5,7 @@
 /content.tar.gz
 /env
 /jekyll/_site/
+/jekyll/.jekyll-cache/
 /jekyll/.sass-cache/
 /gatsby/.cache
 /gatsby/node_modules
