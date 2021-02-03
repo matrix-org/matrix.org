@@ -38,6 +38,19 @@ const Hosting = ({ data }) => {
                     in Linthal, Switzerland. They use an old building, second-hand servers, passive cooling and
                     are directly plugged into an on-site hydroelectric power plant!</p>
                 </div>
+
+                <div className="mxgrid__item50">
+                    <h2 id="ungleich">bamoid</h2>
+                    <p><img style={{"border-radius": "9px", "height": "130px"}} src="/images/bamoid_logo.jpg" alt="" /></p>
+                    <p><a href="https://www.bamoid.com">www.bamoid.com</a></p>
+                    <ul>
+                        <li>Hosted & Managed Homeservers</li>
+                    </ul>
+                    <p>
+                        Focused on ease of use for getting your friends and family involved. Servers come with a web interface to manage all aspects of your server
+                        and pre-configured clients.
+                    </p>
+                </div>
             </div>
             <em>The providers listed all have a history of providing Matrix services, though The Matrix.org Foundation doesn't explicitly endorse these services.</em>
         </MXContentMain>
