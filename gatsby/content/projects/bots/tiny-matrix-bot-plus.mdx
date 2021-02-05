@@ -15,38 +15,45 @@ repo: https://github.com/8go/tiny-matrix-bot
 thumbnail: /docs/projects/images/tiny-matrix-bot.svg
 featured: true
 #screenshot: /docs/projects/images/tmb.svg
-maturity: Beta # Options are: Released, Stable, Late Beta, Beta, Early Beta, Late Alpha, Alpha, Early Alpha, or Not actively maintained
+maturity: Not actively maintained # Options are: Released, Stable, Late Beta, Beta, Early Beta, Late Alpha, Alpha, Early Alpha, or Not actively maintained
 ---
 
 
 tiny-matrix-bot plus
 
 This is a simple Matrix bot based on matrix-python-sdk with no support and no warranty. It was forked from 4nd3r/tiny-matrix-bot.
+It is no longer maintained as it has been replaced with https://github.com/8go/matrix-eno-bot. 
+So, have a look at https://github.com/8go/matrix-eno-bot for a more advanced bot.
 
-It is easy to understand, little code, and easy to set up and extend to your personal needs. It is meant for small private Matrix homeservers that are run by individuals for their friends. It is not performant and hence not suitable for industrial size roll-out. The bot itself is just a single Python file. Bot commands are implemented as Bash scripts or Python programs. It is a good tool to learn about bots and to change it to adapt it to your personal needs.
+"tiny-matrix-bot plus" is still useful as an easy introduction into the world of bots. 
+It is very easy to understand, very little code, and easy to set up and extend to your personal needs. 
+It is meant for small private Matrix homeservers that are run by individuals for their friends. 
+It is not performant and hence not suitable for industrial size roll-out. 
+The bot itself is just a single Python file. Bot commands are implemented as Bash scripts or Python programs. 
+It is a good tool to learn about bots and to change it to adapt it to your personal needs.
 
 Installation and Setup
 
-sudo apt install python3 python3-requests
-git clone https://github.com/8go/tiny-matrix-bot
-git clone https://github.com/matrix-org/matrix-python-sdk
-cd tiny-matrix-bot
-ln -s ../matrix-python-sdk/matrix_client
-cp tiny-matrix-bot.cfg.sample tiny-matrix-bot.cfg
-vim tiny-matrix-bot.cfg # adjust the config file, add token, etc.
-cp tiny-matrix-bot.service /etc/systemd/system
-vim /etc/systemd/system/tiny-matrix-bot.service # adjust service to your setup
-systemctl enable tiny-matrix-bot
-systemctl start tiny-matrix-bot
-systemctl stop tiny-matrix-bot
+    sudo apt install python3 python3-requests
+    git clone https://github.com/8go/tiny-matrix-bot
+    git clone https://github.com/matrix-org/matrix-python-sdk
+    cd tiny-matrix-bot
+    ln -s ../matrix-python-sdk/matrix_client
+    cp tiny-matrix-bot.cfg.sample tiny-matrix-bot.cfg
+    vim tiny-matrix-bot.cfg # adjust the config file, add token, etc.
+    cp tiny-matrix-bot.service /etc/systemd/system
+    vim /etc/systemd/system/tiny-matrix-bot.service # adjust service to your setup
+    systemctl enable tiny-matrix-bot
+    systemctl start tiny-matrix-bot
+    systemctl stop tiny-matrix-bot
 
 Debugging
 
 Run something similar to
 
-systemctl stop tiny-matrix-bot # stop server in case it is running
-cd tiny-matrix-bot # go to your installation directory
-./tiny-matrix-bot.py --debug # observe debug output
+    systemctl stop tiny-matrix-bot # stop server in case it is running
+    cd tiny-matrix-bot # go to your installation directory
+    ./tiny-matrix-bot.py --debug # observe debug output
 
 Example bot commands provided
 
