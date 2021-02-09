@@ -80,7 +80,7 @@ const OTWSU = ({ data }) => {
             You can also <a href="https://user.fm/calendar/v1-2f5c614bd642751481ef4aedc83fee95/Matrix%20Public%20Events.ics">add us to your calendar</a>.
           </p>
           <MDXRenderer>{nextEvent.node.body}</MDXRenderer>
-          <strong><a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/275122112/">Optional! Sign up on Meetup.com</a></strong>
+          <strong><a href="https://www.meetup.com/Open-Tech-Will-Save-Us/events/276269829/">Optional! Sign up on Meetup.com</a></strong>
         </div>
         }
         <h2>Previous Events</h2>
