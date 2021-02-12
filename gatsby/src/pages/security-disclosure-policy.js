@@ -10,6 +10,20 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date:'2020-11-17',
+            who: 'Michaël Scherer',
+            profile: 'https://github.com/mscherer/',
+            description: 'CVE-2021-21274',
+            service: "Synapse"
+        },
+        {
+            date:'2020-11-17',
+            who: 'Michaël Scherer',
+            profile: 'https://github.com/mscherer/',
+            description: 'CVE-2021-21273',
+            service: "Synapse"
+        },
+        {
             date:'2020-09-20',
             who: 'Denis Kasak',
             profile: 'https://github.com/dkasak',
