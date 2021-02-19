@@ -1,0 +1,390 @@
+---
+date: '2021-02-19'
+title: 'This Week in Matrix 2021-02-19'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-02-19-ml.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vhAErZewikE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of Spec 📜
+
+
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) offered:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * _No MSCs were merged this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * [MSC2312: Matrix URI scheme proposal](https://github.com/matrix-org/matrix-doc/pull/2312) (merge)
+>
+> **New MSCs:**
+>
+> * [MSC3015: Room personal name](https://github.com/matrix-org/matrix-doc/pull/3015)
+> * [MSC3014: HTTP Pushers for the full event with extra rooms information](https://github.com/matrix-org/matrix-doc/pull/3014)
+>
+> * [MSC3013: Encrypted Push](https://github.com/matrix-org/matrix-doc/pull/3013)
+> * [MSC3012: Post-registration terms of service API](https://github.com/matrix-org/matrix-doc/pull/3012)
+>
+> * [MSC3009: Websocket transport for client <--> widget communications](https://github.com/matrix-org/matrix-doc/pull/3009)
+> * [MSC3008: Scoped access for widgets](https://github.com/matrix-org/matrix-doc/pull/3008)
+>
+> * [MSC3007: Forced insertion and room blocking by self-banning](https://github.com/matrix-org/matrix-doc/pull/3007)
+> * [MSC3006: Bot Interactions](https://github.com/matrix-org/matrix-doc/pull/3006)
+>
+> #### Spec Core Team
+>
+> The Spec Core Team has spent this week working on getting [MSC2312](https://github.com/matrix-org/matrix-doc/pull/2312) (Matrix URI Scheme) over the line, which is really exciting! Otherwise the team has been reviewing [MSC2304](https://github.com/matrix-org/matrix-doc/pull/2304) (knocking).
+>
+> #### New Spec Platform
+>
+> Work is currently underway in migrating to the new spec platform. [A PR](https://github.com/matrix-org/matrix-doc/pull/3017) for updating the CI of [matrix-org/matrix-doc](https://github.com/matrix-org/matrix-doc) to build the new spec is up, and an equivalent for [matrix-org/matrix.org](https://github.com/matrix-org/matrix.org) should be up next week.
+
+![2021-02-19-QCQcX-stacked_area_chart.png](/blog/img/2021-02-19-QCQcX-stacked_area_chart.png)
+
+### MSC3013
+
+[sorunome](https://matrix.to/#/@sorunome:sorunome.de) said:
+
+> Soru has been working on experimenting with / designing a way to improve push systems within the matrix ecosystem, so that ideally clients can display full event contents in a notification and dispose of specific push notifications without the need for any extra HTTP calls. This lead her to making [MSC3013](https://github.com/matrix-org/matrix-doc/pull/3013) (encrypted push), so that no gateway is able to read event contents pushed down to the client and [MSC3014](https://github.com/matrix-org/matrix-doc/pull/3014), so that the client can know which rooms have been read on other devices, allowing them to dispose push notifications.
+>
+> This is more than just MSCs already, soru already got encrypted push in a patched synapse and a patched fluffychat working locally, and it is working super great!
+>
+> Dunno soru is just really excited about this somehow `>~<` 🦊
+
+## Dept of Servers 🏢
+
+### Hedwig: push gateway
+
+[krille](https://matrix.to/#/@krille:janian.de) reported:
+
+> Let's talk more about Hedwig: This is a push gateway for matrix and an alternative to Sygnal. Hedwig is completely written from scratch in Rust (Yes! Rust!) and offers the basic functionality to forward matrix push notifications to Firebase Cloud Messaging. That's it. Nothing more. It is intended to be as lightweight as possible and so it is very fast and stable. Just change a simple config.toml file and run the binary. There are docs for how you can configure a proxy in Apache2 and an example systemD service file. Currently it only supports event_id_only formatted notifications but maybe, in the future, we expand this functionality.
+
+Learn more: https://gitlab.com/famedly/services/hedwig
+
+### Dendrite / gomatrixserverlib
+
+Dendrite is a next-generation homeserver written in Go
+
+[Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) reported:
+
+> This week we released [Dendrite 0.3.10](https://github.com/matrix-org/dendrite/releases/tag/v0.3.10), and have committed a couple more fixes to `master`:
+>
+> * The database is now only queried for remote servers once in `/send`
+>
+> * The oldest cache entries are now gradually evicted, saving a small amount of memory
+> * The destination queues in the federation sender are now not stored forever, saving some memory
+>
+> * A bug where a non-excluded event could be accidentally excluded from `/sync` has been fixed
+> * Some dependency fixes have been merged
+>
+> Sytest compliance:
+>
+> * Client-server APIs: 60%
+>
+> * Server-server APIs: 82%
+>
+> As always, feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for general Dendrite chat or [#dendrite-dev:matrix.org](https://matrix.to/#/#dendrite-dev:matrix.org) for development discussion.
+
+
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) reported:
+
+> Synapse 1.27 is out, and you can [read all about it](https://matrix.org/blog/2021/02/18/synapse-1-27-0-released) on the Matrix Blog! This is the version that powered FOSDEM, and we're super proud of it. Especially the much improved support for multiple social login providers, which debuted at FOSDEM and is now enabled on matrix.org.
+>
+> In addition to all the performance, stability, and social login improvements, there are two important things to note:
+>
+> 1. If you use SSO, you will need update your configuration before upgrading; please see the link above for details.
+> 2. We were unable to build Docker images for ARM platforms in time for this release, and will not build images for ARMv7 in future releases.
+>
+> * To avoid unexpected breakage, we have not updated the  `latest` tag on Docker Hub for this release; if you want Synapse 1.27, you'll need to specifically reference the `v1.27.0` tag.
+>
+> * Images for ARM64 (and an updated `latest` tag) will return with the next Synapse release.
+>
+> It took us a bit longer than usual to get 1.27 out the door, so we're also pleased to announce that [1.28.0rc1](https://github.com/matrix-org/synapse/releases/tag/v1.28.0rc1) is also now available, and we expect to release it early next week. Keep your eyes peeled for more on that next week!
+
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) announced:
+
+> New [chart](https://gitlab.com/ananace/charts) versions have been pushed for Element 1.7.21 and Synapse 1.27.0.
+>
+> The rejiggering to allow arbitrary images for the Kubernetes chart got delayed due to lack of time, but 1.27.0 should hopefully be the last version with that limitation.
+
+
+
+## Dept of Clients 📱
+
+### Nio
+
+[Nio](https://nio.chat) is a client written with SwiftUI
+
+[kilian](https://matrix.to/#/@kilian:kernkraftwerk.lol) offered:
+
+> [Nio](https://nio.chat/) has seen some great improvements since the last update, mostly thanks to gaining a new main contributor \o/
+>
+> * History loading now works (seems like a rather essential messenger feature 😄)
+>
+> * New conversations can be started (with a slick UI)
+> * There's a preliminary (but well-working!) build for macOS on Catalyst
+>
+> * As a first step towards E2EE support Nio can now participate in encrypted sessions while running
+> * _Many_ new translations (thanks to all the contributors on translate.element.io!)
+>
+> * Lots of additional bugfixes and improvements
+>
+> Join us in [#niochat:matrix.org](https://matrix.to/#/#niochat:matrix.org) for more details 😊
+
+
+
+### FluffyChat
+
+[FluffyChat](https://fluffychat.im) is a cute cross-platform matrix client. It is available for Andorid, iOS, Web and Desktop.
+
+[krille](https://matrix.to/#/@krille:janian.de) said:
+
+> FluffyChat 0.27.0 is out. Not with the new design but with some minor design improvements like the return of the presence list top bar (or whatever you would name it!). Also this release brings a lot of bug fixes, working bootstrapping and the switch to our new Push Gateway (in Rust) we have invented inside of Famedly. You can find it here: https://gitlab.com/famedly/services/hedwig
+
+### FluffyChat on Pinephone
+
+[Lukas Lihotzki](https://matrix.to/#/@lukas:lihotzki.de) said:
+
+> FluffyChat runs on the PinePhone (Flutter Linux ARM64). I've built it with flutter master on the PinePhone itself, because cross-compiling is not yet supported. Currently, Flutter Linux on the PinePhone only works with X11. It crashes with Wayland.
+
+I am on the brink of buying one of these!
+
+![2021-02-19-2Lo26-pine.png](/blog/img/2021-02-19-2Lo26-pine.png)
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) told us:
+
+> We had a fun week this time. Today I tested trilenes screen sharing code, which seems to work pretty well on X11, although it only shares the full screen atm. I expect window sharing to land next week though. We also ran into some issues with matrix.org enabling optional SSO login, which locked some people out of their accounts, since Nheko preferred SSO login in that case... This is now fixed and in such cases you will be offered both login flows.
+>
+> Jedi18 also added a room name completer, which means you can finally complete aliases when typing them! The room settings were also ported to Qml and now actually show the room topic. Apart from that there were various UX fixes here ad there, like hovering actually working properly now, emote messages formatting correctly in notifications and more. We also adapted the matrix: uri support to the latest changes, although the MSC is a bit volatile atm, so it may need some more adaptions over time.
+>
+> I think that's all, have a nice weekend everyone!
+
+
+
+### Hydrogen
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) announced:
+
+> I'm back working on Hydrogen, and started to tackle logging to be able to diagnose problems better. I've opted for a structured log format in JSON that gives a tree of log nodes for an entire operation (e.g. sync, or sending a message, ...) which will be more compact and should also be easier to find patterns in than a pure line based format. I had hoped to get that out in a release by today but didn't get as far as I hoped, so should get released early next week.
+
+![2021-02-19-VTLG5-image.png](/blog/img/2021-02-19-VTLG5-image.png)
+
+Yes! Hydrogen progresses!
+
+### Element
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) told us:
+
+> **Delight**
+>
+>
+>
+> *   Social Login
+>
+>     *   Social log-in has shipped to matrix.org, we are seeing about 40% of new users opting for a social method. Next up will be landing some robustness improvements as well as automatic avatar import.
+>
+> *   Spaces
+>
+>     *   We are aiming to get a basic version up and ready over the next few weeks. The idea is to have something behind a labs flag that will work for Spaces containing public rooms only. After that we will think about more complex cases such as Spaces containing private rooms. 
+>
+> **VoIP**
+>
+>
+>
+> *   Fix for crash on Android caused by VoIP tiles
+>
+> *   Design updates on iOS for in-call view and dial pad
+> *   Couple of tweaks to web that may help 1:1 call connectivity
+>
+> **Web**
+>
+>
+>
+> *   Element 1.7.21 was released on Monday (15 Feb)
+>
+> **iOS**
+>
+>
+>
+> *   Element [1.2.1](https://github.com/vector-im/element-ios/releases) was released on Friday (12 Feb)
+>
+> *   We now use XcodeGen to generate Xcode project files. Please check [new instructions ](https://github.com/vector-im/element-ios#build-instructions)to build the project. It is only on develop for the moment
+> *   We made an update to libolm so that it accepts an external pickle key to encrypt its data when serialising it. Element-iOS uses the Keychain to provide this key.
+>
+> *   We started to review and merge pending PRs in our repos but we still have work. Thanks for your contributions and patience
+>
+> **Android**
+>
+>
+>
+> *   We are preparing the release 1.1.0 which contains the work on VoIP
+>
+> *   This release will also contain a lot of bug fixes
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### ruma
+
+[Ruma](https://www.ruma.io/) is a set of Rust library crates around Matrix
+
+[jplatte](https://matrix.to/#/@jplatte:privacytools.io) said:
+
+> This week,
+>
+> * [@unseddd](https://github.com/unseddd) added [the autodiscovery](https://github.com/ruma/ruma/pull/415) and [public key validity](https://github.com/ruma/ruma/pull/416) endpoints to ruma-identity-service-api
+>
+> * [@DevinR528](https://github.com/DevinR528) improved [support for m.room.message event relations](https://github.com/ruma/ruma/pull/420)
+> * [@PunitLodha](https://github.com/PunitLodha) added [get and set methods to Capabilities](https://github.com/ruma/ruma/pull/424), improving forwards-compatibility
+
+
+
+## Dept of Ops 🛠
+
+### matrix-docker-ansible-deploy: Synapse workers
+
+This [Ansible playbook](https://github.com/spantaleev/matrix-docker-ansible-deploy) is meant to easily let you run your own Matrix homeserver.
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) told us:
+
+> After [lots and lots of work](https://github.com/spantaleev/matrix-docker-ansible-deploy/pull/456) (done over many months by [Marcel Partap](https://github.com/eMPee584), [Max Klenk](https://github.com/maxklenk), a few others from the [Technical University of Dresden, Germany](https://tu-dresden.de/) and various other contributors), support for Synapse workers has finally landed in [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy). 🚀
+>
+> Learn more from our [changelog announcement](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#synapse-workers-support).
+
+
+### matrix-docker-ansible-deploy: GroupMe bridge
+
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) returned to say:
+
+> Thanks to [Cody Neiman](https://github.com/xangelix), [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) can now install the [mx-puppet-groupme](https://gitlab.com/robintown/mx-puppet-groupme) bridge for bridging to [GroupMe](https://groupme.com).
+>
+> This brings the total number of bridges supported by the playbook up to 18. See all supported bridges [here](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook.md#bridging-other-networks).
+>
+> To get started, follow our [Setting up MX Puppet GroupMe](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-bridge-mx-puppet-groupme.md) docs.
+
+
+
+### ansible-matrix-collection from tntclaus
+
+[tntclaus](https://matrix.to/#/@tntclaus:matrix.org) announced:
+
+> Collection of *Ansible* modules to manage Matrix Homeserver instance. Only tested with Synapse but may (partially) work with the other Matrix Homeserver implementations.
+>
+> Provides modules to manage users, rooms and communities.  
+>
+> https://github.com/eraga/ansible-matrix-collection
+
+
+
+### synadm
+
+[jojo](https://matrix.to/#/@jojo:peek-a-boo.at) said:
+
+> _synadm_ is growing! Pull requests have been submitted, issues been raised, bugs fixed and quite some user community seems to have evolved around it as it’s regularily mentioned on [#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org)
+>
+> Since it’s first announcement on TWIM in December, notable things happening in the project are:
+>
+> * Massive internal overhaul, tidying up and refactoring
+>
+> * Media Admin API support
+> * Make Room Admin API support
+>
+> * Delete Group (community) API support
+> * 4 availalbe output formats (json, yaml, pprint, human)
+>
+> * Python requests debugging switch
+> * Textual Error responses of Synapse now showing in output
+>
+> * Licensed under GPL-3
+>
+> Have a look at the latest release notes for a complete list of new features and fixes: https://github.com/JOJ0/synadm/releases
+>
+> Thanks a lot to contributors @hpd, @kaiyou, @schwindp, @aaronraimist and @rht! Keep those PR's and ideas coming! You have been a great help!
+>
+> Next features on the roadmap are "Purge History API", regular matrix client calls support and login as a user. Help me prioritise features by raising an issue: https://github.com/JOJ0/synadm
+>
+> Still, I am basically a one man show, and certainly any contributions are warmly welcomed! Even as a non-programmer you can help by keeping the implementation-status list up to date. If you find an admin API missing, please take a minute and use the integrated edit functionality github provides and add it to the list:  https://github.com/JOJ0/synadm#implementation-status--commands-list. It helps contributors to quickly find out what feature they could code!
+>
+> I am also thinking about finding people who'd like to join the team, code new features and help maintain codebase, review PR's, get push access and so on. Spread the word! Join [#synadm:peek-a-boo.at](https://matrix.to/#/#synadm:peek-a-boo.at)!
+
+
+
+## Matrix in the News 📰
+
+[Shine](https://matrix.to/#/@shiny:shine.horse) reported:
+
+> Dunno if twim worthy? Proton mentioned Matrix in https://protonmail.com/blog/whatsapp-alternatives/
+
+Seems to be worthy, it's been included anyway!
+
+## Final Thoughts 💭
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) offered:
+
+> Oh, and maybe as a side note: Since Steam voice chat failed me one too many times now, I now use Nheko for voice chat, if I just play with one other player. It is more reliable and most people I play with do have a voip capable Matrix client installed!
+
+Using own product 😀 👍
+
+[TR_SLimey](https://matrix.to/#/@tr_slimey:an-atom-in.space) said:
+
+> It seems neochat has made it into the Plasma 5.21 preview video, albeit not quite as one might expect :P
+
+![2021-02-19-1248X-Screenshot_20210217-193527.png](/blog/img/2021-02-19-1248X-Screenshot_20210217-193527.png)
+
+> Here's the video link: https://youtu.be/ahEWG4JCA1w
+
+That indeed is an unusual way to get featured, well done NeoChat!
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|envs.net|437|
+|2|midov.pl|493|
+|3|kif.rocks|582|
+|4|nicoll.xyz|638|
+|5|maunium.net|708|
+|6|rollyourown.xyz|785|
+|7|utzutzutz.net|912|
+|8|blackline.xyz|975.5|
+|9|shortestpath.dev|1194|
+|10|roeckx.be|1516|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
