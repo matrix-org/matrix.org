@@ -13,14 +13,14 @@ const HallOfFame = () => {
             date:'2020-11-17',
             who: 'Michaël Scherer',
             profile: 'https://github.com/mscherer/',
-            description: 'CVE-2021-21274',
+            description: 'Denial of service attack via .well-known lookups (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21274">CVE-2021-21274</a>). Fixed in Synapse 1.25.0.',
             service: "Synapse"
         },
         {
             date:'2020-11-17',
             who: 'Michaël Scherer',
             profile: 'https://github.com/mscherer/',
-            description: 'CVE-2021-21273',
+            description: 'IP blacklist bypass via redirects on some federation and push requests (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21273">CVE-2021-21273</a>). Fixed in Synapse 1.25.0.',
             service: "Synapse"
         },
         {
