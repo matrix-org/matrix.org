@@ -214,6 +214,11 @@ const Guides = ({data}) => {
         <td>Hong Xu</td>
         <td>English</td>
       </tr>
+      <tr>
+        <td><a href="https://decatec.de/home-server/matrix-synapse-auf-ubuntu-server-20-04-lts-mit-nginx-postgresql-und-lets-encrypt/">Matrix Synapse auf Ubuntu Server 20.04 LTS mit nginx, PostgreSQL und Let’s Encrypt</a></td>
+        <td><a href="https://decatec.de/">Jan</a></td>
+        <td>German</td>
+      </tr>
       
     </tbody>
   </table>
