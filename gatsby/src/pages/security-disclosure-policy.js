@@ -10,6 +10,13 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date: '2021-02-16',
+            who: 'Guilherme Keerok',
+            profile: 'https://github.com/keerok',
+            description: 'User content sandbox could be tricked into opening arbitrary documents (<a href="https://github.com/matrix-org/matrix-react-sdk/security/advisories/GHSA-52mq-6jcv-j79x">CVE-2021-21320</a>). Fixed in <a href="https://github.com/matrix-org/matrix-react-sdk/releases/tag/v3.15.0">matrix-react-sdk 3.15.0</a>.',
+            service: 'Matrix React SDK'
+        },
+        {
             date:'2020-11-17',
             who: 'Michaël Scherer',
             profile: 'https://github.com/mscherer/',
