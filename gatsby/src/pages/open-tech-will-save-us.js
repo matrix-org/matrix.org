@@ -12,7 +12,7 @@ import moment from "moment";
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
 const SHOW_LIVE_STREAM = false;
-const NEXT_EVENT = 10;
+const NEXT_EVENT = 11;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
@@ -31,7 +31,7 @@ if (SHOW_LIVE_STREAM) {
     </div>
   );
 } else {
-  liveStream = <img src="/images/otwsu10-plain.png" alt="Open Tech Will Save Us" />;
+  liveStream = <img src="/images/otwsu11-plain.png" alt="Open Tech Will Save Us" />;
 }
 
 const OTWSU = ({ data }) => {
