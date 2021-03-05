@@ -1,0 +1,486 @@
+---
+date: '2021-03-05'
+title: 'This Week in Matrix 2021-03-05'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-03-05-nheko.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0eE5aokJ6nQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Selection of demos this week, including: Element Home, Hydrogen, Nheko and matrix-notepad.
+
+## Dept of *Status of Matrix* 🌡️
+
+### Element Home
+
+Element announced [Element Home](https://element.io/blog/element-home/), a new way to get your own homeserver. Read more about it [on their blog](https://element.io/blog/element-home/), or watch Matrix Live for a real demo.
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) said:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * [MSC2998: Room Version 7](https://github.com/matrix-org/matrix-doc/pull/2998)
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **New MSCs:**
+>
+> * [\[MSC3038\] Typed typing notifications](https://github.com/matrix-org/matrix-doc/pull/3038)
+> #### Spec Core Team
+>
+> This week the Spec Core Team worked on [MSC2858](https://github.com/matrix-org/matrix-doc/pull/2858) (sso ID providers), [MSC2403](https://github.com/matrix-org/matrix-doc/pull/2403) (knocking) and [MSC2746](https://github.com/matrix-org/matrix-doc/pull/2746) (voip signalling), as well as held another retrospective of the past month. Discussion mainly focused on process and the new spec redesign. Speaking of which...
+>
+> #### New Spec Platform
+>
+> **The new spec has launched!** 🎉 Check it out at https://spec.matrix.org/unstable! Release versions will be landing sometime soon. Bear with us as we finalise the new release process.
+>
+> Huge thanks to wbamberg  for working hard on bringing the idea to a reality. The Matrix.org foundation will continue maintenance of the platform and continue to make it even better for developers in the coming months.
+>
+> We've already got a number of bug reports that need fixing. If you find anything that's a bit off with the redesign, please file an issue at https://github.com/matrix-org/matrix-doc. Thanks!
+
+![2021-03-05-LWU1H-stacked_area_chart.png](/blog/img/2021-03-05-LWU1H-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust https://conduit.rs
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) said:
+
+> * Support for Jaeger to find performance bottlenecks
+>
+> * Improve initial sync ~2x
+> * Implement /receipt
+>
+> * Use transaction ids properly when sending transactions
+> * Improve sending code (less likely to get stuck)
+>
+> * Small improvements to README.md and https://conduit.rs
+> * Updated milestone + lots of new issues: https://gitlab.com/famedly/conduit/-/milestones/3
+>
+> * Appservice support improvements 
+>     * no longer query for aliases outside of their namespace
+>
+>     * no longer send irrelevant events
+>
+> * Temporary fix for duplicate events (will be fixed properly with state res)
+
+![2021-03-05-c078w-image.png](/blog/img/2021-03-05-c078w-image.png)
+
+
+> Thanks to Famedly and everyone who supports me on [Liberapay](https://liberapay.com/timokoesters) or Bitcoin!
+
+
+
+### matrix-media-repo
+
+[matrix-media-repo](https://github.com/turt2live/matrix-media-repo) is a highly customizable multi-domain media repository for Matrix
+
+[TravisR](https://github.com/turt2live) told us:
+
+> v1.2.3 is out now with a highish priority fix if you have audio thumbnails enabled. Other goodies include an `X-Robots-Tag` header and some artifact repairs on gif and apng thumbnails. See https://github.com/turt2live/matrix-media-repo/releases/tag/v1.2.3 for the full changelog.
+
+
+
+### Dendrite / gomatrixserverlib
+
+Dendrite is a next-generation homeserver written in Go
+
+[Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) said:
+
+> Earlier this week we released [Dendrite 0.3.11](https://github.com/matrix-org/dendrite/releases/tag/v0.3.11), and since then we have merged a significant number of appservice fixes to `master` which will go into the next release. With these, bridges should stand a much better chance of working with Dendrite.
+>
+> Changes include:
+>
+> * Events are now properly sent to interested appservices
+>
+> * Appservice namespace exclusivity is now respected properly
+> * Users starting with `_` can now be registered by appservices correctly
+>
+> * Room alias queries for appservices have been improved and should work now
+>
+> We also upgraded a number of dependencies.
+>
+> Spec compliance has improved slightly:
+>
+> * Client-server APIs: 60%, up from 56% last week
+>
+> * Server-server APIs: 82%, up from 80% last week
+>
+> As always, please feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for general Dendrite chat, and [#dendrite-dev:matrix.org](https://matrix.to/#/#dendrite-dev:matrix.org) if you are interested in contributing!
+
+Spec compliance is really progressing!
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) told us:
+
+> We've heard some feedback that Synapse's release cadence—an RC every other week, with releases in between—can feel a bit overwhelming. In response, I'm going to try to write a little less about each RC and instead simply refer to the [1.29.0rc1 Release Notes](https://github.com/matrix-org/synapse/releases/tag/v1.29.0rc1) from yesterday.
+>
+> We'll shout a bit more when that matures into a formal release early next week. 🙂
+>
+> On non-release weeks I'll try to spend a little more time focusing on the behind-the-scenes aspects of developing Synapse in our TWiM updates. If there's anything in particular you'd like hear about, let me know!
+>
+> Speaking of, we're experimenting with using GitHub Discussions for... discussions.
+>
+> We don't want to go full-on mailing list, but it might be nice to have a place to for slower, asynchronous conversations that don't quite fit into the more rapid pace of a typical Matrix room.
+>
+> Our first two discussion topics ask about:
+>
+> * [Your experiences with GitHub Discussions](https://github.com/matrix-org/synapse/discussions/9553)
+>
+> * [How Synapse could be better](https://github.com/matrix-org/synapse/discussions/9554)
+>
+> Please do weigh in!
+
+
+
+## Dept of Bridges 🌉
+
+### GroupMe bridge (matrix-groupme-go)
+
+[karmanyaahm](https://matrix.to/#/@karmanyaah:malhotra.cc) offered:
+
+> I'm working on a GroupMe bridge I made based on tulir's mautrix-whatsapp and mautrix-go.
+>
+> I aim to add features like double puppeting, end to bridge encryption, etc over time, but an alpha release is available now. I would love to get bug reports and testing info to fix them.
+>
+> If anyone's running/testing this please join [#groupme-go-bridge:malhotra.cc](https://matrix.to/#/#groupme-go-bridge:malhotra.cc) to chat about it
+>
+> https://github.com/karmanyaahm/matrix-groupme-go
+
+Another recent GroupMe bridge effort: https://gitlab.com/robintown/mx-puppet-groupme
+
+### matrix-appservice-bridge v2.6.0-rc1
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) announced:
+
+> A PSA this time around. Please test this release and update as soon as you can when we go to release on Monday next week. We've included a change to correct how users are registered against the homeserver to comply with the spec (Synapse accepts a /register call without a `type=m.login.application`, and versions 2.5.0 and below of the matrix-appservice-bridge sent these invalid requests). I'm hoping to eventually retire this behaviour from Synapse, so the more people that upgrade the better!
+>
+> Also [this PR](https://github.com/matrix-org/synapse/pull/9548) is the Synapse-side change to remove this behaviour. If your appservice implementation uses this behaviour, **please** chime in.
+
+
+
+### matrix-appservice-irc hits v0.25.0(-rc1)
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) told us:
+
+> Hey folks, [this release](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.25.0-rc1) contains a bunch of tiny-but-useful bugfixes that you'd hate to miss out on. The full release comes next week but if you want to help us test early, come and get it while it's hot! This release includes the all important fixes from matrix-appservice-bridge v2.6.0-rc1 which fix a spec compliance issue.
+
+
+
+## Dept of Clients 📱
+
+
+
+### Hydrogen
+
+A minimal Matrix chat client, focused on performance, offline functionality, and broad browser support. https://github.com/vector-im/hydrogen-web/
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) said:
+
+> Multiple releases this week with lots of bug fixes:
+>
+>  * make catchup sync faster, a fix for the biggest slowdown
+>  * correct profile info on messages during sending
+>
+>  * messages don't wait for remote echo to be marked as sent
+>  * make storage on iOS more reliable, this should hopefully be the last of storage errors on this platform
+>
+>  * fix file up/downloads on iOS
+>  * fixed an issue where room keys never got shared if you talk into an e2ee room for the very first time since login and you happen to be offline
+>
+>  * more little fixes.
+>
+> Fixes, fixes, fixes. Working on another catchup sync slowdown, and then hope to focus soon a new features!
+
+
+
+### Element Clients
+
+Updates from the teams
+
+**VoIP**
+- Fixed a bug causing connectivity failures on web
+- Fixed bug preventing calls from connecting on iOS
+- Moved VoIP call button to the top on web, and fixed bug resulting from the fact they no longer turn into the hangup button
+
+**Web**
+- Added Edge to supported browsers
+- E2EE Olm session deadlock issue (primarily affecting large accounts during startup) has been resolved
+- 1.7.22 was released on Monday (1 Mar)
+
+  - Fixed user content sandbox security issue, please upgrade!
+  - Improved Jitsi conference names
+  - Disabled chat effects when reduced motion preferred
+- 1.7.23-rc.1 next Wednesday (10 Mar)
+
+**iOS**
+- Release 1.2.3 has been rejected by Apple
+- Release 1.2.5 is available on App Store, it contains fixes:
+
+  - SSO flow crash fix
+  - An new option to filter NSFW public rooms (on by default)
+  - Fix a crash after login/password account creation when a grace is active
+  - Plus fixes from releases 1.2.2 and 1.2.3
+
+**Android**
+- Release 1.1.0 is now in production on the stores.
+- We are working to improve the global performance of the application. Faster initial sync, faster sending of messages, faster timeline, etc.
+
+
+
+### Element Web on IPFS
+
+[TR_SLimey](https://matrix.to/#/@tr_slimey:an-atom-in.space) reported:
+
+> I mentioned a while back that I've put Element Web on IPFS.
+>
+> Since then, I unfortunately had to change its DNSLink domain, so I decided to post about it again, with the new addresses and some minor updates. Here are the former:
+>
+> * `ipns://element-web.0x1a8510f2.space/` (Main DNSLink address)
+>
+> * `ipns://k2k4r8mx8muu913j5oy3e4zvt77xtks8xgxuamlv0ltzwx95lcgk2glw` (IPNS hash which the above address points to)
+> * `ipfs://bafybeievxs6qzzbfbn6xcbz3xwxhjzxkffjbpwbcc3gikrac6ytqkkutva` (IPFS hash of the current snapshot of the above)
+>
+> In other news, I've updated Element on IPFS to v1.7.22 and made a tiny script to easily update it in future. In case it's of use to anyone, it's right here:
+>
+> ```
+>
+> #!/bin/bash
+>
+> if [ "$#" -ne 2 ]; then
+>
+>         echo -e "Invalid number of arguments (got $# but 2 required)!\nUsage: $0 <element web folder> <release tag to download>" >&2
+>         exit 1
+>
+> fi
+>
+> wget -c "https://github.com/vector-im/element-web/releases/download/$2/element-$2.tar.gz" -O - | tar --overwrite --strip-components=1 -xzv -C $1 element-$2
+>
+> ipfs add -r -p $1
+>
+> echo "Now use: 'ipfs name publish -key=<publish key> <folder ID>' to publish on IPFS"
+> ```
+
+### NeoChat
+
+[Carl Schwan](https://matrix.to/#/@carl:kde.org) announced:
+
+> We are currently refactoring the NeoChat room page. Nothing merged yet but scrolling is now smoother, we added swipe gestures to reply on mobile, and more importantly chat bubbles are coming :) Here is a small video of the new timeline, feedback very much welcome.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BH7IcBHrfhM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+### Mirage
+
+A fancy, customizable, keyboard-operable Matrix chat client for encrypted and decentralized communication. Written in Qt/QML and Python, currently in alpha. https://github.com/mirukana/mirage
+
+[miruka](https://matrix.to/#/@miruka:matrix.org) said:
+
+> 0.7.0 has finally been released, including:
+>
+> * Push rules and notifications support: 
+>
+>   * Native desktop notifications
+>   * Sound effect playback
+>
+>   * Notifications can be globally turned on and off in the running client within a click
+>   * Context menu options in the room pane to control a room's notification settings
+>
+>   * Push rule editor in account settings:
+>     * Control for any rule whether matching messages are 
+>
+>       marked as unread, highlighted, trigger a desktop notification, 
+>       sound, window alert/flash, or any combination of those actions
+>
+>     * Create custom rules targeting a particular room, message sender,
+>
+>       messages containing certain words or messages matching
+>       advanced conditions
+>
+> * New Python-based configuration system replacing the previous rudimentary JSON settings file
+>
+> * Config files and themes are now automatically reloaded when changed on disk 
+>
+> * Rooms in the left pane can now be pinned to the top of the list
+>
+> * Support for drag-and-dropping text and files to upload in chats
+>
+> * Tooltips for the message read counters, listing who has read a message and when
+>
+> * The chat header now indicates when messages are selected in the timeline,
+>
+>   and offers copy/redact/clear selection buttons 
+>
+> * Visible indicator when downloading files 
+>
+> * Command-line arguments parsing and a `--start-in-tray` option
+>
+> * Support for HTTP and SOCKS5 proxies
+>
+> * Hovering on stability percentages in the public homeserver list 
+>
+>   now shows more detailed tooltips about the server's recent downtimes
+>
+> * And a lot of other fixes and improvements: [full changelog](https://github.com/mirukana/mirage/releases)
+
+## Dept of SDKs and Frameworks 🧰
+
+### libkazv (and the Kazv Project)
+
+[libkazv](https://gitlab.com/kazv/libkazv) is a sans-io C++ (gnu++17) client library
+
+[tusooa](https://matrix.to/#/@tusooa:tusooa.xyz) reported:
+
+> [libkazv](https://gitlab.com/kazv/libkazv) is a sans-io C++ (gnu++17) client library
+>
+> built upon [lager](https://github.com/arximboldi/lager). Along with it there is
+> [kazv](https://gitlab.com/kazv/kazv), a kirigami/qml client, and a
+>
+> [forward bot](https://gitlab.com/kazv/matrix-tencent-forward-bot) between matrix and
+> tencent qq. Talk to us on [#kazv:tusooa.xyz](https://matrix.to/#/#kazv:tusooa.xyz) .
+>
+> #### Updates
+>
+> In the past 1 week we ("tusooa and her longcat," we hope someday we can
+>
+> remove this annotation :P):
+>
+> 1. Published API documentation [on the web][libkazv-doc].
+>
+> [libkazv-doc]: https://mxc.kazv.moe/libkazv/index.html
+>
+> 2. Together with that, added a ["getting started" guide with an example][getting-started] >w<
+>
+> [getting-started]: https://gitlab.com/kazv/libkazv/-/blob/servant/tutorials/tutorial0.md
+>
+> 3. Made matrix-tencent-forward-bot support [directly forwarding images][img-fwd]
+>
+>    *from* the matrix room.
+>
+> [img-fwd]: https://gitlab.com/kazv/matrix-tencent-forward-bot/-/commit/68e5274f07886e93035adedaca495d762a69ba38
+>
+> 4. [Colourized sender nicks][col-nick] in messages for matrix-tencent-forward-bot.
+>
+> [col-nick]: https://gitlab.com/kazv/matrix-tencent-forward-bot/-/commit/4b03a3349d8dc7179988f3d4af68277a6bc7ac68
+
+
+
+## Dept of Services 🚀
+
+### #matrix-admins-edu-german:matrix.org
+
+[Marcus Schopen](https://matrix.to/#/@mschopen:uni-bielefeld.de) (the fellow with the [festive mugs])(https://matrix.org/blog/2020/12/11/this-week-in-matrix-2020-12-11#dept-of-status-of-matrix-%EF%B8%8F)) reported:
+
+> Together with Anthony Rhode from Element we have published the room [#matrix-admins-edu-german:matrix.org](https://matrix.to/#/#matrix-admins-edu-german:matrix.org) for Matrix Admins at German-speaking educational institutions. Here we want to discuss topics about Matrix in an academic context. The room is open to the public and everyone is very welcome.
+
+How is it not `#matrix-admins-edu-deutsche:matrix.org`!? This is a welcome public room for the growing number of Matrix Admins in Germany!
+
+## Dept of Interesting Projects 🛰️
+
+### Cactus Comments
+
+[carl](https://matrix.to/#/@carl:bordum.dk) announced:
+
+> I am very excited to launch Cactus Comments (https://cactus.chat) today together with @asbjorn:olli.ng!
+>
+> Cactus Comments is a federated, web-embeddable comment system. And of course, we federate by building on Matrix!
+>
+> On the frontend - your website - we embed a Matrix client written in Elm that renders Matrix rooms as comment sections. The client is designed to be especially easy to embed on static sites. Once you log in to the client, it will only communicate directly with your Matrix server of choice.
+>
+> On the backend, an application service is used to create rooms on-demand and help with moderation. It is built with Python and is completely stateless. It does this by modelling all state in native Matrix objects without any custom events!
+>
+> The entire thing is free and open source software and we would love it if you were to contribute. We really hope some of you will give it a try!
+>
+> Join our matrix room: [#cactus:cactus.chat](https://matrix.to/#/#cactus:cactus.chat)
+>
+> Read the introductory blog post: https://cactus.chat/blog/hello-cactus-comments/
+> Try the demo: https://cactus.chat/demo/
+>
+> Source code: https://gitlab.com/cactus-comments
+
+What a project! Let's see how we can integrate this with the Matrix.org blog!
+
+### Matrix Queue Processor
+
+[reivilibre](https://matrix.to/#/@reivilibre:librepush.net) reported:
+
+> With things on the Internet vanishing, I've been wanting to start saving copies of interesting web pages and videos to my server-at-home.
+>
+> This really doesn't involve much more than just running `youtube-dl` or `archivebox` on the relevant URLs, but I needed a better way than having to e-mail myself reminders to download things…
+>
+> I decided to make [Matrix Queue Processor](https://bics.ga/reivilibre/matrix_queue_proc).
+>
+> You can run it occasionally (or set it up to run in a cron job!) and it will then read all outstanding messages and feed the text to a given command, such as `youtube-dl`.
+>
+> You can choose for it to delete processed messages, or tick them off (✅). If the command wasn't successful, it will instead reply with the exit code.
+>
+> It's not particularly sophisticated but it might at least be a small starting point for anyone who wanted to make something similar, and it is end-to-end encryption capable because it uses the Python `matrix-nio` SDK.
+>
+> See this example of use with `youtube-dl`; it fails on the second message because it's not a video page URL:
+
+![2021-03-05-6K_RG-Screenshot_20210301_074617.png](/blog/img/2021-03-05-6K_RG-Screenshot_20210301_074617.png)
+
+I like this a lot - there are so many uses for this project.
+
+### Hummingbard
+
+[ahq](https://matrix.to/#/@ahq:matrix.org) said:
+
+> Hummingbard updates:
+>
+> * Supports nested spaces under user profiles.
+>
+> * Enhanced sidebar/navigation.
+> * Explore spaces modal.
+>
+> * Code cleanup, Bug fixes and UI tweaks.
+>
+> https://github.com/hummingbard/hummingbard
+
+Have you checkout out hummingbard yet? This is a *very* promising-looking project, I recommend [reading this introduction](https://hummingbard.com/hummingbard/introducing-hummingbard) to get started.
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|envs.net|387|
+|2|maescool.be|464|
+|3|neko.dev|494|
+|4|voolik.pw|572.5|
+|5|fosil.eu|577|
+|6|thomcat.rocks|623|
+|7|kif.rocks|702|
+|8|dodsorf.as|722.5|
+|9|aria-net.org|743|
+|10|matrix.sp-codes.de|753|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
