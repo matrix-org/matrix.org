@@ -47,7 +47,7 @@ const OTWSU = ({ data }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:image"
-          content="https://matrix.org/images/otwsu10-plain.png"
+          content="https://matrix.org/images/otwsu11-plain.png"
         />
       </Helmet>
       <div>
