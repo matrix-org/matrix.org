@@ -8,10 +8,10 @@
 
 [Synapse 1.29.0](https://github.com/matrix-org/synapse/releases/tag/v1.29.0) is now available!
 
-This release includes several useful new configuration options for administrators of federated home servers, all of which are off by default:
+This release includes several useful new configuration options for administrators of federated home servers. In all cases, the defaults match Synapse's prior behavior.
 
-- AndrewFerr [implemented](https://github.com/matrix-org/synapse/pull/9203) `include_profile_data_on_invite` and `allow_profile_lookup_over_federation` which can limit disclosure of your users' profile information.
-- We've also [implemented](https://github.com/matrix-org/synapse/pull/9383) `user_directory.prefer_local_users` which weights users on the same homeserver higher in directory searches.
+- AndrewFerr [implemented](https://github.com/matrix-org/synapse/pull/9203) `include_profile_data_on_invite` and `allow_profile_lookup_over_federation` which can limit disclosure of your users' profile information. These both default to True.
+- We've also [implemented](https://github.com/matrix-org/synapse/pull/9383) `user_directory.prefer_local_users` which weights users on the same homeserver higher in directory searches. This defaults to False.
 
 Synapse is now easier to run in proxied environments, with tzyl [implementing](https://github.com/matrix-org/synapse/pull/9372) support for the `NO_PROXY` environment variable, as well as recognizing lowercase variants of that and related proxy variables.
 
