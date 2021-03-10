@@ -10,6 +10,13 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date: '2021-03-01',
+            who: 'Graham Leach-Krouse',
+            profile: 'https://grahamlk.com/',
+            description: 'Authentication bypass in SQLite deployments. Fixed in <a href="https://github.com/matrix-org/dendrite/releases/tag/v0.3.11">Dendrite v0.3.11</a>.',
+            service: 'Dendrite'
+        },
+        {
             date: '2021-02-16',
             who: 'Guilherme Keerok',
             profile: 'https://github.com/keerok',
