@@ -19,6 +19,7 @@ const GuidesDevelop = ({ data }) => {
 
   function addArticleToGroup(group, title, author, slug) {
     group = groups.find(g => g.edges[0].node.frontmatter.section === group);
+    if (group.edges.find(e => e.node.fields.slug === slug)) { return; }
     group.edges.push({
       "node": {
         "frontmatter": {
