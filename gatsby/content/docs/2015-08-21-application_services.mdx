@@ -2,6 +2,7 @@
 layout: post
 title: Application Services
 section: Introduction
+sort_order: 1000
 ---
 
 Application services are distinct modules which sit alongside a homeserver providing arbitrary extensible functionality decoupled from the homeserver implementation. Just like the rest of Matrix, they communicate via HTTP using JSON. Application services function in a very similar way to traditional clients, but they are given much more power than a normal client. They can reserve entire namespaces of room aliases and user IDs for their own purposes. They can silently monitor events in rooms, or any events directed at any user ID. This power allows application services to have extremely useful abilities which overall enhance the end user experience.
