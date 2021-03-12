@@ -8,12 +8,12 @@ import config from '../../../config'
 
 const GuidesDevelop = ({ data }) => {
 
-  var groups = data.allMdx.group;
-  groups.forEach(group => {
+  var groupsUnsorted = data.allMdx.group;
+  groupsUnsorted.forEach(group => {
     var min = Math.min(...group.edges.map(e => e.node.frontmatter.sort_order).filter(el => el));
     group.sort_order = min;
   });
-  groups.sort(function (a, b) {
+  let groups = groupsUnsorted.sort(function (a, b) {
     return (a.sort_order > b.sort_order);
   });
 
