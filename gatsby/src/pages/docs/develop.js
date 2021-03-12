@@ -9,11 +9,12 @@ import config from '../../../config'
 const GuidesDevelop = ({ data }) => {
 
   var groupsUnsorted = data.allMdx.group;
+  let groups = [];
   groupsUnsorted.forEach(group => {
     var min = Math.min(...group.edges.map(e => e.node.frontmatter.sort_order).filter(el => el));
     group.sort_order = min;
   });
-  let groups = groupsUnsorted.sort(function (a, b) {
+  groups = groupsUnsorted.sort(function (a, b) {
     return (a.sort_order > b.sort_order);
   });
 
