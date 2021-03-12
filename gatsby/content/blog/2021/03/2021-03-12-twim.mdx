@@ -1,0 +1,294 @@
+---
+date: '2021-03-12'
+title: 'This Week in Matrix 2021-03-12'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-03-12-Bwf22-stacked_area_chart.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8FVno9-sa8M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) told us:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * _No MSCs were merged this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * [MSC2858: Multiple SSO Identity Providers](https://github.com/matrix-org/matrix-doc/pull/2858) (merge)
+> * [MSC2184: Allow the use of the HTML `<details>` tag](https://github.com/matrix-org/matrix-doc/pull/2184) (merge)
+>
+> **New MSCs:**
+>
+> * [MSC3059: Limits API — Part 3: Federated rate limiting](https://github.com/matrix-org/matrix-doc/pull/3059)
+> * [MSC3053: Limits API — Part 2: per-Room limits](https://github.com/matrix-org/matrix-doc/pull/3053)
+>
+> * [MSC3052: Sample events](https://github.com/matrix-org/matrix-doc/pull/3052)
+> * [MSC3051: A scalable relation format](https://github.com/matrix-org/matrix-doc/pull/3051)
+>
+> **Random fact**: as of last week, we've now hit _400+ MSCs_ in total! That's a lot of words!
+>
+> #### Spec Core Team
+>
+> Now that the new spec platform is out, we're looking to unfreeze the spec so that spec PRs can once again start landing. That process has been written up in [an issue](https://github.com/matrix-org/matrix-doc/issues/3055). Once again thanks to everyone that's given https://spec.matrix.org a try and [reported their feedback](https://github.com/matrix-org/matrix-doc/issues/). 🙂
+>
+> Work this week from the SCT has focused mainly around [Multiple SSO Identity Providers](https://github.com/matrix-org/matrix-doc/pull/2858) and [Spaces](https://github.com/matrix-org/matrix-doc/pull/1772) (+ [Spaces Summaries](https://github.com/matrix-org/matrix-doc/pull/2946)).
+
+
+
+![2021-03-12-Bwf22-stacked_area_chart.png](/blog/img/2021-03-12-Bwf22-stacked_area_chart.png)
+
+## Dept of GSoC 🎓️
+
+### Google Summer of Code
+
+Matrix has been accepted, once again, as a GSOC mentoring organisation! [See us on Google's page](https://summerofcode.withgoogle.com/organizations/6691635666092032/), check out the [list of project ideas](http://matrix-org.github.io/gsoc/#/projects) (more to come!) and join GSOC Matrix to chat.
+
+
+
+## Dept of Servers 🏢
+
+### Synapse
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) said:
+
+> (💭 If this gets published every Friday evening, shouldn't it be _Last_ Week in Matrix?)
+>
+> On Monday we [released Synapse 1.29.0](https://matrix.org/blog/2021/03/08/synapse-1-29-0-released)! The most visible highlights are new configuration settings which can limit disclosure of user profile information and optionally rank local users higher when searching the user directory. However, we've also made quite a few tweaks under the hood, including some initial improvements to presence performance and allowing the media repository to regenerate missing thumbnails on demand.
+>
+> The next release of Synapse will focus on mitigating several known inefficiencies and problematic behaviors around federation performance; I look forward to telling you more about that when it reaches release.
+>
+> We're also excited to announce that we've secured funding to participate in the next round of [Outreachy](https://www.outreachy.org/) internships. Outreachy encourages people from underrepresented or nontraditional backgrounds to participate in F/OSS. We have funding for one intern and are proposing [two possible projects](https://www.outreachy.org/apply/project-selection/#matrix) focused on either modernizing Sygnal/Sydent, or extending Complement so it can replace more of SyTest.
+>
+> While applications for this round have closed, we also expect to also participate in the end-of-year internship round, applications for which will open in September.
+
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[matrix-media-repo](https://github.com/turt2live/matrix-media-repo) is a highly customizable multi-domain media repository for Matrix
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) said:
+
+> More updates for the chart gods! I've pushed new versions of my element-web, matrix-synapse, and matrix-media-repo charts. And a new image tag (1.29.0) for the matrix-synapse image I'm still building, still haven't quite found the time to move everything over from it and into the chart proper.
+>
+> The charts are still available at https://gitlab.com/ananace/charts, and the [#matrix-on-kubernetes:fiksel.info](https://matrix.to/#/#matrix-on-kubernetes:fiksel.info) room is still a great place to drop in for questions or general thoughts/comments.
+
+
+
+## Dept of Clients 📱
+
+### 🌵 Cactus Comments
+
+[Asbjørn](https://matrix.to/#/@asbjorn:olli.ng) told us:
+
+> Web Client v0.5.0 released!
+>
+> A small-ish release, adds support for decoding and rendering some more `m.room.message` msgtypes.
+>
+> The only remaining unsupported msgtype is `m.location`, hopefully we'll figure out something for that soon.
+>
+> * Support `m.image` messages
+>
+> * Support `m.audio` messages
+> * Support `m.file` messages
+>
+> * Support `m.video` messages
+> * Stricter MXC url parsing
+>
+> /ipns/latest.cactus.chat is updated to point to the latest release, so sites linking there should already be using the new version.
+>
+> Come play with the demo: [https://cactus.chat](https://cactus.chat)
+>
+> Join our Matrix room: [#cactus:cactus.chat](https://matrix.to/#/#cactus:cactus.chat)
+
+
+
+### Element Clients
+
+Updates provided by the teams.
+
+**Delight**
+- Spaces
+  - On Web, we’ve merged in a bunch of WIP work on develop.element.io
+    - New concept of suggested rooms to help new users in a space discover important rooms - requires compatible homeserver
+    - New experience for previewing spaces before you join them
+    - Warning: The feature is in alpha, any spaces created at this time will need to be re-created later
+  - On Synapse, we’ve started implementing the Space summary API which is teasing out various details in various MSCs
+  - On Android, we’re:
+    - Space first cut on a branch behind lab flag; create Space / switch Space / join by link
+    - In flight | basic hierarchy support in SDK
+  - iOS started SDK foundation work for Spaces
+    - SDK: Support room type (MSC1840)
+    - In flight | Space creation SDK
+
+**Web**
+- Issue labels renamed to align with new Synapse style
+- Element Web 1.7.23-rc.1 on staging
+  - Refreshed UI for file uploads and sent messages
+  - Improved VoIP call connection reliability
+  - Added Edge to the set of supported browsers
+  - Added send message button to the composer
+- 1.7.23 will be released next Monday (Mar 15)
+
+**iOS**
+- We released [1.2.6](https://github.com/vector-im/element-ios/releases) yesterday. The app is currently in review for the App Store and TestFlight. This release contains a new display for the progress of sending a message or media, a better UX for managing retry and bug fixes.
+
+**Android**
+- We are working to improve the performance of the application. We are making progress on the local echo display, the initial sync time, the timeline display and scroll, etc. We have prepared a release candidate 1.1.1, but only 1.1.2 will be pushed to production.
+
+
+
+### Hydrogen
+
+A minimal Matrix chat client, focused on performance, offline functionality, and broad browser support. https://github.com/vector-im/hydrogen-web/
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) reported:
+
+> * released 0.1.37 with some more bug fixes; catch-up sync should now be faster ; and adds support for video messages.
+>
+>  * started working on push notifications & adding web push support to Sygnal. Got a basic proof of concept working, see screenshot.
+
+
+
+![2021-03-12-Mb1e2-webpush-android-lockscreen.png](/blog/img/2021-03-12-Mb1e2-webpush-android-lockscreen.png)
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) announced:
+
+> This was the week of internal changes. If you are building from source, the following changes may affect you:
+>
+> * After some distros now ship a newer fork of lmdbxx under the lmdbxx package name, we migrated to that version. While we wanted to do that for some time, if you have been using your distro package and builds now fail for you, you may want to use the bundled version of lmdbxx. Similarly, if there are new database issues, that you experience, please report them!
+>
+> * Similarly, we dropped our dependency on tweeny, since we only used that in one location and the same thing can be done natively, so you can remove that from your package builds.
+> * Furthermore we are now stricter with how we validate tls certificates and bumped the minimum version to tls 1.2. If that causes issues for you, please report them as well. There is a known issue, that if you are using the bundled OpenSSL, it may not load your system certificate chain, so you will get TLS errors. We are still trying to find a proper solution for that.
+>
+> * We also disabled the epoll backend on all ARM builds instead of just our flatpak, since that one just crashes on ARM and until that is fixed in the library we are using, this would lead to a much worse experience on those platforms (and we didn't notice that before, because we disabled it a long time ago in our flatpak while debugging a related issue).
+>
+> Apart from that, we did also have some cool stuff happening. One thing I want to especially highlight is the push work from [tilde](https://matrix.to/#/@vurpo:hacklab.fi). It is one direction that I never thought of Nheko moving in and I think UnifiedPush is a really cool project!
+>
+> We also switched from inline buttons to a hover overlay for message actions. Please try it out and give us feedback, if that is an improvement or makes the experience worse! It does at least make it clearer, which button belongs to which message, make the interface less messy and scrolling faster.
+>
+> We also try to suppress the notifications caused by @⁠room mentions, when you reply to such a mention now by inserting a zero width joiner. This seems to work fine for all clients and servers but Element Web... So at least for everyone not using Element Web, if someone replies to an @⁠room as a mod on Nheko, they should not get a notification anymore. (Full disclosure, that was an idea from the FluffyChat team!)
+
+![2021-03-12-STO-8-Screenshot_20210312_184249.png](/blog/img/2021-03-12-STO-8-Screenshot_20210312_184249.png)
+
+See more about Unified Push below.
+
+## Dept of SDKs and Frameworks 🧰
+
+### libkazv (and the Kazv Project)
+
+[libkazv](https://gitlab.com/kazv/libkazv) is a sans-io C++ (gnu++17) client library built upon [lager](https://github.com/arximboldi/lager). Along with it there is [kazv](https://gitlab.com/kazv/kazv), a kirigami/qml client, and a [forward bot](https://gitlab.com/kazv/matrix-tencent-forward-bot) between matrix and tencent qq. Talk to us on [#kazv:tusooa.xyz](https://matrix.to/#/#kazv:tusooa.xyz)
+
+[tusooa](https://matrix.to/#/@tusooa:tusooa.xyz) announced:
+
+> In the past 1 week we ("tusooa and her longcat," we hope someday we can
+>
+> remove this annotation :P):
+>
+> 1. Added a Dockerfile to build [libkazv][libkazv-dockerfile] and [its deps][deps-dockerfile].
+>
+> There is also a pre-built docker image [here][docker-reg].
+> You can download it using `docker image pull reg.lily.kazv.moe/kazv/libkazv/libkazv:servant`.
+>
+> [libkazv-dockerfile]: https://lily.kazv.moe/kazv/libkazv/-/blob/servant/Dockerfile
+>
+> [deps-dockerfile]: https://lily.kazv.moe/kazv/libkazv-deps/-/blob/servant/Dockerfile
+> [docker-reg]: https://lily.kazv.moe/kazv/libkazv/container_registry/4
+>
+> 2. Added method to [deal with sync gaps][fix-paginating].
+>
+> [fix-paginating]: https://lily.kazv.moe/kazv/libkazv/-/issues/1
+
+See a video in action here: https://tusooa.xyz/_matrix/media/r0/download/tusooa.xyz/VHsPuGSHNDMnlASQoGmdHnBf
+
+
+
+## Dept of Ops 🛠
+
+### Ansible role for running Mautrix-Telegram with Docker
+
+[jaywink](https://matrix.to/#/@jaywink:federator.dev) told us:
+
+> Made a new Ansible role for running Mautrix-Telegram with Docker: https://git.feneas.org/jaywink/ansible-mautrix-telegram
+
+
+
+## Dept of Interesting Projects 🛰️
+
+### UnifiedPush, what is it, what happened this week, and why should you care?
+
+[vurpo](https://matrix.to/#/@vurpo:hacklab.fi) announced:
+
+> [UnifiedPush](https://unifiedpush.org/) is an interface that apps can use to receive push notifications without caring about which service transported those push notifications to the device, and it's an interface that you can implement to deliver push notifications to people's apps, if you've come up with a great new way to transport push notifications from the internet to a device (did someone say push over Matrix?).
+>
+> UnifiedPush has been specified for Android with some apps implementing it for a few months now, but now I've been working on specifying and implementing it for D-Bus platforms. (This is mostly intended for mobile Linux OSes such as postmarketOS, but any platform with D-Bus will work!) This means I've implemented a Gotify-based distributor that runs on Linux, and also implemented UnifiedPush in nheko to give it the capability to receive push notifications. I've yet to iron out all the details, so push in nheko isn't exactly ready to be released yet, but I can demonstrate with a video!
+>
+> To *you*, Matrix client developers who desperately want to receive push notifications and get your app woken up while it is not running (on Linux or Android), this means that you should simply implement UnifiedPush in your app to receive pushes from the user's choice of distributor. (note: D-Bus API is not yet in the spec, but under discussion) How? See https://unifiedpush.org and join [#unifiedpush:matrix.org](https://matrix.to/#/#unifiedpush:matrix.org) to discuss it further!
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pag9gR8SrNQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Keyoxide Project adds support for Matrix
+
+[haywo](https://matrix.to/#/@haywo:nct08.de) told us:
+
+> The keyoxide project added support for matrix: https://yarmo.eu/post/keyoxide-project-update-3#proving-matrix-identity-with%E2%80%A6
+
+## Dept of Guides 🧭
+
+### Discord bridging guide
+
+[Cos](https://matrix.to/#/@cos:hacklab.fi) shared a nice guide to configuring [mx-puppet-discord](https://github.com/matrix-discord/mx-puppet-discord): https://boilingsteam.com/how-to-bridge-discord-in-matrix/.
+
+## Final Thoughts 💭
+
+[Brendan Abolivier](https://matrix.to/#/@babolivier:vector.modular.im) shared this weeks ago, and we missed it. But, it's really nice content that doesn't go stale. 
+
+> I did a talk at FOSDEM 2021 two weeks ago titled "Mental health and free software" in which I talk about my experience dealing with mental health issues while working as a full-time Matrix developer and give leads to address some of these issues. I've uploaded the recording of the talk at https://tube.abolivier.bzh/videos/watch/c28a3957-25cb-4519-ad3d-9f8812f88ee2 🙂
+
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|envs.net|346|
+|2|diem25.tech|543|
+|3|fluse.duckdns.org|579|
+|4|matrix.sp-codes.de|786|
+|5|rollyourown.xyz|1282|
+|6|flobob.ovh|1455|
+|7|thomcat.rocks|1718|
+|8|nobelium.no|2143|
+|9|utzutzutz.net|3095|
+|10|mailstation.de|3107.5|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
