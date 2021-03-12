@@ -259,6 +259,14 @@ See a video in action here: https://tusooa.xyz/_matrix/media/r0/download/tusooa.
 
 [Cos](https://matrix.to/#/@cos:hacklab.fi) shared a nice guide to configuring [mx-puppet-discord](https://github.com/matrix-discord/mx-puppet-discord): https://boilingsteam.com/how-to-bridge-discord-in-matrix/.
 
+Soru, the author of mx-puppet-discord, wanted to add some clarifications for the article:
+
+> The section on having to set up your `.well-known` is slightly incorrect: mx-puppet-discord does normal C-S API discovery, so if your C-S API is not on any subdomain it will already just work, `.well-known` is just needed in case that differs. Additionally, you can set up a manual mapping in your `config.yaml` (also helpful if you need http for e.g. local development). This is totally unrelated to `setmatrixtoken`.
+> 
+> While the guide mentions bridges, it does not mention `setispublic <puppetId> 1/0` to make the bridge public / private. If you want your relay to just be usable by anyone, you should do `setispublic <puppetId> 1`, as then the rooms it creates aren't invite-only.
+> 
+> If you have any other questions or need help, please visit [#mx-puppet-bridge:sorunome.de](https://matrix.to/#/#mx-puppet-bridge:sorunome.de) , thank you!
+
 ## Final Thoughts 💭
 
 [Brendan Abolivier](https://matrix.to/#/@babolivier:vector.modular.im) shared this weeks ago, and we missed it. But, it's really nice content that doesn't go stale. 
