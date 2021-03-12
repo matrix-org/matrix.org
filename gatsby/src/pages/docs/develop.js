@@ -13,7 +13,7 @@ const GuidesDevelop = ({ data }) => {
     var min = Math.min(...group.edges.map(e => e.node.frontmatter.sort_order).filter(el => el));
     group.sort_order = min;
   });
-  groups = groups.sort(function (a, b) {
+  groups.sort(function (a, b) {
     return (a.sort_order > b.sort_order);
   });
 
