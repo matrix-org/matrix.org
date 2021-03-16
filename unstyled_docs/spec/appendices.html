@@ -1,0 +1,2168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<title>spec_appendices.rst</title>
+<style type="text/css">
+
+/*
+ * basic.css
+ * ~~~~~~~~~
+ *
+ * Sphinx stylesheet -- basic theme.
+ *
+ * :copyright: Copyright 2007-2010 by the Sphinx team, see AUTHORS.
+ * :license: BSD, see LICENSE for details.
+ *
+ */
+
+/* -- main layout ----------------------------------------------------------- */
+
+div.clearer {
+    clear: both;
+}
+
+/* -- relbar ---------------------------------------------------------------- */
+
+div.related {
+    width: 100%;
+    font-size: 90%;
+}
+
+div.related h3 {
+    display: none;
+}
+
+div.related ul {
+    margin: 0;
+    padding: 0 0 0 10px;
+    list-style: none;
+}
+
+div.related li {
+    display: inline;
+}
+
+div.related li.right {
+    float: right;
+    margin-right: 5px;
+}
+
+/* -- sidebar --------------------------------------------------------------- */
+
+div.sphinxsidebarwrapper {
+    padding: 10px 5px 0 10px;
+}
+
+div.sphinxsidebar {
+    float: left;
+    width: 230px;
+    margin-left: -100%;
+    font-size: 90%;
+}
+
+div.sphinxsidebar ul {
+    list-style: none;
+}
+
+div.sphinxsidebar ul ul,
+div.sphinxsidebar ul.want-points {
+    margin-left: 20px;
+    list-style: square;
+}
+
+div.sphinxsidebar ul ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+div.sphinxsidebar form {
+    margin-top: 10px;
+}
+
+div.sphinxsidebar input {
+    border: 1px solid #98dbcc;
+    font-family: sans-serif;
+    font-size: 1em;
+}
+
+img {
+    border: 0;
+}
+
+/* -- search page ----------------------------------------------------------- */
+
+ul.search {
+    margin: 10px 0 0 20px;
+    padding: 0;
+}
+
+ul.search li {
+    padding: 5px 0 5px 20px;
+    background-image: url(file.png);
+    background-repeat: no-repeat;
+    background-position: 0 7px;
+}
+
+ul.search li a {
+    font-weight: bold;
+}
+
+ul.search li div.context {
+    color: #888;
+    margin: 2px 0 0 30px;
+    text-align: left;
+}
+
+ul.keywordmatches li.goodmatch a {
+    font-weight: bold;
+}
+
+/* -- index page ------------------------------------------------------------ */
+
+table.contentstable {
+    width: 90%;
+}
+
+table.contentstable p.biglink {
+    line-height: 150%;
+}
+
+a.biglink {
+    font-size: 1.3em;
+}
+
+span.linkdescr {
+    font-style: italic;
+    padding-top: 5px;
+    font-size: 90%;
+}
+
+/* -- general index --------------------------------------------------------- */
+
+table.indextable {
+    width: 100%;
+}
+
+table.indextable td {
+    text-align: left;
+    vertical-align: top;
+}
+
+table.indextable dl, table.indextable dd {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+table.indextable tr.pcap {
+    height: 10px;
+}
+
+table.indextable tr.cap {
+    margin-top: 10px;
+    background-color: #f2f2f2;
+}
+
+img.toggler {
+    margin-right: 3px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+div.modindex-jumpbox {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 1em 0 1em 0;
+    padding: 0.4em;
+}
+
+div.genindex-jumpbox {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 1em 0 1em 0;
+    padding: 0.4em;
+}
+
+/* -- general body styles --------------------------------------------------- */
+
+a.headerlink {
+    visibility: hidden;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+
+div.document p.caption {
+    text-align: inherit;
+}
+
+div.document td {
+    text-align: left;
+}
+
+.field-list ul {
+    padding-left: 1em;
+}
+
+.first {
+    margin-top: 0 !important;
+}
+
+p.rubric {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    clear: both;
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+/* -- sidebars -------------------------------------------------------------- */
+
+div.sidebar {
+    margin: 0 0 0.5em 1em;
+    border: 1px solid #ddb;
+    padding: 7px 7px 0 7px;
+    background-color: #ffe;
+    width: 40%;
+    float: right;
+}
+
+p.sidebar-title {
+    font-weight: bold;
+}
+
+/* -- topics ---------------------------------------------------------------- */
+
+div.topic {
+    border: 1px solid #ccc;
+    padding: 7px 7px 0 7px;
+    margin: 10px 0 10px 0;
+}
+
+p.topic-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* -- admonitions ----------------------------------------------------------- */
+
+div.admonition {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 7px;
+}
+
+div.admonition dt {
+    font-weight: bold;
+}
+
+div.admonition dl {
+    margin-bottom: 0;
+}
+
+p.admonition-title {
+    margin: 0px 10px 5px 0px;
+    font-weight: bold;
+}
+
+div.document p.centered {
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* -- tables ---------------------------------------------------------------- */
+
+table.docutils {
+    border: 0;
+    border-collapse: collapse;
+}
+
+table.docutils td, table.docutils th {
+    padding: 1px 8px 1px 5px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #aaa;
+}
+
+table.field-list td, table.field-list th {
+    border: 0 !important;
+}
+
+table.footnote td, table.footnote th {
+    border: 0 !important;
+}
+
+th {
+    text-align: left;
+    padding-right: 5px;
+}
+
+table.citation {
+    border-left: solid 1px gray;
+    margin-left: 1px;
+}
+
+table.citation td {
+    border-bottom: none;
+}
+
+table.colwidths-auto caption {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 800;
+    font-size: 120%;
+    padding: 5px;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+.section ol, .section li {
+    margin: 0px 0px 0px 30px !important;
+}
+
+p.httpheaders {
+    font-weight: 800;
+    font-size: 120%;
+    padding: 5px;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+table.colwidths-auto {
+    width:100%;
+    margin-top: 20px;
+}
+
+table.colwidths-auto tr td:nth-child(1) {
+    width: 15%;
+}
+
+table.colwidths-auto tr td:nth-child(2) {
+    width: 15%;
+    font-family: 'Inconsolata', monospace;
+}
+
+table.colwidths-auto tr td:nth-child(3) {
+    width: 70%;
+}
+
+
+/* -- other body styles ----------------------------------------------------- */
+
+ol.arabic {
+    list-style: decimal;
+}
+
+ol.loweralpha {
+    list-style: lower-alpha;
+}
+
+ol.upperalpha {
+    list-style: upper-alpha;
+}
+
+ol.lowerroman {
+    list-style: lower-roman;
+}
+
+ol.upperroman {
+    list-style: upper-roman;
+}
+
+dl {
+    margin-bottom: 15px;
+}
+
+dd p {
+    margin-top: 0px;
+}
+
+dd ul, dd table {
+    margin-bottom: 10px;
+}
+
+dd {
+    margin-top: 3px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+dt:target, .highlighted {
+    background-color: #fbe54e;
+}
+
+dl.glossary dt {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.field-list ul {
+    margin: 0;
+    padding-left: 1em;
+}
+
+.field-list p {
+    margin: 0;
+}
+
+.refcount {
+    color: #060;
+}
+
+.optional {
+    font-size: 1.3em;
+}
+
+.versionmodified {
+    font-style: italic;
+}
+
+.system-message {
+    background-color: #fda;
+    padding: 5px;
+    border: 3px solid red;
+}
+
+.footnote:target  {
+    background-color: #ffa
+}
+
+.line-block {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.line-block .line-block {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+
+.guilabel, .menuselection {
+    font-family: sans-serif;
+}
+
+.accelerator {
+    text-decoration: underline;
+}
+
+.classifier {
+    font-style: oblique;
+}
+
+/* -- proposals page -------------------------------------------------------- */
+
+#tables-of-tracked-proposals h2 {
+    padding-left: 10px;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+/* Move sticky headers below header bar on desktop */
+@media all and (min-width:980px) {
+    #tables-of-tracked-proposals h2 {
+        top: 52px;
+    }
+}
+
+/* Sticky headers stick to the top on mobile */
+@media all and (min-width:0px) and (max-width: 980px) {
+    #tables-of-tracked-proposals h2 {
+        top: 0px;
+    }
+}
+
+/* -- code displays --------------------------------------------------------- */
+
+pre {
+    overflow: auto;
+}
+
+td.linenos pre {
+    padding: 5px 0px;
+    border: 0;
+    background-color: transparent;
+    color: #aaa;
+}
+
+table.highlighttable {
+    margin-left: 0.5em;
+}
+
+table.highlighttable td {
+    padding: 0 0.5em 0 0.5em;
+}
+
+tt.descname {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+tt.descclassname {
+    background-color: transparent;
+}
+
+tt.xref, a tt {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+    background-color: transparent;
+}
+
+.viewcode-link {
+    float: right;
+}
+
+.viewcode-back {
+    float: right;
+    font-family: sans-serif;
+}
+
+div.viewcode-block:target {
+    margin: -1px -10px;
+    padding: 0 10px;
+}
+
+/* -- math display ---------------------------------------------------------- */
+
+img.math {
+    vertical-align: middle;
+}
+
+div.document div.math p {
+    text-align: center;
+}
+
+span.eqno {
+    float: right;
+}
+
+/* -- printout stylesheet --------------------------------------------------- */
+
+@media print {
+    div.document,
+    div.documentwrapper,
+    div.bodywrapper {
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    div.sphinxsidebar,
+    div.related,
+    div.footer,
+    #top-link {
+        display: none;
+    }
+}
+
+
+</style>
+<style type="text/css">
+
+blockquote {
+    margin: 20px 0 30px;
+    padding-left: 20px;
+}
+
+</style>
+<style type="text/css">
+
+pre.code .comment, code .comment { color: green }
+pre.code .keyword, code .keyword { color: darkred; font-weight: bold }
+pre.code .name.builtin, code .name.builtin { color: darkred; font-weight: bold }
+pre.code .name.tag, code .name.tag { color: darkgreen }
+pre.code .literal, code .literal { color: darkblue }
+pre.code .literal.number, code .literal.number { color: blue }
+
+
+/* HTTP Methods have class "name function" */
+pre.code.http .name.function,  code.http .name.function { color: black; font-weight: bold }
+/* HTTP Paths have class "name namespace" */
+pre.code.http .name.namespace, code.http .name.namespace { color: darkgreen }
+/* HTTP "HTTP" strings have class "keyword reserved" */
+pre.code.http .keyword.reserved, code.http .keyword.reserved { color: black; font-weight: bold }
+/* HTTP Header names have class "name attribute" */
+pre.code.http .name.attribute, code.http .name.attribute { color: black; font-weight: bold }
+
+</style>
+<style type="text/css">
+
+/*
+ * nature.css_t
+ * ~~~~~~~~~~~~
+ *
+ * Sphinx stylesheet -- nature theme.
+ *
+ * :copyright: Copyright 2007-2010 by the Sphinx team, see AUTHORS.
+ * :license: BSD, see LICENSE for details.
+ *
+ */
+
+/* -- page layout ----------------------------------------------------------- */
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+    /*background-color: #111;*/
+    color: #555;
+    margin: 0;
+    padding: 0;
+}
+
+div.documentwrapper {
+    float: left;
+    width: 100%;
+}
+
+div.bodywrapper {
+    margin: 0 0 0 230px;
+}
+
+hr {
+    border: 1px solid #B1B4B6;
+}
+
+/*
+div.document {
+    background-color: #eee;
+}
+*/
+
+div.document {
+    background-color: #ffffff;
+    color: #3E4349;
+    padding: 0 30px 30px 30px;
+    font-size: 0.9em;
+}
+
+div.footer {
+    color: #555;
+    width: 100%;
+    padding: 13px 0;
+    text-align: center;
+    font-size: 75%;
+}
+
+div.footer a {
+    color: #444;
+    text-decoration: underline;
+}
+
+div.related {
+    background-color: #6BA81E;
+    line-height: 32px;
+    color: #fff;
+    text-shadow: 0px 1px 0 #444;
+    font-size: 0.9em;
+}
+
+div.related a {
+    color: #E2F3CC;
+}
+
+div.sphinxsidebar {
+    font-size: 0.75em;
+    line-height: 1.5em;
+}
+
+div.sphinxsidebarwrapper{
+    padding: 20px 0;
+}
+
+div.sphinxsidebar h3,
+div.sphinxsidebar h4 {
+    font-family: Arial, sans-serif;
+    color: #222;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 0;
+    padding: 5px 10px;
+    background-color: #ddd;
+    text-shadow: 1px 1px 0 white
+}
+
+div.sphinxsidebar h4{
+    font-size: 1.1em;
+}
+
+div.sphinxsidebar h3 a {
+    color: #444;
+}
+
+
+div.sphinxsidebar p {
+    color: #888;
+    padding: 5px 20px;
+}
+
+div.sphinxsidebar p.topless {
+}
+
+div.sphinxsidebar ul {
+    margin: 10px 20px;
+    padding: 0;
+    color: #000;
+}
+
+div.sphinxsidebar a {
+    color: #444;
+}
+
+div.sphinxsidebar input {
+    border: 1px solid #ccc;
+    font-family: sans-serif;
+    font-size: 1em;
+}
+
+div.sphinxsidebar input[type=text]{
+    margin-left: 20px;
+}
+
+/* -- body styles ----------------------------------------------------------- */
+
+a {
+    color: #005B81;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E32E00;
+    text-decoration: underline;
+}
+
+div.document h1,
+div.document h2,
+div.document h3,
+div.document h4,
+div.document h5,
+div.document h6 {
+    font-family: Arial, sans-serif;
+    background-color: #BED4EB;
+    font-weight: normal;
+    color: #212224;
+    margin: 30px 0px 10px 0px;
+    padding: 5px 0 5px 10px;
+    text-shadow: 0px 1px 0 white
+}
+
+div.document h1 { border-top: 20px solid white; margin-top: 0; font-size: 200%; }
+div.document h2 { font-size: 150%; background-color: #C8D5E3; }
+div.document h3 { font-size: 120%; background-color: #D8DEE3; }
+div.document h4 { font-size: 110%; background-color: #D8DEE3; }
+div.document h5 { font-size: 100%; background-color: #D8DEE3; }
+div.document h6 { font-size: 100%; background-color: #D8DEE3; }
+
+a.headerlink {
+    color: #c60f0f;
+    font-size: 0.8em;
+    padding: 0 4px 0 4px;
+    text-decoration: none;
+}
+
+a.headerlink:hover {
+    background-color: #c60f0f;
+    color: white;
+}
+
+div.document p, div.document dd, div.document li {
+    line-height: 1.5em;
+}
+
+div.admonition p.admonition-title + p {
+    display: inline;
+}
+
+div.highlight{
+    background-color: white;
+}
+
+div.note {
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+div.seealso {
+    background-color: #ffc;
+    border: 1px solid #ff6;
+}
+
+div.topic {
+    background-color: #eee;
+}
+
+div.warning {
+    background-color: #ffe4e4;
+    border: 1px solid #f66;
+}
+
+p.admonition-title {
+    display: inline;
+}
+
+p.admonition-title:after {
+    content: ":";
+}
+
+pre {
+    padding: 10px;
+    background-color: White;
+    color: #222;
+    line-height: 1.2em;
+    border: 1px solid #C6C9CB;
+    font-size: 1.1em;
+    margin: 1.5em 0 1.5em 0;
+    -webkit-box-shadow: 1px 1px 1px #d8d8d8;
+    -moz-box-shadow: 1px 1px 1px #d8d8d8;
+}
+
+tt {
+    background-color: #ecf0f3;
+    color: #222;
+    /* padding: 1px 2px; */
+    font-size: 1.1em;
+    font-family: monospace;
+}
+
+.viewcode-back {
+    font-family: Arial, sans-serif;
+}
+
+div.viewcode-block:target {
+    background-color: #f4debf;
+    border-top: 1px solid #ac9;
+    border-bottom: 1px solid #ac9;
+}
+
+ul li dd {
+	margin-top: 0;
+}
+
+ul li dl {
+	margin-bottom: 0;
+}
+
+li dl dd {
+	margin-bottom: 0;
+}
+
+dd ul {
+	padding-left: 0;
+}
+
+li dd ul {
+	margin-bottom: 0;
+}
+
+table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-collapse: collapse;
+}
+
+td[colspan]:not([colspan="1"]) {
+    background: #eeeeee;
+    text-transform: capitalize;
+}
+
+thead {
+    background: #eeeeee;
+}
+
+div.admonition-rationale {
+    background-color: #efe;
+    border: 1px solid #ccc;
+}
+
+div.admonition-example {
+    background-color: #eef;
+    border: 1px solid #ccc;
+}
+
+div#table-of-contents ul {
+    list-style-type: none;
+}
+
+</style>
+<style type="text/css">
+
+/*
+Original styles generated from:
+    pygmentize -f html -S colorful -a pre.code > ./scripts/css/pygments.css
+
+Rules for which we don't want the syntax highlighter to kick in are commented
+out at the bottom.
+
+Windows users: if you regenerate this file, you'll need to re-save it as utf-8
+to make docutils happy.
+*/
+
+/* DIFFS */
+pre.code .gd { color: #A00000 } /* Generic.Deleted */
+pre.code .gi { color: #00A000 } /* Generic.Inserted */
+
+/* UNUSED */
+/*pre.code .hll { background-color: #ffffcc }*/
+/*pre.code  { background: #ffffff; }*/
+/*pre.code .c { color: #888888 } !* Comment *!*/
+/*pre.code .err { color: #FF0000; background-color: #FFAAAA } !* Error *!*/
+/*pre.code .k { color: #008800; font-weight: bold } !* Keyword *!*/
+/*pre.code .o { color: #333333 } !* Operator *!*/
+/*pre.code .ch { color: #888888 } !* Comment.Hashbang *!*/
+/*pre.code .cm { color: #888888 } !* Comment.Multiline *!*/
+/*pre.code .cp { color: #557799 } !* Comment.Preproc *!*/
+/*pre.code .cpf { color: #888888 } !* Comment.PreprocFile *!*/
+/*pre.code .c1 { color: #888888 } !* Comment.Single *!*/
+/*pre.code .cs { color: #cc0000; font-weight: bold } !* Comment.Special *!*/
+/*pre.code .ge { font-style: italic } !* Generic.Emph *!*/
+/*pre.code .gr { color: #FF0000 } !* Generic.Error *!*/
+/*pre.code .gh { color: #000080; font-weight: bold } !* Generic.Heading *!*/
+/*pre.code .go { color: #888888 } !* Generic.Output *!*/
+/*pre.code .gp { color: #c65d09; font-weight: bold } !* Generic.Prompt *!*/
+/*pre.code .gs { font-weight: bold } !* Generic.Strong *!*/
+/*pre.code .gu { color: #800080; font-weight: bold } !* Generic.Subheading *!*/
+/*pre.code .gt { color: #0044DD } !* Generic.Traceback *!*/
+/*pre.code .kc { color: #008800; font-weight: bold } !* Keyword.Constant *!*/
+/*pre.code .kd { color: #008800; font-weight: bold } !* Keyword.Declaration *!*/
+/*pre.code .kn { color: #008800; font-weight: bold } !* Keyword.Namespace *!*/
+/*pre.code .kp { color: #003388; font-weight: bold } !* Keyword.Pseudo *!*/
+/*pre.code .kr { color: #008800; font-weight: bold } !* Keyword.Reserved *!*/
+/*pre.code .kt { color: #333399; font-weight: bold } !* Keyword.Type *!*/
+/*pre.code .m { color: #6600EE; font-weight: bold } !* Literal.Number *!*/
+/*pre.code .s { background-color: #fff0f0 } !* Literal.String *!*/
+/*pre.code .na { color: #0000CC } !* Name.Attribute *!*/
+/*pre.code .nb { color: #007020 } !* Name.Builtin *!*/
+/*pre.code .nc { color: #BB0066; font-weight: bold } !* Name.Class *!*/
+/*pre.code .no { color: #003366; font-weight: bold } !* Name.Constant *!*/
+/*pre.code .nd { color: #555555; font-weight: bold } !* Name.Decorator *!*/
+/*pre.code .ni { color: #880000; font-weight: bold } !* Name.Entity *!*/
+/*pre.code .ne { color: #FF0000; font-weight: bold } !* Name.Exception *!*/
+/*pre.code .nf { color: #0066BB; font-weight: bold } !* Name.Function *!*/
+/*pre.code .nl { color: #997700; font-weight: bold } !* Name.Label *!*/
+/*pre.code .nn { color: #0e84b5; font-weight: bold } !* Name.Namespace *!*/
+/*pre.code .nt { color: #007700 } !* Name.Tag *!*/
+/*pre.code .nv { color: #996633 } !* Name.Variable *!*/
+/*pre.code .ow { color: #000000; font-weight: bold } !* Operator.Word *!*/
+/*pre.code .w { color: #bbbbbb } !* Text.Whitespace *!*/
+/*pre.code .mb { color: #6600EE; font-weight: bold } !* Literal.Number.Bin *!*/
+/*pre.code .mf { color: #6600EE; font-weight: bold } !* Literal.Number.Float *!*/
+/*pre.code .mh { color: #005588; font-weight: bold } !* Literal.Number.Hex *!*/
+/*pre.code .mi { color: #0000DD; font-weight: bold } !* Literal.Number.Integer *!*/
+/*pre.code .mo { color: #4400EE; font-weight: bold } !* Literal.Number.Oct *!*/
+/*pre.code .sa { background-color: #fff0f0 } !* Literal.String.Affix *!*/
+/*pre.code .sb { background-color: #fff0f0 } !* Literal.String.Backtick *!*/
+/*pre.code .sc { color: #0044DD } !* Literal.String.Char *!*/
+/*pre.code .dl { background-color: #fff0f0 } !* Literal.String.Delimiter *!*/
+/*pre.code .sd { color: #DD4422 } !* Literal.String.Doc *!*/
+/*pre.code .s2 { background-color: #fff0f0 } !* Literal.String.Double *!*/
+/*pre.code .se { color: #666666; font-weight: bold; background-color: #fff0f0 } !* Literal.String.Escape *!*/
+/*pre.code .sh { background-color: #fff0f0 } !* Literal.String.Heredoc *!*/
+/*pre.code .si { background-color: #eeeeee } !* Literal.String.Interpol *!*/
+/*pre.code .sx { color: #DD2200; background-color: #fff0f0 } !* Literal.String.Other *!*/
+/*pre.code .sr { color: #000000; background-color: #fff0ff } !* Literal.String.Regex *!*/
+/*pre.code .s1 { background-color: #fff0f0 } !* Literal.String.Single *!*/
+/*pre.code .ss { color: #AA6600 } !* Literal.String.Symbol *!*/
+/*pre.code .bp { color: #007020 } !* Name.Builtin.Pseudo *!*/
+/*pre.code .fm { color: #0066BB; font-weight: bold } !* Name.Function.Magic *!*/
+/*pre.code .vc { color: #336699 } !* Name.Variable.Class *!*/
+/*pre.code .vg { color: #dd7700; font-weight: bold } !* Name.Variable.Global *!*/
+/*pre.code .vi { color: #3333BB } !* Name.Variable.Instance *!*/
+/*pre.code .vm { color: #996633 } !* Name.Variable.Magic *!*/
+/*pre.code .il { color: #0000DD; font-weight: bold } !* Literal.Number.Integer.Long *!*/
+
+</style>
+<style type="text/css">
+
+/* Column with header cells */
+table.docutils tbody th.stub {
+    background: #eeeeee;
+}
+
+</style>
+</head>
+<body>
+<div class="document">
+
+
+<!-- Copyright 2015 OpenMarket Ltd -->
+<!--  -->
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- you may not use this file except in compliance with the License. -->
+<!-- You may obtain a copy of the License at -->
+<!--  -->
+<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+<!--  -->
+<!-- Unless required by applicable law or agreed to in writing, software -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and -->
+<!-- limitations under the License. -->
+<p><a class="anchor" id="appendices"></a></p>
+<div class="section" id="appendices">
+<h1><a class="toc-backref" href="#id1">1&nbsp;&nbsp;&nbsp;Appendices</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#appendices" id="id1">1&nbsp;&nbsp;&nbsp;Appendices</a></li>
+<li><a class="reference internal" href="#unpadded-base64" id="id2">2&nbsp;&nbsp;&nbsp;Unpadded Base64</a></li>
+<li><a class="reference internal" href="#signing-json" id="id3">3&nbsp;&nbsp;&nbsp;Signing JSON</a><ul class="auto-toc">
+<li><a class="reference internal" href="#canonical-json" id="id4">3.1&nbsp;&nbsp;&nbsp;Canonical JSON</a><ul class="auto-toc">
+<li><a class="reference internal" href="#grammar" id="id5">3.1.1&nbsp;&nbsp;&nbsp;Grammar</a></li>
+<li><a class="reference internal" href="#examples" id="id6">3.1.2&nbsp;&nbsp;&nbsp;Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#signing-details" id="id7">3.2&nbsp;&nbsp;&nbsp;Signing Details</a></li>
+<li><a class="reference internal" href="#checking-for-a-signature" id="id8">3.3&nbsp;&nbsp;&nbsp;Checking for a Signature</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#identifier-grammar" id="id9">4&nbsp;&nbsp;&nbsp;Identifier Grammar</a><ul class="auto-toc">
+<li><a class="reference internal" href="#server-name" id="id10">4.1&nbsp;&nbsp;&nbsp;Server Name</a></li>
+<li><a class="reference internal" href="#common-identifier-format" id="id11">4.2&nbsp;&nbsp;&nbsp;Common Identifier Format</a><ul class="auto-toc">
+<li><a class="reference internal" href="#user-identifiers" id="id12">4.2.1&nbsp;&nbsp;&nbsp;User Identifiers</a><ul class="auto-toc">
+<li><a class="reference internal" href="#historical-user-ids" id="id13">4.2.1.1&nbsp;&nbsp;&nbsp;Historical User IDs</a></li>
+<li><a class="reference internal" href="#mapping-from-other-character-sets" id="id14">4.2.1.2&nbsp;&nbsp;&nbsp;Mapping from other character sets</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#room-ids-and-event-ids" id="id15">4.2.2&nbsp;&nbsp;&nbsp;Room IDs and Event IDs</a></li>
+<li><a class="reference internal" href="#group-identifiers" id="id16">4.2.3&nbsp;&nbsp;&nbsp;Group Identifiers</a></li>
+<li><a class="reference internal" href="#room-aliases" id="id17">4.2.4&nbsp;&nbsp;&nbsp;Room Aliases</a></li>
+<li><a class="reference internal" href="#matrix-to-navigation" id="id18">4.2.5&nbsp;&nbsp;&nbsp;matrix.to navigation</a><ul class="auto-toc">
+<li><a class="reference internal" href="#routing" id="id19">4.2.5.1&nbsp;&nbsp;&nbsp;Routing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pid-types" id="id20">5&nbsp;&nbsp;&nbsp;3PID Types</a><ul class="auto-toc">
+<li><a class="reference internal" href="#e-mail" id="id21">5.1&nbsp;&nbsp;&nbsp;E-Mail</a></li>
+<li><a class="reference internal" href="#pstn-phone-numbers" id="id22">5.2&nbsp;&nbsp;&nbsp;PSTN Phone numbers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#security-threat-model" id="id23">6&nbsp;&nbsp;&nbsp;Security Threat Model</a><ul class="auto-toc">
+<li><a class="reference internal" href="#denial-of-service" id="id24">6.1&nbsp;&nbsp;&nbsp;Denial of Service</a><ul class="auto-toc">
+<li><a class="reference internal" href="#threat-resource-exhaustion" id="id25">6.1.1&nbsp;&nbsp;&nbsp;Threat: Resource Exhaustion</a></li>
+<li><a class="reference internal" href="#threat-unrecoverable-consistency-violations" id="id26">6.1.2&nbsp;&nbsp;&nbsp;Threat: Unrecoverable Consistency Violations</a></li>
+<li><a class="reference internal" href="#threat-bad-history" id="id27">6.1.3&nbsp;&nbsp;&nbsp;Threat: Bad History</a></li>
+<li><a class="reference internal" href="#threat-block-network-traffic" id="id28">6.1.4&nbsp;&nbsp;&nbsp;Threat: Block Network Traffic</a></li>
+<li><a class="reference internal" href="#threat-high-volume-of-messages" id="id29">6.1.5&nbsp;&nbsp;&nbsp;Threat: High Volume of Messages</a></li>
+<li><a class="reference internal" href="#threat-banning-users-without-necessary-authorisation" id="id30">6.1.6&nbsp;&nbsp;&nbsp;Threat: Banning users without necessary authorisation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#spoofing" id="id31">6.2&nbsp;&nbsp;&nbsp;Spoofing</a><ul class="auto-toc">
+<li><a class="reference internal" href="#threat-altering-message-contents" id="id32">6.2.1&nbsp;&nbsp;&nbsp;Threat: Altering Message Contents</a></li>
+<li><a class="reference internal" href="#threat-fake-message-origin-field" id="id33">6.2.2&nbsp;&nbsp;&nbsp;Threat: Fake Message &quot;origin&quot; Field</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#spamming" id="id34">6.3&nbsp;&nbsp;&nbsp;Spamming</a><ul class="auto-toc">
+<li><a class="reference internal" href="#threat-unsolicited-messages" id="id35">6.3.1&nbsp;&nbsp;&nbsp;Threat: Unsolicited Messages</a></li>
+<li><a class="reference internal" href="#threat-abusive-messages" id="id36">6.3.2&nbsp;&nbsp;&nbsp;Threat: Abusive Messages</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#spying" id="id37">6.4&nbsp;&nbsp;&nbsp;Spying</a><ul class="auto-toc">
+<li><a class="reference internal" href="#threat-disclosure-during-transmission" id="id38">6.4.1&nbsp;&nbsp;&nbsp;Threat: Disclosure during Transmission</a></li>
+<li><a class="reference internal" href="#threat-disclosure-to-servers-outside-chatroom" id="id39">6.4.2&nbsp;&nbsp;&nbsp;Threat: Disclosure to Servers Outside Chatroom</a></li>
+<li><a class="reference internal" href="#threat-disclosure-to-servers-within-chatroom" id="id40">6.4.3&nbsp;&nbsp;&nbsp;Threat: Disclosure to Servers Within Chatroom</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cryptographic-test-vectors" id="id41">7&nbsp;&nbsp;&nbsp;Cryptographic Test Vectors</a><ul class="auto-toc">
+<li><a class="reference internal" href="#signing-key" id="id42">7.1&nbsp;&nbsp;&nbsp;Signing Key</a></li>
+<li><a class="reference internal" href="#json-signing" id="id43">7.2&nbsp;&nbsp;&nbsp;JSON Signing</a></li>
+<li><a class="reference internal" href="#event-signing" id="id44">7.3&nbsp;&nbsp;&nbsp;Event Signing</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- Copyright 2017 Vector Creations Limited -->
+<!--  -->
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- you may not use this file except in compliance with the License. -->
+<!-- You may obtain a copy of the License at -->
+<!--  -->
+<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+<!--  -->
+<!-- Unless required by applicable law or agreed to in writing, software -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and -->
+<!-- limitations under the License. -->
+</div>
+<p><a class="anchor" id="unpadded-base64"></a></p>
+<div class="section" id="unpadded-base64">
+<h1><a class="toc-backref" href="#id2">2&nbsp;&nbsp;&nbsp;Unpadded Base64</a></h1>
+<p><em>Unpadded</em> Base64 refers to 'standard' Base64 encoding as defined in <a class="reference external" href="https://tools.ietf.org/html/rfc4648">RFC
+4648</a>, without &quot;=&quot; padding. Specifically, where RFC 4648 requires that encoded
+data be padded to a multiple of four characters using <tt class="docutils literal">=</tt> characters,
+unpadded Base64 omits this padding.</p>
+<p>For reference, RFC 4648 uses the following alphabet for Base 64:</p>
+<pre class="literal-block">
+Value Encoding  Value Encoding  Value Encoding  Value Encoding
+    0 A            17 R            34 i            51 z
+    1 B            18 S            35 j            52 0
+    2 C            19 T            36 k            53 1
+    3 D            20 U            37 l            54 2
+    4 E            21 V            38 m            55 3
+    5 F            22 W            39 n            56 4
+    6 G            23 X            40 o            57 5
+    7 H            24 Y            41 p            58 6
+    8 I            25 Z            42 q            59 7
+    9 J            26 a            43 r            60 8
+   10 K            27 b            44 s            61 9
+   11 L            28 c            45 t            62 +
+   12 M            29 d            46 u            63 /
+   13 N            30 e            47 v
+   14 O            31 f            48 w
+   15 P            32 g            49 x
+   16 Q            33 h            50 y
+</pre>
+<p>Examples of strings encoded using unpadded Base64:</p>
+<pre class="literal-block">
+UNPADDED_BASE64(&quot;&quot;) = &quot;&quot;
+UNPADDED_BASE64(&quot;f&quot;) = &quot;Zg&quot;
+UNPADDED_BASE64(&quot;fo&quot;) = &quot;Zm8&quot;
+UNPADDED_BASE64(&quot;foo&quot;) = &quot;Zm9v&quot;
+UNPADDED_BASE64(&quot;foob&quot;) = &quot;Zm9vYg&quot;
+UNPADDED_BASE64(&quot;fooba&quot;) = &quot;Zm9vYmE&quot;
+UNPADDED_BASE64(&quot;foobar&quot;) = &quot;Zm9vYmFy&quot;
+</pre>
+<p>When decoding Base64, implementations SHOULD accept input with or without
+padding characters wherever possible, to ensure maximum interoperability.</p>
+<!-- Copyright 2016 OpenMarket Ltd -->
+<!--  -->
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- you may not use this file except in compliance with the License. -->
+<!-- You may obtain a copy of the License at -->
+<!--  -->
+<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+<!--  -->
+<!-- Unless required by applicable law or agreed to in writing, software -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and -->
+<!-- limitations under the License. -->
+</div>
+<p><a class="anchor" id="signing-json"></a></p>
+<div class="section" id="signing-json">
+<h1><a class="toc-backref" href="#id3">3&nbsp;&nbsp;&nbsp;Signing JSON</a></h1>
+<p>Various points in the Matrix specification require JSON objects to be
+cryptographically signed. This requires us to encode the JSON as a binary
+string. Unfortunately the same JSON can be encoded in different ways by
+changing how much white space is used or by changing the order of keys within
+objects.</p>
+<p>Signing an object therefore requires it to be encoded as a sequence of bytes
+using <a class="reference internal" href="#canonical-json">Canonical JSON</a>, computing the signature for that sequence and then
+adding the signature to the original JSON object.</p>
+<p><a class="anchor" id="canonical-json"></a></p>
+<div class="section" id="canonical-json">
+<h2><a class="toc-backref" href="#id4">3.1&nbsp;&nbsp;&nbsp;Canonical JSON</a></h2>
+<p>We define the canonical JSON encoding for a value to be the shortest UTF-8 JSON
+encoding with dictionary keys lexicographically sorted by Unicode codepoint.
+Numbers in the JSON must be integers in the range <tt class="docutils literal"><span class="pre">[-(2**53)+1,</span> <span class="pre">(2**53)-1]</span></tt>.</p>
+<p>We pick UTF-8 as the encoding as it should be available to all platforms and
+JSON received from the network is likely to be already encoded using UTF-8.
+We sort the keys to give a consistent ordering. We force integers to be in the
+range where they can be accurately represented using IEEE double precision
+floating point numbers since a number of JSON libraries represent all numbers
+using this representation.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Events in room versions 1, 2, 3, 4, and 5 might not be fully compliant with
+these restrictions. Servers SHOULD be capable of handling JSON which is considered
+invalid by these restrictions where possible.</p>
+<p class="last">The most notable consideration is that integers might not be in the range
+specified above.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Float values are not permitted by this encoding.</p>
+</div>
+<pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">def</span> <span class="nf">canonical_json</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+        <span class="n">value</span><span class="p">,</span>
+        <span class="c1"># Encode code-points outside of ASCII as UTF-8 rather than \u escapes</span>
+        <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="c1"># Remove unnecessary white space.</span>
+        <span class="n">separators</span><span class="o">=</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span><span class="s1">':'</span><span class="p">),</span>
+        <span class="c1"># Sort the keys of dictionaries.</span>
+        <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="c1"># Encode the resulting Unicode as UTF-8 bytes.</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span>
+</pre>
+<p><a class="anchor" id="grammar"></a></p>
+<div class="section" id="grammar">
+<h3><a class="toc-backref" href="#id5">3.1.1&nbsp;&nbsp;&nbsp;Grammar</a></h3>
+<p>Adapted from the grammar in <a class="reference external" href="http://tools.ietf.org/html/rfc7159">http://tools.ietf.org/html/rfc7159</a> removing
+insignificant whitespace, fractions, exponents and redundant character escapes.</p>
+<pre class="code literal-block">
+value     = false / null / true / object / array / number / string
+false     = %x66.61.6c.73.65
+null      = %x6e.75.6c.6c
+true      = %x74.72.75.65
+object    = %x7B [ member *( %x2C member ) ] %7D
+member    = string %x3A value
+array     = %x5B [ value *( %x2C value ) ] %5B
+number    = [ %x2D ] int
+int       = %x30 / ( %x31-39 *digit )
+digit     = %x30-39
+string    = %x22 *char %x22
+char      = unescaped / %x5C escaped
+unescaped = %x20-21 / %x23-5B / %x5D-10FFFF
+escaped   = %x22 ; &quot;    quotation mark  U+0022
+          / %x5C ; \    reverse solidus U+005C
+          / %x62 ; b    backspace       U+0008
+          / %x66 ; f    form feed       U+000C
+          / %x6E ; n    line feed       U+000A
+          / %x72 ; r    carriage return U+000D
+          / %x74 ; t    tab             U+0009
+          / %x75.30.30.30 (%x30-37 / %x62 / %x65-66) ; u000X
+          / %x75.30.30.31 (%x30-39 / %x61-66)        ; u001X
+</pre>
+</div>
+<p><a class="anchor" id="examples"></a></p>
+<div class="section" id="examples">
+<h3><a class="toc-backref" href="#id6">3.1.2&nbsp;&nbsp;&nbsp;Examples</a></h3>
+<p>To assist in the development of compatible implementations, the following test
+values may be useful for verifying the canonical transformation code.</p>
+<p>Given the following JSON object:</p>
+<pre class="code json literal-block">
+<span class="p">{}</span>
+</pre>
+<p>The following canonical JSON should be produced:</p>
+<pre class="code json literal-block">
+<span class="p">{}</span>
+</pre>
+<p>Given the following JSON object:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;one&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;two&quot;</span><span class="p">:</span> <span class="s2">&quot;Two&quot;</span>
+<span class="p">}</span>
+</pre>
+<p>The following canonical JSON should be produced:</p>
+<pre class="code json literal-block">
+<span class="p">{</span><span class="nt">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;two&quot;</span><span class="p">:</span><span class="s2">&quot;Two&quot;</span><span class="p">}</span>
+</pre>
+<p>Given the following JSON object:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</pre>
+<p>The following canonical JSON should be produced:</p>
+<pre class="code json literal-block">
+<span class="p">{</span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">}</span>
+</pre>
+<p>Given the following JSON object:</p>
+<pre class="code json literal-block">
+<span class="p">{</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">}</span>
+</pre>
+<p>The following canonical JSON should be produced:</p>
+<pre class="code json literal-block">
+<span class="p">{</span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">}</span>
+</pre>
+<p>Given the following JSON object:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;auth&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;success&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;mxid&quot;</span><span class="p">:</span> <span class="s2">&quot;&#64;john.doe:example.com&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;profile&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;display_name&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;three_pids&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;medium&quot;</span><span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;john.doe&#64;example.org&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;medium&quot;</span><span class="p">:</span> <span class="s2">&quot;msisdn&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+<p>The following canonical JSON should be produced:</p>
+<pre class="code json literal-block">
+<span class="p">{</span><span class="nt">&quot;auth&quot;</span><span class="p">:{</span><span class="nt">&quot;mxid&quot;</span><span class="p">:</span><span class="s2">&quot;&#64;john.doe:example.com&quot;</span><span class="p">,</span><span class="nt">&quot;profile&quot;</span><span class="p">:{</span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span><span class="nt">&quot;three_pids&quot;</span><span class="p">:[{</span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="s2">&quot;john.doe&#64;example.org&quot;</span><span class="p">,</span><span class="nt">&quot;medium&quot;</span><span class="p">:</span><span class="s2">&quot;email&quot;</span><span class="p">},{</span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="s2">&quot;123456789&quot;</span><span class="p">,</span><span class="nt">&quot;medium&quot;</span><span class="p">:</span><span class="s2">&quot;msisdn&quot;</span><span class="p">}]},</span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}}</span>
+</pre>
+<p>Given the following JSON object:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;日本語&quot;</span>
+<span class="p">}</span>
+</pre>
+<p>The following canonical JSON should be produced:</p>
+<pre class="code json literal-block">
+<span class="p">{</span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="s2">&quot;日本語&quot;</span><span class="p">}</span>
+</pre>
+<p>Given the following JSON object:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;本&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;日&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre>
+<p>The following canonical JSON should be produced:</p>
+<pre class="code json literal-block">
+<span class="p">{</span><span class="nt">&quot;日&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;本&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+</pre>
+<p>Given the following JSON object:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;\u65E5&quot;</span>
+<span class="p">}</span>
+</pre>
+<p>The following canonical JSON should be produced:</p>
+<pre class="code json literal-block">
+<span class="p">{</span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="s2">&quot;日&quot;</span><span class="p">}</span>
+</pre>
+<p>Given the following JSON object:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</pre>
+<p>The following canonical JSON should be produced:</p>
+<pre class="code json literal-block">
+<span class="p">{</span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">}</span>
+</pre>
+</div>
+</div>
+<p><a class="anchor" id="signing-details"></a></p>
+<div class="section" id="signing-details">
+<h2><a class="toc-backref" href="#id7">3.2&nbsp;&nbsp;&nbsp;Signing Details</a></h2>
+<p>JSON is signed by encoding the JSON object without <tt class="docutils literal">signatures</tt> or keys grouped
+as <tt class="docutils literal">unsigned</tt>, using the canonical encoding described above. The JSON bytes are then signed using the
+signature algorithm and the signature is encoded using <a class="reference internal" href="#unpadded-base64">unpadded Base64</a>.
+The resulting base64 signature is added to an object under the
+<em>signing key identifier</em> which is added to the <tt class="docutils literal">signatures</tt> object under the
+name of the entity signing it which is added back to the original JSON object
+along with the <tt class="docutils literal">unsigned</tt> object.</p>
+<p>The <em>signing key identifier</em> is the concatenation of the <em>signing algorithm</em>
+and a <em>key identifier</em>. The <em>signing algorithm</em> identifies the algorithm used
+to sign the JSON. The currently supported value for <em>signing algorithm</em> is
+<tt class="docutils literal">ed25519</tt> as implemented by NACL (<a class="reference external" href="http://nacl.cr.yp.to/">http://nacl.cr.yp.to/</a>). The <em>key identifier</em>
+is used to distinguish between different signing keys used by the same entity.</p>
+<p>The <tt class="docutils literal">unsigned</tt> object and the <tt class="docutils literal">signatures</tt> object are not covered by the
+signature. Therefore intermediate entities can add unsigned data such as
+timestamps and additional signatures.</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;example.org&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;signing_keys&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;ed25519:1&quot;</span><span class="p">:</span> <span class="s2">&quot;XSl0kuyvrXNj6A+7/tkrB9sxSbRi08Of5uRhxOqZtEQ&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;unsigned&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;age_ts&quot;</span><span class="p">:</span> <span class="mi">922834800000</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;signatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;example.org&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;ed25519:1&quot;</span><span class="p">:</span> <span class="s2">&quot;s76RUgajp8w172am0zQb/iPTHsRnb4SkrzGoeCOSFfcBY2V/1c8QfrmdXHpvnc2jK5BD1WiJIxiMW95fMjK7Bw&quot;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+<pre class="code python literal-block">
+<span class="k">def</span> <span class="nf">sign_json</span><span class="p">(</span><span class="n">json_object</span><span class="p">,</span> <span class="n">signing_key</span><span class="p">,</span> <span class="n">signing_name</span><span class="p">):</span>
+    <span class="n">signatures</span> <span class="o">=</span> <span class="n">json_object</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;signatures&quot;</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="n">unsigned</span> <span class="o">=</span> <span class="n">json_object</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;unsigned&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="n">signed</span> <span class="o">=</span> <span class="n">signing_key</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">encode_canonical_json</span><span class="p">(</span><span class="n">json_object</span><span class="p">))</span>
+    <span class="n">signature_base64</span> <span class="o">=</span> <span class="n">encode_base64</span><span class="p">(</span><span class="n">signed</span><span class="o">.</span><span class="n">signature</span><span class="p">)</span>
+
+    <span class="n">key_id</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">signing_key</span><span class="o">.</span><span class="n">alg</span><span class="p">,</span> <span class="n">signing_key</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+    <span class="n">signatures</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">signing_name</span><span class="p">,</span> <span class="p">{})[</span><span class="n">key_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">signature_base64</span>
+
+    <span class="n">json_object</span><span class="p">[</span><span class="s2">&quot;signatures&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">signatures</span>
+    <span class="k">if</span> <span class="n">unsigned</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">json_object</span><span class="p">[</span><span class="s2">&quot;unsigned&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unsigned</span>
+
+    <span class="k">return</span> <span class="n">json_object</span>
+</pre>
+</div>
+<p><a class="anchor" id="checking-for-a-signature"></a></p>
+<div class="section" id="checking-for-a-signature">
+<h2><a class="toc-backref" href="#id8">3.3&nbsp;&nbsp;&nbsp;Checking for a Signature</a></h2>
+<p>To check if an entity has signed a JSON object an implementation does the
+following:</p>
+<ol class="arabic simple">
+<li>Checks if the <tt class="docutils literal">signatures</tt> member of the object contains an entry with
+the name of the entity. If the entry is missing then the check fails.</li>
+<li>Removes any <em>signing key identifiers</em> from the entry with algorithms it
+doesn't understand. If there are no <em>signing key identifiers</em> left then the
+check fails.</li>
+<li>Looks up <em>verification keys</em> for the remaining <em>signing key identifiers</em>
+either from a local cache or by consulting a trusted key server. If it
+cannot find a <em>verification key</em> then the check fails.</li>
+<li>Decodes the base64 encoded signature bytes. If base64 decoding fails then
+the check fails.</li>
+<li>Removes the <tt class="docutils literal">signatures</tt> and <tt class="docutils literal">unsigned</tt> members of the object.</li>
+<li>Encodes the remainder of the JSON object using the <a class="reference internal" href="#canonical-json">Canonical JSON</a>
+encoding.</li>
+<li>Checks the signature bytes against the encoded object using the
+<em>verification key</em>. If this fails then the check fails. Otherwise the check
+succeeds.</li>
+</ol>
+<!-- Copyright 2016 Openmarket Ltd. -->
+<!-- Copyright 2017, 2018 New Vector Ltd. -->
+<!--  -->
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- you may not use this file except in compliance with the License. -->
+<!-- You may obtain a copy of the License at -->
+<!--  -->
+<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+<!--  -->
+<!-- Unless required by applicable law or agreed to in writing, software -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and -->
+<!-- limitations under the License. -->
+</div>
+</div>
+<p><a class="anchor" id="identifier-grammar"></a></p>
+<div class="section" id="identifier-grammar">
+<h1><a class="toc-backref" href="#id9">4&nbsp;&nbsp;&nbsp;Identifier Grammar</a></h1>
+<p>Some identifiers are specific to given room versions, please refer to the
+<a class="reference external" href="index.html#room-versions">room versions specification</a> for more information.</p>
+<p><a class="anchor" id="server-name"></a></p>
+<div class="section" id="server-name">
+<h2><a class="toc-backref" href="#id10">4.1&nbsp;&nbsp;&nbsp;Server Name</a></h2>
+<p>A homeserver is uniquely identified by its server name. This value is used in a
+number of identifiers, as described below.</p>
+<p>The server name represents the address at which the homeserver in question can
+be reached by other homeservers. All valid server names are included by the
+following grammar:</p>
+<pre class="literal-block">
+server_name = hostname [ &quot;:&quot; port ]
+
+port        = 1*5DIGIT
+
+hostname    = IPv4address / &quot;[&quot; IPv6address &quot;]&quot; / dns-name
+
+IPv4address = 1*3DIGIT &quot;.&quot; 1*3DIGIT &quot;.&quot; 1*3DIGIT &quot;.&quot; 1*3DIGIT
+
+IPv6address = 2*45IPv6char
+
+IPv6char    = DIGIT / %x41-46 / %x61-66 / &quot;:&quot; / &quot;.&quot;
+                  ; 0-9, A-F, a-f, :, .
+
+dns-name    = 1*255dns-char
+
+dns-char    = DIGIT / ALPHA / &quot;-&quot; / &quot;.&quot;
+</pre>
+<p>— in other words, the server name is the hostname, followed by an optional
+numeric port specifier. The hostname may be a dotted-quad IPv4 address literal,
+an IPv6 address literal surrounded with square brackets, or a DNS name.</p>
+<p>IPv4 literals must be a sequence of four decimal numbers in the
+range 0 to 255, separated by <tt class="docutils literal">.</tt>. IPv6 literals must be as specified by
+<a class="reference external" href="https://tools.ietf.org/html/rfc3513#section-2.2">RFC3513, section 2.2</a>.</p>
+<p>DNS names for use with Matrix should follow the conventional restrictions for
+internet hostnames: they should consist of a series of labels separated by
+<tt class="docutils literal">.</tt>, where each label consists of the alphanumeric characters or hyphens.</p>
+<p>Examples of valid server names are:</p>
+<ul class="simple">
+<li><tt class="docutils literal">matrix.org</tt></li>
+<li><tt class="docutils literal">matrix.org:8888</tt></li>
+<li><tt class="docutils literal">1.2.3.4</tt> (IPv4 literal)</li>
+<li><tt class="docutils literal">1.2.3.4:1234</tt> (IPv4 literal with explicit port)</li>
+<li><tt class="docutils literal"><span class="pre">[1234:5678::abcd]</span></tt> (IPv6 literal)</li>
+<li><tt class="docutils literal"><span class="pre">[1234:5678::abcd]:5678</span></tt> (IPv6 literal with explicit port)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This grammar is based on the standard for internet host names, as specified
+by <a class="reference external" href="https://tools.ietf.org/html/rfc1123#page-13">RFC1123, section 2.1</a>,
+with an extension for IPv6 literals.</p>
+</div>
+<p>Server names must be treated case-sensitively: in other words,
+<tt class="docutils literal">&#64;user:matrix.org</tt> is a different person from <tt class="docutils literal">&#64;user:MATRIX.ORG</tt>.</p>
+<p>Some recommendations for a choice of server name follow:</p>
+<ul class="simple">
+<li>The length of the complete server name should not exceed 230 characters.</li>
+<li>Server names should not use upper-case characters.</li>
+</ul>
+</div>
+<p><a class="anchor" id="common-identifier-format"></a></p>
+<div class="section" id="common-identifier-format">
+<h2><a class="toc-backref" href="#id11">4.2&nbsp;&nbsp;&nbsp;Common Identifier Format</a></h2>
+<p>The Matrix protocol uses a common format to assign unique identifiers to a
+number of entities, including users, events and rooms. Each identifier takes
+the form:</p>
+<pre class="literal-block">
+&amp;string
+</pre>
+<p>where <tt class="docutils literal">&amp;</tt> represents a 'sigil' character; <tt class="docutils literal">string</tt> is the string which makes
+up the identifier.</p>
+<p>The sigil characters are as follows:</p>
+<ul class="simple">
+<li><tt class="docutils literal">&#64;</tt>: User ID</li>
+<li><tt class="docutils literal">!</tt>: Room ID</li>
+<li><tt class="docutils literal">$</tt>: Event ID</li>
+<li><tt class="docutils literal">+</tt>: Group ID</li>
+<li><tt class="docutils literal">#</tt>: Room alias</li>
+</ul>
+<p>User IDs, group IDs, room IDs, room aliases, and sometimes event IDs take the form:</p>
+<pre class="literal-block">
+&amp;localpart:domain
+</pre>
+<p>where <tt class="docutils literal">domain</tt> is the <a class="reference internal" href="#server-name">server name</a> of the homeserver which allocated the
+identifier, and <tt class="docutils literal">localpart</tt> is an identifier allocated by that homeserver.</p>
+<p>The precise grammar defining the allowable format of an identifier depends on
+the type of identifier. For example, event IDs can sometimes be represented with
+a <tt class="docutils literal">domain</tt> component under some conditions - see the <a class="reference external" href="#room-ids-and-event-ids">Event IDs</a>
+section below for more information.</p>
+<p><a class="anchor" id="user-identifiers"></a></p>
+<div class="section" id="user-identifiers">
+<h3><a class="toc-backref" href="#id12">4.2.1&nbsp;&nbsp;&nbsp;User Identifiers</a></h3>
+<p>Users within Matrix are uniquely identified by their Matrix user ID. The user
+ID is namespaced to the homeserver which allocated the account and has the
+form:</p>
+<pre class="literal-block">
+&#64;localpart:domain
+</pre>
+<p>The <tt class="docutils literal">localpart</tt> of a user ID is an opaque identifier for that user. It MUST
+NOT be empty, and MUST contain only the characters <tt class="docutils literal"><span class="pre">a-z</span></tt>, <tt class="docutils literal"><span class="pre">0-9</span></tt>, <tt class="docutils literal">.</tt>,
+<tt class="docutils literal">_</tt>, <tt class="docutils literal">=</tt>, <tt class="docutils literal">-</tt>, and <tt class="docutils literal">/</tt>.</p>
+<p>The <tt class="docutils literal">domain</tt> of a user ID is the <a class="reference internal" href="#server-name">server name</a> of the homeserver which
+allocated the account.</p>
+<p>The length of a user ID, including the <tt class="docutils literal">&#64;</tt> sigil and the domain, MUST NOT
+exceed 255 characters.</p>
+<p>The complete grammar for a legal user ID is:</p>
+<pre class="literal-block">
+user_id = &quot;&#64;&quot; user_id_localpart &quot;:&quot; server_name
+user_id_localpart = 1*user_id_char
+user_id_char = DIGIT
+             / %x61-7A                   ; a-z
+             / &quot;-&quot; / &quot;.&quot; / &quot;=&quot; / &quot;_&quot; / &quot;/&quot;
+</pre>
+<div class="admonition admonition-rationale">
+<p class="first admonition-title">Rationale</p>
+<p>A number of factors were considered when defining the allowable characters
+for a user ID.</p>
+<p>Firstly, we chose to exclude characters outside the basic US-ASCII character
+set. User IDs are primarily intended for use as an identifier at the protocol
+level, and their use as a human-readable handle is of secondary
+benefit. Furthermore, they are useful as a last-resort differentiator between
+users with similar display names. Allowing the full Unicode character set
+would make very difficult for a human to distinguish two similar user IDs. The
+limited character set used has the advantage that even a user unfamiliar with
+the Latin alphabet should be able to distinguish similar user IDs manually, if
+somewhat laboriously.</p>
+<p>We chose to disallow upper-case characters because we do not consider it
+valid to have two user IDs which differ only in case: indeed it should be
+possible to reach <tt class="docutils literal">&#64;user:matrix.org</tt> as <tt class="docutils literal">&#64;USER:matrix.org</tt>. However,
+user IDs are necessarily used in a number of situations which are inherently
+case-sensitive (notably in the <tt class="docutils literal">state_key</tt> of <tt class="docutils literal">m.room.member</tt>
+events). Forbidding upper-case characters (and requiring homeservers to
+downcase usernames when creating user IDs for new users) is a relatively simple
+way to ensure that <tt class="docutils literal">&#64;USER:matrix.org</tt> cannot refer to a different user to
+<tt class="docutils literal">&#64;user:matrix.org</tt>.</p>
+<p>Finally, we decided to restrict the allowable punctuation to a very basic set
+to reduce the possibility of conflicts with special characters in various
+situations. For example, &quot;*&quot; is used as a wildcard in some APIs (notably the
+filter API), so it cannot be a legal user ID character.</p>
+<p class="last">The length restriction is derived from the limit on the length of the
+<tt class="docutils literal">sender</tt> key on events; since the user ID appears in every event sent by the
+user, it is limited to ensure that the user ID does not dominate over the actual
+content of the events.</p>
+</div>
+<p>Matrix user IDs are sometimes informally referred to as MXIDs.</p>
+<p><a class="anchor" id="historical-user-ids"></a></p>
+<div class="section" id="historical-user-ids">
+<h4><a class="toc-backref" href="#id13">4.2.1.1&nbsp;&nbsp;&nbsp;Historical User IDs</a></h4>
+<p>Older versions of this specification were more tolerant of the characters
+permitted in user ID localparts. There are currently active users whose user
+IDs do not conform to the permitted character set, and a number of rooms whose
+history includes events with a <tt class="docutils literal">sender</tt> which does not conform. In order to
+handle these rooms successfully, clients and servers MUST accept user IDs with
+localparts from the expanded character set:</p>
+<pre class="literal-block">
+extended_user_id_char = %x21-39 / %x3B-7E  ; all ASCII printing chars except :
+</pre>
+</div>
+<p><a class="anchor" id="mapping-from-other-character-sets"></a></p>
+<div class="section" id="mapping-from-other-character-sets">
+<h4><a class="toc-backref" href="#id14">4.2.1.2&nbsp;&nbsp;&nbsp;Mapping from other character sets</a></h4>
+<p>In certain circumstances it will be desirable to map from a wider character set
+onto the limited character set allowed in a user ID localpart. Examples include
+a homeserver creating a user ID for a new user based on the username passed to
+<tt class="docutils literal">/register</tt>, or a bridge mapping user ids from another protocol.</p>
+<!-- TODO-spec
+
+We need to better define the mechanism by which homeservers can allow users
+to have non-Latin login credentials. The general idea is for clients to pass
+the non-Latin in the ``username`` field to ``/register`` and ``/login``, and
+the HS then maps it onto the MXID space when turning it into the
+fully-qualified ``user_id`` which is returned to the client and used in
+events. -->
+<p>Implementations are free to do this mapping however they choose. Since the user
+ID is opaque except to the implementation which created it, the only
+requirement is that the implementation can perform the mapping
+consistently. However, we suggest the following algorithm:</p>
+<ol class="arabic simple">
+<li>Encode character strings as UTF-8.</li>
+<li>Convert the bytes <tt class="docutils literal"><span class="pre">A-Z</span></tt> to lower-case.<ul>
+<li>In the case where a bridge must be able to distinguish two different users
+with ids which differ only by case, escape upper-case characters by
+prefixing with <tt class="docutils literal">_</tt> before downcasing. For example, <tt class="docutils literal">A</tt> becomes
+<tt class="docutils literal">_a</tt>. Escape a real <tt class="docutils literal">_</tt> with a second <tt class="docutils literal">_</tt>.</li>
+</ul>
+</li>
+<li>Encode any remaining bytes outside the allowed character set, as well as
+<tt class="docutils literal">=</tt>, as their hexadecimal value, prefixed with <tt class="docutils literal">=</tt>. For example, <tt class="docutils literal">#</tt>
+becomes <tt class="docutils literal">=23</tt>; <tt class="docutils literal">á</tt> becomes <tt class="docutils literal">=c3=a1</tt>.</li>
+</ol>
+<div class="admonition admonition-rationale">
+<p class="first admonition-title">Rationale</p>
+<p class="last">The suggested mapping is an attempt to preserve human-readability of simple
+ASCII identifiers (unlike, for example, base-32), whilst still allowing
+representation of <em>any</em> character (unlike punycode, which provides no way to
+encode ASCII punctuation).</p>
+</div>
+</div>
+</div>
+<p><a class="anchor" id="room-ids-and-event-ids"></a></p>
+<div class="section" id="room-ids-and-event-ids">
+<h3><a class="toc-backref" href="#id15">4.2.2&nbsp;&nbsp;&nbsp;Room IDs and Event IDs</a></h3>
+<p>A room has exactly one room ID. A room ID has the format:</p>
+<pre class="literal-block">
+!opaque_id:domain
+</pre>
+<p>An event has exactly one event ID. The format of an event ID depends upon the
+<a class="reference external" href="index.html#room-versions">room version specification</a>.</p>
+<p>The <tt class="docutils literal">domain</tt> of a room ID is the <a class="reference internal" href="#server-name">server name</a> of the homeserver which
+created the room/event. The domain is used only for namespacing to avoid the
+risk of clashes of identifiers between different homeservers. There is no
+implication that the room or event in question is still available at the
+corresponding homeserver.</p>
+<p>Event IDs and Room IDs are case-sensitive. They are not meant to be human-readable.
+They are intended to be treated as fully opaque strings by clients.</p>
+<!-- TODO-spec
+What is the grammar for the opaque part? https://matrix.org/jira/browse/SPEC-389 -->
+</div>
+<p><a class="anchor" id="group-identifiers"></a></p>
+<div class="section" id="group-identifiers">
+<h3><a class="toc-backref" href="#id16">4.2.3&nbsp;&nbsp;&nbsp;Group Identifiers</a></h3>
+<p>Groups within Matrix are uniquely identified by their group ID. The group
+ID is namespaced to the group server which hosts this group and has the
+form:</p>
+<pre class="literal-block">
++localpart:domain
+</pre>
+<p>The <tt class="docutils literal">localpart</tt> of a group ID is an opaque identifier for that group. It MUST
+NOT be empty, and MUST contain only the characters <tt class="docutils literal"><span class="pre">a-z</span></tt>, <tt class="docutils literal"><span class="pre">0-9</span></tt>, <tt class="docutils literal">.</tt>,
+<tt class="docutils literal">_</tt>, <tt class="docutils literal">=</tt>, <tt class="docutils literal">-</tt>, and <tt class="docutils literal">/</tt>.</p>
+<p>The <tt class="docutils literal">domain</tt> of a group ID is the <a class="reference internal" href="#server-name">server name</a> of the group server which
+hosts this group.</p>
+<p>The length of a group ID, including the <tt class="docutils literal">+</tt> sigil and the domain, MUST NOT
+exceed 255 characters.</p>
+<p>The complete grammar for a legal group ID is:</p>
+<pre class="literal-block">
+group_id = &quot;+&quot; group_id_localpart &quot;:&quot; server_name
+group_id_localpart = 1*group_id_char
+group_id_char = DIGIT
+             / %x61-7A                   ; a-z
+             / &quot;-&quot; / &quot;.&quot; / &quot;=&quot; / &quot;_&quot; / &quot;/&quot;
+</pre>
+</div>
+<p><a class="anchor" id="room-aliases"></a></p>
+<div class="section" id="room-aliases">
+<h3><a class="toc-backref" href="#id17">4.2.4&nbsp;&nbsp;&nbsp;Room Aliases</a></h3>
+<p>A room may have zero or more aliases. A room alias has the format:</p>
+<pre class="literal-block">
+#room_alias:domain
+</pre>
+<p>The <tt class="docutils literal">domain</tt> of a room alias is the <a class="reference internal" href="#server-name">server name</a> of the homeserver which
+created the alias. Other servers may contact this homeserver to look up the
+alias.</p>
+<p>Room aliases MUST NOT exceed 255 bytes (including the <tt class="docutils literal">#</tt> sigil and the
+domain).</p>
+<!-- TODO-spec
+- Need to specify precise grammar for Room Aliases. https://matrix.org/jira/browse/SPEC-391 -->
+</div>
+<p><a class="anchor" id="matrix-to-navigation"></a></p>
+<div class="section" id="matrix-to-navigation">
+<h3><a class="toc-backref" href="#id18">4.2.5&nbsp;&nbsp;&nbsp;matrix.to navigation</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This namespacing is in place pending a <tt class="docutils literal"><span class="pre">matrix://</span></tt> (or similar) URI scheme.
+This is <strong>not</strong> meant to be interpreted as an available web service - see
+below for more details.</p>
+</div>
+<p>Rooms, users, aliases, and groups may be represented as a &quot;matrix.to&quot; URI.
+This URI can be used to reference particular objects in a given context, such
+as mentioning a user in a message or linking someone to a particular point
+in the room's history (a permalink).</p>
+<p>A matrix.to URI has the following format, based upon the specification defined
+in RFC 3986:</p>
+<blockquote>
+<a class="reference external" href="https://matrix.to">https://matrix.to</a>/#/&lt;identifier&gt;/&lt;extra parameter&gt;?&lt;additional arguments&gt;</blockquote>
+<p>The identifier may be a room ID, room alias, user ID, or group ID. The extra
+parameter is only used in the case of permalinks where an event ID is referenced.
+The matrix.to URI, when referenced, must always start with <tt class="docutils literal"><span class="pre">https://matrix.to/#/</span></tt>
+followed by the identifier.</p>
+<p>The <tt class="docutils literal">&lt;additional arguments&gt;</tt> and the preceding question mark are optional and
+only apply in certain circumstances, documented below.</p>
+<p>Clients should not rely on matrix.to URIs falling back to a web server if accessed
+and instead should perform some sort of action within the client. For example, if
+the user were to click on a matrix.to URI for a room alias, the client may open
+a view for the user to participate in the room.</p>
+<p>The components of the matrix.to URI (<tt class="docutils literal">&lt;identifier&gt;</tt> and <tt class="docutils literal">&lt;extra parameter&gt;</tt>)
+are to be percent-encoded as per RFC 3986.</p>
+<p>Examples of matrix.to URIs are:</p>
+<ul class="simple">
+<li>Room alias: <tt class="docutils literal"><span class="pre">https://matrix.to/#/%23somewhere%3Aexample.org</span></tt></li>
+<li>Room: <tt class="docutils literal"><span class="pre">https://matrix.to/#/!somewhere%3Aexample.org</span></tt></li>
+<li>Permalink by room: <tt class="docutils literal"><span class="pre">https://matrix.to/#/!somewhere%3Aexample.org/%24event%3Aexample.org</span></tt></li>
+<li>Permalink by room alias: <tt class="docutils literal"><span class="pre">https://matrix.to/#/%23somewhere:example.org/%24event%3Aexample.org</span></tt></li>
+<li>User: <tt class="docutils literal"><span class="pre">https://matrix.to/#/%40alice%3Aexample.org</span></tt></li>
+<li>Group: <tt class="docutils literal"><span class="pre">https://matrix.to/#/%2Bexample%3Aexample.org</span></tt></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Historically, clients have not produced URIs which are fully encoded. Clients should
+try to interpret these cases to the best of their ability. For example, an unencoded
+room alias should still work within the client if possible.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Clients should be aware that decoding a matrix.to URI may result in extra slashes
+appearing due to some <a class="reference external" href="index.html#room-versions">room versions</a>. These slashes
+should normally be encoded when producing matrix.to URIs, however.</p>
+</div>
+<p><a class="anchor" id="routing"></a></p>
+<div class="section" id="routing">
+<h4><a class="toc-backref" href="#id19">4.2.5.1&nbsp;&nbsp;&nbsp;Routing</a></h4>
+<p>Room IDs are not routable on their own as there is no reliable domain to send requests
+to. This is partially mitigated with the addition of a <tt class="docutils literal">via</tt> argument on a matrix.to
+URI, however the problem of routability is still present. Clients should do their best
+to route Room IDs to where they need to go, however they should also be aware of
+<a class="reference external" href="https://github.com/matrix-org/matrix-doc/issues/1579">issue #1579</a>.</p>
+<p>A room (or room permalink) which isn't using a room alias should supply at least one
+server using <tt class="docutils literal">via</tt> in the <tt class="docutils literal">&lt;additional arguments&gt;</tt>, like so:
+<tt class="docutils literal"><span class="pre">https://matrix.to/!somewhere%3Aexample.org?via=example.org&amp;via=alt.example.org</span></tt>. The
+parameter can be supplied multiple times to specify multiple servers to try.</p>
+<p>The values of <tt class="docutils literal">via</tt> are intended to be passed along as the <tt class="docutils literal">server_name</tt> parameters
+on the Client Server <tt class="docutils literal">/join</tt> API.</p>
+<p>When generating room links and permalinks, the application should pick servers which
+have a high probability of being in the room in the distant future. How these servers
+are picked is left as an implementation detail, however the current recommendation is
+to pick 3 unique servers based on the following criteria:</p>
+<ul class="simple">
+<li>The first server should be the server of the highest power level user in the room,
+provided they are at least power level 50. If no user meets this criterion, pick the
+most popular server in the room (most joined users). The rationale for not picking
+users with power levels under 50 is that they are unlikely to be around into the
+distant future while higher ranking users (and therefore servers) are less likely
+to give up their power and move somewhere else. Most rooms in the public federation
+have a power level 100 user and have not deviated from the default structure where
+power level 50 users have moderator-style privileges.</li>
+<li>The second server should be the next highest server by population, or the first
+highest by population if the first server was based on a user's power level. The
+rationale for picking popular servers is that the server is unlikely to be removed
+as the room naturally grows in membership due to that server joining users. The
+server could be refused participation in the future due to server ACLs or similar,
+however the chance of that happening to a server which is organically joining the
+room is unlikely.</li>
+<li>The third server should be the next highest server by population.</li>
+<li>Servers which are blocked due to server ACLs should never be chosen.</li>
+<li>Servers which are IP addresses should never be chosen. Servers which use a domain
+name are less likely to be unroutable in the future whereas IP addresses cannot be
+pointed to a different location and therefore higher risk options.</li>
+<li>All 3 servers should be unique from each other. If the room does not have enough users
+to supply 3 servers, the application should only specify the servers it can. For example,
+a room with only 2 users in it would result in maximum 2 <tt class="docutils literal">via</tt> parameters.</li>
+</ul>
+<!-- Copyright 2017 Kamax.io -->
+<!--  -->
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- you may not use this file except in compliance with the License. -->
+<!-- You may obtain a copy of the License at -->
+<!--  -->
+<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+<!--  -->
+<!-- Unless required by applicable law or agreed to in writing, software -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and -->
+<!-- limitations under the License. -->
+</div>
+</div>
+</div>
+</div>
+<p><a class="anchor" id="pid-types"></a></p>
+<div class="section" id="pid-types">
+<h1><a class="toc-backref" href="#id20">5&nbsp;&nbsp;&nbsp;3PID Types</a></h1>
+<p>Third Party Identifiers (3PIDs) represent identifiers on other namespaces that
+might be associated with a particular person. They comprise a tuple of <tt class="docutils literal">medium</tt>
+which is a string that identifies the namespace in which the identifier exists,
+and an <tt class="docutils literal">address</tt>: a string representing the identifier in that namespace. This
+must be a canonical form of the identifier, <em>i.e.</em> if multiple strings could
+represent the same identifier, only one of these strings must be used in a 3PID
+address, in a well-defined manner.</p>
+<p>For example, for e-mail, the <tt class="docutils literal">medium</tt> is 'email' and the <tt class="docutils literal">address</tt> would be the
+email address, <em>e.g.</em> the string <tt class="docutils literal">bob&#64;example.com</tt>. Since domain resolution is
+case-insensitive, the email address <tt class="docutils literal">bob&#64;Example.com</tt> is also has the 3PID address
+of <tt class="docutils literal">bob&#64;example.com</tt> (without the capital 'e') rather than <tt class="docutils literal">bob&#64;Example.com</tt>.</p>
+<p>The namespaces defined by this specification are listed below. More namespaces
+may be defined in future versions of this specification.</p>
+<p><a class="anchor" id="e-mail"></a></p>
+<div class="section" id="e-mail">
+<h2><a class="toc-backref" href="#id21">5.1&nbsp;&nbsp;&nbsp;E-Mail</a></h2>
+<p>Medium: <tt class="docutils literal">email</tt></p>
+<p>Represents E-Mail addresses. The <tt class="docutils literal">address</tt> is the raw email address in
+<tt class="docutils literal">user&#64;domain</tt> form with the domain in lowercase. It must not contain other text
+such as real name, angle brackets or a mailto: prefix.</p>
+</div>
+<p><a class="anchor" id="pstn-phone-numbers"></a></p>
+<div class="section" id="pstn-phone-numbers">
+<h2><a class="toc-backref" href="#id22">5.2&nbsp;&nbsp;&nbsp;PSTN Phone numbers</a></h2>
+<p>Medium: <tt class="docutils literal">msisdn</tt></p>
+<p>Represents telephone numbers on the public switched telephone network.  The
+<tt class="docutils literal">address</tt> is the telephone number represented as a MSISDN (Mobile Station
+International Subscriber Directory Number) as defined by the E.164 numbering
+plan. Note that MSISDNs do not include a leading '+'.</p>
+<!-- Copyright 2015 OpenMarket Ltd -->
+<!--  -->
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- you may not use this file except in compliance with the License. -->
+<!-- You may obtain a copy of the License at -->
+<!--  -->
+<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+<!--  -->
+<!-- Unless required by applicable law or agreed to in writing, software -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and -->
+<!-- limitations under the License. -->
+</div>
+</div>
+<p><a class="anchor" id="security-threat-model"></a></p>
+<div class="section" id="security-threat-model">
+<h1><a class="toc-backref" href="#id23">6&nbsp;&nbsp;&nbsp;Security Threat Model</a></h1>
+<p><a class="anchor" id="denial-of-service"></a></p>
+<div class="section" id="denial-of-service">
+<h2><a class="toc-backref" href="#id24">6.1&nbsp;&nbsp;&nbsp;Denial of Service</a></h2>
+<p>The attacker could attempt to prevent delivery of messages to or from the
+victim in order to:</p>
+<ul class="simple">
+<li>Disrupt service or marketing campaign of a commercial competitor.</li>
+<li>Censor a discussion or censor a participant in a discussion.</li>
+<li>Perform general vandalism.</li>
+</ul>
+<p><a class="anchor" id="threat-resource-exhaustion"></a></p>
+<div class="section" id="threat-resource-exhaustion">
+<h3><a class="toc-backref" href="#id25">6.1.1&nbsp;&nbsp;&nbsp;Threat: Resource Exhaustion</a></h3>
+<p>An attacker could cause the victim's server to exhaust a particular resource
+(e.g. open TCP connections, CPU, memory, disk storage)</p>
+</div>
+<p><a class="anchor" id="threat-unrecoverable-consistency-violations"></a></p>
+<div class="section" id="threat-unrecoverable-consistency-violations">
+<h3><a class="toc-backref" href="#id26">6.1.2&nbsp;&nbsp;&nbsp;Threat: Unrecoverable Consistency Violations</a></h3>
+<p>An attacker could send messages which created an unrecoverable &quot;split-brain&quot;
+state in the cluster such that the victim's servers could no longer derive a
+consistent view of the chatroom state.</p>
+</div>
+<p><a class="anchor" id="threat-bad-history"></a></p>
+<div class="section" id="threat-bad-history">
+<h3><a class="toc-backref" href="#id27">6.1.3&nbsp;&nbsp;&nbsp;Threat: Bad History</a></h3>
+<p>An attacker could convince the victim to accept invalid messages which the
+victim would then include in their view of the chatroom history. Other servers
+in the chatroom would reject the invalid messages and potentially reject the
+victims messages as well since they depended on the invalid messages.</p>
+<!-- TODO-spec
+Track trustworthiness of HS or users based on if they try to pretend they
+haven't seen recent events, and fake a splitbrain... - -M -->
+</div>
+<p><a class="anchor" id="threat-block-network-traffic"></a></p>
+<div class="section" id="threat-block-network-traffic">
+<h3><a class="toc-backref" href="#id28">6.1.4&nbsp;&nbsp;&nbsp;Threat: Block Network Traffic</a></h3>
+<p>An attacker could try to firewall traffic between the victim's server and some
+or all of the other servers in the chatroom.</p>
+</div>
+<p><a class="anchor" id="threat-high-volume-of-messages"></a></p>
+<div class="section" id="threat-high-volume-of-messages">
+<h3><a class="toc-backref" href="#id29">6.1.5&nbsp;&nbsp;&nbsp;Threat: High Volume of Messages</a></h3>
+<p>An attacker could send large volumes of messages to a chatroom with the victim
+making the chatroom unusable.</p>
+</div>
+<p><a class="anchor" id="threat-banning-users-without-necessary-authorisation"></a></p>
+<div class="section" id="threat-banning-users-without-necessary-authorisation">
+<h3><a class="toc-backref" href="#id30">6.1.6&nbsp;&nbsp;&nbsp;Threat: Banning users without necessary authorisation</a></h3>
+<p>An attacker could attempt to ban a user from a chatroom without the necessary
+authorisation.</p>
+</div>
+</div>
+<p><a class="anchor" id="spoofing"></a></p>
+<div class="section" id="spoofing">
+<h2><a class="toc-backref" href="#id31">6.2&nbsp;&nbsp;&nbsp;Spoofing</a></h2>
+<p>An attacker could try to send a message claiming to be from the victim without
+the victim having sent the message in order to:</p>
+<ul class="simple">
+<li>Impersonate the victim while performing illicit activity.</li>
+<li>Obtain privileges of the victim.</li>
+</ul>
+<p><a class="anchor" id="threat-altering-message-contents"></a></p>
+<div class="section" id="threat-altering-message-contents">
+<h3><a class="toc-backref" href="#id32">6.2.1&nbsp;&nbsp;&nbsp;Threat: Altering Message Contents</a></h3>
+<p>An attacker could try to alter the contents of an existing message from the
+victim.</p>
+</div>
+<p><a class="anchor" id="threat-fake-message-origin-field"></a></p>
+<div class="section" id="threat-fake-message-origin-field">
+<h3><a class="toc-backref" href="#id33">6.2.2&nbsp;&nbsp;&nbsp;Threat: Fake Message &quot;origin&quot; Field</a></h3>
+<p>An attacker could try to send a new message purporting to be from the victim
+with a phony &quot;origin&quot; field.</p>
+</div>
+</div>
+<p><a class="anchor" id="spamming"></a></p>
+<div class="section" id="spamming">
+<h2><a class="toc-backref" href="#id34">6.3&nbsp;&nbsp;&nbsp;Spamming</a></h2>
+<p>The attacker could try to send a high volume of solicited or unsolicited
+messages to the victim in order to:</p>
+<ul class="simple">
+<li>Find victims for scams.</li>
+<li>Market unwanted products.</li>
+</ul>
+<p><a class="anchor" id="threat-unsolicited-messages"></a></p>
+<div class="section" id="threat-unsolicited-messages">
+<h3><a class="toc-backref" href="#id35">6.3.1&nbsp;&nbsp;&nbsp;Threat: Unsolicited Messages</a></h3>
+<p>An attacker could try to send messages to victims who do not wish to receive
+them.</p>
+</div>
+<p><a class="anchor" id="threat-abusive-messages"></a></p>
+<div class="section" id="threat-abusive-messages">
+<h3><a class="toc-backref" href="#id36">6.3.2&nbsp;&nbsp;&nbsp;Threat: Abusive Messages</a></h3>
+<p>An attacker could send abusive or threatening messages to the victim</p>
+</div>
+</div>
+<p><a class="anchor" id="spying"></a></p>
+<div class="section" id="spying">
+<h2><a class="toc-backref" href="#id37">6.4&nbsp;&nbsp;&nbsp;Spying</a></h2>
+<p>The attacker could try to access message contents or metadata for messages sent
+by the victim or to the victim that were not intended to reach the attacker in
+order to:</p>
+<ul class="simple">
+<li>Gain sensitive personal or commercial information.</li>
+<li>Impersonate the victim using credentials contained in the messages.
+(e.g. password reset messages)</li>
+<li>Discover who the victim was talking to and when.</li>
+</ul>
+<p><a class="anchor" id="threat-disclosure-during-transmission"></a></p>
+<div class="section" id="threat-disclosure-during-transmission">
+<h3><a class="toc-backref" href="#id38">6.4.1&nbsp;&nbsp;&nbsp;Threat: Disclosure during Transmission</a></h3>
+<p>An attacker could try to expose the message contents or metadata during
+transmission between the servers.</p>
+</div>
+<p><a class="anchor" id="threat-disclosure-to-servers-outside-chatroom"></a></p>
+<div class="section" id="threat-disclosure-to-servers-outside-chatroom">
+<h3><a class="toc-backref" href="#id39">6.4.2&nbsp;&nbsp;&nbsp;Threat: Disclosure to Servers Outside Chatroom</a></h3>
+<p>An attacker could try to convince servers within a chatroom to send messages to
+a server it controls that was not authorised to be within the chatroom.</p>
+</div>
+<p><a class="anchor" id="threat-disclosure-to-servers-within-chatroom"></a></p>
+<div class="section" id="threat-disclosure-to-servers-within-chatroom">
+<h3><a class="toc-backref" href="#id40">6.4.3&nbsp;&nbsp;&nbsp;Threat: Disclosure to Servers Within Chatroom</a></h3>
+<p>An attacker could take control of a server within a chatroom to expose message
+contents or metadata for messages in that room.</p>
+<!-- Copyright 2015 OpenMarket Ltd -->
+<!--  -->
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- you may not use this file except in compliance with the License. -->
+<!-- You may obtain a copy of the License at -->
+<!--  -->
+<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+<!--  -->
+<!-- Unless required by applicable law or agreed to in writing, software -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and -->
+<!-- limitations under the License. -->
+</div>
+</div>
+</div>
+<p><a class="anchor" id="cryptographic-test-vectors"></a></p>
+<div class="section" id="cryptographic-test-vectors">
+<h1><a class="toc-backref" href="#id41">7&nbsp;&nbsp;&nbsp;Cryptographic Test Vectors</a></h1>
+<p>To assist in the development of compatible implementations, the following test
+values may be useful for verifying the cryptographic event signing code.</p>
+<p><a class="anchor" id="signing-key"></a></p>
+<div class="section" id="signing-key">
+<h2><a class="toc-backref" href="#id42">7.1&nbsp;&nbsp;&nbsp;Signing Key</a></h2>
+<p>The following test vectors all use the 32-byte value given by the following
+Base64-encoded string as the seed for generating the <tt class="docutils literal">ed25519</tt> signing key:</p>
+<pre class="code literal-block">
+SIGNING_KEY_SEED = decode_base64(
+    &quot;YJDBA9Xnr2sVqXD9Vj7XVUnmFZcZrlw8Md7kMW+3XA1&quot;
+)
+</pre>
+<p>In each case, the server name and key ID are as follows:</p>
+<pre class="code literal-block">
+SERVER_NAME = &quot;domain&quot;
+
+KEY_ID = &quot;ed25519:1&quot;
+</pre>
+</div>
+<p><a class="anchor" id="json-signing"></a></p>
+<div class="section" id="json-signing">
+<h2><a class="toc-backref" href="#id43">7.2&nbsp;&nbsp;&nbsp;JSON Signing</a></h2>
+<p>Given an empty JSON object:</p>
+<pre class="code json literal-block">
+<span class="p">{}</span>
+</pre>
+<p>The JSON signing algorithm should emit the following signed data:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;signatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;domain&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;ed25519:1&quot;</span><span class="p">:</span> <span class="s2">&quot;K8280/U9SSy9IVtjBuVeLr+HpOB4BQFWbg+UZaADMtTdGYI7Geitb76LTrr5QV/7Xg4ahLwYGYZzuHGZKM5ZAQ&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+<p>Given the following JSON object with data values in it:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;one&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;two&quot;</span><span class="p">:</span> <span class="s2">&quot;Two&quot;</span>
+<span class="p">}</span>
+</pre>
+<p>The JSON signing algorithm should emit the following signed JSON:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;one&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;signatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;domain&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;ed25519:1&quot;</span><span class="p">:</span> <span class="s2">&quot;KqmLSbO39/Bzb0QIYE82zqLwsA+PDzYIpIRA2sRQ4sL53+sN6/fpNSoqE7BP7vBZhG6kYdD13EIMJpvhJI+6Bw&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;two&quot;</span><span class="p">:</span> <span class="s2">&quot;Two&quot;</span>
+<span class="p">}</span>
+</pre>
+</div>
+<p><a class="anchor" id="event-signing"></a></p>
+<div class="section" id="event-signing">
+<h2><a class="toc-backref" href="#id44">7.3&nbsp;&nbsp;&nbsp;Event Signing</a></h2>
+<p>Given the following minimally-sized event:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;room_id&quot;</span><span class="p">:</span> <span class="s2">&quot;!x:domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sender&quot;</span><span class="p">:</span> <span class="s2">&quot;&#64;a:domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;origin&quot;</span><span class="p">:</span> <span class="s2">&quot;domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;origin_server_ts&quot;</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+    <span class="nt">&quot;signatures&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="nt">&quot;hashes&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="nt">&quot;prev_events&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;auth_events&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;depth&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;unsigned&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;age_ts&quot;</span><span class="p">:</span> <span class="mi">1000000</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+<p>The event signing algorithm should emit the following signed event:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;auth_events&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="nt">&quot;depth&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;hashes&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;sha256&quot;</span><span class="p">:</span> <span class="s2">&quot;5jM4wQpv6lnBo7CLIghJuHdW+s2CMBJPUOGOC89ncos&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;origin&quot;</span><span class="p">:</span> <span class="s2">&quot;domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;origin_server_ts&quot;</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+    <span class="nt">&quot;prev_events&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;room_id&quot;</span><span class="p">:</span> <span class="s2">&quot;!x:domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sender&quot;</span><span class="p">:</span> <span class="s2">&quot;&#64;a:domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;signatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;domain&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;ed25519:1&quot;</span><span class="p">:</span> <span class="s2">&quot;KxwGjPSDEtvnFgU00fwFz+l6d2pJM6XBIaMEn81SXPTRl16AqLAYqfIReFGZlHi5KLjAWbOoMszkwsQma+lYAg&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;unsigned&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;age_ts&quot;</span><span class="p">:</span> <span class="mi">1000000</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+<p>Given the following event containing redactable content:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;body&quot;</span><span class="p">:</span> <span class="s2">&quot;Here is the message content&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;event_id&quot;</span><span class="p">:</span> <span class="s2">&quot;$0:domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;origin&quot;</span><span class="p">:</span> <span class="s2">&quot;domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;origin_server_ts&quot;</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;m.room.message&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;room_id&quot;</span><span class="p">:</span> <span class="s2">&quot;!r:domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sender&quot;</span><span class="p">:</span> <span class="s2">&quot;&#64;u:domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;signatures&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="nt">&quot;unsigned&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;age_ts&quot;</span><span class="p">:</span> <span class="mi">1000000</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+<p>The event signing algorithm should emit the following signed event:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+    <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;body&quot;</span><span class="p">:</span> <span class="s2">&quot;Here is the message content&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;event_id&quot;</span><span class="p">:</span> <span class="s2">&quot;$0:domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;hashes&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;sha256&quot;</span><span class="p">:</span> <span class="s2">&quot;onLKD1bGljeBWQhWZ1kaP9SorVmRQNdN5aM2JYU2n/g&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;origin&quot;</span><span class="p">:</span> <span class="s2">&quot;domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;origin_server_ts&quot;</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;m.room.message&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;room_id&quot;</span><span class="p">:</span> <span class="s2">&quot;!r:domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sender&quot;</span><span class="p">:</span> <span class="s2">&quot;&#64;u:domain&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;signatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;domain&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;ed25519:1&quot;</span><span class="p">:</span> <span class="s2">&quot;Wm+VzmOUOz08Ds+0NTWb1d4CZrVsJSikkeRxh6aCcUwu6pNC78FunoD7KNWzqFn241eYHYMGCA5McEiVPdhzBA&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;unsigned&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;age_ts&quot;</span><span class="p">:</span> <span class="mi">1000000</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -32,9 +32,12 @@ mkdir -p unstyled_docs/api/client-server/json
 cp -r swagger-ui/dist/* unstyled_docs/api/client-server/
 (cd unstyled_docs && patch -p0) <scripts/swagger-ui.patch
 
-# and the unstable spec docs, but not the spec index (because we want to keep
-# the git version, which points to a specific c-s version)
-rm assets/spec/index.html || true
+# and the unstable spec docs, but not:
+# * the spec index (because we want to keep the git version, which points to a specific c-s version), or
+# * the appendices, as we've frozen the old docs now and are not updating them until everything is moved over
+#   to the new spec redesign
+rm -f assets/spec/index.html
+rm -f assets/spec/appendices.html
 cp -ar assets/spec unstyled_docs
 
 # add a link to the stable swagger doc
