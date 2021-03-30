@@ -30,7 +30,6 @@ tar -xzf assets.tar.gz
 rm -fr unstyled_docs/api/client-server
 mkdir -p unstyled_docs/api/client-server/json
 cp -r swagger-ui/dist/* unstyled_docs/api/client-server/
-(cd unstyled_docs && patch -p0) <scripts/swagger-ui.patch
 
 # and the unstable spec docs, but not the spec index (because we want to keep
 # the git version, which points to a specific c-s version)
