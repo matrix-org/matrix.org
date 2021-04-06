@@ -274,7 +274,7 @@ const Index = ({
           <p className="mxp mxhow">
             By default, Matrix uses simple <a href="/docs/spec/client_server/latest.html#api-standards" onClick={()=>{window.location='https://matrix.org//docs/spec/client_server/latest.html#api-standards'; return false;}}>HTTPS+JSON APIs
             </a> as its baseline transport, but also embraces more
-            sophisticated transports such as <a href="https://github.com/matrix-org/matrix-doc/blob/master/drafts/websockets.rst">WebSockets
+            sophisticated transports such as <a href="https://github.com/matrix-org/matrix-doc/blob/master/attic/drafts/websockets.rst">WebSockets
             </a> or <a href="/blog/2019/03/12/breaking-the-100-bps-barrier-with-matrix-meshsim-coap-proxy">ultra-low-bandwidth Matrix</a> via CoAP+Noise.
           </p>
 
