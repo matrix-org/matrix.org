@@ -12,7 +12,7 @@ import moment from "moment";
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
 const SHOW_LIVE_STREAM = false;
-const NEXT_EVENT = 11;
+const NEXT_EVENT = 12;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
@@ -31,7 +31,7 @@ if (SHOW_LIVE_STREAM) {
     </div>
   );
 } else {
-  liveStream = <img src="/images/otwsu11-plain.png" alt="Open Tech Will Save Us" />;
+  liveStream = <img src="/images/otwsu12.png" alt="Open Tech Will Save Us" />;
 }
 
 const OTWSU = ({ data }) => {
@@ -47,7 +47,7 @@ const OTWSU = ({ data }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:image"
-          content="https://matrix.org/images/otwsu11-plain.png"
+          content="https://matrix.org/images/otwsu12.png"
         />
       </Helmet>
       <div>
