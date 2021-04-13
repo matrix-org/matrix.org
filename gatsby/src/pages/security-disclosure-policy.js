@@ -24,6 +24,13 @@ const HallOfFame = () => {
             service: 'Matrix React SDK'
         },
         {
+            date:'2021-01-18',
+            who: 'Michaël Scherer',
+            profile: 'https://github.com/mscherer/',
+            description: 'IP blacklist bypass via transitional IPv6 addresses on dual-stack networks (<a href="https://github.com/matrix-org/synapse/security/advisories/GHSA-5wrh-4jwv-5w78">CVE-2021-21392</a>). Fixed in Synapse 1.28.0.',
+            service: "Synapse"
+        },
+        {
             date:'2020-11-17',
             who: 'Michaël Scherer',
             profile: 'https://github.com/mscherer/',
