@@ -163,7 +163,7 @@ const Foundation = () => {
               "https://matrix.org/blog/2018/10/29/introducing-the-matrix-org-foundation-part-1-of-2">
             https://matrix.org/blog/2018/10/29/introducing-the-matrix-org-foundation-part-1-of-2</a></li>
             <li><a href=
-            "https://github.com/matrix-org/matrix-doc/pulls/1779">https://github.com/matrix-org/matrix-doc/pulls/1779</a></li>
+            "https://github.com/matrix-org/matrix-doc/pull/1779">https://github.com/matrix-org/matrix-doc/pull/1779</a></li>
           </ul>
           <p>One of the most important items defined in the Rules are The Guiding Principles of the project and the
             definition of the Spec Core Team, which are reproduced below from MSC1779 for ease of reference.</p>
