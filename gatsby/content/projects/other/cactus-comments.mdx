@@ -1,0 +1,25 @@
+---
+layout: project
+title: Cactus Comments
+categories: 
+ - other
+description: Federated, web-embeddable comment system for the open web built on Matrix
+author: Asbjørn Olling and Carl Bordum Hansen
+language: Elm
+maturity: Beta
+repo: https://gitlab.com/cactus-comments/
+screenshot: /images/cactus.png
+room: "#cactus:bordum.dk"
+license: GPL-3.0
+home: https://cactus.chat/
+---
+
+Cactus Comments is a federated comment system built on top of Matrix - ready to be embedded on your website today!
+
+The project consists of a frontend and a backend.
+
+The frontend is a web-embeddable Matrix client written in Elm that renders Matrix rooms as comment sections. The client is designed to be especially easy to embed on static sites. Once you log in to the client, it will only communicate directly with your Matrix server of choice.
+
+The backend is an application service that is used to create rooms on-demand and help with moderation. It is built with Python and is completely stateless. It does this by modelling all state in native Matrix objects without any custom events.
+
+Please visit [the website](https://cactus.chat) for more information 🌵
