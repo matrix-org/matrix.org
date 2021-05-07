@@ -33,6 +33,29 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+p:not(:last-child),
+blockquote:not(:last-child),
+figure:not(:last-child),
+ul:not(:last-child),
+ol:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+/* Reset webflow.js defaults */
+p:last-child,
+blockquote:last-child,
+figure:last-child,
+ul:last-child,
+ol:last-child {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
 .mximagine {
   font-size: 18px;
   font-weight: normal;
@@ -253,6 +276,10 @@ label {
 
 .mxcontent {
   width: 100%;
+}
+
+.mxcontent__main {
+  line-height: 1.8em;
 }
 
 .mxclientcard {
