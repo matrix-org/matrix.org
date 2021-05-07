@@ -1,0 +1,399 @@
+---
+date: '2021-05-07'
+title: 'This Week in Matrix 2021-05-07'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-05-07-jh7X9-image.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zw5CWCyIAMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of *Status of Matrix* 🌡️
+
+### Matrix Server_Stats Bot
+
+[MTRNord](https://matrix.to/#/@mtrnord:nordgedanken.dev) announced:
+
+> The first iteration of visually representing the data gathered by Server Stats Discoverer (traveler bot)  is now publicly available at https://serverstats.nordgedanken.dev/
+>
+> It for now is only a graph of room relations but in the future is supposed to be extended for a server based graph as well as a Table to search your room within.
+>
+> Be aware that the page is best viewed and used on desktop. Clicking a Room Node will open a new tab with the matrix.to link. If this fails this might be because of no canonical alias being available.
+>
+> For the developers the data can be taken from https://serverstats.nordgedanken.dev/relations  The format currently is only available in the d3js format but in the future that API also will be extended for different usecases.
+>
+> For any feedback like accesibility issues or other issues please reach out to me either via DM or in #server_stats:nordgedanken.dev 
+
+![2021-05-07-jh7X9-image.png](/blog/img/2021-05-07-jh7X9-image.png)
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) said:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://spec.matrix.org/unstable/proposals.
+>
+> #### MSC Status
+>
+> **New MSCs:**
+>
+> * [MSC3174: An error code for spam rejections](https://github.com/matrix-org/matrix-doc/pull/3174)
+> * [\[WIP\] MSC3173: Expose stripped state events to any potential joiner](https://github.com/matrix-org/matrix-doc/pull/3173)
+>
+> * [MSC3160: Message timezone markup](https://github.com/matrix-org/matrix-doc/pull/3160)
+>
+> **MSCs with proposed Final Comment Period:**
+>
+> * _No MSCs entered proposed FCP state this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * [MSC3122: Deprecate starting verifications without requesting first](https://github.com/matrix-org/matrix-doc/pull/3122) (merge)
+>
+> **Merged MSCs:**
+>
+> * [MSC1772: Matrix spaces](https://github.com/matrix-org/matrix-doc/pull/1772)
+>
+> **Closed MSCs:**
+>
+> * [MSC3161: Printable tickets](https://github.com/matrix-org/matrix-doc/pull/3161)
+> * [MSC3067: Prevent/remove legacy groups from being in the spec](https://github.com/matrix-org/matrix-doc/pull/3067)
+>
+> * [Related Groups (i.e. flair)](https://github.com/matrix-org/matrix-doc/issues/1214)
+> * [Add groups stuff to spec](https://github.com/matrix-org/matrix-doc/issues/971)
+>
+> #### Merged Spec PRs
+>
+> Here are all the actual MSC-related changes to the raw Matrix spec that landed this week!
+>
+> * [#3177 Remove group identifiers](https://github.com/matrix-org/matrix-doc/pull/3177)
+>
+> * [#3170 Remove v1 identity service API](https://github.com/matrix-org/matrix-doc/pull/3170)
+> * [#3169 Downgrade identity server failure to FAIL_PROMPT instead of FAIL_ERROR](https://github.com/matrix-org/matrix-doc/pull/3169)
+>
+> * [#3167 Specify that email handling converts to lowercase first](https://github.com/matrix-org/matrix-doc/pull/3167)
+> * [#3166 Spec device_id on whoami](https://github.com/matrix-org/matrix-doc/pull/3166)
+>
+> * [#3163 Describe social-sign-on (multiple SSO providers)](https://github.com/matrix-org/matrix-doc/pull/3163)
+> #### Spec Updates
+>
+> A reminder that [#sct-office:matrix.org](https://matrix.to/#/#sct-office:matrix.org) is available to communicate directly with the Spec Core Team. A clarification from the last edition of TWIM is that this room is intended to be a low-traffic room solely for asking about the status of a/your MSC, rather than the Spec process or anything else. There is however [#matrix-spec-process:matrix.org](https://matrix.to/#/#matrix-spec-process:matrix.org) for discussion of the Spec process, and [#matrix-spec:matrix.org](https://matrix.to/#/#matrix-spec:matrix.org) for discussion of the Matrix spec and MSCs in general.
+>
+> Otherwise the Spec Core Team has been doing a little bit of house-keeping. For those that have been living under a rock, [Spaces](https://github.com/matrix-org/matrix-doc/pull/1772) is an upcoming feature intended to replace the old Groups/Community stuff with a much-improved implementation. And one that will actually make it into the spec! We've closed all old groups-related MSCs as they are now obselete.
+>
+> Additionally we've been giving some feedback on [MSC2946](https://github.com/matrix-org/matrix-doc/pull/2946) (Spaces Summary) which is another part of the Spaces puzzle (and is still a blocker for the release of the feature), as well as [MSC3079](https://github.com/matrix-org/matrix-doc/pull/3079) (Low Bandwidth CS API) which allows Matrix to operate on resource constrained devices and networks. Yours truly has also been making some PRs ([one](https://github.com/matrix-org/matrix-doc/pull/3180), [two](https://github.com/matrix-org/matrix-doc/pull/3179)) to help clarify the Spec process.
+
+
+
+![2021-05-07-tEcUz-stacked_area_chart.png](/blog/img/2021-05-07-tEcUz-stacked_area_chart.png)
+
+## Dept of P2P 👥
+
+### Pinecone
+
+[Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) reported:
+
+> Yesterday we announced the source code release of Pinecone, our new peer-to-peer overlay network, which we are developing under the P2P Matrix banner. 
+>
+> If you missed it, we wrote a [blog post](https://matrix.org/blog/2021/05/06/introducing-the-pinecone-overlay-network) that explains some of the juicy details. The source code is available on [GitHub](https://github.com/matrix-org/pinecone).
+>
+> Join us in [#p2p:matrix.org](https://matrix.to/#/#p2p:matrix.org) for the latest P2P developments!
+
+
+
+## Dept of Servers 🏢
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) offered:
+
+> It's a release! [Synapse 1.33 is out](https://matrix.org/blog/2021/05/05/synapse-1-33-0-released), and we plan to release a security patch for it on Tuesday, May 11th. This follows our [previous discussion](https://github.com/matrix-org/synapse/discussions/9914) where we committed to trying to decouple routine security updates from our regular feature releases.
+>
+> Read the release notes for details, but the big news is that we finally have experimental support for moving presence off of the main process. We're still testing it, but we hope it will allow instances that need presence to more easily scale out.
+>
+> In [last week's TWiM](https://matrix.org/blog/2021/04/30/this-week-in-matrix-2021-04-30#synapse) we shared a graph of Synapse's memory use when joining Matrix HQ for the first time. In particular, we saw a spike to 1.4 GB before settling at 800 MB.
+>
+> In the week since producing that graph, we've managed to nearly eliminate the spike, halving it to 760 MB. After backfilling history, the room settles at around 650 MB:
+
+![2021-05-07-8eyfi-Screenshotfrom2021-05-0512-10-50.png](/blog/img/2021-05-07-8eyfi-Screenshotfrom2021-05-0512-10-50.png)
+
+
+> These changes are still a work in progress, but we hope to get them merged into Synapse in time for the 1.35 release on June 1st.
+
+Additionally, [Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) has a request:
+
+> I wrote a patch for synapse, that reduces the size of almost empty incremental syncs by 50% (30% if you include http headers). If you are a client developer, you may want to test your client against a synapse with that patch applied, since it broke quite a few clients, that relied on synapse sending empty fields. While synapse sends empty fields, other server implementations, like conduit, don't, so fixing any issues here will help with portability across different server implementations too. With a bit of hope this patch can actually be applied in a few weeks to the official synapse, but it was backed out from the next RC because of the breakage. So if you can, please test your client, which you are developing, against the following PR and fix any issues you experience from it: https://github.com/matrix-org/synapse/pull/9919
+>
+> Thank you!
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) said:
+
+> The regular updates for my [Helm charts](https://gitlab.com/ananace/charts) (and still deprecated [Synapse image](https://github.com/ananace/matrix-synapse)) have been pushed, for Synapse 1.33.0/1 and the Matrix Media Repo 1.2.8. (technically last week, but it was after friday, so I'm throwing it in again)
+
+
+
+## Dept of Bridges 🌉
+
+### mautrix-imessage on iOS
+
+[Tulir](https://matrix.to/#/@tulir:maunium.net) announced:
+
+> The initial alpha version of [Brooklyn](https://gitlab.com/beeper/brooklyn) is now public, which means you can now (try to) use [mautrix-imessage](https://github.com/tulir/mautrix-imessage) on a jailbroken iOS device for iMessage bridging. Setup instructions are on docs.mau.fi: https://docs.mau.fi/bridges/go/imessage/ios/setup.html
+>
+> Brooklyn was developed by ethanrdoesmc. It's an app/tweak that handles communicating with iMessage and runs mautrix-imessage as a subprocess for the Matrix side. The initial alpha supports basic text and media message bridging. Sending and receiving tapbacks, replies, read receipts and typing notifications will also be supported in the future.
+>
+> Feedback is welcome in the mautrix-imessage room: [#imessage:maunium.net](https://matrix.to/#/#imessage:maunium.net)
+
+
+
+### Heisenbridge
+
+[hifi](https://matrix.to/#/@hifi:vi.fi) told us:
+
+> [Heisenbridge](https://github.com/hifi/heisenbridge/) the bouncer style Matrix IRC bridge has seen numerous updates in the past week:
+>
+>  * Identd implementation to get verified usernames on IRC
+>
+>  * TLS support for IRC connections
+>  * IRC excess flood prevention with a buffer
+>
+>  * Proper long message splitting from Matrix to IRC
+>  * Retry support for Matrix requests to work around homeserver downtime/restarts
+>
+> Minor fixes to ghosting issues and some other stuff. This will be the last big update for a while as it has mostly stabilized enough for daily use.
+>
+> More testers are still welcome to get the remaining issues ironed out so if you need to connect to unbridged and unplumbed networks and run your own homeserver it would be an excellent time to try it out.
+>
+> Thanks!
+
+
+
+### matrix-pstn-bridge
+
+[KB1RD](https://matrix.to/#/@kb1rd:kb1rd.net) reported:
+
+> Experimental support for call bridging has landed. Now you can call phone numbers right from Matrix, with partial support for MSC2746. A few things to keep in mind:
+>
+> * The bridge is still in alpha -- I wouldn't trust it for anything secure at the moment. I would love to hear feedback from tests, though!
+>
+> * **If you tried any of the earlier versions,** you will need to re-run the `link` command since I made some breaking changes. Sorry.
+>
+> Just a reminder, the GH repo is [here](https://github.com/KB1RD/matrix-pstn-bridge) and the Matrix room is #matrix-pstn-bridge:kb1rd.net . There's also a general VoIP bridging room at #matrix-voip-bridging:kb1rd.net
+
+
+
+### matrix-appservice-irc has a new release candidate
+
+[Christian](https://matrix.to/#/@christianp:vector.modular.im) reported:
+
+> The IRC bridge matrix-appservice-irc has a new release candidate. The upcoming version 0.26.0 will include many features and bug fixes. Here are three highlights:
+>
+> * Allow third-party bridged users to change their nickname with the self-serve command `!irc nick anothername` (thanks vranki)
+>
+> * Allow room moderators and bridge admins to unlink rooms using an `!unbridge` command
+> * Add support for specifying the paste bin limit in room state with the `org.matrix.appservice-irc.config` event type.
+>
+> Please test it and flag any issues you have upgrading:
+>
+> https://github.com/matrix-org/matrix-appservice-irc/releases/tag/v0.26.0-rc1
+
+
+
+## Dept of Clients 📱
+
+### FluffyChat
+
+[FluffyChat](https://fluffychat.im) is the cutest cross-platform matrix client. It is available for Android, iOS, Web and Desktop.
+
+[krille](https://matrix.to/#/@krille:janian.de) announced:
+
+> FluffyChat 0.30.0 has been released
+>
+> In this release we have mostly focused on bugfixing and stability. We have switched to the new Flutter 2 framework and have done a lot of refactoring under the hood. The annoying freezing bug should now be fixed. Voice messages now have a new backend which should improve the sound quality and stability. There is now a more professional UI for editing aliases of a room. Users can now see a list of all aliases, add new aliases, delete them and mark one alias as the canonical (or main) alias. Some minor design changes and design fixes should improve the overall UX of the app exspecially on tablets.
+>
+> Version 0.30.0 will be the first version with arm64 support. You can download binaries from the CI and we will try to publish it on Flathub. Together with the new Linux Desktop Notifications feature, this might be interesting for the Librem 5 or the PinePhone. Sadly I don't own one of these very interesting devices. If you have one, I would very like to see some screenshots of it! :-)
+
+Additionally, [Shine](https://matrix.to/#/@shiny:shine.horse) told us:
+
+> Fluffychat update: Native Fluffychat Linux build now works well on aarch64 devices!
+>
+> If you want to try the binary from CI, keep in mind that GDK_GL=gles needs to be set to force it to use the OpenGL ES. Flatpak build on Flathub already has it set up and works out of the box.
+>
+> Some distributions can have issues with input fields and virtual keyboard, making it look like the input is set up as right-to-left. To my understanding, it's an issue of certain older GTK versions with Flutter.
+
+![2021-05-07-El6cc-fluffychat_pinetab.jpg](/blog/img/2021-05-07-El6cc-fluffychat_pinetab.jpg)
+
+Nice sticker
+
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) told us:
+
+> Nheko now should stop showing you actions, that you can't do anyway, because that is confusing and useless. This includes the following and more:
+>
+> * Invite members, if you have no invite permissions.
+>
+> * Delete messages, if you don't have redaction permissions.
+> * Send a message, reply to one, edit one and more, if you can't even send the message!
+>
+> Tell us, if we missed something or we removed an action, that you actually have permissions to do!
+>
+> Apart from that we also started working on some of the features for the next major release. That release will mostly focus on bringing End-to-End-Encryption out of beta. As a first step, Nheko now shows if a message was sent from a verified device or not. This has 3 different trust levels:
+>
+> * **green**: The message is from a device you verified. Either by device verification or cross signing.
+>
+> * **greyish**: The message is from an unverified device, but that user has never rotated their master signing key and has cross-signed that device. As such we can probably assume, that this is a trusted device. For extra safety, you should of course verify that user, but if it is just an internet personality you will never meet, you trust you are speaking to the right party anyway and can't really verify them anyway, since you don't know how they look either! We don't want to prompt users with red warning signs in such cases, which will lead to them not doing verification properly, because they just want the red marks to go away. Many people are also not interested in the MITM aspects of E2EE. We think this is an okay tradeoff, but any feedback is welcome of course! This is basically Trust On First Use (TOFU), if you heard that term before.
+> * **red**: The device is not verified. This can have a few reasons. Either we verified the user, but they didn't verify that device. Or we didn't verify that user and they have changed their master key at some point. Or the signatures for that device are wrong, etc. If you see such a device, you should probably investigate, why that is the case.
+>
+> These are some biggish changes, so if you experience issues, tell us in [#nheko:nheko.im](https://matrix.to/#/#nheko:nheko.im)!
+
+
+
+### Fractal
+
+[Alexandre Franke](https://matrix.to/#/@afranke:matrix.org) reported:
+
+> Hot on the heels of [our previous announcement](https://matrix.org/blog/2021/04/23/this-week-in-matrix-2021-04-23#fractal) and building on the fresh foundations of our rewrite, Julian got busy on room history. It now appears when a room is selected in the sidebar! To make that selection easier, room filtering in the sidebar [has been implemented by new contributor Veli Tasali](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/726). Once a room is selected and displayed, messages can even be sent to them! Sounds like we’re done and the client is ready… SHIP IT! Not really though, as it’s still very basic, but at least [the bare minimum to make it actually usable is now here](https://gitlab.gnome.org/GNOME/fractal/-/issues/720).
+>
+> → Insert screencast here
+>
+> As a nice bonus, we do [lazy loading](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/730), and [rooms are now added to the sidebar in batch](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/737) on startup to ensure good performances. The sidebar also got some refinements from Kévin ([!732](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/732) and [!736](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/736)).
+>
+> Finally Veli also helped us get [the docs for fractal-next published](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/722), lowering the barrier to entry for other new contributors. They are available at https://gnome.pages.gitlab.gnome.org/fractal/fractal/.
+>
+> For further details, Julian published [a technical overview of the internals of the new codebase](https://blogs.gnome.org/jsparber/2021/05/07/the-internals-of-fractal-next/).
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lCQZoKDzsAI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Element Clients
+
+Updates provided by the teams
+
+**Delight**
+
+
+
+*   We’ve been shepherding [MSC1772](https://github.com/matrix-org/matrix-doc/pull/1772) into the spec which has now exited final comment period and merged!
+*   Alongside, we’ve also been iterating on the Spaces implementations all round in preparation for wider testing soon, which has included
+    *   Iterating on filtering on Web to filter all Spaces
+    *   Iterating on logic for showing notification badges to avoid single DMs spawning multiple badges
+    *   Iterating on ‘Home’ to instead behave more like ‘All’
+    *   Iterating on implementations across the web, iOS, Android & Synapse to use stable prefixes
+    *   & lots of other small tweaks
+
+**Web**
+
+
+
+*   Element Web 1.7.27-rc.1 on staging
+    *   Added localisation support to the desktop layer (for menu items etc.)
+    *   Fixed encrypted search indexing on Windows
+    *   Hardware media keys are now ignored, so they'll go to other apps as intended
+*   On develop
+    *   Calling architecture reworked to support multiple streams, please report any issues
+*   1.7.27 release planned for Monday 
+
+**iOS**
+
+*   [1.3.6](https://github.com/vector-im/element-ios/releases) is in review for the App Store. We have polished and fixed several issues on 1:1 and group calls. The release contains fixes for several bugs and crashes.
+
+Very excited about the Spaces progress! Looks like everything that I found in recent testing is fixed!
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### Trixnity released
+
+[Benedict](https://matrix.to/#/@benedict:imbitbu.de) announced:
+
+> [Trixnity](https://github.com/benkuly/trixnity) finally got released this week. It's a Kotlin multiplatform Matrix SDK for high level access to Client-Server API and Appservice API. It has all (and some more) features from [matrix-spring-boot-sdk](https://github.com/benkuly/matrix-spring-boot-sdk) which is based on Trixnity now (an update for that will be released soon). Trixnity can currently be used on JVM and JS as platform (Native is not working yet). It is also very customizable by adding custom room and state event types.
+
+
+## Dept of Interesting Projects 🛰️
+
+### Cactus Comments 🌵
+
+[Asbjørn](https://matrix.to/#/@asbjorn:olli.ng) offered:
+
+> Cactus Comments is a federated comment system for the open web built on Matrix.
+>
+> We released the Cactus Comments Web Client v0.9.0!
+>
+> This version introduces a display name field for guest users, so guest users finally have sensible names.
+>
+> It also brings the option to use [HTML data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) for configuration.
+>
+> * Comment sections can now be initialized using `data-*` attributes on the `script` tag (Thanks to @NicolaiSoeborg for !5).
+>
+> * Allow using strings for any config parameter, including booleans and numbers.
+> * Users can now set a displayname when commenting as a guest.
+>
+> * Some styling improvements for text inputs.
+>
+> [/ipns/latest.cactus.chat](https://latest.cactus.chat) is updated to point to the latest release, so sites linking there should already be using the new version.
+>
+> Come play with the demo: [https://cactus.chat/demo](https://cactus.chat/demo)
+>
+> Join our Matrix room: [#cactus:cactus.chat](https://matrix.to/#/#cactus:cactus.chat)
+
+
+
+### Phonehome stats viz
+
+[Matthew](https://matrix.to/#/@matthew:matrix.org) reported:
+
+> I did a video a few months back trying to show the physical layout of Matrix over the years by looking at the phonehome stats and the number of active users per server (showing full-mesh edges between the top 100 servers, heatmapped by how busy the servers were at either end of the edge).  There was a bug in the phonehome stats during 2017, but it's still fairly cool...
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TnbT1Grbf9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|kapsi.fi|611|
+|2|queersin.space|623.5|
+|3|maescool.be|678.5|
+|4|chatcloud.net|702.5|
+|5|woefdram.nl|743|
+|6|matrix.sp-codes.de|769.5|
+|7|dodsorf.as|788|
+|8|wallace.sh|803|
+|9|kittenface.studio|1180|
+|10|dendrite.foxomy.com|1320|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|dendrite.thomcat.rocks|493|
+|2|dendrite.s3cr3t.me|625.5|
+|3|dendrite01.fiksel.info|1086|
+|4|dendrite.foxomy.com|1347|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
