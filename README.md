@@ -5,12 +5,11 @@ To discuss maintenance of this site, please come talk to the team in [#matrix.or
 ### How to build
 
 0. Make sure you have the prerequisites:
-   - npm
-   - [Gatsby](https://www.gatsbyjs.org/): `npm i -g gatsby-cli`
+   - Node.js and npm
    - `git clone https://github.com/matrix-org/matrix.org && cd matrix.org`
 1. `cd gatsby`
 2. Run `npm i` to install dependencies
-3. `gatsby develop`
+3. `npm run develop` - It will take a while on your first build
 
 Now you can visit the page you want to work on in the browser. For example: http://127.0.0.1:8000/docs/projects/try-matrix-now/
 
