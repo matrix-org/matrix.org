@@ -35,7 +35,7 @@ const GuidesDevelop = ({ data }) => {
 
   }
   addArticleToGroup("Introduction", "Enter the Matrix", "Brendan Abolivier", "https://brendan.abolivier.bzh/enter-the-matrix/");
-  addArticleToGroup("Introduction", "Obtain Access Tokens from Riot", "TravisR", "https://t2bot.io/docs/access_tokens/");
+  addArticleToGroup("Introduction", "Obtain Access Tokens from Element", "TravisR", "https://t2bot.io/docs/access_tokens/");
   addArticleToGroup("Introduction", "Testing the matrix.org client-server API using cURL", "Rick Cogley", "https://gist.github.com/RickCogley/69f430d4418ae5498e8febab44d241c9");
   addArticleToGroup("Encryption", "An introduction to end-to-end encryption in Matrix and Riot", "Hubert Chathi", "https://www.uhoreg.ca/blog/20170910-2110");
   return (<Layout navmode="develop">
