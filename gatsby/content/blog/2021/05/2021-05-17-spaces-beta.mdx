@@ -15,7 +15,7 @@ and curate sets of users and rooms in Matrix. [Back in Nov
 2017](https://medium.com/@RiotChat/communities-aka-groups-are-here-announcing-riot-web-0-13-riot-ios-0-6-and-riot-android-0-7-4-933cb193a28e)
 we added 'groups' (aka 'communities') as a custom mechanism for this -
 introducing identifiers beginning with a + symbol to represent sets of rooms
-and users, like  [+matrix:matrix.org](https://matrix.to/#/+matrix:matrix.org].
+and users, like [+matrix:matrix.org](https://matrix.to/#/+matrix:matrix.org).
 
 However, it rapidly became obvious that Communities had some major
 shortcomings.  They ended up being an extensive and entirely new API surface
@@ -64,8 +64,8 @@ space-based access controls such as setting powerlevels in rooms based on
 space membership
 ([MSC2962](https://github.com/matrix-org/matrix-doc/blob/matthew/msc2962/proposals/2962-spaces-access-control.md))
 or limiting who can join a room based on their space membership
-([MSC3083](https://github.com/matrix-org/matrix-doc/blob/clokep/restricted-rooms/proposals/3083-restricted-rooms.md))
-- but these will be coming asap.  We also need to figure out how to implement
+([MSC3083](https://github.com/matrix-org/matrix-doc/blob/clokep/restricted-rooms/proposals/3083-restricted-rooms.md)) -
+but these will be coming asap.  We also need to figure out how to implement
 Flair on top of Spaces rather than Communities.
 
 This is also a bit of a turning point in Matrix's architecture: we are now
@@ -78,8 +78,8 @@ rooms; Threads can be stored in rooms
 ([MSC2836](https://github.com/matrix-org/matrix-doc/pull/2836)); Extensible
 Profiles are proposed as rooms too
 ([MSC1769](https://github.com/matrix-org/matrix-doc/pull/1769)).  As such,
-this pushes us towards ensuring rooms are as lightweight as possible in Matrix
-- and that things like sync and changing profile scale independently of the
+this pushes us towards ensuring rooms are as lightweight as possible in Matrix -
+and that things like sync and changing profile scale independently of the
 number of rooms you're in.  Spaces effectively gives us a way of creating a
 global decentralised filesystem hierarchy on top of Matrix - grouping the
 existing rooms of all flavours into an epic multiplayer tree of realtime data.
