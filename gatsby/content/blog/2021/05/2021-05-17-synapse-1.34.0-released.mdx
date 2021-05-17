@@ -8,7 +8,7 @@
 
 Synapse 1.34.0 is now available, and it's loaded with new features and performance improvements.
 
-> **Note:** This release removes the `room_invite_state_types` configuration option. If you've customized that for your homeserver, please review the [Upgrade Notes](https://github.com/matrix-org/synapse/blob/v1.34.0/UPGRADE.rst#upgrading-to-v1340).
+> **Note:** This release deprecates and replaces the `room_invite_state_types` configuration option. If you've customized that for your homeserver, please review the [Upgrade Notes](https://github.com/matrix-org/synapse/blob/v1.34.0/UPGRADE.rst#upgrading-to-v1340).
 >
 > We've also marked the v1 room deletion Admin API as deprecated. Instead of sending a `POST` to a path ending in `/delete`, administrators are encourage to instead send an HTTP `DELETE` to `/_synapse/admin/v1/rooms/<room_id>`. Thanks to ThibF for implementing this ([#9889](https://github.com/matrix-org/synapse/pull/9889)).
 
