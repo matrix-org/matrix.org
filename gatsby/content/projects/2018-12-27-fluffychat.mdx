@@ -3,14 +3,14 @@ layout: projectimage
 title: FluffyChat
 categories: 
  - client
-thumbnail: https://christianpauly.gitlab.io/fluffychat-website/assets/images/screenshot.png
+thumbnail: /docs/projects/images/fluffychat-screenshot.png
 description: Cute instant messaging app for all platforms.
 author: Christian Pauly
 maturity: Released
 language: Flutter
 license: AGPL-3.0-only
-repo: https://gitlab.com/ChristianPauly/fluffychat-flutter
-screenshot: https://christianpauly.gitlab.io/fluffychat-website/assets/images/screenshot.png
+repo: https://gitlab.com/famedly/fluffychat
+screenshot: /docs/projects/images/fluffychat-screenshot.png
 room: "#fluffychat:matrix.org"
 slug: fluffychat
 featured: true
@@ -19,12 +19,14 @@ platforms:
     - Android
     - iOS
     - Web
+    - Linux
+    - Mac
+    - Windows
     - Ubuntu Touch (Old Qml version)
-    - Linux (Old Qml version)
 features:
     Room directory: yes
-    Room tag showing: no
-    Room tag editing: no
+    Room tag showing: Predefined
+    Room tag editing: Predefined
     Search joined rooms: Partial
     Room user list: yes
     Display Room Description: yes
@@ -41,13 +43,18 @@ features:
     Attachment uploading: yes
     Attachment downloading: yes
     Send stickers: no
-    Send formatted messages (markdown): no
+    Send formatted messages (markdown): yes
     Rich Text Editor for formatted messages: no
-    Display formatted messages: no
+    Display formatted messages: yes
     Redacting: yes
     Multiple Matrix Accounts: no
     New user registration: yes
     voip: no
+    Reactions: yes
+    Message editing: yes
+    Room upgrades: no
+    Localisations: 20
+    SSO Support: no
 ---
 
-FluffyChat is a Flutter-based client with a simple and clean UI. The focus is on replacing common messenger apps like WhatsApp or Telegram on all major platforms. Find more info on the website: <http://fluffy.chat>
+FluffyChat is a Flutter-based client with a simple and clean UI. The focus is on replacing common messenger apps like WhatsApp or Telegram on all major platforms. Find more info on the website: <https://fluffychat.im>

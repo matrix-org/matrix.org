@@ -9,32 +9,28 @@ End-to-End encryption describes a scenario where a message is encrypted at the d
 
 #### What is the status of E2E?
 
-End-to-End Encryption is currently in late beta. Rooms can have encryption enabled, but it is not by default.
+End-to-End Encryption is fully supported in Matrix. New rooms have encryption enabled by default, and all existing rooms can optionally have End-to-End Encryption turned on.
 
 #### Which matrix clients support E2E?
 
 End-to-end encryption is currently available in:
 
-* [Riot Web](https://github.com/vector-im/riot-web/)
-  * and [matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk)
-  * and [matrix-react-sdk](https://github.com/matrix-org/matrix-react-sdk)
-* [Riot Android](https://github.com/vector-im/riot-android/)
-  * and <a href="https://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a>
-* [Riot iOS](https://github.com/vector-im/riot-ios/)
-  * and [matrix-ios-sdk](https://github.com/matrix-org/matrix-ios-sdk)
-* <a href="https://github.com/neilalexander/seaglass">Seaglass</a>
-* <a href="https://github.com/Nheko-Reborn/nheko">nheko</a>
-* [Mirage](https://github.com/mirukana/mirage)
-* there is a [weechat plugin available](https://github.com/poljar/weechat-matrix) (Python protocol script)
+- [Element Web](https://github.com/vector-im/element-web/)
+  - and [matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk)
+  - and [matrix-react-sdk](https://github.com/matrix-org/matrix-react-sdk)
+- [Element Android](https://github.com/vector-im/element-android/)
+  - and <a href="https://github.com/matrix-org/matrix-android-sdk2">matrix-android-sdk2</a>
+- [Element iOS](https://github.com/vector-im/element-ios/)
+  - and [matrix-ios-sdk](https://github.com/matrix-org/matrix-ios-sdk)
+- [Nheko](https://github.com/Nheko-Reborn/nheko)
+- [Mirage](https://github.com/mirukana/mirage)
+- [FluffyChat](https://fluffychat.im/en/) for Android, iOS, Desktop and Web
+- [Seaglass](https://github.com/neilalexander/seaglass)
+- there is a [weechat plugin available](https://github.com/poljar/weechat-matrix) (Python protocol script)
 
 E2E is available in [matrix-nio](https://github.com/poljar/matrix-nio), a Client-Server library for Python.
 
-All clients (and SDK/libs) can benefit from E2EE by using [pantalaimon
-](https://github.com/matrix-org/pantalaimon), which functions as a proxy daemon.
-
-#### Why does Riot say "Send a message (unencrypted)" in the text field?
-
-If a room is not using End-to-End Encryption, Riot will signal this by reminding you before you type a message. Note that Matrix messages are still transmitted using HTTPS: "unencrypted" in this case means that the messages are stored unencrypted on participating servers.
+All clients (and SDK/libs) can benefit from E2EE by using [pantalaimon](https://github.com/matrix-org/pantalaimon), which functions as a proxy daemon.
 
 #### Why are large public rooms like #matrix:matrix.org not encrypted?
 

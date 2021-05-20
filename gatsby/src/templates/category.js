@@ -13,10 +13,10 @@ const Category = ({ pageContext: { category, limit, skip, currentPage }, data: {
   const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${category}"`
 
   const prevTitle = `Page ${currentPage - 1}`
-  const prevSlug = currentPage === 2 ? `blog/category/${_.kebabCase(category)}/` : `blog/posts/${currentPage - 1}`
+  const prevSlug = currentPage === 2 ? `/blog/category/${_.kebabCase(category)}/` : `/blog/posts/${currentPage - 1}`
   const prev = currentPage === 1 ? null : { frontmatter: { title: prevTitle }, fields: { slug: prevSlug } }
   const nextTitle = `Page ${currentPage + 1}`
-  const nextSlug = `blog/category/${_.kebabCase(category)}/${currentPage + 1}`
+  const nextSlug = `/blog/category/${_.kebabCase(category)}/${currentPage + 1}`
 
   return (
     <Layout navmode="blog">

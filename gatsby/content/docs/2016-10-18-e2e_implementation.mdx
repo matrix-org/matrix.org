@@ -2,6 +2,7 @@
 layout: post
 title: End-to-End Encryption implementation guide
 section: Encryption
+sort_order: 300
 ---
 
 ## Implementing End-to-End Encryption in Matrix clients
@@ -540,7 +541,7 @@ verified device.
 
 Homeservers must not be able to read files shared in encrypted rooms.
 Clients should implement a strategy described [in the
-spec]{.title-ref}.
+spec](https://matrix.org/docs/spec/client_server/r0.4.0#sending-encrypted-attachments).
 
 Currently, the files are encrypted using AES-CTR, which is not included
 in libolm. Clients have to rely on a third party library.

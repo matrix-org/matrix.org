@@ -13,10 +13,15 @@
 /projects-gen/
 /unstyled_docs/api
 /unstyled_docs/howtos/client-server.html
-/unstyled_docs/spec/appendices.html
 /unstyled_docs/spec/*/unstable.html
 
 /node_modules
 
 # Ignore Mac DS_Store files
 .DS_Store
+
+# Ignore build files for implementation guide books.
+/implementation-guides/*/book/
+/implementation-guides/*/examples/target/
+/implementation-guides/*/examples/Cargo.lock
+/implementation-guides/*/target

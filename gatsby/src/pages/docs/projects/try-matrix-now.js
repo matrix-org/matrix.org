@@ -41,9 +41,9 @@ const TryMatrixNow = ({data}) => {
             <div className="mxgrid_item33">
               <div className="mxgrid__item__bg mxgrid__item__bg--clear">
                 <h4 className="mxgrid__item__bg__hx">
-                    <a href="/docs/projects/client/riot">Riot</a>
+                    <a href="/docs/projects/client/element">Element</a>
                 </h4>
-                <p className="mxgrid__item__bg__p">If you like glossy and feature-rich web clients, try Riot. Available <a href="https://riot.im/app">on the web</a> and as a <a href="https://riot.im/desktop.html">desktop client</a>.</p>
+                <p className="mxgrid__item__bg__p">If you like glossy and feature-rich web clients, try Element. Available <a href="https://app.element.io/">on the web</a> and as a <a href="https://element.io/get-started">desktop client</a>.</p>
                 <div className="mxgrid__item__bg__vert">
                     <img src="/docs/projects/images/riot-web-featured.png" alt="" className="mxgrid__item__bg__img" />
                 </div>
@@ -51,10 +51,10 @@ const TryMatrixNow = ({data}) => {
             </div>
             <div className="mxgrid_item33">
               <div className="mxgrid__item__bg mxgrid__item__bg--clear">
-                <h4 className="mxgrid__item__bg__hx">Riot for Android and iOS</h4>
-                <p className="mxgrid__item__bg__p"> Riot is available on <a href="/docs/projects/client/riot-android">Android</a> and <a href="/docs/projects/client/riot-ios">iOS</a></p>
+                <h4 className="mxgrid__item__bg__hx">Element for Android and iOS</h4>
+                <p className="mxgrid__item__bg__p">Element is available on <a href="/docs/projects/client/element-android">Android</a> and <a href="/docs/projects/client/element-ios">iOS</a></p>
                 <div className="mxgrid__item__bg__vert">
-                    <img src="/docs/projects/images/vector-android-featured.png" alt="" className="mxgrid__item__bg__img"/>
+                    <img src="/docs/projects/images/element-android-featured.png" alt="" className="mxgrid__item__bg__img"/>
                 </div>
               </div>
             </div>

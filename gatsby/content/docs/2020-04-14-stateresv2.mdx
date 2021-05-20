@@ -5,6 +5,7 @@ section: Homeserver Development
 author: Neil Alexander Twigg
 slug: implementing-stateres
 showTableOfContents: false
+sort_order: 1000
 ---
 
 So you don't have a PhD in Mathematics and you want to implement [State
@@ -307,10 +308,10 @@ while len(incoming_edges) > 0:
         if count == 0:
             output_event.prepend(event_map[id])
 
-        for each event_map[id].auth_events as auth_event:
-            incoming_edges[auth_event.event_id] -= 1
+            for each event_map[id].auth_events as auth_event:
+                incoming_edges[auth_event.event_id] -= 1
 
-        remove(incoming_edges, id)
+            remove(incoming_edges, id)
 ```
 
 Each time we add a node into the output list, we can "remove" its outgoing

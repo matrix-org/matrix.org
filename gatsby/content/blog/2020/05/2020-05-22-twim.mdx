@@ -1,0 +1,333 @@
+---
+date: '2020-05-22'
+title: 'This Week in Matrix 2020-05-22'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2020-05-22-plot.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7iIuba5IYYc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of *Status of Matrix* 🌡
+
+### Automattic invests in New Vector
+
+Huge news, [read more detail here](https://matrix.org/blog/2020/05/21/welcoming-automattic-to-matrix)! Check out Matrix Live with Matt Mullenweg above, too.
+
+[Matthew](https://matrix.to/#/@matthew:matrix.org) announced:
+
+> Automattic invested in New Vector in order to support Matrix, and are also hiring Matrix Integration Engineers! <https://automattic.com/work-with-us/matrix-integrations-engineer/>
+
+Do check out the job description - this is a really fascinating role! If only I didn't have a job already...
+
+## Dept of Spec 📜
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) reported:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals.>
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * [MSC2526: Add ability to delete key backups](https://github.com/matrix-org/matrix-doc/pull/2526)
+> * [MSC2472: Symmetric SSSS](https://github.com/matrix-org/matrix-doc/pull/2472)
+>
+> **MSCs in Final Comment Period:**
+>
+> * [MSC2540: Stricter event validation: JSON compliance](https://github.com/matrix-org/matrix-doc/pull/2540) (merge)
+> * [MSC2240: Room version 6](https://github.com/matrix-org/matrix-doc/pull/2240) (merge)
+>
+> * [MSC2209: Alter auth rules to check notifications in m.room.power_levels](https://github.com/matrix-org/matrix-doc/pull/2209) (merge)
+>
+> **New MSCs:**
+>
+> * [MSC2557: Proposal to clarify spoilers](https://github.com/matrix-org/matrix-doc/pull/2557)
+> #### Spec Core Team
+>
+> In terms of Spec Core Team MSC focus for this week, the room v6 MSCs from last week's focus have all reached FCP 🎉 So we're continuing on with the E2E MSCs; [MSC2366](https://github.com/matrix-org/matrix-doc/issues/2366) (verification flows) and [MSC2399](https://github.com/matrix-org/matrix-doc/issues/2399) (UISI messaging).
+>
+> We'll soon be releasing Federation API r0.1.3 and Client-Server API r0.6.1, which brings room v6.
+
+Interestingly, this was produced with [some new automation](https://github.com/anoadragon453/twim-spec-entry-generator).
+
+![MSC status chart](/blog/img/2020-05-22-plot.png)
+
+As if this wasn't enough, [sorunome](https://matrix.to/#/@sorunome:sorunome.de) reported:
+
+> heya twimers who were excited about the emotes msc thing, soru added a few more things and it'd be cool if someone could cross-check it <https://github.com/matrix-org/matrix-doc/pull/2545>
+
+## Dept of Servers 🏢
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
+
+[timo](https://matrix.to/#/@timo:koesters.xyz) offered:
+
+> This week I finished support for end to end encryption and also implemented media uploading, downloading and thumbnail generation! See it in action here:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HoBslDtqC1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> If you want to see it with your own eyes, create an account via <https://riot.conduit.rs>. We hope to push our changes to Riot upstream soon, so you can use your own Riot to connect.
+>
+> Finally, I want to thank my kind supporters on [Liberapay](https://liberapay.com/timokoesters).
+
+### P2P/Dendrite
+
+Dendrite is a next-generation homeserver written in Go
+
+[kegan](https://matrix.to/#/@kegan:matrix.org) told us:
+
+> Dendrite has seen a number of improvements this week, including:
+>
+> * Backfill will now backfill more messages than before, resulting in a snappier experience when scrolling back in a room.
+>
+> * Dendrite is now compliant with Synapse on backfill behaviour.
+> * Inline CS API filters will now honour the timeline `limit` value.
+>
+> * Making more Sytests pass.
+> * Modifications to how Dendrite tracks memberships.
+>
+> * Addition of an `-api` flag to expose internal HTTP APIs.
+> * Clearer separation of internal/external HTTP APIs.
+>
+> This has culminated in the following values for Are We Synapse Yet:
+>
+> ```
+> Client-Server APIs: 34% (227/672 tests) - up from 33%
+> Federation APIs: 34% (35/103 tests) - up from 27%
+> ```
+>
+> As for P2P....
+>
+> #### p2p.riot.im v0.1.0 released!
+>
+> This is a significant milestone because we now persist Dendrite databases to IndexedDB, greatly improving UX and giving users a consistent identity on the P2P network. In addition to this, the following changes have been made:
+>
+> * We now bake in the Dendrite commit SHA into the logs on startup.
+>
+> * Dendrite will now restart itself in case of panics/segfaults.
+>
+> Known issues with this release:
+>
+> * Databases are only flushed to IndexedDB every 30 seconds, making it possible to lose the most recent messages. This has a variety of effects on the Dendrite instance, but in testing it has been able to mostly gracefully recover. Messages that you have sent will be backfilled but will be redacted. Rooms you have joined will be forgotten, and you need to be kicked/re-invited/re-join for communication to be re-established. We're looking into a better flushing mechanism going forwards.
+>
+> * If you have previously visited p2p.riot.im, you **MUST** manually clear your service worker via `chrome:serviceworker-internals` or `about:debugging#/runtime/this-firefox` or else you might get errors such as "LinkError: WebAssembly.instantiate(): memory import 37 has no maximum limit, expected at most 4294967295".
+>
+> Please **do not rely** on p2p.riot.im to have any form of stability. Patch version bumps (0.1.0 -> 0.1.1) will not remove databases but minor version bumps will (0.1.1 -> 0.2.0) so we can continue to progress with Dendrite development at speed.
+
+### Synapse
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) announced:
+
+> Synapse [v1.13.0](https://github.com/matrix-org/synapse/releases/tag/v1.13.0) has landed with SSO fixes and support in User-Interactive Authentication sessions, the ability to run in worker mode using redis as an experimental backend (which will soon be considered the default transport for Synapse workers), the ability for server admins to define password policies, some alias bugfixes, some cross-signing fixes as well as many more continuous improvements.
+>
+> v1.14.0 in now in development, which will feature room v6 support.
+>
+> Be sure to read the [upgrade notes](https://github.com/matrix-org/synapse/blob/master/UPGRADE.rst) before upgrading.
+>
+> And btw, [upgrade notes](https://github.com/matrix-org/synapse/blob/master/UPGRADE.rst) != release notes
+
+## Synapse Deployment 📥
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) offered:
+
+> 1.13.0 tags for the [K8s-optimized docker image](https://github.com/ananace/matrix-synapse) have been pushed
+
+### Docker-matrix
+
+[Mathijs](https://matrix.to/#/@mathijs:matrix.vgorcum.com) announced:
+
+> The synapse 1.13.0 image including coturn and jemalloc is available as avhost/docker-matrix:v1.13.0, as always the RCs were (and are) available under mvgorcum/docker-matrix:v1.13.0rcX
+
+## Dept of Bridges 🌉
+
+### matrix-sms-bridge
+
+[Benedict](https://matrix.to/#/@benedict:imbitbu.de) told us:
+
+> I released a new matrix bridge called [matrix-sms-bridge](https://github.com/benkuly/matrix-sms-bridge), which allows you to bridge matrix rooms to SMS with one telephone number only. It is build on top of [matrix-spring-boot-sdk](https://github.com/benkuly/matrix-spring-boot-sdk) and written in kotlin. Currently, only modems via [Gammu](https://github.com/gammu/gammu) are supported, but new Providers (e.g. some REST API) can be added very easily.
+>
+> I'm going to integrate it into [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) to use it in my corporate-environment.
+
+### mautrix-telegram
+
+[Tulir](https://matrix.to/#/@tulir:maunium.net) said:
+
+> mautrix-telegram [v0.8.0-rc2](https://github.com/tulir/mautrix-telegram/releases/tag/v0.8.0-rc2) was released with some bugfixes and a basic implementation of Half-Shot's [bridge information state event MSC](https://github.com/matrix-org/matrix-doc/pull/2346). There will probably be at least one more RC with some more bugfixes in a week or two.
+
+### mautrix-facebook
+
+[Tulir](https://matrix.to/#/@tulir:maunium.net) said:
+
+> Last week I updated the messenger library [mautrix-facebook](https://github.com/tulir/mautrix-facebook) uses to the latest upstream version, which might have made things work a bit better. This week mautrix-facebook got some more bugfixes and also a new feature to bridge animated stickers on Messenger into gifs on Matrix.
+
+## Dept of Clients 📱
+
+### Fluffychat
+
+[sorunome](https://matrix.to/#/@sorunome:sorunome.de) reported:
+
+> Fluffychat Version 0.14.0 is out now and this is new:
+>
+> * Implement image viewer
+>
+> * Implement room pills
+> * New chat appBar showing presences and room avatars
+>
+> * Implement well-known support
+> * Minor fixes, refactoring and performance improvements
+>
+> F-Droid is already published here: <https://christianpauly.gitlab.io/fluffychat-website/en/fdroid.html>
+>
+> PlayStore and TestFlight will follow in the next few days.
+
+### Radical
+
+[stoic](https://matrix.to/#/@stoically:matrix.org) said:
+
+> Riot Web as Firefox Add-on? Yep, it's (still) a thing, now available as [version 1.6.1](https://addons.mozilla.org/en-US/firefox/addon/radical-web/) and supports search in encrypted rooms (via Radical Native)
+
+### Mirage
+
+[miruka](https://matrix.to/#/@miruka:matrix.org) offered:
+
+> [Mirage](https://github.com/mirukana/mirage) 0.5.0 has been released today:
+>
+> * Major performance improvements. Although there is still work to be done, such has persisting client state between restarts to avoid initial syncs everytime, accounts will hundreds of rooms should now be able to finish loading and no longer take your entire RAM and CPU until everything freezes
+>
+> * Rooms with unread messages or mentions for your user (currently only those received while the client is running) will be highlighted and sorted first 
+>
+> * New UI component allowing you to quickly jump between accounts in the room list, and always keep an eye how many total unread messages or mentions you have 
+>
+> * Messages can now be replied to
+>
+> * Room members can now be kicked and banned 
+>
+> * New keybinds for jumping between accounts, cycling through unread rooms, replying to messages and opening links in a message
+>
+> * Kinetic scrolling can now be disabled, this should fix scrolling for some trackpads incorrectly handled by Qt
+>
+> * The order in which accounts are shown in the side pane can now be customized
+>
+> * And a lot more, see [full changelog](https://github.com/mirukana/mirage/releases/tag/v0.5.0)
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) announced:
+
+> * lkito has been contributing this week to Nheko as part of his homework for university or so? Anyway, he added an option to highlight whatever message you are currently hovering over, so that you have an easier time locating the proper timestamps and buttons for that specific message. He's now working through a few other issues to improve his coding skills, like optionally having big emojis in the timeline or showing tooltips to explain the settings Nheko has.
+>
+> * You can now set a /roomnick
+> * You can now tag rooms using the room context menu. You can assign multiple tags and create new tags as you like. This helps organizing your rooms, since Nheko supported filtering you room list using tags for a few years already, but until now you couldn't assign them.
+>
+> * red_sky has been tying up the loose ends for reaction support. Once that is done, we'll release 0.7.2
+
+### RiotX Android
+
+[valere](https://matrix.to/#/@valere35:matrix.org) offered:
+
+> The team is working on getting feature parity with old-riot
+>
+> - Identity server support has been merged to develop
+> - Switch language
+>
+> 1:1 Voip calls, Widgets, and room attachement list  screen (media, files) are work in progress, and coming next
+>
+>
+> #### Matrix Android SDK
+>
+> v0.9.35 has been released
+> - Fixes Favs bug (no more favs after update)
+>
+> => Riot android release coming soon with SDK update
+
+### Riot-iOS
+
+From Manu:
+
+> This week, we released Riot-iOS [0.11.5](https://github.com/vector-im/riot-ios/releases/tag/v0.11.5) with the support of the new version of SAS (emoji) verification. This release contains also a fix for share and Siri extensions to make them compatible with cross-signing.  
+> We continued to make progress on the full support of the iOS13 SDK. The new push extension is almost here but it is tricky to make it work as VoIP pushes we abused for years.
+
+## Dept of SDKs and Frameworks 🧰
+
+### Ruby
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) told us:
+
+> Just released version 2.1.0 of the [Ruby SDK](https://github.com/ananace/ruby-matrix-sdk), headlines changes are the addition of request IDs (and timing) to the debug output to make request/response tracking easier, as well as finalized support for extending both the low-level and higher-level clients with MSCs - along with a much improved implementation for MSC2108 (Sync over SSE). Also included are some bug fixes, as usual, as well as many improvements to the provided example bot.
+>
+> You can still find it on rubygems as `matrix_sdk`, and feel free to drop by [#ruby-matrix-sdk:kittenface.studio](https://matrix.to/#/#ruby-matrix-sdk:kittenface.studio) for questions, comments, or just general discussion.
+
+### Ruma
+
+Ruma is a Rust project to create a comprehensive set of APIs for Matrix. Previously there was a Ruma homeserver project.
+
+[jplatte](https://matrix.to/#/@jplatte:matrix.org) told us:
+
+> #### Rust bits
+>
+> This week, we worked on [support for endpoints with multiple values for one query parameter](https://github.com/ruma/ruma-serde/pull/5) (in a [livestream](https://www.twitch.tv/videos/624060294)), [federation endpoints for joining rooms](https://github.com/ruma/ruma-federation-api/pull/3) and the next revision of ruma-events [[1](https://github.com/ruma/ruma-events/pull/87), [2](https://github.com/ruma/ruma-events/pull/88)] (that will, once finished, allow us to finally support redacted events properly, amongst other things). We also fixed two [small](https://github.com/ruma/ruma-client-api/issues/170) [bugs](https://github.com/ruma/ruma-client-api/issues/171) in ruma-client-api. Just today, we released [ruma-client-api 0.9.0](https://github.com/ruma/ruma-client-api/releases/tag/0.9.0) and ruma-client 0.4.0 (sorry, no change log ☹︎).
+>
+> #### [www.ruma.io](https://www.ruma.io/)
+>
+> Our website has been revamped! It has been ported from [Middleman](https://middlemanapp.com/) to [Zola](https://getzola.org/) and has received some style improvements. RSS support has temporarily been removed, but you can expect it to be restored along with some content updates soon.
+
+## Dept of Guides 🧭
+
+### New documentation from Nataraj
+
+[Nataraj](https://matrix.to/#/@dhyan:nataraj.su) offered:
+
+> I have written a guide about configuring bridge to FreeNode: <https://github.com/matrix-org/matrix-appservice-irc/wiki/Setting-Up-Bridge-To-FreeNode>
+>
+> And wrote a HowTo for installation matrix-appservice-irc on Debian: <https://wiki.debian.org/matrix-appservice-irc>
+
+## Dept of Tulir 🇫🇮
+
+A rather infrequent section.
+
+[Tulir](https://matrix.to/#/@tulir:maunium.net) offered:
+
+> Since multiple people have asked me about it, I now have a [GitHub sponsor thing](https://github.com/sponsors/tulir/) where you can get a fancy flair in my rooms and access to a highly exclusive sponsor room.
+>
+> I didn't have any public donation things earlier due to the Finnish money collection act, but I realized that I can bypass that by selling things (like access to a Matrix room) instead of it only being a donation.
+>
+> Completely unrelated to that: Following the bridge info state event implementation in my bridges, I've made a PR to Riot web to fix some bugs related to showing the bridge info there: <https://github.com/matrix-org/matrix-react-sdk/pull/4621>
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|fairydust.space|329|
+|2|envs.net|429|
+|3|maunium.net|473.5|
+|4|danielvinci.com|540|
+|5|maescool.be|565|
+|6|matrix.vgorcum.com|614|
+|7|aragon.sh|774|
+|8|dmnd.sh|1448|
+|9|utzutzutz.net|1689.5|
+|10|kittenface.studio|2009.5|
+
+## Final thoughts 💭
+
+Last week we featured some Sytest output and compared the results between homeservers, which was fun! We'll bring this back as an occasional feature.
+
+I didn't feature this last month: [GNU Radio are now using Matrix](https://www.gnuradio.org/blog/2020-04-27-moving-to-the-matrix/).
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: <https://matrix.to/#/#TWIM:matrix.org>

@@ -33,6 +33,52 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+.anchor {
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+@media (max-width: 767px) {
+  .anchor {
+    margin-left: 0;
+  }
+}
+
+p:not(:last-child),
+blockquote:not(:last-child),
+figure:not(:last-child),
+ul:not(:last-child),
+ol:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+/* Reset webflow.js defaults */
+p:last-child,
+blockquote:last-child,
+figure:last-child,
+ul:last-child,
+ol:last-child {
+  margin-bottom: 0;
+}
+
+blockquote {
+  /* Add some space for the heading anchors to hang off into */
+  padding-left: 28px;
+
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Override the media query which inlines the anchor again.
+   In a blockquote, we still have space on the left for it
+   to float off to the side.
+*/
+blockquote .anchor {
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+
 .mximagine {
   font-size: 18px;
   font-weight: normal;
@@ -199,6 +245,7 @@ div.title {
 .mxcontent__main__doc h2, .mxcontent__main__doc h3, .mxcontent__main__doc h4 {
   padding-top: 75px;
   margin-top: -75px;
+  position: initial !important;
 }
 
 .green {
@@ -303,5 +350,48 @@ label {
 
   .bridgesToc {
     display: none;
+  }
+}
+
+/* notyf ratings box */
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  cursor: pointer;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
+.verticalHelper {
+  position: relative;
+  height: 100%;
+  min-height: 250px;
+}
+.verticalHelperImage {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+@media (max-width: 767px) {
+  .verticalHelper {
+  min-height: 150px;
+  }
+}
+
+@media (max-width: 479px) {
+  .verticalHelper {
+  min-height: 100px;
   }
 }

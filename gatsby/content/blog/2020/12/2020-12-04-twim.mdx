@@ -1,0 +1,302 @@
+---
+date: '2020-12-04'
+title: 'This Week in Matrix 2020-12-04'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2020-12-04-snowman.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qnHAAkY2Cx0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+In which Nad & Matthew go through the new consolidated Element roadmap at <https://github.com/vector-im/roadmap/projects/1>
+
+## Dept of *Status of Matrix* 🌡️
+
+### Open Tech Will Save Us 9
+
+Taking place NEXT WEDNESDAY, the ninth edition of my favourite monthly Open Tech-themed live video broadcast! Subscribe to the calendar on <https://matrix.org/open-tech-will-save-us/> and check out the lineup:
+
+* **Angie Gaudion**, Coordinatrice at CHATONS, presenting Mobilizon: a new libre events management tool <https://joinmobilizon.org/en/>.  
+* **Ben Francis**, Founder at **Krellian**, presenting the relaunch of WebThings (previously from Mozilla)
+* **Nad Chishtie**, Product Lead at Element, presents Matrix Spaces: a new vision for room groups in Matrix
+
+
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) offered:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals>.
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * _No MSCs were merged this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **New MSCs:**
+>
+> * [MSC2883: \[WIP\] Matrix-flavoured MLS](https://github.com/matrix-org/matrix-doc/pull/2883)
+> * [MSC2882: \[WIP\] Tempered Transitive Trust](https://github.com/matrix-org/matrix-doc/pull/2882)
+>
+> #### Spec Core Team
+>
+> In terms of Spec Core Team MSC focus for this week, we've mostly been focusing on implementation. Thus the same 3 MSCs are in focus: [MSC2844](https://github.com/matrix-org/matrix-doc/issues/2844) (global versioning), [MSC2366](https://github.com/matrix-org/matrix-doc/issues/2366) (ready and done in key verification), and [MSC2790](https://github.com/matrix-org/matrix-doc/issues/2790) (modal widgets).
+
+![2020-12-04-3rO5x-stacked_area_chart.png](/blog/img/2020-12-04-3rO5x-stacked_area_chart.png)
+
+Anoa also provided a [revised, more festive version of the chart](/blog/img/2020-12-04-snowman.png), but it's too jolly to render inline, so needed to be linked instead.
+
+### New spec platform
+
+[wbamberg](https://matrix.to/#/@wbamberg:matrix.org) offered:
+
+> Still at <https://adoring-einstein-5ea514.netlify.app/>
+>
+> * Dean has started work on design updates for the spec
+>
+> * We've written replacements for all the templates and updated all template calls
+> * We've implemented a mechanism for representing different spec versions and changelogs
+
+Seriously progressing! Much more readable than what we have.
+
+## Dept of Servers 🏢
+
+### Dendrite / gomatrixserverlib
+
+Dendrite is a next-generation homeserver written in Go
+
+[Neil Alexander's Dendrite mxid](https://matrix.to/#/@neilalexander:dendrite.neilalexander.dev) announced:
+
+> This week we released [version 0.3.2](https://github.com/matrix-org/dendrite/releases/tag/v0.3.2), which contains some bug fixes. Changes this week include:
+>
+> * Checking if a server is allowed to see an event has been optimised somewhat
+>
+> * The ability to disable federation has been added
+> * Application services are now sent correctly formatted client events
+>
+> * `create-account` has been simplified so that you can just point it to your Dendrite config
+> * `/unpeek` support has been added (for MSC2753)
+>
+> * Event IDs are now calculated far less often in the roomserver, since this is an expensive operation
+> * The federation sender now caches events in memory to reduce load on the database
+>
+> * The "since" parameter is now checked more thoroughly in the sync API, which led to a bug that could cause forgotten rooms to reappear (thanks to [kaniini](https://github.com/kaniini))
+> * The polylith now proxies signing key requests through the federation sender correctly
+>
+> Spec compliance is unchanged:
+>
+> * Client-server APIs: 58%, same as last week
+>
+> * Server-server APIs: 83%, same as last week
+>
+> As always, feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for general Dendrite chat or [#dendrite-dev:matrix.org](https://matrix.to/#/#dendrite-dev:matrix.org) for development discussion.
+
+
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) offered:
+
+> ⚠️ The **OpenSSL** project has pre-announced a [high severity issue](https://mta.openssl.org/pipermail/openssl-announce/2020-December/000186.html) that will be disclosed on Tuesday. We will be regenerating Docker images and releasing Synapse 1.24.0 and 1.23.1 on Tuesday following that announcement. Note that these releases contain security fixes of their own, and you are encouraged to upgrade.
+>
+> In other news, [Synapse 1.24.0rc2](https://github.com/matrix-org/synapse/blob/v1.24.0rc2/CHANGES.md#synapse-1240rc2-2020-12-04) is out and includes numerous bug fixes and internal improvements, especially around our OpenID Connect (OIDC) and SAML providers. Of note, the OIDC provider can now re-try generating MXIDs when there's a collision, reaching parity with the SAML provider.
+>
+> We've been talking about [MSC2403: Add "knock" feature](https://github.com/matrix-org/matrix-doc/pull/2403) for a few weeks, but the end is in sight: the PR is reviewed and the tests pass, so we're on track for including it in 1.25.0!  We're also on the cusp of a finishing [a new algorithm](https://github.com/matrix-org/synapse/pull/8868) for calculating the auth chain difference in [State Resolution v2](https://matrix.org/docs/guides/implementing-stateres), which should significantly reduce worst case performance.
+>
+> Lastly, the deprecated `/_matrix/client/*/admin` Admin API endpoints [have been removed](https://github.com/matrix-org/synapse/issues/8785). If you have tools which target these endpoints, please update them to use the `/_synapse/admin` URL prefix instead.
+
+
+
+## Homeserver Deployment 📥️
+
+### Docker ARM images for Dendrite
+
+[TR_SLimey](https://matrix.to/#/@tr_slimey:an-atom-in.space) offered:
+
+> The Docker ARM images for Dendrite have been updated for version 0.3.2. As always, they can be found in my docker repo at <https://hub.docker.com/u/trslimey>
+>
+> Direct links:
+>
+>  * Monolith: <https://hub.docker.com/r/trslimey/dendrite-monolith>
+>  * Polylith: <https://hub.docker.com/r/trslimey/dendrite-polylith>
+>
+> I have also submitted a PR for automated multiarch docker builds for Dendrite, so if that gets accepted, no more unofficial images for me :P
+
+
+
+### YunoHost
+
+[Pierre](https://matrix.to/#/@pierre:mamieserv.fr) told us:
+
+> [YunoHost](https://yunohost.org) is an operating system aiming for the simplest administration of a server, and therefore democratize self-hosting.
+>
+> [Synapse](https://github.com/YunoHost-Apps/synapse_ynh/tree/master) integration had been updated to 1.21.2 (1.23.0 available in branch `testing`)
+>
+> [Element Web](https://github.com/YunoHost-Apps/element_ynh/tree/master) integration had been updated to 1.7.13 (1.7.14 available in branch `testing`)
+
+
+
+## Dept of Bridges 🌉
+
+### Gitter
+
+[Eric Eastwood](https://matrix.to/#/@madlittlemods:matrix.org) reported:
+
+> We've soft-launched the new bridge to all public Gitter rooms! You can now find any public room on Gitter checking out the room directory for `gitter.im` or directly by replacing the forward slash in the URI part of the Gitter room with an underscore and joining `#*:gitter.im`(replace the *). If you come across any bugs, feel free check the [list of known problems and create an issue](https://gitlab.com/gitterHQ/webapp/-/issues?label_name%5B%5D=matrix). There will be a full announcement next week so stay tuned!
+>
+> We've also added a few more features this week and now transform `:emoji:` syntax from Gitter to Unicode so they're compatible in Matrix, propagate the room topic/description, and some bug fixes around threaded conversations and replies. You can track our full progress from the [GitLab epic for the native Gitter-Matrix bridge](https://gitlab.com/groups/gitterHQ/-/epics/10).
+
+Massive milestone! Great work Eric, it's been such fast progress!
+
+## Dept of Clients 📱
+
+### Fractal
+
+[Alexandre Franke](https://matrix.to/#/@afranke:matrix.org) announced:
+
+> After I [ran](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/626#note_968719) [out](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/626#note_969787) [of](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/626#note_970279) [ways](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/626#note_972889) to break it, we finally merged [Our Hugestest Merge Request Ever](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/626). This concludes the “Port to matrix-rust-sdk” saga (see  [these](https://matrix.org/blog/2020/10/09/this-week-in-matrix-2020-10-09#fractal) [three](https://matrix.org/blog/2020/10/23/this-week-in-matrix-2020-10-23#fractal) [links](https://matrix.org/blog/2020/11/06/this-week-in-matrix-2020-11-06#fractal) for previous episodes).
+
+![2020-12-04-2yOTb-01-celebration.png](/blog/img/2020-12-04-2yOTb-01-celebration.png)
+
+> Just kidding.
+>
+> This was actually just the beginning, the ground work needed to lay the foundations for A Better Future. We already have [a bunch of other merge requests](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests?scope=all&utf8=%E2%9C%93&state=opened) to continue down that path. Hopefully there shouldn’t be such large ones in the (near) future. So what’s next? The work that landed this week was a switch to [the SDK](https://github.com/matrix-org/matrix-rust-sdk/) for almost all endpoint queries. Now need to handle the syncs with it. Later on, we will use it to handle storage, and then enable E2EE as well, but that will take quite some time.
+
+Big progress from Fractal here! Will be good to hear more from the Fractal club to see what the ETA is for storage and E2EE.
+
+
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) reported:
+
+> While I've actually not had much time to work on Nheko, I did at least fix most of the UTD (Unable to decrypt) issues, when sending encrypted messages. This has been a long standing annoyance, but it should now finally not be an issue anymore (well... at least it should not be caused by Nheko as often anymore)! With this there are only a few tickets left to finally bring E2EE out of beta in Nheko (SSSS and bootstrapping cross-signing, as well as a general review for potential issues).
+>
+> And while I have actually not been doing much work, we actually had more Pull Requests (and merged them too) this week than I have ever seen before in Nheko! Thank you very much to everyone who contributed. A short summary:
+>
+> * Nheko now uses the Nheko icon from your system theme, if available
+>
+> * You can finally look at avatars in their full resolution!
+> * Megolm sessions are now lazily loaded from disk.
+>
+> * The registration page now also has nice inline error messages, hinting at why a specific input is unacceptable.
+> * Updates to the russian translation
+>
+> * The README now lists all required GStreamer plugins for voice and video calls.
+>
+> It feels super great, when you have so many people contributing, I love it! <3
+
+Nheko really seems to be doing something right when it comes to attracting PRs!
+
+### Element Update
+
+As compiled by the team:
+- **Public Roadmap**
+  - We now have a [public roadmap](https://github.com/vector-im/roadmap/projects/1)! We’ll be covering more details on it in this week’s Matrix Live, as well as a blog post on element.io soon.
+- **Spaces**
+  - Work has started in earnest on the web and android implementations.
+    - On the web side T3chguy completed the Spaces creation flows and is now looking at the Space landing page and Space post-creation prompts.
+      - We have noticed that prefixing any word with ‘Space’ makes it sounds 20% cooler.
+    - The mobile MVP will be read only and Valere will start with the ability to respond to invites and select Spaces.
+  - So far it is looking very promising with lots of feedback from user testing informing the design.
+- **Social login**
+  - We plan to ship this as a cross client feature this month. This week we completed the implementations for web and android with iOS and Synapse ongoing.
+- **VoIP**
+  - Line 1 / 2 support is almost ready on web: ironing out some bugs and cosmetic issues, then PR will be ready for review. VoIP V1 support and hold/resume is getting close on Android & iOS, along with stability fixes.
+#### Web
+- Element Web 1.7.15-rc.1 is now available at <https://staging.element.io>, including
+  - Improved voice / video call UI
+  - Notifications are now ignored from rooms you've been active in recently
+  - Login / registration flows redirect inside the app if you are already logged in
+- Supporting tools like CI scripts are now using the correct branding
+- React SDK PRs now have experimental preview sites, which makes it easy to try out changes during review
+#### iOS
+- We can now use XCode 12.2 to build all projects
+- We are still working on 2 big changes:
+  - Introducing a background sync service to display notifications quicker in the timeline
+  - Introducing XCodeGen to stop having bad merge conflicts in pbxproj files
+#### Android
+- Release 1.0.11 in production (roll out to 10% for now)
+- Feature Parity / URL preview
+- Coming next Social logins
+- Bug fixes
+
+[Aleks Kissinger](https://matrix.to/#/@aleks.kissinger:cs.ox.ac.uk) added:
+
+> LaTeX support will be available under Labs in the next release of Element: <https://github.com/vector-im/element-web/blob/develop/docs/labs.md>
+
+
+
+### cryptovoxels client
+
+[Matthew](https://matrix.to/#/@matthew:matrix.org) offered:
+
+> cryptovoxels released a cute little preact matrix client for all your VR needs: <https://github.com/cryptovoxels/chat>
+
+We don't have much information about this one yet, other than that cryptovoxels have been interested in developing a Matrix client for their world for a while.
+
+## Dept of Bots 🤖
+
+### Hemppa
+
+Hemppa the Bot is a multipurpose bot for writing modules super easily in Python.
+
+[Cos](https://matrix.to/#/@cos:hacklab.fi) offered:
+
+> Hemppa the Bot is a multipurpose bot for writing modules super easily in Python. Last week Hemppa received a useful feature of printing files! You can set up a room for a specific printer and invite anyone you wish to it to allow printing. Any attachments uploaded to the room will be automatically printed. It's actually one of the easiest way to print from a phone and very useful if you have a printer that does not have drivers for modern Windows or MacOS versions. <https://github.com/vranki/hemppa#printing>
+
+
+
+### Matrix-Alertmanager
+
+A bot to receive Alertmanager webhook events and forward them to chosen rooms.
+
+[jaywink](https://matrix.to/#/@jaywink:federator.dev) announced:
+
+> Matrix-Alertmanager has a new release v0.4.0 with improved formatting of alert messages and an update of Node to v14. Find more information [here](https://git.feneas.org/jaywink/matrix-alertmanager).
+
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|tum.de|451|
+|2|nerdsin.space|568.5|
+|3|envs.net|572|
+|4|matrix.sp-codes.de|785|
+|5|mgp.ax.lt|888|
+|6|selea.se|896|
+|7|casavant.org|918|
+|8|nobelium.no|1089.5|
+|9|chatserver.ca|1189|
+|10|mailstation.de|1254|
+
+## Final Thoughts 💭
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9Zmm5nRMjo4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This is a pretty cool, Matrix-ish video! [Doug](https://matrix.to/#/@doug:micdrop.uk) shows Element-iOS and Nio running side-by-side, natively (!) on an M1 Mac Mini.
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org

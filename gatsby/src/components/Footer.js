@@ -6,10 +6,10 @@ const Footer = () => (
       <div className="mxfooter__column">
         <a href="/docs/projects/try-matrix-now" className="mxfooter__link mxfooter__link--primary">Discover</a>
         <a href="/docs/projects/try-matrix-now" className="mxfooter__link">Try Matrix</a>
-        <a href="/clients" className="mxfooter__link">Clients</a>
+        <a href="/clients/" className="mxfooter__link">Clients</a>
         <a href="/docs/projects/bots" className="mxfooter__link">Bots</a>
-        <a href="/sdks" className="mxfooter__link">SDKs</a>
-        <a href="/hosting" className="mxfooter__link">Hosting</a>
+        <a href="/sdks/" className="mxfooter__link">SDKs</a>
+        <a href="/hosting/" className="mxfooter__link">Hosting</a>
       </div>
       <div className="mxfooter__column">
         <a href="/docs/guides" className="mxfooter__link mxfooter__link--primary">Guides</a>
@@ -27,14 +27,15 @@ const Footer = () => (
       </div>
       <div className="mxfooter__column">
         <a href="/blog" className="mxfooter__link mxfooter__link--primary">Blog</a>
-        <a href="/blog/archive" className="mxfooter__link">All posts</a>
-        <a href="/blog/category/this-week-in-matrix" className="mxfooter__link">This week in Matrix</a>
+        <a href="/blog/archive" className="mxfooter__link">All Posts</a>
+        <a href="/blog/category/this-week-in-matrix" className="mxfooter__link">This Week In Matrix</a>
         <a href="/blog/category/security" className="mxfooter__link">Security</a>
         <a href="/blog/feed" className="mxfooter__link">RSS</a>
       </div>
       <div className="mxfooter__column">
         <a href="/" className="mxfooter__link mxfooter__link--primary">More</a>
-        <a href="/faq" className="mxfooter__link">FAQs</a>
+        <a href="/faq/" className="mxfooter__link">FAQs</a>
+        <a href="/matrixlive/" className="mxfooter__link">Matrix Live</a>
         <a href="/security-disclosure-policy/" className="mxfooter__link">Security Disclosure Policy</a>
         <a href="/legal/code-of-conduct/" className="mxfooter__link">Code of Conduct for Matrix.org</a>
         <a href="/legal/" className="mxfooter__link">Legal</a>
@@ -58,7 +59,7 @@ const Footer = () => (
           <img src="/images/twitter.svg" alt="" className="mxfooter__icon" />
         </a>
       </div>
-      <p className="mxfooter__text">© 2019 The Matrix.org Foundation C.I.C.</p>
+      <p className="mxfooter__text">© 2021 The Matrix.org Foundation C.I.C.</p>
     </div>
   </div>
 

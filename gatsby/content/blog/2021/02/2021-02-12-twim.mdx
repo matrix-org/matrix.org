@@ -1,0 +1,361 @@
+---
+date: '2021-02-12'
+title: 'This Week in Matrix 2021-02-12'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-02-12-ml.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wdy3lUxYxuU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This week we have Neil presenting P2P Matrix over Bluetooth. It's titled "P2P Matrix Bluetooth Low Energy demo", but I thought Neil and Matthew brought a pretty good energy to the video!
+
+## Dept of *Status of Matrix* 🌡️
+
+### Famedly in the media
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) announced:
+
+> Famedly (Matrix based application for German hospitals and clinics) seems to be getting positive feedback so far: https://medtech-zwo.de/aktuelles/nachrichten/nachrichten/famedly-ueberzeugt-mit-messenger-dienst-im-krankenhaus.html
+>
+> Article in German, but my favourite parts are:
+>
+> * They used the word "Anti-Datenkrake" to describe how data is handled in the application, which basically is a metaphor for Famedly being the opposite of the usual corporations trying to pry their tentacles into everyones personal data. See also: https://en.wiktionary.org/wiki/datenkraken
+>
+> * They actually use `[matrix]–Protokoll` to refer to the Matrix protocol. The open and standardized Matrix protocol seems to be a big selling factor.
+
+
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) said:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+>
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * *No MSCs were merged this week.*
+>
+> **MSCs in Final Comment Period:**
+>
+> * *No MSCs are in FCP.*
+>
+> **New MSCs:**
+>
+> * [MSC3005: Streaming Federation Events](https://github.com/matrix-org/matrix-doc/pull/3005)
+> * [MSC2998: Room Version 7](https://github.com/matrix-org/matrix-doc/pull/2998)
+>
+> * [MSC2997: Add t-shirt](https://github.com/matrix-org/matrix-doc/pull/2997)
+>
+> #### Spec Core Team
+>
+> Some chatter about the [MSC2403](https://github.com/matrix-org/matrix-doc/pull/2403) (knocking) as FCP has been proposed. Otherwise work on [MSC1772](https://github.com/matrix-org/matrix-doc/pull/1772) (Spaces) as that nears production and some encryption work with [MSC2874](https://github.com/matrix-org/matrix-doc/pull/2874) (single SSSS).
+>
+> The team is carefully debilitating [MSC2997](https://github.com/matrix-org/matrix-doc/pull/2997), which spurred out of a conversation during FOSDEM2021. What sizes to include? What font to use? What colour do we paint this bike shed? All incredibly complex questions.
+>
+> #### New Spec Platform
+>
+> [Will Bamberg](https://github.com/wbamberg) has done an incredible job with getting both an entire redesign and an internal refactoring to the Matrix Spec. Remaining work includes ironing out some remaining minor blockers (https://github.com/matrix-org/matrix-doc/pull/3002, https://github.com/matrix-org/matrix-doc/pull/3003), merging changelog representation with respect to the current idea of a global Matrix Spec version number (https://github.com/matrix-org/matrix-doc/pull/2992) and then finally hooking up all the CI/CD to deploy it all (my job!).
+>
+> We're planning to present the new spec on a new domain; running it in parallel with the old design for a bit before eventually retiring the latter.
+
+
+
+![2021-02-12-B00Xp-stacked_area_chart.png](/blog/img/2021-02-12-B00Xp-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### CONSTRUCT
+
+[grin](https://matrix.to/#/@grin:grin.hu) shared this note from Jason:
+
+> This week in Matrix Construct added Application Services support. I've been using the Mautrix Telegram bridge on a daily basis, and it's been a pleasure to develop with. Expect more bridges to be tested in the coming weeks. I'll also be working on completing the documentation for how to setup a bridge in Construct. Just to give some insight: The server has the ability to manage all of your bridges as sub-processes. In any client, just create a room for your bridge and enter its configuration there. Voila! The bridge's console appears right in that room and can even highlight you about errors!
+>
+> Join us at [#construct:zemos.net](https://matrix.to/#/#construct:zemos.net) to learn more about bridges and lend a hand.
+>
+> Jason
+
+
+
+![2021-02-12-eXJxK-Screenshotfrom2020-10-2504-23-40.png](/blog/img/2021-02-12-eXJxK-Screenshotfrom2020-10-2504-23-40.png)
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) announced:
+
+> We survived FOSDEM! Last week was relatively slower in Synapse land as we paused to catch our breath, but we do have news!
+>
+> First, releases. Synapse 1.27.0rc2 is out now ([changelog](https://github.com/matrix-org/synapse/blob/v1.27.0rc2/CHANGES.md#synapse-1270rc2-2021-02-11)), and we anticipate a full 1.27 release early next week. This is basically the branch that FOSDEM ran, so we think it's a good one.
+>
+> Second, keeping with our biweekly development cadence, the first 1.28 release candidate is due out midweek next week, so keep your eyes peeled for that. Given FOSDEM, most of our recent focus has been on stability, bug fixes, and social login. We hope to _knock_ your socks off with more ambitious features soon. 😉
+
+
+
+## Homeserver Deployment 📥️
+
+### YunoHost
+
+[Pierre](https://matrix.to/#/@pierre:mamieserv.fr) told us:
+
+> [YunoHost](https://yunohost.org) is an operating system aiming for the simplest administration of a server, and therefore democratize self-hosting.
+>
+> [Synapse](https://github.com/YunoHost-Apps/synapse_ynh/tree/master) integration had been updated to 1.25.0 (1.26.0 available in branch `testing`)
+>
+> [Element Web](https://github.com/YunoHost-Apps/element_ynh/tree/master) integration had been updated to 1.7.16 (1.7.20 available in branch `testing`)
+
+
+
+## Dept of Clients 📱
+
+### SchildiChat Web/Desktop
+
+[qg](https://matrix.to/#/@qg:supercable.onl) offered:
+
+> [SchildiChat](https://schildi.chat/) is a fork of Element, which focuses on UI changes such as message bubbles and a unified chat list for both direct messages and groups, which is a more familiar approach to users of other popular instant messengers.
+>
+> Thanks to [@michi7801](https://matrix.to/#/@michael7801:rapgru.com) we can now provide builds for macOS!! 🍎
+>
+> Code on GitHub: https://github.com/SchildiChat/schildichat-desktop
+>
+> Matrix room: [#schildichat-web:matrix.org](https://matrix.to/#/#schildichat-web:matrix.org)
+
+
+
+![2021-02-12-5B1P9-Bildschirmfoto2021-02-12um10.48.41.png](/blog/img/2021-02-12-5B1P9-Bildschirmfoto2021-02-12um10.48.41.png)
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) announced:
+
+> We just landed basic support for edits. Which means edits are now applied to the original message instead of showing the fallback and you can edit your messages. You can also change a text message to a video (or the other way around) or change, who you replied to, but the latter fails to render in some clients properly, so be aware of that. Edits also send a secondary relation format, which makes handling edits easier, but I still haven't written up the MSC for that... The UI is not final yet and you can't show edit history yet, but apart from that it may or may not work fine.
+>
+> There were also a lot of bugfixes like broken kerning in some cases, improved focus handling when clicking buttons in the timeline, Duplex devices should now work in calls, notifications now work on Haiku and a few more.
+>
+> Now please stop asking for edits! :D
+
+
+
+### Cos discovers the /addwidget command in Element Web
+
+[Cos](https://matrix.to/#/@cos:hacklab.fi) offered:
+
+> Public service announcement: Widgets are awesome. You can use `/addwidget <url>` in Element Web to add any web page in a iframe to the sidebar of Element Web. They get default name "Custom Widget" but you can rename them from /devtools menu. Very useful for group calendars, status pages and other info related to Matrix rooms.
+
+
+
+### Element
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) announced:
+
+> **Delight**
+>
+>
+>
+> *   Social Login
+>
+>     *   We’ve concluded most of the development on Social Login, and tested it last weekend on the FOSDEM deployments. We found that over 50% of new accounts used it to register! We’ll be deploying Social Login to matrix.org in the near future after polishing some final pieces on iOS.
+>
+> *   Spaces
+>
+>     *   We’re iterating on the user experience for Spaces, first focusing on setting up, sharing and joining public spaces.
+>
+> **VoIP**
+>
+>
+>
+> *   VoIP branches merged to develop on iOS and & Android - please test voice & video calling if you have the android develop build, or testflight for iOS will be coming soon. More complex scenarios with multiple devices are particularly useful to test, eg. do other devices stop ringing when you answer on a different one?
+>
+> **Web**
+>
+>
+>
+> *   1.7.21-rc.1 is now available at https://staging.element.io, including:
+>
+>     *   Fixed screen sharing in VoIP calls
+>     *   Added window vs. full screen sharing option in VoIP calls
+>
+>     *   Fixed event permalinks to show link text instead of a room pill
+>
+> *   1.7.21 planned for release on Monday (15 Feb)
+>
+> *   Element Desktop nightly builds are now using Electron 11
+>     *   Please report any issues you notice so we can address them before the next Element release
+>
+> **iOS**
+>
+> *   1.2.1 has been submitted to Apple. TestFlight should be available from tomorrow:
+>     *   All new VoIP stuff described above
+>
+>     *   Handle User-Interactive Authentication for delete device and adding user 3pid.
+>     *   Improve grace period management and setup Cross-Signing after login if possible when using SSO.
+>
+> *   XcodeGen integration into the Element-iOS codebase is almost complete. From next week, we will not have merge conflicts on the pbxproj files. This also means better control on build settings.
+>
+> **Android**
+>
+> *   Initial sync work improvements: performance is far better regarding RAM usage and stability (especially true for large accounts), though duration is still a concern.
+>
+> *   Started working on running integration tests via CI.
+> *   1.0.17 released, fixing a join over federation bug. Expect 1.0.18 next week.
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### Ruma
+
+[Ruma](https://www.ruma.io/) is a set of Rust library crates around Matrix
+
+[jplatte](https://matrix.to/#/@jplatte:privacytools.io) offered:
+
+> In the last two weeks,
+>
+> * [@DevinR528] fixed [the push rule precedence for iterating a Ruleset](https://github.com/ruma/ruma/pull/403)
+>
+> * [@jsparber] added [an unstable workaround for Synapse sometimes requiring authentication in the profile API (the spec says no authentication is required)](https://github.com/ruma/ruma/pull/408)
+> * [@NerdyPepper] added [an `event_type` accessor to our event enums](https://github.com/ruma/ruma/pull/418)
+>
+> * [@NerdyPepper] added [support for `m.room.message` events with custom `msgtype`s](https://github.com/ruma/ruma/pull/423)
+>
+> [@iinuwa]: https://github.com/iinuwa
+>
+> [@DevinR528]: https://github.com/DevinR528
+> [@gnieto]: https://github.com/gnieto
+>
+> [@elegaanz]: https://github.com/elegaanz
+> [@poljar]: https://github.com/poljar
+>
+> [@auscompgeek]: https://github.com/auscompgeek
+> [@lanker]: https://github.com/lanker
+>
+> [@V02460]: https://github.com/V02460
+> [@iinuwa]: https://github.com/iinuwa
+>
+> [@DevinR528]: https://github.com/DevinR528
+> [@tilosp]: https://github.com/tilosp
+>
+> [@NerdyPepper]: https://github.com/NerdyPepper
+> [@jamtwister]: https://github.com/jamtwister
+>
+> [@florianjacob]: https://github.com/florianjacob
+> [@jsparber]: https://github.com/jsparber
+
+
+
+## Dept of Ops 🛠
+
+### matrix-docker-ansible-deploy
+
+This [Ansible playbook](https://github.com/spantaleev/matrix-docker-ansible-deploy) is meant to easily let you run your own Matrix homeserver.
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) told us:
+
+> Thanks to [@Peetz0r](https://github.com/Peetz0r), [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) can now install a bunch of tools for monitoring your Matrix server: the [Prometheus](https://prometheus.io) time-series database server, the Prometheus [node-exporter](https://prometheus.io/docs/guides/node-exporter/) host metrics exporter, and the [Grafana](https://grafana.com/) web UI.
+>
+> To install these services, follow our [Enabling metrics and graphs (Prometheus, Grafana) for your Matrix server](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-prometheus-grafana.md) docs page.
+
+
+
+
+## Dept of Interesting Projects 🛰️
+
+### SpaceHub
+
+[MTRNord](https://matrix.to/#/@mtrnord:nordgedanken.dev) offered:
+
+> This is a super early announcement.
+>
+> As now Spaces exist and are kind of testable if you know how I went ahead to plan organizing my 200 rooms I currently have into spaces and realized soon that I will have A LOT of nested Spaces.
+>
+> So I am now starting to write a tool to generate these spaces easily from a folder structure and exporting them.
+>
+> You may ask why not a yaml or json format: Simply to more easily allow forking of existing collections. A folder structure is much easier to do a diff over in git than file content.
+>
+> Feel free to join [#space-hub:nordgedanken.dev](https://matrix.to/#/#space-hub:nordgedanken.dev) for discussions or have an eye on https://github.com/matrix-spaces-generator where at the time of writing this only an example of the spaces folder structure exists.
+
+
+
+### Keymaker
+
+[MTRNord](https://matrix.to/#/@mtrnord:nordgedanken.dev) reported:
+
+> Small update time:
+>
+> We are currently starting to add some documentation to it over at https://docs.joinmatrix.rocks/users/what-is-keymaker.html
+>
+> It at time of writing still very barebones but over the next few weeks the goal is to add the Code of Conduct as well as a server admin guide on how to use this.
+
+
+
+## Dept of Guides 🧭
+
+### matrix-appservice-irc sprouts a book
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) said:
+
+> Hi folks! I'm happy to say that after many years of fielding IRC bridge support questions, the bridge team has now written the book on it. A markdown book! Using the latest `mdbook` tech we've written a draft of a usage guide and a server administration guide for the bridge and would value feedback on how we can make it better. This could be typos that I have strewn about it, or suggesting new content.
+>
+> The draft is hosted at:
+>
+> https://matrix-org.github.io/matrix-appservice-irc/latest
+>
+> and the PR is:
+>
+> https://github.com/matrix-org/matrix-appservice-irc/pull/1235
+
+
+
+## Final Thoughts 💭
+
+### 3D printed FluffyChat logo
+
+[FluffyChat](https://fluffychat.im) is a cute cross-platform matrix client. It is available for Andorid, iOS, Web and Desktop.
+
+[Shine](https://matrix.to/#/@shiny:shine.horse) reported:
+
+> If you have a 3D printer and want to express your love for Fluffychat with a nice badge, you can download the necessary files here ^_^ https://www.thingiverse.com/thing:4550331/files
+>
+> Freecad source file included for those who need some modifications.
+>
+> (Yes, it's older, but I never TWIM'd it 🤦‍♀️)
+
+[sorunome](https://matrix.to/#/@sorunome:sorunome.de) shared:
+
+![2021-02-12-cPftU-img_20210208_160724.jpg](/blog/img/2021-02-12-cPftU-img_20210208_160724.jpg)
+
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|envs.net|347.5|
+|2|syn.steimel.info|480|
+|3|matrix.xn--kll-sna.net|491|
+|4|etke.cc|682.5|
+|5|maunium.net|692|
+|6|maescool.be|708.5|
+|7|jupadr.de|741|
+|8|matrix.godfreyhendrix.com|1072.5|
+|9|shortestpath.dev|1093.5|
+|10|queersin.space|1180|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org

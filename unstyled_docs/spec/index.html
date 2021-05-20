@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
 <title>Matrix Specification</title>
 <style type="text/css">
 
@@ -907,6 +907,93 @@ div.admonition-example {
 </style>
 <style type="text/css">
 
+/*
+Original styles generated from:
+    pygmentize -f html -S colorful -a pre.code > ./scripts/css/pygments.css
+
+Rules for which we don't want the syntax highlighter to kick in are commented
+out at the bottom.
+
+Windows users: if you regenerate this file, you'll need to re-save it as utf-8
+to make docutils happy.
+*/
+
+/* DIFFS */
+pre.code .gd { color: #A00000 } /* Generic.Deleted */
+pre.code .gi { color: #00A000 } /* Generic.Inserted */
+
+/* UNUSED */
+/*pre.code .hll { background-color: #ffffcc }*/
+/*pre.code  { background: #ffffff; }*/
+/*pre.code .c { color: #888888 } !* Comment *!*/
+/*pre.code .err { color: #FF0000; background-color: #FFAAAA } !* Error *!*/
+/*pre.code .k { color: #008800; font-weight: bold } !* Keyword *!*/
+/*pre.code .o { color: #333333 } !* Operator *!*/
+/*pre.code .ch { color: #888888 } !* Comment.Hashbang *!*/
+/*pre.code .cm { color: #888888 } !* Comment.Multiline *!*/
+/*pre.code .cp { color: #557799 } !* Comment.Preproc *!*/
+/*pre.code .cpf { color: #888888 } !* Comment.PreprocFile *!*/
+/*pre.code .c1 { color: #888888 } !* Comment.Single *!*/
+/*pre.code .cs { color: #cc0000; font-weight: bold } !* Comment.Special *!*/
+/*pre.code .ge { font-style: italic } !* Generic.Emph *!*/
+/*pre.code .gr { color: #FF0000 } !* Generic.Error *!*/
+/*pre.code .gh { color: #000080; font-weight: bold } !* Generic.Heading *!*/
+/*pre.code .go { color: #888888 } !* Generic.Output *!*/
+/*pre.code .gp { color: #c65d09; font-weight: bold } !* Generic.Prompt *!*/
+/*pre.code .gs { font-weight: bold } !* Generic.Strong *!*/
+/*pre.code .gu { color: #800080; font-weight: bold } !* Generic.Subheading *!*/
+/*pre.code .gt { color: #0044DD } !* Generic.Traceback *!*/
+/*pre.code .kc { color: #008800; font-weight: bold } !* Keyword.Constant *!*/
+/*pre.code .kd { color: #008800; font-weight: bold } !* Keyword.Declaration *!*/
+/*pre.code .kn { color: #008800; font-weight: bold } !* Keyword.Namespace *!*/
+/*pre.code .kp { color: #003388; font-weight: bold } !* Keyword.Pseudo *!*/
+/*pre.code .kr { color: #008800; font-weight: bold } !* Keyword.Reserved *!*/
+/*pre.code .kt { color: #333399; font-weight: bold } !* Keyword.Type *!*/
+/*pre.code .m { color: #6600EE; font-weight: bold } !* Literal.Number *!*/
+/*pre.code .s { background-color: #fff0f0 } !* Literal.String *!*/
+/*pre.code .na { color: #0000CC } !* Name.Attribute *!*/
+/*pre.code .nb { color: #007020 } !* Name.Builtin *!*/
+/*pre.code .nc { color: #BB0066; font-weight: bold } !* Name.Class *!*/
+/*pre.code .no { color: #003366; font-weight: bold } !* Name.Constant *!*/
+/*pre.code .nd { color: #555555; font-weight: bold } !* Name.Decorator *!*/
+/*pre.code .ni { color: #880000; font-weight: bold } !* Name.Entity *!*/
+/*pre.code .ne { color: #FF0000; font-weight: bold } !* Name.Exception *!*/
+/*pre.code .nf { color: #0066BB; font-weight: bold } !* Name.Function *!*/
+/*pre.code .nl { color: #997700; font-weight: bold } !* Name.Label *!*/
+/*pre.code .nn { color: #0e84b5; font-weight: bold } !* Name.Namespace *!*/
+/*pre.code .nt { color: #007700 } !* Name.Tag *!*/
+/*pre.code .nv { color: #996633 } !* Name.Variable *!*/
+/*pre.code .ow { color: #000000; font-weight: bold } !* Operator.Word *!*/
+/*pre.code .w { color: #bbbbbb } !* Text.Whitespace *!*/
+/*pre.code .mb { color: #6600EE; font-weight: bold } !* Literal.Number.Bin *!*/
+/*pre.code .mf { color: #6600EE; font-weight: bold } !* Literal.Number.Float *!*/
+/*pre.code .mh { color: #005588; font-weight: bold } !* Literal.Number.Hex *!*/
+/*pre.code .mi { color: #0000DD; font-weight: bold } !* Literal.Number.Integer *!*/
+/*pre.code .mo { color: #4400EE; font-weight: bold } !* Literal.Number.Oct *!*/
+/*pre.code .sa { background-color: #fff0f0 } !* Literal.String.Affix *!*/
+/*pre.code .sb { background-color: #fff0f0 } !* Literal.String.Backtick *!*/
+/*pre.code .sc { color: #0044DD } !* Literal.String.Char *!*/
+/*pre.code .dl { background-color: #fff0f0 } !* Literal.String.Delimiter *!*/
+/*pre.code .sd { color: #DD4422 } !* Literal.String.Doc *!*/
+/*pre.code .s2 { background-color: #fff0f0 } !* Literal.String.Double *!*/
+/*pre.code .se { color: #666666; font-weight: bold; background-color: #fff0f0 } !* Literal.String.Escape *!*/
+/*pre.code .sh { background-color: #fff0f0 } !* Literal.String.Heredoc *!*/
+/*pre.code .si { background-color: #eeeeee } !* Literal.String.Interpol *!*/
+/*pre.code .sx { color: #DD2200; background-color: #fff0f0 } !* Literal.String.Other *!*/
+/*pre.code .sr { color: #000000; background-color: #fff0ff } !* Literal.String.Regex *!*/
+/*pre.code .s1 { background-color: #fff0f0 } !* Literal.String.Single *!*/
+/*pre.code .ss { color: #AA6600 } !* Literal.String.Symbol *!*/
+/*pre.code .bp { color: #007020 } !* Name.Builtin.Pseudo *!*/
+/*pre.code .fm { color: #0066BB; font-weight: bold } !* Name.Function.Magic *!*/
+/*pre.code .vc { color: #336699 } !* Name.Variable.Class *!*/
+/*pre.code .vg { color: #dd7700; font-weight: bold } !* Name.Variable.Global *!*/
+/*pre.code .vi { color: #3333BB } !* Name.Variable.Instance *!*/
+/*pre.code .vm { color: #996633 } !* Name.Variable.Magic *!*/
+/*pre.code .il { color: #0000DD; font-weight: bold } !* Literal.Number.Integer.Long *!*/
+
+</style>
+<style type="text/css">
+
 /* Column with header cells */
 table.docutils tbody th.stub {
     background: #eeeeee;
@@ -944,7 +1031,7 @@ communication ecosystem.</p>
 <p>To propose a change to the Matrix Spec, see the explanations at
 <a class="reference external" href="proposals">Proposals for Spec Changes to Matrix</a>.</p>
 <div class="contents topic" id="table-of-contents">
-<p class="topic-title first">Table of Contents</p>
+<p class="topic-title">Table of Contents</p>
 <ul class="auto-toc simple">
 <li><a class="reference internal" href="#matrix-apis" id="id6">1&nbsp;&nbsp;&nbsp;Matrix APIs</a><ul class="auto-toc">
 <li><a class="reference internal" href="#matrix-versions" id="id7">1.1&nbsp;&nbsp;&nbsp;Matrix versions</a></li>
@@ -994,12 +1081,12 @@ communication ecosystem.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td><a class="reference external" href="client_server/r0.6.0.html">Client-Server API</a></td>
-<td>r0.6.0</td>
+<tr><td><a class="reference external" href="client_server/r0.6.1.html">Client-Server API</a></td>
+<td>r0.6.1</td>
 <td>Interaction between clients and servers</td>
 </tr>
-<tr><td><a class="reference external" href="server_server/r0.1.3.html">Server-Server API</a></td>
-<td>r0.1.3</td>
+<tr><td><a class="reference external" href="server_server/r0.1.4.html">Server-Server API</a></td>
+<td>r0.1.4</td>
 <td>Federation between servers</td>
 </tr>
 <tr><td><a class="reference external" href="application_service/r0.1.2.html">Application Service API</a></td>
@@ -1495,7 +1582,7 @@ else which is either not listed in the specification or flagged as unstable for
 some other reason. Versions can switch between stable and unstable periodically
 for a variety of reasons, including discovered security vulnerabilities and age.</p>
 <p>Clients should not ask room administrators to upgrade their rooms if the room is
-running a stable version. Servers SHOULD use room version 5 as the default room
+running a stable version. Servers SHOULD use room version 6 as the default room
 version when creating new rooms.</p>
 <p>The available room versions are:</p>
 <ul class="simple">
@@ -1504,6 +1591,7 @@ version when creating new rooms.</p>
 <li><a class="reference external" href="rooms/v3.html">Version 3</a> - <strong>Stable</strong>. Introduces events whose IDs are the event's hash.</li>
 <li><a class="reference external" href="rooms/v4.html">Version 4</a> - <strong>Stable</strong>. Builds on v3 by using URL-safe base64 for event IDs.</li>
 <li><a class="reference external" href="rooms/v5.html">Version 5</a> - <strong>Stable</strong>. Introduces enforcement of signing key validity periods.</li>
+<li><a class="reference external" href="rooms/v6.html">Version 6</a> - <strong>Stable</strong>. Alters several authorization rules for events.</li>
 </ul>
 </div>
 </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MXGuidesNav = ({ title, pagesBySection, currentSlug, tableOfContents }) => {
+const MXGuidesNav = ({ title, pagesBySection, currentSlug, tableOfContents, pagesListTitle }) => {
     var navClass = "mxcontent__nav"
     if (currentSlug && currentSlug.indexOf("/docs") === 0) {
         navClass += " mxcontent__nav--left";
@@ -15,7 +15,7 @@ const MXGuidesNav = ({ title, pagesBySection, currentSlug, tableOfContents }) =>
                     </div>)
                 })}
                 <hr />
-            <h3>Other Guides</h3>
+            <h3>{pagesListTitle}</h3>
                 {pagesBySection &&
                     Object.keys(pagesBySection).map(section => {
                         return <div key={section}>

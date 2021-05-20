@@ -6,9 +6,11 @@ import { wrapRootElement as wrap } from './wrap-root-element'
 export const wrapRootElement = wrap
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
-    //console.log('new pathname', location.pathname )
-    //console.log('old pathname', prevLocation ? prevLocation.pathname : null)
-
+    if (location.pathname.indexOf('/docs/') === 0) {
+        clearTimeout(window.notyfTimeout);
+        window.notyfTimeout =  setTimeout("openN()", 15 * 1000);
+    }
+    
     var links = document.getElementsByTagName('a');
     for (var i = 0; i < links.length; i++) {
         links[i].onclick = function (e) {

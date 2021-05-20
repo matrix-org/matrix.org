@@ -1,20 +1,21 @@
 ---
 layout: post
-title: matrix-js-bot-sdk Room Admin Features
+title: matrix-bot-sdk Room Admin Features
 section: Client-Server API
+sort_order: 1000
 ---
 
 ## Intro
 
-[matrix-js-bot-sdk] has features which enable bots to perform administration of Matrix roooms - tasks like kicking, banning and inviting users. Of course, the bot must have the appropriate permissions for the room in order for this to work.
+[matrix-bot-sdk] has features which enable bots to perform administration of Matrix roooms - tasks like kicking, banning and inviting users. Of course, the bot must have the appropriate permissions for the room in order for this to work.
 
-You should read [Usage of matrix-js-bot-sdk] for a more fundamental introduction to the SDK.
+You should read [Usage of matrix-bot-sdk] for a more fundamental introduction to the SDK.
 
 ## Kicking
 
 Kicking a user means that user is removed from the room by force, but is not banned - so they are able to re-join.
 
-Once you have your client object running (see [usage-of-matrix-js-bot-sdk#instantiation](https://matrix.org/docs/guides/usage-of-matrix-js-bot-sdk#instantiation)), you can use the `kickUser()` method. There are three parameters:
+Once you have your client object running (see [usage-of-matrix-bot-sdk#instantiation](https://matrix.org/docs/guides/usage-of-matrix-bot-sdk#instantiation)), you can use the `kickUser()` method. There are three parameters:
 
 * the user ID (MXID) you want to kick
 * the room ID they will be removed from
@@ -68,7 +69,7 @@ const members = await client.getJoinedRoomMembers(roomId);
 
 ## Responding to a keyword
 
-In [usage-of-matrix-js-bot-sdk#implementing-echobot-functionality](https://matrix.org/docs/guides/usage-of-matrix-js-bot-sdk#implementing-echobot-functionality), we showed how it's possible to read the content of messages and respond to them. To reiterate:
+In [usage-of-matrix-bot-sdk#implementing-echobot-functionality](https://matrix.org/docs/guides/usage-of-matrix-bot-sdk#implementing-echobot-functionality), we showed how it's possible to read the content of messages and respond to them. To reiterate:
 
 ```javascript
 client.on("room.message", (roomId, event) => {
@@ -107,7 +108,7 @@ It's as simple as taking the `event["sender"]` field, and passing it to `kickUse
 
 ## Using promises to know if a request succeeded
 
-[matrix-js-bot-sdk] is promise-based, so you can chain `.then()` and `.catch()` methods to your Matrix calls to respond after they return:
+[matrix-bot-sdk] is promise-based, so you can chain `.then()` and `.catch()` methods to your Matrix calls to respond after they return:
 
 ```javascript
 client.kickUser(userId, roomId, "no!")
@@ -141,7 +142,7 @@ You can find the code for [this strange project here](https://github.com/benpars
 
 ## Conclusion
 
-[matrix-js-bot-sdk] can do a great deal when it comes to room administration. Check out [the repo][matrix-js-bot-sdk] directly to find out more - or if you need a more introductory guide see [Usage of matrix-js-bot-sdk].
+[matrix-bot-sdk] can do a great deal when it comes to room administration. Check out [the repo][matrix-bot-sdk] directly to find out more - or if you need a more introductory guide see [Usage of matrix-bot-sdk].
 
-[matrix-js-bot-sdk]: https://github.com/turt2live/matrix-js-bot-sdk
-[Usage of matrix-js-bot-sdk]: https://matrix.org/docs/guides/usage-of-matrix-js-bot-sdk
+[matrix-bot-sdk]: https://github.com/turt2live/matrix-bot-sdk
+[Usage of matrix-bot-sdk]: https://matrix.org/docs/guides/usage-of-matrix-bot-sdk

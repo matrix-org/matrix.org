@@ -1,0 +1,432 @@
+---
+date: '2021-04-30'
+title: 'This Week in Matrix 2021-04-30'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-04-30-watch.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SFkZz60RRfc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Matthew presents the MSC process! [Get slides here](/docs/DemystifyingMSCs.pdf).
+
+## Dept of *Status of Matrix* 🌡️
+
+### University of Innsbruck featured in heise.de
+
+[Oda Nobunaga](https://matrix.to/#/@odanobunaga:matrix.org) said:
+
+> The German IT platform Heise has conducted an interview with the university of Innsbruck which chose Matrix/Element over Microsoft Teams. Reasons: it's free, decentralized/federated, expandable and secure.
+>
+> https://www.heise.de/news/Zusammenarbeit-MS-Teams-als-Lockangebot-in-eine-geschlossene-Microsoft-Umgebung-6030514.html
+
+"free, decentralized/federated, expandable and secure" sounds like a great set of reasons!
+
+Heise article, naturally, is in German. Element have [some content in English discussing the deployment](https://element.io/case-studies/university-of-innsbruck), and [how well-suited Matrix is for univerities](https://element.io/blog/universal-universities/). Finally, the best kind of feedback: an Innsbruck professor cheers the utility of federation:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">And the best thing: The federation across different institutions really works. I can still participate in project related chats with my former team <a href="https://twitter.com/ETH_en?ref_src=twsrc%5Etfw">@ETH_en</a> while seamlessly supporting lectures at <a href="https://twitter.com/uniinnsbruck?ref_src=twsrc%5Etfw">@uniinnsbruck</a>. All out of one tool, one login. <a href="https://t.co/6LXHcu7Jjf">pic.twitter.com/6LXHcu7Jjf</a></p>&mdash; Jan Beutel (@jan_beutel) <a href="https://twitter.com/jan_beutel/status/1388105012375588865?ref_src=twsrc%5Etfw">April 30, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+## Famedly Fellows on Linux Lounge
+
+[Nico](https://matrix.to/#/@deepbluev7:neko.dev) offered:
+
+> Btw if anyone wanted to hear Krille and me live, we are live at the linux lounge now. It's in GERMAN! https://theradio.cc/blog/category/shownotes/linuxlounge/
+
+Exciting! Possibly. For the lucky few who can understand it anyway!
+
+[Lazalatin](https://matrix.to/#/@lazalatin:kif.rocks) added:
+
+
+> If anyone did miss the opportunity to listen to the live stream: Here you can find the recording, with show notes, as well: https://rec.theradio.cc/item/ll244/  
+> We were happy to have Krille and Nico with us. 🥳  
+> (website in german as well as the stream recording)
+
+:D
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) offered:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://spec.matrix.org/unstable/proposals.
+>
+> #### MSC Status
+>
+> **New MSCs:**
+>
+> * _There were no new MSCs created this week._
+>
+> **MSCs with proposed Final Comment Period:**
+>
+> * _No MSCs entered proposed FCP state this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * [MSC1772: Matrix spaces](https://github.com/matrix-org/matrix-doc/pull/1772) (merge) (5 days remaining)
+>
+> **Merged MSCs:**
+>
+> * [MSC2713: Remove deprecated v1 Identity Service API](https://github.com/matrix-org/matrix-doc/pull/2713)
+>
+> **Abandoned MSCs:**
+>
+> * [MSC3137:  Define space room type, subset of MSC1772](https://github.com/matrix-org/matrix-doc/pull/3137)
+> * [\[WIP\] MSC2356: Bulk /joined_members endpoint](https://github.com/matrix-org/matrix-doc/pull/2356)
+>
+> #### Spec Updates
+>
+> We've opened up a new room for MSC authors to come and ask about the MSC process, as well as for review and feedback on their MSC ideas over at [#sct-office:matrix.org](https://matrix.to/#/#sct-office:matrix.org). If you're unsure what the next steps for your MSC are, or aren't sure whether an idea would make sense for inclusion in the Matrix Specification, then this room is the perfect place to ask about it. Come on by!
+>
+> In terms of MSC work, Spaces remains one of the most active topics in the spec this week, with [MSC1772](https://github.com/matrix-org/matrix-doc/pull/1772) finally reaching Final Comment Period! A lot of work went into writing and reviewing the MSC, as well as crafting the implementation - so congratulations to everyone involved! Of course, any concerns can still be raised over the next 5 days by anyone before the proposal is ultimately merged to the spec.
+>
+> There are a number of changes being merged to the spec as we move swiftly towards the next major Spec release. Those that have merged this week are:
+>
+> * [MSC2403: Knocking and MSC2998: Room Version 7](https://github.com/matrix-org/matrix-doc/pull/3154)
+>
+> * [MSC2874: Single SSSS](https://github.com/matrix-org/matrix-doc/pull/3151)
+> * [MSC1544: Key verification using QR Codes](https://github.com/matrix-org/matrix-doc/pull/3149)
+>
+> Otherwise there's been a smattering of discussion and updates on various MSCs, such as [MSC2730](https://github.com/matrix-org/matrix-doc/pull/2730) (verifiable forwarded events), [MSC2249](https://github.com/matrix-org/matrix-doc/pull/2249) (requiring a user to be able to see an event to report it) and [MSC2516](https://github.com/matrix-org/matrix-doc/pull/2516) (voice messages).
+>
+> Thanks for reading!
+
+Also - knocking is now published to the unstable spec, check it out at: https://spec.matrix.org/unstable/client-server-api/#knocking-on-rooms
+
+![2021-04-30-iLQCH-stacked_area_chart.png](/blog/img/2021-04-30-iLQCH-stacked_area_chart.png)
+
+## Dept of P2P 👥
+
+### P2P Matrix
+
+[Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) announced:
+
+> We've just released the first public P2P Matrix demo using the experimental Pinecone protocol. There are builds available for Android right now and iOS is following shortly via Testflight as soon as it passes Apple's beta review:
+>
+> * Android 10+: https://appdistribution.firebase.dev/i/394600067ea8ba37
+>
+> * iOS: https://testflight.apple.com/join/Tgh2MEk6 (wait for build 73!)
+>
+> If you enable the static peer in the peer-to-peer settings, you can join us in the `#beachparty:3bf0258d23c60952639cc4c69c71d1508a7d43a0475d9000ff900a1848411ec7` room!
+>
+> The demo will attempt to connect to other devices using Bluetooth Low Energy, even if internet connectivity isn't available. Local connectivity over Wi-Fi is also supported. It's still very rough around the edges and there are lots of bugs, but feel free to give it a go!
+>
+> Join [#p2p:matrix.org](https://matrix.to/#/#p2p:matrix.org) for more chat and to provide feedback!
+
+
+
+## Dept of Servers 🏢
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust https://conduit.rs
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) said:
+
+> * Feature: Implement /devices
+>
+> * Feature: Send invites over federation
+> * Improvement: Verify signatures for incoming requests
+>
+> * Improvement: Room directory now loads a lot faster
+> * Fix: Retrying transactions works correctly now
+>
+> We managed to work on a few features the last two weeks, but there are some very annoying issues with major Matrix clients:
+>
+> * [E2EE does not work Element Android <-> Element Android](https://gitlab.com/famedly/conduit/-/issues/79)
+>
+> * [Wrong room version warnings on Element Web](https://gitlab.com/famedly/conduit/-/issues/81)
+> * [Cross signing unreliable on Conduit (but works with Fluffychat)](https://github.com/vector-im/element-android/issues/3183)
+
+
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) said:
+
+> We expect to release 1.33 on Tuesday; more on that next week. But generally speaking, much of our development focus has been on profiling the memory usage of small homeservers joining large, highly-federated rooms for the first time. For example, we see a graph like this when joining Matrix HQ:
+
+![2021-04-30-akzM5-Screenshotfrom2021-04-2918-33-43.png](/blog/img/2021-04-30-akzM5-Screenshotfrom2021-04-2918-33-43.png)
+
+> At a first pass, we're aiming to significantly reduce the initial spikiness of that graph, and we _think_ [#9910](https://github.com/matrix-org/synapse/pull/9910) will help with the subsequent slow ramp up in memory.
+>
+> We've also been discussing how to balance our relatively rapid release cadence with managing low severity security issues. If you have any thoughts, preferences, or relevant experiences to share, please [comment here](https://github.com/matrix-org/synapse/discussions/9914)!
+
+
+
+
+## Dept of Bridges 🌉
+
+### Heisenbridge announced
+
+[hifi](https://matrix.to/#/@hifi:vi.fi) said:
+
+> Announcing a new bouncer style Matrix IRC bridge to _bridge_ the gap between IRC and Matrix in a way that's easy to configure and manage by homeserver administrators for small scale deployment.
+>
+> Meet Heisenbridge https://github.com/hifi/heisenbridge 🥳 (it's a Breaking Bad reference 🤦)
+>
+> It's written in Python and started off as an experiment if it's possible to create a somewhat well performing stateless IRC bridge that's practically almost zero configuration. It quickly found a use case of being able to join !channels on IRCnet that hasn't been possible in the past.
+>
+> Intended target audience are people who run their own homeserver and would like to transition from a combination like ssh+irssi to pure Matrix (with weechat-matrix, of course!) but still keep IRC close without losing the "fine details" of the protocol that happens when plumbing a room properly.
+>
+> As the bridge is written by someone who doesn't really know Python help is much appreciated in the form of filing issues, sending pull requests or just discussing about it on Matrix to tell how you would like to use it!
+>
+> Development and support in [#heisenbridge:vi.fi](https://matrix.to/#/#heisenbridge:vi.fi)
+>
+> Thanks!
+
+
+
+### matrix-puppeteer-line updated
+
+[Fair](https://matrix.to/#/@fair:miscworks.net) offered:
+
+> [matrix-puppeteer-line](https://src.miscworks.net/fair/matrix-puppeteer-line/): A bridge for LINE Messenger based on running LINE's Chrome extension in Puppeteer.
+>
+> Updates:
+>
+> * Inbound read receipts! But with a view caveats:
+>
+>   * Receipts are only fetched for the "most recently active" room.
+>     * Example: if you send a message in room A, then room B, receipts will only be fetched for room B and not room A, until you (or someone else, from LINE) posts in room A.
+>
+>     * This will be fixed in the next update. I have an idea for some Puppeteer trickery to get it working.
+>   * Read receipts in group chats are bridged as annotations (reactions) instead of "real" read receipts, until all members of the chat have read a message.
+>
+>     * This is because LINE's read receipts for group chats don't tell show _who_ read a message, but only _how many_ people a message was read by.
+>     * To capture this in Matrix, instead of sending read receipts for a group chat message, the bridge puts a reaction of "Read by #" on it, with "#" matching how many people read the message so far. Once everyone in the chat has read a message, the reaction is removed and a "real" receipt is sent for all users.
+>
+> * Internal changes to message syncing that should hopefully make inbound messages more reliable, or the very least improve code maintenance. 
+>
+> Discussion:
+>
+> [#matrix-puppeteer-line:miscworks.net](https://matrix.to/#/#matrix-puppeteer-line:miscworks.net)
+
+
+
+## Dept of Clients 📱
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) offered:
+
+> Hey there, it is your friendly neighborhood cat client! Pardon, chat client!
+>
+> Jedi18 implemented forwarding of messages. Just select a message and press Alt-F or use the context menu to send a message to the room you select in the popup! This encrypts and decrypts messages and media appropriately, but be aware that sending an encrypted file to an unencrypted room uploads the file unencrypted. (In all other cases the media is not uploaded again.)
+>
+> Furthermore matrix.to links are now rewritten to matrix:-URIs internally. This means joining rooms and such should now work the same across both of them. It also makes navigation to events work now and even has a shiny highlight effect now! You can also create links to events now from the context menu. These are generated as matrix.to links, since currently the onboarding experience should still be better. Once the next version of the matrix.to website gets deployed, you can even just click there to open the event in Nheko! (Instead of having to copy a `/join` command).
+>
+> Since "Copy link to event" was confusing to people and AppAraat opened his present box, only to realize it did not contain "Copy link location", we implemented that too as well as a copy action, to copy the event body for good measure. I hope everyone who got confused will forgive me!
+>
+> Apart from that we also updated our screenshots on <https://nheko-reborn.github.io/> (and all AppStream based store pages) to be higher resolution and reflect the current design. Furthermore we fixed the login on conduit homeservers and that no rooms were shown, if the server didn't support the groups API.
+>
+> That's all, and keep on c(h)atting! <3
+
+
+
+![2021-04-30-zKbR8-nheko-message-fwd.png](/blog/img/2021-04-30-zKbR8-nheko-message-fwd.png)
+
+### NeoChat
+
+[Carl Schwan](https://matrix.to/#/@carl:kde.org) told us:
+
+> We rewrote the room managing code moving it from QML to C++ and unify how we manage rooms in NeoChat. This allowed us to support the matrix-URIs scheme, making it possible to open rooms and show user information when clicking on a matrix: link in your browser. Sverin Saji improved the look of the typing indicator and Jan Blackquill improved the keyboard navigation.
+
+
+
+![2021-04-30-JcL3Q-image.png](/blog/img/2021-04-30-JcL3Q-image.png)
+
+### Watch The Matrix
+
+![2021-04-30-boDeS-Icon.png](/blog/img/2021-04-30-boDeS-Icon.png)
+
+[Doug](https://matrix.to/#/@doug:micdrop.uk) offered:
+
+> This week I published the first public build on TestFlight:
+>
+> https://testflight.apple.com/join/a06n3gN4
+>
+> There are a few reports of issues when signing in which I'm looking into. A few other changes include:
+>
+> * Round complications show [ ] instead of an empty icon (some have been disabled for now).
+>
+> * When signing in, the homeserver can be detected from the username.
+> * Various performance and bug fixes for sync responses.
+>
+> * The app now has an icon and more purple accents.
+>
+> As requested by benpa after my last update, here's a video of it running on a device:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GPGaefv1Gvw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+*/me doesn't need to buy an Apple Watch ... /me **doesn't** need to buy an Apple Watch*
+
+### Element Clients
+
+Updates from the teams.
+
+**Delight**
+- We’ve been maturing and iterating on [MSC1772](https://github.com/vector-im/element-web/issues/15930) in anticipating of wider testing of Spaces in the near future
+- On Web, we’ve been iterating on designs & implementations for a beta, including tweaking filtering to display rooms from all Spaces
+- On Android, we’ve been doing the same, and have merged the initial Spaces implementation onto develop
+- On Synapse, we’ve been implementing restricting rooms based on the Space Summary API
+
+**Web**
+- 1.7.26 released on Monday
+  - Added persistence of unsent messages across app restart
+  - Improved room list filtering performance
+  - Improved the image detail view
+- On develop
+  - Element Desktop is now [available for localisation](https://translate.element.io/projects/element-desktop/element-desktop/) in Weblate
+- In progress
+  - Improving room join UX, ensuring you can get back to a room when it finally joins
+  - [Converting more files to TypeScript](https://arewetsyet.bit.ovh/), including key modules like EventTile and friends
+
+**iOS**
+- 1.3.5 has been published to the App Store on Monday.
+- We have been polishing the new VoIP design this week. It should be merged into develop early next week and released in the App Store the week after.
+- We want to focus on code quality. We set up GitHub actions in our 3 repos. They run both unit tests and integration tests. We need to fix some of our 600+ tests in the SDK but we now have a CI able to complain about test failures.
+
+**Android**
+- The Spaces have landed on Element Android, on the develop branch. We are working to stabilize the feature before the release in beta next week.
+- In parallel, we are working to stabilize the whole application, and provide a better support on Android 11.
+- Also it will be possible in the next release to compress video before sending, which is a very expected feature.
+
+
+
+### Hydrogen
+
+A minimal Matrix chat client, focused on performance, offline functionality, and broad browser support. https://github.com/vector-im/hydrogen-web/
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) said:
+
+> Invites and other goodies have landed in [0.1.46 & 0.1.47](https://github.com/vector-im/hydrogen-web/releases/tag/v0.1.46)!
+
+![2021-04-30-dyAS7-Screenshot_20210428-143543.png](/blog/img/2021-04-30-dyAS7-Screenshot_20210428-143543.png)
+
+If you spend any amount of time with Bruno, eventually the topic of sourdough will arise - now it's even sneaking into his updates!
+
+## Dept of VoIP 🤙
+
+### matrix-pstn-bridge
+
+[KB1RD](https://matrix.to/#/@kb1rd:kb1rd.net) told us:
+
+> I announced this project last week. It's exactly what it sounds like: A puppetting bridge to puppet a telephone number from Matrix. It's currently pre-alpha and not ready for use on public-facing HSes.
+>
+> Not too much has happened in the last week as I've been a bit busy. The main thing is that there's now a [dev branch where outbound voice calls work](https://github.com/KB1RD/matrix-pstn-bridge/tree/voip-dev). Other than the 2014 [SIP experiment](https://matrix.org/blog/2014/11/30/bridging-matrix-sip-via-verto), I think this is the first bridge to make voice calls work?
+>
+> I hope having a reference VoIP bridge can help pave the way for more VoIP bridging. I'm already looking into how code can be generalized for other bridges. For example, I've opened an [issue in matrix-bot-sdk to add helper classes and stuff for VoIP support](https://github.com/turt2live/matrix-bot-sdk/issues/112). I'd be curious to see how other bridge builders think this could be accomplished. 👀
+>
+> If you're interested in PSTN bridging specifically, there's a [room for that](https://matrix.to/#/#matrix-pstn-bridge:kb1rd.net?via=kb1rd.net&via=matrix.org&via=t2bot.io).
+>
+> If you're interested in VoIP bridging in general, there's a [room for that, too](https://matrix.to/#/#matrix-voip-bridging:kb1rd.net?via=kb1rd.net&via=matrix.org&via=jboi.nl)
+
+
+
+## Dept of Services 🚀
+
+### etke.cc - like Element Matrix Services, but on your servers, under your control and without restrictions
+
+[Aine](https://matrix.to/#/@aine:etke.cc) reported:
+
+> Some context: I like how simple  EMS allows you to setup the Matrix homeserver, but it lacks any internal tuning or customization ability. Do you want more? OK, setup it yourself and try to stay normal while trying to configure coturn to properly run in docker cluster.  Because of that, I did a service where you can order initial setup and configuration of homeserver (yes, with coturn in docker cluster!) **and** with full control of customization and fine-tuning of manual configuration (website even has step-by-step guide how the process works).
+>
+> It's based on the amazing spantaleev/matrix-docker-ansible-deploy with additional stuff like system security hardening and maintenance
+>
+> Announcements: [#announcements:etke.cc](https://matrix.to/#/#announcements:etke.cc) 
+>
+>  Source: https://gitlab.com/rakshazi/matrix-ansible/ 
+> It contains basic security stuff like ufw and fail2ban, system maintenance like updating packages, cleanup of old logs and docker images, configuration of swap, some additions like absurdly simply healthcheck page and website deployment to base domain. Documentation may be found in readme files for each role
+
+
+
+### GoMatrixHosting v0.4.5 is here!
+
+[Michael](https://matrix.to/#/@michael:perthchat.org) said:
+
+> GoMatrixHosting v0.4.5 is here!
+>
+> https://gitlab.com/GoMatrixHosting
+>
+> The FLOSS Matrix hosting system built on AWX, it enables you to manage multiple Matrix servers for many clients in both a commercial or non-commercial context. We are currently doing a free giveaway of on-premises server plans, if you're an experienced user or Matrix admin you can recieve a free on-premises subscription and hopefully provide us with some feedback.
+>
+> For more updates on this project visit our Matrix room: [#general:gomatrixhosting.com](https://matrix.to/#/#general:gomatrixhosting.com)
+
+GoMatrixHosting was previously Oasis Hosting - looks like they're making great progress improving their product, may be time to have another look.
+
+## Dept of Interesting Projects 🛰️
+
+### Matrix_Stats Discoverer (bot) ( @server_stats:nordgedanken.dev )
+
+[MTRNord](https://matrix.to/#/@mtrnord:nordgedanken.dev) reported:
+
+> Some of you might already have seen that bot show up in rooms. To clear up some confusion around it I will briefly explain what it does and what it is supposed to do:
+>
+> #### What does it do?
+>
+> The Bot is simply existing to do the same task as Matrix Traveler (bot) already did for years now. It joins rooms, listens for an alias, tries to join it.
+>
+> The main difference between these 2 bots is that my bot also searches for aliases in old messages.
+> #### What does it save?
+>
+> It only saves the relations between rooms. This means it knows which room was posted where. It doesn't know who posted it, when it was posted, why it was posted or any other content of messages.
+>
+> However due to matrix' nature it does need to get the data once onto a synapse to read trough it. This means it has the data on my synapse. (Running in helsinki at hetzner).
+> #### What can I do if I do not want it?
+>
+> The easiest way is to just ban it. It will fully forget that room.
+>
+> Kicking works too but it might again join if it gets found again.
+> #### Where is the source?
+>
+> The source code is available at https://git.nordgedanken.dev/MTRNord/server_stats/-/blob/main/src/bot/mod.rs
+>
+> For further questions feel free to join #server_stats:nordgedanken.dev
+>
+> Also note this bot is still very early in development which is why it does not respond to you yet on any commands. This will be added in the near future as well as a readme in the repository
+
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|maunium.net|670.5|
+|2|matrix.org|739.5|
+|3|matrix.vgorcum.com|1068|
+|4|helsinki-systems.de|1072|
+|5|kif.rocks|1085|
+|6|dendrite.foxomy.com|1092|
+|7|kittenface.studio|1549|
+|8|thomcat.rocks|1674|
+|9|mailstation.de|2011|
+|10|chatcloud.net|2311|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|dendrite.thomcat.rocks|415|
+|2|dendrite.foxomy.com|557|
+|3|dendrite.neilalexander.dev|576|
+|4|dendrite01.fiksel.info|1086|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org

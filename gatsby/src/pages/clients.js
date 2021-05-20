@@ -56,7 +56,7 @@ const ClientsMatrix = ({ data }) => {
       <div className="mxgrid">
         {clients
           .filter(c =>
-            c.client_type !== "terminal" && (
+            c.featured && c.client_type !== "terminal" && (
             c.platforms.indexOf("Linux") !== -1 ||
             c.platforms.indexOf("Mac") !== -1 ||
             c.platforms.indexOf("Windows") !== -1))
@@ -85,6 +85,7 @@ const ClientsMatrix = ({ data }) => {
       <div className="mxgrid">
         {clients
           .filter(c =>
+            c.featured &&
             c.platforms.indexOf("Web") !== -1)
           .map(function (client, i) {
             return (

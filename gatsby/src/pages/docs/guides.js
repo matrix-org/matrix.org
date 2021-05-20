@@ -27,7 +27,7 @@ const Guides = ({data}) => {
         <td>Just get started!</td>
         <td>
           <strong><a href="/docs/guides/getting-involved">Getting Involved</a></strong>, which explains various ways of getting started with Matrix<br /><br />or<br /><br />
-          <strong><a href="/faq">the FAQ</a></strong>, where we try to answer all your questions relating to Matrix</td>
+          <strong><a href="/faq/">the FAQ</a></strong>, where we try to answer all your questions relating to Matrix</td>
       </tr>
       <tr>
         <td>Understand the CS API</td>
@@ -55,7 +55,7 @@ const Guides = ({data}) => {
       </tr>
       <tr>
         <td>Create a complete working chatbot</td>
-        <td><strong><a href="/docs/guides/using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018">Using Matrix to make Chatbot software from the 1960s available in 2018</a></strong> goes from the basics, brings in <a href="https://github.com/turt2live/matrix-js-bot-sdk">matrix-js-bot-sdk</a>, and ends with deployment on a Raspberry Pi</td>
+        <td><strong><a href="/docs/guides/using-matrix-to-make-chatbot-software-from-the-1960-s-available-in-2018">Using Matrix to make Chatbot software from the 1960s available in 2018</a></strong> goes from the basics, brings in <a href="https://github.com/turt2live/matrix-bot-sdk">matrix-bot-sdk</a>, and ends with deployment on a Raspberry Pi</td>
       </tr>
       <tr>
         <td>Work on Bridges to Matrix</td>
@@ -125,6 +125,11 @@ const Guides = ({data}) => {
         <td><a href="https://zinz.dev">Introduction à Matrix et guide d'utilisation</a></td>
         <td><a href="https://luxeylab.net">Adrien Luxey</a></td>
         <td>French</td>
+      </tr>
+      <tr>
+        <td><a href="https://blog.sp-codes.de/werde-teil-der-matrix-matrix-teil-1/">Werde Teil der Matrix</a></td>
+        <td><a href="https://sp-codes.de">Samuel</a></td>
+        <td>German</td>
       </tr>
     </tbody>
   </table>
@@ -209,6 +214,11 @@ const Guides = ({data}) => {
         <td>Hong Xu</td>
         <td>English</td>
       </tr>
+      <tr>
+        <td><a href="https://decatec.de/home-server/matrix-synapse-auf-ubuntu-server-20-04-lts-mit-nginx-postgresql-und-lets-encrypt/">Matrix Synapse auf Ubuntu Server 20.04 LTS mit nginx, PostgreSQL und Let’s Encrypt</a></td>
+        <td><a href="https://decatec.de/">Jan</a></td>
+        <td>German</td>
+      </tr>
       
     </tbody>
   </table>
@@ -227,7 +237,12 @@ const Guides = ({data}) => {
     </thead>
     <tbody>
       <tr>
-          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/metrics-howto.rst">How to monitor Synapse metrics using Prometheus</a></td>
+          <td><a href="https://levans.fr/shrink-synapse-database.html">Compressing Synapse database</a></td>
+          <td>Victor Berger / Levans</td>
+          <td>English</td>
+      </tr>
+      <tr>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/metrics-howto.md">How to monitor Synapse metrics using Prometheus</a></td>
           <td>Synapse Team</td>
           <td>English</td>
       </tr>
@@ -252,7 +267,7 @@ const Guides = ({data}) => {
           <td>English</td>
       </tr>
       <tr>
-          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/opentracing.rst">Use of OpenTracing</a></td>
+          <td><a href="https://github.com/matrix-org/synapse/blob/master/docs/opentracing.md">Use of OpenTracing</a></td>
           <td>Synapse Team</td>
           <td>English</td>
       </tr>

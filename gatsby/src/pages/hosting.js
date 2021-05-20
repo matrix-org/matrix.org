@@ -16,15 +16,15 @@ const Hosting = ({ data }) => {
             <h1 id="matrix-hosting">Matrix Hosting</h1>
             <div className="mxgrid">
                 <div className="mxgrid__item50">
-                    <h2 id="modularim">Modular.im</h2>
-                    <p><img style={{"height": "130px"}} src="/images/modularlogo.png" alt="" /></p>
-                    <p><a href="https://www.modular.im/">www.modular.im</a></p>
+                    <h2 id="ems">Element Matrix Services</h2>
+                    <p><img style={{"height": "130px"}} src="/images/logo-ems-primary.svg" alt="" /></p>
+                    <p><a href="https://ems.element.io/">ems.element.io</a></p>
                     <ul>
                         <li>Hosted Homeservers</li>
-                        <li><a href="https://www.modular.im/services/matrix-integrations">Hosted Integrations including Slack, IRC, Github bridging</a></li>
+                        <li><a href="https://element.io/element-matrix-store">Hosted Integrations including Slack, IRC, Github bridging</a></li>
                     </ul>
                     <p>Brought to you by the creators of Matrix, who have been running the biggest homeserver
-                        in the network since 2014. Every homeserver comes with a custom instance of Riot.</p>
+                        in the network since 2014. Every homeserver comes with a custom instance of Element.</p>
                 </div>
 
                 <div className="mxgrid__item50">
@@ -38,6 +38,47 @@ const Hosting = ({ data }) => {
                     in Linthal, Switzerland. They use an old building, second-hand servers, passive cooling and
                     are directly plugged into an on-site hydroelectric power plant!</p>
                 </div>
+
+                <div className="mxgrid__item50">
+                    <h2 id="ungleich">etke.cc</h2>
+                    <p><img style={{"border-radius": "9px", "height": "130px"}} src="/images/etke.cc.png" alt="" /></p>
+                    <p><a href="https://etke.cc">etke.cc</a></p>
+                    <ul>
+                    <li>Setup of hosted Homeserver on any hosting by your choice</li>
+                    <li>Setup of hosted integrations (full list available on website)</li>
+                    <li>Setup of additional services (wireguard, languagetool, miniflux, etc.)</li>
+                    <li>Ongoing maintenance of host & Matrix components</li>
+                    <li>Email services for your domain</li>
+                    </ul>
+                    <p>
+                        That service will create your Matrix Homeserver on your domain and server (doesn't matter if it's cloud 
+                        provider or on an old laptop in the corner of your room), (optional) maintains it (server's system updates,
+                        cleanup, security adjustments, tuning, etc.; Matrix Homeserver updates & maintenance) and (optional)
+                        provide full-featured email service for your domain.
+                        <br /><br />
+                        <a href="https://matrix.to/#/#service:etke.cc">Matrix Space</a>&nbsp;
+                        | <a href="https://matrix.to/#/#announcements:etke.cc">Announcements on Matrix</a>
+                    </p>
+                </div>
+
+                <div className="mxgrid__item50">
+                    <h2 id="ungleich">GoMatrixHosting</h2>
+                    <p><img style={{"border-radius": "9px", "height": "130px"}} src="/images/GoMatrixHosting.png" alt="" /></p>
+                    <p><a href="https://gomatrixhosting.com">GoMatrixHosting.com</a></p>
+                    <p>
+                        Ansible AWX UI to:
+                        <ul>
+                            <li>Setup of hosted Homeserver on DigitalOcean or own on-premises server</li>
+                            <li>Setup of hosted integrations (bridges and bots)</li>
+                        </ul>
+
+                        Members can be assigned a server from DigitalOcean, or they can connect their on-premises
+                        server. This <a href="https://github.com/ansible/awx">AWX</a> system can manage the updates,
+                        configuration, import and export, backups, and monitoring on its own. For more information see 
+                        our <a href="https://gitlab.com/GoMatrixHosting">GitLab group</a> or
+                        come <a href="https://matrix.to/#/#general:gomatrixhosting.com">visit us on Matrix</a>.
+               
+                    </p> </div>
             </div>
             <em>The providers listed all have a history of providing Matrix services, though The Matrix.org Foundation doesn't explicitly endorse these services.</em>
         </MXContentMain>

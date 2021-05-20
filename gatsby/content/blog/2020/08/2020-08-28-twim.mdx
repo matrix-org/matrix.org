@@ -1,0 +1,439 @@
+---
+date: '2020-08-28'
+title: 'This Week in Matrix 2020-08-28'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2020-08-28-ml.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gtbIWSsHICI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of Spec 📜
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) announced:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals>.
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * _No MSCs were merged this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **New MSCs:**
+>
+> * [MSC2749: Per-user E2EE on/off setting](https://github.com/matrix-org/matrix-doc/pull/2749)
+> #### Spec Core Team
+>
+> In terms of Spec Core Team MSC focus for this week, we're taking off [MSC2674](https://github.com/matrix-org/matrix-doc/issues/2674) and [MSC1544](https://github.com/matrix-org/matrix-doc/issues/1544) while the author works through feedback, and instead looking at getting widgets in line.
+>
+> The spec for widgets has so far lived on a collaborative document that hasn't been updated in some time. As a result multiple, separate implementations have sprouted. We'd like to nail this down. So the focus for this week will be: [MSC1960](https://github.com/matrix-org/matrix-doc/pull/1960) (widget auth mechanics) and [MSC1236](https://github.com/matrix-org/matrix-doc/issues/1236) (general widgets).
+
+
+
+![2020-08-28-MSnEZ-stacked_area_chart.png](/blog/img/2020-08-28-MSnEZ-stacked_area_chart.png)
+
+## Dept of GSoC 🎓️
+
+The coding phase of [Google Summer of Code is over](https://summerofcode.withgoogle.com/dashboard/timeline/)! That said there is still a bunch of stuff to do, code is still appearing and we're now entering the time of *many forms to fill in* in order for people to get paid.
+
+A little pre-emptive, but wow it's been a good summer! SIX students, all did well!
+
+### matrix-ircd - Call for Testing
+
+[jplatte](https://matrix.to/#/@jplatte:matrix.org) announced:
+
+> GSoC coding is over and there's now an async/await ported matrix-ircd! Before merging that into master, it would be nice to have it tested a bit more. To install it, you first need `Cargo`, Rust's package manager ([Installation](https://doc.rust-lang.org/cargo/getting-started/installation.html)). With that set up, just run
+>
+> ```sh
+> cargo install --git <https://github.com/matrix-org/matrix-ircd> --branch async_await
+>
+> ```
+>
+> Once matrix-ircd is installed, you can [run it](https://github.com/matrix-org/matrix-ircd/tree/async_await#usage) and connect to the locally spawned server with any IRC client.
+
+### HTML embeddable matrix chat
+
+[arnav-t](https://matrix.to/#/@arnav-t:matrix.org) said:
+
+> For the GSoC project HTML embeddable matrix chat this week -
+>
+> * Added an 'auto' option for the theme (read and set the theme from the device)-
+>
+> * Added a 'custom' highlight color (meant to be modified by users).
+> * Restyled various components.
+
+More news to come from this project - going to be used in a really exciting live event in the near future. Arnav has accidentally found a niche. :D
+
+One more thing: This project needs a new name ([riot-embedded](https://github.com/arnav-t/riot-embedded) I don't like.) If you have ideas you can fling them at [arnav-t](https://matrix.to/#/@arnav-t:matrix.org) or post in [#twim:matrix.org].
+
+## Dept of Servers 🏢
+
+### Dendrite / gomatrixserverlib
+
+Dendrite is a next-generation homeserver written in Go
+
+[Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) told us:
+
+> This week has mostly been focused on [beta milestone tasks](https://github.com/matrix-org/dendrite/milestone/8) and bug fixes. Changes this week include:
+>
+> * Joining rooms which the server already belongs to when invited by a user from another homeserver is now significantly faster
+>
+> * The client API no longer refers to the device DB directly, instead using the new user API
+> * A number of locking issues have been fixed in the federation sender
+>
+> * The `/join` endpoint now accepts `?server_name=...` query parameters
+> * The device list updater now obeys the backoff period and blacklisted status from the federation sender
+>
+> * Uploaded media will no longer be truncated to 0 bytes when `max_file_size_bytes` option is set to 0 (for unlimited)
+> * The media API now correctly cleans up temporary directories when errors occur
+>
+> * The media API now returns unique media IDs and metadata when multiple users upload the same file, whilst maintaining deduplication on disk
+> * Rejecting invites over federation multiple times should now work properly
+>
+> * Redactions are now permanent and are committed to the database
+> * Some caches have been added to the roomserver for room IDs, state key IDs and event type IDs to reduce pressure on the database
+>
+> * The redaction endpoint is now spec-compliant
+> * Some places where global errors were overwritten have been fixed (thanks oliverpool!)
+>
+> * Some state key checks in the roomserver membership updaters have now been tidied up (thanks oliverpool!)
+>
+> Spec compliance has improved slightly:
+>
+> * Client-Server APIs: 55%, up from 54% last week
+>
+> * Server-Server APIs: 70%, down from 71% last week due to a single flakey test
+>
+> We've also updated some of our documentation and created a whole new set of [easy first issues](https://github.com/matrix-org/dendrite/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) and [medium to hard issues](https://github.com/matrix-org/dendrite/issues?q=is%3Aissue+is%3Aopen+label%3Ahelp-wanted) for contributors.
+>
+> If contributing to Dendrite sounds like something you would be interested in, please take a look at these issues and join us in [#dendrite-dev:matrix.org](https://matrix.to/#/#dendrite-dev:matrix.org)! There's also [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for general Dendrite chat.
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
+
+[timo](https://matrix.to/#/@timo:koesters.xyz) said:
+
+> Some new features this week!
+>
+> * Handle transaction ids to avoid duplicate messages on bad connections
+>
+> * Redaction reasons
+> * Add remaining key backup endpoints (e.g. deleting backups)
+>
+> * Send correct device list changes when leaving and joining e2ee rooms
+>
+> Also check out our new website (https://conduit.rs) if you haven't already.
+>
+> Thanks to everyone who supports me on [Liberapay](https://liberapay.com/timokoesters) or Bitcoin!
+
+
+
+### Synapse
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) offered:
+
+> This week Erik has been working on sharding the Event Persister worker as we aim further for horizontal scalability for Synapse. Some of the complication comes from ensuring that sysadmin's don't misconfigure things where multiple event persisters persist events in the same room.
+
+![2020-08-28-uUl-U-image.png](/blog/img/2020-08-28-uUl-U-image.png)
+
+> Patrick has been continuing on the async/await train and has just submitted the final PR which async's our `runInteraction` method - the one that most database calls go through. Synapse is nearly 100% async! He's also been submitting a flurry of shadow ban PRs, which will be another powerful tool for moderation.
+>
+> Brendan and Rich are continuing to work on the Notifications rewrite, with Brendan finishing up unread counts, and Rich polishing up designs for the new replacement for push rules.
+>
+> Andrew (*who dat? - ed.*) is continuing to work on the [knocking MSC](https://github.com/matrix-org/matrix-doc/pull/2403) and has fleshed out the CS and SS details. There are still some open questions though, so please give feedback if you notice anything off!
+>
+> Finally, Olivier has been working on making sure you get your missed messages when your homeserver has been offline for a while, as well as various Sygnal fixes and matrix-synapse-ldap3.
+>
+> Them's the news!
+
+
+## Synapse Deployment 📥️
+
+### YunoHost
+
+[Pierre](https://matrix.to/#/@pierre:mamieserv.fr) said:
+
+> [YunoHost](https://yunohost.org) is an operating system aiming for the simplest administration of a server, and therefore democratize self-hosting.
+>
+> [Synapse](https://github.com/YunoHost-Apps/synapse_ynh/tree/master) integration had been updated to 1.18.0 (1.19.0 available in branch `testing`)
+>
+> [Element Web](https://github.com/YunoHost-Apps/element_ynh/tree/master) integration had been updated to 1.7.3 (1.7.4 available in branch `testing`)
+
+
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) told us:
+
+> Just pushed an update to my [matrix-synapse chart](https://gitlab.com/ananace/charts), fixing the volume permission configuration - for those who want to run Synapse as non-root without using a storage class that supports setting rights based on `fsGroup`
+
+and then
+
+> Just pushed the 1.19.1 tags for my K8s-optimized container image, and a new helm chart version to go with it.
+
+Did you know that Ananace is running a Matrix server for [Linköpings universitet](https://liu.se/)?  
+Another True Fact: "universitet" appears to be Swedish for "university".
+
+## Dept of Bridges 🌉
+
+### matrix-appservice-mattermost
+
+[dalcde](https://matrix.to/#/@dalcde:matrix.org) offered:
+
+> I recently published a new matrix <-> mattermost bridge - [matrix-appservice-mattermost](https://github.com/dalcde/matrix-appservice-mattermost). The new bridge already supports many features and is rapidly improving, with the current focus being setting up proper integration tests.
+
+New bridge! This is actually really fully featured considering that we've only just heard about it! Looking forward to seeing more from dalcde and team in future.
+
+## Dept of Clients 📱
+
+### Daydream
+
+[MTRNord](https://matrix.to/#/@mtrnord:nordgedanken.dev) offered:
+
+> Some small updates on Daydream:
+>
+> * The pages <https://daydream.im> and <https://app.daydream.im> get finally updated again. We switched from netlify to github pages
+>
+> * Devin R fixed a bug with huge numbers in power levels which caused Florian  to not being able to join (Fixed in the rust-sdk)
+> * Because of the now again working deployment of Daydream parts of the WIP redesign are now available on <https://app.daydream.im>
+>
+> * Github Emoji codes like `:gift:` Get replaced with unicode on sending allowing basic emoji usage
+>
+> Also the landing page at <https://daydream.im> got a fresh new design :)
+>
+> And we are investigating a switch to the [Druid](https://github.com/linebender/druid) framework to also add support for desktop
+>
+> Check it out at: <https://app.daydream.im> or join our Chat at [#daydream:nordgedanken.dev](https://matrix.to/#/#daydream:nordgedanken.dev)
+
+Honestly I didn't realise Florian was a setting in the power levels. Is this in the spec? Very good seeing Rust SDK getting such usage, we will see more from this project I hope!
+
+### mxapps
+
+[KB1RD](https://matrix.to/#/@kb1rd:kb1rd.net) offered:
+
+> > A multi-account Matrix client that allows you to authorize webapps to access parts of your account, designed with collaboration in mind.
+>
+> This is the webapp I've been talking about for a while that allows webpages limited access to your account. Currently, apps can view the name, avatar, alias, and type of a room that's been opened with the app, and that's just about it.
+>
+> The big interesting thing about mxapps right now is the architecture. Just about all of the logic is running in a shared worker. This means that you can duplicate as many tabs as you want and it will all act as the same client. It also has multi-account support.
+>
+> Features coming ~soon~ at some point will be full state event support and easy-to-follow docs on how to make an app, plus Vue plugins to make development really easy.
+>
+> You can checkout the live version on [mxapps.kb1rd.net](https://mxapps.kb1rd.net/), but it is a bit useless...
+>
+> There are some work-in-progress docs on the structure on [docs.mxapps.kb1rd.net](https://docs.mxapps.kb1rd.net/)
+>
+> I'll post an example app in a bit ;)
+
+What a great use of workers! The possibilities for this are really impressive...
+
+### Mirage
+
+[miruka](https://matrix.to/#/@miruka:privacytools.io) reported:
+
+> Small 0.6.2 release this week, mostly bug fixes:
+>
+> #### Changed
+>
+> * When replying to a message, you can now press enter without entering any
+>
+>   text to send it directly (useful to "forward" a message).
+>
+> * Sending a file while replying to a message will create a pseudo-reply,
+>
+>   consisting of an "In reply to" text message with no body, followed by the
+>   actual file event.
+>
+>   This is a workaround to the reply restrictions imposed by the Matrix spec.
+>
+> * **Composer aliases cannot contain whitespace anymore.**
+>
+>   This includes spaces, hard tabs or newline characters.
+>   If an alias from your config still has whitespace, only the first word
+>
+>   will be taken into account (ignoring any leading or trailing space).
+>
+> * Faster server browser loading, now gathers all needed data with a
+>
+>   single request instead of one for each server
+>
+> * Auto-focus the "Join" button on invited room pages
+>
+>   ((Shift+)Tab can be used to navigate between buttons)
+>
+> * Auto-focus the "Forget" button on left room pages
+>
+> * Themes: modify `chat.message.styleSheet` to add some spacing between HTML 
+>
+>   list items, see
+>   [48663ae](https://github.com/mirukana/mirage/commit/48663ae8465e90646855435b47b89c01395ae4d9)
+>
+> #### Fixed
+>
+> * Fix @username autocompletion closing if there's more than one character
+>
+>   after the @
+>
+> * Consider the partial text from IME (input method editors) and touch screen 
+>
+>   autocompleting keyboards and for username autocompletion
+>
+> * Reset IME state upon autocompleting a username
+>
+> * Fix clicking on autocompletion list user not making the username a mention
+>
+> * Fix UI freezing when mentioning user lacking a display name
+>
+> * Fix mentioning users with blank display name (e.g. only spaces), mention
+>
+>   them by their user ID
+>
+> * Fix text fields/areas unable to be focused on touch screen
+>
+> * Fix random chance of profile retrieval requests failing if one of the logged
+>
+>   in account doesn't federate with other servers (e.g. localhost synapse)
+>
+> * Fix composer text saved to disk for the wrong account if that text begins
+>
+>   by an account alias
+>
+> * Servers can potentially return an outdated member list for rooms on initial 
+>
+>   sync, which is one of the possible cause of "Members not synced" error for 
+>   encrypted rooms.  
+>
+>   When loading the full room list, discard members from the initial sync list
+>   that are absent from the full list.
+>
+>   For those not using the AppImage or Flatpak, this fix requires **matrix-nio 0.15.1** or later to take effect.
+>
+> * When erasing an account alias inside the composer, send a 
+>
+>   "x isn't typing anymore" notification corresponding to that account 
+>
+> * Fix potential 403 error on chat pages for invited rooms.
+>
+> * Start loading room history immediately when the room join state changes,
+>
+>   e.g. when clicked "Join" for an invited room page.
+
+### Hydrogen
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) announced:
+
+> Released 0.0.34 this week with some fixes to the room list sorting and fixing several crashes. If you clear your session, it will also sort low priority rooms at the bottom of the room list, even if unread, making it a bit more usable until we add more UX refinements to the room list. 
+>
+> Most of the effort this week however has gone into working on end-to-end encryption, having investigated using the rust-sdk for a couple of days, and now looking into a custom implementation based on libolm. This is well on its way with key upload working and device tracking nearing completion.
+
+Getting e2ee will make this a very compelling client! Remember to watch Matrix Live with Bruno above. If you've watched it, remember we have 100s of episodes of Matrix Live to catch up on!
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) told us:
+
+> I just merged the new event store a few days ago. This means Nheko now doesn't keep messages in RAM! Everything is stored on disk and mapped into memory from disk. This may reduce memory usage a tiny bit, but may increase latency while scrolling a bit. Try it out and give your feedback!
+>
+> For the developers reading this, I collected some ramblings on my blog here: <https://blog.neko.dev/posts/nhekos-event-store-v2.html> . Yes, I designed that site when I was like 15, I know the dark theme is a bit too much... Just use Firefox and the alternate stylesheet for light mode! Anyway, I'm very interested to hear how other clients implement their event stores!
+
+### Element-Android v1.0.5
+
+[benoit](https://matrix.to/#/@benoit.marty:matrix.org) said:
+
+> Element-Android v1.0.5 has been released to the PlayStore. We are now working to improve user experience with 1-1 calls. We will add support to add and remove emails to your Matrix account, and we are still fixing bugs...
+
+We are always fixing bugs!
+
+### Element-iOS
+
+[Manu](https://matrix.to/#/@Manu:matrix.org) has been working hard on iOS:
+
+> This week, we made 2 release candidates available through [TestFlight](https://testflight.apple.com/join/lCeTuDKM). New features are :
+>
+> -  app access protection with PIN code, TouchID or FaceID
+> -  the come back of the incoming native call screen
+>
+> A huge thanks to the community for the feedbacks. It helped us to discover issues like a crash in background due to PushKit. The coming TF (1.0.7) should fix all of them
+
+## Dept of SDKs and Frameworks 🧰
+
+### mautrix-go
+
+[nikofil](https://matrix.to/#/@nikofil:matrix.org) reported:
+
+> A [PR](https://github.com/tulir/mautrix-go/pull/18) has been created for cross-signing and SSSS support! It also supports accepting in-room verification requests and will soon also support creating them, after which it should be ready for reviewing. Afterwards, with some minor changes to clients using the library, cross-signing should be available.
+
+Cross-signing in gomuks and more?
+
+## Dept of Bots 🤖
+
+### catbot
+
+[chloe](https://matrix.to/#/@chloe:loves.shitposting.chat) reported:
+
+> [Github](https://github.com/chloelovesdev/catbot)
+>
+> A [Matrix](https://matrix.org/) bot using the library [matrix-nio](https://github.com/poljar/matrix-nio) and [Docker](https://www.docker.com/) (specifically [aiodocker](https://github.com/aio-libs/aiodocker)) for running sandboxed code, allowing users to write their own factoid commands which can perform any task required. The bot launches a new instance of itself every time it is invited to a room, where it can then be configured for that channel by a management website. There is also a web IDE for the factoids, so you can edit and test the bot's output.
+>
+> 1. Bash-like factoid and command input/output redirection
+>
+> 2. Run untrusted code for PHP, Python, JavaScript and Java in Docker containers
+> 3. Manage the instance of the bot from a management server (realtime log output over websockets, schedule commands to run, manage trusted devices and more)
+>
+> 4. Web interface for factoid editing (create, save, edit and test with live output). IDE from [ace from cloud9](https://ace.c9.io/)
+
+![2020-08-28-ArKGA-testing_factoid.png](/blog/img/2020-08-28-ArKGA-testing_factoid.png)
+
+![2020-08-28-gdnHE-time_example.png](/blog/img/2020-08-28-gdnHE-time_example.png)
+
+Cool! There are so many bot creation systems for Matrix now!
+
+## Final Thoughts 💭
+
+[Christian](https://matrix.to/#/@christianp:vector.modular.im) offered:
+
+> There is one month left until [Hacktoberfest](https://hacktoberfest.digitalocean.com/)🎃! Prepare your repos now!
+>
+> It's a great time to get friends and newcomers involved with open source and your projects.
+> During October, merged PRs to any(!) public GitHub repo will count towards a person's score. With four PRs, they get a very neat looking t-shirt from the organizer DigitalOcean. They can also ask for a tree to be planted instead.
+>
+> As a maintainer,
+> 1. Add a "Hacktoberfest" label (color suggestion: `#FF7518`) on issues to point people to tasks with a clear scope.
+> 2. Let people know that you're interested in contributions and will review them.
+> 3. Add the label "invalid" on a PR that's spam or a minor contribution that shouldn't count (fixing typos, blindly upgrading dependencies, etc.).
+
+Matrix benefits from Hacktoberfest, but do keep in mind that this is a commerical project from DigitalOcean.
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|fairydust.space|374|
+|2|neko.dev|526|
+|3|loves.shitposting.chat|566|
+|4|yyyyyyy.ml|619|
+|5|kif.rocks|669|
+|6|maescool.be|737.5|
+|7|matrix.vgorcum.com|754|
+|8|autodie.be|839|
+|9|hmlw.me|966.5|
+|10|fick.es|1053.5|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: <https://matrix.to/#/#TWIM:matrix.org>

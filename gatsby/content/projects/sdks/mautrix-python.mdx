@@ -1,0 +1,47 @@
+---
+layout: projectimage
+title: mautrix-python
+categories: 
+ - sdk
+description: An asyncio Matrix framework written in Python
+author: Tulir
+maturity: Beta
+language: Python
+license: MPL-2.0
+repo: https://github.com/tulir/mautrix-python
+room: "#maunium.net:maunium.net"
+featured: true
+e2e: "Yes"
+thumbnail: /docs/projects/images/python.png
+screenshot: /docs/projects/images/python.png
+---
+
+A Python 3.6+ asyncio Matrix framework.
+
+Components:
+
+- Basic HTTP request sender ([mautrix.api])
+- [Client API] endpoints as functions ([mautrix.client.api])
+- Medium-level application service framework ([mautrix.appservice])
+  - Basic transaction and user/alias query support (based on Cadair's [python-appservice-framework]).
+  - Basic room state storage.
+  - Intent wrapper around the client API functions (design based on matrix-appservice-bridge).
+- Medium-level end-to-end encryption framework ([mautrix.crypto])
+  - Handles all the complicated e2ee key exchange.
+- High-level bridging framework ([mautrix.bridge])
+  - Base class for bridges.
+  - Common bridge configuration and appservice registration generation things.
+  - Double-puppeting helper.
+  - End-to-bridge encryption helper.
+- High-level client framework ([mautrix.client])
+  - Syncing and event handling helper.
+  - End-to-end encryption helper.
+
+[mautrix.api]: https://mautrix.readthedocs.io/en/latest/mautrix.api.html
+[Client API]: https://matrix.org/docs/spec/client_server/latest.html
+[mautrix.client.api]: https://mautrix.readthedocs.io/en/latest/mautrix.client.api.html
+[mautrix.appservice]: https://mautrix.readthedocs.io/en/latest/mautrix.appservice.html
+[python-appservice-framework]: https://github.com/Cadair/python-appservice-framework/
+[mautrix.bridge]: https://mautrix.readthedocs.io/en/latest/mautrix.bridge.html
+[mautrix.client]: https://mautrix.readthedocs.io/en/latest/mautrix.client.html
+[mautrix.crypto]: https://mautrix.readthedocs.io/en/latest/mautrix.crypto.html

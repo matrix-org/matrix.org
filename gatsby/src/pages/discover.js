@@ -52,7 +52,7 @@ const Discover = () => {
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_signs.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/faq">FAQ</a></h4>
+                            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/faq/">FAQ</a></h4>
                             <p className="mxgrid__item__bg__p">Matrix FAQ<br /></p>
                         </div>
                     </div>
@@ -93,7 +93,7 @@ const Discover = () => {
                     <div className="mxgrid__item__bg mxgrid__item__bg--develop">
                         <img src="/images/basic_share.svg" alt="" className="mxgrid__item__bg__img mxgrid__item__bg__img--develop" />
                         <div className="mxgrid__item__bg__vert mxgrid__item__bg__vert--develop">
-                            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/bridges">Bridges</a></h4>
+                            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--develop"><a href="/bridges/">Bridges</a></h4>
                             <p className="mxgrid__item__bg__p">Bridge to platforms outside Matrix<br /></p>
                         </div>
                     </div>

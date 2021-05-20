@@ -1,0 +1,64 @@
+---
+title: fachschaften.org provides Matrix for students
+section: Case Studies
+thumbnail: /images/TU_Math_tower_full_view.jpg
+featured: true
+---
+
+## Situation
+
+fachschaften.org is a cross-university council that provides IT services to Computer Science students.
+
+It’s hosted by the TU Dortmund University Computer Science student union for the benefit of all German-speaking students and personnel. "Fachschaft" is the word for all students at a University department. Most of fachschaften.org’s infrastructure currently lives on the TU Dortmund CS department’s servers, but is not permanently tied to TU Dortmund.
+
+![TU Math tower full view](/images/TU_Math_tower_full_view.jpg)
+
+Math Tower of the TU Dortmund, where parts of fachschaften.org are hosted. [Photo by Rasulnrasul](https://commons.m.wikimedia.org/wiki/File:TU_Math_tower_full_view.jpg).
+
+The fachschaften.org server has offered Jabber (XMPP) services for several years. However Jabber was suffering from XEP fragmentation and a lack of strong clients for mobile. As a result, XMPP couldn’t provide the kind of future-proof federation that fachschaften.org envisaged to link the student and faculty populations across the DACH-region and beyond.
+
+Felix and David are students at TU Dortmund and the IT administrators who work on the fachschaften.org infrastructure.
+
+## Enabling the dream with Matrix
+
+Being able to self-host was important, but federation was the feature that made Matrix an exciting option. Hosting its own server, but still being able to communicate with other servers, was fachschaften.org’s dream scenario.
+
+The first instance fachschaften.org deployed was a server dedicated to the “Konferenz der Informatikfachschaften,” a half-yearly conference of German-speaking Computer Science student councils, known as kif.rocks. They used mxisd - which was preferable because it doesn't broadcast 3PIDs, which Synapse did expose. Following mxisd, migrating to the newer ma1sd was easy.
+
+A month in Felix and David were happy and decided to stick with Matrix. They decided to set up another Synapse instance for fachschaften.org, this time with LDAP active. Having used mxisd from the start on kif.rocks, the ability to use LDAP later on for this second installation was the icing on the cake.
+
+For deployment, they use Ansible and Proxmox with LXC containers. For installation itself they use the official deb packages.
+
+The new Matrix system went live in May 2018. TU Dortmund hosts the Matrix server, but the student organisation is responsible for maintaining it.
+
+## Initial uptake
+
+The benefits of federation became apparent when users were able to chat between two homeservers: fachschaften.org and kif.rocks.
+
+A Matrix community was created for the kif.rocks conference, so they could show flair for users at the event, and have a custom room list.
+
+Usage grew as word-of-mouth took hold. The instance has not been advertised heavily, but one way of getting more users on board has been simply telling incoming students about it. Later a new landing page was created listing IT services and the new Matrix instance. The landing page directs users to register a fachschaften.org account, which creates a Matrix-capable LDAP account.
+
+## Rapid growth from lockdown
+
+Then, in 2020, the Covid-related lockdown caused a major uptick in usage. A professor from the Operating Systems course asked to be able to use chat alongside a livestream of the lecture.
+
+300 students joined from the Operating Systems course that Monday morning! Felix and David had expected a small performance hit, though it turned out to be a bit higher than expected (several seconds of lag). For the lecture the week after they deployed Synapse workers, and now have three synchrotrons in addition to other workers to handle the load. 
+
+Professors like to encourage usage of Matrix, alongside the other fachschaften.org services, as they know it is a self-hosted offering that preserves universities’ data sovereignty.
+
+## Element becomes the new normal
+
+Historically students tended to use Telegram but the latest intake of students, in May 2020, have been encouraged to use Element. New rooms for the summer 2020 batch of students have been created primarily on Matrix; students are instructed which chat rooms to join in their introduction tutor group. To ease the transition for existing users and rooms, there is a Telegram bridge, an instance of mautrix-telegram.
+
+While Matrix gets attention, Jabber services, via an ejabberd instance, are still running as legacy.
+
+## Future Plans
+
+The team wants to use SSO rather than a shared password for separate accounts. As such they are contemplating a switch from LDAP to SAML. This would give other benefits, such as Gitlab integration with SAML SSO.
+
+Right now there is little monitoring, particularly around Synapse performance; this is something Felix and David want to improve. In particular, monitoring message send times as a guide to overall performance.
+
+They also want to be able to use stickers in chat, so they are considering enabling an instance of the Dimension integration server. This, naturally would be self hosted.
+
+The team is excited about Cross-Signing, which has solved previous encryption-related issues and ensures that students’ conversations are not being intercepted by imposters. Many students are from the Computer Sciences department, and have lots of devices, making Cross-Signing more impactful. While QR codes are available for cross-signing, it is the emoji string verification that has proved by far the most popular - indeed reading them aloud, on video and/or audio chats, has become something of a local meme!

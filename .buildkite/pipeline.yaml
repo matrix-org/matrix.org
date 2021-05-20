@@ -46,7 +46,23 @@ steps:
       - tar -czf gatsby-site.tar.gz public
     artifact_paths:
       - gatsby/gatsby-site.tar.gz
-      
+
+  - label: ":books: Implementation Guides"
+    plugins:
+      - docker#v3.0.1:
+          image: "buildpack-deps"
+    commands:
+      - cd implementation-guides
+      - wget https://github.com/rust-lang/mdBook/releases/download/v0.4.1/mdbook-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
+      - tar -xf mdbook-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
+      - ./mdbook build server -d /workdir/implementation-guides/implementation-guides/server
+      - ./mdbook build client -d /workdir/implementation-guides/implementation-guides/client
+      - ./mdbook build application-services -d /workdir/implementation-guides/implementation-guides/application-services
+      - cp index.html /workdir/implementation-guides/implementation-guides/
+      - tar -czf implementation-guides.tar.gz implementation-guides
+    artifact_paths:
+      - implementation-guides/implementation-guides.tar.gz
+
   - wait
 
   # Merge the three sets of outputs together, together
@@ -56,10 +72,12 @@ steps:
       - buildkite-agent artifact download styled-docs.tar.gz .
       - buildkite-agent artifact download jekyll-site.tar.gz .
       - buildkite-agent artifact download gatsby/gatsby-site.tar.gz .
+      - buildkite-agent artifact download implementation-guides/implementation-guides.tar.gz .
       - tar -xzvf styled-docs.tar.gz
       - tar -xzvf jekyll-site.tar.gz
       - cp -r jekyll/_site/{css,guides,howtos,projects} content/docs
       - tar -C content --strip-components=1 -xzf gatsby/gatsby-site.tar.gz
+      - tar -C content -xzf implementation-guides/implementation-guides.tar.gz
       - tar -czf content.tar.gz content
       - free        # debug for buildkite oom issue
     artifact_paths:

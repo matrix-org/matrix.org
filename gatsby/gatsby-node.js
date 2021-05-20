@@ -49,6 +49,8 @@ exports.onCreateNode = ({ node, actions }) => {
           }
       } else if (node.frontmatter.section === "legal") {
         slug = `/legal${slug}`
+      } else if (node.frontmatter.section === "Case Studies") {
+        slug = `/using-matrix/case-studies${slug}`
       } else {
         slug = `/docs/guides${slug}`
       }
@@ -66,12 +68,13 @@ exports.createPages = async ({ graphql, actions }) => {
   const postListTemplate = require.resolve('./src/templates/post-list.js')
   const projectTemplate = require.resolve('./src/templates/project.js')
   const noNavTemplate = require.resolve('./src/templates/noNavPage.js')
+  const otwsuTemplate = require.resolve('./src/templates/otwsuTemplate.js')
 
   const resultPosts = await wrapper(
     graphql(`
       {
         allMdx(sort: { fields: [frontmatter___date], order: DESC },
-          filter: {frontmatter: {date: {ne: null}}}) {
+          filter: {frontmatter: {date: {ne: null}, author: {ne: null}}}) {
           edges {
             node {
               fields {
@@ -259,10 +262,49 @@ const resultLegal = await wrapper(
       context: {
         slug: edge.node.fields.slug,
         pages: pagesForGuidesList,
-        pagesBySection: pagesForGuidesListBySection
+        pagesBySection: pagesForGuidesListBySection,
+        pagesListTitle: "Other Guides",
+        navMode: "develop"
       },
     })
   })
+  const resultCaseStudies = await wrapper(
+    graphql(`{
+    allMdx(filter: {frontmatter: {section: {eq: "Case Studies"}}}) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          body
+          frontmatter {
+            title
+            section
+          }
+        }
+      }
+    }
+  }`));
+  
+  const caseStudies = resultCaseStudies.data.allMdx.edges;
+
+  caseStudies.forEach((edge, index) => {
+    createPage({
+      path: edge.node.fields.slug,
+      component: guideTemplate,
+      context: {
+        slug: edge.node.fields.slug,
+        pages: [],
+        pagesBySection: { "Case Studies": caseStudies.map(c => 
+          { return { slug: c.node.fields.slug, title: c.node.frontmatter.title } }) 
+        },
+        pagesListTitle: "Using Matrix"
+      },
+    })
+  });
+
+
+
 
 
 const resultProjects = await wrapper(
@@ -317,4 +359,42 @@ const resultProjects = await wrapper(
       },
     })
   })
+
+  const otwsuResults = await wrapper(
+    graphql(`{
+      allMdx(
+        filter: {
+          frontmatter: { section: { eq: "otwsu" } }
+        }
+        sort: { fields: frontmatter___sort_order, order: ASC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              section
+              edition
+              youtube
+              eventdate
+            }
+            fields {
+              slug
+            }
+            body
+          }
+        }
+      }
+    }`));
+  const otwsu = otwsuResults.data.allMdx.edges;
+  otwsu.forEach((edge, index) => {
+    const slug = '/open-tech-will-save-us/' + edge.node.frontmatter.edition
+    createPage({
+      path: slug,
+      component: otwsuTemplate,
+      context: {
+        postNode: edge.node
+      },
+    })
+  })
+
 }
+

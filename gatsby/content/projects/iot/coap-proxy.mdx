@@ -1,0 +1,33 @@
+---
+layout: projectimage
+title: coap-proxy
+categories:
+ - iot
+description: convert normal Matrix HTTPS+JSON traffic into an ultra-low-bandwidth CoAP+CBOR+Flate+Noise+UDP network transport
+author: Brendan Abolivier and the Matrix.org Team
+home: https://github.com/matrix-org/coap-proxy
+language: Go
+license: GPL-3.0-or-later
+repo: https://github.com/matrix-org/coap-proxy
+thumbnail: /docs/projects/images/coap-proxy.png
+screenshot: /docs/projects/images/coap-proxy.png
+maturity: Beta
+sort_order: 200
+---
+
+coap-proxy is a **proof of concept experiment** for converting normal Matrix HTTPS+JSON
+traffic into an ultra-low-bandwidth CoAP+CBOR+Flate+Noise+UDP network transport.
+The resulting transport typically uses 35x-70x less bandwidth than HTTPS+JSON, and
+attempts to fit typical Matrix transactions into a single roundtrip on a 100bps network link.
+
+coap-proxy depends heavily on our experimental fork of [go-ocf/go-coap](https://github.com/matrix-org/go-coap),
+which implements Noise-based encryption, compression hooks and retry semantics.
+
+More details on the transport can be found in our
+"Breaking the 100 bits per second barrier with Matrix" FOSDEM 2019 talk:
+https://matrix.org/blog/2019/03/12/breaking-the-100bps-barrier-with-matrix-meshsim-coap-proxy/
+
+The typical way to run coap-proxy is via docker using the [meshsim](https://github.com/matrix-org/meshsim)
+network simulator, which fires up docker containers in a simulated bad network environment
+containing both synapse and coap-proxy configured such that coap-proxy intercepts both client-server and
+server-server traffic.

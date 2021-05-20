@@ -1,10 +1,11 @@
 ---
 layout: post
-title: Usage of matrix-js-bot-sdk
+title: Usage of matrix-bot-sdk
 section: Client-Server API
+sort_order: 1000
 ---
 
-This article concerns [matrix-js-bot-sdk], a TypeScript client SDK for Matrix. We'll build a simple "echo bot", meaning a bot which replies to messages with the text it has just read.
+This article concerns [matrix-bot-sdk], a TypeScript client SDK for Matrix. We'll build a simple "echo bot", meaning a bot which replies to messages with the text it has just read.
 
 Note that although the SDK is written in TypeScript, we'll use JavaScript in our examples. If you'd prefer to use TypeScript, then do!
 
@@ -31,14 +32,14 @@ const SimpleFsStorageProvider = sdk.SimpleFsStorageProvider;
 const AutojoinRoomsMixin = sdk.AutojoinRoomsMixin;
 ```
 
-Create a new account for your bot on a homeserver, then get the `access_token`. The simplest way to do this is using Riot, [take a look at these instructions](https://t2bot.io/docs/access_tokens/). Set some variables to store the homeserver and `access_token`. This is all the authentication you need!
+Create a new account for your bot on a homeserver, then get the `access_token`. The simplest way to do this is using Element, [take a look at these instructions](https://t2bot.io/docs/access_tokens/). Set some variables to store the homeserver and `access_token`. This is all the authentication you need!
 
 ```javascript
 const homeserverUrl = "https://matrix.org"; // make sure to update this with your url
 const accessToken = "YourSecretAccessToken";
 ```
 
-New we'll configure a storage provider - matrix-js-bot-sdk provides the `SimpleFsStorageProvider`, which is ideal for most cases:
+New we'll configure a storage provider - matrix-bot-sdk provides the `SimpleFsStorageProvider`, which is ideal for most cases:
 
 ```javascript
 const storage = new SimpleFsStorageProvider("bot.json");
@@ -157,18 +158,18 @@ client.on("room.message", (roomId, event) => {
 
 ## Conclusion
 
-It's extremely simple to listen to messages with [matrix-js-bot-sdk] create an echobot! There are many more features, you can see the MatrixClient class is [very well documented](https://github.com/turt2live/matrix-js-bot-sdk/blob/master/src/MatrixClient.ts). In the next in this series we'll explore Rich Replies, and take a look at the kick and ban functions for room administration.
+It's extremely simple to listen to messages with [matrix-bot-sdk] create an echobot! There are many more features, you can see the MatrixClient class is [very well documented](https://github.com/turt2live/matrix-bot-sdk/blob/master/src/MatrixClient.ts). Next in this series, we'll explore Rich Replies, and take a look at the kick and ban functions for room administration.
 
-[matrix-js-bot-sdk]: https://github.com/turt2live/matrix-js-bot-sdk
+[matrix-bot-sdk]: https://github.com/turt2live/matrix-bot-sdk
 
 ## PS, use TypeScript
 
-This SDK uses TypeScript, which provides a lot of benefits. In this example, we used JavaScript, but it's just as easy to use TypeScript and maybe preferable, since it is the language [matrix-js-bot-sdk] is written in.
+This SDK uses TypeScript, which provides a lot of benefits. In this example, we used JavaScript, but it's just as easy to use TypeScript and maybe preferable, since it is the language [matrix-bot-sdk] is written in.
 
 First let's install `tsc`, which compiles from TypeScript to JavaScript:
 
 ```shell
-npm install tsc
+npm install typescript
 ```
 
 Now, start tsc in watch-mode (`-w`), and leave it to compile our code:

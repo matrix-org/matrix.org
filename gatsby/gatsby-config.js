@@ -19,8 +19,8 @@ module.exports = {
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         mergeDefaultDirectives: true,
         directives: {
-          "script-src": "'self' 'unsafe-eval' https://matomo.riot.im https://*.twitter.com https://buttons.github.io https://*.twimg.com 'sha256-s1FhdRLpNJaajwf2drK24ROJ0uDYE+sjwi7Q8D1A2Xs='",
-          "style-src": " 'self' blob: https://buttons.github.io https://platform.twitter.com https://*.twimg.com 'unsafe-inline'",
+          "script-src": "'self' 'unsafe-eval' https://matomo.riot.im https://*.twitter.com https://buttons.github.io https://*.twimg.com https://cdn.jsdelivr.net 'sha256-s1FhdRLpNJaajwf2drK24ROJ0uDYE+sjwi7Q8D1A2Xs='",
+          "style-src": " 'self' blob: https://buttons.github.io https://platform.twitter.com https://*.twimg.com https://cdn.jsdelivr.net 'unsafe-inline'",
           "img-src": "'self' data: https://matomo.riot.im https://*.twitter.com https://*.twimg.com https://github.com https://*.githubusercontent.com https://*.gitlab.io",
           "connect-src": "'self' https://api.github.com https://stream.matrix.org",
           "worker-src": "'self' blob: https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com",
@@ -133,6 +133,20 @@ module.exports = {
       options: {
         name: 'faq',
         path: `${__dirname}/content/faq`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'using-matrix',
+        path: `${__dirname}/content/using-matrix`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'otwsu',
+        path: `${__dirname}/content/otwsu`,
       },
     },
     {

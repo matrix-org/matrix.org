@@ -38,7 +38,7 @@ Category.propTypes = {
 export const postQuery = graphql`
   query ArchivePage {
     allMdx(sort: { fields: [frontmatter___date, fileAbsolutePath], order: DESC },
-      filter: {frontmatter: {date: {ne: null}}}) {
+      filter: {frontmatter: {date: {ne: null}, author: {ne: null}}}) {
       totalCount
       edges {
         node {

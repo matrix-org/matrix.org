@@ -7,7 +7,7 @@ const Redirect = () => {
 
     return (<Layout>
         <Helmet>
-            <meta http-equiv="refresh" content="0; url=/hosting" />
+            <meta http-equiv="refresh" content="0; url=/hosting/" />
         </Helmet>
     </Layout>)
 }

@@ -2,6 +2,7 @@
 layout: post
 title: Using Matrix to make Chatbot software from the 1960s available in 2018
 section: Client-Server API
+sort_order: 1000
 ---
 
 In this article, we'll use Matrix, a Raspberry Pi and JavaScript to bring back
@@ -89,7 +90,7 @@ in the diagram below.
 However, for this project we only need to look at the Client-Server API, which
 is the way in which clients and servers communicate with one another. To make it
 easier to connect the ELIZA library to Matrix, I chose to use a JavaScript
-library designed to access the Matrix Client-Server API: [matrix-js-bot-sdk]
+library designed to access the Matrix Client-Server API: [matrix-bot-sdk]
 from [TravisR].
 
 ### Code Walkthrough
@@ -103,9 +104,10 @@ npm install matrix-bot-sdk
 
 Then, in our application code, we will instantiate and start a new client. Note
 that you can obtain an access token for the bot [using
-Riot](https://t2bot.io/docs/access_tokens/).
+Element](https://t2bot.io/docs/access_tokens/).
 
 ```javascript
+var access_token = "...";
 const MatrixClient = require("matrix-bot-sdk").MatrixClient;
 const AutojoinRoomsMixin = require("matrix-bot-sdk").AutojoinRoomsMixin;
 const client = new MatrixClient("https://matrix.org", access_token);
@@ -144,7 +146,7 @@ object to send the initial greeting to the room, using the same call to
 Next, we'll accept messages from the user and provide a response:
 
 ```javascript
-client.on("room.message", (roomId, event) => {
+client.on("room.message", async function (roomId, event)  {
     if (event["sender"] === await client.getUserId()) return;
     if (! event.content || ! event.content.body) return;
 
@@ -240,5 +242,5 @@ more attention and understanding from people who see it.
 To learn more about Matrix development, take a look at the [Matrix Guides](https://matrix.org/docs/guides)
 page, and join us in the [#matrix-dev:matrix.org](https://matrix.to/#/#matrix-dev:matrix.org) room!
 
-[matrix-js-bot-sdk]: https://github.com/turt2live/matrix-js-bot-sdk
+[matrix-bot-sdk]: https://github.com/turt2live/matrix-bot-sdk
 [TravisR]: https://github.com/turt2live

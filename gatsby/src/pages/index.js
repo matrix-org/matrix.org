@@ -134,7 +134,7 @@ const Index = ({
                           secure, decentralised, real-time communication,
                           and its Apache licensed <br /><a href="https://github.com/matrix-org">reference implementations</a>.
                         </p>
-                        <p className="mxp mxmatrixdescription">  Maintained by the non-profit <a href="/foundation">Matrix.org Foundation</a>, we aim <br />
+                        <p className="mxp mxmatrixdescription">  Maintained by the non-profit <a href="/foundation/">Matrix.org Foundation</a>, we aim <br />
                           to create an open platform which is as
                           independent, vibrant and evolving
                           as the Web itself... but for communication.
@@ -153,15 +153,15 @@ const Index = ({
                 <div className="mxgrid__item__bg__vert">
                   <p className="mxgrid__item__bg__p">
                     Matrix gives you simple <a href="/docs/spec/" onClick={()=>{window.location='https://matrix.org//docs/spec'; return false;}}>HTTP APIs</a> and <a
-                    href="/docs/projects/sdks">SDKs</a> (iOS, Android, Web) to create chatrooms,
+                    href="/sdks/">SDKs</a> (iOS, Android, Web) to create chatrooms,
                     direct chats and chat bots, complete with end-to-end encryption, file transfer, synchronised
                     conversation history, formatted messages, read receipts and more.
                   </p>
                   <p className="mxgrid__item__bg__p">
                     Conversations are replicated over all the servers participating in them, meaning there are no single
-                    point of control or failure.  You can reach any other user in the global Matrix ecosystem of over 9M
+                    point of control or failure.  You can reach any other user in the global Matrix ecosystem of over 25M
                     users, even including those on other networks via <a
-                    href="/bridges">bridges</a>.
+                    href="/bridges/">bridges</a>.
                   </p>
                 </div>
                 <a href="/docs/guides/" className="mxgrid__item__bg__btn w-button">Learn more</a>
@@ -228,7 +228,7 @@ const Index = ({
                     many more.
                   </p>
                 </div>
-              <a href="/bridges" className="mxgrid__item__bg__btn w-button">Learn more</a>
+              <a href="/bridges/" className="mxgrid__item__bg__btn w-button">Learn more</a>
               </div>
             </div>
             <div className="mxgrid__item100">
@@ -274,7 +274,7 @@ const Index = ({
           <p className="mxp mxhow">
             By default, Matrix uses simple <a href="/docs/spec/client_server/latest.html#api-standards" onClick={()=>{window.location='https://matrix.org//docs/spec/client_server/latest.html#api-standards'; return false;}}>HTTPS+JSON APIs
             </a> as its baseline transport, but also embraces more
-            sophisticated transports such as <a href="https://github.com/matrix-org/matrix-doc/blob/master/drafts/websockets.rst">WebSockets
+            sophisticated transports such as <a href="https://github.com/matrix-org/matrix-doc/blob/master/attic/drafts/websockets.rst">WebSockets
             </a> or <a href="/blog/2019/03/12/breaking-the-100-bps-barrier-with-matrix-meshsim-coap-proxy">ultra-low-bandwidth Matrix</a> via CoAP+Noise.
           </p>
 
@@ -436,7 +436,7 @@ const Index = ({
         <div className="mxgrid__item__bg mxgrid__item__bg--clear">
 <img src="images/basic_heart.svg" alt="" className="mxgrid__item__bg__img" />
           <div className="mxgrid__item__bg__vert">
-            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--open_standard">Maintained by the non-profit <a href="/foundation">Matrix.org Foundation</a></h4>
+            <h4 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--open_standard">Maintained by the non-profit <a href="/foundation/">Matrix.org Foundation</a></h4>
           </div>
         </div>
       </div>
@@ -478,7 +478,7 @@ const Index = ({
 <img src="images/basic_elaboration_message_happy.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Try Matrix</div>
 </a>
-<a href="/docs/projects/clients-matrix" className="mxblock__explore__item w-inline-block">
+<a href="/clients-matrix/" className="mxblock__explore__item w-inline-block">
 <img src="images/software_layout_header_sideleft.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Clients</div>
 </a>
@@ -486,11 +486,11 @@ const Index = ({
 <img src="images/basic_calculator.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Bots</div>
 </a>
-<a href="/docs/projects/sdks" className="mxblock__explore__item w-inline-block">
+<a href="/sdks/" className="mxblock__explore__item w-inline-block">
 <img src="images/software_layers2.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">SDKs</div>
 </a>
-<a href="/hosting" className="mxblock__explore__item w-inline-block">
+<a href="/hosting/" className="mxblock__explore__item w-inline-block">
 <img src="images/basic_cloud.svg" alt="" className="mxblock__explore__item__img" />
 <div className="mxblock__explore__item__p">Hosting</div>
 </a>
@@ -517,7 +517,7 @@ const Index = ({
 <div className="mxblock__explore__item__p">iOS</div>
 </a>
 </div>
-<a href="/docs/projects/sdks" className="mxgrid__item__bg__btn w-button">View all SDKs</a>
+<a href="/sdks/" className="mxgrid__item__bg__btn w-button">View all SDKs</a>
 </div>
         <div className="mxblock">
           <div className="mxgrid">
@@ -575,9 +575,9 @@ const Index = ({
               <div className="mxgrid__item__bg">
                 <h2 className="mxblock__hx">The Matrix Foundation</h2>
                 <div className="mxgrid__item__bg__vert">
-                  <p className="mxp">Matrix is managed through an open governance process, looked after by <a href="/foundation">The Matrix.org Foundation</a> - a non-profit UK Community Interest Company.<br /></p>
+                  <p className="mxp">Matrix is managed through an open governance process, looked after by <a href="/foundation/">The Matrix.org Foundation</a> - a non-profit UK Community Interest Company.<br /></p>
                   <p className="mxp">It acts as a neutral guardian of the Matrix spec, nurturing and growing Matrix for the benefit of the whole ecosystem.<br /></p>
-                  <p className="mxp">The Guardians are the legal directors of the <a href="/foundation">Foundation</a>, responsible for ensuring that it keeps on mission and neutrally protects the development of Matrix.<br /></p>
+                  <p className="mxp">The Guardians are the legal directors of the <a href="/foundation/">Foundation</a>, responsible for ensuring that it keeps on mission and neutrally protects the development of Matrix.<br /></p>
                 </div>
               </div>
             </div>
@@ -589,19 +589,23 @@ const Index = ({
   <div className="mxblock mxblock--tweetstitle">
     <h2 className="mxblock__hx">What people are saying</h2>
   </div>
-  <div className="mxblock mxblock--tweets">
-    <div className="mxgrid mxgrid--tweets">
-      <div className="mxgrid__tweet w-embed w-script">
+
+  <div className="mxblock">
+    <div className="mxgrid">
+      <div className="mxgrid__item50">
+        <div style={{"float": "right"}}>
       <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I have seen the future of distributed collaboration and it is Matrix.   The .NET binding looks old, incomplete and I maintained.   If we get GSoC students this year, I’ll be happy to mentor, in the meantime I should probably contribute to it: <a href="https://t.co/nJY4iNHaLQ">https://t.co/nJY4iNHaLQ</a></p>&mdash; Miguel de Icaza (@migueldeicaza) <a href="https://twitter.com/migueldeicaza/status/1093148021980889088?ref_src=twsrc%5Etfw">February 6, 2019</a></blockquote>
       </div>
-      <div className="mxgrid__tweet w-embed w-script">
+      </div>
+      <div className="mxgrid__item50">
       <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I finally started a spreadsheet to compare relative security, privacy, compatibility, and features of various messenger systems. TL;DR <a href="https://twitter.com/RiotChat?ref_src=twsrc%5Etfw">@RiotChat</a> / <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a> is winning on all fronts. <a href="https://t.co/7zxczdjwwJ">https://t.co/7zxczdjwwJ</a></p>&mdash; Lance R. Vick (@lrvick) <a href="https://twitter.com/lrvick/status/1051260991479013376?ref_src=twsrc%5Etfw">October 13, 2018</a></blockquote>
       </div>
-      <div className="mxgrid__tweet w-embed w-script">
+      <div className="mxgrid__item50">
+        <div style={{"float": "right"}}>
       <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I certainly wouldn&#39;t trust a proprietary software driven by some Russian crypto millionaires any more (or any less) than Whatsapp. Or Threema, Wire, Keybase, and not even Signal.<br /><br />Friends tell their friends to choose open, federated protocols. Like <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@Matrixdotorg</a> and <a href="https://twitter.com/RiotChat?ref_src=twsrc%5Etfw">@RiotChat</a>. <a href="https://t.co/gOUwFwCcra">https://t.co/gOUwFwCcra</a></p>&mdash; martin ➬ (@martinkrafft) <a href="https://twitter.com/martinkrafft/status/1130695713057148928?ref_src=twsrc%5Etfw">May 21, 2019</a></blockquote>
-
       </div>
-      <div className="mxgrid__tweet w-embed w-script">
+      </div>
+      <div className="mxgrid__item50">
       <blockquote className="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We are spending more and more time in <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a>. <a href="https://twitter.com/RiotChat?ref_src=twsrc%5Etfw">@RiotChat</a> works like a charm, better than <a href="https://twitter.com/SlackHQ?ref_src=twsrc%5Etfw">@SlackHQ</a> for many things and of course way better than IRC. It&#39;s awesome to have so many open communities forming and being able to jump from one channel to the other. Give it a try! 📢 <a href="https://t.co/5uL1D4ryQo">pic.twitter.com/5uL1D4ryQo</a></p>&mdash; poliastro (@poliastro_py) <a href="https://twitter.com/poliastro_py/status/1102912894260469760?ref_src=twsrc%5Etfw">March 5, 2019</a></blockquote>
       </div>
     </div>
@@ -675,7 +679,7 @@ const Index = ({
 </div>
                     <div className="mxgrid__item__bg__vert">
                       <h4>UpCloud</h4>
-                      <p className="mxgrid__sponsors__item__p">Matrix.org is generously hosted by UpCloud! Host your homeserver via UpCloud and &amp; get a $25 credit.</p>
+                      <p className="mxgrid__sponsors__item__p">Matrix.org is generously hosted by UpCloud! Host your homeserver via UpCloud and get a $25 credit.</p>
 <a href="https://upcloud.com/">Learn more</a>
 </div>
                   </div>

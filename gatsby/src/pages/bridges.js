@@ -11,11 +11,57 @@ const title = `Bridges | ${config.siteTitle}`;
 
 const Bridges = ({ data }) => {
 
+  const bridges = data.allMdx.edges;
+  var toc = {};
+  bridges.forEach(bridge => {
+    toc[bridge.node.frontmatter.bridges] = bridge.node.frontmatter
+  })
+  toc = Object.values(toc)
 
-  var [selected, setSelected] = useState("IRC");
+  var urlMap = [
+["IRC", "irc"],
+["Slack", "slack"],
+["RSS", "rss"],
+["Gitter", "gitter"],
+["Discord", "discord"],
+["RocketChat", "rocketchat"],
+["iMessage", "imessage"],
+["Facebook Messenger", "facebook-messenger"],
+["Email", "email"],
+["SMS", "sms"],
+["Telegram", "telegram"],
+["WhatsApp", "whatsapp"],
+["Google Hangouts", "google-hangouts"],
+["Mastodon", "mastodon"],
+["Mattermost", "mattermost"],
+["libpurple", "libpurple"],
+["GroupMe", "groupme"],
+["Skype", "skype"],
+["WeChat", "wechat"],
+["Mumble", "mumble"],
+["Tox", "tox"],
+["Twitter", "twitter"],
+["Keybase", "keybase"],
+["Signal", "signal"],
+["Instagram", "instagram"],
+  ];
+
+  
+  var [selected, setSelected] = useState("");
+  if (typeof window !== `undefined` && window.location.hash) {
+    var dvar = "irc";
+    dvar = window.location.hash.replace('#', '');
+    dvar = urlMap.find(i => i[1] === dvar)[0]
+    setImmediate(() => setSelected(dvar));
+  }
+  else {
+    setImmediate(() => setSelected("IRC"));
+  }
   const clickHandler = (el) => {
     setSelected(el.target.dataset["bridge"]);
     document.getElementById("bridges-content").scrollIntoView();
+
+    window.history.pushState(null, null, "#" + urlMap.find(i => i[0] === el.target.dataset["bridge"])[1]);
   };
 
   const selectItemRender = (bridge) => {
@@ -30,21 +76,14 @@ const Bridges = ({ data }) => {
       <h3 style={selectableItemStyle}
         data-bridge={bridge}
         key={"selector_" + bridge}
-        onClick={clickHandler}>
+        onClick={clickHandler}
+        onKeyPress={clickHandler}
+        role="button"
+        >
         {bridge}
       </h3>
     )
   }
-
-
-
-
-  const bridges = data.allMdx.edges;
-  var toc = {};
-  bridges.forEach(bridge => {
-    toc[bridge.node.frontmatter.bridges] = bridge.node.frontmatter
-  })
-  toc = Object.values(toc)
 
   return (<Layout titleOverride={title} navmode="discover"
   excerptOverride="Browse Matrix bridging options">
@@ -74,7 +113,10 @@ const Bridges = ({ data }) => {
                     <img src={project.thumbnail} alt="" 
                       style={{ width: "100%", height: "100%", cursor: "pointer" }}
                       data-bridge={project.bridges}
-                      onClick={clickHandler} />
+                      onClick={clickHandler}
+                      onKeyPress={clickHandler}
+                      role="button"
+                      tabIndex={100 + i} />
                   </div>
                 </div>)
             })}

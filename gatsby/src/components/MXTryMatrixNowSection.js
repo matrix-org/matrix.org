@@ -28,9 +28,11 @@ const MXTryMatrixNowSection = ({items}) => {
                 
                 <a href={project.fields.slug}><h4 className="mxgrid__item__bg__hx">{project.frontmatter.title}</h4></a>
                 <p className="mxgrid__item__bg__p">{project.frontmatter.description}</p>
-                <div className="mxgrid__item__bg__vert">
+                {project.frontmatter.thumbnail &&
+                <div className="mxgrid__item__bg__vert" style={{"minHeight": "100px","minWidth": "100px"}}>
                     <img src={project.frontmatter.thumbnail} alt="" className="mxgrid__item__bg__img" />
                 </div>
+                }
             </div>
         </div>)
         })}

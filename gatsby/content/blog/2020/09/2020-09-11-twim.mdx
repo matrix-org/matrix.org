@@ -1,0 +1,341 @@
+---
+date: '2020-09-11'
+title: 'This Week in Matrix 2020-09-11'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/images/20200619_115714_7961364782039096870.jpg
+---
+
+## Open Tech Will Save Us #6
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AGs4ZC24Q1Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+From the schedule:
+
+* Ag3m, from [La Quadrature du Net](https://www.laquadrature.net/en/) joins to present "Some thoughts on moderation and censorship in a decentralised world". 
+* Sean DuBois ([Sean-Der](https://matrix.to/#/@sean-der:matrix.org)), WebRTC-knower and author of WebRTC for the Curious discusses his recent work in the space. <https://webrtcforthecurious.com>
+* Damir Jelić presents the latest news on the Matrix Rust SDK
+
+Open Tech Will Save Us is also available in audio form as a podcast in all the usual places!
+
+## Dept of *Status of Matrix* 🌡️
+
+### GSOC project reports
+
+We had a [bumper summer this year](https://summerofcode.withgoogle.com/organizations/6060943798173696/), with SIX students successfully completing their projects. So far [three project reports](https://summerofcode.withgoogle.com/organizations/6060943798173696/) have been published:
+
+* [GSOC report: E2E encryption for go-neb](https://matrix.org/blog/2020/09/08/gsoc-report-e-2-e-encryption-for-go-neb)
+* [GSOC report: Adding Features in End-to-End encryption for Nheko-Reborn](https://matrix.org/blog/2020/09/09/gsoc-report-adding-features-in-end-to-end-encryption-for-nheko-reborn)
+* [GSOC report: Enabling E2EE in Opsdroid Matrix Connector](https://matrix.org/blog/2020/09/10/gsoc-report-enabling-e-2-ee-in-opsdroid-matrix-connector)
+
+Expect to see the next three reports next week.
+
+### Linköping University
+
+[Alexander Olofsson](https://matrix.to/#/@aleol57:liu.se) announced:
+
+> Since we suddenly have multiple projects that've separately gone on to trial our new and shiny Matrix-on-location for multiple respective use-cases, from conferences to anonymous - encrypted - support chats, we've had to end our soft-launch period __very__ quickly.
+>
+> Oh dear.
+
+For minutes, confusion reigned in the [chat][#twim:matrix.org] about just what this meant! Fortunately, clarity arrived:
+
+> To clarify; Ending the soft-launch period means that we've now gone on to a full launch, with public announcements and everything else that includes
+
+\o/
+
+## Dept of Spec 📜
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) told us:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals.>
+>
+> #### MSC Status
+>
+> **Closed MSCs:**
+>
+> * [\[WIPish\] MSC1776: Implementing peeking via /sync](https://github.com/matrix-org/matrix-doc/pull/1776)
+>
+> **Merged MSCs:**
+>
+> * _No MSCs were merged this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **New MSCs:**
+>
+> * [MSC2771: Bookmarks](https://github.com/matrix-org/matrix-doc/pull/2771)
+> * [MSC2772: Notifications for Jitsi Calls](https://github.com/matrix-org/matrix-doc/pull/2772)
+>
+> #### Spec Core Team
+>
+> In terms of Spec Core Team MSC focus for this week, the [widgets spec](https://github.com/matrix-org/matrix-doc/pull/2764) and related MSCs are still being completed, however is formally removed from the focus list for this week. In its place we've put something in a very similar vein: [MSC1960](https://github.com/matrix-org/matrix-doc/issues/1960) (OpenID Connect exchange for widgets).
+>
+> We had another long overdue Spec Core Team retro this week. On the whole it felt very productive, and we've hopefully helped identify some key issues and actions going forward to help internally organise the way the team spends time on MSCs (read: unblocking review progress from the team).
+>
+> We're still working out our exact strategy asynchronously at the moment, so expect more details to follow soon.
+
+![2020-09-11-yd96P-stacked_area_chart.png](/blog/img/2020-09-11-yd96P-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Synapse
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) reported:
+
+> This week we put out a new release candidate for [Synapse 1.20.0](https://github.com/matrix-org/synapse/releases/tag/v1.20.0rc3), highlights include shadow ban support, more async/awaiting and unread message counts being added to sync responses to support upcoming notifications work. 
+>
+> Aside from that Erik has been continuing to get event persistence sharding ready for shipping. He already has a working version, but currently all workers will run at the speed for the slowest instance. Once that is fixed we will put it on matrix.org to see how it performs.
+>
+> Patrick has finished up on asyncing all the things, and is now studying flame graphs to figure out where all the cycles on the main process are going.
+>
+> Andrew has been taking a look at the knocking [MSC](https://github.com/matrix-org/matrix-doc/pull/2403), expecting concrete progress in the next few weeks. 
+>
+> Brendan has been working notifications support and is currently in VoIP land helping Dave on trying to level up our VoIP support.
+>
+> Finally Oliver has dusted off his TURN tester from last Summer to get it working before he returns to university. The idea is that it will act a bit like the federation tester for but for TURN configuration.
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
+
+[timo](https://matrix.to/#/@timo:koesters.xyz) announced:
+
+> Hi everyone, [Devin R](https://matrix.to/#/@devinr528:matrix.org) and I are working on state resolution, hopefully we have something exciting to show you next week. I also worked on the remaining key backup endpoints, so for example deleting backups works as expected now.
+> Thanks to everyone who supports me on [Liberapay](https://liberapay.com/timokoesters) or Bitcoin!
+
+### Dendrite
+
+Dendrite is a next-generation homeserver written in Go
+
+[kegan](https://matrix.to/#/@kegan:matrix.org) told us:
+
+> This week we have been continuing work on the [beta task list](https://github.com/matrix-org/dendrite/milestone/8):
+>
+> * The current state server has been removed.
+>
+> * Joining rooms over federation is now more reliable as a single faulty event will no longer fail the request.
+> * Support for database migrations has been added.
+>
+> * Various bug fixes to reduce the number of `database is locked` errors on SQLite.
+> * Experimental support for peeking has been added - See [MSC2753](https://github.com/matrix-org/matrix-doc/pull/2753)
+>
+> * `DENDRITE_TRACE_SQL` will now additionally trace unsafe goroutine writes that do not use `ExclusiveWriter`.
+> * The README has been updated with hardware requirements.
+>
+> Spec compliance remains the same this week:
+>
+> * Client-Server APIs: 56%, same as last week.
+>
+> * Server-Server APIs: 71%, same as last week.
+
+## Dept of Clients 📱
+
+### Hydrogen
+
+It's been a big week for [Bruno](https://matrix.to/#/@bwindels:matrix.org):
+
+> Released 0.0.36 with end-to-end encryption enabled! 🎉  
+> Most of this week was spent on performance improvements for IE11, where asm.js runs quite slow. Decryption is run in parallel on 4 workers in that browser, giving a massive speed-up and added responsiveness (the UI would freeze for 7 seconds when opening a room prior to this). There is still some polishing to do on sharing room keys, which I will get to next week, but all in all, it should work well. Next week I also want to get started on supporting key backup, so you can also read your encrypted history from before you logged in.
+
+Get the latest: <https://github.com/vector-im/hydrogen-web/>
+
+### Element Web
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) (same fellow from earlier) reported:
+
+> Element 1.7.6-rc.1 is now available at <https://staging.element.io>:
+> 
+> - Redesigned right panel where top right actions are now revealed via the i icon
+> - Widgets can now be opened in the right panel
+> - Widgets won't be visible in the Apps Drawer (top of timeline) by default (except Jitsi) - you need to pin them from the right panel
+> - Widgets can now be resized
+> 
+> Coming up:
+> 
+> - Continue work on deferred cross-signing setup
+> - Our new Matrix.to should get it’s first release
+> - General bug fixes around threepid invites
+
+### Element for Nextcloud
+
+[Gary Kim](https://matrix.to/#/@gary:garykim.dev) said:
+
+> Element for Nextcloud (formerly Riot Chat for Nextcloud) has released v0.6.5 and v0.6.6. In this update, Element Web was updated to v1.7.5 and support for adding a custom integration server in the config through the settings UI and support for Nextcloud 20 was added.
+>
+>
+> Join the development Matrix room at [#elementfornextcloud-general:garykim.dev](https://matrix.to/#/#elementfornextcloud-general:garykim.dev).
+>
+> Check out the source code [here](https://github.com/gary-kim/riotchat).
+
+### Element Android 1.0.6
+
+[benoit](https://matrix.to/#/@benoit.marty:matrix.org) told us:
+
+> We have released Element Android 1.0.6. Now we are working on sync mode for F-Droid version of the application (i.e. without FCM). We are also improving the experience with 1-1 calls.
+
+### SchildiChat for Android
+
+[SpiritCroc](https://matrix.to/#/@spiritcroc:matrix.org) said:
+
+> Element v1.0.6 has been merged into SchildiChat.
+>
+> Furthermore, following Schildi-specific fixes and improvements are included in the latest update:
+>
+> * Fixed message bubbles clipping italic text
+>
+> * Less wasted bubble space in some scenarios
+> * Deleted messages are now hidden by default in the chat overview
+>
+> * Display the year in the chat list for old chats
+> * The inclusion of chats without notification in the overview's unread counter, which I added last week, is now optional
+
+To be clear, Element v1.0.6 has been upstreamed into SchildiChat, the projects have not merged.
+
+### Element-iOS
+
+[Manu](https://matrix.to/#/@Manu:matrix.org) told us:
+
+> This week, we released [1.0.10](https://github.com/vector-im/element-ios/releases/tag/v1.0.10) which provides PIN protection and the return of the incoming native call screen. Then, we started to update room creation flows with new icons and behaviors for creation buttons and a new screen for room creation.
+
+### Maunium sticker picker
+
+This isn't strictly a client, but it's in the clients section.
+
+[Tulir](https://matrix.to/#/@tulir:maunium.net) announced:
+
+> Getting stuff into the spec or even implemented in Elements is very slow, so while we wait for proper native sticker packs and pickers (i.e. not in an iframe/webview), I decided to make a better sticker picker widget: <https://github.com/maunium/stickerpicker>
+>
+> The goal is to be as fast and simple as possible. The picker and sticker packs are just some static files that can be served anywhere (no compilation required). It doesn't require self-hosting anything except said static files, and it has been confirmed to work on all three Elements.
+>
+> There's a Telegram import script that's used to reupload stickers to Matrix and generate the static sticker pack files that the picker widget uses. It's technically also possible to make the sticker pack files yourself, but there's no easy way to do that yet.
+>
+> Due to the simplicity of the picker there's no authentication, which also means everyone sees the same sticker packs. One way to get around that limitation is to have a unique URL for each user. I'll probably write a bot to manage copies of the picker for multiple users in the future.
+>
+> Other future improvements include remembering frequently used stickers (surprisingly, all three Elements keep localStorage for widgets), importing Telegram animated stickers and searching for stickers by emoji/name
+
+later more words appeared from Tulir:
+
+> Since the initial announcement, my sticker picker has received some more features:
+>
+> * Added a slider to configure the number of stickers shown per row
+>
+> * Frequently used stickers now show up at the top
+> * Imported all the packs from Scalar (the default integration manager)
+
+A model of productivity, Tulir also announced:
+
+> my sticker picker has dark theme support too now
+
+## Dept of SDKs and Frameworks 🧰
+
+### Ruby
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) said:
+
+> Just bumped the [Matrix Ruby SDK](https://github.com/ananace/ruby-matrix-sdk) to version 2.1.2, fixing another bug with server discovery as well as the fact that state events haven't been provided for the application using the SDK. Oops.
+
+
+
+### matrix-appservice-rs
+
+[Lieuwe](https://matrix.to/#/@lieuwe:lieuwe.xyz) announced:
+
+> [matrix-appservice-rs](https://github.com/lieuwex/matrix-appservice-rs) got some love!
+>
+> Though still a long way to go before it is comparable to the likes of [matrix-appservice-node](https://github.com/matrix-org/matrix-appservice-node) and [matrix-appservice-bridge](https://github.com/matrix-org/matrix-appservice-bridge), I did improve some little things.
+>
+> * Updated to the latest (git) version of Ruma, and only depend on `ruma` instead of all subcrates.
+>
+> * Small memory improvements: using references in `MappingId` and shrinking the `MappingDict` when initializing.
+> * Some more documentation.
+>
+> * Cleaned up the code a bit.
+>
+> There is also now a specific room for this crate: [#matrix-appservice-rs:lieuwe.xyz](https://matrix.to/#/#matrix-appservice-rs:lieuwe.xyz), feel free to ask for support or tell if you've suggestions.
+
+
+
+### quotient
+
+[kitsune](https://matrix.to/#/@kitsune:matrix.org) said:
+
+> libQuotient 0.6.1 is out, with fixes for bugs found during the work on the next Quaternion release and also an optimisation in the way profiles of all the users are managed - noticeable when opening large rooms (like our lovely HQ). Quaternion 0.0.9.5 beta is coming real soon now (TM), with some big features being coded in and merged as I write this.
+>
+> ...and the release notes are here: <https://github.com/quotient-im/libQuotient/releases/tag/0.6.1>
+
+
+
+## Dept of Ops 🛠
+
+### mnotify
+
+[stefan](https://matrix.to/#/@rumpelsepp:hackbrettl.de) said:
+
+> I created [`mnotify`](https://sr.ht/~rumpelsepp/mnotify/) which is a CLI based matrix client for automation tasks in shell scripts. Currently it supports login (via password), logout, sending messages, simple syncing, "get"ting  the synapse admin api, creating a room, inviting users to a room, and joining a room.
+
+
+
+## Dept of Services 🚀
+
+### publiclist.anchel.nl
+
+[Mr. Wimpy](https://matrix.to/#/@mrwimpy:matrix.org) offered:
+
+> <https://publiclist.anchel.nl> has been updated. The publiclist contains several public homeservers who can be used freely. Also listed some communities and roomdirectories which can be found at homeservers, last but not least public useable bridges can be found. The homeserver list contains now also uptime percentage and ip info. There is also a json that can be used by client builders.
+
+
+
+## Dept of Bots 🤖
+
+### Bots galore
+
+[Alexander Olofsson](https://matrix.to/#/@aleol57:liu.se) reported:
+
+> And in _completely unrelated_ news, I also just tagged version 1.0.0 of [an invite bot](https://gitlab.liu.se/ITI/matrix-invite-bot) for Matrix, which helps in doing bulk invites to communities and community-associated rooms.
+>
+> A single bulk-invite (MXID or 3PID) to a main room will be propagated to invites into the community (if wanted), as well as invites to all rooms linked to the community, once the invited user joins the main room.
+
+
+
+## Dept of Events and Talks 🗣️
+
+### Perth Linux user group Matrix presentation
+
+[PC-Admin](https://matrix.to/#/@PC-Admin:perthchat.org) offered:
+
+> I did a talk called 'Matrix in 2020' with the Perth Linux user group, parts of the video are missing but the audio is solid
+>
+> I think we did a good job summarising how far Matrix has come, we also preview the idea our new Matrix hosting company!
+>
+> <https://www.youtube.com/watch?v=jTutFZzFizw>
+
+From the YouTube description:
+
+> Michael Collins talks about the Matrix, covering the new features, perthchat.org, and ChatOasis an upcoming FOSS Matrix hosting company.
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|fairydust.space|325.5|
+|2|helderferreira.io|614.5|
+|3|neko.dev|661.5|
+|4|kif.rocks|718.5|
+|5|matrix.vgorcum.com|1785.5|
+|6|an-atom-in.space|2034|
+|7|urech.ca|2226.5|
+|8|ragon.xyz|2436|
+|9|im.kabi.tk|2478|
+|10|utzutzutz.net|2588.5|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: <https://matrix.to/#/#TWIM:matrix.org>

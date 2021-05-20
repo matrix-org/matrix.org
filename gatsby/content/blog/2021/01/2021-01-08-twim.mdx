@@ -1,0 +1,310 @@
+---
+date: '2021-01-08'
+title: 'This Week in Matrix 2021-01-08'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-01-08-ml.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BSJY79qN1No" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of *Status of Matrix* 🌡️
+
+### FOSDEM 2021
+
+[Matthew](https://matrix.to/#/@matthew:matrix.org) reported:
+
+> FOSDEM 2021 is going to happen via Matrix: https://matrix.org/blog/2021/01/04/taking-fosdem-online-via-matrix
+
+
+
+## Dept of Spec 📜
+
+### New spec platform
+
+[wbamberg](https://matrix.to/#/@wbamberg:matrix.org) announced:
+
+> The spec core team has continued trying out the new spec (preview at: https://adoring-einstein-5ea514.netlify.app/). We've also finished applying design updates and implemented a fancy scrolling table of contents.
+>
+> We have an outline for how to switch over to the new platform: https://github.com/matrix-org/matrix-doc/issues/2906 and have started work on that this week.
+
+
+
+## Dept of Servers 🏢
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) said:
+
+> Welcome back, TWiM readers! It's a new year, and the Synapse team is excited to get back to our regularly scheduled releases! Three main things this week:
+>
+> 1. We published [1.25.0rc1](https://github.com/matrix-org/synapse/releases/tag/v1.25.0rc1)! We'll have full release notes next week, but highlights include:
+>
+>   * **Deprecated Python 3.5 and Postgres 9.5** per [#8782](https://github.com/matrix-org/synapse/issues/8782); more details to come with the formal release announcement.
+>
+>   * People can pick their own username when using Single Sign-On, right from within Synapse itself.
+>   * Spam-checker modules can now use `async` Python methods.
+>
+>   * New ways to [restrict allowed IP address ranges](https://github.com/matrix-org/synapse/blob/v1.25.0rc1/UPGRADE.rst#upgrading-to-v1250) for outgoing requests from Synapse.
+> 2. [Matrix is hosting FOSDEM](https://matrix.org/blog/2021/01/04/taking-fosdem-online-via-matrix)! Which means that most of the Synapse team is going to be focused on security, stability, and performance until February to ensure that our virtual Université Libre de Bruxelles is as reliable and welcoming the real thing.
+>
+> 3. Speaking of security, we have some big (but good!) news to announce next week. Watch this space... 🕵️🇪🇺💶
+>
+> Lastly, one of our goals for this year is to maintain a biweekly cadence of release candidates, so we should have a more consistent pace. At the same time, we realize that keeping up with biweekly releases of server-side software can be a bit of a chore, so we're also discussing ways that we could provide longer support for some of our releases. That's a project for much later this year, but consider it a preview of things to come.
+>
+> If you have any feedback, please feel free to join us in [#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org)!
+
+
+
+## Dept of Bridges 🌉
+
+### mx-puppet-steam
+
+[Icewind](https://matrix.to/#/@robin:icewind.nl) told us:
+
+> mx-puppet-steam has been receiving a bit of love over the past few weeks, including:
+>
+> * improved reliability of image uploads
+>
+> * syncing of read and typing status from matrix to steam
+> * bridging of emotes and stickers from steam to matrix
+
+
+
+## Dept of Clients 📱
+
+### New NeoChat features
+
+[Carl Schwan](https://matrix.to/#/@carl:kde.org) announced:
+
+> NeoChat gained a few new features this week. The timeline displays stickers now, and edited messages don't get duplicated anymore. NeoChat also now lets you edit your messages. Additionally, Noah improved the support for attachments in the UI, more image formats are detected (and can then be edited in the built-in image editor), and mime type icons get added to non-image attachments. Tobias continues to work on the registration flow and SSO support.
+
+You can meet Carl and Tobias from the NeoChat project by watching Matrix Live. \o/
+
+![2021-01-08-mp8Ia-image.png](/blog/img/2021-01-08-mp8Ia-image.png)
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at.
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) reported:
+
+> * d42 fixed SSO login with some more exotic SSO configurations.
+>
+> * Reenable showing a users status_msg, which got lost in a refactoring.
+> * trilene cleaned up the design of our call dialogs and Nheko now picks up changes in your devices without a restart.
+>
+> * Typing notifications should now not flicker anymore.
+> * The build is now more explicit, if call support is enabled.
+>
+> * You can now reply directly inline to a notification on Linux, if your notification manager supports it.
+
+![2021-01-08-0x46S-Screenshot_20210107_183454.png](/blog/img/2021-01-08-0x46S-Screenshot_20210107_183454.png)
+
+This reply-in-notification feature is really cool!
+
+### SchildiChat for Android
+
+[SpiritCroc](https://matrix.to/#/@spiritcroc:spiritcroc.de) offered:
+
+> [SchildiChat](https://schildi.chat/) is a fork of Element, which focuses on UI changes such as message bubbles and a unified chat list for both direct messages and groups, which is a more familiar approach to users of other popular instant messengers.
+>
+> During the last couple of weeks, SchildiChat-Android development focused mainly on staying up-to-date with the upstream Element codebase (URL previews took some time to make them fit nicely into the bubble layouts), and doing some smaller design improvements (like wider message bubbles for some scenarios, and an intelligent message timestamp placement at the bottom of the bubble, depending on the available space).
+>
+> Furthermore, we now also have experimental support for [MSC2867](https://github.com/matrix-org/matrix-doc/pull/2867), which allows you to mark rooms as unread. Note that for now, this feature needs to be enabled in the labs settings, since the MSC is still unstable and not supported by many clients, which means other clients might ignore whether the user has manually marked a chat as unread and thus display it as read anyway.
+>
+> Code on GitHub: https://github.com/SchildiChat/SchildiChat-android
+>
+> Matrix room: [#schildichat-android:matrix.org](https://matrix.to/#/#schildichat-android:matrix.org)
+
+
+
+### Element Clients
+
+Some updates below from the team. Not all teams are back from their Christmas breaks yet, and those who are may be a little busy with FOSDEM-specific projects, but we have some updates:
+
+#### Spaces
+
+We’re making more progress on the client implementations for Spaces on the web on Android. [On Web](https://github.com/vector-im/element-web/issues/15930), recent progress includes implementing notification badges, and [on Android](https://github.com/vector-im/element-android/issues/2495) we’re progressing from SDK work to initial UI implementations.
+
+#### Social Login
+
+Support for [Social Login on iOS](https://github.com/vector-im/element-ios/issues/3846) is in review after resolving some issues around VoiceOver, which is the last Element client to implement support ahead of Synapse landing support for social login in the near future.
+
+#### VoIP
+
+Lots of things merged to web: dial pad, call forward, dtmf pad, although most won’t show up in normal use (yet). Other progress on web on hold for fosdem work. Dial pad & phone number lookup support incoming on iOS, and phone number lookup on its way on Android.
+
+#### iOS
+
+We progressed on several things this week. They are not yet merged but almost. They will be part of the next release we will ship next week: social login, app deadlock fix, encrypted message sending speed improvement, xcodegen usage, sending bug reports in background.
+
+## Dept of SDKs and Frameworks 🧰
+
+### MRSBFH - Matrix-Rust-SDK-Bot-Framework-Helper
+
+[MTRNord](https://matrix.to/#/@mtrnord:nordgedanken.dev) reported:
+
+> https://github.com/MTRNord/mrsbfh
+>
+> I took the time and started a small (command)bot framework/utility crate which operates on top of the matrix rust sdk.
+>
+> It currently is just some of the command logic and utilities extracted from the famedly timetrackingbot and offers a basic bot template.
+>
+> #### Features
+>
+> * Proc macro based command definition
+>
+> * Auto generating of helptext
+> * Full compatibility with the regular matrix rust sdk
+>
+> * Modularity
+> * Helpers for session recovery and Configs
+>
+> * Helpers to minify boilerplate of the EventEmitter
+>
+> #### Planned features
+>
+> * More utilities for bots that are not in scope of the main sdk.
+>
+> #### Non-Goals
+>
+> * State management
+>
+> * Hiding the sdk behind another API (No automatic hooks into the event emitter)
+> * usage as AS framework. (This however is possible as you can use the hook where ever needed.)
+>
+> #### Possible goals
+>
+> * Early adoption of MSCs that are meant for bots (for example [MSC2929](https://github.com/matrix-org/matrix-doc/pull/2929))
+>
+> Note this is very young and many is possible to change.
+
+That is quite a project name!
+
+### mtxclient - the Matrix library Nheko uses
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE (with the notable exception being device verification for now) and intends to be full featured and nice to look at.
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) announced:
+
+> I found some time to actually host the docs our library currently has. It is still severly lacking, but it may be interesting to some people like people contributing to Nheko. I'm going to write some higher level docs over the next few weeks, so that people can actually see how to use the library and have some inline examples and more extensive explanations. But for now you can find the barebones descriptions we always had in the source code here: http://nheko-reborn.pages.nheko.im/mtxclient/index.html
+
+Providing docs always gets a big thumbs-up from me!
+
+### matrix-bot-sdk
+
+[TravisR](https://github.com/turt2live) said:
+
+> [matrix-bot-sdk@0.5.10](https://www.npmjs.com/package/matrix-bot-sdk/v/0.5.10) has been released! This version contains early support for Identity Servers and Spaces (MSC1772), as well as easier functions for sending HTML messages and a bunch of other quality of life improvements. Feedback and bugs in [#matrix-bot-sdk:t2bot.io](https://matrix.to/#/#matrix-bot-sdk:t2bot.io).
+
+
+
+### Trixnity, Kotlin SDK announced
+
+[Benedict](https://matrix.to/#/@benedict:imbitbu.de) reported:
+
+> I'm currently working on a Kotlin cross-plattform (JVM, JS, Native) Matrix SDK named [trixnity](https://github.com/benkuly/trixnity)
+>
+> It's a very early version, but I can migrate many code and tests from [matrix-spring-boot-sdk](https://github.com/benkuly/matrix-spring-boot-sdk) so that it's growing fast (for a one man project 😀).
+
+[Benedict](https://matrix.to/#/@benedict:imbitbu.de) explained:
+
+> matrix-spring-boot-sdk is my first attempt to write bots and appservices really fast, then matrix-sms-bridge using this sdk and now migrating the low-level stuff from matrix-spring-boot-sdk to trixnity, so it can be used independently from spring boot 🙂 My plan is to use trixnity for a an open source web client, that can do "Videosprechstunde" in Germany (I don't know the english word for it, maybe video doctor's consultation?).
+
+More about *Videosprechstunde* later...
+
+## Dept of Ops 🛠
+
+### GitHub action for Matrix!
+
+[select](https://matrix.to/#/@select:matrix.org) said:
+
+> I recently started a new freelance project and got them to use Matrix as our main communication channel. Since they chose GitHub as our source code platform I got into writing continuous integrations and delivery scripts. But one thing was missing: notifications in our Matrix room. I looked into the GitHub Action Marketplace and found 2 actions that could do that, so that was nice ... but they could not send e2e encrypted messages. Therefore I took up my old issue on how to make e2e encryption work with the js-sdk (https://github.com/matrix-org/matrix-js-sdk/issues/731) with some new found energy and finally solved it. The result is this GitHub action: 
+>
+> https://github.com/select/matrix-message-e2e
+>
+> While it's almost a full success story there is still one issue to solve: While the action successfully sends e2e encrypted messages the job is marked as failed. My guess it that while sending the messages the matrix client outputs on stderr due to some encyption errors (unknown device keys, ...)
+
+## Dept of Interesting Projects 🛰️
+
+### Battleship via Matrix
+
+[Christian](https://matrix.to/#/@christianp:vector.modular.im) announced:
+
+> Want to play the guessing game Battleship via Matrix? I'm building one to be ready for FOSDEM. Follow my progress, bring in ideas and play development versions:
+>
+> https://matrix.to/#/#battleship:vector.modular.im?via=vector.modular.im&via=t2l.io&via=federator.dev
+
+### matrix-archive
+
+I asked: "what's the best tool for dumping history from rooms (including e2e rooms)?", and [Florian](https://matrix.to/#/@florian:dsn.tm.kit.edu) shared this great tool I don't think I'd seen before:
+
+> [matrix-archive](https://github.com/russelldavies/matrix-archive) is the best currently-maintained tool I know of
+
+A really useful project that generates "a YAML log of all room messages, including media".
+
+## Dept of Guides 🧭
+
+### easy-to-share comparison chart
+
+[joepie91](https://matrix.to/#/@joepie91:pixie.town) said:
+
+> Based on the original chart by hrjet, here's an easy-to-share comparison chart in image form, that compares a number of alternatives (Element/Matrix, Signal, Telegram) for people looking for an alternative to WhatsApp
+
+![2021-01-08-ayRQd-whatsapp-alternatives.png](/blog/img/2021-01-08-ayRQd-whatsapp-alternatives.png)
+
+Should be very useful for incoming "What do I use instead of WhatsApp?"-type conversations!
+
+(Also you could [share this tweet](https://twitter.com/joepie91/status/1347580384905723906) for even more visibility!)
+
+## Final Thoughts 💭
+
+### Videosprechstunde is quite hot right now
+
+As promised, some more thoughts on the *Videosprechstunde* craze apparently sweeping Germany.
+
+[Niklas Zender](https://matrix.to/#/@larodar:famedly.de) announced:
+
+> Videosprechstunde is quite hot right now, and **the technical requirements in terms of security are already handled with matrix.**  
+> It is regulated by the german goverment and is only working for centralised services right now. So there is no way to get it certified with matrix. It might be possible in future (fingers crossed) and then we (Famedly) are also ready to provide it :)  
+> (Goverment is slightly wrong, it is more the KBV, but the Goverment also plans to regulate it starting in two years)
+
+Videosprechstunde refers to having a video conference with your doctor, rather than going in-person.
+
+### Speed installations?
+
+[compu](https://matrix.to/#/@compu-42:matrix.org) offered:
+
+> so one time I installed Matrix Synapse on a fresh debian install in 24 minutes
+> do i get bragging rights?
+
+If you have video of you installing Synapse or another matrix server at an alarming rate, we'll link to it from here!
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|matrix.org|347|
+|2|the-apothecary.club|351|
+|3|almum.de|399|
+|4|envs.net|485|
+|5|maescool.be|634.5|
+|6|aria-net.org|712|
+|7|casavant.org|891|
+|8|mtx.liftm.de|904|
+|9|cof100.dk|1067|
+|10|tchncs.de|1109|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org

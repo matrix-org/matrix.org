@@ -3,7 +3,7 @@
 # (cd .buildkite/gatsby; docker build . -t matrixdotorg/matrixdotorg-gatsby)
 # docker push matrixdotorg/matrixdotorg-gatsby
 
-FROM node:10
+FROM node:14
 
 RUN mkdir /opt/gatsby
 COPY package.json /opt/gatsby

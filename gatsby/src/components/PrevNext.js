@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 
 const Wrapper = styled.div`
   display: flex;
@@ -37,14 +36,14 @@ const PrevNext = ({ next, prev }) => (
     {prev && (
       <Prev>
         <span>Previous</span>
-        <Link to={prev.fields.slug}>{prev.frontmatter.title}</Link>
+        <a href={prev.fields.slug}>{prev.frontmatter.title}</a>
       </Prev>
     )}
 
     {next && (
       <Next>
         <span>Next</span>
-        <Link to={next.fields.slug}>{next.frontmatter.title}</Link>
+        <a href={next.fields.slug}>{next.frontmatter.title}</a>
       </Next>
     )}
   </Wrapper>

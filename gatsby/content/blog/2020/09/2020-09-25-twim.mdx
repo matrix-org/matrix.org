@@ -1,0 +1,477 @@
+---
+date: '2020-09-25'
+title: 'This Week in Matrix 2020-09-25'
+categories:
+  - This Week in Matrix
+author: Andrew Morgan
+image: https://matrix.org/blog/img/2020-09-25-iojOI-mtrix-live-s05e20-thumbnail.jpg
+---
+
+Hello all, and welcome to this week's addition of This Week in Matrix!
+[Matrix](https://matrix.org) is an open network protocol for secure,
+decentralized communication on the web.
+
+
+My name is Andrew (aka `anoa`), and I'm a Synapse developer at Element.
+Thanks to Ben for letting me take over the reins of TWIM for this week! I'll
+actually be doing the same for next week as well, so please adjust your
+clocks to Anoa Nonstandard Time accordingly.
+
+With that out of the way, let's jump right in!
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Fk7YRiFIwZ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+It's demos week again. This time around we've got the following lineup:
+
+* Michael shows off all the new widget goodies coming to Element Web!
+* Bruno shows off Hydrogen's new encrypted session backup support!
+* Ismail details the new room creation flow on Element iOS!
+* Jorik presents his work on revamping the UX of https://matrix.to that he completed for his second summer internship at Element!
+* Hubert fixes another class of failure-to-decrypt messages edge case with Device Dehydration!
+* Half-Shot closes off with the tale of Encrypted Bridges!
+
+Don't forget that Matrix Live is also available in podcast form, if you're into that sort of thing. Search for "Matrix Live" wherever you get your podcasts.
+
+## Dept of Spec 📜
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) (hey that's me!) told us:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals>.
+> ## MSC Status
+>
+>**Merged MSCs:**
+>- [MSC1960: OpenID information exchange with widgets](https://github.com/matrix-org/matrix-doc/pull/1960)
+
+>**MSCs in Final Comment Period:**
+>- _No MSCs are in FCP._
+
+>**New MSCs:**
+>- [MSC2790: Modal widgets (acquiring user input from a widget)](https://github.com/matrix-org/matrix-doc/pull/2790)
+>- [MSC2788: Room version 6 as the default room version](https://github.com/matrix-org/matrix-doc/pull/2788)
+>- [MSC2787: Portable Identities](https://github.com/matrix-org/matrix-doc/pull/2787)
+>- [MSC2785: Event notification attributes and actions](https://github.com/matrix-org/matrix-doc/pull/2785)
+>- [\[WIP\] MSC2783: Homeserver Migration Data Format](https://github.com/matrix-org/matrix-doc/pull/2783)
+>- [MSC2782: Pushers with the full event content](https://github.com/matrix-org/matrix-doc/pull/2782)
+>- [MSC2781: Deprecate the (reply) fallbacks in the Matrix specification](https://github.com/matrix-org/matrix-doc/pull/2781)
+>## Spec Core Team
+>
+>In terms of Spec Core Team MSC focus for this week, we've been rather busy with implementation, so we'll be continuing on with the same focus as last week. As a reminder, that's [MSC2414](https://github.com/matrix-org/matrix-doc/issues/2414) (making reason and score optional on reports).
+
+> ![](/blog/img/2020-09-25-WozRC-image.png)
+
+
+## Dept of Servers 🏢
+
+### Dendrite / gomatrixserverlib
+
+Dendrite is a next-generation homeserver written in Go.
+
+[Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) announced:
+
+> This week has mostly been spent trying to improve stability and to fix bugs ahead of the beta release, which is so far still planned to go ahead in the next two weeks.
+>
+> Changes this week include:
+>
+> * Room version 6 is now the default for newly created rooms
+>
+> * Soft-fail of events that aren't allowed by the current room state is now implemented
+> * Support for configuring `old_verify_keys` has been added to the Dendrite config
+>
+> * Correct formatting for signing key IDs is now enforced in the configuration
+> * Initial support for peeking over federation ([MSC2444](https://github.com/matrix-org/matrix-doc/pull/2444)) is in progress and it "even works!" (thanks Matthew!)
+>
+> * Federated joins will now continue being processed even if the client gives up on the join due to a HTTP timeout
+> * Backoff code has been refactored a bit more, and now correctly affects device list syncing
+>
+> * `/make_join` now errors correctly if a federated user tries to join a room which all members have left
+> * A bug where a single user could start multiple simultaneous federated joins to the same room has been fixed
+>
+> * Some initial (but unfinished) support for the `/key/v2/query` notary endpoint has been added
+> * Signature verification has been updated to not fail if the event `origin` field is missing (although it still requires a signature from the domain of the `sender` field)
+>
+> * A number of places where we use SQL transactions have been updated with safe wrappers (thanks [samcday](https://github.com/samcday)!)
+> * A couple of error codes on invite endpoints for room version 6 JSON violations have been fixed
+>
+> Spec compliance has improved slightly for federation:
+>
+> * Client-Server APIs: 56%, same as last week
+>
+> * Server-Server APIs: 77%, up from 74% last week
+>
+> As always, if contributing to Dendrite sounds like something you would be interested in, please feel free to join us in [#dendrite-dev:matrix.org](https://matrix.to/#/#dendrite-dev:matrix.org) ! There's also [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org)
+
+
+
+### Synapse
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) offered:
+
+> This week we released [1.20.0](https://matrix.org/blog/2020/09/22/synapse-1-20-0-released) (and [1.20.1](https://github.com/matrix-org/synapse/releases/tag/v1.20.1)) highlights include shadow banning support and including unread message counts in the sync response. This will help client developers and is a precursor to improving notification support.
+>
+> We’ve also been looking at adding monitoring to get a better sense of which rooms are most expensive from a state resolution perspective, we also want a better way to track federation lag.
+>
+> Up next we’ll move all background tasks away from the main process and try it out on matrix.org, we are hoping for a 10-15% saving in CPU. Event persistence sharding, specifically the new stream token format is on hold slightly while we work on a nasty race condition on start up of the event persister. We hope to get back to the main sharding project next week.
+
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
+
+[timo](https://matrix.to/#/@timo:koesters.xyz) announced:
+
+>* Respect SRV record when sending requests over federation
+>* Don't send new requests to servers if we are already waiting
+>* Implement get_missing_events
+>* Bug fixes and code cleanup
+>
+> We also started work on a system that retries failed or blocked requests after some time.
+
+> Thanks to everyone who supports me on "Liberapay" (https://liberapay.com/timokoesters) or Bitcoin!
+
+
+### The Construct
+
+[Jason](https://matrix.to/#/@jason:zemos.net) reported:
+
+> This week in Matrix concludes a summer of Construct where several transformative rounds of optimization took place. I'd like to talk about these achievements and why they are important for
+> future directions.
+>
+> Over the summer, Construct introduced new vector extensions to the project. As server software, our primary target is the datacenter which (for now) is dominated by x86 hardware. The latest features of x86 chips include AVX-2, AVX-512, and on-die GPU. These advancements are important because they help mitigate current limitations of hardware, such as the cubic relationship between a processor's frequency and its power consumption. These limitations mean that CPU cores aren't completing more cycles-per-second every iteration of their development -- they're not getting much faster.
+>
+> The problem with threads is that they can introduce a lot of complications to a project. Construct is able to forego multi-threading as a network server because it is primarily IO-bound. The benefits to a single-thread design in both performance and simplicity cannot be overstated. This is why Construct stands to benefit the most from features which allow more work to be accomplished at every individual computing cycle.
+>
+> Construct undertook several endeavors over the summer which directly leverage platforms featuring SSE, AVX, AVX-512, etc. As an added bonus, our approach is designed to effortlessly port to ARM's Scalable Vector Extensions (SVE) as it becomes available (inside datacenters too!). Our focus has been JSON, Unicode, and finally Base64. Detailed explanations for each of these will need to be discussed in their own posts, but in summary:
+>
+> * Matrix specifies a canonical form of JSON which is not necessarily the same as the JSON the server receives. Therefor it is imperative that Construct is liberal with what JSON it accepts and correct with its transformation into canonical JSON. Over the summer, a portion of Construct's canonical transform received some optimization to go beyond the default method of character-by-character read-modify-write. As seen in [1], a streaming hardware-accelerated transform now processes at least 16 characters at a time (with more possible) without forward branching except for the parts where transformation needs to occur. One of these transformations is UTF-16 to UTF-8 surrogate conversion, which leads into the second endeavor.
+>
+> * Construct introduced a completely branch-free Unicode toolset in [2]. Among the functions offered is a custom transform of UTF-16 surrogate pairs to UTF-8 sequences. Using the new vector registers, Construct can transform two UTF-16 surrogates in parallel to output two UTF-8 sequences, or two UTF-16 surrogates in a pair to output one UTF-8 sequence. Unfortunately, these specific functions were written at fixed vector widths, so more work needs to be done to really take advantage of the widest hardware. Each surrogate is 6 bytes, and a surrogate pair is 12 bytes; therefor we cannot make use of the last 4 bytes of a 16 byte vector. However, with a little more work this approach can be extended to a 64 byte vector, capable of decoding 5 surrogate pairs and 10 individual surrogates in parallel!
+>
+> * Professor Daniel Lemire recently published a paper about fast Base64 from hardware acceleration in [3]. This approach is extremely elegant on the 64-byte-wide AVX-512 system. Prior to Construct's implementation of this in [4], the Boost library base64 encoding and decoding took roughly 20 and 25 cycles per character respectively. Our implementation on the same system, an old system with only SSE2 (not even AVX-512!) yields 5 and 6 cycles per character!
+>
+> All of this helps lay a foundation for Construct to introduce Federated Media Rooms sometime in the future. Currently, Construct stores media in a separate database. Recently there's been work on a separate branch at [5] which stores actual file block inside events using Base64. It is for this reason sub-cycle and branchless JSON parsing and Base64 encoding is essential for maximum performance. The result is worthwhile, as the latency for querying the media database is slower than parsing and decoding the event content already in-hand.
+>
+> That's all for today. Construct is available at <https://github.com/matrix-construct/construct> and don't forget to idle and perform [#construct:zemos.net](https://matrix.to/#/#construct:zemos.net) / [#construct:maunium.net](https://matrix.to/#/#construct:maunium.net)
+>
+> Thanks!
+>
+> 1. <https://github.com/matrix-construct/construct/blob/563f833ab325f27ff9e71af61af427fb02812f90/ircd/json.cc#L3483>
+>
+> 2. <https://github.com/matrix-construct/construct/blob/563f833ab325f27ff9e71af61af427fb02812f90/ircd/utf.cc>
+> 3. <https://arxiv.org/abs/1910.05109>
+>
+> 4. <https://github.com/matrix-construct/construct/blob/563f833ab325f27ff9e71af61af427fb02812f90/ircd/b64.cc>
+> 5. <https://github.com/jevolk/charybdis/tree/federated_media_rooms>
+
+
+It's really exciting to see Homeserver development ramping up from all
+angles, and nice that the protocol warts are slowly getting ironed out in the
+process.
+
+
+## Synapse Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) told us:
+
+> Before I forget (more) about it, I pushed the 1.20.0 tag for my [K8s-optimized container image](https://github.com/ananace/matrix-synapse) as well as my [Helm chart](https://gitlab.com/ananace/charts).
+
+
+
+### YunoHost
+
+[Pierre](https://matrix.to/#/@pierre:mamieserv.fr) reported:
+
+> [YunoHost](https://yunohost.org/) is an operating system aiming for the simplest administration of a server, and therefore democratize self-hosting.
+>
+> [Synapse](https://github.com/YunoHost-Apps/synapse_ynh/tree/master) integration had been updated to 1.19.3 (1.20.0 available in branch `testing`)
+>
+> [Element Web](https://github.com/YunoHost-Apps/element_ynh/tree/master) integration had been updated to 1.7.5 (1.7.7 available in branch `testing`)
+
+
+
+### dacruz21/matrix-chart
+
+[Typo Kign](https://matrix.to/#/@david:typokign.com) announced:
+
+> Thanks to [Arkaniad](https://www.github.com/Arkaniad), v2.7.0 of my Matrix Helm chart for Kubernetes is released with support for exporting Prometheus metrics. It pairs well with the [Synapse Grafana dashboard](https://grafana.com/grafana/dashboards/10046).
+
+
+
+### More Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) said:
+
+> And just pushed the 1.20.1 tag too for my [K8s-optimized container image](https://github.com/ananace/matrix-synapse) as well as my [Helm chart](https://gitlab.com/ananace/charts).
+
+
+
+### Third-Party PowerPC and ARM64 support for Synapse
+
+[andreas](https://matrix.to/#/@andreas:matrix.aventer.biz) announced:
+
+> The synapse docker image from AVENTER (https://www.aventer.biz), does support PowerPC (ppc64le) and ARM64 architecture now. But at the moment only under the docker tag "ppc". <https://hub.docker.com/r/avhost/docker-matrix/tags?page=1&name=ppc> We will be happy to get feedback.
+
+As a Synapse developer, it's great to see the community making personal and
+enterprise Matrix deployments more accessible!
+
+
+## Dept of Clients 📱
+
+### FluffyChat
+
+[sorunome](https://matrix.to/#/@sorunome:sorunome.de) told us:
+
+> Fluffychat 0.19.1 has been released!
+>
+> #### Features
+>
+> * Implemented ignore list
+>
+> * Jump to events in timeline: When tapping on a reply and when tapping a matrix.to link
+> * Display messages with up to 10 emotes or emoji bigger
+>
+> * New design for the chat list and message bubbles
+> * Implement reactions
+>
+> * Implement password change
+> * Implement deactivate user account
+>
+> #### Fixes
+>
+> * Timeline randomly resorting while more history is being fetched
+
+> * Automatically request history if the "load more" button is on the screen
+
+Sorunome briefly mentioned afterwards that there is no 0.19.0 due to some accidental messed up tagging, and that it was easiest to just call the new version 0.19.1.
+
+
+### Element Web
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) offered:
+
+> This week we put out a new release candidate [1.7.8-rc.1](https://staging.element.io) highlights include:-
+>
+> * Secure Backup has been moved out of the registration flow to a toast when you first encounter an E2EE room, which simplifies the new user experience
+>
+> * Added options to hide various UI features when hosting a custom Element
+> ...along with various smaller fixes.
+>
+> Aside from that the work to improve the widget experience continues with modal widget next on the agenda.
+>
+> Next week we will continue to improve widgets and add some more instrumentation into the app.
+
+
+
+### Hydrogen
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) said:
+
+> Released 0.1.0 (and 0.1.1) this week with read-only session backup enabled 🎉 Also doing more work to make Hydrogen work on IE11 on Windows 7 (it does already for Windows 10), Safari and other browsers where you get `TransactionInactiveError` during login, hope to release that soon.
+
+I need to give Hydrogren a shot myself, the quick speeds and low RAM usage
+are really attractive.
+
+
+### Element-iOS
+
+[Manu](https://matrix.to/#/@Manu:matrix.org) offered:
+
+> This week, room settings have been updated with a new intermediate screen. The codebase saw the introduction of an AppCoordinator (in swift) which will help us to have a better control on navigation within the app AND to use swift from end to end.
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### Polyjuice Client 🧙
+
+[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) told us:
+
+> Polyjuice Client v0.3.0 has been released.  This release includes many breaking changes.  ("Breaking" in the sense of API changes, rather than the sync process suddenly failing to work, which was already featured in a previous release.)  This release also includes many changes, such as the client managing more bookkeeping, detecting if it got logged out, and supporting more Matrix features.  See the [release notes](https://gitlab.com/uhoreg/polyjuice_client/-/releases/v0.3.0) for more information.
+
+
+
+### Igor
+
+[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) reported:
+
+> [Igor](https://hex.pm/packages/igor/) is a bot framework for Elixir.  Igor v0.2.0 has been released.  The main change is updating it to use Polyjuice Client 0.3.0.
+
+
+
+## Dept of Bots 🤖
+
+### Matrix-Architect
+
+[erdnaxeli](https://matrix.to/#/@erdnaxeli:cervoi.se) announced:
+
+> Hi!
+>
+> I present you a new project I've been working on for some time. It's a bot that allows you to use the admin API through matrix, by typing commands to the bot. The inspiration comes from the OperServ-like bots that allow IRC operators to administrate an IRC server.
+>
+> The bot exposes some of the available admin APIs and aims to provide some more high level commands by combining different APIs. There is currently one "high level command", `!room garbage-collect`, which allow you to purge from your HS all rooms without local users.
+>
+> The project is written in crystal and is my first project in this language. It should be stable in normal conditions, but don't hesitate to fill issues. A Docker image is provided for more convenience.
+>
+> I hope you will find this project useful 🙂
+>
+> <https://github.com/erdnaxeli/matrix-architect>
+
+People administering their Synapse deployment through Matrix itself! How deep
+does the rabbit hole go?
+
+
+### Songwhip bot
+
+[Tulir](https://matrix.to/#/@tulir:maunium.net) reported:
+
+> benpa wanted a bot that replies with a songwhip.com link whenever someone sends a music link (youtube, spotify, apple music, etc), so I wrote a small maubot plugin to do that: <https://github.com/maubot/songwhip>
+>
+> It's available at @songwhip:maunium.net
+
+I'm also desperately in need of this for the 10 `open.spotify.com` links that get thrown at me every week. Thanks Tulir!
+
+
+### Cyberbot
+
+[jj](https://matrix.to/#/@jj:sft.lol) reported:
+
+> There's a new bot! [Cyberbot](https://github.com/cybergruppe/cyberbot).
+>
+> It supports E2EE and can be easily extended with Python plugins. Can be used e.g. for GitLab notifications, automated user invites, room creation, and of course can be programmed to react to any message posted in a room.
+
+
+## Dept of Interesting Projects 🛰️
+
+### matrix-gotify
+
+[sorunome](https://matrix.to/#/@sorunome:sorunome.de) said:
+
+> Soru made a new thing, [matrix-gotify](https://gitlab.com/Sorunome/matrix-gotify). It is a [gotify](https://gotify.net/) plugin to receive matrix notifications. This means, you can now receive matrix push notifications on your android phone self-hosted without the need of google services! That is why putting the full event in the push notification is actually not a privacy leak in this case.
+>
+> This plugin could also be used to receive push notifications on any other kind of device that gotify supports.
+>
+> Please note that this is independent of any matrix client - you don't even need to run one to be able to use this!
+
+
+I asked whether an [OpenPush](https://bubu1.eu/openpush/)-like solution be
+built on top of this , and Sorunome responded that someone had already
+started working on just that! https://github.com/gotify/android/pull/115
+
+This would allow other matrix clients on your phone to get their push
+notifications through your gotify client, instead of needing to run a process
+each. Great for battery life without proprietary Google blobs!
+
+### Homeservers on-the-go
+
+[js](https://matrix.to/#/@js:nil.im) got Synapse running in a car on a German highway:
+
+> ![](/blog/img/2020-09-25-njVLa-matrix_car.jpeg)
+
+> the setup is a cigarette lighter to 2x 230V converter, one being used to power the RockPro64, the other being used to power my notebook. My notebook is connected to the hotspot from my phone, while also being connected to a USB ethernet, the other end of which is plugged into the RockPro64. 
+>
+> The notebook then acts as a gateway, as well as SSHing to a tiny VPS with -R, to get a public port, and forwarding that traffic to the RockPro64.
+
+Maybe one day we'll all have an embedded Synapse homeserver in our cars. P2P E2EE
+car comms anyone?
+
+
+### Matrix VoIP Tester
+
+[reivilibre](https://matrix.to/#/@reivilibre:librepush.net) announced:
+
+> <https://github.com/matrix-org/voip-tester>
+>
+> I have been through the perils of setting up a TURN server and having VoIP continue to fail, whilst spending hours scratching my head and staring at Wireshark without getting anywhere. When I was given free reign over project choice last year during my internship, I chose to start a tool that tests your homeserver's VoIP configuration, hoping it would be useful to both me and the community at large.
+>
+> It saw some progress but I never managed to iron out some of the 'last few things' or put a pretty front on it — until about 2 weeks ago, when I got some more time to do it.
+>
+> There are known issues — such as the scores being very arbitrary, wrong and misleading; it crashes Chromium every time (on my machine) and it completely misbehaves in Brave Browser (on my machine). It may also not be the prettiest (but hopefully it is at least somewhat inoffensive). I hope to work on these annoying issues soon.
+>
+> I have deployed a test instance at <https://test.voip.librepush.net> — it can be tried in a WebRTC-supporting browser (probably Firefox if you want half a chance). Please don't take it to heart if you get a Fail or Poor score — it's probably not your fault. :)
+
+Oliver was interning with us at Element this Summer. Fixing up and releasing
+this VoIP tester was part of it, but he's still working on it in his spare
+time even though his internship has finished :)
+
+Through this I found out that I forgot to turn on my turnserver on my
+homeserver again. Thanks Oliver!
+
+
+## Dept of Guides 🧭
+
+### German-Language Guide for Getting Start with Matrix
+
+[Samuel](https://matrix.to/#/@samuel-p:matrix.sp-codes.de) told us:
+
+> I started an article series about Matrix on my german blog. The goal is to make it easier for new users to get started with Matrix. <https://blog.sp-codes.de/werde-teil-der-matrix-matrix-teil-1/>
+
+Guides like these are the essential entrypoints to a project for a lot of users. The more, in different languages, the merrier!
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|thomcat.rocks|896|
+|2|matrix.vgorcum.com|965|
+|3|conduit.rs|1226.5|
+|4|neko.dev|1232|
+|5|kif.rocks|1396|
+|6|chatserver.ca|1533.5|
+|7|jauriarts.org|1949.5|
+|8|settgast.org|2328|
+|9|vkane.cz|2419|
+|10|conduit.nordgedanken.dev|2519|
+
+
+### Ping Graphs by Timo™️
+
+[timo](https://matrix.to/#/@timo:koesters.xyz) told us:
+
+> Here we look at how fast ping bots respond.
+>
+> I changed the formatting of the plot a bit to make it more readable. Note that it is now using a log scale which allows us to see more data at the same time.
+>
+> ![(A graph showing conduit beating everyone)](/blog/img/2020-09-25-Osmfw-boxplot.svg)
+
+
+
+### Non-Synapse Ping Room
+
+[Tulir](https://matrix.to/#/@tulir:maunium.net) reported:
+
+> Now that we have multiple somewhat federating Matrix homeserver implementations, I decided to make a ping room where all the echo bots are hosted on second-gen homeservers: [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net). Synapse users are still allowed to join and `!ping`, but all the pongs will come from non-Synapse servers.
+>
+> Based on observations in that room so far, the new server implementations don't like eachother very much.
+
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|conduit.rs|110|
+|2|pc.koesters.xyz:59003|162|
+|3|cd.mau.dev|162.5|
+|4|maunium.net|181|
+|5|c.mau.dev|238|
+|6|dendrite.neilalexander.dev|370|
+|7|conduit.nordgedanken.dev|427|
+|8|inferiorlattice.com|592|
+|9|matrix.org|1294|
+|10|grin.hu|3560.5|
+
+
+
+
+## Final Thoughts 💭
+
+* [Magnus Svensson](https://matrix.to/#/@magnus:ctrl-c.liu.se) was [left speechless](https://matrix.to/#/!xYvNcQPhnkrdUmYczI:matrix.org/$Fu_LD4g2AfYGWjcRPTISLIpJEGZ_Pq-MwymfBMddoRo?via=matrix.org&via=privacytools.io&via=feneas.org) by the amazing projects that we got to see this week.
+
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: <https://matrix.to/#/#TWIM:matrix.org>

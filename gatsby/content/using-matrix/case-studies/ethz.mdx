@@ -1,0 +1,63 @@
+---
+title: ETH Zurich adopts Matrix for Physics Department
+section: Case Studies
+thumbnail: /images/sta_hoenggerberg_luftbild_004.jpg
+featured: true
+---
+
+## Challenges
+
+The [IT Services Group (ISG)](https://www.phys.ethz.ch/services/physics-isg.html) of the [Physics department](https://phys.ethz.ch/), one of 16 departments at [ETH Zurich](https://ethz.ch/), had been using IRC for 15+ years. It worked for them internally, but they noticed that it lacked engagement from outside the ISG, even from their own Physics department.
+
+Some of the research groups used Slack within the department, but the researchers were concerned about unpublished data being sent outside of the institute into the cloud.
+
+Christian (Head of IT) and Sven (Linux System Engineer) from the ISG started hunting for solutions. Christian looked at Mattermost and Rocket.Chat, but decided that these could not replace IRC.
+
+![Aerial view Hönggerberg](/images/sta_hoenggerberg_luftbild_004.jpg)
+
+Aerial view Hönggerberg
+© ETH Zürich / Alessandro Della Bella
+
+## Solution
+
+In December 2019, Sven started testing a new Matrix instance at matrix.phys.ethz.ch, and liked what he saw. The ISG initially used the homeserver internally, as they had with IRC. Since it was working well, and their “test server” was starting to get more serious internal use, they started to bridge their IRC channels to their instance, although it was only members of the ISG plus some power users who were using Matrix at the time. By using Matrix for themselves and allowing the few external users of their IRC channels to connect, they were able to increase their use of Matrix without exposing existing users to potential onboarding issues.
+
+In early 2020 they began designing the deployment of Matrix and Element on a production system to be officially provided as service for the whole Physics department. The release was initially planned for April 2020, but when the COVID-19 lockdown struck in March 2020, and the demand for a locally available Instant Messaging system rose dramatically, they decided to go live with an early release.
+
+This time they were able to take advantage of what Sven had learned in running the test server. They configured .well-known, which allows them to display the hostname as “phys.ethz.ch”, dropping the “matrix.” from “matrix.phys.ethz.ch”.
+
+The new deployment uses ansible, with source installation for bridges, and pip for Synapse. They use a single VM for the entire deployment, grouping the homeserver with a PostgreSQL database.
+
+Making the service available to the members of the Physics department meant connecting the server to their LDAP instance. They were able to use ma1sd, an Identity Server which enables authentication via LDAP for Matrix and provides mission critical user directory search functionality with existing user data from LDAP.
+
+## Launch
+
+The rollout entailed providing [new documentation](https://readme.phys.ethz.ch/chat/), a [post on the ISG blog](https://isg.phys.ethz.ch/2020/03/20/new-d-phys-collaboration-chat-service-slack-replacement/), and an announcement through the Institute’s official email channels. The Department Board was engaged and supported the project.
+
+After the launch, they dropped the IRC bridge. Matrix is now the only way to get live IT support chat from the ISG. Switching was easy as there were already more users on Matrix than IRC.
+
+## Growth
+
+Just two hours after the blog post went out, the ISG received their first request for a new Matrix community. Since then, instead of making new Slack workspaces, research groups have preferred to create new Matrix communities. This saves the department money in fees, and keeps their research securely within the Institute.
+
+Users and researchers in the department now benefit from self-hosted Instant Messaging communications. This is especially valued when all are working remotely.
+
+The service is also fueling inter-group and inter-departmental cooperation. For instance ISG noticed their users starting to discuss shared resources like multi-user computational nodes in a dedicated Matrix room. This makes chatting quicker and more convenient than email - and was impossible at that time, when every group was on a separate Slack workspace.
+
+As of July 2020, there are several federating Matrix servers within ETHZ. As well as the Physics department, the Information Science and Electrical Engineering departments also host their own servers. To avoid conflicts and duplication of work, Sven deployed an instance at mbot.ethz.ch as a location where bots and bridges can be deployed and shared between departments.
+
+![Campus Hönggerberg, HPH](/images/sta_hoenggerberg_hph_002.jpg)
+
+Campus Hönggerberg, HPH
+© ETH Zurich / Marco Carocari
+
+## Looking Ahead
+
+The current project at the ISG is to migrate group history from Slack to Matrix by providing a Slack import process for their researchers. Two research groups were already migrated to Matrix, and the ISG offers to migrate groups still stuck on Slack. 
+
+Since the launch, the ISG has created a new internal ansible playbook, which they plan to roll out for future deployments.
+
+Sven would like to provide the research groups with more bots and bridges and in particular bots for server monitoring within ISG.
+
+Being a Physics department, there is great demand for LaTeX support. The ISG are considering deploying an adapted version of the Element client to provide their users with better LaTeX integration, and may even start to get involved with the Matrix spec process to finalise the details.
+

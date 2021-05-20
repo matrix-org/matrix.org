@@ -1,0 +1,487 @@
+---
+date: '2021-04-23'
+title: 'This Week in Matrix 2021-04-23'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-04-23-AAetC-konheko-sailfish-on-floating-xperia.jpe
+---
+
+## Dept of *Status of Matrix* 🌡️
+
+### Open Tech Will Save Us news
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) announced:
+
+> Folks, incredibly [Open Tech Will Save Us](https://matrix.org/open-tech-will-save-us/)  is over a year old! Thanks to everyone who has made this possible, especially Ben. We’d like to figure out how to improve it and make it even better. If you have a few moments, please can take a look at this [survey](https://forms.gle/nvyf81zY8xm33ksQ6) to share your thoughts? (Sorry it’s Google ...)
+
+### Matrix URI scheme
+
+[Jonathan](https://matrix.to/#/@jboi:jboi.nl) noticed:
+
+> The `matrix:` URI scheme has just been officially accepted (safelisted) into the HTML standard! 🚀
+> > https://github.com/whatwg/html/pull/6320
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) said:
+
+> #### What is the Matrix URI scheme?
+>
+> You are probably familiar with `mailto:user@example.com` or `tel:+1-555-438-3732`. The former is usually used to open an email address in your mail client, while the latter is used for phone numbers. This allows applications to register themselves as a handler for it, like for example GMail or Thunderbird, and your browser and other applications can find them and tell them to open an editor or similar, with that identifier as the target. There are also a lot of other applications that have similar schemes like Telegram, Zoom and more.
+>
+> In Matrix you have similar identifiers, most notably users (@user:example.org) and rooms ([#room:example.org](https://matrix.to/#/#room:example.org)). The matrix URI scheme now allows you to open such identifiers in your favourite Matrix clients. You can now just click on matrix:u/user:example.org or matrix:r/room:example.org and start chatting with the user or join the room. (There is a bit more to it, you actually need an action after the identifier for it, otherwise it will just open the user profile or show the room, if you are joined to it, but that is the idea. For more details, check https://github.com/matrix-org/matrix-doc/blob/master/proposals/2312-matrix-uri.md )
+>
+> As you can see the format of the matrix: scheme is a bit different that standard Matrix identifiers. This is mostly because they need to start with `scheme:`, where `scheme` is different depending on the application, but some characters are also treated differently in URIs, which is why the matrix scheme decided to avoid them where possible.
+>
+> #### What does it mean, that the matrix: scheme is now part of the HTML standard?
+>
+> In general desktop and mobile clients could already implement the Matrix scheme before, FluffyChat, Quaternion, gomuks and Nheko have even done so already. This means if you are using those clients, you can already use the Matrix scheme today!
+>
+> On the web things are a bit more difficult though. Since you don't want arbitrary websites to intercept arbitrary schemes, schemes need to be safelisted in the HTML spec/browsers. So today web clients can't be registered to open matrix: URIs. But the first step is done now. The HTML spec now officially lists `matrix:` as a safelisted scheme.
+>
+> #### Next steps
+>
+> For web clients like Element to be able to open matrix: URIs, a few more things need to happen.
+>
+> 1. Browsers need to implement the HTML standard change and allow web apps to register the Matrix scheme.
+>
+>   * Status in Firefox: https://bugzilla.mozilla.org/show_bug.cgi?id=1688030
+>   * Status in Chrome(ium): https://bugs.chromium.org/p/chromium/issues/detail?id=1169258
+>
+> 2. Web clients need to actually implement handling `matrix:` URIs.
+>   * Tracking issue for Element: https://github.com/vector-im/element-web/issues/16875
+>
+> You may be wondering about matrix.to, which was used to share matrix identifiers before. In the long term matrix URIs will probably replace it. Watch the next few TWIMs to find out what happens and/or subscribe to the following issues: https://github.com/matrix-org/matrix.to/issues/191 https://github.com/matrix-org/matrix.to/issues/192
+>
+> #### Closing words
+>
+> As you can see, this was a big step for Matrix as a whole. This of course couldn't have been possible without [Alexey](https://matrix.to/#/@kitsune:matrix.org) writing such an awesome proposal and [MayeulC](https://matrix.to/#/@mayeul:mayeul.net) pushing for the changes in browsers and the HTML standards. A lot of other people were also involved in implementing the scheme in their clients, sending the [RFC to IANA](https://www.iana.org/assignments/uri-schemes/prov/matrix) or working on matrix.to, which was our solution until now and will probably bridge the gap into the future. The matrix scheme being in the HTML standard may look small, but a lot of stuff was blocked on it, that can now start making progress. Exciting, isn't it?
+
+And it gets better...
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) offered:
+
+> MayeulC spotted, that Mozilla now safelisted the `matrix:` scheme in Firefox: https://bugzilla.mozilla.org/show_bug.cgi?id=1688030#c15
+>
+> Expect this to land around Firefox 90 probably.
+>
+> So we can check one more thing on our list. Apart from Chrome, we are now only waiting on webclients to implement it. This is moving faster than I expected!
+
+If this truly lands in a Firefox version in the near future I'll be very, very happy.
+
+[kitsune](https://matrix.to/#/@kitsune:matrix.org) added:
+
+> many thanks to MayeulC for making this happen.
+
+Thanks to everyone involved!
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) told us:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * [MSC2241: Key verification in DMs](https://github.com/matrix-org/matrix-doc/pull/2241)
+>
+> **MSCs in Final Comment Period:**
+>
+> * [MSC2713: Remove deprecated v1 Identity Service API](https://github.com/matrix-org/matrix-doc/pull/2713) (merge)
+>
+> **New MSCs:**
+>
+> * [MSC3137:  Define space room type, subset of MSC1772](https://github.com/matrix-org/matrix-doc/pull/3137)
+> * [MSC3131: Verifying with QR codes v2](https://github.com/matrix-org/matrix-doc/pull/3131)
+>
+> #### Spec Updates
+>
+> Folks from the Matrix Core team continue to chip away at the various Spaces-related MSCs in order to further the initial implementation across all three Element clients. The Spec Core Team is cleaning up some deprecated APIs that have been hanging around for way too long now (Identity Service v1 APIs), as well as continuing to focus on getting various, implemented end-to-end encryption MSCs documented and into the spec.
+>
+> We're also slowly inching towards a new release with a new [spec-wide versioning scheme](https://github.com/matrix-org/matrix-doc/pull/2844), as well as completing the move of the old documentation from matrix.org/docs/spec to spec.matrix.org. Slowly but surely.
+
+
+
+![2021-04-23-hRN19-stacked_area_chart.png](/blog/img/2021-04-23-hRN19-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### matrix-media-repo
+
+[matrix-media-repo](https://github.com/turt2live/matrix-media-repo) is a highly customizable multi-domain media repository for Matrix
+
+[TravisR](https://github.com/turt2live) said:
+
+> v1.2.7 is out as a **highly recommended security update**. This release fixes a memory exhaustion issue regarding thumbnails, known as [CVE-2021-29453](https://github.com/turt2live/matrix-media-repo/security/advisories/GHSA-j889-h476-hh9h).
+>
+> See https://github.com/turt2live/matrix-media-repo/releases/tag/v1.2.7 for more details, and visit #media-repo:t2bot.io on Matrix for questions and support.
+
+### Synapse
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) announced:
+
+> [Synapse 1.32 is out](https://matrix.org/blog/2021/04/22/synapse-1-32-2-released)! This release focused on internal cleanups and is our first release without support for Python 3.5, so nothing too groundbreaking, but we're pleased with the improvements we're making.
+>
+> Unfortunately, we discovered a pair of issues late in the release, so we ended up with 1.32.2 rather than just 1.32.0, but we got there in the end. We'll adjust our processes for future releases to avoid repeating this issue.
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) told us:
+
+> My regularly scheduled [chart](https://gitlab.com/ananace/charts) updates for Synapse 1.3.1 (the deprecated image got a bump too) and matrix-media-repo 1.2.7 have been pushed.
+
+and then
+
+> Got the Synapse 1.32.2 update up on my [chart](https://gitlab.com/ananace/charts) too, replacing the pulled 1.32.1 version.
+
+### YunoHost
+
+[Mamie](https://matrix.to/#/@mamie:mamieserv.fr) reported:
+
+> [YunoHost](https://yunohost.org) is an operating system aiming for the simplest administration of a server, and therefore democratize self-hosting.
+>
+> [Synapse](https://github.com/YunoHost-Apps/synapse_ynh/tree/master) integration had been updated to 1.31.0 (1.32.0 available in branch `testing`)
+>
+> [Element Web](https://github.com/YunoHost-Apps/element_ynh/tree/master) integration had been updated to 1.7.24 (1.7.25 available in branch `testing`)
+
+## Dept of Bridges 🌉
+
+### The matrix.org gitter bridge is no more, long live gitter.im!
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) announced:
+
+> Hello folks! Today at 17:41, we sunset the matrix.org gitter bridge after many years of active service. It started out as a [tiny little project, forked from another gitter<->IRC bridge](https://github.com/matrix-org/matrix-appservice-gitter/commit/c641e6eb4916c1addbff5ba50d0bf0a5f2084690) before eventually becoming part of the matrix-appservice-bridge family of bridges (thanks Leo for putting in the hard work there!). It never quite gained all the nice features that the IRC and Slack bridges enjoyed, in part due to it's dependence on the use of one bot account (serving as a relay). However, it was still the entrypoint for Matrix users into the likes of NeoVIM and Typescript and continued to run for several years.
+>
+> Years later, [gitter.im gained the ability to speak Matrix](https://matrix.org/blog/2020/12/07/gitter-now-speaks-matrix),  so the old bridge can finally be laid to rest. Thanks to everyone that used and supported the bridge, and we hope you enjoy using the new one!
+>
+> Thanks from the bridge team 🌉!
+
+### matrix-puppeteer-line
+
+[Fair](https://matrix.to/#/@fair:miscworks.net) announced:
+
+> [matrix-puppeteer-line](https://src.miscworks.net/fair/matrix-puppeteer-line): A bridge for LINE Messenger based on running LINE's Chrome extension in Puppeteer.
+>
+> Updates:
+>
+> * Improvements to inbound messages syncing. Messages shouldn't be posted out-of-order anymore, and backfilling shouldn't skip any chats.
+>
+> * Fixes to internal state. Deleting rooms with `clean-rooms` should work properly now.
+> * Experimental work on inbound read receipts (in the `receipts-testing` branch)
+>
+> Discussion:
+>
+> [#matrix-puppeteer-line:miscworks.net](https://matrix.to/#/#matrix-puppeteer-line:miscworks.net)
+
+## Dept of Clients 📱
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) reported:
+
+> It's my pleasure to announce, that our testers didn't find the bugs I added and as such [version 0.8.2](https://github.com/Nheko-Reborn/nheko/releases/tag/v0.8.2) is out now! The changes are too much to fit in a TWIM, so you can read the changelog here: https://github.com/Nheko-Reborn/nheko/blob/master/CHANGELOG.md
+>
+> Thank you to all the contributors, that made this release possible! (Check the changelog! So many new faces!)
+>
+> #### Highlights from this release:
+>
+> * Edits ✏
+>
+>   * If you made a typo, just press the `Up` key and edit what you wrote.
+>   * Messages other users edited will get updated automatically and have a small pen symbol next to them.
+>
+> * Privacy Screen 👁
+>
+>   * Blur your messages, when Nheko looses focus, which prevents others from
+>     peeking at your messages.
+>
+>   * You can configure the timeout of when this happens.
+>
+> * Improved notifications ‼ (contributed by lorendb)
+>
+>   * No more breakage, because the message included a > on KDE based DEs.
+>   * Render html and images where possible in the notification.
+>
+>   * Render if a message is a reply or someone sent an emote message more nicely
+>       where possible.
+>
+>   * Encrypted notifications now show, that the content is encrypted instead of
+>       being empty.
+>
+> * Screenshare support in calls on X11 📺 (contributed by trilene)
+>
+>   * Share your screen in a call!
+>   * Select if your mouse cursor should be shown or not and if your webcam should be included.
+>
+> * SEND MESSAGES AS RAINBOWS! 🌈 (contributed by LordMZTE)
+>
+>   * YES MESSAGES, EMOTES AND NOTICES!
+>
+> I hope you'll have a wonderful time with this release and if you find any bugs, bug us in [#nheko:nheko.im](https://matrix.to/#/#nheko:nheko.im) or open an issue on our [bug tracker](https://github.com/Nheko-Reborn/nheko/issues)!
+
+### Fractal
+
+[Alexandre Franke](https://matrix.to/#/@afranke:matrix.org) offered:
+
+> In keeping with our tradition of sending an update every two months, here’s what we’ve been up to since [the last one](https://matrix.org/blog/2021/02/05/this-week-in-matrix-2021-02-05#fractal).
+>
+> Amongst a bunch of maintenance changes (dependency updates and the likes), we had a few ones that stand out:
+>
+>
+> * [Some views have been migrated to HdyStatusPage](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/695). This provides a more homogeneous look across GNOME applications and help them fit better on smaller screens.
+>
+> * We noticed regressions around message replacement and removal (edit display and redactions) and we started fixing them.
+>
+> * Another regression made it impossible to join rooms by alias or id. This was fixed as well.
+>
+> * We updated information in a couple places and we now have clearer contributing guidelines.
+>
+> We rarely talk about new issues that are still open and tend to focus on fixed ones. We do have [a milestone](https://gitlab.gnome.org/GNOME/fractal/-/milestones/19) with the remaining known blockers for our next version, 4.5, which we hope to be able to release Really Soon Now™.
+>
+> But as interesting as all that is, it pales in comparison to our bigger announcement. We are rewriting Fractal! Julian, Alexandre and Thib have documented the thought process behind this decision and the work done so far. For more details, have a look at [Julian’s blog](https://blogs.gnome.org/jsparber/2021/04/23/getting-fractal-up-to-speed/). The summary is that even though such rewrites are usually frowned upon (for good reasons), two major technological shifts (from a homegrown backend to matrix-rust-sdk and from GTK3 to GTK4) made it an option that we needed to consider… and so we did! This should result in a cleaner codebase, easier to maintain in the long run, and improvements that we can share with the rest of the Matrix community.
+>
+> The work for the rewrite currently happens in a `fractal-next` branch. So far, we have the basic boilerplate in place. The app launches, offers a basic login form, does initial sync and while the interface then looks very similar to stable Fractal, it will just load an unsorted list of rooms for now. Not very impressive on the visible side, but Julian has also been very busy contributing to matrix-rust-sdk.
+>
+> Hopefully we’ll be able to break the aforementioned tradition and report more progress soon. Watch this space.
+
+### Element Clients
+
+**Delight, a project to improve the Element experience**
+
+*   On Spaces, we’ve been continuing to implement [MSC3083](https://github.com/matrix-org/matrix-doc/pull/3083) (Restricting room membership based on space membership) on the Web, Android & Synapse, while also iterating on iOS.
+*   Expect an announcement on more Spaces testing soon!
+
+**Web**
+
+*   1.7.26-rc.1 on staging
+    *   Added persistence of unsent messages across app restart
+    *   Improved room list filtering performance
+    *   Improved the image detail view
+*   1.7.26 planned for release on Monday
+
+**iOS**
+
+
+
+*   The new room screen UI has been released (1.3.4) on the App Store. It contains several improvements and bug fixes. One major bug fix is encryption keys that failed to be shared between the notification service and the app.
+*   1.3.5 has been submitted to the app store. It contains another bug fix about encryption where the app failed to share new keys to all members of a room
+*   Full story at: [https://github.com/vector-im/element-ios/releases](https://github.com/vector-im/element-ios/releases) 
+
+**Android**
+
+*   1.1.6 version has been released, fixing several issues reported with 1.1.5.
+
+### Konheko
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) said:
+
+> I released version 0.0.5 of my Sailfish client: https://openrepos.net/content/deepbluev7/konheko
+>
+> It adds an about page and more importantly fixes a bug where closing the window would not relaunch the app via the task icon! Shout out to Rudi Timmermans, who made the about page and is now working on some further design improvements! Small release, since I was working on Nheko most of the time, but I hope I can add persistence and E2EE soon to it!
+
+![2021-04-23-AAetC-konheko-sailfish-on-floating-xperia.jpe](/blog/img/2021-04-23-AAetC-konheko-sailfish-on-floating-xperia.jpe)
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) commented:
+
+> This would be an excellent screenshot to for a messenger app in some hacker movie
+
+Even in the movie they take a break to read TWIM!
+
+### Hydrogen
+
+A minimal Matrix chat client, focused on performance, offline functionality, and broad browser support. https://github.com/vector-im/hydrogen-web/
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) offered:
+
+> Working on invites and leaving rooms, almost ready, should be released early next week.
+
+## Dept of SDKs and Frameworks 🧰
+
+### libkazv (and the Kazv Project)
+
+[tusooa](https://matrix.to/#/@tusooa:tusooa.xyz) told us:
+
+> [libkazv](https://lily.kazv.moe/kazv/libkazv) is a sans-io C++ (gnu++17) client library built upon [lager](https://github.com/arximboldi/lager). Along with it there is [kazv](https://lily.kazv.moe/kazv/kazv), a kirigami/qml client, and a [forward bot](https://lily.kazv.moe/kazv/matrix-tencent-forward-bot) between matrix and tencent qq. Talk to us on [#kazv:tusooa.xyz](https://matrix.to/#/#kazv:tusooa.xyz) .
+>
+> #### Updates
+>
+> In the past 2 week we ("tusooa and her longcat," we hope someday we can
+>
+> remove this annotation :P):
+>
+> 1. Supported encrypted attachments. https://lily.kazv.moe/kazv/libkazv/-/merge_requests/5
+
+### Ruma
+
+[Ruma](https://www.ruma.io/) is a set of Rust library crates around Matrix
+
+[Johannes Becker](https://matrix.to/#/@jbecker:famedly.de) told us:
+
+> After the last update Ruma 0.0.3 was released 🎉
+>
+> But progress didn't stop there and more things happened:
+>
+> * [@DevinR528] added [an Edu enum to represent EDUs from /federation/v1/send](https://github.com/ruma/ruma/pull/503)
+>
+> * [@DevinR528] added [code-gen for ephemeral event enum roomid accessor](https://github.com/ruma/ruma/pull/516)
+> * [@johannescpk] added [conversion from `push_events::v1::IncomingRequest` to `sync_events::v1::Response`](https://github.com/ruma/ruma/pull/514)
+>
+> * [@johannescpk] added [constructor for `push_events::v1::IncomingRequest`](https://github.com/ruma/ruma/pull/523)
+> * [@jplatte] updated [CI to use GitHub actions instead of builds.sr.ht](https://github.com/ruma/ruma/pull/530)
+>
+> * [@timokoesters] fixed [the `verify_json` signature check algorithm](https://github.com/ruma/ruma/pull/527)
+> * [@johannescpk] added [support for login type `m.login.application_service` on the `/register` endpoint](https://github.com/ruma/ruma/pull/524/commits/7d845d0fa50c6bbb70387e92063cd1c892bf28f6)
+>
+> * [@johannescpk]: added [support for forcing access tokens to be sent even where they shouldn't be required](https://github.com/ruma/ruma/pull/524/commits/2d5af071015f92ede5d38926c7f9677df824d499)
+> * [@jplatte] did lots of refactorings, reviewing of PRs and being helpful :D
+>
+>
+> [@iinuwa]: https://github.com/iinuwa
+>
+> [@DevinR528]: https://github.com/DevinR528
+> [@gnieto]: https://github.com/gnieto
+>
+> [@elegaanz]: https://github.com/elegaanz
+> [@poljar]: https://github.com/poljar
+>
+> [@auscompgeek]: https://github.com/auscompgeek
+> [@lanker]: https://github.com/lanker
+>
+> [@V02460]: https://github.com/V02460
+> [@iinuwa]: https://github.com/iinuwa
+>
+> [@DevinR528]: https://github.com/DevinR528
+> [@tilosp]: https://github.com/tilosp
+>
+> [@NerdyPepper]: https://github.com/NerdyPepper
+> [@jamtwister]: https://github.com/jamtwister
+>
+> [@florianjacob]: https://github.com/florianjacob
+> [@jsparber]: https://github.com/jsparber
+>
+> [@unseddd]: https://github.com/unseddd
+> [@PunitLodha]: https://github.com/PunitLodha
+>
+> [@timokoesters]: https://github.com/timokoesters
+> [@zecakeh]: https://github.com/zecakeh
+>
+> [@Frinksy]: https://github.com/Frinksy
+> [@louisdewar]: https://github.com/louisdewar
+>
+> [@abhikjain360]: https://github.com/abhikjain360
+> [@johannescpk]: https://github.com/johannescpk
+>
+> [@jplatte]: https://github.com/jplatte
+
+## Dept of Interesting Projects 🛰️
+
+### Cactus Comments 🌵
+
+[Asbjørn](https://matrix.to/#/@asbjorn:olli.ng) told us:
+
+> Cactus Comments is a federated comment system for the open web built on Matrix.
+>
+> We put out a blog post called [MSCs We're Excited For](https://cactus.chat/blog/mscs-were-excited-for/).
+>
+> It's about some of the spec change proposals that we're keeping an eye on for Cactus Comments.
+>
+> We also released Web Client v0.8.0!
+>
+> This release brings some improvements to the `"<time> ago"` text, as well as the ability to let the client fetch more messages "live" (i.e. without reloading the page).  You can set a number of seconds in `updateInterval` to enable this, it is disabled by default.
+>
+> * Make comment time a semantic `time` element (Thanks to @hectorjsmith for !4).
+>
+> * Add hover text to comment time (Thanks to @hectorjsmith for !4).
+> * Show "just now" instead of negative seconds if message timestamp is ahead of the client's time
+>
+> * Add ability to fetch new messages periodically.
+> * New config option: `updateInterval`, which controls how often to fetch new messages.
+>
+> * Change thumbnail size from 32x32 to 64x64.
+> * Stylesheet: allow linebreaks in comments.
+>
+> /ipns/latest.cactus.chat is updated to point to the latest release, so sites linking there should already be using the new version.
+>
+> Come play with the demo: [https://cactus.chat/demo](https://cactus.chat/demo)
+>
+> Join our Matrix room: [#cactus:cactus.chat](https://matrix.to/#/#cactus:cactus.chat)
+
+### Matrix World from the point of view of my Synapse
+
+[MTRNord](https://matrix.to/#/@mtrnord:nordgedanken.dev) told us:
+
+> https://grafana.nordgedanken.dev/d/HDVgeCXGk/matrix-server-stats?orgId=1&refresh=15m&var-server_name=All&from=now-1h&to=now  (Warning big dashboard)
+>
+> This dashboard is a small experiment on what metadata you can get from matrix without any auth.
+>
+> #### How?
+>
+> It utilizes the synapse database to lookup alive and responding servers and on these currently just runs a query each 5m to check the version.
+>
+> It allows a) to see the amount of servers and which servers my synapse at any point knows and b) to track the individual versions.
+>
+> For my server at point of writing this results in 2348 Servers of which are 2269 running Synapse, 70 running Dendrite, 8 running Conduit and 1 running Construct.
+>
+> #### Tech used
+>
+> Used under the hood is a small rust script doing all the heavy lifting of many thousand requests each five minutes (around 2-3 per server currently).
+>
+> The data is cached mostly in RAM as well as being written to a influxdb oss 2.x which allows for the grafana integration.
+> #### More information
+>
+> If you want to opt out feel free to block requests with the "MTRNord/server_stats" User-Agent.
+>
+> You can find the source code at https://git.nordgedanken.dev/MTRNord/server_stats
+
+Very cool! Reminder to also check out this [set of graphs showing Synapse versions over time](https://graph.settgast.org/d/z1nplqXik/matrix?orgId=1) from [Chris](https://matrix.to/#/@chris:settgast.org).
+
+Warning!
+
+[Timo from Conduit](https://matrix.to/#/@timokoesters:fachschaften.org) announced:
+
+> writes a script to boost the number of conduit servers 😉
+
+## Final Thoughts 💭
+
+Several people shared this *spicy* article from fellow encrypted-messenger purveyors Signal: https://signal.org/blog/cellebrite-vulnerabilities/
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|hmko.net|414|
+|2|dendrite.thomcat.rocks|867.5|
+|3|matrix.kootstra.frl|897.5|
+|4|matrix.osl.frl|1197.5|
+|5|halogen.city|1225.5|
+|6|envs.net|1371|
+|7|thomcat.rocks|1398|
+|8|nordgedanken.dev|1503.5|
+|9|maescool.be|1674|
+|10|kittenface.studio|2412|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|dendrite.foxomy.com|445|
+|2|dendrite01.fiksel.info|719|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org

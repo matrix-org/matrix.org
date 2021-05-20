@@ -9,10 +9,10 @@ const PostList = ({ pageContext: { limit, skip, currentPage, posts }, data: { al
   const { edges } = allMdx
 
   const prevTitle = `Page ${currentPage - 1}`
-  const prevSlug = currentPage === 2 ? `blog/posts/` : `blog/posts/${currentPage - 1}`
+  const prevSlug = currentPage === 2 ? `/blog/posts/` : `/blog/posts/${currentPage - 1}`
   const prev = currentPage === 1 ? null : { frontmatter: { title: prevTitle }, fields: { slug: prevSlug } }
   const nextTitle = `Page ${currentPage + 1}`
-  const nextSlug = `blog/posts/${currentPage + 1}`
+  const nextSlug = `/blog/posts/${currentPage + 1}`
 
   return (
     <Layout hasSideNavigation="true" navmode="blog">
@@ -67,7 +67,7 @@ PostList.propTypes = {
 export const postQuery = graphql`
   query PostListPage($skip: Int!, $limit: Int!) {
     allMdx(sort: { fields: [frontmatter___date, fileAbsolutePath], order: DESC }, limit: $limit, skip: $skip,
-      filter: {frontmatter: {date: {ne: null}}}) {
+      filter: {frontmatter: {date: {ne: null}, author: {ne: null}}}) {
       totalCount
       edges {
         node {

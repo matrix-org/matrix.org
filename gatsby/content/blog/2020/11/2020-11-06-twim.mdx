@@ -1,0 +1,248 @@
+---
+date: '2020-11-06'
+title: 'This Week in Matrix 2020-11-06'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2020-11-06-pC5bp-ScreenShot2020-11-06at12.23.37PM.png
+---
+
+## Matrix Live 🎙 Demos Week
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lv26TYmLZvE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Demos week is fun! Reminds me of walk-around-the-office-interrupting-people week, which we don't have any longer. :(
+
+## Dept of *Status of Matrix* 🌡
+
+[Open Tech Will Save Us #8](https://matrix.org/open-tech-will-save-us/) will take place next Wednesday, join us! Calendar event coming soon.
+
+* **Muhammad Radwan**, on behalf of **Tactical Tech**, will present their work on **[The Glass Room Misinformation Edition](https://theglassroom.org/misinformation/)**.
+*What happens when we increasingly rely on social media and the web for nearly all our information? What information do we see, and what do we miss? How do we know if a picture or a tweet is genuine or truthful? And what can we do if we can’t be sure?*
+* **Popi** from **CHATONS** will present the work done by CHATONS ("Collective of Alternative, Transparent, Open, Neutral and United Hosters")
+*CHATONS has been initiated by Framasoft, in the wake ot the success of its campaign "De-google-ify Internet". A CHATONS member pledges to propose fully FLOSS-based online services, in an ethical and united spirit.*
+* **Hubert|Uhoreg Chathi** will present on the state of encryption in Matrix, and more broadly
+*Why the PGP model is insufficient, what properties we want from encryption (e.g. why we want perfect forward secrecy), how the newer protocols (OTR, double-ratchet, megolm) give us some of the properties we want, and then what's coming in the future (MLS, and what that gives us)*
+
+## Dept of Spec 📜
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) said:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals>
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * _No MSCs were merged this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * [MSC2765: Widget avatars](https://github.com/matrix-org/matrix-doc/pull/2765) (merge)
+>
+> **New MSCs:**
+>
+> * [MSC2848: Globally unique event IDs](https://github.com/matrix-org/matrix-doc/pull/2848)
+> * [MSC2846: Decentralizing media through CIDs](https://github.com/matrix-org/matrix-doc/pull/2846)
+>
+> * [MSC2845: Phone number lookups using third party API](https://github.com/matrix-org/matrix-doc/pull/2845)
+> * [\[WIP\] MSC2844: Global version number for the whole spec](https://github.com/matrix-org/matrix-doc/pull/2844)
+>
+> #### Spec Core Team
+>
+> In terms of Spec Core Team MSC focus for this week, we're switching out [MSC2765](https://github.com/matrix-org/matrix-doc/pull/2765) (widget avatars) for [MSC1544](https://github.com/matrix-org/matrix-doc/pull/1544) (QR code verification), and keeping
+>
+> [MSC2774](https://github.com/matrix-org/matrix-doc/pull/2774) (widget URL template param), and [MSC2790](https://github.com/matrix-org/matrix-doc/pull/2790) (modal widgets).
+
+![2020-11-06-w-Fgj-stacked_area_chart.png](/blog/img/2020-11-06-w-Fgj-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Synapse
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) offered:
+
+> Happy November from the Synapse team! As mentioned last week, we pushed a small [v1.22.1 release](https://github.com/matrix-org/synapse/releases/tag/v1.22.1) last Friday which fixed two regressions:
+>
+> *   Fix a bug where an appservice may not be forwarded events for a room it was recently invited to. Broke in v1.22.0. ([#8676](https://github.com/matrix-org/synapse/issues/8676))
+>
+> *   Fix `Object of type frozendict is not JSON serializable` exceptions when using third-party event rules. Broke in v1.22.0. ([#8678](https://github.com/matrix-org/synapse/issues/8678))
+>
+> If you haven't upgraded your Synapse in a while, _please do._
+>
+> A major focus of Synapse is being able to meet the performance and reliability needs of massive homeservers like `matrix.org`. If you're curious about how Synapse's architecture has evolved over the years to meet these scaling challenges, check our our blog post from Tuesday: [How we fixed Synapse's scalability!](https://matrix.org/blog/2020/11/03/how-we-fixed-synapses-scalability)
+>
+> Lastly, we anticipate releasing 1.23.0 in the next fortnight; keep your eyes peeled for release candidates and let us know if you have any feedback. For a preview of what's coming, [check out GitHub](https://github.com/matrix-org/synapse/compare/v1.22.1...develop) for the new commits that have landed on the `develop` branch since our last release.
+
+PLUS [Matthew](https://matrix.to/#/@matthew:matrix.org) said:
+
+> Synapse now horizontally scales across multiple python processes, as of 1.22: you can configure it so that events are no longer sent through the main proc, eliminating the single biggest bottleneck for large scale Synapse deployments. Read all about it at <https://matrix.org/blog/2020/11/03/how-we-fixed-synapses-scalability>
+
+### Dendrite / gomatrixserverlib
+
+Dendrite is a next-generation homeserver written in Go
+
+[Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) told us:
+
+> Things have been quiet for Dendrite over the last week as I have been working on Pinecone/P2P and Kegan has been working on threading.
+>
+> That said, a couple of minor changes have been merged:
+>
+> * Forgetting rooms is now supported (thanks [S7evinK](https://github.com/S7evinK)!)
+>
+> * The gjson dependency has been updated for correct integer safe ranges
+>
+> Spec compliance is the same as last week:
+>
+> * Client-server APIs: 57%
+>
+> * Server-server APIs: 81%
+>
+> As always, feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for general Dendrite chat or [#dendrite-dev:matrix.org](https://matrix.to/#/#dendrite-dev:matrix.org) for development discussion.
+
+## Synapse Deployment 📥️
+
+### YunoHost
+
+[Pierre](https://matrix.to/#/@pierre:mamieserv.fr) announced:
+
+> [YunoHost](https://yunohost.org) is an operating system aiming for the simplest administration of a server, and therefore democratize self-hosting.
+>
+> [Synapse](https://github.com/YunoHost-Apps/synapse_ynh/tree/master) integration had been updated to 1.21.2 (1.22.1 available in branch `testing`)
+>
+> [Element Web](https://github.com/YunoHost-Apps/element_ynh/tree/master) integration had been updated to 1.7.9 (1.7.12 available in branch `testing`)
+
+## Dept of Bridges 🌉
+
+### Gitter
+
+[Eric Eastwood](https://matrix.to/#/@madlittlemods:matrix.org) told us:
+
+> Exciting visual progress this week with actual bridging between Gitter and Matrix utilizing the `virtualUser` feature,
+>
+> we've been iterating on the past couple weeks. Check out the image with all of the user avatars and display name goodness
+> to make both chats on Element and Gitter feel one in the same!
+>
+> You can also check out the live demo in Matrix Live!
+
+![2020-11-06-pC5bp-ScreenShot2020-11-06at12.23.37PM.png](/blog/img/2020-11-06-pC5bp-ScreenShot2020-11-06at12.23.37PM.png)
+
+## Dept of Clients 📱
+
+### Hydrogen
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) reported:
+
+> As mentioned in the sync on Monday, I was mostly distracted from Hydrogen this week. (*sorry Bruno -BP*) I did release the picture lightbox on Monday, and yesterday managed to close 4 bugs. There's also a community PR for better usability and accessibilty in the login screen (keep those coming!) and after some work to make encryption more robust, I hope to do a release with all those goodies tonight.
+
+Check out the demos vid for more Hydrogen!
+
+### Fractal
+
+[Alexandre Franke](https://matrix.to/#/@afranke:matrix.org) said:
+
+> Since [a couple of weeks ago](https://matrix.org/blog/2020/10/23/this-week-in-matrix-2020-10-23#fractal), we have merged a couple of branches that do a couple of things:
+>
+> * Clean up use of deprecated gtk-rs API
+>
+> * Minimize use of child properties, which are gone in GTK4
+> * Remove use of widgets what are gone in GTK4, such as GtkAlignment
+>
+> * [Ensure we unlock the default secrets collection for login](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/639)
+>
+> And here’s another nudge, calling for reviewers for [that mega merge request for us to switch to `matrix-rust-sdk`](https://matrix.org/blog/2020/10/09/this-week-in-matrix-2020-10-09#fractal).
+
+### Element for Android 1.0.10
+
+[benoit](https://matrix.to/#/@benoit.marty:matrix.org) said:
+
+> Element for Android 1.0.10 has been released to the beta channel of the PlayStore. We will push it to prod if there is no major problem with it. Full release notes: <https://github.com/vector-im/element-android/releases/tag/v1.0.10>.
+
+[#1921](https://github.com/vector-im/element-android/issues/1921) being fixed! ❤️
+
+### Element-iOS
+
+[Manu](https://matrix.to/#/@Manu:matrix.org) offered:
+
+> This week, we came back to the background sync work to quickly display a notified message in the app. In parallel, we created a profiling tool at the SDK level to track performance like this one.
+
+### Element Web/Desktop
+
+[Neil](https://matrix.to/#/@neilj:matrix.org) enunciated:
+> We are working through some low hanging fruit around post registration, blank screen interaction prompts and toast tweaks. We are also  experimenting with SSO for matrix.org. Meaning that Element will give the user the option of either username/password or SSO. Finally, we are continuing our VoIP efforts and nailing down the designs, checkout Matrix Live for all the details. Next week we'll carry on with post registration UX, VoIP improvements.
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### Matrix SDK for Elixir
+
+[cognitive_tea](https://matrix.to/#/@cognitive_tea:matrix.org) reported:
+
+> Hi all! I _think_ this is the right place to share this 🤞. I've been working on a Matrix SDK for Elixir over the last few months as a side project, it's very early days and it's currently just a bare-bones wrapper for the Client-Server API. I've also written the Elixir/Erlang bindings for Olm (currently missing group sessions) which should be added to the SDK soon. The repo can be found here: <https://github.com/niklaslong/matrix-elixir-sdk> and the Elixir bindings for Olm are linked in the readme.
+
+It is the right place! Thanks cognitive_tea :D
+
+Asked if there were big plans for use of the project
+
+> Not as yet, though a few people have reached out to me already and are building on top of it. I started it as a way to get going with Matrix dev and as a fun side project. That being said, I think providing the tools to Matrix-enable Elixir apps might lead to some interesting things.
+> If anyone has any precise ideas on how they would want to integrate their Elixir apps with Matrix, I'd be super happy to have a chat 👍️
+> Less precise ideas are also welcome, of course 🙂
+
+## Dept of Bots 🤖
+
+### Hemppa
+
+[Cos](https://matrix.to/#/@cos:hacklab.fi) announced:
+
+> Hemppa the bot is a generic bot for writing modules as easily as possible in Python. Thanks to issues with Freenode IRC bridge Hemppa got a new module for basic relaybot bridging of any Matrix rooms. Relaybots are stupid, but sometimes there's no working alternative. <https://github.com/vranki/hemppa#relay-bridge>
+
+## Dept of Events and Talks 🗣️
+
+### Arch Conf 2020
+
+[Brendan Abolivier](https://matrix.to/#/@babolivier:vector.modular.im) reported:
+
+> I did a talk at [Arch Conf 2020](https://conf.archlinux.org/) last month, on a generic introduction of Matrix and how to install a Matrix homeserver on Arch Linux. The recording has just been uploaded; it can be found on [CCC's media site](https://media.ccc.de/v/arch-conf-online-2020-6306-enter-the-matrix-install-your-own-matrix-server-on-arch-linux) as well as [YouTube](https://www.youtube.com/watch?v=lEDfv9X0II4) 🙂
+
+YES BRENDAN!
+
+## Matrix in the News 📰
+
+### Oleg's talk, the article
+
+[emorrp1](https://matrix.to/#/@emorrp1:freedombox.emorrp1.name) told us:
+
+> New Matrix coverage in LWN via an Open Source Summit Europe talk <https://lwn.net/SubscriberLink/835880/bd73956d4ceb6cf5/>
+
+See last week for the talk!
+
+## Final Thoughts 💭
+
+[TeeCee](https://matrix.to/#/@teecee:midlertidig.online) reported:
+
+> I stumbled upon this: <https://www.reddit.com/r/linux/comments/jozg0v/how_i_got_my_group_chat_to_move_to_matrix/>
+
+I love that the comments, even on Reddit, are mostly positive. A really nice report.
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server. Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|envs.net|556|
+|2|privacytools.io|579.5|
+|3|maescool.be|621|
+|4|casavant.org|750|
+|5|apetre.sc|750|
+|6|matrix.thedisco.zone|1113|
+|7|matrix.org|1159|
+|8|zemos.net|1256.5|
+|9|matrix.sp-codes.de|1263|
+|10|halogen.city|2616|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: <https://matrix.to/#/#TWIM:matrix.org>
