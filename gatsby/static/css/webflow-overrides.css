@@ -33,6 +33,17 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+.anchor {
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+@media (max-width: 767px) {
+  .anchor {
+    margin-left: 0;
+  }
+}
+
 p:not(:last-child),
 blockquote:not(:last-child),
 figure:not(:last-child),
@@ -51,8 +62,20 @@ ol:last-child {
 }
 
 blockquote {
+  /* Add some space for the heading anchors to hang off into */
+  padding-left: 28px;
+
   font-size: inherit;
   line-height: inherit;
+}
+
+/* Override the media query which inlines the anchor again.
+   In a blockquote, we still have space on the left for it
+   to float off to the side.
+*/
+blockquote .anchor {
+  margin-left: -20px;
+  padding-right: 4px;
 }
 
 
