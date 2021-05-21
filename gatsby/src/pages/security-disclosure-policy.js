@@ -213,7 +213,7 @@ const HallOfFame = () => {
                 <li>Review the report, verify the vulnerability and respond with confirmation and/or further information requests; we typically reply within 24 hours. </li>
                 <li>Once the reported security bug has been addressed we will notify the Researcher, who is then welcome to optionally disclose publicly.</li>
             </ul>
-            <p>The Matrix.org Foundation does not ordinarily provide bug bounties. However, as of 11th January 2021, we are temporarily participating in an externally funded bounty programme. While the programme is running, security vulnerabilities in some Matrix.org projects may qualify for paid bounties. Eligible issues should be reported via the <a href="https://app.intigriti.com/programs/matrix/matrix/">Matrix project on Intigriti</a>, while other issues should continue to be reported via <a href='mailto:security@matrix.org'>security@matrix.org</a>.</p>
+            <p>The Matrix.org Foundation does not ordinarily provide bug bounties, though organisations building on top of Matrix may do so in future.</p>
             <p>We maintain a Hall of Fame to recognise those who have responsibly disclosed security issues to us in the past.</p>
 
             <h3>Hall of Fame</h3>
