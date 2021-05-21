@@ -1,0 +1,482 @@
+---
+date: '2021-05-21'
+title: 'This Week in Matrix 2021-05-21'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-05-21-3uNd3-stacked_area_chart.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yQomSqGLQaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) reported:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://spec.matrix.org/unstable/proposals.
+>
+> #### MSC Status
+>
+> **New MSCs:**
+>
+> * [MSC3202: Encrypted appservices](https://github.com/matrix-org/matrix-doc/pull/3202)
+>
+> **MSCs with proposed Final Comment Period:**
+>
+> * _No MSCs entered proposed FCP state this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **Merged MSCs:**
+>
+> * _No MSCs were merged this week._
+>
+> **Closed MSCs:**
+>
+> * [MSC2876: Allowing widgets to read events in a room](https://github.com/matrix-org/matrix-doc/pull/2876)
+>
+> #### Merged Spec PRs
+>
+> * [Deprecate verifications that don't begin with a request](https://github.com/matrix-org/matrix-doc/pull/3199)
+>
+> * [Change space's valid order range to 0x7E](https://github.com/matrix-org/matrix-doc/pull/3195)
+> #### Spec Updates
+>
+> Travis rolled out [MSC3202](https://github.com/matrix-org/matrix-doc/pull/3202) to aid in the quest for end-to-bridge encryption without having to rely on `/sync`. Otherwise the Spec Core Team has been reviewing MSCs and focusing on the last remaining spec PRs needed before cutting a new spec release. Watch this space!
+
+
+
+![2021-05-21-3uNd3-stacked_area_chart.png](/blog/img/2021-05-21-3uNd3-stacked_area_chart.png)
+
+Awesome to be able to VISIBLY see the prgress in that graph!
+
+
+## Dept of Servers 🏢
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) offered:
+
+> The big news this week was the launch of Spaces, supported by the release of [Synapse 1.34.0](https://matrix.org/blog/2021/05/17/synapse-1-34-0-released).
+>
+> However, there were quite a few other fixes, improvements, and additions: I'd encourage you to read the [release announcement](https://matrix.org/blog/2021/05/17/synapse-1-34-0-released) for those.
+>
+> But more than anything, we're hard at work realizing the room-join memory improvements we talked about in [last week's Matrix Live](https://www.youtube.com/watch?v=694VuhmVmfo), and we expect to have some exciting news to share next week. Concretely: [the pull request](https://github.com/matrix-org/synapse/pull/9958) to support incremental parsing of join responses was merged, and several pull requests ([#10017](https://github.com/matrix-org/synapse/pull/10017), [#10018](https://github.com/matrix-org/synapse/pull/10018), [#10035](https://github.com/matrix-org/synapse/pull/10035)) to simplify and slim down the code for verifying event signatures are in review.
+>
+> See you next week! 🚀
+
+
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust https://conduit.rs
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) said:
+
+> Here are some Conduit news!
+>
+> * Feature: Handle incoming read receipts over federation
+>
+> * Feature: Send read receipts over federation (MVP done)
+> * Improvement: Make UIAA (user-interactive authentication API) work like in Synapse (this gives us better client support)
+>
+> * Refactor: Sending code refactored to make EDUs over federation possible
+> * Fix: Remove old presence events when restarting Conduit
+>
+> * Fix: Array bounds bug in server_server.rs
+> * Fix: Power level content override adds to the default event instead of replacing it
+
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) said:
+
+> And this week brings another instance of the regularly scheduled Kubernetes updates, with Element-web going to 1.7.28 and Synapse having been bumped to 1.34.0 on both the [deprecated image](https://github.com/ananace/matrix-synapse) and the [chart](https://gitlab.com/ananace/charts).
+
+
+
+## Dept of Bridges 🌉
+
+### libera.chat IRC network news
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) offered:
+
+> Howdy folks! I'm sure many of you read the news about the new libera.chat IRC network starting up, and many of you also reached out (via pretty much every channel available) to ask about a potential bridge. libera.chat are doing a remarkably good job of getting spun up but are hyper busy with all the inbound users and need a bit more time, so in the meantime I would ask that everyone subscribe to https://github.com/matrix-org/matrix-appservice-irc/issues/1324 to listen for changes as they happen.
+>
+> The matrix.org bridge team are on the case! Expect news in the near future :)
+
+## Dept of Clients 📱
+
+### Element Client Updates
+
+Submitted by the teams
+
+**Delight**
+
+
+
+*   Spaces are now live! 🚀 Test them on Element Web, Desktop & Android (iOS is coming soon!)
+*   In short, Spaces are a new way to group rooms and people together, and are slated to replace legacy groups/communities
+*   We’d love your feedback! Either submitted in app or in [#spaces-feedback:matrix.org](https://matrix.to/#/#spaces-feedback:matrix.org)
+*   [Read the full blog post](https://element.io/blog/spaces-the-next-frontier/)
+
+**Web**
+
+
+
+*   1.7.28 released
+    *   New spaces Beta (new way of grouping rooms and people)
+    *   Added support for slash commands working in edits
+*   1.7.29-rc.1 on staging
+    *   Improved startup performance by focusing decryption on recent rooms
+    *   Fixed reaction duplication
+*   Continuing to pursue application performance generally
+*   Improving day to day developer experience with more TypeScript conversion
+
+**iOS**
+
+
+
+*   [1.3.9](https://github.com/vector-im/element-ios/releases/tag/v1.3.9) has been published on the app store 
+*   Some performance improvements have been merged on develop:
+    *   Reduce the number of decryptions. A decryption takes about 5ms on iPhone X. On an account with 500 rooms this allows us to skip thousands of decryptions on an initial sync
+    *   Those decryptions do not happen anymore on the main thread
+
+**Android**
+
+
+
+*   Lots of dependency upgrade following the release with Space (1.1.7).
+*   Next release candidate, 1.1.8 will also contain improvements on Spaces.
+*   We have set up towncrier flow to better handle changelog generation.
+*   Also Element Android project is now using GitHub actions, but it cannot run the integration tests for the moment.
+
+
+
+### Fractal
+
+[Alexandre Franke](https://matrix.to/#/@afranke:matrix.org) offered:
+
+> As announced in [the general Matrix GSoC post](https://matrix.org/blog/2021/05/20/google-summer-of-code-2021#fractal), we are lucky to get two interns this year again. Alejandro (whose previous work includes [switching to matrix-rust-sdk for syncs](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/626)) will implement multi-account support, while Kai (also [a regular contributor](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests?scope=all&utf8=%E2%9C%93&state=merged&author_username=V02460) by now) will help bring our application rewrite to the same functionality level as our current nightly and stable versions. Both projects will build on top of Fractal Next.
+>
+> Julian came back from his vacation and immediately got quite busy reviewing and merging contributions from others. Kevin (also known as zecakeh) and him made good progress on several fronts:
+>
+> * Room handling was improved. We now keep track of whether the user joined them, left them, or has been invited to them, as well as their categories (favourites, low priority…).
+>
+> * The sidebar uses these categories and now uses a single list with [GtkFilterListModels](https://gtk-rs.org/gtk4-rs/git/docs/gtk4/struct.FilterListModel.html) instead of one list per category. The greatly simplifies code for things like moving a room from one category to another.
+> * History style has been tweaked, state events and timestamps have been added.
+>
+> * Markdown can be enabled from the newly implemented popover and the message composer offers syntax highlighting, although a bug currently makes it so that sent messages are still not sent with a `formatted_body`.
+> * A persistent state store is used to load rooms on startup while sync is in progress.
+>
+> Last but not least, new contributor Raatty implemented [room name and topic display in the header bar](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/735).
+
+
+
+![2021-05-21-zHc3a-image.png](/blog/img/2021-05-21-zHc3a-image.png)
+
+### Hydrogen
+
+A minimal Matrix chat client, focused on performance, offline functionality, and broad browser support. https://github.com/vector-im/hydrogen-web/
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) announced:
+
+> Released 0.1.53 with support for linking to room this week, which should allow to add Hydrogen to matrix.to soon. Also started working on redactions, which is useful in itself and also lays the foundations for reactions and edits coming next.
+
+
+
+### Nheko reviewed
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE and intends to be full featured and nice to look at
+
+Check out this flattering portrait of Nheko on the Brodie Robertson "Linux Tips & Tricks" channel.
+
+<iframe id="lbry-iframe" width="560" height="315" src="https://odysee.com/$/embed/nheko-reborn-lightweight-native-matrix/84f98be68eade9e82a392649e6d33d2b6cf61063?r=5SKuaSNKGFy2pmbDqdntM2Jidx8UXrzr" allowfullscreen></iframe>
+
+https://odysee.com/@BrodieRobertson:5/nheko-reborn-lightweight-native-matrix:8
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### Ruma
+
+[Ruma](https://www.ruma.io/) is a set of Rust library crates around Matrix
+
+[jplatte](https://matrix.to/#/@jplatte:flipdot.org) offered:
+
+> We've been quiet in the past weeks, but certainly not due to lack of activity! So many awesome things have happened, I don't even know where to start. I guess I'll go chronologically:
+>
+> **We published so many new crate releases.** Most of our crates didn't see non-alpha releases for almost a year and now we've finally reset that counter! Now you can depend on `ruma 0.1` and get bug fixes and new functionality through `cargo update` without having to worry about breaking changes. Huge thanks to [@zecakeh] for automating our release process, without that this would have taken so much longer.
+>
+> **We got initial spaces support!** I'm super excited that we're now enabling client authors to take spaces into account, even if "taking into account" will initially just mean filtering out space rooms from their room lists. Code-wise, this was actually a [relatively small change](https://github.com/ruma/ruma/pull/585), with ruma-client-api receiving support for room types and ruma-events receiving support for the event types `m.space.child` and `m.space.parent`.
+>
+> **We're swapping out ruma-signatures' crypto library.** Since `ring`, which is what we've been using so far, doesn't currently support cross-compilation to WASM, there's long been some interest to exchange it for something else for webbrowser homeserver experiments. A viable alternative library was identified a while ago and now [@ShadowJonathan] has taken on the task of [implementing the switch](https://github.com/ruma/ruma/pull/589).
+>
+> In addition to unblocking the WASM usecase, this work [revealed a bug in `ring`](https://github.com/briansmith/ring/issues/1299), which generated invalid PKCS#8 documents. We are pretty confident that once the switch away from `ring` (including a small compatibility shim to convert the invalid documents), a certain class of signature verification failures that Conduit has been getting will be fixed.
+>
+> **We're taking part in GSoC again.** As you might have seen in the [earlier blog post](https://matrix.org/blog/2021/05/20/google-summer-of-code-2021), two students are working on Ruma as part of GSoC this year: [@Frinksy] (for the first time) and [@DevinR528] (for the second time).
+>
+> **Apart from that,**
+>
+> * [@132ikl] fixed [a bug with unsetting avatar URLs](https://github.com/ruma/ruma/pull/529)
+>
+> * [@abhikjain360] added [email validation endpoints to ruma-identity-service-api](https://github.com/ruma/ruma/pull/515)
+> * [@132ikl] fixed [a small bug in our release automation](https://github.com/ruma/ruma/pull/533)
+>
+> * [@Frinksy] added [helpers to construct the fallback for rich replies](https://github.com/ruma/ruma/pull/534)
+> * [@132ikl] improved [event relation support for encrypted events](https://github.com/ruma/ruma/pull/536)
+>
+> * [@jplatte] (that's me) made [ruma-client independent of the underlying HTTP client library](https://github.com/ruma/ruma/pull/539)
+> * [@abhikjain360] added [phone number validation endpoints to ruma-identity-service-api](https://github.com/ruma/ruma/pull/540)
+>
+> * [@gnieto] fixed [a small serialization bug in ruma-federation-api](https://github.com/ruma/ruma/pull/542)
+> * [@DevinR528] cleaned up [our crate manifest files](https://github.com/ruma/ruma/pull/544)
+>
+> * [@zecakeh] added [a `TagName` type for `m.tag` events](https://github.com/ruma/ruma/pull/546) (+ [followup API improvement](https://github.com/ruma/ruma/pull/549))
+> * [@DevinR528] enabled [a set of lints across the entire project](https://github.com/ruma/ruma/pull/553)
+>
+> * [@jplatte] integrated [the state-res crate into our monorepo](https://github.com/ruma/ruma/pull/558)
+> * [@gnieto] improved [the error handling for HTTP request construction](https://github.com/ruma/ruma/pull/559)
+>
+> * [@zecakeh] cleaned up [our non-room event enums](https://github.com/ruma/ruma/pull/565)
+> * [@ShadowJonathan] improved [some code examples in our documentation](https://github.com/ruma/ruma/pull/569)
+>
+> * [@poljar] added [support for remaining to-device key verification events](https://github.com/ruma/ruma/pull/570)
+> * [@jplatte] replaced [uses of `SystemTime` with custom timestamp types](https://github.com/ruma/ruma/pull/571)
+>
+> * [@poljar] added [support for v1 of the QR verification events and methods](https://github.com/ruma/ruma/pull/574)
+> * [@DevinR528] added [code generation for redaction methods on our event content enums](https://github.com/ruma/ruma/pull/580)
+>
+> * [@zecakeh] improved [our markdown to formatted message helper functions](https://github.com/ruma/ruma/pull/583)
+> * [@timokoesters] added [(unstable) `master_keys` and `self_signing_keys` support to the federation-api `get_keys` response](https://github.com/ruma/ruma/pull/586)
+>
+>
+> [@iinuwa]: https://github.com/iinuwa
+>
+> [@DevinR528]: https://github.com/DevinR528
+> [@gnieto]: https://github.com/gnieto
+>
+> [@elegaanz]: https://github.com/elegaanz
+> [@poljar]: https://github.com/poljar
+>
+> [@auscompgeek]: https://github.com/auscompgeek
+> [@lanker]: https://github.com/lanker
+>
+> [@V02460]: https://github.com/V02460
+> [@iinuwa]: https://github.com/iinuwa
+>
+> [@DevinR528]: https://github.com/DevinR528
+> [@tilosp]: https://github.com/tilosp
+>
+> [@NerdyPepper]: https://github.com/NerdyPepper
+> [@jamtwister]: https://github.com/jamtwister
+>
+> [@florianjacob]: https://github.com/florianjacob
+> [@jsparber]: https://github.com/jsparber
+>
+> [@unseddd]: https://github.com/unseddd
+> [@PunitLodha]: https://github.com/PunitLodha
+>
+> [@timokoesters]: https://github.com/timokoesters
+> [@zecakeh]: https://github.com/zecakeh
+>
+> [@Frinksy]: https://github.com/Frinksy
+> [@louisdewar]: https://github.com/louisdewar
+>
+> [@abhikjain360]: https://github.com/abhikjain360
+> [@johannescpk]: https://github.com/johannescpk
+>
+> [@jplatte]: https://github.com/jplatte
+> [@ShadowJonathan]: https://github.com/ShadowJonathan
+>
+> [@132ikl]: https://github.com/132ikl
+
+
+
+## Dept of Ops 🛠
+
+### matrix-docker-ansible-deploy
+
+This [Ansible playbook](https://github.com/spantaleev/matrix-docker-ansible-deploy) is meant to easily let you run your own Matrix homeserver.
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) told us:
+
+> Thanks to [Aaron Raimist](https://github.com/aaronraimist), [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) now supports [Hydrogen](https://github.com/vector-im/hydrogen-web) - a new lightweight matrix client with legacy and mobile browser support.
+>
+> By default, we still install Element, as Hydrogen is still not fully-featured. Still, people who'd like to try Hydrogen out can now install it via the playbook.
+>
+> Additional details are available in [Setting up Hydrogen](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-client-hydrogen.md).
+
+Also...
+
+> Thanks to [Toni Spets (hifi)](https://github.com/hifi), [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) now supports bridging to [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat) using yet another bridge (besides [matrix-appservice-irc](https://github.com/matrix-org/matrix-appservice-irc)), called [Heisenbridge](https://github.com/hifi/heisenbridge).
+>
+> To get started, see our [Setting up Heisenbridge bouncer-style IRC bridging](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-bridge-heisenbridge.md) documentation.
+
+
+
+## Dept of Services 🚀
+
+### etke.cc updated
+
+[Aine](https://matrix.to/#/@aine:etke.cc) reported:
+
+> [etke.cc](https://etke.cc) updates
+>
+> etke.cc is "[spantaleev/matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) as a service" and we got some updates:
+>
+> * New services: miniflux, wireguard, languagetool, email service for you domain (based on awesome Migadu) and consultations
+>
+> * Website redesign - made with ❤ ourselves instead of old generic template
+> * [announcements](https://matrix.to/#/[#announcements:etke.cc](https://matrix.to/#/#announcements:etke.cc)) room migrated to public room without encryption, but with invites and previews
+
+
+
+## Dept of Bots 🤖
+
+### Community -> Space Bot
+
+[TravisR](https://github.com/turt2live) said:
+
+> If you're trying out all those cool [Spaces](https://matrix.org/blog/2021/05/17/the-matrix-space-beta) ([Element Blog](https://element.io/blog/spaces-the-next-frontier/)) and have some old Communities/Groups hanging around, I have the bot for you.
+>
+> [spacebot](https://t2bot.io/spacebot/) makes quick work of the conversion by translating as much as possible to the Space structure. Simply DM the bot and say `!convert +group:example.org` and it'll go off and make your Space.
+>
+> The bot doesn't invite everyone from your Community to your Space, giving you a chance to configure the Space further before advertising it within your rooms.
+>
+> The source can be found on [GitHub](https://github.com/t2bot/groups-to-space-bot) if you feel like running your own or seeing how simple it is under the hood. [#spacebot:t2bot.io](https://matrix.to/#/#spacebot:t2bot.io)  is a great place to get help if you're having problems getting it going, and [#help:t2bot.io](https://matrix.to/#/#help:t2bot.io) would be glad to assist you if the t2bot.io deployment doesn't do the right thing.
+>
+> P.S.: Spaces are currently considered Beta in Element, so they might not be perfect just yet. [#spaces:riot.ovh](https://matrix.to/#/#spaces:riot.ovh) is the room to join if you have questions about Spaces.
+
+
+
+### Hemppa
+
+Hemppa the Bot is a multipurpose bot for writing modules super easily in Python.
+
+[Cos](https://matrix.to/#/@cos:hacklab.fi) offered:
+
+> Hemppa the bot is a general purpose Matrix bot written in Python. This week it gained two useful admin tools: Kick by wildcard (for cleaning up zombies after bridge decomission) and making tombstones to point room to a new one. https://github.com/vranki/hemppa
+
+
+
+## Dept of Interesting Projects 🛰️
+
+
+### raspberry-noaa-v2 matrix support
+
+[Cadair](https://matrix.to/#/@cadair:cadair.com) said:
+
+> A little bit differerent, but matrix related, this week I [added Matrix push](https://github.com/jekhokie/raspberry-noaa-v2/blob/master/docs/matrix_push.md) support to the [raspberry-noaa-v2](https://github.com/jekhokie/raspberry-noaa-v2/) project. This is a project which runs on a raspberry pi to automate recieving, decoding and post processing of images over radio from weather satellites. It's easy to build a cheap ground station for this with little more than a USB SDR dongle and a metal coat hanger. If you want to see the pictures I am decoding you can join [#weather:cadair.com](https://matrix.to/#/#weather:cadair.com).
+
+Cadair, living in the north of England, will only see this symbol unfortunately 🌧️
+
+### Server_Stats Voyager Project
+
+Synapse is a popular homeserver written in Python.
+
+[MTRNord](https://matrix.to/#/@mtrnord:nordgedanken.dev) announced:
+
+> The Project now has a proper webpage at https://serverstats.nordgedanken.dev/ !
+>
+> #### Newly added Features are:
+>
+> * A List of all the rooms that are found
+>
+> * A list to find the links (either outgoing or incoming) for a room. So a 1 level deep view into the graph as a table.
+> * An FAQ with some information about the project, known data issues and more
+>
+> * A websocket at `wss://serverstats.nordgedanken.dev/ws` that allows you to get the updates directly pushed as soon as a room lands in the db. Effectively the fastest way to get data updates.
+> #### Planned features for the webpage
+>
+> * AR and VR Graphs
+>
+> * A Space Finder that allows you to find the discovered spaces
+>
+> Be aware that this page is very new and therefor might have bugs. It also isn't yet mobile optimized.
+>
+>
+> For questions, suggestions or fast updates check the #server_stats:nordgedanken.dev Room or for questions regarding issues with the bot in a specific room feel free to write a DM to @mtrnord:nordgedanken.dev :)
+>
+> #### Possible Bug that needs manual fixing
+>
+> Due to a bug with my homeserver or synapse it happens for some rooms that synapse generates a lot of join events (Lots of "server_stats bot made no change" messages). If you see this please write a message to @mtrnord:nordgedanken.dev so I can manually prevent my bot from trying to join the room over and over again as I cannot easily detect this kind of issue before joining. 
+>
+> The issue can be followed at https://github.com/matrix-org/synapse/issues/10021
+
+
+
+### midnight from cvwright
+
+[cvwright](https://matrix.to/#/@cvwright:matrix.org) offered:
+
+> This might be of interest for TWIM.  It's a little web app that supports token-based registration in the Matrix UIAA.
+> Sort of like matrix-registration, but aiming for compliance with the UIAA spec
+
+https://github.com/KombuchaPrivacy/midnight
+
+## Dept of *Built on Matrix* 🏗️
+
+### Circles, new social network on top of Matrix
+
+[cvwright](https://matrix.to/#/@cvwright:matrix.org) offered:
+
+> Circles is a new project to build an E2E encrypted social network on top of Matrix. 
+> https://www.kombuchaprivacy.com/circles/
+> https://www.kickstarter.com/projects/cvwright/circles-a-secure-social-app-for-friends-and-family
+
+It's really early days for this project, but please check it out!
+
+## Final Thoughts 💭
+
+[farribeiro](https://matrix.to/#/@farribeiro:matrix.org) reported:
+
+> The fedora project is discussing which domain to be take in https://discussion.fedoraproject.org/t/so-what-domains-should-we-use-for-our-matrix-server/29842
+
+Un-burying the lede: Fedora are making the jump to Matrix!
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|the-apothecary.club|463.5|
+|2|fosil.eu|539|
+|3|helderferreira.io|545.5|
+|4|trolla.us|579|
+|5|zheng.fi|639|
+|6|alra.uk|702|
+|7|feline.support|759.5|
+|8|thomcat.rocks|770|
+|9|jae.fi|777.5|
+|10|roeckx.be|1033|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|lankolol.de|392.5|
+|2|zemos.net|2251|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
