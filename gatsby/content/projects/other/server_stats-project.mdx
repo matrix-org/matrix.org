@@ -1,0 +1,26 @@
+---
+layout: project
+title: Server_Stats Project
+categories:
+ - other
+description: A tool to gather an overview about the matrix Network viewed as a voyager bot
+author: MTRNord
+home: https://serverstats.nordgedanken.dev
+language: Rust
+license: AGPL-3.0-or-later
+repo: https://github.com/MTRNord/server_stats
+room: "#server_stats:nordgedanken.dev"
+maturity: Beta
+---
+
+The Server_Stats Project consists of 3 parts:
+
+1. It has a tool to read which servers are considered active by synapse and extracts their versions via the federation API and exports those to a 
+[Grafana Dashboard](https://grafana.nordgedanken.dev/d/HDVgeCXGk/matrix-server-stats?from=now-24h&to=now&orgId=1&refresh=10s)
+2. It is a voyager bot. This means it follows aliases and room ids in every room it is in, joins that mentioned room, starts to look in older messages for 
+potential aliases and joins them and so on. It also listens for new mentions after joining. Effectivly gathering a view on the Matrix network.
+3. It is a webpage to display the gathered data. You can find that webpage at https://serverstats.nordgedanken.dev and it contains various ways to display the gathered data.
+
+For any future Questions please checkout [the FAQ](https://serverstats.nordgedanken.dev/faq) or ask in the project room.
+
+For source or issues with any of these please open an Issue at [Github](https://github.com/MTRNord/server_stats)
