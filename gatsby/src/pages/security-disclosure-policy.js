@@ -10,6 +10,13 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date: '2021-05-21',
+            who: 'Aaron Raimist and an anonymous security researcher',
+            profile: 'https://github.com/aaronraimist/',
+            description: 'Discovered that Element Android was disclosing the filename of end-to-end encrypted attachments to the homeserver. Fixed in Element Android 1.1.8.',
+            service: 'Element Android'
+        },
+        {
             date: '2021-03-01',
             who: 'Graham Leach-Krouse',
             profile: 'http://grahamlk.com/',
@@ -29,6 +36,13 @@ const HallOfFame = () => {
             profile: 'https://github.com/mscherer/',
             description: 'IP blacklist bypass via transitional IPv6 addresses on dual-stack networks (<a href="https://github.com/matrix-org/synapse/security/advisories/GHSA-5wrh-4jwv-5w78">CVE-2021-21392</a>). Fixed in Synapse 1.28.0.',
             service: "Synapse"
+        },
+        {
+            date: '2021-01-07',
+            who: 'Andrea Spacca',
+            profile: 'https://github.com/aspacca',
+            description: 'Element iOS crash via an invalid content payload. Fixed in Element iOS 1.1.4.',
+            service: 'Element iOS'
         },
         {
             date:'2020-11-17',
