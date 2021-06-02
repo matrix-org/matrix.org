@@ -568,9 +568,8 @@ const Faq = ({ data }) => {
                 provides a simple chatroom interface to Matrix - letting the
                 user interact with users and rooms anywhere within the Matrix{" "}
                 <a href="#definitions">federation</a>. Text and image messages
-                are supported, and basic voice-only VoIP calling via WebRTC is
-                supported in one-to-one rooms. (As of October 2015, experimental
-                multi-way calling is also available on Element Web).
+                are supported, and VoIP calling via WebRTC is supported in 
+                one-to-one rooms.
               </p>
               <div className="definition-list">
                 <div className="definition-item definition-client">
