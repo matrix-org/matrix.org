@@ -22,7 +22,7 @@ Lastly our OpenTracing support now allows for profiling end-to-end performance o
 
 ## An Update on Room Joins
 
-We've been hammering away at shrinking Synapse's memory footprint when joining large / complex rooms, and while we're not there yet, the end is in sight! In particular, this release includes many internal refactorings, including using [ijson](https://pypi.org/project/ijson/) to parse the JSON response to `/send_join` ([#9958](https://github.com/matrix-org/synapse/pull/9958)), which clear the way for substantial improvements.
+We've been hammering away at shrinking Synapse's memory footprint when joining large / complex rooms, and while we're not there yet, the end is in sight! In particular, this release includes many internal refactorings, including using [ijson](https://pypi.org/project/ijson/) to parse the JSON response to `/send_join` ([#9958](https://github.com/matrix-org/synapse/pull/9958)), clearing the way for substantial improvements.
 
 Memory usage still spikes because we're effectively doing the same work with a different library, but ijson's design allows for iterative parsing. This will pay dividends once we modify the code downstream of `/send_join` to take advantage of it.
 
