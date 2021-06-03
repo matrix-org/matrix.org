@@ -8,6 +8,10 @@
 
 Synapse 1.35.0 is out! This release focused on improving internals as we drive toward better memory performance during room joins, but more on that below.
 
+> __Update:__ [Synapse 1.35.1](https://github.com/matrix-org/synapse/releases/tag/v1.35.1) was published on Thursday, June 3rd. It resolves a bug ([#10109](https://github.com/matrix-org/synapse/issues/10109)) which mistakenly listed invite-only rooms in the Spaces summary.
+>
+> We'd also like to call the attention of client developers to a deprecation: The unstable prefixes used during development of [MSC2858: Multiple SSO Identity Providers](https://github.com/matrix-org/matrix-doc/blob/master/proposals/2858-Multiple-SSO-Identity-Providers.md#unstable-prefix) will be removed from Synapse 1.38, due out in August. Please ensure your client supports the stable identifiers for this feature.
+
 ## Spaces: On by Default
 
 Following the successful release of [Synapse 1.34](/blog/2021/05/17/synapse-1-34-0-released), the experimental Spaces flag is now enabled by default. If you had manually enabled the `experimental_features: { spaces_enabled: true }` flag in your homeserver configuration, you may now remove it.
