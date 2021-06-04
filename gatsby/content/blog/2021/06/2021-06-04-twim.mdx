@@ -137,6 +137,12 @@ Synapse is a popular homeserver written in Python.
 
 ## Dept of Bridges 🌉
 
+### Heisenbridge demo video
+
+[hifi](https://matrix.to/#/@hifi:vi.fi) shared this great demonstation video of [Heisenbridge](https://github.com/hifi/heisenbridge/):
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nQk1Bp4tk4I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) hit us late with a pair of updates:
 
 ### Security release for the matrix-appservice-irc and matrix-appservice-bridge library
@@ -146,6 +152,26 @@ Synapse is a popular homeserver written in Python.
 ### The Libera.chat bridge is still ongoing
 
 > Howdy folks. As you've likely seen over the last few days, we're still hard at work getting the final pegs in place for the libera.chat bridge. As usual, you can start using the bridge now while it's in beta by going to `#<foo>:libera.chat`, but we're hoping to have the thing stable by next week. Catch us in #libera-matrix:libera.chat for the juicy gossip about it.
+
+### matrix-puppeteer-line
+
+[Fair](https://matrix.to/#/@fair:miscworks.net) reported:
+
+[matrix-puppeteer-line](https://src.miscworks.net/fair/matrix-puppeteer-line): A bridge for LINE Messenger based on running LINE's Chrome extension in Puppeteer.
+
+> * Send a bridge notice when getting unexpectedly logged out of LINE, to warn you to log in again.
+> * Improve resiliency of LINE user avatar syncing.
+> * Properly support syncing LINE rooms with participants who aren't in your LINE friends list (This was harder than it sounds...!)
+> 
+> These changes (and ones before it) will be merged to `master` once I reorganize some messy commits.
+> 
+> The next big task is still to fix outbound read receipts (i.e. to make it so that the bridge syncing a message doesn't make your > LINE contacts think you actually read that message). Once that is done, I'll consider the bridge to be in beta.
+> 
+> Discussion:
+> [#matrix-puppeteer-line:miscworks.net](https://matrix.to/#/#matrix-puppeteer-line:miscworks.net)
+> Issue page: https://src.miscworks.net/fair/matrix-puppeteer-line/issues
+
+
 
 ## Dept of Clients 📱
 
@@ -253,9 +279,25 @@ A minimal Matrix chat client, focused on performance, offline functionality, and
 >
 > Here's a sneak preview of reactions (with slow network to show off the local echo animation):
 
-
-
 ![2021-06-04-0GlkZ-hydrogen-reactions-preview.gif](/blog/img/2021-06-04-0GlkZ-hydrogen-reactions-preview.gif)
+
+### kazv
+
+[tusooa](https://matrix.to/#/@tusooa:tusooa.xyz) reported on kazv:
+
+[kazv](https://lily.kazv.moe/kazv/kazv) is a matrix client based on [libkazv](https://lily.kazv.moe/kazv/libkazv).
+Talk to us on [#kazv:tusooa.xyz](https://matrix.to/#/#kazv:tusooa.xyz).
+
+#### Updates
+
+> I guess it's a long time from our last twim. Here's what is going on in that time:
+> 
+> - We used fluent for translations. https://lily.kazv.moe/kazv/kazv/-/merge_requests/1
+> - We supported read and save client state. https://lily.kazv.moe/kazv/kazv/-/merge_requests/2
+> - A work-in-progress, but we are displaying some common event types; there are even chat bubbles (>w<) Check out a screenshot below: (yes, and we got a new logo)
+
+![kavz](/blog/img/2021-06-04-kazv.png)
+
 
 ## Dept of Events and Talks 🗣️
 
