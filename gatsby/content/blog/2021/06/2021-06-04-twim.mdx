@@ -1,0 +1,350 @@
+---
+date: '2021-06-04'
+title: 'This Week in Matrix 2021-06-04'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-06-04-KGrID-image.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Dsr6h-0lwWU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of *Status of Matrix* 🌡️
+
+### Wired UK feature article
+
+Wired UK have published a feature on Matrix in their print edition this month. We'll be sure to link to it when it's made available online!
+
+![Wired Article](/blog/img/2021-06-04-wired.png)
+
+### German-universities poll
+
+[jfkimmes](https://matrix.to/#/@jfkimmes:matrix.org) shared:
+
+> I just learned that in a poll of 89 universities in Germany, Matrix ranked third place in the chat category already. 
+>
+> The source is in only available in German, unfortunately: https://zenodo.org/record/4817795
+>
+> However, the conclusion list (first table) may be understandable from context. It lists the top three solutions per category with their respective number of universities using it.
+
+
+[Oleg](https://matrix.to/#/@oleg:fiksel.info) clarified:
+
+> The evaluation was "which solution are you using".
+
+[Florian](https://matrix.to/#/@florian:dsn.tm.kit.edu) added:
+
+> The Instant Messaging part starts at slide 15, the first chart on that slide is "which solution do you use", the second is "How content are you with the solution?", with Matrix having the best average of all solutions, namely ~8.8/10.
+
+also [JCG](https://matrix.to/#/@jan.christian:gruenhage.xyz):
+
+> What's also noteworthy: Those using matrix are the happiest with the solution
+
+\o/
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) offered:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://spec.matrix.org/unstable/proposals.
+>
+>
+> #### MSC Status
+>
+> **New MSCs:**
+>
+> * [MSC3231: Token authenticated registration](https://github.com/matrix-org/matrix-doc/pull/3231)
+> * [MSC3230: Spaces top level order](https://github.com/matrix-org/matrix-doc/pull/3230)
+>
+> * [MSC3226: Per-room spell check](https://github.com/matrix-org/matrix-doc/pull/3226)
+>
+> **MSCs with proposed Final Comment Period:**
+>
+> * *No MSCs entered proposed FCP state this week.*
+>
+> **MSCs in Final Comment Period:**
+>
+> * *No MSCs are in FCP.*
+>
+> **Merged MSCs:**
+>
+> * *No MSCs were merged this week.*
+>
+> #### Spec Updates
+>
+> This week the Spec Core Team has been reviewing various Spaces MSCs, most recently [MSC3230](https://github.com/matrix-org/matrix-doc/pull/3230) (Space ordering). We're also hoping to square away the [aggregations MSCs](https://github.com/matrix-org/matrix-doc/pull/1849#issuecomment-655153491) (message editing, reactions, etc) once and for all, though this will likely take a concerted effort from a few members to pull off.
+>
+> Finally [MSC3231](https://github.com/matrix-org/matrix-doc/pull/3231) is a (currently draft status) MSC from Callum, one of Matrix.org's [GSoC students](https://matrix.org/blog/2021/05/20/google-summer-of-code-2021) this year! His project aims to allow native token-based registration to homeservers (the idea is so that you can generate a few tokens from your registration-disabled homeserver and hand them out to a few trusted friends and family members).
+>
+> And finally, work still continues on finishing up the technical portions of the new release process for the spec. As mentioned last week, we've attempted to split the work up over multiple people in order to get it done quicker. Slowly but surely...
+
+
+![2021-06-04-I-r8I-stacked_area_chart.png](/blog/img/2021-06-04-I-r8I-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) said:
+
+> Hello from the Synapse team! A short update for a short workweek (thanks, bank holidays!):
+>
+> * Synapse 1.35 [was released](https://matrix.org/blog/2021/06/01/synapse-1-35-0-released) this week! The Spaces flag is on by default, a bunch of bugs were fixed, and we've landed many of the prerequisites to eliminating RAM spikes on room joins.
+>
+> * 📚 We have new docs! 📚 Anoa converted our docs to build with mdbook ([#10086](https://github.com/matrix-org/synapse/pull/10086)), and you can now browse them at https://matrix-org.github.io/synapse/! Check it out and let us know what you think. (Note: Not all of the pages have been converted from reStructuredText to Markdown yet, so some might render a bit strangely, but the structure is there!)
+>
+> Catch you next Friday! 👋
+
+
+![2021-06-04-bILM1-image.png](/blog/img/2021-06-04-bILM1-image.png)
+
+### synapse-media-proxy
+
+[f0x](https://matrix.to/#/@f0x:pixie.town) announced:
+
+> Another round of updates on my smart caching media proxy. After refactoring a lot (as always), I implemented **thumbnailing**! Now the only big feature left to add is url previewing.
+> I also have a test deployment configured on media.pixie.town now, so you can try fetching a bit of remote media through there, or view [this submissions screenshot](https://media.pixie.town/_matrix/media/r0/download/media.pixie.town/GLhyjFL8MPAzz5Oh1gIzF3lQ)
+>
+> #### metrics
+>
+> Got started implementing a Prometeus /metrics endpoint, with a [rudimentary Grafana dashboard](https://stats.pixie.town/d/rPBvoh6Gk/synapse-media-proxy?orgId=1) for my test installation. 
+>
+> #### comparison with [matrix-media-repo](https://github.com/turt2live/matrix-media-repo/)
+>
+> While they both implement Matrix' media endpoints, they serve rather different niches, where matrix-media-repo fully decouples the media repo aspect, my proxy cooperates with Synapse's filesystem and database, to speed up operation while ultimately making it a seamless drop-in and removal process.
+>
+> [also](https://media.pixie.town/_matrix/media/r0/download/im_a/teapot) :P
+
+
+
+![2021-06-04-WnfPb-image.png](/blog/img/2021-06-04-WnfPb-image.png)
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) offered:
+
+> And another weekly installment of Kubernetes [Helm Chart](https://gitlab.com/ananace/charts) (and deprecated [Docker image](https://github.com/ananace/matrix-synapse)) updates, tracking the Synapse releases this week (1.35.0/1).
+
+
+## Dept of Bridges 🌉
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) hit us late with a pair of updates:
+
+### Security release for the matrix-appservice-irc and matrix-appservice-bridge library
+
+> Hello. This week we've released an update to the https://github.com/matrix-org/matrix-appservice-bridge/ library containing a security fix for room upgrade handling. The security report will come later, but for now we advise anyone using the room upgrade handler feature to upgrade to [2.6.1](https://github.com/matrix-org/matrix-appservice-bridge/releases/tag/2.6.1). By the same token, we would also advise _all_ IRC bridge admins to update their bridge to [0.26.1](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.26.1).
+
+### The Libera.chat bridge is still ongoing
+
+> Howdy folks. As you've likely seen over the last few days, we're still hard at work getting the final pegs in place for the libera.chat bridge. As usual, you can start using the bridge now while it's in beta by going to `#<foo>:libera.chat`, but we're hoping to have the thing stable by next week. Catch us in #libera-matrix:libera.chat for the juicy gossip about it.
+
+## Dept of Clients 📱
+
+### Thunderbird Matrix support
+
+[freaktechnik](https://matrix.to/#/@freaktechnik:humanoids.be) announced:
+
+> [Thunderbird](https://thunderbird.net) now has Matrix support based on `matrix-js-sdk` enabled in the Nightly builds.
+>
+> The star feature is probably that we support multiple Matrix accounts in the same client. Right now all your unencrypted rooms with text messages should work fine. While we think we won't destroy your account's state, it's still recommended to use a testing account with it. During account setup, it will ask you for a password, even if the homeserver supports SSO. If you intend to log in through SSO, just leave the password field blank.
+>
+> We're not quite at the point where we support all the things you love about chatting with Matrix. Many of the missing features and polish to make communication successful are tracked in [this meta bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1712710). The goal for that milestone is to enable Matrix in our Beta builds.
+>
+> You can get a Thunderbird Nightly build at the bottom of [thunderbird.net](https://thunderbird.net/#channel) by switching from "Beta Channel" to "Nightly Channel". If you run into bugs with the Matrix integration, please report them through [this form](https://bugzilla.mozilla.org/enter_bug.cgi?product=Chat%20Core&component=Matrix). When filing a bug, please include debug logs. You can copy the debug logs for the account by going to the "Show Accounts" dialog, right clicking the account and selecting "Copy Debug Log". Note that the debug log may contain information from any of your conversations, so you might want to check the contents before posting it anywhere.
+
+Also, check out Matrix Live!
+
+### NeoChat
+
+[Carl Schwan](https://matrix.to/#/@carl:kde.org) announced:
+
+> NeoChat 1.2, our third major release, was released this week bringing many improvements to the timeline and text input component. If you missed it, you can read the announcement here: https://carlschwan.eu/2021/06/01/neochat-1.2-bubbles-better-text-editing-and-more/ and we even have a nice release video :) https://www.youtube.com/watch?v=4lcH4tm6uTk 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4lcH4tm6uTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> Other than that, we started working on an integration with KDE web shortcuts functionality to quickly search selected text on the web: https://invent.kde.org/network/neochat/-/merge_requests/279.
+
+
+
+![2021-06-04-KGrID-image.png](/blog/img/2021-06-04-KGrID-image.png)
+
+### Nheko
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) told us:
+
+> Callum, our GSoC student, after spending some time on Synapse, had now his first go at Nheko's codebase. He implemented, that you can now just enter the server name on registration instead of the full URL. This means entering conduit.rs or matrix.org works now nicely, since those servers are actually hosted at a different URL. He's now working on the Token Registration MSC, which he will implement in Synapse and Nheko, so exciting times ahead!
+>
+> We also had a small contribution from pcworld, who fixed that if you only viewed the room list in the narrow layout, you would not get notifications for the last selected room.
+>
+> I'll leave you with some words, that you may have heard a few times already: "Watch this space for next weeks update!"
+
+
+
+### Fractal
+
+[Alexandre Franke](https://matrix.to/#/@afranke:matrix.org) reported:
+
+> A dozen merge requests have been integrated in our fractal-next branch since [last week](https://matrix.org/blog/2021/05/28/this-week-in-matrix-2021-05-28#fractal-updates).
+>
+> Amongst the more trivial changes, Julian made sure rooms are added to the sidebar in batch ([!737](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/737)) to improve performances, added in-app notifications for invite errors ([!760](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/760)), added a menu entry to leave rooms ([!769](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/769)), and implemented display of user and room avatars ([!770](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/770)). We also gained a right-click-menu entry to display event sources thanks to Kévin ([!766](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/766)).
+
+
+
+### Element Clients
+
+Updates provided by the teams.
+
+**Delight team**
+
+
+
+*   We’re continuing progress on implementing Blurhash on Web & Android to improve the image loading experience, especially on low bandwidth
+*   On Spaces, we’ve started working on the ability to drag and drop to re-order Spaces, along with improving adding aliases to public Spaces
+
+**Web**
+
+
+
+*   1.7.30 RC on staging
+    *   Improved layout performance in the timeline and room list
+    *   Refined the message action bar UI
+*   Continuing to improve application performance
+    *   Recent focus on minimising browser layout work when things change
+    *   Reducing DOM size
+*   Working on Apple silicon desktop builds
+
+**iOS**
+
+
+
+*   [1.4.0](https://github.com/vector-im/element-ios/releases/tag/v1.4.0) is available on the public TestFlight. We expect to make it available on the App Store on Monday. It has: 
+    *   Performance improvements
+    *   Crash fixes
+    *   New languages: Esperanto, Portuguese (Brazil), Kabyle, Norwegian, Swedish, Japanese and Welsh.
+    *   There are some API breaks in MatrixSDK due to those performance improvements.
+    *   We have now a MXLog module with log levels! It is now possible to disable all logs from MatrixSDK
+*   We continued to work on performance and stability and will continue to for the coming sprint period: [https://github.com/vector-im/element-ios/milestone/55](https://github.com/vector-im/element-ios/milestone/55) 
+
+**Android**
+
+
+
+*   1.1.8 has been released to production, and 1.1.9 has been released to beta on the PlayStore
+*   We are currently working with the design team on the light and dark theme of the application, especially colors and text appearance. Lots of cleanup to do...
+
+
+
+### Hydrogen
+
+A minimal Matrix chat client, focused on performance, offline functionality, and broad browser support. https://github.com/vector-im/hydrogen-web/
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) announced:
+
+> Released Hydrogen [0.1.56](https://github.com/vector-im/hydrogen-web/releases/tag/v0.1.56) this week, with redactions. In the meantime, I've been making good progress on reactions, which should hopefully get released early next week. Midhun has made good progress on the right panel, ironing out the last bugs.
+>
+> Here's a sneak preview of reactions (with slow network to show off the local echo animation):
+
+
+
+![2021-06-04-0GlkZ-hydrogen-reactions-preview.gif](/blog/img/2021-06-04-0GlkZ-hydrogen-reactions-preview.gif)
+
+## Dept of Events and Talks 🗣️
+
+### Matrix @ FrOSCon this year
+
+[Oleg](https://matrix.to/#/@oleg:fiksel.info) said:
+
+> On **August 21-22** the annual **Fr**ee and **O**pen **S**ource **Con**ference (short [FrOSCon](https://www.froscon.de/)) will take place. Usually the conference takes place in a German University of applied Sciences Bonn Rhine Sieg. This year it will be virtual. On the positive side - we don't need to travel.
+>
+> As German Matrix community grows this is a great opportunity to meet each other and hack together.
+>
+> #### Matrix Dev Room
+>
+> We are planing to do a virtual Dev Room this year. The idea is to exchange on the latest Matrix development and projects, get to know each other and drink `<your_favorite_beverage>` (virtually) together. 😉
+>
+> #### To make it happen we need your help!
+> #### Dev Room is living from talks and workshops - this is your chance to present your Matrix project or to do a workshop!
+>
+> Language: preferably German, but English is also ok
+>
+> Submission [is until 2021-06-11](https://www.froscon.de/news/einreichefrist-fuer-vortraege-verlaengert/), but **please give us feedback ASAP so we can create a plan** now.
+>
+> If it's your first talk or workshop some free of charge coaching is included. 😉
+>
+> Also help in organizing the Dev Room (moderation, timekeeping) is needed.
+>
+> #### Matrix Open Source booth
+>
+> It was a great place to chit-chat and to get your in-depth answers regarding Matrix at FOSDEM this year. 👍️
+>
+> We also planing to have a virtual booth at FrOSCon.
+>
+> **We need your support in answering questions about Matrix or just to have a good time.**
+>
+> #### Get in touch
+> #### If you want to take part please contact [@oleg:fiksel.info](https://matrix.to/#/@oleg:fiksel.info) (or oleg@fiksel.info) ASAP to add you to the Dev Room participants list.
+>
+> BTW: we also have a [#FrOSCon:fiksel.info room](https://matrix.to/#/#FrOSCon:fiksel.info room)
+
+
+
+## Dept of Interesting Projects 🛰️
+
+### Circles
+
+[cvwright](https://matrix.to/#/@cvwright:matrix.org) reported:
+
+> * Set up a new (virtual) EU homeserver in Frankfurt, so European folks can join the beta starting next week
+>
+> * Use StoreKit to detect when a user is in Europe and should therefore use the EU homeserver, both for GDPR and to minimize latency
+> * Made some progress toward supporting `m.video` messages
+>
+> * Experimented with using the [new iOS photo picker](https://developer.apple.com/videos/play/wwdc2020/10652/) to better protect users' privacy
+> Homepage: https://kombuchaprivacy.com/circles/
+> Source code: https://github.com/KombuchaPrivacy/circles-ios
+
+You can also [support circles on Kickstarter](https://www.kickstarter.com/projects/cvwright/circles-a-secure-social-app-for-friends-and-family?ref=4fxvne).
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|lama-corp.space|492|
+|2|trolla.us|526|
+|3|int21.dev|569|
+|4|fosil.eu|727|
+|5|d0.ee|728|
+|6|nordgedanken.dev|740.5|
+|7|feneas.org|805.5|
+|8|maescool.be|1073.5|
+|9|matrix.sp-codes.de|1077|
+|10|coffespot.com|1490|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|dendrite01.fiksel.info|1152|
+|2|dendrite.s3cr3t.me|1386|
+|3|weber.world|8297.5|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
