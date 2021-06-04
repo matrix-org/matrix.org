@@ -569,7 +569,7 @@ const Faq = ({ data }) => {
                 user interact with users and rooms anywhere within the Matrix{" "}
                 <a href="#definitions">federation</a>. Text and image messages
                 are supported, as well as voice and video calling via WebRTC in
-                one-to-one rooms.
+                one-to-one rooms and via Jitsi elsewhere.
               </p>
               <div className="definition-list">
                 <div className="definition-item definition-client">
