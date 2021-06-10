@@ -10,9 +10,19 @@
 
 This guide is for Matrix developers who want to support
 [MSC3079: Low Bandwidth CS API](https://github.com/matrix-org/matrix-doc/pull/3079) in their
-clients/servers. Please read the experimental MSC if you want to learn more about what is happening at a protocol level.
-If you want a high level overview of low bandwidth Matrix and why you should care, watch the [12
-minute demo on Matrix Live](http://www.youtube.com/watch?v=_E-J6Hk2dYs&t=14m14s).
+clients/servers. Please read the experimental MSC if you want to learn more about what is happening
+at a protocol level. If you want a high level overview of low bandwidth Matrix and why you should
+care, watch the [12 minute demo on Matrix Live](http://www.youtube.com/watch?v=_E-J6Hk2dYs&t=14m14s).
+
+Matrix currently uses HTTP APIs with JSON data to communicate from the client to the server. This is
+widely supported but is not very bandwidth efficient. This means that the protocol is slower, more
+costly and less able to be used on low bandwidth links (e.g 2G networks) which are common in certain
+parts of the world. MSC3079 defines a low bandwidth protocol using CoAP and CBOR instead of HTTP and
+JSON respectively. In the future homeservers will natively support some form of low bandwidth
+protocol. However, at present, no homeserver natively supports MSC3079. Therefore, this guide will
+set up a low bandwidth proxy server which can be put in front of any Matrix homeserver
+(Synapse, Dendrite, Conduit, etc) to make it MSC3079-compatible. This guide will also configure an
+Android device to speak MSC3079.
 
 Low bandwidth Matrix currently does not support web browsers due to their inability to send UDP
 traffic. You do _not_ need to be running a homeserver to follow this tutorial.
@@ -68,7 +78,8 @@ If this doesn't work:
  - Try adding `-v` to `./coap` (e.g bad method or path)
  - Run the proxy with `SSLKEYLOGFILE=ssl.log` and inspect the decrypted traffic using Wireshark.
 
-Otherwise, congratulations! You now have a low bandwidth Matrix homeserver!
+Otherwise, congratulations! You now have a low bandwidth proxy! You can connect to your proxy just
+like you would to matrix.org or any other homeserver.
 
 ### Security considerations
 - The proxy acts as a man in the middle and can read all non-E2EE traffic, including login
