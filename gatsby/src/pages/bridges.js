@@ -44,6 +44,7 @@ const Bridges = ({ data }) => {
 ["Keybase", "keybase"],
 ["Signal", "signal"],
 ["Instagram", "instagram"],
+["Tencent QQ", "tencent-qq"],
   ];
 
   
