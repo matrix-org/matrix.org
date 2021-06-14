@@ -10,8 +10,8 @@ author: Denis Kasak
 ## Introduction
 
 Hi all! My name is Denis and I'm a [security
-researcher](https://dkasak.github.io/). For the past half year I've been
-contracted by Element to do security research on important Matrix projects.
+researcher](https://dkasak.github.io/). Six months ago, I started working for
+Element on doing dedicated security research on important Matrix projects.
 After some initial focus on Synapse, I decided to take a closer look at
 [libolm](https://gitlab.matrix.org/matrix-org/olm). In this entry, I'd like to
 present an overview of that work, along with some early fruits that came out of
@@ -51,14 +51,14 @@ newer code was not covered by the harnesses.
 ## Preparation
 
 I decided to tackle these one by one, adding ASAN and MSAN builds as a first
-step. I took the opportunity to switch to AFL++ since it is a drop-in
-replacement and contains numerous improvements, notably improved coverage modes
-which are either much faster (e.g. LLVM-PCGUARD) or guaranteed to have no
-collisions (LTO)[^1]. AFL++ also optimizes mutation scheduling (by
-using scheduling algorithms from [AFLFast](https://github.com/mboehme/aflfast))
-and mutation operator selection (through
-[MOpt](https://github.com/puppet-meteor/MOpt-AFL)). All of this makes it much
-more efficient at discovering bugs.
+step. I took the opportunity to switch to [AFL++](https://aflplus.plus/) since
+it is a drop-in replacement and contains numerous improvements, notably
+improved coverage modes which are either much faster (e.g. LLVM-PCGUARD) or
+guaranteed to have no collisions (LTO)[^1]. AFL++ also optimizes mutation
+scheduling (by using scheduling algorithms from
+[AFLFast](https://github.com/mboehme/aflfast)) and mutation operator selection
+(through [MOpt](https://github.com/puppet-meteor/MOpt-AFL)). All of this makes
+it much more efficient at discovering bugs.
 
 After this, I changed the existing harnesses to use AFL's persistent mode
 (which lowers process creation overhead and thus increases fuzzing
