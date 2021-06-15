@@ -14,7 +14,7 @@ We did it! Synapse no longer experiences a memory spike when joining large / com
 
 ![Memory usage graph for Synapse 1.33 and 1.36](/blog/img/2021-06-15-synapse-1.36-join-memory.png)
 
-These improvements mainly arise from incrementally processing of join responses, rather than trying to load everything into memory at once. However, realizing these gains involved a fair bit of rewriting, as the entire processing pipeline had to work incrementally, and with appropriately sized batches, to avoid downstream bottlenecks. You can hear more about our original plans for this work in last month's Matrix Live: [S6E23 — Dan and Erik talk about Synapse](https://www.youtube.com/watch?v=694VuhmVmfo).
+These improvements mainly arise from processing join responses incrementally, rather than trying to load everything into memory at once. However, realizing these gains involved a fair bit of rewriting, as the entire processing pipeline had to work incrementally, and with appropriately sized batches, to avoid downstream bottlenecks. You can hear more about our original plans for this work in last month's Matrix Live: [S6E23 — Dan and Erik talk about Synapse](https://www.youtube.com/watch?v=694VuhmVmfo).
 
 ## Presence Improvements
 
