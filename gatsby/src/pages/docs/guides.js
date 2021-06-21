@@ -175,16 +175,6 @@ const Guides = ({data}) => {
         <td>English</td>
       </tr>
       <tr>
-        <td><a href="https://www.vultr.com/docs/create-a-chat-server-using-matrix-synapse-and-riot-on-centos-7">Create a Chat Server Using Matrix Synapse and Riot on CentOS 7</a></td>
-        <td>Vultr Docs</td>
-        <td>English</td>
-      </tr>
-      <tr>
-        <td><a href="https://www.alibabacloud.com/blog/how-to-create-a-chat-server-using-matrix-synapse-on-ubuntu-16-04_593809">How to Create a Chat Server Using Matrix Synapse on Ubuntu 16.04</a></td>
-        <td>alibabacloud.com</td>
-        <td>English</td>
-      </tr>
-      <tr>
         <td><a href="https://www.digitalocean.com/community/tutorials/how-to-install-matrix-synapse-on-ubuntu-16-04">How To Install Matrix Synapse on Ubuntu 16.04</a></td>
         <td>Oliver Lumby for DigitalOcean</td>
         <td>English</td>
