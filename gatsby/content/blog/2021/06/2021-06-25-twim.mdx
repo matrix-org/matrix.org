@@ -1,0 +1,392 @@
+---
+date: '2021-06-25'
+title: 'This Week in Matrix 2021-06-25'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-06-25-pucq0-image.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gSrqj2IzJew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of *Status of Matrix* 🌡️
+
+### Room of the week
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) said:
+
+> Hi everyone! Did you ever feel lost in the Matrix world? The room directory is
+>
+> big, but it's still hard to find something you like. Or are you a room
+> moderator, but there is not much activity in your room because it doesn't have
+>
+> enough users?
+>
+> This is why I want to share rooms (or spaces) I find interesting.
+>
+> ----
+>
+> This week's space is: [RPG](https://matrix.to/#/!inTwmMdGcmomkgejoM:matrix.altay.fr?via=matrix.org&via=mozilla.org&via=matrix.altay.f)
+>
+> Biggest room: [#D&D:matrix.org](https://matrix.to/#/#D&D:matrix.org)
+>
+> **"Casual chat about Dungeons & Dragons, tabletop RPG, OSR, DM tips, player stories, world building, and more."**
+>
+> ----
+>
+> If you want to suggest a room for this section, tell me in [#roomoftheweek:fachschaften.org](https://matrix.to/#/#roomoftheweek:fachschaften.org)
+
+
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) told us:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+>
+> #### MSC Status
+>
+> **Merged MSCs:**
+>
+> * [MSC3173: Expose stripped state events to any potential joiner](https://github.com/matrix-org/matrix-doc/pull/3173)
+> * [MSC2778: Providing authentication method for appservice users](https://github.com/matrix-org/matrix-doc/pull/2778)
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **New MSCs:**
+>
+> * [MSC3255: Use SRV record for homeservers discovery by clients](https://github.com/matrix-org/matrix-doc/pull/3255)
+> #### Spec Updates
+>
+> Spaces work continues with [MSC3083](https://github.com/matrix-org/matrix-doc/pull/3083) (Restricted room memberships), which will include a new room version due to the new `join_rule` of `restricted. On the other side of things, [MSC3245](https://github.com/matrix-org/matrix-doc/pull/3245) (voice messages) and by extension extensible events, is moving as the implementation work is pushed forward. Lots of activity on [MSC3215](https://github.com/matrix-org/matrix-doc/pull/3215) (improved moderation tooling) as well which will no doubt prove to be invaluable as the Matrix network continues to grow.
+
+
+
+![2021-06-25-u23Qt-stacked_area_chart.png](/blog/img/2021-06-25-u23Qt-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust https://conduit.rs
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) reported:
+
+> After some more work on swappable database backends, I worked on a few small features:
+>
+> * User directory improvements (show remote users and appservice puppets)
+>
+> * /state endpoint
+> * /event_auth endpoint
+>
+> * Filter our room directory based on the search term
+> * /search over multiple rooms
+
+
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) said:
+
+> Knock, knock TWIM! It's a new week, and I'm filling in for Dan today to bring you an update on Synapse's latest progress!
+>
+> Hot off the heels of Synapse [1.36.0’s release](https://github.com/matrix-org/synapse/releases/tag/v1.36.0) last week, we’ve put out [1.37.0rc1](https://github.com/matrix-org/synapse/releases/tag/v1.37.0rc1)! It includes the long-awaited [“room knocking” feature](https://github.com/matrix-org/matrix-doc/pull/2403) (note that no clients currently support knocking), a completely reworked [pluggable modules interface](https://matrix-org.github.io/synapse/develop/modules.html) and experimental support for [backfilling history into rooms](https://github.com/matrix-org/matrix-doc/pull/2716). With knocking support in, this means Synapse now has support for [room v7](https://spec.matrix.org/unstable/rooms/v7/)!
+>
+> Among those exciting updates, we also have the usual churn of bug fixes and improvements across the board. Many updates to the documentation as well as we lean into using the new [Synapse documentation site](https://matrix-org.github.io/synapse) more and more. Please help us test the RC if you can!
+
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) offered:
+
+> This week too sees some [Kubernetes chart](https://gitlab.com/ananace/charts) updates, with element-web being updated to 1.7.31 and matrix-synapse getting some fixes for envvars and mounts, as well as some improvements to the ingress support.
+
+
+
+### YunoHost
+
+[Mamie](https://matrix.to/#/@mamie:mamieserv.fr) offered:
+
+> [YunoHost](https://yunohost.org) is an operating system aiming for the simplest administration of a server, and therefore democratize self-hosting.
+>
+> [Synapse](https://github.com/YunoHost-Apps/synapse_ynh/tree/master) integration had been updated to 1.34.0 (1.35.1 available in branch `testing`)
+>
+> [Element Web](https://github.com/YunoHost-Apps/element_ynh/tree/master) integration had been updated to 1.7.28 (1.7.29 available in branch `testing`)
+
+
+
+## Dept of Bridges 🌉
+
+### Gitter
+
+Synapse is a popular homeserver written in Python.
+
+[Eric Eastwood](https://matrix.to/#/@madlittlemods:matrix.org) offered:
+
+> It has been [several months](https://matrix.org/blog/2021/02/05/this-week-in-matrix-2021-02-05#gitter) since we last updated you on MSC2716 for backfilling historical messages into existing rooms but we made some big progress this week and [merged an experimental Synapse implementation](https://github.com/matrix-org/synapse/pull/9247) taking us one step closer to importing the massive archive of messages on Gitter over to Matrix! This iteration will only make the historical messages visible on the local homeserver but we have plans to make them federate in the next. It's still early days on this before we can actually use it on Gitter. Here is a proof of concept to get your juices flowing:
+
+![2021-06-25-7abpP-gitter-backfill-historical-messages-to-matrix.gif](/blog/img/2021-06-25-7abpP-gitter-backfill-historical-messages-to-matrix.gif)
+
+## Dept of Clients 📱
+
+### Hydrogen
+
+A minimal Matrix chat client, focused on performance, offline functionality, and broad browser support. https://github.com/vector-im/hydrogen-web/
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) said:
+
+> Released Hydrogen 0.2.0 with:
+>
+>  * support for receiving and sending reactions ❤👍🚀
+>  * adds a right panel with basic room information, thanks to @MidhunSureshR! Watch this space in the near future for more functionality soon.
+
+Loving Hydrogen right now. It's fast and works great! See Bruno present reactions as one of the Matrix Live demos (scroll up)
+
+### NeoChat
+
+[Carl Schwan](https://matrix.to/#/@carl:kde.org) announced:
+
+> In terms of code, this week we didn't get much activity. The only noteworthy news is that we can now send spoilers, and use two new commands: `/tableflip` and `/unflip` thanks to Smitty van Bodegom.
+>
+> Aside from that, we had 2 productive BoFs during Akademy 2021. The first one was about creating a library with shared chat visual components for KDE's chat apps: NeoChat for Matrix, Tok for Telegram and Kaidan for XMPP, KDE Connect and Spacebar for SMS, ... The second BoF was more about NeoChat and Quotient and we discussed how to move forwards with some problems (e.g. non-hacky text input auto-completion) but also the roadmap around E2EE, Spaces and Widgets support. Speaking about E2EE, we will have some very good news to announce next week, stay tuned!
+
+/me only learned about `/tableflip` and `/unflip` this today... and looking forward to this E2EE news!
+
+### Fractal
+
+[Alexandre Franke](https://matrix.to/#/@afranke:matrix.org) announced:
+
+> In the [past couple of weeks](https://matrix.org/blog/2021/06/04/this-week-in-matrix-2021-06-04#fractal), [Alejandro](https://aledomu.github.io/gnome/another-year-in-gsoc-and-fractal/) and [Kai](https://blog.kaialexhiller.de/?p=6) started the coding period of their GSoC internship and explained on their blogs what they will be working on. Their projects are respectively to add support for multiple accounts, and to bring Fractal Next to feature parity with current stable. Read more details on their blogs, and subscribe to them to keep informed as they go!
+>
+> Julian managed to [land the “Explore” view](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/773), our room directory. There may be some changes down the road, but it looks good for now:
+
+![2021-06-25-pucq0-image.png](/blog/img/2021-06-25-pucq0-image.png)
+
+> Newcomer Giuseppe De Palma removed bashisms from our git hook because they were preventing him from contributing. They then went on to [tweak the history style to remove the grey background around it](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/775). They also got rid of a papercut from the login form: before his intervention, users needed to provide the full homeserver URL with the `http://` or `https://` scheme prefix. It will now [default to HTTPS](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/780).
+>
+> We also did some housekeeping work that should improve the experience for people joining us on the Fractal Next fun. After being away for a while, Christopher Davis came back with a patch to add a couple more build related directories to our `.gitignore`. Julian cleaned up the pseudo-milestone description that we had in the README, now that we have a proper [Gitlab milestone](https://gitlab.gnome.org/GNOME/fractal/-/milestones/18). And finally, I added [a warning on the login screen](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/777) to better reflect on the Work In Progress state of the branch.
+
+
+### Element Clients
+
+Updates from the teams!
+
+**Delight team**
+
+
+
+*   Spaces:
+    *   Drag and drop for reordering Spaces is now live on Android! And testable on [develop](develop.element.io) for Web
+    *   We’ve also added labs flags to Web & Android to test a few different things, in particular
+        *   Toggling ‘Home’ to show all rooms, or only rooms which don’t belong to Spaces
+        *   Toggling to not show People in Spaces
+    *   Please try them out! After living with a different config for a few days, we’d love to hear [your feedback!](https://matrix.to/#/[#spaces-feedback-space:matrix.org](https://matrix.to/#/#spaces-feedback-space:matrix.org)) 
+
+**Web**
+
+
+
+*   1.7.31 released on Monday
+*   Nightly builds of Element Desktop optimised for Apple silicon are [now available](https://packages.riot.im/nightly/install/macos/arm64/Element%20Nightly.dmg) for testing! Please give it a try and report any issues.
+*   Added libera.chat to room directory on develop, staging, and app. It will appear in desktop builds as well next time they update.
+*   On develop
+    *   Various CI tweaks and performance improvements
+*   In flight
+    *   Adding large account performance tests
+
+**iOS**
+
+
+
+*   1.4.2 released on Monday. 1.4.3 with the fix on wellknown on Thursday
+*   Fix a bug where the wellknown was no more fetched
+*   Device dehydration is available in the SDK
+*   Still good progress on voice messages
+
+
+
+### Quaternion
+
+[kitsune](https://matrix.to/#/@kitsune:matrix.org) offered:
+
+> 0.0.95 RC is out, available from [the usual place at GitHub](https://github.com/quotient-im/Quaternion/releases/tag/0.0.95-rc), and also as Flatpak from [Flathub](https://flathub.org/apps/details/com.github.quaternion). The usual stabilisaton/bug fixing work, no new features compared to betas. This version is considerably better, and more stable, than 0.0.9.4 - packagers are welcome to push it as if it were the final release. Translators, [please help](https://app.lokalise.com/project/730769035bbc328c31e863.62506391/) to complete more languages: Polish is at 90%, Spanish almost 80%, and French just below 60% - you can make a difference!
+
+
+
+## Dept of Encryption 🔐
+
+### New paper: “Key Agreement for Decentralized Secure Group Messaging with Strong Security Guarantees”
+
+[Florian](https://matrix.to/#/@florian:dsn.tm.kit.edu) offered:
+
+> Here is a scientific paper for all interested in decentralized end-to-end encryption cryptography protocols, like Matrix' Megolm, or the MLS future of Matrix: The preprint [“Key Agreement for Decentralized Secure Group Messaging with Strong Security Guarantees”](https://eprint.iacr.org/2020/1281) by [Weidner](http://mattweidner.com/), [Kleppmann](https://martin.kleppmann.com/) et al., which will appear in the [ACM CCS 2021 Conference](https://www.sigsac.org/ccs/CCS2021/), surveys existing centralized and decentralized end-to-end cryptography protocols, Olm/Megolm (labeled as “Matrix”) among them, and discusses why the [Messaging Layer Security (MLS) IETF draft](https://datatracker.ietf.org/wg/mls/documents/) has its problems with decentralization. Following that, they come up with their own decentralized protocol, including a security and performance analysis. They improve asymptotic complexity when compared to Olm/Megolm, and the assumptions on the underlying communication layer are easily fulfilled by Matrix. They also discuss that the very good asympotic complexity of MLS cannot be reached for a decentralized end-to-end cryptography protocol.
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### Quotient
+
+[kitsune](https://matrix.to/#/@kitsune:matrix.org) reported:
+
+> Last week's news actually, but libQuotient master branch can built with Qt 6 now, laying ground for the GSoC works on PyQuotient - Python bindings for libQuotient. The library has also been updated to follow the latest CS API specification, which means basic low-level support for knocking, with higher-level library API for it coming later.
+
+
+
+### 🧙 Polyjuice Util
+
+[Polyjuice Client](https://hex.pm/packages/polyjuice_client) is a Matrix library for Elixir
+
+[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) said:
+
+> Polyjuice Util is a library of Matrix functions for Elixir that can be used for both client-side and server-side applications.  [Polyjuice Util 0.2.0](https://hex.pm/packages/polyjuice_util/0.2.0) has been released, which includes functions for common errors, handling identifiers, and for checking room permissions.  Thanks to Nico for his contributions to this release.  This release also contains some backward-incompatible changes.  See the [changelog](https://gitlab.com/uhoreg/polyjuice_util/-/blob/v0.2.0/CHANGELOG.md) for more information.
+>
+> [Polyjuice Client 0.4.1](https://hex.pm/packages/polyjuice_client/0.4.1) has also been released, which uses the new Polyjuice Util release, and adds support for the `whoami` endpoint (thanks to multiprise).
+
+
+
+## Dept of Ops 🛠
+
+### synadm 0.30
+
+[jojo](https://matrix.to/#/@jojo:peek-a-boo.at) said:
+
+> Hello dear Synapse Admins, `synadm` v0.30 is out. lt seems I was in "story telling mode" already when I wrote the release notes yesterday. That should perfectly suit a TWIM article as well 🙂 So there you go, copy/pasted from https://github.com/JOJ0/synadm/releases/tag/v0.30 with love:
+>
+> #### New
+>
+> `synadm` finally got some nicely rendered documentation pages hosted at https://synadm.readthedocs.io.
+>
+> "Login as a user" admin API support:
+>
+> * `synadm user login <user id>`
+>
+> * [Have a look at the new command's docs](https://synadm.readthedocs.io/en/latest/synadm.cli.user.html#synadm-user-login)
+>
+> New subcommand `matrix`supporting execution of regular Matrix commands. As a first shot a command to issue any Matrix API call has been implemented:
+>
+> * `synadm matrix raw endpoint/url -m post -f data.json`
+>
+> * `synadm matrix raw endpoint/url -m put -d '{"key1": "value1"}' --prompt`
+> * [The new command's docs](https://synadm.readthedocs.io/en/latest/synadm.cli.matrix.html#synadm-matrix-raw)
+>
+> _Note that this is ment to be a convenience function in case a Synapse homeserver admin wants to quickly help users e.g set specific settings available via regular Matrix calls and not the Synapse admin API directly. Also note that it is not ment to replace the awesome Matrix CLI tools that are already out there. matrix-commander, matrixcli to mention just a few._
+>
+> The second command below `matrix` is:
+>
+> * `synadm matrix login <user id>`
+>
+> * [The new command's docs](https://synadm.readthedocs.io/en/latest/synadm.cli.matrix.html#synadm-matrix-login)
+>
+> It implements a plain login on a Matrix server using username and password. It can even be used to retrieve a token for an admin user, e.g helpful for setting up fresh `synadm` installations. [Read about it here](https://github.com/JOJ0/synadm#getting-an-admin-token)
+>
+> #### Improved
+>
+> The README has been updated to point to the nicely rendered docs recently published at https://matrix-org.github.io/synapse/develop/usage/administration/admin_api/index.html
+>
+> #### Notes
+>
+> Update via PyPI or git as described in the update chapter: https://github.com/JOJ0/synadm#update
+>
+> Thanks to the friendly people in [#synadm:peek-a-boo.at](https://matrix.to/#/#synadm:peek-a-boo.at) for reviewing, testing, discussing functionality and giving advice. And for this release, a special thanks to @hpd:hpdeifel.de https://github.com/hpdeifel
+
+
+
+### Matrix Navigator v0.1.1
+
+[Christian](https://matrix.to/#/@christianp:vector.modular.im) said:
+
+> Matrix Navigator aims to be a replacement for `curl` when querying and mutating room states, including permissions.
+>
+> * Plenty of fixes (reminder, this is still alpha software)
+>
+> * Allows to join, leave rooms and inviting users.
+> * New wide-screen layout
+>
+> * Errors are now shown in input fields or alerts.
+>
+> https://matrix-navigator.chrpaul.de
+>
+> Code and roadmap: https://gitlab.com/jaller94/matrix-navigator
+
+
+
+## Dept of Services 🚀
+
+### Thoughts on Matrix account ownership
+
+[Thib](https://matrix.to/#/@thib:ergaster.org) told us:
+
+> with the change of policy we deployed on GNOME's Matrix instance, it occurred to me that we had overlooked an important aspect in our relationship with Matrix: do we own our Matrix account? And the answer is... maybe! In this post I cover the differences between personal account, organisation-owned account, the importance of segregating activities on Matrix... and why this _may_ change with Portable Identities in the future
+>
+> https://blog.ergaster.org/post/20210622-owning-your-matrix-account/
+
+
+
+## Dept of Jobs 💰️
+
+### Tchap are hiring!
+
+[Thib](https://matrix.to/#/@thib:ergaster.org) reported:
+
+> the French government deployed Tchap, an instant messaging based on Matrix. They are looking for tech and processes oriented people to improve the service.
+>
+> https://beta.gouv.fr/recrutement/2021/06/15/tchap-devops.html (🇫🇷)
+> https://beta.gouv.fr/recrutement/2021/06/15/charge.ou.chargee.de.deploiement.html (🇫🇷)
+
+
+
+## Final Thoughts 💭
+
+[Andy](https://matrix.to/#/@andycuccaro:matrix.org) reported:
+
+> I know this isn't TWIM-worthy, but I figured people in this room would find it interesting: yesterday there was a very popular post on reddit about how we don't appreciate email enough, and in the comments there were some mentions of matrix as the counterpart for messaging: 
+>
+> https://old.reddit.com/r/Showerthoughts/comments/o6cs4l/comment/h2s5dcz/
+
+Actually I think this is very interesting. Worth taking a read to understand how people not already using Matrix might see the world.
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|maunium.net|517|
+|2|int21.dev|520|
+|3|matrix.sp-codes.de|607|
+|4|trolla.us|615|
+|5|aria-net.org|765|
+|6|vonderste.in|812.5|
+|7|heitkoetter.net|832|
+|8|lily.flowers|991|
+|9|thomcat.rocks|1237.5|
+|10|kittenface.studio|1559|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|dendrite01.fiksel.info|1300.5|
+|2|weber.world|2473|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
