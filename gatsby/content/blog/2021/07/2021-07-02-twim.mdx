@@ -1,0 +1,428 @@
+---
+date: '2021-07-02'
+title: 'This Week in Matrix 2021-07-02'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-07-02-CS1WM-image.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/c6s7O3j5998" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of *Status of Matrix* 🌡️
+
+Top billing for Beeper this week, who have been working hard and getting product out!
+
+### Beeper update
+
+[Tulir](https://matrix.to/#/@tulir:maunium.net) reported:
+
+> It's been a month since our last update. A lot of the work since then has been on making everything more reliable, but we've also added new features to our clients and started making some new bridges.
+>
+> **Desktop**
+>
+> * Added thread UI for Slack-bridged rooms. Internally they're just replies like before, but the client will intelligently collapse replies in Slack rooms into threads.
+>
+> * Merged upstream Element additions like voice messages.
+>   * Also merged some features that aren't in Element yet, like [Giphy integration](https://github.com/matrix-org/matrix-react-sdk/pull/5814).
+>
+> **iOS**
+>
+> * Released Beeper iOS to Testflight.
+>
+> **Android**
+>
+> * Added grouping rooms by chat network based on the `m.bridge` state event. The UI is similar to spaces, but they're not actual Matrix spaces (yet).
+>
+> * Added support for Android 11's "conversation" notifications.
+>
+> **Bridges**
+>
+> * Android Messages is turning out difficult to reverse-engineer to a sufficiently reliable level, so we're building a new SMS bridge into our Android app. It'll also be available as a standalone open-source app, which already exists at https://gitlab.com/beeper/android-sms (but doesn't have any setup instructions yet).
+>
+> * We've funded development of a LinkedIn bridge. sumner will post a more detailed update about that.
+>
+> We're hiring React, iOS, Android and SRE/Devops engineers. If you're interested, check out https://angel.co/company/beeperhq or DM [Eric Migicovsky](https://matrix.to/#/@eric:beeper.com).
+
+
+
+![2021-07-02-CS1WM-image.png](/blog/img/2021-07-02-CS1WM-image.png)
+
+## Dept of Spec 📜
+
+MSC state changes:
+- "[MSC3262 aPAKE authentication](https://github.com/matrix-org/matrix-doc/pull/3262)" was created.
+- "[MSC2918: Refresh tokens](https://github.com/matrix-org/matrix-doc/pull/2918)" was proposed for FCP
+
+Bruno has been working on aggregations as part of his work for Hydrogen. He reported:
+> I've been cleaning up the relations MSCs, finding a balance between documenting the current state and not losing track of community concerns. I've started with [MSC 2674](https://github.com/matrix-org/matrix-doc/pull/2674) which is the very basic format of relations, and will move on to annotations/reactions ([MSC 2677](https://github.com/matrix-org/matrix-doc/pull/2677)) next week.
+
+![Spec progress graph](/blog/img/2021-07-02-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) announced:
+
+> We're pleased to announce the [release of Synapse 1.37.1](https://matrix.org/blog/2021/06/30/security-update-synapse-1-37-1-released) this week, which includes mitigations for the recent distributed spam attack across the public Matrix network. **We advise upgrading as soon as possible.**
+>
+> Otherwise, Synapse 1.37 highlights include:
+>
+> * A new, [generic interface for extension modules](https://matrix-org.github.io/synapse/v1.37/modules.html) (See this week's Matrix Live for more info!)
+>
+> * Completed server-side support for [MSC2403: Add "knock" feature](https://github.com/matrix-org/matrix-doc/pull/2403) and [Room Version 7](https://spec.matrix.org/unstable/rooms/v7/).
+> * An experimental implementation of [MSC2716: Incrementally importing history into existing rooms](https://github.com/matrix-org/matrix-doc/pull/2716) ([#9247](https://github.com/matrix-org/synapse/pull/9247)) as part of Element's work to fully [integrate Gitter into Matrix](https://matrix.org/blog/2020/09/30/welcoming-gitter-to-matrix).
+>
+> * A more nuanced implementation of Synapse's optional user-interactive authentication ("UIA") grace period ([#10184](https://github.com/matrix-org/synapse/pull/10184)).
+>
+> ...and a bunch of smaller bug fixes and performance improvements.
+>
+> Check out the [blog post](https://matrix.org/blog/2021/06/30/security-update-synapse-1-37-1-released) for more.
+
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) offered:
+
+> Got another week of [Helm Chart](https://gitlab.com/ananace/charts) updates, with the Synapse chart getting a bunch of worker improvements and additional configurability, as well as being updated to first 1.37.0 and then 1.37.1
+
+
+
+## Dept of Bridges 🌉
+
+### LinkedIn <-> Matrix Bridge
+
+[sumner](https://matrix.to/#/@sumner:sumnerevans.com) reported:
+
+> I'm excited to announce that I started working on a new bridge for bringing LinkedIn messages to Matrix! It's currently in the early stages of development and not production-ready. The current feature set includes: backfill from LinkedIn, user name and profile picture sync, message sending from Matrix -> LinkedIn, and real-time message puppetting from LinkedIn -> Matrix. There's much more to come, and you can join [#linkedin-matrix:nevarro.space](https://matrix.to/#/#linkedin-matrix:nevarro.space)  for updates. Development is being funded by Beeper, and is being designed with integration into Beeper as it's primary goal. However, the bridge is open source (Apache 2.0) and will be available to self-host. The source code is here: https://github.com/sumnerevans/linkedin-matrix.
+
+Great work from Sumner! Glad to see people have the *option* to bridge their LinkedIn messages!
+
+### matrix-puppeteer-line update
+
+[Fair](https://matrix.to/#/@fair:miscworks.net) reported:
+
+> [matrix-puppeteer-line](https://src.miscworks.net/fair/matrix-puppeteer-line/): A bridge for LINE Messenger based on running LINE's Chrome extension in Puppeteer.
+>
+> Better LINE->Matrix read receipt bridging is now supported in the `testing` branch! The bridge now checks all LINE chats (not just the most recently-used one) to see if messages you sent have been read (in LINE). This works by cycling through all LINE chats where the final message is posted by you and doesn't have a "Read" marker on it yet (or for multi-user chats, if your last message hasn't been read by everyone in the room).
+>
+> With that, I'll consider the bridge to be in Early Beta! 🎉 I'm now testing the bridge for myself to iron out a few kinks, and am preparing a PR to the [matrix.org](https://github.com/matrix-org/matrix.org/) webpage to have this listed on https://matrix.org/bridges/.
+>
+> Discussion:
+>
+> [#matrix-puppeteer-line:miscworks.net](https://matrix.to/#/#matrix-puppeteer-line:miscworks.net) 
+> Issue page: https://src.miscworks.net/fair/matrix-puppeteer-line/issues
+
+
+
+### Matrix Adapter for WebThings 0.4.0
+
+[Christian](https://matrix.to/#/@christianp:vector.modular.im) told us:
+
+> This addon for the WebThings gateway lets you send Matrix messages when your IoT fridge is empty – or whatever you have connected to your gateway.
+>
+> The update fixes predefined messages getting sent to the default room and is the first to be tested against gateway version 1.0.0.
+> https://gitlab.com/webthings/matrix-adapter or in the addon list of your WebThings gateway
+
+
+
+## Dept of Clients 📱
+
+### NeoChat
+
+[Carl Schwan](https://matrix.to/#/@carl:kde.org) announced:
+
+> This week, NeoChat gained support for a Global Menu on Plasma and macOS. Aside from that, we fixed a few crashes.
+>
+> But the biggest news of the week is that we will get funding from NLNet to implement E2EE support in Quotient and NeoChat as part of their grants to improve the internet. We will report on our progress on that front here!
+
+This is terrific news, big thanks to [NLNet](https://nlnet.nl/) for making this choice!
+
+### FluffyChat
+
+[FluffyChat](https://fluffychat.im) is the cutest cross-platform matrix client. It is available for Android, iOS, Web and Desktop.
+
+[krille](https://matrix.to/#/@krille:janian.de) said:
+
+> FluffyChat 0.33.0 has been released.
+>
+> Just a more minor bugfixing release with some design changes in the settings, updated missing translations and for rebuilding the arm64 Linux Flatpak.
+>
+> #### Features
+>
+> * redesigned settings
+>
+> * Updated translations - thanks to all translators
+> * display progress bar in first sync
+>
+> * changed Linux window default size
+> * update some dependencies
+>
+> #### Fixes
+>
+> * Favicon on web
+>
+> * Database not storing files correctly
+> * Linux builds for arm64
+>
+> * a lot of minor bugs
+
+
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt, Boost.Asio and C++17. It supports E2EE and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) offered:
+
+> Hello World! I am here to bring you Nheko news!
+>
+> We merged the Spaces branch, which means Nheko master can now show some spaces. Peeking unjoined rooms, nesting spaces and creating them should be coming soon. We are also looking into how to fit knocking into the UI (we already rendered incoming knocks in the timeline for a while).
+>
+> You can also now edit still pending messages, which should help if your server is slow and you notice a typo. The edit will then get queued and be sent as soon as the server acknowledges they received the original message. Apart from that there have been some improvements to the readability of the room list and some other UI elements.
+>
+> Last but not least, we switched out our entire http backend from Boost to Curl. For that I wrote a simple wrapper around Curl](https://nheko.im/nheko-reborn/coeurl). This fixes about 10 issues around connection shutdown, brings proxy support, http/2 and http/3 support and in general makes Nheko crash less and reduces latency a LOT! This will obviously cause some pain for packagers, but I hope it isn't too bad. Some of the issues this fixes only had 2 digits in our bugtracker and one was even filed by benpa!
+>
+> Have a nice weekend everyone! ♥
+
+![2021-07-02-0r-zH-clipboard.png](/blog/img/2021-07-02-0r-zH-clipboard.png)
+
+### Fractal
+
+[Alexandre Franke](https://matrix.to/#/@afranke:matrix.org) told us:
+
+> Chris tweaked the UI in various places. It’s a lot of small details that together make for a smoother experience. I encourage you to read the details in the description of [!782](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/782). This is the only MR that landed since [last week](https://matrix.org/blog/2021/06/25/this-week-in-matrix-2021-06-25#fractal), but our people have been hard at work nonetheless. Kai blogged about his journey working on the [search bar of doom](https://blog.kaialexhiller.de/?p=29) and Alejandro [shared his own struggle](https://aledomu.github.io/gnome/small-progress-update-of-my-2021-gsoc-with-fractal-next/). In the meantime, Julian’s work has mostly happened [upstream](https://github.com/matrix-org/matrix-rust-sdk/pull/288) in matrix-rust-sdk.
+
+
+
+### Element Clients
+
+Updates sent by the teams
+
+**Delight team**
+
+
+
+* Spaces:
+    * Research: We’ve been reaching out to people to walk us through how they use Spaces now and what they’d like to see different to help us learn and iterate;
+    * Restricted room access: Some good progress towards shipping improved team spaces 
+
+**Web**
+
+
+
+* v1.7.32-rc.1 is on [https://staging.element.io/](https://staging.element.io/) in advance of release on Monday - please test!
+* Some major progress on conversion to TypeScript, finding some bugs along the way. The main source of the element-desktop project is now fully converted to TypeScript!
+* A styled player component for the audio messages feature, available in the labs section.
+
+**iOS**
+
+
+
+* v1.4.4 ([https://github.com/vector-im/element-ios/releases/tag/v1.4.4](https://github.com/vector-im/element-ios/releases/tag/v1.4.4)) is available in TestFlight. It should be on the App Store on Monday
+* It contains a bug fix for Single Sign-On (SSO)
+* We started to attack some papercuts. Expect more in the coming weeks.
+
+**Android**
+
+
+
+* We are actively implementing the highly expected voice message feature!
+* A release candidate v1.1.12 will be available during the week-end
+* We are focusing to fix some crashes, to improve the stability of the application
+
+Vocie messages!
+
+### kazv
+
+[tusooa](https://matrix.to/#/@tusooa:tusooa.xyz) reported:
+
+> [kazv](https://lily.kazv.moe/kazv/kazv) is a matrix client based on [libkazv](https://lily.kazv.moe/kazv/libkazv).
+>
+> Talk to us on [#kazv:tusooa.xyz](https://matrix.to/#/#kazv:tusooa.xyz) .
+>
+> #### Updates
+>
+> 0. [@tusooa:tusooa.xyz](https://matrix.to/#/@tusooa:tusooa.xyz) fixed a thread-safety issue that caused crashes. https://lily.kazv.moe/kazv/kazv/-/merge_requests/6
+>
+> 1. We now have a new developer [@nannanko:tusooa.xyz](https://matrix.to/#/@nannanko:tusooa.xyz) . She implemented a login failure prompt for kazv. https://lily.kazv.moe/kazv/kazv/-/merge_requests/4
+>
+> You can get the current AppImage build at https://lily.kazv.moe/kazv/kazv/-/jobs/611/artifacts/browse .
+
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### matrix-bot-sdk v0.5.19
+
+[TravisR](https://github.com/turt2live) announced:
+
+> v0.5.19 of the [matrix-bot-sdk](https://www.npmjs.com/package/matrix-bot-sdk) is out now with fixed power level checking (with an added utility function), improved default error logging, and a typo fix in reply creation. Check it out, and visit [#matrix-bot-sdk:t2bot.io](https://matrix.to/#/#matrix-bot-sdk:t2bot.io) for help & support.
+
+
+
+## Dept of Ops 🛠
+
+### Matrix Navigator 0.1.2
+
+[Christian](https://matrix.to/#/@christianp:vector.modular.im) told us:
+
+> It's an alpha-stage webapp for developers to replace curl for room state administration.
+>
+> This week I added features for better member management, including kick, ban and unban.
+> https://gitlab.com/jaller94/matrix-navigator
+
+
+
+## Dept of Services 🚀
+
+### GoMatrixHosting v0.5.1 🚀
+
+[Michael](https://matrix.to/#/@michael:perthchat.org) told us:
+
+> Exciting new update, we can now wireguard an on-premises server from just about anywhere and make it work with the AWX system. This is useful when your server doesn't have a static or public IP address, or when some other networking issue prevents you from running a Matrix service on it.
+>
+> Follow of on GitLab: https://gitlab.com/GoMatrixHosting
+>
+> Or come say hello on Matrix: [#general:gomatrixhosting.com](https://matrix.to/#/#general:gomatrixhosting.com) 
+>
+> ```
+>
+> * Add '00 - Create Wireguard Server' template for AWX admin to provision Wireguard servers that on-premises servers can use to connect.
+>
+> * Subscription involved can view an additional '0 - {{ subscription_id }} - Provision Wireguard Server' template.
+> * Add /docs/Setup_Wireguard_Server.md guide.
+>
+> * Add onboarding script for Windows 10 users.
+> * Raise maximum download size to 200MB.
+>
+> ```
+
+
+
+## Dept of Bots 🤖
+
+### Mjolnir
+
+[TravisR](https://github.com/turt2live) offered:
+
+> [Mjolnir](https://github.com/matrix-org/mjolnir) is a moderation bot for communities on Matrix. It helps with a lot of the actions covered by the [moderation guide](https://matrix.org/docs/guides/moderation), including capabilities to apply bans from other trusted communities. It's still a bit terse in its documentation, but if you're looking for a featureful moderation bot then it's worth a go. 
+>
+> In related news, Mjolnir [v0.1.18](https://github.com/matrix-org/mjolnir/releases/tag/v0.1.18) is out with a couple quality of life fixes - if you've been bothered by the log spam, it's now fixed :)
+
+
+
+## Dept of Guides 🧭
+
+### Matrix Limits
+
+[Ryan](https://matrix.to/#/@jryans:matrix.org) said:
+
+> I started a [tiny repo](https://github.com/jryans/matrix-limits) to collect various limits and related factoids about the Matrix specification and implementations. I hope that distilling and summarising such things at glance will make it easier to see what is and is not possible.
+>
+> If you know of more that should be listed, please contribute! 🙂
+
+
+
+### Self hosting your own Matrix server on a Raspberry Pi
+
+[Peter Roberts](https://matrix.to/#/@pwr22:shortestpath.dev) announced:
+
+> @ed:selfhostingblog.com of [theselfhostingblog.com](https://theselfhostingblog.com) has written a guide on getting started with Synapse on a Raspberry Pi using Docker Compose. You can read it [here](https://theselfhostingblog.com/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/).
+
+## Public Rooms News 🏟️
+
+### Matrix Science Reading Group
+
+[Florian](https://matrix.to/#/@florian:dsn.tm.kit.edu) said:
+
+> Together with J. Ryan Stinnett, I created the 🔖 [#matrix-science-reading-group:dsn.tm.kit.edu](https://matrix.to/#/#matrix-science-reading-group:dsn.tm.kit.edu) for exchange of and on scientific papers, books and related resources on all things Matrix: Topics ranging from peer-to-peer broadcast overlay networks over conflict-free replicated data types to end-to-end encryption. Investigating security, performance, deployability, or whatever else is interesting, by methods from observation over simulation to formal verification. 🎓️ Please join if you want to read about papers that might not be Matrix-related enough to make it into TWIM, or want to engage in the discussion. 😊 The resulting papers are collected at: https://github.com/jryans/awesome-matrix#research
+
+
+
+### German Element translation feedback
+
+[Libexus](https://matrix.to/#/@libexus:matrix.org) announced:
+
+> **Hallo deutschsprachige Matrix-Community!**
+>
+> [#element-uebersetzung-feedback:matrix.org](https://matrix.to/#/#element-uebersetzung-feedback:matrix.org)  ist ein Raum für Feedback zur deutschsprachigen Übersetzung aller Element-Clients.
+>
+> Hast du einen Fehler gefunden, ist etwas unklar oder hast du ein Anliegen an uns? Dann schreibe es gerne hier hinein!
+>
+> Jederzeit willkommen sind natürlich auch neue Übersetzerinnen und Übersetzer. Joint dazu einfach [#element-translation-de:matrix.org](https://matrix.to/#/#element-translation-de:matrix.org), [#element-translations:matrix.org](https://matrix.to/#/#element-translations:matrix.org) und lest euch den [Translation Guide](https://github.com/vector-im/element-web/blob/develop/docs/translating.md) durch.
+>
+> ___
+>
+> **Hello German-speaking Matrix community!**
+>
+> [#element-uebersetzung-feedback:matrix.org](https://matrix.to/#/#element-uebersetzung-feedback:matrix.org)  is a room for feedback about the German translation of Element.
+>
+> Have you found a mistake, is something unclear or do you have a suggestion? Please write it there!
+>
+> Also, we are always happy about new translators (for all languages!). Just join [#element-translations:matrix.org](https://matrix.to/#/#element-translations:matrix.org)  and have a look at the [translation guide](https://github.com/vector-im/element-web/blob/develop/docs/translating.md) on how to get started!
+
+
+
+### Room of the week
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) told us:
+
+> Hi everyone! Did you ever feel lost in the Matrix world? The room directory is big, but it's still hard to find something you like. Or are you a room moderator, but there is not much activity in your room because it doesn't have enough users?
+>
+> This is why I want to share rooms (or spaces) I find interesting.
+>
+> ----
+>
+> This week's room is: [#fossmaintainers:matrix.org](https://matrix.to/#/#fossmaintainers:matrix.org) 
+>
+> **"A public space for Free/Open Source Software maintainers to swap notes and discuss their craft. Inspired by https://github.com/github/maintainerweek, all maintainers welcome!"**
+>
+> ----
+>
+> If you want to suggest a room for this section, tell me in [#roomoftheweek:fachschaften.org](https://matrix.to/#/#roomoftheweek:fachschaften.org)
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|envs.net|497|
+|2|fluse.duckdns.org|653|
+|3|m.scd31.com|802.5|
+|4|maescool.be|803|
+|5|helderferreira.io|828|
+|6|nevarro.space|842|
+|7|tilde.fun|842|
+|8|fslhome.org|952|
+|9|fosil.eu|987.5|
+|10|queersin.space|1241|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|dendrite.nordgedanken.dev|246|
+|2|dendrite.neilalexander.dev|578|
+|3|dendrite01.fiksel.info|1459|
+|4|jloa.ovh|1586|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
