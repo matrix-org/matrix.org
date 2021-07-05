@@ -83,8 +83,8 @@ const HallOfFame = () => {
         },
         {
             date:'2020-07-29',
-            who: 'TR_SLimey',
-            profile: 'https://github.com/TR-SLimey/',
+            who: '0x1a8510f2',
+            profile: 'https://github.com/0x1a8510f2/',
             description: 'An issue where Element Android was leaking PII. Fixed in <a href="https://github.com/vector-im/element-android/releases/tag/v1.0.5">Element Android 1.0.5</a>',
             service: "Element"
         },
