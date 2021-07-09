@@ -66,6 +66,19 @@ image: https://matrix.org/blog/img/2021-07-09-ADEDa-stacked_area_chart.png
 
 ## Dept of Servers 🏢
 
+### Conduit
+
+Conduit is a Matrix homeserver written in Rust https://conduit.rs
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) said:
+
+> The last two weeks I worked on a few very big optimizations. We also almost finished sqlite support for Conduit, which is slower than sled in benchmarks, but has much better RAM usage characteristics.
+>
+> * Batch up and cache /sync responses for when clients time out
+>
+> * LRU cache for deserialized PDUs
+> * More efficient state res by only fetching events it needs
+
 ### Dendrite / gomatrixserverlib
 
 [Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) said:
