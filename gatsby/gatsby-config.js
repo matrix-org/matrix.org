@@ -24,7 +24,7 @@ module.exports = {
           "img-src": "'self' data: https://matomo.riot.im https://*.twitter.com https://*.twimg.com https://github.com https://*.githubusercontent.com https://*.gitlab.io",
           "connect-src": "'self' https://api.github.com https://stream.matrix.org",
           "worker-src": "'self' blob: https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com",
-          "frame-src": "'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com https://ghbtns.com https://duckduckgo.com",
+          "frame-src": "'self' https://platform.twitter.com https://syndication.twitter.com https://www.youtube.com https://ghbtns.com https://duckduckgo.com https://eduvid.org",
           "form-action": "'self' https://*.twitter.com",
           "object-src": "'self'",
           "font-src": "'self' data:",
