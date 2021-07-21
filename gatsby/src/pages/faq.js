@@ -1386,7 +1386,7 @@ const Faq = ({ data }) => {
                   <a href="https://github.com/matrix-org/dendrite">Dendrite</a>
                 </li>
                 <li>
-                  <a href="https://github.com/ruma/ruma">Ruma</a>
+                  <a href="https://gitlab.com/famedly/conduit">Conduit</a>
                 </li>
                 <li>
                   <a href="https://github.com/jevolk/charybdis">
@@ -2000,7 +2000,7 @@ const Faq = ({ data }) => {
                 a deliberately extensive 'kitchen sink' baseline of
                 functionality; XMPP has a deliberately minimal baseline set of
                 functionality. If XMPP does what you need it to do, then we're
-                genuinely happy for you! Meanwhile, rather than competing, an 
+                genuinely happy for you! Meanwhile, rather than competing, an
                 XMPP Bridge like <a href="https://github.com/SkaveRat/xmpptrix">
                   Skaverat's xmpptrix beta
                 </a>{" "}
