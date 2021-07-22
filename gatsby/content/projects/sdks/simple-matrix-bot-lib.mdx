@@ -1,0 +1,63 @@
+---
+layout: project
+title: Simple-Matrix-Bot-Lib
+categories:
+  - sdk
+description: An easy to use bot library for the Matrix ecosystem written in Python.
+repo: https://github.com/KrazyKirby99999/simple-matrix-bot-lib
+featured: true
+language: Python
+author: KrazyKirby99999
+license: MIT
+home: https://simple-matrix-bot-lib.readthedocs.io/
+room: "#simplematrixbotlib:matrix.org"
+e2e: "no"
+thumbnail: /docs/projects/images/python.png
+screenshot: /docs/projects/images/python.png
+maturity: Released
+---
+
+Simple-Matrix-Bot-Lib is a Python bot library for the Matrix ecosystem built on [matrix-nio](https://github.com/poljar/matrix-nio)
+
+[View on Github](https://github.com/KrazyKirby99999/simple-matrix-bot-lib) or [View on PyPi](https://pypi.org/project/simplematrixbotlib/) or
+[View docs on readthedocs.io](https://simple-matrix-bot-lib.readthedocs.io/en/latest/)
+
+### Installation
+
+To install the simplematrixbotlib package, pip can be used:
+```bash
+$ pip install simplematrixbotlib
+```
+
+### Usage
+
+Python 3.5 or higher is required to use the simplematrixbotlib package.
+
+
+#### Responding to a message
+This example is compatable with simplematrixbotlib versions >= 1.3.0
+```python
+
+import simplematrixbotlib as botlib
+import os
+
+creds = botlib.Creds("https://example.com", "user", "pass")
+bot = botlib.Bot(creds)
+
+PREFIX = '!'
+
+async def echo(room, message):
+    """
+    Example function that "echoes" arguements.
+    Usage:
+    example_user- !echo say something
+    echo_bot- say something
+    """
+    match = botlib.MessageMatch(room, message, bot)
+    if match.not_from_this_bot() and match.prefix(PREFIX) and match.command("echo"):
+        await bot.api.send_text_message(room.room_id, match.args)
+
+bot.add_message_listener(echo)
+
+bot.run()
+```
