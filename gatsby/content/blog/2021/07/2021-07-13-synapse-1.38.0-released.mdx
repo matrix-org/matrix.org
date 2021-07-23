@@ -8,6 +8,8 @@
 
 Synapse 1.38.0 is out now!
 
+> __NOTE:__ We released Synapse 1.38.1 on Thursday, July 22nd. It [mitigates](https://github.com/matrix-org/synapse/issues/10456) a client bug with Synapse 1.38.0's smaller sync responses which prevented new Element Android sessions from successfully participating in encrypted conversations. Server administrators are strongly encouraged to upgrade.
+
 ## (Big) Integers
 
 Synapse's database schema used `integer` columns in a few places where values could potentially overflow a maximum value of 2<sup>31</sup>. One such column is `events.stream_ordering`, which surpassed 2<sup>31</sup> on matrix.org last week.
