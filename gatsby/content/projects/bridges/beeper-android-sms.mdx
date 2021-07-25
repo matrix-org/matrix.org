@@ -1,0 +1,29 @@
+---
+layout: project
+title: android-sms
+categories:
+ - bridge
+description: A Matrix-Android SMS bridge
+author: Beeper
+maturity: Alpha
+language: Kotlin
+license: Apache-2.0
+repo: https://gitlab.com/beeper/android-sms
+room: "#imessage:maunium.net"
+featured: true
+bridges: SMS
+thumbnail: /docs/projects/images/sms-icon.svg
+---
+
+An Android app that wraps [mautrix-imessage](https://github.com/tulir/mautrix-imessage)
+to bridge SMS from your Android phone to Matrix.
+
+Setup instructions [on docs.mau.fi](https://docs.mau.fi/bridges/go/imessage/android/setup.html).
+
+✓ SMS (text messages)  
+✓ MMS (photos and other attachments)  
+✗ RCS  
+✓ Group chats  
+✓ Backfilling messages from Android SMS database  
+✓ Double puppeting (for backfilling)  
+✓ End-to-bridge encryption
