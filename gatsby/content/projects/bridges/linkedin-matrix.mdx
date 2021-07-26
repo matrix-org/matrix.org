@@ -1,0 +1,29 @@
+---
+layout: project
+title: linkedin-matrix
+categories: 
+ - bridge
+description: A LinkedIn Messaging <-> Matrix bridge
+author: sumner
+maturity: Beta
+language: Python
+license: Apache 2.0
+repo: https://gitlab.com/beeper/linkedin
+room: "#linkedin-matrix:nevarro.space"
+featured: true
+bridges: LinkedIn Messaging
+thumbnail: /docs/projects/bridges/images/linkedin-logo.svg
+---
+
+A LinkedIn Messaging <-> Matrix puppeting bridge. Written in Python using [linkedin-messaging-api](https://github.com/sumnerevans/linkedin-messaging-api) and [mautrix-python](https://matrix.org/docs/projects/sdk/mautrix-python.html).
+
+✓ 1:1 chats  
+✓ Group chats  
+✗ User Profiles, Companies or anything else outside the LinkedIn Messaging functionality  
+✓ Plain text messages (rich text is not supported by LinkedIn)  
+✓ Most message media (photos, videos, GIFs, files)  
+✓ Mentions  
+✓ Message redaction/delete  
+✓ Double puppeting  
+✓ Backfilling history and missed messages  
+✓ End-to-bridge encryption
