@@ -1,0 +1,430 @@
+---
+date: '2021-07-30'
+title: 'This Week in Matrix 2021-07-30'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-07-30-A8NSR-screenshotTWIM.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uASdQxT8boM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Let's learn about PyQuotient with Vlad and Alexey.
+
+## Dept of *Status of Matrix* 🌡️
+
+### Element raises $30M as Matrix explodes!
+
+At first when I read the headline I was scared - *explodes*? How can I protect myself from this explosion? After a [moment of reading this huge news](https://element.io/blog/element-raises-30m-as-matrix-explodes/), however, I was relieved - Matrix has *exploded in popularity*, and [Element](https://element.io/) have all new funding to keep driving the ecosystem forward. Let's go!
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) announced:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://spec.matrix.org/unstable/proposals.
+>
+> #### MSC Status
+>
+> **New MSCs:**
+>
+> * _There were no new MSCs created this week._
+>
+> **MSCs with proposed Final Comment Period:**
+>
+> * _No MSCs entered proposed FCP state this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **Merged MSCs:**
+>
+> * [MSC3083: Restricting room membership based on membership in other rooms](https://github.com/matrix-org/matrix-doc/pull/3083)
+> #### Spec Updates
+>
+> While a quiet week for MSC state changes (shown above), there's still plenty of work and collaboration happening!
+>
+> Spaces work marches forward as MSC3083 has been merged - allowing for users to join a room in a space based on their membership in a space. We think this will really help with the management of Spaces that contain lots of rooms that are otherwise invite-only.
+>
+> Otherwise [MSC3291](https://github.com/matrix-org/matrix-doc/pull/3291) (Muting in VoIP calls) has been receiving positive feedback this week!
+>
+> Finally, [MSC3289](https://github.com/matrix-org/matrix-doc/pull/3289) (room v8) is ticking along as the implementation is tested in Synapse and Complement tests.
+
+
+
+![2021-07-30-7paYt-stacked_area_chart.png](/blog/img/2021-07-30-7paYt-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Synapse
+
+Synapse is a popular homeserver written in Python.
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) told us:
+
+> [Synapse 1.39.0](https://matrix.org/blog/2021/07/29/synapse-1-39-0-released) is out! 
+>
+> Of all the pull requests we landed, my hat is off to MadLittleMods and his Graphviz prowess in [#10250](https://github.com/matrix-org/synapse/pull/10250), which moves us one step further down the path toward _[MSC2716](https://github.com/matrix-org/matrix-doc/pull/2716): Incrementally importing history into existing rooms._ Mmm. Graphs.
+>
+> But back to Synapse! You should check out the [release announcement](https://matrix.org/blog/2021/07/29/synapse-1-39-0-released), but the bulk of the work this cycle went into internal cleanups. Synapse should also be slightly more performant, reliable, and should log fewer spurious errors. Of note, ShadowJonathan did a lot of work with `pyupgrade` and `com2ann` to move the entire codebase to more modern Py3.6+ conventions and inline type annotations; thanks, ShadowJonathan!
+>
+> Synapse 1.39 also continues our march toward unifying Synapse's interface for extension modules, and we've now exposed plugin hooks for the `account_validity` option, and experimentally implemented hooks for third party event rules.
+>
+> Lastly, special thanks to kroeckx who has submitted 17 pull requests against our [SyTest test suite](https://github.com/matrix-org/sytest) in the past month, mainly arising from running SyTest against [Conduit](https://conduit.rs/). Thank you!
+
+
+
+## Homeserver Deployment 📥️
+
+### matrix 1-click app
+
+[j3s (he/him)](https://matrix.to/#/@j3s:cyberia.club) offered:
+
+> Hello! This week, I created a [matrix 1-click app](https://marketplace.digitalocean.com/apps/matrix-synapse-backend) on the DigitalOcean marketplace. It's basically a pre-baked droplet image that is pre-configured with synapse, element-web, caddy, postgres, plus some setup and moderation tools. My intent was to make self-hosting a Matrix system as easy as pointing some DNS records and running a single script. It makes a lot of sense for smaller, more casual Matrix homeservers, and can serve as a good starting point! It also includes some small utility scripts - `./reset-password`, `./new-user`, etc.
+>
+> Secrets like the postgres password and registration password are generated on first boot, there's no sensitive data baked into the image. Of course, it would be nice to be able to verify this - the source code used to build the image is being open sourced. I'm just waiting for some internal processes to finish. It will show up at https://github.com/digitalocean/marketplace-matrix somewhat soon!
+
+
+
+## Dept of Bridges 🌉
+
+### Heisenbridge
+
+[hifi](https://matrix.to/#/@hifi:vi.fi) announced:
+
+> Heisenbridge roundup!
+>
+> [Heisenbridge](https://github.com/hifi/heisenbridge/) is a bouncer-style Matrix IRC bridge.
+>
+> * Lazy joining of IRC users (see below)
+>
+> * Keep nick feature has been added
+> * Bridge aliveness can be tracked from bridge bot presence
+>
+> * Ident replies can be customized by the admin for all users, default to mxid hash
+> * Pillifying IRC nicks has been improved
+>
+> The biggest impact feature this time around is configurable lazy joining IRC users which improves the experience of joining massive IRC channels by not flooding the homeserver with join events. This is now the default and can be changed globally by the bridge admin or overridden per room by users.
+>
+> Many fixes here and there. Still a few issues left before 1.0 and a lot of testing.
+>
+> Thanks!
+
+
+
+## Dept of Clients 📱
+
+### Announcing Matrix client [Cinny](https://cinny.in/) 1.0.0
+
+[ajbura](https://matrix.to/#/@ajbura:matrix.org) reported:
+
+> Cinny is a web-based matrix client focusing primarily on simple, elegant and secure interface.
+>
+> The story started when a friend of mine introduced me to matrix and even after his help it was too difficult for me to get around with Element. I guess it was because Element is too different from other popular chat apps. Then I tried to find a good alternative for web but no success.
+>
+> That's when me and my friend thought about creating Cinny. For the few weeks we were doing it for fun but when we shared a screenshot of the prototype, the response from people was surprising and that's when things got interesting. We got to know that a lot of people out there are looking for a simple and modern client and so we started building it.
+>
+> Screenshot on Chrome desktop (see below)
+>
+> #### Features
+>
+> Cinny support the following features:
+>
+> * Login/logout and registration of accounts
+>
+> * Four different themes
+> * Basic alphabetically sorted channel list with unread notification indicator
+>
+> * Creating channels and joining/leaving public channels
+> * Creating Direct messages
+>
+> * Inviting users to channel and basic user list
+> * Sending text messages, emojis and attachments
+>
+> * Support viewing edited messages, reactions, replies, attachments and markdowm
+> * Read receipt for latest messages and typing notifications
+>
+> * History scroll and button for quickly scrolling to bottom in room timeline
+> * Channel topic, join, leave, kick, ban, avatar/nick changes in room timeline
+>
+> * Sending/receiving encrypted text messages and attachments
+>
+> You can find more about Cinny at https://cinny.in
+>
+> Join our channel at: [#cinny:matrix.org](https://matrix.to/#/#cinny:matrix.org)
+> Github: https://github.com/ajbura/cinny
+>
+> Twitter: https://twitter.com/@cinnyapp
+
+![2021-07-30-h1N8o-preview-butter.png](/blog/img/2021-07-30-h1N8o-preview-butter.png)
+
+Cinny is astounding. A client appears to us *nearly fully-formed* and looks great while doing it!
+
+### Ement.el
+
+[alphapapa](https://matrix.to/#/@alphapapa:matrix.org) announced:
+
+> Many improvements have been made to [Ement.el](https://github.com/alphapapa/ement.el), a new Matrix client for Emacs.  Ement.el can now send and display images, replies, and reactions, as well as edit sent messages.  It also supports desktop notifications, configurable by the user to pop up for mentions or for all rooms with open buffers.  (Room: [#ement.el:matrix.org](https://matrix.to/#/#ement.el:matrix.org))
+
+Something something expands until it reads... Matrix?
+
+### Element Clients
+
+Updates from the teams
+
+**VoIP**
+- 1:1 screen sharing is now merged and on develop! Please give it a try and report bugs - plan is for it to go out in the release after next (ie. two weeks from Monday). Huge thanks to Simon for working on this.
+- Simon also has PRs up for mute status signalling, done via [MSC3291](https://github.com/matrix-org/matrix-doc/pull/3291)
+- Fixing the bug where the buttons in a call don’t work in full screen mode
+
+**Web**
+- v1.7.34-rc.1 is out (maybe even .2 by the time you read this) - full release planned for Monday
+- Continuing to figure out a plan of attack for threading
+- Looking at message bubble feedback & fixing bugs
+- Also looking at fixing blurhash bugs
+
+**iOS**
+- The coming release, 1.4.8, which is available on TestFlight, supports voice messages. The feature is under a labs setting. DM and room tabs now contain only rooms. Local contacts and the public rooms directory can be found elsewhere in the UI. Full changelog at https://github.com/vector-im/element-ios/releases/tag/v1.4.8.
+- We continue to make good progress on papercuts (https://github.com/vector-im/element-ios/milestone/58) and the overall app stabilisation.
+
+**Android**
+- Release candidate 1.1.15 is getting prepared. It will include voice messages, under a lab flag.
+- Some bugs on the crypto part have been fixed, it should improve the performance on e2e rooms.
+
+
+
+### FluffyChat v0.35.0 has been released
+
+[FluffyChat](https://fluffychat.im) is the cutest cross-platform matrix client. It is available for Android, iOS, Web and Desktop.
+
+[krille](https://matrix.to/#/@krille:janian.de) reported:
+
+> This release introduces stickers and a lot of minor bug fixes and improvements.
+>
+> #### All changes:
+>
+> #### Feature
+>
+> * Add sticker picker [205d7e8]
+>
+> * Also suggest username completions based on their slugs [3d980df]
+> * Nicer mentions [99bc819]
+>
+> * Render stickers nicer [35523a5]
+> * Add download button to audio messages [bbb2f43]
+>
+> * Android SSO in webview [befd8e1]
+>
+> #### Fixes
+>
+> * Reset bootstrap on bad ssss [b78b654]
+>
+> * Hide stickers button when there is not sticker pack [b71dd4b]
+> * Download files on iOS [a8201c4]
+>
+> * Record voice messages on iOS [4c2e690]
+> * cropped sticker [a4ec2a0]
+>
+> * busy loop due to CircularProgressIndicator [15856e1]
+> * Crash on timeline [a206f23]
+>
+> * typo on webiste [00a693e]
+> * Make sure the aspect ratio of image bubbles stays the same [a4579a5]
+>
+> * Linux failing on attempting to open hive [76e476e]
+> * Secure storage [0a52496]
+>
+> * Make sure the textfield is unfocused before opening the camera [6821a42]
+> * Close safariviewcontroller on SSO [ba685b7]
+>
+> #### Refactor
+>
+> * Rename store and allow storing custom values [b1c35e5]
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### Ruma
+
+[iinuwa](https://matrix.to/#/@iinuwa:matrix.org) announced:
+
+> This summer's gone by so fast it feels like it's only been a week! Here's a summary of what's happened with Ruma the past few weeks:
+>
+> We have had a productive summer with our two Google Summer of Code students, Adam Blanchet and Devin Ragotzy. Adam finished implementing the last of our Identity Service API endpoints, bringing us to 100% implementation of all the Matrix API endpoints! (And we promise there are no bugs because "Rust," right?)
+>
+> Besides improving the Matrix ecosystem, Devin has been helping the Rust ecosystem at large by writing some Clippy lints to improve our codebase and upstreaming his additions.
+>
+> Read more here: https://www.ruma.io/news/gsoc-2021-intro/.
+
+
+
+## Dept of Ops 🛠
+
+### maubot-ldap-inviter
+
+[David Mehren](https://matrix.to/#/@davebloggt:kif.rocks) offered:
+
+> I made [maubot-ldap-inviter](https://github.com/davidmehren/maubot-ldap-inviter), a maubot plugin that (surprisingly) invites users into Matrix rooms, according to their membership in LDAP groups.
+>
+> We are switching from RocketChat to Matrix in the next round of a software engineering course where students work on software projects in small groups.
+>
+> RocketChat has a LDAP sync, which we previously used to auto-add students and tutors to the chatrooms they need to be in (global announcement room, helpdesk, chat for their group etc.).
+> As there was no such feature for Matrix, I built the bot over the last few days.
+>
+> It's still somewhat specific to our LDAP setup, but if anyone wants to use the bot and has questions, just open an issue in the repo!
+
+
+
+## Dept of Services 🚀
+
+### Mother Miounne from etke.cc
+
+[Aine](https://matrix.to/#/@aine:etke.cc) reported:
+
+> Mother Miounne is here
+>
+> At [etke.cc](https://etke.cc) we suffered long enough with 2 things - order form on website and invites on private matrix servers.
+>
+> No more suffering! Because now the [Mother Miounne](https://gitlab.com/etke.cc/miounne) exists and it does 2 things (for now): handles of web/html forms (sends it to matrix room) and handles invite tokens (integrates with [matrix-registration](https://github.com/ZerataX/matrix-registration))
+>
+> We use it as backend of etke.cc service for some time, but still consider it as unstable, so try it yourself, hope it can help you 😉
+>
+> PS: [#miounne:etke.cc](https://matrix.to/#/#miounne:etke.cc) - matrix room with news & discussions
+
+
+
+## Dept of Events and Talks 🗣️
+
+### Matrix @ [FrOSCon 2021](https://www.froscon.de/en/) (virtual)
+
+[Oleg](https://matrix.to/#/@oleg:fiksel.info) reported:
+
+> Great news! Matrix Dev-Room and Matrix booth are approved! 🎉
+>
+> We are currently creating a schedule and we have open slots for talks and workshops!
+>
+> If you like to present your topic or just help out please contact me ([@oleg:fiksel.info](https://matrix.to/#/@oleg:fiksel.info)) (or oleg@fiksel.info) now! Language is preferably German, but English is also ok.
+>
+> See you at [#FrOSCon:fiksel.info](https://matrix.to/#/#FrOSCon:fiksel.info)  😉
+
+
+
+## Dept of Interesting Projects 🛰️
+
+### TheBoard
+
+[Timo](https://matrix.to/#/@toger5:matrix.org) announced:
+
+> This is a personal project I started a couple of weeks ago. I was dreaming of a good open source solution for OneNote or GoodNotes far a long time. There are already great projects, like[Xournal++](https://xournalpp.github.io/) and [Whitebophir](https://github.com/lovasoa/whitebophir). But, they do not include the extent of possibilities to flexible host, collaborate and structuring the notes I have wished for.
+>
+> Recently, I was thinking about the exact requirements I wanted for such a whiteboard:
+>
+> * Real time synchronization (cloud storage)
+>
+> * Authentication/account infrastructure (to invite and collaborate on one whiteboard)
+> * Adding/Removing ppl to a whiteboard
+>
+> * Reliable hosting (when having cloud storage, I don't want to trust a one-man project to continue hosting. And a lot of ppl won’t self-host.)
+> * Structuring whiteboards in categories
+>
+> * Viewing history and display which part has been drawn by which person
+> * Annotating other whiteboards with new layers
+>
+> * Hosting for media like PDF's and images
+>
+> Looking at this list, Matrix was such an obvious choice. I could comment every point but basically with: "A whiteboard should be a Matrix room" everything is said.
+>
+> **TheBoard (probably not the final name) is exactly that.** The frontend is not done yet, but already in an okay looking and usable state.
+>
+> **Before trying it out:** It takes really long to log in with an account with lots of rooms. So, I highly recommend to NOT use your main Matrix account.
+> Additionally, it is necessary to tag rooms as whiteboards. (really un-intuitive UX that will be improved) But for now the + button needs to be pressed and a (empty (not necessary but recommended) AND UNENCRYPTED) room needs to be selected.
+>
+> **UPDATE** I just (on Friday) finished initial spaces support to categorize the whiteboard in notebooks (aka spaces). They can only be create within a matrix client that supports spaces. But they will be displayed properly in TheBoard. (see screenshot)
+>
+> Any problems, ideas and feedback is highly welcome as a github issue or in the matrix channel #TheBoard:matrix.org.
+>
+>
+> #### TLDR:
+>
+> This project is whiteboard (similar to OneNote) which is
+>
+> using Matrix as its backend. All your drawings are stored in matrix rooms
+> on your matrix server and are accessible to anyone who is invited.
+>
+> Try It out at: https://toger5.github.io/TheBoard  _As always: use at your own Risk_
+>
+> Join the matrix channel at: #TheBoard:matrix.org
+> Github: https://github.com/toger5/TheBoard
+
+
+
+![2021-07-30-A8NSR-screenshotTWIM.png](/blog/img/2021-07-30-A8NSR-screenshotTWIM.png)
+
+### graph.settgast.org updated
+
+[Chris](https://matrix.to/#/@chris:settgast.org) announced:
+
+> Thanks to the awesome https://serverstats.nordgedanken.dev project by MTRNord  my small server version history graph now contains more of the matrix fediverse: We went from ~3000 to over 5000 active visible homeservers on https://graph.settgast.org/
+
+Two superb projects combining forces! I've long been a fan of Chris' graphs for tracking the growth of the server ecosystem.
+
+## Matrix in the News 📰
+
+### Famedly in the news!
+
+[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) offered:
+
+> Famedly in the news! https://e-health-com.de/details-news/messenger-am-uk-frankfurt-ermoeglicht-simultane-ueberfuehrung-von-chats-in-die-patientendokumentation/
+
+## Final Thoughts 💭
+
+### Happy Sysadmin day! 🥳
+
+[Oleg](https://matrix.to/#/@oleg:fiksel.info) made us aware:
+
+> Let's use this day to thank your Matrix home server admin! Especially folks managing Matrix.org and all the public bridges! ❤️
+>
+> (If you are hosting yourself then you can tap yourself on a shoulder for doing a great work 😁)
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|envs.net|370|
+|2|boba.best|451|
+|3|kapsi.fi|462.5|
+|4|aria-net.org|771|
+|5|trolla.us|828|
+|6|gnome.org|932.5|
+|7|privacytools.io|986.5|
+|8|ntns.in|1195.5|
+|9|zemos.net|1347|
+|10|catvibers.me|1801.5|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|cd.mau.dev|72|
+|2|dendrite.nordgedanken.dev|295|
+|3|conduit.rs|536|
+|4|dendrite01.fiksel.info|1157|
+|5|dendrite.s3cr3t.me|1703.5|
+|6|matrix-testing.0x1a8510f2.space|3640.5|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
