@@ -2806,10 +2806,10 @@ const Faq = ({ data }) => {
                 What is Synapse?
               </h4>
               <p>
-                Synapse is a reference &quot;
-                <a href="#definitions">homeserver</a>&quot; implementation of
-                Matrix from the core development team at matrix.org, written in
-                Python 2/Twisted. It is intended to showcase the concept of
+                Synapse is a Matrix &quot;
+                <a href="#definitions">homeserver</a>&quot; implementation 
+                developed by the matrix.org core team, written in
+                Python 3/Twisted. It is intended to showcase the concept of
                 Matrix and let folks see the spec in the context of a codebase
                 and let you run your own homeserver and generally help bootstrap
                 the ecosystem.
