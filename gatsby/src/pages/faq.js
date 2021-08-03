@@ -1378,8 +1378,9 @@ const Faq = ({ data }) => {
                 <a href="/docs/spec">the spec</a> are very welcome!
               </p>
               <p>
-                The most well-distributed <a href="#definitions">client</a>, but
-                other projects aiming to implement the server component include:
+                <a href="https://github.com/matrix-org/synapse/">Synapse</a> is
+                the most well-distributed homeserver, but other projects aiming to
+                implement the server component include:
               </p>
               <ul>
                 <li>
