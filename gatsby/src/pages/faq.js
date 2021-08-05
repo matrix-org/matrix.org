@@ -1245,8 +1245,8 @@ const Faq = ({ data }) => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/matrix-org/matrix-python-sdk">
-                    matrix-python-sdk
+                  <a href="https://github.com/poljar/matrix-nio">
+                    matrix-nio (Python)
                   </a>
                 </li>
                 <li>
