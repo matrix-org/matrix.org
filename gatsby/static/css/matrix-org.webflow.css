@@ -117,10 +117,6 @@ a {
   background-color: #0098d4;
 }
 
-.mxnavbar__navlink.mxnavbar__navlink--try {
-  display: none;
-}
-
 .mxnavbar__logo {
   margin-top: 15px;
 }
@@ -1357,9 +1353,6 @@ a {
   }
   .mxnavbar__navlink.mxnavbar__navlink--primary {
     display: none;
-  }
-  .mxnavbar__navlink.mxnavbar__navlink--try {
-    display: block;
   }
   .mxnavbar__menubutton.w--open {
     background-color: #f4f4f4;
