@@ -57,6 +57,7 @@
     "clean": "gatsby clean",
     "dev": "gatsby develop -o",
     "develop": "gatsby develop",
+    "gatsby": "gatsby",
     "serve": "gatsby serve",
     "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
