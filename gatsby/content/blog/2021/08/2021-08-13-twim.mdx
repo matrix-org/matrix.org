@@ -1,0 +1,377 @@
+---
+date: '2021-08-13'
+title: 'This Week in Matrix 2021-08-13'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: TODO
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z7tGU6vv6ZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) offered:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+>
+> #### MSC Status
+>
+> **New MSCs:**
+>
+> * [MSC3338: Adding iframe specifics to preview json](https://github.com/matrix-org/matrix-doc/pull/3338)
+> * [MSC3325: Upgrading invite-only rooms](https://github.com/matrix-org/matrix-doc/pull/3325)
+>
+> * [MSC3316: Add timestamp massaging to the spec](https://github.com/matrix-org/matrix-doc/pull/3316)
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **Merged MSCs:**
+>
+> * [MSC3289: Room version 8](https://github.com/matrix-org/matrix-doc/pull/3289)
+>
+> **Closed MSCs:**
+>
+> * [\[WIP\] MSC2359: E2EE VoIP Conferencing](https://github.com/matrix-org/matrix-doc/pull/2359)
+> #### Spec Updates
+>
+> Work on Spaces continues with [MSC2946](https://github.com/matrix-org/matrix-doc/pull/2946) (Space Summary API), specifically revolving around how to paginate the summary. This has called into question how [pagination across Matrix works in general](https://github.com/matrix-org/matrix-doc/issues/1898#issuecomment-896717689), which is a prime target for refactoring - perhaps an upcoming consistent pagination MSC? :)
+>
+> Otherwise, as listed above, [MSC3289](https://github.com/matrix-org/matrix-doc/pull/3289) (room v8) has merged! It brings with it the ability to grant the ability to join a room based on one's membership in another room. While the was originally conceived for allowing users that are part of one Space to be allowed to join rooms, it has been built upon in other creative ways. Such as in [MSC3325](https://github.com/matrix-org/matrix-doc/pull/3325), where it could be used to make room upgrades more seamless!
+>
+> And finally, a special thanks to Lukas Lihotzki for all of [their spec PRs](https://github.com/matrix-org/matrix-doc/pulls?q=is%3Apr+author%3Alukaslihotzki+sort%3Aupdated-desc+) this week. They're been stellar!
+
+
+
+![2021-08-13-MVPF_-stacked_area_chart.png](/blog/img/2021-08-13-MVPF_-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Synapse
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) reported:
+
+> Big news! [Synapse 1.40 is out](https://matrix.org/blog/2021/08/10/synapse-1-40-0-released) and it comes with support for [Room Version 8](https://github.com/matrix-org/matrix-doc/pull/3289)! Version 8 includes "[restricted rooms](https://github.com/matrix-org/matrix-doc/pull/3083)" which are only visible and joinable by members of a specific Space (or via direct invitation). This finally makes it *useful* to use Spaces as containers for private rooms, like you might with a company, guild, or open source community. Once invited to the parent Space, members can join and discover the otherwise private rooms within. No more `/invite` spam every time you bring someone on board!
+>
+> Also: If you've received any push notifications in Element Android or Element iOS this week, they've come via our [shiny new stateless release of Sygnal](https://github.com/matrix-org/sygnal/releases/tag/v0.10.0)! If you _haven't_ received expected push notifications on those platforms this week... please alert us immediately. 😉
+>
+> Lastly, Element is overjoyed to welcome David Robertson to the Synapse team. Welcome aboard, David!
+
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) reported:
+
+> And this week too keeps on going with the regular Kubernetes [Helm Chart](https://gitlab.com/ananace/charts) updates, this time bumping matrix-synapse to 1.40.0.
+
+
+
+## Dept of Bridges 🌉
+
+### Gitter
+
+Synapse is a popular homeserver written in Python.
+
+[Eric Eastwood](https://matrix.to/#/@madlittlemods:matrix.org) reported:
+
+> Exciting update this week on the [MSC2716](https://github.com/matrix-org/matrix-doc/pull/2716) front for backfilling historical messages into existing rooms! All of the [big](https://github.com/matrix-org/synapse/pull/10245) [pieces](https://github.com/matrix-org/synapse/pull/10498) are now merged for full-fat federated historical messages in Synapse 💪
+>
+> [MSC2716](https://github.com/matrix-org/matrix-doc/pull/2716) was also consolidated and updated to propose the `/batch_send` implementation we're using in Synapse. There is also a plan for how this can be backwards compatible with existing room versions so no need for those pesky room upgrades. This will help us be able to jump in early and use this for Gitter as soon as the new event types become stable. Go jump in on [MSC2716](https://github.com/matrix-org/matrix-doc/pull/2716) to give feedback and read up on the details 😀
+
+
+
+## Dept of Clients 📱
+
+### Cinny v1.1.0
+
+[ajbura](https://matrix.to/#/@ajbura:matrix.org) said:
+
+> It has been almost two weeks since we have launched Cinny and here is what we have done in these days:
+>
+> #### Features
+>
+> * You can now decrypt message history by importing encryption keys.
+>
+> * We now support few commands along with emoji autofill and our unique go-to commands.
+> * You can send messages with markdown. (This message is sent from Cinny)
+>
+> * It now supports replying messages and message deletion.
+> * It now shows MXID on hover over display name.
+>
+> * You can now see who reacted on message by hovering over reaction.
+> * Channels/rooms can be joined by alias.
+>
+> #### Bugs
+>
+> * Fixed login issue on servers that don't support delegation.
+>
+> * Fixed login issue related to non-complaint localpart. (Thanks to phildenhoff)
+> * Fixed invalid password issue. (Thanks to Troplo)
+>
+> You can find more about Cinny at https://cinny.in
+>
+> Join our channel at: [#cinny:matrix.org](https://matrix.to/#/#cinny:matrix.org)
+> Github: https://github.com/ajbura/cinny
+>
+> Twitter: https://twitter.com/@cinnyapp
+
+
+
+![2021-08-13-9eps4-reply_preview_in_butter_theme.png](/blog/img/2021-08-13-9eps4-reply_preview_in_butter_theme.png)
+
+### Ement.el
+
+[alphapapa](https://matrix.to/#/@alphapapa:matrix.org) offered:
+
+> [Ement.el](https://github.com/alphapapa/ement.el), a Matrix client for Emacs, continues to improve.  Some of the changes in the past week:
+>
+> *Additions*
+>
+> + Messages may now be written in Org-mode syntax (a format similar to but more powerful than Markdown).  Internally, it's automatically converted to HTML and sent as the message's formatted body.  This supports nearly any HTML feature that Org-mode can export to, including rich text, bulleted and numbered lists, and even tables (this message is being written directly in Org syntax; see a table of new bindings at the end of this list).
+> + An optional pop-out compose buffer makes writing and editing long messages easier (also being used for this message).
+>
+> + Read/fully-read marker lines are now displayed after the last read message, and these are synced with the server and other clients.  These lines can also be placed with a command, making it easy to return to a certain event later, even on other clients.
+> + Usernames at the beginning of messages may optionally be colored to match the addressee's username.  This especially helps following conversations in busy rooms.
+>
+> + Ement.el is confirmed to work with Pantalaimon, the E2EE-aware reverse proxy, making encrypted rooms work transparently.  Once Pantalaimon is installed and configured, connecting through it with Ement.el is trivial, and this step is documented in the readme.
+>
+> *Improvements*
+>
+> + Per-user displayname and message colors have improved (and configurable) contrast ratio with the background color.
+> + Reactions are sorted by the number of users who have sent each one.
+>
+> + Unread rooms are displayed more prominently in the room list.
+> + New default bindings make it quick to jump to the mentions and notifications buffers.
+>
+> + Sync timeouts are handled more gracefully and Ement.el re-syncs automatically.
+> + Various minor fixes and enhancements.
+>
+> And here's the new-bindings table, written directly in Org syntax and sent automatically as HTML:
+>
+> | Binding | Command                        |
+> |---------+--------------------------------|
+> | S-SPC   | Scroll up                      |
+> | M-SPC   | Move to last-read marker       |
+> | C-k     | Delete message                 |
+> | M-g M-l | Switch to room list buffer     |
+> | M-g M-m | Switch to mentions buffer      |
+> | M-g M-n | Switch to notifications buffer |
+>
+> Come join us in [#ement.el:matrix.org](https://matrix.to/#/#ement.el:matrix.org)!
+
+![2021-08-13-s-1xM-ement-for-twim.png](/blog/img/2021-08-13-s-1xM-ement-for-twim.png)
+
+### Fractal
+
+[Alexandre Franke](https://matrix.to/#/@afranke:matrix.org) announced:
+
+> Fractal updates [two weeks in a row](https://matrix.org/blog/2021/08/06/this-week-in-matrix-2021-08-06#fractal)? 😱
+>
+> In our fractal-next branch, Julian [tweaked the style of the ugly “this is an early development version, here be dragons” warning](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/800), while GSoC intern Kai did a couple maintenance tasks: he [updated some documentation](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/809) and [fixed clippy warnings](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/812).
+>
+> The stable branch also saw some activity, with new contributor 🎉 Amanda fixing _two bugs_ ([#392](https://gitlab.gnome.org/GNOME/fractal/-/issues/392), [#803](https://gitlab.gnome.org/GNOME/fractal/-/issues/803)) with a single merge request, [sorting out our handling of `<p>` tag trimming](https://gitlab.gnome.org/GNOME/fractal/-/merge_requests/813).
+
+
+
+### Element Clients
+
+With updates from the teams!
+
+**Delight team**
+
+* The tool for migrating communities to spaces in Element Web has been completed
+* Lots of accessibility support for Spaces in Element Web
+* Preparing Element Web to take Spaces out of Labs
+* Pagination of the spaces summary now works for local rooms, we're continuing work on fetching data over federation.
+* On iOS, we’re working on exploring rooms and browsing users in a space
+
+**Web**
+
+
+
+* v1.8.0-rc1 is available on https://staging.element.io/
+* Work on threads continues - we are narrowing down on a first prototype based on treating chained replies as threads
+* We’ve spiked support for [Sentry](https://sentry.matrix.org/sentry/riot-web/) which will give us more insights into how the app is working in the wild
+* Support for hot module reloading for React components, following last week’s work on CSS hot reloading
+* Improved the look and feel of image blur hashing by adding some animations
+
+**iOS**
+
+
+
+* The release candidate [1.5.1](https://github.com/vector-im/element-ios/releases) is available for testing on TestFlight. Voice messages are enabled by default
+* [Towncrier](https://github.com/matrix-org/matrix-ios-sdk/blob/develop/CONTRIBUTING.md#changelog) is now enabled on all of our 3 repositories
+* Reaction count got a fix. Please rageshake if you see unexpected count
+* Notifications content has been fixed or improved
+* Element alpha is almost finished. This is a new app that we will use for internal testing. There will be a QR code on every PR like this [one](https://github.com/vector-im/element-ios/pull/4635) to install the build on a device. This device must be part of our ad-hoc device list
+* On the performance side, the incremental sync has been improved and merged on develop. Next is lazy loading room messages
+
+**Android**
+
+
+
+* We made 2 releases this week: [1.1.16](https://github.com/vector-im/element-android/releases/tag/v1.1.16) to fix a regression that prevented sending messages in e2ee rooms and [1.2.0](https://github.com/vector-im/element-android/releases/tag/v1.2.0) with voice messages enabled by default
+* Voice messages have been improved before the release
+* We continued to update the call UI with call tiles in the timeline
+
+
+
+
+
+
+
+### Sailtrix
+
+[hengyedev](https://matrix.to/#/@hengyedev:matrix.org) said:
+
+> Sailtrix is a matrix client for SailfishOS.
+>
+> Here's a summary of Sailtrix development this week:
+>
+> * Added notifications support
+>
+> * Changed the layout to use tabs
+> * Added display of timestamps to messages
+>
+> * Display names are shown for direct messages.
+> * Messages sent by the same user in succession are grouped
+>
+> Join us in [#sailtrix:matrix.org](https://matrix.to/#/#sailtrix:matrix.org) . GitLab: https://gitlab.com/HengYeDev/harbour-sailtrix
+>
+> Download at OpenRepos: https://openrepos.net/content/hengyedev/sailtrix
+
+
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt and C++17. It supports E2EE and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) reported:
+
+> You now get notified, if someone reuses a megolm session index, because that in theory could be used by an attacker to send seemingly verified messages. We also now render decryption errors more nicely and users can now explicitly request decryption keys (in addition to the automatic key requests in the background that already existed). We also fixed an issue, that could corrupt the database when using the flatpak and if you lost your network connection, Nheko should now reconnect faster instead of potentially waiting 17 minutes for a TCP timeout. The storage for cross-signing secrets should now be more reliable, you can close image popups with the "Escape" key, close the current room by double clicking it and a few more miscellaneous bugfixes.
+>
+> You can track the remaining E2EE bits, before we declare our E2EE support as stable, in this comment now: https://github.com/Nheko-Reborn/nheko/issues/23#issuecomment-894689158
+
+
+
+
+
+## Dept of Bots 🤖
+
+### Hebbot
+
+[Felix](https://matrix.to/#/@felix:haecker.io) reported:
+
+> I released Hebbot v2.0 (the matrix bot which generates the thisweek.gnome.org blog posts)
+>
+> https://github.com/haecker-felix/hebbot/releases/tag/v2.0
+>
+> It has learned how to handle images / videos, and can now insert them directly into the rendered markdown. Creating new posts has been significantly simplified and now makes even less work for the author. For example, Hebbot now automatically generates a command to quickly download all images/videos at once.
+>
+> Maybe other communities are interested in creating a "This Week in X" blog as well👀?
+
+
+
+![2021-08-13-NQPFN-ima_f906312.jpeg](/blog/img/2021-08-13-NQPFN-ima_f906312.jpeg)
+
+### Maubot-Pocket
+
+[jaywink](https://matrix.to/#/@jaywink:federator.dev) offered:
+
+> I find "read it later" services like Pocket extremely useful, but fail hard at actually keeping my read it later list at a sane level. For me it's hard to maintain the list and actually read through things as choosing which one to process feels overwhelming due to the amount of items.
+>
+> Randomization to the rescue! I made a Pocket plugin for Maubot which gives me a random article from my list and allows me to easily archive it. Now I don't need to decide which article to pick, the computer does that for me!
+>
+> Source code and info: https://github.com/jaywink/maubot-pocket
+>
+> Ps. Maubot is truly awesome as a bot system, well documented and easy to develop on 😻
+
+
+
+![2021-08-13-1Tte3-maubot-pocket.gif](/blog/img/2021-08-13-1Tte3-maubot-pocket.gif)
+
+## Dept of Events and Talks 🗣️
+
+### Matrix @ Bornhack 2021 ⛺
+
+[carl](https://matrix.to/#/@carl:bordum.dk) reported:
+
+> [Bornhack](https://bornhack.dk/bornhack-2021/) is a 7 day outdoor tent camp where hackers, makers and people with an interest in technology or security come together to celebrate technology, socialise, learn and have fun. 
+>
+> This year, Asbjørn  and I are hosting a couple of events related to Matrix:
+>
+> * [A workshop on getting started developing for Matrix](https://bornhack.dk/bornhack-2021/program/build-a-project-on-matrix/)
+>
+> * [A lightning talk about Cactus Comments](https://bornhack.dk/bornhack-2021/program/cactus-comments-web-comments-built-on-matrix/)
+> * [A meetup for Matrix users](https://bornhack.dk/bornhack-2021/program/matrix-user-meetup/)
+>
+> If you attend Bornhack, please come by and say hi! If you are thinking about attending, don't hesitate to reach out and ask us anything 🌵⛺
+
+
+
+## Final Thoughts 💭
+
+### Room of the week
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) reported:
+
+> Hi everyone! Did you ever feel lost in the Matrix world? The room directory is big, but it's still hard to find something you like. Or are you a room moderator, but there is not much activity in your room because it doesn't have enough users?
+>
+> This is why I want to share rooms (or spaces) I find interesting.
+>
+> ---
+>
+> This week's room is: [#gamedev:matrix.org](https://matrix.to/#/#gamedev:matrix.org) 
+>
+> **"game development"**
+>
+> ---
+>
+> If you want to suggest a room for this section, tell me in [#roomoftheweek:fachschaften.org](https://matrix.to/#/#roomoftheweek:fachschaften.org)
+
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|envs.net|452|
+|2|boba.best|501|
+|3|trolla.us|656|
+|4|mindlesstux.com|947|
+|5|matrix.sp-codes.de|1040|
+|6|cyberdi.sk|1598|
+|7|shortestpath.dev|1846|
+|8|ziroh.be|1972.5|
+|9|catvibers.me|2392|
+|10|casavant.org|2617|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|dendrite.nordgedanken.dev|402|
+|2|dendrite.s3cr3t.me|1333.5|
+|3|dendrite01.fiksel.info|1577|
+|4|weber.world|4128|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
