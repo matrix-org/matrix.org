@@ -2,13 +2,20 @@
 
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Layout, HallOfFameEntry} from '../components'
+import { Layout, HallOfFameEntry } from '../components'
 
 import config from '../../config'
 
 
 const HallOfFame = () => {
     const hallOfFameEntries = [
+        {
+            date: '2021-07-03',
+            who: 'Aaron Raimist',
+            profile: 'https://github.com/aaronraimist/',
+            description: 'Discovered that an explicit assignment of power level 0 was misinterpreted as the default power level. Fixed in Synapse v1.40.0.',
+            service: 'Synapse'
+        },
         {
             date: '2021-05-21',
             who: 'Aaron Raimist and an anonymous security researcher',
