@@ -1,3 +1,14 @@
+cache_plugin_config: &cache_plugin_config
+  backend: tarball
+  key: "deps-{{ checksum 'package.json' }}-{{ checksum 'gatsby-config.js' }}-{{ checksum 'gatsby-node.js' }}"
+  tarball:
+    path: '/tmp/buildkite-cache'
+    max: 7 # Optional. Removes tarballs older than 7 days.
+  paths:
+    - ./node_modules/
+    - ./.cache/
+    - ./public/
+
 steps:
   # fetch the latest spec build, and apply styling to it.
   # This step also sets up the swagger API.
@@ -40,6 +51,7 @@ steps:
           volumes:
             - "./gatsby:/workdir"
           always_pull: true
+      - gencer/cache#v2.4.8: *cache_plugin_config
     commands:
       - ln -s /opt/gatsby/node_modules .
       - gatsby build
