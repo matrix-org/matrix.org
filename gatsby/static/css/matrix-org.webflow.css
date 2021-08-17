@@ -1352,7 +1352,9 @@ a {
     margin-bottom: 20px;
   }
   .mxnavbar__navlink.mxnavbar__navlink--primary {
-    display: none;
+    background-color: #f4f4f4;
+    color: #222222;
+    padding: 0px 30px;
   }
   .mxnavbar__menubutton.w--open {
     background-color: #f4f4f4;
