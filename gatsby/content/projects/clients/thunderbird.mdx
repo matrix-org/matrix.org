@@ -3,14 +3,34 @@ layout: projectimage
 title: Mozilla Thunderbird
 categories: 
  - client
-description: A free email & chat app
-author: Frédéric Wang
+description: A free email, calendar & chat app
+author: Mozilla
 maturity: Beta
 language: C
 license: MPL-2.0
-repo: 
+platforms:
+    - Linux
+    - Mac
+    - Windows
+repo: https://hg.mozilla.org/comm-central
+home: https://www.thunderbird.net/
+room: "#maildev:mozilla.org"
+features:
+    Room user list: yes
+    Display Room Description: yes
+    Edit Room Description: yes
+    Send read markers: yes
+    Accepting Invites: yes
+    Typing Notification: yes
+    Multiple Matrix Accounts: yes
+    Room upgrades: yes
+    # See https://hg.mozilla.org/releases/comm-esr91/file/tip/mail/locales/l10n-changesets.json
+    Localisations: 65
+    SSO Support: yes
 ---
 
-Initial support for Matrix in [Mozilla Thunderbird](https://www.mozilla.org/en-US/thunderbird/), available in Nightly since March 2017, and due to land in Instantbird/Thunderbird 54.
+[Thunderbird](https://www.thunderbird.net/) is a free, open-source email, calendar, and chat application which runs on multiple platforms. It supports multiple instant messaging protocols, including IRC, XMPP, and Matrix.
 
-To enable, turn `chat.prpls.prpl-matrix.disable` to `false` in the advanced config editor (>Tools >Options >Advanced >Config Editor).
+Thunderbird is [available for download](https://www.thunderbird.net/) and the [source code is available](https://hg.mozilla.org/comm-central). Additionally there is [documentation for getting started with contributing](https://developer.thunderbird.net/). Please [file any bugs found](https://bugzilla.mozilla.org/enter_bug.cgi?product=Chat+Core&component=Matrix).
+
+Matrix support in Thunderbird is enabled by default in Nightly builds (as of Thunderbird 91), but can be enabled in Beta and ESR builds by setting `chat.prpls.prpl-matrix.disable` to `false` in the advanced config editor (>Tools >Options >Advanced >Config Editor).
