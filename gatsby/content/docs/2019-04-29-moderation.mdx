@@ -117,7 +117,16 @@ For further detailed info about server ACLs, see [https://matrix.org/docs/spec/c
 
 ### A note on state resets
 
-Prior to Matrix 1.0, a bug existed which caused room state (e.g. membership, power levels, bans/kick data) to intermittently be reset to a historical value due to a bad merge conflict resolution - a so-called ‘state reset’, or the ‘hotel california bug’.  This was improved in v2 and later of the room algorithm, which will be used as the default when creating new rooms in Matrix 1.0.  However, as of April 2019 most existing rooms still use the original buggy v1 algorithm.  The best way for now to handle a state reset is to manually re-apply any bans & ACLs if they are reset.  However, if state resets keep happening, it is possible to upgrade the room algorithm via Element/Web with the undocumented `/upgraderoom 6` command - but please note this is **not** recommended, as we are still testing the final room algorithm and upgrade mechanism for Matrix 1.0.
+Prior to Matrix 1.0 in room version 1, a bug existed which caused room state
+(e.g. membership, power levels, bans/kick data) to intermittently be reset to
+a historical value due to a bad merge conflict resolution - a so-called
+'state reset', or the 'hotel california bug'. This was improved in room
+version 2 onwards and room state should no longer diverge. However, as of
+April 2019, most existing rooms still use the original buggy v1 algorithm.
+It is possible to upgrade the room version in Element via the undocumented
+`/upgraderoom 6` command - but please note there are several
+[UX bugs](https://github.com/vector-im/element-web/labels/A-Room-Upgrades)
+which make this process a bit rough sometimes.
 
 
 ### Bridged rooms
