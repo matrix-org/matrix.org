@@ -1,6 +1,26 @@
 name: "🌐 Build the matrix.org website"
 on: [workflow_dispatch, push, pull_request]
 jobs:
+  build-jekyll:
+    name: "🌐 Jekyll"
+    runs-on: ubuntu-latest
+    container:
+      image: "matrixdotorg/matrixdotorg-build:0.2"
+    steps:
+      - name: "📥 Source checkout"
+        uses: actions/checkout@v2
+      - name: "🚧 Jekyll build"
+        run: |
+          . /env/bin/activate
+          ./jekyll/generate.sh
+          cp -rf ./pre-generated/* jekyll/_site/
+      - name: "📦 Tarball creation"
+        run: tar -czf jekyll-site.tar.gz jekyll/_site
+      - name: "📤 Artifact upload"
+        uses: actions/upload-artifact@v2
+        with:
+          name: spec-artifact
+          path: jekyll-site.tar.gz
   build-gatsby:
     name: "🌐 Gatsby"
     runs-on: ubuntu-latest
