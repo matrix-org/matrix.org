@@ -40,4 +40,29 @@ jobs:
         with:
           name: gatsby-artifact
           path: gatsby/gatsby-site.tar.gz
+  build-guides:
+    name: "📖 Implementation guides"
+    runs-on: ubuntu-latest
+    container:
+      image: "buildpack-deps"
+    steps:
+      - name: "📥 Source checkout"
+        uses: actions/checkout@v2
+      - name: "🚧 Build implementation guides"
+        run: |
+          wget https://github.com/rust-lang/mdBook/releases/download/v0.4.1/mdbook-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
+          tar -xf mdbook-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
+          ./mdbook build server -d ${GITHUB_WORKSPACE}/implementation-guides/implementation-guides/server
+          ./mdbook build client -d ${GITHUB_WORKSPACE}/implementation-guides/implementation-guides/client
+          ./mdbook build application-services -d ${GITHUB_WORKSPACE}/implementation-guides/implementation-guides/application-services
+          cp index.html ./implementation-guides/
+        working-directory: implementation-guides
+      - name: "📦 Tarball creation"
+        run: tar -czf implementation-guides.tar.gz implementation-guides
+        working-directory: implementation-guides
+      - name: "📤 Artifact upload"
+        uses: actions/upload-artifact@v2
+        with:
+          name: guides-artifact
+          path: implementation-guides/implementation-guides.tar.gz
 
