@@ -1,0 +1,23 @@
+name: "🌐 Build the matrix.org website"
+on: [workflow_dispatch, push, pull_request]
+jobs:
+  build-gatsby:
+    name: "🌐 Gatsby"
+    runs-on: ubuntu-latest
+    container:
+      image: "matrixdotorg/matrixdotorg-gatsby:latest"
+    steps:
+      - name: "📥 Source checkout"
+        uses: actions/checkout@v2
+      - name: "🚧 Gatsby build"
+        run: ln -s /opt/gatsby/node_modules . && gatsby build
+        working-directory: gatsby
+      - name: "📦 Tarball creation"
+        run: tar -czf gatsby-site.tar.gz public
+        working-directory: gatsby
+      - name: "📤 Artifact upload"
+        uses: actions/upload-artifact@v2
+        with:
+          name: gatsby-artifact
+          path: gatsby/gatsby-site.tar.gz
+
