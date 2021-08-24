@@ -21,9 +21,8 @@ cd "$(dirname "$(dirname "${SELF}")")"
 
 SITE_BASE="$(pwd)"
 
-# grab and unpack the latest matrix-docs build from buildkite
-rm -rf assets.tar.gz assets
-scripts/fetch-buildkite-artifact matrix-dot-org matrix-doc assets.tar.gz
+# Unpack the latest matrix-docs build
+# It was fetched by Github Actions
 tar -xzf assets.tar.gz
 
 # copy the swagger UI into place

@@ -1,6 +1,35 @@
 name: "🌐 Build the matrix.org website"
 on: [workflow_dispatch, push, pull_request]
 jobs:
+  build-spec:
+    name: "📖 Spec"
+    runs-on: ubuntu-latest
+    container: "python:3.6"
+    steps:
+      - name: "📥 Source checkout"
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+      - name: "📥 matrix-doc OpenAPI artifact download"
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: main.yml
+          workflow_conclusion: success
+          repo: ${{ github.repository_owner }}/matrix-doc
+          branch: ${{ github.ref }}
+          name: openapi-artifact
+      - name: "📖 Update docs"
+        run: |
+          python3 -m venv env
+          env/bin/pip install requests
+          . env/bin/activate; scripts/update_docs.sh
+      - name: "📦 Tarball creation"
+        run: tar -czf styled-docs.tar.gz content/docs
+      - name: "📤 Artifact upload"
+        uses: actions/upload-artifact@v2
+        with:
+          name: styled-docs-artifact
+          path: styled-docs.tar.gz
   build-jekyll:
     name: "🌐 Jekyll"
     runs-on: ubuntu-latest
