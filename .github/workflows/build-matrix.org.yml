@@ -72,9 +72,24 @@ jobs:
     steps:
       - name: "📥 Source checkout"
         uses: actions/checkout@v2
-      - name: "🚧 Gatsby build"
-        run: ln -s /opt/gatsby/node_modules . && gatsby build
+      - name: "🔗 Link node modules"
+        run: ln -s /opt/gatsby/node_modules . 
         working-directory: gatsby
+      - name: "📝 Cache"
+        uses: actions/cache@v2
+        with:
+          path: |
+            public
+            .cache
+          key: ${{ runner.os}}-gatsby-build-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-build-
+      - name: "🚧 Gatsby build"
+        run: gatsby build
+        working-directory: gatsby
+        env:
+          GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
+          CI: true
       - name: "📦 Tarball creation"
         run: tar -czf gatsby-site.tar.gz public
         working-directory: gatsby
