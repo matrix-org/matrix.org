@@ -20,7 +20,7 @@ jobs:
           workflow: main.yml
           workflow_conclusion: success
           repo: ${{ github.repository_owner }}/matrix-doc
-          branch: ${{ github.ref }}
+          branch: main
           name: openapi-artifact
       - name: "📖 Update docs"
         run: |
