@@ -930,7 +930,7 @@ const Faq = ({ data }) => {
                   <a href="https://developer.pidgin.im/wiki/WhatIsLibpurple">
                     libpurple
                   </a>
-                  , including Skype, Lync, XMPP,etc)
+                  , including Skype, Lync, XMPP, etc.
                 </li>
                 <li>
                   <a href="https://github.com/matrix-org/matrix-appservice-bridge">
