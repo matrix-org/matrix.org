@@ -36,7 +36,7 @@ const ClientsMatrix = ({ data }) => {
       <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="/docs/projects/try-matrix-now/">try-matrix-now</a>.
           To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>.
           To see more clients in a features matrix, see the <a href="/clients-matrix">Clients Matrix</a>.</p>
-      <h2>Mobile</h2>
+      <h2 id="mobile">Mobile</h2>
       <div className="mxgrid">
         {clients
           .filter(c =>
@@ -52,7 +52,7 @@ const ClientsMatrix = ({ data }) => {
             )
           })}
       </div>
-      <h2>Desktop</h2>
+      <h2 id="desktop">Desktop</h2>
       <div className="mxgrid">
         {clients
           .filter(c =>
@@ -68,7 +68,7 @@ const ClientsMatrix = ({ data }) => {
             )
           })}
       </div>
-      <h2>Terminal-based / Command Line</h2>
+      <h2 id="terminal">Terminal-based / Command Line</h2>
       <div className="mxgrid">
         {clients
           .filter(c =>
@@ -81,7 +81,7 @@ const ClientsMatrix = ({ data }) => {
             )
           })}
       </div>
-      <h2>Web</h2>
+      <h2 id="web">Web</h2>
       <div className="mxgrid">
         {clients
           .filter(c =>
@@ -95,7 +95,7 @@ const ClientsMatrix = ({ data }) => {
             )
           })}
       </div>
-      <h2>Nintendo 3DS</h2>
+      <h2 id="nintendo-3ds">Nintendo 3DS</h2>
       <div className="mxgrid">
         {clients
           .filter(c =>
