@@ -911,12 +911,6 @@ const Faq = ({ data }) => {
                   - for bridging to Discord
                 </li>
                 <li>
-                  <a href="https://github.com/matrix-org/matrix-appservice-gitter">
-                    matrix-appservice-gitter
-                  </a>{" "}
-                  - a bridge to Gitter
-                </li>
-                <li>
                   <a href="https://github.com/matrix-org/matrix-appservice-slack">
                     matrix-appservice-slack
                   </a>{" "}
