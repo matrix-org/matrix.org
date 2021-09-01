@@ -27,6 +27,8 @@ Note that in both cases:
 - Another user on the attacker's homeserver must be a legitimate member of the target room.
 - The information disclosed is _already_ present in the database and thus legitimately known to the administrators of homeservers participating in the target room.
 
+We'd like to credit [0xkasper](https://twitter.com/0xkasper) for discovering and responsibly disclosing these issues.
+
 This release also fixes a small regression in 1.41.0 ([#10709](https://github.com/matrix-org/synapse/issues/10709)) which broke compatibility with older Twisted versions when Synapse was a configured to send email.
 
 Please update at your earliest convenience.
