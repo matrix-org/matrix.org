@@ -16,7 +16,7 @@ jobs:
         with:
           submodules: 'recursive'
       - name: "📥 matrix-doc OpenAPI artifact download"
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@6f8f427fb41886a66b82ea11a5a15d1454c79415
         with:
           workflow: main.yml
           workflow_conclusion: success
