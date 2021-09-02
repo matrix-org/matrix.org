@@ -10,6 +10,13 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date: '2021-08-31',
+            who: 'Thomas Chauchefoin (SonarSource)',
+            profile: 'https://www.sonarsource.com/',
+            description: 'Discovered status.matrix.org was running a version of Cachet vulnerable to an <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-39165">SQL injection</a>. Since this host was used solely for running the status page, we fixed this by decommissioning it and switching to Atlassian\'s Statuspage service.',
+            service: 'status.matrix.org'
+        },
+        {
             date: '2021-07-03',
             who: 'Aaron Raimist',
             profile: 'https://github.com/aaronraimist/',

@@ -23,7 +23,7 @@ parser.add_argument(
 
 parser.add_argument(
     "--build-filter",
-    default="branch=master&state=passed",
+    default="branch=main&state=passed",
     help="Query string for the build filter. Default: %(default)s",
 )
 

@@ -911,12 +911,6 @@ const Faq = ({ data }) => {
                   - for bridging to Discord
                 </li>
                 <li>
-                  <a href="https://github.com/matrix-org/matrix-appservice-gitter">
-                    matrix-appservice-gitter
-                  </a>{" "}
-                  - a bridge to Gitter
-                </li>
-                <li>
                   <a href="https://github.com/matrix-org/matrix-appservice-slack">
                     matrix-appservice-slack
                   </a>{" "}
@@ -930,7 +924,7 @@ const Faq = ({ data }) => {
                   <a href="https://developer.pidgin.im/wiki/WhatIsLibpurple">
                     libpurple
                   </a>
-                  , including Skype, Lync, XMPP,etc)
+                  , including Skype, Lync, XMPP, etc.
                 </li>
                 <li>
                   <a href="https://github.com/matrix-org/matrix-appservice-bridge">
