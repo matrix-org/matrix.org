@@ -1,0 +1,404 @@
+---
+date: '2021-09-03'
+title: 'This Week in Matrix 2021-09-03'
+categories:
+  - This Week in Matrix
+author: Ben Parsons
+image: https://matrix.org/blog/img/2021-09-03-X2UAA-stacked_area_chart.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TZcF4s-swis" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of *Status of Matrix* 🌡️
+
+### Conduit Beta released
+
+Conduit is a Matrix homeserver written in Rust https://conduit.rs
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) announced:
+
+> We finally did it! We released Conduit Beta: https://conduit.rs/release-0-2-0, we even made it to the Hacker News frontpage: https://news.ycombinator.com/front?day=2021-09-02
+>
+> This is huge news for us and hopefully we will see a lot more Conduit instances pop up in the near future.
+>
+> Thanks everyone!
+
+Congratulations to Timo and the gang, you're making superb progress!
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) said:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://spec.matrix.org/unstable/proposals.
+>
+> #### MSC Status
+>
+> **New MSCs:**
+>
+> * [MSC3368: Message Content Tags](https://github.com/matrix-org/matrix-doc/pull/3368)
+>
+> **MSCs with proposed Final Comment Period:**
+>
+> * _No MSCs entered proposed FCP state this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **Merged MSCs:**
+>
+> * [MSC3375: Room version 9.](https://github.com/matrix-org/matrix-doc/pull/3375)
+> * [MSC2582: Remove mimetype from EncryptedFile object](https://github.com/matrix-org/matrix-doc/pull/2582)
+>
+> **Obsolete MSCs:**
+>
+> * [MSC3226: Per-room spell check](https://github.com/matrix-org/matrix-doc/pull/3226)
+>
+> **Abandoned MSCs:**
+>
+> * [MSC3125: Limits API — Part 5: per-Instance limits](https://github.com/matrix-org/matrix-doc/pull/3125)
+> * [MSC3073: Role based access control](https://github.com/matrix-org/matrix-doc/pull/3073)
+>
+> * [\[WIP\]MSC3066: Retrieve as redacted](https://github.com/matrix-org/matrix-doc/pull/3066)
+> * [MSC3059: Limits API — Part 3: Federated rate limiting](https://github.com/matrix-org/matrix-doc/pull/3059)
+>
+> * [MSC3053: Limits API — Part 2: per-Room limits](https://github.com/matrix-org/matrix-doc/pull/3053)
+> * [MSC3052: Sample events](https://github.com/matrix-org/matrix-doc/pull/3052)
+>
+> * [MSC3021: Limits API — Part 1: per-User limits](https://github.com/matrix-org/matrix-doc/pull/3021)
+> * [MSC2929: Interaction events](https://github.com/matrix-org/matrix-doc/pull/2929)
+>
+> * [MSC2880: extend event and state API to allow sending to all rooms](https://github.com/matrix-org/matrix-doc/pull/2880)
+> * [MSC2875: room descriptions](https://github.com/matrix-org/matrix-doc/pull/2875)
+>
+> * [MSC2834: Media IDs as hashes](https://github.com/matrix-org/matrix-doc/pull/2834)
+> #### Spec Updates
+>
+> You may be wondering: what's up with all of these abandoned MSCs?? The answer is that the matrix-org/matrix-doc repo [changed its base branch](https://github.com/matrix-org/matrix-doc/issues/3367) to `main` to help preserve the git history since the spec website rewrite. In doing so, all PRs were automatically updated to the new base branch by github... except those that were coming from deleted users and repos. Those ones were simply closed!
+>
+> But as they seemed to be have been effectively abandoned by their authors, it was more of a cleanup than an accident. However, if your MSC was affected by this change and you would like to continue it, please contact someone in the [#matrix-spec-office:matrix.org](https://matrix.to/#/#matrix-spec-office:matrix.org) and we'll help you out.
+>
+> #### Random Spec of the Week
+>
+> The random spec of this week is... [MSC2448: Using BlurHash as a Placeholder for Matrix Media](https://github.com/matrix-org/matrix-doc/pull/2448)!
+>
+> MSC2448 defines a way for clients to include a "blurhash", or a short, textual representation of a blurred version of an image, inside events which other clients can show while waiting for thumbnails to download from media servers. This replaces the potentially blank space while an image's thumbnail is loading with a (IMO) beautiful alternative!
+>
+> Yes I wrote this MSC... but I swear it's what [the script](https://github.com/anoadragon453/pick-a-spec) picked! We do not question the script!!
+
+
+
+![2021-09-03-X2UAA-stacked_area_chart.png](/blog/img/2021-09-03-X2UAA-stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Synapse
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) said:
+
+> Two big notes this week:
+>
+> 1. [Synapse 1.41.1 is out](https://matrix.org/blog/2021/08/31/synapse-1-41-1-released) and it contains patches for **two security vulnerabilities** which could inappropriately disclose private room metadata to unauthorized users on a participating homeserver. Please upgrade.
+>
+> 2. [Room Version 9](https://github.com/matrix-org/matrix-doc/pull/3375) is coming in Synapse 1.42 next week. This version fixes [an oversight](https://github.com/matrix-org/matrix-doc/issues/3373) in which event fields are protected from redaction in room version 8, making it possible for restricted rooms to break if a join event is redacted. Because event IDs are based on the redaction algorithm, we can't fix this without creating a new room version.
+>
+>    In the interest of compatibility across the federation, Synapse 1.42 will still instruct clients to create restricted rooms using room version 8. Synapse 1.43, scheduled for release on 21 September, will begin instructing clients to use room version 9 instead.
+
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) announced:
+
+> And yet again another week of Kubernetes updates, [my Helm Charts](https://gitlab.com/ananace/charts) now have element-web on 1.8.2 and matrix-synapse on 1.41.1
+
+
+
+## Dept of Bridges 🌉
+
+### GitHub Discussions in Matrix
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) told us:
+
+> Hey folks! I had some spare time today so I've invested it into the [`matrix-github`](https://github.com/Half-Shot/matrix-github) bridge. The latest work is GitHub discussions support. It's still needs a bit more testing / minor feature implementation, but I leave you with a screenshot below of how it currently integrates spaces!
+
+
+
+![2021-09-03-VNjap-image.png](/blog/img/2021-09-03-VNjap-image.png)
+
+## Dept of Clients 📱
+
+### Nheko
+
+Conduit is a Matrix homeserver written in Rust https://conduit.rs
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) told us:
+
+> We had a race between 3 Translators this week. All 3 of them were trying really hard, so in my opinion every placement is a first place, buuuuuut Thulinma acually came first by bringing the Dutch translation from 5% to 100%. A few hours later Priit came in as a close second updating the Estonian translation to 100%. ISSOtm noticed that and tried to catch up which resulted in a 3rd place finish for the French translation. Now I understand the excitement people feel watching others compete in sports without having to do anything themselves!
+>
+> red_sky (nheko.im) meanwhile fought a much more difficult enemy, Apple documentation and code signing! To be honest, I expected him to be beaten, but Nheko's DMGs are now actually properly signed and notarized. So if you are on macOS, you should now see less ugly warnings when installing Nheko. All nightlies building of the master branch are signed as well as our future releases.
+>
+> In more community contributions, resolritter fixed the right click menu not working on replies. So you can copy a link from a reply now by right-clicking it without having to scroll up. Thulinma fixed window alerts not working when using conduit, because Conduit does not implement the /notifications endpoint Nheko uses and he helped me debug and fix device lists not showing up when using Conduit as well as sessions always getting rotated in "Send encrypted messages to verified devices only" mode.
+>
+> In our work to stabilize E2EE we also now require a proper secrets daemon running on Linux (and other platforms, but there it is always provided by the OS). This is used to store the pickle key as well as the cross-signing secrets, so that an attacker can't read the from the config file. We already used such a daemon before, but we failed silently and we didn't use it for the pickle key until now. So if this prevents you from running Nheko, please open an issue so that we can work on a solution. Those APIs can be really fickle so additional testing and feedback would help us out a lot!
+>
+> Also exciting is that Nheko now supports playing encrypted audio and video files without storing a temporary unencrypted copy on disk as well as animated images like WebP and GIF! It took us a while to figure out a proper solution, but now you can send animated stickers and you will finally be able to understand why other people were lauging at still images. (We also had to fix some bugs in our sticker editor, where we didn't add the mimetype to the sticker info for that.)
+>
+> Some more embarrassing news, I didn't know I was a moderator in [#conduit:fachschaften.org](https://matrix.to/#/#conduit:fachschaften.org), so I happily pinged everyone in the room while discussing room mentions. To prevent that from happening in the future, Nheko now shows a red warning above the message input if you will be pinging the whole room to give you time to reconsider. If that is not enough to stop me from doing that, we might require confirmation before sending such messages in the future, but so far this seems to work. Pinging everyone by accident can really scare you and composing a message in Matrix shouldn't be scary!
+>
+> I hope I didn't forget anything and please make sure you check out Conduit, since they are doing a great job in revealing bugs in Nheko!
+
+
+
+### FluffyChat
+
+[FluffyChat](https://fluffychat.im) is the cutest cross-platform matrix client. It is available for Android, iOS, Web and Desktop.
+
+[krille](https://matrix.to/#/@krille:janian.de) announced:
+
+> FluffyChat 0.39.0 has been released
+>
+> This release fixes a bug which makes it impossible to send images in unencrypted rooms. It also implements a complete new designed new chat page which now uses a QR code based workflow to start a new chat.
+>
+> * feat: Dismiss keyboard on scroll in iOS
+>
+> * feat: Implement QR code scanner
+> * feat: New design for new chat page
+>
+> * feat: Use the stripped body for notifications and room previews
+> * feat: Send on enter configuration for mobile devices
+>
+> * fix: Prefix of notification text
+> * fix: Display space as room if it contains unread events in timeline
+>
+> * fix: missing null check
+> * fix: Open matrix.to urls
+>
+> * fix: Padding and colors
+> * fix: Sharing invite link
+>
+> * fix: Unread bubbles on iOS 
+> * fix: Sending images in unencrypted rooms
+
+
+
+![2021-09-03-8UQ-K-scaled_screenshot_20210829-113804.jpg](/blog/img/2021-09-03-8UQ-K-scaled_screenshot_20210829-113804.jpg)
+
+### Element Clients
+
+Updates from the teams.
+
+**Delight team**
+
+
+
+* Testing and polishing of Spaces. 
+
+**Web**
+
+
+
+* Released Element Web 1.8.2
+* We’ve added an early, incomplete prototype of Threads to Labs
+* Bug fixes
+
+**iOS**
+
+
+
+* App startup has been improved by x3 by lazy loading room messages and read receipts
+* Element-iOS is now iOS12 minimum. Code have been cleaned up
+* URL preview is still in progress but it should be available in the next release, 1.5.3
+* SwiftUI: There is now a target to run the Xcode project without the MatrixSDK to speedup SwiftUI preview. This is the first piece for the coming new screen templates
+
+**Android**
+
+
+
+* Working on upgrading Android Gradle Plugin to 7.0.2 and other dependencies.
+* Set up GitHub actions and reduce the number of tasks run by Buildkite
+* Spaces PRs are merged one by one to develop, the feature will be available in the coming releases
+* Working on crypto: dehydrated devices, Olm fallback keys
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### Simple-Matrix-Bot-Lib
+
+[krazykirby99999](https://matrix.to/#/@krazykirby99999:matrix.org) offered:
+
+> #### Version 2.1.0 Released!
+>
+> This version of the simplematrixbotlib package adds the ability to send messages formatted in markdown via the `bot.api.send_markdown_message()` method. Example usage is shown below:
+>
+> ```
+> #### Respond to all messages from users with a hello world message that involves markdown formatting
+>
+> import simplematrixbotlib as botlib
+>
+> creds = botlib.Creds("https://home.server", "user", "pass")
+>
+> bot = botlib.Bot(creds)
+>
+> @bot.on_message_event
+>
+> async def hello_world_md(room, message):
+>     match = botlib.MessageMatch(room, message, bot)
+>
+>     markdown_message = "# Hello World from [simplematrixbotlib](https://github.com/KrazyKirby99999/simple-matrix-bot-lib)!"
+>     if match.is_not_from_this_bot():
+>
+>         await bot.api.send_markdown_message(
+>             room_id=room.room_id,
+>
+>             message=markdown_message)
+>
+> bot.run()
+>
+> ```
+
+
+
+## Dept of Interesting Projects 🛰️
+
+### Circles
+
+[cvwright](https://matrix.to/#/@cvwright:matrix.org) announced:
+
+> [Circles](https://github.com/KombuchaPrivacy/circles-ios) is a project to build a secure, end-to-end encrypted social network, using Matrix as the foundation.
+>
+> #### News 
+>
+> We're getting very close to a real App Store launch.  The latest beta release this week is [0.98](https://testflight.apple.com/join/cWuDwqpG)  This version might be The One!  So please, if you haven't tried Circles in a while, give this one a shot.  Also please share the link with any friends and family who you think might be interested.  The current signup token has plenty of slots for everyone.
+>
+> If you want to see some activity in your circles, invite me to follow your Community circle and I'll invite you to follow back.  I'm @cvwright:kombucha.social.
+>
+> #### WARNING
+>
+> If you've been using Circles with your own (non-Kombucha) server, you probably DO NOT WANT this version.  Support for bring-your-own-server will return very soon after our App Store launch.
+>
+> #### Latest updates
+>
+> * Broke and then re-enabled new account signup.  Thanks to everyone who helped diagnose this one, and sorry if you were unable to sign up using a recent build.
+>
+> * Fixed a weeks-old bug where posting a message into a circle would then send you back to your list of all your social circles.  Big thanks to Yosef for bringing this to my attention.
+> * Fixed a bug in recent 0.9x builds where the Matrix rooms underlying circles and groups were being created with invalid encryption parameters.  If you've been unable to post anything, this is the likely culprit.  The fix is to update to the latest build, then delete your old circles/groups and create new ones.
+>
+> * We have a new icon.  It's blue!  I was worried that Apple might think the old icon looked too much like the Apple Photos icon.
+> * New and improved interface for managing your account information.  Added support for changing your password and for deactivating your account.  I hope you never want this last one, but Apple requires it for apps that allow you to create accounts.
+>
+> * Removed support for Markdown formatting in posts and image captions.  This is a sad one, but unfortunately the performance of the open source library that we were using for Markdown just wasn't up to the task.  On the bright side, our timelines load much more quickly now, and the scrolling should be much smoother.  Look for Markdown support to return with the release of iOS 15 later this year.
+> * Another update to the Recent Activity list.  Now it should refresh itself automatically if/when it initially comes up empty.
+>
+> * Improved layout and usability on iPad.
+
+
+
+### CoMatrix - Constrained Matrix
+
+[tobi](https://matrix.to/#/@tobi_fh:matrix.org) reported:
+
+> The CoMatrix project enables the usage of the Matrix protocol (more precisely Matrix Client-Server API) for constrained IoT devices via CoAP and CBOR in a constrained network (e.g. a 802.15.4/6LoWPAN network).
+>
+> CoMatrix provides a gateway, which ports Matrix to CoAP/CBOR/(DTLS). This gateway communicates with constrained IoT devices on one side via CoAP+CBOR and translates to the Matrix protocol on the other side (i.e. HTTP+JSON). CoMatrix also provides a client library (for RIOT-OS) which is a starting point to implement CoMatrix clients (for constrained devices) which are able to interact with Matrix homeservers via the gateway.
+>
+> Currently CoMatrix supports the following features:
+>
+> * Sending of messages to a Matrix room
+>
+> * Receiving the last message of a Matrix room
+> * User registration at a Matrix Synapse HS
+>
+> * Joining a Matrix room upon invitation
+> * Login of a user at a Matrix Synapse HS
+>
+> * Logout of a user at a Matrix Synapse HS
+>
+> More information:
+>
+> * Project website: https://comatrix.eu/
+>
+> * Code repository: https://gitlab.com/comatrix/comatrix
+> * CoMatrix will be presented at RIOT Summit 2021 (online; free registration) on 10.09.2021 at 11:30 AM (UTC+0): https://summit.riot-os.org/2021/
+
+
+
+### pipeline-runner receives jobs over Matrix
+
+[thejhh](https://matrix.to/#/@thejhh:matrix.org) offered:
+
+> I have made a small 120k pipeline-agent software (including all dependencies except NodeJS v8)  which can run on multiple platforms (including OpenWRT) and takes pipeline work over the Matrix protocol. In the end it's going to be used to setup things like VPN connections between gateways. 
+>
+> We also have a commercial web portal almost published where one can create web apps and configure pipelines to process the results. And yes, the portal also uses Matrix as its persistent storage -- it was implemented using my Matrix CRUD Repository from last week :)
+>
+> The agent software (pipeline-runner) is open source  and has zero (0) runtime dependencies except NodeJS, and available from here: https://github.com/sendanor/pipeline-runner -- It's still in early development, though.
+
+
+
+## Final Thoughts 💭
+
+### Room of the week
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) reported:
+
+> Hi everyone! Did you ever feel lost in the Matrix world? The room directory is big, but it's still hard to find something you like. Or are you a room moderator, but there is not much activity in your room because it doesn't have enough users?
+>
+> This is why I want to share rooms (or spaces) I find interesting.
+>
+> ---
+>
+> This week's room is: [#music-discovery:matrix.org](https://matrix.to/#/#music-discovery:matrix.org) 
+>
+> **"Discover music through peers - Please write a small description of your discoveries. No uploads of non-free music please. For discussions and chat please visit the room's sibling [#musicdiscussion:matrix.org](https://matrix.to/#/#musicdiscussion:matrix.org) "**
+>
+> ---
+>
+> If you want to suggest a room for this section, tell me in [#roomoftheweek:fachschaften.org](https://matrix.to/#/#roomoftheweek:fachschaften.org)
+
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|nordgedanken.dev|295|
+|2|trolla.us|524.5|
+|3|neko.dev|578|
+|4|almum.de|613|
+|5|envs.net|648.5|
+|6|das-labor.org|947|
+|7|milkte.ch|1372|
+|8|caughtquick.tech|1400.5|
+|9|elcyb.org|1452|
+|10|kreatea.space|1805.5|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|sspaeth.de|297|
+|2|weasy-is-my.name|379|
+|3|pc.koesters.xyz:6168|402|
+|4|test.siika.solutions|460.5|
+|5|tomsmeding.com|497|
+|6|conduit.cyberdi.sk|736|
+|7|rcp.tf|737.5|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
