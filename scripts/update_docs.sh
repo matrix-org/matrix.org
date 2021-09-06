@@ -21,7 +21,7 @@ cd "$(dirname "$(dirname "${SELF}")")"
 
 SITE_BASE="$(pwd)"
 
-if [ -n "$BUILDKITE" ]; then
+if ! [ -z ${BUILDKITE_ACCESS_TOKEN+x} ]; then
   # grab and unpack the latest matrix-docs build from buildkite
   rm -rf assets.tar.gz assets
   scripts/fetch-buildkite-artifact matrix-dot-org matrix-doc assets.tar.gz
