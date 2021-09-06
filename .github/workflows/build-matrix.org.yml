@@ -7,6 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
+  # Fetch the latest spec build, and apply styling to it.
+  # This step also sets up the OpenAPI UI.
   build-spec:
     name: "📖 Spec"
     runs-on: ubuntu-latest
@@ -37,6 +39,8 @@ jobs:
           name: styled-docs-artifact
           path: styled-docs.tar.gz
 
+  # Run jekyll. We run this in a custom docker image.
+  # See dockerfile in the `.buildkite` directory.
   build-jekyll:
     name: "🌐 Jekyll"
     runs-on: ubuntu-latest
@@ -58,6 +62,8 @@ jobs:
           name: spec-artifact
           path: jekyll-site.tar.gz
 
+  # Run gatsby. We also use a custom docker image for this, to avoid
+  # installing the entirety of npmjs for each build.
   build-gatsby:
     name: "🌐 Gatsby"
     runs-on: ubuntu-latest
@@ -104,6 +110,8 @@ jobs:
           name: guides-artifact
           path: implementation-guides/implementation-guides.tar.gz
 
+  # Merge the three sets of outputs together, together
+  # with the existing static stuff in `content`.
   package:
     name: "📦 Package"
     runs-on: ubuntu-latest
