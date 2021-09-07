@@ -12,13 +12,16 @@ const TryMatrixNow = ({data}) => {
         return edge.node.childMdx ? edge.node.childMdx : {frontmatter:{ description: "ERROR"}};
     }).filter(project => project.frontmatter.categories);
 
-    const clients = projects.filter(project => project.frontmatter.categories[0] === "client")
-    const servers = projects.filter(project => project.frontmatter.categories[0] === "server")
-    const applicationServices = projects.filter(project => project.frontmatter.categories[0] === "as")
-    const sdks = projects.filter(project => project.frontmatter.categories.indexOf("sdk") !== -1)
-    const bots = projects.filter(project => project.frontmatter.categories.indexOf("bot") !== -1)
-    const bridges = projects.filter(project => project.frontmatter.categories[0] === "bridge")
-    const others = projects.filter(project => project.frontmatter.categories[0] === "other")
+    const hasCategory = category =>
+        projects.filter(project => project.frontmatter.categories.indexOf(category) !== -1);
+
+    const clients = hasCategory("client");
+    const servers = hasCategory("server");
+    const applicationServices = hasCategory("as");
+    const sdks = hasCategory("sdk");
+    const bots = hasCategory("bot");
+    const bridges = hasCategory("bridge");
+    const others = hasCategory("other");
 
     const languages = Array.from(new Set( projects.map(project => project.frontmatter.language) ))
         .sort()
