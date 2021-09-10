@@ -17,7 +17,6 @@ const TryMatrixNow = ({data}) => {
 
     const clients = hasCategory("client");
     const servers = hasCategory("server");
-    const applicationServices = hasCategory("as");
     const sdks = hasCategory("sdk");
     const bots = hasCategory("bot");
     const bridges = hasCategory("bridge");
@@ -96,7 +95,7 @@ const TryMatrixNow = ({data}) => {
           </div>
         </div>
             <h2>Let's go deeper</h2>
-            <p>Matrix is a whole ecosystem of Matrix-enabled clients, servers, gateways, application services, bots, etc. If you’d like to learn more, this page aims to collect all known Matrix projects. To add a new one (or update an existing one), you can submit a PR to the <a href="https://github.com/matrix-org/matrix.org">matrix.org</a> project on github - the existing projects can be found <a href="https://github.com/matrix-org/matrix.org/tree/master/gatsby/content/projects">here</a> - or just let us know in the <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a> room.<br /></p>
+            <p>Matrix is a whole ecosystem of Matrix-enabled clients, servers, gateways, bots, etc. If you’d like to learn more, this page aims to collect all known Matrix projects. To add a new one (or update an existing one), you can submit a PR to the <a href="https://github.com/matrix-org/matrix.org">matrix.org</a> project on github - the existing projects can be found <a href="https://github.com/matrix-org/matrix.org/tree/master/gatsby/content/projects">here</a> - or just let us know in the <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a> room.<br /></p>
             <div className="mxblock">
             <div className="mxgrid mxgrid--discover">
                 <div className="mxgrid__item20">
@@ -114,11 +113,7 @@ const TryMatrixNow = ({data}) => {
                             <input type="checkbox" id="chk-type-server" />
                             <label htmlFor="chk-type-server"> Servers</label>
                         </p>
-                        <p className="mxgrid__item__bg__p">
-                            <input type="checkbox" id="chk-type-as" />
-                            <label htmlFor="chk-type-as"> Application Services</label>
-                        </p>
-                        <p className="mxgrid__item__bg__p">
+                            <p className="mxgrid__item__bg__p">
                             <input type="checkbox" id="chk-type-sdk" />
                             <label htmlFor="chk-type-sdk"> Client SDKs</label>
                         </p>
@@ -208,8 +203,6 @@ const TryMatrixNow = ({data}) => {
             <MXTryMatrixNowSection items={clients} />
             <h2>Servers</h2>
             <MXTryMatrixNowSection items={servers} />
-            <h2>Application Services</h2>
-            <MXTryMatrixNowSection items={applicationServices} />
             <h2>SDKs</h2>
             <MXTryMatrixNowSection items={sdks} />
             <h2>Bots</h2>
