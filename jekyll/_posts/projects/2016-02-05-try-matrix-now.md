@@ -18,7 +18,6 @@ jQuery(document).ready(($) => {
   var types = [
     ['Clients', 'client'],
     ['Servers', 'server'],
-    ['Application Services', 'as'],
     ['Client SDKs', 'sdk'],
     ['Bots', 'bot'],
     ['Other', 'other']];
@@ -366,31 +365,6 @@ Matrix is a whole ecosystem of matrix-enabled clients, servers, gateways, applic
       </li>
   {% endfor %}
 </ul>
-
-
-|
-
-## Application Services
-
-<ul class='projectlist'>
-  {% for post in site.categories.as reversed limit:100 %}
-      <li class='project' 
-        data-maturity='{{ post.maturity | replace:' ', '' }}'
-        data-language='{{ post.language | replace:' ', '' | replace: '+', '-' | replace: '/', '-' | replace: '#', '-' }}'
-        data-license='{{ post.license | replace:' ', '' | replace: '/', '-'| replace: '.', '-' }}'
-        data-type='as'>
-        <a href='/docs{{ BASE_PATH }}{{ post.url }}'>
-          {{ post.title }}
-        </a><br />
-        <div style='margin-bottom: 8px;'>
-          {{ post.description }}
-        </div>
-        Author: {{ post.author }}<br />
-        Maturity: {{ post.maturity }}
-      </li>
-  {% endfor %}
-
- </ul>
 
 |
 
