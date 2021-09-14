@@ -94,6 +94,55 @@ module.exports = {
             output: "/blog/feed",
             title: "matrix.org",
           },
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
+                return {
+                  ...edge.node.frontmatter,
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                }
+              })
+            },
+            query: `
+              {
+                allMdx(
+                  limit: 10,
+                  sort: {
+                    order: DESC,
+                    fields: [frontmatter___date]
+                  },
+                  filter: {
+                    frontmatter: {
+                      date: {
+                        ne: null
+                      },
+                      categories: {
+                        in: ["Security"]
+                      }
+                    }
+                  }
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/blog/category/security/feed",
+            title: "matrix.org security",
+          },
         ],
       },
     },
