@@ -79,8 +79,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            public
-            .cache
+            gatsby/public
+            gatsby/.cache
           key: ${{ runner.os}}-gatsby-build-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
