@@ -199,17 +199,17 @@ const TryMatrixNow = ({data}) => {
                     </div>
             </div>
             </div>
-            <h2 id="clients">Clients</h2>
+            <h2>Clients</h2>
             <MXTryMatrixNowSection items={clients} />
-            <h2 id="servers">Servers</h2>
+            <h2>Servers</h2>
             <MXTryMatrixNowSection items={servers} />
-            <h2 id="sdks">SDKs</h2>
+            <h2>SDKs</h2>
             <MXTryMatrixNowSection items={sdks} />
-            <h2 id="bots">Bots</h2>
+            <h2>Bots</h2>
             <MXTryMatrixNowSection items={bots} />
-            <h2 id="bridges">Bridges</h2>
+            <h2>Bridges</h2>
             <MXTryMatrixNowSection items={bridges} />
-            <h2 id="other">Other</h2>
+            <h2>Other</h2>
             <MXTryMatrixNowSection items={others} />
         </MXContentMain>
     </Layout>)
