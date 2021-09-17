@@ -11,7 +11,7 @@ image: /blog/img/2021-09-17-NcMmi-cinny-space-release.png
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5sXzSiMCh6c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-We've been chatting with Daniel about the vulnerabilities disclosed by Element this Monday. 
+We've been chatting with Denis about the vulnerabilities disclosed by Element this Monday. 
 
 ## Dept of Spec 📜
 
@@ -42,7 +42,7 @@ We've been chatting with Daniel about the vulnerabilities disclosed by Element t
 >
 > #### Spec Updates
 >
-> If MSC2018 above is giving you feelings of déjà vu, don't worry. It already had FCP proposed, but due to a resolved concern being incorrectly processed by mscbot on github, a new FCP proposal was carried out.
+> If MSC2918 above is giving you feelings of déjà vu, don't worry. It already had FCP proposed, but due to a resolved concern being incorrectly processed by mscbot on github, a new FCP proposal was carried out.
 >
 > In other news, [MSC3381](https://github.com/matrix-org/matrix-doc/pull/3381) (Polls - mk II) receive a fair amount of attention this week. It implements inline polls via a new `m.poll` type and makes use of the concept of [extensible events](https://github.com/matrix-org/matrix-doc/pull/1767). Do check it out if you're interested in voting through means other than message reactions!
 >
@@ -87,17 +87,16 @@ With rooms version 9 as the default, it feels like Spaces are trying hard to esc
 
 ## Dept of Bridges 🌉
 
-### matrix-docker-ansible-deploy
+### Heisenbridge
 
-This [Ansible playbook](https://github.com/spantaleev/matrix-docker-ansible-deploy) is meant to easily let you run your own Matrix homeserver.
+[Heisenbridge](https://github.com/hifi/heisenbridge/) is a bouncer-style Matrix IRC bridge.
+
 
 [hifi](https://matrix.to/#/@hifi:vi.fi) told us:
 
 > Heisenbridge roundup!
 >
-> [Heisenbridge](https://github.com/hifi/heisenbridge/) is a bouncer-style Matrix IRC bridge.
->
-> Release v1.1.0 🥳
+> Release v1.1.1 🥳
 >
 > * Message edits are now supported and use stupid context aware "compact enough" edit format (+ - *)
 >
