@@ -1,0 +1,34 @@
+---
+  date: '2021-09-21'
+  title: Synapse 1.43.0 released
+  categories:
+    - Releases
+  author: Dan Callahan
+---
+
+Synapse 1.43.0 is out now!
+
+## Preparing for Spaces
+
+Quite a lot of work has gone into preparing for Spaces to graduate from beta testing. For example, Synapse now:
+
+* Asks clients to prefer [room version 9](https://github.com/matrix-org/matrix-doc/pull/3375) when creating restricted rooms ([#10772](https://github.com/matrix-org/synapse/issues/10772)), via the API defined in [MSC3244: room version capabilities](https://github.com/matrix-org/matrix-doc/pull/3244).
+* Allows the Spaces Summary APIs to be handled by worker processes.
+* Omits rooms with unknown room versions from the Spaces Summary.
+* Properly handles upgrades of Spaces to different room versions.
+
+## Everything Else
+
+This release of Synapse also:
+
+* Includes initial work toward fully supporting oEmbed for embedding URL previews ([#10714](https://github.com/matrix-org/synapse/issues/10714), [#10759](https://github.com/matrix-org/synapse/issues/10759)).
+* Slightly speeds up room joins over federation ([#10754](https://github.com/matrix-org/synapse/issues/10754), [#10755](https://github.com/matrix-org/synapse/issues/10755), [#10756](https://github.com/matrix-org/synapse/issues/10756), [#10780](https://github.com/matrix-org/synapse/issues/10780), [#10784](https://github.com/matrix-org/synapse/issues/10784)).
+* Somewhat improves service restart times for large Synapse deployments.
+* Significantly refactors federation event authentication code for greater clarity ([#10744](https://github.com/matrix-org/synapse/issues/10744), [#10745](https://github.com/matrix-org/synapse/issues/10745), [#10746](https://github.com/matrix-org/synapse/issues/10746), [#10771](https://github.com/matrix-org/synapse/issues/10771), [#10773](https://github.com/matrix-org/synapse/issues/10773), [#10781](https://github.com/matrix-org/synapse/issues/10781)).
+* Adds further static type hints to various modules.
+
+We've also spent quite a lot of time on SyTest, our integration test suite. In particular, many of the tests made assumptions about event processing which were not correct when targeting a multi-worker Synapse deployment. These flakey tests have plagued our continuous integration pipelines, and are finally being fixed.
+
+These are just the highlights; please see the [Release Notes](https://github.com/matrix-org/synapse/blob/v1.43.0/CHANGES.md) for a complete list of changes in this release.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our thanks to everyone who contributed to this release, including [AndrewFerr](https://github.com/AndrewFerr), [BramvdnHeuvel](https://github.com/BramvdnHeuvel), and [cuttingedge1109](https://github.com/cuttingedge1109).
