@@ -159,7 +159,7 @@ const Index = ({
                   </p>
                   <p className="mxgrid__item__bg__p">
                     Conversations are replicated over all the servers participating in them, meaning there are no single
-                    point of control or failure.  You can reach any other user in the global Matrix ecosystem of over 25M
+                    point of control or failure.  You can reach any other user in the global Matrix ecosystem of over 38M
                     users, even including those on other networks via <a
                     href="/bridges/">bridges</a>.
                   </p>
