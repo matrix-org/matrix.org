@@ -30,10 +30,6 @@ const Guides = ({data}) => {
           <strong><a href="/faq/">the FAQ</a></strong>, where we try to answer all your questions relating to Matrix</td>
       </tr>
       <tr>
-        <td>Understand the CS API</td>
-        <td><strong><a href="/docs/guides/client-server-api">How to use the client-server API</a></strong>, which explains in detail how to use the CS API.<br />Useful if you want to write a client (or modify an existing one) - or if you’re just interested in how it works “under the hood”</td>
-      </tr>
-      <tr>
         <td>Get started with the CS API using …</td>
         <td>&nbsp;</td>
       </tr>
