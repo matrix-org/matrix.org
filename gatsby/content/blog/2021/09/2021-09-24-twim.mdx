@@ -1,0 +1,299 @@
+---
+date: '2021-09-24'
+title: 'This Week in Matrix 2021-09-24'
+categories:
+  - This Week in Matrix
+author: Thib
+image: /blog/img/2021-09-24-7-coe-screenshot_20210919-165213_trebuchet.png
+---
+
+## Matrix Live 🎙
+
+## Dept of Spec 📜
+
+### The latest in appservice proposals: Synthetic events
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) told us:
+
+> Hi folks, I've been let loose on more spec things: This time I'm looking at [synthetic events](https://github.com/matrix-org/matrix-doc/pull/3395). The goal with this proposal is to give appservices more visibility over the innards and actions of a homeserver. When a user registers, we want an appservice to know (perhaps to send them a little greeting, or to provision some resources) or perhaps you want to clear up bridge resources when the user deactivates their account.
+>
+> The hope with this proposal is that it's going to set the foundations for services to be able to hook into and provide richer functionality based upon user actions outside of rooms. It might sound a little dry right now, but eventually I'm hoping this can be extended in lots of ways and potentially do away with per-implementation modules, instead writing services that work with all homeservers.
+>
+> Please give the proposal some love/feedback :)
+
+When asked if that was a specification change he drafted because of limitations faced when trying to implement a bridge, he said:
+
+> Yeah, so it's something I've been plotting for a while, but internally we wanted the ability to "act" based upon signups to a homeserver i.e. sending a welcome. In the past this has been implemented client-side in Element, but that has obvious caveats.
+> 
+> The traditional response has usually been to write a Synapse module, but I wanted to do something that could be used on other homeserver implementations and also not have to have it co-located with the homeserver, so the natural home for this kind of logic was appservices. 
+> 
+> There are other things there too like logouts / deactivations which are good for erasing data on a service too. Generally I'm hoping it can be extended further once it's stable, for other use cases too
+
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) announced:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://spec.matrix.org/unstable/proposals.
+>
+> #### MSC Status
+>
+> **New MSCs:**
+>
+> * [\[WIP\] MSC3401: Native Group VoIP Signalling](https://github.com/matrix-org/matrix-doc/pull/3401)
+>
+> **MSCs with proposed Final Comment Period:**
+>
+> * _No MSCs entered proposed FCP state this week._
+>
+> **MSCs in Final Comment Period:**
+>
+> * [MSC3231: Token authenticated registration](https://github.com/matrix-org/matrix-doc/pull/3231) (merge)
+> * [MSC2918: Refresh tokens](https://github.com/matrix-org/matrix-doc/pull/2918) (merge)
+>
+> **Merged MSCs:**
+>
+> * _No MSCs were merged this week._
+> #### Spec Updates
+>
+> [MSC3401](https://github.com/matrix-org/matrix-doc/pull/3401) (Native Group Voip Signalling) has been receiving positive feedback over the course of the week. The MSC spells out how one would go about implementing native, decentralised group voice and video calls over Matrix without the need for a third-party service. This is the next step forward after the full-mesh group signalling work, as demoed in previous editions of TWIM, lands. Quite exciting stuff!
+>
+> Otherwise there was another Spec Core Team retro this week. Discussion focused mainly on how to handle event types that not every implementation using Matrix may need (think pinned messages and how that might not be very useful for IoT networks...). Watch this space!
+>
+> #### Random Spec of the Week
+>
+> The random spec of the week is... [MSC2666: Get rooms in common with another user](https://github.com/matrix-org/matrix-doc/pull/2666)!
+>
+> This is actually already implemented and enabled by default in Synapse, believe it or not. But no clients have support for it yet (there is an [outstanding matrix-react-sdk PR](https://github.com/matrix-org/matrix-react-sdk/pull/4897)...).
+>
+> This is a pretty cool feature in my opinion, any client want to be the first?
+
+MSC3401 looks like there's a lot of work going on on the native VoIP side. I can't wait to see what the future holds!
+
+
+## Dept of Servers 🏢
+
+### Synapse
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) said:
+
+> This week we [released Synapse 1.43](https://matrix.org/blog/2021/09/21/synapse-1-43-0-released)! This mainly contains internal changes, including those in preparation for Spaces leaving beta, but it's worth calling out that this version of Synapse now uses the [MSC3244: room version capabilities](https://github.com/matrix-org/matrix-doc/pull/3244) API to ask clients to prefer [room version 9](https://github.com/matrix-org/matrix-doc/pull/3375) when creating restricted rooms.
+>
+> Support for room version 9 was introduced in Synapse 1.42, so we'd strongly encourage administrators to upgrade.
+>
+> Perhaps more notably for Synapse developers, we've spent quite a lot of time over the past few weeks improving the [SyTest](https://github.com/matrix-org/sytest/) suite of integration tests. Several of the tests had race conditions which would cause them to occasionally fail when testing a multi-worker deployment of Synapse. These flakey tests have plagued our continuous integration pipelines, and are finally being fixed.
+>
+> The long term plan is still to transition to [Complement](https://github.com/matrix-org/complement) (written in Go) and away from SyTest (written in Perl), but we still need to ensure that SyTest is reliable in the meantime.
+
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) offered:
+
+> This week - like all weeks - brings some [Helm Chart](https://gitlab.com/ananace/charts) updates, with matrix-synapse being updated to 1.43.0.
+>
+> The chart store has been redone to track multiple versions now too, so older versions of the charts will stick around for a while.
+
+Ananace always answering the call on TWIMday!
+
+
+## Dept of Bridges 🌉
+
+### Heisenbridge
+
+[hifi](https://matrix.to/#/@hifi:vi.fi) offered:
+
+> Heisenbridge roundup!
+>
+> [Heisenbridge](https://github.com/hifi/heisenbridge/) is a bouncer-style Matrix IRC bridge.
+>
+> Release v1.2.0 🥳
+>
+> * Message formatting (from HTML to text) has been drastically improved
+>
+> * CTCP replies are now shown correctly but still ignored
+> * Mentions/pills always honor room nick
+>
+> * Plumb notices don't loop around anymore
+> * Self replies don't prefix with own nick
+>
+> * Single line truncation works when max lines is 1
+> * Multiple fixes to displaynames or messages containing control characters leaking to IRC
+>
+> * _New dependency: mautrix-python_
+> * **Minimum Python version requirement has been bumped to 3.7**
+>
+> I've also started releasing [source archives](https://github.com/hifi/heisenbridge/releases/download/v1.2.0/heisenbridge-1.2.0.tar.gz) as GitHub releases for distribution packagers and the project is published to [PyPI](https://pypi.org/project/heisenbridge/) to have more installation options.
+>
+> [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) has also been updated with the new release, thanks again Slavi 🍻!
+>
+> Thanks!
+
+What improvements did hifi bring to the formatting you may ask? I asked, and hifi answered:
+
+> the fallbacks are inconsistent and usually are markdown which is a lie 😅
+> replies and mentions are completely all over the place in the fallback in addition to being markdown 
+> the unformatted html is now something in between and doesn't do code blocks at all because those ticks are just noise on irc 
+> it tries to look like more that you pasted long text rather than sending markdown 
+
+That's very considerate for IRC user, thanks hifi!
+
+## Dept of Clients 📱
+
+### FluffyChat 0.41.0 has been released
+
+[FluffyChat](https://fluffychat.im) is the cutest cross-platform matrix client. It is available for Android, iOS, Web and Desktop.
+
+[krille](https://matrix.to/#/@krille:janian.de) said:
+
+> This release features a lot of bug fixes and the new multi account feature which also include account bundles.
+>
+> #### All changes:
+>
+> * feat: Multiple accounts
+>
+> * feat: New splash screen
+> * fix: Password reset
+>
+> * fix: Dark text in cupertinodialogs
+> * fix: Voice messages on iOS
+>
+> * fix: Emote settings
+> * chore: update flutter_matrix_html, Matrix Dart SDK and other libraries
+>
+> * chore: Update to Flutter 2.5.1
+> * chore: Updated translations
+
+![2021-09-24-7-coe-screenshot_20210919-165213_trebuchet.png](/blog/img/2021-09-24-7-coe-screenshot_20210919-165213_trebuchet.png)
+
+Multiple accounts and voice messages on iOS, in a single release, no less! Fluffy is not only cute but also powerfull.
+
+### Quaternion
+
+[kitsune](https://matrix.to/#/@kitsune:matrix.org) announced:
+
+> After 2+ years of development, Quaternion makes a leap from 0.0.9.4 all the way to 0.0.95. The [release notes](https://github.com/quotient-im/Quaternion/releases/tag/0.0.95) list some key improvements: reactions, Markdown, revamped timeline, user profile dialog and a lot of other things. It’s the same small and fast client that blends nicely into your desktop environment, it just got much better. Go and get it!
+
+Congrats on the release, kitsune!
+
+### Element Clients
+
+### Delight team
+
+* We’re testing & polishing Spaces, releasing them out of beta in the upcoming release cycle next week!
+* On iOS
+    * We’re anticipating some performance issues on a very small number of accounts which participate in a very large number of rooms. After trying the next release, if this affects you, please let us know as it’ll help inform whether we cut an off-cycle hotfix or prep changes for the next release.
+    * iOS doesn’t support pagination in the Space Summary API yet, so will only return the first 50 rooms in large Spaces when browsing. Support for this is planned for the following release.
+
+### Web
+
+* Released Element Web 1.8.6 RC2.
+* Fixing bugs and cosmetic issues with our Threads feature, currently in Labs.
+* Cross-signing bug fixes.
+* Ran our first community testing session on 1.8.6 with members of the community. We were very pleased with how this went and intend to continue the sessions.
+
+### iOS
+
+* The RC 1.6.0 with spaces is being reviewed by Apple
+* Element iOS requires now iOS 12.1 minimum
+* URL preview and voice message refinements
+* SwiftUI templates have been merged
+
+### Android
+
+* The RC 1.3.0, with Spaces, will be prepared today.
+* We have started to work on Presence
+* We are still working to improve the overall performance of the application and the SDK
+* Also we are doing lots of maintenance on the whole code base, and we are improving the CI.
+
+
+## Dept of Ops 🛠
+
+### synadm is the Synapse admin CLI
+
+[jojo](https://matrix.to/#/@jojo:peek-a-boo.at) offered:
+
+> A little `synadm` release went out this week. Thanks a lot to @govynnus for contributing "Registration token management", it's available as a new subcommand `regtok`. Also some tiny improvements here and there were brought in to make admin experience even more convenient.
+>
+> Have a look at the release notes: https://github.com/JOJ0/synadm/releases
+>
+> PyPI: https://pypi.org/project/synadm/0.31/
+>
+> Upgrade: https://github.com/JOJ0/synadm#update
+
+Those are the same registration tokens GSoC intern Callum implemented [and told us about in this Matrix Live episode](https://www.youtube.com/watch?v=bVKg4BHT0Z0).
+
+## Dept of Events and Talks 🗣️
+
+### Ansible Contributor Summit 2021.09
+
+[cybette](https://matrix.to/#/@cybette:ansible.im) announced:
+
+> Ansible Contributor Summit 2021.09 is happening next week! It will be held over 2 days, on **Tuesday September 28 and Friday October 1**, from [13:00-21:00 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=Ansible+Contributor+Summit+2021.09&iso=20210928T13&ah=8), and will be held on the Matrix platform.
+>
+> The Ansible Community has recently adopted Matrix as an official chat platform and this is our first **Matrix-powered conference**. Feedback welcome! You will need a Matrix account to participate in the conversations. For more information, please see [Communication - Real-time chat](https://docs.ansible.com/ansible/devel/community/communication.html#real-time-chat) and the [Ansible Community Matrix FAQ](https://hackmd.io/@ansible-community/community-matrix-faq).
+>
+> Join the [Ansible Social Room](https://matrix.to/#/[#social:ansible.com](https://matrix.to/#/#social:ansible.com)) anytime before or during the event and say hi! During the presentations, join the [Main Conference Room](https://matrix.to/#/[#summit:ansible.com](https://matrix.to/#/#summit:ansible.com)) to participate in the discussions. We will also have a session on [How we are rolling out Matrix to the Ansible Community](https://hackmd.io/@ansible-community/contrib-summit-202109#Matrix).
+>
+> If you're interested, check out the details and register on [Eventbrite](https://ansiblecs202109.eventbrite.com/?aff=matrix). We look forward to seeing you on Matrix at the **Ansible Contributor Summit**!
+
+
+[Gwmngilfen](https://matrix.to/#/@gwmngilfen:matrix.org) added:
+
+> there's a mix of stuff going on to try out, we have hack sessions on Tues that may use the embedded Jitsi etc, and talks on Friday that will be more presenter/spectator
+
+![2021-09-24--BlOo-Contributor_summit_202109_banner.png](/blog/img/2021-09-24--BlOo-Contributor_summit_202109_banner.png)
+
+It's exciting to see an organisation holding an online conference on Matrix!
+
+[Gwmngilfen](https://matrix.to/#/@gwmngilfen:matrix.org) also promised:
+
+> I will blog about the setup as a post mortem
+
+We count on that, others are interested in this kind of set-up too!
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|envs.net|440.5|
+|2|trolla.us|540|
+|3|boba.best|551.5|
+|4|matrix.vilni.space|580.5|
+|5|aria-net.org|928|
+|6|yfe.re|943|
+|7|wallace.sh|1414|
+|8|here.in.ua|1490|
+|9|tchncs.de|1531|
+|10|nordgedanken.dev|1768|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|here.in.ua|295|
+|2|dendrite.nordgedanken.dev|305|
+|3|sspaeth.de|484|
+|4|weasy-is-my.name|537|
+|5|spacedn.com|684.5|
+|6|jae.su|760|
+|7|kath-zollern.v6.rocks|1028.5|
+|8|matrix.awesomesheep48.me|2165|
+|9|0x1a8510f2.space|3030|
+|10|weber.world|3885.5|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
