@@ -1,0 +1,30 @@
+<!doctype html> <!-- Important: must specify -->
+<html>
+  <head>
+    <meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 charecters -->
+    <script type="module" src="./rapidoc-9.1.1.min.js"></script>
+  </head>
+  <body>
+    <rapi-doc
+      spec-url = "json/api-docs.json"
+      show-header="false"
+      render-style="focused" 
+
+      theme="light"
+      nav-bg-color="#f4f4f4"
+      nav-accent-color="#0098d4"
+      nav-text-color="#000000"
+      nav-hover-text-color="#ffffff"
+      nav-hover-bg-color="#000000"
+      nav-active-text-color="#0098d4"
+      nav-active-bg-color="#000000"
+      primary-color="#000000"
+    >
+    <div slot="nav-logo" style="display: flex; align-items: center; justify-content: center;">
+      <a href="/docs/develop">
+        <img src="/images/matrix-logo.svg">
+      </a>
+    </div>
+    </rapi-doc>
+  </body>
+</html>

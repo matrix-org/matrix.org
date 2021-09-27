@@ -4,8 +4,8 @@
 # At present this includes:
 #   * the spec intro and appendices
 #   * the guides and howtos
-#   * the swagger UI for the API
 #   * 'Unstable' versions of the spec docs
+#   * the RapiDoc UI for the API
 #
 # Note that the historical versions of the CS spec and swagger, and the spec
 # index, are generated manually within matrix-doc and then *committed to git*.
@@ -30,11 +30,10 @@ fi
 # otherwise, assume the latest build was fetched by Github Actions.
 tar -xzf assets.tar.gz
 
-# copy the swagger UI into place
+# Set up foundations for RapiDoc API playground
 rm -fr unstyled_docs/api/client-server
 mkdir -p unstyled_docs/api/client-server/json
-cp -r swagger-ui/dist/* unstyled_docs/api/client-server/
-(cd unstyled_docs && patch -p0) <scripts/swagger-ui.patch
+ln -s ../../../spec/client_server/latest.json unstyled_docs/api/client-server/json/api-docs.json
 
 # and the unstable spec docs, but not:
 # * the spec index (because we want to keep the git version, which points to a specific c-s version), or
@@ -44,12 +43,11 @@ rm -f assets/spec/index.html
 rm -f assets/spec/appendices.html
 cp -ar assets/spec unstyled_docs
 
-# add a link to the stable swagger doc
-ln -s ../../../spec/client_server/latest.json unstyled_docs/api/client-server/json/api-docs.json
-
 # copy the unstyled docs and add the jekyll styling
 rm -rf content/docs
 cp -r unstyled_docs content/docs
 find "content/docs" -name '*.html' -type f |
     xargs "./scripts/add-matrix-org-stylings.pl" "./jekyll/_includes"
 
+# Set up RapiDoc itself at the end so it doesn’t get styled
+cp -r rapidoc/* content/docs/api/client-server/
