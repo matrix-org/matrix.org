@@ -64,10 +64,6 @@ a {
   justify-content: center;
   border-bottom: 1px solid #f4f4f4;
   background-color: #fff;
-  -webkit-transform: translate3d(0px, 0px, 100px);
-  transform: translate3d(0px, 0px, 100px);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
 }
 
 .mxnavbar__container {
@@ -362,10 +358,7 @@ a {
 }
 
 .mxcontent.mxcontent--home_hero {
-  -webkit-transform: translate3d(0px, 0px, 50px);
-  transform: translate3d(0px, 0px, 50px);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  z-index: 49;
 }
 
 .mxcontent.mxcontent--docs {
