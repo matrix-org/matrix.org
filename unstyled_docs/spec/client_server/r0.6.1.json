@@ -16232,7 +16232,7 @@
             "type": "apiKey"
         }
     },
-    "servers": {
+    "servers": [{
         "url": "https://{homeserver_address}/",
         "variables": {
             "homeserver_address": {
@@ -16240,6 +16240,6 @@
                 "description": "The base URL for your homeserver"
             }
         }
-    },
+    }],
     "swagger": "2.0"
 }
