@@ -1,0 +1,244 @@
+---
+date: '2021-10-01'
+title: 'This Week in Matrix 2021-10-01'
+categories:
+  - This Week in Matrix
+author: Thib
+image: https://matrix.org/blog/img/2021-hacktoberfest.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KC2WREBC2wI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This week in Matrix, William tells us about the State Compressor he wrote during his internship to reduce the size of Synapse's database, and so much more. William being a former intern of the backend team, who else than his mentor Brendan could lead the interview?
+
+## Dept of Spec 📜
+
+### The Spec
+
+[TravisR](https://github.com/turt2live) told us:
+
+> Hello! It is not-anoa here with the spec update this week, which unfortunately means no pretty graph of MSCs (sorry). I do however have some curated updates to the spec for you:
+>
+> This week we saw a couple new MSCs get opened:
+>
+> * [WIP: MSC3417: Call room room type](https://github.com/matrix-org/matrix-doc/pull/3417) from SimonBrandner
+>
+> * [WIP: MSC3414: Encrypted state events](https://github.com/matrix-org/matrix-doc/pull/3414)
+>
+> Though WIP, both are exciting steps towards much larger goals - looking forward to see how they progress! We also saw FCP finish on [MSC3231: Token authenticated registration](https://github.com/matrix-org/matrix-doc/pull/2918), part of Callum's [GSOC project](https://calcuode.com/matrix-gsoc/) this summer - congratulations! [MSC2918: Refresh tokens](https://github.com/matrix-org/matrix-doc/pull/2918) also finished FCP this week, making it a good time for clients to consider that access tokens might expire or appear in a different format in upcoming versions of the spec. [MSC2582: Remove mimetype from EncryptedFile object](https://github.com/matrix-org/matrix-doc/pull/2582) was also merged to the spec - thanks Sorunome for finding the duplicated field which was duplicated!
+>
+> Behind the scenes, the Spec Core Team (SCT) has been thinking about how we can release the spec as we've been talking about doing so for months. We're declaring a bit of a freeze on new things entering the spec for the time being, but that doesn't stop MSCs from completing FCP or being opened - they just might miss the v1.1 cut (sorry). Most of the work needed to release is deployment stuff rather than Matrix stuff, so the hope is is we can get it all worked out soon.
+>
+> I don't have the random MSC script on hand, but I do have access to the MSC list and found [WIP: MSC3030: Jump to date API endpoint](https://github.com/matrix-org/matrix-doc/pull/3030). It's listed as work in progress, but is one of the MSCs I personally look forward to being accepted in time!
+>
+> That's all for spec this week. I'm not sure about next week, but you might be stuck with me again. Maybe I can find those fancy graph tools in time...
+
+Thanks a lot not-anoa, that was a great spec update!
+
+## Dept of Servers 🏢
+
+### Synapse
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) reported:
+
+> Lots of work in preparation for Synapse 1.44 which is due out next week. Notably, we've found a few small regressions in rc1, so expect another release candidate on Monday followed by a formal release on Tuesday or Wednesday.
+>
+> I look forward to telling you all about that, and our plans for Q4, next week. 🙂
+
+Now that's some teasing! I can't wait for next week!
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) told us:
+
+> This week too sees some [Helm Chart](https://gitlab.com/ananace/charts) updating, with element-web having been bumped to 1.9.0
+
+
+## Dept of Bridges 🌉
+
+### Heisenbridge
+
+[hifi](https://matrix.to/#/@hifi:vi.fi) told us:
+
+> [Heisenbridge](https://github.com/hifi/heisenbridge/) is a bouncer-style Matrix IRC bridge.
+>
+> Release v1.2.1 🥳
+>
+> * Use read receipts to track messages
+>
+> * Don't prefix all lines in relaybot mode (regression)
+> * Fix formatter recursion context un-pillify (regression)
+>
+> Go grab your fix from PyPI or [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy)!
+>
+> Thanks!
+
+
+### Slack bridge 1.9.0-rc1, with a PSA
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) said:
+
+> Hey folks, it's been a while since we released changes to the Slack bridge but here we are on [our next RC](https://github.com/matrix-org/matrix-appservice-slack/releases/tag/1.9.0-rc1). This one includes a few new things, most notably:
+>
+> * The bridge now automatically invites users to private rooms if there is a message and they are not joined. ([\#613](https://github.com/matrix-org/matrix-appservice-slack/issues/613))
+>
+> * Update bridge to matrix-appservice-bridge 3.1.0 ([\#614](https://github.com/matrix-org/matrix-appservice-slack/issues/614))
+>
+> Also, a PSA: If you were struggling to bridge your rooms to matrix while using the matrix.org bridge, this should now be fixed. An update made to the Slack APIs silently broke the oauth flow, which has since been fixed. This was a misconfiguration-gone-unnoticed in our Slack app configuration, so self hosters don't need to upgrade. The details are in https://github.com/matrix-org/matrix-appservice-slack/issues/617#issuecomment-932047990
+
+
+## Dept of Clients 📱
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt and C++17. It supports E2EE and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) told us:
+
+> While I am a bit busy at the moment, Nheko is getting a lot of valuable smaller contributions:
+>
+> * Updated the emoji pickers to Unicode 14, so that you can properly troll people.
+>
+> * Pasting images should now work properly again on Windows and macOS, including pasting SVGs!
+> * The help and version command line parameters now work properly, even if an instance of Nheko is already running.
+>
+> There has also been a lot of progress on the translations! We just cracked 50% translated, but since that includes a lot of languages with only a few percent, this is actually much more than it sounds! We actually have 8 languages with over 90% translations now. If you speak one of the languages at 70% or so, any help translating the remaining bits is very much appreciated. You can easily translate without an account here: https://weblate.nheko.im/projects/nheko/nheko-master/#translations If you want to translate without having to rely on the upvote mechanism, feel free to ask for translation permissions directly in [#nheko:nheko.im](https://matrix.to/#/#nheko:nheko.im). That is also the right room to ask questions about the translation process or translations themselves.
+>
+> Nheko is also participating at Hacktoberfest this year. Translations done using the webinterface won't get counted for that though, you would need to submit a pull request manually for that. If you always felt like contributing to Nheko would be fun, but you had no reason to, now you can do it to let someone plant a tree for you (or get a T-shirt)!
+>
+> That's all, I need to get back on my train!
+
+
+### Hydrogen
+
+A minimal Matrix chat client, focused on performance, offline functionality, and broad browser support. https://github.com/vector-im/hydrogen-web/
+
+[Bruno](https://matrix.to/#/@bwindels:matrix.org) said:
+
+> Hydrogen saw a few bug fixes ([0.2.14](https://github.com/vector-im/hydrogen-web/releases/tag/v0.2.14), [0.2.15](https://github.com/vector-im/hydrogen-web/releases/tag/v0.2.15) and [0.2.16](https://github.com/vector-im/hydrogen-web/releases/tag/v0.2.16)) this week again, and also gained the possibility to recover from low-storage scenarios where the browser would clear indexedDB.
+>
+> One of the bugs fixed might have caused a timeline corruption, so when you get the 0.2.16 update the history cache will be cleared and you'll notice a bit of delay as you do an initial sync again.
+>
+> Aside from working on Hydrogen as a standalone app, I'm also making it easier to embedded in other projects. More info to come on that!
+>
+> We've also had a priority planning this week, which spawned an updated backlog. [Have a look](https://github.com/vector-im/hydrogen-web/projects/1) if you're interested what can be expected next (although be aware that the backlog has proven volatile in the past 🙂).
+
+Hydrogen embedded! I'm looking forward to that. Great work Bruno!
+
+### Element Clients
+
+#### Delight team
+
+* Released spaces out of Beta on Web and Android..!
+* Following through on the beta release of Spaces - fixing more bugs and polishing on all platforms.
+
+#### Web
+
+* Released Element Web 1.9.0 with Spaces enabled
+* Threads
+    * Working with the Synapse team to work out what backend support will be required for threads
+    * Steadily improving the UI
+* Added the ability to expand truncated quotes in replies
+* Cross-signing bug fixes
+
+#### iOS
+
+* We refrained from releasing 1.6.0 to the App Store because of regression issues reported by TestFlight users. Huge thanks for that!
+* 1.6.1 (Spaces and URLs preview) with all the bug fixes is being reviewed by Apple. It should be on the App Store on Monday
+* The implementation of user mentions in the composer has started (in SwiftUI!)
+* Last message types displayed in room lists have been aligned with other platforms
+* Tweaks to URL Previews and Contacts Access  
+* New app navigation code architecture is coming. It will be possible soon to navigate through permalinks without losing rooms previously visited
+* RoomSummary storage in CoreData is still in progress
+
+#### Android
+
+* Element Android is now in the 500k - 1M downloads category on the PlayStore!
+* Element Android 1.3.1 has been released on Thursday on the PlayStore
+* Now we are working on fixing issues, improving performance, and upgrading some important libraries.
+* The Presence support has made good progress too, it will maybe be merged for the next release.
+
+
+## Dept of Bots 🤖
+
+### matrix-email-bot
+
+[TravisR](https://github.com/turt2live) told us:
+
+> After 4 years, [matrix-email-bot](https://github.com/t2bot/matrix-email-bot) finally got an update. Now at v2, the bot has been rewritten using TypeScript and matrix-bot-sdk (farewell, js-sdk from 2017). It still requires manual setup and the behaviour overall should be the same as before, though the amount of testing is somewhat minimal - please complain in #email:t2bot.io if something goes wrong. 
+>
+> The bot also now supports encrypted rooms out of the box, including on the t2bot.io instance. Check out [t2bot.io/emailbot](https://t2bot.io/emailbot/) for information on how to get the bot set up in your room.
+>
+> The full changelog is available on the repo: https://github.com/t2bot/matrix-email-bot/releases/tag/v2.0.0
+
+Useful to watch a security mailing-list from the comfort of a Matrix room!
+
+## Dept of Interesting Projects 🛰️
+
+### Newgrounds MVS (Matrix adVancement Server)
+
+[mr_johnson22](https://matrix.to/#/@mr_johnson22:matrix.org) announced:
+
+> An (unofficial) Matrix server by and for the [Newgrounds](https://www.newgrounds.com) community.
+> 
+> This is a Matrix server with membership restricted to [Newgrounds Supporters](https://www.newgrounds.com/supporter). Newgrounds is an independent arts & entertainment site that has been around for over 20 years, and I felt that its spirit of independence is a perfect match with the openness of Matrix!
+> 
+> The most notable feature of the server is *comment rooms for Newgrounds submissions*. Unlike other content-sharing sites, Newgrounds submissions don't have comment sections, but _review_ sections, which let you post a single comment (and optional rating) for a submission. This encourages reviews to be focused on providing constructive feedback instead of being a place for off-topic discussions. With that said, open comment systems are nice too, so this Matrix server provides it! Simply visit `#portal_view_SUBMISSION_ID:ngmvs.one` to view!
+> 
+> These comment rooms are world-visible, but (at least for the time being) only Newgrounds Supporters may join these rooms & post comments in them.
+> 
+> To help along with this, I made a Firefox extension to make joining these rooms a breeze: [NG MVSX](https://addons.mozilla.org/en-US/firefox/addon/newgrounds-mvsx/). Simply view a Newgrounds submission page, and click on the icon that appears in your URL bar!
+> 
+> Code for all components is open-sourced on [GitLab](https://gitlab.com/ngmvs).
+> 
+> This is all very new, so things might break! If they do, tell me in `#ngmvs-public-discussion:ngmvs.one`
+
+
+## Final Thoughts 💭
+
+[LorenDB](https://matrix.to/#/@lorendb:matrix.org) remembers us:
+
+> if you need an excuse to contribute to Matrix... It's Hacktoberfest! Get hacking!
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|envs.net|424|
+|2|mangwiro.net|508|
+|3|matrix.kalleeen.fi|555|
+|4|trolla.us|567.5|
+|5|maunium.net|667.5|
+|6|maescool.be|733.5|
+|7|rollyourown.xyz|751.5|
+|8|smeken.nl|816.5|
+|9|aria-net.org|861.5|
+|10|conduit-test.searx.monster|890|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|bwitch.me|277|
+|2|pixelthefox.net|619|
+|3|jae.su|869|
+|4|matrix.awesomesheep48.me|1858.5|
+|5|0x1a8510f2.space|2677|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
