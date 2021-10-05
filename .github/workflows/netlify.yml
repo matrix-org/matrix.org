@@ -21,30 +21,30 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               run_id: ${{github.event.workflow_run.id }},
-              });
-              var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
-                return artifact.name == "merged-content-artifact"
-                })[0];
-                var download = await github.actions.downloadArtifact({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  artifact_id: matchArtifact.id,
-                  archive_format: 'zip',
-                });
-                var fs = require('fs');
-                fs.writeFileSync('${{github.workspace}}/content.zip', Buffer.from(download.data));
+            });
+            var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "merged-content-artifact"
+            })[0];
+            var download = await github.actions.downloadArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: matchArtifact.id,
+              archive_format: 'zip',
+            });
+            var fs = require('fs');
+            fs.writeFileSync('${{github.workspace}}/content.zip', Buffer.from(download.data));
 
-                var prInfoArtifact = artifacts.data.artifacts.filter((artifact) => {
-                  return artifact.name == "pr.json"
-                })[0];
-                var download = await github.actions.downloadArtifact({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  artifact_id: prInfoArtifact.id,
-                  archive_format: 'zip',
-                });
-                var fs = require('fs');
-                fs.writeFileSync('${{github.workspace}}/pr.json.zip', Buffer.from(download.data));
+            var prInfoArtifact = artifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "pr.json"
+            })[0];
+            var download = await github.actions.downloadArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: prInfoArtifact.id,
+              archive_format: 'zip',
+            });
+            var fs = require('fs');
+            fs.writeFileSync('${{github.workspace}}/pr.json.zip', Buffer.from(download.data));
       - name: "📦 Extract Artifacts"
         run: unzip content.zip && rm content.zip && tar -xzvf content.tar.gz && rm content.tar.gz && unzip pr.json.zip && rm pr.json.zip
       - name: "🔍 Read PR Info"
