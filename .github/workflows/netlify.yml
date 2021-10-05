@@ -46,7 +46,10 @@ jobs:
             var fs = require('fs');
             fs.writeFileSync('${{github.workspace}}/pr.json.zip', Buffer.from(download.data));
       - name: "📦 Extract Artifacts"
-        run: unzip content.zip && rm content.zip && tar -xzvf content.tar.gz && rm content.tar.gz && unzip pr.json.zip && rm pr.json.zip
+        run: |
+          unzip content.zip && rm content.zip && \
+          tar -xzvf content.tar.gz && rm content.tar.gz && \
+          unzip pr.json.zip && rm pr.json.zip
       - name: "🔍 Read PR Info"
         id: readctx
         uses: actions/github-script@v3.1.0
