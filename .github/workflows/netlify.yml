@@ -1,0 +1,83 @@
+name: "📤 Upload Preview Build to Netlify"
+on:
+  workflow_run:
+    workflows: ["🌐 Build the matrix.org website"]
+    types:
+      - completed
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: >
+      ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      # There's a 'download artifact' action but it hasn't been updated for the
+      # workflow_run action (https://github.com/actions/download-artifact/issues/60)
+      # so instead we get this mess:
+      - name: "📥 Download artifact"
+        uses: actions/github-script@v3.1.0
+        with:
+          script: |
+            var artifacts = await github.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: ${{github.event.workflow_run.id }},
+              });
+              var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
+                return artifact.name == "merged-content-artifact"
+                })[0];
+                var download = await github.actions.downloadArtifact({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  artifact_id: matchArtifact.id,
+                  archive_format: 'zip',
+                });
+                var fs = require('fs');
+                fs.writeFileSync('${{github.workspace}}/content.zip', Buffer.from(download.data));
+
+                var prInfoArtifact = artifacts.data.artifacts.filter((artifact) => {
+                  return artifact.name == "pr.json"
+                })[0];
+                var download = await github.actions.downloadArtifact({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  artifact_id: prInfoArtifact.id,
+                  archive_format: 'zip',
+                });
+                var fs = require('fs');
+                fs.writeFileSync('${{github.workspace}}/pr.json.zip', Buffer.from(download.data));
+      - name: "📦 Extract Artifacts"
+        run: unzip content.zip && rm content.zip && tar -xzvf content.tar.gz && rm content.tar.gz && unzip pr.json.zip && rm pr.json.zip
+      - name: "🔍 Read PR Info"
+        id: readctx
+        uses: actions/github-script@v3.1.0
+        with:
+          script: |
+            var fs = require('fs');
+            var pr = JSON.parse(fs.readFileSync('${{github.workspace}}/pr.json'));
+            console.log(`::set-output name=prnumber::${pr.number}`);
+      - name: "📤 Deploy to Netlify"
+        id: netlify
+        # v1.2.2
+        uses: nwtgck/actions-netlify@f517512ae75beec8896aa7b027c1c72f01816200
+        with:
+          publish-dir: content
+          deploy-message: "Deploy from GitHub Actions"
+            # These don't work because we're in workflow_run
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+          alias: matrix-org-previews-${{ github.event.number }}
+          env:
+            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+            timeout-minutes: 1
+      - name: "📝 Edit PR Description"
+        # v1.0.1
+        uses: velas/pr-description@3e19bf4239eecaf552a1c24ee730da2ba84b41cf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            pull-request-number: ${{ steps.readctx.outputs.prnumber }}
+            description-message: |
+              Preview: ${{ steps.netlify.outputs.deploy-url }}
+                ⚠️ Do you trust the author of this PR? Maybe this build will steal your keys or give you malware. Exercise caution. Use test accounts.
+
