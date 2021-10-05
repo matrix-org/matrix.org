@@ -82,5 +82,4 @@ jobs:
             pull-request-number: ${{ steps.readctx.outputs.prnumber }}
             description-message: |
               Preview: ${{ steps.netlify.outputs.deploy-url }}
-                ⚠️ Do you trust the author of this PR? Maybe this build will steal your keys or give you malware. Exercise caution. Use test accounts.
 
