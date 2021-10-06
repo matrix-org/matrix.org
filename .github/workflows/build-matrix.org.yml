@@ -187,10 +187,10 @@ jobs:
           enable-pull-request-comment: false
           enable-commit-comment: false
           alias: matrix-org-previews-${{ github.event.number }}
-          env:
-            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-            timeout-minutes: 1
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
       - name: "📝 Edit PR Description"
         # v1.0.1
         uses: velas/pr-description@3e19bf4239eecaf552a1c24ee730da2ba84b41cf
