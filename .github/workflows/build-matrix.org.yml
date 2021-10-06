@@ -190,7 +190,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 1
+        timeout-minutes: 30
       - name: "📝 Edit PR Description"
         # v1.0.1
         uses: velas/pr-description@3e19bf4239eecaf552a1c24ee730da2ba84b41cf
