@@ -196,7 +196,7 @@ jobs:
         uses: velas/pr-description@3e19bf4239eecaf552a1c24ee730da2ba84b41cf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            pull-request-number: ${{ github.event.pull_request.number }}
-            description-message: |
-              Preview: ${{ steps.netlify.outputs.deploy-url }}
+        with:
+          pull-request-number: ${{ github.event.pull_request.number }}
+          description-message: |
+            Preview: ${{ steps.netlify.outputs.deploy-url }}
