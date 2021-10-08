@@ -1,0 +1,360 @@
+---
+date: '2021-10-08'
+title: 'This Week in Matrix 2021-10-08'
+categories:
+  - This Week in Matrix
+author: Alexandre Franke
+image: TODO
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=hj-W53PSqbg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This week, I had the great pleasure of chatting with a lovely bunch from Element about Spaces. [This feature just got out of beta](https://element.io/blog/spaces-blast-out-of-beta/) and they tell us all about it.
+
+## Dept of Spec 📜
+
+### The Spec
+
+[TravisR](https://github.com/turt2live) offered:
+
+> Hello TWIM, it's me, not-anoa, again with your weekly spec update. I unfortunately didn't get a chance to figure out how to run the tooling which generates fancy graphs, but it looks like you'll have a more qualified person next week 😇
+>
+> This week we saw a couple new MSCs:
+>
+> * [MSC3419](https://github.com/matrix-org/matrix-doc/pull/3419) - Letting guests do more things (which is needed for things like full mesh conference calling)
+>
+> * [MSC3429](https://github.com/matrix-org/matrix-doc/pull/3429) - A room preview API. Turns out this is more or less a duplicate of another MSC, but has a different approach. Be sure to check both out 🙂
+>
+> We've also been making progress on trying to get the spec release out by formally specifying all the new global version numbering and new endpoint versioning (see [this](https://github.com/matrix-org/matrix-doc/pull/3420) and [this](https://github.com/matrix-org/matrix-doc/pull/3421)), and have been [experimenting](https://github.com/matrix-org/matrix-doc/pull/3432) with how room versions are represented by the spec.
+>
+> From page 6 of the open MSCs there's [MSC2723](https://github.com/matrix-org/matrix-doc/pull/2723). The MSC is relatively small, but solves a fairly important problem with forwarded messages in Matrix: where were they forwarded from? From a glance, it has minor technical feedback and could do with an implementation (psst: client authors, this should be easy and fit well into a North American Long Weekend project 😇).
+>
+> That's all I have for you today, but if I've missed something: sorry, and you should be in capable hands next week.
+
+
+
+## Dept of P2P 👥
+
+### P2P Matrix
+
+[Neil Alexander](https://matrix.to/#/@neilalexander:matrix.org) said:
+
+> This week I have completely rewritten the [Pinecone](https://github.com/matrix-org/pinecone) router with the aim of improving code quality and boosting performance. It now uses significantly less resources, making it much easier to simulate larger networks and using less battery power on mobile devices.
+>
+> While there is still some work to be done to ensure the Pinecone network gracefully handles large-scale mobility events, protocol development is slowly progressing and we will soon be looking at how Matrix federation can be made more efficient by using routing intelligence from the overlay network.
+>
+> If you have a passion for routing protocols and/or peer-to-peer systems, we're looking to hire engineers to work in the P2P Matrix space — get in touch by [emailing your resume to us](mailto:elementio@jobs.workablemail.com)!
+>
+> We also have our very own [P2P Matrix](https://matrix.to/#/#p2p:matrix.org) room where you can follow along with the latest discussions and also occasionally pick up experimental iOS and Android builds of Element with an embedded P2P-enabled Dendrite homeserver.
+
+
+
+## Dept of Servers 🏢
+
+### Synapse
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) told us:
+
+> We [released Synapse 1.44](https://matrix.org/blog/2021/10/05/synapse-1-44-0-released) this week! The release was mainly focused on bug fixes and internal cleanups. In particular, we've made significant strides toward enforcing static type annotations across several more Synapse modules, we continue to remove "magic" code from our configuration handler, and we've landed significant refactors to both the user directory and federated event authentication. These changes pay off significant technical debt, reduce Synapse's maintenance cost, and ease future bug fixes.
+>
+> But that's not all. This release also includes performance improvements around JSON serialization, new capabilities for extension modules, and better metrics around cache evictions. See [the announcement](https://matrix.org/blog/2021/10/05/synapse-1-44-0-released) for more details.
+
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) said:
+
+> And for the regularly scheduled [Helm Chart](https://gitlab.com/ananace/charts) update this week; matrix-synapse has been updated to 1.44.0
+
+
+
+## Dept of Bridges 🌉
+
+### Rocket.chat
+
+[Pascal](https://matrix.to/#/@lascapiriot:matrix.org) reported:
+
+> Hi! Rocket.chat is working on a bridge with Matrix !!!! So nice 😊 
+>
+> https://youtu.be/jBtBiUXLqAk?t=1691
+
+
+
+### matrix-appservice-irc 0.32.0-rc1
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) told us:
+
+> Hello one and all! We've got a minor-yet-MAJOR release candidate of the IRC bridge up for grabs. https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.32.0-rc1 is now based upon the 3.X matrix-appservice-bridge library, and so all the innards have been replaced with matrix-bot-sdk.
+>
+> Please try it out, and the full release should be out next week.
+
+
+
+## Dept of Clients 📱
+
+### Element clients
+
+Updates from the teams:
+
+**Web**
+
+
+* Released Element Web RC 1.9.1 RC2, containing Spaces papercut fixes among other things
+* Threads is continuing to steadily progress
+* Cross signing bug fixes and usability improvements
+* Ran another community testing session, which has thrown up many suggestions for improvements to our onboarding experience
+
+**Delight team**
+
+
+* Following the release of Spaces from Beta, we're fixing bugs and things which might have slipped through the cracks in the 1.0 release!
+
+**iOS**
+
+
+* Released 1.6.1 with Spaces and URLs preview on the App Store.
+* RC1.6.2 is being built. This is mainly a maintenance release
+* Updated libs and tools dependencies
+* Improved Spaces performance
+
+**Android**
+
+
+* Element Android 1.3.2 is getting released today. It adds support to Android Auto (thanks [https://github.com/abaker](https://github.com/abaker) !) and lots of other features and bug fixes. Full changelog will be here: [https://github.com/vector-im/element-android/releases/tag/v1.3.2](https://github.com/vector-im/element-android/releases/tag/v1.3.2) 
+* The team is working on several tasks:
+    * Cleanup the code managing the notifications. It should fix some related issues
+    * Implement Presence support
+    * Upgrade framework libraries, starting by Mavericks 2
+    * Fix as many issues as possible
+
+
+
+### Quaternion
+
+[kitsune](https://matrix.to/#/@kitsune:matrix.org) told us:
+
+> The first maintenance release of Quaternion 0.0.95 is here, plugging more HTML injections (quite limited this time), with tweaks in positioning of the timeline to really return to the message you last read before closing the room, colourful display names in the timeline and not just in the user list, and one particular crash fix for a case when you made a typo in your password but then did it right - only to see Quaternion falling down to pieces. The release notes, together with self-contained binaries, are [in a usual place](https://github.com/quotient-im/Quaternion/releases/tag/0.0.95.1), the Flathub repo has a new Flatpak too - just go and update!
+
+
+
+### Cinny
+
+[ajbura](https://matrix.to/#/@ajbura:matrix.org) said:
+
+> Cinny [v1.3.2](https://github.com/ajbura/cinny/releases/tag/v1.3.2) got released this week. It fixes unwanted "Password don't match" error on register page along with small improvements in Public room modal and message input (Thanks to Empty2k12). We also released v1.3.1 last week which fixed unnecessary CPU usages on idle and infinite spinner after login. 
+>
+> Check it out at: https://cinny.in 
+>
+> Join the matrix room: https://matrix.to/#/[#cinny:matrix.org](https://matrix.to/#/#cinny:matrix.org)
+
+
+
+### SchildiChat
+
+[qg](https://matrix.to/#/@qg:supercable.onl) said:
+
+> [SchildiChat](https://schildi.chat/) is a fork of Element that focuses on UI changes such as message bubbles and a unified chat list for both direct messages and groups, which is a more familiar approach to users of other popular instant messengers.
+>
+> Both the Web/Desktop and the Android variant have received a couple of new features during the last weeks, so it's time again to share some of the highlights with you!
+>
+> #### Web/Desktop
+>
+> The Web/Desktop variant has received plenty of love for the last few weeks, so best to list some of the bigger changes:
+>
+> * Added a setting for the room list style: you can now choose between "roomy" with big avatars and two-line previews, "intermediate" for a smaller avatar and a single line preview, or "compact" to get a tiny avatar and the room preview in the same line of the room name
+>
+> * Added a setting how to color usernames in the chat: either uniform, based on the MXID, or based on the user's power level (Android has this feature for some time already, too!)
+> * Added a setting to not open automatically the most recent chat when switching spaces
+>
+> * Improved theme settings: you can now choose custom themes independently for both light and dark mode
+> * Workaround for switching between light and dark mode together with the system on Linux
+>
+> * macOS builds are now signed
+> * ... and many more (read the release announcements on [GitHub](https://github.com/SchildiChat/schildichat-desktop/releases) or join our [announcemnet room](https://matrix.to/#/[#schildichat-web-announcements:matrix.org](https://matrix.to/#/#schildichat-web-announcements:matrix.org)) to stay informed)
+>
+> The following screenshot showcases the compact room list and user name color mode based on PL:
+
+![Schildichat](/blog/img/2021-10-08-schildichat.png)
+
+> So take that, IRC style lovers! 😁
+>
+> #### Android
+>
+> We added support for [MSC2654](https://github.com/matrix-org/matrix-doc/pull/2654) for server-reported unread counts. This means that we can now display the number of unread messages even for muted chats, if your homeserver supports it (synapse does)!
+>
+> Feel free to join the [SchildiChat space](https://matrix.to/#/[#schildichat:matrix.org](https://matrix.to/#/#schildichat:matrix.org)), and visit our discussion rooms!
+
+
+
+## Dept of SDKs and Frameworks 🧰
+
+### Halcyon
+
+[gen3](https://matrix.to/#/@gen3:blackline.xyz) said:
+
+> Hello! Halcyon is a Matrix bot library created with the intention of being easy to install and use. My goal is to lower the barrier of entry currently required to write and maintain a bot. I do not intend you to need a database, or have to juggle encryption keys.
+>
+> With the initial release of the library we currently have:
+>  + A CLI tool for creating and revoking tokens
+>
+>  + Hooks for new messages, message edits
+>  + Hooks for room invites, and leaving rooms
+>
+>  + Sending messages as text, markdown, and HTML
+>  + Sending replies to messages
+>
+>  + Ever improving documentation
+> Please check out the example in https://github.com/WesR/Halcyon and join us over in [#halcyon:blackline.xyz](https://matrix.to/#/#halcyon:blackline.xyz)
+
+
+
+### jOlm
+
+[brevilo](https://matrix.to/#/@brevilo:matrix.org) said:
+
+> Hi! Just a quick one: this week saw the first stable release of [jOlm](https://github.com/brevilo/jolm) - Olm bindings for Java
+
+
+
+### libQuotient
+
+[kitsune](https://matrix.to/#/@kitsune:matrix.org) told us:
+
+> This week has seen two maintenance releases of libQuotient - just after 0.6.10 went out, fixing an issue with invites not showing up, another issue with URLs that have unescaped double-hashes (coincidentally, matrix.to URLs to some IRC channels are exactly those). Those URLs are not quite following the RFC but are accepted widely enough to warrant a fix, and a new release. Get 0.6.11 from [here](https://github.com/quotient-im/libQuotient/releases/tag/0.6.11) (or better, just checkout the respective Git tag).
+
+
+
+## Dept of Bots 🤖
+
+### Standupbot
+
+[Sumner](https://matrix.to/#/@sumner:sumnerevans.com) said:
+
+> A few weeks ago, I posted about the [standupbot](https://sr.ht/~sumner/standupbot) that I wrote to help assist with creating and sending standup posts to a room. I'm excited to announce today that you can choose to interact with the standupbot using threads! Instead of asking you about each part of the standup post individually, it creates threads for each of the parts that you can fill in. Your replies get added to the standup post like before, but it's a bit more interactive of a process. Here's a picture of how it looks (ignore all the display bugs due to Element).
+
+![2021-10-08-HVxe0-thread-interaction.png](/blog/img/2021-10-08-HVxe0-thread-interaction.png)
+
+> If you are interested in learning more, the source code is here: https://sr.ht/~sumner/standupbot and you can join the development matrix room [#standupbot-dev:sumnerevans.com](https://matrix.to/#/#standupbot-dev:sumnerevans.com)
+
+
+
+
+## Dept of Events and Talks 🗣️
+
+### Running conferences on Matrix: A post-mortem of Ansible Contributor Summit
+
+[Gwmngilfen](https://matrix.to/#/@gwmngilfen:matrix.org) reported:
+
+> Following the Matrix-powered [Ansible conference featured in TWIM-2](https://matrix.org/blog/2021/09/24/this-week-in-matrix-2021-09-24#ansible-contributor-summit-202109), @gwmngilfen:ansible.im [has written up some thoughts](https://emeraldreverie.org/2021/10/08/running-conferences-matrix/) on how it was structured, how it went, and why he thinks it worked (spoiler! It worked quite well!).
+
+
+
+![2021-10-08-FLA8x-image.png](/blog/img/2021-10-08-FLA8x-image.png)
+
+## Dept of Interesting Projects 🛰️
+
+### Newgrounds MVS (Matrix adVancement Server)
+
+[mr_johnson22](https://matrix.to/#/@mr_johnson22:matrix.org) offered:
+
+> #### An (unofficial) Matrix server for the Newgrounds community.
+>
+> Since I was pressed for time last week, I didn't go much in depth on how this server works. Here is a brief overview of its components:
+>
+> * https://app.ngmvs.one: A self-hosted Element Web with some theming tweaks, and the easiest way to visit the server.
+>
+> * https://matrix.ngmvs.one: the homeserver itself (Synapse). It has open registration, but only for [Newgrounds Supporters](https://www.newgrounds.com/supporter) (ie. patrons) via SSO logins with Newgrounds accounts. But Newgrounds doesn't have its own "Log in with Newgrounds" capability, so that leads me to the next component:
+> * [ng-saml-idp](https://gitlab.com/ngmvs/ng-saml-idp): middleware built on [PySAML2](https://pysaml2.readthedocs.io/en/latest/) for using Newgrounds logins as a SAML2 Identity Provider. The code is tailored for my Synapse installation, but it can easily be tweaked to allow Newgrounds SSO logins to any SAML2-compatible service!
+>
+> * [W-Bot](https://gitlab.com/ngmvs/wbot): a Matrix appservice/bot built on [mautrix-python](https://github.com/tulir/mautrix-python) that serves two purposes:
+> 	1. Creates Matrix rooms for Newgrounds movie/game submission pages (ie. maps `#portal_view_<ID>:ngmvs.one` to `https://www.newgrounds.com/portal/view/<ID>`), and adds a widget containing the submission itself to these rooms (but only if it's a movie--widgets for games will only have a link)
+>
+> 	2. Restricts membership of any room it moderates to logged-in Newgrounds Supporters. Users without a :ngmvs.one account can authenticate to the bot via the "login" bot command, which lets them log into their Newgrounds account.
+> 	
+>
+>   Point 2 also means that anyone on the Matrix network can make a room that's restricted to Newgrounds Supporters. Just make sure the bot has a high enough power level to kick users!
+>
+>   Public (and federation-accessible) instance is at [@w-bot:ngmvs.one](https://matrix.to/#/@w-bot:ngmvs.one).
+>
+>   (PS: The "W" stands for "double"--because of its job of "copying" rooms into Matrix.)
+>
+> * [MVSX](https://addons.mozilla.org/en-US/firefox/addon/newgrounds-mvsx/): a Firefox extension that, when visiting a Newgrounds movie/game submission page, puts a button in the URL bar that sends you to the Matrix room created for that submission by W-Bot.
+>
+> **This week's updates:**
+>
+> * W-Bot now has the `inviteme` command to invite the issuing user to the invite-only space room for logged-in Newgrounds Supporters. (Users should be invited there automatically, but this command is for people who leave / reject invites to that space & want to re-join it later.)
+>
+> * The MVSX extension has been updated to allow joining rooms with Matrix clients other than [app.ngmvs.one](https://app.ngmvs.one/). Right-clicking the URL bar icon now shows a drop-down list of alternative clients, and lets you set which one to use by default (on left-clicks of the icon).
+>
+> Discussion: [#ngmvs-public-discussion:ngmvs.one](https://matrix.to/#/#ngmvs-public-discussion:ngmvs.one)
+
+
+
+## Final Thoughts 💭
+
+### Room of the week
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) offered:
+
+> Hi everyone! Did you ever feel lost in the Matrix world? The room directory is big, but it's still hard to find something you like. Or are you a room moderator, but there is not much activity in your room because it doesn't have enough users?
+>
+> This is why I want to share rooms (or spaces) I find interesting.
+>
+> ---
+>
+> This week's space is: [#retro:nil.im](https://matrix.to/#/#retro:nil.im)
+>
+> **"I‘m in plenty of retro computing and gaming related Discords and got annoyed that there was no such thing on Matrix. So, I created a Matrix Space for all things retro computing and gaming, hoping there might be enough like-minded people on Matrix to build a community. There should hopefully be rooms for everything now, although a few are still missing room icons - that will come over the next days. Here’s to hoping that the retro computing community can also thrive outside of Discord 😁."**
+>
+> ---
+>
+> If you want to suggest a room for this section, tell me in [#roomoftheweek:fachschaften.org](https://matrix.to/#/#roomoftheweek:fachschaften.org)
+
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|boba.best|504|
+|2|trolla.us|588|
+|3|maunium.net|606|
+|4|aria-net.org|716.5|
+|5|ziroh.be|882|
+|6|maescool.be|910|
+|7|fff.chat|936|
+|8|thomcat.rocks|1157|
+|9|envs.net|1442|
+|10|wallace.sh|2480.5|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|bwitch.me|352|
+|2|sspaeth.de|416.5|
+|3|spacedn.com|588|
+|4|0x1a8510f2.space|887|
+|5|jae.su|965|
+|6|pixelthefox.net|1074.5|
+|7|matrix.awesomesheep48.me|1145|
+|8|envs.net|1930|
+|9|dendrite01.fiksel.info|2305.5|
+|10|weber.world|2993.5|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
