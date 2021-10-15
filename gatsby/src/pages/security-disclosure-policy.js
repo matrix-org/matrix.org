@@ -10,6 +10,12 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date: '2021-09-23',
+            who: 'Pascal "nephele" Abresch',
+            description: 'Reported that Matrix Static (used for view.matrix.org) was vulnerable to XSS via room names due to missing sanitization. Fixed in <a href="https://github.com/matrix-org/matrix-static/releases/tag/0.3.1">Matrix Static 0.3.1</a>.',
+            service: 'Matrix Static'
+        },
+        {
             date: '2021-08-31',
             who: 'Thomas Chauchefoin (SonarSource)',
             profile: 'https://www.sonarsource.com/',
