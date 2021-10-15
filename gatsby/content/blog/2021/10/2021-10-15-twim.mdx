@@ -1,0 +1,323 @@
+---
+date: '2021-10-15'
+title: 'This Week in Matrix 2021-10-15'
+categories:
+  - This Week in Matrix
+author: Alexandre Franke
+image: https://matrix.org/blog/img/splash.jpg
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j9iDq6gisCU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Demo time! Threads and SwiftUI on the agenda this week!
+
+## Dept of Spec 📜
+
+### Spec
+
+[anoa](https://matrix.to/#/@andrewm:amorgan.xyz) told us:
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://spec.matrix.org/unstable/proposals.
+>
+> #### MSC Status
+>
+> **New MSCs:**
+>
+> * [MSC3442: move the prev_content key to unsigned](https://github.com/matrix-org/matrix-doc/pull/3442)
+> * [MSC3440: Threading via m.thread relation](https://github.com/matrix-org/matrix-doc/pull/3440)
+>
+> **MSCs with proposed Final Comment Period:**
+>
+> * [MSC3442: move the prev_content key to unsigned](https://github.com/matrix-org/matrix-doc/pull/3442)
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs are in FCP._
+>
+> **Merged MSCs:**
+>
+> * _No MSCs were merged this week._
+> #### Spec Updates
+>
+> The actual spec changes for [MSC2844: Global version number for the whole spec](https://github.com/matrix-org/matrix-doc/pull/2844) have now been merged [[one](https://github.com/matrix-org/matrix-doc/pull/3420), [two](https://github.com/matrix-org/matrix-doc/pull/3421)]. You can take a look at [this section](https://spec.matrix.org/unstable/#specification-versions) of the unstable spec to now see an explanation of the Matrix spec version numbering scheme.
+>
+> Additionally, take a look at the [Client-Server API](https://spec.matrix.org/unstable/client-server-api/#rooms-1), where all current APIs have been bumped from `/r0/...` to `/v3/...`. See [this bit of MSC2844](https://github.com/matrix-org/matrix-doc/blob/old_master/proposals/2844-global-versioning.md#endpoint-versioning) for the rationale behind this change.
+>
+> The pieces are starting to fall into place for the upcoming Matrix 1.1 spec release!
+>
+> #### Random Spec of the Week
+>
+> The random spec of the week is... [MSC1840: Typed rooms](https://github.com/matrix-org/matrix-doc/pull/1840)!
+>
+> This is a concept that was used in the Spaces MSCs to allow servers and clients to denote a room as a Space vs. a typical Matrix room (and set up their UI appropriately). Only the type for a Space has been specified so far, but there are many different applications room types could serve; for example profile rooms!
+>
+> This MSC aims to create a general concept for a typed room, whereas future MSCs would identify those types and their meaning.
+
+
+
+## Dept of Servers 🏢
+
+### Synapse
+
+[callahad](https://matrix.to/#/@callahad:matrix.org) told us:
+
+> Happy Friday! The Synapse team has been sorting out what we hope to accomplish before the end of the year, and it's looking like our main focus will remain research and experimentation towards making large room joins go very fast. We don't yet see an incremental path from where we are now to where we want to end up, so progress will likely come as a few discrete milestones, rather than a gradual acceleration over time.
+>
+> Aside from room joins, we expect to spend a good bit of time time on bug fixes and preventative maintenance. For example, we hope to get Sydent passing `mypy --strict` by this time next week. Doing so would have prevented recent production issues, including one which caused phone number verification to silently fail.
+>
+> Preparations for releasing 1.45.0 continue apace; I'm loking forward to telling you about it next week!
+
+
+
+## Homeserver Deployment 📥️
+
+### Kubernetes
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) told us:
+
+> And as has come to be routine for TWIM, this week too has seen an update of my [Helm Charts](https://gitlab.com/ananace/charts) - with element-web being updated to 1.9.2
+
+
+
+## Dept of Bridges 🌉
+
+### matrix-appservice-pstn
+
+[chandi](https://matrix.to/#/@chandi:livingutopia.org) reported:
+
+> let's bridge everything! Have you ever wished you could make and receive phone calls with matrix?
+>
+> The beginnings of a matrix <-> SIP bridge are done :) If you can imagine to live with bugs or even help with the development yourself, feel free to give it a try! :)
+> https://github.com/alangecker/matrix-appservice-pstn
+>
+> Discussions: #matrix-voip-bridging:kb1rd.net
+
+
+![2021-10-15-4j7h3-screencast.gif](/blog/img/2021-10-15-4j7h3-screencast.gif)
+
+## Dept of Clients 📱
+
+### FluffyChat 0.42.0 has been released
+
+[FluffyChat](https://fluffychat.im) is the cutest cross-platform matrix client. It is available for Android, iOS, Web and Desktop.
+
+[krille](https://matrix.to/#/@krille:janian.de) said:
+
+> This release fixes several bugs and makes E2EE enabled by default.
+>
+> * feat: Enable E2EE by default for new rooms
+>
+> * feat: Display all private rooms without encryption as red
+> * feat: New design for bootstrap
+>
+> * feat: New design for emoji verification
+> * feat: Display own MXID in the settings
+>
+> * feat: More finetuning for font sizes
+> * chore: Updated translations (Thanks to all translators!)
+>
+> * fix: App crash on logout
+> * fix: Temporary disable sign-up for matrix.org (Currently gives "500: Internal Server Error" while FluffyChat **should** send the same requests like Element)
+>
+> * fix: Implement Roboto font to fix font issues on Linux Desktop and mobile
+> * fix: QR Code scanning
+
+![2021-10-15-Ss6Yj-screenshot_20211014-173752.png](/blog/img/2021-10-15-Ss6Yj-screenshot_20211014-173752.png)
+
+
+
+
+### Nheko
+
+[Nheko](https://github.com/Nheko-Reborn/nheko) is a desktop client using Qt and C++17. It supports E2EE and intends to be full featured and nice to look at
+
+[Nico (@deepbluev7:neko.dev)](https://matrix.to/#/@deepbluev7:neko.dev) offered:
+
+> Making steps towards stable E2EE, we have now implemented bootstrapping cross-signing on a new account. This allowed me to finally enable cross-signing on my Nico (nheko.im) account (which I intended to only use with Nheko). Thulinma also added a way to refresh the current device list as well as highlighting your current device in the device list, which should make it easier to recover, if a misscommunitcation with the server lead to an outdated device list. Meanwhile LorenDB has been plugging away on converting more dialogs to Qml and we merged like 3 converted dialogs!
+
+
+![2021-10-15-Exgkj-bootstrap.png](/blog/img/2021-10-15-Exgkj-bootstrap.png)
+
+
+
+### Element
+
+**Web**
+
+* Released Element Web 1.9.2 featuring chat export, Spaces and E2EE improvements, updates to Electron 13.5.1
+* More progress on the client side of threads, published [an MSC](https://github.com/matrix-org/matrix-doc/pull/3440) and started work on Synapse support
+* Fixed some bugs in registration, Windows icons, phone number confirmation
+
+**Delight team**
+
+* On iOS, we’ve been implementing support for pagination of the Space Summary API, to support larger spaces, as well as improving performance. We’ve also started implementing support for creating Spaces.
+* We’re also exploring larger changes to make to the layouts of Element on all platforms to surface simpler and more intuitive navigation all round and tackle some of the feedback we couldn’t get to during the Spaces beta. Watch this space!
+
+**iOS**
+
+- We failed to publish the app on the app store this week because of observed crashes. RC 1.6.5 is available on TestFlight. We should be able to release on the App Store on Monday
+- User auto completion has landed on develop
+- Message forward is in the horizon
+- Settings got lipstick by reviewing headers and footers
+- It is now possible to copy and paste an image
+
+
+## Dept of Widgets 🧩
+
+### New Widgets: Spanners!
+
+Can you believe we didn’t have a dept. of Widgets yet? We do now!
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) told us:
+
+> Hi folks! This week I took a bit of time out of my day to create a new widget for Matrix. We have the concept of "Spanners" at Matrix where one person wants to take control of a resource, and they will say "I am taking the spanner". This prevents other people (verbally at least) from trying to use the resource at the same time.
+>
+> For years we have been getting by with sending messages into Matrix, but no more! For now anyone can use the Spanner widget to set up a similar system in their room.
+>
+> You can try this out now with `/addwidget https://half-shot.uk/spanner?spannerName=YourSpannerName` (although no promises about the uptime of half-shot.uk)
+>
+> The repo can be found https://github.com/Half-Shot/matrix-spanner-widget.
+>
+> You will need to ensure that all users who plan to use it must be able to send state events of type `uk.half-shot.spanner`. Otherwise, it should be ready to go!
+
+
+
+## Dept of Ops 🛠
+
+### Rager
+
+I heard CLI tools are all the rage, so here is one!
+
+[janshai](https://matrix.to/#/@janshai:beeper.com) reported:
+
+> Rager is a CLI tool for matrix client developers to easily view and parse rageshake logs. It handles syncing (with many parameters to sync only the logs you want), searching through downloaded logs, and paging through any log on your device (with peudo-syntax highlighting to make it easier to understand), right from the comfort of your terminal. It has been in development for a few months (being used/tested by devs at [beeper.com](https://www.beeper.com)) but I feel like it's now in a good enough state to release for everyone else to use. If it's something that may help you, try it out and let me know if it works for you!
+>
+> [Get it here](https://github.com/iandwelker/rager)
+
+
+
+## Dept of Services 🚀
+
+### Hingst
+
+[Andreas](https://matrix.to/#/@hingst:hingst.net) told us:
+
+> Hi everyone! 
+>
+> We believe that having your own homeserver should be easy and require little technical knowledge. That's why we launched [Hingst](https://hingst.net), a privacy focused Matrix hosting service which takes care of (almost) everything for you. 
+>
+> Our goal is that our users spend no time whatsoever on maintaining the actual server so they can focus on what matters - chatting with friends and colleagues. 
+>
+> All servers are located in Sweden and of course they run entirely on renewable energy! 
+>
+> That's all for now. Thanks for reading :)
+
+
+If getting your own homeserver was *hinging* on the availability of such a service, you don’t have an excuse anymore!
+
+
+
+## Dept of Events and Talks 🗣️
+
+### Finnish Community Meetup
+
+[Cos](https://matrix.to/#/@cos:hacklab.fi) offered:
+
+> First annual Finnish Matrix community meet is to be held 20.11 in Tampere, Finland. Infos and registration at https://mobilizon.be/events/5c9ce49d-83de-41d1-b824-8950293d3fd1
+
+
+
+### Berlin Meetup
+
+[Christian](https://matrix.to/#/@christianp:vector.modular.im) told us:
+
+> Heads up for those in Berlin 🐻🇩🇪. You're welcome to join us Tuesday evening at 7:00 PM chatting about Matrix development and hosting. We're going to meet in person at [c-base](https://www.c-base.org/). In compliance with the hackerspace's house rules this is a strict 2G event.
+>
+> If possible, join our [#matrix-berlin:matrix.org](https://matrix.to/#/#matrix-berlin:matrix.org)  room.
+
+
+
+## Dept of Guides 🧭
+
+### French User Guide
+
+[Henri Carnot](https://matrix.to/#/@henri2h:carnot.cc) announced:
+
+> Matrix user guide [French]
+>
+> Hi !!
+> I'm building a matrix user guide for my school. It is not finished yet, but feel free modify/repurpose it !
+>
+> Preview : https://minitel.emse.fr/move-to-matrix/emse
+>
+> source : https://gitlab.com/henri2h/move-to-matrix
+>
+> The goal is to build an easy user guide which could be easily adapted to other matrix instances.
+
+
+
+## Final Thoughts 💭
+
+### Room of the week
+
+[timokoesters](https://matrix.to/#/@timokoesters:fachschaften.org) offered:
+
+> Hi everyone! Did you ever feel lost in the Matrix world? The room directory is big, but it's still hard to find something you like. Or are you a room moderator, but there is not much activity in your room because it doesn't have enough users?
+>
+> This is why I want to share rooms (or spaces) I find interesting.
+>
+> ---
+>
+> This week's room is: [#chess2:matrix.org](https://matrix.to/#/#chess2:matrix.org)
+>
+> **"Everything related to chess."**
+>
+> ---
+>
+> If you want to suggest a room for this section, tell me in [#roomoftheweek:fachschaften.org](https://matrix.to/#/#roomoftheweek:fachschaften.org)
+
+
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|maescool.be|517|
+|2|boba.best|530|
+|3|envs.net|552.5|
+|4|trolla.us|934|
+|5|almum.de|1236|
+|6|spooks.cyou|1319.5|
+|7|halogen.city|1864|
+|8|matrix.markshorten.co.uk|1970|
+|9|ewsandor.com|2018.5|
+|10|diasp.in|2408|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|conduittestfigyel.gq|312.5|
+|2|sspaeth.de|323|
+|3|envs.net|421|
+|4|dendrite.thomcat.rocks|701|
+|5|grin.hu|744|
+|6|spooks.cyou|790|
+|7|0x1a8510f2.space|869|
+|8|jae.su|878|
+|9|matrix.awesomesheep48.me|1533|
+|10|weber.world|3921|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
+
+[#TWIM:matrix.org]: https://matrix.to/#/#TWIM:matrix.org
