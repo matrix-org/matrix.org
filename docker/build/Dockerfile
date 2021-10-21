@@ -1,6 +1,6 @@
 # Dockerfile to construct the docker image used to construct the website
 #
-# docker build .buildkite -f .buildkite/Dockerfile -t matrixdotorg/matrixdotorg-build
+# docker build docker/build -t matrixdotorg/matrixdotorg-build
 # docker push matrixdotorg/matrixdotorg-build
 
 # 2.7 because the jekyll rst plugin expects it
