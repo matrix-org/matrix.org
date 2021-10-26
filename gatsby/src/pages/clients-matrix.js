@@ -48,10 +48,13 @@ const ClientsMatrix = ({data}) => {
               <input type="radio" name="platform" id="linux" /><label htmlFor="linux"> Linux</label>
             </div>
             <div className="mxgrid_item33 mxgrid_item33--clients">
-              <input type="radio" name="platform" id="mac" /><label htmlFor="mac"> MacOS</label>
+              <input type="radio" name="platform" id="mac" /><label htmlFor="mac"> macOS</label>
             </div>
             <div className="mxgrid_item33 mxgrid_item33--clients">
               <input type="radio" name="platform" id="windows" /><label htmlFor="windows"> Windows</label>
+            </div>
+            <div className="mxgrid_item33 mxgrid_item33--clients">
+              <input type="radio" name="platform" id="web" /><label htmlFor="web"> Web</label>
             </div>
             <div className="mxgrid_item33 mxgrid_item33--clients">
               <input type="radio" name="platform" id="android" /><label htmlFor="android"> Android</label>
