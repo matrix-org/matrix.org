@@ -54,20 +54,29 @@ jobs:
           name: spec-artifact
           path: jekyll-site.tar.gz
 
-  # Run gatsby. We also use a custom docker image for this, to avoid
-  # installing the entirety of npmjs for each build.
+  # Run gatsby.
   build-gatsby:
     name: "🌐 Gatsby"
     runs-on: ubuntu-latest
-    container:
-      image: "matrixdotorg/matrixdotorg-gatsby:latest"
     steps:
       - name: "📥 Source checkout"
         uses: actions/checkout@v2
-      - name: "🔗 Link node modules"
-        run: ln -s /opt/gatsby/node_modules . 
+      - name: "⚙️ Setup node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: "📝 Gatsby dependencies cache"
+        uses: actions/cache@v2
+        with:
+          path: |
+            gatsby/node_modules
+          key: ${{ runner.os}}-gatsby-deps-${{ hashFiles('gatsby/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-deps-
+      - name: "⚙️ Install Gatsby"
+        run: npm install
         working-directory: gatsby
-      - name: "📝 Cache"
+      - name: "📝 Gatsby build cache"
         uses: actions/cache@v2
         with:
           path: |
@@ -77,7 +86,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
       - name: "🚧 Gatsby build"
-        run: gatsby build
+        run: npm run build
         working-directory: gatsby
         env:
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
