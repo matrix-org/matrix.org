@@ -70,7 +70,7 @@ jobs:
         with:
           path: |
             gatsby/node_modules
-          key: ${{ runner.os}}-gatsby-deps-${{ hashFiles('gatsby/package-lock.json') }}
+          key: ${{ runner.os }}-gatsby-deps-${{ hashFiles('gatsby/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-gatsby-deps-
       - name: "⚙️ Install Gatsby"
