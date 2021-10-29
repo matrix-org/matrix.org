@@ -32,11 +32,11 @@ jobs:
           path: styled-docs.tar.gz
 
   # Run jekyll. We run this in a custom docker image.
-  # See dockerfile in the `.buildkite` directory.
   build-jekyll:
     name: "🌐 Jekyll"
     runs-on: ubuntu-latest
     container:
+      # the dockerfile for this is in matrix-org/docker/build
       image: "matrixdotorg/matrixdotorg-build:0.2"
     steps:
       - name: "📥 Source checkout"
@@ -60,6 +60,7 @@ jobs:
     name: "🌐 Gatsby"
     runs-on: ubuntu-latest
     container:
+      # the dockerfile for this is in matrix-org/docker/gatsby
       image: "matrixdotorg/matrixdotorg-gatsby:latest"
     steps:
       - name: "📥 Source checkout"

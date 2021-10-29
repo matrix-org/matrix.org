@@ -1,6 +1,6 @@
 # Dockerfile to construct the docker image used to construct the website
 #
-# (cd .buildkite/gatsby; docker build . -t matrixdotorg/matrixdotorg-gatsby)
+# docker build docker/gatsby -t matrixdotorg/matrixdotorg-gatsby
 # docker push matrixdotorg/matrixdotorg-gatsby
 
 FROM node:14
