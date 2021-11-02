@@ -174,7 +174,7 @@ const Faq = ({ data }) => {
               </p>
               <p>
                 No, it’s nothing to do with the film (although you could go and
-                build virtual worlds on top of Matrix if you wanted :)
+                build virtual worlds on top of Matrix if you wanted 😎).
               </p>
               <div className="definition-list">
                 <div className="definition-item definition-matrixedtogether">
