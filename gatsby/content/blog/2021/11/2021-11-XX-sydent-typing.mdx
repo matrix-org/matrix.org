@@ -7,15 +7,11 @@
   author: David Robertson
 ---
 
-[Sydent](https://github.com/matrix-org/sydent) is the reference Matrix Identity server. It provides a [lookup service](https://matrix.org/docs/spec/identity_service/r0.3.0), so that you can find a Matrix user given only their email address or phone number. We recently worked on [improving Sydent's typing coverage](https://github.com/matrix-org/sydent/issues/414); it now passes `mypy --strict` with an overall precision of 94%!
+[Sydent](https://github.com/matrix-org/sydent) is the reference Matrix Identity server. It provides a [lookup service](https://matrix.org/docs/spec/identity_service/r0.3.0), so that you can find a Matrix user given only their email address or phone number. We recently worked on [improving Sydent's typing coverage](https://github.com/matrix-org/sydent/issues/414); it now passes `mypy --strict` with an overall precision of 94%! 
 
-<figure>
+![Coverage as measured by mypy. Precision and the number of typed expressions increase over the Summer and Autumn of 2021.](/blog/img/TWGXKTFpjYxlbnHRkZFAzljQ.png)
 
-![Coverage as measured by mypy. Precision and the number of typed expressions increase over the Summer and Autumn of 2021.](/blog/img/TWGXKTFpjYxlbnHRkZFAzljQ.png))
-<figcaption>
-The grey region above shows the two-week sprint towards improving coverage. The earliest data point is from just before our earlier efforts to improve coverage this summer.
-</figcaption>
-</figure>
+We can see our progress on the graph above. The grey region covers our two-week sprint towards improving coverage. The earliest data point is from just before our earlier efforts to improve typing this summer.
 
 "Typing" refers to the process of annotating Python source code, so that automated tools can reason about the types of expressions that flow through a program. These annotations can be automatically checked by a tool like [`mypy`]
 (https://mypy.readthedocs.io/en/stable/)—a great way to spot bugs before you ship them.
@@ -627,11 +623,11 @@ I found mypy's various [reports](https://mypy.readthedocs.io/en/stable/command_l
 
 This produces a main index page showing the "imprecision" of each module. At the bottom of the table is a total imprecision value across the entire project.
 
-  ![HTML report, index page. A table showing each module's precision and number of lines of code.](/blog/img/2021-11-XX-sydent-typing-html-report-index.png)
+  ![HTML report, index page. A table showing each module's precision and number of lines of code.](/blog/img/2021-11-08-sydent-typing-html-report-index.png)
 
 The precision for each module is broken down line-by-line and colour-coded accordingly, which is useful for getting an intuition for what makes a line imprecise. More on that shortly.
 
-  ![HTML report, module page. Most lines of source code are highlighted green; a minority are highlighted red.](/blog/img/2021-11-XX-sydent-typing-html-report-module.png)
+  ![HTML report, module page. Most lines of source code are highlighted green; a minority are highlighted red.](/blog/img/2021-11-08-sydent-typing-html-report-module.png)
 
 ##### `--txt-report`
 
