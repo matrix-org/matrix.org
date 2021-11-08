@@ -1,0 +1,791 @@
+# Type coverage for Sydent: lessons learnt
+
+[Sydent](https://github.com/matrix-org/sydent) is the reference Matrix Identity server. It provides a [lookup service](https://matrix.org/docs/spec/identity_service/r0.3.0), so that you can find a Matrix user given only their email address or phone number. We recently worked on [improving Sydent's typing coverage](https://github.com/matrix-org/sydent/issues/414); it now passes `mypy --strict` with an overall precision of 94%!
+
+<figure>
+
+![Coverage as measured by mypy. Precision and the number of typed expressions increase over the Summer and Autumn of 2021.](/blog/img/TWGXKTFpjYxlbnHRkZFAzljQ.png))
+<figcaption>
+The grey region above shows the two-week sprint towards improving coverage. The earliest data point is from just before our earlier efforts to improve coverage this summer.
+</figcaption>
+</figure>
+
+"Typing" refers to the process of annotating Python source code, so that automated tools can reason about the types of expressions that flow through a program. These annotations can be automatically checked by a tool like [`mypy`]
+(https://mypy.readthedocs.io/en/stable/)—a great way to spot bugs before you ship them.
+
+
+In this note, I want to
+
+- explain why we wanted to improve type coverage _now_;
+- work through examples to see how mypy could have spotted the root causes;
+- describe the annotation process and illustrate common patterns I learned along the way; and finally
+- reflect on the state of Python's typing ecosystem.
+
+## Why do this now?
+
+It took us a long time (too long) to notice that the Sydent instance serving `matrix.org` [was failing to send SMS messages for verification](https://github.com/vector-im/element-web/issues/19317). We suspected that something was going wrong with our [API call to OpenMarket](https://github.com/matrix-org/sydent/blob/main/sydent/sms/openmarket.py). Our first step was to [improve logging](https://github.com/matrix-org/sydent/issues/410), so we could start to deduce what was going wrong and why. Whilst trawling through logs, we spotted and [
+one problem](https://github.com/matrix-org/sydent/pull/413#pullrequestreview-775154313) which meant we weren't actually sending off the API request in the first place. Further investigation revealed a [strings-versus-bytes confusion](https://github.com/matrix-org/sydent/pull/415) which meant that we would always (incorrectly) interpret the API response as having failed.
+
+All in all, phone number verification was unknowingly broken in the 2.4.0 release, to be fixed in 2.4.6 a month later. How could we do better? Better test coverage is (as ever) one answer. But [it struck me](https://github.com/matrix-org/sydent/pull/413#pullrequestreview-775154313) that the two bug we'd encountered might be ripe for automatic detection:
+
+- we created an [`Awaitable`](https://docs.python.org/3/library/typing.html#typing.Awaitable) but didn't `await` it or use it in any way, and
+- we tried to look up a `str` key in a dictionary which mapped `bytes` to `bytes`.
+
+Could a static analysis tool like `mypy` detect these? How much work would it take to do so? Are there other bugs and problems we could spot with it? I was curious to answer these questions and learn more about the tools that Python's typing ecosystem provides.
+
+## Could typing have spotted these problems?
+
+Let's start with the first of question: what can `mypy` detect?
+
+### The missing `await`
+
+Instead of writing `x = await foo()`, we simply had `x = foo()` and didn't then go on to `await x`. Mypy doesn't have means to detect this at present. There was interest in [this issue](https://github.com/python/mypy/issues/2499) on such a feature, with related threads [here](https://github.com/python/mypy/issues/5597) and [here](https://github.com/python/mypy/issues/5650).
+
+Are there other opportunities to spot the error? Here's the relevant bit of source code from [before the fix](https://github.com/matrix-org/sydent/blob/2e3b7576b17e92080319e08c0c0ebf566935636c/sydent/http/servlets/msisdnservlet.py#L93-L98).
+
+```python=
+            sid = self.sydent.validators.msisdn.requestToken(
+                phone_number_object, clientSecret, sendAttempt, brand
+            )
+            resp = {
+                "success": True,
+                "sid": str(sid),
+                "msisdn": msisdn,
+                "intl_fmt": intl_fmt,
+            }
+```
+
+The call to `requestToken` produces a value of type `Awaitable[int]`. If we passed tried to assign that to an expression of type `int` we'd get an error that mypy can spot.
+
+```
+$ cat example.py
+async def foo() -> int:
+    return 1
+
+async def bar():
+    x = foo()      # no error
+    y: int = foo() # error: rhs is Awiatable[int], but lhs expects int
+
+$ mypy --check-untyped-defs example.py
+example.py:6: error: Incompatible types in assignment (expression has type "Coroutine[Any, Any, int]", variable has type "int")
+Found 1 error in 1 file (checked 1 source file)
+```
+
+Note that we have to specifically ask mypy to typecheck the body of `bar` by passing [`--check-untyped-defs`](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs); by default, `mypy` will only typecheck annotated code.
+
+We might also have been able to detect the error by looking at how we used `sid`. Unfortunately, the only use of was in a conversion `str(sid)`, which is a perfectly type-safe call for both `sid: int` and `sid: Awaitable[int]`. But let's put that aside for a second—suppose we added `"sid": sid` directly into the `resp` dictionary. Could mypy have spotted _that_?
+
+Unfortunately not. Because `resp` has no annotation, we have to rely on how it's used to assign it a type. And it's only really used as a return value. What's the function's annotation?
+
+```python=
+    @jsonwrap
+    def render_POST(self, request: Request) -> JsonDict:
+```
+
+Our function returns a `JsonDict`, which is an [alias](https://github.com/matrix-org/sydent/blob/2e3b7576b17e92080319e08c0c0ebf566935636c/sydent/types.py#L17) for `Dict[str, Any]`. This is bad news, because `sid: Any` holds true for both `sid: int` and `sid: Awaitable[int]`—so there's no error to spot here. The `Any` type is compatible with any other type whatsoever. Mypy uses it as a way to [defer all type checking to runtime](https://mypy.readthedocs.io/en/stable/kinds_of_types.html#the-any-type); mypy won't (and can't!) statically analyse the usage of an expression of type `Any`. Indeed, mypy's reports will tell you how many `Any`s you're working with, and offer a variety of options to [warn or error on usages of `Any`](https://mypy.readthedocs.io/en/stable/command_line.html#disallow-dynamic-typing).
+
+If we were inserting `sid` directly into a dictionary, we could do better by annotating the dictionary (or the function's return type) as a [`TypedDict`](https://docs.python.org/3/library/typing.html#typing.TypedDict). This is a way to specify a dictionary with a fixed set of keys, each with a fixed type. It comes in really handy for Sydent, Sygnal and Synapse—all of [the Matrix APIs](https://matrix.org/docs/spec/) exchange JSON dictionaries, so anything we can do to teach mypy about their shape and types is gold dust.
+
+In short, there were options for detecting this with some code changes, but no magic wand that would have spotted the error in the code as written.
+
+### The strings/bytes confusion
+
+Our [error](https://github.com/matrix-org/sydent/pull/415/files#diff-4b3e0551612818927c87fe0100262ec230e0342def9d3f09214b93dea3efacb8L103-R107) was here:
+
+```python=
+        headers = dict(resp.headers.getAllRawHeaders())
+        request_id = None
+        if "X-Request-Id" in headers:
+            request_id = headers["X-Request-Id"][0]
+```
+
+In this sample, `rest.headers` is a [`twisted.web.http_headers.Headers`](https://twistedmatrix.com/documents/current/api/twisted.web.http_headers.Headers.html). `getAllRawHeaders` is [documented](https://twistedmatrix.com/documents/current/api/twisted.web.http_headers.Headers.html#getAllRawHeaders) as returning an iterable of `(bytes, Sequence[bytes])` pairs. Even better, mypy can see this because `getAllRawHeaders` is [annotated](https://github.com/twisted/twisted/blob/5c24e99e671c4082a1ddc8dbeb869402294bd0dc/src/twisted/web/http_headers.py#L261) (many thanks to the twisted authors for this). Mypy should be able to deduce that we build a dictionary `headers: Dict[bytes, Sequence[bytes]`. We can check this using [`reveal_type`](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html#when-you-re-puzzled-or-when-things-are-complicated):
+
+```python=
+        headers = dict(resp.headers.getAllRawHeaders())
+        reveal_type(headers)
+```
+```
+$ mypy
+sydent/sms/openmarket.py:110: note: Revealed type is "builtins.dict[builtins.bytes*, typing.Sequence*[builtins.bytes]]"
+```
+
+(The `*` in `builtins.bytes*` here means mypy has [inferred](https://stackoverflow.com/a/50499509/5252017) that the dictionary's keys are bytes, rather than being told explicitly that they must be bytes.)
+
+That's all fine and dandy. But why didn't we spot this before if the annotations were all in place in twisted? Putting aside the fact that, erm, we weren't running mypy in CI [until the recent sprint](https://github.com/matrix-org/sydent/pull/416), let's checkout the problematic version and see what mypy says.
+
+```
+$ git checkout v2.4.0
+$ mypy --strict sydent/sms/openmarket.py
+sydent/sms/openmarket.py:82: error: Dict entry 0 has incompatible type "str": "int"; expected "str": "str"  [dict-item]
+```
+
+Huh. Mypy spots something, but not the error we were hoping for. What's going on here? We can ask mypy to show its working with `reveal_type` again.
+
+
+```python=
+        resp = await self.http_cli.post_json_get_nothing(
+            API_BASE_URL, send_body, {"headers": req_headers}
+        )
+        reveal_type(resp)
+        headers = dict(resp.headers.getAllRawHeaders())
+        reveal_type(resp.headers)
+        reveal_type(resp.headers.getAllwRawHeaders())
+        reveal_type(headers)
+```
+
+This yields:
+
+```
+$ mypy sydent/sms/openmarket.py
+sydent/sms/openmarket.py:82: error: Dict entry 0 has incompatible type "str": "int"; expected "str": "str"  [dict-item]
+sydent/sms/openmarket.py:102: note: Revealed type is "twisted.web.iweb.IResponse*"
+sydent/sms/openmarket.py:104: note: Revealed type is "Any"
+sydent/sms/openmarket.py:105: note: Revealed type is "Any"
+sydent/sms/openmarket.py:106: note: Revealed type is "builtins.dict[Any, Any]"
+Found 1 error in 1 file (checked 1 source file)
+```
+
+Ahh, the `Any` type. As mentioned above, this represents a value whose type can't be statically determined. We're left to runtime checks to detect the problem. But we won't detect it at runtime, because dictionaries don't enforce any kind of type requirements on their keys and values.
+
+The problem here is that mypy can't see that `resp.headers` is a twisted `Headers` object. If we could inform it of this, mypy would spot our bug:
+
+```python=
+        import twisted.web.http_headers
+        raw_headers: twisted.web.http_headers.Headers = resp.headers
+        reveal_type(resp)
+        headers = dict(raw_headers.getAllRawHeaders())
+        reveal_type(raw_headers)
+        reveal_type(raw_headers.getAllRawHeaders())
+        reveal_type(headers)
+```
+
+```
+$ mypy sydent/sms/openmarket.py
+sydent/sms/openmarket.py:82: error: Dict entry 0 has incompatible type "str": "int"; expected "str": "str"  [dict-item]
+sydent/sms/openmarket.py:104: note: Revealed type is "twisted.web.iweb.IResponse*"
+sydent/sms/openmarket.py:106: note: Revealed type is "twisted.web.http_headers.Headers"
+sydent/sms/openmarket.py:107: note: Revealed type is "typing.Iterator[Tuple[builtins.bytes, typing.Sequence[builtins.bytes]]]"
+sydent/sms/openmarket.py:108: note: Revealed type is "builtins.dict[builtins.bytes*, typing.Sequence*[builtins.bytes]]"
+sydent/sms/openmarket.py:114: error: Invalid index type "str" for "Dict[bytes, Sequence[bytes]]"; expected type "bytes"  [index]
+sydent/sms/openmarket.py:114: error: Argument 1 to "split" of "bytes" has incompatible type "str"; expected "Optional[bytes]"  [arg-type]
+Found 3 errors in 1 file (checked 1 source file)
+```
+
+There it is, on line 114: `Invalid index type "str" for "Dict[bytes, Sequence[bytes]]"; expected type "bytes"`.
+
+Unfortunately it'd be a pain to annotate our application code to mark every use of `IResponse.headers` as a `Headers` object. Is there a better way?
+
+## The process of improving coverage
+
+I wanted to experiment. How much could we get out of typing and static analysis if we really invested in thorough annotations? I decided my goal would be to get the `sydent` package passing `mypy --strict`. [Strict mode](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict) is a shorthand which turns on all of mypy's optional checks. It's a little extreme, but Sydent is a small project and this would be a good chance to see how hard it would be.
+
+From experience adding typing to Synapse, we decided to annotate one module at a time. We configured a list of files in `pyproject.toml` which we knew passed mypy's checks. We could run `mypy` in CI to check that new PRs didn't introduce type problems in modules already covered.
+
+From there, the workflow was
+
+1. Choose a new module to annotate. Add it to the list of `files` in mypy's configuration.
+2. Run `mypy`. See how many errors you get.
+3. Choose an error. Fix it. Re-run `mypy`.
+4. Repeat until no errors remaining.
+5. Submit for review.
+
+There are two parts in there which involve a choice. Being honest, I made those choices unscientifically: I tried to choose the easy tasks to do first. My first target was actually the entire [`sydent.util`](https://github.com/matrix-org/sydent/pull/418) subpackage. Probably a bit too large for a first bite! My thinking was that `util` sounded like something with few dependencies that would have impact across the whole source tree.
+
+Within a given module, I'd try to fix easier errors first: partly for confidence, partly to build up momentum, and partly to get myself familiar with that piece of source code. For example, I'd often start by telling mypy that `mylist = []` was actually was a `List[str]` (rather than the generic `List[Any]` which it would use otherwise).
+
+Picking and choosing easy targets works fairly well, but sometimes that means you end fixing an error that's really a symptom of an earlier one. Other times fixing one error, e.g. by giving a return type annotation to a function—would solve a series of other errors throughout the file. Watching the total number of errors mypy reports bob up and own was intriguing!
+
+In retrospect, I think it would be smoother to generate some kind of dependency graph for the package. I'm imagining a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) where whose vertices are modules, and there's an edge `A -> B` if `A` imports from `B`. The leaves of this DAG are the ideal place to start: you can get something typechecked there without having to annotate a long chain of dependencies. Another strategy would be to see which modules were the least precise according to mypy's reports—but more on those later.
+
+### Annotations when working with twisted
+
+Early into the process I [added](https://github.com/matrix-org/sydent/pull/418/commits/c4e04256c150ecc771e6c2049bcf52c7aaffbbe0) a `stubs` directory so that I could provide an annotation for [`twisted.python.log.err`](https://twistedmatrix.com/documents/current/api/twisted.python.log.html#err). My initial motivation was that `mypy --strict` considers calling an untyped function from a typed function to be an error. But this was almost an accident: mypy can be configured with a list of modules to ignore if it can't find type annotations for them. `twisted` was not one of those modules. (Indeed, we wanted to make use of as much of `twisted`'s annotations as possible.)
+
+Instead, I decided to stub the `err` function myself. A stub is a cut-down version of a python function, class or module which lives in a `.pyi` file. All implementation details are removed; only type annotations remain. Stubs are useful when you want to write annotations for code you don't control. The [`typeshed`](https://github.com/python/typeshed) library is probably the best example: a collection of third party stubs for the standard library, plus some popular third party packages. Microsoft's [`python-type-stubs`](https://github.com/microsoft/python-type-stubs) is another example.
+
+Writing a stub for this one function was straightforward, thanks mainly to Twisted's thorough documentation. I chose to write it by hand, rather than use [`stubgen`](https://mypy.readthedocs.io/en/stable/stubgen.html). I'd heard of the latter, but was reluctant to use it for a few reasons.
+
+- Twisted is a big project with many big files. I didn't want to commit huge stub files for me and my colleagues to maintain.
+- The more our stubs cover, the larger the risk of a stub becoming out-of-date with twisted itself. Upstream twisted is the best place for these annotations.
+- We only need annotations for the bits of twisted that we're using.
+- And, being honest: I wanted the low-level experience of writing stubs, cross-referencing between the source and working how to best capture its type semantics.
+
+#### Partially typed modules and stub granularity
+
+I think this decision to write a targeted stub made sense at the time. After all, `twisted.python.logging.err` is just one function which was simple to write a stub for. But for the project as a whole, I regret not using `stubgen` to generate module-level stubs. The reason for this is that a `.pyi` stub file accounts for an entire module: [no more and no less](https://github.com/python/mypy/issues/5880#issuecomment-439237176). This means that the stubs I was writing for parts of twisted only covered the functions and classes I'd stubbed. Any existing annotations in the twisted source code would be ignored, along with any types that mypy was able to infer for itself.
+
+I think it would have been more efficient to use `stubgen` to generate stubs and patch them up, rather than writing them. That would have helped avoid a few cases I encountered where stubbing one function would cause additional typechecking failures (because mypy was no longer examining the twisted source for that file). It would also have meant that I could just faithfully stub twisted as it is; in practice, I would sometimes hesitate to stub to avoid having to cover another module. `sydent.http` was the most painful part of the source tree for this: that's where we make the most use of `twisted`.
+
+#### [`defer.inlineCallbacks`](https://twistedmatrix.com/documents/current/api/twisted.internet.defer.html#inlineCallbacks)
+
+This is a decorator which allows us to write code in the style of `async`/`await` without actually using that syntax. (Twisted predates `asyncio` introduced in Python 3.4; it was originally released in 2002, back when Python had released version 2.2.) We only use it in [one place in Sydent](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25255d19effceae7061ad9b3eefc374/sydent/http/matrixfederationagent.py#L125-L132) nowadays, but I've seen used across Synapse too. I mention it here because it was a bit fiddly to annotate. Here it is:
+
+```python=
+    @defer.inlineCallbacks
+    def request(
+        self,
+        method: bytes,
+        uri: bytes,
+        headers: Optional["Headers"] = None,
+        bodyProducer: Optional["IBodyProducer"] = None,
+    ) -> Generator["defer.Deferred[Any]", Any, IResponse]:
+```
+
+that example from Sydent. `request` is a [generator function](https://docs.python.org/3/glossary.html#term-generator), because its body uses the `yield` keyword. Yielding allows the function to relinquish control back to twisted's reactor, only for its execution to be resumed asynchronously in the future. The [`Generator`](https://docs.python.org/3/library/typing.html?highlight=typing%20generator#typing.Generator) type takes three parameters: a `YieldType`, a `SendType`, and a `ReturnType`. In this example:
+
+- We yield a `Deferred[Any]`.
+- That will later be resolved by twisted to an `Any` value. Twisted will send that value to `request`, and the execution continues.
+- This repeats, until we eventually return an `IResponse`.
+
+(I'm guessing `x = await y` is really some kind of sugar around this mechanism: first `yield y`, then the machinery running your coroutine `c` will call `c.send(x)` to resume execution.)
+
+Why have I opted to use `Any` here, when we've seen (and will see) that this limits mypy's ability to run checks? The answer is that we yield two different types within the function. Firstly a [routing result](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25255d19effceae7061ad9b3eefc374/sydent/http/matrixfederationagent.py#L152-L153):
+
+```python=
+        routing: _RoutingResult
+        routing = yield defer.ensureDeferred(self._route_matrix_uri(parsed_uri))
+```
+
+and later, [the `IResponse`](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25255d19effceae7061ad9b3eefc374/sydent/http/matrixfederationagent.py#L194-L195) we go on to return:
+
+```python=
+        res: IResponse
+        res = yield agent.request(method, uri, headers, bodyProducer)
+```
+
+I could more correctly annotate the `YieldType` as `Deferred[Union[_RoutingResult, IResponse]]` so that the `SendType` was `Union[_RoutingResult, IResponse]`. But this would mean we end up having some kind of type check at each yield point: a `cast`, or a `type: ignore`, or a runtime `isinstance` check. It didn't feel like it was worth the boilerplate, especially since I could narrow e.g. `res: Any` to `res: IResponse` with minimal effort.
+
+This problem doesn't arise with using the more common `async/await` syntax:
+
+```python=
+async def foo() -> int:
+    return 1
+
+async def bar() -> None:
+    x = await foo()
+    reveal_type(foo())
+    reveal_type(x)
+```
+
+```
+$ mypy example.py
+example.py:6: note: Revealed type is "typing.Coroutine[Any, Any, builtins.int]"
+example.py:7: note: Revealed type is "builtins.int*"
+```
+
+All in all, the handling of `inleineCallbacks` is a situation specific to working with (older?) twisted code. It's still nice to understand what's going on behind the scenes though!
+
+
+
+#### `zope.interface.Interface`
+
+Twisted makes use of `zope`'s `Interface` to define a number of abstract interface classes. Speaking personally, I've not seen it used outside twisted, and I think that means it's not supported by much of the typechecking tooling. For example, I've definitely seen PyCharm struggle to realise that it's okay to pass a `Response` to a function which expects an `IResponse`! Here's a more complicated example where `PyCharm` isn't happy with me widening the type `LoggingHostnameEndpoint` to `IStreamClientEndpoint`, even though [the latter implements the former](https://github.com/matrix-org/sydent/blob/92ff7a878a25696365b10cc49e32f5cba32c5960/sydent/http/matrixfederationagent.py#L379-L380).
+
+![Screenshot from pycharm showing a false positive warning](https://i.imgur.com/27rqjHm.png)
+
+
+Mypy out of the box doesn't play well with a zope `Interface` (nor does any other typechecker I tried). Fortunately, the excellent [`mypy-zope`](https://github.com/Shoobx/mypy-zope) plugin helps here: it teaches mypy that any class like `Response` which `@implements(IResponse)`  can be passed in place of an `IResponse`.
+
+#### You're at the mercy of your dependencies
+
+Hmm. That's being a little melodramatic.
+
+Improving coverage boils down to giving the typechecker more information about your program. The more information it has, the more it can check—and the more errors it can spot. (Hopefully this doesn't make typing come across like a pyramid scheme.) If your dependencies aren't typed, mypy can't validate you're correctly providing inputs and correctly consuming outputs. You might have a bigger impact on overall typing coverage by annotating a dependency (directly or via stubs). I have a hunch that bugs are more likely in code that uses an external dependency: we're much more familiar with the details of our own source code compare to that of a third party we trust.
+
+It's worth looking to see if your dependencies have a newer version including type annotations. Failing that, they may have a stub package added to [`typeshed`](https://github.com/python/typeshed/tree/master/stubs) and published on PyPI. I saw example of both cases when choosing how to configure mypy for Sydent. If some of your dependencies are under your control, consider annotating them—you'll feel the benefits across multiple projects pretty quickly.
+
+### The best parts of `--strict`
+
+Strict mode turns on a number of extra checks (though not everything); it feels similar to passing `-Wall -Wextra -Werror` to `gcc`. In my view, the most useful options implied by strict mode were as follows.
+
+#### [`--check-untyped-defs`](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs)
+ By default, mypy will only analyze the implementation of functions that are annotated. On the one hand, without annotations for inputs and the return type, it's going to be hard for mypy to thoroughly check the soundness of your function. On the other, it can still do good work with the type information it has from other sources. Mypy can
+
+- infer the type of literals, e.g. deducing `x: str` from  `x = "hello"`;
+- lookup the return types of standard library calls, via `typeshed`; and similarly
+- lookup the return types of any annotated functions in your code or dependencies.
+
+The information is already available for free: we may as well try to use it to spot problems.
+
+#### [`--disallow-untyped-defs`](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-untyped-defs) and [friends](https://mypy.readthedocs.io/en/stable/command_line.html#untyped-definitions-and-calls)
+
+This flag forces you to fully annotate every function. There are less extreme versions available, e.g. `--disallow-incomplete-defs`; but I think this is a good option to ensure full coverage of your module. It means you can rely on mypy's error output as a to-do list.
+
+One downside to this: sometimes I felt like I was writing obvious boilerplate annotations, e.g.
+
+```python=
+    def __str__(self) -> str:
+        ...
+```
+
+There was one particular example of this that crops up a lot. Mypy has a special exception for a class's `__init__` and `__init_subclass__` methods. If a return type annotation is missing, it will [assume these functions return `None`](https://github.com/python/mypy/issues/604#issuecomment-348525995) instead of `Any`. (See  here for [its implementation](https://github.com/python/mypy/pull/5677).) This is normally compatible with `--disallow-untyped-defs` and `--disallow-incomplete-defs`, with one exception. If your `__init__` function takes no arguments other than `self`, mypy won't consider it annotated, and you'll need to write `-> None` explicitly.
+
+It's also worth mentioning [`--disallow-untyped-calls`](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-untyped-calls), which will cause an error if an annotated function calls an unannotated function. Again, it helps to ensure that mypy has a complete picture of the types in your function's implementation. It also helps to highlight dependencies—if you see errors from this, it might be more practical to annotate the functions and modules it's calling first.
+
+#### [`--warn-return-any`](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-warn-return-any)
+
+If I've written a function and annotated it to return an `int`, mypy will rightly complain if its implementation actually goes on to return a `str`.
+
+```python=
+def foo() -> int:
+    # error: Incompatible return value type (got "str", expected "int")
+    return "hello"
+```
+
+If mypy isn't sure what type I'm returning though, i.e. if I'm returning an expression of type `Any`, then by default mypy will trust that we've done the right thing.
+
+```python=
+def i_promise_this_is_an_int():
+    return "hello"
+
+def bar() -> int:
+    reveal_type(i_promise_this_is_an_int()) # Any
+    return i_promise_this_is_an_int()
+```
+
+Enabling `--warn-return-any` will disable this behaviour; to make this error pass we'll have to prove to mypy that `i_promise_this_is_an_int()` really is an `int`. Sometimes that will be the case, and an extra annotation will provide the necessary proof. At other times (like in this example), investigation will prove that there really is a bug!
+
+#### [`--strict-equality`](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict-equality)
+
+This is a bit like a limited form of gcc's [`-Wtautological-compare`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html). Mypy will report and reject equality tests between incompatible types. If mypy can spot that an equality is always `False`, there's a good chance of there being a bug in your program, or else an incorrect annotation.
+
+I'm not sure how general this check is, since users can define their own types with their own rules for equality by overriding [`__eq__`](https://docs.python.org/3/reference/datamodel.html?highlight=__eq__#object.__eq__). Perhaps it only applies to built-in types?
+
+### Tricks of the trade
+
+At this point I'd like to share a few generic lessons about typing I'd picked up. Nothing ground-breaking here: I think these are all fairly well-known. Hopefully they're the start of a good cheat sheet for annotating—though it pales in comparison to the [Mypy cheat sheet](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html).
+
+#### Annotating decorators
+
+Annotating decorators is fiddly, but it's also vitally important. An unannotated decorator will mask or throw away your decoratee's annotations! The way to write the annotation is best explained by the [mypy docs](https://mypy.readthedocs.io/en/stable/generics.html#declaring-decorators), but briefly: it involves a `TypeVar` and sometimes a `cast` too. Here's an example.
+
+```python=
+from typing import TypeVar, Callable, Any, cast
+
+F = TypeVar("F", bound=Callable[..., Any])
+
+def decorator(input: F) -> F:
+    def wrapped(*args: Any, **kwargs: Any) -> Any:
+        print(f"Calling {f.__name__}")
+        return input_func(*args, **kwargs)
+    return cast(F, wrapped)
+```
+
+The idea here is
+1. Use `Callable[..., Any]` to describe a generic function with no particular signature.
+2. Use that as a bound on a type variable `F`. At each usage of `@decorator`, mypy will deduce a more specific version of `F`, e.g. `Callable[[int], str]`.
+3. Within that usage of `@decorator`, `F` is fixed to that specific type. We use `-> F` to express that "we return a function with the same signature as the decoratee".
+4. Unfortunately, we don't have a good way to tell `mypy` that `wrapped` also has that signature `F`. We resort to a `cast` to force mypy to accept this without proof.
+
+This might change in the future, e.g. when [`ParamSpec`](https://docs.python.org/3/library/typing.html?highlight=paramspec#typing.ParamSpec) is [fully understood](https://github.com/python/mypy/issues/8645) by mypy.
+
+
+#### Prefer `object` over `Any`
+
+Both of these are general types for expressing "I don't know anything about this expression". But only the former will undergo static type checks. We want those type checks to guard against bugs accidentally introduced in the future. For instance, imagine a class with an `Any` attribute.
+
+```python=
+import dataclasses
+
+@dataclasses.dataclass
+class C:
+    label: Any
+```
+
+Imagine in the future we add a new method which assumes that `label` is a string:
+
+```python=
+    def greeting(self) -> str:
+        return "My name is " + self.label
+```
+
+Mypy will consider this valid, because no type-checking is done on an `Any` value. It will complain that it can't prove that `greeting` returns a `str`, if `--warn-return-any` is enabled; but putting that aside, it can't identify the call site as a bug. The bug slips through to runtime.
+
+```python
+C(123).greeting()  # TypeError: can only concatenate str (not "int") to str
+```
+
+Replacing the `object` with `Any` does allow mypy to spot the problem.
+
+```
+error: Unsupported operand types for + ("str" and "object")  [operator]
+```
+
+
+#### `# type: ignore` and `cast` sparingly
+
+There's a good chance that mypy knows better than we do, so we should only overrule it if there's no better option. There are two techniques for this. One option is to tell mypy to just silence the error, by append a `# type: ignore` comment to the erroneous line. The other is to force it to accept that a certain expression has a given type: that's what [`cast`](https://docs.python.org/3/library/typing.html?highlight=paramspec#typing.cast) is for.
+
+I never like using either of these, but sometimes they're the most practical choice. I'd recommend two best practices for their use, however:
+
+1. Only ignore a specific error code, e.g. `# type: ignore[assignment]`.  Those codes can be displayed by passing `--show-error-codes` to mypy.
+2. Leave a comment before every `#type: ignore[...]` and every `cast` to justify their correctness. I don't think this is a widely-held practice. I picked it up from the Rust world, where it's [encouraged](https://rust-lang.github.io/api-guidelines/documentation.html#function-docs-include-error-panic-and-safety-considerations-c-failure) as a way to justify `unsafe` source code.
+
+#### There's good stuff in `typing`
+
+It's worth a read through the [module documentation](https://docs.python.org/3/library/typing.html)—plenty of things in there I wish I'd known about sooner. There's lots in the toolkit to chose from. Some bits I use fairly often include:
+
+- [`Protocol`](https://docs.python.org/3/library/typing.html?highlight=typing%20protocol#typing.Protocol): lets you formalise duck typing. To use it, define a class that inherits from `Protocol`. Its methods and attributes are all stubs which describe what you require of objects belonging to this type. It's like an [abstract base class](https://docs.python.org/3/library/abc.html?highlight=abc#module-abc) or interface, but purely at typecheck time.
+- [`Generic`](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.Generic): define your own generic types. A bit of a slippery slope to type mania!
+- [`Optional`](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.Optional): I use this all the time. It's always good to make your `None`s explicit!
+- [`NewType`](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.NewType): I haven't had a chance to use it much. As I understand it, it's a way to define a "strong typedef". For example, we can use it to distinguish lengths from durations, even if they're both represented by a `float` at runtime.
+
+I want to call out two parts of `typing` in particular:
+
+
+#### [overload](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.overload)
+
+`overload` is a way to provide extra information about a function depending on how it's called. For instance, consider this function which takes a `str` or `bytes` as input and returns its uppercase version.
+
+```python=
+def upper(x: Union[bytes, str]) -> Union[bytes, str]:
+    return x.upper()
+```
+
+The problem with this annotation is that we'll have to check at every call site to see if the return value was a `bytes` or a `str` object. But we know that uppercasing a `str` gives us a `str`, and uppercasing a `bytes` gives us a `bytes.` We can use `overload` to express this.
+
+```python=
+from typing import overload
+
+@overload
+def upper(x: str) -> str: ...
+
+@overload
+def upper(x: bytes) -> bytes: ...
+
+def upper(x: Union[bytes, str]) -> Union[bytes, str]:
+    return x.upper()
+```
+
+The first two `@overload` definitions are like stubs: they're purely used for their annotations. The actual runtime implementation is specified at the end, undecorated. (**NB**: this specific example is better expressed without overloads, by using [`AnyStr`](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.AnyStr).)
+
+I was really impressed to see how `mypy` could use this overloading information. Here's an example:
+
+```python=
+from typing import overload, Literal
+
+@overload
+def f(x: int) -> Literal[1]: ...
+
+@overload
+def f(x: str) -> Literal[2]: ...
+
+def f(x: object) -> int:
+    if isinstance(x, int):
+        return 1
+    elif isinstance(x, str):
+        return 2
+    return 3
+
+if f(10) == 2:
+    print("potato")
+```
+
+We can see that `f(10) == 1` and so the equality is always `False`: we'll never print the word "potato". Mypy can reason through this too, if we ask it nicely.
+
+```
+$ mypy example.py
+Success: no issues found in 1 source file
+
+$ mypy --strict-equality --warn-unreachable example.py
+example.py:16: error: Non-overlapping equality check (left operand type: "Literal[1]", right operand type: "Literal[2]")
+example.py:17: error: Statement is unreachable
+Found 2 errors in 1 file (checked 1 source file)
+```
+
+#### [TypedDict](https://docs.python.org/3/library/typing.html?highlight=typeddict#typing.TypedDict)
+
+I mentioned this earlier when talking about the missing `await` bug.
+Subclassing from `TypedDict` allows us to define a new type whose values are dictionaries with
+
+- a fixed set of keys (some mandatory, some not), and
+- a fixed type for each key's value.
+
+[PEP 589](https://www.python.org/dev/peps/pep-0589/) can best describe the motivation, but in short: there's a lot of source code out there that passes dictionaries around. `TypedDict` is a way to gradually add typechecking to that code, which having to refactor it to use e.g. a [dataclass](https://docs.python.org/3/library/dataclasses.html) or a [NamedTuple](https://docs.python.org/3/library/typing.html#typing.NamedTuple). Let's have a quick example.
+
+```python=
+from typing import List, TypedDict
+
+class Person(TypedDict):
+    full_name: str
+    nicknames: List[str]
+    age: int
+
+p: Person = {
+    "full_name": "David Matthew Robertson",
+    "nicknames": ["dmr"],
+    "age": 29,
+}
+```
+
+Mypy will detect if you delete or omit a required key, or if you insert a key that's not part of the type.
+
+```python=
+# error: Key "age" of TypedDict "Person" cannot be deleted
+del p["age"]
+
+# error: Missing keys ("full_name", "nicknames", "age") for TypedDict "Person"
+p2: Person = {}
+
+# error: TypedDict "Person" has no key "eye_colour"
+p["eye_colour"] = "brown"
+```
+
+`TypedDict` is a useful tool, but there are a few important gotchas to be aware of. In my view, these are all minor and worth putting up with, to benefit from the extra type information that a `TypedDict` provides. Let's take a look.
+
+##### `TypedDict` is incompatible with `Dict`
+
+This one surprised me at first. Why can't I pass my `TypedDict` to a function that accepts a generic dictionary?
+
+```python=
+import json
+from typing import Dict, TypedDict
+
+class Foo(TypedDict):
+    bar: str
+
+def print_size(d: Dict[object, object]) -> None:
+    print(len(d))
+
+f: Foo = {"bar": "baz"}
+# error: Argument 1 to "print_size" has incompatible type "Foo"; expected "Dict[object, object]"
+print_size(f)
+```
+
+The answer is that it wouldn't be type-safe! For all we know, the function `print_size` might mutate its argument `d`. It might add a key, remove a key, or change the type of a value. Each of those would break the contract that `TypedDict` is supposed to enforce, so mypy is correct to flag this as an error. [This GitHub issue](https://github.com/python/mypy/issues/4976) has more discussion.
+
+There are few workarounds for this kind of problem.
+
+- The function might be able to accept a `TypedDict` directly.
+- The function could accept a `Mapping` instead of a `Dict`. This is type-safe because the `Mapping` type does not offer mutating methods such as `pop`, `__setitem__`, `__del__`; but it only works if the function does not mutate the dictionary.
+- A more drastic approach would discard the `TypedDict` information with a `cast` to `Dict[str, object]` or similar. If so, I'd strongly recommend a comment explaining why the cast is correct and safe.
+
+##### Mixing mandatory and required fields
+
+Secondly, defining a `TypedDict` with a mixture of optional and required keys is a little fiddly. All keys can be made optional by passing `total=False` in the class definition. To have some keys optional and others mandatory, we have to make _two_ TypedDicts. Say for instance we wanted to allow a potentially-missing `favourite_colour` field to `Person`. We can't add an annotation `favourite_colour: Optional[str]` to the first class body. That's optional in a different sense: it would mean that `favourite_colour` is a mandatory field which is allowed to be `None`. Instead, we apply `total=False` to a subclass:
+
+```python=
+from typing import TypedDict
+
+class _PersonRequired(TypedDict):
+    full_name: str
+    nicknames: List[str]
+    age: int
+
+class Person(_PersonRequired, total=False):
+    favourite_colour: str
+```
+
+This means that a valid `Person` dictionary may have no`favourite_colour` key. If it is present, it must be a `str`.
+
+The syntax is unfortunately a little clunky. [PEP 655](https://www.python.org/dev/peps/pep-0655/) acknowledges this and proposes an alternative.
+
+##### `TypedDict` is typecheck-time only
+
+One final note: a `TypedDict` does no validation or conversion whatsoever. If mypy can't know the keys and values a dictionary will have a typecheck-time, you'll need to validate it by hand at runtime. We see this a lot because when deserialising json objects into a dictionary. Here's an example.
+
+```python=
+import json
+from typing import List, TypedDict
+
+class Foo(TypedDict):
+    bar: str
+
+# note: Revealed type is "Any"
+reveal_type(json.loads("{}"))
+# no error. mypy can't do analysis on Any.
+f: Foo = json.loads("{}")
+```
+
+### Quantifying coverage
+
+It was important to a some way to evaluating our efforts to improve type coverage. It's a fairly abstract piece of work: there's nothing user-visible about it, unless we happen to discover a bug and fix it.
+
+The most obvious metric is the number of total errors reported by mypy. Before the recent sprint, we had roughly 600 errors total.
+
+```
+dmr on titan in sydent on  HEAD (3dde3ad) via 🐍 v3.9.7 (env)
+2021-11-08 12:35:37 ✔  $ mypy --strict sydent
+Found 635 errors in 59 files (checked 78 source files)
+```
+
+This is a decent way to measure your progress when working on a particular module or package, but it's not perfect. The errors here aren't independent. Fixing one could fix another ten or reveal another twenty—the numeric value can be erratic.
+
+#### Reports
+
+I found mypy's various [reports](https://mypy.readthedocs.io/en/stable/command_line.html#report-generation) to be a better approach here. There were three reports I found particularly useful.
+
+##### `--html-report`
+
+This produces a main index page showing the "imprecision" of each module. At the bottom of the table is a total imprecision value across the entire project.
+
+  ![HTML report, index page. A table showing each module's precision and number of lines of code.](/blog/img/2021-11-XX-sydent-typing-html-report-index.png)
+
+The precision for each module is broken down line-by-line and colour-coded accordingly, which is useful for getting an intuition for what makes a line imprecise. More on that shortly.
+
+  ![HTML report, module page. Most lines of source code are highlighted green; a minority are highlighted red.](/blog/img/2021-11-XX-sydent-typing-html-report-module.png)
+
+##### `--txt-report`
+
+This reproduces the index page from the `html` report as a plain text file. It's slightly easier to parse—that's how I got the data for the precision line graphs at the top of this article. That was a quick and dirty hack, though; a proper analysis of precision probably ought to read from the json or xml output formats. Here's a truncated sample:
+
+```
++-----------------------------------+-------------------+----------+
+| Module                            | Imprecision       | Lines    |
++-----------------------------------+-------------------+----------+
+| sydent                            |   0.00% imprecise |    1 LOC |
+| sydent.config                     |   0.00% imprecise |  266 LOC |
+| sydent.config._base               |   0.00% imprecise |   31 LOC |
+| sydent.config.crypto              |  15.94% imprecise |   69 LOC |
+| ...                               |               ... |      ... |
+| sydent.validators                 |   0.00% imprecise |   61 LOC |
+| sydent.validators.common          |   7.35% imprecise |   68 LOC |
+| sydent.validators.emailvalidator  |   1.30% imprecise |  154 LOC |
+| sydent.validators.msisdnvalidator |   1.34% imprecise |  149 LOC |
++-----------------------------------+-------------------+----------+
+| Total                             |   5.95% imprecise | 9707 LOC |
++-----------------------------------+-------------------+----------+
+```
+
+##### `--any-exprs-report`
+
+Selecting this option generate two reports: `any-exprs.txt` and `types-of-anys.txt`. The latter is interesting to understand where the `Anys` come from, but the former is more useful for quantifying the progress of typing. Another sample:
+
+```
+                  Name   Anys   Exprs   Coverage
+-------------------------------------------------
+                sydent      0       2    100.00%
+         sydent.config      0     185    100.00%
+   sydent.config._base      0       3    100.00%
+  sydent.config.crypto     34      80     57.50%
+sydent.config.database      0       8    100.00%
+   sydent.config.email      0      86    100.00%
+                   ...    ...     ...        ...
+-------------------------------------------------
+                 Total    544   11366     95.21%
+```
+
+The breakdown in `types-of-anys.txt` has more gory detail. I found the "Unimported" column particularly interesting: it lets us see how exposed we are to a lack of typing in our dependencies.
+
+```
+                             Name   Unannotated   Explicit   Unimported   Omitted Generics   Error   Special Form   Implementation Artifact
+-------------------------------------------------------------------------------------------------------------------------------------------
+                           sydent             0          0            0                  0       0              0                         0
+                    sydent.config             0          3            0                  0       0              0                         0
+              sydent.config._base             0          0            0                  0       0              0                         0
+                              ...           ...        ...          ...                ...     ...            ...                       ...
+        sydent.util.versionstring             0         80            0                  0       0              0                         0
+                sydent.validators             0          4            0                  0       0              0                         0
+         sydent.validators.common             0         20            0                  0       0              0                         0
+ sydent.validators.emailvalidator             0          8            0                  0       0              0                         0
+sydent.validators.msisdnvalidator             0          8            0                  0       0              0                         0
+-------------------------------------------------------------------------------------------------------------------------------------------
+                            Total             9       1276          273                  0      37              0                        17
+
+```
+
+#### The meaning of precision
+
+There are two metrics I chose to focus on:
+- the proportion of "imprecise" lines across the project; I also used the complement, `precision = 100% - imprecision`, and
+- the proportion of expressions whose type is not `Any`.
+
+These are plotted in the graph at the top of this writeup. I could see that precision and the proportion of typed expressions were correlated', but I didn't understand how they differed. I couldn't see an explanation in the mypy docs, so I went [digging](https://github.com/python/mypy/blob/d807e097d142a88a48af93314d15ad87e41d2f19/mypy/stats.py) into the mypy source code. My understanding is  as follows.
+
+1. There are [five kinds of precision](https://github.com/python/mypy/blob/d807e097d142a88a48af93314d15ad87e41d2f19/mypy/stats.py#L27-L31). Full details are visible in the `--lineprecision-report`.
+2. Two kinds of precision, `EMPTY` and `UNANALYZED` convey no information, because there's nothing to analyze.
+3. A line is marked as precise, imprecise or any based on the expressions it uses.
+   - An expression that has type `Any` leads to precision `ANY`.
+   - I _think_ an expression that [involves `Any` but is not `Any`](https://github.com/python/mypy/blob/2907a4dea939e20ff39ef7d9ff85ae1a199a0ee8/mypy/stats.py#L422-L423) counts as imprecise. For instance, `Dict[str, Any]`.
+   - Everything other analyzed line is `PRECISE`.
+5. A line's precision is the worst of all its expressions' precisions.
+   - `ANY` is worse than `IMPRECISE`, which is worse than `PRECISE`.
+
+The "imprecision" number reported by mypy counts the number of lines [classified as `IMPRECISE` or `ANY`](https://github.com/python/mypy/blob/3bdef9fe6d401f3d2e0cacf4964bd315550c3394/mypy/xml/mypy-txt.xslt#L77-L78).
+
+On balance, my preferred metric is the (im)precision percentage. There wasn't much difference between the two in my experience, but the colour-coded visualisation in the HTML report is a neat feature to have. Maybe in the future there could be a version of the HTML report that colour-codes each _expression_?
+
+
+## The larger typing ecosystem
+
+There are plenty of articles out there about the typing. As well as the [mypy blog itself](http://mypy-lang.blogspot.com/), see Daniele Varrazzo's [post on `psycopg3` (2020)](https://www.varrazzo.com/blog/2020/03/31/first-experience-mypy/), Dropbox's [blog post (2019)](https://dropbox.tech/application/our-journey-to-type-checking-4-million-lines-of-python), Zulip's [blog post (2016)](https://blog.zulip.com/2016/10/13/static-types-in-python-oh-mypy/), Glyph's [blog post on `Protocols` (2020)](https://glyph.twistedmatrix.com/2020/07/new-duck.html) and a follow-up [comparing them to `zope.interface` (2021)](https://glyph.twistedmatrix.com/2021/03/interfaces-and-protocols.html) and Nylas's [blog (2019)](https://www.nylas.com/blog/not-your-pie-mypy/). I'm sure there's plenty more out there.
+
+It's worth highlighting the `typeshed` project, which maintains stubs for the standard library, plus popular third-party libraries. I [submitted a PR](https://github.com/python/typeshed/pull/6150) to add a single type hint—it was a very pleasant experience! Microsoft has an [incubator](https://github.com/microsoft/python-type-stubs) of sorts for stubs too.
+
+### Other typecheckers
+
+After the sprint to improve coverage, I spent a short amount of time trying the alternative type checkers out there. This is by no means an authoritative, exhaustive survey—just my quick notes.
+
+
+#### [Pyre](https://pyre-check.org/) (Facebook)
+
+- I couldn't work out how to configure paths to resolve import errors; in the end, I wasn't able to process much of Sydent's source code.
+- Couldn't get it to process annotations like `syd: "Sydent"` where "Sydent" is an import guarded by [`TYPE_CHECKING`](https://docs.python.org/3/library/typing.html?highlight=type_checking#typing.TYPE_CHECKING).
+- No plugin system that I could see. That said, it has a separate mode/program for running ["Taint Analysis"](https://pyre-check.org/docs/pysa-basics) to spot security issues.
+- Seemed stricter by default compared to mypy: there was less inference of types.
+- Also has its own strict mode.
+
+#### [Pyright](https://github.com/microsoft/pyright) (Microsoft)
+
+- Didn't seem to recognise `getLogger` as being imported from `logging`. Not sure what happened there—maybe something wrong with its bundled version of `typeshed`?
+- In a few places, Sydent uses `urllib.parse.quote` but only imports `urllib`. We must be unintentionally relying on our dependencies to `import urllib.parse` somewhere! Mypy didn't complain about this; pyright did.
+- Seemed to give a better explanations of why complex types were incompatible. For example:
+  ```
+  /home/dmr/workspace/sydent/sydent/replication/pusher.py
+     /home/dmr/workspace/sydent/sydent/replication/pusher.py:77:16 - error: Expression of type "DeferredList" cannot be assigned to return type "Deferred[List[Tuple[bool, None]]]"
+       TypeVar "_DeferredResultT@Deferred" is contravariant
+         TypeVar "_T@list" is invariant
+           Tuple entry 2 is incorrect type
+             Type "None" cannot be assigned to type "_DeferredResultT@_DeferredListResultItemT" (reportGeneralTypeIssues)
+   /home/dmr/workspace/sydent/sydent/sms/openmarket.py
+     /home/dmr/workspace/sydent/sydent/sms/openmarket.py:93:13 - error: Argument of type "dict[_KT@dict, list[bytes]]" cannot be assigned to parameter "rawHeaders" of type "Mapping[AnyStr@__init__, Sequence[AnyStr@__init__]] | None" in function "__init__"
+       Type "dict[_KT@dict, list[bytes]]" cannot be assigned to type "Mapping[AnyStr@__init__, Sequence[AnyStr@__init__]] | None"
+         TypeVar "_KT@Mapping" is invariant
+           Type "_KT@dict" is incompatible with constrained type variable "AnyStr"
+         Type cannot be assigned to type "None" (reportGeneralTypeIssues)
+  ```
+  This would have been really helpful when interpreting mypy's error reports; I'd love to see something like it in mypy.
+- Pyright is the machinery behind [Pylance](https://github.com/microsoft/pylance-release), which drives [VS Code's Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). That alone probably makes it worthy of more eyes.
+- Seemed like it was the best-placed alternative typechecker to challenge mypy (the de-facto standard).
+
+
+#### [Pytype](https://github.com/google/pytype) (Google)
+- Google internal? Seems to be maintained by one person semiregularly by "syncing" from Google.
+- Apparently contains a script [`merge-pyi`](https://github.com/google/pytype/tree/master/pytype/tools/merge_pyi) to annotate a source file given a stub file.
+- No support for TypedDict: as soon as it saw one in Sydent, it stopped all analysis.
+- No Python 3.10 support (according to the README anyway).
+- I think it might use a different kind of typing semantics; its [typing FAQ](https://google.github.io/pytype/typing_faq.html) speaks of "descriptive typing" and a more lenient approach.
+
+#### [PyCharm](https://www.jetbrains.com/pycharm/)
+
+PyCharm has its own means to typechecking code as you write it. It's definitely caught bugs before, and having the instant feedback as you type is really nice! I have seen it struggle with `zope.interface` and some uses of `Generic`s though.
+
+
+### Runtime uses of annotations
+
+When annotations [were first introduced](https://www.python.org/dev/peps/pep-3107/), they were a generic means to associate Python objects with parts of a program. (It was only later that the community agreed that we really want to use them to annotate _types_). These annotations are available at runtime in the `__annotations__` attribute. There's also a helper function in `typing` which will help resolve forward references.
+
+```python=
+>>> from typing import get_type_hints
+>>> def foo(x: int) -> str: pass
+...
+>>> get_type_hints(foo)
+{'x': <class 'int'>, 'return': <class 'str'>}
+```
+
+Programs and libraries are free to use these annotations at runtime as they see fit. The most well-known examples are probably [`dataclasses`](), [`attrs`](https://www.attrs.org/en/stable/) with [`auto_attribs=True`](https://www.attrs.org/en/stable/types.html) and [`Pydantic`](https://pydantic-docs.helpmanual.io/). I'd be interested to learn if anyone else is consuming annotations at runtime!
+
+## Summary
+
+All in all, in a two-week sprint we were able to get Sydent's mypy coverage from a precision of 83% up to 94%. Our work would have spotted the [bytes-versus-strings bug](https://github.com/matrix-org/sydent/pull/415); we understand why [the missing await](https://github.com/matrix-org/sydent/pull/413) wasn't detected. We [fixed](https://github.com/matrix-org/sydent/issues/419) [other](https://github.com/matrix-org/sydent/issues/449) [small](https://github.com/matrix-org/sydent/issues/447) [bugs](https://github.com/matrix-org/sydent/issues/445) too as part of the process. As well as bugs, I've hopefully made the source code clearer for future readers (but that one is hard to quantify).
+
+There's room to spin out contributions upstream too. I submitted [two](https://github.com/twisted/twisted/pull/1669)   [PRs](https://github.com/twisted/twisted/pull/1668) to twisted upstream; have started to work on annotations for [pynacl](https://github.com/pyca/pynacl/pull/693) [in my](https://github.com/pyca/pynacl/pull/694) [spare time](https://github.com/pyca/pynacl/pull/695); and submitted a quick fix to [`typeshed`](https://github.com/python/typeshed/pull/6150).
+
+Looking forward, I think we'd get a quick gain from ensuring that our smaller libraries ([`signedjson`](https://github.com/matrix-org/python-signedjson), [`canonicaljson`](https://github.com/matrix-org/python-canonicaljson)) are annotated. We'll be sticking with mypy for now—`mypy-zope` is crucial given how much we make use of twisted. We're hoping to spent time on similar efforts to improve Sygnal and Synapse in the coming weeks—though not to the extreme standard of `--strict` across everything.
+
+I'd say the biggest outstanding hole is our processing of JSON objects. There's too much `Dict[str, Any]` flying around. The ideal for me would be to define `dataclass` or `attr.s` class `C`, and be able to deserialise a JSON object to `C`, including automatic (deep) type checking. [Pydantic](https://pydantic-docs.helpmanual.io/) sounds really close to what we want, but I'm told it will gladly interpret the json string `"42"` as the Python integer `42`, which isn't what we'd like. There are other avenues to explore too, like [`jsonschema-typed`](https://github.com/erickpeirson/jsonschema-typed), [`typedload`](https://pypi.org/project/typedload/) or [`attrs-strict`](https://github.com/bloomberg/attrs-strict).
+
+A final personal remark: adding typing is a great way to get familiar with new source code. It involves a mixture of reading, cross-referencing, deduction, analysis, all across a wide variety of files. It'd be a _lot_ easier to type as you write from the get-go, but typing after the fact is still a worth use of time and effort.
+
+Many thanks for reading! If you've got any corrections, comments or queries, I'm available on Matrix at [`@dmrobertson:matrix.org`](https://matrix.to/#/@dmrobertson:matrix.org).
