@@ -10,4 +10,3 @@ cd `dirname $0`
 jekyll build
 
 cp css/docs_overrides.css _site/css
-#[ -h _site/guides/css ] ||  ln -s ../css _site/guides/
