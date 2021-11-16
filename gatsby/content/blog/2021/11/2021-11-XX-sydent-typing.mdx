@@ -758,6 +758,7 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
         Tuple size mismatch; expected 3 but received indeterminate number (reportGeneralTypeIssues)
   ```
   This is really valuable information. It's worth considering Pyright as an option to get a second opinion!
+- It looks like Pyright's name for `Any` is `Unknown`. I think that does a better job of emphasising that `Unknown` won't be type checked. I'd certainly be more reluctant to type `x: Unknown` versus `x: Any`!
 - Pyright is the machinery behind [Pylance](https://github.com/microsoft/pylance-release), which drives [VS Code's Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). That alone probably makes it worthy of more eyes.
 - Seemed like it was the best-placed alternative typechecker to challenge mypy (the de-facto standard).
 
