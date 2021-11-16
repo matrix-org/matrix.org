@@ -14,7 +14,7 @@
 We can see our progress on the graph above. The grey region covers our two-week sprint towards improving coverage. The earliest data point is from just before our earlier efforts to improve typing this summer.
 
 "Typing" refers to the process of annotating Python source code, so that automated tools can reason about the types of expressions that flow through a program. These annotations can be automatically checked by a tool like [`mypy`]
-(https://mypy.readthedocs.io/en/stable/)—a great way to spot bugs before you ship them.
+(https://mypy.readthedocs.io/en/stable/) — a great way to spot bugs before you ship them.
 
 
 In this note, I want to
@@ -26,7 +26,7 @@ In this note, I want to
 
 ## Why do this now?
 
-It took us a long time (too long) to notice that the Sydent instance serving `matrix.org` [was failing to send SMS messages for verification](https://github.com/vector-im/element-web/issues/19317). We suspected that something was going wrong with our [API call to OpenMarket](https://github.com/matrix-org/sydent/blob/main/sydent/sms/openmarket.py). Our first step was to [improve logging](https://github.com/matrix-org/sydent/issues/410), so we could start to deduce what was going wrong and why. Whilst trawling through logs, we spotted and [
+It took us a long time (too long) to notice that the Sydent instance serving `matrix.org` [was failing to send SMS messages for verification](https://github.com/vector-im/element-web/issues/19317). We suspected that something was going wrong with our [API call to OpenMarket](https://github.com/matrix-org/sydent/blob/main/sydent/sms/openmarket.py). Our first step was to [improve logging](https://github.com/matrix-org/sydent/issues/410), so we could start to deduce what was going wrong and why. Whilst trawling through logs, we spotted [
 one problem](https://github.com/matrix-org/sydent/pull/413#pullrequestreview-775154313) which meant we weren't actually sending off the API request in the first place. Further investigation revealed a [strings-versus-bytes confusion](https://github.com/matrix-org/sydent/pull/415) which meant that we would always (incorrectly) interpret the API response as having failed.
 
 All in all, phone number verification was unknowingly broken in the 2.4.0 release, to be fixed in 2.4.6 a month later. How could we do better? Better test coverage is (as ever) one answer. But [it struck me](https://github.com/matrix-org/sydent/pull/413#pullrequestreview-775154313) that the two bug we'd encountered might be ripe for automatic detection:
@@ -67,7 +67,7 @@ async def foo() -> int:
 
 async def bar():
     x = foo()      # no error
-    y: int = foo() # error: rhs is Awiatable[int], but lhs expects int
+    y: int = foo() # error: rhs is Awaitable[int], but lhs expects int
 
 $ mypy --check-untyped-defs example.py
 example.py:6: error: Incompatible types in assignment (expression has type "Coroutine[Any, Any, int]", variable has type "int")
