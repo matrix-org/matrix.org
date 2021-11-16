@@ -45,7 +45,6 @@ jobs:
         run: |
           . /env/bin/activate
           ./jekyll/generate.sh
-          cp -rf ./pre-generated/* jekyll/_site/
       - name: "📦 Tarball creation"
         run: tar -czf jekyll-site.tar.gz jekyll/_site
       - name: "📤 Artifact upload"
@@ -153,7 +152,7 @@ jobs:
         run: |
           tar -xzvf styled-docs.tar.gz
           tar -xzvf jekyll-site.tar.gz
-          cp -r jekyll/_site/{css,guides} content/docs
+          cp -r jekyll/_site/css content/docs
           tar -C content --strip-components=1 -xzf gatsby-site.tar.gz
           tar -C content -xzf implementation-guides.tar.gz
           tar -czf content.tar.gz content
