@@ -45,7 +45,7 @@ Instead of writing `x = await foo()`, we simply had `x = foo()` and didn't then 
 
 Are there other opportunities to spot the error? Here's the relevant bit of source code from [before the fix](https://github.com/matrix-org/sydent/blob/2e3b7576b17e92080319e08c0c0ebf566935636c/sydent/http/servlets/msisdnservlet.py#L93-L98).
 
-```python=
+```python
             sid = self.sydent.validators.msisdn.requestToken(
                 phone_number_object, clientSecret, sendAttempt, brand
             )
@@ -79,7 +79,7 @@ We might also have been able to detect the error by looking at how we used `sid`
 
 Unfortunately not. Because `resp` has no annotation, we have to rely on how it's used to assign it a type. And it's only really used as a return value. What's the function's annotation?
 
-```python=
+```python
     @jsonwrap
     def render_POST(self, request: Request) -> JsonDict:
 ```
@@ -94,7 +94,7 @@ In short, there were options for detecting this with some code changes, but no m
 
 Our [error](https://github.com/matrix-org/sydent/pull/415/files#diff-4b3e0551612818927c87fe0100262ec230e0342def9d3f09214b93dea3efacb8L103-R107) was here:
 
-```python=
+```python
         headers = dict(resp.headers.getAllRawHeaders())
         request_id = None
         if "X-Request-Id" in headers:
@@ -103,7 +103,7 @@ Our [error](https://github.com/matrix-org/sydent/pull/415/files#diff-4b3e0551612
 
 In this sample, `rest.headers` is a [`twisted.web.http_headers.Headers`](https://twistedmatrix.com/documents/current/api/twisted.web.http_headers.Headers.html). `getAllRawHeaders` is [documented](https://twistedmatrix.com/documents/current/api/twisted.web.http_headers.Headers.html#getAllRawHeaders) as returning an iterable of `(bytes, Sequence[bytes])` pairs. Even better, mypy can see this because `getAllRawHeaders` is [annotated](https://github.com/twisted/twisted/blob/5c24e99e671c4082a1ddc8dbeb869402294bd0dc/src/twisted/web/http_headers.py#L261) (many thanks to the twisted authors for this). Mypy should be able to deduce that we build a dictionary `headers: Dict[bytes, Sequence[bytes]`. We can check this using [`reveal_type`](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html#when-you-re-puzzled-or-when-things-are-complicated):
 
-```python=
+```python
         headers = dict(resp.headers.getAllRawHeaders())
         reveal_type(headers)
 ```
@@ -125,7 +125,7 @@ sydent/sms/openmarket.py:82: error: Dict entry 0 has incompatible type "str": "i
 Huh. Mypy spots something, but not the error we were hoping for. What's going on here? We can ask mypy to show its working with `reveal_type` again.
 
 
-```python=
+```python
         resp = await self.http_cli.post_json_get_nothing(
             API_BASE_URL, send_body, {"headers": req_headers}
         )
@@ -152,7 +152,7 @@ Ahh, the `Any` type. As mentioned above, this represents a value whose type can'
 
 The problem here is that mypy can't see that `resp.headers` is a twisted `Headers` object. If we could inform it of this, mypy would spot our bug:
 
-```python=
+```python
         import twisted.web.http_headers
         raw_headers: twisted.web.http_headers.Headers = resp.headers
         reveal_type(resp)
@@ -223,7 +223,7 @@ I think it would have been more efficient to use `stubgen` to generate stubs and
 
 This is a decorator which allows us to write code in the style of `async`/`await` without actually using that syntax. (Twisted predates `asyncio` introduced in Python 3.4; it was originally released in 2002, back when Python had released version 2.2.) We only use it in [one place in Sydent](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25255d19effceae7061ad9b3eefc374/sydent/http/matrixfederationagent.py#L125-L132) nowadays, but I've seen used across Synapse too. I mention it here because it was a bit fiddly to annotate. Here it is:
 
-```python=
+```python
     @defer.inlineCallbacks
     def request(
         self,
@@ -244,14 +244,14 @@ that example from Sydent. `request` is a [generator function](https://docs.pytho
 
 Why have I opted to use `Any` here, when we've seen (and will see) that this limits mypy's ability to run checks? The answer is that we yield two different types within the function. Firstly a [routing result](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25255d19effceae7061ad9b3eefc374/sydent/http/matrixfederationagent.py#L152-L153):
 
-```python=
+```python
         routing: _RoutingResult
         routing = yield defer.ensureDeferred(self._route_matrix_uri(parsed_uri))
 ```
 
 and later, [the `IResponse`](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25255d19effceae7061ad9b3eefc374/sydent/http/matrixfederationagent.py#L194-L195) we go on to return:
 
-```python=
+```python
         res: IResponse
         res = yield agent.request(method, uri, headers, bodyProducer)
 ```
@@ -260,7 +260,7 @@ I could more correctly annotate the `YieldType` as `Deferred[Union[_RoutingResul
 
 This problem doesn't arise with using the more common `async/await` syntax:
 
-```python=
+```python
 async def foo() -> int:
     return 1
 
@@ -316,7 +316,7 @@ This flag forces you to fully annotate every function. There are less extreme ve
 
 One downside to this: sometimes I felt like I was writing obvious boilerplate annotations, e.g.
 
-```python=
+```python
     def __str__(self) -> str:
         ...
 ```
@@ -329,7 +329,7 @@ It's also worth mentioning [`--disallow-untyped-calls`](https://mypy.readthedocs
 
 If I've written a function and annotated it to return an `int`, mypy will rightly complain if its implementation actually goes on to return a `str`.
 
-```python=
+```python
 def foo() -> int:
     # error: Incompatible return value type (got "str", expected "int")
     return "hello"
@@ -337,7 +337,7 @@ def foo() -> int:
 
 If mypy isn't sure what type I'm returning though, i.e. if I'm returning an expression of type `Any`, then by default mypy will trust that we've done the right thing.
 
-```python=
+```python
 def i_promise_this_is_an_int():
     return "hello"
 
@@ -362,7 +362,7 @@ At this point I'd like to share a few generic lessons about typing I'd picked up
 
 Annotating decorators is fiddly, but it's also vitally important. An unannotated decorator will mask or throw away your decoratee's annotations! The way to write the annotation is best explained by the [mypy docs](https://mypy.readthedocs.io/en/stable/generics.html#declaring-decorators), but briefly: it involves a `TypeVar` and sometimes a `cast` too. Here's an example.
 
-```python=
+```python
 from typing import TypeVar, Callable, Any, cast
 
 F = TypeVar("F", bound=Callable[..., Any])
@@ -387,7 +387,7 @@ This might change in the future, e.g. when [`ParamSpec`](https://docs.python.org
 
 Both of these are general types for expressing "I don't know anything about this expression". But only the former will undergo static type checks. We want those type checks to guard against bugs accidentally introduced in the future. For instance, imagine a class with an `Any` attribute.
 
-```python=
+```python
 import dataclasses
 
 @dataclasses.dataclass
@@ -397,7 +397,7 @@ class C:
 
 Imagine in the future we add a new method which assumes that `label` is a string:
 
-```python=
+```python
     def greeting(self) -> str:
         return "My name is " + self.label
 ```
@@ -440,14 +440,14 @@ I want to call out two parts of `typing` in particular:
 
 `overload` is a way to provide extra information about a function depending on how it's called. For instance, consider this function which takes a `str` or `bytes` as input and returns its uppercase version.
 
-```python=
+```python
 def upper(x: Union[bytes, str]) -> Union[bytes, str]:
     return x.upper()
 ```
 
 The problem with this annotation is that we'll have to check at every call site to see if the return value was a `bytes` or a `str` object. But we know that uppercasing a `str` gives us a `str`, and uppercasing a `bytes` gives us a `bytes.` We can use `overload` to express this.
 
-```python=
+```python
 from typing import overload
 
 @overload
@@ -464,7 +464,7 @@ The first two `@overload` definitions are like stubs: they're purely used for th
 
 I was really impressed to see how `mypy` could use this overloading information. Here's an example:
 
-```python=
+```python
 from typing import overload, Literal
 
 @overload
@@ -506,7 +506,7 @@ Subclassing from `TypedDict` allows us to define a new type whose values are dic
 
 [PEP 589](https://www.python.org/dev/peps/pep-0589/) can best describe the motivation, but in short: there's a lot of source code out there that passes dictionaries around. `TypedDict` is a way to gradually add typechecking to that code, which having to refactor it to use e.g. a [dataclass](https://docs.python.org/3/library/dataclasses.html) or a [NamedTuple](https://docs.python.org/3/library/typing.html#typing.NamedTuple). Let's have a quick example.
 
-```python=
+```python
 from typing import List, TypedDict
 
 class Person(TypedDict):
@@ -523,7 +523,7 @@ p: Person = {
 
 Mypy will detect if you delete or omit a required key, or if you insert a key that's not part of the type.
 
-```python=
+```python
 # error: Key "age" of TypedDict "Person" cannot be deleted
 del p["age"]
 
@@ -540,7 +540,7 @@ p["eye_colour"] = "brown"
 
 This one surprised me at first. Why can't I pass my `TypedDict` to a function that accepts a generic dictionary?
 
-```python=
+```python
 import json
 from typing import Dict, TypedDict
 
@@ -567,7 +567,7 @@ There are few workarounds for this kind of problem.
 
 Secondly, defining a `TypedDict` with a mixture of optional and required keys is a little fiddly. All keys can be made optional by passing `total=False` in the class definition. To have some keys optional and others mandatory, we have to make _two_ TypedDicts. Say for instance we wanted to allow a potentially-missing `favourite_colour` field to `Person`. We can't add an annotation `favourite_colour: Optional[str]` to the first class body. That's optional in a different sense: it would mean that `favourite_colour` is a mandatory field which is allowed to be `None`. Instead, we apply `total=False` to a subclass:
 
-```python=
+```python
 from typing import TypedDict
 
 class _PersonRequired(TypedDict):
@@ -587,7 +587,7 @@ The syntax is unfortunately a little clunky. [PEP 655](https://www.python.org/de
 
 One final note: a `TypedDict` does no validation or conversion whatsoever. If mypy can't know the keys and values a dictionary will have a typecheck-time, you'll need to validate it by hand at runtime. We see this a lot because when deserialising json objects into a dictionary. Here's an example.
 
-```python=
+```python
 import json
 from typing import List, TypedDict
 
@@ -778,7 +778,7 @@ PyCharm has its own means to typechecking code as you write it. It's definitely 
 
 When annotations [were first introduced](https://www.python.org/dev/peps/pep-3107/), they were a generic means to associate Python objects with parts of a program. (It was only later that the community agreed that we really want to use them to annotate _types_). These annotations are available at runtime in the `__annotations__` attribute. There's also a helper function in `typing` which will help resolve forward references.
 
-```python=
+```python
 >>> from typing import get_type_hints
 >>> def foo(x: int) -> str: pass
 ...
