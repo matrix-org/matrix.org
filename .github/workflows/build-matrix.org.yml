@@ -12,7 +12,6 @@ jobs:
   build-spec:
     name: "📖 Spec"
     runs-on: ubuntu-latest
-    container: "python:3.6"
     steps:
       - name: "📥 Source checkout"
         uses: actions/checkout@v2
@@ -20,9 +19,7 @@ jobs:
           submodules: 'recursive'
       - name: "📖 Update docs"
         run: |
-          python3 -m venv env
-          env/bin/pip install requests
-          . env/bin/activate; scripts/update_docs.sh
+          scripts/update_docs.sh
       - name: "📦 Tarball creation"
         run: tar -czf styled-docs.tar.gz content/docs
       - name: "📤 Artifact upload"
