@@ -10,7 +10,7 @@ jobs:
   # Apply styling to the spec documents.
   # This step also sets up the OpenAPI UI.
   build-spec:
-    name: "📖 Spec"
+    name: "📖 Legacy spec"
     runs-on: ubuntu-latest
     steps:
       - name: "📥 Source checkout"
@@ -20,6 +20,13 @@ jobs:
       - name: "📖 Update docs"
         run: |
           scripts/update_docs.sh
+      - name: "⚙️ Create output directory for Sass"
+        run: mkdir -p content/docs/css
+      - name: "🚧 Transform Sass"
+        uses: gha-utilities/sass-build@04542d49f28015d06d2a06f3b48bf72bfa76a6b3 
+        with:
+          source: legacy-spec/scss/main.scss
+          destination: content/docs/css/main.css
       - name: "📦 Tarball creation"
         run: tar -czf styled-docs.tar.gz content/docs
       - name: "📤 Artifact upload"
@@ -27,28 +34,6 @@ jobs:
         with:
           name: styled-docs-artifact
           path: styled-docs.tar.gz
-
-  # Run jekyll. We run this in a custom docker image.
-  build-jekyll:
-    name: "🌐 Jekyll"
-    runs-on: ubuntu-latest
-    container:
-      # the dockerfile for this is in matrix-org/docker/build
-      image: "matrixdotorg/matrixdotorg-build:0.2"
-    steps:
-      - name: "📥 Source checkout"
-        uses: actions/checkout@v2
-      - name: "🚧 Jekyll build"
-        run: |
-          . /env/bin/activate
-          ./jekyll/generate.sh
-      - name: "📦 Tarball creation"
-        run: tar -czf jekyll-site.tar.gz jekyll/_site
-      - name: "📤 Artifact upload"
-        uses: actions/upload-artifact@v2
-        with:
-          name: spec-artifact
-          path: jekyll-site.tar.gz
 
   # Run gatsby.
   build-gatsby:
@@ -125,7 +110,7 @@ jobs:
   package:
     name: "📦 Package"
     runs-on: ubuntu-latest
-    needs: [build-spec, build-jekyll, build-gatsby, build-guides]
+    needs: [build-spec, build-gatsby, build-guides]
     steps:
       - name: "📥 Source checkout"
         uses: actions/checkout@v2
@@ -133,10 +118,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: styled-docs-artifact
-      - name: "📥 Jekyll artifact download"
-        uses: actions/download-artifact@v2
-        with:
-          name: spec-artifact
       - name: "📥 Gatsby artifact download"
         uses: actions/download-artifact@v2
         with:
@@ -148,8 +129,6 @@ jobs:
       - name: "📦 Merge archives"
         run: |
           tar -xzvf styled-docs.tar.gz
-          tar -xzvf jekyll-site.tar.gz
-          cp -r jekyll/_site/css content/docs
           tar -C content --strip-components=1 -xzf gatsby-site.tar.gz
           tar -C content -xzf implementation-guides.tar.gz
           tar -czf content.tar.gz content

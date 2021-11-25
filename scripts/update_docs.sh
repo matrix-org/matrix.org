@@ -28,11 +28,12 @@ rm -fr unstyled_docs/api/client-server
 mkdir -p unstyled_docs/api/client-server/json
 ln -s ../../../spec/client_server/latest.json unstyled_docs/api/client-server/json/api-docs.json
 
-# copy the unstyled docs and add the jekyll styling
+# copy the unstyled docs and add the styling
 rm -rf content/docs
 cp -r unstyled_docs content/docs
 find "content/docs" -name '*.html' -type f |
-    xargs "./scripts/add-matrix-org-stylings.pl" "./jekyll/_includes"
+    xargs "./scripts/add-matrix-org-stylings.pl" "./legacy-spec/html-fragments/"
+cp -r legacy-spec/css content/docs/css
 
 # Set up RapiDoc itself at the end so it doesn’t get styled
 cp -r rapidoc/* content/docs/api/client-server/

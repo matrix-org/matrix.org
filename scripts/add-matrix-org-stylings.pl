@@ -13,7 +13,7 @@ if (! -d $include_dir) {
 }
 
 my $header = read_file("${include_dir}/head.html");
-my $nav = read_file("${include_dir}/nav-newsite.html");
+my $nav = read_file("${include_dir}/nav.html");
 my $footer = read_file("${include_dir}/footer.html");
 
 $header .= "<link rel=\"stylesheet\" href=\"/docs/guides/css/docs_overrides.css\">\n";
