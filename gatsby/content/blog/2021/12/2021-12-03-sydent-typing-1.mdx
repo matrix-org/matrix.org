@@ -16,7 +16,7 @@ We recently worked on [improving Sydent's type coverage](https://github.com/matr
 
 Two lines show two different measures of how well-typed the project is. The grey region covers our two-week sprint towards improving coverage; the earliest data point is from just before previous efforts to improve typing earlier in the year.
 
-In a series of posts, I'd like to reflect on this sprin and share what we've learned. In particular, I aim to:
+In a series of posts, I'd like to reflect on this sprint and share what we've learned. In particular, I aim to:
 
 - explain why we wanted to improve type coverage _now_;
 - work through examples to see how (if?) mypy could have spotted bugs;
@@ -61,7 +61,7 @@ Are there other opportunities to spot the error? Here's the relevant bit of sour
             }
 ```
 
-The call to `requestToken` produces a value of type `Awaitable[int]`. If we passed tried to assign that to an expression of type `int` we'd get an error that mypy can spot.
+The call to `requestToken` produces a value of type `Awaitable[int]`. If we tried to assign that to an expression of type `int` we'd get an error that mypy can spot.
 
 ```
 $ cat example.py
