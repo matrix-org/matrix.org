@@ -1,5 +1,5 @@
 ---
-  date: '2021-11-08'
+  date: '2021-12-10'
   title: 'Type coverage for Sydent: annotation'
   categories:
     - Thoughts
@@ -7,7 +7,7 @@
   author: David Robertson
 ---
 
-This is the second in a series of three posts which discuss recent work to improve type annotations in [Sydent](https://github.com/matrix-org/sydent), the reference Matrix Identity server. [Last time](2021-11-XX-sydent-typing-1.mdx) we discussed the motivation for doing this work in the first place: the _why_. Now I want to talk about the _how_. How did we add annotations to individual files, and across the project as whole? What common idioms did we learn on the way?
+This is the second in a series of three posts which discuss recent work to improve type annotations in [Sydent](https://github.com/matrix-org/sydent), the reference Matrix Identity server. [Last time](2021-12-03-sydent-typing-1.mdx) we discussed the motivation for doing this work in the first place: the _why_. Now I want to talk about the _how_. How did we add annotations to individual files, and across the project as whole? What common idioms did we learn on the way?
 
 ## The process of improving coverage
 
@@ -28,7 +28,7 @@ Within a given module, I'd try to fix easier errors first: partly for confidence
 
 Picking and choosing easy targets works fairly well, but sometimes that means you end fixing an error that's really a symptom of an earlier one. Other times fixing one error, e.g. by giving a return type annotation to a function—would solve a series of other errors throughout the file. Watching the total number of errors mypy reports bob up and down was intriguing!
 
-In retrospect, I think it would be smoother to generate some kind of dependency graph for the package. I'm imagining a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) where whose vertices are modules, and there's an edge `A -> B` if `A` imports from `B`. The leaves of this DAG are the ideal place to start: you can get something typechecked there without having to annotate a long chain of dependencies. Another strategy would be to see which modules were the least precise according to mypy's reports—but more on those [next time](2021-11-XX-sydent-typing-1.mdx).
+In retrospect, I think it would be smoother to generate some kind of dependency graph for the package. I'm imagining a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) where whose vertices are modules, and there's an edge `A -> B` if `A` imports from `B`. The leaves of this DAG are the ideal place to start: you can get something typechecked there without having to annotate a long chain of dependencies. Another strategy would be to see which modules were the least precise according to mypy's reports—but more on those [next time](2021-12-03-sydent-typing-1.mdx).
 
 ### Annotations when working with twisted
 
@@ -36,11 +36,11 @@ Twisted is a big project, with a few quirks that make it trickier to annotate ap
 
 #### Partially typed modules and stubs
 
-Early into the process, mypy reported that calling the function [`twisted.python.log.err`](https://twistedmatrix.com/documents/current/api/twisted.python.log.html#err) was an error. It did so because I was running mypy in [`--strict` mode](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict). We'll talk more about why I did so and what this means [next time](2021-11-XX-sydent-typing-3.mdx); for now, it's enough to know that calling a function that isn't fully annotated from within a function that is constitutes an error. `twisted` is partially annotated: many key modules and functions have type annotations, but others don't. I was reluctant to give up on `--strict`. Instead, I decided to stub the `err` function myself. 
+Early into the process, mypy reported that calling the function [`twisted.python.log.err`](https://twistedmatrix.com/documents/current/api/twisted.python.log.html#err) was an error. It did so because I was running mypy in [`--strict` mode](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict). We'll talk more about why I did so and what this means [next time](2021-12-17-sydent-typing-3.mdx); for now, it's enough to know that calling a function that isn't fully annotated from within a function that is constitutes an error. `twisted` is partially annotated: many key modules and functions have type annotations, but others don't. I was reluctant to give up on `--strict`. Instead, I decided to stub the `err` function myself. 
 
-I [added](https://github.com/matrix-org/sydent/pull/418/commits/c4e04256c150ecc771e6c2049bcf52c7aaffbbe0) a `stubs` directory so that I could provide an annotation for . My initial motivation was that `mypy --strict` considers calling an untyped function from a typed function to be an error. But this was almost an accident: mypy can be configured with a list of modules to ignore if it can't find type annotations for them. `twisted` wasn't part of that list! (We'll talk more about `--strict` in the [final part](2021-11-XX-sydent-typing-3.mdx) of this series.)
+I [added](https://github.com/matrix-org/sydent/pull/418/commits/c4e04256c150ecc771e6c2049bcf52c7aaffbbe0) a `stubs` directory so that I could provide an annotation for . My initial motivation was that `mypy --strict` considers calling an untyped function from a typed function to be an error. But this was almost an accident: mypy can be configured with a list of modules to ignore if it can't find type annotations for them. `twisted` wasn't part of that list! (We'll talk more about `--strict` in the [final part](2021-12-17-sydent-typing-3.mdx) of this series.)
 
-A stub is a cut-down version of a python function, class or module which lives in a `.pyi` file. All implementation details are removed; only type annotations remain. Stubs are useful when you want to write annotations for code you don't control. The [`typeshed`](https://github.com/python/typeshed) library is probably the best example: a collection of third party stubs for the standard library, plus some popular third party packages. Microsoft's [`python-type-stubs`](https://github.com/microsoft/python-type-stubs) is another example. They'd also solve the problem I mentioned at the end of the [first part](2021-11-XX-sydent-typing-1.mdx): I could use a stub to _teach_ mypy that `IResponse.headers` was a `Headers` object. 
+A stub is a cut-down version of a python function, class or module which lives in a `.pyi` file. All implementation details are removed; only type annotations remain. Stubs are useful when you want to write annotations for code you don't control. The [`typeshed`](https://github.com/python/typeshed) library is probably the best example: a collection of third party stubs for the standard library, plus some popular third party packages. Microsoft's [`python-type-stubs`](https://github.com/microsoft/python-type-stubs) is another example. They'd also solve the problem I mentioned at the end of the [first part](2021-12-03-sydent-typing-1.mdx): I could use a stub to _teach_ mypy that `IResponse.headers` was a `Headers` object. 
 
 Writing a stub for `log.err` was straightforward, thanks mainly to Twisted's thorough documentation. I chose to write it by hand, rather than use [`stubgen`](https://mypy.readthedocs.io/en/stable/stubgen.html). I'd heard of the latter, but was reluctant to use it for a few reasons.
 
@@ -380,7 +380,7 @@ f: Foo = json.loads("{}")
 
 ## Next time
 
-This covers a lot of the machinery and the day-to-day process of annotating Sydent. The [last part](2021-11-XX-sydent-typing-1.mdx) of this series will give us a chance to quantify our efforts and reflect on the wider typing ecosystem.
+This covers a lot of the machinery and the day-to-day process of annotating Sydent. The [last part](2021-12-03-sydent-typing-1.mdx) of this series will give us a chance to quantify our efforts and reflect on the wider typing ecosystem.
 
 ----
 
