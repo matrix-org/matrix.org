@@ -162,7 +162,7 @@ There are two metrics I chose to focus on:
 - the proportion of "imprecise" lines across the project; I also used the complement, `precision = 100% - imprecision`, and
 - the proportion of expressions whose type is not `Any`.
 
-These are plotted in the graph at the top of this writeup. I could see that precision and the proportion of typed expressions were correlated', but I didn't understand how they differed. I couldn't see an explanation in the mypy docs, so I went [digging](https://github.com/python/mypy/blob/d807e097d142a88a48af93314d15ad87e41d2f19/mypy/stats.py) into the mypy source code. My understanding is  as follows.
+These are plotted in the graph at the top of this writeup. I could see that precision and the proportion of typed expressions were correlated, but I didn't understand how they differed. I couldn't see an explanation in the mypy docs, so I went [digging](https://github.com/python/mypy/blob/d807e097d142a88a48af93314d15ad87e41d2f19/mypy/stats.py) into the mypy source code. My understanding is  as follows.
 
 1. There are [five kinds of precision](https://github.com/python/mypy/blob/d807e097d142a88a48af93314d15ad87e41d2f19/mypy/stats.py#L27-L31). Full details are visible in the `--lineprecision-report`.
 2. Two kinds of precision, `EMPTY` and `UNANALYZED` convey no information, because there's nothing to analyze.

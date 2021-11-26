@@ -194,7 +194,7 @@ error: Unsupported operand types for + ("str" and "object")  [operator]
 
 #### `# type: ignore` and `cast` sparingly
 
-There's a good chance that mypy knows better than we do, so we should only overrule it if there's no better option. There are two techniques for this. One option is to tell mypy to just silence the error, by append a `# type: ignore` comment to the erroneous line. The other is to force it to accept that a certain expression has a given type: that's what [`cast`](https://docs.python.org/3/library/typing.html?highlight=paramspec#typing.cast) is for.
+There's a good chance that mypy knows better than we do, so we should only overrule it if there's no better option. There are two techniques for this. One option is to tell mypy to just silence the error, by appending a `# type: ignore` comment to the erroneous line. The other is to force it to accept that a certain expression has a given type: that's what [`cast`](https://docs.python.org/3/library/typing.html?highlight=paramspec#typing.cast) is for.
 
 I never like using either of these, but sometimes they're the most practical choice. I'd recommend two best practices for their use, however:
 
