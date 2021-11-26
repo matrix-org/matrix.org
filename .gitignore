@@ -4,8 +4,6 @@
 /content/docs
 /content.tar.gz
 /env
-/jekyll/_site/
-/jekyll/.sass-cache/
 /gatsby/.cache
 /gatsby/node_modules
 /gatsby/public/static
