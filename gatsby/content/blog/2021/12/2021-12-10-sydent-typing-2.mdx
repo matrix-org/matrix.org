@@ -110,7 +110,7 @@ example.py:6: note: Revealed type is "typing.Coroutine[Any, Any, builtins.int]"
 example.py:7: note: Revealed type is "builtins.int*"
 ```
 
-All in all, the handling of `inleineCallbacks` is a situation specific to working with (older?) twisted code. It's still nice to understand what's going on behind the scenes though!
+All in all, the handling of `inlineCallbacks` is a situation specific to working with (older?) twisted code. It's still nice to understand what's going on behind the scenes though!
 
 
 
@@ -127,7 +127,7 @@ Mypy out of the box doesn't play well with a zope `Interface` (nor does any othe
 
 Hmm. That's being a little melodramatic.
 
-Improving coverage boils down to giving the typechecker more information about your program. The more information it has, the more it can check—and the more errors it can spot. (Hopefully this doesn't make typing come across like a pyramid scheme.) If your dependencies aren't typed, mypy can't validate you're correctly providing inputs and correctly consuming outputs. You might have a bigger impact on overall typing coverage by annotating a dependency (directly or via stubs). I have a hunch that bugs are more likely in code that uses an external dependency: we're much more familiar with the details of our own source code compare to that of a third party we trust.
+Improving coverage boils down to giving the typechecker more information about your program. The more information it has, the more it can check—and the more errors it can spot. (Hopefully this doesn't make typing come across like a pyramid scheme.) If your dependencies aren't typed, mypy can't validate you're correctly providing inputs and correctly consuming outputs. You might have a bigger impact on overall typing coverage by annotating a dependency (directly or via stubs). I have a hunch that bugs are more likely in code that uses an external dependency: we're much more familiar with the details of our own source code compared to that of a third party we trust.
 
 It's worth looking to see if your dependencies have a newer version including type annotations. Failing that, they may have a stub package added to [`typeshed`](https://github.com/python/typeshed/tree/master/stubs) and published on PyPI. I saw example of both cases when choosing how to configure mypy for Sydent. If some of your dependencies are under your control, consider annotating them—you'll feel the benefits across multiple projects pretty quickly.
 
@@ -282,7 +282,7 @@ Subclassing from `TypedDict` allows us to define a new type whose values are dic
 - a fixed set of keys (some mandatory, some not), and
 - a fixed type for each key's value.
 
-[PEP 589](https://www.python.org/dev/peps/pep-0589/) can best describe the motivation, but in short: there's a lot of source code out there that passes dictionaries around. `TypedDict` is a way to gradually add typechecking to that code, which having to refactor it to use e.g. a [dataclass](https://docs.python.org/3/library/dataclasses.html) or a [NamedTuple](https://docs.python.org/3/library/typing.html#typing.NamedTuple). Let's have a quick example.
+[PEP 589](https://www.python.org/dev/peps/pep-0589/) can best describe the motivation, but in short: there's a lot of source code out there that passes dictionaries around. `TypedDict` is a way to gradually add typechecking to that code, without having to refactor it to use e.g. a [dataclass](https://docs.python.org/3/library/dataclasses.html) or a [NamedTuple](https://docs.python.org/3/library/typing.html#typing.NamedTuple). Let's have a quick example.
 
 ```python
 from typing import List, TypedDict
@@ -357,7 +357,7 @@ class Person(_PersonRequired, total=False):
     favourite_colour: str
 ```
 
-This means that a valid `Person` dictionary may have no`favourite_colour` key. If it is present, it must be a `str`.
+This means that a valid `Person` dictionary may have no `favourite_colour` key. If it is present, it must be a `str`.
 
 The syntax is unfortunately a little clunky. [PEP 655](https://www.python.org/dev/peps/pep-0655/) acknowledges this and proposes an alternative.
 
