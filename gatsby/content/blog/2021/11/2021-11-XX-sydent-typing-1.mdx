@@ -1,5 +1,5 @@
 ---
-  date: '2021-11-08'
+  date: '2021-11-XX'
   title: 'Type coverage for Sydent: motivation'
   categories:
     - Thoughts
@@ -9,7 +9,7 @@
 
 [Sydent](https://github.com/matrix-org/sydent) is the reference Matrix Identity server. It provides a [lookup service](https://matrix.org/docs/spec/identity_service/r0.3.0), so that you can find a Matrix user via their email address or phone number (if they've chosen to share it).
 
-We recently worked on [improving Sydent's type coverage](https://github.com/matrix-org/sydent/issues/414). Type coverage (or "typing") refers to annotations in Python source code that specify the type of an expression. This allows automated tools to reason about the types that flow through a program. One popular tool is [`mypy`](https://mypy.readthedocs.io/en/stable/), which can often use the type information to spot bugs before you ship them! We worked to make Sydent pass `mypy --strict`. It now does so, with an overall precision of 94%! Here's what that process looks like:
+We recently worked on [improving Sydent's type coverage](https://github.com/matrix-org/sydent/issues/414). Type coverage (or "typing") refers to annotations in Python source code that specify the type of an expression. These annotations are entirely optional, but if present, they allow tools to reason about the types that flow through a program. One popular tool is [`mypy`](https://mypy.readthedocs.io/en/stable/), which can often use the type information to spot bugs before you ship them! We worked to make Sydent pass `mypy --strict`. It now does so, with an overall precision of 94%! Here's what that process looks like:
 
 
 ![Coverage as measured by mypy. Precision and the number of typed expressions increase over the latter half of 2021.](/blog/img/TWGXKTFpjYxlbnHRkZFAzljQ.png)
@@ -25,7 +25,7 @@ In a series of posts, I'd like to reflect on this sprin and share what we've lea
 - discuss the checks that `mypy` provides; and finally
 - reflect on the state of Python's typing ecosystem.
 
-In this first part, we'll concentrate on the first two topics.
+In this first part, we'll concentrate on the first two topics; the [second](2021-11-XX-sydent-typing-2.mdx) covers the middle two; and the [third](2021-11-XX-sydent-typing-3.mdx) the last two.
 
 ## Why do this now?
 
@@ -180,7 +180,7 @@ Found 3 errors in 1 file (checked 1 source file)
 
 There it is, on line 114: `Invalid index type "str" for "Dict[bytes, Sequence[bytes]]"; expected type "bytes"`.
 
-Unfortunately it'd be a pain to annotate our application code to mark every use of `IResponse.headers` as a `Headers` object. We'll see a better way to do things in this [the next post](2021-11-XX-sydent-typing-2.mdx), which discusses the core process of adding annotating.
+Unfortunately it'd be a pain to annotate our application code to mark every use of `IResponse.headers` as a `Headers` object. We'll see a better way to do things in this [the next post](2021-11-XX-sydent-typing-2.mdx), which discusses the nitty-gritty details of adding annotations file-by-file.
 
 ----
 

@@ -7,14 +7,11 @@
   author: David Robertson
 ---
 
-This is the third in a series of three posts which discuss recent work to improve type annotations in [Sydent](https://github.com/matrix-org/sydent), the reference Matrix Identity server. Last time we discussed the mechanics of how we added type coverage. Now I want to reflect on how well we did. What information and guarantees did we gain from `mypy`? How could we track our progress and measure the effect of our work? And lastly, what other tools are out there apart from `mypy`?
-
-# TODO tie in from end of part 2 somewhere.
-
+This is the third in a series of three posts which discuss recent work to improve type annotations in [Sydent](https://github.com/matrix-org/sydent), the reference Matrix Identity server. [Last time](2021-11-XX-sydent-typing-1.mdx) we discussed the mechanics of how we added type coverage. Now I want to reflect on how well we did. What information and guarantees did we gain from `mypy`? How could we track our progress and measure the effect of our work? And lastly, what other tools are out there apart from `mypy`?
 
 ## The best parts of `--strict`
 
-Strict mode turns on a number of extra checks (though not everything); it feels similar to passing `-Wall -Wextra -Werror` to `gcc`. In my view, the most useful options implied by strict mode were as follows.
+While the primary goal was to improve Sydent's coverage and robustness, to some extent this was an experiment too. How much could we get out of typing and static analysis, if we _really_ invested in thorough annotations? Sydent is a small project that would make for a good testbed! I decided my goal would be to get Sydent passing mypy under [`--strict mode`](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict). This is a command line option which turns on a number of extra checks (though not everything); it feels similar to passing `-Wall -Wextra -Werror` to `gcc`. It's a little extreme, but Sydent is a small project and this would be a good chance to see how hard it would be. In my view, the most useful options implied by strict mode were as follows.
 
 ### [`--check-untyped-defs`](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs)
 By default, mypy will only analyze the implementation of functions that are annotated. On the one hand, without annotations for inputs and the return type, it's going to be hard for mypy to thoroughly check the soundness of your function. On the other, it can still do good work with the type information it has from other sources. Mypy can
@@ -71,7 +68,7 @@ I'm not sure how general this check is, since users can define their own types w
 
 ## Quantifying coverage
 
-It was important to a some way to evaluating our efforts to improve type coverage. It's a fairly abstract piece of work: there's nothing user-visible about it, unless we happen to discover a bug and fix it.
+It was important to have some way to numerically evaluate our efforts to improve type coverage. It's a fairly abstract piece of work: there's nothing user-visible about it, unless we happen to discover a bug and fix it.
 
 The most obvious metric is the number of total errors reported by mypy. Before the recent sprint, we had roughly 600 errors total.
 
@@ -81,7 +78,7 @@ dmr on titan in sydent on  HEAD (3dde3ad) via 🐍 v3.9.7 (env)
 Found 635 errors in 59 files (checked 78 source files)
 ```
 
-This is a decent way to measure your progress when working on a particular module or package, but it's not perfect. The errors here aren't independent. Fixing one could fix another ten or reveal another twenty—the numeric value can be erratic.
+This is a decent way to measure your progress when working on a particular module or package, but it's not perfect, because the errors aren't independent. Fixing one could fix another ten or reveal another twenty—the numeric value can be erratic.
 
 ### Reports
 
@@ -162,20 +159,20 @@ There are two metrics I chose to focus on:
 - the proportion of "imprecise" lines across the project; I also used the complement, `precision = 100% - imprecision`, and
 - the proportion of expressions whose type is not `Any`.
 
-These are plotted in the graph at the top of this writeup. I could see that precision and the proportion of typed expressions were correlated, but I didn't understand how they differed. I couldn't see an explanation in the mypy docs, so I went [digging](https://github.com/python/mypy/blob/d807e097d142a88a48af93314d15ad87e41d2f19/mypy/stats.py) into the mypy source code. My understanding is  as follows.
+These are plotted in the graph at the top of this writeup. I could see that precision and the proportion of typed expressions were correlated, but I didn't understand how they differed. I couldn't see an explanation in the mypy docs, so I went [digging](https://github.com/python/mypy/blob/d807e097d142a88a48af93314d15ad87e41d2f19/mypy/stats.py) into the mypy source code. My understanding is as follows.
 
 1. There are [five kinds of precision](https://github.com/python/mypy/blob/d807e097d142a88a48af93314d15ad87e41d2f19/mypy/stats.py#L27-L31). Full details are visible in the `--lineprecision-report`.
 2. Two kinds of precision, `EMPTY` and `UNANALYZED` convey no information, because there's nothing to analyze.
 3. A line is marked as precise, imprecise or any based on the expressions it uses.
    - An expression that has type `Any` leads to precision `ANY`.
    - I _think_ an expression that [involves `Any` but is not `Any`](https://github.com/python/mypy/blob/2907a4dea939e20ff39ef7d9ff85ae1a199a0ee8/mypy/stats.py#L422-L423) counts as imprecise. For instance, `Dict[str, Any]`.
-   - Everything other analyzed line is `PRECISE`.
+   - Remaining expressions have precision `PRECISE`.
 5. A line's precision is the worst of all its expressions' precisions.
    - `ANY` is worse than `IMPRECISE`, which is worse than `PRECISE`.
 
 The "imprecision" number reported by mypy counts the number of lines [classified as `IMPRECISE` or `ANY`](https://github.com/python/mypy/blob/3bdef9fe6d401f3d2e0cacf4964bd315550c3394/mypy/xml/mypy-txt.xslt#L77-L78).
 
-On balance, my preferred metric is the (im)precision percentage. There wasn't much difference between the two in my experience, but the colour-coded visualisation in the HTML report is a neat feature to have. Maybe in the future there could be a version of the HTML report that colour-codes each _expression_?
+On balance, my preferred metric is the line-level (im)precision percentage. There wasn't much difference between the two in my experience, but the colour-coded visualisation in the HTML report is a neat feature to have. Maybe in the future there could be a version of the HTML report that colour-codes each _expression_?
 
 
 ## The larger typing ecosystem
@@ -263,12 +260,11 @@ All in all, in a two-week sprint we were able to get Sydent's mypy coverage from
 
 There's room to spin out contributions upstream too. I submitted [two](https://github.com/twisted/twisted/pull/1669)   [PRs](https://github.com/twisted/twisted/pull/1668) to twisted upstream; have started to work on annotations for [pynacl](https://github.com/pyca/pynacl/pull/693) [in my](https://github.com/pyca/pynacl/pull/694) [spare time](https://github.com/pyca/pynacl/pull/695); and submitted a quick fix to [`typeshed`](https://github.com/python/typeshed/pull/6150).
 
-Looking forward, I think we'd get a quick gain from ensuring that our smaller libraries ([`signedjson`](https://github.com/matrix-org/python-signedjson), [`canonicaljson`](https://github.com/matrix-org/python-canonicaljson)) are annotated. We'll be sticking with mypy for now—`mypy-zope` is crucial given how much we make use of twisted. We're hoping to spent time on similar efforts to improve Sygnal and Synapse in the coming weeks—though not to the extreme standard of `--strict` across everything.
+Looking forward, I think we'd get a quick gain from ensuring that our smaller libraries ([`signedjson`](https://github.com/matrix-org/python-signedjson), [`canonicaljson`](https://github.com/matrix-org/python-canonicaljson)) are annotated. We'll be sticking with mypy for now—`mypy-zope` is crucial given how much we make use of twisted. We've started to spent time on similar efforts to improve Sygnal and Synapse in the coming weeks—though not to the extreme standard of `--strict` across everything.
 
 I'd say the biggest outstanding hole is our processing of JSON objects. There's too much `Dict[str, Any]` flying around. The ideal for me would be to define `dataclass` or `attr.s` class `C`, and be able to deserialise a JSON object to `C`, including automatic (deep) type checking. [Pydantic](https://pydantic-docs.helpmanual.io/) sounds really close to what we want, but I'm told it will gladly interpret the json string `"42"` as the Python integer `42`, which isn't what we'd like. There are other avenues to explore too, like [`jsonschema-typed`](https://github.com/erickpeirson/jsonschema-typed), [`typedload`](https://pypi.org/project/typedload/) or [`attrs-strict`](https://github.com/bloomberg/attrs-strict).
 
 A final personal remark: adding typing is a great way to get familiar with new source code. It involves a mixture of reading, cross-referencing, deduction, analysis, all across a wide variety of files. It'd be a _lot_ easier to type as you write from the get-go, but typing after the fact is still a worth use of time and effort.
-
 
 ----
 

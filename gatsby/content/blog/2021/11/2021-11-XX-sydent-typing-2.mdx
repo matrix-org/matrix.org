@@ -7,12 +7,10 @@
   author: David Robertson
 ---
 
-This is the second in a series of three posts which discuss recent work to improve type annotations in [Sydent](https://github.com/matrix-org/sydent), the reference Matrix Identity server. Last time we discussed the motivation for doing this work in the first place: the _why_. Now I want to talk about the _how_. How did we add annotations to individual files, and across the project as whole? What common idioms did we learn on the way?
+This is the second in a series of three posts which discuss recent work to improve type annotations in [Sydent](https://github.com/matrix-org/sydent), the reference Matrix Identity server. [Last time](2021-11-XX-sydent-typing-1.mdx) we discussed the motivation for doing this work in the first place: the _why_. Now I want to talk about the _how_. How did we add annotations to individual files, and across the project as whole? What common idioms did we learn on the way?
 
-# TODO "I wanted to experiment" needs a rewrite.
 ## The process of improving coverage
 
-I wanted to experiment. How much could we get out of typing and static analysis if we really invested in thorough annotations? I decided my goal would be to get the `sydent` package passing `mypy --strict`. [Strict mode](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict) is a shorthand which turns on all of mypy's optional checks. It's a little extreme, but Sydent is a small project and this would be a good chance to see how hard it would be.
 
 From experience adding typing to Synapse, we decided to annotate one module at a time. We configured a list of files in `pyproject.toml` which we knew passed mypy's checks. We could run `mypy` in CI to check that new PRs didn't introduce type problems in modules already covered.
 
@@ -30,32 +28,34 @@ Within a given module, I'd try to fix easier errors first: partly for confidence
 
 Picking and choosing easy targets works fairly well, but sometimes that means you end fixing an error that's really a symptom of an earlier one. Other times fixing one error, e.g. by giving a return type annotation to a function—would solve a series of other errors throughout the file. Watching the total number of errors mypy reports bob up and down was intriguing!
 
-In retrospect, I think it would be smoother to generate some kind of dependency graph for the package. I'm imagining a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) where whose vertices are modules, and there's an edge `A -> B` if `A` imports from `B`. The leaves of this DAG are the ideal place to start: you can get something typechecked there without having to annotate a long chain of dependencies. Another strategy would be to see which modules were the least precise according to mypy's reports—but more on those later.
+In retrospect, I think it would be smoother to generate some kind of dependency graph for the package. I'm imagining a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) where whose vertices are modules, and there's an edge `A -> B` if `A` imports from `B`. The leaves of this DAG are the ideal place to start: you can get something typechecked there without having to annotate a long chain of dependencies. Another strategy would be to see which modules were the least precise according to mypy's reports—but more on those [next time](2021-11-XX-sydent-typing-1.mdx).
 
 ### Annotations when working with twisted
 
-# I mentioned last time that adding :Headers everywhere would be a pain. One way to work around... stubs...
+Twisted is a big project, with a few quirks that make it trickier to annotate applications using it.
 
-Early into the process I [added](https://github.com/matrix-org/sydent/pull/418/commits/c4e04256c150ecc771e6c2049bcf52c7aaffbbe0) a `stubs` directory so that I could provide an annotation for [`twisted.python.log.err`](https://twistedmatrix.com/documents/current/api/twisted.python.log.html#err). My initial motivation was that `mypy --strict` considers calling an untyped function from a typed function to be an error. But this was almost an accident: mypy can be configured with a list of modules to ignore if it can't find type annotations for them. `twisted` was not one of those modules. (Indeed, we wanted to make use of as much of `twisted`'s annotations as possible.)
+#### Partially typed modules and stubs
 
-Instead, I decided to stub the `err` function myself. A stub is a cut-down version of a python function, class or module which lives in a `.pyi` file. All implementation details are removed; only type annotations remain. Stubs are useful when you want to write annotations for code you don't control. The [`typeshed`](https://github.com/python/typeshed) library is probably the best example: a collection of third party stubs for the standard library, plus some popular third party packages. Microsoft's [`python-type-stubs`](https://github.com/microsoft/python-type-stubs) is another example.
+Early into the process, mypy reported that calling the function [`twisted.python.log.err`](https://twistedmatrix.com/documents/current/api/twisted.python.log.html#err) was an error. It did so because I was running mypy in [`--strict` mode](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict). We'll talk more about why I did so and what this means [next time](2021-11-XX-sydent-typing-3.mdx); for now, it's enough to know that calling a function that isn't fully annotated from within a function that is constitutes an error. `twisted` is partially annotated: many key modules and functions have type annotations, but others don't. I was reluctant to give up on `--strict`. Instead, I decided to stub the `err` function myself. 
 
-Writing a stub for this one function was straightforward, thanks mainly to Twisted's thorough documentation. I chose to write it by hand, rather than use [`stubgen`](https://mypy.readthedocs.io/en/stable/stubgen.html). I'd heard of the latter, but was reluctant to use it for a few reasons.
+I [added](https://github.com/matrix-org/sydent/pull/418/commits/c4e04256c150ecc771e6c2049bcf52c7aaffbbe0) a `stubs` directory so that I could provide an annotation for . My initial motivation was that `mypy --strict` considers calling an untyped function from a typed function to be an error. But this was almost an accident: mypy can be configured with a list of modules to ignore if it can't find type annotations for them. `twisted` wasn't part of that list! (We'll talk more about `--strict` in the [final part](2021-11-XX-sydent-typing-3.mdx) of this series.)
+
+A stub is a cut-down version of a python function, class or module which lives in a `.pyi` file. All implementation details are removed; only type annotations remain. Stubs are useful when you want to write annotations for code you don't control. The [`typeshed`](https://github.com/python/typeshed) library is probably the best example: a collection of third party stubs for the standard library, plus some popular third party packages. Microsoft's [`python-type-stubs`](https://github.com/microsoft/python-type-stubs) is another example. They'd also solve the problem I mentioned at the end of the [first part](2021-11-XX-sydent-typing-1.mdx): I could use a stub to _teach_ mypy that `IResponse.headers` was a `Headers` object. 
+
+Writing a stub for `log.err` was straightforward, thanks mainly to Twisted's thorough documentation. I chose to write it by hand, rather than use [`stubgen`](https://mypy.readthedocs.io/en/stable/stubgen.html). I'd heard of the latter, but was reluctant to use it for a few reasons.
 
 - Twisted is a big project with many big files. I didn't want to commit huge stub files for me and my colleagues to maintain.
 - The more our stubs cover, the larger the risk of a stub becoming out-of-date with twisted itself. Upstream twisted is the best place for these annotations.
 - We only need annotations for the bits of twisted that we're using.
 - And, being honest: I wanted the low-level experience of writing stubs, cross-referencing between the source and working how to best capture its type semantics.
 
-#### Partially typed modules and stub granularity
+I think this decision to write a targeted stub made sense at the time. After all, `twisted.python.logging.err` is just one simple function! But for the project as a whole, I regret not using `stubgen` to generate module-level stubs. The reason for this is that a `.pyi` stub file accounts for an entire module: [no more and no less](https://github.com/python/mypy/issues/5880#issuecomment-439237176). This means that the stubs I was writing for parts of twisted only covered the functions and classes I'd stubbed. Any existing annotations in the twisted source code would be ignored, along with any types that mypy was able to infer for itself.
 
-I think this decision to write a targeted stub made sense at the time. After all, `twisted.python.logging.err` is just one function which was simple to write a stub for. But for the project as a whole, I regret not using `stubgen` to generate module-level stubs. The reason for this is that a `.pyi` stub file accounts for an entire module: [no more and no less](https://github.com/python/mypy/issues/5880#issuecomment-439237176). This means that the stubs I was writing for parts of twisted only covered the functions and classes I'd stubbed. Any existing annotations in the twisted source code would be ignored, along with any types that mypy was able to infer for itself.
-
-I think it would have been more efficient to use `stubgen` to generate stubs and patch them up, rather than writing them. That would have helped avoid a few cases I encountered where stubbing one function would cause additional typechecking failures (because mypy was no longer examining the twisted source for that file). It would also have meant that I could just faithfully stub twisted as it is; in practice, I would sometimes hesitate to stub to avoid having to cover another module. `sydent.http` was the most painful part of the source tree for this: that's where we make the most use of `twisted`.
+I think it would have been more efficient to use `stubgen` to generate stubs and patch them up, rather than writing them. That would have helped avoid a few cases I encountered where stubbing one function would cause additional typechecking failures (because mypy was no longer examining the twisted source for that file). It would also have meant that I could just faithfully stub Twisted as it is; in practice, I would sometimes hesitate to stub to avoid having to cover another module. `sydent.http` was the most painful part of the source tree for this: that's where we make the most use of Twisted.
 
 #### [`defer.inlineCallbacks`](https://twistedmatrix.com/documents/current/api/twisted.internet.defer.html#inlineCallbacks)
 
-This is a decorator which allows us to write code in the style of `async`/`await` without actually using that syntax. (Twisted predates `asyncio` introduced in Python 3.4; it was originally released in 2002, back when Python had released version 2.2.) We only use it in [one place in Sydent](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25255d19effceae7061ad9b3eefc374/sydent/http/matrixfederationagent.py#L125-L132) nowadays, but I've seen used across Synapse too. I mention it here because it was a bit fiddly to annotate. Here it is:
+This is a decorator which allows us to write code in the style of `async`/`await` without actually using that syntax. (Twisted predates `asyncio` introduced in Python 3.4; it was originally released in 2002, back when Python had released version 2.2.) We only use it in [one place in Sydent](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25255d19effceae7061ad9b3eefc374/sydent/http/matrixfederationagent.py#L125-L132) nowadays, but I've seen used across Synapse too. I mention it here because it was a bit fiddly to annotate. Here's its use in Sydent:
 
 ```python
     @defer.inlineCallbacks
@@ -68,7 +68,7 @@ This is a decorator which allows us to write code in the style of `async`/`await
     ) -> Generator["defer.Deferred[Any]", Any, IResponse]:
 ```
 
-that example from Sydent. `request` is a [generator function](https://docs.python.org/3/glossary.html#term-generator), because its body uses the `yield` keyword. Yielding allows the function to relinquish control back to twisted's reactor, only for its execution to be resumed asynchronously in the future. The [`Generator`](https://docs.python.org/3/library/typing.html?highlight=typing%20generator#typing.Generator) type takes three parameters: a `YieldType`, a `SendType`, and a `ReturnType`. In this example:
+Here, `request` is a [generator function](https://docs.python.org/3/glossary.html#term-generator) because its body uses the `yield` keyword. Yielding allows the function to relinquish control back to twisted's reactor, only for its execution to be resumed asynchronously in the future. The [`Generator`](https://docs.python.org/3/library/typing.html?highlight=typing%20generator#typing.Generator) type takes three parameters: a `YieldType`, a `SendType`, and a `ReturnType`. In this example:
 
 - We yield a `Deferred[Any]`.
 - That will later be resolved by twisted to an `Any` value. Twisted will send that value to `request`, and the execution continues.
@@ -165,6 +165,7 @@ This might change in the future, e.g. when [`ParamSpec`](https://docs.python.org
 Both of these are general types for expressing "I don't know anything about this expression". But only the former will undergo static type checks. We want those type checks to guard against bugs accidentally introduced in the future. For instance, imagine a class with an `Any` attribute.
 
 ```python
+from typing import Any
 import dataclasses
 
 @dataclasses.dataclass
@@ -345,7 +346,7 @@ There are few workarounds for this kind of problem.
 Secondly, defining a `TypedDict` with a mixture of optional and required keys is a little fiddly. All keys can be made optional by passing `total=False` in the class definition. To have some keys optional and others mandatory, we have to make _two_ TypedDicts. Say for instance we wanted to allow a potentially-missing `favourite_colour` field to `Person`. We can't add an annotation `favourite_colour: Optional[str]` to the first class body. That's optional in a different sense: it would mean that `favourite_colour` is a mandatory field which is allowed to be `None`. Instead, we apply `total=False` to a subclass:
 
 ```python
-from typing import TypedDict
+from typing import List, TypedDict
 
 class _PersonRequired(TypedDict):
     full_name: str
@@ -366,7 +367,7 @@ One final note: a `TypedDict` does no validation or conversion whatsoever. If my
 
 ```python
 import json
-from typing import List, TypedDict
+from typing import TypedDict
 
 class Foo(TypedDict):
     bar: str
@@ -377,7 +378,9 @@ reveal_type(json.loads("{}"))
 f: Foo = json.loads("{}")
 ```
 
-# TODO a sentence finishing it off and teasing part 3.
+## Next time
+
+This covers a lot of the machinery and the day-to-day process of annotating Sydent. The [last part](2021-11-XX-sydent-typing-1.mdx) of this series will give us a chance to quantify our efforts and reflect on the wider typing ecosystem.
 
 ----
 
