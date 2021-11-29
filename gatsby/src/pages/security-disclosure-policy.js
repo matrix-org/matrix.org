@@ -249,6 +249,10 @@ const HallOfFame = () => {
                 <li>Review the report, verify the vulnerability and respond with confirmation and/or further information requests; we typically reply within 24 hours. </li>
                 <li>Once the reported security bug has been addressed we will notify the Researcher, who is then welcome to optionally disclose publicly.</li>
             </ul>
+            <p>The following is a list of known issues and/or things we do not consider to be an issue. Please <i>do not</i> send reports regarding the following:</p>
+            <ul>
+                <li>Issues relating to SPF or DMARC.</li>
+            </ul>
             <p>The Matrix.org Foundation does not ordinarily provide bug bounties, though organisations building on top of Matrix may do so in future.</p>
             <p>We maintain a Hall of Fame to recognise those who have responsibly disclosed security issues to us in the past.</p>
 
