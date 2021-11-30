@@ -72,6 +72,7 @@ const SDKs = ({ data }) => {
     ["Dart", ["Dart"]],
     ["Perl", ["Perl"]],
     ["C/C++", ["C", "C++", "C++/Qt"]],
+    ["Kotlin", ["Kotlin"]]
   ]
   let flattened = []; // build server has no .flat()
   languages.map(l => l[1]).forEach(l => flattened = flattened.concat(l));
