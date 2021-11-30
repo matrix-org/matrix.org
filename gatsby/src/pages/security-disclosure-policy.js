@@ -10,6 +10,12 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date: '2021-09-23',
+            who: 'Pascal "nephele" Abresch',
+            description: 'Reported that Matrix Static (used for view.matrix.org) was vulnerable to XSS via room names due to missing sanitization. Fixed in <a href="https://github.com/matrix-org/matrix-static/releases/tag/0.3.1">Matrix Static 0.3.1</a>.',
+            service: 'Matrix Static'
+        },
+        {
             date: '2021-08-31',
             who: 'Thomas Chauchefoin (SonarSource)',
             profile: 'https://www.sonarsource.com/',
@@ -235,11 +241,17 @@ const HallOfFame = () => {
                 <li>We will fix the issue as soon as is practical, keeping in mind that not all risks are created equal.</li>
                 <li>We will always transparently let the community know about any incident that affects them.</li>
             </ul>
-            <p>If you have found a security vulnerability in Matrix, we ask that you disclose it responsibly by emailing <a href='mailto:security@matrix.org'>security@matrix.org</a>. Please do not discuss potential vulnerabilities in public without validating with us first.</p>
+            <p>If you have found a security vulnerability in Matrix, we ask that you disclose it responsibly by emailing <a href='mailto:security@matrix.org'>security@matrix.org</a>.
+            Optionally, if you want to encrypt your email, you can use our <a href="/.well-known/pgp-key.txt">PGP key</a>.
+            Please do not discuss potential vulnerabilities in public without validating with us first.</p>
             <p>On receipt the security team will:</p>
             <ul>
                 <li>Review the report, verify the vulnerability and respond with confirmation and/or further information requests; we typically reply within 24 hours. </li>
                 <li>Once the reported security bug has been addressed we will notify the Researcher, who is then welcome to optionally disclose publicly.</li>
+            </ul>
+            <p>The following is a list of known issues and/or things we do not consider to be an issue. Please <em>do not</em> send reports regarding the following:</p>
+            <ul>
+                <li>Issues relating to SPF or DMARC.</li>
             </ul>
             <p>The Matrix.org Foundation does not ordinarily provide bug bounties, though organisations building on top of Matrix may do so in future.</p>
             <p>We maintain a Hall of Fame to recognise those who have responsibly disclosed security issues to us in the past.</p>

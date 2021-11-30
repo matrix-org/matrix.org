@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  # Fetch the latest spec build, and apply styling to it.
+  # Apply styling to the spec documents.
   # This step also sets up the OpenAPI UI.
   build-spec:
     name: "📖 Spec"
@@ -18,14 +18,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           submodules: 'recursive'
-      - name: "📥 matrix-doc OpenAPI artifact download"
-        uses: dawidd6/action-download-artifact@6f8f427fb41886a66b82ea11a5a15d1454c79415
-        with:
-          workflow: main.yml
-          workflow_conclusion: success
-          repo: ${{ github.repository_owner }}/matrix-doc
-          branch: main
-          name: openapi-artifact
       - name: "📖 Update docs"
         run: |
           python3 -m venv env
@@ -40,11 +32,11 @@ jobs:
           path: styled-docs.tar.gz
 
   # Run jekyll. We run this in a custom docker image.
-  # See dockerfile in the `.buildkite` directory.
   build-jekyll:
     name: "🌐 Jekyll"
     runs-on: ubuntu-latest
     container:
+      # the dockerfile for this is in matrix-org/docker/build
       image: "matrixdotorg/matrixdotorg-build:0.2"
     steps:
       - name: "📥 Source checkout"
@@ -62,19 +54,41 @@ jobs:
           name: spec-artifact
           path: jekyll-site.tar.gz
 
-  # Run gatsby. We also use a custom docker image for this, to avoid
-  # installing the entirety of npmjs for each build.
+  # Run gatsby.
   build-gatsby:
     name: "🌐 Gatsby"
     runs-on: ubuntu-latest
-    container:
-      image: "matrixdotorg/matrixdotorg-gatsby:latest"
     steps:
       - name: "📥 Source checkout"
         uses: actions/checkout@v2
-      - name: "🚧 Gatsby build"
-        run: ln -s /opt/gatsby/node_modules . && gatsby build
+      - name: "⚙️ Setup node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: "📝 Gatsby dependencies cache"
+        uses: actions/cache@v2
+        with:
+          path: |
+            gatsby/node_modules
+          key: ${{ runner.os }}-gatsby-deps-${{ hashFiles('gatsby/package-lock.json') }}
+      - name: "⚙️ Install Gatsby"
+        run: npm install
         working-directory: gatsby
+      - name: "📝 Gatsby build cache"
+        uses: actions/cache@v2
+        with:
+          path: |
+            gatsby/public
+            gatsby/.cache
+          key: ${{ runner.os}}-gatsby-build-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-build-
+      - name: "🚧 Gatsby build"
+        run: npm run build
+        working-directory: gatsby
+        env:
+          GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
+          CI: true
       - name: "📦 Tarball creation"
         run: tar -czf gatsby-site.tar.gz public
         working-directory: gatsby
@@ -149,3 +163,39 @@ jobs:
           name: merged-content-artifact
           path: content.tar.gz
 
+  # For pull requests, deploy a preview on netlify
+  deploy-preview:
+    name: "🌐 Deploy to Netlify"
+    runs-on: ubuntu-latest
+    needs: package
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - name: "📥 Content artifact download"
+        uses: actions/download-artifact@v2
+        with:
+          name: merged-content-artifact
+      - name: "📦 Extract Artifacts"
+        run: tar -xzvf content.tar.gz && rm content.tar.gz
+      - name: "📤 Deploy to Netlify"
+        id: netlify
+        # v1.2.2
+        uses: nwtgck/actions-netlify@f517512ae75beec8896aa7b027c1c72f01816200
+        with:
+          publish-dir: content
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+          alias: pr${{ github.event.pull_request.number }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 30
+      - name: "📝 Edit PR Description"
+        # v1.0.1
+        uses: velas/pr-description@3e19bf4239eecaf552a1c24ee730da2ba84b41cf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          pull-request-number: ${{ github.event.pull_request.number }}
+          description-message: |
+            Preview: ${{ steps.netlify.outputs.deploy-url }}

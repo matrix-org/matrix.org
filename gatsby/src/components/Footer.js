@@ -30,6 +30,7 @@ const Footer = () => (
         <a href="/blog/archive" className="mxfooter__link">All Posts</a>
         <a href="/blog/category/this-week-in-matrix" className="mxfooter__link">This Week In Matrix</a>
         <a href="/blog/category/security" className="mxfooter__link">Security</a>
+        <a href="/blog/category/security/feed" className="mxfooter__link">Security RSS</a>
         <a href="/blog/feed" className="mxfooter__link">RSS</a>
       </div>
       <div className="mxfooter__column">
