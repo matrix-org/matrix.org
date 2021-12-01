@@ -12,11 +12,12 @@ device to another.
 To encrypt a message in Matrix, a client
 
 - creates a Megolm session (if it does not already have a session that can
-  still be used),
+  still be used);
 - ensures that it has established an Olm session to all the other devices that
-  are currently in the room,
-- sends the Megolm session to each other device in the room,
-- encrypts the message using the Megolm session, and
+  are currently in the room;
+- sends the Megolm session to each other device in the room, using the Olm
+  sessions established above;
+- encrypts the message using the Megolm session; and
 - sends the encrypted message to the room.
 
 To decrypt a message, a client
@@ -54,6 +55,30 @@ amount of memory. Clients can reduce the amount of memory used by libolm by not
 keeping libolm objects in memory; instead, clients can pickle the object when
 it is not being used and free the memory, and unpickle the object when it is
 needed again.
+
+### Other requirements
+
+In addition to libolm, you will need:
+
+- a method to generate random bytes to provide to libolm (some bindings will
+  take care of this already; in the C++ examples, we will assume that there is
+  a function called `fill_with_random` that fills a buffer with random bytes),
+- a JSON parser (in the C++ examples, we will use the [nlohmann JSON
+  library](https://github.com/nlohmann/json)),
+- a function to create [canonical
+  JSON](https://spec.matrix.org/v1.1/appendices/#canonical-json) (use
+  [another-json](https://www.npmjs.com/package/another-json) in JavaScript; in
+  the C++, we will assume that there is a function called `canonical_json` that
+  does this),
+- an AES-CTR implementation (for encrypted attachments), and
+- a way to make HTTP requests to the homeserver (in the examples, we assume
+  that there is a function called `request(method, endpoint, body)` that does
+  this).
+
+You will probably also want:
+
+- a way to store pickles, if your client will be stopped and restarted, and
+- a secure way to store the pickle keys.
 
 ## Concepts
 
@@ -165,13 +190,13 @@ users.
 When first initialized, it will generated the Ed25519 fingerprint key and
 Curve25519 identity key.
 
-C:
-```c
+C++:
+```c++
 void *account_memory = malloc(olm_account_size());
 OlmAccount *account = olm_account(account_memory);
 void create_account_random_length = olm_create_account_random_length(account);
 void *create_account_random = malloc(creaate_account_random_length);
-fill_buffer_with_random(create_account_random, create_account_random_length);
+fill_with_random(create_account_random, create_account_random_length);
 size_t ret = olm_create_account(account, create_account_random_length);
 free(create_account_random);
 if (ret == olm_error()) {
@@ -192,11 +217,13 @@ Python: (TODO)
 When the client is closed and re-opened, it should use the same `OlmAccount`
 object. This can be done using the `pickle`/`unpickle` functions:
 
-C:
-```c
-// to pickle the account:
+C++:
+```c++
+// To pickle the account:
 
-// the application will need to determine a pickle key to encrypt the pickle.
+// The application will need to determine a pickle key to encrypt the pickle.
+// For example, you can generate a random pickle key, and store it in the
+// operating system's keyring or similar
 size_t key_length;
 void *key;
 
@@ -215,7 +242,7 @@ olm_clear_account(account); // clear the memory (so that private keys aren't lef
 free(account_memory);
 
 
-// to unpickle the account:
+// To unpickle the account:
 
 // use the same pickle key that was used when pickling the account
 size_t key_length;
@@ -237,11 +264,11 @@ free(pickle);
 
 JavaScript:
 ```javascript
-// to pickle the account:
+// To pickle the account:
 const pickle = account.pickle(key);
 
 
-// to unpickle the account:
+// To unpickle the account:
 const account = new global.Olm.Account();
 account.unpickle(key, pickle);
 ```
@@ -249,4 +276,82 @@ account.unpickle(key, pickle);
 ### Uploading device keys
 
 Once the `OlmAccount` is created, it should upload its device keys to the
-homeserver so that they are available to others.
+homeserver so that they are available to others.  Olm provides the identity
+keys as a JSON object, so you will need to parse the JSON.  The identity keys
+are placed in a new JSON object that includes the user ID and device ID, and it
+is then signed by the device's Curve25519 fingerprint key.  The signature is
+then added to the JSON object, and it is uploaded to the server using the
+[`POST
+/keys/upload`](https://spec.matrix.org/v1.1/client-server-api/#post_matrixclientv3keysupload)
+endpoint.
+
+C++:
+```c++
+// assuming that the user ID is stored in a variable named "user_id", and the
+// device ID is stored in a variable named "device_id":
+
+size_t identity_keys_length = olm_account_identity_keys_length(account);
+void *identity_keys_buf = malloc(identity_keys_length);
+if (olm_account_identity_keys(account, identity_keys_buf, identity_keys_length) == olm_error()) {
+  // handle error
+}
+auto identity_keys = json::parse(identity_keys_buf);
+free(identity_keys_buf);
+
+json device_keys = {
+  {"algorithms", {"m.olm.v1.curve25519-aes-sha2", "m.megolm.v1.aes-sha2"}},
+  {"device_id", device_id},
+  {"user_id", user_id},
+  {"keys", {
+    {std::string("ed25519:") + device_id, identity_keys["ed25519"]},
+    {std::string("curve25519:") + device_id, identity_keys["curve25519"]}
+  }}
+};
+std::string device_keys_to_sign = canonical_json(device_keys);
+size_t signature_length = olm_account_signature_length(account)
+char *signature = malloc(signature_length + 1);
+if (olm_account_sign(
+      account,
+      device_keys_to_sign.data(), device_keys_to_sign.length(),
+      signature, signature_length
+    ) == olm_error()) {
+  // handle error
+}
+signature[signature_length] = '\0';
+device_keys["signatures"] = {
+  {user_id, {
+    {std::string("ed25519:") + device_id, signature}
+  }}
+}
+json body = {{"device_keys", device_keys}};
+
+http_request("POST", "/keys/upload", body.dump());
+```
+
+JavaScript:
+```javascript
+// assuming that the user ID is stored in a variable named "userId", and the
+// device ID is stored in a variable named "deviceId":
+
+const identityKeys = JSON.parse(account.identity_keys());
+
+const deviceKeys = {
+    algorithms: [
+        "m.olm.v1.curve25519-aes-sha2",
+        "m.megolm.v1.aes-sha2"
+    ],
+    device_id: device.deviceId,
+    keys: {
+        [`ed25519:${deviceId}`]: identityKeys.ed25519,
+        [`curve25519:${deviceId}`]: identityKeys.curve25519,
+    },
+    user_id: userId,
+}
+const signature = account.sign(anotherjson.stringify(deviceKeys));
+deviceKeys.signatures = {
+    [userId]: {
+        [`ed25519:${deviceId}`]: signature,
+    },
+};
+await device.http.authedRequest("POST", "/keys/upload", {device_keys: deviceKeys});
+```
