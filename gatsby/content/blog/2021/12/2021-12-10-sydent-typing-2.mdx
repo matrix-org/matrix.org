@@ -116,7 +116,7 @@ All in all, the handling of `inlineCallbacks` is a situation specific to working
 
 Twisted makes use of `zope`'s `Interface` to define a number of abstract interface classes. Speaking personally, I've not seen it used outside twisted, and I think that means it's not supported by much of the typechecking tooling. For example, I've definitely seen PyCharm struggle to realise that it's okay to pass a `Response` to a function which expects an `IResponse`! Here's a more complicated example where `PyCharm` isn't happy with me widening the type `LoggingHostnameEndpoint` to `IStreamClientEndpoint`, even though [the latter implements the former](https://github.com/matrix-org/sydent/blob/92ff7a878a25696365b10cc49e32f5cba32c5960/sydent/http/matrixfederationagent.py#L379-L380).
 
-![Screenshot from pycharm showing a false positive warning](https://i.imgur.com/27rqjHm.png)
+![Screenshot from pycharm showing a false positive warning](/blog/img/2012-12-10-pycharm-false-positive.png)
 
 
 Mypy out of the box doesn't play well with a zope `Interface` (nor does any other typechecker I tried). Fortunately, the excellent [`mypy-zope`](https://github.com/Shoobx/mypy-zope) plugin helps here: it teaches mypy that any class like `Response` which `@implements(IResponse)`  can be passed in place of an `IResponse`.
