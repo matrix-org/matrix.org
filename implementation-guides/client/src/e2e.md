@@ -1,20 +1,26 @@
 # End-to-end Encryption
 
 Matrix uses two different cryptographic ratchets for end-to-end encryption:
-Megolm and Olm. Megolm is a symmetric ratchet for encryption, along with a
+Megolm and Olm.
+
+Megolm is a symmetric ratchet for encryption, along with a
 signing key for proving authenticity, and is used to encrypt messages within a
 Matrix room. Once a device has a Megolm session, it can advance the ratchet to
-decrypt messages. Olm is a [double
+decrypt messages. Each device uses their own Megolm session for each room that
+they send a message to, and rotates that session periodically.
+
+Olm is a [double
 ratchet](https://en.wikipedia.org/wiki/Double_Ratchet_Algorithm) that is
 established between two devices and is used to send a Megolm session from one
-device to another.
+device to another.  Both devices use the same Olm session to send their Megolm
+sessions to the other device.
 
 To encrypt a message in Matrix, a client
 
-- creates a Megolm session (if it does not already have a session that can
-  still be used);
 - ensures that it has established an Olm session to all the other devices that
   are currently in the room;
+- creates a Megolm session (if it does not already have a session that can
+  still be used);
 - sends the Megolm session to each other device in the room, using the Olm
   sessions established above;
 - encrypts the message using the Megolm session; and
@@ -28,15 +34,18 @@ To decrypt a message, a client
 ## libolm
 
 Clients can use [libolm](https://gitlab.matrix.org/matrix-org/olm), which
-implements Olm and Megolm, and this guide will assume that libolm is
-used. libolm is written in C/C++, but has bindings for several different
-languages.
+implements Olm and Megolm. It is written in C/C++, but has [bindings for
+several different
+languages](https://gitlab.matrix.org/matrix-org/olm#bindings-1). This guide
+assumes that libolm is used, and gives code examples in C++ and Javascript
+(TODO: and Python).
 
 When using libolm directly, you will need to allocate the necessary buffers,
 and provide the necessary randomness in the form of byte arrays of the
 appropriate size filled with random values. Functions are provided to indicate
-the required sizes for buffers and random arrays. Bindings for other languages
-will often hide such details.
+the required sizes for buffers and random arrays. Random arrays must also be
+cleared after they are used. Bindings for other languages will often hide such
+details.
 
 Many functions will return the value given by `olm_error()` if an error
 occurs. The error can be checked by calling `olm_*_last_error` (which returns a
@@ -114,7 +123,7 @@ yet](https://github.com/matrix-org/synapse/issues/6616)).
 There are a number of keys involved in encrypted communication; a summary of
 them follows.
 
-#### Device keys
+#### Device-related keys
 
 Each device as various keys associated with it.  These are used for
 establishing the Olm sessions between devices.
@@ -163,6 +172,9 @@ establishing the Olm sessions between devices.
   established when the one-time keys are exhausted, but the security is reduced
   slightly.
 
+The Ed25519 fingerprint key and the Curve25519 identity key are sometimes
+collectively referred to as "device keys", since they identify a device.
+
 #### Megolm keys
 
 Each Megolm session also has a set of keys:
@@ -195,9 +207,10 @@ C++:
 void *account_memory = malloc(olm_account_size());
 OlmAccount *account = olm_account(account_memory);
 void create_account_random_length = olm_create_account_random_length(account);
-void *create_account_random = malloc(creaate_account_random_length);
+void *create_account_random = malloc(create_account_random_length);
 fill_with_random(create_account_random, create_account_random_length);
-size_t ret = olm_create_account(account, create_account_random_length);
+size_t ret = olm_create_account(account, create_account_random, create_account_random_length);
+memset(create_account_random, 0, create_account_random_length);
 free(create_account_random);
 if (ret == olm_error()) {
   // handle error
@@ -206,7 +219,7 @@ if (ret == olm_error()) {
 
 JavaScript:
 ```javascript
-await Olm.init(); // this must be done at least once, before using any libolm functions
+await global.Olm.init(); // this must be done at least once, before using any libolm functions
 
 const account = new global.Olm.Account();
 account.create();
@@ -222,7 +235,7 @@ C++:
 // To pickle the account:
 
 // The application will need to determine a pickle key to encrypt the pickle.
-// For example, you can generate a random pickle key, and store it in the
+// For example, it can generate a random pickle key, and store it in the
 // operating system's keyring or similar
 size_t key_length;
 void *key;
@@ -275,8 +288,8 @@ account.unpickle(key, pickle);
 
 ### Uploading device keys
 
-Once the `OlmAccount` is created, it should upload its device keys to the
-homeserver so that they are available to others.  Olm provides the identity
+Once the `OlmAccount` is created, the client should upload its device keys to
+the homeserver so that they are available to others.  Olm provides the identity
 keys as a JSON object, so you will need to parse the JSON.  The identity keys
 are placed in a new JSON object that includes the user ID and device ID, and it
 is then signed by the device's Curve25519 fingerprint key.  The signature is
@@ -291,10 +304,12 @@ C++:
 // device ID is stored in a variable named "device_id":
 
 size_t identity_keys_length = olm_account_identity_keys_length(account);
-void *identity_keys_buf = malloc(identity_keys_length);
-if (olm_account_identity_keys(account, identity_keys_buf, identity_keys_length) == olm_error()) {
+void *identity_keys_buf = malloc(identity_keys_length + 1);
+size_t size = olm_account_identity_keys(account, identity_keys_buf, identity_keys_length);
+if (size == olm_error()) {
   // handle error
 }
+identity_keys_buf[size] = '\0';
 auto identity_keys = json::parse(identity_keys_buf);
 free(identity_keys_buf);
 
@@ -322,7 +337,7 @@ device_keys["signatures"] = {
   {user_id, {
     {std::string("ed25519:") + device_id, signature}
   }}
-}
+};
 json body = {{"device_keys", device_keys}};
 
 http_request("POST", "/keys/upload", body.dump());
@@ -353,5 +368,194 @@ deviceKeys.signatures = {
         [`ed25519:${deviceId}`]: signature,
     },
 };
-await device.http.authedRequest("POST", "/keys/upload", {device_keys: deviceKeys});
+await http_request("POST", "/keys/upload", { device_keys: deviceKeys });
 ```
+
+### Uploading one-time keys
+
+The client should maintain a pool of one-time keys available for other devices
+to claim so that they can create new Olm sessions. The `OlmAccount` has a
+maximum number of one-time keys that it can remember, which can be obtained by
+calling `olm_account_max_number_of_one_time_keys`. Clients should generally
+ensure that the server has half this number of keys available.  Using half the
+number means that if all the keys are claimed, the client can upload new keys
+while it waits to receive the initial messages for the Olm sessions, without
+overwriting the old keys.
+
+The number of keys remaining on the server is given by the `signed_curve25519`
+property of the `device_one_time_keys_count` property of the `GET /sync`
+response.  If this property is not present, then there are no keys remaining.
+Alternatively, the number can be obtained by the `signed_curve25519` property
+of the `one_time_key_counts` property of the `POST /keys/upload` response.  An
+empty request body can be used to query the number of keys without uploading
+any new keys.
+
+Keys are signed, similar to the way the device keys are signed, and uploaded
+using the [`POST
+/keys/upload`](https://spec.matrix.org/v1.1/client-server-api/#post_matrixclientv3keysupload)
+endpoint. Note that this is the same endpoint as the one used for uploading the
+device keys, the client can upload both the device keys and the one-time keys
+at the same time.
+
+libolm keeps track of which keys have been successfully uploaded to the server,
+so that keys are not re-uploaded. Thus, when uploading one-time keys to the
+server, clients should:
+
+- check whether there are any unpublished one-time keys available, and
+  determine how many (if any) new keys need to be generated
+- generate new one-time keys if necessary
+- fetch the one-time keys and sign them
+- upload them to the server
+- mark them as published
+
+C++:
+```c++
+// get this value from sync_response["device_one_time_key_counts"]["signed_curve25519"]
+size_t keys_remaining_on_server;
+
+size_t keys_to_keep_on_server = olm_account_max_number_of_one_time_keys(account) / 2;
+
+if (keys_remaining_on_server < keys_to_keep_on_server) {
+  size_t keys_needed = keys_to_keep_on_server - keys_remaining_on_server;
+
+  // how many unpublished keys do we already have available?
+  size_t otk_length = olm_account_one_time_keys_length(account)
+  void* otk_buffer = malloc(otk_length + 1);
+  size_t size = olm_account_one_time_keys(account, otk_buffer, otk_length);
+  if (size == olm_error()) {
+    // handle error
+  }
+  otk_buffer[size] = '\0';
+  auto otks = json::parse(otk_buffer);
+  free(otk_buffer);
+  int keys_available = otks["ed25519"].size();
+
+  // generate new keys if needed
+  if (keys_needed > keys_available) {
+    size_t keys_to_generate = keys_needed - keys_available;
+    size_t otk_random_length = olm_account_generate_one_time_keys_random_length(
+      account, keys_to_generate
+    );
+    void *otk_random = malloc(otk_random_length);
+    fill_with_random(otk_random, otk_random_length);
+    size_t ret = olm_account_generate_one_time_keys(
+      account, keys_to_generate, otk_random, otk_random_length
+    );
+    if (ret == olm_error()) {
+      // handle error
+    }
+    memset(otk_random, 0, otk_random_length);
+    free(otk_random);
+
+    // and get all the keys that we have
+    otk_length = olm_account_one_time_keys_length(account)
+    otk_buffer = malloc(otk_length + 1);
+    size = olm_account_one_time_keys(account, otk_buffer, otk_length);
+    if (size == olm_error()) {
+      // handle error
+    }
+    otk_buffer[size] = '\0';
+    otks = json::parse(otk_buffer);
+    free(otk_buffer);
+  }
+
+  // sign the keys and put them in a JSON object for upload
+  json signed_otks;
+  for (auto& el : otks["ed25519"].items()) {
+    json key = {
+      {"key", el.value()}
+    };
+    std::string keys_to_sign = canonical_json(keys);
+    size_t signature_length = olm_account_signature_length(account)
+    char *signature = malloc(signature_length + 1);
+    if (olm_account_sign(
+          account,
+          keys_to_sign.data(), keys_to_sign.length(),
+          signature, signature_length
+        ) == olm_error()) {
+      // handle error
+    }
+    signature[signature_length] = '\0';
+    key["signatures"] = {
+      {user_id, {
+        {std::string("ed25519:") + device_id, signature}
+      }}
+    };
+    signed_otks[std::string("signed_curve25519:") + el.key()] = key;
+  }
+
+  // upload and mark as published
+  json body = {{"one_time_keys", signed_otks}};
+  http_request("POST", "/keys/upload", body.dump());
+  olm_account_mark_keys_as_published(account);
+}
+```
+
+JavaScript:
+```javascript
+// get this value from sync_response["device_one_time_key_counts"]["signed_curve25519"]
+const keysRemainingOnServer;
+
+const keysToKeepOnServer = account.max_number_of_one_time_keys();
+
+if (keysRemainingOnServer < keysToKeepOnServer) {
+  const keysNeeded = keysToKeepOnServer - keysRemainingOnServer;
+
+  // how many unpublished keys do we already have available?
+  let otks = JSON.parse(account.one_time_keys());
+  const keysAvailable = [...Object.keys(otks.ed25519)].length;
+
+  // generate new keys if needed
+  if (keysNeeded > keysAvailable) {
+    const keysToGenerate = keysNeeded - keysAvailable;
+    account.generate_one_time_keys(keysToGenerate);
+    otks = JSON.parse(account.one_time_keys());
+  }
+
+  // sign the keys and put them in an object for upload
+  const signedOtks = {};
+  for (const [keyId, key] of Object.entries(otks.ed25519)) {
+    keyObj = { key };
+    const signature = account.sign(anotherjson.stringify(keyObj));
+    keyObj.signatures = {
+      [userId]: {
+        [`ed25519:${deviceId}`]: signature,
+      },
+    };
+    signedOtks["signed_curve25519:" + keyId] = keyObj;
+  }
+
+  // upload and mark as published
+  http_request("POST", "/keys/upload", { one_time_keys: signedOtks });
+}
+```
+
+### Uploading a fallback key
+
+TODO:
+
+## Enabling encryption in a room
+
+## Sending an encrypted message
+
+### Establishing an Olm session with all devices in a room
+
+#### Tracking device changes
+
+#### Creating a new Olm session
+
+### Creating a Megolm session (if necessary)
+
+### Sending the Megolm key to each device
+
+### Encrypting and the room message
+
+## Reading encrypted messages
+
+### Decrypting with Olm
+
+### Decrypting with Megolm
+
+## Encrypted attachments
+
+## Requesting and sharing keys
