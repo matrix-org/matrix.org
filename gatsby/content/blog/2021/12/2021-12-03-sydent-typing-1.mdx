@@ -6,6 +6,8 @@
   author: David Robertson
 ---
 
+_This is the first of three posts on improving type coverage in Sydent. Join us next Friday for the second part!_
+
 [Sydent](https://github.com/matrix-org/sydent) is the reference Matrix Identity server. It provides a [lookup service](https://matrix.org/docs/spec/identity_service/r0.3.0), so that you can find a Matrix user via their email address or phone number (if they've chosen to share it).
 
 We recently worked on [improving Sydent's type coverage](https://github.com/matrix-org/sydent/issues/414): the proportion of its source code with explicit annotations denoting the kind of data that each variable, expression and return value is expected to hold. These annotations are optional, but if present, they allow tools like [`mypy`](https://mypy.readthedocs.io/en/stable/) to analyze your programs and spot entire classes of bugs _before_ you ship them! In this instance, we aimed to make Sydent pass `mypy --strict`, which [it now does](https://github.com/matrix-org/sydent/commit/7bdaac2774840e1f9697d30515f367c5c8c16866). Here's what the process looked like:
