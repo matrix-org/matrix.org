@@ -25,7 +25,7 @@ In a series of posts, I'd like to reflect on this sprint and share what we've le
 - discuss the checks that `mypy` provides; and finally
 - reflect on the state of Python's typing ecosystem.
 
-In this first part, we'll concentrate on the first two topics; the [second](2021-12-10-sydent-typing-2.mdx) covers the middle two; and the [third](2021-12-17-sydent-typing-3.mdx) the last two.
+In this first part, we'll concentrate on the first two topics; the second will cover the middle two; and the third closes with the last two.
 
 ## Why do this now?
 
@@ -180,7 +180,7 @@ Found 3 errors in 1 file (checked 1 source file)
 
 There it is, on line 114: `Invalid index type "str" for "Dict[bytes, Sequence[bytes]]"; expected type "bytes"`.
 
-Unfortunately it'd be a pain to annotate our application code to mark every use of `IResponse.headers` as a `Headers` object. We'll see a better way to do things in this [the next post](2021-12-10-sydent-typing-2.mdx), which discusses the nitty-gritty details of adding annotations file-by-file.
+Unfortunately it'd be a pain to annotate our application code to mark every use of `IResponse.headers` as a `Headers` object. We'll see a better way to do things in this the next post, which discusses the nitty-gritty details of adding annotations file-by-file.
 
 ----
 
