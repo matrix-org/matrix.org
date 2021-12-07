@@ -250,7 +250,7 @@ if (olm_pickle_account(account, key, key_length, pickle, pickle_length) == olm_e
 
 free(pickle);
 
-// if the application is done using the account, then it should
+// if the application is done using the account, then it should:
 olm_clear_account(account); // clear the memory (so that private keys aren't left around)
 free(account_memory);
 
@@ -293,8 +293,9 @@ the homeserver so that they are available to others.  Olm provides the identity
 keys as a JSON object, so you will need to parse the JSON.  The identity keys
 are placed in a new JSON object that includes the user ID and device ID, and it
 is then signed by the device's Curve25519 fingerprint key.  The signature is
-then added to the JSON object, and it is uploaded to the server using the
-[`POST
+then added to the JSON object (using the method given in the [Signing
+JSON](https://spec.matrix.org/unstable/appendices/#signing-json) section of the
+spec), and it is uploaded to the server using the [`POST
 /keys/upload`](https://spec.matrix.org/v1.1/client-server-api/#post_matrixclientv3keysupload)
 endpoint.
 
@@ -526,7 +527,7 @@ if (keysRemainingOnServer < keysToKeepOnServer) {
   }
 
   // upload and mark as published
-  http_request("POST", "/keys/upload", { one_time_keys: signedOtks });
+  await http_request("POST", "/keys/upload", { one_time_keys: signedOtks });
 }
 ```
 
@@ -536,13 +537,217 @@ TODO:
 
 ## Enabling encryption in a room
 
+Encryption is enabled in a room by the presence of an `m.room.encryption` state
+event (with `state_key` being the empty string).  The encryption algorithm is
+given in the `algorithm` property; for Megolm, it is set to
+`m.megolm.v1.aes-sha2`.  The event also includes parameters controlling how
+often the Megolm session gets rotated (see below for more about rotating Megolm
+sessions).
+
+Clients must be careful when processing incoming `m.room.encryption` events.
+Once encryption is enabled in a room, clients should not allow it to be
+disabled. This is to avoid a situation where a MITM can simply ask participants
+to disable encryption in a room that the participants expect to be
+encrypted. If a client receives an invalid `m.room.encryption` event (for
+example, it does not have an `algorithm` property, or the algorithm given is
+unknown), the client should prevent users from sending messages to the room.
+
 ## Sending an encrypted message
+
+Clients must take several steps to send an encrypted message.
 
 ### Establishing an Olm session with all devices in a room
 
+Room messages are encrypted using a Megolm session, but the Megolm session must
+be distributed to all the devices that are currently in the room. This is done
+using Olm sessions established with each device. This can be an existing Olm
+session, or if no session exists, a newly created session.
+
 #### Tracking device changes
 
+In order to send Megolm sessions to the correct devices, the client must keep
+track of what devices are in the room. So if a new device is present in the
+room, the Megolm sessions for new messages should be sent to it, and if a
+device leaves the room, the Megolm sessions for new messages should no longer
+be sent to it. Device changes can happen from membership changes, or from a
+room member logging in to or out of a device.
+
+When a user joins a room, all of their devices are added. The client can
+determine the user's devices, along with the device keys, by calling [`POST
+/keys/query`](https://spec.matrix.org/v1.1/client-server-api/#post_matrixclientv3keysquery),
+if they are not already tracking that user's devices. When a user leaves a
+room, all of their devices are removed. When a user is no longer in any
+encrypted rooms with the client, their Matrix ID will be listed in the `left`
+property of the `device_lists` property of the `/sync` response.
+
+When a room member's devices change, the member's Matrix ID will be listed in
+the `changed` property of the `device_lists` property of the `/sync` response.
+Again, the user's device, along with the device keys, can be obtained by
+calling `POST /keys/query`
+
+Some clients may wish to prevent sending of Megolm sessions to certain
+devices. For example, some clients may allow the user to manually block certain
+users or devices from receiving Megolm sessions, or may automatically block
+unverified users or devices.
+
 #### Creating a new Olm session
+
+If the client does not already have an Olm session established with a device
+that it needs to send a Megolm session to, it must create a new Olm session. To
+do so, it first fetches the device's fingerprint and identity keys, if it does
+not already have them (by calling [`POST
+/keys/query`]((https://spec.matrix.org/v1.1/client-server-api/#post_matrixclientv3keysquery))),
+claims a one-time key (by calling [`POST
+/keys/claim`](https://spec.matrix.org/v1.1/client-server-api/#post_matrixclientv3keysclaim)),
+checks the signatures on them, and then creates the Olm session. When the client
+encrypts the Megolm session with the Olm session and sends it to the other
+device, this will provide the other device the information necessary to create
+the Olm session on its side.
+
+C++:
+```c++
+// (assume that olm_utility is a previously-created OlmUtility object)
+// for each device that we need to create an Olm session with:
+std::string target_user_id;
+std::string target_device_id;
+
+// get the device keys/one-time key
+// note: keys for multiple devices can be queried/claimed at the same time,
+// which is better to do than doing one device at a time.  See the spec for
+// these endpoits for more details.
+json keys_query_body = {
+  {"device_keys", {
+    {target_user_id, {target_device_id}}
+  }}
+}
+json res;
+res = http_request("POST", "/keys/query". keys_query_body.dump());
+// note: a proper client should check that the properties exist in the response.
+// If they do not exist, then an Olm session cannot be established.
+json target_device_keys = res["device_keys"][target_user_id][target_device_id];
+json keys_claim_body = {
+  {"one_time_keys", {
+    {target_user_id, {
+      {target_device_id, "signed_curve25519"}
+    }}
+  }}
+};
+res = http_request("POST", "/keys/claim", keys_claim_body.dump());
+json signed_otk = res["one_time_keys"][target_user_id][target_device_id];
+
+
+// check the signatures on the keys
+std::string target_ed25519_key =
+  target_device_keys["keys"][target_user_id][std::string("ed25519:") + target_device_id].get<std::string>;
+
+json stripped_target_device_keys = target_device_keys;
+stripped_device_keys.erase("signatures");
+stripped_device_keys.erase("unsigned");
+std::string device_keys_for_signing = canonical_json(stripped_device_keys);
+std::string device_keys_signature =
+  target_device_keys["signatures"][target_user_id][std::string("ed25519:") + target_device_id].get<std::string>;
+if (olm_ed25519_verify(olm_utility,
+      target_ed25519_key.data(), target_ed25519_key.length(),
+      device_keys_for_signing.data(), device_keys_for_signing.length(),
+      device_keys_signature.data(), device_keys_signature.length()) == olm_error()) {
+  // signature not valid, so this device should be dropped
+}
+
+json stripped_otk = signed_otk;
+stripped_otk.erase("signatures");
+stripped_otk.erase("unsigned");
+std::string otk_for_signing = canonical_json(stripped_otk);
+std::string otk_signature =
+  signed_otk["signatures"][target_user_id][std::string("ed25519:") + target_device_id].get<std::string>;
+if (olm_ed25519_verify(
+      olm_utility,
+      target_ed25519_key.data(), target_ed25519_key.length(),
+      otk_for_signing.data(), otk_for_signing.length(),
+      otk_signature.data(), otk_signature.length()) == olm_error()) {
+  // signature not valid, so this device should be dropped
+}
+std::string one_time_key = signed_otk["key"].get<std::string>();
+
+
+// create the olm session
+std::string target_curve25519_key =
+  target_device_keys["keys"][target_user_id][std::string("curve25519:") + target_device_id].get<std::string>;
+void* olm_session_memory = malloc(olm_session_size);
+OlmSession *olm_session = olm_session(olm_session_memory);
+size_t olm_session_random_length = olm_create_outbound_session_random_length(olm_session);
+void *olm_session_random = malloc(olm_session_random_length);
+fill_with_random(olm_session_random, olm_session_random_length);
+if (olm_create_outbound_session(
+      session, account,
+      target_ed25519_key.data(), target_ed25519_ed25519_key.length(),
+      one_time_key.data(), one_time_key.length(),
+      olm_session_random, olm_session_random_length) == olm_error()) {
+  // handle error
+}
+memset(olm_session_random, 0, olm_session_random_length);
+free(olm_session_random);
+```
+
+JavaScript:
+```javascript
+// (assume that olmUtility is a previously-created Olm.Utility object)
+// for each device that we need to create an Olm session with:
+let targetUserId;
+let targetDeviceId;
+
+// get the device keys/one-time key
+// note: keys for multiple devices can be queried/claimed at the same time,
+// which is better to do than doing one device at a time.  See the spec for
+// these endpoits for more details.
+let res: Record<string, any>;
+
+// note: a proper client should check that the properties exist in the response.
+// If they do not exist, then an Olm session cannot be established.
+res = await http_request("POST", "/keys/query", {
+  device_keys: {
+    [targetUserId]: [targetDeviceId],
+  }
+});
+const targetDeviceKeys = res.device_keys[targetUserId][targetDeviceId];
+res = await http_request("POST", "/keys/claim", {
+  one_time_keys: {
+    [targetUserId]: {
+      [targetDeviceId]: "signed_curve25519"
+    }
+  }
+});
+const signedOtk = res.one_time_keys[targetUserId][targetDeviceId];
+
+
+// check the signatures on the keys
+const targetEd25519Key = targetDeviceKeys.keys[targetUserId][`ed25519:${targetDeviceId}`];
+const strippedDeviceKeys = Object.assign({}, targetDeviceKeys);
+delete strippedDeviceKeys.signatures;
+delete strippedDeviceKeys.unsigned;
+const deviceKeysForSigning = anotherjson(strippedDeviceKeys);
+const deviceKeysSignature = targetDeviceKeys.signatures[targetUserId][`ed25519:${targetDeviceId}`];
+// throws an exception if the verification fails
+olmUtility.ed25519_verify(targetEd25519Key, deviceKeysForSigning, deviceKeysSignature);
+
+const strippedOtk = Object.assign({}, signedOtk);
+delete strippedOtk
+const otkForSigning = anotherjson.stringify(strippedOtk);
+const otkSignature = signedOtk.signatures[targetUserId][`ed25519:${targetDeviceId}`];
+olmUtility.ed25519_verify(targetEd25519Key, otkForSigning, otkSignature);
+const otk = signedOtk.key;
+
+
+// create the olm session
+const targetCurve25519Key = targetDeviceKeys.keys[targetUserId][`curve25519:${targetDeviceId}`];
+const olmSession = new Olm.Session();
+olmSession.create_outbound(account, targetCurve25519Key, otk);
+```
+
+#### Multiple Olm sessions
+
+In some cases, a client may have multiple Olm sessions with the same device.
+In this case, the client should use the Olm session from which it most recently
+received a message.
 
 ### Creating a Megolm session (if necessary)
 
@@ -558,4 +763,6 @@ TODO:
 
 ## Encrypted attachments
 
-## Requesting and sharing keys
+## Requesting and forwarding keys
+
+## Corrupted Olm sessions
