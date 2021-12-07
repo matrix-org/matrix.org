@@ -37,8 +37,9 @@ Clients can use [libolm](https://gitlab.matrix.org/matrix-org/olm), which
 implements Olm and Megolm. It is written in C/C++, but has [bindings for
 several different
 languages](https://gitlab.matrix.org/matrix-org/olm#bindings-1). This guide
-assumes that libolm is used, and gives code examples in C++ and Javascript
-(TODO: and Python).
+assumes that libolm is used, and gives code examples in C++ and JavaScript
+(TODO: and Python). Note that the code examples have not been tested, and are
+only for illustrative purposes only.
 
 When using libolm directly, you will need to allocate the necessary buffers,
 and provide the necessary randomness in the form of byte arrays of the
@@ -79,10 +80,13 @@ In addition to libolm, you will need:
   [another-json](https://www.npmjs.com/package/another-json) in JavaScript; in
   the C++, we will assume that there is a function called `canonical_json` that
   does this),
-- an AES-CTR implementation (for encrypted attachments), and
+- an AES-CTR implementation (for encrypted attachments),
 - a way to make HTTP requests to the homeserver (in the examples, we assume
-  that there is a function called `request(method, endpoint, body)` that does
-  this).
+  that there is a function called `http_request(method, endpoint, body)` that
+  does this), and
+- a function that creates a unique transaction ID for use when calling certain
+  endpoints (in the examples, we assume that there is a function called
+  `make_txn_id()` that does this).
 
 You will probably also want:
 
@@ -238,10 +242,10 @@ C++:
 // For example, it can generate a random pickle key, and store it in the
 // operating system's keyring or similar
 size_t key_length;
-void *key;
+char *key;
 
 size_t pickle_length = olm_pickle_account_length(account);
-void *pickle = malloc(pickle_length);
+char *pickle = malloc(pickle_length);
 if (olm_pickle_account(account, key, key_length, pickle, pickle_length) == olm_error()) {
   // handle error
 }
@@ -259,11 +263,11 @@ free(account_memory);
 
 // use the same pickle key that was used when pickling the account
 size_t key_length;
-void *key;
+char *key;
 
 // load the pickle
 size_t pickle_length;
-void *pickle;
+char *pickle;
 
 void *account_memory = malloc(olm_account_size());
 OlmAccount *account = olm_account(account_memory);
@@ -294,7 +298,7 @@ keys as a JSON object, so you will need to parse the JSON.  The identity keys
 are placed in a new JSON object that includes the user ID and device ID, and it
 is then signed by the device's Curve25519 fingerprint key.  The signature is
 then added to the JSON object (using the method given in the [Signing
-JSON](https://spec.matrix.org/unstable/appendices/#signing-json) section of the
+JSON](https://spec.matrix.org/v1.1/appendices/#signing-json) section of the
 spec), and it is uploaded to the server using the [`POST
 /keys/upload`](https://spec.matrix.org/v1.1/client-server-api/#post_matrixclientv3keysupload)
 endpoint.
@@ -305,7 +309,7 @@ C++:
 // device ID is stored in a variable named "device_id":
 
 size_t identity_keys_length = olm_account_identity_keys_length(account);
-void *identity_keys_buf = malloc(identity_keys_length + 1);
+char *identity_keys_buf = malloc(identity_keys_length + 1);
 size_t size = olm_account_identity_keys(account, identity_keys_buf, identity_keys_length);
 if (size == olm_error()) {
   // handle error
@@ -352,22 +356,22 @@ JavaScript:
 const identityKeys = JSON.parse(account.identity_keys());
 
 const deviceKeys = {
-    algorithms: [
-        "m.olm.v1.curve25519-aes-sha2",
-        "m.megolm.v1.aes-sha2"
-    ],
-    device_id: device.deviceId,
-    keys: {
-        [`ed25519:${deviceId}`]: identityKeys.ed25519,
-        [`curve25519:${deviceId}`]: identityKeys.curve25519,
-    },
-    user_id: userId,
+  algorithms: [
+    "m.olm.v1.curve25519-aes-sha2",
+    "m.megolm.v1.aes-sha2"
+  ],
+  device_id: device.deviceId,
+  keys: {
+    [`ed25519:${deviceId}`]: identityKeys.ed25519,
+    [`curve25519:${deviceId}`]: identityKeys.curve25519,
+  },
+  user_id: userId,
 }
 const signature = account.sign(anotherjson.stringify(deviceKeys));
 deviceKeys.signatures = {
-    [userId]: {
-        [`ed25519:${deviceId}`]: signature,
-    },
+  [userId]: {
+    [`ed25519:${deviceId}`]: signature,
+  },
 };
 await http_request("POST", "/keys/upload", { device_keys: deviceKeys });
 ```
@@ -421,7 +425,7 @@ if (keys_remaining_on_server < keys_to_keep_on_server) {
 
   // how many unpublished keys do we already have available?
   size_t otk_length = olm_account_one_time_keys_length(account)
-  void* otk_buffer = malloc(otk_length + 1);
+  char* otk_buffer = malloc(otk_length + 1);
   size_t size = olm_account_one_time_keys(account, otk_buffer, otk_length);
   if (size == olm_error()) {
     // handle error
@@ -672,14 +676,14 @@ std::string one_time_key = signed_otk["key"].get<std::string>();
 // create the olm session
 std::string target_curve25519_key =
   target_device_keys["keys"][target_user_id][std::string("curve25519:") + target_device_id].get<std::string>;
-void* olm_session_memory = malloc(olm_session_size);
+void *olm_session_memory = malloc(olm_session_size);
 OlmSession *olm_session = olm_session(olm_session_memory);
 size_t olm_session_random_length = olm_create_outbound_session_random_length(olm_session);
 void *olm_session_random = malloc(olm_session_random_length);
 fill_with_random(olm_session_random, olm_session_random_length);
 if (olm_create_outbound_session(
       session, account,
-      target_ed25519_key.data(), target_ed25519_ed25519_key.length(),
+      target_ed25519_key.data(), target_ed25519_key.length(),
       one_time_key.data(), one_time_key.length(),
       olm_session_random, olm_session_random_length) == olm_error()) {
   // handle error
@@ -739,7 +743,7 @@ const otk = signedOtk.key;
 
 // create the olm session
 const targetCurve25519Key = targetDeviceKeys.keys[targetUserId][`curve25519:${targetDeviceId}`];
-const olmSession = new Olm.Session();
+const olmSession = new global.Olm.Session();
 olmSession.create_outbound(account, targetCurve25519Key, otk);
 ```
 
@@ -751,7 +755,176 @@ received a message.
 
 ### Creating a Megolm session (if necessary)
 
+If the device does not already have a Megolm session for the room, or if the
+Megolm session needs to be rotated, it will need to create a new one.  An
+existing Megolm session will need to be rotated if:
+
+- the session was shared with a device that is no longer in the room,
+- the session is older the period specified by the `rotation_period_ms`
+  property of the `m.room.encryption` state event, or
+- the session was used to encrypt more messages than the number given in the
+  `rotation_period_msgs` property of the `m.room.encryption` state event.
+
+If the `m.room.encryption` state event does not have `rotation_period_ms` or
+`rotation_period_msgs` properties, the client should default to one week, or
+100 messages, respectively, unless the client wishes to use shorter
+values. The client may also use smaller values that the values given in those
+properties.
+
+To create a Megolm session for sending, the client creates an
+`OlmOutboundGroupSession` object.
+
+C:
+```c++
+void *megolm_session_memory = malloc(olm_outbound_group_session_size());
+OlmOutboundGroupSession *megolm_session = olm_outbound_group_session(megolm_ession_memory);
+size_t megolm_session_random_length = olm_init_outboud_group_session_random_length(megolm_session);
+void *megolm_session_random = malloc(megolm_session_random_length);
+fill_with_random(megolm_session_random, megolm_session_random_length);
+if (olm_init_outbound_group_session(
+      session,
+      megolm_session_random, megolm_session_random_length) == olm_error()) {
+  // handle error
+}
+memset(megolm_session_random, 0, megolm_session_random_length);
+free(megolm_session_random);
+```
+
+JavaScript:
+```javascript
+const megolmSession = new global.Olm.OutboundGroupSession();
+megolmSession.create();
+```
+
 ### Sending the Megolm key to each device
+
+The Megolm session is then sent to each device in the room that it has not
+already sent the session to. This is done by creating an
+[`m.room_key`](https://spec.matrix.org/v1.1/client-server-api/#mroom_key) event
+that includes the Megolm session ID and Megolm session key, encrypting it with
+the Olm session, and sending it as an `m.room.encyrpted` to-device message.
+
+Getting the session key from the Megolm session will give a key that will allow
+the recipient to decrypt the next message and all future messages encrypted
+with that Megolm session. Thus the client should re-fetch the session key when
+sending it to other devices, rather than re-using a previously-fetched session
+key. However, the session ID remains the same and can be reused.
+
+C:
+```c++
+size_t megolm_session_id_length = olm_outbound_group_session_id_length(megolm_session);
+char *megolm_session_id = malloc(megolm_session_id_length + 1);
+size_t size = olm_outbound_group_session_id(megolm_session, megolm_session_id, megolm_session_id);
+if (size == olm_error()) {
+  // handle error
+}
+megolm_session_id[size] = '\0';
+
+size_t megolm_session_key_length = olm_outbound_group_session_key_length(megolm_session);
+char *megolm_session_key = malloc(megolm_session_key_length + 1);
+size = olm_outbound_gorup_session_key(megolm_session, megolm_session_key, megolm_session_ey_length);
+if (size == olm_error()) {
+  // handle error
+}
+megolm_session_key[size] = '\0';
+
+// construct m.room_key message
+json room_key_message_content = {
+  {"algorithm", "m.megolm.v1.aes-sha2"},
+  {"room_id", roomId},
+  {"session_id", megolm_session_id},
+  {"session_key", megolm_session_key}
+};
+
+json room_key_message = {
+  {"type", "m.room_key"},
+  {"content", room_key_message_content},
+  {"sender", user_id},
+  {"recipient", target_user_id},
+  {"recipient_keys", {
+    {"ed25519", target_ed25519_key}
+  }},
+  {"keys", {
+    {"ed25519", identity_keys["ed25519"]}
+  }}
+};
+
+std::string plaintext = room_key_message.dump();
+
+// encrypt with olm session
+size_t encrypt_random_length = olm_encrypt_random_length(olm_session);
+void *encrypt_random = malloc(encrypt_random_length);
+fill_with_random(encrypt_random, encrypt_random_length);
+
+size_t ciphertext_length = olm_encrypt_message_length(olm_session, plaintext.length());
+char *ciphertext = malloc(ciphertext_length);
+size = olm_encrypt(
+  olm_session,
+  plaintext.data(), plaintext.length(),
+  encrypt_random, encrypt_random_length,
+  ciphertext, ciphertext_length
+);
+if (size == olm_error()) {
+  // handle error
+}
+memset(encrypt_random, 0, encrypt_random_length);
+free(encrypt_random);
+
+ciphertext[size] = '\0';
+
+// create m.room.encrypted message and send it
+json encrypted_message = {
+  {"algorithm", "m.olm.v1.curve25519-aes-sha2"},
+  {"sender_key", identity_keys["curve25519"]},
+  {"ciphertext", {
+    {target_curve25519_key, {
+      {"type", olm_encrypt_message_type(olm_session)},
+      {"body", ciphertext}
+    }}
+  }}
+};
+
+std::string txnId = make_txn_id();
+
+http_request("PUT", "/sendToDevice/m.room.encrypted/" + txnId, encrypted_message.dump());
+```
+
+JavaScript:
+```javascript
+const roomKeyMessage = {
+  type: "m.room_key",
+  content: {
+    algorithm: "m.megolm.v1.aes-sha2",
+    room_id: roomId,
+    session_id: megolmSession.session_id(),
+    session_key: megolmSession.session_key(),
+  },
+  sender: userId,
+  recipient: targetUserId,
+  recipient_keys: {
+      ed25519: targetEd25519Key,
+  },
+  keys: {
+      ed25519: identityKeys.ed25519,
+  },
+};
+const encryptedMessage = {
+    algorithm: "m.olm.v1.curve25519-aes-sha2",
+    sender_key: identityKeys.curve25519,
+    ciphertext: {
+        [targetCurve25519DeviceKey]: olm_sessions.encrypt(JSON.stringify(roomKeyMessage)),
+    },
+};
+
+const txnId = make_txn_id();
+await httpRequest("PUT", `/sendToDevice/m.room.encrypted/${txnId}`, {
+  messages: {
+    [targetUserId]: {
+      [targetDeviceId]: encryptedMessage
+    }
+  }
+);
+```
 
 ### Encrypting and the room message
 
