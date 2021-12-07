@@ -953,7 +953,8 @@ json message = {
   {"type", "m.room.message"},
   {"room_id", room_id},
   {"content", {
-    {"body", "Hello world!"}
+    {"body", "Hello world!"},
+    {"msgtype", "m.text"}
   }}
 };
 
@@ -993,9 +994,10 @@ const message = {
   type: "m.room.message",
   room_id: roomId,
   content: {
-    body: "Hello world!"
+    body: "Hello world!",
+    msgtype: "m.text"
   }
-}
+};
 const txnId = make_txn_id();
 await http_request(
   "PUT", `/rooms/${roomId}/send/m.room.encrypted/${txnId}`, {
