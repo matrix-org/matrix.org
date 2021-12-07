@@ -769,7 +769,7 @@ If the `m.room.encryption` state event does not have `rotation_period_ms` or
 `rotation_period_msgs` properties, the client should default to one week, or
 100 messages, respectively, unless the client wishes to use shorter
 values. The client may also use smaller values that the values given in those
-properties.
+properties, or allow the user to manually discard the current Megolm session.
 
 To create a Megolm session for sending, the client creates an
 `OlmOutboundGroupSession` object.
@@ -885,7 +885,6 @@ json encrypted_message = {
 };
 
 std::string txnId = make_txn_id();
-
 http_request("PUT", "/sendToDevice/m.room.encrypted/" + txnId, encrypted_message.dump());
 ```
 
@@ -917,7 +916,7 @@ const encryptedMessage = {
 };
 
 const txnId = make_txn_id();
-await httpRequest("PUT", `/sendToDevice/m.room.encrypted/${txnId}`, {
+await http_request("PUT", `/sendToDevice/m.room.encrypted/${txnId}`, {
   messages: {
     [targetUserId]: {
       [targetDeviceId]: encryptedMessage
@@ -926,7 +925,88 @@ await httpRequest("PUT", `/sendToDevice/m.room.encrypted/${txnId}`, {
 );
 ```
 
-### Encrypting and the room message
+Note that the [`PUT
+/sendToDevice/{eventType}/{txnId}`](https://spec.matrix.org/v1.1/client-server-api/#put_matrixclientv3sendtodeviceeventtypetxnid)
+endpoint can be used to send to-device messages to multiple devices at the same
+time. This should be done rather than sending one message at a time, to avoid
+having extra overhead from making too many HTTP requests, but the requests
+should be kept to a reasonable size. Clients should batch up the encrypting and
+sending of the Megolm sessions, for example processing them 100 devices at a
+time. If possible, clients can also pipeline the encrypting and sending of the
+Megolm sessions: rather than encrypting the first batch, sending those
+to-device messages, and waiting for the server to respond before encrypting to
+the next batch, the client can start encrypting to the next batch while it
+sends the first batch of to-device messages to the server.
+
+### Encrypting the room message
+
+The room message is then encrypted with the Megolm session and sent as an
+`m.room.encrypted` event. Note that if the message is a file that is stored in
+the media repository, the file itself must be encrypted, and the room message
+will be modified to contain the decryption key. This is explained in more
+detail below (FIXME: link).
+
+C++:
+```c++
+// the room message to encrypt:
+json message = {
+  {"type", "m.room.message"},
+  {"room_id", room_id},
+  {"content", {
+    {"body", "Hello world!"}
+  }}
+};
+
+std::string plaintext = message.dump();
+size_t ciphertext_length = olm_group_encrypt_message_length(megolm_session, plaintext.length());
+char *ciphertext = malloc(ciphertext_length + 1);
+size_t size = olm_group_encrypt(
+  megolm_session,
+  plaintext.data(), plaintext.length(),
+  ciphertext, ciphertext_length
+);
+if (size == olm_error()) {
+  // handle error
+}
+ciphertext[size] = '\0';
+
+json encrypted_message = {
+  {"algorithm", "m.megolm.v1.aes-sha2"},
+  {"sender_key", identityKeys["curve25519"]},
+  {"ciphertext", ciphertext},
+  {"session_id", megolm_session_id},
+  {"device_id", device_id}
+};
+
+std::string txn_id = make_txn_id();
+http_request(
+  "PUT",
+  std::string("/rooms/") + room_id + "/send/m.room.encrypted/" + txn_id,
+  encrypted_message.dump()
+);
+```
+
+JavaScript
+```javascript
+// the room message to encrypt:
+const message = {
+  type: "m.room.message",
+  room_id: roomId,
+  content: {
+    body: "Hello world!"
+  }
+}
+const txnId = make_txn_id();
+await http_request(
+  "PUT", `/rooms/${roomId}/send/m.room.encrypted/${txnId}`, {
+    algorithm: "m.megolm.v1.aes-sha2",
+    sender_key: identityKeys.curve25519,
+    ciphertext: megolmSession.encrypt(JSON.stringify(message)),
+    session_id: megolmSession.session_id(),
+    device_id: deviceId
+  }
+);
+```
 
 ## Reading encrypted messages
 
