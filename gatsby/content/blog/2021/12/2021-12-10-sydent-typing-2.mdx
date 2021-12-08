@@ -27,7 +27,7 @@ Within a given module, I'd try to fix easier errors first: partly for confidence
 
 Picking and choosing easy targets works fairly well, but sometimes that means you end fixing an error that's really a symptom of an earlier one. Other times fixing one error, e.g. by giving a return type annotation to a function—would solve a series of other errors throughout the file. Watching the total number of errors mypy reports bob up and down was intriguing!
 
-In retrospect, I think it would be smoother to generate some kind of dependency graph for the package. I'm imagining a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) where whose vertices are modules, and there's an edge `A -> B` if `A` imports from `B`. The leaves of this DAG are the ideal place to start: you can get something typechecked there without having to annotate a long chain of dependencies. Another strategy would be to see which modules were the least precise according to mypy's reports—but more on those [next time](2021-12-03-sydent-typing-1.mdx).
+In retrospect, I think it would be smoother to generate some kind of dependency graph for the package. I'm imagining a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) where whose vertices are modules, and there's an edge `A -> B` if `A` imports from `B`. The leaves of this DAG are the ideal place to start: you can get something typechecked there without having to annotate a long chain of dependencies. Another strategy would be to see which modules were the least precise according to mypy's reports—but more on those next time.
 
 ### Annotations when working with twisted
 
