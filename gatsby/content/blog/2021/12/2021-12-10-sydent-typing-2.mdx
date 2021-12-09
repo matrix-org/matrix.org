@@ -65,13 +65,11 @@ This is a decorator which allows us to write code in the style of `async`/`await
     ) -> Generator["defer.Deferred[Any]", Any, IResponse]:
 ```
 
-Here, `request` is a [generator function](https://docs.python.org/3/glossary.html#term-generator) because its body uses the `yield` keyword. Yielding allows the function to relinquish control back to twisted's reactor, only for its execution to be resumed asynchronously in the future. The [Generator](https://docs.python.org/3/library/typing.html?highlight=typing%20generator#typing.Generator) type takes three parameters: a `YieldType`, a `SendType`, and a `ReturnType`. In this example:
+Here, `request` is a [generator function](https://docs.python.org/3/glossary.html#term-generator) because its body uses the `yield` keyword. Yielding allows the function to relinquish control back to twisted's reactor, only for its execution to be resumed asynchronously in the future. The [Generator](https://docs.python.org/3/library/typing.html?highlight=typing%20generator#typing.Generator) type takes three parameters:
 
-- We yield a `Deferred[Any]`.
-- That will later be resolved by twisted to an `Any` value. Twisted will send that value to `request`, and the execution continues.
-- This repeats, until we eventually return an `IResponse`.
-
-(I'm guessing `x = await y` is really some kind of sugar around this mechanism: first `yield y`, then the machinery running your coroutine `c` will call `c.send(x)` to resume execution.)
+- a `YieldType`, `Deferred[Any]`;
+- a `SendType`, `Any`; and
+- a `ReturnType`, `IResponse`.
 
 Why have I opted to use `Any` here, when we've seen (and will see) that this limits mypy's ability to run checks? The answer is that we yield two different types within the function. Firstly a [routing result](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25255d19effceae7061ad9b3eefc374/sydent/http/matrixfederationagent.py#L152-L153):
 
@@ -86,10 +84,15 @@ and later, [the IResponse](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25
         res: IResponse
         res = yield agent.request(method, uri, headers, bodyProducer)
 ```
+- In this example:
+
+- We yield a value `y: Deferred[Any]`.
+- That will later be resolved by twisted to an `x: Any` value. Twisted will send that value to `request`, and the execution continues.
+- This repeats, until we eventually return an `IResponse`.
 
 I could more correctly annotate the `YieldType` as `Deferred[Union[_RoutingResult, IResponse]]` so that the `SendType` was `Union[_RoutingResult, IResponse]`. But this would mean we end up having some kind of type check at each yield point: a `cast`, or a `type: ignore`, or a runtime `isinstance` check. It didn't feel like it was worth the boilerplate, especially since I could narrow e.g. `res: Any` to `res: IResponse` with minimal effort.
 
-This problem doesn't arise with using the more common `async/await` syntax:
+This problem doesn't arise with using the `async/await` syntax:
 
 ```python
 async def foo() -> int:
@@ -105,6 +108,37 @@ async def bar() -> None:
 $ mypy example.py
 example.py:6: note: Revealed type is "typing.Coroutine[Any, Any, builtins.int]"
 example.py:7: note: Revealed type is "builtins.int*"
+```
+
+Behind the scenes, I _think_ that `x = await foo()` is really using the same mechanism as the `inlineCallbacks` approach.
+- An `async def` function is really a generator function behind the scenes.
+- When we `await foo()`, we yield the expression `foo()`
+- Then the machinery running our coroutine `c` will call `c.send(x)` to resume execution, where `x` is the value produced by waiting for `foo()`.
+
+With the `await` form, mypy knows two things:
+- the value `foo()` which was yielded should be `Awaitable[T]`, and
+- the value `x` send to the coroutine should come from awaiting `foo()`, and therefore be of type `T`.
+
+Mypy can't assume or enforce these rules for the yield form, which can yield and send whatever it likes. There's no reason why the send type should be related to the yield type. Here's a toy example:
+
+```python
+from typing import Any, Dict, Generator
+
+
+def generator_function() -> Generator[int, str, Dict[str, Any]]:
+  y: int = 10
+  x: str = yield y
+  print("Coroutine was sent", x)  # -> Coroutine was sent hello
+  return {"got": x, "done": True}
+
+coroutine = generator_function()
+y = next(coroutine)
+
+try:
+  coroutine.send("hello")
+except StopIteration as e:
+  return_value = e.value
+  print(return_value)  # -> {'got': 'hello', 'done': True}
 ```
 
 All in all, the handling of `inlineCallbacks` is a situation specific to working with (older?) twisted code. It's still nice to understand what's going on behind the scenes though!
