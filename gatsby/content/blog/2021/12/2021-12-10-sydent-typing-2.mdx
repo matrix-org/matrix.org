@@ -183,7 +183,7 @@ Mypy will consider this valid, because no type-checking is done on an `Any` valu
 C(123).greeting()  # TypeError: can only concatenate str (not "int") to str
 ```
 
-Replacing the `object` with `Any` does allow mypy to spot the problem.
+Replacing the `Any` with `object` does allow mypy to spot the problem.
 
 ```
 error: Unsupported operand types for + ("str" and "object")  [operator]
