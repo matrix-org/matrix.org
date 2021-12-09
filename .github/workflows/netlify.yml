@@ -47,7 +47,7 @@ jobs:
       - name: "📤 Deploy to Netlify"
         id: netlify
         # v1.2.2
-        uses: nwtgck/actions-netlify@f517512ae75beec8896aa7b027c1c72f01816200
+        uses: Beakyn/gha-comment-pull-request@2167a7aee24f9e61ce76a23039f322e49a990409
         with:
           publish-dir: content
           deploy-message: "Deploy from GitHub Actions"
