@@ -10,7 +10,7 @@ _This is the first of three posts on improving type coverage in Sydent. Join us 
 
 [Sydent](https://github.com/matrix-org/sydent) is the reference Matrix Identity server. It provides a [lookup service](https://matrix.org/docs/spec/identity_service/r0.3.0), so that you can find a Matrix user via their email address or phone number (if they've chosen to share it).
 
-We recently worked on [improving Sydent's type coverage](https://github.com/matrix-org/sydent/issues/414): the proportion of its source code with explicit annotations denoting the kind of data that each variable, expression and return value is expected to hold. These annotations are optional, but if present, they allow tools like [`mypy`](https://mypy.readthedocs.io/en/stable/) to analyze your programs and spot entire classes of bugs _before_ you ship them! In this instance, we aimed to make Sydent pass `mypy --strict`, which [it now does](https://github.com/matrix-org/sydent/commit/7bdaac2774840e1f9697d30515f367c5c8c16866). Here's what the process looked like:
+We recently worked on [improving Sydent's type coverage](https://github.com/matrix-org/sydent/issues/414): the proportion of its source code with explicit annotations denoting the kind of data that each variable, expression and return value is expected to hold. These annotations are optional, but if present, they allow tools like [mypy](https://mypy.readthedocs.io/en/stable/) to analyze your programs and spot entire classes of bugs _before_ you ship them! In this instance, we aimed to make Sydent pass `mypy --strict`, which [it now does](https://github.com/matrix-org/sydent/commit/7bdaac2774840e1f9697d30515f367c5c8c16866). Here's what the process looked like:
 
 ![Coverage as measured by mypy. Precision and the number of typed expressions increase over the latter half of 2021.](/blog/img/TWGXKTFpjYxlbnHRkZFAzljQ.png)
 
@@ -25,7 +25,7 @@ In a series of posts, I'd like to reflect on this sprint and share what we've le
 - discuss the checks that `mypy` provides; and finally
 - reflect on the state of Python's typing ecosystem.
 
-In this first part, we'll concentrate on the first two topics; the second will cover the middle two; and the third closes with the last two.
+In this first part, we'll concentrate on the first two topics; the [second](2021-12-10-sydent-typing-2.mdx) covers the middle two; and the third the last two.
 
 ## Why do this now?
 
@@ -34,7 +34,7 @@ one problem](https://github.com/matrix-org/sydent/pull/413#pullrequestreview-775
 
 All in all, phone number verification was unknowingly broken in the 2.4.0 release, to be fixed in 2.4.6 a month later. How could we do better? Better test coverage is (as ever) one answer. But [it struck me](https://github.com/matrix-org/sydent/pull/413#pullrequestreview-775154313) that the two bugs we'd encountered might be ripe for automatic detection:
 
-- we created an [`Awaitable`](https://docs.python.org/3/library/typing.html#typing.Awaitable) but didn't `await` it or use it in any way, and
+- we created an [Awaitable](https://docs.python.org/3/library/typing.html#typing.Awaitable) but didn't `await` it or use it in any way, and
 - we tried to look up a `str` key in a dictionary which mapped `bytes` to `bytes`.
 
 Could a static analysis tool like `mypy` detect these? How much work would it take to do so? Are there other bugs and problems we could spot with it? I was curious to answer these questions and learn more about the tools that Python's typing ecosystem provides.
@@ -77,7 +77,7 @@ example.py:6: error: Incompatible types in assignment (expression has type "Coro
 Found 1 error in 1 file (checked 1 source file)
 ```
 
-Note that we have to specifically ask mypy to typecheck the body of `bar` by passing [`--check-untyped-defs`](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs); by default, `mypy` will only typecheck annotated code.
+Note that we have to specifically ask mypy to typecheck the body of `bar` by passing [--check-untyped-defs](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs); by default, `mypy` will only typecheck annotated code.
 
 We might also have been able to detect the error by looking at how we used `sid`. Unfortunately, the only use of was in a conversion `str(sid)`, which is a perfectly type-safe call for both `sid: int` and `sid: Awaitable[int]`. But let's put that aside for a second—suppose we added `"sid": sid` directly into the `resp` dictionary. Could mypy have spotted there was a problem with _that_?
 
@@ -90,7 +90,7 @@ Unfortunately not. Because `resp` has no annotation, we have to rely on how it's
 
 The return type is `JsonDict`, which is an [alias](https://github.com/matrix-org/sydent/blob/2e3b7576b17e92080319e08c0c0ebf566935636c/sydent/types.py#L17) for `Dict[str, Any]`. This is bad news, because `Dict[str, object]` and `Dict[str, Any]` are compatible. Digging a level deeper, this is because `sid: Any` holds true for both `sid: int` and `sid: Awaitable[int]`—so there's no error to spot here. The `Any` type is compatible with any other type whatsoever! Mypy uses `Any` as a way to [defer all type checking to runtime](https://mypy.readthedocs.io/en/stable/kinds_of_types.html#the-any-type); mypy won't (and can't!) statically analyse the usage of an expression of type `Any`. Indeed, mypy's reports will tell you how many `Any`s you're working with, and offer a variety of options to [warn or error on usages of `Any`](https://mypy.readthedocs.io/en/stable/command_line.html#disallow-dynamic-typing).
 
-If we were inserting `sid` directly into a dictionary, we could do better by annotating the dictionary (or the function's return type) as a [`TypedDict`](https://docs.python.org/3/library/typing.html#typing.TypedDict). This is a way to specify a dictionary with a fixed set of keys, each with a fixed type. It comes in really handy for Sydent, Sygnal and Synapse—all of [the Matrix APIs](https://matrix.org/docs/spec/) exchange JSON dictionaries, so anything we can do to teach mypy about their shape and types is gold dust.
+If we were inserting `sid` directly into a dictionary, we could do better by annotating the dictionary (or the function's return type) as a [TypedDict](https://docs.python.org/3/library/typing.html#typing.TypedDict). This is a way to specify a dictionary with a fixed set of keys, each with a fixed type. It comes in really handy for Sydent, Sygnal and Synapse—all of [the Matrix APIs](https://matrix.org/docs/spec/) exchange JSON dictionaries, so anything we can do to teach mypy about their shape and types is gold dust.
 
 In short, there were options for detecting this with some code changes, but no magic wand that would have spotted the error in the code as written.
 
@@ -105,7 +105,7 @@ Our [error](https://github.com/matrix-org/sydent/pull/415/files#diff-4b3e0551612
             request_id = headers["X-Request-Id"][0]
 ```
 
-In this sample, `resp.headers` is a [`twisted.web.http_headers.Headers`](https://twistedmatrix.com/documents/current/api/twisted.web.http_headers.Headers.html). `getAllRawHeaders` is [documented](https://twistedmatrix.com/documents/current/api/twisted.web.http_headers.Headers.html#getAllRawHeaders) as returning an iterable of `(bytes, Sequence[bytes])` pairs. Even better, mypy can see this because `getAllRawHeaders` is [annotated](https://github.com/twisted/twisted/blob/5c24e99e671c4082a1ddc8dbeb869402294bd0dc/src/twisted/web/http_headers.py#L261) (many thanks to the twisted authors for this). Mypy should be able to deduce that we build a dictionary `headers: Dict[bytes, Sequence[bytes]`. We can check this using [`reveal_type`](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html#when-you-re-puzzled-or-when-things-are-complicated):
+In this sample, `resp.headers` is a [twisted.web.http_headers.Headers](https://twistedmatrix.com/documents/current/api/twisted.web.http_headers.Headers.html) instance. `getAllRawHeaders` is [documented](https://twistedmatrix.com/documents/current/api/twisted.web.http_headers.Headers.html#getAllRawHeaders) as returning an iterable of `(bytes, Sequence[bytes])` pairs. Even better, mypy can see this because `getAllRawHeaders` is [annotated](https://github.com/twisted/twisted/blob/5c24e99e671c4082a1ddc8dbeb869402294bd0dc/src/twisted/web/http_headers.py#L261) (many thanks to the twisted authors for this). Mypy should be able to deduce that we build a dictionary `headers: Dict[bytes, Sequence[bytes]`. We can check this using [`reveal_type`](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html#when-you-re-puzzled-or-when-things-are-complicated):
 
 ```python
         headers = dict(resp.headers.getAllRawHeaders())
@@ -180,8 +180,8 @@ Found 3 errors in 1 file (checked 1 source file)
 
 There it is, on line 114: `Invalid index type "str" for "Dict[bytes, Sequence[bytes]]"; expected type "bytes"`.
 
-Unfortunately it'd be a pain to annotate our application code to mark every use of `IResponse.headers` as a `Headers` object. We'll see a better way to do things in this the next post, which discusses the nitty-gritty details of adding annotations file-by-file.
+Unfortunately it'd be a pain to annotate our application code to mark every use of `IResponse.headers` as a `Headers` object. We'll see a better way to do things in this [the next post](2021-12-10-sydent-typing-2.mdx), which discusses the nitty-gritty details of adding annotations file-by-file.
 
 ----
 
-Many thanks for reading! If you've got any corrections, comments or queries, I'm available on Matrix at [`@dmrobertson:matrix.org`](https://matrix.to/#/@dmrobertson:matrix.org).
+Many thanks for reading! If you've got any corrections, comments or queries, I'm available on Matrix at [@dmrobertson:matrix.org](https://matrix.to/#/@dmrobertson:matrix.org).
