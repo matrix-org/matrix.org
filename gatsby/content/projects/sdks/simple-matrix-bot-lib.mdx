@@ -17,47 +17,56 @@ screenshot: /docs/projects/images/python.png
 maturity: Released
 ---
 
-Simple-Matrix-Bot-Lib is a Python bot library for the Matrix ecosystem built on [matrix-nio](https://github.com/poljar/matrix-nio)
+(Version 2.4.1)
+
+Simple-Matrix-Bot-Lib is a Python bot library for the Matrix ecosystem built on [matrix-nio](https://github.com/poljar/matrix-nio).
 
 [View on Github](https://github.com/KrazyKirby99999/simple-matrix-bot-lib) or [View on PyPi](https://pypi.org/project/simplematrixbotlib/) or
 [View docs on readthedocs.io](https://simple-matrix-bot-lib.readthedocs.io/en/latest/)
 
-### Installation
+Learn how you can contribute [here](CONTRIBUTING.md).
 
-To install the simplematrixbotlib package, pip can be used:
-```bash
-$ pip install simplematrixbotlib
+## Installation
+
+### simplematrixbotlib can be either installed from PyPi or downloaded from github.
+
+Installation from PyPi:
+
+```
+python -m pip install simplematrixbotlib
 ```
 
-### Usage
+Download from github:
 
-Python 3.5 or higher is required to use the simplematrixbotlib package.
+```
+git clone --branch master https://github.com/KrazyKirby99999/simple-matrix-bot-lib.git
+```
 
+## Example Usage
 
-#### Responding to a message
-This example is compatable with simplematrixbotlib versions >= 1.3.0
 ```python
+# echo.py
+# Example:
+# randomuser - "!echo example string"
+# echo_bot - "example string"
 
 import simplematrixbotlib as botlib
-import os
 
-creds = botlib.Creds("https://example.com", "user", "pass")
+creds = botlib.Creds("https://home.server", "echo_bot", "pass")
 bot = botlib.Bot(creds)
-
 PREFIX = '!'
 
+@bot.listener.on_message_event
 async def echo(room, message):
-    """
-    Example function that "echoes" arguements.
-    Usage:
-    example_user- !echo say something
-    echo_bot- say something
-    """
-    match = botlib.MessageMatch(room, message, bot)
-    if match.not_from_this_bot() and match.prefix(PREFIX) and match.command("echo"):
-        await bot.api.send_text_message(room.room_id, match.args)
+    match = botlib.MessageMatch(room, message, bot, PREFIX)
 
-bot.add_message_listener(echo)
+    if match.is_not_from_this_bot() and match.prefix() and match.command("echo"):
+
+        await bot.api.send_text_message(
+            room.room_id, " ".join(arg for arg in match.args())
+            )
 
 bot.run()
 ```
+
+More information and examples can be found [here](https://simple-matrix-bot-lib.readthedocs.io/en/latest/).
