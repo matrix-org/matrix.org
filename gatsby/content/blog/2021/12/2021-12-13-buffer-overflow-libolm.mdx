@@ -19,7 +19,7 @@ Client versions incorporating the fixes are:
 - SchildiChat Web / Desktop: [1.9.7-sc.1](https://github.com/SchildiChat/schildichat-desktop/releases/tag/v1.9.7-sc.1)
 - Cinny: [1.6.0](https://github.com/ajbura/cinny/releases/tag/v1.6.0)
 
-These releases mitigate a buffer overflow in `olm_session_describe`, a libolm debugging function used by matrix-js-sdk in its end-to-end encryption (E2EE) implementation. If you rely on matrix-js-sdk for E2EE, you are affected.
+These releases mitigate a buffer overflow in `olm_session_describe`, a libolm debugging function used by matrix-js-sdk in its end-to-end encryption (E2EE) implementation. If you rely on matrix-js-sdk for E2EE, you are affected. This vulnerability has been assigned [CVE-2021-44538](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44538).
 
 Clients which do *not* use matrix-js-sdk for E2EE, like FluffyChat or Element Android / iOS, are _not_ affected.
 
