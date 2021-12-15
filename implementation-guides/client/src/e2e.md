@@ -46,13 +46,18 @@ and provide the necessary randomness in the form of byte arrays of the
 appropriate size filled with random values. Functions are provided to indicate
 the required sizes for buffers and random arrays. Random arrays must also be
 cleared after they are used. Bindings for other languages will often hide such
-details.
+details. In addition, some SDKs may handle many of the details required for
+handling end-to-end encryption; if you are using an SDK, you should refer to
+its documentation.
 
 Many functions will return the value given by `olm_error()` if an error
 occurs. The error can be checked by calling `olm_*_last_error` (which returns a
 string), or `olm_*_last_error_code` (which returns a numeric code). Bindings
 may do something similar, or may use native error-handling techniques such as
 throwing an exception.
+
+After you are done using objects, make sure to use the appropriate
+`olm_clear_*` function to clear the memory used by the objects.
 
 libolm contains functions for "pickling/unpickling" its objects. This allows
 the objects to be serialized and encrypted as a byte string so that they can be
@@ -77,9 +82,10 @@ In addition to libolm, you will need:
   library](https://github.com/nlohmann/json)),
 - a function to create [canonical
   JSON](https://spec.matrix.org/v1.1/appendices/#canonical-json) (use
-  [another-json](https://www.npmjs.com/package/another-json) in JavaScript; in
-  the C++, we will assume that there is a function called `canonical_json` that
-  does this),
+  [another-json](https://www.npmjs.com/package/another-json) in JavaScript and
+  [canonicaljson](https://pypi.org/project/canonicaljson/) in Python; in the
+  C++ examples, we will assume that there is a function called `canonical_json`
+  that does this),
 - an AES-CTR implementation (for encrypted attachments),
 - a way to make HTTP requests to the homeserver (in the examples, we assume
   that there is a function called `http_request(method, endpoint, body)` that
@@ -208,14 +214,31 @@ Curve25519 identity key.
 
 C++:
 ```c++
+// Helper class for handling random arrays.  It ensures that the array gets
+// cleared when the object goes out of scope.
+class Random {
+  void *_data;
+  size_t _length;
+
+  Random(size_t length): _data(malloc(length)), _length(length) {
+    fill_with_random(_data, _length);
+  }
+  ~Random() {
+    memset(_data, 0, _length);
+    free(_data);
+  }
+  size_t length() const {
+    return _length;
+  }
+  const void *data() const {
+    return _data;
+  }
+}
+
 void *account_memory = malloc(olm_account_size());
 OlmAccount *account = olm_account(account_memory);
-void create_account_random_length = olm_create_account_random_length(account);
-void *create_account_random = malloc(create_account_random_length);
-fill_with_random(create_account_random, create_account_random_length);
-size_t ret = olm_create_account(account, create_account_random, create_account_random_length);
-memset(create_account_random, 0, create_account_random_length);
-free(create_account_random);
+Random random(olm_create_account_random_length(account));
+size_t ret = olm_create_account(account, random.data(), random.length());
 if (ret == olm_error()) {
   // handle error
 }
@@ -276,7 +299,7 @@ if (olm_unpickle_account(account, key, key_length, pickle, pickle_length) == olm
 }
 free(pickle);
 
-// account can now be use as before
+// account can now be used as before
 ```
 
 JavaScript:
@@ -346,6 +369,7 @@ device_keys["signatures"] = {
 json body = {{"device_keys", device_keys}};
 
 http_request("POST", "/keys/upload", body.dump());
+free(identity_keys_buf);
 ```
 
 JavaScript:
@@ -441,16 +465,13 @@ if (keys_remaining_on_server < keys_to_keep_on_server) {
     size_t otk_random_length = olm_account_generate_one_time_keys_random_length(
       account, keys_to_generate
     );
-    void *otk_random = malloc(otk_random_length);
-    fill_with_random(otk_random, otk_random_length);
+    Random otk_random(otk_random_length);
     size_t ret = olm_account_generate_one_time_keys(
-      account, keys_to_generate, otk_random, otk_random_length
+      account, keys_to_generate, otk_random.data(), otk_random.length()
     );
     if (ret == olm_error()) {
       // handle error
     }
-    memset(otk_random, 0, otk_random_length);
-    free(otk_random);
 
     // and get all the keys that we have
     otk_length = olm_account_one_time_keys_length(account)
@@ -487,6 +508,7 @@ if (keys_remaining_on_server < keys_to_keep_on_server) {
       }}
     };
     signed_otks[std::string("signed_curve25519:") + el.key()] = key;
+    free(signature);
   }
 
   // upload and mark as published
@@ -534,6 +556,14 @@ if (keysRemainingOnServer < keysToKeepOnServer) {
   await http_request("POST", "/keys/upload", { one_time_keys: signedOtks });
 }
 ```
+
+Note that there may be a race condition between calls to `GET /sync` and `POST
+/keys/upload`: if you perform both requests at the same time, then you may not
+know if the `device_one_time_key_counts` from the `/sync` response represents
+the state from before, after, or during the call to `/keys/upload`.  For this
+reason, after you receive a `/sync` response that indicates that one-time keys
+are required, you may wish to wait for the call to `/keys/upload` to complete
+before making the next `/sync` request.
 
 ### Uploading a fallback key
 
@@ -678,18 +708,14 @@ std::string target_curve25519_key =
   target_device_keys["keys"][target_user_id][std::string("curve25519:") + target_device_id].get<std::string>;
 void *olm_session_memory = malloc(olm_session_size);
 OlmSession *olm_session = olm_session(olm_session_memory);
-size_t olm_session_random_length = olm_create_outbound_session_random_length(olm_session);
-void *olm_session_random = malloc(olm_session_random_length);
-fill_with_random(olm_session_random, olm_session_random_length);
+Random random(olm_create_outbound_session_random_length(olm_session));
 if (olm_create_outbound_session(
       session, account,
       target_ed25519_key.data(), target_ed25519_key.length(),
       one_time_key.data(), one_time_key.length(),
-      olm_session_random, olm_session_random_length) == olm_error()) {
+      random.data(), random.length()) == olm_error()) {
   // handle error
 }
-memset(olm_session_random, 0, olm_session_random_length);
-free(olm_session_random);
 ```
 
 JavaScript:
@@ -778,16 +804,13 @@ C:
 ```c++
 void *megolm_session_memory = malloc(olm_outbound_group_session_size());
 OlmOutboundGroupSession *megolm_session = olm_outbound_group_session(megolm_ession_memory);
-size_t megolm_session_random_length = olm_init_outboud_group_session_random_length(megolm_session);
-void *megolm_session_random = malloc(megolm_session_random_length);
+Random megolm_session_random(olm_init_outboud_group_session_random_length(megolm_session));
 fill_with_random(megolm_session_random, megolm_session_random_length);
 if (olm_init_outbound_group_session(
       session,
-      megolm_session_random, megolm_session_random_length) == olm_error()) {
+      megolm_session_random.data(), megolm_session_random.length()) == olm_error()) {
   // handle error
 }
-memset(megolm_session_random, 0, megolm_session_random_length);
-free(megolm_session_random);
 ```
 
 JavaScript:
@@ -835,6 +858,7 @@ json room_key_message_content = {
   {"session_id", megolm_session_id},
   {"session_key", megolm_session_key}
 };
+free(megolm_session_key);
 
 json room_key_message = {
   {"type", "m.room_key"},
@@ -852,23 +876,18 @@ json room_key_message = {
 std::string plaintext = room_key_message.dump();
 
 // encrypt with olm session
-size_t encrypt_random_length = olm_encrypt_random_length(olm_session);
-void *encrypt_random = malloc(encrypt_random_length);
-fill_with_random(encrypt_random, encrypt_random_length);
-
+Random encrypt_random(olm_encrypt_random_length(olm_session));
 size_t ciphertext_length = olm_encrypt_message_length(olm_session, plaintext.length());
 char *ciphertext = malloc(ciphertext_length);
 size = olm_encrypt(
   olm_session,
   plaintext.data(), plaintext.length(),
-  encrypt_random, encrypt_random_length,
+  encrypt_random.data(), encrypt_random.length(),
   ciphertext, ciphertext_length
 );
 if (size == olm_error()) {
   // handle error
 }
-memset(encrypt_random, 0, encrypt_random_length);
-free(encrypt_random);
 
 ciphertext[size] = '\0';
 
@@ -886,6 +905,7 @@ json encrypted_message = {
 
 std::string txnId = make_txn_id();
 http_request("PUT", "/sendToDevice/m.room.encrypted/" + txnId, encrypted_message.dump());
+free(ciphertext);
 ```
 
 JavaScript:
@@ -985,6 +1005,7 @@ http_request(
   std::string("/rooms/") + room_id + "/send/m.room.encrypted/" + txn_id,
   encrypted_message.dump()
 );
+free(ciphertext);
 ```
 
 JavaScript
