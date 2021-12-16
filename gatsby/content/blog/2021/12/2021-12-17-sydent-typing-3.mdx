@@ -264,7 +264,9 @@ Looking forward, I think we'd get a quick gain from ensuring that our smaller li
 
 I'd say the biggest outstanding hole is our processing of JSON objects. There's too much `Dict[str, Any]` flying around. The ideal for me would be to define `dataclass` or `attr.s` class `C`, and be able to deserialise a JSON object to `C`, including automatic (deep) type checking. [Pydantic](https://pydantic-docs.helpmanual.io/) sounds really close to what we want, but I'm told it will gladly interpret the json string `"42"` as the Python integer `42`, which isn't what we'd like. There are other avenues to explore too, like [`jsonschema-typed`](https://github.com/erickpeirson/jsonschema-typed), [`typedload`](https://pypi.org/project/typedload/) or [`attrs-strict`](https://github.com/bloomberg/attrs-strict).
 
-A final personal remark: adding typing is a great way to get familiar with new source code. It involves a mixture of reading, cross-referencing, deduction, analysis, all across a wide variety of files. It'd be a _lot_ easier to type as you write from the get-go, but typing after the fact is still a worth use of time and effort.
+To end, I'd like to add a few personal thoughts. Having types available in the source code is definitely A Good Thing. But there is a part of me that wonders if it might have been worth writing our projects in a language which incorporates types from day one. There are always trade-offs, of course: runtime performance, build times, iteration speed, ease of onboarding new contributors, ease of deployment, availability of libraries, ability to shoot yourself in the foot... the list goes on. 
+
+On a more upbeat note, adding typing is a great way to get familiar with new source code. It involves a mixture of reading, cross-referencing, deduction, analysis, all across a wide variety of files. It'd be a _lot_ easier to type as you write from the get-go, but typing after the fact is still a worthy use of time and effort. 
 
 ----
 
