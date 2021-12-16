@@ -6,7 +6,7 @@
   author: David Robertson
 ---
 
-This is the second in a series of three posts which discuss recent work to improve type annotations in [Sydent](https://github.com/matrix-org/sydent), the reference Matrix Identity server. [Last time](2021-12-03-sydent-typing-1.mdx) we discussed the motivation for doing this work in the first place: the _why_. Now I want to talk about the _how_. How did we add annotations to individual files, and across the project as whole? What common idioms did we learn on the way?
+This is the second in a series of three posts which discuss recent work to improve type annotations in [Sydent](https://github.com/matrix-org/sydent), the reference Matrix Identity server. [Last time](https://matrix.org/blog/2021/12/03/type-coverage-for-sydent-motivation) we discussed the motivation for doing this work in the first place: the _why_. Now I want to talk about the _how_. How did we add annotations to individual files, and across the project as whole? What common idioms did we learn on the way?
 
 ## The process of improving coverage
 
@@ -47,7 +47,7 @@ Twisted is Sydent's biggest dependency, and I certainly felt at its mercy! In pa
 
 Early into the process, mypy reported that calling the function [twisted.python.log.err](https://twistedmatrix.com/documents/current/api/twisted.python.log.html#err) was an error. It did so because I was running mypy in [--strict mode](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict). We'll talk more about why I did so and what this means next time; for now, it's enough to know that calling a function that isn't fully annotated from within a function that is constitutes an error under strict mode. `twisted` is partially annotated: many key modules and functions have type annotations, but others don't. I was reluctant to give up on `--strict`. Instead, I decided to stub the `err` function myself. 
 
-A stub is a cut-down version of a python function, class or module which lives in a `.pyi` file. All implementation details are removed; only type annotations remain. Stubs are useful when you want to write annotations for code you don't control. The [typeshed](https://github.com/python/typeshed) library is probably the best example: a collection of third party stubs for the standard library, plus some popular third party packages. Microsoft's [python-type-stubs](https://github.com/microsoft/python-type-stubs) is another example. They'd also solve the problem I mentioned at the end of the [first part](2021-12-03-sydent-typing-1.mdx): I could use a stub to _teach_ mypy that `IResponse.headers` was a `Headers` object. 
+A stub is a cut-down version of a python function, class or module which lives in a `.pyi` file. All implementation details are removed; only type annotations remain. Stubs are useful when you want to write annotations for code you don't control. The [typeshed](https://github.com/python/typeshed) library is probably the best example: a collection of third party stubs for the standard library, plus some popular third party packages. Microsoft's [python-type-stubs](https://github.com/microsoft/python-type-stubs) is another example. They'd also solve the problem I mentioned at the end of the [first part](https://matrix.org/blog/2021/12/03/type-coverage-for-sydent-motivation): I could use a stub to _teach_ mypy that `IResponse.headers` was a `Headers` object. 
 
 Writing a stub for `log.err` was straightforward, thanks mainly to Twisted's thorough documentation. I chose to write it by hand, rather than use [stubgen](https://mypy.readthedocs.io/en/stable/stubgen.html). I'd heard of the latter, but was reluctant to use it for a few reasons.
 
@@ -310,7 +310,7 @@ Found 2 errors in 1 file (checked 1 source file)
 
 #### [TypedDict](https://docs.python.org/3/library/typing.html?highlight=typeddict#typing.TypedDict)
 
-I mentioned this [in last week's post](2021-12-03-sydent-typing-1.mdx)) when talking about the missing `await` bug.
+I mentioned this [in last week's post](https://matrix.org/blog/2021/12/03/type-coverage-for-sydent-motivation)) when talking about the missing `await` bug.
 Subclassing from `TypedDict` allows us to define a new type whose values are dictionaries with
 
 - a fixed set of keys (some mandatory, some not), and
