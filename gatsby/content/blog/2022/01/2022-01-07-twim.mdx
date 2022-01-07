@@ -33,7 +33,7 @@ This week in Matrix should be called Three Weeks in Matrix, since there hasn't b
 > 
 > **Merged MSCs:**
 > * [MSC3550: Allow HTTP 403 as a response to profile lookups](https://github.com/matrix-org/matrix-doc/pull/3550)
-> * [MSC3442: Move the `prev_content` key to `unsigned`](https://github.com/matrix-org/matrix-doc/pull/3442)
+> * [MSC3442: Move the prev_content key to unsigned](https://github.com/matrix-org/matrix-doc/pull/3442)
 > * [MSC3419: Allow guests to send more event types](https://github.com/matrix-org/matrix-doc/pull/3419)
 > * [MSC3283: Expose capabilities for profile actions](https://github.com/matrix-org/matrix-doc/pull/3283)
 > * [MSC3231: Token authenticated registration](https://github.com/matrix-org/matrix-doc/pull/3231)
@@ -48,7 +48,7 @@ This week in Matrix should be called Three Weeks in Matrix, since there hasn't b
 > * *No MSCs are in FCP.*
 > 
 > **New MSCs:**
-> * [MSC3618: Add proposal to simplify federation `/send` response](https://github.com/matrix-org/matrix-doc/pull/3618)
+> * [MSC3618: Add proposal to simplify federation /send response](https://github.com/matrix-org/matrix-doc/pull/3618)
 > * [MSC3613: Combinatorial join rules](https://github.com/matrix-org/matrix-doc/pull/3613)
 > * [[WIP: Not ready for review/impl] MSC3604: Room Version 10](https://github.com/matrix-org/matrix-doc/pull/3604)
 > * [MSC3593: Safety Controls through a generic Administration API](https://github.com/matrix-org/matrix-doc/pull/3593)
@@ -61,7 +61,7 @@ This week in Matrix should be called Three Weeks in Matrix, since there hasn't b
 > 
 > **Closed MSCs:**
 > *Sadly, not every MSC makes it to the end.*
-> * [MSC3585: Allow the base event to be omitted from `/federation/v1/event_auth` response](https://github.com/matrix-org/matrix-doc/pull/3585)
+> * [MSC3585: Allow the base event to be omitted from /federation/v1/event_auth response](https://github.com/matrix-org/matrix-doc/pull/3585)
 > * [MSC2516: Add a new message type for voice messages](https://github.com/matrix-org/matrix-doc/pull/2516)
 > 
 > ## Spec Core Team
@@ -77,8 +77,7 @@ This week in Matrix should be called Three Weeks in Matrix, since there hasn't b
 > 
 > ## The graph
 > 
-> I don't know why it came out yellow, but I blame WSL. Here's a stacked graph of MSC progress:
-> 
+> Here's a stacked graph of MSC progress:
 > 
 > ![](/blog/img/732a07fb40babb01f102bf5bc700fa046457aa45.png)
 
@@ -224,12 +223,6 @@ Heisenbridge is a bouncer-style Matrix IRC bridge.
 
 Desktop client for Matrix using Qt and C++17.
 
-[Nico](https://matrix.to/#/@deepbluev7:neko.dev) reports
-
-> Nheko now is a lot more efficient. We now use one Threadpool instead of 3, got rid of more than 60% of the allocations when scrolling through messages, layout half as much content when scrolling, blurhashes decode in 10% of the time and jdenticons allocate ~10% as much temporary buffers. We also deleted around 1000 lines of unused code. Tooltips also shouldn't steal the mouse focus when scrolling anymore, which could lead to sudden stalls when scrolling.
-> 
-> Additionally edits now replace existing notifications, tastytea added a manpage and fixed blurry or incorrectly sized custom emoji, you can now send custom emotes via the inline completer using ~ and completers now show a scrollable list with more Elements than before. Advanced users can also now opt into an insecure client side secrets storage via a hidden setting.
-
 [Nico](https://matrix.to/#/@deepbluev7:neko.dev) announces
 
 > We just released 0.9.1!
@@ -238,9 +231,15 @@ Desktop client for Matrix using Qt and C++17.
 > 
 > Thank you everyone, who helped shape this release!
 
+[Nico](https://matrix.to/#/@deepbluev7:neko.dev) reports
+
+> Nheko now is a lot more efficient. We now use one Threadpool instead of 3, got rid of more than 60% of the allocations when scrolling through messages, layout half as much content when scrolling, blurhashes decode in 10% of the time and jdenticons allocate ~10% as much temporary buffers. We also deleted around 1000 lines of unused code. Tooltips also shouldn't steal the mouse focus when scrolling anymore, which could lead to sudden stalls when scrolling.
+> 
+> Additionally edits now replace existing notifications, tastytea added a manpage and fixed blurry or incorrectly sized custom emoji, you can now send custom emotes via the inline completer using ~ and completers now show a scrollable list with more Elements than before. Advanced users can also now opt into an insecure client side secrets storage via a hidden setting.
+
 [Nico](https://matrix.to/#/@deepbluev7:neko.dev) says
 
-> We're baaaaack! Anyway, last week Drake just translated all of Nheko into Spanish, you can now zoom in and pan in the image viewer, emojis shouldn't split up into their segments anymore and Nheko should always be sending the qualified version of it (according the to the unicode test files, not by just appending FE0F. Blurhashes should be even faster still and we now have support for running the call event loop on macOS and Windows (although call support is still disabled there for now). 
+> We're baaaaack! Anyway, last week Drake just translated all of Nheko into Spanish, you can now zoom in and pan in the image viewer, emojis shouldn't split up into their segments anymore and Nheko should always be sending the qualified version of it (according the to the unicode test files, not by just appending FE0F). Blurhashes should be even faster still and we now have support for running the call event loop on macOS and Windows (although call support is still disabled there for now). 
 > 
 > We are also now working to restructure our README. It has a lot of outdated stuff in it and you really want to see screenshots pretty early in the README! You can sneak a peak here: https://nheko.im/nheko-reborn/nheko/-/tree/README_updates
 
@@ -314,7 +313,7 @@ A Social Annotation Tool Powered by Matrix
 > * There's now a UI for using spaces to manage and share PDF collections
 > * Reactions now work like element-web: click to mirror an existing reaction or redact your previous reaction
 > 
-> Next, I'm aiming to implement [MSC3592](https://github.com/matrix-org/matrix-doc/pull/3592), which proposes a standard format for basic markup on PDFs. Stay tuned! And if you're interested in learning more, come visit [#opentower:matrix.org](https://matrix.to/#/#opentower:matrix.org]).
+> Next, I'm aiming to implement [MSC3592](https://github.com/matrix-org/matrix-doc/pull/3592), which proposes a standard format for basic markup on PDFs. Stay tuned! And if you're interested in learning more, come visit [#opentower:matrix.org](https://matrix.to/#/#opentower:matrix.org).
 
 > ![](/blog/img/TRQKbPOZFUovnoqEoEdwFgek.png)
 
@@ -348,7 +347,7 @@ Cactus Comments is a federated comment system for the web, based on the Matrix p
 > 
 > We released version v0.11.0 of the client!
 > 
-> The client has been relicesed to LGPL. This means that you can now use Cactus Comments in non-GPL compatible projects.
+> The client has been relicensed to LGPL. This means that you can now use Cactus Comments in non-GPL compatible projects.
 > But mainly, this release brings a bunch of CSS improvements: introducing automatic dark mode, and making it easier to change colors with CSS variables.
 > 
 > Here's the changelog:
@@ -459,8 +458,13 @@ Matrix compliance test suite
 [Kegan](https://matrix.to/#/@kegan:matrix.org) reports
 
 > [Complement](https://github.com/matrix-org/complement) has seem some updates this week in the test output that is produced onto the CLI. Details on how to add this to your CI process are contained in the README. Here's the difference when viewed using Github Actions:
-
+> 
+> Before:
+> 
 > ![](/blog/img/nBSBdEyeRwPXksvquIinsCmw.png)
+>
+> After:
+> 
 > ![](/blog/img/fWvudyuDIcTtgwtgdOQShInx.png)
 
 ### Polyjuice ([website](https://gitlab.com/polyjuice))
@@ -472,8 +476,6 @@ Elixir libraries related to the Matrix communications protocol.
 > [Polyjuice Newt](https://gitlab.com/polyjuice/polyjuice_newt), the newest addition to the Polyjuice project, is an Elixir binding for [vodozemac](https://github.com/matrix-org/vodozemac/), the new Olm/Megolm implementation in Rust.  At the time of writing, Polyjuice Newt supports encryption and decryption using Olm and Megolm, but by the time you read this next year, it may also support the SAS verification functions and pickling/unpickling.
 
 ## Dept of Ops 🛠
-
-
 
 ### NixOS Deployment ([website](https://nixos.org))
 
