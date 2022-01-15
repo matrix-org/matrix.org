@@ -62,15 +62,15 @@ Riot-web: released an RC for 0.15.5. This RC includes some small bugfixes.
 <blockquote>We have been working on Riot stability: fixing crashes and adding more tools to control code quality
 The community on android adds a more readable display of keys and a floating actions menu is coming.</blockquote>
 <h2 id="riot-ios">riot-ios</h2>
-<blockquote>Working on perf. On stability too (like killing build warnigs). Users can now re-request keys when they have UTCs.</blockquote>
+<blockquote>Working on perf. On stability too (like killing build warnings). Users can now re-request keys when they have UTCs.</blockquote>
 <h1 id="other-projects">Other projects</h1>
 <h2 id="anoa-on-dendrite"><a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a> on <a href="https://github.com/matrix-org/dendrite">dendrite</a></h2>
 <blockquote>We've got a shiny new application service component which runs as a separate process (if you're doing multiprocess dendrite) that handles all outbound communication to application services. Last week I got event sending working. This week I'm hooking up an internal API for other components (roomserver, c-s api) to talk to the app service component, as we occasionally need to ping AS's to ask about existence of rooms or users. Getting those two endpoints covered is the goal of this week.</blockquote>
 <h2 id="ma1uta-full-spec-implementation-in-java"><a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> <em>Full</em> Spec Implementation in Java</h2>
 <a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> appeared with an extremely ambitious piece of work. His goal:
-<blockquote>I want to create a full spec's implementation on java (all 5 specification). After that I want try to write a homeserver (2 variants: distributed on java+kafka and simple which can run on a ligth vps). But it's a long-term goal.</blockquote>
+<blockquote>I want to create a full spec's implementation on java (all 5 specification). After that I want try to write a homeserver (2 variants: distributed on java+kafka and simple which can run on a light vps). But it's a long-term goal.</blockquote>
 So far work has begun on an implementation of the Matrix API in Java:
-<blockquote><a href="https://gitlab.com/ma1uta/jeon">https://gitlab.com/ma1uta/jeon</a> - another java implementation of the matrix api (client-server, server-server, application server, push server, identity server) using jax-ws. It corresponds the specification on <a href="/docs/spec">https://matrix.org/docs/spec</a>. On the next step I want dive deep into synapse to parse it's api and fill the gaps of the spec with sending pull request. May be I will write something like a TCK (test compability kit).</blockquote>
+<blockquote><a href="https://gitlab.com/ma1uta/jeon">https://gitlab.com/ma1uta/jeon</a> - another java implementation of the matrix api (client-server, server-server, application server, push server, identity server) using jax-ws. It corresponds the specification on <a href="/docs/spec">https://matrix.org/docs/spec</a>. On the next step I want dive deep into synapse to parse it's api and fill the gaps of the spec with sending pull request. May be I will write something like a TCK (test compatibility kit).</blockquote>
 And an SDK for which there is a sample bot for mastodon:
 <blockquote>Also this project has a very early sdk (client, bot). I will fix it after finishing works with the spec.
 <a href="https://gitlab.com/ma1uta/mxtoot">https://gitlab.com/ma1uta/mxtoot</a> - matrix-mastodon bridge.

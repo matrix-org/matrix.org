@@ -77,7 +77,7 @@ Bug fixes:
  	<li>Escape HTML entities when sending from IRC to Matrix. This prevents munging occurring between IRC formatting and textual &lt; element &gt; references, whereby if you sent a tag and some colour codes from IRC it would not escape the tag and therefore send invalid HTML to Matrix.</li>
  	<li>User IDs starting with <code>-</code> are temporarily filtered out from being bridged.</li>
  	<li>Deterministically generate the configuration file.</li>
- 	<li>Recognise more IRC error codes as non-fatal to avoid IRC clients reconnecting unecessarily.</li>
+ 	<li>Recognise more IRC error codes as non-fatal to avoid IRC clients reconnecting unnecessarily.</li>
  	<li>Add a 10 second timeout to join events injected via the <code>MemberListSyncer</code> to avoid HOL blocking.</li>
  	<li>'Frontier' Matrix users will be forcibly joined to IRC channels even if membership list syncing I-&gt;M is disabled. This ensures that there is always a Matrix user in the channel being bridged to avoid losing traffic.</li>
  	<li>Cache the <code>/initialSync</code> request to avoid hitting this endpoint more than once, as it may be very slow.</li>

@@ -13,4 +13,4 @@ The Matrix.org Foundation currently runs one homeserver: matrix.org. This homese
 
 Running the bridge on another homeserver means the same traffic will be hitting matrix.org, except it now has to be handled by the federation inbound workers too. Now you have two hosts handling the same amount of traffic. You might see a benefit to federated homeservers, but the new homeserver will struggle just as much with inbound/outbound federation slowness as it does now with bridging.
 
-Further, it may turn out that the ongoing work on Synapse to introduce shared master processes actually makes it so much more efficent that whole benefit of creating two homeservers is now moot. Find out more about this work in [this demo from Erik](https://www.youtube.com/watch?v=IwOSQ9X4_I8&t=330s).
+Further, it may turn out that the ongoing work on Synapse to introduce shared master processes actually makes it so much more efficient that whole benefit of creating two homeservers is now moot. Find out more about this work in [this demo from Erik](https://www.youtube.com/watch?v=IwOSQ9X4_I8&t=330s).
