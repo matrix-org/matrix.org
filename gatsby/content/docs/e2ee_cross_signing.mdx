@@ -350,7 +350,7 @@ String _calculateMac(String input, String info) {
   if (messageAuthenticationCode == "hkdf-hmac-sha256") { // this is from the m.key.verification.accept call
     return sas.calculate_mac(input, info); // the same sas object we used previously, from libolm
   } else {
-    throw "Unknown message authentification code";
+    throw "Unknown message authentication code";
   }
 }
 
@@ -1093,7 +1093,7 @@ Content-Type: application/json
 4. If you are doing the first verification with an own device you don't have any cross-signing keys
    yet. Signing the other persons device key doesn't make much sense, as it is likely already signed.
    Instead, only sign your own master key in that specific case. In a following section will be discussed
-   how you can detect wether you should do this behaviour - for now you could only sign other own
+   how you can detect whether you should do this behaviour - for now you could only sign other own
    device keys if you have your own self_signing key cached.
 5. Don't forget to request SSSS secrets over share requests when verifying an own device and you don't
    have them yet.
@@ -1172,7 +1172,7 @@ To do so, you have to check the valid signature of your own device to your own m
 look as following, where `->` denotes "is signed by":
 `Own device -> Own self-signing key -> Own master key`
 
-You could re-use the same recursive method to determine if a device is verified as previously imlemented,
+You could re-use the same recursive method to determine if a device is verified as previously implemented,
 but only cut off if it reaches at your own verified master key, not at any verified key.
 
 ### Migration of previous verifications
@@ -1329,7 +1329,7 @@ try {
 ```
 
 After you generated all the json key objects you can POST them to `/_matrix/client/unstable/keys/device_signing/upload`.
-Keep in mind that this endpoint uses user-interactive authentification, so you will also have to send
+Keep in mind that this endpoint uses user-interactive authentication, so you will also have to send
 an additional `auth` array with the needed information to complete stages. Hereby `master_key` holds
 the master key object, `self_signing_key` the self-signing key and `user_signing_key` the user-signing
 key. An example request could look as following (taken from the spec):
