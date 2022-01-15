@@ -1,5 +1,10 @@
 [files]
-extend-exclude = ["*.js", "*.json", "*.svg"]
+extend-exclude = [
+	"*.js*", "*.json", "*.svg",
+	"/pre-generated", "/jekyll", # can be removed once https://github.com/matrix-org/matrix.org/pull/1126 is merged
+	"*signed.txt", "signed_disclosure.txt", # can be removed once https://github.com/crate-ci/typos/issues/401 is fixed
+	"synapse-debian-security-announcement.asc" # has typo but cannot fix due to PGP signature
+]
 
 [default]
 locale = "en"
