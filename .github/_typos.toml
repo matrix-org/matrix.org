@@ -1,0 +1,27 @@
+[files]
+extend-exclude = ["*.js", "*.json", "*.svg"]
+
+[default]
+locale = "en"
+check-filename = false
+
+[default.extend-identifiers]
+3uNd3 = "3uNd3"
+96e9afe6 = "96e9afe6"
+LaterGuage = "LaterGuage"
+
+[default.extend-words]
+ba = "ba"
+contributeurs = "contributeurs"
+feld = "feld"
+Flate = "Flate"
+inex = "inex"
+Konversation = "Konversation"
+oder = "oder"
+onl = "onl"
+clos = "clos" # can be changed to json-clos once https://github.com/crate-ci/typos/issues/400 is fixed
+ehr = "ehr" # can be changed to Fuj'ehr once https://github.com/crate-ci/typos/issues/400 is fixed
+ist = "ist" # can be changed to raim.ist once https://github.com/crate-ci/typos/issues/400 is fixed
+ons = "ons" # can be removed once https://github.com/crate-ci/typos/issues/400 is fixed
+ERRO = "ERRO" # can be removed once https://github.com/crate-ci/typos/issues/399 is fixed
+MESSAG = "MESSAG" # can be removed once https://github.com/crate-ci/typos/issues/399 is fixed
