@@ -1,12 +1,12 @@
 ---
 date: '2022-01-18'
-title: Synapse 1.50.0 released
+title: Synapse 1.50 released
 categories:
 - Releases
 author: Brendan Abolivier
 ---
 
-Welcome all for the first Synapse release of 2022: [Synapse 1.50.0](https://github.com/matrix-org/synapse/releases/tag/v1.50.0)!
+Welcome all for the first Synapse release of 2022: [Synapse 1.50](https://github.com/matrix-org/synapse/releases/tag/v1.50.0)!
 
 > Note that, as per our [platform dependency deprecation policy](https://matrix-org.github.io/synapse/v1.50/deprecation_policy.html), Synapse no longer supports Python 3.6 and PostgreSQL 9.6 as of this version. As a result, we have also stopped shipping Debian packages for Ubuntu 18.04 LTS (Bionic Beaver), as it ships with Python 3.6.
 >
@@ -27,7 +27,7 @@ While working on this release, we identified a long-standing bug that could prev
 
 This bug was introduced back in [Synapse 1.0.0](https://github.com/matrix-org/synapse/releases/tag/v1.0.0), and meant that the homeserver would miss some device list updates when communicating with other homeservers if the amount of updates to send was too high. In practice, this means users on remote homeservers could see outdated device information for other users (including outdated device verification statuses).
 
-Synapse 1.50.0 includes a fix to this bug. This should contribute towards making the propagation of device list updates more reliable.
+Synapse 1.50 includes a fix to this bug. This should contribute towards making the propagation of device list updates more reliable.
 
 
 ## Everything else
