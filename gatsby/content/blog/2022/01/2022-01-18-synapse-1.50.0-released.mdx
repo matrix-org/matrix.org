@@ -34,6 +34,8 @@ Synapse 1.50.0 includes a fix to this bug. This should contribute towards making
 
 This release introduces support for [MSC3419](https://github.com/matrix-org/matrix-doc/pull/3419), which allows guest users to send arbitrary state events into a room. This will be especially useful to the ongoing work on [group VoIP calls](https://github.com/matrix-org/matrix-doc/pull/3401), which involves having users send new state events into the room to signal their participation in a call.
 
+We've also stabilised identifiers for cross-signing and fallback keys now that [MSC1756](https://github.com/matrix-org/matrix-doc/pull/1756) and [MSC2732](https://github.com/matrix-org/matrix-doc/pull/2732) have been merged into the Matrix spec.
+
 On the documentation side of things, the [page](https://matrix-org.github.io/synapse/v1.50/turn-howto.html) on setting up and configuring a TURN server has been updated to feature instructions on how to deal with NATs. This is a much welcome addition as configuring TURN is something a lot of Synapse admins struggle with!
 
 Please see the Synapse [release notes](https://github.com/matrix-org/synapse/blob/v1.50.0/CHANGES.md) for a complete list of changes in this release.
