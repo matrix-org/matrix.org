@@ -10,10 +10,23 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date: '2021-11-18',
+            who: 'Oliver Behnke',
+            profile: 'https://github.com/brevilo',
+            description: 'Buffer overflow in olm_session_describe in libolm before version 3.2.8, remotely triggerable from matrix-js-sdk before 15.2.1. Fixed in libolm 3.2.8 and matrix-js-sdk 15.2.1. Assigned <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44538">CVE-2021-44538</a>',
+            service: 'libolm'
+        },
+        {
             date: '2021-09-23',
             who: 'Pascal "nephele" Abresch',
             description: 'Reported that Matrix Static (used for view.matrix.org) was vulnerable to XSS via room names due to missing sanitization. Fixed in <a href="https://github.com/matrix-org/matrix-static/releases/tag/0.3.1">Matrix Static 0.3.1</a>.',
             service: 'Matrix Static'
+        },
+        {
+            date: '2021-09-17',
+            who: "The UK's National Cyber Security Centre (NCSC)",
+            description: 'JavaScript code execution when previewing user file attachments in Element iOS before 1.6.8 on iOS 12 and earlier. Fixed in Element iOS 1.6.8.',
+            service: 'Element iOS'
         },
         {
             date: '2021-08-31',
