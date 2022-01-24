@@ -10,6 +10,7 @@ locale = "en"
 check-filename = false
 
 [default.extend-identifiers]
+2nd__ = "2nd__" # can be removed once https://github.com/crate-ci/typos/issues/409 is fixed
 3uNd3 = "3uNd3"
 96e9afe6 = "96e9afe6"
 LaterGuage = "LaterGuage"
