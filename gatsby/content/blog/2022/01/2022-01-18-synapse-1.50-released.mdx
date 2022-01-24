@@ -1,0 +1,45 @@
+---
+date: '2022-01-18'
+title: Synapse 1.50 released
+categories:
+- Releases
+author: Brendan Abolivier
+---
+
+Welcome all for the first Synapse release of 2022: [Synapse 1.50](https://github.com/matrix-org/synapse/releases/tag/v1.50.0)!
+
+> Note that, as per our [platform dependency deprecation policy](https://matrix-org.github.io/synapse/v1.50/deprecation_policy.html), Synapse no longer supports Python 3.6 and PostgreSQL 9.6 as of this version. As a result, we have also stopped shipping Debian packages for Ubuntu 18.04 LTS (Bionic Beaver), as it ships with Python 3.6.
+>
+> As a reminder, please note that Ubuntu 21.04 (Hirsute Hippo) reaches its own end of life [on January 20, 2022](https://lists.ubuntu.com/archives/ubuntu-announce/2021-December/000275.html). Past this date we will stop producing new packages for Ubuntu 21.04.
+
+## Encrypted application services
+
+Application services (sometimes called "appservices"), are privileged processes that can interact with a Matrix homeserver in a way a normal user cannot. This is especially useful for bridges, as it allows them to register and puppet multiple users on the homeserver to replicate activity from other platforms.
+
+One of the main shortcomings of application services currently is that they do not support end-to-end encryption. This means that messages sent through a bridge are never encrypted and always visible by the homeserver.
+
+We've recently started work to tackle this issue in the form of [MSC3202](https://github.com/matrix-org/matrix-doc/pull/3202). A first part of implementing this MSC (allowing application services to masquerade as specific devices) has landed in this release of Synapse; work is still ongoing towards a full implementation, so watch this space!
+
+
+## Improved reliability on device list updates
+
+While working on this release, we identified a long-standing bug that could prevent Synapse from sending device lists update over federation if the server had a high number of active users and/or users with a lot of devices connected to their account.
+
+This bug was introduced back in [Synapse 1.0.0](https://github.com/matrix-org/synapse/releases/tag/v1.0.0), and meant that the homeserver would miss some device list updates when communicating with other homeservers if the amount of updates to send was too high. In practice, this means users on remote homeservers could see outdated device information for other users (including outdated device verification statuses).
+
+Synapse 1.50 includes a fix to this bug. This should contribute towards making the propagation of device list updates more reliable.
+
+
+## Everything else
+
+This release introduces support for [MSC3419](https://github.com/matrix-org/matrix-doc/pull/3419), which allows guest users to send arbitrary state events into a room. This will be especially useful to the ongoing work on [group VoIP calls](https://github.com/matrix-org/matrix-doc/pull/3401), which involves having users send new state events into the room to signal their participation in a call.
+
+We've also stabilised identifiers for cross-signing and fallback keys now that [MSC1756](https://github.com/matrix-org/matrix-doc/pull/1756) and [MSC2732](https://github.com/matrix-org/matrix-doc/pull/2732) have been merged into the Matrix spec.
+
+On the documentation side of things, the [page](https://matrix-org.github.io/synapse/v1.50/turn-howto.html) on setting up and configuring a TURN server has been updated to feature instructions on how to deal with NATs. This is a much welcome addition as configuring TURN is something a lot of Synapse admins struggle with!
+
+Please see the Synapse [release notes](https://github.com/matrix-org/synapse/blob/v1.50.0/CHANGES.md) for a complete list of changes in this release.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our thanks to everyone who contributed to this release, including [Dirk Klimpel](https://github.com/dklimpel), [Donny Johnson](https://github.com/itchychips) and [AndrewFerr](https://github.com/AndrewFerr).
+
+> Note: An issue preventing client logins ([#11763](https://github.com/matrix-org/synapse/issues/11763)) was identified immediately following the release of Synapse 1.50.0. We released [Synapse 1.50.1](https://github.com/matrix-org/synapse/releases/tag/v1.50.1) the same day with a fix for this issue.
