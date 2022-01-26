@@ -31,8 +31,8 @@ my $outdatedspecwarning = <<EOT;
     <div class="admonition warning" style="font-size: x-large;">
         <p class="first admonition-title">Warning</p>
         <p class="last">You are viewing an outdated version of this
-        specification. To view the current specification, please 
-        <a class="reference external" href="latest.html">click here</a>.</p>
+        specification. To view the current specification, please
+        <a class="reference external" href="https://spec.matrix.org/latest">click here</a>.</p>
     </div>
 EOT
 
@@ -50,11 +50,11 @@ EOT
 
 my $proposalscssinjection = <<EOT;
 <style>
-    table.colwidths-auto tr td:nth-child(3), 
+    table.colwidths-auto tr td:nth-child(3),
     table.colwidths-auto tr td:nth-child(2) {
         width: initial;
     }
-    table.colwidths-auto tr td:nth-child(3), 
+    table.colwidths-auto tr td:nth-child(3),
     table.colwidths-auto tr td:nth-child(4) {
         white-space: nowrap;
     }
