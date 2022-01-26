@@ -15,7 +15,7 @@ A long time ago, Synapse used to serve a very basic web Matrix client (named "co
 
 This web client was removed in [Synapse 0.34](https://github.com/matrix-org/synapse/releases/tag/v0.34.0) back in 2018, but the `webclient` listener stayed, instead allowing server admins to serve the web client of their choice (or redirect to it) through the `web_client_location` configuration file.
 
-This version of Synapse deprecates the `webclient` listener, as well as the ability to set `web_client_location` to a static directory (instead of a HTTP(S) URL). These will be removed in Synapse 1.53. See the [upgrade notes](https://matrix-org.github.io/synapse/develop/upgrade#upgrading-to-v1510) for more information.
+Synapse 1.53 will remove the `webclient` listener, as well as the ability to set `web_client_location` to a static directory (instead of a HTTP(S) URL). See the [upgrade notes](https://matrix-org.github.io/synapse/develop/upgrade#upgrading-to-v1510) for more information.
 
 
 ## Aggregations and sync
