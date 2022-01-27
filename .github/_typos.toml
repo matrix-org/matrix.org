@@ -1,7 +1,10 @@
 [files]
 extend-exclude = [
 	"*.js*", "*.json", "*.svg",
-	"*signed.txt", "signed_disclosure.txt", # can be removed once https://github.com/crate-ci/typos/issues/401 is fixed
+	"/unstyled_docs",
+	"/gatsby/content/blog/2020/09/2020-09-04-twim.mdx", # contains typos which are correct in context of their project
+	"/gatsby/content/blog/2020/12/2020-12-18-a-twim.mdx", # contains intentional typos
+	"*signed*.txt", # can be removed once https://github.com/crate-ci/typos/issues/401 is fixed
 	"synapse-debian-security-announcement.asc" # has typo but cannot fix due to PGP signature
 ]
 

@@ -243,7 +243,7 @@ no_tls: True
     # We can bind to only localhost since only the local nginx needs to hit this
     bind_address: '127.0.0.1'
     type: http
-    # Set this so that Synapse obeys nginx's X-Forwarded-For headers, then IP addresess will be correct in Synapse's logs
+    # Set this so that Synapse obeys nginx's X-Forwarded-For headers, then IP addresses will be correct in Synapse's logs
     x_forwarded: true
     resources:
       - names: [client, webclient]
