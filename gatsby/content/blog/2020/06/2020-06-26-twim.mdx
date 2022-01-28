@@ -205,7 +205,7 @@ Dendrite is a next-generation homeserver written in Go
 >
 > * Dendrite now sets the `limited` flag on `/sync` responses correctly.
 >
-> In addition, we now have support for collecting code coverage output from SyTest. This indicates we are testing roughly 70% of the Dendrite codebase. The remaining 30% are hard to reach via intergration tests (e.g database failures, communication problems between internal APIs).
+> In addition, we now have support for collecting code coverage output from SyTest. This indicates we are testing roughly 70% of the Dendrite codebase. The remaining 30% are hard to reach via integration tests (e.g database failures, communication problems between internal APIs).
 >
 > Spec compliance:
 >
@@ -312,7 +312,7 @@ It's a Tulir kind of week.
 >
 > `matrix-appservice-irc` was also bumped to [0.18.0](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.18.0) with the headline features being Node 14.x support.
 >
-> We've also shipped [0.19.0-rc1](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.19.0-rc1) which has stopped support for Node 10.x. Why? Because we're adding worker support to the bridge! This release starts to make use of the new(ish) `worker_threads` feature so that we can dish out processing to seperate threads (running their own UV event loops, for node enthusiasts). The first thing to be workerized is metrics, so that metrics may still be reported should the bridge become saturated, but we plan to split out more work as things progress.
+> We've also shipped [0.19.0-rc1](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.19.0-rc1) which has stopped support for Node 10.x. Why? Because we're adding worker support to the bridge! This release starts to make use of the new(ish) `worker_threads` feature so that we can dish out processing to separate threads (running their own UV event loops, for node enthusiasts). The first thing to be workerized is metrics, so that metrics may still be reported should the bridge become saturated, but we plan to split out more work as things progress.
 >
 > Finally `matrix-appservice-bridge` got a few fixes to support our new worker land, as well as being updated to support `matrix-js-sdk` 6.0.0. You can checkout the changes for [1.13.1 here](https://github.com/matrix-org/matrix-appservice-bridge/releases/tag/1.13.1).
 
@@ -472,7 +472,7 @@ It's a Tulir kind of week.
 > * Most of our time this week was spent trying out device verification with Chethan. It's fun and I could finally file bugs in Nheko against someone else!
 >
 > * We fixed some issues that should hopefully make text in the timeline less blurry again.
-> * Fixed a bug which cause some clients like fluffychat to break in E2EE rooms (we accidentaly sent a null relation when not replying...)
+> * Fixed a bug which cause some clients like fluffychat to break in E2EE rooms (we accidentally sent a null relation when not replying...)
 >
 > * Fixed an issue, where Nheko didn't verify the format of html formatted messages correctly, causing it to render messages in a way which wasn't compliant to the spec.
 > * Thanks to the work of a Pirate and his friends, current versions of Nheko should be available in backports for Debian Buster once again!

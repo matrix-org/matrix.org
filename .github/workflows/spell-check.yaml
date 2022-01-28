@@ -13,7 +13,7 @@ jobs:
     - name: Checkout Actions Repository
       uses: actions/checkout@v2
 
-    - name: Check spelling of proposals
+    - name: Check spelling
       uses: crate-ci/typos@master
       with:
         config: ${{github.workspace}}/.github/_typos.toml

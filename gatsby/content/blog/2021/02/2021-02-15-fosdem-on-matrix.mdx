@@ -72,7 +72,7 @@ There was also an explosion of changes to Element itself to try to make things g
 
 ![](/blog/img/upload_45b228cf122b2faedfca5e36b6d52576.png)
 
-This was a real epic to get together (and is also an important part of [achieving parity](https://matrix.org/blog/2020/12/07/gitter-now-speaks-matrix) betwen Gitter and Element) - and seems to have been surprisingly successful for FOSDEM.  Almost 50% of users who signed up on the FOSDEM server did so via social login!  We should also be turning it on for the matrix.org server this week.
+This was a real epic to get together (and is also an important part of [achieving parity](https://matrix.org/blog/2020/12/07/gitter-now-speaks-matrix) between Gitter and Element) - and seems to have been surprisingly successful for FOSDEM.  Almost 50% of users who signed up on the FOSDEM server did so via social login!  We should also be turning it on for the matrix.org server this week.
 
 Finally, on the Matrix server side, we ran a cluster of synapse worker processes (1 federation inbound, reader and sender, 1 pusher, 1 initial sync worker, 10 synchrotrons, 1 event persister, 1 event creator, 4 general purpose client readers, 1 typing worker and 1 user directory) within Kubernetes on [EMS](https://ems.element.io).  These were hooked up for [horizontal scalability](https://matrix.org/blog/2020/11/03/how-we-fixed-synapses-scalability/) as follows:
 

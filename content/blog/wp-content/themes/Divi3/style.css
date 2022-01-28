@@ -1700,7 +1700,7 @@ nav.fullwidth-menu-nav,
 	transition: all 0.4s ease-in-out;
 }
 
-/* Seach Form */
+/* Search Form */
 #et_search_icon:before {
 	position: absolute;
 	top: -3px;
@@ -15797,7 +15797,7 @@ span.comment_date {
 	}
 }
 
-/* These "global" styles need to be seperate so they don't get wrapped in divi-builder file /less/frontend-builder-plugin-style.less */
+/* These "global" styles need to be separate so they don't get wrapped in divi-builder file /less/frontend-builder-plugin-style.less */
 #wp-admin-bar-et-use-visual-builder a:before {
 	width: 28px;
 	margin-top: -3px;
