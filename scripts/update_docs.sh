@@ -25,8 +25,7 @@ cd "$(dirname "$(dirname "${SELF}")")"
 
 # Set up foundations for RapiDoc API playground
 rm -fr unstyled_docs/api/client-server
-mkdir -p unstyled_docs/api/client-server/json
-ln -s ../../../spec/client_server/latest.json unstyled_docs/api/client-server/json/api-docs.json
+mkdir -p unstyled_docs/api/client-server
 
 # copy the unstyled docs and add the styling
 rm -rf content/docs
