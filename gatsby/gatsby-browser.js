@@ -16,7 +16,7 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
         links[i].onclick = function (e) {
             if (e.currentTarget.href.indexOf("/docs/spec") !== -1 ||
                 e.currentTarget.href.indexOf("/feed") !== -1 ||
-                e.currentTarget.href.indexOf("/docs/api/client-server") !== -1 ||
+                e.currentTarget.href.indexOf("/docs/api/") !== -1 ||
                 e.currentTarget.href.indexOf("matrix.org/code") !== -1) {
                     window.location = e.currentTarget.href;
                     return false;

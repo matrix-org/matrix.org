@@ -40,7 +40,7 @@ const redirects = [
     {from: "/docs/projects/clients-matrix", to: "/clients/"},
     {from: "/docs/spec-redirect", to: "/docs/spec"},
     {from: "/code", to: "/code"},
-    {from: "/docs/spec-api-playground-redirect", to: "/docs/api/client-server/"},
+    {from: "/docs/spec-api-playground-redirect", to: "/docs/api/"},
     {from: "/blog/feed-redirect", to: "/blog/feed"},
     {from: "/docs/projects/sdks", to: "/sdks/"},
     {from: "/docs/projects/bots", to: "/bots"},
