@@ -24,8 +24,8 @@ SELF="${SELF/\/.\///}"
 cd "$(dirname "$(dirname "${SELF}")")"
 
 # Set up foundations for RapiDoc API playground
-rm -fr unstyled_docs/api/client-server
-mkdir -p unstyled_docs/api/client-server
+rm -fr unstyled_docs/api/
+mkdir -p unstyled_docs/api/
 
 # copy the unstyled docs and add the styling
 rm -rf content/docs
@@ -35,4 +35,4 @@ find "content/docs" -name '*.html' -type f |
 cp -r legacy-spec/css content/docs/css
 
 # Set up RapiDoc itself at the end so it doesn’t get styled
-cp -r rapidoc/* content/docs/api/client-server/
+cp -r rapidoc/* content/docs/api/
