@@ -3,6 +3,7 @@ extend-exclude = [
 	"*.js*", "*.json", "*.svg",
 	"/unstyled_docs",
 	"/gatsby/content/blog/2020/09/2020-09-04-twim.mdx", # contains typos which are correct in context of their project
+	"/gatsby/content/blog/2021/09/2021-09-17-twim.mdx", # contains French
 	"/gatsby/content/blog/2020/12/2020-12-18-a-twim.mdx", # contains intentional typos
 	"*signed*.txt", # can be removed once https://github.com/crate-ci/typos/issues/401 is fixed
 	"synapse-debian-security-announcement.asc" # has typo but cannot fix due to PGP signature
@@ -29,6 +30,7 @@ onl = "onl"
 clos = "clos" # can be changed to json-clos once https://github.com/crate-ci/typos/issues/400 is fixed
 ehr = "ehr" # can be changed to Fuj'ehr once https://github.com/crate-ci/typos/issues/400 is fixed
 ist = "ist" # can be changed to raim.ist once https://github.com/crate-ci/typos/issues/400 is fixed
+loca = "loca" # can be changed to loca.lt once https://github.com/crate-ci/typos/issues/400 is fixed
 ons = "ons" # can be removed once https://github.com/crate-ci/typos/issues/400 is fixed
 ERRO = "ERRO" # can be removed once https://github.com/crate-ci/typos/issues/399 is fixed
 MESSAG = "MESSAG" # can be removed once https://github.com/crate-ci/typos/issues/399 is fixed
