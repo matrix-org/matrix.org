@@ -14,7 +14,7 @@ The team behind [Twisted](https://twistedmatrix.com/), which is the main framewo
 
 While preparing the release of Synapse 1.52, we have investigated the impact of this vulnerability on Synapse. We came to the conclusion that it does not affect Synapse. We however advise server administrators to ensure they use an up-to-date version of the library as a matter of good practice.
 
-For instances installed with `pip`, the library can be updated with `pip install --upgrade Twisted`. For instances installed with the `matrixdotorg/synapse` Docker image or Debian packages from `packages.matrix.org`, updating to Synapse 1.52.0 is sufficient, as these images and packages include up-to-date versions of all dependencies.
+For instances installed with `pip`, the library can be updated with `pip install --upgrade Twisted treq`. For instances installed with the `matrixdotorg/synapse` Docker image or Debian packages from `packages.matrix.org`, updating to Synapse 1.52.0 is sufficient, as these images and packages include up-to-date versions of all dependencies.
 
 It is also worth noting that a release candidate for [Twisted 22.2](https://github.com/twisted/twisted/releases/tag/twisted-22.2.0rc1) has been published, with a fix for a potential denial of service vulnerability with SSH. Administrators of Synapse homeservers that have the [manhole](https://matrix-org.github.io/synapse/v1.52/manhole.html) feature enabled (which is the only feature of Synapse using SSH) are encouraged to ensure access to the manhole is correctly restricted (e.g. by preventing access from external locations).
 
