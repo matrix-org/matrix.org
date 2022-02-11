@@ -69,7 +69,7 @@ Synapse is the reference homeserver for Matrix
 > 
 > See you next week!
 
-### Dendrite ([website](https://invent.kde.org/network/neochat))
+### Dendrite ([website](https://github.com/matrix-org/dendrite))
 
 Second generation Matrix homeserver
 
@@ -144,7 +144,7 @@ A client for matrix, the decentralized communication protocol
 > NeoChat 22.02 is out with the possibility of sharing files directly from NeoChat to other apps and services (Nextcloud, Imgur, email, ...). We also added support for minimizing the application to the system tray on startup and you can now label accounts to better organize them if you are using the multi-account feature. Aside from that, we spend some time fixing many small bugs and paper cuts reducing the total amount of open bug reports by 20%.
 > 
 > https://plasma-mobile.org/2022/02/09/plasma-mobile-gear-22-02/#neochat
-
+> 
 > ![](/blog/img/85e63c7f64e07f859e0a557e07986154bd726c96.png)
 > ![](/blog/img/500f8459aa9dd9350721295bb224911ddaa4fadf.png)
 > ![](/blog/img/b97f22ee6104989e50417d4c05e7bb89d33178f0.png)
@@ -290,18 +290,10 @@ Halcyon is an easy to use matrix library inspired by discord.py
 
 ## Dept of Interesting Projects 🛰️
 
-### Ping Room
-
-[tulir](https://matrix.to/#/@tulir:maunium.net) reports
-
-> The ping room has been upgraded to room v9. During the 452 days the previous (v6) ping room was alive, it received a total of 735997 `org.matrix.dummy_event`s and 604459 `m.room.message` events.
-
 ### Pretix Matrix Plugin
 
 [Felix](https://matrix.to/#/@felix:fachschaften.org) says
 
-> ## Invite your Pretix attendees to your Matrix Space!
-> 
 > We have been using Matrix as a chat solution for the attendees of our biannual conference ([KIF](https://kif.rocks)) and for new students during the introduction week, as well as Pretix to register attendants. Up until now the process to invite attendees to the corresponding Matrix Rooms and Spaces involved some `curl` and `jq` magic as well as manual intervention to connect both.
 > 
 > We have now replaced said manual process with a Pretix plugin that invites registered attendees to a configurable Matrix Room or Space. This plugin is now available on the [Pretix marketplace](https://marketplace.pretix.eu/products/pretix-matrix-inviter/) or directly from its [repository](https://gitlab.fachschaften.org/kif/pretix-matrix-inviter).
@@ -326,14 +318,45 @@ Halcyon is an easy to use matrix library inspired by discord.py
 
 ## Dept of Ping 🏓
 
+### Ping Room
+
+[tulir](https://matrix.to/#/@tulir:maunium.net) reports
+
+> The ping room has been upgraded to room v9. During the 452 days the previous (v6) ping room was alive, it received a total of 735997 `org.matrix.dummy_event`s and 604459 `m.room.message` events.
+
 Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
 
 ### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
 Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|neko.dev|300|
+|2|catvibers.me|325|
+|3|deuteronomiumcloud.com|375.5|
+|4|thomcat.rocks|396.5|
+|5|asra.gr|400.5|
+|6|maunium.net|408|
+|7|matrix.infra.reflect-media.de|461|
+|8|matrix.ring-0.net|480.5|
+|9|stefanberger.net|487|
+|10|zehka.net|650.5|
 
 ### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
 Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|conduit.supercable.onl|101|
+|2|schuwi.science|292|
+|3|dendrite.grin.hu|361|
+|4|cry.is|522.5|
+|5|nognu.de|631.5|
+|6|conduit.cyberdi.sk|730|
+|7|conduit.beckmeyer.us|858|
+|8|matrix.awesomesheep48.me|1164.5|
+|9|dendrite.matrix.org|1216.5|
+|10|grin.hu|3054|
 
 
 ## That's all I know 🏁
