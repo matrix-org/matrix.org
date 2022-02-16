@@ -4,9 +4,28 @@
     <meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 characters -->
     <script type="module" src="./rapidoc-9.1.2+9364198.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/OpenSans.css">
+    <script>
+      function getRapiDoc() {
+        return document.getElementById("rapidoc");
+      }
+      function switchSpec() {
+        const select = document.getElementById('spec-select');
+        const api = select.options[select.selectedIndex].value; 
+        const url = "https://spec.matrix.org/latest/" + api + "/api.json";
+        getRapiDoc().setAttribute("spec-url", url);
+      }
+    </script>
+    <style>
+      #spec-select {
+        padding: 5px;
+        background-color: var(--primary-color);
+        color: var(--primary-color-invert);
+      }
+    </style>
   </head>
   <body>
     <rapi-doc
+      id = "rapidoc"
       spec-url = "https://spec.matrix.org/latest/client-server-api/api.json"
       show-header="false"
       render-style="focused" 
@@ -27,6 +46,13 @@
       <a href="/docs/develop">
         <img src="/images/matrix-logo.svg">
       </a>
+    </div>
+    <div slot="overview">
+      <select name="spec-select" id="spec-select" onchange="switchSpec();">
+        <option value="application-service-api">Application Service API</option>
+        <option value="client-server-api" selected>Client-Server API</option>
+        <option value="push-gateway-api">Push Gateway API</option>
+      </select>
     </div>
     </rapi-doc>
   </body>

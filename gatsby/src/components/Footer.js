@@ -22,7 +22,7 @@ const Footer = () => (
       <div className="mxfooter__column">
         <a href="/docs/develop" className="mxfooter__link mxfooter__link--primary">Develop Docs</a>
         <a href="/docs/spec" className="mxfooter__link">Spec</a>
-        <a href="/docs/api/client-server" className="mxfooter__link">API Playground</a>
+        <a href="/docs/api/" className="mxfooter__link">API Playground</a>
         <a href="https://matrix.org/code" className="mxfooter__link">Code</a>
       </div>
       <div className="mxfooter__column">
