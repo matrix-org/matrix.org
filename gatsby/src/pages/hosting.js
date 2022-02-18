@@ -60,25 +60,6 @@ const Hosting = ({ data }) => {
                         | <a href="https://matrix.to/#/#announcements:etke.cc">Announcements on Matrix</a>
                     </p>
                 </div>
-
-                <div className="mxgrid__item50">
-                    <h2 id="ungleich">GoMatrixHosting</h2>
-                    <p><img style={{"border-radius": "9px", "height": "130px"}} src="/images/GoMatrixHosting.png" alt="" /></p>
-                    <p><a href="https://gomatrixhosting.com">GoMatrixHosting.com</a></p>
-                    <p>
-                        Ansible AWX UI to:
-                        <ul>
-                            <li>Setup of hosted Homeserver on DigitalOcean or own on-premises server</li>
-                            <li>Setup of hosted integrations (bridges and bots)</li>
-                        </ul>
-
-                        Members can be assigned a server from DigitalOcean, or they can connect their on-premises
-                        server. This <a href="https://github.com/ansible/awx">AWX</a> system can manage the updates,
-                        configuration, import and export, backups, and monitoring on its own. For more information see 
-                        our <a href="https://gitlab.com/GoMatrixHosting">GitLab group</a> or
-                        come <a href="https://matrix.to/#/#general:gomatrixhosting.com">visit us on Matrix</a>.
-               
-                    </p> </div>
             </div>
             <em>The providers listed all have a history of providing Matrix services, though The Matrix.org Foundation doesn't explicitly endorse these services.</em>
         </MXContentMain>

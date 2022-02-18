@@ -4,7 +4,8 @@ extend-exclude = [
 	"/unstyled_docs",
 	"/gatsby/content/blog/2020/09/2020-09-04-twim.mdx", # contains typos which are correct in context of their project
 	"/gatsby/content/blog/2020/12/2020-12-18-a-twim.mdx", # contains intentional typos
-	"/gatsby/content/blog/2021/09/2021-09-17-twim.mdx", # contains French
+	"/gatsby/content/blog/2021/09/2021-09-17-twim.mdx", # contains French, for some reason
+	"/gatsby/content/blog/2022/01/2022-01-21-twim.mdx", # pings scoreboard triggers the typo CI
 	"*signed*.txt", # can be removed once https://github.com/crate-ci/typos/issues/401 is fixed
 	"synapse-debian-security-announcement.asc" # has typo but cannot fix due to PGP signature
 ]

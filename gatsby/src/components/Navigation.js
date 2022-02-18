@@ -31,11 +31,11 @@ navTypes["develop"] = (
     <img src="/images/basic_spread_text.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Docs</div>
   </a>
-  <a href="https://matrix.org/docs/spec" className="mxnavsection__item w-inline-block">
+  <a href="https://spec.matrix.org/" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_pencil_ruler.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">Spec</div>
   </a>
-  <a href="https://matrix.org/docs/api/client-server/" className="mxnavsection__item w-inline-block">
+  <a href="/docs/api/" className="mxnavsection__item w-inline-block">
     <img src="/images/basic_cards_hearts.svg" alt="" className="mxnavsection__icon" />
     <div className="mxnavsection__text">API Playground</div>
   </a>
