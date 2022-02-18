@@ -31,6 +31,7 @@ onl = "onl"
 clos = "clos" # can be changed to json-clos once https://github.com/crate-ci/typos/issues/400 is fixed
 ehr = "ehr" # can be changed to Fuj'ehr once https://github.com/crate-ci/typos/issues/400 is fixed
 ist = "ist" # can be changed to raim.ist once https://github.com/crate-ci/typos/issues/400 is fixed
+loca = "loca" # can be changed to loca.lt once https://github.com/crate-ci/typos/issues/400 is fixed
 ons = "ons" # can be removed once https://github.com/crate-ci/typos/issues/400 is fixed
 ERRO = "ERRO" # can be removed once https://github.com/crate-ci/typos/issues/399 is fixed
 MESSAG = "MESSAG" # can be removed once https://github.com/crate-ci/typos/issues/399 is fixed
