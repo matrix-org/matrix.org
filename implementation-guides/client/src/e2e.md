@@ -627,16 +627,17 @@ unverified users or devices.
 #### Creating a new Olm session
 
 If the client does not already have an Olm session established with a device
-that it needs to send a Megolm session to, it must create a new Olm session. To
-do so, it first fetches the device's fingerprint and identity keys, if it does
-not already have them (by calling [`POST
+that it needs to send a Megolm session to (established either by itself or by
+the other device), it must create a new Olm session. To do so, it first fetches
+the device's fingerprint and identity keys, if it does not already have them
+(by calling [`POST
 /keys/query`]((https://spec.matrix.org/v1.1/client-server-api/#post_matrixclientv3keysquery))),
 claims a one-time key (by calling [`POST
 /keys/claim`](https://spec.matrix.org/v1.1/client-server-api/#post_matrixclientv3keysclaim)),
-checks the signatures on them, and then creates the Olm session. When the client
-encrypts the Megolm session with the Olm session and sends it to the other
-device, this will provide the other device the information necessary to create
-the Olm session on its side.
+checks the signatures on them, and then creates the Olm session. When the
+client encrypts the Megolm session with the Olm session and sends it to the
+other device, this will provide the other device the information necessary to
+create the Olm session on its side.
 
 C++:
 ```c++
@@ -672,14 +673,14 @@ json signed_otk = res["one_time_keys"][target_user_id][target_device_id];
 
 // check the signatures on the keys
 std::string target_ed25519_key =
-  target_device_keys["keys"][target_user_id][std::string("ed25519:") + target_device_id].get<std::string>;
+  target_device_keys["keys"][target_user_id][std::string("ed25519:") + target_device_id].get<std::string>();
 
 json stripped_target_device_keys = target_device_keys;
 stripped_device_keys.erase("signatures");
 stripped_device_keys.erase("unsigned");
 std::string device_keys_for_signing = canonical_json(stripped_device_keys);
 std::string device_keys_signature =
-  target_device_keys["signatures"][target_user_id][std::string("ed25519:") + target_device_id].get<std::string>;
+  target_device_keys["signatures"][target_user_id][std::string("ed25519:") + target_device_id].get<std::string>();
 if (olm_ed25519_verify(olm_utility,
       target_ed25519_key.data(), target_ed25519_key.length(),
       device_keys_for_signing.data(), device_keys_for_signing.length(),
@@ -692,7 +693,7 @@ stripped_otk.erase("signatures");
 stripped_otk.erase("unsigned");
 std::string otk_for_signing = canonical_json(stripped_otk);
 std::string otk_signature =
-  signed_otk["signatures"][target_user_id][std::string("ed25519:") + target_device_id].get<std::string>;
+  signed_otk["signatures"][target_user_id][std::string("ed25519:") + target_device_id].get<std::string>();
 if (olm_ed25519_verify(
       olm_utility,
       target_ed25519_key.data(), target_ed25519_key.length(),
@@ -705,7 +706,7 @@ std::string one_time_key = signed_otk["key"].get<std::string>();
 
 // create the olm session
 std::string target_curve25519_key =
-  target_device_keys["keys"][target_user_id][std::string("curve25519:") + target_device_id].get<std::string>;
+  target_device_keys["keys"][target_user_id][std::string("curve25519:") + target_device_id].get<std::string>();
 void *olm_session_memory = malloc(olm_session_size);
 OlmSession *olm_session = olm_session(olm_session_memory);
 Random random(olm_create_outbound_session_random_length(olm_session));
@@ -722,8 +723,8 @@ JavaScript:
 ```javascript
 // (assume that olmUtility is a previously-created Olm.Utility object)
 // for each device that we need to create an Olm session with:
-let targetUserId;
-let targetDeviceId;
+const targetUserId;
+const targetDeviceId;
 
 // get the device keys/one-time key
 // note: keys for multiple devices can be queried/claimed at the same time,
@@ -777,7 +778,7 @@ olmSession.create_outbound(account, targetCurve25519Key, otk);
 
 In some cases, a client may have multiple Olm sessions with the same device.
 In this case, the client should use the Olm session from which it most recently
-received a message.
+received and decrypted a message.
 
 ### Creating a Megolm session (if necessary)
 
@@ -1033,7 +1034,254 @@ await http_request(
 
 ## Reading encrypted messages
 
+To read an encrypted message, a client must first obtain the Megolm session
+sent to it, and use that Megolm session to decrypt the message.
+
 ### Decrypting with Olm
+
+The Megolm session will be sent in a send-to-device event encrypted using Olm.
+This event can be encrypted using either an existing Olm session or a
+newly-created one.  So to decrypt the event, the client should first try using
+any existing Olm sessions that it has with the sender, and if none of them work
+(and the message type is `0`), try creating a new Olm session from the event.
+When new Olm sessions are created, clients are not required to keep all the
+sessions, but should keep at least the four most-recently-used sessions for
+each device.
+
+C++:
+```c++
+// assume we have the following functions available:
+// - get_existing_olm_sessions_for_sender: get the Olm sessions that have already
+//   been established with the given sender
+// - mark_olm_session_as_successfully_used: mark that the given Olm session was
+//   successfully used to decrypt a message (this is needed since encrypting with
+//   Olm should use the session that was most recently used, as described in the
+//   "Multiple Olm sessions" section)
+// - save_olm_session: save a new Olm session
+// - get_device_info: get information about a device.  In particular, its
+//   curve25519 and ed25519 keys are needed
+// - save_inbound_megolm_session: save an inbound megolm session
+
+json to_device_event; // the received send-to-device event
+
+json event_content = to_device_event["content"];
+
+if (to_device_event["type"].get<std::string>() != "m.room.encrypted"
+    || event_content["algorithm"].get<std::string>() != "m.olm.v1.curve25519-aes-sha2")) {
+  // This is not an Olm-encrypted message.  Handle it somehow else, or ignore it.
+}
+
+std::string sender = to_device_event["sender"].get<std::string>();
+std::string sender_key = event_content["sender_key"].get<std::string>();
+
+json ciphertext = event_content["ciphertext"];
+int message_type = ciphertext["type"].get<int>();
+std::string ciphertext_body = ciphertext["body"].get<std::string>();
+
+// try to decrypt using an existing session
+auto olm_sessions = get_existing_olm_sessions_for_sender(sender, sender_key);
+bool decrypted = false;
+std::string plaintext;
+for(auto it = olm_sessions.begin(); it != olm_sessions.end(); ++it) {
+  OlmSession *session = *it;
+  size_t plaintext_length = olm_decrypt_max_plaintext_length(
+    session,
+    message_type,
+    ciphertext_body.data(), ciphertext_body.length()
+  );
+  char *plaintext_buf = malloc(plaintext_length);
+  size_t rv = olm_decrypt(
+    session,
+    message_type,
+    ciphertext_body.data(), ciphertext_body.length(),
+    plaintext_buf, plaintext_length
+  );
+  if (rv != olm_error()) {
+    mark_session_as_successfully_used(sender, sender_key, session);
+    decrypted = true;
+    plaintext = std::string(plaintext_buf, plaintext_length);
+    free(plaintext_buf);
+    break;
+  }
+  free(plaintext_buf);
+}
+
+if (!decrypted && message_type == 0) {
+  // none of the existing sessions worked, so try creating a new Olm session
+  void *session_memory = malloc(olm_session_size());
+  OlmSession *session = olm_session(session_memory);
+  size_t rv = olm_create_inbound_session_from(
+    session, account,
+    sender_key.data(), sender_key.length(),
+    ciphertext_body.data(), ciphertext_body.length()
+  )
+  if (rv != olm_error) {
+    size_t plaintext_length = olm_decrypt_max_plaintext_length(
+      session,
+      message_type,
+      ciphertext_body.data(), ciphertext_body.length()
+    );
+    char *plaintext_buf = malloc(plaintext_length);
+    size_t rv = olm_decrypt(
+      session,
+      message_type,
+      ciphertext_body.data(), ciphertext_body.length(),
+      plaintext_buf, plaintext_length
+    );
+    if (rv != olm_error()) {
+      save_olm_session(sender, sender_key, session);
+      decrypted = true;
+      plaintext = std::string(plaintext_buf, plaintext_length);
+    } else {
+      olm_clear_session(session);
+      free(session_memory);
+    }
+    free(plaintext_buf);
+  } else {
+    olm_clear_session(session);
+    free(session_memory);
+  }
+}
+
+if (!decrypted) {
+  // handle error
+}
+
+// retrieve the megolm key from the message
+json decrypted_event = json::parse(plaintext);
+
+assert(decrypted_event["sender"].get<std::string>() == sender);
+auto device_info = get_device_info(sender, decrypted_event["sender_device"].get<std::string>());
+assert(device_info.ed25519_key == decrypted_event["keys"]["ed25519"].get<std::string>());
+assert(device_info.curve25519_key == sender_key);
+assert(decrypted_event["recipient"].get<std::string>() == user_id);
+assert(decrypted_event["recipient_keys"]["ed25519"] == identity_keys["ed25519"]);
+
+if (decrypted_event["type"].get<std::string>() == "m.room_key") {
+  json decrypted_content = decrypted_event["content"];
+  if (decrypted_content["algorithm"].get<std::string>() == "m.megolm.v1.aes-sha2") {
+    void *inbound_session_memory = malloc(olm_inbound_group_session_size());
+    OlmInboundGroupSession *inbound_session = olm_inbound_group_session(inbound_session_memory);
+    std::string session_key = decrypted_content["session_key"].get<std::string>();
+    size_t ret = olm_init_inbound_group_session(
+      inbound_session,
+      session_key.data(), session_key.length()
+    );
+    if (ret != olm_error()) {
+      save_inbound_megolm_session(
+        decrypted_content["room_id"].get<std::string>(),
+        decrypted_content["session_id"].get<std::string>(),
+        inbound_session,
+        decrypted_event
+      );
+    } else {
+      olm_clear_inbound_group_session(inbound_session);
+      free(inbound_session_memory);
+      // handle error
+    }
+  } else {
+    // probably just ignore, maybe log that an unknown algorithm was used
+  }
+} else {
+  // handle other event types
+}
+```
+
+JavaScript:
+```javascript
+// assume we have have the following functions available:
+// - getExistingOlmSessionsForSender: get the Olm sessions that have already
+//   been established with the given sender
+// - markOlmSessionAsSuccessfullyUsed: mark that the given Olm session was
+//   successfully used to decrypt a message (this is needed since encrypting with
+//   Olm should use the session that was most recently used, as described in the
+//   "Multiple Olm sessions" section)
+// - saveOlmSession: save a new Olm session
+// - getDeviceInfo: get information about a device.  In particular, its
+//   curve25519 and ed25519 keys are needed
+// - saveInboundMegolmSession: save an inbound megolm session
+//
+// Note that due to the limited memory available to the JavaScript Olm bindings,
+// the Old and Megolm sessions should be stored in pickled form and unpickled
+// when needed, rather than keeping the objects in memory.  This means that some
+// of the code below will need to be modified to, for example, free session
+// objects after they are used.
+
+const toDeviceEvent; // the received send-to-device event
+
+const eventContent = toDeviceEvent.content;
+
+if (toDeviceEvent.type != "m.room.encrypted"
+    || eventContent.algorithm != "m.olm.v1.curve25519-aes-sha2") {
+  // This is not an Olm-encrypted message.  Handle it somehow else, or ignore it.
+}
+
+const sender = toDeviceEvent.sender;
+const senderKey = eventContent.sender_key;
+
+const ciphertext = eventContent.ciphertext;
+const messageType = ciphertext.type;
+const ciphertextBody = ciphertext.body;
+
+// try to decrypt using an existing session
+const olmSessions = getExistingOlmSessionsForSender(sender, senderKey);
+let decrypted = false;
+let plaintext;
+for(const session of olmSessions) {
+  try {
+    plaintext = session.decrypt(messageType, ciphertextBody);
+    markOlmSessionAsSuccessfullyUsed(session);
+    break;
+  } catch (e) {
+    // if the decryption failed, do nothing -- we'll just try the next session
+  }
+}
+
+if (!decrypted && messageType == 0) {
+  // none of the existing sessions worked, so try creating a new Olm session
+  const session = new global.Olm.Session();
+  session.create_inbound_from(account, senderKey, ciphertextBody);
+  saveOlmSession(sender, senderKey, session);
+}
+
+// retrieve the megolm key from the message
+const decryptedEvent = JSON.parse(plaintext);
+const deviceInfo = getDeviceInfo(sender, decryptedEvent.sender_device);
+if (decryptedEvent.sender !== sender
+    || deviceInfo.ed25519Key !== decryptedEvent.keys.ed25519
+    || deviceInfo.curve25519Key !== senderKey
+    || decryptedEvent.recipient !== userId
+    || decryptedEvent.recipient_keys.ed25519 !== identityKeys.ed25519) {
+    throw new Error("Decrypted event does not have the right format");
+}
+
+switch (decryptedEvent.type) {
+  case "m.room_key":
+    switch (decryptedContent.algorithm) {
+      case "m.megolm.v1.aes-sha2":
+        {
+          const inboundSession = new global.Olm.InboundGroupSession();
+          try {
+            inboundSession.create(decryptedContent.session_key);
+            saveInboundMegolmSession(
+              decryptedContent.room_id, decryptedContent.session_id,
+              inboundSession, decryptedEvent
+            );
+          } catch (e) {
+            inboundSession.free();
+          }
+        }
+        break;
+
+      default:
+        // probably just ignore, maybe log that an unknown algorithm was used
+    }
+    break;
+
+  default:
+    // handle other event types
+}
+```
 
 ### Decrypting with Megolm
 
