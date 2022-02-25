@@ -1,0 +1,436 @@
+---
+date: '2022-02-25'
+title: 'This Week in Matrix 2022-02-25'
+categories:
+  - This Week in Matrix
+author: Thib
+image: 
+---
+
+## OTWSU 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5yxsSEySHpY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of Spec 📜
+
+[Andrew Morgan (Element)](https://matrix.to/#/@andrewm:element.io) reports
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+> 
+> 
+> ## MSC Status
+> 
+> **Merged MSCs:**
+> * [MSC3589: Room version 9 as the default room version](https://github.com/matrix-org/matrix-doc/pull/3589)
+> * [MSC3582: Remove m.room.message.feedback](https://github.com/matrix-org/matrix-doc/pull/3582)
+> 
+> **MSCs in Final Comment Period:**
+> * *No MSCs are in FCP.*
+> 
+> **New MSCs:**
+> * [MSC3744: Support for flexible authentication](https://github.com/matrix-org/matrix-doc/pull/3744)
+> * [MSC3743: Standardized error response for unknown endpoints](https://github.com/matrix-org/matrix-doc/pull/3743)
+> * [MSC3741: Revealing the useful login flows to clients after a soft logout](https://github.com/matrix-org/matrix-doc/pull/3741)
+> * [MSC3735: Add device information to m.room_key.withheld message](https://github.com/matrix-org/matrix-doc/pull/3735)
+> 
+> ## Spec Updates
+> 
+> [MSC3440](https://github.com/matrix-org/matrix-doc/pull/3440) continues to be the focus on much review as the proposal inches towards entering final comment period.
+> 
+> Otherwise both [MSC3589](https://github.com/matrix-org/matrix-doc/pull/3589) (room version 9 as the default room version) and [MSC3582](https://github.com/matrix-org/matrix-doc/pull/3582) (remove m.room.message.feedback) merged this week. The former brings with it updated versions for rooms as they continue to be created across the federation, whereas the latter is simply a nice clean up to the existing spec :)
+> 
+> ## Random MSC of the Week
+> 
+> The random MSC of the week is... [MSC3593: Safety Controls through a generic Administration API](https://github.com/matrix-org/matrix-doc/pull/3593)!
+> 
+> This MSC aims to introduce a set of generic administrative APIs for Matrix homeservers, starting with those that could potentially be useful for user moderation.
+> 
+> There has long been talk of adding administration APIs akin to [Synapse's Admin API](https://matrix-org.github.io/synapse/develop/usage/administration/admin_api/index.html) to the spec, in part to reduce the number of tools that are specifically created for it, and thus can only be used with Synapse.
+> 
+> Feedback welcome!
+
+## Dept of Servers 🏢
+
+### Synapse ([website](https://github.com/matrix-org/synapse/))
+
+Synapse is the reference homeserver for Matrix
+
+[Shay](https://matrix.to/#/@shayshay:matrix.org) announces
+
+> This week we released Synapse 1.53.0! This release adds support for sending to-device messages to application services, adds a background database update to purge account data for deactivated users, and adds more features to improve performance and stability, as well as bugfixes and improved documentation. Check out the release notes [here](https://github.com/matrix-org/synapse/releases/tag/v1.53.0).
+> 
+> In addition to the release, work continues on improving the performance of room joins-progress is being made! Finally, we began the process of switching over Synapse to use [Poetry](https://python-poetry.org/) for dependency management-keep your eyes peeled for more information on that project as it develops.
+
+### Dendrite ([website](https://invent.kde.org/network/neochat))
+
+Second generation Matrix homeserver
+
+[neilalexander](https://matrix.to/#/@neilalexander:matrix.org) says
+
+> This week we released [Dendrite v0.6.4](https://github.com/matrix-org/dendrite/releases/tag/v0.6.4) which contains a significant number of improvements and fixes. It includes the following:
+> 
+> * All Client-Server API endpoints are now available under the `/v3` namespace
+> * The `/whoami` response format now matches the latest Matrix spec version
+> * Support added for the `/context` endpoint, which should help clients to render quote-replies correctly
+> * Accounts now have an optional account type field, allowing admin accounts to be created
+> * Server notices are now supported
+> * Refactored the user API storage to deduplicate a significant amount of code, as well as merging both user API databases into a single database
+> * Guest registration can now be separately disabled with the new `client_api.guests_disabled` configuration option
+> * Outbound connections now obey proxy settings from the environment, deprecating the `federation_api.proxy_outbound` configuration options
+> * The roomserver input API will now strictly consume only one database transaction per room, which should prevent situations where the roomserver can deadlock waiting for database connections to become available
+> * Room joins will now fall back to federation if the local room state is insufficient to create a membership event
+> * Create events are now correctly filtered from federation `/send` transactions
+> * Excessive logging when federation is disabled should now be fixed
+> * Dendrite will no longer panic if trying to retire an invite event that has not been seen yet
+> * The device list updater will now wait for longer after a connection issue, rather than flooding the logs with errors
+> * The device list updater will no longer produce unnecessary output events for federated key updates with no changes, which should help to reduce CPU usage
+> * Local device name changes will now generate key change events correctly
+> * The sync API will now try to share device list update notifications even if all state key NIDs cannot be fetched
+> * An off-by-one error in the sync stream token handling which could result in a crash has been fixed
+> * State events will no longer be re-sent unnecessary by the roomserver to other components if they have already been sent, which should help to reduce the NATS message sizes on the roomserver output topic in some cases
+> * The roomserver input API now uses the process context and should handle graceful shutdowns better
+> * Guest registration is now correctly disabled when the `client_api.registration_disabled` configuration option is set
+> * One-time encryption keys are now cleaned up correctly when a device is logged out or removed
+> * Invalid state snapshots in the state storage refactoring migration are now reset rather than causing a panic at startup
+> 
+> Sytest compliance is up slightly:
+> 
+> * Client-server APIs: 67%, up from 65%
+> * Server-server APIs: 95%, same as before
+> 
+> As always, please feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for Dendrite-related chat!
+
+## Homeserver Deployment 📥️
+
+
+
+### Helm Chart ([website](https://gitlab.com/ananace/charts))
+
+Matrix Kubernetes applications packaged into helm charts
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) reports
+
+> And [my Helm Chart](https://gitlab.com/ananace/charts) updates continue as they do, with matrix-synapse being updated to 1.53.0
+
+## Dept of Bridges 🌉
+
+
+
+### matrix-appservice-kakaotalk ([website](https://src.miscworks.net/fair/matrix-appservice-kakaotalk/))
+
+A Matrix-KakaoTalk puppeting bridge.
+
+[Fair](https://matrix.to/#/@fair:miscworks.net) reports
+
+> Here are the first steps for a bridge to [KakaoTalk](https://www.kakaocorp.com/page/service/service/KakaoTalk?lang=en)! The bridge is based on [mautrix-python](https://github.com/mautrix/python) (having used [mautrix-facebook](https://github.com/mautrix/facebook) as a starting point--there's still plenty of Facebook-specific code in there), with the backend handled by [node-kakao](https://github.com/storycraft/node-kakao) (connected via RPC, as there seems to be no Python API for KakaoTalk!).
+> 
+> The bridge doesn't do much yet; all it can do is log in & sync your list of chats (if that). But it's under rapid development & decent momentum, so hopefully it will be usable soon!
+> 
+> For anyone brave enough to try it out, its setup steps are very similar to that of any of the [Python-based mautrix bridges](https://docs.mau.fi/bridges/python/setup/index.html) (though Docker is currently unsupported).
+> 
+> Discussion: [#matrix-appservice-kakaotalk:miscworks.net](https://matrix.to/#/#matrix-appservice-kakaotalk:miscworks.net)
+> Issue page: https://src.miscworks.net/fair/matrix-puppeteer-line/issues
+
+## Dept of Clients 📱
+
+### Nheko ([website](https://nheko-reborn.github.io))
+
+Desktop client for Matrix using Qt and C++17.
+
+[Nico](https://matrix.to/#/@deepbluev7:neko.dev) announces
+
+> We made a small release that just is compiled against the new mtxclient version to fix an issue with servers announcing support for Matrix v1.1 or higher. We strongly recommend you update before the next Synapse stable release is out.
+> 
+> Apart from that Nheko now has support for hidden read receipts (thanks to symphorien, see [MSC2285](https://github.com/matrix-org/matrix-doc/pull/2285)). ZenWalker updated our usage of deprecated gstreamer APIs. Malte has been spending a lot of effort on improving the scrolling experience on the PinePhone as well as allowing to search on mobile. Forwarding should now work properly again as well as calling on mobile and we fixed a small memory leak when opening some dialogs.
+
+### Element ([website](https://element.io))
+
+Everything related to Element but not strictly bound to a client
+
+[Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) announces
+
+> “Twosday” wasn’t the only exciting thing happening this week. Take a peek at everything else we had going on…
+> 
+> **Coming to a Poll near you…**
+> * From next week’s releases, you’ll discover two new updates on polls! First off, you’ll be able to edit a poll as long as no one has yet voted on it - which is great if you create a poll and realise you’ve made a small mistake. Even better, there’s now a new type of poll: ‘closed polls’ don’t show any results until the poll has ended, to keep the surprise.
+> 
+> **Location Sharing**
+> * Location Sharing is now available by default for users on all platforms, except desktop (where you can receive but not send locations). Check it out!
+> * The next stage is live location sharing and ‘pin dropping’, expect more soon.
+> 
+> **Threaded Messaging**
+> * Designed to make catching up on rooms easier, and to keep the main timeline as clutter free as possible, Threads are nearly here.
+> * You can try Threads out on all platforms - you’ll find them in Labs. This feature is experimental; let us know your feedback, and report any bugs as we continue to improve.
+> 
+> **Community testing**
+> * We will be looking at search result ordering on Web as part of the new search experience at 17:30 UTC / 18:30 CET on Tuesday, 1st of March
+> * We’re also hoping to test Threads on mobile devices towards the end of the week, join the testing room to get involved!
+> * Head over to [#element-community-testing:matrix.org](https://matrix.to/#/#element-community-testing:matrix.org) to hear the latest on all testing sessions!
+
+### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
+
+Secure and independent communication, connected via Matrix. Come talk with us in [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org)!
+
+[Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) announces
+
+> * The EleWeb team has been working on Spaces, Threads, and defects this week.
+> * We are starting to look at batched updates, which could be bringing performance improvements to us.
+> * On the process improvement side, we are looking at test coverage and process improvements around PR submission. Don’t be surprised if our developers start a conversation around tests when you submit your next PR 🙂
+> * V1.10.5 release candidate is available and release is expected to go out on Monday, 28th February.
+> * And don’t forget; the new and improved search experience is available. It’s in Beta so turn it on, try it out, and send us your feedback!
+>     - We will be talking to the community about planned improvements in the next Community Testing Session on Tuesday over in#element-community-testing:matrix.org
+> 
+> In labs (you can enable labs in settings on develop.element.io or on Nightly):
+> * Improvements to Threads reliability are happening everyday. We’re also making some tweaks to the user experience details, like dragging and dropping files into the Thread panel.
+
+### Element iOS ([website](https://github.com/vector-im/element-ios))
+
+Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
+
+[Manu](https://matrix.to/#/@Manu:matrix.org) reports
+
+> * Next week’s release (1.8.3) includes changes and improvements we’ve made to our overall app experience by closing some pesky UI defects.
+> * This week we’ve also been working on improving the reliability of our Labs features. If you’ve turned on Threads or Bubbles in Labs you may have experienced app slow downs or crashes. In the next version, these will be minimised.
+> * Spaces on iOS are also getting some attention at the moment and we’re hoping to improve the user experience of Spaces on Mobile.
+
+### Element Android ([website](https://github.com/vector-im/element-android))
+
+Secure and independent communication for Android, connected via Matrix. Come talk with us in [#element-android:matrix.org](https://matrix.to/#/#element-android:matrix.org)!
+
+[Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) announces
+
+> * The next release of Android (1.4.2) includes support for “@ room” and other usability defects you might have seen before… Fixes include steadying the notification badge in the room list, adding the correct interactions on bottom sheets, and opening a DM from the Space member list.
+> * We’ve also been working on upgrading the voice message experience, adding improvements like scrubbing! Keep sending voice notes and let us know what other improvements we should make.
+> * Our onboarding flow is also getting a new lick of paint. We want new users to our platform to have a simple and straight-forward experience when they’re creating an account.
+
+## Dept of Non Chat Clients 🎛️
+
+
+
+### Populus Viewer ([website](https://github.com/opentower/populus-viewer))
+
+A Social Annotation Tool Powered by Matrix
+
+[gleachkr](https://matrix.to/#/@gleachkr:matrix.org) says
+
+> ## Populus-Viewer
+> 
+> Over at [Populus-Viewer](https://github.com/opentower/populus-viewer), we're continuing to refine the UX, for maximum focus, efficiency and enjoyment. Since last time we've:
+> 1. Reworked the mobile view controls into a sidebar design.
+> 2. Improved the generation of highlight rectangles.
+> 3. Made sure that LaTeX and code listings are always displayed nicely
+> 4. Made it possible to modify text selections within a PDF using the keyboard
+> 5. Added "one-click" links for onboarding new users into a particular server, SSO flow and PDF collection.
+> 
+> We've also had some bug fixes related to federation, and had some of our first ever (maybe the first on matrix - first in the history of the universe?) federated social annotation sessions.
+> ## Populus-Philarchive
+> 
+> [Populus-Philarchive](https://opentower.github.io/populus-philarchive/), our proof-of-concept discussion overlay for preprint archives, now incorporates an OAI-PMH harvester, so it can aggregate OAI bibliographic metadata, and use that data for room creation and discovery. The implementation is pretty general, so it should be easy to tweak for any archive that supports OAI-PMH.
+> ## MSC3574
+> 
+> [MSC3574 - marking up resources](https://github.com/matrix-org/matrix-doc/pull/3574) got some love this week, as we added a proposal for serializing annotations on matrix that ought to be compatible with the [w3c web annotation data model](https://www.w3.org/TR/annotation-model/). This paves the way for interoperability between the matrix annotation ecosystem and services like hypothes.is, and hopefully will make matrix a compelling option even for institutions where compliance with existing web standards is a must.
+> 
+> As always, if you'd like to chat about any of these developments, come visit us at [#opentower:matrix.org](https://matrix.to/#/#opentower:matrix.org) !
+
+### Circles ([website](https://www.kombuchaprivacy.com/circles/))
+
+E2E encrypted social networking built on Matrix. Safe, private sharing for your friends, family, and community.
+
+[cvwright](https://matrix.to/#/@cvwright:matrix.org) reports
+
+> The Circles beta on iOS continues inching toward a public release later this Spring.
+> * This week I added support for infinite scrolling on timelines.  (Previously, scrolling the timelines was very clunky -- the user had to manually tap a button to "Load More" every 10-15 posts.)
+> * Also added a confirmation dialog when the user attempts to leave a group.
+> 
+> On Android, the prototype is coming along nicely, thanks to the efforts of our new developer Taras:
+> * The login screen works
+> * Currently working on implementing the timeline of social posts for groups
+
+## Dept of Widgets 🧩
+
+
+
+### Mjolnir Widget ([website](https://github.com/MTRNord/matrix-moderation-widget))
+
+A widget for moderating with mjolnir. Highly WIP. Use at your own risk!
+
+[MTRNord (they/them)](https://matrix.to/#/@mtrnord:nordgedanken.dev) reports
+
+> In the last 2 weeks, I increasingly had to learn how to moderate rooms properly, which brought up a lack of nice Mjölnir gui for me.
+> Due to that, I just started to write one.
+> It is at the time of writing still fairly young.
+> 
+> ## The current features are:
+> 
+> * An overview of the ban list data the user is in (Not for the specific Mjölnir currently. Also requires a user to have joined the list room)
+> * A quick form to ban a person
+> * A form to redact someone or a message
+> 
+> ## Planned features are:
+> 
+> * Support for showing MSC1929 information if available
+> * Writing a patch for Mjölnir, so the widget can know which banlist the bot watches, so only relevant lists show up.
+> * Editing the banlist (aka unbanning)
+> * Adding support for more advanced features like deactivation of users and removal of media on the matrix-media-repo.
+> * Covering most of Mjölnir's commands
+> * Redact on ban and similar utilities you might want while banning.
+> 
+> ## Small getting started (it is simple :D)
+> 
+> To use it, you simply can add it to your Mjölnir Admin room by putting `/addwidget https://moderation_widget.nordgedanken.dev?room_id=$matrix_room_id` (the variable will get replaced automatically) in the message bar and pressing enter. The widget runs entirely client side, so this is not sending any events to my server. If you still are concerned due to the big amount of permissions asked, you can just build it yourself and host it.
+> ## Code and Room
+> 
+> Code is at https://github.com/MTRNord/matrix-moderation-widget
+> Room is at: [#mjolnir-widget:nordgedanken.dev](https://matrix.to/#/#mjolnir-widget:nordgedanken.dev)
+
+> ![](/blog/img/2ad2037df9755054bd4ef6bc8cecf73a15ef5502.png)
+
+## Dept of SDKs and Frameworks 🧰
+
+
+
+### mtxclient ([website](https://github.com/Nheko-Reborn/mtxclient))
+
+Client API library for Matrix, built on top of libcurl
+
+[Nico](https://matrix.to/#/@deepbluev7:neko.dev) reports
+
+> You know what would be embarrassing? If changing the version number of something broke Nheko... Well, completely unrelated, mtxclient 0.6.2 is out now which fixes an issue where it would aggressively validate that version numbers started with an 'r'. Otherwise that release is API and ABI compatible, so if packagers could pick that up as a bugfix release into stable releases, that would be great!
+
+### Matrix-Rust-SDK-Bot-Framework-Helper ([website](https://github.com/MTRNord/mrsbfh))
+
+A toolkit for writing commandbots more efficient in rust for matrix.
+
+[MTRNord (they/them)](https://matrix.to/#/@mtrnord:nordgedanken.dev) says
+
+> ## 0.3.1
+> 
+> A small update was released, merging 2 month old PRs.
+> 
+> The changes are mainly features being now deactivated because we did not actually use them and fixing the example in one case. No updates to dependencies.
+> 
+> ## 0.4.0
+> 
+> Dependencies have been updated to the newest versions.
+
+## Dept of Ops 🛠
+
+[andrewsh](https://matrix.to/#/@andrewsh:matrix.org) reports
+
+> The distribution-provided Debian packages for Synapse will only be provided for Bookworm (in testing/unstable) and Bullseye (in bullseye-backports). If you’re still using Buster (through buster-backports-sloppy), consider switching to Bullseye or, alternatively, to packages provided by the Synapse upstream. 1.52.0 is the last version to be provided for Buster through the backports repository.
+
+[saces](https://matrix.to/#/@saces:c-base.org) reports
+
+> I did not find a docker container to ease/automate synapse and postgres maintenance, so I started one: https://gitlab.com/mb-saces/synatainer
+
+## Dept of Bots 🤖
+
+### reMarkable
+
+[Paul](https://matrix.to/#/@ptman:kapsi.fi) announces
+
+> I saw an interesting (to me) reMarkable telegram bot somewhere. But I prefer matrix and node.js was more difficult to deploy on embedded. So I wrote a reMarkable matrix bot in Go. https://gitlab.com/ptman/remarkable-matrix
+
+### matrix-ukraine-donation-bot
+
+[krazykirby99999](https://matrix.to/#/@krazykirby99999:matrix.org) says
+
+> A Matrix chat bot to send donation links to aid Ukraine in the 2022 Russian invasion of Ukraine.
+> 
+> ## Setup
+> Install Python 3.8 or higher
+> 
+> Install python-poetry
+> ```bash
+> python -m pip install poetry
+> ```
+> 
+> Clone Repository
+> ```bash
+> git clone https://github.com/KrazyKirby99999/matrix-ukraine-donation-bot.git
+> ```
+> 
+> Install Dependencies
+> ```bash
+> cd matrix-ukraine-donation-bot
+> python -m poetry install
+> ```
+> 
+> ## Usage:
+> Set environment variables
+> ```bash
+> HOMESERVER=https://matrix.org
+> USERNAME=matrix-ukraine-donation-bot
+> PASSWORD=password # or ACCESS_TOKEN=syt_...
+> ```
+> 
+> Run main.py
+> ```bash
+> python -m poetry run python main.py
+> ```
+> 
+> ## Example:
+>
+> ![](/blog/img/XcYvvtHMIiYjGMzERvirNTbh.png)
+
+### Matrix Community Manager ([website](https://gitlab.com/Sleuth56/Matrix-Community-Manager/))
+
+Looking for a bot to manage events and feedback from your community?
+
+[Sleuth](https://matrix.to/#/@sloth56:chat.mountainview.theworkpc.com) reports
+
+> Looking for a bot to manage events and feedback from your community? 
+> 
+> MCM an information bot. It manages the flow of information between community leaders and their community. 
+> 
+> It aggregates messages from community members in several ways.
+> 
+> * A @ mention. You can mention the bot with a message.
+> * A Direct Message. Members of your community can message this bot privately.
+> * hash tags. Using hash tags members of your community can send messages tagged to go to a specific back room.
+> 
+> You as an administrator of the bot can send timed announcements to any room using the built in matrix administration interface.
+> You can also manage tags, add and remove admin of the bot, add automatic replies and more. All from the comforts of your Matrix client.
+> 
+> If you have any questions or want help please join [#Matrix-Community-Manager:matrix.org](https://matrix.to/#/#Matrix-Community-Manager:matrix.org) Docs and installation guide can be found [here](https://sleuth56.gitlab.io/Matrix-Community-Manager/)
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|maescool.be|346|
+|2|2808.nl|387.5|
+|3|envs.net|394|
+|4|converser.eu|405|
+|5|carnot.cc|518|
+|6|reactos.org|519.5|
+|7|plocki.ddns.net|556|
+|8|mozilla.org|590|
+|9|matrix.fomin.site|660.5|
+|10|adminctrl.com|699|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|conduit.cyberdi.sk|197|
+|2|rcp.tf|224.5|
+|3|conduit.grich.sk|234|
+|4|nognu.de|261|
+|5|cry.is|319.5|
+|6|sspaeth.de|466|
+|7|matrix.sum7.eu|485|
+|8|dendrite.neilalexander.dev|565|
+|9|rustybever.be|614|
+|10|matrix.awesomesheep48.me|720.5|
+
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) with your updates!
