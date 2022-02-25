@@ -826,7 +826,7 @@ The Megolm session is then sent to each device in the room that it has not
 already sent the session to. This is done by creating an
 [`m.room_key`](https://spec.matrix.org/v1.1/client-server-api/#mroom_key) event
 that includes the Megolm session ID and Megolm session key, encrypting it with
-the Olm session, and sending it as an `m.room.encyrpted` to-device message.
+the Olm session, and sending it as an `m.room.encrypted` to-device message.
 
 Getting the session key from the Megolm session will give a key that will allow
 the recipient to decrypt the next message and all future messages encrypted
@@ -846,7 +846,7 @@ megolm_session_id[size] = '\0';
 
 size_t megolm_session_key_length = olm_outbound_group_session_key_length(megolm_session);
 char *megolm_session_key = malloc(megolm_session_key_length + 1);
-size = olm_outbound_gorup_session_key(megolm_session, megolm_session_key, megolm_session_ey_length);
+size = olm_outbound_group_session_key(megolm_session, megolm_session_key, megolm_session_ey_length);
 if (size == olm_error()) {
   // handle error
 }
