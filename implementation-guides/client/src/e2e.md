@@ -1377,7 +1377,7 @@ JavaScript:
 // assume we have the following functions available:
 // - getMegolmSession: get the inbound Megolm session
 
-const roomEvent; // the room event that we recieved
+const roomEvent; // the room event that we received
 
 if (roomEvent.type !== "m.room.encrypted"
     || roomEvent.content.algorithm !== "m.megolm.v1.aes-sha2") {
