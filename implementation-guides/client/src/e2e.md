@@ -1323,6 +1323,79 @@ switch (decryptedEvent.type) {
 
 ### Decrypting with Megolm
 
+Once the client has the inbound Megolm session, it can decrypt the room event.
+Note that the room event could be received before or after the Megolm session
+is received, so the client should handle both cases.
+
+C++:
+```c++
+// assume we have the following functions available:
+// - get_megolm_session: get the inbound Megolm session
+
+json room_event; // the room event that we received
+
+if (room_event["type"] != "m.room.encrypted"
+    || room_event["content"]["algorithm"] != "m.megolm.v1.aes-sha2") {
+  // This is not a Megolm-encrypted message.
+}
+
+OlmInboundGroupSession *inbound_session = get_megolm_session(
+  room_event["room_id"].get<std::string>(),
+  room_event["content"]["session_id"].get<std::string>()
+);
+
+std::string ciphertext = room_event["content"]["ciphertext"].get<std::string>();
+
+// copy the ciphertext because it will be overwritten
+char *ciphertext_copy = malloc(ciphertext.length());
+ciphertext.copy(ciphertext_copy, ciphertext.length());
+const plaintext_length = olm_group_decrypt_max_plaintext_length(
+  inbound_session, ciphertext.data(), ciphertext.length()
+);
+ciphertext.copy(ciphertext_copy, ciphertext.length());
+char *plaintext_buf = malloc(plaintext_length + 1);
+uint32_t message_index;
+plaintext_length = olm_group_decrypt(
+  inbound_session,
+  ciphertext_copy, plaintext_length,
+  plaintext_buf, plaintext_length,
+  message_index
+);
+
+if (plaintext_length == olm_error()) {
+  // handle error
+}
+
+plaintext_buf[plaintext_length] = '\0';
+auto decrypted_event = json::parse(plaintext_buf);
+
+assert(room_event["room_id"] == decrypted_event["room_id"]);
+```
+
+JavaScript:
+```javascript
+// assume we have the following functions available:
+// - getMegolmSession: get the inbound Megolm session
+
+const roomEvent; // the room event that we recieved
+
+if (roomEvent.type !== "m.room.encrypted"
+    || roomEvent.content.algorithm !== "m.megolm.v1.aes-sha2") {
+  // This is not a Megolm-encrypted message.
+}
+
+const inboundSession = getMegolmSession(
+  roomEvent.room_id, roomEvent.content.session_id,
+);
+
+const plaintext = inboundSession.decrypt(roomEvent.content.ciphertext);
+const decryptedEvent = JSON.parse(plaintext);
+
+if (roomEvent.room_id !== decryptedEvent.room_id) {
+  throw new Error("Room ID does not match");
+}
+```
+
 ## Encrypted attachments
 
 ## Requesting and forwarding keys
