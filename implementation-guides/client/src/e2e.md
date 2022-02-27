@@ -1101,7 +1101,7 @@ for(auto it = olm_sessions.begin(); it != olm_sessions.end(); ++it) {
   );
   char *plaintext_buf = malloc(plaintext_length);
   ciphertext_body.copy(ciphertext_copy, ciphertext_body.length());
-  size_t len = olm_decrypt(
+  plaintext_length = olm_decrypt(
     session,
     message_type,
     ciphertext_copy, ciphertext_body.length(),
@@ -1110,10 +1110,10 @@ for(auto it = olm_sessions.begin(); it != olm_sessions.end(); ++it) {
 
   free(ciphertext_copy);
 
-  if (len != olm_error()) {
+  if (plaintext_length != olm_error()) {
     mark_session_as_successfully_used(sender, sender_key, session);
     decrypted = true;
-    plaintext = std::string(plaintext_buf, len);
+    plaintext = std::string(plaintext_buf, plaintext_length);
     free(plaintext_buf);
     break;
   }
@@ -1143,17 +1143,17 @@ if (!decrypted && message_type == 0) {
     );
     ciphertext_body.copy(ciphertext_copy, ciphertext_body.length());
     char *plaintext_buf = malloc(plaintext_length);
-    size_t len = olm_decrypt(
+    plaintext_length = olm_decrypt(
       session,
       message_type,
       ciphertext_copy, ciphertext_body.length(),
       plaintext_buf, plaintext_length
     );
     free(ciphertext_copy);
-    if (len != olm_error()) {
+    if (plaintext_length != olm_error()) {
       save_olm_session(sender, sender_key, session);
       decrypted = true;
-      plaintext = std::string(plaintext_buf, len);
+      plaintext = std::string(plaintext_buf, plaintext_length);
     } else {
       olm_clear_session(session);
       free(session_memory);
