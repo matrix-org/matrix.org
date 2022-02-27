@@ -681,12 +681,16 @@ stripped_device_keys.erase("unsigned");
 std::string device_keys_for_signing = canonical_json(stripped_device_keys);
 std::string device_keys_signature =
   target_device_keys["signatures"][target_user_id][std::string("ed25519:") + target_device_id].get<std::string>();
+// copy the signature because olm_ed25519_verify will overwrite it
+char *signature_copy = malloc(device_keys_signature.length());
+device_keys_signature.copy(signature_copy, device_keys_signature.length());
 if (olm_ed25519_verify(olm_utility,
       target_ed25519_key.data(), target_ed25519_key.length(),
       device_keys_for_signing.data(), device_keys_for_signing.length(),
-      device_keys_signature.data(), device_keys_signature.length()) == olm_error()) {
+      signature_copy, device_keys_signature.length()) == olm_error()) {
   // signature not valid, so this device should be dropped
 }
+free(signature_copy);
 
 json stripped_otk = signed_otk;
 stripped_otk.erase("signatures");
@@ -694,14 +698,18 @@ stripped_otk.erase("unsigned");
 std::string otk_for_signing = canonical_json(stripped_otk);
 std::string otk_signature =
   signed_otk["signatures"][target_user_id][std::string("ed25519:") + target_device_id].get<std::string>();
+// copy the signature because olm_ed25519_verify will overwrite it
+signature_copy = malloc(otk_signature.length());
+device_keys_signature.copy(signature_copy, device_keys_signature.length());
 if (olm_ed25519_verify(
       olm_utility,
       target_ed25519_key.data(), target_ed25519_key.length(),
       otk_for_signing.data(), otk_for_signing.length(),
-      otk_signature.data(), otk_signature.length()) == olm_error()) {
+      signature_copy, otk_signature.length()) == olm_error()) {
   // signature not valid, so this device should be dropped
 }
 std::string one_time_key = signed_otk["key"].get<std::string>();
+free(signature_copy);
 
 
 // create the olm session
@@ -1084,22 +1092,31 @@ bool decrypted = false;
 std::string plaintext;
 for(auto it = olm_sessions.begin(); it != olm_sessions.end(); ++it) {
   OlmSession *session = *it;
+
+  // copy ciphertext because olm_decrypt_* overwrites the buffer
+  char *ciphertext_copy = malloc(ciphertext_body.length());
+  ciphertext_body.copy(ciphertext_copy, ciphertext_body.length());
+
   size_t plaintext_length = olm_decrypt_max_plaintext_length(
     session,
     message_type,
-    ciphertext_body.data(), ciphertext_body.length()
+    ciphertext_copy, ciphertext_body.length()
   );
   char *plaintext_buf = malloc(plaintext_length);
-  size_t rv = olm_decrypt(
+  ciphertext_body.copy(ciphertext_copy, ciphertext_body.length());
+  size_t len = olm_decrypt(
     session,
     message_type,
-    ciphertext_body.data(), ciphertext_body.length(),
+    ciphertext_copy, ciphertext_body.length(),
     plaintext_buf, plaintext_length
   );
-  if (rv != olm_error()) {
+
+  free(ciphertext_copy);
+
+  if (len != olm_error()) {
     mark_session_as_successfully_used(sender, sender_key, session);
     decrypted = true;
-    plaintext = std::string(plaintext_buf, plaintext_length);
+    plaintext = std::string(plaintext_buf, len);
     free(plaintext_buf);
     break;
   }
@@ -1110,28 +1127,36 @@ if (!decrypted && message_type == 0) {
   // none of the existing sessions worked, so try creating a new Olm session
   void *session_memory = malloc(olm_session_size());
   OlmSession *session = olm_session(session_memory);
+
+  // copy the ciphertext because olm_create_inbound_session_from will overwrite it
+  char *ciphertext_copy = malloc(ciphertext_body.length());
+  ciphertext_body.copy(ciphertext_copy, ciphertext_body.length());
+
   size_t rv = olm_create_inbound_session_from(
     session, account,
     sender_key.data(), sender_key.length(),
-    ciphertext_body.data(), ciphertext_body.length()
+    ciphertext_copy, ciphertext_body.length()
   )
   if (rv != olm_error) {
+    ciphertext_body.copy(ciphertext_copy, ciphertext_body.length());
     size_t plaintext_length = olm_decrypt_max_plaintext_length(
       session,
       message_type,
-      ciphertext_body.data(), ciphertext_body.length()
+      ciphertext_copy, ciphertext_body.length()
     );
+    ciphertext_body.copy(ciphertext_copy, ciphertext_body.length());
     char *plaintext_buf = malloc(plaintext_length);
-    size_t rv = olm_decrypt(
+    size_t len = olm_decrypt(
       session,
       message_type,
-      ciphertext_body.data(), ciphertext_body.length(),
+      ciphertext_copy, ciphertext_body.length(),
       plaintext_buf, plaintext_length
     );
-    if (rv != olm_error()) {
+    free(ciphertext_copy);
+    if (len != olm_error()) {
       save_olm_session(sender, sender_key, session);
       decrypted = true;
-      plaintext = std::string(plaintext_buf, plaintext_length);
+      plaintext = std::string(plaintext_buf, len);
     } else {
       olm_clear_session(session);
       free(session_memory);
