@@ -1,0 +1,78 @@
+---
+date: '2022-03-08'
+title: Synapse 1.54 released
+categories:
+- Releases
+author: Brendan Abolivier
+---
+
+[Synapse 1.54](https://github.com/matrix-org/synapse/releases/tag/v1.54.0) is
+out! Let's see what goodness is coming your way with this new release.
+
+## Improving URL previews
+
+As part of the Matrix specification, Matrix clients have the option to rely on
+the homeserver to generate URL previews. This means the homeserver (in this case
+Synapse) needs to have a look at the content at that URL and extract data to
+send back to the client.
+
+In the past, Synapse has had issues with generating complete URL previews, and
+some metadata (e.g. image, description) would be missing from the data that
+Synapse sends to clients. Synapse 1.54 includes improvements to the generation
+of URL previews, and while testing it we've been able to observe improvements to
+previews generated for Twitter and Reddit.
+
+## New module callbacks
+
+Synapse modules allow third-party developers to write extra features for
+Synapse, that wouldn't necessarily be generic enough to fit within the Matrix
+specification. This includes custom behaviours such as smarter event filters,
+bespoke media storage providers, or spam checkers. Since we rewrote Synapse's
+module system in [Synapse
+1.37](https://matrix.org/blog/2021/06/30/security-update-synapse-1-37-1-released#synapse-137-release-announcement),
+we have been improving it by adding new callback functions that module can
+implement, allowing them to interface better with Synapse.
+
+Synapse 1.54 includes three new module callbacks. One of them,
+[`get_displayname_for_registration`](https://matrix-org.github.io/synapse/v1.54/modules/password_auth_provider_callbacks.html#get_displayname_for_registration),
+allows modules to define the display name for newly registered users. Together
+with the existing
+[`get_username_for_registration`](https://matrix-org.github.io/synapse/v1.54/modules/password_auth_provider_callbacks.html#get_username_for_registration)
+introduced in [Synapse
+1.52](https://matrix.org/blog/2022/02/08/synapse-1-52-released/), they allow
+modules a better control over the user registration process.
+
+The two other module callbacks introduced in Synapse 1.54,
+[`on_profile_update`](https://matrix-org.github.io/synapse/v1.54/modules/third_party_rules_callbacks.html#on_profile_update)
+and
+[`on_user_deactivation_status_changed`](https://matrix-org.github.io/synapse/v1.54/modules/third_party_rules_callbacks.html#on_user_deactivation_status_changed),
+allow modules to react to profile changes, as well as the deactivation (or
+reactivation) of users.
+
+## Everything else
+
+This release of Synapse also includes more work to make joining large Matrix
+rooms faster (I was telling you about that in the [Synapse 1.53 release
+announcement](https://matrix.org/blog/2022/02/22/synapse-1-53-released)). While
+it's still very experimental and not yet ready for show time, it's still very
+exciting to see this work happening!
+
+Synapse 1.54 also includes a change to the [client-side versions
+endpoint](https://spec.matrix.org/latest/client-server-api/#get_matrixclientversions)
+to advertise Matrix 1.1 and 1.2. See the [Matrix
+1.2](https://matrix.org/blog/2022/02/02/matrix-v-1-2-release) release
+announcement to read all about the changes this latest version of the
+specification brings to the ecosystem.
+
+See the [full
+changelog](https://github.com/matrix-org/synapse/releases/tag/v1.54.0) for a
+complete list of changes in this release. Also please have a look at the
+[upgrade
+notes](https://matrix-org.github.io/synapse/v1.54/upgrade#upgrading-to-v1540)
+for this version.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
+thanks to everyone who contributed to this release, including (in no particular
+order) [Dirk Klimpel](https://github.com/dklimpel), [Andrew
+Ryan](https://github.com/AndrewRyanChama), and
+[lukasdenk](https://github.com/lukasdenk).
