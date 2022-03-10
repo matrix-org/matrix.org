@@ -40,7 +40,7 @@ const OTWSU = ({ data }) => {
   return (
     <Layout
       hasNavPadding="true"
-      excerptOverride="Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the second Wednesday of every month at 6pm UTC"
+      excerptOverride="Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the last Wednesday of every month at 6pm Paris time."
       titleOverride={title}
     >
       <Helmet title={title}>
@@ -63,8 +63,8 @@ const OTWSU = ({ data }) => {
         </p>
         <p>
           Open Tech Will Save Us is a virtual meetup, taking the form of a
-          monthly live video stream broadcasting on the second Wednesday of
-          every month at 6pm UK time.
+          monthly live video stream broadcasting on the last Wednesday of
+          every month at 6pm Paris time.
         </p>
         <p>
           We discuss issues relating to technology, especially the importance of
@@ -122,13 +122,7 @@ const OTWSU = ({ data }) => {
           for you.
         </p>
         <h3>Important note on timezones</h3>
-        5pm UTC is:
-        <ul>
-          <li>7pm in Berlin</li>
-          <li>6pm in the UK</li>
-          <li>1pm in New York</li>
-          <li>10am in California</li>
-        </ul>
+        Paris time is CET in winter and CEST in summer.
       </div>
     </Layout>
   );
