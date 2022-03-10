@@ -63,8 +63,8 @@ const OTWSU = ({ data }) => {
         </p>
         <p>
           Open Tech Will Save Us is a virtual meetup, taking the form of a
-          monthly live video stream broadcasting on the second Wednesday of
-          every month at 6pm UK time.
+          monthly live video stream broadcasting on the last Wednesday of
+          every month at 6pm Paris time.
         </p>
         <p>
           We discuss issues relating to technology, especially the importance of
