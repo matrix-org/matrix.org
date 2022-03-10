@@ -9,7 +9,7 @@ import config from '../../config'
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
 const OpenTech = () => {
-    return (<Layout hasNavPadding="true" excerptOverride="Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the second Wednesday of every month at 5pm UTC"
+    return (<Layout hasNavPadding="true" excerptOverride="Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the last Wednesday of every month at 6pm Paris Time"
     titleOverride={title}>
             <Helmet title={title}>
                 <meta name="twitter:card" content="summary_large_image" />
