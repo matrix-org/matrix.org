@@ -97,7 +97,7 @@ const Bridges = ({ data }) => {
       <div className="mxgrid">
         <div className="mxgrid__item50">
           <p>An important idea in Matrix is <em>Interoperability</em>. This means that Matrix is open to exchanging data and messages with other platforms using an <a href="https://matrix.org/docs/spec">Open Standard</a>. We refer to the connection to other platforms as <em>bridging</em>.</p>
-          <p>For a thorough examination of the different methods of bridging, and a discussion of the terminology involved, check out <em><a href="https://matrix.org/docs/guides/types-of-bridging">How do I bridge thee? Let me count the ways...</a></em></p>
+          <p>For a thorough examination of the different methods of bridging, and a discussion of the terminology involved, check out <em><a href="https://matrix.org/docs/guides/types-of-bridging">Types of Bridging</a></em></p>
 
           <p><strong>Portal rooms</strong>: these control chunks of room aliases namespace. For example, <code>#libera.chat<i>#channelname</i>:matrix.org</code> corresponds to <i>#channelname</i> on Libera.chat. In this way, Matrix users can transparently join IRC channels on Libera.chat. Portal rooms are typically managed by the remote network's side of the room.</p>
 
