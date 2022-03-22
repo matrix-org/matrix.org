@@ -8,15 +8,12 @@ on:
 
 jobs:
   # Apply styling to the spec documents.
-  # This step also sets up the OpenAPI UI.
   build-spec:
     name: "📖 Legacy spec"
     runs-on: ubuntu-latest
     steps:
       - name: "📥 Source checkout"
         uses: actions/checkout@v2
-        with:
-          submodules: 'recursive'
       - name: "📖 Update docs"
         run: |
           scripts/update_docs.sh
@@ -59,7 +56,6 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            gatsby/public
             gatsby/.cache
           key: ${{ runner.os}}-gatsby-build-${{ github.run_id }}
           restore-keys: |
