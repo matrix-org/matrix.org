@@ -31,9 +31,10 @@ for more information.
 `synctl` is a tool provided as part of Synapse to run and manage your instance
 and its workers (if any).
 
-As part of our work to enable reproducible builds in Synapse, we have recently
-moved the way we package this tool. As of this release, homeserver
-administrators should stop invoking it using its direct path (e.g.
+As part of our work to integrate [Poetry](https://python-poetry.org/) in Synapse
+(which in turn will enable a lot of cool things, such as reproducible builds),
+we have recently moved the way we package this tool. As of this release,
+homeserver administrators should stop invoking it using its direct path (e.g.
 `/path/to/synctl start`), but should instead call it directly, e.g. `synctl
 start`.
 
