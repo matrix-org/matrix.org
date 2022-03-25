@@ -10,6 +10,21 @@ Hi all, [Synapse
 1.55](https://github.com/matrix-org/synapse/releases/tag/v1.55.0) is out! Let's
 see the main talking points of this new release.
 
+> Update: After the initial release of Synapse 1.55, the developers of a
+> third-party tool (Jinja, which is the tool Synapse uses to render email and
+> web templates) released a new version of their project which proved
+> incompatible with Synapse. To address this issue, we have released [Synapse
+> 1.55.2](https://github.com/matrix-org/synapse/releases/tag/v1.55.2).
+>
+> Deployments of Synapse using the `matrixdotorg/synapse` Docker image or Debian
+> packages from `packages.matrix.org` are not affected as they are already using
+> a compatible version of the tool.
+>
+> It's worth noting that the work we are doing to integrate
+> [Poetry](https://python-poetry.org/) into Synapse (more on that a bit further
+> in this post) will, once completed, prevent this kind of issues from
+> happening.
+
 ## Removing support for Mjolnir 1.3.1 and older
 
 Administrators of large homeservers and communities will already be familiar
