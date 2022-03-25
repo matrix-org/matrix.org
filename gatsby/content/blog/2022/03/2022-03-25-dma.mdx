@@ -34,7 +34,7 @@ our understanding is that the DMA will mandate:
 
 This is the best possible outcome imaginable for the open internet.  Never
 again will a big tech company be able to hold their users hostage in a walled
-garden again, or arbitrarily close down or sabotage their APIs.
+garden, or arbitrarily close down or sabotage their APIs.
 
 ### So, what’s the catch?
 
@@ -77,9 +77,11 @@ There are solutions to this, however:
 * The gatekeeper could switch to a decentralised end-to-end encrypted protocol
   like Matrix to preserve end-to-end encryption throughout.  This is
   obviously significant work on the gatekeeper’s side, but we shouldn’t rule
-  it out.  (We’d ideally need to figure out decentralised/federated
-  identity-lookup first though, to avoid switching from one centralised
-  identity database to another).
+  it out.  For instance, making the transition for a non-encrypted service is
+  impressively little work, as [we proved with Gitter](https://matrix.org/blog/2020/12/07/gitter-now-speaks-matrix#how-do-you-make-an-existing-chat-system-talk-matrix).
+  (We’d ideally need to figure out decentralised/federated identity-lookup
+  first though, to avoid switching from one centralised identity database
+  to another).
 
 * Worst case, we could flag to the user that their conversation is insecure
   (the chat equivalent of a scary TLS certificate warning).  Honestly, this
@@ -119,7 +121,7 @@ The final complaint is about moderation and abuse: while open APIs are good
 news for consumer choice, they can also be used by spammers, phishers and
 other miscreants to cause problems for the users within the gatekeeper.  Much
 like a mediaeval citadel; opening up your walled garden means that both good
-and people can turn up.  And much like real life, this is a solvable problem,
+and bad people can turn up.  And much like real life, this is a solvable problem,
 even if it’s unfortunate: the benefits of free trade massively outweigh the
 downsides of having to police strangers more effectively.  Frankly,
 moderation and anti-abuse approaches on the Internet today are infamously
