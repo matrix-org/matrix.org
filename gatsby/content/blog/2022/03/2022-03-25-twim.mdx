@@ -1,0 +1,510 @@
+---
+date: '2022-03-25'
+title: 'This Week in Matrix 2022-03-25'
+categories:
+  - This Week in Matrix
+author: Thib
+image: https://matrix.org/blog/img/762d6f95db9c7e5acf8f0cb4bfee30ed794c9c9e.png
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sRS618AbZ8I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Dept of *Status of Matrix* 🌡️
+
+[Thib](https://matrix.to/#/@thib:ergaster.org) announces
+
+> You might have been following [our past efforts](https://www.youtube.com/watch?v=RHaXIHiRlHQ&t=417s) on [making sure the DMA was meaningful](https://www.youtube.com/watch?v=JJGK5ZIuTIw). Those efforts [are being rewarded, and Amandine covers in a blog post what this means for Element](https://element.io/blog/a-big-step-to-address-big-tech/) and other businesses in Europe. Matthew [covers what this means for Matrix and end to end ecrypted services](https://matrix.org/blog/2022/03/25/interoperability-without-sacrificing-privacy-matrix-and-the-dma).
+
+## Dept of Spec 📜
+
+[Andrew Morgan (anoa)](https://matrix.to/#/@andrewm:element.io) announces
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+> 
+> 
+> ## MSC Status
+> 
+> **New MSCs:**
+> * [MSC3755: Member pronouns](https://github.com/matrix-org/matrix-spec-proposals/pull/3755)
+> 
+> **MSCs in Proposed Final Comment Period:**
+> * [MSC2246: Asynchronous media uploads](https://github.com/matrix-org/matrix-spec-proposals/pull/2246)
+> * [MSC3700: Deprecate plaintext sender key](https://github.com/matrix-org/matrix-spec-proposals/pull/3700)
+> 
+> **MSCs in Final Comment Period:**
+> * [MSC3667: Enforce integer power levels](https://github.com/matrix-org/matrix-spec-proposals/pull/3667) (merge)
+> 	
+> **Merged MSCs:**
+> * *No MSCs were merged this week.*
+> 
+> ## Spec Updates
+> 
+> Mostly continued review of MSCs, while implementation work continues on in the background.
+> 
+> 
+> ## Random MSC of the Week
+> 
+> The random MSC of the week is... [MSC2499: Fixes for Well-known URIs](https://github.com/matrix-org/matrix-spec-proposals/pull/2499)!
+> 
+> This MSC proposes some much-desired practical and usability fixes to the "Well-Known" discovery method for Matrix homeservers. This is part of the system that enables homeserver's to "delegate" their homeserver address (your Matrix ID is @alice:example.com, but your homeserver is listening for requests on homeserver.example.com).
+> 
+> Well-known for homeserver delegation was introduced a number of years ago, and since then some friction has arisen from various implementations. This MSC aims to address a collection of them!
+
+## Dept of Servers 🏢
+
+### Synapse ([website](https://github.com/matrix-org/synapse/))
+
+Synapse is a Matrix homeserver implementation developed by the matrix.org core team
+
+[Brendan Abolivier](https://matrix.to/#/@babolivier:element.io) says
+
+> Hey everyone! This week we've released [Synapse 1.55](https://github.com/matrix-org/synapse/releases/tag/v1.55.0), which includes a bunch of new features, performance improvements and bugfix. If you're using Mjolnir to moderate your rooms, and/or `synctl` to manage your homeserver, this release also introduces a few changes you definitely want to be aware of, head over to the [announcement](https://matrix.org/blog/2022/03/22/synapse-1-55-released) on the matrix.org blog for more!
+> 
+> Yesterday, we noticed a compatibility issue with a newly released version of [Jinja](https://jinja.palletsprojects.com/en/3.1.x/), which is the tool we use in Synapse to render e-mail and web templates. We've quickly put out [Synapse 1.55.2](https://github.com/matrix-org/synapse/releases/tag/v1.55.2) to address this - so if you were unable to start Synapse because of it just update and you should be fine 🙂
+> Note that this doesn't apply to deployments of Synapse using the `matrixdotorg/synapse` Docker image or Debian packages from `packages.matrix.org` since they are already using a compatible version of Jinja.
+> 
+> Apart from that, work continues towards integrating [Poetry](https://python-poetry.org/) with Synapse, which should prevent this kind of issues from happening in the future, and on improving room join times.
+
+### Dendrite ([website](https://invent.kde.org/network/neochat))
+
+Second generation Matrix homeserver
+
+[neilalexander](https://matrix.to/#/@neilalexander:matrix.org) announces
+
+> We've just released [Dendrite 0.7.0](https://github.com/matrix-org/dendrite/releases/tag/v0.7.0), which has quite a lengthy list of changes:
+> 
+> * The roomserver input API will now queue all events into NATS, which provides better crash resilience
+> * The roomserver input API now configures per-room consumers, which should use less memory
+> * Canonical aliases can now be added and removed
+> * MSC2946 Spaces Summary now works correctly, both locally and over federation
+> * Healthcheck endpoints are now available at:
+>   * `/_dendrite/monitor/up`, which will return 200 when Dendrite is ready to accept requests
+>   * `/_dendrite/monitor/health`, which will return 200 if healthy and 503 if degraded for some reason
+> * The `X-Matrix` federation authorisation header now includes a `destination` field, as per MSC3383
+> * The `/sync` endpoint now uses less memory by only ranging state for rooms that the user has participated in
+> * The `/messages` endpoint now accepts stream positions in both the `from` and `to` parameters
+> * Dendrite will now log a warning at startup if the file descriptor limit is set too low
+> * The federation client will now attempt to use HTTP/2 if available
+> * The federation client will now attempt to resume TLS sessions if possible, to reduce handshake overheads
+> * The built-in NATS Server has been updated to version 2.7.4
+> * NATS streams that don't match the desired configuration will now be recreated automatically
+> * When performing a graceful shutdown, Dendrite will now wait for NATS Server to shutdown completely, which should avoid some corruption of data on-disk
+> * The `create-account` tool has seen a number of improvements, will now ask for passwords automatically
+> * The `/sync` endpoint will no longer lose state events when truncating the timeline for history visibility
+> * The `/context` endpoint now works correctly with `lazy_load_members`
+> * The `/directory/list/room/{roomID}` endpoint now correctly reports whether a room is published in the server room directory or not
+> * Some bugs around appservice username validation have been fixed
+> * Roomserver output messages are no longer unnecessarily inflated by state events, which should reduce the number of NATS message size errors
+> * Stream IDs for device list updates are now always 64-bit, which should fix some problems when running Dendrite on a 32-bit system
+> * Purging room state in the sync API has been fixed after a faulty database query was corrected
+> * The federation client will now release host records for remote destinations after 5 minutes instead of holding them in memory forever
+> * Remote media requests will now correctly return an error if the file cannot be found or downloaded
+> * A panic in the media API that could happen when the remote file doesn't exist has been fixed
+> * Various bugs around membership state and invites have been fixed
+> * The memberships table will now be correctly updated when rejecting a federated invite
+> * The client API and appservice API will now access the user database using the user API rather than accessing the database directly
+> 
+> In addition, there are some minor changes for Docker users:
+> 
+> * Docker images are now published to GitHub Container Register as well as Docker Hub — they can be found [here](https://github.com/orgs/matrix-org/packages?repo_name=dendrite)
+> * Docker images are now being automatically generated for the `main` branch by CI and will be available on the `:main` tag
+> 
+> As always, feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for Dendrite-related discussion!
+
+## Dept of Bridges 🌉
+
+### matrix-appservice-kakaotalk ([website](https://src.miscworks.net/fair/matrix-appservice-kakaotalk/))
+
+A Matrix-KakaoTalk puppeting bridge.
+
+[Fair](https://matrix.to/#/@fair:miscworks.net) reports
+
+> This week brings yet more bugfixes & stability to DMs: now, there should be no trouble sending messages into a KakaoTalk DM that hasn't been active for a few days.
+> 
+> The other major improvements are:
+> * A command for listing your KakaoTalk friends list, appropriately named `list-friends`
+> * Receiving images from KakaoTalk
+> 
+> I had hoped to finish support for sending images from Matrix by today, but I couldn't quite crack it in time--either KakaoTalk changed their API for sending media messages, or I'm doing something wrong 🙃
+> 
+> Nonetheless, the bridge is rapidly approaching a state of being usable!
+> 
+> ---
+> Discussion: [#matrix-appservice-kakaotalk:miscworks.net](https://matrix.to/#/#matrix-appservice-kakaotalk:miscworks.net)
+> Issue page: https://src.miscworks.net/fair/matrix-appservice-kakaotalk/issues
+
+## Dept of Clients 📱
+
+### Syphon ([website](https://syphon.org))
+
+Chat with your privacy and freedom intact
+
+[0x1a8510f2](https://matrix.to/#/@0x1a8510f2:0x1a8510f2.space) announces
+
+> Hi all 👋.
+> 
+> A little over a year has passed since our last update, but we're not dead! On the contrary, Syphon has seen some significant improvements over the last year both in terms of features and project structure; the project is more alive than ever before, and we're really excited to share some updates!
+> 
+> **Core Team**
+> 
+> Syphon now has a core team, consisting of @ereio:matrix.org (creator of Syphon), @ed:geraghty.london, @dnisbetjones:mozilla.org, and @0x1a8510f2:0x1a8510f2.space (me)! With some of the workload now being shared, we're hoping Syphon will grow even faster with less time needed to review and merge PRs, triage and fix bugs, evaluate and implement features and answer support requests.
+> 
+> **Cross-platform Availability**
+> 
+> Syphon has been steadily expanding its list of supported platforms over the past year:
+> * @ed:geraghty.london worked hard to bring Syphon to Windows with full feature parity, including (currently unofficial) Windows builds of Syphon.
+> * @btdmaster:asra.gr has created an [AUR package of Syphon](https://aur.archlinux.org/packages/syphon-bin) for Arch Linux users.
+> * I've been busy creating a [flatpak for Syphon](https://flathub.org/apps/details/org.syphon.Syphon) which is available on Flathub.
+> * Regular and official ARM64 builds are also planned soon, with the first manual one already released. Once the CI infrastructure is properly set up, these will be included for every release and the flatpak will receive ARM64 support too!
+> 
+> **Releases**
+> 
+> Between `0.1.7` (21 Mar 2021) and `0.2.12` (23 Mar 2022), 21 releases were published. Of course, too much changed to list everything, but here are some highlights:
+> * Multi-account support 🎉
+> * Media messages 🎉
+> * Markdown support 🎉
+> * Message editing 🎉
+> * Key import and export 🎉
+> * App lock with encryption 🎉
+> * HTTP proxy support 🎉
+> * Theme tweaks
+> * 3pid auth support
+> * EXIF data removal from sent images
+> * System brightness setting
+> * Various customisation options
+> * (Unencrypted) chat message search
+> * Ability to deactivate an account
+> * Countless new translations
+> * Massive performance improvements
+> * Numerous bug fixes (including encryption and SSO)
+> * Lots of refactoring and cleanup
+> 
+> Many of these would not have been possible without our awesome contributors.
+> 
+> **Translations**
+> 
+> We have also received many contributions in the form of translations and Syphon now supports, at least partially, 26 languages. Of these, 6 languages are fully or almost fully translated. To deal with all the incoming translations, there is now also an [official Weblate page for Syphon](https://hosted.weblate.org/projects/syphon/syphon/).
+> 
+> All of these translations are submitted by volunteers and we're really grateful for their contributions in making Syphon more accessible to an international audience.
+> 
+> **Syphon Space**
+> 
+> We also now have an official Syphon space which we use for support, development discussion or just friendly offtopic chat. Come join us if you like at [#syphon-space:matrix.org](https://matrix.to/#/#syphon-space:matrix.org)!
+> ![](/blog/img/9ba6ff09e72a1e02e845db105a2adafee51c91e9b3ec9a4ddf43d80a2933099a.jpg)
+> ![](/blog/img/94ca6df8c762b3d003f5abfed88b0ef3f1d47b8a6e29a04718dbfb768b4cfd85.jpg)
+
+### SchildiChat ([website](https://schildi.chat))
+
+SchildiChat is a fork of Element that focuses on UI changes such as message bubbles and a unified chat list for both direct messages and groups, which is a more familiar approach to users of other popular instant messengers.
+
+[SpiritCroc](https://matrix.to/#/@spiritcroc:spiritcroc.de) reports
+
+> SchildiChat-Android now has more styles of message bubbles! So if you prefer the Schildi-bubbles over the Element ones (which you can use too in SchildiChat if you want), you can  now also select between bubbles with or without tail, and select some more round bubbles than what we had previously, which was a highly requested feature!
+> 
+> ![](/blog/img/TCXQEWpnvMjytkXtIIoHEPGj.png)
+> 
+> If you wonder what makes SchildiChat special except for the different design now that Element has bubbles as well: it's hard to describe in a couple of short sentences, as it's mostly in the details.
+> So if you are interested in a list of things that we did on Android, I wrote up some aspects [here](https://github.com/SchildiChat/SchildiChat-android/blob/sc/FEATURES.md).
+> Note however that this list is usually not really kept up-to-date, and there might already be some things that are now outdated since I added them.
+> However, it might give you some general ideas of what SchildiChat has to offer :)
+
+### Nheko ([website](https://nheko-reborn.github.io))
+
+Desktop client for Matrix using Qt and C++17.
+
+[Nico](https://matrix.to/#/@deepbluev7:neko.dev) reports
+
+> Beep, boop, v0.9.3 is out. It's mostly bugfixes and small improvements, changelog below:
+> 
+> ## Highlights
+> 
+> * New upload UX
+>   - Queue multiple uploads by pasting or dragging multiple files.
+>   - Videos will now properly have a thumbnail as well as images.
+>   - Duration, width and height is now also properly included so that clients can resize appropriately.
+>   - Thumbnails are excluded if they are bigger than the original image. (tastytea)
+> * Improvements for mobile devices (Malte E)
+>   - You should now be able to scroll by touching anywhere with no random dead zones.
+>   - Preedit text can now be used in a completer and is properly sent
+>   - If an input method is active, pressing Enter will not send the current message.
+> 
+> ## Features
+> 
+> * Optionally always open videos and images in an external program. (math)
+> 
+> ## Improvements
+> 
+> * Build macOS releases against Qt 5.15.3 to resolve missing spaces after some punctuation.
+> * Send the shortcode as the body for stickers without a body.
+> * Elide long usernames in the timeline. (Malte E)
+> * Cleanup the reply popup. (Malte E)
+> * Use standard buttons where possible. (tastytea)
+> * Various improvements to the bubble layout. (Malte E)
+> * Enable online key backup by default.
+> * Update the bundled gstreamer in our Flatpaks.
+> 
+> ## Translations
+> 
+> * Indonesian (Linerly)
+> * Estonian (Priit)
+> * Finnish (Priit)
+> * Esperanto (Tirifto)
+> 
+> ## Bugfixes
+> 
+> * Fix hovering the action menu.
+> * Try to avoid using unknown UIA flows.
+> * Don't Components actively in use.
+> * Fix screensharing.
+> * Fix device id when doing SSO logins.
+> 
+> Downloads should be live now, flatpak might take a while to publish still :3
+> ![](/blog/img/yjNmGUXwWEhtOOhbsqFyloYx.png)
+
+### Fractal ([website](https://gitlab.gnome.org/GNOME/fractal))
+
+Matrix messaging app for GNOME written in Rust.
+
+[Julian Sparber](https://matrix.to/#/@jsparber:gnome.org) reports
+
+> Hello folks, quick update on what major things happened in Fractal-next the last two month. The most exciting addition is definitely the SSO support we merged this week and therefore we could  close a 2 years old issue.
+> 
+> Timeline
+>  - You can now send files via drag-n-drop and via the file send button to a room. It also includes a nice preview for Images.
+>  - The timeline now shows audio messages with a small inline player.
+>  - Fractal-next lets you now remove messages you sent
+> 
+> Session verification
+>  - During first login, Fractal checks if the user hasn't started session verification from another client before offering to start a new one
+>  - The QrCode scanning is now spec compliant,  and asks for user's confirmation after scanning.
+>  - We dropped screenshot support for QrCode scanning, since it makes the UX worse without adding any real benefit. 
+> 
+> Room details
+>  - The room details show now the members of the room including the power level
+> 
+> Login
+>  - Fractal-Next now supports SSO 🎉️
+>  - We implemented auto-discovery of the homeserver via .well-known
+> 
+> ![](/blog/img/762d6f95db9c7e5acf8f0cb4bfee30ed794c9c9e.png)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mdRr2MtuMdc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### FluffyChat ([website](https://fluffychat.im))
+
+[Krille Fear](https://matrix.to/#/@krille:janian.de) announces
+
+> Sorry that I was a little bit silent in the last weeks. So much stuff to do...
+> 
+> If you haven't heard it yet (because I have not made it that much public yet) there are experimental video calls in FluffyChat now. You need to enable them first under Settings > Chat and then you can try them out. They should be fully compatible with the Element video calls. But be aware that they are very unstable at the moment and may let your app crash.
+> 
+> ## FluffyChat 1.3.1 has been released
+> 
+> This release contains a lot of updated translations and bugfixes. I'm very excited about the new keyboard shortcuts from TheOneWithTheBrain. Also in your stories you can now pick the background color and the size of the picture. This is still a little bit experimental but I will share of course update the stories MSC asap.
+> Thanks to all contributors and translators.
+> 
+> ### Changelog:
+> 
+> * Allow app to be moved to external storage (Marcel)
+> * Translated using Weblate (Arabic) (Mads Louis)
+> * Translated using Weblate (Basque) (Sorunome)
+> * Translated using Weblate (Basque) (—X—)
+> * Translated using Weblate (Chinese (Simplified)) (Eric)
+> * Translated using Weblate (Czech) (Sorunome)
+> * Translated using Weblate (Dutch) (Jelv)
+> * Translated using Weblate (English) (Raatty)
+> * Translated using Weblate (French) (Anne Onyme 017)
+> * Translated using Weblate (Galician) (Xosé M)
+> * Translated using Weblate (German) (Maciej Krüger)
+> * Translated using Weblate (Indonesian) (Linerly)
+> * Translated using Weblate (Irish) (Graeme Power)
+> * Translated using Weblate (Persian) (Anastázius Darián)
+> * Translated using Weblate (Russian) (Nikita Epifanov)
+> * Translated using Weblate (Swedish) (Joaquim Homrighausen)
+> * Translated using Weblate (Turkish) (Oğuz Ersen)
+> * Translated using Weblate (Ukrainian) (Ihor Hordiichuk)
+> * Update proguard rules to a more modern setup (MTRNord)
+> * chore: Minor story viewer fixes (Krille Fear)
+> * chore: Remove story line count and make answering to stories online (Krille Fear)
+> * chore: Update dependencies (Dependency Update Bot)
+> * design: Make pinned events use less vertical space (Krille Fear)
+> * feat: Extended stories (Krille Fear)
+> * feat: Restrict map zoom to tile server capabilities (Marcel)
+> * feat: implement keyboard shortcuts (TheOneWithTheBraid)
+> * fix: Build on macOS (Krille Fear)
+> * fix: Emojipicker issues (Krille Fear)
+> * fix: Hide redacted stories (Krille Fear)
+> * fix: Mark story as read (Krille Fear)
+> * fix: Open room from notification click produces errors (Krille Fear)
+> * fix: SSO on Android 12 (Krille Fear)
+> * fix: Send read receipts on all taps (Krille Fear)
+> * fix: make fluffy usable at 720 px wide (Raatty)
+> * fix: Add forgotten sendOnEnter (Krille Fear)
+> * refactor: Switch to just audio for playing sounds (Krille Fear)
+
+### element.el ([website](https://github.com/alphapapa/ement.el))
+
+Matrix client for emacs
+
+[alphapapa](https://matrix.to/#/@alphapapa:matrix.org) announces
+
+> [[https://github.com/alphapapa/ement.el][Ement.el]], a Matrix client for Emacs, has learned to create new rooms and invite users to rooms.  Feedback is appreciated; see our chat room, [[https://matrix.to/#/#ement.el:matrix.org][#ement.el:matrix.org]], or the issue tracker on the repo.
+
+### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
+
+Secure and independent communication, connected via Matrix. Come talk with us in [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org)!
+
+[kittykat](https://matrix.to/#/@kittykat:matrix.org) announces
+
+> * Threads will be released behind a labs flag in the next release and enabled by default in the Release Candidate (RC) from 5th April
+> * If you’re using an older version of Synapse (\<v1.55.0) you might experience compatibility problems with stable prefixes. After upgrading Element to v1.18.0 unstable threads will be moved to the main room timeline
+> * **Groups have been deleted on develop.** It has also landed alongside other fairly major changes so please definitely report issues if you see them
+> * Continuing work to remove skinning from the application. This is a fairly major change to how everything works under the hood, so when it lands please report any issues with the app as most will be subtle and therefore might be missed.
+> 
+>     - Currently expected to land on or about April 5th
+>     - Component replacement will still be possible (and this will be documented)
+> * In labs (you can enable labs in settings on develop.element.io or on Nightly):
+> 
+>     - Thread list is now ordered by last reply
+>     - Fixes for the room list counter
+>     - Last stretch of threads acceptance testing before releasing to beta
+> 
+>     - Iteration to the new search dialog to integrate people & public rooms search into the new experience.
+
+### Element iOS ([website](https://github.com/vector-im/element-ios))
+
+Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
+
+[Doug](https://matrix.to/#/@douge:matrix.org) says
+
+> * Element 1.8.7 was released on the App Store after delays with the review: we’ve made ignoring users easier and now suggest a Matrix ID when using “Sign in With Apple” to resolve the issue.
+> * Space creation and management will be available in the next release, due next week.
+> * We had some issues with publishing releases to TestFlight so the latest release candidates haven’t been updated publicly - we have been testing them internally so releases will not be delayed
+
+### Element Android ([website](https://github.com/vector-im/element-android))
+
+Secure and independent communication for Android, connected via Matrix. Come talk with us in [#element-android:matrix.org](https://matrix.to/#/#element-android:matrix.org)!
+
+[adam](https://matrix.to/#/@ouchadam:matrix.org) reports
+
+> Our current in progress release [1.4.6+](https://github.com/vector-im/element-android/releases) is running a little behind schedule, however when it does land it'll contain:
+> 
+> * Fixes in the timeline for missing messages, inconsistent read marker, decryption crashes and the room icon _looking like donut_
+> * Improved Threads via [MSC3440](https://github.com/matrix-org/matrix-spec-proposals/blob/gsouquet/threading-via-relations/proposals/3440-threading-via-relations.md#fetch-all-replies-to-a-thread)
+> * The ability to share a user specified location
+>  
+> For the forks, a _heads up_ that we've updated our development branch Kotlin version to 1.6.0 which involved overhauling a lot of our `when` statements
+
+## Dept of Ops 🛠
+
+### Synatainer ([website](https://gitlab.com/mb-saces/synatainer))
+
+Synapse Maintenance Container – Docker container with tools for synapse & postgres database maintenance
+
+[saces](https://matrix.to/#/@saces:c-base.org) reports
+
+> Synatainer v0.3.1 has been released
+> 
+> New since v0.2.0
+>   - add a db-shell and scripts to reset the state compressor
+>   - add options for passing purge/keep room lists
+> 
+> 
+> Start it without command and let it do its magic :)
+> 
+> What it does by default:
+> * daily:
+>   - purge all rooms without local members
+>   - run the state autocompressor (small setting 500/100)
+> * weekly:
+>   - delete old remote media (>90 days)
+>   - delete old message history from public joinable rooms (>180 days)
+> * monthly:
+>   - run the state autocompressor (big setting 1500/300)
+>   - vacuum the database
+> 
+> Source: https://gitlab.com/mb-saces/synatainer
+> 
+> Room: [#synatainer:c-base.org](https://matrix.to/#/#synatainer:c-base.org)
+> 
+> Compose example: https://gitlab.com/mb-saces/synatainer/-/snippets/2264828
+> 
+> ***
+> 
+> If you are looking for a docker container with just the auto compressor for linux amd64/arm64 in it, her you go: https://gitlab.com/mb-saces/rust-synapse-compress-state
+
+## Dept of Bots 🤖
+
+### Mjölnir ([website](https://github.com/matrix-org/mjolnir))
+
+The moderation bot for Matrix
+
+[Gnuxie](https://matrix.to/#/@gnuxie:matrix.org) announces
+
+> We have released Mjölnir [v1.4.1](https://github.com/matrix-org/mjolnir/releases/tag/v1.4.1) (via [v1.4.0](https://github.com/matrix-org/mjolnir/releases/tag/v1.4.0))
+> 
+> Which in addition to fixes, includes a few new tools that you might find useful:
+> * a protection for detecting & measuring federation lag in your rooms
+> * bugfixes for the synapse antispam module (in particular squashing a bug that was removing users from the profile directory when blocking was disabled)
+> * a new message length limiter for the antispam module
+> * a new command to grab admin permissions from rooms being administrated by users on your homeserver
+> * a command to show when users in a given room have joined
+> * another command to filter through recent room joiners by the time they joined.
+> * Improvements that make writing protections easier.
+> 
+> Don't forget you can join our development room [#mjolnir:matrix.org](https://matrix.to/#/#mjolnir:matrix.org) if you have any have any questions for setting up and running Mjölnir!
+
+## Dept of Events and Talks 🗣️
+
+[HarHarLinks](https://matrix.to/#/@kim:sosnowkadub.de) announces
+
+> don't miss [#otwsu:matrix.org](https://matrix.to/#/#otwsu:matrix.org) on March 30th!
+
+[Thib](https://matrix.to/#/@thib:ergaster.org) adds
+
+> The theme of the episode is "analytics and privacy". We will have guests from the awesome non-profit Exodus Privacy to shed some light on analytics: what can your apps know about you and how you can get better informed.
+> 
+> Nad from Element will give us the perspective from the other side: as a vendor, does it make sense to use analytics? Are there better alternatives? Is there a way to do it right?
+> 
+> Join us in [#otwsu](https://matrix.to/#/#otwsu:matrix.org) and on [matrix.org/open-tech-will-save-us](https://matrix.org/open-tech-will-save-us/)
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|neko.dev|359|
+|2|envs.net|482.5|
+|3|aria-net.org|522|
+|4|jeroenhd.nl|753.5|
+|5|g3la.de|761|
+|6|kohlernet.de|761|
+|7|tardis.omaelse.de|1074.5|
+|8|tchncs.de|1274.5|
+|9|matrix.ring-0.net|1602|
+|10|asra.gr|1629.5|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|matrix.sum7.eu|318.5|
+|2|conduit.cyberdi.sk|463|
+|3|cry.is|514|
+|4|rustybever.be|580.5|
+|5|beckmeyer.us|798|
+|6|matrix.awesomesheep48.me|1096|
+|7|dendrite.neilalexander.dev|1164|
+|8|dendrite.beckmeyer.us|3950|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) with your updates!
