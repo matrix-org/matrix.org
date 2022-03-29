@@ -210,14 +210,14 @@ as their local ones using today’s private APIs - and very deliberately
 doesn’t mandate specific protocols for interoperability - they will need to
 locate a bridge which can connect to the other system.
 
-The bridge used should be up to the destination provider.  For instance,
-bobchat.com could announce that AliceChat users should connect to it via
-alicechat-bridge.bobchat.com using the AliceChat protocol
-(or matrix-bridge.bobchat.com via Matrix or xmpp-bridge.bobchat.com via XMPP)
-by a simple HTTP API or even a .well-known URL.  Users might also be able to
-override the bridge used to connect to them (e.g. to point instead at a
-client-side bridge), and could sign the advertisement to prove that it hadn’t
-been tampered with.
+In this thought experiment, the bridge used would be up to the destination
+provider.  For instance, bobchat.com could announce that AliceChat users
+should connect to it via alicechat-bridge.bobchat.com using the AliceChat
+protocol(or matrix-bridge.bobchat.com via Matrix or xmpp-bridge.bobchat.com
+via XMPP) by a simple HTTP API or even a .well-known URL.  Users might also
+be able to override the bridge used to connect to them (e.g. to point instead
+at a client-side bridge), and could sign the advertisement to prove that it
+hadn’t been tampered with.
 
 AliceChat would then connect to the discovered bridge using AliceChat’s
 vendor-specific newly opened API, and would then effectively treat Bob as if
@@ -261,18 +261,23 @@ would be infinitely preferable to use client-side bridges when connecting to
 E2EE services - meaning that decrypted message data would only ever be
 exposed on the client (which obviously has access to the decrypted data
 already).  Client-side bridges are currently complicated by OS limits on
-background tasks (on mobile, at least), but one could imagine a situation
-where you install a little stub AliceChat client on your phone which auths
-you with AliceChat and then sits in the background receiving messages and
-bridging them through to Matrix or XMPP.
+background tasks and push notification semantics (on mobile, at least), but
+one could imagine a situation where you install a little stub AliceChat
+client on your phone which auths you with AliceChat and then sits in the
+background receiving messages and bridging them through to Matrix or XMPP,
+like this:
+
+![](/blog/img/2022-03-29-alice-bob-clientside.jpg)
 
 Another possible architecture could be for the E2EE gatekeeper to expose their
 open APIs on the clients, rather than the server.  DMA allows this, to the
 best of our knowledge - and would allow other apps on the device to access
-the message data locally (with appropriate authorisation, of course) -
-letting a client-side bridge then sync them through to Matrix or XMPP. It’s
-not obvious this is any better or easier than the previous option, however.
+the message data locally (with appropriate authorisation, of course) - effectively
+doing a form of realtime
+[data liberation](https://en.wikipedia.org/wiki/Google_Data_Liberation_Front)
+from the closed service to an open system, looking something like this:
 
+![](/blog/img/2022-03-29-alice-bob-clientside-apis.jpg)
 
 #### Locating users
 
