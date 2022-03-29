@@ -262,7 +262,7 @@ E2EE services - meaning that decrypted message data would only ever be
 exposed on the client (which obviously has access to the decrypted data
 already).  Client-side bridges are currently complicated by OS limits on
 background tasks and push notification semantics (on mobile, at least), but
-one could imagine a situation where you install a little stub AliceChat
+one could envisage a scenario where you install a little stub AliceChat
 client on your phone which auths you with AliceChat and then sits in the
 background receiving messages and bridging them through to Matrix or XMPP,
 like this:
@@ -278,6 +278,13 @@ doing a form of realtime
 from the closed service to an open system, looking something like this:
 
 ![](/blog/img/2022-03-29-alice-bob-clientside-apis.jpg)
+
+Finally, it's worth noting that when peer-to-peer decentralised protocols
+like [P2P Matrix](https://matrix.org/blog/2020/06/02/introducing-p-2-p-matrix/)
+enter production, clientside bridges could bridge directly into a local
+communication server running on the handset - thus avoiding metadata being
+exposed on Matrix or XMPP servers providing a common language between the
+service providers.
 
 #### Locating users
 
