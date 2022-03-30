@@ -1,6 +1,6 @@
 ---
 layout: projectimage
-title: Mozilla Thunderbird
+title: Thunderbird
 categories: 
  - client
 description: A free open-source email, calendar & chat app
@@ -31,15 +31,15 @@ features:
     Sending Invites: no
     Accepting Invites: yes
     Typing Notification: yes
-    E2E: no
+    E2E: yes
     Replies: no
     Attachment uploading: no
-    Attachment downloading: no
+    Attachment downloading: yes
     Send stickers: no
     Send formatted messages (markdown): no
     Rich Text Editor for formatted messages: no
-    Display formatted messages: no
-    Redacting: no
+    Display formatted messages: yes
+    Redacting: yes
     Multiple Matrix Accounts: yes
     New user registration: no
     voip: no
@@ -55,4 +55,4 @@ features:
 
 Thunderbird is [available for download](https://www.thunderbird.net/) and the [source code is available](https://hg.mozilla.org/comm-central). Additionally there is [documentation for getting started with contributing](https://developer.thunderbird.net/). Please [file any bugs found](https://bugzilla.mozilla.org/enter_bug.cgi?product=Chat+Core&component=Matrix).
 
-Matrix support in Thunderbird is enabled by default in Daily builds (as of Thunderbird 91), but can be enabled in beta and release builds by setting `chat.prpls.prpl-matrix.disable` to `false` in the advanced config editor (>Tools >Options >Advanced >Config Editor).
+Matrix support in Thunderbird is enabled by default in Daily, starting with Beta version 100 and from release 102.
