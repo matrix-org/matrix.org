@@ -25,7 +25,7 @@ if (SHOW_LIVE_STREAM) {
         controls
       ></video><br />
       <strong><a href="https://stream.matrix.org">Watch on stream.matrix.org</a></strong><br />
-      <strong><a href="https://www.youtube.com/watch?v=5yxsSEySHpY">Find the stream at https://www.youtube.com/watch?v=5yxsSEySHpY</a></strong>
+      <strong><a href="https://www.youtube.com/watch?v=UiM5YObxMOs">Find the stream at https://www.youtube.com/watch?v=UiM5YObxMOs</a></strong>
       <script src="/js/hls.light.min.js"></script>
       <script src="/js/livestream.js"></script>
     </div>
