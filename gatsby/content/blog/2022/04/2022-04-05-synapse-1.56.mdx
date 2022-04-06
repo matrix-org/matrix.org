@@ -52,20 +52,21 @@ Now that spaces have been out of beta for some time, and have shown to be a very
 useful feature to the ecosystem, we decided it was time to retire support for
 groups from Synapse, after more than 4 years of good and loyal service. This
 release of Synapse deprecates the feature and disables it by default, with a
-plan to completely remove it in Synapse 1.58 (which should go out in a couple of
-weeks).
+plan to completely remove it in Synapse 1.58 (which is expected to be released
+next month).
 
 ## Everything else
 
-As of this version, Synapse will also refuse to start the if the Postgres database it is running
-against has a non-`C` locale. See the [upgrade
+As of this version, Synapse will also refuse to start the if the Postgres
+database it is running against has a non-`C` locale, in order to prevent
+accidental database corruption. See the [upgrade
 notes](https://matrix-org.github.io/synapse/v1.56/upgrade.html#change-in-behaviour-for-postgresql-databases-with-unsafe-locale)
 for more information.
 
 This release also includes the ability for modules to register server
 administrators through the `register_user` method, as well as a [new
 method](https://github.com/matrix-org/synapse/blob/v1.56.0/synapse/module_api/__init__.py#L1290-L1312)
-to allow modules to register existing 3PID associations.
+to allow modules to store external 3PID associations into Synapse's database.
 
 See the [full
 changelog](https://github.com/matrix-org/synapse/releases/tag/v1.56.0) for a
