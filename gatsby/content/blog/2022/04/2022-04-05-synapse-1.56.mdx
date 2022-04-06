@@ -1,0 +1,82 @@
+---
+date: '2022-04-05'
+title: Synapse 1.56 released
+categories:
+- Releases
+author: Brendan Abolivier
+---
+
+Happy release day everyone! [Synapse
+1.56](https://github.com/matrix-org/synapse/releases/tag/v1.56.0) is out! Let's
+have a look at what's new in this release.
+
+## Additional restrictions around registration
+
+One common scenario of abuse we have seen on Matrix over the years is attackers
+making use of public homeservers with open registration to automatically create
+multiple accounts in order to evade sanctions. Sometimes, this can lead to these
+public homeservers being banned across multiple public rooms despite their
+administrator(s) not being directly at fault.
+
+In order to mitigate this, starting from this release, Synapse will refuse to
+start if it is configured with open registration with no additional
+verification. This means users wishing to register on these homeservers will
+need to authenticate themselves, either via
+[email](https://github.com/matrix-org/synapse/blob/8a519f8abc6de772167c2cca101d22ee2052fafc/docs/sample_config.yaml#L1285),
+[recaptcha](https://matrix-org.github.io/synapse/v1.56/CAPTCHA_SETUP.html) or
+[registration
+tokens](https://matrix-org.github.io/synapse/v1.56/usage/administration/admin_api/registration_tokens.html).
+
+Please see the [upgrade
+notes](https://matrix-org.github.io/synapse/v1.56/upgrade.html#open-registration-without-verification-is-now-disabled-by-default)
+for more information.
+
+## So long groups, and thanks for all the fish
+
+Long-time users of Matrix might remember when, [way back in
+2017](https://matrix.org/blog/2017/10/24/synapse-0-24-is-here), we introduced
+groups (also known as communities in some clients). Groups would let users
+define a curated set of users and rooms to represent a given community that
+others could refer to. We even used to have `+matrix:matrix.org` which was
+the official group for the Matrix team and community.
+
+If this sounds a bit familiar to you (and remind you of a certain other feature
+of Matrix), that's no coincidence. Some time ago, we had already identified a
+good amount of shortcomings with groups, and decided to redesign the feature
+entirely and release it as Matrix "spaces". If you're curious about this, then
+you should probably read the [spaces announcement
+blogpost](https://matrix.org/blog/2021/05/17/the-matrix-space-beta) we released
+at the time.
+
+Now that spaces have been out of beta for some time, and have shown to be a very
+useful feature to the ecosystem, we decided it was time to retire support for
+groups from Synapse, after more than 4 years of good and loyal services. This
+release of Synapse deprecates the feature and disables it by default, with a
+plan to completely remove it in Synapse 1.58 (which should go out in a couple of
+weeks).
+
+## Everything else
+
+As of this version, Synapse will also refuse to start the database it is running
+against has a non-`C` locale. See the [upgrade
+notes](https://matrix-org.github.io/synapse/v1.56/upgrade.html#change-in-behaviour-for-postgresql-databases-with-unsafe-locale)
+for more information.
+
+This release also includes the ability for modules to register server
+administrators through the `register_user` method, as well as a [new
+method](https://github.com/matrix-org/synapse/blob/v1.56.0/synapse/module_api/__init__.py#L1290-L1312)
+to allow modules to register existing 3PID associations.
+
+See the [full
+changelog](https://github.com/matrix-org/synapse/releases/tag/v1.56.0) for a
+complete list of changes in this release. Also please have a look at the
+[upgrade
+notes](https://matrix-org.github.io/synapse/v1.56/upgrade#upgrading-to-v1560)
+for this version.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
+thanks to everyone who contributed to this release, including (in no particular
+order) [Dirk Klimpel](https://github.com/dklimpel),
+[Beeper](https://www.beeper.com/), [Famedly](https://famedly.com/),
+[IronTooch](https://github.com/IronTooch) and
+[villepeh](https://github.com/villepeh).
