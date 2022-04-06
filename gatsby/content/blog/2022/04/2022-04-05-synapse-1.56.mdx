@@ -19,7 +19,7 @@ public homeservers being banned across multiple public rooms despite their
 administrator(s) not being directly at fault.
 
 In order to mitigate this, starting from this release, Synapse will refuse to
-start if it is configured with open registration with no additional
+start by default if it is configured with open registration with no additional
 verification. This means users wishing to register on these homeservers will
 need to authenticate themselves, either via
 [email](https://github.com/matrix-org/synapse/blob/8a519f8abc6de772167c2cca101d22ee2052fafc/docs/sample_config.yaml#L1285),
