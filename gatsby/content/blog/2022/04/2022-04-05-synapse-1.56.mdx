@@ -12,7 +12,7 @@ have a look at what's new in this release.
 
 ## Additional restrictions around registration
 
-One common scenario of abuse we have seen on Matrix over the years is attackers
+One common mode of abuse we have seen on Matrix over the years is attackers
 making use of public homeservers with open registration to automatically create
 multiple accounts in order to evade sanctions. Sometimes, this can lead to these
 public homeservers being banned across multiple public rooms despite their
@@ -44,7 +44,7 @@ If this sounds a bit familiar to you (and remind you of a certain other feature
 of Matrix), that's no coincidence. Some time ago, we had already identified a
 good amount of shortcomings with groups, and decided to redesign the feature
 entirely and release it under the name "spaces". If you're curious about this,
-then you should probably read the [spaces announcement
+then you may wish to read the [spaces announcement
 blogpost](https://matrix.org/blog/2021/05/17/the-matrix-space-beta) we released
 at the time.
 
@@ -57,7 +57,7 @@ weeks).
 
 ## Everything else
 
-As of this version, Synapse will also refuse to start the database it is running
+As of this version, Synapse will also refuse to start the if the Postgres database it is running
 against has a non-`C` locale. See the [upgrade
 notes](https://matrix-org.github.io/synapse/v1.56/upgrade.html#change-in-behaviour-for-postgresql-databases-with-unsafe-locale)
 for more information.
