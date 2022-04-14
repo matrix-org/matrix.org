@@ -60,7 +60,7 @@ A multi purpose multi platform bridge, formerly known as matrix-github
 > Hey webhook-consuming-people! The hookshot webhook bridge [1.5.0](https://github.com/matrix-org/matrix-hookshot/releases/tag/1.5.0) update has now been released. This release is a bit softer than 1.4.0, containing some smaller features and bugfixes. Thanks to everyone who contributed!. The highlights are:
 > * Allow specifying msgtype for generic webhook transformations. ([#282](https://github.com/matrix-org/matrix-hookshot/issues/282))
 > * Add new GitHubRepo config option`newIssue.labels` which allows admins to automatically set labels on new issues. ([#292](https://github.com/matrix-org/matrix-hookshot/issues/292))
-> * Allow priority ordering of connection command handling by setting a`priorty: number` key in the state event content. ([#293](https://github.com/matrix-org/matrix-hookshot/issues/293))
+> * Allow priority ordering of connection command handling by setting a`priority: number` key in the state event content. ([#293](https://github.com/matrix-org/matrix-hookshot/issues/293))
 > * Support GitLab`push` webhook events ([#306](https://github.com/matrix-org/matrix-hookshot/issues/306))
 > 
 > The [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) playbooks have also been updated to be 1.5.0 compatible :)
@@ -198,7 +198,7 @@ A set of Rust library crates for working with the Matrix protocol. Ruma’s appr
 
 [Jonas Platte](https://matrix.to/#/@jplatte:flipdot.org) says
 
-> Over the last two weeks, we have been busy working towards the 0.6.0 crates.io release of Ruma. If things go to plan, it should be published in the coming weeks (but no promises). That means mosty finishing some large refactorings, but we also got some bug fixes in, as well as a number of convenience functions for working with certain events:
+> Over the last two weeks, we have been busy working towards the 0.6.0 crates.io release of Ruma. If things go to plan, it should be published in the coming weeks (but no promises). That means mostly finishing some large refactorings, but we also got some bug fixes in, as well as a number of convenience functions for working with certain events:
 > 
 > * [Add RoomPowerLevelsEvent::power_levels](https://github.com/ruma/ruma/pull/1065)
 > * [Add convenience methods](https://github.com/ruma/ruma/pull/1068)
