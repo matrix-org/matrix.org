@@ -1,0 +1,23 @@
+---
+date: '2022-05-04'
+title: 0.34.0 security release for matrix-appservice-irc (High severity)
+categories:
+- Releases
+- Security
+author: Tadeusz Sośnierz
+---
+
+We've released updates to matrix-appservice-irc and our forked node-irc that it depends on to patch a High security vulnerability.
+It's advised to update to 0.34.0 as soon as possible.
+
+The vulnerability allows an attacker to manipulate a Matrix user into executing IRC commands
+by having them reply to a maliciously crafted message.
+
+Incorrect handling of a CR character allowed for making part of the message be sent to the IRC server verbatim
+rather than as a message to the channel.
+
+If you are currently a matrix-appservice-irc user, exercise caution when replying to messages from untrusted participants
+in IRC bridged rooms until your bridge instance has been upgraded.
+
+The vulnerability has been patched in node-irc version 1.2.1 and matrix-appservice-irc 0.34.0.
+You can get the release [on Github](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.34.0).
