@@ -10,10 +10,24 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date: '2022-05-04',
+            who: 'Val Lorentz',
+            profile: 'https://valentin-lorentz.fr/',
+            description: 'IRC command injection in the matrix-appservice-irc bridge when replying to a malicious message due to incomplete newline sanitization. Fixed in matrix-appservice-irc 0.33.2 and node-irc 1.2.1. Tracked as <a href="https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-37hr-348p-rmf4">GHSA-37hr-348p-rmf4</a> and <a href="https://github.com/matrix-org/node-irc/security/advisories/GHSA-52rh-5rpj-c3w6">GHSA-52rh-5rpj-c3w6</a>.',
+            service: 'matrix-appservice-irc / node-irc'
+        },
+        {
+            date: '2022-01-31',
+            who: 's1r1us and TheGrandPew',
+            profile: 'https://blog.s1r1us.ninja/',
+            description: 'Remotely triggerable host program execution with user interaction, caused by an outdated Electron dependency. Depending on the host environment, full RCE may be possible. Fixed in Element Desktop 1.9.7 and tracked as <a href="https://github.com/vector-im/element-desktop/security/advisories/GHSA-mjrg-9f8r-h3m7">GHSA-mjrg-9f8r-h3m7</a> / <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23597">CVE-2022-23597</a>.',
+            service: 'Element Desktop'
+        },
+        {
             date: '2021-11-18',
             who: 'Oliver Behnke',
             profile: 'https://github.com/brevilo',
-            description: 'Buffer overflow in olm_session_describe in libolm before version 3.2.8, remotely triggerable from matrix-js-sdk before 15.2.1. Fixed in libolm 3.2.8 and matrix-js-sdk 15.2.1. Assigned <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44538">CVE-2021-44538</a>',
+            description: 'Buffer overflow in olm_session_describe in libolm before version 3.2.8, remotely triggerable from matrix-js-sdk before 15.2.1. Fixed in libolm 3.2.8 and matrix-js-sdk 15.2.1. Assigned <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44538">CVE-2021-44538</a>.',
             service: 'libolm'
         },
         {
