@@ -13,16 +13,22 @@ out! Let's dive into this new release.
 
 If you've been reading the past few Synapse release announcements, you might
 have already heard about our efforts to integrate
-[Poetry](https://python-poetry.org/) into Synapse. Poetry is a tool to package
-and manage dependencies of a Python project, and comes with neat features such
-as lock files and deterministic dependency resolution.
+[Poetry](https://python-poetry.org/) into Synapse. Poetry is a tool which
+manages dependencies of a Python project. Its killer feature is its lockfile,
+which explicitly pins all dependencies (direct and transitive) to a fixed
+version, even across multiple Python versions and platforms. See more about why
+we choose Poetry [here](https://github.com/matrix-org/synapse/issues/11537).
 
-During the past few months, we've been hard at work with improving dependency
-management in Synapse, with a goal to make Synapse builds more reproducible and
-have more control over all dependencies, both direct and transitive. Synapse
-1.58 is the first version that supports using Poetry to manage dependencies,
-which will help a lot in ensuring the stability and security of Synapse
-installations.
+During the past few months, we've been hard at work converting Synapse and its
+CI to use Poetry. The goal is to make our Docker images and Debian packages more
+reproducible and to provide a fixed, known-good environment for CI. This will
+help us to ensure the stability and security of Synapse installations.
+
+Synapse 1.57's Docker image was the first to use Poetry; after a successful
+trial, this was extended to Synapse 1.58's Debian packages. Installations from
+PyPI using `pip` will _not_ use the locked environment, though everyone is
+welcome to install from source using [our
+lockfile](https://github.com/matrix-org/synapse/blob/develop/poetry.lock).
 
 Huge props to [David](https://github.com/DMRobertson) from the Synapse team for
 leading the work on this front.
