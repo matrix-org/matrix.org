@@ -815,9 +815,13 @@ const Faq = ({ data }) => {
                 What clients are available?
               </h4>
               <p>
-                See also:{" "}
-                <a href="#which-matrix-clients-support-e2e">
-                  Which matrix clients support E2E?
+                See also the following lists:{" "}
+                <a href="/clients">
+                  Clients
+                </a>
+                and
+                <a href="/clients-matrix">
+                  Clients Matrix
                 </a>
               </p>
               <p>
@@ -826,8 +830,9 @@ const Faq = ({ data }) => {
                 macro.
               </p>
               <p>
-                The most popular and established client is Element, available on
-                web, desktop, Android and iOS.
+                The most popular and established client is
+                <a href="https://element.io">Element</a>
+                , available on web, desktop, Android and iOS.
               </p>
               <p>Alternatively you can find a client suitable for you:</p>
               <ul>
