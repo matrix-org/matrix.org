@@ -819,9 +819,13 @@ const Faq = ({ data }) => {
                 <a href="/clients">
                   Clients
                 </a>
-                and
+                ,
                 <a href="/clients-matrix">
                   Clients Matrix
+                </a>
+                , and
+                <a href="#which-matrix-clients-support-e2e">
+                  Which matrix clients support E2E?
                 </a>
               </p>
               <p>
