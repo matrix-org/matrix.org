@@ -1,0 +1,35 @@
+---
+date: '2022-05-16'
+title: "Independent public audit of Vodozemac, a native Rust reference implementation of Matrix end-to-end encryption"
+categories:
+- General
+author: Matthew Hodgson
+---
+
+Hi all,
+
+It’s been [quite a while](https://matrix.org/blog/2016/11/21/matrixs-olm-end-to-end-encryption-security-assessment-released-and-implemented-cross-platform-on-riot-at-last) since our last independent E2EE review, and so we’re incredibly proud to present an [entirely new independent security audit](https://matrix.org/media/Least%20Authority%20-%20Matrix%20vodozemac%20Final%20Audit%20Report.pdf) of [vodozemac](https://github.com/matrix-org/vodozemac), our next generation native Rust implementation of Matrix’s Olm and Megolm E2EE protocols.  The audit has been conducted by [Least Authority](https://leastauthority.com/), who specialise in [comprehensive audits](https://leastauthority.com/security-consulting/published-audits/) of security-sensitive decentralized technologies - and we are very grateful to [gematik](https://www.gematik.de/anwendungen/ti-messenger), who kindly shared the costs of funding the audit as part of their [commitment to Matrix for healthcare in Germany](https://matrix.org/blog/2021/07/21/germanys-national-healthcare-system-adopts-matrix).
+
+This audit was a bit of a whirlwind, as while we were clearly overdue an audit of Matrix’s E2EE implementations, we decided quite late in the day to focus on bringing vodozemac to auditable production quality rather than simply doing a refresh of the original [libolm audit](https://matrix.org/blog/2016/11/21/matrixs-olm-end-to-end-encryption-security-assessment-released-and-implemented-cross-platform-on-riot-at-last).  However, we got there in time, thanks to a monumental sprint from [Damir and Denis](https://github.com/matrix-org/vodozemac/graphs/contributors) over Christmas.  The reason we went this route is that vodozemac is an enormous step change forwards in quality over [libolm](https://gitlab.matrix.org/matrix-org/olm), and vodozemac is now the reference Matrix E2EE implementation going forward.  Just as libolm went live with NCC’s security review back in 2016, similarly we’re kicking off the first stable release of vodozemac today with Least Authority’s audit.  In fact, vodozemac just shipped as the default E2EE library in [matrix-rust-sdk 0.5](https://github.com/matrix-org/matrix-rust-sdk/releases/tag/matrix-sdk-0.5.0), released at the end of last week!
+
+The main advantages of vodozemac over libolm include:
+
+* Native Rust - type, memory and thread safety is preserved both internally, and within the context of larger Rust programs (such as those building on matrix-rust-sdk).  This is particularly important given the [memory bugs](https://matrix.org/blog/2021/06/14/adventures-in-fuzzing-libolm) which libolm sprouted, despite our best efforts to the contrary.
+* Performance - vodozemac benchmarks roughly 5-6x faster than libolm on typical hardware
+* Better primitives - vodozemac is built on the best practice cryptographic primitives from the Rust community, rather than the generic Brad Conte primitives used by libolm.
+
+Also, we’ve finally fixed one of the biggest problems with libolm - which was that the hardest bit of implementing E2EE in Matrix wasn’t necessarily the encryption protocol implementation itself, but how you glue it into your Matrix client’s SDK.  It turns out ~80% of the code and complexity needed to securely implement encryption ends up being in the SDK rather than the Olm implementation - and each client SDK ended up implementing its own independent state machine and glue for E2EE, leading to a needlessly large possible attack & bug surface.
+
+To address this problem, vodozemac is designed to plug into [matrix-sdk-crypto](https://github.com/matrix-org/matrix-rust-sdk/tree/main/crates/matrix-sdk-crypto) - an SDK-independent Rust library which abstracts away the complexities and risks of implementing E2EE, designed to plug into existing SDKs in any language.  For instance, Element Android already [supports](https://github.com/vector-im/element-android/pull/3209) delegating its encryption to matrix-sdk-crypto; Element iOS got this working too last week, and we’re [hard at work](https://github.com/Hywan/matrix-rust-sdk/commits/feat-crypto-wasm) adding it to Element Web too.  (This set of projects is codenamed Element R).  Meanwhile, [Element X](https://youtu.be/chsyOWKvne4) (the project to switch Element iOS and Element Android to use matrix-rust-sdk entirely) obviously benefits from it too, as matrix-rust-sdk now leans on matrix-sdk-crypto for its encryption.
+
+Therefore we highly recommend that developers using libolm migrate over to vodozemac - ideally by switching to matrix-sdk-crypto as a way of managing the interface between Matrix and the E2EE implementation.  Vodozemac does also provides a similar API to libolm with [bindings for JS and Python](https://github.com/matrix-org/vodozemac-bindings) (and C++ in progress) if you want to link directly against it - e.g. if you’re using libolm for something other than Matrix, for example XMPP, ActivityPub or Jitsi.  We’ll continue to support and maintain libolm for now though, at least until the majority of folks have switched to vodozemac.
+
+In terms of the audit itself - we recommend [reading it yourself](https://matrix.org/media/Least%20Authority%20-%20Matrix%20vodozemac%20Final%20Audit%20Report.pdf), but the main takeaway is that Least Authority identified 10 valid concerns, of which we addressed 8 during the audit process. The remaining two are valid but lower priority, and we’ll fix them as part of our maintenance backlog.  All the issues identified are excellent valid points, and we’re very glad that Least Authority have added huge value here by highlighting some subtle gotchas which we’d missed.  (If you write Rust, you’ll particularly want to check out their zeroisation comments).
+
+So: exciting times!  Vodozemac should be landing in a Matrix client near you in the near future - we’ll yell about it loudly once Element switches over.  In the meantime, if you have any questions, please head over to [#e2ee:matrix.org](https://matrix.to/#/#e2ee:matrix.org).
+
+Thanks again to gematik for helping fund the audit, and to Least Authority for doing an excellent job - and being patient and accommodating beyond the call of duty when we suddenly switched the scope from libolm to vodozemac at the last minute ;)
+
+Next up: we’re going to get the Rust matrix-sdk-crypto independently audited (once [this burndown](https://github.com/matrix-org/matrix-rust-sdk/milestone/1) is complete) so that everyone using the matrix-sdk-crypto state machine for Matrix E2EE can have some independent reassurance too - a huge step forward from the wild west of E2EE SDK implementations today!
+
+– Matthew
