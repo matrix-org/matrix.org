@@ -487,7 +487,7 @@ if (keys_remaining_on_server < keys_to_keep_on_server) {
 
   // sign the keys and put them in a JSON object for upload
   json signed_otks;
-  for (auto& el : otks["ed25519"].items()) {
+  for (auto& el : otks["curve25519"].items()) {
     json key = {
       {"key", el.value()}
     };
@@ -541,7 +541,7 @@ if (keysRemainingOnServer < keysToKeepOnServer) {
 
   // sign the keys and put them in an object for upload
   const signedOtks = {};
-  for (const [keyId, key] of Object.entries(otks.ed25519)) {
+  for (const [keyId, key] of Object.entries(otks.curve25519)) {
     keyObj = { key };
     const signature = account.sign(anotherjson.stringify(keyObj));
     keyObj.signatures = {
@@ -554,6 +554,8 @@ if (keysRemainingOnServer < keysToKeepOnServer) {
 
   // upload and mark as published
   await http_request("POST", "/keys/upload", { one_time_keys: signedOtks });
+
+  account.mark_keys_as_published();
 }
 ```
 
