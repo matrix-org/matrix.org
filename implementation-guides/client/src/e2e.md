@@ -914,8 +914,16 @@ json encrypted_message = {
   }}
 };
 
+json body = {
+  {"messages", {
+    {target_user_id, {
+      {target_device_id, encrypted_message}
+    }}
+  }}
+}
+
 std::string txnId = make_txn_id();
-http_request("PUT", "/sendToDevice/m.room.encrypted/" + txnId, encrypted_message.dump());
+http_request("PUT", "/sendToDevice/m.room.encrypted/" + txnId, body.dump());
 free(ciphertext);
 ```
 
