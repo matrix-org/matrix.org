@@ -1406,7 +1406,40 @@ if (roomEvent.room_id !== decryptedEvent.room_id) {
 }
 ```
 
-## Encrypted attachments
+#### Trust
+
+In order to ensure that the messages received are trust, the client must perform
+various checks.
+
+- After decrypting a room message, ensure that the `room_id` in the
+  plaintext matches the room that the message came from.  If not, the
+  message should be discarded.
+- Determine the sender keys (curve25519 and ed25519) associated with
+  the Megolm session, and check if they belong to a device owned by
+  the sender of the room message.  If the keys belong to a different
+  user, the message should be discarded.  If the keys are not known,
+  the message should be marked as being sent from a deleted session
+  and/or marked as being untrusted.  The sender keys associated with
+  the Megolm session can be established by:
+  - remembering if we created the session
+  - remembering the where we received the session from, if we received
+    it via an `m.room_key` message
+  - the `sender_key` and `sender_claimed_keys` fields in the [key
+    backup](https://spec.matrix.org/v1.2/client-server-api/#server-side-key-backups)
+    or [key
+    export](https://spec.matrix.org/v1.2/client-server-api/#key-exports)
+    (note that keys obtained from a key backup using the
+    `m.megolm.v1.aes-sha2` algorithm should be marked as untrusted
+    since the data cannot be authenticated)
+  - the `sender_key` and `sender_claimed_ed25519_key` field from an
+    `m.forwarded_room_key` message
+- Check whether the sender keys associated with the Megolm session
+  have been
+  [verified](https://spec.matrix.org/v1.2/client-server-api/#device-verification),
+  whether by verifying the device directly, or via cross-signing.  The
+  trust level of the message should be marked appropriately.
+
+## Encrypted files
 
 ## Requesting and forwarding keys
 
