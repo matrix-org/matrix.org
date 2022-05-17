@@ -1250,11 +1250,11 @@ C++:
 json decrypted_event = json::parse(plaintext);
 
 assert(decrypted_event["sender"].get<std::string>() == sender);
-auto device_info = get_device_info(sender, decrypted_event["sender_device"].get<std::string>());
-assert(device_info.ed25519_key == decrypted_event["keys"]["ed25519"].get<std::string>());
-assert(device_info.curve25519_key == sender_key);
 assert(decrypted_event["recipient"].get<std::string>() == user_id);
 assert(decrypted_event["recipient_keys"]["ed25519"] == identity_keys["ed25519"]);
+
+// check that decrypted_event["keys"]["ed25519"] has signed the device keys
+// containing the curve25519 key used to encrypt the message
 
 if (decrypted_event["type"].get<std::string>() == "m.room_key") {
   json decrypted_content = decrypted_event["content"];
@@ -1294,14 +1294,14 @@ JavaScript:
 // - saveInboundMegolmSession: save an inbound megolm session
 
 const decryptedEvent = JSON.parse(plaintext);
-const deviceInfo = getDeviceInfo(sender, decryptedEvent.sender_device);
 if (decryptedEvent.sender !== sender
-    || deviceInfo.ed25519Key !== decryptedEvent.keys.ed25519
-    || deviceInfo.curve25519Key !== senderKey
     || decryptedEvent.recipient !== userId
     || decryptedEvent.recipient_keys.ed25519 !== identityKeys.ed25519) {
     throw new Error("Decrypted event does not have the right format");
 }
+
+// check that decryptedEvent.keys.ed25519 has signed the device keys containing
+// the curve25519 key used to encrypt the message
 
 switch (decryptedEvent.type) {
   case "m.room_key":
