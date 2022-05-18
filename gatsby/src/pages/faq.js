@@ -819,7 +819,7 @@ const Faq = ({ data }) => {
                 <a href="/clients">
                   Clients
                 </a>
-                ,
+                ,&nbsp;
                 <a href="/clients-matrix">
                   Clients Matrix
                 </a>
@@ -835,7 +835,7 @@ const Faq = ({ data }) => {
               </p>
               <p>
                 The most popular and established client is
-                <a href="https://element.io">Element</a>
+                &nbsp;<a href="https://element.io">Element</a>
                 , available on web, desktop, Android and iOS.
               </p>
               <p>Alternatively you can find a client suitable for you:</p>
