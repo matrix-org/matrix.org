@@ -48,6 +48,7 @@ const Bridges = ({ data }) => {
 ["Tencent QQ", "tencent-qq"],
 ["LINE", "line"],
 ["LinkedIn Messaging", "linkedin"],
+["KakaoTalk", "kakaotalk"],
   ];
 
   
