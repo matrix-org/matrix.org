@@ -1,0 +1,488 @@
+---
+date: '2022-05-06'
+title: 'This Week in Matrix 2022-05-06'
+categories:
+  - This Week in Matrix
+author: Thib
+image: 
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n78tHoCx1es" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Dept of Spec 📜
+
+[Andrew Morgan (anoa)](https://matrix.to/#/@andrewm:element.io) reports
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+> 
+> ## MSC Status
+> 
+> **New MSCs:**
+> 
+> * [MSC3787: Allowing knocks to restricted rooms](https://github.com/matrix-org/matrix-spec-proposals/pull/3787)
+> * [MSC3786: Add a default push rule to ignore `m.room.server_acl` events](https://github.com/matrix-org/matrix-spec-proposals/pull/3786)
+> * [MSC3782: Matrix public key login spec](https://github.com/matrix-org/matrix-spec-proposals/pull/3782)
+> * [MSC3780: Knocking on `action=join`](https://github.com/matrix-org/matrix-spec-proposals/pull/3780)
+> * [MSC3779: "Owned" State Events](https://github.com/matrix-org/matrix-spec-proposals/pull/3779)
+> * [MSC3775: Markup Locations for Audiovisual Media](https://github.com/matrix-org/matrix-spec-proposals/pull/3775)
+> * [MSC3773: Notifications for threads](https://github.com/matrix-org/matrix-spec-proposals/pull/3773)
+> * [MSC3772: Push rule for mutually related events](https://github.com/matrix-org/matrix-spec-proposals/pull/3772)
+> * [MSC3771: Read receipts for threads](https://github.com/matrix-org/matrix-spec-proposals/pull/3771)
+> 
+> **MSCs in Final Comment Period:**
+> 
+> * _No MSCs are in FCP._
+> 
+> **MSCs with proposed Final Comment Period:**
+> 
+> * [MSC3787: Allowing knocks to restricted rooms](https://github.com/matrix-org/matrix-spec-proposals/pull/3787)
+> 
+> **Merged MSCs:**
+> 
+> * *No MSCs were merged this week.*
+> 
+> "Wowza, that's a lot of new MSCs!" I hear you say. This is actually a listing of the last 3 weeks, as it was pointed out to me that the last 3 editions of TWIM have not all features an MSC status update - which means some MSCs may not have necessary made it into the limelight.
+> 
+> As such, here's those from this past week, as well as the ones that were missed!
+> 
+> ## Spec Updates
+> 
+> It's that time of the year again - a new Spec release is on the horizon! Matrix v1.3 is expected to land _sometime this month_, and will include:
+> 
+> * [MSC3440](https://github.com/matrix-org/matrix-spec-proposals/pull/3440) (threads) + related MSCs
+> * [MSC3787](https://github.com/matrix-org/matrix-spec-proposals/pull/3787) (knock+restricted join rules)
+> * [MSC3604](https://github.com/matrix-org/matrix-spec-proposals/pull/3604) (room version 10)
+> * Any other MSCs which have so far been accepted, but not yet made it into the spec.
+> 
+> MSCs which land between now and v1.3 might get incorporated if easy enough, though chances are they'll slip to v1.4 (expected next quarter).
+> 
+> On top of that, the other bit of news is that the `proposal-in-review` label has now been removed from the [matrix-spec-proposals](https://github.com/matrix-org/matrix-spec-proposals) repo and thus all MSCs. This doesn't mean your MSC is no longer in review! We simply found the label redundant along with the other labels in the process (it was attached to all MSCs which hadn't been accepted/merged yet, which means very little) and thus we decided to remove it to reduce noise.
+> 
+> ## Random MSC of the Week
+> 
+> The random MSC of the week is... [MSC2881: Message Attachments](https://github.com/matrix-org/matrix-spec-proposals/pull/2881)!
+> 
+> This MSC has actually been potentially(?) superseded by [MSC3382](https://github.com/matrix-org/matrix-spec-proposals/pull/3382). In short, both look to provide a solution to the problem of attaching (multiple!) images to messages, such that clients can display an album of images in a single event in the timeline.
+> 
+> Check it out if you're interested in introducing such a feature!
+
+## Dept of Servers 🏢
+
+### Synapse ([website](https://github.com/matrix-org/synapse/))
+
+Synapse is a Matrix homeserver implementation developed by the matrix.org core team
+
+[Andrew Morgan (anoa)](https://matrix.to/#/@andrewm:element.io) says
+
+> Synapse [v1.58.0](https://github.com/matrix-org/synapse/releases/tag/v1.58.0) was released this week! Check out [the v1.58 blog post](https://matrix.org/blog/2022/05/05/synapse-1-58-released) for the full scoop, but the highlights are:
+> 
+> * Our Docker images and Debian packages are now built from a dependency lockfile courtesy of Poetry. Props to David for leading the charge on this multi-week epic.
+> * An experimental implementation of [MSC3383](https://github.com/matrix-org/matrix-spec-proposals/pull/3383) has been contributed by @Bubu and @jcgruenhage at Famedly, which will help with proxying federation traffic, amongst other uses.
+> * An experimental implementation of [MSC2815](https://github.com/matrix-org/matrix-spec-proposals/pull/2815) has been merged, which allows room moderators to view redact event content for the purposes of moderation. This was contributed by @tulir at Beeper.
+> * Device list updates are now asynchronous thanks to Erik, leading to much faster login times for accounts in big rooms.
+> * plus many other bug fixes and improvements!
+> 
+> We also released a [v1.58.1](https://github.com/matrix-org/synapse/releases/tag/v1.58.1) patch shortly afterwards to address an issue with the Debian packages on some configurations. Server admins not using the Matrix.org Debian packages do not need to install this patch release.
+> 
+> Otherwise, ongoing work from the core team continues with Sean and Rich working on faster room join performance, Olivier pushing forwards on testing Synapse with workers in [Complement](https://github.com/matrix-org/complement/), while Erik has been tackling general performance work.
+
+## Dept of Bridges 🌉
+
+### matrix-hookshot ([website](https://github.com/Half-Shot/matrix-hookshot))
+
+A multi purpose multi platform bridge, formerly known as matrix-github
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) reports
+
+> Hey folks! We're announcing our [1.6.0 release](https://github.com/matrix-org/matrix-hookshot/releases/tag/1.6.0) for matrix-hookshot today. More features in this release: tadzik has gotten involved and given us support for RSS feeds in this release. You can check out how to get going with those in [our hosted documentation](https://matrix-org.github.io/matrix-hookshot/1.6.0/setup/feeds.html).
+> 
+> The highlights this time around are:
+> 
+> * Add RSS/Atom feed support ([#315](https://github.com/matrix-org/matrix-hookshot/issues/315))
+> * Add support for GitLab in the widgets configuration UI. ([#320](https://github.com/matrix-org/matrix-hookshot/issues/320))
+> * Send a notice when a GitLab merge request gets some review comments. ([#314](https://github.com/matrix-org/matrix-hookshot/issues/314))
+> * Add new `!hookshot gitlab project` command to configure project bridges in rooms. See [the docs](https://matrix-org.github.io/matrix-hookshot/latest/usage/room_configuration/gitlab_project.html) for instructions. ([#321](https://github.com/matrix-org/matrix-hookshot/issues/321))
+> * New `hookshot_connection_event(_failed)` metrics for tracking successful event handling.
+> Reinstate `matrix_*` metrics which were previously not being recorded. ([#312](https://github.com/matrix-org/matrix-hookshot/issues/312))
+> ![](/blog/img/a11a3ddb9e1ccaa6eb3689225ffc5c3399dae208.png)
+
+### matrix-appservice-kakaotalk ([website](https://src.miscworks.net/fair/matrix-appservice-kakaotalk/))
+
+A Matrix-KakaoTalk puppeting bridge.
+
+[Fair](https://matrix.to/#/@fair:miscworks.net) announces
+
+> This week brings another round of big improvements & new features!
+> 
+> Features & fixes include:
+> * Fixes to Docker support & the documentation for setting it up
+> * Changes to the login flow
+>     - The bridge can now be configured to enforce a login flow that more closely matches the official KakaoTalk desktop client's, and to better warn you when a new login will kick out another one of your KT sessions.  This will hopefully prevent the bridge from getting KT accounts banned!
+> * Backfilling for KT->Matrix read receipts
+> * Commands for adding/removing KakaoTalk friends
+> * Commands to edit your KakaoTalk ID & mark it as shared or hidden
+> * Matrix->KT DM creation, i.e. the ability to create a new DM with a KakaoTalk user from within Matrix
+>   - This might fail on the first attempt at creating a DM.  If it does, try re-inviting the KakaoTalk puppet to the room.
+> * Many stability & correctness improvements
+> 
+> With the combination of friends list curation & DM creation support, it should now be possible to connect with KT contacts entirely from Matrix!  Simply add some friends, list them, and invite a listed friend to a 1:1 room!
+> 
+> ---
+> * Discussion: [#matrix-appservice-kakaotalk:miscworks.net](https://matrix.to/#/#matrix-appservice-kakaotalk:miscworks.net)
+> * Testing room: [#kakaotalk-bridge-testing:miscworks.net](https://matrix.to/#/#kakaotalk-bridge-testing:miscworks.net) / https://open.kakao.com/o/gjGQFuae
+> * Issue page: https://src.miscworks.net/fair/matrix-appservice-kakaotalk/issues
+
+### matrix-appservice-irc ([website](https://github.com/matrix-org/matrix-appservice-irc))
+
+Node.js IRC bridge for Matrix
+
+[Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) announces
+
+> Hi folks, note that today (Wednesday) we released a [high security update for the matrix-appservice-irc bridge](https://matrix.org/blog/2022/05/04/0-34-0-security-release-for-matrix-appservice-irc-high-severity). Please update to [0.34.0](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.34.0) as soon as you can.
+
+## Dept of Clients 📱
+
+### Thunderbird ([website](https://www.thunderbird.net))
+
+Thunderbird is a free open-source email, calendar & chat app.
+
+[freaktechnik](https://matrix.to/#/@freaktechnik:humanoids.be) reports
+
+> This week we released [Thunderbird Beta](https://support.mozilla.org/kb/thunderbird-beta) 101.0b1. It includes a bunch of bug fixes for the Matrix implementation and shows reactions as system messages, so you know when someone gives you a 👍️.
+
+### Nheko ([website](https://nheko-reborn.github.io))
+
+Desktop client for Matrix using Qt and C++17.
+
+[Nico](https://matrix.to/#/@deepbluev7:neko.dev) reports
+
+> Someone on Twitter complained that no chat client works like MSN anymore, where you could have separate windows for each chat. So for MSN compatibility we added that. (It is a bit experimental still, expect some stuff to not work or crash)
+> 
+> Bulbu also went through a lot of effort to add a second set of emoji shortcodes to Nheko. Those should be more familiar to people coming from other platforms or clients while the old shortcodes are available still as well. We also saw a lot of progress on the Finnish, Chinese, Indonesian and Russian translations, animated images should work properly in the image viewer again, buttons for opening the member list are now clearly marked with a people icon next to them. The memberlist is also now search- and sortable.
+> 
+> Anyway, have a look at how important multiple windows are:
+> ![](/blog/img/xCqYBAoYvRDbiSKknTQawYmS.png)
+
+### FluffyChat ([website](https://fluffychat.im))
+
+[Krille Fear](https://matrix.to/#/@krille:janian.de) reports
+
+> FluffyChat 1.4.0 has been released with a lot of bug fixes, performance improvements and new designs. Take a look at the new designed sign up screen, which also now supports recommended homeservers from joinmatrix.org
+> ![](/blog/img/TPrKqyLDibFUINnkOflMLhpj.png)
+
+[Krille Fear](https://matrix.to/#/@krille:janian.de) reports
+
+> Full changelog: 
+> * design: Display icon for failed sent messages (Krille Fear)
+> * design: Display own stories at first place and combine with new stories button (Krille Fear)
+> * feat: Add "Show related DMs in spaces" settings (20kdc)
+> * feat: Better image sending experience (Krille Fear)
+> * feat: Display event timestamp if selected (Krille Fear)
+> * feat: Faster image resizing (Krille Fear)
+> * feat: Groups and Direct Chats virtual spaces option (20kdc)
+> * feat: New onboarding design (Krille Fear)
+> * feat: Onboarding with dynamic homeservers from joinmatrix.org (Krille Fear)
+> * feat: Play audio messages in stories (Krille Fear)
+> * feat: Use native imaging for much faster thumbnail calc on mobile (Krille Fear)
+> * feat: add Dockerfile for nginx/web builds (TheOneWithTheBraid)
+> * feat: allow to create widgets (TheOneWithTheBraid)
+> * feat: remove diacritics (henri2h)
+> * feat: irish language support (Graeme Power)
+> * feat: Enable screensharing on Mobile
+> * feat: support AppImage builds
+> * feat: Improve spaces design
+> * fix: Android theme is not auto updating when system theme changes (Krille Fear)
+> * fix: Chat view becomes gray for a second on sending reaction (Krille Fear)
+> * fix: Don't request new thumbnail resolution on every window resize (Samuel Mezger)
+> * fix: Dont display own failed-to-send events in stories (Krille Fear)
+> * fix: Hide markdown in chat list preview and local notifications (Krille Fear)
+> * fix: Hide pinned events if event is not accessible or loading (Krille Fear)
+> * fix: Image sending (Krille Fear)
+> * fix: Make audioplayer waveforms thinner and better clickable (Krille Fear)
+> * fix: Some story layout bugs (Krille Fear)
+> * fix: Widgets dialog crashes (Krille Fear)
+> * fix: login form supports switching fields via tab (Philip Molares)
+
+### Ement.el ([website](https://github.com/alphapapa/ement.el))
+
+Matrix client for Emacs
+
+[alphapapa](https://matrix.to/#/@alphapapa:matrix.org) announces
+
+> Ement.el has received several updates since the last time it was mentioned in TWIM:
+> 
+> *Additions*
+> * A new room list command, `ement-taxy-room-list`, shows rooms grouped "smartly" (and programmably).  (It will be made the default soon; until then, call the command to use it.)
+>   - The new room list shows unread-notification/highlight counts, similar to Element.
+> * Basic support for spaces:
+>   - Rooms (and spaces) can be added to and removed from spaces.
+>   - Rooms are listed under their spaces in `ement-taxy-room-list`.
+> * Reactions can now be toggled off (i.e. redacted) by clicking them, like in Element.
+> * Command `ement-room-send-file` allows uploading non-image files to rooms, and file messages are now displayed usefully, so the files can be downloaded or viewed.
+> * Command `ement-ignore-user` ignores and unignores users.
+> * Command `ement-tag-room` adds and removes favourite, low-priority, or custom tags on rooms.
+> * Command `ement-room-occur` allows searching messages in a room buffer, similar to Emacs's `occur` command (i.e. it locally searches already-received messages).
+> * Membership events are now coalesced by default, similar to Element (especially helpful in large public rooms, like bridged IRC rooms, where join/part spam can be overwhelming).
+> * "In reply to" links in replies, as well as other `matrix.to` links, can be activated in a room buffer to go to the linked message.
+> * Mentions in outgoing messages are HTML-linkified (aka "pilled"), like Element.
+> * Generated avatars for rooms that have none, similar to Element.  (Only displayed in `ement-taxy-room-list` for now.)
+> * Option `ement-shr-use-fonts` (disabled by default, which prevents HTML messages from being displayed in a different font).
+> * Faces for favourite/low-priority rooms.
+> * Redacted messages that are still known locally are now displayed with a strikethrough (after reconnecting, their content will be unknown).
+> * When images are disabled, image messages are presented as clickable URLs, so they can still be viewed.
+> * Some events, like membership events and images, are displayed alongside a vertical bar to help distinguish them from normal messages.
+> * Even "hotter"-looking timestamps for rooms updated in the last hour.
+> 
+> *Changes*
+> * Refactored notification system.  Now easier to configure (see `M-x customize-group RET ement-notify RET`).
+> 
+> *Fixes*
+> * Improved error handling when looking up homeserver hostnames and `.well-known` URIs.
+> * Improved error handling when processing malformed events.
+> * "Elemental" display style (not used by many users, apparently).
+> 
+> Come join us in #ement.el:matrix.org!
+
+### Element ([website](https://element.io))
+
+Everything related to Element but not strictly bound to a client
+
+[kittykat](https://matrix.to/#/@kittykat:matrix.org) announces
+
+> ## Element
+> **Decryption**
+> * Progressing through implementing sharing keys for past messages ([MSC3061](https://github.com/vector-im/element-meta/issues/39)) 
+> * Improved UTD (Unable to Decrypt) analytics to gather more insight on the most common errors faced by users
+> 
+> **Community testing**
+> * Thank you all who joined the async community testing sessions.
+> * We tested 51 cases and found 16 issues and potential improvements this week in the RC (release candidates) between all platforms
+> * Next week, we are planning to test:
+>   * New search experience on Web
+> * For more info on our next testing sessions (sync or async), you can join us at [#element-community-testing:matrix.org](https://matrix.to/#/#element-community-testing:matrix.org)!
+> 
+> ![](/blog/img/HGsgBZiotGNznjLzGctoOIJI.png)
+
+### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
+
+Secure and independent communication, connected via Matrix. Come talk with us in [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org)!
+
+[madlittlemods (Eric Eastwood)](https://matrix.to/#/@madlittlemods:matrix.org) reports
+
+> In [this months demos](https://www.youtube.com/watch?=n78tHoCx1es) (also shown off at the top of the TWIM post), Eric showed off a [proof of concept to anonymize your screenshots](https://github.com/vector-im/element-web/issues/9615#issuecomment-1108992901) so you can easily include more context when submitting logs or bug reports without worrying where the bug occurred. The current concept will color block all of the text on the page to still maintain the structure of the app but completely hide the content itself.
+> 
+> This still has a ways to go before it's integrated in Element under the click of a button so if anyone wants to take over or give feedback, go comment on the issue, https://github.com/vector-im/element-web/issues/9615. If you want to use the anonymization now, you can manually run the [JavaScript snippet from the issue](https://github.com/vector-im/element-web/issues/9615#issuecomment-1108992901) in the browser devtools.
+> 
+> This mode could even be further extended further to include `event_id` labels in the corner of each message to easily correlate the logs to the screenshot.
+> 
+> Happy screenshotting!
+> 
+> ![](/blog/img/KjIwCMTImoynWkeFwzvrUOiY.png)
+
+[kittykat](https://matrix.to/#/@kittykat:matrix.org) reports
+
+> * Continuing with UI polish and MSCs for releasing threads out of Beta:
+>   * [MSC3771](https://github.com/matrix-org/matrix-spec-proposals/pull/3771): Read receipts for threads
+>   * [MSC3772](https://github.com/matrix-org/matrix-spec-proposals/pull/3772): Push rule for mutually related events
+>   * [MSC3773](https://github.com/matrix-org/matrix-spec-proposals/pull/3773): Notifications for threads
+>  * We are testing out [Sonarcloud](https://sonarcloud.io/), you’ll see comments from the sonarcloud bot in new PRs about bugs, vulnerabilities and other inconsistencies that it has found
+>  * Our first time user experience is getting some attention in Web. We’re working on simplifying a user’s first session as we know it can be pretty daunting
+>  * As part of our efforts to improve PR review times, we have put together some guidance on [how to choose a good issue to work on](https://github.com/vector-im/element-web/blob/6395825c1148f38d19b7bd5035a4c6fc9a0eca64/docs/choosing-an-issue.md)
+>  * There have been some bug fixes and improvements around ending Jitsi calls
+>  * In labs (you can enable labs features in settings on develop.element.io or on Nightly):
+>   * Check out this week’s Matrix Live for a preview of video rooms :)
+
+### Element iOS ([website](https://github.com/vector-im/element-ios))
+
+Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
+
+[Manu](https://matrix.to/#/@Manu:matrix.org) says
+
+> * We’re thinking about new ways to give flexibility on the Home screen - watch this space!
+> * The new Create Account flow is being implemented, currently we’re working on the captcha and T&Cs pages
+> * Fix several crashes like when searching or when clicking bottom bar twice
+> * Improve interaction with spaces which are in a space
+> * ElementX-iOS
+>     - We are going to share more and more about [ElementX-iOS](https://github.com/vector-im/element-x-ios), a complete rewrite of the Element-iOS app using [matrix-rust-sdk](https://github.com/matrix-org/matrix-rust-sdk). We made a prototype last quarter. The result was so promising that we want to go full steam on it
+>     - We are finishing [the setup of the project](https://github.com/orgs/vector-im/projects/42/views/4) to have a good developer experience
+>     - Then, we will attack user stories listed in this [board](https://github.com/orgs/vector-im/projects/43/views/3) that target the personal message use case
+>     - Watch the today TWIM video with Stefan, Manu and Thib for more details
+
+### Element Android ([website](https://github.com/vector-im/element-android))
+
+Secure and independent communication for Android, connected via Matrix. Come talk with us in [#element-android:matrix.org](https://matrix.to/#/#element-android:matrix.org)!
+
+[benoit](https://matrix.to/#/@benoit.marty:matrix.org) announces
+
+> * Work is moving forward with our proposals for a new app layout, we’re excited to share it with you
+> * Our Create Account experience is still being updated, we’re currently working on ensuring that the Sign-in pieces work as expected
+> * Fixed a number of crash bugs around calls, launching app and space list
+> * Notifications have have been improved so that there is a noise for every notification which is received when they are enabled, in line with how web and iOS work
+> * On the SDK side, we are working to improve / clarify / document the public API. It’s still in progress, but the generated API documentation is already visible here: https://matrix-org.github.io/matrix-android-sdk2/
+
+## Dept of Non Chat Clients 🎛️
+
+### Populus Viewer ([website](https://github.com/opentower/populus-viewer))
+
+A Social Annotation Tool Powered by Matrix
+
+[gleachkr](https://matrix.to/#/@gleachkr:matrix.org) reports
+
+> Over the last two weeks, the theme in populus-viewer development has been permissions:
+> 
+> 1. The settings menu for rooms has been redesigned
+> 2. It's now possible to assign and remove standard roles (admin and moderator) from populus viewer
+> 3. It's now possible to set power levels for standard events and actions from populus viewer
+> 4. It's now possible to ban and unban using the membership management modal
+> 5. Redacting the messages of others is now exposed as an action for those with that permission.
+> 
+> Besides that, I've been having some fun on the `css-overhaul` branch reorganizing some design elements, and centralizing the color CSS in a few variables, opening the way for things like a dark mode and user-definable themes. Here's a peek at the new milder and more welcoming default look:
+> ![](/blog/img/ToeKMRWVlGojXjOAJaHsKoJh.png)
+
+[gleachkr](https://matrix.to/#/@gleachkr:matrix.org) says
+
+> The permissions work now has us at one thousand commits. Here's to the next thousand!  🎉 As always, if you want to learn more, follow project progress, or talk about the future of social annotation on matrix, come join us at [#opentower:matrix.org](https://matrix.to/#/#opentower:matrix.org).
+
+### Matrix Wrench ([website](https://gitlab.com/jaller94/matrix-wrench/))
+
+Matrix Wrench is a web client to tweak Matrix rooms.
+
+[ChristianP](https://matrix.to/#/@christianp:vector.modular.im) announces
+
+> ## Matrix Wrench 0.7.0
+> 
+> I'm working on a few features for Wrench's anniversary on 13th June.
+> Here's a bug fix for storing identities and a new button to check your membership status in a room.
+> 
+> * Added: A "Am I a member?" button tells your membership state in a room.
+> * Fixed: Unchanged identites got deleted from localStorage when editing identities twice.
+>
+> ![](/blog/img/61ecd6261b890e6e4309797852daeb8ce0082d1a.gif)
+
+## Dept of SDKs and Frameworks 🧰
+
+### Trixnity ([website](https://gitlab.com/benkuly/trixnity))
+
+Multiplatform Kotlin SDK for Matrix
+
+[Benedict](https://matrix.to/#/@benedict:imbitbu.de) says
+
+> After a few release candidates and weeks later, we released [Trixnity](https://gitlab.com/benkuly/trixnity/) 2.0.0 today! It contains many breaking changes due to a large refactoring, which allows us to share a lot code between server and client implementations of the Matrix APIs.
+> This means, that Trixnity can be used to implement matrix servers in addition to application services and clients!
+> 
+> Trixnity finally has support for Kotlin/JS. You can implement a browser client or even better: multiplatform client. Support for Kotlin/Native will follow soon (e. g. for iOS clients). Right now, there is no `trixnity-client-store` implementation for JavaScript (e. g. IndexedDB), so you need to stick with `InMemoryStore` at the moment.
+> 
+> Besides notification support (push rules are evaluated), we introduced helpers to get the complete timeline as Kotlin-Flow (no more complicated loops to get the timeline). You can even subscribe to all timeline events, which is really helpful to implement bots with e2e encryption support. Speaking of e2e encryption: libolm is bundled into `trixnity-olm` jars, so you don't need to build olm by your own anymore.
+> 
+> These are the most important features. For the complete changelog, have a look at the [release candidates](https://gitlab.com/benkuly/trixnity/-/releases).
+
+### Matrix Dart SDK ([website](https://gitlab.com/famedly/company/frontend/famedlysdk))
+
+Matrix SDK written in pure Dart.
+
+[Henri Carnot [famedly]](https://matrix.to/#/@henri_carnot:famedly.de) announces
+
+> This week the team released [version 0.9.0](https://pub.dev/packages/matrix/versions/0.9.0) which contains new features and some refactoring as many deprecated endpoints were removed so make sure to use the new ones when doing the migration.
+> Support for the Element recent emoji (`io.element.recent_emoji`) was added.  A new method to get the last read marker was added.
+> Lastly, the timeline logic was enhanced, and it's now possible to load the timeline at a specific event. So you can load the room to the last event and then paginate through the new events. When reaching the last event, the timeline will automatically allow new events to be added in the timeline when received.
+> 
+> See you next week ;)
+
+## Dept of Ops 🛠
+
+[Cadair](https://matrix.to/#/@cadair:cadair.com) announces
+
+> I have spent the day ignoring more important things and trying to have something to TWIM. I wrote (yet another) GitHub Action for [sending build status to matrix rooms](https://github.com/Cadair/matrix-notify-action). This action looks at all the completed jobs in your workflow and posts a combined status for the workflow as a message and reactions for all the individual jobs, inspired by the maubot GitLab plugin.
+> ![](/blog/img/nVqYKuPlzGHScqPnNQvRYgTa.png)
+
+## Dept of Bots 🤖
+
+### Sundar
+
+[Hyperbased in Hyperspace](https://matrix.to/#/@biehdc:reactos.org) says
+
+> Hello together. I made a generic bot, named `Safed Sundarata`, or `Sundar` in short, that should make it easy to get basic special functionality working. It has a lot of different functionality so you have an example code to work off of. The main motivation for this bot was to provide an `!error <code>` command for the developers in the [ReactOS Matrix Rooms](https://matrix.to/#/#community:reactos.org), which translates error codes to human readable text. Then of course i added other useful or fun commands to the bot. You want to read the [Readme](https://github.com/BieHDC/sundar/blob/master/README.md) to find out more.
+> This is the first time i ever wrote a bot, so feedback and corrections to the [Source Code](https://github.com/BieHDC/sundar) are highly appreciated. It is written in Go using the mautrix-go framework (thanks tulir and everyone who worked on this making it easy!). Even easier is to run and build it with go, no insane build system with broken dependencies required, which was the reason why i made it from scratch.
+
+### Mjölnir ([website](https://github.com/matrix-org/mjolnir))
+
+The moderation bot for Matrix
+
+[Gnuxie 💜🐝](https://matrix.to/#/@gnu_ponut:matrix.org) announces
+
+> ## [Mjölnir](https://github.com/matrix-org/mjolnir)
+> 
+> We have released v1.4.2 of Mjolnir https://github.com/matrix-org/mjolnir/releases/tag/v1.4.2 which includes:
+> 
+> **Bot**:
+> 
+> * A new `JoinWaveShortCircuit` protection, thanks to Jonathan  with https://github.com/matrix-org/mjolnir/pull/280. This protection can be used to detect a mass-join scenario and set the room to invite-only.
+> * **Change of behaviour:** Mjolnir will now apply server ACL and member bans to the most recently active rooms first (while syncing). The order was random before.
+> * The causes of errors at startup (e.g. via misconfiguration) have been made more clear.
+> * The image with the `latest` tag on [dockerhub](https://hub.docker.com/r/matrixdotorg/mjolnir/tags) is now correctly in sync with the `main` branch.
+> 
+> **Synapse Module**:
+> 
+> * The [python module version](https://github.com/matrix-org/mjolnir/blob/main/synapse_antispam/setup.py#L5) is now in sync with the current git tag.
+> * The Readme's example config has been fixed (thanks to Maranda  ).
+
+### graim ([website](https://github.com/luphoria/graim))
+
+A bot to moderate communities bridged with Discord via matrix-appservice-discord
+
+[luphoria](https://matrix.to/#/@trent:gra.im) announces
+
+> I am releasing a brand new moderation bot, **[graim](https://gra.im)**! This bot allows you to moderate communities that are bridged with Discord via **matrix-appservice-discord**. You can tie a Matrix account to a Discord account, and moderate both platforms seamlessly from either end! Graim supports one Discord server and as many Matrix rooms as you want, per instance. :)
+> You can run it yourself from the Github - https://github.com/luphoria/graim
+> You can join the [matrix space](https://matrix.to/#/#graim:gra.im), which is bridged to the [Discord server](https://discord.gg/MV7fDb4AKy)
+> ![](/blog/img/xyzhfPHFzmTWGgpRSEjAifIE.png)
+
+## Dept of Events and Talks 🗣️
+
+[andybalaam](https://matrix.to/#/@andybalaam:matrix.org) says
+
+> I'm streaming every week live coding Rust and Matrix at https://twitch.tv/andybalaam and https://andybalaam.uk.to (Owncast). Feel free to join me as I write a Rust Matrix bot. I'm currently on a side quest to add Redis support to the matrix-rust-sdk crypto store. You can watch past streams at [diode.zone/a/andybalaam](https://diode.zone/a/andybalaam/).
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|maunium.net|271.5|
+|2|envs.net|388|
+|3|aria-net.org|472|
+|4|matrix.nkrw.art|687|
+|5|quyo.de|719|
+|6|computerlie.be|809|
+|7|magdeburg.jetzt|847.5|
+|8|mindlesstux.com|877|
+|9|alemann.dev|1008|
+|10|fab.network|1196|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|matrix.awesomesheep48.me|310|
+|2|conduit.grich.sk|445|
+|3|dendrite.s3cr3t.me|455|
+|4|cry.is|579|
+|5|foxo.me|738|
+|6|beckmeyer.us|752|
+|7|grin.hu|1142|
+|8|sspaeth.de|1255.5|
+|9|forlorn.day|1680|
+|10|pohiijekpkd55sbbrcbufkner2wkq3lcv7ruyxwjsgimrb5acbiupead.ml|1813|
+
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) with your updates!

@@ -490,8 +490,8 @@ function nextStage() {
     d3.select("#legend" + (stageIndex + 1)).style("opacity", 1e-6)
         .transition()
         .duration(dissolveTime)
-        .style("opacity", 1);
-
+        .style({ "opacity": 1, "pointer-events": "auto" });
+        
     if (pendingStages.length > 0) {
         var c = pendingStages.length;
         console.log("starting c=" + c);
