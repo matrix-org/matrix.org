@@ -43,15 +43,19 @@ and cannot interact in a room, change. This is especially annoying during big
 waves of abuse, as there might be multiple servers that need to be banned from
 rooms, thus causing a lot of unneeded notifications.
 
-Synapse 1.59 now silences server ACL updates, by implementing the new push rule
-documented in
+Synapse 1.59 now supports silencing server ACL updates, by implementing the new
+push rule documented in
 [MSC3786](https://github.com/matrix-org/matrix-spec-proposals/pull/3786).
+However, since this MSC hasn't been incorporated into the spec yet, this
+behaviour is disabled by default in Synapse, see [the implementation pull
+request](https://github.com/matrix-org/synapse/pull/12601) for more information
+on turning it on.
 
 Synapse 1.59 also allows third-party modules to validate and change the actions
 associated with an existing push rule via the [Module
 API](https://github.com/matrix-org/synapse/blob/d24a1486e5c5d69a8798a9d159fd9e06dfc8c3e3/synapse/module_api/__init__.py#L1360-L1420).
 This is helpful for modules wishing to, for example, configuring specific
-notification settings for new users register.
+notification settings when new users register.
 
 ## Everything else
 
