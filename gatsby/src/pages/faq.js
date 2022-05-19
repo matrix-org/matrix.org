@@ -823,7 +823,7 @@ const Faq = ({ data }) => {
                 <a href="/clients-matrix">
                   Clients Matrix
                 </a>
-                , and
+                , and{" "}
                 <a href="#which-matrix-clients-support-e2e">
                   Which matrix clients support E2E?
                 </a>
