@@ -60,6 +60,20 @@ const Hosting = ({ data }) => {
                         | <a href="https://matrix.to/#/#announcements:etke.cc">Announcements on Matrix</a>
                     </p>
                 </div>
+
+                <div className="mxgrid__item50">
+                    <h2 id="ossrox">Ossrox</h2>
+                    <p><img style={{"height": "130px"}} src="/images/ossrox.svg" alt=""/></p>
+                    <p><a href="https://ossrox.org/">ossrox.org</a></p>
+                    <ul>
+                        <li>Hosted Homeservers</li>
+                    </ul>
+                    <p>Ossrox is a company from Germany dedicated to hosting open-source services. Not only has the
+                        company name been derived from the motto "Open-Source Software Rocks", but also their corporate
+                        culture. The three most important principles of the company are security, privacy and
+                        sustainability - thanks to open-source software. In addition to Matrix, Ossrox also provides
+                        many other solutions e.g. in the messaging, groupware and web meeting segments.</p>
+                </div>
             </div>
             <em>The providers listed all have a history of providing Matrix services, though The Matrix.org Foundation doesn't explicitly endorse these services.</em>
         </MXContentMain>
