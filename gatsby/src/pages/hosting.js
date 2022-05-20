@@ -40,7 +40,7 @@ const Hosting = ({ data }) => {
                 </div>
 
                 <div className="mxgrid__item50">
-                    <h2 id="ungleich">etke.cc</h2>
+                    <h2 id="etkecc">etke.cc</h2>
                     <p><img style={{"border-radius": "9px", "height": "130px"}} src="/images/etke.cc.png" alt="" /></p>
                     <p><a href="https://etke.cc">etke.cc</a></p>
                     <ul>
