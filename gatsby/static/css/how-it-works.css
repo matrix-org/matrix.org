@@ -13,8 +13,9 @@
 .legend {
     position: absolute;
     padding-top: 20px;
-    opacity: 0;
     max-width: 570px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .legend pre {
