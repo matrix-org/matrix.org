@@ -1,0 +1,27 @@
+---
+layout: project
+title: MandM-bridge
+categories: 
+ - bridge
+description: Bridges between one matrix room and a murmur channels. 
+author: karlpip
+language: Python
+maturity: Alpha
+repo: https://github.com/karlpip/MandM-bridge
+featured: true
+license: MIT
+room: "#mandm-bridge:og.lushkush.nl"
+bridges: Mumble
+thumbnail: /docs/projects/images/Mumble.png
+---
+
+Bridges between a Murmur server and a Matrix channel.  
+ICE is used to communicate with the Murmur server, matrix-nio is used for Matrix.
+
+&#10003; Bridges text messages bidirectional  
+&#10007; 1:1 chats  
+&#10003; Bridge connect / disconnect notifies to Matrix  
+&#10003; Bridges images from Matrix to Mumble  
+&#10007; Bridges images from Mumble to Matrix  
+&#10003; Configurable selection of which Murmur channels to be bridged.  
+&#10003; Easy to add message handlers to filter or modify messages before bridging.  
