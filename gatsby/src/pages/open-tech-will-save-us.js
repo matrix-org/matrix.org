@@ -11,8 +11,8 @@ import moment from "moment";
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
-const SHOW_LIVE_STREAM = true;
-const NEXT_EVENT = 16;
+const SHOW_LIVE_STREAM = false;
+const NEXT_EVENT = 17;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
