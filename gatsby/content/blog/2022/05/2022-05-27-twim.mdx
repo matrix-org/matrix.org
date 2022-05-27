@@ -1,0 +1,282 @@
+---
+date: '2022-05-27'
+title: 'This Week in Matrix 2022-05-27'
+categories:
+  - This Week in Matrix
+author: Brendan Abolivier
+image: 
+---
+
+Hey everyone! Thib is out today, so I'll be exceptionally hosting TWIM in his stead this week. Let's have a look at what's been going on in Matrix-land!
+
+## Open Tech Will Save Us #16 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/H5atH-tbeRo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+The 16th edition of our virtual meetup Open Tech Will Save Us happened this week! This edition featured a few very interesting projects:
+
+* Quentin and Maximilien from Deuxfleurs are creating Garage, a robust and distributed storage backend that can run on old computers. Who can use it? Why? And when should I not use it? Let's find out!
+* Nathan from the Guardian Project is working with wind, butter, and rasperries to provide applications and messaging to people in low-connectivity areas. A fascinating dive off the grid.
+
+## Dept of *Status of Matrix* 🌡️
+
+[andybalaam](https://matrix.to/#/@andybalaam:matrix.org) says
+
+> Matrix's [Outreachy](https://www.outreachy.org/) intern for this summer has been chosen! **Usman** is starting in early June, and will be working on experiments with **Starring Messages**! He will be blogging every two weeks, so look out for more updates.
+
+## Dept of Spec 📜
+
+[Andrew Morgan (anoa)](https://matrix.to/#/@andrewm:element.io) reports
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+> 
+> ## MSC Status
+> 
+> **New MSCs:**
+> 
+> * [MSC3825: Obvious relation fallback location](https://github.com/matrix-org/matrix-spec-proposals/pull/3825)
+> * [MSC3824: Login/register indication on SSO redirect](https://github.com/matrix-org/matrix-spec-proposals/pull/3824)
+> * [MSC3823: A code for account suspension](https://github.com/matrix-org/matrix-spec-proposals/pull/3823)
+> 
+> **MSCs in Final Comment Period:**
+> 
+> * [MSC3604: Room Version 10](https://github.com/matrix-org/matrix-spec-proposals/pull/3604) (merge)
+> 
+> **Merged MSCs:**
+> 
+> * _No MSCs were merged this week._
+> 
+> ## Spec Updates
+> 
+> The upcoming release of Matrix v1.3 is still in the works, but near! Expect a solid release date to be announced next week.
+> 
+> ## Random MSC of the Week
+> 
+> The random MSC of the week is... [MSC2872: Move the widget title to the top level of the definition](https://github.com/matrix-org/matrix-spec-proposals/pull/2872)!
+> 
+> A bite-size MSC which aims to clean up the definition of a widget state event... by moving the "title" field to the root of the state event, alongside the existing "name" field.
+> 
+> This MSC needs someone to write an implementation in at least one homeserver and client to move forwards. Perhaps that someone could be you?
+>
+> ![](/blog/img/stacked_area_chart.png)
+
+## Dept of Servers 🏢
+
+### Synapse ([website](https://github.com/matrix-org/synapse/))
+
+Synapse is a Matrix homeserver implementation developed by the matrix.org core team
+
+[squah](https://matrix.to/#/@squah:matrix.org) reports
+
+> This week we cut [two release candidates for Synapse v1.60](https://github.com/matrix-org/synapse/releases/tag/v1.60.0rc2), which include:
+> 
+> * [New config options to limit the total memory usage of Synapse.](https://github.com/matrix-org/synapse/pull/12701)
+> * [The ability to reload cache factors of a running Synpase instance using SIGHUP.](https://github.com/matrix-org/synapse/pull/12673)
+> * [A new module callback to handle federation spam](https://github.com/matrix-org/synapse/pull/12744).
+> * Experimental support for [MSC3787: Allowing knocks to restricted rooms](https://github.com/matrix-org/matrix-spec-proposals/pull/3787) and [MSC3818: Copy room type on upgrade](https://github.com/matrix-org/matrix-spec-proposals/pull/3818).
+> * Many bug fixes and internal improvements!
+> 
+> Meanwhile work continues on fast room joins and testing Synapse with workers on Complement. We'd like to remind readers that the fast room joins feature is highly experimental right now and we do not recommend enabling it on production homeservers just yet.
+
+### Synapse admin scripts ([website](https://git.fout.re/pi/matrixadminhelpers))
+
+[Pierre](https://matrix.to/#/@pierre:matrix.taz.de) announces
+
+> Morning,
+> maybe it's usefull for someone else, I just published my admin scripts for synapse. It's still WiP but it make some basic stuff that I needed in my organisation :
+> 
+> * System notify users (all users/users from a list, specific user)
+> * delete sessions/devices not seen for X days
+> * purge the remote media cache
+> * select rooms with various criteria (external/local/empty/created by/encrypted/cleartext)
+> * purge history of theses rooms
+> * shutdown rooms
+> 
+> https://git.fout.re/pi/matrixadminhelpers
+> 
+> It's my first python project, so the code may not structured as it should, I'm still learning, and it's early alpha :)
+
+### Dendrite ([website](https://github.com/matrix-org/dendrite))
+
+Second generation Matrix homeserver
+
+[neilalexander](https://matrix.to/#/@neilalexander:matrix.org) says
+
+> This week we released [Dendrite 0.8.6](https://github.com/matrix-org/dendrite/releases/tag/v0.8.6) which contains a number of fixes and tweaks:
+> 
+> * Room versions 8 and 9 are now marked as stable
+> * Dendrite can now assist remote users to join restricted rooms via `/make_join` and `/send_join`
+> * The sync API no longer returns immediately on `/sync` requests unnecessarily if it can be avoided
+> * A race condition has been fixed in the sync API when updating presence via `/sync`
+> * A race condition has been fixed sending E2EE keys to remote servers over federation when joining rooms
+> * The `trusted_private_chat` preset should now grant power level 100 to all participant users, which should improve the user experience of direct messages
+> * Invited users are now authed correctly in restricted rooms
+> * The `join_authorised_by_users_server` key is now correctly stripped in restricted rooms when updating the membership event
+> * Appservices should now receive invite events correctly
+> * Device list updates should no longer contain optional fields with `null` values
+> * The `/deactivate` endpoint has been fixed to no longer confuse Element with incorrect completed flows
+> 
+> As always, please feel free to join us in the [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) room for more discussion!
+
+## Dept of Clients 📱
+
+
+
+### Nheko ([website](https://nheko-reborn.github.io))
+
+Desktop client for Matrix using Qt and C++17.
+
+[Nico](https://matrix.to/#/@deepbluev7:neko.dev) announces
+
+> We added a way to edit permissions in Nheko now. It is an unconventional drag and drop dialog, where you drag users and permissions between different roles. We are hoping that this will make powerlevels easier to understand. Be careful when trying it, the wrong powerlevels might make your room unusable. Now... the bad part about that is, that powerlevels add around 50-100 new strings to translate... Help is appreciated! <3
+> 
+> Nheko now also supports fallback keys, which should make E2EE more reliable after long periods of being offline and you can send images by pressing enter again. The privacy screen is also now fixed for separate room windows and our flatpak supports more image formats.
+> ![](/blog/img/JJnXbymlMHyEIcqsQDRdguvr.png)
+
+### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
+
+Secure and independent communication, connected via Matrix. Come talk with us in [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org)!
+
+[Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) announces
+
+> * On Element Web this week we’ve smashed some bugs including those around Threads.
+> * Threads work continues as we’re aiming to improve the notifications and read receipts to improve the experience.
+> * Continuing to make improvements to our automated tests.
+> * The team is driving to complete the work needed to move our new search experience out of Beta. We think this new search is easier to use and helps folks to find what they’re looking for faster.
+> * We’re also making improvements specifically for new users, this will include a new home screen, watch out for those!
+> 
+> **In labs** (you can enable labs features in settings on develop.element.io or on Nightly):
+> 
+> * Video rooms; We’re ironing out some of the details to polish the experience
+
+### Element iOS ([website](https://github.com/vector-im/element-ios))
+
+Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
+
+[Ștefan](https://matrix.to/#/@stefan.ceriu:matrix.org) reports
+
+> * This week we’ve fixed a crash, and a few bugs; specifically the bug where some rooms were missing from the room list.
+> * On the iOS team generally we’re working towards a Sentry.io integration for better crash reporting to help us with this in the future.
+> * Live location sharing and other features are making great progress.
+> * Our new first time user experience will be ready for feedback soon!
+> * ElementX has been refactored to adopt Swift’s new structured concurrency.
+
+### Element Android ([website](https://github.com/vector-im/element-android))
+
+Secure and independent communication for Android, connected via Matrix. Come talk with us in [#element-android:matrix.org](https://matrix.to/#/#element-android:matrix.org)!
+
+[adam](https://matrix.to/#/@ouchadam:matrix.org) says
+
+> * This week we added emoji14 support so if you want to hide 🫣 , salute 🫡 , or melt 🫠 for your friends, you’ll soon be able to!  🫶 (for Android 12 and above, or devices that support emoji14)
+> * We’re getting ever nearer to a new sign up flow for new users. Our flow today can be confusing and complex, especially when all you want to do is chat with friends. We’ve been working on simplifying the flow and we’ll announce a community testing session very soon!
+> * Also new this week, we’ve opened up a new layout of the app to a small selection of folks. These 15 people will trial the new layout for us, providing feedback along the way. We’ll be opening it up to more feedback soon.
+
+### Element ([website](https://element.io))
+
+Everything related to Element but not strictly bound to a client
+
+[Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) reports
+
+> Hello and happy Friday!
+> 
+> **Threads**
+> * Threads are still in progress as we continue to make progress on the notifications and sort/ordering work that remains.
+> * In order for notifications to work better, we need read receipts to be updated. We’ve got several MSCs ongoing, along with a few Proof of Concepts (PoCs) to move us forward.
+>     - MSC3771: Read receipts for threads
+>     - MSC3772: Push rule for mutually related events
+>     - MSC3773: Notifications for threads
+> * With that we’ve also updated some layouts and completed some bug fixes, on all platforms.
+> 
+> **Community testing**
+> * Keep your eyes peeled on [#element-community-testing:matrix.org](https://matrix.to/#/#element-community-testing:matrix.org) for more info on our next testing sessions.
+
+## Dept of SDKs and Frameworks 🧰
+
+
+### Trixnity ([website](https://gitlab.com/trixnity/trixnity))
+
+Multiplatform Kotlin SDK for Matrix
+
+[Benedict](https://matrix.to/#/@benedict:imbitbu.de) says
+
+> [Trixnity 2.1.0](https://gitlab.com/trixnity/trixnity/-/releases/v2.1.0) has been released. It includes support for Server-Server-API endpoints (client and server) and fetching missing `TimelineEvents` in client. The latter is used for fragmented timelines: If you want to show a timeline starting from any `EventId` and `RoomId` (e. g. from unread marker), Trixnity will try to fetch missing `TimelineEvent`s from server. If you reach `TimelineEvent`s, that are already saved in the local database, the timeline fragments are merged magically 🧙
+
+### Ruma ([website](https://www.ruma.io))
+
+A set of Rust library crates for working with the Matrix protocol. Ruma’s approach to Matrix emphasizes correctness, security, stability and performance.
+
+[Kévin Commaille](https://matrix.to/#/@zecakeh:tedomum.net) announces
+
+> Since our last update from about a month ago, we had two bugfix releases:
+> 
+>  - Ruma 0.6.2 added methods to get the current room powerlevels from a `StrippedPowerLevelsEvent` and to get a user's membership whether the state event is redacted or not, and added a missing export to track member changes.
+>  - Ruma 0.6.3 fixed the serialization and deserialization of events with a dynamic `event_type` and added convenience constructors for logging in with a `UserIdentifier`.
+>  
+>  We have also landed a bunch of internal work:
+>  
+>  - Improvement in our macros, notably to [support unstable prefixes for event types](https://github.com/ruma/ruma/pull/1109).
+>  - Some cleanup like removing some dead code, removing unnecessary `PartialEq` implementations, and fixing missing feature flags.
+>  - The [minimum supported rust version is now 1.59](https://github.com/ruma/ruma/pull/1109/commits/1cae9d253bb43c9ad8699cd3b59b89da23bd0e73) and we use the [Rust 2021 Edition](https://github.com/ruma/ruma/pull/1137).
+>  - We started to [refactor our tests](https://github.com/ruma/ruma/pull/1132) to have more helpful failure messages.
+>  
+>  And there are of course new fixes and features for our next release:
+>  
+>  - Make sure that [push rules don't apply to the user's own events](https://github.com/ruma/ruma/pull/1114)
+>  - Add support for [MSC3700: Ignore `content.sender_key`](https://github.com/ruma/ruma/pull/1112)
+>  - Implement [MSC3381: Polls](https://github.com/ruma/ruma/pull/1131)
+
+### matrix-rust-sdk ([website](https://github.com/matrix-org/matrix-rust-sdk))
+
+Matrix Client-Server SDK for Rust
+
+[ben](https://matrix.to/#/@gnunicorn:matrix.org) reports
+ 
+> The majority of changes we've seen over the last week, where minor fixes in style, squashing of bugs and CI improvements as most work is currently happening in the background on Sliding Sync, mobile and UniFFI support. But there have been two additions worth mentioning: first, we've improved on the [autojoin example for appservices](https://github.com/matrix-org/matrix-rust-sdk/pull/703/files), and secondly we've merged a [community contribution to make resolving of room-alias more handy](https://github.com/matrix-org/matrix-rust-sdk/pull/706).
+> 
+> 👉️ Wanna hack on matrix rust? Go check out our [`help wanted` tagged issues](https://github.com/matrix-org/matrix-rust-sdk/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and join our matrix channel at [#matrix-rust-sdk:matrix.org](https://matrix.to/#/#matrix-rust-sdk:matrix.org).
+
+### Matrix Dart SDK ([website](https://gitlab.com/famedly/company/frontend/famedlysdk))
+
+Matrix SDK written in pure Dart.
+
+[Henri Carnot](https://matrix.to/#/@henri_carnot:famedly.de) announces
+
+> This week, the team released [version 0.9.7](https://pub.dev/packages/matrix/versions/0.9.7).
+> 
+> This week, we migrated to [Matrix Api Lite](https://pub.dev/packages/matrix_api_lite) 1.0.0, our simple wrapper around the matrix API endpoints and data models. This means we are now using the v1.2 Matrix spec 🎉.
+> 
+> Also, support for [HiveCollections](https://gitlab.com/famedly/company/frontend/famedlysdk/-/merge_requests/1040) as Database provider was added now that our patches to hive were accepted upstream. And we now [provide a way](https://gitlab.com/famedly/company/frontend/famedlysdk/-/merge_requests/1019/) to dump and restore the client local database.
+> 
+> Finally, we fixed a bug with where reactions were not properly discarded from the cache and some bugs in our e2e tests.
+> 
+> See you next time ;)
+
+## Dept of Events and Talks 🗣️
+
+[saces](https://matrix.to/#/@saces:c-base.org) reports
+
+> # Matrix User Meetup Berlin
+> 
+> Next Matrix user meetup 1.6.2022, 8 pm @ c-base
+> 
+> Meet other matrix users, chat about Matrix, the rest, and everything else, discuss your Matrix ideas, sign each other in persona, and maybe spice the evening with a good mate or beer.
+> 
+> Also when the bbq is lit you may wish you brougth your favorite item :)
+> 
+> Every first Wednesday of the month in the c-base at 8pm ('til the next pandemic).
+> 
+> Matrix room: [#mumb:c-base.org](https://matrix.to/#/#mumb:c-base.org)
+
+## Dept of Internet of Things 💡
+
+[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) shared with us a [press release from Rocket.Chat](https://rocket.chat/press-releases/rocket-chat-leverages-matrix-protocol-for-decentralized-and-interoperable-communications) announcing their work on interoperability with Matrix. It is super exciting to see another big player join the ecosystem. Watch this space next week for more announcements!
+
+## Dept of Ping 🏓
+
+Thib is out this week, therefore so are the ping stats in TWIM (don't worry, they'll be back next week!).
+
+You can still go check them out yourself in [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) and [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)!
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) with your updates!
