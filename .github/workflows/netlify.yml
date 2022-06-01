@@ -28,21 +28,6 @@ jobs:
         run: tar -xzvf content.tar.gz && rm content.tar.gz
 
       - name: "📤 Deploy to Netlify"
-        id: netlify
-        # v1.2.2
-        uses: nwtgck/actions-netlify@f517512ae75beec8896aa7b027c1c72f01816200
-        with:
-          publish-dir: content
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
-          enable-commit-comment: false
-          alias: pr${{ steps.readctx.outputs.prnumber }}
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 15
-
-      - name: "📤 Deploy to Netlify"
         uses: matrix-org/netlify-pr-preview@v1
         with:
           path: content
