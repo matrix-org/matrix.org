@@ -17,22 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request'
     steps:
-      - name: "dump context data"
-        run: |
-          jq . < $GITHUB_EVENT_PATH
-
       - name: "🔍 Read PR number"
-        id: readctx
-        # we need to find the PR number that corresponds to the branch, which we do by
-        # searching the GH API
-        run: |
-          head_branch='${{github.event.workflow_run.head_repository.owner.login}}:${{github.event.workflow_run.head_branch}}'
-          echo "head branch: $head_branch"
-          pulls_uri="https://api.github.com/repos/${{ github.repository }}/pulls?head=$(jq -Rr '@uri' <<<$head_branch)"
-          pr_number=$(curl -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' "$pulls_uri" |
-               jq -r '.[] | .number')
-          echo "PR number: $pr_number"
-          echo "::set-output name=prnumber::$pr_number"
+        id: prdetails
+        uses: matrix-org/pr-details-action@v1.1
+        with:
+          owner: ${{ github.event.workflow_run.head_repository.owner.login }}
+          branch: ${{ github.event.workflow_run.head_branch }}
 
       - name: '📥 Download artifact'
         uses: dawidd6/action-download-artifact@af92a8455a59214b7b932932f2662fdefbd78126 # v2.15.0
@@ -53,7 +43,7 @@ jobs:
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: false
           enable-commit-comment: false
-          alias: pr${{ steps.readctx.outputs.prnumber }}
+          alias: pr${{ steps.prdetails.outputs.pr_id }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
