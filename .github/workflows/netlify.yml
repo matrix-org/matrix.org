@@ -17,23 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request'
     steps:
-      - name: "dump context data"
-        run: |
-          jq . < $GITHUB_EVENT_PATH
-
-      - name: "🔍 Read PR number"
-        id: readctx
-        # we need to find the PR number that corresponds to the branch, which we do by
-        # searching the GH API
-        run: |
-          head_branch='${{github.event.workflow_run.head_repository.owner.login}}:${{github.event.workflow_run.head_branch}}'
-          echo "head branch: $head_branch"
-          pulls_uri="https://api.github.com/repos/${{ github.repository }}/pulls?head=$(jq -Rr '@uri' <<<$head_branch)"
-          pr_number=$(curl -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' "$pulls_uri" |
-               jq -r '.[] | .number')
-          echo "PR number: $pr_number"
-          echo "::set-output name=prnumber::$pr_number"
-
       - name: '📥 Download artifact'
         uses: dawidd6/action-download-artifact@af92a8455a59214b7b932932f2662fdefbd78126 # v2.15.0
         with:
@@ -59,12 +42,15 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 15
 
-      - name: "📝 Edit PR Description"
-        # v1.0.1
-        uses: Beakyn/gha-comment-pull-request@2167a7aee24f9e61ce76a23039f322e49a990409
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: "📤 Deploy to Netlify"
+        uses: matrix-org/netlify-pr-preview@v1
         with:
-          pull-request-number: ${{ steps.readctx.outputs.prnumber }}
-          description-message: |
-            Preview: ${{ steps.netlify.outputs.deploy-url }}
+          path: content
+          owner: ${{ github.event.workflow_run.head_repository.owner.login }}
+          branch: ${{ github.event.workflow_run.head_branch }}
+          revision: ${{ github.event.workflow_run.head_sha }}
+          token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          site_id: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 15
+
+
