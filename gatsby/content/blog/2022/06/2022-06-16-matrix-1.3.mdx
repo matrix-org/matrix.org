@@ -77,13 +77,13 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Correct the default value for `invite` where it is not specified in an `m.room.power_levels` event. ([#1021](https://github.com/matrix-org/matrix-spec/issues/1021))
 - Update various links which pointed to the old `matrix-doc` github repository. ([#1032](https://github.com/matrix-org/matrix-spec/issues/1032))
 - Removed `m.room.message.feedback` per [MSC3582](https://github.com/matrix-org/matrix-spec-proposals/pull/3582). ([#1035](https://github.com/matrix-org/matrix-spec/issues/1035))
-- Fix various typos throughout the specification. ([#1051](https://github.com/matrix-org/matrix-spec/issues/1051), [#1054](https://github.com/matrix-org/matrix-spec/issues/1054), [#1059](https://github.com/matrix-org/matrix-spec/issues/1059), [#1081](https://github.com/matrix-org/matrix-spec/issues/1081), [#1097](https://github.com/matrix-org/matrix-spec/issues/1097), [#1110](https://github.com/matrix-org/matrix-spec/issues/1110), [#1115](https://github.com/matrix-org/matrix-spec/issues/1115), [#1126](https://github.com/matrix-org/matrix-spec/issues/1126), [#1127](https://github.com/matrix-org/matrix-spec/issues/1127), [#1128](https://github.com/matrix-org/matrix-spec/issues/1128), [#1129](https://github.com/matrix-org/matrix-spec/issues/1129), [#3681](https://github.com/matrix-org/matrix-spec/issues/3681), [#3708](https://github.com/matrix-org/matrix-spec/issues/3708))
+- Fix various typos throughout the specification. ([#1051](https://github.com/matrix-org/matrix-spec/issues/1051), [#1054](https://github.com/matrix-org/matrix-spec/issues/1054), [#1059](https://github.com/matrix-org/matrix-spec/issues/1059), [#1081](https://github.com/matrix-org/matrix-spec/issues/1081), [#1097](https://github.com/matrix-org/matrix-spec/issues/1097), [#1110](https://github.com/matrix-org/matrix-spec/issues/1110), [#1115](https://github.com/matrix-org/matrix-spec/issues/1115), [#1126](https://github.com/matrix-org/matrix-spec/issues/1126), [#1127](https://github.com/matrix-org/matrix-spec/issues/1127), [#1128](https://github.com/matrix-org/matrix-spec/issues/1128), [#1129](https://github.com/matrix-org/matrix-spec/issues/1129), [#3681](https://github.com/matrix-org/matrix-spec-proposals/issues/3681), [#3708](https://github.com/matrix-org/matrix-spec-proposals/issues/3708))
 - Clarify that state keys starting with `@` are in fact reserved. Regressed from [#3658](https://github.com/matrix-org/matrix-spec-proposals/pull/3658). ([#1100](https://github.com/matrix-org/matrix-spec/issues/1100))
-- Remove unenforced size limit on the `name` field of `m.room.name` events. ([#3669](https://github.com/matrix-org/matrix-spec/issues/3669))
-- Remove erroneous `room_id` field from examples of `m.read`, `m.typing` in `/sync` and `m.fully_read` in room account data. ([#3679](https://github.com/matrix-org/matrix-spec/issues/3679))
-- Clarify the behaviour of `event_match` in push rule conditions. ([#3690](https://github.com/matrix-org/matrix-spec/issues/3690))
-- Fix incorrectly referenced `m.login.appservice` login identifier, instead using `m.login.application_service`. ([#3711](https://github.com/matrix-org/matrix-spec/issues/3711))
-- Fix membership state transitions to denote that `invite->knock` and `external->leave` are valid transitions. ([#3730](https://github.com/matrix-org/matrix-spec/issues/3730))
+- Remove unenforced size limit on the `name` field of `m.room.name` events. ([#3669](https://github.com/matrix-org/matrix-spec-proposals/issues/3669))
+- Remove erroneous `room_id` field from examples of `m.read`, `m.typing` in `/sync` and `m.fully_read` in room account data. ([#3679](https://github.com/matrix-org/matrix-spec-proposals/issues/3679))
+- Clarify the behaviour of `event_match` in push rule conditions. ([#3690](https://github.com/matrix-org/matrix-spec-proposals/issues/3690))
+- Fix incorrectly referenced `m.login.appservice` login identifier, instead using `m.login.application_service`. ([#3711](https://github.com/matrix-org/matrix-spec-proposals/issues/3711))
+- Fix membership state transitions to denote that `invite->knock` and `external->leave` are valid transitions. ([#3730](https://github.com/matrix-org/matrix-spec-proposals/issues/3730))
 
 
 ### Server-Server API
@@ -106,8 +106,8 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Clarify that checks on PDUs should refer to the state *before* an event. ([#1070](https://github.com/matrix-org/matrix-spec/issues/1070))
 - Clarify the historical handling of non-integer power levels. ([#1099](https://github.com/matrix-org/matrix-spec/issues/1099))
 - Fix various typos throughout the specification. ([#1110](https://github.com/matrix-org/matrix-spec/issues/1110))
-- Correct misleading text for `/send_join` response. ([#3703](https://github.com/matrix-org/matrix-spec/issues/3703))
-- Clarify that the `content` for `X-Matrix` signature validation is the parsed JSON body. ([#3727](https://github.com/matrix-org/matrix-spec/issues/3727))
+- Correct misleading text for `/send_join` response. ([#3703](https://github.com/matrix-org/matrix-spec-proposals/issues/3703))
+- Clarify that the `content` for `X-Matrix` signature validation is the parsed JSON body. ([#3727](https://github.com/matrix-org/matrix-spec-proposals/issues/3727))
 
 
 ### Application Service API
@@ -140,7 +140,7 @@ No significant changes.
 - Add room version 10 as per [MSC3604](https://github.com/matrix-org/matrix-spec-proposals/pull/3604). ([#1099](https://github.com/matrix-org/matrix-spec/issues/1099))
 - Enforce integer power levels in room version 10 as per [MSC3667](https://github.com/matrix-org/matrix-spec-proposals/pull/3667). ([#1099](https://github.com/matrix-org/matrix-spec/issues/1099))
 - Add a `knock_restricted` join rule supported by room version 10 as per [MSC3787](https://github.com/matrix-org/matrix-spec-proposals/pull/3787). ([#1099](https://github.com/matrix-org/matrix-spec/issues/1099))
-- Update the default room version to 9 as per [MSC3589](https://github.com/matrix-org/matrix-spec-proposals/pull/3589). ([#3739](https://github.com/matrix-org/matrix-spec/issues/3739))
+- Update the default room version to 9 as per [MSC3589](https://github.com/matrix-org/matrix-spec-proposals/pull/3589). ([#3739](https://github.com/matrix-org/matrix-spec-proposals/issues/3739))
 
 
 <strong>Spec Clarifications</strong>
@@ -152,7 +152,7 @@ No significant changes.
 - Clarify that room versions 1 through 9 accept stringy power levels, as noted by [MSC3667](https://github.com/matrix-org/matrix-spec-proposals/pull/3667). ([#1099](https://github.com/matrix-org/matrix-spec/issues/1099))
 - For all room versions: Add `m.federate` to the authorization rules, as originally intended. ([#1103](https://github.com/matrix-org/matrix-spec/issues/1103))
 - For room versions 2 through 10: More explicitly define the mainline of a power event and the mainline ordering of other events. ([#1107](https://github.com/matrix-org/matrix-spec/issues/1107))
-- For room versions 7, 8, 9, and 10: fix join membership authorization rules when `join_rule` is `knock`. ([#3737](https://github.com/matrix-org/matrix-spec/issues/3737))
+- For room versions 7, 8, 9, and 10: fix join membership authorization rules when `join_rule` is `knock`. ([#3737](https://github.com/matrix-org/matrix-spec-proposals/issues/3737))
 
 
 ### Appendices
