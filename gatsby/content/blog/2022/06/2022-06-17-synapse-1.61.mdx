@@ -1,0 +1,72 @@
+---
+date: '2022-06-17'
+title: Synapse 1.61 released
+categories:
+- Releases
+author: Brendan Abolivier
+---
+
+Hey everyone! Guess what? [Synapse
+1.61](https://github.com/matrix-org/synapse/releases/tag/v1.61.0) is out! Let's
+have a look at it.
+
+## Farewell, groups
+
+If you are new to Matrix, you might have not heard of the feature referred to as
+"groups" or "communities" (depending on the context). This feature allowed
+grouping rooms and users to better represent a community, one of which being
+`+matrix:matrix.org` which used to represent the Matrix community. This may
+sound similar to [Matrix
+spaces](https://matrix.org/blog/2021/05/17/the-matrix-space-beta), and it would
+make sense since spaces is meant to be a more powerful replacement to groups.
+
+As of [Synapse 1.56](https://matrix.org/blog/2022/04/05/synapse-1-56-released),
+support for groups has been deprecated, with a plan to fully remove it in a
+later release of Synapse. This is now done as of Synapse 1.61, and most of the
+code supporting this feature has now been removed.
+
+Note that this means that administrators of homeservers using workers can remove
+endpoints related to groups from their reverse proxy configuration. See [the
+upgrade
+notes](https://matrix-org.github.io/synapse/v1.61/upgrade.html#removal-of-deprecated-communitygroups)
+for more information.
+
+## Media retention
+
+A common issue we see homeserver administrators struggle with is managing the
+disk space used by Synapse. A non-negligible part of that amount is used for
+storing files uploaded by Matrix users, both local and remote.
+
+Up until now Synapse would only provide administrators with limited, manual ways
+to manage the media store of their homeserver, via the [admin
+API](https://matrix-org.github.io/synapse/develop/admin_api/media_admin_api.html).
+As of this release, Synapse now allows administrators to define retention
+lifetimes for local and remote media. This allows media that hasn't been
+accessed in a long time to be automatically deleted, therefore freeing up disk
+space.
+
+Server administrators can enable this feature by configuring the
+`media_retention` setting, see [the configuration
+guide](https://matrix-org.github.io/synapse/develop/usage/configuration/config_documentation.html#media_retention)
+for more information.
+
+## Everything else
+
+This release of Synapse introduces a change in the return value of the
+`check_event_for_spam` spam checker module callback, in order to allow modules
+more flexibility in communicating to users why their messages are rejected. This
+is part of ongoing improvement works around spam checker callbacks, watch this
+space next time for more information!
+
+See the [full
+changelog](https://github.com/matrix-org/synapse/releases/tag/v1.61.0) for a
+complete list of changes in this release. Also please have a look at the
+[upgrade
+notes](https://matrix-org.github.io/synapse/v1.61/upgrade#upgrading-to-v1610)
+for this version.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
+thanks to everyone who contributed to this release, including (in no particular
+order) [Beeper](https://www.beeper.com/), [Dirk
+Klimpel](https://github.com/dklimpel) and [Jacek
+Kuśnierz](https://github.com/Vetchu).
