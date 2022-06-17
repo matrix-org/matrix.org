@@ -40,13 +40,15 @@ dedicated to storing files uploaded by Matrix users, both local and remote.
 Up until now Synapse would only provide administrators with limited, manual ways
 to manage the media store of their homeserver, via the [admin
 API](https://matrix-org.github.io/synapse/develop/admin_api/media_admin_api.html).
+
 As of this release, Synapse now allows administrators to define retention
 lifetimes for local and remote media. This allows media that hasn't been
 accessed in a long time to be automatically deleted, therefore freeing up disk
-space.
+space. Server administrators wishing to control media retention more finely can
+also define different policies for remote and local media.
 
-Server administrators can enable this feature by configuring the
-`media_retention` setting, see [the configuration
+This feature can be enabled by configuring the `media_retention` setting, see
+[the configuration
 guide](https://matrix-org.github.io/synapse/develop/usage/configuration/config_documentation.html#media_retention)
 for more information.
 
