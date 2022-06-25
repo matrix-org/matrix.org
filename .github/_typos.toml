@@ -6,8 +6,7 @@ extend-exclude = [
 	"/gatsby/content/blog/2020/12/2020-12-18-a-twim.mdx", # contains intentional typos
 	"/gatsby/content/blog/2021/09/2021-09-17-twim.mdx", # contains French, for some reason
 	"/gatsby/content/blog/2022/01/2022-01-21-twim.mdx", # pings scoreboard triggers the typo CI
-        "/gatsby/content/blog/2022/05/2022-05-13-twim.mdx", # typo found in a url
-	"*signed*.txt", # can be removed once https://github.com/crate-ci/typos/issues/401 is fixed
+	"/gatsby/content/blog/2022/05/2022-05-13-twim.mdx", # typo found in a url
 	"synapse-debian-security-announcement.asc" # has typo but cannot fix due to PGP signature
 ]
 
