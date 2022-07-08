@@ -1,0 +1,336 @@
+---
+date: '2022-07-08'
+title: 'This Week in Matrix 2022-07-08'
+categories:
+  - This Week in Matrix
+author: Thib
+image: 
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zYjVY6M26tQ " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Rick and I talk about the the brand new Chatterbox. Is it Riot Embedded rebranded? Did the world need yet another embedded chat solution? Can I host mine? Can I make it clever? Let's find out!
+
+## Dept of Spec 📜
+
+[Andrew Morgan (anoa)](https://matrix.to/#/@andrewm:element.io) says
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+> 
+> 
+> ## MSC Status
+> 
+> **New MSCs:**
+> * [[WIP] MSC3842: Placeholder for power levels & extensible events](https://github.com/matrix-org/matrix-spec-proposals/pull/3842)
+> 
+> **MSCs in Final Comment Period:**
+> * [MSC3244: Room version capabilities](https://github.com/matrix-org/matrix-spec-proposals/pull/3244) (close)
+> 
+> **Accepted MSCs:**
+> * *No MSCs were accepted this week.*
+> 
+> **Merged MSCs:**
+> * *No MSCs were merged this week.*
+> 
+> ## Spec Core Team
+> 
+> The Spec Core Team did some shuffling of our [backlog board](https://github.com/orgs/matrix-org/projects/31) this week in order to ensure that all in-flight and in-focus items are reflected on it.
+> 
+> Outside of that was the usual rounds of MSC review by team members.
+> 
+> ## Random MSC of the Week
+> 
+> The random MSC of the week is... [MSC2199: Canonical DMs](https://github.com/matrix-org/matrix-spec-proposals/pull/2199)!
+> 
+> While the name may not make much sense to the layperson, the idea of a "canonical" Direct Messaging room (DM) is one that would always be referenced whenever a DM between two people is requested. That is, instead of potentially having a few different DM rooms with someone, both you and the other person would always know which room to use when DM'ing each other.
+> 
+> We don't really have this today. DM rooms are just group rooms with only you and someone else in them. If you attempt to DM another user, your client will try to guess the best room to use for this through some clever heuristics. What's lacking is a defined way to always arrive at the same room for this action.
+> 
+> This MSC attempts to define one, and would allow other functionality to be built on top of it, such as definitively knowing which room to send user-to-user data into, and to read from.
+> 
+> ![](/blog/img/2022-07-08-spec.png)
+
+## Dept of Servers 🏢
+
+### Synapse ([website](https://github.com/matrix-org/synapse/))
+
+Synapse is a Matrix homeserver implementation developed by the matrix.org core team
+
+[Brendan Abolivier](https://matrix.to/#/@babolivier:element.io) says
+
+> This week the Synapse team released [Synapse 1.62](https://github.com/matrix-org/synapse/releases/tag/v1.62.0)! It features a lot of changes, including a fairly big update of spam checker callbacks, performance improvements around syncing and device management, improved customisation of `.well-known` client files, and much more. Read all about it on the Matrix.org blog: https://matrix.org/blog/2022/07/06/synapse-1-62-released
+> 
+> Apart from this, we've been working on refining and fine-tuning our processes as a team over the past few weeks, which, among other things, resulted in the creation of [this documentaion](https://matrix-org.github.io/synapse/develop/development/reviews.html) that gives contributors some insight on how we review pull requests on Synapse. Olivier has also landed his work on running [Complement](https://github.com/matrix-org/complement/) (our next-gen integration test suite) against instances of Synapse using workers, which is a massive improvement for our CI.
+
+## Homeserver Deployment 📥️
+
+### Helm Chart ([website](https://gitlab.com/ananace/charts))
+
+Matrix Kubernetes applications packaged into helm charts
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) announces
+
+> Hello again TWIM, updates to [my Kubernetes charts](https://gitlab.com/ananace/charts) have been rolling along as usual, though I've been a bit more silent about them. This week sees the addition of a [synatainer](https://gitlab.com/mb-saces/synatainer) chart though, for those who want it for maintaining their K8s Synapse. (And the Synapse chart was also updated to 1.62.0, and element-web to 1.11.0)
+> If you have any questions, comments, requests for assistance, etc with them then [#matrix-on-kubernetes:fiksel.info](https://matrix.to/#/#matrix-on-kubernetes:fiksel.info) is where you want to go.
+
+### Dendrite Helm Chart ([website](https://github.com/k8s-at-home/charts/tree/master/charts/incubator/dendrite))
+
+Helm Chart to deploy Dendrite on Kubernetes
+
+[jonnobrow](https://matrix.to/#/@gh-jonnobrow:matrix.org) announces
+
+> The k8s-at-home dendrite helm chart now optionally configures ingress resources for dendrite in polylith mode. It has also had some bugs fixed and been updated to support the most recent version of dendrite.
+> 
+> Check out the chart here: https://github.com/k8s-at-home/charts/blob/master/charts/incubator/dendrite/README.md
+
+## Dept of Clients 📱
+
+### Quadrix ([website](https://github.com/alariej/quadrix))
+
+A Minimal, simple, multi-platform chat client for the Matrix protocol.
+
+[JFA](https://matrix.to/#/@alariej:matrix.org) reports
+
+> Quadrix v1.2.0 has now been released. It's already available for Linux (https://snapcraft.io/quadrix, https://flathub.org/apps/details/chat.quadrix.Quadrix) and Android (https://play.google.com/store/apps/details?id=chat.quadrix.android). The Windows, MacOS and iOS versions are awaiting approval from the respective stores.
+> 
+> New in this release:
+> * Brand new icons from Remix Icons (https://github.com/Remix-Design/RemixIcon)
+> * Messages can be redacted (for now only by the message owner)
+> * Users with admin power can kick other users from rooms
+> * Users can start a DM room directly from the member list in a group room
+> 
+> Please leave feedback/comments at [#quadrix:matrix.org](https://matrix.to/#/#quadrix:matrix.org) or in the issues at https://github.com/alariej/quadrix (stars welcome :-)
+> 
+> Note: The PR (https://github.com/matrix-org/matrix.org/pull/1348) to publish Quadrix on the matrix.org client list has been submitted more than a month ago, but still awaiting approval. Anyone here can help?
+
+### Nheko ([website](https://nheko-reborn.github.io))
+
+Desktop client for Matrix using Qt and C++17.
+
+[Nico](https://matrix.to/#/@deepbluev7:neko.dev) says
+
+> You can now edit aliases in Nheko! This means you can publish your own aliases in the room directory as well as in the room. If an alias can't be used by people (because it isn't listed in the room directory), that alias is highlighted in red with an easy option to fix it (if you have permissions to do so). You can also easily switch the primary (canonical) alias of the room.
+> 
+> With this the feature set I wanted to have for the next release is complete. I wanted to focus on improving moderation and room management capabilities in Nheko and it does now have a very basic sets of capabilities to do so. I do already have plans to expand on them though!
+> 
+> So instead of working on new features, I will be focusing on bug fixes. For a start if someone has the username `room`, Nheko will now omit the reply fallback to prevent pinging the whole room. The verification window now also should always be big enough to show its contents and we now properly explain to users, why emojis might look different on different devices fixing an issue reported via Twitter... There is also a new icon for the room directory (it is now a building, very punny, huh?).
+> 
+> ![](/blog/img/gVYEZvfOCtFbSdNSuFANdQyh.png)
+
+### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
+
+Secure and independent communication, connected via Matrix. Come talk with us in [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org)!
+
+[Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) announces
+
+> * Our new release, v1.11.0 is live. This release includes;
+> 
+>     - Search leaving Beta! Thanks for all your support and feedback so far we’re excited that this is now the default experience for all.
+>     - Video rooms are officially in Beta! Previously this was a labs flag but we’re making good progress, keep your feedback coming!
+> * We’re working on converting tests to Cypress. This week we focussed on lazy loading and we’re nearly at the finish line
+> * Please note; As we make progress on improving our automated testing, we are asking for more tests to be provided alongside all PRs
+> * Many more improvements to CSS are continuing to land thanks to community contributions
+> * Fixed issues with URL previews
+> * Removed obsolete code from the left panel filtering
+> 
+> **In labs (you can enable labs features in settings on develop.element.io or on Nightly):**
+> 
+> * More bug fixes have gone in to live location sharing
+
+### Element iOS ([website](https://github.com/vector-im/element-ios))
+
+Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
+
+[Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) says
+
+> * We’ve had lots of updates with our latest iOS release, check out the full list but here’s our favourites:
+> 
+>     - You can now mark a room as read from the room list. Open the context menu to see the new option
+>     - We updated the way reactions look on the timeline
+>     - There’s now an accessibility label and hint when you send voice messages
+>     - User pills now use the latest data when you’re [mentioned](https://github.com/vector-im/element-ios/issues/6302)
+
+### Chatterbox ([website](https://github.com/vector-im/chatterbox))
+
+Chatterbox lets you securely embed Hydrogen on any website!
+
+[Thib](https://matrix.to/#/@thib:ergaster.org) says
+
+> You have probably seen it, this week Element released Chatterbox, an embedded chat client you can use to build chat assistants, chatbots… or probably other use cases we didn't even think of. It's OSS and really just a lightweight Matrix client. Rick talks about it in greater length with me in today's Matrix Live.
+> 
+> ✍️ Release blog post: https://element.io/blog/element-launches-chatterbox/
+> ⌨️ Chatterbox source code: https://github.com/vector-im/chatterbox
+> 🧰 Hydrogen SDK: https://github.com/vector-im/hydrogen-web/blob/master/doc/SDK.md
+> 🤖 OpsDroid FOSDEM talk: https://www.youtube.com/watch?v=BHs2eLp5nwE&list=PLl5dnxRMP1hW7HxlJiHSox02MK9_KluLH&index=3
+
+## Dept of Non Chat Clients 🎛️
+
+### Cactus Comments ([website](https://cactus.chat))
+
+Cactus Comments is a federated comment system for the web, based on the Matrix protocol.
+
+[Asbjørn](https://matrix.to/#/@asbjorn:olli.ng) announces
+
+> Cactus Comments is a federated comment system for the open web built on Matrix.
+> 
+> Just released a small update for the web client: [cactus-client v0.13.0](https://gitlab.com/cactus-comments/cactus-client/-/releases/v0.13.0)
+> 
+> * Fix for missing end tokens in sync responses from Synapse >= v1.61.0 (Thanks to Tom Price for [!20](https://gitlab.com/cactus-comments/cactus-client/-/merge_requests/20)).
+> * A prettier animation while loading comments.
+> 
+> /ipns/latest.cactus.chat is updated to point to the latest release, so sites linking there should already be using the new version.
+> 
+> Also, while we're here: we're surprised and delighted to so many people using Cactus Comments!
+> We just crossed 300k guest users registered on cactus.chat (roughly equivalent to 300k unique anonymous users). 🎉
+> 
+> An unfortunate side-effect is that we're having to up our hosting game to keep up with you all - and it's getting a bit expensive on our student budgets.
+> We set up a [donations page](https://opencollective.com/cactus-comments) on Open Collective, in case any of you would want to help out. ✨🫂
+> 
+> 🌵 Thanks!
+> 
+> * Come play with the demo: [https://cactus.chat/demo](https://cactus.chat/demo)
+> * Join our Matrix room: [#cactus:cactus.chat](https://matrix.to/#/%23cactus:cactus.chat)
+
+## Dept of SDKs and Frameworks 🧰
+
+### matrix-rust-sdk ([website](https://github.com/matrix-org/matrix-rust-sdk))
+
+Matrix Client-Server SDK for Rust
+
+[ben](https://matrix.to/#/@gnunicorn:matrix.org) reports
+
+> After a long hunt, we've eventually found a significant problem with napi-rs, the layer we use in between Rust and Node.js for the crypto-nodejs, in the way it manages the memory coming from async functions in rust. With [that out of the way](https://github.com/matrix-org/matrix-rust-sdk/pull/815) and [the](https://github.com/matrix-org/matrix-rust-sdk/pull/803) last [remaining](https://github.com/matrix-org/matrix-rust-sdk/pull/817) features [implemented](https://github.com/matrix-org/matrix-rust-sdk/pull/818), we are on the final stretch into in putting out the **first prerelease of crypto-nodejs-bindings**—brace for it to come near your next npmjs.com early next week 🤞🤞.
+> 
+> While that has still occupied most of the teams' time, the community hasn't been idling either, and implement the [API for permalinks to events](https://github.com/matrix-org/matrix-rust-sdk/pull/811), [exposes the authentication service over FFI](https://github.com/matrix-org/matrix-rust-sdk/pull/820) and an [API to get invite details for Invited Rooms](https://github.com/matrix-org/matrix-rust-sdk/pull/810). Thanks everyone!
+> 
+> 👉️ Wanna hack on matrix rust? Go check out our [`help wanted` tagged issues](https://github.com/matrix-org/matrix-rust-sdk/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and join our matrix channel at [#matrix-rust-sdk:matrix.org](https://matrix.to/#/#matrix-rust-sdk:matrix.org).
+
+### matrix-room-element ([website](https://gitlab.com/sctlib/matrix-room-element))
+
+A custom html element, web component, to display the latest messages from a matrix room
+
+[@ugp:matrix.org](https://matrix.to/#/@ugp:matrix.org) says
+
+> `matrix-room-element` -> `npm@v0.0.58` (GPLv3)
+> 
+> `<matrix-room-element/>` is a web component (vanilla JS/HTML/CSS & distributed un-minified) that can be imported and inserted in any web page, to display the content of a (public, soon with authentication, and private room support) matrix room.
+> 
+> * preview: https://sctlib.gitlab.io/matrix-room-element/
+> * gitlab: https://gitlab.com/sctlib/matrix-room-element
+> * npm: https://www.npmjs.com/package/@sctlib/matrix-room-element/
+> 
+> Development is continuing, some new web-components have now prototypes:
+> 
+> * `<matrix-login/>`, `<matrix-logout/>`, `<matrix-auth/>`
+> * `<matrix-create-room/>`, `<matrix-edit-room/>`, `<matrix-join-room/>`
+> * `<matrix-send-event/>`
+> * `<matrix-event/>`
+> 
+> It is still heavy in development, and still looking for the right patterns (web components, and matrix).
+> 
+> We're trying to make composable components that can be inserted in any web page, and maybe help users use Matrix as a CMS, embedable anywhere (web). Our first use case is on https://libli.org (that now comes with a `/login` endpoint - alpha) (this event in libli, loading a `matrix-room-element` with correct room-id/event-id, https://libli.org/thisweekinmatrix:matrix.org/$KsbQ0JsqAXN9g-57M-aXyVohZYM3SZkKKkuUb9dW928).
+> 
+> Looking forward for use-cases, feedback, attribute naming discussion, simple patterns to make to code readable. (topics:  [#matrix-room-element:matrix.org](https://matrix.to/#/#matrix-room-element:matrix.org) [#libli:matrix.org](https://matrix.to/#/#libli:matrix.org)  )
+
+## Dept of Ops 🛠
+
+### matrix-docker-ansible-deploy ([website](https://github.com/spantaleev/matrix-docker-ansible-deploy))
+
+Matrix server setup using Ansible and Docker
+
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) says
+
+> Thanks to [Julian Foad](https://matrix.to/#/@julian:foad.me.uk), [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) now supports installing the [ntfy](https://ntfy.sh/) push notifications server for you.
+> 
+> See our [Setting up the ntfy push notifications server](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-ntfy.md) documentation to get started.
+
+[JulianF](https://matrix.to/#/@julian:foad.me.uk) adds
+
+> To explain what it's for: Using the UnifiedPush standard, ntfy enables self-hosted (Google-free) push notifications from Matrix (and other) servers. Especially useful for users of Google-free Android (such as from f-droid).
+> 
+> If you try it, please report any feedback or problems or improvements in [#matrix-docker-ansible-deploy:devture.com](https://matrix.to/#/#matrix-docker-ansible-deploy:devture.com) . Any updates to the scripts or docs may appear first [on my branch](https://lab.trax.im/matrix/matrix-docker-ansible-deploy/-/blob/add-ntfy-role/docs/configuring-playbook-ntfy.md) before being merged into the playbook.
+
+## Dept of Bots 🤖
+
+### Who's In This Room Bot
+
+[Jake C](https://matrix.to/#/@jake:jakecopp.chat) says
+ 
+> > Announce Matrix room members to Signal users in bridged chats with relay mode (as they can't see them), building on the _excellent_ Signal bridge
+> 
+> Your favourite bot for social chats with Signal & Matrix friends just got better!
+> 
+> The bot will now:
+> 
+> * Not show full Matrix usernames to Signal users (they can't use them). It will send their display name if it exists, otherwise their username prefix.
+> * Send message on invite rather than join, as Signal users may not understand Matrix join vs invite semantics
+> * Send read receipts so you know it's working
+> 
+> I don't currently have a public bot, but if anyone is interested please join [#whos-in-this-room-bot-discussion:jakecopp.chat](https://matrix.to/#/#whos-in-this-room-bot-discussion:jakecopp.chat) and say hello!
+> 
+> I'm getting great feedback in my local friend groups with it! PRs or issues very welcome.
+> 
+> https://github.com/jakecoppinger/whos-in-this-room-matrix-bot
+> ![](/blog/img/pthdsgSkoTtlfbqsmRdHmYku.png)
+
+### Mjölnir ([website](https://github.com/matrix-org/mjolnir))
+
+The moderation bot for Matrix
+
+[Gnuxie](https://matrix.to/#/@gnuxie:matrix.org) reports
+
+> Hi everyone, we have released Mjolnir [v1.5.0](https://github.com/matrix-org/mjolnir/releases/tag/v1.5.0)
+> 
+> which includes:
+> 
+> * The option for reports to be polled via the synapse admin API (rather than configuring proxy pass-through)
+> * The option to disable the displaying new reports in moderation room (so that you can use the [TrustedReporters](https://github.com/matrix-org/mjolnir/blob/main/src/protections/TrustedReporters.ts) protection without the abuse reports features)
+> * A `!mjolnir rules matching <entity>` command to search watched lists.
+> * Glob support to the  kick command.
+> * A background queue for kicking (to reduce the load of large glob kicks)
+> * A slight improvement to the performance of the redact command
+> * An improvement to documentation (including dedicated setup documentation)
+> * A new mute action for the since command `!mjolnir since 1day mute 100`
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|neko.dev|294|
+|2|envs.net|433|
+|3|babel.sh|447|
+|4|hs-bremerhaven.de|495|
+|5|nognu.de|510.5|
+|6|alemann.dev|540.5|
+|7|keks.club|551|
+|8|mail.at|554|
+|9|shortestpath.dev|583|
+|10|asra.gr|992|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|matrix.org|282|
+|2|babel.sh|284|
+|3|sspaeth.de|292.5|
+|4|dendrite.matrix.org|350|
+|5|babel1.eu|396|
+|6|conduit.grich.sk|438|
+|7|rustybever.be|493|
+|8|dendrite.babel.sh|915|
+|9|grin.hu|1774|
+|10|zemos.net|7526|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) with your updates!
