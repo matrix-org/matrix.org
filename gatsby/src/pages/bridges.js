@@ -35,7 +35,7 @@ const Bridges = ({ data }) => {
 ["Google Chat", "google-chat"],
 ["Mastodon", "mastodon"],
 ["Mattermost", "mattermost"],
-["libpurple", "libpurple"],
+["XMPP", "xmpp"],
 ["GroupMe", "groupme"],
 ["Skype", "skype"],
 ["WeChat", "wechat"],
