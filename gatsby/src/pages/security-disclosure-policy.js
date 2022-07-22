@@ -268,6 +268,14 @@ const HallOfFame = () => {
                 <li>We will fix the issue as soon as is practical, keeping in mind that not all risks are created equal.</li>
                 <li>We will always transparently let the community know about any incident that affects them.</li>
             </ul>
+            <p>We will work with you to establish a disclosure time frame for the reported
+            vulnerability. During this time frame, we will work on a fix, after which we will
+            disclose the vulnerability. In general, we will aim for a fix within 90 days of
+            processing your report, but we may propose a longer time frame (usually 120 days) for
+            especially complex vulnerabilities. In some cases, when a vulnerability is particularly
+            disruptive or easy to exploit, we may delay publishing technical details for an
+            additional period after the fix is publicly available, for a period of no longer than 30
+            additional days.</p>
             <p>If you have found a security vulnerability in Matrix, we ask that you disclose it responsibly by emailing <a href='mailto:security@matrix.org'>security@matrix.org</a>.
             Optionally, if you want to encrypt your email, you can use our <a href="/.well-known/pgp-key.txt">PGP key</a>.
             Please do not discuss potential vulnerabilities in public without validating with us first.</p>
