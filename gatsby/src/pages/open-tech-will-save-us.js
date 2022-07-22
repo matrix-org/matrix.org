@@ -78,7 +78,7 @@ const OTWSU = ({ data }) => {
           <h3>{moment.utc(nextEvent.node.frontmatter.eventdate).format('Do MMMM YYYY')}</h3>
           <p>
             Return to this page at the specified time to watch the stream.
-            You can also <a href="https://user.fm/calendar/v1-2f5c614bd642751481ef4aedc83fee95/Matrix%20Public%20Events.ics">add us to your calendar</a>.
+            You can also <a href="https://www.google.com/url?q=https://calendar.google.com/calendar/ical/c_6ns9uddvmgqpop6l7qfna32dcc%2540group.calendar.google.com/public/basic.ics&source=gmail-imap&ust=1659090704000000&usg=AOvVaw2DVHjn4SycYX9yjODwcZu7">add us to your calendar</a>.
           </p>
           <MDXRenderer>{nextEvent.node.body}</MDXRenderer>
         </div>
