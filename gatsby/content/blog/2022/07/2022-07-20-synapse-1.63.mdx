@@ -1,0 +1,69 @@
+---
+date: '2022-07-20'
+title: Synapse 1.63 released
+categories:
+- Releases
+author: Brendan Abolivier
+---
+
+Hey all, it's time for another Synapse release! That's right, [Synapse
+1.63](https://github.com/matrix-org/synapse/releases/tag/v1.63.0) is out,
+let's have a look at it.
+
+## Clarifications on "anonimised" server statistics
+
+Synapse has the ability to report usage statistics to the Matrix.org Foundation
+(or to another location, if configured to do so). These statistics, such as
+number of users, number of rooms joined by the server, etc. (they don't feature
+any identifiable information about users and rooms) help us monitor the health
+of the public federation.
+
+In this release of Synapse, we have updated our public documentation about this
+feature to clarify how it works and what exactly is being reported. This
+documentation can be found [right
+here](https://matrix-org.github.io/synapse/v1.63/usage/administration/monitoring/reporting_homeserver_usage_statistics.html).
+
+Note that previous documentation and prompts surrounding this feature called it
+"anonimised" server statistics. This could easily be misinterpreted, as while
+per-user statistics are not reported - homeserver server names are. We have
+therefore changed said documentation and prompts to not call these statistics
+"anonimised" and be clearer about what is actually reported.
+
+Note that your homeserver will never report any statistics if the `report_stats`
+configuration option is set to `false`. Server admins who are curious about
+which software is used by the Matrix.org Foundation to record server statistics
+can check out [panopticon](https://github.com/matrix-org/panopticon).
+
+## Improved filtering for public room search
+
+This version of Synapse ships with an experimental implementation of
+[MSC3827](https://github.com/matrix-org/matrix-spec-proposals/pull/3827) which
+allows filtering public room search results by room type. This feature will
+enable better discoverability for Matrix Spaces (which are rooms with a specific
+type, under the hood), as it will enable clients to search specifically for
+public spaces.
+
+This feature is still experimental as [its
+MSC](https://github.com/matrix-org/matrix-spec-proposals/pull/3827) hasn't
+completed the MSC process yet, though it is in its final comment period at the
+time this post is being written. This means a stable implementation will be
+coming to Synapse very soon, so watch this space!
+
+## Everything else
+
+Synapse 1.63 also includes a new rate limiter to limit invites per issuer. This
+rate limiter can be configured using the new `rc_invites.per_issuer`
+configuration setting, see [the
+documentation](https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html#rc_invites)
+for more information.
+
+See the [full
+changelog](https://github.com/matrix-org/synapse/releases/tag/v1.63.0) for a
+complete list of changes in this release.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
+thanks to everyone who contributed to this release, including (in no particular
+order) [Beeper](https://www.beeper.com/),
+[villepeh](https://github.com/villepeh) and [Petr
+Vaněk](https://github.com/arkamar), as well as anyone helping us make Synapse
+better by sharing their feedback and reporting issues.
