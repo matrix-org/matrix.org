@@ -10,7 +10,7 @@ Hey all, it's time for another Synapse release! That's right, [Synapse
 1.63](https://github.com/matrix-org/synapse/releases/tag/v1.63.0) is out,
 let's have a look at it.
 
-## Clarifications on "anonimised" server statistics
+## Clarifications on "anonymised" server statistics
 
 Synapse has the ability to report usage statistics to the Matrix.org Foundation
 (or to another location, if configured to do so). These statistics, such as
@@ -24,10 +24,10 @@ documentation can be found [right
 here](https://matrix-org.github.io/synapse/v1.63/usage/administration/monitoring/reporting_homeserver_usage_statistics.html).
 
 Note that previous documentation and prompts surrounding this feature called it
-"anonimised" server statistics. This could easily be misinterpreted, as while
+"anonymised" server statistics. This could easily be misinterpreted, as while
 per-user statistics are not reported - homeserver server names are. We have
 therefore changed said documentation and prompts to not call these statistics
-"anonimised" and be clearer about what is actually reported.
+"anonymised" and be clearer about what is actually reported.
 
 Note that your homeserver will never report any statistics if the `report_stats`
 configuration option is set to `false`. Server admins who are curious about
