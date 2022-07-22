@@ -264,24 +264,22 @@ const HallOfFame = () => {
             <h1>Security Disclosure Policy</h1>
             <p>Matrix.org greatly appreciates investigative work into security vulnerabilities
             carried out by well-intentioned, ethical security researchers. We follow the practice of
-            <a href='https://en.wikipedia.org/wiki/Responsible_disclosure'>responsible
-            disclosure</a> in order to best protect Matrix’s user-base from the impact of security
+            <a href='https://en.wikipedia.org/wiki/Responsible_disclosure'> responsible
+            disclosure</a> in order to best protect Matrix’s user base from the impact of security
             issues.  On our side, this means:</p>
             <ul>
                 <li>We will respond to security incidents as a priority.</li>
-                <li>We will fix the issue as soon as is practical, keeping in mind that not all
-            risks are created equal.</li>
+                <li>We will work with you to establish a disclosure time frame for the reported
+                vulnerability. During this time frame, we will either work on a fix or decide to accept
+                the risk, after which we will disclose the vulnerability.</li>
                 <li>We will always transparently let the community know about any incident that
-            affects them.</li>
+                affects them.</li>
             </ul>
-            <p>We will work with you to establish a disclosure time frame for the reported
-            vulnerability. During this time frame, we will work on a fix, after which we will
-            disclose the vulnerability. In general, we will aim for a fix within 90 days of
-            processing your report, but we may propose a longer time frame (usually 120 days) for
-            especially complex vulnerabilities. In some cases, when a vulnerability is particularly
-            disruptive or easy to exploit, we may delay publishing technical details for an
-            additional period after the fix is publicly available, for a period of no longer than 30
-            additional days.</p>
+            <p>In general, we will aim for a fix within 90 days of processing your report, but we
+            may propose a longer time frame (usually 120 days) for especially complex
+            vulnerabilities. In some cases, when a vulnerability is particularly disruptive and/or
+            easy to exploit, we may delay publishing technical details for an additional period
+            after the fix is publicly available (usually no longer than 30 days).</p>
             <p>If you have found a security vulnerability in Matrix, we ask that you disclose it
             responsibly by emailing <a href='mailto:security@matrix.org'>security@matrix.org</a>.
             Optionally, if you want to encrypt your email, you can use our <a
@@ -320,7 +318,7 @@ const HallOfFame = () => {
 
             </ul>
             <p>If you think you should be on the list, apologies if we missed you, please mail us at
-            <a href='mailto:security@matrix.org'> security@matrix.org</a></p>
+            <a href='mailto:security@matrix.org'>security@matrix.org</a></p>
         </div>
     </Layout>)
 }
