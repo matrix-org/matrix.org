@@ -1,0 +1,40 @@
+---
+layout: projectimage
+title: MatrixBot .NET Core SDK
+categories: 
+ - sdk
+description: A .NET 6.0 library to quickly interact with the matrix protocol
+author: enimatek-nl
+featured: true
+maturity: Stable
+language: C#
+license: MIT
+repo: https://github.com/enimatek-nl/matrixbot-dotnet-sdk
+thumbnail: /docs/projects/images/c-sharp.png
+screenshot: /docs/projects/images/c-sharp.png
+---
+
+This open-source library allows you to build .NET chat bots compatible with the Matrix Protocol. It has support for a limited subset of the APIs.
+
+## Usage
+
+```cs
+var matrixBot = new MatrixBot.Sdk.MatrixBot();
+
+matrixBot.OnEvent += (object? sender, MatrixBot.Sdk.MatrixBotEventArgs e) =>
+{
+    Console.WriteLine($"{e.RoomId} : {e.Event.Sender}");
+};
+
+matrixBot.Start();
+```
+
+## Links to the projects
+
+[Matrix Bot SDK](https://github.com/enimatek-nl/matrixbot-dotnet-sdk/tree/main/MatrixBot.Sdk)
+
+[Matrix Bot Demo](https://github.com/enimatek-nl/matrixbot-dotnet-sdk/tree/main/MatrixBot.Sdk.Console)
+
+## NuGet
+
+You can find the SDK [here](https://www.nuget.org/packages/MatrixBot.Sdk/) on NuGet.
