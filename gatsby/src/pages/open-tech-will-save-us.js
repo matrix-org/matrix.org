@@ -12,7 +12,7 @@ import moment from "moment";
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
 
-const SHOW_LIVE_STREAM = false;
+const SHOW_LIVE_STREAM = true;
 const NEXT_EVENT = 18;
 
 let liveStream;
@@ -26,7 +26,7 @@ if (SHOW_LIVE_STREAM) {
         controls
       ></video><br />
       <strong><a href="https://stream.matrix.org">Watch on stream.matrix.org</a></strong><br />
-      <strong><a href="https://www.youtube.com/watch?v=c9BMmIEGC3c">Find the stream at https://www.youtube.com/watch?v=c9BMmIEGC3c</a></strong>
+      <strong><a href="https://youtube.com/watch?v=pGE2KEasjbc">Find the stream at https://youtube.com/watch?v=pGE2KEasjbc</a></strong>
       <script src="/js/hls.light.min.js"></script>
       <script src="/js/livestream.js"></script>
     </div>
@@ -48,7 +48,7 @@ const OTWSU = ({ data }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:image"
-          content="https://matrix.org/images/otwsu16.png"
+          content="https://matrix.org/images/otwsu18.png"
         />
       </Helmet>
       <div>
