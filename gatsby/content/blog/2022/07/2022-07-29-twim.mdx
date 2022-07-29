@@ -1,0 +1,269 @@
+---
+date: '2022-07-29'
+title: 'This Week in Matrix 2022-07-29'
+categories:
+  - This Week in Matrix
+author: Thib
+image: 
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OHsGBcnv8oQ " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Dept of Spec 📜
+
+[TravisR](https://matrix.to/#/@travis:t2l.io) says
+
+> Hello everyone! For this week's spec update you get me, Travis, instead of anoa (sorry). The heart of Matrix is the specification, modified by Matrix Spec Change (MSC) proposals - learn more at https://spec.matrix.org/unstable/proposals/
+> 
+> Be sure to read the Spec Core Team (SCT) section in today's update for some exciting news about Matrix though - this has a good chance of affecting how the MSC process works in the future.
+> 
+> ## MSC Status
+> 
+> **Merged MSCs:**
+> * [MSC3844: Remove unused policy room sharing mechanism](https://github.com/matrix-org/matrix-spec-proposals/pull/3844)
+> * [MSC3828: Content Repository CORP Headers](https://github.com/matrix-org/matrix-spec-proposals/pull/3828)
+> * [MSC3827: Filtering of `/publicRooms` by room type](https://github.com/matrix-org/matrix-spec-proposals/pull/3827)
+> * [MSC2153: Add a default push rule to ignore m.reaction events](https://github.com/matrix-org/matrix-spec-proposals/pull/2153)
+> 
+> **MSCs in Final Comment Period:**
+> * [MSC3818: Copy room type on upgrade](https://github.com/matrix-org/matrix-spec-proposals/pull/3818) (merge)
+> * [MSC3255: Use SRV record for homeservers discovery by clients](https://github.com/matrix-org/matrix-spec-proposals/pull/3255) (close)
+> * [MSC2836: Threading](https://github.com/matrix-org/matrix-spec-proposals/pull/2836) (close)
+> * [Threading API](https://github.com/matrix-org/matrix-spec-proposals/issues/3799) (close)
+> 
+> **New MSCs:**
+> * [MSC3856: Threads List API](https://github.com/matrix-org/matrix-spec-proposals/pull/3856)
+> * [MSC3852: Expose user agent information on `Device`](https://github.com/matrix-org/matrix-spec-proposals/pull/3852)
+> 
+> ## Spec Core Team
+> 
+> The SCT has been powering through MSCs for the second week in a row, using a new internal process to encourage activity and hopefully keep momentum going. If there's an MSC you think should be on the agenda, please visit the [#sct-office:matrix.org](https://matrix.to/#/#sct-office:matrix.org) and raise it for consideration 🙂
+> 
+> We've also been at IETF 114 to talk about [MIMI](https://datatracker.ietf.org/doc/draft-mahy-mimi-problem-outline/) - an initiative to define a standard for messaging interoperability inspired by the [DMA](https://matrix.org/blog/2022/03/30/technical-faq-on-the-digital-markets-act). Matrix appears to fit perfectly into this use-case, so we've been talking with various folks involved to ensure Matrix is on the radar, including preparing our own Internet-Draft to demonstrate how it could work. MIMI is not currently a working group within the IETF, but the expectation is that it will be soon - we look forward to this happening, and are eager to contribute to the process here - or proposing Matrix itself to IETF as an initiative in its own right.
+> 
+> Watch this space for updates, or visit [#matrix-spec:matrix.org](https://matrix.to/#/#matrix-spec:matrix.org) to ask questions 🙂
+> 
+> ## Random MSC of the Week
+> 
+> The random MSC of the week is... [MSC3554: Extensible Events - Translatable Text](https://github.com/matrix-org/matrix-spec-proposals/pull/3554)!
+> 
+> This MSC covers an Extensible Events ([MSC1767](https://github.com/matrix-org/matrix-spec-proposals/pull/1767)) schema definition for translatable text! This would allow a client to send a message in multiple languages, with the receiver able to choose which language they're prefer to see the message in (ideally falling back to a default or machine translation if their preferred language was not available).
+> 
+> Like other MSCs that rely on Extensible Events, [MSC1767](https://github.com/matrix-org/matrix-spec-proposals/pull/1767) will need to land before this MSC can. But until then, it's great to see all of the wonderful things this feature will allow Matrix to do!
+> ![](/blog/img/41350f50f74ae8dee4d89604a5a20cd5af0b4a4e.png)
+
+## Dept of Servers 🏢
+
+### Synapse ([website](https://github.com/matrix-org/synapse/))
+
+Synapse is a Matrix homeserver implementation developed by the matrix.org core team
+
+[Shay](https://matrix.to/#/@shayshay:matrix.org) says
+
+> Greetings! We have been hard at work on Synapse this week. Work on faster room joins continues. In addition, Synapse 1.64.0rc2 was released. Notable features include:
+> - support for room version 10
+> - per-room rate limiting for room joins
+> - support for Implicit TLS for sending emails
+> and much more, as well as a number of bugfixes, improvements to the documentation, and other changes to make Synapse leaner, faster, and generally more awesome.
+
+### Construct Server
+
+[Jason Volk](https://matrix.to/#/@jevolk:matrix.org) reports
+
+> This week The Construct server runs on Alpine Linux using freshly cut docker images building on the 0.7 release announced last week. A few images are available for preview while a more complete matrix is filled out. I am proud to announce to TWIM that Construct offers the most compact docker image for a Matrix server at just under 15 MiB; the only caveat is that media
+> thumbnailing won't be available.
+> 
+> There's still a lot of room for optimization and docker experts to critique! Feel free to join the discussion at [#construct:zemos.net](https://matrix.to/#/#construct:zemos.net) and check out https://github.com/matrix-construct/construct today!
+
+## Dept of Clients 📱
+
+### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
+
+Secure and independent communication, connected via Matrix. Come talk with us in [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org)!
+
+[Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) announces
+
+> * It’s holiday season but that won’t slow us down! We’ve been hard at work fixing defects and improving features.
+> * Our recently released new search experience is continuing to be improved. This week we’ve added more accessibility, so it can be helpful to all.
+> * We’ve completely finished the migration of our tests.
+> * There’s a new “use case” screen for users who sign up, it asks folks who they'll talk to the most on Element and, in the future, that will help us to tailor the experience.
+> 
+> **In labs (you can enable labs features in settings on develop.element.io or on Nightly):**
+> 
+> * Video rooms continue to improve. Check it out!
+
+### Element iOS ([website](https://github.com/vector-im/element-ios))
+
+Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
+
+[Ștefan](https://matrix.to/#/@stefan.ceriu:matrix.org) reports
+
+> * It’s an exciting week for both our mobile teams as we’re ready to release our new authentication flow! If you’ve been reading TWIM for a while you’ll know that we’ve been working hard, across all Element teams, to improve our onboarding experience. Part of this work on iOS was a new Create Account flow.
+>     * We’re rolling the changes out slowly, so don’t panic if you don’t see the new experience yet! 
+> * In even more exciting news, our test coverage has increased with a big bump. We’ve gone from 12% to 51%!
+> * We’ve also continued to make updates and improvements to our location sharing feature.
+> * On the ElementX front we have our first proof of concept for sliding sync (sync v3) working and we’ve almost finished setting up snapshot and integration testing. We also have Rust logs, a new authentication service and performance tests incoming.
+> * Finally, the account deactivation button has had a change of copy - this keeps us inline with Apple guidelines around deleting and deactivating accounts.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zWJ7IWDcslU " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Element Android ([website](https://github.com/vector-im/element-android))
+
+Secure and independent communication for Android, connected via Matrix. Come talk with us in [#element-android:matrix.org](https://matrix.to/#/#element-android:matrix.org)!
+
+[Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) says
+
+> * Our new Nightly releases are now available and allowing us to catch any bugs or regressions even faster - exciting!
+> * It will soon be easier than ever to create an account on Element, so if you’ve been waiting for an update before you recommend us to others, it’s nearly time! We’ll be rolling these changes out slowly over the next week or so.
+> 
+>     - Alongside the new create account flow will be an updated sign in and reset password experience. Check it out and let us know what you think.
+> * Also in this release we’ve added a “match system settings” to the Font size screen.
+
+## Dept of SDKs and Frameworks 🧰
+
+### Trixnity ([website](https://gitlab.com/trixnity/trixnity))
+
+Multiplatform Kotlin SDK for Matrix
+
+[Benedict](https://matrix.to/#/@benedict:imbitbu.de) says
+
+> Trixnity 2.2.0 has been released.
+> * Mac builds are enabled, which means, that olm is bundled into macOS and iOS builds too. So no need to build olm yourself anymore.
+> * `trixnity-crypto` has been introduced, which contains the matrix e2e-encryption stuff and was previously located in `trixnity-client`. The relocation allows you to possibly use this in e. g. appservices. Key trust level calculation, key backup, key verification will be moved into it too.
+> * client: basic event relation support has been added to be prepared for the next matrix spec
+> * client: added server discovery
+> * updated to kotlin 1.7
+> * some bug fixes
+
+### matrix-rust-sdk ([website](https://github.com/matrix-org/matrix-rust-sdk))
+
+Matrix Client-Server SDK for Rust
+
+[ben](https://matrix.to/#/@gnunicorn:matrix.org) reports
+
+> It's been a week of quite, constant progress on many fronts, most not that visible to the outside observer. For once, the progress on integration sliding sync into element-x for iOS has taken up speed, with many smaller bug fixes and additional features exposed through the FFI being added and performance optimisations. After the internal jack-in testing tool, this is the first actual trial of sliding sync for rust (and after the js-implementation, only the second client to actually use sliding sync overall)—and it has been tremendous. Latest tests put the loading time to first view on the first 20-ish rooms at a 150ms range 🎉. 
+> 
+> More visible to the keen observers of the repository has been that [we've updated the `event_handler` API](https://github.com/matrix-org/matrix-rust-sdk/pull/874) to allow removing existing handlers, an important step towards implementing [completion guaranteeing API calls](https://github.com/matrix-org/matrix-rust-sdk/pull/868), and that we've [support for custom encrypted events](https://github.com/matrix-org/matrix-rust-sdk/pull/882) now.
+> 
+> 👉️ Wanna hack on matrix rust? Go check out our [`help wanted` tagged issues](https://github.com/matrix-org/matrix-rust-sdk/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and join our matrix channel at [#matrix-rust-sdk:matrix.org](https://matrix.to/#/#matrix-rust-sdk:matrix.org).
+
+## Dept of Ops 🛠
+
+### matrix-docker-ansible-deploy ([website](https://github.com/spantaleev/matrix-docker-ansible-deploy))
+
+Matrix server setup using Ansible and Docker
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) reports
+
+> Thanks to [MdotAmaan](https://github.com/MdotAmaan)'s efforts, [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) now supports bridging to [Discord](https://discordapp.com/) via the [mautrix-discord](https://mau.dev/mautrix/discord) bridge. See our [Setting up Mautrix Discord bridging](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-bridge-mautrix-discord.md) documentation page for getting started.
+> 
+> **Note**: this is a new Discord bridge. The playbook still retains Discord bridging via [matrix-appservice-discord](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-bridge-appservice-discord.md) and [mx-puppet-discord](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-bridge-mx-puppet-discord.md). You're free too use the bridge that serves you better, or even all three of them (for different users and use-cases).
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) reports
+
+> [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) now supports bridging to [Kakaotalk](https://www.kakaocorp.com/page/service/service/KakaoTalk?lang=ENG) via [matrix-appservice-kakaotalk](https://src.miscworks.net/fair/matrix-appservice-kakaotalk) - a bridge based on [node-kakao](https://github.com/storycraft/node-kakao) (now unmaintained) and some [mautrix-facebook](https://github.com/mautrix/facebook) code. Thanks to [hnarjis](https://github.com/hnarjis) for helping us add support for this!
+> 
+> See our [Setting up Appservice Kakaotalk bridging](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-bridge-appservice-kakaotalk.md) documentation to get started.
+
+## Dept of Events and Talks 🗣️
+
+### A New HOPE (NYC) concluded ([website](https://xiv.hope.net/))
+
+[cel](https://matrix.to/#/@cel:spruceid.com) says
+
+> Thanks Element Matrix Services (EMS) for hosting our homeserver (`hope.net`)!
+> 
+> Previously: https://matrix.org/blog/2022/07/22/this-week-in-matrix-2022-07-22#hope-conference
+> 
+> See you in 2024, hopefully!
+> 
+> ### May Container Hackers (MCH) concluded
+> 
+> https://mch2022.org/
+> 
+> MCH2022 in the Netherlands successfully occurred!
+> 
+> MCH2022 has an IRC-bridged Matrix room: <https://matrix.to/#/#_oftc_#mch2022:matrix.org>
+> 
+> HOPE and MCH had a bridge room/tent: <https://wiki.mch2022.org/Hope#HOPE-MCH_Portal>
+> 
+> See you in 2026 or so!
+> ![](/blog/img/493e42137d8b3c84fd1c57ab4e9f85fc91790bed.jpg)
+
+
+#### Matrix Summit schedule
+
+[Yan](https://matrix.to/#/@yan:datanauten.de) says
+
+> By the end of last week we received a bunch of proposal for talks and workshops for the conference.
+> It were all together 32 proposals and we accepted almost all of them.
+> 
+> We released already multiple [versions](https://cfp.summit2022.matrixmeetup.de/matrix-summit-conference-2022/schedule/changelog/) of our schedule. The current version is 0.5 [html](https://cfp.summit2022.matrixmeetup.de/matrix-summit-conference-2022/schedule/v/0.5/#) [json](https://cfp.summit2022.matrixmeetup.de/matrix-summit-conference-2022/schedule/export/schedule.json)
+> 
+> There is even some space left for late comers. In case you decide spontaneously to come and want to talk let us know, we will find a way.
+> 
+> ### Tickets
+> 
+> You now [get tickets](https://tickets.summit2022.matrixmeetup.de/matrix-meetup-berlin/summit2022/) for the summit for the fantastic price of 0 euro. We like to know in advance how many people will come.
+> If you have already a ticket and can’t come please let us know. So we can give them to people on the waiting list.
+> 
+> ### Sharing is caring
+> 
+> I case you have a room or ride to share or you are looking for transport or accommodation please visit our [#matrix-summit-sharing:c-base.org](https://matrix.to/#/#matrix-summit-sharing:c-base.org).
+> 
+> ![](/blog/img/OBcLGfUajPBCoDIdYdSptSJq.png)
+
+[ChristianP](https://matrix.to/#/@christianp:vector.modular.im) reports
+
+> If you'd rather listen to Yan and me talking about the Matrix Summit and its schedule, we recorded a podcast episode for you to get informed on the go.
+> 
+> https://fyyd.de/episode/9085227 (German)
+
+## Dept of Interesting Projects 🛰️
+
+### Effektio ([website](https://effektio.org/))
+
+[ben](https://matrix.to/#/@gnunicorn:matrix.org) reports
+
+> The team of effektio, the mobile-first organizing app build on matrix, is [happy to announce](https://effektio.org/2022/07/29/being-more-public/) the [new website](https://effektio.org/). Aside from the revamped [team section](https://effektio.org/team/), we are particularly excited about the [new product progress page](https://effektio.org/product/), as the questions "what are you building exactly, and how far are you with the progress" are commonplace. With the product page we hope to provide more clarity what we mean, in actual features, when we say "organize yourself, your friends, family, clubs and all other communities from the palm of your hand". Each feature also links right into the specific section of the Github project, so you can get an unobstructed view of the actual progress happening—and contribute, if you like.
+
+## Dept of Ping 🏓
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|maunium.net|239.5|
+|2|babel.sh|432|
+|3|trygve.me|479|
+|4|envs.net|555.5|
+|5|maximiliangaedig.com|660.5|
+|6|alemann.dev|674|
+|7|kittenface.studio|752.5|
+|8|pikaviestin.fi|798|
+|9|kootstra.frl|881|
+|10|babel1.eu|946.5|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|babel.sh|151.5|
+|2|kernel-error.com|281|
+|3|babel1.eu|303.5|
+|4|foxo.me|447|
+|5|rustybever.be|499|
+|6|grin.hu|520.5|
+|7|cutema.re|679.5|
+|8|zemos.net|1179.5|
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) with your updates!
