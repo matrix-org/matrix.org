@@ -15,14 +15,19 @@ Let's take a look at what's inside [Synapse
 [Synapse 1.4.0](https://github.com/matrix-org/synapse/releases/tag/v1.4.0)
 introduced a configuration option (`account_threepid_delegates.email`) to allow
 homeservers to delegate validating the ownership of email addresses to an
-external identity server. This validation is used by Synapse when associating
-email addresses to a Matrix account, or before performing a password reset.
+external identity server. This validation is used by Synapse when adding an
+email address to a Matrix account, or before performing a password reset.
 
-As of Synapse 1.64, this option is deprecated. This is because this option
+As of Synapse 1.64, this option is deprecated, and Synapse will print a warning if it is used.
+This is because this option
 relies on old API endpoints that have since been removed from the Matrix
-specification. Server administrators who still need the ability to validate the
-ownership of email addresses must configure an SMTP server in their Synapse
-configuration file. See the [configuration
+specification.
+
+Synapse can do this validation internally provided it is configured with
+details of an SMTP server. Administrators currently relying on
+`account_threepid_delegates.email` should therefore ensure that an
+SMTP server is correctly configured, and remove the
+`account_threepid_delegates.email` option. See the [configuration
 guide](https://matrix-org.github.io/synapse/v1.64/usage/configuration/config_documentation.html#email)
 for more information.
 
@@ -60,7 +65,7 @@ knocking into rooms which are otherwise restricted to members of a specific room
 (or space). See [the Matrix specification about room version
 10](https://spec.matrix.org/v1.3/rooms/v10/) for more information.
 
-Synapse 1.64 features a new rate limiter to limit the rate of joins to the same
+Additionally, Synapse 1.64 features a new rate limiter to limit the rate of joins to the same
 room. It is intended as a mitigation against abuse scenarios involving joining a
 lot of users from different homeservers to a room to then send spam across it.
 See the [configuration
