@@ -33,7 +33,7 @@ guide](https://matrix-org.github.io/synapse/v1.64/usage/configuration/config_doc
 for more information.
 
 We plan to fully remove this configuration option in Synapse 1.66, which is
-expected to be released in 4 weeks.
+expected to be released on August 30th.
 
 Note that the equivalent option to validate the ownership of phone numbers
 (`account_threepid_delegates.msisdn`) can still be used, though we expect to
@@ -53,6 +53,19 @@ will use TLS for the initial connection rather than upgrading via STARTTLS.
 See the [configuration
 guide](https://matrix-org.github.io/synapse/v1.64/usage/configuration/config_documentation.html#email)
 for more information.
+
+## Upgrading `frozendict`
+
+A couple of weeks ago, we
+[identified](https://github.com/Marco-Sulla/python-frozendict/issues/60) a
+memory leak within [frozendict](https://pypi.org/project/frozendict/), which is
+a library that Synapse relies on. This would in turn cause Synapse instances to
+slowly leak memory when processing `/sync` requests.
+
+We highly encourage server administrators to upgrade their local version of
+`frozendict` to version 2.3.3 or later, which includes a fix to this issue. The
+Docker image `matrixdotorg/synapse` and the Debian packages from
+`packages.matrix.org` already include the updated library.
 
 ## Everything else
 
@@ -75,12 +88,6 @@ and [Room
 Details](https://matrix-org.github.io/synapse/latest/admin_api/rooms.html#room-details-api)
 admin APIs to include the type of a room in responses, allowing server
 administrators to differentiate spaces from other rooms.
-
-We also encourage server administrators to upgrade their local version of
-[frozendict](https://pypi.org/project/frozendict/) to version 2.3.3 or higher,
-as this version fixes a memory leak that occurs during `/sync` requests. The
-Docker image `matrixdotorg/synapse` and the Debian packages from
-`packages.matrix.org` already include the updated library.
 
 See the [full
 changelog](https://github.com/matrix-org/synapse/releases/tag/v1.64.0) for a
