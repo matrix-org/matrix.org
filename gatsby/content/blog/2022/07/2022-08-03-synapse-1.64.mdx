@@ -1,0 +1,92 @@
+---
+date: '2022-08-03'
+title: Synapse 1.64 released
+categories:
+- Releases
+author: Brendan Abolivier
+---
+
+It's that time again: there's a new Synapse release, fresh out of the oven!
+Let's take a look at what's inside [Synapse
+1.64](https://github.com/matrix-org/synapse/releases/tag/v1.64.0).
+
+## Delegating email verification is now deprecated
+
+[Synapse 1.4.0](https://github.com/matrix-org/synapse/releases/tag/v1.4.0)
+introduced a configuration option (`account_threepid_delegates.email`) to allow
+homeservers to delegate validating the ownership of email addresses to an
+external identity server. This validation is used by Synapse when associating
+email addresses to a Matrix account, or before performing a password reset.
+
+As of Synapse 1.64, this option is deprecated. This is because this option
+relies on old API endpoints that have since been removed from the Matrix
+specification. Server administrators who still need the ability to validate the
+ownership of email addresses must configure an SMTP server in their Synapse
+configuration file. See the [configuration
+guide](https://matrix-org.github.io/synapse/v1.64/usage/configuration/config_documentation.html#email)
+for more information.
+
+We plan to fully remove this configuration option in Synapse 1.66, which is
+expected to be released in 4 weeks.
+
+Note that the equivalent option to validate the ownership of phone numbers
+(`account_threepid_delegates.msisdn`) can still be used, though we expect to
+deprecate it in a future release of Synapse.
+
+## Improved TLS support for sending emails
+
+When configuring an SMTP server to use to send out emails to users, server
+administrators can configure Synapse to use TLS to communicate to that server.
+Until now, only [STARTTLS](https://en.wikipedia.org/wiki/Opportunistic_TLS) was
+supported in this case, and a long-standing pain point for server administrators
+has been the lack of support for implicit TLS (i.e. the use of TLS without a
+STARTTLS upgrade).
+
+Synapse 1.64 introduces support for implicit TLS. As of this version of Synapse,
+server administrators can set the new configuration option `force_tls` to `true`
+in the `email` section of their configuration file.
+
+See the [configuration
+guide](https://matrix-org.github.io/synapse/v1.64/usage/configuration/config_documentation.html#email)
+for more information. Note that the `require_transport_security` setting of the
+`email` section of the configuration file is ignored when implicit TLS is
+enabled.
+
+## Everything else
+
+Synapse 1.64 features a new rate limiter to limit the rate of joins to the same
+room. It is intended as a mitigation against abuse scenarios involving joining a
+lot of users from different homeservers to a room to then send spam across it.
+See the [configuration
+guide](https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html#rc_joins_per_room)
+for more information.
+
+This release of Synapse also extends the [List
+Rooms](https://matrix-org.github.io/synapse/latest/admin_api/rooms.html#list-room-api)
+and [Room
+Details](https://matrix-org.github.io/synapse/latest/admin_api/rooms.html#room-details-api)
+admin APIs to incude the type of a room in responses, allowing server
+administrators to differenciate spaces from other rooms.
+
+We also encourage server administrators to upgrade their local version of
+[frozendict](https://pypi.org/project/frozendict/) to version 2.3.3 or higher,
+as this version fixes a memory leak that occurs during `/sync` requests. The
+Docker image `matrixdotorg/synapse` and the Debian packages from
+`packages.matrix.org` already include the updated library.
+
+See the [full
+changelog](https://github.com/matrix-org/synapse/releases/tag/v1.64.0) for a
+complete list of changes in this release. Also please have a look at the
+[upgrade
+notes](https://matrix-org.github.io/synapse/v1.64/upgrade#upgrading-to-v1640)
+for this version.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
+thanks to everyone who contributed to this release, including (in no particular
+order) [Beeper](https://www.beeper.com/),
+[andrewdoh](https://github.com/andrewdoh), [Thomas
+Weston](https://github.com/thomasweston12), [jejo86](https://github.com/jejo86),
+[villepeh](https://github.com/villepeh), [Jörg
+Behrmann](https://github.com/behrmann) and [Jacek
+Kuśnierz](https://github.com/Vetchu), as well as anyone helping us make Synapse
+better by sharing their feedback and reporting issues.
