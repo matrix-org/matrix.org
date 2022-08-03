@@ -19,10 +19,11 @@ external identity server. This validation is used by Synapse when associating
 email addresses to a Matrix account, or before performing a password reset.
 
 As of Synapse 1.64, this option is deprecated. This is because this option
-relies on old API endpoints that have since been removed from the Matrix
-specification. Server administrators who still need the ability to validate the
-ownership of email addresses must configure an SMTP server in their Synapse
-configuration file. See the [configuration
+relies on old API endpoints that have since been
+[removed](https://spec.matrix.org/v1.1/changelog/#identity-service-api) from the
+Matrix specification. Server administrators who still need the ability to
+validate the ownership of email addresses must configure an SMTP server in their
+Synapse configuration file. See the [configuration
 guide](https://matrix-org.github.io/synapse/v1.64/usage/configuration/config_documentation.html#email)
 for more information.
 
@@ -38,19 +39,15 @@ deprecate it in a future release of Synapse.
 When configuring an SMTP server to use to send out emails to users, server
 administrators can configure Synapse to use TLS to communicate to that server.
 Until now, only [STARTTLS](https://en.wikipedia.org/wiki/Opportunistic_TLS) was
-supported in this case, and a long-standing pain point for server administrators
-has been the lack of support for implicit TLS (i.e. the use of TLS without a
-STARTTLS upgrade).
+supported in this case.
 
-Synapse 1.64 introduces support for implicit TLS. As of this version of Synapse,
-server administrators can set the new configuration option `force_tls` to `true`
-in the `email` section of their configuration file.
+Synapse 1.64 introduces a new `force_tls` configuration option in the `email`
+section of the configuration file. If this new setting is set to `true` Synapse
+will use TLS for the initial connection rather than upgrading via STARTTLS.
 
 See the [configuration
 guide](https://matrix-org.github.io/synapse/v1.64/usage/configuration/config_documentation.html#email)
-for more information. Note that the `require_transport_security` setting of the
-`email` section of the configuration file is ignored when implicit TLS is
-enabled.
+for more information.
 
 ## Everything else
 
