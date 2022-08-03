@@ -54,6 +54,12 @@ enabled.
 
 ## Everything else
 
+This version of Synapse introduces support for room version 10! This new room
+version enables support for the new `knock_restricted` join rule, to allow
+knocking into rooms which are otherwise restricted to members of a specific room
+(or space). See [the Matrix specification about room version
+10](https://spec.matrix.org/v1.3/rooms/v10/) for more information.
+
 Synapse 1.64 features a new rate limiter to limit the rate of joins to the same
 room. It is intended as a mitigation against abuse scenarios involving joining a
 lot of users from different homeservers to a room to then send spam across it.
