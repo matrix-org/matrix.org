@@ -21,7 +21,7 @@ email address to a Matrix account, or before performing a password reset.
 As of Synapse 1.64, this option is deprecated, and Synapse will print a warning
 if it is used. This is because this option relies on old API endpoints that have
 since been
-[removed](https://spec.matrix.org/v1.1/changelog/#identity-service-api) from the
+[removed](https://spec.matrix.org/v1.3/changelog/#identity-service-api-1-1) from the
 Matrix specification.
 
 Synapse can do this validation internally provided it is configured with details
@@ -62,10 +62,10 @@ memory leak within [frozendict](https://pypi.org/project/frozendict/), which is
 a library that Synapse relies on. This would in turn cause Synapse instances to
 slowly leak memory when processing `/sync` requests.
 
-We highly encourage server administrators to upgrade their local version of
-`frozendict` to version 2.3.3 or later, which includes a fix to this issue. The
-Docker image `matrixdotorg/synapse` and the Debian packages from
-`packages.matrix.org` already include the updated library.
+We highly encourage server administrators who installed Synapse via `pip` to
+upgrade their local version of `frozendict` to version 2.3.3 or later, which
+includes a fix to this issue. The Docker image `matrixdotorg/synapse` and the
+Debian packages from `packages.matrix.org` already include the updated library.
 
 ## Everything else
 
