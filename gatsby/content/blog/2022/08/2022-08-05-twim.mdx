@@ -59,6 +59,8 @@ image:
 
 ## Dept of Servers 🏢
 
+### hghs ([website](https://github.com/heusalagroup/hghs))
+
 [thejhh](https://matrix.to/#/@thejhh:matrix.org) reports
 
 > We've started work on our HG HomeServer written in pure TypeScript, compilable as a single JS file, with no dependencies except NodeJS. It's intended for a special use cases when Matrix is used as a backbone for custom apps. It's lightweight, minimal and for the moment isn't even planned to support full Matrix spec. We might make it possible to run it on browser later. https://github.com/heusalagroup/hghs
@@ -128,8 +130,6 @@ Matrix Kubernetes applications packaged into helm charts
 
 [Ananace](https://matrix.to/#/@ace:kittenface.studio) announces
 
-> ## Kubernetes
->
 > This week has seen the usual updates to [my Helm Charts](https://gitlab.com/ananace/charts) - with element-web being updated to 1.11.2 and matrix-synapse to 1.64.0.
 > Additionally, the matrix-synapse chart now also allows for adding entirely custom .well-known data - along with an example on how to use that for MSC1929.
 
@@ -192,9 +192,10 @@ Secure and independent communication for Android, connected via Matrix. Come tal
 
 ## Dept of Non Chat Clients 🎛️
 
+### Effektio ([website](https://effektio.org))
+
 [ben](https://matrix.to/#/@gnunicorn:matrix.org) reports
 
-> ## [Effektio](https://effektio.org/) — get organized!
 >
 > Development marches forward, with the focus on getting chat into a usable state and task's up as the first MVP app on top: Effektio [now support sending multiple images at once](https://github.com/effektio/effektio/pull/189) in chat, has seen [fixes to the chat in widescreen mode](https://github.com/effektio/effektio/pull/193), and now support [markdown for chat messages](https://github.com/effektio/effektio/pull/191). Meanwhile device verification is drawing to a close with a few [remaining UI fixes being implement](https://github.com/effektio/effektio/pull/196) and [the state machine for tasks being fleshed out](https://github.com/effektio/effektio/pull/188) slowly but steadily.
 >
@@ -206,7 +207,6 @@ A Social Annotation Tool Powered by Matrix
 
 [gleachkr](https://matrix.to/#/@gleachkr:matrix.org) reports
 
-> ## Populus-Viewer
 >
 > After a short vacation, I've done some new work on populus-viewer. Most of this has been UX and bugfixes, but I've added one new feature that I wanted to share. [MSC3775: Markup Locations for Audiovisual Media](https://github.com/opentower/matrix-doc/blob/audio-markup/proposals/3775-markup-locations-for-audiovisual-media.md) gives a spec for annotating audio and video on matrix, but it also allows you to annotate images. So, for completeness sake, I've added support for annotating image files in Populus! This might be useful for discussing publication layouts, product designs, or for teaching art history. So populus can now annotate: video, audio, images and pdfs.
 >
@@ -215,10 +215,10 @@ A Social Annotation Tool Powered by Matrix
 
 ## Dept of Widgets 🧩
 
+### matrix-widget-api
+
 [Robin](https://matrix.to/#/@robin:robin.town) says
 
-> ## matrix-widget-api
->
 > [matrix-widget-api](https://github.com/matrix-org/matrix-widget-api/) v1.0.0 was released yesterday, reflecting the fact that we're not expecting any big changes to the library's architecture for the foreseeable future, and that it's more or less ready for wider use.
 >
 > It also comes with a couple of new features ✨ for widget authors: Sending and receiving to-device messages with [MSC3819](https://github.com/matrix-org/matrix-spec-proposals/pull/3819), and getting TURN servers from the client with [MSC3846](https://github.com/matrix-org/matrix-spec-proposals/pull/3846/). Together, these features enable some new complex use-cases, such as doing VoIP from inside a widget. See Matrix Live for a preview of what that looks like with Element Call! 📹️
@@ -227,9 +227,10 @@ A Social Annotation Tool Powered by Matrix
 
 ## Dept of VoIP 🤙
 
+### Element Call ([website](https://github.com/vector-im/element-call))
+
 [Dave](https://matrix.to/#/@dave:matrix.org) reports
 
-> ## Element Call
 >
 > * This week we've been building on the initial work on the pion call server (SFU) from Sean, and have made our very first call through it with Element Call! It's still very early and there's still lots of work to do, but this will allow Element Call to scale up to much higher numbers of people.
 > * The VoIP team are also looking after widgets now, and in our quest to embed Element Call into the Element apps, we've hit the milestone of releasing matrix-widget-api 1.0.0. We're also making great progress towards embedding into Element Web.
@@ -245,8 +246,6 @@ Matrix Client-Server SDK for Rust
 
 [ben](https://matrix.to/#/@gnunicorn:matrix.org) reports
 
-> ## [Matrix Rust SDK](https://github.com/matrix-org/matrix-rust-sdk)
->
 > This week saw a few major improvements on the dev-ex of the Rust SDK (among others): [support for refresh tokens](https://github.com/matrix-org/matrix-rust-sdk/pull/892) landed; we have a setup for [integration tests against an actual synapse instance now](https://github.com/matrix-org/matrix-rust-sdk/pull/855) (and started writing tests); our [docs for `main` now contain the js bindings, too](https://github.com/matrix-org/matrix-rust-sdk/pull/897); [event handlers can now be unregistered](https://github.com/matrix-org/matrix-rust-sdk/pull/889) and we've added an API for [room specific event handlers](https://github.com/matrix-org/matrix-rust-sdk/pull/899). Further more, we've [refactored the examples](https://github.com/matrix-org/matrix-rust-sdk/pull/903) (now to be found in `/examples` rather than some sub-sub-directory no one finds) and created two more: [`getting-started`](https://github.com/matrix-org/matrix-rust-sdk/blob/dfec17e6afbf6c1ea35e9ee968c7668eb4a46a04/examples/getting_started/src/main.rs) combines the autojoin and command-example with a lot more additional inline comment to explain what is going on and [`custom-events`](https://github.com/matrix-org/matrix-rust-sdk/blob/dfec17e6afbf6c1ea35e9ee968c7668eb4a46a04/examples/custom_events/src/main.rs) showcases how to use the sdk and ruma types to send any custom events (in that case a ping-ack example) over matrix!
 >
 > This was also a week of fighting the ci. After the integration tests landed, coverage reporting broke and an investigation was kicked off to check whether llvm-cov is in a usable state for us by now (it is not), but a fix was found. We've also started regretting adding `npm`-based workflows in our repo, as we've found ourselves at the end of an upgrade bug and the saw CI failing without us changing anything :shakes\_fist\_at\_sky: . A fix was found quickly by pinning a sub-dependency. On a similar note, we've postponed merging the kotlin bindings until the android team is back on it and available to answer some questions we have, and the wasm-js bindings showed build failures on CI, which the original author will have to take a look at after coming back from vacation - thus delaying `crypto-js` a bit further.
@@ -259,7 +258,6 @@ Elixir libraries related to the Matrix communications protocol.
 
 [uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) announces
 
-> ## Polyjuice Client Test 🧙
 >
 > It's been a while since I've made an update on [Polyjuice Client Test](https://gitlab.com/polyjuice/polyjuice_client_test).  Since the last update:
 >
@@ -273,9 +271,10 @@ Elixir libraries related to the Matrix communications protocol.
 
 ## Dept of Services 🚀
 
+### Matrix Public Archive ([website](https://github.com/matrix-org/matrix-public-archive))
+
 [madlittlemods (Eric Eastwood)](https://matrix.to/#/@madlittlemods:matrix.org) announces
 
-> ## Matrix public archive
 >
 > This week I'm showing off an early look at the [Matrix public archive](https://github.com/matrix-org/matrix-public-archive). As the name suggests, it acts as an archive of history for your world-readable Matrix rooms. This allows you to view historical content day-by-day and jump back years ago to see what your Matrix room was up to.
 >
@@ -292,9 +291,10 @@ Elixir libraries related to the Matrix communications protocol.
 
 ## Dept of Bots 🤖
 
+### Matrix Registration Bot ([website](https://github.com/zeratax/matrix-registration))
+
 [moanos [he/him]](https://matrix.to/#/@moanos:hyteck.de) says
 
-> ## Matrix Registration Bot
 >
 > Thanks to [@lifeofbrian:justprojects.de](https://matrix.to/#/@lifeofbrian:justprojects.de) and [@ben:rs485.network](https://matrix.to/#/@ben:rs485.network) the Docker image of the bot was shrunk from 406.28 MB to 69 MB (nice)! You can get the new image from [Dockerhub](https://hub.docker.com/r/moanos/matrix-registration-bot/#!) or install it via the [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy).
 
