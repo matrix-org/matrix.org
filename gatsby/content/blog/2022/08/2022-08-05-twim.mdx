@@ -1,0 +1,324 @@
+---
+date: '2022-08-05'
+title: 'This Week in Matrix 2022-08-05'
+categories:
+  - This Week in Matrix
+author: Andrew Morgan (anoa)
+image:
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6KHQSeJTXm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Dept of Spec 📜
+
+[Andrew Morgan (anoa)](https://matrix.to/#/@andrewm:element.io) says
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+>
+>
+> ## MSC Status
+>
+> **New MSCs:**
+> * [MSC3861: Matrix architecture change to delegate authentication via OIDC](https://github.com/matrix-org/matrix-spec-proposals/pull/3861)
+> * [MSC3860: Add media download redirect proposal](https://github.com/matrix-org/matrix-spec-proposals/pull/3860)
+> * [MSC3859: Add well known media domain proposal](https://github.com/matrix-org/matrix-spec-proposals/pull/3859)
+> * [MSC3857: Welcome messages](https://github.com/matrix-org/matrix-spec-proposals/pull/3857)
+>
+> **MSCs in Final Comment Period:**
+> * *No MSCs are currently in FCP.*
+>
+> **Accepted MSCs:**
+> * [MSC3818: Copy room type on upgrade](https://github.com/matrix-org/matrix-spec-proposals/pull/3818)
+>
+> **Merged MSCs:**
+> * [MSC2832: HS -> AS authorization header](https://github.com/matrix-org/matrix-spec-proposals/pull/2832)
+> * [MSC3818: Copy room type on upgrade](https://github.com/matrix-org/matrix-spec-proposals/pull/3818)
+> * [MSC3844: Remove unused policy room sharing mechanism](https://github.com/matrix-org/matrix-spec-proposals/pull/3844)
+> * [MSC3786: Add a default push rule to ignore `m.room.server_acl` events](https://github.com/matrix-org/matrix-spec-proposals/pull/3786)
+>
+> ## Spec Updates
+>
+> This week saw the merge of three MSCs from first-time MSC authors! [MSC3818](https://github.com/matrix-org/matrix-spec-proposals/pull/3818) (Copy room type on upgrade) from [@Mikaela](https://github.com/Mikaela) and both [MSC3786](https://github.com/matrix-org/matrix-spec-proposals/pull/3786) (Add a default push rule to ignore `m.room.server_acl` events) and [MSC3827](https://github.com/matrix-org/matrix-spec-proposals/pull/3827) (Filtering of `/publicRooms` by room type) from [@SimonBrandner](https://github.com/SimonBrandner). Nice work to both of them!
+>
+> ## Random MSC of the Week
+>
+> The random MSC of the week is... [MSC2499: Fixes for Well-known URIs](https://github.com/matrix-org/matrix-spec-proposals/pull/2499)!
+>
+> A bundle of small quality-of-life changes to the .well-known server and client endpoints. Removing some ambiguities, replacing old and deprecated endpoints as well as a potential size cap suggestion.
+>
+> Looks like a good contender for one to push over the line given a bit of review and response!
+
+[tulir](https://matrix.to/#/@tulir:maunium.net) reports
+
+> TWIM: someone in [#matrix:matrix.org](https://matrix.to/#/#matrix:matrix.org) complained that the image in the spec section is always the same, so I made this gif (actually webp) out of all those images:
+>
+> <img style="width: 35em" src="/blog/img/qKNVGEePdLFTjTyuDhaUcFud.webp"/>
+
+## Dept of Servers 🏢
+
+### hghs ([website](https://github.com/heusalagroup/hghs))
+
+[thejhh](https://matrix.to/#/@thejhh:matrix.org) reports
+
+> We've started work on our HG HomeServer written in pure TypeScript, compilable as a single JS file, with no dependencies except NodeJS. It's intended for a special use cases when Matrix is used as a backbone for custom apps. It's lightweight, minimal and for the moment isn't even planned to support full Matrix spec. We might make it possible to run it on browser later. https://github.com/heusalagroup/hghs
+
+### Synapse ([website](https://github.com/matrix-org/synapse/))
+
+Synapse is a Matrix homeserver implementation developed by the matrix.org core team
+
+[Shay](https://matrix.to/#/@shayshay:matrix.org) reports
+
+> Another week, another release! Synapse 1.64.0 was released this week, featuring
+> a host of new features, bugfixes, and internal changes aimed at reducing memory usage,
+> increasing performance, and improving the developer experience. Check out the full list of changes
+> [here](https://github.com/matrix-org/synapse/releases/tag/v1.64.0). In addition, work continues on faster room joins. The goal gets closer every day!
+
+### Dendrite ([website](https://github.com/matrix-org/dendrite))
+
+Second generation Matrix homeserver
+
+[neilalexander](https://matrix.to/#/@neilalexander:dendrite.matrix.org) announces
+
+> This week we released [Dendrite 0.9.0](https://github.com/matrix-org/dendrite/releases/tag/v0.9.0) and [Dendrite 0.9.1](https://github.com/matrix-org/dendrite/releases/tag/v0.9.1). There are quite a few big changes, including an all-new caching model and several optimisations. This release also moves our baseline supported Go version up to Go 1.18.
+>
+> The following changes are included across both releases:
+>
+> * Dendrite now uses Ristretto for managing in-memory caches
+>   * Should improve cache utilisation considerably over time by more intelligently selecting and managing cache entries compared to the previous LRU-based cache
+>   * Defaults to a 1GB cache size if not configured otherwise
+>   * The estimated cache size in memory and maximum age can now be configured with new [configuration options](https://github.com/matrix-org/dendrite/blob/e94ef84aaba30e12baf7f524c4e7a36d2fdeb189/dendrite-sample.monolith.yaml#L44-L61) to prevent unbounded cache growth
+> * Added support for serving the `/.well-known/matrix/client` hint directly from Dendrite
+>   * Configurable with the new [configuration option](https://github.com/matrix-org/dendrite/blob/e94ef84aaba30e12baf7f524c4e7a36d2fdeb189/dendrite-sample.monolith.yaml#L67-L69)
+> * Refactored membership updater, which should eliminate some bugs caused by the membership table getting out of sync with the room state
+> * The User API is now responsible for sending account data updates to other components, which may fix some races and duplicate account data events
+> * Optimised database query for checking whether a remote server is allowed to request an event over federation without using anywhere near as much CPU time (PostgreSQL only)
+> * Database migrations have been refactored to eliminate some problems that were present with `goose` and upgrading from older Dendrite versions
+> * Media fetching will now use the `/v3` endpoints for downloading media from remote homeservers
+> * HTTP 404 and HTTP 405 errors from the client-facing APIs should now be returned with CORS headers so that web-based clients do not produce incorrect access control warnings for unknown endpoints
+> * Some preparation work for full history visibility support
+> * Upgrades a dependency which caused issues building Dendrite with Go 1.19
+> * The roomserver will no longer give up prematurely after failing to call `/state_ids`
+> * Removes the faulty room info cache, which caused of a number of race conditions and occasional bugs (including when creating and joining rooms)
+> * The media endpoint now sets the `Cache-Control` header correctly to prevent web-based clients from hitting media endpoints excessively
+> * The sync API will now advance the PDU stream position correctly in all cases (contributed by [sergekh2](https://github.com/sergekh2))
+> * The sync API will now delete the correct range of send-to-device messages when advancing the stream position
+> * The device list `changed` key in the `/sync` response should now return the correct users
+> * A data race when looking up missing state has been fixed
+> * The `/send_join` API is now applying stronger validation to the received membership event
+> * Fixes a crash that could occur during event redaction
+> * The `/members` endpoint will no longer incorrectly return HTTP 500 as a result of some invite events
+> * Send-to-device messages should now be ordered more reliably and the last position in the stream updated correctly
+> * Parsing of appservice configuration files is now less strict (contributed by [Kab1r](https://github.com/Kab1r))
+> * The sync API should now identify shared users correctly when waking up for E2EE key changes
+> * The federation `/state` endpoint will now return a HTTP 403 when the state before an event isn't known instead of a HTTP 500
+> * Presence timestamps should now be calculated with the correct precision
+> * A race condition in the roomserver's room info has been fixed
+> * A race condition in the sync API has been fixed
+>
+> As always, please feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for more Dendrite-related discussion.
+
+## Homeserver Deployment 📥️
+
+
+
+### Helm Chart ([website](https://gitlab.com/ananace/charts))
+
+Matrix Kubernetes applications packaged into helm charts
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) announces
+
+> This week has seen the usual updates to [my Helm Charts](https://gitlab.com/ananace/charts) - with element-web being updated to 1.11.2 and matrix-synapse to 1.64.0.
+> Additionally, the matrix-synapse chart now also allows for adding entirely custom .well-known data - along with an example on how to use that for MSC1929.
+
+## Dept of Bridges 🌉
+
+## matrix-appservice-discord
+
+[ChristianP](https://matrix.to/#/@christianp:vector.modular.im) announces
+
+> This bridge connects users on Matrix and Discord – or other platforms, if combined with other bridges.
+> Earlier this year the community bridge has been adopted by the Matrix.org bridge team to give it some attention.
+> Its most recent update dated back to December 2020 and some fixes waited for a new release.
+>
+> Well, here it is! v2.0.0
+> Its breaking changes are the requirement of NodeJS 14 or newer and the usage of `yarn` instead of `npm install`.
+> Furthermore, the update introduces a changelog and rolls out the guidelines we use for developing other matrix.org bridges.
+>
+> https://github.com/matrix-org/matrix-appservice-discord/releases/tag/v2.0.0
+
+## Dept of Clients 📱
+
+
+
+### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
+
+Secure and independent communication, connected via Matrix. Come talk with us in [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org)!
+
+[kittykat](https://matrix.to/#/@kittykat:matrix.org) reports
+
+> * Version 1.11.2 is out!
+> * „[Start DM only on first message](https://github.com/vector-im/element-web/issues/14736)“ has landed on develop. Changing the DM flow from invite → message to message & invite at the same time. If you want to see it live, join [our testing session](https://matrix.to/#/#element-community-testing:matrix.org) at 12:00 BST on Tuesday
+> * [New user onboarding experience](https://github.com/vector-im/element-web/issues/22919) is getting closer to release!
+> * You can also now [disable sending read receipts](https://github.com/matrix-org/matrix-react-sdk/pull/8629) on develop, coming out on 16 August in a release
+> * Finished porting end to end tests to Cypress! Also [started looking into adding support for accessibility testing](https://github.com/matrix-org/matrix-react-sdk/pull/9111)
+> * Final comment period for our [new code style](https://github.com/vector-im/element-meta/pull/216) is over. Next up is updating our contribution guidelines to include changes
+> * We finished the task around [improving tracking of unused code](https://github.com/matrix-org/matrix-react-sdk/pull/9052) to reduce maintenance burden
+> ![](/blog/img/JzstMcyysNWBFmqPdBDKoDbA.gif)
+
+### Element iOS ([website](https://github.com/vector-im/element-ios))
+
+Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
+
+[Doug](https://matrix.to/#/@douge:matrix.org) announces
+
+> * Version 1.8.24 is available on the App Store with our new Sign Up and Sign In flows. The update is rolling out slowly and should be available to everyone by Monday.
+> * The work on our new app layout is coming along nicely with much of it merged into the repo (but disabled behind a build flag).
+> * In-app notifications will now also be delivered to Notification Centre.
+> * Continuous improvements are being made to the Live Location sharing feature.
+> * Integration tests are now run for every PR on matrix-ios-sdk more than doubling the reported test coverage!
+
+### Element Android ([website](https://github.com/vector-im/element-android))
+
+Secure and independent communication for Android, connected via Matrix. Come talk with us in [#element-android:matrix.org](https://matrix.to/#/#element-android:matrix.org)!
+
+[adam](https://matrix.to/#/@ouchadam:matrix.org) announces
+
+> * 1.4.31 is rolling out which includes the new and improved FTUE onboarding experience along with fixes for markdown lists no longer always starting from 1 and html entities showing up in messages.
+> * The new app layout is starting to materialise with PRs available on github for anyone interested in having a sneak peek!
+> * We’re continuing to make improvements to Live Location sharing and cross signing verification as well as investigating performance issues.
+
+## Dept of Non Chat Clients 🎛️
+
+### Effektio ([website](https://effektio.org))
+
+[ben](https://matrix.to/#/@gnunicorn:matrix.org) reports
+
+>
+> Development marches forward, with the focus on getting chat into a usable state and task's up as the first MVP app on top: Effektio [now support sending multiple images at once](https://github.com/effektio/effektio/pull/189) in chat, has seen [fixes to the chat in widescreen mode](https://github.com/effektio/effektio/pull/193), and now support [markdown for chat messages](https://github.com/effektio/effektio/pull/191). Meanwhile device verification is drawing to a close with a few [remaining UI fixes being implement](https://github.com/effektio/effektio/pull/196) and [the state machine for tasks being fleshed out](https://github.com/effektio/effektio/pull/188) slowly but steadily.
+>
+> 📰 You want updates more frequently and close to when they actually happen? Join our [Effektio Matrix News room](https://matrix.to/#/#news:effektio.org), discuss general aspect in our [foyer](https://matrix.to/#/#foyer:effektio.org) or hang out with the devs in our [tech channel](https://matrix.to/#/#tech:effektio.org).
+
+### Populus Viewer ([website](https://github.com/opentower/populus-viewer))
+
+A Social Annotation Tool Powered by Matrix
+
+[gleachkr](https://matrix.to/#/@gleachkr:matrix.org) reports
+
+>
+> After a short vacation, I've done some new work on populus-viewer. Most of this has been UX and bugfixes, but I've added one new feature that I wanted to share. [MSC3775: Markup Locations for Audiovisual Media](https://github.com/opentower/matrix-doc/blob/audio-markup/proposals/3775-markup-locations-for-audiovisual-media.md) gives a spec for annotating audio and video on matrix, but it also allows you to annotate images. So, for completeness sake, I've added support for annotating image files in Populus! This might be useful for discussing publication layouts, product designs, or for teaching art history. So populus can now annotate: video, audio, images and pdfs.
+>
+> As always, if you want to learn more, follow populus development, or discuss the future of decentralized social annotation on Matrix, come join us at [#opentower:matrix.org](https://matrix.to/#/#opentower:matrix.org).
+> <iframe width="560" height="315" src="https://www.youtube.com/embed/N-l3QYsR_Lo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Dept of Widgets 🧩
+
+### matrix-widget-api
+
+[Robin](https://matrix.to/#/@robin:robin.town) says
+
+> [matrix-widget-api](https://github.com/matrix-org/matrix-widget-api/) v1.0.0 was released yesterday, reflecting the fact that we're not expecting any big changes to the library's architecture for the foreseeable future, and that it's more or less ready for wider use.
+>
+> It also comes with a couple of new features ✨ for widget authors: Sending and receiving to-device messages with [MSC3819](https://github.com/matrix-org/matrix-spec-proposals/pull/3819), and getting TURN servers from the client with [MSC3846](https://github.com/matrix-org/matrix-spec-proposals/pull/3846/). Together, these features enable some new complex use-cases, such as doing VoIP from inside a widget. See Matrix Live for a preview of what that looks like with Element Call! 📹️
+>
+> This is as good a time as any to mention that matrix-widget-api doesn't have to just be for web-based apps. If you're building mobile apps with Matrix and want to make use of widgets, running matrix-widget-api inside a web view to liaison with the actual widget can make it a lot simpler to start supporting widget API features. If you're curious, watch Element iOS+Android for upcoming examples of this.
+
+## Dept of VoIP 🤙
+
+### Element Call ([website](https://github.com/vector-im/element-call))
+
+[Dave](https://matrix.to/#/@dave:matrix.org) reports
+
+>
+> * This week we've been building on the initial work on the pion call server (SFU) from Sean, and have made our very first call through it with Element Call! It's still very early and there's still lots of work to do, but this will allow Element Call to scale up to much higher numbers of people.
+> * The VoIP team are also looking after widgets now, and in our quest to embed Element Call into the Element apps, we've hit the milestone of releasing matrix-widget-api 1.0.0. We're also making great progress towards embedding into Element Web.
+> ![](/blog/img/YSRzIKVxVvsByyfREWQcQdcF.png)
+
+## Dept of SDKs and Frameworks 🧰
+
+
+
+### matrix-rust-sdk ([website](https://github.com/matrix-org/matrix-rust-sdk))
+
+Matrix Client-Server SDK for Rust
+
+[ben](https://matrix.to/#/@gnunicorn:matrix.org) reports
+
+> This week saw a few major improvements on the dev-ex of the Rust SDK (among others): [support for refresh tokens](https://github.com/matrix-org/matrix-rust-sdk/pull/892) landed; we have a setup for [integration tests against an actual synapse instance now](https://github.com/matrix-org/matrix-rust-sdk/pull/855) (and started writing tests); our [docs for `main` now contain the js bindings, too](https://github.com/matrix-org/matrix-rust-sdk/pull/897); [event handlers can now be unregistered](https://github.com/matrix-org/matrix-rust-sdk/pull/889) and we've added an API for [room specific event handlers](https://github.com/matrix-org/matrix-rust-sdk/pull/899). Further more, we've [refactored the examples](https://github.com/matrix-org/matrix-rust-sdk/pull/903) (now to be found in `/examples` rather than some sub-sub-directory no one finds) and created two more: [`getting-started`](https://github.com/matrix-org/matrix-rust-sdk/blob/dfec17e6afbf6c1ea35e9ee968c7668eb4a46a04/examples/getting_started/src/main.rs) combines the autojoin and command-example with a lot more additional inline comment to explain what is going on and [`custom-events`](https://github.com/matrix-org/matrix-rust-sdk/blob/dfec17e6afbf6c1ea35e9ee968c7668eb4a46a04/examples/custom_events/src/main.rs) showcases how to use the sdk and ruma types to send any custom events (in that case a ping-ack example) over matrix!
+>
+> This was also a week of fighting the ci. After the integration tests landed, coverage reporting broke and an investigation was kicked off to check whether llvm-cov is in a usable state for us by now (it is not), but a fix was found. We've also started regretting adding `npm`-based workflows in our repo, as we've found ourselves at the end of an upgrade bug and the saw CI failing without us changing anything :shakes\_fist\_at\_sky: . A fix was found quickly by pinning a sub-dependency. On a similar note, we've postponed merging the kotlin bindings until the android team is back on it and available to answer some questions we have, and the wasm-js bindings showed build failures on CI, which the original author will have to take a look at after coming back from vacation - thus delaying `crypto-js` a bit further.
+>
+> 👉️ Wanna hack on matrix rust? Go check out our [`help wanted` tagged issues](https://github.com/matrix-org/matrix-rust-sdk/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and join our matrix channel at Matrix Rust SDK.
+
+### Polyjuice ([website](https://gitlab.com/polyjuice))
+
+Elixir libraries related to the Matrix communications protocol.
+
+[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) announces
+
+>
+> It's been a while since I've made an update on [Polyjuice Client Test](https://gitlab.com/polyjuice/polyjuice_client_test).  Since the last update:
+>
+> * several more tests have been added
+> * there have been some some front-end improvements
+> * I've also improved the documentation, done some refactoring, and added some helper/utility modules to make things clearer.  My goal is to make it easier for people who don't know Elixir to be able to read and write tests without running away screaming.
+> * compatibility with some Matrix clients has been improved
+> * added some functions to make it easy for tests to completely override Matrix endpoints
+>
+> I'm also happy to say that Polyjuice Client Test has helped find bugs in some clients, which have since been fixed.
+
+## Dept of Services 🚀
+
+### Matrix Public Archive ([website](https://github.com/matrix-org/matrix-public-archive))
+
+[madlittlemods (Eric Eastwood)](https://matrix.to/#/@madlittlemods:matrix.org) announces
+
+>
+> This week I'm showing off an early look at the [Matrix public archive](https://github.com/matrix-org/matrix-public-archive). As the name suggests, it acts as an archive of history for your world-readable Matrix rooms. This allows you to view historical content day-by-day and jump back years ago to see what your Matrix room was up to.
+>
+> More importantly, it also allows Google to do the same thing so you’ll probably start finding Matrix content from your favorite search engine and be able to harness the massive knowledge base stored in Matrix. Imagine seeing Matrix logs instead of Stack Overflow answers when googling questions! The new portal into the Matrix ecosystem 🌌
+>
+> You can also see this demoed in [this week's Matrix Live video](https://youtu.be/6KHQSeJTXm0?t=583) (at the top of the page).
+>
+> ![](/blog/img/zFISGvYfCIhdqunsrPZMhOF.png)
+>
+>
+> Under the hood, we use the [MSC3030 `/timestamp_to_event`](https://github.com/matrix-org/matrix-spec-proposals/pull/3030) endpoint to fetch the messages for a given day and then we sever-side render the events with the [Hydrogen SDK](https://github.com/vector-im/hydrogen-web). Re-using Hydrogen gets us pretty and native(to Element) looking UI and keeps the maintenance burden of supporting new event types in Hydrogen.
+>
+> If you want to follow what’s going on and see how it's coming along, you can checkout the project on GitHub, https://github.com/matrix-org/matrix-public-archive
+
+## Dept of Bots 🤖
+
+### Matrix Registration Bot ([website](https://github.com/zeratax/matrix-registration))
+
+[moanos [he/him]](https://matrix.to/#/@moanos:hyteck.de) says
+
+>
+> Thanks to [@lifeofbrian:justprojects.de](https://matrix.to/#/@lifeofbrian:justprojects.de) and [@ben:rs485.network](https://matrix.to/#/@ben:rs485.network) the Docker image of the bot was shrunk from 406.28 MB to 69 MB (nice)! You can get the new image from [Dockerhub](https://hub.docker.com/r/moanos/matrix-registration-bot/#!) or install it via the [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy).
+
+## Dept of Guides 🧭
+
+[jbara](https://matrix.to/#/@jbara:matrix.org) announces
+
+> I was able to to host a matrix-synapse server on termux app on an android device. I documented the process on [termux-synapse](https://github.com/medanisjbara/synapse-termux/) github repo And started working on a script that automates the process (final commit is being currently tested before pushing).
+> It was a "for fun" type of thing. But I can see it being useful for people who do not have access to a raspberry pi (such as myself at the moment) to use as a small homeserver. It can hold up in 1 to 1 Direct Messages and in small rooms.
+> ![](/blog/img/eHPwxLXejvaHnKtnyaWpyawZ.png)
+
+## Room of the Week 📆
+
+[ssorbom ⚡️](https://matrix.to/#/@ssorbom:chat.shawnsorbom.net) reports
+
+> Have you ever felt lost in the Matrix world? Too many rooms and spaces to manage? Well, back by popular demand  (with Timo's blessing), I present, The Room of the Week! Every week we strive to highlight a room or a space that we believe deserves attention for discussing interesting goings on across the Matrix Network.
+>
+> This week, we are highlighting: [#libregaming-games:tchncs.de](https://matrix.to/#/#libregaming-games:tchncs.de)
+>
+> A matrix space dedicated to finding all of the free open source games, engines, and assets  in the Matrix world so that you don't have to. Helpfully organized, and well maintained, it is the Premier stop for open source gaming on The Matrix Network!
+>
+> If you know of a room that you would like to see highlighted, please visit
+> https://matrix.to/#/!bIyiUUnriVoHtYzuPS:fachschaften.org to let us know of the room that you would like to spotlight.
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) with your updates!
