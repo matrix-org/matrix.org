@@ -8,7 +8,7 @@ extend-exclude = [
 	"/gatsby/content/blog/2022/01/2022-01-21-twim.mdx", # pings scoreboard triggers the typo CI
     "/gatsby/content/blog/2022/05/2022-05-13-twim.mdx", # typo found in a url
 	"/gatsby/content/blog/2022/07/2022-07-08-twim.mdx", # whos in that room
-	"/gatsby/content/blog/2022/07/2022-08-12-twim.mdx", # tha'
+	"/gatsby/content/blog/2022/08/2022-08-12-twim.mdx", # tha'
 	"*signed*.txt", # can be removed once https://github.com/crate-ci/typos/issues/401 is fixed
 	"synapse-debian-security-announcement.asc" # has typo but cannot fix due to PGP signature
 ]
