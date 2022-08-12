@@ -1,0 +1,297 @@
+---
+date: '2022-08-12'
+title: 'This Week in Matrix 2022-08-12'
+categories:
+  - This Week in Matrix
+author: Andrew Morgan (anoa)
+image:
+---
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F2f7RsnUZAQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Dept of Spec 📜
+
+### Matrix Spec
+
+[Andrew Morgan (anoa)](https://matrix.to/#/@andrewm:element.io) announces
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://spec.matrix.org/proposals/.
+>
+> ### MSC Status
+>
+> **New MSCs:**
+>
+> * [\[WIP\] MSC3865: User-given attributes for **users**](https://github.com/matrix-org/matrix-spec-proposals/pull/3865)
+> * [\[WIP\] MSC3864: User-given attributes for **rooms**](https://github.com/matrix-org/matrix-spec-proposals/pull/3864)
+> * [MSC3862: event\_match (almost) anything](https://github.com/matrix-org/matrix-spec-proposals/pull/3862)
+>
+> **MSCs in Final Comment Period:**
+>
+> * _No MSCs entered FCP this week._
+>
+> **Accepted MSCs:**
+>
+> * _No MSCs were accepted this week._
+>
+> **Merged MSCs:**
+>
+> * [MSC1197: Content Repository CORP Headers](https://github.com/matrix-org/matrix-spec-proposals/pull/3828)
+>
+> ### Spec Updates
+>
+> The Spec Core Team had another retro this week, and part of what we talked about was how most of the spec PR writing falls to just a few people. Starting this week, we're going to try and diversify that work across the Spec Core Team, both for reducing [bus factor](https://en.wikipedia.org/wiki/Bus_factor) and increasing bandwidth of spec PRs. Hopefully the results of that will be noticeable!
+>
+> ### Random MSC of the Week
+>
+> The random MSC of the week is... [MSC3783: Fixed base64 for SAS verification](https://github.com/matrix-org/matrix-spec-proposals/pull/3783)!
+>
+> For those that don't know, "SAS verification" refers to the act of two devices verifying each other through the use of Short Authentication Strings (SAS). This is the backbone of emoji verification when you verify with another user or one of your own devices.
+>
+> It turns out that libolm, the olm and megolm encryption library, originally incorrectly encoded the base64 output of the message authentication code (MAC) calculation, which is a values that's passed between devices. Due to trying to maintain backwards-compatibility with older clients, this has not been fixed in newer clients yet.
+>
+> This MSC proposes bumping the MAC algorithm identifier (which is agreed upon between devices when verifying) to a something new, which allows newer clients to know when to use the new or old (and incorrect) method of calculating the base64 encoding of MAC values.
+>
+> As far as I can tell, this has no security implications. It's just unfortunate to have incorrect base64 encoding when interfacing with other, non-libolm, implementations of olm and megolm.
+
+## Dept of Servers 🏢
+
+
+
+### Synapse ([website](https://github.com/matrix-org/synapse/))
+
+Synapse is a Matrix homeserver implementation developed by the matrix.org core team
+
+[Shay](https://matrix.to/#/@shayshay:matrix.org) reports
+
+> The Synapse team is hard at work making Synapse faster and leaner. Work continues
+> apace on faster room joins over federation, and it seems that the work might land
+> sooner rather than later, although there are no solid dates yet.
+> In other news, profiling work is being done to determine ways to hopefully increase
+> the speed of local room joins and DM creation. Stay tuned for more information in the future on that.
+> Finally, it was an RC release week. [Synapse 1.65.0rc2](https://github.com/matrix-org/synapse/releases/tag/v1.65.0rc2) was released, and it contains some fun features and bugfixes. Check it out!
+
+### Dendrite / gomatrixserverlib ([website](https://github.com/matrix-org/dendrite))
+
+Dendrite is a second-generation Matrix homeserver
+
+[neilalexander](https://matrix.to/#/@neilalexander:dendrite.matrix.org) says
+
+> This week we released [Dendrite 0.9.2](https://github.com/matrix-org/dendrite/releases/tag/v0.9.2) which contains the following updates:
+>
+> * Dendrite now supports history visibility on the `/sync`, `/messages` and `/context` endpoints
+>   * It should now be possible to view the history of a room in more cases (as opposed to limiting scrollback to the join event or defaulting to the restrictive `"join"` visibility rule as before)
+> * The default room version for newly created rooms is now room version 9
+> * New admin endpoint `/_dendrite/admin/resetPassword/{userID}` has been added, which replaces the `-reset-password` flag in `create-account`
+> * The `create-account` binary now uses shared secret registration over HTTP to create new accounts, which fixes a number of problems with account data and push rules not being configured correctly for new accounts
+> * The internal HTTP APIs for polylith deployments have been refactored for correctness and consistency
+> * The federation API will now automatically clean up some EDUs that have failed to send within a certain period of time
+> * The `/hierarchy` endpoint will now return potentially joinable rooms (contributed by [texuf](https://github.com/texuf))
+> * The user directory will now show or hide users correctly
+> * Send-to-device messages should no longer be incorrectly duplicated in `/sync`
+> * The federation sender will no longer create unnecessary destination queues as a result of a logic error
+> * A bug where database migrations may not execute properly when upgrading from older versions has been fixed
+> * A crash when failing to update user account data has been fixed
+> * A race condition when generating notification counts has been fixed
+> * A race condition when setting up NATS has been fixed (contributed by [brianathere](https://github.com/brianathere))
+> * Stale cache data for membership lazy-loading is now correctly invalidated when doing a complete sync
+> * Data races within user-interactive authentication have been fixed (contributed by [tak-hntlabs](https://github.com/tak-hntlabs))
+>
+> This brings our current test compliance figures to:
+>
+> * Client-server APIs: 90%
+> * Server-server APIs: 95%
+>
+> As always, please feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for Dendrite-related discussion.
+
+## Dept of Bridges 🌉
+
+### matrix-appservice-discord ([website](https://github.com/matrix-org/matrix-appservice-discord))
+
+[ChristianP](https://matrix.to/#/@christianp:vector.modular.im) reports
+
+> Announcing `matrix-appservice-discord` 3.0.0!
+>
+> What? Another week, another major release?
+> Yes, we want to make breaking changes obvious, and the bridge now requires Node.js 16+.
+>
+> The release fixes the outdated `yarn.lock` file. Thanks to the package maintainers of NixOS to point this out! 👋
+> Furthermore, mentioning Matrix users in Discord got fixed.
+>
+> And, for the fans of containers, we've re-added the release of Docker images. 🐳
+> The URL changed and we don't plan to update `halfshot/matrix-appservice-discord` on Docker Hub.
+> The image can be pulled from `ghcr.io/matrix-org/matrix-appservice-discord:v3.0.0`.
+>
+> https://github.com/matrix-org/matrix-appservice-discord/releases/tag/v3.0.0
+
+## Dept of Clients 📱
+
+
+
+### Nheko ([website](https://nheko-reborn.github.io))
+
+Desktop client for Matrix using Qt and C++17.
+
+[Nico](https://matrix.to/#/@deepbluev7:neko.dev) reports
+
+> Nheko now shows you a pretty preview for rooms you are trying to join. This uses [MSC3266](https://github.com/matrix-org/matrix-spec-proposals/pull/3266), which you might need to enable in your synapse config, if you want to see more than the roomid of the room you are trying to join. It tries to fall back to the /hierarchy endpoint, but that won't work over federation.
+>
+> Similarly you can now somewhat edit what rooms are in a space. I grew up with Windows 98, so this is a very nested right click menu. We are still discussing some of the wording choices for the options there, so if you have any opinions about it, feel free to give feedback about it! This is part of the bigger goal to be able to manage your communities from within Nheko, so stay tuned for more features coming in that area.
+>
+> red_sky (nheko.im) also improved our notifications code on macOS. You can now disable the notification sound in the system settings, which for some reason requires badge permissions to show that option... macOS will always remain a mystery to us! Similarly we fixed the source text for notifications on Windows, which should now not show a stray %1 anymore as well as a few other cleanups.
+> ![](/blog/img/NNagXCPgjVmOTNplvrIZhKRL.png)
+> ![](/blog/img/KtwMlOypeTYnXsRRZLSSHPZX.png)
+
+### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
+
+Secure and independent communication, connected via Matrix. Come talk with us in [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org)!
+
+[kittykat](https://matrix.to/#/@kittykat:matrix.org) says
+
+> * Ever started a DM with someone, only to get distracted and leave them staring into an empty timeline wondering who you are and what you want. Well, it is no more! In this update new DMs will only notify the person you’re messaging once you’ve sent your first message.
+> * That’s not the only exciting update in EleWeb/Desktop this week, including the newly extended voice messages! Instead of voice messages capped at 2 minutes, users are now able to send a voice note of up to 15 minutes long. Go forth and record 🎤
+> * In upcoming releases we’re also looking at how to improve a user’s first few days in Element. We know that it can be daunting to stare at an empty screen and wonder how to get going, which is why we’ve designed and built a checklist for new users. This checklist will help them to get off the ground and messaging friends in no time.
+>
+> In labs (you can enable labs features in settings on develop.element.io or on Nightly):
+>
+> * Threads improvements are still very much underway. We have a proof of concept (PoC) for improving notifications that we’re testing to ensure scalability and performance.
+
+### Element iOS ([website](https://github.com/vector-im/element-ios))
+
+Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
+
+[Doug](https://matrix.to/#/@douge:matrix.org) says
+
+> * Our release this week was rejected by Apple. Their feedback? Our info.plist comments do not provide enough context as to why we’re asking for access to things like the camera, photos, or contacts. Never fear! We’ve updated our copy and we’re confident that it’s clearer than ever.
+> * Also in the upcoming release:
+>     - Fixing the crashes that some users were running into when switching space.
+>     - The new in-app notifications now also appear in the notification centre
+>     - And a bug fix for the rare issue of sending duplicate images to a timeline when sending multiple photos
+> * We’re also working on changing the layout of our mobile apps, and work is well underway on iOS. We’re excited to share these big changes with you so keep your eyes peeled on our socials and in other TWIM notes.
+> * Join us over at [#element-community-testing:matrix.org](https://matrix.to/#/#element-community-testing:matrix.org) on Tuesday 16th August at 12:00 BST to try out the new app layout on iOS! There’s a little bit of setup required so check out the room ahead of time for instructions :)
+
+### Element Android ([website](https://github.com/vector-im/element-android))
+
+Secure and independent communication for Android, connected via Matrix. Come talk with us in [#element-android:matrix.org](https://matrix.to/#/#element-android:matrix.org)!
+
+[Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) says
+
+> * In the upcoming Android release we’ve fixed some crashes; including where the app would crash if a user attempted putting non-ASCII characters in their MXID during account creation.
+> * Biometric login is now disabled if the device you’re on does not support biometrics.
+> * We’ve also been working hard on adding unit tests to increase coverage.
+> * There’s work being done on the modularisation of languages that may help decrease the complexity of translation and move us towards a set of common strings between platforms.
+> * Join us over at [#element-community-testing:matrix.org](https://matrix.to/#/#element-community-testing:matrix.org) on Tuesday 16th August at 15:00 BST to try out the new app layout on Android! There’s a little bit of setup needed so check out the room ahead of time for instructions 🙂
+
+### Cinny ([website](https://cinny.in))
+
+Cinny is a Matrix client focused on simplicity, elegance and security
+
+[ajbura](https://matrix.to/#/@ajbura:matrix.org) says
+
+> #### v2.1: Custom emojis and stickers (Birthday edition)
+>
+> Hello everyone,
+>
+> On July 28 project marked its one-year milestone. During this time it has grown at an unexpected rate, both in terms of development as well as popularity. This is great news, so let's celebrate that with this birthday edition.
+>
+> In this update, we have added **Custom emoji and sticker support** to Cinny. Custom emoji and stickers were not in our roadmap but that's the surprise. Aren't they cool?
+> Apart from the emoji and stickers, there are tons of other features such as Blurhash, Mark entire space as read, user pills, and bug fixes. Check out the [release](https://github.com/cinnyapp/cinny/releases/tag/v2.1.0) [page](https://github.com/cinnyapp/cinny/releases/tag/v2.1.1) for a [detailed changelog](https://github.com/cinnyapp/cinny/releases/tag/v2.1.2).
+>
+> In the case of the roadmap, we are still on that, work on the "Rich input editor" is in progress and will come as the next release. Stay tuned for that!
+>
+> The update is live on [https://app.cinny.in](https://app.cinny.in/) and the desktop app can be downloaded from [Github](https://github.com/cinnyapp/cinny-desktop/releases/tag/v2.1.2).
+>
+> **Pro-Tip**: Join [#cinny-space:matrix.org](https://matrix.to/#/#cinny-space:matrix.org)  to check out some cool sticker packs. There are some great packs in [#stickers-and-emojis:pixie.town](https://matrix.to/#/#stickers-and-emojis:pixie.town) too.
+>
+> Thank you. See you all next time!
+> ![](/blog/img/DdgwgXwNulNoDKgGHGktpNUm.png)
+
+## Dept of SDKs and Frameworks 🧰
+
+### libkazv ([website](https://lily-is.land/kazv/libkazv/))
+
+[tusooa](https://matrix.to/#/@tusooa:tusooa.xyz) reports
+
+> We released a bugfix [v0.2.1](https://lily-is.land/kazv/libkazv/-/tree/v0.2.1) . Thanks to nannanko who discovered and fixed this bug. There are also [docker images](https://lily-is.land/kazv/libkazv/container_registry/4?orderBy=NAME&sort=asc&search[]=v0.2.1&search[]=).
+> ### 0.2.1
+>
+> * Fix crash when receiving a redacted encrypted event. https://lily-is.land/kazv/libkazv/-/commit/98870fa04fa78361f5092cd77f88895e4a228d34
+
+### ruby-matrix-sdk ([website](https://github.com/ananace/ruby-matrix-sdk))
+
+Ruby SDK for the Matrix communication protocol
+
+[Ananace](https://matrix.to/#/@ace:kittenface.studio) says
+
+> A new version of the [Ruby Matrix SDK](https://github.com/ananace/ruby-matrix-sdk) has now been released, adding a new abstraction in the form of a Sinatra-inspired bot DSL, as well as general fixes and improvements. Making a Ruby-based Matrix bot can now be as simple as;
+>
+> ```ruby
+> #!/usr/bin/env ruby
+>
+> require 'matrix_sdk/bot'
+>
+> command(:praise, desc: 'Gives you praise', only: -> { room.user_can_send? client.mxid, 'm.reaction' }) do
+>   room.send_notice "#{sender}, you tha' man!"
+>   room.send_event 'm.reaction', {
+>     'm.relates_to': {
+>       rel_type: 'm.annotation',
+>       event_id: event[:event_id],
+>       key: '👍️'
+>     }
+>   }
+> end
+> ```
+
+## Dept of Ops 🛠
+
+
+### matrix-docker-ansible-deploy ([website](https://github.com/spantaleev/matrix-docker-ansible-deploy))
+
+Matrix server setup using Ansible and Docker.
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) reports
+
+> Thanks to [Charles Wright](https://github.com/cvwright), [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) now has optional experimental [Conduit](https://conduit.rs) homeserver support for new installations. This comes as a follow-up to the playbook getting [Dendrite support](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#dendrite-support) earlier this year.
+>
+> For more details, see our [Conduit support](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#conduit-support) changelog entry.
+
+## Dept of Events and Talks 🗣️
+
+### One week until FrOSCon ([website](https://www.froscon.org/))
+
+[ChristianP](https://matrix.to/#/@christianp:vector.modular.im) announces
+
+> Next weekend, Sat 20th and Sun 21st, FrOSCon will be taking place. It's a conference about open source software near Bonn, Germany.
+>
+> There will be some program around Matrix, though I'm still looking for volunteers to help me with a stand and DevRoom.
+>
+> For the stand we want a small group to explain Matrix to others. For the DevRoom we want some talks and workshops. Anyone's welcome to ask me for more info or to get involved.
+
+## Dept of Interesting Projects 🛰️
+
+### matrix-locust ([website](https://gitlab.futo.org/cvwright/matrix-locust))
+
+[cvwright](https://matrix.to/#/@cvwright:matrix.org) says
+
+> Announcing [matrix-locust](https://gitlab.futo.org/cvwright/matrix-locust), a new tool for load testing Matrix homeservers, based on the Python load testing framework [Locust](https://locust.io/).  It's very early days for this project, but we're already discovering some interesting results.  There isn't an official tagged "release" yet, but anyone interested in this topic is encouraged to stop by [#load-testing:matrix.org](https://matrix.to/#/#load-testing:matrix.org) and say hello.
+
+## Room of the Week 📆
+
+[ssorbom ⚡️](https://matrix.to/#/@ssorbom:chat.shawnsorbom.net) says
+
+> Have you ever felt lost in the Matrix world? Too many rooms and spaces to manage? Well, back by popular demand  (with Timo's blessing), I present, The Room of the Week! Every week we strive to highlight a room or a space that we believe deserves attention for discussing interesting going on across the Matrix Network.
+>
+> This week, we are highlighting:
+> [#coffee-discuss:matrix.org](https://matrix.to/#/#coffee-discuss:matrix.org)
+>
+> A place to discuss buying, brewing, and drinking everyone's favorite morning beverage of choice! I had no idea there was so much Nuance to this topic until I joined this room . For example, did you know there was a correct way to distribute coffee grounds when you first pour to ensure maximum flavor? Neither did I! Wether you are new to the world of coffee drinking, or a seasoned connoisseur of morning Joe, this room has something for everyone who loves coffee.
+>
+> If you have a room you wish to see highlighted, join us at:
+> https://matrix.to/#/!bIyiUUnriVoHtYzuPS:fachschaften.org?via=chat.shawnsorbom.net&via=matrix.org&via=fachschaften.org
+> to get your favorite room of the week highlighted.
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) with your updates!
