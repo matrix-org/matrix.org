@@ -15,7 +15,7 @@ peek at what's inside.
 A feature that the more privacy-focused users of Matrix have been missing was
 the ability to hide read receipts from other users. Read receipts in rooms can
 tell a user which messages another user has read in a room. However, they can
-also be unwelcomed indicator that a user is currently reading a certain room,
+also be an unwelcome indicator that a user is currently reading a certain room,
 thus giving away the user's activity on Matrix at a given time.
 
 Hiding one's read receipts from other Matrix users is unfortunately not as
@@ -25,7 +25,7 @@ calculate how much of a room a user has read, and generate notification counts
 for rooms accordingly.
 
 Synapse 1.65 introduces stable support for private read receipts. This feature,
-descibed by
+described by
 [MSC2285](https://github.com/matrix-org/matrix-spec-proposals/pull/2285), allows
 clients to send a different type of read receipt to the server. This then tells
 the homeserver to use this piece of information to update the user's
@@ -50,15 +50,18 @@ to join via.
 
 ## Everything else
 
-Synapse 1.65 implements the new experimental error codes documented by
+Synapse 1.65 stabilises the implementation of
+[MSC3827](https://github.com/matrix-org/matrix-spec-proposals/pull/3827), which
+allows filtering public room searches on room types. This means it is now
+possible to search specifically for public spaces. For more information on this
+feature, see [the Synapse 1.63
+announcement](https://matrix.org/blog/2022/07/20/synapse-1-63-released).
+
+Additionally, Synapse 1.65 implements the new experimental error codes
+documented by
 [MSC3848](https://github.com/matrix-org/matrix-spec-proposals/pull/3827). Once
 stabilised, these error codes will allow clients to show more specific errors to
 their users about why an event could not be sent.
-
-This release of Synapse also stabilises the implementation of
-[MSC3827](https://github.com/matrix-org/matrix-spec-proposals/pull/3827), which
-allows filtering public room searches on room types. This means it is now
-possible to search specifically for public spaces.
 
 See the [full
 changelog](https://github.com/matrix-org/synapse/releases/tag/v1.65.0) for a
