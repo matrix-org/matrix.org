@@ -1,0 +1,73 @@
+---
+date: '2022-08-17'
+title: Synapse 1.65 released
+categories:
+- Releases
+author: Brendan Abolivier
+---
+
+Hey everyone! We've just released [Synapse
+1.65](https://github.com/matrix-org/synapse/releases/tag/v1.65.0)! Let's have a
+peek at what's inside.
+
+## Private read receipts
+
+A feature that the more privacy-focused users of Matrix have been missing was
+the ability to hide read receipts from other users. Read receipts in rooms can
+tell a user which messages another user has read in a room. However, they can
+also be unwelcomed indicator that a user is currently reading a certain room,
+thus giving away the user's activity on Matrix at a given time.
+
+Hiding one's read receipts from other Matrix users is unfortunately not as
+straightforward as simply preventing a client from sharing read receipts with
+the server. This is because read receipts are also used by Matrix homeservers to
+calculate how much of a room a user has read, and generate notification counts
+for rooms accordingly.
+
+Synapse 1.65 introduces stable support for private read receipts. This feature,
+descibed by
+[MSC2285](https://github.com/matrix-org/matrix-spec-proposals/pull/2285), allows
+clients to send a different type of read receipt to the server. This then tells
+the homeserver to use this piece of information to update the user's
+notification count, but not to share it with other users.
+
+## Improved room management APIs for modules
+
+This version of Synapse includes two new module API methods to help Synapse
+modules interact and manage rooms. The first one,
+[`lookup_room_alias`](https://github.com/matrix-org/synapse/blob/v1.65.0/synapse/module_api/__init__.py#L1455-L1477),
+allows modules to retrieve the room ID corresponding to a given room alias. This
+works both for local and remote aliases. The second one,
+[`create_room`](https://github.com/matrix-org/synapse/blob/v1.65.0/synapse/module_api/__init__.py#L1479-L1528),
+allows modules to create new rooms on behalf of an existing user.
+
+The
+[`update_room_membership`](https://github.com/matrix-org/synapse/blob/v1.65.0/synapse/module_api/__init__.py#L925-L1017)
+method has also been updated in this release of Synapse to allow modules to join
+a room the server is not already in via federation. This can be done by using
+the new `remote_room_hosts` argument, which takes a list of homeservers to try
+to join via.
+
+## Everything else
+
+Synapse 1.65 implements the new experimental error codes documented by
+[MSC3848](https://github.com/matrix-org/matrix-spec-proposals/pull/3827). Once
+stabilised, these error codes will allow clients to show more specific errors to
+their users about why an event could not be sent.
+
+This release of Synapse also stabilises the implementation of
+[MSC3827](https://github.com/matrix-org/matrix-spec-proposals/pull/3827), which
+allows filtering public room searches on room types. This means it is now
+possible to search specifically for public spaces.
+
+See the [full
+changelog](https://github.com/matrix-org/synapse/releases/tag/v1.65.0) for a
+complete list of changes in this release.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
+thanks to everyone who contributed to this release, including (in no particular
+order) [Beeper](https://www.beeper.com/),
+[andrewdoh](https://github.com/andrewdoh), [Julian-Samuel
+Gebühr](https://github.com/moan0s) and [Dirk
+Klimpel](https://github.com/dklimpel), as well as anyone helping us make Synapse
+better by sharing their feedback and reporting issues.
