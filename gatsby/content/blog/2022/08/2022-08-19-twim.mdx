@@ -59,11 +59,9 @@ This week Thib (is he ever really away?) shows us how to host Synapse with Docke
 > 
 > The random MSC of the week is... [MSC2871: Give widgets an indication of which capabilities they were approved for](https://github.com/matrix-org/matrix-spec-proposals/pull/2871)! What a mouthful!
 > 
-> Widgets are in a bit of a strange state - they're still not yet part of the spec proper, but are iterated upon in implementation. This leaves them in a similar spot to how aggregations were (and for a portion of, still are); in that they were in use in clients but hadn't yet landed in the spec.
+> Historically, widgets have laid outside of the spec and have only been implemented in a small subset of clients - mainly Element. As of recent weeks though, there's now a team at Element backing the feature. So exciting times ahead!
 > 
-> Much like aggregations, it will be a lot of work to eventually land widgets in the spec. But also much like aggregations, I am optimistic for it eventually crossing the line!
-> 
-> With that detour out of the way, let's highlight this MSC! It solves a crucial problem with a simple solution. Widgets can ask the client they're embedded in to do certain things (if granted certain capabilities), and the client, potentially after asking the user for permission, can allow or deny those actions. This MSC adds the machinery for a further step: the client will tell the widget what capabilities they requested were allowed, and which were denied.
+> Regardless, let's highlight this MSC! It solves a crucial problem with a simple solution. Widgets can ask the client they're embedded in to do certain things (if granted certain capabilities), and the client, potentially after asking the user for permission, can allow or deny those actions. This MSC adds the machinery for a further step: the client will tell the widget what capabilities they requested were allowed, and which were denied.
 > 
 > I believe this spec is non-contentious, but is blocked on widgets entering the spec as a whole. Regardless, if this particular piece of the puzzle interests you, or you'd like to read all about widgets in general, the see either the MSC above or this widget spec tracking PR: https://github.com/matrix-org/matrix.org/pull/825.
 > ![](/blog/img/6cadb4d50a19f02aa6ce6ecec49de71181e74b69.png)
