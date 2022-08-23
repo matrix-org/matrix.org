@@ -734,11 +734,11 @@ const Faq = ({ data }) => {
                 .
               </p>
               <p>
-                If you host a{" "}
-                <a href="https://matrix.to/#/#synapse-community:matrix.org">
-                  #synapse-community:matrix.org
-                </a>
-                .
+                If you host a Synapse homeserver, you can get support in the{" "}
+                <a href="https://matrix.to/#/#synapse:matrix.org">
+                  #synapse:matrix.org
+                </a>{" "}
+                room.
               </p>
               <div className="definition-list">
                 <div className="definition-item definition-room">
