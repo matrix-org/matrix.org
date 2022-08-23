@@ -2412,23 +2412,30 @@ const Faq = ({ data }) => {
                 >
                   &#128279;
                 </a>{" "}
-                What are communities?
+                What are spaces?
               </h4>
               <p>
-                Groups are now known as communities, they are collections of
-                rooms.{" "}
-                <a href="https://matrix.to/#/+matrix:matrix.org">
-                  +matrix:matrix.org
+                Spaces are a collections of rooms.{" "}
+                <a href="https://matrix.to/#/#community:matrix.org">
+                  #community:matrix.org
                 </a>{" "}
-                is the official community containing rooms managed by the core
-                Matrix team.
+                is the official matrix community space containing rooms managed{" "}
+                by the core Matrix team.
+              </p>
+              <p>
+                Spaces are the replacements for the deprecated communities which{" "}
+                were also known as groups. Other than groups a{" "}
+                <a href="#definitions">space</a> itself is a Room.
               </p>
               <div className="definition-list">
                 <div className="definition-item definition-community">
                   <p>
                     <strong>community</strong>
                   </p>
-                  <p>Communities are collections of rooms.</p>
+                  <p>
+                    Communities are collections of rooms. They have been
+                    replaced by spaces.
+                  </p>
                 </div>
                 <div className="definition-item definition-group">
                   <p>
@@ -2436,7 +2443,16 @@ const Faq = ({ data }) => {
                   </p>
                   <p>
                     Groups are now known as communities, they are collections of
-                    rooms.
+                    rooms. They have been replaced by spaces.
+                  </p>
+                </div>
+                <div className="definition-item definition-space">
+                  <p>
+                    <strong>space</strong>
+                  </p>
+                  <p>
+                    Spaces are collections of rooms as rooms. They replace
+                    communites and groups.
                   </p>
                 </div>
                 <div className="definition-item definition-sigil">
@@ -3173,13 +3189,23 @@ const Faq = ({ data }) => {
                 </tr>
                 <tr>
                   <td>community</td>
-                  <td>Communities are collections of rooms.</td>
+                  <td>
+                    Communities are collections of rooms. They have been
+                    replaced by spaces.
+                  </td>
                 </tr>
                 <tr>
                   <td>group</td>
                   <td>
                     Groups are now known as communities, they are collections of
-                    rooms.
+                    rooms. They have been replaced by spaces.
+                  </td>
+                </tr>
+                <tr>
+                  <td>space</td>
+                  <td>
+                    Spaces are collections of rooms as rooms. They replace
+                    communites and groups.
                   </td>
                 </tr>
                 <tr>
