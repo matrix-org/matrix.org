@@ -8,7 +8,7 @@ To discuss maintenance of this site, please come talk to the team in [#matrix.or
    - Node.js and npm
    - `git clone https://github.com/matrix-org/matrix.org && cd matrix.org`
 1. `cd gatsby`
-2. Run `npm i` to install dependencies
+2. Run `npm i` to install dependencies. If you use npm 7 or higher you need to add `--legacy-peer-deps`
 3. `npm run develop` - It will take a while on your first build
 
 Now you can visit the page you want to work on in the browser. For example: http://127.0.0.1:8000/docs/projects/try-matrix-now/
