@@ -150,6 +150,7 @@
 [kotlin-matrix-userbots]: https://github.com/koma-im/kotlin-matrix-userbots
 [Krille]: https://matrix.to/#/@krille:chat.regionetz.net
 [krombel]: https://matrix.to/#/@krombel:msg-net.de
+[Libera.Chat]: https://libera.chat/
 [libQMatrixClient]: https://github.com/QMatrixClient/libqmatrixclient
 [Linda]: https://matrix.to/#/@lindalap:matrix.org
 [linuxgaming.life]: https://linuxgaming.life

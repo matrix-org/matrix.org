@@ -723,7 +723,7 @@ const Faq = ({ data }) => {
                 <a href="https://matrix.to/#/#matrix:matrix.org">
                   #matrix:matrix.org
                 </a>{" "}
-                aka #matrix on irc.freenode.
+                aka #matrix on irc.libera.chat.
               </p>
               <p>
                 If you're a developer and are looking to get involved with
@@ -1949,8 +1949,12 @@ const Faq = ({ data }) => {
                 there already exist mature Matrix&lt;-&gt;IRC bridges.{" "}
                 <a href="https://github.com/matrix-org/matrix-appservice-irc/">
                   matrix-appservice-irc
-                </a>
-                is currently used by matrix.org to bridge with FreeNode.
+                </a>{" "}
+                is currently used to bridge with{" "}
+                <a href="https://libera.chat/">
+                  Libera.Chat
+                </a>{" "}
+                and many other IRC networks.
               </p>
               <div className="definition-list">
                 <div className="definition-item definition-element">
@@ -2130,7 +2134,7 @@ const Faq = ({ data }) => {
               <p>
                 Yes! An ever increasing number of protocols are being{" "}
                 <a href="#definitions">bridged</a> into Matrix, so if you use
-                something like IRC on Freenode you may well be indirectly
+                something like IRC on Libera.Chat you may well be indirectly
                 benefiting from Matrix, as others may be connected into the IRC
                 channel via Matrix.
               </p>
