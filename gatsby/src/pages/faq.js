@@ -1016,30 +1016,10 @@ const Faq = ({ data }) => {
                 Where can I find a mobile app?
               </h4>
               <p>
-                <a href="https://element.io">Element</a> is available for Android and
-                iOS.
-              </p>
-              <p>
-                The iOS version can be downloaded from the{" "}
-                <a href="https://itunes.apple.com/us/app/vector.im/id1083446067">
-                  Apple store
-                </a>
-                .
-              </p>
-              <p>
-                The Android version can be downloaded from the{" "}
-                <a href="https://play.google.com/store/apps/details?id=im.vector.app">
-                  Google Play store
-                </a>{" "}
-                or{" "}
-                <a href="https://f-droid.org/repository/browse/?fdid=im.vector.alpha">
-                  F-Droid
-                </a>
-                . If you are not sure which one to choose, install Element from the{" "}
-                <a href="https://play.google.com/store/apps/details?id=im.vector.app">
-                  Google Play store
-                </a>
-                .
+                A list of Mobile clients can be found are available in our{" "}
+                <a href="/faq#mobile">List of Clients</a> or at the{" "}
+                <a href="/docs/projects/try-matrix-now">Try Matrix Now</a>{" "}
+                Section.
               </p>
               <div className="definition-list">
                 <div className="definition-item definition-element">

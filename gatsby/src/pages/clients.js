@@ -36,7 +36,7 @@ const ClientsMatrix = ({ data }) => {
       <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="/docs/projects/try-matrix-now/">try-matrix-now</a>.
           To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>.
           To see more clients in a features matrix, see the <a href="/clients-matrix">Clients Matrix</a>.</p>
-      <h2>Mobile</h2>
+      <h2 id="mobile">Mobile</h2>
       <div className="mxgrid">
         {clients
           .filter(c =>
