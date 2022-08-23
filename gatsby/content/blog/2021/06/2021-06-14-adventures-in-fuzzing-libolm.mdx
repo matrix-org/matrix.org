@@ -193,7 +193,7 @@ the input was of some minimum length. The output of the remaining function
 was again no way of leaking the data to the attacker.
 
 [olm_pk_decrypt]:
-<https://gitlab.matrix.org/matrix-org/olm/-/blob/0a7b6da9a0959694303d5b0724a09e63e8c217ab/src/pk.cpp#L352>
+[https://gitlab.matrix.org/matrix-org/olm/-/blob/0a7b6da9a0959694303d5b0724a09e63e8c217ab/src/pk.cpp#L352](https://gitlab.matrix.org/matrix-org/olm/-/blob/0a7b6da9a0959694303d5b0724a09e63e8c217ab/src/pk.cpp#L352)
 
 In conclusion, even though this invalid read is a valid bug, I was not able to
 find a working exploit for it.
@@ -345,7 +345,7 @@ Old is New Again: Binary Security of WebAssembly][everything-old-is-new-again]
 is a great starting point.
 
 [everything-old-is-new-again]:
-<https://www.usenix.org/conference/usenixsecurity20/presentation/lehmann>
+[https://www.usenix.org/conference/usenixsecurity20/presentation/lehmann](https://www.usenix.org/conference/usenixsecurity20/presentation/lehmann)
 
 ## The fix
 
@@ -354,10 +354,10 @@ trivial][patch2] and the issues were promptly resolved. The first libolm
 release that includes the fix is 3.2.3 which was released on 2021-05-25.
 
 [patch1]:
-<https://gitlab.matrix.org/matrix-org/olm/-/commit/e82f2601b0dc2a69d3167499ee969555267b7aa6>
+[https://gitlab.matrix.org/matrix-org/olm/-/commit/e82f2601b0dc2a69d3167499ee969555267b7aa6](https://gitlab.matrix.org/matrix-org/olm/-/commit/e82f2601b0dc2a69d3167499ee969555267b7aa6)
 
 [patch2]:
-<https://gitlab.matrix.org/matrix-org/olm/-/commit/ccc0d122ee1b4d5e5ca4ec1432086be17d5f901b>
+[https://gitlab.matrix.org/matrix-org/olm/-/commit/ccc0d122ee1b4d5e5ca4ec1432086be17d5f901b](https://gitlab.matrix.org/matrix-org/olm/-/commit/ccc0d122ee1b4d5e5ca4ec1432086be17d5f901b)
 
 We reached out to all Matrix clients which were determined to be affected. The
 Element client versions which first fix the issue are as follows:

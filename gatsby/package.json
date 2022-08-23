@@ -59,7 +59,7 @@
     "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
     "lint:ci": "yarn lint --format junit -o results/eslint/result.xml",
-    "format": "prettier \"**/*.{md,mdx,js} \" --write"
+    "format": "prettier \"**/*.{md,mdx,js}\" --write"
   },
   "devDependencies": {
     "@mdx-js/react": "^2.1.3",

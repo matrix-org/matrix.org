@@ -48,7 +48,7 @@ The health check on our Docker images now responds more quickly upon successful 
 
 Inspired by [GitHub's new token format](https://github.blog/2021-04-05-behind-githubs-new-authentication-token-formats/), we've [restructured Synapse's access token format](https://github.com/matrix-org/synapse/pull/5588) to follow the pattern:
 
-    syt_<UnpaddedBase64MXIDLocalPart>_<20RandomLetters>_<CRC32>
+    syt_{"<"}UnpaddedBase64MXIDLocalPart{">"}_{"<"}20RandomLetters{">"}_{"<"}CRC32{">"}
 
 So a token for `@example:matrix.org` might look like:
 

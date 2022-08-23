@@ -1,43 +1,43 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
 
-import { Layout, MXContentMain } from '../../components'
-import config from '../../../config'
+import { Layout, MXContentMain } from "../../components";
+import config from "../../../config";
 
 const Category = ({
   data: {
-    allMdx: { edges },
-  },
+    allMdx: { edges }
+  }
 }) => (
   <Layout navmode="blog">
-      <Helmet title={`Blog Archive ${config.siteTitle}`} />
-      <MXContentMain>
-        <h1>Blog Archive</h1>
-        {edges.map(edge => (
-          <p>
-            {edge.node.frontmatter.date} <a href={edge.node.fields.slug}>{edge.node.frontmatter.title}</a>
-          </p>
-          
-        ))}
-      </MXContentMain>
+    <Helmet title={`Blog Archive ${config.siteTitle}`} />
+    <MXContentMain>
+      <h1>Blog Archive</h1>
+      {edges.map(edge => (
+        <p>
+          {edge.node.frontmatter.date}{" "}
+          <a href={edge.node.fields.slug}>{edge.node.frontmatter.title}</a>
+        </p>
+      ))}
+    </MXContentMain>
   </Layout>
-)
+);
 
-export default Category
+export default Category;
 
 Category.propTypes = {
   data: PropTypes.shape({
     allMdx: PropTypes.shape({
-      group: PropTypes.array.isRequired,
-    }),
-  }).isRequired,
-}
+      group: PropTypes.array.isRequired
+    })
+  }).isRequired
+};
 
 export const postQuery = graphql`
   query ArchivePage {
-    allMdx(sort: { fields: [frontmatter___date, fileAbsolutePath], order: DESC },
+    allMdx(sort: { fields: [frontmatter___date, internal.contentFilePath], order: DESC },
       filter: {frontmatter: {date: {ne: null}, author: {ne: null}}}) {
       totalCount
       edges {
@@ -53,4 +53,4 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;

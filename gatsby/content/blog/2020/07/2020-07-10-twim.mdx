@@ -21,7 +21,7 @@ This week it's Open Tech Will Save Us!
 
 [anoa](https://matrix.to/#/@andrewm:amorgan.xyz) reported:
 
-> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals.>
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at [https://matrix.org/docs/spec/proposals](https://matrix.org/docs/spec/proposals).
 >
 >
 > #### MSC Status
@@ -132,7 +132,7 @@ Asked about Sytest and SyTS, Kegan added:
 
 > Complement currently implements the same tests as sytest, so tests which pass sytest will pass complement (though that will diverge as complement will guard against more race conditions by default). There's about 9 different kinds of tests currently testing CS-API and Federation (outbound to a dummy server and inbound via a federation client)
 >
-> The problem with SyTS was that the test tooling around it ultimately wasn't expressive enough. I was using Jest and kept finding myself fighting it by bumping up against issues like <https://github.com/facebook/jest/pull/8751> and the multi-process parallelisation stuff was too opaque. The assertion helper functions also lacked context because they rely on behavioural testing names like `describe("foo") { it("should say bar") { ... }` etc so when your assertion fails (eg wrong value for a JSON key using assert equals) it just says unhelpfully "foo != bar" where what I really want is to know what it actually does say then, and other contextual info around the object (maybe the key name was typod). When I realised that the assertion lib didn't have this and I'd need to add it, coupled with parallelisation concerns and head-desking against Jest, I found myself wishing I just used something else. I stuck with it though and then realised that all the federation stuff (signature checking, canonical JSON, etc) would need to re-implemented when I knew I had working code in Go. Both of these things combined and I thought "you know what, I'm just going to do this in Go" but you'll note that the architecture is identical, so SyTS lives on as an early prototype for Complement ;)
+> The problem with SyTS was that the test tooling around it ultimately wasn't expressive enough. I was using Jest and kept finding myself fighting it by bumping up against issues like [https://github.com/facebook/jest/pull/8751](https://github.com/facebook/jest/pull/8751) and the multi-process parallelisation stuff was too opaque. The assertion helper functions also lacked context because they rely on behavioural testing names like `describe("foo") { it("should say bar") { ... }` etc so when your assertion fails (eg wrong value for a JSON key using assert equals) it just says unhelpfully "foo != bar" where what I really want is to know what it actually does say then, and other contextual info around the object (maybe the key name was typod). When I realised that the assertion lib didn't have this and I'd need to add it, coupled with parallelisation concerns and head-desking against Jest, I found myself wishing I just used something else. I stuck with it though and then realised that all the federation stuff (signature checking, canonical JSON, etc) would need to re-implemented when I knew I had working code in Go. Both of these things combined and I thought "you know what, I'm just going to do this in Go" but you'll note that the architecture is identical, so SyTS lives on as an early prototype for Complement ;)
 
 Find out more in the room: [#complement:matrix.org](https://matrix.to/#/#complement:matrix.org).
 
@@ -162,7 +162,7 @@ Dendrite is a next-generation homeserver written in Go
 
 ### Conduit
 
-Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
+Conduit is a Matrix homeserver written in Rust [https://conduit.rs](https://conduit.rs)
 
 [timo](https://matrix.to/#/@timo:koesters.xyz) said:
 
@@ -224,7 +224,7 @@ Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
 
 [balaa](https://matrix.to/#/@balaa:pi2.noteworthy.im) announced:
 
-> Hi everyone, my friend Patrick and I have been working on making Matrix more accessible in the context of personal overlay networks powered by WireGuard. We’ve built a 1-click deployment solution for Synapse & Riot based on docker. The interesting part is that it gives you public addressability via a distributed proxy service that we have been developing. We are free and open source and welcoming contributors and testers ASAP! We are imagining an ecosystem for building collaborative intranets and see them as foundational to a freer, more equitable internet. Please join us at [#noteworthy:tincan.community](https://matrix.to/#/#noteworthy:tincan.community) See <https://www.patrickdlg.com/personal-messaging/> and <https://noteworthy.tech/start/>
+> Hi everyone, my friend Patrick and I have been working on making Matrix more accessible in the context of personal overlay networks powered by WireGuard. We’ve built a 1-click deployment solution for Synapse & Riot based on docker. The interesting part is that it gives you public addressability via a distributed proxy service that we have been developing. We are free and open source and welcoming contributors and testers ASAP! We are imagining an ecosystem for building collaborative intranets and see them as foundational to a freer, more equitable internet. Please join us at [#noteworthy:tincan.community](https://matrix.to/#/#noteworthy:tincan.community) See [https://www.patrickdlg.com/personal-messaging/]() and [https://noteworthy.tech/start/](https://noteworthy.tech/start/)
 
 ## Dept of Bridges 🌉
 
@@ -254,7 +254,7 @@ Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
 
 > Not much to talk about currently, since I'm breaking my Nheko to replace the entire event store at this moment, but I have some heads up on an annoying bug that I fixed on my branch:
 >
-> Sometimes we had a weird issue, where Nheko wouldn't load the language the user set on their system. This was especially annoying when I wanted to test a specific language, like Japanese, and I couldn't figure out the right LANG* variables to set the language to Japanese in Nheko. Turns out, this was a bug in Nheko and you wouldn't have guessed so, when looking at the examples in the Qt documentation. Anyway, KDAB wrote a nice blogpost explaining this issue: <https://www.kdab.com/fixing-a-common-antipattern-when-loading-translations-in-qt/>
+> Sometimes we had a weird issue, where Nheko wouldn't load the language the user set on their system. This was especially annoying when I wanted to test a specific language, like Japanese, and I couldn't figure out the right LANG* variables to set the language to Japanese in Nheko. Turns out, this was a bug in Nheko and you wouldn't have guessed so, when looking at the examples in the Qt documentation. Anyway, KDAB wrote a nice blogpost explaining this issue: [https://www.kdab.com/fixing-a-common-antipattern-when-loading-translations-in-qt/](https://www.kdab.com/fixing-a-common-antipattern-when-loading-translations-in-qt/)
 >
 > If you are a Qt developer, you may want to check your applications, if you are also affected.
 
@@ -278,7 +278,7 @@ Conduit is a Matrix homeserver written in Rust <https://conduit.rs>
 >
 > * Daydream does the sync now on a worker which is similar to using a thread
 >
-> * jplatte made a PR for optimizing multiple Parts of the Code which significantly improved the overall Daydream performance ( <https://github.com/daydream-mx/Daydream/pull/22> )
+> * jplatte made a PR for optimizing multiple Parts of the Code which significantly improved the overall Daydream performance ( [https://github.com/daydream-mx/Daydream/pull/22](https://github.com/daydream-mx/Daydream/pull/22) )
 > * Some rework of the Login logic happened to prepare for well-known support
 
 ## Dept of SDKs and Frameworks 🧰
@@ -312,7 +312,7 @@ Due to utter negligence and malpractice by myself, we missed the update for this
 
 [Stephen D](https://matrix.to/#/@stephen:m.scd31.com) told us:
 
-> I wrote a pretty simple Matrix bot in Rust which is loosely based on Cat Disruptor 6000. It will react with 🐈️ to any message containing the string "cat" \*. Since it is a small project, I hope it can be used as an example for other people interested in writing Matrix bots in Rust. It implements several important features (crypto/device store, auto-accepting invites, crafting custom events, etc.) You can host it yourself, or you can try it out by inviting the user "@catdisruptor:m.scd31.com" to your room! <https://git.scd31.com/stephen/cat-disruptor-7000>
+> I wrote a pretty simple Matrix bot in Rust which is loosely based on Cat Disruptor 6000. It will react with 🐈️ to any message containing the string "cat" \*. Since it is a small project, I hope it can be used as an example for other people interested in writing Matrix bots in Rust. It implements several important features (crypto/device store, auto-accepting invites, crafting custom events, etc.) You can host it yourself, or you can try it out by inviting the user "@catdisruptor:m.scd31.com" to your room! [https://git.scd31.com/stephen/cat-disruptor-7000](https://git.scd31.com/stephen/cat-disruptor-7000)
 >
 > \* Cat Disruptor 6000 does not do this (it is used for disrupting monologues with cat pictures). However, many instances of Cat Disruptor 6000 also include a separate bot, which is what Cat Disruptor 7000 is mimicking.
 
@@ -329,7 +329,7 @@ Due to utter negligence and malpractice by myself, we missed the update for this
 > * Member join/leave/rename now post messages
 > * Shuts down when receiving a term/exit/quit signal, instead of hanging
 >
-> For more details, see <https://github.com/mrjohnson22/matrix-imposter-bot>
+> For more details, see [https://github.com/mrjohnson22/matrix-imposter-bot](https://github.com/mrjohnson22/matrix-imposter-bot)
 
 ## Dept of Interesting Projects 🛰️
 
@@ -343,7 +343,7 @@ Due to utter negligence and malpractice by myself, we missed the update for this
 >
 > Chat with cody: @cody:bordum.dk
 >
-> Read the source: <https://gitlab.com/carlbordum/matrix-cody>
+> Read the source: [https://gitlab.com/carlbordum/matrix-cody](https://gitlab.com/carlbordum/matrix-cody)
 
 ## Dept of Jobs 💰️
 
@@ -380,4 +380,4 @@ Here we reveal, rank, and applaud the homeservers with the lowest ping, as measu
 
 See you next week, and be sure to stop by [#twim:matrix.org] with your updates!
 
-[#TWIM:matrix.org]: <https://matrix.to/#/#TWIM:matrix.org>
+[#TWIM:matrix.org]: [https://matrix.to/#/#TWIM:matrix.org](https://matrix.to/#/#TWIM:matrix.org)
