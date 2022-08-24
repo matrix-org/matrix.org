@@ -48,7 +48,7 @@ export default function Post({data: {mdx}, pageContext: { prev, next, posts },ch
         </MXContentMain>
         <div>
         <iframe title="DDGSearch" src="https://duckduckgo.com/search.html?width=250&site=matrix.org&prefill=Search Matrix.org with DDG"
-      style={{"overflow":"hidden","margin":0,"padding":0,"width":"308px","height":"40px"}} 
+      style={{overflow:"hidden",margin:0,padding:0,width:"308px",height:"40px"}} 
       frameBorder="0"></iframe>
           {
           toc &&
