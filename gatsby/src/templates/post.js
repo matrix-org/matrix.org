@@ -82,8 +82,10 @@ export const query = graphql`
         categories
         author
         image
-        slug
         showTableOfContents
+      }
+      fields {
+        slug
       }
       tableOfContents
       parent {
