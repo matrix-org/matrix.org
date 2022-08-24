@@ -17,7 +17,7 @@ const Title = styled.h3`
 const Category = ({
   data: {
     categories: { group },
-    archive: { edges }
+    archive: { nodes }
   }
 }) => (
   <Layout navmode="blog">
@@ -35,16 +35,14 @@ const Category = ({
               ({category.totalCount})
             </Title>
             <ul style={{ fontSize: "smaller" }}>
-              {edges
+              {nodes
                 .filter(post =>
-                  post.node.frontmatter.categories.includes(category.fieldValue)
+                  post.frontmatter.categories.includes(category.fieldValue)
                 )
                 .slice(0, 5)
                 .map(post => (
                   <li>
-                    <a href={post.node.fields.slug}>
-                      {post.node.frontmatter.title}
-                    </a>
+                    <a href={post.fields.slug}>{post.frontmatter.title}</a>
                   </li>
                 ))}
               <li>
@@ -71,31 +69,34 @@ Category.propTypes = {
 };
 
 export const postQuery = graphql`
-  query CategoriesPage {
-    categories: allMdx (
-      filter: {frontmatter: {date: {ne: null}, author: {ne: null} } }
-    ){
+  query {
+    categories: allMdx(
+      filter: {
+        frontmatter: { date: { ne: null }, author: { ne: null } }
+      }
+    ) {
       group(field: frontmatter___categories) {
         fieldValue
         totalCount
       }
     }
     archive: allMdx(
-      sort: { fields: [frontmatter___date, internal.contentFilePath], order: DESC },
-        filter: {frontmatter: {date: {ne: null}, author: {ne: null}}}) {
-        totalCount
-        edges {
-          node {
-            frontmatter {
-              title
-              date
-              categories
-            }
-            fields {
-              slug
-            }
-          }
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: {
+        frontmatter: { date: { ne: null }, author: { ne: null } }
+      }
+    ) {
+      totalCount
+      nodes {
+        frontmatter {
+          title
+          date
+          categories
+        }
+        fields {
+          slug
         }
       }
     }
+  }
 `;

@@ -8,17 +8,17 @@ import config from "../../../config";
 
 const Category = ({
   data: {
-    allMdx: { edges }
+    allMdx: { nodes }
   }
 }) => (
   <Layout navmode="blog">
     <Helmet title={`Blog Archive ${config.siteTitle}`} />
     <MXContentMain>
       <h1>Blog Archive</h1>
-      {edges.map(edge => (
+      {nodes.map(node => (
         <p>
-          {edge.node.frontmatter.date}{" "}
-          <a href={edge.node.fields.slug}>{edge.node.frontmatter.title}</a>
+          {node.frontmatter.date}{" "}
+          <a href={node.fields.slug}>{node.frontmatter.title}</a>
         </p>
       ))}
     </MXContentMain>
@@ -36,19 +36,19 @@ Category.propTypes = {
 };
 
 export const postQuery = graphql`
-  query ArchivePage {
-    allMdx(sort: { fields: [frontmatter___date, internal.contentFilePath], order: DESC },
-      filter: {frontmatter: {date: {ne: null}, author: {ne: null}}}) {
+  query {
+    allMdx(
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { frontmatter: { date: { ne: null }, author: { ne: null } } }
+    ) {
       totalCount
-      edges {
-        node {
-          frontmatter {
-            title
-            date
-          }
-          fields {
-            slug
-          }
+      nodes {
+        frontmatter {
+          title
+          date
+        }
+        fields {
+          slug
         }
       }
     }

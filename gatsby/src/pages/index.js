@@ -71,7 +71,7 @@ const example3 = `curl "https://matrix.bob.com/_matrix/client
 
 const Index = ({
   data: {
-    allMdx: { edges }
+    allMdx: { nodes }
   }
 }) => {
   const buildTime = useBuildTime();
@@ -732,28 +732,27 @@ const Index = ({
               <div className="mxblock">
                 <h2 className="mxblock__hx">Latest News</h2>
                 <div className="mxgrid mxgrid--news">
-                  {edges.map(edge => (
+                  {nodes.map(node => (
                     <div
-                      key={edge.node.fields.slug}
+                      key={node.fields.slug}
                       className="mxgrid__item50 mxgrid__item50--news"
                     >
                       <div className="mxgrid__item__bg mxgrid__item__bg--news">
                         <h3 className="mxgrid__item__bg__hx mxgrid__item__bg__hx--news">
-                          {edge.node.frontmatter.title}
+                          {node.frontmatter.title}
                         </h3>
                         <div className="mxgrid__item__bg__vert">
                           <p className="mxgrid__item__bg__p mxgrid__item__bg__p--byline">
-                            {edge.node.frontmatter.date} by{" "}
-                            {edge.node.frontmatter.author}
+                            {node.frontmatter.date} by {node.frontmatter.author}
                             <br />
                           </p>
                           <p className="mxgrid__item__bg__p">
-                            {edge.node.excerpt}
+                            {node.excerpt}
                             <br />
                           </p>
                         </div>
                         <a
-                          href={edge.node.fields.slug}
+                          href={node.fields.slug}
                           className="mxgrid__item__bg__btn w-button"
                         >
                           Read more
@@ -1315,10 +1314,12 @@ const Index = ({
 };
 
 export const postQuery = graphql`
-  query  {
-    allMdx(sort: { fields: [frontmatter___date, internal.contentFilePath], order: DESC },
-      limit:4,
-      filter: {frontmatter: {date: {ne: null}}}) {
+  query {
+    allMdx(
+      sort: { fields: frontmatter___date, order: DESC }
+      limit: 4
+      filter: { frontmatter: { date: { ne: null } } }
+    ) {
       totalCount
       nodes {
         excerpt

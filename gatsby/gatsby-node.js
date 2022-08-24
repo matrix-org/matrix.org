@@ -1,4 +1,5 @@
 const _ = require("lodash");
+const readingTime = require(`reading-time`);
 
 // graphql function doesn't throw an error so we have to check to check for the result.errors to throw manually
 const wrapper = promise =>
@@ -62,6 +63,11 @@ exports.onCreateNode = ({ node, actions }) => {
       console.error("Failed to generate slug");
     }
     createNodeField({ node, name: "slug", value: slug });
+    createNodeField({
+      node,
+      name: `timeToRead`,
+      value: readingTime(node.body)
+    });
   }
 };
 
@@ -191,31 +197,33 @@ exports.createPages = async ({ graphql, actions }) => {
     graphql(`
       {
         allFile(filter: { sourceInstanceName: { eq: "legal" } }) {
-          nodes {
-            childMdx {
-              frontmatter {
-                title
+          edges {
+            node {
+              childMdx {
+                frontmatter {
+                  title
+                }
+                fields {
+                  slug
+                }
               }
-              fields {
-                slug
+              internal {
+                contentFilePath
               }
+              absolutePath
             }
-            internal {
-              contentFilePath
-            }
-            absolutePath
           }
         }
       }
     `)
   );
 
-  resultLegal.data.allFile.nodes.forEach((node, index) => {
+  resultLegal.data.allFile.edges.forEach((edge, index) => {
     createPage({
-      path: node.childMdx.fields.slug,
-      component: `${noNavTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      path: edge.node.childMdx.fields.slug,
+      component: noNavTemplate,
       context: {
-        slug: node.childMdx.fields.slug
+        slug: edge.node.childMdx.fields.slug
       }
     });
   });
@@ -257,10 +265,10 @@ exports.createPages = async ({ graphql, actions }) => {
   const pages = resultPages.data.allMdx.nodes;
   const pagesForGuidesList = pages.map(p => {
     return {
-      slug: p.node.fields.slug,
-      title: p.node.frontmatter.title,
-      sort_order: p.node.frontmatter.sort_order,
-      section: p.node.frontmatter.section
+      slug: p.fields.slug,
+      title: p.frontmatter.title,
+      sort_order: p.frontmatter.sort_order,
+      section: p.frontmatter.section
     };
   });
   pagesForGuidesList.sort(function(a, b) {

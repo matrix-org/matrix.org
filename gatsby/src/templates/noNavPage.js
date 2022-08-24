@@ -51,8 +51,6 @@ export const pageQuery = graphql`
         image
       }
       tableOfContents
-      timeToRead
-      rawBody
       parent {
         ... on File {
           mtime

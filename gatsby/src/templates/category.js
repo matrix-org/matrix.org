@@ -50,7 +50,7 @@ const Category = ({
             date={post.frontmatter.date}
             author={post.frontmatter.author}
             excerpt={post.excerpt}
-            timeToRead={post.timeToRead}
+            timeToRead={post.fields.timeToRead}
             slug={post.fields.slug}
             categories={post.frontmatter.categories}
             key={post.fields.slug}
@@ -86,7 +86,7 @@ Category.propTypes = {
 };
 
 export const postQuery = graphql`
-  query ($category: String!, $skip: Int!, $limit: Int!) {
+  query($category: String!, $skip: Int!, $limit: Int!) {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
@@ -103,9 +103,11 @@ export const postQuery = graphql`
         }
         fields {
           slug
+          timeToRead {
+            time
+          }
         }
         excerpt(pruneLength: 200)
-        timeToRead
       }
     }
   }

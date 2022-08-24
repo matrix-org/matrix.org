@@ -5,12 +5,11 @@ import Helmet from "react-helmet";
 import { Layout } from "../components";
 
 import config from "../../config";
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import moment from "moment";
-
+import { graphql } from "gatsby";
 
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
-
 
 const SHOW_LIVE_STREAM = true;
 const NEXT_EVENT = 18;
@@ -24,9 +23,17 @@ if (SHOW_LIVE_STREAM) {
         style={{ width: "640px", height: "360px" }}
         src="https://stream.matrix.org/hls/live.m3u8"
         controls
-      ></video><br />
-      <strong><a href="https://stream.matrix.org">Watch on stream.matrix.org</a></strong><br />
-      <strong><a href="https://youtube.com/watch?v=pGE2KEasjbc">Find the stream at https://youtube.com/watch?v=pGE2KEasjbc</a></strong>
+      ></video>
+      <br />
+      <strong>
+        <a href="https://stream.matrix.org">Watch on stream.matrix.org</a>
+      </strong>
+      <br />
+      <strong>
+        <a href="https://youtube.com/watch?v=pGE2KEasjbc">
+          Find the stream at https://youtube.com/watch?v=pGE2KEasjbc
+        </a>
+      </strong>
       <script src="/js/hls.light.min.js"></script>
       <script src="/js/livestream.js"></script>
     </div>
@@ -35,9 +42,9 @@ if (SHOW_LIVE_STREAM) {
   liveStream = <img src="/images/otwsu18.png" alt="Open Tech Will Save Us" />;
 }
 
-const OTWSU = ({ data }) => {
-  const events = data.allMdx.edges;
-  const nextEvent = events.find(e => e.node.frontmatter.edition === NEXT_EVENT);
+const OTWSU = ({ data }, children) => {
+  const events = data.allMdx.nodes;
+  const nextEvent = events.find(e => e.frontmatter.edition === NEXT_EVENT);
   return (
     <Layout
       hasNavPadding="true"
@@ -64,51 +71,67 @@ const OTWSU = ({ data }) => {
         </p>
         <p>
           Open Tech Will Save Us is a virtual meetup, taking the form of a
-          monthly live video stream broadcasting on the last Wednesday of
-          every month at 6pm Paris time.
+          monthly live video stream broadcasting on the last Wednesday of every
+          month at 6pm Paris time.
         </p>
         <p>
           We discuss issues relating to technology, especially the importance of
           Open, Interoperable standards, and how they can enable decentralised
           tech to keep our data private while still enabling communication.
         </p>
-        {nextEvent &&
-        <div>
-          <h2>Next Event</h2>
-          <h3>{moment.utc(nextEvent.node.frontmatter.eventdate).format('Do MMMM YYYY')}</h3>
-          <p>
-            Return to this page at the specified time to watch the stream.
-            You can also <a href="https://www.google.com/url?q=https://calendar.google.com/calendar/ical/c_6ns9uddvmgqpop6l7qfna32dcc%2540group.calendar.google.com/public/basic.ics&source=gmail-imap&ust=1659090704000000&usg=AOvVaw2DVHjn4SycYX9yjODwcZu7">add us to your calendar</a>.
-          </p>
-          <MDXRenderer>{nextEvent.node.body}</MDXRenderer>
-        </div>
-        }
+        {nextEvent && (
+          <div>
+            <h2>Next Event</h2>
+            <h3>
+              {moment
+                .utc(nextEvent.frontmatter.eventdate)
+                .format("Do MMMM YYYY")}
+            </h3>
+            <p>
+              Return to this page at the specified time to watch the stream. You
+              can also{" "}
+              <a href="https://www.google.com/url?q=https://calendar.google.com/calendar/ical/c_6ns9uddvmgqpop6l7qfna32dcc%2540group.calendar.google.com/public/basic.ics&source=gmail-imap&ust=1659090704000000&usg=AOvVaw2DVHjn4SycYX9yjODwcZu7">
+                add us to your calendar
+              </a>
+              .
+            </p>
+            <MDXRenderer>{nextEvent.node.body}</MDXRenderer>
+          </div>
+        )}
         <h2>Previous Events</h2>
-        {events.filter(event => event.node.frontmatter.edition < NEXT_EVENT).map(event => {
-          const fm = event.node.frontmatter;
-          return (
-
-            <div className="mxgrid">
-
-              <div className="mxgrid__item25">
-                <br />
-                {fm.image &&
-                  <a href={fm.edition}><img src={fm.image} /></a>
-                }
+        {events
+          .filter(event => event.frontmatter.edition < NEXT_EVENT)
+          .map(event => {
+            const fm = event.frontmatter;
+            return (
+              <div className="mxgrid">
+                <div className="mxgrid__item25">
+                  <br />
+                  {fm.image && (
+                    <a href={fm.edition}>
+                      <img src={fm.image} />
+                    </a>
+                  )}
+                </div>
+                <div className="mxgrid__item75">
+                  <h3>
+                    Edition {fm.edition}:{" "}
+                    {moment.utc(fm.eventdate).format("Do MMMM YYYY")}
+                  </h3>
+                  {fm.youtube && (
+                    <p>
+                      Event #{fm.edition} was held on{" "}
+                      <strong>
+                        {moment.utc(fm.eventdate).format("Do MMMM YYYY")}
+                      </strong>
+                      . <a href={fm.edition}>Watch the recording here.</a>
+                    </p>
+                  )}
+                  <MDXRenderer>{event.node.body}</MDXRenderer>
+                </div>
               </div>
-              <div className="mxgrid__item75">
-                <h3>Edition {fm.edition}: {moment.utc(fm.eventdate).format('Do MMMM YYYY')}</h3>
-                {fm.youtube && 
-                <p>
-                  Event #{fm.edition} was held on <strong>{moment.utc(fm.eventdate).format('Do MMMM YYYY')}</strong>. <a href={fm.edition}>Watch the recording here.</a>
-                </p>
-                }
-                <MDXRenderer>{event.node.body}</MDXRenderer>
-              </div>
-            </div>
-          )
-        })}
-
+            );
+          })}
         <h2>How to join</h2>
         <p>
           <strong>
@@ -129,15 +152,13 @@ const OTWSU = ({ data }) => {
   );
 };
 
-export const query = graphql`{
-  allMdx(
-    filter: {
-      frontmatter: { section: { eq: "otwsu" } }
-    }
-    sort: { fields: frontmatter___edition, order: DESC }
-  ) {
-    edges {
-      node {
+export const query = graphql`
+  {
+    allMdx(
+      filter: { frontmatter: { section: { eq: "otwsu" } } }
+      sort: { fields: frontmatter___edition, order: DESC }
+    ) {
+      nodes {
         frontmatter {
           section
           edition
@@ -148,10 +169,9 @@ export const query = graphql`{
         fields {
           slug
         }
-        body
       }
     }
   }
-}`
+`;
 
 export default OTWSU;

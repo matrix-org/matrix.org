@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
-import kebabCase from 'lodash/kebabCase'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { Link } from "gatsby";
+import kebabCase from "lodash/kebabCase";
+import MDXRenderer from "gatsby-mdx/mdx-renderer";
 
-import Subline from './Subline'
+import Subline from "./Subline";
 
 const Title = styled.h1`
   position: relative;
@@ -17,19 +17,28 @@ const Title = styled.h1`
       color: ${props => props.theme.colors.primaryLight};
     }
   }
-`
+`;
 
 const PostContent = styled.div`
   margin-top: 1rem;
-`
+`;
 
 const LineBreak = styled.div`
   height: 2px;
   margin: 4rem;
   background-color: rgba(1, 1, 1, 0.1);
-`
+`;
 
-const Article = ({ title, date, excerpt, slug, timeToRead, categories, body, author }) => (
+const Article = ({
+  title,
+  date,
+  excerpt,
+  slug,
+  timeToRead,
+  categories,
+  body,
+  author
+}) => (
   <div className="mxcontent__main__post">
     <Title>
       <Link to={slug}>{title}</Link>
@@ -38,10 +47,11 @@ const Article = ({ title, date, excerpt, slug, timeToRead, categories, body, aut
       {date} &mdash;&nbsp;
       {categories.map((cat, i) => (
         <React.Fragment key={cat}>
-          {!!i && ', '}
+          {!!i && ", "}
           <Link to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
         </React.Fragment>
-      ))} &mdash;&nbsp;
+      ))}{" "}
+      &mdash;&nbsp;
       {author}
     </Subline>
     <PostContent>
@@ -49,16 +59,16 @@ const Article = ({ title, date, excerpt, slug, timeToRead, categories, body, aut
     </PostContent>
     <LineBreak />
   </div>
-)
+);
 
-export default Article
+export default Article;
 
 Article.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   excerpt: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
-  timeToRead: PropTypes.number.isRequired,
+  timeToRead: PropTypes.object.isRequired,
   categories: PropTypes.array.isRequired,
-  body: PropTypes.string.isRequired,
-}
+  body: PropTypes.string.isRequired
+};

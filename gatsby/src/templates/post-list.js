@@ -15,7 +15,7 @@ const PostList = ({
   pageContext: { limit, skip, currentPage, posts },
   data: { allMdx }
 }) => {
-  const { edges } = allMdx;
+  const { nodes } = allMdx;
 
   const prevTitle = `Page ${currentPage - 1}`;
   const prevSlug =
@@ -31,7 +31,7 @@ const PostList = ({
     <Layout hasSideNavigation="true" navmode="blog">
       <Helmet />
       <MXContentMain hasSideNavigation="true">
-        {edges.map(post => (
+        {nodes.map(post => (
           <Article
             title={post.frontmatter.title}
             date={post.frontmatter.date}
@@ -84,7 +84,7 @@ PostList.propTypes = {
   }).isRequired,
   data: PropTypes.shape({
     allMdx: PropTypes.shape({
-      edges: PropTypes.array.isRequired,
+      nodes: PropTypes.array.isRequired,
       totalCount: PropTypes.number.isRequired
     })
   }).isRequired
@@ -93,7 +93,7 @@ PostList.propTypes = {
 export const postQuery = graphql`
   query($skip: Int!, $limit: Int!) {
     allMdx(
-      sort: { fields: [frontmatter___date, intenal.contentFilePath], order: DESC }
+      sort: { fields: frontmatter___date, order: DESC }
       limit: $limit
       skip: $skip
       filter: { frontmatter: { date: { ne: null }, author: { ne: null } } }
@@ -108,9 +108,12 @@ export const postQuery = graphql`
         }
         fields {
           slug
+          timeToRead {
+            time
+          }
         }
+        body
         excerpt(pruneLength: 200)
-        timeToRead
       }
     }
   }
