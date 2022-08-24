@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { Layout, Subline, SEO, PrevNext, MXContentMain, MXContentNav } from '../components'
 
