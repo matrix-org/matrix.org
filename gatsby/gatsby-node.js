@@ -136,7 +136,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.fields.slug,
       component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
-        id,
+        id: node.id,
         prev,
         next,
         posts: postsForArchiveList
