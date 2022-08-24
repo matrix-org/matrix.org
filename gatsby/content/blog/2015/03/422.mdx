@@ -1,4 +1,4 @@
----
+a---
 date: '2015-03-02'
 title: Introduction to Application Services
 categories:
@@ -31,7 +31,8 @@ The application service (AS) API itself uses webhooks to communicate from the ho
 A very basic application service may want to log all messages in rooms which have an alias starting with "#logged_" (side note: logging won't work if these rooms are using end-to-end encryption).
 
 Here's an example of a very basic application service using Python (with Flask and Requests) which logs room activity:
-<pre># app_service.py:
+<pre>
+# app_service.py:
 
 import json, requests  # we will use this later
 from flask import Flask, jsonify, request
@@ -50,15 +51,18 @@ if __name__ == "__main__":
     app.run()
 </pre>
 Set your new application service running on port 5000 with:
-<pre>python app_service.py
+<pre>
+python app_service.py
 </pre>
 The home server needs to know that the application service exists before it will send requests to it. This is done via a registration YAML file which is specified in Synapse's main config file e.g. <code>homeserver.yaml</code>. The server admin needs to add the application service registration configuration file as an entry to this file.
-<pre># homeserver.yaml
+<pre>
+# homeserver.yaml
 app_service_config_files:
   - "/path/to/appservice/registration.yaml"
 </pre>
 NB: Note the "-" at the start; this indicates a list element. The registration file <code>registration.yaml</code> should look like:
-<pre># registration.yaml
+<pre>
+# registration.yaml
 
 # this is the base URL of the application service
 url: "http://localhost:5000"
@@ -83,12 +87,13 @@ namespaces:
 <strong>You will need to restart the home server after editing the config file before it will take effect.</strong>
 
 To test everything is working correctly, go ahead and explicitly create a room with the alias "#logged_test:localhost" and send a message into the room: the HS will relay the message to the AS by PUTing to /transactions/&lt;tid&gt; and you should see your AS print the event on the terminal. This will monitor any room which has an alias prefix of "#logged_", but it won't lazily create room aliases if they don't already exist. This means it will only log messages in the room you created before: #logged_test:localhost. Try joining the room "#logged_test2:localhost" without creating it, and it will fail. Let's fix that and add in lazy room creation:
-<pre>@app.route("/rooms/&lt;alias&gt;")
+<pre>
+@app.route("/rooms/&lt;alias&gt;")
 def query_alias(alias):
     alias_localpart = alias.split(":")[0][1:]
     requests.post(
         # NB: "TOKEN" is the as_token referred to in registration.yaml
-        "<a href="http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN" target="_blank">http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN</a>",
+        "{"<"}a href="http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN" target="_blank"{">"}http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN{"<"}/a{">"}",
         json.dumps({'{'}
             "room_alias_name": alias_localpart
         {'}'}),

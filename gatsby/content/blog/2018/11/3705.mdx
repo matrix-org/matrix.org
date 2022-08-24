@@ -19,19 +19,15 @@ slug: user-experience-preview-end-to-end-encryption-by-default
 
 When using encrypted messages, most existing services fall short in one or all of the following:
 <ul>
- 	<li style="font-weight: 400"><span style="font-weight: 400">They don't allow you to use multiple devices independently. For example, a web session might be locally tethered to a mobile device.</span>
-</li>
- 	<li style="font-weight: 400"><span style="font-weight: 400">They don't support a way to restore or temporarily access message history. For example, if you don't have physical access to your main device because it's broken or has been stolen.</span>
-</li>
- 	<li style="font-weight: 400"><span style="font-weight: 400">They don't allow you to verify that devices are controlled by their owners rather than eavesdroppers, and persist that trust across multiple devices, sessions or rooms.</span>
-</li>
+ 	<li style="font-weight: 400"><span style="font-weight: 400">They don't allow you to use multiple devices independently. For example, a web session might be locally tethered to a mobile device.</span></li>
+ 	<li style="font-weight: 400"><span style="font-weight: 400">They don't support a way to restore or temporarily access message history. For example, if you don't have physical access to your main device because it's broken or has been stolen.</span></li>
+ 	<li style="font-weight: 400"><span style="font-weight: 400">They don't allow you to verify that devices are controlled by their owners rather than eavesdroppers, and persist that trust across multiple devices, sessions or rooms.</span></li>
 </ul>
 <span style="font-weight: 400">Modern users, even those we talk to at security and privacy-led organisations, expect these features to 'just work' by default out of the box. Before enabling end-to-end encryption by default, we've been hard at work figuring out how we can deliver these features without compromising security or usability.</span>
 
 
 <span style="font-weight: 400">(For some users, restrictions such as limiting the number of places encryption keys reside, and not having a synchronised message history may be desirable </span>
-<i><span style="font-weight: 400">security features.</span>
-</i><span style="font-weight: 400"> We'll support these cases, but just not as the default behaviour.)</span>
+<i><span style="font-weight: 400">security features.</span></i><span style="font-weight: 400"> We'll support these cases, but just not as the default behaviour.)</span>
 
 
 <span style="font-weight: 400">Let's dive in to some of the fundamental concepts we'll be putting forward to deliver a default end-to-end encryption experience that makes sense for most modern users. In this post we'll look at an overview of</span>
@@ -58,8 +54,7 @@ When using encrypted messages, most existing services fall short in one or all o
 <a href="https://github.com/vector-im/riot-web/issues/5675"><span style="font-weight: 400">incrementally encrypts and backs up encryption keys to a user's homeserver</span></a><span style="font-weight: 400">, kept secure by the homeserver never having access to the passphrase or key. Like cross-signing, using a recovery passphrase or key will also signal to other users that a device is trustworthy.</span>
 
 
-<span style="font-weight: 400">We think that in most cases users will cross-sign personal devices, but as a safety net (for example, if a user's devices are broken or lost) Secure Message Recovery is an invaluable tool for users to minimise the chance of them losing their encrypted message history.
-</span>
+<span style="font-weight: 400">We think that in most cases users will cross-sign personal devices, but as a safety net (for example, if a user's devices are broken or lost) Secure Message Recovery is an invaluable tool for users to minimise the chance of them losing their encrypted message history.</span>
 
 <h2>People should trust people</h2>
 <a href="/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif"><img class="alignnone size-large wp-image-3726" src="/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif" alt="" width="1024" height="577" /></a>
@@ -72,20 +67,16 @@ When using encrypted messages, most existing services fall short in one or all o
 <h2>Sensible and extensible</h2>
 <a href="/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif"><img class="alignnone size-large wp-image-3727" src="/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif" alt="" width="1024" height="577" /></a>
 
-<span style="font-weight: 400">In Riot, we're implementing these features with a sensible default experience that strikes a balance between usability and security. We think most people would prefer to trust cross-signed devices, and that user trust shouldn't block encryption. However, if you aren't most people, you'll be free to configure whatever level of security you need.
-</span>
+<span style="font-weight: 400">In Riot, we're implementing these features with a sensible default experience that strikes a balance between usability and security. We think most people would prefer to trust cross-signed devices, and that user trust shouldn't block encryption. However, if you aren't most people, you'll be free to configure whatever level of security you need.</span>
 
 <h2>In Summary</h2>
 <span style="font-weight: 400">With all of the above in place, and after resolving any remaining technical issues, users will be able to:</span>
 
 <ul>
  	<li>Use end-to-end encryption by default in private rooms.</li>
- 	<li><span style="font-weight: 400">Use an existing device or Secure Message Recovery to access their encrypted message history on multiple devices, and to signal device trust to other users.</span>
-</li>
- 	<li><span style="font-weight: 400">Access their encrypted message history using Secure Message Recovery, by storing encrypted message keys on their homeserver.</span>
-</li>
- 	<li><span style="font-weight: 400">Mark a user as trusted by verifying one of their devices, persisting across all rooms and devices.</span>
-</li>
+ 	<li><span style="font-weight: 400">Use an existing device or Secure Message Recovery to access their encrypted message history on multiple devices, and to signal device trust to other users.</span></li>
+ 	<li><span style="font-weight: 400">Access their encrypted message history using Secure Message Recovery, by storing encrypted message keys on their homeserver.</span></li>
+ 	<li><span style="font-weight: 400">Mark a user as trusted by verifying one of their devices, persisting across all rooms and devices.</span></li>
  	<li>Keep their encrypted messages out of the hands of eavesdroppers.</li>
  	<li>Opt out, or further configure if they have more specific security requirements.</li>
 </ul>

@@ -71,7 +71,8 @@ I was extremely young when I first read and understood Larry Wall's explanation 
 When he's not working away on the Matrix Spec, <a href="https://github.com/turt2live">TravisR</a> continues to work on less [essential|sane] Matrix projects. This week we have <a href="https://matrix.to/#/@hashtag:t2bot.io">@hashtag:t2bot.io</a>, a bot that converts #hashtags to Matrix groups.
 <blockquote>Why? Because why not. Source available on github: <a href="https://github.com/turt2live/matrix-hashtag-bot">https://github.com/turt2live/matrix-hashtag-bot</a></blockquote><br /><h2 id="bridges">Bridges</h2><br /><h3 id="matrixappservicebridgeandmatrixappserviceirc">matrix-appservice-bridge and matrix-appservice-irc</h3><br /><a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> will only be working full time with the Matrix Core team for another week (!!!), but until then he's going full-speed with bridge work. First <a href="https://github.com/matrix-org/matrix-appservice-irc">matrix-appservice-irc</a>:<br /><blockquote>Just pushed out <a href="https://github.com/matrix-org/matrix-appservice-irc/blob/release-v0.11.0/CHANGELOG.md">matrix-appservice-irc 0.11.0-rc3</a> which contains a lot of nice things. The full changelog is there, hoping to get some of this tested and running on the matrix.org servers soon, but initial testing looks good :)</blockquote><br />Having worked so much on IRC bridging the last few months, <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> has this week managed to make improvements to <a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a>:<br /><blockquote>Released matrix-appservice-bridge 1.6.0 which contains mostly things I was writing for the irc bridge and factored out instead. There's a couple of goodies like automatic caching of profiles/events, and getEvent as a way to fetch events from the homeserver without fiddling with context.</blockquote>
 Full changelog: <a href="https://github.com/matrix-org/matrix-appservice-bridge/blob/1.6.0/CHANGES.md">https://github.com/matrix-org/matrix-appservice-bridge/blob/1.6.0/CHANGES.md</a>
-<blockquote>Some <code>Intent</code> operations now cache requests that would otherwise fall through
+<blockquote>
+Some <code>Intent</code> operations now cache requests that would otherwise fall through
 to the homeserver which can be expensive. This is configurable for <code>Intent</code>s
 via the <code>opts.caching.ttl</code> and <code>size</code> options.
 AgeCounters now allow you to set your own time period buckets.
@@ -83,7 +84,8 @@ while also letting the bridge access it.
 
 <code>a</code> release: Fix issue where <code>roomState</code> would fail.
 <code>b</code> release: Fix issue where we were calling this.intent <em>inside</em> intent like fools!
-<code>c</code> release: Fix issue where some stole js-sdk code was not checked thoroughly.</blockquote>
+<code>c</code> release: Fix issue where some stole js-sdk code was not checked thoroughly.
+</blockquote>
 <h3 id="whatsapp">WhatsApp</h3>
 <a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> announces that <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> "is now somewhat usable for basic chatting".
 <blockquote>It uses the <a href="https://github.com/Rhymen/go-whatsapp">go-whatsapp</a> library to talk with the WhatsApp Web API. Using the web API means that you'll still need WhatsApp on your phone connected to the internet, but it also means you won't get banned for using the bridge.<br />The bridge is still very alpha, but basic message bridging and some advanced features already work. There's a <a href="https://github.com/tulir/mautrix-whatsapp/blob/master/ROADMAP.md">features &amp; roadmap</a> document about that.</blockquote>

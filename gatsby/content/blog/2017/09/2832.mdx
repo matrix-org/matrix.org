@@ -35,7 +35,8 @@ Step one: flash to latest UBPorts image:
 <ul>
  	<li>Set up Ubuntu desktop as a host (as per <a href="https://docs.ubuntu.com/phone/en/devices/installing-ubuntu-for-devices">https://docs.ubuntu.com/phone/en/devices/installing-ubuntu-for-devices</a>)</li>
 </ul>
-<pre><code>sudo add-apt-repository ppa:ubuntu-sdk-team/ppa
+<pre><code>
+sudo add-apt-repository ppa:ubuntu-sdk-team/ppa
 sudo apt-get update
 sudo apt-get install ubuntu-device-flash
 sudo apt-get install phablet-tools
@@ -43,7 +44,8 @@ sudo apt-get install phablet-tools
 <ul>
  	<li>Grab an adb-compatible recovery image (yes, seems like the right place is someone's personal webspace...)</li>
 </ul>
-<pre><code>wget http://people.canonical.com/~jhm/barajas/recovery-vegetahd.img
+<pre><code>
+wget http://people.canonical.com/~jhm/barajas/recovery-vegetahd.img
 </code></pre>
 <ul>
  	<li>If your Ubuntu desktop is running in a VM, make sure you have USB 2.0 or 3.0 support enabled (in Virtualbox this needs the extension pack installed). USB 1 is too slow and the flash will timeout, semi-bricking the phone.</li>
@@ -52,25 +54,29 @@ sudo apt-get install phablet-tools
  	<li>Plug into USB</li>
  	<li>Flash the recovery image and latest UBPorts OS:</li>
 </ul>
-<pre><code>sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --device=vegetahd \\
+<pre><code>
+sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --device=vegetahd \\
                          --channel=15.04/stable --bootstrap --recovery-image=recovery-vegetahd.img \\
                          --developer-mode --password=secret
 </code></pre>
 <ul>
  	<li>Ensure the system OS is writable. (Ubuntu Touch runs the OS partition read-only by default to protect users. In this case, you can always re-flash it if all goes wrong.)</li>
 </ul>
-<pre><code>sudo phablet-config writable-image
+<pre><code>
+sudo phablet-config writable-image
 </code></pre>
 <ul>
  	<li>Get an SSH server running on the phone before you go insane</li>
 </ul>
-<pre><code>adb shell
+<pre><code>
+adb shell
 sudo /etc/init.d/ssh start # password is as set when flashing.
 </code></pre>
 Step two: cross-compile latest Qt 5.9 for the phone.
 
 Ubuntu 15.04 shipped with 5.4, which is pretty old now, and too old for nheko. Based on <a href="https://rm5248.com/cross-compile-qt-for-arm/">https://rm5248.com/cross-compile-qt-for-arm/</a>
-<pre><code># grab the source for Qt5
+<pre><code>
+# grab the source for Qt5
 git clone git://code.qt.io/qt/qt5.git
 cd qt5
 ./init-repository
@@ -160,11 +166,14 @@ make -j8
 make install
 </code></pre>
 If anything goes wrong, a good bet (having backed up your new mkspec target) is to git clean everything:
-<pre><code>git submodule foreach --recursive "git clean -dfx"
+<pre><code>
+git submodule foreach --recursive "git clean -dfx"
 git clean -dfx
 </code></pre>
 Step 3: compile qtubuntu for Ubuntu-specific Qt stuff like the integration with the Mir display server (hey, at this point it feels like we're building our very own zombie Ubuntu Touch 17.04... :/)
-<pre><code># grab dev package deps
+
+```bash
+# grab dev package deps
 ssh phablet@phone "sudo apt-get install libubuntu-application-api-dev libudev-dev"
 rsync -avz --exclude /proc --exclude /run --exclude /sys --exclude /dev \\
            --exclude /android --exclude /var/lib/lxc phablet@phone:/ ~/phone/system
@@ -219,9 +228,11 @@ make install
 
 # rsync our beautiful new Qt5.9 over to the phone, including the qtubuntu plugin
 rsync -avz $ROOTFS/opt/qt5-arm root@phone:/opt/
-</code></pre>
+```
+
 Step 4: cross-compile nheko as an experiment
-<pre><code># check it out
+<pre><code>
+# check it out
 git clone --recursive git+ssh://git@github.com/mujx/nheko
 cd nheko
 
@@ -289,7 +300,8 @@ ssh phablet@phone "export MIR_SOCKET=/run/user/32011/mir_socket;
 # N.B. if debugging under gdb, use `handle SIGILL nostop`
 </code></pre>
 Step 5: Package nheko
-<pre><code># make sure you have a manifest.json, nheko.png, nheko.apparmor and nheko.desktop.
+<pre><code>
+# make sure you have a manifest.json, nheko.png, nheko.apparmor and nheko.desktop.
 # If you don't have an icon, the app won't show up.
 # you can grab it from the matthew/mobile branch of github.com/matrix-org/nheko
 click build ./
@@ -300,4 +312,5 @@ ssh phablet@phone pkcon install-local --allow-untrusted im.vector.nheko_0.1_all.
 
 # ...and then swipe down on the app listing to hopefully see the app there.
 # if that doesn't work, you can manually launch it with:
-ssh phablet@phone ubuntu-app-launch im.vector.nheko_nheko_0.1</code></pre>
+ssh phablet@phone ubuntu-app-launch im.vector.nheko_nheko_0.1
+</code></pre>

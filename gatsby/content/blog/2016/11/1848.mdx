@@ -28,35 +28,22 @@ Megolm
 .  The stuff that ships today is:
 
 <ul>
- 	<li style="font-weight: 400;"><b>E2E encryption, based on the <a href="/git/olm/about">Olm</a> <a href="https://en.wikipedia.org/wiki/Double_Ratchet_Algorithm">Double Ratchet</a> and Megolm ratchet, working in beta on all three platforms</b>.  We're still chasing a few nasty bugs which can cause ‘unknown inbound session IDs', but in general it should be stable: please report these via Github if you see them.
-</li>
- 	<li style="font-weight: 400;"><b>Encrypted attachments are here!</b> (limited to ~2MB on web, but as soon as <a href="https://github.com/matrix-org/matrix-react-sdk/pull/562">https://github.com/matrix-org/matrix-react-sdk/pull/562</a> lands this limit will go away)
-</li>
- 	<li style="font-weight: 400;"><b>Encrypted VoIP signalling</b> (and indeed any arbitrary Matrix events) are here!
-</li>
- 	<li style="font-weight: 400;">Tracking whether the messages you receive are from <strong>‘verified' devices</strong> or not.
-</li>
- 	<li style="font-weight: 400;">Letting you <strong>block specific target devices</strong> from being able to decrypt your messages or not.
-</li>
- 	<li style="font-weight: 400;"><strong>The <a href=" http://matrix.org/docs/guides/e2e_implementation.html">Official Implementor's Guide</a></strong>.  If you're a developer wanting to add Olm into your Matrix client/bot/bridge etc, this is the place to start.
-</li>
+ 	<li style="font-weight: 400;"><b>E2E encryption, based on the <a href="/git/olm/about">Olm</a> <a href="https://en.wikipedia.org/wiki/Double_Ratchet_Algorithm">Double Ratchet</a> and Megolm ratchet, working in beta on all three platforms</b>.  We're still chasing a few nasty bugs which can cause ‘unknown inbound session IDs', but in general it should be stable: please report these via Github if you see them.</li>
+ 	<li style="font-weight: 400;"><b>Encrypted attachments are here!</b> (limited to ~2MB on web, but as soon as <a href="https://github.com/matrix-org/matrix-react-sdk/pull/562">https://github.com/matrix-org/matrix-react-sdk/pull/562</a> lands this limit will go away)</li>
+ 	<li style="font-weight: 400;"><b>Encrypted VoIP signalling</b> (and indeed any arbitrary Matrix events) are here!</li>
+ 	<li style="font-weight: 400;">Tracking whether the messages you receive are from <strong>‘verified' devices</strong> or not.</li>
+ 	<li style="font-weight: 400;">Letting you <strong>block specific target devices</strong> from being able to decrypt your messages or not.</li>
+ 	<li style="font-weight: 400;"><strong>The <a href=" http://matrix.org/docs/guides/e2e_implementation.html">Official Implementor's Guide</a></strong>.  If you're a developer wanting to add Olm into your Matrix client/bot/bridge etc, this is the place to start.</li>
 </ul>
 Stuff which remains includes:
 
 <ul>
- 	<li style="font-weight: 400;">Speeding up sending the first message after adds/removes a device from a room (this can be <a href="https://github.com/vector-im/vector-web/issues/2157"><em>very</em> slow</a> currently - e.g. 10s, but we can absolutely do better).
-</li>
- 	<li style="font-weight: 400;">Proper device verification.  Currently we compare out-of-band device fingerprints, which is a terrible UX.  Lots of work to be done here.
-</li>
- 	<li style="font-weight: 400;">Turning on encryption for private rooms by default.  We're deliberately keeping E2E opt-in for now during beta given there is a small risk of undecryptable messages, and we don't want to lull folks into a false sense of security.  As soon as we're out of beta, we'll obviously be turning on E2E for any room with private history by default.  This also gives the rest of the Matrix ecosystem a chance to catch up, as we obviously don't want to lock out all the clients which aren't built on matrix-{'{'}js,ios,android{'}'}-sdk.
-</li>
- 	<li style="font-weight: 400;">We're also considering building a simple Matrix proxy to aid migration that you can run on localhost that E2Es your traffic as required (so desktop clients like WeeChat, NaChat, Quaternion etc would just connect to the proxy on localhost via pre-E2E Matrix, which would then manage all your keys &amp; sessions &amp; ratchets and talk E2E through to your actual homeserver.
-</li>
- 	<li style="font-weight: 400;">Matrix clients which can't speak E2E won't show encrypted messages at all.
-</li>
- 	<li style="font-weight: 400;">...<a href="https://github.com/vector-im/vector-web/issues?q=is%3Aissue%20is%3Aopen%20label%3Atype%3Ae2e">lots and lots of bugs</a> :D
-.  We'll be out of beta once these are all closed up.
-</li>
+ 	<li style="font-weight: 400;">Speeding up sending the first message after adds/removes a device from a room (this can be <a href="https://github.com/vector-im/vector-web/issues/2157"><em>very</em> slow</a> currently - e.g. 10s, but we can absolutely do better).</li>
+ 	<li style="font-weight: 400;">Proper device verification.  Currently we compare out-of-band device fingerprints, which is a terrible UX.  Lots of work to be done here.</li>
+ 	<li style="font-weight: 400;">Turning on encryption for private rooms by default.  We're deliberately keeping E2E opt-in for now during beta given there is a small risk of undecryptable messages, and we don't want to lull folks into a false sense of security.  As soon as we're out of beta, we'll obviously be turning on E2E for any room with private history by default.  This also gives the rest of the Matrix ecosystem a chance to catch up, as we obviously don't want to lock out all the clients which aren't built on matrix-{'{'}js,ios,android{'}'}-sdk.</li>
+ 	<li style="font-weight: 400;">We're also considering building a simple Matrix proxy to aid migration that you can run on localhost that E2Es your traffic as required (so desktop clients like WeeChat, NaChat, Quaternion etc would just connect to the proxy on localhost via pre-E2E Matrix, which would then manage all your keys &amp; sessions &amp; ratchets and talk E2E through to your actual homeserver.</li>
+ 	<li style="font-weight: 400;">Matrix clients which can't speak E2E won't show encrypted messages at all.</li>
+ 	<li style="font-weight: 400;">...<a href="https://github.com/vector-im/vector-web/issues?q=is%3Aissue%20is%3Aopen%20label%3Atype%3Ae2e">lots and lots of bugs</a> :D.  We'll be out of beta once these are all closed up.</li>
 </ul>
 In practice the system is working very usably, especially for 1:1 chats.  Big group chats with lots of joining/parting devices are a bit more prone to weirdness, as are edge cases like running multiple Riot/Webs in adjacent tabs on the same account.  Obviously we don't recommend using the E2E for anything mission critical requiring 100% guaranteed privacy whilst we're still in beta, but we do thoroughly recommend everyone to give it a try and <a href="https://github.com/vector-im/vector-web/issues">file bugs</a>!
 

@@ -20,7 +20,8 @@ The URLs of the widgets are stored in the state of the room with some high-level
 Now, in an ideal world we would have enough bandwidth to have formally added widgets to the Matrix spec, but unfortunately we are way behind on spec work currently, thanks in part to our current funding problems. (Remember, if you like Matrix, <a href="/blog/2017/07/07/a-call-to-arms-supporting-matrix/">please donate or get your company to donate</a> otherwise we are at real risk of hitting a very big funding wall).  Rather than formal spec, we've focused on rushing an initial implementation out the door in matrix-react-sdk (and thus riot-web) to see how they work first in reality.  Riot/iOS and Riot/Android are coming soon - although we've special-cased the Jitsi video conferencing widget in iOS to be implemented natively, which is actually available already on develop(!)
 
 Right now the widgets supported by Riot are prefixed behind the <code>im.vector.modular.widgets</code> state event, whose format is something like:
-<pre>{'{'}
+<pre>
+{'{'}
 	type: "im.vector.modular.widgets",
 	state_key: "widget1",
 	content: {'{'}

@@ -29,12 +29,14 @@ As part of the project, <a href="https://matrix.to/#/@wilko:matrix.org">Wilko</a
 The reason for this is outlined <a href="https://git.pattle.im/pattle/android#future">here</a>. To summarize: My goal for Pattle is to release for not only Android but also iOS and web, with a single code base. Other reasons include that Android native development is just bad, and the fact that I'm not too happy with the official Matrix Android SDK design and documentation.
 I will maintain and also add some features to the current version of Pattle, to try things out. The Flutter version will replace the native one once the features are in sync.</blockquote>
 <h2 id="riotios">Riot iOS</h2>
-<blockquote>We've released a hotfix release 0.8.4 on App Store that fixes following issues:
+<blockquote>
+We've released a hotfix release 0.8.4 on App Store that fixes following issues:
 <ul>
  	<li>Unable to open a file attachment of a room message.</li>
  	<li>Unable to share a file with whitespace in filename.</li>
 </ul>
-We are working on iOS 12 notifications features.</blockquote>
+We are working on iOS 12 notifications features.
+</blockquote>
 <h2 id="riotandroid">Riot Android</h2>
 <blockquote>
 <ul>
@@ -59,18 +61,20 @@ We are working on iOS 12 notifications features.</blockquote>
 </ol>
 To add the sticker pack to your sticker picker:
 <ol>
- 	<li>Make sure you're using Dimension as your integration manager.
-<ul>
- 	<li>Not sure if you are? Click the 4 squares in the top right of the room in Riot - if the dialog is titled "Dimension", you're all set :)</li>
- 	<li>If you aren't, check out <a href="https://dimension.t2bot.io">https://dimension.t2bot.io</a></li>
-</ul>
-</li>
+ 	<li>
+		Make sure you're using Dimension as your integration manager.
+		<ul>
+			<li>Not sure if you are? Click the 4 squares in the top right of the room in Riot - if the dialog is titled "Dimension", you're all set :)</li>
+			<li>If you aren't, check out <a href="https://dimension.t2bot.io">https://dimension.t2bot.io</a></li>
+		</ul>
+	</li>
  	<li>Click on the smiley face to the right of where you type messages then the Edit button in the top right.</li>
  	<li>Paste the URL of the sticker pack into the box and click "Add Stickerpack".</li>
  	<li>Start using your new stickers.</li>
 </ol>
 <blockquote>
-These instructions are also available at <a href="https://github.com/turt2live/matrix-dimension/blob/master/docs/custom_stickerpacks.md">https://github.com/turt2live/matrix-dimension/blob/master/docs/custom_stickerpacks.md</a> as is the admin/operator guide for running your own sticker bot (you're not stuck with using t2bot.io unless you want to be).<br />Custom sticker packs are still beta while the proposals to share this with the wider Matrix ecosystem are still works in progress. This serves as a proof of concept to see how crazy of an idea it is to have stickerpacks-as-rooms (yes, they're just plain Matrix rooms under the hood) and what needs ironing out before moving ahead with the MSC.</blockquote>
+These instructions are also available at <a href="https://github.com/turt2live/matrix-dimension/blob/master/docs/custom_stickerpacks.md">https://github.com/turt2live/matrix-dimension/blob/master/docs/custom_stickerpacks.md</a> as is the admin/operator guide for running your own sticker bot (you're not stuck with using t2bot.io unless you want to be).<br />Custom sticker packs are still beta while the proposals to share this with the wider Matrix ecosystem are still works in progress. This serves as a proof of concept to see how crazy of an idea it is to have stickerpacks-as-rooms (yes, they're just plain Matrix rooms under the hood) and what needs ironing out before moving ahead with the MSC.
+</blockquote>
 <h2 id="matrixnotificationprofilemanager">matrix-notification-profile-manager</h2>
 <a href="https://matrix.to/#/@brendan:abolivier.bzh">Brendan</a> has created a notification profile manager:
 <blockquote>Over the past few weeks, I grew a bit fed up of always having to turn on and off every notification rule each time I'm having a slight change in what I'm working on or depending on what mood I was in (e.g. want to focus only on work-related stuff and nothing else, don't want to hear about work at all, somewhere in the middle, etc.), so I built a <a href="https://github.com/babolivier/matrix-notification-profile-manager">notification profile manager for Matrix</a>. It's available both as a command line interface or a Go package in case people want to build on top of it.<br /><br />It allows one to take a snapshot of their current notifications settings and save that as a profile, so that this profile can be applied later. It also allows one to delete a profile or list the existing profiles (more features to be added as time goes by). In order to make the whole thing interoperable with other projects building on top of the Go package, it also uses the user's account data on the user's Matrix homeserver to store profiles.</blockquote>
@@ -97,7 +101,8 @@ I also released <a href="https://github.com/tulir/mautrix-telegram/releases/tag/
 Shevski from the <a href="https://redecentralize.org/">#redecentralize</a> organisation was interviewed on Radio 4, and mentioned Matrix:
 <blockquote class="twitter-tweet" data-lang="en">
 <p dir="ltr" lang="en">Yesterday on <a href="https://twitter.com/BBCRadio4?ref_src=twsrc%5Etfw">@BBCRadio4</a> I talked about the problems of centralisation, how to regulate big tech, personal data stores and <a href="https://twitter.com/redecentralize?ref_src=twsrc%5Etfw">@redecentralize</a>! You can listen online here: <a href="https://t.co/xGHK812lYa">https://t.co/xGHK812lYa</a> with <a href="https://twitter.com/hashtag/Web30?src=hash&amp;ref_src=twsrc%5Etfw">#Web30</a> section starting 1:50 mins in ? (I'm from 7mins ish) <a href="https://twitter.com/hashtag/redecentralize?src=hash&amp;ref_src=twsrc%5Etfw">#redecentralize</a> <a href="https://t.co/m0dazBH7Dk">pic.twitter.com/m0dazBH7Dk</a></p>
-— Irina (Ira) Bolychevsky (@shevski) <a href="https://twitter.com/shevski/status/1109056592396382208?ref_src=twsrc%5Etfw">March 22, 2019</a></blockquote>
+— Irina (Ira) Bolychevsky (@shevski) <a href="https://twitter.com/shevski/status/1109056592396382208?ref_src=twsrc%5Etfw">March 22, 2019</a>
+</blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <h2 id="extras">Extras</h2>
 <a href="https://github.com/DanilaFe/Scylla">Scylla</a> has been receiving regular updates, no release to report but the project keeps going. <a href="https://matrix.to/#/#scylla:riot.danilafe.com">#scylla:riot.danilafe.com</a>
@@ -105,8 +110,7 @@ Shevski from the <a href="https://redecentralize.org/">#redecentralize</a> organ
 This React Native client is not announced so <a href="https://github.com/limvot/bubbles">don't look at it</a>
 
 My pal Doug shared his frustration with the broader state of the chat ecosystem after <a href="https://www.theatlantic.com/technology/archive/2019/03/hottest-chat-app-teens-google-docs/584857/">reading that teens now use Google Docs for their chat needs</a> (and not the chat feature, the document itself!)
-<blockquote><span class="mx_MTextBody mx_EventTile_content"><span class="mx_EventTile_body markdown-body" dir="auto">I love that you've got Amazon with their Alexa messaging, Apple in their own bubble with iMessage, Facebook doing chat 3-ways and Google trying 50 ways to do chat. And that's before you even get into things like Slack, Discord, Telegram, Riot, Line, WeChat etc etc. And then the current hot way to chat is in a document...</span>
-</span>
+<blockquote><span class="mx_MTextBody mx_EventTile_content"><span class="mx_EventTile_body markdown-body" dir="auto">I love that you've got Amazon with their Alexa messaging, Apple in their own bubble with iMessage, Facebook doing chat 3-ways and Google trying 50 ways to do chat. And that's before you even get into things like Slack, Discord, Telegram, Riot, Line, WeChat etc etc. And then the current hot way to chat is in a document...</span></span>
 <br />I mean, <strong>how much money is being invested in trying to create the perfect chat solution?</strong></blockquote>
 For the record, we were chatting over Matrix…
 <h2 id="thatsalliknow">That's all I know</h2>

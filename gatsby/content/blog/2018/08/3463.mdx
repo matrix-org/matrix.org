@@ -11,7 +11,8 @@ As part of an overhaul of the documentation surrounding Matrix, I'm planning to 
 <h2 id="clients">Clients</h2>
 <h3 id="seaglass">Seaglass</h3>
 <a href="https://github.com/neilalexander/seaglass">Seaglass</a> now supports <strong>E2E</strong> rooms, leveraging <a href="https://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a>! Additionally, maintainer <a href="https://matrix.to/#/@neilalexander:matrix.org">neilalexander</a> has had a productive week:
-<blockquote>Seaglass has had many updates, including:
+<blockquote>
+Seaglass has had many updates, including:
 <ul>
  	<li>message coalescing</li>
  	<li>room settings (history/join rules and changing aliases/addresses)</li>
@@ -34,11 +35,12 @@ Big updates are on the horizon for both iOS and Android, with 0.7.0 of iOS heade
 Meanwhile on Riot/Web, Lazy Loading members is pretty much complete - just writing end-to-end tests to ensure that encryption still works well when lazy loading is enabled.  Next up is actually progressing the redesign at last!
 <h2 id="specstatus">Spec status</h2>
 <ul>
- 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1425">MSC1425</a></strong>/<strong><a href="https://github.com/matrix-org/matrix-doc/issues/1501">MSC1501</a></strong> richvdh has been thinking about Room Versioning
-<ul>
- 	<li>A summary in his words: "room upgrades are implemented by creating a new room, shutting down the old one, and linking between the two"</li>
-</ul>
-</li>
+ 	<li>
+		<strong><a href="https://github.com/matrix-org/matrix-doc/issues/1425">MSC1425</a></strong>/<strong><a href="https://github.com/matrix-org/matrix-doc/issues/1501">MSC1501</a></strong> richvdh has been thinking about Room Versioning
+		<ul>
+			<li>A summary in his words: "room upgrades are implemented by creating a new room, shutting down the old one, and linking between the two"</li>
+		</ul>
+	</li>
  	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1497">MSC1497</a></strong> thorough discussion happening against Matthew's proposal for Capabilities support in the CS API</li>
  	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1442">MSC1442</a></strong> though you may have seen it previously, I recommend anyone who is able to take a look at Erik's "State Resolution: Reloaded" proposal. This documents his "thoughts on the next iteration of the state resolution algorithm that aims to mitigate currently known attacks". It very clearly explains the current problem, and the proposed solution. While heavy, I found it really useful for helping to understand State Res and everything it affects.</li>
  	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1485">MSC1485</a></strong> <a href="@tulir:maunium.net">tulir</a> proposes "Hint buttons in messages", which effectively provide pre-defined responses for users. This is especially valuable for Bots which can only accept a certain range of replies. I'd love to see this implemented, having long ago built a <a href="https://github.com/benparsons/MessengerStorytime/">"choose your own adventure" engine</a> using similar features from another messaging platform.</li>

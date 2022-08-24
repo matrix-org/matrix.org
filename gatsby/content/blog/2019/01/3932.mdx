@@ -46,7 +46,8 @@ This week I chatted to Rick about the release of <a href="https://www.modular.im
 </ul>
 <h2 id="matrixpuppetslack">matrix-puppet-slack</h2>
 <a href="https://matrix.to/#/@root:thomasprofitt.com">tom</a> reports that:
-<blockquote><a href="https://github.com/matrix-hacks/matrix-puppet-slack">matrix-puppet-slack</a> version 1.10.1 has been released, thanks again to <a href="https://github.com/matrix-hacks/matrix-puppet-slack/commits?author=twouters">@twouters</a>
+<blockquote>
+<a href="https://github.com/matrix-hacks/matrix-puppet-slack">matrix-puppet-slack</a> version 1.10.1 has been released, thanks again to <a href="https://github.com/matrix-hacks/matrix-puppet-slack/commits?author=twouters">@twouters</a>
 <ul>
  	<li>The bridge could not create new Matrix rooms on versions of Synapse after a certain change, because it did not reserve the room alias prefix it used. That's been fixed, but anyone currently running matrix-puppet-slack will need to edit their slack_registration.yaml and restart Synapse. See <a href="https://github.com/matrix-hacks/matrix-puppet-slack/releases/tag/1.10.1">the Release</a> for instructions on doing so.</li>
  	<li>The bridge will no longer send "Edit: " events when Slack sends it a "message_changed" message, if the message text has not actually changed (Slack sends these events for URL previews, for example, but this just causes duplicate bridged messages). This fix has been a long time coming.</li>
@@ -82,15 +83,19 @@ Backend refactoring by <a href="https://matrix.to/#/@iamjsparber:matrix.org">Jul
 <a href="https://github.com/turt2live/matrix-bot-sdk">matrix-bot-sdk</a> was recently updated to have support for Application Services, and is a lighter alternative to the <a href="https://github.com/matrix-org/matrix-js-sdk">matrix-js-sdk</a>.
 <h2 id="clmatrix">cl-matrix</h2>
 <a href="https://matrix.to/#/@gnu_ponut:matrix.org">Gnuxie</a> reports that:
-<blockquote>I've been working on <a href="https://gitlab.com/Gnuxie/cl-matrix">cl-matrix</a> and I think now it might be in a good condition to talk about it.
+<blockquote>
+I've been working on <a href="https://gitlab.com/Gnuxie/cl-matrix">cl-matrix</a> and I think now it might be in a good condition to talk about it.
 <a href="https://gitlab.com/Gnuxie/cl-matrix">cl-matrix</a> is a WIP client library written in common lisp, most of the API endpoints have been covered using macros that allow you to copy straight from the spec, here is an example using the send event endpoint:
-<pre><code class="lisp language-lisp">(define-matrix-endpoint room-send-event (:put)
+<pre><code class="lisp language-lisp">
+(define-matrix-endpoint room-send-event (:put)
   ("rooms" room-id "send" event-type txn-id))
 </code></pre>
 this will expand into a function with the signature:
-<pre><code class="lisp language-lisp">(PUT-ROOM-SEND-EVENT AUTHENTICATION ROOM-ID EVENT-TYPE TXN-ID CONTENT &amp;KEY PARAMETERS)
+<pre><code class="lisp language-lisp">
+(PUT-ROOM-SEND-EVENT AUTHENTICATION ROOM-ID EVENT-TYPE TXN-ID CONTENT &amp;KEY PARAMETERS)
 </code></pre>
-it also has some basic events defined using <a href="http://shinmera.github.io/deeds/">deeds</a> that can be issued using the sync endpoint.</blockquote>
+it also has some basic events defined using <a href="http://shinmera.github.io/deeds/">deeds</a> that can be issued using the sync endpoint.
+</blockquote>
 <h2 id="informo">Informo</h2>
 The unknown individual from <a href="https://github.com/Informo">Informo</a>, <a href="https://matrix.to/#/@vabd:weu.informo.network">vabd</a> told us:
 <blockquote>Not much news this week in <a href="https://github.com/Informo">Informo</a> land, though we have a <a href="https://github.com/Informo/specs/pulls?q=is%3Apr+is%3Aopen+label%3Ascsp%3Areview">few specs proposals that are still open for public review</a>, including <a href="https://github.com/Informo/specs/pull/19">SCS #19</a> (<a href="https://github.com/Informo/specs/blob/vabd/intro/content/introduction/_index.md">rendered version here</a>) which rewrites the specs website's introduction to make it more newcomer-friendly and feature a brief introduction on what Informo is about.<br />People who either never had a look at the project, or got fed up trying to because of the difficulty to easily understand what we're building, we'd love to read your opinion on this! ?</blockquote><br />This is much, much appreciated. For those interested but confused, please take a look.<br /><h2 id="matrixautoinvite">matrix-autoinvite</h2><br /><a href="https://matrix.to/#/@CromFr:matrix.org">CromFr</a> (Thibaut CHARLES) reports that:<br /><blockquote><a href="https://gitlab.com/CromFr/matrix-autoinvite">matrix-autoinvite</a> is a very basic service that synchronizes joined rooms between users from different servers, by inviting missing users to the room.<br />I'm using it to invite <code>@CromFr:matrix.org</code> to each Facebook Messenger rooms on my personal homeserver (that has very limited resources) hosting the matrix-puppet-facebook bridge. This way I can chat with people on facebook from a matrix.org account :)</blockquote>

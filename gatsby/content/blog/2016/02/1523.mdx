@@ -17,10 +17,12 @@ So, in order to get a certificate from Let's Encrypt, we need to prove that we o
 For this example, we're going to use NGINX, so start by installing NGINX in whatever way your Linux distribution of choice recommends.
 
 Now, you should have a webroot for your new web server somewhere. Hopefully your helpful Linux distribution has started you off with a config file - let's see:
-<pre># nano /etc/nginx/nginx.conf
+<pre>
+# nano /etc/nginx/nginx.conf
 </pre>
 We're looking for the 'server' section of that file. We need to make it look something like this:
-<pre>    server {'{'}
+<pre>
+    server {'{'}
         # Make sure this is 0.0.0.0: no use listening on 127.0.0.1 or we'll only be
         # serving to ourselves! There's no port here, which means we'll listen on
         # port 80
@@ -43,35 +45,42 @@ We're looking for the 'server' section of that file. We need to make it look som
     {'}'}
 </pre>
 When you're happy with the look of that file, let's restart the server:
-<pre># nginx -s reload
+<pre>
+# nginx -s reload
 </pre>
 <p class="p1">Before we go any further, let's test our new configuration:</p>
 
-<pre>$ curl http://example.com/_matrix/key/v2/server/auto
+<pre>
+$ curl http://example.com/_matrix/key/v2/server/auto
 {'{'}"old_verify_keys":{'{'}{'}'},"server_name":"example.com","signatures":{'{'}"example.com":{'{'}"ed25519:auto":"RWb+w6vHUUokoDgElwG6Cg50ezZvBrzXtJmJIH8jEwI5x0JQ7prn3FwjhbgKTH5jE7J8Ily3HEc4COn4JCCvCA"{'}'}{'}'},"tls_fingerprints":[{'{'}"sha256":"DMbzSZ5Uj7/6p/RT/UtQYJLHm5o0TwBSVYXsqpDdVDs"{'}'}],"valid_until_ts":1455203001035,"verify_keys":{'{'}"ed25519:auto":{'{'}"key":"1YiTDjmE86AlmrbIYE2lyqauV9wPo8jw2kxZAZFfl/Q"{'}'}{'}'}{'}'}
 </pre>
 <p class="p1">Those are your server's public keys! Now we have a web server running, we can get our SSL certificate. Let's Encrypt have their own client which will automate everything including rewriting your NGINX config file, however that means it has a large number of dependencies and needs to be run as root. For this example, we're going to use the much simpler <a href="https://github.com/diafygi/acme-tiny" target="_blank">acme_tiny.py</a>. I'm going to assume you have a user called, 'letsencrypt', so, as root, let's set up the place for it to write its challenge files:</p>
 
-<pre># mkdir /var/www/examplecom/htdocs/.well-known/acme-challenge
+<pre>
+# mkdir /var/www/examplecom/htdocs/.well-known/acme-challenge
 # chown letsencrypt:users /var/www/examplecom/htdocs/.well-known/acme-challenge
 </pre>
 <p class="p1">Now let's switch to our letsencrypt user:</p>
 
-<pre>$ ssh letsencrypt@example.com
+<pre>
+$ ssh letsencrypt@example.com
 </pre>
 <p class="p1">We'll start by getting ourselves a copy of acme_tiny.py:</p>
 
-<pre>$ git clone https://github.com/diafygi/acme-tiny.git
+<pre>
+$ git clone https://github.com/diafygi/acme-tiny.git
 </pre>
 <p class="p1">Now let's set up a directory structure (let's say we might want to manage more than one domain someday):</p>
 
-<pre>$ mkdir examplecom
+<pre>
+$ mkdir examplecom
 $ cd examplecom
 $ ln -s /var/www/examplecom/htdocs/.well-known/acme-challenge challenges
 </pre>
 <p class="p1">Now, we'll need to generate two keys for Let's Encrypt, and account key and a domain key. The former is what we use to identify ourselves to Let's Encrypt and the latter is the key we use to do the actual SSL.</p>
 
-<pre>$ openssl genrsa 4096 &gt; letsencrypt_examplecom_account.key
+<pre>
+$ openssl genrsa 4096 &gt; letsencrypt_examplecom_account.key
 Generating RSA private key, 4096 bit long modulus
 ..++
 .................................................................................................................................................................................................................................................................................................................................................................................................................++
@@ -86,11 +95,13 @@ $ chmod 600 letsencrypt_examplecom_domain.key
 </pre>
 <p class="p1">Now, store those keys somewhere safe! After you've done that, let's generate a certificate request for our domain. Note that we're requesting one for both example.com and www.example.com: this isn't strictly necessary for Matrix but could be useful if we want to host a website too.</p>
 
-<pre>$ openssl req -new -sha256 -key letsencrypt_examplecom_domain.key -subj "/" -reqexts SAN -config &lt;(cat /etc/ssl/openssl.cnf &lt;(printf "[SAN]\\nsubjectAltName=DNS:example.com,DNS:www.example.com")) &gt; examplecom.csr
+<pre>
+$ openssl req -new -sha256 -key letsencrypt_examplecom_domain.key -subj "/" -reqexts SAN -config &lt;(cat /etc/ssl/openssl.cnf &lt;(printf "[SAN]\\nsubjectAltName=DNS:example.com,DNS:www.example.com")) &gt; examplecom.csr
 </pre>
 <p class="p1">Okay, we have our keys, our certificate request, and somewhere to host our challenge files, so we're ready to request a certificate! Be careful about this part and make sure you've got everything right, because Let's Encrypt enforce strict rate limits on the number of certificates you can request for one domain. Here we go:</p>
 
-<pre>$ python ~/acme-tiny/acme_tiny.py --account letsencrypt_examplecom_account.key --csr examplecom.csr --acme-dir challenges/ &gt; examplecom.crt
+<pre>
+$ python ~/acme-tiny/acme_tiny.py --account letsencrypt_examplecom_account.key --csr examplecom.csr --acme-dir challenges/ &gt; examplecom.crt
 Parsing account key...
 Parsing CSR...
 Registering account...
@@ -104,7 +115,8 @@ Certificate signed!
 </pre>
 <p class="p1">Is that it, did it work? Well, let's see:</p>
 
-<pre>$ openssl x509 -in examplecom.crt -noout -text
+<pre>
+$ openssl x509 -in examplecom.crt -noout -text
 Certificate:
     Data:
         Version: 3 (0x2)
@@ -121,7 +133,8 @@ Certificate:
 </pre>
 <p class="p1">Congratulations, you have an official, signed certificate for your domain! Now, before we can use it, we need to add the Let's Encrypt certificate to it, because our web server needs to send both:</p>
 
-<pre>$ wget https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem
+<pre>
+$ wget https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem
 --2016-02-06 23:38:55--  https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem
 Resolving letsencrypt.org... 23.66.17.98, 2a02:26f0:60:489::2a1f, 2a02:26f0:60:481::2a1f
 Connecting to letsencrypt.org|23.66.17.98|:443... connected.
@@ -134,17 +147,20 @@ $ cat examplecom/examplecom.crt lets-encrypt-x3-cross-signed.pem &gt;examplecom/
 </pre>
 <p class="p1">Now's let's symlink it in place, along with the domain key, so we can renew it easily later. We'll need to be root again for this:</p>
 
-<pre>$ ssh root@example.com
+<pre>
+$ ssh root@example.com
 # ln -s /home/letsencrypt/examplecom/examplecom_cert_chain.crt /etc/ssl/nginx/examplecom_cert.pem
 # ln -s /home/letsencrypt/examplecom/letsencrypt_examplecom_domain.key /etc/ssl/nginx/examplecom_key.pem
 </pre>
 <p class="p1">Now, one more crucial thing we have to do before using our SSL is to give NGINX some Diffie Hellman parameters. This is a good thing to do for any SSL configuration (it will increase your score on <a href="https://www.ssllabs.com/ssltest/" target="_blank">SSL Labs</a>) but it's absolutely crucial for us because Synapse will only negotiate forward secret connections, so otherwise other Matrix home servers will refuse to talk to us! (Technically, Synapse also support elliptic curve Diffie Hellman, which doesn't need DH parameters, but not all Synapses will support this.) You'll already have some Diffie Hellman parameters from you existing Synapse, so you could use them:</p>
 
-<pre># cp /home/synapse/synapse/matrix.example.com.tls.dh /etc/ssl/nginx/examplecom_dhparams.pem
+<pre>
+# cp /home/synapse/synapse/matrix.example.com.tls.dh /etc/ssl/nginx/examplecom_dhparams.pem
 </pre>
 <p class="p1">...or you can generate your own. You'll probably want to do this on your desktop or laptop if you have OpenSSL installed, it will be much faster:</p>
 
-<pre>$ openssl dhparam -out examplecom_dhparams.pem 2048
+<pre>
+$ openssl dhparam -out examplecom_dhparams.pem 2048
 Generating DH parameters, 2048 bit long safe prime, generator 2
 This is going to take a long time
 ........................................................+................[etc, etc]
@@ -152,7 +168,8 @@ $ scp examplecom_dhparams.pem root@example.com:/etc/ssl/nginx/examplecom_dhparam
 </pre>
 <p class="p1">Now, let's get our new certificate in action! Open up your NGINX config file again, and add another server block that look like this:</p>
 
-<pre>    server {'{'}
+<pre>
+    server {'{'}
         listen 0.0.0.0:443;
         server_name example.com www.example.com;
         ssl on;
@@ -175,11 +192,13 @@ $ scp examplecom_dhparams.pem root@example.com:/etc/ssl/nginx/examplecom_dhparam
 <p class="p2">It looks pretty similar to our previous server block, except for all that stuff about SSL in the middle. We're pointing NGINX at our certificate, key and Diffie Hellman parameter files and specifying what protocols and ciphers we want our server to talk. The long list here is taken from <a href="https://wiki.mozilla.org/Security/Server_Side_TLS" target="_blank">Mozilla's Server Side TLS guidelines</a> and is their 'Intermediate' list. See that page for more information on what that means, and choose a different list of ciphers if you prefer: just remember we must support at least the ephemeral Diffie Hellman ciphers, or other home servers won't talk to us!</p>
 <p class="p2">Now let's restart our NGINX and see if it works:</p>
 
-<pre># nginx -s reload
+<pre>
+# nginx -s reload
 </pre>
 <p class="p2">...and that command again, this time with https:</p>
 
-<pre>$ curl https://example.com/_matrix/key/v2/server/auto
+<pre>
+$ curl https://example.com/_matrix/key/v2/server/auto
 {'{'}"old_verify_keys":{'{'}{'}'},"server_name":"example.com","signatures":{'{'}"example.com":{'{'}"ed25519:auto":"RWb+w6vHUUokoDgElwG6Cg50ezZvBrzXtJmJIH8jEwI5x0JQ7prn3FwjhbgKTH5jE7J8Ily3HEc4COn4JCCvCA"{'}'}{'}'},"tls_fingerprints":[{'{'}"sha256":"DMbzSZ5Uj7/6p/RT/UtQYJLHm5o0TwBSVYXsqpDdVDs"{'}'}],"valid_until_ts":1455203001035,"verify_keys":{'{'}"ed25519:auto":{'{'}"key":"1YiTDjmE86AlmrbIYE2lyqauV9wPo8jw2kxZAZFfl/Q"{'}'}{'}'}{'}'}
 </pre>
 <p class="p1">Hooray! You should now be able to open a browser to https://example.com/matrix/ and log in securely over SSL!</p>
@@ -187,7 +206,8 @@ $ scp examplecom_dhparams.pem root@example.com:/etc/ssl/nginx/examplecom_dhparam
 <h2 class="p1">Renewing Your Certificate</h2>
 <p class="p1">Now, there's one important step left, and that's to set up renewal for the certificate, otherwise we'll find our shiny new SSL will stop working in three months time. We can use the same acme_tiny command to do this:</p>
 
-<pre>$ python ~/acme-tiny/acme_tiny.py --account letsencrypt_examplecom_account.key --csr examplecom.csr --acme-dir challenges/ &gt; examplecom.crt
+<pre>
+$ python ~/acme-tiny/acme_tiny.py --account letsencrypt_examplecom_account.key --csr examplecom.csr --acme-dir challenges/ &gt; examplecom.crt
 Parsing account key...
 Parsing CSR...
 Registering account...
@@ -211,7 +231,8 @@ $ cat examplecom/examplecom.crt lets-encrypt-x3-cross-signed.pem &gt;examplecom/
 </pre>
 <p class="p1">Synapse will automatically pick up the new certificate, but we'll need to tell NGINX to reload:</p>
 
-<pre># nginx -s reload
+<pre>
+# nginx -s reload
 </pre>
 <p class="p1">Setting up a cronjob to automate this is left as an exercise to the reader!</p>
 
@@ -220,18 +241,21 @@ $ cat examplecom/examplecom.crt lets-encrypt-x3-cross-signed.pem &gt;examplecom/
 <p class="p1">Now, we need to do a couple of things to make this work: were you looking carefully at the JSON those curl commands returned? If you were, you might have noticed a key called, 'tls_fingerprints'. Our home server serves up a fingerprint of the TLS certificate its using from this API, and we've just given our web server a different certificate, so we need to give Synapse our new certificate.</p>
 <p class="p1">How are we going to tell other home servers to talk to our NGINX instead? Well, ultimately we're going to change our DNS SRV record to point at port 443 instead of port 8448, but that change could take a while to propagate through caches, so let's test it by having our NGINX listen on port 8448 temporarily. We can do this by copying that same block from above, but with a different port:</p>
 
-<pre>    server {'{'}
+<pre>
+    server {'{'}
         listen 0.0.0.0:8448;
         server_name example.com www.example.com;
     [etc]
 </pre>
 <p class="p2">Don't restart NGINX just yet: we need to tell our Synapse to stop listening on that port first, so lets do that and give it our new certificate:</p>
 
-<pre>$ nano /home/synapse/synapse/homeserver.yaml
+<pre>
+$ nano /home/synapse/synapse/homeserver.yaml
 </pre>
 <p class="p2">Now we'll want to find and edit the following lines:</p>
 
-<pre>tls_certificate_path: "/etc/ssl/nginx/examplecom_crt.pem"
+<pre>
+tls_certificate_path: "/etc/ssl/nginx/examplecom_crt.pem"
 # We can comment this out, as long as we set no_tls to true below
 # tls_private_key_path: "/whatever/path/synapse/generated"
 # PEM dh parameters for ephemeral keys
@@ -254,12 +278,14 @@ no_tls: True
 <p class="p2">Note: if you have an old enough config file that you have 'bind_host' and 'bind_port' directives, now is the time to remove them.</p>
 <p class="p2">Now let's restart Synapse and our web server to swap over what's listening on our port 8448:</p>
 
-<pre>$ synctl restart
+<pre>
+$ synctl restart
 # nginx -s reload
 </pre>
 <p class="p2">Now let's try that test again on port 8448:</p>
 
-<pre>$ curl https://example.com:8448/_matrix/key/v2/server/auto
+<pre>
+$ curl https://example.com:8448/_matrix/key/v2/server/auto
 {'{'}"old_verify_keys":{'{'}{'}'},"server_name":"example.com","signatures":{'{'}"example.com":{'{'}"ed25519:auto":"bdca31805e4209f6ff4d644251a29d0cb1dc828a4d6131c57cf8305288f337c0"{'}'}{'}'},"tls_fingerprints":[{'{'}"sha256":"1d9ec66599e229654a79f28e26675fdeb585027553af6d581926e821a6b6527c"{'}'}],"valid_until_ts":1455203001035,"verify_keys":{'{'}"ed25519:auto":{'{'}"key":"1YiTDjmE86AlmrbIYE2lyqauV9wPo8jw2kxZAZFfl/Q"{'}'}{'}'}{'}'}
 </pre>
 <p class="p1">Notice anything different? The tls_fingerprints part has changed because we now have a different certificate. The signatures/example.com/ed25519:auto value has changed too: that's because that part is a signature of the rest of JSON object, so changing the tls_fingerprints has caused this to change too.</p>

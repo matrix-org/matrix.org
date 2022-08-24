@@ -12,14 +12,16 @@ It's the 28th of December as I write this, and I hope you had a good year. Long 
 Many of the core team have been out of the office this week, but there are still plenty of updates to share from the Matrix ecosystem!
 <h2 id="mxisdv122">mxisd v1.2.2</h2>
 <a href="https://matrix.to/#/@max:kamax.io">Max</a> released mxisd v1.2.2:
-<blockquote><a href="https://github.com/kamax-matrix/mxisd">mxisd</a> had a Holiday-special release: <a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.2.2">v1.2.2</a> before v1.3.0.
+<blockquote>
+<a href="https://github.com/kamax-matrix/mxisd">mxisd</a> had a Holiday-special release: <a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.2.2">v1.2.2</a> before v1.3.0.
 
 This release introduces two new big features:
 <ul>
  	<li>Username login rewriting via 3PID to allow advanced flows, like bypassing the synapse restriction of having numerical usernames for non-guest users</li>
  	<li>Support for multiple Base DNs for LDAP backends</li>
 </ul>
-Work has started on v1.3.0 so this is definitely the last release before a non-backward compatible release.</blockquote>
+Work has started on v1.3.0 so this is definitely the last release before a non-backward compatible release.
+</blockquote>
 <h2 id="scylla">Scylla</h2>
 <a href="https://matrix.to/#/@daniel:riot.danilafe.com">VaNilLa</a> has started a new client, a web app build in Elm:
 <blockquote>Hi all! I am working on a Matrix client in Elm, and I was recommended to share it here: <a href="https://github.com/DanilaFe/Scylla">Scylla</a></blockquote><br /><h2 id="komadesktop">koma-desktop</h2><br /><a href="https://matrix.to/#/@druig:matrix.org">druig</a>:<br /><blockquote><a href="https://github.com/koma-im/koma-desktop">koma-desktop</a> is updated to JavaFx 11 and installation is simplified. Dependencies, including native modules can be packaged into one single file, which only needs to be downloaded and run. Java Runtime 11 is the only runtime dependency. Now it's just cross-compilation that needs to be set up before packaged releases can be provided for Mac, Windows, and Linux users.</blockquote>
@@ -27,7 +29,8 @@ Work has started on v1.3.0 so this is definitely the last release before a non-b
 <a href="https://matrix.to/#/@jaywink:feneas.org">Jason Robinson</a>:
 <blockquote>I started work on a Prometheus Alertmanager bot for Matrix. The basic idea is that Alertmanager can send webhook alert events to the bot which will then send the formatted events to configured rooms based on the alert receiver. It works, but is still early work in progress. See code and info here: <a href="https://git.feneas.org/jaywink/matrix-alertmanager">https://git.feneas.org/jaywink/matrix-alertmanager</a>.</blockquote><br />Also mirrored on GitHub: <a href="https://github.com/jaywink/matrix-alertmanager">https://github.com/jaywink/matrix-alertmanager</a><br /><h2 id="qmatrixclient">QMatrixClient</h2><br /><a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>:<br /><blockquote>This week <a href="https://github.com/QMatrixClient">QMatrixClient</a> project gained some improvements in macOS support (thanks to Matthew and <a href="https://matrix.to/#/@aaron:raim.ist">Aaron Raimist</a>!); but most of <a href="https://matrix.to/#/@kitsune:matrix.org">Kitsune</a>'s time (aside from dayjob) has been spent on attachments uploading in <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a>. This required improvement in support of uploading in the library. These changes have now landed in the master branches.</blockquote><br /><h2 id="fractal40">Fractal 4.0</h2><br /><a href="@afranke:matrix.org">Alexandre Franke</a>:<br /><blockquote>As expected the Fractal team released 4.0 and is already hard at work on the next micro version. We recommend <a href="https://flathub.org/apps/details/org.gnome.Fractal">getting it from Flathub</a> like we usually do.</blockquote>
 From the release notes:
-<blockquote>New features:
+<blockquote>
+New features:
 <ul>
  	<li>Enhanced history view with adaptive layout, day divider</li>
  	<li>Reorganised headerbar, app menu merged with user menu</li>

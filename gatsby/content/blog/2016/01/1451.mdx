@@ -47,27 +47,29 @@ Full changelog follows:
 <h3><a id="user-content-changes-in-synapse-v0120-rc1-2015-12-10" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0120-rc1-2015-12-10"></a>Changes in synapse v0.12.0-rc1 (2015-12-10)</h3>
 <ul>
     <li>Host the client APIs released as r0 by <a href="/docs/spec/r0.0.0/client_server.html">https://matrix.org/docs/spec/r0.0.0/client_server.html</a> on paths prefixed by<code>/_matrix/client/r0</code>. (PR #430, PR #415, PR #400)</li>
-    <li>Updates the client APIs to match r0 of the matrix specification.
-<ul>
-    <li>All APIs return events in the new event format, old APIs also include the fields needed to parse the event using the old format for compatibility. (PR #402)</li>
-    <li>Search results are now given as a JSON array rather than a JSON object (PR #405)</li>
-    <li>Miscellaneous changes to search (PR #403, PR #406, PR #412)</li>
-    <li>Filter JSON objects may now be passed as query parameters to <code>/sync</code> (PR #431)</li>
-    <li>Fix implementation of <code>/admin/whois</code> (PR #418)</li>
-    <li>Only include the rooms that user has left in <code>/sync</code> if the client requests them in the filter (PR #423)</li>
-    <li>Don't push for <code>m.room.message</code> by default (PR #411)</li>
-    <li>Add API for setting per account user data (PR #392)</li>
-    <li>Allow users to forget rooms (PR #385)</li>
-</ul>
-</li>
-    <li>Performance improvements and monitoring:
-<ul>
-    <li>Add per-request counters for CPU time spent on the main python thread. (PR #421, PR #420)</li>
-    <li>Add per-request counters for time spent in the database (PR #429)</li>
-    <li>Make state updates in the C+S API idempotent (PR #416)</li>
-    <li>Only fire <code>user_joined_room</code> if the user has actually joined. (PR #410)</li>
-    <li>Reuse a single http client, rather than creating new ones (PR #413)</li>
-</ul>
-</li>
+    <li>
+        Updates the client APIs to match r0 of the matrix specification.
+        <ul>
+            <li>All APIs return events in the new event format, old APIs also include the fields needed to parse the event using the old format for compatibility. (PR #402)</li>
+            <li>Search results are now given as a JSON array rather than a JSON object (PR #405)</li>
+            <li>Miscellaneous changes to search (PR #403, PR #406, PR #412)</li>
+            <li>Filter JSON objects may now be passed as query parameters to <code>/sync</code> (PR #431)</li>
+            <li>Fix implementation of <code>/admin/whois</code> (PR #418)</li>
+            <li>Only include the rooms that user has left in <code>/sync</code> if the client requests them in the filter (PR #423)</li>
+            <li>Don't push for <code>m.room.message</code> by default (PR #411)</li>
+            <li>Add API for setting per account user data (PR #392)</li>
+            <li>Allow users to forget rooms (PR #385)</li>
+        </ul>
+    </li>
+    <li>
+        Performance improvements and monitoring:
+        <ul>
+            <li>Add per-request counters for CPU time spent on the main python thread. (PR #421, PR #420)</li>
+            <li>Add per-request counters for time spent in the database (PR #429)</li>
+            <li>Make state updates in the C+S API idempotent (PR #416)</li>
+            <li>Only fire <code>user_joined_room</code> if the user has actually joined. (PR #410)</li>
+            <li>Reuse a single http client, rather than creating new ones (PR #413)</li>
+        </ul>
+    </li>
     <li>Fixed a bug upgrading from older versions of synapse on postgresql (PR #417)</li>
 </ul>

@@ -27,11 +27,9 @@ Next, install <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsa
 If you are starting from scratch, I suggest you take a look at <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/">matrix-docker-ansible-deploy</a>, as this project will enable you to deploy Synapse, <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> and other components easily.
 
 For example, if you have an existing deployment using <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/">matrix-docker-ansible-deploy</a>, you can add <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> simply by adding the following line to your configuration file:
-<pre><code class="yaml language-yaml">matrix_mautrix_whatsapp_enabled: true
-</code></pre>
+<pre><code class="yaml language-yaml">matrix_mautrix_whatsapp_enabled: true</code></pre>
 ... and re-running the setup:
-<pre><code class="unix language-unix">ansible-playbook -i inventory/hosts setup.yml --tags=setup-all
-</code></pre>
+<pre><code class="unix language-unix">ansible-playbook -i inventory/hosts setup.yml --tags=setup-all</code></pre>
 Either way, you will soon have a functioning Matrix Synapse homeserver and <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> installed with it. Next, we will set up an Android VM.
 <h2 id="setupanandroidvm">Set up an Android VM</h2>
 The best way to run an Android Virtual Machine is to use the Android Studio tools from Google. First, <a href="https://developer.android.com/studio/install">install Android Studio</a>, making sure to follow the post-install steps, as they will install additional tools we need, including AVD Manager.
@@ -47,7 +45,8 @@ Launch the Virtual Device, the open the Play Store and sign in. Now use the Play
 You will be asked to verify your phone number, use your number on another device to complete this step.
 
 <center>
-<img src="/docs/img/nexus5.png" /></center>
+<img src="/docs/img/nexus5.png" />
+</center>
 <h2 id="setupmautrixwhatsappbridge">Setup mautrix-whatsapp bridge</h2>
 Now that you have WhatsApp working in a VM, and Matrix working on your server, it's time to bridge them together!
 

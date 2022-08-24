@@ -16,12 +16,13 @@ Similarly, we had disruption last night after a user who hadn't used the service
 
 So, what are we doing about this?
 <ol>
- 	<li>Fix the root causes:
-<ul>
- 	<li>The 'android/iOS thundering herd' bug is being worked on both the android/iOS side (fixing the naive behaviour) and the server side.  A temporary mitigation is in now place which moves the server-side code to worker processes so that worst case it can't take out the main synapse process and can scale better.</li>
- 	<li>The 'event_push_actions table is inefficient' bug had <a href="https://github.com/matrix-org/synapse/pull/1916">already been fixed</a> - so this was a matter of rushing through the hotfix to matrix.org before we saw a recurrence.</li>
-</ul>
-</li>
+ 	<li>
+		Fix the root causes:
+		<ul>
+			<li>The 'android/iOS thundering herd' bug is being worked on both the android/iOS side (fixing the naive behaviour) and the server side.  A temporary mitigation is in now place which moves the server-side code to worker processes so that worst case it can't take out the main synapse process and can scale better.</li>
+			<li>The 'event_push_actions table is inefficient' bug had <a href="https://github.com/matrix-org/synapse/pull/1916">already been fixed</a> - so this was a matter of rushing through the hotfix to matrix.org before we saw a recurrence.</li>
+		</ul>
+	</li>
  	<li>Move to faster hardware.  Our current DB master is a "fast when we bought it 5 years ago" machine whose IO is simply starting to saturate (6x 300GB 10krpm disks in RAID5, fwiw), which is maxing out at around 500IOPS and 20MB/s of random access, and acting as a *very* hard limit to the current synapse performance.  We're currently in the process of evaluating SSD-backed IO for the DB (in fact, we're already running a DB slave), and assuming this tests out okay we're hoping to migrate next week, which should give us a 10x-20x speed up on disk IO and buy considerable headroom.  Watch this space for details.</li>
  	<li>Make synapse faster.  We're continuing to plug away at optimisations (e.g. <a href="https://github.com/matrix-org/synapse/pull/1923">stuff like this</a>), but these are reaching the point of diminishing returns, especially relative to the win from faster hardware.</li>
  	<li>Fix the end-to-end monitoring.  <a href="https://github.com/matrix-org/matrixmon/commit/9481da67b87c1d5142dbc76d9e4b6eb29c56398b">This already happened</a>.</li>

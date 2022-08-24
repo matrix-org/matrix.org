@@ -26,17 +26,20 @@ This article will explore the <a href="/docs/spec/client_server/latest.html">Mat
 We'll use Node.js as our environment, though the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a> can also be used directly in the browser.
 
 Before we start, make sure you have Node.js and NPM installed: follow instructions at <a href="https://nodejs.org/">nodejs.org</a> for your platform. Then create a new directory to work in:
-<pre><code class="language-unix">mkdir my-first-matrix-client
+<pre><code class="language-unix">
+mkdir my-first-matrix-client
 cd my-first-matrix-client
 </code></pre>
 <h2 id="lets-write-javascript">Let's write JavaScript</h2>
 Once you're ready, the first thing to do is install the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a> from NPM:
-<pre><code class="language-unix">npm install matrix-js-sdk
+<pre><code class="language-unix">
+npm install matrix-js-sdk
 </code></pre>
 We include the SDK in our source exactly as expected:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="k" style="font-weight: bold;">import</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="k" style="font-weight: bold;">import</span>
  <span class="nx">sdk</span>
  <span class="k" style="font-weight: bold;">from</span>
  <span class="s1" style="color: #d14;">'matrix-js-sdk'</span>
@@ -49,7 +52,8 @@ We include the SDK in our source exactly as expected:
 Instantiate a new client object and use an <code class="highlighter-rouge">access token</code> to login:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">const</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="kd" style="font-weight: bold;">const</span>
  <span class="nx">client</span>
  <span class="o" style="font-weight: bold;">=</span>
  <span class="nx">sdk</span>
@@ -85,7 +89,8 @@ If you are logged into Riot, you can find an <code class="highlighter-rouge">acc
 If the homeserver you're logging in to supports logging in with a password, you can also retrieve an <code class="highlighter-rouge">access token</code> programmatically using the API. To do this, create a new <code class="highlighter-rouge">client</code> with no authentication parameters, then call <code class="highlighter-rouge">client.login()</code> with <code class="highlighter-rouge">"m.login.password"</code>:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">const</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="kd" style="font-weight: bold;">const</span>
  <span class="nx">client</span>
  <span class="o" style="font-weight: bold;">=</span>
  <span class="nx">sdk</span>
@@ -134,7 +139,8 @@ If the homeserver you're logging in to supports logging in with a password, you 
 In any case, once logged in either with a password or an access token, the client can get the current access token via:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="nx">console</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="nx">console</span>
 <span class="p">.</span>
 <span class="nx">log</span>
 <span class="p">(</span>
@@ -151,7 +157,8 @@ In any case, once logged in either with a password or an access token, the clien
 Next we start the client, this sets up the connection to the server and allows us to begin syncing:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="nx">client</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="nx">client</span>
 <span class="p">.</span>
 <span class="nx">startClient</span>
 <span class="p">();</span>
@@ -162,7 +169,8 @@ Next we start the client, this sets up the connection to the server and allows u
 Perform a first sync, and listen for the response, to get the latest state from the homeserver:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="nx">client</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="nx">client</span>
 <span class="p">.</span>
 <span class="nx">once</span>
 <span class="p">(</span>
@@ -194,7 +202,8 @@ Perform a first sync, and listen for the response, to get the latest state from 
 Once the sync is complete, we can add listeners for events. We could listen to ALL incoming events, but that would be a lot of traffic, and too much for our simple example. If you want to listen to all events, you can add a listen as follows:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="nx">client</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="nx">client</span>
 <span class="p">.</span>
 <span class="nx">on</span>
 <span class="p">(</span>
@@ -229,7 +238,8 @@ Once the sync is complete, we can add listeners for events. We could listen to A
 Instead, let's just listen to events happening on the timeline of rooms for which our user is a member:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="nx">client</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="nx">client</span>
 <span class="p">.</span>
 <span class="nx">on</span>
 <span class="p">(</span>
@@ -265,7 +275,8 @@ When we created a new client with <code class="highlighter-rouge">sdk.createClie
 To access the store, we use accessor methods. For example, to get a list of rooms in which our user is joined:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="c1" style="color: #998; font-style: italic;">// client.client.getRooms() returns an array of room objects</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="c1" style="color: #998; font-style: italic;">// client.client.getRooms() returns an array of room objects</span>
 
 <span class="kd" style="font-weight: bold;">var</span>
  <span class="nx">rooms</span>
@@ -302,7 +313,8 @@ To access the store, we use accessor methods. For example, to get a list of room
 More usefully, we could get a list of members for each of these rooms:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">var</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="kd" style="font-weight: bold;">var</span>
  <span class="nx">rooms</span>
  <span class="o" style="font-weight: bold;">=</span>
  <span class="nx">client</span>
@@ -353,7 +365,8 @@ More usefully, we could get a list of members for each of these rooms:
 For each room, we can inspect the timeline in the store:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">var</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="kd" style="font-weight: bold;">var</span>
  <span class="nx">rooms</span>
  <span class="o" style="font-weight: bold;">=</span>
  <span class="nx">client</span>
@@ -405,7 +418,8 @@ For each room, we can inspect the timeline in the store:
 To send a message, we create a content object, and specify a room to send to. In this case, I've taken the room ID of <code class="highlighter-rouge">#test:matrix.org</code>, and used it as an example:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">var</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="kd" style="font-weight: bold;">var</span>
  <span class="nx">testRoomId</span>
  <span class="o" style="font-weight: bold;">=</span>
  <span class="s2" style="color: #d14;">"!jhpZBTbckszblMYjMK:matrix.org"</span>
@@ -475,7 +489,8 @@ To send a message, we create a content object, and specify a room to send to. In
 Knowing this, we can put together message listening and message sending, to build a bot which just echos back any message starting with a "!":
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
-<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">var</span>
+<pre class="highlight" style="background: #fff;"><code>
+<span class="kd" style="font-weight: bold;">var</span>
  <span class="nx">testRoomId</span>
  <span class="o" style="font-weight: bold;">=</span>
  <span class="s2" style="color: #d14;">"!jhpZBTbckszblMYjMK:matrix.org"</span>
