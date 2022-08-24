@@ -126,7 +126,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const prev = index === posts.length - 1 ? null : posts[index + 1].node;
 
     createPage({
-      path: node.frontmatter.slug,
+      path: node.fields.slug,
       component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         postNode: node,
