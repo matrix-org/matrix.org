@@ -68,6 +68,7 @@ jobs:
         run: npm run build
         working-directory: gatsby
         env:
+          NODE_OPTIONS: "--max-old-space-size=8192"
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
           CI: true
       - name: "📦 Tarball creation"
