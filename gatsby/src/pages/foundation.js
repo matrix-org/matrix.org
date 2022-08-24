@@ -8,8 +8,8 @@ import config from '../../config'
 export function Head() {
   return (
     <>
-      <SEO excerptOverride="The Foundation defines the manifesto, mission and values of the project, the open governance process that determines how the specification develops, and provides a safety-net to ensure the project stays independent and true to its goals." />{" "}
-      <title>The Matrix.org Foundation | {config.siteTitle}</title>
+      <SEO excerptOverride="The Foundation defines the manifesto, mission and values of the project, the open governance process that determines how the specification develops, and provides a safety-net to ensure the project stays independent and true to its goals."/>
+      <title id="title">The Matrix.org Foundation | {config.siteTitle}</title>
     </>
   );
 }

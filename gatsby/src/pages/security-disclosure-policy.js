@@ -6,7 +6,7 @@ import { Layout } from '../components'
 import config from '../../config'
 
 export function Head() {
-  return <title>Security Disclosure Policy | {config.siteTitle}</title>;
+  return <title id="title">Security Disclosure Policy | {config.siteTitle}</title>;
 }
 
 const SecurityDisclosurePolicy = () => {

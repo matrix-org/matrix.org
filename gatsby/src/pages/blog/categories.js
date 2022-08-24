@@ -15,7 +15,7 @@ const Title = styled.h3`
 
 export function Head() {
   return (
-    <title>Categories | {config.siteTitle}</title>
+    <title id="title">Categories | {config.siteTitle}</title>
   )
 }
 

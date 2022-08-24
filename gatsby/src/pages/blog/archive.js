@@ -7,7 +7,7 @@ import config from "../../../config";
 
 export function Head() {
   return (
-    <title>Blog Archive ${config.siteTitle}</title>
+    <title id="title">Blog Archive ${config.siteTitle}</title>
   )
 }
 

@@ -6,7 +6,7 @@ import { Layout, HallOfFameEntry } from '../components'
 import config from '../../config'
 
 export function Head() {
-  return <title>Security Hall of Fame | {config.siteTitle}</title>;
+  return <title id="title">Security Hall of Fame | {config.siteTitle}</title>;
 }
 
 const HallOfFame = () => {

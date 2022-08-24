@@ -9,7 +9,7 @@ import config from '../../../../config'
 export function Head() {
   return (
     <>
-      <title>Try Matrix Now | {config.siteTitle}</title>
+      <title id="title">Try Matrix Now | {config.siteTitle}</title>
       <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
       <script type="text/javascript" src="/js/tmn-control.js"></script>
     </>

@@ -10,7 +10,7 @@ export function Head() {
   return (
     <>
       <SEO excerptOverride="Clients for Matrix, decentralised communications"/>
-      <title>{title}</title>
+      <title id="title">{title}</title>
       <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
       <script type="text/javascript" src="/js/clients-control.js"></script>
     </>

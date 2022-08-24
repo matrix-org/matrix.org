@@ -7,7 +7,7 @@ import config from '../../config'
 
 export function Head() {
     return (
-       <title>Legal | {config.siteTitle}</title>
+       <title id="title">Legal | {config.siteTitle}</title>
     )
 }
 

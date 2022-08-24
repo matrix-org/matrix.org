@@ -7,14 +7,17 @@ import { Layout, SEO, MXContentMain } from "../components";
 
 const Title = styled.h1``;
 
+export function Head({ pageContext: { slug }, data: { mdx: postNode } }) {
+  return <SEO postPath={slug} postNode={postNode} article />;
+}
+
 const PostContent = styled.div``;
 
-const Page = ({ pageContext: { slug }, data: { mdx: postNode }, children }) => {
+const Page = ({ data: { mdx: postNode }, children }) => {
   const post = postNode.frontmatter;
 
   return (
     <Layout hasNavPadding="true" customSEO>
-      <SEO postPath={slug} postNode={postNode} article />
       <MXContentMain>
         <div class="mxcontent__main__doc">
           <Title>{post.title}</Title>

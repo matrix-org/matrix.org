@@ -7,7 +7,7 @@ import config from '../../config'
 const title = `Matrix Live | ${config.siteTitle}`;
 
 export function Head() {
-  return <title>{title}</title>;
+  return <title id="title">{title}</title>;
 }
 
 const MatrixLive = () => {

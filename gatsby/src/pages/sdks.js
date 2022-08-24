@@ -9,7 +9,7 @@ const title = `SDKs | ${config.siteTitle}`;
 
 export function Head() {
   return (
-    <title>{title}</title>
+    <title id="title">{title}</title>
   )
 }
 

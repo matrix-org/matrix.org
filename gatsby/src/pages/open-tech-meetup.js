@@ -10,7 +10,7 @@ const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 export function Head() {
   return (
     <>
-      <title>{title}</title>
+      <title id="title">{title}</title>
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         property="twitter:image"

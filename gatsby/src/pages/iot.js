@@ -8,7 +8,7 @@ const title = "Internet of Things (IoT)";
 
 export function Head() {
   return (
-    <title>{title} | {config.siteTitle}</title>
+    <title id="title">{title} | {config.siteTitle}</title>
   )
 }
 

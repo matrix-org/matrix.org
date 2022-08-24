@@ -5,7 +5,7 @@ import { Layout, MXContentMain } from '../../components'
 import config from '../../../config'
 
 export function Head() {
-  return <title>Guides | {config.siteTitle}</title>;
+  return <title id="title">Guides | {config.siteTitle}</title>;
 }
 
 const Guides = ({data}) => {

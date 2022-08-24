@@ -9,7 +9,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql } from "gatsby";
 
 export function Head() {
-  return <title>FAQ | {config.siteTitle}</title>;
+  return <title id="title">FAQ | {config.siteTitle}</title>;
 }
 
 const Faq = ({ data }) => {

@@ -90,6 +90,7 @@ exports.createPages = async ({ graphql, actions }) => {
           filter: { frontmatter: { date: { ne: null }, author: { ne: null } } }
         ) {
           nodes {
+            body
             fields {
               slug
             }

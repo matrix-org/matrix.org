@@ -71,7 +71,7 @@ const example3 = `curl "https://matrix.bob.com/_matrix/client
 export function Head() {
   return (
     <>
-      <title>Matrix.org</title>
+      <title id="title">Matrix.org</title>
       <link rel="stylesheet" type="text/css" href="/css/how-it-works.css" />
       <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
       <script type="text/javascript" src="/js/d3.v3.min.js"></script>

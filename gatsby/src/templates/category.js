@@ -16,7 +16,7 @@ const _ = require("lodash");
 
 export function Head({ pageContext: { category } }) {
   return (
-    <title>
+    <title id="title">
       Category: {category} | {config.siteTitle}
     </title>
   );

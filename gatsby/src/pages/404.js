@@ -8,8 +8,8 @@ import config from '../../config'
 export function Head() {
   return (
     <>
-      <SEO></SEO>
-      <title>404 | {config.siteTitle}</title>
+      <SEO/>
+      <title id="title">404 | {config.siteTitle}</title>
       <script type="text/javascript" src="/js/404-catch.js"></script>
     </>
   );

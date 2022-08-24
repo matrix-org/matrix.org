@@ -12,7 +12,7 @@ export function Head() {
   return (
     <>
       <SEO excerptOverride="Browse Matrix bridging options" />
-      <title>{title}</title>
+      <title id="title">{title}</title>
     </>
   );
 }

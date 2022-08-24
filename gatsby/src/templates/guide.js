@@ -13,6 +13,14 @@ import {
 
 const Title = styled.h1``;
 
+export function Head({ pageContext: { slug }, data: { mdx: postNode } }) {
+  return (
+    <>
+      <SEO postPath={slug} postNode={postNode} article />
+    </>
+  );
+}
+
 const PostContent = styled.div``;
 
 const Page = ({
@@ -29,7 +37,6 @@ const Page = ({
       hasNavPadding={navMode ? "false" : "true"}
       customSEO
     >
-      <SEO postPath={slug} postNode={postNode} article />
       <MXContentMain hasSideNavigation="true">
         <div className="mxcontent__main__doc">
           <Title>{post.title}</Title>

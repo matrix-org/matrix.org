@@ -161,7 +161,7 @@ const SEO = props => {
 
   return (
       <>
-        <title>{title}</title>
+        <title id="title">{title}</title>
         <meta name="description" content={description} />
         <meta name="image" content={image} />
         <meta name="gatsby-starter" content="Gatsby Starter Minimal Blog" />

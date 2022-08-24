@@ -6,7 +6,7 @@ import { Layout } from '../components'
 import config from '../../config'
 
 export function Head() {
-  return <title>Supporters | {config.siteTitle}</title>;
+  return <title id="title">Supporters | {config.siteTitle}</title>;
 }
 
 const Supporters = () => {

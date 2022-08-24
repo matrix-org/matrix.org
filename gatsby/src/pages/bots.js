@@ -8,7 +8,7 @@ export function Head() {
   return (
     <>
       <SEO />
-      <title>Bots | {config.siteTitle}</title>
+      <title id="title">Bots | {config.siteTitle}</title>
     </>
   );
 }

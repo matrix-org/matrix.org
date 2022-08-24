@@ -2,17 +2,15 @@ import React from "react";
 
 import { Layout, SEO, MXContentMain } from "../components";
 
+export function Head({ pageContext: { postNode }, children }) {
+  return <SEO postPath={postNode.fields.slug} postNode={postNode} article />;
+}
+
 const Project = ({ pageContext: { postNode }, children }) => {
   const post = postNode.frontmatter;
 
   return (
     <Layout navmode="discover" customSEO>
-      <SEO
-        postPath={postNode.fields.slug}
-        postNode={postNode}
-        article
-        excerptOverride={post.description}
-      />
       <MXContentMain>
         <div className="mxblock mxblock--project">
           <h1 className="mxblock--project__hx">{post.title}</h1>

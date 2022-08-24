@@ -13,10 +13,14 @@ const Title = styled.h1`
 const PostContent = styled.div`
 `
 
-const Post = ({ pageContext: { postNode, prev, next, posts } }) => {
+export function Head({ pageContext: { postNode }}) {
+  return <SEO postPath={postNode.fields.slug} postNode={postNode} article />;
+}
+
+export default function Post({ pageContext: { postNode, prev, next, posts }}) {
   const post = postNode.frontmatter
 
-  var toc
+  let toc
   
   if (postNode.tableOfContents && postNode.tableOfContents.items) {
     toc = postNode.tableOfContents.items
@@ -25,7 +29,6 @@ const Post = ({ pageContext: { postNode, prev, next, posts } }) => {
   
   return (
     <Layout hasSideNavigation="true" navmode="blog" customSEO>
-        <SEO postPath={postNode.fields.slug} postNode={postNode} article />
         <MXContentMain hasSideNavigation="true">
           <Title>{post.title}</Title>
           <Subline>
@@ -56,17 +59,11 @@ const Post = ({ pageContext: { postNode, prev, next, posts } }) => {
   )
 }
 
-export default Post
-
 Post.propTypes = {
   pageContext: PropTypes.shape({
-    slug: PropTypes.string.isRequired,
     next: PropTypes.object,
     prev: PropTypes.object,
-  }),
-  data: PropTypes.shape({
-    mdx: PropTypes.object.isRequired,
-  }).isRequired,
+  })
 }
 
 Post.defaultProps = {

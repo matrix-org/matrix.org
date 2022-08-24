@@ -4,7 +4,7 @@ import { Layout, MXContentMain } from '../components'
 import config from '../../config'
 
 export function Head() {
-  return <title>Discover Matrix | {config.siteTitle}</title>;
+  return <title id="title">Discover Matrix | {config.siteTitle}</title>;
 }
 
 const Discover = () => {

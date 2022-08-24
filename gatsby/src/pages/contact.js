@@ -9,7 +9,7 @@ export function Head() {
   return (
     <>
       <SEO />
-      <title>Contact | {config.siteTitle}</title>
+      <title id="title">Contact | {config.siteTitle}</title>
     </>
   );
 }
