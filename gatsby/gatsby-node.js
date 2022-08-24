@@ -90,7 +90,7 @@ exports.createPages = async ({ graphql, actions }) => {
           filter: { frontmatter: { date: { ne: null }, author: { ne: null } } }
         ) {
           nodes {
-            body
+            id
             fields {
               slug
             }
@@ -136,7 +136,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.fields.slug,
       component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
-        postNode: node,
+        id,
         prev,
         next,
         posts: postsForArchiveList

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
-import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { graphql } from "gatsby";
 
 import { Layout, Subline, SEO, PrevNext, MXContentMain, MXContentNav } from '../components'
 
@@ -13,17 +13,17 @@ const Title = styled.h1`
 const PostContent = styled.div`
 `
 
-export function Head({ pageContext: { postNode }}) {
-  return <SEO postPath={postNode.fields.slug} postNode={postNode} article />;
+export function Head({ data: { mdx }}) {
+  return <SEO postPath={mdx.fields.slug} postNode={mdx} article />;
 }
 
-export default function Post({ pageContext: { postNode, prev, next, posts }}) {
-  const post = postNode.frontmatter
+export default function Post({data: {mdx}, pageContext: { prev, next, posts },children}) {
+  const post = mdx.frontmatter
 
   let toc
   
-  if (postNode.tableOfContents && postNode.tableOfContents.items) {
-    toc = postNode.tableOfContents.items
+  if (mdx.tableOfContents && mdx.tableOfContents.items) {
+    toc = mdx.tableOfContents.items
       .map(item => {return ({slug: item.url, title: item.title})})
   }
   
@@ -42,7 +42,7 @@ export default function Post({ pageContext: { postNode, prev, next, posts }}) {
             {post.author}
           </Subline>
           <PostContent>
-            <MDXRenderer>{postNode.body}</MDXRenderer>
+            {children}
           </PostContent>
           <PrevNext prev={prev} next={next} />
         </MXContentMain>
@@ -52,8 +52,8 @@ export default function Post({ pageContext: { postNode, prev, next, posts }}) {
       frameBorder="0"></iframe>
           {
           toc &&
-        <MXContentNav title="Post Contents" content={toc} currentSlug={postNode.fields.slug}></MXContentNav>}
-        <MXContentNav title="All posts" content={posts} currentSlug={postNode.fields.slug}></MXContentNav>
+        <MXContentNav title="Post Contents" content={toc} currentSlug={mdx.fields.slug}></MXContentNav>}
+        <MXContentNav title="All posts" content={posts} currentSlug={mdx.fields.slug}></MXContentNav>
         </div>
     </Layout>
   )
@@ -72,3 +72,26 @@ Post.defaultProps = {
     prev: null,
   }),
 }
+
+export const query = graphql`
+  query($id: String!) {
+    mdx(id: { eq: $id }) {
+      frontmatter {
+        title
+        date(formatString: "YYYY-MM-DD")
+        categories
+        author
+        image
+        slug
+        showTableOfContents
+      }
+      tableOfContents
+      parent {
+        ... on File {
+          mtime
+          birthTime
+        }
+      }
+    }
+  }
+`;

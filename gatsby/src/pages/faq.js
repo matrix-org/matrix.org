@@ -5,8 +5,12 @@ import { Layout, MXContentMain } from "../components";
 
 import config from "../../config";
 
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql } from "gatsby";
+
+// TODO remove me
+function MDXRenderer() {
+  return <>BUG BUG BUG BUG BUG</>;
+}
 
 export function Head() {
   return <title id="title">FAQ | {config.siteTitle}</title>;
@@ -3304,7 +3308,7 @@ const Faq = ({ data }) => {
 };
 
 export const query = graphql`
-  {
+  query {
     allMdx(filter: { frontmatter: { section: { in: ["faq"] } } }) {
       edges {
         node {
