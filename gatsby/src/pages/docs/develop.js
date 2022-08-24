@@ -1,10 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Helmet from 'react-helmet'
 import { Layout, MXContentMain } from '../../components'
 import config from '../../../config'
 
+export function Head() {
+  return <title>Guides | {config.siteTitle}</title>;
+}
 
 const GuidesDevelop = ({ data }) => {
 
@@ -40,7 +42,6 @@ const GuidesDevelop = ({ data }) => {
   addArticleToGroup("Encryption", "An introduction to end-to-end encryption in Matrix and Riot", "Hubert Chathi", "https://www.uhoreg.ca/blog/20170910-2110");
   return (<Layout navmode="develop">
     <MXContentMain>
-      <Helmet title={`Guides | ${config.siteTitle}`} />
       <h1>Guides for Developers</h1>
       {groups && groups.map(group => {
         return (

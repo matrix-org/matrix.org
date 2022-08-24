@@ -1,11 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Helmet from 'react-helmet'
 import { Layout, MXContentMain } from '../components'
 import config from '../../config'
 
 const title = "Internet of Things (IoT)";
+
+export function Head() {
+  return (
+    <title>{title} | {config.siteTitle}</title>
+  )
+}
 
 const Iot = ({ data }) => {
   const projects = data.allMdx.edges
@@ -16,7 +21,6 @@ const Iot = ({ data }) => {
     }));
   return (<Layout navmode="discover">
     <MXContentMain>
-      <Helmet title={`${title} | ${config.siteTitle}`} />
       <div className="mxblock mxblock--project">
         <h1 className="mxblock--project__hx">{title}</h1>
         {

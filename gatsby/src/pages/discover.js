@@ -1,14 +1,16 @@
 import React from 'react'
 
-import Helmet from 'react-helmet'
 import { Layout, MXContentMain } from '../components'
 import config from '../../config'
+
+export function Head() {
+  return <title>Discover Matrix | {config.siteTitle}</title>;
+}
 
 const Discover = () => {
 
     return (<Layout navmode="discover">
         <MXContentMain>
-            <Helmet title={`Discover Matrix | ${config.siteTitle}`} />
             <h2 className="mxblock__hx">Discover Matrix</h2>
             <div className="mxgrid">
                 <div className="mxgrid__item33 mxgrid__item33--discover mxgrid__item33--bullet">

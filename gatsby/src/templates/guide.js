@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
 
 import {
   Layout,
@@ -68,24 +67,24 @@ Page.defaultProps = {
 };
 
 export const pageQuery = graphql`
-         query($slug: String!) {
-           mdx(fields: { slug: { eq: $slug } }) {
-             excerpt
-             frontmatter {
-               title
-               date(formatString: "YYYY-MM-DD")
-               author
-               image
-               showTableOfContents
-               section
-             }
-             tableOfContents
-             parent {
-               ... on File {
-                 mtime
-                 birthTime
-               }
-             }
-           }
-         }
-       `;
+  query($slug: String!) {
+    mdx(fields: { slug: { eq: $slug } }) {
+      excerpt
+      frontmatter {
+        title
+        date(formatString: "YYYY-MM-DD")
+        author
+        image
+        showTableOfContents
+        section
+      }
+      tableOfContents
+      parent {
+        ... on File {
+          mtime
+          birthTime
+        }
+      }
+    }
+  }
+`;

@@ -1,15 +1,17 @@
 import React from 'react'
 
-import Helmet from 'react-helmet'
 import { Layout } from '../components'
 
-const Redirect = () => {
+export function Head() {
+  return <meta http-equiv="refresh" content="0; url=/matrixlive" />;
+}
 
-    return (<Layout>
-        <Helmet>
-            <meta http-equiv="refresh" content="0; url=/matrixlive" />
-        </Helmet>
-    </Layout>)
+const Redirect = () => {
+  return (
+    <Layout>
+      <></>
+    </Layout>
+  )
 }
 
 export default Redirect

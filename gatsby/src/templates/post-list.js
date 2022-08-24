@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 
 import {
@@ -29,7 +28,6 @@ const PostList = ({
 
   return (
     <Layout hasSideNavigation="true" navmode="blog">
-      <Helmet />
       <MXContentMain hasSideNavigation="true">
         {nodes.map(post => (
           <Article

@@ -1,18 +1,23 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Helmet from 'react-helmet'
 import { Layout, MXContentMain } from '../components'
 import config from '../../config'
 
 
 const title= `Hosting | ${config.siteTitle}`;
+
+export function Head() {
+  return (
+    <title>{title}</title>
+  )
+}
+
 const Hosting = ({ data }) => {
 
     return (<Layout titleOverride={title} navmode="discover"
     excerptOverride="Browse Matrix hosting options">
       <MXContentMain>
-        <Helmet title={title} />
             <h1 id="matrix-hosting">Matrix Hosting</h1>
             <div className="mxgrid">
                 <div className="mxgrid__item50">

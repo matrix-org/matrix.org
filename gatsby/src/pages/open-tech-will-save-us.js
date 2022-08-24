@@ -1,11 +1,10 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
 import React from "react";
-import Helmet from "react-helmet";
 import { Layout } from "../components";
 
 import config from "../../config";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import moment from "moment";
 import { graphql } from "gatsby";
 
@@ -42,6 +41,19 @@ if (SHOW_LIVE_STREAM) {
   liveStream = <img src="/images/otwsu18.png" alt="Open Tech Will Save Us" />;
 }
 
+export function Head() {
+  return (
+    <>
+      <title>{title}</title>
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        property="twitter:image"
+        content="https://matrix.org/images/otwsu18.png"
+      />
+    </>
+  );
+}
+
 const OTWSU = ({ data }, children) => {
   const events = data.allMdx.nodes;
   const nextEvent = events.find(e => e.frontmatter.edition === NEXT_EVENT);
@@ -51,13 +63,6 @@ const OTWSU = ({ data }, children) => {
       excerptOverride="Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live video stream broadcasting on the last Wednesday of every month at 6pm Paris time."
       titleOverride={title}
     >
-      <Helmet title={title}>
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:image"
-          content="https://matrix.org/images/otwsu18.png"
-        />
-      </Helmet>
       <div>
         {liveStream}
         <br />

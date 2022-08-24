@@ -1,7 +1,6 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
 import React from "react";
-import Helmet from "react-helmet";
 
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
@@ -69,6 +68,24 @@ const example3 = `curl "https://matrix.bob.com/_matrix/client
 }
 `;
 
+export function Head() {
+  return (
+    <>
+      <title>Matrix.org</title>
+      <link rel="stylesheet" type="text/css" href="/css/how-it-works.css" />
+      <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+      <script type="text/javascript" src="/js/d3.v3.min.js"></script>
+      <script type="text/javascript" src="/js/how-it-works.js"></script>
+      <script
+        async=""
+        src="https://platform.twitter.com/widgets.js"
+        charSet="utf-8"
+      />
+      <script async="" defer="" src="https://buttons.github.io/buttons.js" />
+    </>
+  );
+}
+
 const Index = ({
   data: {
     allMdx: { nodes }
@@ -78,22 +95,6 @@ const Index = ({
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Helmet title={`Matrix.org`}>
-          <link rel="stylesheet" type="text/css" href="/css/how-it-works.css" />
-          <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
-          <script type="text/javascript" src="/js/d3.v3.min.js"></script>
-          <script type="text/javascript" src="/js/how-it-works.js"></script>
-          <script
-            async=""
-            src="https://platform.twitter.com/widgets.js"
-            charSet="utf-8"
-          />
-          <script
-            async=""
-            defer=""
-            src="https://buttons.github.io/buttons.js"
-          />
-        </Helmet>
         <Navigation />
         <SEO buildTime={buildTime} />
         <div className="mxherobackground">

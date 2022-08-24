@@ -1,16 +1,16 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Layout } from '../components'
 
 import config from '../../config'
 
-
+export function Head() {
+  return <title>Supporters | {config.siteTitle}</title>;
+}
 
 const Supporters = () => {
     return (<Layout hasNavPadding="true">
-            <Helmet title={`Supporters | ${config.siteTitle}`} />
         <div>
             <h1>Supporters</h1>
             <h2>Thanks to our Patreon supporters!</h2>

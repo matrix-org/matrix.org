@@ -1,15 +1,22 @@
 import React from 'react'
 
-import Helmet from 'react-helmet'
-import { Layout } from '../components'
+import { Layout, SEO } from '../components'
+
+export function Head() {
+  return (
+    <>
+      <SEO />
+      <meta http-equiv="refresh" content="0; url=/code" />
+    </>
+  );
+}
 
 const Redirect = () => {
-
-    return (<Layout>
-        <Helmet>
-            <meta http-equiv="refresh" content="0; url=/code" />
-        </Helmet>
-    </Layout>)
-}
+  return (
+    <Layout>
+      <></>
+    </Layout>
+  );
+};
 
 export default Redirect

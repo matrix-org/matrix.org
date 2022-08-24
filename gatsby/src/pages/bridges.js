@@ -1,13 +1,22 @@
 import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 
-import Helmet from 'react-helmet'
-import { Layout, MXContentMain, MXProjectHeader } from '../components'
+import { Layout, MXContentMain, MXProjectHeader, SEO } from '../components'
 import config from '../../config'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 
 const title = `Bridges | ${config.siteTitle}`;
+
+export function Head() {
+  return (
+    <>
+      <SEO excerptOverride="Browse Matrix bridging options" />
+      <title>{title}</title>
+    </>
+  );
+}
+
 
 const Bridges = ({ data }) => {
 
@@ -90,10 +99,8 @@ const Bridges = ({ data }) => {
     )
   }
 
-  return (<Layout titleOverride={title} navmode="discover"
-  excerptOverride="Browse Matrix bridging options">
+  return (<Layout navmode="discover">
     <MXContentMain>
-      <Helmet title={title} />
       <h1 id="bridges">Bridges</h1>
       <div className="mxgrid">
         <div className="mxgrid__item50">

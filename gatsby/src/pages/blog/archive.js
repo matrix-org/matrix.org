@@ -1,10 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 
 import { Layout, MXContentMain } from "../../components";
 import config from "../../../config";
+
+export function Head() {
+  return (
+    <title>Blog Archive ${config.siteTitle}</title>
+  )
+}
 
 const Category = ({
   data: {
@@ -12,7 +17,6 @@ const Category = ({
   }
 }) => (
   <Layout navmode="blog">
-    <Helmet title={`Blog Archive ${config.siteTitle}`} />
     <MXContentMain>
       <h1>Blog Archive</h1>
       {nodes.map(node => (

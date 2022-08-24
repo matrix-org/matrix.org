@@ -9,7 +9,7 @@ import useBuildTime from '../hooks/useBuildTime'
 import Navigation from './Navigation'
 import Footer from './Footer'
 
-const Layout = ({ children, customSEO, navmode,  hasSideNavigation, hasNavPadding, excerptOverride, titleOverride, imageOverride }) => {
+const Layout = ({ children, customSEO, navmode,  hasSideNavigation, hasNavPadding }) => {
   const buildTime = useBuildTime()
   const mxContentWrapperClass = "mxcontentwrapper" + (hasNavPadding === "true" ? " mxcontentwrapper--navpadding" : "")
   const mxContentClass = "mxcontent" + (hasSideNavigation === "true" ?  " mxcontent--docs" : "")

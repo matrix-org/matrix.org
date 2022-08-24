@@ -1,16 +1,17 @@
 import React from 'react'
 
-import Helmet from 'react-helmet'
 import { Layout } from '../../../components'
 
+export function Head() {
+  return <script>window.location = "/legal/privacy-notice";</script>;
+}
 
 const Redirect = () => {
-
-    return (<Layout navmode="develop">
-        <Helmet>
-          <script>window.location = "/legal/privacy-notice";</script>   
-        </Helmet>
-    </Layout>)
+  return (
+    <Layout>
+      <></>
+    </Layout>
+  );
 }
 
 export default Redirect

@@ -1,15 +1,16 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Layout } from '../components'
 
 import config from '../../config'
 
+export function Head() {
+  return <title>Security Disclosure Policy | {config.siteTitle}</title>;
+}
 
 const SecurityDisclosurePolicy = () => {
     return (<Layout hasNavPadding="true">
-            <Helmet title={`Security Disclosure Policy | ${config.siteTitle}`} />
             <div style={{width: "75%"}}>
             <h1 style={{marginBottom: 0.5 + 'em'}}>Security Disclosure Policy</h1>
             <p>Matrix.org greatly appreciates investigative work into security vulnerabilities

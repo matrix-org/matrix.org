@@ -1,17 +1,20 @@
 import React from 'react'
 
-import Helmet from 'react-helmet'
 import { Layout, MXContentMain } from '../components'
 import config from '../../config'
 
 
 const title = `Matrix Live | ${config.siteTitle}`;
+
+export function Head() {
+  return <title>{title}</title>;
+}
+
 const MatrixLive = () => {
 
     return (<Layout titleOverride={title} navmode="discover"
         excerptOverride="Browse Matrix hosting options">
         <MXContentMain>
-            <Helmet title={title} />
             <h1 id="matrix-hosting">Matrix Live</h1>
             <div className="mxgrid">
                 <div className="mxgrid__item50">

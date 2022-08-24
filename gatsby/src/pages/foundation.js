@@ -1,16 +1,21 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
 import React from 'react'
-import Helmet from 'react-helmet'
-import { Layout, MXContentMain} from '../components'
+import { Layout, MXContentMain, SEO} from '../components'
 
 import config from '../../config'
 
-
+export function Head() {
+  return (
+    <>
+      <SEO excerptOverride="The Foundation defines the manifesto, mission and values of the project, the open governance process that determines how the specification develops, and provides a safety-net to ensure the project stays independent and true to its goals." />{" "}
+      <title>The Matrix.org Foundation | {config.siteTitle}</title>
+    </>
+  );
+}
 
 const Foundation = () => {
-    return (<Layout hasNavPadding="true" excerptOverride="The Foundation defines the manifesto, mission and values of the project, the open governance process that determines how the specification develops, and provides a safety-net to ensure the project stays independent and true to its goals.">
-            <Helmet title={`The Matrix.org Foundation | ${config.siteTitle}`} />
+    return (<Layout hasNavPadding="true">
             <MXContentMain>
             <div className="mxblock mxblock--foundation">
           <h1 className="mxblock--foundation__hx">The Matrix.org Foundation</h1>

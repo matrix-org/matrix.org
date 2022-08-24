@@ -1,5 +1,4 @@
 import React from "react";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
 
 import { Layout, SEO, MXContentMain } from "../components";
 

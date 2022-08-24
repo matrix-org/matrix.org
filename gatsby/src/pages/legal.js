@@ -1,16 +1,18 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Layout } from '../components'
 
 import config from '../../config'
 
-
+export function Head() {
+    return (
+       <title>Legal | {config.siteTitle}</title>
+    )
+}
 
 const Legal = () => {
     return (<Layout hasNavPadding="true">
-            <Helmet title={`Legal | ${config.siteTitle}`} />
         <div>
             <h1>Legal</h1>
             Links to our legal documentation:

@@ -1,9 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Helmet from 'react-helmet'
-import { Layout, MXContentMain, MXProjectCard } from '../components'
+import { Layout, MXContentMain, MXProjectCard, SEO } from '../components'
 import config from '../../config'
+
+export function Head() {
+  return (
+    <>
+      <SEO />
+      <title>Bots | {config.siteTitle}</title>
+    </>
+  );
+}
 
 const Bots = ({data}) => {
     const bots = data.allFile.edges.filter(s =>
@@ -18,7 +26,6 @@ const Bots = ({data}) => {
     }));
     return (<Layout navmode="discover">
         <MXContentMain>
-          <Helmet title={`Bots | ${config.siteTitle}`} />
           <div className="mxblock mxblock--project">
           <h1 className="mxblock--project__hx">Bots</h1>
           <div className="mxgrid">

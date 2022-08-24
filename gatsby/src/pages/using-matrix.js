@@ -1,19 +1,23 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import Helmet from "react-helmet";
 import { Layout, MXContentMain } from "../components";
 import config from "../../config";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const title = "Using Matrix";
+
+export function Head() {
+  return (
+    <title>{title} | {config.siteTitle}</title>
+  )
+}
 
 const UsingMatrix = ({ data }) => {
   const nodes = data.allMdx.edges;
   return (
     <Layout navmode="discover">
       <MXContentMain>
-        <Helmet title={`${title} | ${config.siteTitle}`} />
         <h1>{title}</h1>
         <p>Matrix is used by everyone from Universities, Governments, Small
             Businesses and Open Source communities.<br />

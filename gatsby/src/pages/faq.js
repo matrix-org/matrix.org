@@ -1,13 +1,16 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
 import React from "react";
-import Helmet from "react-helmet";
 import { Layout, MXContentMain } from "../components";
 
 import config from "../../config";
 
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql } from "gatsby";
+
+export function Head() {
+  return <title>FAQ | {config.siteTitle}</title>;
+}
 
 const Faq = ({ data }) => {
   function getSection(section) {
@@ -19,7 +22,6 @@ const Faq = ({ data }) => {
 
   return (
     <Layout hasNavPadding="true">
-      <Helmet title={`FAQ | ${config.siteTitle}`} />
       <MXContentMain>
         <div className="mxcontent__main__doc">
           <div id="questions-wrapper">

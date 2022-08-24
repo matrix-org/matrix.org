@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import kebabCase from "lodash/kebabCase";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
-
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Subline from "./Subline";
 
 const Title = styled.h1`

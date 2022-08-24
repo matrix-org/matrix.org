@@ -1,11 +1,21 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Helmet from 'react-helmet'
-import { Layout, MXContentMain, MXProjectCard } from '../components'
+import { Layout, MXContentMain, MXProjectCard, SEO } from '../components'
 import config from '../../config'
 
 const title = `Clients | ${config.siteTitle}`
+
+export function Head() {
+  return (
+    <>
+      <SEO excerptOverride="Clients for Matrix, decentralised communications"/>
+      <title>{title}</title>
+      <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="/js/clients-control.js"></script>
+    </>
+  );
+}
 
 const ClientsMatrix = ({ data }) => {
   const clients = data.allMdx.edges.map((edge => {
@@ -24,14 +34,8 @@ const ClientsMatrix = ({ data }) => {
     clients[i].platformString = clients[i].platforms.join(',').replace(' ', '');
   });
 
-  return (<Layout titleOverride={title} navmode="discover"
-  excerptOverride="Clients for Matrix, decentralised communications">
+  return (<Layout titleOverride={title} navmode="discover">
     <MXContentMain>
-      <Helmet title={title}>
-        <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="/js/clients-control.js"></script>
-      </Helmet>
-
       <h1>Clients</h1>
       <p>To connect to the Matrix federation, you will use a client. These are some of the most popular Matrix clients available today, and more are available at  <a href="/docs/projects/try-matrix-now/">try-matrix-now</a>.
           To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>.

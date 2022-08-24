@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
 import { Link, graphql } from "gatsby";
 
 import {
@@ -14,6 +13,14 @@ import {
 import config from "../../config";
 
 const _ = require("lodash");
+
+export function Head({ pageContext: { category } }) {
+  return (
+    <title>
+      Category: {category} | {config.siteTitle}
+    </title>
+  );
+}
 
 const Category = ({
   pageContext: { category, limit, skip, currentPage },
@@ -38,7 +45,6 @@ const Category = ({
 
   return (
     <Layout navmode="blog">
-      <Helmet title={`Category: ${category} | ${config.siteTitle}`} />
       <MXContentMain>
         <SectionTitle>Category &ndash; {category}</SectionTitle>
         <Subline sectionTitle>

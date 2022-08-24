@@ -3,9 +3,18 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Helmet from 'react-helmet'
 import { Layout, MXContentMain, MXTryMatrixNowSection } from '../../../components'
 import config from '../../../../config'
+
+export function Head() {
+  return (
+    <>
+      <title>Try Matrix Now | {config.siteTitle}</title>
+      <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="/js/tmn-control.js"></script>
+    </>
+  );
+}
 
 const TryMatrixNow = ({data}) => {
     const projects = data.allFile.edges.map(function(edge) {
@@ -32,10 +41,6 @@ const TryMatrixNow = ({data}) => {
     
     return (<Layout navmode="discover">
         <MXContentMain>
-            <Helmet title={`Try Matrix Now | ${config.siteTitle}`}>
-                <script src="/js/jquery-3.4.1.min.js" type="text/javascript"></script>
-                <script type="text/javascript" src="/js/tmn-control.js"></script>
-            </Helmet>
             <h1>Try Matrix Now</h1>
             <p>To get started using Matrix, pick a client and join <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a>. You can also check the <a href="/docs/projects/clients-matrix">Matrix Clients Matrix</a> to see more detail.</p>
         <div className="mxblock">

@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
 import { Link, graphql } from "gatsby";
 import styled from "styled-components";
 import kebabCase from "lodash/kebabCase";
@@ -14,6 +13,12 @@ const Title = styled.h3`
   margin-bottom: 0.75rem;
 `;
 
+export function Head() {
+  return (
+    <title>Categories | {config.siteTitle}</title>
+  )
+}
+
 const Category = ({
   data: {
     categories: { group },
@@ -21,7 +26,6 @@ const Category = ({
   }
 }) => (
   <Layout navmode="blog">
-    <Helmet title={`Categories | ${config.siteTitle}`} />
     <MXContentMain>
       <SectionTitle>Categories</SectionTitle>
 

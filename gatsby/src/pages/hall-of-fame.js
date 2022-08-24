@@ -1,10 +1,13 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Layout, HallOfFameEntry } from '../components'
 
 import config from '../../config'
+
+export function Head() {
+  return <title>Security Hall of Fame | {config.siteTitle}</title>;
+}
 
 const HallOfFame = () => {
     const hallOfFameEntries = [
@@ -264,7 +267,6 @@ const HallOfFame = () => {
     ];
 
     return (<Layout hasNavPadding="true">
-            <Helmet title={`Security Hall of Fame | ${config.siteTitle}`} />
         <div style={{width: "75%"}}>
             <h1 style={{marginBottom: 0.5 + 'em'}}>Security Hall of Fame</h1>
 

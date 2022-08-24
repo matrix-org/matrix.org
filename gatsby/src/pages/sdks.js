@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 
-import Helmet from 'react-helmet'
 import { Layout, MXContentMain, MXProjectHeader } from '../components'
 import config from '../../config'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const title = `SDKs | ${config.siteTitle}`;
+
+export function Head() {
+  return (
+    <title>{title}</title>
+  )
+}
 
 const SDKs = ({ data }) => {
   const sdks = data.allFile.edges.filter(s =>
@@ -80,7 +85,6 @@ const SDKs = ({ data }) => {
   return (<Layout titleOverride={title} navmode="discover"
     excerptOverride="Browse Matrix SDKs for various languages and platforms">
     <MXContentMain>
-      <Helmet title={title} />
       <div className="mxgrid" id="sdk-content" style={{"paddingTop": "75px", "marginTop": "-75px"}}>
         <div className="mxgrid__item25">
           <h1 id="SDKs">SDKs</h1>

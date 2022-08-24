@@ -1,18 +1,22 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
 import React from 'react'
-import Helmet from 'react-helmet'
-import { Layout } from '../components'
+import { Layout, SEO } from '../components'
 
 import config from '../../config'
 
-
+export function Head() {
+  return (
+    <>
+      <SEO></SEO>
+      <title>404 | {config.siteTitle}</title>
+      <script type="text/javascript" src="/js/404-catch.js"></script>
+    </>
+  );
+}
 
 const Legal = () => {
     return (<Layout hasNavPadding="true">
-            <Helmet title={`404 | ${config.siteTitle}`}>
-                <script type="text/javascript" src="/js/404-catch.js"></script>
-            </Helmet>
         <div>
             <h1>404, not found</h1>
             <p>Whatever it is that you want, it's not here. There are, however, things you could do to find what you're looking for.</p>

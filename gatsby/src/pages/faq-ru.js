@@ -1,16 +1,16 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Layout, MXContentMain} from '../components'
 
 import config from '../../config'
 
-
+export function Head() {
+  return <title>FAQ | {config.siteTitle}</title>;
+}
 
 const Faq = () => {
     return (<Layout hasNavPadding="true">
-            <Helmet title={`FAQ | ${config.siteTitle}`} />
             <MXContentMain>
                 <h1>FAQ</h1>
             <h3 id="">Главное</h3>
@@ -53,9 +53,9 @@ const Faq = () => {
 
 
 <ul>
-<li><a href="/docs/spec#client-server-api-v1">Клиент&lt;->Серверный API</a>, определяющий, как клиенты Matrix будут общаться с серверами Matrix.</li>
+<li><a href="/docs/spec#client-server-api-v1">Клиент&lt;-{">"}Серверный API</a>, определяющий, как клиенты Matrix будут общаться с серверами Matrix.</li>
 
-<li><a href="/docs/spec#federation-api">Сервер&lt;->Серверный API</a>, определяющий, как сервера Matrix будут общаться и синхронизироваться друг с другом.</li>
+<li><a href="/docs/spec#federation-api">Сервер&lt;-{">"}Серверный API</a>, определяющий, как сервера Matrix будут общаться и синхронизироваться друг с другом.</li>
 
 <li><a href="/docs/spec/#application-service-api">API для сервиса приложений</a>, определяющий, как расширять функциональность Matrix с «интеграциями» и «мостами» в другие сети.</li>
 

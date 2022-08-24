@@ -1,16 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Helmet from 'react-helmet'
 import { Layout, MXContentMain } from '../../components'
 import config from '../../../config'
 
+export function Head() {
+  return <title>Guides | {config.siteTitle}</title>;
+}
 
 const Guides = ({data}) => {
 
     return (<Layout navmode="discover">
         <MXContentMain>
-          <Helmet title={`Guides | ${config.siteTitle}`} />
 
         <h2 id="recommended-by-matrixorg">Guides Recommended by matrix.org</h2>
 
