@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 
-import SEO from './SEO'
 import theme from '../../config/theme'
 import useBuildTime from '../hooks/useBuildTime'
 
@@ -17,8 +16,6 @@ const Layout = ({ children, customSEO, navmode,  hasSideNavigation, hasNavPaddin
     <ThemeProvider theme={theme}>
       <>
         <Navigation navmode={navmode} />
-        {!customSEO && 
-        <SEO buildTime={buildTime} excerptOverride={excerptOverride} titleOverride={titleOverride} imageOverride={imageOverride} />}
         <div className={mxContentWrapperClass}>
           <div className={mxContentClass}>
             {children}
@@ -52,7 +49,6 @@ Layout.propTypes = {
   navmode: PropTypes.string,
   hasSideNavigation: PropTypes.string,
   hasNavPadding: PropTypes.string,
-  excerptOverride: PropTypes.string
 }
 
 Layout.defaultProps = {
