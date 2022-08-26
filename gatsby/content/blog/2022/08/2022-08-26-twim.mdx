@@ -1,0 +1,320 @@
+---
+date: '2022-08-26'
+title: 'This Week in Matrix 2022-08-26'
+categories:
+  - This Week in Matrix
+author: Brendan Abolivier
+image: 
+---
+
+Happy TWIMday everyone! Thib is away this week again, so I'm covering for him as your host in this edition of This Week In Matrix.
+
+## Matrix Live 🎙
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eUBH_pucv4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Following up on last week's tutorial about using Docker Compose to install Synapse, this week Thib explains how to use Ansible to deploy your own Matrix homeserver.
+
+## Dept of *Status of Matrix* 🌡️
+
+[TravisR](https://matrix.to/#/@travis:t2l.io) reports
+
+> Earlier in the year, [t2bot.io passed 1 Million known rooms](https://matrix.org/blog/2022/03/04/this-week-in-matrix-2022-03-04#dept-of-status-of-matrix-%EF%B8%8F) and now it's passed 10 Million bridged users (10,039,915 users to be exact, at time of writing). Most of these users will be people who have participated in a channel/chat on Discord or Telegram that was bridged to Matrix through t2bot.io's free service, with about 500 thousand being active each month.
+> 
+> Approximately 8 Million of the users are from Telegram, covering about 11% of all Telegram users (previously 15% based on information available at the time). The remaining 2 Million are Discord users, roughly 0.5% of Discord's user base. For perspective, t2bot.io has just over 683 Million events in the database and is bridging between 30 and 40 thousand people a day. 
+> 
+> Like last time, this is just a milestone update, though it's also a good reminder to host your own server if you can. Element's own [hosting platform](https://element.io/matrix-services) is a great option if you'd like to have a server without running it yourself, and [Beeper](https://www.beeper.com/) offers a richer bridging experience than t2bot.io can feasibly provide. If you'd like to go down the self-hosting route, check out Thib's video guide on hosting synapse or [last week's Matrix Live](https://www.youtube.com/watch?v=JCsw1bbBjAM) for a better understanding of what hosting Synapse actually means.
+> 
+> As for an interesting statistic: despite not having much functionality that deals with Spaces, t2bot.io can see 2687 Spaces from the wider world. The plan in the coming months is to support a way to bridge a whole Discord server to a Matrix Space, making this statistic hopefully more interesting as time goes on.
+
+## Dept of Spec 📜
+
+[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) reports
+
+> # Spec
+> 
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+> 
+> 
+> ## MSC Status
+> 
+> **Merged MSCs:**
+> * *No MSCs were merged this week.*
+> 
+> **MSCs in Final Comment Period:**
+> * *No MSCs are in FCP.*
+> 
+> **New MSCs:**
+> * [MSC3874: Filtering threads from the /messages endpoint](https://github.com/matrix-org/matrix-spec-proposals/pull/3874)
+> * [MSC3873: event_match dotted keys](https://github.com/matrix-org/matrix-spec-proposals/pull/3873)
+> * [MSC3872: Order of rooms in Spaces](https://github.com/matrix-org/matrix-spec-proposals/pull/3872)
+> 
+> ## Spec Core Team
+> 
+> The Spec Core Team has been continuing to push forward on the spec.  Several new MSCs have been opened recently.  The Spec Core Team is available in [#sct-office:matrix.org](https://matrix.to/#/#sct-office:matrix.org) when  MSC authors think that they are ready for primetime.
+> 
+> ## Random MSC of the Week
+> 
+> The random MSC of the week is... [MSC2162: Signaling Errors at Bridges](https://github.com/matrix-org/matrix-spec-proposals/pull/2162)!
+> 
+> Bridges sometimes are unable to relay messages to the remote service for one reason or another.  This MSC proposes a way to allow bridges to indicate that a message failed to be delivered, and allow users to tell the bridge to retry.
+> ![](/blog/img/lbgTGgCRqxbtOGGMcwQnrvQP.png)
+
+## Dept of Outreachy 🎓️
+
+[andybalaam](https://matrix.to/#/@andybalaam:matrix.org) announces
+
+> Usman's internship, working on Favourite Messages, is coming to an end! Check out [Usman's blog post](https://yaya-usman.hashnode.dev/wrap-up-summary-of-my-journey-to-being-an-outreachy-intern-at-element) and [Andy's blog post](https://www.artificialworlds.net/blog/2022/08/26/outreachy-august-2022-update/)! To follow progress on Favourite Messages (which is still very much a prototype), check out the tracking issue: [Tracking issue for Favourite Messages](https://github.com/vector-im/element-web/issues/22453). Thanks to Usman for being an awesome mentee!
+
+## Dept of Servers 🏢
+
+
+
+### Synapse ([website](https://github.com/matrix-org/synapse/))
+
+Synapse is a Matrix homeserver implementation developed by the matrix.org core team
+
+[Brendan Abolivier](https://matrix.to/#/@babolivier:element.io) says
+
+> # Synapse
+> 
+> This week we've released [Synapse 1.66.0rc1](https://github.com/matrix-org/synapse/releases/tag/v1.66.0rc1)! This upcoming release deprecates delegating email validation to an identity server (more info [here](https://matrix-org.github.io/synapse/v1.66/upgrade.html#upgrading-to-v1660)) and includes improved validation around user-interactive authentication, support for a couple of experimental features, as well as the usual batch of bug fixes and performance improvements 🙂
+> 
+> As always, any help with testing and feedback on this RC is appreciated! Feel free to drop any feedback or bug report in [#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org) and [the Synapse repo](https://github.com/matrix-org/synapse/issues/new?assignees=&labels=&template=BUG_REPORT.yml) respectively.
+
+### Dendrite ([website](https://github.com/matrix-org/dendrite))
+
+Second generation Matrix homeserver
+
+[neilalexander](https://matrix.to/#/@neilalexander:matrix.org) announces
+
+> This week we released [Dendrite 0.9.5](https://github.com/matrix-org/dendrite/releases/tag/v0.9.5) which includes a number of fixes, particularly for federation:
+> 
+> * The roomserver will now correctly unreject previously rejected events if necessary when reprocessing
+> * The handling of event soft-failure has been improved on the roomserver input by no longer applying rejection rules and still calculating state before the event if possible
+> * The federation `/state` and `/state_ids` endpoints should now return the correct error code when the state isn't known instead of returning a HTTP 500
+> * The federation `/event` should now return outlier events correctly instead of returning a HTTP 500
+> * A bug in the federation backoff allowing zero intervals has been corrected
+> * The `create-account` utility will no longer error if the homeserver URL ends in a trailing slash
+> * A regression in `/sync` introduced in 0.9.4 should be fixed
+> 
+> As always, please feel free to join us in [#dendrite:matrix.org](https://matrix.to/#/#dendrite:matrix.org) for more Dendrite-related discussion.
+
+## Dept of Ops 🛠
+
+
+### matrix-docker-ansible-deploy ([website](https://github.com/spantaleev/matrix-docker-ansible-deploy))
+
+Matrix server setup using Ansible and Docker
+
+[Slavi](https://matrix.to/#/@slavi:devture.com) reports
+
+> Thanks to [Aine](https://gitlab.com/etke.cc) of [etke.cc](https://etke.cc/), [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) can now set up the new [Postmoogle](https://gitlab.com/etke.cc/postmoogle) email bridge/bot. Postmoogle is like the [email2matrix bridge](https://github.com/devture/email2matrix) (also already supported by the playbook), but more capable and with the intention to soon support *sending* emails, not just receiving.
+> 
+> See our [Setting up Postmoogle email bridging](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-bot-postmoogle.md) documentation to get started.
+
+
+## Dept of Bridges 🌉
+
+[Aine](https://matrix.to/#/@aine:etke.cc) reports
+
+> follow-up to Slavi's announcement: Postmoogle is here!
+> 
+> Actually, he explained it pretty good, so here are some additional links
+> 
+> [Source code and Roadmap with implemented and planned features](https://gitlab.com/etke.cc/postmoogle#roadmap) and as usual, say hi in the [#postmoogle:etke.cc](https://matrix.to/#/#postmoogle:etke.cc)
+
+## Dept of Clients 📱
+
+
+
+### Quadrix ([website](https://github.com/alariej/quadrix))
+
+A Minimal, simple, multi-platform chat client for the Matrix protocol.
+
+[JFA](https://matrix.to/#/@alariej:matrix.org) says
+
+> Quadrix v1.2.5 has been released! The update is already available for Linux, MacOS and iOS. The Windows and Android updates are awaiting approval from the respective stores. This release has mostly "under the hood" improvements (upgrade to React Native 0.69, React 18 and other key dependencies), but also fixes a few bugs and brings minor UI improvements.
+> 
+> Great news: Quadrix finally made it to https://matrix.org/clients/ :-) Many thanks to @madlittlemods:matrix.org!!!
+> 
+> Please leave feedback/comments at [#quadrix:matrix.org](https://matrix.to/#/#quadrix:matrix.org) or in the issues at https://github.com/alariej/quadrix (stars welcome :-))
+
+### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
+
+Secure and independent communication, connected via Matrix. Come talk with us in [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org)!
+
+[kittykat](https://matrix.to/#/@kittykat:matrix.org) says
+
+> * Our [code style guide](https://github.com/vector-im/element-meta/pull/216) has now finished review and we are now working on updating [eslint-plugin-matrix-org](https://github.com/matrix-org/eslint-plugin-matrix-org) to match it
+> * We will be release an RC2 to fix [a regression around progress bars](https://github.com/matrix-org/matrix-react-sdk/pull/9219)
+> 
+> In labs (you can enable labs features in settings on develop.element.io or on Nightly):
+> 
+> * We’re working hard on updating Threads, squashing bugs and improving performance. We have several MSCs open introducing new functionality to read receipts so that notifications work better than ever.
+
+### Element iOS ([website](https://github.com/vector-im/element-ios))
+
+Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
+
+[Ștefan](https://matrix.to/#/@stefan.ceriu:matrix.org) reports
+
+> * We’re working hard on making the new layout ready for general use, squashing bugs and taking names until everything is in tip top shape. We have a [test flight build](https://testflight.apple.com/join/lCeTuDKM) out: we’ve delayed the release to next week while we iron out the last creases.
+> * In ElementX land we have started on adding analytics and Xcode Cloud support and have updated our logging strategy. We will also start adopting sliding sync and using the new Rust Timeline providers
+
+## Dept of VoIP 🤙
+
+
+
+### Element Call ([website](https://call.element.io))
+
+Native Decentralised End-to-end Encrypted Group Calls in Matrix, as a standalone web app
+
+[Robin](https://matrix.to/#/@robin:robin.town) announces
+
+> Element Call v0.2.7 and v0.2.8 have been released this past week, adding local volume control, full screen mode, audio in screen sharing and, _ahem_, fixing an embarrassing bug where we broke walkie-talkie mode... 🐑 Oh, and it's also all in TypeScript now. 🚀 https://github.com/vector-im/element-call/releases/tag/v0.2.7
+
+## Dept of SDKs and Frameworks 🧰
+
+
+
+### simplematrixbotlib ([website](https://github.com/KrazyKirby99999/simple-matrix-bot-lib))
+
+simplematrixbotlib is an easy to use bot library for the Matrix ecosystem written in Python and based on matrix-nio.
+
+[HarHarLinks](https://matrix.to/#/@kim:sosnowkadub.de) says
+
+> [simplematrixbotlib](https://github.com/i10b/simplematrixbotlib) has reached version [2.7.0](https://github.com/i10b/simplematrixbotlib/releases/tag/v2.7.0), adding support for end-to-end encryption! 🎉
+> Come chat over at [#simplematrixbotlib:matrix.org](https://matrix.to/#/#simplematrixbotlib:matrix.org)!
+> 
+> Here is a summary of things that have happened since we last announced v2.6.3 on this channel:
+> * 🌐 The repo canonically moved to https://github.com/i10b/simplematrixbotlib, but the PyPI package remains available in the usual place.
+> * 🔒️ E2EE support! To enable it, simply install the optional e2ee dependencies. Find out how in [the manual](https://simple-matrix-bot-lib.readthedocs.io/en/latest/manual.html#e2e-encryption).
+> * 😄 Emoji verification support! Enable the option and you'll be able to interactively verify between the bot and your devices. (But mind that for now, [in-room verification is not supported, but only to-device](https://simple-matrix-bot-lib.readthedocs.io/en/latest/manual.html#interactive-sas-verification-using-emoji)).
+> * ☝️ Fingerprint verification support! As an additional method, the bot will print it's encryption fingerprint so you can "manually verify".
+> * 🗄️ Extensible config file! It is now easier than ever to add your own configuration options to the built-in TOML config file.
+> * 🧹 The usual housekeeping, bumping matrix-nio to 0.19.0.
+> * 🗨️ I ([HarHarLinks](https://github.com/HarHarLinks)) will be presenting the library this weekend at [#matrix-summit-berlin-2022:c-base.org](https://matrix.to/#/#matrix-summit-berlin-2022:c-base.org)! If you are in the Berlin 🇩🇪 area, come visit c-base!
+> 
+> The easiest to use bot library for Matrix. Get started in just 10 lines of code:
+> ```
+> import simplematrixbotlib as botlib
+> 
+> config = botlib.Config()
+> config.emoji_verify = True
+> creds = botlib.Creds("https://home.server", "user", "pass")
+> bot = botlib.Bot(creds, config)
+> 
+> @bot.listener.on_message_event
+> async def echo(room, message):
+>     if botlib.MessageMatch(room, message, bot, PREFIX).is_not_from_this_bot():
+>         await bot.api.send_text_message(room.room_id, message.body)
+> 
+> bot.run()
+> ```
+
+### matrix-rust-sdk ([website](https://github.com/matrix-org/matrix-rust-sdk))
+
+Matrix Client-Server SDK for Rust
+
+[ben](https://matrix.to/#/@gnunicorn:matrix.org) announces
+
+> With a few people out of office, this weeks has been one of the more quiet ones, but progress has been made non-the-less. Again a lot happens in draft PRs and the background, like with the [upcoming Timeline API](https://github.com/matrix-org/matrix-rust-sdk/pull/940) but also the path forward for integrating the crypto bindings into the js-sdk. There are a few notable PRs merged this week still improving the API ([#972](https://github.com/matrix-org/matrix-rust-sdk/pull/972) and [#973](https://github.com/matrix-org/matrix-rust-sdk/pull/973), [#961](https://github.com/matrix-org/matrix-rust-sdk/pull/961)), uprading [to latst ruma ](https://github.com/matrix-org/matrix-rust-sdk/pull/975), [removing dependencies (`parking_lot`)](https://github.com/matrix-org/matrix-rust-sdk/pull/969) to improve compile times as well as merging the [release infrastructure for crypto-js](https://github.com/matrix-org/matrix-rust-sdk/pull/966).
+> 
+>  👉 Wanna hack on matrix rust? Go check out our [`help wanted` tagged issues](https://github.com/matrix-org/matrix-rust-sdk/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and join our matrix channel at Matrix Rust SDK.
+
+## Dept of Bots 🤖
+
+### Alertbot ([website](https://github.com/moan0s/alertbot))
+
+[moanos [he/him]](https://matrix.to/#/@moanos:hyteck.de) announces
+
+> This new bot allows users to use webhooks to forward monitoring alerts (e.g from prometheus) to matrix rooms. This means that you no longer have to use E-Mail or Slack to receive alerts. To set it up visit [Github Alertmanager](https://github.com/moan0s/alertbot) or
+> join [#alertbot:hyteck.de](https://matrix.to/#/#alertbot:hyteck.de)
+
+### Opsdroid ([website](https://github.com/opsdroid/opsdroid))
+
+An open source chat-ops bot framework
+
+[Oleg](https://matrix.to/#/@oleg:fiksel.info) says
+
+> Though this release doesn't include Matrix-related changes. Still there are new feature and fixes worth mentioning:
+> * The brand new [command center backend](https://github.com/opsdroid/opsdroid/pull/1875) ([docs](https://docs.opsdroid.dev/en/stable/rest-api.html#command-center-methods)) from [@FabioRosado](https://github.com/FabioRosado)
+> * Several fixes to the Slack connector contributed by [@chillipeper](https://github.com/chillipeper)
+> * A fix to the Telegram connector from [@D3N14L](https://github.com/D3N14L)
+> * Couple of fixes to the Websocket connector from [@FabioRosado](https://github.com/FabioRosado)
+> * And a lot of fixed links in the docs by [@jaas666](https://github.com/jaas666)
+> * Also now the `dev` Docker image tag ([ghcr](https://github.com/opsdroid/opsdroid/pkgs/container/opsdroid), [Docker Hub](https://hub.docker.com/r/opsdroid/opsdroid)) is built on every commit to main/master branch
+> 
+> Thanks for all the contributions! 🙌
+> See [the full changelog](https://github.com/opsdroid/opsdroid/releases/tag/v0.27.0) for details.
+
+## Dept of Events and Talks 🗣️
+
+[HarHarLinks](https://matrix.to/#/@kim:sosnowkadub.de) says
+
+> Greetings to the world from [#matrix-summit-berlin-2022:c-base.org](https://matrix.to/#/#matrix-summit-berlin-2022:c-base.org)!
+> ![](/blog/img/AiDNtUzqjAXsdIjnAwlvMpqD.jpg)
+> ![](/blog/img/aLaDcRrXIzFWEdRXWPlnHQNp.jpg)
+
+## Dept of Interesting Projects 🛰️
+
+[Array in a Matrix](https://matrix.to/#/@array_in_a_matrix:arrayinamatrix.xyz) reports
+
+> Matrix AI that generates messages based off other users' messages using a neural network. The bot trains its GPT-2 model using the CPU and is written in JavaScript (Node.JS) and Python. The project's code can be found [here](https://git.arrayinamatrix.xyz/array-in-a-matrix/text-gen-bot).
+
+### MinesTRIX ([website](https://minestrix.henri2h.fr))
+
+A privacy focused social media based on MATRIX
+
+[Henri Carnot](https://matrix.to/#/@henri2h:carnot.cc) reports
+
+> Hi all,
+> quite a lot happened since the last twim post a few months ago.
+> 
+> In a nutshell, we refactored the feed page and user page for a better viewing experience. We also now allow displaying and commenting post images in a dedicated view.
+> Also, you can now send follow request using knocking, thanks to profile as space support. (Yes, MSC is coming)
+> 
+> Finally, we have now multi account support, better stories display and refactored login and settings page.
+> 
+> Well... we almost modified everything :D
+> 
+> See more at https://minestrix.henri2h.fr/posts/
+> 
+> Stay tuned, event organization is coming soon (you can see the first implementation in the blog post.
+> 
+> PS: For those at the Matrix summit, I will be presenting it tomorrow
+> ![](/blog/img/jcInmDVPCCAUYzCmHjTBMAnt.png)
+> ![](/blog/img/TLqkdBMZUvzYkYnnixSBcjqq.png)
+
+## Dept of Guides 🧭
+
+[Nate Covington](https://matrix.to/#/@natecovington:matrix.org) reports
+
+> I recently made a blog post / video walk through of Matrix, hopefully it will be helpful to someone:
+> https://www.covingtoncreations.com/blog/what-can-matrix-do-for-your-organization
+
+## Room of the Week 📆
+
+[ssorbom ⚡️](https://matrix.to/#/@ssorbom:chat.shawnsorbom.net) says
+
+> Have you ever felt lost in the Matrix world? Too many rooms and spaces to manage? Well, back by popular demand  (with Timo's blessing), I present, The Room of the Week! Every week we strive to highlight a room or a space that we believe deserves attention for discussing interesting going on across the Matrix Network.
+> 
+> This week on room of the week:
+> We Are All Tech enthusiasts on The Matrix Network, but do you ever experience Tech burnout? Do you ever wish you could find discussions in The Matrix Universe about things other than Tech? Well, this week we bring you a very technical solution!
+> Because we are highlighting:
+> #non-technology:matrix.org 
+> 
+> A space where you will find information about everything *except*  technology. Groups are helpfully categorized by Subspace, and feature discussions about everything from musical instruments to beverages. If it isn't about computing, it's there.
+> 
+> If you have a room you wish to see highlighted, join us at:
+> https://matrix.to/#/!bIyiUUnriVoHtYzuPS:fachschaften.org?via=chat.shawnsorbom.net&via=matrix.org&via=fachschaften.org
+> To get your favorite room of the week highlighted.
+
+## Dept of Ping 🏓
+
+No ping stats while Thib is away, but you can always join the fun at [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) and [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)!
+
+## That's all I know 🏁
+
+See you next week, and be sure to stop by [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) with your updates!
