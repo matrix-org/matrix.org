@@ -1,0 +1,31 @@
+---
+date: '2022-09-02'
+title: 'Securty vulnerabilities in Synapse up to (and including) 1.61.0'
+categories:
+  - Releases
+  - Security
+author: Brendan Abolivier
+image:
+---
+
+Hi all,
+
+This week we are disclosing the details of a vulnerability that we have
+addressed back in [Synapse 1.62.0]
+(https://matrix.org/blog/2022/07/06/synapse-1-62-released). Administrators of
+homeservers running a Synapse version below 1.62.0 with federation enabled
+are advised to update to Synapse 1.62.0 or higher.
+
+Synapse versions prior to 1.62.0 did not correctly implement Matrix's
+[event authorization rules]
+(https://spec.matrix.org/v1.3/rooms/v10/#authorization-rules), meaning an
+attacker could craft events that are not compliant with the Matrix
+specification but would still be accepted by Synapse. In rooms involving both
+homeservers running a vulnerable version of Synapse and homeservers running a
+spec-compliant implementation, this could result in divergence in the room's
+state between servers.
+
+Please see GitHub security advisory [GHSA-jhjh-776m-4765]
+(https://github.com/matrix-org/synapse/security/advisories/GHSA-jhjh-776m-4765)
+or [CVE-2022-31152]
+(https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-31152) for more information.
