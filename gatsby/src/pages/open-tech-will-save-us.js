@@ -12,8 +12,8 @@ import moment from "moment";
 const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
 
-const SHOW_LIVE_STREAM = true;
-const NEXT_EVENT = 18;
+const SHOW_LIVE_STREAM = false;
+const NEXT_EVENT = 19;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
@@ -26,13 +26,13 @@ if (SHOW_LIVE_STREAM) {
         controls
       ></video><br />
       <strong><a href="https://stream.matrix.org">Watch on stream.matrix.org</a></strong><br />
-      <strong><a href="https://youtube.com/watch?v=pGE2KEasjbc">Find the stream at https://youtube.com/watch?v=pGE2KEasjbc</a></strong>
+      <strong><a href="https://youtube.com/watch?v=cJHlndIcgMM">Find the stream at https://youtube.com/watch?v=cJHlndIcgMM</a></strong>
       <script src="/js/hls.light.min.js"></script>
       <script src="/js/livestream.js"></script>
     </div>
   );
 } else {
-  liveStream = <img src="/images/otwsu18.png" alt="Open Tech Will Save Us" />;
+  liveStream = <img src="/images/otwsu19.png" alt="Open Tech Will Save Us" />;
 }
 
 const OTWSU = ({ data }) => {
