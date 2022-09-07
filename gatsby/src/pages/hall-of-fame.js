@@ -10,6 +10,13 @@ const HallOfFame = () => {
     const hallOfFameEntries = [
         {
             date: '2022-03-10',
+            who: 'Cyastis Volantis',
+            profile: 'https://github.com/Cyastis',
+            description: 'Discovered issue with PIN screen being bypassable by opening the application in landscape mode. Fixed in Element iOS <a href="https://github.com/vector-im/element-ios/releases/tag/v1.9.1">1.9.1</a>.',
+            service: 'Element iOS'
+        },
+        {
+            date: '2022-03-10',
             who: 'Rex Kim (@rexouflage)',
             description: 'Reported an RTLO injection issue allowing an attacker to construct a link appearing to lead to an URL while actually leading to another. Fixed in Element iOS <a href="https://github.com/vector-im/element-ios/releases/tag/v1.8.17">1.8.17</a> and Element Android <a href="https://github.com/vector-im/element-android/releases/tag/v1.4.18">1.4.18</a>. Mitigated in Element Desktop <a href="https://github.com/vector-im/element-web/releases/tag/v1.11.1">1.11.1</a> by enabling link tooltips.',
             service: 'Element clients'
