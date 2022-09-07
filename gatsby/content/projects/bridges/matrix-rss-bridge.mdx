@@ -1,0 +1,53 @@
+---
+layout: project
+title: matrix-rss-bridge
+categories:
+ - bot
+ - bridge
+description: matrix-rss-bridge is a bridge for reading RSS feeds in Matrix rooms.
+author: Isaac Beverly
+maturity: Released
+language: python
+repo: https://gitlab.com/imbev/matrix-rss-bridge
+license: GPL-3.0-only
+featured: true
+bridges: RSS
+thumbnail: /docs/projects/images/rss.svg
+screenshot: /docs/projects/images/rss.svg
+---
+
+### Setup
+
+Requires Python ^3.8
+
+```sh
+python3 -m pip install poetry
+git clone https://gitlab.com/imbev/matrix-rss-bridge.git
+cd matrix-rss-bridge
+python3 -m poetry install
+```
+
+### Usage
+
+#### Config
+
+Create `config.toml` to configure the bridge.
+
+```toml
+# config.toml
+homeserver = "https://example.com"
+username = "username" 
+password = "password"
+interval = 60 # seconds
+
+[[bridge]]
+    name = "matrix.org blog"
+    feed_url = "https://matrix.org/blog/feed"
+    room_id = "!AUweUQXCxcVfFOaOIU:matrix.org"
+```
+
+#### Running
+
+```sh
+python3 -m poetry run bridge
+```
