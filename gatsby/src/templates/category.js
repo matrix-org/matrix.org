@@ -17,6 +17,10 @@ const Category = ({ pageContext: { category, limit, skip, currentPage }, data: {
   const prev = currentPage === 1 ? null : { frontmatter: { title: prevTitle }, fields: { slug: prevSlug } }
   const nextTitle = `Page ${currentPage + 1}`
   const nextSlug = `/blog/category/${_.kebabCase(category)}/${currentPage + 1}`
+  const next = edges.length >= limit ? {
+    frontmatter: { title: nextTitle },
+    fields: { slug: nextSlug },
+  } : null;
 
   return (
     <Layout navmode="blog">
@@ -41,10 +45,7 @@ const Category = ({ pageContext: { category, limit, skip, currentPage }, data: {
         ))}
         <PrevNext
           prev={prev}
-          next={{
-            frontmatter: { title: nextTitle },
-            fields: { slug: nextSlug },
-          }}
+          next={next}
         />
       </MXContentMain>
     </Layout>
