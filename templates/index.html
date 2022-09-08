@@ -1,0 +1,406 @@
+{% import "macros/navigation.html" as navigation_macros %}
+{% import "macros/footer.html" as footer_macros %}
+{% import "macros/twitter.html" as twitter_macros %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="twitter:widgets:csp" content="on" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <meta name="twitter:site" content="@matrixdotorg" />
+    <meta name="twitter:creator" content="@matrixdotorg" />
+
+    <title>Matrix.org{% if section.title %} - {{ section.title }}{% endif %}</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="RSS"
+        href="{{ get_url(path='atom.xml', trailing_slash=false)}}">
+</head>
+
+<body>
+    <header>
+        {{ navigation_macros::navigation() }}
+    </header>
+    <div class="hero herobackground">
+        <div class="herobackground__img"></div>
+        <div class="content">
+            <img src="images/matrix-logo-white.svg" alt="Matrix.org Logo" class="logo">
+            <h1 class="message">An open network for secure, decentralized communication</h1>
+            <a href="/docs/guides/introduction" class="button w-button">Learn More</a>
+        </div>
+    </div>
+    <main>
+        <div class="content">
+            <section>
+                <div class="grid">
+                    <div class="grid-container">
+                        <div class="block">
+                            <div class="imagine">
+                                {% set imagine = load_data(path="/partials/frontpage/imagine.md") %}
+                                {{ imagine | markdown | safe }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-container">
+                        <div class="block">
+                            <div class="thisismatrix">
+                                {% set thisismatrix = load_data(path="/partials/frontpage/this_is_matrix.md") %}
+                                {{ thisismatrix | markdown | safe }}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section>
+                <div class="grid dark">
+                    <div class="grid-container">
+                        <div class="block">
+                            {% set messaging = load_data(path="/partials/frontpage/features/messaging.md") %}
+                            <div class="text">
+                                {{ messaging | markdown | safe }}
+                            </div>
+                            <a href="/docs/guides/" class="w-button button-dark">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="grid-container">
+                        <div class="block">
+                            {% set e2ee = load_data(path="/partials/frontpage/features/e2ee.md") %}
+                            <div class="text">
+                                {{ e2ee | markdown | safe }}
+                            </div>
+                            <a href="/docs/guides/end-to-end-encryption-implementation-guide"
+                                class="w-button button-dark">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="grid-container">
+                        <div class="block">
+                            {% set voip = load_data(path="/partials/frontpage/features/voip.md") %}
+                            <div class="text">
+                                {{ voip | markdown | safe }}
+                            </div>
+                            <a href="/blog/2018/02/05/3-d-video-calling-with-matrix-webrtc-and-webvr-at-fosdem-2018/"
+                                class="w-button button-dark">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="grid-container">
+                        <div class="block">
+                            {% set bridging = load_data(path="/partials/frontpage/features/bridging.md") %}
+                            <div class="text">
+                                {{ bridging | markdown | safe }}
+                            </div>
+                            <a href="/bridges/" class="w-button button-dark">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="grid-container-full">
+                        <div class="block">
+                            {% set more = load_data(path="/partials/frontpage/features/more.md") %}
+                            <div class="text">
+                                {{ more | markdown | safe }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="howdoesitwork">
+                {% set how_does_it_work = load_data(path="/partials/frontpage/how_does_it_work.md") %}
+                {{ how_does_it_work | markdown | safe }}
+                <div class="how" style="height: 520px;">placeholder</div>
+            </section>
+            <section class="content dark" style="width: 100vw; max-width: unset;">
+                <div class="content" id="open-standard">
+                    <h2>An Open Standard</h2>
+                    <div class="grid">
+                        <div class="grid-container-third">
+                            <div class="block">
+                                <img src="assets/basic_signs.svg" alt="">
+                                <h4>Simple pragmatic <a href="/docs/api"> RESTful HTTP/JSON APIs</a> by default</h4>
+                            </div>
+                        </div>
+                        <div class="grid-container-third">
+                            <div class="block">
+                                <img src="assets/basic_spread_text.svg" alt="">
+                                <h4><a href="/docs/spec">Open specification</a> of the Matrix standard</h4>
+                            </div>
+                        </div>
+                        <div class="grid-container-third">
+                            <div class="block">
+                                <img src="assets/basic_share.svg" alt="">
+                                <h4>Fully decentralised conversations with no single points of control or failure</h4>
+                            </div>
+                        </div>
+                        <div class="grid-container-third">
+                            <div class="block">
+                                <img src="assets/basic_lock.svg" alt="">
+                                <h4>End-to-end encryption via Olm and Megolm</h4>
+                            </div>
+                        </div>
+                        <div class="grid-container-third">
+                            <div class="block">
+                                <img src="assets/music_microphone_old.svg" alt="">
+                                <h4>WebRTC VoIP/Video calling using Matrix signalling</h4>
+                            </div>
+                        </div>
+                        <div class="grid-container-third">
+                            <div class="block">
+                                <img src="assets/arrows_rotate.svg" alt="">
+                                <h4>Real-time synchronised history and state across all clients</h4>
+                            </div>
+                        </div>
+                        <div class="grid-container-third">
+                            <div class="block">
+                                <img src="assets/basic_mail_open_text.svg" alt="">
+                                <h4>Integrates with existing 3rd party IDs to authenticate and discover users</h4>
+                            </div>
+                        </div>
+                        <div class="grid-container-third">
+                            <div class="block">
+                                <img src="assets/basic_heart.svg" alt="">
+                                <h4>Maintained by the non-profit <a href="/foundation/">Matrix.org Foundation</a></h4>
+                            </div>
+                        </div>
+                        <div class="grid-container-third">
+                            <div class="block">
+                                <img src="assets/basic_elaboration_message_happy.svg" alt="">
+                                <h4>Group conversations, read receipts, typing notifications, presence...</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="content" style="padding-top: 60px;">
+                <div class="content">
+                    <section id="latest-news">
+                        <h2>Latest News</h2>
+                        <div class="grid dark">
+                            {% set blog_section = get_section(path="blog/_index.md") %}
+                            {% for page in blog_section.pages | slice(end=4) %}
+                            {% set path = page.path %}
+                            {% set content = page.content | striptags | truncate(length=133) %}
+                            {% set title = page.title %}
+                            {% set date = page.date %}
+                            {% set author = page.taxonomies.author | default (value=["unknown author"]) | first %}
+                            <div class="grid-container">
+                                <div class="block">
+                                    <h3>{{ title }}</h3>
+                                    <div>
+                                        <p style="color: #666;">{{ date }} by {{ author }}</p>
+                                        <p>
+                                            {{ content }}
+                                        </p>
+                                    </div>
+                                    <a href="{{ path }}" class="w-button button-dark">Read more</a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <a href="/blog" class="w-button button-dark">View all Posts</a>
+                    </section>
+                </div>
+            </div>
+            <section>
+                <h2>Explore Matrix</h2>
+                <div id="explore">
+                    <a title="Try Matrix" href="/docs/projects/try-matrix-now">
+                        <img src="assets/basic_elaboration_message_happy.svg">
+                        <span>Try Matrix</span>
+                    </a>
+                    <a title="Clients" href="/clients-matrix/">
+                        <img src="assets/software_layout_header_sideleft.svg">
+                        <span>Clients</span>
+                    </a>
+                    <a title="Bots" href="/docs/projects/bots">
+                        <img src="assets/basic_calculator.svg">
+                        <span>Bots</span>
+                    </a>
+                    <a title="SDKs" href="/sdks/">
+                        <img src="assets/software_layers2.svg">
+                        <span>SDKs</span>
+                    </a>
+                    <a title="Hosting" href="/hosting/">
+                        <img src="assets/basic_cloud.svg">
+                        <span>Hosting</span>
+                    </a>
+                </div>
+            </section>
+            <section id="sdks">
+                <h2>SDKs</h2>
+                <h4 class="subtitle">Native SDKs for multiple platforms, including:</h4>
+                <div id="explore">
+                    <a title="Python" href="https://github.com/poljar/matrix-nio">
+                        <img src="assets/python.svg">
+                        <span>Python</span>
+                    </a>
+                    <a title="JavaScript" href="https://github.com/matrix-org/matrix-js-sdk">
+                        <img src="assets/js.svg">
+                        <span>JavaScript</span>
+                    </a>
+                    <a title="Android" href="https://github.com/matrix-org/matrix-android-sdk">
+                        <img src="assets/android.svg">
+                        <span>Android</span>
+                    </a>
+                    <a title="iOS" href="https://github.com/matrix-org/matrix-ios-sdk">
+                        <img src="assets/iOS.svg">
+                        <span>iOS</span>
+                    </a>
+                </div>
+                <a href="/sdks/" class="w-button button-dark">View all SDKs</a>
+            </section>
+            <section>
+                <h2>What people are saying</h2>
+                <div class="grid">
+                    <div class="grid-container">
+                        <div class="block">
+                            {{ twitter_macros::tweet(id="1093148021980889088",
+                            api_token=config.extra.twitter_api_bearer_token) }}
+                        </div>
+                    </div>
+                    <div class="grid-container">
+                        <div class="block">
+                            {{ twitter_macros::tweet(id="1051260991479013376",
+                            api_token=config.extra.twitter_api_bearer_token) }}
+                        </div>
+                    </div>
+                    <div class="grid-container">
+                        <div class="block">
+                            {{ twitter_macros::tweet(id="1130695713057148928",
+                            api_token=config.extra.twitter_api_bearer_token) }}
+                        </div>
+                    </div>
+                    <div class="grid-container">
+                        <div class="block">
+                            {{ twitter_macros::tweet(id="1102912894260469760",
+                            api_token=config.extra.twitter_api_bearer_token) }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="dark-bg" id="support-container">
+                <h2>Support Matrix</h2>
+                <p>If you share our vision, or are building on top of Matrix, please consider donating...</p>
+                <p>Support us on Patreon for great rewards including access to the supporters-only podcast,
+                    and even a
+                    voice at our weekly meetings.<br>
+                    <a href="https://www.patreon.com/matrixdotorg">Find out more at our Patreon page.</a>
+                </p>
+                <div id="support">
+                    <div>
+                        <h3>Patreon</h3>
+                        <a href="https://www.patreon.com/matrixdotorg"><img alt="Patreon" src="/assets/patreon.png"></a>
+                    </div>
+                    <div>
+                        <h3>Liberapay</h3>
+                        <a href="https://liberapay.com/matrixdotorg"><img alt="Liberapay"
+                                src="/assets/fund-via-liberapay.png"></a>
+                    </div>
+                    <div>
+                        <h3>Cryptocurrency</h3>
+                        <p>You can also send us cryptocurrency:<br>
+                            <small>BTC 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE</small><br>
+                            <small>ETH 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485</small>
+                        </p>
+                    </div>
+
+                </div>
+                <p>If you share our vision, or are building on top of Matrix, please consider donating. See our current
+                    <a href="/supporters">Elliptic supporters!</a>
+                </p>
+            </section>
+            <section id="sponsors">
+                <h2>Thank you to our incredible sponsors</h2>
+                <div class="grid">
+                    <div class="grid-container-third">
+                        <div class="block">
+                            <div class="logo">
+                                <img src="/assets/status.svg" width="96px" height="96px">
+                            </div>
+                            <div class="content">
+                                <h3>Status</h3>
+                                <p>A Mobile OS, Built for Ethereum.</p>
+                                <a href="https://status.im">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-container-third">
+                        <div class="block">
+                            <div class="logo">
+                                <img src="/assets/upcloud.svg" width="96px" height="96px">
+                            </div>
+                            <div class="content">
+                                <h3>UpCloud</h3>
+                                <p>Matrix.org is generously hosted by UpCloud! Host your homeserver via UpCloud and get
+                                    a
+                                    $25 credit.</p>
+                                <a href="https://upcloud.com/">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-container-third">
+                        <div class="block">
+                            <div class="logo">
+                                <img src="/assets/pia.svg" width="96px" height="96px">
+                            </div>
+                            <div class="content">
+                                <h3>Private Internet Access</h3>
+                                <p>Private Internet Access™ VPN Service encrypts your connection and provides you with
+                                    an
+                                    anonymous IP to protect your
+                                    privacy.</p>
+                                <a href="https://www.privateinternetaccess.com/">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-container-third">
+                        <div class="block">
+                            <div class="logo">
+                                <img src="/assets/inblockchain.png" width="96px" height="96px">
+                            </div>
+                            <div class="content">
+                                <h3>InBlockchain</h3>
+                                <p>InBlockchain is a full-service firm focusing on consulting, incubating and
+                                    facilitating
+                                    crowdsales for promising
+                                    blockchain startups.</p>
+                                <a href="http://www.inblockchain.com/">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-container-third">
+                        <div class="block">
+                            <div class="logo">
+                                <img src="/assets/omisego.svg" width="96px" height="96px">
+                            </div>
+                            <div class="content">
+                                <h3>OmiseGO</h3>
+                                <p>OmiseGO is a public Ethereum-based financial technology for use in mainstream digital
+                                    wallets.</p>
+                                <a href="https://omisego.network/">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-container-third">
+                        <div class="block">
+                            <div class="logo">
+                                <img src="/assets/tendermint.png" width="96px" height="96px">
+                            </div>
+                            <div class="content">
+                                <h3>Tendermint</h3>
+                                <p>Byzantine fault-tolerant replicated state machines in any programming language.</p>
+                                <a href="https://tendermint.com/">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        {{ footer_macros::footer() }}
+    </footer>
+</body>
+
+</html>

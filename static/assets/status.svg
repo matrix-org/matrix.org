@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>status-2-logo-svg-vector</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-160.000000, -602.000000)" fill-rule="nonzero">
+            <g id="status-2-logo-svg-vector" transform="translate(160.000000, 602.000000)">
+                <circle id="Oval" fill="#5B6DEE" cx="128" cy="128" r="128"></circle>
+                <path d="M106.40256,120.16512 C101.939571,120.140099 97.4836555,120.523565 93.09056,121.31072 C96.70656,87.86688 124.57856,62.54336 157.76128,62.54592 C178.07872,62.54592 192,72.49408 192,93.09184 C192,113.6896 175.29088,123.63776 150.912,123.63776 C132.91776,123.63648 124.39936,120.16512 106.40256,120.16512 M105.088,132.36352 C80.7104,132.36352 64,142.31168 64,162.90944 C64,183.5072 77.92128,193.45536 98.23872,193.45536 C131.42528,193.45536 159.29472,168.1344 162.90944,134.69056 C158.516345,135.477715 154.060429,135.861181 149.59744,135.83616 C131.60064,135.83488 123.08224,132.36352 105.088,132.36352" id="Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

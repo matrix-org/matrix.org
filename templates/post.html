@@ -1,0 +1,43 @@
+{% import "macros/navigation.html" as navigation_macros %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="twitter:widgets:csp" content="on" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="twitter:site" content="@matrixdotorg" />
+    <meta name="twitter:creator" content="@matrixdotorg" />
+
+    <title>Matrix.org - {{ page.title }}</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <header>
+        {{ navigation_macros::navigation(active="Blog") }}
+    </header>
+    <main>
+        <article class="content">
+            <header>
+                <h1>{{ page.title }}</h1>
+                <span>{{ page.date }}{% if page.taxonomies.categories %} — <a
+                        href="/categories/{{ page.taxonomies.categories | first | slugify }}">{{
+                        page.taxonomies.categories
+                        | first }}</a>
+                    {% endif %} — <a href="/author/{{ page.taxonomies.author | default (value=['unknown author']) | first |
+                    slugify }}">{{ page.taxonomies.author | default (value=["unknown author"]) | first }}</a>
+                </span>
+            </header>
+            <div class="post">
+                {{ page.content | safe | markdown | safe }}
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>
