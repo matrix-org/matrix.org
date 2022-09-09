@@ -1,6 +1,7 @@
 ---
 date: '2022-09-02'
 title: 'This Week in Matrix 2022-09-02'
+path: /blog/2022/09/02/this-week-in-matrix-2022-09-02
 template: post.html
 taxonomies:
   categories:
@@ -406,7 +407,7 @@ The one mobile-first, decentralized community organizing app
 
 > Oh and as a fun side project we are building a real Beeper beeper. It might be the very first dedicated Matrix device? It’s basically a Blackberry for Matrix, with an e-paper display (same tech as Pebble) 🙂 https://twitter.com/ericmigi/status/1558137599893524480 If you are a hacker who wants to build something with it, I have a few extra that I might be able to give out. Send me a message with a convincing argument 😉
 > 
-> ![](/blog/img/beeperhw1.jpg)
+> ![](beeperhw1.jpg)
 
 ## Dept of Ping 🏓
 
