@@ -84,6 +84,13 @@
         }
 
         aside {
+            a {
+                color: rgb(51, 51, 51);
+
+                &:hover {
+                    color: rgb(0, 152, 212);
+                }
+            }
 
             max-width: 320px;
             width: 100%;
