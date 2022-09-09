@@ -1,4 +1,5 @@
 {% import "macros/navigation.html" as navigation_macros %}
+{% import "macros/footer.html" as footer_macros %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,6 +57,9 @@
             {% endif %}
         </nav>
     </main>
+    <footer>
+        {{ footer_macros::footer() }}
+    </footer>
 </body>
 
 </html>
