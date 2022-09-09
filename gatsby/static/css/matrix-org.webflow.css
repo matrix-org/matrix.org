@@ -46,6 +46,15 @@ h6 {
   font-weight: 500;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    scroll-margin-top: 74px;
+}
+
 a {
   color: #0098d4;
   text-decoration: none;
