@@ -1,4 +1,3 @@
-{% import "macros/navigation.html" as navigation_macros %}
 {% import "macros/footer.html" as footer_macros %}
 {% import "macros/twitter.html" as twitter_macros %}
 <!DOCTYPE html>
@@ -23,7 +22,7 @@
 
 <body id="frontpage">
     <header>
-        {{ navigation_macros::navigation() }}
+        {% include "includes/navigation.html" %}
     </header>
     <div class="hero herobackground">
         <div class="herobackground__img"></div>

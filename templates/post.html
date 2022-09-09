@@ -1,4 +1,3 @@
-{% import "macros/navigation.html" as navigation_macros %}
 {% import "macros/footer.html" as footer_macros %}
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +19,7 @@
 
 <body>
     <header>
-        {{ navigation_macros::navigation(active="Blog") }}
+        {% include "includes/navigation.html" %}
     </header>
     <main>
         <article class="content post">
