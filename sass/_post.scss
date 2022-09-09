@@ -1,9 +1,13 @@
 .post {
     margin-top: 1em;
+    width: 100%;
+    max-width: 1200px;
+
 
     iframe {
         aspect-ratio: 16/9;
-        width: 100%;
+        max-width: 1200px;
+        width: 100vw;
     }
 
     blockquote {
@@ -84,6 +88,10 @@
         }
 
         aside {
+            @media (max-width: 991px) {
+                display: none;
+            }
+
             a {
                 color: rgb(51, 51, 51);
 

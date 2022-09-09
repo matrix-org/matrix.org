@@ -139,6 +139,18 @@ ol:last-child {
     flex-direction: column;
     align-items: center;
     align-self: center;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    @media (max-width: 991px) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    @media (max-width: 767px) {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
 }
 
 article.content {
@@ -179,6 +191,7 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
 }
 
 footer {
