@@ -1,0 +1,10 @@
+header = [
+    { title = "Discover", href = "/discover/" },
+    { title = "Develop", href = "/docs/develop/" },
+    { title = "Foundation", href = "/foundation/" },
+    { title = "Blog", href = "/blog/" },
+    { title = "FAQs", href = "/faq/" },
+    { title = "Matrix Live", href = "/matrixlive/" },
+    { title = "Shop", href = "https://shop.matrix.org" },
+    { title = "Try Now", href = "/docs/projects/try-matrix-now/", primary = true },
+]

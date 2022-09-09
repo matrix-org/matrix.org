@@ -19,6 +19,8 @@
 </head>
 
 <body {% block body_attrs %}{% endblock body_attrs %}>
+    {% set navigation = load_data(path="navigation.toml") %}
+
     <header>
         {% include "includes/navigation.html" %}
     </header>
