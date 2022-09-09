@@ -1,4 +1,3 @@
-{% import "macros/footer.html" as footer_macros %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +56,7 @@
         </nav>
     </main>
     <footer>
-        {{ footer_macros::footer() }}
+        {% include "includes/footer.html" %}
     </footer>
 </body>
 
