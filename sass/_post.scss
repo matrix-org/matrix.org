@@ -5,6 +5,17 @@
         aspect-ratio: 16/9;
         width: 100%;
     }
+
+    blockquote {
+        padding-left: 28px;
+        margin: 0 0 10px 0;
+        padding: 10px 20px;
+        border-left: 5px solid #E2E2E2;
+    }
+
+    img {
+        max-height: 40rem;
+    }
 }
 
 .article_linebreak {

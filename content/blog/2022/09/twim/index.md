@@ -41,7 +41,7 @@ taxonomies:
   > 
   > Currently, a room can be set so that prospective members can [knock](https://github.com/matrix-org/matrix-doc/pull/2403) to request to join the room, or allow [members of a different room to join](https://github.com/matrix-org/matrix-doc/pull/3083).  However a room cannot be set up to allow both; MSC3386 proposes a change to the join rules to change this.
   > 
-  > ![](/blog/img/LShedkpCHPSQDZQsWcdJzSui.png)
+  > ![](matrix_spec_change_proposals.png)
 {% end %}
 
 ## Dept of Servers 🏢
@@ -173,7 +173,7 @@ A multi purpose multi platform bridge, formerly known as matrix-github
 > 
 > Want to work with us at Beeper? We are hiring 100% remote backend, iOS and Android developers. Send me a message @eric:beeper.com. And if you want to develop an open source bridge, we will fund it with up to $5,000.
 > 
-> <iframe width="560" height="315" src="https://www.youtube.com/embed/IY5zOevr08I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+> <iframe src="https://www.youtube.com/embed/IY5zOevr08I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Nheko ([website](https://nheko-reborn.github.io))
 
