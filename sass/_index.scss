@@ -406,3 +406,15 @@ h4.subtitle {
     flex-direction: column;
     align-items: center;
 }
+
+#frontpage {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+    }
+}

@@ -1,4 +1,5 @@
 {% import "macros/navigation.html" as navigation_macros %}
+{% import "macros/footer.html" as footer_macros %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +23,7 @@
         {{ navigation_macros::navigation(active="Blog") }}
     </header>
     <main>
-        <article class="content">
+        <article class="content post">
             <header>
                 <h1>{{ page.title }}</h1>
                 <span>{{ page.date }}{% if page.taxonomies.categories %} — <a
@@ -33,11 +34,37 @@
                     slugify }}">{{ page.taxonomies.author | default (value=["unknown author"]) | first }}</a>
                 </span>
             </header>
-            <div class="post">
-                {{ page.content | safe | markdown | safe }}
+            <div class="post-content">
+                <main>
+                    {{ page.content | safe | markdown | safe }}
+                </main>
+                <aside>
+                    <h3>Post Contents</h3>
+                    {% if page.toc %}
+                    <ul>
+                        {% for h1 in page.toc %}
+                        <li>
+                            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                            {% if h1.children %}
+                            <ul>
+                                {% for h2 in h1.children %}
+                                <li>
+                                    <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </aside>
             </div>
         </article>
     </main>
+    <footer>
+        {{ footer_macros::footer() }}
+    </footer>
 </body>
 
 </html>
