@@ -26,9 +26,13 @@ body {
         "Segoe UI Emoji",
         /* Emojis*/
         "Segoe UI Symbol";
-    /* Emojis*/
 
-    line-height: 1.5em;
+    font-weight: 400;
+    line-height: 1.75;
+
+    &>main {
+        padding-top: 60px;
+    }
 }
 
 h1 {
@@ -91,16 +95,14 @@ img {
 a {
     color: #0098d4;
     text-decoration: none;
+
+    &:active,
+    &:hover {
+        outline: 0;
+    }
 }
 
-a {
-    background-color: transparent;
-}
 
-a:active,
-a:hover {
-    outline: 0;
-}
 
 ul,
 ol {
@@ -111,6 +113,7 @@ ol {
 
 p {
     margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 p:not(:last-child),
@@ -187,7 +190,8 @@ article.content {
 }
 
 main {
-    padding-top: 60px;
+
+
     display: flex;
     justify-content: center;
     flex-direction: column;
