@@ -368,7 +368,7 @@ Synapse Maintenance Container – Docker container with tools for synapse & post
 > 
 > Camp ended Sunday, August 28th, 2022 (Navarro, CA, USA) (Internet Archive / Gatherings For Good / Custom Camps / Camp Navarro).
 > 
-> Previous update: https://matrix.org/blog/2022/08/19/this-week-in-matrix-2022-08-19#one-week-until-dweb-camp ([!QQpfJfZvqxbCfeDgCj:matrix.org/$891I4nVQp4ZBGG79-vsO6w8rEGJ_Vfar69QsICy8R98](https://matrix.to/#/!QQpfJfZvqxbCfeDgCj:matrix.org/$891I4nVQp4ZBGG79-vsO6w8rEGJ_Vfar69QsICy8R98?via=matrix.org&via=element.io&via=kde.org))
+> Previous update: <https://matrix.org/blog/2022/08/19/this-week-in-matrix-2022-08-19#one-week-until-dweb-camp> ([!QQpfJfZvqxbCfeDgCj:matrix.org/$891I4nVQp4ZBGG79-vsO6w8rEGJ_Vfar69QsICy8R98](https://matrix.to/#/!QQpfJfZvqxbCfeDgCj:matrix.org/$891I4nVQp4ZBGG79-vsO6w8rEGJ_Vfar69QsICy8R98?via=matrix.org&via=element.io&via=kde.org))
 > 
 > ### Summit Bridge Call
 > 
