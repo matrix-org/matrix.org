@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="twitter:widgets:csp" content="on" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="twitter:site" content="@matrixdotorg" />
+    <meta name="twitter:creator" content="@matrixdotorg" />
+
+    <title>{% block html_title %}Matrix.org{% endblock html_title %}</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="stylesheet" href="/style.css" />
+
+    {% block head_extra %}{% endblock head_extra -%}
+</head>
+
+<body {% block body_attrs %}{% endblock body_attrs %}>
+    <header>
+        {% include "includes/navigation.html" %}
+    </header>
+
+    {% block content %}{% endblock content %}
+
+    <footer>
+        {% include "includes/footer.html" %}
+    </footer>
+</body>
+
+</html>

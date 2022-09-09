@@ -1,63 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="twitter:widgets:csp" content="on" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <meta name="twitter:site" content="@matrixdotorg" />
-    <meta name="twitter:creator" content="@matrixdotorg" />
-
-    <title>Matrix.org - {{ section.title }}</title>
-    <link rel="shortcut icon" href="/assets/favicon.ico" />
-    <link rel="icon" type="image/png" href="/assets/favicon.png" />
-    <link rel="stylesheet" href="/style.css" />
-
-    <link rel="alternate" type="application/rss+xml" title="RSS"
-        href="{{ get_url(path='atom.xml', trailing_slash=false)}}">
-</head>
-
-<body>
-    <header>
-        {% include "includes/navigation.html" %}
-    </header>
-    <main id="section">
-        {% for page in paginator.pages %}
-        <article class="content">
-            <header>
-                <h1><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h1>
-                <span>{{ page.date }}{% if page.taxonomies.categories %} — <a
-                        href="/categories/{{ page.taxonomies.categories | first | slugify }}">{{
-                        page.taxonomies.categories
-                        | first }}</a>
-                    {% endif %} — <a href="/author/{{ page.taxonomies.author | default (value=['unknown author']) | first |
+{% extends "skel.html" %}
+{% block html_title %}Matrix.org - {{ section.title }}{% endblock html_title %}
+{% block content %}
+<main id="section">
+    {% for page in paginator.pages %}
+    <article class="content">
+        <header>
+            <h1><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h1>
+            <span>{{ page.date }}{% if page.taxonomies.categories %} — <a
+                    href="/categories/{{ page.taxonomies.categories | first | slugify }}">{{
+                    page.taxonomies.categories
+                    | first }}</a>
+                {% endif %} — <a href="/author/{{ page.taxonomies.author | default (value=['unknown author']) | first |
                             slugify }}">{{ page.taxonomies.author | default (value=["unknown author"]) | first }}</a>
-                </span>
-            </header>
-            <div class="post">
-                {{ page.content | safe | markdown | safe }}
-            </div>
-            <div class="article_linebreak"></div>
-        </article>
-        {% endfor %}
-        <nav class="pagination content">
-            {% if paginator.previous %}
-            <a class="w-button button-dark" href="{{ paginator.previous }}">‹ Previous</a>
-            {% else %}
-            <div></div>
-            {% endif %}
-            {% if paginator.next %}
-            <a class="w-button button-dark" href="{{ paginator.next }}">Next ›</a>
-            {% else %}
-            <div></div>
-            {% endif %}
-        </nav>
-    </main>
-    <footer>
-        {% include "includes/footer.html" %}
-    </footer>
-</body>
-
-</html>
+            </span>
+        </header>
+        <div class="post">
+            {{ page.content | safe | markdown | safe }}
+        </div>
+        <div class="article_linebreak"></div>
+    </article>
+    {% endfor %}
+    <nav class="pagination content">
+        {% if paginator.previous %}
+        <a class="w-button button-dark" href="{{ paginator.previous }}">‹ Previous</a>
+        {% else %}
+        <div></div>
+        {% endif %}
+        {% if paginator.next %}
+        <a class="w-button button-dark" href="{{ paginator.next }}">Next ›</a>
+        {% else %}
+        <div></div>
+        {% endif %}
+    </nav>
+</main>
+{% endblock content %}

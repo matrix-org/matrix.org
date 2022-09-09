@@ -1,68 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="twitter:widgets:csp" content="on" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <meta name="twitter:site" content="@matrixdotorg" />
-    <meta name="twitter:creator" content="@matrixdotorg" />
-
-    <title>Matrix.org - {{ page.title }}</title>
-    <link rel="shortcut icon" href="/assets/favicon.ico" />
-    <link rel="icon" type="image/png" href="/assets/favicon.png" />
-    <link rel="stylesheet" href="/style.css" />
-</head>
-
-<body>
-    <header>
-        {% include "includes/navigation.html" %}
-    </header>
-    <main>
-        <article class="content post">
-            <header>
-                <h1>{{ page.title }}</h1>
-                <span>{{ page.date }}{% if page.taxonomies.categories %} — <a
-                        href="/categories/{{ page.taxonomies.categories | first | slugify }}">{{
-                        page.taxonomies.categories
-                        | first }}</a>
-                    {% endif %} — <a href="/author/{{ page.taxonomies.author | default (value=['unknown author']) | first |
+{% extends "skel.html" %}
+{% block html_title %}Matrix.org - {{ page.title }}{% endblock html_title %}
+{% block content %}
+<main>
+    <article class="content post">
+        <header>
+            <h1>{{ page.title }}</h1>
+            <span>{{ page.date }}{% if page.taxonomies.categories %} — <a
+                    href="/categories/{{ page.taxonomies.categories | first | slugify }}">{{
+                    page.taxonomies.categories
+                    | first }}</a>
+                {% endif %} — <a href="/author/{{ page.taxonomies.author | default (value=['unknown author']) | first |
                     slugify }}">{{ page.taxonomies.author | default (value=["unknown author"]) | first }}</a>
-                </span>
-            </header>
-            <div class="post-content">
-                <main>
-                    {{ page.content | safe | markdown | safe }}
-                </main>
-                <aside>
-                    <h3>Post Contents</h3>
-                    {% if page.toc %}
-                    <ul style="list-style: none; padding-left: 0px;">
-                        {% for h1 in page.toc %}
-                        <li>
-                            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-                            {% if h1.children %}
-                            <ul>
-                                {% for h2 in h1.children %}
-                                <li>
-                                    <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            {% endif %}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                </aside>
-            </div>
-        </article>
-    </main>
-    <footer>
-        {% include "includes/footer.html" %}
-    </footer>
-</body>
-
-</html>
+            </span>
+        </header>
+        <div class="post-content">
+            <main>
+                {{ page.content | safe | markdown | safe }}
+            </main>
+            <aside>
+                <h3>Post Contents</h3>
+                {% if page.toc %}
+                <ul style="list-style: none; padding-left: 0px;">
+                    {% for h1 in page.toc %}
+                    <li>
+                        <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                        {% if h1.children %}
+                        <ul>
+                            {% for h2 in h1.children %}
+                            <li>
+                                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </aside>
+        </div>
+    </article>
+</main>
+{% endblock content %}
