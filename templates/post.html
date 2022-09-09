@@ -41,7 +41,7 @@
                 <aside>
                     <h3>Post Contents</h3>
                     {% if page.toc %}
-                    <ul>
+                    <ul style="list-style: none; padding-left: 4px;">
                         {% for h1 in page.toc %}
                         <li>
                             <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
