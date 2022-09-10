@@ -6,13 +6,16 @@
     <article class="content">
         <header>
             <h1><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h1>
-            <span>{{ page.date }}{% if page.taxonomies.categories %} — <a
+            <span>{{ page.date | date(format="%d.%m.%Y %H:%M") }}{% if page.taxonomies.categories %} — <a
                     href="/categories/{{ page.taxonomies.categories | first | slugify }}">{{
                     page.taxonomies.categories
                     | first }}</a>
                 {% endif %} — <a href="/author/{{ page.taxonomies.author | default (value=['unknown author']) | first |
                             slugify }}">{{ page.taxonomies.author | default (value=["unknown author"]) | first }}</a>
             </span>
+            {% if page.updated %}
+            <br><small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
+            {% endif %}
         </header>
         <div class="post">
             {{ page.content | safe | markdown | safe }}
