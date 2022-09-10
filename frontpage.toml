@@ -1,0 +1,49 @@
+[[sponsors]]
+name = "Status"
+image = "status.svg"
+description = "A Mobile OS, Built for Ethereum."
+website = "https://status.im"
+
+[[sponsors]]
+name = "UpCloud"
+image = "upcloud.svg"
+description = """
+    Matrix.org is generously hosted by UpCloud!
+    Host your homeserver via UpCloud and get a $25 credit.
+"""
+website = "https://upcloud.com/"
+
+[[sponsors]]
+name = "Private Internet Access"
+image = "pia.svg"
+description = """
+    Private Internet Access™ VPN Service encrypts your connection
+    and provides you with an anonymous IP to protect your privacy.
+"""
+website = "https://www.privateinternetaccess.com/"
+
+[[sponsors]]
+name = "InBlockchain"
+image = "inblockchain.png"
+description = """
+    InBlockchain is a full-service firm focusing on consulting, incubating
+    and facilitating crowdsales for promising blockchain startups.
+"""
+website = "http://www.inblockchain.com/"
+
+[[sponsors]]
+name = "OmiseGO"
+image = "omisego.svg"
+description = """
+    OmiseGO is a public Ethereum-based financial technology for use
+    in mainstream digital wallets.
+"""
+website = "https://omisego.network/"
+
+[[sponsors]]
+name = "Tendermint"
+image = "tendermint.png"
+description = """
+    Byzantine fault-tolerant replicated state machines in any programming language.
+"""
+website = "https://tendermint.com/"

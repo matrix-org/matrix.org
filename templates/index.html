@@ -293,83 +293,22 @@
         <section id="sponsors">
             <h1>Thank you to our incredible sponsors</h1>
             <div class="grid">
+                {% set frontpage = load_data(path="frontpage.toml") %}
+                {% for sponsor in frontpage.sponsors %}
                 <div class="grid-container-third">
                     <div class="block">
                         <div class="logo">
-                            <img src="/assets/status.svg" width="96px" height="96px">
+                            <img src="/assets/{{ sponsor.image }}" alt="{{ sponsor.name }} logo" width="96px"
+                                height="96px">
                         </div>
                         <div class="content">
-                            <h2>Status</h2>
-                            <p>A Mobile OS, Built for Ethereum.</p>
-                            <a href="https://status.im">Learn more</a>
+                            <h2>{{ sponsor.name }}</h2>
+                            <p>{{ sponsor.description }}</p>
+                            <a href="{{ sponsor.website }}">Learn more</a>
                         </div>
                     </div>
                 </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <div class="logo">
-                            <img src="/assets/upcloud.svg" width="96px" height="96px">
-                        </div>
-                        <div class="content">
-                            <h2>UpCloud</h2>
-                            <p>Matrix.org is generously hosted by UpCloud! Host your homeserver via UpCloud and get
-                                a $25 credit.</p>
-                            <a href="https://upcloud.com/">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <div class="logo">
-                            <img src="/assets/pia.svg" width="96px" height="96px">
-                        </div>
-                        <div class="content">
-                            <h2>Private Internet Access</h2>
-                            <p>Private Internet Access™ VPN Service encrypts your connection and provides you with
-                                an anonymous IP to protect your
-                                privacy.</p>
-                            <a href="https://www.privateinternetaccess.com/">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <div class="logo">
-                            <img src="/assets/inblockchain.png" width="96px" height="96px">
-                        </div>
-                        <div class="content">
-                            <h2>InBlockchain</h2>
-                            <p>InBlockchain is a full-service firm focusing on consulting, incubating and
-                                facilitating crowdsales for promising blockchain startups.</p>
-                            <a href="http://www.inblockchain.com/">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <div class="logo">
-                            <img src="/assets/omisego.svg" width="96px" height="96px">
-                        </div>
-                        <div class="content">
-                            <h2>OmiseGO</h2>
-                            <p>OmiseGO is a public Ethereum-based financial technology for use in mainstream digital
-                                wallets.</p>
-                            <a href="https://omisego.network/">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <div class="logo">
-                            <img src="/assets/tendermint.png" width="96px" height="96px">
-                        </div>
-                        <div class="content">
-                            <h2>Tendermint</h2>
-                            <p>Byzantine fault-tolerant replicated state machines in any programming language.</p>
-                            <a href="https://tendermint.com/">Learn more</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </section>
     </div>
