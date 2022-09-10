@@ -1,0 +1,8 @@
+{% extends "skel.html" %}
+{% block html_title %}Matrix.org - {{ section.title }}{% endblock html_title %}
+{% block content %}
+<main>
+    <h1>{{ section.title }}</h1>
+    {{ section.content | safe }}
+</main>
+{% endblock content %}
