@@ -147,7 +147,7 @@ A multi purpose multi platform bridge, formerly known as matrix-github
 
 > Hey it’s Eric from [Beeper](https://www.beeper.com)! Been a while since our last update. Reminder: [Beeper](https://www.beeper.com) is a universal chat app built on top of Matrix. We've created 12+ open source Matrix bridges and integrated them into an easy to use all-in-one service which does not require setting up your own homeserver.
 > 
-> Since our last update in [February](https://matrix.org/blog/category/this-week-in-matrix/5#beeper-website) (!) we have been really busy! We published a short-term [roadmap](https://blog.beeper.com/p/product-roadmap-april-2022) back in April and have almost completed all items on the list. 
+> Since our last update in [February](/blog/2022/02/11/this-week-in-matrix-2022-02-11#beeper-website) (!) we have been really busy! We published a short-term [roadmap](https://blog.beeper.com/p/product-roadmap-april-2022) back in April and have almost completed all items on the list. 
 > 
 > Today I want to share the improvements we’ve made to **Beeper Desktop**. Check out the [video](https://www.youtube.com/watch?v=xjMOb4Jwrfg) below for a full demo! 
 > 
