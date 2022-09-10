@@ -1,4 +1,4 @@
-## How does it work?
+# How does it work?
 
 Matrix is really a **decentralised conversation store** rather than a messaging protocol.
 When you send a message in Matrix, it is replicated over all the servers whose

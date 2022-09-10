@@ -1,6 +1,10 @@
+<div>
+
 ![music microphone old](assets/music_microphone_old.svg)
 
-#### VoIP
+## VoIP
+
+</div>
 
 With the advent of WebRTC, developers gained the ability to exchange high quality
 voice and video calls – but no standard way to actually route the calls.

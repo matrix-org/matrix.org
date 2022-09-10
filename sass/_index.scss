@@ -58,7 +58,6 @@
 .hero {
 
     .content {
-
         z-index: 49;
         flex-direction: column;
         text-align: center;
@@ -85,14 +84,12 @@
         .message {
             color: #fff;
             margin-bottom: 40px;
-            line-height: 48px;
         }
     }
 
     .button {
         padding: 16px 32px;
         border-radius: 32px;
-        font-size: 18px;
 
         background-color: #fff;
         color: #000;
@@ -109,7 +106,7 @@
 }
 
 .imagine {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: normal;
     line-height: 1.5em;
     text-align: left;
@@ -129,8 +126,6 @@
 
     h1 {
         text-align: start;
-        font-weight: bold;
-        font-size: 18px;
         padding: 0em;
     }
 }
@@ -140,12 +135,10 @@
     h1 {
         text-align: center;
         font-weight: bold;
-        font-size: 32px;
         padding: 0em;
     }
 
     p {
-        font-size: 20px;
         max-width: 640px;
         margin-left: auto;
         margin-right: auto;
@@ -162,8 +155,6 @@
     h2 {
         margin-top: 20px;
         margin-bottom: 20px;
-        font-size: 28px;
-        line-height: 34px;
     }
 
     p {
@@ -182,11 +173,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    h2 {
-        font-size: 38px;
-        line-height: 48px;
-    }
 }
 
 #open-standard>.grid>*>.block>h4 {
@@ -201,6 +187,7 @@
     .grid {
         .block {
             align-items: flex-start;
+            justify-content: space-between;
 
             p {
                 text-align: start;
@@ -256,8 +243,9 @@ section {
     }
 }
 
-h4.subtitle {
+.subtitle {
     font-weight: normal;
+    margin-top: 0px;
 }
 
 #support-container {
@@ -351,5 +339,11 @@ h4.subtitle {
     h5,
     h6 {
         font-weight: bold;
+    }
+}
+
+#frontpage {
+    .content {
+        max-width: 1200px;
     }
 }

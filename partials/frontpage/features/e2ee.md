@@ -1,6 +1,10 @@
+<div>
+
 ![basic lock](assets/basic_lock.svg)
 
-#### End-to-end encryption
+## End-to-end encryption
+
+</div>
 
 Matrix provides state-of-the-art end-to-end-encryption via the [Olm](https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/olm.md) and [Megolm](https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/megolm.md) cryptographic ratchets.
 This ensures that only the intended recipients can ever decrypt your messages,

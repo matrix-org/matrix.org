@@ -1,6 +1,10 @@
+<div>
+
 ![music repeat button](assets/music_repeat_button.svg)
 
-#### Bridging
+## Bridging
+
+</div>
 
 Matrix owes its name to its ability to bridge existing platforms into a global open matrix of communication.
 Bridges are core to Matrix and designed to be as easy to write as possible,

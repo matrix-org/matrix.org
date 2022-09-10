@@ -1,6 +1,10 @@
+<div>
+
 ![happy message cloud](assets/basic_elaboration_message_happy.svg)
 
-#### Messaging
+## Messaging
+
+</div>
 
 Matrix gives you simple [HTTP APIs](https://spec.matrix.org) and [SDKs](/sdks/) (iOS, Android, Web) to create chatrooms,
 direct chats and chat bots, complete with end-to-end encryption, file transfer,
