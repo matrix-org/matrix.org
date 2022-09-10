@@ -1,52 +1,3 @@
-.w-nav[data-collapse="all"] .w-dropdown,
-.w-nav[data-collapse="all"] .w-dropdown-toggle {
-    display: block;
-}
-
-.w-nav[data-collapse="all"] .w-dropdown-list {
-    position: static;
-}
-
-@media screen and (max-width: 991px) {
-
-    .w-nav[data-collapse="medium"] .w-dropdown,
-    .w-nav[data-collapse="medium"] .w-dropdown-toggle {
-        display: block;
-    }
-
-    .w-nav[data-collapse="medium"] .w-dropdown-list {
-        position: static;
-    }
-}
-
-@media screen and (max-width: 767px) {
-
-    .w-nav[data-collapse="small"] .w-dropdown,
-    .w-nav[data-collapse="small"] .w-dropdown-toggle {
-        display: block;
-    }
-
-    .w-nav[data-collapse="small"] .w-dropdown-list {
-        position: static;
-    }
-
-    .w-nav-brand {
-        padding-left: 10px;
-    }
-}
-
-@media screen and (max-width: 479px) {
-
-    .w-nav[data-collapse="tiny"] .w-dropdown,
-    .w-nav[data-collapse="tiny"] .w-dropdown-toggle {
-        display: block;
-    }
-
-    .w-nav[data-collapse="tiny"] .w-dropdown-list {
-        position: static;
-    }
-}
-
 .w-nav {
     position: relative;
     background: #dddddd;
@@ -109,28 +60,6 @@
     top: 0;
 }
 
-.w-nav[data-animation="over-left"] .w-nav-overlay {
-    width: auto;
-}
-
-.w-nav[data-animation="over-left"] .w-nav-overlay,
-.w-nav[data-animation="over-left"] .w--nav-menu-open {
-    right: auto;
-    z-index: 1;
-    top: 0;
-}
-
-.w-nav[data-animation="over-right"] .w-nav-overlay {
-    width: auto;
-}
-
-.w-nav[data-animation="over-right"] .w-nav-overlay,
-.w-nav[data-animation="over-right"] .w--nav-menu-open {
-    left: auto;
-    z-index: 1;
-    top: 0;
-}
-
 .w-nav-button {
     position: relative;
     float: right;
@@ -149,48 +78,6 @@
 .w-nav-button.w--open {
     background-color: #C8C8C8;
     color: white;
-}
-
-.w-nav[data-collapse="all"] .w-nav-menu {
-    display: none;
-}
-
-.w-nav[data-collapse="all"] .w-nav-button {
-    display: block;
-}
-
-@media screen and (max-width: 991px) {
-    .w-nav[data-collapse="medium"] .w-nav-menu {
-        display: none;
-    }
-
-    .w-nav[data-collapse="medium"] .w-nav-button {
-        display: block;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .w-nav[data-collapse="small"] .w-nav-menu {
-        display: none;
-    }
-
-    .w-nav[data-collapse="small"] .w-nav-button {
-        display: block;
-    }
-
-    .w-nav-brand {
-        padding-left: 10px;
-    }
-}
-
-@media screen and (max-width: 479px) {
-    .w-nav[data-collapse="tiny"] .w-nav-menu {
-        display: none;
-    }
-
-    .w-nav[data-collapse="tiny"] .w-nav-button {
-        display: block;
-    }
 }
 
 .mxnavbar {
