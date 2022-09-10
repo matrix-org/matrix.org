@@ -12,7 +12,7 @@ default_language = "en"
 generate_feed = true
 
 taxonomies = [
-    { name = "author", feed = false},
+    { name = "authors", feed = false},
     { name = "categories", feed = true},
 ]
 

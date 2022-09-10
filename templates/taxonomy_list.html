@@ -1,1 +1,19 @@
-beeeeep
+{% extends "skel.html" %}
+{% block html_title %}Matrix.org - {{ taxonomy.name | capitalize }}{% endblock html_title %}
+{% block content %}
+<main>
+    <article class="content">
+        <h1>{{ taxonomy.name | capitalize }}</h1>
+        <ul style="list-style: none; padding-left: 0px;">
+            {% for term in terms %}
+            <li>
+                <a href="{{ term.permalink | safe }}">{{ term.name }}</a>
+                {% if taxonomy.feed %}
+                — <span><a href="atom.xml">Atom Feed</a></span>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </article>
+</main>
+{% endblock content %}

@@ -9,6 +9,7 @@
     padding-top: 60px;
     flex-direction: column;
     justify-content: center;
+    flex: none;
 }
 
 @keyframes Gradient {
@@ -38,6 +39,20 @@
     background-size: cover;
     background-repeat: repeat;
     background-attachment: scroll;
+
+    @media (max-width: 991px) {
+        height: 600px;
+        background-size: cover;
+    }
+
+    @media (max-width: 767px) {
+        background-position: 50% 50%;
+    }
+
+    @media (max-width: 479px) {
+        background-position: 15% 50%;
+    }
+
 }
 
 .hero {

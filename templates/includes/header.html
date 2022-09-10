@@ -2,6 +2,8 @@
 {% set path = page.path %}
 {% elif section %}
 {% set path = section.path %}
+{% elif taxonomy %}
+{% set path = current_path %}
 {% endif %}
 <header class="site-header">
     <a href="/" class="brand{% if path == '/' %} current{% endif %}">

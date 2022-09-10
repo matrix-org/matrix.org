@@ -7,7 +7,7 @@ template: post.html
 taxonomies:
   categories:
   - This Week in Matrix
-  author:
+  authors:
   - Thib
 ---
 
