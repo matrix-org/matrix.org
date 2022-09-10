@@ -1,19 +1,34 @@
 {% extends "skel.html" %}
 {% block html_title %}Matrix.org - {{ taxonomy.name | capitalize }}{% endblock html_title %}
 {% block content %}
-<main>
+<main id="taxonomy-list">
     <article class="content">
         <h1>{{ taxonomy.name | capitalize }}</h1>
-        <ul style="list-style: none; padding-left: 0px;">
+        <div class="grid">
             {% for term in terms %}
-            <li>
-                <a href="{{ term.permalink | safe }}">{{ term.name }}</a>
-                {% if taxonomy.feed %}
-                — <span><a href="atom.xml">Atom Feed</a></span>
-                {% endif %}
-            </li>
+            <div class="grid-container-third">
+                <h3>
+                    <a href="{{ term.permalink | safe }}">{{ term.name }}</a>
+                    ({{ term.pages | length }})
+                </h3>
+                <h4>
+                    {% if taxonomy.feed %}
+                    <small><a href="{{ term.permalink | safe }}atom.xml">Atom Feed</a></small>
+                    {% endif %}
+                </h4>
+                <ul>
+                    {% for page in term.pages | slice(end=4) %}
+                    <li>
+                        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+                    </li>
+                    {% endfor %}
+                    <li>
+                        <a href="{{ term.permalink | safe }}">...more "{{ term.name }}" posts</a>
+                    </li>
+                </ul>
+            </div>
             {% endfor %}
-        </ul>
+        </div>
     </article>
 </main>
 {% endblock content %}

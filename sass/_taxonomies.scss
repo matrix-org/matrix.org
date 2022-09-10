@@ -1,0 +1,19 @@
+#taxonomy-list {
+    h4 {
+        margin-top: 0px;
+    }
+
+    h3 {
+        margin-bottom: 0px;
+    }
+
+    a {
+        color: #0098d4;
+        text-decoration: none;
+
+        &:active,
+        &:hover {
+            outline: 0;
+        }
+    }
+}
