@@ -1,0 +1,21 @@
+{% if page %}
+{% set path = page.path %}
+{% elif section %}
+{% set path = section.path %}
+{% endif %}
+<header class="site-header">
+    <a href="/" class="brand{% if path == '/' %} current{% endif %}">
+        <img src="/images/matrix-logo.svg" alt="Matrix logo">
+    </a>
+    <input id="site-header-dropdown-checkbox" type="checkbox" aria-hidden="true">
+    <label for="site-header-dropdown-checkbox" class="dropdown-button">&#xe602;</label>
+    <label for="site-header-dropdown-checkbox" class="page-overlay"></label>
+    <nav role="navigation">
+        {% for link in navigation.header %}
+        <a href="{{ link.href }}" class="{% if link.primary %}primary{% endif %}
+            {% if path is starting_with(link.href) %}current{% endif %}">
+            {{ link.title }}
+        </a>
+        {% endfor %}
+    </nav>
+</header>
