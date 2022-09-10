@@ -138,6 +138,93 @@ ol:last-child {
     margin-bottom: 0;
 }
 
+:not(pre)>code {
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+
+:not(pre)>code {
+    position: relative;
+    padding: .2em;
+    border-radius: 0.3em;
+    color: #c92c2c;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: inline;
+    white-space: normal;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: black;
+    background-attachment: scroll;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    tab-size: 4;
+    hyphens: none;
+}
+
+pre {
+    white-space: normal;
+    padding: .5rem;
+    overflow: auto;
+
+    &[class*="language-"]>code {
+        position: relative;
+        border-left: 10px solid #358ccb;
+        box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+        background-color: #fdfdfd;
+        background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+        background-size: 3em 3em;
+        background-origin: content-box;
+        background-attachment: local;
+    }
+
+    code[class*="language"] {
+        max-height: inherit;
+        height: inherit;
+        padding: 0 1em;
+        display: block;
+        overflow: auto;
+    }
+
+    // The line numbers already provide some kind of left/right padding
+    &[data-linenos] {
+        padding: .5rem 0;
+    }
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    mark {
+        // If you want your highlights to take the full width.
+        display: block;
+        // The default background colour of a mark is bright yellow
+        background-color: rgba(254, 252, 232, 0.9);
+    }
+
+    table {
+        td {
+            padding: 0;
+
+            // The line number cells
+            &:nth-of-type(1) {
+                text-align: center;
+                user-select: none;
+            }
+        }
+    }
+}
+
 .content {
     width: 100%;
 
