@@ -3,7 +3,9 @@
 {% block content %}
 <main id="taxonomy-list">
     <article class="content">
-        <h1>{{ taxonomy.name | capitalize }}</h1>
+        <header>
+            <h1>{{ taxonomy.name | capitalize }}</h1>
+        </header>
         <div class="grid">
             {% for term in terms %}
             <div class="grid-container-third">
@@ -11,11 +13,11 @@
                     <a href="{{ term.permalink | safe }}">{{ term.name }}</a>
                     ({{ term.pages | length }})
                 </h3>
+                {% if taxonomy.feed %}
                 <h4>
-                    {% if taxonomy.feed %}
                     <small><a href="{{ term.permalink | safe }}atom.xml">Atom Feed</a></small>
-                    {% endif %}
                 </h4>
+                {% endif %}
                 <ul>
                     {% for page in term.pages | slice(end=4) %}
                     <li>

@@ -12,8 +12,8 @@ default_language = "en"
 generate_feed = true
 
 taxonomies = [
-    { name = "authors", feed = false},
-    { name = "categories", feed = true},
+    { name = "authors", feed = false, paginate_by = 10},
+    { name = "categories", feed = true, paginate_by = 10},
 ]
 
 [markdown]

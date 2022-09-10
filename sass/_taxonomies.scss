@@ -1,6 +1,7 @@
 #taxonomy-list {
     h4 {
         margin-top: 0px;
+        font-size: 100%;
     }
 
     h3 {
@@ -14,6 +15,59 @@
         &:active,
         &:hover {
             outline: 0;
+        }
+    }
+}
+
+#taxonomy-single {
+    .content {
+        align-items: flex-start;
+
+        &>header {
+            position: relative;
+            margin-bottom: 10px;
+
+            &:after {
+                content: "";
+                height: 1px;
+                width: 70px;
+                position: absolute;
+                bottom: -10px;
+                left: 24px;
+                margin-left: -25px;
+                background: rgba(0, 0, 0, 0.25) none repeat scroll 0% 0%;
+            }
+
+            h2 {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                font-size: 100%;
+
+                a {
+                    color: #0098d4;
+                    text-decoration: none;
+
+                    &:active,
+                    &:hover {
+                        outline: 0;
+                    }
+                }
+            }
+
+            h1 {
+                margin-bottom: 0px;
+            }
+        }
+
+        // Hack to make the markdown titles one level smaller
+        &>article>.post {
+            h2 {
+                margin-top: 20px;
+                margin-bottom: 10px;
+                font-size: 24px;
+                line-height: 30px;
+                font-weight: 500;
+            }
         }
     }
 }

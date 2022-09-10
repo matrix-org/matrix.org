@@ -1,1 +1,65 @@
-boooop
+{% extends "skel.html" %}
+{% block head_extra %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='atom.xml', trailing_slash=false)}}">
+{% endblock head_extra %}
+{% block html_title %}Matrix.org - {{ term.name }}{% endblock html_title %}
+{% block content %}
+<main id="taxonomy-single">
+    <div class="content">
+        <header>
+            <h1>{{ term.name }}</h1>
+            {{ term.pages | length }} posts tagged with "{{ term.name }}" <a href="/{{ taxonomy.name }}">(See all {{
+                taxonomy.name | capitalize
+                }})</a>
+            {% if taxonomy.feed %}
+            <h2>
+                <small><a href="{{ term.permalink | safe }}atom.xml">Atom Feed</a></small>
+            </h2>
+            {% endif %}
+        </header>
+
+        {% if paginator %}
+        {% set pages = paginator.pages %}
+        {% else %}
+        {% set pages = term.pages %}
+        {% endif %}
+
+        {% for page in pages %}
+        <article>
+            <header>
+                <h2><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h2>
+                <span>{{ page.date | date(format="%d.%m.%Y %H:%M") }}{% if page.taxonomies.categories %} — <a
+                        href="/categories/{{ page.taxonomies.categories | first | slugify }}">{{
+                        page.taxonomies.categories
+                        | first }}</a>
+                    {% endif %} — <a href="/authors/{{ page.taxonomies.authors | default (value=['unknown author']) | first |
+                                    slugify }}">{{ page.taxonomies.authors | default (value=["unknown author"]) | first
+                        }}</a>
+                </span>
+                {% if page.updated %}
+                <br><small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
+                {% endif %}
+            </header>
+            <div class="post">
+                {{ page.content | safe | markdown | safe }}
+            </div>
+            <div class="article_linebreak"></div>
+        </article>
+        {% endfor %}
+        {% if paginator %}
+        <nav class="pagination">
+            {% if paginator.previous %}
+            <a class="w-button button-dark" href="{{ paginator.previous }}">‹ Previous</a>
+            {% else %}
+            <div></div>
+            {% endif %}
+            {% if paginator.next %}
+            <a class="w-button button-dark" href="{{ paginator.next }}">Next ›</a>
+            {% else %}
+            <div></div>
+            {% endif %}
+        </nav>
+        {% endif %}
+    </div>
+</main>
+{% endblock content %}
