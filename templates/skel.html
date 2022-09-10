@@ -10,7 +10,10 @@
     <meta name="twitter:site" content="@matrixdotorg" />
     <meta name="twitter:creator" content="@matrixdotorg" />
 
-    <title>{% block html_title %}Matrix.org{% endblock html_title %}</title>
+    <title>
+        {%- if config.mode == "serve" -%}&#x1F6E0;&#xFE0F; {% endif -%}
+        {%- block html_title %}Matrix.org{% endblock html_title -%}
+    </title>
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
     <link rel="stylesheet" href="/style.css" />
