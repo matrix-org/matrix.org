@@ -1,61 +1,18 @@
 <footer class="site-footer">
     <div id="sections">
-        <div id="discover">
-            <a href="/docs/projects/try-matrix-now">Discover</a>
-            <a href="/docs/projects/try-matrix-now">Try Matrix</a>
-            <a href="/clients">Clients</a>
-            <a href="/docs/projects/bots">Bots</a>
-            <a href="/sdks">SDKs</a>
-            <a href="/hosting">Hosting</a>
+        {% for id, links in navigation.footer_sections %}
+        <div id="{{ id }}">
+            {% for link in links %}
+            <a href="{{ link.href }}">{{ link.title }}</a>
+            {% endfor %}
         </div>
-        <div id="guides">
-            <a href="/docs/guides">Guides</a>
-            <a href="/docs/guides/getting-involved">Getting Started</a>
-            <a href="/docs/guides">Client-Server API</a>
-            <a href="/docs/guides/installing-synapse">Install Synapse</a>
-            <a href="/docs/guides/types-of-bridging">Bridges</a>
-            <a href="/docs/guides">All Guides</a>
-        </div>
-        <div id="docs">
-            <a href="/docs/develop">Develop Docs</a>
-            <a href="/docs/spec">Spec</a>
-            <a href="/docs/api">API Playground</a>
-            <a href="/code">Code</a>
-        </div>
-        <div id="blog">
-            <a href="/blog">Blog</a>
-            <a href="/blog">All Posts</a>
-            <a href="/categories/this-week-in-matrix">This Week In Matrix</a>
-            <a href="/categories/security">Security</a>
-            <a href="/categories/security/atom.xml">Security RSS</a>
-            <a href="/atom.xml">RSS</a>
-        </div>
-        <div id="more">
-            <a href="/">More</a>
-            <a href="/faq">FAQs</a>
-            <a href="/matrixlive">Matrix Live</a>
-            <a href="/security-disclosure-policy">Security Disclosure Policy</a>
-            <a href="/hall-of-fame">Security Hall of Fame</a>
-            <a href="/legal/code-of-conduct">Code of Conduct for Matrix.org</a>
-            <a href="/legal">Legal</a>
-            <a href="/contact">Contact</a>
-            <a href="https://github.com/matrix-org/matrix.org/">Site Source</a>
-        </div>
+        {% endfor %}
     </div>
     <div id="links">
         <div>
-            <a href="/code">
-                <img src="/assets/github.svg">
-            </a>
-            <a href="https://gitlab.matrix.org/">
-                <img src="/assets/gitlab.svg">
-            </a>
-            <a href="https://www.youtube.com/channel/UCVFkW-chclhuyYRbmmfwt6w">
-                <img src="/assets/youtube.svg">
-            </a>
-            <a href="https://twitter.com/matrixdotorg">
-                <img src="/assets/twitter.svg">
-            </a>
+            {% for link in navigation.footer_links %}
+            <a href="{{ link.href }}"><img src="/assets/{{ link.image }}" alt="{{ link.alt }}"></a>
+            {% endfor %}
         </div>
         <p>© 2022 The Matrix.org Foundation C.I.C.</p>
     </div>

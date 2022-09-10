@@ -8,3 +8,53 @@ header = [
     { title = "Shop", href = "https://shop.matrix.org" },
     { title = "Try Now", href = "/docs/projects/try-matrix-now/", primary = true },
 ]
+
+footer_links = [
+    { image = "github.svg", alt = "GitHub", href = "/code" },
+    { image = "gitlab.svg", alt = "GitLab", href = "https://gitlab.matrix.org/" },
+    { image = "youtube.svg", alt = "YouTube", href = "https://www.youtube.com/channel/UCVFkW-chclhuyYRbmmfwt6w" },
+    { image = "twitter.svg", alt = "Twitter", href = "https://twitter.com/matrixdotorg" },
+]
+
+[footer_sections]
+discover = [
+    { title = "Discover", href = "/docs/projects/try-matrix-now" },
+    { title = "Try Matrix", href = "/docs/projects/try-matrix-now" },
+    { title = "Clients", href = "/clients" },
+    { title = "Bots", href = "/docs/projects/bots" },
+    { title = "SDKs", href = "/sdks" },
+    { title = "Hosting", href = "/hosting" },
+]
+guides = [
+    { title = "Guides", href = "/docs/guides" },
+    { title = "Getting Started", href = "/docs/guides/getting-involved" },
+    { title = "Client-Server API", href = "/docs/guides" },
+    { title = "Install Synapse", href = "/docs/guides/installing-synapse" },
+    { title = "Bridges", href = "/docs/guides/types-of-bridging" },
+    { title = "All Guides", href = "/docs/guides" },
+]
+docs = [
+    { title = "Develop Docs", href = "/docs/develop" },
+    { title = "Spec", href = "/docs/spec" },
+    { title = "API Playground", href = "/docs/api" },
+    { title = "Code", href = "/code" },
+]
+blog = [
+    { title = "Blog", href = "/blog" },
+    { title = "All Posts", href = "/blog" },
+    { title = "This Week In Matrix", href = "/categories/this-week-in-matrix" },
+    { title = "Security", href = "/categories/security" },
+    { title = "Security RSS", href = "/categories/security/atom.xml" },
+    { title = "RSS", href = "/atom.xml" },
+]
+more = [
+    { title = "More", href = "/" },
+    { title = "FAQs", href = "/faq" },
+    { title = "Matrix Live", href = "/matrixlive" },
+    { title = "Security Disclosure Policy", href = "/security-disclosure-policy" },
+    { title = "Security Hall of Fame", href = "/hall-of-fame" },
+    { title = "Code of Conduct for Matrix.org", href = "/legal/code-of-conduct" },
+    { title = "Legal", href = "/legal" },
+    { title = "Contact", href = "/contact" },
+    { title = "Site Source", href = "https://github.com/matrix-org/matrix.org/" },
+]
