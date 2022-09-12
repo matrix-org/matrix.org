@@ -1,6 +1,6 @@
 {% extends "skel.html" %}
 {% block head_extra %}
-<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='atom.xml', trailing_slash=false)}}">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ term.permalink | safe }}atom.xml">
 {% endblock head_extra %}
 {% block html_title %}Matrix.org - {{ term.name }}{% endblock html_title %}
 {% block content %}
