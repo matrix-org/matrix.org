@@ -1,12 +1,11 @@
 header = [
-    { title = "Discover", href = "/discover/" },
-    { title = "Develop", href = "/docs/develop/" },
-    { title = "Foundation", href = "/foundation/" },
+    { title = "About", href = "/about/" },
     { title = "Blog", href = "/blog/" },
-    { title = "FAQs", href = "/faq/" },
-    { title = "Matrix Live", href = "/matrixlive/" },
+    { title = "Documentation", href = "/docs/" },
+    { title = "Ecosystem", href = "/ecosystem/" },
+    { title = "Podcasts", href = "/podcasts/" },
     { title = "Shop", href = "https://shop.matrix.org" },
-    { title = "Try Now", href = "/docs/projects/try-matrix-now/", primary = true },
+    { title = "Try Matrix", href = "/try-matrix/", primary = true },
 ]
 
 footer_links = [
@@ -32,20 +31,6 @@ guides = [
     { title = "Install Synapse", href = "/docs/guides/installing-synapse" },
     { title = "Bridges", href = "/docs/guides/types-of-bridging" },
     { title = "All Guides", href = "/docs/guides" },
-]
-docs = [
-    { title = "Develop Docs", href = "/docs/develop" },
-    { title = "Spec", href = "/docs/spec" },
-    { title = "API Playground", href = "/docs/api" },
-    { title = "Code", href = "/code" },
-]
-blog = [
-    { title = "Blog", href = "/blog" },
-    { title = "All Posts", href = "/blog" },
-    { title = "This Week In Matrix", href = "/categories/this-week-in-matrix" },
-    { title = "Security", href = "/categories/security" },
-    { title = "Security RSS", href = "/categories/security/atom.xml" },
-    { title = "RSS", href = "/atom.xml" },
 ]
 more = [
     { title = "More", href = "/" },
