@@ -2,7 +2,13 @@
 {% block html_title %}Matrix.org - {{ page.title }}{% endblock html_title %}
 {% block content %}
 <main>
-    <h1>{{ page.title }}</h1>
-    {{ page.content | safe }}
+    <article class="content">
+        <header>
+            <h1>{{ page.title }}</h1>
+        </header>
+        <main>
+            {{ page.content | safe }}
+        </main>
+    </article>
 </main>
 {% endblock content %}
