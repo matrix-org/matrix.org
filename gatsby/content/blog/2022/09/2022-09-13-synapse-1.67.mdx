@@ -32,29 +32,30 @@ for more information.
 
 ## Changes for installations using a source checkout
 
-Server admins who installed Synapse using a source checkout should be familiar
-with [Poetry](https://python-poetry.org/) by now. This is a tool we use to
-better manage dependencies within Synapse. As of this version, we have updated
-Synapse's dependency on Poetry to require Poetry 1.2, which was recently
+Server admins who installed Synapse using a source checkout might already be
+familiar with [Poetry](https://python-poetry.org/). This is a tool we use
+to better manage dependencies within Synapse. As of this version, we have
+updated Synapse's dependency on Poetry to require Poetry 1.2, which was recently
 released.
 
-It is also worth noting that Synapse 1.68, which is due to release around
-September 27, will require a Rust compiler when installed from a source
+It is also worth noting that Synapse 1.68, which is due to release on the 27th
+of September, will require a Rust compiler when installed from a source
 checkout. This is because we are in the process of introducing Rust in Synapse's
 code base, in order to make some hot code paths more efficient. See the [upgrade
 notes](https://matrix-org.github.io/synapse/v1.67/upgrade.html#rust-requirement-in-the-next-release)
 for more information.
 
 These two changes should not impact installations that use `pip install
-matrix-synapse`, distribution-specific packages or Docker images to manage
-and run Synapse.
+matrix-synapse`, Debian packages from `packages.matrix.org` or the
+`matrixdotorg/synapse` Docker image to manage and run Synapse.
 
 ## Everything else
 
-Synapse 1.68 (due around September 27) will also require SQLite v3.27.0 or
+Synapse 1.68 (due on the 27th of September) will also require SQLite v3.27.0 or
 higher when run with SQLite. Synapse 1.67 is the last version of Synapse to
 support SQLite versions 3.22 to 3.26. See the [upgrade
-notes](https://matrix-org.github.io/synapse/v1.67/upgrade.html#sqlite-version-requirement-in-the-next-release) for more information.
+notes](https://matrix-org.github.io/synapse/v1.67/upgrade.html#sqlite-version-requirement-in-the-next-release)
+for more information.
 
 See the [full
 changelog](https://github.com/matrix-org/synapse/releases/tag/v1.67.0) for a
