@@ -63,9 +63,9 @@ h6 {
   h4,
   h5,
   h6 {
-    /* Offsets the anchor scroll position by the navbar height + 10px buffer.
-    The mobile navbar is 4px smaller in height than the regular navbar. The breakpoint the navbar changes at is 991px */
-    scroll-margin-top: 70px;
+    /* The mobile version of the navbar correctly pushes the elements down.
+       Therefor we dont need to have the offset. We however need to unset this as otherwise the 74px is applied. */
+    scroll-margin-top: inherit;
   }
 }
 
