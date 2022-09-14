@@ -52,7 +52,21 @@ h3,
 h4,
 h5,
 h6 {
-    scroll-margin-top: 74px;
+  /* Offsets the anchor scroll position by the navbar height + 10px buffer */
+  scroll-margin-top: 74px;
+}
+
+@media (max-width: 991px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    /* Offsets the anchor scroll position by the navbar height + 10px buffer.
+    The mobile navbar is 4px smaller in height than the regular navbar. The breakpoint the navbar changes at is 991px */
+    scroll-margin-top: 70px;
+  }
 }
 
 a {
