@@ -1,25 +1,27 @@
 {% extends "skel.html" %}
-{% block html_title %}Matrix.org - {{ section.title }}{% endblock html_title %}
+{% block html_title %}Matrix.org - {{ page.title }}{% endblock html_title %}
 {% block content %}
+{% set clients = load_data(path="content/clients/clients.toml") %}
 <main id="clients">
     <article class="content">
         <header>
-            <h1>{{ section.title }}</h1>
+            <h1>{{ page.title }}</h1>
         </header>
         <main>
-            <p>{{ section.content | safe }}</p>
+            <p>{{ page.content | safe }}</p>
             <!-- Showcase -->
             <div class="grid">
-                {% for client in section.pages %}
-                {% if client.extra.featured %}
+                {% for name, client in clients %}
+                {% if client.featured %}
                 <div class="grid-container-third">
                     <div class="block">
-                        <img src="{{ client.permalink }}/{{ client.extra.preview }}" alt="{{ client.title }} Preview">
-                        <h3><a href="{{ client.permalink }}">{{ client.title }}</a></h3>
+                        {% set preview_url = get_url(path="clients/" ~ client.preview, trailing_slash=false ) %}
+                        <img src="{{ preview_url }}" alt="{{ name }} Preview">
+                        <h3>{{ name }}</h3>
                         <p>{{ client.summary | safe }}</p>
                         <div>
-                            {% for platform in client.extra.platforms %}
-                            <!-- TODO logs -->
+                            {% for platform in client.platforms %}
+                            <!-- TODO logos -->
                             <a href="{{ platform.url }}">{{ platform.name }}</a>
                             {% endfor %}
                         </div>
@@ -50,28 +52,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for client in section.pages %}
+                    {% for name, client in clients %}
                     <tr>
                         <td>
-                            <a href="{{ client.permalink }}">{{ client.title }}</a>
+                            {{ name }}
                         </td>
                         <td>
-                            {{ client.extra.maintainer }}
+                            {{ client.maintainer }}
                         </td>
                         <td>
                             <!-- TODO make this use fancy buttons with links -->
-                            {% for platform in client.extra.platforms %}
+                            {% for platform in client.platforms %}
                             <a href="{{ platform.url }}">{{ platform.name }}</a>
                             {% endfor %}
                         </td>
                         <td>
-                            {{ client.extra.last_release }}
+                            {{ client.last_release }}
                         </td>
                         <td>
-                            {{ client.extra.maturity }}
+                            {{ client.maturity }}
                         </td>
                         <td>
-                            {{ client.extra.license }}
+                            {{ client.license }}
                         </td>
                     </tr>
                     {% endfor %}
