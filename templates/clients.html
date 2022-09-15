@@ -1,0 +1,83 @@
+{% extends "skel.html" %}
+{% block html_title %}Matrix.org - {{ section.title }}{% endblock html_title %}
+{% block content %}
+<main id="clients">
+    <article class="content">
+        <header>
+            <h1>{{ section.title }}</h1>
+        </header>
+        <main>
+            <p>{{ section.content | safe }}</p>
+            <!-- Showcase -->
+            <div class="grid">
+                {% for client in section.pages %}
+                {% if client.extra.featured %}
+                <div class="grid-container-third">
+                    <div class="block">
+                        <img src="{{ client.permalink }}/{{ client.extra.preview }}" alt="{{ client.title }} Preview">
+                        <h3><a href="{{ client.permalink }}">{{ client.title }}</a></h3>
+                        <p>{{ client.summary | safe }}</p>
+                        <div>
+                            {% for platform in client.extra.platforms %}
+                            <!-- TODO logs -->
+                            <a href="{{ platform.url }}">{{ platform.name }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </main>
+    </article>
+    <article class="content">
+        <header>
+            <h1>
+                All known clients
+            </h1>
+        </header>
+        <main>
+            <!-- Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Maintainer</th>
+                        <th>Platforms</th>
+                        <th>Last Release</th>
+                        <th>Maturity</th>
+                        <th>License</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for client in section.pages %}
+                    <tr>
+                        <td>
+                            <a href="{{ client.permalink }}">{{ client.title }}</a>
+                        </td>
+                        <td>
+                            {{ client.extra.maintainer }}
+                        </td>
+                        <td>
+                            <!-- TODO make this use fancy buttons with links -->
+                            {% for platform in client.extra.platforms %}
+                            <a href="{{ platform.url }}">{{ platform.name }}</a>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {{ client.extra.last_release }}
+                        </td>
+                        <td>
+                            {{ client.extra.maturity }}
+                        </td>
+                        <td>
+                            {{ client.extra.license }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+    </article>
+</main>
+{% endblock content %}

@@ -1,0 +1,26 @@
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #cacaca;
+
+    th {
+        text-align: left;
+        padding: 0.5rem;
+    }
+
+    td {
+        text-align: left;
+        padding: 0.5rem;
+    }
+
+    /* zebra striping */
+
+    tbody tr:nth-child(odd) {
+        background-color: #f4f4f4;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #cecece;
+    }
+}
