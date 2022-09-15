@@ -22,7 +22,11 @@
                         <div>
                             {% for platform in client.platforms %}
                             <!-- TODO logos -->
+                            {% if loop.last %}
                             <a href="{{ platform.url }}">{{ platform.name }}</a>
+                            {% else %}
+                            <a href="{{ platform.url }}">{{ platform.name }}</a> ·{{" "}}
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -63,7 +67,11 @@
                         <td>
                             <!-- TODO make this use fancy buttons with links -->
                             {% for platform in client.platforms %}
+                            {% if loop.last %}
                             <a href="{{ platform.url }}">{{ platform.name }}</a>
+                            {% else %}
+                            <a href="{{ platform.url }}">{{ platform.name }}</a> ·{{" "}}
+                            {% endif %}
                             {% endfor %}
                         </td>
                         <td>
