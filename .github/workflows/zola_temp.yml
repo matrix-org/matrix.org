@@ -18,3 +18,4 @@ jobs:
           PAGES_BRANCH: gh-pages
           BUILD_DIR: zola
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CHECK_LINKS: true
