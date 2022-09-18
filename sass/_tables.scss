@@ -1,8 +1,12 @@
 table {
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
     background-color: #cacaca;
+    margin-bottom: 14px;
 
     th {
         text-align: left;

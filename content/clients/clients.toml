@@ -1,12 +1,30 @@
 [FluffyChat]
 preview = "fluffychat.png"
-summary = "FluffyChat is a Flutter-based client with a simple and clean UI."
-maintainer = "Krille"
-platforms = [{name="Android",url=""}, {name="iOS",url=""}, {name="Web",url=""}, {name="Desktop",url=""}]
-license = "AGPLv3"
+summary = "Cute instant messaging app for all platforms."
+maintainer = "Christian Pauly"
+platforms = [
+    { name = "Android", url = "" },
+    { name = "iOS", url = "" },
+    { name = "Web", url = "" },
+    { name = "Desktop", url = "" },
+]
+license = "AGPL-3.0-only"
+language = "Flutter"
 last_release = "2021-12-01"
 maturity = "Stable"
 source = "https://gitlab.com/famedly/fluffychat"
 website = "https://fluffychat.im"
 matrix_room = "#fluffychat:matrix.org"
 featured = true
+[FluffyChat.features]
+room_directory = true
+search_joined_rooms = true
+e2ee = true
+replies = true
+stickers = true
+multi_account = true
+voip = true
+reactions = true
+localisations = 20
+sso = true
+edits = true

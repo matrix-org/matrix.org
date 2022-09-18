@@ -53,6 +53,17 @@
                         <th>Last Release</th>
                         <th>Maturity</th>
                         <th>License</th>
+                        <th>Number of Localisations</th>
+                        <th>Room Directory</th>
+                        <th>Search Joined Rooms</th>
+                        <th>E2E Encryption</th>
+                        <th>Replies</th>
+                        <th>Stickers</th>
+                        <th>Multi Account</th>
+                        <th>Voice over IP</th>
+                        <th>Reactions</th>
+                        <th>SSO</th>
+                        <th>Edits</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -75,13 +86,86 @@
                             {% endfor %}
                         </td>
                         <td>
-                            {{ client.last_release }}
+                            {{ client.last_release | date(format="%d.%m.%Y") }}
                         </td>
                         <td>
                             {{ client.maturity }}
                         </td>
                         <td>
                             {{ client.license }}
+                        </td>
+                        <td>
+                            {{ client.features.localisations }}
+                        </td>
+                        <td>
+                            {% if client.features.room_directory %}
+                            <span class="checkmark">✓</span>
+                            {% else %}
+                            <span class="cross">✗</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if client.features.search_joined_rooms %}
+                            <span class="checkmark">✓</span>
+                            {% else %}
+                            <span class="cross">✗</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if client.features.e2ee %}
+                            <span class="checkmark">✓</span>
+                            {% else %}
+                            <span class="cross">✗</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if client.features.replies %}
+                            <span class="checkmark">✓</span>
+                            {% else %}
+                            <span class="cross">✗</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if client.features.stickers %}
+                            <span class="checkmark">✓</span>
+                            {% else %}
+                            <span class="cross">✗</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if client.features.multi_account %}
+                            <span class="checkmark">✓</span>
+                            {% else %}
+                            <span class="cross">✗</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if client.features.voip %}
+                            <span class="checkmark">✓</span>
+                            {% else %}
+                            <span class="cross">✗</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if client.features.reactions %}
+                            <span class="checkmark">✓</span>
+                            {% else %}
+                            <span class="cross">✗</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if client.features.sso %}
+                            <span class="checkmark">✓</span>
+                            {% else %}
+                            <span class="cross">✗</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if client.features.edits %}
+                            <span class="checkmark">✓</span>
+                            {% else %}
+                            <span class="cross">✗</span>
+                            {% endif %}
                         </td>
                     </tr>
                     {% endfor %}
