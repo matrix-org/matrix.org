@@ -49,6 +49,7 @@ const Bridges = ({ data }) => {
 ["LINE", "line"],
 ["LinkedIn Messaging", "linkedin"],
 ["KakaoTalk", "kakaotalk"],
+["Gupshup", "gupshup"],
   ];
 
   
