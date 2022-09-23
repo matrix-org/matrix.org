@@ -94,6 +94,8 @@ image: https://matrix.org/blog/img/nHPgFgyvkPnvPDETuAFzniPw.png
 
 ## Dept of Servers 🏢
 
+### Construct
+
 [Jason Volk](https://matrix.to/#/@jevolk:matrix.org) reports
 
 > Construct 0.8 has been rolling out with a set of performance improvements courtesy of the new `io_uring(7)` backend added to Boost ASIO on Linux platforms. These improvements were not truly necessary since Construct is already backed by a custom `aio(7)` implementation on Linux, but there's still a significant all-around improvement with `io_uring`. Users building on systems with boost 1.78+ will benefit from `io_uring` replacing the core `epoll(2)` event loop and networking. This has a significant impact for certain operations like sending messages to large rooms with lots of servers by greatly reducing the number of system calls. Users with boost 1.79+ get the added benefit of some local filesystem operations using the `io_uring` rather than `aio`. If your distribution ships an older version of Boost, rebuild Construct with the option `--with-included-boost=1.80.0` to `./configure` so you too can enjoy these benefits.
