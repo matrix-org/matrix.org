@@ -147,7 +147,7 @@ In the early days of Matrix we proposed the concept of ‘active application ser
 
 *   Support for bulk redactions (looping over individual redactions is a viable workaround however)
 *   Ability for room moderators to delete content from the media repository when redacting the event which refers to it. (this can be improved in future)
-*   UI for setting server ACLs ([https://github.com/vector-im/Element-web/issues/7084](https://github.com/vector-im/Element-web/issues/7084))
+*   UI for setting server ACLs ([https://github.com/vector-im/element-web/issues/7084](https://github.com/vector-im/element-web/issues/7084))
 
 
 ### Moderation tooling
@@ -264,7 +264,7 @@ Each Matrix server maintains a publicly viewable directory of rooms.  By default
 
 The server admin can limit which users are allowed to publish rooms to the public room directory via the `room_list_publication_rules` config option in Synapse.
 
-The server admin can moderate the directory by delisting rooms by calling the /directory/list/room API with visibility: private ([https://matrix.org/docs/spec/client_server/r0.4.0.html#put-matrix-client-r0-directory-list-room-roomid](https://matrix.org/docs/spec/client_server/r0.4.0.html#put-matrix-client-r0-directory-list-room-roomid)).
+The server admin can moderate the directory by delisting rooms by calling the /directory/list/room API with visibility: private ([https://matrix.org/docs/spec/client_server/latest.html#put-matrix-client-r0-directory-list-room-roomid](https://matrix.org/docs/spec/client_server/latest.html#put-matrix-client-r0-directory-list-room-roomid)).
 
 
 ### Moderating room aliases
@@ -275,7 +275,7 @@ By default, any user can create room aliases, which can be an abuse vector - par
 
 The server admin can limit which users are allowed to create room aliases via the `alias_creation_rules` config option in Synapse.
 
-The server admin can moderate the aliases that exist on their server by calling the /directory/room API with DELETE: ([https://matrix.org/docs/spec/client_server/r0.4.0.html#delete-matrix-client-r0-directory-room-roomalias](https://matrix.org/docs/spec/client_server/r0.4.0.html#delete-matrix-client-r0-directory-room-roomalias)).
+The server admin can moderate the aliases that exist on their server by calling the /directory/room API with DELETE: ([https://matrix.org/docs/spec/client_server/latest.html#delete-matrix-client-r0-directory-room-roomalias](https://matrix.org/docs/spec/client_server/latest.html#delete-matrix-client-r0-directory-room-roomalias)).
 
 Element/Web also exposes the ability to delete a room alias from the Room Directory view as an easter egg for server administrators - shift-clicking on the entry in the Room Directory will call the above API to remove the alias and the room from the directory.
 
