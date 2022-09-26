@@ -190,12 +190,12 @@ If you're using Element, when you go to view more information about a particular
 ![Element-deactivate-btn](/docs/projects/images/moderation8.png)
 
 
-Removing abusive rooms is done by calling the /shutdown_room API, e.g:
+Removing abusive rooms is done by calling the /DELETE API, e.g:
 
 
 ```
-curl 'https://matrix.org/_synapse/admin/v1/shutdown_room/!roomid:matrix.org' \
--H "Authorization: Bearer $token" -XPOST \
+curl 'https://matrix.org/_synapse/admin/v2/rooms/!roomid:matrix.org' \
+-H "Authorization: Bearer $token" -X DELETE \
 -d'{"new_room_user_id": "@abuse:matrix.org", "message": "This room has been removed from the matrix.org homeserver due to violating the terms of use.", "room_name": "Room unavailable"}'
 ```
 
@@ -253,9 +253,9 @@ Synapse does not currently provide tools to block connections by IP - instead we
 
 Synapse supports a module-like system which can be used to block servers from doing certain actions, such as sending invites to your users. [t2bot/synapse-simple-antispam](https://github.com/t2bot/synapse-simple-antispam) is one example of how this works - see the code for a bit more information on what is possible. Although this won't prevent servers from interacting with your server, it can help with reducing the amount of spam/malicious content.
 
-“Defederating” your server from another server is currently done on a room by room basis - either using server ACLs if you have control of the room in question, or by using the /shutdown_room API if you do not.
+“Defederating” your server from another server is currently done on a room by room basis - either using server ACLs if you have control of the room in question, or by using the /DELETE API if you do not.
 
-In future, this may be refined to let servers automatically implement /shutdown_room semantics on any room which matches a given pattern (e.g. whose room admins are on a given server).
+In future, this may be refined to let servers automatically implement /DELETE semantics on any room which matches a given pattern (e.g. whose room admins are on a given server).
 
 
 ### Moderating the room directory
