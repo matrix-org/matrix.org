@@ -1,4 +1,3 @@
-{% import "macros/twitter.html" as twitter_macros %}
 {% extends "skel.html" %}
 {% block head_extra %}
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='atom.xml', trailing_slash=false)}}">
@@ -229,35 +228,6 @@
                 </a>
             </div>
             <a href="/sdks/" class="w-button button-dark">View all SDKs</a>
-        </section>
-        <section>
-            <h1>What people are saying</h1>
-            <div class="grid">
-                <div class="grid-container">
-                    <div class="block">
-                        {{ twitter_macros::tweet(id="1093148021980889088",
-                        api_token=config.extra.twitter_api_bearer_token) }}
-                    </div>
-                </div>
-                <div class="grid-container">
-                    <div class="block">
-                        {{ twitter_macros::tweet(id="1051260991479013376",
-                        api_token=config.extra.twitter_api_bearer_token) }}
-                    </div>
-                </div>
-                <div class="grid-container">
-                    <div class="block">
-                        {{ twitter_macros::tweet(id="1130695713057148928",
-                        api_token=config.extra.twitter_api_bearer_token) }}
-                    </div>
-                </div>
-                <div class="grid-container">
-                    <div class="block">
-                        {{ twitter_macros::tweet(id="1102912894260469760",
-                        api_token=config.extra.twitter_api_bearer_token) }}
-                    </div>
-                </div>
-            </div>
         </section>
         <section class="dark-bg" id="support-container">
             <h1>Support Matrix</h1>
