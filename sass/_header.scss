@@ -87,6 +87,40 @@
                 }
             }
         }
+
+        label {
+            cursor: pointer;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .section-wrap {
+            position: relative;
+            align-self: stretch;
+            display: flex;
+            justify-content: center;
+
+            &:not(:hover) .section-submenu {
+                display: none;
+            }
+        }
+
+        .section-submenu-wrap {
+            position: absolute;
+            background: #fff;
+            top: 60px;
+            padding-top: 4px;
+        }
+
+        .section-submenu {
+            border: 1px solid #f4f4f4;
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        .section-submenu {
+            padding-left: 1em;
+        }
     }
 }
 

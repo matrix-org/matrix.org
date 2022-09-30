@@ -9,15 +9,32 @@
     <a href="/" class="brand{% if path == '/' %} current{% endif %}">
         <img src="/images/matrix-logo.svg" alt="Matrix logo">
     </a>
-    <input id="site-header-dropdown-checkbox" type="checkbox" aria-hidden="true">
+    <input id="site-header-dropdown-checkbox" type="checkbox" class="dropdown-checkbox" aria-hidden="true">
     <label for="site-header-dropdown-checkbox" class="dropdown-button">&#xe602;</label>
     <label for="site-header-dropdown-checkbox" class="page-overlay"></label>
-    <nav role="navigation">
+    <nav>
         {% for link in navigation.header %}
+        {% if link.section %}
+        {% set href = "/" ~ link.section ~ "/" %}
+        {% set section = get_section(path=link.section ~ "/_index.md") %}
+        <div class="section-wrap">
+            <a href="{{ href }}" class="section {% if path is starting_with(href) %}current{% endif %}">
+                {{ link.title }}
+            </a>
+            <div class="section-submenu-wrap">
+                <div class="section-submenu">
+                    {% for page in section.pages %}
+                    <a href="{{ page.path }}">{{ page.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% else %}
         <a href="{{ link.href }}" class="{% if link.primary %}primary{% endif %}
             {% if path is starting_with(link.href) %}current{% endif %}">
             {{ link.title }}
         </a>
+        {% endif %}
         {% endfor %}
     </nav>
 </header>
