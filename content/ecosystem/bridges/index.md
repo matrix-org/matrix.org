@@ -1,5 +1,6 @@
 +++
 title = "Bridges"
+weight = 2
 +++
 
 An important idea in Matrix is *Interoperability*. This means that Matrix is open to exchanging data and messages with other platforms using an <a href="https://matrix.org/docs/spec">Open Standard</a>. We refer to the connection to other platforms as *bridging*.
