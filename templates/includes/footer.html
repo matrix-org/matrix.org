@@ -1,19 +1,15 @@
 <footer class="site-footer">
-    <div id="sections">
-        {% for id, links in navigation.footer_sections %}
-        <div id="{{ id }}">
-            {% for link in links %}
-            <a href="{{ link.href }}">{{ link.title }}</a>
-            {% endfor %}
-        </div>
+    <div class="internal-links">
+        {% for link in navigation.footer_internal %}
+        <a href="{{ link.href }}">{{ link.title }}</a>
         {% endfor %}
     </div>
-    <div id="links">
+    <div class="external-links">
         <div>
-            {% for link in navigation.footer_links %}
+            {% for link in navigation.footer_external %}
             <a href="{{ link.href }}"><img src="/assets/{{ link.image }}" alt="{{ link.alt }}"></a>
             {% endfor %}
         </div>
-        <p>© 2022 The Matrix.org Foundation C.I.C.</p>
     </div>
+    <p>© 2022 The Matrix.org Foundation C.I.C.</p>
 </footer>

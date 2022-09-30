@@ -244,97 +244,47 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 30px 40px;
 
-    #sections {
+    .internal-links {
         width: 100%;
-        margin-right: 140px;
-        margin-left: 140px;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
         max-width: 960px;
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
 
-        @media (max-width: 991px) {
-            margin-left: 20px;
-            justify-content: flex-start;
+        a {
+            margin-top: 10px;
+            color: #999;
+            text-decoration: none;
         }
+    }
 
-        @media (max-width: 767px) {
-            margin-right: 0px;
-            margin-left: 0px;
-            justify-content: flex-start;
-        }
+    .external-links {
+        display: flex;
+        width: 100%;
+        max-width: 960px;
+        justify-content: center;
 
-        div {
-            display: flex;
-            flex-direction: column;
-            margin-right: 40px;
-            margin-left: 10px;
+        a {
+            max-width: 100%;
+            display: inline-block;
 
-            @media (max-width: 991px) {
-                width: 20%;
+            img {
                 margin-right: 10px;
-                margin-bottom: 40px;
-            }
-
-            @media (max-width: 767px) {
-                width: 45%;
-                margin-bottom: 40px;
-                padding-right: 40px;
-            }
-
-            @media (max-width: 479px) {
-                margin-bottom: 20px;
-                padding-right: 10px;
-            }
-
-            a {
-                &:first-child {
-                    color: #fff;
-                    font-size: 16px;
-                    line-height: 24px;
-                    font-weight: 600;
-                }
-
-                margin-top: 10px;
-                color: #999;
-                text-decoration: none;
+                margin-left: 10px;
             }
         }
     }
 
-    #links {
-        display: flex;
-        width: 100%;
-        max-width: 960px;
-        margin-right: 140px;
-        margin-left: 140px;
-        padding-top: 40px;
-        padding-bottom: 40px;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
+    a:hover {
+        color: #fff;
+    }
 
-        p {
-            margin-top: 20px;
-            color: #999;
-        }
-
-        div {
-            a {
-                max-width: 100%;
-                display: inline-block;
-
-                img {
-                    margin-right: 10px;
-                    margin-left: 10px;
-                }
-            }
-        }
+    p {
+        margin-top: 20px;
+        color: #999;
     }
 }
 
