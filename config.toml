@@ -22,9 +22,6 @@ taxonomies = [
 highlight_code = true
 highlight_theme = "inspired-github"
 
-[extra]
-twitter_api_bearer_token = "%twitter_secret%"
-
 [link_checker]
 skip_prefixes = [
     # This page is not a real page. You need to open https://circu.li/fdroid/repo/index-v1.json for a response
