@@ -396,7 +396,7 @@ NodeJS для написания «мостов»</li>
 и до компонентов для построения UI (такие как matrix-react-sdk и matrix-ios-kit). 
 Выберите инструмент для своей платформы или, если не нашли ничего подходящего, 
 используйте созданный сообществом. Вероятно, вам также захочется почитать 
-<a href="https://matrix.org/docs/howtos/client-server.html">HOWTO по клиент-серверному API</a> .</p>
+<a href="https://matrix.org/docs/guides/client-server-api">HOWTO по клиент-серверному API</a> .</p>
 
 <p>Если у вас уже есть рабочая инфраструктура (XMPP, собственная реализация на HTTP или что угодно), 
 вы можете поднять «мост» в экосистему Matrix. Почитайте 
@@ -408,7 +408,7 @@ NodeJS для написания «мостов»</li>
 
 <h5 id="matrix-8">Как я могу написать клиент Matrix?</h5>
 
-<p>Смотрите <a href="https://matrix.org/docs/howtos/client-server.html">HOWTO по клиент-серверному API</a>, 
+<p>Смотрите <a href="https://matrix.org/docs/guides/client-server-api">HOWTO по клиент-серверному API</a>, 
 <a href="/docs/api">документы</a> и <a href="/docs/spec">спецификации</a> по всем деталям, которые вам нужны для написания клиента.</p>
 
 <h5 id="-11">Как я могу вам помочь с этим?</h5>
