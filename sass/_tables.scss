@@ -1,7 +1,11 @@
 table {
-    display: block;
-    white-space: nowrap;
-    overflow-x: auto;
+    @media (max-width: 991px) {
+        display: block;
+        overflow-x: auto;
+        width: fit-content;
+    }
+
+    display: table;
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
