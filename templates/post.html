@@ -13,7 +13,7 @@
     "datePublished": "{{ page.date | date(format="%Y-%m-%dT%H:%M+00:00") }}",
     "dateModified": "{{ page.updated | date(format="%Y-%m-%dT%H:%M+00:00") }}",
     "author": [
-    {% for author in page.taxonomies.authors %}
+    {% for author in page.taxonomies.author %}
     {
         "@type": "Person",
         "name": "{{ author }}",
