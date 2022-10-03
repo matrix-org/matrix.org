@@ -5,7 +5,7 @@ path = "/blog/2022/09/13/security-release-of-matrix-appservice-irc-0-35-0-high-s
 template = "post.html"
 [taxonomies]
 category = ["Security", "Releases"]
-author = ["Denis Kasak (dkasak)"]
+author = ["Denis Kasak"]
 +++
 
 We've released a new version of matrix.org's node-irc 1.3.0 and
