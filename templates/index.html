@@ -4,6 +4,7 @@
 {% endblock head_extra %}
 {% block body_attrs %}id="frontpage"{% endblock body_attrs %}
 {% block content %}
+{% set frontpage_data = load_data(path="content/index.toml") %}
 <div class="hero herobackground">
     <div class="herobackground__img"></div>
     <div class="content">
@@ -184,26 +185,12 @@
         <section>
             <h1>Explore Matrix</h1>
             <div id="explore">
-                <a title="Try Matrix" href="/docs/projects/try-matrix-now">
-                    <img src="assets/basic_elaboration_message_happy.svg">
-                    <span>Try Matrix</span>
+                {% for explore in frontpage_data.explore %}
+                <a title="{{ explore.title }}" href="{{ explore.href }}">
+                    <img src="assets/{{ explore.img }}">
+                    <span>{{ explore.title }}</span>
                 </a>
-                <a title="Clients" href="/clients-matrix/">
-                    <img src="assets/software_layout_header_sideleft.svg">
-                    <span>Clients</span>
-                </a>
-                <a title="Bots" href="/docs/projects/bots">
-                    <img src="assets/basic_calculator.svg">
-                    <span>Bots</span>
-                </a>
-                <a title="SDKs" href="/sdks/">
-                    <img src="assets/software_layers2.svg">
-                    <span>SDKs</span>
-                </a>
-                <a title="Hosting" href="/hosting/">
-                    <img src="assets/basic_cloud.svg">
-                    <span>Hosting</span>
-                </a>
+                {% endfor %}
             </div>
         </section>
         <section id="sdks">
@@ -263,8 +250,7 @@
         <section id="sponsors">
             <h1>Thank you to our incredible sponsors</h1>
             <div class="grid">
-                {% set frontpage = load_data(path="content/index.toml") %}
-                {% for sponsor in frontpage.sponsors %}
+                {% for sponsor in frontpage_data.sponsors %}
                 <div class="grid-container-third">
                     <div class="block">
                         <div class="logo">

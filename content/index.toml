@@ -1,3 +1,11 @@
+explore = [
+    { title = "Try Matrix", href = "/try-matrix/", img = "basic_elaboration_message_happy.svg" },
+    { title = "Clients", href = "/ecosystem/clients/", img = "software_layout_header_sideleft.svg" },
+    { title = "Bots", href = "/ecosystem/bots/", img = "basic_calculator.svg" },
+    { title = "SDKs", href = "/ecosystem/sdks/", img = "software_layers2.svg" },
+    { title = "Hosting", href = "/ecosystem/hosting/", img = "basic_cloud.svg" },
+]
+
 [[sponsors]]
 name = "Status"
 image = "status.svg"
