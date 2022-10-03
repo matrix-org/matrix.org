@@ -12,11 +12,15 @@
     "headline": "{{ page.title }}",
     "datePublished": "{{ page.date | date(format="%Y-%m-%dT%H:%M+00:00") }}",
     "dateModified": "{{ page.updated | date(format="%Y-%m-%dT%H:%M+00:00") }}",
-    "author": [{
+    "author": [
+    {% for author in page.taxonomies.authors %}
+    {
         "@type": "Person",
-        "name": "{{ page.taxonomies.authors | default (value=["unknown author"]) | first }}",
-        "url": "{{ config.base_url | safe }}/authors/{{ page.taxonomies.authors | default (value=['unknown author']) | first | slugify }}"
-    }]
+        "name": "{{ author }}",
+        "url": "{{ config.base_url | safe }}/authors/{{ author | slugify }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+    ]
 }
 </script>
 {% endblock head_extra %}
