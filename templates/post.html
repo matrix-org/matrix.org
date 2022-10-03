@@ -1,5 +1,29 @@
 {% extends "skel.html" %}
 {% block html_title %}Matrix.org - {{ page.title }}{% endblock html_title %}
+{% block head_extra %}
+{% if page.summary %}
+<meta name="description" content="{{ page.summary | safe }}">
+{% endif %}
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "{{ page.title }}",
+    "datePublished": "{{ page.date | date(format="%Y-%m-%dT%H:%M+00:00") }}",
+    "dateModified": "{{ page.updated | date(format="%Y-%m-%dT%H:%M+00:00") }}",
+    "author": [
+    {% for author in page.taxonomies.authors %}
+    {
+        "@type": "Person",
+        "name": "{{ author }}",
+        "url": "{{ config.base_url | safe }}/authors/{{ author | slugify }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+    ]
+}
+</script>
+{% endblock head_extra %}
 {% block content %}
 <main>
     <article class="content post">
