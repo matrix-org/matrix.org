@@ -1,5 +1,5 @@
 +++
-date = "2022-09-28T12:53:12Z"
+date = "2022-09-28T15:41:33Z"
 title = "Upgrade now to address E2EE vulnerabilities in matrix-js-sdk, matrix-ios-sdk and matrix-android-sdk2"
 path = "/blog/2022/09/28/upgrade-now-to-address-encryption-vulns-in-matrix-sdks-and-clients"
 template = "post.html"
