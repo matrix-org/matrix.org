@@ -1,15 +1,13 @@
----
-date: 2022-09-02T16:46:57Z
-updated: 2022-09-10T15:04:08Z
-title: 'This Week in Matrix 2022-09-02'
-path: /blog/2022/09/02/this-week-in-matrix-2022-09-02
-template: post.html
-taxonomies:
-  category:
-  - This Week in Matrix
-  author:
-  - Thib
----
++++
+date = "2022-09-02T16:46:57Z"
+updated = "2022-09-10T15:04:08Z"
+title = "This Week in Matrix 2022-09-02"
+path = "/blog/2022/09/02/this-week-in-matrix-2022-09-02"
+template = "post.html"
+[taxonomies]
+  category = ["This Week in Matrix"]
+  author = ["Thib"]
++++
 
 ## Matrix Live 🎙
 
