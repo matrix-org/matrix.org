@@ -28,9 +28,9 @@
         <article>
             <header>
                 <h2><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h2>
-                <span>{{ page.date | date(format="%d.%m.%Y %H:%M") }}{% if page.taxonomies.categories %} — <a
-                        href="/categories/{{ page.taxonomies.categories | first | slugify }}">{{
-                        page.taxonomies.categories
+                <span>{{ page.date | date(format="%d.%m.%Y %H:%M") }}{% if page.taxonomies.category %} — <a
+                        href="/category/{{ page.taxonomies.category | first | slugify }}">{{
+                        page.taxonomies.category
                         | first }}</a>
                     {% endif %} — <a href="/author/{{ page.taxonomies.author | default (value=['unknown author']) | first |
                                     slugify }}">{{ page.taxonomies.author | default (value=["unknown author"]) | first
