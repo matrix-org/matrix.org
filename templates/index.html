@@ -161,7 +161,7 @@
                         {% set content = page.content | striptags | truncate(length=133) %}
                         {% set title = page.title %}
                         {% set date = page.date %}
-                        {% set author = page.taxonomies.authors | default (value=["unknown author"]) | first %}
+                        {% set author = page.taxonomies.author | default (value=["unknown author"]) | first %}
                         <div class="grid-container">
                             <div class="block">
                                 <h2>{{ title }}</h2>
