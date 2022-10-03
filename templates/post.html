@@ -11,7 +11,9 @@
     "@type": "NewsArticle",
     "headline": "{{ page.title }}",
     "datePublished": "{{ page.date | date(format="%Y-%m-%dT%H:%M+00:00") }}",
+    {% if page.updated %}
     "dateModified": "{{ page.updated | date(format="%Y-%m-%dT%H:%M+00:00") }}",
+    {% endif %}
     "author": [
     {% for author in page.taxonomies.author %}
     {
