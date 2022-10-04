@@ -15,8 +15,7 @@
                 {% if client.featured %}
                 <div class="grid-container-third">
                     <div class="block">
-                        {% set preview_url = get_url(path="clients/" ~ client.preview, trailing_slash=false ) %}
-                        <img src="{{ preview_url }}" alt="{{ name }} Preview">
+                        <img src="{{ client.preview }}" alt="{{ name }} Preview">
                         <h3>{{ name }}</h3>
                         <p>{{ client.summary | safe }}</p>
                         <div>
