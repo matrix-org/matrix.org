@@ -2,7 +2,6 @@
 {% block head_extra %}
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='atom.xml', trailing_slash=false)}}">
 {% endblock head_extra %}
-{% block body_attrs %}id="frontpage"{% endblock body_attrs %}
 {% block content %}
 {% set frontpage_data = load_data(path="content/index.toml") %}
 <div class="hero">

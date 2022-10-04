@@ -21,7 +21,7 @@
     {% block head_extra %}{% endblock head_extra -%}
 </head>
 
-<body {% block body_attrs %}{% endblock body_attrs %}>
+<body>
     {% set navigation = load_data(path="navigation.toml") %}
     {% include "includes/header.html" %}
 
