@@ -1,5 +1,5 @@
 +++
 title = "Podcasts"
+template = "podcasts.html"
 +++
 
-*To be filled with content*

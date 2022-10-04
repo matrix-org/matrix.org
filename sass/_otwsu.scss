@@ -1,0 +1,20 @@
+.podcasts-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 20px;
+}
+
+.otwsu-episode {
+    display: grid;
+    margin-bottom: 20px;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+
+    h3 {
+        margin-top: 0;
+    }
+
+    img {
+        margin-top: 10px;
+    }
+}

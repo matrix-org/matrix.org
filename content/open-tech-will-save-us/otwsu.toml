@@ -1,0 +1,335 @@
+[[episodes]]
+youtube = "d2LhmF5KyCY"
+date = "2022-10-26"
+summary = """
+The theme of this episode is not yet public, but watch this space!
+"""
+
+[[episodes]]
+youtube = "cJHlndIcgMM"
+date = "2022-09-28"
+summary = """
+People start to be familiar with password managers, which are a good way to 
+mitigate the proliferation of accounts ruling our digital lives. On the
+enterprise side, past a certain size for the company the proliferation of
+accounts is solved by SSO.
+
+Let's talk about everything identity, the state of the art, the impact is has on
+users, on administrators, why companies decide to deploy such projects, whether
+it can make sense for smaller scale deployments, and much more.
+
+- Jens from [Authentik](https://goauthentik.io), the supercharged all-in-one
+  identity system will tell us about everything identity: why not just letting
+  services have their base of accounts, what is the state of the art, is this
+  just a systems administrators thing or does it benefit users as well? 
+- Quentin who works on a deeper integration of OpenID Connect in Matrix will
+  reveal the not so secret plans he has to take advantage of what OpenID Connect
+  has to offer so Matrix users get the best experience in the long run.
+"""
+
+[[episodes]]
+youtube = "pGE2KEasjbc"
+date = "2022-07-27"
+summary = """
+A massive episode of Open Tech Will Save Us on the very broad topic of 
+platforms! What makes a platform? Are there different levels of platforms? Who
+uses them? What are they useful for? What can be expected from a platform? And
+the controversial topics: are Linux or the Web a platform?
+
+To answer those questions, who other than the Linux desktop most advanced 
+projects GNOME and KDE, and people working on Matrix, the protocol that wants to
+become as unmissable as the web itself?
+"""
+
+[[episodes]]
+youtube = "c9BMmIEGC3c"
+date = "2022-06-29"
+summary = """
+A special edition of Open Tech Will Save Us on Thunderbird, the multi-purpose
+client to organise your digital life. Mail, Contacts, Calendar, Feeds, and even
+Instant Messaging: Thunderbird can be a central piece in your workflow.
+
+Ryan Lee Sipes, Community and Business Development Manager for Thunderbird is 
+joining us to talk about the revival of Thunderbird, and the big plans they have
+for it.
+"""
+
+[[episodes]]
+youtube = "H5atH-tbeRo"
+date = "2022-05-25"
+summary = """
+- Quentin and Maximilien from Deuxfleurs are creating Garage, a robust and
+  distributed storage backend that can run on old computers. Who can use it?
+  Why? And when should I not use it? Let's find out!
+- Nathan from the Guardian Project is working with wind, butter, and rasperries
+  to provide applications and messaging to people in low-connectivity areas. A
+  fascinating dive off the grid.
+"""
+
+[[episodes]]
+youtube = "dV9BneUu2Yo"
+date = "2022-04-27"
+summary = """
+- We will speak about the relevance of open standards with **Italo from The 
+     Document Foundation** and how it works in practice with the OpenDocument
+     format. Who are open standards for? Are there cases when open standards
+     can be a problem? Are they just a technical matter? Let's find out!
+- **Jean-Marc Liotier from Openstreetmap** has a lot to tell us not only about
+     open standards but also about open data. Let's dive in the open map project
+     and see what collaboration can bring to citizens and organisations at large.
+- **Half-Shot from Element** is the author of the hookshot project… and it loves
+     open standards! Hookshot is a multi-purpose bridge which thrives when it
+     can use open APIs and open standards. How does interoperability help
+     bringing value? Half-Shot will show us in practice!
+"""
+
+[[episodes]]
+youtube = "X3vx4Ad7PtI"
+date = "2022-03-30"
+summary = """
+- **pnu from Exodus Privacy** will tell us everything you need to know about
+     how apps can track their users, what they do to raise awareness about it,
+     and how you can get a better view of what your apps know about you.
+- **Gael from /e/** will tell us everything about their de-googled devices and
+     services, and how they make it easy for privacy mindful people to reclaim
+     their digital dignity.
+- **Nad from Element** will give us the perspective of designers and product 
+     managers and how they use analytics. He will tell us how Element does its
+     best to use analytics in a privacy respectful way
+"""
+
+[[episodes]]
+youtube = "5yxsSEySHpY"
+date = "2022-02-25"
+summary = """
+- **Jos Poortvielt from Nextcloud** will tell us about how Nextcloud provides
+    software for both enterprises and individuals, and how their needs are
+    different.
+- **Alexandre Aubin from YunoHost** will tell us how their distribution makes
+     it easy not only to put self-hosted services online but also to keep data
+     safe.
+- **Neil Alexander from Element** will tell us about the reasons why he's
+    working on Pinecone, and what the vision behind Matrix P2P is, and why he 
+    thinks the best server is no server.
+"""
+
+[[episodes]]
+youtube = "WP3HCbVAEzU"
+date = "2021-04-14"
+summary = """
+- *Creating a SAFE SUPPORT CHAT on the Matrix API*
+  - **Kim Allen of PRIMAL GLOW Communications** will be joined by Safe Support 
+      Chat Project Team Members,
+  **Sharon Kennedy of Nomadic Labs**  and **Brent Edwards** to talk about why 
+    and how this online crisis support tool for sexual assault centres was built
+    on Matrix, using a custom implementation of Element and other Open Source
+    resources.
+- *Open Web Docs: web documentation as critical infrastructure*
+  - **Will Bamberg** is a technical writer who works on MDN Web Docs, originally
+      for Mozilla and now for Open Web Docs. He's especially interested in ways
+      we can make documentation more engaging and accessible. Open Web Docs is a
+      collective of people and organizations that exists to support web
+      documentation.
+- *Hydrogen Deep Dive*
+  - **Bruno from Element** will do a deep dive into the architecture of 
+      Hydrogen, the upcoming next-generation Matrix web-client. What are the 
+      guiding principles, what makes it fast, what is different about it, and 
+      how could it also benefit Element Web?
+"""
+
+[[episodes]]
+youtube = "qJSqUmMy9IY"
+date = "2021-03-10"
+summary = """
+- **Gaelle from Element** presents all things Voice & Video including recent UX
+  improvements, upcoming features like voice messages, and bleeding edge designs
+  for Voice & Video rooms
+- **David Benqué** [@dbenque:matrix.xwiki.com](https://matrix.to/#/@dbenque:matrix.xwiki.com), 
+  Designer at [CryptPad](https://cryptpad.fr), presenting the open source & 
+  end-to-end encrypted collaboration suite.
+  [@cryptpad@social.weho.st](https://social.weho.st/web/accounts/43149)
+  [@cryptpad](https://twitter.com/cryptpad)
+- **[David Revoy](https://www.davidrevoy.com/)**, known for his artwork, 
+  [Pepper & Carrot webcomic](https://www.peppercarrot.com/) and 
+  [design tutorials](https://www.davidrevoy.com/categorie3/tutorials-brushes-extras) 
+  in the Open Source space, performs a digital painting demo, and speaks about 
+  his use of open tools!
+"""
+
+[[episodes]]
+youtube = "Wp2rSyqZsbs"
+date = "2021-02-10"
+summary = """
+We're skipping January 2021! Next event will be 10th February 2021.
+
+- **Matthew Miller**, Distinguished Engineer at Red Hat and the
+current Fedora Project Leader:
+  - *Linux on the Desktop: It's Not About "Better" (or, This OS
+Was Made for You and Me)*
+- **[Alex Siman](https://twitter.com/AlexSiman)**, Founder of Subsocial, 
+  presents:
+  - [Subsocial Network](https://subsocial.network/): an open protocol for social
+    finance on Polkadot and IPFS tech stack
+- Plus, a chat with the Matrix team responsible for pulling off FOSDEM2021: a 
+  fully-online, decentralised conference
+"""
+
+[[episodes]]
+youtube = "yNs-Rg5tL8I"
+date = "2020-12-09"
+summary = """
+- **Angie Gaudion**, Coordinatrice at CHATONS, presenting Mobilizon: a new libre 
+  events management tool <https://joinmobilizon.org/en/>.  
+- **Ben Francis** ([@bfrancis](https://twitter.com/bfrancis), 
+  **@benfrancis:mozilla.org**) from [Krellian](https://krellian.com/)
+  ([@KrellianUK](https://twitter.com/KrellianUK)) talks about the spinning out 
+  of the [WebThings](https://webthings.io/)
+  ([@WebThingsIO](https://twitter.com/WebThingsIO)) IoT platform from Mozilla, 
+  explains how to build your own private smart home with
+  [WebThings Gateway 1.0](https://webthings.io/gateway/) and gives a 
+  whistle-stop tour of the [Web Thing API](https://webthings.io/api/).
+  ([slides](https://docs.google.com/presentation/d/e/2PACX-1vRzYZIsG4FW9TbbUrn0ugw6RGCcwlvL09WM46sj-pi2Zbwqoh1wImnwL4HwjKAisW8F6TOYq8WvdAyp/pub))
+- **Nad Chishtie**, Product Lead at Element, presents Matrix Spaces: a new 
+  vision for room groups in Matrix
+"""
+
+[[episodes]]
+youtube = "D4CprdzE2lY"
+date = "2020-11-11"
+summary = """
+- **Muhammad Radwan**, on behalf of **Tactical Tech**, will present their work 
+  on **[The Glass Room Misinformation Edition](https://theglassroom.org/misinformation/)**.  
+  *What happens when we increasingly rely on social media and the web for nearly
+  all our information? What information do we see, and what do we miss? How do
+  we know if a picture or a tweet is genuine or truthful? And what can we do if
+  we can’t be sure?*
+- **Popi** from **CHATONS** will present the work done by CHATONS ("Collective
+  of Alternative, Transparent, Open, Neutral and United Hosters")
+  *CHATONS has been initiated by Framasoft, in the wake of the success of its
+  campaign "De-google-ify Internet". A CHATONS member pledges to propose fully
+  FLOSS-based online services, in an ethical and united spirit.*
+- **Hubert|Uhoreg Chathi** will present on the state of encryption in Matrix,
+  and more broadly *Why the PGP model is insufficient, what properties we want
+  from encryption (e.g. why we want perfect forward secrecy), how the newer
+  protocols (OTR, double-ratchet, megolm) give us some of the properties we
+  want, and then what's coming in the future (MLS, and what that gives us)*
+"""
+
+[[episodes]]
+youtube = "xJ2Tjc1Aj0A"
+date = "2020-10-14"
+summary = """
+- **Holger** and **Karissa**, representing [DeltaChat](https://delta.chat/en/), and
+**Matthew** from Matrix, will hold *robust discussions* on the subject of Open
+  Tech: will it save us? Surely Open Tech can be used for all kinds of bad
+  things? They will also discuss how Matrix and Delta Chat's approaches differ
+  technically and organisationally.
+- **Dendrite**, a next generation Matrix homeserver written in Go, has entered
+  *beta*. Join **Kegan**, from the team, to find out the state of the project
+  and why we're all excited about it again.
+- **David Jacovkis** ([@dvdjaco:matrix.org](https://matrix.to/#/@dvdjaco:matrix.org))
+  from femProcomuns (<https://femprocomuns.coop>) will present
+  <https://meet.coop>, a videoconf service operated by coops. He'll discuss the
+  challenges and opportunities of this approach for the sustainability of Free
+  and Open Source projects.
+"""
+
+[[episodes]]
+youtube = "AGs4ZC24Q1Y"
+date = "2020-09-09"
+summary = """
+- **Ag3m**, from [La Quadrature du Net](https://www.laquadrature.net) will join
+  us to present _"Some thoughts on moderation and censorship in a decentralised
+  world"_ .  
+  As a member at LQDN for three years and a volunteer for more than that, Ag3m
+  cofounded a queer feminist hackerspace in Paris called _le Reset_.
+- **Sean DuBois** ([Sean-Der](https://github.com/Sean-Der),
+  [@sean-der:matrix.org](https://matrix.to/#/@sean-der:matrix.org)),
+  WebRTC-knower and author of 
+  [WebRTC for the Curious](https://webrtcforthecurious.com) will discuss his
+  recent work in the space.
+- **Damir Jelić** presented the latest news on the Matrix Rust SDK
+"""
+
+[[episodes]]
+youtube = "tJ8tthkVAOQ"
+date = "2020-08-12"
+summary = """
+- **Jonathan Beri, known Maker of Things**
+  ([@jberi@toot.cafe](https://toot.cafe/@jberi)) will be presenting _Making it
+  easier to make Things: WebAssembly and the Internet of Things_
+  WebAssembly is moving beyond the browser - but is it ready for IoT apps and
+  tiny embedded devices? Yes...ish. In this talk, learn about the state of
+  running Wasm on embedded devices and what's left to solve.
+- **Matthew Petry from Pine64**
+  ([@fire219:matrix.org](https://matrix.to/#/@fire219:matrix.org)) presents his
+  experience with running Synapse on RockPro64 cluster, plus some thoughts on
+  his time with Pine64!
+- **Nad from Element** dives into the recent rebrand, in which he worked to
+  combine three brands into one, all while working to maintain a strong identity -
+  highly recommended for Design and Product nerds fans
+"""
+
+[[episodes]]
+youtube = "_2DQ_iYZi5U"
+date = "2020-07-08"
+summary = """
+- **Jay Graber** ([@arcalinea](https://twitter.com/arcalinea),
+  [@arcalinea:matrix.org](https://matrix.to/#/@arcalinea:matrix.org)),
+  creator of [Happening](https://happening.net/) and
+  [all-around decentralisation fan](https://medium.com/decentralized-web/decentralized-social-networks-e5a7a2603f53)
+  will summarize an overview of the decentralized social media ecosystem that
+  they're working on.
+- **Ania M. Piotrowska**
+  ([@aniampiotrowska](https://twitter.com/aniampiotrowska)), known for her work
+  on [Nym](https://nymtech.net/), Loopix, and at UCL will present "Building
+  private future for the internet with the Nym mixnet".
+- **Burak Nehbit** ([@nehbit](https://twitter.com/nehbit),
+  [@burak:tomesh.net](https://matrix.to/#/@burak:tomesh.net)) will give a deep
+  dive into his work on [Aether P2P](https://getaether.net/).
+"""
+
+[[episodes]]
+youtube = "fTREjXQCto"
+date = "2020-06-10"
+summary = """
+- **[rabble](https://twitter.com/rabble)** , who has worked on a whole lot of
+  things, will be discussing [Planetary](https://planetary.social), his in-beta
+  Secure Scuttlebutt (SSB) venture!
+- **[Annie Elequin](https://annie.elequin.io/)** , creator of
+  [Ditto Chat](https://dittochat.org/) will discuss her work to produce great UX
+  in an Open Source messenger with React Native.
+- Our very own **Erik Johnson** will give an overview of the recent sharding
+  work being done to improve Synapse performance. Users of the Matrix.org
+  homeserver may have already seen these benefits!
+"""
+
+[[episodes]]
+youtube = "O3YP1TU-L_8"
+date = "2020-05-13"
+summary = """
+- [Mike Hoye](http://exple.tive.org/blarg/) from Mozilla will be talking about
+  "Verbs in the fediverse"
+- Eugen ([@Gargron@mastodon.social](https://mastodon.social/@Gargron)) will talk
+  about "how we keep mastodon.social running at scale" as a Q&A
+- ... and a new VIP tour of Dendrite, the next-gen Matrix Homeserver!
+"""
+
+[[episodes]]
+youtube = "APVp-20ATLk"
+date = "2020-04-08"
+summary = """
+- [Matthew Hodgson](https://https://twitter.com/ara4n) technical co-founder of
+  [Matrix.org](https://matrix.org) to introduce and speak about the importance
+  of decentralisation and privacy
+- [Saúl Ibarra Corretgé](https://twitter.com/saghul) from
+  [Jitsi](https://jitsi.org) on the rapid growth they've experienced since the
+  start of the 2020 crisis
+- [David Dias](https://twitter.com/daviddias) from [IPFS](https://ipfs.io/) IPFS
+  introducing gossipsub in libp2p, including the security hardening work that
+  they've been putting into v1.1!
+- [Valère](https://twitter.com/valereonmobile), from
+  [Matrix](https://matrix.org) and [Riot](https://riot.im) , who will present
+  the importance of UX and cross-signing keys in end-to-end encrypted
+  communications.
+"""
