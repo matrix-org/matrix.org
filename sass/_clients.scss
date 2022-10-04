@@ -12,6 +12,11 @@
     }
 
     table {
+        display: block;
+        white-space: nowrap;
+        overflow-x: auto;
+        width: unset;
+
         .cross {
             text-align: center;
         }

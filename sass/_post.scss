@@ -1,5 +1,20 @@
 .post {
     width: 100%;
+    display: table;
+
+    table {
+
+        tbody,
+        thead {
+            width: 100%;
+        }
+
+
+        th,
+        td {
+            text-align: left !important;
+        }
+    }
 
 
     iframe {

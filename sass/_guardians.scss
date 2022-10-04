@@ -1,0 +1,24 @@
+.guardian {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+
+    img {
+        width: 128px;
+        height: 128px;
+        min-width: 128px;
+        min-height: 128px;
+        border-radius: 128px;
+        margin: 20px;
+    }
+}
+
+.guardian-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.guardian-name {
+    font-weight: bold;
+    margin: 0px;
+}

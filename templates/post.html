@@ -11,7 +11,9 @@
     "@type": "NewsArticle",
     "headline": "{{ page.title }}",
     "datePublished": "{{ page.date | date(format="%Y-%m-%dT%H:%M+00:00") }}",
+    {% if page.updated %}
     "dateModified": "{{ page.updated | date(format="%Y-%m-%dT%H:%M+00:00") }}",
+    {% endif %}
     "author": [
     {% for author in page.taxonomies.author %}
     {
@@ -44,9 +46,10 @@
             <main>
                 {{ page.content | safe | markdown | safe }}
             </main>
+            {% if page.toc %}
             <aside>
                 <h3>Post Contents</h3>
-                {% if page.toc %}
+
                 <ul style="list-style: none; padding-left: 0px;">
                     {% for h1 in page.toc %}
                     <li>
@@ -63,8 +66,8 @@
                     </li>
                     {% endfor %}
                 </ul>
-                {% endif %}
             </aside>
+            {% endif %}
         </div>
     </article>
 </main>
