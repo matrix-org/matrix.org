@@ -1,0 +1,36 @@
+[[guardians]]
+name = "Prof. Jon Crowcroft"
+picture = "/path/to/"
+bio = """
+Jon Crowcroft is the Marconi Professor of Communications Systems in the Computer Lab at the University of Cambridge, and the Turing Institute. Jon is a pioneer in the field of decentralised communication, and a fellow of the Royal Society, the ACM, the British Computer Society, the Institution of Engineering and Technology, the Royal Academy of Engineering and the Institute of Electrical and Electronics Engineers. (He also supervised Matthew on building a pre-Matrix instant messaging system at Cambridge, and complained that it wasn’t decentralised enough!)
+"""
+
+[[guardians]]
+name = "Matthew Hodgson"
+picture = "/path/to/"
+bio = """
+Matthew is technical co-founder of Matrix, and CEO/CTO of New Vector - the company formed in 2017 to let the core Matrix dev team work on Matrix full-time as their day job. He came up with the idea of Matrix with Amandine in 2013 while they were running Amdocs’ Unified Communication unit. He has a degree in Physics & Computer Science from the University of Cambridge.
+"""
+
+[[guardians]]
+name = "Amandine Le Pape"
+picture = "/path/to"
+bio = """
+Amandine is co-founder of Matrix, and COO of New Vector. She previously ran the business side of Amdocs’ UC unit with Matthew. She has an engineering degree in Telecoms, Electronics and Computer Science and uses it most to translate the technicalities of Matrix to humans and businesses, and make sure we keep the users at heart when making decisions!
+"""
+
+[[guardians]]
+name = "Ross Schulman"
+picture = "/path/to"
+bio = """
+Ross Schulman is a senior counsel and senior policy technologist at New America’s Open Technology Institute, where he focuses on internet measurement, emerging technologies, surveillance, and decentralization. Prior to joining OTI, Ross worked for Google. Ross brings a unique perspective as a tech- and decentralisation-savvy lawyer to the Foundation, as well as being one of the first non-developers in the Matrix community to run his own homeserver. Ross has been known to walk around Mozfest clutching a battery-powered Synapse in a box, promoting decentralised communication for all.
+"""
+
+[[guardians]]
+name = "Dr. Jutta Steiner"
+picture = "/path/to"
+bio = """
+As co-founder and CEO of Parity Technologies, Dr. Jutta Steiner is dedicated to building a better internet - Web 3.0 - where users’ privacy & control come first. Parity Technologies is a leader in the blockchain space – known to many as the creator of one of the most popular Ethereum clients, it is also the creator of two ambitious new blockchain technlogies, Polkadot and Substrate, that make it easier to experiment and innovate on scalability, encryption and governance.
+
+Parity Technologies have been pioneering Matrix enterprise use since the moment they decided to rely on Matrix for their internal and external communication back in 2016 and now run their own high-volume deployment, with end-to-end encryption enabled by default. Jutta represents organisations who are professionally dependent on Matrix day-to-day, as well as bringing her unique experiences around decentralisation and ensuring that Web 3.0 will be a fair web for all.
+"""
