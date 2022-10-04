@@ -5,9 +5,9 @@ title = "About Matrix"
 ## Governance
 
 The evolution of Matrix is managed through an open governance process, looked
-after by The Matrix.org Foundation - ‡ non-profit UK Community Interest
-Company, incorporated to act as the neutral guardian of the standard on behalf
-of the whole Matrix community.
+after by The Matrix.org Foundation - a non-profit UK Community Interest Company, 
+incorporated to act as the neutral guardian of the standard on behalf of the 
+whole Matrix community.
 
 The Foundation defines the manifesto, mission and values of the project, the
 open governance process that determines how the specification develops, and
