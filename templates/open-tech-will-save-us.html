@@ -1,6 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
 {% set episodes_data = load_data(path="/content/open-tech-will-save-us/otwsu.toml") %}
+{% set number_of_episodes = episodes_data.episodes | length %}
 {% set lastest_episode_date = episodes_data.episodes[0].date | date(format="%Y%m%d") | int %}
 {% set today = now() | date(format="%Y%m%d") | int %}
 {% if lastest_episode_date >= today %}
@@ -10,7 +11,7 @@
 <main>
     <article class="content">
         <header>
-            <img src="/open-tech-will-save-us/otwsu{{ episodes_data.episodes[0].code }}.png"
+            <img src="/open-tech-will-save-us/otwsu{{ number_of_episodes}}.png"
             alt="Banner of Open Tech Will Save Us. It displays an abstract tree, the name of the show, and the date of the episode: {{ episodes_data.episodes[0].date }}" />
             <h1>{{ page.title }}</h1>
         </header>
@@ -18,7 +19,7 @@
             {{ page.content | markdown | safe }}
 
             {% if next_episode %}
-            <h2>Next up, Edition {{ episodes_data.episodes[0].code }} - {{ episodes_data.episodes[0].date | date(format="%d %B %Y") }}</h2>
+            <h2>Next up, Edition {{ episodes_data.episodes | length }} - {{ episodes_data.episodes[0].date | date(format="%d %B %Y") }}</h2>
             {{ episodes_data.episodes[0].summary | markdown | safe }}
             {% endif %}
 
@@ -27,10 +28,10 @@
             {% if loop.first %}
             {% else %}
                 <div class="otwsu-episode">
-                    <img src="/open-tech-will-save-us/otwsu{{episode.code}}.png"
+                    <img src="/open-tech-will-save-us/otwsu{{ number_of_episodes + 1 - loop.index }}.png"
                     alt="Banner of Open Tech Will Save Us. It displays an abstract tree, the name of the show, and the date of the episode: {{ episode.date }}" />
                     <div class="otwsu-episode-details">
-                        <h3>Edition {{ episode.code }}: {{ episode.date | date(format="%d %B %Y") }}</h3>
+                        <h3>Edition {{ number_of_episodes + 1 - loop.index }}: {{ episode.date | date(format="%d %B %Y") }}</h3>
                         <p>You can watch a recording of this event <a href="https://youtube.com/watch?v={{ episode.youtube }}">here</a></p>
                         <p>{{ episode.summary | markdown | safe }}</p>
                     </div>

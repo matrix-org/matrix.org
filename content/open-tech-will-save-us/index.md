@@ -3,7 +3,7 @@ title = "Open Tech Will Save Us"
 template = "open-tech-will-save-us.html" 
 +++
 
-[Join the live chat now!](https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca)
+[Join the live chat now!](https://matrix.to/#/#otwsu:matrix.org)
 
 Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live 
 video stream broadcasting on the last Wednesday of every month at 6pm Paris 
