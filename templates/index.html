@@ -12,7 +12,7 @@
         <a href="/docs/guides/introduction" class="button w-button">Learn More</a>
     </div>
 </div>
-<main id="frontpage" class="content">
+<main id="frontpage">
     <section>
         <div class="grid">
             <div class="grid-container">
@@ -34,9 +34,9 @@
         </div>
     </section>
     <section>
-        <div class="grid dark">
+        <div class="grid">
             <div class="grid-container">
-                <div class="block">
+                <div class="block dark-bg">
                     {% set messaging = load_data(path="/partials/frontpage/features/messaging.md") %}
                     <div class="text">
                         {{ messaging | markdown | safe }}
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="grid-container">
-                <div class="block">
+                <div class="block dark-bg">
                     {% set e2ee = load_data(path="/partials/frontpage/features/e2ee.md") %}
                     <div class="text">
                         {{ e2ee | markdown | safe }}
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="grid-container">
-                <div class="block">
+                <div class="block dark-bg">
                     {% set voip = load_data(path="/partials/frontpage/features/voip.md") %}
                     <div class="text">
                         {{ voip | markdown | safe }}
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="grid-container">
-                <div class="block">
+                <div class="block dark-bg">
                     {% set bridging = load_data(path="/partials/frontpage/features/bridging.md") %}
                     <div class="text">
                         {{ bridging | markdown | safe }}
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="grid-container-full">
-                <div class="block">
+                <div class="block dark-bg">
                     {% set more = load_data(path="/partials/frontpage/features/more.md") %}
                     <div class="text">
                         {{ more | markdown | safe }}
@@ -88,8 +88,8 @@
         {{ how_does_it_work | markdown | safe }}
         <div class="how" style="height: 520px;">placeholder</div>
     </section>
-    <section class="content dark" style="width: 100vw; max-width: unset;">
-        <div class="content" id="open-standard">
+    <section class="content dark-bg" id="open-standard">
+        <div class="content">
             <h1>An Open Standard</h1>
             <div class="grid">
                 <div class="grid-container-third">
@@ -149,37 +149,33 @@
             </div>
         </div>
     </section>
-    <div class="content" style="padding-top: 60px;">
-        <div class="content">
-            <section id="latest-news">
-                <h1>Latest News</h1>
-                <div class="grid dark">
-                    {% set blog_section = get_section(path="blog/_index.md") %}
-                    {% for page in blog_section.pages | slice(end=4) %}
-                    {% set path = page.path %}
-                    {% set content = page.content | striptags | truncate(length=133) %}
-                    {% set title = page.title %}
-                    {% set date = page.date %}
-                    {% set author = page.taxonomies.author | default (value=["unknown author"]) | first %}
-                    <div class="grid-container">
-                        <div class="block">
-                            <h2>{{ title }}</h2>
-                            <div>
-                                <p style="color: #666;">{{ date | date(format="%d.%m.%Y %H:%M") }} by {{ author }}
-                                </p>
-                                <p>
-                                    {{ content }}
-                                </p>
-                            </div>
-                            <a href="{{ path }}" class="w-button button-dark">Read more</a>
-                        </div>
+    <section id="latest-news">
+        <h1>Latest News</h1>
+        <div class="grid">
+            {% set blog_section = get_section(path="blog/_index.md") %}
+            {% for page in blog_section.pages | slice(end=4) %}
+            {% set path = page.path %}
+            {% set content = page.content | striptags | truncate(length=133) %}
+            {% set title = page.title %}
+            {% set date = page.date %}
+            {% set author = page.taxonomies.author | default (value=["unknown author"]) | first %}
+            <div class="grid-container">
+                <div class="block">
+                    <h2>{{ title }}</h2>
+                    <div>
+                        <p style="color: #666;">{{ date | date(format="%d.%m.%Y %H:%M") }} by {{ author }}
+                        </p>
+                        <p>
+                            {{ content }}
+                        </p>
                     </div>
-                    {% endfor %}
+                    <a href="{{ path }}" class="w-button button-dark">Read more</a>
                 </div>
-                <a href="/blog" class="w-button button-dark">View all Posts</a>
-            </section>
+            </div>
+            {% endfor %}
         </div>
-    </div>
+        <a href="/blog" class="w-button button-dark">View all Posts</a>
+    </section>
     <section>
         <h1>Explore Matrix</h1>
         <div id="explore">
@@ -214,7 +210,7 @@
         </div>
         <a href="/sdks/" class="w-button button-dark">View all SDKs</a>
     </section>
-    <section class="dark-bg" id="support-container">
+    <section class="dark-bg support-container">
         <h1>Support Matrix</h1>
         <p>If you share our vision, or are building on top of Matrix, please consider donating...</p>
         <p>Support us on Patreon for great rewards including access to the supporters-only podcast,

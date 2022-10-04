@@ -330,26 +330,3 @@ main {
         align-items: center;
     }
 }
-
-.grid.dark {
-    .block {
-        background-color: #f4f4f4;
-
-        img {
-            margin-top: 10px;
-            padding-bottom: 10px;
-        }
-
-        .text {
-            h4 {
-                margin-bottom: 20px;
-            }
-
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 100%;
-            flex-direction: column;
-        }
-    }
-}
