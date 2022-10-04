@@ -1,24 +1,24 @@
 .guardian {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
+    align-items: flex-start;
+    margin: 2.5em 0;
 
     img {
         width: 128px;
-        height: 128px;
-        min-width: 128px;
-        min-height: 128px;
-        border-radius: 128px;
-        margin: 20px;
-    }
-}
+        max-width: 25vw;
+        border-radius: 100%;
 
-.guardian-details {
-    display: flex;
-    flex-direction: column;
+        &:first-child {
+            margin-right: 20px;
+        }
+
+        &:last-child {
+            margin-left: 20px;
+        }
+    }
 }
 
 .guardian-name {
     font-weight: bold;
-    margin: 0px;
+    margin: 0 0 .5rem;
 }
