@@ -29,8 +29,7 @@ by the wider community to uphold the guiding principles of the Foundation and
 keep the other Guardians honest.
 
 In alphabetical order:
-
-TODO: do sort of cards, like for speakers at conferences.
+{{ guardians() }}
 
 ### Legal Details
 
