@@ -322,6 +322,8 @@ section {
 }
 
 #frontpage {
+    max-width: 1200px;
+
     p {
         line-height: 1.5;
     }
@@ -333,11 +335,5 @@ section {
     h5,
     h6 {
         font-weight: bold;
-    }
-}
-
-#frontpage {
-    .content {
-        max-width: 1200px;
     }
 }
