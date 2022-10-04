@@ -4,14 +4,14 @@
         <div class="guardian">
             {% if loop.index %2 == 0 %}
             <div class="guardian-details">
-                <span class="guardian-name">{{ guardian.name }}</span>
+                <h4 class="guardian-name">{{ guardian.name }}</h4>
                 <p>{{ guardian.bio }}</p>
             </div>
             <img class="guardian-picture" src="/about/{{ guardian.picture }}" alt="Mugshot of {{ guardian.name }}" />
             {% else %}
             <img class="guardian-picture" src="/about/{{ guardian.picture }}" alt="Mugshot of {{ guardian.name }}" />
             <div class="guardian-details">
-                <span class="guardian-name">{{ guardian.name }}</span>
+                <h4 class="guardian-name">{{ guardian.name }}</h4>
                 <p>{{ guardian.bio }}</p>
             </div>
             {% endif %}

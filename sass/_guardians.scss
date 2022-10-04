@@ -1,6 +1,7 @@
 .guardian {
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 
     .guardian-picture {
         width: 128px;
@@ -9,16 +10,16 @@
         min-height: 128px;
         border-radius: 128px;
         margin: 20px;
-        filter: grayscale(100%);
     }
 
     .guardian-details {
         display: flex;
         flex-direction: column;
-        padding: 20px;
+        //padding: 20px;
 
         .guardian-name {
             font-weight: bold;
+            margin: 0px;
         }
     }
 }
