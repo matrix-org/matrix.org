@@ -12,7 +12,7 @@ whole Matrix community.
 The Foundation defines the manifesto, mission and values of the project, the
 open governance process that determines how the specification develops, and
 provides a safety-net to ensure the project stays independent and true to its
-goals. The constitution of the project is defined in the Foundation’s legal
+goals. The constitution of the project is defined in the Foundation's legal
 Articles of Association and Rules, and is enforced by the Guardians of Matrix:
 the directors of the Foundation appointed to provide a balance of independent
 experts and the founding Matrix team to ensure the project stays on track.
@@ -23,7 +23,7 @@ The Guardians are the legal directors of the non-profit Foundation, and are
 responsible for ensuring that the Foundation (and by extension the Spec Core
 Team) keeps on mission and neutrally protects the development of Matrix.
 Guardians are typically independent of the commercial Matrix ecosystem and may
-even not be members of today’s Matrix community, but are deeply aligned with
+even not be members of today's Matrix community, but are deeply aligned with
 the mission of the project. Guardians are selected to be respected and trusted
 by the wider community to uphold the guiding principles of the Foundation and
 keep the other Guardians honest.
@@ -38,7 +38,6 @@ In alphabetical order:
 * The official articles of association of the Foundation may be
   downloaded [here](/media/2019-06-10%20-%20Matrix.org%20Foundation%20CIC%20Articles%20of%20Association.pdf)
 * The official Rules for the Foundation may be downloaded [here](/media/2019-06-10%20-%20Matrix.org%20Foundation%20CIC%20Rules.pdf)
-
 
 ### The Rules of the Foundation
 
@@ -55,7 +54,7 @@ The Proposal for Open Governance was then formalised into legal form and
 incorporated into the Articles of Association and a matching Rules document,
 which is canonically versioned in [this Google Doc](https://docs.google.com/document/d/1MhqsuIUxPc7Vf_y8D250mKZlLeQS6E39DPY6Azpc2NY/edit)
 (for ease of use by lawyers). This is the official canonical version of the
-rulebook referred to by the Foundation’s Articles.
+rulebook referred to by the Foundation's Articles.
 
 The full history of the rules can be followed via:
 * [https://matrix.org/blog/2018/06/20/towards-open-governance-for-matrix-org](https://matrix.org/blog/2018/06/20/towards-open-governance-for-matrix-org)
@@ -124,7 +123,7 @@ protocol. This includes (non-exhaustively):
 
 N.B. that we consider success to be the growth of the open federated network
 rather than closed deployments. For example, if WhatsApp adopted Matrix it
-wouldn’t be a complete win unless they openly federated with the rest of the
+wouldn't be a complete win unless they openly federated with the rest of the
 Matrix network.
 
 ### Values

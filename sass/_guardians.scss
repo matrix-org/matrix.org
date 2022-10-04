@@ -11,14 +11,14 @@
         border-radius: 128px;
         margin: 20px;
     }
+}
 
-    .guardian-details {
-        display: flex;
-        flex-direction: column;
+.guardian-details {
+    display: flex;
+    flex-direction: column;
+}
 
-        .guardian-name {
-            font-weight: bold;
-            margin: 0px;
-        }
-    }
+.guardian-name {
+    font-weight: bold;
+    margin: 0px;
 }
