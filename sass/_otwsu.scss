@@ -1,0 +1,15 @@
+.otwsu-episode {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+
+    img {
+        max-width: 25%;
+        margin: 20px;
+    }
+
+    .otwsu-episode-details {
+        display: flex;
+        flex-direction: column;
+    }
+}

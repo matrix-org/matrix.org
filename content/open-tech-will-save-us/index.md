@@ -1,0 +1,14 @@
++++
+title = "Open Tech Will Save Us"
+template = "open-tech-will-save-us.html" 
++++
+
+[Join the live chat now!](https://matrix.to/#/!AnacGSwlCZcUuAfcEU:matrix.org?via=matrix.org&via=bpulse.org&via=uhoreg.ca)
+
+Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live 
+video stream broadcasting on the last Wednesday of every month at 6pm Paris 
+time.
+
+We discuss issues relating to technology, especially the importance of Open, 
+Interoperable standards, and how they can enable decentralised tech to keep our 
+data private while still enabling communication.
