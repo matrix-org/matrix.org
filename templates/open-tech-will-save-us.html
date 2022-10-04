@@ -10,7 +10,7 @@
 <main>
     <article class="content">
         <header>
-            <img src="/content/open-tech-will-save-us/otwsu{{ episodes_data.episodes[0].code }}.png"
+            <img src="/open-tech-will-save-us/otwsu{{ episodes_data.episodes[0].code }}.png"
             alt="Banner of Open Tech Will Save Us. It displays an abstract tree, the name of the show, and the date of the episode: {{ episodes_data.episodes[0].date }}" />
             <h1>{{ page.title }}</h1>
         </header>
@@ -18,7 +18,7 @@
             {{ page.content | markdown | safe }}
 
             {% if next_episode %}
-            <h2>Next Event - {{ episodes_data.episodes[0].date }}</h2>
+            <h2>Next up, Edition {{ episodes_data.episodes[0].code }} - {{ episodes_data.episodes[0].date | date(format="%d %B %Y") }}</h2>
             {{ episodes_data.episodes[0].summary | markdown | safe }}
             {% endif %}
 

@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block content %}
+{% set matrix_live = get_page(path="podcasts/matrix_live.md") %}
+{% set otwsu = get_page(path="podcasts/open_tech_will_save_us.md") %}
+<main>
+    <article class="content">
+        <header>
+        </header>
+        <main>
+            <div class="podcasts-grid">
+                <div>
+                    <h2>{{ matrix_live.title }}</h2>
+                    {{ matrix_live.content | markdown | safe }}
+                </div>
+                <div>
+                    <h2>{{ otwsu.title }}</h2>
+                    {{ otwsu.content | markdown | safe }}
+                </div>
+            </div>
+        </main>
+    </article>
+</main>
+{% endblock content %}
