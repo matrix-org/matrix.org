@@ -191,6 +191,6 @@ The current Spec Core Team (and their domain areas) is:
 * [Richard van der Hoff](https://github.com/richvdh) (Servers, Cryptography)
 * [David Baker](https://github.com/dbkr) (Clients, IS API, Push API, Media)
 * [Hubert Chathi](https://github.com/uhoreg) (Cryptography, General)
-* [Andrew Morgan]https://github.com/anoadragon453 (Servers, AS API, Spec Process)
+* [Andrew Morgan](https://github.com/anoadragon453) (Servers, AS API, Spec Process)
 * [Travis Ralston](https://github.com/turt2live) (Bots and Bridges & AS API, Media)
 * [Alexey Rusakov](https://github.com/KitsuneRal) (Clients on behalf of Community)
