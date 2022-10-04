@@ -1,4 +1,4 @@
-.herobackground {
+.hero {
     color: #fff;
     background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
     animation: Gradient 10s ease infinite;
@@ -10,52 +10,34 @@
     flex-direction: column;
     justify-content: center;
     flex: none;
-}
 
-@keyframes Gradient {
-    0% {
-        background-position: 0% 50%
-    }
-
-    50% {
-        background-position: 100% 50%
-    }
-
-    100% {
-        background-position: 0% 50%
-    }
-}
-
-.herobackground__img {
-    position: absolute;
-    left: 0%;
-    top: 0%;
-    right: 0%;
-    bottom: 0%;
-    width: 100%;
-    height: 600px;
-    background-image: url('/assets/hero-spiro.svg');
-    background-position: 100% 50%;
-    background-size: cover;
-    background-repeat: repeat;
-    background-attachment: scroll;
-
-    @media (max-width: 991px) {
+    .background-img {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        right: 0%;
+        bottom: 0%;
+        width: 100%;
         height: 600px;
+        background-image: url('/assets/hero-spiro.svg');
+        background-position: 100% 50%;
         background-size: cover;
+        background-repeat: repeat;
+        background-attachment: scroll;
+
+        @media (max-width: 991px) {
+            height: 600px;
+            background-size: cover;
+        }
+
+        @media (max-width: 767px) {
+            background-position: 50% 50%;
+        }
+
+        @media (max-width: 479px) {
+            background-position: 15% 50%;
+        }
     }
-
-    @media (max-width: 767px) {
-        background-position: 50% 50%;
-    }
-
-    @media (max-width: 479px) {
-        background-position: 15% 50%;
-    }
-
-}
-
-.hero {
 
     .content {
         z-index: 49;
@@ -101,6 +83,20 @@
     }
 }
 
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
 .dark-bg {
     background-color: #f4f4f4;
 }
@@ -130,7 +126,6 @@
     }
 }
 
-
 .thisismatrix {
     h1 {
         text-align: center;
@@ -145,7 +140,6 @@
         text-align: center;
     }
 }
-
 
 .howdoesitwork {
     text-align: center;
@@ -200,33 +194,33 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
 
-#explore a {
-    img {
-        height: 48px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+    a {
+        img {
+            height: 48px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        span {
+            margin-bottom: 10px;
+        }
+
+        min-width: 90px;
+        margin-right: 20px;
+        margin-left: 20px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        color: #000;
+        text-align: center;
+        text-decoration: none;
+        display: inline-flex;
+        flex-direction: column;
     }
 
-    span {
-        margin-bottom: 10px;
+    a:hover {
+        color: #0098d4;
     }
-
-    min-width: 90px;
-    margin-right: 20px;
-    margin-left: 20px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    color: #000;
-    text-align: center;
-    text-decoration: none;
-    display: inline-flex;
-    flex-direction: column;
-}
-
-#explore a:hover {
-    color: #0098d4;
 }
 
 section {
