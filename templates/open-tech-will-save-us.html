@@ -25,7 +25,7 @@
 
             <h2>Previous Events</h2>
             {% for episode in episodes_data.episodes %}
-            {% episode_number = number_of_episode + 1 - loop.index %}
+            {% set episode_number = number_of_episodes + 1 - loop.index %}
             {% if loop.first %}
             {% else %}
                 <div class="otwsu-episode">
