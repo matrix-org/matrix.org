@@ -1,6 +1,7 @@
 +++
 title = "Open Tech Will Save Us"
 template = "otwsu.html"
+aliases = ["/open-tech-will-save-us/"]
 +++
 
 [Join the live chat now!](https://matrix.to/#/#otwsu:matrix.org)

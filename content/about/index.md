@@ -1,5 +1,6 @@
 +++
 title = "About Matrix"
+aliases = ["/foundation/"]
 +++
 
 ## Governance
