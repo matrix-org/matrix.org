@@ -275,7 +275,7 @@ By default, any user can create room aliases, which can be an abuse vector - par
 
 The server admin can limit which users are allowed to create room aliases via the `alias_creation_rules` config option in Synapse.
 
-The server admin can moderate the aliases that exist on their server by calling the /directory/room API with DELETE: ([https://matrix.org/docs/spec/client_server/latest.html#delete-matrix-client-r0-directory-room-roomalias](https://matrix.org/docs/spec/client_server/latest.html#delete-matrix-client-r0-directory-room-roomalias)).
+The server admin can moderate the aliases that exist on their server by calling the [room API](https://spec.matrix.org/latest/client-server-api/#delete_matrixclientv3directoryroomroomalias).
 
 Element/Web also exposes the ability to delete a room alias from the Room Directory view as an easter egg for server administrators - shift-clicking on the entry in the Room Directory will call the above API to remove the alias and the room from the directory.
 
