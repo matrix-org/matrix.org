@@ -1,6 +1,4 @@
-+++
-title = "Open Tech Will Save Us"
-+++
+## Open Tech Will Save Us
 
 Every last Wednesday of the month, at 18:00 Paris time we broadcast Open Tech
 Will Save Us, our live show with guests from the broader open source world. We

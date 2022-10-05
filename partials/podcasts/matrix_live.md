@@ -1,6 +1,4 @@
-+++
-title = "Matrix Live"
-+++
+## Matrix Live
 
 Every Friday we release a new episode of Matrix Live, to talk about the status 
 of Matrix, whaat's happening in the ecosystem and more. If you're interested in 
