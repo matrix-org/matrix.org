@@ -1,0 +1,32 @@
+---
+layout: project
+title: mautrix-slack
+categories: 
+ - bridge
+description: A Matrix-Slack puppeting bridge
+author: Beeper / Tulir
+maturity: Beta
+language: Go
+license: AGPL-3.0-or-later
+repo: https://github.com/mautrix/slack
+room: "#slack:maunium.net"
+featured: true
+bridges: Slack
+thumbnail: /docs/projects/bridges/images/slack-logo.svg
+---
+
+A Matrix-Slack puppeting bridge. Written in Go using a fork of [slack-go](https://github.com/slack-go/slack)
+
+✓ 1:1 and group DMs  
+✓ Channels  
+✓ Slack connect channels  
+✓ Plain text and formatted messages  
+✓ Threads  
+✓ Message redaction/deletion  
+✓ Reactions  
+✗ Custom emojis (Slack -> Matrix only)  
+✓ Own read status sync  
+✓ Double puppeting  
+✗ Backfilling history  
+✗ Relaybot mode  
+✓ End-to-bridge encryption

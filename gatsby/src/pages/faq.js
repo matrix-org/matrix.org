@@ -1269,7 +1269,7 @@ const Faq = ({ data }) => {
                 Pick the one for your platform, or a 3rd party one if none of
                 the above work for you, and get plugging it in. You'll probably
                 also want to read the{" "}
-                <a href="/docs/howtos/client-server.html">
+                <a href="/docs/guides/client-server-api">
                   Client-Server API HOWTO
                 </a>{" "}
                 too.
@@ -1322,7 +1322,7 @@ const Faq = ({ data }) => {
               </h4>
               <p>
                 See the{" "}
-                <a href="/docs/howtos/client-server.html">
+                <a href="/docs/guides/client-server-api">
                   Client-Server API HOWTO
                 </a>{" "}
                 and the <a href="/docs/api">API docs</a> and{" "}
