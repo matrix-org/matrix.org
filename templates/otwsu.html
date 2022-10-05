@@ -7,41 +7,44 @@
 {% if lastest_episode_date >= today %}
 {% set next_episode = episodes_data.episodes | first %}
 {% endif %}
+<main class="otwsu content">
+    <header>
+        <img src="/podcasts/otwsu/otwsu{{ number_of_episodes}}.png"
+            alt="Banner of Open Tech Will Save Us. It displays an abstract tree, the name of the show, and the date of the episode: {{ episodes_data.episodes[0].date }}" />
+        <h1>{{ page.title }}</h1>
+    </header>
+    {{ page.content | markdown | safe }}
 
-<main>
-    <article class="content">
-        <header>
-            <img src="/podcasts/otwsu/otwsu{{ number_of_episodes}}.png"
-                alt="Banner of Open Tech Will Save Us. It displays an abstract tree, the name of the show, and the date of the episode: {{ episodes_data.episodes[0].date }}" />
-            <h1>{{ page.title }}</h1>
-        </header>
-        <main>
-            {{ page.content | markdown | safe }}
+    {% if next_episode %}
+    {% set iso_date = episodes_data.episodes[0].date | date(format = '%Y-%m-%d') %}
+    <h2>Next up</h2>
+    <h3>
+        Edition {{ episodes_data.episodes | length }}
+        <time datetime="{{ iso_date }}">· {{ iso_date }}</time>
+    </h3>
+    {{ episodes_data.episodes[0].summary | markdown | safe }}
+    {% endif %}
 
-            {% if next_episode %}
-            <h2>Next up, Edition {{ episodes_data.episodes | length }} - {{ episodes_data.episodes[0].date |
-                date(format="%d %B %Y") }}</h2>
-            {{ episodes_data.episodes[0].summary | markdown | safe }}
-            {% endif %}
-
-            <h2>Previous Events</h2>
-            {% for episode in episodes_data.episodes %}
-            {% set episode_number = number_of_episodes + 1 - loop.index %}
-            {% if loop.first %}
-            {% else %}
-            <div class="otwsu-episode">
-                <img src="/podcasts/otwsu/otwsu{{ episode_number }}.png"
-                    alt="Banner of Open Tech Will Save Us. It displays an abstract tree, the name of the show, and the date of the episode: {{ episode.date }}" />
-                <div class="otwsu-episode-details">
-                    <h3>Edition {{ episode_number }}: {{ episode.date | date(format="%d %B %Y") }}</h3>
-                    <p>You can watch a recording of this event <a
-                            href="https://youtube.com/watch?v={{ episode.youtube }}">here</a></p>
-                    <p>{{ episode.summary | markdown | safe }}</p>
-                </div>
-            </div>
-            {% endif %}
-            {% endfor %}
-        </main>
-    </article>
+    <h2>Previous Events</h2>
+    {% for episode in episodes_data.episodes %}
+    {% set episode_number = number_of_episodes + 1 - loop.index %}
+    {% if loop.first %}
+    {% else %}
+    <div class="otwsu-episode">
+        {% set iso_date = episode.date | date(format = '%Y-%m-%d') %}
+        <h3>
+            Edition {{ episode_number }}
+            <time datetime="{{ iso_date }}">· {{ iso_date }}</time>
+        </h3>
+        <img src="/podcasts/otwsu/otwsu{{ episode_number }}.png"
+            alt="Banner of Open Tech Will Save Us. It displays an abstract tree, the name of the show, and the date of the episode: {{ episode.date }}" />
+        <p>
+            You can watch a recording of this event
+            <a href="https://youtube.com/watch?v={{ episode.youtube }}">here</a>.
+        </p>
+        <p>{{ episode.summary | markdown | safe }}</p>
+    </div>
+    {% endif %}
+    {% endfor %}
 </main>
 {% endblock content %}

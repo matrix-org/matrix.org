@@ -4,17 +4,49 @@
     gap: 20px;
 }
 
+.otwsu {
+    h2 {
+        display: inline-block;
+        color: #fff;
+        padding: .2em .4em .1em;
+        background-color: #282828;
+        border-radius: 3px;
+        font-size: 1.563rem; // same as h3
+    }
+
+    h2+h3 {
+        margin-top: 0;
+    }
+
+    time {
+        color: #777;
+    }
+}
+
 .otwsu-episode {
-    display: grid;
-    margin-bottom: 20px;
-    grid-template-columns: 1fr 3fr;
-    gap: 20px;
+    margin-bottom: 1em;
+    clear: both;
 
     h3 {
         margin-top: 0;
     }
 
-    img {
-        margin-top: 10px;
+
+    @media screen and (max-width: 703px) {
+        img {
+            margin: -1em 0 1em;
+            width: 100%;
+            max-height: 33vw;
+            object-fit: cover;
+            object-position: 0 100%;
+        }
+    }
+
+    @media screen and (min-width: 704px) {
+        img {
+            margin: 0 0 .5em 1em;
+            float: right;
+            width: 40%;
+        }
     }
 }
