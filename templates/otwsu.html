@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 {% block content %}
-{% set episodes_data = load_data(path="/content/podcasts/open_tech_will_save_us/otwsu.toml") %}
+{% set episodes_data = load_data(path="/content/podcasts/otwsu/otwsu.toml") %}
 {% set number_of_episodes = episodes_data.episodes | length %}
 {% set lastest_episode_date = episodes_data.episodes[0].date | date(format="%Y%m%d") | int %}
 {% set today = now() | date(format="%Y%m%d") | int %}
@@ -11,7 +11,7 @@
 <main>
     <article class="content">
         <header>
-            <img src="/podcasts/open-tech-will-save-us/otwsu{{ number_of_episodes}}.png"
+            <img src="/podcasts/otwsu/otwsu{{ number_of_episodes}}.png"
                 alt="Banner of Open Tech Will Save Us. It displays an abstract tree, the name of the show, and the date of the episode: {{ episodes_data.episodes[0].date }}" />
             <h1>{{ page.title }}</h1>
         </header>
@@ -30,7 +30,7 @@
             {% if loop.first %}
             {% else %}
             <div class="otwsu-episode">
-                <img src="/podcasts/open-tech-will-save-us/otwsu{{ episode_number }}.png"
+                <img src="/podcasts/otwsu/otwsu{{ episode_number }}.png"
                     alt="Banner of Open Tech Will Save Us. It displays an abstract tree, the name of the show, and the date of the episode: {{ episode.date }}" />
                 <div class="otwsu-episode-details">
                     <h3>Edition {{ episode_number }}: {{ episode.date | date(format="%d %B %Y") }}</h3>

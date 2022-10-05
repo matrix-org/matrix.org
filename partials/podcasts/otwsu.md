@@ -9,5 +9,5 @@ This show is for every open source enthusiasts, whether they want to hear about
 the latest Thunderbird release or why single-sign-on is such a big deal in the
 corporate world.
 
-Head to [the Open Tech Will Save Us](/podcasts/open-tech-will-save-us/) page to either 
+Head to [the Open Tech Will Save Us](/podcasts/otwsu/) page to either 
 watch the show live or catch up with the previous issues.
