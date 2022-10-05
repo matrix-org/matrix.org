@@ -1,6 +1,6 @@
 +++
 title = "Open Tech Will Save Us"
-template = "open-tech-will-save-us.html" 
+template = "otwsu.html"
 +++
 
 [Join the live chat now!](https://matrix.to/#/#otwsu:matrix.org)

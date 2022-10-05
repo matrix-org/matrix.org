@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 {% block content %}
-{% set episodes_data = load_data(path="/content/podcasts/open-tech-will-save-us/otwsu.toml") %}
+{% set episodes_data = load_data(path="/content/podcasts/open_tech_will_save_us/otwsu.toml") %}
 {% set number_of_episodes = episodes_data.episodes | length %}
 {% set lastest_episode_date = episodes_data.episodes[0].date | date(format="%Y%m%d") | int %}
 {% set today = now() | date(format="%Y%m%d") | int %}
