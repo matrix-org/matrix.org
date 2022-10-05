@@ -20,15 +20,15 @@ taxonomies = [
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
-highlight_theme = "inspired-github"
+highlight_theme = "visual-studio-dark"
 
 [link_checker]
 skip_prefixes = [
     # This page is not a real page. You need to open https://circu.li/fdroid/repo/index-v1.json for a response
-    "https://circu.li/fdroid/"
+    "https://circu.li/fdroid/",
 ]
 
 skip_anchor_prefixes = [
     # Spec page does not have anchors in the html it seems. (Probably loading using js.) This causes a false positive
-    "https://spec.matrix.org/v1.3/changelog/"
+    "https://spec.matrix.org/v1.3/changelog/",
 ]
