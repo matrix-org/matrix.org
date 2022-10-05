@@ -264,7 +264,7 @@ Each Matrix server maintains a publicly viewable directory of rooms.  By default
 
 The server admin can limit which users are allowed to publish rooms to the public room directory via the `room_list_publication_rules` config option in Synapse.
 
-The server admin can moderate the directory by delisting rooms by calling the /directory/list/room API with visibility: private ([https://matrix.org/docs/spec/client_server/latest.html#put-matrix-client-r0-directory-list-room-roomid](https://matrix.org/docs/spec/client_server/latest.html#put-matrix-client-r0-directory-list-room-roomid)).
+The server admin can moderate the directory by delisting rooms by calling the [`/directory/list/room/{roomId}` API](https://spec.matrix.org/latest/client-server-api/#put_matrixclientv3directorylistroomroomid) with `visibility: private`).
 
 
 ### Moderating room aliases
