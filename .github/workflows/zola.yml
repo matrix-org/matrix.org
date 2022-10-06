@@ -1,0 +1,33 @@
+name: Build site
+on:
+  push:
+    branches:
+      - zola
+
+jobs:
+  deploy:
+    name: Build and deploy the site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository checkout
+        uses: actions/checkout@v2
+
+      - name: Download Zola
+        run: |
+          version='v0.16.1'
+          archive="zola-${version}-x86_64-unknown-linux-gnu.tar.gz"
+          curl -L "https://github.com/getzola/zola/releases/download/${version}/${archive}" -o "$archive"
+          tar xf "$archive"
+
+      - name: Build
+        run: |
+          ./zola build
+
+      - name: Deploy
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+            folder: public
+            repository-name: matrix-org/zola-preview
+            branch: main
+            ssh-key: ${{ secrets.ZOLA_DEPLOY_KEY }}
