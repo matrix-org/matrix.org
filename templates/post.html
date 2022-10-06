@@ -45,9 +45,9 @@
             {% endif %}
         </header>
         <div class="post-content">
-            <main>
+            <div>
                 {{ page.content | safe | markdown | safe }}
-            </main>
+            </div>
             {% if page.toc %}
             <aside>
                 <h3>Post Contents</h3>

@@ -6,16 +6,14 @@
     <article class="content">
         <header>
         </header>
-        <main>
-            <div class="podcasts-grid">
-                <div>
-                    {{ matrix_live | markdown | safe }}
-                </div>
-                <div>
-                    {{ otwsu | markdown | safe }}
-                </div>
+        <div class="podcasts-grid">
+            <div>
+                {{ matrix_live | markdown | safe }}
             </div>
-        </main>
+            <div>
+                {{ otwsu | markdown | safe }}
+            </div>
+        </div>
     </article>
 </main>
 {% endblock content %}
