@@ -7,33 +7,31 @@
         <header>
             <h1>{{ page.title }}</h1>
         </header>
-        <main>
-            <p>{{ page.content | safe }}</p>
-            <!-- Showcase -->
-            <div class="grid">
-                {% for name, client in clients %}
-                {% if client.featured %}
-                <div class="grid-container-third">
-                    <div class="block">
-                        <img src="{{ client.preview }}" alt="{{ name }} Preview">
-                        <h3>{{ name }}</h3>
-                        <p>{{ client.summary | safe }}</p>
-                        <div>
-                            {% for platform in client.platforms %}
-                            <!-- TODO logos -->
-                            {% if loop.last %}
-                            <a href="{{ platform.url }}">{{ platform.name }}</a>
-                            {% else %}
-                            <a href="{{ platform.url }}">{{ platform.name }}</a> ·{{" "}}
-                            {% endif %}
-                            {% endfor %}
-                        </div>
+        <p>{{ page.content | safe }}</p>
+        <!-- Showcase -->
+        <div class="grid">
+            {% for name, client in clients %}
+            {% if client.featured %}
+            <div class="grid-container-third">
+                <div class="block">
+                    <img src="{{ client.preview }}" alt="{{ name }} Preview">
+                    <h3>{{ name }}</h3>
+                    <p>{{ client.summary | safe }}</p>
+                    <div>
+                        {% for platform in client.platforms %}
+                        <!-- TODO logos -->
+                        {% if loop.last %}
+                        <a href="{{ platform.url }}">{{ platform.name }}</a>
+                        {% else %}
+                        <a href="{{ platform.url }}">{{ platform.name }}</a> ·{{" "}}
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
-                {% endif %}
-                {% endfor %}
             </div>
-        </main>
+            {% endif %}
+            {% endfor %}
+        </div>
     </article>
     <article class="content">
         <header>
@@ -41,136 +39,134 @@
                 All known clients
             </h1>
         </header>
-        <main>
-            <!-- Table -->
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Maintainer</th>
-                        <th>Platforms</th>
-                        <th>Last Release</th>
-                        <th>Maturity</th>
-                        <th>License</th>
-                        <th>Number of Localisations</th>
-                        <th>Room Directory</th>
-                        <th>Search Joined Rooms</th>
-                        <th>E2E Encryption</th>
-                        <th>Replies</th>
-                        <th>Stickers</th>
-                        <th>Multi Account</th>
-                        <th>Voice over IP</th>
-                        <th>Reactions</th>
-                        <th>SSO</th>
-                        <th>Edits</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for name, client in clients %}
-                    <tr>
-                        <td>
-                            {{ name }}
-                        </td>
-                        <td>
-                            {{ client.maintainer }}
-                        </td>
-                        <td>
-                            <!-- TODO make this use fancy buttons with links -->
-                            {% for platform in client.platforms %}
-                            {% if loop.last %}
-                            <a href="{{ platform.url }}">{{ platform.name }}</a>
-                            {% else %}
-                            <a href="{{ platform.url }}">{{ platform.name }}</a> ·{{" "}}
-                            {% endif %}
-                            {% endfor %}
-                        </td>
-                        <td>
-                            {{ client.last_release | date(format="%d.%m.%Y") }}
-                        </td>
-                        <td>
-                            {{ client.maturity }}
-                        </td>
-                        <td>
-                            {{ client.license }}
-                        </td>
-                        <td>
-                            {{ client.features.localisations }}
-                        </td>
-                        <td>
-                            {% if client.features.room_directory %}
-                            <span class="checkmark">✓</span>
-                            {% else %}
-                            <span class="cross">✗</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {% if client.features.search_joined_rooms %}
-                            <span class="checkmark">✓</span>
-                            {% else %}
-                            <span class="cross">✗</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {% if client.features.e2ee %}
-                            <span class="checkmark">✓</span>
-                            {% else %}
-                            <span class="cross">✗</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {% if client.features.replies %}
-                            <span class="checkmark">✓</span>
-                            {% else %}
-                            <span class="cross">✗</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {% if client.features.stickers %}
-                            <span class="checkmark">✓</span>
-                            {% else %}
-                            <span class="cross">✗</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {% if client.features.multi_account %}
-                            <span class="checkmark">✓</span>
-                            {% else %}
-                            <span class="cross">✗</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {% if client.features.voip %}
-                            <span class="checkmark">✓</span>
-                            {% else %}
-                            <span class="cross">✗</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {% if client.features.reactions %}
-                            <span class="checkmark">✓</span>
-                            {% else %}
-                            <span class="cross">✗</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {% if client.features.sso %}
-                            <span class="checkmark">✓</span>
-                            {% else %}
-                            <span class="cross">✗</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {% if client.features.edits %}
-                            <span class="checkmark">✓</span>
-                            {% else %}
-                            <span class="cross">✗</span>
-                            {% endif %}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </main>
+        <!-- Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Maintainer</th>
+                    <th>Platforms</th>
+                    <th>Last Release</th>
+                    <th>Maturity</th>
+                    <th>License</th>
+                    <th>Number of Localisations</th>
+                    <th>Room Directory</th>
+                    <th>Search Joined Rooms</th>
+                    <th>E2E Encryption</th>
+                    <th>Replies</th>
+                    <th>Stickers</th>
+                    <th>Multi Account</th>
+                    <th>Voice over IP</th>
+                    <th>Reactions</th>
+                    <th>SSO</th>
+                    <th>Edits</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for name, client in clients %}
+                <tr>
+                    <td>
+                        {{ name }}
+                    </td>
+                    <td>
+                        {{ client.maintainer }}
+                    </td>
+                    <td>
+                        <!-- TODO make this use fancy buttons with links -->
+                        {% for platform in client.platforms %}
+                        {% if loop.last %}
+                        <a href="{{ platform.url }}">{{ platform.name }}</a>
+                        {% else %}
+                        <a href="{{ platform.url }}">{{ platform.name }}</a> ·{{" "}}
+                        {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {{ client.last_release | date(format="%d.%m.%Y") }}
+                    </td>
+                    <td>
+                        {{ client.maturity }}
+                    </td>
+                    <td>
+                        {{ client.license }}
+                    </td>
+                    <td>
+                        {{ client.features.localisations }}
+                    </td>
+                    <td>
+                        {% if client.features.room_directory %}
+                        <span class="checkmark">✓</span>
+                        {% else %}
+                        <span class="cross">✗</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if client.features.search_joined_rooms %}
+                        <span class="checkmark">✓</span>
+                        {% else %}
+                        <span class="cross">✗</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if client.features.e2ee %}
+                        <span class="checkmark">✓</span>
+                        {% else %}
+                        <span class="cross">✗</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if client.features.replies %}
+                        <span class="checkmark">✓</span>
+                        {% else %}
+                        <span class="cross">✗</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if client.features.stickers %}
+                        <span class="checkmark">✓</span>
+                        {% else %}
+                        <span class="cross">✗</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if client.features.multi_account %}
+                        <span class="checkmark">✓</span>
+                        {% else %}
+                        <span class="cross">✗</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if client.features.voip %}
+                        <span class="checkmark">✓</span>
+                        {% else %}
+                        <span class="cross">✗</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if client.features.reactions %}
+                        <span class="checkmark">✓</span>
+                        {% else %}
+                        <span class="cross">✗</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if client.features.sso %}
+                        <span class="checkmark">✓</span>
+                        {% else %}
+                        <span class="cross">✗</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if client.features.edits %}
+                        <span class="checkmark">✓</span>
+                        {% else %}
+                        <span class="cross">✗</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </article>
 </main>
 {% endblock content %}
