@@ -10,7 +10,7 @@ author = ["Thib"]
 
 ## Matrix Live 🎙
 
-<iframe src="https://www.youtube.com/embed/wFSmDn-PlYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/wFSmDn-PlYg" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 A short Matrix Live where we can see the goodness coming to Element very shortly!
 
