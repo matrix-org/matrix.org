@@ -84,3 +84,8 @@
 .content.post {
     max-width: 1280px;
 }
+
+#continue-reading {
+    // scroll a bit further down so the header doesn't obstruct the content that was scrolled to
+    scroll-margin-top: 60px;
+}
