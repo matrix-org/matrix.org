@@ -18,13 +18,7 @@
             {% endif %}
         </header>
 
-        {% if paginator %}
-        {% set pages = paginator.pages %}
-        {% else %}
-        {% set pages = term.pages %}
-        {% endif %}
-
-        {% for page in pages %}
+        {% for page in paginator.pages %}
         <article>
             <header>
                 <h2><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h2>
@@ -50,7 +44,6 @@
             <div class="article_linebreak"></div>
         </article>
         {% endfor %}
-        {% if paginator %}
         <nav class="pagination">
             {% if paginator.previous %}
             <a class="w-button button-dark" href="{{ paginator.previous }}">‹ Previous</a>
@@ -59,7 +52,6 @@
             <a class="w-button button-dark" href="{{ paginator.next }}">Next ›</a>
             {% endif %}
         </nav>
-        {% endif %}
     </div>
 </main>
 {% endblock content %}
