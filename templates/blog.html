@@ -1,7 +1,7 @@
 {% extends "skel.html" %}
 {% block html_title %}Matrix.org - {{ section.title }}{% endblock html_title %}
 {% block content -%}
-<main id="section" class="content">
+<div id="section" class="content">
     {% for page in paginator.pages %}
     <article>
         <header>
@@ -35,5 +35,5 @@
     </article>
     {% endfor %}
     {% include "includes/pagination.html" %}
-</main>
+</div>
 {%- endblock content %}

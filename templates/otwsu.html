@@ -7,7 +7,7 @@
 {% if latest_episode_date >= today %}
 {% set next_episode = episodes_data.episodes | first %}
 {% endif %}
-<main class="otwsu content">
+<div class="otwsu content">
     <header>
         <img src="/podcasts/otwsu/otwsu{{ number_of_episodes}}.png"
             alt="Banner of Open Tech Will Save Us. It displays an abstract tree, the name of the show, and the date of the episode: {{ episodes_data.episodes[0].date }}" />
@@ -46,5 +46,5 @@
     </div>
     {% endif %}
     {% endfor %}
-</main>
+</div>
 {% endblock content %}
