@@ -1,6 +1,9 @@
 .post {
     width: 100%;
     display: table;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #ddd;
 
     table {
 
@@ -9,13 +12,11 @@
             width: 100%;
         }
 
-
         th,
         td {
             text-align: left !important;
         }
     }
-
 
     iframe {
         aspect-ratio: 16/9;
@@ -82,11 +83,4 @@
 
 .content.post {
     max-width: 1280px;
-}
-
-.article_linebreak {
-    width: 100%;
-    height: 2px;
-    margin: 4rem;
-    background-color: rgba(1, 1, 1, 0.1);
 }
