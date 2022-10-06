@@ -14,6 +14,8 @@ author = ["Thib"]
 
 A short Matrix Live where we can see the goodness coming to Element very shortly!
 
+<!-- more -->
+
 ## Dept of Spec 📜
 
 [Andrew Morgan (anoa)](https://matrix.to/#/@andrewm:element.io) announces

@@ -31,6 +31,8 @@ author = ["Matthew Hodgson", "Denis Kasak", "Matrix Security", "Matrix cryptogra
 [predisclosure]:
 <https://matrix.org/blog/2022/09/23/pre-disclosure-upcoming-critical-security-release-of-matrix-sd-ks-and-clients>
 
+<!-- more -->
+
 Hi all,
 
 Recently we have been hard at work investigating some subtle security

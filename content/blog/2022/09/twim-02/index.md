@@ -13,6 +13,8 @@ author = ["Thib"]
 
 <iframe src="https://www.youtube.com/embed/RzhMDi1aNEM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<!-- more -->
+
 ## Dept of Spec 📜
 
 {% details(summary="[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) reports") %}
