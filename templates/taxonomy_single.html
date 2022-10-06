@@ -44,14 +44,7 @@
             <div class="article_linebreak"></div>
         </article>
         {% endfor %}
-        <nav class="pagination">
-            {% if paginator.previous %}
-            <a class="w-button button-dark" href="{{ paginator.previous }}">‹ Previous</a>
-            {% endif %}
-            {% if paginator.next %}
-            <a class="w-button button-dark" href="{{ paginator.next }}">Next ›</a>
-            {% endif %}
-        </nav>
+        {% include "includes/pagination.html" %}
     </div>
 </main>
 {% endblock content %}
