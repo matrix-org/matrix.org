@@ -2,9 +2,9 @@
 {% block content %}
 {% set episodes_data = load_data(path="/content/podcasts/otwsu/otwsu.toml") %}
 {% set number_of_episodes = episodes_data.episodes | length %}
-{% set lastest_episode_date = episodes_data.episodes[0].date | date(format="%Y%m%d") | int %}
+{% set latest_episode_date = episodes_data.episodes[0].date | date(format="%Y%m%d") | int %}
 {% set today = now() | date(format="%Y%m%d") | int %}
-{% if lastest_episode_date >= today %}
+{% if latest_episode_date >= today %}
 {% set next_episode = episodes_data.episodes | first %}
 {% endif %}
 <main class="otwsu content">

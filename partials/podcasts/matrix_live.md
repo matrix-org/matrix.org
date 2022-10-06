@@ -1,7 +1,7 @@
 ## Matrix Live
 
 Every Friday we release a new episode of Matrix Live, to talk about the status 
-of Matrix, whaat's happening in the ecosystem and more. If you're interested in 
+of Matrix, what's happening in the ecosystem and more. If you're interested in 
 **following the development of the protocol, what actors of the Matrix ecosystem
 are working on, or if you want to have a glimpse at the new features coming in
 your favourite Matrix clients**, Matrix Live is for you!
