@@ -22,23 +22,31 @@
         <article>
             <header>
                 <h2><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h2>
-                <span>{{ page.date | date(format="%d.%m.%Y %H:%M") }}{% if page.taxonomies.category %} — <a
-                        href="/category/{{ page.taxonomies.category | first | slugify }}">{{
-                        page.taxonomies.category
-                        | first }}</a>
-                    {% endif %} — <a href="/author/{{ page.taxonomies.author | default (value=['unknown author']) | first |
-                                    slugify }}">{{ page.taxonomies.author | default (value=["unknown author"]) | first
-                        }}</a>
+                <span>
+                    {{ page.date | date(format="%d.%m.%Y %H:%M") }}
+                    {% if page.taxonomies.category -%}
+                    —
+                    <a href="/category/{{ page.taxonomies.category | first | slugify }}">
+                        {{ page.taxonomies.category | first }}
+                    </a>
+                    {% endif -%}
+                    —
+                    <a
+                        href="/author/{{ page.taxonomies.author | default(value=['unknown author']) | first | slugify }}">
+                        {{ page.taxonomies.author | default (value=["unknown author"]) | first }}
+                    </a>
                 </span>
-                {% if page.updated %}
-                <br><small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
-                {% endif %}
+                {% if page.updated -%}
+                <br>
+                <small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
+                {%- endif %}
             </header>
             <div class="post">
                 {% if page.summary %}
-                {{ page.summary | markdown | safe }}
+                {{ page.summary | safe }}
+                <p><a href="{{ page.path | safe }}#continue-reading">Continue reading…</a></p>
                 {% else %}
-                {{ page.content | markdown | safe }}
+                {{ page.content | safe }}
                 {% endif %}
             </div>
         </article>
