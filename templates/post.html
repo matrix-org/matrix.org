@@ -29,48 +29,46 @@
 </script>
 {% endblock head_extra %}
 {% block content %}
-<main>
-    <article class="content post">
-        <header>
-            <h1>{{ page.title }}</h1>
-            <span>{{ page.date | date(format="%d.%m.%Y %H:%M") }}{% if page.taxonomies.category %} — <a
-                    href="/category/{{ page.taxonomies.category | first | slugify }}">{{
-                    page.taxonomies.category
-                    | first }}</a>
-                {% endif %} — <a href="/author/{{ page.taxonomies.author | default (value=['unknown author']) | first |
+<article class="content post">
+    <header>
+        <h1>{{ page.title }}</h1>
+        <span>{{ page.date | date(format="%d.%m.%Y %H:%M") }}{% if page.taxonomies.category %} — <a
+                href="/category/{{ page.taxonomies.category | first | slugify }}">{{
+                page.taxonomies.category
+                | first }}</a>
+            {% endif %} — <a href="/author/{{ page.taxonomies.author | default (value=['unknown author']) | first |
                     slugify }}">{{ page.taxonomies.author | default (value=["unknown author"]) | first }}</a>
-            </span>
-            {% if page.updated %}
-            <br><small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
-            {% endif %}
-        </header>
-        <div class="post-content">
-            <div>
-                {{ page.content | safe | markdown | safe }}
-            </div>
-            {% if page.toc %}
-            <aside>
-                <h3>Post Contents</h3>
-
-                <ul style="list-style: none; padding-left: 0px;">
-                    {% for h1 in page.toc %}
-                    <li>
-                        <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-                        {% if h1.children %}
-                        <ul>
-                            {% for h2 in h1.children %}
-                            <li>
-                                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                    </li>
-                    {% endfor %}
-                </ul>
-            </aside>
-            {% endif %}
+        </span>
+        {% if page.updated %}
+        <br><small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
+        {% endif %}
+    </header>
+    <div class="post-content">
+        <div>
+            {{ page.content | safe | markdown | safe }}
         </div>
-    </article>
-</main>
+        {% if page.toc %}
+        <aside>
+            <h3>Post Contents</h3>
+
+            <ul style="list-style: none; padding-left: 0px;">
+                {% for h1 in page.toc %}
+                <li>
+                    <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                    {% if h1.children %}
+                    <ul>
+                        {% for h2 in h1.children %}
+                        <li>
+                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </aside>
+        {% endif %}
+    </div>
+</article>
 {% endblock content %}

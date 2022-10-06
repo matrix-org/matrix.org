@@ -4,7 +4,7 @@
 {% endblock head_extra %}
 {% block html_title %}Matrix.org - {{ term.name }}{% endblock html_title %}
 {% block content %}
-<main id="taxonomy-single">
+<div id="taxonomy-single">
     <div class="content">
         <header>
             <h1>{{ term.name }}</h1>
@@ -53,5 +53,5 @@
         {% endfor %}
         {% include "includes/pagination.html" %}
     </div>
-</main>
+</div>
 {% endblock content %}

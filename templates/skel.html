@@ -25,7 +25,9 @@
     {% set navigation = load_data(path="navigation.toml") %}
     {% include "includes/header.html" %}
 
-    {% block content %}{% endblock content %}
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
 
     {% include "includes/footer.html" %}
 </body>

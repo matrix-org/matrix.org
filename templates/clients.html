@@ -2,7 +2,7 @@
 {% block html_title %}Matrix.org - {{ page.title }}{% endblock html_title %}
 {% block content %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
-<main id="clients">
+<div id="clients">
     <article class="content">
         <header>
             <h1>{{ page.title }}</h1>
@@ -168,5 +168,5 @@
             </tbody>
         </table>
     </article>
-</main>
+</div>
 {% endblock content %}

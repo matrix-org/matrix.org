@@ -1,7 +1,7 @@
 {% extends "skel.html" %}
 {% block html_title %}Matrix.org - {{ taxonomy.name | capitalize }}{% endblock html_title %}
 {% block content %}
-<main id="taxonomy-list">
+<div id="taxonomy-list">
     <article class="content">
         <header>
             <h1>{{ taxonomy.name | capitalize }}</h1>
@@ -32,5 +32,5 @@
             {% endfor %}
         </div>
     </article>
-</main>
+</div>
 {% endblock content %}
