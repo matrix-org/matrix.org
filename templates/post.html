@@ -28,7 +28,7 @@
 </script>
 {% endblock head_extra %}
 {% block content %}
-<article class="content post">
+<article class="content post {%- if page.toc %} with-sidebar{% endif %}">
     <header>
         <h1>{{ page.title }}</h1>
         <span>{{ page.date | date(format="%d.%m.%Y %H:%M") }}{% if page.taxonomies.category %} — <a
@@ -42,8 +42,8 @@
         <br><small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
         {% endif %}
     </header>
-    <div class="post-content">
-        <div>
+    <div class="post-main">
+        <div class="post-content">
             {{ page.content | safe | markdown | safe }}
         </div>
         {% if page.toc %}
