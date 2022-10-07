@@ -1,6 +1,5 @@
 article.post {
     width: 100%;
-    display: table;
     padding-bottom: 1.5rem;
 
     &:not(:last-of-type) {
@@ -41,7 +40,8 @@ article.post {
     }
 
     &.with-sidebar {
-        max-width: 1280px;
+        // content width + sidebar width + padding between
+        max-width: calc(1280px + 4rem);
     }
 }
 
@@ -65,20 +65,26 @@ article.post {
             }
         }
 
-        &>ul>li {
-            margin-bottom: 5px;
+        &>:first-child {
+            margin-top: 0;
         }
 
+        &>ul>li:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+
+        flex: 1 1;
         max-width: 320px;
-        width: 100%;
-        margin-top: 20px;
-        margin-left: 60px;
-        padding-top: 5px;
-        padding-right: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
+        margin-top: 1rem;
+        margin-left: 4rem;
+        padding: 1.5rem;
         background-color: #f4f4f4;
     }
+}
+
+.post-content {
+    // Use all of the space not taken by the sidebar
+    flex: 3;
 }
 
 #continue-reading {
