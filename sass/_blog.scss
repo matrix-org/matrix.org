@@ -1,9 +1,12 @@
-.post {
+article.post {
     width: 100%;
     display: table;
-    margin-bottom: 2.5rem;
     padding-bottom: 1.5rem;
-    border-bottom: 2px solid #ddd;
+
+    &:not(:last-of-type) {
+        margin-bottom: 2.5rem;
+        border-bottom: 2px solid #ddd;
+    }
 
     table {
 
