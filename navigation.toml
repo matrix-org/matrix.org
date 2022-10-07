@@ -10,7 +10,6 @@ header = [
 
 footer_internal = [
     { title = "FAQs", href = "/faq" },
-    { title = "Matrix Live", href = "/matrixlive" },
     { title = "Security Disclosure Policy", href = "/security-disclosure-policy" },
     { title = "Security Hall of Fame", href = "/hall-of-fame" },
     { title = "Code of Conduct for Matrix.org", href = "/legal/code-of-conduct" },
