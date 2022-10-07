@@ -3,7 +3,7 @@
 {% block content -%}
 <div class="blog content">
     {% for page in paginator.pages %}
-    <article>
+    <article class="post">
         <header>
             <h1><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h1>
             <span>
@@ -24,7 +24,7 @@
             <small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
             {%- endif %}
         </header>
-        <div class="post">
+        <div>
             {% if page.summary -%}
             {{ page.summary | safe }}
             <p><a href="{{ page.path | safe }}#continue-reading">Continue reading…</a></p>
