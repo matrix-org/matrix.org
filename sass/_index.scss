@@ -24,11 +24,6 @@
         background-repeat: repeat;
         background-attachment: scroll;
 
-        @media (max-width: 991px) {
-            height: 600px;
-            background-size: cover;
-        }
-
         @media (max-width: 767px) {
             background-position: 50% 50%;
         }
@@ -44,18 +39,10 @@
         text-align: center;
         align-items: center;
 
-        padding: 60px 140px;
-
-        @media (max-width: 991px) {
-            padding-right: 60px;
-            padding-left: 60px;
-        }
-
-        @media (max-width: 767px) {
-            display: block;
-            padding-right: 10px;
-            padding-left: 10px;
-        }
+        width: 680px;
+        max-width: 100%;
+        padding-top: 60px;
+        padding-bottom: 60px;
 
         .logo {
             width: 160px;
