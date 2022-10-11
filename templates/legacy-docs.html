@@ -1,0 +1,17 @@
+{% extends "skel.html" %}
+{% block content %}
+<article class="content">
+    <header>
+        <div class="legacy-doc-warning">
+            <h2>Outdated documentation</h2>
+            <p>This documentation has been kept for posterity but might be or
+               will be outdated. It should not be used anymore. Please head to
+               <a href="/docs">the documentation section</a> for up to date
+               documentation and guides.
+            </p>
+        </div>
+        <h1>{{ page.title }}</h1>
+    </header>
+    {{ page.content | safe }}
+</article>
+{% endblock content %}

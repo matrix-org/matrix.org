@@ -1,4 +1,4 @@
 +++
 title = "Legacy docs"
-template = "legacy-doc.html"
+page_template = "legacy-docs.html"
 +++
