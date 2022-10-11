@@ -1,0 +1,27 @@
+{% extends "skel.html" %}
+{% block content %}
+<article class="content">
+    <header>
+        <h1>{{ section.title }}</h1>
+    </header>
+    <div class="docs-grid">
+        {% for page in section.pages %}
+        <a href="{{ page.path }}">
+            <div class="doc-section-tile">
+                <span class="emoji">{{ page.extra.emoji }}</span>
+                <h2>{{ page.extra.tile }}</h2>
+            </div>
+        </a>
+        {% endfor %}
+        {% for subsection_path in section.subsections %}
+            {% set subsection = get_section(path=subsection_path) %}
+            <a href="{{ subsection.path }}">
+                <div class="doc-section-tile">
+                    <span class="emoji">{{ subsection.extra.emoji }}</p>
+                    <h2>{{ subsection.extra.tile }}</h2>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</article>
+{% endblock content %}
