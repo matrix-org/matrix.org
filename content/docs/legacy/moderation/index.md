@@ -60,7 +60,7 @@ to redact the user's events. It'll only get the events that Element has
 downloaded and cached, but can help when a room is being spammed by a bad
 actor.
 
-![Element-remove-recent-btn](/docs/legacy/moderation7.png)
+![Element-remove-recent-btn](moderation7.png)
 
 ### Managing abusive display names, avatars etc
 
@@ -89,8 +89,8 @@ In Element, Admins are shown in the membership list with a golden shield, and
 Moderators are shown with a silver shield.  Other clients use similar
 metaphors.
 
-![moderation1](/docs/legacy/moderation1.png)
-![moderation2](/docs/legacy/moderation2.png)
+![moderation1](moderation1.png)
+![moderation2](moderation2.png)
 
 To change the power level of a given user in Element, you can use the dropdown
 in their user info panel, having selected them from the membership list or
@@ -100,7 +100,7 @@ composer by typing `/op @username:domain 50` or similar.
 Power levels are used to define who has permission to do what actions in a room.
 By default, the power levels for a public chatroom are as shown below:
 
-![moderation3](/docs/legacy/moderation3.png)
+![moderation3](moderation3.png)
 
 Users with sufficient power to change settings (i.e. Moderator, by default) can
 edit the power level configuration for a given room in Element via Room
@@ -126,7 +126,7 @@ By default, moderators with power level 50 or higher have permission to remove
 users with lower power from rooms.  You can either kick or ban, specifying an
 optional reason which should be visible in the room’s timeline:
 
-![moderation4](/docs/legacy/moderation4.png)
+![moderation4](moderation4.png)
 
 This can be done via the Kick or Ban buttons from the user info panel, or by
 typing `/kick @user:domain.com <reason goes here>` or `/ban @user:domain.com
@@ -195,7 +195,7 @@ composer in the room in question, and create or edit the room’s
 toggle to state event mode).  To ban servers named evil.com and \*.evil.com from
 participating in the room, you would enter:
 
-![moderation5](/docs/legacy/moderation5.png)
+![moderation5](moderation5.png)
 
 If enforcing server ACLs on a room, it is wise to prevent servers whose names
 are numeric IP addresses from participating in the room, as well as preventing
@@ -319,7 +319,7 @@ user there will be a 'deactivate user' button (shown below) which does this for
 you. Note that only users on your homeserver can be deactivated, provided you
 have the admin permissions to do so.
 
-![Element-deactivate-btn](/docs/legacy/moderation8.png)
+![Element-deactivate-btn](moderation8.png)
 
 Removing abusive rooms is done by calling the /shutdown_room API, e.g:
 
@@ -511,7 +511,7 @@ Reddit/HN/etc.
 We are currently in the process of implementing emoji reactions in Matrix, and
 the current UX proposal looks roughly like this:
 
-![moderation6](/docs/legacy/moderation6.png)
+![moderation6](moderation6.png)
 
 Critically, this provides upvote/downvote semantics on a given message on the
 axes both of whether you agree with the content, and whether you like it
