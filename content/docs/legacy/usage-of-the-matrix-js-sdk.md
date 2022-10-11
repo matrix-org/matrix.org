@@ -35,7 +35,7 @@ Before we start, make sure you have Node.js and NPM installed: follow
 instructions at [nodejs.org](https://nodejs.org/) for your platform. Then
 create a new directory to work in:
 
-```shell
+```
 mkdir my-first-matrix-client
 cd my-first-matrix-client
 ```
@@ -45,7 +45,7 @@ cd my-first-matrix-client
 Once you're ready, the first thing to do is install the matrix-js-sdk from
 NPM:
 
-```shell
+```
 npm install matrix-js-sdk
 ```
 

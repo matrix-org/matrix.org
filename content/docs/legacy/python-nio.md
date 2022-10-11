@@ -13,7 +13,7 @@ just read. Note that this article does not cover E2EE with matrix-nio.
 First create a new venv, and install matrix-nio via `pip`. On the command line,
 run:
 
-```shell
+```
 python3 -m venv env
 source env/bin/activate
 pip install matrix-nio
@@ -73,7 +73,7 @@ The remainder of this tutorial assumes you are running everything from an
 
 The response string should look like:
 
-```shell
+```
 Logged in as @pyconweb-bot:matrix.org, device id: ZBLAJHLKVP.
 ```
 

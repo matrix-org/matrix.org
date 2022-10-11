@@ -15,7 +15,7 @@ examples. If you'd prefer to use TypeScript, then do!
 Let's make a new folder, and import our only npm dependency. The following
 examples are all meant to be run in a bash terminal.
 
-```shell
+```
 mkdir matrix-js-echo-bot
 cd matrix-js-echo-bot
 npm install matrix-bot-sdk
@@ -97,7 +97,7 @@ client.start().then(() => console.log("Client started!"));
 
 Let's run it:
 
-```shell
+```
 node index.js
 ```
 
@@ -202,13 +202,13 @@ since it is the language [matrix-bot-sdk] is written in.
 
 First let's install `tsc`, which compiles from TypeScript to JavaScript:
 
-```shell
+```
 npm install typescript
 ```
 
 Now, start tsc in watch-mode (`-w`), and leave it to compile our code:
 
-```shell
+```
 npx tsc --watch *.ts
 ```
 

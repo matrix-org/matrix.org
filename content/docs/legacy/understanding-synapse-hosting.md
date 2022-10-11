@@ -199,7 +199,7 @@ The container is listening on port 5432 on docker’s internal network. You can
 verify it’s not actually open by running `ss -tunlp`
 
 
-```shell
+```
 [root@v2202112135873173933 infra]# ss -tunlp
 Netid     State      Recv-Q     Send-Q         Local Address:Port         Peer Address:Port     Process                               
 udp       UNCONN     0          0                  127.0.0.1:323               0.0.0.0:*         users:(("chronyd",pid=735,fd=5))     
@@ -211,7 +211,7 @@ tcp       LISTEN     0          128                     [::]:22                 
 And now let’s check the logs by running `docker logs infra-synapse_db-1`. The
 output should look like below:
 
-```shell
+```
 [root@v2202112135873173933 infra]# docker logs -f infra-synapse_db-1
 […]
 PostgreSQL init process complete; ready for start up.
@@ -226,7 +226,7 @@ PostgreSQL init process complete; ready for start up.
 
 We can check if the user synapse was created by trying to connect to the database. To do so, let’s get the shell inside the postgresql container by running `docker exec -it infra_synapse_db_1 /bin/bash`. We should now be able to use the built-in SQL client by running `psql -U synapse -W`. We will be prompted for our password. We need to use the `POSTGRES_PASSWORD` declared in the docker-compose file. The output should look like as follows
 
-```shell
+```
 bash-5.1# psql -U synapse -W Password: psql (14.4) Type "help" for help.
 
 synapse=#
@@ -246,7 +246,7 @@ server part of your Matrix IDs, and SYNAPSE_REPORT_STATS depending on whether
 you want to report anonymous stats or not.
 
 
-```shell
+```
 [root@v2202112135873173933 infra]# docker run -it --rm --mount type=volume,src=infra_synapse_data,dst=/data -e SYNAPSE_SERVER_NAME=example.org -e SYNAPSE_REPORT_STATS=yes matrixdotorg/synapse:v1.63.0 generate
 Setting ownership on /data to 991:991
 Creating log config /data/example.org.log.config
@@ -358,7 +358,7 @@ happening with `docker logs -f infra-synapse-1`. It should give us pretty
 verbose output, as follows:
 
 
-```shell
+```
 [root@v2202112135873173933 infra]# docker logs -f infra-synapse-1
 Starting synapse with args -m synapse.app.homeserver --config-path /data/homeserver.yaml
 This server is configured to use 'matrix.org' as its trusted key server via the
@@ -484,7 +484,7 @@ it with `docker exec -it infra-nginx-1 /bin/bash`
 
 Once inside the container, we can use curl to ask for these files:
 
-```shell
+```
 root@66a61467b9ba:/# curl -X GET "http://localhost/.well-known/matrix/server"
 {"m.server": "matrix.example.org:443"}
 root@66a61467b9ba:/# curl -X GET "http://localhost/.well-known/matrix/client"
@@ -577,7 +577,7 @@ Now let’s check traefik is actually listening to the outside world with
 `ss -tunlp`:
 
 
-```shell
+```
 [root@v2202112135873173933 infra]# ss -tunlp
 Netid         State          Recv-Q         Send-Q                 Local Address:Port                  Peer Address:Port         Process                                           
 udp           UNCONN         0              0                          127.0.0.1:323                        0.0.0.0:*             users:(("chronyd",pid=735,fd=5))                 
@@ -656,7 +656,7 @@ a new user using the `register_new_matrix_user -c /data/homeserver.yaml
 http://localhost:8008` command:
 
 
-```shell
+```
 root@e752d46bc5f2:/# register_new_matrix_user -c /data/homeserver.yaml http://localhost:8008
 New user localpart [root]: myuserid 
 Password: 

@@ -102,7 +102,7 @@ The Oracle Cloud Ubuntu images come with somewhat restrictive iptables rules by
 default. Docker manages the instance firewall and we have the Oracle Cloud
 firewall in front, so let's remove the current firewall to avoid trouble:
 
-```shell
+```
 apt purge netfilter-persistent iptables-persistent
 ```
 
@@ -126,7 +126,7 @@ Follow the [guide], with some tweaks:
 
 If you are too busy to read the guide, here are the most important steps:
 
-```shell
+```
 git clone https://github.com/spantaleev/matrix-docker-ansible-deploy/
 cd matrix-docker-ansible-deploy
 mkdir inventory/host_vars/matrix.$domain
@@ -168,7 +168,7 @@ client](https://matrix.org/clients).
 
 Remember to keep your VM up to date!
 
-```shell
+```
 apt update
 apt upgrade
 reboot # e.g. kernel,dbus,systemd updates
