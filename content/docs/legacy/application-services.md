@@ -111,7 +111,7 @@ import json, requests  # we will use this later
 from flask import Flask, jsonify, request
 app = Flask(__name__)
 
-@app.route("/transactions/&lt;transaction&gt;", methods=["PUT"])
+@app.route("/transactions/<transaction>", methods=["PUT"])
 def on_receive_events(transaction):
     events = request.get_json()["events"]
     for event in events:

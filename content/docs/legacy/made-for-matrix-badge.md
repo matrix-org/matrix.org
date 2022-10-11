@@ -20,7 +20,7 @@ on your website, link the badge to https://matrix.org using the
 
 ![made for matrix](/docs/legacy/made-for-matrix-inverted.png)
 
-If the preferred black badge isn’t legible in your layout, for example because
+If the preferred black badge isn't legible in your layout, for example because
 your background is too dark, instead use the inverted badge, displayed above on
 a grey background.
 

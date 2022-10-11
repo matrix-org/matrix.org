@@ -3,11 +3,6 @@ title = "Client Server API"
 aliases = ["/docs/guides/client-server-api"]
 +++
 
-## Warning
-
-This guide is badly outdated and should not be used anymore! It is only kept for
-posterity.
-
 ## How to use the client-server API
 
 If you haven't already, get a homeserver up and running on
