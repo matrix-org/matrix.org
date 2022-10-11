@@ -1,6 +1,6 @@
 +++
 title = "Users"
-weight = 800
+weight = 100
 [extra]
 emoji = "🧑"
 tile = "I want to start chatting using Matrix"

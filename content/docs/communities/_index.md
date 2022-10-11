@@ -1,6 +1,6 @@
 +++
 title = "Communities"
-weight = 900
+weight = 200
 [extra]
 emoji = "👪"
 tile = "I want to use Matrix for my community or organisation"
