@@ -13,9 +13,7 @@ The "faster joins" project set out to change all this. Briefly, the reason the e
 
 It sounds simple enough, but in reality this has meant a lot of work on Synapse. The main problem was that huge amounts of the Synapse codebase assumed that we either had all the state for a room, or none of it. That assumption no longer holds, which meant lots of changes to the code to handle "partial state". Along the way we've also had to make some other improvements: for example, we [found and fixed](https://github.com/matrix-org/synapse/security/advisories/GHSA-jhjh-776m-4765) some long-standing bugs in event authorisation, and implemented [cancellation](https://github.com/matrix-org/synapse/issues/3528) for requests where the client disconnects before we finish handling the request. For an idea of the things being changed at the Matrix protocol level, take a look at [MSC3902](https://github.com/matrix-org/matrix-spec-proposals/pull/3902).
 
-The upshot of all that, is that instead of seeing a blank room with a spinner (or an error message), you can now see the basic information about the room, as well as receive incoming messages, within a few seconds of trying to join the room:
-
-![Element screenshot](/blog/img/2022-10-04-joining-hq.png)
+The upshot of all that, is that instead of seeing a blank room with a spinner (or an error message), you can now see the basic information about the room, as well as receive incoming messages, within a few seconds of trying to join the room.
 
 ## Caveats
 
