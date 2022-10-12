@@ -1,5 +1,6 @@
 +++
 title = "Apple iOS"
+date = "2022-10-12T08:00:00Z"
 weight = 200
 [extra]
 emoji = "🍎"

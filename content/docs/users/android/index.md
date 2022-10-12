@@ -1,5 +1,6 @@
 +++
 title = "Android"
+date = "2022-10-12T08:00:00Z"
 weight = 300
 [extra]
 emoji = "🤖"

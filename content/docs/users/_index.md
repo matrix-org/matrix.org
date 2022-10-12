@@ -11,7 +11,7 @@ tile = "I want to start chatting using Matrix"
 
 Matrix works a little like email, but instantaneous and secure:
 - You need to register an account at a provider
-- Whaterver your provider is, you can talk to people other providers
+- Whatever your provider is, you can talk to people using other providers
 - In the same way you can use Outlook or Thunderbird with the same email
   account, you can use different Matrix apps for the same Matrix account.
 
