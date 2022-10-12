@@ -16,6 +16,10 @@
             </a>
             <div class="section-submenu-wrap">
                 <div class="section-submenu">
+                    {% for subsection_path in section.subsections %}
+                    {% set subsection = get_section(path=subsection_path) %}
+                    <a href="{{ subsection.path }}">{{ subsection.title }}</a>
+                    {% endfor %}
                     {% for page in section.pages %}
                     <a href="{{ page.path }}">{{ page.title }}</a>
                     {% endfor %}
