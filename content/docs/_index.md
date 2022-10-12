@@ -1,7 +1,6 @@
 +++
 title = "Documentation"
-aliases = ["/docs/legacy"]
-template = "docs-home.html"
+template = "docs/index.html"
 +++
 
 Content

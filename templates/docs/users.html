@@ -1,0 +1,21 @@
+{% extends "skel.html" %}
+{% block content %}
+<article class="content">
+    <header>
+        <h1>{{ section.title }}</h1>
+    </header>
+
+    {{ section.content | markdown | safe }}
+
+    <div class="docs-grid">
+    {% for subpage in section.pages %}
+        <a href="{{ subpage.path }}">
+            <div class="doc-section-tile">
+                <span class="emoji">{{ subpage.extra.emoji }}</span>
+                <h2>{{ subpage.extra.tile }}</h2>
+            </div>
+        </a>
+    {% endfor %}
+    </div>
+</article>
+{% endblock content %}

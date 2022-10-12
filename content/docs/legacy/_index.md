@@ -1,7 +1,6 @@
 +++
 title = "Legacy docs"
-page_template = "legacy-docs.html"
-render = false
+page_template = "docs/legacy.html"
 weight = 900
 [extra]
 emoji = "🧓"
