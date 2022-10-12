@@ -1,7 +1,7 @@
 +++
 title = "Users"
 weight = 100
-template = "docs/users.html"
+template = "docs/index.html"
 [extra]
 emoji = "🧑"
 tile = "I want to start chatting using Matrix"

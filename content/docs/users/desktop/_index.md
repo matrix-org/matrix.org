@@ -1,7 +1,7 @@
 +++
 title = "Desktop"
 date = "2022-10-12T08:00:00Z"
-template = "docs/users.html"
+template = "docs/index.html"
 weight = 100
 [extra]
 emoji = "💻️"

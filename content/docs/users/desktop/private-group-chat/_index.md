@@ -3,7 +3,7 @@ title = "Private Group Chat"
 date = "2022-10-12T08:00:00Z"
 weight = 100
 [extra]
-emoji = "🫂"
+emoji = "🧑‍🤝‍🧑"
 tile = "I want to create a private group chat"
 +++
 

@@ -1,10 +1,12 @@
 .docs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 10px;
 }
 
 .doc-section-tile {
+    flex: 1;
+    max-width: 200px;
     text-align: center;
     background-color:rgba(43, 140, 201, .1);
     color: #333;

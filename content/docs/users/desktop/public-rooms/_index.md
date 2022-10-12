@@ -3,7 +3,7 @@ title = "Public Rooms"
 date = "2022-10-12T08:00:00Z"
 weight = 200
 [extra]
-emoji = "👪️"
+emoji = "🌐"
 tile = "I want to join public conversations"
 +++
 
