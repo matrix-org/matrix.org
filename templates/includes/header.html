@@ -1,14 +1,5 @@
-{% if page %}
-{% set path = page.path %}
-{% elif section %}
-{% set path = section.path %}
-{% elif taxonomy %}
-{% set path = current_path %}
-{% else %}
-{% set path = "" %}
-{% endif %}
 <header class="site-header">
-    <a href="/" class="brand{% if path == '/' %} current{% endif %}">
+    <a href="/" class="brand {{ macros::current_class(if_path_starts_with='/') }}">
         <img src="/images/matrix-logo.svg" alt="Matrix logo">
     </a>
     <input id="site-header-dropdown-checkbox" type="checkbox" class="dropdown-checkbox" aria-hidden="true">
@@ -20,7 +11,7 @@
         {% set href = "/" ~ link.section ~ "/" %}
         {% set section = get_section(path=link.section ~ "/_index.md") %}
         <div class="section-wrap">
-            <a href="{{ href }}" class="section {% if path is starting_with(href) %}current{% endif %}">
+            <a href="{{ href }}" class="section {{ macros::current_class(if_path_starts_with=href) }}">
                 {{ link.title }}
             </a>
             <div class="section-submenu-wrap">
@@ -33,7 +24,7 @@
         </div>
         {% else %}
         <a href="{{ link.href }}" class="{% if link.primary %}primary{% endif %}
-            {% if path is starting_with(link.href) %}current{% endif %}">
+            {{ macros::current_class(if_path_starts_with=link.href) }}">
             {{ link.title }}
         </a>
         {% endif %}

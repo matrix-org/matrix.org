@@ -1,0 +1,3 @@
+{% macro current_class(if_path_starts_with) -%}
+{% if current_path and current_path is starting_with(if_path_starts_with) %}current{% endif %}
+{%- endmacro current_class %}
