@@ -30,4 +30,5 @@ The Matrix.org Foundation maintains a public provider everybody can register
 an account on for free. For your first steps, the simplest is to register an
 account there.
 
-To register an account, you need to use an app.
+To register an account, you need to use an app. Chose the type of device you're
+using to get the most useful instructions for you.

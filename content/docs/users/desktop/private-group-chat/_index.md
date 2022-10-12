@@ -1,40 +1,11 @@
 +++
-title = "Desktop"
+title = "Private Group Chat"
 date = "2022-10-12T08:00:00Z"
 weight = 100
 [extra]
-emoji = "💻️"
-tile = "I'm using a computer"
+emoji = "🫂"
+tile = "I want to create a private group chat"
 +++
-
-Go to <https://app.element.io>, and click on "Create Account". You should land
-on the following page.
-
-![](element-io-sign-up.png)
-
-For simplicity you can connect with a Google, Facebook, Apple, GitHub or Gitlab
-account if you have any of these. They will be notified that you're using your
-account to create a Matrix one. This is sometimes called "Social Login".
-
-If you're more privacy conscious, you can also register by entering a username,
-password and email in the form below the Social Login buttons.
-
-You might be challenged with a captcha (a set of tiles or pictures where you
-need to find certain objects), and will be asked to accept Matrix.org's terms
-and conditions.
-
-After accepting the terms, you will end on a screen that asks you to confirm
-your email address. You can safely close this window.
-
-Check your inbox, and click the link to verify your email address. The link will
-bring you to the homepage of Element, the Matrix web application to participate
-to Matrix conversations.
-
-![](element-landing-page.png)
-
-## Your own place to experiment
-
-### Creating a group chat for yourself
 
 The simplest way to get started is to create a private group chat so you can
 safely try some Matrix features. To do so, click on the large "Create a Group
@@ -117,17 +88,71 @@ There are other fun ways to handle a conversation in Matrix, such as replies or
 threads. We suggest you to play around with the interface of this room: be bold,
 you can't break anything!
 
-* Inviting people
+But it starts to feel a little lonely here. How about inviting friends in this
+group chat?
 
-## A small group chat
+### Inviting people
 
-* Redacting other people's messages
-* Excluding troublemakers
-* Who can redact?
-* Promoting/demoting others
-* Ownership of the group
+To invite friends in your group chat, click on the circled `i` on the top right
+corner. It opens the right panel. Click on "People" to display the list of
+members of this room: you should be the only one there for now.
 
-## Joining larger public rooms
+![](experiment-hover-and-bin.png)
 
-* Following a matrix.to link
-* Creating a public room and giving it an alias
+Click on "Invite to this room" on top of the people list, and a prompt will open
+so you can invite your friends to join you in Matrix. If they're already on
+Matrix, enter their Matrix ID. If they're not, enter their email address and
+they will be invited to join.
+
+![](invite-name.png)
+
+The person you invited can either accept or decline the invite. If they accept
+it, you should see them joining the room. The more the merrier!
+
+![](invite-hello.png)
+
+## Keeping the group safe
+
+### Removing messages or people from the group chat
+
+It's great to be able to have a conversation with nice people, but some of them
+can turn nasty. It's important to keep your group chats healthy and safe. When
+troublemakers start being annoying, you can redact their messages. You can do it
+the same way you did it for your messages: hover the message, click on the three
+dots, and click on "Remove"
+
+![](redact-menu.png)
+
+You can provide a reason why the message is redacted, but it's not strictly
+mandatory. Once it's removed, a placeholder is going to be displayed instead.
+
+If the person sent a lot of messages that need to be deleted, you can click on
+their avatar to open the details view in the right panel. Scroll to the bottom
+of the right panel and click on "Remove recent messages".
+
+![](redact-redact-all.png)
+
+But sometimes removing the messages is not enough, and the troublemaker doesn't
+want to be reasoned with. In such case, you can remove them from the private
+group chat. To do so, click on their avatar in the timeline, scroll to the
+bottom of the right panel, and click on "Remove from room".
+
+![](redact-kick.png)
+
+### Getting help keeping the group safe
+
+So far, only the person who created the group chat has enough privileges to
+remove messages or people from the conversation. Those privileges are
+technically called a "Power Level", or a "Role" in Element.
+
+With the "Default" role, people can only participate in the conversation.
+Element defines two other roles: "Moderator" and "Admin".
+
+![](role.png)
+
+If you promote someone "Moderator", they will be able to redact other people's
+messages and remove them from the room. You can demote the moderators back to 
+the default role whenever you want.
+
+If you promote someone "Admin", they become co-owners of the room with you, and
+you cannot take it back! Be very careful who you promote administrator.
