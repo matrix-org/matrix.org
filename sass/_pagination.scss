@@ -1,5 +1,17 @@
 .pagination {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 120%;
+
+    >div {
+        flex: 1;
+    }
+
+    a {
+        padding: .5rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 }

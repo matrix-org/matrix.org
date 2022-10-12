@@ -1,8 +1,13 @@
 <nav class="pagination">
-    {% if paginator.previous %}
-    <a class="w-button button-dark" href="{{ paginator.previous }}">‹ Previous</a>
-    {% endif %}
-    {% if paginator.next %}
-    <a class="w-button button-dark" href="{{ paginator.next }}">Next ›</a>
-    {% endif %}
+    <div class="prev">
+        {% if paginator.previous %}
+        <a href="{{ paginator.previous }}">‹ Previous</a>
+        {% endif %}
+    </div>
+    <span class="page-number">{{ paginator.current_index }} / {{ paginator.number_pagers }}</span>
+    <div class="prev">
+        {% if paginator.next %}
+        <a href="{{ paginator.next }}">Next ›</a>
+        {% endif %}
+    </div>
 </nav>
