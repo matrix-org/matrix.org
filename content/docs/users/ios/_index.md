@@ -1,10 +1,10 @@
 +++
 title = "Apple iOS"
-date = "2022-10-12T08:00:00Z"
 weight = 200
 [extra]
 emoji = "🍎"
 tile = "I'm using an iPhone"
+last_updated = "2022-10-18T16:00:00Z"
 +++
 
 Opinionated: on matrix.org because the general public doesn't care about

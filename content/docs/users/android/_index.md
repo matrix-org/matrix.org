@@ -1,10 +1,10 @@
 +++
 title = "Android"
-date = "2022-10-12T08:00:00Z"
 weight = 300
 [extra]
 emoji = "🤖"
 tile = "I'm using an Android phone"
+updated = "2022-10-18T16:00:00Z"
 +++
 
 Opinionated: on matrix.org because the general public doesn't care about

@@ -1,11 +1,11 @@
 +++
 title = "Desktop"
-date = "2022-10-12T08:00:00Z"
 template = "docs/index.html"
 weight = 100
 [extra]
 emoji = "💻️"
 tile = "I'm using a computer"
+updated = "2022-10-18T16:00:00Z"
 +++
 
 ## Creating an account

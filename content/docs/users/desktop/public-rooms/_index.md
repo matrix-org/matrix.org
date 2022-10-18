@@ -1,19 +1,20 @@
 +++
 title = "Public Rooms"
-date = "2022-10-12T08:00:00Z"
 weight = 200
 [extra]
 emoji = "🌐"
 tile = "I want to join public conversations"
+updated = "2022-10-18T16:00:00Z"
 +++
 
-When you want to join larger public conversations, you have two major options at
-hand:
+When you want to join larger public conversations, you have three major options
+at hand:
 
 1. Joining a specific room from its address/alias or from a matrix.to link
 2. Browsing a public directory to find rooms of interest
+3. Joining a room that was listed in a Space
 
-## Join a specific room
+## Joining a specific room
 
 Someone might have shared a link that starts with `matrix.to` with you, or you
 might have stumbled upon it on a website. Those links will bring you to the
@@ -50,7 +51,7 @@ Click on "Join the discussion": you can now participate in the room!
 
 ![](room-participate.png)
 
-## Browse the public directory
+## Browsing the public directory
 
 Joining a specific room is handy when you know exactly what you want to discuss
 or where, but sometimes you just want to find a casual place to talk of things
@@ -80,3 +81,9 @@ if someone has created a room for it already.
 You can click "Join" to join the room, and voilà, you're in!
 
 ![](directory-joined.png)
+
+## Spaces
+
+TODO: What are Spaces
+TODO: Joining a Space, & a few curated ones
+TODO: joining a room from a Space
