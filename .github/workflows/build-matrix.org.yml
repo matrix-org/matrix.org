@@ -6,6 +6,11 @@ on:
   pull_request:
   workflow_dispatch:
 
+# only allow one build per PR: cancel any existing ones.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # Apply styling to the spec documents.
   # This step also sets up the OpenAPI UI.
