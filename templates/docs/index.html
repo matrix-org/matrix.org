@@ -3,6 +3,8 @@
 <article class="content">
     <header>
         <h1>{{ section.title }}</h1>
+        {% set iso_date = section.extra.updated | date(format = '%Y-%m-%d') %}
+        Last updated: <time datetime="{{ iso_date }}"> {{ iso_date }}</time>
     </header>
 
     {{ section.content | markdown | safe }}
