@@ -147,7 +147,7 @@ In the early days of Matrix we proposed the concept of ‘active application ser
 
 *   Support for bulk redactions (looping over individual redactions is a viable workaround however)
 *   Ability for room moderators to delete content from the media repository when redacting the event which refers to it. (this can be improved in future)
-*   UI for setting server ACLs ([https://github.com/vector-im/Element-web/issues/7084](https://github.com/vector-im/Element-web/issues/7084))
+*   UI for setting server ACLs ([https://github.com/vector-im/element-web/issues/7084](https://github.com/vector-im/element-web/issues/7084))
 
 
 ### Moderation tooling
@@ -190,12 +190,12 @@ If you're using Element, when you go to view more information about a particular
 ![Element-deactivate-btn](/docs/projects/images/moderation8.png)
 
 
-Removing abusive rooms is done by calling the /shutdown_room API, e.g:
+Removing abusive rooms is done by calling the delete room API, e.g:
 
 
 ```
-curl 'https://matrix.org/_synapse/admin/v1/shutdown_room/!roomid:matrix.org' \
--H "Authorization: Bearer $token" -XPOST \
+curl 'https://matrix.org/_synapse/admin/v2/rooms/!roomid:matrix.org' \
+-H "Authorization: Bearer $token" -X DELETE \
 -d'{"new_room_user_id": "@abuse:matrix.org", "message": "This room has been removed from the matrix.org homeserver due to violating the terms of use.", "room_name": "Room unavailable"}'
 ```
 
@@ -253,9 +253,9 @@ Synapse does not currently provide tools to block connections by IP - instead we
 
 Synapse supports a module-like system which can be used to block servers from doing certain actions, such as sending invites to your users. [t2bot/synapse-simple-antispam](https://github.com/t2bot/synapse-simple-antispam) is one example of how this works - see the code for a bit more information on what is possible. Although this won't prevent servers from interacting with your server, it can help with reducing the amount of spam/malicious content.
 
-“Defederating” your server from another server is currently done on a room by room basis - either using server ACLs if you have control of the room in question, or by using the /shutdown_room API if you do not.
+“Defederating” your server from another server is currently done on a room by room basis - either using server ACLs if you have control of the room in question, or by using the /DELETE API if you do not.
 
-In future, this may be refined to let servers automatically implement /shutdown_room semantics on any room which matches a given pattern (e.g. whose room admins are on a given server).
+In future, this may be refined to let servers automatically implement delete room API semantics on any room which matches a given pattern (e.g. whose room admins are on a given server).
 
 
 ### Moderating the room directory
@@ -264,7 +264,7 @@ Each Matrix server maintains a publicly viewable directory of rooms.  By default
 
 The server admin can limit which users are allowed to publish rooms to the public room directory via the `room_list_publication_rules` config option in Synapse.
 
-The server admin can moderate the directory by delisting rooms by calling the /directory/list/room API with visibility: private ([https://matrix.org/docs/spec/client_server/r0.4.0.html#put-matrix-client-r0-directory-list-room-roomid](https://matrix.org/docs/spec/client_server/r0.4.0.html#put-matrix-client-r0-directory-list-room-roomid)).
+The server admin can moderate the directory by delisting rooms by calling the [`/directory/list/room/{roomId}` API](https://spec.matrix.org/latest/client-server-api/#put_matrixclientv3directorylistroomroomid) with `visibility: private`).
 
 
 ### Moderating room aliases
@@ -275,7 +275,7 @@ By default, any user can create room aliases, which can be an abuse vector - par
 
 The server admin can limit which users are allowed to create room aliases via the `alias_creation_rules` config option in Synapse.
 
-The server admin can moderate the aliases that exist on their server by calling the /directory/room API with DELETE: ([https://matrix.org/docs/spec/client_server/r0.4.0.html#delete-matrix-client-r0-directory-room-roomalias](https://matrix.org/docs/spec/client_server/r0.4.0.html#delete-matrix-client-r0-directory-room-roomalias)).
+The server admin can moderate the aliases that exist on their server by calling the [room API](https://spec.matrix.org/latest/client-server-api/#delete_matrixclientv3directoryroomroomalias).
 
 Element/Web also exposes the ability to delete a room alias from the Room Directory view as an easter egg for server administrators - shift-clicking on the entry in the Room Directory will call the above API to remove the alias and the room from the directory.
 
