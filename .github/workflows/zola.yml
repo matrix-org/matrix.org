@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - zola
+  pull_request:
+    branches:
+      - zola
 
 jobs:
   deploy:
@@ -24,6 +27,7 @@ jobs:
           ./zola build
 
       - name: Deploy
+        if: github.event_name == 'push'
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
             folder: public
