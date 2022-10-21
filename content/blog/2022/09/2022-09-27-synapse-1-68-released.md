@@ -12,6 +12,7 @@ Hey everyone, it's time for a new Synapse release! [Synapse
 1.68](https://github.com/matrix-org/synapse/releases/tag/v1.68.0) just dropped,
 let's have a look at what's inside.
 
+<!-- more -->
 
 ## Dependency changes
 

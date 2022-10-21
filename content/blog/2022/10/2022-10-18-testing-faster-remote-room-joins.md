@@ -7,9 +7,12 @@ path = "/blog/2022/10/18/testing-faster-remote-room-joins"
 author = ["Richard van der Hoff"]
 category = ["General"]
 +++
+
 As of [Synapse 1.69](https://matrix.org/blog/2022/10/17/synapse-1-69-released), we consider "faster remote room joins" to be ready for testing by server admins.
 
 There are a number of caveats, which I'll come to, but first: this is an important step in a project which we've been working on for 9 months. Most people who use Matrix will be familiar with the pain of joining a large room over federation: typically you are just faced with a spinner, which is eventually replaced by a cryptic error. If you're lucky, the room eventually pops up in your room list of its own accord. The whole experience is [one of the longest-standing open issues in Synapse](https://github.com/matrix-org/synapse/issues/1211).
+
+<!-- more -->
 
 The "faster joins" project set out to change all this. Briefly, the reason the experience is so poor today is that there is a *lot* of information required to join a large room, which is slow for the "resident" server to generate, and even slower for the "joining" server to validate and store. The key insight is that we don't really need the full membership list of a room to get started: rather, we can present the user with the basic information about the room (name, topic, space hierarchy, etc), and then populate the full details in the background. The upshot is that, whereas it used to take upwards of 12 minutes to join Matrix HQ (even assuming that your server didn't fall over in the meantime), this is now down to about 30 seconds (and we're confident that we can reduce this even further).
 

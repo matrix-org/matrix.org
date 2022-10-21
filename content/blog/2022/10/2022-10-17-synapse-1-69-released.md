@@ -28,6 +28,8 @@ out of the oven. But before we take a look at it, here's a quick announcement:
 
 Now let's see what's new in Synapse 1.69!
 
+<!-- more -->
+
 ## Caching in modules
 
 Synapse modules allow third-party developers to extend Synapse's feature range
