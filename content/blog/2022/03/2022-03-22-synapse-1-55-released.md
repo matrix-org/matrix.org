@@ -1,0 +1,89 @@
++++
+title = "Synapse 1.55 released"
+path = "/blog/2022/03/22/synapse-1-55-released"
+
+[taxonomies]
+author = ["Brendan Abolivier"]
+category = ["Releases"]
++++
+
+Hi all, [Synapse
+1.55](https://github.com/matrix-org/synapse/releases/tag/v1.55.0) is out! Let's
+see the main talking points of this new release.
+
+> Update: After the initial release of Synapse 1.55, the developers of a
+> third-party tool (Jinja, which is the tool Synapse uses to render email and
+> web templates) released a new version of their project which proved
+> incompatible with Synapse. To address this issue, we have released [Synapse
+> 1.55.2](https://github.com/matrix-org/synapse/releases/tag/v1.55.2).
+>
+> Deployments of Synapse using the `matrixdotorg/synapse` Docker image or Debian
+> packages from `packages.matrix.org` are not affected as they are already using
+> a compatible version of the tool.
+>
+> It's worth noting that the work we are doing to integrate
+> [Poetry](https://python-poetry.org/) into Synapse (more on that a bit further
+> in this post) will, once completed, prevent this kind of issues from
+> happening.
+
+## Removing support for Mjolnir 1.3.1 and older
+
+Administrators of large homeservers and communities will already be familiar
+with [Mjolnir](https://github.com/matrix-org/mjolnir), which is a tool designed
+to help them moderate a large number of rooms in an efficient way. It includes a
+bot as well as a Synapse module to better interface with the homeserver.
+
+Due to a change in how we manage some of Synapse's internal utilities, this
+release of Synapse breaks compatibility with Mjolnir versions 1.3.1 and older.
+Homeserver administrators using Mjolnir and upgrading to Synapse 1.55 should
+make sure they're running Mjolnir version 1.3.2 or later.
+
+See the [upgrade
+notes](https://matrix-org.github.io/synapse/v1.55/upgrade#compatibility-dropped-for-mjolnir-131-and-earlier)
+for more information.
+
+## Moving `synctl`
+
+`synctl` is a tool provided as part of Synapse to run and manage your instance
+and its workers (if any).
+
+As part of our work to integrate [Poetry](https://python-poetry.org/) in Synapse
+(which in turn will enable a lot of cool things, such as reproducible builds),
+we have recently moved the way we package this tool. As of this release,
+homeserver administrators should stop invoking it using its direct path (e.g.
+`/path/to/synctl start`), but should instead call it directly, e.g. `synctl
+start`.
+
+This means homeserver administrators using `synctl` must make sure that the tool
+is in their `PATH`. This is automatically done when installing and upgrading
+Synapse using the `matrixdotorg/synapse` Docker image or Debian packages from
+`packages.matrix.org`. When installing from a wheel, sdist, or PyPI, an
+executable is created in your Python installation's `bin` directory.
+
+See the [upgrade
+notes](https://matrix-org.github.io/synapse/v1.55/upgrade#synctl-script-has-been-moved)
+for more information.
+
+## Everything else
+
+This release also introduces new module callbacks, allowing homeserver
+administrators to more efficiently review which users are able to deactivate
+users and shutdown rooms. More information on that in [Synapse's
+documentation](https://matrix-org.github.io/synapse/v1.55/modules/third_party_rules_callbacks.html#check_can_shutdown_room).
+
+We have also started experimenting with using the native Python asyncio event
+loop in Synapse which, if successful, would make it easier to use building
+blocks from the Python ecosystem when adding new features to Synapse.
+
+See the [full
+changelog](https://github.com/matrix-org/synapse/releases/tag/v1.55.0) for a
+complete list of changes in this release. Also please have a look at the
+[upgrade
+notes](https://matrix-org.github.io/synapse/v1.55/upgrade#upgrading-to-v1550)
+for this version.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
+thanks to everyone who contributed to this release, including (in no particular
+order) [Dirk Klimpel](https://github.com/dklimpel),
+[Beeper](https://www.beeper.com/), and
+[~creme](https://github.com/cremesk).

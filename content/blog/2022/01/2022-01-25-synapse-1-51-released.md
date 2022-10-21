@@ -1,0 +1,46 @@
++++
+title = "Synapse 1.51 released"
+path = "/blog/2022/01/25/synapse-1-51-released"
+
+[taxonomies]
+author = ["Brendan Abolivier"]
+category = ["Releases"]
++++
+
+[Synapse 1.51](https://github.com/matrix-org/synapse/releases/tag/v1.51.0) is out! Here's what's new with this week's release.
+
+
+## Deprecation of the `webclient` listener
+
+A long time ago, Synapse used to serve a very basic web Matrix client (named "console") that could be used to connect to the homeserver. Server administrators could chose to make it available to their users by configuring a `webclient` listener.
+
+This web client was removed in [Synapse 0.34](https://github.com/matrix-org/synapse/releases/tag/v0.34.0) back in 2018, but the `webclient` listener stayed, instead allowing server admins to serve the web client of their choice (or redirect to it) through the `web_client_location` configuration file.
+
+Synapse 1.53 will remove the `webclient` listener, as well as the ability to set `web_client_location` to a static directory (instead of a HTTP(S) URL). See the [upgrade notes](https://matrix-org.github.io/synapse/develop/upgrade#upgrading-to-v1510) for more information.
+
+
+## Aggregations and sync
+
+The concept of server-side aggregation in Matrix is defined in [MSC2675](https://github.com/matrix-org/matrix-doc/pull/2675) and is the ability for homeservers to extend the information included in an event using other events that relate to it. This allows, for example, clients to quickly retrieve the reactions associated with a given message, or its latest edit.
+
+This release includes a number of notable performance improvements to calculating aggregations when responding to `/sync` requests. We continue to measure and investigate potential performance improvements in this area, which should end up greatly benefiting `/sync` response times.
+
+
+## FOSDEM
+
+[FOSDEM](https://fosdem.org), one of the biggest gatherings around free and open-source software in the world, is happening next week! Just like last year, the conference will happen online and will be hosted on Matrix. And just like last year, it will be packed with super interesting Matrix-related (but not only) talks.
+
+One new addition this year is the presence of a whole devroom dedicated to Matrix. It will be hosted on February 6th, and you can already find its whole schedule of talks [right here](https://fosdem.org/2022/schedule/track/matrixorg_foundation_and_community/).
+
+The Synapse team will be giving a couple of talks during the day: [Events for the Uninitiated](https://fosdem.org/2022/schedule/event/matrix_events_uninitiatied/) by Shay at 11:10, and [Beyond the Matrix: Extend the capabilities of your Synapse homeserver](https://fosdem.org/2022/schedule/event/matrix_extend_synapse/) by yours truly at 16:40 (all times CET). Come say hi! 🙂
+
+
+## Everything else
+
+This release includes a couple of spaces-related bug fixes, specifically related to the `/_matrix/client/v1/room/{roomId}/hierarchy` API. One of them in particular targets a bug in spaces that include more than 50 rooms, and should make it much easier to look for a specific room inside a space.
+
+The `synapse_review_recent_signups` script, which allows homeserver administrators to review recent signups (e.g. in the event of a spam attack), was also improved with an option to exclude virtual users belonging to an application service from the results. See `synapse_review_recent_signups --help` for more information.
+
+Please see the Synapse [release notes](https://github.com/matrix-org/synapse/blob/v1.51.0/CHANGES.md) for a complete list of changes in this release.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our thanks to everyone who contributed to this release, including (in no particular order) [Dirk Klimpel](https://github.com/dklimpel), [br4nnigan](https://github.com/br4nnigan), [Philippe Daouadi](https://github.com/blastrock), [Daniël Sonck](https://github.com/dsonck92) and [AndrewFerr](https://github.com/AndrewFerr).

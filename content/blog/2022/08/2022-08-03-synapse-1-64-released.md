@@ -1,0 +1,108 @@
++++
+title = "Synapse 1.64 released"
+path = "/blog/2022/08/03/synapse-1-64-released"
+
+[taxonomies]
+author = ["Brendan Abolivier"]
+category = ["Releases"]
++++
+
+It's that time again: there's a new Synapse release, fresh out of the oven!
+Let's take a look at what's inside [Synapse
+1.64](https://github.com/matrix-org/synapse/releases/tag/v1.64.0).
+
+## Delegating email verification is now deprecated
+
+[Synapse 1.4.0](https://github.com/matrix-org/synapse/releases/tag/v1.4.0)
+introduced a configuration option (`account_threepid_delegates.email`) to allow
+homeservers to delegate validating the ownership of email addresses to an
+external identity server. This validation is used by Synapse when adding an
+email address to a Matrix account, or before performing a password reset.
+
+As of Synapse 1.64, this option is deprecated, and Synapse will print a warning
+if it is used. This is because this option relies on old API endpoints that have
+since been
+[removed](https://spec.matrix.org/v1.3/changelog/#identity-service-api-1-1) from the
+Matrix specification.
+
+Synapse can do this validation internally provided it is configured with details
+of an SMTP server. Administrators currently relying on
+`account_threepid_delegates.email` should therefore ensure that an SMTP server
+is correctly configured, and remove the `account_threepid_delegates.email`
+option. See the [configuration
+guide](https://matrix-org.github.io/synapse/v1.64/usage/configuration/config_documentation.html#email)
+for more information.
+
+We plan to fully remove this configuration option in Synapse 1.66, which is
+expected to be released on August 30th.
+
+Note that the equivalent option to validate the ownership of phone numbers
+(`account_threepid_delegates.msisdn`) can still be used, though we expect to
+deprecate it in a future release of Synapse.
+
+## Improved TLS support for sending emails
+
+When configuring an SMTP server to use to send out emails to users, server
+administrators can configure Synapse to use TLS to communicate to that server.
+Until now, only [STARTTLS](https://en.wikipedia.org/wiki/Opportunistic_TLS) was
+supported in this case.
+
+Synapse 1.64 introduces a new `force_tls` configuration option in the `email`
+section of the configuration file. If this new setting is set to `true` Synapse
+will use TLS for the initial connection rather than upgrading via STARTTLS.
+
+See the [configuration
+guide](https://matrix-org.github.io/synapse/v1.64/usage/configuration/config_documentation.html#email)
+for more information.
+
+## Memory leak in `frozendict`
+
+A couple of weeks ago, we
+[identified](https://github.com/Marco-Sulla/python-frozendict/issues/60) a
+memory leak within [frozendict](https://pypi.org/project/frozendict/), which is
+a library that Synapse relies on. This would in turn cause Synapse instances to
+slowly leak memory when processing `/sync` requests.
+
+We highly encourage server administrators who installed Synapse via `pip` to
+upgrade their local version of `frozendict` to version 2.3.3 or later, which
+includes a fix to this issue. The Docker image `matrixdotorg/synapse` and the
+Debian packages from `packages.matrix.org` already include the updated library.
+
+## Everything else
+
+This version of Synapse introduces support for room version 10! This new room
+version enables support for the new `knock_restricted` join rule, to allow
+knocking into rooms which are otherwise restricted to members of a specific room
+(or space). See [the Matrix specification about room version
+10](https://spec.matrix.org/v1.3/rooms/v10/) for more information.
+
+Additionally, Synapse 1.64 features a new rate limiter to limit the rate of joins to the same
+room. It is intended as a mitigation against abuse scenarios involving joining a
+lot of users from different homeservers to a room to then send spam across it.
+See the [configuration
+guide](https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html#rc_joins_per_room)
+for more information.
+
+This release of Synapse also extends the [List
+Rooms](https://matrix-org.github.io/synapse/latest/admin_api/rooms.html#list-room-api)
+and [Room
+Details](https://matrix-org.github.io/synapse/latest/admin_api/rooms.html#room-details-api)
+admin APIs to include the type of a room in responses, allowing server
+administrators to differentiate spaces from other rooms.
+
+See the [full
+changelog](https://github.com/matrix-org/synapse/releases/tag/v1.64.0) for a
+complete list of changes in this release. Also please have a look at the
+[upgrade
+notes](https://matrix-org.github.io/synapse/v1.64/upgrade#upgrading-to-v1640)
+for this version.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
+thanks to everyone who contributed to this release, including (in no particular
+order) [Beeper](https://www.beeper.com/),
+[andrewdoh](https://github.com/andrewdoh), [Thomas
+Weston](https://github.com/thomasweston12), [jejo86](https://github.com/jejo86),
+[villepeh](https://github.com/villepeh), [Jörg
+Behrmann](https://github.com/behrmann) and [Jacek
+Kuśnierz](https://github.com/Vetchu), as well as anyone helping us make Synapse
+better by sharing their feedback and reporting issues.
