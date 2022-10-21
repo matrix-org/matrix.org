@@ -39,7 +39,7 @@ matrix_mautrix_whatsapp_enabled: true
 
 ... and re-running the setup:
 
-```shell
+```sh
 ansible-playbook -i inventory/hosts setup.yml --tags=setup-all
 ```
 
