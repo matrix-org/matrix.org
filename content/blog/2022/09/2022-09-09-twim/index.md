@@ -2,7 +2,7 @@
 date = "2022-09-09T17:45:20Z"
 title = "This Week in Matrix 2022-09-09"
 path = "/blog/2022/09/09/this-week-in-matrix-2022-09-09"
-template = "post.html"
+
 [taxonomies]
 category = ["This Week in Matrix"]
 author = ["Thib"]

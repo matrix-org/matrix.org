@@ -2,11 +2,13 @@
 date = "2022-09-27T14:34:55Z"
 title = "Announcing Third Room Tech Preview 1"
 path = "/blog/2022/09/27/announcing-third-room-tech-preview-1"
-template = "post.html"
-image = "thirdroom.png"
+
 [taxonomies]
 category = ["Releases"]
 author = ["Matthew Hodgson"]
+
+[extra]
+image = "thirdroom.png"
 +++
 
 We're excited to announce the first tech preview of [Third Room](https://thirdroom.io/), an open, standards-based, decentralised vision of the metaverse for the open Web, built entirely on Matrix… without cryptocurrencies, NFTs or walled gardens.

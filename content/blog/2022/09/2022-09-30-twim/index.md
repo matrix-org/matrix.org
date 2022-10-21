@@ -3,7 +3,7 @@ date = "2022-09-30T17:35:03Z"
 updated = "2022-10-01T15:56:28Z"
 title = "This Week in Matrix 2022-09-30"
 path = "/blog/2022/09/30/this-week-in-matrix-2022-09-30"
-template = "post.html"
+
 [taxonomies]
 category = ["This Week in Matrix"]
 author = ["Thib"]

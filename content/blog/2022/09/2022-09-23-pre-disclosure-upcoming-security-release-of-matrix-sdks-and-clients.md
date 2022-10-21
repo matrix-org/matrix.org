@@ -2,7 +2,7 @@
 date = "2022-09-23T12:53:12Z"
 title = "Pre-disclosure: upcoming critical security release of Matrix SDKs and clients"
 path = "/blog/2022/09/23/pre-disclosure-upcoming-critical-security-release-of-matrix-sd-ks-and-clients"
-template = "post.html"
+
 [taxonomies]
 category = ["Security"]
 author = ["Matrix Security"]
