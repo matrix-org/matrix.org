@@ -1,0 +1,61 @@
++++
+title = "Synapse 1.58 released"
+path = "/blog/2022/05/05/synapse-1-58-released"
+
+[taxonomies]
+author = ["Brendan Abolivier"]
+category = ["Releases"]
++++
+
+[Synapse 1.58](https://github.com/matrix-org/synapse/releases/tag/v1.58.0) is
+out! Let's dive into this new release.
+
+# Poetry
+
+If you've been reading the past few Synapse release announcements, you might
+have already heard about our efforts to integrate
+[Poetry](https://python-poetry.org/) into Synapse. Poetry is a tool which
+manages dependencies of a Python project. Its killer feature is its lockfile,
+which explicitly pins all dependencies (direct and transitive) to a fixed
+version, even across multiple Python versions and platforms. See more about why
+we choose Poetry [here](https://github.com/matrix-org/synapse/issues/11537).
+
+During the past few months, we've been hard at work converting Synapse and its
+CI to use Poetry. The goal is to make our Docker images and Debian packages more
+reproducible and to provide a fixed, known-good environment for CI. This will
+help us to ensure the stability and security of Synapse installations.
+
+Synapse 1.57's Docker image was the first to use Poetry; after a successful
+trial, this was extended to Synapse 1.58's Debian packages. Installations from
+PyPI using `pip` will _not_ use the locked environment, though everyone is
+welcome to install from source using [our
+lockfile](https://github.com/matrix-org/synapse/blob/develop/poetry.lock).
+
+Huge props to [David](https://github.com/DMRobertson) from the Synapse team for
+leading the work on this front.
+
+## Everything else
+
+This release of Synapse also includes performance improvements around sharing
+device list updates, which should greatly improve login times for large Matrix
+accounts.
+
+Synapse 1.58 also features the implementation of two MSCs:
+[MSC3383](https://github.com/matrix-org/matrix-spec-proposals/pull/3383) to
+include a `destination` parameter in federation authentication headers, and
+[MSC2815](https://github.com/matrix-org/matrix-spec-proposals/pull/2815) which
+(if enabled) allows room moderators to see the content of a redacted event (as
+long as it hasn't already been deleted by the homeserver).
+
+See the [full
+changelog](https://github.com/matrix-org/synapse/releases/tag/v1.58.0) for a
+complete list of changes in this release. Also please have a look at the
+[upgrade
+notes](https://matrix-org.github.io/synapse/v1.58/upgrade#upgrading-to-v1580)
+for this version.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
+thanks to everyone who contributed to this release, including (in no particular
+order) [Beeper](https://www.beeper.com/), [Dirk
+Klimpel](https://github.com/dklimpel), [Famedly](https://famedly.com/) and
+[Sami Olmari](https://github.com/olmari).
