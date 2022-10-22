@@ -200,7 +200,7 @@ curl 'https://matrix.org/_synapse/admin/v2/rooms/!roomid:matrix.org' \
 ```
 
 
-This removes all local users from the room, routing them into a new room (called ‘Room unavailable’ in this example), repoints any local aliases to the new room blacklists the server from participating in the original room going forwards. And prevents any local user from ever rejoining the room.
+This removes all local users from the room, routing them into a new room (called ‘Room unavailable’ in this example), repoints any local aliases to the new room, blacklists the server from participating in the original room and prevents any local user from ever rejoining the room.
 This is particularly useful if the room in question is spamming invites at your users: blocking the room will stop the invites from getting through, and allow your users to reject the invite they had prior.
 
 Removing abusive content en masse from a room is done by calling the /admin/quarantine_media API, e.g.
