@@ -82,10 +82,14 @@ ol:last-child {
 
 .content {
     width: 100%;
-    max-width: 960px;
+    max-width: 850px;
 
     margin: 10px auto;
     padding: 0 1.5rem;
+
+    img {
+        max-height: 40rem;
+    }
 
     @media (max-width: 767px) {
         padding-left: 14px;

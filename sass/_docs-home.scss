@@ -1,0 +1,30 @@
+.docs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.doc-section-tile {
+    flex: 1 0 180px;
+    max-width: 200px;
+    text-align: center;
+    background-color: rgba(43, 140, 201, .1);
+    color: #333;
+    border-radius: .5rem;
+    padding: .5rem;
+
+    span {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+}
+
+.doc-section-tile:hover {
+    background-color:rgba(43, 140, 201, .2);
+}
