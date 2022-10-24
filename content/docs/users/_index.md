@@ -11,7 +11,6 @@ updated = "2022-10-18T16:00:00Z"
 ## Matrix for Instant Messaging
 
 Matrix works a little like email, but instantaneous and secure:
-
 - You need to register an account at a provider
 - Whatever your provider is, you can talk to people using other providers
 - In the same way you can use Outlook or Thunderbird with the same email
