@@ -13,7 +13,7 @@ const title = `Open Tech Will Save Us | ${config.siteTitle}`;
 
 
 const SHOW_LIVE_STREAM = false;
-const NEXT_EVENT = 19;
+const NEXT_EVENT = 20;
 
 let liveStream;
 if (SHOW_LIVE_STREAM) {
@@ -32,7 +32,7 @@ if (SHOW_LIVE_STREAM) {
     </div>
   );
 } else {
-  liveStream = <img src="/images/otwsu19.png" alt="Open Tech Will Save Us" />;
+  liveStream = <img src="/images/otwsu20.png" alt="Open Tech Will Save Us" />;
 }
 
 const OTWSU = ({ data }) => {
@@ -48,7 +48,7 @@ const OTWSU = ({ data }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:image"
-          content="https://matrix.org/images/otwsu18.png"
+          content="https://matrix.org/images/otwsu20.png"
         />
       </Helmet>
       <div>
