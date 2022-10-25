@@ -34,7 +34,7 @@ Bug fixes:
 </ul>
 <a name="user-content-changes-in-synapse-v0-21-0-rc2-2017-05-08"></a>
 
-### <a id="user-content-changes-in-synapse-v0210-rc2-2017-05-08" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0210-rc2-2017-05-08"></a>Changes in synapse v0.21.0-rc2 (2017-05-08)
+### Changes in synapse v0.21.0-rc2 (2017-05-08)
 
 Changes:
 <ul>
@@ -46,7 +46,7 @@ Bug fixes:
 </ul>
 <a name="user-content-changes-in-synapse-v0-21-0-rc1-2017-05-08"></a>
 
-### <a id="user-content-changes-in-synapse-v0210-rc1-2017-05-08" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0210-rc1-2017-05-08"></a>Changes in synapse v0.21.0-rc1 (2017-05-08)
+### Changes in synapse v0.21.0-rc1 (2017-05-08)
 
 Features:
 <ul>
