@@ -7,8 +7,8 @@ author = ["Matthew Hodgson"]
 category = ["Tech"]
 +++
 
-<h2>Introducing Client Server API 0.4, and the first ever stable IS, AS and Push APIs spec releases!
-</h2>
+## Introducing Client Server API 0.4, and the first ever stable IS, AS and Push APIs spec releases!
+
 Hi folks,
 
 

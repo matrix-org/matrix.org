@@ -12,7 +12,9 @@ Hi all,
 Synapse 0.21.0 was released a moment ago. This release lands a number of performance improvements and stability fixes, plus a couple of small features.
 
 For those of you upgrading <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a> has the details as usual.  Full changelog follows:
-<h2>Changes in synapse v0.21.0 (2017-05-17)</h2>
+
+### Changes in synapse v0.21.0 (2017-05-17)
+
 Features:
 <ul>
  	<li>Add per user rate-limiting overrides (PR <a href="https://github.com/matrix-org/synapse/pull/2208">#2208</a>)</li>
@@ -31,7 +33,9 @@ Bug fixes:
  	<li>Fix API to allow clients to upload one-time-keys with new sigs (PR <a href="https://github.com/matrix-org/synapse/pull/2206">#2206</a>)</li>
 </ul>
 <a name="user-content-changes-in-synapse-v0-21-0-rc2-2017-05-08"></a>
-<h2><a id="user-content-changes-in-synapse-v0210-rc2-2017-05-08" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0210-rc2-2017-05-08"></a>Changes in synapse v0.21.0-rc2 (2017-05-08)</h2>
+
+### <a id="user-content-changes-in-synapse-v0210-rc2-2017-05-08" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0210-rc2-2017-05-08"></a>Changes in synapse v0.21.0-rc2 (2017-05-08)
+
 Changes:
 <ul>
  	<li>Always mark remotes as up if we receive a signed request from them (PR <a href="https://github.com/matrix-org/synapse/pull/2190">#2190</a>)</li>
@@ -41,7 +45,9 @@ Bug fixes:
  	<li>Fix bug where users got pushed for rooms they had muted (PR <a href="https://github.com/matrix-org/synapse/pull/2200">#2200</a>)</li>
 </ul>
 <a name="user-content-changes-in-synapse-v0-21-0-rc1-2017-05-08"></a>
-<h2><a id="user-content-changes-in-synapse-v0210-rc1-2017-05-08" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0210-rc1-2017-05-08"></a>Changes in synapse v0.21.0-rc1 (2017-05-08)</h2>
+
+### <a id="user-content-changes-in-synapse-v0210-rc1-2017-05-08" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0210-rc1-2017-05-08"></a>Changes in synapse v0.21.0-rc1 (2017-05-08)
+
 Features:
 <ul>
  	<li>Add username availability checker API (PR <a href="https://github.com/matrix-org/synapse/pull/2183">#2183</a>)</li>

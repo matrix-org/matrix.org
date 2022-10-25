@@ -12,7 +12,9 @@ We have a brand new, exciting guide page offering an introduction to <a href="h
 <hr />
 
 Matrix allows open real-time communications over the Internet using HTTP and JSON. This makes developing clients to connect to Matrix servers really easy! Because it's open, and uses simple syntax for messages, you can connect Matrix to anything that communicates over a standard HTTP interface - later projects in this series will explore ideas such as building bots, performing machine learning on message content, and connecting IoT devices such as Philips Hue lights.
-<h2 id="making-a-matrix-client">Making a Matrix Client</h2>
+
+### Making a Matrix Client
+
 Let's explore how we would make a very simple Matrix client, with only the ability to perform an initial sync, and to get member lists and the timeline for rooms of our choice.
 
 This article will explore the <a href="/docs/spec/client_server/latest.html">Matrix Client-Server API</a>, making use of the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a>. Later articles may discuss making the underlying calls. Specifically we will cover:
@@ -30,7 +32,9 @@ Before we start, make sure you have Node.js and NPM installed: follow instructio
 <pre><code class="language-unix">mkdir my-first-matrix-client
 cd my-first-matrix-client
 </code></pre>
-<h2 id="lets-write-javascript">Let's write JavaScript</h2>
+
+### Let's write JavaScript
+
 Once you're ready, the first thing to do is install the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a> from NPM:
 <pre><code class="language-unix">npm install matrix-js-sdk
 </code></pre>
@@ -46,7 +50,9 @@ We include the SDK in our source exactly as expected:
 </code></pre>
 </div>
 </div>
-<h2 id="login-with-an-access-token">Login with an access token</h2>
+
+### Login with an access token
+
 Instantiate a new client object and use an <code class="highlighter-rouge">access token</code> to login:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
@@ -148,7 +154,9 @@ In any case, once logged in either with a password or an access token, the clien
 </div>
 </div>
 <strong>Note:</strong> it is essential to keep this access token safe, as it allows complete access to your Matrix account!
-<h2 id="sync-and-listen">Sync and Listen</h2>
+
+### Sync and Listen
+
 Next we start the client, this sets up the connection to the server and allows us to begin syncing:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
@@ -260,7 +268,9 @@ Instead, let's just listen to events happening on the timeline of rooms for whic
 </code></pre>
 </div>
 </div>
-<h2 id="access-the-store">Access the Store</h2>
+
+### Access the Store
+
 When we created a new client with <code class="highlighter-rouge">sdk.createClient()</code>, an instance of the default store, <code class="highlighter-rouge">MatrixInMemoryStore</code> was created and enabled. When we sync, or instruct otherwise our client to fetch data, the data is automatically added to the store.
 
 To access the store, we use accessor methods. For example, to get a list of rooms in which our user is joined:
@@ -402,7 +412,9 @@ For each room, we can inspect the timeline in the store:
 </code></pre>
 </div>
 </div>
-<h2 id="send-messages-to-rooms">Send messages to rooms</h2>
+
+### Send messages to rooms
+
 To send a message, we create a content object, and specify a room to send to. In this case, I've taken the room ID of <code class="highlighter-rouge">#test:matrix.org</code>, and used it as an example:
 <div class="language-javascript highlighter-rouge">
 <div class="highlight" style="background: #fff;">
@@ -620,5 +632,7 @@ Knowing this, we can put together message listening and message sending, to buil
 </div>
 </div>
 Take a look at the <code class="highlighter-rouge">msgtype</code> in the object above. In the previous example, we used "m.text" for this field, but now we're using "m.notice". Bots will often use "m.notice" to differentiate their messages. This allows the client to render notices differently, for example Riot, the most popular client, renders notices with a more pale text colour.
-<h2 id="further">Further</h2>
+
+### Further
+
 There is much, much more to Matrix, the Client-Server API and the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a>, but this guide should give some understanding of simple usage. In subsequent guides we'll cover more detail and also explore projects you can build on top, such as IoT controls and chatbot interfaces. For now you can take a look at <a href="https://github.com/matrix-org/matrix-js-sdk/tree/master/examples">other examples in the matrix-js-sdk itself</a>, and also the <a href="/docs/spec/client_server/latest.html">Matrix Client-Server API</a> which it implements.

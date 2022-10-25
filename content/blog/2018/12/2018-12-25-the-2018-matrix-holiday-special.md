@@ -34,16 +34,16 @@ We'd like to thank everyone for continuing to support Matrix - especially our <a
 
 Before going into what else 2019 will hold, however, let's take the opportunity to give a bit more detail on the various core team projects which landed in 2018…
 
-<h2>France
-</h2>
+## France
+
 DINSIC (France's Ministry of Digital, IT &amp; Comms) have been busy building out their massive cross-government Matrix deployment and custom Matrix client throughout most of the year.  After the <a href="/blog/2018/04/26/matrix-and-riot-confirmed-as-the-basis-for-frances-secure-instant-messenger-app/">announcement in April</a>, this started off with an initial deployment over the summer, and is now moving towards the full production rollout, as confirmed at the Paris Open Source Summit a few weeks ago by Mounir Mahjoubi, the Secretary of State of Digital.  All the press coverage about this ended up in French, with the biggest writeup being at <a href="https://www.cio-online.com/actualites/lire-mounir-mahjoubi%C2%A0-%C2%A0le-libre-n-est-pas-toujours-moins-cher-mais-c-est-toujours-plus-transparent%C2%A0-10842.html">CIO Online</a>, but the main mention of Matrix (badly translated from French) is:
 
 <p style="padding-left: 30px;"><i>Denouncing the use of tools such as WhatsApp; a practice that has become commonplace within ministerial offices, Mounir Mahjoubi announced the launch in production of Tchap, based on Matrix and Riot: an instant messaging tool that will be provided throughout the administrations. So, certainly, developing a product can have a certain cost. Integrating it too. "Free is not always cheaper but it's always more transparent," admitted the Secretary of State.
 </i></p>
 The project really shows off Matrix at its best, with up to 60 different deployments spread over different ministries and departments; multiple clusters per Ministry; end-to-end encryption enabled by default (complete with e2e-aware antivirus scanning); multiple networks for different classes of traffic; and the hope of federating with the public Matrix network once the S2S API is finalised and suitable border gateways are available.  It's not really our project to talk about, but we'll try to share as much info as we can as roll-out continues.
 
-<h2>The Matrix Specification
-</h2>
+## The Matrix Specification
+
 A major theme throughout the year has been polishing the <a href="/docs/spec">Matrix Spec</a> itself for its first full stable release, having had more than enough time to see which bits work in practice now and which bits need rethinking.  This all kicked off with the <a href="/blog/2018/05/17/introducing-matrix-specification-changes/">creation of the Matrix Spec Change process</a> back in May, which provides a formal process for reviewing and accepting contributions from anyone into the spec.  Getting the balance right between agility and robustness has been quite tough here, especially pre-1.0 where we've needed to move rapidly to resolve the remaining long-lived sticking points.  However, a process like this risks encouraging the classic “<a href="https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good">Perfect is the Enemy of Good</a>” problem, as all and sundry jump in to apply their particular brand of perfectionism to the spec (and/or the process around it) and risk smothering it to death with enthusiasm.  So we've ended up iterating a few times on the process and hopefully now converged on an approach which will work for 1.0 and beyond. If you haven't checked out the current <a href="/docs/spec/proposals">proposals guide</a> please give it a look, and feel free to marvel at all the MSCs in flight.  You can also see a <a href="/~richardv/proposal_news.html">quick and dirty timeline of all the MSC status changes</a> since we introduced the process, to get an idea of how it's all been progressing.
 
 
@@ -67,8 +67,8 @@ Once these land and are implemented in Synapse over the coming weeks, we will be
 
 Also on the spec side of things, it's worth noting that a lot of effort went into improving performance for clients in the form of the <a href="https://github.com/matrix-org/matrix-doc/issues/1227">Lazy Loading Members MSC</a>.  This ended up consuming a lot of time over the summer as we updated Synapse and the various matrix-*-sdks (and thus Riot) to only calculate and send details to the clients about members who are currently talking in a room, whereas previously we sent the entire state of the room to the client (even including users who had left). The end result however is a 3-5x reduction in RAM on Riot, and a 3-5x speedup on initial sync.  The current MSC is currently being <a href="https://github.com/matrix-org/matrix-doc/pull/1758">merged as we speak</a> into the main spec (thanks Kitsune!) for inclusion in upcoming CS API 0.5.
 
-<h2>The Matrix.org Foundation (CIC!)
-</h2>
+## The Matrix.org Foundation (CIC!)
+
 Alongside getting the open spec process up and running, we've been establishing The Matrix.org Foundation as an independent non-profit legal entity responsible for neutrally safeguarding the Matrix spec and evolution of the protocol.  This kicked off in June with the “<a href="/blog/2018/06/20/towards-open-governance-for-matrix-org/">Towards Open Governance</a>” blog post, and continued with the <a href="/blog/2018/10/29/introducing-the-matrix-org-foundation-part-1-of-2/">formal incorporation</a> of The Matrix.org Foundation in October.  Since then, we've spent a lot of time with the non-profit lawyers evolving <a href="https://github.com/matrix-org/matrix-doc/issues/1318">MSC1318</a> into the final Articles of Association (and other guidelines) for the Foundation.  This work is basically solved now; it just needs MSC1318 to be updated with the conclusions (which we're running late on, but is top of Matthew's MSC todo list).
 
 
@@ -89,8 +89,8 @@ The remaining work on the Foundation is:
 </ul>
 We'll keep you posted with progress as this lands over the coming months.
 
-<h2>Riot
-</h2>
+## Riot
+
 2018 has been a bit of a chrysalis year for Riot: the vast majority of work has been going into the <a href="https://medium.com/@RiotChat/a-sneak-peek-at-a-whole-new-riot-im-1114df653782">massive redesign</a> we started in May to improve usability &amp; cosmetics, performance, stability, and E2E encryption usability improvements.  We've consciously spent most of the year feature frozen in order to polish what we already have, as we've certainly been guilty in the past of landing way too many features without necessarily applying the needed amount of UX polish.
 
 
@@ -109,8 +109,8 @@ An unexpectedly large detour/distraction came in the form of GDPR back in May - 
 
 And finally: on the mobile side, much of the team has been distracted helping out France with their Matrix deployment.  However, we've been plugging away on Riot/Mobile, keeping pace with the development on Riot/Web - but most excitingly, we've also found time to experiment with a <a href="https://github.com/vector-im/riot-android-redesign-PoC/tree/develop">complete rewrite of Riot/Android</a> in Kotlin, using Realm and Rx (currently nicknamed Riot X).  The rewrite was originally intended as a test-jig for experimenting with the redesign on mobile, but it's increasingly becoming a fully fledged Matrix client… which launches and syncs over 5x faster than today's Riot/Android.  If you're particularly intrepid you should be able to run the app by checking out the project in Android Studio and hitting ‘run'. We expect the rewrite to land properly in the coming months - watch this space for progress!
 
-<h2>E2E Encryption
-</h2>
+## E2E Encryption
+
 One of the biggest projects this year has been to get E2E encryption out of beta and <a href="https://github.com/vector-im/riot-web/issues/6779">turned on by default</a>.  Now, whilst the encryption itself in Matrix has been <a href="/blog/2016/11/21/matrixs-olm-end-to-end-encryption-security-assessment-released-and-implemented-cross-platform-on-riot-at-last/">cryptographically robust</a> since 2016 - its usability has been minimal at best, and we'd been running around polishing the underlying implementation rather than addressing the UX.  However, this year that changed, as we opened a war on about 6 concurrent battlefronts to address the remaining issues. These are:
 
 <ul>
@@ -138,8 +138,8 @@ So, TL;DR: E2E is hard, but the end is in sight thanks to a lot of blood, sweat 
 
 Separately, we've been keeping a close eye on <a href="https://datatracker.ietf.org/wg/mls/about/">MLS</a> - the IETF's activity around standardising scalable group E2E encryption.  MLS has a lot of potential and could provide algorithmic improvements over Olm &amp; Megolm (whist paving the way for interop with other MLS-encrypted comms systems).  But it's also quite complicated, and is at risk of designing out support of decentralised environments. For now, we're obviously focusing on ensuring that Matrix is rock solid with Olm &amp; Megolm, but once we hit that 1.0 we'll certainly be experimenting a bit with MLS too.
 
-<h2>Homeservers
-</h2>
+## Homeservers
+
 The story of the Synapse team in 2018 has been one of alternating between solving scaling and performance issues to support the ever-growing network (especially the massive matrix.org server)... and dealing with S2S API issues; both in terms of fixing the design of State Resolution, Room Versioning etc (see the Spec section above) and doing stop-gap fixes to the current implementation.
 
 
@@ -175,12 +175,12 @@ There are also some major improvements which haven't fully landed yet:
 </ul>
 Meanwhile, over on Dendrite, we made the conscious decision to get 1.0 out the door on Synapse first rather than trying to implement and iterate on the stuff needed for 1.0 on both Synapse &amp; Dendrite simultaneously.  However, Dendrite has been ticking along thanks to work from Brendan, Anoa and APWhitehat - and the plan is to use it for more niche homeserver work at first; e.g. constrained resource devices (Dendrite uses 5-10x less RAM than Synapse on Py3), clientside homeservers, experimental routing deployments, etc.  In the longer term we expect it to grow into a fully fledged HS though!
 
-<h2>Bridging
-</h2>
+## Bridging
+
 2018 was a bit of a renaissance for Bridging, largely thanks to Half-Shot coming on board in the Summer to work on IRC bridging and finally get to the bottom of the stability issues which plagued Freenode for the previous, uh, few years.  Meanwhile the Slack bridge got its first ever release - and more recently there's some Really Exciting Stuff happening with <a href="https://github.com/matrix-org/matrix-appservice-purple">matrix-appservice-purple</a>; a properly usable bridge through to any protocol that libpurple can speak… and as of a few days ago also supports *native* XMPP bridging via XMPP.js.  There'll probably be a dedicated blogpost about all of this in the new year, especially when we deploy it all on Matrix.org. Until then, the best bet is to learn more is to watch <a href="https://youtu.be/B0faoVdw0ak">last week's Matrix Live</a> and hear it all first hand.
 
-<h2>Modular
-</h2>
+## Modular
+
 One of the biggest newcomers of 2018 was the launch of <a href="https://modular.im">Modular.im</a> in October - the world's first commercial Matrix hosting service.  Whilst (like Riot), Modular isn't strictly-speaking a Matrix.org project - it feels appropriate to mention it here, not least because it's helping directly fund the core Matrix dev team.
 
 
@@ -189,12 +189,12 @@ So far Modular has seen a lot of interest from folks who want to spin up a super
 
 Right now we're promoting Modular mainly to existing Matrix users, but once the Riot redesign is finished you should expect to see some very familiar names popping up on the platform :D
 
-<h2>TWIM
-</h2>
+## TWIM
+
 Unless you were living under a rock, you'll hopefully have also realised that 2018 was the year that brought us <a href="/blog/category/general/this-week-in-matrix/">This Week In Matrix</a> (TWIM) - our very own blog tracking all the action across the whole Matrix community on a weekly basis.  Thank you to everyone who contributes updates, and to Ben for editing it each week. Go flip through the archives to find out what's been going on in the wider community over the course of the year!  (This blog post is already way too long without trying to cover the rest of the ecosystem too :)
 
-<h2>Shapes of Things to Come
-</h2>
+## Shapes of Things to Come
+
 Finally, a little Easter egg (it is Christmas, after all) for anyone crazy enough to have read this far: The eagle-eyed amongst you might have noticed that one of our accepted talks for FOSDEM 2019 is “<a href="https://fosdem.org/2019/schedule/event/matrix/">Breaking the 100bps barrier with Matrix</a>” in the Real Time Communications devroom.  We don't want to spoil the full surprise, but here's a quick preview of some of the more exotic <a href="https://en.wikipedia.org/wiki/Skunkworks_project">skunkworks</a> we've been doing on low-bandwidth routing and transports recently.  Right now it shamelessly assumes that you're running within a trusted network, but once we solve that it will of course be be proposed as an MSC for Matrix proper.  A full write-up and code will follow, but for now, here's a mysterious video…
 
 
@@ -202,7 +202,8 @@ Finally, a little Easter egg (it is Christmas, after all) for anyone crazy enoug
 
 (If you're interested in running Matrix over low-bandwidth networks, please <a href="https://matrix.to/#/@matthew:matrix.org">get in touch</a> - we'd love to hear from you...)
 
-<h2 id="2019">2019</h2>
+### 2019
+
 So, what will 2019 bring?
 
 In the short term, as should be obvious from the above, our focus is on:

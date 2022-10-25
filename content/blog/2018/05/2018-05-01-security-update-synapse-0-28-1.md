@@ -20,7 +20,9 @@ The 'depth' parameter is used primarily as a way for servers to signal the inten
 We'd like to acknowledge jzk for identifying the vulnerability, and Max Dor for providing feedback on the fixes.
 
 As a general reminder, Synapse is still beta (as is the Matrix spec) and the federation API particularly is still being debugged and refined and is pre-r0.0.0. For the benefit of the whole community, please disclose vulnerabilities and exploits responsibly by emailing security@ or DMing someone from +matrix:matrix.org. Thanks.
-<h2>Changes in synapse v0.28.1 (2018-05-01)</h2>
+
+### Changes in synapse v0.28.1 (2018-05-01)
+
 <strong>SECURITY UPDATE</strong>
 <ul>
  	<li>Clamp the allowed values of event depth received over federation to be [0, 2^63 - 1]. This mitigates an attack where malicious events injected with depth = 2^63 - 1 render rooms unusable. Depth is used to determine the cosmetic ordering of events within a room, and so the ordering of events in such a room will default to using stream_ordering rather than depth (topological_ordering). This is a temporary solution to mitigate abuse in the wild, whilst a long solution is being implemented to improve how the depth parameter is used.Full details at <a href="https://docs.google.com/document/d/1I3fi2S-XnpO45qrpCsowZv8P8dHcNZ4fsBsbOW7KABI" rel="nofollow">https://docs.google.com/document/d/1I3fi2S-XnpO45qrpCsowZv8P8dHcNZ4fsBsbOW7KABI</a></li>

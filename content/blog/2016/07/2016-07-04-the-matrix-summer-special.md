@@ -8,7 +8,9 @@ category = ["General", "GSOC"]
 +++
 
 Hi folks - another few months have gone by and once again the core Matrix team has ended up too busy hacking away on the final missing pieces of the Matrix jigsaw puzzle to have been properly updating the blog; sorry about this. The end is in sight for the current crunch however, and we expect to return to regular blog updates shortly! Meanwhile, rather than letting news stack up any further, here's a quick(?) attempt to summarise all the things which have been going on!
-<h2>Synapse 0.16.1 released!</h2>
+
+### Synapse 0.16.1 released!
+
 This one's a biggy: in the mad rush during June to support the public debut for <a href="https://vector.im">Vector</a>, we made a series of major <a href="https://github.com/matrix-org/synapse">Synapse</a> releases which apparently we forgot to tell anyone about (sorry!). The full changelog is at the bottom of the post as it's huge, but the big features are:
 <ul>
  	<li>Huge performance improvements, including adding write-thru event caches and improving caching throughout, and massive improvements to the speed of the room directory API.</li>
@@ -25,7 +27,9 @@ If you haven't upgraded, please do asap from <a href="https://github.com/matrix-
 There's also been a huge amount of work going on behind the scenes on horizontal scalability for Synapse.  We haven't drawn much attention to this yet (or documented it) as it's still quite experimental and in flux, but the main change is to add the concept of application-layer replication to Synapse - letting you split the codebase into multiple endpoints which can then be run in parallel, each replicating their state off the master synapse process.  For instance, right now the Matrix.org homeserver is actually running off three different processes: the main synapse; another specific to calculating push notifications and another specific to serving up the /sync endpoint.  These three are then abstracted behind the <a href="https://github.com/matrix-org/dendron">dendron</a> layer (which also implements the /login endpoint). The idea is that one can then run multiple instances of the /sync and pusher (and other future) endpoints to horizontally scale.  For now, they share a single database writer, but in practice this has improved our scalability and performance on the Matrix.org HS radically.
 
 In future we'll actually document how to run these, as well as making it easy to spin up multiple concurrent instances - in the interim if you find you're hitting performance limits running high-traffic synapses come talk to us about it on <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:matrix.org</a>.  And the longer term plan continues to be to switch out these python endpoint implementations in future for more efficient implementations.  For instance, there's a golang implementation of the media repository currently in development which could run as another endpoint cluster.
-<h2>Vector released!</h2>
+
+### Vector released!
+
 <a href="https://medium.com/@Vector/2d33b23a787">Much has been written</a> about this <a href="https://news.ycombinator.com/item?id=11871527">elsewhere</a>, but Web, iOS and Android versions of the <a href="https://www.vector.im">Vector</a> clients were finally released to the general public on June 9th at the <a href="http://www.decentralizedweb.net/">Decentralised Web Summit</a> in San Francisco.  Vector is a relatively thin layer on top of the <a href="https://github.com/matrix-org/matrix-react-sdk">matrix-react-sdk</a>, <a href="https://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a> and <a href="https://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a> Matrix.org client SDKs which showcases Matrix's collaboration and messaging capabilities in a mass-market usable app.  There's been huge amounts of work here across the SDKs for the 3 platforms, with literally thousands of issues resolved.  You can find the full SDK changelogs on github for <a href="https://github.com/matrix-org/matrix-react-sdk/blob/master/CHANGELOG.md">React</a>, <a href="https://github.com/matrix-org/matrix-ios-kit/blob/master/CHANGES.rst">iOS</a> and <a href="https://github.com/matrix-org/matrix-android-sdk/blob/master/CHANGES.rst">Android</a>.  Some of the more interesting recent additions to Vector include improved room notifications, URL previews, configurable email notifications, and huge amounts of performance stability work.
 
 Future work on Vector is focused on showcasing end-to-end encryption, providing a one-click interface for adding bots/integrations &amp; bridges to a room, and generally enormously improving the UX and polish.  Meanwhile, there's an F-Droid release for Android landing <a href="https://f-droid.org/repository/browse/?fdid=im.vector.alpha">any day now</a>.
@@ -33,30 +37,43 @@ Future work on Vector is focused on showcasing end-to-end encryption, providing 
 If you haven't checked it out recently, it's really worth a look :)
 
 <a href="https://vector.im"><img class="aligncenter size-large wp-image-1658" src="/blog/wp-content/uploads/2016/07/Screen-Shot-2016-07-04-at-12.18.10-1024x591.png" alt="Vector" width="1024" height="591" /></a>
-<h2>Matrix Spec 0.1.0</h2>
+
+### Matrix Spec 0.1.0
+
 In case you didn't notice, we also released <a href="http://matrix.org/docs/spec/">v0.1.0 of the Matrix spec</a> itself in May - this is a fairly minor update which improves the layout of the document somewhat (thanks to a PR from Jimmy Cuadra) and a some bugfixes.  You can see the <a href="http://matrix.org/docs/spec/client_server/r0.1.0.html#changelog">full changelog here</a>. We're overdue a new release since then (albeit again with relatively minor changes).
-<h2>Google Summer of Code</h2>
+
+### Google Summer of Code
+
 We're in the middle of the second half of GSoC right now, with our GSoC students Aviral and Half-Shot hacking away on Vector and Microblogging projects respectively.  There's a lot of exciting stuff coming out of this - Aviral contributing Rich Text Editing, Emoji autocompletion, DuckDuckGo and other features into Vector (currently on branches, but will be released soon) and Half-Shot building a Twitter bridge as part of his Matrix-powered microblogging system.  Watch this space for updates!
-<h2>Ruma</h2>
+
+### Ruma
+
 Lots of exciting stuff has been happening recently over at <a href="https://ruma.io">Ruma.io</a> - an independent Matrix homeserver implementation written in Rust.  Over the last few weeks Jimmy and friends have got into the real meat of implementing e<a href="https://github.com/ruma/ruma/commit/8a2fe269196dfd5b629c6e301e8d78e19ae6d279">vents</a> and the core of the Matrix CS API, and as of the time of writing they're the <a href="https://news.ycombinator.com/item?id=12028475">topmost link</a> on HackerNews!  There's a lot of work involved in writing a homeserver, but Ruma is looking incredibly promising and the feedback from their team has been incredibly helpful in keeping us honest on the Matrix spec and ensuring that it's fit for purpose for 3rd party server implementers.
 
 Also, Ruma just released some <a href="https://www.ruma.io/docs/matrix">truly excellent documentation</a> as a high-level introduction to Matrix (thanks to Leah and Jimmy) - much better than anything we have on the official Matrix.org site.  Go check it out if you haven't already!
-<h2>End to End Encryption</h2>
+
+### End to End Encryption
+
 There has been *LOADS* of work happening on End to End encryption: finalising the core 1:1 "<a href="/git/olm">Olm</a>" cryptographic ratchet; implementing the group "<a href="http://matrix.org/git/olm/tree/src/megolm.c">Megolm</a>" ratchet (which shares a single ratchet over all the participants of a room for scalability); fully hooking Olm into matrix-js-sdk and Vector-web at last, and preparing for a formal and published-to-the-public 3rd party security audit on Olm which will be happening during July.
 
 This deserves a post in its own right, but the key thing to know is that Olm is almost ready - and indeed the work-in-progress E2E UX is even available on the <a href="https://vector.im/develop">develop branch of vector</a> if you enable E2E in the new 'Labs' section in User Settings.  Olm itself is usable only for 'burn after reading' strictly PFS messages, but Megolm integration with Vector &amp; Synapse will follow shortly afterwards which will finally provide the E2E nirvana we've all been waiting for :)
-<h2>Decentralised Web Summit</h2>
+
+### Decentralised Web Summit
+
 Matrix had a major presence as a sponsor at the first ever <a href="http://www.decentralizedweb.net/">Decentralised Web Summit</a> hosted by the Internet Archive in San Francisco back in June.  This was a truly incredible event - with folks gathering from across the world to discuss, collaborate and debate on ensure that the web is not fragmented or trapped into proprietary silos - with the likes of Tim Berners-Lee, Vint Cerf and Brewster Kahle in attendance.  We ran a long 2 hour workshop on Matrix and showed off Vector to anyone and everyone - and meanwhile the organisers were kind enough to promote Matrix as the main decentralised chat interface for the conference itself (bridged with their Slack).  A full writeup of the conference really merits a blog post in its own right, but the punchline is that you could genuinely tell that this is the beginning of a new era of the internet - whether it's using Merkle DAGs (like Matrix) or Blockchain or similar technologies: we are about to see a major shift in the balance of power on the internet back towards its users.
 
 We strongly recommend checking out the videos which have all been published at <a href="http://www.decentralizedweb.net/">Decentralised Web Summit</a>, including <a href="https://archive.org/details/DWebSummit2016_Lightning_Talks_Session_B">lightning talks introducing both Matrix and Vector</a>, and digging into as many of the projects advertised as possible.  It was particularly interesting for us to get to know Tim Berners-Lee's latest project at MIT: <a href="https://solid.mit.edu/">Solid</a> - which shares quite a lot of the same goals as Matrix, and subsequently seeing Tim pop up on <a href="https://vector.im/develop/#/room/#decentralizedweb-general:matrix.org/$146549767249761pyAQF:matrix.org">Matrix via Vector</a>.  We're really looking forward to working out how Matrix &amp; Solid can complement each other in future.
 
 <a href="https://twitter.com/parkan/status/740324969884700672"><img class="aligncenter wp-image-1660 size-large" src="/blog/wp-content/uploads/2016/07/timbl-768x1024.jpg" alt="Matthew, Tim Berners-Lee and Matrix" width="384" height="512" /></a>
 
-<h2>Matrix.to</h2>
+### Matrix.to
+
 Not the most exciting thing ever, but heads up that there's a simple site up at <a href="https://matrix.to">https://matrix.to</a> to provide a way of doing client-agnostic links to content in Matrix.  For instance, rather than linking specifically into an app like Vector, you can now say <a href="https://matrix.to/#/#matrix:matrix.org">https://matrix.to/#/#matrix:matrix.org</a> to go there via whatever app you choose.  This is basically a bootstrapping process towards having proper mx:// URLs in circulation, but given mx:// doesn't exist yet, https://matrix.to hopefully provides a useful step in the right direction :)
 
 PRs very welcome at <a href="https://github.com/matrix-org/matrix.to">https://github.com/matrix-org/matrix.to</a>.
-<h2>Bridges and Bots</h2>
+
+### Bridges and Bots
+
 Much of the promise of Matrix is the ability to bridge through to other silos, and we've been gradually adding more and more bridging capabilities in.
 
 For instance, the <a href="https://github.com/matrix-org/matrix-appservice-irc">IRC bridge</a> has had a complete overhaul to add in huge numbers of new features and finally deployed for Freenode a few weeks ago:
@@ -90,7 +107,9 @@ Meanwhile, a <a href="https://github.com/matrix-org/matrix-appservice-gitter">Gi
 Finally, <a href="https://github.com/matrix-org/Matrix-NEB">NEB</a> - the Matrix.org bot framework is currently being ported from Python to Golang to act as a general Go SDK for rapidly implementing new bot capabilities.
 
 There's little point in all of the effort going into bridges and bots if it's too hard for normal users to deploy them, so on the Vector side of things there's an ongoing project to build a commercial-grade bot/bridge hosted service offering for Matrix which should make it *much* easier for non-sysadmins to quickly add their own bots and bridges into their rooms.  There's nothing to see yet, but we'll be yelling about it when it's ready!
-<h2>Conclusion</h2>
+
+### Conclusion
+
 I'm sure there's a lot of stuff missing from the quick summary above - suffice it to say that the Matrix ecosystem is growing so fast and so large that it's pretty hard to keep track of everything that's going on.  The big remaining blockers we see at this point are:
 <ul>
  	<li>End-to-end Encryption roll-out</li>
@@ -109,7 +128,7 @@ Thanks, once again, to everyone who's been supporting and using Matrix - whether
 
 Matthew, Amandine &amp; the Matrix Team.
 
-<h2>Appendix: The Missing Synapse Changelogs</h2>
+### Appendix: The Missing Synapse Changelogs
 
 ### Changes in synapse v0.16.1 (2016-06-20)
 
