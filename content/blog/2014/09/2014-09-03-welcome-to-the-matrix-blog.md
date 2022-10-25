@@ -22,6 +22,6 @@ For consumers, it means that eventually they may be able to choose to use their 
 So this is the very high level description of Matrix, but it misses the reasons why we've started this. We thought that rather than summarizing the main reasons for launching this project in a faceless post it would be interesting to present it from different perspectives, so we've asked some of the core team to give their take on it:
 <p style="padding-left: 30px;">- Read <strong><a href="http://matrix.org/blog/?p=62">Matthew's</a></strong> post and get an insight of Matrix' technical history and rationale.</p>
 <p style="padding-left: 30px;">- Check out <strong><a title="Why Matrix?" href="http://matrix.org/blog/?p=12">Amandine's </a></strong>view on why the users need Matrix.</p>
-&nbsp;
+
 <p style="text-align: right;">The Matrix Team</p>
 PS: Matrix is hoping to talk about the future of communication in general at <b>SXSW Interactive</b>  - if you like the idea of Matrix, please <strong>vote for us</strong> by clicking <a href="http://panelpicker.sxsw.com/vote/37949">here</a> before September 5th!

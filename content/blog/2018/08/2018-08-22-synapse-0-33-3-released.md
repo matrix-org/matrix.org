@@ -15,7 +15,6 @@ We also have, as a great contribution from <a href="https://github.com/vojeroen"
 
 As always, you can get the new update from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.3">https://github.com/matrix-org/synapse/releases/tag/v0.33.3</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>.
 
-&nbsp;
 <h4 id="features">Features</h4>
 <ul>
  	<li>Add support for the SNI extension to federation TLS connections. Thanks to <a href="https://github.com/vojeroen">@vojeroen</a>! (<a href="https://github.com/matrix-org/synapse/issues/3439">#3439</a>)</li>

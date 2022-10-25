@@ -37,11 +37,7 @@ Predictably enough, it's this last point of the 'missing data layer for cyberspa
 
 In fact, the best way is to test it live: we've put together a quick demo at <a href="/vrdemo">https://matrix.org/vrdemo</a> to show it off, so please <a href="/vrdemo">give it a go!</a>
 
-&nbsp;
-
 <a href="/vrdemo"><img class="aligncenter size-large wp-image-2424" src="/blog/wp-content/uploads/2017/04/table-1024x333.jpg" alt="" width="1024" height="333" /></a>
-
-&nbsp;
 
 <a href="/vrdemo">In the demo</a> you get:
 <ol>
@@ -55,11 +51,7 @@ Needless to say, the demo's open sourced under the Apache License like all thing
 
 The demo is quite high-bandwidth and hardware intensive, so here's a video of it in action, just in case:
 
-&nbsp;
-
 <div style="text-align: center;"><div class="video-container"><iframe src="https://www.youtube.com/embed/nk0nMlVXkbk" width="560" height="315" frameBorder="0" allowFullScreen="allowfullscreen"></iframe></div></div>
-
-&nbsp;
 
 Now, it's important to understand that here we're using Matrix as a standard communications API for VR, but we're not using Matrix to store any VR world data (yet).  The demo uses plain A-Frame via aframe-react to render its world: we are not providing an API which exposes the world itself onto the network for folks to interact with and extend.  This is because Matrix is currently optimised for storing and synchronising two types of data structure: decentralised timelines of conversation data, and arbitrary decentralised key-value data (e.g. room names, membership, topics).
 

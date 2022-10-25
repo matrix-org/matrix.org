@@ -18,9 +18,6 @@ For a full list of everything that has changed see below or the <a href="https:/
 
 I'd also like to thank Will Hunt, Martin Weinelt and Kent Shikama for their contributions!
 
-&nbsp;
-
-&nbsp;
 <h3>Changes in synapse v0.17.0 (2016-08-08)</h3>
 This release contains significant security bug fixes regarding authenticating
 events received over federation. PLEASE UPGRADE.
@@ -38,7 +35,7 @@ Bug fixes:
  	<li>Fix URL preview API to exclude HTML comments in description (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/988" data-url="https://github.com/matrix-org/synapse/issues/988" data-id="169610681" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#988</a>)</li>
  	<li>Fix error handling of remote joins (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/991" data-url="https://github.com/matrix-org/synapse/issues/991" data-id="169653250" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#991</a>)</li>
 </ul>
-&nbsp;
+
 <h3>Changes in synapse v0.17.0-rc4 (2016-08-05)</h3>
 Changes:
 <ul>
@@ -51,7 +48,7 @@ Bug fixes:
  	<li>Fix event persistence when event has already been partially persisted (PR <a class="issue-link js-issue-link" title="Ensure we only persist an event once at a time" href="https://github.com/matrix-org/synapse/pull/975" data-id="169098276" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#975</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/983" data-url="https://github.com/matrix-org/synapse/issues/983" data-id="169382701" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#983</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/985" data-url="https://github.com/matrix-org/synapse/issues/985" data-id="169570281" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#985</a>)</li>
  	<li>Fix port script to also copy across backfilled events (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/982" data-url="https://github.com/matrix-org/synapse/issues/982" data-id="169344602" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#982</a>)</li>
 </ul>
-&nbsp;
+
 <h3>Changes in synapse v0.17.0-rc3 (2016-08-02)</h3>
 Changes:
 <ul>
@@ -65,7 +62,7 @@ Bug fixes:
  	<li>Fix various push bugs (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/966" data-url="https://github.com/matrix-org/synapse/issues/966" data-id="168177154" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#966</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/970" data-url="https://github.com/matrix-org/synapse/issues/970" data-id="168521716" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#970</a>)</li>
  	<li>Fix adding emails on registration (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/968" data-url="https://github.com/matrix-org/synapse/issues/968" data-id="168337247" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#968</a>)</li>
 </ul>
-<h3></h3>
+
 <h3>Changes in synapse v0.17.0-rc1 (2016-07-28)</h3>
 This release changes the LDAP configuration format in a backwards incompatible
 way, see PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/843" data-url="https://github.com/matrix-org/synapse/issues/843" data-id="158692541" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#843</a> for details.

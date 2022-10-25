@@ -62,8 +62,5 @@ Once this is complete, you can type <code>sync</code>, to start bridging contact
 
 And that's it! You may need to take a little time to watch the sync happen, particularly if you have a very large number of chats on the WhatsApp side, but there is no further configuration needed.
 <h2 id="demo">Demo!</h2>
-&nbsp;
 
 <div class="video-container"><iframe src="https://www.youtube.com/embed/edSgP2dEZ1o" width="960" height="540" frameBorder="0" allowFullScreen="allowfullscreen"></iframe></div>
-
-&nbsp;

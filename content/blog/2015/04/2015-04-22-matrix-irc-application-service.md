@@ -11,8 +11,6 @@ category = ["Tech"]
 
 <hr />
 
-&nbsp;
-
 Like a lot of open source projects, we use IRC a lot. Naturally, we also use Matrix to communicate with each other. For some time now we've had an IRC bot sitting on specific channels to "bridge" together IRC and Matrix. This bot simply sent IRC messages when it received Matrix messages and vice versa. As we started to rely on it more and more though, we realised that there were things that were impossible for simple client-side bots to do by themselves. This spurred the development of Application Services which <a href="/blog/2015/03/02/introduction-to-application-services/">I introduced in my previous post</a>. In this blog post, I want to outline some of the features and techniques of the IRC application service which we've been working on over the past few weeks.
 
 Features:

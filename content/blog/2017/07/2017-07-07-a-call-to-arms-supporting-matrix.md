@@ -56,7 +56,7 @@ This has progressed massively - we haven't really yelled about it yet, but lates
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 </div>
-&nbsp;
+
 <ul>
  	<li><em>Ensuring we can scale beyond Synapse – i.e. implement Dendrite</em></li>
 </ul>
@@ -66,8 +66,6 @@ Likewise, Dendrite is on track: we've implemented all the Hard Stuff which forms
 <p dir="ltr" lang="en">New milestone for Dendrite: sending messages over federation BOTH WAYS between dendrite &amp; synapse! A bit more polish &amp; we can cut an alpha!! <a href="https://t.co/DWs6rFqZcQ">pic.twitter.com/DWs6rFqZcQ</a></p>
 — Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/878279397106733056">June 23, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-&nbsp;
 
 </div>
 <ul>
@@ -146,5 +144,3 @@ But we're decentralised, and we have no absolute moral arbiter, and nor should w
 So: <b>Matrix needs you.</b> Please become a supporter on <a href="https://patreon.com/matrixdotorg">Patreon </a>or <a href="https://liberapay.com/matrixdotorg/">Liberapay</a>, and help us save the world :)
 
 - Matthew, Amandine &amp; the whole Matrix.org team.
-
-&nbsp;

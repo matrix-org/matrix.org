@@ -193,6 +193,3 @@ So, there you have it.  We'll be tracking progress in github issues and an asso
 
 
 It's worth noting that we feel that GDPR is an excellent piece of legislation from the perspective of forcing us to think more seriously about our privacy - it has forced us to re-prioritise all sorts of long-term deficiencies in Matrix (e.g. dependence on DNS; improving User Interactive authentication; improving logout semantics etc).  There's obviously a lot of work to be done here, but hopefully it should all be worth it!
-
-
-&nbsp;

@@ -32,7 +32,6 @@ Note that the v0.28.0 release will remove the deprecated metric names.</li>
 As always, you can get it from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.27.2">https://github.com/matrix-org/synapse/releases/tag/v0.27.2</a>
 
 </div>
-&nbsp;
 
 thanks for flying Matrix!
 <div class="release-body commit open float-left">
@@ -52,7 +51,7 @@ Bug fixes:
 <div class="release clearfix label-">
 <div class="release-body commit open float-left">
 <div class="markdown-body">
-<h3></h3>
+
 <h3>Changes in synapse v0.27.1 (2018-03-26)</h3>
 Meta release as v0.27.0 temporarily pointed to the wrong commit
 
@@ -62,10 +61,10 @@ Meta release as v0.27.0 temporarily pointed to the wrong commit
 <div class="release clearfix label-">
 <div class="release-body commit open float-left">
 <div class="markdown-body">
-<h3></h3>
+
 <h3>Changes in synapse v0.27.0 (2018-03-26)</h3>
 No changes since v0.27.0-rc2
-<h3></h3>
+
 <h3>Changes in synapse v0.27.0-rc2 (2018-03-19)</h3>
 Pulls in v0.26.1
 
@@ -73,7 +72,7 @@ Bug fixes:
 <ul>
  	<li>Fix bug introduced in v0.27.0-rc1 that causes much increased memory usage in state cache (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3005" data-error-text="Failed to load issue title" data-id="305611773" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3005">#3005</a>)</li>
 </ul>
-<h3></h3>
+
 <h3>Changes in synapse v0.27.0-rc1 (2018-03-14)</h3>
 The common case for running Synapse is not to run separate workers, but for those that do, be aware that synctl no longer starts the main synapse when using <code>-a</code> option with workers. A new worker file should be added with <code>worker_app: synapse.app.homeserver</code>.
 

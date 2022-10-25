@@ -18,15 +18,15 @@ Currently the only way to run under python 3 is to download via github, there is
 We'll be blogging about our porting project in more detail in the future, so watch this space - exciting times!
 
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.5.1">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, for the first time, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>.
-<h3></h3>
+
 <h2>Synapse 0.33.5.1</h2>
-&nbsp;
+
 <h3>Internal Changes</h3>
 <ul>
  	<li>Fix incompatibility with older Twisted version in tests. Thanks <a class="user-mention" href="https://github.com/OlegGirko" data-hovercard-user-id="6013515" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" aria-describedby="hovercard-aria-description">@OlegGirko</a>! (<a href="https://github.com/matrix-org/synapse/issues/3940">#3940</a>)</li>
 </ul>
 <h2>Synapse 0.33.5</h2>
-&nbsp;
+
 <h3>Features</h3>
 <ul>
  	<li>Python 3.5 and 3.6 support is now in beta. (<a href="https://github.com/matrix-org/synapse/issues/3576">#3576</a>)</li>

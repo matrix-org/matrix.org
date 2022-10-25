@@ -24,7 +24,6 @@ If you're already running a server, please upgrade!  And if you're not, go grab
 
 And here's the full changelog...
 
-&nbsp;
 <div class="release-header">
 <h1 class="release-title">Changes in synapse v0.19.0 (2017-02-04)</h1>
 </div>

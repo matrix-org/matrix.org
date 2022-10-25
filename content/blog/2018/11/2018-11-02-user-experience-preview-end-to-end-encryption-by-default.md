@@ -102,6 +102,3 @@ When using encrypted messages, most existing services fall short in one or all o
 
 <span style="font-weight: 400">We'd love to hear your feedback! Let us know your thoughts here or in </span>
 <a href="https://matrix.to/#/#e2e-dev:matrix.org"><span style="font-weight: 400">#e2e-dev:matrix.org</span></a><span style="font-weight: 400">.</span>
-
-
-&nbsp;

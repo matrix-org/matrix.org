@@ -26,5 +26,3 @@ For other connection means:
 	<li>In the chat room start a voice call by clicking on the mic icon in the top right corner. Don't forget to allow your browser to access your mic and speakerphones!</li>
 </ol>
 <a href="http://matrix.org/blog/wp-content/uploads/2014/11/vuc.png"><img class="alignnone size-full wp-image-231" src="http://matrix.org/blog/wp-content/uploads/2014/11/vuc.png" alt="vuc" width="144" height="172" /></a>
-
-&nbsp;

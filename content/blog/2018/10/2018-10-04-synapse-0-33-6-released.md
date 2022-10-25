@@ -13,7 +13,6 @@ These past few weeks we've been focusing on fixing a whole host of federation bu
 
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.6">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>.
 
-&nbsp;
 <h3>Synapse 0.33.6</h3>
 <h4>Features</h4>
 <ul>

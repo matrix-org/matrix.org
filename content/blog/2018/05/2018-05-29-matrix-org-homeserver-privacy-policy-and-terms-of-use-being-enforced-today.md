@@ -20,5 +20,3 @@ If you have any questions or difficulties, please let us know at <a href="mailto
 Thanks!
 
 Tom
-
-&nbsp;

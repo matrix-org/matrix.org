@@ -21,7 +21,6 @@ On the clientside: we've improved performance, enabled identicons for unknown us
 
 Thanks to everyone running servers - please upgrade, tell your friends, and help us grow Matrix!
 
-&nbsp;
 <pre>
 Changes in synapse v0.7.0 (2015-02-12)
 ======================================

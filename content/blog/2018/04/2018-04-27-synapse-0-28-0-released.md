@@ -55,4 +55,3 @@ Bug Fixes:
  	<li>Avoid creating events with huge numbers of prev_events (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3113" data-error-text="Failed to load issue title" data-id="314753743" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3113">#3113</a>)</li>
  	<li>Reject events which have lots of prev_events (PR <a class="issue-link js-issue-link tooltipped tooltipped-ne" href="https://github.com/matrix-org/synapse/pull/3118" data-error-text="Failed to load issue title" data-id="315273891" data-permission-text="Issue title is private">#3118</a>)</li>
 </ul>
-&nbsp;

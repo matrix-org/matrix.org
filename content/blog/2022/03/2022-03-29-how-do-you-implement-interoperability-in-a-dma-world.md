@@ -178,7 +178,7 @@ they’re unable to for whatever reason - e.g. their platform isn’t supported,
 or their government has blocked access, etc), or join BobChat yourself.
 
 <div style="text-align: center">
-<img src="/blog/img/2022-03-29-bob-invite.jpg" width="430"/>&nbsp;
+<img src="/blog/img/2022-03-29-bob-invite.jpg" width="430"/>
 <img src="/blog/img/2022-03-29-bob-invite-b.png" width="430"/>
 </div>
 <br/>

@@ -76,6 +76,3 @@ Here is a video of myself and Matthew to talk you through the projects
 <h3>Interesting, but I have questions ...
 </h3>
 Any feedback gratefully received, come and ask questions in <a href="https://matrix.to/#/#synapse:matrix.org">#synapse</a> or <a href="https://matrix.to/#/#dendrite:matrix.org">#dendrite</a> or feel free to ping me direct at @neilj:matrix.org
-
-
-&nbsp;

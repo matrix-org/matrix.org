@@ -23,8 +23,6 @@ Many thanks for your patience and understanding; with fixes like this we are mov
 
 Note, for anyone running Debian Jessie, we have prepared a 0.33.2.1 deb (as 0.33.3 dropped support for Jessie).
 
-
-&nbsp;
 <h3>Synapse 0.33.3.1 (2018-09-06)</h3>
 <h4>SECURITY FIXES</h4>
 <ul>

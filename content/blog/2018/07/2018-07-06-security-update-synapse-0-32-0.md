@@ -27,7 +27,7 @@ As always, you can get the new update from <a href="https://github.com/matrix-or
 <h2>Changes in synapse v0.32.0 (2018-07-06)</h2>
 No changes since 0.32.0rc1
 <h2>Synapse 0.32.0rc1 (2018-07-05)</h2>
-&nbsp;
+
 <h4>Features</h4>
 <ul>
  	<li>Add blacklist &amp; whitelist of servers allowed to send events to a

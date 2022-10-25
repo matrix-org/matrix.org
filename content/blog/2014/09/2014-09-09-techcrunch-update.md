@@ -14,5 +14,3 @@ Please come talk to us in person in Startup Alley (next to the Brazilian Pavilio
 <a href="http://matrix.org/blog/wp-content/uploads/2014/09/6am.jpg"><img class="aligncenter size-large wp-image-138" src="http://matrix.org/blog/wp-content/uploads/2014/09/6am-1024x768.jpg" alt="6am Hackathon..." width="625" height="468" /></a>
 
 (Photo shows us somehow surviving in the 6am slot.  Mental note to never try to do raycasting vector maths after being up for 24 hours again...)
-
-&nbsp;

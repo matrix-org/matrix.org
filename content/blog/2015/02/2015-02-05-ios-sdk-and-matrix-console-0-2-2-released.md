@@ -13,7 +13,6 @@ If you use CocoaPods to manage your application dependencies, note that the Matr
 
 The changes since the last release are:
 
-&nbsp;
 <h3>SDK</h3>
 <dl><dt>Improvements:</dt><dd>
 <ul>

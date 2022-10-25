@@ -9,8 +9,6 @@ category = ["Tech"]
 
 As you may know, for the last few months anoa (Andrew) and APWhiteHat have been working on Dendrite, the next generation Matrix homeserver, written in Go. We asked for an update on their progress, and Andrew provided the blog post below. Serious progress has been made on Dendrite this summer!
 
-&nbsp;
-
 <hr />
 
 Hey everyone, my name is Andrew Morgan and I've been working full-time over the summer on Dendrite, our next-generation Matrix homeserver. Over the last two months, I've seen the project transform from a somewhat functioning toy server to a near-production-ready homeserver that is working towards complete feature support. I've appreciated the thought put into the project since day one, and enjoy the elegance of the multi-component design. Documentation is fairly decent at the moment, but comments are plentiful throughout the codebase, while the code itself tends towards simple and maintainable rather than complex and unmanageable.

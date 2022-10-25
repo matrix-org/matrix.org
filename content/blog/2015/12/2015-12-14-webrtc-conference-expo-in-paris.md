@@ -14,6 +14,3 @@ I'm sure we will have three days full of interesting talks and discussions (see 
 If you are going to the conference, please come and say hello – we will have a stand at the expo (we're table #6 - see <a href="http://www.uppersideconferences.com/webrtc/webrtc_2015_expo_sponsoring.html">map here</a>). And don't miss Daniel's Matrix One-year Status Report at 11.10am on Friday!
 
 See you there!
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>

@@ -16,7 +16,7 @@ We've just released <a href="https://github.com/matrix-org/synapse/releases/tag/
 Meanwhile we have a <strong>lot</strong> of new stuff coming on the horizon - a whole new algorithm for state resolution (watch this space for details); incremental state resolution (at last!) to massively speed up state resolution and mitigate extremities build up (and speed up the synapse master process, which is now the bottleneck again on the matrix.org homeserver); better admin tools for managing resource usage, and all the Python3 porting work (with associated speedups and RAM &amp; GC improvements).  Fun times ahead!
 
 The full changelog follows below; as always you can grab Synapse from <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>.   Thanks for flying Matrix!
-<h3></h3>
+
 <h3>Synapse 0.33.0 (2018-07-19)</h3>
 <h4>Bugfixes</h4>
 <ul>

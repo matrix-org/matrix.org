@@ -15,7 +15,6 @@ As always you can get the new update from <a href="https://github.com/matrix-or
 
 Thanks
 
-&nbsp;
 <h3>Changes in Synapse v0.33.1 (2018-08-2)</h3>
 <ul>
  	<li>Fix a potential issue where servers could request events for rooms they have not joined. (<a href="https://github.com/matrix-org/synapse/issues/3641">#3641</a>)</li>

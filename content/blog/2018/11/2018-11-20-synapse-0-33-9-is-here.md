@@ -18,7 +18,7 @@ Finally we've spent a bunch of time further improving perf especially in and aro
 I know I say it every time, but full python 3 support is really really close now, matrix.org is now running entirely on py3 and seeing some amazing perf improvements - the remaining blocker is getting py3 deb packages ready and then we'll ship an official python 3 release. There will also be a blog post to explain what we've been up to and what to expect perf wise.
 
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.9">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. Also, check out our new <a href="/docs/guides/installing-synapse">Synapse installation guide page.</a>
-&nbsp;
+
 <h3>Synapse 0.33.9 changelog</h3>
 <h4>Features</h4>
 <ul>

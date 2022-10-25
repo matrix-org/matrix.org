@@ -18,8 +18,6 @@ Finally we have some ground work for upcoming room membership lazy loading, ther
 
  or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>.
 
-
-&nbsp;
 <h3>Synapse 0.33.2 (2018-08-09)</h3>
 No significant changes.
 <h3><a id="user-content-synapse-0332rc1-2018-08-07" class="anchor" href="https://github.com/matrix-org/synapse/blob/release-v0.33.2/CHANGES.md#synapse-0332rc1-2018-08-07" aria-hidden="true"></a>Synapse 0.33.2rc1 (2018-08-07)</h3>
@@ -81,4 +79,3 @@ No significant changes.
  	<li>Refactor location of docker build script. (<a href="https://github.com/matrix-org/synapse/issues/3644">#3644</a>)</li>
  	<li>Update CONTRIBUTING to mention newsfragments. (<a href="https://github.com/matrix-org/synapse/issues/3645">#3645</a>)</li>
 </ul>
-&nbsp;

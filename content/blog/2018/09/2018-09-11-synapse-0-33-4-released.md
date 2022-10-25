@@ -48,4 +48,3 @@ As ever, you can get the new update from <a href="https://github.com/matrix-org
  	<li>Make sure that we close db connections opened during init (<a href="https://github.com/matrix-org/synapse/issues/3764">#3764</a>)</li>
  	<li>Unignore synctl in .dockerignore to fix docker builds (<a href="https://github.com/matrix-org/synapse/issues/3802">#3802</a>)</li>
 </ul>
-&nbsp;

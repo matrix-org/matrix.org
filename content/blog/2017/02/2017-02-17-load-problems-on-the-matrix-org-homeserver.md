@@ -34,5 +34,3 @@ The good news of course is that you can run your own synapse today to avoid gett
 Meanwhile, please accept our apologies for the instability and be assured that we're doing everything we can to get out this turbulence as rapidly as possible.
 
 Matthew
-
-&nbsp;

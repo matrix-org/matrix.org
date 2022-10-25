@@ -52,7 +52,6 @@ We strongly recommend checking out the videos which have all been published at 
 
 <a href="https://twitter.com/parkan/status/740324969884700672"><img class="aligncenter wp-image-1660 size-large" src="/blog/wp-content/uploads/2016/07/timbl-768x1024.jpg" alt="Matthew, Tim Berners-Lee and Matrix" width="384" height="512" /></a>
 
-&nbsp;
 <h2>Matrix.to</h2>
 Not the most exciting thing ever, but heads up that there's a simple site up at <a href="https://matrix.to">https://matrix.to</a> to provide a way of doing client-agnostic links to content in Matrix.  For instance, rather than linking specifically into an app like Vector, you can now say <a href="https://matrix.to/#/#matrix:matrix.org">https://matrix.to/#/#matrix:matrix.org</a> to go there via whatever app you choose.  This is basically a bootstrapping process towards having proper mx:// URLs in circulation, but given mx:// doesn't exist yet, https://matrix.to hopefully provides a useful step in the right direction :)
 
@@ -110,7 +109,6 @@ Thanks, once again, to everyone who's been supporting and using Matrix - whether
 
 Matthew, Amandine &amp; the Matrix Team.
 
-&nbsp;
 <h2>Appendix: The Missing Synapse Changelogs</h2>
 <h3>Changes in synapse v0.16.1 (2016-06-20)</h3>
 Bug fixes:

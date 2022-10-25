@@ -23,7 +23,6 @@ Matrix team worked on <a href="http://challengepost.com/software/animatrix">Anim
 
 The three days conference was great in terms of reaching out to devs and getting good feedback on Matrix! We love seeing people's eyes lighting up and people saying "Eventually someone is doing it!" when we explain what Matrix is about :) So thank you all for your support!
 
-&nbsp;
 <h5>Disrupt Europe (London, UK - October 18-21)</h5>
 After getting public in SF, <a href="http://techcrunch.com/events/disrupt-eu/event-home/">Disrupt London </a>was the next steps to release a more stable version of Matrix and encourage even more people to build on Matrix. Again we sponsored both the Hackathon and the Conference and we brought with us a very cool <a href="http://www.trossenrobotics.com/phantomx-ax-hexapod.aspx" target="_blank">PhantomX robot from Trossen Robotics</a> which was also the price we gave away during the hackathon.
 
@@ -53,14 +52,9 @@ Again some great feedback and lots of animated discussions over the future of t
 
 <a href="http://matrix.org/blog/wp-content/uploads/2014/11/apex.png"><img class="wp-image-202 aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/apex-300x176.png" alt="apex" width="406" height="238" /></a>
 
-&nbsp;
-
 <a href="http://matrix.org/blog/wp-content/uploads/2014/11/Sebastian_2.png"><img class="wp-image-203 aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/Sebastian_2-300x53.png" alt="Sebastian_2" width="425" height="75" /></a>
 
-&nbsp;
 <h5>WebRTC Summit (Santa Clara - November 4-5)</h5>
 Beginning of November Matrix was back on the West Coast  to sponsor the <a href="http://webrtcsummit.net/">WebRTC Summit</a>, collocated with the CloudExpo. Matthew opened the WebRTC track with another presentation again raising a lot of interest and question, and greatly supported by <a href="http://hookflash.com" target="_blank">Hookflash</a> in their following session. The presentation is available <a title="Matrix, the missing link to WebRTC" href="http://matrix.org/blog/wp-content/uploads/2014/11/2014-11-03-Matrix_Missing-Link_IOT.pdf">here</a>.
 
 And the tour continues: this week Matrix sponsored the <a href="http://tadsummit.com/2014/">TADSummit</a> in Istanbul and next week we will be in San José at the <a href="http://www.webrtcworld.com/conference/west/">WebRTC World Conference &amp; Expo</a>: meet us there and watch out for the upcoming TADSummit news!
-
-&nbsp;

@@ -68,4 +68,3 @@ resulting in broken state of restart (PR <a class="issue-link js-issue-link" hre
  	<li>Fix removing of pushers when using workers (PR <a class="issue-link js-issue-link" title="Fix removing of pushers when using workers" href="https://github.com/matrix-org/synapse/pull/2267" data-id="234785628" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#2267</a>)</li>
  	<li>Fix CORS headers to allow Authorization header (PR <a class="issue-link js-issue-link" title="allow Authorization header" href="https://github.com/matrix-org/synapse/pull/2285" data-id="236427727" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#2285</a>) Thanks to <a class="user-mention" href="https://github.com/krombel">@krombel</a>!</li>
 </ul>
-&nbsp;

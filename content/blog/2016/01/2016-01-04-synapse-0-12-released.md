@@ -13,8 +13,6 @@ To greet the new year, we bring you all new Synapse 0.12. The focus here has bee
 
 We highly recommend all homeservers upgrading to v0.12.0 as soon as possible. Get it now from <a href="https://github.com/matrix-org/synapse/">https://github.com/matrix-org/synapse/</a> or via our shiny new Debian packages at <a href="/packages/debian/">https://matrix.org/packages/debian/</a>.
 
-&nbsp;
-
 Full changelog follows:
 <h3>Changes in synapse v0.12.0 (2016-01-04)</h3>
 <ul>

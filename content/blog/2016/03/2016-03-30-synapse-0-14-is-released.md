@@ -15,7 +15,6 @@ Get all new synapse from <a href="https://github.com/matrix-org/synapse">https:/
 
 Full changelog follows:
 
-&nbsp;
 <div class="markdown-body">
 <h1>Changes in synapse v0.14.0 (2016-03-30)</h1>
 No changes from v0.14.0-rc2

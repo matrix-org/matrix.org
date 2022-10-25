@@ -17,5 +17,3 @@ Heads up that we've just pushed the big red release button on Matrix Console iOS
 You can see the full MatrixKit change list in <a href="https://github.com/matrix-org/matrix-ios-kit/blob/v0.2.3/CHANGES.rst">CHANGES.rst</a>.
 
 Happy GIFing!
-
-&nbsp;

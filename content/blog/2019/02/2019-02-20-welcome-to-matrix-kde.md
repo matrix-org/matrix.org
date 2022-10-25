@@ -26,5 +26,3 @@ This is great news for the Matrix ecosystem in general - and should be particula
 So: welcome, KDE!  Hope you have a great time, and please let us know how you get on, so we can make sure Matrix kicks ass for you :)
 
 - the Matrix Core Team
-
-&nbsp;

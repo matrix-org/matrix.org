@@ -130,8 +130,6 @@ If you haven't noticed already, Riot/Web 0.13 is out today, as is Riot/iOS 0.6.2
 
 Rather than going on about it here, though, there's a <a href="https://medium.com/@RiotChat/communities-aka-groups-are-here-announcing-riot-web-0-13-riot-ios-0-6-and-riot-android-0-7-4-933cb193a28e">full write-up over on the Riot Blog.</a>
 
-&nbsp;
-
 And so there you go - new releases for eeeeeeeeveryone!  Enjoy! :)
 
 --Matthew, Amandine &amp; the team.

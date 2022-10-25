@@ -32,5 +32,3 @@ Homeserver:
 The <a href="http://matrix.org/alpha">matrix.org homeserver</a> &amp; webclient has already been updated to the latest version - if you're running your own homeserver, please update. v0.2.2 retains backwards compatibility with previous homeserver releases.
 
 Get the code from <a href="http://github.com/matrix-org/synapse">http://github.com/matrix-org/synapse</a>!
-
-&nbsp;
