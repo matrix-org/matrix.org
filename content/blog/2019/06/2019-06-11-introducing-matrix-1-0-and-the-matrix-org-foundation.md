@@ -102,7 +102,6 @@ We’d like to offer a very warm welcome to the new Guardians, and thank them pr
 
 For the full update on the Foundation, please check out the new website content at [https://matrix.org/foundation](https://matrix.org/foundation) which should tell you everything you could possibly want to know about the Foundation, the Guardians, the Foundation’s legal Articles of Association, and the day-to-day Rules which define the Open Governance process.
 
-
 ## And finally…
 
 Matrix 1.0 has been a bit of an epic to release, but puts us on a much stronger footing for the future.

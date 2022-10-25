@@ -124,7 +124,6 @@ been no Synapse releases since then.  There has been one release of Riot/Web (1.
 was passphrased and based on our initial analysis of the release, we believe it to be secure.
 </p>
 
-
 ### What are we doing to prevent this in future?
 
 <p>Once things are back up and running we will retrospect on this incident in detail to identify the changes we need to make. We will provide a proper postmortem, including follow-up steps; meanwhile we are obviously going to take measures to improve the security of our production infrastructure, including patching services more aggressively and more regular vulnerability scans.</p>

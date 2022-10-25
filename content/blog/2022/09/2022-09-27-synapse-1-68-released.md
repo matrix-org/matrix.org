@@ -32,7 +32,6 @@ impacted by this change.
 See the [upgrade
 notes](https://matrix-org.github.io/synapse/v1.68/upgrade#upgrading-to-v1680) for more information.
 
-
 ## Admin API improvements
 
 Synapse 1.68 introduces a new admin API which allows server administrators to
@@ -54,7 +53,6 @@ has also been updated to allow administrator of homeservers [requiring agreement
 to the server's terms and
 conditions](https://matrix-org.github.io/synapse/latest/consent_tracking.html)
 to view and edit the timestamp at which each user has provided their agreement.
-
 
 ## Everything else
 

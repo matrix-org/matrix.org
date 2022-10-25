@@ -174,7 +174,6 @@ The "imprecision" number reported by mypy counts the number of lines [classified
 
 On balance, my preferred metric is the line-level (im)precision percentage. There wasn't much difference between the two in my experience, but the colour-coded visualisation in the HTML report is a neat feature to have. Maybe in the future there could be a version of the HTML report that colour-codes each _expression_?
 
-
 ## The larger typing ecosystem
 
 There are plenty of articles out there about the typing. As well as the [mypy blog itself](http://mypy-lang.blogspot.com/), see Daniele Varrazzo's [post on `psycopg3` (2020)](https://www.varrazzo.com/blog/2020/03/31/first-experience-mypy/), Dropbox's [blog post (2019)](https://dropbox.tech/application/our-journey-to-type-checking-4-million-lines-of-python), Zulip's [blog post (2016)](https://blog.zulip.com/2016/10/13/static-types-in-python-oh-mypy/), Glyph's [blog post on `Protocols` (2020)](https://glyph.twistedmatrix.com/2020/07/new-duck.html) and a follow-up [comparing them to `zope.interface` (2021)](https://glyph.twistedmatrix.com/2021/03/interfaces-and-protocols.html) and Nylas's [blog (2019)](https://www.nylas.com/blog/not-your-pie-mypy/). I'm sure there's plenty more out there.
@@ -238,7 +237,6 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
 #### [PyCharm](https://www.jetbrains.com/pycharm/)
 
 PyCharm has its own means to typechecking code as you write it. It's definitely caught bugs before, and having the instant feedback as you type is really nice! I have seen it struggle with `zope.interface` and some uses of `Generic`s though.
-
 
 ### Runtime uses of annotations
 

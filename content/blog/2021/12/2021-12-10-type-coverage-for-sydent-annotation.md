@@ -29,7 +29,6 @@ Picking and choosing easy targets works fairly well, but sometimes that means yo
 
 In retrospect, I think it would be smoother to generate some kind of dependency graph for the package. I'm imagining a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) where whose vertices are modules, and there's an edge `A -> B` if `A` imports from `B`. The sinks of this DAG (i.e. modules which don't depend on any others in the package) are the ideal place to start: you can get something strictly typechecked there without having to annotate a long chain of dependencies across other files. Another strategy would be to see which modules were the least precise according to mypy's reports—but more on those [next time](https://matrix.org/blog/2021/12/17/type-coverage-for-sydent-evaluation).
 
-
 ### You're at the mercy of your dependencies
 
 I think this is my single biggest takeaway from the process of adding annotations to Sydent.
@@ -38,7 +37,6 @@ I'll admit the phrasing is melodramatic, but I think it rings true.
 Improving coverage boils down to giving the typechecker more information about your program. The more information it has, the more it can check—and the more errors it can spot. (Hopefully this doesn't make typing come across like a pyramid scheme.) If your dependencies aren't typed, mypy can't validate you're correctly providing inputs and correctly consuming outputs. You might have a bigger impact on overall typing coverage by annotating a dependency (directly or via stubs). I have a hunch that bugs are more likely in code that uses an external dependency: we're much more familiar with the details of our own source code compared to that of a third party we trust.
 
 It's worth looking to see if your dependencies have a newer version including type annotations. Failing that, they may have a stub package added to [typeshed](https://github.com/python/typeshed/tree/master/stubs) and published on PyPI. I saw example of both cases when choosing how to configure mypy for Sydent. If some of your dependencies are under your control, consider annotating them—you'll feel the benefits across multiple projects pretty quickly.
-
 
 ### Annotations when working with twisted
 
@@ -165,7 +163,6 @@ Twisted makes use of `zope`'s `Interface` to define a number of abstract interfa
 
 Mypy out of the box doesn't play well with a zope `Interface` (nor does any other typechecker I tried). Fortunately, the excellent [mypy-zope](https://github.com/Shoobx/mypy-zope) plugin helps here: it teaches mypy that any class like `Response` which `@implements(IResponse)`  can be passed in place of an `IResponse`.
 
-
 ### Tricks of the trade
 
 At this point I'd like to share a few generic lessons about typing I'd picked up. Nothing ground-breaking here: I think these are all fairly well-known. Hopefully they're the start of a good cheat sheet for annotating—though it pales in comparison to the [Mypy cheat sheet](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html).
@@ -193,7 +190,6 @@ The idea here is
 4. Unfortunately, we don't have a good way to tell `mypy` that `wrapped` also has that signature `F`. We resort to a `cast` to force mypy to accept this without proof.
 
 This might change in the future, e.g. when [ParamSpec](https://docs.python.org/3/library/typing.html?highlight=paramspec#typing.ParamSpec) is [fully understood](https://github.com/python/mypy/issues/8645) by mypy.
-
 
 #### Prefer `object` over `Any`
 

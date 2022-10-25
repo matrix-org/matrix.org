@@ -351,8 +351,6 @@ Cinny is a Matrix client focused on simplicity, elegance and security
 
 ## Dept of Non Chat Clients 🎛️
 
-
-
 ### Thirdroom ([website](https://github.com/matrix-org/thirdroom))
 
 A browser-based open metaverse client
@@ -438,7 +436,6 @@ Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium
 |4|conduit.hazmat.jacksonchen666.com|258.5|
 |5|kumma.juttu.asia|306.5|
 |6|dendrite.s3cr3t.me|950.5|
-
 
 ## That's all I know
 

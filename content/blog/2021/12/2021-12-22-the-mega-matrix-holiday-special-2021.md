@@ -18,7 +18,6 @@ If you’re reading this - congratulations; you made it through another year :) 
 
 Looking back at 2021, it’s unbelievable how much stuff has been going on in the core team (as you can tell by the length of this post - sorry!).  There’s been a really interesting mix of activity too - between massive improvements to the core functionality and baseline features that Matrix provides, and also major breakthroughs on next generation work.  But first, let’s check out what’s been happening in the wider ecosystem…
 
-
 ## The Matrix Ecosystem
 
 Over 2021 the Matrix ecosystem has expanded unrecognisably.  This time last year we were aware of 2 governments who were seriously adopting Matrix at scale (France and Germany), with the UK and US starting to roll out initial deployments.  12 months later, and we are now aware of **12** governments who are adopting Matrix in various capacities - and we hope to be able to talk about at least some of them in public in 2022!  The UK and US have both progressed significantly too.
@@ -37,7 +36,6 @@ Finally, there has been an explosion of new projects and milestones in the wider
 
 Please note this is just a random sample of all the community news over the last year - to get more colour on what’s been going on, we highly recommend flipping through the [This Week In Matrix archives](https://matrix.org/blog/category/this-week-in-matrix)!
 
-
 ## The Matrix Spec
 
 The Matrix spec is the single source of truth of what Matrix actually is, and this year it got some major improvements thanks to a beautiful new website at [https://spec.matrix.org](https://spec.matrix.org) thanks to Will Bamberg, formerly of [MDN](https://developer.mozilla.org/) (and who’s now back fighting the good fight with the MDN team at [OWD](https://opencollective.com/open-web-docs/updates/will-bamberg-joins-open-web-docs-staff)).
@@ -51,7 +49,6 @@ Talking of which, in 2021 we saw a record **109** Matrix Spec Change proposals (
 
 
 In the new year, the Spec Core Team (responsible for reviewing MSCs and voting on what gets merged to the spec) is going to make a concerted effort to carve out more dedicated time for spec work - thankfully one of the side-effects of Matrix growing is that there are now a lot more people around with whom we can share other work, hopefully meaning that we can put significantly more hours into keeping the spec growing healthily.
-
 
 ## Synapse
 
@@ -77,7 +74,6 @@ Meanwhile, on the feature side, we’ve landed a huge spate of long-awaited core
 Finally, last but not least, Eric from Gitter has been fearlessly hacking his way through some of Matrix’s gnarliest problems in his quest to bring Matrix+Element up to full feature parity with Gitter. In practice, this means adding the ability to incrementally import old history into existing Matrix rooms ([MSC2716](https://github.com/matrix-org/matrix-doc/pull/2716)), so we can expose the vast amounts of knowledge in Gitter’s archives directly into Matrix - and in future provide bridging in general of existing archives (Slack, Discord, mailing lists, newsgroups, forums, etc.) into Matrix.
 
 This is a *tough* problem, as Matrix rooms are fundamentally immutable - events sent into a room cannot be changed.  However, we can bend time a bit and add old chapters of history to the room as if we’d just discovered them down the back of the sofa - and this is what [MSC2716](https://github.com/matrix-org/matrix-doc/pull/2716) does.  The (rewritten!) [spec proposal](https://github.com/matrix-org/matrix-doc/blob/matthew/[MSC2716](https://github.com/matrix-org/matrix-doc/pull/2716)/proposals/2716-batch-send-historical-messages.md) is a thing of beauty and well worth a look, and you can see an early preview in action back on [Matrix Live in June](https://youtu.be/gSrqj2IzJew?t=529). Over the last few months it’s been merging and maturing in Synapse and we should see it in the wild in the near future!  And for bonus points Eric’s also just added in Jump-to-date support ([MSC3030](https://github.com/matrix-org/matrix-doc/pull/3030)), letting clients jump around room history by timestamp - another Gitter feature that we sorely need, and will also help us publish excellent Gitter-style online chat archives in future.  You can see it in action in last week’s [Matrix Live](https://youtu.be/Hsyqa5ozWIo?t=581)!
-
 
 ## Element
 
@@ -114,7 +110,6 @@ Historically we consciously built platform-native Matrix SDKs in order to provid
 
 So, we’ve been thinking increasingly seriously about how to solve this…
 
-
 ## A new hope: matrix-rust-sdk
 
 [matrix-rust-sdk](https://github.com/matrix-org/matrix-rust-sdk) is an attempt to build a new reference client SDK for Matrix which can be used by as many platforms as possible - hopefully forever stopping us from reimplementing the wheel more than we need to. Work began towards the end of 2019, building on top of [Ruma](https://www.ruma.io/)’s excellent Matrix rust crates, and poljar has been working away solidly at it ever since.  We teased matrix-rust-sdk in last year’s update, but as of this year it is properly coming of age and we’ve started using it in earnest - beginning by swapping out Element Android’s encryption implementation for matrix-rust-sdk-crypto (the E2EE cryptography crate provided by the SDK).
@@ -124,7 +119,6 @@ If you’re not familiar with Rust, the main benefits we get here are a heavy em
 Initial results look wildly promising here: “Element R” (formerly known as Corroded Element - the codename for the Rust-enhanced version of Element Android) builds are now out there, and out-perform the kotlin E2EE implementation by [roughly 10x](https://github.com/matrix-org/matrix-rust-sdk/pull/170), thanks to using native code and Rust’s improved parallelisation.
 
 Our next step is to start using it on iOS, and we’ll be experimenting with a next-generation of Element iOS shortly in the new year with the SDK provided exclusively by matrix-rust-sdk.  Element will also be funding more people to work fulltime on matrix-rust-sdk itself, and to see what the developer experience is like when you use it seriously on the Web - watch this space!
-
 
 ## Bridges, Bots, Widgets and Integration Managers
 
@@ -183,7 +177,6 @@ Sync v3 exists today as a proxy called [sync-v3](https://github.com/matrix-org/s
 
 The API itself is still in flux, but those interested can see the initial spec design at [https://github.com/matrix-org/sync-v3/blob/main/api.md](https://github.com/matrix-org/sync-v3/blob/main/api.md) and also an MSC is emerging at [MSC3575](https://github.com/matrix-org/matrix-doc/blob/kegan/sync-v3/proposals/3575-sync.md).  Next steps will be to finish hooking up to Hydrogen (including filtering the room list), finish the MSC, and then start thinking about implementing it in other clients and servers!
 
-
 ## Fast Joins over Federation
 
 While we’re on the subject of speeding up Matrix… it’s all very well being able to sync your client instantly, but the other big complaint everyone has about Matrix is how long it takes to join rooms - especially big ones.  As most people will know, it can easily take 5-10 minutes to join a large room like Matrix HQ on a new homeserver - and given this is the first experience most users have of running their own homeserver, it can prove pretty disastrous and we are determined to fix it.  It will become even more relevant when we implement peeking over federation, as the last thing you want is to have to wait 5 minutes to temporarily dip into some random federated room to see if you want to join it or not (or to sniff its room state for things like extensible profiles or [MSC2313](https://github.com/matrix-org/matrix-doc/pull/2313) reputation rooms).
@@ -192,7 +185,6 @@ So, to address this, we’re currently in the middle of experimenting with [MSC2
 
 Watch this space for how well it works in practice, but we’re hoping for a ~20x speed improvement in joining Matrix HQ.
 
-
 ## Hydrogen
 
 2021 has been a busy year for Hydrogen - our ultra-lightweight Matrix Client, which provides a small but perfectly formed progressive web app for us to experiment on! There have been no fewer than 56 releases over the course of the year, with loads of contributions from Bruno, Midhun (who joined first as a GSOCcer and then as a fulltime Element employee) and also Danila who interned at Element on Hydrogen over the summer.
@@ -200,7 +192,6 @@ Watch this space for how well it works in practice, but we’re hoping for a ~20
 People often ask why Hydrogen exists as well as Element Web - and the reason is because Element Web is (for now at least) very far from a progressive web app and is stuffed full of features, whereas Hydrogen is intended to be as lightweight and simple and efficient as possible while also targeting as wide a range of web browsers as possible (even Internet Explorer!).  It also provides a simpler platform for experimenting with new approaches such as sync v3 or OIDC without getting entangled in the constant hive of activity around Element Web.  Finally, it gives us a playground to experiment with embeddable chat clients thanks to Hydrogen’s strict [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) component model.
 
 In terms of features, 2021 has seen huge steps forwards as Hydrogen converges on feature parity with Element - proper mentions and replies; rich formatted linkified messages; reactions; redactions; memberlist; member info; webpush notifications; proper image, video & file uploads; SSO login; sync v3(!) and so much more. Can’t wait to see what 2022 will bring!
-
 
 ## End-to-End Encryption
 
@@ -220,18 +211,15 @@ The motivation for vodozemac in general is to benefit from the intrinsic type an
 
 Next up, we’ll be fully integrating vodozemac into matrix-rust-sdk, and figuring out how best to provide it as a libolm replacement in general.
 
-
 ## Matrix Security
 
 Alongside the new Cryptography team we’ve also established a new dedicated Security team for Matrix, led by dkasak.  As well as [fuzzing excursions](https://matrix.org/blog/2021/06/14/adventures-in-fuzzing-libolm) into libolm and similar research, Denis has been handling all our [security disclosure policy](https://matrix.org/security-disclosure-policy) submissions, managing the [Intigriti bug bounty](https://blog.intigriti.com/matrix/) programme, helping coordinate all our security releases, and coordinating the upcoming external independent security audit of vodozemac, matrix-rust-sdk, Element and Synapse.  It’s a huge step forwards to be able to fund full-time infosec researchers to focus exclusively on Matrix, and this is just the beginning!
-
 
 ## Trust and Safety
 
 Another place where we’ve created a dedicated team this year is around Trust & Safety: building tools to fight spam and abuse on our own servers, while also empowering the wider network of users, moderators and admins to manage abuse as they see fit.  This includes lots of work on Mjolnir, our primary moderation bot, but also defining MSCs such as [MSC3215](https://github.com/matrix-org/matrix-doc/pull/3215) (Aristotle: Moderation in all things) and [MSC3531](https://github.com/matrix-org/matrix-doc/pull/3531) (Letting moderators hide messages pending moderation) and internal tooling as we experiment with different approaches.
 
 We’ll have more updates on this in the coming year as we release the tools we’ve been working on, but suffice it to say that the goal is to empower mainstream users in the wider Matrix network to apply their own rules as they see fit, directly from the comfort of their favourite Matrix client - without having to know what a Mjolnir is (or how to run one), and without having to be a moderation expert.
-
 
 ## OpenID Connect
 
@@ -252,7 +240,6 @@ The main objections which have come up against this are: “what if my Matrix cl
 
 The current status is that we’ve defined a set of initial MSCs ([MSC2964](https://github.com/matrix-org/matrix-doc/pull/2964), [MSC2965](https://github.com/matrix-org/matrix-doc/pull/2965), [MSC2966](https://github.com/matrix-org/matrix-doc/pull/2966) and [MSC2967](https://github.com/matrix-org/matrix-doc/pull/2967)), and are implementing an initial Open ID Connect auth server (in Rust!) called [matrix-authentication-service](https://github.com/matrix-org/matrix-authentication-service) (better name suggestions welcome!) designed to sit alongside your homeserver, and we’re experimenting with hooking [Hydrogen](https://github.com/sandhose/hydrogen-web/tree/sandhose/oidc-login) (and some of the new domain-specific clients) up to see how it feels.  But if it goes as well as we think it might, folks should prepare for 2022 to be the year where Matrix’s authentication system finally gets fixed!
 
-
 ## Native Matrix Video/VoIP Conferencing
 
 One of the most anticipated features in Matrix over the years has been the prospect of native, decentralised, end-to-end encrypted video and voice conferencing.  Today, voice and video conferencing in Matrix works by embedding Jitsi as a third party centralised service into your chatroom.  This works fairly well - but Jitsi is an entirely separate service with lots of moving parts, and its own concept of users and access control (provided by XMPP!) and its megolm-based end-to-end-encryption doesn’t actually integrate with Matrix’s own Olm identities, verification or cross-signing.  The fact that the conference is then logically centralised on whoever is hosting the Jitsi service also misses one Matrix’s main goals - that users should be able to hold a conversation without being dependent on any single service or provider.  Plus it’s really confusing that Matrix has proper native 1:1 calls for DMs… but then switches to a totally different system in group chats.
@@ -266,7 +253,6 @@ Meanwhile, those interested can see all the gory details from our CommCon 2021 t
 <iframe width="736" height="414" src="https://www.youtube.com/embed/A4k7DVIK5TE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Next up, we’ll be working on building an [MSC3401](https://github.com/matrix-org/matrix-doc/pull/3401)-compatible SFU so we can go beyond full mesh (which typically supports a maximum of ~7 callers).  Our candidates right now are mediasoup, ion-sfu, janus and signal-calling-service - we’ll let you know how it goes!  Also, if you’re interested in helping us build this out quicker, we are frantically searching for more WebRTC & VoIP gurus to [join the team at Element](https://apply.workable.com/elementio/j/25BB112FBD/) working on this.
-
 
 ## Applications Beyond Chat
 

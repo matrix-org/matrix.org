@@ -16,13 +16,11 @@ This improvement in speed might seem _too_ fast, but fret not: implementations a
 
 So, what’s new in v1.2? With 18 MSCs merged there’s a lot to cover - we’ve picked some notable highlights and recommend the full changelog at the bottom for a complete idea of what’s been going on.
 
-
 ## Rearchitecting with Spaces
 
 Spaces launched into beta [last May](https://matrix.org/blog/2021/05/17/the-matrix-space-beta), redefining how we can use rooms on Matrix to represent different data structures. Described mostly as [MSC1772](https://github.com/matrix-org/matrix-doc/pull/1772), Spaces are simply rooms with a specific [type in their m.room.create event](https://spec.matrix.org/v1.2/client-server-api/#rooms-1). With state events being used to define which other rooms (meaning Spaces too) are part of that Space, the possibilities for tree-like structured data become endless.
 
 There’s still quite a lot of work to do in the Spaces space (hah), though we’re excited to see it all land. For instance, [MSC3216](https://github.com/matrix-org/matrix-doc/pull/3216) and [MSC2962](https://github.com/matrix-org/matrix-doc/pull/2962) target power level syncing, [MSC3219](https://github.com/matrix-org/matrix-doc/pull/3219) aims for flair, and [MSC3089](https://github.com/matrix-org/matrix-doc/pull/3089) looks at file structures using Spaces. We might even be able to replace the public room directory with a server-wide space, making writing clients a little bit easier.
-
 
 ## Public, but not _too_ public, join rules
 
@@ -34,22 +32,17 @@ Further work in this area involves figuring out how to keep membership lists per
 
 We also need to figure out how to support both knocking and restricted rooms at the same time (oops). [MSC3613](https://github.com/matrix-org/matrix-doc/pull/3613) and [MSC3386](https://github.com/matrix-org/matrix-doc/pull/3386) both tackle this problem in different ways and timescales.
 
-
 ## Matrix: A URI
 
 A massive shoutout goes to kitsune and the whole community for working on [MSC2312](https://github.com/matrix-org/matrix-doc/pull/2312), giving us a URI we can pass around outside of Matrix to bring us back in. The early work on this [dates all the way back to 2014](https://github.com/matrix-org/matrix-doc/issues/455), the very beginning of Matrix’s development, and has since been [marked Provisional](https://www.iana.org/assignments/uri-schemes/prov/matrix) by the IANA.
 
 The full spec is available [here](https://spec.matrix.org/v1.2/appendices/#uris) - feel free to discuss it at [matrix:r/matrix-spec:matrix.org](matrix:r/matrix-spec:matrix.org) ;)
 
-
 ## The full changelog
 
 MSCs are how the spec changes in the way it does - adding, fixing, and maintaining features for the whole ecosystem to use. The blog post can’t cover them all, but that doesn’t make them any less important! Check out the full changelog below, and the [Spec Change Proposals](https://spec.matrix.org/unstable/proposals/) page for more information on how these MSCs got merged (hint: they submitted a proposal, which anyone can do - take a look at the [Matrix Live episode](https://www.youtube.com/watch?v=SFkZz60RRfc) where Matthew covers the proposal process).
 
-
-<!-- Intentionally blank line to ensure headers work in the concatenated changelog -->
 ### Client-Server API
-
 
 <strong>Breaking Changes</strong>
 
@@ -95,9 +88,7 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Distinguish between "federation" event format as exchanged by the Federation API, and the "client" event formats as used in the client-server and AS APIs. ([#3658](https://github.com/matrix-org/matrix-doc/issues/3658))
 - Fix the rendering of the responses for various API endpoints. ([#3674](https://github.com/matrix-org/matrix-doc/issues/3674))
 
-
 ### Server-Server API
-
 
 <strong>New Endpoints</strong>
 
@@ -118,9 +109,7 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Clarify that `GET /_matrix/federation/v1/event_auth/{roomId}/{eventId}` does *not* return the auth chain for the full state of the room. ([#3583](https://github.com/matrix-org/matrix-doc/issues/3583))
 - Fix the rendering of the responses for various API endpoints. ([#3674](https://github.com/matrix-org/matrix-doc/issues/3674))
 
-
 ### Application Service API
-
 
 <strong>Spec Clarifications</strong>
 
@@ -129,9 +118,7 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Fix the rendering of the responses for various API endpoints. ([#3674](https://github.com/matrix-org/matrix-doc/issues/3674))
 - Correct the documentation for the response value for `GET /_matrix/app/v1/thirdparty/protocol/{protocol}`. ([#3675](https://github.com/matrix-org/matrix-doc/issues/3675))
 
-
 ### Identity Service API
-
 
 <strong>Backwards Compatible Changes</strong>
 
@@ -144,18 +131,14 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 
 - Fix the rendering of the responses for various API endpoints. ([#3674](https://github.com/matrix-org/matrix-doc/issues/3674))
 
-
 ### Push Gateway API
-
 
 <strong>Spec Clarifications</strong>
 
 
 - Fix the rendering of the responses for various API endpoints. ([#3674](https://github.com/matrix-org/matrix-doc/issues/3674))
 
-
 ### Room Versions
-
 
 <strong>Backwards Compatible Changes</strong>
 
@@ -174,9 +157,7 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Add missing "Signing key validity period" section to room version 6. ([#3683](https://github.com/matrix-org/matrix-doc/issues/3683))
 - Fix auth rules to allow membership of `knock` -> `leave` in v7, v8, and v9. ([#3694](https://github.com/matrix-org/matrix-doc/issues/3694))
 
-
 ### Appendices
-
 
 <strong>Backwards Compatible Changes</strong>
 

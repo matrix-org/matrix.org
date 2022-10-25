@@ -373,8 +373,6 @@ Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium
 |9|dendrite.s3cr3t.me|432.5|
 |10|matrix.awesomesheep48.me|516|
 
-
-
 ## That's all I know
 
 See you next week, and be sure to stop by [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) with your updates!

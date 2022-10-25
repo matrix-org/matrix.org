@@ -84,7 +84,6 @@ figure out how to make the most of that challenge, and how to do it in a way
 which minimises the impact on privacy - especially for end-to-end encrypted
 services.
 
-
 ### What problems need to be solved?
 
 We’ve [already written about this](https://matrix.org/blog/2022/03/25/interoperability-without-sacrificing-privacy-matrix-and-the-dma)
@@ -145,7 +144,6 @@ ecosystem of open communication startups out there, and a huge appetite to
 build a vibrant open ecosystem for interoperable communication, but like the
 open web itself.
 
-
 ### What are the requirements?
 
 Before going further in considering solutions, we need to review the actual
@@ -164,7 +162,6 @@ There are many different possible approaches, and so from our point of view
 as Matrix we’ve tried to sketch out some options to make the discussion more
 concrete. Please note these are preliminary thoughts, and are far from
 perfect - but hopefully useful as a starting point for discussion.
-
 
 #### Finding Bob
 
@@ -320,7 +317,6 @@ the bill?  While this decentralised identity lookups have historically been a
 hard problem, there is a *lot* of promising work happening in this space
 currently and the future looks promising.
 
-
 #### Talking to Bob
 
 Meanwhile, Alice still needs to talk to Bob. As already discussed, unless
@@ -372,7 +368,6 @@ user for him, authing him as per any other user (thus ensuring that AliceChat
 doesn’t need to have trusted BobChat to have authenticated the user).  The
 bridge then sends/receives messages on Bob’s behalf within AliceChat.
 
-
 #### Group communication
 
 This is all very well for 1:1 chats - which are the initial scope of the DMA.
@@ -409,7 +404,6 @@ and XMPP which provide a common language between bridges - so in practice,
 you could just end up in a world where each service has to find a
 them-to-Matrix or them-to-XMPP bridge (which could be run by them, or
 whatever trusted party they delegate to).
-
 
 ### Conclusion
 

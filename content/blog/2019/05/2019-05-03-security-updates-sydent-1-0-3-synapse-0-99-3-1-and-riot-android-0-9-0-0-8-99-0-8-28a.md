@@ -25,7 +25,6 @@ Sydent 1.0.3 has three security fixes:
 
 If you are running Sydent as an identity server, you should update as soon as possible from [https://github.com/matrix-org/sydent/releases/v1.0.3](https://github.com/matrix-org/sydent/releases/v1.0.3).  We are not aware of any of these issues having been exploited maliciously in the wild.
 
-
 ## Synapse 0.99.3.1
 
 Synapse 0.99.3.1 is a security update for two fixes:

@@ -205,7 +205,6 @@ maintainability of rolling out mypy typing throughout the codebase.  And next
 up, we’ll be going back to speeding up the codebase as a whole - starting with
 algorithmic state resolution improvements! 🎉
 
-
 ### Performance
 
 So, how does it stack up?
@@ -230,7 +229,6 @@ We’ve yet to loadtest to see just how fast we can go now (before we start
 hitting bottlenecks on the postgres cluster), but it sure feels good to have
 all our CPU headroom back on Matrix.org again, ready for the next wave of
 users to arrive.
-
 
 ### Conclusion
 

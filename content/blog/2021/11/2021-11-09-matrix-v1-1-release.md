@@ -23,7 +23,6 @@ For the Client-Server API, a slight complication is that v1 and v2 (alpha) are a
 
 It's been well over a year since the last release, which means there's a whole lot of features and changes to cover. Here we'll try to cover the things most clients/servers will have to worry about, but we do still recommend reading through the changelog included below. Overall, 28 MSCs have been merged through this release, but some have had to be excluded in the interest of getting the spec release out there. Many of them are expected to be in the next anticipated release (which should hopefully be next quarter).
 
-
 ## Clients: There's a lot of stuff
 
 In Matrix 1.1, client developers get all sorts of new features to play with. Clients which support end-to-end encryption should explore **[key backups](https://spec.matrix.org/v1.1/client-server-api/#server-side-key-backups)**, **[cross-signing](https://spec.matrix.org/v1.1/client-server-api/#cross-signing)**, **[SSSS](https://spec.matrix.org/v1.1/client-server-api/#secrets)**, and **[breaking changes to verification](https://spec.matrix.org/v1.1/client-server-api/#key-verification-framework)**. Quite a lot of this stuff has existed for a while, but has made it into the specification formally now. As an added bonus, the emoji for SAS verification [have been translated](https://github.com/matrix-org/matrix-doc/tree/master/data-definitions) ([contribute here](https://translate.element.io/projects/matrix-doc/sas-emoji-v1/)).
@@ -33,7 +32,6 @@ Knocking has also landed in the spec (thanks Sorunome for leading the charge on 
 Thanks again to Sorunome, [Message Spoilers](https://spec.matrix.org/v1.1/client-server-api/#spoiler-messages) have been officially included in Matrix. People can now safely discuss the ending to the latest movie without being banned for spoilers. Though, as a new feature, there's a chance that the spoiler text still gets included in the message: clients should update as soon as possible to avoid their users accidentally getting banned for spoiling the conclusion to the [Spaces saga](https://github.com/matrix-org/matrix-doc/pull/1772) ;)
 
 There's a few other smaller improvements/additions, and of course the regular "various clarifications and bug fixes" to take a look at. For a sample checklist, check out [element-web's issue](https://github.com/vector-im/element-web/issues/16876) on the subject.
-
 
 ## Servers: Knock knock, it's a new room version
 
@@ -45,16 +43,13 @@ As per usual, there's also various specification errors corrected to aid underst
 
 *PS: Room versions 8 and 9 are also out there, but will be included in a future spec release.*
 
-
 ## The full changelog
 
 We haven't mentioned identity servers, bridges, etc in this post but they have changes too! Below is the whole changelog, the entire year and a bit of it. Thank you to everyone who has submitted MSCs, and congratulations on getting them released. If we forgot yours, please mention it in [#matrix-spec:matrix.org](https://matrix.to/#/#matrix-spec:matrix.org) so we can apologize and correct.
 
 PS: The MSC process is how changes to Matrix are made, and you (yes, you) can propose those changes too. Check out the [Matrix Live episode](https://www.youtube.com/watch?v=SFkZz60RRfc) where Matthew talks about how this process works, and how we avoid blocking clients from implementing their proposals behind the relatively slow spec release cycles.
 
-
 ### Client-Server API
-
 
 <strong>Breaking Changes</strong>
 
@@ -145,9 +140,7 @@ PS: The MSC process is how changes to Matrix are made, and you (yes, you) can pr
 - Describe how [MSC2844](https://github.com/matrix-org/matrix-doc/pull/2844) affects the `/versions` endpoint. ([#3420](https://github.com/matrix-org/matrix-doc/issues/3420))
 - Fix documentation errors around `threepid_creds`. ([#3471](https://github.com/matrix-org/matrix-doc/issues/3471))
 
-
 ### Server-Server API
-
 
 <strong>New Endpoints</strong>
 
@@ -171,18 +164,14 @@ PS: The MSC process is how changes to Matrix are made, and you (yes, you) can pr
 - Explain the reasons why `<hostname>` TLS certificate is needed rather than `<delegated_hostname>` for SRV delegation. ([#3322](https://github.com/matrix-org/matrix-doc/issues/3322))
 - Tweak the example PDU diagram to better demonstrate situations with multiple `prev_events`. ([#3340](https://github.com/matrix-org/matrix-doc/issues/3340))
 
-
 ### Application Service API
-
 
 <strong>Spec Clarifications</strong>
 
 
 - Fix various typos throughout the specification. ([#2888](https://github.com/matrix-org/matrix-doc/issues/2888))
 
-
 ### Identity Service API
-
 
 <strong>New Endpoints</strong>
 
@@ -203,9 +192,7 @@ PS: The MSC process is how changes to Matrix are made, and you (yes, you) can pr
 - Clarify that some identifiers must be case folded prior to processing, as per [MSC2265](https://github.com/matrix-org/matrix-doc/pull/2265). ([#3167](https://github.com/matrix-org/matrix-doc/issues/3167), [#3176](https://github.com/matrix-org/matrix-doc/issues/3176))
 - Describe how [MSC2844](https://github.com/matrix-org/matrix-doc/pull/2844) affects the `/versions` endpoint. ([#3459](https://github.com/matrix-org/matrix-doc/issues/3459))
 
-
 ### Push Gateway API
-
 
 <strong>Spec Clarifications</strong>
 

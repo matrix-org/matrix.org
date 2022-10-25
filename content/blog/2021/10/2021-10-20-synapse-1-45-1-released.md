@@ -48,7 +48,6 @@ This release includes numerous fixes and improvements to Synapse's internals.
 
 - Magic accessor methods have been removed from Synapse's `Config` class. Previously, Synapse would interpret references like `config.send_federation` by attempting to guess a reasonable full path, like `config.worker.send_federation`. As of Synapse 1.45, the full path must be specified directly. This prevents errors where values could be drawn from unexpected or incorrect sections of the server's configuration.
 
-
 ## Everything Else
 
 We'd like to extend a special thanks to Fizzadar from [Beeper](https://www.beeper.com/) for improving Synapse's `update_synapse_database` script ([#10954](https://github.com/matrix-org/synapse/pull/10954)) to allow schema changes to occur while Synapse is running. This is a great step toward reducing the downtime associated with upgrades.

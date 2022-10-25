@@ -9,7 +9,6 @@ category = ["Releases"]
 
 [Synapse 1.51](https://github.com/matrix-org/synapse/releases/tag/v1.51.0) is out! Here's what's new with this week's release.
 
-
 ## Deprecation of the `webclient` listener
 
 A long time ago, Synapse used to serve a very basic web Matrix client (named "console") that could be used to connect to the homeserver. Server administrators could chose to make it available to their users by configuring a `webclient` listener.
@@ -18,13 +17,11 @@ This web client was removed in [Synapse 0.34](https://github.com/matrix-org/syna
 
 Synapse 1.53 will remove the `webclient` listener, as well as the ability to set `web_client_location` to a static directory (instead of a HTTP(S) URL). See the [upgrade notes](https://matrix-org.github.io/synapse/develop/upgrade#upgrading-to-v1510) for more information.
 
-
 ## Aggregations and sync
 
 The concept of server-side aggregation in Matrix is defined in [MSC2675](https://github.com/matrix-org/matrix-doc/pull/2675) and is the ability for homeservers to extend the information included in an event using other events that relate to it. This allows, for example, clients to quickly retrieve the reactions associated with a given message, or its latest edit.
 
 This release includes a number of notable performance improvements to calculating aggregations when responding to `/sync` requests. We continue to measure and investigate potential performance improvements in this area, which should end up greatly benefiting `/sync` response times.
-
 
 ## FOSDEM
 
@@ -33,7 +30,6 @@ This release includes a number of notable performance improvements to calculatin
 One new addition this year is the presence of a whole devroom dedicated to Matrix. It will be hosted on February 6th, and you can already find its whole schedule of talks [right here](https://fosdem.org/2022/schedule/track/matrixorg_foundation_and_community/).
 
 The Synapse team will be giving a couple of talks during the day: [Events for the Uninitiated](https://fosdem.org/2022/schedule/event/matrix_events_uninitiatied/) by Shay at 11:10, and [Beyond the Matrix: Extend the capabilities of your Synapse homeserver](https://fosdem.org/2022/schedule/event/matrix_extend_synapse/) by yours truly at 16:40 (all times CET). Come say hi! 🙂
-
 
 ## Everything else
 

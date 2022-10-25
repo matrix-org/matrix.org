@@ -18,13 +18,11 @@ This year is turning out to be slightly different, however.  Our plans for 2022 
 
 We’ve seen an absolute tonne of work happening on this so far this year… and somehow the end results all seem to be taking concrete shape at roughly the same time, despite summer traditionally being the quietest point of the year.  The progress is super exciting and we don’t want to wait until things are ready to enthuse about them, and so we thought it’d be fun to do a spontaneous Summer Special gala blog post so that everyone can follow along and see how things are going!
 
-
 ## Making it fast
 
 We have always focused on first making Matrix “work right” before we make it “work fast” - sometimes to a fault.  After all: the longer you build on a given architecture the harder it becomes to swap it out down the line, and the core architecture of Matrix has remained essentially the same since we began in 2014 - frankly it’s amazing that the initial design has lasted for as long as it has.
 
 Over the years we’ve done a lot of optimisation work on the core team implementations of that original architecture - whether that’s Synapse or matrix-{js,react,ios,android}-sdk and friends: for instance Synapse uses 5-10x less RAM than it used to (my personal federated server is only using 145MB of RAM atm! 🤯) and it continues to speed up in pretty much every new release ([this PR](https://github.com/matrix-org/synapse/pull/13522) looks to give a 1000x speedup on calculating push notification actions, for instance!).  However, there are some places where Matrix’s architecture itself ends up being an embarrassingly slow bottleneck: most notably when rapidly syncing data to clients, and when joining rooms for the first time over federation.  We’re addressing these as follows…
-
 
 ### Sliding Sync (aka Sync v3)
 
@@ -86,7 +84,6 @@ Finally: Element is getting a major redesign of the core UI on both iOS and Andr
 
 In addition to the upcoming overall redesign, Element also landed a complete rework of the login and registration flows last week on iOS and Android - you can see all about it over on the [Element blog](https://element.io/blog/all-aboard-better-ftue-for-less-wtf/).
 
-
 ### Fast Remote Joins
 
 In terms of performance, the other area that we’re reworking at the protocol level is room joins. 
@@ -107,7 +104,6 @@ In terms of performance: right now, joining Matrix HQ via the unoptimised implem
 
 Finally, alongside faster remote joins, we’re also working on faster local joins.  This work overlaps a bit with the optimisation needed to speed up the faster remote join logic - given we are seeing relatively simple operations unexpectedly taking tens of seconds in both instances. Some of this is needing to batch database activity more intelligently, but we also have some unknown pauses which we’re currently tracking down.  Profiling is afoot, as well as copious Jaeger and OpenTracing instrumentation - the hunt is on!
 
-
 ### Ratcheting up testing
 
 All the work above describes some pretty bold changes to speed up Matrix and improve usability - but in order to land these changes with confidence, avoiding regressions both now and in future, we have really levelled up our testing this year.
@@ -124,11 +120,9 @@ Finally, we’ve had a huge breakthrough with true multi-client end-to-end testi
 
 Next up, we will turn our attention to a performance testing framework so that we can reliably track performance improvements and regressions in an automated fashion - heavily inspired by Safari’s [Page Load Test](https://www.goodreads.com/quotes/9844796-don-was-the-one-who-figured-out-how-we-would) approach. This will be essential as we build out new clients like Element X.
 
-
 ## A whole new world
 
 All the stuff above is focused on improving the core performance and usability of Matrix - but in parallel we have also been making enormous progress on entirely new features and capabilities. The following isn’t a comprehensive list, but we wanted to highlight a few of the areas where new development is progressing at a terrifying rate…
-
 
 ### Native VoIP Conferencing
 
@@ -162,7 +156,6 @@ Now, this isn’t released yet, and there is still work to be done, including:
 You can see the full todo list for basic and future features over on GitHub.  However, we’re making good progress thanks to Šimon’s work and Sean’s help - but with any luck beta 3 of Element Call might showcase SFU support!
 
 Meanwhile it’s worth noting that Element Call is not the only MSC3401 implementation out there - the Hydrogen team has added native support to Hydrogen SDK too (skipping over the old 1:1 calling), so expect to see Element &lt;-> Hydrogen calling in the near future. The Hydrogen implementation is also what powers Third Room (see below…)
-
 
 ### Matryoshka VoIP Embedding
 
@@ -224,7 +217,6 @@ And don't forget, it's just a Matrix client - with no infrastructure required ot
 
 As you can see, we are rapidly approaching the point where we’ll need support from technical artists to help create beautiful scenes and avatars and assets in order to make it all come to life - especially once the Blender and Unity pipelines, and/or the Third Room editor are finished. If you’re interested in getting involved come chat at [#thirdroom:matrix.org](https://matrix.to/#/#thirdroom:matrix.org)!
 
-
 ### WYSIWYG
 
 Back in the real world, a recent new project that we haven’t spoken about much yet is adding consistent WYSIWYG (What You See Is What You Get) editing to the message composer in matrix-{react,ios,android}-sdk as used by Element Web/iOS/Android - as well as publishing the resulting WYSIWYG editor for the greater glory of the wider ecosystem.
@@ -245,7 +237,6 @@ On the other hand, a project we recently [yelled about](https://matrix.org/blog/
 
 Our plan is to use native OIDC in production for the first time to provide all the login, registration and account management for Third Room when it launches in a few weeks (using a branded Keycloak instance as the identity provider, for convenience).  After all, the last thing we wanted to do was to waste time building fiddly Matrix-specific login/registration UI in Third Room when we’re about to move to OIDC!  This will be an excellent case study to see how it works, and how it feels, and inform the rest of the great OIDC experiment and proposed migration.
 
-
 ### Dendrite + P2P
 
 Meanwhile, the Next Generation team has continued to focus on their mission to make Dendrite as efficient and usable as possible. Within recent months, Dendrite has matured dramatically, with a considerable list of bugs fixed, performance significantly improved and new features added - push notifications, history visibility and presence to name a few notable additions.
@@ -258,13 +249,11 @@ Dendrite plays an important role in our future strategy as it is also the homese
 
 Research on the [Pinecone](https://github.com/matrix-org/pinecone/) overlay network for P2P Matrix has also continued, with Devon and Neil having experimented with a number of protocol iterations and spent considerable time bringing the [Pinecone Simulator](https://github.com/matrix-org/pinecone/tree/main/cmd/pineconesim) up to scratch to help us to test our designs more rapidly. Our work in this area is helping us to form a better direction and strategy for P2P Matrix as a whole, which is moving more towards a hybridised model with the current Matrix federation — a little different to our original vision, but will hopefully result in a much smoother transition path for existing users whilst solving some potential scaling problems. The [arewep2pyet.com](https://arewep2pyet.com) site is a living page which contains a high level overview of our goals and all the progress being made.
 
-
 ## What’s left?
 
 Comparing all of the above with the [predictions for 2022](https://matrix.org/blog/2021/12/22/the-mega-matrix-holiday-special-2021#2022) section of the end-of-year blog post, we’re making very strong progress in a tonne of areas - and the list above isn’t comprehensive.  For instance, we haven’t called out all the work that the Trust & Safety team are doing to roll out advanced moderation features by default to all communities - or the work that Eric has been doing to close the remaining gap between Gitter and Matrix by creating new static archives throughout Matrix.  Hydrogen has also been beavering away to provide a tiny but perfectly formed web client suitable for embedding, including the new embeddable Hydrogen SDK. We haven’t spoken about the work that the Cryptography team have been doing to adopt vodozemac and matrix-rust-sdk-crypto throughout matrix-{js,ios,android}-sdk, or improve encryption stability and security throughout.  We’ve also not spoken about the new initiative to fix long-term chronic bugs (outside of the work above) in general - or all the work being done around [Digital Markets Act interoperability](https://matrix.org/blog/2022/03/30/technical-faq-on-the-digital-markets-act)…
 
 Other things left on the menu for this year include getting Threads out of beta: we’ve had a bit of an adventure here figuring out how to get the right semantics for notification badges and unread state in rooms with threads (especially if you use a mix of clients which support and don’t support threads), and once that’s done we’ll be returning to Spaces (performance, group permissions etc).
-
 
 ## Matrix 2.0?
 
