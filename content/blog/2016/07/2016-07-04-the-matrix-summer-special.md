@@ -110,7 +110,9 @@ Thanks, once again, to everyone who's been supporting and using Matrix - whether
 Matthew, Amandine &amp; the Matrix Team.
 
 <h2>Appendix: The Missing Synapse Changelogs</h2>
-<h3>Changes in synapse v0.16.1 (2016-06-20)</h3>
+
+### Changes in synapse v0.16.1 (2016-06-20)
+
 Bug fixes:
 <ul>
  	<li>Fix assorted bugs in <code>/preview_url</code> (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/872" data-url="https://github.com/matrix-org/synapse/issues/872" data-id="160459814" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#872</a>)</li>
@@ -121,7 +123,9 @@ Performance improvements:
  	<li>Turn <code>use_frozen_events</code> off by default (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/877" data-url="https://github.com/matrix-org/synapse/issues/877" data-id="160897209" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#877</a>)</li>
  	<li>Disable responding with canonical json for federation (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/878" data-url="https://github.com/matrix-org/synapse/issues/878" data-id="160910639" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#878</a>)</li>
 </ul>
-<h3>Changes in synapse v0.16.1-rc1 (2016-06-15)</h3>
+
+### Changes in synapse v0.16.1-rc1 (2016-06-15)
+
 Features: None
 
 Changes:
@@ -141,14 +145,18 @@ Performance improvements:
 <ul>
  	<li>Improve <code>/publicRooms</code> performance (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/859" data-url="https://github.com/matrix-org/synapse/issues/859" data-id="159188459" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#859</a>)</li>
 </ul>
-<h3>Changes in synapse v0.16.0 (2016-06-09)</h3>
+
+### Changes in synapse v0.16.0 (2016-06-09)
+
 NB: As of v0.14 all AS config files must have an ID field.
 
 Bug fixes:
 <ul>
  	<li>Don't make rooms published by default (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/857" data-url="https://github.com/matrix-org/synapse/issues/857" data-id="159171952" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#857</a>)</li>
 </ul>
-<h3>Changes in synapse v0.16.0-rc2 (2016-06-08)</h3>
+
+### Changes in synapse v0.16.0-rc2 (2016-06-08)
+
 Features:
 <ul>
  	<li>Add configuration option for tuning GC via <code>gc.set_threshold</code> (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/849" data-url="https://github.com/matrix-org/synapse/issues/849" data-id="158942313" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#849</a>)</li>
@@ -170,7 +178,9 @@ Performance Improvements:
  	<li>Change the way we cache events (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/836" data-url="https://github.com/matrix-org/synapse/issues/836" data-id="158410030" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#836</a>)</li>
  	<li>Add events to cache when we persist them (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/840" data-url="https://github.com/matrix-org/synapse/issues/840" data-id="158647785" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#840</a>)</li>
 </ul>
-<h3>Changes in synapse v0.16.0-rc1 (2016-06-03)</h3>
+
+### Changes in synapse v0.16.0-rc1 (2016-06-03)
+
 Version 0.15 was not released. See v0.15.0-rc1 below for additional changes.
 
 Features:
@@ -214,7 +224,9 @@ Performance improvements:
  	<li>Poke notifier on next reactor tick (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/829" data-url="https://github.com/matrix-org/synapse/issues/829" data-id="158337243" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#829</a>)</li>
  	<li>Change CacheMetrics to be quicker (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/830" data-url="https://github.com/matrix-org/synapse/issues/830" data-id="158337903" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#830</a>)</li>
 </ul>
-<h3>Changes in synapse v0.15.0-rc1 (2016-04-26)</h3>
+
+### Changes in synapse v0.15.0-rc1 (2016-04-26)
+
 Features:
 <ul>
  	<li>Add login support for Javascript Web Tokens, thanks to Niklas Riekenbrauck (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/671" data-url="https://github.com/matrix-org/synapse/issues/671" data-id="144065761" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#671</a>,<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/687" data-url="https://github.com/matrix-org/synapse/issues/687" data-id="145233458" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#687</a>)</li>

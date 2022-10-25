@@ -18,13 +18,17 @@ Synapse 0.20.0 was released a few hours ago - this is a major new release with l
  	<li>Lots of juicy bug fixes.</li>
 </ul>
 We highly recommend upgrading (or installing!) asap - <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a> has the details as usual.  Full changelog follows:
-<h3>Changes in synapse v0.20.0 (2017-04-11)</h3>
+
+### Changes in synapse v0.20.0 (2017-04-11)
+
 Bug fixes:
 <ul>
  	<li>Fix joining rooms over federation where not all servers in the room saw the
 new server had joined (PR <a class="issue-link js-issue-link ghh-issue-x tooltipstered" title="" href="https://github.com/matrix-org/synapse/pull/2094" data-url="https://github.com/matrix-org/synapse/issues/2094" data-id="218965094" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#2094</a>)</li>
 </ul>
-<h3>Changes in synapse v0.20.0-rc1 (2017-03-30)</h3>
+
+### Changes in synapse v0.20.0-rc1 (2017-03-30)
+
 Features:
 <ul>
  	<li>Add delete_devices API (PR <a class="issue-link js-issue-link ghh-issue-x tooltipstered" title="" href="https://github.com/matrix-org/synapse/pull/1993" data-url="https://github.com/matrix-org/synapse/issues/1993" data-id="213824583" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1993</a>)</li>

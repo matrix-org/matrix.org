@@ -10,7 +10,8 @@ category = ["General"]
 <p style="text-align: left;">Hi folks,</p>
 Thought it was worth giving a quick status update on what's going on since our <a href="/blog/2017/07/07/a-call-to-arms-supporting-matrix/">last blog post</a>, which explained the funding situation Matrix has found itself in.  The TL;DR is that we're still here; things are moving faster than ever (not least as we refocus on getting everything needed to get Matrix funded and sustainable in the longer term), but we still need concrete support from the community (both company sponsorship and personal donations) to ensure things keep going at the current rate.
 
-<h3>Funding Status</h3>
+### Funding Status
+
 So, the good news is that we had a great initial response to last week's call to help - right now we have 199 people signed up on <a href="https://patreon.com/matrixdotorg">Patreon</a> (go on, be the 200th! you know you want to :D), ~30 on <a href="https://liberapay.com/matrixdotorg/">Liberapay</a>, and 14 bitcoin donations.  This sums up to just over $2000/month - which is getting close to our initial Patreon goal of $2500/month to helping support half the cost of the less senior devs working on Matrix. <strong>Endless thanks to everyone who has donated - especially the 19 folks (18 on Patreon, one on Liberapay) who have so generously pledged $50 or more a month!! </strong>Meanwhile, if you're reading this and you haven't pledged support yet - *please* consider heading over to <a href="https://patreon.com/matrixdotorg">Patreon</a> or <a href="https://liberapay.com/matrixdotorg">Liberapay</a> or Bitcoin 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE and helping keep the project running.  Literally every dollar counts.
 
 Meanwhile, while Patreon &amp; friends are headed in the right direction to support one developer, we still have another 10 people working on all the various core components of Matrix itself who need to be supported in the near future.  (We look to be safe for the next month or two, but beyond that we're counting on having solved this problem ;).  <strong>Right now we are hoping that companies who believe in Matrix and/or are building services on top will step up to sponsor development</strong> - as it's pretty obvious that accelerating Dendrite, final E2E, Groups etc will improve professional Matrix-based services immeasurably.  If this sounds like you, please <a href="mailto:matthew@matrix.org">get in touch</a> asap.
@@ -23,7 +24,8 @@ Heads up that we've also started our various reward schemes for supporters - fol
 
 Finally on the funding side of things: we're setting up the Matrix.org Foundation non-profit legal entity this week, letting us accept donations and sponsorship in a way which can directly fund the core developers (more details as we have them).  As soon as it's incorporated, we'll be able to sign up fully on Liberapay to accept donations there.
 
-<h3>Announcing <strong>UpCloud</strong>: our very first official Matrix.org Corporate Sponsor!</h3>
+### Announcing <strong>UpCloud</strong>: our very first official Matrix.org Corporate Sponsor!
+
 <p>
 <a href="https://www.upcloud.com/matrix"><img style="padding: 1em" src="/blog/wp-content/uploads/2017/07/upcloud-logo-horizontal-300x60.png" alt="" width="300" height="60" class="aligncenter size-medium wp-image-2631" /></a>
 </p>
@@ -35,7 +37,8 @@ They also like Matrix so much that they've written this <a href="https://www.up
 
 We'd like to thank them profusely for being first in line to support us - and we look forward to seeing how far we can push their hardware over the coming months! :D
 
-<h3>Development Status</h3>
+### Development Status
+
 Finally, loads and loads of stuff is happening on Matrix itself.  The main headlines are:
 <ul>
  	<li><strong>Groups</strong>.  Work in Synapse and matrix-react-sdk is happening at breakneck speed to get Groups out the door as soon as possible, so we can use them both to support the funding drive and in general to implement one of the most asked-for features of Matrix: the ability to group rooms together into a well-defined community (similar to Slack Teams or Discord Servers etc).  The way Groups work is to let users define groupings of both users and rooms; you can also define a metadata for the group to let you build homepages similar to the one which Riot/Web sprouted a few months ago.  You can then refer to the group of users when inviting/banning/kicking etc - or when managing your own roomlist.  We think it's going to completely change how people use Matrix, and can't wait to see it land on riot.im/develop, although it's still a few weeks away.</li>

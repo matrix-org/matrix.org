@@ -13,7 +13,8 @@ Currently, this is only known to affect the debian packages of synapse. <strong>
 
 Synapse installed using pip should not be affected, as pip will have bundled a newer version of the ldap3 module.
 
-<h3><strong>UPDATE</strong>: Synapse v0.18.3 released.</h3>
+### <strong>UPDATE</strong>: Synapse v0.18.3 released.
+
 This issue only affects OS (not virtualenv) installations using v0.9.x of the ldap3 python package (e.g. Debian Stable (Jessie)).  Synapse itself specifies a dependency on &gt;v1.0 of ldap3, but as the dependency is optional there is a risk that a stale operating system dependency will be pulled in instead.  To be safe, <strong>0.18.3 of Synapse</strong> has just been released to fix the underlying problem for anyone using the older ldap3 package, regardless of their OS. <a href="https://github.com/matrix-org/synapse/releases/tag/v0.18.3">https://github.com/matrix-org/synapse/releases/tag/v0.18.3</a> has the details.
 
 Many thanks to Adrián Pérez for reporting the problem, and to hexa- for assistance in quickly solving it!

@@ -16,11 +16,11 @@ category = ["General"]
 
 <p>The matrix.org homeserver has been rebuilt and is running securely; bridges and other ancillary services (e.g. this blog) will follow as soon as possible. Modular.im homeservers have not been affected by this outage.</p>
 
-<h3 id="toc_2">The security breach is not a Matrix issue.</h3>
+### The security breach is not a Matrix issue.
 
 <p>The hacker exploited a vulnerability in our production infrastructure (specifically a slightly outdated version of Jenkins). <strong>Homeservers other than matrix.org are unaffected.</strong></p>
 
-<h3 id="toc_3">How does this affect me?</h3>
+### How does this affect me?
 
 <p>We have invalidated all of the active access tokens for users on Matrix.org - all users have been logged out.</p>
 
@@ -38,11 +38,11 @@ category = ["General"]
 <li><strong>Always make sure you enable E2E encryption for private conversations</strong></li>
 </ul>
 
-<h3 id="toc_4">What user data has been accessed?</h3>
+### What user data has been accessed?
 
 <p>Forensics are ongoing; so far we&#39;ve found no evidence of large quantities of data being downloaded. The attacker did have access to the production database, so unencrypted content (including private messages, password hashes and access tokens) may be compromised. </p>
 
-<h3 id="toc_5">What has not been affected?</h3>
+### What has not been affected?
 
 <ul>
 <li>Source code and packages have not been impacted based on our initial investigations.  However, we will be replacing signing keys as a precaution.</li>
@@ -52,7 +52,7 @@ category = ["General"]
 
 <p>The target appeared to be internal credentials for onward exploits, not end user information from the matrix.org homeserver.</p>
 
-<h3 id="toc_6">You might have lost access to your encrypted messages.</h3>
+### You might have lost access to your encrypted messages.
 
 <p>As we had to log out all users from matrix.org, if you do not have backups of your encryption keys you will not be able to read your encrypted conversation history.  However, if you use server-side encryption key backup (the default in Riot these days) or take manual key backups, you’ll be okay. </p>
 
@@ -62,7 +62,7 @@ category = ["General"]
 
 <p>We were using Jenkins for continuous integration (automatically testing our software). The version of Jenkins we were using had a vulnerability (<a href="https://nvd.nist.gov/vuln/detail/CVE-2019-1003000">CVE-2019-1003000</a>, <a href="https://nvd.nist.gov/vuln/detail/CVE-2019-1003001">CVE-2019-1003001</a>, <a href="https://nvd.nist.gov/vuln/detail/CVE-2019-1003002">CVE-2019-1003002</a>) which allowed an attacker to hijack credentials (forwarded ssh keys), giving access to our production infrastructure. Thanks to <a href="https://twitter.com/jaikeysarraf">@jaikeysarraf</a> for drawing this to our attention.</p>
 
-<h3 id="toc_8">Timeline</h3>
+### Timeline
 
 <p>March 13th <b>Updated 2019-04-12 11:00 UTC</b></p>
 <ul>

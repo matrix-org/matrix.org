@@ -19,7 +19,7 @@ I know I say it every time, but full python 3 support is really really close now
 
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.9">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. Also, check out our new <a href="/docs/guides/installing-synapse">Synapse installation guide page.</a>
 
-<h3>Synapse 0.33.9 changelog</h3>
+### Synapse 0.33.9 changelog
 
 #### Features
 

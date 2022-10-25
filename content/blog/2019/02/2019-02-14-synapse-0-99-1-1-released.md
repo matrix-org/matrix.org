@@ -19,14 +19,18 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/syna
 <div class="d-flex flex-items-start"></div>
 </div>
 <div class="markdown-body">
-<h3>Bugfixes</h3>
+
+### Bugfixes
+
 <ul>
  	<li>Fix "TypeError: '&gt;' not supported" when starting without an existing certificate.
 Fix a bug where an existing certificate would be reprovisoned every day. (<a href="https://github.com/matrix-org/synapse/issues/4648" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4648/hovercard" aria-describedby="hovercard-aria-description">#4648</a>)</li>
 </ul>
 </div>
 <h2>Synapse 0.99.1 Changelog</h2>
-<h3>Features</h3>
+
+### Features
+
 <ul>
  	<li>Include m.room.encryption on invites by default (<a href="https://github.com/matrix-org/synapse/issues/3902" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3902/hovercard" aria-describedby="hovercard-aria-description">#3902</a>)</li>
  	<li>Federation OpenID listener resource can now be activated even if federation is disabled (<a href="https://github.com/matrix-org/synapse/issues/4420" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4420/hovercard" aria-describedby="hovercard-aria-description">#4420</a>)</li>
@@ -37,7 +41,9 @@ This change makes Synapse compliant with r0.4.0 of the Client-Server specificati
  	<li>There is no longer any need to specify <code>no_tls</code>: it is inferred from the absence of TLS listeners (<a href="https://github.com/matrix-org/synapse/issues/4613" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4613/hovercard" aria-describedby="hovercard-aria-description">#4613</a>, <a href="https://github.com/matrix-org/synapse/issues/4615" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4615/hovercard" aria-describedby="hovercard-aria-description">#4615</a>, <a href="https://github.com/matrix-org/synapse/issues/4617" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4617/hovercard" aria-describedby="hovercard-aria-description">#4617</a>, <a href="https://github.com/matrix-org/synapse/issues/4636" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4636/hovercard" aria-describedby="hovercard-aria-description">#4636</a>)</li>
  	<li>The default configuration no longer requires TLS certificates. (<a href="https://github.com/matrix-org/synapse/issues/4614" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4614/hovercard" aria-describedby="hovercard-aria-description">#4614</a>)</li>
 </ul>
-<h3>Bugfixes</h3>
+
+### Bugfixes
+
 <ul>
  	<li>Copy over room federation ability on room upgrade. (<a href="https://github.com/matrix-org/synapse/issues/4530" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4530/hovercard" aria-describedby="hovercard-aria-description">#4530</a>)</li>
  	<li>Fix noisy "twisted.internet.task.TaskStopped" errors in logs (<a href="https://github.com/matrix-org/synapse/issues/4546" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4546/hovercard" aria-describedby="hovercard-aria-description">#4546</a>)</li>
@@ -48,7 +54,9 @@ This change makes Synapse compliant with r0.4.0 of the Client-Server specificati
  	<li>Fix self-signed cert notice from generate-config. (<a href="https://github.com/matrix-org/synapse/issues/4625" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4625/hovercard" aria-describedby="hovercard-aria-description">#4625</a>)</li>
  	<li>Fix performance of <code>user_ips</code> table deduplication background update (<a href="https://github.com/matrix-org/synapse/issues/4626" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4626/hovercard" aria-describedby="hovercard-aria-description">#4626</a>, <a href="https://github.com/matrix-org/synapse/issues/4627" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4627/hovercard" aria-describedby="hovercard-aria-description">#4627</a>)</li>
 </ul>
-<h3>Internal Changes</h3>
+
+### Internal Changes
+
 <ul>
  	<li>Change the user directory state query to use a filtered call to the db instead of a generic one. (<a href="https://github.com/matrix-org/synapse/issues/4462" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4462/hovercard" aria-describedby="hovercard-aria-description">#4462</a>)</li>
  	<li>Reject federation transactions if they include more than 50 PDUs or 100 EDUs. (<a href="https://github.com/matrix-org/synapse/issues/4513" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4513/hovercard" aria-describedby="hovercard-aria-description">#4513</a>)</li>

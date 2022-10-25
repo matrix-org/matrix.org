@@ -16,7 +16,9 @@ The most important thing that admins should know is that prior to 1.0 landing la
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.99.2">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. Also, check out our new <a href="/docs/guides/installing-synapse">Synapse installation guide page.</a>
 
 <h2>Synapse 0.99.2 changelog</h2>
-<h3>Features</h3>
+
+### Features
+
 <ul>
  	<li>Added an HAProxy example in the reverse proxy documentation. Contributed by Benoît S. (“Benpro”). (<a href="https://github.com/matrix-org/synapse/issues/4541" data-hovercard-type="issue" data-hovercard-url="/matrix-org/synapse/issues/4541/hovercard">#4541</a>)</li>
  	<li>Add basic optional sentry integration. (<a href="https://github.com/matrix-org/synapse/issues/4632" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4632/hovercard">#4632</a>, <a href="https://github.com/matrix-org/synapse/issues/4694" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4694/hovercard">#4694</a>)</li>
@@ -29,7 +31,9 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/syna
  	<li>Return correct error code when inviting a remote user to a room whose homeserver does not support the room version. (<a href="https://github.com/matrix-org/synapse/issues/4721" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4721/hovercard">#4721</a>)</li>
  	<li>Prevent showing rooms to other servers that were set to not federate. (<a href="https://github.com/matrix-org/synapse/issues/4746" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4746/hovercard">#4746</a>)</li>
 </ul>
-<h3>Bugfixes</h3>
+
+### Bugfixes
+
 <ul>
  	<li>Fix possible exception when paginating. (<a href="https://github.com/matrix-org/synapse/issues/4263" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4263/hovercard">#4263</a>)</li>
  	<li>The dependency checker now correctly reports a version mismatch for optional
@@ -43,7 +47,9 @@ a boolean. (<a href="https://github.com/matrix-org/synapse/issues/4680" data-hov
  	<li>Fix ACME config for python 2. (<a href="https://github.com/matrix-org/synapse/issues/4717" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4717/hovercard">#4717</a>)</li>
  	<li>Fix paginating over federation persisting incorrect state. (<a href="https://github.com/matrix-org/synapse/issues/4718" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4718/hovercard">#4718</a>)</li>
 </ul>
-<h3>Internal Changes</h3>
+
+### Internal Changes
+
 <ul>
  	<li>Run <code>black</code> to reformat user directory code. (<a href="https://github.com/matrix-org/synapse/issues/4635" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4635/hovercard">#4635</a>)</li>
  	<li>Reduce number of exceptions we log. (<a href="https://github.com/matrix-org/synapse/issues/4643" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4643/hovercard">#4643</a>, <a href="https://github.com/matrix-org/synapse/issues/4668" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4668/hovercard">#4668</a>)</li>

@@ -31,8 +31,8 @@ Please note that we are still talking to GDPR lawyers, and we'd also very much a
 
 The current todo list breaks down into the following categories. Most of these issues have matching github IDs, which we'll track in a progress dashboard.
 
-<h3>Right to Erasure
-</h3>
+### Right to Erasure
+
 We're opting to follow the email model, where the act of sending an event (i.e. message) into a room shares a copy of that message to everyone who is <strong><em>currently</em></strong> in that room.  This means that in the privacy policy (see Consent below) users will have to consent to agreeing that a copy of their messages will be transferred to whoever they are addressing.  This is also the model followed by IM systems such as WhatsApp, Twitter DMs or (
 <a href="https://www.theinquirer.net/inquirer/news/3029749/facebook-zuckerberg-can-delete-old-messenger-conversations-you-cant">almost</a>) Facebook Messenger.
 
@@ -87,8 +87,8 @@ We've spent quite a lot time reasoning through how to fix this situation, and a 
 
 This is obviously a significant protocol change, and we're not going to do it lightly - we're still waiting for legal confirmation on whether we need it for May 25th (it may be covered as an intrinsic technical limitation of the system).  However, the good news is that it paves the way towards many other desirable features: the ability to migrate accounts between homeservers; the ability to solve the problem of how to handle domain names being reused (or hijacked); the ability to decouple homeservers from DNS so that they can run clientside (for p2p matrix); etc.  The chances are high that this proposal will land in the relatively near future (especially if mandated by GDPR), so input is very appreciated at this point!
 
-<h3>Consent
-</h3>
+### Consent
+
 GDPR describes <a href="https://gdpr-info.eu/art-6-gdpr/">six lawful bases for processing</a> personal data.  For those running Matrix servers, it seems the best route to compliance is the most explicit and active one: 
 <i>consent
 </i>.
@@ -141,8 +141,9 @@ Long-term:
 </ul>
 </li>
 </ul>
-<h3>Deactivation
-</h3>
+
+### Deactivation
+
 Account deactivation (the ability to terminate your account on your homeserver) intersects with GDPR in a number of places.
 
 
@@ -158,8 +159,9 @@ Todo list for account deactivation:
  	<li style="font-weight: 400;">Improve the account deactivation UX to make sure users understand the full consequences of account deactivation
 </li>
 </ul>
-<h3>Portability
-</h3>
+
+### Portability
+
 GDPR states that users have a right to extract their data in a 
 <i>structured, commonly used and machine-readable format
 </i>.
@@ -176,8 +178,9 @@ The immediate todo list for data portability is:
  	<li style="font-weight: 400;">Implement the necessary tooling to provide full message logs (as a csv) upon request.  As a first cut this would be the result of manually running something like <code>select * from events where user=?</code>.
 </li>
 </ul>
-<h3>Other
-</h3>
+
+### Other
+
 GDPR mandates rules for all the personal data stored by a business, so there are some broader areas to bear in mind which aren't really Matrix specific, including:
 
 <ul>
@@ -188,8 +191,9 @@ GDPR mandates rules for all the personal data stored by a business, so there are
  	<li style="font-weight: 400;">Making sure all the appropriate documentation, processes and training materials are in place to meet GDPR obligations.
 </li>
 </ul>
-<h3>Conclusion
-</h3>
+
+### Conclusion
+
 So, there you have it.  We'll be tracking progress in github issues and an associated dashboard over the coming weeks; for now <a href="https://github.com/matrix-org/synapse/issues/1941">https://github.com/matrix-org/synapse/issues/1941</a> (for Right to Erasure) or <a href="https://github.com/vector-im/riot-meta/issues/149">https://github.com/vector-im/riot-meta/issues/149</a> (GDPR in general) is as good as place as any to gather feedback.  Alternatively, feel free to comment on the original text of this blog post: <a href="https://docs.google.com/document/d/1JTEI6RENnOlnCwcU2hwpg3P6LmTWuNS9S-ZYDdjqgzA">https://docs.google.com/document/d/1JTEI6RENnOlnCwcU2hwpg3P6LmTWuNS9S-ZYDdjqgzA</a>.
 
 

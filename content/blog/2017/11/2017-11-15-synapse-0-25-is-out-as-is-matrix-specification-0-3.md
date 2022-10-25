@@ -10,7 +10,9 @@ category = ["Tech"]
 Hi all,
 
 Today is a crazy release day here - not only do we have Synapse 0.25, but we've also made a formal release of the Matrix Specification (CS API) for the first time in 16 months!
-<h3>Matrix CS API 0.3</h3>
+
+### Matrix CS API 0.3
+
 Talking first about the spec update: the workflow of the Matrix spec is that new experimental features get added to an /unstable API prefix, and then whenever we release the Matrix spec, these get moved over to being part of the /r0 prefix (or whatever version we happen to be on).  We've been <strong>very</strong> constrained on manpower to work on the spec over the last ~18 months, but we've been keeping it up-to-date on a best effort basis, with a bit of help from the wider community.  <b> </b>As such, this latest release does not contain all the latest APIs (and certainly not experimental ones like Groups/Communities which are still evolving), but it does release all of the unstable ones which we've managed to document and which are considered stable enough to become part of the 'r0' prefix.  Going forwards, we're hoping that the wider community will help us fill in the remaining gaps (i.e. propose PRs against the matrix-org/matrix-doc repository to formalise the various spec drafts flying around the place) - and we're also hoping (if/when funding crisis is abated) to locate full-time folk to work on the spec.
 
 The full changelog for 0.3 of the spec is:
@@ -73,7 +75,9 @@ The full changelog for 0.3 of the spec is:
 </li>
 </ul>
 ...and you can read the spec itself of course over at <a href="/docs/spec">https://matrix.org/docs/spec</a>.  It's worth noting that we have slightly bent the rules by including three very minor 'breaking changes' in 0.3, but all for features which to our knowledge nobody is depending on in the wild.  Technically this should mean bumping the major version prefix (i.e. moving to r1), but given how minor and nonimpacting these are we're turning a blind eye this time.
-<h3>Meanwhile, Synapse 0.25 is out!</h3>
+
+### Meanwhile, Synapse 0.25 is out!
+
 This is a medium-sized release; the main thing being to support configurable room visibility within groups (so that whenever you add a room to a group, you're not forced into sharing their existence with the general public, but can choose to just tell group members about them).  There's also a bunch of useful bug fixes and some performance improvements, including lots of contributions from the community this release (thank you!).  Full release notes are:
 
 ##### Changes in synapse v0.25.0 (2017-11-15)

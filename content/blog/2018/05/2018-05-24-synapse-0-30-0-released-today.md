@@ -47,7 +47,9 @@ Further Server Notices/Consent Tracking Support:
 <div class="release clearfix label-prerelease">
 <div class="release-body commit open float-left">
 <div class="markdown-body">
-<h3>Changes in synapse v0.30.0-rc1 (2018-05-23)</h3>
+
+### Changes in synapse v0.30.0-rc1 (2018-05-23)
+
 GDPR Support:
 <ul>
  	<li>ConsentResource to gather policy consent from users (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3213" data-error-text="Failed to load issue title" data-id="322329950" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3213">#3213</a>)</li>

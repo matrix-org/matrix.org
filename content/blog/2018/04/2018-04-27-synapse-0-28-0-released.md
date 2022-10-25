@@ -12,13 +12,17 @@ Well now, today sees the release of Synapse 0.28.0!
 This release is particularly exciting as it's a major bump mainly thanks to lots and lots of contributions from the wider community - including support for running Synapse on PyPy (thanks Valodim) and lots of progress towards official Python3 support (thanks notafile)!! However, almost all the changes are under the hood (and some are quite major), so this is more a performance, bugfix and synapse internals release rather than adding many new APIs or features
 
 As always, you can get it from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.28.0">https://github.com/matrix-org/synapse/releases/tag/v0.28.0</a> and thanks to everyone who tested the release candidates.
-<h3>Changes in synapse v0.28.0 (2018-04-26)</h3>
+
+### Changes in synapse v0.28.0 (2018-04-26)
+
 Bug Fixes:
 <ul>
  	<li>Fix quarantine media admin API and search reindex (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3130" data-error-text="Failed to load issue title" data-id="317646661" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3130">#3130</a>)</li>
  	<li>Fix media admin APIs (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3134" data-error-text="Failed to load issue title" data-id="317969752" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3134">#3134</a>)</li>
 </ul>
-<h3>Changes in synapse v0.28.0-rc1 (2018-04-24)</h3>
+
+### Changes in synapse v0.28.0-rc1 (2018-04-24)
+
 Minor performance improvement to federation sending and bug fixes.
 
 (Note: This release does not include state resolutions discussed in matrix live)

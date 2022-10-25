@@ -12,8 +12,8 @@ Hi all,
 
 It's that time again where we break out the mince pies and brandy butter (at least for those of us in the UK) and look back on the year to see how far Matrix has come, as well as anticipate what 2019 may bring!
 
-<h3>Overview
-</h3>
+### Overview
+
 It's fair to say that 2018 has been a pretty crazy year.  We have had one overriding goal: to take the <a href="/blog/2018/01/29/status-partners-up-with-new-vector-fueling-decentralised-comms-and-the-matrix-ecosystem/">funding</a> we received in January, stabilise and freeze the protocol and get it and the reference implementations out of beta and to a 1.0 - to provide a genuinely open and decentralised mainstream alternative to the likes of Slack, Discord, WhatsApp etc.  What's so crazy about that, you might ask?
 
 

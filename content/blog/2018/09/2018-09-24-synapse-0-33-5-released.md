@@ -21,19 +21,23 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/synap
 
 <h2>Synapse 0.33.5.1</h2>
 
-<h3>Internal Changes</h3>
+### Internal Changes
+
 <ul>
  	<li>Fix incompatibility with older Twisted version in tests. Thanks <a class="user-mention" href="https://github.com/OlegGirko" data-hovercard-user-id="6013515" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" aria-describedby="hovercard-aria-description">@OlegGirko</a>! (<a href="https://github.com/matrix-org/synapse/issues/3940">#3940</a>)</li>
 </ul>
 <h2>Synapse 0.33.5</h2>
 
-<h3>Features</h3>
+### Features
+
 <ul>
  	<li>Python 3.5 and 3.6 support is now in beta. (<a href="https://github.com/matrix-org/synapse/issues/3576">#3576</a>)</li>
  	<li>Implement <code>event_format</code> filter param in <code>/sync</code> (<a href="https://github.com/matrix-org/synapse/issues/3790">#3790</a>)</li>
  	<li>Add synapse_admin_mau:registered_reserved_users metric to expose number of real reaserved users (<a href="https://github.com/matrix-org/synapse/issues/3846">#3846</a>)</li>
 </ul>
-<h3>Bugfixes</h3>
+
+### Bugfixes
+
 <ul>
  	<li>Remove connection ID for replication prometheus metrics, as it creates a large number of new series. (<a href="https://github.com/matrix-org/synapse/issues/3788">#3788</a>)</li>
  	<li>guest users should not be part of mau total (<a href="https://github.com/matrix-org/synapse/issues/3800">#3800</a>)</li>
@@ -48,7 +52,9 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/synap
  	<li>(<a href="https://github.com/matrix-org/synapse/issues/3874">#3874</a>)</li>
  	<li>Mitigate outbound federation randomly becoming wedged (<a href="https://github.com/matrix-org/synapse/issues/3875">#3875</a>)</li>
 </ul>
-<h3>Internal Changes</h3>
+
+### Internal Changes
+
 <ul>
  	<li>CircleCI tests now run on the potential merge of a PR. (<a href="https://github.com/matrix-org/synapse/issues/3704">#3704</a>)</li>
  	<li>http/ is now ported to Python 3. (<a href="https://github.com/matrix-org/synapse/issues/3771">#3771</a>)</li>

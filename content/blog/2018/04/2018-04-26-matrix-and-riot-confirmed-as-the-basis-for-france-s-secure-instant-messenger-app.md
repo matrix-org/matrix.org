@@ -24,7 +24,9 @@ So: exciting times for Matrix.  Needless to say, if you work on Open Government
 <a href="/blog/wp-content/uploads/2018/04/CP_messagerie_instantanee_Etat.pdf"><img class="aligncenter size-large wp-image-3082" src="/blog/wp-content/uploads/2018/04/dinsic.jpg" alt="" width="620" height="877" /></a>
 
 English Translation:
-<h3>The French State creates its own secure instant messenger</h3>
+
+### The French State creates its own secure instant messenger
+
 By the summer of 2018, the French State will have its own instant messenger, an alternative to WhatsApp and Telegram.
 
 It will guarantee <b>secure, end-to-end encrypted conversations</b> without degradation of the user experience. It will be compatible with any mobile device or desktop, state or personal. In fact until now the installation of applications like WhatsApp or Telegram was not possible on professional mobile phones, which hindered easy sharing of information and documents.

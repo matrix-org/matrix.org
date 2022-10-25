@@ -12,9 +12,13 @@ Hi folks,
 Synapse 0.26 is here (with no changes since RC1 which we released just before Christmas).  It's a general maintenance release, albeit with a few new features but mainly lots of bugfixes and general refinements.  Enjoy!
 
 As always, you can get it from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.26.0">https://github.com/matrix-org/synapse/releases/tag/v0.26.0</a>.
-<h3>Changes in synapse v0.26.0 (2018-01-05)</h3>
+
+### Changes in synapse v0.26.0 (2018-01-05)
+
 No changes since v0.26.0-rc1
-<h3>Changes in synapse v0.26.0-rc1 (2017-12-13)</h3>
+
+### Changes in synapse v0.26.0-rc1 (2017-12-13)
+
 Features:
 <ul>
  	<li>Add ability for ASes to publicise groups for their users (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2686" data-error-text="Failed to load issue title" data-id="274583719" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2686">#2686</a>)</li>

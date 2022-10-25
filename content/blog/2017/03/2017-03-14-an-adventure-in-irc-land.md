@@ -24,7 +24,9 @@ We made the decision very early on that we would keep dedicated TCP connections 
  	<li>You need to be able to support identification of individual users (via ident or unique IPv6 addresses).</li>
  	<li>With all these connections to the same IRC channels, you need to have some way to identify which incoming messages have already been handled and which have not.</li>
 </ul>
-<h3>Mapping Rooms</h3>
+
+### Mapping Rooms
+
 So now that we have a way to send and receive messages, how do we map the rooms/channels between protocols? This isn't as easy as you may think. We can have a single static one-to-one mapping:
 <ul>
  	<li>All messages to <code>#channel</code> go to <code>!abcdef:matrix.org</code>.</li>
@@ -43,7 +45,9 @@ In the first case, we want to defer ownership to the channel operators. This is 
 In the second case, we want to defer ownership to the Matrix moderators. This is what happens when you "provision a room" in Matrix. The bridge will PM a currently online channel operator and ask for their permission to bridge to Matrix. If they accept, the bridge is made and the power levels in the pre-existing Matrix room are left untouched, giving moderators in Matrix control over the room. However, this power doesn't extend completely to IRC. If a Matrix moderator grants moderator powers to another Matrix user, this will not be mapped to IRC. Why? It's not possible for the bridge to give chanops to any random user on any random IRC channel, so it cannot always honour the request. This relies on the humans on either side of the bridge to communicate and map power accordingly. This is done on purpose as there is no 100% perfect mapping between IRC powers and Matrix powers: it's always going to need to compromise which only a human can make.
 
 Finally, there is the problem of one-to-many mappings. It is possible to have two Matrix rooms bridged to the same IRC channel. The problem occurs when a Matrix user in one room speaks. The bridge can easily map that to IRC, but unless it <em>also</em> maps it back to Matrix, the message will never make it to the 2nd Matrix room. The bridge cannot control/puppet the Matrix user who spoke, so instead it creates a virtual Matrix user to represent that <em>real</em> Matrix user and then sends the message into the 2nd Matrix room. Needless to say, this can be quite confusing and we strongly discourage one-to-many mappings for this reason.
-<h3>Mapping Messages</h3>
+
+### Mapping Messages
+
 Mapping Matrix messages to IRC is rather easy for the most part. Messages are passed from the Homeserver to the bridge via the AS API, and the bridge sends a textual representation of the message to IRC using the IRC connection for that Matrix user. The <a href="https://github.com/matrix-org/matrix-appservice-irc/issues/258">exact form</a> of the text for images, videos and long text can be quite subjective, and there is inevitably some data loss along the way. For example, you can send big text headings, tables and lists in Matrix, but there is no equivalent on IRC. Thankfully, most Matrix users are sending the corresponding markdown and so the formatting can be reasonably preserved by just sending the plaintext (markdown) body.
 
 Mapping IRC messages to Matrix is more difficult: not because it's hard to represent the message in Matrix, but because of the architecture of the bridge. The bridge maintains separate connections for each Matrix user. This means the bridge might have, for example, 5 users (and hence connections) on the <em>same channel</em>. When an IRC user sends a message, the bridge gets 5 copies of the message. How does the bridge know:
@@ -52,7 +56,9 @@ Mapping IRC messages to Matrix is more difficult: not because it's hard to repre
  	<li>If the message is an intentional duplicate?</li>
 </ul>
 The IRC protocol does not have message IDs, so the bridge cannot de-duplicate messages as they arrive. Instead, it "nominates" a single user's connection to be responsible for delivering messages from that channel. This introduces another problem though. Long-lived TCP connections are fickle things, and can fail without any kind of visible warning until you try to send bytes down it. If a user's connection drops, another user needs to take over responsibility for delivering messages. This is what the "IRC Event Broker" class does. It allows users to "steal" messages if the bridge has any indication that the connection in charge has dropped. This technique has worked well for us, and gives us the ability to have more robust connections to the channel than with one TCP connection alone.
-<h3>Admin Rooms</h3>
+
+### Admin Rooms
+
 Admin rooms are private Matrix rooms between a real Matrix user and the bridge bot. It allows the Matrix user to control their connection to IRC. It allows:
 <ul>
  	<li>The IRC nick to be changed.</li>
@@ -70,5 +76,7 @@ To perform these actions, Matrix users send a text message which starts with a c
  	<li>Send some information which <em>sometimes</em> indicates success.</li>
 </ul>
 This makes it very difficult to know if a request succeeded or failed, and I'll go into more detail in the next post which focuses on problems we've encountered when developing the IRC bridge. This room is also used to inform the Matrix user about general information about their IRC connection, such as when their connection has been lost, or if there are any errors (e.g. "requires chanops to do this action"). The bridge makes no effort to parse these errors, because it doesn't always know what caused the error to happen.
-<h3>Wrapup</h3>
+
+### Wrapup
+
 Developing a comprehensive IRC bridge is a very difficult task. This post has outlined a few of the ways in which we've designed our bridge, and some of the general problems in this field. The bridge is constantly improving as we discover new edge cases with the plethora of IRCd implementations out there. The next post will look at some of these edge cases and look back at some previous outages and examine why they occurred.

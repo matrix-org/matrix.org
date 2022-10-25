@@ -22,7 +22,9 @@ As a final final point #synapse:matrix.org is now an officially supported room, 
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.7">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>.
 
 Onwards!
-<h3>Synapse 0.33.7 Change Log</h3>
+
+### Synapse 0.33.7 Change Log
+
 <strong>Warning</strong>: This release removes the example email notification templates from <code>res/templates</code> (they are now internal to the python package). This should only affect you if you (a) deploy your Synapse instance from a git checkout or a github snapshot URL, and (b) have email notifications enabled.
 
 If you have email notifications enabled, you should ensure that <code>email.template_dir</code> is either configured to point at a directory where you have installed customised templates, or leave it unset to use the default templates.
@@ -47,7 +49,9 @@ The configuration parser will try to detect the situation where <code>email.tem
  	<li>Workers now start on Python 3. (<a href="https://github.com/matrix-org/synapse/issues/4027" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4027/hovercard" aria-describedby="hovercard-aria-description">#4027</a>)</li>
  	<li>Synapse now starts on Python 3.7. (<a href="https://github.com/matrix-org/synapse/issues/4033" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4033/hovercard" aria-describedby="hovercard-aria-description">#4033</a>)</li>
 </ul>
-<h3>Internal Changes</h3>
+
+### Internal Changes
+
 <ul>
  	<li>Log exceptions in looping calls (<a href="https://github.com/matrix-org/synapse/issues/4008" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4008/hovercard" aria-describedby="hovercard-aria-description">#4008</a>)</li>
  	<li>Optimisation for serving federation requests (<a href="https://github.com/matrix-org/synapse/issues/4017" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4017/hovercard" aria-describedby="hovercard-aria-description">#4017</a>)</li>

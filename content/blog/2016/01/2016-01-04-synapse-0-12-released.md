@@ -14,12 +14,16 @@ To greet the new year, we bring you all new Synapse 0.12. The focus here has bee
 We highly recommend all homeservers upgrading to v0.12.0 as soon as possible. Get it now from <a href="https://github.com/matrix-org/synapse/">https://github.com/matrix-org/synapse/</a> or via our shiny new Debian packages at <a href="/packages/debian/">https://matrix.org/packages/debian/</a>.
 
 Full changelog follows:
-<h3>Changes in synapse v0.12.0 (2016-01-04)</h3>
+
+### Changes in synapse v0.12.0 (2016-01-04)
+
 <ul>
     <li>Expose <code>/login</code> under <code>r0</code> (PR #459)</li>
 </ul>
 <a name="user-content-changes-in-synapse-v0-12-0-rc3-2015-12-23"></a>
-<h3><a id="user-content-changes-in-synapse-v0120-rc3-2015-12-23" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0120-rc3-2015-12-23"></a>Changes in synapse v0.12.0-rc3 (2015-12-23)</h3>
+
+### <a id="user-content-changes-in-synapse-v0120-rc3-2015-12-23" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0120-rc3-2015-12-23"></a>Changes in synapse v0.12.0-rc3 (2015-12-23)
+
 <ul>
     <li>Allow guest accounts access to <code>/sync</code> (PR #455)</li>
     <li>Allow filters to include/exclude rooms at the room level rather than just from the components of the sync for each room. (PR #454)</li>
@@ -33,7 +37,9 @@ Full changelog follows:
     <li>Fix a bug where synapse was leaking raw email address in third-party invites (PR #448)</li>
 </ul>
 <a name="user-content-changes-in-synapse-v0-12-0-rc2-2015-12-14"></a>
-<h3><a id="user-content-changes-in-synapse-v0120-rc2-2015-12-14" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0120-rc2-2015-12-14"></a>Changes in synapse v0.12.0-rc2 (2015-12-14)</h3>
+
+### <a id="user-content-changes-in-synapse-v0120-rc2-2015-12-14" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0120-rc2-2015-12-14"></a>Changes in synapse v0.12.0-rc2 (2015-12-14)
+
 <ul>
     <li>Add caches for whether rooms have been forgotten by a user (PR #434)</li>
     <li>Remove instructions to use <code>--process-dependency-link</code> since all of the dependencies of synapse are on PyPI (PR #436)</li>
@@ -43,7 +49,9 @@ Full changelog follows:
     <li>Fix bug calculating state in <code>/sync</code> requests (PR #442)</li>
 </ul>
 <a name="user-content-changes-in-synapse-v0-12-0-rc1-2015-12-10"></a>
-<h3><a id="user-content-changes-in-synapse-v0120-rc1-2015-12-10" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0120-rc1-2015-12-10"></a>Changes in synapse v0.12.0-rc1 (2015-12-10)</h3>
+
+### <a id="user-content-changes-in-synapse-v0120-rc1-2015-12-10" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0120-rc1-2015-12-10"></a>Changes in synapse v0.12.0-rc1 (2015-12-10)
+
 <ul>
     <li>Host the client APIs released as r0 by <a href="/docs/spec/r0.0.0/client_server.html">https://matrix.org/docs/spec/r0.0.0/client_server.html</a> on paths prefixed by<code>/_matrix/client/r0</code>. (PR #430, PR #415, PR #400)</li>
     <li>Updates the client APIs to match r0 of the matrix specification.

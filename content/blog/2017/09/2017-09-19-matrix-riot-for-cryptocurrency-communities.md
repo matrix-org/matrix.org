@@ -57,8 +57,9 @@ the <a href="https://github.com/matrix-org/synapse/pull/2457">DM/invite disablin
  	<li style="font-weight: 400;">Ability to disable federation for a room if you really want to lock it down to the users &amp; rules of a single server.
 </li>
 </ul>
-<h3>Things we need to improve:
-</h3>
+
+### Things we need to improve:
+
 **Groups (aka Communities):  **One of the biggest missing features in Matrix is the ability to define groups of users &amp; rooms, similar to a Slack team or Discord server, which can be used to organise together a set of discussions and generally give a feeling of community.  We've been working hard at this and expect to see it land in Riot/Web in the next few weeks.  In the meanwhile, you can see some of the UX we're aiming for <a href="https://docs.google.com/document/d/1wv78GqgG59CLjIKPi7GGkdqI6KOeQUBl9Bnf-uA-Kc0/edit#heading=h.xravd1v7n60m">here</a>!
 
 

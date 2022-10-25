@@ -36,8 +36,9 @@ As always, you can get it from <a href="https://github.com/matrix-org/synapse/r
 thanks for flying Matrix!
 <div class="release-body commit open float-left">
 <div class="release-header">
-<h3 class="f5 text-gray mt-1 mb-4"></h3>
-<h3 class="f5 text-gray mt-1 mb-4">Changes in synapse v0.27.2 (2018-03-26)</h3>
+
+### Changes in synapse v0.27.2 (2018-03-26)
+
 </div>
 <div class="markdown-body">
 
@@ -52,7 +53,8 @@ Bug fixes:
 <div class="release-body commit open float-left">
 <div class="markdown-body">
 
-<h3>Changes in synapse v0.27.1 (2018-03-26)</h3>
+### Changes in synapse v0.27.1 (2018-03-26)
+
 Meta release as v0.27.0 temporarily pointed to the wrong commit
 
 </div>
@@ -62,10 +64,12 @@ Meta release as v0.27.0 temporarily pointed to the wrong commit
 <div class="release-body commit open float-left">
 <div class="markdown-body">
 
-<h3>Changes in synapse v0.27.0 (2018-03-26)</h3>
+### Changes in synapse v0.27.0 (2018-03-26)
+
 No changes since v0.27.0-rc2
 
-<h3>Changes in synapse v0.27.0-rc2 (2018-03-19)</h3>
+### Changes in synapse v0.27.0-rc2 (2018-03-19)
+
 Pulls in v0.26.1
 
 Bug fixes:
@@ -73,7 +77,8 @@ Bug fixes:
  	<li>Fix bug introduced in v0.27.0-rc1 that causes much increased memory usage in state cache (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3005" data-error-text="Failed to load issue title" data-id="305611773" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3005">#3005</a>)</li>
 </ul>
 
-<h3>Changes in synapse v0.27.0-rc1 (2018-03-14)</h3>
+### Changes in synapse v0.27.0-rc1 (2018-03-14)
+
 The common case for running Synapse is not to run separate workers, but for those that do, be aware that synctl no longer starts the main synapse when using <code>-a</code> option with workers. A new worker file should be added with <code>worker_app: synapse.app.homeserver</code>.
 
 This release also begins the process of renaming a number of the metrics

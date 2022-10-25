@@ -12,14 +12,20 @@ Hi all,
 We've released Synapse 0.19.3-rc2 as 0.19.3 with no changes. This is a slightly unusual release, as 0.19.3-rc2 dates from March 13th and <a href="https://github.com/matrix-org/synapse/compare/672dcf5...d101488">a lot of stuff</a> has landed on the develop branch since then - however, we'll be releasing that as 0.20.0 once it's ready. Instead, 0.19.3 has a set of intermediary performance and bug fixes; the only new feature is a set of admin APIs kindly contributed by <a href="https://github.com/morteza-araby">@morteza-araby</a>.
 
 The changelog follows - please upgrade from https://github.com/matrix-org/synapse or your OS packages as normal :)
-<h3>Changes in synapse v0.19.3 (2017-03-20)</h3>
+
+### Changes in synapse v0.19.3 (2017-03-20)
+
 No changes since v0.19.3-rc2
-<h3>Changes in synapse v0.19.3-rc2 (2017-03-13)</h3>
+
+### Changes in synapse v0.19.3-rc2 (2017-03-13)
+
 Bug fixes:
 <ul>
  	<li>Fix bug in handling of incoming device list updates over federation.</li>
 </ul>
-<h3>Changes in synapse v0.19.3-rc1 (2017-03-08)</h3>
+
+### Changes in synapse v0.19.3-rc1 (2017-03-08)
+
 Features:
 <ul>
  	<li>Add some administration functionalities. Thanks to <a class="user-mention" href="https://github.com/morteza-araby"><span class="ghh-user-x tooltipstered" title="">@morteza-araby</span></a>! (PR <a class="issue-link js-issue-link ghh-issue-x tooltipstered" title="" href="https://github.com/matrix-org/synapse/pull/1784" data-url="https://github.com/matrix-org/synapse/issues/1784" data-id="199561652" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1784</a>)</li>

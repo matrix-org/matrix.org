@@ -9,7 +9,8 @@ category = ["General", "GSOC"]
 
 It's been 3 months since the <a href="/blog/2015/12/25/the-matrix-holiday-special/">Matrix Holiday Special</a> and once again we've all been too busy writing code to put anything that detailed on the blog.  So without further a do here's a quick overview of how things have progressed so far in 2016!
 
-<h3>Home servers</h3>
+### Home servers
+
 <br/>
 
 #### Synapse
@@ -43,7 +44,8 @@ The whole point of Dendron is to provide an architecture where we can split apar
 <a href="https://www.ruma.io/">Ruma</a> has also seen some progress over the last few months - Ruma is an independent Rust language homeserver project led by Jimmy Cuadra, and whilst in early development still (currently focusing on the user login and registration system) shows a lot of promise.  Lots of work has ended up going into the required Rust dependencies rather than the Matrix code itself, but if you're interested in Rust then please drop by <a href="https://vector.im/beta/#/room/#ruma:matrix.org">#ruma:matrix.org</a> or #ruma on Freenode and say hi!
 
 <br/>
-<h3>Clients</h3>
+
+### Clients
 
 Whilst homeserver development is mainly all about performance and scaling work currently, the client side of the Matrix ecosystem is the polar opposite - with lots of rapid progress on exciting new clients happening from all over the community.
 
@@ -109,7 +111,8 @@ The best way of seeing what's been going on here is probably by considering Vect
 All that remains right now is yet more bugfixing and incorporating feedback from the current betas!  Please give as much feedback as possible in <a href="https://vector.im/beta/#/room/#vector:matrix.org">#vector:matrix.org</a> :)
 
 <br/>
-<h3>Bridges & Bots</h3>
+
+### Bridges & Bots
 
 Bridges, bots, and other integrations and application services have inevitably taken slightly lower priority whilst we've been focusing on the core server and client bits of the ecosystem.  However, as of March we've started a major new project to get these moving again, starting with a big update to the <a href="https://github.com/matrix-org/matrix-appservice-irc">IRC Bridge</a>.  This is due to be released next week, but you can get a sneak peek at what's going into the release at the <a href="https://github.com/matrix-org/matrix-appservice-irc/commits/develop">commit log</a>.  Highlights include the ability to persist nicks; connect via IPv6; improve formatted message handling; actually feed error messages from IRC back to Matrix; and much much more.
 
@@ -124,24 +127,28 @@ Totally forgot to mention a few of the key new bridges which have been contribut
 Similarly, <a href="https://github.com/matrix-org/matrix-appservice-gitter">matrix-appservice-gitter</a> is a Gitter<->Matrix bridge built by Leonerd on top of the <a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a> Node library.  Again, it's early days but is working well for 'hardcoded' bridging - supporting dynamic rooms and users is next on the todo list :)
 
 <br/>
-<h3>The Spec</h3>
+
+### The Spec
 
 We started our formal release process for the spec just before Christmas with r0.0.0 - and released <a href="http://matrix.org/docs/spec/r0.0.1">r0.0.1</a> in January with <a href="http://matrix.org/docs/spec/r0.0.1/client_server.html#changelog">minor clarifications and updates</a>.  In practice the spec feels quite stable right now, although things have moved on a bit since January and r0.0.2 is definitely overdue at this point.
 
 In the meantime, you can always get the very latest bleeding edge copy of the spec via <a href="http://matrix.org/speculator">the speculator</a>.  We've also added an initial cut at a spec for the <a href="http://matrix.org/speculator/spec/HEAD/identity_service.html">Identity Service</a> at last.
 
 <br/>
-<h3>Events</h3>
+
+### Events
 
 We've been focusing on writing code than evangelising Matrix recently, although we did get out to <a href="/blog/2016/02/03/fosdem-16-retrospective/">FOSDEM 2016</a> and <a href="/blog/2016/02/09/matrix-in-japan/">TADHack Mini Japan and WebRTC Conference</a> and <a href="https://twitter.com/matrixdotorg/status/706916982960967680">Enterprise Connect 2016</a> where we showed off Matrix & Vector in the WebRTC Real World Innovation showcase.
 
 <br/>
-<h3>GSoC</h3>
+
+### GSoC
 
 We are incredibly grateful to have been accepted as an organisation into Google Summer of Code 2016!  The last two weeks have been the window for students to propose projects to us that they could work on over the course of the summer, and it's been fascinating to meet the GSoCers and see a whole new community pop up on Matrix and advise and mentor applicants through their proposals.  At the last count we've received 35 proposals, many inspired by <a href="https://github.com/matrix-org/GSoC/blob/master/IDEAS.md">our list of ideas</a>, including some really impressive candidates - many thanks to all the students who have applied to us.  We don't know yet how many slots Google will allocate to us, but one way or another we're really looking forward to helping the GSoCers make the most out of their summer of Matrix!  All GSoC discussion is happening in <a href="https://vector.im/beta/#/room/#gsoc:matrix.org">#gsoc:matrix.org</a>.
 
 <br/>
-<h3>What's next?</h3>
+
+### What's next?
 
 In no particular order, the urgent stuff that still remains includes:
 

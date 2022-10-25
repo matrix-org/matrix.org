@@ -17,7 +17,7 @@ For those interested in what we are working on right now, take a look at our <a 
 
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.8">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>.
 
-<h3>Synapse 0.33.8 changelog</h3>
+### Synapse 0.33.8 changelog
 
 #### Features
 

@@ -12,7 +12,9 @@ We've just released <a href="https://github.com/matrix-org/synapse/releases/tag/
 Long-awaited Communities/Groups will land in Synapse 0.24, which should come quite soon (we're almost ready to merge it to develop, but it's a major update so we wanted to get 0.23 out the door first).
 
 As always, you can get your latest Synapse from <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a> or a OS repository of your choice (we've just released the official Debian packages).
-<h3>Full details of Synapse 0.23:</h3>
+
+### Full details of Synapse 0.23:
+
 Features:
 <ul>
  	<li>Add a frontend proxy worker (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2344" data-error-text="Failed to load issue title" data-id="241327229" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2344">#2344</a>)</li>

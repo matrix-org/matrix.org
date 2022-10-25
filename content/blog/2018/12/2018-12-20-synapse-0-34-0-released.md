@@ -30,7 +30,8 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/syna
 
 In particular, if you want to run Synapse 0.34.0 on Python 3 take a look at the <a href="https://github.com/matrix-org/synapse/blob/release-v0.34.0/UPGRADE.rst#upgrading-to-v0340">upgrade notes</a>.
 
-<h3>Synapse 0.34.0 changelog</h3>
+### Synapse 0.34.0 changelog
+
 Synapse 0.34.0 is the first release to fully support Python 3. Synapse will now run on Python versions 3.5 or 3.6 (as well as 2.7). Support for Python 3.7 remains experimental.
 
 We recommend upgrading to Python 3, but make sure to read the <a href="https://github.com/matrix-org/synapse/blob/release-v0.34.0/UPGRADE.rst#upgrading-to-v0340">upgrade notes</a> when doing so.

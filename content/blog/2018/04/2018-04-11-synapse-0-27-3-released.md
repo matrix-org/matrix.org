@@ -17,15 +17,21 @@ Phone home stats are entirely optional and can be enabled/disabled by setting "<
 Please consider enabling phone home stats if you currently have not done so - this data is really important to us in improving Matrix as a whole (and justifying future funding for <a class="linkified" href="http://matrix.org/" target="_blank" rel="noopener">Matrix.org</a>).
 
 As always, you can get it from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.27.3">https://github.com/matrix-org/synapse/releases/tag/v0.27.3</a> and thanks to everyone who tested the release candidates.
-<h3>Changes in synapse v0.27.3 (2018-04-11)</h3>
+
+### Changes in synapse v0.27.3 (2018-04-11)
+
 Bug fixes:
 <ul>
  	<li>URL quote path segments over federation (<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3082" data-error-text="Failed to load issue title" data-id="312859684" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3082">#3082</a>)</li>
 </ul>
-<h3>Changes in synapse v0.27.3-rc2 (2018-04-09)</h3>
+
+### Changes in synapse v0.27.3-rc2 (2018-04-09)
+
 v0.27.3-rc1 used a stale version of the develop branch so the changelog overstates
 the functionality. v0.27.3-rc2 is up to date, rc1 should be ignored.
-<h3>Changes in synapse v0.27.3-rc1 (2018-04-09)</h3>
+
+### Changes in synapse v0.27.3-rc1 (2018-04-09)
+
 Notable changes include API support for joinability of groups. Also new metrics
 and phone home stats. Phone home stats include better visibility of system usage
 so we can tweak synpase to work better for all users rather than our own experience

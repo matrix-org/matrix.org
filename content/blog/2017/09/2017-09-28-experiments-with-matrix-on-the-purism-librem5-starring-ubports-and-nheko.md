@@ -28,7 +28,9 @@ Finally, there doesn't seem to be much documentation out there on how to do a he
 Thanks for reading, and don't forget to preorder!
 
 Matthew
-<h3>Recipe: Librem5 experiments with an Ubuntu Phone and Nheko</h3>
+
+### Recipe: Librem5 experiments with an Ubuntu Phone and Nheko
+
 Starting point: one old BQ Aquaris E5 ubuntu phone, running some old version of Ubuntu Touch which had got completely stuck (UI only unfreezing for 2-3 seconds every 2-3 minutes).
 
 Step one: flash to latest UBPorts image:

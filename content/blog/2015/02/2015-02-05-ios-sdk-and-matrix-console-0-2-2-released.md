@@ -13,7 +13,8 @@ If you use CocoaPods to manage your application dependencies, note that the Matr
 
 The changes since the last release are:
 
-<h3>SDK</h3>
+### SDK
+
 <dl><dt>Improvements:</dt><dd>
 <ul>
 	<li>MXFileStore stores data on a separated thread to avoid blocking the UI thread.</li>
@@ -36,7 +37,9 @@ The changes since the last release are:
 	<li>MXRoom: Fixed [MXRoom sendTextMessage]</li>
 </ul>
 </dd></dl>
-<h3><a id="user-content-matrix-console" class="anchor" href="https://github.com/matrix-org/matrix-ios-sdk/blob/master/CHANGES.rst#matrix-console"></a>Matrix Console</h3>
+
+### <a id="user-content-matrix-console" class="anchor" href="https://github.com/matrix-org/matrix-ios-sdk/blob/master/CHANGES.rst#matrix-console"></a>Matrix Console
+
 <dl><dt>Improvements:</dt><dd>
 <ul>
 	<li>When long pressing on a message, the app shows the JSON string of the Matrix event.</li>

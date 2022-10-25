@@ -12,13 +12,17 @@ Hi folks,
 We released synapse 0.18.5 on Friday.  This is mainly about fixing performance problems with the unread room counts and the public room directory; polishing the E2E endpoints based on beta feedback; and general minor bits and bobs.
 
 Get it whilst it's (almost) hot from <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>!  Changelog follows:
-<h3>Changes in synapse v0.18.5 (2016-12-16)</h3>
+
+### Changes in synapse v0.18.5 (2016-12-16)
+
 Bug fixes:
 <ul>
  	<li>Fix federation /backfill returning events it shouldn't (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1700" data-url="https://github.com/matrix-org/synapse/issues/1700" data-id="195535459" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1700</a>)</li>
  	<li>Fix crash in url preview (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1701" data-url="https://github.com/matrix-org/synapse/issues/1701" data-id="195654621" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1701</a>)</li>
 </ul>
-<h3>Changes in synapse v0.18.5-rc3 (2016-12-13)</h3>
+
+### Changes in synapse v0.18.5-rc3 (2016-12-13)
+
 Features:
 <ul>
  	<li>Add support for E2E for guests (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1653" data-url="https://github.com/matrix-org/synapse/issues/1653" data-id="191729740" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1653</a>)</li>
@@ -43,12 +47,16 @@ Bug fixes:
  	<li>Fix bug where calls to <code>/sync</code> didn't correctly timeout (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1683" data-url="https://github.com/matrix-org/synapse/issues/1683" data-id="194627488" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1683</a>)</li>
  	<li>Fix bug where E2E key query would fail if a single remote host failed (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1686" data-url="https://github.com/matrix-org/synapse/issues/1686" data-id="194665373" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1686</a>)</li>
 </ul>
-<h3>Changes in synapse v0.18.5-rc2 (2016-11-24)</h3>
+
+### Changes in synapse v0.18.5-rc2 (2016-11-24)
+
 Bug fixes:
 <ul>
  	<li>Don't send old events over federation, fixes bug in -rc1.</li>
 </ul>
-<h3>Changes in synapse v0.18.5-rc1 (2016-11-24)</h3>
+
+### Changes in synapse v0.18.5-rc1 (2016-11-24)
+
 Features:
 <ul>
  	<li>Implement "event_fields" in filters (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1638" data-url="https://github.com/matrix-org/synapse/issues/1638" data-id="190978482" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1638</a>)</li>

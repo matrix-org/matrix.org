@@ -17,14 +17,15 @@ Meanwhile we have a <strong>lot</strong> of new stuff coming on the horizon - a 
 
 The full changelog follows below; as always you can grab Synapse from <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>.   Thanks for flying Matrix!
 
-<h3>Synapse 0.33.0 (2018-07-19)</h3>
+### Synapse 0.33.0 (2018-07-19)
 
 #### Bugfixes
 
 <ul>
  	<li>Disable a noisy warning about logcontexts. (<a href="https://github.com/matrix-org/synapse/issues/3561">#3561</a>)</li>
 </ul>
-<h3>Synapse 0.33.0rc1 (2018-07-18)</h3>
+
+### Synapse 0.33.0rc1 (2018-07-18)
 
 #### Features
 

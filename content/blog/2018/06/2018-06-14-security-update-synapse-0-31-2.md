@@ -26,7 +26,9 @@ This work is all part of a general push to finalise and harden and fully specify
 As always, you can get the new update from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.31.2">https://github.com/matrix-org/synapse/releases/tag/v0.31.2</a> or from any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>.
 
 thanks, and apologies for the inconvenience.
-<h3>Changes in synapse v0.31.2 (2018-06-14)</h3>
+
+### Changes in synapse v0.31.2 (2018-06-14)
+
 SECURITY UPDATE: Prevent unauthorised users from setting state events in a room when there is no <code>m.room.power_levels</code> event in force in the room. (PR <a href="https://github.com/matrix-org/synapse/pull/3397">#3397</a>)
 
 Discussion around the Matrix Spec change proposal for this change can be followed at <a href="https://github.com/matrix-org/matrix-doc/issues/1304">https://github.com/matrix-org/matrix-doc/issues/1304</a>.
