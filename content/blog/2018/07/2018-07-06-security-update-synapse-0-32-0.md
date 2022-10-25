@@ -28,7 +28,8 @@ As always, you can get the new update from <a href="https://github.com/matrix-or
 No changes since 0.32.0rc1
 <h2>Synapse 0.32.0rc1 (2018-07-05)</h2>
 
-<h4>Features</h4>
+#### Features
+
 <ul>
  	<li>Add blacklist &amp; whitelist of servers allowed to send events to a
 room via <code>m.room.server_acl</code> event. (<a href="https://github.com/matrix-org/synapse/commit/feef8461d19c51f3766471e17e2a2f8a2b36c785">merge</a>)</li>
@@ -44,7 +45,9 @@ lock AS IP access (<a class="issue-link js-issue-link" href="https://github.com/
  	<li>Reject invalid server names in federation requests (<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3480" data-error-text="Failed to load issue title" data-id="337874054" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3480">#3480</a>)</li>
  	<li>Reject invalid server names in homeserver.yaml (<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3483" data-error-text="Failed to load issue title" data-id="338348899" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3483">#3483</a>)</li>
 </ul>
-<h4>Bugfixes</h4>
+
+#### Bugfixes
+
 <ul>
  	<li>Strip access_token from outgoing requests (<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3327" data-error-text="Failed to load issue title" data-id="328782473" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3327">#3327</a>)</li>
  	<li>Redact AS tokens in logs (<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3349" data-error-text="Failed to load issue title" data-id="329791545" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3349">#3349</a>)</li>
@@ -57,16 +60,22 @@ retrieve the prev_events for. (<a class="issue-link js-issue-link" href="https:/
 User-Agent header (<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3470" data-error-text="Failed to load issue title" data-id="337261723" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3470">#3470</a>)</li>
  	<li>Invalidate cache on correct thread to avoid race (<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3473" data-error-text="Failed to load issue title" data-id="337463703" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3473">#3473</a>)</li>
 </ul>
-<h4>Improved Documentation</h4>
+
+#### Improved Documentation
+
 <ul>
  	<li><code>doc/postgres.rst</code>: fix display of the last command block. Thanks to
 <a class="user-mention" href="https://github.com/ArchangeGabriel" data-hovercard-user-id="490531" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" aria-describedby="hovercard-aria-description">@ArchangeGabriel</a>! (<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3340" data-error-text="Failed to load issue title" data-id="329241972" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3340">#3340</a>)</li>
 </ul>
-<h4>Deprecations and Removals</h4>
+
+#### Deprecations and Removals
+
 <ul>
  	<li>Remove was_forgotten_at (<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3324" data-error-text="Failed to load issue title" data-id="328600145" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3324">#3324</a>)</li>
 </ul>
-<h4>Misc</h4>
+
+#### Misc
+
 <ul>
  	<li><a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3332" data-error-text="Failed to load issue title" data-id="328922729" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3332">#3332</a> <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3341" data-error-text="Failed to load issue title" data-id="329315777" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3341">#3341</a> <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3347" data-error-text="Failed to load issue title" data-id="329626817" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3347">#3347</a> <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3348" data-error-text="Failed to load issue title" data-id="329660142" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3348">#3348</a> <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3356" data-error-text="Failed to load issue title" data-id="329938222" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3356">#3356</a> <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3385" data-error-text="Failed to load issue title" data-id="331533857" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3385">#3385</a> <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3446" data-error-text="Failed to load issue title" data-id="335720791" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3446">#3446</a> <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/issues/3447" data-error-text="Failed to load issue title" data-id="335727844" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3447">#3447</a> <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3467" data-error-text="Failed to load issue title" data-id="336993276" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3467">#3467</a> <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3474" data-error-text="Failed to load issue title" data-id="337465451" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3474">#3474</a></li>
 </ul>

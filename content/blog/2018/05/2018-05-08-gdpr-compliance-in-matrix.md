@@ -70,8 +70,9 @@ In practice, our core to-do list for Right to Erasure is:
  	<li style="font-weight: 400;" id="mxid_erasure">Matrix must specify a way of informing both servers and clients (especially bots and bridges) of GDPR erasures (as distinct from redactions), so that they can apply the appropriate erasure semantics.
 </li>
 </ul>
-<h4>GDPR erasure of Matrix IDs
-</h4>
+
+#### GDPR erasure of Matrix IDs
+
 One interesting edge case that comes out of GDPR erasure is that we need a way to stop GDPR-erased events from leaking out over federation - when in practice they are cryptographically signed into the event Directed Acyclic Graph (DAG) of a given room.  Today, we can remove the message contents (and preserve the integrity of the room's DAG) via redaction - but this still leaves personally identifying information in the form of the Matrix IDs (MXIDs) of the sender of these events.
 
 

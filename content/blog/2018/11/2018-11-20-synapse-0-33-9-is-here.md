@@ -20,12 +20,16 @@ I know I say it every time, but full python 3 support is really really close now
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.9">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. Also, check out our new <a href="/docs/guides/installing-synapse">Synapse installation guide page.</a>
 
 <h3>Synapse 0.33.9 changelog</h3>
-<h4>Features</h4>
+
+#### Features
+
 <ul>
  	<li>Include flags to optionally add <code>m.login.terms</code> to the registration flow when consent tracking is enabled. (<a href="https://github.com/matrix-org/synapse/issues/4004" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4004/hovercard" aria-describedby="hovercard-aria-description">#4004</a>, <a href="https://github.com/matrix-org/synapse/issues/4133" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4133/hovercard" aria-describedby="hovercard-aria-description">#4133</a>, <a href="https://github.com/matrix-org/synapse/issues/4142" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4142/hovercard" aria-describedby="hovercard-aria-description">#4142</a>, <a href="https://github.com/matrix-org/synapse/issues/4184" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4184/hovercard" aria-describedby="hovercard-aria-description">#4184</a>)</li>
  	<li>Support for replacing rooms with new ones (<a href="https://github.com/matrix-org/synapse/issues/4091" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4091/hovercard" aria-describedby="hovercard-aria-description">#4091</a>, <a href="https://github.com/matrix-org/synapse/issues/4099" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4099/hovercard" aria-describedby="hovercard-aria-description">#4099</a>, <a href="https://github.com/matrix-org/synapse/issues/4100" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4100/hovercard" aria-describedby="hovercard-aria-description">#4100</a>, <a href="https://github.com/matrix-org/synapse/issues/4101" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4101/hovercard" aria-describedby="hovercard-aria-description">#4101</a>)</li>
 </ul>
-<h4>Bugfixes</h4>
+
+#### Bugfixes
+
 <ul>
  	<li>Fix exceptions when using the email mailer on Python 3. (<a href="https://github.com/matrix-org/synapse/issues/4095" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4095/hovercard" aria-describedby="hovercard-aria-description">#4095</a>)</li>
  	<li>Fix e2e key backup with more than 9 backup versions (<a href="https://github.com/matrix-org/synapse/issues/4113" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4113/hovercard" aria-describedby="hovercard-aria-description">#4113</a>)</li>
@@ -39,14 +43,18 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/syna
  	<li>The hash_password script now works on Python 3. (<a href="https://github.com/matrix-org/synapse/issues/4161" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4161/hovercard" aria-describedby="hovercard-aria-description">#4161</a>)</li>
  	<li>Fix noop checks when updating device keys, reducing spurious device list update notifications. (<a href="https://github.com/matrix-org/synapse/issues/4164" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4164/hovercard" aria-describedby="hovercard-aria-description">#4164</a>)</li>
 </ul>
-<h4>Deprecations and Removals</h4>
+
+#### Deprecations and Removals
+
 <ul>
  	<li>The disused and un-specced identicon generator has been removed. (<a href="https://github.com/matrix-org/synapse/issues/4106" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4106/hovercard" aria-describedby="hovercard-aria-description">#4106</a>)</li>
  	<li>The obsolete and non-functional /pull federation endpoint has been removed. (<a href="https://github.com/matrix-org/synapse/issues/4118" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4118/hovercard" aria-describedby="hovercard-aria-description">#4118</a>)</li>
  	<li>The deprecated v1 key exchange endpoints have been removed. (<a href="https://github.com/matrix-org/synapse/issues/4119" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4119/hovercard" aria-describedby="hovercard-aria-description">#4119</a>)</li>
  	<li>Synapse will no longer fetch keys using the fallback deprecated v1 key exchange method and will now always use v2. (<a href="https://github.com/matrix-org/synapse/issues/4120" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4120/hovercard" aria-describedby="hovercard-aria-description">#4120</a>)</li>
 </ul>
-<h4>Internal Changes</h4>
+
+#### Internal Changes
+
 <ul>
  	<li>Fix build of Docker image with docker-compose (<a href="https://github.com/matrix-org/synapse/issues/3778" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3778/hovercard" aria-describedby="hovercard-aria-description">#3778</a>)</li>
  	<li>Delete unreferenced state groups during history purge (<a href="https://github.com/matrix-org/synapse/issues/4006" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4006/hovercard" aria-describedby="hovercard-aria-description">#4006</a>)</li>

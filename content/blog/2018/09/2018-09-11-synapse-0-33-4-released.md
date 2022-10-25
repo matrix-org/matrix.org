@@ -12,7 +12,9 @@ Roll up, roll up, get it while it's hot, Synapse 0.33.4 is here.
 This release brings together a whole host of bug fixes, some enhancements to resource usage management and a bunch of internal changes in readiness for room member state lazy loading and our ongoing port to Python 3 (we are hoping to ship a py3 test candidate rsn!).
 
 As ever, you can get the new update from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.4">https://github.com/matrix-org/synapse/releases/tag/v0.33.4</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>.
-<h4>Features</h4>
+
+#### Features
+
 <ul>
  	<li>Support profile API endpoints on workers (<a href="https://github.com/matrix-org/synapse/issues/3659">#3659</a>)</li>
  	<li>Server notices for resource limit blocking (<a href="https://github.com/matrix-org/synapse/issues/3680">#3680</a>)</li>
@@ -20,7 +22,9 @@ As ever, you can get the new update from <a href="https://github.com/matrix-org
  	<li>Add mau_trial_days config param, so that users only get counted as MAU after N days. (<a href="https://github.com/matrix-org/synapse/issues/3749">#3749</a>)</li>
  	<li>Require twisted 17.1 or later (fixes <a href="https://github.com/matrix-org/synapse/issues/3741">#3741</a>). (<a href="https://github.com/matrix-org/synapse/issues/3751">#3751</a>)</li>
 </ul>
-<h4>Bugfixes</h4>
+
+#### Bugfixes
+
 <ul>
  	<li>Fix error collecting prometheus metrics when run on dedicated thread due to threading concurrency issues (<a href="https://github.com/matrix-org/synapse/issues/3722">#3722</a>)</li>
  	<li>Fix bug where we resent "limit exceeded" server notices repeatedly (<a href="https://github.com/matrix-org/synapse/issues/3747">#3747</a>)</li>
@@ -32,7 +36,9 @@ As ever, you can get the new update from <a href="https://github.com/matrix-org
  	<li>Fix bug in sending presence over federation (<a href="https://github.com/matrix-org/synapse/issues/3768">#3768</a>)</li>
  	<li>Fix bug where preserved threepid user comes to sign up and server is mau blocked (<a href="https://github.com/matrix-org/synapse/issues/3777">#3777</a>)</li>
 </ul>
-<h4>Internal Changes</h4>
+
+#### Internal Changes
+
 <ul>
  	<li>Removed the link to the unmaintained matrix-synapse-auto-deploy project from the readme. (<a href="https://github.com/matrix-org/synapse/issues/3378">#3378</a>)</li>
  	<li>Refactor state module to support multiple room versions (<a href="https://github.com/matrix-org/synapse/issues/3673">#3673</a>)</li>

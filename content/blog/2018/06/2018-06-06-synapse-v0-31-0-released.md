@@ -12,7 +12,9 @@ Good people, it's release time.
 With the core team focusing on upcoming performance work and GDPR management tooling, v0.31.0 is most notable for improvements to system stats. Additionally, work continues on our py3 port and a host of small bug fixes and perf improvements.
 
 Get it now from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.31.0">https://github.com/matrix-org/synapse/releases/tag/v0.31.0</a>
-<h4>Changes in synapse v0.31.0 (2018-06-06)</h4>
+
+#### Changes in synapse v0.31.0 (2018-06-06)
+
 Most notable change from v0.30.0 is to switch to python prometheus library to improve system stats reporting. WARNING this changes a number of prometheus metrics in a backwards-incompatible manner. For more details, see<code><a href="https://github.com/matrix-org/synapse/blob/master/docs/metrics-howto.rst">docs/metrics-howto.rst</a></code>
 
 Bug Fixes:
@@ -21,7 +23,9 @@ Bug Fixes:
  	<li>Fix LaterGuage error handling (<a class="commit-link" href="https://github.com/matrix-org/synapse/commit/694968fa81aab4eac81309b1e16f6063103dd57f"><tt>694968f</tt></a>)</li>
  	<li>Fix replication metrics (<a class="commit-link" href="https://github.com/matrix-org/synapse/commit/b7e7fd2d0edd4d46aaf9d6afc8df14cf3de911f9"><tt>b7e7fd2</tt></a>)</li>
 </ul>
-<h4>Changes in synapse v0.31.0-rc1 (2018-06-04)</h4>
+
+#### Changes in synapse v0.31.0-rc1 (2018-06-04)
+
 Features:
 <ul>
  	<li>Switch to the Python Prometheus library (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3256" data-error-text="Failed to load issue title" data-id="325104990" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3256">#3256</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3274" data-error-text="Failed to load issue title" data-id="325830300" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3274">#3274</a>)</li>

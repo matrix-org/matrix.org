@@ -21,7 +21,9 @@ Unfortunately there's a bunch of entirely different causes for this, both platfo
 Thanks to everyone who's been using E2E and reporting issues - given the number of different UISI error causes out there, it's been really useful to go through the different bug reports that folks have submitted.  Please continue to submit them when you see unexpected problems (especially over the coming months as stability improves!)
 <h3>New Projects!</h3>
 There have been a tonne of new projects popping up from all over the place since the last update.  Looking at the <a href="https://github.com/matrix-org/matrix-doc/commits/master/supporting-docs">git history</a> of the <a href="/docs/projects">projects page</a>, we've been adding one every few days!  Highlights include:
-<h4>Bridges:</h4>
+
+#### Bridges:
+
 <ul>
  	<li><a href="https://github.com/kfatehi/matrix-appservice-imessage">https://github.com/kfatehi/matrix-appservice-imessage</a> - A solid foundation for an iMessage bridge from kfatehi, built on top of the official matrix-appservice-bridge stack.  iMessage and FaceTime's crypto is tied into Apple's Fairplay DRM (famous for securing the iTunes Music Store and App Store) and is locked all the way down to the <a href="https://www.apple.com/business/docs/iOS_Security_Guide.pdf">keypair baked into your Apple device's CPU</a> at fabrication time, so for now the bridge has to be run on a macOS device in order to bridge.  It's very promising indeed, and exciting to see bridges to relatively inhospitable environments like iMessage popping up!</li>
  	<li><a href="https://github.com/Half-Shot/matrix-fb-chat/">https://github.com/Half-Shot/matrix-fb-chat/</a> - A proof-of-concept bridge for Facebook Messenger written by Half-Shot in TypeScript on top of the matrix-js-sdk.  Currently you have to manually configure which conversations to bridge between FB and Matrix, but it works!</li>
@@ -29,14 +31,18 @@ There have been a tonne of new projects popping up from all over the place sinc
  	<li><a href="https://github.com/pztrn/matrix-xmpp-bridge">https://github.com/pztrn/matrix-xmpp-bridge</a> - A major fork from pztrn of jfred's matrix-xmpp-bridge, now using flask, regius, alembic, sleekxmpp and all sorts.  Currently in very active dev!</li>
  	<li><a href="https://github.com/CyrusTheHedgehog/Hangouts-Bridge">https://github.com/CyrusTheHedgehog/Hangouts-Bridge</a> - A basic PoC of a Hangouts bridge, written in python3 asyncio</li>
 </ul>
-<h4>Clients</h4>
+
+#### Clients
+
 <ul>
  	<li><a href="https://github.com/lukebarnard1/j">https://github.com/lukebarnard1/j</a> - A blogging and journalism platform built on Matrix from Luke (moonlighting from the core team!)</li>
  	<li><a href="https://live.hello-matrix.net/">https://live.hello-matrix.net/</a> - a live-blogging system powered by Matrix from @ar</li>
  	<li><a href="https://github.com/pik/interlocutor">https://github.com/pik/interlocutor</a> - An experimental decentralized comment system powered by Matrix, written as a Polymer Webcomponent</li>
  	<li><a href="https://github.com/tjgillies/freebird">https://github.com/tjgillies/freebird</a> - a basic twitter clone built on Matrix by tjgillies</li>
 </ul>
-<h4>Other projects</h4>
+
+#### Other projects
+
 <ul>
  	<li><a href="https://github.com/slp/matrix-pushgw">https://github.com/slp/matrix-pushgw</a> - A Matrix push gateway written in Golang which exposes a custom TCP push protocol to apps, letting them get push notifications directly from your own gateway rather than via GCM or APNS.  The intention is to use it for Sailfish and Fdroid.  The initial implementation looks very promising - just needs the clientside support, and then folks who don't trust Google with their notifications can run completely indie at last!</li>
  	<li><a href="https://github.com/kultsinuppeli/riotchat">https://github.com/kultsinuppeli/riotchat</a> - Ansible playbook for Riot/Web and Synapse</li>
@@ -67,7 +73,9 @@ Riot development has been largely preoccupied with E2E debugging in the respecti
 
 <img class="aligncenter size-large wp-image-1874" src="/blog/wp-content/uploads/2016/12/Screen-Shot-2016-12-26-at-01.00.12-1024x687.png" alt="screen-shot-2016-12-26-at-01-00-12" width="1024" height="687" />
 <h3>Next Generation Homeservers</h3>
-<h4>Ruma</h4>
+
+#### Ruma
+
 <a href="https://ruma.io">Ruma</a> is a project led by Jimmy Cuadra to build a Matrix homeserver in Rust - the project has been ploughing steadily onwards through 2016 with a bit of an acceleration during December.  You can follow progress at the excellent <a href="https://www.ruma.io/news/">This Week in Ruma</a> blog, <a href="https://github.com/ruma/ruma/pulse/monthly">watching the project on Github</a>, and tracking the <a href="https://github.com/ruma/ruma/blob/master/STATUS.md">API status dashboard</a>.  Some of the latest PRs are looking very promising in terms of getting the core remaining CS APIs working, e.g:
 <ul class="simple-conversation-list varied-states">
  	<li><span class="num">Merged #113</span>
@@ -85,7 +93,9 @@ Riot development has been largely preoccupied with E2E debugging in the respecti
  <a class="title" href="https://github.com/ruma/ruma/issues/58">API: GET /events</a> 20 days ago</li>
 </ul>
 Needless to say, we've been keeping an eye on Ruma with extreme interest, not least as some of the Matrix core team are rabid Rustaceans too :)  We can't wait to see it exposing a usable CS API in the hopefully not-too-distant future!!
-<h4>Dendrite</h4>
+
+#### Dendrite
+
 Meanwhile, in the core team, we've been doing some fairly serious experimentation on next-generation homeservers.  Synapse is in a relatively stable state currently, and we've implemented most of the horizontal scalability tricks available to us there (e.g. splitting out <a href="https://github.com/matrix-org/synapse/blob/master/docs/workers.rst">worker processes</a>).  Instead we're starting to hit some fundamental limitations of the architecture: the fact that the whole codebase effectively assumes that it's talking to a single consistent database instance; python's single-threadedness and memory inefficiency; twisted's lack of profiling; being limited to sqlite's featureset; the fact that the schema has grown organically and is difficulty to refactor aggressively; the fact the app papers over SQL problems by caching everything in RAM (resulting in synapse's high RAM requirements); the constant bugs caused by lack of type safety; etc.
 
 We started an experiment in Golang to fix some of this a year ago in the form of <a href="https://github.com/matrix-org/dendron">Dendron</a> - a "<a href="http://www.martinfowler.com/bliki/StranglerApplication.html">strangler pattern</a>" homeserver skeleton intended to sit in front of a synapse and slowly port endpoints over to Go.  In practice, Dendron ended up just being a rather dubious Matrix-aware loadbalancer, and meanwhile no endpoints got moved into it (other than /login, which then got moved out again due to the extreme confusion of having to maintain implementations in both Dendron &amp; Synapse).  The main reasons for Dendron's failure are a) we had enough on our hands supporting Synapse; b) there were easier scalability improvements (e.g. workers) to be had on Synapse; c) the gradual migration approach looked like it would end up sharing the same storage backend as Synapse anyway, and potentially end up inheriting a bunch of Synapse's woes.

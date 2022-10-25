@@ -14,7 +14,9 @@ These past few weeks we've been focusing on fixing a whole host of federation bu
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.6">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>.
 
 <h3>Synapse 0.33.6</h3>
-<h4>Features</h4>
+
+#### Features
+
 <ul>
  	<li>Adding the ability to change MAX_UPLOAD_SIZE for the docker container variables. (<a href="https://github.com/matrix-org/synapse/issues/3883">#3883</a>)</li>
  	<li>Report "python_version" in the phone home stats (<a href="https://github.com/matrix-org/synapse/issues/3894">#3894</a>)</li>
@@ -22,7 +24,9 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/synap
  	<li>Include eventid in log lines when processing incoming federation transactions (<a href="https://github.com/matrix-org/synapse/issues/3959">#3959</a>)</li>
  	<li>Remove spurious check which made 'localhost' servers not work (<a href="https://github.com/matrix-org/synapse/issues/3964">#3964</a>)</li>
 </ul>
-<h4>Bugfixes</h4>
+
+#### Bugfixes
+
 <ul>
  	<li>Fix problem when playing media from Chrome using direct URL (thanks <a class="user-mention" href="https://github.com/remjey" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=13684203" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" aria-describedby="hovercard-aria-description">@remjey</a>!) (<a href="https://github.com/matrix-org/synapse/issues/3578">#3578</a>)</li>
  	<li>support registering regular users non-interactively with register_new_matrix_user script (<a href="https://github.com/matrix-org/synapse/issues/3836">#3836</a>)</li>
@@ -46,7 +50,9 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/synap
  	<li>Fix lazy loaded sync in the presence of rejected state events (<a href="https://github.com/matrix-org/synapse/issues/3986">#3986</a>)</li>
  	<li>Fix error when logging incomplete HTTP requests (<a href="https://github.com/matrix-org/synapse/issues/3990">#3990</a>)</li>
 </ul>
-<h4>Internal Changes</h4>
+
+#### Internal Changes
+
 <ul>
  	<li>Unit tests can now be run under PostgreSQL in Docker using <code>test_postgresql.sh</code>. (<a href="https://github.com/matrix-org/synapse/issues/3699">#3699</a>)</li>
  	<li>Speed up calculation of typing updates for replication (<a href="https://github.com/matrix-org/synapse/issues/3794">#3794</a>)</li>

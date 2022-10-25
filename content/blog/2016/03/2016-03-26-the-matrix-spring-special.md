@@ -11,7 +11,8 @@ It's been 3 months since the <a href="/blog/2015/12/25/the-matrix-holiday-specia
 
 <h3>Home servers</h3>
 <br/>
-<h4>Synapse</h4>
+
+#### Synapse
 
 Work on <a href="http://github.com/matrix-org/synapse">Synapse</a> (our reference homeserver) has been primarily focused on improving performance.  This may sound boring, but there's been a huge amount of improvement here since synapse 0.12 was released on Jan 4. Synapse 0.13 on Feb 10 brought huge CPU savings thanks to a whole fleet of caching and other optimisation work - the best way of seeing the difference here is to look at the load graph of the server that hosts matrix.org's synapse+postgres over the last few months:
 
@@ -28,14 +29,16 @@ Finally, Synapse is now part of <a href="http://www.freshports.org/net/py-matrix
 It's incredibly exciting to see Synapse's maturity improving and hitting the optimisation stage of its life; huge kudos to Erik for spearheading the optimisation work.  We strongly recommend folks upgrade to 0.14 when it's available; it's never been a better time to run a homeserver! :D
 
 <br/>
-<h4>Dendron</h4>
+
+#### Dendron
 
 Meanwhile, <a href="https://github.com/matrix-org/dendron">Dendron</a> (our next generation homeserver) development has been progressing interestingly: we finished an initial spike to get a Golang skeleton server in place, albeit one that delegates most of the endpoints through to Synapse.  In fact, matrix.org itself has been running via Dendron since February!
 
 The whole point of Dendron is to provide an architecture where we can split apart the various endpoints that Synapse provides today, re-implementing them where appropriate in Golang, and critically letting the endpoints scale horizontally with clusters of backend servers abstracted by the single Dendron API facade.  As a result, most of the Dendron work has actually ended up going into restructuring Synapse such that multiple Synapses can be run in a cluster behind a single Dendron, allowing us to horizontally scale API endpoints at last.  This takes the form of adding <a href="https://github.com/matrix-org/synapse/commit/1acc319070c0390d2330003bdc1e71cc66383dbb">cluster replication support</a> to Synapse.  This is still work-in-progress as we go through fixing up more and more state to be replicable (replicatable?) between synapses - hopefully it should land in the Synapse 0.15 timeframe.  And then we enter a very very interesting new world of horizontally scalable homeservers...
 
 <br/>
-<h4>Ruma</h4>
+
+#### Ruma
 
 <a href="https://www.ruma.io/">Ruma</a> has also seen some progress over the last few months - Ruma is an independent Rust language homeserver project led by Jimmy Cuadra, and whilst in early development still (currently focusing on the user login and registration system) shows a lot of promise.  Lots of work has ended up going into the required Rust dependencies rather than the Matrix code itself, but if you're interested in Rust then please drop by <a href="https://vector.im/beta/#/room/#ruma:matrix.org">#ruma:matrix.org</a> or #ruma on Freenode and say hi!
 
@@ -45,7 +48,8 @@ The whole point of Dendron is to provide an architecture where we can split apar
 Whilst homeserver development is mainly all about performance and scaling work currently, the client side of the Matrix ecosystem is the polar opposite - with lots of rapid progress on exciting new clients happening from all over the community.
 
 <br/>
-<h4>Perpetually Talking Online (PTO)</h4>
+
+#### Perpetually Talking Online (PTO)
 
 <a href="http://pto.im/">PTO</a> has evolved enormously since Torrie Fischer first revealed it at the end of 2015.  PTO is an independent project that acts as a Matrix client that exposes an IRC server interface - effectively turning any Matrix homeserver into an ircd; letting folks hook their favourite IRC clients directly into Matrix and use it as an enormous decentralised IRC network.  (N.B. this is not to be confused with <a href="https://github.com/matrix-org/matrix-appservice-irc">matrix-appservice-irc</a>, which acts as a server-side bridge between Matrix rooms and IRC channels.)  Obviously you lose some of the Matrix specific features (read receipts, typing notifs, VoIP, etc) but there's clearly a huge benefit for the IRC community to be able to use Matrix as if it were an IRC network.
 
@@ -58,19 +62,22 @@ There's one catch though - XChat was never quite built to handle the hundreds of
 Come hang out in <a href="https://vector.im/beta/#/room/#pto:oob.systems">#pto:oob.systems</a> if you're interested in PTO!
 
 <br/>
-<h4>Quaternion</h4>
+
+#### Quaternion
 
 <a href="https://github.com/Fxrh/Quaternion">Quaternion</a> is a new Qt/QML/C++ desktop client created by Felix Rohrbach.  It's a fairly early alpha but still quite usable and in very active development. <a href="https://vector.im/beta/#/room/#quaternion:matrix.org">#quaternion:matrix.org</a> is the place to talk all things Quaternion :)
 
 <img src="/blog/wp-content/uploads/2016/03/quaternion-1024x702.png" alt="quaternion" width="1024" height="702" class="aligncenter size-large wp-image-1566" />
 
 <br/>
-<h4>matrix-glib-sdk</h4>
+
+#### matrix-glib-sdk
 
 Meanwhile, over on the GTK side of the world, Gergely Polonkai has been been making great progress on his <a href="https://github.com/gergelypolonkai/matrix-glib-sdk">matrix-glib-sdk</a> Glib client SDK for Matrix.  The end goal here is to implement a full <a href="https://telepathy.freedesktop.org">Telepathy</a> plugin for Matrix on top of the SDK.  Originally written in C, but now shifted to Vala, the SDK is in very active development and now implements all(?) of the Matrix client-server API - a snapshot of the work-in-progress SDK API docs can be found at <a href="http://gergely.polonkai.eu/matrix-glib-sdk/">http://gergely.polonkai.eu/matrix-glib-sdk</a>.  Next up is a formal release and building out clients on top!
 
 <br/>
-<h4>matrix-react-sdk, matrix-ios-sdk, matrix-android-sdk and Vector</h4>
+
+#### matrix-react-sdk, matrix-ios-sdk, matrix-android-sdk and Vector
 
 Finally, huge amounts of time and effort have continued to be pumped into the official <a href="http://github.com/matrix-org/matrix-react-sdk">matrix-react-sdk</a>, <a href="http://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a> and <a href="http://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a> - driven substantially by requirements for <a href="http://vector.im">Vector</a>, the <a href="http://github.com/vector-im">FOSS</a> Matrix-powered collaboration app that we've been helping with:
 

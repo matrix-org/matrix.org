@@ -34,7 +34,9 @@ In particular, if you want to run Synapse 0.34.0 on Python 3 take a look at the 
 Synapse 0.34.0 is the first release to fully support Python 3. Synapse will now run on Python versions 3.5 or 3.6 (as well as 2.7). Support for Python 3.7 remains experimental.
 
 We recommend upgrading to Python 3, but make sure to read the <a href="https://github.com/matrix-org/synapse/blob/release-v0.34.0/UPGRADE.rst#upgrading-to-v0340">upgrade notes</a> when doing so.
-<h4>Features</h4>
+
+#### Features
+
 <ul>
  	<li>Add 'sandbox' to CSP for media reprository (<a href="https://github.com/matrix-org/synapse/issues/4284" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4284/hovercard" aria-describedby="hovercard-aria-description">#4284</a>)</li>
  	<li>Make the new landing page prettier. (<a href="https://github.com/matrix-org/synapse/issues/4294" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4294/hovercard" aria-describedby="hovercard-aria-description">#4294</a>)</li>
@@ -46,7 +48,9 @@ We recommend upgrading to Python 3, but make sure to read the <a href="https://
  	<li>Rename login type <code>m.login.cas</code> to <code>m.login.sso</code> (<a href="https://github.com/matrix-org/synapse/issues/4220" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4220/hovercard" aria-describedby="hovercard-aria-description">#4220</a>)</li>
  	<li>Add an option to disable search for homeservers that may not be interested in it. (<a href="https://github.com/matrix-org/synapse/issues/4230" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4230/hovercard" aria-describedby="hovercard-aria-description">#4230</a>)</li>
 </ul>
-<h4>Bugfixes</h4>
+
+#### Bugfixes
+
 <ul>
  	<li>Pushrules can now again be made with non-ASCII rule IDs. (<a href="https://github.com/matrix-org/synapse/issues/4165" data-hovercard-type="issue" data-hovercard-url="/matrix-org/synapse/issues/4165/hovercard" aria-describedby="hovercard-aria-description">#4165</a>)</li>
  	<li>The media repository now no longer fails to decode UTF-8 filenames when downloading remote media. (<a href="https://github.com/matrix-org/synapse/issues/4176" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4176/hovercard" aria-describedby="hovercard-aria-description">#4176</a>)</li>
@@ -60,7 +64,9 @@ We recommend upgrading to Python 3, but make sure to read the <a href="https://
  	<li>Pushers can now be unsubscribed from on Python 3. (<a href="https://github.com/matrix-org/synapse/issues/4250" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4250/hovercard" aria-describedby="hovercard-aria-description">#4250</a>)</li>
  	<li>Fix UnicodeDecodeError when postgres is configured to give non-English errors (<a href="https://github.com/matrix-org/synapse/issues/4253" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4253/hovercard" aria-describedby="hovercard-aria-description">#4253</a>)</li>
 </ul>
-<h4>Internal Changes</h4>
+
+#### Internal Changes
+
 <ul>
  	<li>Debian packages utilising a virtualenv with bundled dependencies can now be built. (<a href="https://github.com/matrix-org/synapse/issues/4212" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4212/hovercard" aria-describedby="hovercard-aria-description">#4212</a>)</li>
  	<li>Disable pager when running git-show in CI (<a href="https://github.com/matrix-org/synapse/issues/4291" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4291/hovercard" aria-describedby="hovercard-aria-description">#4291</a>)</li>

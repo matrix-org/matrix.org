@@ -74,7 +74,9 @@ If Matrix is to provide a good FOSS alternative to systems like Slack it's criti
 There have been vast improvements to bridging over the last few months, including the ability to "plumb" bridges into arbitrary rooms (letting you link a single Matrix room through to multiple remote networks). Like go-neb, Riot (now Element) is providing free bridge hosting with the ability to add to rooms with a "single click" via the Manage Integrations button in Room Settings. For now, Riot (now Element) is hosting any bridges built on the <a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a> codebase.
 
 In short, this means that any user can go and take an existing Matrix room and link it through to Slack, IRC, Gitter, and more.
-<h4>matrix-appservice-irc</h4>
+
+#### matrix-appservice-irc
+
 Huge amounts of work have gone into improving the IRC bridge - both adding new features to try to give the most IRC-friendly experience when bridging into IRC, as well as lots of maintenance and performance work to ensure that the matrix.org hosted bridges can scale to the large amounts of traffic we're seeing going through Freenode and others. We've also added hosted bridges for OFTC and Snoonet, and turned on connecting via IPv6 by default for networks which support it.
 
 You can read the full changelogs for 0.5.0 and 0.6.0 at <a href="https://github.com/matrix-org/matrix-appservice-irc/blob/master/CHANGELOG.md">https://github.com/matrix-org/matrix-appservice-irc/blob/master/CHANGELOG.md</a>, but the main highlights are:
@@ -100,7 +102,9 @@ matrix-appservice-irc 0.5.0:
  	<li>Fix IPv6 support</li>
 </ul>
 Next up is automating NickServ login, and generally continuing to make the IRC experience as good as we possibly can.
-<h4>matrix-appservice-slack</h4>
+
+#### matrix-appservice-slack
+
 Similarly, the Slack bridge has had loads of work. The main changes include:
 <ul>
  	<li>Ability to dynamically bridge ("plumb") rooms on request</li>
@@ -109,31 +113,45 @@ Similarly, the Slack bridge has had loads of work. The main changes include:
  	<li>Sync avatars both ways</li>
 </ul>
 We're currently looking at shifting over to Slack's RTM (Real Time Messaging) API rather than using webhooks in order to get an even better fit with Slack and support bridging DMs, but the current setup is still very usable. For more details: <a href="https://github.com/matrix-org/matrix-appservice-slack">https://github.com/matrix-org/matrix-appservice-slack</a>.
-<h4>matrix-appservice-gitter</h4>
+
+#### matrix-appservice-gitter
+
 The Gitter bridge has provided a lot of inspiration for the more recent work on the Slack bridge. Right now it provides straightforward bridging into Gitter rooms, albeit proxied via a 'matrixbot' user on the Gitter side. We're currently looking at letting also users authenticate using their Gitter credentials so they are bridged through to their 'real' Gitter user - watch this space. For more details: <a href="https://github.com/matrix-org/matrix-appservice-gitter">https://github.com/matrix-org/matrix-appservice-gitter</a>.
 <h3>Community updates</h3>
-<h4>matrix-ircd</h4>
+
+#### matrix-ircd
+
 matrix-ircd is a rewrite of the old PTO project (<a href="http://pto.im">pto.im</a>): a Rust application that turns Matrix into a single great big decentralised IRC network. PTO itself has unfortunately been on hiatus and is rather bitrotted, so Erik from the core Matrix Team picked it up to see if it could be resurrected. This ended up turning into a complete rewrite (switching from mio to tokio etc), and the new project can be found at <a href="https://github.com/matrix-org/matrix-ircd">https://github.com/matrix-org/matrix-ircd</a>.
 
 matrix-ircd really is an incredibly promising way of getting folks onto Matrix, as it exposes the entirety of Matrix as a virtual IRC network. This means that IRC addicts can jack straight into Matrix, talking native IRC from their existing IRC clients - but interacting directly with Matrix rooms as if they were IRC channesls without going through a bridge. Obviously you lose all of the features and semantics which Matrix provides beyond IRC, but this is still a great way to get started.
 
 The project is currently alpha but provides a good functioning base to extend, and Erik's explicitly asking for help from the Rust and Matrix community to fill in all the missing features. If you're interested in helping, please come talk on <a href="https://matrix.to/#/#matrix-ircd:matrix.org">#matrix-ircd:matrix.org</a>!.
-<h4>matrix-appservice-gitter-twisted</h4>
+
+#### matrix-appservice-gitter-twisted
+
 Not to be confused with the Node-based <a href="https://github.com/matrix-org/matrix-appservice-gitter">matrix-appservice-gitter</a>, <a href="https://github.com/remram44/matrix-appservice-gitter-twisted">matrix-appservice-gitter-twisted</a> is an entirely separate project written in Python/Twisted by Remram (Remi Rampin) that has the opposite architecture: rather than bridging existing rooms into Matrix, matrix-appservice-gitter-twisted lets you provide your Gitter credentials and acts instead as a Gitter client, bridging your personal view of a Gitter room into a private Matrix room just for you.
 
 This obviously has some major advantages (your actions on Gitter use your real Gitter account rather than a bot), and some disadvantages too (you can't use Matrix features when interacting with other Matrix users in the same room, and the Gitter channel itself is not decentralised into Matrix). However, it's a really cool example of how the other model can work - and within the core team, we've been arguing back and forth for ages now on whether normal bridges or "sidecar" bridges like this one are a more preferable architecture. Thanks to Remram's work we can try both side by side! Go check it out at <a href="https://github.com/remram44/matrix-appservice-gitter-twisted">https://github.com/remram44/matrix-appservice-gitter-twisted</a>.
-<h4>telematrix</h4>
+
+#### telematrix
+
 Telematrix is Telegram&lt;-&gt;Matrix bridge, written by Sijmen Schoon using python3 and asyncio. Right now it's a fairly early alpha hardcoded to bridge a specific Telegram channel into a specific Matrix room, but it works and in use and could be an excellent base for folks interested in a more comprehensive Matrix/Telegram bridge. Go check it out at <a href="https://github.com/SijmenSchoon/telematrix">https://github.com/SijmenSchoon/telematrix</a>
 <img class="aligncenter wp-image-1832" src="/blog/wp-content/uploads/2016/11/telematrix-1024x828.png" alt="telematrix" width="641" height="518" />
-<h4>Ruma</h4>
+
+#### Ruma
+
 Meanwhile, the Ruma project to write a Matrix homeserver in Rust has been progressing steadily, with more and more checkboxes appearing on the <a href="https://github.com/ruma/ruma/blob/master/STATUS.md">status page</a>, with significant new contributions from mujx and farodin91. The best way to keep track of Ruma is to read Jimmy's excellent <a href="https://www.ruma.io/news/">This Week in Ruma</a> updates and of course hang out on <a href="https://matrix.to/#/#ruma:matrix.org">#ruma:matrix.org</a>.
-<h4>NaChat</h4>
+
+#### NaChat
+
 An entirely new client on the block since the last update is <a href="http://github.com/ralith/nachat">NaChat</a>, written by Ralith. NaChat is a pure cross-platform Qt/C++ desktop client written from the ground up, supporting local history synchronisation, excellent performance, native Qt theming, and generally being a lean and mean Matrix client machine. It's still alpha, but it's easy to build and a lot of fun to play with.
 
 <img class="aligncenter wp-image-1828" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-12.01.03-1024x664.png" alt="screen-shot-2016-11-12-at-12-01-03" width="1009" height="654" />
 
 Please give a spin, encourage Ralith to finish the <a href="https://github.com/ralith/nachat/tree/timeline-view-rewrite">timeline-view-rewrite</a> branch (which is probably the one you want to be running!), and come hang out on <a href="https://matrix.to/#/#nachat:matrix.org">#nachat:matrix.org</a>.
-<h4>Quaternion</h4>
+
+#### Quaternion
+
 Meanwhile, the <a href="https://github.com/fxrh/quaternion">Quaternion</a> Qt/QML desktop client and its <a href="https://github.com/fxrh/libqmatrixclient">libqmatrixclient</a> library has been making sure and steady progress, with fxrh, kitsune, maralorn and others working away at it. The difference with NaChat here is using QML rather than native Qt widgets, and a focus on more advanced UX features like a custom infinite-scrolling scrollbar widget, unread message notifications, and read-up-to markers.  Recent developments include the <a href="https://github.com/Fxrh/Quaternion/releases/tag/v0.0.1">first official release (0.0.1)</a> on Sept 12, official Windows builds, lots of work on implementing better Read-up-to Markers, scrolling behaviour etc. Again, it's worth keeping a checkout of Quaternion handy and playing with the client - it's loads of fun!
 
 <img class="aligncenter size-large wp-image-1829" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-12.12.48-1024x535.png" alt="screen-shot-2016-11-12-at-12-12-48" width="1024" height="535" />

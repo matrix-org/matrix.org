@@ -28,12 +28,16 @@ Onwards!
 If you have email notifications enabled, you should ensure that <code>email.template_dir</code> is either configured to point at a directory where you have installed customised templates, or leave it unset to use the default templates.
 
 The configuration parser will try to detect the situation where <code>email.template_dir</code> is incorrectly set to <code>res/templates</code> and do the right thing, but will warn about this.
-<h4>Features</h4>
+
+#### Features
+
 <ul>
  	<li>Ship the example email templates as part of the package (<a href="https://github.com/matrix-org/synapse/issues/4052" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4052/hovercard" aria-describedby="hovercard-aria-description">#4052</a>)</li>
  	<li>Add support for end-to-end key backup (MSC1687) (<a href="https://github.com/matrix-org/synapse/issues/4019" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4019/hovercard" aria-describedby="hovercard-aria-description">#4019</a>)</li>
 </ul>
-<h4>Bugfixes</h4>
+
+#### Bugfixes
+
 <ul>
  	<li>Fix bug which made get_missing_events return too few events (<a href="https://github.com/matrix-org/synapse/issues/4045" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4045/hovercard" aria-describedby="hovercard-aria-description">#4045</a>)</li>
  	<li>Fix bug in event persistence logic which caused 'NoneType is not iterable' (<a href="https://github.com/matrix-org/synapse/issues/3995" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3995/hovercard" aria-describedby="hovercard-aria-description">#3995</a>)</li>

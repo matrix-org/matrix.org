@@ -24,12 +24,16 @@ Many thanks for your patience and understanding; with fixes like this we are mov
 Note, for anyone running Debian Jessie, we have prepared a 0.33.2.1 deb (as 0.33.3 dropped support for Jessie).
 
 <h3>Synapse 0.33.3.1 (2018-09-06)</h3>
-<h4>SECURITY FIXES</h4>
+
+#### SECURITY FIXES
+
 <ul>
  	<li>Fix an issue where event signatures were not always correctly validated (<a href="https://github.com/matrix-org/synapse/issues/3796">#3796</a>)</li>
  	<li>Fix an issue where server_acls could be circumvented for incoming events (<a href="https://github.com/matrix-org/synapse/issues/3796">#3796</a>)</li>
 </ul>
-<h4>Internal Changes</h4>
+
+#### Internal Changes
+
 <ul>
  	<li>Unignore synctl in .dockerignore to fix docker builds (<a href="https://github.com/matrix-org/synapse/issues/3802">#3802</a>)</li>
 </ul>

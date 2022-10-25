@@ -18,14 +18,18 @@ For those interested in what we are working on right now, take a look at our <a 
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.8">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>.
 
 <h3>Synapse 0.33.8 changelog</h3>
-<h4>Features</h4>
+
+#### Features
+
 <ul>
  	<li>Servers with auto-join rooms will now automatically create those rooms when the first user registers (<a href="https://github.com/matrix-org/synapse/issues/3975" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3975/hovercard" aria-describedby="hovercard-aria-description">#3975</a>)</li>
  	<li>Add config option to control alias creation (<a href="https://github.com/matrix-org/synapse/issues/4051" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4051/hovercard" aria-describedby="hovercard-aria-description">#4051</a>)</li>
  	<li>The register_new_matrix_user script is now ported to Python 3. (<a href="https://github.com/matrix-org/synapse/issues/4085" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4085/hovercard" aria-describedby="hovercard-aria-description">#4085</a>)</li>
  	<li>Configure Docker image to listen on both ipv4 and ipv6. (<a href="https://github.com/matrix-org/synapse/issues/4089" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4089/hovercard" aria-describedby="hovercard-aria-description">#4089</a>)</li>
 </ul>
-<h4>Bugfixes</h4>
+
+#### Bugfixes
+
 <ul>
  	<li>Fix HTTP error response codes for federated group requests. (<a href="https://github.com/matrix-org/synapse/issues/3969" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3969/hovercard" aria-describedby="hovercard-aria-description">#3969</a>)</li>
  	<li>Fix issue where Python 3 users couldn't paginate /publicRooms (<a href="https://github.com/matrix-org/synapse/issues/4046" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4046/hovercard" aria-describedby="hovercard-aria-description">#4046</a>)</li>
@@ -39,7 +43,9 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/syna
 the monthly active user list prior to the homeserver reactor firing up (<a href="https://github.com/matrix-org/synapse/issues/4081" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4081/hovercard" aria-describedby="hovercard-aria-description">#4081</a>)</li>
  	<li>Fix bug which prevented backslashes being used in event field filters (<a href="https://github.com/matrix-org/synapse/issues/4083" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4083/hovercard" aria-describedby="hovercard-aria-description">#4083</a>)</li>
 </ul>
-<h4>Internal Changes</h4>
+
+#### Internal Changes
+
 <ul>
  	<li>Add information about the <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> playbook (<a href="https://github.com/matrix-org/synapse/issues/3698" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3698/hovercard" aria-describedby="hovercard-aria-description">#3698</a>)</li>
  	<li>Add initial implementation of new state resolution algorithm (<a href="https://github.com/matrix-org/synapse/issues/3786" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3786/hovercard" aria-describedby="hovercard-aria-description">#3786</a>)</li>

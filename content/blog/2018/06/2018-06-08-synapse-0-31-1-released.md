@@ -17,7 +17,8 @@ Sorry for the inconvenience, Synapse and the Matrix spec are still in beta and w
 
 You can get the release <a href="https://github.com/matrix-org/synapse/releases/tag/v0.31.1">here</a>.
 
-<h4>Changes in synapse v0.31.1 (2018-06-08)</h4>
+#### Changes in synapse v0.31.1 (2018-06-08)
+
 v0.31.1 fixes a security bug in the <code>get_missing_events</code> federation API
 where event visibility rules were not applied correctly.
 

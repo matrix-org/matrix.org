@@ -15,7 +15,8 @@ We also have, as a great contribution from <a href="https://github.com/vojeroen"
 
 As always, you can get the new update from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.3">https://github.com/matrix-org/synapse/releases/tag/v0.33.3</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>.
 
-<h4 id="features">Features</h4>
+#### Features
+
 <ul>
  	<li>Add support for the SNI extension to federation TLS connections. Thanks to <a href="https://github.com/vojeroen">@vojeroen</a>! (<a href="https://github.com/matrix-org/synapse/issues/3439">#3439</a>)</li>
  	<li>Add /_media/r0/config (<a href="https://github.com/matrix-org/synapse/issues/3184">#3184</a>)</li>
@@ -33,7 +34,9 @@ As always, you can get the new update from <a href="https://github.com/matrix-or
  	<li>Synapse's presence functionality can now be disabled with the "use_presence" configuration option. (<a href="https://github.com/matrix-org/synapse/issues/3694">#3694</a>)</li>
  	<li>For resource limit blocked users, prevent writing into rooms (<a href="https://github.com/matrix-org/synapse/issues/3708">#3708</a>)</li>
 </ul>
-<h4 id="bugfixes">Bugfixes</h4>
+
+#### Bugfixes
+
 <ul>
  	<li>Fix occasional glitches in the synapse_event_persisted_position metric (<a href="https://github.com/matrix-org/synapse/issues/3658">#3658</a>)</li>
  	<li>Fix bug on deleting 3pid when using identity servers that don't support unbind API (<a href="https://github.com/matrix-org/synapse/issues/3661">#3661</a>)</li>
@@ -48,11 +51,15 @@ As always, you can get the new update from <a href="https://github.com/matrix-or
  	<li>Fix "Starting db txn 'get_all_updated_receipts' from sentinel context" warning (<a href="https://github.com/matrix-org/synapse/issues/3710">#3710</a>)</li>
  	<li>Fix bug where <code>state_cache</code> cache factor ignored environment variables (<a href="https://github.com/matrix-org/synapse/issues/3719">#3719</a>)</li>
 </ul>
-<h4 id="deprecationsandremovals">Deprecations and Removals</h4>
+
+#### Deprecations and Removals
+
 <ul>
  	<li>The Shared-Secret registration method of the legacy v1/register REST endpoint has been removed. For a replacement, please see <a href="https://github.com/matrix-org/synapse/blob/master/docs/admin_api/register_api.rst">the admin/register API documentation</a>. (<a href="https://github.com/matrix-org/synapse/issues/3703">#3703</a>)</li>
 </ul>
-<h4 id="internalchanges">Internal Changes</h4>
+
+#### Internal Changes
+
 <ul>
  	<li>The test suite now can run under PostgreSQL. (<a href="https://github.com/matrix-org/synapse/issues/3423">#3423</a>)</li>
  	<li>Refactor HTTP replication endpoints to reduce code duplication (<a href="https://github.com/matrix-org/synapse/issues/3632">#3632</a>)</li>
