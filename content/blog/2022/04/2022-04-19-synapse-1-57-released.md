@@ -12,7 +12,7 @@ Hey everyone! Guess what? [Synapse
 1.57](https://github.com/matrix-org/synapse/releases/tag/v1.57.0) has just been
 released! Let's see what's new in this version!
 
-# Application services
+## Application services
 
 Application services are piece of software that have privileged access to some
 of the homeserver's features. For example, they can create and manage multiple

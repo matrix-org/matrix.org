@@ -19,7 +19,8 @@ Get the new releases from any of the usual sources mentioned at https://github.c
 
 The changelog for 1.19.2 is as follows:
 
-# Synapse 1.19.2 (2020-09-16)
+## Synapse 1.19.2 (2020-09-16)
+
 Due to the issue below server admins are encouraged to upgrade as soon as possible.
 Bugfixes
 - Fix joining rooms over federation that include malformed events. (#8324)

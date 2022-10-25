@@ -10,7 +10,7 @@ category = ["Releases"]
 [Synapse 1.58](https://github.com/matrix-org/synapse/releases/tag/v1.58.0) is
 out! Let's dive into this new release.
 
-# Poetry
+## Poetry
 
 If you've been reading the past few Synapse release announcements, you might
 have already heard about our efforts to integrate
