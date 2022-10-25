@@ -13,9 +13,7 @@ As of today you can install the <a href="https://itunes.apple.com/gb/app/matrix-
 
 Meanwhile you can also get <a href="https://play.google.com/store/apps/details?id=org.matrix.androidsdk.alpha">the Android version of Console</a> at the Google Play Store as we mentioned in the last post.
 
-<p>
 <a href="https://itunes.apple.com/gb/app/matrix-console/id970074271"><img src="http://matrix.org/img/screenie.jpg" width="375" height="667" alt="iOS screenshot" class="aligncenter" /></a>
-</p>
 
 Needless to say, they're both entirely open-source (Apache license) and you can grab the code from <a href="https://github.com/matrix-org/matrix-ios-sdk">https://github.com/matrix-org/matrix-ios-sdk</a> and <a href="https://github.com/matrix-org/matrix-android-sdk">https://github.com/matrix-org/matrix-android-sdk</a> respectively if you want to play with your own copy.
 

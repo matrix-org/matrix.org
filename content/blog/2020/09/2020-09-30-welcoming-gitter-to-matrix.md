@@ -80,10 +80,11 @@ Sid Sijbrandij (CEO at GitLab) and Matthew had a chance to sit down with [The Ch
 
 <br/>
 <div style="text-align: center">
-  <a rel="noopener" href="https://cdn.changelog.com/uploads/podcast/414/the-changelog-414.mp3">
+
+<a rel="noopener" href="https://cdn.changelog.com/uploads/podcast/414/the-changelog-414.mp3">
     <img src="https://matrix.org/blog/img/2020-09-30-gitter-changelog.png" alt="Changelog podcast 414"/>
-  </a>
-  <p>
-    <a href="https://changelog.com/podcast/414">The Changelog 414: Gitter's Big Adventure</a> - Listen on <a href="https://changelog.com/">Changelog.com</a>
-  </p>
+</a>
+
+<a href="https://changelog.com/podcast/414">The Changelog 414: Gitter's Big Adventure</a> - Listen on <a href="https://changelog.com/">Changelog.com</a>
+
 </div>
