@@ -1,5 +1,5 @@
 +++
-title = "Legacy docs"
+title = "Legacy documentation"
 page_template = "docs/legacy.html"
 weight = 900
 [extra]
