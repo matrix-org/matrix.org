@@ -4,6 +4,7 @@ title: matrix-commander-rs
 categories:
  - client
 description: Vision of a simple CLI-based Matrix client for sending and receiving
+slug: matrix-commander-rs
 author: 8go
 language: Rust
 license: GPL-3.0-or-later
@@ -35,12 +36,12 @@ features:
     Sending Invites: no
     Accepting Invites: no
     Typing Notification: no
-    E2E: no
+    E2E: yes
     Replies: no
-    Attachment uploading: no
+    Attachment uploading: yes
     Attachment downloading: no
     Send stickers: no
-    Send formatted messages (markdown): no
+    Send formatted messages (markdown): yes
     Rich Text Editor for formatted messages: no
     Display formatted messages: no
     Redacting: no
@@ -49,7 +50,7 @@ features:
     voip: no
     Message editing: no
     Room upgrades: no
-maturity: Early Alpha # Options are: Released, Stable, Late Beta, Beta, Early Beta, Late Alpha, Alpha, Early Alpha, or Not actively maintained
+maturity: Early Beta # Options are: Released, Stable, Late Beta, Beta, Early Beta, Late Alpha, Alpha, Early Alpha, or Not actively maintained
 SDK: matrix-rust-sdk
 ---
 
@@ -58,6 +59,10 @@ SDK: matrix-rust-sdk
 simple but convenient CLI-based Matrix client app for sending and receiving
 
 # Help create this Rust program!
+
+Currently you can log in, verify your account, send unencrypted messages, send 
+encypted messages, send encrypted files, list devices, and log out. 
+We should be able to do more!
 
 This project is currently only a vision. The Python package matrix-commander
 exists. See [matrix-commander](https://github.com/8go/matrix-commander/).
@@ -70,3 +75,4 @@ Please help! Please contribute code to make this vision a reality,
 and to one day have a functional
 [matrix-commander](https://crates.io/crates/matrix-commander) crate.
 Safe!
+
