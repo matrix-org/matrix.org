@@ -11,6 +11,7 @@ updated = "2022-10-18T16:00:00Z"
 ## Matrix for Instant Messaging
 
 Matrix works a little like email, but instantaneous and secure:
+
 - You need to register an account at a provider
 - Whatever your provider is, you can talk to people using other providers
 - In the same way you can use Outlook or Thunderbird with the same email
@@ -27,9 +28,8 @@ app, head to the [clients](/ecosystem/clients) section of this website.
 You can use any provider you want. The experts can even set-up their own
 provider, but it's not a requirement at all.
 
-The Matrix.org Foundation maintains a public provider everybody can register
-an account on for free. For your first steps, the simplest is to register an
-account there.
+The Matrix.org Foundation is a public provider everybody can register an account
+on for free. For your first steps, the simplest is to register an account there.
 
 To register an account, you need to use an app. Chose the type of device you're
 using to get the most useful instructions for you.

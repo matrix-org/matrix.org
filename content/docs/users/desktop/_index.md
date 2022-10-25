@@ -10,12 +10,12 @@ updated = "2022-10-18T16:00:00Z"
 
 ## Creating an account
 
-Go to <https://app.element.io>, and click on "Create Account". You should land
-on the following page.
+Go to [app.element.io](https://app.element.io), and click on "Create Account".
+You should land on the following page.
 
 ![](element-io-sign-up.png)
 
-For simplicity you can connect with a Google, Facebook, Apple, GitHub or Gitlab
+For simplicity you can connect with a Google, Facebook, Apple, GitHub or GitLab
 account if you have any of these. They will be notified that you're using your
 account to create a Matrix one. This is sometimes called "Social Login".
 

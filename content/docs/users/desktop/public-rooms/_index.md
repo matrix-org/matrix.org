@@ -10,7 +10,7 @@ updated = "2022-10-18T16:00:00Z"
 When you want to join larger public conversations, you have three major options
 at hand:
 
-1. Joining a specific room from its address/alias or from a matrix.to link
+1. Joining a specific room from its address / alias or from a matrix.to link
 2. Browsing a public directory to find rooms of interest
 3. Joining a room that was listed in a Space
 
@@ -34,7 +34,7 @@ this preview is a list of clients you can use to join the room.
 ![](matrixto-client-choice.png)
 
 Since this documentation started with Element, let's carry on with it. You will
-be able to seamlessly change for another client when you're more used to Matrix.
+be able to seamlessly change to another client when you're more used to Matrix.
 
 Click on "Continue" below Element. If you have installed Element Desktop, your
 browser may ask you if you want to allow this page to open Element. Click on
