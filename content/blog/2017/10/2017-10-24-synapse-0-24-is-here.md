@@ -14,14 +14,20 @@ Synapse 0.24 is out (currently at 0.24.1)! This is a pretty big release as it in
 Other stuff worth calling out in this release includes: massive performance improvements on receiving federation traffic (we now process federation traffic for different rooms in parallel); fixing a major cause of performance issues (caused when processing spurious events for rooms you've actually left); modularising and improving the the spamchecker; @room notification support; backup media repository support; and finally the ability to autojoin new users to a set of rooms on the server!
 
 You can get the latest release from <a href="https://github.com/matrix-org/synapse/releases">Github</a> as usual; have fun - and thanks for flying Matrix :)
-<h1>Changes in synapse v0.24.1 (2017-10-24)</h1>
+
+## Changes in synapse v0.24.1 (2017-10-24)
+
 Bug fixes:
 <ul>
  	<li>Fix updating group profiles over federation (PR <a class="issue-link js-issue-link tooltipped tooltipped-ne" href="https://github.com/matrix-org/synapse/pull/2567" data-error-text="Failed to load issue title" data-id="267687632" data-permission-text="Issue title is private">#2567</a>)</li>
 </ul>
-<h1>Changes in synapse v0.24.0 (2017-10-23)</h1>
+
+## Changes in synapse v0.24.0 (2017-10-23)
+
 No changes since v0.24.0-rc1
-<h1>Changes in synapse v0.24.0-rc1 (2017-10-19)</h1>
+
+## Changes in synapse v0.24.0-rc1 (2017-10-19)
+
 Features:
 <ul>
  	<li>Add Group Server (PR <a class="issue-link js-issue-link tooltipped tooltipped-ne" href="https://github.com/matrix-org/synapse/pull/2352" data-error-text="Failed to load issue title" data-id="241719376" data-permission-text="Issue title is private">#2352</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2363" data-error-text="Failed to load issue title" data-id="242334015" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2363">#2363</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2374" data-error-text="Failed to load issue title" data-id="243375644" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2374">#2374</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2377" data-error-text="Failed to load issue title" data-id="244340948" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2377">#2377</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2378" data-error-text="Failed to load issue title" data-id="244341100" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2378">#2378</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2382" data-error-text="Failed to load issue title" data-id="245071091" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2382">#2382</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2410" data-error-text="Failed to load issue title" data-id="249656746" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2410">#2410</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2426" data-error-text="Failed to load issue title" data-id="251663325" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2426">#2426</a>,

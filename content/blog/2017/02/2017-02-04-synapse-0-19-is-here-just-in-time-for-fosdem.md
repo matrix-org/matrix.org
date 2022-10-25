@@ -24,27 +24,34 @@ If you're already running a server, please upgrade!  And if you're not, go grab
 
 And here's the full changelog...
 
-<div class="release-header">
-<h1 class="release-title">Changes in synapse v0.19.0 (2017-02-04)</h1>
-</div>
+## Changes in synapse v0.19.0 (2017-02-04)
+
 <div class="markdown-body">
 
 No changes since RC 4.
-<h1>Changes in synapse v0.19.0-rc4 (2017-02-02)</h1>
+
+## Changes in synapse v0.19.0-rc4 (2017-02-02)
+
 <ul>
  	<li>Bump cache sizes for common membership queries (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1879" data-url="https://github.com/matrix-org/synapse/issues/1879" data-id="204961298" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1879</a>)</li>
 </ul>
-<h1>Changes in synapse v0.19.0-rc3 (2017-02-02)</h1>
+
+## Changes in synapse v0.19.0-rc3 (2017-02-02)
+
 <ul>
  	<li>Fix email push in pusher worker (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1875" data-url="https://github.com/matrix-org/synapse/issues/1875" data-id="204840617" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1875</a>)</li>
  	<li>Make presence.get_new_events a bit faster (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1876" data-url="https://github.com/matrix-org/synapse/issues/1876" data-id="204868725" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1876</a>)</li>
  	<li>Make /keys/changes a bit more performant (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1877" data-url="https://github.com/matrix-org/synapse/issues/1877" data-id="204905372" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1877</a>)</li>
 </ul>
-<h1>Changes in synapse v0.19.0-rc2 (2017-02-02)</h1>
+
+## Changes in synapse v0.19.0-rc2 (2017-02-02)
+
 <ul>
  	<li>Include newly joined users in /keys/changes API (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1872" data-url="https://github.com/matrix-org/synapse/issues/1872" data-id="204651600" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1872</a>)</li>
 </ul>
-<h1>Changes in synapse v0.19.0-rc1 (2017-02-02)</h1>
+
+## Changes in synapse v0.19.0-rc1 (2017-02-02)
+
 Features:
 <ul>
  	<li>Add support for specifying multiple bind addresses (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1709" data-url="https://github.com/matrix-org/synapse/issues/1709" data-id="196299310" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1709</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1712" data-url="https://github.com/matrix-org/synapse/issues/1712" data-id="196557084" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1712</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1795" data-url="https://github.com/matrix-org/synapse/issues/1795" data-id="199882750" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1795</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1835" data-url="https://github.com/matrix-org/synapse/issues/1835" data-id="202121261" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1835</a>). Thanks to <a class="user-mention" href="https://github.com/kyrias">@kyrias</a>!</li>

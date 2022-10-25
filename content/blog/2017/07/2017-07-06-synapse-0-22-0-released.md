@@ -22,9 +22,13 @@ Synapse 0.22.0 has just been released! This release lands a few interesting feat
 As always there are lots of bug fixes and performance improvements, including increasing the default cache factor size from 0.1 to 0.5 (should improve performance for those running their own homeservers).
 
 You can get Synapse 0.22.0 from <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a> or <a href="https://github.com/matrix-org/synapse/releases/tag/v0.22.0">https://github.com/matrix-org/synapse/releases/tag/v0.22.0</a> as normal.
-<h1>Changes in synapse v0.22.0 (2017-07-06)</h1>
+
+## Changes in synapse v0.22.0 (2017-07-06)
+
 No changes since v0.22.0-rc2
-<h1>Changes in synapse v0.22.0-rc2 (2017-07-04)</h1>
+
+## Changes in synapse v0.22.0-rc2 (2017-07-04)
+
 Changes:
 <ul>
  	<li>Improve performance of storing user IPs (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2307" data-url="https://github.com/matrix-org/synapse/issues/2307" data-id="238837177" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#2307</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2308" data-url="https://github.com/matrix-org/synapse/issues/2308" data-id="238864014" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#2308</a>)</li>
@@ -37,7 +41,9 @@ Bug fixes:
  	<li>Fix bug with storing registration sessions that caused frequent CPU churn
 (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2319" data-url="https://github.com/matrix-org/synapse/issues/2319" data-id="239472982" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#2319</a>)</li>
 </ul>
-<h1>Changes in synapse v0.22.0-rc1 (2017-06-26)</h1>
+
+## Changes in synapse v0.22.0-rc1 (2017-06-26)
+
 Features:
 <ul>
  	<li>Add a user directory API (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2252" data-url="https://github.com/matrix-org/synapse/issues/2252" data-id="232602331" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#2252</a>, and many more)</li>

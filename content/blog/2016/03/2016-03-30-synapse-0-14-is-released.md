@@ -16,9 +16,13 @@ Get all new synapse from <a href="https://github.com/matrix-org/synapse">https:/
 Full changelog follows:
 
 <div class="markdown-body">
-<h1>Changes in synapse v0.14.0 (2016-03-30)</h1>
+
+## Changes in synapse v0.14.0 (2016-03-30)
+
 No changes from v0.14.0-rc2
-<h1>Changes in synapse v0.14.0-rc2 (2016-03-23)</h1>
+
+## Changes in synapse v0.14.0-rc2 (2016-03-23)
+
 Features:
 <ul>
 	<li>Add published room list API (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/657" data-url="https://github.com/matrix-org/synapse/issues/657" data-id="142376806" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#657</a>)</li>
@@ -36,7 +40,9 @@ Bug fixes:
 	<li>Update aliases event after deleting aliases (PR <a class="issue-link js-issue-link" title="Update aliases event after deletion" href="https://github.com/matrix-org/synapse/pull/652" data-id="141592232" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#652</a>)</li>
 	<li>Fix unread notification count, which was sometimes wrong (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/661" data-url="https://github.com/matrix-org/synapse/issues/661" data-id="142657556" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#661</a>)</li>
 </ul>
-<h1>Changes in synapse v0.14.0-rc1 (2016-03-14)</h1>
+
+## Changes in synapse v0.14.0-rc1 (2016-03-14)
+
 Features:
 <ul>
 	<li>Add event_id to response to state event PUT (PR <a class="issue-link js-issue-link" title="client/v1/room: include event_id in response to state event PUT" href="https://github.com/matrix-org/synapse/pull/581" data-id="134248706" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#581</a>)</li>
