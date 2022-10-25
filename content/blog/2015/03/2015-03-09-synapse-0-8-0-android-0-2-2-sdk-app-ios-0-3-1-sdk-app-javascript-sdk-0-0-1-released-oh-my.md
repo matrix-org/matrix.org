@@ -26,9 +26,7 @@ client.publicRooms(function(err, data) {'{'}
 
 </pre>
 
-<p>
 Meanwhile, release notes for all &amp; sundry lie below.
-</p>
 
 <pre>
 

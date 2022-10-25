@@ -68,7 +68,8 @@ For now, however, it's back to work: making Riot slicker than Slack; making Syna
 
 Matthew, Amandine &amp; the whole team.
 
+<b>Update 1: VentureBeat is covering the news over at <a href="https://venturebeat.com/2018/01/29/status-invests-5-million-in-matrix-to-create-a-blockchain-messaging-superpower/">https://venturebeat.com/2018/01/29/status-invests-5-million-in-matrix-to-create-a-blockchain-messaging-superpower/</a></b>
 
-<p><b>Update 1: VentureBeat is covering the news over at <a href="https://venturebeat.com/2018/01/29/status-invests-5-million-in-matrix-to-create-a-blockchain-messaging-superpower/">https://venturebeat.com/2018/01/29/status-invests-5-million-in-matrix-to-create-a-blockchain-messaging-superpower/</a></b></p>
-<p><b>Update 2: IBTimes is also covering it at <a href="http://www.ibtimes.co.uk/matrix-status-ico-gains-support-non-blockchain-decentralisation-technology-1656183">http://www.ibtimes.co.uk/matrix-status-ico-gains-support-non-blockchain-decentralisation-technology-1656183</a>!</b></p>
-<p><b>...and you can see Status's side of the story over at <a href="https://blog.status.im/status-invests-5m-in-riot-im-4e3026a8bd50">https://blog.status.im/status-invests-5m-in-riot-im-4e3026a8bd50</a>!</b></p>
+<b>Update 2: IBTimes is also covering it at <a href="http://www.ibtimes.co.uk/matrix-status-ico-gains-support-non-blockchain-decentralisation-technology-1656183">http://www.ibtimes.co.uk/matrix-status-ico-gains-support-non-blockchain-decentralisation-technology-1656183</a>!</b>
+
+<b>...and you can see Status's side of the story over at <a href="https://blog.status.im/status-invests-5m-in-riot-im-4e3026a8bd50">https://blog.status.im/status-invests-5m-in-riot-im-4e3026a8bd50</a>!</b>
