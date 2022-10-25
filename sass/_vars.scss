@@ -1,0 +1,14 @@
+:root {
+    --text-color: #333;
+    --default-background-color: #fff;
+    --footer-background-color: #111;
+
+    //--article-separator-color: ;
+}
+
+:root.dark {
+    --text-color: #fff;
+    --default-background-color: #1d1d1d;
+
+    --article-separator-color: #555;
+}
