@@ -1,0 +1,22 @@
+{% extends "skel.html" %}
+{% block content %}
+<article class="content">
+    <header>
+        <h1>{{ section.title }}</h1>
+        {% set iso_date = section.extra.updated | date(format = '%Y-%m-%d') %}
+        Last updated: <time datetime="{{ iso_date }}"> {{ iso_date }}</time>
+    </header>
+
+    {{ section.content | markdown | safe }}
+
+    <div class="docs-grid">
+    {% for subsection_path in section.subsections %}
+    {% set subsection = get_section(path=subsection_path) %}
+        <a href="{{ subsection.path }}" class="doc-section-tile">
+            <span class="emoji">{{ subsection.extra.emoji }}</span>
+            <h2>{{ subsection.extra.tile }}</h2>
+        </a>
+    {% endfor %}
+    </div>
+</article>
+{% endblock content %}
