@@ -7,7 +7,6 @@ author = ["Amandine Le Pape"]
 category = ["General"]
 +++
 
-<h1>Why Matrix?</h1>
 Hi, I'm Amandine and I look after the businessy bits of Matrix.org. I have a technical background and have always had the need to see the bigger picture. My motivation in starting Matrix has mainly been to make my dream of ubiquitous real-time communications come true and fix what felt broken in the industry. Here is the story.
 
 When studying telecoms I was fascinated by converging networks, the “Next Generation Network” as we called it. Wow, imagine! Having fixed lines, mobiles and computers able to communicate with each other? Call a number and have the ability to answer seamlessly on any device? And the capability to do video calls and share files? <i>That </i>was definitely Next Generation at the time! Especially given the best we could do with a mobile was bad GSM, MMS and WAP if you were lucky.... A decade later video calling is possible on any device; I can share anything I want with my contacts (pictures, videos, files, random stickers) thanks to hundreds of different apps; sometimes my history is even synced across several devices! And if I choose my mobile provider carefully I can even have a “One Number” service! :)

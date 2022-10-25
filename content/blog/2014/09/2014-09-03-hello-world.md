@@ -7,7 +7,6 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 +++
 
-<h1>Hello world</h1>
 I'm Matthew, and I'm responsible for the techie side of what we're up to with Matrix.
 
 Matrix is the result of a lot of work my team's done over the last 10 years or so (first at <a href="http://www.mxtelecom.com">MX Telecom</a>, then <a href="http://www.openmarket.com">OpenMarket</a>, and then <a href="http://www.amdocs.com/UnifiedCommunications">Amdocs</a>) in developing next-generation IP communication solutions.  First we started with an <a href="http://www.asterisk.org">Asterisk</a>-based platform running basic PSTN IVR services, and then shifted to an in-house IAX-based IVR platform built in Java, and then added circuit-switched (<a href="http://en.wikipedia.org/wiki/3G-324M">3G-324M</a>) video calling, then switched to SIP/RTP, C++ and a massively-distributed softswitch architecture affectionately called 'The Next Generation'.  Then the iPhone and Android came along, and we realised we didn't have to be constrained by built-in phone capabilities and ported our whole C++ SIP/RTP VoIP stack over to iOS/Android and got writing Video/VoIP calling apps.  This evolved to developing full-blown unified communication apps (e.g. <a href="http://www.blah.com">Blah</a>), using XMPP at first for messaging before switching to our own HTTP-based messaging APIs.
