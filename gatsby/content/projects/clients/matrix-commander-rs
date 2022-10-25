@@ -13,7 +13,7 @@ license: GPL-3.0-or-later
 repo: https://github.com/8go/matrix-commander-rs # your source code repository
 room: None # "#my-first-matrix-projects-room:homeserver.tld" # nb the quotes are needed as rooms start with #
 thumbnail: /docs/projects/images/matrix-commander-rs.svg
-screenshot:
+# screenshot:
 # screenshot: /docs/projects/images/upload-a-bigger-image-for-your-project-page-to-the-images-subfolder.png
 featured: true
 platforms:
