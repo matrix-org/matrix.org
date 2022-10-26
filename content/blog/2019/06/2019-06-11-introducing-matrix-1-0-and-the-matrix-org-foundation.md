@@ -52,17 +52,17 @@ Then stuff which we haven’t yet started, but is now unlocked by the 1.0 releas
 *   Removing MXIDs from events ([MSC1228](https://github.com/matrix-org/matrix-doc/issues/1228))
 
 Just to give a quick taster of the shape of things to come, here’s RiotX/Android, the all-new Riot client for Android, showing off Edits & Reactions in the wild…
-<br/>
+
 <div style="text-align: center">
 <img src="/blog/img/edits.jpg" style="height: 640px;"/>
 </div>
-<br/>
+
 ...and here’s a screenshot of the final test jig for cross-signing devices in end-to-end encryption, so you will never have to manually verify new devices for a trusted user ever again!  We demoed a *very* early version of this at FOSDEM, but this here is the testing harness for real deal, after several iterations of the spec and implementation to nail down the model. + means the device/user's cross-signing key is trusted, T means it's TOFU:
-<br/><br/>
+
 <div style="text-align: center">
 <img src="/blog/img/cross-signing.png" style="height: 480px; margin: auto"/>
 </div>
-<br/>
+
 So, there you have it - welcome to Matrix 1.0, and we look forward to our backlog of feature work now landing!
 
 Massive massive thanks to everyone who has stuck with the project over the years and helped support and grow Matrix - little did we think back in May 2014 that it’d take us this long to exit beta, but hopefully you’ll agree that it’s been worth it :)
@@ -91,12 +91,17 @@ Most importantly, we’re excited to introduce the **Guardians of the Matrix.org
 
 We have started the Foundation with five Guardians - two being the original founders of the Matrix project (Matthew and Amandine) and three being entirely independent, thus ensuring the original Matrix team forms a minority which can be kept in check by the rest of the Guardians. The new Guardians are:
 
+* Prof. Jon Crowcroft - Marconi Professor of Communications Systems in the Computer Lab at the University of Cambridge and the Turing Institute. Jon is a pioneer in the field of decentralised communication, and a fellow of the Royal Society, the ACM, the British Computer Society, the Institution of Engineering and Technology, the Royal Academy of Engineering and the Institute of Electrical and Electronics Engineers.
 
-*   Prof. Jon Crowcroft - Marconi Professor of Communications Systems in the Computer Lab at the University of Cambridge and the Turing Institute. Jon is a pioneer in the field of decentralised communication, and a fellow of the Royal Society, the ACM, the British Computer Society, the Institution of Engineering and Technology, the Royal Academy of Engineering and the Institute of Electrical and Electronics Engineers.<br/><br/>Jon is a global expert in decentralisation and data privacy, and is excellently placed to help ensure Matrix stays true to its ideals.
+  Jon is a global expert in decentralisation and data privacy, and is excellently placed to help ensure Matrix stays true to its ideals.
 
-*   Ross Schulman - Ross is a senior counsel and senior policy technologist at New America’s Open Technology Institute, where he focuses on internet measurement, emerging technologies, surveillance, and decentralization. Prior to joining OTI, Ross worked for Google.<br/><br/>Ross brings a unique perspective as a tech- and decentralisation-savvy lawyer to the Foundation, as well as being one of the first non-developers in the Matrix community to run his own homeserver. Ross has been known to walk around Mozfest clutching a battery-powered Synapse in a box, promoting decentralised communication for all.
+* Ross Schulman - Ross is a senior counsel and senior policy technologist at New America’s Open Technology Institute, where he focuses on internet measurement, emerging technologies, surveillance, and decentralization. Prior to joining OTI, Ross worked for Google.
 
-*   Dr. Jutta Steiner - As co-founder and CEO of Parity Technologies, Jutta is dedicated to building a better internet - Web 3.0 - where users’ privacy & control come first. Parity Technologies is a leader in the blockchain space – known to many as the creator of one of the most popular Ethereum clients, it is also the creator of two ambitious new blockchain technlogies, Polkadot and Substrate, that make it easier to experiment and innovate on scalability, encryption and governance.<br/><br/>Parity has been pioneering Matrix enterprise use since the moment they decided to rely on Matrix for their internal and external communication back in 2016, and now run their own high-volume deployment, with end-to-end encryption enabled by default. Jutta represents organisations who are professionally dependent on Matrix day-to-day, as well as bringing her unique experiences around decentralisation and ensuring that Web 3.0 will be a fair web for all.
+  Ross brings a unique perspective as a tech- and decentralisation-savvy lawyer to the Foundation, as well as being one of the first non-developers in the Matrix community to run his own homeserver. Ross has been known to walk around Mozfest clutching a battery-powered Synapse in a box, promoting decentralised communication for all.
+
+* Dr. Jutta Steiner - As co-founder and CEO of Parity Technologies, Jutta is dedicated to building a better internet - Web 3.0 - where users’ privacy & control come first. Parity Technologies is a leader in the blockchain space – known to many as the creator of one of the most popular Ethereum clients, it is also the creator of two ambitious new blockchain technlogies, Polkadot and Substrate, that make it easier to experiment and innovate on scalability, encryption and governance.
+
+  Parity has been pioneering Matrix enterprise use since the moment they decided to rely on Matrix for their internal and external communication back in 2016, and now run their own high-volume deployment, with end-to-end encryption enabled by default. Jutta represents organisations who are professionally dependent on Matrix day-to-day, as well as bringing her unique experiences around decentralisation and ensuring that Web 3.0 will be a fair web for all.
 
 We’d like to offer a very warm welcome to the new Guardians, and thank them profusely for giving up their time to join the Foundation and help ensure Matrix stays on course for the years to come.
 
