@@ -29,14 +29,14 @@ But it's certainly been an interesting ride.  Longer-term spec work has been de
 Overall, as we approach 1.0, the project is looking better than ever - hopefully everyone has seen both Riot and Synapse using less RAM and being more responsive and stable, E2E being more reliable, and anyone who has played with the <a href="https://riot.im/experimental">Riot redesign</a> beta should agree that it is light-years ahead of yesterday's Riot and something which can genuinely surpass today's centralised proprietary incumbents. And that is unbelievably exciting :D
 
 
-We'd like to thank everyone for continuing to support Matrix - especially our <a href="http://patreon.com/matrixdotorg">Patreon</a> &amp; <a href="http://liberapay.com/matrixdotorg">Liberapay</a> supporters, whose donations continue to be critical for helping fund the core dev team, and also those who are supporting the project indirectly by hosting homeservers with <a href="https://modular.im">Modular</a>.  We are going to do everything humanly possible to ship 1.0 over the coming weeks, and then the sky will be the limit!
+We'd like to thank everyone for continuing to support Matrix - especially our <a href="http://patreon.com/matrixdotorg">Patreon</a> & <a href="http://liberapay.com/matrixdotorg">Liberapay</a> supporters, whose donations continue to be critical for helping fund the core dev team, and also those who are supporting the project indirectly by hosting homeservers with <a href="https://modular.im">Modular</a>.  We are going to do everything humanly possible to ship 1.0 over the coming weeks, and then the sky will be the limit!
 
 
 Before going into what else 2019 will hold, however, let's take the opportunity to give a bit more detail on the various core team projects which landed in 2018…
 
 ## France
 
-DINSIC (France's Ministry of Digital, IT &amp; Comms) have been busy building out their massive cross-government Matrix deployment and custom Matrix client throughout most of the year.  After the <a href="/blog/2018/04/26/matrix-and-riot-confirmed-as-the-basis-for-frances-secure-instant-messenger-app/">announcement in April</a>, this started off with an initial deployment over the summer, and is now moving towards the full production rollout, as confirmed at the Paris Open Source Summit a few weeks ago by Mounir Mahjoubi, the Secretary of State of Digital.  All the press coverage about this ended up in French, with the biggest writeup being at <a href="https://www.cio-online.com/actualites/lire-mounir-mahjoubi%C2%A0-%C2%A0le-libre-n-est-pas-toujours-moins-cher-mais-c-est-toujours-plus-transparent%C2%A0-10842.html">CIO Online</a>, but the main mention of Matrix (badly translated from French) is:
+DINSIC (France's Ministry of Digital, IT & Comms) have been busy building out their massive cross-government Matrix deployment and custom Matrix client throughout most of the year.  After the <a href="/blog/2018/04/26/matrix-and-riot-confirmed-as-the-basis-for-frances-secure-instant-messenger-app/">announcement in April</a>, this started off with an initial deployment over the summer, and is now moving towards the full production rollout, as confirmed at the Paris Open Source Summit a few weeks ago by Mounir Mahjoubi, the Secretary of State of Digital.  All the press coverage about this ended up in French, with the biggest writeup being at <a href="https://www.cio-online.com/actualites/lire-mounir-mahjoubi%C2%A0-%C2%A0le-libre-n-est-pas-toujours-moins-cher-mais-c-est-toujours-plus-transparent%C2%A0-10842.html">CIO Online</a>, but the main mention of Matrix (badly translated from French) is:
 
 <p style="padding-left: 30px;"><i>Denouncing the use of tools such as WhatsApp; a practice that has become commonplace within ministerial offices, Mounir Mahjoubi announced the launch in production of Tchap, based on Matrix and Riot: an instant messaging tool that will be provided throughout the administrations. So, certainly, developing a product can have a certain cost. Integrating it too. "Free is not always cheaper but it's always more transparent," admitted the Secretary of State.
 </i></p>
@@ -91,7 +91,7 @@ We'll keep you posted with progress as this lands over the coming months.
 
 ## Riot
 
-2018 has been a bit of a chrysalis year for Riot: the vast majority of work has been going into the <a href="https://medium.com/@RiotChat/a-sneak-peek-at-a-whole-new-riot-im-1114df653782">massive redesign</a> we started in May to improve usability &amp; cosmetics, performance, stability, and E2E encryption usability improvements.  We've consciously spent most of the year feature frozen in order to polish what we already have, as we've certainly been guilty in the past of landing way too many features without necessarily applying the needed amount of UX polish.
+2018 has been a bit of a chrysalis year for Riot: the vast majority of work has been going into the <a href="https://medium.com/@RiotChat/a-sneak-peek-at-a-whole-new-riot-im-1114df653782">massive redesign</a> we started in May to improve usability & cosmetics, performance, stability, and E2E encryption usability improvements.  We've consciously spent most of the year feature frozen in order to polish what we already have, as we've certainly been guilty in the past of landing way too many features without necessarily applying the needed amount of UX polish.
 
 
 However, as of today, we're super-excited to announce that Riot's redesign is at the point where the intrepid can start experimenting with it - in fact, internally most of the team has switched over to dogfooding (testing) the redesign as of a week or so ago.  Just shut down your current copy of Riot/Web or Desktop and go to <a href="https://riot.im/experimental">https://riot.im/experimental</a> instead if you want to experiment (we don't recommend running both at the same time).  Please note that it is still work-in-progress and there's a lot of polish still to land and some cosmetic bugs still hanging around, but it's definitely at the point of feeling better than the old app.  Most importantly, please provide feedback (by hitting the lifesaver-ring button at the bottom left) to let us know how you get on. See the <a href="https://medium.com/@RiotChat/redesign-experimenters-needed-afa7c2d4c858">Riot blog</a> for more details!
@@ -136,7 +136,7 @@ One of the biggest projects this year has been to get E2E encryption out of beta
 So, TL;DR: E2E is hard, but the end is in sight thanks to a lot of blood, sweat and tears.  It's possible that we may have opened up too many battlefronts in finishing it off rather than landing stuff gradually.  But it should be transformative when it all lands - and we'll finally be able to turn it on by default for private conversations.  Again, we're aiming to pull this together by the end of January.
 
 
-Separately, we've been keeping a close eye on <a href="https://datatracker.ietf.org/wg/mls/about/">MLS</a> - the IETF's activity around standardising scalable group E2E encryption.  MLS has a lot of potential and could provide algorithmic improvements over Olm &amp; Megolm (whist paving the way for interop with other MLS-encrypted comms systems).  But it's also quite complicated, and is at risk of designing out support of decentralised environments. For now, we're obviously focusing on ensuring that Matrix is rock solid with Olm &amp; Megolm, but once we hit that 1.0 we'll certainly be experimenting a bit with MLS too.
+Separately, we've been keeping a close eye on <a href="https://datatracker.ietf.org/wg/mls/about/">MLS</a> - the IETF's activity around standardising scalable group E2E encryption.  MLS has a lot of potential and could provide algorithmic improvements over Olm & Megolm (whist paving the way for interop with other MLS-encrypted comms systems).  But it's also quite complicated, and is at risk of designing out support of decentralised environments. For now, we're obviously focusing on ensuring that Matrix is rock solid with Olm & Megolm, but once we hit that 1.0 we'll certainly be experimenting a bit with MLS too.
 
 ## Homeservers
 
@@ -173,7 +173,7 @@ There are also some major improvements which haven't fully landed yet:
  	<li style="font-weight: 400;"><a href="https://github.com/matrix-org/matrix-doc/issues/1229">Chunks</a>.  Currently, Synapse models all events in a room as being part of a single DAG, which can be problematic if you can see lots of disconnected sections of the DAG (e.g. due to intermittent connectivity somewhere in the network), as Synapse will frantically try to resolve all these disconnected sections of DAG together.  Instead, a better solution is to explicitly model these sections of DAG as separate entities called Chunks, and not try to resolve state between disconnected Chunks but instead consider them independent fragments of the room - and thus simplify state resolution calculations significantly. It also fixes an S2S API design flaw where previously we trusted the server to state the ordering (depth) of events they provided; with chunks, the receiving server can keep track of that itself by tracking a DAG of chunks (as well as the normal event DAG within the chunks).  Now, most of the work for this happened already, but is <a href="https://github.com/matrix-org/synapse/issues/3785">currently parked</a> until new state res has landed.
 </li>
 </ul>
-Meanwhile, over on Dendrite, we made the conscious decision to get 1.0 out the door on Synapse first rather than trying to implement and iterate on the stuff needed for 1.0 on both Synapse &amp; Dendrite simultaneously.  However, Dendrite has been ticking along thanks to work from Brendan, Anoa and APWhitehat - and the plan is to use it for more niche homeserver work at first; e.g. constrained resource devices (Dendrite uses 5-10x less RAM than Synapse on Py3), clientside homeservers, experimental routing deployments, etc.  In the longer term we expect it to grow into a fully fledged HS though!
+Meanwhile, over on Dendrite, we made the conscious decision to get 1.0 out the door on Synapse first rather than trying to implement and iterate on the stuff needed for 1.0 on both Synapse & Dendrite simultaneously.  However, Dendrite has been ticking along thanks to work from Brendan, Anoa and APWhitehat - and the plan is to use it for more niche homeserver work at first; e.g. constrained resource devices (Dendrite uses 5-10x less RAM than Synapse on Py3), clientside homeservers, experimental routing deployments, etc.  In the longer term we expect it to grow into a fully fledged HS though!
 
 ## Bridging
 
@@ -229,7 +229,7 @@ However, beyond that, there's a lot of possible options on the table in the medi
 </li>
  	<li style="font-weight: 400;">E2E-encrypted Search
 </li>
- 	<li style="font-weight: 400;">Filtering. (empowering users to filter out rooms &amp; content they're not interested in).
+ 	<li style="font-weight: 400;">Filtering. (empowering users to filter out rooms & content they're not interested in).
 </li>
  	<li style="font-weight: 400;">Extensible events.
 </li>
@@ -295,5 +295,5 @@ And on that note, it's time to call this blogpost to a close. Thanks to anyone w
 Happy holidays,
 
 
-Matthew, Amandine &amp; the whole Matrix.org team.
+Matthew, Amandine & the whole Matrix.org team.
 

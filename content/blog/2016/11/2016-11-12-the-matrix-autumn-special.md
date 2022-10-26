@@ -43,7 +43,7 @@ Riot (now Element) itself is a fairly thin layer on top of the official client M
 <ul>
  	<li>End-to-end encryption support landed in matrix-js-sdk and matrix-react-sdk (and thus Riot/Web (now Element)) and in dev on matrix-ios-sdk and matrix-android-sdk using the Olm and Megolm ratchets. More about this later.</li>
  	<li>Hosted integrations, bots and bridges! More about this later too.</li>
- 	<li>Direct Message UI landed in Riot/Web (now Element) to tag rooms which exist for contacting a specific user. These get grouped now as the 'People' list in Riot (now Element). It's in dev on Riot/iOS (now Element (iOS)) &amp; Android (now Element Android).</li>
+ 	<li>Direct Message UI landed in Riot/Web (now Element) to tag rooms which exist for contacting a specific user. These get grouped now as the 'People' list in Riot (now Element). It's in dev on Riot/iOS (now Element (iOS)) & Android (now Element Android).</li>
  	<li>Entirely new UI for starting conversations with people - no more creating a room and then inviting; you just say "i want to talk with Bob".</li>
  	<li>Entirely new UI for inviting people into a room - no more confusion between searching the membership list and inviting users.</li>
  	<li>FilePanel UI in Riot/Web (now Element) to instantly view all the attachments posted in a room</li>
@@ -65,7 +65,7 @@ Riot (now Element) releases are announced on <a href="https://matrix.to/#/#riot:
 
 ### End to End Encryption
 
-Full cross-platform end-to-end encryption is incredibly close now, with the develop branches of iOS &amp; Android SDKs and Riot (now Element) currently in internal testing as of Nov 7 - expect a Big Announcement very shortly.  We're very optimistic based on how the initial implementation on Riot/Web (now Element)has been behaving so far.
+Full cross-platform end-to-end encryption is incredibly close now, with the develop branches of iOS & Android SDKs and Riot (now Element) currently in internal testing as of Nov 7 - expect a Big Announcement very shortly.  We're very optimistic based on how the initial implementation on Riot/Web (now Element)has been behaving so far.
 
 When E2E first landed on Riot/Web (now Element) in September we were missing mobile support, encrypted attachments, encrypted VoIP signalling, and the ability to retrieve encrypted history on new devices - as well as a formal audit of the underlying <a href="/docs/spec/olm.html">Olm</a> and <a href="/docs/spec/megolm.html">Megolm</a> libraries. Since then things have progressed enormously with most of the core team working since September on filling in the gaps, as well as getting audited and fixing all the weird and wonderful edge cases that the audit showed up. All the missing stuff has been landing on the develop branches over the last few weeks, with encrypted attachments landing on web on Nov 10; encrypted VoIP landing on Nov 11; etc. Watch this space for news on the upcoming cross-platform public beta!
 
@@ -105,7 +105,7 @@ matrix-appservice-irc 0.6.0
 matrix-appservice-irc 0.5.0:
 <ul>
  	<li>Support throttling reconnections to IRC servers to avoid triggering abuse thresholds</li>
- 	<li>Support "Third party lookup": mapping from IRC users &amp; rooms into Matrix IDs for discovery purposes</li>
+ 	<li>Support "Third party lookup": mapping from IRC users & rooms into Matrix IDs for discovery purposes</li>
  	<li>Support rate-limiting membership entries to avoid triggering abuse thresholds</li>
  	<li>Require permission of an IRC chanop when plumbing an IRC channel into a Matrix room</li>
  	<li>Prevent routing loops by advisory m.room.bridging events</li>
@@ -179,13 +179,13 @@ Meanwhile, Half-Shot's work ended up focusing on bridging through to Twitter and
 
 Finally, as a bit of a wildcard, we discovered the other day that there was also another GSoC project using Matrix by Waqee Khalid, supported by the <a href="https://summerofcode.withgoogle.com/archive/2016/organizations/6488734048452608/">Berkman Center for Internet and Society</a> at Harvard to <a href="https://summerofcode.withgoogle.com/archive/2016/projects/5749069813121024/">switch Apache Wave (formerly Google Wave) over to using Matrix rather than XMPP</a> for federation!  The implementation looks a little curious here, as Wave used XMPP as a blunt pubsub layer for synchronising protobuf deltas - and it looks like this implementation uses Matrix similarly, thus killing any interop with the rest of Matrix, which is a bit of a shame.  If anyone knows more about the project we'd love to hear though!
 
-Either way, it's been a pleasure to work with the GSoC community and we owe Aviral and Half-Shot (and Waqee!) a huge debt of gratitude for spending their summers (and more!) hacking away improving Matrix. So, thanks Google for making GSoC possible and thanks to the GSoCers for all their contributions, effort &amp; enthusiasm! Watch this space for updates on RTE, new-autocomplete and the twitter bridge going live...
+Either way, it's been a pleasure to work with the GSoC community and we owe Aviral and Half-Shot (and Waqee!) a huge debt of gratitude for spending their summers (and more!) hacking away improving Matrix. So, thanks Google for making GSoC possible and thanks to the GSoCers for all their contributions, effort & enthusiasm! Watch this space for updates on RTE, new-autocomplete and the twitter bridge going live...
 
 ### Matrix in the news
 
 Just in case you missed them, there have been a couple of high profile articles flying around about Matrix recently - we made the <a href="http://www.linux-magazine.com/Issues/2016/189/Matrix">front cover of Linux Magazine in August</a> with a comprehensive review of Matrix and Vector (now Riot (now Element)). Then when we launched Riot (now Element) itself we got a cautiously <a href="https://techcrunch.com/2016/09/19/riot-wants-to-be-like-slack-but-with-the-flexibility-of-an-underlying-open-source-platform/">positive write-up from Mike Butcher at Techcrunch</a>. We also wrote an guest column for Techcrunch about the <a href="https://techcrunch.com/2016/10/09/a-decentralized-web-would-give-power-back-to-the-people-online/">importance of bringing power back to the people via decentralisation</a>, which got a surprising amount of attention on <a href="https://news.ycombinator.com/item?id=12670958">HackerNews</a> and elsewhere.
 
-More recently, we were lucky enough to get an <a href="https://www.youtube.com/watch?v=LhCfI-xdvlE">indepth video interview with Bryan Lunduke</a> as part of his 'Linux &amp; Whatnot' series, and also a <a href="http://www.networkworld.com/article/3140014/open-source-tools/down-the-rabbit-hole-part-5-secure-and-private-instant-messaging.html#tk.twt_nww.">write-up in NetworkWorld</a> alongside Signal &amp; Wire as part of Bryan's journeys in the land of encrypted messaging.
+More recently, we were lucky enough to get an <a href="https://www.youtube.com/watch?v=LhCfI-xdvlE">indepth video interview with Bryan Lunduke</a> as part of his 'Linux & Whatnot' series, and also a <a href="http://www.networkworld.com/article/3140014/open-source-tools/down-the-rabbit-hole-part-5-secure-and-private-instant-messaging.html#tk.twt_nww.">write-up in NetworkWorld</a> alongside Signal & Wire as part of Bryan's journeys in the land of encrypted messaging.
 
 <a href="https://www.youtube.com/watch?v=LhCfI-xdvlE"><img class="aligncenter wp-image-1830 size-large" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-12.31.34-1024x571.png" alt="screen-shot-2016-11-12-at-12-31-34" width="1024" height="571" /></a>
 
@@ -195,7 +195,7 @@ Huge thanks to everyone who's been nice enough to spread the word of Matrix!
 
 Finally, we've been present at a slew of different events. In August we attended FOSSCON again in Philadelphia to give a general update on Matrix to the Freenode community...
 
-> <p dir="ltr" lang="en">It's <a href="https://twitter.com/fossconNE">@fossconNE</a> time! Dave will be talking about Matrix at 1pm today. Come &amp; say hi! <a href="https://t.co/KtfTVRnAVn">pic.twitter.com/KtfTVRnAVn</a></p>
+> <p dir="ltr" lang="en">It's <a href="https://twitter.com/fossconNE">@fossconNE</a> time! Dave will be talking about Matrix at 1pm today. Come & say hi! <a href="https://t.co/KtfTVRnAVn">pic.twitter.com/KtfTVRnAVn</a></p>
 >
 > — Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/766998104369426432">August 20, 2016</a>
 
@@ -207,7 +207,7 @@ Finally, we've been present at a slew of different events. In August we attended
 
 Whilst quite a small event, the quality of folks present was incredibly high - much fun was had comparing open communities to walled gardens with Nicola Greco from Tim Berners-Lee's <a href="http://solid.mit.edu">Solid project</a>...
 
-> <p dir="ltr" lang="en">.<a href="https://twitter.com/ara4n">@ara4n</a> &amp; <a href="https://twitter.com/AmandineLePape">@AmandineLePape</a> showing off the new Riot (now Element) at <a href="https://twitter.com/hashtag/MoNage?src=hash">#MoNage</a> in <a href="https://twitter.com/hashtag/Boston?src=hash">#Boston</a>! <a href="https://t.co/U0qSNjNLGs">pic.twitter.com/U0qSNjNLGs</a></p>
+> <p dir="ltr" lang="en">.<a href="https://twitter.com/ara4n">@ara4n</a> & <a href="https://twitter.com/AmandineLePape">@AmandineLePape</a> showing off the new Riot (now Element) at <a href="https://twitter.com/hashtag/MoNage?src=hash">#MoNage</a> in <a href="https://twitter.com/hashtag/Boston?src=hash">#Boston</a>! <a href="https://t.co/U0qSNjNLGs">pic.twitter.com/U0qSNjNLGs</a></p>
 >
 > — Riot (@RiotChat) <a href="https://twitter.com/RiotChat/status/778610558983634945">September 21, 2016</a>
 
@@ -221,7 +221,7 @@ Whilst quite a small event, the quality of folks present was incredibly high - m
 
 Then in October we spoke about scaling Python/Twisted for Matrix at PyCon France in Rennes - this was really fun, albeit slightly embarrassing to be the only talk about Python/Twisted in a track otherwise entirely about Python 3 and asyncio :D That said, the talk seemed to be well received and it was fantastic to meet some of the enthusiastic French Python community and see folks in the audience who were already up and running on Matrix!
 
-> <p dir="ltr" lang="en">Lots of fun at <a href="https://twitter.com/pyconfr">@pyconfr</a> today demoing Matrix, including a quick video conference with the audience &amp; <a href="https://twitter.com/hashtag/TADHack?src=hash">#TADHack</a> London! <a href="https://t.co/rwbA43X7wB">pic.twitter.com/rwbA43X7wB</a></p>
+> <p dir="ltr" lang="en">Lots of fun at <a href="https://twitter.com/pyconfr">@pyconfr</a> today demoing Matrix, including a quick video conference with the audience & <a href="https://twitter.com/hashtag/TADHack?src=hash">#TADHack</a> London! <a href="https://t.co/rwbA43X7wB">pic.twitter.com/rwbA43X7wB</a></p>
 >
 > — Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/787332779264602112">October 15, 2016</a>
 
@@ -273,4 +273,4 @@ If you've got this far - congratulations! Thanks for reading, and thank you for 
 
 Now more than ever before we believe that it is absolutely critical to have a healthy and secure decentralised communications ecosystem on the 'net (whether that's Matrix, XMPP, Tox or whatever) - so thank you again for participating in our one :)  And if you don't already run your server, please <a href="https://github.com/matrix-org/synapse">grab a Synapse</a> and have fun!
 
-- Matthew, Amandine &amp; the Matrix Team.
+- Matthew, Amandine & the Matrix Team.

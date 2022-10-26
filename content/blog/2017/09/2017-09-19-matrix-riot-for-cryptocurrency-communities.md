@@ -9,7 +9,7 @@ category = ["Thoughts"]
 
 Hi folks,
 
-Over the last few weeks there's been a huge movement in the cryptocurrency communities over needing to find a better communication medium than Slack.  Some of the biggest communities for projects like <a href="https://status.im">Status</a>, <a href="https://aragon.one">Aragon</a>, <a href="http://www.tenx.tech/">TenX</a>, <a href="https://www.tezos.com/">Tezos</a>, <a href="https://omg.omise.co/">OmiseGo</a>, <a href="http://polkadot.network">Polkadot</a> and many others are getting overrun by phishing attacks where malicious users have set up bots which auto-DM users joining the room in order to try to extract private keys to steal funds.  Slack has very limited support for avoiding this sort of abuse (especially at the free service tiers), so the <a href="https://github.com/aragon/governance/issues/7">search is on</a> for an alternative solution.  There seems to be some confusion over what Matrix &amp; Riot can and can't do to help the situation, so we thought we'd write a blog post about it (especially after we <a href="http://www.trustnodes.com/2017/09/14/matrix-demo-steals-show-ethereum-london-conference-meetup">had so much fun</a> at the ETHLDN meetup last week!).
+Over the last few weeks there's been a huge movement in the cryptocurrency communities over needing to find a better communication medium than Slack.  Some of the biggest communities for projects like <a href="https://status.im">Status</a>, <a href="https://aragon.one">Aragon</a>, <a href="http://www.tenx.tech/">TenX</a>, <a href="https://www.tezos.com/">Tezos</a>, <a href="https://omg.omise.co/">OmiseGo</a>, <a href="http://polkadot.network">Polkadot</a> and many others are getting overrun by phishing attacks where malicious users have set up bots which auto-DM users joining the room in order to try to extract private keys to steal funds.  Slack has very limited support for avoiding this sort of abuse (especially at the free service tiers), so the <a href="https://github.com/aragon/governance/issues/7">search is on</a> for an alternative solution.  There seems to be some confusion over what Matrix & Riot can and can't do to help the situation, so we thought we'd write a blog post about it (especially after we <a href="http://www.trustnodes.com/2017/09/14/matrix-demo-steals-show-ethereum-london-conference-meetup">had so much fun</a> at the ETHLDN meetup last week!).
 
 To be clear: we see Ethereum, Bitcoin, Ripple, Stellar and all the other decentralised currencies as being very closely related to Matrix.  Just as distributed ledgers disrupt the fragmented oligopoly old-school banking industry, we want Matrix to disrupt the relatively old-school communications systems of today. And so we'd really rather like that Matrix and Riot rocked when it comes to supporting cryptocurrency communities, and this is something we intend to dedicate resources to long term: we've got some big plans.
 
@@ -26,7 +26,7 @@ To be clear: we see Ethereum, Bitcoin, Ripple, Stellar and all the other decentr
 **Ability to disable DMs and room invites.** Architecturally Matrix lets you prevent users who use a given server from receiving invites (the homeserver can just autoreject the invites, based on some set of rules). <del>We're currently putting together a quick demo to show this off in the Synapse server implementation, but it boils down to having an option to cancel invites <a href="https://github.com/matrix-org/synapse/blob/5a7f561a9bff5163ce7fce719eea083cdd0eabd9/synapse/handlers/federation.py#L1066">here</a> (federated) and <a href="https://github.com/matrix-org/synapse/blob/e5ae386ea4112ec91b47de339a3c8a4e034898c0/synapse/handlers/room_member.py#L243">here</a> (local).</del>
  Check out the demo below!
 
-**Ability to filter content.** Similarly, Matrix architecturally lets a given server filter out messages based on content or some other pattern from being received by its users. <del> We're also putting together a demo of this too in Synapse, which boils down to redacting inappropriate events <a href="https://github.com/matrix-org/synapse/blob/e5ae386ea4112ec91b47de339a3c8a4e034898c0/synapse/federation/federation_base.py#L119">here</a> (federated) and <a href="https://github.com/matrix-org/synapse/blob/e5ae386ea4112ec91b47de339a3c8a4e034898c0/synapse/handlers/message.py#L239">here</a> (local).  The demo isn't quite ready yet but we'll update this &amp; yell when it is.</del>
+**Ability to filter content.** Similarly, Matrix architecturally lets a given server filter out messages based on content or some other pattern from being received by its users. <del> We're also putting together a demo of this too in Synapse, which boils down to redacting inappropriate events <a href="https://github.com/matrix-org/synapse/blob/e5ae386ea4112ec91b47de339a3c8a4e034898c0/synapse/federation/federation_base.py#L119">here</a> (federated) and <a href="https://github.com/matrix-org/synapse/blob/e5ae386ea4112ec91b47de339a3c8a4e034898c0/synapse/handlers/message.py#L239">here</a> (local).  The demo isn't quite ready yet but we'll update this & yell when it is.</del>
  Check out the demo below!
 
 <strong>UPDATE</strong>
@@ -38,7 +38,7 @@ the <a href="https://github.com/matrix-org/synapse/pull/2457">DM/invite disablin
 <ul>
  	<li style="font-weight: 400;">Widgets - the ability to embed arbitrary apps into your rooms (video conferences; currency tickers; DApps; wallets; monitoring dashboards; etc.).
 </li>
- 	<li style="font-weight: 400;">100% Native clients on iOS &amp; Android (including Jitsi video conferencing &amp; Widgets, as of the develop branch!)
+ 	<li style="font-weight: 400;">100% Native clients on iOS & Android (including Jitsi video conferencing & Widgets, as of the develop branch!)
 </li>
  	<li style="font-weight: 400;">Read receipts! (how can you live without them on Slack?!)
 </li>
@@ -52,15 +52,15 @@ the <a href="https://github.com/matrix-org/synapse/pull/2457">DM/invite disablin
 </li>
  	<li style="font-weight: 400;">An <a href="/docs/spec">open spec</a> for the protocol.
 </li>
- 	<li style="font-weight: 400;">100% Apache-licensed FLOSS.  Riot/Web is particularly easy to hack on and theme &amp; customise as needed.
+ 	<li style="font-weight: 400;">100% Apache-licensed FLOSS.  Riot/Web is particularly easy to hack on and theme & customise as needed.
 </li>
- 	<li style="font-weight: 400;">Ability to disable federation for a room if you really want to lock it down to the users &amp; rules of a single server.
+ 	<li style="font-weight: 400;">Ability to disable federation for a room if you really want to lock it down to the users & rules of a single server.
 </li>
 </ul>
 
 ### Things we need to improve:
 
-**Groups (aka Communities):  **One of the biggest missing features in Matrix is the ability to define groups of users &amp; rooms, similar to a Slack team or Discord server, which can be used to organise together a set of discussions and generally give a feeling of community.  We've been working hard at this and expect to see it land in Riot/Web in the next few weeks.  In the meanwhile, you can see some of the UX we're aiming for <a href="https://docs.google.com/document/d/1wv78GqgG59CLjIKPi7GGkdqI6KOeQUBl9Bnf-uA-Kc0/edit#heading=h.xravd1v7n60m">here</a>!
+**Groups (aka Communities):  **One of the biggest missing features in Matrix is the ability to define groups of users & rooms, similar to a Slack team or Discord server, which can be used to organise together a set of discussions and generally give a feeling of community.  We've been working hard at this and expect to see it land in Riot/Web in the next few weeks.  In the meanwhile, you can see some of the UX we're aiming for <a href="https://docs.google.com/document/d/1wv78GqgG59CLjIKPi7GGkdqI6KOeQUBl9Bnf-uA-Kc0/edit#heading=h.xravd1v7n60m">here</a>!
 
 
 **E2E UX (and Riot UX in general):  **While the underlying encryption of Matrix is solid, the UX exposed by Riot needs considerable work - specifically to improve the device verification flow and automatically share keys between trusted devices.  We're continuing to work on this over the next few months.  Likewise there are <a href="https://github.com/vector-im/riot-web/issues/2984">many areas</a> for possible improvement in Riot's overall UX and design that we're working through as urgently as we can.

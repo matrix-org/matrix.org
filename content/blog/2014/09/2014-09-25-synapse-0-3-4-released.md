@@ -11,7 +11,7 @@ Hi all,
 
 Synapse 0.3.4 is out! The main changes here are a huge fleet of bugfixes to the webclient, and the addition of TURN support for VoIP relaying. This makes VoIP/Video call setup much more reliable (although the UI still needs some love).
 
-Meanwhile, we set an IRC bridge (<a href="https://github.com/tm604/Matrix-IRCBridge">https://github.com/tm604/Matrix-IRCBridge</a>) running linking #matrix:matrix.org and #matrix-dev:matrix.org to their Freenode counterparts (#matrix &amp; #matrix-dev respectively) - much fun to see innocent IRC users assimilated up into Matrix, and for us to now be using Matrix for /all/ our development chat and interaction (whether it's through a Matrix client or an IRC client).
+Meanwhile, we set an IRC bridge (<a href="https://github.com/tm604/Matrix-IRCBridge">https://github.com/tm604/Matrix-IRCBridge</a>) running linking #matrix:matrix.org and #matrix-dev:matrix.org to their Freenode counterparts (#matrix & #matrix-dev respectively) - much fun to see innocent IRC users assimilated up into Matrix, and for us to now be using Matrix for /all/ our development chat and interaction (whether it's through a Matrix client or an IRC client).
 
 To upgrade to the latest homeserver, just <code>git pull && ./synctl restart</code>.  If you want to start playing with VoIP in earnest on your own homeserver, you'll need to install a TURN server - see <a href="https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.rst">docs/turn-howto.rst</a> for details on how to set one up.
 

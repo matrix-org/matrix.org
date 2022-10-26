@@ -69,7 +69,7 @@ Any questions, come talk to us on [#gitter:matrix.org](https://matrix.to/#/#gitt
 \- Matthew, Amandine, and the whole Matrix, Element and Gitter teams.
 
 <div style="text-align: center">
-    <img src="/blog/img/2020-09-30-gitter-photo.jpg" width="480" alt="Matthew &amp; Amandine being dorky"/>
+    <img src="/blog/img/2020-09-30-gitter-photo.jpg" width="480" alt="Matthew & Amandine being dorky"/>
     <br/>
     <i><small>Matthew and Amandine model 2014-vintage Matrix & Gitter swag in celebration :D</small></i>
 </div>

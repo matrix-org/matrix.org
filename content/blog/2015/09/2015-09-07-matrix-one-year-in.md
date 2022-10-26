@@ -23,7 +23,7 @@ Back at the original launch, all we had was a *very* rough and ready Synapse hom
 	<li>Decentralised content repository and thumbnailing</li>
 	<li>Reference mobile "Matrix Console" clients for iOS and Android</li>
 	<li>Official client SDKs for iOS and Android - both at the API wrapping layer and the reusable UI component layer</li>
-	<li>Push notifications for APNS and GCM (both on server &amp; clients)</li>
+	<li>Push notifications for APNS and GCM (both on server & clients)</li>
 	<li>Official client SDKs for JavaScript, Python and Perl</li>
 	<li>Typing notifications</li>
 	<li>The sytest integration test harness</li>
@@ -86,4 +86,4 @@ Finally, we also want to save as much time as possible to help support the wider
 
 Huge thanks to everyone over the last year who have supported us - whether that's by creating an account and using the system, running a homeserver, hacking on top of the platform, contributing to the core project, enduring one of our presentations, or even paying for us to work on this. The coming year should prove incredibly interesting, and we hope you'll stay and bring along all your friends, family and colleagues for the ride as the adventure continues!
 
-Matthew, Amandine &amp; the whole Matrix.org team.
+Matthew, Amandine & the whole Matrix.org team.

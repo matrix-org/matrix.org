@@ -21,7 +21,7 @@ Bridges can register themselves as controlling chunks of room aliases namespace,
 
 Alternatively, an existing Matrix room can be can plumbed into one or more specific remote rooms by configuring a bridge (which can be run by anyone). For instance, #matrix:matrix.org is plumbed into #matrix on Freenode, matrixdotorg/#matrix on Slack, etc. Access control for Matrix users is necessarily managed by the Matrix side of the room. This is useful for using Matrix to link together different communities.
 
-Migrating rooms between a portal &amp; plumbed room is currently a bit of a mess, as there's not yet a way for users to remove portal rooms once they're created, so you can end up with a mix of portal &amp; plumbed users bridged into a room, which looks weird from both the Matrix and non-Matrix viewpoints. https://github.com/matrix-org/matrix-appservice-irc/issues/387 tracks this.
+Migrating rooms between a portal & plumbed room is currently a bit of a mess, as there's not yet a way for users to remove portal rooms once they're created, so you can end up with a mix of portal & plumbed users bridged into a room, which looks weird from both the Matrix and non-Matrix viewpoints. https://github.com/matrix-org/matrix-appservice-irc/issues/387 tracks this.
 
 ### Types of bridges (simplest first):
 

@@ -20,7 +20,7 @@ Last year we spent a few weeks putting together a <a href="/blog/2017/04/04/open
  	<li>Kick off the process of encouraging folks to think about storing world geometry and physics in Matrix</li>
  	<li>Have a fun visual demo we could show to excite potential investors in New Vector (which comically backfired when the investment community spontaneously decided that <a href="https://techcrunch.com/2017/08/26/this-vr-cycle-is-dead/">VR is still too early</a>).</li>
 </ol>
-In the end it succeeded on some points (highlighting exotic uses of Matrix; learning all about WebVR) and failed on others (a surge in Matrix-for-VR) - although we did have a lot of fun showing it off at the <a href="https://www.youtube.com/watch?v=y0-j4Q77KXM">ETHLDN meetup</a> back in October. (Eagle eyed viewers may be amused to spot team <a href="https://status.im">Status</a> &amp; Matrix sitting together in the audience ;)
+In the end it succeeded on some points (highlighting exotic uses of Matrix; learning all about WebVR) and failed on others (a surge in Matrix-for-VR) - although we did have a lot of fun showing it off at the <a href="https://www.youtube.com/watch?v=y0-j4Q77KXM">ETHLDN meetup</a> back in October. (Eagle eyed viewers may be amused to spot team <a href="https://status.im">Status</a> & Matrix sitting together in the audience ;)
 
 However, we still believe that Matrix is the missing link for decentralised communication within VR/AR, and we were lucky enough to get a <a href="https://fosdem.org/2018/schedule/event/matrix_webvr/">talk about Matrix+WebRTC+WebVR</a> accepted to the Real-Time Communications Devroom at FOSDEM 2018! So, given a new chance to show the world how cool Matrix-powered comms could be in VR/AR, myself and Dave Baker went on a (very) quick detour to update the demo a little...
 
@@ -44,7 +44,7 @@ Placing a video call through to another Matrix client then coughed up a video st
 
 <a href="/blog/wp-content/uploads/2018/02/depth-encoded.jpg"><img class="aligncenter size-large wp-image-2982" src="/blog/wp-content/uploads/2018/02/depth-encoded-956x1024.jpg" alt="" width="956" height="1024" /></a>
 
-As you can see, closer things (my head) are bluer than further things (the wall), and everything's covered with trippy red &amp; green stripes to refine the fine detail.  For the record, the iPhone TrueDepth camera emits 640x480 depth frames at around 24Hz.
+As you can see, closer things (my head) are bluer than further things (the wall), and everything's covered with trippy red & green stripes to refine the fine detail.  For the record, the iPhone TrueDepth camera emits 640x480 depth frames at around 24Hz.
 
 <strong>Step 4</strong>: extend matrix-vr-demo to view a dot cloud, displaced using a WebGL vertex shader based on the encoded depth info.  Dave kindly did the honours: <a href="https://github.com/matrix-org/matrix-vr-demo/commit/b14cdda605d3807080049e84181b46706cec553e">https://github.com/matrix-org/matrix-vr-demo/commit/b14cdda605d3807080049e84181b46706cec553e</a>
 

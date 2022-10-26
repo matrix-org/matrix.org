@@ -42,7 +42,7 @@ For the demo itself, we obviously needed a FreeSWITCH with mod_verto all up and 
 
 Unfortunately we did hit some problems: Net::Async::Matrix has a few quirks which LeoNerd is working out currently; the bot doesn't coalesce the trickle-ICE properly currently causing a race-condition that means ICE setup may fail; Matthew's use of IO::Async was a bit buggy; and moreover we didn't have time to implement DTMF… which was a bit of a shame as you can only unmute yourself on the ZipDX bridge via DTMF *5!
 
-But in general, the mini-hackathon was a success and it was great fun to be able to listen into VUC via the bridge and demonstrate the first ever Matrix&lt;-&gt;SIP call!  The bot ran as @vucbot:matrix.org, although is turned off now as there's no VUC to listen to, and the FreeSWITCH &amp; bot were only deployed temporarily.  Once the kinks mentioned above are sorted out we'll hopefully set it running again permanently!  And hopefully this little bot is an exciting precursor to more robust Matrix bridges and application services in the months to come...
+But in general, the mini-hackathon was a success and it was great fun to be able to listen into VUC via the bridge and demonstrate the first ever Matrix&lt;-&gt;SIP call!  The bot ran as @vucbot:matrix.org, although is turned off now as there's no VUC to listen to, and the FreeSWITCH & bot were only deployed temporarily.  Once the kinks mentioned above are sorted out we'll hopefully set it running again permanently!  And hopefully this little bot is an exciting precursor to more robust Matrix bridges and application services in the months to come...
 
 If you're crazy enough to want to try to run the bot yourself, then it should actually be quite simple to get up and running:
 
@@ -66,7 +66,7 @@ cpanm --force PEVANS/Net-Async-Matrix-0.11_002
 
 # set up a config file
 cp config.yaml mybot.yaml
-# edit mybot.yaml to taste - at the least you must specify the login &amp; password &amp; homeserver for your bot!
+# edit mybot.yaml to taste - at the least you must specify the login & password & homeserver for your bot!
 
 # run it!
 ./bot.pl -c mybot.yaml

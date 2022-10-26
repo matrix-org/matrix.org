@@ -540,7 +540,7 @@ Knowing this, we can put together message listening and message sending, to buil
 <span class="p">()</span>
  <span class="o" style="font-weight: bold;">===</span>
  <span class="nx">testRoomId</span>
- <span class="o" style="font-weight: bold;">&amp;&amp;</span>
+ <span class="o" style="font-weight: bold;">&&</span>
  <span class="nx">event</span>
 <span class="p">.</span>
 <span class="nx">getContent</span>

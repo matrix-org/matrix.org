@@ -32,7 +32,7 @@ No significant changes.
  	<li>Add metrics to track resource usage by background processes (<a href="https://github.com/matrix-org/synapse/issues/3553">#3553</a>, <a href="https://github.com/matrix-org/synapse/issues/3556">#3556</a>, <a href="https://github.com/matrix-org/synapse/issues/3604">#3604</a>, <a href="https://github.com/matrix-org/synapse/issues/3610">#3610</a>)</li>
  	<li>Add <code>code</code> label to <code>synapse_http_server_response_time_seconds</code> prometheus metric (<a href="https://github.com/matrix-org/synapse/issues/3554">#3554</a>)</li>
  	<li>Add support for client_reader to handle more APIs (<a href="https://github.com/matrix-org/synapse/issues/3555">#3555</a>, <a href="https://github.com/matrix-org/synapse/issues/3597">#3597</a>)</li>
- 	<li>make the /context API filter &amp; lazy-load aware as per MSC1227 (<a href="https://github.com/matrix-org/synapse/issues/3567">#3567</a>)</li>
+ 	<li>make the /context API filter & lazy-load aware as per MSC1227 (<a href="https://github.com/matrix-org/synapse/issues/3567">#3567</a>)</li>
  	<li>Add ability to limit number of monthly active users on the server (<a href="https://github.com/matrix-org/synapse/issues/3630">#3630</a>)</li>
  	<li>When we fail to join a room over federation, pass the error code back to the client. (<a href="https://github.com/matrix-org/synapse/issues/3639">#3639</a>)</li>
  	<li>Add a new /admin/register API for non-interactively creating users. (<a href="https://github.com/matrix-org/synapse/issues/3415">#3415</a>)</li>

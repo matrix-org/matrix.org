@@ -82,7 +82,7 @@ However, we haven't finished it all: despite our best efforts we're running slig
 The main stuff we still have remaining on the Server/Server API at this point is:
 
 <ul>
- 	<li style="font-weight: 400;">Better specifying how we validate inbound events. See <a href="https://github.com/matrix-org/matrix-doc/issues/1646">MSC1646</a> for details &amp; progress.
+ 	<li style="font-weight: 400;">Better specifying how we validate inbound events. See <a href="https://github.com/matrix-org/matrix-doc/issues/1646">MSC1646</a> for details & progress.
 </li>
  	<li style="font-weight: 400;">Switching event IDs to be hashes. See <a href="https://github.com/matrix-org/matrix-doc/issues/1640">MSC1640</a> for details and progress.
 </li>
@@ -114,7 +114,7 @@ In terms of visualising progress on this spec mission it's interesting to look a
 
 
 <a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.03.57.png"><img class="aligncenter wp-image-3529" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.03.57-1024x925.png" alt="" width="744" height="672" /></a>
-Anyway, enough numerology.  It's worth noting that all of the dev for r0 has generally followed the proposed <a href="/blog/2018/06/20/towards-open-governance-for-matrix-org/">Open Governance Model for Matrix</a>, with the core spec team made up of both historical core team folk (erik, richvdh, dave &amp; matthew), new core team folk (uhoreg &amp; travis) and community folk (kitsune, anoa &amp; mujx) working together to review and approve the changes - and we've been doing MSCs (albeit with an accelerated pace) for anything which we feel requires input from the wider community.  Once the Server/Server r0 release is out the door we'll be finalising the open governance model and switching to a slightly more measured (but productive!) model of spec development as outlined there.
+Anyway, enough numerology.  It's worth noting that all of the dev for r0 has generally followed the proposed <a href="/blog/2018/06/20/towards-open-governance-for-matrix-org/">Open Governance Model for Matrix</a>, with the core spec team made up of both historical core team folk (erik, richvdh, dave & matthew), new core team folk (uhoreg & travis) and community folk (kitsune, anoa & mujx) working together to review and approve the changes - and we've been doing MSCs (albeit with an accelerated pace) for anything which we feel requires input from the wider community.  Once the Server/Server r0 release is out the door we'll be finalising the open governance model and switching to a slightly more measured (but productive!) model of spec development as outlined there.
 
 
 Meanwhile, Matrix 1.0 gets ever closer.  With (almost) all this spec mission done, our plan is to focus more on improving the reference implementations - particularly performance in Synapse, 
@@ -124,4 +124,4 @@ UX in matrix-{'{'}react,ios,android{'}'}-sdk as used by Riot (especially for E2E
 We'd like to thank everyone for your patience whilst we've been playing catch up on the spec, and hope you agree it's been worth the effort :)
 
 
-Matthew &amp; the core spec team.
+Matthew & the core spec team.

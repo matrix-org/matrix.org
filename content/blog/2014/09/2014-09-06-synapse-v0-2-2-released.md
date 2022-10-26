@@ -29,6 +29,6 @@ Homeserver:
 * Add support for inviting people when creating a new room.
 * Make the homeserver inform the room via `m.room.aliases` when a new alias is added for a room.
 
-The <a href="http://matrix.org/alpha">matrix.org homeserver</a> &amp; webclient has already been updated to the latest version - if you're running your own homeserver, please update. v0.2.2 retains backwards compatibility with previous homeserver releases.
+The <a href="http://matrix.org/alpha">matrix.org homeserver</a> & webclient has already been updated to the latest version - if you're running your own homeserver, please update. v0.2.2 retains backwards compatibility with previous homeserver releases.
 
 Get the code from <a href="http://github.com/matrix-org/synapse">http://github.com/matrix-org/synapse</a>!

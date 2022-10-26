@@ -96,7 +96,7 @@ We built a 3rd party Debian package repository for Synapse... and then forgot to
 
 In November we attended <a href="http://tadsummit.com/2015/">TADSummit</a> in Lisbon - a great event for folks hacking on telco applications and the telcos themselves.  Apparently we failed to do a writeup, but we had a wonderful time: highlights included sitting down with Maarten Ectors from Canonical to wrap up Synapse as an <a href="https://uappexplorer.com/app/matrix.mectors">Ubuntu Snappy app</a> such that anyone in the Ubuntu Core ecosystem can trivially run a Matrix homeserver, and demoing it as part of the Dangerous Demos track there.  We also gave a 'Matrix: One Year In' talk to summarise what we got up to in 2015.
 
-<img src="/blog/wp-content/uploads/2015/12/ubuntu-768x1024.jpg" alt="Matthew &amp; Maarten" width="768" height="1024" class="aligncenter size-large wp-image-1435" />
+<img src="/blog/wp-content/uploads/2015/12/ubuntu-768x1024.jpg" alt="Matthew & Maarten" width="768" height="1024" class="aligncenter size-large wp-image-1435" />
 <img src="/blog/wp-content/uploads/2015/12/2015-11-17-Matrix-TADSummit.jpg" alt="2015-11-17 Matrix TADSummit" width="720" height="540" class="aligncenter size-full wp-image-1434" />
 
 ## WebRTC Paris

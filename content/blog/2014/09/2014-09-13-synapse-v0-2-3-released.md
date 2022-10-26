@@ -54,4 +54,4 @@ Webclient:
 * Don't display duplicate join events.
 * Show message sent/sending state via opacity
 * Multiline message sending support
-* Many other bug &amp; stability fixes
+* Many other bug & stability fixes

@@ -26,7 +26,7 @@ client.publicRooms(function(err, data) {'{'}
 
 </pre>
 
-Meanwhile, release notes for all &amp; sundry lie below.
+Meanwhile, release notes for all & sundry lie below.
 
 <pre>
 
