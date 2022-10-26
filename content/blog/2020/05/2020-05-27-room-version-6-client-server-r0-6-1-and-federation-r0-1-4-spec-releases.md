@@ -63,7 +63,6 @@ Here's all the MSCs that got merged since the last release:
   - Clarify which events are created as part of `/createRoom`. ([\#2571](https://github.com/matrix-org/matrix-doc/issues/2571))
   - Remove claims that the homeserver is exclusively responsible for profile information in membership events. ([\#2574](https://github.com/matrix-org/matrix-doc/issues/2574))
 
-
 ### Server-Server (Federation) r0.1.4 changelog
 
 #### New Endpoints

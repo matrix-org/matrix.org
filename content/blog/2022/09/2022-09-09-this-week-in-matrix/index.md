@@ -255,6 +255,7 @@ Secure and independent communication for iOS, connected via Matrix. Come talk wi
 > * In ElementX land we fixed the last issues on sliding sync, the timeline can now handle edits, redactions and reactions, we’re implementing proper signing out and started adding more timeline actions like copying permalinks and replies.
 >
 > ![](20220909-ios.gif)
+
 ### Element Android ([website](https://github.com/vector-im/element-android))
 
 Secure and independent communication for Android, connected via Matrix. Come talk with us in [#element-android:matrix.org](https://matrix.to/#/#element-android:matrix.org)!

@@ -154,8 +154,6 @@ and receive the response, including connection setup:
 | HTTP2+JSON | 43 | 6533 |
 | CoAP+CBOR | 6 | 1440 |
 
-
-
 ## Limitations
 - CoAP [OBSERVE](https://datatracker.ietf.org/doc/html/rfc7641) is not enabled by default.
   This extension allows the server to push data to the client so the client doesn't need to

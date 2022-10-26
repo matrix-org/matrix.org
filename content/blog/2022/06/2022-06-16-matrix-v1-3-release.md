@@ -17,7 +17,6 @@ Like last time, the speed of these releases might feel a bit quick for developer
 
 Matrix 1.3 sees 14 MSCs get merged, but we can’t possibly go into detail on them all here. We’ve picked some notable highlights and recommend the full changelog at the bottom for a complete idea of what’s been going on.
 
-
 ## Aggregations and the relationships made along the way
 
 It’s no secret that [MSC1849](https://github.com/matrix-org/matrix-spec-proposals/pull/1849)-style server-side aggregation of related messages have been in the review backlog for a while. We ended up splitting [MSC1849](https://github.com/matrix-org/matrix-spec-proposals/pull/1849) down into more reviewable chunks like [MSC2675](https://github.com/matrix-org/matrix-spec-proposals/pull/2675), allowing us to finally land the first pieces into Matrix 1.3 today.
@@ -26,13 +25,11 @@ In the spec there aren’t currently any defined relationships which make use of
 
 To further prepare for threads, we’ve also removed some restrictions of rich replies through [MSC3676](https://github.com/matrix-org/matrix-spec-proposals/pull/3676), thus allowing replies to be constructed with non-text messages like images. Check out the [new rich replies module](https://spec.matrix.org/v1.3/client-server-api/#rich-replies) for more information.
 
-
 ## Join if you can, or just knock
 
 When we launched restricted rooms in Matrix 1.2 we [noted](https://matrix.org/blog/2022/02/02/matrix-v-1-2-release#public-but-not-too-public-join-rules) that we forgot to handle a case where someone might want to support _both_ knocking and restricted rooms at the same time. We’ve fixed that with a stop-gap join rule from [MSC3787](https://github.com/matrix-org/matrix-spec-proposals/pull/3787) in [room version 10](https://spec.matrix.org/v1.3/rooms/v10/).
 
 The new `knock_restricted` join rule allows the room to keep its desire to be restricted whilst also allowing members who do not meet the criteria to knock on the room instead. We’ll likely expand on this sort of mixing of join rules in proposals like [MSC3386](https://github.com/matrix-org/matrix-spec-proposals/pull/3386) down the line, however for now this should cover the gap in support. Next up: figuring out how to make encrypted room history available to these new joiners in a safe way.
-
 
 ## A thread for next time
 
@@ -44,14 +41,11 @@ Alongside threads, we also anticipate that [MSC2676](https://github.com/matrix-o
 
 Keep an eye on [This Week In Matrix](https://matrix.org/blog/category/this-week-in-matrix) for updates on what v1.4 is expected to include, and how things are progressing.
 
-
 ## The full changelog
 
 MSCs are how the spec changes in the way it does - adding, fixing, and maintaining features for the whole ecosystem to use. The blog post can’t cover them all, but that doesn’t make them any less important! Check out the full changelog below, and the [Spec Change Proposals](https://spec.matrix.org/unstable/proposals/) page for more information on how these MSCs got merged (hint: they submitted a proposal, which anyone can do - take a look at the [Matrix Live episode](https://www.youtube.com/watch?v=SFkZz60RRfc) where Matthew covers the proposal process).
 
-<!-- Intentionally blank line to ensure headers work in the concatenated changelog -->
 ### Client-Server API
-
 
 <strong>Deprecations</strong>
 
@@ -87,9 +81,7 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Fix incorrectly referenced `m.login.appservice` login identifier, instead using `m.login.application_service`. ([#3711](https://github.com/matrix-org/matrix-spec-proposals/issues/3711))
 - Fix membership state transitions to denote that `invite->knock` and `external->leave` are valid transitions. ([#3730](https://github.com/matrix-org/matrix-spec-proposals/issues/3730))
 
-
 ### Server-Server API
-
 
 <strong>Backwards Compatible Changes</strong>
 
@@ -111,30 +103,22 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Correct misleading text for `/send_join` response. ([#3703](https://github.com/matrix-org/matrix-spec-proposals/issues/3703))
 - Clarify that the `content` for `X-Matrix` signature validation is the parsed JSON body. ([#3727](https://github.com/matrix-org/matrix-spec-proposals/issues/3727))
 
-
 ### Application Service API
-
 
 <strong>Backwards Compatible Changes</strong>
 
 
 - Add timestamp massaging as per [MSC3316](https://github.com/matrix-org/matrix-spec-proposals/pull/3316). ([#1094](https://github.com/matrix-org/matrix-spec/issues/1094))
 
-
 ### Identity Service API
 
-
 No significant changes.
-
 
 ### Push Gateway API
 
-
 No significant changes.
 
-
 ### Room Versions
-
 
 <strong>Backwards Compatible Changes</strong>
 
@@ -156,8 +140,6 @@ No significant changes.
 - For room versions 2 through 10: More explicitly define the mainline of a power event and the mainline ordering of other events. ([#1107](https://github.com/matrix-org/matrix-spec/issues/1107))
 - For room versions 7, 8, 9, and 10: fix join membership authorization rules when `join_rule` is `knock`. ([#3737](https://github.com/matrix-org/matrix-spec-proposals/issues/3737))
 
-
 ### Appendices
-
 
 No significant changes.

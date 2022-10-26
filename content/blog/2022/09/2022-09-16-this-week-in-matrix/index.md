@@ -64,9 +64,8 @@ category = ["This Week in Matrix"]
 > As far as I can tell, this MSC is currently waiting for [MSC3574](https://github.com/matrix-org/matrix-spec-proposals/pull/3574) to progress before it itself moves much further. But feel free to check out both in the meantime if you're interested.
 >
 > ![](20220916-spec.png)
+
 ## Dept of Servers 🏢
-
-
 
 ### Synapse ([website](https://github.com/matrix-org/synapse/))
 
@@ -169,6 +168,7 @@ A Matrix-KakaoTalk puppeting bridge.
 > * Discussion: [#matrix-appservice-kakaotalk:miscworks.net](https://matrix.to/#/#matrix-appservice-kakaotalk:miscworks.net)
 > * Testing room: [#kakaotalk-bridge-testing:miscworks.net](https://matrix.to/#/#kakaotalk-bridge-testing:miscworks.net) / <https://open.kakao.com/o/gjGQFuae>
 > * Issue page: <https://src.miscworks.net/fair/matrix-appservice-kakaotalk/issues>
+
 ## Dept of Clients 📱
 
 ### Quadrix ([website](https://github.com/alariej/quadrix))
@@ -186,6 +186,7 @@ A Minimal, simple, multi-platform chat client for the Matrix protocol.
 > 3) for PinePhone enthusiasts, Wayland display on KDE and SXMO UI's (it was already available on Phosh).
 >
 > Please leave feedback/comments at [#quadrix:matrix.org](https://matrix.to/#/#quadrix:matrix.org) or in the issues at <https://github.com/alariej/quadrix> (stars welcome :-)
+
 ### Neochat ([website](https://invent.kde.org/network/neochat))
 
 A client for matrix, the decentralized communication protocol
@@ -205,6 +206,7 @@ A client for matrix, the decentralized communication protocol
 > * NeoChat will now better follow Kirigami's style of progress indicator and the system's color for text selection (Thanks to Bharadwaj Raju)
 >
 > ![](2c5afae81a1ee8d120cf71dce2d14fb66a5b5407.png)
+
 ### Ement.el ([website](https://github.com/alphapapa/ement.el))
 
 Matrix client for Emacs
@@ -212,6 +214,7 @@ Matrix client for Emacs
 [alphapapa](https://matrix.to/#/@alphapapa:matrix.org) announces
 
 > Ement.el, a Matrix client for [GNU Emacs](https://www.gnu.org/software/emacs/), has finally been published on the official [GNU ELPA](https://elpa.gnu.org/packages/ement.html) package repository. Now the current stable release can be installed by any Emacs user by simply using the command `M-x package-install RET ement RET`.  More improvements to come. Feel free to join us in [#ement.el:matrix.org](https://matrix.to/#/#ement.el:matrix.org).
+
 ### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
 
 Secure and independent communication, connected via Matrix. Come talk with us in [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org)!
@@ -226,6 +229,7 @@ Secure and independent communication, connected via Matrix. Come talk with us in
 > **In labs (you can enable labs features in settings on develop.element.io or on Nightly):**
 >
 > * Threads work continues as 2 of our 3 MSCs make their way into their FCP (Final Comment Period). We’re excited to bring improvements to you and will be dropping them straight into the product as soon as they’re ready.
+
 ### Element iOS ([website](https://github.com/vector-im/element-ios))
 
 Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
@@ -236,6 +240,7 @@ Secure and independent communication for iOS, connected via Matrix. Come talk wi
 > * The team is also making improvements on the next generation of the Element app for iOS (Element X).
 >     * We’re experimenting with merging together the sliding sync mechanism and the new timeline API.
 >     * We’ve added support for reactions, redactions, permalinks and replying, we have a new log out mechanism and soft logout, and we’ve also overhauled the UI.
+
 ### Element Android ([website](https://github.com/vector-im/element-android))
 
 Secure and independent communication for Android, connected via Matrix. Come talk with us in [#element-android:matrix.org](https://matrix.to/#/#element-android:matrix.org)!
@@ -247,6 +252,7 @@ Secure and independent communication for Android, connected via Matrix. Come tal
 >     - The new app layout! While you can currently access this via Labs, we’re closing bugs and addressing feedback that will allow us to make it the default layout for all users. Check out [more info here](https://element.io/blog/an-unrecognisable-improvement-elements-new-design-is-here/)
 >     - Also coming up, starting a DM when the first message is sent. No more waiting around for the room to be created before you say hi to the recipients - your invite and message will be received together. Yey! :ta\_da:
 > * We’re also working on a fix for the bug that’s making verifying others difficult.
+
 ## Dept of SDKs and Frameworks 🧰
 
 ### matrix-rust-sdk ([website](https://github.com/matrix-org/matrix-rust-sdk))
@@ -263,6 +269,7 @@ Next-gen crypto-included SDK for developing Clients, Bots and Appservices; writt
 >
 >
 > 👉 Wanna hack on matrix rust? Go check out our [`help wanted` tagged issues](https://github.com/matrix-org/matrix-rust-sdk/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and join our matrix channel at Matrix Rust SDK.
+
 ## Dept of Ops 🛠
 
 ### matrix-docker-ansible-deploy ([website](https://github.com/spantaleev/matrix-docker-ansible-deploy))
@@ -286,6 +293,7 @@ Matrix server setup using Ansible and Docker
 > People who are using some reocmmendation configuration like `matrix_synapse_workers_preset: one-of-each` will now get 9 additional worker processes by default.
 >
 > To learn more, see [our changelog entry](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#potential-backward-compatibility-break-major-improvements-to-synapse-workers)
+
 ## Dept of Services 🚀
 
 ### etke.cc ([website](https://etke.cc))
@@ -300,6 +308,7 @@ Your matrix server on your conditions
 > Besides having completely localized the website (see [etke.cc in German here](https://etke.cc/de/)) and Matrix server ordering flow, we're now also able to offer customer support in German.
 >
 > If you're in Germany and would like to get a managed self-hosted Matrix server, neither self-hosting difficulties nor the language barrier is getting in the way anymore.
+
 ## Dept of Bots 🤖
 
 [use @progserega:rsprim.ru](https://matrix.to/#/@progserega:matrix.org) says
@@ -316,6 +325,7 @@ Your matrix server on your conditions
 > Anybody can try bot by invite @react-sig-bot:sibnsk.net to his room.
 >
 > Source code for the bot: <https://github.com/progserega/matrix-reaction-signature-bot>
+
 ## Dept of Events and Talks 🗣️
 
 ### W3C TPAC 2022
@@ -327,6 +337,7 @@ Your matrix server on your conditions
 > ### W3C Matrix Space
 >
 > W3C now has a public Matrix space: #w3.org:matrix.org
+
 ## Dept of Ping
 
 Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.

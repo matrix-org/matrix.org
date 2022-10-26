@@ -19,13 +19,11 @@ For instances installed with `pip`, the library can be updated with `pip install
 
 It is also worth noting that a release candidate for [Twisted 22.2](https://github.com/twisted/twisted/releases/tag/twisted-22.2.0rc1) has been published, with a fix for a potential denial of service vulnerability with SSH. Administrators of Synapse homeservers that have the [manhole](https://matrix-org.github.io/synapse/v1.52/manhole.html) feature enabled (which is the only feature of Synapse using SSH) are encouraged to ensure access to the manhole is correctly restricted (e.g. by preventing access from external locations).
 
-
 ## Federation admin APIs
 
 This release of Synapse introduces a few admin APIs to help server administrators monitor and handle how their Synapse homeserver interacts with other federated homeservers. [One of these APIs](https://matrix-org.github.io/synapse/v1.52/usage/administration/admin_api/federation.html#destination-rooms) offers server administrators a way to visualise which rooms are shared between the local homeserver and a given remote one.
 
 Another API allows server administrators to [reset federation timeouts](https://matrix-org.github.io/synapse/v1.52/usage/administration/admin_api/federation.html#reset-connection-timeout). If Synapse fails to connect to a remote homeserver, it will make note of the failure and will not retry the connection after a certain amount of time. This can happen if the remote homeserver goes offline or experiences connectivity issues. Synapse has a few ways of figuring out whether a remote homeserver has come back online, but this new admin API adds a way for administrators to manually tell Synapse a destination should be available.
-
 
 ## Everything else
 

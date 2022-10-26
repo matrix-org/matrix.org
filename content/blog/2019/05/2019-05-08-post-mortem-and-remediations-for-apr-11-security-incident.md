@@ -55,7 +55,6 @@ Meanwhile, if you think that the world needs Matrix, **please** consider support
 
 Finally, if you happen across security issues in Matrix or matrix.org’s infrastructure, please please consider disclosing them responsibly to us as per our [Security Disclosure Policy](https://matrix.org/security-disclosure-policy/), in order to help us improve our security while protecting our users.
 
-
 ### History
 
 Firstly, some context about Matrix.org’s infrastructure.  The public Matrix.org homeserver and its associated services runs across roughly 30 hosts, spanning the actual homeserver, its DBs, load balancers, intranet services, website, bridges, bots, integrations, video conferencing, CI, etc.  We provide it as a free public service to the Matrix ecosystem to help bootstrap the network and make life easier for first-time users.
@@ -71,7 +70,6 @@ Lots of stuff then happened over the following months - we [secured funding](htt
 Good news was that funding meant that in March 2018 we were able to hire a fulltime ops specialist!  By this point, however, we had two new critical projects in play to try to ensure long-term funding for the project via New Vector, the startup formed in 2017 to hire the core team. Firstly, to build out [Modular.im](https://modular.im) as a commercial-grade Matrix SaaS provider, and secondly, to support France in rolling out their massive Matrix deployment as a flagship example how Matrix can be used.  And so, for better or worse, the brand new ops team was given a very clear mandate: to largely ignore the legacy datacenter infrastructure, and instead focus exclusively on building entirely new, pro-grade infrastructure for Modular.im and France, with the expectation of eventually migrating Matrix.org itself into Modular when ready (or just turning off the Matrix.org server entirely, once we have account portability).
 
 So we ended up with two production environments; the legacy Matrix.org infra, whose shortcomings continued to linger and fester off the radar, and separately all the new Modular.im hosts, which are almost entirely operationally isolated from the legacy datacenter; whose configuration is managed exclusively by Ansible, and have sensible SSH configs which disallow root login etc.  With 20:20 hindsight, the failure to prioritise hardening the legacy infrastructure is quite a good example of the [normalisation of deviance](https://fastjetperformance.com/podcasts/how-i-almost-destroyed-a-50-million-war-plane-when-display-flying-goes-wrong-and-the-normalisation-of-deviance/) - we had gotten too used to the bad practices; all our attention was going elsewhere; and so we simply failed to prioritise getting back to fix them.
-
 
 ### The Incident
 
@@ -106,7 +104,6 @@ Given the production database had been accessed, we had no choice but drop all a
 
 At about 4am we had enough of the bare necessities back up and running to pause for sleep.
 
-
 ### The Defacement
 
 At around 7am, we were woken up to the news that the attacker had managed to replace the matrix.org website with a defacement (as per [https://github.com/vector-im/riot-web/issues/9435](https://github.com/vector-im/riot-web/issues/9435)). It looks like the attacker didn’t think we were being transparent enough in our initial blog post, and wanted to make it very clear that they had access to many hosts, including the production database and had indeed exfiltrated password hashes.  Unfortunately it took a few hours for the defacement to get on our radar as our monitoring infrastructure hadn’t yet been fully restored and the normal paging infrastructure wasn’t back up (we now have emergency-emergency-paging for this eventuality).
@@ -122,7 +119,6 @@ On inspection, it transpired that the attacker had not compromised the new infra
 Unfortunately, when you do this, it turns out that the API Key it changes is your personal one, rather than the admin one.  As a result, in our rush we thought we’d rotated the admin API key, but we hadn’t, thus accidentally enabling the defacement.
 
 To flush out the defacement we logged in directly as the admin user and changed the API key, pointed the DNS back at the right place, and continued on with the rebuild.
-
 
 ### The Rebuild
 
@@ -148,7 +144,6 @@ In the interest of transparency (and to try to give a sense of scale of the impa
 
 Apologies again that it took longer to get some of these services back up than we’d preferred (and that there are still a few pending).  Once we got the top priority ones up, we had no choice but to juggle the remainder alongside remediation work, [other security work](https://matrix.org/blog/2019/05/03/security-updates-sydent-1-0-3-synapse-0-99-3-1-and-riot-android-0-9-0-0-8-99-0-8-28-a/), and actually working on Matrix(!), whilst ensuring that the services we restored were being restored securely.
 
-
 ### Remediations
 
 Once the majority of the P1 and P2 services had been restored, on Apr 24 we held a formal retrospective for the team on the whole incident, which in turn kicked off a full security audit over the entirety of our infrastructure and operational processes.
@@ -159,11 +154,9 @@ We should also acknowledge that after being removed from the infra, the attacker
 
 We’ve split the remediation work into the following domains.
 
-
 #### SSH
 
 Some of the biggest issues exposed by the security breach concerned our use of SSH, which we’ll take in turn:
-
 
 ##### SSH agent forwarding should be disabled.
 
@@ -193,11 +186,9 @@ Our remediations for this are:
 
 Another approach could be to allow forwarding, but configure your SSH agent to prompt whenever a remote app tries to access your keys.  However, not all agents support this (OpenSSH’s does via `ssh-add -c`, but gnome-keyring for instance doesn’t), and also it might still be possible for a hijacker to race with the valid request to hijack your credentials.
 
-
 ##### SSH should not be exposed to the general internet
 
 Needless to say, SSH is no longer exposed to the general internet.  We are rolling out a VPN as the main access to dev network, and then SSH bastion hosts to be the only access point into production, using SSH keys to restrict access to be as minimal as possible.
-
 
 ##### SSH keys should give minimal access
 
@@ -207,11 +198,9 @@ A typical scenario where users might end up with unnecessary access to productio
 
 Relatedly, we’ve also shifted to requiring multiple SSH keys per user (per device, and for privileged / unprivileged access), to have finer grained granularity over locking down their permissions and revoking them etc.  (We had actually already started this process, and while it didn’t help prevent the attack, it did assist with forensics).
 
-
 ##### Two factor authentication
 
 We are rolling out two-factor authentication for SSH to ensure that even if keys are compromised (e.g. via forwarding hijack), the attacker needs to have also compromised other physical tokens in order to successfully authenticate.
-
 
 ##### It should be made as hard as possible to add malicious SSH keys
 
@@ -219,20 +208,17 @@ We’ve decided to stop users from being able to directly manage their own SSH k
 
 Instead, keys for all accounts are managed exclusively by Ansible via `/etc/ssh/authorized_keys/$account` (using sshd’s `AuthorizedKeysFile /etc/ssh/authorized_keys/%u` directive).
 
-
 ##### Changes to SSH keys should be carefully monitored
 
 If we’d had sufficient monitoring of the SSH configuration, the breach could have been caught instantly.  We are doing this by managing the keys exclusively via Ansible, and also improving our intrusion detection in general.
 
 Similarly, we are working on tracking changes and additions to other credentials (and enforcing their complexity).
 
-
 ##### SSH config should be hardened, disabling unnecessary options
 
 If we’d gone through reviewing the default sshd config when we set up the datacenter in the first place, we’d have caught several of these failure modes at the outset.  We’ve now done so (as per above).
 
 We’d like to recommend that packages of openssh start having secure-by-default configurations, as a number of the old options just don’t need to exist on most newly provisioned machines. 
-
 
 #### Network architecture
 
@@ -253,7 +239,6 @@ We are addressing this by:
 
 We’re also running most services in containers by default going forwards (previously it was a bit of a mix of running unix processes, VMs, and occasional containers), providing an additional level of namespace isolation. 
 
-
 #### Keeping patched
 
 Needless to say, this particular breach would not have happened had we kept the public-facing Jenkins patched (although there would of course still have been scope for a 0-day attack).
@@ -264,11 +249,9 @@ Aside from our infrastructure, we’re also extending the process of regularly c
 
 Moving all our machine deployment and configuration into Ansible allows this to be a much simpler task than before.
 
-
 #### Intrusion detection
 
 There’s obviously a lot we need to do in terms of spotting future attacks as rapidly as possible.  Amongst other strategies, we’re working on real-time log analysis for aberrant behaviour.
-
 
 #### Incident management
 
@@ -288,7 +271,6 @@ There is much we have learnt from managing an incident at this scale. The main h
     *   Reminder to not redesign infrastructure during a rebuild.  There were a few instances where we lost time by seizing the opportunity to try to fix design flaws whilst rebuilding, some of which were avoidable.
     *   Making sure that communication isn’t sent prematurely to users (e.g. we posted the blog post asking people to update their passwords before password reset had actually been restored - apologies for that.)
 
-
 #### Configuration management
 
 One of the major flaws once the attacker was in our network was that our internal configuration git repo was cloned on most accounts on most servers, containing within it a plethora of unencrypted secrets.  Config would then get symlinked from the checkout to wherever the app or OS needed it.
@@ -297,11 +279,9 @@ This is bad in terms of leaving unencrypted secrets (database passwords, API key
 
 Our solution is to switch all configuration management, from the OS upwards, to Ansible (which we had already established for Modular.im), using Ansible vaults to store the encrypted secrets.  It’s unfortunate that we had already done the work for this (and even had been [giving talks at Ansible meetups](https://github.com/ansible-community/ansible-london-meetup/blob/master/presentations/2019-01-31/Introducing%20Ansible%20to%20matrix-final.pdf) about it!) but had not yet applied it to the legacy infrastructure.
 
-
 #### Avoiding temporary measures which last forever
 
 None of this would have happened had we been more disciplined in finishing off the temporary infrastructure from back in 2017.  As a general point, we should try and do it right the first time - and failing that, assign responsibility to someone to update it and assign responsibility to someone else to check. In other words, the only way to dig out of temporary measures like this is to project manage the update or it will not happen.  This is of course a general point not specific to this incident, but one well worth reiterating.
-
 
 #### Secure packaging
 
@@ -335,7 +315,6 @@ Alternatives here included:
 *   In an ideal world we’d do reproducible builds instead, and sign the build’s hash with a hardware key, but given we don’t have reproducible builds yet this will have to suffice for now.
 *   We could delegate building and distribution entirely to a 3rd party setup such as OBS (as per [https://github.com/matrix-org/matrix.org/issues/370](https://github.com/matrix-org/matrix.org/issues/370)).  However, we have a very wide range of artefacts to build across many different platforms and OSes, so would rather build ourselves if we can.
 
-
 #### Dev and CI infrastructure
 
 The main change in our dev and CI infrastructure is to move from Jenkins to [Buildkite](https://buildkite.com/matrix-dot-org).  The latter has been serving us well for Synapse builds over the last few months, and has now been extended to serve all the main CI pipelines that Jenkins was providing.  Buildkite works by orchestrating jobs on a elastic pool of CI workers we host in our own AWS, and so far has done so quite painlessly.
@@ -349,7 +328,6 @@ Other than CI, our strategy is:
 *   Continue using Github for public repositories
 *   Use gitlab.matrix.org for private repositories (and stuff which we don’t want to re-export via the US, like [Olm](https://gitlab.matrix.org/matrix-org/olm))
 *   Continue to host docker images on Docker Hub (despite their recent [security dramas](https://success.docker.com/article/docker-hub-user-notification)).
-
 
 #### Log minimisation and handling Personally Identifying Information (PII)
 
@@ -371,7 +349,6 @@ Meanwhile, in Matrix itself we already are very mindful of handling PII (c.f. ou
 *   We need device audit trails in Matrix, so that even if a compromised server (or malicious server admin) temporarily adds devices to your account, you can see what’s going on.  This is [https://github.com/matrix-org/synapse/issues/5145](https://github.com/matrix-org/synapse/issues/5145)
 *   We need to empower users to configure history retention in their rooms, so they can limit the amount of history exposed to an attacker. This is [https://github.com/matrix-org/matrix-doc/pull/1763](https://github.com/matrix-org/matrix-doc/pull/1763)
 *   We need to provide account portability (aka decentralised accounts) so that even if a server is compromised, the users can seamlessly migrate elsewhere. The first step of this is [https://github.com/matrix-org/matrix-doc/pull/1228](https://github.com/matrix-org/matrix-doc/pull/1228).
-
 
 ### Conclusion
 

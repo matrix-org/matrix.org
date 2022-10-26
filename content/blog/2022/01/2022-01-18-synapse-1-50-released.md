@@ -23,7 +23,6 @@ One of the main shortcomings of application services currently is that they do n
 
 We've recently started work to tackle this issue in the form of [MSC3202](https://github.com/matrix-org/matrix-doc/pull/3202). A first part of implementing this MSC (allowing application services to masquerade as specific devices) has landed in this release of Synapse; work is still ongoing towards a full implementation, so watch this space!
 
-
 ## Improved reliability on device list updates
 
 While working on this release, we identified a long-standing bug that could prevent Synapse from sending device lists update over federation if the server had a high number of active users and/or users with a lot of devices connected to their account.
@@ -31,7 +30,6 @@ While working on this release, we identified a long-standing bug that could prev
 This bug was introduced back in [Synapse 1.0.0](https://github.com/matrix-org/synapse/releases/tag/v1.0.0), and meant that the homeserver would miss some device list updates when communicating with other homeservers if the amount of updates to send was too high. In practice, this means users on remote homeservers could see outdated device information for other users (including outdated device verification statuses).
 
 Synapse 1.50 includes a fix to this bug. This should contribute towards making the propagation of device list updates more reliable.
-
 
 ## Everything else
 

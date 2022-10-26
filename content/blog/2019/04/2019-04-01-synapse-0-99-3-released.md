@@ -19,7 +19,7 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/syna
 
 ## Synapse 0.99.3 changelog
 
-#### <a id="user-content-features" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.md#features" aria-hidden="true"></a>Features
+#### Features
 
 <ul>
  	<li>The user directory has been rewritten to make it faster, with less chance of falling behind on a large server. (<a href="https://github.com/matrix-org/synapse/issues/4537">#4537</a>, <a href="https://github.com/matrix-org/synapse/issues/4846">#4846</a>, <a href="https://github.com/matrix-org/synapse/issues/4864">#4864</a>, <a href="https://github.com/matrix-org/synapse/issues/4887">#4887</a>, <a href="https://github.com/matrix-org/synapse/issues/4900">#4900</a>, <a href="https://github.com/matrix-org/synapse/issues/4944">#4944</a>)</li>
@@ -40,7 +40,7 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/syna
  	<li>Add ability for password providers to login/register a user via 3PID (email, phone). (<a href="https://github.com/matrix-org/synapse/issues/4931">#4931</a>)</li>
 </ul>
 
-#### <a id="user-content-bugfixes" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.md#bugfixes" aria-hidden="true"></a>Bugfixes
+#### Bugfixes
 
 <ul>
  	<li>Fix a bug where media with spaces in the name would get a corrupted name. (<a href="https://github.com/matrix-org/synapse/issues/2090">#2090</a>)</li>
@@ -61,7 +61,7 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/syna
  	<li>Fix bug where blocked world-readable rooms were still peekable. (<a href="https://github.com/matrix-org/synapse/issues/4908">#4908</a>)</li>
 </ul>
 
-#### <a id="user-content-internal-changes" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.md#internal-changes" aria-hidden="true"></a>Internal Changes
+#### Internal Changes
 
 <ul>
  	<li>Add a systemd setup that supports synapse workers. Contributed by Luca Corbatto. (<a href="https://github.com/matrix-org/synapse/issues/4662">#4662</a>)</li>

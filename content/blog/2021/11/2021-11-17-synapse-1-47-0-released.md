@@ -21,7 +21,6 @@ Administrators can now [search for rooms by their ID or alias](https://github.co
 
 Authors of pluggable modules have some new toys to play with. There's [a way to listen for new events](https://github.com/matrix-org/synapse/pull/11126); a means to [retrieve room state](https://github.com/matrix-org/synapse/pull/11204) and the ability to edit a [user's membership of a room](https://github.com/matrix-org/synapse/pull/11147).
 
-
 ## Bug Fixes and Refactors
 
 We fixed a variety of different bugs in this release, many of which were long-standing. It's good to see them dealt with! Worth mentioning in particular:

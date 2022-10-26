@@ -18,7 +18,6 @@ As many know by now, a few of us have been working away since mid-December on ex
 
 In some ways this is the logical end goal of Matrix: our aim has always been to empower users to have full control over their communication rather than being beholden to any given service provider, and in a P2P world we completely return power over secure communication to the people.
 
-
 ### Why P2P?
 
 P2P Matrix is about more than just letting users store their own conversations: it can also avoid dependencies on the Internet itself by working over local networks, mesh networks, or situations where the Internet has been cut off.  Even more interestingly, without homeservers, there is nowhere for metadata to accumulate about who is talking to who, and when - which is a legitimate complaint about today’s Matrix network, given the homeservers of all users in a given conversation necessarily have to store that conversation’s metadata.  P2P also lets us radically simplify signup for new users if they don’t have to pick a server to get going - and we avoid the unintentional centralisation of users piling onto public servers.
@@ -26,7 +25,6 @@ P2P Matrix is about more than just letting users store their own conversations: 
 P2P also forces us to solve many of the hardest remaining problems in Matrix: e.g multi-homed accounts, given multi-device P2P requires your account to exist in multiple places. This in turn unlocks high availability and geo-redundancy for accounts on today’s Matrix network (imagine having a primary and backup homeserver that magically did the right thing!), as well as account portability, and thus also vhosting and load-balancing accounts between servers, and even improved GDPR compliance (for if your user IDs are ephemeral they are no longer personally identifying information baked into your Matrix rooms).  We’ll also need better safety mechanisms to avoid folks exploiting the anonymous nature of the network for abuse, accelerating the work we’re already doing for today’s Matrix network.
 
 The way we’ve been approaching P2P is the “[hamfisted but genius](https://twitter.com/Lucid00/status/1263974339294175232)” approach of taking homeservers and running them on the client, alongside or within your Matrix client - meaning that there are literally **no** changes required for any Matrix client to talk P2P Matrix, and so P2P Matrix can instantly benefit from all the work which has gone into Riot and other apps.  As a result, P2P is also a huge motivator towards developing much smaller homeservers which can run efficiently clientside (e.g. Dendrite!) - which is of course great news for Matrix as a whole.  It also forces us to develop more scalable routing algorithms (as you don’t want your client to have to talk to every other device in a room every time it sends a message!) and also spurs development of low bandwidth Matrix transports (as you don’t want the additional chatter of talking to multiple peers to consume all your bandwidth).  Finally, it forces us to really ruggedize federation, given nodes are constantly appearing and disappearing, giving the federation much more of a stress test than we see with today’s relatively static homeservers.
-
 
 ### P2P in Practice
 
@@ -50,7 +48,6 @@ Please report bugs to [https://github.com/matrix-org/dendrite/issues](https://gi
 
 Finally, please understand that the demo is very likely **not** what the final version of P2P Matrix will look like - this is just one step in a series of experiments as we investigate the best paths forward :)
 
-
 ### What’s next?
 
 For the current demo, there’s still lots of stuff remaining, including:
@@ -69,7 +66,6 @@ Firstly: we do not yet have a solution for “store and forward” nodes which c
 Secondly: we want to experiment more with other transports, and find out which works best for Matrix.  Libp2p has some really exciting new stuff in the form of [Gossipsub v1.1](https://blog.ipfs.io/2020-05-20-gossipsub-v1.1) - a much smarter routing algorithm for pubsub traffic in libp2p, which David Dias gave us a [VIP tour](https://youtu.be/APVp-20ATLk?t=3598) of at the first Open Tech Will Save Us meetup.  So we’ll need to restructure our libp2p transport as pubsub to see how it works in practice.  Separately, we also want to play with hooking up [Yggdrasil](https://yggdrasil-network.github.io/) (the encrypted overlay network) as a transport as a totally different approach - Yggdrasil will easily let us span different underlying network transports, but comes with different tradeoffs (e.g. no browser support yet).  We also want to take a look at the [DAT](https://dat.foundation/) / [hypercore](https://github.com/hypercore-protocol/hypercore) / [hyperswarm](https://github.com/hyperswarm/hyperswarm) / [Cabal](https://cabal.chat/) ecosystem to see if there’s a match :)
 
 Thirdly and finally: we obviously want to unify the new P2P Matrix network with today’s federated one.  The ideal outcome here would be to have a hybrid model, where teams who want their users to have a dedicated homeserver (for availability, IT policies, etc) can continue to have one as they do today - but newbies who have just installed Riot would float around on P2P unless they decided to consciously put down roots on a server or two.  Best of all, it would let us turn off the matrix.org homeserver: the best public homeserver is one you run yourself on your own phone ;)  The approach we take for linking P2P and today’s Matrix will depend very much on the transport we select for P2P in the long run, but the likelihood is that today’s homeservers will sprout P2P gateways to link the networks.
-
 
 ## Conclusion
 

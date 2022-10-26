@@ -22,9 +22,9 @@ Finally we have some ground work for upcoming room membership lazy loading, ther
 
 No significant changes.
 
-### <a id="user-content-synapse-0332rc1-2018-08-07" class="anchor" href="https://github.com/matrix-org/synapse/blob/release-v0.33.2/CHANGES.md#synapse-0332rc1-2018-08-07" aria-hidden="true"></a>Synapse 0.33.2rc1 (2018-08-07)
+### Synapse 0.33.2rc1 (2018-08-07)
 
-#### <a id="user-content-features" class="anchor" href="https://github.com/matrix-org/synapse/blob/release-v0.33.2/CHANGES.md#features" aria-hidden="true"></a>Features
+#### Features
 
 <ul>
  	<li>add support for the lazy_loaded_members filter as per MSC1227 (<a href="https://github.com/matrix-org/synapse/issues/2970">#2970</a>)</li>
@@ -38,7 +38,7 @@ No significant changes.
  	<li>Add a new /admin/register API for non-interactively creating users. (<a href="https://github.com/matrix-org/synapse/issues/3415">#3415</a>)</li>
 </ul>
 
-#### <a id="user-content-bugfixes" class="anchor" href="https://github.com/matrix-org/synapse/blob/release-v0.33.2/CHANGES.md#bugfixes" aria-hidden="true"></a>Bugfixes
+#### Bugfixes
 
 <ul>
  	<li>Make /directory/list API return 404 for room not found instead of 400 (<a href="https://github.com/matrix-org/synapse/issues/2952">#2952</a>)</li>
@@ -55,7 +55,7 @@ No significant changes.
  	<li>Only import secrets when available (fix for py &lt; 3.6) (<a href="https://github.com/matrix-org/synapse/issues/3626">#3626</a>)</li>
 </ul>
 
-#### <a id="user-content-internal-changes" class="anchor" href="https://github.com/matrix-org/synapse/blob/release-v0.33.2/CHANGES.md#internal-changes" aria-hidden="true"></a>Internal Changes
+#### Internal Changes
 
 <ul>
  	<li>Remove redundant checks on who_forgot_in_room (<a href="https://github.com/matrix-org/synapse/issues/3350">#3350</a>)</li>

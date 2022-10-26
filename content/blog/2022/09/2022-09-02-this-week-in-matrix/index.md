@@ -265,8 +265,6 @@ E2E encrypted social networking built on Matrix. Safe, private sharing for your 
 
 ## Dept of SDKs and Frameworks 🧰
 
-
-
 ### Trixnity ([website](https://gitlab.com/trixnity/trixnity))
 
 Multiplatform Kotlin SDK for Matrix
@@ -380,7 +378,6 @@ Synapse Maintenance Container – Docker container with tools for synapse & post
 > ### Next DWeb Camp
 > 
 > Planning for next camp(s) has begun. To participate, check out [#decentralizedweb-general:matrix.org](https://matrix.to/#/#decentralizedweb-general:matrix.org) & https://getdweb.net/get-involved
-
 
 ## Dept of Interesting Projects 🛰️
 

@@ -27,7 +27,6 @@ authors, and want to shed some light on the reasoning behind it, and what we
 plan to do to prevent leaving authors in the dark about why there may be no
 Spec Core Team activity on their proposal.
 
-
 ## Proposal Triaging
 
 There are currently 136 open MSCs that have yet to undergo Final Comment
@@ -77,7 +76,6 @@ proprietary chat protocols and items in "core" are decidedly the proposals
 that will take us the furthest in that direction. This doesn't mean we won't
 occasionally look at an MSC in a different category, but it will heavily
 influence our prioritisation.
-
 
 ## Future
 

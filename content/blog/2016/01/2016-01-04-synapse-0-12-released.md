@@ -22,7 +22,7 @@ Full changelog follows:
 </ul>
 <a name="user-content-changes-in-synapse-v0-12-0-rc3-2015-12-23"></a>
 
-### <a id="user-content-changes-in-synapse-v0120-rc3-2015-12-23" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0120-rc3-2015-12-23"></a>Changes in synapse v0.12.0-rc3 (2015-12-23)
+### Changes in synapse v0.12.0-rc3 (2015-12-23)
 
 <ul>
     <li>Allow guest accounts access to <code>/sync</code> (PR #455)</li>
@@ -38,7 +38,7 @@ Full changelog follows:
 </ul>
 <a name="user-content-changes-in-synapse-v0-12-0-rc2-2015-12-14"></a>
 
-### <a id="user-content-changes-in-synapse-v0120-rc2-2015-12-14" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0120-rc2-2015-12-14"></a>Changes in synapse v0.12.0-rc2 (2015-12-14)
+### Changes in synapse v0.12.0-rc2 (2015-12-14)
 
 <ul>
     <li>Add caches for whether rooms have been forgotten by a user (PR #434)</li>
@@ -50,7 +50,7 @@ Full changelog follows:
 </ul>
 <a name="user-content-changes-in-synapse-v0-12-0-rc1-2015-12-10"></a>
 
-### <a id="user-content-changes-in-synapse-v0120-rc1-2015-12-10" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.rst#changes-in-synapse-v0120-rc1-2015-12-10"></a>Changes in synapse v0.12.0-rc1 (2015-12-10)
+### Changes in synapse v0.12.0-rc1 (2015-12-10)
 
 <ul>
     <li>Host the client APIs released as r0 by <a href="/docs/spec/r0.0.0/client_server.html">https://matrix.org/docs/spec/r0.0.0/client_server.html</a> on paths prefixed by<code>/_matrix/client/r0</code>. (PR #430, PR #415, PR #400)</li>

@@ -38,7 +38,7 @@ The changes since the last release are:
 </ul>
 </dd></dl>
 
-### <a id="user-content-matrix-console" class="anchor" href="https://github.com/matrix-org/matrix-ios-sdk/blob/master/CHANGES.rst#matrix-console"></a>Matrix Console
+### Matrix Console
 
 <dl><dt>Improvements:</dt><dd>
 <ul>
