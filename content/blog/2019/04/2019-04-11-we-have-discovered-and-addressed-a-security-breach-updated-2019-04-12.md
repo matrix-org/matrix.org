@@ -10,9 +10,9 @@ category = ["General"]
 <b>Update: for the full story here, please see <a href="https://matrix.org/blog/2019/05/08/post-mortem-and-remediations-for-apr-11-security-incident">the post mortem</a>.</b>
 <br/>
 
-## Here&#39;s what you need to know.
+## Here's what you need to know.
 
-<strong>TL;DR:</strong> An attacker gained access to the servers hosting Matrix.org. The intruder had access to the production databases, potentially giving them access to unencrypted message data, password hashes and access tokens. As a precaution, if you&#39;re a matrix.org user you should <strong>change your password now</strong>.
+<strong>TL;DR:</strong> An attacker gained access to the servers hosting Matrix.org. The intruder had access to the production databases, potentially giving them access to unencrypted message data, password hashes and access tokens. As a precaution, if you're a matrix.org user you should <strong>change your password now</strong>.
 
 The matrix.org homeserver has been rebuilt and is running securely; bridges and other ancillary services (e.g. this blog) will follow as soon as possible. Modular.im homeservers have not been affected by this outage.
 
@@ -28,10 +28,10 @@ Users with <strong>Matrix.org accounts</strong> should:
 
 <ul>
 <li><strong>Change your password now</strong> - no plaintext Matrix passwords were leaked, but weak passwords could still be cracked from the hashed passwords</li>
-<li><strong>Change your NickServ password (if you&#39;re using IRC bridging)</strong> - there&#39;s no evidence bridge credentials were compromised, but if you have given the IRC bridges credentials to your NickServ account we would recommend changing this password</li>
+<li><strong>Change your NickServ password (if you're using IRC bridging)</strong> - there's no evidence bridge credentials were compromised, but if you have given the IRC bridges credentials to your NickServ account we would recommend changing this password</li>
 </ul>
 
-And as a reminder, it&#39;s good practice to:
+And as a reminder, it's good practice to:
 
 <ul>
 <li><strong>Review your device list regularly</strong> - make sure you recognise all of the devices connected to your account</li>
@@ -40,7 +40,7 @@ And as a reminder, it&#39;s good practice to:
 
 ### What user data has been accessed?
 
-Forensics are ongoing; so far we&#39;ve found no evidence of large quantities of data being downloaded. The attacker did have access to the production database, so unencrypted content (including private messages, password hashes and access tokens) may be compromised.
+Forensics are ongoing; so far we've found no evidence of large quantities of data being downloaded. The attacker did have access to the production database, so unencrypted content (including private messages, password hashes and access tokens) may be compromised.
 
 ### What has not been affected?
 
@@ -56,7 +56,7 @@ The target appeared to be internal credentials for onward exploits, not end user
 
 As we had to log out all users from matrix.org, if you do not have backups of your encryption keys you will not be able to read your encrypted conversation history.  However, if you use server-side encryption key backup (the default in Riot these days) or take manual key backups, you’ll be okay. 
 
-This was a difficult choice to make. We weighed the risk of some users losing access to encrypted messages against that of all users&#39; accounts being vulnerable to hijack via the compromised access tokens. We hope you can see why we made the decision to prioritise account integrity over access to encrypted messages, but we&#39;re sorry for the inconvenience this may have caused.
+This was a difficult choice to make. We weighed the risk of some users losing access to encrypted messages against that of all users' accounts being vulnerable to hijack via the compromised access tokens. We hope you can see why we made the decision to prioritise account integrity over access to encrypted messages, but we're sorry for the inconvenience this may have caused.
 
 ## What happened?
 
@@ -85,7 +85,7 @@ April 10th
 <ul>
 <li>Investigation identified the compromised machines and the full scope of the attack</li>
 <li>Jenkins was removed</li>
-<li>Attacker&#39;s access to compromised machines was removed</li>
+<li>Attacker's access to compromised machines was removed</li>
 </ul>
 
 April 11th
