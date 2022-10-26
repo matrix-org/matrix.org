@@ -12,7 +12,9 @@ This guide will live with the documentation at <a href="/docs/guides/whatsapp-br
 <hr />
 
 Matrix is:
-<blockquote>an open standard for <em>interoperable</em>, <em>decentralised</em>, <em>real-time communication</em>.</blockquote>
+
+> an open standard for <em>interoperable</em>, <em>decentralised</em>, <em>real-time communication</em>.
+
 In this article we'll benefit from all three of these attributes:
 <ul>
  	<li><em>interoperable:</em> we'll see how Matrix can be made to interact with WhatsApp</li>
