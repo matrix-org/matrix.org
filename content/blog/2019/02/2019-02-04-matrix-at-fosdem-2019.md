@@ -21,7 +21,6 @@ We spoke about SS API r0.1 at length in <a href="https://fosdem.org/2019/schedul
 <div class="video-container"><iframe src="https://www.youtube.com/embed/C2eE7rCUKlE" width="1280" height="720" frameBorder="0" allowFullScreen="allowfullscreen"></iframe></div>
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Full house for <a href="https://twitter.com/ara4n?ref_src=twsrc%5Etfw">@ara4n</a> talking about <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a> and the French State <a href="https://twitter.com/fosdem?ref_src=twsrc%5Etfw">@fosdem</a> It was a packed presentation full of lots exciting progress demos. So sorry for practically yanking you offstage in the end! <a href="https://t.co/idshDcSRhv">pic.twitter.com/idshDcSRhv</a></p>&mdash; Rob Pickering (@RobinJPickering) <a href="https://twitter.com/RobinJPickering/status/1091725803715481607?ref_src=twsrc%5Etfw">February 2, 2019</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Then, on Sunday we had the opportunity to have a quick <a href="https://fosdem.org/2019/schedule/event/matrix/">20 minute talk in the Real Time Comms dev room</a>, where we gave a tour of some of the work we've been doing recently to scale Matrix down to working on incredibly low bandwidth networks (100bps or less).  It's literally the opposite of the Matrix 1.0 / France talk in that it's a quick deep dive into a very specific problem area in Matrix - so, if you've been looking forward to Matrix finally having a better transport than HTTPS+JSON, here goes!  <a href="/blog/wp-content/uploads/2019/02/2019-02-03-FOSDEM-Low-Bandwidth.pdf">Slides are available here.</a>
 
@@ -29,7 +28,6 @@ Then, on Sunday we had the opportunity to have a quick <a href="https://fosdem.o
 </iframe></div>
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Full house for <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a> ? <a href="https://twitter.com/hashtag/FOSDEM?src=hash&amp;ref_src=twsrc%5Etfw">#FOSDEM</a> <a href="https://twitter.com/hashtag/RTCsevroom?src=hash&amp;ref_src=twsrc%5Etfw">#RTCsevroom</a> <a href="https://t.co/dDQnD3mzmc">pic.twitter.com/dDQnD3mzmc</a></p>&mdash; Saúl Ibarra Corretgé (@saghul) <a href="https://twitter.com/saghul/status/1091995116649267201?ref_src=twsrc%5Etfw">February 3, 2019</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Huge thanks to everyone who came to the talks, and everyone who came to the stand or grabbed us for a chat! FOSDEM is an amazing way to be reminded in person that folks care about Matrix, and we've come away feeling more determined than ever to make Matrix as great as possible and provide a protocol+network which will replace the increasingly threatened proprietary communication silos. :)
 

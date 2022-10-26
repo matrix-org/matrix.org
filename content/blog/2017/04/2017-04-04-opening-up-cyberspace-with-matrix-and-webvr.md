@@ -72,6 +72,5 @@ Finally, if you're interested in chatting more about VR on Matrix, come hang out
 <div style="text-align: center;">
 <div style="display: inline-block;">
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Amandine grins at the future in the newest skunkworks zone of the London <a href="https://t.co/y2YCHNIbgU">https://t.co/y2YCHNIbgU</a> HQ... :&gt; :D 😈 <a href="https://t.co/K5xBz7U9o2">pic.twitter.com/K5xBz7U9o2</a></p>&mdash; Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/843181984448991232?ref_src=twsrc%5Etfw">March 18, 2017</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 </div>
