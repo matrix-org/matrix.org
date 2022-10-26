@@ -133,7 +133,9 @@ Thanks to <a class="user-mention" href="https://github.com/farialima">@farialim
  	<li>Fix bug in state group storage (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2649" data-error-text="Failed to load issue title" data-id="271901224" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2649">#2649</a>)</li>
  	<li>Fix 500 on invalid utf-8 in request (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2663" data-error-text="Failed to load issue title" data-id="272868148" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2663">#2663</a>)</li>
 </ul>
-<h2>Finally...</h2>
+
+## Finally...
+
 If you haven't noticed already, Riot/Web 0.13 is out today, as is Riot/iOS 0.6.2 and Riot/Android 0.7.4.  These contain massive improvements across the board - particularly mainstream Communities support at last on Riot/Web; CallKit/PushKit on Riot/iOS thanks to Denis Morozov (GSoC 2017 student for Matrix) and Share Extension on iOS thanks to Aram Sargsyan (also GSoC 2017 student!); and End-to-end Key Sharing on Riot/Android and a full rewrite of the VoIP calling subsystem on Android.
 
 Rather than going on about it here, though, there's a <a href="https://medium.com/@RiotChat/communities-aka-groups-are-here-announcing-riot-web-0-13-riot-ios-0-6-and-riot-android-0-7-4-933cb193a28e">full write-up over on the Riot Blog.</a>

@@ -24,9 +24,11 @@ This ongoing flurry of security work is in general all part of moving towards th
 As always, you can get the new update from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.32.1">https://github.com/matrix-org/synapse/releases/tag/v0.32.1</a>
  or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>.
 
-<h2>Changes in synapse v0.32.0 (2018-07-06)</h2>
+## Changes in synapse v0.32.0 (2018-07-06)
+
 No changes since 0.32.0rc1
-<h2>Synapse 0.32.0rc1 (2018-07-05)</h2>
+
+## Synapse 0.32.0rc1 (2018-07-05)
 
 #### Features
 

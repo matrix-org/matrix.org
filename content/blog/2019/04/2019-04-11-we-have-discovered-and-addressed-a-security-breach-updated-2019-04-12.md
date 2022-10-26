@@ -10,7 +10,7 @@ category = ["General"]
 <b>Update: for the full story here, please see <a href="https://matrix.org/blog/2019/05/08/post-mortem-and-remediations-for-apr-11-security-incident">the post mortem</a>.</b>
 <br/>
 
-<h2 id="toc_1">Here&#39;s what you need to know.</h2>
+## Here&#39;s what you need to know.
 
 <p><strong>TL;DR:</strong> An attacker gained access to the servers hosting Matrix.org. The intruder had access to the production databases, potentially giving them access to unencrypted message data, password hashes and access tokens. As a precaution, if you&#39;re a matrix.org user you should <strong>change your password now</strong>.</p>
 
@@ -58,7 +58,7 @@ category = ["General"]
 
 <p>This was a difficult choice to make. We weighed the risk of some users losing access to encrypted messages against that of all users&#39; accounts being vulnerable to hijack via the compromised access tokens. We hope you can see why we made the decision to prioritise account integrity over access to encrypted messages, but we&#39;re sorry for the inconvenience this may have caused.</p>
 
-<h2 id="toc_7">What happened?</h2>
+## What happened?
 
 <p>We were using Jenkins for continuous integration (automatically testing our software). The version of Jenkins we were using had a vulnerability (<a href="https://nvd.nist.gov/vuln/detail/CVE-2019-1003000">CVE-2019-1003000</a>, <a href="https://nvd.nist.gov/vuln/detail/CVE-2019-1003001">CVE-2019-1003001</a>, <a href="https://nvd.nist.gov/vuln/detail/CVE-2019-1003002">CVE-2019-1003002</a>) which allowed an attacker to hijack credentials (forwarded ssh keys), giving access to our production infrastructure. Thanks to <a href="https://twitter.com/jaikeysarraf">@jaikeysarraf</a> for drawing this to our attention.</p>
 
@@ -96,7 +96,7 @@ category = ["General"]
 <li>Matrix.org homeserver restored, with bridges and ancillary services (e.g. this blog) following as soon as possible</li>
 </ul>
 
-<h2>Update 2019-04-12</h2>
+## Update 2019-04-12
 
 <p>
 At around 5am UTC on Apr 12, the attacker used a cloudflare API key to repoint DNS for matrix.org to a defacement website (https://github.com/matrixnotorg/matrixnotorg.github.io).
@@ -125,6 +125,6 @@ was passphrased and based on our initial analysis of the release, we believe it 
 </p>
 
 
-<h2 id="toc_9">What are we doing to prevent this in future?</h2>
+## What are we doing to prevent this in future?
 
 <p>Once things are back up and running we will retrospect on this incident in detail to identify the changes we need to make. We will provide a proper postmortem, including follow-up steps; meanwhile we are obviously going to take measures to improve the security of our production infrastructure, including patching services more aggressively and more regular vulnerability scans.</p>

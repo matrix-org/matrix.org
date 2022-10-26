@@ -34,7 +34,9 @@ Finally, one of the longer term plans to help fund Matrix is to get sponsorship 
 Moving forward we are confident that we can secure funding, through sponsorship and Riot paid services, but in truth this decision caught us by surprise and so we need help both long term but also <b><i>right now!</i></b>
 
 And whatever the funding situation, we're of course always looking for contributions for code, bug reports, or just spreading the word about the project too! :)
-<h2>Status Update</h2>
+
+## Status Update
+
 <strong><em>(or scroll to next section to see why this is bigger than "just" decentralised encrypted communication)</em></strong>
 
 Despite the funding issue, the project really is going very well. Our vital stats (as seen through the lens of the matrix.org synapse) are looking like this:
@@ -130,7 +132,9 @@ About 40% of the desired performance work has happened here (although not all ha
  	<li><em>…and a few other things which would be premature to mention right now. :D</em></li>
 </ul>
 All will be revealed in the next week or two - but suffice it to say that Integrations are going to be getting a Lot More Useful™. :)
-<h2>Reflections</h2>
+
+## Reflections
+
 There are very very few people actually working professionally on trying to build general-purpose open communication networks and protocols.  There's us, some <a href="http://xmpp.org">XMPP</a>, <a href="http://ircv3.net/">IRCv3</a> and <a href="https://gnu.io/social/">GNU Social</a>/<a href="https://mastodon.social">Mastodon</a> folks, <a href="https://ring.cx/">GNU Ring</a>, <a href="http://tox.chat">Tox</a>, <a href="http://briarproject.org">Briar</a>, <a href="https://github.com/ssbc">Secure Scuttlebutt</a>, <a href="http://ipfs.io">IPFS</a>, <a href="http://status.im">Status.im</a>, <a href="http://ricochet.im">Ricochet</a>… and that's literally all the major projects I can think of (sorry if I missed you!).  There's probably only 50 developers in total working in this domain as their day job.
 
 Meanwhile, there are literally <strong><i>hundreds of thousands </i></strong>of folks trudging away building more and more near-indistinguishable proprietary closed communication systems - trapping users inside ever more silos and fragmenting the basic ability to communicate on the ‘net.  It's like a world where the open web was pushed into a tiny underground resistance, and everyone else was trapped in the walled gardens of AOL and Compuserve (or more contemporarily: Facebook, Twitter, WhatsApp etc).

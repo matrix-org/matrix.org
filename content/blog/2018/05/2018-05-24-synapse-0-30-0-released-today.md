@@ -22,7 +22,9 @@ Get it now from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.
 <div class="release clearfix label-latest">
 <div class="release-body commit open float-left">
 <div class="markdown-body">
-<h2>Changes in synapse v0.30.0 (2018-05-24)</h2>
+
+## Changes in synapse v0.30.0 (2018-05-24)
+
 'Server Notices' are a new feature introduced in Synapse 0.30. They provide a
 channel whereby server administrators can send messages to users on the server.
 
