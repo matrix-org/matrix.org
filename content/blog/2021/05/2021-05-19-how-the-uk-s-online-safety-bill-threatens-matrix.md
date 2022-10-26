@@ -54,9 +54,7 @@ ironically also in response to a government proposal, albeit about encryption
 backdoors. In it, we briefly discussed the dangers of absolute determinations
 of morality from a single cultural perspective:
 
-<blockquote>
-<a href="https://matrix.org/blog/2020/10/19/combating-abuse-in-matrix-without-backdoors">As uncomfortable as it may be, one man’s terrorist is another man’s freedom fighter, and different jurisdictions have different laws - and it’s not up to the Matrix.org Foundation to play God and adjudicate.</a>
-</blockquote>
+> <a href="https://matrix.org/blog/2020/10/19/combating-abuse-in-matrix-without-backdoors">As uncomfortable as it may be, one man’s terrorist is another man’s freedom fighter, and different jurisdictions have different laws - and it’s not up to the Matrix.org Foundation to play God and adjudicate.</a>
 
 We now find ourselves reading a piece of legislation that essentially demands
 these determinations from tech companies. The beauty of the human experience

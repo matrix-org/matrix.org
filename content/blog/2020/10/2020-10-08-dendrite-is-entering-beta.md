@@ -32,7 +32,7 @@ Then we started building out the various components to implement the various ser
 
 Things were looking pretty positive by the summer of 2017: we had the server sending/receiving messages, federating with Synapse, and looking tantalisingly close:
 
-<blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">We just sent the first ever synapse-&gt;dendrite federated traffic, including full dendrite media API (thumbnailing, fed, etc)!!! :D :D :D <a href="https://t.co/sBcM2jMAr6">pic.twitter.com/sBcM2jMAr6</a></p>&mdash; Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/872861579141947392?ref_src=twsrc%5Etfw">June 8, 2017</a></blockquote>
+> <p lang="en" dir="ltr">We just sent the first ever synapse-&gt;dendrite federated traffic, including full dendrite media API (thumbnailing, fed, etc)!!! :D :D :D <a href="https://t.co/sBcM2jMAr6">pic.twitter.com/sBcM2jMAr6</a></p>&mdash; Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/872861579141947392?ref_src=twsrc%5Etfw">June 8, 2017</a>
 
 However, we then hit three fairly major obstacles:
 

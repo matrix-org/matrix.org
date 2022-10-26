@@ -69,9 +69,12 @@ Until around June, <strong>Ruma</strong> was receiving regular updates. There wa
 ## DSN Traveller by Florian
 
 Matrix was featured as part of a Master's thesis by Florian Jacob.
-<blockquote><a href="https://dsn-traveller.dsn.scc.kit.edu/">DSN Traveller</a> tries to get a rough overview of how the Matrix network is structured today. It records how many rooms it finds, how many users and servers take part in those rooms, and how they relate to each other, meaning how many users a server has and of how many rooms it is part of.</blockquote>
+
+> <a href="https://dsn-traveller.dsn.scc.kit.edu/">DSN Traveller</a> tries to get a rough overview of how the Matrix network is structured today. It records how many rooms it finds, how many users and servers take part in those rooms, and how they relate to each other, meaning how many users a server has and of how many rooms it is part of.
+
 Florian's thesis was handed in last August. <a href="https://github.com/florianjacob/dsn-traveller">Source code is available</a>.
-<blockquote>All details at <a href="https://dsn-traveller.dsn.scc.kit.edu/">https://dsn-traveller.dsn.scc.kit.edu/</a>, room at <a href="https://matrix.to/#/#dsn-traveller:dsn-traveller.dsn.scc.kit.edu">#dsn-traveller:dsn-traveller.dsn.scc.kit.edu</a>.</blockquote>
+
+> All details at <a href="https://dsn-traveller.dsn.scc.kit.edu/">https://dsn-traveller.dsn.scc.kit.edu/</a>, room at <a href="https://matrix.to/#/#dsn-traveller:dsn-traveller.dsn.scc.kit.edu">#dsn-traveller:dsn-traveller.dsn.scc.kit.edu</a>.
 
 ## Still more
 

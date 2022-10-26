@@ -15,31 +15,28 @@ The history of JS client support on Matrix is that in the original rush to get a
 
 However, this poses a major problem if you want a richer client SDK but don't want to use Angular - e.g. if you prefer another framework (or no framework at all), or are using the SDK in an Application Service or similar.  So, this has prompted a major upgrade to the matrix-js-sdk in order to extend it to act both as a simple wrapper of the Matrix Client-Server HTTP API, but also expose a full object and event model to describe the state of a Matrix client together with all the higher level functions to drive it.  To quote from the <a href="https://github.com/matrix-org/matrix-js-sdk/blob/master/README.md">README</a>:
 
-<blockquote>
-This SDK provides a full object model around the Matrix Client-Server API and emits events for incoming data and state changes. Aside from wrapping the HTTP API, it:
-
-<ul>
-<li>Handles syncing (via /initialSync and /events)</li>
-<li>Handles the generation of "friendly" room and member names.</li>
-<li>Handles historical RoomMember information (e.g. display names).</li>
-<li>Manages room member state across multiple events (e.g. it handles typing, power levels and membership changes).</li>
-<li>Exposes high-level objects like Rooms, RoomState, RoomMembers and Users which can be listened to for things like name changes, new messages, membership changes, presence changes, and more.</li>
-</ul>
-
-Later versions of the SDK will:
-
-<ul>
-<li>Automatically retry requests to send messages due to network errors.</li>
-<li>Automatically retry requests to send messages due to rate limiting errors.</li>
-<li>Mark events' sent status (e.g. 'not sent').</li>
-<li>Handle "local echo" of messages sent.</li>
-<li>Handle queueing of messages.</li>
-<li>Handle pagination.</li>
-<li>Expose a RoomSummary which would be suitable for a recents page.</li>
-<li>Provide different pluggable storage layers (e.g. local storage, database-backed)</li>
-</ul>
-
-</blockquote>
+> This SDK provides a full object model around the Matrix Client-Server API and emits events for incoming data and state changes. Aside from wrapping the HTTP API, it:
+>
+> <ul>
+> <li>Handles syncing (via /initialSync and /events)</li>
+> <li>Handles the generation of "friendly" room and member names.</li>
+> <li>Handles historical RoomMember information (e.g. display names).</li>
+> <li>Manages room member state across multiple events (e.g. it handles typing, power levels and membership changes).</li>
+> <li>Exposes high-level objects like Rooms, RoomState, RoomMembers and Users which can be listened to for things like name changes, new messages, membership changes, presence changes, and more.</li>
+> </ul>
+>
+> Later versions of the SDK will:
+>
+> <ul>
+> <li>Automatically retry requests to send messages due to network errors.</li>
+> <li>Automatically retry requests to send messages due to rate limiting errors.</li>
+> <li>Mark events' sent status (e.g. 'not sent').</li>
+> <li>Handle "local echo" of messages sent.</li>
+> <li>Handle queueing of messages.</li>
+> <li>Handle pagination.</li>
+> <li>Expose a RoomSummary which would be suitable for a recents page.</li>
+> <li>Provide different pluggable storage layers (e.g. local storage, database-backed)</li>
+> </ul>
 
 It also is designed to provide an API that abstracts both version 1 of the client-server API and the upcoming version 2 (which fixes various thinkos we've discovered along the way in v1).
 
