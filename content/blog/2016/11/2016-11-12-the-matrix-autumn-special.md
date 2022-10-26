@@ -201,7 +201,6 @@ Finally, we've been present at a slew of different events. In August we attended
 </div>
 ...and then Riot (now Element) was launched at Monage in Boston in September, with Matthew and Amandine respectively presenting Matrix and Riot (now Element):
 
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <div style="text-align: center;">
 <blockquote class="twitter-tweet" data-lang="en">
 <p dir="ltr" lang="en">Best <a href="https://twitter.com/hashtag/swag?src=hash">#swag</a> of <a href="https://twitter.com/hashtag/MoNage?src=hash">#MoNage</a>? The <a href="https://twitter.com/RiotChat">@RiotChat</a> stand is getting mobbed :) <a href="https://t.co/NltlfO74Y9">pic.twitter.com/NltlfO74Y9</a></p>

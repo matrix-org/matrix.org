@@ -55,7 +55,6 @@ This has progressed massively - we haven't really yelled about it yet, but lates
 <blockquote class="twitter-tweet" data-lang="en">
 <p dir="ltr" lang="en">Work on fixing the final causes of "unable to decrypt" (UISI) errors in E2E is progressing well: here's a sneak preview of things to come!! <a href="https://t.co/0oGJjm8ZHT">pic.twitter.com/0oGJjm8ZHT</a></p>
 — Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/867719250194071552">May 25, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 </div>
 
@@ -67,7 +66,6 @@ Likewise, Dendrite is on track: we've implemented all the Hard Stuff which forms
 <blockquote class="twitter-tweet" data-lang="en">
 <p dir="ltr" lang="en">New milestone for Dendrite: sending messages over federation BOTH WAYS between dendrite &amp; synapse! A bit more polish &amp; we can cut an alpha!! <a href="https://t.co/DWs6rFqZcQ">pic.twitter.com/DWs6rFqZcQ</a></p>
 — Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/878279397106733056">June 23, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 </div>
 <ul>
