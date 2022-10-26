@@ -51,23 +51,20 @@ And meanwhile, looking back at the last big update (<a href="/blog/2016/12/26/th
  	<li><em>Getting E2E Encryption out of beta ASAP.</em></li>
 </ul>
 This has progressed massively - we haven't really yelled about it yet, but latest https://riot.im/develop/ now finally implements the ability to share message keys between clients to let them decrypt older history and fix “unable to decrypt” errors (Mobile coming soon).  Meanwhile various root causes of “unable to decrypt” errors have been gradually eliminated; I can't actually remember the last time I saw one! Once key-sharing and improved device verification UX is fully tested and tuned we should be able to declare E2E out of beta.
-<div style="text-align: center;">
+
 <blockquote class="twitter-tweet" data-lang="en">
 <p dir="ltr" lang="en">Work on fixing the final causes of "unable to decrypt" (UISI) errors in E2E is progressing well: here's a sneak preview of things to come!! <a href="https://t.co/0oGJjm8ZHT">pic.twitter.com/0oGJjm8ZHT</a></p>
 — Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/867719250194071552">May 25, 2017</a></blockquote>
-
-</div>
 
 <ul>
  	<li><em>Ensuring we can scale beyond Synapse – i.e. implement Dendrite</em></li>
 </ul>
 Likewise, Dendrite is on track: we've implemented all the Hard Stuff which forms the skeleton of Dendrite (core federation, message signing, /sync, message sending, media repository etc) - which takes us to over <a href="https://docs.google.com/spreadsheets/d/1tkMNpIpPjvuDJWjPFbw_xzNzOHBA-Hp50Rkpcr43xTw/edit">50% of Phase 1</a>. After phase 1, we will have an initial usable release for all the core functionality.  Synapse's performance has also improved enormously this year.
-<div style="text-align: center;">
+
 <blockquote class="twitter-tweet" data-lang="en">
 <p dir="ltr" lang="en">New milestone for Dendrite: sending messages over federation BOTH WAYS between dendrite &amp; synapse! A bit more polish &amp; we can cut an alpha!! <a href="https://t.co/DWs6rFqZcQ">pic.twitter.com/DWs6rFqZcQ</a></p>
 — Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/878279397106733056">June 23, 2017</a></blockquote>
 
-</div>
 <ul>
  	<li><em>Getting as many bots and bridges into Matrix as possible, and doing everything we can to support them, host them and help them be as high quality as possible – making the public federated Matrix network as useful and diverse as possible.</em></li>
 </ul>
