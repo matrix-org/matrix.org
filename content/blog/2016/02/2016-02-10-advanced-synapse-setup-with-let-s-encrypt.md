@@ -185,8 +185,7 @@ $ scp examplecom_dhparams.pem root@example.com:/etc/ssl/nginx/examplecom_dhparam
 </pre>
 <p class="p1">Hooray! You should now be able to open a browser to https://example.com/matrix/ and log in securely over SSL!</p>
 
-## Renewing Your Certificate
-
+<h2 class="p1">Renewing Your Certificate</h2>
 <p class="p1">Now, there's one important step left, and that's to set up renewal for the certificate, otherwise we'll find our shiny new SSL will stop working in three months time. We can use the same acme_tiny command to do this:</p>
 
 <pre>$ python ~/acme-tiny/acme_tiny.py --account letsencrypt_examplecom_account.key --csr examplecom.csr --acme-dir challenges/ &gt; examplecom.crt
@@ -217,8 +216,7 @@ $ cat examplecom/examplecom.crt lets-encrypt-x3-cross-signed.pem &gt;examplecom/
 </pre>
 <p class="p1">Setting up a cronjob to automate this is left as an exercise to the reader!</p>
 
-## Federation behind the HTTP Proxy
-
+<h2 class="p1">Federation behind the HTTP Proxy</h2>
 <p class="p1">If you like, you can stop reading now: our clients can access our home server securely but other home server are still talking to our Synapse directly on port 8448. This is fine, and if you're happy with this, you can stop reading now. But remember how we made sure other Synapses could talk to our NGINX? Well, why not put federation behind our new web server too?</p>
 <p class="p1">Now, we need to do a couple of things to make this work: were you looking carefully at the JSON those curl commands returned? If you were, you might have noticed a key called, 'tls_fingerprints'. Our home server serves up a fingerprint of the TLS certificate its using from this API, and we've just given our web server a different certificate, so we need to give Synapse our new certificate.</p>
 <p class="p1">How are we going to tell other home servers to talk to our NGINX instead? Well, ultimately we're going to change our DNS SRV record to point at port 443 instead of port 8448, but that change could take a while to propagate through caches, so let's test it by having our NGINX listen on port 8448 temporarily. We can do this by copying that same block from above, but with a different port:</p>

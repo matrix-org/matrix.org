@@ -16,9 +16,7 @@ We've rolled out the System Alerts feature to communicate important platform inf
 The System Alerts service takes the form of an (unrejectable) invite to a room. We took this approach to support maximum compatibility with the myriad Matrix clients (since all Matrix clients can support conversations in a room ?).
 
 When we first rolled out System Alerts, we didn't allow users leave the System Alerts room. Sorry! We got a bit overexcited - we've fixed that now (though please do provide your agreement before you leave).
-
-### What do I need to do?
-
+<h2>What do I need to do?</h2>
 At some point today the System Alerts service will provide you with unique link, directing you to review the new terms and provide your agreement.
 
 For us to process your personal data lawfully, it's <strong>really important</strong> that we know you understand and agree to our <a href="/docs/guides/privacy_notice.html">Privacy Notice</a> and <a href="/docs/guides/terms_and_conditions.html">Terms and Conditions</a>. For that reason, we will shortly be blocking any users who haven't indicated their acceptance, so please act quickly when you receive your link.

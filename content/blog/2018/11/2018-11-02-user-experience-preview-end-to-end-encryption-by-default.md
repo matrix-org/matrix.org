@@ -37,18 +37,18 @@ When using encrypted messages, most existing services fall short in one or all o
 <span style="font-weight: 400">Let's dive in to some of the fundamental concepts we'll be putting forward to deliver a default end-to-end encryption experience that makes sense for most modern users. In this post we'll look at an overview of</span>
 <b> work-in-progress wireframes</b><span style="font-weight: 400">, in the spirit of designing in the open and gathering feedback from the wider Matrix community. Please note that these don't represent the actual interface design.</span>
 
-### Cross-signing personal devices
-
+<h2>Cross-signing personal devices</h2>
 <a href="/blog/wp-content/uploads/2018/11/E2E-UX-Cross-signing.png"><img class="alignnone wp-image-3708 size-large" src="/blog/wp-content/uploads/2018/11/E2E-UX-Cross-signing-1024x576.png" alt="" width="1024" height="576" /></a>
 
 <span style="font-weight: 400">When logging in to a new device, you'll be able to use an existing device to verify your new one. Verification is done by </span>
 <a href="https://github.com/matrix-org/matrix-doc/issues/1543"><span style="font-weight: 400">scanning a QR code</span></a><span style="font-weight: 400"> on whichever device has the most convenient camera to use, or by </span>
 <a href="https://github.com/matrix-org/matrix-doc/issues/1267"><span style="font-weight: 400">comparing a short text string</span></a><span style="font-weight: 400">. You only have to complete this process once to mutually verify both devices.</span>
 
+
 <a href="https://github.com/matrix-org/matrix-doc/issues/1680"><span style="font-weight: 400">Verifying your new device by cross-signing</span></a><span style="font-weight: 400"> transfers encryption keys, giving it access to your encrypted messages, and also signals to other users that the new device is trustworthy.</span>
 
-### Secure Message Recovery
 
+<h2>Secure Message Recovery</h2>
 <a href="/blog/wp-content/uploads/2018/11/E2E-UX-Secure-Message-Recovery.gif.gif"><img class="alignnone size-large wp-image-3725" src="/blog/wp-content/uploads/2018/11/E2E-UX-Secure-Message-Recovery.gif.gif" alt="" width="1024" height="577" /></a>
 
 <span style="font-weight: 400">To the end user, Secure Message Recovery works a lot like setting up disk encryption or a password manager. A user can optionally secure their message history using a recovery passphrase and/or key. If logged out, or using another device, the user can use the recovery passphrase or key to access their encrypted message history.</span>
@@ -61,8 +61,7 @@ When using encrypted messages, most existing services fall short in one or all o
 <span style="font-weight: 400">We think that in most cases users will cross-sign personal devices, but as a safety net (for example, if a user's devices are broken or lost) Secure Message Recovery is an invaluable tool for users to minimise the chance of them losing their encrypted message history.
 </span>
 
-### People should trust people
-
+<h2>People should trust people</h2>
 <a href="/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif"><img class="alignnone size-large wp-image-3726" src="/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif" alt="" width="1024" height="577" /></a>
 
 <span style="font-weight: 400">With both cross-signing and Secure Message Recovery in place, we think that people should trust people, instead of individual devices. Now, when you verify a device, it'll mark all of that users trusted devices as trusted.</span>
@@ -70,15 +69,13 @@ When using encrypted messages, most existing services fall short in one or all o
 
 <span style="font-weight: 400">Gone are the days of every person you talk to having to independently verify your new device upgrade. Like cross-signing, you can verify a device by scanning a QR code or comparing a short text string.</span>
 
-### Sensible and extensible
-
+<h2>Sensible and extensible</h2>
 <a href="/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif"><img class="alignnone size-large wp-image-3727" src="/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif" alt="" width="1024" height="577" /></a>
 
 <span style="font-weight: 400">In Riot, we're implementing these features with a sensible default experience that strikes a balance between usability and security. We think most people would prefer to trust cross-signed devices, and that user trust shouldn't block encryption. However, if you aren't most people, you'll be free to configure whatever level of security you need.
 </span>
 
-### In Summary
-
+<h2>In Summary</h2>
 <span style="font-weight: 400">With all of the above in place, and after resolving any remaining technical issues, users will be able to:</span>
 
 <ul>

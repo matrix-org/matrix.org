@@ -19,15 +19,14 @@ We'll be blogging about our porting project in more detail in the future, so wat
 
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.5.1">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, for the first time, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>.
 
-### Synapse 0.33.5.1
+<h2>Synapse 0.33.5.1</h2>
 
 ### Internal Changes
 
 <ul>
  	<li>Fix incompatibility with older Twisted version in tests. Thanks <a class="user-mention" href="https://github.com/OlegGirko" data-hovercard-user-id="6013515" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" aria-describedby="hovercard-aria-description">@OlegGirko</a>! (<a href="https://github.com/matrix-org/synapse/issues/3940">#3940</a>)</li>
 </ul>
-
-### Synapse 0.33.5
+<h2>Synapse 0.33.5</h2>
 
 ### Features
 

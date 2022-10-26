@@ -16,8 +16,7 @@ Aside from that we continue our 1.0 preparations and relatedly we've improved ou
 I've said it before, and I'll say it again:-
 <blockquote>The most important thing that admins should know is that prior to 1.0 landing later this month, <strong>it is essential that the federation API has a valid TLS certificate - self signed certificates will no longer be accepted.</strong> For more details see our <a href="https://github.com/matrix-org/synapse/blob/master/docs/MSC1711_certificates_FAQ.md">handy guide</a>. Failure to do this will result in being unable to federate with other 1.0 servers.</blockquote>
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.99.3">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. Also, check out our new <a href="/docs/guides/installing-synapse">Synapse installation guide page.</a>
-
-### Synapse 0.99.3 changelog
+<h2>Synapse 0.99.3 changelog</h2>
 
 #### <a id="user-content-features" class="anchor" href="https://github.com/matrix-org/synapse/blob/master/CHANGES.md#features" aria-hidden="true"></a>Features
 
