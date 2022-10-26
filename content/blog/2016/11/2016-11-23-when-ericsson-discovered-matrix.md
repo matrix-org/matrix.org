@@ -99,7 +99,7 @@ have contributed with several patches to Synapse (SAML auth and auth improvement
 provided input to the Matrix specification. We have always found the Matrix team be very inclusive and easy to work with.
 
 
-The project graduated successfully from the Ericsson Garage and moved in to Ericsson's Business Unit IT &amp; Cloud
+The project graduated successfully from the Ericsson Garage and moved in to Ericsson's Business Unit IT & Cloud
 Products, where we started to increase the size of the team and just last month signed a contract with our first
 customer. We call the solution Ericsson Contextual Communication Cloud, or ECCC for short, and it can be summarised on a
 high level by the following picture:

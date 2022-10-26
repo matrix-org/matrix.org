@@ -77,7 +77,7 @@ git clone git://code.qt.io/qt/qt5.git
 cd qt5
 ./init-repository
 
-# grab the right dev headers (as qtubuntu needs dbus &amp; atspi support)
+# grab the right dev headers (as qtubuntu needs dbus & atspi support)
 ssh phablet@phone "sudo apt-get install libdbus-1-dev libatspi2.0-dev libssl-dev"
 
 # grab a copy of the root filesystem on the phone for the cross-compile to run against.

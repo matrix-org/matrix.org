@@ -60,11 +60,11 @@ Webclient:
 * Join/parts now trigger desktop notifications.
 * Always show room aliases in the UI if one is present.
 * No longer show user-count in the recents side panel.
-* Add up &amp; down arrow support to the text box for message sending to step
+* Add up & down arrow support to the text box for message sending to step
 through your sent history.
 * Don't display notifications for our own messages.
 * Emotes are now formatted correctly in desktop notifications.
-* The recents list now differentiates between public &amp; private rooms.
+* The recents list now differentiates between public & private rooms.
 * Fix bug where when switching between rooms the pagination flickered before
 the view jumped to the bottom of the screen.
 * Add support for password resets.

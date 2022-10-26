@@ -23,7 +23,7 @@ Many folks will be familiar with Status already as one of the leading projects i
 * Bundling up Status DApps as Matrix Widgets
 * Exposing Matrix Widgets into Status
 * Supporting Olm/Megolm such that it could be used for E2E encryption in Status
-* Collaboration on the decentralised reputation systems needed to combat abuse in both Matrix &amp; Ethereum
+* Collaboration on the decentralised reputation systems needed to combat abuse in both Matrix & Ethereum
 * Utilize the <a href="https://status.im/whitepaper.pdf">Status Network token</a> within Riot.im by enabling crypto assets.
 * ...and more!
 
@@ -34,7 +34,7 @@ It's also worth noting that Status and Matrix are really quite complementary: Wh
 Meanwhile, on the core Matrix side, the investment lets us focus immediately on the following priorities:
 
 * <b>Improving Riot's usability. As of today we are urgently hiring for a Lead Designer to join the team fulltime to revamp and address Riot's usability issues, as this is one of the single biggest things getting in the way of Matrix uptake today.  Hit up <a href="mailto:jobs@riot.im">jobs@riot.im</a> if you're interested!</b>
-* <b>At the same time, we're excited to ramp up our investment in Riot's performance and overall polish (as well as achieving feature parity with Slack/Discord and friends) - that means we're looking for React, Android &amp; iOS folks to join the core team full-time asap to take the apps to the next level.  Again, <a href="mailto:jobs@riot.im">jobs@riot.im</a> if this sounds like you!</b>
+* <b>At the same time, we're excited to ramp up our investment in Riot's performance and overall polish (as well as achieving feature parity with Slack/Discord and friends) - that means we're looking for React, Android & iOS folks to join the core team full-time asap to take the apps to the next level.  Again, <a href="mailto:jobs@riot.im">jobs@riot.im</a> if this sounds like you!</b>
 
 <ul>
  	<li><b>Getting End-to-end Encryption out of beta.</b> We know what we need to do to push E2E out of beta (incremental key backup; cross-signing devices; improved device verification) - Status' investment means we can build the team to get it done! Decentralised end-to-end encryption is not for the faint-hearted, but if you're up for the challenge please get in touch at <a href="mailto:jobs@matrix.org">jobs@matrix.org</a>.
@@ -66,7 +66,7 @@ For now, however, it's back to work: making Riot slicker than Slack; making Syna
 2018 is going to be an interesting year indeed :)  Thank you all for supporting Matrix - and thanks, once again, to Status for helping to take us to the next level.
 
 
-Matthew, Amandine &amp; the whole team.
+Matthew, Amandine & the whole team.
 
 <b>Update 1: VentureBeat is covering the news over at <a href="https://venturebeat.com/2018/01/29/status-invests-5-million-in-matrix-to-create-a-blockchain-messaging-superpower/">https://venturebeat.com/2018/01/29/status-invests-5-million-in-matrix-to-create-a-blockchain-messaging-superpower/</a></b>
 

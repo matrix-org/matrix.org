@@ -10,7 +10,7 @@ category = ["Releases", "Security"]
 Folks, Synapse 0.32.0 is an important security update: please upgrade as soon as you can.
 
 
-The release focuses on security; fixing several federation bugs and adding new features for countering abuse. Notably it includes the ability to blacklist &amp; whitelist servers allowed to send events to a room on a per-room basis via the new 
+The release focuses on security; fixing several federation bugs and adding new features for countering abuse. Notably it includes the ability to blacklist & whitelist servers allowed to send events to a room on a per-room basis via the new 
 m.room.server_acl
  state event: see <a href="https://docs.google.com/document/d/1aiuROf1__7ZFkJvDdAZQfBNxyzjYd-ijiRAcHJYqJCM/edit">MSC1383</a> for details.  This also closes out <a href="https://github.com/matrix-org/matrix-doc/issues/709">https://github.com/matrix-org/matrix-doc/issues/709</a> - one of our oldest feature requests from users who wish to be able to limit the servers allowed to participate in a given room.
 
@@ -33,7 +33,7 @@ No changes since 0.32.0rc1
 #### Features
 
 <ul>
- 	<li>Add blacklist &amp; whitelist of servers allowed to send events to a
+ 	<li>Add blacklist & whitelist of servers allowed to send events to a
 room via <code>m.room.server_acl</code> event. (<a href="https://github.com/matrix-org/synapse/commit/feef8461d19c51f3766471e17e2a2f8a2b36c785">merge</a>)</li>
  	<li>Cache factor override system for specific caches (<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3334" data-error-text="Failed to load issue title" data-id="329021103" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3334">#3334</a>)</li>
  	<li>Add metrics to track appservice transactions (<a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3344" data-error-text="Failed to load issue title" data-id="329432100" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3344">#3344</a>)</li>

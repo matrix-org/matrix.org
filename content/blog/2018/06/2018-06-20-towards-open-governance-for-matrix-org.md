@@ -29,7 +29,7 @@ That being said, having the core team work for the same startup is still a somew
  	<li style="font-weight: 400;"><span style="font-weight: 400;">Another problem is some companies find it a turn-off to participate in Matrix unless they have a well-defined process for influencing the direction of the protocol.  Now, sometimes this could be seen as a feature rather than a bug; the last thing the ecosystem needs is a greedy corp trying to subvert the protocol to its own competitive advantage, and we don't want to be locked in that kind of battle either.  However, there are also lots of well-meaning and constructive companies who want to participate too, and there's an argument that they want a well-defined process for doing so.
 </span>
 </li>
- 	<li style="font-weight: 400;">The other main problem is simply one of checks &amp; balances.  Even though NV may be a good guardian today, what if something changed in future? e.g. if NV got bought by Microsoft, or if someone on the team had some crisis and changed priorities?  Whilst one could always fork, such things are incredibly disruptive and fragmenting and it'd be good to engineer Matrix.org's governance to be resilient to such eventualities as much as is possible.
+ 	<li style="font-weight: 400;">The other main problem is simply one of checks & balances.  Even though NV may be a good guardian today, what if something changed in future? e.g. if NV got bought by Microsoft, or if someone on the team had some crisis and changed priorities?  Whilst one could always fork, such things are incredibly disruptive and fragmenting and it'd be good to engineer Matrix.org's governance to be resilient to such eventualities as much as is possible.
 </li>
 </ul>
 To address these problems, in March of this year we started work on a long term proposal to establish an open governance model for Matrix which ensures the neutrality of the protocol, lets the community contribute as widely as possible, and incorporates a dedicated neutral non-profit Matrix.org Foundation separate to New Vector.
@@ -64,4 +64,4 @@ It's exciting times as we finally move towards an initial stable release of Matr
 
 thanks,
 
-Matthew, Amandine &amp; the core team.
+Matthew, Amandine & the core team.

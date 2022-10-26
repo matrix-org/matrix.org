@@ -9,7 +9,7 @@ category = ["General"]
 
 It's been an incredibly busy few weeks in Matrixland - we've had our heads down rushing to get new stuff ready for today's <a href="http://disrupteuhackathon.challengepost.com">TechCrunch Disrupt London hackathon</a>.
 
-The big news is that we have our first alpha releases of native Mobile SDKs available today for Matrix for iOS &amp; Android! These are entirely new projects - you can check out the SDKs and demo apps (which implement a basic Matrix chatroom client similar to the <a href="http://matrix.org/alpha">webclient demo</a> at:
+The big news is that we have our first alpha releases of native Mobile SDKs available today for Matrix for iOS & Android! These are entirely new projects - you can check out the SDKs and demo apps (which implement a basic Matrix chatroom client similar to the <a href="http://matrix.org/alpha">webclient demo</a> at:
 <ul>
 	<li><a href="http://github.com/matrix-org/matrix-ios-sdk">http://github.com/matrix-org/matrix-ios-sdk</a></li>
 	<li><a href="http://github.com/matrix-org/matrix-android-sdk">http://github.com/matrix-org/matrix-android-sdk</a></li>

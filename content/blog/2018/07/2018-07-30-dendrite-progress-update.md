@@ -40,7 +40,7 @@ I certainly haven't been going at this all on my own. Alongside extensive help f
 </li>
  	<li style="font-weight: 400;">Tokens library based on macaroons
 </li>
- 	<li style="font-weight: 400;">Lots of left-over federation stuff: state API &amp; get missing events being the major ones
+ 	<li style="font-weight: 400;">Lots of left-over federation stuff: state API & get missing events being the major ones
 </li>
  	<li style="font-weight: 400;">AS support to clientapi auth
 </li>

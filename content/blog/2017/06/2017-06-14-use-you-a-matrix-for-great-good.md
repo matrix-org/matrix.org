@@ -15,4 +15,4 @@ So, if anyone has stories (anecdotal or otherwise) about how they're using or pl
 
 thanks,
 
-Matthew, Amandine &amp; the team.
+Matthew, Amandine & the team.

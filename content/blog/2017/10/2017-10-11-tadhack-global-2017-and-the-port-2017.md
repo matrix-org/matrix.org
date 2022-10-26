@@ -11,7 +11,7 @@ category = ["Events"]
 
 At the end of September, TADHack Global was held where almost 150 teams spent their weekends hacking towards the $45k total prize money up for grabs. <a href="https://matrix.to/#/@lb:ldbco.de">Luke</a> spent the final day of the hack talking to teams hacking at IDEALondon in Shoreditch, meeting a few Matrix enthusiasts and long-time collaborators.
 
-Out of 10 hacks, 2 of 4 local winners won prizes locally and went on to be <a href="http://blog.tadhack.com/2017/10/02/tadhack-global-2017-winners/">global winners </a>alongside 6 other teams using Matrix as part of their hacks. Checkout the <a href="http://blog.tadhack.com/2017/10/03/tadhack-london-2017/">TADHack London Wrap-up</a> for details on all of the awesome hacks, especially <a href="https://github.com/aviraldg">Aviral Dasgupta</a>'s <a href="https://www.youtube.com/watch?v=lOmhgSNS_6E&amp;feature=youtu.be">Pushtime</a> and <a href="https://youtu.be/qOYdDyRlDNE" target="_blank">Polite.ai</a>.
+Out of 10 hacks, 2 of 4 local winners won prizes locally and went on to be <a href="http://blog.tadhack.com/2017/10/02/tadhack-global-2017-winners/">global winners </a>alongside 6 other teams using Matrix as part of their hacks. Checkout the <a href="http://blog.tadhack.com/2017/10/03/tadhack-london-2017/">TADHack London Wrap-up</a> for details on all of the awesome hacks, especially <a href="https://github.com/aviraldg">Aviral Dasgupta</a>'s <a href="https://www.youtube.com/watch?v=lOmhgSNS_6E&feature=youtu.be">Pushtime</a> and <a href="https://youtu.be/qOYdDyRlDNE" target="_blank">Polite.ai</a>.
 
 https://twitter.com/TADHack/status/915284069046419456
 

@@ -61,7 +61,7 @@ This has progressed massively - we haven't really yelled about it yet, but lates
 </ul>
 Likewise, Dendrite is on track: we've implemented all the Hard Stuff which forms the skeleton of Dendrite (core federation, message signing, /sync, message sending, media repository etc) - which takes us to over <a href="https://docs.google.com/spreadsheets/d/1tkMNpIpPjvuDJWjPFbw_xzNzOHBA-Hp50Rkpcr43xTw/edit">50% of Phase 1</a>. After phase 1, we will have an initial usable release for all the core functionality.  Synapse's performance has also improved enormously this year.
 
-> <p dir="ltr" lang="en">New milestone for Dendrite: sending messages over federation BOTH WAYS between dendrite &amp; synapse! A bit more polish &amp; we can cut an alpha!! <a href="https://t.co/DWs6rFqZcQ">pic.twitter.com/DWs6rFqZcQ</a></p>
+> <p dir="ltr" lang="en">New milestone for Dendrite: sending messages over federation BOTH WAYS between dendrite & synapse! A bit more polish & we can cut an alpha!! <a href="https://t.co/DWs6rFqZcQ">pic.twitter.com/DWs6rFqZcQ</a></p>
 >
 > — Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/878279397106733056">June 23, 2017</a>
 
@@ -86,7 +86,7 @@ Riot has been <a href="https://medium.com/@RiotChat/riot-web-and-desktop-version
 
 There is still a lot of UX work to be done, but it's converging fast on being a great entry point into the Matrix ecosystem, driving its growth across different groups and communities..
 
-Meanwhile, a <a href="https://medium.com/@RiotChat/riot-im-unveils-the-next-generation-of-its-mobile-client-6b38e2227ee2">massive update to the iOS &amp; Android apps</a> just landed yesterday, switching to an entirely new UI layout to separate People from Rooms, synchronized Read Markers, and more!
+Meanwhile, a <a href="https://medium.com/@RiotChat/riot-im-unveils-the-next-generation-of-its-mobile-client-6b38e2227ee2">massive update to the iOS & Android apps</a> just landed yesterday, switching to an entirely new UI layout to separate People from Rooms, synchronized Read Markers, and more!
 <ul>
  	<li><em>Adding the final major missing features:</em>
 <ul>
@@ -142,4 +142,4 @@ But we're decentralised, and we have no absolute moral arbiter, and nor should w
 
 So: <b>Matrix needs you.</b> Please become a supporter on <a href="https://patreon.com/matrixdotorg">Patreon </a>or <a href="https://liberapay.com/matrixdotorg/">Liberapay</a>, and help us save the world :)
 
-- Matthew, Amandine &amp; the whole Matrix.org team.
+- Matthew, Amandine & the whole Matrix.org team.

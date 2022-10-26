@@ -14,7 +14,7 @@ Something that has kept coming up since we ran into funding problems in July is 
  	<li>It would let the value of the currency (in terms of its exchange rate relative to other currencies) grow in value directly linked to the growth and success of the Matrix ecosystem as a whole.</li>
  	<li>In future it could help us reward folks who run Matrix infrastructure (homeservers, identity servers, etc) by "mining" or "farming" style allocations of currency</li>
  	<li>It could also be a very useful tool for helping fight spam in future.  One way of proving that a user should be allowed to contact strangers (other than a vouching system) could be to spend some money.</li>
- 	<li>An "token generation event" or "initial coin offering" where we sell initial allocations of the currency to the Matrix &amp; cryptocurrency community could be a rather useful way to raise enough money to fully support the core Matrix team going forwards.</li>
+ 	<li>An "token generation event" or "initial coin offering" where we sell initial allocations of the currency to the Matrix & cryptocurrency community could be a rather useful way to raise enough money to fully support the core Matrix team going forwards.</li>
 </ul>
 Meanwhile, Matrix itself is obviously already a fairly successful decentralised application ecosystem, and we believe that the above points give us a much better reason than average to actually launch a currency.  It's important to note that we don't have plans at this point to evolve the Matrix protocol itself into being able to support cryptocurrencies - we'd instead piggyback on top of an existing established distributed currency ledger.  (Later on, rewarding folks who run Matrix infrastructure by mining would require more interesting integration with Matrix, of course).
 
@@ -27,4 +27,4 @@ We'd genuinely be very interested to hear feedback from the community on whether
 
 thanks,
 
-Matthew, Amandine &amp; the team.
+Matthew, Amandine & the team.

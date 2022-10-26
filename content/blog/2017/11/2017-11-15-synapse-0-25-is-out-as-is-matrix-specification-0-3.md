@@ -142,4 +142,4 @@ Rather than going on about it here, though, there's a <a href="https://medium.co
 
 And so there you go - new releases for eeeeeeeeveryone!  Enjoy! :)
 
---Matthew, Amandine &amp; the team.
+--Matthew, Amandine & the team.

@@ -16,6 +16,6 @@ category = ["Events"]
 I for one would love to ask an open source robot to bring me snacks over chat. (Wow that's a sentence I never thought I would be able to say)
 I'll be on site, (and also hanging out in on Matrix in <a href="/beta/#/room/#matrix:matrix.org">#matrix:matrix.org</a>) to help out with whatever creative things y'all come up with - I hope to see you there!
 
-Also in Chicago the following week I'll be giving a tutorial on <a href="http://www.rtc-conference.com/tutorials/">Federated Identity</a> as well as attending and speaking about the problem of fragmented communication at the <a href="http://www.rtc-conference.com/">IIT Real-Time Communications</a> Conference &amp; Expo.
+Also in Chicago the following week I'll be giving a tutorial on <a href="http://www.rtc-conference.com/tutorials/">Federated Identity</a> as well as attending and speaking about the problem of fragmented communication at the <a href="http://www.rtc-conference.com/">IIT Real-Time Communications</a> Conference & Expo.
 
 If you're going to be around, please do say hi - I only recently joined the Matrix team, and there's a lot of people I've yet to meet - I look forward to seeing you at one (or all) of these events!
