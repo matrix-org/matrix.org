@@ -13,7 +13,7 @@ Synapse 0.21.0 was released a moment ago. This release lands a number of perform
 
 For those of you upgrading <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a> has the details as usual.  Full changelog follows:
 
-### Changes in synapse v0.21.0 (2017-05-17)
+## Changes in synapse v0.21.0 (2017-05-17)
 
 Features:
 <ul>
@@ -34,7 +34,7 @@ Bug fixes:
 </ul>
 <a name="user-content-changes-in-synapse-v0-21-0-rc2-2017-05-08"></a>
 
-### Changes in synapse v0.21.0-rc2 (2017-05-08)
+## Changes in synapse v0.21.0-rc2 (2017-05-08)
 
 Changes:
 <ul>
@@ -46,7 +46,7 @@ Bug fixes:
 </ul>
 <a name="user-content-changes-in-synapse-v0-21-0-rc1-2017-05-08"></a>
 
-### Changes in synapse v0.21.0-rc1 (2017-05-08)
+## Changes in synapse v0.21.0-rc1 (2017-05-08)
 
 Features:
 <ul>

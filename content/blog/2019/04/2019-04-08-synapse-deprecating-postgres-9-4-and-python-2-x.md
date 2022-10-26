@@ -11,11 +11,11 @@ category = ["General"]
 
 Folks, this is an update to explain that we will be shortly deprecating Synapse support for Postgres 9.4 and Python 2.x.
 
-### What are we doing?
+## What are we doing?
 
 From the dates described below, we will no longer guarantee support for deprecated versions. This means that Synapse <em>may </em>continue to work with these versions but we will not make any attempt to ensure compatibility and will remove old library versions from our CI.
 
-### When is this happening?
+## When is this happening?
 
 <strong>Synapse 1.0 will continue to support both technologies, but subsequent releases may not:-</strong>
 
@@ -23,7 +23,7 @@ For Python, we shared that we would discontinue to Python 2.x support from<a hre
 
 For Postgres, will give server admins 6 weeks to upgrade to a newer version, and will guarantee support <strong>up until 20th May 2019.</strong>
 
-### Why would you do this to us?
+## Why would you do this to us?
 
 We have multiple reasons, but broadly:-
 <ul>
@@ -32,10 +32,10 @@ We have multiple reasons, but broadly:-
  	<li>Since very few server admins still use these technologies on the wild, providing support is costly and we want to reduce our overall maintenance load.</li>
 </ul>
 
-### La la la I am ignoring you - what will happen?
+## La la la I am ignoring you - what will happen?
 
 You will be able to upgrade to Synapse 1.0, but will likely experience incompatibilities that prevent you upgrading further. Seriously, you really need to upgrade.
 
-### Okay, but I have questions, where should I go?
+## Okay, but I have questions, where should I go?
 
 Come and say Hi in #synapse:matrix.org and we'll do our best to help you.

@@ -202,7 +202,7 @@ Finally, a little Easter egg (it is Christmas, after all) for anyone crazy enoug
 
 (If you're interested in running Matrix over low-bandwidth networks, please <a href="https://matrix.to/#/@matthew:matrix.org">get in touch</a> - we'd love to hear from you...)
 
-### 2019
+## 2019
 
 So, what will 2019 bring?
 

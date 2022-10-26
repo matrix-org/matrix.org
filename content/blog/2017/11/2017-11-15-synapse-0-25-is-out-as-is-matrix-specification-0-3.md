@@ -134,7 +134,7 @@ Thanks to <a class="user-mention" href="https://github.com/farialima">@farialim
  	<li>Fix 500 on invalid utf-8 in request (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2663" data-error-text="Failed to load issue title" data-id="272868148" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2663">#2663</a>)</li>
 </ul>
 
-### Finally...
+## Finally...
 
 If you haven't noticed already, Riot/Web 0.13 is out today, as is Riot/iOS 0.6.2 and Riot/Android 0.7.4.  These contain massive improvements across the board - particularly mainstream Communities support at last on Riot/Web; CallKit/PushKit on Riot/iOS thanks to Denis Morozov (GSoC 2017 student for Matrix) and Share Extension on iOS thanks to Aram Sargsyan (also GSoC 2017 student!); and End-to-end Key Sharing on Riot/Android and a full rewrite of the VoIP calling subsystem on Android.
 

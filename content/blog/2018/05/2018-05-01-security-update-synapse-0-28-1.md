@@ -21,7 +21,7 @@ We'd like to acknowledge jzk for identifying the vulnerability, and Max Dor for 
 
 As a general reminder, Synapse is still beta (as is the Matrix spec) and the federation API particularly is still being debugged and refined and is pre-r0.0.0. For the benefit of the whole community, please disclose vulnerabilities and exploits responsibly by emailing security@ or DMing someone from +matrix:matrix.org. Thanks.
 
-### Changes in synapse v0.28.1 (2018-05-01)
+## Changes in synapse v0.28.1 (2018-05-01)
 
 <strong>SECURITY UPDATE</strong>
 <ul>

@@ -7,7 +7,7 @@ author = ["Luke Barnard"]
 category = ["Events"]
 +++
 
-### TADHack Global 2017
+## TADHack Global 2017
 
 At the end of September, TADHack Global was held where almost 150 teams spent their weekends hacking towards the $45k total prize money up for grabs. <a href="https://matrix.to/#/@lb:ldbco.de">Luke</a> spent the final day of the hack talking to teams hacking at IDEALondon in Shoreditch, meeting a few Matrix enthusiasts and long-time collaborators.
 
@@ -17,7 +17,7 @@ https://twitter.com/TADHack/status/915284069046419456
 
 Well done to everyone who took part, and a special thanks to those flying Matrix :)
 
-### THE Port 2017
+## THE Port 2017
 
 The following weekend was THE Port 2017, a humanitarian-themed hackathon held at CERN, Geneva in Switzerland. Among the 7 teams participating, the Matrix team consisted of a few software developers from <a href="https://bity.com">Bity</a> including Matrix enthusiast <a href="https://github.com/OmeGak">Alejandro Avilés</a> (who very kindly helped us get a team into the hackathon). <a href="https://matrix.to/#/@lb:ldbco.de">Luke</a> and <a href="https://matrix.to/#/@dbkr:matrix.org">Dave</a> from the Matrix London office also flew out to help the cause and by the end had a very stable, working prototype by the end of the competition.
 

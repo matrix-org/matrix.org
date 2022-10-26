@@ -17,7 +17,7 @@ The System Alerts service takes the form of an (unrejectable) invite to a room. 
 
 When we first rolled out System Alerts, we didn't allow users leave the System Alerts room. Sorry! We got a bit overexcited - we've fixed that now (though please do provide your agreement before you leave).
 
-### What do I need to do?
+## What do I need to do?
 
 At some point today the System Alerts service will provide you with unique link, directing you to review the new terms and provide your agreement.
 

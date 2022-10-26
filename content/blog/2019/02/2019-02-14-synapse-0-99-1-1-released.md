@@ -15,7 +15,7 @@ Just as a reminder that the 0.99.x series is precursor for our 1.0 release (whic
 
 As ever, you can get the new update <a href="https://github.com/matrix-org/synapse/releases/tag/v0.99.1.1">here</a> or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. Also, check out our new <a href="/docs/guides/installing-synapse">Synapse installation guide page.</a>
 
-### Synapse 0.99.1.1 Changelog
+## Synapse 0.99.1.1 Changelog
 
 <div class="release-header">
 <div class="d-flex flex-items-start"></div>
@@ -30,7 +30,7 @@ Fix a bug where an existing certificate would be reprovisoned every day. (<a hre
 </ul>
 </div>
 
-### Synapse 0.99.1 Changelog
+## Synapse 0.99.1 Changelog
 
 ### Features
 

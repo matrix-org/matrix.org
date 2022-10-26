@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["Tutorials"]
 +++
 
-### Note: This blog post is outdated, and an up-to-date tutorial is located <a href="https://github.com/matrix-org/synapse/blob/master/docs/metrics-howto.md">on the synapse project repo</a>
+## Note: This blog post is outdated, and an up-to-date tutorial is located <a href="https://github.com/matrix-org/synapse/blob/master/docs/metrics-howto.md">on the synapse project repo</a>
 
 Synapse has had support for exporting a comprehensive range of metrics via HTTP since 0.8.1 - we added this to help quantify the benefits of all the performance work which is going on currently in advance of Synapse 0.9. If you're interested in monitoring your own synapse and seeing what's going on using something like Prometheus, Leo just wrote a quick tutorial on getting up and running:
 

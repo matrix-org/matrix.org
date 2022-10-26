@@ -15,7 +15,7 @@ As a result, there's a huge backlog of really cool stuff we should have talked a
 
 So, to try to break the impasse, here's a slightly unorthodox whistle-stop tour of all the amazing blogposts we *would* have written if we'd had time. And perhaps some of them will actually expand into full write-ups when we have more time to spare in the future :)
 
-### End to End Encryption Update
+## End to End Encryption Update
 
 One of the great promises of Matrix is to provide End-to-end encryption as part of the baseline standard (configurable per-room). In practice, our progress has been a little non-linear - we started writing an <a href="https://github.com/trevp/axolotl/wiki">Axolotl</a> ratchet implementation in C++14 (with a pure C API) named <a href="/git/olm">Olm</a> back in February, and then finished it off and wired a basic 1:1 proof-of-concept implementation into matrix-react-sdk in June. We then announced Olm back at the wonderful <a href="https://jardin-entropique.eu.org/">Jardin Entropique</a> conference in Rennes:
 
@@ -36,14 +36,14 @@ The main stuff remaining is basically key management (in Synapse and the matrix 
 
 Meanwhile, huge kudos to Tor who was crazy enough to <a href="https://github.com/torhve/weechat-matrix-protocol-script#encryption">add the basic 1:1 Olm ratchet</a> to Weechat before we'd even finished writing our test jig!  
 
-### Lean DUS
+## Lean DUS
 
 A few days after Jardin Entropique we made it to <a href="https://www.leandus.de/">Lean DUS</a> - a great tech meetup in Düsseldorf organised by <a href="http://sipgate.de">Sipgate</a>, who were kind enough to invite us to speak.  This was a chance to give a full update on Matrix (as of July!) and talk some more about Olm and plans for end-to-end encryption.  This one got recorded - and you can see it below.  There's also an official page with full videos, slide deck and photos up at <a href="https://www.leandus.de/2015/08/weil-und-hodgson/">https://www.leandus.de/2015/08/weil-und-hodgson/</a>.
 
 <iframe src="https://player.vimeo.com/video/134821506" width="500" height="281" frameBorder="0" webkitallowfullscreen mozallowfullscreen allowFullScreen></iframe>
 <p><a href="https://vimeo.com/134821506">Lean Dus #9 - End to end encryption for decentralised communication mit Matthew Hodgson</a> from <a href="https://vimeo.com/sipgate">sipgate</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-### New Matrix Bridges
+## New Matrix Bridges
 
 Somehow we've failed to blog about the amazing <a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a> Node framework which we've built as general purpose infrastructure for building Matrix Application Services which act as bridges between existing networks and comms solutions and Matrix.  The architecture here looks something like this:
 
@@ -70,7 +70,7 @@ Meanwhile, there's also:
 
 As of right now our work on bridging has been on hiatus for a month or so, and we would *love* support from the community in advancing and extending the stuff we've built so far.  Otherwise we'll get back to it ourselves in the new year.
 
-### Astricon 2015
+## Astricon 2015
 
 We had a lot of fun in Orlando in October at <a href="http://www.asterisk.org/community/astricon-user-conference/sessions/bridging-asterisk-matrix-ecosystem">Astricon 2015</a> - we put together <a href="https://github.com/matrix-org/matrix-appservice-respoke">matrix-appservice-respoke</a> (see above) for our talk and Dangerous Demo in a desperate 24 hour hack and it even worked!  The judges were kind enough to give us the "Swan Award" prize in the dangerous demo shoot-out for the glossiest demo :)
 
@@ -79,32 +79,32 @@ We had a lot of fun in Orlando in October at <a href="http://www.asterisk.org/co
 
 The slides for our 'Bridging Asterisk to the Matrix Ecosystem' talk are <a href="/~matthew/2015-10-15 Matrix Astricon.pdf">downloadable here</a>.
 
-### Pidgin!
+## Pidgin!
 
 We also implemented a basic libpurple plugin for Matrix - adding Matrix support to any app like Pidgin or Bitlbee that uses libpurple.  (You could in theory even use it with matrix-appservice-purple to bridge from Matrix to Matrix, but that'd be silly :).  It supports basic functionality and uses the new 'v2' APIs for syncing to Matrix.  Adventurous libpurplers can go check it out and experiment with it from <a href="https://github.com/matrix-org/purple-matrix">https://github.com/matrix-org/purple-matrix</a> - feedback welcome.
 
-### OpenWebRTC Support on iOS
+## OpenWebRTC Support on iOS
 
 We went and hooked <a href="http://openwebrtc.org">OpenWebRTC</a> up to <a href="https://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a> so that iOS Matrix apps can use the OpenWebRTC stack from Ericsson Research for VoIP and Video.  Apparently we haven't written it up fully yet, but you can find the code at <a href="https://github.com/matrix-org/matrix-ios-openwebrtc-wrapper">https://github.com/matrix-org/matrix-ios-openwebrtc-wrapper</a> for those interested in using OWR with Matrix!
 
-### Debian Repository for Synapse
+## Debian Repository for Synapse
 
 We built a 3rd party Debian package repository for Synapse... and then forgot to tell anyone about it, other than buried in the Synapse readme!  Well, it exists, and intrepid debianers should go check it out at <a href="http://matrix.org/packages/debian/">http://matrix.org/packages/debian/</a>.
 
-### TADSummit
+## TADSummit
 
 In November we attended <a href="http://tadsummit.com/2015/">TADSummit</a> in Lisbon - a great event for folks hacking on telco applications and the telcos themselves.  Apparently we failed to do a writeup, but we had a wonderful time: highlights included sitting down with Maarten Ectors from Canonical to wrap up Synapse as an <a href="https://uappexplorer.com/app/matrix.mectors">Ubuntu Snappy app</a> such that anyone in the Ubuntu Core ecosystem can trivially run a Matrix homeserver, and demoing it as part of the Dangerous Demos track there.  We also gave a 'Matrix: One Year In' talk to summarise what we got up to in 2015.
 
 <img src="/blog/wp-content/uploads/2015/12/ubuntu-768x1024.jpg" alt="Matthew &amp; Maarten" width="768" height="1024" class="aligncenter size-large wp-image-1435" />
 <img src="/blog/wp-content/uploads/2015/12/2015-11-17-Matrix-TADSummit.jpg" alt="2015-11-17 Matrix TADSummit" width="720" height="540" class="aligncenter size-full wp-image-1434" />
 
-### WebRTC Paris
+## WebRTC Paris
 
 Whilst on the subject of conferences that we forgot to write up - we just got back from WebRTC Paris, where we demoed the latest & greatest Matrix clients and bridges, hung out with the OpenWebRTC guys and gave another ecosystem update.  You can see the slides at <a href="/~daniel/Matrix- One-year Status Report.pdf">https://matrix.org/~daniel/Matrix- One-year Status Report.pdf</a>.
 
 <img src="/blog/wp-content/uploads/2015/12/paris-1024x768.jpg" alt="WebRTC Paris" width="1024" height="768" class="aligncenter size-large wp-image-1436" />
 
-### New Clients and App Services
+## New Clients and App Services
 
 There have been a flurry of really interesting new clients and other projects which certainly deserve whole blog posts of their own!
 
@@ -128,7 +128,7 @@ Other stuff includes a <a href="https://github.com/davidar/hubot-matrix/">Hubot 
 
 Finally, Tor has done an amazing job on <a href="https://github.com/torhve/weechat-matrix-protocol-script">weechat-matrix-protocol-script</a> in implementing features like V2 Sync and E2E crypto faster than we've managed to add them in the official client SDKs!
 
-### Release Zero of the Matrix Specification
+## Release Zero of the Matrix Specification
 
 We have made some major improvements to <a href="/spec">the spec</a> over the last few months: adding in feature profiles and spec modules to better structure the document, and most recently splitting it up explicitly into separate Client-Server, Server-Server and Application-Server APIs, each with a well-defined single global 'release' number for versioning.  We started this with a 'r0.0.0' release of the Client-Server API, which consolidates the horrible mess of 'v1' and 'v2' APIs we had previously flying around into a single well-defined version of the spec.  Meanwhile the spec is now entirely consolidated into a set of JSON schema and Swagger 2 API descriptors, with a bunch of ReStructured Text for the verbiage - you can find it all at <a href="https://github.com/matrix-org/matrix-doc">https://github.com/matrix-org/matrix-doc</a>.
 
@@ -138,7 +138,7 @@ We've also switched the Swagger-based API viewer over to Swagger 2.0: <a href="h
 
 Also, we should have mentioned the existence of <a href="/speculator">Speculator</a> - a golang helper app (<a href="https://github.com/matrix-org/matrix-doc/tree/master/scripts/speculator">source here</a>) which, as the name suggests, renders out copies of the spec as HTML from different branches and pull requests for ease of previewing.
 
-### Dendron
+## Dendron
 
 Over the last few months we've also started an entirely new project, codenamed Dendron.  Dendron is the project to evolve Synapse from the current single-threaded Python/Twisted monolithic homeserver into something with a lot more type-safety, horizontal scalability and high availability.  We've mainly been experimenting with different ways of doing this, but the current plan is to split Synapse itself up into multiple services which can each scale independently, and then rewrite some/all of them in languages with better type safety and/or performance or profiling tools.
 
@@ -153,7 +153,7 @@ This reinforced the choices we were looking at anyway - either Rust (for its saf
 
 So we looked at the dependencies that Synapse currently has, and the Rust equivalents, and concluded that the Rust ecosystem unfortunately isn't quite mature enough yet to reliably handle the rather large set of complicated deps that we need in a homeserver.  Also, nobody on the core team is really a Rust guru yet.  Meanwhile, we have at least one ex-Google Go expert in the core team, and in practice it has the edge in terms of maturity.  So, right now, we're looking at switching chunks of Dendron to Go where it makes sense.  (This is subject to change though depending on how we get on).  You should expect to hear a lot more about Dendron in 2016 :)
 
-### matrix-react-sdk, Vector, and latest Matrix features
+## matrix-react-sdk, Vector, and latest Matrix features
 
 Last but not least: huge amounts of our time over the last year has gone into building <a href="https://github.com/matrix-org/matrix-react-sdk">matrix-react-sdk</a> - a full set of glossy Web UI components for building super-high quality glossy apps based on Matrix, built on the <a href="https://github.com/matrix-org/matrix-js-sdk">matrix-js-sdk</a>.  This is basically a reaction against the original <a href="https://github.com/matrix-org/matrix-angular-sdk">matrix-angular-sdk</a> and Matrix Console app that we launched Matrix with back in 2014 - which had minimal attention to UI/UX and suffered from major performance problems; it was built purely as the fastest possible way we knew to prototype and demo Matrix in the first place.  matrix-react-sdk however has been built for both performance and quality of UI/UX, as well as obviously using all the latest and greatest Matrix APIs.  (In fact, the transition from matrix-angular-sdk to matrix-react-sdk is pretty similar to the Synapse to Dendron transition on the horizon - although the latter should be more incremental and less 'rewrite the world').
 
@@ -182,7 +182,7 @@ If you haven't given Vector a spin, it's well worth heading over to <a href="htt
 
 There's also an Electron desktop version of Vector in progress, contributed by Steven Hammerton at <a href="https://github.com/stevenhammerton/vector-desktop">https://github.com/stevenhammerton/vector-desktop</a> (although it's currently stuck on an old release).
 
-### Epilogue
+## Epilogue
 
 Okay, this has got a lot longer than it was meant to be - but hopefully makes up a bit for the lack of comms over the last few months whilst we've been drowning in work on Synapse, Vector, the Spec, Dendron, and everything else mentioned above.
 

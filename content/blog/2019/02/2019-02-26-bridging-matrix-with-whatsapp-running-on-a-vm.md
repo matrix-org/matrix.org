@@ -20,7 +20,7 @@ In this article we'll benefit from all three of these attributes:
  	<li><em>real-time communication</em>: we'll see how to send and receive messages in real-time</li>
 </ul>
 
-### Install your homeserver and install mautrix-whatsapp, the WhatsApp bridge
+## Install your homeserver and install mautrix-whatsapp, the WhatsApp bridge
 
 Firstly, you need to have a Matrix homeserver installed. If you don't currently have one, take a look at the instructions at <a href="/docs/guides/installing-synapse">Installing Synapse</a>, and also in the <a href="https://github.com/matrix-org/synapse">Synapse README</a>.
 
@@ -36,7 +36,7 @@ For example, if you have an existing deployment using <a href="https://github.co
 </code></pre>
 Either way, you will soon have a functioning Matrix Synapse homeserver and <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> installed with it. Next, we will set up an Android VM.
 
-### Set up an Android VM
+## Set up an Android VM
 
 The best way to run an Android Virtual Machine is to use the Android Studio tools from Google. First, <a href="https://developer.android.com/studio/install">install Android Studio</a>, making sure to follow the post-install steps, as they will install additional tools we need, including AVD Manager.
 
@@ -46,7 +46,7 @@ Follow the steps to create a new virtual machine, in this example I have a Nexus
 
 <img src="/docs/img/avd.png" alt="" />
 
-### Install WhatsApp and sign-in
+## Install WhatsApp and sign-in
 
 Launch the Virtual Device, the open the Play Store and sign in. Now use the Play Store to install WhatsApp on the Virtual Device.
 
@@ -55,7 +55,7 @@ You will be asked to verify your phone number, use your number on another device
 <center>
 <img src="/docs/img/nexus5.png" /></center>
 
-### Setup mautrix-whatsapp bridge
+## Setup mautrix-whatsapp bridge
 
 Now that you have WhatsApp working in a VM, and Matrix working on your server, it's time to bridge them together!
 
@@ -70,6 +70,6 @@ Once this is complete, you can type <code>sync</code>, to start bridging contact
 
 And that's it! You may need to take a little time to watch the sync happen, particularly if you have a very large number of chats on the WhatsApp side, but there is no further configuration needed.
 
-### Demo!
+## Demo!
 
 <div class="video-container"><iframe src="https://www.youtube.com/embed/edSgP2dEZ1o" width="960" height="540" frameBorder="0" allowFullScreen="allowfullscreen"></iframe></div>

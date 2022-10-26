@@ -11,7 +11,7 @@ Hi all, Ben here.
 
 Since joining the core team as Developer Advocate last year it's been quite a ride. One of the best things about the job is getting the chance to talk to so many people about their projects and what they would like to see happen in the matrix ecosystem. With so much going on, I just want to say thanks to everyone who has been so welcoming to me and share some of my personal highlights, as I recall them, from 2018!
 
-### Clients
+## Clients
 
 <strong><a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a></strong> was featured in the very first TWIM, announcing v1.26. Since then, the team have hosted two IRL hackfest events (Strasbourg and Seville - where to next, Stockholm? Salisbury?), engaged two GSOC students and continued to push out releases. At this point, Fractal is a full-featured Matrix client for GNOME.
 
@@ -23,7 +23,7 @@ Ubuntu Touch has the most Matrix clients per-user of any platform. UT epitomises
 
 In the command line, <strong><a href="https://github.com/tulir/gomuks">gomuks</a></strong> appeared and quickly became a competent client, but in terms of sheer enthusiasm and momentum, I must give commendation to <strong><a href="https://github.com/jgkamat/matrix-client-el">matrix-client.el</a></strong>, a newly revived mode for Emacs which turns your editor/OS into a great Matrix Client. I enjoyed using it enough that it began to change my mind about using emacs. Laptops have more than 8mb memory these days anyway.
 
-### A culture of bots
+## A culture of bots
 
 There is a tendency in the community to build a bot for everything and anything. This has reached the point where there are multiple flairs available depending on what bots you like to make (silly vs serious.)
 
@@ -40,7 +40,7 @@ Cadair even made <a href="https://github.com/Cadair/skill-twim">twimbot</a>, des
 
 In June <a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> started <a href="https://github.com/maubot/maubot">maubot</a>, a plugin-based bot system built in Python, which now also has a management UI.
 
-### All bridges lead to Matrix
+## All bridges lead to Matrix
 
 Or from Matrix, depending on which way you want to send the message.
 
@@ -54,7 +54,7 @@ Discord is bridged by <a href="https://github.com/Half-Shot/matrix-appservice-di
 
 <strong><a href="https://github.com/tijder/SmsMatrix">SMSMatrix</a></strong>, a phone-hosted bridge is simple and works great for SMS bridging.
 
-### Libraries, SDKs, Frameworks
+## Libraries, SDKs, Frameworks
 
 I enjoyed using <strong><a href="https://github.com/turt2live/matrix-bot-sdk">matrix-bot-sdk</a></strong> for building <a href="https://github.com/benparsons/elizabot">elizabot</a> (more coverage needed for that!), and the SDK recently received support for application services.
 
@@ -62,18 +62,18 @@ In April, <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> announce
 
 There are a few libs I want to pay more attention to this year, starting with <a href="https://matrix.to/#/@tulir:maunium.net">tulir</a>'s <strong><a href="https://github.com/maubot/maubot">maubot</a></strong> now that it has been rewritten in Python. I'm also excited to see <strong><a href="https://github.com/ma1uta/jmsdk">jmsdk</a></strong>, part of <a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a>'s broader ecosystem of Matrix tooling - a Java-based SDK.
 
-### Ruma Resurrection
+## Ruma Resurrection
 
 Until around June, <strong>Ruma</strong> was receiving regular updates. There was a pause as the team waited for Rust async/await to land, and also to get some stability in the Matrix Spec. Still waiting on Rust, but now that the Matrix Spec is stabilising, Ruma is showing signs of life too. I have also been watching other homeserver projects begin to restart, which makes for a great start to 2019.
 
-### DSN Traveller by Florian
+## DSN Traveller by Florian
 
 Matrix was featured as part of a Master's thesis by Florian Jacob.
 <blockquote><a href="https://dsn-traveller.dsn.scc.kit.edu/">DSN Traveller</a> tries to get a rough overview of how the Matrix network is structured today. It records how many rooms it finds, how many users and servers take part in those rooms, and how they relate to each other, meaning how many users a server has and of how many rooms it is part of.</blockquote>
 Florian's thesis was handed in last August. <a href="https://github.com/florianjacob/dsn-traveller">Source code is available</a>.
 <blockquote>All details at <a href="https://dsn-traveller.dsn.scc.kit.edu/">https://dsn-traveller.dsn.scc.kit.edu/</a>, room at <a href="https://matrix.to/#/#dsn-traveller:dsn-traveller.dsn.scc.kit.edu">#dsn-traveller:dsn-traveller.dsn.scc.kit.edu</a>.</blockquote>
 
-### Still more
+## Still more
 
 Synapse dominates the homeserver space right now, so if you want to host your own homeserver today it's the obvious choice. Too great a variety of installation guides was doing more harm than good, so <a href="https://matrix.to/#/@natrius:matrix.org">Stefan</a> took the initiative to create a <strong>definitive community-driven Synapse installation guide</strong>, including a room to discuss and improve the text. Find the <a href="/docs/guides/installing-synapse">guide linked from here</a>, and chat about the guide in <a href="https://matrix.to/#/synapseguide:matrix.org">#synapseguide:matrix.org</a>.
 
@@ -90,7 +90,7 @@ Two students worked on Matrix-related projects during <strong><a href="https://s
 </ul>
 Something which came in super-helpful for me when testing homeserver installations was <strong><a href="https://neo.lain.haus/fed-tester/">f0x's fed-tester</a></strong>. <a href="https://github.com/f0x52/fed-tester/">Source code available</a> (obv.)
 
-### Thanks for all the projects
+## Thanks for all the projects
 
 Thanks for a great 2018. There was so much to learn about, so much to write about, and so many great community members to meet and chat to! If I didn't mention your project, I'm sorry to have been either forgetful or to not be able to include everything.
 

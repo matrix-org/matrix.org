@@ -35,7 +35,7 @@ Moving forward we are confident that we can secure funding, through sponsorship 
 
 And whatever the funding situation, we're of course always looking for contributions for code, bug reports, or just spreading the word about the project too! :)
 
-### Status Update
+## Status Update
 
 <strong><em>(or scroll to next section to see why this is bigger than "just" decentralised encrypted communication)</em></strong>
 
@@ -133,7 +133,7 @@ About 40% of the desired performance work has happened here (although not all ha
 </ul>
 All will be revealed in the next week or two - but suffice it to say that Integrations are going to be getting a Lot More Useful™. :)
 
-### Reflections
+## Reflections
 
 There are very very few people actually working professionally on trying to build general-purpose open communication networks and protocols.  There's us, some <a href="http://xmpp.org">XMPP</a>, <a href="http://ircv3.net/">IRCv3</a> and <a href="https://gnu.io/social/">GNU Social</a>/<a href="https://mastodon.social">Mastodon</a> folks, <a href="https://ring.cx/">GNU Ring</a>, <a href="http://tox.chat">Tox</a>, <a href="http://briarproject.org">Briar</a>, <a href="https://github.com/ssbc">Secure Scuttlebutt</a>, <a href="http://ipfs.io">IPFS</a>, <a href="http://status.im">Status.im</a>, <a href="http://ricochet.im">Ricochet</a>… and that's literally all the major projects I can think of (sorry if I missed you!).  There's probably only 50 developers in total working in this domain as their day job.
 
