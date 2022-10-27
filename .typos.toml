@@ -1,0 +1,40 @@
+[files]
+extend-exclude = [
+    # external typo that must be replicated for technical correctness
+    "content/blog/2020/09/2020-09-04-this-week-in-matrix-2020-09-04.md",
+    # contains non-English
+    "content/blog/2021/07/2021-07-02-this-week-in-matrix-2021-07-02.md",
+    "content/blog/2021/09/2021-09-17-this-week-in-matrix-2021-09-17.md",
+]
+
+[default]
+
+[default.extend-words]
+feld = "feld" # username
+tha = "tha" # intentional, followed by apostrophe
+
+Flate = "Flate" # compression algorithm
+Konversation = "Konversation"
+Ther = "Ther" # intentionally not a complete word
+
+# https://github.com/crate-ci/typos/issues/399
+ERRO = "ERRO"
+MESSAG = "MESSAG"
+
+# part of base64 or similar strings
+afe = "afe"
+ba = "ba"
+tbe = "tbe"
+Aci = "Aci"
+Nd = "Nd"
+
+# everything below should be whitelisted as inter-punct but that's
+# not possible yet – https://github.com/crate-ci/typos/issues/400
+clos = "clos" # json-clos
+ehr = "ehr" # Fuj'ehr
+inex = "inex" # inex.rocks
+ist = "ist" # raim.ist
+loca = "loca" # loca.lt
+onl = "onl" # supercable.onl
+ons = "ons" # add-ons
+whos = "whos" # whos-in-this-room
