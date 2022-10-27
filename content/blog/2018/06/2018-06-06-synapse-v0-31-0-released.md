@@ -20,7 +20,7 @@ Most notable change from v0.30.0 is to switch to python prometheus library to im
 Bug Fixes:
 <ul>
  	<li>Fix metric documentation tables (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3341" data-error-text="Failed to load issue title" data-id="329315777" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3341">#3341</a>)</li>
- 	<li>Fix LaterGuage error handling (<a class="commit-link" href="https://github.com/matrix-org/synapse/commit/694968fa81aab4eac81309b1e16f6063103dd57f"><tt>694968f</tt></a>)</li>
+ 	<li>Fix LaterGauge error handling (<a class="commit-link" href="https://github.com/matrix-org/synapse/commit/694968fa81aab4eac81309b1e16f6063103dd57f"><tt>694968f</tt></a>)</li>
  	<li>Fix replication metrics (<a class="commit-link" href="https://github.com/matrix-org/synapse/commit/b7e7fd2d0edd4d46aaf9d6afc8df14cf3de911f9"><tt>b7e7fd2</tt></a>)</li>
 </ul>
 

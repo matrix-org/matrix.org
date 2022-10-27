@@ -732,7 +732,7 @@ homeserver needs to be able to decide:
 | sigil             | Sigils refer the symbols uses at the beginning of many matrix identifiers. For example '@' is used for users, '#' for rooms, and '+' for communities. |
 | community         | Communities are collections of rooms. They have been replaced by spaces. |
 | group             | Groups are now known as communities, they are collections of rooms. They have been replaced by spaces. |
-| space             | Spaces are collections of rooms as rooms. They replace communites and groups. |
+| space             | Spaces are collections of rooms as rooms. They replace communities and groups. |
 | room              | A room is a fundamental building bock of the matrix architecture: events are typically sent in the context of a room. A room is a conceptual place where users can send and receive events. Events are sent to a room, and all participants in that room with sufficient access will receive the event. See more detail. |
 | bot               | A bot is an autonomous agent. In the context of matrix, it means software which is able to make automated posts in rooms. |
 | pubsub            | The publish-subscribe pattern describes an architecture in which message senders push messages to a location, without needing to know who the subscribers will be. For Matrix, this means a client can send a message to a room without knowing the members, and the members can read that message. |

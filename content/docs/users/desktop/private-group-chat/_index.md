@@ -48,7 +48,7 @@ for you. Leave "Generate a Security Key" ticked, and click on "Continue".
 Element will display the Security Key it has generated. This is a unique and
 very secret key that should only be known by you. In your day to day usage of
 Matrix, you will not need it. But if all your devices connected to Matrix stop
-functionning, are stolen, or if you just lose access to them: this Security Key
+functioning, are stolen, or if you just lose access to them: this Security Key
 is the only way for you to regain access to your messages. You should store it
 in a password manager if you use one, or at least print it and save it somewhere
 safe. As inconvenient as it sounds, this is necessary to ensure nobody else but

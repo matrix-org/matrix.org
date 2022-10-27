@@ -206,7 +206,7 @@ client.on("Room.timeline", function(event, room, toStartOfTimeline) {
         return;
     }
 
-    // we are only intested in messages from the test room, which start with "!"
+    // we are only interested in messages from the test room, which starts with "!"
     if (event.getRoomId() === testRoomId && event.getContent().body[0] === '!') {
         sendNotice(event.event.content.body);
     }
