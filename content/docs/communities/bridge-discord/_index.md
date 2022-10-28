@@ -1,6 +1,6 @@
 +++
 title = "Bridging my Discord community"
-weight = 200
+weight = 300
 [extra]
 emoji = "🌉"
 tile = "I want to bridge my Discord community to Matrix"

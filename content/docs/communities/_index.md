@@ -131,18 +131,30 @@ a group safe at the room level, please head to
 ## Advanced moderation
 
 Basic moderation is enough for small groups, but it tends not to scale too well
-as the number of people and rooms in a community grow.
+as the number of people and rooms in a community grow. Indeed, the basic 
+moderation decisions you take are only enforced room by room. If you wanted to
+ban someone from your entire community, you would have to ban them from all the
+rooms manually. Tedious, and not efficient!
 
-* Mjolnir
-* Mjolnir for all?
+The Matrix.org Foundation created a bot called mjolnir, which you could consider
+as the security guard of your community. You tell it in a control room to
+perform certain actions against one or a group of individuals, and the mjolnir
+bot enforces it in all the rooms. More information in the dedicated section
+below.
 
 ## Moving to another provider
 
-* Why?
-    * Branding
-    * Recovering accounts and/or rooms
-    * Staying in control of where your data is
-    * Adding more, less crowded bridges
-* How?
-    * Relying on a [hosting provider](/ecosystem/hosting)
-    * Hosting one of [the server implementations](/ecosystem/servers) yourself
+The community you have just created with an account on matrix.org will have
+room addresses ending with `:matrix.org`. This is not an issue, but if you want
+to get addresses ending with `:your-org.com`, you need to get your own Matrix
+instance for that domain.
+
+Additionnally, moving to your own provider will give your administrators more
+control over rooms and accounts created there. One of the appeals of Matrix is
+its decentralised nature. But some organisations may need to have local
+centralisation of power to stay in control of their official communications.
+
+Finally, if you get your own Matrix instance, you can deploy your own bridges
+too and you should see a general improvement in performance over matrix.org
+which can sometimes feel a little crowded. More information in the dedicated
+section below.

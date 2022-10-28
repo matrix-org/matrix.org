@@ -1,6 +1,6 @@
 +++
 title = "Bridging my IRC community"
-weight = 300
+weight = 400
 [extra]
 emoji = "🌉"
 tile = "I want to bridge my IRC community to Matrix"
