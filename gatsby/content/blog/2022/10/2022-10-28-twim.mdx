@@ -188,6 +188,27 @@ A KRunner plugin to list joined rooms and possibly other things from nheko.
 
 > I have updated nheko-krunner to work with the latest D-Bus API from nheko. There is no new release out yet, but expect to see a release (possibly with other cool things) after the next nheko release.
 
+### Circles ([website](https://www.kombuchaprivacy.com/circles/))
+
+E2E encrypted social networking built on Matrix. Safe, private sharing for your friends, family, and community.
+
+[cvwright](https://matrix.to/#/@cvwright:matrix.org) reports
+
+> Happy Friday all!  Once again we have a new build of the Circles Android app for your beta testing enjoyment.
+> 
+> ## Updates in this release (v1.0.5)
+> 
+> * Renamed the app back to "Circles".  Technically the proper name of the app is "FUTO Circles", but it will show up on your home screen as simply "Circles", similar to how Google Photos is "Photos" and Google Maps is "Maps".  The Circuli name was too hard for most English speakers to pronounce, and it didn't solve our other issues with the name.  "FUTO Circles" should do the trick.
+> * We're keeping the Circuli name for our online service.
+> * Added QR-code-based device verification.
+> * Made registration tokens optional, i.e. it's up to the server whether to require them or not.  Currently we do require registration tokens on our servers, and you can sign up with the token 0000-1111-2222-4444.
+> 
+> ## Links
+> 
+> * [F-Droid repo](https://circu.li/fdroid/repo)
+> * [APK](https://circu.li/fdroid/repo/app-fdroid-release-1_0_5.apk)
+> * [Source code](https://gitlab.futo.org/circles/circles-android/-/releases/v1.0.5)
+
 ## Dept of SDKs and Frameworks 🧰
 
 ### matrix-rust-sdk ([website](https://github.com/matrix-org/matrix-rust-sdk))
@@ -198,7 +219,7 @@ Next-gen crypto-included SDK for developing Clients, Bots and Appservices; writt
 
 > Long-awaited and with a bunch of final bug-fixes on the server side, this week eventually saw the merging of the [sliding sync extensions](https://github.com/matrix-org/matrix-rust-sdk/pull/1054), enabling e2ee and to-device message support via sliding-sync on main. With that, and some [additional APIs on](https://github.com/matrix-org/matrix-rust-sdk/pull/1154), a new Element-x with e2ee support was made available. A release that also features the latest [work on the timeline API](https://github.com/matrix-org/matrix-rust-sdk/pull/1138), which, too, has seen its fair share of progress this week - mainly internal fixes and debugging helpers.
 > 
-> As a result of the sliding sync work, just earlier today, an important PR was openend for jack-in, the experimental debugging TUI client based on matrix-rust-sdk (which we use for debugging sliding sync): [now allowing you send (encrypted) messages](https://github.com/matrix-org/matrix-rust-sdk/pull/1156), too.
+> As a result of the sliding sync work, just earlier today, an important PR was opened for jack-in, the experimental debugging TUI client based on matrix-rust-sdk (which we use for debugging sliding sync): [now allowing you send (encrypted) messages](https://github.com/matrix-org/matrix-rust-sdk/pull/1156), too.
 > 
 > Following last weeks announcement we also made the Rust-Sec public, indicating why we recommend uprgading to 0.6.1, which we released shortly prior.
 > 
