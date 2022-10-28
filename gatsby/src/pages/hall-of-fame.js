@@ -9,16 +9,65 @@ import config from '../../config'
 const HallOfFame = () => {
     const hallOfFameEntries = [
         {
+            date: '2022-10-18',
+            who: 'aoxsin',
+            profile: 'https://twitter.com/aoxsin',
+            description: 'Discovered that pinecone.matrix.org was exposing pprof.',
+            service: 'matrix.org infrastructure'
+        },
+        {
+            date: '2022-10-12',
+            who: 'Dionysis Grigoropoulos',
+            profile: 'https://erethon.com/',
+            description: 'Discovered a reflected and stored XSS in the Matrix Public Archive project. Fixed in <a href="https://github.com/matrix-org/matrix-public-archive/pull/79/commits/12d96ee27705bc1926fb61141df4eeb3e63f0cc9">commit 12d96ee</a>.',
+            service: 'Matrix Public Archive'
+        },
+        {
+            date: '2022-10-08',
+            who: 'Dinesh kumar',
+            profile: 'https://twitter.com/dhina016',
+            description: 'Reported that grafana.matrix.org metrics were publicly exposed.',
+            service: 'matrix.org infrastructure'
+        },
+        {
+            date: '2022-09-17',
+            who: 'Josh Enders',
+            profile: 'https://www.twitter.com/joshenders',
+            description: 'Discovered a FaceID bypass in Element iOS. Fixed in <a href="https://github.com/vector-im/element-ios/releases/tag/v1.9.7">Element iOS 1.9.7</a>.',
+            service: 'Element iOS'
+        },
+        {
             date: '2022-08-23',
             who: 'Cyastis Volantis',
             profile: 'https://github.com/Cyastis',
-            description: 'Discovered issue with PIN screen being bypassable by opening the application in landscape mode. Fixed in Element iOS <a href="https://github.com/vector-im/element-ios/releases/tag/v1.9.1">1.9.1</a>.',
+            description: 'Discovered issue with PIN screen being bypassable by opening the application in landscape mode. Fixed in <a href="https://github.com/vector-im/element-ios/releases/tag/v1.9.1">Element iOS 1.9.1</a>.',
             service: 'Element iOS'
+        },
+        {
+            date: '2022-06-06',
+            who: 'Val Lorentz',
+            profile: 'https://valentin-lorentz.fr/',
+            description: 'Discovered a parsing issue which could lead to channel/room takeovers (<a href="https://www.cve.org/CVERecord?id=CVE-2022-39203">CVE-2022-39203</a>, <a href="https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-xvqg-mv25-rwvw">GHSA-xvqg-mv25-rwvw</a>). Fixed in <a href="https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.35.0">matrix-appservice-irc 0.35.0</a> (<a href="https://matrix.org/blog/2022/09/13/security-release-of-matrix-appservice-irc-0-35-0-high-severity">blog post</a>).',
+            service: 'matrix-appservice-irc'
+        },
+        {
+            date: '2022-05-13',
+            who: 'Val Lorentz',
+            profile: 'https://valentin-lorentz.fr/',
+            description: 'Discovered an IRC mode parameter parsing confusion which could lead to wrong modes being applied (<a href="https://www.cve.org/CVERecord?id=CVE-2022-39202">CVE-2022-39202</a>, <a href="https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-cq7q-5c67-w39w">GHSA-cq7q-5c67-w39w</a>). Fixed in <a href="https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.35.0">matrix-appservice-irc 0.35.0</a> (<a href="https://matrix.org/blog/2022/09/13/security-release-of-matrix-appservice-irc-0-35-0-high-severity">blog post</a>).',
+            service: 'matrix-appservice-irc'
+        },
+        {
+            date: '2022-05-10',
+            who: 'Martin R. Albrecht, Sofía Celi, Benjamin Dowling and Daniel Jones',
+            profile: 'https://nebuchadnezzar-megolm.github.io/',
+            description: 'For an excellent analysis exposing several cryptographic implementation vulnerabilities in the first generation Matrix SDKs. See the <a href="https://www.matrix.org/blog/2022/09/28/upgrade-now-to-address-encryption-vulns-in-matrix-sdks-and-clients">disclosure blog post</a> and the <a href="https://nebuchadnezzar-megolm.github.io/static/paper.pdf">research paper</a> for details.',
+            service: 'Several Matrix SDKs'
         },
         {
             date: '2022-05-12',
             who: 'Rex Kim (@rexouflage)',
-            description: 'Reported an RTLO injection issue allowing an attacker to construct a link appearing to lead to an URL while actually leading to another. Fixed in Element iOS <a href="https://github.com/vector-im/element-ios/releases/tag/v1.8.17">1.8.17</a> and Element Android <a href="https://github.com/vector-im/element-android/releases/tag/v1.4.18">1.4.18</a>. Mitigated in Element Desktop <a href="https://github.com/vector-im/element-web/releases/tag/v1.11.1">1.11.1</a> by enabling link tooltips.',
+            description: 'Reported an RTLO injection issue allowing an attacker to construct a link appearing to lead to an URL while actually leading to another. Fixed in Element iOS <a href="https://github.com/vector-im/element-ios/releases/tag/v1.8.17">1.8.17</a> and Element Android <a href="https://github.com/vector-im/element-android/releases/tag/v1.4.18">1.4.18</a>. Mitigated in <a href="https://github.com/vector-im/element-web/releases/tag/v1.11.1">Element Desktop 1.11.1</a> by enabling link tooltips.',
             service: 'Element clients'
         },
         {
