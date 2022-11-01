@@ -4,6 +4,9 @@
 <div class="content">
     <header>
     </header>
+
+    {{ page.content | markdown | safe }}
+
     {% for finding in data.findings %}
 
     <div class="finding-container">
@@ -25,5 +28,10 @@
         <div class="finding-summary">{{ finding.summary | markdown | safe }}</div>
     </div>
     {% endfor %}
+
+    <p>
+        If you think you should be on the list, apologies if we missed you,
+        please mail us at <a href="mailto:security@matrix.org">security@matrix.org</a>.
+    </p>
 </div>
 {% endblock content %}
