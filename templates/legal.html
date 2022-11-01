@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="content">
+    <header>
+        <h1>{{ section.title }}</h1>
+    </header>
+
+    <ul>
+    {% for page in section.pages %}
+        <li><a href="{{ page.path }}">{{ page.title }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
