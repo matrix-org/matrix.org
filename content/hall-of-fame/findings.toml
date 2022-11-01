@@ -419,7 +419,7 @@ date = "2019-04-20"
 reporter.name = "fs0c131y"
 reporter.link = "https://fs0c131y.com/"
 summary = """
-Sydent sesssion ids were predictable, meaning it was possible to infer the total
+Sydent session ids were predictable, meaning it was possible to infer the total
 number of validations and also check if an address had been validated. Mitigated
 [here.](https://github.com/matrix-org/sydent/pull/143)
 """
