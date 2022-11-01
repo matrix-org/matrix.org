@@ -10,7 +10,9 @@ category = ["General"]
 Hi all,
 
 We just pushed our first major update since matrix.org launched for Synapse, the reference Matrix homeserver:
-<ul>Changes in synapse 0.2.2 (2014-09-06)</ul>
+
+### Changes in synapse 0.2.2 (2014-09-06)
+
 Webclient:
 
 * Fix desktop notifications
