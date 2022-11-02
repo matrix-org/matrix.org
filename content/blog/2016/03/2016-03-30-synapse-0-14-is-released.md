@@ -15,8 +15,6 @@ Get all new synapse from <a href="https://github.com/matrix-org/synapse">https:/
 
 Full changelog follows:
 
-<div class="markdown-body">
-
 ## Changes in synapse v0.14.0 (2016-03-30)
 
 No changes from v0.14.0-rc2
@@ -78,4 +76,3 @@ Bug fixes:
 	<li>Pin <code>pysaml2</code> dependency (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/634" data-url="https://github.com/matrix-org/synapse/issues/634" data-id="139556355" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#634</a>)</li>
 	<li>Fix bug in <code>/sync</code> where timeline order was incorrect for backfilled events (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/635" data-url="https://github.com/matrix-org/synapse/issues/635" data-id="139635294" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#635</a>)</li>
 </ul>
-</div>

@@ -7,12 +7,6 @@ author = ["Neil Johnson"]
 category = ["Releases"]
 +++
 
-<div class="release clearfix label-latest">
-<div class="release-body commit open float-left">
-<div class="release-header">
-<div class="release clearfix label-latest">
-<div class="release-body commit open float-left">
-<div class="release-header">
 <p class="release-title text-normal">We released Synapse v0.27.2 today (the first stable release in the 0.27.x series) - it contains loads of work since Synapse v0.26 back in January.  The main highlights are:</p>
 
 <ul>
@@ -28,41 +22,21 @@ And a few release notes worth calling out:
  	<li>This release also begins the process of renaming a number of the metrics reported to prometheus. See <code>docs/metrics-howto.rst </code>
 Note that the v0.28.0 release will remove the deprecated metric names.</li>
 </ul>
-</div>
+
 As always, you can get it from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.27.2">https://github.com/matrix-org/synapse/releases/tag/v0.27.2</a>
 
-</div>
-
 thanks for flying Matrix!
-<div class="release-body commit open float-left">
-<div class="release-header">
 
 ### Changes in synapse v0.27.2 (2018-03-26)
-
-</div>
-<div class="markdown-body">
 
 Bug fixes:
 <ul>
  	<li>Fix bug which broke TCP replication between workers (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3015" data-error-text="Failed to load issue title" data-id="306553712" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3015">#3015</a>)</li>
 </ul>
-</div>
-</div>
-</div>
-<div class="release clearfix label-">
-<div class="release-body commit open float-left">
-<div class="markdown-body">
 
 ### Changes in synapse v0.27.1 (2018-03-26)
 
 Meta release as v0.27.0 temporarily pointed to the wrong commit
-
-</div>
-</div>
-</div>
-<div class="release clearfix label-">
-<div class="release-body commit open float-left">
-<div class="markdown-body">
 
 ### Changes in synapse v0.27.0 (2018-03-26)
 
@@ -123,9 +97,3 @@ Bug fixes:
  	<li>Fix rare race in sync API when joining room (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2944" data-error-text="Failed to load issue title" data-id="302277324" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2944">#2944</a>)</li>
  	<li>Fix slow event search, switch back from GIST to GIN indexes (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2769" data-error-text="Failed to load issue title" data-id="287153610" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2769">#2769</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2848" data-error-text="Failed to load issue title" data-id="294449553" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2848">#2848</a>)</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
