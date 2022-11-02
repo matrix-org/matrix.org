@@ -20,18 +20,21 @@ The URLs of the widgets are stored in the state of the room with some high-level
 Now, in an ideal world we would have enough bandwidth to have formally added widgets to the Matrix spec, but unfortunately we are way behind on spec work currently, thanks in part to our current funding problems. (Remember, if you like Matrix, <a href="/blog/2017/07/07/a-call-to-arms-supporting-matrix/">please donate or get your company to donate</a> otherwise we are at real risk of hitting a very big funding wall).  Rather than formal spec, we've focused on rushing an initial implementation out the door in matrix-react-sdk (and thus riot-web) to see how they work first in reality.  Riot/iOS and Riot/Android are coming soon - although we've special-cased the Jitsi video conferencing widget in iOS to be implemented natively, which is actually available already on develop(!)
 
 Right now the widgets supported by Riot are prefixed behind the <code>im.vector.modular.widgets</code> state event, whose format is something like:
-<pre>{'{'}
-	type: "im.vector.modular.widgets",
-	state_key: "widget1",
-	content: {'{'}
-		type: "grafana",
-		url: "https://matrix.org/grafana/whatever",
-		name: "matrix.org bridges dashboard"
-	{'}'}
-	room_id: "!foo:bar.com",
-	sender: "@kegan:matrix.org"
-{'}'}
-</pre>
+
+```js
+{
+    type: "im.vector.modular.widgets",
+    state_key: "widget1",
+    content: {
+        type: "grafana",
+        url: "https://matrix.org/grafana/whatever",
+        name: "matrix.org bridges dashboard"
+    }
+    room_id: "!foo:bar.com",
+    sender: "@kegan:matrix.org"
+}
+```
+
 Currently the only layout hint is that the order of the event determines the order in which the widget should be displayed on the page.  Riot/Web's initial implementation is very naive and shows only up to two widgets per page, although we're hoping to make this much more generic and flexible in future.  To add widgets in Riot/Web you can now hit the new widget manager button in the top right - and to show/hide existing ones in the room you can hit the show/hide app drawer button in the bottom right.
 
 The UI for adding widgets to a room in Riot is currently via Modular - the new name for Riot's SaaS integration hosting platform, formally codenamed Scalar.  This is a separate webapp loaded in an iframe which guides you through choosing widgets to embed which are hosted by Modular, although in the near future we'll also add UI to let you specify widget URLs directly.  If you need this today, you'll need to manually inject a state event like the one above into the room to provision the widget.
