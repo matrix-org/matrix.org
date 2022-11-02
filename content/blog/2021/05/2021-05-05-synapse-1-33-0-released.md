@@ -9,7 +9,7 @@ category = ["Releases"]
 
 Synapse 1.33.0 is out! Three main items of note:
 
-1. We plan to release <del>1.33.1</del> <ins>1.33.2</ins> with a **low severity security fix** on Tuesday next week, and we're interested in your thoughts on decoupling routine security fixes from normal releases. Please weigh in on [this discussion](https://github.com/matrix-org/synapse/discussions/9914).
+1. We plan to release ~~1.33.1~~ <ins>1.33.2</ins> with a **low severity security fix** on Tuesday next week, and we're interested in your thoughts on decoupling routine security fixes from normal releases. Please weigh in on [this discussion](https://github.com/matrix-org/synapse/discussions/9914).
 
    _**Note:** We shipped 1.33.1 with a [small dependency fix](https://github.com/matrix-org/synapse/issues/9936) when installing Synapse via `pip`. A security release is still planned for Tuesday, which will now be 1.33.2._
 

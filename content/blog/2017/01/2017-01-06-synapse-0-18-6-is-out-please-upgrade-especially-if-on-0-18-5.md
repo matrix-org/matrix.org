@@ -9,7 +9,7 @@ category = ["Tech"]
 
 Hi all,
 
-<del>TL;DR: Please upgrade to <a href="https://github.com/matrix-org/synapse/releases/tag/v0.18.6">Synapse 0.18.6</a>, especially if you are on 0.18.5 which is a bad release.</del>
+~~TL;DR: Please upgrade to <a href="https://github.com/matrix-org/synapse/releases/tag/v0.18.6">Synapse 0.18.6</a>, especially if you are on 0.18.5 which is a bad release.~~
 
 TL;DR: Please upgrade to <strong><a href="https://github.com/matrix-org/synapse/releases/tag/v0.18.7">Synapse 0.18.7</a> </strong>- especially if you are on 0.18.5 or 0.18.6 which both have serious federation bugs.
 
@@ -19,7 +19,7 @@ We'll do a full write-up once we're happy we've tracked down all the root probl
 
 We've spent the last two weeks hunting all the individual inefficient requests which were mysteriously starting to cause more problems than they ever had before; then trying to understand the feedback misbehaviour; before finally discovering the regression in 0.18.5 as the plausible root cause of the problem.  Troubleshooting has been complicated by most of the team having unplugged for the holidays, and because this is the first (and hopefully last!) failure mode to be distributed across the whole network, making debugging something of a nightmare - especially when the overloading was triggering a plethora of different exotic failure modes.  Huge thanks to everyone who has shared their server logs with the team to help debug this.
 
-Some of these failure modes are still happening (and we're working on fixing them), but we believe that if everyone upgrades away from the bad 0.18.5 release most of the symptoms will go away, or at least go back to being as bad as they were before.  Meanwhile, if you find your server suddenly grinding to a halt after upgrading to <del>0.18.6</del> 0.18.7 please come tell us in <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:matrix.org</a>.
+Some of these failure modes are still happening (and we're working on fixing them), but we believe that if everyone upgrades away from the bad 0.18.5 release most of the symptoms will go away, or at least go back to being as bad as they were before.  Meanwhile, if you find your server suddenly grinding to a halt after upgrading to ~~0.18.6~~ 0.18.7 please come tell us in <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:matrix.org</a>.
 
 We're enormously sorry if you've been bitten by the federation instability this has caused - and many many thanks for your patience whilst we've hunted it down.  On the plus side, it's given us a lot of *very* useful insight into how to implement federation in future homeservers to not suffer from any of these failure modes.  It's also revealed the root cause of why Synapse's RAM usage is quite so bad - it turns out that it actually idles at around 200MB with default caching, but there's a particular codepath which causes it to spike temporarily by 1GB or so - and that RAM is then not released back to the OS.  We're working on a fix for this too, but it'll come after 0.18.7.
 
