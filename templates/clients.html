@@ -36,134 +36,113 @@
         {% endfor %}
     </div>
 </div>
-<div class="content">
-    <header>
-        <h1>
-            All known clients
-        </h1>
-    </header>
+<div class="all-clients">
     <!-- Table -->
-    <table class="clients-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Maintainer</th>
-                <th>Platforms</th>
-                <th>Last Release</th>
-                <th>Maturity</th>
-                <th>License</th>
-                <th>E2E Encryption</th>
-                <th>Spaces</th>
-                <th>VoIP (1:1)</th>
-                <th>VoIP (Jitsi)</th>
-                <th>Widgets</th>
-                <th>Threads</th>
-                <th>SSO</th>
-                <th>Multi-account</th>
-                <th>Multi language</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for name, client in clients %}
-            <tr>
-                <td>
-                    {{ name }}
-                </td>
-                <td>
-                    {{ client.maintainer }}
-                </td>
-                <td>
-                    {% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
-                    <a href="https://apps.apple.com/app/{{ client.packages.apple_app_store.org }}/{{ client.packages.apple_app_store.app_id }}">AppStore</a>
-                    {% endif %}
-                    {% if client.packages.google_play_store.app_id %}
-                    <a href="https://play.google.com/store/apps/details?id={{ client.packages.google_play_store.app_id }}">Google Play</a>
-                    {% endif %}
-                    {% if client.packages.f_droid.app_id %}
-                    <a href="https://f-droid.org/packages/{{ client.packages.f_droid.app_id }}">F-Droid</a>
-                    {% endif %}
-                    {% if client.packages.flathub.app_id %}
-                    <a href="https://flathub.org/apps/details/{{ client.packages.flathub.app_id }}">Flathub</a>
-                    {% endif %}
-                    {% if client.packages.other_url %}
-                    <a href="{{ client.packages.other_url }}">Web</a>
-                    {% endif %}
-                </td>
-                <td>
-                    {{ client.last_release | date(format="%Y-%m-%d") }}
-                </td>
-                <td>
-                    {{ client.maturity }}
-                </td>
-                <td>
-                    {{ client.license }}
-                </td>
-                <td>
-                    {% if client.features.e2ee %}
-                    <span class="checkmark">✓</span>
-                    {% else %}
-                    <span class="cross">✗</span>
-                    {% endif %}
-                </td>
-                <td>
-                    {% if client.features.spaces %}
-                    <span class="checkmark">✓</span>
-                    {% else %}
-                    <span class="cross">✗</span>
-                    {% endif %}
-                </td>
-                <td>
-                    {% if client.features.voip_1to1 %}
-                    <span class="checkmark">✓</span>
-                    {% else %}
-                    <span class="cross">✗</span>
-                    {% endif %}
-                </td>
-                <td>
-                    {% if client.features.voip_jitsi %}
-                    <span class="checkmark">✓</span>
-                    {% else %}
-                    <span class="cross">✗</span>
-                    {% endif %}
-                </td>
-                <td>
-                    {% if client.features.widgets %}
-                    <span class="checkmark">✓</span>
-                    {% else %}
-                    <span class="cross">✗</span>
-                    {% endif %}
-                </td>
-                <td>
-                    {% if client.features.threads %}
-                    <span class="checkmark">✓</span>
-                    {% else %}
-                    <span class="cross">✗</span>
-                    {% endif %}
-                </td>
-                <td>
-                    {% if client.features.sso %}
-                    <span class="checkmark">✓</span>
-                    {% else %}
-                    <span class="cross">✗</span>
-                    {% endif %}
-                </td>
-                <td>
-                    {% if client.features.multi_account %}
-                    <span class="checkmark">✓</span>
-                    {% else %}
-                    <span class="cross">✗</span>
-                    {% endif %}
-                </td>
-                <td>
-                    {% if client.features.multi_language %}
-                    <span class="checkmark">✓</span>
-                    {% else %}
-                    <span class="cross">✗</span>
-                    {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="clients-table">
+        <strong>Name</strong>
+        <strong>Maintainer</strong>
+        <strong>Platforms</strong>
+        <strong>Last Release</strong>
+        <strong>Maturity</strong>
+        <strong>License</strong>
+        <strong>E2EE</strong>
+        <strong>Spaces</strong>
+        <strong>VoIP (1:1)</strong>
+        <strong>VoIP (Jitsi)</strong>
+        <strong>Widgets</strong>
+        <strong>Threads</strong>
+        <strong>SSO</strong>
+        <strong>Multi-account</strong>
+        <strong>Multi language</strong>
+
+        {% for name, client in clients %}
+        <!-- new row -->
+        <span>{{ name }}</span>
+        <span>{{ client.maintainer }}</span>
+        <span>
+            {% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
+            <a href="https://apps.apple.com/app/{{ client.packages.apple_app_store.org }}/{{ client.packages.apple_app_store.app_id }}">App Store</a>
+            {% endif %}
+            {% if client.packages.google_play_store.app_id %}
+            <a href="https://play.google.com/store/apps/details?id={{ client.packages.google_play_store.app_id }}">Google Play</a>
+            {% endif %}
+            {% if client.packages.f_droid.app_id %}
+            <a href="https://f-droid.org/packages/{{ client.packages.f_droid.app_id }}">F-Droid</a>
+            {% endif %}
+            {% if client.packages.flathub.app_id %}
+            <a href="https://flathub.org/apps/details/{{ client.packages.flathub.app_id }}">Flathub</a>
+            {% endif %}
+            {% if client.packages.other_url %}
+            <a href="{{ client.packages.other_url }}">Web</a>
+            {% endif %}
+        </span>
+        <span>{{ client.last_release | date(format="%Y-%m-%d") }}</span>
+        <span>{{ client.maturity }}</span>
+        <span>{{ client.license }}</span>
+        <span>
+            {% if client.features.e2ee %}
+            <span class="checkmark">✓</span>
+            {% else %}
+            <span class="cross">✗</span>
+            {% endif %}
+        </span>
+        <span>
+            {% if client.features.spaces %}
+            <span class="checkmark">✓</span>
+            {% else %}
+            <span class="cross">✗</span>
+            {% endif %}
+        </span>
+        <span>
+            {% if client.features.voip_1to1 %}
+            <span class="checkmark">✓</span>
+            {% else %}
+            <span class="cross">✗</span>
+            {% endif %}
+        </span>
+        <span>
+            {% if client.features.voip_jitsi %}
+            <span class="checkmark">✓</span>
+            {% else %}
+            <span class="cross">✗</span>
+            {% endif %}
+        </span>
+        <span>
+            {% if client.features.widgets %}
+            <span class="checkmark">✓</span>
+            {% else %}
+            <span class="cross">✗</span>
+            {% endif %}
+        </span>
+        <span>
+            {% if client.features.threads %}
+            <span class="checkmark">✓</span>
+            {% else %}
+            <span class="cross">✗</span>
+            {% endif %}
+        </span>
+        <span>
+            {% if client.features.sso %}
+            <span class="checkmark">✓</span>
+            {% else %}
+            <span class="cross">✗</span>
+            {% endif %}
+        </span>
+        <span>
+            {% if client.features.multi_account %}
+            <span class="checkmark">✓</span>
+            {% else %}
+            <span class="cross">✗</span>
+            {% endif %}
+        </span>
+        <span>
+            {% if client.features.multi_language %}
+            <span class="checkmark">✓</span>
+            {% else %}
+            <span class="cross">✗</span>
+            {% endif %}
+        </span>
+        {% endfor %}
+    </div>
 </div>
 {% endblock content %}
