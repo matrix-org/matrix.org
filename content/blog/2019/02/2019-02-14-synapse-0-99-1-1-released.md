@@ -17,18 +17,12 @@ As ever, you can get the new update <a href="https://github.com/matrix-org/syna
 
 ## Synapse 0.99.1.1 Changelog
 
-<div class="release-header">
-<div class="d-flex flex-items-start"></div>
-</div>
-<div class="markdown-body">
-
 ### Bugfixes
 
 <ul>
  	<li>Fix "TypeError: '&gt;' not supported" when starting without an existing certificate.
 Fix a bug where an existing certificate would be reprovisoned every day. (<a href="https://github.com/matrix-org/synapse/issues/4648" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4648/hovercard" aria-describedby="hovercard-aria-description">#4648</a>)</li>
 </ul>
-</div>
 
 ## Synapse 0.99.1 Changelog
 

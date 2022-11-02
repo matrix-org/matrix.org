@@ -31,8 +31,6 @@ thanks,
 
 Matthew
 
-<div class="markdown-body">
-
 ### Changes in synapse v0.18.7 (2017-01-09)
 
 <ul>
@@ -94,4 +92,3 @@ Bug fixes:
 <ul>
  	<li>Make sure that outbound connections are closed (PR <a class="issue-link js-issue-link" title="Wrap connections in an N minute timeout to ensure they get reaped correctly" href="https://github.com/matrix-org/synapse/pull/1725" data-id="197934419" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1725</a>)</li>
 </ul>
-</div>

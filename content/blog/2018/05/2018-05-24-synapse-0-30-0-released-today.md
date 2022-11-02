@@ -19,9 +19,6 @@ For more information about our approach to GDPR compliance take a look <a href="
 Additionally there are a host of bug fixes and refactors as well as an enhancement to our Dockerfile.
 
 Get it now from <a href="https://github.com/matrix-org/synapse/releases/tag/v0.30.0">https://github.com/matrix-org/synapse/releases/tag/v0.30.0</a>
-<div class="release clearfix label-latest">
-<div class="release-body commit open float-left">
-<div class="markdown-body">
 
 ## Changes in synapse v0.30.0 (2018-05-24)
 
@@ -43,12 +40,6 @@ Further Server Notices/Consent Tracking Support:
  	<li>Block attempts to send server notices to remote users (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3270" data-error-text="Failed to load issue title" data-id="325706652" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3270">#3270</a>)</li>
  	<li>Docs on consent bits (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3268" data-error-text="Failed to load issue title" data-id="325692950" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3268">#3268</a>)</li>
 </ul>
-</div>
-</div>
-</div>
-<div class="release clearfix label-prerelease">
-<div class="release-body commit open float-left">
-<div class="markdown-body">
 
 ### Changes in synapse v0.30.0-rc1 (2018-05-23)
 
@@ -81,6 +72,3 @@ Bug Fixes:
  	<li>Fix error in handling receipts (PR <a class="issue-link js-issue-link tooltipped tooltipped-ne" href="https://github.com/matrix-org/synapse/pull/3235" data-error-text="Failed to load issue title" data-id="324313546" data-permission-text="Issue title is private" aria-label="#3235, Fix error in handling receipts">#3235</a>)</li>
  	<li>Stop the transaction cache caching failures (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3255" data-error-text="Failed to load issue title" data-id="324972872" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3255">#3255</a>)</li>
 </ul>
-</div>
-</div>
-</div>

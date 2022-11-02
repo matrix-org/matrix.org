@@ -26,8 +26,6 @@ And here's the full changelog...
 
 ## Changes in synapse v0.19.0 (2017-02-04)
 
-<div class="markdown-body">
-
 No changes since RC 4.
 
 ## Changes in synapse v0.19.0-rc4 (2017-02-02)
@@ -89,4 +87,3 @@ Performance:
  	<li>Use DB cache of joined users for presence (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1862" data-url="https://github.com/matrix-org/synapse/issues/1862" data-id="204068613" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1862</a>)</li>
  	<li>Add an index to make membership queries faster (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1867" data-url="https://github.com/matrix-org/synapse/issues/1867" data-id="204327354" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1867</a>)</li>
 </ul>
-</div>
