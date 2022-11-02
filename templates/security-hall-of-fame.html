@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block content %}
+{% set data = load_data(path="content/security-hall-of-fame/findings.toml") %}
+<div class="content">
+    <header>
+        <h1>{{ page.title }}</h1>
+    </header>
+
+    {{ page.content | markdown | safe }}
+
+    {% for finding in data.findings %}
+
+    <div class="finding-container">
+        <span class="finding-header">
+            {{ finding.date }}
+            -
+            {{ finding.project }}
+            -
+            {% if finding.reporter.link %}<a href="{{ finding.reporter.link }}">{% endif%}
+            {{ finding.reporter.name }}
+            {% if finding.reporter.link %}</a>{% endif %}
+            {% if finding.company.name %}
+                from
+                {% if finding.company.link %}<a href="{{ finding.company.link }}">{% endif %}
+                {{ finding.company.name }}
+                {% if finding.company.link %}</a>{% endif %}
+            {% endif %}
+        </span>
+        <div class="finding-summary">{{ finding.summary | markdown | safe }}</div>
+    </div>
+    {% endfor %}
+
+    <p>
+        If you think you should be on the list, apologies if we missed you,
+        please mail us at <a href="mailto:security@matrix.org">security@matrix.org</a>.
+    </p>
+</div>
+{% endblock content %}

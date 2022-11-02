@@ -1,0 +1,466 @@
+[[findings]]
+date = "2022-10-18"
+reporter.name = "aoxsin"
+reporter.link = "https://twitter.com/aoxsin"
+summary = """
+Discovered that pinecone.matrix.org was exposing pprof.
+"""
+project = "matrix.org infrastructure"
+
+[[findings]]
+date = "2022-10-12"
+reporter.name = "Dionysis Grigoropoulos"
+reporter.link = "https://erethon.com/"
+summary = """
+Discovered a reflected and stored XSS in the Matrix Public Archive project.
+Fixed in [commit 12d96ee](https://github.com/matrix-org/matrix-public-archive/pull/79/commits/12d96ee27705bc1926fb61141df4eeb3e63f0cc9).
+"""
+project = "Matrix Public Archive"
+
+[[findings]]
+date = "2022-10-08"
+reporter.name = "Dinesh kumar"
+reporter.link = "https://twitter.com/dhina016"
+summary = """
+Reported that grafana.matrix.org metrics were publicly exposed.
+"""
+project = "matrix.org infrastructure"
+
+[[findings]]
+date = "2022-09-17"
+reporter.name = "Josh Enders"
+reporter.link = "https://www.twitter.com/joshenders"
+summary = """
+Discovered a FaceID bypass in Element iOS. Fixed in
+[Element iOS 1.9.7](https://github.com/vector-im/element-ios/releases/tag/v1.9.7).
+"""
+project = "Element iOS"
+
+[[findings]]
+date = "2022-08-23"
+reporter.name = "Cyastis Volantis"
+reporter.link = "https://github.com/Cyastis"
+summary = """
+Discovered issue with PIN screen being bypassable by opening the application in
+landscape mode. Fixed in [Element iOS 1.9.1](https://github.com/vector-im/element-ios/releases/tag/v1.9.1).
+"""
+project = "Element iOS"
+
+[[findings]]
+date = "2022-06-06"
+reporter.name = "Val Lorentz"
+reporter.link = "https://valentin-lorentz.fr/"
+summary = """
+Discovered a parsing issue which could lead to channel/room takeovers
+([CVE-2022-39203](https://www.cve.org/CVERecord?id=CVE-2022-39203),
+[GHSA-xvqg-mv25-rwvw](https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-xvqg-mv25-rwvw)).
+Fixed in [matrix-appservice-irc 0.35.0](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.35.0)
+([blog post](https://matrix.org/blog/2022/09/13/security-release-of-matrix-appservice-irc-0-35-0-high-severity)).
+"""
+project = "matrix-appservice-irc"
+
+[[findings]]
+date = "2022-05-13"
+reporter.name = "Val Lorentz"
+reporter.link = "https://valentin-lorentz.fr/"
+summary = """
+Discovered an IRC mode parameter parsing confusion which could lead to wrong
+modes being applied ([CVE-2022-39202](https://www.cve.org/CVERecord?id=CVE-2022-39202),
+[GHSA-cq7q-5c67-w39w](https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-cq7q-5c67-w39w)).
+Fixed in [matrix-appservice-irc 0.35.0](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.35.0)
+([blog post](https://matrix.org/blog/2022/09/13/security-release-of-matrix-appservice-irc-0-35-0-high-severity)).
+"""
+project = "matrix-appservice-irc"
+
+[[findings]]
+date = "2022-05-10"
+reporter.name = "Martin R. Albrecht, Sofía Celi, Benjamin Dowling and Daniel Jones"
+reporter.link = "https://nebuchadnezzar-megolm.github.io/"
+summary = """
+For an excellent analysis exposing several cryptographic implementation
+vulnerabilities in the first generation Matrix SDKs. See the [disclosure blog
+post](https://www.matrix.org/blog/2022/09/28/upgrade-now-to-address-encryption-vulns-in-matrix-sdks-and-clients)
+and the [research paper](https://nebuchadnezzar-megolm.github.io/static/paper.pdf)
+for details.
+"""
+project = "Several Matrix SDKs"
+
+[[findings]]
+date = "2022-05-12"
+reporter.name = "Rex Kim (@rexouflage)"
+reporter.link = "https://twitter.com/rexouflage"
+summary = """
+Reported an RTLO injection issue allowing an attacker to construct a link
+appearing to lead to an URL while actually leading to another. Fixed in Element
+iOS [1.8.17](https://github.com/vector-im/element-ios/releases/tag/v1.8.17) and
+Element Android [1.4.18](https://github.com/vector-im/element-android/releases/tag/v1.4.18).
+Mitigated in [Element Desktop 1.11.1](https://github.com/vector-im/element-web/releases/tag/v1.11.1)
+by enabling link tooltips.
+"""
+project = "Element clients"
+
+[[findings]]
+date = "2022-05-04"
+reporter.name = "Val Lorentz"
+reporter.link = "https://valentin-lorentz.fr/"
+summary = """
+IRC command injection in the matrix-appservice-irc bridge when replying to a
+malicious message due to incomplete newline sanitization. Fixed in
+matrix-appservice-irc 0.33.2 and node-irc 1.2.1. Tracked as
+[GHSA-37hr-348p-rmf4](https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-37hr-348p-rmf4)
+and [GHSA-52rh-5rpj-c3w6](https://github.com/matrix-org/node-irc/security/advisories/GHSA-52rh-5rpj-c3w6).
+"""
+project = "matrix-appservice-irc / node-irc"
+
+[[findings]]
+date = "2022-01-31"
+reporter.name = "s1r1us and TheGrandPew"
+reporter.link = "https://blog.s1r1us.ninja/"
+summary = """
+Remotely triggerable host program execution with user interaction, caused by an
+outdated Electron dependency. Depending on the host environment, full RCE may be
+possible. Fixed in Element Desktop 1.9.7 and tracked as [GHSA-mjrg-9f8r-h3m7](https://github.com/vector-im/element-desktop/security/advisories/GHSA-mjrg-9f8r-h3m7)
+/ [CVE-2022-23597](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23597).
+"""
+project = "Element Desktop"
+
+[[findings]]
+date = "2021-11-18"
+reporter.name = "Oliver Behnke"
+reporter.link = "https://github.com/brevilo"
+summary = """
+Buffer overflow in olm_session_describe in libolm before version 3.2.8, remotely
+triggerable from matrix-js-sdk before 15.2.1. Fixed in libolm 3.2.8 and
+matrix-js-sdk 15.2.1. Assigned [CVE-2021-44538](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44538).
+"""
+project = "libolm"
+
+[[findings]]
+date = "2021-09-23"
+reporter.name = "Pascal \"nephele\" Abresch"
+summary = """
+Reported that Matrix Static (used for view.matrix.org) was vulnerable to XSS via
+room names due to missing sanitization. Fixed in [Matrix Static 0.3.1](https://github.com/matrix-org/matrix-static/releases/tag/0.3.1).
+"""
+project = "Matrix Static"
+
+[[findings]]
+date = "2021-09-17"
+reporter.name = "The UK's National Cyber Security Centre (NCSC)"
+reporter.link = "https://www.ncsc.gov.uk/"
+summary = """
+JavaScript code execution when previewing user file attachments in Element iOS
+before 1.6.8 on iOS 12 and earlier. Fixed in Element iOS 1.6.8.
+"""
+project = "Element iOS"
+
+[[findings]]
+date = "2021-08-31"
+reporter.name = "Thomas Chauchefoin (SonarSource)"
+reporter.link = "https://www.sonarsource.com/"
+summary = """
+Discovered status.matrix.org was running a version of Cachet vulnerable to an
+[SQL injection](https://nvd.nist.gov/vuln/detail/CVE-2021-39165). Since this
+host was used solely for running the status page, we fixed this by
+decommissioning it and switching to Atlassian's Statuspage service.
+"""
+project = "status.matrix.org"
+
+[[findings]]
+date = "2021-07-03"
+reporter.name = "Aaron Raimist"
+reporter.link = "https://github.com/aaronraimist/"
+summary = """
+Discovered that an explicit assignment of power level 0 was misinterpreted as
+the default power level. Fixed in Synapse v1.40.0.
+"""
+project = "Synapse"
+
+[[findings]]
+date = "2021-05-21"
+reporter.name = "Aaron Raimist and an anonymous security researcher"
+reporter.link = "https://github.com/aaronraimist/"
+summary = """
+Discovered that Element Android was disclosing the filename of end-to-end
+encrypted attachments to the homeserver. Fixed in Element Android 1.1.8.
+"""
+project = "Element Android"
+
+[[findings]]
+date = "2021-03-01"
+reporter.name = "Graham Leach-Krouse"
+reporter.link = "http://grahamlk.com/"
+summary = """
+Authentication bypass in SQLite deployments. Fixed in [Dendrite v0.3.11](https://github.com/matrix-org/dendrite/releases/tag/v0.3.11).
+"""
+project = "Dendrite"
+
+[[findings]]
+date = "2021-02-16"
+reporter.name = "Guilherme Keerok"
+reporter.link = "https://github.com/keerok"
+summary = """
+User content sandbox could be tricked into opening arbitrary documents
+([CVE-2021-21320](https://github.com/matrix-org/matrix-react-sdk/security/advisories/GHSA-52mq-6jcv-j79x)).
+Fixed in [matrix-react-sdk 3.15.0](https://github.com/matrix-org/matrix-react-sdk/releases/tag/v3.15.0).
+"""
+project = "Matrix React SDK"
+
+[[findings]]
+date = "2021-01-18"
+reporter.name = "Michaël Scherer"
+reporter.link = "https://github.com/mscherer/"
+summary = """
+IP blacklist bypass via transitional IPv6 addresses on dual-stack networks
+([CVE-2021-21392](https://github.com/matrix-org/synapse/security/advisories/GHSA-5wrh-4jwv-5w78)).
+Fixed in Synapse 1.28.0.
+"""
+project = "Synapse"
+
+[[findings]]
+date = "2021-01-07"
+reporter.name = "Andrea Spacca"
+reporter.link = "https://github.com/aspacca"
+summary = """
+Element iOS crash via an invalid content payload. Fixed in Element iOS 1.1.4.
+"""
+project = "Element iOS"
+
+[[findings]]
+date = "2020-11-17"
+reporter.name = "Michaël Scherer"
+reporter.link = "https://github.com/mscherer/"
+summary = """
+Denial of service attack via .well-known lookups ([CVE-2021-21274](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21274)).
+Fixed in Synapse 1.25.0.
+"""
+project = "Synapse"
+
+[[findings]]
+date = "2020-11-17"
+reporter.name = "Michaël Scherer"
+reporter.link = "https://github.com/mscherer/"
+summary = """
+IP blacklist bypass via redirects on some federation and push requests
+([CVE-2021-21273](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21273)).
+Fixed in Synapse 1.25.0.
+"""
+project = "Synapse"
+
+[[findings]]
+date = "2020-09-20"
+reporter.name = "Denis Kasak"
+reporter.link = "https://github.com/dkasak"
+summary = """
+HTML injection in login fallback endpoints could be used for a
+Cross-site-scripting attack ([CVE-2020-26891](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26891)).
+Fixed in Synapse 1.21.0.
+"""
+project = "Synapse"
+
+[[findings]]
+date = "2020-09-09"
+reporter.name = "Pritam Mukherjee"
+reporter.link = "https://www.linkedin.com/in/pritam-mukherjee-urvil-b75ab9b9/"
+summary = """
+Misconfigured X-Frame in New Vector internal infrastructure could lead to
+Clickjacking
+"""
+project = "New Vector Infrastructure"
+
+[[findings]]
+date = "2020-08-14"
+reporter.name = "awesome-michael"
+reporter.link = "https://github.com/awesome-michael"
+company.name = "Awesome Technologies"
+company.link = "https://github.com/Awesome-Technologies"
+summary = """
+An issue where encrypted state events could break incoming call handling. Fixed
+in [Element 1.7.5](https://github.com/vector-im/element-web/releases/tag/v1.7.5)
+"""
+project = "Element"
+
+[[findings]]
+date = "2020-07-29"
+reporter.name = "0x1a8510f2"
+reporter.link = "https://github.com/0x1a8510f2/"
+summary = """
+An issue where Element Android was leaking PII. Fixed in [Element Android 1.0.5](https://github.com/vector-im/element-android/releases/tag/v1.0.5)
+"""
+project = "Element"
+
+[[findings]]
+date = "2020-07-20"
+reporter.name = "SakiiR"
+reporter.link = "https://twitter.com/sakiirsecurity"
+summary = """
+An issue where an unexpected language ID in a code block could cause Element to
+crash. Fixed in [Element 1.7.3](https://github.com/vector-im/element-web/releases/tag/v1.7.3)
+"""
+project = "Element"
+
+[[findings]]
+date = "2020-07-14"
+reporter.name = "Denis Kasak"
+reporter.link = "https://github.com/dkasak"
+summary = """
+Invalid JSON could become part of the room state, acting as a denial of service
+vector ([CVE-2020-26890](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26890)).
+Fixed in Synapse 1.20.0. Disclosed 2020-11-23.
+"""
+project = "Synapse"
+
+[[findings]]
+date = "2020-07-02"
+reporter.name = "Quentin Gliech"
+reporter.link = "https://sandhose.fr"
+summary = """
+A clickjacking vulnerability in the single-sign-on flow in Synapse. Fixed in
+[Synapse 1.15.2](https://github.com/matrix-org/synapse/releases/tag/v1.15.2).
+"""
+project = "Synapse"
+
+[[findings]]
+date = "2020-06-18"
+reporter.name = "Sorunome"
+reporter.link = "placeholder"
+summary = """
+An issue where replying to a specially formatted message would make it seem like
+the replier said something they did not. Fixed in [Element 1.7.3](https://github.com/vector-im/element-web/releases/tag/v1.7.3)
+"""
+project = "Element"
+
+[[findings]]
+date = "2020-05-10"
+reporter.name = "Quentin Gliech"
+reporter.link = "https://sandhose.fr"
+summary = """
+A CSRF attack leading to potential unauthorised access to accounts on servers
+using single-sign-on flows. Fixed as part of [matrix-react-sdk#4685](https://github.com/matrix-org/matrix-react-sdk/pull/4685),
+released in Riot/Web 1.6.3.
+"""
+project = "Matrix React SDK"
+
+[[findings]]
+date = "2020-05-03"
+reporter.name = "David Wong"
+reporter.link = "https://twitter.com/cryptodavidw"
+summary = """
+A vulnerability in the SAS verification protocol failing to bind the ephemeral
+public keys. Fixed in [MSC2630](https://github.com/matrix-org/matrix-doc/pull/2630),
+which lists the fixed client versions.
+"""
+project = "e2e spec"
+
+[[findings]]
+date = "2020-03-03"
+reporter.name = "Rhys Davies"
+reporter.link = "https://twitter.com/rhysmdnz"
+summary = """
+An open redirect vulnerability affecting single sign-on flows. Fixed in Synapse
+1.11.1
+"""
+project = "Synapse"
+
+[[findings]]
+date = "2019-05-02"
+reporter.name = "Enguerran Gillier"
+reporter.link = "https://twitter.com/opnsec"
+summary = """
+HTML injection in email invites. A malicious 3rd party invite could inject
+unescaped HTML into the email template.  Fixed in Sydent 1.0.3
+"""
+project = "sydent"
+
+[[findings]]
+date = "2019-05-02"
+reporter.name = "Enguerran Gillier"
+reporter.link = "https://twitter.com/opnsec"
+summary = """
+SSRF in the URL preview API, which did not blacklist access to 0.0.0.0/32 or
+::/128 by default. Fixed in Synapse 0.99.3.1
+"""
+project = "synapse"
+
+[[findings]]
+date = "2019-05-02"
+reporter.name = "Enguerran Gillier"
+reporter.link = "https://twitter.com/opnsec"
+summary = """
+Insecure pseudo-random number generator in synapse meant that an attacker might
+be able to predict random values.  Fixed in Synapse 0.99.3.1
+"""
+project = "synapse"
+
+[[findings]]
+date = "2019-05-02"
+reporter.name = "Enguerran Gillier"
+reporter.link = "https://twitter.com/opnsec"
+summary = """
+Insecure pseudo-random number generator in sydent meant that an attacker could
+predict authentication tokens.  Fixed in Sydent 1.0.3
+"""
+project = "sydent"
+
+[[findings]]
+date = "2019-04-22"
+reporter.name = "Julien Thomas"
+reporter.link = "https://twitter.com/julien_thomas"
+company.name = "Protektoid Project"
+company.link = "https://protektoid.com"
+summary = """
+Obsolete and buggy ContentProvider in Riot/Android meant that a malicious local
+app could compromise account data. Mitigated [here](https://github.com/vector-im/riot-android/commit/096dfbef39bf0ce53ea2e80225a85e74d75aefa0).
+"""
+project = "Riot/Android"
+
+[[findings]]
+date = "2019-04-20"
+reporter.name = "fs0c131y"
+reporter.link = "https://fs0c131y.com/"
+summary = """
+Sydent session ids were predictable, meaning it was possible to infer the total
+number of validations and also check if an address had been validated. Mitigated
+[here.](https://github.com/matrix-org/sydent/pull/143)
+"""
+project = "Sydent"
+
+[[findings]]
+date = "2019-04-18"
+reporter.name = "fs0c131y"
+reporter.link = "https://fs0c131y.com/"
+summary = """
+An email validation exploit in Sydent. For more details see [here](https://matrix.org/blog/2019/04/18/security-update-sydent-1-0-2/)
+and [CVE-2019-11340](https://www.cvedetails.com/cve/CVE-2019-11340/).
+"""
+project = "Sydent"
+
+[[findings]]
+date = "2019-04-09"
+reporter.name = "Jaikey Sarraf"
+reporter.link = "https://twitter.com/jaikeysarraf/"
+summary = """
+Identified a unpatched RCE vulnerability in Matrix.org's public-facing Jenkins.
+It transpired the vulnerability had been [exploited by an attacker](https://matrix.org/blog/2019/04/11/security-incident/).
+"""
+project = "Infrastructure"
+
+[[findings]]
+date = "2018-12-06"
+reporter.name = "Brian Hyde"
+reporter.link = "https://hyde.solutions/"
+summary = """
+XSS exploit allowing a malicious SWF uploaded to Riot via Firefox to run
+arbitrary code in the domain of the content repository. Mitigated [here.](https://github.com/matrix-org/synapse/pull/4284)
+"""
+project = "Synapse"
+
+[[findings]]
+date = "2018-02-19"
+reporter.name = "rugk"
+reporter.link = "https://github.com/rugk"
+summary = """
+Origin check of ScalarMessaging postmessage API was insufficient. Mitigated
+[here.](https://github.com/matrix-org/matrix-react-sdk/pull/1760)
+"""
+project = "Matrix React SDK"
