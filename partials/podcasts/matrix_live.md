@@ -10,9 +10,5 @@ You can subscribe to our [YouTube channel](https://www.youtube.com/c/Matrixdotor
 and catch up with all the episodes.
 
 If you want to listen to Matrix Live on the go, we also offer several audio-only
-options. You can subscribe:
-
-* [On Apple Podcasts](https://podcasts.apple.com/gb/podcast/matrix-live/id1498631706)
-* [On Spotify](https://open.spotify.com/show/1SFrZPISzYs0elxlZUAvZ5?si=Xyns2Pl0RBuGBjuzH4yxsQ)
-* [On Pocket Casts](https://pca.st/uv1qytez)
-* [Or by hitting the RSS feed directly](https://feed.podbean.com/matrixlive/feed.xml)
+options. You can subscribe [by hitting the RSS feed directly](https://feed.podbean.com/matrixlive/feed.xml)
+or by subscribing on the following platforms:
