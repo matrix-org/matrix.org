@@ -161,8 +161,8 @@ administrator privileges, etc. We therefore share state events sent by your
 account with all non-essential data removed ('redacted'), even after we have
 processed your request to be forgotten. This means that your username will
 continue to be publicly associated with rooms in which you have participated,
-even after we have processed your request to be forgotten. We are actively[
-working on a solution to work around this restriction](https://matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix/#mxid_erasure)
+even after we have processed your request to be forgotten. We are actively
+[working on a solution to work around this restriction](https://matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix/#mxid_erasure)
 and allow you to be fully forgotten while maintaining a high quality experience
 for other users. If this is not acceptable to you, please do not use the
 Service.
@@ -208,7 +208,7 @@ Be aware that while we do not profile users on the Service, third party Matrix
 clients may gather usage data. The Element app (the Matrix client provided by
 Element) optionally gathers opt-in anonymised usage data in order to improve
 the app. This data is retained for not longer than 13 months. For more details
-on how your data is processed by Element, please review its [privacy policy.](https://element.io/privacy)
+on how your data is processed by Element, please review its [privacy policy](https://element.io/privacy).
 
 #### 2.2.1 Information you provide to us:
 

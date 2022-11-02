@@ -188,7 +188,7 @@ You agree that you shall not:
 - Submit or transmit any material that violates or infringes the rights of
   others including, without limitation, patent, trademark, trade secret,
   copyright, publicity, or other proprietary rights. Please see our
-  [Copyright Policy](https://riot.im/copyright) for further details.
+  [Copyright Policy](https://matrix.org/copyright-notice) for further details.
 - Disrupt or interfere with the security of, or otherwise cause harm to, the
   matrix.org homeserver, systems resources, accounts, passwords, servers or
   networks connected to or accessible through the Service or any affiliated or

@@ -1,7 +1,7 @@
 +++
 title = "Security Hall of Fame"
 template = "security-hall-of-fame.html"
-aliases = ["hall-of-fame"]
+aliases = ["/hall-of-fame"]
 +++
 
 Here we maintain a list of security researchers and their findings, to recognize
