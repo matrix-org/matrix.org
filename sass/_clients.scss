@@ -1,22 +1,6 @@
-.clients-table {
-    display: block;
-    white-space: nowrap;
-    overflow-x: auto;
-    width: unset;
-
-    .cross {
-        text-align: center;
-    }
-
-    .checkmark {
-        text-align: center;
-    }
-}
-
 .featured-clients {
     display: flex;
     gap: .5rem;
-    flex-wrap: nowrap;
     overflow-x: auto;
 }
 
@@ -69,7 +53,7 @@
 
 .clients-table {
     display: grid;
-    grid-template-columns: repeat(14, minmax(min-content, max-content)) minmax(20em, 100%);
+    grid-template-columns: repeat(2, min-content) 13em repeat(12, min-content);
 
     margin: 1rem 1.5rem;
     width: 1200px;
@@ -82,6 +66,8 @@
 
     >*:nth-child(-n+15) {
         border-bottom: 1px solid #bbb;
+        display: flex;
+        align-items: center;
     }
 
     >*:nth-child(15n+1) {
