@@ -1,8 +1,9 @@
 {% extends "index.html" %}
 {% block content %}
-{% set data = load_data(path="content/hall-of-fame/findings.toml") %}
+{% set data = load_data(path="content/security-hall-of-fame/findings.toml") %}
 <div class="content">
     <header>
+        <h1>{{ page.title }}</h1>
     </header>
 
     {{ page.content | markdown | safe }}

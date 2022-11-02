@@ -43,5 +43,5 @@ an issue. Please **do not** send reports regarding the following:
 
 The Matrix.org Foundation does not ordinarily provide bug bounties, though
 organisations building on top of Matrix may do so in future. We maintain a
-[Hall of Fame](hall-of-fame) to recognise those who have responsibly disclosed
-security issues to us in the past.
+[Security Hall of Fame](/security-hall-of-fame) to recognise those who have
+responsibly disclosed security issues to us in the past.

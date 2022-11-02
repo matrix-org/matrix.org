@@ -1,6 +1,7 @@
 +++
 title = "Security Hall of Fame"
-template = "hall-of-fame.html"
+template = "security-hall-of-fame.html"
+aliases = ["hall-of-fame"]
 +++
 
 Here we maintain a list of security researchers and their findings, to recognize
