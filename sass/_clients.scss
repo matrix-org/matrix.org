@@ -15,6 +15,9 @@
 
 .featured-clients {
     display: flex;
+    @media (min-width: 767px) {
+        justify-content: center;
+    }
     gap: .5rem;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -23,9 +26,7 @@
 .featured-client-card {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    width: 250px;
-    min-width: 250px;
+    flex: 0 0 250px;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(43, 140, 201, .4);
@@ -34,9 +35,9 @@
     padding: 1em;
 
     img {
-        max-height: 160px;
+        height: 160px;
         display: block;
-        margin: auto;
+        margin: 0 auto;
     }
 
     h3 {

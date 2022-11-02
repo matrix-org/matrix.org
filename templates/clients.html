@@ -16,7 +16,7 @@
             <p>{{ client.summary | safe }}</p>
             <div class="stores-links">
                 {% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
-                <a href="https://apps.apple.com/app/{{ client.packages.apple_app_store.org }}/{{ client.packages.apple_app_store.app_id }}">AppStore</a>
+                <a href="https://apps.apple.com/app/{{ client.packages.apple_app_store.org }}/{{ client.packages.apple_app_store.app_id }}">App Store</a>
                 {% endif %}
                 {% if client.packages.google_play_store.app_id %}
                 <a href="https://play.google.com/store/apps/details?id={{ client.packages.google_play_store.app_id }}">Google Play</a>

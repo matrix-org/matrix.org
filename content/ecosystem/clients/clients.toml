@@ -1,14 +1,10 @@
 [Element]
 thumbnail = "element.png"
-summary = "Element is a glossy client with an emphasis on performance and usability."
 maintainer = "Element"
-license = "Apache-2.0"
-language = "Javascript, Swift, Kotlin"
-last_release = "2022-11-02"
+summary = "Element is a glossy client with an emphasis on performance and usability."
 maturity = "Stable"
-source = "https://github.com/vector-im/element-web"
-website = "https://element.io"
-matrix_room = "#element:element.io"
+license = "Apache-2.0"
+last_release = "2022-11-02"
 featured = true
 [Element.features]
 e2ee = true
