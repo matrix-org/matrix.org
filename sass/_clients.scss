@@ -1,26 +1,64 @@
-.clients {
-    article {
-        .grid {
-            .grid-container-third {
-                .block {
-                    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
-                }
-            }
-        }
+.clients-table {
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;
+    width: unset;
+
+    .cross {
+        text-align: center;
     }
 
-    table {
-        display: block;
-        white-space: nowrap;
-        overflow-x: auto;
-        width: unset;
+    .checkmark {
+        text-align: center;
+    }
+}
 
-        .cross {
-            text-align: center;
+.featured-clients {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.featured-client-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 250px;
+    min-width: 250px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(43, 140, 201, .4);
+    background-color: rgba(43, 140, 201, .1);
+    border-radius: 1em;
+    padding: 1em;
+
+    img {
+        max-height: 160px;
+        display: block;
+        margin: auto;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .stores-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: auto;
+
+        a {
+            margin: .2em;
+            border-radius: 2em;
+            padding: 0 .6em;
+            color: #fff;
+            background-color: rgba(43, 140, 201, .8);
         }
 
-        .checkmark {
-            text-align: center;
+        a:hover {
+            background-color: rgba(43, 140, 201, 1);
         }
     }
 }

@@ -1,13 +1,36 @@
+[Element]
+thumbnail = "element.png"
+summary = "Element is a glossy client with an emphasis on performance and usability."
+maintainer = "Element"
+license = "Apache-2.0"
+language = "Javascript, Swift, Kotlin"
+last_release = "2022-11-02"
+maturity = "Stable"
+source = "https://github.com/vector-im/element-web"
+website = "https://element.io"
+matrix_room = "#element:element.io"
+featured = true
+[Element.features]
+e2ee = true
+spaces = true
+voip_1to1 = true
+voip_jitsi = true
+widgets = true
+threads = true
+sso = true
+multi_account = true
+multi_language = true
+[Element.packages]
+google_play_store.app_id = "im.vector.app"
+f_droid.app_id = "im.vector.app"
+apple_app_store = { app_id = "id1083446067", org = "vector" }
+flathub.app_id = "im.riot.Riot"
+other_url = "https://app.element.io"
+
 [FluffyChat]
-preview = "fluffychat.png"
+thumbnail = "fluffychat.png"
 summary = "Cute instant messaging app for all platforms."
 maintainer = "Christian Pauly"
-platforms = [
-    { name = "Android", url = "" },
-    { name = "iOS", url = "" },
-    { name = "Web", url = "" },
-    { name = "Desktop", url = "" },
-]
 license = "AGPL-3.0-only"
 language = "Flutter"
 last_release = "2021-12-01"
@@ -17,14 +40,18 @@ website = "https://fluffychat.im"
 matrix_room = "#fluffychat:matrix.org"
 featured = true
 [FluffyChat.features]
-room_directory = true
-search_joined_rooms = true
 e2ee = true
-replies = true
-stickers = true
-multi_account = true
-voip = true
-reactions = true
-localisations = 20
+spaces = true
+voip_1to1 = true
+voip_jitsi = true
+widgets = false
+threads = false
 sso = true
-edits = true
+multi_account = true
+multi_language = true
+[FluffyChat.packages]
+google_play_store.app_id = "chat.fluffy.fluffychat"
+f_droid.app_id = "chat.fluffy.fluffychat"
+apple_app_store = { app_id = "id1551469600", org = "fluffychat" }
+flathub.app_id = "im.fluffychat.Fluffychat"
+other_url = "https://fluffychat.im"
