@@ -25,10 +25,7 @@ However, as of the end of Friday Aug 31, we're proud to announce the first ever 
 To the best of our knowledge, these API specs are now complete and accurately describe all the current behaviour implemented in the reference implementations (sydent, synapse and sygnal) and are fit for purpose. Any deviation from the spec in the reference implementations should probably be considered a bug in the impl. All changes take the form of filling in spec omissions and adding clarifications to the existing behaviour in order to get things to the point that an independent party can implement these APIs without having to refer to anything other than the spec.
 
 
-This is the result of a lot of work which spans the whole Spec Core Team, but has been particularly driven by TravisR, who has taken the lead on this whole mission to improve the spec.  Huge thanks are due to Travis for his work here, and also massive thanks to everyone who has 
-<del>suffered
-</del> <del>endured
-</del> reviewed his PRs and contributed to the releases.  The spec is looking unrecognisably better for it - and Matrix 1.0 is feeling closer than ever!
+This is the result of a lot of work which spans the whole Spec Core Team, but has been particularly driven by TravisR, who has taken the lead on this whole mission to improve the spec.  Huge thanks are due to Travis for his work here, and also massive thanks to everyone who has ~~suffered~~ ~~endured~~ reviewed his PRs and contributed to the releases.  The spec is looking unrecognisably better for it - and Matrix 1.0 is feeling closer than ever!
 
 
 Alongside the work on the IS/AS/Push APIs, there has also been a massive attempt to plug all the spec omissions in the Client Server API.  Historically the CS API releases have missed some of the newer APIs (and of course always miss the ones which postdate a given release), but we've released the APIs which /have/ been specified as stable in order to declare them stable.  However, in this release we've tried to go through and fill in as many remaining gaps as possible.
