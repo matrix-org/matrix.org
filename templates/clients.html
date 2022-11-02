@@ -1,5 +1,4 @@
-{% extends "skel.html" %}
-{% block html_title %}Matrix.org - {{ page.title }}{% endblock html_title %}
+{% extends "page.html" %}
 {% block content %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
 <div class="clients">
