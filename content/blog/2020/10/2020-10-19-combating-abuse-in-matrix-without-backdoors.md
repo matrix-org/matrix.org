@@ -27,7 +27,7 @@ Even though the Draft Council Resolution does not explicitly call for backdoors,
 Please help us spread the word that backdoors are fundamentally flawed - read on for the rationale, and an alternative
 approach to combatting online abuse.
 
-<br />
+---
 
 Hi all,
 
