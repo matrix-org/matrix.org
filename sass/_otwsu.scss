@@ -13,6 +13,16 @@
     flex: 1;
 }
 
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .2em;
+
+    img {
+        height: 39px;
+    }
+}
+
 .otwsu {
     h2 {
         display: inline-block;
