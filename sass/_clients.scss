@@ -53,7 +53,7 @@
 
 .clients-table {
     display: grid;
-    grid-template-columns: repeat(2, min-content) 13em repeat(12, min-content);
+    grid-template-columns: repeat(2, min-content) 14em repeat(12, min-content);
 
     margin: 1rem 1.5rem;
     width: 1200px;
@@ -114,5 +114,10 @@
 
     .feature {
         text-align: center;
+    }
+
+    .platform-pill {
+        margin: 0;
+        padding: .1em .6em;
     }
 }
