@@ -30,19 +30,19 @@
         flex-wrap: wrap;
         justify-content: center;
         margin-top: auto;
-
-        a {
-            margin: .2em;
-            border-radius: 2em;
-            padding: 0 .6em;
-            color: #fff;
-            background-color: rgba(43, 140, 201, .8);
-        }
-
-        a:hover {
-            background-color: rgba(43, 140, 201, 1);
-        }
     }
+}
+
+.platform-pill {
+    margin: .2em;
+    border-radius: 2em;
+    padding: 0 .6em;
+    color: #fff;
+    background-color: rgba(43, 140, 201, .8);
+}
+
+.platform-pill:hover {
+    background-color: rgba(43, 140, 201, 1);
 }
 
 .all-clients {

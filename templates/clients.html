@@ -16,19 +16,19 @@
             <p>{{ client.summary | safe }}</p>
             <div class="stores-links">
                 {% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
-                <a href="https://apps.apple.com/app/{{ client.packages.apple_app_store.org }}/{{ client.packages.apple_app_store.app_id }}">App Store</a>
+                <a href="https://apps.apple.com/app/{{ client.packages.apple_app_store.org }}/{{ client.packages.apple_app_store.app_id }}" class="platform-pill">App Store</a>
                 {% endif %}
                 {% if client.packages.google_play_store.app_id %}
-                <a href="https://play.google.com/store/apps/details?id={{ client.packages.google_play_store.app_id }}">Google Play</a>
+                <a href="https://play.google.com/store/apps/details?id={{ client.packages.google_play_store.app_id }}" class="platform-pill">Google Play</a>
                 {% endif %}
                 {% if client.packages.f_droid.app_id %}
-                <a href="https://f-droid.org/packages/{{ client.packages.f_droid.app_id }}">F-Droid</a>
+                <a href="https://f-droid.org/packages/{{ client.packages.f_droid.app_id }}" class="platform-pill">F-Droid</a>
                 {% endif %}
                 {% if client.packages.flathub.app_id %}
-                <a href="https://flathub.org/apps/details/{{ client.packages.flathub.app_id }}">Flathub</a>
+                <a href="https://flathub.org/apps/details/{{ client.packages.flathub.app_id }}" class="platform-pill">Flathub</a>
                 {% endif %}
                 {% if client.packages.other_url %}
-                <a href="{{ client.packages.other_url }}">Web</a>
+                <a href="{{ client.packages.other_url }}" class="platform-pill">Web</a>
                 {% endif %}
             </div>
         </div>
@@ -70,19 +70,19 @@
         <span>{{ client.maintainer }}</span>
         <span>
             {% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
-            <a href="https://apps.apple.com/app/{{ client.packages.apple_app_store.org }}/{{ client.packages.apple_app_store.app_id }}">App Store</a>
+            <a href="https://apps.apple.com/app/{{ client.packages.apple_app_store.org }}/{{ client.packages.apple_app_store.app_id }}" class="platform-pill">App Store</a>
             {% endif %}
             {% if client.packages.google_play_store.app_id %}
-            <a href="https://play.google.com/store/apps/details?id={{ client.packages.google_play_store.app_id }}">Google Play</a>
+            <a href="https://play.google.com/store/apps/details?id={{ client.packages.google_play_store.app_id }}" class="platform-pill">Google Play</a>
             {% endif %}
             {% if client.packages.f_droid.app_id %}
-            <a href="https://f-droid.org/packages/{{ client.packages.f_droid.app_id }}">F-Droid</a>
+            <a href="https://f-droid.org/packages/{{ client.packages.f_droid.app_id }}" class="platform-pill">F-Droid</a>
             {% endif %}
             {% if client.packages.flathub.app_id %}
-            <a href="https://flathub.org/apps/details/{{ client.packages.flathub.app_id }}">Flathub</a>
+            <a href="https://flathub.org/apps/details/{{ client.packages.flathub.app_id }}" class="platform-pill">Flathub</a>
             {% endif %}
             {% if client.packages.other_url %}
-            <a href="{{ client.packages.other_url }}">Web</a>
+            <a href="{{ client.packages.other_url }}" class="platform-pill">Web</a>
             {% endif %}
         </span>
         <span>{{ client.last_release | date(format="%Y-%m-%d") }}</span>
