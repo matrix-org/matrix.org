@@ -6,7 +6,7 @@
         <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
         <h3>{{ name }}</h3>
         <p>{{ client.summary | safe }}</p>
-        <div class="stores-links">
+        <div class="platforms-links">
             {% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
             <a href="https://apps.apple.com/app/{{ client.packages.apple_app_store.org }}/{{ client.packages.apple_app_store.app_id }}" class="platform-pill">App Store</a>
             {% endif %}
