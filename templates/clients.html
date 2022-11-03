@@ -6,44 +6,6 @@
         <h1>{{ page.title }}</h1>
     </header>
     <p>{{ page.content | safe }}</p>
-    <!-- Showcase -->
-    <div class="featured-clients">
-        {% for name, client in clients %}
-        {% if client.featured %}
-        <div class="featured-client-card">
-            <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
-            <h3>{{ name }}</h3>
-            <p>{{ client.summary | safe }}</p>
-            <div class="stores-links">
-                {% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
-                <a href="https://apps.apple.com/app/{{ client.packages.apple_app_store.org }}/{{ client.packages.apple_app_store.app_id }}" class="platform-pill">App Store</a>
-                {% endif %}
-                {% if client.packages.google_play_store.app_id %}
-                <a href="https://play.google.com/store/apps/details?id={{ client.packages.google_play_store.app_id }}" class="platform-pill">Google Play</a>
-                {% endif %}
-                {% if client.packages.f_droid.app_id %}
-                <a href="https://f-droid.org/packages/{{ client.packages.f_droid.app_id }}" class="platform-pill">F-Droid</a>
-                {% endif %}
-                {% if client.packages.flathub.app_id %}
-                <a href="https://flathub.org/apps/details/{{ client.packages.flathub.app_id }}" class="platform-pill">Flathub</a>
-                {% endif %}
-                {% if client.packages.other_url %}
-                <a href="{{ client.packages.other_url }}" class="platform-pill">Web</a>
-                {% endif %}
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
-    </div>
-
-    <h2>All known clients</h2>
-    <p>
-        The Matrix ecosystem is vibrant: whatever platform you use, there are
-        good chances someone has developed a client for it. Here we list all the
-        clients the Foundation is aware of, with a maturity score and a list of
-        important features they support or not to help you pick the best for
-        you.
-    </p>
 </div>
 <div class="all-clients">
     <!-- Table -->
