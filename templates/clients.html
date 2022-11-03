@@ -35,6 +35,15 @@
         {% endif %}
         {% endfor %}
     </div>
+
+    <h2>All known clients</h2>
+    <p>
+        The Matrix ecosystem is vibrant: whatever platform you use, there are
+        good chances someone has developed a client for it. Here we list all the
+        clients the Foundation is aware of, with a maturity score and a list of
+        important features they support or not to help you pick the best for
+        you.
+    </p>
 </div>
 <div class="all-clients">
     <!-- Table -->
@@ -79,63 +88,63 @@
         <span>{{ client.last_release | date(format="%Y-%m-%d") }}</span>
         <span>{{ client.maturity }}</span>
         <span>{{ client.license }}</span>
-        <span>
+        <span class="feature">
             {% if client.features.e2ee %}
             <span class="checkmark">✓</span>
             {% else %}
             <span class="cross">✗</span>
             {% endif %}
         </span>
-        <span>
+        <span class="feature">
             {% if client.features.spaces %}
             <span class="checkmark">✓</span>
             {% else %}
             <span class="cross">✗</span>
             {% endif %}
         </span>
-        <span>
+        <span class="feature">
             {% if client.features.voip_1to1 %}
             <span class="checkmark">✓</span>
             {% else %}
             <span class="cross">✗</span>
             {% endif %}
         </span>
-        <span>
+        <span class="feature">
             {% if client.features.voip_jitsi %}
             <span class="checkmark">✓</span>
             {% else %}
             <span class="cross">✗</span>
             {% endif %}
         </span>
-        <span>
+        <span class="feature">
             {% if client.features.widgets %}
             <span class="checkmark">✓</span>
             {% else %}
             <span class="cross">✗</span>
             {% endif %}
         </span>
-        <span>
+        <span class="feature">
             {% if client.features.threads %}
             <span class="checkmark">✓</span>
             {% else %}
             <span class="cross">✗</span>
             {% endif %}
         </span>
-        <span>
+        <span class="feature">
             {% if client.features.sso %}
             <span class="checkmark">✓</span>
             {% else %}
             <span class="cross">✗</span>
             {% endif %}
         </span>
-        <span>
+        <span class="feature">
             {% if client.features.multi_account %}
             <span class="checkmark">✓</span>
             {% else %}
             <span class="cross">✗</span>
             {% endif %}
         </span>
-        <span>
+        <span class="feature">
             {% if client.features.multi_language %}
             <span class="checkmark">✓</span>
             {% else %}
