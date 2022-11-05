@@ -6,23 +6,48 @@
 {% set frontpage_data = load_data(path="content/index.toml") %}
 <div id="frontpage">
     <div class="section hero">
-        <img src="/images/matrix-logo-white.svg" alt="Matrix Logo" />
-        <h2>An open network for secure, decentralized communication</h2>
-        <a href="#">⌵</a>
+        <div class="section-content">
+            <img src="/images/matrix-logo-white.svg" alt="Matrix Logo" />
+            <h2>An open network for secure, decentralized communication</h2>
+        </div>
+        <a class="next-section" href="#use-case-personal">⌵</a>
     </div>
-    <div class="section use-case-personal">
+    <div id="use-case-personal" class="section">
         <h2>Chat with your family, friends, or organisation</h2>
-        <a>Get started</a>
+        <div class="section-content">
+            <!-- <img class="mobile-screenshot1" src="https://via.placeholder.com/375x812.png" />
+            <img class="mobile-screenshot2" src="https://via.placeholder.com/375x812.png" /> -->
+            <p>Lorem</p>
+            <p>Ipsum</p>
+        </div>
+        <div class="section-links">
+            <a class="call-to-action">Get started</a>
+            <a class="next-section" href="#use-case-community">⌵</a>
+        </div>
     </div>
-    <div class="section use-case-community">
+    <div id="use-case-community" class="section">
         <h2>A cozy, safe, supercharged environment for your community</h2>
-        <a>Let's build a nest</a>
+        <div class="section-content">
+            <!-- <img src="https://via.placeholder.com/800x400.png" />
+            <img src="https://via.placeholder.com/375x812.png" /> -->
+        </div>
+        <div class="section-links">
+            <a class="call-to-action">Let's build a nest</a>
+            <a class="next-section" href="#technical-details">⌵</a>
+        </div>
     </div>
-    <div class="section technical-details">
-        <a>Learn how it works</a>
+    <div id="technical-details" class="section">
+        <div class="section-content">
+        </div>
+        <div class="section-links">
+            <a class="call-to-action">Learn how it works</a>
+            <a class="next-section" href="#sponsors">⌵</a>
+        </div>
     </div>
-    <div class="section sponsors">
+    <div id="sponsors" class="section">
         <h2>They support us</h2>
+        <div class="section-content">
+        </div>
     </div>
 </div>
 {% endblock content %}
