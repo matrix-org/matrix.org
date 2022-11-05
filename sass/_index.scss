@@ -1,335 +1,72 @@
-.hero {
-    color: #fff;
-    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-    animation: Gradient 10s ease infinite;
-    background-size: 400% 400%;
-
-    display: flex;
-    height: 600px;
-    padding-top: 60px;
-    flex-direction: column;
-    justify-content: center;
-    flex: none;
-
-    .background-img {
-        position: absolute;
-        left: 0;
-        top: 60px;
-        right: 0;
-        bottom: 0;
-        height: 600px;
-        background-image: url('/assets/hero-spiro.svg');
-        background-position: 100% 50%;
-        background-size: cover;
-        background-repeat: repeat;
-        background-attachment: scroll;
-
-        @media (max-width: 767px) {
-            background-position: 50% 50%;
-        }
-
-        @media (max-width: 479px) {
-            background-position: 15% 50%;
-        }
-    }
-
-    .content {
-        z-index: 49;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-
-        width: 680px;
-        max-width: 100%;
-        padding-top: 60px;
-        padding-bottom: 60px;
-
-        .logo {
-            width: 160px;
-            margin-bottom: 20px;
-        }
-
-        .message {
-            color: #fff;
-            margin-bottom: 40px;
-        }
-    }
-
-    .button {
-        padding: 16px 32px;
-        border-radius: 32px;
-
-        background-color: #fff;
-        color: #000;
-    }
-
-    &:hover {
-        background-color: #0098d4;
-        color: #fff;
-    }
-}
-
-@keyframes Gradient {
-    0% {
-        background-position: 0% 50%
-    }
-
-    50% {
-        background-position: 100% 50%
-    }
-
-    100% {
-        background-position: 0% 50%
-    }
-}
-
-.dark-bg {
-    background-color: #f4f4f4;
-}
-
-.imagine {
-    font-size: 17px;
-    font-weight: normal;
-    line-height: 1.5em;
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 400px;
-
-    ul {
-        list-style: none;
-    }
-
-    li {
-        text-indent: -.8em;
-        margin-left: 0em;
-        margin-bottom: .5em;
-    }
-
-    h1 {
-        text-align: start;
-        padding: 0em;
-    }
-}
-
-.thisismatrix {
-    h1 {
-        text-align: center;
-        font-weight: bold;
-        padding: 0em;
-    }
-
-    p {
-        max-width: 640px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
-}
-
-.howdoesitwork {
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-    h2 {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    p {
-        text-align: left;
-        margin-top: 0;
-    }
-
-    .how {
-        display: flex;
-        margin-bottom: 60px;
-        text-align: left;
-    }
-}
-
-#open-standard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    max-width: unset !important;
-}
-
-#open-standard>.grid>*>.block>h4 {
-    text-align: center;
-}
-
-#latest-news {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .grid {
-        .block {
-            align-items: flex-start;
-            justify-content: space-between;
-
-            p {
-                text-align: start;
-            }
-        }
-    }
-}
-
-#explore {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    a {
-        img {
-            height: 48px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        span {
-            margin-bottom: 10px;
-        }
-
-        min-width: 90px;
-        margin-right: 20px;
-        margin-left: 20px;
-        padding-top: 6px;
-        padding-bottom: 6px;
-        color: #000;
-        text-align: center;
-        text-decoration: none;
-        display: inline-flex;
-        flex-direction: column;
-    }
-
-    a:hover {
-        color: #0098d4;
-    }
-}
-
-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.grid .block.dark-bg {
-    img {
-        margin-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .text {
-        h4 {
-            margin-bottom: 20px;
-        }
-
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 100%;
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 767px) {
-    section {
-        display: block;
-        width: auto;
-    }
-}
-
-.subtitle {
-    font-weight: normal;
-    margin-top: 0px;
-}
-
-.support-container {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#support {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 40px;
-
-    div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        width: 340px;
-        max-width: calc(100vw - 60px);
-        margin: 20px 10px;
-        color: #000;
-        text-align: center;
-    }
-}
-
-#sponsors {
-    margin-top: 30px;
-    margin-bottom: 30px;
-
-    .grid .grid-container-third .block {
-        justify-content: space-between;
-        display: flex;
-        flex-direction: column;
-
-        .logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 96px;
-            height: 96px;
-            min-height: 96px;
-            margin-bottom: 20px;
-        }
-
-        .content {
-            display: flex;
-            height: 100%;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-        }
-    }
-}
-
-#sdks {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #frontpage {
-    section {
-        max-width: 1200px;
-        margin: 1.5em auto;
+    scroll-snap-type: y proximity;
+
+    .section {
+        width: 100vw;
+        height: calc(100vh - 60px);
+        scroll-snap-align: start end;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h2 {
+            margin: 2em 0 0 2em;
+        }
+
+        a {
+            font-size: 1.5em;
+            color: #000;
+            background-color: #fff;
+            border-radius: 2em;
+            padding: .5em 1.5em;
+            margin: 2em auto;
+        }
     }
 
-    p {
-        line-height: 1.5;
+    .hero {
+        background-image: url("/assets/hero-spiro.svg");
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 5em;
+
+        color: #fff;
+        text-align: center;
+
+        img {
+            width: 250px;
+            @media (max-width: 767px) {
+                width: 150px;
+            }
+            margin: 0 auto;
+        }
+
+        h2 {
+            width: 600px;
+            @media (max-width: 767px) {
+                width: inherit;
+                padding: 0 1em;
+            }
+            margin: 0 auto;
+        }
+
+        a {
+            background-color: inherit;
+            font-size: inherit;
+            color: #fff;
+        }
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-weight: bold;
+    .use-case-personal {
+        background-color: #fcc;
+    }
+
+    .use-case-community {
+        background: #cfc;
+    }
+
+    .sponsors {
+        background-color: #ccf;
     }
 }
