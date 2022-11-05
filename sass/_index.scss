@@ -1,10 +1,8 @@
 #frontpage {
-    scroll-snap-type: y proximity;
-
     .section {
         width: 100vw;
         height: calc(100vh - 60px);
-        scroll-snap-align: start end;
+        scroll-snap-align: start;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

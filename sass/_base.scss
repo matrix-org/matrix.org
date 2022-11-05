@@ -5,6 +5,9 @@
 html {
     height: 100%;
     font-size: 100%;
+
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 60px;
 }
 
 body {
