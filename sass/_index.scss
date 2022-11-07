@@ -23,12 +23,14 @@
             display: flex;
             flex-direction: row;
             @media (max-width: 767px) {
-                flex-direction: column;
+                flex-direction: column-reverse;
             }
             justify-content: space-around;
             gap: 2em;
 
             img {
+                min-width: 0;
+                object-fit: contain;
                 @media (max-width: 767px) {
                     padding: 0 1em;
                 }
@@ -38,6 +40,16 @@
         .section-links {
             display: flex;
             flex-direction: column;
+
+            .call-to-action {
+                font-size: 1.5em;
+                color: #000;
+                background-color: #fff;
+                border-radius: 2em;
+                padding: .1em 1em;
+                margin: .5em auto;
+                max-width: fit-content;
+            }
         }
 
         .call-to-action {
@@ -45,6 +57,7 @@
             flex-direction: column;
             justify-content: center;
             max-width: 30%;
+            text-align: center;
 
             a {
                 font-size: 1.5em;
