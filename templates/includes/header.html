@@ -11,7 +11,7 @@
         {% set href = "/" ~ link.section ~ "/" %}
         {% set section = get_section(path=link.section ~ "/_index.md") %}
         <div class="section-wrap">
-            <a href="{{ href }}" class="section {{ macros::current_class(if_path_starts_with=href) }}">
+            <a href="{{ href }}" class="section {{ util::current_class(if_path_starts_with=href) }}">
                 {{ link.title }}
             </a>
             <div class="section-submenu-wrap">
@@ -24,7 +24,7 @@
         </div>
         {% else %}
         <a href="{{ link.href }}" class="{% if link.primary %}primary{% endif %}
-            {{ macros::current_class(if_path_starts_with=link.href) }}">
+            {{ util::current_class(if_path_starts_with=link.href) }}">
             {{ link.title }}
         </a>
         {% endif %}
