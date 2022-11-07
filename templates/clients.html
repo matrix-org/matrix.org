@@ -49,69 +49,25 @@
         <span>{{ client.last_release | date(format="%Y-%m-%d") }}</span>
         <span>{{ client.maturity }}</span>
         <span>{{ client.license }}</span>
+        {% for feature in [
+            client.features.e2ee,
+            client.features.spaces,
+            client.features.voip_1to1,
+            client.features.voip_jitsi,
+            client.features.widgets,
+            client.features.threads,
+            client.features.sso,
+            client.features.multi_account,
+            client.features.multi_language,
+        ] %}
         <span class="feature">
-            {% if client.features.e2ee %}
+            {% if feature %}
             <span class="checkmark">✓</span>
             {% else %}
             <span class="cross">✗</span>
             {% endif %}
         </span>
-        <span class="feature">
-            {% if client.features.spaces %}
-            <span class="checkmark">✓</span>
-            {% else %}
-            <span class="cross">✗</span>
-            {% endif %}
-        </span>
-        <span class="feature">
-            {% if client.features.voip_1to1 %}
-            <span class="checkmark">✓</span>
-            {% else %}
-            <span class="cross">✗</span>
-            {% endif %}
-        </span>
-        <span class="feature">
-            {% if client.features.voip_jitsi %}
-            <span class="checkmark">✓</span>
-            {% else %}
-            <span class="cross">✗</span>
-            {% endif %}
-        </span>
-        <span class="feature">
-            {% if client.features.widgets %}
-            <span class="checkmark">✓</span>
-            {% else %}
-            <span class="cross">✗</span>
-            {% endif %}
-        </span>
-        <span class="feature">
-            {% if client.features.threads %}
-            <span class="checkmark">✓</span>
-            {% else %}
-            <span class="cross">✗</span>
-            {% endif %}
-        </span>
-        <span class="feature">
-            {% if client.features.sso %}
-            <span class="checkmark">✓</span>
-            {% else %}
-            <span class="cross">✗</span>
-            {% endif %}
-        </span>
-        <span class="feature">
-            {% if client.features.multi_account %}
-            <span class="checkmark">✓</span>
-            {% else %}
-            <span class="cross">✗</span>
-            {% endif %}
-        </span>
-        <span class="feature">
-            {% if client.features.multi_language %}
-            <span class="checkmark">✓</span>
-            {% else %}
-            <span class="cross">✗</span>
-            {% endif %}
-        </span>
+        {% endfor %}
         {% endfor %}
     </div>
 </div>
