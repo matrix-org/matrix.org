@@ -2,14 +2,14 @@
 {% block content %}
 {% set matrix_live = load_data(path="partials/podcasts/matrix_live.md") %}
 {% set otwsu = load_data(path="partials/podcasts/otwsu.md") %}
-<div class="content">
+<div>
     <header>
     </header>
-    <div class="podcasts-grid">
-        <div>
+    <div class="podcasts-content">
+        <div class="podcasts-column">
             {{ matrix_live | markdown | safe }}
         </div>
-        <div>
+        <div class="podcasts-column">
             {{ otwsu | markdown | safe }}
         </div>
     </div>
