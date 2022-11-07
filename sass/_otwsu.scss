@@ -1,7 +1,25 @@
-.podcasts-grid {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    gap: 20px;
+.podcasts-content {
+    display: flex;
+    @media (max-width: 767px) {
+        flex-direction: column;
+    }
+    max-width: 1200px;
+    margin: 0 auto 2em;
+}
+
+.podcasts-column {
+    margin: 0 1em;
+    flex: 1;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .2em;
+
+    img {
+        height: 39px;
+    }
 }
 
 .otwsu {
