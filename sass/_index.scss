@@ -2,13 +2,37 @@
     .section {
         width: 100vw;
         height: calc(100vh - 60px);
+        @media (max-width: 767px) {
+            min-height: calc(100vh - 60px);
+            height: auto;
+        }
         scroll-snap-align: start;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
         h2 {
-            margin: 1em 0 0 1em;
+            margin: 1em;
+        }
+
+        .section-content {
+            min-height: 0;
+            min-width: 0;
+
+            margin-top: 2em;
+            display: flex;
+            flex-direction: row;
+            @media (max-width: 767px) {
+                flex-direction: column;
+            }
+            justify-content: space-around;
+            gap: 2em;
+
+            img {
+                @media (max-width: 767px) {
+                    padding: 0 1em;
+                }
+            }
         }
 
         .section-links {
@@ -17,12 +41,20 @@
         }
 
         .call-to-action {
-            font-size: 1.5em;
-            color: #000;
-            background-color: #fff;
-            border-radius: 2em;
-            padding: .5em 1.5em;
-            margin: 2em auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 30%;
+
+            a {
+                font-size: 1.5em;
+                color: #000;
+                background-color: #fff;
+                border-radius: 2em;
+                padding: .1em 1em;
+                margin: .5em auto;
+                max-width: fit-content;
+            }
         }
 
         .next-section {
@@ -71,20 +103,14 @@
 
     #use-case-personal {
         background-color: #fcc;
-
-        .section-content {
-            display: flex;
-            flex-direction: row;
-            @media (max-width: 767px) {
-                flex-direction: column;
-            }
-            justify-content: space-between;
-            padding: 0 10%;
-        }
     }
 
     #use-case-community {
         background-color: #cfc;
+    }
+
+    #use-case-multimedia {
+        background-color: #000;
     }
 
     #technical-details {
