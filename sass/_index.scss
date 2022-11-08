@@ -2,6 +2,7 @@
     .section {
         width: 100vw;
         height: calc(100vh - 60px);
+        padding-top: 2rem;
 
         @media (max-width: 767px) {
             min-height: calc(100vh - 60px);
@@ -21,7 +22,6 @@
             min-height: 0;
             min-width: 0;
 
-            margin-top: 2em;
             display: flex;
             flex-direction: row;
 
@@ -30,7 +30,6 @@
             }
 
             justify-content: space-around;
-            gap: 2em;
 
             img {
                 min-width: 0;
@@ -89,27 +88,34 @@
         .next-section {
             text-align: center;
             color: #fff;
-            margin: 0 auto 1em auto;
+            padding: 1em;
+            margin: auto auto 0;
         }
     }
 
     .hero {
+        position: relative;
         background-image: url("/assets/hero-spiro.svg");
         background-size: cover;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 5em;
 
         color: #fff;
         text-align: center;
 
         .section-content {
-            height: 100%;
+            position: absolute;
+            top: 4rem;
+            bottom: 4rem;
+            left: 1rem;
+            right: 1rem;
+
             display: flex;
             flex-direction: column;
-            gap: 3em;
+            gap: 3rem;
             justify-content: center;
+            align-items: center;
 
             img {
                 width: 250px;
@@ -122,14 +128,7 @@
             }
 
             h2 {
-                width: 600px;
-
-                @media (max-width: 767px) {
-                    width: inherit;
-                    padding: 0 1em;
-                }
-
-                margin: auto auto;
+                max-width: 28ch;
             }
         }
     }
