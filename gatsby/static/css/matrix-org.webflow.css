@@ -14,6 +14,23 @@ h2 {
   font-weight: 500;
 }
 
+blockquote h2 {
+  font-size: 1.5rem;
+}
+
+blockquote h3 {
+  font-size: 1.2rem;
+}
+
+blockquote h4 {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+blockquote img {
+  max-height: 40rem;
+}
+
 h3 {
   margin-top: 20px;
   margin-bottom: 10px;
