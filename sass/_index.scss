@@ -37,6 +37,12 @@
             }
         }
 
+        .section-content.reverse-order {
+            @media (max-width: 767px) {
+                flex-direction: column;
+            }
+        }
+
         .section-links {
             display: flex;
             flex-direction: column;
@@ -57,6 +63,9 @@
             flex-direction: column;
             justify-content: center;
             max-width: 30%;
+            @media (max-width: 767px) {
+                max-width: fit-content;
+            }
             text-align: center;
 
             a {
@@ -109,7 +118,7 @@
                     width: inherit;
                     padding: 0 1em;
                 }
-                margin: 0 auto;
+                margin: auto auto;
             }
         }
     }
