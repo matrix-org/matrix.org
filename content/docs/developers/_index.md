@@ -6,3 +6,106 @@ emoji = "⚒️"
 tile = "I want to develop a client, bridge or bot"
 last_updated = "2022-10-18T16:00:00Z"
 +++
+
+As an introduction for the page, a general overview of how Matrix works: there
+are several clients connected to different homeservers, federated together, and
+they send events. Maybe reuse the svg of the frontpage?
+
+## Elements of Matrix
+
+### Homeserver
+
+A homeserver is a piece of software hosting accounts of Matrix users. It is
+bound to a single domain that cannot change over time. The accounts on a server
+have an identifier made of a local part, and a server part. A typical identifier
+would be
+
+```txt
+@username:example.com
+```
+
+Users on a server can send `events` into `rooms`. An event is a particular json
+object, describing what a user is trying to do (join a room, send a message,
+update a specific value…). In the case of instant messaging, rooms are very
+similar to Slack, Discord or IRC channels. Most of the events in such rooms are
+about sending messages. Rooms have a unique technical identifier, and zero or
+several human-readable aliases or addresses. Aliases are made of a room name,
+and a server part. A typical room alias would be:
+
+```
+#mountain-bike:example.com
+```
+
+Homeservers are federated: the Matrix specification defines a [Sever-Server API](https://spec.matrix.org/v1.4/server-server-api/)
+(also known as Federation API) to describe interactions between servers.
+Whenever a user is in a room, their homeserver needs to have a local copy of
+that room.
+
+For example, if `@alice:outdoors.com` is the first user from `outdoors.com` to
+try to join `#mountain-bike:example.com`, then her homeserver is going to reach
+out to `example.com` to get a copy of the room. `outdoors.com` and `example.com`
+then stay in touch to synchronise their copy of the room.
+
+Whenever the homeserver receives new events, it's in charge of parsing them,
+perform checks on the event, and take action accordingly (e.g. add a specific 
+user to a specific room when it receives a room join event). The expected
+behaviour of homeservers is described fully in the [Matrix Spec](https://spec.matrix.org).
+
+You can find a list of existing homeserver implementations in the
+[Ecosystem > Servers](/ecosystem/servers) section of this website. Some of them
+are open source, so you can explore how they work. Please also refer to their
+documentation if you want to deploy them either for testing or in production.
+
+### Client
+
+Homeservers communicate between each other with the Server-Server / Federation
+API, but they also communicate with clients in a standard way: the Client-Server
+API.
+
+Clients are pieces of software who can use a Matrix account to send and receive
+events from a specific homeserver. The clients themselves only ever talk to the
+homeserver of the account they're using. If a client uses the
+`@alice:example.com` account, they will only talk to `example.com`.
+
+The most common kinds of client are the user facing ones. In the case of instant
+messaging, those clients show rooms as timeline of messages, with users joining,
+leaving, redacting messages…
+
+To get a better idea of what clients look like in practice, you can find a list
+on [Ecosystem > Clients](/ecosystem/clients) and give them a go.
+
+If you're more interested in writing your own client to bring a new experience
+to users, you may want to rely on an existing SDK (see
+[Ecosystem > SDKs](/ecosystem/sdks)). Those will do significant part of the
+Matrix heavy-lifting and allow you to focus on the UX you want to buid.
+
+### AppService (bots and bridges)
+
+Many Matrix bots are non-human clients. They can be built with the same SDKs as
+regular clients, and instead of showing a UI to display what is happening they
+will listen to events, parse them, and for example send automatic replies.
+
+A good example of simple bot would be a RSS bot: it subscribes to a RSS feed
+completely outside of Matrix and whenever it sees a new item in the feed it
+posts a message in a specific Matrix room, with the name of the item. Such a bot
+is nothing more than a very limited and specialised client.
+
+But sometimes you need to get a more global view of what is happening on your
+homeserver to take actions.
+
+What is an app service?
+Are those bots? Bridges? How can they be both? Aren't they just a fancy client?
+What are ghost users? Puppets?
+Where can I see existing bridges (Ecosystem > Bridges)? Where can I see existing bots (Ecosystem > Bots)?
+
+### The Spec defining interactions between all those
+What is the spec?
+Why do we need a spec?
+Where can I browse it
+
+## Rooms and Events
+
+What is a room
+Why are they versioned
+State events and message events
+
