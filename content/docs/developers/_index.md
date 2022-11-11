@@ -91,7 +91,7 @@ posts a message in a specific Matrix room, with the name of the item. Such a bot
 is nothing more than a very limited and specialised client.
 
 But sometimes you need to get a more global view of what is happening on your
-homeserver to take actions.
+homeserver to take action. Let's say you want to 
 
 What is an app service?
 Are those bots? Bridges? How can they be both? Aren't they just a fancy client?
