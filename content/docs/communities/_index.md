@@ -5,7 +5,7 @@ template = "docs/index.html"
 [extra]
 emoji = "👪"
 tile = "I want to use Matrix for my community or organisation"
-updated = "2022-10-18T16:00:00Z"
+updated = "2022-11-16T14:51:00Z"
 +++
 
 We strongly recommend getting familiar with Matrix as an individual. It's easy
@@ -22,9 +22,8 @@ without a traumatic big platform switch.
 Here are a couple of screenshots to see how a thriving community can look like
 on Matrix.
 
-* TODO: Space overview
-* TODO: Room in a Space
-* TODO: Split view Matrix/Discord
+![](./bridge-discord/from-matrix.png)
+![](./bridge-discord/from-discord.png)
 
 We recommend you to set up a dummy community to play around first, and then you
 can move on creating your full community and/or bridging your existing one to
