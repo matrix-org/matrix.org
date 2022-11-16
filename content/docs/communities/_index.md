@@ -60,8 +60,8 @@ link!
 
 Later if you decide to deploy your own provider or to rent one as a service
 (see [the list of providers we're aware of](/ecosystem/hosting) for more
-details), you will be able to add new adresses to this Space and change the main
-one.
+details), you will be able to add new addresses to this Space and change the
+main one.
 
 You can then add a couple of rooms to get started with the basics... and voilà,
 you now have a community on Matrix!
@@ -148,7 +148,7 @@ room addresses ending with `:matrix.org`. This is not an issue, but if you want
 to get addresses ending with `:your-org.com`, you need to get your own Matrix
 instance for that domain.
 
-Additionnally, moving to your own provider will give your administrators more
+Additionally, moving to your own provider will give your administrators more
 control over rooms and accounts created there. One of the appeals of Matrix is
 its decentralised nature. But some organisations may need to have local
 centralisation of power to stay in control of their official communications.
