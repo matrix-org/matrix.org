@@ -80,7 +80,7 @@ in the main panel are all the rooms in your Space. Since you're the
 administrator of the Space they're the same to you, but that will not
 necessarily be the case for new joiners.
 
-Clici on "Add" then on "New room" to create the room for hot cocoa drinkers.
+Click on "Add" then on "New room" to create the room for hot cocoa drinkers.
 
 ![](space-add-room-menu.png)
 
@@ -138,8 +138,7 @@ rooms manually. Tedious, and not efficient!
 The Matrix.org Foundation created a bot called mjolnir, which you could consider
 as the security guard of your community. You tell it in a control room to
 perform certain actions against one or a group of individuals, and the mjolnir
-bot enforces it in all the rooms. More information in the dedicated section
-below.
+bot enforces it in all the rooms. More information in the [moderation section](/docs/communities/moderation).
 
 ## Moving to another provider
 
@@ -155,5 +154,4 @@ centralisation of power to stay in control of their official communications.
 
 Finally, if you get your own Matrix instance, you can deploy your own bridges
 too and you should see a general improvement in performance over matrix.org
-which can sometimes feel a little crowded. More information in the dedicated
-section below.
+which can sometimes be a bit busy. More information in the [dedicated section](/docs/communities/switching-providers/).

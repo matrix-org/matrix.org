@@ -21,17 +21,17 @@ By default, there are three roles in Matrix:
 | 50          | Moderator     |
 | 100         | Administrator |
 
-By default:
+With the recommended default:
 
 - **Users** can send messages, media, reactions and redact their own messages in
   a room.
 - **Moderators** can also change the room name, address, topic, remove users
-  from the room (temporarily or permanently), redact other's messages, send a
-  noisy notification to everyone in the room
+  from the room (temporarily or permanently), redact other's messages and send a
+  notification to everyone in the room at once using `@room`.
 - **Administrators** can also change the history visibility (whether people can
   see messages from before they joined or not), enable encryption in the room,
-  remove entire servers from the room, and promote others as Moderators or
-  Administrators
+  remove entire servers from the room, and promote others to Moderator or
+  Administrator.
 
 Most people in your community are just going to be regular users. Usually
 Moderators are appointed to handle the ad-hoc moderation issues. Note that this
@@ -46,19 +46,19 @@ same. In that case, we recommend you to email
 
 ## Your community's security guard
 
-The tools built-in Matrix are good for small group moderation, but they are
+The tools built into Matrix are good for small group moderation, but they are
 limited for now: removing a user (temporarily or permanently) is only possible
 at the room level, and banning an entire server from a room is not exposed in
 the UI.
 
 Fortunately, a tool exists to step up your moderation game: a security guard
-robot you add to all of your public rooms, who can enforce your moderation
+robot you add to all of your public rooms that can enforce your moderation
 decisions on all the rooms at once.
 
 And that's really what mjolnir is: a security guard for your rooms. Because of
-the very decentralised nature of Matrix, you need to add the robot to guard the
-door of each of your rooms, and you need to grant it the Administrator role so
-it can do its job properly.
+the decentralised nature of Matrix, you need to add the robot to guard the door
+of each of your rooms, and you need to grant it the Administrator role so it can
+do its job properly.
 
 ### Getting mjolnir
 
