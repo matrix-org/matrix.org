@@ -1,5 +1,5 @@
 +++
-title = "Bridging my Discord community"
+title = "Bridging with Discord"
 weight = 300
 [extra]
 emoji = "🌉"

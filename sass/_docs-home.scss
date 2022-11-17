@@ -20,26 +20,29 @@ header {
     width: 18em;
     border-right: 1px solid #ddd;
 
-    .section-header-container {
-        display: flex;
-        justify-content: space-between;
-
+    details {
         summary {
             display: flex;
             justify-content: space-between;
             font-size: 1.2rem;
             margin: .5rem 0;
 
-            img {
+            .arrow {
                 background-image: url("/assets/down-arrow.svg");
-                width: 1rem;
-                height: 1rem;
+                width: .8rem;
+                height: .8rem;
                 margin: auto 0;
             }
         }
 
         summary.current {
             font-weight: bold;
+        }
+    }
+
+    details[open] {
+        summary .arrow {
+            background-image: url("/assets/up-arrow.svg");
         }
     }
 

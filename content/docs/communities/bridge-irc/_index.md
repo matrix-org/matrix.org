@@ -1,5 +1,5 @@
 +++
-title = "Bridging my IRC community"
+title = "Bridging with IRC"
 weight = 400
 [extra]
 emoji = "🌉"

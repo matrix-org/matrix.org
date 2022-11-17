@@ -11,7 +11,7 @@
             {% set current = false %}
         {% endif %}
         <details {% if current %}open{% endif %} class="section-header-container">
-            <summary {% if current %}class="current"{% endif %}>{{ communities_section.title }} <img class="arrow"></summary>
+            <summary {% if current %}class="current"{% endif %}>{{ communities_section.title }} <div class="arrow"></div></summary>
             <ul>
                 <li><a href="{{ communities_section.path }}">Overview</a></li>
                 {% for h2 in communities_section.toc %}
@@ -27,7 +27,7 @@
             {% set current = false %}
         {% endif %}
         <details {% if current %}open{% endif %} class="section-header-container">
-            <summary {% if current %}class="current"{% endif %}>{{ subsection.title }} <img class="arrow"></summary>
+            <summary {% if current %}class="current"{% endif %}>{{ subsection.title }} <div class="arrow"></div></summary>
             <ul>
                 <li><a href="{{ subsection.path }}">Overview</a></li>
                 {% for h2 in subsection.toc %}
