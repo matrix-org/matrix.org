@@ -25,8 +25,17 @@ header {
         justify-content: space-between;
 
         summary {
-            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
             margin: .5rem 0;
+
+            img {
+                background-image: url("/assets/down-arrow.svg");
+                width: 1rem;
+                height: 1rem;
+                margin: auto 0;
+            }
         }
 
         summary.current {
