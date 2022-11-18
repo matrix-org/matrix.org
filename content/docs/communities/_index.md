@@ -5,7 +5,7 @@ template = "docs/community.html"
 [extra]
 emoji = "👪"
 tile = "I want to use Matrix for my community or organisation"
-updated = "2022-11-16T14:51:00Z"
+updated = "2022-11-18T09:50:00Z"
 +++
 
 We strongly recommend getting familiar with Matrix as an individual. It's easy
