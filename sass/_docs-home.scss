@@ -39,10 +39,10 @@ header {
                 height: .8rem;
                 margin: auto 0;
             }
-        }
-
-        summary.current {
-            font-weight: bold;
+        
+            &.current {
+                font-weight: bold;
+            }
         }
     }
 
