@@ -49,7 +49,7 @@ then stay in touch to synchronise their copy of the room.
 Whenever the homeserver receives new events, it's in charge of parsing them,
 perform checks on the event, and take action accordingly (e.g. add a specific 
 user to a specific room when it receives a room join event). The expected
-behaviour of homeservers is described fully in the [Matrix Spec](https://spec.matrix.org).
+behaviour of homeservers is described fully in the [Matrix Specification](https://spec.matrix.org).
 
 You can find a list of existing homeserver implementations in the
 [Ecosystem > Servers](/ecosystem/servers) section of this website. Some of them
@@ -77,7 +77,9 @@ on [Ecosystem > Clients](/ecosystem/clients) and give them a go.
 If you're more interested in writing your own client to bring a new experience
 to users, you may want to rely on an existing SDK (see
 [Ecosystem > SDKs](/ecosystem/sdks)). Those will do significant part of the
-Matrix heavy-lifting and allow you to focus on the UX you want to buid.
+Matrix heavy-lifting and allow you to focus on the UX you want to buid. Finally,
+if you're interested in learning more about the interactions between clients and
+servers, please head to [the Client-Server section of the Matrix Specification](https://spec.matrix.org/v1.5/client-server-api/).
 
 ### AppService (bots and bridges)
 
@@ -85,20 +87,45 @@ Many Matrix bots are non-human clients. They can be built with the same SDKs as
 regular clients, and instead of showing a UI to display what is happening they
 will listen to events, parse them, and for example send automatic replies.
 
+#### Simple and advanced bots
+
 A good example of simple bot would be a RSS bot: it subscribes to a RSS feed
 completely outside of Matrix and whenever it sees a new item in the feed it
 posts a message in a specific Matrix room, with the name of the item. Such a bot
 is nothing more than a very limited and specialised client.
 
 But sometimes you need to get a more global view of what is happening on your
-homeserver to take action. Let's say you want to 
+homeserver to take action. If you want to write an anti-spam module for example,
+you want to be able to read each and every message from public rooms to detect
+patterns and ring the alarm or take action directly.
 
-What is an app service?
-Are those bots? Bridges? How can they be both? Aren't they just a fancy client?
-What are ghost users? Puppets?
-Where can I see existing bridges (Ecosystem > Bridges)? Where can I see existing bots (Ecosystem > Bots)?
+To do it with a bot, you would need to invite the bot in each and every room
+where you want the monitoring to happen. An appservice is able to monitor all
+the _unencrypted_ events (messages sent/edited/redacted, people joining or 
+leaving rooms).
+
+#### Bridges
+
+Sometimes you need to do even more than being an all-seeing eye: you need to be
+able to create users and rooms automatically. A typical use case for this is
+[bridges](/ecosystem/bridges). Bridges allow you to connect a Matrix community
+to a third-party platform such as IRC, Discord or Slack. Users on these
+communities appear as native users on Matrix, and ideally the other way around
+on the third-party platform as well.
+
+To do so, the bridge needs to be able to create and impersonate users on Matrix,
+and to control rooms as well. In order to limit the risks of abuse, bridges can
+be limited to controlling a namespace.
+
+To get a high level view of bridges concepts and see which platforms Matrix can
+be bridged to, please head to [Ecosystem > Bridges](/ecosystem/bridges) on this
+website. If you're interested in writing your own bridge, you will very likely
+want to rely on an existing SDK, in which case you check the existing ones in
+[Ecosystem > SDKs](/ecosystem/sdks) and have a look at the
+[Application Service section of the specification](https://spec.matrix.org/latest/application-service-api/).
 
 ### The Spec defining interactions between all those
+
 What is the spec?
 Why do we need a spec?
 Where can I browse it
