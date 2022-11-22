@@ -1,10 +1,11 @@
 +++
-title = "Bridging my Discord community"
+title = "Bridging with Discord"
+template = "docs/community.html"
 weight = 300
 [extra]
 emoji = "🌉"
 tile = "I want to bridge my Discord community to Matrix"
-last_updated = "2022-10-18T16:00:00Z"
+updated = "2022-11-18T09:50:00Z"
 +++
 
 The easiest way to bridge your Matrix community with you Discord one is to rely
