@@ -46,10 +46,8 @@ header {
         }
     }
 
-    details[open] {
-        summary .arrow {
-            background-image: url("/assets/up-arrow.svg");
-        }
+    details[open] summary .arrow {
+        background-image: url("/assets/up-arrow.svg");
     }
 
     ul {
