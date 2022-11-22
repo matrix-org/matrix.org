@@ -82,7 +82,7 @@ const ClientsMatrix = ({data}) => {
               </tr>
             </thead>
             <tbody>{
-              ["Linux","Mac","Windows","Android","iOS","Ubuntu Touch","Web","Nintendo 3DS"].map(function(platform) {
+              ["Linux","Mac","Windows","Android","iOS","watchOS","Ubuntu Touch","Web","Nintendo 3DS"].map(function(platform) {
                 return (<tr key={platform}>
                   <td>{platform}</td>
                   {clients.map(function(client, i) {
