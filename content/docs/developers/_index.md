@@ -36,7 +36,7 @@ and a server part. A typical room alias would be:
 #mountain-bike:example.com
 ```
 
-Homeservers are federated: the Matrix specification defines a [Sever-Server API](https://spec.matrix.org/v1.4/server-server-api/)
+Homeservers are federated: the Matrix specification defines a [Sever-Server API](https://spec.matrix.org/latest/server-server-api/)
 (also known as Federation API) to describe interactions between servers.
 Whenever a user is in a room, their homeserver needs to have a local copy of
 that room.
@@ -80,7 +80,7 @@ to users, you may want to rely on an existing SDK (see
 Matrix heavy-lifting and allow you to focus on the UX you want to build.
 Finally, if you're interested in learning more about the interactions between
 clients and servers, please head to
-[the Client-Server section of the Matrix Specification](https://spec.matrix.org/v1.5/client-server-api/).
+[the Client-Server section of the Matrix Specification](https://spec.matrix.org/latest/client-server-api/).
 
 ### AppService (bots and bridges)
 
@@ -127,13 +127,23 @@ want to rely on an existing SDK, in which case you check the existing ones in
 
 ### The Spec defining interactions between all those
 
-What is the spec?
-Why do we need a spec?
-Where can I browse it
+We have been mentioning the [Matrix Specification](https://spec.matrix.org)
+several times already. The Matrix Specification is a document describing
+interactions between the various components of the Matrix ecosystem
+(homeservers, clients, appservices). For a given  feature, implementation
+details may vary, but Matrix aims for a consistent behaviour and wants to avoid
+the need for negotiation between parties.
 
-## Rooms and Events
+The specification is open, versioned, and can be freely browsed at
+[spec.matrix.org](https://spec.matrix.org). Its governance and decision process
+are public, so anybody can make a proposal to extend it via Matrix Spec Change.
 
-What is a room
-Why are they versioned
-State events and message events
+A Matrix Spec Change (MSC) is a document describing how the author would like to
+amend the Matrix Specification, to introduce a change in the interactions
+between the components of the ecosystem. Such documents are discussed publicly,
+and when the author think they have addressed all of the important concerns they
+can bring the [Spec Core Team](/about#the-spec-core-team)'s attention to it and
+start the formal review process.
 
+The [Matrix Spec Process](https://spec.matrix.org/proposals/) is detailed on
+[spec.matrix.org](https://spec.matrix.org).
