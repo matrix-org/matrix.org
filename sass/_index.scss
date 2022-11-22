@@ -98,6 +98,11 @@
         background-color: #000;
         background-image: url("/assets/matrix-lines-hero.svg");
         background-size: cover;
+
+        @media (max-width: 767px) {
+            background-image: none;
+        }
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -120,11 +125,6 @@
 
             img {
                 width: 250px;
-
-                @media (max-width: 767px) {
-                    width: 150px;
-                }
-
                 margin: 0 auto;
             }
 
