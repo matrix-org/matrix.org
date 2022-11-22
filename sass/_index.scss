@@ -95,7 +95,8 @@
 
     .hero {
         position: relative;
-        background-image: url("/assets/hero-spiro.svg");
+        background-color: #000;
+        background-image: url("/assets/matrix-lines-hero.svg");
         background-size: cover;
         display: flex;
         flex-direction: column;
@@ -113,7 +114,7 @@
 
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 1rem;
             justify-content: center;
             align-items: center;
 
@@ -128,7 +129,10 @@
             }
 
             h2 {
+                font-size: 2.5em;
+                font-weight: 700;
                 max-width: 28ch;
+                margin: 0;
             }
         }
     }
