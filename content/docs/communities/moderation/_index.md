@@ -1,10 +1,11 @@
 +++
 title = "Community Moderation"
+template = "docs/community.html"
 weight = 100
 [extra]
 emoji = "🛡️"
 tile = "I want to deploy moderation tools"
-last_updated = "2022-10-27T08:00:00Z"
+updated = "2022-11-18T09:50:00Z"
 +++
 
 ## Power levels

@@ -1,10 +1,11 @@
 +++
 title = "Switching Providers"
+template = "docs/community.html"
 weight = 150
 [extra]
 emoji = "🏡"
 tile = "I want to get my own homeserver"
-last_updated = "2022-10-27T08:00:00Z"
+updated = "2022-11-18T09:50:00Z"
 +++
 
 * Why?

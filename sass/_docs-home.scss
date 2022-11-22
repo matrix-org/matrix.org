@@ -1,3 +1,74 @@
+header {
+    margin-bottom: 1em;
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    .last-updated {
+        font-size: .8rem;
+    }
+}
+
+.docs-body {
+    width: 100vw;
+}
+
+.docs-menu {
+    padding: 1em;
+    width: 18em;
+    border-right: 1px solid #ddd;
+
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 18rem;
+    overflow-y: auto;
+
+    details {
+        summary {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            margin: .5rem 0;
+
+            .arrow {
+                background-image: url("/assets/down-arrow.svg");
+                width: .8rem;
+                height: .8rem;
+                margin: auto 0;
+            }
+        
+            &.current {
+                font-weight: bold;
+            }
+        }
+    }
+
+    details[open] summary .arrow {
+        background-image: url("/assets/up-arrow.svg");
+    }
+
+    ul {
+        border-left: 1px solid #bbb;
+        padding-left: 0;
+        list-style: none;
+
+        li {
+            padding-left: 1em;
+        }
+
+        li:hover {
+            background-color: rgba(43, 140, 201, 0.1);
+        }
+
+        a {
+            color: #333;
+        }
+    }
+}
+
 .docs-grid {
     display: flex;
     flex-wrap: wrap;
@@ -27,4 +98,8 @@
 
 .doc-section-tile:hover {
     background-color: rgba(43, 140, 201, .2);
+}
+
+.docs-content {
+    margin-left: 18rem;
 }
