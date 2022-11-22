@@ -77,9 +77,10 @@ on [Ecosystem > Clients](/ecosystem/clients) and give them a go.
 If you're more interested in writing your own client to bring a new experience
 to users, you may want to rely on an existing SDK (see
 [Ecosystem > SDKs](/ecosystem/sdks)). Those will do significant part of the
-Matrix heavy-lifting and allow you to focus on the UX you want to buid. Finally,
-if you're interested in learning more about the interactions between clients and
-servers, please head to [the Client-Server section of the Matrix Specification](https://spec.matrix.org/v1.5/client-server-api/).
+Matrix heavy-lifting and allow you to focus on the UX you want to build.
+Finally, if you're interested in learning more about the interactions between
+clients and servers, please head to
+[the Client-Server section of the Matrix Specification](https://spec.matrix.org/v1.5/client-server-api/).
 
 ### AppService (bots and bridges)
 
