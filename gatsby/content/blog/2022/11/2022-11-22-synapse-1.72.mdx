@@ -21,17 +21,20 @@ PostgreSQL 10 has reached End Of Life: Synapse will no longer support it beginni
 In previous versions of Synapse, some Prometheus metrics were emitted under two different names,
 an older name that was non-compliant with OpenMetrics and Prometheus conventions and a new compliant name.
 
-Synapse v1.71 have the old metric names switched off by default.
+Synapse v1.71 and later have the old metric names switched off by default.
 
 For now it's still possible to get them by using `enable_legacy_metrics: true`,
-however if you still use them you should really migrate because it will be removed in v1.73.
+however server administrators still using legacy metric names are highly encouraged
+to migrate, as they will be removed in v1.73.
 
-You can find the full list of renamed metrics [here](https://matrix-org.github.io/synapse/v1.69/metrics-howto.html#renaming-of-metrics--deprecation-of-old-names-in-12).
+You can find the full list of renamed metrics [here](https://matrix-org.github.io/synapse/v1.72/metrics-howto.html#renaming-of-metrics--deprecation-of-old-names-in-12).
 
 ### Changes to the events received by application services (interest)
 
-[MSC3905](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3905-appservice-only-interested-in-local-users.md) has been implemented,
-Synapse now only considers local users to be interesting. In other words, the users namespace regex is only be applied against local users of the homeserver.
+Following the implementation of [MSC3905](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3905-appservice-only-interested-in-local-users.md),
+Synapse now only considers local users to be interesting to application services. In other words,
+the users namespace regex in an app service's registration file is only applied against local users
+of the homeserver.
 
 Please note, this probably doesn't affect the expected behavior of your application service,
 since an interesting local user in a room still means all messages in the room (from local or remote users) will still be considered interesting.
@@ -43,7 +46,7 @@ You can find a bit more info in the MSC and in the (upgrade notes)[https://matri
 ### Threads, threads, threads!
 
 Several MSCs related to threads got implemented:
-- [MSC3856](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3856-threads-list-api.md) providing an API to fetch threads and related metadata.
+- [MSC3856](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3856-threads-list-api.md) provide an API to fetch threads and related metadata.
 - [MSC3771](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3771-read-receipts-for-threads.md) and [MSC3773](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3773-notifications-for-threads.md) implementing per thread read receipts and per thread notification counts.
 - [MSC3874](https://github.com/matrix-org/matrix-spec-proposals/blob/justjanne/messages-endpoint-threads-filter/proposals/3874-messages-endpoint-threads-filter.md) allows to filter out messages belonging to threads from the main timeline (still considered experimental). Along with MSC3856, this should noticeably improve performance of rooms that use threads heavily.
 
@@ -53,7 +56,7 @@ This should significantly improve user experience related to threads, being thro
 
 Relationships are great, even more between events than humans!
 
-[MSC3912](https://github.com/matrix-org/matrix-spec-proposals/blob/babolivier/relation_redaction/proposals/3912-relation-based-redaction.md) gives us an easy way to redact an event with its relations of a certain type (experimental support for now).
+[MSC3912](https://github.com/matrix-org/matrix-spec-proposals/blob/babolivier/relation_redaction/proposals/3912-relation-based-redaction.md) gives us an easy way to redact an event with its relations of a certain type (though this feature is still experimental for now).
 For example it's usually good practice to redact all the edited versions of a message.
 Beforehand this work would have been done one event at a time by the client itself, now you can just specify relation types you want to delete in `with_relations` and the server will take care of that for you!
 
@@ -69,8 +72,8 @@ and feel free to grep Synapse changelog and the numerous related issues/PRs for 
 
 ## Everything else
 
-See the [full changelog](https://github.com/matrix-org/synapse/releases) for a complete list of changes in the releases.
-Also please have a look at the [upgrade notes](https://matrix-org.github.io/synapse/v1.72/upgrade) for this version.
+See the [full changelog](https://github.com/matrix-org/synapse/releases/tag/v1.72.0) for a complete list of changes in the releases.
+Also please have a look at the [upgrade notes](https://matrix-org.github.io/synapse/v1.72/upgrade#upgrading-to-v1720) for this version.
 
 Synapse is a Free and Open Source Software project, and we'd like to extend our
 thanks to everyone who contributed to this release, including (in no particular
