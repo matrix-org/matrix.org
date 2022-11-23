@@ -18,19 +18,23 @@ PostgreSQL 10 has reached End Of Life: Synapse will no longer support it beginni
 
 ### Legacy Prometheus metric names disabled and to be removed
 
-In previous versions of Synapse, some Prometheus metrics are emitted under two different names, with one of the names being older but non-compliant with OpenMetrics and Prometheus conventions and one of the names being newer but compliant.
+In previous versions of Synapse, some Prometheus metrics are emitted under two different names,
+with one of the names being older but non-compliant with OpenMetrics and Prometheus conventions and one of the names being newer but compliant.
 
 Synapse v1.71 have the old metric names switched off by default.
 
-For now it's still possible to get them by using `enable_legacy_metrics: true`, however if you still use them you should really migrate because it will be removed in v1.73.
+For now it's still possible to get them by using `enable_legacy_metrics: true`,
+however if you still use them you should really migrate because it will be removed in v1.73.
 
 You can find the full list of renamed metrics [here](https://matrix-org.github.io/synapse/v1.69/metrics-howto.html#renaming-of-metrics--deprecation-of-old-names-in-12).
 
 ### Changes to the events received by application services (interest)
 
-[MSC3905](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3905-appservice-only-interested-in-local-users.md) has been implemented, Synapse now only considers local users to be interesting. In other words, the users namespace regex is only be applied against local users of the homeserver.
+[MSC3905](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3905-appservice-only-interested-in-local-users.md) has been implemented,
+Synapse now only considers local users to be interesting. In other words, the users namespace regex is only be applied against local users of the homeserver.
 
-Please note, this probably doesn't affect the expected behavior of your application service, since an interesting local user in a room still means all messages in the room (from local or remote users) will still be considered interesting.
+Please note, this probably doesn't affect the expected behavior of your application service,
+since an interesting local user in a room still means all messages in the room (from local or remote users) will still be considered interesting.
 
 You can find a bit more info in the MSC and in the (upgrade notes)[https://matrix-org.github.io/synapse/v1.71/upgrade.html#changes-to-the-events-received-by-application-services-interest].
 
@@ -50,9 +54,11 @@ This should significantly improve user experience related to threads, being thro
 Relationships are great, even more between events than humans!
 
 [MSC3912](https://github.com/matrix-org/matrix-spec-proposals/blob/babolivier/relation_redaction/proposals/3912-relation-based-redaction.md) gives us an easy way to redact an event with its relations of a certain type.
-For example it's usually good practice to redact all the edited versions of a message. Beforehand this work would have been done one event at a time by the client itself, now you can just specify relation types you want to delete in `with_relations` and the server will take care of that for you!
+For example it's usually good practice to redact all the edited versions of a message.
+Beforehand this work would have been done one event at a time by the client itself, now you can just specify relation types you want to delete in `with_relations` and the server will take care of that for you!
 
-[MSC3664](https://github.com/deepbluev7/matrix-doc/blob/notifications-for-relations/proposals/3664-notifications-for-relations.md) allows Matrix clients to be notified in real time of related events, so you can now be made quickly aware of this cat emoji reaction that your cat photo clearly deserved.
+[MSC3664](https://github.com/deepbluev7/matrix-doc/blob/notifications-for-relations/proposals/3664-notifications-for-relations.md) allows Matrix clients to be notified in real time of related events,
+so you can now be made quickly aware of this cat emoji reaction that your cat photo clearly deserved.
 
 ### Faster joins, continued
 
@@ -61,10 +67,15 @@ We continue our journey to get everything going as transparently as possible whe
 If you missed it you can refer to this previous [blog post](https://matrix.org/blog/2022/10/18/testing-faster-remote-room-joins) to get a lot more infos,
 and feel free to grep Synapse changelog and the numerous related issues/PRs for all the gory details.
 
-TODO Synapse is a Free and Open Source Software project, and we'd like to extend our
+## Everything else
+
+See the [full changelog](https://github.com/matrix-org/synapse/releases) for a complete list of changes in the releases.
+Also please have a look at the [upgrade notes](https://matrix-org.github.io/synapse/v1.72/upgrade) for this version.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
 thanks to everyone who contributed to this release, including (in no particular
-order) [Denis Kariakin](https://github.com/dakariakin), [Dirk
-Klimpel](https://github.com/dklimpel) and [Beeper](https://www.beeper.com/), as
+order) [Ashish Kumar](https://github.com/ashfame), [asymmetric](https://github.com/asymmetric),
+[Beeper](https://www.beeper.com/) and [Paul Tötterman](https://github.com/ptman) as
 well as anyone helping us make Synapse better by sharing their feedback and
 reporting issues.
 
