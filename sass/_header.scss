@@ -54,8 +54,8 @@
         }
 
         a {
+            display: block;
             padding: 8px 24px;
-            margin: 8px 0;
             color: #222222;
 
             &:hover {
@@ -107,14 +107,20 @@
 
         .section-submenu-wrap {
             position: absolute;
-            top: 60px;
-            padding-top: 4px;
+            top: 44px;
+            left: 24px;
+            padding-top: 16px;
+            min-width: calc(100% - 24px);
         }
 
         .section-submenu {
             background: #fff;
             border: 1px solid #f4f4f4;
             border-radius: .3em;
+
+            a {
+                padding: 6px 20px;
+            }
         }
     }
 
