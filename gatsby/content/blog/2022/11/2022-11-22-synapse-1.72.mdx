@@ -27,11 +27,11 @@ In previous versions of Synapse, some Prometheus metrics were emitted under two
 different names, an older name that was non-compliant with OpenMetrics and
 Prometheus conventions and a new compliant name.
 
-Synapse v1.71 and later have the old metric names switched off by default.
+Synapse 1.71 and later have the old metric names switched off by default.
 
 For now it's still possible to get them by using `enable_legacy_metrics: true`,
 however server administrators still using legacy metric names are highly
-encouraged to migrate, as they will be removed in v1.73.
+encouraged to migrate, as they will be removed in 1.73.
 
 You can find the full list of renamed metrics
 [here](https://matrix-org.github.io/synapse/v1.72/metrics-howto.html#renaming-of-metrics--deprecation-of-old-names-in-12).
@@ -70,7 +70,7 @@ Several MSCs related to threads got implemented:
 This should significantly improve user experience related to threads, being
 through behavior or performance impact.
 
-### Bounding events together
+### Linking events together
 
 Relationships are great, even more between events than humans!
 
@@ -79,7 +79,7 @@ Matrix clients to be notified in real time of related events, so you can now be
 made quickly aware of this cat emoji reaction that your cat photo clearly
 deserved.
 
-Additionally, Synapse v1.72 includes an implementation of
+Additionally, Synapse 1.72 includes an implementation of
 [MSC3912](https://github.com/matrix-org/matrix-spec-proposals/pull/3912),
 allowing users to redact redact the relations of a message alongside the message
 itself. This is particularly helpful in cases like edits, where users usually
@@ -99,8 +99,10 @@ related issues/PRs for all the gory details.
 
 ## Everything else
 
-See the [full
-changelog](https://github.com/matrix-org/synapse/releases/tag/v1.72.0) for a
+See the full changelogs
+([1.70](https://github.com/matrix-org/synapse/releases/tag/v1.70.0),
+[1.71](https://github.com/matrix-org/synapse/releases/tag/v1.71.0),
+[1.72](https://github.com/matrix-org/synapse/releases/tag/v1.72.0)) for a
 complete list of changes in the releases. Also please have a look at the
 [upgrade
 notes](https://matrix-org.github.io/synapse/v1.72/upgrade#upgrading-to-v1720)
