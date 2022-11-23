@@ -39,7 +39,7 @@ You can find the full list of renamed metrics
 ### Changes to the events received by application services (interest)
 
 Following the implementation of
-[MSC3905](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3905-appservice-only-interested-in-local-users.md),
+[MSC3905](https://github.com/matrix-org/matrix-spec-proposals/pull/3905),
 Synapse now only considers local users to be interesting to application
 services. In other words, the users namespace regex in an app service's
 registration file is only applied against local users of the homeserver.
@@ -57,13 +57,12 @@ notes)[https://matrix-org.github.io/synapse/v1.71/upgrade.html#changes-to-the-ev
 ### Threads, threads, threads!
 
 Several MSCs related to threads got implemented:
-- [MSC3856](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3856-threads-list-api.md)
+- [MSC3856](https://github.com/matrix-org/matrix-spec-proposals/pull/3856)
   provide an API to fetch threads and related metadata.
-- [MSC3771](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3771-read-receipts-for-threads.md)
-  and
-  [MSC3773](https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3773-notifications-for-threads.md)
+- [MSC3771](https://github.com/matrix-org/matrix-spec-proposals/pull/3771) and
+  [MSC3773](https://github.com/matrix-org/matrix-spec-proposals/pull/3773)
   implementing per thread read receipts and per thread notification counts.
-- [MSC3874](https://github.com/matrix-org/matrix-spec-proposals/blob/justjanne/messages-endpoint-threads-filter/proposals/3874-messages-endpoint-threads-filter.md)
+- [MSC3874](https://github.com/matrix-org/matrix-spec-proposals/pull/3874)
   allows to filter out messages belonging to threads from the main timeline
   (still considered experimental). Along with MSC3856, this should noticeably
   improve performance of rooms that use threads heavily.
@@ -75,13 +74,13 @@ through behavior or performance impact.
 
 Relationships are great, even more between events than humans!
 
-[MSC3664](https://github.com/deepbluev7/matrix-doc/blob/notifications-for-relations/proposals/3664-notifications-for-relations.md)
-allows Matrix clients to be notified in real time of related events, so you can
-now be made quickly aware of this cat emoji reaction that your cat photo clearly
+[MSC3664](https://github.com/matrix-org/matrix-spec-proposals/pull/3664) allows
+Matrix clients to be notified in real time of related events, so you can now be
+made quickly aware of this cat emoji reaction that your cat photo clearly
 deserved.
 
 Additionally, Synapse v1.72 includes an implementation of
-[MSC3912](https://github.com/matrix-org/matrix-spec-proposals/blob/babolivier/relation_redaction/proposals/3912-relation-based-redaction.md),
+[MSC3912](https://github.com/matrix-org/matrix-spec-proposals/pull/3912),
 allowing users to redact redact the relations of a message alongside the message
 itself. This is particularly helpful in cases like edits, where users usually
 want to see their edits redacted at the same time as the original message. Note
