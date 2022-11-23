@@ -6,7 +6,7 @@ categories:
 author: Mathieu Velten
 ---
 
-It's not yet Christmas, but it's time for a new release! Say hello to [Synapse
+It's not Christmas yet, but it's time for a new release! Say hello to [Synapse
 1.72](https://github.com/matrix-org/synapse/releases/tag/v1.72.0).
 
 It seems like this blog didn't self update through AI for the 2 preceding
@@ -75,18 +75,18 @@ through behavior or performance impact.
 
 Relationships are great, even more between events than humans!
 
-[MSC3912](https://github.com/matrix-org/matrix-spec-proposals/blob/babolivier/relation_redaction/proposals/3912-relation-based-redaction.md)
-gives us an easy way to redact an event with its relations of a certain type
-(though this feature is still experimental for now). For example it's usually
-good practice to redact all the edited versions of a message. Beforehand this
-work would have been done one event at a time by the client itself, now you can
-just specify relation types you want to delete in `with_relations` and the
-server will take care of that for you!
-
 [MSC3664](https://github.com/deepbluev7/matrix-doc/blob/notifications-for-relations/proposals/3664-notifications-for-relations.md)
 allows Matrix clients to be notified in real time of related events, so you can
 now be made quickly aware of this cat emoji reaction that your cat photo clearly
 deserved.
+
+Additionally, Synapse v1.72 includes an implementation of
+[MSC3912](https://github.com/matrix-org/matrix-spec-proposals/blob/babolivier/relation_redaction/proposals/3912-relation-based-redaction.md),
+allowing users to redact redact the relations of a message alongside the message
+itself. This is particularly helpful in cases like edits, where users usually
+want to see their edits redacted at the same time as the original message. Note
+that this implementation is currently incomplete and still experimental, though,
+so watch this space!
 
 ### Faster joins, continued
 
