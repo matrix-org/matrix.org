@@ -7,10 +7,6 @@ tile = "I want to develop a client, bridge or bot"
 last_updated = "2022-10-18T16:00:00Z"
 +++
 
-As an introduction for the page, a general overview of how Matrix works: there
-are several clients connected to different homeservers, federated together, and
-they send events. Maybe reuse the svg of the frontpage?
-
 ## Elements of Matrix
 
 ### Homeserver
