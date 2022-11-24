@@ -86,10 +86,13 @@
         }
 
         .next-section {
-            text-align: center;
-            color: #fff;
             padding: 1em;
             margin: auto auto 0;
+
+            img {
+                width: 1rem;
+                height: 1rem;
+            }
         }
     }
 
@@ -134,6 +137,12 @@
                 max-width: 28ch;
                 margin: 0;
             }
+        }
+
+        .next-section img {
+            width: 1rem;
+            height: 1rem;
+            filter: invert(100%);
         }
     }
 
