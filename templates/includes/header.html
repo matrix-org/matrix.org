@@ -19,6 +19,10 @@
                     {% for page in section.pages %}
                     <a href="{{ page.path }}">{{ page.title }}</a>
                     {% endfor %}
+                    {% for subsection_path in section.subsections %}
+                    {% set subsection = get_section(path=subsection_path) %}
+                    <a href="{{ subsection.path }}">{{ subsection.title }}</a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
