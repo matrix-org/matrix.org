@@ -32,7 +32,7 @@ if (SHOW_LIVE_STREAM) {
     </div>
   );
 } else {
-  liveStream = <img src="/images/otwsu20.png" alt="Open Tech Will Save Us" />;
+  liveStream = <img src="/images/otwsu21.png" alt="Open Tech Will Save Us" />;
 }
 
 const OTWSU = ({ data }) => {
