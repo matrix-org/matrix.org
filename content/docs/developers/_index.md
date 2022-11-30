@@ -13,20 +13,20 @@ last_updated = "2022-10-18T16:00:00Z"
 
 A homeserver is a piece of software hosting accounts of Matrix users. It is
 bound to a single domain that cannot change over time. The accounts on a server
-have an identifier made of a local part, and a server part. A typical identifier
-would be
+have an identifier made of a local part (the user id), and a server part, which
+is the (vanity) domain of the homeserver. A typical identifier would be
 
 ```txt
 @username:example.com
 ```
 
-Users on a server can send `events` into `rooms`. An event is a particular json
+Users on a server can send *events* into *rooms*. An event is a particular json
 object, describing what a user is trying to do (join a room, send a message,
 update a specific value…). In the case of instant messaging, rooms are very
 similar to Slack, Discord or IRC channels. Most of the events in such rooms are
 about sending messages. Rooms have a unique technical identifier, and zero or
-several human-readable aliases or addresses. Aliases are made of a room name,
-and a server part. A typical room alias would be:
+more human-readable aliases. Aliases are made of a room name, and a server part,
+and are sometimes referred to as "addresses". A typical room alias would be:
 
 ```
 #mountain-bike:example.com
@@ -43,12 +43,13 @@ out to `example.com` to get a copy of the room. `outdoors.com` and `example.com`
 then stay in touch to synchronise their copy of the room.
 
 Whenever the homeserver receives new events, it's in charge of parsing them,
-perform checks on the event, and take action accordingly (e.g. add a specific 
-user to a specific room when it receives a room join event). The expected
-behaviour of homeservers is described fully in the [Matrix Specification](https://spec.matrix.org).
+perform checks on the event, and take action accordingly (e.g. sending messages
+from users on the homeserver to other participating homeservers, or distributing
+messages from other participating homeservers to users). The expected behaviour
+of homeservers is described fully in the [Matrix Specification](https://spec.matrix.org).
 
 You can find a list of existing homeserver implementations in the
-[Ecosystem > Servers](/ecosystem/servers) section of this website. Some of them
+[Ecosystem > Servers](/ecosystem/servers) section of this website. Most of them
 are open source, so you can explore how they work. Please also refer to their
 documentation if you want to deploy them either for testing or in production.
 
@@ -58,7 +59,7 @@ Homeservers communicate between each other with the Server-Server / Federation
 API, but they also communicate with clients in a standard way: the Client-Server
 API.
 
-Clients are pieces of software who can use a Matrix account to send and receive
+Clients are pieces of software that can use a Matrix account to send and receive
 events from a specific homeserver. The clients themselves only ever talk to the
 homeserver of the account they're using. If a client uses the
 `@alice:example.com` account, they will only talk to `example.com`.
