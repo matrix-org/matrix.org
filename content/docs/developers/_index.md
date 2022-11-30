@@ -13,7 +13,7 @@ last_updated = "2022-10-18T16:00:00Z"
 
 A homeserver is a piece of software hosting accounts of Matrix users. It is
 bound to a single domain that cannot change over time. The accounts on a server
-have an identifier made of a local part (the user id), and a server part, which
+have an identifier made of a local part (the username), and a server part, which
 is the (vanity) domain of the homeserver. A typical identifier would be
 
 ```txt
@@ -24,9 +24,9 @@ Users on a server can send *events* into *rooms*. An event is a particular json
 object, describing what a user is trying to do (join a room, send a message,
 update a specific value…). In the case of instant messaging, rooms are very
 similar to Slack, Discord or IRC channels. Most of the events in such rooms are
-about sending messages. Rooms have a unique technical identifier, and zero or
-more human-readable aliases. Aliases are made of a room name, and a server part,
-and are sometimes referred to as "addresses". A typical room alias would be:
+messages. Rooms have a unique technical identifier, and zero or more
+human-readable aliases. Aliases are made of a room name, and a server part, and
+are sometimes referred to as "addresses". A typical room alias would be:
 
 ```
 #mountain-bike:example.com
@@ -79,7 +79,7 @@ Finally, if you're interested in learning more about the interactions between
 clients and servers, please head to
 [the Client-Server section of the Matrix Specification](https://spec.matrix.org/latest/client-server-api/).
 
-### AppService (bots and bridges)
+### AppService (bridges and some bots)
 
 Many Matrix bots are non-human clients. They can be built with the same SDKs as
 regular clients, and instead of showing a UI to display what is happening they
@@ -100,7 +100,7 @@ patterns and ring the alarm or take action directly.
 To do it with a bot, you would need to invite the bot in each and every room
 where you want the monitoring to happen. An appservice is able to monitor all
 the _unencrypted_ events (messages sent/edited/redacted, people joining or 
-leaving rooms).
+leaving rooms) within its namespace.
 
 #### Bridges
 
