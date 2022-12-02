@@ -1,4 +1,4 @@
-<svg width="1280" height="4937" viewBox="0 0 1280 4937" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg preserveAspectRatio="none" width="1280" height="4324" viewBox="0 0 1280 4324" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect y="684" width="1280" height="1070" fill="white"/>
 <path d="M0 0H1280V852C715.5 739.868 0 734.748 0 734.748V0Z" fill="black"/>
 <path d="M0 50H1280V882C715.5 772.5 0 767.5 0 767.5V50Z" fill="black" fill-opacity="0.6"/>
@@ -10,5 +10,4 @@
 <path d="M0 1759.42C0 1759.42 254 1685 640.5 1685C1027 1685 1280 1759.42 1280 1759.42V2670H0V1759.42Z" fill="black" fill-opacity="0.2"/>
 <rect y="2660" width="1280" height="832" fill="white"/>
 <rect y="3492" width="1280" height="832" fill="#121212"/>
-<rect y="4324" width="1280" height="613" fill="white"/>
 </svg>
