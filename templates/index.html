@@ -5,55 +5,19 @@
 {% block content %}
 {% set frontpage_data = load_data(path="content/index.toml") %}
 <div id="frontpage">
-    <div class="section hero">
-        <div class="section-content">
-            <img src="/images/matrix-logo-white.svg" alt="Matrix Logo" />
-            <h2>An open network for secure, decentralized communication</h2>
+    <div class="curvy-bg">
+        <div id="hero" class="section">
+            <h2>An open network for secure, decentralised communication</h2>
+            <img src="https://via.placeholder.com/380x448.png" alt="A diagram depicting federation." />
         </div>
-        <a class="next-section" href="#use-case-personal"><img src="/assets/down-arrow.svg" /></a>
-    </div>
-    <div id="use-case-personal" class="section">
-        <div class="section-content">
-            <div class="call-to-action">
-                <h2>Chat with your family, friends, or organisation</h2>
-                <a href= "/docs/users/" class="call-to-action">Get started</a>
-            </div>
-            <img class="mobile-screenshot1" src="/images/personal-element-ios.png" />
-            <img class="mobile-screenshot2" src="/images/personal-fluffychat.png" />
+        <div id="use-case-personal" class="section">
         </div>
-        <a class="next-section" href="#use-case-community"><img src="/assets/down-arrow.svg" /></a>
-    </div>
-    <div id="use-case-community" class="section">
-        <div class="section-content reverse-order">
-                <img src="/images/community-cinny.png" />
-            <div class="call-to-action">
-                <h2>A cozy, safe, supercharged place for your community</h2>
-                <a href="/docs/community/" class="call-to-action">Reclaim your space</a>
-            </div>
+        <div id="use-case-community" class="section">
         </div>
-        <a class="next-section" href="#use-case-multimedia"><img src="/assets/down-arrow.svg" /></a>
-    </div>
-    <div id="use-case-multimedia" class="section">
-        <div class="section-content">
-            <!-- <img src="/images/community-element.png" /> -->
-        </div>
-        <div class="section-links">
-            <a class="call-to-action">Let's try it!</a>
-            <a class="next-section" href="#technical-details"><img src="/assets/down-arrow.svg" /></a>
-        </div>
-    </div>
-    <div id="technical-details" class="section">
-        <div class="section-content">
-        </div>
-        <div class="section-links">
-            <a class="call-to-action">Documentation</a>
-            <a class="next-section" href="#sponsors"><img src="/assets/down-arrow.svg" /></a>
+        <div id="technical-details" class="section">
         </div>
     </div>
     <div id="sponsors" class="section">
-        <h2>They support us</h2>
-        <div class="section-content">
-        </div>
     </div>
 </div>
 {% endblock content %}
