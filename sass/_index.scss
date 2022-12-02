@@ -1,168 +1,22 @@
 #frontpage {
-    .section {
-        width: 100vw;
+    .curvy-bg {
+        height: calc(4*(100vh - 60px));
+        background-image: url("/assets/frontpage-background.svg");
+        background-size: 100% calc(4*(100vh - 60px));
+    }
+
+    #hero {
         height: calc(100vh - 60px);
-        padding-top: 2rem;
-
-        @media (max-width: 767px) {
-            min-height: calc(100vh - 60px);
-            height: auto;
-        }
-
-        scroll-snap-align: start;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-direction: row;
+        justify-content: space-around;
 
         h2 {
-            margin: 1em;
+            color: #fff;
+            font-size: 40px;
+            font-weight: 700;
+            margin: auto 0;
+            width: 28rem;
         }
-
-        .section-content {
-            min-height: 0;
-            min-width: 0;
-
-            display: flex;
-            flex-direction: row;
-
-            @media (max-width: 767px) {
-                flex-direction: column-reverse;
-            }
-
-            justify-content: space-around;
-
-            img {
-                min-width: 0;
-                object-fit: contain;
-
-                @media (max-width: 767px) {
-                    padding: 0 1em;
-                }
-            }
-        }
-
-        .section-content.reverse-order {
-            @media (max-width: 767px) {
-                flex-direction: column;
-            }
-        }
-
-        .section-links {
-            display: flex;
-            flex-direction: column;
-
-            .call-to-action {
-                font-size: 1.5em;
-                color: #000;
-                background-color: #fff;
-                border-radius: 2em;
-                padding: .1em 1em;
-                margin: .5em auto;
-                max-width: fit-content;
-            }
-        }
-
-        .call-to-action {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-width: 30%;
-
-            @media (max-width: 767px) {
-                max-width: fit-content;
-            }
-
-            text-align: center;
-
-            a {
-                font-size: 1.5em;
-                color: #000;
-                background-color: #fff;
-                border-radius: 2em;
-                padding: .1em 1em;
-                margin: .5em auto;
-                max-width: fit-content;
-            }
-        }
-
-        .next-section {
-            padding: 1em;
-            margin: auto auto 0;
-
-            img {
-                width: 1rem;
-                height: 1rem;
-            }
-        }
-    }
-
-    .hero {
-        position: relative;
-        background-color: #000;
-        background-image: url("/assets/matrix-lines-hero.svg");
-        background-size: cover;
-
-        @media (max-width: 767px) {
-            background-image: none;
-        }
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        color: #fff;
-        text-align: center;
-
-        .section-content {
-            position: absolute;
-            top: 4rem;
-            bottom: 4rem;
-            left: 1rem;
-            right: 1rem;
-
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-
-            img {
-                width: 250px;
-                margin: 0 auto;
-            }
-
-            h2 {
-                font-size: 2.5em;
-                font-weight: 700;
-                max-width: 28ch;
-                margin: 0;
-            }
-        }
-
-        .next-section img {
-            width: 1rem;
-            height: 1rem;
-            filter: invert(100%);
-        }
-    }
-
-    #use-case-personal {
-        background-color: #fcc;
-    }
-
-    #use-case-community {
-        background-color: #cfc;
-    }
-
-    #use-case-multimedia {
-        background-color: #000;
-    }
-
-    #technical-details {
-        background-color: #ccc;
-    }
-
-    #sponsors {
-        background-color: #ccf;
     }
 }
