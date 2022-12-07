@@ -42,7 +42,7 @@ ones as well.
 
 {{ sdk_table(type="bot", featured=false) }}
 
-## Bridges SDKs
+## Bridge SDKs
 
 Bridges SDKs are used to create bridges, thus integrating third party platforms
 in Matrix. For more information about bridges, please head to [Ecosystem > Bridges](/ecosystem/bridges)
