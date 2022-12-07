@@ -1,0 +1,30 @@
+{% set sdks = load_data(path="content/ecosystem/sdks/sdks.toml") %}
+<table>
+    <thead>
+        <tr>
+            <th>Project</th>
+            <th>Language</th>
+            <th>Licence</th>
+            <th>Repository</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for name, sdk in sdks %}
+    {% if not featured and sdk.featured_in is not containing(type) %}
+        {% set display = true %}
+    {% elif featured and sdk.featured_in is containing(type) %}
+        {% set display = true %}
+    {% else %}
+        {% set display = false %}
+    {% endif %}
+    {% if sdk.purpose is containing(type) and display %}
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ sdk.language }}</td>
+            <td>{{ sdk.licence }}</td>
+            <td><a href="{{ sdk.repository }}">Link</a></td>
+        </tr>
+    {% endif %}
+    {% endfor %}
+    </tbody>
+</table>

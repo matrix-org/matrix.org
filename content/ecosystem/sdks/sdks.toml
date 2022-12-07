@@ -1,0 +1,20 @@
+[matrix-rust-sdk]
+language = "Rust"
+licence = "Apache-2.0"
+repository = "https://github.com/matrix-org/matrix-rust-sdk"
+purpose = ["client", "bot"]
+featured_in = ["client"]
+
+[maubot]
+language = "Python"
+licence = "AGPL-3.0"
+repository = "https://github.com/maubot/maubot"
+purpose = ["bot", "bridge"]
+featured_in = ["bot", "bridge"]
+
+[nio]
+language = "Python"
+licence = "Apache-2.0"
+repository = "https://github.com/poljar/matrix-nio"
+purpose = ["bot"]
+featured_in = []
