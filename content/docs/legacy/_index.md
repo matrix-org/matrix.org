@@ -2,6 +2,7 @@
 title = "Legacy documentation"
 template = "docs/legacy_index.html"
 page_template = "docs/legacy.html"
+sort_by = "title"
 weight = 900
 [extra]
 emoji = "🕸️"
