@@ -1,0 +1,57 @@
+---
+date: '2022-12-07'
+title: Synapse 1.73 released
+categories:
+- Releases
+author: Mathieu Velten
+---
+
+And here is another update to your beloved Matrix server implementation, [Synapse
+1.73](https://github.com/matrix-org/synapse/releases/tag/v1.73.0).
+
+## Announcements
+
+### Legacy Prometheus metric names removed
+
+As mentioned in previous blogpost, after disabling comes removing !
+
+`enable_legacy_metrics` has been removed, sorry if it breaks your dashboard but
+the upgrade should not be that difficult, and you got some heads-up.
+
+You can still find the full list of renamed metrics
+[here](https://matrix-org.github.io/synapse/v1.73/metrics-howto.html#renaming-of-metrics--deprecation-of-old-names-in-12).
+
+## The new stuff
+
+### Performance
+
+A bunch of performance improvements have been included in this release.
+You can expect `/messages` to be [quite faster](https://github.com/matrix-org/synapse/pull/14527).
+
+Various optimizations have also been done on fetching aggregations of relationships.
+
+### Extensible Events experimental support
+
+Experimental support for Extensible Events has landed in Synapse.
+
+This is exciting since this global rework of events presentation has been in talk
+[for a while](https://github.com/matrix-org/matrix-spec-proposals/pull/1767), and we now have an
+implementation to experiment with that.
+
+Beware that experimental is not a joke here, since the related MSCs hasn't even landed yet,
+and this has been implemented more to validate the approach than anything else.
+
+If you are not a developer that wants to begin working on supporting them,
+please avoid enabling this since it will be useless to you and could be buggy.
+
+## Everything else
+
+See the full [changelog](https://github.com/matrix-org/synapse/releases/tag/v1.73.0), for a
+complete list of changes in the release.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
+thanks to everyone who contributed to this release, including (in no particular
+order) [schmop](https://github.com/schmop), [Ashish Kumar](https://github.com/ashfame),
+[realtyem](https://github.com/realtyem), and [Brennan Chapman](https://github.com/chapb)
+as well as anyone helping us make Synapse better by sharing their feedback and reporting issues.
+
