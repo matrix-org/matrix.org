@@ -2,7 +2,7 @@
 language = "Rust"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/matrix-rust-sdk"
-purpose = ["client", "bot"]
+purpose = ["client", "bot", "bridge"]
 featured_in = ["client"]
 
 [maubot]
