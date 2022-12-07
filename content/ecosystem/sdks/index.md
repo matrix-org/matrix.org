@@ -44,7 +44,7 @@ ones as well.
 
 ## Bridge SDKs
 
-Bridges SDKs are used to create bridges, thus integrating third party platforms
+Bridge SDKs are used to create bridges, thus integrating third party platforms
 in Matrix. For more information about bridges, please head to [Ecosystem > Bridges](/ecosystem/bridges)
 and to the [Developers documentation](/docs/developers).
 
