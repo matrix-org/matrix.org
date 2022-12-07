@@ -56,4 +56,4 @@ recommended by the Foundation:
 If you're not happy with the recommended SDKs, you can try one of the following
 ones as well.
 
-{{ sdk_table(type="brudge", featured=false) }}
+{{ sdk_table(type="bridge", featured=false) }}
