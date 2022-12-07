@@ -5,10 +5,10 @@
         <h1>{{ section.title }}</h1>
     </header>
     {{ section.content | safe }}
-    {% for page in section.pages %}
     <ul>
+        {% for page in section.pages %}
         <li><a href="{{ page.path }}">{{ page.title }}</a></li>
+        {% endfor %}
     </ul>
-    {% endfor %}
 </article>
 {% endblock content %}
