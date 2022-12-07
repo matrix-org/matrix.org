@@ -9,7 +9,7 @@ where they can add the most value.
 
 There are two types of SDKs: clients (including bots) and appservices (used for
 bots and sdks). If you are a developer and are not sure what the difference
-between clients and appservices, please head to [the Developers documation](/docs/developers/).
+between clients and appservices, please head to [the Developers documentation](/docs/developers/).
 
 ## Client SDKs
 
