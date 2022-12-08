@@ -31,10 +31,10 @@ For more information, please refer to the [upgrade notes](https://matrix-org.git
 A bunch of performance improvements have been included in this release, specifically around
 the [`/messages`](https://spec.matrix.org/v1.5/client-server-api/#get_matrixclientv3roomsroomidmessages) endpoint.
 
-[Improving `filter_events_for_client`](https://github.com/matrix-org/synapse/pull/14527) gave us a first nice bump as visible on this graph:
+[Improving `filter_events_for_client`](https://github.com/matrix-org/synapse/pull/14527) gave the matrix.org homeserver a first nice bump as visible on this graph:
 
 Various optimizations around [fetching](https://github.com/matrix-org/synapse/pull/14491) [bundled](https://github.com/matrix-org/synapse/pull/14508)
-[aggregations](https://github.com/matrix-org/synapse/pull/14510) managed to got yet another nice improvement:
+[aggregations](https://github.com/matrix-org/synapse/pull/14510) resulted in yet another nice improvement:
 
 ![](/blog/img/2022-12-07-bundled-aggregations-improvement.png)
 
@@ -55,7 +55,8 @@ in production.
 ## Everything else
 
 See the full [changelog](https://github.com/matrix-org/synapse/releases/tag/v1.73.0), for a
-complete list of changes in the release.
+complete list of changes in the release. Also please have a look at the [upgrade
+notes](https://matrix-org.github.io/synapse/v1.73/upgrade#upgrading-to-v1730) for this version.
 
 Synapse is a Free and Open Source Software project, and we'd like to extend our
 thanks to everyone who contributed to this release, including (in no particular
