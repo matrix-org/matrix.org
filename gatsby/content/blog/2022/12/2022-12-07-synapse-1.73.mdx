@@ -6,14 +6,14 @@ categories:
 author: Mathieu Velten
 ---
 
-And here is another update to your beloved Matrix server implementation, [Synapse
+And here is another update to your beloved Matrix homeserver implementation, [Synapse
 1.73](https://github.com/matrix-org/synapse/releases/tag/v1.73.0).
 
 ## Announcements
 
 ### Legacy Prometheus metric names removed
 
-As mentioned in previous blogpost, after disabling comes removing !
+As mentioned in the [Synapse 1.72 release blog post](https://matrix.org/blog/2022/11/22/synapse-1-72-released#announcements), after disabling comes removing!
 
 `enable_legacy_metrics` has been removed, sorry if it breaks your dashboard but
 the upgrade should not be that difficult, and you got some heads-up.
@@ -34,15 +34,14 @@ Various optimizations have also been done on fetching aggregations of relationsh
 
 Experimental support for Extensible Events has landed in Synapse.
 
-This is exciting since this global rework of events presentation has been in talk
-[for a while](https://github.com/matrix-org/matrix-spec-proposals/pull/1767), and we now have an
-implementation to experiment with that.
+This is exciting since this global rework of events presentation has been in talks
+[for a while](https://github.com/matrix-org/matrix-spec-proposals/pull/1767), and
+having an implementation to experiment with greatly helps bringing the feature
+closer to completion.
 
-Beware that experimental is not a joke here, since the related MSCs hasn't even landed yet,
-and this has been implemented more to validate the approach than anything else.
-
-If you are not a developer that wants to begin working on supporting them,
-please avoid enabling this since it will be useless to you and could be buggy.
+Note that this support is still very much experimental as the related MSCs are still
+under review and could change at any time, and therefore not recommended for use
+in production.
 
 ## Everything else
 
