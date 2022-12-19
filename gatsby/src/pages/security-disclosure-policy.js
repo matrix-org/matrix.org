@@ -46,6 +46,7 @@ const SecurityDisclosurePolicy = () => {
             issue. Please <em>do not</em> send reports regarding the following:</p>
             <ul>
                 <li>Issues relating to SPF or DMARC.</li>
+                <li>Directory listing on matrix.org/jira, which is a public archive with links from our GitHub.</li>
             </ul>
             <p>The Matrix.org Foundation does not ordinarily provide bug bounties, though
             organisations building on top of Matrix may do so in future. We maintain a <a
