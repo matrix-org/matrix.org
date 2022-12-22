@@ -1,14 +1,17 @@
 #frontpage {
-    height: calc(5*(100vh - 60px));
-    background-image: url("/assets/frontpage-background.svg");
-    background-size: 100% calc(5*(100vh - 60px));
 
     .section {
-        height: calc(100vh - 60px);
-        border: 1px dotted red;
+        //border: 1px dotted red;
     }
 
     #hero {
+        height: calc(100vh - 60px);
+        background-color: #000;
+        background-image: url("/assets/frontpage/hero_bottom.svg");
+        background-position: bottom;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -27,6 +30,13 @@
     }
 
     #use-case-personal {
+        height: calc(100vh - 60px);
+        background-color: #fff;
+        background-image: url("/assets/frontpage/individual_bottom.svg");
+        background-position: bottom;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -44,7 +54,13 @@
     }
 
     #use-case-community {
-        padding: 4rem 0;
+        height: calc(100vh - 60px);
+        background-color: #000;
+        background-image: url("/assets/frontpage/community_bottom.svg");
+        background-position: bottom;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
