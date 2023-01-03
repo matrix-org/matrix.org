@@ -8,7 +8,7 @@
         height: calc(100vh - 60px);
         background-color: #000;
         background-image: url("/assets/frontpage/hero_bottom.svg");
-        background-position: bottom;
+        background-position-y: calc(100% + .7px);
         background-size: 100% auto;
         background-repeat: no-repeat;
 
@@ -33,7 +33,7 @@
         height: calc(100vh - 60px);
         background-color: #fff;
         background-image: url("/assets/frontpage/individual_bottom.svg");
-        background-position: bottom;
+        background-position-y: calc(100% + .7px);
         background-size: 100% auto;
         background-repeat: no-repeat;
 
@@ -57,7 +57,7 @@
         height: calc(100vh - 60px);
         background-color: #000;
         background-image: url("/assets/frontpage/community_bottom.svg");
-        background-position: bottom;
+        background-position-y: calc(100% + .7px);
         background-size: 100% auto;
         background-repeat: no-repeat;
 
