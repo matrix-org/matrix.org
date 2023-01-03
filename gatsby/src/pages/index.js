@@ -665,16 +665,6 @@ const Index = ({
                 <div className="mxgrid__sponsors">
                   <div className="mxgrid__sponsors__item">
                     <div className="mxgrid__sponsors__logo">
-<img src="images/status.svg" alt="" className="mxgrid__sponsors__item__logo__img" />
-</div>
-                    <div className="mxgrid__item__bg__vert">
-                      <h4>Status</h4>
-                      <p className="mxgrid__sponsors__item__p">A Mobile OS, Built for Ethereum.</p>
-<a href="https://status.im/">Learn more</a>
-</div>
-                  </div>
-                  <div className="mxgrid__sponsors__item">
-                    <div className="mxgrid__sponsors__logo">
 <img src="images/upcloud.svg" alt="" className="mxgrid__sponsors__item__logo__img" />
 </div>
                     <div className="mxgrid__item__bg__vert">
@@ -683,50 +673,6 @@ const Index = ({
 <a href="https://upcloud.com/">Learn more</a>
 </div>
                   </div>
-                  <div className="mxgrid__sponsors__item">
-                    <div className="mxgrid__sponsors__logo">
-<img src="images/pia.svg" alt="" className="mxgrid__sponsors__item__logo__img mxgrid__sponsors__item__logo__img--pia" />
-</div>
-                    <div className="mxgrid__item__bg__vert">
-                      <h4>Private Internet Access</h4>
-                      <p className="mxgrid__sponsors__item__p">Private Internet Access™ VPN Service encrypts your connection and provides you with an anonymous IP to protect your privacy. <br />
-</p>
-<a href="https://www.privateinternetaccess.com/">Learn more</a>
-</div>
-                  </div>
-                  <div className="mxgrid__sponsors__item">
-                    <div className="mxgrid__sponsors__logo">
-<img src="images/inblockchain.png" alt="" className="mxgrid__sponsors__item__logo__img" />
-</div>
-                    <h4>InBlockchain</h4>
-                    <p className="mxgrid__sponsors__item__p">INBlockchain is a full-service firm focusing on consulting, incubating and facilitating crowdsales for promising blockchain startups.<strong>
-<br />
-</strong>
-</p>
-<a href="http://www.inblockchain.com/">Learn more</a>
-</div>
-                  <div className="mxgrid__sponsors__item">
-                    <div className="mxgrid__sponsors__logo">
-<img src="images/omisego.svg" alt="" className="mxgrid__sponsors__item__logo__img" />
-</div>
-                    <h4>Omisego</h4>
-                    <p className="mxgrid__sponsors__item__p">OmiseGO is a public Ethereum-based financial technology for use in mainstream digital wallets.<strong>
-<br />
-</strong>
-</p>
-<a href="https://omisego.network/">Learn more</a>
-</div>
-                  <div className="mxgrid__sponsors__item">
-                    <div className="mxgrid__sponsors__logo">
-<img src="images/tendermint.png" alt="" className="mxgrid__sponsors__item__logo__img" />
-</div>
-                    <h4>Tendermint</h4>
-                    <p className="mxgrid__sponsors__item__p">Byzantine fault-tolerant replicated state machines in any programming language. <strong>
-<br />
-</strong>
-</p>
-<a href="https://tendermint.com/">Learn more</a>
-</div>
                 </div>
               </div>
             </div>
