@@ -76,28 +76,28 @@ const Index = ({
 }) => {
     const buildTime = useBuildTime()
     return (
-         <ThemeProvider theme={theme}>
-            <div>
-            <Helmet title={`Matrix.org`}>
-              <link rel="stylesheet" type="text/css" href="/css/how-it-works.css"/>
-              <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
-              <script type="text/javascript" src="/js/d3.v3.min.js"></script>
-              <script type="text/javascript" src="/js/how-it-works.js"></script>
-              <script async="" src="https://platform.twitter.com/widgets.js" charSet="utf-8"/>
-              <script async="" defer="" src="https://buttons.github.io/buttons.js"/>
-            </Helmet>
-            <Navigation />
-            <SEO buildTime={buildTime} />
-  <div className="mxherobackground">
-    <div className="mxherobackground__img">
-</div>
+<ThemeProvider theme={theme}>
+  <div>
+    <Helmet title={`Matrix.org`}>
+      <link rel="stylesheet" type="text/css" href="/css/how-it-works.css"/>
+      <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+      <script type="text/javascript" src="/js/d3.v3.min.js"></script>
+      <script type="text/javascript" src="/js/how-it-works.js"></script>
+      <script async="" src="https://platform.twitter.com/widgets.js" charSet="utf-8"/>
+      <script async="" defer="" src="https://buttons.github.io/buttons.js"/>
+    </Helmet>
+    <Navigation />
+    <SEO buildTime={buildTime} />
+    <div className="mxherobackground">
+      <div className="mxherobackground__img">
+    </div>
     <div className="mxcontent mxcontent--home_hero">
       <div className="mxcontent__main delete">
         <div className="mxblock mxblock--hero">
-<img src="images/matrix-logo-white.svg" alt="" className="mxblock--hero__logo" />
+          <img src="images/matrix-logo-white.svg" alt="" className="mxblock--hero__logo" />
           <h1 className="mxblock--hero__hx delete">An open network for secure, decentralized communication</h1>
-<a href="/docs/guides/introduction" className="mxblock__btn mxblock--hero__btn mxblock--hero__btn--mctesto w-button">Learn More</a>
-</div>
+          <a href="/docs/guides/introduction" className="mxblock__btn mxblock--hero__btn mxblock--hero__btn--mctesto w-button">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
@@ -105,46 +105,100 @@ const Index = ({
     <div className="mxcontent">
       <div className="mxcontent__main">
         <div className="mxblock mxblock--hero mxblock--hidden">
-<img src="images/matrix-logo.svg" alt="" className="mxblock--hero__logo" />
+          <img src="images/matrix-logo.svg" alt="" className="mxblock--hero__logo" />
           <h1 className="mxblock--hero__hx">An open network for secure, decentralized communication</h1>
-<a href="#about" className="mxblock__btn mxblock--hero__btn w-button">Get started</a>
-</div>
+          <a href="#about" className="mxblock__btn mxblock--hero__btn w-button">Get started</a>
+        </div>
         <div className="mxblock">
-            <div className="mxgrid mxgrid--imagine">
-                <div className="mxgrid__item50">
-                    <div className="mxgrid__item__bg mxgrid__item__bg--imagine">
-                      <ul className="mximagine">
-                        <li>Imagine a world...</li>
-                        <li>...where it is as simple to message or call anyone as it is to send them an email.</li>
-                        <li>...where you can communicate without being forced to install the same app.</li>
-                        <li>...where you can choose who hosts your communication.</li>
-                        <li>...where your conversations are secured by E2E encryption.</li>
-                        <li>...where there’s a simple standard HTTP API for sharing real-time data on the web.</li>
-                      </ul>
-                    </div>
-                </div>
-                <div className="mxgrid__item50">
-                    <div className="mxgrid__item__bg mxgrid__item__bg--imagine">
-                        <p className="mxp mxthisismatrix">
-                            This is Matrix.
-                        </p>
-                        <p className="mxp mxmatrixdescription">
-                          Matrix is an open source project
-                          that publishes the <br /><a href="/docs/spec" onClick={()=>{window.location='https://matrix.org//docs/spec'; return false;}}>Matrix open standard</a> for
-                          secure, decentralised, real-time communication,
-                          and its Apache licensed <br /><a href="https://github.com/matrix-org">reference implementations</a>.
-                        </p>
-                        <p className="mxp mxmatrixdescription">  Maintained by the non-profit <a href="/foundation/">Matrix.org Foundation</a>, we aim <br />
-                          to create an open platform which is as
-                          independent, vibrant and evolving
-                          as the Web itself... but for communication.
-                        </p>
-                        <p className="mxp mxmatrixdescription">
-                          As of June 2019, Matrix is <Link to="/blog/2019/06/11/introducing-matrix-1-0-and-the-matrix-org-foundation">out of beta</Link>, and the protocol is fully suitable for production usage.
-                        </p>
-                    </div>
-                </div>
+          <div className="mxgrid mxgrid--imagine">
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--imagine">
+                <ul className="mximagine">
+                  <li>Imagine a world...</li>
+                  <li>...where it is as simple to message or call anyone as it is to send them an email.</li>
+                  <li>...where you can communicate without being forced to install the same app.</li>
+                  <li>...where you can choose who hosts your communication.</li>
+                  <li>...where your conversations are secured by E2E encryption.</li>
+                  <li>...where there’s a simple standard HTTP API for sharing real-time data on the web.</li>
+                </ul>
+              </div>
             </div>
+            <div className="mxgrid__item50">
+              <div className="mxgrid__item__bg mxgrid__item__bg--imagine">
+                <p className="mxp mxthisismatrix">
+                    This is Matrix.
+                </p>
+                <p className="mxp mxmatrixdescription">
+                  Matrix is an open source project
+                  that publishes the <br /><a href="/docs/spec" onClick={()=>{window.location='https://matrix.org//docs/spec'; return false;}}>Matrix open standard</a> for
+                  secure, decentralised, real-time communication,
+                  and its Apache licensed <br /><a href="https://github.com/matrix-org">reference implementations</a>.
+                </p>
+                <p className="mxp mxmatrixdescription">  Maintained by the non-profit <a href="/foundation/">Matrix.org Foundation</a>, we aim <br />
+                  to create an open platform which is as
+                  independent, vibrant and evolving
+                  as the Web itself... but for communication.
+                </p>
+                <p className="mxp mxmatrixdescription">
+                  As of June 2019, Matrix is <Link to="/blog/2019/06/11/introducing-matrix-1-0-and-the-matrix-org-foundation">out of beta</Link>, and the protocol is fully suitable for production usage.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="mxblock mxblock--sponsors">
+            <div className="mxgrid">
+              <div className="mxgrid__item100">
+                <div className="mxgrid__item__bg">
+                  <h2 className="mxblock__hx">Support Matrix</h2>
+                  <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating...</p>
+                  <p className="mxp">Support us on Patreon for great rewards including access to the supporters-only podcast, and even a voice at our weekly meetings.<br /><a href="https://www.patreon.com/matrixdotorg">Find out more at our Patreon page</a>.</p>
+                  <div className="mxgrid__support">
+                    <div className="mxgrid__support__item">
+                      <div className="mxgrid__item__bg__vert">
+                        <h4>Donorbox</h4>
+                        <div className="mxgrid__item__bg__vert">
+                        <a href="https://donorbox.org/keep-matrix-exciting">
+                          <img alt="Donorbox" src="/images/donorbox.png" />
+                        </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mxgrid__support__item">
+                      <div className="mxgrid__item__bg__vert">
+                        <h4>Liberapay</h4>
+                        <div className="mxgrid__item__bg__vert">
+                        <a href="https://liberapay.com/matrixdotorg">
+                          <img alt="Liberapay" src="/images/fund-via-liberapay.png" />
+                        </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mxgrid__support__item">
+                      <div className="mxgrid__item__bg__vert">
+                        <h4>Patreon</h4>
+                        <div className="mxgrid__item__bg__vert">
+                        <a href="https://www.patreon.com/matrixdotorg">
+                          <img alt="Patreon" src="/images/patreon.png" />
+                        </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mxgrid__support__item">
+                      <div className="mxgrid__item__bg__vert">
+                        <h4>Cryptocurrency</h4>
+                        <p className="mxgrid__support__item__p">You can also send us cryptocurrency:<br /><small>BTC 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE<br />ETH 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485</small></p>
+                        <div className="mxgrid__item__bg__vert">
+                          <div className="mxgrid__item__bg__vert__embed w-embed w-script">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating. See our current <a href="/supporters">Elliptic supporters</a>!</p>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="mxgrid">
             <div className="mxgrid__item50">
               <div className="mxgrid__item__bg">
@@ -613,50 +667,7 @@ const Index = ({
   <div className="mxcontentwrapper">
     <div className="mxcontent">
       <div className="mxcontent__main">
-        <div className="mxblock mxblock--sponsors">
-          <div className="mxgrid">
-            <div className="mxgrid__item100">
-              <div className="mxgrid__item__bg">
-                <h2 className="mxblock__hx">Support Matrix</h2>
-                <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating...</p>
-                <p className="mxp">Support us on Patreon for great rewards including access to the supporters-only podcast, and even a voice at our weekly meetings.<br /><a href="https://www.patreon.com/matrixdotorg">Find out more at our Patreon page</a>.</p>
-                <div className="mxgrid__support">
-                  <div className="mxgrid__support__item">
-                    <div className="mxgrid__item__bg__vert">
-                      <h4>Patreon</h4>
-                      <div className="mxgrid__item__bg__vert">
-                      <a href="https://www.patreon.com/matrixdotorg">
-                        <img alt="Patreon" src="/images/patreon.png" />
-                      </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mxgrid__support__item">
-                    <div className="mxgrid__item__bg__vert">
-                      <h4>Liberapay</h4>
-                      <div className="mxgrid__item__bg__vert">
-                      <a href="https://liberapay.com/matrixdotorg">
-                        <img alt="Liberapay" src="/images/fund-via-liberapay.png" />
-                      </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mxgrid__support__item">
-                    <div className="mxgrid__item__bg__vert">
-                      <h4>Cryptocurrency</h4>
-                      <p className="mxgrid__support__item__p">You can also send us cryptocurrency:<br /><small>BTC 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE<br />ETH 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485</small></p>
-                      <div className="mxgrid__item__bg__vert">
-                        <div className="mxgrid__item__bg__vert__embed w-embed w-script">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating. See our current <a href="/supporters">Elliptic supporters</a>!</p>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div className="mxblock">
           <div className="mxgrid">
             <div className="mxgrid__item100">
