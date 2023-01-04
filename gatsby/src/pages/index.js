@@ -278,8 +278,7 @@ const Index = ({
                   </p>
                   <p className="mxgrid__item__bg__p">
                     The core Matrix team maintains bridges to Slack, IRC, XMPP and Gitter, and meanwhile the wider
-                    Matrix community provides bridges for Telegram, Discord, WhatsApp, Facebook, Hangouts, Signal and
-                    many more.
+                    Matrix community provides bridges for Telegram, Discord, WhatsApp, Facebook, Signal and many more.
                   </p>
                 </div>
               <a href="/bridges/" className="mxgrid__item__bg__btn w-button">Learn more</a>

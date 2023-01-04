@@ -195,7 +195,6 @@
 [matrix-nio]: https://github.com/poljar/matrix-nio
 [matrix-puppet-bridge]: https://github.com/matrix-hacks/matrix-puppet-bridge/
 [matrix-puppet-facebook]: https://github.com/matrix-hacks/matrix-puppet-facebook
-[matrix-puppet-hangouts]: https://github.com/matrix-hacks/matrix-puppet-hangouts/
 [matrix-puppet-slack]: https://github.com/matrix-hacks/matrix-puppet-slack
 [matrix-python-sdk]: https://github.com/matrix-org/matrix-python-sdk
 [matrix-react-sdk]: https://github.com/matrix-org/matrix-react-sdk
