@@ -1,3 +1,8 @@
+html {
+  /* Adjust scroll padding top so anchors are not hidden behind the navbar. */
+  scroll-padding-top: 5em;
+}
+
 h1 {
   margin-top: 20px;
   margin-bottom: 10px;
