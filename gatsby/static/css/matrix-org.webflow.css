@@ -1,5 +1,6 @@
 html {
-  scroll-padding-top: 5em
+  /* Adjust scroll padding top so anchors are not hidden behind the navbar. */
+  scroll-padding-top: 5em;
 }
 
 h1 {
