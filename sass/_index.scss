@@ -1,41 +1,76 @@
 #frontpage {
 
-    .section {
-        //border: 1px dotted red;
-    }
-
     #hero {
         height: calc(100vh - 60px);
         background-color: #000;
-        background-image: url("/assets/frontpage/hero_bottom.svg");
-        background-position-y: calc(100% + .7px);
-        background-size: 100% auto;
-        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
 
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        .hero_content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
         h2 {
             color: #fff;
             font-size: 40px;
             font-weight: 700;
-            margin: auto 0;
             width: 28rem;
         }
 
         img {
-            margin: auto 0px;
+            width: 200px;
+            height: 86px;
+        }
+
+        #hero_curve1 {
+            border-radius: 10% 100%;
+            background-color: #333;
+            height: 200px;
+            width: 200%;
+            position: absolute;
+            bottom: 10px;
+            right: -50px;
+        }
+
+        #hero_curve2 {
+            border-radius: 10% 100%;
+            background-color: #666;
+            height: 200px;
+            width: 200%;
+            position: absolute;
+            bottom: -10px;
+            right: -50px;
+        }
+
+        #hero_curve3 {
+            border-radius: 10% 100%;
+            background-color: #aaa;
+            height: 200px;
+            width: 200%;
+            position: absolute;
+            bottom: -30px;
+            right: -50px;
+        }
+
+        #hero_curve4 {
+            border-radius: 10% 100%;
+            background-color: #fff;
+            height: 200px;
+            width: 200%;
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
         }
     }
 
     #use-case-personal {
         height: calc(100vh - 60px);
         background-color: #fff;
-        background-image: url("/assets/frontpage/individual_bottom.svg");
-        background-position-y: calc(100% + .7px);
-        background-size: 100% auto;
-        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
 
         display: flex;
         flex-direction: row;
@@ -51,6 +86,15 @@
         img {
             margin: auto 0px;
         }
+
+        #personal_bottom {
+            position: absolute;
+            bottom: -300px;
+            width: 150%;
+            height: 400px;
+            background-color: black;
+            border-radius: 100% 100%;
+        }
     }
 
     #use-case-community {
@@ -63,8 +107,9 @@
 
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         text-align: center;
+        padding-bottom: 75px;
 
         h2 {
             color: #fff;
