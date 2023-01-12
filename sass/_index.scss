@@ -11,18 +11,21 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-        }
 
-        h2 {
-            color: #fff;
-            font-size: 40px;
-            font-weight: 700;
-            width: 28rem;
-        }
+            h2 {
+                color: #fff;
+                font-size: 40px;
+                font-weight: 700;
+                max-width: 36rem;
+                margin: 0 auto;
+                text-align: center;
+            }
 
-        img {
-            width: 200px;
-            height: 86px;
+            img {
+                width: 200px;
+                height: 86px;
+                margin: 0 auto 2rem auto;
+            }
         }
 
         #hero_curve1 {
@@ -100,10 +103,6 @@
     #use-case-community {
         height: calc(100vh - 60px);
         background-color: #000;
-        background-image: url("/assets/frontpage/community_bottom.svg");
-        background-position-y: calc(100% + .7px);
-        background-size: 100% auto;
-        background-repeat: no-repeat;
 
         display: flex;
         flex-direction: column;
@@ -134,20 +133,24 @@
         }
     }
 
-    #technical-details {
+    #complex_apps {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 3rem 5rem;
 
         h2 {
             color: #000;
             font-weight: 700;
             margin: auto 0;
+            max-width: 450px;
         }
 
         img {
             margin: 0 auto;
+            border: 20px solid black;
+            border-radius: 30px;
         }
     }
 
