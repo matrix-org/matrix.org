@@ -82,6 +82,8 @@
         flex-direction: row;
         justify-content: space-around;
 
+        padding-bottom: 100px;
+
         h2 {
             color: #000;
             font-weight: 700;
@@ -97,7 +99,7 @@
 
         #personal_bottom {
             position: absolute;
-            bottom: -300px;
+            bottom: -340px;
             width: 150%;
             height: 400px;
             background-color: black;
@@ -106,14 +108,16 @@
     }
 
     #use-case-community {
-        height: calc(100vh - 60px);
+        min-height: calc(100vh - 60px);
         background-color: #000;
 
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+
         text-align: center;
-        padding-bottom: 75px;
+        padding-top: 60px;
+        padding-bottom: 100px;
 
         h2 {
             color: #fff;
@@ -129,8 +133,8 @@
             font-size: 18px;
             font-weight: 600;
             border-radius: 1000px;
-            padding: .2em 2em;
-            margin: 0 auto;
+            padding: .4em 2em;
+            margin: 2em auto 4em auto;
         }
 
         img {
