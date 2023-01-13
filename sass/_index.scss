@@ -3,6 +3,9 @@
     #hero {
         height: calc(100vh - 60px);
         background-color: #000;
+        background-image: url("/assets/frontpage/hero_dancing_lines.svg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
         position: relative;
         overflow: hidden;
 
