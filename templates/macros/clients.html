@@ -1,19 +1,21 @@
 {% macro platform_links(packages) %}
-{% if packages.apple_app_store.app_id and packages.apple_app_store.org %}
-<a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"
-    class="platform-pill">App Store</a>
-{% endif %}
-{% if packages.google_play_store.app_id %}
-<a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"
-    class="platform-pill">Google Play</a>
-{% endif %}
-{% if packages.f_droid.app_id %}
-<a href="https://f-droid.org/packages/{{ packages.f_droid.app_id }}" class="platform-pill">F-Droid</a>
-{% endif %}
-{% if packages.flathub.app_id %}
-<a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}" class="platform-pill">Flathub</a>
-{% endif %}
-{% if packages.other_url %}
-<a href="{{ packages.other_url }}" class="platform-pill">Web</a>
-{% endif %}
+<div class="pills">
+    {% if packages.apple_app_store.app_id and packages.apple_app_store.org %}
+    <a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"
+        class="platform-pill">App Store</a>
+    {% endif %}
+    {% if packages.google_play_store.app_id %}
+    <a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"
+        class="platform-pill">Google Play</a>
+    {% endif %}
+    {% if packages.f_droid.app_id %}
+    <a href="https://f-droid.org/packages/{{ packages.f_droid.app_id }}" class="platform-pill">F-Droid</a>
+    {% endif %}
+    {% if packages.flathub.app_id %}
+    <a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}" class="platform-pill">Flathub</a>
+    {% endif %}
+    {% if packages.other_url %}
+    <a href="{{ packages.other_url }}" class="platform-pill">Web</a>
+    {% endif %}
+</div>
 {% endmacro platform_links %}
