@@ -2,41 +2,50 @@
 {% import "macros/clients.html" as clients %}
 {% block content %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
+<div class="page-header">
+    <div class="bg"></div>
+    <div class="hero-block">
+        <h1>Clients</h1>
+        <p>Clients are needed to chat using Matrix. Here is a selection of the most mature ones you can safely use.</p>
+    </div>
+</div>
+
 <div class="content">
-    <header>
-        <h1>{{ page.title }}</h1>
+    <header class="hero-header">
+        <h1>Featured clients</h1>
+        <p>The Matrix ecosystem is vibrant: whatever platform you use, there are good chances someone has developed a
+            client for it.</p>
     </header>
     <p>{{ page.content | safe }}</p>
-</div>
-<div class="all-clients">
-    <div class="clients-table">
-        <strong>Name</strong>
-        <strong>Maintainer</strong>
-        <strong>Platforms</strong>
-        <strong>Last Release</strong>
-        <strong>Maturity</strong>
-        <strong>License</strong>
-        <strong>E2EE</strong>
-        <strong>Spaces</strong>
-        <strong>VoIP (1:1)</strong>
-        <strong>VoIP (Jitsi)</strong>
-        <strong>Widgets</strong>
-        <strong>Threads</strong>
-        <strong>SSO</strong>
-        <strong>Multi-account</strong>
-        <strong>Multi language</strong>
+    <div class="all-clients">
+        <div class="clients-table">
+            <strong>Name</strong>
+            <strong>Maintainer</strong>
+            <strong>Platforms</strong>
+            <strong>Last Release</strong>
+            <strong>Maturity</strong>
+            <strong>License</strong>
+            <strong>E2EE</strong>
+            <strong>Spaces</strong>
+            <strong>VoIP (1:1)</strong>
+            <strong>VoIP (Jitsi)</strong>
+            <strong>Widgets</strong>
+            <strong>Threads</strong>
+            <strong>SSO</strong>
+            <strong>Multi-account</strong>
+            <strong>Multi language</strong>
 
-        {% for name, client in clients %}
-        <!-- new row -->
-        <span>{{ name }}</span>
-        <span>{{ client.maintainer }}</span>
-        <span>
-            {{ clients::platform_links(packages=client.packages) }}
-        </span>
-        <span>{{ client.last_release | date(format="%Y-%m-%d") }}</span>
-        <span>{{ client.maturity }}</span>
-        <span>{{ client.license }}</span>
-        {% for feature in [
+            {% for name, client in clients %}
+            <!-- new row -->
+            <span>{{ name }}</span>
+            <span>{{ client.maintainer }}</span>
+            <span>
+                {{ clients::platform_links(packages=client.packages) }}
+            </span>
+            <span>{{ client.last_release | date(format="%Y-%m-%d") }}</span>
+            <span>{{ client.maturity }}</span>
+            <span>{{ client.license }}</span>
+            {% for feature in [
             client.features.e2ee,
             client.features.spaces,
             client.features.voip_1to1,
@@ -46,16 +55,17 @@
             client.features.sso,
             client.features.multi_account,
             client.features.multi_language,
-        ] %}
-        <span class="feature">
-            {% if feature %}
-            <span class="checkmark">✓</span>
-            {% else %}
-            <span class="cross">✗</span>
-            {% endif %}
-        </span>
-        {% endfor %}
-        {% endfor %}
+            ] %}
+            <span class="feature">
+                {% if feature %}
+                <span class="checkmark">✓</span>
+                {% else %}
+                <span class="cross">✗</span>
+                {% endif %}
+            </span>
+            {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock content %}

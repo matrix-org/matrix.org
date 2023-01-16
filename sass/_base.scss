@@ -41,7 +41,7 @@ body {
 }
 
 main {
-    padding-top: 60px;
+    padding-top: 79px;
 }
 
 img {
@@ -252,4 +252,53 @@ pre mark {
 pre table {
     width: 100%;
     border-collapse: collapse;
+}
+
+/* The black block on pages at the top. */
+.page-header {
+    width: 100%;
+    height: 377px;
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+
+    .bg {
+        background: url('assets/page-header-bg.svg') no-repeat;
+        background-size: contain;
+        position: absolute;
+        width: 100%;
+        height: 377px;
+        bottom: 100px;
+        top: 0px;
+        left: calc(100vw/3);
+    }
+
+    .hero-block {
+        z-index: 1;
+        position: relative;
+        top: 89px;
+        left: 80px;
+
+        h1 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 120%;
+            color: #FFFFFF;
+        }
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 120%;
+
+            display: flex;
+            align-items: center;
+
+            color: #FFFFFF;
+        }
+    }
+
+
 }

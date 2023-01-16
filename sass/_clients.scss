@@ -1,47 +1,106 @@
-.featured-clients {
+.hero-header {
+    margin-top: 90px;
+    margin-bottom: 80px;
+    color: #000000;
+    width: 447px;
+
+    h1 {
+        width: 100%;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 120%;
+    }
+
+    p {
+        width: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 120%;
+    }
+}
+
+.content {
     display: flex;
-    gap: .5rem;
-    overflow-x: auto;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.featured-clients {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    width: 943px;
 }
 
 .featured-client-card {
     display: flex;
     flex-direction: column;
-    flex: 0 0 250px;
-    border-color: 1px solid rgba(43, 140, 201, .4);
-    background-color: rgba(43, 140, 201, .1);
-    border-radius: 1em;
-    padding: 1em;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    gap: 16px;
+
+    width: 281px;
+    height: 343px;
+
+    border: 1px solid #D2D2D2;
+    border-radius: 16px;
 
     img {
-        height: 160px;
-        display: block;
-        margin: 0 auto;
+        margin: 0;
+        width: 65px;
+        height: 65px;
+        box-sizing: content-box;
+    }
+
+    p {
+        margin: 0;
     }
 
     h3 {
-        text-align: center;
+        margin: 0;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 120%;
     }
 
     .platforms-links {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-start;
         justify-content: center;
-        margin-top: auto;
+        gap: 16px 4px;
+        flex-wrap: wrap;
     }
 }
 
 .platform-pill {
-    margin: .2em;
-    border-radius: 2em;
-    padding: 0 .6em;
-    color: #fff;
-    background-color: rgba(43, 140, 201, .8);
+    background: #E9E9E9;
+    border-radius: 16px;
+    padding: 6px 8px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #000000;
 }
+
+/* We have no design for this currently
 
 .platform-pill:hover {
     background-color: #2b8cc9;
-}
+}*/
 
 .all-clients {
     display: flex;
