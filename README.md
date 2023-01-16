@@ -25,3 +25,11 @@ Now you can visit the page you want to work on in the browser. For example: http
 1. To include images in your posting, add them to `gatsby/static/docs/projects/images/`. Avoid linking to images on other websites.
 1. To check how the rendered result looks (strongly recommended), follow "How to build" steps.
 1. Once it looks good, submit a pull request!
+
+### Deploying the site
+
+The source of this site is deployed each time the `master` branch is updated by compiling and packaging all site assets in a compressed
+archive via [a GitHub Actions workflow](https://github.com/matrix-org/matrix.org/blob/master/.github/workflows/build-matrix.org.yml).
+It then fires off a webhook, which an instance of https://github.com/matrix-org/gha-webhook-listener listens for. Upon receipt of the
+webhook, `gha-webhook-listener` on matrix.org downloads and extracts the site assets from the GitHub Actions artefact into the appropriate
+local directory, overwriting any old contents.
