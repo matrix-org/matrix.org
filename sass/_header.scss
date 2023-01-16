@@ -81,17 +81,13 @@
                     background-color: #fff;
                     color: #000 !important;
 
-                    padding-left: 20px;
-                    padding-right: 20px;
+                    padding-left: 2em;
+                    padding-right: 2em;
                     margin-left: 12px;
 
                     &:not(:last-child) {
                         margin-right: 12px;
                     }
-                }
-
-                &.primary:hover {
-                    background-color: #0098d4;
                 }
             }
         }
