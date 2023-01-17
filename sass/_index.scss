@@ -75,6 +75,10 @@
     #use-case-personal {
         height: calc(100vh - 60px);
         background-color: #fff;
+        background: url("/assets/frontpage/personal-bg.svg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
         position: relative;
         overflow: hidden;
 
@@ -148,9 +152,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        min-height: calc(100vh - 100px);
         width: 100%;
-        padding: 3rem 5rem;
+        padding: 10rem 8rem;
 
         h2 {
             color: #000;
@@ -160,11 +163,106 @@
         }
 
         img {
-            margin: 0 auto;
             border: 20px solid black;
             border-radius: 30px;
         }
     }
 
-    #sponsors {}
+    #buildonmatrix {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        padding: 16rem 0 25rem 0;
+        justify-content: space-around;
+
+        color: #fff;
+        background-color: #000;
+        //background: url("/assets/frontpage/buildon-bg.svg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        h2 {
+            text-align: center;
+            margin: 0 auto;
+            font-weight: 700;
+        }
+
+        p {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 433px;
+            font-size: 18px;
+        }
+
+        img {
+            filter: invert(1);
+            width: 130px;
+            height: 130px;
+            margin: 0 auto;
+        }
+
+        .call-to-action {
+            background-color: #fff;
+            color: #000;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 1000px;
+            padding: .4em 2em;
+            margin: 0 auto;
+        }
+    }
+
+    #sponsors {
+        display: flex;
+        flex-direction: column;
+
+        padding: 5rem 2.8rem;
+
+        h2 {
+            text-align: center;
+            margin: 0 auto;
+            font-weight: 700;
+        }
+
+        #sponsors_grid {
+            .sponsor_card {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                padding: 1rem 5rem;
+                margin: 3rem 0 5rem 0;
+
+                border: 1px solid black;
+                max-width: 400px;
+
+                h3 {
+                    text-align: center;
+                    margin: 0 auto;
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+
+                a {
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        p {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 638px;
+        }
+
+        .call-to-action {
+            background-color: #000;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 1000px;
+            padding: .4em 2em;
+            margin: 1.5rem auto 0 auto;
+        }
+    }
 }
