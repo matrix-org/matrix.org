@@ -1,0 +1,61 @@
+---
+date: '2023-01-19'
+title: Synapse 1.75 released
+categories:
+- Releases
+author: Mathieu Velten
+---
+
+And here is the time for another Synapse upgrade to [version
+1.75](https://github.com/matrix-org/synapse/releases/tag/v1.75.0).
+It seems like the blog post for [version 1.74](https://github.com/matrix-org/synapse/releases/tag/v1.74.0)
+ was eaten by Santa Claus, so this post will also cover changes from it.
+
+## Announcements
+
+### ICU dependency for improved user search
+
+Synapse 1.74 introduced support for an optional improved user search experience by taking into
+account Unicode, those allowing search of non ASCII characters.
+
+To do so, Synapse used the [ICU library](https://icu.unicode.org/) through its Python binding library, [PyICU](https://pypi.org/project/PyICU/).
+
+To use it you need to install the development package of the ICU library,
+and install the optional Synapse functionality through `pip install matrix-synapse[user-search]` for a PyPI install.
+
+Please refer to the [upgrade notes](https://matrix-org.github.io/synapse/v1.75/upgrade.html#unicode-support-in-user-search) for more info.
+
+## The new stuff
+
+### Support [RFC7636](https://datatracker.ietf.org/doc/html/rfc7636) Proof Key for Code Exchange for OAuth single sign-on
+
+Synapse 1.75 adds support for RFC7636 code challenges in the OAuth 2.0 flow.
+
+This is required by Twitter SSO and enabling it can protect against certain attacks. 
+
+### Experimental support for removing account data ([MSC3391](https://github.com/matrix-org/matrix-spec-proposals/pull/3391))
+
+Experimental support for removing account data has landed in Synapse.
+It was previously possible to create or update account data but not remove them, this is now possible.
+
+The support is experimental and needs to be enabled with a configuration flag since the MSC hasn't landed yet.
+
+### More faster remote room joins fixes and improvements
+
+In case you missed it we are working on dramatically improve performance of remote room joins, you can refer
+to [this blog post](https://matrix.org/blog/2022/10/18/testing-faster-remote-room-joins) for more details.
+
+Last versions of Synapse brings that a lot closer to release thanks to work in progress to support it
+with workers, and also several small fixes.
+
+## Everything else
+
+See the full [changelog](https://github.com/matrix-org/synapse/releases/tag/v1.75.0), for a
+complete list of changes in the release. Also please have a look at the [upgrade
+notes](https://matrix-org.github.io/synapse/v1.75/upgrade.html#upgrading-to-v1740) for 1.74 version.
+
+Synapse is a Free and Open Source Software project, and we'd like to extend our
+thanks to everyone who contributed to this release, including (in no particular
+order) INSERT LIST !!
+as well as anyone helping us make Synapse better by sharing their feedback and reporting issues.
+
