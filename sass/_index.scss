@@ -73,11 +73,12 @@
     }
 
     #use-case-personal {
-        height: calc(100vh - 60px);
+        //height: calc(100vh - 60px);
         background-color: #fff;
         background: url("/assets/frontpage/personal-bg.svg");
         background-size: 100% 100%;
         background-repeat: no-repeat;
+        background-position-y: bottom -20px;
 
         position: relative;
         overflow: hidden;
@@ -86,7 +87,7 @@
         flex-direction: row;
         justify-content: space-around;
 
-        padding-bottom: 100px;
+        padding-bottom: 175px;
 
         h2 {
             color: #000;
@@ -112,7 +113,7 @@
     }
 
     #use-case-community {
-        min-height: calc(100vh - 60px);
+        //min-height: calc(100vh - 60px);
         background-color: #000;
 
         display: flex;
