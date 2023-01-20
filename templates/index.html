@@ -3,7 +3,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='atom.xml', trailing_slash=false)}}">
 {% endblock head_extra %}
 {% block content %}
-{% set frontpage_data = load_data(path="content/index.toml") %}
+{% set sponsors_data = load_data(path="content/sponsors.toml") %}
 <div id="frontpage">
     <div id="hero" class="section">
         <div class="hero_content">
@@ -44,16 +44,16 @@
     <div id="sponsors" class="section">
         <h2>Thank you to our incredible sponsors</h2>
         <div id="sponsors_grid">
+            {% for sponsor in sponsors_data.sponsors %}
             <div class="sponsor_card">
                 <img src="https://via.placeholder.com/100x100.png" />
-                <h3>Sponsor Name</h3>
-                <p>
-                    This sponsor is going to save the world by leveraging the
-                    synergies of the decentralised and distributed energies of
-                    the biggest market players. At scale.
-                </p>
-                <a href="#">Learn more</a>
+                <div class="sponsor_text">
+                    <h3>{{ sponsor.name }}</h3>
+                    <p>{{ sponsor.description }}</p>
+                    <a href="{{ sponsor.website }}">Learn more</a>
+                </div>
             </div>
+            {% endfor %}
         </div>
         <p>
             Matrix is supported by organisations and individuals like you who

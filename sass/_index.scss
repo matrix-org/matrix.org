@@ -253,26 +253,42 @@
         }
 
         #sponsors_grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 2rem auto;
+
             .sponsor_card {
                 display: flex;
                 flex-direction: column;
-                gap: 1.5rem;
+                justify-content: space-between;
 
-                padding: 1rem 5rem;
-                margin: 3rem 0 5rem 0;
+                margin: 1rem;
+                padding: 1rem;
 
-                border: 1px solid black;
-                max-width: 400px;
+                width: 350px;
 
-                h3 {
-                    text-align: center;
-                    margin: 0 auto;
-                    font-size: 18px;
-                    font-weight: 700;
+                img {
+                    margin-bottom: 1rem;
                 }
 
-                a {
-                    margin: 0 auto;
+                .sponsor_text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 200px;
+
+                    h3 {
+                        text-align: center;
+                        margin: 0 auto;
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+
+                    a {
+                        margin: 0 auto;
+                    }
                 }
             }
         }
