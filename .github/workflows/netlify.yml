@@ -25,8 +25,11 @@ jobs:
         id: readctx
         # we need to find the PR number that corresponds to the branch, which we do by
         # searching the GH API
+        env:
+          OWNER_LOGIN: ${{github.event.workflow_run.head_repository.owner.login}}
+          HEAD_BRANCH: ${{github.event.workflow_run.head_branch}}
         run: |
-          head_branch='${{github.event.workflow_run.head_repository.owner.login}}:${{github.event.workflow_run.head_branch}}'
+          head_branch="${OWNER_LOGIN}:${HEAD_BRANCH}"
           echo "head branch: $head_branch"
           pulls_uri="https://api.github.com/repos/${{ github.repository }}/pulls?head=$(jq -Rr '@uri' <<<$head_branch)"
           pr_number=$(curl -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' "$pulls_uri" |
