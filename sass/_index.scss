@@ -73,7 +73,6 @@
     }
 
     #use-case-personal {
-        //height: calc(100vh - 60px);
         background-color: #fff;
         background: url("/assets/frontpage/personal-bg.svg");
         background-size: 100% 100%;
@@ -113,7 +112,6 @@
     }
 
     #use-case-community {
-        //min-height: calc(100vh - 60px);
         background-color: #000;
 
         display: flex;
@@ -176,9 +174,11 @@
         padding: 16rem 0 25rem 0;
         justify-content: space-around;
 
+        position: relative;
+
         color: #fff;
         background-color: #000;
-        //background: url("/assets/frontpage/buildon-bg.svg");
+        background-image: url("/assets/frontpage/buildon-bg.svg");
         background-size: 100% 100%;
         background-repeat: no-repeat;
 
@@ -195,11 +195,38 @@
             font-size: 18px;
         }
 
-        img {
+        .logo {
             filter: invert(1);
             width: 130px;
             height: 130px;
             margin: 0 auto;
+        }
+
+        #bridge_visual {
+            position: absolute;
+            top: 100px;
+            left: 50px;
+
+            width: 240px;
+            height: 287px;
+        }
+
+        #homeserver {
+            position: absolute;
+            bottom: 50px;
+            left: 150px;
+
+            width: 230px;
+            height: 235px;
+        }
+
+        #federation_visual {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+
+            width: 425px;
+            height: 853px;
         }
 
         .call-to-action {
