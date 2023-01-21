@@ -259,23 +259,28 @@ pre table {
     width: 100%;
     height: 377px;
     background: #000000;
-    position: relative;
     overflow: hidden;
 
     .bg {
-        background: url('assets/page-header-bg.svg') no-repeat;
-        background-size: contain;
-        position: absolute;
         width: 100%;
+        position: absolute;
         height: 377px;
-        bottom: 100px;
-        top: 0px;
-        left: calc(100vw/3);
+        background: url(/assets/page-header-bg.svg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        @media (max-width: 767px) {
+            background-size: 250% 100%;
+            background-position-x: -533px;
+        }
     }
 
     .hero-block {
-        z-index: 1;
-        position: relative;
+
+        @media (max-width: 767px) {
+            margin: 60px 32px 70px;
+        }
+
         margin: 89px 80px;
 
         h1 {

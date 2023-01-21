@@ -6,6 +6,13 @@
     width: 100%;
     max-width: 651px;
 
+
+    @media (max-width: 767px) {
+        max-width: 312px;
+        margin-top: 56px;
+        margin-bottom: 34px;
+    }
+
     h1 {
         width: 100%;
         font-style: normal;
@@ -39,6 +46,7 @@ section {
 
 
     @media (max-width: 767px) {
+        width: unset;
         grid-template-columns: 1fr;
         grid-auto-flow: row;
     }
@@ -121,6 +129,12 @@ section {
 
     margin-bottom: 148px;
     margin-left: 70px;
+
+    @media (max-width: 767px) {
+        margin-bottom: 71px;
+        margin-left: 32px;
+    }
+
     width: 100vw;
     max-width: calc(100% - 3rem);
     overflow-x: auto;
