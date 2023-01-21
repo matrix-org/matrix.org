@@ -69,15 +69,15 @@ section {
         font-size: 32px;
         line-height: 120%;
     }
+}
 
-    .platforms-links {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 16px 4px;
-        flex-wrap: wrap;
-    }
+.pills {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px 4px;
+    flex-wrap: wrap;
 }
 
 .platform-pill {
@@ -181,13 +181,7 @@ section {
         justify-content: center;
     }
 
-
     .pills {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
         gap: 8px 4px;
-        flex-wrap: wrap;
     }
 }
