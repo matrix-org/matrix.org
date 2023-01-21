@@ -117,28 +117,21 @@ section {
     background-color: #2b8cc9;
 }*/
 
-.all-clients {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .clients-table {
     display: grid;
     grid-template-columns: repeat(2, min-content) 15em repeat(12, min-content);
 
     margin-bottom: 148px;
     margin-left: 70px;
+    width: calc(100vw - 70px);
 
     @media (max-width: 767px) {
         margin-bottom: 71px;
-        margin-left: 32px;
+        left: 32px;
+        width: calc(100vw - 32px);
     }
 
-    width: 100vw;
-    max-width: calc(100% - 3rem);
     overflow-x: auto;
-
 
     background: #FCFCFC;
 
