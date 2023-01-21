@@ -276,8 +276,7 @@ pre table {
     .hero-block {
         z-index: 1;
         position: relative;
-        top: 89px;
-        left: 80px;
+        margin: 89px 80px;
 
         h1 {
             font-style: normal;
@@ -297,6 +296,7 @@ pre table {
             align-items: center;
 
             color: #FFFFFF;
+            word-wrap: normal;
         }
     }
 

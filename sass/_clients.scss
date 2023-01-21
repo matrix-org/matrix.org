@@ -3,7 +3,8 @@
     margin-top: 90px;
     margin-bottom: 81px;
     color: #000000;
-    width: 651px;
+    width: 100%;
+    max-width: 651px;
 
     h1 {
         width: 100%;
@@ -28,12 +29,22 @@ section {
     align-items: center;
 }
 
+
 .featured-clients {
+    flex-grow: 3;
+    width: 100%;
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr 1fr;
+
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+    }
+
     gap: 50px;
-    width: 943px;
+    max-width: 943px;
 }
 
 .featured-client-card {
@@ -110,7 +121,7 @@ section {
 
     margin-bottom: 148px;
     margin-left: 70px;
-    width: 1200px;
+    width: 100vw;
     max-width: calc(100% - 3rem);
     overflow-x: auto;
 
