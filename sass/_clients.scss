@@ -1,8 +1,9 @@
 .hero-header {
+    text-align: center;
     margin-top: 90px;
-    margin-bottom: 80px;
+    margin-bottom: 81px;
     color: #000000;
-    width: 447px;
+    width: 651px;
 
     h1 {
         width: 100%;
@@ -21,15 +22,10 @@
     }
 }
 
-.content {
+section {
     display: flex;
-    align-items: center;
-    text-align: center;
     flex-direction: column;
-    padding: 0;
-    margin: 0;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
 }
 
 .featured-clients {
