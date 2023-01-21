@@ -22,6 +22,11 @@
                 max-width: 36rem;
                 margin: 0 auto;
                 text-align: center;
+
+                @media (max-width: 767px) {
+                    font-size: 34px;
+                    margin: 0 30px;
+                }
             }
 
             img {
@@ -84,6 +89,9 @@
 
         display: flex;
         flex-direction: row;
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
         justify-content: space-around;
 
         padding-bottom: 175px;
@@ -92,13 +100,24 @@
             color: #000;
             font-weight: 700;
             margin: auto 0 auto 5rem;
-            width: 28rem;
+            @media (max-width: 767px) {
+                font-size: 34px;
+                margin: 0 50px 50px 50px;
+            }
+            max-width: 28rem;
         }
 
         img {
             margin: auto 0px;
+
             width: 469px;
             height: 418px;
+
+            @media (max-width: 767px) {
+                margin: 0px auto;
+                width: 323px;
+                height: 288px;
+            }
         }
 
         #personal_bottom {
@@ -126,8 +145,13 @@
             color: #fff;
             font-size: 40px;
             font-weight: 700;
-            width: 36rem;
+            max-width: 36rem;
             margin: 0 auto;
+
+            @media (max-width: 767px) {
+                font-size: 34px;
+                margin: 0 50px 50px 50px;
+            }
         }
 
         .call-to-action {
@@ -144,6 +168,12 @@
             margin: 0 auto;
             width: 756px;
             height: 487px;
+
+            @media (max-width: 767px) {
+                margin: 0px auto;
+                width: 292px;
+                height: 188px;
+            }
         }
     }
 
@@ -154,16 +184,27 @@
         width: 100%;
         padding: 10rem 8rem;
 
+        @media (max-width: 767px) {
+            flex-direction: column;
+            padding: 116px 30px;
+        }
+
         h2 {
             color: #000;
             font-weight: 700;
             margin: auto 0;
             max-width: 450px;
+            @media (max-width: 767px) {
+                padding: 0 40px;
+            }
         }
 
         img {
             border: 20px solid black;
             border-radius: 30px;
+            @media (max-width: 767px) {
+                margin-top: 50px;
+            }
         }
     }
 
@@ -171,7 +212,11 @@
         display: flex;
         flex-direction: column;
         gap: 28px;
-        padding: 16rem 0 20rem 0;
+        padding: 250px 0 435px 0;
+        @media (max-width: 767px) {
+            padding: 100px 35px 435px 35px;
+        }
+
         justify-content: space-around;
 
         position: relative;
@@ -209,6 +254,10 @@
 
             width: 240px;
             height: 287px;
+
+            @media (max-width: 767px) {
+                display: none;
+            }
         }
 
         #homeserver {
@@ -218,6 +267,10 @@
 
             width: 230px;
             height: 235px;
+
+            @media (max-width: 767px) {
+                display: none;
+            }
         }
 
         #federation_visual {
@@ -227,6 +280,23 @@
 
             width: 425px;
             height: 853px;
+
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
+
+        #federation_visual_mobile {
+            display: none;
+            @media (max-width: 767px) {
+                display: inline;
+                position: absolute;
+                bottom: 50px;
+                right: -3px;
+
+                width: 322px;
+                height: 324px,
+            }
         }
 
         .call-to-action {
