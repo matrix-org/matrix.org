@@ -328,16 +328,23 @@
             flex-wrap: wrap;
             justify-content: space-around;
             margin: 2rem auto;
+            @media (max-width: 767px) {
+                margin: 0 auto;
+            }
+
 
             .sponsor_card {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
 
-                margin: 1rem;
-                padding: 1rem;
+                margin: 1rem 0;
+                padding: 1rem 0;
 
                 width: 350px;
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
 
                 img {
                     margin-bottom: 1rem;
