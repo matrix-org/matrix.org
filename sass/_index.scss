@@ -44,6 +44,10 @@
             position: absolute;
             bottom: -1vh;
             right: -50px;
+
+            @media (max-width: 767px) {
+                height: 15vh;
+            }
         }
 
         #hero_curve2 {
@@ -54,6 +58,10 @@
             position: absolute;
             bottom: -3vh;
             right: -50px;
+
+            @media (max-width: 767px) {
+                height: 15vh;
+            }
         }
 
         #hero_curve3 {
@@ -64,6 +72,10 @@
             position: absolute;
             bottom: -5vh;
             right: -50px;
+
+            @media (max-width: 767px) {
+                height: 15vh;
+            }
         }
 
         #hero_curve4 {
@@ -74,6 +86,10 @@
             position: absolute;
             bottom: -7vh;
             right: -50px;
+
+            @media (max-width: 767px) {
+                height: 15vh;
+            }
         }
     }
 
