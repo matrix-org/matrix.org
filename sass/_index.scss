@@ -127,6 +127,13 @@
             height: 400px;
             background-color: black;
             border-radius: 100% 100%;
+
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media (max-width: 767px) {
+                width: 200%;
+            }
         }
     }
 
