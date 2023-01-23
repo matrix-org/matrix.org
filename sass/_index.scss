@@ -4,6 +4,9 @@
         height: calc(100vh - 60px);
         background-color: #000;
         background-image: url("/assets/frontpage/hero_dancing_lines.svg");
+        @media (max-width: 767px) {
+            background-image: url("/assets/frontpage/hero_dancing_lines_mobile.svg");
+        }
         background-size: 100% 100%;
         background-repeat: no-repeat;
         position: relative;
@@ -97,6 +100,10 @@
         background-color: #fff;
         background: url("/assets/frontpage/personal-bg.svg");
         background-size: 100% 100%;
+        @media (max-width: 767px) {
+            background-image: url("/assets/frontpage/personal-bg-mobile.svg");
+            background-size: 100% 241px;
+        }
         background-repeat: no-repeat;
         background-position-y: bottom -20px;
 
@@ -248,6 +255,11 @@
         background-color: #000;
         background-image: url("/assets/frontpage/buildon-bg.svg");
         background-size: 100% 100%;
+        @media (max-width: 767px) {
+            background-image: url("/assets/frontpage/buildon-bg-mobile.svg");
+            background-size: 100% 480px;
+            background-position-y: bottom;
+        }
         background-repeat: no-repeat;
 
         h2 {
