@@ -39,7 +39,7 @@ header {
                 height: .8rem;
                 margin: auto 0;
             }
-        
+
             &.current {
                 font-weight: bold;
             }
@@ -102,4 +102,11 @@ header {
 
 .docs-content {
     margin-left: 18rem;
+}
+
+.mjolnir_button {
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 1000px;
+    padding: 0 .4rem;
+    background-color: rgb(242, 247, 252);
 }
