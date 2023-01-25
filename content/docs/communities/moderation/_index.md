@@ -93,13 +93,7 @@ in the message bar at the bottom:
 /op @yourMjolnirBot:example.com 100
 ```
 
-The bot really does need those privileges to be able to actually kick and ban
-people from the rooms it protects, or change other people's power level. Keep in
-mind that whoever has access to Mjolnir credentials effectively has powerlevel
-100 in those rooms. In this configuration Mjolnir is de-facto the owner of your
-community rooms. Some more advanced configurations allow you to keep more
-privileges than mjolnir, but they are quite tedious to set-up. We will not cover
-in this documentation.
+You should spend some time thinking about what privileges you want to give to your Mjolnir. A common setup is to give the Mjolnir user power level 100. This gives Mjolnir the permissions to kick and ban people from the rooms it protects. This has a couple of implications. First, anyone with access to the Mjolnir has power level 100 in the rooms it protects. Also, Mjolnir is the de-facto owner of those community rooms. For more advanced set-ups, read the [spec covering power levels](https://spec.matrix.org/v1.5/client-server-api/#mroompower_levels).
 
 ## Getting moderation reports
 
