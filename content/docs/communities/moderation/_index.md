@@ -132,11 +132,7 @@ For example
 !mjolnir redact https://matrix.to/#/!yOatELRSQXzfQMmxjH:matrix.org/$F76L2figPEC240TFaUkHoKPxxhJ3P54vP4hi14Sd8xw?via=matrix.org&via=t2bot.io
 ```
 
-You may wonder why you should use mjolnir if you can simply redact the message
-directly via the client UI. One good reason to do so is to protect the moderator
-from retaliation. Mjolnir will redact events on its behalf, and the person whose
-message got redacted will never know who issued the command to redact their
-offensive message.
+One important feature of Mjolnir is to protect individual moderators from retaliation. If you redact a message using the client UI, that redaction appears with your user id. When you use Mjolnir, it shows Mjolnir's id. This can help to reduce direct retaliation against moderators for their moderation actions. Your management room will record who took the action.
 
 ### Redacting a user's last messages
 
