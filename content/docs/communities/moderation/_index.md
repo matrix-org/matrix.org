@@ -5,7 +5,7 @@ weight = 100
 [extra]
 emoji = "🛡️"
 tile = "I want to deploy moderation tools"
-updated = "2022-11-18T09:50:00Z"
+updated = "2023-01-25T06:43:00Z"
 +++
 
 ## Power levels
