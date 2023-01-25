@@ -274,8 +274,8 @@ following
 - `shortcode` is a short name given to this list. It should be short and easy to
   type, since you are likely to type it a lot when banning users.
 - `alias localpart` is the local part of the address mjolnir is going to create
-  for this list. This is useful if you ever want to [share your ban list with
-  other communities](#publishing-ban-lists).
+  for this list. This is useful if you ever want to share your ban list with
+  other communities.
 
 For example, assuming the server mjolnir is deployed against is `example.com`,
 the following command will create a ban list with the short code `spam` and the
@@ -299,6 +299,11 @@ no short code is specified. For example, to use the ban list with short code
 ```
 !mjolnir default spam
 ```
+
+Finally, from a technical perspective, a ban list is just a regular Matrix room
+filled with moderation hidden messages, technically called events. As such, you
+can give it a public address, and make it publicly accessible like you would for
+any other room.
 
 ### Subscribing to ban lists
 
@@ -328,10 +333,3 @@ maintained by the Matrix Foundation, you would issue the following command
 ```
 !mjolnir watch #matrix-org-hs-tos-bl:matrix.org
 ```
-
-### Publishing ban lists
-
-From a technical perspective, a ban list is just a regular Matrix room filled
-with moderation hidden messages, technically called events. As such, you can
-give it a public address, and make it publicly accessible like you would for any
-other room.
