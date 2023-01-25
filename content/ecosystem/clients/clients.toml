@@ -1,5 +1,5 @@
 [Element]
-thumbnail = "element.png"
+thumbnail = "element.svg"
 maintainer = "Element"
 summary = "Element is a glossy client with an emphasis on performance and usability."
 maturity = "Stable"
@@ -24,7 +24,7 @@ flathub.app_id = "im.riot.Riot"
 other_url = "https://app.element.io"
 
 [FluffyChat]
-thumbnail = "fluffychat.png"
+thumbnail = "fluffychat.svg"
 summary = "Cute instant messaging app for all platforms."
 maintainer = "Christian Pauly"
 license = "AGPL-3.0-only"

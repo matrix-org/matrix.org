@@ -1,77 +1,161 @@
-.featured-clients {
-    display: flex;
-    gap: .5rem;
-    overflow-x: auto;
-}
+.hero-header {
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 81px;
+    color: #000000;
+    width: 100%;
+    max-width: 651px;
 
-.featured-client-card {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 250px;
-    border-color: 1px solid rgba(43, 140, 201, .4);
-    background-color: rgba(43, 140, 201, .1);
-    border-radius: 1em;
-    padding: 1em;
 
-    img {
-        height: 160px;
-        display: block;
-        margin: 0 auto;
+    @media (max-width: 767px) {
+        max-width: 312px;
+        margin-top: 56px;
+        margin-bottom: 34px;
     }
 
-    h3 {
-        text-align: center;
+    h1 {
+        width: 100%;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 120%;
     }
 
-    .platforms-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: auto;
+    p {
+        width: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 120%;
     }
 }
 
-.platform-pill {
-    margin: .2em;
-    border-radius: 2em;
-    padding: 0 .6em;
-    color: #fff;
-    background-color: rgba(43, 140, 201, .8);
-}
-
-.platform-pill:hover {
-    background-color: #2b8cc9;
-}
-
-.all-clients {
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+
+.featured-clients {
+    flex-grow: 3;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
+
+
+    @media (max-width: 767px) {
+        width: unset;
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+    }
+
+    gap: 50px;
+    max-width: 943px;
+}
+
+.featured-client-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    gap: 16px;
+
+    width: 281px;
+    height: 343px;
+
+    border: 1px solid #D2D2D2;
+    border-radius: 16px;
+
+    img {
+        margin: 0;
+        width: 65px;
+        height: 65px;
+        box-sizing: content-box;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    h3 {
+        margin: 0;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 120%;
+    }
+}
+
+.pills {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px 4px;
+    flex-wrap: wrap;
+}
+
+.platform-pill {
+    background: #E9E9E9;
+    border-radius: 16px;
+    padding: 6px 8px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #000000;
+}
+
+/* We have no design for this currently
+.platform-pill:hover {
+    background-color: #2b8cc9;
+}*/
+
 .clients-table {
     display: grid;
     grid-template-columns: repeat(2, min-content) 15em repeat(12, min-content);
 
-    margin: 1rem 1.5rem;
-    width: 1200px;
-    max-width: calc(100% - 3rem);
+    margin-bottom: 148px;
+    margin-left: 70px;
+    width: calc(100vw - 70px);
+
+    @media (max-width: 767px) {
+        margin-bottom: 71px;
+        left: 32px;
+        width: calc(100vw - 32px);
+    }
+
     overflow-x: auto;
 
+    background: #FCFCFC;
+
     >* {
-        padding: .5rem 1rem;
+        padding-left: 22px;
+        padding-right: 22px;
+        min-height: 82px;
+        min-width: 224px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
     }
 
     >*:nth-child(-n+15) {
-        border-bottom: 1px solid #bbb;
         display: flex;
         align-items: center;
+        justify-content: flex-start;
     }
 
     >*:nth-child(15n+1) {
+        background: #fefefe;
         position: sticky;
         left: 0;
-        border-right: 1px solid #bbb;
+        /* This deviates from the design file */
+        border-right: 1.2px solid #DBDBDB;
     }
 
     >*:nth-child(30n+1),
@@ -89,7 +173,7 @@
     >*:nth-child(30n+13),
     >*:nth-child(30n+14),
     >*:nth-child(30n+15) {
-        background-color: #e2e2e2;
+        border-right: 1.2px solid #DBDBDB;
     }
 
     >*:nth-child(30n+16),
@@ -107,15 +191,14 @@
     >*:nth-child(30n+28),
     >*:nth-child(30n+29),
     >*:nth-child(30n+30) {
-        background-color: #f4f4f4;
+        border-right: 1.2px solid #DBDBDB;
     }
 
     .feature {
-        text-align: center;
+        justify-content: center;
     }
 
-    .platform-pill {
-        margin: 0;
-        padding: .1em .6em;
+    .pills {
+        gap: 8px 4px;
     }
 }
