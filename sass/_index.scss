@@ -146,16 +146,16 @@
         #personal_bottom {
             position: absolute;
             bottom: -340px;
-            width: 150%;
             height: 400px;
             background-color: black;
             border-radius: 100% 100%;
 
-            left: 50%;
-            transform: translateX(-50%);
+            width: 150%;
+            left: -25%;
 
             @media (max-width: 767px) {
                 width: 200%;
+                left: -50%;
             }
         }
     }
