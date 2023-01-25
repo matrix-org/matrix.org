@@ -110,11 +110,7 @@ We'll talk about moderation actions in a moment. If you want to set up these rep
 
 ### Redacting a specific message
 
-If you have moderation reports enabled and click on the
-{{ mjolnirbutton(text="🗍 Redact") }} button below it, mjolnir will redact this
-message. Alternatively, if you don't have reports enabled or want to redact a
-specific message from mjolnir, you can instruct mjolnir to do so by sending a
-message in mjolnir's control room.
+There are two ways to redact a message. You can click the {{ mjolnirbutton(text="🗍 Redact") }} button underneath a report, if you are using those reports. You can also redact a particular message by sending a message in Mjolnir's control room. This method is useful when you haven't received a report about a message, but you want to redact it.
 
 To redact a specific message, you need to find its permalink. A permalink is a
 regular matrix.to link that you can obtain by hovering the message you want to
