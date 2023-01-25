@@ -85,8 +85,6 @@ Invite, or you can type the following message in the message bar at the bottom:
 /invite @yourMjolnirBot:example.com
 ```
 
-TODO screenshot of the invite
-
 The bot will join, and you can then promote it Administrator by finding it in
 the list of members and changing its role, or you can type the following message
 in the message bar at the bottom:
@@ -95,21 +93,280 @@ in the message bar at the bottom:
 /op @yourMjolnirBot:example.com 100
 ```
 
-TODO screenshot of oping mjolnir
+The bot really does need those privileges to be able to actually kick and ban
+people from the rooms it protects, or change other people's power level. Keep in
+mind that whoever has access to Mjolnir credentials effectively has powerlevel
+100 in those rooms. In this configuration Mjolnir is de-facto the owner of your
+community rooms. Some more advanced configurations allow you to keep more
+privileges than mjolnir, but they are quite tedious to set-up. We will not cover
+in this documentation.
 
 ## Getting moderation reports
 
-- You need your own instance while Aristotle isn't merged in the spec and
-  deployed in the wild?
+By default, the moderation reports go to the reporter's homeserver
+administrator. This is suboptimal for a variety of reasons. If the person
+running mjolnir and the person running the homeserver are the same, mjolnir can
+intercept some calls to display reports in its command room instead. Such
+reports look like below.
 
-## Removing users from your community
+![](./mjolnir_report.png)
 
-- Permanently or not
-- Redacting messages en masse
-- Banning users, banning servers
-- A word on shadow banning
+You can see the various details of the reported message, and handful of buttons
+below the message you can click on. These buttons will instruct mjolnir to take
+action, depending on which one you clicked.
 
-## Working together
+To enable moderation reports in Mjolnir's command room, please follow Mjolnir's
+[readable abuse reports documentation](https://github.com/matrix-org/mjolnir#enabling-readable-abuse-reports).
 
-- Subscribing to ban lists
-- Publishing yours
+When someone is obviously not behaving properly, you want to take action to make
+sure your community remains a nice place to hang out. To do so, you can do one
+of the following.
+
+## Enforcing moderation
+
+### Redacting a specific message
+
+If you have moderation reports enabled and click on the
+{{ mjolnirbutton(text="🗍 Redact") }} button below it, mjolnir will redact this
+message. Alternatively, if you don't have reports enabled or want to redact a
+specific message from mjolnir, you can instruct mjolnir to do so by sending a
+message in mjolnir's control room.
+
+To redact a specific message, you need to find its permalink. A permalink is a
+regular matrix.to link that you can obtain by hovering the message you want to
+delete, and clicking on the `…`, then on `Share`.
+
+![](./share_message.png)
+
+This will open a pop-up window from which you can copy the matrix.to permalink.
+
+![](./copy_permalink.png)
+
+Once you have the permalink, you can use it in mjolnir's redaction command
+
+```
+!mjolnir redact <event permalink> 
+```
+
+For example
+
+```
+!mjolnir redact https://matrix.to/#/!yOatELRSQXzfQMmxjH:matrix.org/$F76L2figPEC240TFaUkHoKPxxhJ3P54vP4hi14Sd8xw?via=matrix.org&via=t2bot.io
+```
+
+You may wonder why you should use mjolnir if you can simply redact the message
+directly via the client UI. One good reason to do so is to protect the moderator
+from retaliation. Mjolnir will redact events on its behalf, and the person whose
+message got redacted will never know who issued the command to redact their
+offensive message.
+
+### Redacting a user's last messages
+
+Offensive users can sometimes try to spam messgaes before they are caught.
+Finding the permalinks for these messages would be tedious and would make
+moderation particularly inefficient.
+
+If such a user has been identified, it's possible to redact their last n
+messages, either globally or in a specific room. To do so, grab the user's
+Matrix ID and issue a command following this pattern:
+
+```
+!mjolnir redact <user ID> [room alias/ID] [limit] 
+```
+
+For example to redact the last 100 messages of `@john:example.com` in
+`#matrix:matrix.org`:
+
+```
+!mjolnir redact @john:example.com #matrix:matrix.org 100
+```
+
+Or to redact the last 100 messages from `@john:example.com` globally:
+
+```
+!mjolnir redact @john:example.com 100
+```
+
+Note that this command will redact the last messages of the user, but will not
+take any measure to prevent them from posting more abusive messages. Most of the
+time you will want to also remove this person temporarily or permanently from
+your community.
+
+### Removing someone temporarily (kick)
+
+If you have moderation reports enabled and click on the
+{{ mjolnirbutton(text="⚽️ Kick") }} button below it, mjolnir will kick the user
+from the room where they were reported. FIXME FIXME FIXME FIXME is it the case actually? Or all rooms?
+
+If you don't have moderation reports enabled, you can also kick a user either
+from a specific room or globally with the following command.
+
+```
+!mjolnir kick <glob> [room alias/ID] [reason]
+```
+
+For example
+
+```
+!mjolnir kick @john:example.com #matrix:matrix.org Inappropriate interactions with other people.
+```
+
+### Removing someone definitely (ban)
+
+Some people may not stop after their messages have been redacted and they have
+been kicked. In that case you need to be able to remove them permanently from
+your community.
+
+If you have reports enabled, and click on the 
+{{ mjolnirbutton(text="🚫 Ban") }} button below it, mjolnir will ban the user
+from all the rooms it protects. The user will be banned not only from the room
+where they were reported, but from your whole community.
+
+If you don't have moderation reports enabled, you can also ban either a user
+with the following command
+
+```
+!mjolnir ban <list shortcode> <user|room|server> <glob> [reason]
+```
+
+For example, to remove `@john:example.com` permanently from your community for
+infringement to the code of conduct, you can issue the following command in
+mjolnir's control room.
+
+```
+!mjolnir ban coc user @john:example.com User keeps insulting people
+```
+
+That's a complex command, let's try to understand what it does.
+
+- `!mjolnir ban` tells mjolnir we want it to perform a ban
+- `coc` tells mjolnir we want to add the person to the ban list with shortname
+  `coc`. We'll explore what ban lists are a little further below.
+- `user` tells mjolnir it needs to ban a user. It is not strictly mandatory, but
+   it's a good practice to add it in order to avoid banning a whole server when
+   trying to ban a single user, in case of typo.
+- `@john:example.com` is the Matrix ID of the person we want to ban
+- `User keeps insulting people` is the reason why we are banning them. Their
+   client will be able to display that message.
+
+Mjolnir then adds the user we're banning to the ban list we specified. Mjolnir
+keeps watching one or several ban lists, and will ban all the users present on
+those lists from all the rooms it protects.
+
+Note that this command will likely fail if it's the first time you are trying to
+ban someone. Indeed, you need to create one or more ban lists before adding
+users or servers on them. See the section [Creating ban lists](#creating-ban-lists)
+below for more information on how to create them.
+
+### Removing a server definitely
+
+Matrix is a federated network. This means people can set up new servers
+specifically to harm some communities. This allows them to create a virtually
+infinite number of users, making it possible to raid other communities easily.
+
+Fortunately, all these malicious users have one thing in common: they come from
+the same homeserver. This means if you block the malicious homeserver entirely,
+all the malicious users are going to be banned at once.
+
+To do so, you can issue a variant of the command used to ban an individual user.
+The command was
+
+```
+!mjolnir ban <list shortcode> <user|room|server> <glob> [reason]
+```
+
+As you probably guessed, you are not going to ban a user but a server this once.
+For example, to ban the `maliciousdomain.tld` domain:
+
+```
+!mjolnir ban spam server maliciousdomain.tld
+```
+
+Mjolnir is going to add the domain to the `spam` ban list, and whenever someone
+from that homeserver tries to join your community they are going to be banned.
+
+### Creating ban lists
+
+Mjolnir allows you to create several ban lists that it can later watch. Those
+ban lists can also be watched by third parties if you make them public.
+
+The command to issue in mjolnir's control room to create a list is the
+following
+
+```
+!mjolnir list create <shortcode> <alias localpart>
+```
+
+- `shortcode` is a short name given to this list. It should be short and easy to
+  type, since you are likely to type it a lot when banning users.
+- `alias localpart` is the local part of the address mjolnir is going to create
+  for this list. This is useful if you ever want to [share your ban list with
+  other communities](#publishing-ban-lists).
+
+For example, assuming the server mjolnir is deployed against is `example.com`,
+the following command will create a ban list with the short code `spam` and the
+address `#my-community-spam-ban-list:example.com`
+
+```
+!mjolnir list create spam my-community-spam-ban-list
+```
+
+You only need to create a ban list once, and can then add as many users and
+servers as you want to that ban list. You can also create as many ban lists as
+you want.
+
+Communities often create two ban lists: one for spam, and one for code of
+conduct infringements.
+
+### Subscribing to ban lists
+
+Ban lists are a clever mechanism that allows moderation teams to ban users for
+different motives (e.g. one list for `spam` and one for `coc`). Such a
+distinction can be useful when several communities want to collaborate together.
+
+Not all communities will share a similar Code of Conduct, but a lot of them will
+agree on what is spam. Being able to subscribe to another community's spam list
+means your own community will be protected from spammers the other community has
+already met, all while observing different code of conducts.
+
+To subscribe to a public ban list, you need to retrieve the address of this
+list. That list being technically nothing more than a Matrix room, its address
+follows the usual `#room_name:server.tld` format.
+
+Then to make mjolnir follow this list, you need to issue the following command
+in its control room
+
+```
+!mjolnir watch <room alias/ID>
+```
+
+For example to subscribe to the `#matrix-org-coc-bl:matrix.org` ban list
+maintained by the Matrix Foundation, you would issue the following command
+
+```
+!mjolnir watch #matrix-org-coc-bl:matrix.org
+```
+
+### Publishing ban lists
+
+From a technical perspective, a ban list is just a regular Matrix room filled
+with moderation hidden messages, technically called events. As such, you can
+give it a public address, and make it publicly accessible like you would for any
+other room.
+
+### Shadow-banning
+
+Shadow-banning is a controversial technique that should be used a last resort to
+deceive persistent spammers. It must not be used as part of routine moderation,
+and the Matrix Foundation strongly discourages using it.
+
+Shadow-banned users will try to send messages or various events to a homeserver,
+which will return successful responses. The messages and various events will not
+be propagated in the rooms. This corresponds to allowing the persistent spammer
+to shout in the void, without realising it.
+
+Shadow-banning is not part of the Matrix specification itself, which is why it
+is implemented in the non-standard [Admin API of Synapse](https://matrix-org.github.io/synapse/latest/usage/administration/admin_api/index.html).
+
+Homeserver administrators who want to resort to shadow banning can read about it
+[in Synape's documentation](https://matrix-org.github.io/synapse/latest/admin_api/user_admin_api.html#controlling-whether-a-user-is-shadow-banned).
