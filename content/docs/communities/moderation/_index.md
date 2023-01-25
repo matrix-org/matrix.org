@@ -292,6 +292,14 @@ you want.
 Communities often create two ban lists: one for spam, and one for code of
 conduct infringements.
 
+It is also possible to configure a default ban list mjolnir will use for bans if
+no short code is specified. For example, to use the ban list with short code
+`spam` by default, issue the following command:
+
+```
+!mjolnir default spam
+```
+
 ### Subscribing to ban lists
 
 Ban lists are a clever mechanism that allows moderation teams to ban users for
