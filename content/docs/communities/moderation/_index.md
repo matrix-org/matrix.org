@@ -116,7 +116,7 @@ To redact a specific message, you need to find its permalink. You can find the p
 
 ![](./share_message.png)
 
-This will open a pop-up window from which you can copy the matrix.to permalink.
+This will open a pop-up window from which you can copy the permalink.
 
 ![](./copy_permalink.png)
 
