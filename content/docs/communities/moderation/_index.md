@@ -98,10 +98,7 @@ You should spend some time thinking about what privileges you want to give to yo
 ## Getting moderation reports
 
 By default, the moderation reports go to the reporter's homeserver
-administrator. This is suboptimal for a variety of reasons. If the person
-running mjolnir and the person running the homeserver are the same, mjolnir can
-intercept some calls to display reports in its command room instead. Such
-reports look like below.
+administrator. If you are the homeserver admin, you can choose to send the reports to the Mjolnir management room. Those reports look like this:
 
 ![](./mjolnir_report.png)
 
