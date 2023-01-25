@@ -314,11 +314,11 @@ in its control room
 !mjolnir watch <room alias/ID>
 ```
 
-For example to subscribe to the `#matrix-org-coc-bl:matrix.org` ban list
+For example to subscribe to the `#matrix-org-hs-tos-bl:matrix.org` ban list
 maintained by the Matrix Foundation, you would issue the following command
 
 ```
-!mjolnir watch #matrix-org-coc-bl:matrix.org
+!mjolnir watch #matrix-org-hs-tos-bl:matrix.org
 ```
 
 ### Publishing ban lists
