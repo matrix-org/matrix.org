@@ -162,7 +162,7 @@ offensive message.
 
 ### Redacting a user's last messages
 
-Offensive users can sometimes try to spam messgaes before they are caught.
+Offensive users can sometimes try to spam messages before they are caught.
 Finding the permalinks for these messages would be tedious and would make
 moderation particularly inefficient.
 
