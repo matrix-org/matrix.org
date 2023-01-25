@@ -327,20 +327,3 @@ From a technical perspective, a ban list is just a regular Matrix room filled
 with moderation hidden messages, technically called events. As such, you can
 give it a public address, and make it publicly accessible like you would for any
 other room.
-
-### Shadow-banning
-
-Shadow-banning is a controversial technique that should be used a last resort to
-deceive persistent spammers. It must not be used as part of routine moderation,
-and the Matrix Foundation strongly discourages using it.
-
-Shadow-banned users will try to send messages or various events to a homeserver,
-which will return successful responses. The messages and various events will not
-be propagated in the rooms. This corresponds to allowing the persistent spammer
-to shout in the void, without realising it.
-
-Shadow-banning is not part of the Matrix specification itself, which is why it
-is implemented in the non-standard [Admin API of Synapse](https://matrix-org.github.io/synapse/latest/usage/administration/admin_api/index.html).
-
-Homeserver administrators who want to resort to shadow banning can read about it
-[in Synape's documentation](https://matrix-org.github.io/synapse/latest/admin_api/user_admin_api.html#controlling-whether-a-user-is-shadow-banned).
