@@ -1,0 +1,8 @@
+[[sponsors]]
+name = "UpCloud"
+image = "upcloud.svg"
+description = """
+    Matrix.org is generously hosted by UpCloud!
+    Host your homeserver via UpCloud and get a $25 credit.
+"""
+website = "https://upcloud.com/"

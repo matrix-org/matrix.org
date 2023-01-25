@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" width="1280" height="4324" viewBox="0 0 1280 4324" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="684" width="1280" height="1070" fill="white"/>
+<path d="M0 0H1280V852C715.5 739.868 0 734.748 0 734.748V0Z" fill="black"/>
+<path d="M0 50H1280V882C715.5 772.5 0 767.5 0 767.5V50Z" fill="black" fill-opacity="0.6"/>
+<path d="M0 80H1280V912C715.5 802.5 0 797.5 0 797.5V80Z" fill="black" fill-opacity="0.4"/>
+<path d="M0 0H1280V942C715.5 818.023 0 812.362 0 812.362V0Z" fill="black" fill-opacity="0.2"/>
+<path d="M0 1700.42C0 1700.42 254 1636 640.5 1636C1027 1636 1280 1700.42 1280 1700.42V2611H0V1700.42Z" fill="black"/>
+<path d="M0 1720.42C0 1720.42 254 1646 640.5 1646C1027 1646 1280 1720.42 1280 1720.42V2631H0V1720.42Z" fill="black" fill-opacity="0.6"/>
+<path d="M0 1740.42C0 1740.42 254 1666 640.5 1666C1027 1666 1280 1740.42 1280 1740.42V2651H0V1740.42Z" fill="black" fill-opacity="0.6"/>
+<path d="M0 1759.42C0 1759.42 254 1685 640.5 1685C1027 1685 1280 1759.42 1280 1759.42V2670H0V1759.42Z" fill="black" fill-opacity="0.2"/>
+<rect y="2660" width="1280" height="832" fill="white"/>
+<rect y="3492" width="1280" height="832" fill="#121212"/>
+</svg>

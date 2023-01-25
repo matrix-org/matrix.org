@@ -5,6 +5,10 @@
 html {
     height: 100%;
     font-size: 100%;
+
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 95px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -37,7 +41,7 @@ body {
 }
 
 main {
-    padding-top: 60px;
+    padding-top: 95px;
 }
 
 img {

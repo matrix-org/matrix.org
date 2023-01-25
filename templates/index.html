@@ -3,262 +3,65 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='atom.xml', trailing_slash=false)}}">
 {% endblock head_extra %}
 {% block content %}
-{% set frontpage_data = load_data(path="content/index.toml") %}
-<div class="hero">
-    <div class="background-img"></div>
-    <div class="content">
-        <img src="images/matrix-logo-white.svg" alt="Matrix.org Logo" class="logo">
-        <h1 class="message">An open network for secure, decentralized communication</h1>
-        <a href="/docs/guides/introduction" class="button w-button">Learn More</a>
-    </div>
-</div>
+{% set sponsors_data = load_data(path="content/sponsors.toml") %}
 <div id="frontpage">
-    <section>
-        <div class="grid">
-            <div class="grid-container">
-                <div class="block">
-                    <div class="imagine">
-                        {% set imagine = load_data(path="/partials/frontpage/imagine.md") %}
-                        {{ imagine | markdown | safe }}
-                    </div>
-                </div>
-            </div>
-            <div class="grid-container">
-                <div class="block">
-                    <div class="thisismatrix">
-                        {% set thisismatrix = load_data(path="/partials/frontpage/this_is_matrix.md") %}
-                        {{ thisismatrix | markdown | safe }}
-                    </div>
-                </div>
-            </div>
+    <div id="hero" class="section">
+        <div class="hero_content">
+            <img src="images/matrix-logo-white.svg" alt="The Matrix Logo" />
+            <h2>An open network for secure, decentralised communication</h2>
         </div>
-    </section>
-    <section>
-        <div class="grid">
-            <div class="grid-container">
-                <div class="block dark-bg">
-                    {% set messaging = load_data(path="/partials/frontpage/features/messaging.md") %}
-                    <div class="text">
-                        {{ messaging | markdown | safe }}
-                    </div>
-                    <a href="/docs/guides/" class="w-button button-dark">Learn more</a>
-                </div>
-            </div>
-            <div class="grid-container">
-                <div class="block dark-bg">
-                    {% set e2ee = load_data(path="/partials/frontpage/features/e2ee.md") %}
-                    <div class="text">
-                        {{ e2ee | markdown | safe }}
-                    </div>
-                    <a href="/docs/guides/end-to-end-encryption-implementation-guide" class="w-button button-dark">Learn
-                        more</a>
-                </div>
-            </div>
-            <div class="grid-container">
-                <div class="block dark-bg">
-                    {% set voip = load_data(path="/partials/frontpage/features/voip.md") %}
-                    <div class="text">
-                        {{ voip | markdown | safe }}
-                    </div>
-                    <a href="/blog/2018/02/05/3-d-video-calling-with-matrix-webrtc-and-webvr-at-fosdem-2018/"
-                        class="w-button button-dark">Learn more</a>
-                </div>
-            </div>
-            <div class="grid-container">
-                <div class="block dark-bg">
-                    {% set bridging = load_data(path="/partials/frontpage/features/bridging.md") %}
-                    <div class="text">
-                        {{ bridging | markdown | safe }}
-                    </div>
-                    <a href="/bridges/" class="w-button button-dark">Learn more</a>
-                </div>
-            </div>
-            <div class="grid-container-full">
-                <div class="block dark-bg">
-                    {% set more = load_data(path="/partials/frontpage/features/more.md") %}
-                    <div class="text">
-                        {{ more | markdown | safe }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="howdoesitwork">
-        {% set how_does_it_work = load_data(path="/partials/frontpage/how_does_it_work.md") %}
-        {{ how_does_it_work | markdown | safe }}
-        <div class="how" style="height: 520px;">placeholder</div>
-    </section>
-    <section class="content dark-bg" id="open-standard">
-        <div class="content">
-            <h1>An Open Standard</h1>
-            <div class="grid">
-                <div class="grid-container-third">
-                    <div class="block">
-                        <img src="assets/basic_signs.svg" alt="">
-                        <h3>Simple pragmatic <a href="/docs/api"> RESTful HTTP/JSON APIs</a> by default</h3>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <img src="assets/basic_spread_text.svg" alt="">
-                        <h3><a href="/docs/spec">Open specification</a> of the Matrix standard</h3>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <img src="assets/basic_share.svg" alt="">
-                        <h3>Fully decentralised conversations with no single points of control or failure</h3>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <img src="assets/basic_lock.svg" alt="">
-                        <h3>End-to-end encryption via Olm and Megolm</h3>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <img src="assets/music_microphone_old.svg" alt="">
-                        <h3>WebRTC VoIP/Video calling using Matrix signalling</h3>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <img src="assets/arrows_rotate.svg" alt="">
-                        <h3>Real-time synchronised history and state across all clients</h3>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <img src="assets/basic_mail_open_text.svg" alt="">
-                        <h3>Integrates with existing 3rd party IDs to authenticate and discover users</h3>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <img src="assets/basic_heart.svg" alt="">
-                        <h3>Maintained by the non-profit <a href="/foundation/">Matrix.org Foundation</a></h3>
-                    </div>
-                </div>
-                <div class="grid-container-third">
-                    <div class="block">
-                        <img src="assets/basic_elaboration_message_happy.svg" alt="">
-                        <h3>Group conversations, read receipts, typing notifications, presence...</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="latest-news">
-        <h1>Latest News</h1>
-        <div class="grid">
-            {% set blog_section = get_section(path="blog/_index.md") %}
-            {% for page in blog_section.pages | slice(end=4) %}
-            {% set path = page.path %}
-            {% set content = page.content | striptags | truncate(length=133) %}
-            {% set title = page.title %}
-            {% set date = page.date %}
-            {% set author = page.taxonomies.author | default (value=["unknown author"]) | first %}
-            <div class="grid-container">
-                <div class="block">
-                    <h2>{{ title }}</h2>
-                    <div>
-                        <p style="color: #666;">{{ date | date(format="%d.%m.%Y %H:%M") }} by {{ author }}
-                        </p>
-                        <p>
-                            {{ content }}
-                        </p>
-                    </div>
-                    <a href="{{ path }}" class="w-button button-dark">Read more</a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        <a href="/blog" class="w-button button-dark">View all Posts</a>
-    </section>
-    <section>
-        <h1>Explore Matrix</h1>
-        <div id="explore">
-            {% for explore in frontpage_data.explore %}
-            <a title="{{ explore.title }}" href="{{ explore.href }}">
-                <img src="assets/{{ explore.img }}">
-                <span>{{ explore.title }}</span>
-            </a>
-            {% endfor %}
-        </div>
-    </section>
-    <section id="sdks">
-        <h1>SDKs</h1>
-        <h2 class="subtitle">Native SDKs for multiple platforms, including:</h2>
-        <div id="explore">
-            <a title="Python" href="https://github.com/poljar/matrix-nio">
-                <img src="assets/python.svg">
-                <span>Python</span>
-            </a>
-            <a title="JavaScript" href="https://github.com/matrix-org/matrix-js-sdk">
-                <img src="assets/js.svg">
-                <span>JavaScript</span>
-            </a>
-            <a title="Android" href="https://github.com/matrix-org/matrix-android-sdk">
-                <img src="assets/android.svg">
-                <span>Android</span>
-            </a>
-            <a title="iOS" href="https://github.com/matrix-org/matrix-ios-sdk">
-                <img src="assets/iOS.svg">
-                <span>iOS</span>
-            </a>
-        </div>
-        <a href="/sdks/" class="w-button button-dark">View all SDKs</a>
-    </section>
-    <section class="dark-bg support-container">
-        <h1>Support Matrix</h1>
-        <p>If you share our vision, or are building on top of Matrix, please consider donating...</p>
-        <p>Support us on Patreon for great rewards including access to the supporters-only podcast,
-            and even a
-            voice at our weekly meetings.<br>
-            <a href="https://www.patreon.com/matrixdotorg">Find out more at our Patreon page.</a>
+        <div id="hero_curve1"></div>
+        <div id="hero_curve2"></div>
+        <div id="hero_curve3"></div>
+        <div id="hero_curve4"></div>
+    </div>
+    <div id="use-case-personal" class="section">
+        <h2>Chat with friends, family, communities and co-workers</h2>
+        <img src="assets/frontpage/personal-graphic.svg" alt="An artist view of a chat timeline." />
+        <div id="personal_bottom"></div>
+    </div>
+    <div id="use-case-community" class="section">
+        <h2>A cozy, safe, supercharged place for your community</h2>
+        <div class="call-to-action">Reclaim your Space</div>
+        <img src="assets/frontpage/community-graphic.svg" alt="An artist view of a chat community." />
+    </div>
+    <div id="complex_apps" class="section">
+        <h2>Build advanced, rich communication applications on top of Matrix.</h2>
+        <img src="https://via.placeholder.com/536x320.png" alt="A video showcasing Element Call and Third Room" />
+    </div>
+    <div id="buildonmatrix" class="section">
+        <img class="logo" src="images/matrix-favicon.svg" alt="The Matrix Logo" />
+        <img id="bridge_visual" src="/assets/frontpage/bridge-visual.svg" alt="A conceptual representation of a bridged system" />
+        <img id="homeserver" src="/assets/frontpage/homeserver.svg" alt="A conceptual representation of a homeserver" />
+        <img id="federation_visual" src="/assets/frontpage/federation-visual.svg" alt="A conceptual representation of the federation between homeservers" />
+        <img id="federation_visual_mobile" src="/assets/frontpage/federation-visual-mobile.svg" alt="A conceptual representation of the federation between homeservers" />
+        <h2>Build on Matrix</h2>
+        <p>
+            Matrix is a rich ecosystem of clients, servers, bots and application
+            services. Find out more in our developer documentation.
         </p>
-        <div id="support">
-            <div>
-                <h2>Patreon</h2>
-                <a href="https://www.patreon.com/matrixdotorg"><img alt="Patreon" src="/assets/patreon.png"></a>
-            </div>
-            <div>
-                <h2>Liberapay</h2>
-                <a href="https://liberapay.com/matrixdotorg"><img alt="Liberapay"
-                        src="/assets/fund-via-liberapay.png"></a>
-            </div>
-            <div>
-                <h2>Cryptocurrency</h2>
-                <p>You can also send us cryptocurrency:<br>
-                    <small>BTC 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE</small><br>
-                    <small>ETH 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485</small>
-                </p>
-            </div>
-
-        </div>
-        <p>If you share our vision, or are building on top of Matrix, please consider donating. See our current
-            <a href="/supporters">Elliptic supporters!</a>
-        </p>
-    </section>
-    <section id="sponsors">
-        <h1>Thank you to our incredible sponsors</h1>
-        <div class="grid">
-            {% for sponsor in frontpage_data.sponsors %}
-            <div class="grid-container-third">
-                <div class="block">
-                    <div class="logo">
-                        <img src="/assets/{{ sponsor.image }}" alt="{{ sponsor.name }} logo" width="96px" height="96px">
-                    </div>
-                    <div class="content">
-                        <h2>{{ sponsor.name }}</h2>
-                        <p>{{ sponsor.description }}</p>
-                        <a href="{{ sponsor.website }}">Learn more</a>
-                    </div>
+        <div class="call-to-action">Browse documentation </div>
+    </div>
+    <div id="sponsors" class="section">
+        <h2>Thank you to our incredible sponsors</h2>
+        <div id="sponsors_grid">
+            {% for sponsor in sponsors_data.sponsors %}
+            <div class="sponsor_card">
+                <img src="/images/sponsors/{{ sponsor.image }}" />
+                <div class="sponsor_text">
+                    <h3>{{ sponsor.name }}</h3>
+                    <p>{{ sponsor.description }}</p>
+                    <a href="{{ sponsor.website }}">Learn more</a>
                 </div>
             </div>
             {% endfor %}
         </div>
-    </section>
+        <p>
+            Matrix is supported by organisations and individuals like you who
+            care about the health of the ecosystem. Please consider supporting
+            us financially.
+        </p>
+        <div class="call-to-action">Support Matrix</div>
+    </div>
 </div>
 {% endblock content %}
