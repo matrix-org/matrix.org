@@ -1,7 +1,7 @@
 #frontpage {
 
     #hero {
-        height: calc(100vh - 95px);
+        height: calc(100vh - 5.937rem);
         background-color: #000;
         background-image: url("/assets/frontpage/hero_dancing_lines.svg");
         @media (max-width: 767px) {
@@ -20,14 +20,14 @@
 
             h2 {
                 color: #fff;
-                font-size: 40px;
+                font-size: 2.5rem;
                 font-weight: 700;
                 max-width: 36rem;
                 margin: 0 auto;
                 text-align: center;
 
                 @media (max-width: 767px) {
-                    font-size: 34px;
+                    font-size: 2.125rem;
                     margin: 0 30px;
                 }
             }
@@ -124,7 +124,7 @@
             font-weight: 700;
             margin: auto 0 auto 5rem;
             @media (max-width: 767px) {
-                font-size: 34px;
+                font-size: 2.125rem;
                 margin: 0 50px 50px 50px;
             }
             max-width: 28rem;
@@ -173,13 +173,13 @@
 
         h2 {
             color: #fff;
-            font-size: 40px;
+            font-size: 2.5rem;
             font-weight: 700;
             max-width: 36rem;
             margin: 0 auto;
 
             @media (max-width: 767px) {
-                font-size: 34px;
+                font-size: 2.125rem;
                 margin: 0 50px 50px 50px;
             }
         }
@@ -187,7 +187,7 @@
         .call-to-action {
             background-color: #fff;
             color: #000;
-            font-size: 18px;
+            font-size: 1.125rem;
             font-weight: 600;
             border-radius: 1000px;
             padding: .4em 2em;
@@ -212,7 +212,7 @@
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
-        padding: 10rem 8rem;
+        padding: 160px 128px;
 
         @media (max-width: 767px) {
             flex-direction: column;
@@ -272,7 +272,7 @@
             text-align: center;
             margin: 0 auto;
             max-width: 433px;
-            font-size: 18px;
+            font-size: 1.125rem;
         }
 
         .logo {
@@ -337,7 +337,7 @@
         .call-to-action {
             background-color: #fff;
             color: #000;
-            font-size: 18px;
+            font-size: 1.125rem;
             font-weight: 600;
             border-radius: 1000px;
             padding: .4em 2em;
@@ -349,7 +349,7 @@
         display: flex;
         flex-direction: column;
 
-        padding: 5rem 2.8rem;
+        padding: 5rem 45px;
 
         h2 {
             text-align: center;
@@ -376,7 +376,7 @@
                 margin: 1rem 0;
                 padding: 1rem 0;
 
-                width: 350px;
+                width: 22rem;
                 @media (max-width: 767px) {
                     width: 100%;
                 }
@@ -389,12 +389,12 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    height: 200px;
+                    height: 12.5rem;
 
                     h3 {
                         text-align: center;
                         margin: 0 auto;
-                        font-size: 18px;
+                        font-size: 1.125rem;
                         font-weight: 700;
                     }
 
@@ -414,7 +414,7 @@
         .call-to-action {
             background-color: #000;
             color: #fff;
-            font-size: 18px;
+            font-size: 1.125rem;
             font-weight: 600;
             border-radius: 1000px;
             padding: .4em 2em;
