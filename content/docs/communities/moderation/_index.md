@@ -196,7 +196,7 @@ your community.
 
 If you have moderation reports enabled and click on the
 {{ mjolnirbutton(text="⚽️ Kick") }} button below it, mjolnir will kick the user
-from the room where they were reported. FIXME FIXME FIXME FIXME is it the case actually? Or all rooms?
+from the room where they were reported.
 
 If you don't have moderation reports enabled, you can also kick a user either
 from a specific room or globally with the following command.
