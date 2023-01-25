@@ -102,16 +102,9 @@ administrator. If you are the homeserver admin, you can choose to send the repor
 
 ![](./mjolnir_report.png)
 
-You can see the various details of the reported message, and handful of buttons
-below the message you can click on. These buttons will instruct mjolnir to take
-action, depending on which one you clicked.
+The report gives you some information about the reported message. Underneath, there are some buttons that you can use to take action on the report.
 
-To enable moderation reports in Mjolnir's command room, please follow Mjolnir's
-[readable abuse reports documentation](https://github.com/matrix-org/mjolnir#enabling-readable-abuse-reports).
-
-When someone is obviously not behaving properly, you want to take action to make
-sure your community remains a nice place to hang out. To do so, you can do one
-of the following.
+We'll talk about moderation actions in a moment. If you want to set up these reports, please follow the documentation [here](https://github.com/matrix-org/mjolnir#enabling-readable-abuse-reports).
 
 ## Enforcing moderation
 
