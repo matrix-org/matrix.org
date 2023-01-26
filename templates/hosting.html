@@ -1,6 +1,5 @@
 {% extends "page.html" %}
 {% block content %}
-{% set providers = load_data(path="content/ecosystem/hosting/providers.toml") %}
 <div class="page-header">
     <div class="hero-block">
         <h1>Hosting</h1>
@@ -11,7 +10,7 @@
     </div>
 </div>
 
-<div class="clients_page">
+<div class="content hosting_page">
 
     {{ page.content | safe }}
 

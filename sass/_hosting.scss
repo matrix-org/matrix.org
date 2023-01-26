@@ -1,0 +1,60 @@
+.hosting_page {
+    margin: 0 auto;
+    padding: 5.625rem 0 2rem 0;
+    @media (max-width: 767px) {
+        padding: 5.625rem 32px 0 32px;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hosting_providers {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3.125rem;
+
+        .provider_card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 24px;
+            gap: 1rem;
+
+            flex: 1 0 400px;
+            max-width: 400px;
+            min-height: 343px;
+
+            border: 1px solid #D2D2D2;
+            border-radius: 16px;
+
+            .provider_logo_container {
+                height: 160px;
+            }
+
+            h3 {
+                margin: 0;
+                text-align: center;
+
+                font-style: normal;
+                font-weight: 700;
+                font-size: 2rem;
+                line-height: 120%;
+            }
+
+            .call-to-action {
+                background-color: #000;
+                color: #fff;
+                border-radius: 1000px;
+                padding: .4rem 2rem;
+            }
+        }
+    }
+}
