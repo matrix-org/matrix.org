@@ -1,7 +1,7 @@
 {% macro platform_links(packages) %}
 {% if packages.apple_app_store.app_id and packages.apple_app_store.org %}
 <a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"
-    class="platform-pill">App Store</a>
+    class="platform-pill">App Store</a>
 {% endif %}
 {% if packages.google_play_store.app_id %}
 <a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"

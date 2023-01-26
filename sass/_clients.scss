@@ -1,77 +1,148 @@
-.featured-clients {
-    display: flex;
-    gap: .5rem;
-    overflow-x: auto;
-}
-
-.featured-client-card {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 250px;
-    border-color: 1px solid rgba(43, 140, 201, .4);
-    background-color: rgba(43, 140, 201, .1);
-    border-radius: 1em;
-    padding: 1em;
-
-    img {
-        height: 160px;
-        display: block;
-        margin: 0 auto;
-    }
-
-    h3 {
-        text-align: center;
-    }
-
-    .platforms-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: auto;
-    }
-}
-
-.platform-pill {
-    margin: .2em;
-    border-radius: 2em;
-    padding: 0 .6em;
-    color: #fff;
-    background-color: rgba(43, 140, 201, .8);
-}
-
-.platform-pill:hover {
-    background-color: #2b8cc9;
-}
-
-.all-clients {
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.clients_page {
+    padding-top: 5.625rem;
+    @media (max-width: 767px) {
+        padding: 5.625rem 32px 0 32px;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        text-align: center;
+        font-weight: 400;
+        font-size: 1.125rem;
+        line-height: 120%;
+        margin: 0 auto 5rem auto;
+        max-width: 40rem;
+    }
+}
+
+.featured-clients {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3.125rem;
+
+    padding: 0 180px;
+    @media (max-width: 767px) {
+        padding: 0 0;
+    }
+    margin-bottom: 5rem;
+}
+
+.featured-client-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    gap: 1rem;
+
+    flex: 1 0 280px;
+    max-width: 280px;
+    min-height: 343px;
+
+    border: 1px solid #D2D2D2;
+    border-radius: 16px;
+
+    img {
+        margin: 0;
+        width: 65px;
+        height: 65px;
+        box-sizing: content-box;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    h3 {
+        margin: 0;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 120%;
+    }
+}
+
+.platform-links {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px 4px;
+    flex-wrap: wrap;
+}
+
+.platform-pill {
+    background: #E9E9E9;
+    border-radius: 16px;
+    padding: .375rem .625rem;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 120%;
+    color: #000000;
+}
+
+/* We have no design for this currently
+.platform-pill:hover {
+    background-color: #2b8cc9;
+}*/
+
 .clients-table {
     display: grid;
     grid-template-columns: repeat(2, min-content) 15em repeat(12, min-content);
 
-    margin: 1rem 1.5rem;
-    width: 1200px;
-    max-width: calc(100% - 3rem);
+    margin-bottom: 148px;
+    margin-left: 70px;
+    width: calc(100vw - 70px);
+
+    @media (max-width: 767px) {
+        margin-bottom: 71px;
+        left: 32px;
+        width: calc(100vw - 32px);
+    }
+
     overflow-x: auto;
 
+    background: #FCFCFC;
+
     >* {
-        padding: .5rem 1rem;
+        padding-left: 22px;
+        padding-right: 22px;
+        min-height: 82px;
+        min-width: 224px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
     }
 
     >*:nth-child(-n+15) {
-        border-bottom: 1px solid #bbb;
         display: flex;
         align-items: center;
+        justify-content: flex-start;
     }
 
     >*:nth-child(15n+1) {
+        background: #fefefe;
         position: sticky;
         left: 0;
-        border-right: 1px solid #bbb;
+        /* This deviates from the design file */
+        border-right: 1.2px solid #DBDBDB;
     }
 
     >*:nth-child(30n+1),
@@ -89,7 +160,7 @@
     >*:nth-child(30n+13),
     >*:nth-child(30n+14),
     >*:nth-child(30n+15) {
-        background-color: #e2e2e2;
+        border-right: 1.2px solid #DBDBDB;
     }
 
     >*:nth-child(30n+16),
@@ -107,15 +178,16 @@
     >*:nth-child(30n+28),
     >*:nth-child(30n+29),
     >*:nth-child(30n+30) {
-        background-color: #f4f4f4;
+        border-right: 1.2px solid #DBDBDB;
     }
 
     .feature {
-        text-align: center;
+        justify-content: center;
     }
 
-    .platform-pill {
-        margin: 0;
-        padding: .1em .6em;
+    span {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .2rem .5rem;
     }
 }

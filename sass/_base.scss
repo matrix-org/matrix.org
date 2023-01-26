@@ -250,3 +250,52 @@ pre table {
     width: 100%;
     border-collapse: collapse;
 }
+
+/* The black block on pages at the top. */
+.page-header {
+    width: 100%;
+    height: 23.5rem;
+    background-color: #000000;
+    overflow: hidden;
+
+    background-image: url(/assets/page-header-bg.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    @media (max-width: 767px) {
+        background-size: 250% 100%;
+        background-position-x: -533px;
+    }
+
+    .hero-block {
+
+        @media (max-width: 767px) {
+            margin: 60px 32px 70px;
+        }
+
+        margin: 89px 80px;
+
+        h1 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 3.125rem;
+            line-height: 120%;
+            color: #FFFFFF;
+        }
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 120%;
+
+            display: flex;
+            align-items: center;
+
+            color: #FFFFFF;
+            word-wrap: normal;
+        }
+    }
+
+
+}

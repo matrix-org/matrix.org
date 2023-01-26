@@ -7,7 +7,7 @@
         <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
         <h3>{{ name }}</h3>
         <p>{{ client.summary | safe }}</p>
-        <div class="platforms-links">
+        <div class="platform-links">
             {{ clients::platform_links(packages=client.packages) }}
         </div>
     </div>
