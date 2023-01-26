@@ -51,3 +51,90 @@ f_droid.app_id = "chat.fluffy.fluffychat"
 apple_app_store = { app_id = "id1551469600", org = "fluffychat" }
 flathub.app_id = "im.fluffychat.Fluffychat"
 other_url = "https://fluffychat.im"
+
+[FluffyChata]
+thumbnail = "fluffychat.svg"
+summary = "Cute instant messaging app for all platforms."
+maintainer = "Christian Pauly"
+license = "AGPL-3.0-only"
+language = "Flutter"
+last_release = "2021-12-01"
+maturity = "Stable"
+source = "https://gitlab.com/famedly/fluffychat"
+website = "https://fluffychat.im"
+matrix_room = "#fluffychat:matrix.org"
+featured = true
+[FluffyChata.features]
+e2ee = true
+spaces = true
+voip_1to1 = true
+voip_jitsi = true
+widgets = false
+threads = false
+sso = true
+multi_account = true
+multi_language = true
+[FluffyChata.packages]
+google_play_store.app_id = "chat.fluffy.fluffychat"
+f_droid.app_id = "chat.fluffy.fluffychat"
+apple_app_store = { app_id = "id1551469600", org = "fluffychat" }
+flathub.app_id = "im.fluffychat.Fluffychat"
+other_url = "https://fluffychat.im"
+
+[FluffyChatb]
+thumbnail = "fluffychat.svg"
+summary = "Cute instant messaging app for all platforms."
+maintainer = "Christian Pauly"
+license = "AGPL-3.0-only"
+language = "Flutter"
+last_release = "2021-12-01"
+maturity = "Stable"
+source = "https://gitlab.com/famedly/fluffychat"
+website = "https://fluffychat.im"
+matrix_room = "#fluffychat:matrix.org"
+featured = true
+[FluffyChatb.features]
+e2ee = true
+spaces = true
+voip_1to1 = true
+voip_jitsi = true
+widgets = false
+threads = false
+sso = true
+multi_account = true
+multi_language = true
+[FluffyChatb.packages]
+google_play_store.app_id = "chat.fluffy.fluffychat"
+f_droid.app_id = "chat.fluffy.fluffychat"
+apple_app_store = { app_id = "id1551469600", org = "fluffychat" }
+flathub.app_id = "im.fluffychat.Fluffychat"
+other_url = "https://fluffychat.im"
+
+[FluffyChatc]
+thumbnail = "fluffychat.svg"
+summary = "Cute instant messaging app for all platforms."
+maintainer = "Christian Pauly"
+license = "AGPL-3.0-only"
+language = "Flutter"
+last_release = "2021-12-01"
+maturity = "Stable"
+source = "https://gitlab.com/famedly/fluffychat"
+website = "https://fluffychat.im"
+matrix_room = "#fluffychat:matrix.org"
+featured = true
+[FluffyChatc.features]
+e2ee = true
+spaces = true
+voip_1to1 = true
+voip_jitsi = true
+widgets = false
+threads = false
+sso = true
+multi_account = true
+multi_language = true
+[FluffyChatc.packages]
+google_play_store.app_id = "chat.fluffy.fluffychat"
+f_droid.app_id = "chat.fluffy.fluffychat"
+apple_app_store = { app_id = "id1551469600", org = "fluffychat" }
+flathub.app_id = "im.fluffychat.Fluffychat"
+other_url = "https://fluffychat.im"

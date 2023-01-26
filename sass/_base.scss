@@ -255,21 +255,16 @@ pre table {
 .page-header {
     width: 100%;
     height: 23.5rem;
-    background: #000000;
+    background-color: #000000;
     overflow: hidden;
 
-    .bg {
-        width: 100%;
-        position: absolute;
-        height: 377px;
-        background: url(/assets/page-header-bg.svg);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
+    background-image: url(/assets/page-header-bg.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 
-        @media (max-width: 767px) {
-            background-size: 250% 100%;
-            background-position-x: -533px;
-        }
+    @media (max-width: 767px) {
+        background-size: 250% 100%;
+        background-position-x: -533px;
     }
 
     .hero-block {

@@ -1,0 +1,51 @@
+{% import "macros/clients.html" as clients %}
+{% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
+
+<div class="clients-table">
+    <strong>Name</strong>
+    <strong>Maintainer</strong>
+    <strong>Platforms</strong>
+    <strong>Last Release</strong>
+    <strong>Maturity</strong>
+    <strong>License</strong>
+    <strong>E2EE</strong>
+    <strong>Spaces</strong>
+    <strong>VoIP (1:1)</strong>
+    <strong>VoIP (Jitsi)</strong>
+    <strong>Widgets</strong>
+    <strong>Threads</strong>
+    <strong>SSO</strong>
+    <strong>Multi-account</strong>
+    <strong>Multi language</strong>
+
+    {% for name, client in clients %}
+    <!-- new row -->
+    <span>{{ name }}</span>
+    <span>{{ client.maintainer }}</span>
+    <span>
+        {{ clients::platform_links(packages=client.packages) }}
+    </span>
+    <span>{{ client.last_release | date(format="%Y-%m-%d") }}</span>
+    <span>{{ client.maturity }}</span>
+    <span>{{ client.license }}</span>
+    {% for feature in [
+    client.features.e2ee,
+    client.features.spaces,
+    client.features.voip_1to1,
+    client.features.voip_jitsi,
+    client.features.widgets,
+    client.features.threads,
+    client.features.sso,
+    client.features.multi_account,
+    client.features.multi_language,
+    ] %}
+    <span class="feature">
+        {% if feature %}
+        <span class="checkmark">✓</span>
+        {% else %}
+        <span class="cross">✗</span>
+        {% endif %}
+    </span>
+    {% endfor %}
+    {% endfor %}
+</div>
