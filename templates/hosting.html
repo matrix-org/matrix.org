@@ -1,0 +1,19 @@
+{% extends "page.html" %}
+{% block content %}
+{% set providers = load_data(path="content/ecosystem/hosting/providers.toml") %}
+<div class="page-header">
+    <div class="hero-block">
+        <h1>Hosting</h1>
+        <p>
+            Everyone can host their Matrix server, but not everybody wants.
+            Those are the providers the Matrix Foundation knows about.
+        </p>
+    </div>
+</div>
+
+<div class="clients_page">
+
+    {{ page.content | safe }}
+
+</div>
+{% endblock content %}
