@@ -49,7 +49,7 @@ But most importantly, we’ve also been busy implementing Sliding Sync in Elemen
 
 For instance, here’s a video of my account (4055 rooms, redacted for privacy) logging in on an entirely fresh browser via Sliding Sync - the actual sync takes roughly 1 second (at 00:18 in the video).  And if we’d started the sync operation while the user is setting up E2E encryption, it would have completed in the background before they even got to the main screen, giving instant login(!).  Given my account typically takes ~10 minutes to initial sync (plus even more time for encryption to sync up), this is at least a real-life **600x improvement**.  Moreover, the sync response is only 20KB (a ~5000x improvement) - a huge win for low-bandwidth Matrix situations.
 
-<iframe width="2056" height="980" src="https://www.youtube.com/embed/9dbM66tGK5s" title="Sliding Sync Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/9dbM66tGK5s" title="Sliding Sync Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Then, having logged in, the client subsequently launches pretty much instantly, _no matter how long you’ve been offline_. Total launch time is roughly 4 seconds, most of which is loading the app’s assets - which in turn could well be improved by progressively loading the app.  It could also be sped up even more if we cached state locally - currently the implementation simply reloads from the server every time the app launches rather than maintaining a local cache.
 
@@ -72,7 +72,7 @@ We also need to determine whether it’s viable to run the sliding-sync proxy ag
 
 Meanwhile, over in the land of Rust, we’ve been making huge progress in maturing and stabilising matrix-rust-sdk and exercising it in Element X: the codename for the next generation of native Element mobile apps.  Most excitingly, we literally just got the first (very alpha) cut of Sliding Sync working in matrix-rust-sdk and hooked up to Element X on iOS - you can see Ștefan’s demo from last week here:
 
-<iframe width="2056" height="980" src="https://www.youtube.com/embed/6KHQSeJTXm0?start=459" title="Matrix Live S08E04 — Element Demos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/6KHQSeJTXm0?start=459" title="Matrix Live S08E04 — Element Demos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 matrix-rust-sdk itself is now getting a [steady stream of releases](https://github.com/matrix-org/matrix-rust-sdk/releases) - including long-awaited official node bindings, providing excellent and performant encryption support via the [newly audited](https://matrix.org/blog/2022/05/16/independent-public-audit-of-vodozemac-a-native-rust-reference-implementation-of-matrix-end-to-end-encryption/) vodozemac Rust implementation of Olm. It’s also great to see loads of major contributions to matrix-rust-sdk from across the wider Matrix community - particularly from Ruma, Fractal, Famedly and others - thank you!! As a result the SDK is shaping up to be much more healthy and heterogeneous than the original matrix-{js,ios,android}-sdk projects.
 
@@ -80,7 +80,7 @@ On Element X itself: matrix-rust-sdk is being used first on iOS in [Element X iO
 
 Finally: Element is getting a major redesign of the core UI on both iOS and Android - both for today’s Element and Element X.  I’m not going to spoil the final result (which is looking *amazing*) given it’ll have a proper glossy launch in a few weeks, but you can get a rough idea based on the earlier design previewed by Amsha back in June:
 
-<iframe width="2056" height="980" src="https://www.youtube.com/embed/oxfqQ0TrTXU?start=34" title="Matrix Live S07E22 — Element UI experiments, and customising Element Web with greasemonkey" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/oxfqQ0TrTXU?start=34" title="Matrix Live S07E22 — Element UI experiments, and customising Element Web with greasemonkey" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In addition to the upcoming overall redesign, Element also landed a complete rework of the login and registration flows last week on iOS and Android - you can see all about it over on the [Element blog](https://element.io/blog/all-aboard-better-ftue-for-less-wtf/).
 
@@ -201,13 +201,13 @@ Now, we’re hoping to give Third Room a proper launch in a few weeks, so I’m 
 
 As a quick teaser - here’s an example of a [Unity asset](https://assetstore.unity.com/packages/3d/environments/sci-fi/3d-scifi-kit-vol-3-121447) exported into Third Room, showing off lightmaps (check out the light and shadows cast by the strip lighting inside, or the shadow on the ground outside).  Ignore the blurry HDR environment map of Venice in the background, which is just there to give the metals something to reflect.  Check out the stats on the right-hand side: on Robert’s M1 Macbook Pro we’re getting a solid 60fps at 2000x1244px, with 13.12ms of unused gametime available for every 16.67ms frame, despite already showing a relatively complicated asset!
 
-<iframe width="2056" height="980" src="https://www.youtube.com/embed/xvjMyYxZbmM" title="Third Room prototype demo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/xvjMyYxZbmM" title="Third Room prototype demo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Meanwhile, here are some shots of Robert and Nate chasing each other around the UK City demo environment (also exported from [Unity](https://assetstore.unity.com/packages/3d/environments/urban/city-builder-london-214943)), showing off blended Mixamo animations and throwing around crates thanks to the Rapier physics engine.
 
-<iframe width="2056" height="980" src="https://www.youtube.com/embed/y2mU19QwZPg" title="Third Room prototype demo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/y2mU19QwZPg" title="Third Room prototype demo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="2056" height="980" src="https://www.youtube.com/embed/QEt80wvO4yY" title="Third Room prototype demo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/QEt80wvO4yY" title="Third Room prototype demo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br/>
 
@@ -227,7 +227,7 @@ However, given that users are now used to WYSIWYG in Teams and Slack, we’ve no
 
 The project is fairly young but developing fast, and lives over at [https://github.com/matrix-org/matrix-wysiwyg](https://github.com/matrix-org/matrix-wysiwyg) (better name suggestions welcome ;) - we’re aiming to get it into clients by the end of October.  The editor itself is not Matrix specific at all, so it’ll be interesting to see if other projects pick it up at all - and meanwhile, if we’ve done a good job, it’ll be interesting to see if this can be used to power Matrix-backed collaborative-editing solutions in future…
 
-<iframe width="2056" height="980" src="https://www.youtube.com/embed/9_UhNBKUk7A" title="WYSIWYG teaser on Android" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/9_UhNBKUk7A" title="WYSIWYG teaser on Android" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Update**: we should have mentioned that the WYSIWYG editor project is being built out by staff at Element, who very kindly have been sponsored to work on it by one of Element's Big Public Sector Customers in order to get to parity with Teams.  Thank you!!
 

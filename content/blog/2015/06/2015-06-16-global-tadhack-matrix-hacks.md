@@ -24,9 +24,9 @@ We awarded our two prizes to Igor for his use of OpenMarket's SMS AS, which adds
 
 Below you can watch our two winners' presentations:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/chp8K8Wn6v8" frameBorder="0" allowFullScreen></iframe>
+<iframe src="https://www.youtube.com/embed/chp8K8Wn6v8" frameBorder="0" allowFullScreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6ybaaMPUVx0" frameBorder="0" allowFullScreen></iframe>
+<iframe src="https://www.youtube.com/embed/6ybaaMPUVx0" frameBorder="0" allowFullScreen></iframe>
 
 The <a href="http://blog.tadhack.com/">TADHack blog</a> has a list of all the winners: <a href="http://blog.tadhack.com/2015/06/16/tadhack-location-winner/">local winners</a> and <a href="http://blog.tadhack.com/2015/06/15/tadhack-global-winners/">global winners</a>. In total $36k worth of prizes were won!
 
