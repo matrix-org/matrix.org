@@ -5,7 +5,7 @@ weight = 150
 [extra]
 emoji = "🏡"
 tile = "I want to get my own homeserver"
-updated = "2023-01-25T12:09:00Z"
+updated = "2023-01-27T12:09:00Z"
 +++
 
 ## Why switching providers?
@@ -45,13 +45,23 @@ to promote other users as administrators of the room. This API will only work if
 one of their users is in the room. It will grant the highest power level
 available among their users to their target.
 
+### Bridging to your systems
+
+TODO
+
 ## Picking a new provider
 
-* Why?
-    * Branding
-    * Recovering accounts and/or rooms
-    * Staying in control of where your data is
-    * Adding more, less crowded bridges
-* How?
-    * Relying on a [hosting provider](/ecosystem/hosting)
-    * Hosting one of [the server implementations](/ecosystem/servers) yourself
+The Matrix.org Foundation happily provides the matrix.org homeserver, but
+strongly encourages organisations to get their own homeserver. 
+### Paid hosting
+
+The simplest route to get your own homeserver is to pay a provider to host a
+Matrix instance for you.
+
+### Rolling your own
+
+People who either want or need to have on-premises can either pick a [server
+implementation](/ecosystem/servers) they are comfortable with and install it
+themselves, or get an on-premises support plan from [one of the providers the
+Foundation knows](/ecosystem/hosting).
+
