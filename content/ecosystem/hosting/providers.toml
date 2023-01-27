@@ -1,0 +1,50 @@
+[[providers]]
+name = "Element Matrix Services"
+image = "logo-ems-primary.svg"
+website = "https://ems.element.io"
+operating_since = "2018"
+description = """
+- Hosted Homeservers
+- [Hosted Integrations including Slack, IRC, Github bridging](https://element.io/element-matrix-store)
+
+Brought to you by the creators of Matrix, who have been running the biggest homeserver in the network since 2014. Every homeserver comes with a custom instance of Element.
+"""
+
+[[providers]]
+name = "Ungleich.ch"
+image = "ungleich_zerocarbonmatrix.jpg"
+website = "https://matrix.zerocarbon.shop"
+operating_since = "TBC"
+description = """
+- Hosted Homeservers
+
+Service provided by [ungleich.ch](https://ungleich.ch/) in their own datacenter in Linthal, Switzerland. They use an old building, second-hand servers, passive cooling and are directly plugged into an on-site hydroelectric power plant!
+"""
+
+[[providers]]
+name = "etke.cc"
+image = "etke.cc.png"
+website = "https://etke.cc"
+operating_since = "TBC"
+description = """
+- Setup of hosted Homeserver on any hosting by your choice
+- Setup of hosted integrations (full list available on website)
+- Setup of additional services (wireguard, languagetool, miniflux, etc.)
+- Ongoing maintenance of host & Matrix components
+- Email services for your domain
+
+That service will create your Matrix Homeserver on your domain and server (doesn't matter if it's cloud provider or on an old laptop in the corner of your room), (optional) maintains it (server's system updates, cleanup, security adjustments, tuning, etc.; Matrix Homeserver updates & maintenance) and (optional) provide full-featured email service for your domain.
+
+[Matrix Space](https://matrix.to/#/#service:etke.cc)  | [Announcements on Matrix](https://matrix.to/#/#announcements:etke.cc)
+"""
+
+[[providers]]
+name = "Ossrox"
+image = "ossrox.svg"
+website = "https://ossrox.org"
+operating_since = "TBC"
+description = """
+- Hosted Homeservers
+
+Ossrox is a company from Germany dedicated to hosting open-source services. Not only has the company name been derived from the motto "Open-Source Software Rocks", but also their corporate culture. The three most important principles of the company are security, privacy and sustainability - thanks to open-source software. In addition to Matrix, Ossrox also provides many other solutions e.g. in the messaging, groupware and web meeting segments.
+"""

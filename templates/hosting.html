@@ -1,0 +1,18 @@
+{% extends "page.html" %}
+{% block content %}
+<div class="page-header">
+    <div class="hero-block">
+        <h1>Hosting</h1>
+        <p>
+            Everyone can host their Matrix server, but not everybody wants.
+            Those are the providers the Matrix Foundation knows about.
+        </p>
+    </div>
+</div>
+
+<div class="content hosting_page">
+
+    {{ page.content | safe }}
+
+</div>
+{% endblock content %}
