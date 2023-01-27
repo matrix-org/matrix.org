@@ -15,7 +15,16 @@
             <ul>
                 <li><a href="{{ communities_section.path }}">Overview</a></li>
                 {% for h2 in communities_section.toc %}
-                <li><a href="{{ h2.permalink }}">{{ h2.title }}</a></li>
+                <li>
+                    <a href="{{ h2.permalink }}">{{ h2.title }}</a>
+                    {% if h2.children %}
+                    <ul>
+                    {% for h3 in h2.children %}
+                        <li><a href="{{ h3.permalink }}">{{ h3.title }}</a></li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
                 {% endfor %}
             </ul>
         </details>
@@ -31,7 +40,16 @@
             <ul>
                 <li><a href="{{ subsection.path }}">Overview</a></li>
                 {% for h2 in subsection.toc %}
-                <li><a href="{{ h2.permalink }}">{{ h2.title }}</a></li>
+                <li>
+                    <a href="{{ h2.permalink }}">{{ h2.title }}</a>
+                    {% if h2.children %}
+                    <ul>
+                    {% for h3 in h2.children %}
+                        <li><a href="{{ h3.permalink }}">{{ h3.title }}</a></li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
                 {% endfor %}
             </ul>
         </details>

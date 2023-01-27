@@ -7,7 +7,7 @@ html {
     font-size: 100%;
 
     scroll-snap-type: y proximity;
-    scroll-padding-top: 95px;
+    scroll-padding-top: 5.937rem;
     scroll-behavior: smooth;
 }
 
@@ -296,6 +296,11 @@ pre table {
             word-wrap: normal;
         }
     }
+}
 
-
+:not(pre) > code {
+    color: #f54029;
+    border: 1px solid #f54029;
+    border-radius: 4px;
+    padding: 0 .4rem;
 }
