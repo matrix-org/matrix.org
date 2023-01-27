@@ -31,4 +31,4 @@ As a taster: the official video of our massive talk from the ETHLDN meetup a few
 
 See you next week! :D
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/y0-j4Q77KXM" frameBorder="0" allowFullScreen></iframe>
+<iframe src="https://www.youtube.com/embed/y0-j4Q77KXM" frameBorder="0" allowFullScreen></iframe>

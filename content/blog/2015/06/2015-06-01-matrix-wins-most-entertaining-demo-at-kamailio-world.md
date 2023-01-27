@@ -15,11 +15,11 @@ It was great to catch up with old acquaintances - and meet many new ones! There 
 
 <a href="http://matrix.org/blog/wp-content/uploads/2015/06/2015-05-29-Matrix-KamailioWorld.pptx">Here are the slides</a> of Matthew's presentation, (<a href="http://matrix.org/blog/wp-content/uploads/2015/06/2015-05-29-Matrix-KamailioWorld.pdf">also available as .pdf</a>) and a video of the presentation:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/E0uMm04MIuk" frameBorder="0" allowFullScreen></iframe>
+<iframe src="https://www.youtube.com/embed/E0uMm04MIuk" frameBorder="0" allowFullScreen></iframe>
 
 A video from the dangerous demo event is available here:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D7jZSYkXqt4?start=2630" frameBorder="0" allowFullScreen></iframe>
+<iframe src="https://www.youtube.com/embed/D7jZSYkXqt4?start=2630" frameBorder="0" allowFullScreen></iframe>
 
 The Parrot Drone we use in the demo has a 14 megapixel fisheye camera with advanced stabilization techniques which means that you can't actually see what happened when everybody went "ooh" - I assure you the "flip" command does exactly what you would expect!
 
