@@ -2,7 +2,7 @@
     margin: 0 auto;
     padding: 5.625rem 0 2rem 0;
     @media (max-width: 767px) {
-        padding: 5.625rem 32px 0 32px;
+        padding: 5.625rem 32px 2rem 32px;
     }
 
     h2 {
@@ -28,6 +28,11 @@
 
             flex: 1 0 400px;
             max-width: 400px;
+            @media (max-width: 767px) {
+                flex: 1 0 300px;
+                max-width: 300px;
+            }
+
 
             border: 1px solid #D2D2D2;
             border-radius: 16px;
