@@ -47,7 +47,7 @@
         <div id="sponsors_grid">
             {% for sponsor in sponsors_data.sponsors %}
             <div class="sponsor_card">
-                <img src="/images/sponsors/{{ sponsor.image }}" />
+                <img src="/images/sponsors/{{ sponsor.image }}" alt="Logo of {{ sponsor.name }}" />
                 <div class="sponsor_text">
                     <h3>{{ sponsor.name }}</h3>
                     <p>{{ sponsor.description }}</p>
