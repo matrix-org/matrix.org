@@ -65,7 +65,10 @@
             padding: 8px 24px;
             margin: 8px 0;
             color: #fff;
-            font-size: 1.5rem;
+            font-size: 1.125rem;
+            @media screen and (max-width: 1023px) {
+                font-size: 1.5rem;
+            }
 
             &:hover {
                 color: #0098d4;
@@ -75,17 +78,20 @@
                 color: #0082f3;
             }
 
-            // regular / primary distinction only exists in the desktop view
-            @media screen and (min-width: 1024px) {
-                &.primary {
-                    border-radius: 60px;
-                    background-color: #fff;
-                    color: #000 !important;
+            &.primary {
+                border-radius: 60px;
+                background-color: #fff;
+                color: #000 !important;
 
-                    padding-left: 2em;
-                    padding-right: 2em;
-                    margin-left: 12px;
+                padding-left: 2em;
+                padding-right: 2em;
+                margin-left: 12px;
 
+                @media screen and (max-width: 1023px) {
+                    text-align: center;
+                }
+
+                @media screen and (min-width: 1024px) {
                     &:not(:last-child) {
                         margin-right: 12px;
                     }
