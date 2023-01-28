@@ -4,12 +4,12 @@
 
     display: flex;
     width: 100%;
-    height: 95px;
+    height: 5.937rem;
     padding-left: 20px;
     align-items: center;
     margin-bottom: 0;
 
-    font-size: 18px;
+    font-size: 1.125rem;
     color: #fff;
 
     background-color: #000;
@@ -49,12 +49,12 @@
         @media screen and (max-width: 1023px) {
             position: fixed;
             z-index: 800;
-            top: 60px;
+            top: 5.937rem;
             left: 0;
             right: 0;
 
             flex-direction: column;
-            background-color: #ddd;
+            background-color: #000;
         }
 
         @media screen and (min-width: 1024px) {
@@ -65,6 +65,7 @@
             padding: 8px 24px;
             margin: 8px 0;
             color: #fff;
+            font-size: 1.5rem;
 
             &:hover {
                 color: #0098d4;
@@ -129,6 +130,12 @@
     @media screen and (max-width: 1023px) {
         .section-submenu {
             padding-left: 1em;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                font-size: 1.125rem;
+            }
         }
     }
 }
@@ -138,13 +145,13 @@
 
     @media screen and (max-width: 1023px) {
         &:checked~.dropdown-button {
-            background-color: #ddd;
+            background-color: #000;
         }
 
         &:checked~.page-overlay {
             position: fixed;
             z-index: 400;
-            top: 61px;
+            top: 5.937rem;
             right: 0;
             bottom: 0;
             left: 0;
