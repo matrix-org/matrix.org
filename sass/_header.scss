@@ -4,12 +4,12 @@
 
     display: flex;
     width: 100%;
-    height: 95px;
+    height: 5.937rem;
     padding-left: 20px;
     align-items: center;
     margin-bottom: 0;
 
-    font-size: 18px;
+    font-size: 1.125rem;
     color: #fff;
 
     background-color: #000;
@@ -49,12 +49,12 @@
         @media screen and (max-width: 1023px) {
             position: fixed;
             z-index: 800;
-            top: 60px;
+            top: 5.937rem;
             left: 0;
             right: 0;
 
             flex-direction: column;
-            background-color: #ddd;
+            background-color: #000;
         }
 
         @media screen and (min-width: 1024px) {
@@ -65,26 +65,34 @@
             padding: 8px 24px;
             margin: 8px 0;
             color: #fff;
+            font-size: 1.125rem;
+            @media screen and (max-width: 1023px) {
+                font-size: 1.5rem;
+            }
 
             &:hover {
-                color: #0098d4;
+                color: #0082f3;
             }
 
             &.current {
                 color: #0082f3;
             }
 
-            // regular / primary distinction only exists in the desktop view
-            @media screen and (min-width: 1024px) {
-                &.primary {
-                    border-radius: 60px;
-                    background-color: #fff;
-                    color: #000 !important;
+            &.primary {
+                border-radius: 60px;
+                background-color: #fff;
+                color: #000 !important;
 
-                    padding-left: 2em;
-                    padding-right: 2em;
-                    margin-left: 12px;
+                padding-left: 2em;
+                padding-right: 2em;
+                margin-left: .5rem;
+                margin-right: .5rem;
 
+                @media screen and (max-width: 1023px) {
+                    text-align: center;
+                }
+
+                @media screen and (min-width: 1024px) {
                     &:not(:last-child) {
                         margin-right: 12px;
                     }
@@ -92,8 +100,44 @@
             }
         }
 
+        @media screen and (min-width: 1024px) {
+            .mobile {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1023px) {
+            .desktop {
+                display: none;
+            }
+        }
+
         label {
             cursor: pointer;
+        }
+
+        details {
+            font-size: 1.5rem;
+            padding: 8px 24px;
+
+            summary{
+                display: flex;
+                justify-content: space-between;
+                margin: .5rem 0;
+
+                .arrow {
+                    background-image: url("/assets/down-arrow.svg");
+                    width: .8rem;
+                    height: .8rem;
+                    margin: auto 0;
+                    filter: invert(1);
+                }
+            }
+        }
+
+        details[open] summary .arrow {
+            background-image: url("/assets/up-arrow.svg");
+            filter: invert(1);
         }
     }
 
@@ -129,6 +173,12 @@
     @media screen and (max-width: 1023px) {
         .section-submenu {
             padding-left: 1em;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                font-size: 1.125rem;
+            }
         }
     }
 }
@@ -138,13 +188,13 @@
 
     @media screen and (max-width: 1023px) {
         &:checked~.dropdown-button {
-            background-color: #ddd;
+            background-color: #000;
         }
 
         &:checked~.page-overlay {
             position: fixed;
             z-index: 400;
-            top: 61px;
+            top: 5.937rem;
             right: 0;
             bottom: 0;
             left: 0;
