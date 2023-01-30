@@ -114,6 +114,30 @@
         label {
             cursor: pointer;
         }
+
+        details {
+            font-size: 1.5rem;
+            padding: 8px 24px;
+
+            summary{
+                display: flex;
+                justify-content: space-between;
+                margin: .5rem 0;
+
+                .arrow {
+                    background-image: url("/assets/down-arrow.svg");
+                    width: .8rem;
+                    height: .8rem;
+                    margin: auto 0;
+                    filter: invert(1);
+                }
+            }
+        }
+
+        details[open] summary .arrow {
+            background-image: url("/assets/up-arrow.svg");
+            filter: invert(1);
+        }
     }
 
     @media screen and (min-width: 1024px) {
