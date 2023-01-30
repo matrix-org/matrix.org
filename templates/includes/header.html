@@ -31,14 +31,16 @@
             <a href="{{ href }}" class="section {{ util::current_class(if_path_starts_with=href) }}">
                 {{ link.title }}
             </a>
-            <div class="section-submenu">
-                {% for page in section.pages %}
-                <a href="{{ page.path }}">{{ page.title }}</a>
-                {% endfor %}
-                {% for subsection_path in section.subsections %}
-                {% set subsection = get_section(path=subsection_path) %}
-                <a href="{{ subsection.path }}">{{ subsection.title }}</a>
-                {% endfor %}
+            <div class="section-submenu-wrap">
+                <div class="section-submenu">
+                    {% for page in section.pages %}
+                    <a href="{{ page.path }}">{{ page.title }}</a>
+                    {% endfor %}
+                    {% for subsection_path in section.subsections %}
+                    {% set subsection = get_section(path=subsection_path) %}
+                    <a href="{{ subsection.path }}">{{ subsection.title }}</a>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         {% else %}
