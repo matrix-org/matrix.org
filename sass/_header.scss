@@ -99,6 +99,18 @@
             }
         }
 
+        @media screen and (min-width: 1024px) {
+            .mobile {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1023px) {
+            .desktop {
+                display: none;
+            }
+        }
+
         label {
             cursor: pointer;
         }
