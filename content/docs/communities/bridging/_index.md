@@ -1,10 +1,10 @@
 +++
-title = "Bridging with Discord"
+title = "Bridging"
 template = "docs/community.html"
 weight = 300
 [extra]
 emoji = "🌉"
-tile = "I want to bridge my Discord community to Matrix"
+tile = "I want to bridge my community from another platform with Matrix"
 updated = "2022-11-18T09:50:00Z"
 +++
 

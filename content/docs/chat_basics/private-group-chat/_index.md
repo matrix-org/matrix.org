@@ -1,6 +1,7 @@
 +++
 title = "Private Group Chat"
 weight = 100
+template = "docs/chat_basics.html"
 [extra]
 emoji = "🧑‍🤝‍🧑"
 tile = "I want to create a private group chat"

@@ -4,7 +4,7 @@ weight = 200
 template = "docs/community.html"
 [extra]
 emoji = "👪"
-tile = "I want to use Matrix for my community or organisation"
+tile = "Create a cozy place on Matrix for your community or organisation"
 updated = "2022-11-18T09:50:00Z"
 +++
 
