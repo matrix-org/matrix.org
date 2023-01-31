@@ -18,23 +18,25 @@
         {% else %}
             {% set current = false %}
         {% endif %}
-        <input id="{{ root_section.title }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true" {% if current %}checked{% endif %}>
-        <label for="{{ root_section.title }}-submenu-checkbox" class="submenu-title">{{ root_section.title }} <div class="arrow"></div></label>
-        <ul class="section-submenu-wrap">
-            <a href="{{ root_section.path }}"><li>Overview</li></a>
-            {% for h2 in root_section.toc %}
-            <li>
-                <a href="{{ h2.permalink }}">{{ h2.title }}</a>
-                {% if h2.children %}
-                <ul>
-                {% for h3 in h2.children %}
-                    <a href="{{ h3.permalink }}"><li>{{ h3.title }}</li></a>
+        <div>
+            <input id="{{ root_section.title }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true" {% if current %}checked{% endif %}>
+            <label for="{{ root_section.title }}-submenu-checkbox" class="submenu-title">{{ root_section.title }}<div class="arrow"></div></label>
+            <ul class="section-submenu-wrap">
+                <a href="{{ root_section.path }}"><li>Overview</li></a>
+                {% for h2 in root_section.toc %}
+                <li>
+                    <a href="{{ h2.permalink }}">{{ h2.title }}</a>
+                    {% if h2.children %}
+                    <ul>
+                    {% for h3 in h2.children %}
+                        <a href="{{ h3.permalink }}"><li>{{ h3.title }}</li></a>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
                 {% endfor %}
-                </ul>
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
+            </ul>
+        </div>
         {% for subsection_path in root_section.subsections %}
         {% set subsection = get_section(path=subsection_path) %}
         {% if section.path == subsection.path %}
@@ -42,23 +44,25 @@
         {% else %}
             {% set current = false %}
         {% endif %}
-        <input id="{{ loop.index }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true" {% if current %}checked{% endif %}>
-        <label for="{{ loop.index }}-submenu-checkbox" class="submenu-title">{{ subsection.title }} <div class="arrow"></div></label>
-        <ul class="section-submenu-wrap">
-            <a href="{{ subsection.path }}"><li>Overview</li></a>
-            {% for h2 in subsection.toc %}
-            <li>
-                <a href="{{ h2.permalink }}">{{ h2.title }}</a>
-                {% if h2.children %}
-                <ul>
-                {% for h3 in h2.children %}
-                    <a href="{{ h3.permalink }}"><li>{{ h3.title }}</li></a>
+        <div>
+            <input id="{{ loop.index }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true" {% if current %}checked{% endif %}>
+            <label for="{{ loop.index }}-submenu-checkbox" class="submenu-title">{{ subsection.title }}<div class="arrow"></div></label>
+            <ul class="section-submenu-wrap">
+                <a href="{{ subsection.path }}"><li>Overview</li></a>
+                {% for h2 in subsection.toc %}
+                <li>
+                    <a href="{{ h2.permalink }}">{{ h2.title }}</a>
+                    {% if h2.children %}
+                    <ul>
+                    {% for h3 in h2.children %}
+                        <a href="{{ h3.permalink }}"><li>{{ h3.title }}</li></a>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
                 {% endfor %}
-                </ul>
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
+            </ul>
+        </div>
         {% endfor %}
     </div>
     <div class="docs-content">

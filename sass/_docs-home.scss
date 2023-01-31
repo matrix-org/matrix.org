@@ -26,30 +26,6 @@ header {
     right: 18rem;
     overflow-y: auto;
 
-    // details {
-    //     summary {
-    //         display: flex;
-    //         justify-content: space-between;
-    //         font-size: 1.2rem;
-    //         margin: .5rem 0;
-
-    //         .arrow {
-    //             background-image: url("/assets/down-arrow.svg");
-    //             width: .8rem;
-    //             height: .8rem;
-    //             margin: auto 0;
-    //         }
-
-    //         &.current {
-    //             font-weight: bold;
-    //         }
-    //     }
-    // }
-
-    // details[open] summary .arrow {
-    //     background-image: url("/assets/up-arrow.svg");
-    // }
-
     .submenu-checkbox {
         display: none;
 
