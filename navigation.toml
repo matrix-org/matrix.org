@@ -1,11 +1,11 @@
 header = [
-    { title = "About", href = "/about/" },
-    { title = "Blog", href = "/blog/" },
-    { title = "Documentation", section = "docs" },
-    { title = "Ecosystem", section = "ecosystem" },
-    { title = "Podcasts", href = "/podcasts/" },
-    { title = "Shop", href = "https://shop.matrix.org" },
-    { title = "Try Matrix", href = "/try-matrix/", primary = true },
+    { title = "About", href = "/about/", slug = "about" },
+    { title = "Blog", href = "/blog/", slug = "blog" },
+    { title = "Documentation", section = "docs", slug = "docs" },
+    { title = "Ecosystem", section = "ecosystem", slug = "ecosystem" },
+    { title = "Podcasts", href = "/podcasts/", slug = "podcasts" },
+    { title = "Shop", href = "https://shop.matrix.org", slug = "shop" },
+    { title = "Try Matrix", href = "/try-matrix/", slug = "try-matrix", primary = true },
 ]
 
 footer_internal = [
