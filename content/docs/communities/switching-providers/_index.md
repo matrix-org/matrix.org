@@ -32,12 +32,12 @@ room names with their domain name (e.g. `@username:example.com` and
 ### Rooms and accounts sovereignty
 
 When someone creates a room, they automatically have the highest Power Level for
-that room. This Power Level is usually 100, but custom setup cann allow that
+that room. This Power Level is usually 100, but custom setup can allow that
 number to be higher. The highest Power Level of a room is de-facto its owner and
 can appoint co-owners, moderators, redact messages, exclude people fom the
 conversation, and much more.
 
-This is a signficant power, but fortunately homeserver administrators can
+This is a significant power, but fortunately homeserver administrators can
 impersonate their homeserver users to get back in control of a room if the user
 was in fact malicious. Note that this doesn't mean homeserver administrators can
 read messages of the user they impersonate: the messages are End-to-End
@@ -126,5 +126,5 @@ Foundation knows](/ecosystem/hosting).
              your needs and how to install it yourself.")
 }}
 
-## Transfering ownership
+## Transferring ownership
 
