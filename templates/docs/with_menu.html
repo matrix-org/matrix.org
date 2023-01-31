@@ -74,16 +74,6 @@
             </header>
 
             {{ section.content | markdown | safe }}
-
-            <div class="docs-grid">
-            {% for subsection_path in section.subsections %}
-            {% set subsection = get_section(path=subsection_path) %}
-                <a href="{{ subsection.path }}" class="doc-section-tile">
-                    <span class="emoji">{{ subsection.extra.emoji }}</span>
-                    <h2>{{ subsection.extra.tile }}</h2>
-                </a>
-            {% endfor %}
-            </div>
         </article>
     </div>
 </div>
