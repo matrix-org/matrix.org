@@ -1,6 +1,6 @@
 +++
 title = "Community Moderation"
-template = "docs/community.html"
+template = "docs/with_menu.html"
 weight = 100
 [extra]
 emoji = "🛡️"

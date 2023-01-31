@@ -1,20 +1,28 @@
 {% extends "section.html" %}
 {% block content %}
 
-{# We always want to display the menu of the communities docs #}
-{% set communities_section = get_section(path="docs/communities/_index.md") %}
+{# We always want to display the menu of the chat basics docs #}
+{% set root_section = get_section(path="docs/chat_basics/_index.md") %}
+{% if section.path is starting_with("/docs/chat_basics") %}
+    {% set root_section = get_section(path="docs/chat_basics/_index.md") %}
+{% elif section.path is starting_with("/docs/communities") %}
+    {% set root_section = get_section(path="docs/communities/_index.md") %}
+{% elif section.path is starting_with("/docs/technical") %}
+    {% set root_section = get_section(path="docs/technical/index.md") %}
+{% endif %}
+
 <div class="docs-body">
     <div class="docs-menu">
-        {% if section.path == "/docs/communities/" %}
+        {% if section.path == root_section.path %}
             {% set current = true %}
         {% else %}
             {% set current = false %}
         {% endif %}
         <details {% if current %}open{% endif %} class="section-header-container">
-            <summary {% if current %}class="current"{% endif %}>{{ communities_section.title }} <div class="arrow"></div></summary>
+            <summary {% if current %}class="current"{% endif %}>{{ root_section.title }} <div class="arrow"></div></summary>
             <ul>
-                <li><a href="{{ communities_section.path }}">Overview</a></li>
-                {% for h2 in communities_section.toc %}
+                <li><a href="{{ root_section.path }}">Overview</a></li>
+                {% for h2 in root_section.toc %}
                 <li>
                     <a href="{{ h2.permalink }}">{{ h2.title }}</a>
                     {% if h2.children %}
@@ -28,7 +36,7 @@
                 {% endfor %}
             </ul>
         </details>
-        {% for subsection_path in communities_section.subsections %}
+        {% for subsection_path in root_section.subsections %}
         {% set subsection = get_section(path=subsection_path) %}
         {% if section.path == subsection.path %}
             {% set current = true %}
@@ -66,16 +74,6 @@
             </header>
 
             {{ section.content | markdown | safe }}
-
-            <div class="docs-grid">
-            {% for subsection_path in section.subsections %}
-            {% set subsection = get_section(path=subsection_path) %}
-                <a href="{{ subsection.path }}" class="doc-section-tile">
-                    <span class="emoji">{{ subsection.extra.emoji }}</span>
-                    <h2>{{ subsection.extra.tile }}</h2>
-                </a>
-            {% endfor %}
-            </div>
         </article>
     </div>
 </div>

@@ -1,9 +1,9 @@
 +++
-title = "Developers"
+title = "Technical docs"
 weight = 300
 [extra]
 emoji = "⚒️"
-tile = "I want to develop a client, bridge or bot"
+tile = "Learn more about the inner working of Matrix"
 last_updated = "2022-10-18T16:00:00Z"
 +++
 

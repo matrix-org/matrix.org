@@ -7,7 +7,7 @@ html {
     font-size: 100%;
 
     scroll-snap-type: y proximity;
-    scroll-padding-top: 5.937rem;
+    scroll-padding-top: 1.875rem; // obtained by fine tuning
     scroll-behavior: smooth;
 }
 
@@ -303,4 +303,51 @@ pre table {
     border: 1px solid #f54029;
     border-radius: 4px;
     padding: 0 .4rem;
+}
+
+.page_card {
+    background-color: #000;
+    border-radius: 16px;
+    background-image: url("/assets/frontpage/hero_dancing_lines.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 1rem;
+
+    max-width: 45%;
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card_content {
+        color: #fff;
+
+        h4 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            padding: 0;
+            margin: 0 0 1rem 0;
+        }
+
+        p {
+            font-size: .9rem;
+        }
+    }
+
+    .arrow {
+        background-image: url("/assets/down-arrow.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 3rem;
+        height: 3rem;
+        margin: auto auto auto .5rem;
+        transform: rotate(-90deg);
+        filter: invert(1);
+    }
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
 }
