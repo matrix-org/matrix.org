@@ -192,11 +192,11 @@
     display: none;
 
     @media screen and (max-width: 1023px) {
-        &:not(:checked) + .submenu-title-container + .section-submenu-wrap {
+        &:not(:checked) ~ .section-submenu-wrap {
             display: none;
         }
 
-        &:not(:checked) + .submenu-title-container {
+        &:not(:checked) ~ .submenu-title {
             .arrow {
                 background-image: url("/assets/down-arrow.svg");
                 width: 1rem;
@@ -206,7 +206,7 @@
             }
         }
 
-        &:checked + .submenu-title-container {
+        &:checked ~ .submenu-title {
             .arrow {
                 background-image: url("/assets/up-arrow.svg");
                 width: 1rem;
@@ -218,7 +218,7 @@
     }
 }
 
-.submenu-title-container {
+.submenu-title {
     @media screen and (max-width: 1023px) {
         display: flex;
         flex-direction: row;
