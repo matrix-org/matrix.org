@@ -11,9 +11,9 @@
         {% set href = "/" ~ link.section ~ "/" %}
         {% set section = get_section(path=link.section ~ "/_index.md") %}
         <div class="section-wrap">
-            <input id="{{ link.slug }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true">
+            <input id="{{ link.section }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true">
             <div class="submenu-title-container">
-                <label for="{{ link.slug }}-submenu-checkbox" class="submenu-title">{{ link.title }}</label>
+                <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">{{ link.title }}</label>
                 <div class="arrow"></div>
             </div>
             <div class="section-submenu-wrap">
