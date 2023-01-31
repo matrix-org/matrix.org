@@ -313,7 +313,7 @@ pre table {
     background-repeat: no-repeat;
     padding: 1rem;
 
-    width: 40%;
+    max-width: 45%;
 
     .wrapper {
         display: flex;
@@ -346,4 +346,8 @@ pre table {
         transform: rotate(-90deg);
         filter: invert(1);
     }
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
 }
