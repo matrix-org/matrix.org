@@ -10,18 +10,20 @@
         {% if link.section %}
         {% set href = "/" ~ link.section ~ "/" %}
         {% set section = get_section(path=link.section ~ "/_index.md") %}
-        <input id="menu-dropdown-checkbox-{{ link.slug }}" type="checkbox" class="menu-dropdown-checkbox" aria-hidden="true">
-        <label for="menu-dropdown-checkbox-{{ link.slug }}" class="menu-dropdown-button">{{ link.title }}</label>
-        <div class="section-submenu-wrap">
-            <div class="section-submenu">
-                {% for page in section.pages %}
-                <a href="{{ page.path }}">{{ page.title }}</a>
-                {% endfor %}
-                {% for subsection_path in section.subsections %}
-                {% set subsection = get_section(path=subsection_path) %}
-                <a href="{{ subsection.path }}">{{ subsection.title }}</a>
-                {% endfor %}
-            </div>
+        <div class="section-wrap">
+            <input id="{{ link.slug }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true">
+            <label for="{{ link.slug }}-submenu-checkbox" class="submenu-title">{{ link.title }}</label>
+                <div class="section-submenu-wrap">
+                    <div class="section-submenu">
+                        {% for page in section.pages %}
+                        <a href="{{ page.path }}">{{ page.title }}</a>
+                        {% endfor %}
+                        {% for subsection_path in section.subsections %}
+                        {% set subsection = get_section(path=subsection_path) %}
+                        <a href="{{ subsection.path }}">{{ subsection.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
         </div>
         {% else %}
         <a href="{{ link.href }}" class="{% if link.primary %}primary{% endif %}

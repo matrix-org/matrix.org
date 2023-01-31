@@ -156,6 +156,10 @@
                 font-size: 1.125rem;
             }
         }
+
+        .section-wrap {
+            margin: 8px 0;
+        }
     }
 }
 
@@ -184,24 +188,21 @@
     }
 }
 
-.menu-dropdown-checkbox {
+.submenu-checkbox {
     display: none;
 
     @media screen and (max-width: 1023px) {
-        &:checked+.section-submenu-wrap {
-            background-color: #555;
-        }
-
-        &:not(:checked)+.section-submenu-wrap {
+        &:not(:checked)+ label + .section-submenu-wrap {
             display: none;
         }
     }
 }
 
-.menu-dropdown-button {
+.submenu-title {
     @media screen and (max-width: 1023px) {
         font-size: 1.5rem;
     }
+
     margin: 8px 0;
     padding: 8px 24px;
 }
