@@ -192,17 +192,41 @@
     display: none;
 
     @media screen and (max-width: 1023px) {
-        &:not(:checked)+ label + .section-submenu-wrap {
+        &:not(:checked) + .submenu-title-container + .section-submenu-wrap {
             display: none;
+        }
+
+        &:not(:checked) + .submenu-title-container {
+            .arrow {
+                background-image: url("/assets/down-arrow.svg");
+                width: 1rem;
+                height: 1rem;
+                margin: auto 0;
+                filter: invert(1);
+            }
+        }
+
+        &:checked + .submenu-title-container {
+            .arrow {
+                background-image: url("/assets/up-arrow.svg");
+                width: 1rem;
+                height: 1rem;
+                margin: auto 0;
+                filter: invert(1);
+            }
         }
     }
 }
 
-.submenu-title {
+.submenu-title-container {
     @media screen and (max-width: 1023px) {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
         font-size: 1.5rem;
     }
 
-    margin: 8px 0;
+    margin: auto 0;
     padding: 8px 24px;
 }
