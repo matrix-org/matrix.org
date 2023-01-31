@@ -1,7 +1,7 @@
 +++
 title = "Communities"
 weight = 200
-template = "docs/community.html"
+template = "docs/with_menu.html"
 [extra]
 emoji = "👪"
 tile = "Create a cozy place on Matrix for your community or organisation"

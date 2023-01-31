@@ -1,6 +1,6 @@
 +++
 title = "Switching Providers"
-template = "docs/community.html"
+template = "docs/with_menu.html"
 weight = 150
 [extra]
 emoji = "🏡"

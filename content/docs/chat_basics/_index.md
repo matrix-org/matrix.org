@@ -1,7 +1,7 @@
 +++
 title = "Chat basics"
 weight = 100
-template = "docs/chat_basics.html"
+template = "docs/with_menu.html"
 [extra]
 emoji = "🧑"
 tile = "Learn the basics on how to chat on Matrix, for individuals"

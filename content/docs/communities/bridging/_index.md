@@ -1,6 +1,6 @@
 +++
 title = "Bridging"
-template = "docs/community.html"
+template = "docs/with_menu.html"
 weight = 300
 [extra]
 emoji = "🌉"

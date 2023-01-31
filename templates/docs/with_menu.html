@@ -2,19 +2,27 @@
 {% block content %}
 
 {# We always want to display the menu of the chat basics docs #}
-{% set basics_section = get_section(path="docs/chat_basics/_index.md") %}
+{% set root_section = get_section(path="docs/chat_basics/_index.md") %}
+{% if section.path is starting_with("/docs/chat_basics") %}
+    {% set root_section = get_section(path="docs/chat_basics/_index.md") %}
+{% elif section.path is starting_with("/docs/communities") %}
+    {% set root_section = get_section(path="docs/communities/_index.md") %}
+{% elif section.path is starting_with("/docs/technical") %}
+    {% set root_section = get_section(path="docs/technical/index.md") %}
+{% endif %}
+
 <div class="docs-body">
     <div class="docs-menu">
-        {% if section.path == "/docs/chat_basics/" %}
+        {% if section.path == root_section.path %}
             {% set current = true %}
         {% else %}
             {% set current = false %}
         {% endif %}
         <details {% if current %}open{% endif %} class="section-header-container">
-            <summary {% if current %}class="current"{% endif %}>{{ basics_section.title }} <div class="arrow"></div></summary>
+            <summary {% if current %}class="current"{% endif %}>{{ root_section.title }} <div class="arrow"></div></summary>
             <ul>
-                <li><a href="{{ basics_section.path }}">Overview</a></li>
-                {% for h2 in basics_section.toc %}
+                <li><a href="{{ root_section.path }}">Overview</a></li>
+                {% for h2 in root_section.toc %}
                 <li>
                     <a href="{{ h2.permalink }}">{{ h2.title }}</a>
                     {% if h2.children %}
@@ -28,7 +36,7 @@
                 {% endfor %}
             </ul>
         </details>
-        {% for subsection_path in basics_section.subsections %}
+        {% for subsection_path in root_section.subsections %}
         {% set subsection = get_section(path=subsection_path) %}
         {% if section.path == subsection.path %}
             {% set current = true %}

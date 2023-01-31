@@ -1,7 +1,7 @@
 +++
 title = "Public Rooms"
 weight = 200
-template = "docs/chat_basics.html"
+template = "docs/with_menu.html"
 [extra]
 emoji = "🌐"
 tile = "I want to join public conversations"
