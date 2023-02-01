@@ -15,6 +15,7 @@ export default function HTML(props) {
         {props.headComponents}
         <meta name="twitter:site" content="@matrixdotorg" />
         <meta name="twitter:creator" content="@matrixdotorg" />
+        <meta name="description" content="html.js" />
         <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="/css/webflow.css" />
         <link rel="stylesheet" type="text/css" href="/css/matrix-org.webflow.css" />
