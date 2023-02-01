@@ -96,7 +96,7 @@ const Index = ({
         <div className="mxblock mxblock--hero">
           <img src="images/matrix-logo-white.svg" alt="" className="mxblock--hero__logo" />
           <h1 className="mxblock--hero__hx delete">An open network for secure, decentralized communication</h1>
-          <a href="/docs/guides/introduction" className="mxblock__btn mxblock--hero__btn mxblock--hero__btn--mctesto w-button">Learn More</a>
+          <a href="/docs/guides/introduction" className="mxblock__btn mxblock--hero__btn mxblock--hero__btn--mctesto w-button">Know More</a>
         </div>
       </div>
     </div>
@@ -218,7 +218,7 @@ const Index = ({
                     href="/bridges/">bridges</a>.
                   </p>
                 </div>
-                <a href="/docs/guides/" className="mxgrid__item__bg__btn w-button">Learn more</a>
+                <a href="/docs/guides/" className="mxgrid__item__bg__btn w-button">Know more</a>
               </div>
             </div>
             <div className="mxgrid__item50">
@@ -243,7 +243,7 @@ const Index = ({
                     audited by NCC Group</a>.
                   </p>
                 </div>
-                <a href="/docs/guides/end-to-end-encryption-implementation-guide" className="mxgrid__item__bg__btn w-button">Learn more</a>
+                <a href="/docs/guides/end-to-end-encryption-implementation-guide" className="mxgrid__item__bg__btn w-button">Know more</a>
               </div>
             </div>
             <div className="mxgrid__item50">
@@ -261,7 +261,7 @@ const Index = ({
                     be a no-brainer.
                   </p>
                 </div>
-              <a href="/blog/2018/02/05/3-d-video-calling-with-matrix-webrtc-and-webvr-at-fosdem-2018/" className="mxgrid__item__bg__btn w-button">Learn more</a>
+              <a href="/blog/2018/02/05/3-d-video-calling-with-matrix-webrtc-and-webvr-at-fosdem-2018/" className="mxgrid__item__bg__btn w-button">Know more</a>
               </div>
             </div>
             <div className="mxgrid__item50">
@@ -281,7 +281,7 @@ const Index = ({
                     Matrix community provides bridges for Telegram, Discord, WhatsApp, Facebook, Signal and many more.
                   </p>
                 </div>
-              <a href="/bridges/" className="mxgrid__item__bg__btn w-button">Learn more</a>
+              <a href="/bridges/" className="mxgrid__item__bg__btn w-button">Know more</a>
               </div>
             </div>
             <div className="mxgrid__item100">
@@ -680,7 +680,7 @@ const Index = ({
                     <div className="mxgrid__item__bg__vert">
                       <h4>UpCloud</h4>
                       <p className="mxgrid__sponsors__item__p">Matrix.org is generously hosted by UpCloud! Host your homeserver via UpCloud and get a $25 credit.</p>
-<a href="https://upcloud.com/">Learn more</a>
+<a href="https://upcloud.com/">UpCloud</a>
 </div>
                   </div>
                 </div>
