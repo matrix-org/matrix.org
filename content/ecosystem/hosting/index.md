@@ -1,6 +1,6 @@
 +++
 title = "Hosting"
-template = "hosting.html"
+template = "ecosystem/hosting.html"
 weight = 4
 +++
 

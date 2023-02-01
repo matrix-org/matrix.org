@@ -1,6 +1,11 @@
 +++
 title = "SDKs"
 weight = 3
+template = "ecosystem/sdks.html"
+extra.summary = """
+Develop great apps, bots, and bridges. Focus on what you do best. Let the SDKs
+do all the heavy lifting.
+"""
 +++
 
 SDKs are pieces of software meant for developers, that take care of the
