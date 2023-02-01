@@ -3,9 +3,8 @@ title = "Servers"
 template = "ecosystem/servers.html"
 weight = 1
 extra.summary = """
-To participate in the Matrix ecosystem you need a Matrix account. Such accounts
-are provided by homeservers, sometimes simply called servers. This section lists
-all the server software account providers can run.
+Advanced users may want to run a homeserver by themselves for more independence
+and sovereignty. Here are the servers advanced users can run.
 """
 +++
 
