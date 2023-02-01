@@ -45,6 +45,8 @@
 
     nav {
         display: flex;
+        max-height: calc(100vh - 5.937rem);
+        overflow-y: auto;
 
         @media screen and (max-width: 1023px) {
             position: fixed;
@@ -100,44 +102,55 @@
             }
         }
 
-        @media screen and (min-width: 1024px) {
-            .mobile {
-                display: none;
-            }
-        }
+        .submenu-checkbox {
+            display: none;
 
-        @media screen and (max-width: 1023px) {
-            .desktop {
-                display: none;
-            }
-        }
+            @media screen and (max-width: 1023px) {
+                &:not(:checked) ~ .section-submenu-wrap {
+                    display: none;
+                }
 
-        label {
-            cursor: pointer;
-        }
+                &:not(:checked) ~ .submenu-title {
+                    .arrow {
+                        background-image: url("/assets/down-arrow.svg");
+                        width: 1rem;
+                        height: 1rem;
+                        margin: auto 0;
+                        filter: invert(1);
+                    }
+                }
 
-        details {
-            font-size: 1.5rem;
-            padding: 8px 24px;
-
-            summary{
-                display: flex;
-                justify-content: space-between;
-                margin: .5rem 0;
-
-                .arrow {
-                    background-image: url("/assets/down-arrow.svg");
-                    width: .8rem;
-                    height: .8rem;
-                    margin: auto 0;
-                    filter: invert(1);
+                &:checked ~ .submenu-title {
+                    .arrow {
+                        background-image: url("/assets/up-arrow.svg");
+                        width: 1rem;
+                        height: 1rem;
+                        margin: auto 0;
+                        filter: invert(1);
+                    }
                 }
             }
         }
 
-        details[open] summary .arrow {
-            background-image: url("/assets/up-arrow.svg");
-            filter: invert(1);
+        .submenu-title {
+            @media screen and (max-width: 1023px) {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+
+                font-size: 1.5rem;
+            }
+
+            label:hover {
+                color: #0082f3;
+            }
+
+            margin: auto 0;
+            padding: 8px 24px;
+        }
+
+        label {
+            cursor: pointer;
         }
     }
 
@@ -179,6 +192,10 @@
             a {
                 font-size: 1.125rem;
             }
+        }
+
+        .section-wrap {
+            margin: 8px 0;
         }
     }
 }

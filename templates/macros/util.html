@@ -2,6 +2,6 @@
 {% if current_path and current_path is starting_with(if_path_starts_with) %}current{% endif %}
 {%- endmacro current_class %}
 
-{% macro current_open(if_path_starts_with) -%}
-{% if current_path and current_path is starting_with(if_path_starts_with) %}open{% endif %}
-{%- endmacro current_open %}
+{% macro current_checked(if_path_starts_with) -%}
+{% if current_path and current_path is starting_with(if_path_starts_with) %}checked{% endif %}
+{%- endmacro current_checked %}

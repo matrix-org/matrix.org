@@ -10,27 +10,10 @@
         {% if link.section %}
         {% set href = "/" ~ link.section ~ "/" %}
         {% set section = get_section(path=link.section ~ "/_index.md") %}
-        <details {{ util::current_open(if_path_starts_with=href) }} class="section-wrap mobile">
-            <summary class="section {{ util::current_class(if_path_starts_with=href) }}">
-                {{ link.title }}
-                <div class="arrow"></div>
-            </summary>
-            <div class="section-submenu-wrap">
-                <div class="section-submenu">
-                    {% for page in section.pages %}
-                    <a href="{{ page.path }}">{{ page.title }}</a>
-                    {% endfor %}
-                    {% for subsection_path in section.subsections %}
-                    {% set subsection = get_section(path=subsection_path) %}
-                    <a href="{{ subsection.path }}">{{ subsection.title }}</a>
-                    {% endfor %}
-                </div>
-            </div>
-        </details>
-        <div class="section-wrap desktop">
-            <a href="{{ href }}" class="section {{ util::current_class(if_path_starts_with=href) }}">
-                {{ link.title }}
-            </a>
+        <div class="section-wrap">
+            <input id="{{ link.section }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true" {{ util::current_checked(if_path_starts_with="/" ~ link.section) }}>
+            <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">{{ link.title }} <div class="arrow"></div></label>
+
             <div class="section-submenu-wrap">
                 <div class="section-submenu">
                     {% for page in section.pages %}
