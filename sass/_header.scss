@@ -45,6 +45,8 @@
 
     nav {
         display: flex;
+        max-height: calc(100vh - 5.937rem);
+        overflow-y: auto;
 
         @media screen and (max-width: 1023px) {
             position: fixed;
