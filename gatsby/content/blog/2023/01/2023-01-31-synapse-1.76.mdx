@@ -8,7 +8,7 @@ author: H. Shay
 
 Greetings matrix fans! We've published Synapse [version 1.76](https://github.com/matrix-org/synapse/releases/tag/v1.76.0)
 as the new stable release this week. Synapse admins are encouraged to upgrade
-to it at their convenience. Please take a look at the [upgrade notes](https://github.com/matrix-org/synapse/blob/release-v1.76/docs/upgrade.md#faster-joins-are-enabled-by-default)
+to it at their convenience. Please take a look at the [upgrade notes](https://matrix-org.github.io/synapse/v1.76/upgrade.html#upgrading-to-v1760)
 for any important information about upgrading.
 
 ## Announcements
@@ -34,7 +34,7 @@ For everyone else, after a faster join Synapse considers that room "partially jo
 
 Synapse has to spend more effort to complete the join in the background. Once this finishes, you will be able to
 
-- send messages, if the room is in encrypted;
+- send messages, if the room is encrypted;
 - retrieve room history from before your join, if permitted by the room settings; and
 - access the full list of room members.
 
@@ -78,6 +78,8 @@ See the full [changelog](https://github.com/matrix-org/synapse/releases/tag/v1.7
 complete list of changes in the release.
 
 Synapse is a Free and Open Source Software project, and we'd like to extend our
-thanks to everyone who contributed to these releases, including: FSG-Cat and thezaidbintariq.
+thanks to everyone who contributed to these releases, including: katlol, thezaidbintariq
+dklimpel, FSG-Cat, tjay27, emgrav, villepeh.
+
 We are also grateful to anyone helping us make Synapse better by sharing their
 feedback and reporting issues, or helping with community support questions.
