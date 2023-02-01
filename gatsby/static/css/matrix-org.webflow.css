@@ -295,6 +295,7 @@ a {
 }
 
 .mxcontent__main {
+  overflow-wrap: break-word;
   width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
