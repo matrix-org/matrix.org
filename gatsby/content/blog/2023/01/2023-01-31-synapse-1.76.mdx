@@ -28,7 +28,7 @@ in their server config.
 
 For everyone else, after a faster join Synapse considers that room "partially joined". In this state, you should be able to
 
-- read incoming messages;
+- read incoming messages (on clients which support lazy-loaded members in /sync);
 - see incoming state changes, e.g. room topic changes; and
 - send messages, if the room is unencrypted.
 
