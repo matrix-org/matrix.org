@@ -45,8 +45,6 @@
 
     nav {
         display: flex;
-        max-height: calc(100vh - 5.937rem);
-        overflow-y: auto;
 
         @media screen and (max-width: 1023px) {
             position: fixed;
@@ -57,6 +55,9 @@
 
             flex-direction: column;
             background-color: #000;
+
+            max-height: calc(100vh - 5.937rem);
+            overflow-y: auto;
         }
 
         @media screen and (min-width: 1024px) {
