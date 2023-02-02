@@ -1,5 +1,9 @@
 {% extends "skel.html" %}
 {% block html_title %}Matrix.org - {{ taxonomy.name | capitalize }}{% endblock html_title %}
+{% block head_extra %}
+<link rel="stylesheet" href="/taxonomies.css" />
+<link rel="stylesheet" href="/pagination.css" />
+{% endblock head_extra %}
 {% block content %}
 <div id="taxonomy-list">
     <article class="content">

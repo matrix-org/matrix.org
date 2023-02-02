@@ -1,4 +1,8 @@
 {% extends "section.html" %}
+{% block head_extra %}
+<link rel="stylesheet" href="/blog.css" />
+<link rel="stylesheet" href="/pagination.css" />
+{% endblock head_extra %}
 {% block content -%}
 <div class="content">
     {% for page in paginator.pages %}
