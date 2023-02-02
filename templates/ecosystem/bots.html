@@ -1,15 +1,8 @@
-{% extends "page.html" %}
-{% block content %}
-<div class="page-header">
-    <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
-    </div>
-</div>
-
-<div class="bots_page">
+{% extends "ecosystem/base.html" %}
+{% block ecosystem_content %}
+<div class="content">
 
     {{ page.content | safe }}
 
 </div>
-{% endblock content %}
+{% endblock ecosystem_content %}

@@ -1,17 +1,13 @@
-{% extends "page.html" %}
+{% extends "ecosystem/base.html" %}
 {% import "macros/clients.html" as clients %}
-{% block content %}
+{% block head_extra %}
+<link rel="stylesheet" href="/clients.css" />
+{% endblock%}
+{% block ecosystem_content %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
-<div class="page-header">
-    <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
-    </div>
-</div>
-
 <div class="clients_page">
 
     {{ page.content | safe }}
 
 </div>
-{% endblock content %}
+{% endblock ecosystem_content %}

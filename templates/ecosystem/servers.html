@@ -1,12 +1,9 @@
-{% extends "page.html" %}
-{% block content %}
+{% extends "ecosystem/base.html" %}
+{% block head_extra %}
+<link rel="stylesheet" href="/servers.css" />
+{% endblock%}
+{% block ecosystem_content %}
 {% set data = load_data(path="content/ecosystem/servers/servers.toml") %}
-<div class="page-header">
-    <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
-    </div>
-</div>
 <div class="servers">
     <div class="content">
         <p>{{ page.content | safe }}</p>
@@ -37,4 +34,4 @@
         {%- endfor %}
     </div>
 </div>
-{% endblock content %}
+{% endblock ecosystem_content %}
