@@ -1,5 +1,6 @@
 +++
 title = "About Matrix"
+template = "about.html"
 aliases = ["/foundation/"]
 +++
 
