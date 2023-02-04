@@ -37,10 +37,10 @@ const Faq = ({ data }) => {
               Basics
             </h3>
             <div className="question">
-              <h4 id="what-is-matrix%3F">
+              <h4 id="what-is-matrix3F">
                 <a
                   className="permalink"
-                  href="#what-is-matrix%3F"
+                  href="#what-is-matrix3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -82,7 +82,7 @@ const Faq = ({ data }) => {
                   <p>
                     A client SDK makes it easier to develop client applications
                     using matrix. See:{" "}
-                    <a href="#how-do-i-matrix-enable-my-existing-app%3F">
+                    <a href="#how-do-i-matrix-enable-my-existing-app3F">
                       How do I Matrix-enable my existing app?
                     </a>
                   </p>
@@ -91,10 +91,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-is-matrix's-mission%3F">
+              <h4 id="what-is-matrix-mission3F">
                 <a
                   className="permalink"
-                  href="#what-is-matrix's-mission%3F"
+                  href="#what-is-matrix-mission3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -119,10 +119,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-does-this-mean-for-users%3F">
+              <h4 id="what-does-this-mean-for-users3F">
                 <a
                   className="permalink"
-                  href="#what-does-this-mean-for-users%3F"
+                  href="#what-does-this-mean-for-users3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -157,10 +157,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="why-are-you-called-matrix%3F">
+              <h4 id="why-are-you-called-matrix3F">
                 <a
                   className="permalink"
-                  href="#why-are-you-called-matrix%3F"
+                  href="#why-are-you-called-matrix3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -191,10 +191,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-does-matrix-provide%3F">
+              <h4 id="what-does-matrix-provide3F">
                 <a
                   className="permalink"
-                  href="#what-does-matrix-provide%3F"
+                  href="#what-does-matrix-provide3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -274,7 +274,7 @@ const Faq = ({ data }) => {
                   <p>
                     A client SDK makes it easier to develop client applications
                     using matrix. See:{" "}
-                    <a href="#how-do-i-matrix-enable-my-existing-app%3F">
+                    <a href="#how-do-i-matrix-enable-my-existing-app3F">
                       How do I Matrix-enable my existing app?
                     </a>
                   </p>
@@ -296,10 +296,10 @@ const Faq = ({ data }) => {
               Concept
             </h3>
             <div className="question">
-              <h4 id="why-have-you-released-this-as-open-source%3F">
+              <h4 id="why-have-you-released-this-as-open-source3F">
                 <a
                   className="permalink"
-                  href="#why-have-you-released-this-as-open-source%3F"
+                  href="#why-have-you-released-this-as-open-source3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -331,10 +331,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-do-you-mean-by-open%3F">
+              <h4 id="what-do-you-mean-by-open3F">
                 <a
                   className="permalink"
-                  href="#what-do-you-mean-by-open%3F"
+                  href="#what-do-you-mean-by-open3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -378,10 +378,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-does-federated-mean%3F">
+              <h4 id="what-does-federated-mean3F">
                 <a
                   className="permalink"
-                  href="#what-does-federated-mean%3F"
+                  href="#what-does-federated-mean3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -434,10 +434,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="how-is-this-like-e-mail%3F">
+              <h4 id="how-is-this-like-e-mail3F">
                 <a
                   className="permalink"
-                  href="#how-is-this-like-e-mail%3F"
+                  href="#how-is-this-like-e-mail3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -475,10 +475,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="why-has-no-one-done-this-before%3F">
+              <h4 id="why-has-no-one-done-this-before3F">
                 <a
                   className="permalink"
-                  href="#why-has-no-one-done-this-before%3F"
+                  href="#why-has-no-one-done-this-before3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -553,10 +553,10 @@ const Faq = ({ data }) => {
               Practical
             </h3>
             <div className="question">
-              <h4 id="what-can-i-actually-do-with-this%3F">
+              <h4 id="what-can-i-actually-do-with-this3F">
                 <a
                   className="permalink"
-                  href="#what-can-i-actually-do-with-this%3F"
+                  href="#what-can-i-actually-do-with-this3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -601,10 +601,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="how-can-i-get-involved%3F">
+              <h4 id="how-can-i-get-involved3F">
                 <a
                   className="permalink"
-                  href="#how-can-i-get-involved%3F"
+                  href="#how-can-i-get-involved3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -613,7 +613,7 @@ const Faq = ({ data }) => {
               </h4>
               <p>
                 There are plenty of ways to get involved. First,{" "}
-                <a href="#how-do-i-get-an-account-and-get-started%3F">
+                <a href="#how-do-i-get-an-account-and-get-started3F">
                   create a user account
                 </a>{" "}
                 and come say hi on{" "}
@@ -708,10 +708,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="where-can-i-get-support%3F">
+              <h4 id="where-can-i-get-support3F">
                 <a
                   className="permalink"
-                  href="#where-can-i-get-support%3F"
+                  href="#where-can-i-get-support3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -769,10 +769,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="how-do-i-create-a-link-to-a-matrix-room-or-user%3F">
+              <h4 id="how-do-i-create-a-link-to-a-matrix-room-or-user3F">
                 <a
                   className="permalink"
-                  href="#how-do-i-create-a-link-to-a-matrix-room-or-user%3F"
+                  href="#how-do-i-create-a-link-to-a-matrix-room-or-user3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -804,10 +804,10 @@ const Faq = ({ data }) => {
               As a user
             </h3>
             <div className="question">
-              <h4 id="what-clients-are-available%3F">
+              <h4 id="what-clients-are-available3F">
                 <a
                   className="permalink"
-                  href="#what-clients-are-available%3F"
+                  href="#what-clients-are-available3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -881,10 +881,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-bridges-to-other-networks-are-available%3F">
+              <h4 id="what-bridges-to-other-networks-are-available3F">
                 <a
                   className="permalink"
-                  href="#what-bridges-to-other-networks-are-available%3F"
+                  href="#what-bridges-to-other-networks-are-available3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -965,10 +965,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="how-do-i-get-an-account-and-get-started%3F">
+              <h4 id="how-do-i-get-an-account-and-get-started3F">
                 <a
                   className="permalink"
-                  href="#how-do-i-get-an-account-and-get-started%3F"
+                  href="#how-do-i-get-an-account-and-get-started3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1005,10 +1005,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="where-can-i-find-a-mobile-app%3F">
+              <h4 id="where-can-i-find-a-mobile-app3F">
                 <a
                   className="permalink"
-                  href="#where-can-i-find-a-mobile-app%3F"
+                  href="#where-can-i-find-a-mobile-app3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1059,10 +1059,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="i-installed-element-via-f-droid%2C-why-is-it-draining-my-battery%3F">
+              <h4 id="i-installed-element-via-f-droid2C-why-is-it-draining-my-battery3F">
                 <a
                   className="permalink"
-                  href="#i-installed-element-via-f-droid%2C-why-is-it-draining-my-battery%3F"
+                  href="#i-installed-element-via-f-droid2C-why-is-it-draining-my-battery3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1102,10 +1102,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="where-can-i-find-a-web-app%3F">
+              <h4 id="where-can-i-find-a-web-app3F">
                 <a
                   className="permalink"
-                  href="#where-can-i-find-a-web-app%3F"
+                  href="#where-can-i-find-a-web-app3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1114,7 +1114,7 @@ const Faq = ({ data }) => {
               </h4>
               <p>
                 See also:{" "}
-                <a href="#what-clients-are-available%3F">
+                <a href="#what-clients-are-available3F">
                   What clients are available?
                 </a>
               </p>
@@ -1156,10 +1156,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="where-can-i-find-a-desktop-client%3F">
+              <h4 id="where-can-i-find-a-desktop-client3F">
                 <a
                   className="permalink"
-                  href="#where-can-i-find-a-desktop-client%3F"
+                  href="#where-can-i-find-a-desktop-client3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1168,7 +1168,7 @@ const Faq = ({ data }) => {
               </h4>
               <p>
                 See also:{" "}
-                <a href="#what-clients-are-available%3F">
+                <a href="#what-clients-are-available3F">
                   What clients are available?
                 </a>
               </p>
@@ -1219,10 +1219,10 @@ const Faq = ({ data }) => {
               Tech
             </h3>
             <div className="question">
-              <h4 id="how-do-i-matrix-enable-my-existing-app%3F">
+              <h4 id="how-do-i-matrix-enable-my-existing-app3F">
                 <a
                   className="permalink"
-                  href="#how-do-i-matrix-enable-my-existing-app%3F"
+                  href="#how-do-i-matrix-enable-my-existing-app3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1301,7 +1301,7 @@ const Faq = ({ data }) => {
                   <p>
                     A client SDK makes it easier to develop client applications
                     using matrix. See:{" "}
-                    <a href="#how-do-i-matrix-enable-my-existing-app%3F">
+                    <a href="#how-do-i-matrix-enable-my-existing-app3F">
                       How do I Matrix-enable my existing app?
                     </a>
                   </p>
@@ -1310,10 +1310,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="how-can-i-write-a-client-on-matrix%3F">
+              <h4 id="how-can-i-write-a-client-on-matrix3F">
                 <a
                   className="permalink"
-                  href="#how-can-i-write-a-client-on-matrix%3F"
+                  href="#how-can-i-write-a-client-on-matrix3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1342,10 +1342,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="how-do-i-register-custom-matrix-event-types%3F">
+              <h4 id="how-do-i-register-custom-matrix-event-types3F">
                 <a
                   className="permalink"
-                  href="#how-do-i-register-custom-matrix-event-types%3F"
+                  href="#how-do-i-register-custom-matrix-event-types3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1366,10 +1366,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="can-i-write-a-matrix-homeserver%3F">
+              <h4 id="can-i-write-a-matrix-homeserver3F">
                 <a
                   className="permalink"
-                  href="#can-i-write-a-matrix-homeserver%3F"
+                  href="#can-i-write-a-matrix-homeserver3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1466,10 +1466,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="why-http%3F-doesn't-http-suck%3F-why-don't-you-use-websockets%2Fcoap%2Fhttp2%2Fetc%3F">
+              <h4 id="why-http3F-doesnt-http-suck3F-why-dont-you-use-websockets2Fcoap2Fhttp22Fetc3F">
                 <a
                   className="permalink"
-                  href="#why-http%3F-doesn't-http-suck%3F-why-don't-you-use-websockets%2Fcoap%2Fhttp2%2Fetc%3F"
+                  href="#why-http3F-doesnt-http-suck3F-why-dont-you-use-websockets2Fcoap2Fhttp22Fetc3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1521,10 +1521,10 @@ const Faq = ({ data }) => {
               Self-hosting
             </h3>
             <div className="question">
-              <h4 id="how-do-i-join-the-global-matrix-federation%3F">
+              <h4 id="how-do-i-join-the-global-matrix-federation3F">
                 <a
                   className="permalink"
-                  href="#how-do-i-join-the-global-matrix-federation%3F"
+                  href="#how-do-i-join-the-global-matrix-federation3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1584,10 +1584,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="how-do-i-run-my-own-homeserver%3F">
+              <h4 id="how-do-i-run-my-own-homeserver3F">
                 <a
                   className="permalink"
-                  href="#how-do-i-run-my-own-homeserver%3F"
+                  href="#how-do-i-run-my-own-homeserver3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1628,10 +1628,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-ports-do-i-have-to-open-up-to-join-the-global-matrix-federation%3F">
+              <h4 id="what-ports-do-i-have-to-open-up-to-join-the-global-matrix-federation3F">
                 <a
                   className="permalink"
-                  href="#what-ports-do-i-have-to-open-up-to-join-the-global-matrix-federation%3F"
+                  href="#what-ports-do-i-have-to-open-up-to-join-the-global-matrix-federation3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1674,10 +1674,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="how-do-i-connect-my-homeserver-to-the-public-matrix-network%3F">
+              <h4 id="how-do-i-connect-my-homeserver-to-the-public-matrix-network3F">
                 <a
                   className="permalink"
-                  href="#how-do-i-connect-my-homeserver-to-the-public-matrix-network%3F"
+                  href="#how-do-i-connect-my-homeserver-to-the-public-matrix-network3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1711,10 +1711,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="can-i-run-my-own-identity-server%3F">
+              <h4 id="can-i-run-my-own-identity-server3F">
                 <a
                   className="permalink"
-                  href="#can-i-run-my-own-identity-server%3F"
+                  href="#can-i-run-my-own-identity-server3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1723,7 +1723,7 @@ const Faq = ({ data }) => {
               </h4>
               <p>
                 See also:{" "}
-                <a href="#what-is-an-identity-server%3F">
+                <a href="#what-is-an-identity-server3F">
                   What is an identity server?
                 </a>
               </p>
@@ -1752,10 +1752,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="why-can't-i-rename-my-homeserver%3F">
+              <h4 id="why-cant-i-rename-my-homeserver3F">
                 <a
                   className="permalink"
-                  href="#why-can't-i-rename-my-homeserver%3F"
+                  href="#why-cant-i-rename-my-homeserver3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1811,10 +1811,10 @@ const Faq = ({ data }) => {
               Position in the World
             </h3>
             <div className="question">
-              <h4 id="why-do-you-think-existing-apps-will-ever-join-this-officially%3F">
+              <h4 id="why-do-you-think-existing-apps-will-ever-join-this-officially3F">
                 <a
                   className="permalink"
-                  href="#why-do-you-think-existing-apps-will-ever-join-this-officially%3F"
+                  href="#why-do-you-think-existing-apps-will-ever-join-this-officially3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1846,10 +1846,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="why-aren't-you-doing-this-through-the-ietf%3F-or-w3c%3F-or-3gpp%3F">
+              <h4 id="why-arent-you-doing-this-through-the-ietf3F-or-w3c3F-or-3gpp3F">
                 <a
                   className="permalink"
-                  href="#why-aren't-you-doing-this-through-the-ietf%3F-or-w3c%3F-or-3gpp%3F"
+                  href="#why-arent-you-doing-this-through-the-ietf3F-or-w3c3F-or-3gpp3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1872,10 +1872,10 @@ const Faq = ({ data }) => {
               {getSection("position-in-the-world").node.body}
             </MDXRenderer>
             <div className="question">
-              <h4 id="why-apache-licence%3F">
+              <h4 id="why-apache-licence3F">
                 <a
                   className="permalink"
-                  href="#why-apache-licence%3F"
+                  href="#why-apache-licence3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1884,7 +1884,7 @@ const Faq = ({ data }) => {
               </h4>
               <p>
                 See also:{" "}
-                <a href="#what-do-you-mean-by-open%3F">
+                <a href="#what-do-you-mean-by-open3F">
                   What do you mean by open?
                 </a>
               </p>
@@ -1906,10 +1906,10 @@ const Faq = ({ data }) => {
               Comparisons
             </h3>
             <div className="question">
-              <h4 id="what-is-the-difference-between-matrix-and-irc%3F">
+              <h4 id="what-is-the-difference-between-matrix-and-irc3F">
                 <a
                   className="permalink"
-                  href="#what-is-the-difference-between-matrix-and-irc%3F"
+                  href="#what-is-the-difference-between-matrix-and-irc3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -1987,10 +1987,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-is-the-difference-between-matrix-and-xmpp%3F">
+              <h4 id="what-is-the-difference-between-matrix-and-xmpp3F">
                 <a
                   className="permalink"
-                  href="#what-is-the-difference-between-matrix-and-xmpp%3F"
+                  href="#what-is-the-difference-between-matrix-and-xmpp3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2060,10 +2060,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="how-does-matrix-compare-with-something-like-trillian-or-pidgin%3F">
+              <h4 id="how-does-matrix-compare-with-something-like-trillian-or-pidgin3F">
                 <a
                   className="permalink"
-                  href="#how-does-matrix-compare-with-something-like-trillian-or-pidgin%3F"
+                  href="#how-does-matrix-compare-with-something-like-trillian-or-pidgin3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2099,10 +2099,10 @@ const Faq = ({ data }) => {
               More Detail
             </h3>
             <div className="question">
-              <h4 id="what-is-a-client%3F">
+              <h4 id="what-is-a-client3F">
                 <a
                   className="permalink"
-                  href="#what-is-a-client%3F"
+                  href="#what-is-a-client3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2121,10 +2121,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="can-i-use-matrix-without-installing-a-matrix-client%3F">
+              <h4 id="can-i-use-matrix-without-installing-a-matrix-client3F">
                 <a
                   className="permalink"
-                  href="#can-i-use-matrix-without-installing-a-matrix-client%3F"
+                  href="#can-i-use-matrix-without-installing-a-matrix-client3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2153,10 +2153,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-is-a-homeserver%3F">
+              <h4 id="what-is-a-homeserver3F">
                 <a
                   className="permalink"
-                  href="#what-is-a-homeserver%3F"
+                  href="#what-is-a-homeserver3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2187,10 +2187,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-is-a-mxid%3F">
+              <h4 id="what-is-a-mxid3F">
                 <a
                   className="permalink"
-                  href="#what-is-a-mxid%3F"
+                  href="#what-is-a-mxid3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2220,10 +2220,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-is-a-3pid%3F">
+              <h4 id="what-is-a-3pid3F">
                 <a
                   className="permalink"
-                  href="#what-is-a-3pid%3F"
+                  href="#what-is-a-3pid3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2240,10 +2240,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-is-an-identity-server%3F">
+              <h4 id="what-is-an-identity-server3F">
                 <a
                   className="permalink"
-                  href="#what-is-an-identity-server%3F"
+                  href="#what-is-an-identity-server3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2303,10 +2303,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="where-do-my-conversations-get-stored%3F">
+              <h4 id="where-do-my-conversations-get-stored3F">
                 <a
                   className="permalink"
-                  href="#where-do-my-conversations-get-stored%3F"
+                  href="#where-do-my-conversations-get-stored3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2360,10 +2360,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-are-redactions%3F">
+              <h4 id="what-are-redactions3F">
                 <a
                   className="permalink"
-                  href="#what-are-redactions%3F"
+                  href="#what-are-redactions3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2384,10 +2384,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="can-i-log-into-other-homeservers-with-my-username-and-password%3F">
+              <h4 id="can-i-log-into-other-homeservers-with-my-username-and-password3F">
                 <a
                   className="permalink"
-                  href="#can-i-log-into-other-homeservers-with-my-username-and-password%3F"
+                  href="#can-i-log-into-other-homeservers-with-my-username-and-password3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2404,10 +2404,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-are-communities%3F">
+              <h4 id="what-are-communities3F">
                 <a
                   className="permalink"
-                  href="#what-are-communities%3F"
+                  href="#what-are-communities3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2475,10 +2475,10 @@ const Faq = ({ data }) => {
               Architecture
             </h3>
             <div className="question">
-              <h4 id="how-does-matrix-actually-work-architecturally%3F">
+              <h4 id="how-does-matrix-actually-work-architecturally3F">
                 <a
                   className="permalink"
-                  href="#how-does-matrix-actually-work-architecturally%3F"
+                  href="#how-does-matrix-actually-work-architecturally3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2497,10 +2497,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-is-a-room%3F">
+              <h4 id="what-is-a-room3F">
                 <a
                   className="permalink"
-                  href="#what-is-a-room%3F"
+                  href="#what-is-a-room3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2544,10 +2544,10 @@ const Faq = ({ data }) => {
               The Spec
             </h3>
             <div className="question">
-              <h4 id="what-is-the-spec%3F">
+              <h4 id="what-is-the-spec3F">
                 <a
                   className="permalink"
-                  href="#what-is-the-spec%3F"
+                  href="#what-is-the-spec3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2600,10 +2600,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="where-is-the-spec%3F">
+              <h4 id="where-is-the-spec3F">
                 <a
                   className="permalink"
-                  href="#where-is-the-spec%3F"
+                  href="#where-is-the-spec3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2619,10 +2619,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="how-can-i-contribute-to-the-spec%3F">
+              <h4 id="how-can-i-contribute-to-the-spec3F">
                 <a
                   className="permalink"
-                  href="#how-can-i-contribute-to-the-spec%3F"
+                  href="#how-can-i-contribute-to-the-spec3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2652,10 +2652,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what-is-the-process-for-adding-spec-proposals%3F">
+              <h4 id="what-is-the-process-for-adding-spec-proposals3F">
                 <a
                   className="permalink"
-                  href="#what-is-the-process-for-adding-spec-proposals%3F"
+                  href="#what-is-the-process-for-adding-spec-proposals3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2702,10 +2702,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="what's-an-msc%3F">
+              <h4 id="whats-an-msc3F">
                 <a
                   className="permalink"
-                  href="#what's-an-msc%3F"
+                  href="#whats-an-msc3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2740,10 +2740,10 @@ const Faq = ({ data }) => {
               Voip
             </h3>
             <div className="question">
-              <h4 id="how-do-you-do-voip-calls-on-matrix%3F">
+              <h4 id="how-do-you-do-voip-calls-on-matrix3F">
                 <a
                   className="permalink"
-                  href="#how-do-you-do-voip-calls-on-matrix%3F"
+                  href="#how-do-you-do-voip-calls-on-matrix3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2761,10 +2761,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="are-voip-calls-encrypted%3F">
+              <h4 id="are-voip-calls-encrypted3F">
                 <a
                   className="permalink"
-                  href="#are-voip-calls-encrypted%3F"
+                  href="#are-voip-calls-encrypted3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2781,10 +2781,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="do-i-need-a-turn-server%3F">
+              <h4 id="do-i-need-a-turn-server3F">
                 <a
                   className="permalink"
-                  href="#do-i-need-a-turn-server%3F"
+                  href="#do-i-need-a-turn-server3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2818,10 +2818,10 @@ const Faq = ({ data }) => {
               Synapse
             </h3>
             <div className="question">
-              <h4 id="what-is-synapse%3F">
+              <h4 id="what-is-synapse3F">
                 <a
                   className="permalink"
-                  href="#what-is-synapse%3F"
+                  href="#what-is-synapse3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2854,10 +2854,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="how-do-i-install-synapse%3F">
+              <h4 id="how-do-i-install-synapse3F">
                 <a
                   className="permalink"
-                  href="#how-do-i-install-synapse%3F"
+                  href="#how-do-i-install-synapse3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2877,10 +2877,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="why-is-synapse-in-python%2Ftwisted%3F">
+              <h4 id="why-is-synapse-in-python2Ftwisted3F">
                 <a
                   className="permalink"
-                  href="#why-is-synapse-in-python%2Ftwisted%3F"
+                  href="#why-is-synapse-in-python2Ftwisted3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2917,10 +2917,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="why-aren't-you-using-an-orm-layer-like-sqlalchemy-in-synapse%3F">
+              <h4 id="why-arent-you-using-an-orm-layer-like-sqlalchemy-in-synapse3F">
                 <a
                   className="permalink"
-                  href="#why-aren't-you-using-an-orm-layer-like-sqlalchemy-in-synapse%3F"
+                  href="#why-arent-you-using-an-orm-layer-like-sqlalchemy-in-synapse3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2937,10 +2937,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="will-synapse-share-my-chat-data-with-other-servers-in-the-federation%3F">
+              <h4 id="will-synapse-share-my-chat-data-with-other-servers-in-the-federation3F">
                 <a
                   className="permalink"
-                  href="#will-synapse-share-my-chat-data-with-other-servers-in-the-federation%3F"
+                  href="#will-synapse-share-my-chat-data-with-other-servers-in-the-federation3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -2972,10 +2972,10 @@ const Faq = ({ data }) => {
               </div>
             </div>
             <div className="question">
-              <h4 id="why-is-the-state_groups_state-table-so-large%3F-what-is-it-storing%3F">
+              <h4 id="why-is-the-state_groups_state-table-so-large3F-what-is-it-storing3F">
                 <a
                   className="permalink"
-                  href="#why-is-the-state_groups_state-table-so-large%3F-what-is-it-storing%3F"
+                  href="#why-is-the-state_groups_state-table-so-large3F-what-is-it-storing3F"
                   aria-hidden="true"
                 >
                   &#128279;
@@ -3150,7 +3150,7 @@ const Faq = ({ data }) => {
                   <td>
                     A client SDK makes it easier to develop client applications
                     using matrix. See:{" "}
-                    <a href="#how-do-i-matrix-enable-my-existing-app%3F">
+                    <a href="#how-do-i-matrix-enable-my-existing-app3F">
                       How do I Matrix-enable my existing app?
                     </a>
                   </td>
