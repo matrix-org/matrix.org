@@ -1,3 +1,4 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/matrix-org/matrix.org)
 # Matrix.org Website
 
 To discuss maintenance of this site, please come talk to the team in [#matrix.org-website:matrix.org](https://matrix.to/#/#matrix.org-website:matrix.org).
