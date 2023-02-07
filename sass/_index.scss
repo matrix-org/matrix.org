@@ -1,5 +1,12 @@
 #frontpage {
 
+    .call-to-action {
+        font-size: 1.125rem;
+        font-weight: 600;
+        border-radius: 1000px;
+        padding: .4em 2em;
+    }
+
     #hero {
         height: calc(100vh - 5.937rem);
         background-color: #000;
@@ -103,6 +110,7 @@
         @media (max-width: 767px) {
             background-image: url("/assets/frontpage/personal-bg-mobile.svg");
             background-size: 100% 241px;
+            padding: 2rem 1rem 175px 1rem;
         }
         background-repeat: no-repeat;
         background-position-y: bottom -20px;
@@ -112,22 +120,41 @@
 
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
         @media (max-width: 767px) {
             flex-direction: column;
+            gap: 2rem;
         }
-        justify-content: space-around;
 
         padding-bottom: 175px;
 
-        h2 {
-            color: #000;
-            font-weight: 700;
-            margin: auto 0 auto 5rem;
-            @media (max-width: 767px) {
-                font-size: 2.125rem;
-                margin: 0 50px 50px 50px;
+        .col {
+            display: flex;
+            flex-direction: column;
+            max-height: 418px;
+            justify-content: center;
+            max-width: 27.9rem;
+
+            h2 {
+                display: inline;
+                color: #000;
+                font-size: 2.5rem;
+                font-weight: 700;
+                @media (max-width: 767px) {
+                    font-size: 2.125rem;
+                    margin-bottom: 2rem;
+                }
             }
-            max-width: 28rem;
+
+            .call-to-action {
+                background-color: #000;
+                color: #fff;
+                margin-left: 10%;
+                @media (max-width: 767px) {
+                    margin-left: auto;
+                }
+                margin-right: auto;
+            }
         }
 
         img {
@@ -210,22 +237,45 @@
     #complex_apps {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 100%;
-        padding: 160px 128px;
+        padding: 160px 0;
 
         @media (max-width: 767px) {
             flex-direction: column;
             padding: 116px 30px;
         }
 
-        h2 {
-            color: #000;
-            font-weight: 700;
-            margin: auto 0;
-            max-width: 450px;
+        .col {
+            display: flex;
+            flex-direction: column;
+            max-height: 418px;
+            justify-content: center;
+            max-width: 27.9rem;
             @media (max-width: 767px) {
-                padding: 0 40px;
+                max-width: none;
+            }
+
+            h2 {
+                display: inline;
+                color: #000;
+                font-size: 2.5rem;
+                font-weight: 700;
+                @media (max-width: 767px) {
+                    font-size: 2.125rem;
+                    margin: 0 auto 2rem auto;
+                }
+                margin: 0 2rem 2rem 2rem;
+            }
+
+            .call-to-action {
+                background-color: #000;
+                color: #fff;
+                margin-left: 20%;
+                @media (max-width: 767px) {
+                    margin-left: auto;
+                }
+                margin-right: auto;
             }
         }
 
@@ -235,6 +285,7 @@
             @media (max-width: 767px) {
                 margin-top: 50px;
             }
+            margin: 2rem;
         }
     }
 
