@@ -1,11 +1,20 @@
 +++
 title = "Technical docs"
 weight = 300
+template = "docs/with_menu.html"
 [extra]
 emoji = "⚒️"
 tile = "Learn more about the inner working of Matrix"
-last_updated = "2022-10-18T16:00:00Z"
+updated = "2023-02-08T08:00:00Z"
 +++
+
+Matrix works like email, but for instant messaging. People need to use a client
+to be able to write and receive messages, and they need providers to provide
+them an account on their homeserver.
+
+![Schema of clients connected to homeservers. The servers are federated toghether](./federation.svg)
+
+Let's explore what those are.
 
 ## Elements of Matrix
 
@@ -20,33 +29,9 @@ is the (vanity) domain of the homeserver. A typical identifier would be
 @username:example.com
 ```
 
-Users on a server can send *events* into *rooms*. An event is a particular json
-object, describing what a user is trying to do (join a room, send a message,
-update a specific value…). In the case of instant messaging, rooms are very
-similar to Slack, Discord or IRC channels. Most of the events in such rooms are
-messages. Rooms have a unique technical identifier, and zero or more
-human-readable aliases. Aliases are made of a room name, and a server part, and
-are sometimes referred to as "addresses". A typical room alias would be:
+The Matrix ID of the users on the schema above look like below.
 
-```
-#mountain-bike:example.com
-```
-
-Homeservers are federated: the Matrix specification defines a [Sever-Server API](https://spec.matrix.org/latest/server-server-api/)
-(also known as Federation API) to describe interactions between servers.
-Whenever a user is in a room, their homeserver needs to have a local copy of
-that room.
-
-For example, if `@alice:outdoors.com` is the first user from `outdoors.com` to
-try to join `#mountain-bike:example.com`, then her homeserver is going to reach
-out to `example.com` to get a copy of the room. `outdoors.com` and `example.com`
-then stay in touch to synchronise their copy of the room.
-
-Whenever the homeserver receives new events, it's in charge of parsing them,
-perform checks on the event, and take action accordingly (e.g. sending messages
-from users on the homeserver to other participating homeservers, or distributing
-messages from other participating homeservers to users). The expected behaviour
-of homeservers is described fully in the [Matrix Specification](https://spec.matrix.org).
+![Schema of clients connected to federated homeservers. All users have a Matrix ID](./matrix_ids.svg)
 
 You can find a list of existing homeserver implementations in the
 [Ecosystem > Servers](/ecosystem/servers) section of this website. Most of them
@@ -122,7 +107,7 @@ want to rely on an existing SDK, in which case you check the existing ones in
 [Ecosystem > SDKs](/ecosystem/sdks) and have a look at the
 [Application Service section of the specification](https://spec.matrix.org/latest/application-service-api/).
 
-### The Spec defining interactions between all those
+## The Specification
 
 We have been mentioning the [Matrix Specification](https://spec.matrix.org)
 several times already. The Matrix Specification is a document describing
