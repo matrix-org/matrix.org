@@ -11,6 +11,47 @@ image: https://matrix.org/blog/img/rAgBabTmwQhtxzRrtuIrOFvR.jpg
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eUPJ9zFV5IE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Dept of Spec 📜
+
+[Andrew Morgan (anoa)](https://matrix.to/#/@andrewm:element.io) says
+
+> ## MSC Status
+>
+> **New MSCs:**
+>
+> - [MSC3964: Notifications for room tags](https://github.com/matrix-org/matrix-spec-proposals/pull/3964)
+>
+> **MSCs in Final Comment Period:**
+>
+> - _No MSCs are in FCP._
+>
+> **Accepted MSCs:**
+>
+> - [MSC3862: event\_match (almost) anything](https://github.com/matrix-org/matrix-spec-proposals/pull/3862)
+> - [MSC1767: Extensible event types & fallback in Matrix (v2)](https://github.com/matrix-org/matrix-spec-proposals/pull/1767)
+>
+> **Merged MSCs:**
+>
+> - [MSC3943: Partial joins to nameless rooms should include heroes' memberships](https://github.com/matrix-org/matrix-spec-proposals/pull/3943)
+> - [MSC3783: Fixed base64 for SAS verification](https://github.com/matrix-org/matrix-spec-proposals/pull/3783)
+>
+> ## Spec Updates
+>
+> In keeping with our (roughly) quarterly release schedule of the Matrix Spec, v1.6 is due to be released on February 14th. That's only four days from now! The headline features are a new Jump-to-Date Client-Server API ([MSC3030](https://github.com/matrix-org/matrix-spec-proposals/pull/3030)) and initial work on speeding up room joins ([MSC3706](https://github.com/matrix-org/matrix-spec-proposals/pull/3706)), along with many other fixes and clarifications to the spec text itself.
+>
+> If you haven't yet seen it, [Matthew's Matrix 2.0 talk](https://www.youtube.com/watch?v=eUPJ9zFV5IE) at FOSDEM walks through some of the upcoming features in the spec. Each will land in subsequent, future releases of the spec. Once all have landed, we'll call that Matrix 2.0 (in name and in actual version number).
+>
+> Extensible events is one such upcoming feature. While the core proposal outlining the feature ([MSC1767](https://github.com/matrix-org/matrix-spec-proposals/pull/1767)) will land in v1.6, the smattering of MSCs which describe how various event types will work under extensible events will span multiple upcoming spec versions. Watch this space!
+>
+> ## Random MSC of the Week
+>
+> The random MSC of the week is... [MSC2974: Widgets: Capabilities re-exchange](https://github.com/matrix-org/matrix-spec-proposals/pull/2974)!
+>
+> This MSC is relatively simple; proposing a method for widgets to ask the client for additional capabilities after it has already been initialised. Doing so allows for increased security and privacy workflows, as the widget need only ask for access to certain pieces of data at the point that it needs it (rather than all up front).
+>
+> A similar transition of permission granting happened in mobile devices and apps. Initially mobile apps would ask for all permissions they would need up front - which users would blindly accept. These days, mobile OS's have shifted to a model where individual permissions are requested upon attempting to complete an action in an app. This way, users have better context on the reason for the permissions request. (Oddly, browsers have yet to reach this stage with extensions - those still ask for all permissions up front.)
+> 
+> Do check out the proposal and its technical details if widgets are your thing!
 
 ## Dept of *Status of Matrix* 🌡️
 
