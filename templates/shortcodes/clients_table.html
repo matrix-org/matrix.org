@@ -1,6 +1,25 @@
 {% import "macros/clients.html" as clients %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
 
+<div class="filters">
+    <div class="filter">
+        <span class="title">Platform</span>
+        <img src="/assets/down-arrow.svg" />
+    </div>
+    <div class="filter">
+        <span class="title">Maturity</span>
+        <img src="/assets/down-arrow.svg" />
+    </div>
+    <div class="filter">
+        <span class="title">Licence</span>
+        <img src="/assets/down-arrow.svg" />
+    </div>
+    <div class="filter">
+        <span class="title">Features</span>
+        <img src="/assets/down-arrow.svg" />
+    </div>
+</div>
+
 <div class="clients-table">
     <strong>Name</strong>
     <strong>Maintainer</strong>

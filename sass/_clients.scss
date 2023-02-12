@@ -103,6 +103,37 @@ section {
     background-color: #2b8cc9;
 }*/
 
+.filters {
+    display: flex;
+    flex-direction: row;
+    max-width: 40rem;
+    margin: 0 auto 2rem auto;
+    justify-content: center;
+    gap: 1rem;
+
+    .filter {
+        display: flex;
+        flex-direction: row;
+
+        padding: .2rem 1rem;
+
+        background-color: #fafafa;
+        color: #000;
+        border: 1px solid #d2d2d2;
+        border-radius: 1000px;
+
+        .title {
+            padding-right: .8rem;
+            border-right: 1px solid #d2d2d2;
+        }
+
+        img {
+            height: .9em;
+            margin: auto 0 auto .8rem;
+        }
+    }
+}
+
 .clients-table {
     display: grid;
     grid-template-columns: repeat(2, min-content) 15em repeat(12, min-content);
