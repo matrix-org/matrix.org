@@ -982,11 +982,7 @@ const Faq = ({ data }) => {
               <p>
                 Clients can access any <a href="#definitions">homeserver</a>—you
                 don't have to use matrix.org, though historically it is the
-                largest public homeserver. anchel.nl lists{" "}
-                <a href="https://www.anchel.nl/matrix-publiclist/">
-                  free public homeservers
-                </a>
-                , and a few other resources for getting started.
+                largest public homeserver.
               </p>
               <div className="definition-list">
                 <div className="definition-item definition-homeserver">
