@@ -17,18 +17,17 @@ to it at their convenience.
 Mentioning other users on Matrix is difficult: it is not possible to know if mentioning a user
 by display name or Matrix ID will count as a mention, but is also too easy to mistakenly mention a user.
 
-[MSC3952](https://github.com/matrix-org/matrix-spec-proposals/pull/3952) is a way to solve that trouble
-by making the mentioning explicit in the protocol using a dedicated event property,
+[MSC3952](https://github.com/matrix-org/matrix-spec-proposals/pull/3952) proposes a solution. Its idea is to make the mentioning explicit in the protocol using a dedicated event property,
 instead of relying on searching the body of the message as before.
 
 Synapse now implements this as an experimental feature.
 
 ### Experimental support to suppress notifications from message edits (MSC3958)
 
-Have you already been annoyed by a noisy notification that comes back, but you can't really pinpoint
-from where this is coming ?
-This is usually because currently, editing a message where you are mentioned (or including an `@room`) will trigger
-a noisy notification, which can be pretty annoying when the message is edited 10 times.
+Have you ever been annoyed by a noisy notification that keep coming back, but you can't pinpoint
+where it's coming from?
+This is usually because edits to a message where you are mentioned (or that mention `@room`) will trigger
+retrigger a noisy notification.  That can be pretty annoying when the message is edited 10 times!
 
 [MSC3958](https://github.com/matrix-org/matrix-spec-proposals/pull/3958)
 is here to solve that, and Synapse now implements it as an experimental feature.
