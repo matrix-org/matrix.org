@@ -64,7 +64,7 @@ const Footer = () => (
           <img src="/images/mastodon.svg" alt="" className="mxfooter__icon" />
         </a>
       </div>
-      <p className="mxfooter__text">© 2022 The Matrix.org Foundation C.I.C.</p>
+      <a href="/legal/copyright-notice" class="mxfooter__link">Copyright Notice</a>
     </div>
   </div>
 
