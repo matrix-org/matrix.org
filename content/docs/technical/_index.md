@@ -31,7 +31,7 @@ is the (vanity) domain of the homeserver. A typical identifier would be
 
 The Matrix ID of the users on the schema above look like below.
 
-![Schema of clients connected to federated homeservers. All users have a Matrix ID](./matrix_ids.svg)
+![Schema of clients connected to federated homeservers. All users have a Matrix ID](./federation_matrix_ids.svg)
 
 You can find a list of existing homeserver implementations in the
 [Ecosystem > Servers](/ecosystem/servers) section of this website. Most of them
@@ -95,6 +95,13 @@ able to create users and rooms automatically. A typical use case for this is
 to a third-party platform such as IRC, Discord or Slack. Users on these
 communities appear as native users on Matrix, and ideally the other way around
 on the third-party platform as well.
+
+- The users created on the Matrix side by the bridge to mimic users on the
+  third-party platform are called `ghosts`.
+- The users created on the third-party platform by the bridge to mimic Matrix
+  users are called `puppets`.
+
+![A schema of a room bridged between matrix.org and slack.com](./bridge.svg)
 
 To do so, the bridge needs to be able to create and impersonate users on Matrix,
 and to control rooms as well. In order to limit the risks of abuse, bridges can
