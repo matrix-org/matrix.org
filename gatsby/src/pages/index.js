@@ -150,9 +150,19 @@ const Index = ({
               <div className="mxgrid__item100">
                 <div className="mxgrid__item__bg">
                   <h2 className="mxblock__hx">Support Matrix</h2>
-                  <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating...</p>
-                  <p className="mxp">Support us on Patreon for great rewards including access to the supporters-only podcast, and even a voice at our weekly meetings.<br /><a href="https://www.patreon.com/matrixdotorg">Find out more at our Patreon page</a>.</p>
+                  <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating.</p>
+                  <p className="mxp">Donorbox is currently the best way to support us as individuals. Learn more on our <a href="/supporters">supporters page</a>.</p>
                   <div className="mxgrid__support">
+                    <div className="mxgrid__support__item">
+                      <div className="mxgrid__item__bg__vert">
+                        <h4>Liberapay</h4>
+                        <div className="mxgrid__item__bg__vert smaller">
+                        <a href="https://liberapay.com/matrixdotorg">
+                          <img alt="Liberapay" src="/images/fund-via-liberapay.png" />
+                        </a>
+                        </div>
+                      </div>
+                    </div>
                     <div className="mxgrid__support__item">
                       <div className="mxgrid__item__bg__vert">
                         <h4>Donorbox</h4>
@@ -164,17 +174,7 @@ const Index = ({
                       </div>
                     </div>
                     <div className="mxgrid__support__item">
-                      <div className="mxgrid__item__bg__vert">
-                        <h4>Liberapay</h4>
-                        <div className="mxgrid__item__bg__vert">
-                        <a href="https://liberapay.com/matrixdotorg">
-                          <img alt="Liberapay" src="/images/fund-via-liberapay.png" />
-                        </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mxgrid__support__item">
-                      <div className="mxgrid__item__bg__vert">
+                      <div className="mxgrid__item__bg__vert smaller">
                         <h4>Patreon</h4>
                         <div className="mxgrid__item__bg__vert">
                         <a href="https://www.patreon.com/matrixdotorg">
@@ -183,15 +183,9 @@ const Index = ({
                         </div>
                       </div>
                     </div>
-                    <div className="mxgrid__support__item">
-                      <div className="mxgrid__item__bg__vert">
+                    <div>
                         <h4>Cryptocurrency</h4>
                         <p className="mxgrid__support__item__p">You can also send us cryptocurrency:<br /><small>BTC 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE<br />ETH 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485</small><br /><small>DOT 12JDhAt3Y1NPpcLMxunH2f8DASZemC6nWPC9nkXdT3ui4zJG</small></p>
-                        <div className="mxgrid__item__bg__vert">
-                          <div className="mxgrid__item__bg__vert__embed w-embed w-script">
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating. See our current <a href="/supporters">Elliptic supporters</a>!</p>

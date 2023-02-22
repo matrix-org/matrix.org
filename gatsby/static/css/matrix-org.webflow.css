@@ -914,6 +914,10 @@ a {
   align-items: center;
 }
 
+.mxgrid__item__bg__vert.smaller {
+  max-width: 70%;
+}
+
 .mxgrid__item__bg__vert.mxgrid__item__bg__vert--develop {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
