@@ -1664,3 +1664,13 @@ a {
   }
 }
 
+a.cta {
+  border-radius: 9999px;
+  background-color: #000;
+  color: #fff;
+  padding: .5rem 2.5rem;
+}
+
+a.cta:hover {
+  background-color: #0098d4;
+}

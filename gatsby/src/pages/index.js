@@ -188,7 +188,7 @@ const Index = ({
                         <p className="mxgrid__support__item__p">You can also send us cryptocurrency:<br /><small>BTC 1LxowEgsquZ3UPZ68wHf8v2MDZw82dVmAE<br />ETH 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485</small><br /><small>DOT 12JDhAt3Y1NPpcLMxunH2f8DASZemC6nWPC9nkXdT3ui4zJG</small></p>
                     </div>
                   </div>
-                  <p className="mxp">If you share our vision, or are building on top of Matrix, please consider donating. See our current <a href="/supporters">Elliptic supporters</a>!</p>
+                  <a href="/supporters" class="cta">Donate</a>
                 </div>
               </div>
             </div>
