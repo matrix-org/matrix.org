@@ -27,6 +27,9 @@ const Legal = () => {
                 <li>
                     <a href="/legal/copyright-notice">Copyright Notice</a>
                 </li>
+                <li>
+                    <a href="/legal/law-enforcement-guidelines">Law Enforcement Guidelines</a>
+                </li>
             </ul>
         </div>
     </Layout>)
