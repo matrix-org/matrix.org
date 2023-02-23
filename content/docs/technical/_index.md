@@ -1,11 +1,23 @@
 +++
 title = "Technical docs"
 weight = 300
+template = "docs/with_menu.html"
 [extra]
 emoji = "⚒️"
 tile = "Learn more about the inner working of Matrix"
-last_updated = "2022-10-18T16:00:00Z"
+updated = "2023-02-08T08:00:00Z"
 +++
+
+Matrix works like email, but for instant messaging. People need to use a client
+to be able to write and receive messages, and they need providers to provide
+them an account on their homeserver.
+
+{{ figure(
+    img="./federation.svg",
+    caption="Schema of clients connected to homeservers. The servers are federated together")
+}}
+
+Let's explore what those are.
 
 ## Elements of Matrix
 
@@ -20,38 +32,23 @@ is the (vanity) domain of the homeserver. A typical identifier would be
 @username:example.com
 ```
 
-Users on a server can send *events* into *rooms*. An event is a particular json
-object, describing what a user is trying to do (join a room, send a message,
-update a specific value…). In the case of instant messaging, rooms are very
-similar to Slack, Discord or IRC channels. Most of the events in such rooms are
-messages. Rooms have a unique technical identifier, and zero or more
-human-readable aliases. Aliases are made of a room name, and a server part, and
-are sometimes referred to as "addresses". A typical room alias would be:
+The Matrix ID of the users on the schema above look like below.
 
-```
-#mountain-bike:example.com
-```
-
-Homeservers are federated: the Matrix specification defines a [Sever-Server API](https://spec.matrix.org/latest/server-server-api/)
-(also known as Federation API) to describe interactions between servers.
-Whenever a user is in a room, their homeserver needs to have a local copy of
-that room.
-
-For example, if `@alice:outdoors.com` is the first user from `outdoors.com` to
-try to join `#mountain-bike:example.com`, then her homeserver is going to reach
-out to `example.com` to get a copy of the room. `outdoors.com` and `example.com`
-then stay in touch to synchronise their copy of the room.
-
-Whenever the homeserver receives new events, it's in charge of parsing them,
-perform checks on the event, and take action accordingly (e.g. sending messages
-from users on the homeserver to other participating homeservers, or distributing
-messages from other participating homeservers to users). The expected behaviour
-of homeservers is described fully in the [Matrix Specification](https://spec.matrix.org).
+{{ figure(
+    img="./federation_matrix_ids.svg",
+    caption="Schema of clients connected to federated homeservers. All users have a Matrix ID")
+}}
 
 You can find a list of existing homeserver implementations in the
 [Ecosystem > Servers](/ecosystem/servers) section of this website. Most of them
 are open source, so you can explore how they work. Please also refer to their
 documentation if you want to deploy them either for testing or in production.
+
+{{ page_card(
+    path="/ecosystem/servers",
+    title="Servers",
+    summary="Discover all the homeserver implementations.")
+}}
 
 ### Client
 
@@ -71,6 +68,12 @@ leaving, redacting messages…
 To get a better idea of what clients look like in practice, you can find a list
 on [Ecosystem > Clients](/ecosystem/clients) and give them a go.
 
+{{ page_card(
+    path="/ecosystem/clients",
+    title="Clients",
+    summary="Discover all the Matrix clients.")
+}}
+
 If you're more interested in writing your own client to bring a new experience
 to users, you may want to rely on an existing SDK (see
 [Ecosystem > SDKs](/ecosystem/sdks)). Those will do significant part of the
@@ -78,6 +81,12 @@ Matrix heavy-lifting and allow you to focus on the UX you want to build.
 Finally, if you're interested in learning more about the interactions between
 clients and servers, please head to
 [the Client-Server section of the Matrix Specification](https://spec.matrix.org/latest/client-server-api/).
+
+{{ page_card(
+    path="/ecosystem/sdks",
+    title="SDKs",
+    summary="Browse SDKs to write your own client.")
+}}
 
 ### AppService (bridges and some bots)
 
@@ -111,6 +120,16 @@ to a third-party platform such as IRC, Discord or Slack. Users on these
 communities appear as native users on Matrix, and ideally the other way around
 on the third-party platform as well.
 
+- The users created on the Matrix side by the bridge to mimic users on the
+  third-party platform are called `ghosts`.
+- The users created on the third-party platform by the bridge to mimic Matrix
+  users are called `puppets`.
+
+{{ figure(
+    img="./bridge.svg",
+    caption="A schema of a room bridged between matrix.org and slack.com")
+}}
+
 To do so, the bridge needs to be able to create and impersonate users on Matrix,
 and to control rooms as well. In order to limit the risks of abuse, bridges can
 be limited to controlling a namespace.
@@ -122,7 +141,13 @@ want to rely on an existing SDK, in which case you check the existing ones in
 [Ecosystem > SDKs](/ecosystem/sdks) and have a look at the
 [Application Service section of the specification](https://spec.matrix.org/latest/application-service-api/).
 
-### The Spec defining interactions between all those
+{{ page_card(
+    path="/ecosystem/bridges",
+    title="Bridges",
+    summary="Discover the platforms you can bridge to and how.")
+}}
+
+## The Specification
 
 We have been mentioning the [Matrix Specification](https://spec.matrix.org)
 several times already. The Matrix Specification is a document describing

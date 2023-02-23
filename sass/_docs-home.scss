@@ -124,3 +124,22 @@ header {
     padding: 0 .4rem;
     background-color: rgb(242, 247, 252);
 }
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    max-width: 80%;
+    margin: 2rem auto 2.5rem auto;
+    padding: 1rem;
+
+    border: 1px solid #dedede;
+    border-radius: 4px;
+
+    figcaption {
+        font-size: .8rem;
+        text-align: center;
+    }
+}
