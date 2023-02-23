@@ -14,7 +14,7 @@ them an account on their homeserver.
 
 {{ figure(
     img="./federation.svg",
-    caption="Schema of clients connected to homeservers. The servers are federated toghether")
+    caption="Schema of clients connected to homeservers. The servers are federated together")
 }}
 
 Let's explore what those are.
