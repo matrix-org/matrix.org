@@ -125,7 +125,7 @@ header {
     background-color: rgb(242, 247, 252);
 }
 
-.figure {
+figure {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,7 +138,7 @@ header {
     border: 1px solid #dedede;
     border-radius: 4px;
 
-    p {
+    figcaption {
         font-size: .8rem;
         text-align: center;
     }
