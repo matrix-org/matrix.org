@@ -44,6 +44,12 @@ You can find a list of existing homeserver implementations in the
 are open source, so you can explore how they work. Please also refer to their
 documentation if you want to deploy them either for testing or in production.
 
+{{ page_card(
+    path="/ecosystem/servers",
+    title="Servers",
+    summary="Discover all the homeserver implementations.")
+}}
+
 ### Client
 
 Homeservers communicate between each other with the Server-Server / Federation
@@ -62,6 +68,12 @@ leaving, redacting messages…
 To get a better idea of what clients look like in practice, you can find a list
 on [Ecosystem > Clients](/ecosystem/clients) and give them a go.
 
+{{ page_card(
+    path="/ecosystem/clients",
+    title="Clients",
+    summary="Discover all the Matrix clients.")
+}}
+
 If you're more interested in writing your own client to bring a new experience
 to users, you may want to rely on an existing SDK (see
 [Ecosystem > SDKs](/ecosystem/sdks)). Those will do significant part of the
@@ -69,6 +81,12 @@ Matrix heavy-lifting and allow you to focus on the UX you want to build.
 Finally, if you're interested in learning more about the interactions between
 clients and servers, please head to
 [the Client-Server section of the Matrix Specification](https://spec.matrix.org/latest/client-server-api/).
+
+{{ page_card(
+    path="/ecosystem/sdks",
+    title="SDKs",
+    summary="Browse SDKs to write your own client.")
+}}
 
 ### AppService (bridges and some bots)
 
@@ -122,6 +140,12 @@ website. If you're interested in writing your own bridge, you will very likely
 want to rely on an existing SDK, in which case you check the existing ones in
 [Ecosystem > SDKs](/ecosystem/sdks) and have a look at the
 [Application Service section of the specification](https://spec.matrix.org/latest/application-service-api/).
+
+{{ page_card(
+    path="/ecosystem/bridges",
+    title="Bridges",
+    summary="Discover the platforms you can bridge to and how.")
+}}
 
 ## The Specification
 
