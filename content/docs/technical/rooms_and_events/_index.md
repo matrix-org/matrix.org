@@ -39,7 +39,14 @@ to as "addresses". A typical room alias would be:
 #goodfriends:example.com
 ```
 
-![Schema of events in a room](./room.svg)
+From a technical perspective, a room is a series of json objects. The schema
+below represents a room with dumbed down events. It is up to the clients to
+read, parse, and display the events properly.
+
+{{ figure(
+    img="./events.svg",
+    caption="The room #goodfriends:example.com with simplified events")
+}}
 
 ## Local copies
 
@@ -53,7 +60,10 @@ to join `#goodfriends:matrix.org`, then her homeserver is going to reach out to
 `matrix.org` to get a copy of the room. `example.com` and `matrix.org` then stay
 in touch to synchronise their copy of the room.
 
-![](./room_federated.svg)
+{{ figure(
+    img="./room_federated.svg",
+    caption="Three homeservers keeping their local copy of the room in sync")
+}}
 
 ## Administration
 

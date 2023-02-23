@@ -12,7 +12,10 @@ Matrix works like email, but for instant messaging. People need to use a client
 to be able to write and receive messages, and they need providers to provide
 them an account on their homeserver.
 
-![Schema of clients connected to homeservers. The servers are federated toghether](./federation.svg)
+{{ figure(
+    img="./federation.svg",
+    caption="Schema of clients connected to homeservers. The servers are federated toghether")
+}}
 
 Let's explore what those are.
 
@@ -31,7 +34,10 @@ is the (vanity) domain of the homeserver. A typical identifier would be
 
 The Matrix ID of the users on the schema above look like below.
 
-![Schema of clients connected to federated homeservers. All users have a Matrix ID](./federation_matrix_ids.svg)
+{{ figure(
+    img="./federation_matrix_ids.svg",
+    caption="Schema of clients connected to federated homeservers. All users have a Matrix ID")
+}}
 
 You can find a list of existing homeserver implementations in the
 [Ecosystem > Servers](/ecosystem/servers) section of this website. Most of them
@@ -101,7 +107,10 @@ on the third-party platform as well.
 - The users created on the third-party platform by the bridge to mimic Matrix
   users are called `puppets`.
 
-![A schema of a room bridged between matrix.org and slack.com](./bridge.svg)
+{{ figure(
+    img="./bridge.svg",
+    caption="A schema of a room bridged between matrix.org and slack.com")
+}}
 
 To do so, the bridge needs to be able to create and impersonate users on Matrix,
 and to control rooms as well. In order to limit the risks of abuse, bridges can
