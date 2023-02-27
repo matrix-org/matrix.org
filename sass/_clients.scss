@@ -19,7 +19,7 @@
     }
 }
 
-.featured-clients {
+.clients-card-deck {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -29,7 +29,7 @@
     margin-bottom: 5rem;
 }
 
-.featured-client-card {
+.client-card {
     display: flex;
     flex-direction: column;
     justify-content: center;

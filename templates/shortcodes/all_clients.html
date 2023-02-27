@@ -1,8 +1,8 @@
 {% import "macros/clients.html" as clients %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
+
 <div class="clients-card-deck">
     {% for name, client in clients %}
-    {% if client.featured %}
     <div class="client-card">
         <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
         <h3>{{ name }}</h3>
@@ -11,6 +11,5 @@
             {{ clients::platform_links(packages=client.packages) }}
         </div>
     </div>
-    {% endif %}
     {% endfor %}
 </div>
