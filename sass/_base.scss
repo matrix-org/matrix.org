@@ -1,26 +1,30 @@
+:root {
+    --page-max-width: 55rem;
+    --navbar-height: 5.937rem;
+
+    --color-text: #333;
+    --color-link: #0098d4;
+
+    --page-header-height: 15rem;
+
+    --borders-color: #ddd;
+}
+
 * {
     box-sizing: border-box;
 }
 
 html {
-    height: 100%;
-    font-size: 100%;
-
     scroll-snap-type: y proximity;
     scroll-padding-top: 1.875rem; // obtained by fine tuning
     scroll-behavior: smooth;
 }
 
 body {
-    font-size: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 100%;
     margin: 0;
-    min-height: 100%;
+    min-height: 100svh;
     background-color: #fff;
-    color: #333;
+    color: var(--color-text);
 
     font-family: "Helvetica Neue",
         "Helvetica",
@@ -36,29 +40,16 @@ body {
         /* Emojis*/
         "Segoe UI Symbol";
 
-    font-weight: 400;
     line-height: 1.75;
 }
 
 main {
-    padding-top: 95px;
-}
-
-img {
-    max-width: 100%;
-    vertical-align: middle;
-    display: inline-block;
-    height: auto;
+    padding-top: var(--navbar-height);
 }
 
 a {
-    color: #0098d4;
+    color: var(--color-link);
     text-decoration: none;
-
-    &:active,
-    &:hover {
-        outline: 0;
-    }
 }
 
 ul,
@@ -83,9 +74,9 @@ ol:last-child {
 
 .content {
     width: 100%;
-    max-width: 850px;
+    max-width: var(--page-max-width);
 
-    margin: 10px auto;
+    margin: .625rem auto;
     padding: 0 1.5rem;
 
     img {
@@ -93,41 +84,13 @@ ol:last-child {
     }
 
     @media (max-width: 767px) {
-        padding-left: 14px;
-        padding-right: 14px;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
-.content.dark {
-    background-color: #f4f4f4;
-}
-
-.w-button {
-    display: inline-block;
-    padding: 9px 15px;
-    background-color: #3898EC;
-    color: white;
-    border: 0;
-    line-height: inherit;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 0;
-}
-
-.w-button.button-dark {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px 30px;
-    border-radius: 20px;
-    background-color: #000;
-    color: #fff;
-}
-
-.w-button.button-dark:hover {
-    background-color: #0098d4;
-}
-
 .site-footer {
+    position: relative;
     z-index: 1;
     background-color: #000;
     width: 100%;
@@ -178,49 +141,6 @@ ol:last-child {
     }
 }
 
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-
-    .grid-container-third {
-        padding: 10px;
-        width: 33%;
-
-        @media (max-width: 767px) {
-            width: 100%;
-        }
-    }
-
-    .grid-container {
-        padding: 10px;
-        width: 50%;
-
-        @media (max-width: 767px) {
-            width: 100%;
-        }
-    }
-
-    .grid-container-full {
-        padding: 10px;
-        width: 100%;
-    }
-
-    .block {
-        p {
-            text-align: center;
-        }
-
-        padding: 20px;
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
-}
-
 pre {
     padding: 1rem;
     overflow: auto;
@@ -254,13 +174,22 @@ pre table {
 
 /* The black block on pages at the top. */
 .page-header {
-    width: 100%;
-    height: 23.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 5.625rem;
+    @media (max-width: 767px) {
+        padding-inline: 2rem;
+    }
+    padding-bottom: calc(var(--navbar-height)/2);
+
+    min-height: var(--page-header-height);
     background-color: #000000;
     overflow: hidden;
 
     background-image: url(/assets/page-header-bg.svg);
-    background-size: 100% 100%;
+    background-size: 90% 100%;
+    background-position: bottom right;
     background-repeat: no-repeat;
 
     @media (max-width: 767px) {
@@ -269,25 +198,17 @@ pre table {
     }
 
     .hero-block {
-
-        @media (max-width: 767px) {
-            margin: 60px 32px 70px;
-        }
-
-        margin: 89px 80px;
-
         h1 {
             font-style: normal;
             font-weight: 700;
-            font-size: 3.125rem;
+            font-size: 2.8rem;
             line-height: 120%;
             color: #FFFFFF;
         }
 
         p {
             font-style: normal;
-            font-weight: 400;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             line-height: 120%;
 
             display: flex;
@@ -314,7 +235,7 @@ pre table {
     background-repeat: no-repeat;
     padding: 1rem;
 
-    max-width: 45%;
+    max-width: 23rem;
 
     .wrapper {
         display: flex;
@@ -343,12 +264,8 @@ pre table {
         background-size: 100% 100%;
         width: 3rem;
         height: 3rem;
-        margin: auto auto auto .5rem;
+        margin: auto 0 auto .5rem;
         transform: rotate(-90deg);
         filter: invert(1);
     }
-}
-
-h1, h2, h3, h4 {
-    font-weight: 700;
 }
