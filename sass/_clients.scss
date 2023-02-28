@@ -91,9 +91,10 @@
     background-color: #2b8cc9;
 }*/
 
-.filters {
-    display: flex;
+#filters {
+    display: none;
     flex-direction: row;
+    flex-wrap: wrap;
     max-width: 40rem;
     margin: 0 auto 2rem auto;
     justify-content: center;
@@ -131,10 +132,12 @@
         }
 
         .filter-menu {
+            display: none;
             position: absolute;
             top: 2.7rem;
             left: 0;
             width: max-content;
+            z-index: 100;
 
             padding: .5rem 1rem;
 
@@ -153,6 +156,11 @@
 
             .reset-links {
                 font-size: .8rem;
+
+                a {
+                    cursor: pointer;
+                    user-select: none;
+                }
             }
         }
     }

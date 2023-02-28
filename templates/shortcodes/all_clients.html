@@ -1,39 +1,39 @@
 {% import "macros/clients.html" as clients %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
 
-<div class="filters">
+<div id="filters">
     <div class="filter-wrap">
-        <div class="filter">
+        <div id="filter-platform" class="filter">
             Platform
             <div class="divider"></div>
             <img src="/assets/down-arrow.svg">
         </div>
-        <div class="filter-menu">
+        <div id="filter-platform-menu" class="filter-menu">
             <div>
-                <input id="filter-platform-ios" type="checkbox" checked>
-                <label for="filter-platform-ios">Apple iOS</label>
+                <input id="platform-ios" type="checkbox" checked>
+                <label for="platform-ios">Apple iOS</label>
             </div>
             <div>
-                <input id="filter-platform-android" type="checkbox" checked>
-                <label for="filter-platform-android">Google Android</label>
+                <input id="platform-android" type="checkbox" checked>
+                <label for="platform-android">Google Android</label>
             </div>
             <div>
-                <input id="filter-platform-web" type="checkbox" checked>
-                <label for="filter-platform-web">Web</label>
+                <input id="platform-web" type="checkbox" checked>
+                <label for="platform-web">Web</label>
             </div>
             <div>
-                <input id="filter-platform-Windows" type="checkbox" checked>
-                <label for="filter-platform-windows">Windows</label>
+                <input id="platform-windows" type="checkbox" checked>
+                <label for="platform-windows">Windows</label>
             </div>
             <div>
-                <input id="filter-platform-macos" type="checkbox" checked>
-                <label for="filter-platform-macos">macOS</label>
+                <input id="platform-macos" type="checkbox" checked>
+                <label for="platform-macos">macOS</label>
             </div>
             <div>
-                <input id="filter-platform-linux" type="checkbox" checked>
-                <label for="filter-platform-linux">Linux (Flatpak)</label>
+                <input id="platform-linux" type="checkbox" checked>
+                <label for="platform-linux">Linux (Flatpak)</label>
             </div>
-            <div class="reset-links">Select <a href="#">all</a> - <a href="#">none</a></div>
+            <div class="reset-links">Select <a>all</a> - <a>none</a></div>
         </div>
     </div>
     <div class="filter-wrap">
@@ -42,7 +42,7 @@
             <div class="divider"></div>
             <img src="/assets/down-arrow.svg">
         </div>
-        <div class="filter-menu">
+        <div id="filter-maturity-menu" class="filter-menu">
             <div>
                 <input id="filter-maturity-stable" type="checkbox" checked>
                 <label for="filter-maturity-stable">Stable</label>
@@ -68,7 +68,7 @@
             <div class="divider"></div>
             <img src="/assets/down-arrow.svg">
         </div>
-        <div class="filter-menu">
+        <div id="filter-licence-menu" class="filter-menu">
             <div>
                 <input id="filter-licence-0bsd" type="checkbox" checked>
                 <label for="filter-licence-0bsd">0BSD</label>
@@ -86,7 +86,7 @@
             <div class="divider"></div>
             <img src="/assets/down-arrow.svg">
         </div>
-        <div class="filter-menu">
+        <div id="filter-features-menu" class="filter-menu">
             <div>
                 <input id="filter-feature-e2ee" type="checkbox" checked>
                 <label for="filter-feature-e2ee">E2EE</label>
