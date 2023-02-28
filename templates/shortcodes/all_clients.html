@@ -1,7 +1,106 @@
 {% import "macros/clients.html" as clients %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
 
-<div class="clients-card-deck">
+<div class="filters">
+    <div class="filter-wrap">
+        <div class="filter">
+            Platform
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div class="filter-menu">
+            <div>
+                <input id="filter-platform-ios" type="checkbox" checked>
+                <label for="filter-platform-ios">Apple iOS</label>
+            </div>
+            <div>
+                <input id="filter-platform-android" type="checkbox" checked>
+                <label for="filter-platform-android">Google Android</label>
+            </div>
+            <div>
+                <input id="filter-platform-web" type="checkbox" checked>
+                <label for="filter-platform-web">Web</label>
+            </div>
+            <div>
+                <input id="filter-platform-Windows" type="checkbox" checked>
+                <label for="filter-platform-windows">Windows</label>
+            </div>
+            <div>
+                <input id="filter-platform-macos" type="checkbox" checked>
+                <label for="filter-platform-macos">macOS</label>
+            </div>
+            <div>
+                <input id="filter-platform-linux" type="checkbox" checked>
+                <label for="filter-platform-linux">Linux (Flatpak)</label>
+            </div>
+            <div class="reset-links">Select <a href="#">all</a> - <a href="#">none</a></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <div class="filter">
+            Maturity
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div class="filter-menu">
+            <div>
+                <input id="filter-maturity-stable" type="checkbox" checked>
+                <label for="filter-maturity-stable">Stable</label>
+            </div>
+            <div>
+                <input id="filter-maturity-beta" type="checkbox" checked>
+                <label for="filter-maturity-beta">Beta</label>
+            </div>
+            <div>
+                <input id="filter-maturity-alpha" type="checkbox" checked>
+                <label for="filter-maturity-alpha">Alpha</label>
+            </div>
+            <div>
+                <input id="filter-maturity-obsolete" type="checkbox" checked>
+                <label for="filter-maturity-obsolete">Obsolete</label>
+            </div>
+            <div class="reset-links">Select <a href="#">all</a> - <a href="#">none</a></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <div class="filter">
+            Licence
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div class="filter-menu">
+            <div>
+                <input id="filter-licence-0bsd" type="checkbox" checked>
+                <label for="filter-licence-0bsd">0BSD</label>
+            </div>
+            <div>
+                <input id="filter-licence-apache-2.0" type="checkbox" checked>
+                <label for="filter-licence-apache-2.0">Apache-2.0</label>
+            </div>
+            <div class="reset-links">Select <a href="#">all</a> - <a href="#">none</a></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <div class="filter">
+            Features
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div class="filter-menu">
+            <div>
+                <input id="filter-feature-e2ee" type="checkbox" checked>
+                <label for="filter-feature-e2ee">E2EE</label>
+            </div>
+            <div>
+                <input id="filter-feature-multi-account" type="checkbox" checked>
+                <label for="filter-feature-multi-account">Multi-account</label>
+            </div>
+            <div class="reset-links">Select <a href="#">all</a> - <a href="#">none</a></div>
+        </div>
+    </div>
+</div>
+
+<div id="all-clients" class="clients-card-deck">
     {% for name, client in clients %}
     <div class="client-card">
         <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
