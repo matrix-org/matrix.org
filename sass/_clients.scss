@@ -92,11 +92,7 @@
 }*/
 
 #filters {
-<<<<<<< HEAD
     display: flex;
-=======
-    display: none;
->>>>>>> e036a0b9 (Add js to expand the platform menu, and check/uncheck the filters)
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 40rem;
@@ -140,12 +136,8 @@
             position: absolute;
             top: 2.7rem;
             left: 0;
-<<<<<<< HEAD
             min-width: 15rem;
             max-width: 20rem;
-=======
-            width: max-content;
->>>>>>> e036a0b9 (Add js to expand the platform menu, and check/uncheck the filters)
             z-index: 100;
 
             padding: .5rem 1rem;
