@@ -24,9 +24,12 @@ a specific user (you can read more about this command [here](https://matrix-org.
 Synapse 1.78.0 updates this command adding account data to the user information that is returned by the export data command.
 
 This version of Synapse also features a few changes to push rules, with implementations for [MSC3758](https://github.com/matrix-org/matrix-spec-proposals/pull/3758):
-Add event_property_is push rule condition kind,
+Add `event_property_is push` rule condition kind,
 [MSC3966](https://github.com/matrix-org/matrix-spec-proposals/pull/3966): `event_property_contains` push rule condition, and the removal of the spurious `dont_notify`
-action from the defaults for the `.m.rule.reaction` pushrule.
+action from the defaults for the `.m.rule.reaction` pushrule. These changes empower end users to more fully customise their
+notification rules - MSC3758 allows users to ask to be notified when a field in an event contains any type of value, rather
+than only matching on strings, and MSC3966 provides crucial scaffolding for [MSC3952](https://github.com/matrix-org/matrix-spec-proposals/pull/3952)
+:Intentional Mentions, which aims to improve the experience of mentions and eliminate unintentional mentions. 
 
 Synapse v1.78.0 includes some fixes for faster-joins related bugs as we work out the kinks. Some of these include a fix
 for a bug introduced in Synapse 1.76.0 where partially-joined rooms could not be deleted using the
@@ -35,7 +38,7 @@ a fix for a bug introduced in Synapse 1.75 where the [portdb script](https://mat
 would fail to run after a room had been faster-joined. We continue to work to polish faster joins, and thank everyone who
 filed an issue.
 
-Finally, for those deployments using workers v1.78.0 fixed a bug introduced in Synapse 1.76 where 5s delays would
+Finally, for those deployments using workers, v1.78.0 fixed a bug introduced in Synapse 1.76 where 5s delays would
 occasionally occur.
 
 
