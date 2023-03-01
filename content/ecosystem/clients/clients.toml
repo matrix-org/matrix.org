@@ -52,7 +52,8 @@ apple_app_store = { app_id = "id1551469600", org = "fluffychat" }
 flathub.app_id = "im.fluffychat.Fluffychat"
 other_url = "https://fluffychat.im"
 
-[Elementa]
+
+[Linuxapp]
 thumbnail = "element.svg"
 maintainer = "Element"
 summary = "Element is a glossy client with an emphasis on performance and usability."
@@ -60,7 +61,7 @@ maturity = "Stable"
 license = "Apache-2.0"
 last_release = "2022-11-02"
 featured = false
-[Elementa.features]
+[Linuxapp.features]
 e2ee = true
 spaces = true
 voip_1to1 = true
@@ -70,14 +71,11 @@ threads = true
 sso = true
 multi_account = true
 multi_language = true
-[Elementa.packages]
-google_play_store.app_id = "im.vector.app"
-f_droid.app_id = "im.vector.app"
-apple_app_store = { app_id = "id1083446067", org = "vector" }
+[Linuxapp.packages]
 flathub.app_id = "im.riot.Riot"
 other_url = "https://app.element.io"
 
-[Elementb]
+[Webapp]
 thumbnail = "element.svg"
 maintainer = "Element"
 summary = "Element is a glossy client with an emphasis on performance and usability."
@@ -85,7 +83,7 @@ maturity = "Stable"
 license = "Apache-2.0"
 last_release = "2022-11-02"
 featured = false
-[Elementb.features]
+[Webapp.features]
 e2ee = true
 spaces = true
 voip_1to1 = true
@@ -95,14 +93,10 @@ threads = true
 sso = true
 multi_account = true
 multi_language = true
-[Elementb.packages]
-google_play_store.app_id = "im.vector.app"
-f_droid.app_id = "im.vector.app"
-apple_app_store = { app_id = "id1083446067", org = "vector" }
-flathub.app_id = "im.riot.Riot"
+[Webapp.packages]
 other_url = "https://app.element.io"
 
-[Elementc]
+[BothMobile]
 thumbnail = "element.svg"
 maintainer = "Element"
 summary = "Element is a glossy client with an emphasis on performance and usability."
@@ -110,7 +104,7 @@ maturity = "Stable"
 license = "Apache-2.0"
 last_release = "2022-11-02"
 featured = false
-[Elementc.features]
+[BothMobile.features]
 e2ee = true
 spaces = true
 voip_1to1 = true
@@ -120,9 +114,8 @@ threads = true
 sso = true
 multi_account = true
 multi_language = true
-[Elementc.packages]
+[BothMobile.packages]
 google_play_store.app_id = "im.vector.app"
 f_droid.app_id = "im.vector.app"
 apple_app_store = { app_id = "id1083446067", org = "vector" }
-flathub.app_id = "im.riot.Riot"
-other_url = "https://app.element.io"
+

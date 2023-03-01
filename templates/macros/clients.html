@@ -17,3 +17,18 @@
 <a href="{{ packages.other_url }}" class="platform-pill">Web</a>
 {% endif %}
 {% endmacro platform_links %}
+
+{% macro classes(client) %}
+{% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
+platform-ios
+{% endif %}
+{% if client.packages.google_play_store.app_id %}
+platform-android
+{% endif %}
+{% if client.packages.flathub.app_id %}
+platform-linux
+{% endif %}
+{% if client.packages.other_url %}
+platform-web
+{% endif %}
+{% endmacro classes %}
