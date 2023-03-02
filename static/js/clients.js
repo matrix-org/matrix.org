@@ -106,33 +106,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
 
         uncheckAllBoxes(filterId) {
-            let platformFilterMenu = document.getElementById(filterId+"-menu");
-            for(let platformOption of platformFilterMenu.children) {
-                if(!platformOption.classList.contains("reset-links")) {
-                        platformOption.children[0].checked = false;
-                        this.boxWasUnchecked(platformOption.children[0].id);
+            let filterMenu = document.getElementById(filterId + "-menu");
+            for (const platformOption of filterMenu.children) {
+                if (platformOption.classList.contains("filter-option")) {
+                    platformOption.children[0].checked = false;
+                    this.boxWasUnchecked(platformOption.children[0].id);
                 }
             }
         }
 
         refreshCardsView() {
             let clients = document.getElementById("all-clients");
-            for(let client of clients.children) {
-                if(client.classList.contains("client-card")) {
+            for (const client of clients.children) {
+                if (client.classList.contains("client-card")) {
                     let containsAllOf = this.allOf.every((elem) => {
                         return client.classList.contains(elem);
                     });
                     let containsAnyOf = false;
-                    for(let filter of this.anyOf) {
-                        if(client.classList.contains(filter)) {
+                    for (const filter of this.anyOf) {
+                        if (client.classList.contains(filter)) {
                             containsAnyOf = true;
                             // and we can break?
                         }
                     }
-                    if(this.anyOf.length <= 0) {
+                    if (this.anyOf.length <= 0) {
                         containsAnyOf = true;
                     }
-                    if(containsAllOf && containsAnyOf) {
+                    if (containsAllOf && containsAnyOf) {
                         client.style.display = "flex";
                     } else {
                         client.style.display = "none";
