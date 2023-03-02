@@ -16,6 +16,12 @@
 {% if packages.other_url %}
 <a href="{{ packages.other_url }}" class="platform-pill">Web</a>
 {% endif %}
+{% if packages.macos_installer %}
+<a href="{{ packages.macos_installer }}" class="platform-pill">macOS</a>
+{% endif %}
+{% if packages.windows_installer %}
+<a href="{{ packages.windows_installer }}" class="platform-pill">Windows</a>
+{% endif %}
 {% endmacro platform_links %}
 
 {% macro classes(client) %}
@@ -30,5 +36,11 @@ platform-linux
 {% endif %}
 {% if client.packages.other_url %}
 platform-web
+{% endif %}
+{% if client.packages.windows_installer %}
+platform-windows
+{% endif %}
+{% if client.packages.macos_installer %}
+platform-macos
 {% endif %}
 {% endmacro classes %}

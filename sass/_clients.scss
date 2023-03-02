@@ -92,7 +92,7 @@
 }*/
 
 #filters {
-    display: none;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 40rem;
@@ -136,7 +136,8 @@
             position: absolute;
             top: 2.7rem;
             left: 0;
-            width: max-content;
+            min-width: 15rem;
+            max-width: 20rem;
             z-index: 100;
 
             padding: .5rem 1rem;
@@ -144,6 +145,13 @@
             background-color: #fafafa;
             border: 1px solid var(--borders-color);
             border-radius: 16px;
+
+            p {
+                margin: 0;
+                margin-bottom: .5rem;
+                font-size: .8rem;
+                text-align: start;
+            }
 
             input {
                 accent-color: #000;
