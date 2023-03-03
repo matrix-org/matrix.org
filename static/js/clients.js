@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let anyOf = []
     let platformFilter = new Filter("filter-platform", true, allOf, anyOf);
     let maturityFilter = new Filter("filter-maturity", false, allOf, anyOf);
-    // let licenceFilter = new Filter("filter-licence", false, allOf, anyOf);
+    let licenceFilter = new Filter("filter-licence", false, allOf, anyOf);
     let featureFilter = new Filter("filter-features", true, allOf, anyOf);
     platformFilter.refreshCardsView();
 })

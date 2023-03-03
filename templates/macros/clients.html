@@ -57,6 +57,19 @@ maturity-beta
 maturity-stable
 {% endif %}
 
+{% if client.license == "Apache-2.0" %}
+licence-apache-2
+{% endif %}
+{% if client.license == "AGPL-3.0-only" %}
+licence-agpl-3-only
+{% endif %}
+{% if client.license == "GPL-3.0-only" %}
+licence-gpl-3-only
+{% endif %}
+{% if client.license == "MIT" %}
+licence-mit
+{% endif %}
+
 {% if client.features.e2ee == true %}
 feature-e2ee
 {% endif %}
