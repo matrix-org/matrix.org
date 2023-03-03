@@ -45,7 +45,11 @@ any point in time, even if you started with Element.
 Go to [app.element.io](https://app.element.io), and click on "Create Account".
 You should land on the following page.
 
-![](element-io-sign-up.png)
+{{ 
+    figure(
+        img="element-io-sign-up.png",
+        caption="Sign up page of app.element.io")
+}}
 
 For simplicity you can connect with a Google, Facebook, Apple, GitHub or GitLab
 account if you have any of these. They will be notified that you're using your
@@ -65,7 +69,10 @@ Check your inbox, and click the link to verify your email address. The link will
 bring you to the homepage of Element, the Matrix web application to participate
 to Matrix conversations.
 
-![](element-landing-page.png)
+{{ figure(
+    img="element-landing-page.png"
+    caption="Landing page of Element after login")
+}}
 
 You now have an account, and are using the web version of Element. We recommend
 you to [download the desktop version of Element](https://element.io/get-started#download),
