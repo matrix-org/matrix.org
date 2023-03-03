@@ -173,3 +173,103 @@
         }
     }
 }
+
+.client-overlay {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.client-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: calc(var(--page-max-width)*.55);
+    max-height: calc(100svh - var(--navbar-height) - 3rem);
+    transform: translate(-50%, -45%);
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    background-color: #fff;
+    border: 1px solid var(--borders-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+
+    .app-logo {
+        width: 8rem;
+        margin-inline: auto;
+    }
+
+    h3 {
+        margin: 1rem auto 0 auto;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 120%;
+    }
+
+    p {
+        margin: 0;
+        text-align: start;
+        font-size: 1rem;
+    }
+
+    .release-maturity-container {
+        display: flex;
+        flex-direction: row;
+        gap: .8rem;
+        align-items: center;
+        max-width: fit-content;
+        margin-inline: auto;
+        margin-bottom: 1.5rem;
+        font-size: .8rem;
+
+        .maturity {
+            background-color: rgb(214, 230, 207);
+            border: 1px solid var(--borders-color);
+            border-radius: 9999px;
+            padding: 0 .5rem;
+        }
+    }
+
+    .features-container {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+
+        .support-title {
+            text-align: center;
+            font-weight: 700;
+            margin-block: 1.5rem .4rem;
+        }
+    }
+
+    .features-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: .5rem;
+    }
+
+    .features-list p {
+        padding: .2rem .4rem;
+        background-color: #eee;
+        border: 1px solid var(--borders-color);
+        border-radius: 16px;
+    }
+
+    .stores {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-block-start: 1.5rem;
+    }
+}
