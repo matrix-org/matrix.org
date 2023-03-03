@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     if (this.anyOf.length <= 0) {
                         containsAnyOf = true;
                     }
+
                     if (containsAllOf && containsAnyOf) {
                         client.style.display = "flex";
                     } else {
@@ -135,6 +136,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let platformFilter = new Filter("filter-platform", true, allOf, anyOf);
     // let maturityFilter = new Filter("filter-maturity", false, allOf, anyOf);
     // let licenceFilter = new Filter("filter-licence", false, allOf, anyOf);
-    // let featureFilter = new Filter("filter-features", true, allOf, anyOf);
+    let featureFilter = new Filter("filter-features", true, allOf, anyOf);
     platformFilter.refreshCardsView();
 })
