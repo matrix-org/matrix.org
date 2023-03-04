@@ -44,18 +44,7 @@ platform-windows
 platform-macos
 {% endif %}
 
-{% if client.maturity == "Obsolete" %}
-maturity-obsolete
-{% endif %}
-{% if client.maturity == "Alpha" %}
-maturity-alpha
-{% endif %}
-{% if client.maturity == "Beta" %}
-maturity-beta
-{% endif %}
-{% if client.maturity == "Stable" %}
-maturity-stable
-{% endif %}
+maturity-{{ client.maturity | lower }}
 
 {% if client.license == "Apache-2.0" %}
 licence-apache-2
