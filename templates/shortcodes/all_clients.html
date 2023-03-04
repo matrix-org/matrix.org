@@ -1,0 +1,146 @@
+{% import "macros/clients.html" as clients %}
+{% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
+
+<div id="filters">
+    <div class="filter-wrap">
+        <div id="filter-platform" class="filter">
+            Platform
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div id="filter-platform-menu" class="filter-menu">
+            <p>The clients must support all of the platforms checked.</p>
+            <div class="filter-option">
+                <input id="platform-ios" type="checkbox">
+                <label for="platform-ios">Apple iOS</label>
+            </div>
+            <div class="filter-option">
+                <input id="platform-android" type="checkbox">
+                <label for="platform-android">Google Android</label>
+            </div>
+            <div class="filter-option">
+                <input id="platform-web" type="checkbox">
+                <label for="platform-web">Web</label>
+            </div>
+            <div class="filter-option">
+                <input id="platform-windows" type="checkbox">
+                <label for="platform-windows">Windows</label>
+            </div>
+            <div class="filter-option">
+                <input id="platform-macos" type="checkbox">
+                <label for="platform-macos">macOS</label>
+            </div>
+            <div class="filter-option">
+                <input id="platform-linux" type="checkbox">
+                <label for="platform-linux">Linux (Flatpak)</label>
+            </div>
+            <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <div id="filter-maturity" class="filter">
+            Maturity
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div id="filter-maturity-menu" class="filter-menu">
+            <p>The client can support any of the maturity levels checked.</p>
+            <div class="filter-option">
+                <input id="maturity-stable" type="checkbox" checked>
+                <label for="maturity-stable">Stable</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-beta" type="checkbox" checked>
+                <label for="maturity-beta">Beta</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-alpha" type="checkbox" checked>
+                <label for="maturity-alpha">Alpha</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-obsolete" type="checkbox" checked>
+                <label for="maturity-obsolete">Obsolete</label>
+            </div>
+            <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <div id="filter-licence" class="filter">
+            Licence
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div id="filter-licence-menu" class="filter-menu">
+            <p>The client can support any of the licences checked.</p>
+            <div class="filter-option">
+                <input id="licence-apache-2" type="checkbox" checked>
+                <label for="licence-apache-2">Apache-2.0</label>
+            </div>
+            <div class="filter-option">
+                <input id="licence-agpl-3-only" type="checkbox" checked>
+                <label for="licence-agpl-3-only">AGPL-3.0-only</label>
+            </div>
+            <div class="filter-option">
+                <input id="licence-mit" type="checkbox" checked>
+                <label for="licence-mit">MIT</label>
+            </div>
+            <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+        </div>
+    </div>
+    <div id="filter-features" class="filter-wrap">
+        <div class="filter">
+            Features
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div id="filter-features-menu" class="filter-menu">
+            <p>The client must support all of the features checked.</p>
+            <div class="filter-option">
+                <input id="feature-e2ee" type="checkbox">
+                <label for="feature-e2ee">E2EE</label>
+            </div>
+            <div class="filter-option">
+                <input id="feature-spaces" type="checkbox">
+                <label for="feature-spaces">Spaces</label>
+            </div>
+            <div class="filter-option">
+                <input id="feature-voip-1to1" type="checkbox">
+                <label for="feature-voip-1to1">Native 1:1 calls</label>
+            </div>
+            <div class="filter-option">
+                <input id="feature-widgets" type="checkbox">
+                <label for="feature-widgets">Widgets</label>
+            </div>
+            <div class="filter-option">
+                <input id="feature-threads" type="checkbox">
+                <label for="feature-threads">Threads</label>
+            </div>
+            <div class="filter-option">
+                <input id="feature-sso" type="checkbox">
+                <label for="feature-sso">SSO (Enterprise login)</label>
+            </div>
+            <div class="filter-option">
+                <input id="feature-multi-account" type="checkbox">
+                <label for="feature-multi-account">Multi-account</label>
+            </div>
+            <div class="filter-option">
+                <input id="feature-multi-language" type="checkbox">
+                <label for="feature-multi-language">Multi-language</label>
+            </div>
+            <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+        </div>
+    </div>
+</div>
+
+<div id="all-clients" class="clients-card-deck">
+    {% for name, client in clients %}
+    <div class="client-card {{ clients::classes(client=client) }}">
+        <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
+        <h3>{{ name }}</h3>
+        <p>{{ client.summary | safe }}</p>
+        <div class="platform-links">
+            {{ clients::platform_links(packages=client.packages) }}
+        </div>
+    </div>
+    {% endfor %}
+</div>

@@ -1,9 +1,9 @@
 {% import "macros/clients.html" as clients %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
-<div class="featured-clients">
+<div class="clients-card-deck">
     {% for name, client in clients %}
     {% if client.featured %}
-    <div class="featured-client-card">
+    <div class="client-card">
         <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
         <h3>{{ name }}</h3>
         <p>{{ client.summary | safe }}</p>

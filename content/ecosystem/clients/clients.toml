@@ -17,6 +17,8 @@ sso = true
 multi_account = true
 multi_language = true
 [Element.packages]
+windows_installer = "https://element.io/download"
+macos_installer = "https://element.io/download"
 google_play_store.app_id = "im.vector.app"
 f_droid.app_id = "im.vector.app"
 apple_app_store = { app_id = "id1083446067", org = "vector" }
@@ -51,3 +53,121 @@ f_droid.app_id = "chat.fluffy.fluffychat"
 apple_app_store = { app_id = "id1551469600", org = "fluffychat" }
 flathub.app_id = "im.fluffychat.Fluffychat"
 other_url = "https://fluffychat.im"
+
+[Nheko]
+thumbnail = "nheko.svg"
+summary = "Desktop client for Matrix using Qt and C++20."
+maintainer = "Nico"
+license = "GPL-3.0"
+language = "C++"
+last_release = "2023-02-20"
+maturity = "Beta"
+source = "https://github.com/Nheko-Reborn/nheko"
+website = "https://nheko-reborn.github.io/"
+matrix_room = "#nheko-reborn:matrix.org"
+featured = false
+[Nheko.features]
+e2ee = true
+spaces = true
+voip_1to1 = true
+voip_jitsi = true
+widgets = false
+threads = true
+sso = true
+multi_account = true
+multi_language = true
+[Nheko.packages]
+windows_installer = "https://github.com/Nheko-Reborn/nheko/releases"
+macos_installer = "https://github.com/Nheko-Reborn/nheko/releases"
+flathub.app_id = "io.github.NhekoReborn.Nheko"
+
+[Cinny]
+thumbnail = "cinny.svg"
+summary = "A Matrix client focusing primarily on simple, elegant and secure interface."
+maintainer = "Ajay Bura"
+license = "AGPL-3.0"
+language = "Javascript"
+last_release = "2023-02-20"
+maturity = "Stable"
+source = "https://github.com/cinnyapp/cinny"
+website = "https://cinny.in"
+matrix_room = "#cinny:matrix.org"
+featured = true
+[Cinny.features]
+e2ee = true
+spaces = true
+voip_1to1 = false
+voip_jitsi = false
+widgets = true
+threads = true
+sso = true
+multi_account = false
+multi_language = true
+[Cinny.packages]
+other_url = "https://app.cinny.in/"
+
+[Linuxapp]
+thumbnail = "element.svg"
+maintainer = "Element"
+summary = "Placeholder app that runs on Linux and Web."
+maturity = "Alpha"
+license = "Apache-2.0"
+last_release = "2022-11-02"
+featured = false
+[Linuxapp.features]
+e2ee = true
+spaces = true
+voip_1to1 = true
+voip_jitsi = true
+widgets = true
+threads = true
+sso = true
+multi_account = true
+multi_language = true
+[Linuxapp.packages]
+flathub.app_id = "im.riot.Riot"
+other_url = "https://app.element.io"
+
+[Webapp]
+thumbnail = "element.svg"
+maintainer = "Element"
+summary = "Placeholder app that only runs on web."
+maturity = "Obsolete"
+license = "Apache-2.0"
+last_release = "2022-11-02"
+featured = false
+[Webapp.features]
+e2ee = true
+spaces = true
+voip_1to1 = true
+voip_jitsi = true
+widgets = true
+threads = true
+sso = true
+multi_account = true
+multi_language = true
+[Webapp.packages]
+other_url = "https://app.element.io"
+
+[BothMobile]
+thumbnail = "element.svg"
+maintainer = "Element"
+summary = "Placeholder app that runs on iOS and Android."
+maturity = "Stable"
+license = "Apache-2.0"
+last_release = "2022-11-02"
+featured = false
+[BothMobile.features]
+e2ee = true
+spaces = true
+voip_1to1 = true
+widgets = true
+threads = true
+sso = true
+multi_account = true
+multi_language = true
+[BothMobile.packages]
+google_play_store.app_id = "im.vector.app"
+f_droid.app_id = "im.vector.app"
+apple_app_store = { app_id = "id1083446067", org = "vector" }
+

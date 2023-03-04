@@ -1,5 +1,9 @@
 {% extends "page.html" %}
 {% import "macros/clients.html" as clients %}
+{% block head_extra %}
+<noscript><link rel="stylesheet" href="/no-js.css" /></noscript>
+<script src="/js/clients.js"></script>
+{% endblock head_extra%}
 {% block content %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
 <div class="page-header">

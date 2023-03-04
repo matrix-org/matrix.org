@@ -21,4 +21,4 @@ Here we list all the clients the Foundation is aware of, with a maturity score
 and a list of important features they support or not to help you pick the best
 for you.
 
-{{ clients_table() }}
+{{ all_clients() }}

@@ -16,4 +16,50 @@
 {% if packages.other_url %}
 <a href="{{ packages.other_url }}" class="platform-pill">Web</a>
 {% endif %}
+{% if packages.macos_installer %}
+<a href="{{ packages.macos_installer }}" class="platform-pill">macOS</a>
+{% endif %}
+{% if packages.windows_installer %}
+<a href="{{ packages.windows_installer }}" class="platform-pill">Windows</a>
+{% endif %}
 {% endmacro platform_links %}
+
+{% macro classes(client) %}
+{% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
+platform-ios
+{% endif %}
+{% if client.packages.google_play_store.app_id %}
+platform-android
+{% endif %}
+{% if client.packages.flathub.app_id %}
+platform-linux
+{% endif %}
+{% if client.packages.other_url %}
+platform-web
+{% endif %}
+{% if client.packages.windows_installer %}
+platform-windows
+{% endif %}
+{% if client.packages.macos_installer %}
+platform-macos
+{% endif %}
+
+maturity-{{ client.maturity | lower }}
+
+{% if client.license == "Apache-2.0" %}
+licence-apache-2
+{% endif %}
+{% if client.license == "AGPL-3.0-only" %}
+licence-agpl-3-only
+{% endif %}
+{% if client.license == "GPL-3.0-only" %}
+licence-gpl-3-only
+{% endif %}
+{% if client.license == "MIT" %}
+licence-mit
+{% endif %}
+
+{% for feature_name, feature_supported in client.features %}
+{% if feature_supported %}feature-{{ feature_name | replace(from="_", to="-") }}{% endif %}
+{% endfor %}
+{% endmacro classes %}
