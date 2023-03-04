@@ -59,28 +59,7 @@ licence-gpl-3-only
 licence-mit
 {% endif %}
 
-{% if client.features.e2ee == true %}
-feature-e2ee
-{% endif %}
-{% if client.features.spaces == true %}
-feature-spaces
-{% endif %}
-{% if client.features.voip_1to1 == true %}
-feature-voip-1to1
-{% endif %}
-{% if client.features.widgets == true %}
-feature-widgets
-{% endif %}
-{% if client.features.threads == true %}
-feature-threads
-{% endif %}
-{% if client.features.sso == true %}
-feature-sso
-{% endif %}
-{% if client.features.multi_account == true %}
-feature-multi-account
-{% endif %}
-{% if client.features.multi_language == true %}
-feature-multi-language
-{% endif %}
+{% for feature_name, feature_supported in client.features %}
+{% if feature_supported %}feature-{{ feature_name | replace(from="_", to="-") }}{% endif %}
+{% endfor %}
 {% endmacro classes %}
