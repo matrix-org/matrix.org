@@ -63,3 +63,15 @@ licence-mit
 {% if feature_supported %}feature-{{ feature_name | replace(from="_", to="-") }}{% endif %}
 {% endfor %}
 {% endmacro classes %}
+
+{% macro features(features, supported) %}
+{% for feature_name, supports in features %}
+{% if supports == supported %}
+    {% if feature_name == "e2ee" or feature_name == "sso" %}
+    <p>{{ feature_name | upper }}</p>
+    {% else %}
+        <p>{{ feature_name | replace(from="_", to=" ") | title }}</p>
+    {% endif %}
+{% endif %}
+{% endfor %}
+{% endmacro %}

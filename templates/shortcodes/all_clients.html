@@ -1,4 +1,5 @@
 {% import "macros/clients.html" as clients %}
+{% import "macros/client_details.html" as client_details %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
 
 <div id="filters">
@@ -150,35 +151,7 @@
         </label>
 
         <!-- Client details card -->
-        <div class="client-details">
-            <img class="app-logo" src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Logo">
-            <h3>{{ name }}<div class="maturity">{{ client.maturity }}</div></h3>
-            <p class="last-release">Last release: {{ client.last_release }}</p>
-            <p class="summary">{{ client.summary }}</p>
-            <div class="features-container">
-                <p class="support-title">Supported Features</p>
-                <div class="supported features-list">
-                    <p>🔒️ E2EE</p>
-                    <p>👪️ Spaces</p>
-                    <p>🧩 Widgets</p>
-                    <p>🧵 Threads</p>
-                    <p>🙍 SSO</p>
-                    <p>🗣️ Translated</p>
-                </div>
-                <p class="support-title">Unsupported Features</p>
-                <div class="unsupported features-list">
-                    <p>📞 VoIP</p>
-                    <p>🎭 Multi-account</p>
-                </div>
-            </div>
-            <div class="stores">
-                <a href="#"><img src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
-                <a href="#"><img src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
-                <a href="#"><img src="/assets/stores/flathub.svg" alt="Download for Windows" /></a>
-                <a href="#"><img src="/assets/stores/f-droid.svg" /></a>
-            </div>
-        </div>
+        {{ client_details::client_details(name=name, client=client) }}
     </div>
     {% endfor %}
 </div>
-

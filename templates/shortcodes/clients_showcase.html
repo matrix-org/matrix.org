@@ -3,12 +3,43 @@
 <div class="clients-card-deck">
     {% for name, client in clients %}
     {% if client.featured %}
-    <div class="client-card">
-        <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
-        <h3>{{ name }}</h3>
-        <p>{{ client.summary | safe }}</p>
-        <div class="platform-links">
-            {{ clients::platform_links(packages=client.packages) }}
+    <div>
+        <input id="client-{{ name }}-card-checkbox" type="checkbox" class="client-checkbox" aria-hidden="true">
+        <label for="client-{{name}}-card-checkbox" class="client-card {{ clients::classes(client=client) }}">
+            <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
+            <h3>{{ name }}</h3>
+            <p>{{ client.summary | safe }}</p>
+            <div class="platform-links">
+                {{ clients::platform_links(packages=client.packages) }}
+            </div>
+        </label>
+
+        <!-- Overlay -->
+        <label for="client-{{ name }}-card-checkbox" class="client-details-overlay">
+        </label>
+
+        <!-- Client details card -->
+        <div class="client-details">
+            <img class="app-logo" src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Logo">
+            <h3>{{ name }}<div class="maturity">{{ client.maturity }}</div></h3>
+            <p class="last-release">Last release: {{ client.last_release }}</p>
+            <p class="summary">{{ client.summary }}</p>
+            <div class="features-container">
+                <p class="support-title">Supported Features</p>
+                <div class="supported features-list">
+                    {{ clients::features(features=client.features, supported=true) }}
+                </div>
+                <p class="support-title">Unsupported Features</p>
+                <div class="unsupported features-list">
+                    {{ clients::features(features=client.features, supported=false) }}
+                </div>
+            </div>
+            <div class="stores">
+                <a href="#"><img src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
+                <a href="#"><img src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
+                <a href="#"><img src="/assets/stores/flathub.svg" alt="Download for Windows" /></a>
+                <a href="#"><img src="/assets/stores/f-droid.svg" /></a>
+            </div>
         </div>
     </div>
     {% endif %}
