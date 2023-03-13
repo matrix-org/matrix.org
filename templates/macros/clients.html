@@ -86,6 +86,21 @@ licence-mit
         <a href="https://flathub.org/apps/details/{{ package.app_id }}"><img src="/assets/stores/flathub.svg" alt="Download on Flathub" /></a>
     {% elif name == "f_droid" %}
         <a href="https://f-droid.org/packages/{{ package.app_id }}"><img src="/assets/stores/f-droid.svg" alt="Download on F-Droid" /></a>
+    {% elif name == "windows_installer" %}
+        <a href="{{ package }}" class="install_button">
+            <span class="install_on">Download for</span>
+            <span class="platform">Windows</span>
+        </a>
+    {% elif name == "macos_installer" %}
+        <a href="{{ package }}" class="install_button">
+            <span class="install_on">Download for</span>
+            <span class="platform">macOS</span>
+        </a>
+    {% elif name == "other_url" %}
+        <a href="{{ package }}" class="install_button">
+            <span class="install_on">Use client on</span>
+            <span class="platform">Web</span>
+        </a>
     {% endif %}
 {% endfor %}
 {% endmacro %}
