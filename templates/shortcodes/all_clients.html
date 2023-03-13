@@ -136,8 +136,8 @@
 <div id="all-clients" class="clients-card-deck">
     {% for name, client in clients %}
     <div>
-        <input id="client-{{ name }}-card-checkbox" type="checkbox" class="client-checkbox" aria-hidden="true">
-        <label for="client-{{name}}-card-checkbox" class="client-card {{ clients::classes(client=client) }}">
+        <input id="client-{{ name | slugify }}-card-checkbox" type="checkbox" class="client-checkbox" aria-hidden="true">
+        <label for="client-{{ name | slugify }}-card-checkbox" class="client-card {{ clients::classes(client=client) }}">
             <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
             <h3>{{ name }}</h3>
             <p>{{ client.summary | safe }}</p>
@@ -147,7 +147,7 @@
         </label>
 
         <!-- Overlay -->
-        <label for="client-{{ name }}-card-checkbox" class="client-details-overlay">
+        <label for="client-{{ name | slugify }}-card-checkbox" class="client-details-overlay">
         </label>
 
         <!-- Client details card -->
