@@ -174,17 +174,9 @@
     }
 }
 
-.client-overlay {
-    position: fixed;
-    top: var(--navbar-height);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 200;
-    background-color: rgba(0, 0, 0, .5);
-}
-
 .client-details {
+    display: none;
+
     position: fixed;
     top: 50%;
     left: 50%;
@@ -192,7 +184,6 @@
     max-height: calc(100svh - var(--navbar-height) - 2rem);
     transform: translate(-50%, -43%);
     z-index: 300;
-    display: flex;
     flex-direction: column;
     overflow-y: scroll;
 
@@ -276,5 +267,29 @@
         a img {
             height: 3.33rem;
         }
+    }
+}
+
+.client-details-overlay {
+    display: none;
+}
+
+.client-checkbox {
+    display: none;
+
+    &:checked~.client-details-overlay {
+        position: fixed;
+        z-index: 100;
+        top: var(--navbar-height);
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+
+        display: block;
+    }
+
+    &:checked~.client-details {
+        display: flex;
     }
 }
