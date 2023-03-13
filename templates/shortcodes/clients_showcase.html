@@ -1,4 +1,5 @@
 {% import "macros/clients.html" as clients %}
+{% import "macros/client_details.html" as client_details %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
 <div class="clients-card-deck">
     {% for name, client in clients %}
@@ -35,10 +36,7 @@
                 </div>
             </div>
             <div class="stores">
-                <a href="#"><img src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
-                <a href="#"><img src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
-                <a href="#"><img src="/assets/stores/flathub.svg" alt="Download for Windows" /></a>
-                <a href="#"><img src="/assets/stores/f-droid.svg" /></a>
+                {{ client_details::client_details(name=name, client=client) }}
             </div>
         </div>
     </div>

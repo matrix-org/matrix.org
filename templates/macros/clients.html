@@ -75,3 +75,17 @@ licence-mit
 {% endif %}
 {% endfor %}
 {% endmacro %}
+
+{% macro install_links(packages) %}
+{% for name, package in packages %}
+    {% if name == "apple_app_store" %}
+        <a href="https://apps.apple.com/app/{{ package.org }}/{{ package.app_id }}"><img src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
+    {% elif name == "google_play_store" %}
+        <a href="https://play.google.com/store/apps/details?id={{ package.app_id }}"><img src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
+    {% elif name == "flathub" %}
+        <a href="https://flathub.org/apps/details/{{ package.app_id }}"><img src="/assets/stores/flathub.svg" alt="Download on Flathub" /></a>
+    {% elif name == "f_droid" %}
+        <a href="https://f-droid.org/packages/{{ package.app_id }}"><img src="/assets/stores/f-droid.svg" alt="Download on F-Droid" /></a>
+    {% endif %}
+{% endfor %}
+{% endmacro %}
