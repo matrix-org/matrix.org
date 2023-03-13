@@ -114,56 +114,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             }
         }
+    }
 
-        refreshCardsView() {
-            let clients = document.getElementById("all-clients");
-            for (const client of clients.children) {
-                if (client.classList.contains("client-card")) {
-                    let containsAllOf = this.allOf.every((elem) => {
+    function refreshCardsView(allOf, anyOf) {
+        let deck = document.getElementById("all-clients");
+        for (const deckItem of deck.children) {
+            for (child of deckItem.children) {
+                if (child.classList.contains("client-card")) {
+                    let client = child;
+                    let containsAllOf = allOf.every((elem) => {
                         return client.classList.contains(elem);
                     });
                     let containsAnyOf = false;
-                    for (const filter of this.anyOf) {
+                    for (const filter of anyOf) {
                         if (client.classList.contains(filter)) {
                             containsAnyOf = true;
                             // and we can break?
                         }
                     }
-                    if (this.anyOf.length <= 0) {
+                    if (anyOf.length <= 0) {
                         containsAnyOf = true;
                     }
+
                     if (containsAllOf && containsAnyOf) {
                         client.style.display = "flex";
                     } else {
                         client.style.display = "none";
                     }
-                }
-            }
-        };
-    }
-
-    function refreshCardsView(allOf, anyOf) {
-        let clients = document.getElementById("all-clients");
-        for (const client of clients.children) {
-            if (client.classList.contains("client-card")) {
-                let containsAllOf = allOf.every((elem) => {
-                    return client.classList.contains(elem);
-                });
-                let containsAnyOf = false;
-                for (const filter of anyOf) {
-                    if (client.classList.contains(filter)) {
-                        containsAnyOf = true;
-                        // and we can break?
-                    }
-                }
-                if (anyOf.length <= 0) {
-                    containsAnyOf = true;
-                }
-
-                if (containsAllOf && containsAnyOf) {
-                    client.style.display = "flex";
-                } else {
-                    client.style.display = "none";
                 }
             }
         }

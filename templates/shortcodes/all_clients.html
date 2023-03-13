@@ -151,14 +151,10 @@
 
         <!-- Client details card -->
         <div class="client-details">
-            <img class="app-logo" src="thumbnails/cinny.svg" alt="Cinny Preview">
-            <h3>App Name <div class="maturity">Stable</div></h3>
-            <p class="last-release">Last release: 2023-03-02</p>
-            <p class="summary">
-                App Name is focused on providing a distraction free and clean design. It
-                never gets in your way, but keeps you notified of the most important
-                activity in your community.
-            </p>
+            <img class="app-logo" src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Logo">
+            <h3>{{ name }}<div class="maturity">{{ client.maturity }}</div></h3>
+            <p class="last-release">Last release: {{ client.last_release }}</p>
+            <p class="summary">{{ client.summary }}</p>
             <div class="features-container">
                 <p class="support-title">Supported Features</p>
                 <div class="supported features-list">
