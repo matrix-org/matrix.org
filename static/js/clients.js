@@ -1,13 +1,12 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     class Filter {
-        constructor(filterId, isAndFilter, filters) {
+        constructor(filterId, filters) {
             this.allOf = [];
             this.anyOf = [];
             this.filterId = filterId;
             this.filters = filters;
             this.makeMenuInteractive(filterId);
             this.enableFilters(filterId);
-            this.isAndFilter = isAndFilter;
         }
 
         makeMenuInteractive(filterId) {
@@ -34,71 +33,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
         }
 
-        enableFilters(filterId) {
-            let filterMenu = document.getElementById(filterId + "-menu");
-            for (const filterOption of filterMenu.children) {
-                if (filterOption.classList.contains("filter-option")) {
-                    const optionId = filterOption.children[0].id;
-                    const checkbox = filterOption.children[0];
-                    if (this.isAndFilter) {
-                        if (checkbox.checked) {
-                            this.allOf.push(filterOption.children[0].id);
-                        }
-                    } else {
-                        if (checkbox.checked) {
-                            this.anyOf.push(filterOption.children[0].id);
-                        }
-                    }
-                    checkbox.addEventListener("change", (event) => {
-                        if (checkbox.checked) {
-                            this.boxWasChecked(optionId);
-                        } else {
-                            this.boxWasUnchecked(optionId);
-                        }
-                    });
-                } else if (filterOption.classList.contains("reset-links")) {
-                    filterOption.children[0].addEventListener("click", (event) => {
-                        this.checkAllBoxes(filterId);
-                    });
-                    filterOption.children[1].addEventListener("click", (event) => {
-                        this.uncheckAllBoxes(filterId);
-                    });
-                }
-            }
-        }
-
-        boxWasChecked(optionId) {
-            if (this.isAndFilter) {
-                let filterPos = this.allOf.indexOf(optionId);
-                if (filterPos == -1) {
-                    this.allOf.push(optionId);
-                }
-            } else {
-                let filterPos = this.anyOf.indexOf(optionId);
-                if (filterPos == -1) {
-                    this.anyOf.push(optionId);
-                }
-            }
-            this.refreshActiveState();
-            refreshCardsView(this.filters);
-        }
-
-        boxWasUnchecked(optionId) {
-            if (this.isAndFilter) {
-                let filterPos = this.allOf.indexOf(optionId);
-                if (filterPos != -1) {
-                    this.allOf.splice(filterPos, 1);
-                }
-            } else {
-                let filterPos = this.anyOf.indexOf(optionId);
-                if (filterPos != -1) {
-                    this.anyOf.splice(filterPos, 1);
-                }
-            }
-            this.refreshActiveState();
-            refreshCardsView(this.filters);
-        }
-
         checkAllBoxes(filterId) {
             let filterMenu = document.getElementById(filterId + "-menu");
             for (const filterOption of filterMenu.children) {
@@ -119,27 +53,132 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             }
         }
+    }
 
-        uncheckAllBoxes(filterId) {
+    class AllOfFilter extends Filter {
+        enableFilters(filterId) {
             let filterMenu = document.getElementById(filterId + "-menu");
-            for (const platformOption of filterMenu.children) {
-                if (platformOption.classList.contains("filter-option")) {
-                    platformOption.children[0].checked = false;
-                    this.boxWasUnchecked(platformOption.children[0].id);
+            for (const filterOption of filterMenu.children) {
+                if (filterOption.classList.contains("filter-option")) {
+                    const optionId = filterOption.children[0].id;
+                    const checkbox = filterOption.children[0];
+                    if (checkbox.checked) {
+                        this.allOf.push(filterOption.children[0].id);
+                    }
+
+                    checkbox.addEventListener("change", (event) => {
+                        if (checkbox.checked) {
+                            this.boxWasChecked(optionId);
+                        } else {
+                            this.boxWasUnchecked(optionId);
+                        }
+                    });
+                } else if (filterOption.classList.contains("reset-links")) {
+                    filterOption.children[0].addEventListener("click", (event) => {
+                        this.checkAllBoxes(filterId);
+                    });
+                    filterOption.children[1].addEventListener("click", (event) => {
+                        this.uncheckAllBoxes(filterId);
+                    });
                 }
             }
         }
 
+        boxWasChecked(optionId) {
+            let filterPos = this.allOf.indexOf(optionId);
+            if (filterPos == -1) {
+                this.allOf.push(optionId);
+            }
+
+            this.refreshActiveState();
+            refreshCardsView(this.filters);
+        }
+
+        boxWasUnchecked(optionId) {
+            let filterPos = this.allOf.indexOf(optionId);
+            if (filterPos != -1) {
+                this.allOf.splice(filterPos, 1);
+            }
+
+            this.refreshActiveState();
+            refreshCardsView(this.filters);
+        }
+
         refreshActiveState() {
             let filterButton = document.getElementById(this.filterId);
-            if(this.isAndFilter) {
-                if(this.allOf.length === 0) {
-                    filterButton.classList.remove("enabled");
-                } else {
-                    filterButton.classList.add("enabled");
-                }
+            if(this.allOf.length === 0) {
+                filterButton.classList.remove("enabled");
             } else {
-                console.error("Not implemented :)")
+                filterButton.classList.add("enabled");
+            }
+        }
+    }
+
+    class AnyOfFilter extends Filter {
+        constructor(filterId, filters) {
+            super(filterId, filters);
+
+            this.numberOfOption = 0;
+            let filterMenu = document.getElementById(filterId + "-menu");
+            for (const filterOption of filterMenu.children) {
+                if (filterOption.classList.contains("filter-option")) {
+                    this.numberOfOption++;
+                }
+            }
+        }
+
+        enableFilters(filterId) {
+            let filterMenu = document.getElementById(filterId + "-menu");
+            for (const filterOption of filterMenu.children) {
+                if (filterOption.classList.contains("filter-option")) {
+                    const optionId = filterOption.children[0].id;
+                    const checkbox = filterOption.children[0];
+                    if (checkbox.checked) {
+                        this.anyOf.push(filterOption.children[0].id);
+                    }
+
+                    checkbox.addEventListener("change", (event) => {
+                        if (checkbox.checked) {
+                            this.boxWasChecked(optionId);
+                        } else {
+                            this.boxWasUnchecked(optionId);
+                        }
+                    });
+                } else if (filterOption.classList.contains("reset-links")) {
+                    filterOption.children[0].addEventListener("click", (event) => {
+                        this.checkAllBoxes(filterId);
+                    });
+                    filterOption.children[1].addEventListener("click", (event) => {
+                        this.uncheckAllBoxes(filterId);
+                    });
+                }
+            }
+        }
+
+        boxWasChecked(optionId) {
+            let filterPos = this.anyOf.indexOf(optionId);
+            if (filterPos == -1) {
+                this.anyOf.push(optionId);
+            }
+            this.refreshActiveState();
+            refreshCardsView(this.filters);
+        }
+
+        boxWasUnchecked(optionId) {
+            let filterPos = this.anyOf.indexOf(optionId);
+            if (filterPos != -1) {
+                this.anyOf.splice(filterPos, 1);
+            }
+            this.refreshActiveState();
+            refreshCardsView(this.filters);
+        }
+
+        refreshActiveState() {
+            let filterButton = document.getElementById(this.filterId);
+            if(this.anyOf.length === this.numberOfOption) {
+                filterButton.classList.remove("enabled");
+            } else {
+                filterButton.classList.add("enabled");
             }
         }
     }
@@ -181,10 +220,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     };
 
     var filters = [];
-    let platformFilter = new Filter("filter-platform", true, filters);
-    let maturityFilter = new Filter("filter-maturity", false, filters);
-    let licenceFilter = new Filter("filter-licence", false, filters);
-    let featureFilter = new Filter("filter-features", true, filters);
+    let platformFilter = new AllOfFilter("filter-platform", filters);
+    let maturityFilter = new AnyOfFilter("filter-maturity", filters);
+    let licenceFilter = new AnyOfFilter("filter-licence", filters);
+    let featureFilter = new AllOfFilter("filter-features", filters);
     filters.push(
         platformFilter,
         maturityFilter,
