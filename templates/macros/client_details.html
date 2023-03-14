@@ -2,7 +2,7 @@
 {% macro client_details(name, client) %}
 <div class="client-details">
     <img class="app-logo" src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Logo">
-    <h3>{{ name }}<div class="maturity">{{ client.maturity }}</div></h3>
+    <h3>{{ name }}<div class="maturity {{ client.maturity | lower }}">{{ client.maturity }}</div></h3>
     <p class="last-release">Last release: {{ client.last_release }}</p>
     <p class="summary">{{ client.summary }}</p>
     <div class="features-container">
