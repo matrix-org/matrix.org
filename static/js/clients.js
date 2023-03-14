@@ -9,14 +9,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
 
         makeMenuInteractive(filterId) {
-            let filterButton = document.getElementById(filterId)
+            let filterButton = document.getElementById(filterId);
+            let filterMenu = document.getElementById(filterId + "-menu");
+            let filterOverlay = document.getElementById("filters-overlay");
+
             filterButton.addEventListener("click", (event) => {
-                let filterMenu = document.getElementById(filterId + "-menu");
                 if (filterMenu.style.display !== "block") {
                     filterMenu.style.display = "block";
+                    filterOverlay.style.display = "block";
+                    filterButton.style.zIndex = 150;
                 } else {
                     filterMenu.style.display = "none";
+                    filterOverlay.style.display = "none";
+                    filterButton.style.zIndex = 100;
                 }
+            });
+
+            filterOverlay.addEventListener("click", (event) => {
+                filterMenu.style.display = "none";
+                filterOverlay.style.display = "none";
+                filterButton.style.zIndex = 100;
             });
         }
 
