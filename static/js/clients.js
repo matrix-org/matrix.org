@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     class Filter {
-        constructor(filterId, isAndFilter, allOf, anyOf) {
-            this.allOf = allOf;
-            this.anyOf = anyOf;
+        constructor(filterId, isAndFilter, filters) {
+            this.allOf = [];
+            this.anyOf = [];
+            this.filters = filters;
             this.makeMenuInteractive(filterId);
             this.enableFilters(filterId);
             this.isAndFilter = isAndFilter;
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     this.anyOf.push(optionId);
                 }
             }
-            refreshCardsView(this.allOf, this.anyOf);
+            refreshCardsView(this.filters);
         }
 
         boxWasUnchecked(optionId) {
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     this.anyOf.splice(filterPos, 1);
                 }
             }
-            refreshCardsView(this.allOf, this.anyOf);
+            refreshCardsView(this.filters);
         }
 
         checkAllBoxes(filterId) {
@@ -104,7 +105,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     this.boxWasChecked(filterOption.children[0].id);
                 }
             }
-            this.refreshCardsView();
+            refreshCardsView(this.filters);
         }
 
         uncheckAllBoxes(filterId) {
@@ -128,7 +129,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    function refreshCardsView(allOf, anyOf) {
+    function refreshCardsView(filters) {
+        console.log(filters.length+" filters")
+        let anyOf = [];
+        let allOf = [];
+        for(let filter of filters) {
+            anyOf = anyOf.concat(filter.anyOf);
+            allOf = allOf.concat(filter.allOf);
+        }
+        console.log(anyOf);
         let deck = document.getElementById("all-clients");
         for (const deckItem of deck.children) {
             for (child of deckItem.children) {
@@ -158,11 +167,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     };
 
-    let allOf = [];
-    let anyOf = []
-    let platformFilter = new Filter("filter-platform", true, allOf, anyOf);
-    let maturityFilter = new Filter("filter-maturity", false, allOf, anyOf);
-    let licenceFilter = new Filter("filter-licence", false, allOf, anyOf);
-    let featureFilter = new Filter("filter-features", true, allOf, anyOf);
-    refreshCardsView(allOf, anyOf);
+    var filters = [];
+    let platformFilter = new Filter("filter-platform", true, filters);
+    let maturityFilter = new Filter("filter-maturity", false, filters);
+    let licenceFilter = new Filter("filter-licence", false, filters);
+    let featureFilter = new Filter("filter-features", true, filters);
+    filters.push(
+        platformFilter,
+        maturityFilter,
+        licenceFilter,
+        featureFilter
+    );
+    refreshCardsView(filters);
 })
