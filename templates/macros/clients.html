@@ -1,27 +1,3 @@
-{% macro platform_links(packages) %}
-{% if packages.apple_app_store.app_id and packages.apple_app_store.org %}
-<div class="platform-pill">App Store</div>
-{% endif %}
-{% if packages.google_play_store.app_id %}
-<div class="platform-pill">Google Play</div>
-{% endif %}
-{% if packages.f_droid.app_id %}
-<div class="platform-pill">F-Droid</div>
-{% endif %}
-{% if packages.flathub.app_id %}
-<div class="platform-pill">Flathub</div>
-{% endif %}
-{% if packages.other_url %}
-<div class="platform-pill">Web</div>
-{% endif %}
-{% if packages.macos_installer %}
-<div class="platform-pill">macOS</div>
-{% endif %}
-{% if packages.windows_installer %}
-<div class="platform-pill">Windows</div>
-{% endif %}
-{% endmacro platform_links %}
-
 {% macro classes(client) %}
 {% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
 platform-ios
@@ -85,20 +61,36 @@ licence-mit
     {% elif name == "f_droid" %}
         <a href="https://f-droid.org/packages/{{ package.app_id }}"><img src="/assets/stores/f-droid.svg" alt="Download on F-Droid" /></a>
     {% elif name == "windows_installer" %}
-        <a href="{{ package }}" class="install_button">
-            <span class="install_on">Download for</span>
-            <span class="platform">Windows</span>
-        </a>
+        <a href="{{ package }}"><img src="/assets/stores/download_for_windows.svg" alt="Download for Windows" /></a>
     {% elif name == "macos_installer" %}
-        <a href="{{ package }}" class="install_button">
-            <span class="install_on">Download for</span>
-            <span class="platform">macOS</span>
-        </a>
+        <a href="{{ package }}"><img src="/assets/stores/download_for_macos.svg" alt="Download for macOS" /></a>
     {% elif name == "other_url" %}
-        <a href="{{ package }}" class="install_button">
-            <span class="install_on">Use client on</span>
-            <span class="platform">Web</span>
-        </a>
+        <a href="{{ package }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
     {% endif %}
+{% endfor %}
+{% endmacro %}
+
+{% macro platforms(packages) %}
+{% set_global platforms = [] %}
+{% for name, package in packages %}
+    {% if name == "windows_installer" %}
+        {% set_global plaforms = platforms | concat(with="Windows") %}
+    {% elif name == "macos_installer" %}
+        {% set_global plaforms = platforms | concat(with="macOS") %}
+    {% elif name == "google_play_store" %}
+        {% set_global plaforms = platforms | concat(with="Android") %}
+    {% elif name == "f_droid" %}
+        {% set_global plaforms = platforms | concat(with="Android") %}
+    {% elif name == "apple_app_store" %}
+        {% set_global plaforms = platforms | concat(with="iOS") %}
+    {% elif name == "flathub" %}
+        {% set_global plaforms = platforms | concat(with="Linux") %}
+    {% elif name == "other_url" %}
+        {% set_global plaforms = platforms | concat(with="Web") %}
+    {% endif %}
+{% endfor %}
+{% set platforms = platforms | unique %}
+{% for platform in platforms %}
+    <div class="platform-pill">{{ platform }}</div>
 {% endfor %}
 {% endmacro %}

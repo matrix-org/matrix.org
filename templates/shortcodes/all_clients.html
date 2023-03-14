@@ -142,7 +142,7 @@
             <h3>{{ name }}</h3>
             <p>{{ client.summary | safe }}</p>
             <div class="platform-links">
-                {{ clients::platform_links(packages=client.packages) }}
+                {{ clients::platforms(packages=client.packages) }}
             </div>
             <a>Open client details</a>
         </label>
