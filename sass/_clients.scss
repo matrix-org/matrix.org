@@ -192,6 +192,8 @@
     right: 0;
     bottom: 0;
 
+    padding: 1rem;
+
     @media (min-width: 767px) {
         top: 50%;
         left: 50%;
@@ -203,6 +205,8 @@
 
         border: 1px solid var(--borders-color);
         border-radius: 16px;
+
+        padding: 1.5rem;
     }
 
     z-index: 300;
@@ -210,7 +214,6 @@
     overflow-y: scroll;
 
     background-color: #fff;
-    padding: 1.5rem;
 
     .close-button {
         position: absolute;
