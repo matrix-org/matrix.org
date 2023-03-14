@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         constructor(filterId, isAndFilter, filters) {
             this.allOf = [];
             this.anyOf = [];
+            this.filterId = filterId;
             this.filters = filters;
             this.makeMenuInteractive(filterId);
             this.enableFilters(filterId);
@@ -41,7 +42,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     const checkbox = filterOption.children[0];
                     if (this.isAndFilter) {
                         if (checkbox.checked) {
-                            console.log(filterOption.children[0].id);
                             this.allOf.push(filterOption.children[0].id);
                         }
                     } else {
@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     this.anyOf.push(optionId);
                 }
             }
+            this.refreshActiveState();
             refreshCardsView(this.filters);
         }
 
@@ -94,6 +95,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     this.anyOf.splice(filterPos, 1);
                 }
             }
+            this.refreshActiveState();
             refreshCardsView(this.filters);
         }
 
@@ -127,17 +129,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             }
         }
+
+        refreshActiveState() {
+            let filterButton = document.getElementById(this.filterId);
+            if(this.isAndFilter) {
+                if(this.allOf.length === 0) {
+                    filterButton.classList.remove("enabled");
+                } else {
+                    filterButton.classList.add("enabled");
+                }
+            } else {
+                console.error("Not implemented :)")
+            }
+        }
     }
 
     function refreshCardsView(filters) {
-        console.log(filters.length+" filters")
         let anyOf = [];
         let allOf = [];
         for(let filter of filters) {
             anyOf = anyOf.concat(filter.anyOf);
             allOf = allOf.concat(filter.allOf);
         }
-        console.log(anyOf);
         let deck = document.getElementById("all-clients");
         for (const deckItem of deck.children) {
             for (child of deckItem.children) {
