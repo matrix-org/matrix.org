@@ -185,21 +185,40 @@
 
 .client-details {
     display: none;
-
     position: fixed;
-    top: 50%;
-    left: 50%;
-    max-width: calc(var(--page-max-width)*.65);
-    max-height: calc(100svh - var(--navbar-height) - 2rem);
-    transform: translate(-50%, -43%);
+
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    @media (min-width: 767px) {
+        top: 50%;
+        left: 50%;
+        right: unset;
+        bottom: unset;
+        transform: translate(-50%, -43%);
+        max-width: calc(var(--page-max-width)*.65);
+        max-height: calc(100svh - var(--navbar-height) - 2rem);
+
+        border: 1px solid var(--borders-color);
+        border-radius: 16px;
+    }
+
     z-index: 300;
     flex-direction: column;
     overflow-y: scroll;
 
     background-color: #fff;
-    border: 1px solid var(--borders-color);
-    border-radius: 16px;
     padding: 1.5rem;
+
+    .close-button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        cursor: pointer;
+    }
 
     .app-logo {
         width: 8rem;
