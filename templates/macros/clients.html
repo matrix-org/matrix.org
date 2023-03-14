@@ -51,46 +51,34 @@ licence-mit
 {% endmacro %}
 
 {% macro install_links(packages) %}
-{% for name, package in packages %}
-    {% if name == "apple_app_store" %}
-        <a href="https://apps.apple.com/app/{{ package.org }}/{{ package.app_id }}"><img src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
-    {% elif name == "google_play_store" %}
-        <a href="https://play.google.com/store/apps/details?id={{ package.app_id }}"><img src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
-    {% elif name == "flathub" %}
-        <a href="https://flathub.org/apps/details/{{ package.app_id }}"><img src="/assets/stores/flathub.svg" alt="Download on Flathub" /></a>
-    {% elif name == "f_droid" %}
-        <a href="https://f-droid.org/packages/{{ package.app_id }}"><img src="/assets/stores/f-droid.svg" alt="Download on F-Droid" /></a>
-    {% elif name == "windows_installer" %}
-        <a href="{{ package }}"><img src="/assets/stores/download_for_windows.svg" alt="Download for Windows" /></a>
-    {% elif name == "macos_installer" %}
-        <a href="{{ package }}"><img src="/assets/stores/download_for_macos.svg" alt="Download for macOS" /></a>
-    {% elif name == "other_url" %}
-        <a href="{{ package }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
-    {% endif %}
-{% endfor %}
+{% if packages.windows_installer %}
+    <a href="{{ packages.windows_installer }}"><img src="/assets/stores/download_for_windows.svg" alt="Download for Windows" /></a>
+{% endif %}
+{% if packages.macos_installer %}
+    <a href="{{ packages.macos_installer }}"><img src="/assets/stores/download_for_macos.svg" alt="Download for macOS" /></a>
+{% endif %}
+{% if packages.flathub %}
+    <a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}"><img src="/assets/stores/flathub.svg" alt="Download on Flathub" /></a>
+{% endif %}
+{% if packages.other_url %}
+    <a href="{{ packages.other_url }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
+{% endif %}
+{% if packages.apple_app_store %}
+    <a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"><img src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
+{% endif %}
+{% if packages.f_droid %}
+    <a href="https://f-droid.org/packages/{{ packages.f_droid.app_id }}"><img src="/assets/stores/f-droid.svg" alt="Download on F-Droid" /></a>
+{% endif %}
+{% if packages.google_play_store %}
+    <a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"><img src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
+{% endif %}
 {% endmacro %}
 
 {% macro platforms(packages) %}
-{% set_global platforms = [] %}
-{% for name, package in packages %}
-    {% if name == "windows_installer" %}
-        {% set_global plaforms = platforms | concat(with="Windows") %}
-    {% elif name == "macos_installer" %}
-        {% set_global plaforms = platforms | concat(with="macOS") %}
-    {% elif name == "google_play_store" %}
-        {% set_global plaforms = platforms | concat(with="Android") %}
-    {% elif name == "f_droid" %}
-        {% set_global plaforms = platforms | concat(with="Android") %}
-    {% elif name == "apple_app_store" %}
-        {% set_global plaforms = platforms | concat(with="iOS") %}
-    {% elif name == "flathub" %}
-        {% set_global plaforms = platforms | concat(with="Linux") %}
-    {% elif name == "other_url" %}
-        {% set_global plaforms = platforms | concat(with="Web") %}
-    {% endif %}
-{% endfor %}
-{% set platforms = platforms | unique %}
-{% for platform in platforms %}
-    <div class="platform-pill">{{ platform }}</div>
-{% endfor %}
+{% if packages.apple_app_store %}<div class="platform-pill">iOS</div>{% endif %}
+{% if packages.google_play_store or packages.f_droid %}<div class="platform-pill">Android</div>{% endif %}
+{% if packages.windows_installer %}<div class="platform-pill">Windows</div>{% endif %}
+{% if packages.macos_installer %}<div class="platform-pill">macOS</div>{% endif %}
+{% if packages.flathub %}<div class="platform-pill">Linux</div>{% endif %}
+{% if packages.other_url %}<div class="platform-pill">Web</div>{% endif %}
 {% endmacro %}
