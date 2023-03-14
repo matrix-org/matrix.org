@@ -1,26 +1,24 @@
 {% macro platform_links(packages) %}
 {% if packages.apple_app_store.app_id and packages.apple_app_store.org %}
-<a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"
-    class="platform-pill">App Store</a>
+<div class="platform-pill">App Store</div>
 {% endif %}
 {% if packages.google_play_store.app_id %}
-<a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"
-    class="platform-pill">Google Play</a>
+<div class="platform-pill">Google Play</div>
 {% endif %}
 {% if packages.f_droid.app_id %}
-<a href="https://f-droid.org/packages/{{ packages.f_droid.app_id }}" class="platform-pill">F-Droid</a>
+<div class="platform-pill">F-Droid</div>
 {% endif %}
 {% if packages.flathub.app_id %}
-<a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}" class="platform-pill">Flathub</a>
+<div class="platform-pill">Flathub</div>
 {% endif %}
 {% if packages.other_url %}
-<a href="{{ packages.other_url }}" class="platform-pill">Web</a>
+<div class="platform-pill">Web</div>
 {% endif %}
 {% if packages.macos_installer %}
-<a href="{{ packages.macos_installer }}" class="platform-pill">macOS</a>
+<div class="platform-pill">macOS</div>
 {% endif %}
 {% if packages.windows_installer %}
-<a href="{{ packages.windows_installer }}" class="platform-pill">Windows</a>
+<div class="platform-pill">Windows</div>
 {% endif %}
 {% endmacro platform_links %}
 
