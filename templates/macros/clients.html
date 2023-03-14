@@ -39,8 +39,10 @@ licence-mit
 {% endmacro classes %}
 
 {% macro features(features, supported) %}
+{% set_global matching = 0 %}
 {% for feature_name, supports in features %}
 {% if supports == supported %}
+    {% set_global matching = matching + 1 %}
     {% if feature_name == "e2ee" or feature_name == "sso" %}
     <p>{{ feature_name | upper }}</p>
     {% else %}
@@ -48,6 +50,7 @@ licence-mit
     {% endif %}
 {% endif %}
 {% endfor %}
+{% if matching == 0 %}None!{% endif %}
 {% endmacro %}
 
 {% macro install_links(packages) %}
