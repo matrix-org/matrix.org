@@ -189,7 +189,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    max-width: calc(var(--page-max-width)*.55);
+    max-width: calc(var(--page-max-width)*.65);
     max-height: calc(100svh - var(--navbar-height) - 2rem);
     transform: translate(-50%, -43%);
     z-index: 300;
