@@ -1,0 +1,25 @@
+{% import "macros/clients.html" as clients %}
+{% macro client_details(name, client) %}
+<div class="client-details">
+    <label for="client-{{ name | slugify }}-card-checkbox" class="close-button">
+        <img src="/assets/cross.svg" alt="Close popup" />
+    </label>
+    <img class="app-logo" src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Logo">
+    <h3>{{ name }}<div class="maturity {{ client.maturity | lower }}">{{ client.maturity }}</div></h3>
+    <p class="last-release">Last release: {{ client.last_release }}</p>
+    <p class="summary">{{ client.summary }}</p>
+    <div class="features-container">
+        <p class="support-title">Supported Features</p>
+        <div class="supported features-list">
+            {{ clients::features(features=client.features, supported=true) }}
+        </div>
+        <p class="support-title">Unsupported Features</p>
+        <div class="unsupported features-list">
+            {{ clients::features(features=client.features, supported=false) }}
+        </div>
+    </div>
+    <div class="stores">
+        {{ clients::install_links(packages=client.packages) }}
+    </div>
+</div>
+{% endmacro %}

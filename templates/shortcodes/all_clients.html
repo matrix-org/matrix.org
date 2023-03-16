@@ -1,4 +1,5 @@
 {% import "macros/clients.html" as clients %}
+{% import "macros/client_details.html" as client_details %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
 
 <div id="filters">
@@ -134,13 +135,24 @@
 
 <div id="all-clients" class="clients-card-deck">
     {% for name, client in clients %}
-    <div class="client-card {{ clients::classes(client=client) }}">
-        <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
-        <h3>{{ name }}</h3>
-        <p>{{ client.summary | safe }}</p>
-        <div class="platform-links">
-            {{ clients::platform_links(packages=client.packages) }}
-        </div>
+    <div>
+        <input id="client-{{ name | slugify }}-card-checkbox" type="checkbox" class="client-checkbox" aria-hidden="true">
+        <label for="client-{{ name | slugify }}-card-checkbox" class="client-card {{ clients::classes(client=client) }}">
+            <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
+            <h3>{{ name }}</h3>
+            <p>{{ client.summary | safe }}</p>
+            <div class="platform-links">
+                {{ clients::platforms(packages=client.packages) }}
+            </div>
+            <a>Open client details</a>
+        </label>
+
+        <!-- Overlay -->
+        <label for="client-{{ name | slugify }}-card-checkbox" class="client-details-overlay">
+        </label>
+
+        <!-- Client details card -->
+        {{ client_details::client_details(name=name, client=client) }}
     </div>
     {% endfor %}
 </div>

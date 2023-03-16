@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     this.boxWasChecked(filterOption.children[0].id);
                 }
             }
+            this.refreshCardsView();
         }
 
         uncheckAllBoxes(filterId) {
@@ -103,30 +104,43 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             }
         }
+
+        uncheckAllBoxes(filterId) {
+            let filterMenu = document.getElementById(filterId + "-menu");
+            for (const platformOption of filterMenu.children) {
+                if (platformOption.classList.contains("filter-option")) {
+                    platformOption.children[0].checked = false;
+                    this.boxWasUnchecked(platformOption.children[0].id);
+                }
+            }
+        }
     }
 
     function refreshCardsView(allOf, anyOf) {
-        let clients = document.getElementById("all-clients");
-        for (const client of clients.children) {
-            if (client.classList.contains("client-card")) {
-                let containsAllOf = allOf.every((elem) => {
-                    return client.classList.contains(elem);
-                });
-                let containsAnyOf = false;
-                for (const filter of anyOf) {
-                    if (client.classList.contains(filter)) {
-                        containsAnyOf = true;
-                        // and we can break?
+        let deck = document.getElementById("all-clients");
+        for (const deckItem of deck.children) {
+            for (child of deckItem.children) {
+                if (child.classList.contains("client-card")) {
+                    let client = child;
+                    let containsAllOf = allOf.every((elem) => {
+                        return client.classList.contains(elem);
+                    });
+                    let containsAnyOf = false;
+                    for (const filter of anyOf) {
+                        if (client.classList.contains(filter)) {
+                            containsAnyOf = true;
+                            // and we can break?
+                        }
                     }
-                }
-                if (anyOf.length <= 0) {
-                    containsAnyOf = true;
-                }
+                    if (anyOf.length <= 0) {
+                        containsAnyOf = true;
+                    }
 
-                if (containsAllOf && containsAnyOf) {
-                    client.style.display = "flex";
-                } else {
-                    client.style.display = "none";
+                    if (containsAllOf && containsAnyOf) {
+                        client.style.display = "flex";
+                    } else {
+                        client.style.display = "none";
+                    }
                 }
             }
         }
