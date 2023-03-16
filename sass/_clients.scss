@@ -1,3 +1,7 @@
+body:has(.clients-card-deck > div > .client-checkbox:checked) {
+    overflow: hidden;
+}
+
 .clients_page {
     padding-top: 3rem;
     padding-inline: 2rem;
@@ -353,7 +357,7 @@
 
     &:checked~.client-details-overlay {
         position: fixed;
-        z-index: 100;
+        z-index: 150;
         top: var(--navbar-height);
         right: 0;
         bottom: 0;
