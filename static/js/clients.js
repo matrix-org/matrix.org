@@ -15,21 +15,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
             let filterOverlay = document.getElementById("filters-overlay");
 
             filterButton.addEventListener("click", (event) => {
-                if (filterMenu.style.display !== "block") {
-                    filterMenu.style.display = "block";
-                    filterOverlay.style.display = "block";
-                    filterButton.style.zIndex = 150;
+                if (!filterMenu.classList.contains("display")) {
+                    filterMenu.classList.add("display");
+                    filterOverlay.classList.add("display");
+                    filterButton.classList.add("expanded");
                 } else {
-                    filterMenu.style.display = "none";
-                    filterOverlay.style.display = "none";
-                    filterButton.style.zIndex = 100;
+                    filterMenu.classList.remove("display");
+                    filterOverlay.classList.remove("display");
+                    filterButton.classList.remove("expanded");
                 }
             });
 
             filterOverlay.addEventListener("click", (event) => {
-                filterMenu.style.display = "none";
-                filterOverlay.style.display = "none";
-                filterButton.style.zIndex = 100;
+                filterMenu.classList.remove("display");
+                filterOverlay.classList.remove("display");
+                filterButton.classList.remove("expanded");
             });
         }
 
@@ -210,9 +210,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     }
 
                     if (containsAllOf && containsAnyOf) {
-                        client.style.display = "flex";
+                        client.classList.remove("filtered-out");
                     } else {
-                        client.style.display = "none";
+                        client.classList.add("filtered-out");
                     }
                 }
             }

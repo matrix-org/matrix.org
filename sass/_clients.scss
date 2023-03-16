@@ -76,6 +76,10 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
         color: #777;
         text-decoration: none;
     }
+
+    &.filtered-out {
+        display: none;
+    }
 }
 
 .platform-links {
@@ -122,6 +126,7 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
             flex-direction: row;
             justify-content: space-between;
             gap: .8rem;
+            z-index: 100;
 
             padding: .2rem .8rem;
 
@@ -129,15 +134,6 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
             color: #000;
             border: 1px solid #d2d2d2;
             border-radius: 1000px;
-
-            &.enabled {
-                background-color: #000;
-                color: #fff;
-
-                img {
-                    filter: invert(1);
-                }
-            }
 
             cursor: pointer;
             user-select: none;
@@ -151,6 +147,19 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
             img {
                 height: .9em;
                 margin-block: auto;
+            }
+
+            &.enabled {
+                background-color: #000;
+                color: #fff;
+
+                img {
+                    filter: invert(1);
+                }
+            }
+
+            &.expanded {
+                z-index: 200;
             }
         }
 
@@ -193,6 +202,10 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
                     user-select: none;
                 }
             }
+
+            &.display {
+                display: block;
+            }
         }
     }
 }
@@ -207,6 +220,10 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
     z-index: 100;
 
     background-color: rgba(0, 0, 0, .5);
+
+    &.display {
+        display: block;
+    }
 }
 
 .client-details {
@@ -244,7 +261,11 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
     .close-button {
         position: absolute;
         top: 1rem;
-        right: 1rem;
+        left: 1rem;
+        @media (min-width: 767px) {
+            right: 1rem;
+            left: unset;
+        }
 
         cursor: pointer;
 
@@ -350,6 +371,8 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
 
 .client-details-overlay {
     display: none;
+
+
 }
 
 .client-checkbox {
