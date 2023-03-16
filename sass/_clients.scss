@@ -316,7 +316,7 @@
         margin-block-start: 1.5rem;
 
         a img {
-            height: 3.33rem;
+            height: 54px;
             display: block;
         }
     }
@@ -343,34 +343,5 @@
 
     &:checked~.client-details {
         display: flex;
-    }
-}
-
-.install_button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: .3rem;
-
-    padding: 0 1.5rem;
-
-    background-color: #000;
-    color: #fff;
-
-    border-radius: 10px;
-    border: 1px solid rgb(166, 166, 166);
-
-    height: 3.33rem;
-    min-width: 9.96rem;
-    max-width: 11.18rem;
-
-    .install_on {
-        font-size: .7rem;
-        line-height: 100%;
-    }
-
-    .platform {
-        font-size: 1.3rem;
-        line-height: 100%;
     }
 }
