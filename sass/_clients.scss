@@ -164,7 +164,6 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
         }
 
         .filter-menu {
-            display: none;
             position: absolute;
             top: 2.7rem;
             left: 0;
@@ -203,15 +202,14 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
                 }
             }
 
-            &.display {
-                display: block;
+            &:not(.display) {
+                display: none;
             }
         }
     }
 }
 
 #filters-overlay {
-    display: none;
     position: fixed;
     top: var(--navbar-height);
     left: 0;
@@ -221,13 +219,13 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
 
     background-color: rgba(0, 0, 0, .5);
 
-    &.display {
-        display: block;
+    &:not(.display) {
+        display: none;
     }
 }
 
 .client-details {
-    display: none;
+    display: flex;
     position: fixed;
 
     top: var(--navbar-height);
@@ -369,12 +367,6 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
     }
 }
 
-.client-details-overlay {
-    display: none;
-
-
-}
-
 .client-checkbox {
     display: none;
 
@@ -386,11 +378,13 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
         bottom: 0;
         left: 0;
         background-color: rgba(0, 0, 0, .5);
-
-        display: block;
     }
 
-    &:checked~.client-details {
-        display: flex;
+    &:not(:checked)~.client-details-overlay {
+        display: none;
+    }
+
+    &:not(:checked)~.client-details {
+        display: none;
     }
 }
