@@ -1,3 +1,7 @@
+body:has(.clients-card-deck > div > .client-checkbox:checked) {
+    overflow: hidden;
+}
+
 .clients_page {
     padding-top: 3rem;
     padding-inline: 2rem;
@@ -72,6 +76,10 @@
         color: #777;
         text-decoration: none;
     }
+
+    &.filtered-out {
+        display: none;
+    }
 }
 
 .platform-links {
@@ -113,10 +121,12 @@
         position: relative;
 
         .filter {
+            position: relative;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             gap: .8rem;
+            z-index: 100;
 
             padding: .2rem .8rem;
 
@@ -138,16 +148,28 @@
                 height: .9em;
                 margin-block: auto;
             }
+
+            &.enabled {
+                background-color: #000;
+                color: #fff;
+
+                img {
+                    filter: invert(1);
+                }
+            }
+
+            &.expanded {
+                z-index: 200;
+            }
         }
 
         .filter-menu {
-            display: none;
             position: absolute;
             top: 2.7rem;
             left: 0;
             min-width: 15rem;
             max-width: 20rem;
-            z-index: 100;
+            z-index: 200;
 
             padding: .5rem 1rem;
 
@@ -179,12 +201,31 @@
                     user-select: none;
                 }
             }
+
+            &:not(.display) {
+                display: none;
+            }
         }
     }
 }
 
+#filters-overlay {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    background-color: rgba(0, 0, 0, .5);
+
+    &:not(.display) {
+        display: none;
+    }
+}
+
 .client-details {
-    display: none;
+    display: flex;
     position: fixed;
 
     top: var(--navbar-height);
@@ -218,7 +259,11 @@
     .close-button {
         position: absolute;
         top: 1rem;
-        right: 1rem;
+        left: 1rem;
+        @media (min-width: 767px) {
+            right: 1rem;
+            left: unset;
+        }
 
         cursor: pointer;
 
@@ -322,26 +367,24 @@
     }
 }
 
-.client-details-overlay {
-    display: none;
-}
-
 .client-checkbox {
     display: none;
 
     &:checked~.client-details-overlay {
         position: fixed;
-        z-index: 100;
+        z-index: 150;
         top: var(--navbar-height);
         right: 0;
         bottom: 0;
         left: 0;
         background-color: rgba(0, 0, 0, .5);
-
-        display: block;
     }
 
-    &:checked~.client-details {
-        display: flex;
+    &:not(:checked)~.client-details-overlay {
+        display: none;
+    }
+
+    &:not(:checked)~.client-details {
+        display: none;
     }
 }
