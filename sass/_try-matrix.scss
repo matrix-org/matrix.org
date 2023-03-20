@@ -49,12 +49,14 @@
         }
 
         img {
+            max-height: 220px;
+            max-width: 360px;
+
             margin: auto;
             @media (max-width: 767px) {
                 margin-block: 2rem;
+                max-width: calc(100% - 2rem);
             }
-            max-height: 220px;
-            max-width: 360px;
         }
     }
 }
