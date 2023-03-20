@@ -1,0 +1,50 @@
+{% extends "page.html" %}
+{% block content %}
+<div class="page-header">
+    <div class="hero-block">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.extra.summary }}</p>
+    </div>
+</div>
+
+<div class="try_matrix">
+    <div class="step-background">
+        <div class="step choose-a-client">
+            <div class="instructions">
+                <h3>Choose a client</h3>
+                <p>We recommend Element as a safe default, but there is a variety of
+                clients available.
+                </p>
+                <a href="/ecosystem/clients" class="call-to-action">Browse clients</a>
+            </div>
+            <img src="/assets/try-matrix/client.svg" alt="Artist view of an abstract matrix client." />
+        </div>
+    </div>
+    <div class="step-background coloured">
+        <div class="step choose-a-server">
+            <div class="instructions">
+                <h3>Choose a server</h3>
+                <p>Matrix.org is provided for free by the Foundation, but we
+                encourage you to find an existing server or get hosting for your
+                organisation.
+                </p>
+                <a href="/ecosystem/servers" class="call-to-action">Browse servers</a>
+            </div>
+            <img src="/assets/try-matrix/server.svg" alt="Artist view of an abstract server." />
+        </div>
+    </div>
+    <div class="step-background">
+        <div class="step register-and-chat">
+            <div class="instructions">
+                <h3>Register and start chatting</h3>
+                <p>That's all you need to get started! If you feel lost you can
+                browse the <a href="/docs/chat_basiscs">chat basics</a>
+                documentation.
+                </p>
+                <a href="#" class="call-to-action">Read the docs</a>
+            </div>
+            <img src="/assets/try-matrix/chat.svg" alt="Abstract representation of a chat." />
+        </div>
+    </div>
+</div>
+{% endblock content %}

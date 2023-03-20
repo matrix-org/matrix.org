@@ -1,0 +1,52 @@
+.try_matrix {
+    display: flex;
+    flex-direction: column;
+
+    .step-background {
+        padding-inline: 5.625rem;
+        padding-block: 5rem;
+
+        &.coloured {
+            background-color: #fafafa;
+        }
+    }
+
+    .step {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-block: auto;
+
+        .instructions {
+            display: flex;
+            flex-direction: column;
+
+            padding-block: 1rem;
+
+            h3 {
+                font-size: 2.2rem;
+                margin-top: 0;
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+
+            .call-to-action {
+                background-color: #000;
+                border-radius: 999px;
+                color: #fff;
+
+                margin-top: 2rem;
+                padding: .4em 2em;
+                align-self: center;
+            }
+        }
+
+        img {
+            margin: auto;
+            max-height: 220px;
+            max-width: 360px;
+        }
+    }
+}
