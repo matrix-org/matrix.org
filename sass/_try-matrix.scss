@@ -3,8 +3,10 @@
     flex-direction: column;
 
     .step-background {
-        padding-inline: 5.625rem;
-        padding-block: 5rem;
+        padding-block: 5rem 5.625rem;
+        @media (max-width: 767px) {
+            padding: 1rem;
+        }
 
         &.coloured {
             background-color: #fafafa;
@@ -15,6 +17,9 @@
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
         margin-block: auto;
 
         .instructions {
@@ -45,6 +50,9 @@
 
         img {
             margin: auto;
+            @media (max-width: 767px) {
+                margin-block: 2rem;
+            }
             max-height: 220px;
             max-width: 360px;
         }
