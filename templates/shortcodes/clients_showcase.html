@@ -6,10 +6,10 @@
     {% if client.featured %}
     <div>
         <input id="client-{{ name | slugify }}-card-checkbox" type="checkbox" class="client-checkbox" aria-hidden="true">
-        <label for="client-{{name | slugify }}-card-checkbox" class="project-card {{ clients::classes(client=client) }}">
+        <label for="client-{{name | slugify }}-card-checkbox" class="project-card client {{ clients::classes(client=client) }}">
             <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
             <h3>{{ name }}</h3>
-            <p>{{ client.summary | safe }}</p>
+            <span>{{ client.summary | safe }}</span>
             <div class="platform-links">
                 {{ clients::platforms(packages=client.packages) }}
             </div>
