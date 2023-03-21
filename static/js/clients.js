@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let deck = document.getElementById("all-clients");
         for (const deckItem of deck.children) {
             for (child of deckItem.children) {
-                if (child.classList.contains("client-card")) {
+                if (child.classList.contains("project-card")) {
                     let client = child;
                     let containsAllOf = allOf.every((elem) => {
                         return client.classList.contains(elem);

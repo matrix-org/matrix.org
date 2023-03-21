@@ -1,0 +1,93 @@
+{% set servers = load_data(path="content/ecosystem/servers/servers.toml") %}
+<div id="filters">
+    <div class="filter-wrap">
+        <div id="filter-maturity" class="filter">
+            Maturity
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div id="filter-maturity-menu" class="filter-menu">
+            <p>The client can support any of the maturity levels checked.</p>
+            <div class="filter-option">
+                <input id="maturity-stable" type="checkbox" checked>
+                <label for="maturity-stable">Stable</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-beta" type="checkbox" checked>
+                <label for="maturity-beta">Beta</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-alpha" type="checkbox" checked>
+                <label for="maturity-alpha">Alpha</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-obsolete" type="checkbox" checked>
+                <label for="maturity-obsolete">Obsolete</label>
+            </div>
+            <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <div id="filter-licence" class="filter">
+            Licence
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div id="filter-licence-menu" class="filter-menu">
+            <p>The client can support any of the licences checked.</p>
+            <div class="filter-option">
+                <input id="licence-apache-2" type="checkbox" checked>
+                <label for="licence-apache-2">Apache-2.0</label>
+            </div>
+            <div class="filter-option">
+                <input id="licence-agpl-3-only" type="checkbox" checked>
+                <label for="licence-agpl-3-only">AGPL-3.0-only</label>
+            </div>
+            <div class="filter-option">
+                <input id="licence-mit" type="checkbox" checked>
+                <label for="licence-mit">MIT</label>
+            </div>
+            <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <div id="filter-language" class="filter">
+            Language
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div id="filter-language-menu" class="filter-menu">
+            <p>The client must support any of the languages checked.</p>
+            <div class="filter-option">
+                <input id="language-c++" type="checkbox">
+                <label for="language-c++">C++</label>
+            </div>
+            <div class="filter-option">
+                <input id="language-go" type="checkbox">
+                <label for="language-go">Go</label>
+            </div>
+            <div class="filter-option">
+                <input id="language-python" type="checkbox">
+                <label for="language-python">Python</label>
+            </div>
+            <div class="filter-option">
+                <input id="language-rust" type="checkbox">
+                <label for="language-rust">Rust</label>
+            </div>
+            <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+        </div>
+    </div>
+</div>
+
+<div id="filters-overlay"></div>
+
+<div id="all-servers" class="projects-card-deck">
+    {% for name, server in servers %}
+    <div class="project-card">
+        <h3>{{ name }} <div class="maturity">{{ server.maturity }}</div></h3>
+        <div>{{ server.language }}</div>
+        <p>{{ server.description | safe }}</p>
+        <a>Repository</a><a>Matrix Room</a>
+    </div>
+    {% endfor %}
+</div>
