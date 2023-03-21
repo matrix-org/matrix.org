@@ -1,6 +1,5 @@
 {% extends "page.html" %}
 {% block content %}
-{% set data = load_data(path="content/ecosystem/servers/servers.toml") %}
 <div class="page-header">
     <div class="hero-block">
         <h1>{{ page.title }}</h1>
@@ -8,9 +7,6 @@
     </div>
 </div>
 <div class="servers">
-    <div class="content">
-        <p>{{ page.content | safe }}</p>
-    </div>
-
+    <p>{{ page.content | safe }}</p>
 </div>
 {% endblock content %}

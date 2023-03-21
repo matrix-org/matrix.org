@@ -1,7 +1,7 @@
 [Synapse]
 description = "Matrix.org homeserver"
 author = "Matrix.org team"
-maturity = "Released"
+maturity = "Stable"
 language = "Python"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/synapse/"
