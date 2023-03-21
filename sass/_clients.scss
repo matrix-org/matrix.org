@@ -151,6 +151,7 @@ body:has(.clients-card-deck > div > .client-checkbox:checked) {
 
             &.enabled {
                 background-color: #000;
+                border-color: #666;
                 color: #fff;
 
                 img {
