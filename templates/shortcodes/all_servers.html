@@ -85,9 +85,22 @@
     {% for name, server in servers %}
     <div class="project-card">
         <h3>{{ name }} <div class="maturity">{{ server.maturity }}</div></h3>
-        <div>{{ server.language }}</div>
+        <div>{{ server.licence }} {{ server.language }}</div>
         <p>{{ server.description | safe }}</p>
-        <a>Repository</a><a>Matrix Room</a>
+        <div class="server-links">
+            {% if server.repository %}
+                <a href="{{ server.repository }}">
+                    {{ load_data(path="/assets/projects/repo.svg") | safe }}
+                    Repository
+                </a>
+            {% endif %}
+            {% if server.room %}
+                <a href="https://matrix.to/#/{{ server.room }}">
+                    {{ load_data(path="/assets/projects/matrix.svg") | safe }}
+                    Matrix Room
+                </a>
+            {% endif %}
+        </div>
     </div>
     {% endfor %}
 </div>

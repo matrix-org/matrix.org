@@ -22,8 +22,6 @@
     border: 1px solid #D2D2D2;
     border-radius: 16px;
 
-    cursor: pointer;
-
     img {
         margin: 0;
         width: 65px;
@@ -31,11 +29,10 @@
         box-sizing: content-box;
     }
 
-    p {
-        margin: 0;
-    }
-
     h3 {
+        display: flex;
+        flex-direction: row;
+        gap: .5rem;
         margin: 0;
 
         font-style: normal;
@@ -154,6 +151,31 @@
                 display: none;
             }
         }
+    }
+}
+
+.maturity {
+    border: 1px solid var(--borders-color);
+    border-radius: 9999px;
+    padding: 0 .6rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    max-width: fit-content;
+
+    &.stable {
+        background-color: rgb(214, 230, 207);
+    }
+
+    &.beta {
+        background-color: rgb(253, 229, 205);
+    }
+
+    &.alpha {
+        background-color: rgb(244, 204, 204);
+    }
+
+    &.obsolete {
+        background-color: rgb(233, 233, 233);
     }
 }
 
