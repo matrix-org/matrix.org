@@ -195,18 +195,15 @@ function refreshCardsView(deckId, filters) {
         for (var child of deckItem.children) {
             if (child.classList.contains("project-card")) {
                 let project = child;
-                let containsAllOf = allOf.every((elem) => {
-                    return project.classList.contains(elem);
-                });
-                let containsAnyOf = false;
-                for (const filter of anyOf) {
-                    if (project.classList.contains(filter)) {
-                        containsAnyOf = true;
-                        // and we can break?
-                    }
-                }
-                if (anyOf.length <= 0) {
-                    containsAnyOf = true;
+                let containsAllOf = true;
+                let containsAnyOf = true;
+                for(const filter of filters) {
+                    containsAllOf = containsAllOf && filter.allOf.every((elem) => {
+                        return project.classList.contains(elem);
+                    });
+                    containsAnyOf = containsAnyOf && (filter.anyOf.length <= 0 || filter.anyOf.some((elem) => {
+                        return project.classList.contains(elem);
+                    }));
                 }
 
                 if (containsAllOf && containsAnyOf) {
