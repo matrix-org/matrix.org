@@ -1,8 +1,9 @@
 class Filter {
-    constructor(filterId, filters) {
+    constructor(filterId, deckId, filters) {
         this.allOf = [];
         this.anyOf = [];
         this.filterId = filterId;
+        this.deckId = deckId;
         this.filters = filters;
         this.makeMenuInteractive(filterId);
         this.enableFilters(filterId);
@@ -40,7 +41,7 @@ class Filter {
                 this.boxWasChecked(filterOption.children[0].id);
             }
         }
-        refreshCardsView(this.filters);
+        refreshCardsView(this.deckId, this.filters);
     }
 
     uncheckAllBoxes(filterId) {
@@ -90,7 +91,7 @@ class AllOfFilter extends Filter {
         }
 
         this.refreshActiveState();
-        refreshCardsView(this.filters);
+        refreshCardsView(this.deckId, this.filters);
     }
 
     boxWasUnchecked(optionId) {
@@ -100,7 +101,7 @@ class AllOfFilter extends Filter {
         }
 
         this.refreshActiveState();
-        refreshCardsView(this.filters);
+        refreshCardsView(this.deckId, this.filters);
     }
 
     refreshActiveState() {
@@ -160,7 +161,7 @@ class AnyOfFilter extends Filter {
             this.anyOf.push(optionId);
         }
         this.refreshActiveState();
-        refreshCardsView(this.filters);
+        refreshCardsView(this.deckId, this.filters);
     }
 
     boxWasUnchecked(optionId) {
@@ -169,7 +170,7 @@ class AnyOfFilter extends Filter {
             this.anyOf.splice(filterPos, 1);
         }
         this.refreshActiveState();
-        refreshCardsView(this.filters);
+        refreshCardsView(this.deckId, this.filters);
     }
 
     refreshActiveState() {
@@ -182,24 +183,24 @@ class AnyOfFilter extends Filter {
     }
 }
 
-function refreshCardsView(filters) {
+function refreshCardsView(deckId, filters) {
     let anyOf = [];
     let allOf = [];
     for(let filter of filters) {
         anyOf = anyOf.concat(filter.anyOf);
         allOf = allOf.concat(filter.allOf);
     }
-    let deck = document.getElementById("all-clients");
+    let deck = document.getElementById(deckId);
     for (const deckItem of deck.children) {
         for (var child of deckItem.children) {
             if (child.classList.contains("project-card")) {
-                let client = child;
+                let project = child;
                 let containsAllOf = allOf.every((elem) => {
-                    return client.classList.contains(elem);
+                    return project.classList.contains(elem);
                 });
                 let containsAnyOf = false;
                 for (const filter of anyOf) {
-                    if (client.classList.contains(filter)) {
+                    if (project.classList.contains(filter)) {
                         containsAnyOf = true;
                         // and we can break?
                     }
@@ -209,9 +210,9 @@ function refreshCardsView(filters) {
                 }
 
                 if (containsAllOf && containsAnyOf) {
-                    client.classList.remove("filtered-out");
+                    project.classList.remove("filtered-out");
                 } else {
-                    client.classList.add("filtered-out");
+                    project.classList.add("filtered-out");
                 }
             }
         }

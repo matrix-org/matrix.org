@@ -1,3 +1,4 @@
+{% import "macros/servers.html" as srvutils %}
 {% set servers = load_data(path="content/ecosystem/servers/servers.toml") %}
 <div id="filters">
     <div class="filter-wrap">
@@ -83,23 +84,25 @@
 
 <div id="all-servers" class="projects-card-deck">
     {% for name, server in servers %}
-    <div class="project-card">
-        <h3>{{ name }} <div class="maturity {{ server.maturity | lower }}">{{ server.maturity }}</div></h3>
-        <div>{{ server.licence }} {{ server.language }}</div>
-        <span>{{ server.description | safe }}</span>
-        <div class="server-links">
-            {% if server.repository %}
-                <a href="{{ server.repository }}">
-                    {{ load_data(path="/assets/projects/repo.svg") | safe }}
-                    Repository
-                </a>
-            {% endif %}
-            {% if server.room %}
-                <a href="https://matrix.to/#/{{ server.room }}">
-                    {{ load_data(path="/assets/projects/matrix.svg") | safe }}
-                    Matrix Room
-                </a>
-            {% endif %}
+    <div>
+        <div class="project-card {{ srvutils::classes(server=server) }}">
+            <h3>{{ name }} <div class="maturity {{ server.maturity | lower }}">{{ server.maturity }}</div></h3>
+            <div>{{ server.licence }} {{ server.language }}</div>
+            <span>{{ server.description | safe }}</span>
+            <div class="server-links">
+                {% if server.repository %}
+                    <a href="{{ server.repository }}">
+                        {{ load_data(path="/assets/projects/repo.svg") | safe }}
+                        Repository
+                    </a>
+                {% endif %}
+                {% if server.room %}
+                    <a href="https://matrix.to/#/{{ server.room }}">
+                        {{ load_data(path="/assets/projects/matrix.svg") | safe }}
+                        Matrix Room
+                    </a>
+                {% endif %}
+            </div>
         </div>
     </div>
     {% endfor %}
