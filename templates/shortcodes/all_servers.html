@@ -1,5 +1,14 @@
 {% import "macros/servers.html" as srvutils %}
 {% set servers = load_data(path="content/ecosystem/servers/servers.toml") %}
+{% set licences = [] %}
+{% set languages = [] %}
+{% for name, server in servers %}
+{% set_global licences = licences | concat(with=server.licence) %}
+{% set_global languages = languages | concat(with=server.language) %}
+{% endfor %}
+{% set licences = licences | unique | sort %}
+{% set languages = languages | unique | sort %}
+
 <div id="filters">
     <div class="filter-wrap">
         <div id="filter-maturity" class="filter">
@@ -36,18 +45,12 @@
         </div>
         <div id="filter-licence-menu" class="filter-menu">
             <p>The client can support any of the licences checked.</p>
+            {% for licence in licences %}
             <div class="filter-option">
-                <input id="licence-apache-2" type="checkbox" checked>
-                <label for="licence-apache-2">Apache-2.0</label>
+                <input id="licence-{{ licence | slugify }}" type="checkbox" checked>
+                <label for="licence-{{ licence | slugify }}">{{ licence }}</label>
             </div>
-            <div class="filter-option">
-                <input id="licence-agpl-3-only" type="checkbox" checked>
-                <label for="licence-agpl-3-only">AGPL-3.0-only</label>
-            </div>
-            <div class="filter-option">
-                <input id="licence-mit" type="checkbox" checked>
-                <label for="licence-mit">MIT</label>
-            </div>
+            {% endfor %}
             <div class="reset-links">Select <a>all</a> - <a>none</a></div>
         </div>
     </div>
@@ -59,22 +62,12 @@
         </div>
         <div id="filter-language-menu" class="filter-menu">
             <p>The client must support any of the languages checked.</p>
+            {% for language in languages %}
             <div class="filter-option">
-                <input id="language-c++" type="checkbox">
-                <label for="language-c++">C++</label>
+                <input id="language-{{ language | slugify }}" type="checkbox">
+                <label for="language-{{ language | slugify }}">{{ language }}</label>
             </div>
-            <div class="filter-option">
-                <input id="language-go" type="checkbox">
-                <label for="language-go">Go</label>
-            </div>
-            <div class="filter-option">
-                <input id="language-python" type="checkbox">
-                <label for="language-python">Python</label>
-            </div>
-            <div class="filter-option">
-                <input id="language-rust" type="checkbox">
-                <label for="language-rust">Rust</label>
-            </div>
+            {% endfor %}
             <div class="reset-links">Select <a>all</a> - <a>none</a></div>
         </div>
     </div>
