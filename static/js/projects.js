@@ -115,8 +115,8 @@ class AllOfFilter extends Filter {
 }
 
 class AnyOfFilter extends Filter {
-    constructor(filterId, filters) {
-        super(filterId, filters);
+    constructor(filterId, deckId, filters) {
+        super(filterId, deckId, filters);
 
         this.numberOfOption = 0;
         let filterMenu = document.getElementById(filterId + "-menu");
@@ -210,9 +210,9 @@ function refreshCardsView(deckId, filters) {
                 }
 
                 if (containsAllOf && containsAnyOf) {
-                    project.classList.remove("filtered-out");
+                    project.parentElement.classList.remove("filtered-out");
                 } else {
-                    project.classList.add("filtered-out");
+                    project.parentElement.classList.add("filtered-out");
                 }
             }
         }
