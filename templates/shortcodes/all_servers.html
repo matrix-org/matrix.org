@@ -64,7 +64,7 @@
             <p>The client must support any of the languages checked.</p>
             {% for language in languages %}
             <div class="filter-option">
-                <input id="language-{{ language | slugify }}" type="checkbox">
+                <input id="language-{{ language | slugify }}" type="checkbox" checked>
                 <label for="language-{{ language | slugify }}">{{ language }}</label>
             </div>
             {% endfor %}

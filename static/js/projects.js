@@ -112,12 +112,18 @@ class AllOfFilter extends Filter {
             filterButton.classList.add("enabled");
         }
     }
+
+    projectIsFilteredOut(project) {
+        return !this.allOf.every((elem) => {
+            return project.classList.contains(elem);
+        });
+    }
 }
 
 class AnyOfFilter extends Filter {
     constructor(filterId, deckId, filters) {
         super(filterId, deckId, filters);
-
+        this.allOf = undefined;
         this.numberOfOption = 0;
         let filterMenu = document.getElementById(filterId + "-menu");
         for (const filterOption of filterMenu.children) {
@@ -181,6 +187,12 @@ class AnyOfFilter extends Filter {
             filterButton.classList.add("enabled");
         }
     }
+
+    projectIsFilteredOut(project) {
+        return !this.anyOf.some((elem) => {
+            return project.classList.contains(elem);
+        });
+    }
 }
 
 function refreshCardsView(deckId, filters) {
@@ -195,18 +207,12 @@ function refreshCardsView(deckId, filters) {
         for (var child of deckItem.children) {
             if (child.classList.contains("project-card")) {
                 let project = child;
-                let containsAllOf = true;
-                let containsAnyOf = true;
+                let filteredOut = false;
                 for(const filter of filters) {
-                    containsAllOf = containsAllOf && filter.allOf.every((elem) => {
-                        return project.classList.contains(elem);
-                    });
-                    containsAnyOf = containsAnyOf && (filter.anyOf.length <= 0 || filter.anyOf.some((elem) => {
-                        return project.classList.contains(elem);
-                    }));
+                    filteredOut = filteredOut || filter.projectIsFilteredOut(project);
                 }
 
-                if (containsAllOf && containsAnyOf) {
+                if (!filteredOut) {
                     project.parentElement.classList.remove("filtered-out");
                 } else {
                     project.parentElement.classList.add("filtered-out");
