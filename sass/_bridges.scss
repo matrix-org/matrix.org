@@ -1,0 +1,48 @@
+.platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 17rem);
+    margin-block: 2rem;
+    margin-inline: auto;
+
+    .platform {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        padding-block: .5rem;
+        padding-inline: .5rem 1rem;
+        max-width: fit-content;
+        cursor: pointer;
+
+        img {
+            width: 64px;
+            height: 64px;
+
+            border: 1px solid #d2d2d2;
+            border-radius: 15px;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+                font-size: 1.6rem;
+                font-weight: 700;
+                margin: 0;
+                line-height: 1.2;
+            }
+
+            p {
+                margin: 0;
+                font-size: .875rem;
+                color: #545454;
+            }
+        }
+
+        &:hover {
+            background-color: #e9e9e9;
+            border-radius: 12px;
+        }
+    }
+}

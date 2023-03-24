@@ -1,15 +1,28 @@
-{% extends "page.html" %}
+{% extends "section.html" %}
 {% block content %}
 <div class="page-header">
     <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.extra.summary }}</p>
     </div>
 </div>
 
 <div class="content">
 
-    {{ page.content | safe }}
+    {{ section.content | safe }}
+
+    <div class="platforms-grid">
+    {% for subsection_path in section.subsections %}
+    {% set subsection = get_section(path=subsection_path) %}
+        <div class="platform">
+            <img src="{{ subsection.path }}logo.svg" />
+            <div class="details">
+                <h2>{{ subsection.title }}</h2>
+                <p>2 bridges</p>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
 
 </div>
 {% endblock content %}
