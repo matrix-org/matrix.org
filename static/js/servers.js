@@ -12,4 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         languageFilter
     );
     refreshCardsView("all-servers", filters);
+    for(const filter of filters) {
+        filter.refreshActiveState();
+    }
 })

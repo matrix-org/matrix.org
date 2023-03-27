@@ -14,4 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         featureFilter
     );
     refreshCardsView("all-clients", filters);
+    for(const filter of filters) {
+        filter.refreshActiveState();
+    }
 })
