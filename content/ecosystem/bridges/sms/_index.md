@@ -1,4 +1,4 @@
 +++
-title = "IRC"
+title = "SMS"
 weight = 999
 +++

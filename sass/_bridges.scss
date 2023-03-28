@@ -1,7 +1,12 @@
+.bridges-page.content p {
+    margin-block: 2.5rem;
+}
+
 .platforms-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, 17rem);
-    margin-block: 2rem;
+    row-gap: .8rem;
+    margin-block: 2rem 3rem;
     margin-inline: auto;
 
     .platform {
@@ -27,7 +32,7 @@
             flex-direction: column;
 
             h2 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
                 font-weight: 700;
                 margin: 0;
                 line-height: 1.2;

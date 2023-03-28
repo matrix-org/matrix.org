@@ -1,4 +1,4 @@
 +++
-title = "IRC"
+title = "Tox"
 weight = 999
 +++

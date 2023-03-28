@@ -1,4 +1,4 @@
 +++
-title = "IRC"
+title = "Mumble"
 weight = 999
 +++

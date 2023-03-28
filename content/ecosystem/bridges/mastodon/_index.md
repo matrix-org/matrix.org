@@ -1,4 +1,4 @@
 +++
-title = "IRC"
+title = "Mastodon"
 weight = 999
 +++

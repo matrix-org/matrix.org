@@ -1,4 +1,4 @@
 +++
-title = "IRC"
+title = "Skype"
 weight = 999
 +++
