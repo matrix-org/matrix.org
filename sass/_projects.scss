@@ -163,19 +163,27 @@
     max-width: fit-content;
 
     &.stable {
-        background-color: rgb(214, 230, 207);
+        background-color: #DFF6D5;
+        border-color: #245C0C;
+        color: #245C0C
     }
 
     &.beta {
-        background-color: rgb(253, 229, 205);
+        background-color: #F6E7D5;
+        border-color: #6F420F;
+        color: #6F420F;
     }
 
     &.alpha {
-        background-color: rgb(244, 204, 204);
+        background-color: #F6D5D5;
+        border-color: #8B1212;
+        color: #8B1212;
     }
 
     &.obsolete {
-        background-color: rgb(233, 233, 233);
+        background-color: #E6E6E6;
+        border-color: #4A4A4A;
+        color: #4A4A4A;
     }
 }
 
