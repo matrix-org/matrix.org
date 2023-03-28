@@ -1,8 +1,8 @@
 {% import "macros/servers.html" as srvutils %}
-{% set servers = load_data(path="content/ecosystem/servers/servers.toml") %}
+{% set servers_data = load_data(path="content/ecosystem/servers/servers.toml") %}
 {% set licences = [] %}
 {% set languages = [] %}
-{% for name, server in servers %}
+{% for server in servers_data.servers %}
 {% set_global licences = licences | concat(with=server.licence) %}
 {% set_global languages = languages | concat(with=server.language) %}
 {% endfor %}
@@ -76,10 +76,10 @@
 <div id="filters-overlay"></div>
 
 <div id="all-servers" class="projects-card-deck">
-    {% for name, server in servers %}
+    {% for server in servers_data.servers | sort(attribute="maturity") | reverse %}
     <div>
         <div class="project-card {{ srvutils::classes(server=server) }}">
-            <h3>{{ name }} <div class="maturity {{ server.maturity | lower }}">{{ server.maturity }}</div></h3>
+            <h3>{{ server.name }} <div class="maturity {{ server.maturity | lower }}">{{ server.maturity }}</div></h3>
             <div>{{ server.licence }} {{ server.language }}</div>
             <span>{{ server.description | safe }}</span>
             <div class="server-links">

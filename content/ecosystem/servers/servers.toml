@@ -1,4 +1,5 @@
-[Synapse]
+[[servers]]
+name = "Synapse"
 description = "Matrix.org homeserver"
 author = "Matrix.org team"
 maturity = "Stable"
@@ -7,7 +8,8 @@ licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/synapse/"
 room = "#synapse:matrix.org"
 
-[Dendrite]
+[[servers]]
+name = "Dendrite"
 description = "Dendrite is a second-generation Matrix homeserver written in Go!"
 author = "Matrix.org team"
 maturity = "Beta"
@@ -16,7 +18,8 @@ licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/dendrite"
 room = "#dendrite:matrix.org"
 
-[Conduit]
+[[servers]]
+name = "Conduit"
 description = "Conduit is a simple, fast and reliable chat server written in Rust"
 author = "Timo Kösters"
 maturity = "Beta"
@@ -25,7 +28,8 @@ licence = "Apache-2.0"
 repository = "https://gitlab.com/famedly/conduit"
 room = "#conduit:matrix.org"
 
-[Construct]
+[[servers]]
+name = "Construct"
 description = "Construct is a C++ Matrix Homeserver"
 author = "Jason Volk"
 maturity = "Beta"
@@ -33,7 +37,8 @@ language = "C++"
 licence = "BSD"
 repository = "https://github.com/matrix-construct/construct"
 
-[Ligase]
+[[servers]]
+name = "Ligase"
 description = "Ligase is a Cloud-native Matrix home server written in Golang."
 author = "Finogeeks team"
 maturity = "Beta"
@@ -41,7 +46,8 @@ language = "Go"
 licence = "AGPLv3"
 repository = "https://github.com/finogeeks/Ligase"
 
-[bullettime]
+[[servers]]
+name = "bullettime"
 description = "An experimental golang Matrix homeserver"
 author = "Patrik Oldsberg"
 maturity = "Obsolete"
@@ -49,7 +55,8 @@ language = "Go"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/bullettime"
 
-[Dendron]
+[[servers]]
+name = "Dendron"
 description = "Discontinued in favour of Dendrite (\"Dendron, done right\")"
 author = "Matrix.org team"
 maturity = "Obsolete"
@@ -57,14 +64,16 @@ language = "Go"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/dendron"
 
-[jSynapse]
+[[servers]]
+name = "jSynapse"
 description = ""
 author = "Swarmcom"
 language = "Java"
 maturity = "Obsolete"
 licence = "Apache-2.0"
 
-[Maelstrom]
+[[servers]]
+name = "Maelstrom"
 description = "A high-performance Matrix Home-Server written in Rust designed to be scalable, light on resources, and have a pluggable storage engine."
 author = "Chris Bruce"
 maturity = "Obsolete"
@@ -73,7 +82,8 @@ licence = "Apache-2.0 OR MIT"
 repository = "https://github.com/maelstrom-rs/maelstrom"
 room = "#m-server:matrix.org"
 
-[Matrex]
+[[servers]]
+name = "Matrex"
 description = "A WIP toy Matrix server implementation in Elixir."
 author = "Ryan Johnson"
 maturity = "Obsolete"
@@ -81,7 +91,8 @@ language = "Elixir"
 licence = "MIT"
 repository = "https://github.com/bismark/matrex"
 
-[mxhsd]
+[[servers]]
+name = "mxhsd"
 description = "mxhsd is Matrix Homeserver aimed towards entities who want to have in-depth control of their servers"
 author = "Max Dor"
 maturity = "Obsolete"
@@ -89,7 +100,8 @@ language = "Java"
 licence = "AGPL-3.0-or-later"
 repository = "https://github.com/kamax-io/mxhsd"
 
-[Pallium]
+[[servers]]
+name = "Pallium"
 description = ""
 author = "KoFish"
 language = "Go"
@@ -97,7 +109,8 @@ maturity = "Obsolete"
 licence = "Apache-2.0"
 repository = "https://github.com/KoFish/pallium"
 
-[Transform]
+[[servers]]
+name = "Transform"
 description = "Transform is a matrix homeserver built using Typescript and Redis."
 author = "bettiah"
 maturity = "Obsolete"
