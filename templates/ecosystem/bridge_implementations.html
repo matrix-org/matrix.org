@@ -1,0 +1,37 @@
+{% extends "section.html" %}
+{% block content %}
+<div class="page-header">
+    <div class="hero-block">
+        <h1>{{ section.title }}</h1>
+        <p>All the {{ section.title }} bridges</p>
+    </div>
+</div>
+
+<div class="bridges_implem">
+
+    {% for name, bridge in section.extra.implementations %}
+    <div class="implementation">
+        <div class="leftcol">
+            <div class="recommended-chip">Recommended</div>
+            <h2>{{ name }}</h2>
+            <p>{{ bridge.summary }}</p>
+            <div class="privileges">
+                Access needed:
+                <div>{{ bridge.privilege.platform }}</div>
+                <div>{{ bridge.privilege.matrix }}</div>
+            </div>
+        </div>
+        <div class="features-matrix">
+            <ul>
+            {% for feature, supported in bridge.supports %}
+            <li {% if supported %}class="supported"{% endif %}>
+                {{ feature | replace(from="_", to=" ") | title }}
+            </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock content %}
