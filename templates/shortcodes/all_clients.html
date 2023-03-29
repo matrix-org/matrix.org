@@ -1,6 +1,11 @@
-{% import "macros/clients.html" as clients %}
+{% import "macros/clients.html" as clientutils %}
 {% import "macros/client_details.html" as client_details %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
+{% set licences = [] %}
+{% for name, client in clients %}
+{% set_global licences = licences | concat(with=client.licence) %}
+{% endfor %}
+{% set licences = licences | unique | sort %}
 
 <div id="filters">
     <div class="filter-wrap">
@@ -73,18 +78,12 @@
         </div>
         <div id="filter-licence-menu" class="filter-menu">
             <p>The client can support any of the licences checked.</p>
+            {% for licence in licences %}
             <div class="filter-option">
-                <input id="licence-apache-2" type="checkbox" checked>
-                <label for="licence-apache-2">Apache-2.0</label>
+                <input id="licence-{{ licence | slugify }}" type="checkbox" checked>
+                <label for="licence-{{ licence | slugify }}">{{ licence }}</label>
             </div>
-            <div class="filter-option">
-                <input id="licence-agpl-3-only" type="checkbox" checked>
-                <label for="licence-agpl-3-only">AGPL-3.0-only</label>
-            </div>
-            <div class="filter-option">
-                <input id="licence-mit" type="checkbox" checked>
-                <label for="licence-mit">MIT</label>
-            </div>
+            {% endfor %}
             <div class="reset-links">Select <a>all</a> - <a>none</a></div>
         </div>
     </div>
@@ -135,16 +134,16 @@
 
 <div id="filters-overlay"></div>
 
-<div id="all-clients" class="clients-card-deck">
+<div id="all-clients" class="projects-card-deck clients">
     {% for name, client in clients %}
     <div>
         <input id="client-{{ name | slugify }}-card-checkbox" type="checkbox" class="client-checkbox" aria-hidden="true">
-        <label for="client-{{ name | slugify }}-card-checkbox" class="client-card {{ clients::classes(client=client) }}">
+        <label for="client-{{ name | slugify }}-card-checkbox" class="project-card client {{ clientutils::classes(client=client) }}">
             <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
             <h3>{{ name }}</h3>
-            <p>{{ client.summary | safe }}</p>
+            <span>{{ client.summary | safe }}</span>
             <div class="platform-links">
-                {{ clients::platforms(packages=client.packages) }}
+                {{ clientutils::platforms(packages=client.packages) }}
             </div>
             <a>Open client details</a>
         </label>

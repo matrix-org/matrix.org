@@ -1,6 +1,9 @@
 {% extends "page.html" %}
+{% block head_extra %}
+<noscript><link rel="stylesheet" href="/no-js.css" /></noscript>
+<script type="module" src="/js/servers.js"></script>
+{% endblock head_extra%}
 {% block content %}
-{% set data = load_data(path="content/ecosystem/servers/servers.toml") %}
 <div class="page-header">
     <div class="hero-block">
         <h1>{{ page.title }}</h1>
@@ -8,33 +11,6 @@
     </div>
 </div>
 <div class="servers">
-    <div class="content">
-        <p>{{ page.content | safe }}</p>
-    </div>
-    <div class="servers-table">
-        <strong>Name</strong>
-        <strong>Author</strong>
-        <strong>Maturity</strong>
-        <strong>License</strong>
-        <strong>Language</strong>
-        <strong>Links</strong>
-        <strong>Description</strong>
-
-        {% for server in data.servers -%}
-        <!-- new row -->
-        <span>{{ server.name }}</span>
-        <span>{{ server.author }}</span>
-        <span>{{ server.maturity }}</span>
-        <span>{{ server.license }}</span>
-        <span>{{ server.language }}</span>
-        <span>
-            {%- for link in server.links -%}
-            <a href="{{ link.href }}">{{ link.text }}</a>
-            {%- if not loop.last %}, {% endif -%}
-            {%- endfor -%}
-        </span>
-        <span>{% if server.description %}{{ server.description }}{% endif %}</span>
-        {%- endfor %}
-    </div>
+    <p>{{ page.content | safe }}</p>
 </div>
 {% endblock content %}

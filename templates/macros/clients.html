@@ -20,18 +20,7 @@ platform-macos
 
 maturity-{{ client.maturity | lower }}
 
-{% if client.license == "Apache-2.0" %}
-licence-apache-2
-{% endif %}
-{% if client.license == "AGPL-3.0-only" %}
-licence-agpl-3-only
-{% endif %}
-{% if client.license == "GPL-3.0-only" %}
-licence-gpl-3-only
-{% endif %}
-{% if client.license == "MIT" %}
-licence-mit
-{% endif %}
+licence-{{ client.licence | slugify }}
 
 {% for feature_name, feature_supported in client.features %}
 {% if feature_supported %}feature-{{ feature_name | replace(from="_", to="-") }}{% endif %}

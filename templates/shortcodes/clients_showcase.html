@@ -1,15 +1,15 @@
 {% import "macros/clients.html" as clients %}
 {% import "macros/client_details.html" as client_details %}
 {% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
-<div class="clients-card-deck">
+<div class="projects-card-deck">
     {% for name, client in clients %}
     {% if client.featured %}
     <div>
         <input id="client-{{ name | slugify }}-card-checkbox" type="checkbox" class="client-checkbox" aria-hidden="true">
-        <label for="client-{{name | slugify }}-card-checkbox" class="client-card {{ clients::classes(client=client) }}">
+        <label for="client-{{name | slugify }}-card-checkbox" class="project-card client {{ clients::classes(client=client) }}">
             <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
             <h3>{{ name }}</h3>
-            <p>{{ client.summary | safe }}</p>
+            <span>{{ client.summary | safe }}</span>
             <div class="platform-links">
                 {{ clients::platforms(packages=client.packages) }}
             </div>
