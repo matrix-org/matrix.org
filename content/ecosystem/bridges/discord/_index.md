@@ -17,7 +17,7 @@ privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, Non
 [extra.implementations.matrix-appservice-discord.supports]
 dm = true
 channels = true
-formated_text = true
+formatted_text = true
 message_media = true
 replies = true
 mentions = true 
@@ -42,7 +42,7 @@ privilege.matrix = "None"
 [extra.implementations.mautrix-discord.supports]
 dm = true
 channels = true
-formated_text = true
+formatted_text = true
 message_media = true
 replies = true
 mentions = true 
