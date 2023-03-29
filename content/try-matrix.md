@@ -1,5 +1,5 @@
 +++
 title = "Try Matrix"
+template = "try-matrix.html"
+extra.summary = "Join the Matrix ecosystem!"
 +++
-
-*To be filled with content*
