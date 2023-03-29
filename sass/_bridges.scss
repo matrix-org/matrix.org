@@ -60,6 +60,9 @@
 
 .implementation {
     padding: 80px;
+    @media (max-width: 767px) {
+        padding: 1rem;
+    }
     display: grid;
     grid-template-columns: 2fr 1fr;
     @media (max-width: 767px) {
@@ -76,7 +79,14 @@
 
     .privileges {
         display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+    }
+
+    .privileges > div {
+        display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         gap: .5rem;
 
         div {

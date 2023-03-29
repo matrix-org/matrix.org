@@ -17,8 +17,10 @@
             <p>{{ bridge.summary }}</p>
             <div class="privileges">
                 Access needed:
-                <div>{{ bridge.privilege.platform }}</div>
-                <div>{{ bridge.privilege.matrix }}</div>
+                <div>
+                    <div>{{ section.title }} {{ bridge.privilege.platform }}</div>
+                    <div>Matrix {{ bridge.privilege.matrix }}</div>
+                </div>
             </div>
         </div>
         <div class="features-matrix">
