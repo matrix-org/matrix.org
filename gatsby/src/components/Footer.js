@@ -64,7 +64,7 @@ const Footer = () => (
           <img src="/images/mastodon.svg" alt="" className="mxfooter__icon" />
         </a>
       </div>
-      <a href="/legal/copyright-notice" class="mxfooter__link">Copyright Notice</a>
+      <a href="/legal/copyright-notice" className="mxfooter__link">Copyright Notice</a>
     </div>
   </div>
 
