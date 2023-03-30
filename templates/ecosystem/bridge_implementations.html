@@ -8,12 +8,12 @@
 </div>
 
 <div class="bridges_implem">
-
-    {% for name, bridge in section.extra.implementations %}
+    {% set bridges_data = load_data(path=section.path~"bridges.toml") %}
+    {% for bridge in bridges_data.bridges %}
     <div class="implementation">
         <div class="leftcol">
             {% if bridge.featured %}<div class="recommended-chip">Recommended</div>{% endif %}
-            <h2 id="{{ name | slugify }}">{{ name }}<span class="maturity {{ bridge.maturity | lower }}">{{ bridge.maturity | title }}</span></h2>
+            <h2 id="{{ bridge.name | slugify }}">{{ bridge.name }}<span class="maturity {{ bridge.maturity | lower }}">{{ bridge.maturity | title }}</span></h2>
             <p>{{ bridge.summary | markdown | safe }}</p>
             <div class="project-links">
                 {% if bridge.docs %}
