@@ -65,50 +65,109 @@
     }
     display: grid;
     grid-template-columns: 2fr 1fr;
+    column-gap: 1rem;
     @media (max-width: 767px) {
         grid-template-columns: 1fr;
     }
 
     .recommended-chip {
-        background-color: #000;
-        color: #fff;
-        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        gap: .2rem;
         max-width: fit-content;
-        padding: .2rem 1rem;
+        font-style: normal;
+        border-bottom: 1px dotted var(--borders-color);
     }
 
-    .privileges {
+    h2 {
         display: flex;
         flex-wrap: wrap;
         gap: .5rem;
     }
 
-    .privileges > div {
+    .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .3rem;
+
+        margin-bottom: 1rem;
+
+        .pill {
+            display: flex;
+            align-items: center;
+            gap: .2rem;
+
+            border: 1px solid var(--color-text);
+            color: var(--color-text);
+            border-radius: 9999px;
+            padding: .1rem .4rem;
+
+            .fillme {
+                fill: var(--color-text);
+                stroke: var(--color-text);
+            }
+
+            .fillme-inverse {
+                stroke: #fff;
+            }
+
+            &:hover {
+                background-color: var(--color-text);
+                color: #fff;
+                .fillme {
+                    fill: #fff;
+                    stroke: #fff;
+                }
+
+                .fillme-inverse {
+                    stroke: var(--color-text);
+                }
+            }
+        }
+    }
+
+    .privileges, .licence {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        margin-block: .5rem;
+        margin-bottom: 1rem;
+    }
+
+    .privileges > div, .licence > div {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: .5rem;
 
-        div {
+        div, a {
             background-color: #e9e9e9;
             border-radius: 9999px;
             padding-inline: .5rem;
+            color: var(--color-text);
         }
     }
 
     .features-matrix {
-        ul li {
-            padding-block: .5rem;
-            line-height: 1.6;
-            list-style-position: inside;
-            list-style-image: url('/assets/cross_unsupported.svg');
 
-            &.supported {
-                list-style-image: url('/assets/tick_supported.svg');
-            }
+        ul {
+            border: 1px solid var(--borders-color);
+            border-radius: 16px;
+            padding-inline: 1rem;
 
-            & + li {
-                border-top: 1px solid #d2d2d2;
+            li {
+                padding: .5rem;
+                line-height: 1.6;
+                list-style-position: inside;
+                list-style-image: url('/assets/cross_unsupported.svg');
+
+                &.supported {
+                    list-style-image: url('/assets/tick_supported.svg');
+                }
+
+                & + li {
+                    border-top: 1px solid #d2d2d2;
+                }
             }
         }
     }

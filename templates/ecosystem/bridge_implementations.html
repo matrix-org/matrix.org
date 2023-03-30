@@ -12,14 +12,40 @@
     {% for name, bridge in section.extra.implementations %}
     <div class="implementation">
         <div class="leftcol">
-            <div class="recommended-chip">Recommended</div>
-            <h2>{{ name }}</h2>
-            <p>{{ bridge.summary }}</p>
+            {% if bridge.featured %}<div class="recommended-chip">Recommended</div>{% endif %}
+            <h2 id="{{ name | slugify }}">{{ name }}<span class="maturity {{ bridge.maturity | lower }}">{{ bridge.maturity | title }}</span></h2>
+            <p>{{ bridge.summary | markdown | safe }}</p>
+            <div class="project-links">
+                {% if bridge.docs %}
+                <a href="{{ bridge.docs }}" class="pill">
+                    {{ load_data(path="/assets/documentation.svg") | safe }}
+                    Documentation
+                </a>
+                {% endif %}
+                {% if bridge.room %}
+                <a href="https://matrix.to/#/{{ bridge.room }}" class="pill">
+                    {{ load_data(path="/assets/support.svg") | safe }}
+                    Support room
+                </a>
+                {% endif %}
+                {% if bridge.repo %}
+                <a href="{{ bridge.repo }}" class="pill">
+                    {{ load_data(path="/assets/repository.svg") | safe }}
+                    Repository
+                </a>
+                {% endif %}
+            </div>
             <div class="privileges">
                 Access needed:
                 <div>
                     <div>{{ section.title }} {{ bridge.privilege.platform }}</div>
                     <div>Matrix {{ bridge.privilege.matrix }}</div>
+                </div>
+            </div>
+            <div class="licence">
+                Licence: 
+                <div>
+                    <a href="https://spdx.org/licenses/{{ bridge.license }}.html">{{ bridge.license }}</a>
                 </div>
             </div>
         </div>

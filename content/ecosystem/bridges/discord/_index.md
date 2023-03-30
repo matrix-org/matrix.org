@@ -9,6 +9,7 @@ summary = "This project bridges Discord to Matrix via the Application Service AP
 maturity = "Beta"
 language = "TypeScript"
 license = "Apache-2.0"
+docs = "https://github.com/matrix-org/matrix-appservice-discord#end-user-documentation"
 repo = "https://github.com/matrix-org/matrix-appservice-discord"
 room = "#discord:matrix.org"
 featured = true
@@ -34,6 +35,7 @@ summary = "A Matrix-Discord puppeting bridge"
 maturity = "Beta"
 language = "Go"
 license = "AGPL-3.0-or-later"
+docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=discord"
 repo = "https://github.com/mautrix/discord"
 room = "#discord:maunium.net"
 featured = true
@@ -51,5 +53,42 @@ redactions = true
 editing = true
 reactions = true
 presence = true
+typing_notifications = true
+
+[extra.implementations.matrix-discord-bridge]
+maintainer = "git-bruh"
+summary = """
+A simple bridge between Matrix and Discord written in Python.
+
+It contains two bridges:
+
+A puppeting appservice: The puppeting bridge written with minimal dependencies.
+Running this requires a self-hosted homeserver.
+
+A non-puppeting bridge: The non-puppeting plaintext bridge written with
+matrix-nio and discord.py, most people would want to use this one if running on
+heroku or similar and don't have their own server. **NOTE: This is unmaintained
+and might break in the future due to Discord changes.**
+
+"""
+maturity = "Alpha"
+language = "Python"
+license = "MIT"
+repo = "https://github.com/git-bruh/matrix-discord-bridge"
+featured = false
+privilege.platform = "Admin"
+privilege.matrix = "Homeserver Admin"
+[extra.implementations.matrix-discord-bridge.supports]
+dm = true
+channels = true
+formatted_text = true
+message_media = true
+replies = true
+mentions = true 
+threads = false
+redactions = true
+editing = true
+reactions = true
+presence = false
 typing_notifications = true
 +++

@@ -1,0 +1,5 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="fillme" d="M2 20V4C2 2.89543 2.89543 2 4 2H20C21.1046 2 22 2.89543 22 4V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20Z" fill="black"/>
+<path class="fillme-inverse" d="M6 8L10 12L6 16" stroke="white"/>
+<path class="fillme-inverse" d="M12 16L18 16" stroke="white"/>
+</svg>
