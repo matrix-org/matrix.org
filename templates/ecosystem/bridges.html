@@ -1,15 +1,35 @@
-{% extends "page.html" %}
+{% extends "section.html" %}
 {% block content %}
 <div class="page-header">
     <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.extra.summary }}</p>
     </div>
 </div>
 
-<div class="content">
+<div class="content bridges-page">
 
-    {{ page.content | safe }}
+    {{ section.content | safe }}
+
+    <div class="platforms-grid">
+    {% for subsection_path in section.subsections %}
+    {% set subsection = get_section(path=subsection_path) %}
+    {% set bridges_data = load_data(path=subsection.path~"bridges.toml") %}
+        <a href="{{ subsection.path }}" class="platform">
+            <img src="{{ subsection.path }}logo.svg" />
+            <div class="details">
+                <h2>{{ subsection.title }}</h2>
+                <p>
+                    {% if bridges_data.bridges %}
+                        {{ bridges_data.bridges | length }} bridge{% if bridges_data.bridges | length > 1 %}s{% endif %}
+                    {% else %}
+                        No bridge
+                    {% endif %}
+                </p>
+            </div>
+        </a>
+    {% endfor %}
+    </div>
 
 </div>
 {% endblock content %}

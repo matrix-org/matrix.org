@@ -1,0 +1,65 @@
+{% extends "section.html" %}
+{% block content %}
+<div class="page-header">
+    <div class="hero-block">
+        <h1>{{ section.title }}</h1>
+        <p>All the {{ section.title }} bridges</p>
+    </div>
+</div>
+
+<div class="bridges_implem">
+    {% set bridges_data = load_data(path=section.path~"bridges.toml") %}
+    {% for bridge in bridges_data.bridges %}
+    <div class="implementation">
+        <div class="leftcol">
+            {% if bridge.featured %}<div class="recommended-chip">Recommended</div>{% endif %}
+            <h2 id="{{ bridge.name | slugify }}">{{ bridge.name }}<span class="maturity {{ bridge.maturity | lower }}">{{ bridge.maturity | title }}</span></h2>
+            <p>{{ bridge.summary | markdown | safe }}</p>
+            <div class="project-links">
+                {% if bridge.docs %}
+                <a href="{{ bridge.docs }}" class="pill">
+                    {{ load_data(path="/assets/documentation.svg") | safe }}
+                    Documentation
+                </a>
+                {% endif %}
+                {% if bridge.room %}
+                <a href="https://matrix.to/#/{{ bridge.room }}" class="pill">
+                    {{ load_data(path="/assets/support.svg") | safe }}
+                    Support room
+                </a>
+                {% endif %}
+                {% if bridge.repo %}
+                <a href="{{ bridge.repo }}" class="pill">
+                    {{ load_data(path="/assets/repository.svg") | safe }}
+                    Repository
+                </a>
+                {% endif %}
+            </div>
+            <div class="privileges">
+                Access needed:
+                <div>
+                    <div>{{ section.title }} {{ bridge.privilege.platform }}</div>
+                    <div>Matrix {{ bridge.privilege.matrix }}</div>
+                </div>
+            </div>
+            <div class="licence">
+                Licence: 
+                <div>
+                    <a href="https://spdx.org/licenses/{{ bridge.license }}.html">{{ bridge.license }}</a>
+                </div>
+            </div>
+        </div>
+        <div class="features-matrix">
+            <ul>
+            {% for feature, supported in bridge.supports %}
+            <li {% if supported %}class="supported"{% endif %}>
+                {{ feature | replace(from="_", to=" ") | title }}
+            </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock content %}
