@@ -10,6 +10,7 @@ extend-exclude = [
 	"/gatsby/content/blog/2022/07/2022-07-08-twim.mdx", # whos in that room
 	"/gatsby/content/blog/2022/08/2022-08-12-twim.mdx", # tha'
 	"/gatsby/content/blog/2022/12/2022-12-16-twim.mdx", # name triggers error
+	"/gatsby/content/blog/2023/04/2023-04-14-twim.mdx", # username is Aks
 	"*signed*.txt", # can be removed once https://github.com/crate-ci/typos/issues/401 is fixed
 	"synapse-debian-security-announcement.asc" # has typo but cannot fix due to PGP signature
 ]

@@ -1,0 +1,225 @@
+---
+date: '2023-04-14'
+title: 'This Week in Matrix 2023-04-14'
+categories:
+  - This Week in Matrix
+author: Thib
+image: 
+---
+
+## Matrix Live
+
+An unfortunate series of events prevented us from recording this week! Stay tuned for great bridge news next week.
+
+## Dept of Spec 📜
+
+[Andrew Morgan (anoa) [GMT-6]](https://matrix.to/#/@andrewm:element.io) says
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://spec.matrix.org/proposals.
+> 
+> ## MSC Status
+> 
+> **New MSCs:**
+> 
+> * [MSC3999: Add causal parameter to `/timestamp_to_event`](https://github.com/matrix-org/matrix-spec-proposals/pull/3999)
+> * [MSC3998: Add timestamp massaging to `/join` and `/knock`](https://github.com/matrix-org/matrix-spec-proposals/pull/3998)
+> * [MSC3997: Add timestamp massaging to `/createRoom`](https://github.com/matrix-org/matrix-spec-proposals/pull/3997)
+> * [MSC3996: Encrypted mentions-only rooms.](https://github.com/matrix-org/matrix-spec-proposals/pull/3996)
+> * [MSC3995: \[WIP\] Linearized Matrix](https://github.com/matrix-org/matrix-spec-proposals/pull/3995)
+> 
+> **MSCs in Final Comment Period:**
+> 
+> * [MSC3970: Scope transaction IDs to devices](https://github.com/matrix-org/matrix-spec-proposals/pull/3970) (merge)
+> 
+> **Accepted MSCs:**
+> 
+> * _No MSCs were accepted this week._
+> 
+> **Closed MSCs:**
+> 
+> * _No MSCs were closed/rejected this week._
+> 
+> ## Spec Updates
+> 
+> The concept of Linearized Matrix ([MSC3995](https://github.com/matrix-org/matrix-doc/issues/3995)) is moving forwards as a potential answer to the European Union's, Digital Markets Act. The fully-decentralised Direct Acyclic Graph (DAG) model of Matrix is well-known, yet complex to implement and thus a potential blocker to gatekeepers who are looking for an interoperable messaging protocol to link their chat service to. Enter Linearized Matrix, a concept of a Matrix room that uses a linked-list to store events in a room, rather than a DAG. Crucially, while being simpler to implement, our aim is to be forward-compatible with the DAG version of Matrix, such that gatekeepers may switch over to DAG-style Matrix in the future if they so chose.
+> 
+> See [MSC3995](https://github.com/matrix-org/matrix-doc/issues/3995) for more information, and a reminder that this is all still very much in flux!
+> 
+> ## Random MSC of the Week
+> 
+> The random MSC of the week is... [MSC2943: Return an event ID for membership endpoints](https://github.com/matrix-org/matrix-spec-proposals/pull/2943)!
+> 
+> Currently, when you send a (state) event manually via [PUT /\_matrix/client/v3/rooms/{roomId}/send/{eventType}/{txnId}](https://spec.matrix.org/v1.6/client-server-api/#put_matrixclientv3roomsroomidsendeventtypetxnid), you'll receive an event ID in the response. While you can send membership events this way, it's often a bit nicer to use the various `POST /_matrix/client/v3/rooms/{roomId}/join,leave,kick` endpoints instead. However, these do not return an event ID in their response. For clients that don't use [`/sync`](https://spec.matrix.org/v1.6/client-server-api/#get_matrixclientv3sync), this would force them to use the former, generic endpoint in order to retrieve the event ID of the membership event.
+> 
+> [MSC2943](https://github.com/matrix-org/matrix-doc/issues/2943) attempts to rectify that by specifying that membership-related endpoints should return an event ID, similar to the generic event send endpoint. Currently this MSC is just waiting on an implementation in a homeserver (and possible a client) in order to move forward. If you feel strongly about this change being included in the Matrix spec, why not get your hands dirty with some homeserver dev?
+
+## Dept of Servers 🏢
+
+### Synapse ([website](https://github.com/matrix-org/synapse/))
+
+Synapse is a Matrix homeserver implementation developed by the matrix.org core team
+
+[Shay](https://matrix.to/#/@shayshay:matrix.org) reports
+
+> Another week has gone by and we here at Synapse have another release for you, v1.81.0, filled with features and bugfixes. But first some announcements:
+> 
+> Synapse now attempts the versioned appservice paths before falling back to the [legacy paths](https://spec.matrix.org/v1.6/application-service-api/#legacy-routes). Usage of the legacy routes should be considered deprecated.
+> 
+> Additionally, Synapse has supported sending the application service access token via [the `Authorization` header](https://spec.matrix.org/v1.6/application-service-api/#authorization) since v1.70.0. For backwards compatibility it is _also_ sent as the `access_token` query parameter. This is insecure and should be considered deprecated.
+> 
+> A future version of Synapse (v1.88.0 or later) will remove support for legacy application service routes and query parameter authorization.
+> 
+> And now the highlights:
+> 
+> * Added the ability to enable/disable registrations when in the OIDC flow.
+> * Added a primitive helper script for listing worker endpoints. 
+> * Built Debian packages for Ubuntu 23.04 (Lunar Lobster)
+> * Fixed a long-standing bug preventing users from rejoining rooms after being banned and unbanned over federation. Contributed by Nico.
+> * Fixed a long-standing bug where edits of non-`m.room.message` events would not be correctly bundled. 
+> * Fixed a bug introduced in Synapse v1.55.0 which could delay remote homeservers being able to decrypt encrypted messages sent by local users.
+> 
+> And so much more! To read about everything in the release, take a look at the release notes [here](https://github.com/matrix-org/synapse/releases/tag/v1.81.0) and otherwise have a great week.
+
+### Construct ([website](https://github.com/matrix-construct/construct))
+
+A performance-oriented homeserver with minimal dependencies.
+
+[Jason Volk](https://matrix.to/#/@jevolk:matrix.org) reports
+
+> You probably know about the client command-line that pops up when a message starts with `/`. Construct has its own server-side command-line when a message starts with `\`. Unlike commands sent to the `!control` room, the server-side command-line is available to all users and not just administrators. In fact, the `!control` room is quite passé as I find myself always using the `control` server-side command, since the results can be echoed to the room I'm in and others can see it too.
+> 
+> This week Construct's server-side command-line gained the `watch` command. This is similar to `watch(1)` in unix environments. You type `watch <interval> <command>` to repeat your command at a set interval. Previously the `watch` command was only available at the terminal [console](https://github.com/matrix-construct/construct/wiki/Useful-console-command-examples#accessing-the-console). The `watch` command will run until you click the ▶️ button, or redact the command itself.
+> 
+> The fun never stops in [#test:zemos.net](https://matrix.to/#/#test:zemos.net) - Join us today!
+> ![](/blog/img/UehLRZAbginlItkrPqQzjLES.png)
+
+## Dept of Clients 📱
+
+### Nheko ([website](https://nheko-reborn.github.io))
+
+Desktop client for Matrix using Qt and C++17.
+
+[Nico](https://matrix.to/#/@deepbluev7:neko.dev) reports
+
+> Since I found some time to step away from the 3d printer (damn, those things are addiciting), let me give you an update of some of the changes happening recently in Nheko!
+> 
+> A very fundamental change from LorenDB is that Nheko now renders messages it doesn't understand. For various reasons Nheko always tried to hide those from you, but LorenDB convinced me, that showing them has more benefits than downsides and also did all the changes and wrote plenty of tests, even when I was especially picky! And at the same time Nheko can now render the rainfall chat effect. 🌧️
+> 
+> Similarly I reworked how our message variant/enum type works. This made the debug build of Nheko shrink from 450MB to 350MB for me, which is quite significant, even if it probably has no visible impact on any users, since the compressed debug size as well as the stripped binary are basically the same size. (The flatpaks were at 5MB download size and still are at 5MB download size.) It does make some of our error messages nicer and allows us to implement some further improvements for devs down the line. It does mean Nheko now won't compile on GCC10 anymore though, which is included in the current debian stable release. But the next Debian release is just around the corner, so hopefully the impact from that is limited.
+> 
+> We also had a nice contribution from Sateallia: You can now order rooms alphabetically. While I never saw any use for that feature, some people can't live without it and I appreciate that someone stepped up to implement it.
+> 
+> And the last interesting change, we teaked our threads UI a bit again. Because it was easy to miss, that a message is in a thread, we added a thread indicator on the left as well. We are still experimenting if that should replace the old indicator or it should complement it, so lease give feedback if it is an improvement or not.
+> ![](/blog/img/CWRnmislVHnvzcJKURhCsWas.png)
+
+### Neochat ([website](https://invent.kde.org/network/neochat))
+
+A client for matrix, the decentralized communication protocol
+
+[Tobias Fella](https://matrix.to/#/@tobiasfella:kde.org) announces
+
+> Heyo, I just realized you haven't heard about NeoChat in a while and I'm in a good mood, so here's an update:
+> 
+> * James is currently on a mission to document the entire NeoChat codebase, helping future contributors find their way around
+> * He has also entirely rewritten text handling for incoming and outgoing messages, making it more robust
+> * Thanks to deals made by Volker, we were finally able to finish the merge request for showing location events
+> * Similarly, I finished the work on sending location events, this will land in the next few days
+> * I've reworked the quick switcher (Ctrl+K) to be more useful
+> * Code blocks are now highlighted with a different background color, improving on the somewhat poor styling they had so far
+> * Several layout problems have been fixed
+> * Carl has done some performance improvements, reducing startup time by ??% ;)
+> * Aks has fixed the mention color in the input field to follow the style, making it look nicer especially on dark themes
+> * James has added a formatting popup to the input field, allowing for quick addition of bold, cursive, etc.
+> * Edited messages will no longer briefly show up wrong in the timeline after sending
+> * You can now learn more about KDE from NeoChat's settings page :)
+> * There is now menu hiding behind the avatar image, allowing for quick access to some settings
+> * You can now add a linebreak to your message when using virtual keyboards
+> * Url previews can now be configured from the settings
+> * Read markers for other users will now be shown
+> * The menu has been replaced by buttons in various more natural place
+> * Various keybindings and shortcuts have been implemented and improved
+> * The notification count in the system tray is working once again
+> * Messages that are not sent yet are now marked in the timeline
+> * You can now knock on a room using /knock
+> * Message editing is now done inline in the message
+> * Large amounts of state events are collapsed some more and can now be expanded to view all of them
+> * Finally, too many minor fixes to list them all here :)
+> 
+> ![](/blog/img/c12e8cc5dc3c3438cf07bcb0908d8e53b826c040.png)
+
+### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
+
+Secure and independent communication, connected via Matrix. Come talk with us in [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org)!
+
+[Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) says
+
+> * We are happy to announce that the Gitter sunsetting bugs have been successfully resolved. Our development team has been working diligently to ensure a smooth transition for all users as we move forward with our plans.
+> * Additionally, our Cloud Packaging project is also now completed. 🎉
+> * The team is continuing to work on the recursive relations MSC, to address stuck notifications. We’ve also added more logging to track down other issues that may be related.
+> * Furthermore, we have made improvements to notification settings pages, room list ordering, and message previews.
+> * Accessibility audits continue and the quick wins we identify along the way are being actioned.
+
+### Element iOS ([website](https://github.com/vector-im/element-ios))
+
+Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
+
+[Manu](https://matrix.to/#/@Manu:matrix.org) says
+
+> * In Element X this week we’ve fixed the issue with room list loading while we’re still investigating the gappy timelines issue.
+> * Work is underway to enhance app navigation to support permalink for messages and opening the app from a notification.
+> * Room and user detail views are currently in review and will be available soon.
+> * We have started the integration of OIDC (OpenID Connect). This will enable users to authenticate with third-party identity providers, giving them seamless access to their account.
+> 
+> ![](/blog/img/bYnhJMRYKYAEcwHJkjaVXZsx.png)
+> ![](/blog/img/OqqXgEfWSKjdXTiPMrHLGMAc.png)
+
+### Element Android ([website](https://github.com/vector-im/element-android))
+
+Secure and independent communication for Android, connected via Matrix. Come talk with us in [#element-android:matrix.org](https://matrix.to/#/#element-android:matrix.org)!
+
+[benoit](https://matrix.to/#/@benoit.marty:matrix.org) reports
+
+> * In Element X on Android we’re working on introducing the sending and receiving of files.
+> * We've also been working hard to improve our push notification system, and we're pleased to announce that significant progress has been made in this area. Keep an eye out for further updates as we continue to grow this feature.
+> * Also the room creation flow is progressing well. User will be able to create room and DM with Element Android X.
+> * Next, work will start on integrating OIDC (OpenID Connect) into Element X Android app. This will enable users to authenticate with third-party identity providers, giving them seamless access to their account. 
+> * In the Element Android app, the issue that was preventing some users from making video calls using Jitsi has been fixed on WebRTC. We will integrate the next Jitsi release as soon as it is available. With Jitsi back up and running, users can once again connect face-to-face with their friends and colleagues.
+
+## Dept of Ping
+
+Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
+
+### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|noevil.pl|538|
+|2|zemos.net|801|
+|3|masfloss.net|993|
+|4|pikaviestin.fi|1084|
+|5|maunium.net|1505.5|
+|6|phorcys.net|1622.5|
+|7|rom4nik.pl|2063|
+|8|matrix.org|2463.5|
+|9|matrix.lukeog.com|3320|
+|10|herkulessi.de|4185|
+
+### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
+
+|Rank|Hostname|Median MS|
+|:---:|:---:|:---:|
+|1|dendrite.kootstra.frl|358|
+|2|rustybever.be|415|
+|3|777.tf|560|
+|4|zemos.net|653|
+|5|test.zemos.net|1178|
+|6|herkulessi.de|1211|
+|7|matrix.org|1524|
+|8|midnightthoughts.space|1642|
+|9|kernel-error.com|2264|
+
+## That's all I know
+
+See you next week, and be sure to stop by [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) with your updates!
