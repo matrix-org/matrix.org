@@ -1,12 +1,86 @@
 {% import "macros/sdks.html" as sdkutils %}
-{% set sdks = load_data(path="content/ecosystem/sdks/sdks.toml") %}
+{% set sdks_data = load_data(path="content/ecosystem/sdks/sdks.toml") %}
+{% set licences = [] %}
+{% set languages = [] %}
+{% for sdk in sdks_data.sdks %}
+{% set_global licences = licences | concat(with=sdk.licence) %}
+{% set_global languages = languages | concat(with=sdk.language) %}
+{% endfor %}
+{% set licences = licences | unique | sort %}
+{% set languages = languages | unique | sort %}
+
+<div id="filters">
+    <div class="filter-wrap">
+        <div id="filter-maturity" class="filter">
+            Maturity
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div id="filter-maturity-menu" class="filter-menu">
+            <p>The SDK can support any of the maturity levels checked.</p>
+            <div class="filter-option">
+                <input id="maturity-stable" type="checkbox" checked>
+                <label for="maturity-stable">Stable</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-beta" type="checkbox" checked>
+                <label for="maturity-beta">Beta</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-alpha" type="checkbox" checked>
+                <label for="maturity-alpha">Alpha</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-obsolete" type="checkbox">
+                <label for="maturity-obsolete">Obsolete</label>
+            </div>
+            <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <div id="filter-licence" class="filter">
+            Licence
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div id="filter-licence-menu" class="filter-menu">
+            <p>The client can support any of the licences checked.</p>
+            {% for licence in licences %}
+            <div class="filter-option">
+                <input id="licence-{{ licence | slugify }}" type="checkbox" checked>
+                <label for="licence-{{ licence | slugify }}">{{ licence }}</label>
+            </div>
+            {% endfor %}
+            <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <div id="filter-language" class="filter">
+            Language
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg">
+        </div>
+        <div id="filter-language-menu" class="filter-menu">
+            <p>The client must support any of the languages checked.</p>
+            {% for language in languages %}
+            <div class="filter-option">
+                <input id="language-{{ language | slugify }}" type="checkbox" checked>
+                <label for="language-{{ language | slugify }}">{{ language }}</label>
+            </div>
+            {% endfor %}
+            <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+        </div>
+    </div>
+</div>
+
+<div id="filters-overlay"></div>
 
 <div id="all-sdks" class="projects-card-deck">
-    {% for name, sdk in sdks %}
+    {% for sdk in sdks_data.sdks | sort(attribute="maturity") | reverse %}
     <div>
         <div class="project-card {{ sdkutils::classes(sdk=sdk) }}">
             <div class="title-row">
-                <h3>{{ name }}</h3>
+                <h3>{{ sdk.name }}</h3>
                 <div class="maturity {{ sdk.maturity | lower }}">{{ sdk.maturity }}</div>
             </div>
             <div class="licence-language">
