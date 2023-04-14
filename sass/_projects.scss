@@ -3,7 +3,11 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    row-gap: 1rem;
+}
+
+.projects-card-deck>div {
+    flex: 1 0 280px;
 }
 
 .project-card {
@@ -133,7 +137,8 @@
                 accent-color: #000;
             }
 
-            input, label {
+            input,
+            label {
                 cursor: pointer;
                 user-select: none;
             }

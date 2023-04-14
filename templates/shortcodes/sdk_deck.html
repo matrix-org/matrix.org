@@ -1,0 +1,28 @@
+{% import "macros/sdks.html" as sdkutils %}
+{% set sdks = load_data(path="content/ecosystem/sdks/sdks.toml") %}
+
+<div id="all-sdks" class="projects-card-deck">
+    {% for name, sdk in sdks %}
+    <div>
+        <div class="project-card {{ sdkutils::classes(sdk=sdk) }}">
+            <h3>{{ name }} <div class="maturity {{ sdk.maturity | lower }}">{{ sdk.maturity }}</div>
+            </h3>
+            <div>{{ sdk.licence }} {{ sdk.language }}</div>
+            <div class="server-links">
+                {% if sdk.repository %}
+                <a href="{{ sdk.repository }}">
+                    {{ load_data(path="/assets/projects/repo.svg") | safe }}
+                    Repository
+                </a>
+                {% endif %}
+                {% if sdk.room %}
+                <a href="https://matrix.to/#/{{ sdk.room }}">
+                    {{ load_data(path="/assets/projects/matrix.svg") | safe }}
+                    Matrix Room
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

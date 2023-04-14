@@ -1,0 +1,7 @@
+{% macro classes(sdk) %}
+maturity-{{ sdk.maturity | lower }}
+
+licence-{{ sdk.licence | slugify }}
+
+language-{{ sdk.language | slugify }}
+{% endmacro %}
