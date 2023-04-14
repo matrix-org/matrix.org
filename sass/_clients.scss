@@ -4,7 +4,6 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 
 .clients_page {
     padding-top: 3rem;
-    padding-inline: 2rem;
 
     h2 {
         text-align: center;
@@ -88,6 +87,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         position: absolute;
         top: 1rem;
         left: 1rem;
+
         @media (min-width: 767px) {
             right: 1rem;
             left: unset;
@@ -114,6 +114,10 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         font-style: normal;
         font-weight: 700;
         font-size: 2rem;
+
+        .maturity {
+            padding-block: .3rem;
+        }
     }
 
     p {

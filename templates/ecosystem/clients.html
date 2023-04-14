@@ -1,7 +1,9 @@
 {% extends "page.html" %}
 {% import "macros/clients.html" as clients %}
 {% block head_extra %}
-<noscript><link rel="stylesheet" href="/no-js.css" /></noscript>
+<noscript>
+    <link rel="stylesheet" href="/no-js.css" />
+</noscript>
 <script type="module" src="/js/clients.js"></script>
 {% endblock head_extra%}
 {% block content %}
@@ -13,7 +15,7 @@
     </div>
 </div>
 
-<div class="clients_page">
+<div class="content clients_page">
 
     {{ page.content | safe }}
 

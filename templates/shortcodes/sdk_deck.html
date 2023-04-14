@@ -5,9 +5,14 @@
     {% for name, sdk in sdks %}
     <div>
         <div class="project-card {{ sdkutils::classes(sdk=sdk) }}">
-            <h3>{{ name }} <div class="maturity {{ sdk.maturity | lower }}">{{ sdk.maturity }}</div>
-            </h3>
-            <div>{{ sdk.licence }} {{ sdk.language }}</div>
+            <div class="title-row">
+                <h3>{{ name }}</h3>
+                <div class="maturity {{ sdk.maturity | lower }}">{{ sdk.maturity }}</div>
+            </div>
+            <div class="licence-language">
+                <div class="pill">{{ sdk.licence }}</div>
+                <div class="pill">{{ sdk.language }}</div>
+            </div>
             <div class="server-links">
                 {% if sdk.repository %}
                 <a href="{{ sdk.repository }}">
