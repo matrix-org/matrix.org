@@ -7,6 +7,9 @@ licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/matrix-appservice-node"
 purpose = ["bot", "bridge"]
 featured_in = ["bridge"]
+description = """
+Matrix Application Service framework in Node.js.
+"""
 
 [[sdks]]
 name = "Matrix.org JS SDK"
@@ -17,6 +20,9 @@ licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/matrix-js-sdk"
 purpose = ["client", "bot", "bridge"]
 featured_in = []
+description = """
+Matrix Client-Server SDK for JavaScript.
+"""
 
 [[sdks]]
 name = "Matrix.org React SDK"
@@ -27,6 +33,9 @@ licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/matrix-react-sdk"
 purpose = ["client"]
 featured_in = []
+description = """
+Matrix SDK for React Javascript.
+"""
 
 [[sdks]]
 name = "MatrixBot .NET Core SDK"
@@ -37,6 +46,9 @@ licence = "MIT"
 repository = "https://github.com/enimatek-nl/matrixbot-dotnet-sdk"
 purpose = ["bot"]
 featured_in = []
+description = """
+Build .NET chat bots compatible with the Matrix Protocol. It has support for a limited subset of the APIs.
+"""
 
 [[sdks]]
 name = "Simple-Matrix-Bot-Lib"
@@ -44,9 +56,12 @@ maintainer = "KrazyKirby99999"
 maturity = "Stable"
 language = "Python"
 licence = "MIT"
-repository = "https://github.com/KrazyKirby99999/simple-matrix-bot-lib"
+repository = "https://codeberg.org/imbev/simplematrixbotlib"
 purpose = ["bot"]
 featured_in = []
+description = """
+An easy to use bot library for the Matrix ecosystem written in Python.
+"""
 
 [[sdks]]
 name = "Ruma"
@@ -57,6 +72,9 @@ licence = "MIT"
 repository = "https://github.com/ruma"
 purpose = ["client", "bot", "bridge"]
 featured_in = []
+description = """
+A set of Rust crates for interacting with the Matrix chat network.
+"""
 
 [[sdks]]
 name = "gomatrix"
@@ -67,16 +85,22 @@ licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/gomatrix"
 purpose = ["client"]
 featured_in = []
+description = """
+A Golang Matrix client.
+"""
 
 [[sdks]]
 name = "matrix-appservice-bridge"
-maintainer = "Kegsay, Matrix.org"
+maintainer = "Matrix.org"
 maturity = "Stable"
 language = "TypeScript"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/matrix-appservice-bridge"
 purpose = ["bridge"]
 featured_in = ["bridge"]
+description = """
+Bridging infrastructure for Application Services.
+"""
 
 [[sdks]]
 name = "matrix-nio"
@@ -87,6 +111,9 @@ licence = "ISC"
 repository = "https://github.com/poljar/matrix-nio"
 purpose = ["client", "bot"]
 featured_in = ["client", "bot"]
+description = """
+A Python Matrix client library, designed according to sans I/O principles.
+"""
 
 [[sdks]]
 name = "mautrix-go"
@@ -97,6 +124,9 @@ licence = "MPL-2.0"
 repository = "https://github.com/mautrix/go"
 purpose = ["client", "bot", "bridge"]
 featured_in = ["client", "bot", "bridge"]
+description = """
+A Golang Matrix framework.
+"""
 
 [[sdks]]
 name = "mautrix-python"
@@ -107,6 +137,9 @@ licence = "MPL-2.0"
 repository = "https://github.com/mautrix/python"
 purpose = ["client", "bot", "bridge"]
 featured_in = ["client", "bot", "bridge"]
+description = """
+A Python 3 asyncio Matrix framework.
+"""
 
 [[sdks]]
 name = "Drupal matrix_api module"
@@ -157,6 +190,9 @@ licence = "MIT"
 repository = "https://github.com/baking-bad/matrix-dotnet-sdk"
 purpose = ["client", "bot"]
 featured_in = []
+description = """
+Build .NET apps compatible with the Matrix Protocol.
+"""
 
 [[sdks]]
 name = "Matrix Client SDK for GLib"
@@ -207,6 +243,9 @@ licence = "Unknown"
 repository = "https://github.com/JojiiOfficial/Matrix-ClientServer-API-java"
 purpose = ["client", "bot"]
 featured_in = []
+description = """
+A small and simple java API for the Matrix ClientServer Protocol.
+"""
 
 [[sdks]]
 name = "Matrix.org Android SDK"
@@ -247,6 +286,9 @@ licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/matrix-ios-sdk"
 purpose = ["client"]
 featured_in = ["client"]
+description = """
+The Matrix SDK for iOS.
+"""
 
 [[sdks]]
 name = "Matrix::Client"
@@ -292,11 +334,14 @@ featured_in = []
 name = "Quotient"
 maintainer = "The Quotient team"
 maturity = "Beta"
-language = "C++/Qt"
+language = "C++"
 licence = "LGPL-2.1-only"
 repository = "https://github.com/quotient-im"
 purpose = ["client", "bot"]
 featured_in = []
+description = """
+A Qt5 library to write cross-platform clients for Matrix
+"""
 
 [[sdks]]
 name = "Racket Matrix SDK"
@@ -317,6 +362,9 @@ licence = "MIT"
 repository = "https://github.com/ananace/ruby-matrix-sdk"
 purpose = ["client", "bot"]
 featured_in = []
+description = """
+Ruby SDK for the Matrix communication protocol.
+"""
 
 [[sdks]]
 name = "Swift MatrixSDK"
@@ -337,6 +385,9 @@ licence = "Apache-2.0"
 repository = "https://gitlab.com/trixnity/trixnity"
 purpose = ["client", "bot", "bridge"]
 featured_in = []
+description = """
+Multiplatform Kotlin SDK for Matrix.
+"""
 
 [[sdks]]
 name = "botkit-matrix"
@@ -357,6 +408,9 @@ licence = "Apache-2.0"
 repository = "https://github.com/mtorials/dial-phone"
 purpose = ["client", "bot"]
 featured_in = []
+description = """
+A Matrix client-server SDK written in Kotlin.
+"""
 
 [[sdks]]
 name = "goMatrix"
@@ -397,6 +451,9 @@ licence = "AGPL-3.0-or-later"
 repository = "https://lily.kazv.moe/kazv/libkazv"
 purpose = ["client", "bot"]
 featured_in = []
+description = """
+A matrix client sdk built upon lager and the value-oriented design it enables.
+"""
 
 [[sdks]]
 name = "matrix-bot-sdk"
@@ -407,6 +464,9 @@ licence = "MIT"
 repository = "https://github.com/turt2live/matrix-bot-sdk"
 purpose = ["bot", "bridge"]
 featured_in = ["bot", "bridge"]
+description = """
+TypeScript/JavaScript SDK for Matrix bots.
+"""
 
 [[sdks]]
 name = "matrix-erlang-sdk"
@@ -427,6 +487,9 @@ licence = "Apache-2.0"
 repository = "https://github.com/Dominaezzz/matrix-kt"
 purpose = ["client", "bot"]
 featured_in = []
+description = """
+Kotlin libraries for Matrix.
+"""
 
 [[sdks]]
 name = "matrix-redux-wrap"
@@ -447,6 +510,9 @@ licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/matrix-rust-sdk"
 purpose = ["client", "bot", "bridge"]
 featured_in = ["client", "bot", "bridge"]
+description = """
+An implementation of a Matrix client-server library in Rust.
+"""
 
 [[sdks]]
 name = "mautrix-appservice-go"
@@ -494,6 +560,9 @@ maintainer = "Dominik George; Project Hack'n'Fun @ Teckids e.V."
 maturity = "Beta"
 language = "Python"
 licence = "Apache-2.0"
-repository = "https://edugit.org/hacknfun/thema-mechatronik/mytrix"
+repository = "https://edugit.org/Teckids/hacknfun/libs/mytrix"
 purpose = ["client", "bot"]
 featured_in = []
+description = """
+Matrix client library for MicroPython.
+"""

@@ -87,6 +87,7 @@
                 <div class="pill">{{ sdk.licence }}</div>
                 <div class="pill">{{ sdk.language }}</div>
             </div>
+            {% if sdk.description %}<p>{{ sdk.description }}</p>{% endif %}
             <div class="server-links">
                 {% if sdk.repository %}
                 <a href="{{ sdk.repository }}">
