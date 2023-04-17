@@ -1,11 +1,3 @@
-{% macro classes(sdk) %}
-maturity-{{ sdk.maturity | lower }}
-
-licence-{{ sdk.licence | slugify }}
-
-language-{{ sdk.language | slugify }}
-{% endmacro %}
-
 {% macro sdks_panel(type) %}
 {% set sdks_data = load_data(path="content/ecosystem/sdks/sdks.toml") %}
 {% set licences = [] %}

@@ -1,13 +1,4 @@
 {% import "macros/sdks.html" as sdkutils %}
-{% set sdks_data = load_data(path="content/ecosystem/sdks/sdks.toml") %}
-{% set licences = [] %}
-{% set languages = [] %}
-{% for sdk in sdks_data.sdks %}
-{% set_global licences = licences | concat(with=sdk.licence) %}
-{% set_global languages = languages | concat(with=sdk.language) %}
-{% endfor %}
-{% set licences = licences | unique | sort %}
-{% set languages = languages | unique | sort %}
 
 <fieldset id="sdk-purpose-selector">
     <input type="radio" name="sdk-purpose" id="purpose-client" checked />
