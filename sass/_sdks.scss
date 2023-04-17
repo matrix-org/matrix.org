@@ -1,0 +1,26 @@
+#sdk-purpose-selector {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+    border: transparent;
+
+    input {
+        display: none;
+    }
+
+    label {
+        cursor: pointer;
+        user-select: none;
+        font-weight: 700;
+        font-size: 1.25rem;
+    }
+
+    input[type="radio"]:checked+label {
+        border-bottom: 3px solid black;
+    }
+}
+
+.hidden {
+    display: none;
+}
