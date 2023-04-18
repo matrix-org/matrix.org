@@ -30,6 +30,7 @@ header {
         right: 0;
         border-right: unset;
         background-color: #fff;
+        padding-bottom: 5rem;
     }
 
     overflow-y: auto;
@@ -130,7 +131,11 @@ header {
     cursor: pointer;
 }
 
-#docs-menu-checkbox:not(:checked)+div {
+#docs-menu-checkbox:checked~#docs-menu-button {
+    background-color: #333;
+}
+
+#docs-menu-checkbox:not(:checked)~.docs-menu {
     @media (max-width: 767px) {
         display: none;
     }

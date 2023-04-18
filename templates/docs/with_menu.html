@@ -25,8 +25,8 @@
             {{ section.content | markdown | safe }}
         </article>
     </div>
-    <label for="docs-menu-checkbox" id="docs-menu-button">Table of Content</label>
     <input id="docs-menu-checkbox" type="checkbox" aria-hidden="true" />
+    <label for="docs-menu-checkbox" id="docs-menu-button">Table of Contents</label>
     <div class="docs-menu">
         {% if section.path == root_section.path %}
         {% set current = true %}
