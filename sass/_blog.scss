@@ -38,11 +38,6 @@ article.post {
     header {
         margin-bottom: 1rem;
     }
-
-    &.with-sidebar {
-        // content width + sidebar width + padding between
-        max-width: calc(1280px + 4rem);
-    }
 }
 
 .post-main {
