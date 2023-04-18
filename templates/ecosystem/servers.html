@@ -1,6 +1,8 @@
 {% extends "page.html" %}
 {% block head_extra %}
-<noscript><link rel="stylesheet" href="/no-js.css" /></noscript>
+<noscript>
+    <link rel="stylesheet" href="/no-js.css" />
+</noscript>
 <script type="module" src="/js/servers.js"></script>
 {% endblock head_extra%}
 {% block content %}
@@ -10,7 +12,7 @@
         <p>{{ page.extra.summary }}</p>
     </div>
 </div>
-<div class="servers">
+<div class="content servers">
     <p>{{ page.content | safe }}</p>
 </div>
 {% endblock content %}

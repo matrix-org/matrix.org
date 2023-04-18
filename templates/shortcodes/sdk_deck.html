@@ -1,0 +1,22 @@
+{% import "macros/sdks.html" as sdkutils %}
+
+<fieldset id="sdk-purpose-selector">
+    <input type="radio" name="sdk-purpose" id="purpose-client" checked />
+    <label for="purpose-client">Client SDKs</label>
+
+    <input type="radio" name="sdk-purpose" id="purpose-bot" />
+    <label for="purpose-bot">Bot SDKs</label>
+
+    <input type="radio" name="sdk-purpose" id="purpose-bridge">
+    <label for="purpose-bridge">Bridge SDKs</label>
+</fieldset>
+
+<div id="sdks-panels">
+    {{ sdkutils::sdks_panel(type="client") }}
+
+    {{ sdkutils::sdks_panel(type="bot") }}
+
+    {{ sdkutils::sdks_panel(type="bridge") }}
+</div>
+
+<div id="filters-overlay"></div>

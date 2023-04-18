@@ -77,7 +77,6 @@ ol:last-child {
     max-width: var(--page-max-width);
 
     margin: .625rem auto;
-    padding: 0 1.5rem;
 
     img {
         max-height: 40rem;
@@ -178,9 +177,11 @@ pre table {
     flex-direction: column;
     justify-content: center;
     padding-inline: 5.625rem;
+
     @media (max-width: 767px) {
         padding-inline: 2rem;
     }
+
     padding-bottom: calc(var(--navbar-height)/2);
 
     min-height: var(--page-header-height);
@@ -220,7 +221,7 @@ pre table {
     }
 }
 
-:not(pre) > code {
+:not(pre)>code {
     color: #f54029;
     border: 1px solid #f54029;
     border-radius: 4px;
