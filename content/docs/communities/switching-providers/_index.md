@@ -128,3 +128,27 @@ Foundation knows](/ecosystem/hosting).
 
 ## Transferring ownership
 
+Transferring ownership is one of the great strengths of Matrix. You can start
+your community with an account you have created on the matrix.org homeserver and
+then decide to move to another server.
+
+Matrix doesn't have (yet?) a concept of ownership: it only relies on
+[Power Levels](/docs/communities/moderation/#power-levels) to define whether
+someone is authorised to do something or not. This means that the person who has
+the highest Power Level in a room or a Space is a (co-)owner of that room and
+Space.
+
+Whenever you give the Power Level 100 (sometimes seen as the role
+"Administrator") to someone else, you're effectively sharing the ownerhsip of
+your room or Space with them. As co-owners you can't unilaterally take back what
+was given to the other.
+
+Imagine Alice had created a few rooms in a Space on matrix.org for her Warm
+Drinks community. She then decides that Warm Drinks is serious business and she
+wants to have a Matrix instance dedicated to it. She relies on a
+[hosting provider](/ecosystem/hosting/) to create a `warm-drinks.com`
+homeserver. Then she creates the user `@alice:warm-drinks.com`.
+
+She can promote `@alice:warm-drinks.com` to the Power Level 100 in all the rooms
+and Spaces about warm drinks she had created on matrix.org, and demote her
+matrix.org user. Now her new user is the only owner of the community.
