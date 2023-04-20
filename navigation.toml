@@ -1,7 +1,7 @@
 header = [
     { title = "About", href = "/about/" },
     { title = "Blog", href = "/blog/" },
-    { title = "Documentation", section = "docs" },
+    { title = "Documentation", href="/docs/" },
     { title = "Ecosystem", section = "ecosystem" },
     { title = "Podcasts", href = "/podcasts/" },
     { title = "Shop", href = "https://shop.matrix.org" },
