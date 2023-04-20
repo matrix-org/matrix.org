@@ -138,7 +138,7 @@ the highest Power Level in a room or a Space is a (co-)owner of that room and
 Space.
 
 Whenever you give the Power Level 100 (sometimes seen as the role
-"Administrator") to someone else, you're effectively sharing the ownerhsip of
+"Administrator") to someone else, you're effectively sharing the ownership of
 your room or Space with them. As co-owners you can't unilaterally take back what
 was given to the other.
 
