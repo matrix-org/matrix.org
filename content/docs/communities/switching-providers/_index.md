@@ -58,12 +58,11 @@ accident can be a tedious process since the Matrix.org Foundation takes
 particular care about social engineering issues.
 
 For a more advanced explanation of how room ownership works, please head to the
-rooms section of the technical documentation. FIXME FIXME FIXME PROVIDE ACTUAL
-LINK.
+rooms section of the technical documentation.
 
 {{ page_card(
     title="Rooms",
-    path="/docs/technical#rooms",
+    path="/docs/technical/rooms_and_events/",
     summary="Understand how rooms work over federation, and who can really
              control them.")
 }}
