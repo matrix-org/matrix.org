@@ -914,6 +914,10 @@ a {
   align-items: center;
 }
 
+.mxgrid__item__bg__vert.smaller {
+  max-width: 70%;
+}
+
 .mxgrid__item__bg__vert.mxgrid__item__bg__vert--develop {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
@@ -1660,3 +1664,13 @@ a {
   }
 }
 
+a.cta {
+  border-radius: 9999px;
+  background-color: #000;
+  color: #fff;
+  padding: .5rem 2.5rem;
+}
+
+a.cta:hover {
+  background-color: #0098d4;
+}
