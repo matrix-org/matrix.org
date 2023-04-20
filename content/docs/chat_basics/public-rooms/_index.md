@@ -108,6 +108,7 @@ inside it.
 Here are a few Spaces you might be interested in:
 
 - Matrix Community [https://matrix.to/#/#community:matrix.org](https://matrix.to/#/#community:matrix.org)
+- Science [https://matrix.to/#/#science-space:matrix.org](https://matrix.to/#/#science-space:matrix.org)
 - Libre Gaming [https://matrix.to/#/#libregaming-games:tchncs.de](https://matrix.to/#/#libregaming-games:tchncs.de)
 - Retro Computing & Gaming [https://matrix.to/#/#retro:nil.im](https://matrix.to/#/#retro:nil.im)
 - Mathematics [https://matrix.to/#/#mathematics-on:matrix.org](https://matrix.to/#/#mathematics-on:matrix.org)
