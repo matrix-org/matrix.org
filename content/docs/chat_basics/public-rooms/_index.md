@@ -85,6 +85,30 @@ You can click "Join" to join the room, and voilà, you're in!
 
 ## Spaces
 
-TODO: What are Spaces
-TODO: Joining a Space, & a few curated ones
-TODO: joining a room from a Space
+A Space is a way to group several rooms together. If you are familiar with other
+platforms, Matrix Spaces are similar to Slack Workspaces or Discord Servers. It
+looks like the following.
+
+![](space_home.png)
+
+To join a Space, you need to either know its address, or click on a matrix.to
+link to that space someone would have shared with you. For example, to join the
+Space of the Matrix Community, you can click on
+[https://matrix.to/#/#community:matrix.org](https://matrix.to/#/#community:matrix.org)
+
+The process to join a Space is the same as for [Joining a specific room](#joining-a-specific-room).
+
+Once you have joined a Space, clicking on its icon on the leftmost bar will
+bring you to the index view of the space: you will see all the rooms contained
+in this space, and you will be able to join them by clicking on "Join".
+
+Note that when you join a Space, you are not automatically joining all the rooms
+inside it.
+
+Here are a few Spaces you might be interested in:
+
+- Matrix Community [https://matrix.to/#/#community:matrix.org](https://matrix.to/#/#community:matrix.org)
+- Science [https://matrix.to/#/#science-space:matrix.org](https://matrix.to/#/#science-space:matrix.org)
+- Libre Gaming [https://matrix.to/#/#libregaming-games:tchncs.de](https://matrix.to/#/#libregaming-games:tchncs.de)
+- Retro Computing & Gaming [https://matrix.to/#/#retro:nil.im](https://matrix.to/#/#retro:nil.im)
+- Mathematics [https://matrix.to/#/#mathematics-on:matrix.org](https://matrix.to/#/#mathematics-on:matrix.org)
