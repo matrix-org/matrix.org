@@ -23,8 +23,8 @@ without a traumatic big platform switch.
 Here are a couple of screenshots to see how a thriving community can look like
 on Matrix.
 
-![](./bridge-discord/from-matrix.png)
-![](./bridge-discord/from-discord.png)
+![](../bridging/from-matrix.png)
+![](../bridging/from-discord.png)
 
 We recommend you to set up a dummy community to play around first, and then you
 can move on creating your full community and/or bridging your existing one to

@@ -46,7 +46,7 @@ You should land on the following page.
 
 {{ 
     figure(
-        img="element-io-sign-up.png",
+        img="../element-io-sign-up.png",
         caption="Sign up page of app.element.io")
 }}
 
@@ -69,7 +69,7 @@ bring you to the homepage of Element, the Matrix web application to participate
 to Matrix conversations.
 
 {{ figure(
-    img="element-landing-page.png"
+    img="../element-landing-page.png"
     caption="Landing page of Element after login")
 }}
 
