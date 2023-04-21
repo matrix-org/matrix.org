@@ -1,5 +1,5 @@
 +++
 title = "Documentation"
-template = "docs/index.html"
+render = false
 extra.updated = "2022-10-18T16:00:00Z"
 +++

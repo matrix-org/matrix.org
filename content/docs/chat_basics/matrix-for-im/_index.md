@@ -2,7 +2,7 @@
 title = "Matrix for Instant Messaging"
 weight = 100
 template = "docs/with_menu.html"
-aliases = ["/docs/chat_basics/"]
+aliases = ["/docs/", "/docs/chat_basics/"]
 [extra]
 updated = "2022-10-18T16:00:00Z"
 +++
