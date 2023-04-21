@@ -1,7 +1,7 @@
 +++
 title = "Switching Providers"
 template = "docs/with_menu.html"
-weight = 150
+weight = 300
 [extra]
 emoji = "🏡"
 tile = "I want to get my own homeserver"

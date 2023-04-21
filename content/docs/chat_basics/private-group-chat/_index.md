@@ -1,6 +1,6 @@
 +++
 title = "Private Group Chat"
-weight = 100
+weight = 200
 template = "docs/with_menu.html"
 [extra]
 emoji = "🧑‍🤝‍🧑"

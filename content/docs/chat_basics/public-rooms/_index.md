@@ -1,6 +1,6 @@
 +++
 title = "Public Rooms"
-weight = 200
+weight = 300
 template = "docs/with_menu.html"
 [extra]
 emoji = "🌐"

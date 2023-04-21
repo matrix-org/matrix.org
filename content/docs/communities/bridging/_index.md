@@ -1,7 +1,7 @@
 +++
 title = "Bridging"
 template = "docs/with_menu.html"
-weight = 300
+weight = 400
 [extra]
 emoji = "🌉"
 tile = "I want to bridge my community from another platform with Matrix"
