@@ -106,68 +106,123 @@ multi_language = true
 [Cinny.packages]
 other_url = "https://app.cinny.in/"
 
-[Linuxapp]
-thumbnail = "element.svg"
-maintainer = "Element"
-summary = "Placeholder app that runs on Linux and Web."
+[Fractal]
+thumbnail = "fractal.svg"
+summary = "A Matrix messaging app for GNOME, optimized for collaboration in large groups."
+maintainer = "Alexandre Franke, Kévin Commaille and Julian Sparber"
+licence = "GPL-3.0"
+language = "Rust"
+last_release = "2023-03-09"
+maturity = "Beta"
+source = "https://gitlab.gnome.org/GNOME/fractal"
+matrix_room = "#fractal:matrix.org"
+featured = false
+[Fractal.features]
+e2ee = true
+spaces = false
+voip_1to1 = false
+voip_jitsi = false
+widgets = false
+threads = false
+sso = true
+multi_account = true
+multi_language = true
+[Fractal.packages]
+flathub.app_id = "org.gnome.Fractal"
+
+[gomuks]
+thumbnail = ""
+summary = "A terminal Matrix client written in Go."
+maintainer = "Tulir"
+licence = "AGPL-3.0"
+language = "Go"
+last_release = "2022-11-19"
+maturity = "Beta"
+source = "https://github.com/tulir/gomuks"
+matrix_room = "#gomuks:maunium.net"
+featured = false
+[gomuks.features]
+e2ee = true
+spaces = false
+voip_1to1 = false
+voip_jitsi = false
+widgets = false
+threads = false
+sso = true
+multi_account = false
+multi_language = true
+[gomuks.packages]
+other_url = "https://github.com/tulir/gomuks/releases"
+windows_installer = "https://github.com/tulir/gomuks/releases"
+maxos_installer = "https://github.com/tulir/gomuks/releases"
+
+[goktrix]
+thumbnail = ""
+summary = "Matrix client in Go and GTK4."
+maintainer = "diamondburned"
+licence = "AGPL-3.0-or-later"
+language = "Go"
+last_release = "2022-08-01"
 maturity = "Alpha"
-licence = "Apache-2.0"
-last_release = "2022-11-02"
+source = "https://github.com/diamondburned/gotktrix"
 featured = false
-[Linuxapp.features]
-e2ee = true
-spaces = true
-voip_1to1 = true
-voip_jitsi = true
-widgets = true
-threads = true
+[goktrix.features]
+e2ee = false
+spaces = false
+voip_1to1 = false
+voip_jitsi = false
+widgets = false
+threads = false
 sso = true
 multi_account = true
-multi_language = true
-[Linuxapp.packages]
-flathub.app_id = "im.riot.Riot"
-other_url = "https://app.element.io"
+multi_language = false
+[goktrix.packages]
+other_url = "https://github.com/diamondburned/gotktrix/releases"
 
-[Webapp]
-thumbnail = "element.svg"
+[Hydrogen]
+thumbnail = "hydrogen.svg"
+summary = " Lightweight matrix client with legacy and mobile browser support."
 maintainer = "Element"
-summary = "Placeholder app that only runs on web."
-maturity = "Obsolete"
 licence = "Apache-2.0"
-last_release = "2022-11-02"
+language = "Javascript"
+last_release = "2023-02-14"
+maturity = "Beta"
+source = "https://github.com/vector-im/hydrogen-web"
 featured = false
-[Webapp.features]
+[Hydrogen.features]
 e2ee = true
-spaces = true
-voip_1to1 = true
-voip_jitsi = true
-widgets = true
-threads = true
+spaces = false
+voip_1to1 = false
+voip_jitsi = false
+widgets = false
+threads = false
 sso = true
 multi_account = true
 multi_language = true
-[Webapp.packages]
-other_url = "https://app.element.io"
+[Hydrogen.packages]
+other_url = "https://hydrogen.element.io"
 
-[BothMobile]
-thumbnail = "element.svg"
-maintainer = "Element"
-summary = "Placeholder app that runs on iOS and Android."
-maturity = "Stable"
+[iamb]
+thumbnail = ""
+summary = "A terminal-based Matrix client with Vim keybindings written in Rust."
+maintainer = "ulyssa"
 licence = "Apache-2.0"
-last_release = "2022-11-02"
+language = "Rust"
+last_release = "2023-03-24"
+maturity = "Beta"
+source = "https://github.com/ulyssa/iamb"
+website = "https://iamb.chat/"
+matrix_room = "#iamb:0x.badd.cafe"
 featured = false
-[BothMobile.features]
+[iamb.features]
 e2ee = true
-spaces = true
-voip_1to1 = true
-widgets = true
-threads = true
-sso = true
+spaces = false
+voip_1to1 = false
+voip_jitsi = false
+widgets = false
+threads = false
+sso = false
 multi_account = true
-multi_language = true
-[BothMobile.packages]
-google_play_store.app_id = "im.vector.app"
-f_droid.app_id = "im.vector.app"
-apple_app_store = { app_id = "id1083446067", org = "vector" }
-
+multi_language = false
+[iamb.packages]
+other_url = "https://iamb.chat/install.html"
