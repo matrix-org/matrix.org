@@ -1,7 +1,7 @@
 {% extends "section.html" %}
 {% block content %}
 
-{# We always want to display the menu of the chat basics docs #}
+{% set docs_sections = get_section(path="docs/_index.md") %}
 {% set root_section = get_section(path="docs/chat_basics/_index.md") %}
 {% if section.path is starting_with("/docs/chat_basics") %}
 {% set root_section = get_section(path="docs/chat_basics/_index.md") %}
@@ -28,22 +28,21 @@
     <input id="docs-menu-checkbox" type="checkbox" aria-hidden="true" />
     <label for="docs-menu-checkbox" id="docs-menu-button">Table of Contents</label>
     <div class="docs-menu">
-        {% if section.path == root_section.path %}
+        {% for doc_section_path in docs_sections.subsections %}
+        {% set doc_section = get_section(path=doc_section_path) %}
+        {% if section.path is containing(doc_section.path) %}
         {% set current = true %}
         {% else %}
         {% set current = false %}
         {% endif %}
         <div>
-            <input id="{{ root_section.title }}-submenu-checkbox" type="checkbox" class="submenu-checkbox"
+            <input id="{{ doc_section.title }}-submenu-checkbox" type="checkbox" class="submenu-checkbox"
                 aria-hidden="true" {% if current %}checked{% endif %}>
-            <label for="{{ root_section.title }}-submenu-checkbox" class="submenu-title">{{ root_section.title }}
+            <label for="{{ doc_section.title }}-submenu-checkbox" class="submenu-title">{{ doc_section.title }}
                 <div class="arrow"></div>
             </label>
             <ul class="section-submenu-wrap">
-                <a href="{{ root_section.path }}">
-                    <li>Overview</li>
-                </a>
-                {% for h2 in root_section.toc %}
+                {% for h2 in doc_section.toc %}
                 <li>
                     <a href="{{ h2.permalink }}">{{ h2.title }}</a>
                     {% if h2.children %}
@@ -57,39 +56,23 @@
                     {% endif %}
                 </li>
                 {% endfor %}
-            </ul>
-        </div>
-        {% for subsection_path in root_section.subsections %}
-        {% set subsection = get_section(path=subsection_path) %}
-        {% if section.path == subsection.path %}
-        {% set current = true %}
-        {% else %}
-        {% set current = false %}
-        {% endif %}
-        <div>
-            <input id="{{ loop.index }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true" {%
-                if current %}checked{% endif %}>
-            <label for="{{ loop.index }}-submenu-checkbox" class="submenu-title">{{ subsection.title }}<div
-                    class="arrow"></div></label>
-            <ul class="section-submenu-wrap">
-                <a href="{{ subsection.path }}">
-                    <li>Overview</li>
-                </a>
-                {% for h2 in subsection.toc %}
+                {% for doc_subsection_path in doc_section.subsections %}
+                {% set doc_subsection = get_section(path=doc_subsection_path) %}
                 <li>
-                    <a href="{{ h2.permalink }}">{{ h2.title }}</a>
-                    {% if h2.children %}
+                    <a href="{{ doc_subsection.path }}">{{ doc_subsection.title }}</a>
                     <ul>
-                        {% for h3 in h2.children %}
+                        {% for h3 in doc_subsection.toc %}
                         <a href="{{ h3.permalink }}">
                             <li>{{ h3.title }}</li>
                         </a>
                         {% endfor %}
                     </ul>
-                    {% endif %}
+                    {% endfor %}
                 </li>
-                {% endfor %}
             </ul>
+            {% if loop.last == false %}
+            <div class="spacer"></div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>

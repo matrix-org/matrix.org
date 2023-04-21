@@ -1,7 +1,7 @@
 +++
 title = "Community Moderation"
 template = "docs/with_menu.html"
-weight = 100
+weight = 200
 [extra]
 emoji = "🛡️"
 tile = "I want to deploy moderation tools"
