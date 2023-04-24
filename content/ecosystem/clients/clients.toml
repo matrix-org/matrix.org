@@ -476,7 +476,7 @@ voip_jitsi = false
 widgets = false
 sso = false
 multi_account = false
-multi_language = false
+multi_language = true
 ["Watch The Matrix".packages]
 other_url = "https://github.com/pixlwave/Watch-The-Matrix/tags"
 
