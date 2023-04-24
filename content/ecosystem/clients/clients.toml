@@ -23,7 +23,7 @@ google_play_store.app_id = "im.vector.app"
 f_droid.app_id = "im.vector.app"
 apple_app_store = { app_id = "id1083446067", org = "vector" }
 flathub.app_id = "im.riot.Riot"
-other_url = "https://app.element.io"
+webapp = "https://app.element.io"
 
 [FluffyChat]
 thumbnail = "fluffychat.svg"
@@ -52,7 +52,7 @@ google_play_store.app_id = "chat.fluffy.fluffychat"
 f_droid.app_id = "chat.fluffy.fluffychat"
 apple_app_store = { app_id = "id1551469600", org = "fluffychat" }
 flathub.app_id = "im.fluffychat.Fluffychat"
-other_url = "https://fluffychat.im"
+webapp = "https://fluffychat.im"
 
 [Nheko]
 thumbnail = "nheko.svg"
@@ -104,7 +104,7 @@ sso = true
 multi_account = false
 multi_language = true
 [Cinny.packages]
-other_url = "https://app.cinny.in/"
+webapp = "https://app.cinny.in/"
 
 [Fractal]
 thumbnail = "fractal.svg"
@@ -151,7 +151,7 @@ sso = true
 multi_account = false
 multi_language = true
 [gomuks.packages]
-other_url = "https://github.com/tulir/gomuks/releases"
+other_install_links = "https://github.com/tulir/gomuks/releases"
 windows_installer = "https://github.com/tulir/gomuks/releases"
 maxos_installer = "https://github.com/tulir/gomuks/releases"
 
@@ -175,7 +175,7 @@ sso = true
 multi_account = true
 multi_language = false
 [goktrix.packages]
-other_url = "https://github.com/diamondburned/gotktrix/releases"
+other_install_links = "https://github.com/diamondburned/gotktrix/releases"
 
 [Hydrogen]
 thumbnail = "hydrogen.svg"
@@ -198,7 +198,7 @@ sso = true
 multi_account = true
 multi_language = true
 [Hydrogen.packages]
-other_url = "https://hydrogen.element.io"
+webapp = "https://hydrogen.element.io"
 
 [iamb]
 summary = "A terminal-based Matrix client with Vim keybindings written in Rust."
@@ -222,7 +222,7 @@ sso = false
 multi_account = true
 multi_language = false
 [iamb.packages]
-other_url = "https://iamb.chat/install.html"
+other_install_links = "https://iamb.chat/install.html"
 
 [kazv]
 thumbnail = "kazv.png"
@@ -245,7 +245,7 @@ sso = false
 multi_account = false
 multi_language = false
 [kazv.packages]
-other_url = "https://lily-is.land/kazv/kazv#compiled-executables"
+other_install_links = "https://lily-is.land/kazv/kazv#compiled-executables"
 
 [matrix-commander]
 thumbnail = "matrix-commander.svg"
@@ -267,7 +267,7 @@ sso = false
 multi_account = false
 multi_language = false
 [matrix-commander.packages]
-other_url = "https://github.com/8go/matrix-commander#dependencies-and-installation"
+other_install_links = "https://github.com/8go/matrix-commander#dependencies-and-installation"
 
 [mnotify]
 summary = "A matrix cli client"
@@ -289,7 +289,7 @@ sso = false
 multi_account = false
 multi_language = false
 [mnotify.packages]
-other_url = "https://github.com/rumpelsepp/mnotify/#build"
+other_install_links = "https://github.com/rumpelsepp/mnotify/#build"
 
 [NeoChat]
 thumbnail = "neochat.svg"
@@ -345,7 +345,7 @@ google_play_store.app_id = "chat.quadrix.android"
 windows_installer = "https://apps.microsoft.com/store/detail/quadrixchat/9NPZ93X49V00"
 macos_installer = "https://apps.apple.com/us/app/quadrix-chat-desktop/id1577585119"
 flathub.app_id = "chat.quadrix.Quadrix"
-other_url = "https://quadrix.chat"
+webapp = "https://quadrix.chat"
 
 [Quaternion]
 thumbnail = "quaternion.svg"
@@ -398,7 +398,7 @@ macos_installer = "https://github.com/SchildiChat/schildichat-desktop/releases"
 google_play_store.app_id = "de.spiritcroc.riotx"
 f_droid.app_id = "de.spiritcroc.riotx"
 flathub.app_id = "chat.schildi.desktop"
-other_url = "https://app.schildi.chat/"
+webapp = "https://app.schildi.chat/"
 
 [Syphon]
 thumbnail = "syphon.svg"
@@ -474,4 +474,4 @@ sso = false
 multi_account = false
 multi_language = true
 ["Watch The Matrix".packages]
-other_url = "https://github.com/pixlwave/Watch-The-Matrix/tags"
+other_install_links = "https://github.com/pixlwave/Watch-The-Matrix/tags"

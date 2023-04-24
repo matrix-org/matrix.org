@@ -8,7 +8,7 @@ platform-android
 {% if client.packages.flathub.app_id %}
 platform-linux
 {% endif %}
-{% if client.packages.other_url %}
+{% if client.packages.webapp %}
 platform-web
 {% endif %}
 {% if client.packages.windows_installer %}
@@ -31,12 +31,12 @@ licence-{{ client.licence | slugify }}
 {% set_global matching = 0 %}
 {% for feature_name, supports in features %}
 {% if supports == supported %}
-    {% set_global matching = matching + 1 %}
-    {% if feature_name == "e2ee" or feature_name == "sso" %}
-    <p>{{ feature_name | upper }}</p>
-    {% else %}
-        <p>{{ feature_name | replace(from="_", to=" ") | title }}</p>
-    {% endif %}
+{% set_global matching = matching + 1 %}
+{% if feature_name == "e2ee" or feature_name == "sso" %}
+<p>{{ feature_name | upper }}</p>
+{% else %}
+<p>{{ feature_name | replace(from="_", to=" ") | title }}</p>
+{% endif %}
 {% endif %}
 {% endfor %}
 {% if matching == 0 %}None!{% endif %}
@@ -44,25 +44,31 @@ licence-{{ client.licence | slugify }}
 
 {% macro install_links(packages) %}
 {% if packages.windows_installer %}
-    <a href="{{ packages.windows_installer }}"><img src="/assets/stores/download_for_windows.svg" alt="Download for Windows" /></a>
+<a href="{{ packages.windows_installer }}"><img src="/assets/stores/download_for_windows.svg"
+        alt="Download for Windows" /></a>
 {% endif %}
 {% if packages.macos_installer %}
-    <a href="{{ packages.macos_installer }}"><img src="/assets/stores/download_for_macos.svg" alt="Download for macOS" /></a>
+<a href="{{ packages.macos_installer }}"><img src="/assets/stores/download_for_macos.svg"
+        alt="Download for macOS" /></a>
 {% endif %}
 {% if packages.flathub %}
-    <a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}"><img src="/assets/stores/flathub.svg" alt="Download on Flathub" /></a>
+<a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}"><img src="/assets/stores/flathub.svg"
+        alt="Download on Flathub" /></a>
 {% endif %}
-{% if packages.other_url %}
-    <a href="{{ packages.other_url }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
+{% if packages.webapp %}
+<a href="{{ packages.other_url }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
 {% endif %}
 {% if packages.apple_app_store %}
-    <a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"><img src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
+<a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"><img
+        src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
 {% endif %}
 {% if packages.f_droid %}
-    <a href="https://f-droid.org/packages/{{ packages.f_droid.app_id }}"><img src="/assets/stores/f-droid.svg" alt="Download on F-Droid" /></a>
+<a href="https://f-droid.org/packages/{{ packages.f_droid.app_id }}"><img src="/assets/stores/f-droid.svg"
+        alt="Download on F-Droid" /></a>
 {% endif %}
 {% if packages.google_play_store %}
-    <a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"><img src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
+<a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"><img
+        src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
 {% endif %}
 {% endmacro %}
 
@@ -72,5 +78,5 @@ licence-{{ client.licence | slugify }}
 {% if packages.windows_installer %}<div class="platform-pill">Windows</div>{% endif %}
 {% if packages.macos_installer %}<div class="platform-pill">macOS</div>{% endif %}
 {% if packages.flathub %}<div class="platform-pill">Linux</div>{% endif %}
-{% if packages.other_url %}<div class="platform-pill">Web</div>{% endif %}
+{% if packages.webapp %}<div class="platform-pill">Web</div>{% endif %}
 {% endmacro %}
