@@ -5,8 +5,11 @@
     {% for name, client in clients %}
     {% if client.featured %}
     <div>
-        <input id="client-{{ name | slugify }}-card-checkbox" type="checkbox" class="client-checkbox" aria-hidden="true">
-        <label for="client-{{name | slugify }}-card-checkbox" class="project-card client {{ clients::classes(client=client) }}">
+        <input id="client-{{ name | slugify }}-card-checkbox" type="checkbox" class="client-checkbox"
+            aria-hidden="true">
+        <label for="client-{{name | slugify }}-card-checkbox"
+            class="project-card client {{ clients::classes(client=client) }}">
+            {# We're not using placeholders as a fallback because we want showcased clients to have an actual icon #}
             <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
             <h3>{{ name }}</h3>
             <span>{{ client.summary | safe }}</span>

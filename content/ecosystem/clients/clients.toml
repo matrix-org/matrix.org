@@ -131,7 +131,6 @@ multi_language = true
 flathub.app_id = "org.gnome.Fractal"
 
 [gomuks]
-thumbnail = ""
 summary = "A terminal Matrix client written in Go."
 maintainer = "Tulir"
 licence = "AGPL-3.0"
@@ -157,7 +156,6 @@ windows_installer = "https://github.com/tulir/gomuks/releases"
 maxos_installer = "https://github.com/tulir/gomuks/releases"
 
 [goktrix]
-thumbnail = ""
 summary = "Matrix client in Go and GTK4."
 maintainer = "diamondburned"
 licence = "AGPL-3.0-or-later"
@@ -203,7 +201,6 @@ multi_language = true
 other_url = "https://hydrogen.element.io"
 
 [iamb]
-thumbnail = ""
 summary = "A terminal-based Matrix client with Vim keybindings written in Rust."
 maintainer = "ulyssa"
 licence = "Apache-2.0"
@@ -273,7 +270,6 @@ multi_language = false
 other_url = "https://github.com/8go/matrix-commander#dependencies-and-installation"
 
 [mnotify]
-thumbnail = ""
 summary = "A matrix cli client"
 maintainer = "Stefan Tatschner"
 licence = "MIT"
@@ -479,31 +475,3 @@ multi_account = false
 multi_language = true
 ["Watch The Matrix".packages]
 other_url = "https://github.com/pixlwave/Watch-The-Matrix/tags"
-
-[c]
-thumbnail = ""
-summary = ""
-maintainer = ""
-licence = ""
-language = ""
-last_release = ""
-maturity = ""
-source = ""
-website = ""
-matrix_room = ""
-featured = false
-[c.features]
-e2ee = false
-spaces = false
-voip_1to1 = false
-voip_jitsi = false
-widgets = false
-sso = false
-multi_account = false
-multi_language = false
-[c.packages]
-google_play_store.app_id = ""
-f_droid.app_id = ""
-apple_app_store = { app_id = "", org = "" }
-flathub.app_id = ""
-other_url = ""

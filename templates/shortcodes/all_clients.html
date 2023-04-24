@@ -136,12 +136,17 @@
 
 <div id="all-clients" class="projects-card-deck clients">
     {% for name, client in clients %}
+    {% if client.thumbnail %}
+    {% set thumbnail = "thumbnails/" ~ client.thumbnail %}
+    {% else %}
+    {% set thumbnail = "thumbnails/client-placeholder.svg" %}
+    {% endif %}
     <div>
         <input id="client-{{ name | slugify }}-card-checkbox" type="checkbox" class="client-checkbox"
             aria-hidden="true">
         <label for="client-{{ name | slugify }}-card-checkbox"
             class="project-card client {{ clientutils::classes(client=client) }}">
-            <img src="thumbnails/{{ client.thumbnail }}" alt="{{ name }} Preview">
+            <img src="{{ thumbnail }}" alt="{{ name }} Preview">
             <h3>{{ name }}</h3>
             <span>{{ client.summary | safe }}</span>
             <div class="platform-links">
