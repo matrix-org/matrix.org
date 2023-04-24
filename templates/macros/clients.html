@@ -56,7 +56,7 @@ licence-{{ client.licence | slugify }}
         alt="Download on Flathub" /></a>
 {% endif %}
 {% if packages.webapp %}
-<a href="{{ packages.other_url }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
+<a href="{{ packages.webapp }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
 {% endif %}
 {% if packages.apple_app_store %}
 <a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"><img
