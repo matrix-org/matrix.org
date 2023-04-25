@@ -10,19 +10,41 @@
         <img src="/assets/cross.svg" alt="Close popup" />
     </label>
     <img class="app-logo" src="{{ thumbnail }}" alt="{{ name }} Logo">
-    <h3>{{ name }}<div class="maturity {{ client.maturity | lower }}">{{ client.maturity }}</div>
-    </h3>
-    <p class="last-release">Last release: {{ client.last_release }}</p>
+    <div class="name-and-release-date">
+        <h3>{{ name }}<div class="maturity {{ client.maturity | lower }}">{{ client.maturity }}</div>
+        </h3>
+        <p class="last-release">Last release: {{ client.last_release }}</p>
+    </div>
     <p class="summary">{{ client.summary }}</p>
     <div class="features-container">
-        <p class="support-title">Supported Features</p>
+        <h4 class="support-title">Supported Features</h4>
         <div class="supported features-list">
             {{ clients::features(features=client.features, supported=true) }}
         </div>
-        <p class="support-title">Unsupported Features</p>
+        <h4 class="support-title">Unsupported Features</h4>
         <div class="unsupported features-list">
             {{ clients::features(features=client.features, supported=false) }}
         </div>
+    </div>
+    <div class="project-links">
+        {% if client.docs %}
+        <a href="{{ client.docs }}" class="pill">
+            {{ load_data(path="/assets/documentation.svg") | safe }}
+            Documentation
+        </a>
+        {% endif %}
+        {% if client.matrix_room %}
+        <a href="https://matrix.to/#/{{ client.matrix_room }}" class="pill">
+            {{ load_data(path="/assets/support.svg") | safe }}
+            Support room
+        </a>
+        {% endif %}
+        {% if client.repo %}
+        <a href="{{ client.repo }}" class="pill">
+            {{ load_data(path="/assets/repository.svg") | safe }}
+            Source Code
+        </a>
+        {% endif %}
     </div>
     <div class="stores">
         {{ clients::install_links(packages=client.packages) }}

@@ -231,3 +231,45 @@
         display: none;
     }
 }
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem;
+
+    margin-bottom: 1rem;
+
+    .pill {
+        display: flex;
+        align-items: center;
+        gap: .2rem;
+
+        border: 1px solid var(--color-text);
+        color: var(--color-text);
+        border-radius: 9999px;
+        padding: .1rem .4rem;
+
+        .fillme {
+            fill: var(--color-text);
+            stroke: var(--color-text);
+        }
+
+        .fillme-inverse {
+            stroke: #fff;
+        }
+
+        &:hover {
+            background-color: var(--color-text);
+            color: #fff;
+
+            .fillme {
+                fill: #fff;
+                stroke: #fff;
+            }
+
+            .fillme-inverse {
+                stroke: var(--color-text);
+            }
+        }
+    }
+}
