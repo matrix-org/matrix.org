@@ -136,7 +136,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     justify-content: center;
     gap: .3rem 1rem;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-block: 2rem;
 
     a img {
         height: 54px;
