@@ -53,8 +53,9 @@
         line-height: 1;
     }
 
-    a {
-        margin-top: auto;
+    a,
+    .open-project {
+        margin-block: auto 0;
         color: #777;
         text-decoration: none;
     }

@@ -27,6 +27,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 }
 
 .project-card.client {
+    color: var(--color-text);
     cursor: pointer;
 }
 
@@ -53,54 +54,10 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 
 .client-details {
     display: flex;
-    position: fixed;
-
-    top: var(--navbar-height);
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    padding: 1rem;
-
+    flex-direction: column;
     gap: 1rem;
 
-    @media (min-width: 767px) {
-        top: 50%;
-        left: 50%;
-        right: unset;
-        bottom: unset;
-        transform: translate(-50%, -43%);
-        max-width: calc(var(--page-max-width)*.65);
-        max-height: calc(100svh - var(--navbar-height) - 2rem);
-
-        border: 1px solid var(--borders-color);
-        border-radius: 16px;
-
-        padding: 1.5rem;
-    }
-
-    z-index: 300;
-    flex-direction: column;
-    overflow-y: scroll;
-
-    background-color: #fff;
-
-    .close-button {
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-
-        @media (min-width: 767px) {
-            right: 1rem;
-            left: unset;
-        }
-
-        cursor: pointer;
-
-        img {
-            height: 1rem;
-        }
-    }
+    max-width: 550px;
 
     .app-logo {
         width: 8rem;
