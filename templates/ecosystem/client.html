@@ -1,0 +1,55 @@
+{% extends "page.html" %}
+{% import "macros/clients.html" as clients %}
+{% block content %}
+{% if page.extra.thumbnail %}
+{% set thumbnail = page.extra.thumbnail %}
+{% else %}
+{% set thumbnail = "client-placeholder.svg" %}
+{% endif %}
+<article class="content">
+    <div class="client-details">
+        <div class="details">
+            <img class="app-logo" src="../{{ thumbnail }}" alt="{{ page.title }} Logo">
+            <div class="name-and-release-date">
+                <h3>{{ page.title }}<div class="maturity {{ page.extra.maturity | lower }}">{{ page.extra.maturity }}
+                    </div>
+                </h3>
+                <p class="last-release">Last release: {{ page.extra.last_release }}</p>
+            </div>
+            <p class="summary">{{ page.content | markdown | safe }}</p>
+            <div class="project-links">
+                {% if page.extra.docs %}
+                <a href="{{ page.extra.docs }}" class="pill">
+                    {{ load_data(path="/assets/documentation.svg") | safe }}
+                    Documentation
+                </a>
+                {% endif %}
+                {% if page.extra.matrix_room %}
+                <a href="https://matrix.to/#/{{ page.extra.matrix_room }}" class="pill">
+                    {{ load_data(path="/assets/support.svg") | safe }}
+                    Support room
+                </a>
+                {% endif %}
+                {% if page.extra.repo %}
+                <a href="{{ page.extra.repo }}" class="pill">
+                    {{ load_data(path="/assets/repository.svg") | safe }}
+                    Source Code
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="features-matrix">
+            <ul>
+                {% for feature, supported in page.extra.features %}
+                <li {% if supported %}class="supported" {% endif %}>
+                    {{ feature | replace(from="_", to=" ") | title }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="stores">
+        {{ clients::install_links(packages=page.extra.packages) }}
+    </div>
+</article>
+{% endblock content %}

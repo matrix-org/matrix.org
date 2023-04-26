@@ -1,11 +1,12 @@
 {% import "macros/clients.html" as clientutils %}
 {% import "macros/client_details.html" as client_details %}
-{% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
+{% set clients = section.pages %}
 {% set licences = [] %}
-{% for name, client in clients %}
+{% for client in clients %}
 {% set_global licences = licences | concat(with=client.licence) %}
 {% endfor %}
 {% set licences = licences | unique | sort %}
+
 
 <div class="filters">
     <div class="filter-wrap">
@@ -135,11 +136,12 @@
 <div id="filters-overlay"></div>
 
 <div id="all-clients" class="projects-card-deck clients">
-    {% for name, client in clients %}
+    {{ section.pages }}
+    {% for client in clients %}
     {% if client.thumbnail %}
-    {% set thumbnail = "thumbnails/" ~ client.thumbnail %}
+    {% set thumbnail = page.extra.thumbnail %}
     {% else %}
-    {% set thumbnail = "thumbnails/client-placeholder.svg" %}
+    {% set thumbnail = "client-placeholder.svg" %}
     {% endif %}
     <div>
         <input id="client-{{ name | slugify }}-card-checkbox" type="checkbox" class="client-checkbox"

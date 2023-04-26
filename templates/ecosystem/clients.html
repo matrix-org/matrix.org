@@ -1,5 +1,6 @@
-{% extends "page.html" %}
+{% extends "section.html" %}
 {% import "macros/clients.html" as clients %}
+{% import "macros/client_details.html" as client_details %}
 {% block head_extra %}
 <noscript>
     <link rel="stylesheet" href="/no-js.css" />
@@ -7,17 +8,204 @@
 <script type="module" src="/js/clients.js"></script>
 {% endblock head_extra%}
 {% block content %}
-{% set clients = load_data(path="content/ecosystem/clients/clients.toml") %}
+{% set clients = section.pages %}
+{% set licences = [] %}
+{% for client in clients %}
+{% set_global licences = licences | concat(with=client.extra.licence) %}
+{% endfor %}
+{% set licences = licences | unique | sort %}
 <div class="page-header">
     <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.extra.summary }}</p>
     </div>
 </div>
 
 <div class="content clients_page">
 
-    {{ page.content | safe }}
+    {# We have to put some content in the template because of a Zola bug in shortcodes #}
+    <h2>Featured clients</h2>
 
-</div>
-{% endblock content %}
+    <p>
+        Clients are needed to chat using Matrix. Here is a selection of the most
+        mature ones you can safely use.
+    </p>
+
+    <div class="projects-card-deck">
+        {% for client in clients %}
+        {% if client.extra.featured %}
+        <div>
+            <a href="{{ client.path }}" class="project-card client {{ clients::classes(client=client.extra) }}">
+                {# We're not using placeholders as a fallback because we want showcased clients to have an actual icon
+                #}
+                <img src="{{ client.extra.thumbnail }}" alt="{{ client.title }} Preview">
+                <h3>{{ client.title }}</h3>
+                <span>{{ client.content | safe }}</span>
+                <div class="platform-links">
+                    {{ clients::platforms(packages=client.extra.packages) }}
+                </div>
+                <p class="open-project">Open client details</p>
+            </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    {# We have to put some content in the template because of a Zola bug in shortcodes #}
+    <h2>All known clients</h2>
+
+    <p>
+        Here we list all the clients the Foundation is aware of, with a maturity
+        score and a list of important features they support or not to help you
+        pick the best for you.
+    </p>
+
+    <div class="filters">
+        <div class="filter-wrap">
+            <div id="filter-platform" class="filter">
+                Platform
+                <div class="divider"></div>
+                <img src="/assets/down-arrow.svg">
+            </div>
+            <div id="filter-platform-menu" class="filter-menu">
+                <p>The clients must support all of the platforms checked.</p>
+                <div class="filter-option">
+                    <input id="platform-ios" type="checkbox">
+                    <label for="platform-ios">Apple iOS</label>
+                </div>
+                <div class="filter-option">
+                    <input id="platform-android" type="checkbox">
+                    <label for="platform-android">Google Android</label>
+                </div>
+                <div class="filter-option">
+                    <input id="platform-web" type="checkbox">
+                    <label for="platform-web">Web</label>
+                </div>
+                <div class="filter-option">
+                    <input id="platform-windows" type="checkbox">
+                    <label for="platform-windows">Windows</label>
+                </div>
+                <div class="filter-option">
+                    <input id="platform-macos" type="checkbox">
+                    <label for="platform-macos">macOS</label>
+                </div>
+                <div class="filter-option">
+                    <input id="platform-linux" type="checkbox">
+                    <label for="platform-linux">Linux (Flatpak)</label>
+                </div>
+                <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+            </div>
+        </div>
+        <div class="filter-wrap">
+            <div id="filter-maturity" class="filter">
+                Maturity
+                <div class="divider"></div>
+                <img src="/assets/down-arrow.svg">
+            </div>
+            <div id="filter-maturity-menu" class="filter-menu">
+                <p>The client can support any of the maturity levels checked.</p>
+                <div class="filter-option">
+                    <input id="maturity-stable" type="checkbox" checked>
+                    <label for="maturity-stable">Stable</label>
+                </div>
+                <div class="filter-option">
+                    <input id="maturity-beta" type="checkbox" checked>
+                    <label for="maturity-beta">Beta</label>
+                </div>
+                <div class="filter-option">
+                    <input id="maturity-alpha" type="checkbox" checked>
+                    <label for="maturity-alpha">Alpha</label>
+                </div>
+                <div class="filter-option">
+                    <input id="maturity-obsolete" type="checkbox" checked>
+                    <label for="maturity-obsolete">Obsolete</label>
+                </div>
+                <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+            </div>
+        </div>
+        <div class="filter-wrap">
+            <div id="filter-licence" class="filter">
+                Licence
+                <div class="divider"></div>
+                <img src="/assets/down-arrow.svg">
+            </div>
+            <div id="filter-licence-menu" class="filter-menu">
+                <p>The client can support any of the licences checked.</p>
+                {% for licence in licences %}
+                <div class="filter-option">
+                    <input id="licence-{{ licence | slugify }}" type="checkbox" checked>
+                    <label for="licence-{{ licence | slugify }}">{{ licence }}</label>
+                </div>
+                {% endfor %}
+                <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+            </div>
+        </div>
+        <div class="filter-wrap">
+            <div id="filter-features" class="filter">
+                Features
+                <div class="divider"></div>
+                <img src="/assets/down-arrow.svg">
+            </div>
+            <div id="filter-features-menu" class="filter-menu">
+                <p>The client must support all of the features checked.</p>
+                <div class="filter-option">
+                    <input id="feature-e2ee" type="checkbox">
+                    <label for="feature-e2ee">E2EE</label>
+                </div>
+                <div class="filter-option">
+                    <input id="feature-spaces" type="checkbox">
+                    <label for="feature-spaces">Spaces</label>
+                </div>
+                <div class="filter-option">
+                    <input id="feature-voip-1to1" type="checkbox">
+                    <label for="feature-voip-1to1">Native 1:1 calls</label>
+                </div>
+                <div class="filter-option">
+                    <input id="feature-widgets" type="checkbox">
+                    <label for="feature-widgets">Widgets</label>
+                </div>
+                <div class="filter-option">
+                    <input id="feature-threads" type="checkbox">
+                    <label for="feature-threads">Threads</label>
+                </div>
+                <div class="filter-option">
+                    <input id="feature-sso" type="checkbox">
+                    <label for="feature-sso">SSO (Enterprise login)</label>
+                </div>
+                <div class="filter-option">
+                    <input id="feature-multi-account" type="checkbox">
+                    <label for="feature-multi-account">Multi-account</label>
+                </div>
+                <div class="filter-option">
+                    <input id="feature-multi-language" type="checkbox">
+                    <label for="feature-multi-language">Multi-language</label>
+                </div>
+                <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="filters-overlay"></div>
+
+    <div id="all-clients" class="projects-card-deck clients">
+        {% for client in clients %}
+        {% if client.extra.thumbnail %}
+        {% set thumbnail = client.extra.thumbnail %}
+        {% else %}
+        {% set thumbnail = "client-placeholder.svg" %}
+        {% endif %}
+        <div>
+            <a href="{{ client.path }}" class="project-card client {{ clients::classes(client=client.extra) }}">
+                <img src="./{{ thumbnail }}" alt="{{ client.title }} Preview">
+                <h3>{{ client.title }}</h3>
+                <span>{{ client.content | safe }}</span>
+                <div class="platform-links">
+                    {{ clients::platforms(packages=client.extra.packages) }}
+                </div>
+                <p class="open-project">Open client details</p>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+    {% endblock content %}
