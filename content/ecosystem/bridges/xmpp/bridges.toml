@@ -7,6 +7,7 @@ General purpose puppeting bridges using libpurple and other backends.
 maturity = "Beta"
 language = "TypeScript"
 license = "Apache-2.0"
+room = "#bifrost:half-shot.uk"
 repo = "https://github.com/matrix-org/matrix-bifrost"
 featured = false
 privilege.platform = "Admin" # Free text
