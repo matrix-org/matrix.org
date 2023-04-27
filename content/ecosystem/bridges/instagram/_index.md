@@ -1,4 +1,5 @@
 +++
 title = "Instagram"
-weight = 999
+weight = 1000
+template = "ecosystem/bridge_implementations.html"
 +++

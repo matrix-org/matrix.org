@@ -1,4 +1,5 @@
 +++
 title = "Tencent QQ"
-weight = 999
+weight = 2200
+template = "ecosystem/bridge_implementations.html"
 +++

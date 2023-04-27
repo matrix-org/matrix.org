@@ -1,5 +1,5 @@
 +++
 title = "IRC"
-weight = 999
+weight = 1600
 template = "ecosystem/bridge_implementations.html"
 +++

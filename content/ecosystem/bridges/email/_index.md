@@ -1,4 +1,5 @@
 +++
 title = "Email"
-weight = 999
+weight = 1500
+template = "ecosystem/bridge_implementations.html"
 +++

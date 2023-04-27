@@ -1,0 +1,20 @@
+[[bridges]]
+name = "matrix-qq"
+maintainer = "Duo"
+summary = """
+A Matrix-QQ puppeting bridge based on [MiraiGo](https://github.com/Mrs4s/MiraiGo)
+and [mautrix-go](https://github.com/mautrix/go).
+"""
+maturity = "Alpha"
+language = "Go"
+license = "AGPL-3.0-or-later"
+repo = "https://github.com/duo/matrix-qq"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+group_chat = true
+message_media = true
+replies = true
+mentions = true

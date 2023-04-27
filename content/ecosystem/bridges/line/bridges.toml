@@ -1,0 +1,24 @@
+[[bridges]]
+name = "matrix-puppeteer-line"
+maintainer = "Andrew Ferrazzutti"
+summary = """
+A Matrix-LINE puppeting bridge based on running LINE's Chrome extension in
+[Puppeteer](https://github.com/puppeteer/puppeteer).
+
+Fork of [mautrix-amp](https://mau.dev/tulir/mautrix-amp/).
+"""
+maturity = "Beta"
+language = "Python, Node"
+license = "AGPL-3.0-or-later"
+repo = "https://src.miscworks.net/fair/matrix-puppeteer-line.git"
+room = "#matrix-puppeteer-line:miscworks.net"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+group_chats = true
+formatted_text = false
+message_media = false
+read_receipts = true
+history = true
