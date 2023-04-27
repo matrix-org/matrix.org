@@ -12,20 +12,53 @@ article.post {
     }
 
     table {
+        table-layout: fixed;
+        border-spacing: 0;
 
-        tbody,
-        thead {
-            width: 100%;
+        th {
+            border-top: 1px solid var(--borders-color);
         }
 
-        th,
-        td {
-            text-align: left !important;
+        td,
+        th {
+            padding: .5rem;
+            border-bottom: 1px solid var(--borders-color);
+        }
+
+        td:first-of-type,
+        th:first-of-type {
+            border-left: 1px solid var(--borders-color);
+        }
+
+        td:last-of-type,
+        th:last-of-type {
+            border-right: 1px solid var(--borders-color);
+        }
+
+        th:first-of-type {
+            border-top-left-radius: 16px;
+        }
+
+        th:last-of-type {
+            border-top-right-radius: 16px;
+        }
+
+        tbody tr:last-of-type {
+            td:first-of-type {
+                border-bottom-left-radius: 16px;
+            }
+
+            td:last-of-type {
+                border-bottom-right-radius: 16px;
+            }
+        }
+
+        tr:nth-child(odd) td {
+            background-color: #eee;
         }
     }
 
     iframe {
-        aspect-ratio: 16/9;
         width: 100%;
     }
 
