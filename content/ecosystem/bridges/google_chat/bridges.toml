@@ -1,0 +1,25 @@
+[[bridges]]
+name = "mautrix-googlechat"
+maintainer = "Tulir"
+summary = "A Matrix-Google Chat puppeting bridge"
+maturity = "Beta"
+language = "Python"
+license = "AGPL-3.0-or-later"
+docs = "https://docs.mau.fi/bridges/python/googlechat/index.html"
+repo = "https://github.com/mautrix/googlechat"
+room = "#googlechat:maunium.net"
+featured = true
+privilege.platform = "Admin" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+channels = true
+formatted_text = true
+message_media = true
+threads = true
+redactions = true
+editing = true
+reactions = true
+presence = false
+typing_notifications = true
+read_receipts = true
