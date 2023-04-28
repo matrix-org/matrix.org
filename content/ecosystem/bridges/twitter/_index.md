@@ -1,4 +1,5 @@
 +++
 title = "Twitter"
-weight = 999
+weight = 1200
+template = "ecosystem/bridge_implementations.html"
 +++

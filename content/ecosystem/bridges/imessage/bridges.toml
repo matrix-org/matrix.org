@@ -1,0 +1,26 @@
+[[bridges]]
+name = "mautrix-imessage"
+maintainer = "Tulir"
+summary = """
+A Matrix-iMessage puppeting bridge.
+"""
+maturity = "Beta"
+language = "Go"
+license = "AGPL-3.0-or-later"
+docs = "https://docs.mau.fi/bridges/go/imessage/index.html"
+repo = "https://github.com/mautrix/imessage"
+room = "#imessage:maunium.net"
+featured = true
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+message_media = true
+replies = true
+mentions = false
+threads = false
+redactions = false
+editing = false
+reactions = true
+typing_notifications = true
+read_receipts = true

@@ -1,4 +1,5 @@
 +++
 title = "Mattermost"
-weight = 999
+weight = 800
+template = "ecosystem/bridge_implementations.html"
 +++

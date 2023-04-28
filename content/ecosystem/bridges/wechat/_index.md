@@ -1,4 +1,5 @@
 +++
 title = "WeChat"
-weight = 999
+weight = 2100
+template = "ecosystem/bridge_implementations.html"
 +++

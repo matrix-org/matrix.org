@@ -1,0 +1,23 @@
+[[bridges]]
+name = "MandM-bridge"
+maintainer = "karlpip"
+summary = """
+Bridges between one matrix room and a murmur channels.
+
+ICE is used to communicate with the Murmur server, matrix-nio is used for Matrix.
+"""
+maturity = "Alpha"
+language = "Python"
+license = "MIT"
+docs = "https://github.com/karlpip/MandM-bridge#setup"
+repo = "https://github.com/karlpip/MandM-bridge"
+room = "#imessage:maunium.net"
+featured = false
+privilege.platform = "Admin" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+channels = true
+formated_text = true
+message_media = true
+presence = true

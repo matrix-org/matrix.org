@@ -1,0 +1,45 @@
+[[bridges]]
+name = "android-sms"
+maintainer = "Beeper"
+summary = """
+An Android app that wraps [mautrix-imessage](https://github.com/tulir/mautrix-imessage)
+to bridge SMS from your Android phone to Matrix.
+"""
+maturity = "Alpha"
+language = "Kotlin"
+license = "Apache-2.0"
+repo = "https://gitlab.com/beeper/android-sms"
+room = "#imessage:maunium.net"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+sms = true
+mms = true
+rcs = false
+group_chats = true
+history_from_android = true
+
+[[bridges]]
+name = "matrix-sms-bridge"
+maintainer = "benkuly"
+summary = """
+A Matrix puppeting bridge, which allows you to bridge matrix rooms to SMS with
+one outgoing telephone number only. It is build on top of
+[matrix-spring-boot-sdk](https://github.com/benkuly/matrix-spring-boot-sdk) and
+written in Kotlin.
+"""
+maturity = "Beta"
+language = "Kotlin"
+license = "AGPL-3.0-or-later"
+repo = "https://github.com/benkuly/matrix-sms-bridge"
+room = "#matrix-sms-bridge:imbitbu.de"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+sms = true
+mms = false
+rcs = false
+group_chats = true
+history_from_android = false

@@ -1,0 +1,25 @@
+[[bridges]]
+name = "matrix-appservice-kakaotalk"
+maintainer = "Andrew Ferrazzutti"
+summary = """
+A Matrix-KakaoTalk puppeting bridge based on
+[mautrix-python](https://github.com/mautrix/python) that uses
+[node-kakao](https://github.com/storycraft/node-kakao) as its backend.
+"""
+maturity = "Beta"
+language = "Python, Node"
+license = "AGPL-3.0-or-later"
+repo = "https://src.miscworks.net/fair/matrix-appservice-kakaotalk.git"
+room = "#matrix-appservice-kakaotalk:miscworks.net"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+formatted_text = true
+message_media = true
+replies = true
+mentions = true
+redactions = true
+reactions = false
+read_receipts = true

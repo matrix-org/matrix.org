@@ -1,4 +1,5 @@
 +++
 title = "LINE"
-weight = 999
+weight = 2000
+template = "ecosystem/bridge_implementations.html"
 +++

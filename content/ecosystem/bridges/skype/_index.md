@@ -1,4 +1,5 @@
 +++
 title = "Skype"
-weight = 999
+weight = 1300
+template = "ecosystem/bridge_implementations.html"
 +++

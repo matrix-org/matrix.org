@@ -1,4 +1,5 @@
 +++
 title = "Google Chat"
-weight = 999
+weight = 900
+template = "ecosystem/bridge_implementations.html"
 +++

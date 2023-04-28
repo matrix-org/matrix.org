@@ -29,3 +29,99 @@ editing = true
 reactions = true
 presence = true
 typing_notifications = false
+
+[[bridges]]
+name = "mautrix-slack"
+maintainer = "Beeper, Tulir"
+summary = """
+A Matrix-Slack puppeting bridge. Written in Go using a fork of
+[slack-go](https://github.com/slack-go/slack)
+"""
+maturity = "Beta"
+language = "Go"
+license = "AGPL-3.0-or-later"
+docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=slack"
+repo = "https://github.com/mautrix/slack"
+room = "#slack:maunium.net"
+featured = true
+privilege.platform = "Admin" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+channels = true
+formatted_text = true
+message_media = true
+mentions = true
+threads = true
+redactions = true
+editing = true
+reactions = true
+presence = true
+typing_notifications = true
+
+[[bridges]]
+name = "matrix-puppet-slack"
+maintainer = "Keyvan Fatehi"
+summary = """
+This is an unofficial matrix slack bridge that works by means of
+[user puppetting](https://github.com/AndrewJDR/matrix-puppet-bridge).
+
+[matrix-puppet-slack](https://github.com/matrix-hacks/matrix-puppet-slack) is
+part of the [matrix-puppet-bridge](https://github.com/matrix-hacks/matrix-puppet-bridge)
+suite of puppetting bridges. It can be used for existing chats, rather than
+initiating new ones.
+"""
+maturity = "Beta"
+language = "Javascript"
+license = "Licence unknown"
+repo = "https://github.com/matrix-hacks/matrix-puppet-slack"
+room = "#matrix-puppet-bridge:matrix.org"
+featured = false
+privilege.platform = "Admin" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+channels = true
+formatted_text = true
+message_media = true
+mentions = true
+threads = false
+redactions = false
+editing = true
+reactions = false
+presence = false
+typing_notifications = false
+
+[[bridges]]
+name = "mx-pupper-slack"
+maintainer = "Sorunome"
+summary = """
+
+[mx-puppet-slack](https://github.com/Sorunome/mx-puppet-slack) bridges slack and
+matrix together via (double)puppeting. Additionally a relay mode can be enabled.
+
+
+This bridge is part of the [mx-puppet-bridge](https://github.com/Sorunome/mx-puppet-bridge)
+suite of puppeting bridges.
+"""
+maturity = "Alpha"
+language = "TypeScript"
+license = "Apache-2.0"
+docs = "https://gitlab.com/mx-puppet/slack/mx-puppet-slack#quick-start-using-docker"
+repo = "https://gitlab.com/mx-puppet/slack/mx-puppet-slack"
+room = "#mx-puppet-bridge:sorunome.de"
+featured = false
+privilege.platform = "Admin" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+channels = true
+formatted_text = true
+message_media = true
+mentions = true
+threads = false
+redactions = true
+editing = true
+reactions = true
+presence = false
+typing_notifications = false

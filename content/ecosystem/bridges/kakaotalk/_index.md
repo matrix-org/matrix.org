@@ -1,4 +1,5 @@
 +++
 title = "KakaoTalk"
-weight = 999
+weight = 1800
+template = "ecosystem/bridge_implementations.html"
 +++

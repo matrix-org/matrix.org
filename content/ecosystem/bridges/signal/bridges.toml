@@ -1,0 +1,27 @@
+[[bridges]]
+name = "mautrix-signal"
+maintainer = "Tulir"
+summary = """
+A Matrix-Signal puppeting bridge. Written in Python using [mautrix-python](https://matrix.org/docs/projects/sdk/mautrix-python.html).
+Communicates with Signal using [signald](https://gitlab.com/signald/signald).
+"""
+maturity = "Beta"
+language = "Python"
+license = "AGPL-3.0-or-later"
+docs = "https://docs.mau.fi/bridges/python/setup.html?bridge=telegram"
+repo = "https://github.com/mautrix/signal"
+room = "#signal:maunium.net"
+featured = true
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+channels = true
+message_media = true
+mentions = true
+redactions = true
+editing = true
+reactions = true
+presence = true
+typing_notifications = true
+read_receipts = false

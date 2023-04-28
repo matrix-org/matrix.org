@@ -1,0 +1,24 @@
+[[bridges]]
+name = " matrix-puppet-groupme"
+maintainer = "kfatehi"
+summary = """
+This is a Matrix bridge for GroupMe
+"""
+maturity = "Beta"
+language = "Javascript"
+license = "Unlicensed"
+repo = "https://src.miscworks.net/fair/matrix-appservice-kakaotalk.git"
+room = "#matrix-puppet-bridge:matrix.org"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+channels = true
+formatted_text = false
+message_media = false
+replies = false
+mentions = false
+reactions = false
+read_receipts = false
+typing_notifications = false

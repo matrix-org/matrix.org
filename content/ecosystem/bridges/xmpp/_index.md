@@ -1,5 +1,5 @@
 +++
-title = "IRC"
-weight = 1600
+title = "XMPP"
+weight = 2400
 template = "ecosystem/bridge_implementations.html"
 +++

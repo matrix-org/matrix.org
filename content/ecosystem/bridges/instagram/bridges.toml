@@ -1,0 +1,25 @@
+[[bridges]]
+name = "mautrix-instagram"
+maintainer = "Tulir"
+summary = """
+A Matrix-Instagram DM puppeting bridge. Written in Python using
+[mauigpapi](https://github.com/mautrix/instagram/tree/master/mauigpapi) and
+[mautrix-python](https://matrix.org/docs/projects/sdk/mautrix-python.html).
+"""
+maturity = "Beta"
+language = "Python"
+license = "AGPL-3.0-or-later"
+docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=instagram"
+repo = "https://github.com/mautrix/instagram"
+room = "#instagram:maunium.net"
+featured = true
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+message_media = true
+redactions = true
+reactions = true
+presence = false
+typing_notifications = true
+read_receipts = true

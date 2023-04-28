@@ -1,0 +1,26 @@
+[[bridges]]
+name = "mautrix-linkedin"
+maintainer = "sumner"
+summary = """
+A LinkedIn Messaging <-> Matrix puppeting bridge. Written in Python using
+[linkedin-messaging-api](https://github.com/sumnerevans/linkedin-messaging-api)
+and [mautrix-python](https://matrix.org/docs/projects/sdk/mautrix-python.html).
+"""
+maturity = "Beta"
+language = "Python"
+license = "Apache-2.0"
+docs = "https://github.com/beeper/linkedin#documentation"
+repo = "https://github.com/beeper/linkedin"
+room = "#linkedin-matrix:nevarro.space"
+featured = true
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+message_media = true
+redactions = true
+reactions = true
+presence = false
+mentions = true
+typing_notifications = true
+read_receipts = true

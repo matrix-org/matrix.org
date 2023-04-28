@@ -1,4 +1,5 @@
 +++
 title = "GroupMe"
-weight = 999
+weight = 1900
+template = "ecosystem/bridge_implementations.html"
 +++

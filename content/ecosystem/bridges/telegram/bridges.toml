@@ -1,0 +1,24 @@
+[[bridges]]
+name = "mautrix-telegram"
+maintainer = "Tulir"
+summary = """
+A Matrix-Telegram hybrid puppeting/relaybot bridge.
+"""
+maturity = "Beta"
+language = "Python"
+license = "AGPL-3.0-or-later"
+docs = "https://docs.mau.fi/bridges/python/setup.html?bridge=telegram"
+repo = "https://github.com/mautrix/telegram"
+room = "#signal:maunium.net"
+featured = true
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+groups = true
+message_media = true
+mentions = true
+threads = false
+redactions = true
+reactions = true
+read_receipts = false

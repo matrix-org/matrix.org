@@ -1,0 +1,24 @@
+[[bridges]]
+name = "mautrix-linkedin"
+maintainer = "sumner"
+summary = """
+A library for bridging matrix and skype，api lib using
+[go-skypeapi](https://github.com/kelaresg/go-skypeapi).
+"""
+maturity = "Beta"
+language = "Go"
+license = "AGPL-3.0-or-later"
+repo = "https://github.com/kelaresg/go-skype-bridge"
+room = "#goskypebridge:matrix.org"
+featured = true
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+message_media = true
+presence = false
+mentions = true
+quotes = true
+redactions = true
+typing_notifications = true
+read_receipts = true

@@ -1,0 +1,25 @@
+[[bridges]]
+name = "matrix-appservice-mattermost"
+maintainer = "Dexter Chua"
+summary = "This project bridges [Mattermost](https://mattermost.com) to Matrix."
+maturity = "Beta"
+language = "TypeScript"
+license = "MIT"
+docs = "https://github.com/dalcde/matrix-appservice-mattermost#set-up"
+repo = "https://github.com/dalcde/matrix-appservice-mattermost"
+featured = false
+privilege.platform = "Admin" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = false
+channels = true
+formatted_text = true
+message_media = true
+replies = true
+mentions = true
+threads = false
+redactions = true
+editing = true
+reactions = false
+presence = false
+typing_notifications = false

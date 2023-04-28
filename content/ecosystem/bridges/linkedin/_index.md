@@ -1,4 +1,5 @@
 +++
 title = "LinkedIn"
-weight = 999
+weight = 1100
+template = "ecosystem/bridge_implementations.html"
 +++

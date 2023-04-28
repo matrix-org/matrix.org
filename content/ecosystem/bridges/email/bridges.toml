@@ -1,0 +1,21 @@
+[[bridges]]
+name = "Postmoogle"
+maintainer = "etke.cc"
+summary = """
+An Android app that wraps [mautrix-imessage](https://github.com/tulir/mautrix-imessage)
+to bridge SMS from your Android phone to Matrix.
+"""
+maturity = "Stable"
+language = "Go"
+license = "GPL-3.0"
+docs = "https://etke.cc/help/bridges/postmoogle"
+repo = "https://gitlab.com/etke.cc/postmoogle"
+room = "#postmoogle:etke.cc"
+featured = false
+privilege.platform = "Admin" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+sending_mail = true
+receiving_mail = true
+attachments = true
+multi_domain = true
