@@ -36,8 +36,8 @@ docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=discord"
 repo = "https://github.com/mautrix/discord"
 room = "#discord:maunium.net"
 featured = true
-privilege.platform = "None"
-privilege.matrix = "None"
+privilege.platform = "User"
+privilege.matrix = "Homeserver Admin"
 [bridges.supports]
 dm = true
 channels = true

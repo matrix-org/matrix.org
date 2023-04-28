@@ -9,7 +9,7 @@ docs = "https://docs.mau.fi/bridges/python/googlechat/index.html"
 repo = "https://github.com/mautrix/googlechat"
 room = "#googlechat:maunium.net"
 featured = true
-privilege.platform = "Admin" # Free text
+privilege.platform = "User" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
 [bridges.supports]
 dm = true
