@@ -10,4 +10,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
             panel.classList.remove("hidden");
         });
     }
+
+    let allPanels = document.getElementsByClassName("panel");
+    for (const panel of allPanels) {
+        panel.classList.add("hidden");
+    }
+    allPanels[0].classList.remove("hidden");
 });
