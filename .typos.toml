@@ -5,6 +5,8 @@ extend-exclude = [
     # contains non-English
     "content/blog/2021/07/2021-07-02-this-week-in-matrix-2021-07-02.md",
     "content/blog/2021/09/2021-09-17-this-week-in-matrix-2021-09-17.md",
+    # Tries to parse svg and image files
+    "static/blog/img/"
 ]
 
 [default]
