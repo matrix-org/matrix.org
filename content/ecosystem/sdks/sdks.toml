@@ -206,13 +206,16 @@ featured_in = []
 
 [[sdks]]
 name = "Matrix Dart SDK"
-maintainer = "Wilko Manger"
-maturity = "Obsolete"
+maintainer = "Famedly GmBH"
+maturity = "Stable"
 language = "Dart"
-licence = "MPL-2.0"
-repository = "https://git.pattle.im/pattle/library/matrix-dart-sdk"
-purpose = []
+licence = "AGPL-3.0"
+repository = "https://gitlab.com/famedly/company/frontend/famedlysdk"
+purpose = ["client"]
 featured_in = []
+description = """
+Matrix SDK written in dart.
+"""
 
 [[sdks]]
 name = "Matrix Java SDK"
