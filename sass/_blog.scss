@@ -1,5 +1,6 @@
 article.post {
     width: 100%;
+    word-break: break-word;
 
     &:not(:last-of-type) {
         padding-bottom: 1rem;
