@@ -114,6 +114,8 @@ article.post {
 .post-content {
     // Use all of the space not taken by the sidebar
     flex: 3;
+    // Necessary to allow the pre to scroll on overflow
+    min-width: 0;
 
     blockquote {
         h2 {
