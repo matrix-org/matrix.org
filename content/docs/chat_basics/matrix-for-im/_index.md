@@ -32,7 +32,10 @@ app, head to the [clients](/ecosystem/clients) section of this website.
 ## Creating a Matrix account
 
 You can use any provider you want. The experts can even set-up their own
-provider, but it's not a requirement at all.
+provider, but it's not a requirement at all. It is worth noting that when you
+create an account on a provider, you can use third-party tooling to migrate the
+chat rooms ownership to your new account, but this can be cumbersome in
+particular for DMs.
 
 The Matrix.org Foundation is a public provider everybody can register an account
 on for free. For your first steps, the simplest is to register an account there.
