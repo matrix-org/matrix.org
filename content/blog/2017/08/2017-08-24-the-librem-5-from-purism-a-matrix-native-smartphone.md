@@ -25,7 +25,7 @@ So, if you're interested in being first to own the world's first ever Matrix-nat
 
 Finally, for more context, here's a special mid-week episode of Matrix "Live", featuring Matthew and Todd Weaver, the CEO of Purism, discussing the Librem 5 and what it means for both Purism and Matrix!
 
-<iframe src="https://www.youtube.com/embed/hwFjWDAyG38" width="1280" height="720" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
+<iframe src="https://www.youtube.com/embed/hwFjWDAyG38" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
 
 As always, feedback on this project is very welcome - come tell us in <a href="https://matrix.to/#/#matrix:matrix.org">#matrix:matrix.org</a> what you think!  And thank you, if you choose to support this campaign :)
 

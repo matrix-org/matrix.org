@@ -13,7 +13,7 @@ Last month at FOSDEM 2019 we gave a <a href="https://fosdem.org/2019/schedule/ev
 
 The challenge here was to see if we could demonstrate Matrix working usably over networks running at around 100 bits per second of throughput (where it'd take 2 minutes to send a typical 1500 byte ethernet packet!!) and very high latencies.  You can see the original FOSDEM talk below, or <a href="/blog/wp-content/uploads/2019/02/2019-02-03-FOSDEM-Low-Bandwidth.pdf">check out the slides here.</a>
 
-<iframe src="https://www.youtube.com/embed/DZBvy4abB1o" width="1280" height="720" frameBorder="0" allowFullScreen="allowfullscreen"><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span></iframe>
+<iframe src="https://www.youtube.com/embed/DZBvy4abB1o"frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
 
 Now, it's taken us a little while to find time to tidy up the stuff we demo'd in the talk to be (relatively) suitable for public consumption, but we're happy to finally release the four projects which powered the demo:
 <ul>

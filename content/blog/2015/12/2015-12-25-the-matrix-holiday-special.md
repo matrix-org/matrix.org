@@ -40,7 +40,7 @@ Meanwhile, huge kudos to Tor who was crazy enough to <a href="https://github.com
 
 A few days after Jardin Entropique we made it to <a href="https://www.leandus.de/">Lean DUS</a> - a great tech meetup in Düsseldorf organised by <a href="http://sipgate.de">Sipgate</a>, who were kind enough to invite us to speak.  This was a chance to give a full update on Matrix (as of July!) and talk some more about Olm and plans for end-to-end encryption.  This one got recorded - and you can see it below.  There's also an official page with full videos, slide deck and photos up at <a href="https://www.leandus.de/2015/08/weil-und-hodgson/">https://www.leandus.de/2015/08/weil-und-hodgson/</a>.
 
-<iframe src="https://player.vimeo.com/video/134821506" width="500" height="281" frameBorder="0" webkitallowfullscreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/134821506" frameBorder="0" webkitallowfullscreen mozallowfullscreen allowFullScreen></iframe>
 
 <a href="https://vimeo.com/134821506">Lean Dus #9 - End to end encryption for decentralised communication mit Matthew Hodgson</a> from <a href="https://vimeo.com/sipgate">sipgate</a> on <a href="https://vimeo.com">Vimeo</a>.
 

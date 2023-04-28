@@ -76,7 +76,7 @@ However, the dot cloud obviously has some limitations - especially when you zoom
 
 And here's the end result! (complete with trancey soundtrack as the audio we recorded at FOSDEM was unusable)
 
-<iframe src="https://www.youtube.com/embed/XvdZ2orVnrk" width="1120" height="630" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
+<iframe src="https://www.youtube.com/embed/XvdZ2orVnrk" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
 
 <strong>Conclusion:</strong>
 
