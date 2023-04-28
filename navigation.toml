@@ -19,7 +19,7 @@ footer_internal = [
 ]
 
 footer_external = [
-    { image = "github.svg", alt = "GitHub", href = "/code" },
+    { image = "github.svg", alt = "GitHub", href = "https://github.com/matrix-org" },
     { image = "gitlab.svg", alt = "GitLab", href = "https://gitlab.matrix.org/" },
     { image = "mastodon.svg", alt = "Mastodon", href = "https://mastodon.matrix.org/@matrix" },
     { image = "twitter.svg", alt = "Twitter", href = "https://twitter.com/matrixdotorg" },
