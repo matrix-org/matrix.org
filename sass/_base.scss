@@ -229,6 +229,10 @@ pre table {
     padding: 0 .4rem;
 }
 
+a>code {
+    color: var(--color-link);
+}
+
 .page_card {
     background-color: #000;
     border-radius: 16px;
