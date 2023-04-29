@@ -11,9 +11,11 @@
         height: calc(100vh - var(--navbar-height));
         background-color: #000;
         background-image: url("/assets/frontpage/hero_dancing_lines.svg");
+
         @media (max-width: 767px) {
             background-image: url("/assets/frontpage/hero_dancing_lines_mobile.svg");
         }
+
         background-size: 100% 100%;
         background-repeat: no-repeat;
         position: relative;
@@ -106,11 +108,13 @@
     #use-case-personal {
         background: url("/assets/frontpage/personal-bg.svg");
         background-size: 100% 100%;
+
         @media (max-width: 767px) {
             background-image: url("/assets/frontpage/personal-bg-mobile.svg");
             background-size: 100% 241px;
             padding: 2rem 1rem 175px 1rem;
         }
+
         background-repeat: no-repeat;
         background-position-y: bottom -20px;
 
@@ -120,6 +124,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+
         @media (max-width: 767px) {
             flex-direction: column;
             gap: 2rem;
@@ -139,6 +144,7 @@
                 color: #000;
                 font-size: 2.5rem;
                 font-weight: 700;
+
                 @media (max-width: 767px) {
                     font-size: 2.125rem;
                     margin-bottom: 2rem;
@@ -149,9 +155,11 @@
                 background-color: #000;
                 color: #fff;
                 margin-left: 10%;
+
                 @media (max-width: 767px) {
                     margin-left: auto;
                 }
+
                 margin-right: auto;
             }
         }
@@ -251,6 +259,7 @@
             max-height: 418px;
             justify-content: center;
             max-width: 27.9rem;
+
             @media (max-width: 767px) {
                 max-width: none;
             }
@@ -260,10 +269,12 @@
                 color: #000;
                 font-size: 2.5rem;
                 font-weight: 700;
+
                 @media (max-width: 767px) {
                     font-size: 2.125rem;
                     margin: 0 auto 2rem auto;
                 }
+
                 margin: 0 2rem 2rem 2rem;
             }
 
@@ -271,9 +282,11 @@
                 background-color: #000;
                 color: #fff;
                 margin-left: 20%;
+
                 @media (max-width: 767px) {
                     margin-left: auto;
                 }
+
                 margin-right: auto;
             }
         }
@@ -281,9 +294,11 @@
         img {
             border: 20px solid black;
             border-radius: 30px;
+
             @media (max-width: 767px) {
                 margin-top: 50px;
             }
+
             margin: 2rem;
         }
     }
@@ -292,7 +307,8 @@
         display: flex;
         flex-direction: column;
         gap: 28px;
-        padding: 250px 0 435px 0;
+        padding: 250px 0 300px 0;
+
         @media (max-width: 767px) {
             padding: 100px 35px 435px 35px;
         }
@@ -305,11 +321,13 @@
         background-color: #000;
         background-image: url("/assets/frontpage/buildon-bg.svg");
         background-size: 100% 100%;
+
         @media (max-width: 767px) {
             background-image: url("/assets/frontpage/buildon-bg-mobile.svg");
             background-size: 100% 480px;
             background-position-y: bottom;
         }
+
         background-repeat: no-repeat;
 
         h2 {
@@ -373,6 +391,7 @@
 
         #federation_visual_mobile {
             display: none;
+
             @media (max-width: 767px) {
                 display: inline;
                 position: absolute;
@@ -413,6 +432,7 @@
             flex-wrap: wrap;
             justify-content: space-around;
             margin: 2rem auto;
+
             @media (max-width: 767px) {
                 margin: 0 auto;
             }
@@ -427,6 +447,7 @@
                 padding: 1rem 0;
 
                 width: 22rem;
+
                 @media (max-width: 767px) {
                     width: 100%;
                 }
