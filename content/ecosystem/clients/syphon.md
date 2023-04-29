@@ -18,7 +18,7 @@ voip_1to1 = false
 voip_jitsi = false
 widgets = false
 sso = true
-multi_account = false
+multi_account = true
 multi_language = true
 [extra.packages]
 google_play_store.app_id = "org.tether.tether"
