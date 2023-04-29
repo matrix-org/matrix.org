@@ -1,5 +1,5 @@
 +++
-title = "Technical docs"
+title = "Matrix concepts"
 weight = 300
 render = false
 [extra]

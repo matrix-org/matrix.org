@@ -62,7 +62,7 @@ rooms section of the technical documentation.
 
 {{ page_card(
     title="Rooms",
-    path="/docs/technical/rooms_and_events/",
+    path="/docs/matrix-concepts/rooms_and_events/",
     summary="Understand how rooms work over federation, and who can really
              control them.")
 }}

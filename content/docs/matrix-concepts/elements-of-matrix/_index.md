@@ -2,7 +2,7 @@
 title = "Elements of Matrix"
 weight = 100
 template = "docs/with_menu.html"
-aliases = ["/docs/technical/"]
+aliases = ["/docs/matrix-concepts", "/docs/technical/"]
 [extra]
 updated = "2023-02-08T08:00:00Z"
 +++
