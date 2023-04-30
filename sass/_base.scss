@@ -1,5 +1,5 @@
 :root {
-    --page-max-width: 55rem;
+    --page-max-width: 57rem;
     --navbar-height: 5.937rem;
 
     --color-text: #333;
@@ -76,16 +76,12 @@ ol:last-child {
     width: 100%;
     max-width: var(--page-max-width);
 
-    margin: .625rem auto;
+    margin: 1rem auto;
+    padding-inline: 1rem;
 
     img {
         max-height: 40rem;
         max-width: 100%;
-    }
-
-    @media (max-width: 767px) {
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 }
 
