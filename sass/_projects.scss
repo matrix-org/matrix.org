@@ -35,15 +35,6 @@
         box-sizing: content-box;
     }
 
-    .title-row {
-        width: 100%;
-        max-width: 100%;
-        display: flex;
-        justify-content: space-between;
-        gap: .2rem;
-        align-items: start;
-    }
-
     h3 {
         margin: 0;
 
@@ -216,6 +207,15 @@
         border-color: #4A4A4A;
         color: #4A4A4A;
     }
+}
+
+.title-row {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: .2rem;
+    align-items: start;
 }
 
 #filters-overlay {

@@ -60,6 +60,8 @@
 
 .implementation {
     padding: 80px;
+    max-width: var(--page-max-width);
+    margin-inline: auto;
 
     @media (max-width: 767px) {
         padding: 1rem;
@@ -71,6 +73,12 @@
 
     @media (max-width: 767px) {
         grid-template-columns: 1fr;
+    }
+
+    .title-row {
+        align-items: center;
+        justify-content: flex-start;
+        gap: .5rem;
     }
 
     .recommended-chip {
