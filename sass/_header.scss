@@ -104,7 +104,8 @@
         }
 
         .submenu-checkbox {
-            display: none;
+            opacity: 0;
+            position: absolute;
 
             @media screen and (max-width: 1023px) {
                 &:not(:checked) ~ .section-submenu-wrap {
@@ -162,7 +163,7 @@
             display: flex;
             justify-content: center;
 
-            &:not(:hover) .section-submenu {
+            &:not(:hover, :focus-within) .section-submenu {
                 display: none;
             }
         }
