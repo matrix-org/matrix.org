@@ -1,9 +1,9 @@
 .projects-card-deck {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 280px);
+    grid-template-columns: repeat(auto-fill, 17.6rem);
 
     @media (max-width: 767px) {
-        max-width: 280px;
+        max-width: 17.6rem;
     }
 
     gap: 1rem;
