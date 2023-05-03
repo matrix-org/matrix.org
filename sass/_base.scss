@@ -103,10 +103,15 @@ ol:last-child {
         justify-content: space-between;
         flex-wrap: wrap;
 
+        @media (max-width: 767px) {
+            flex-direction: column;
+            text-align: center;
+        }
+
         a {
-            margin-top: 10px;
             color: #999;
             text-decoration: none;
+            margin-inline: .8rem;
         }
     }
 
@@ -121,8 +126,7 @@ ol:last-child {
             display: inline-block;
 
             img {
-                margin-right: 10px;
-                margin-left: 10px;
+                margin-inline: .625rem;
             }
         }
     }
