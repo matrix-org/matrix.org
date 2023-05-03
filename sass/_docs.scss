@@ -12,6 +12,8 @@ header {
 
 .docs-body {
     width: 100vw;
+    display: flex;
+    flex-direction: row;
 
     --docs-menu-width: 18rem;
 }
@@ -19,21 +21,19 @@ header {
 .docs-menu {
     padding: 1em;
     border-right: 1px solid var(--borders-color);
+    max-width: var(--docs-menu-width);
 
-    position: fixed;
-    top: var(--navbar-height);
-    bottom: 0;
-    left: 0;
-    right: calc(100vw - var(--docs-menu-width));
+    .docs-menu-inner {
+        position: sticky;
+        top: calc(var(--navbar-height) + 1rem);
+        overflow-y: auto;
+    }
 
     @media (max-width: 767px) {
-        right: 0;
         border-right: unset;
         background-color: #fff;
         padding-bottom: 5rem;
     }
-
-    overflow-y: auto;
 
     .submenu-checkbox {
         display: none;
@@ -93,7 +93,7 @@ header {
 }
 
 .docs-content {
-    margin-left: 18rem;
+    flex: 1;
 
     @media (max-width: 767px) {
         margin-inline: auto;
@@ -136,6 +136,12 @@ header {
 }
 
 #docs-menu-checkbox:not(:checked)~.docs-menu {
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+#docs-menu-checkbox:checked~.docs-content {
     @media (max-width: 767px) {
         display: none;
     }

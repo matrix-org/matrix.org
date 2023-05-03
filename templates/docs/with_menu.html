@@ -12,6 +12,60 @@
 {% endif %}
 
 <div class="docs-body">
+    <input id="docs-menu-checkbox" type="checkbox" aria-hidden="true" />
+
+    <div class="docs-menu">
+        <div class="docs-menu-inner">
+            {% for doc_section_path in docs_sections.subsections %}
+            {% set doc_section = get_section(path=doc_section_path) %}
+            {% if section.path is containing(doc_section.path) %}
+            {% set current = true %}
+            {% else %}
+            {% set current = false %}
+            {% endif %}
+            <div>
+                <input id="{{ doc_section.title }}-submenu-checkbox" type="checkbox" class="submenu-checkbox"
+                    aria-hidden="true" {% if current %}checked{% endif %}>
+                <label for="{{ doc_section.title }}-submenu-checkbox" class="submenu-title">{{ doc_section.title }}
+                    <div class="arrow"></div>
+                </label>
+                <ul class="section-submenu-wrap">
+                    {% for h2 in doc_section.toc %}
+                    <li>
+                        <a href="{{ h2.permalink }}">{{ h2.title }}</a>
+                        {% if h2.children %}
+                        <ul>
+                            {% for h3 in h2.children %}
+                            <a href="{{ h3.permalink }}">
+                                <li>{{ h3.title }}</li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                    {% for doc_subsection_path in doc_section.subsections %}
+                    {% set doc_subsection = get_section(path=doc_subsection_path) %}
+                    <li>
+                        <a href="{{ doc_subsection.path }}">{{ doc_subsection.title }}</a>
+                        <ul>
+                            {% for h3 in doc_subsection.toc %}
+                            <a href="{{ h3.permalink }}">
+                                <li>{{ h3.title }}</li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                        {% endfor %}
+                    </li>
+                </ul>
+                {% if loop.last == false %}
+                <div class="spacer"></div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
     <div class="docs-content">
         <article class="content">
             <header>
@@ -25,56 +79,6 @@
             {{ section.content | markdown | safe }}
         </article>
     </div>
-    <input id="docs-menu-checkbox" type="checkbox" aria-hidden="true" />
-    <label for="docs-menu-checkbox" id="docs-menu-button">Table of Contents</label>
-    <div class="docs-menu">
-        {% for doc_section_path in docs_sections.subsections %}
-        {% set doc_section = get_section(path=doc_section_path) %}
-        {% if section.path is containing(doc_section.path) %}
-        {% set current = true %}
-        {% else %}
-        {% set current = false %}
-        {% endif %}
-        <div>
-            <input id="{{ doc_section.title }}-submenu-checkbox" type="checkbox" class="submenu-checkbox"
-                aria-hidden="true" {% if current %}checked{% endif %}>
-            <label for="{{ doc_section.title }}-submenu-checkbox" class="submenu-title">{{ doc_section.title }}
-                <div class="arrow"></div>
-            </label>
-            <ul class="section-submenu-wrap">
-                {% for h2 in doc_section.toc %}
-                <li>
-                    <a href="{{ h2.permalink }}">{{ h2.title }}</a>
-                    {% if h2.children %}
-                    <ul>
-                        {% for h3 in h2.children %}
-                        <a href="{{ h3.permalink }}">
-                            <li>{{ h3.title }}</li>
-                        </a>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                </li>
-                {% endfor %}
-                {% for doc_subsection_path in doc_section.subsections %}
-                {% set doc_subsection = get_section(path=doc_subsection_path) %}
-                <li>
-                    <a href="{{ doc_subsection.path }}">{{ doc_subsection.title }}</a>
-                    <ul>
-                        {% for h3 in doc_subsection.toc %}
-                        <a href="{{ h3.permalink }}">
-                            <li>{{ h3.title }}</li>
-                        </a>
-                        {% endfor %}
-                    </ul>
-                    {% endfor %}
-                </li>
-            </ul>
-            {% if loop.last == false %}
-            <div class="spacer"></div>
-            {% endif %}
-        </div>
-        {% endfor %}
-    </div>
 </div>
+<label for="docs-menu-checkbox" id="docs-menu-button">Table of Contents</label>
 {% endblock content %}
