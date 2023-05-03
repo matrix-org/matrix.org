@@ -5,6 +5,11 @@ template = "docs/with_menu.html"
 aliases = ["/docs/matrix-concepts", "/docs/technical/"]
 [extra]
 updated = "2023-02-08T08:00:00Z"
+meta_description = """
+Matrix relies on homeservers to connect clients together. Appservices are
+pieces of software that can bridge Matrix and third-party platforms together.
+The Matrix Specification defines the interactions between all those.
+"""
 +++
 
 Matrix works like email, but for instant messaging. People need to use a client

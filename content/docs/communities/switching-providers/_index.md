@@ -6,6 +6,11 @@ weight = 300
 emoji = "🏡"
 tile = "I want to get my own homeserver"
 updated = "2023-01-30T14:00:00Z"
+meta_description = """
+Even after creating a community on a provider, it's possible to switch to
+another one. This allows communities to get more sovereignty on their
+conversations, and to connect them to their own systems.
+"""
 +++
 
 ## Why switching providers?

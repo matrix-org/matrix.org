@@ -4,6 +4,11 @@ weight = 200
 template = "docs/with_menu.html"
 [extra]
 updated = "2023-02-23T08:00:00Z"
+meta_description = """
+Matrix relies on rooms to distribute events across servers and clients. Rooms
+have a hierarchy based on power levels. Each homeserver has its own copy of all
+the rooms all their users belong to.
+"""
 +++
 
 Users on a server can send *events* into *rooms*. An event is a particular json

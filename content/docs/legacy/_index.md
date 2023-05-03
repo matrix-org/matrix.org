@@ -7,6 +7,10 @@ weight = 900
 [extra]
 emoji = "🕸️"
 tile = "Legacy documentation"
+meta_description = """
+This section contains all the documentation previously published that is no
+longer relevant or maintained. It is kept online for archive purposes.
+"""
 +++
 
 This section contains all the outdated documentation from the former matrix.org

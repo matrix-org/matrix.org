@@ -6,6 +6,11 @@ weight = 200
 emoji = "🛡️"
 tile = "I want to deploy moderation tools"
 updated = "2023-01-25T06:43:00Z"
+meta_description = """
+Matrix allows communities to stay safe thanks to moderation tools. Mjolnir is
+the recommended solution for community managers who want to fight abuse on
+Matrix.
+"""
 +++
 
 ## Power levels
