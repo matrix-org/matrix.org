@@ -12,21 +12,8 @@
 {% endif %}
 
 <div class="docs-body">
-    <div class="docs-content">
-        <article class="content">
-            <header>
-                <h1>{{ section.title }}</h1>
-                {% set iso_date = section.extra.updated | date(format = '%Y-%m-%d') %}
-                <span class="last-updated">
-                    Last updated: <time datetime="{{ iso_date }}"> {{ iso_date }}</time>
-                </span>
-            </header>
-
-            {{ section.content | markdown | safe }}
-        </article>
-    </div>
     <input id="docs-menu-checkbox" type="checkbox" aria-hidden="true" />
-    <label for="docs-menu-checkbox" id="docs-menu-button">Table of Contents</label>
+
     <div class="docs-menu">
         <div class="docs-menu-inner">
             {% for doc_section_path in docs_sections.subsections %}
@@ -78,5 +65,20 @@
             {% endfor %}
         </div>
     </div>
+
+    <div class="docs-content">
+        <article class="content">
+            <header>
+                <h1>{{ section.title }}</h1>
+                {% set iso_date = section.extra.updated | date(format = '%Y-%m-%d') %}
+                <span class="last-updated">
+                    Last updated: <time datetime="{{ iso_date }}"> {{ iso_date }}</time>
+                </span>
+            </header>
+
+            {{ section.content | markdown | safe }}
+        </article>
+    </div>
 </div>
+<label for="docs-menu-checkbox" id="docs-menu-button">Table of Contents</label>
 {% endblock content %}

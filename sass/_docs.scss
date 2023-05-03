@@ -13,7 +13,7 @@ header {
 .docs-body {
     width: 100vw;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
 
     --docs-menu-width: 18rem;
 }
@@ -136,6 +136,12 @@ header {
 }
 
 #docs-menu-checkbox:not(:checked)~.docs-menu {
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+#docs-menu-checkbox:checked~.docs-content {
     @media (max-width: 767px) {
         display: none;
     }
