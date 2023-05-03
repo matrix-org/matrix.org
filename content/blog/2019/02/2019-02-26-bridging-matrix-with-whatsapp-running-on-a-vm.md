@@ -74,4 +74,4 @@ And that's it! You may need to take a little time to watch the sync happen, part
 
 ## Demo!
 
-<iframe src="https://www.youtube.com/embed/edSgP2dEZ1o" width="960" height="540" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
+<iframe src="https://www.youtube.com/embed/edSgP2dEZ1o" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>

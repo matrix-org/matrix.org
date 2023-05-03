@@ -42,3 +42,6 @@ loca = "loca" # loca.lt
 onl = "onl" # supercable.onl
 ons = "ons" # add-ons
 whos = "whos" # whos-in-this-room
+
+# Name
+Brose = "Brose"
