@@ -1,4 +1,7 @@
 {% extends "section.html" %}
+{% block head_extra %}
+<meta name="description" content="{{ section.extra.summary }}">
+{% endblock head_extra %}
 {% block content %}
 <div class="page-header">
     <div class="hero-block">
@@ -12,23 +15,23 @@
     {{ section.content | safe }}
 
     <div class="platforms-grid">
-    {% for subsection_path in section.subsections %}
-    {% set subsection = get_section(path=subsection_path) %}
-    {% set bridges_data = load_data(path=subsection.path~"bridges.toml") %}
+        {% for subsection_path in section.subsections %}
+        {% set subsection = get_section(path=subsection_path) %}
+        {% set bridges_data = load_data(path=subsection.path~"bridges.toml") %}
         <a href="{{ subsection.path }}" class="platform">
             <img src="{{ subsection.path }}logo.svg" />
             <div class="details">
                 <h2>{{ subsection.title }}</h2>
                 <p>
                     {% if bridges_data.bridges %}
-                        {{ bridges_data.bridges | length }} bridge{% if bridges_data.bridges | length > 1 %}s{% endif %}
+                    {{ bridges_data.bridges | length }} bridge{% if bridges_data.bridges | length > 1 %}s{% endif %}
                     {% else %}
-                        No bridge
+                    No bridge
                     {% endif %}
                 </p>
             </div>
         </a>
-    {% endfor %}
+        {% endfor %}
     </div>
 
 </div>

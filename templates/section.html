@@ -1,5 +1,10 @@
 {% extends "skel.html" %}
 {% block html_title %}Matrix.org - {{ section.title }}{% endblock html_title %}
+{% block head_extra %}
+{% if section.extra.meta_description %}
+<meta name="description" content="{{ section.extra.meta_description }}">
+{% endif %}
+{% endblock head_extea %}
 {% block content %}
 <div class="content">
     <header>

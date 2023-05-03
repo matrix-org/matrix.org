@@ -7,6 +7,10 @@ aliases = ["/docs/communities/"]
 emoji = "👪"
 tile = "Create a cozy place on Matrix for your community or organisation"
 updated = "2022-11-18T09:50:00Z"
+meta_description = """
+Everyone can start their community on Matrix by creating a Matrix Space.
+Community Managers can then tweak the Space to their needs.
+"""
 +++
 
 We strongly recommend getting familiar with Matrix as an individual. It's easy
