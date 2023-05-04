@@ -5,6 +5,8 @@ template = "ecosystem/client.html"
 thumbnail = "element.svg"
 maintainer = "Element"
 maturity = "Stable"
+repo = "https://github.com/vector-im"
+matrix_room = "#element-web:matrix.org"
 licence = "Apache-2.0"
 last_release = "2022-11-02"
 featured = true
@@ -16,7 +18,7 @@ voip_jitsi = true
 widgets = true
 threads = true
 sso = true
-multi_account = true
+multi_account = false
 multi_language = true
 [extra.packages]
 windows_installer = "https://element.io/download"

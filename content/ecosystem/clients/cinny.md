@@ -22,6 +22,9 @@ sso = true
 multi_account = false
 multi_language = true
 [extra.packages]
+windows_installer = "https://github.com/cinnyapp/cinny-desktop/releases"
+macos_installer = "https://github.com/cinnyapp/cinny-desktop/releases"
+flathub.app_id = "in.cinny.Cinny"
 webapp = "https://app.cinny.in/"
 +++
 
