@@ -24,6 +24,7 @@
         img {
             width: 128px;
             height: 55px;
+            display: block;
         }
     }
 
@@ -69,6 +70,7 @@
             margin: 8px 0;
             color: #fff;
             font-size: 1.125rem;
+
             @media screen and (max-width: 1023px) {
                 font-size: 1.5rem;
             }
@@ -108,11 +110,11 @@
             position: absolute;
 
             @media screen and (max-width: 1023px) {
-                &:not(:checked) ~ .section-submenu-wrap {
+                &:not(:checked)~.section-submenu-wrap {
                     display: none;
                 }
 
-                &:not(:checked) ~ .submenu-title {
+                &:not(:checked)~.submenu-title {
                     .arrow {
                         background-image: url("/assets/down-arrow.svg");
                         width: 1rem;
@@ -122,7 +124,7 @@
                     }
                 }
 
-                &:checked ~ .submenu-title {
+                &:checked~.submenu-title {
                     .arrow {
                         background-image: url("/assets/up-arrow.svg");
                         width: 1rem;
