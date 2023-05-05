@@ -109,10 +109,10 @@
         background: url("/assets/frontpage/personal-bg.svg");
         background-size: 100% 100%;
 
-        @media (max-width: 767px) {
+        @media (max-width: 59rem) {
             background-image: url("/assets/frontpage/personal-bg-mobile.svg");
             background-size: 100% 241px;
-            padding: 2rem 1rem 175px 1rem;
+            padding-inline: 1rem;
         }
 
         background-repeat: no-repeat;
@@ -121,16 +121,21 @@
         position: relative;
         overflow: hidden;
 
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-
-        @media (max-width: 767px) {
-            flex-direction: column;
-            gap: 2rem;
-        }
-
+        padding-inline: 2rem;
         padding-bottom: 175px;
+
+        .use-case-personal-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin-inline: auto;
+
+            @media (max-width: 59rem) {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+        }
 
         .col {
             display: flex;
@@ -145,9 +150,13 @@
                 font-size: 2.5rem;
                 font-weight: 700;
 
+                @media (max-width: 59rem) {
+                    margin-top: 2rem;
+                    text-align: center;
+                }
+
                 @media (max-width: 767px) {
                     font-size: 2.125rem;
-                    margin-bottom: 2rem;
                 }
             }
 
@@ -156,7 +165,7 @@
                 color: #fff;
                 margin-left: 10%;
 
-                @media (max-width: 767px) {
+                @media (max-width: 59rem) {
                     margin-left: auto;
                 }
 
@@ -167,13 +176,12 @@
         img {
             margin: auto 0px;
 
-            width: 469px;
-            height: 418px;
+            flex: auto;
+            max-width: 470px;
+            aspect-ratio: 470 / 418;
 
-            @media (max-width: 767px) {
+            @media (max-width: 59rem) {
                 margin: 0px auto;
-                width: 323px;
-                height: 288px;
             }
         }
 
@@ -204,6 +212,7 @@
         text-align: center;
         padding-top: 60px;
         padding-bottom: 100px;
+        padding-inline: 2rem;
 
         h2 {
             color: #fff;
@@ -211,11 +220,6 @@
             font-weight: 700;
             max-width: 36rem;
             margin: 0 auto;
-
-            @media (max-width: 767px) {
-                font-size: 2.125rem;
-                margin: 0 50px 50px 50px;
-            }
         }
 
         .call-to-action {
@@ -230,27 +234,24 @@
 
         img {
             margin: 0 auto;
-            width: 756px;
-            height: 487px;
-
-            @media (max-width: 767px) {
-                margin: 0px auto;
-                width: 292px;
-                height: 188px;
-            }
+            aspect-ratio: 756 / 487;
+            flex: auto;
+            max-width: 756px;
         }
     }
 
-    #complex_apps {
+    #complex-apps {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
-        padding: 160px 0;
+        justify-content: space-between;
+        gap: 2rem;
+        max-width: 1200px;
+        margin-inline: auto;
+        padding: 10rem 2rem;
 
-        @media (max-width: 767px) {
-            flex-direction: column;
-            padding: 116px 30px;
+        @media (max-width: 64rem) {
+            flex-direction: column-reverse;
+            align-items: center;
         }
 
         .col {
@@ -259,6 +260,7 @@
             max-height: 418px;
             justify-content: center;
             max-width: 27.9rem;
+            margin-inline: auto;
 
             @media (max-width: 767px) {
                 max-width: none;
@@ -270,12 +272,16 @@
                 font-size: 2.5rem;
                 font-weight: 700;
 
+                @media (max-width: 64rem) {
+                    text-align: center;
+                }
+
                 @media (max-width: 767px) {
                     font-size: 2.125rem;
                     margin: 0 auto 2rem auto;
                 }
 
-                margin: 0 2rem 2rem 2rem;
+                margin: 0 0 2rem 0;
             }
 
             .call-to-action {
@@ -291,15 +297,13 @@
             }
         }
 
-        img {
-            border: 20px solid black;
+        #complex-apps-image {
+            outline: 20px solid black;
             border-radius: 30px;
-
-            @media (max-width: 767px) {
-                margin-top: 50px;
-            }
-
-            margin: 2rem;
+            flex: auto;
+            max-width: 576px;
+            margin: 20px;
+            max-width: 100%
         }
     }
 
