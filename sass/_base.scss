@@ -23,6 +23,8 @@ html {
 body {
     margin: 0;
     min-height: 100svh;
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     color: var(--color-text);
 
@@ -44,6 +46,7 @@ body {
 }
 
 main {
+    flex: 1;
     padding-top: var(--navbar-height);
 }
 
