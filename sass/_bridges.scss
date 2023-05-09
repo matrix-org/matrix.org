@@ -79,6 +79,10 @@
         align-items: center;
         justify-content: flex-start;
         gap: .5rem;
+
+        h3 {
+            margin-block: 1rem;
+        }
     }
 
     .recommended-chip {
@@ -88,12 +92,6 @@
         max-width: fit-content;
         font-style: normal;
         border-bottom: 1px dotted var(--borders-color);
-    }
-
-    h2 {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .5rem;
     }
 
     .privileges,
