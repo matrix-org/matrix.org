@@ -1,0 +1,11 @@
+[[integrations]]
+name = "Hemppa"
+description = """
+Generic modular Matrix bot, a super easy platform to write Matrix bot
+functionality in Python.
+"""
+maintainer = "Cos"
+language = "Python"
+licence = "GPL-3.0-only"
+repository = "https://github.com/vranki/hemppa"
+room = "#hemppa:hacklab.fi"

@@ -1,0 +1,23 @@
+{% set integrations_data = load_data(path="content/ecosystem/integrations/integrations.toml") %}
+<div class="projects-card-deck">
+    {% for integration in integrations_data.integrations %}
+    <div class="project-card">
+        <h3>{{ integration.name }}</h3>
+        <span>{{ integration.description | safe }}</span>
+        <div class="server-links">
+            {% if integration.repository %}
+            <a href="{{ integration.repository }}">
+                {{ load_data(path="/assets/projects/repo.svg") | safe }}
+                Repository
+            </a>
+            {% endif %}
+            {% if integration.room %}
+            <a href="https://matrix.to/#/{{ integration.room }}">
+                {{ load_data(path="/assets/projects/matrix.svg") | safe }}
+                Matrix Room
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
