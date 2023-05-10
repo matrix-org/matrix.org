@@ -172,6 +172,13 @@
             &:not(.display) {
                 display: none;
             }
+
+            button {
+                background: none;
+                border: transparent;
+                color: var(--color-text);
+                cursor: pointer;
+            }
         }
     }
 }
