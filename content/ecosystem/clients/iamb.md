@@ -21,7 +21,7 @@ sso = false
 multi_account = true
 multi_language = false
 [extra.packages]
-other_install_links = "https://iamb.chat/install.html"
+other_linux_link = "https://iamb.chat/install.html"
 +++
 
 A terminal-based Matrix client with Vim keybindings written in Rust.
