@@ -39,7 +39,7 @@
             <a href="{{ client.path }}" class="project-card client {{ clients::classes(client=client.extra) }}">
                 {# We're not using placeholders as a fallback because we want showcased clients to have an actual icon
                 #}
-                <img src="{{ client.extra.thumbnail }}" alt="{{ client.title }} Preview">
+                <img src="{{ client.extra.thumbnail }}" alt="{{ client.title }} Logo">
                 <h3>{{ client.title }}</h3>
                 <span>{{ client.content | safe }}</span>
                 <div class="platform-links">
@@ -66,7 +66,7 @@
             <div id="filter-platform" class="filter">
                 Platform
                 <div class="divider"></div>
-                <img src="/assets/down-arrow.svg">
+                <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
             </div>
             <div id="filter-platform-menu" class="filter-menu">
                 <p>The clients must support all of the platforms checked.</p>
@@ -105,7 +105,7 @@
             <div id="filter-maturity" class="filter">
                 Maturity
                 <div class="divider"></div>
-                <img src="/assets/down-arrow.svg">
+                <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
             </div>
             <div id="filter-maturity-menu" class="filter-menu">
                 <p>The client can support any of the maturity levels checked.</p>
@@ -132,7 +132,7 @@
             <div id="filter-licence" class="filter">
                 Licence
                 <div class="divider"></div>
-                <img src="/assets/down-arrow.svg">
+                <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
             </div>
             <div id="filter-licence-menu" class="filter-menu">
                 <p>The client can support any of the licences checked.</p>
@@ -149,7 +149,7 @@
             <div id="filter-features" class="filter">
                 Features
                 <div class="divider"></div>
-                <img src="/assets/down-arrow.svg">
+                <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
             </div>
             <div id="filter-features-menu" class="filter-menu">
                 <p>The client must support all of the features checked.</p>
@@ -201,7 +201,7 @@
         {% endif %}
         <div>
             <a href="{{ client.path }}" class="project-card client {{ clients::classes(client=client.extra) }}">
-                <img src="./{{ thumbnail }}" alt="{{ client.title }} Preview">
+                <img src="./{{ thumbnail }}" alt="{{ client.title }} Logo">
                 <h3>{{ client.title }}</h3>
                 <span>{{ client.content | safe }}</span>
                 <div class="platform-links">

@@ -3,6 +3,13 @@
     --navbar-height: 5.937rem;
 
     --color-text: #333;
+    --color-text-light: #757575;
+
+    @media (prefers-contrast: more) {
+        --color-text: #000;
+        --color-text-light: #595959;
+    }
+
     --color-link: #0098d4;
 
     --page-header-height: 15rem;

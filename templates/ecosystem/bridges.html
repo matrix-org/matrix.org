@@ -19,7 +19,7 @@
         {% set subsection = get_section(path=subsection_path) %}
         {% set bridges_data = load_data(path=subsection.path~"bridges.toml") %}
         <a href="{{ subsection.path }}" class="platform">
-            <img src="{{ subsection.path }}logo.svg" />
+            <img src="{{ subsection.path }}logo.svg" alt="{{ subsection.title }} Logo" />
             <div class="details">
                 <h2>{{ subsection.title }}</h2>
                 <p>
