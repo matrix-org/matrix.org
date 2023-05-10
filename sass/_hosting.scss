@@ -33,8 +33,7 @@
                 max-width: 300px;
             }
 
-
-            border: 1px solid #D2D2D2;
+            border: 1px solid #d2d2d2;
             border-radius: 16px;
 
             .details {
@@ -57,16 +56,20 @@
 
                 .operating_since {
                     height: 1.5rem;
-                    font-size: .9rem;
+                    font-size: 0.9rem;
                 }
+            }
 
+            .details p,
+            ul {
+                text-align: left;
             }
 
             .call-to-action {
                 background-color: #000;
                 color: #fff;
                 border-radius: 1000px;
-                padding: .4rem 2rem;
+                padding: 0.4rem 2rem;
                 align-self: center;
             }
         }

@@ -8,8 +8,9 @@
             </div>
             <h3>{{ provider.name }}</h3>
             <div class="operating_since">Operating since {{ provider.operating_since }}</div>
+            <p>{{ provider.description | markdown | safe }}</p>
         </div>
-        <p>{{ provider.description | markdown | safe }}</p>
+      
         <a href="{{ provider.website }}" class="call-to-action">Try them</a>
     </div>
     {% endfor %}
