@@ -16,11 +16,11 @@
 
     <div id="{{ type }}-sdks-filters" class="filters">
         <div class="filter-wrap">
-            <div id="{{ type }}-sdks-filter-maturity" class="filter">
+            <button id="{{ type }}-sdks-filter-maturity" class="filter">
                 Maturity
                 <div class="divider"></div>
                 <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
-            </div>
+            </button>
             <div id="{{ type }}-sdks-filter-maturity-menu" class="filter-menu">
                 <p>The SDK can support any of the maturity levels checked.</p>
                 <div class="filter-option">
@@ -43,11 +43,11 @@
             </div>
         </div>
         <div class="filter-wrap">
-            <div id="{{ type }}-sdks-filter-licence" class="filter">
+            <button id="{{ type }}-sdks-filter-licence" class="filter">
                 Licence
                 <div class="divider"></div>
                 <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
-            </div>
+            </button>
             <div id="{{ type }}-sdks-filter-licence-menu" class="filter-menu">
                 <p>The client can support any of the licences checked.</p>
                 {% for licence in licences %}
@@ -60,11 +60,11 @@
             </div>
         </div>
         <div class="filter-wrap">
-            <div id="{{ type }}-sdks-filter-language" class="filter">
+            <button id="{{ type }}-sdks-filter-language" class="filter">
                 Language
                 <div class="divider"></div>
                 <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
-            </div>
+            </button>
             <div id="{{ type }}-sdks-filter-language-menu" class="filter-menu">
                 <p>The client must support any of the languages checked.</p>
                 {% for language in languages %}
