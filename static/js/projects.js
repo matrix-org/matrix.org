@@ -42,6 +42,14 @@ class Filter {
             }
         }
 
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                filterMenu.classList.remove("display");
+                filterOverlay.classList.remove("display");
+                filterButton.classList.remove("expanded");
+            }
+        });
+
         filterOverlay.addEventListener("click", (event) => {
             filterMenu.classList.remove("display");
             filterOverlay.classList.remove("display");
