@@ -130,7 +130,10 @@ ol:last-child {
             }
         }
     }
-
+.external-links  a img:hover{
+        filter: brightness(0) invert(1);
+}
+    
     a:hover {
         color: #fff;
     }
