@@ -26,6 +26,18 @@ class Filter {
             }
         });
 
+        filterButton.addEventListener("focus", (event) => {
+            for (const filter of this.filters) {
+                const button = document.getElementById(filter.filterId);
+                const menu = document.getElementById(filter.filterId + "-menu");
+                const overlay = document.getElementById("filters-overlay");
+
+                menu.classList.remove("display");
+                overlay.classList.remove("display");
+                button.classList.remove("expanded");
+            }
+        });
+
         filterOverlay.addEventListener("click", (event) => {
             filterMenu.classList.remove("display");
             filterOverlay.classList.remove("display");
@@ -106,7 +118,7 @@ class AllOfFilter extends Filter {
 
     refreshActiveState() {
         let filterButton = document.getElementById(this.filterId);
-        if(this.allOf.length === 0) {
+        if (this.allOf.length === 0) {
             filterButton.classList.remove("enabled");
         } else {
             filterButton.classList.add("enabled");
@@ -181,7 +193,7 @@ class AnyOfFilter extends Filter {
 
     refreshActiveState() {
         let filterButton = document.getElementById(this.filterId);
-        if(this.anyOf.length === this.numberOfOption) {
+        if (this.anyOf.length === this.numberOfOption) {
             filterButton.classList.remove("enabled");
         } else {
             filterButton.classList.add("enabled");
@@ -198,7 +210,7 @@ class AnyOfFilter extends Filter {
 function refreshCardsView(deckId, filters) {
     let anyOf = [];
     let allOf = [];
-    for(let filter of filters) {
+    for (let filter of filters) {
         anyOf = anyOf.concat(filter.anyOf);
         allOf = allOf.concat(filter.allOf);
     }
@@ -208,7 +220,7 @@ function refreshCardsView(deckId, filters) {
             if (child.classList.contains("project-card")) {
                 let project = child;
                 let filteredOut = false;
-                for(const filter of filters) {
+                for (const filter of filters) {
                     filteredOut = filteredOut || filter.projectIsFilteredOut(project);
                 }
 
