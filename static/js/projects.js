@@ -26,17 +26,21 @@ class Filter {
             }
         });
 
-        filterButton.addEventListener("focus", (event) => {
-            for (const filter of this.filters) {
-                const button = document.getElementById(filter.filterId);
-                const menu = document.getElementById(filter.filterId + "-menu");
-                const overlay = document.getElementById("filters-overlay");
-
-                menu.classList.remove("display");
-                overlay.classList.remove("display");
-                button.classList.remove("expanded");
+        for (const item of filterMenu.children) {
+            if (item.classList.contains("filter-option") || item.classList.contains("reset-links")) {
+                for (const child of item.children) {
+                    child.addEventListener("blur", (event) => {
+                        setTimeout(() => {
+                            if (!filterMenu.contains(document.activeElement) && document.activeElement !== document.body) {
+                                filterMenu.classList.remove("display");
+                                filterOverlay.classList.remove("display");
+                                filterButton.classList.remove("expanded");
+                            }
+                        }, 0);
+                    });
+                }
             }
-        });
+        }
 
         filterOverlay.addEventListener("click", (event) => {
             filterMenu.classList.remove("display");
