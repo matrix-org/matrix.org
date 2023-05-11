@@ -1,10 +1,10 @@
 # Matrix.org Website
 
-**IMPORTANT NOTE: matrix.org is currently undergoing a complete rewrite. Only new content is published on the master branch. New contributions must not target the master branch.**
+**IMPORTANT NOTE: matrix.org is currently undergoing a complete rewrite. Only new content is published on the master branch. New contributions must not target the master branch. Please come and talk with us about what you're trying to fix *before* opening a PR.**
 
-If you want to contribute to the website, make sure the problem you're trying to fix or the feature you want to implement has been discussed in our issue tracker and that we are interested in reviewing and merging such a contribution.
+If you want to contribute to the website, make sure the problem you're trying to fix or the feature you want to implement has been discussed in our issue tracker or in our Matrix room, and that we are interested in reviewing and merging such a contribution. The sole existence of an issue doesn't mean we are interested in those changes. It might be an untriaged or obsolete issue.
 
-To discuss maintenance of this site, please come talk to the team in [#matrix.org-website:matrix.org](https://matrix.to/#/#matrix.org-website:matrix.org).
+You can find the team in [#matrix.org-website:matrix.org](https://matrix.to/#/#matrix.org-website:matrix.org).
 
 ### How to build
 
