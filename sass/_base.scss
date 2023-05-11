@@ -1,3 +1,31 @@
+@font-face {
+    font-family: "Nimbus Sans";
+    src: url("/assets/fonts/nimbussanl-reg.woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nimbus Sans";
+    src: url("/assets/fonts/nimbussanl-bol.woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nimbus Sans";
+    src: url("/assets/fonts/nimbussanl-regita.woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Nimbus Sans";
+    src: url("/assets/fonts/nimbussanl-bolita.woff2");
+    font-weight: 700;
+    font-style: italic;
+}
+
 :root {
     --page-max-width: 57rem;
     --navbar-height: 5.937rem;
@@ -35,7 +63,8 @@ body {
     background-color: #fff;
     color: var(--color-text);
 
-    font-family: "Helvetica Neue",
+    font-family: "Nimbus Sans",
+        "Helvetica Neue",
         "Helvetica",
         Arial,
         -apple-system,
