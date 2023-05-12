@@ -97,7 +97,7 @@ repository = "https://gitlab.com/jpypi/rustix"
 [[integrations]]
 name = "matrix-hookshot"
 description = "A bridge between Matrix and multiple project management services, such as GitHub, GitLab and JIRA."
-maintainer = "Half-Shot"
+maintainer = "The Matrix.org Foundation"
 language = "TypeScript, Rust"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/matrix-hookshot"
