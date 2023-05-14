@@ -1,0 +1,104 @@
+[[integrations]]
+name = "Hemppa"
+description = """
+Generic modular Matrix bot, a super easy platform to write Matrix bot
+functionality in Python.
+"""
+maintainer = "Cos"
+language = "Python"
+licence = "GPL-3.0-only"
+repository = "https://github.com/vranki/hemppa"
+room = "#hemppa:hacklab.fi"
+
+[[integrations]]
+name = "matrix-email-bot"
+description = """
+Posts links to emails in Matrix rooms. Ideal for newsletter distribution.
+"""
+maintainer = "TravisR, t2bot.io"
+language = "TypeScript"
+licence = "Apache-2.0"
+repository = "https://github.com/t2bot/matrix-email-bot"
+room = "#email:t2bot.io"
+
+[[integrations]]
+name = "matrix-eno-bot"
+description = "Personal assistant and Admin tool"
+maintainer = "8go"
+repository = "https://github.com/8go/matrix-eno-bot"
+language = "Python, Bash"
+licence = "WTFPL"
+
+[[integrations]]
+name = "matrix-feeder"
+description = """
+Matrix feeder is a matrix bot that monitors defined channels for media and posts
+them to another channel.
+"""
+maintainer = "dragonchaser"
+repository = "https://github.com/dragonchaser/matrix-feeder"
+language = "JavaScript"
+licence = "MIT"
+
+[[integrations]]
+name = "Matrix Registration Bot"
+description = """
+A bot aiming to create and manage registration tokens for a matrix server. It
+wants to help invitation based servers to maintain usability.
+"""
+maintainer = "moanos"
+language = "Python"
+licence = "AGPL-3.0-or-later"
+repository = "https://github.com/moan0s/matrix-registration-bot/"
+room = "#matrix-registration-bot:hyteck.de"
+
+[[integrations]]
+name = "matrix-rss-bridge"
+description = "matrix-rss-bridge is a bridge for reading RSS feeds in Matrix rooms."
+author = "Isaac Beverly"
+language = "Python"
+repository = "https://gitlab.com/imbev/matrix-rss-bridge"
+licence = "GPL-3.0-only"
+
+[[integrations]]
+name = "matrix-trello-bot"
+description = "Interact with Trello in matrix"
+maintainer = "Travis Ralston"
+language = "TypeScript"
+licence = "GPL-3.0-only"
+repository = "https://github.com/turt2live/matrix-trello-bot"
+room = "#trellobot:t2bot.io"
+
+[[integrations]]
+name = "maubot"
+description = "A plugin-based Matrix bot system written in Python."
+author = "Tulir"
+language = "Python"
+licence = "AGPL-3.0-or-later"
+repository = "https://github.com/maubot/maubot"
+room = "#maubot:maunium.net"
+
+[[integrations]]
+name = "opsdroid"
+description = "A connector for opsdroid to receive and respond to messages"
+maintainer = "opsdroid"
+language = "Python"
+licence = "Apache-2.0"
+repository = "https://github.com/opsdroid/opsdroid"
+
+[[integrations]]
+name = "rustix"
+description = "A graph-based Matrix bot in Rust"
+author = "James"
+language = "Rust"
+licence = "MIT"
+repository = "https://gitlab.com/jpypi/rustix"
+
+[[integrations]]
+name = "matrix-hookshot"
+description = "A bridge between Matrix and multiple project management services, such as GitHub, GitLab and JIRA."
+maintainer = "The Matrix.org Foundation"
+language = "TypeScript, Rust"
+licence = "Apache-2.0"
+repository = "https://github.com/matrix-org/matrix-hookshot"
+room = "#hookshot:half-shot.uk"

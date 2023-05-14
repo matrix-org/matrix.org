@@ -11,7 +11,7 @@ Since we exited alpha and released Synapse 0.5.0 last week there's been a flurry
 
 We released 0.5.3a on Nov 27, which seems to now be pretty stable - if you were holding off on upgrading your homeserver and trying to federate with the new 0.5 release branch, now would be a great time to press the button!
 
-Most excitingly, we believe we have <strong>finally fixed the PyNaCL dependency problems</strong> which have plagued pretty much anyone setting up a homeserver.  This was a problem in PyNaCL itself - huge thanks to Mark for hunting it down and sending the PyNaCL team <a href="http://git.io/1Rr5OA">pull</a> <a href="http://git.io/SUHmBA">requests</a> to get it fixed.  As a result, installing synapse as of 0.5.3a really should be a one-liner at last (please let us know if it isn't!):
+Most excitingly, we believe we have <strong>finally fixed the PyNaCL dependency problems</strong> which have plagued pretty much anyone setting up a homeserver.  This was a problem in PyNaCL itself - huge thanks to Mark for hunting it down and sending the PyNaCL team <a href="http://git.io/1Rr5OA">pull</a> <a href="http://git.io/SUHmBA">requests</a> to get it fixed.  As a result, installing synapse as of 0.5.3a really should be a one-liner at last (please let us know if it isn't!):
 
 <code>pip install --user --process-dependency-links https://github.com/matrix-org/synapse/tarball/master</code>
 

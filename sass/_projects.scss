@@ -47,7 +47,7 @@
     a,
     .open-project {
         margin-block: auto 0;
-        color: #777;
+        color: var(--color-text-light);
         text-decoration: none;
     }
 
@@ -93,7 +93,7 @@
             gap: .8rem;
             z-index: 100;
 
-            padding: .2rem .8rem;
+            padding: .5rem .8rem;
 
             background-color: #fafafa;
             color: #000;
@@ -171,6 +171,13 @@
 
             &:not(.display) {
                 display: none;
+            }
+
+            button {
+                background: none;
+                border: transparent;
+                color: var(--color-text);
+                cursor: pointer;
             }
         }
     }

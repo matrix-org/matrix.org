@@ -31,12 +31,19 @@
 <article class="content post {%- if page.toc %} with-sidebar{% endif %}">
     <header>
         <h1>{{ page.title }}</h1>
-        <span>{{ page.date | date(format="%d.%m.%Y %H:%M") }}{% if page.taxonomies.category %} — <a
-                href="/category/{{ page.taxonomies.category | first | slugify }}">{{
-                page.taxonomies.category
-                | first }}</a>
-            {% endif %} — <a href="/author/{{ page.taxonomies.author | default (value=['unknown author']) | first |
-                    slugify }}">{{ page.taxonomies.author | default (value=["unknown author"]) | first }}</a>
+        <span>
+            {{ page.date | date(format="%d.%m.%Y %H:%M") }}
+            {% if page.taxonomies.category %}
+            —
+            {% for category in
+            page.taxonomies.category %}<a href="/category/{{ category | slugify }}">{{ category }}</a>{% if not
+            loop.last %}, {% endif %}{% endfor %}
+            {% endif %}
+            —
+            {% for author in page.taxonomies.author %}<a
+                href="/author/{{ author | default (value=['unknown author']) | slugify }}">{{ author | default
+                (value=["unknown author"]) }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
         </span>
         {% if page.updated %}
         <br><small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>

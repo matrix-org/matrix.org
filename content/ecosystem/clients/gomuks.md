@@ -20,7 +20,7 @@ sso = true
 multi_account = false
 multi_language = true
 [extra.packages]
-other_install_links = "https://github.com/tulir/gomuks/releases"
+other_linux_link = "https://github.com/tulir/gomuks/releases"
 windows_installer = "https://github.com/tulir/gomuks/releases"
 maxos_installer = "https://github.com/tulir/gomuks/releases"
 +++

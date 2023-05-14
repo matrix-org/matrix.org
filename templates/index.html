@@ -18,11 +18,13 @@
         <div id="hero_curve4"></div>
     </div>
     <div id="use-case-personal" class="section">
-        <div class="col">
-            <h2>Chat with friends, family, communities and co-workers</h2>
-            <a href="/try-matrix" class="call-to-action">Start a conversation</a>
+        <div class="use-case-personal-content">
+            <div class="col">
+                <h2>Chat with friends, family, communities and co-workers</h2>
+                <a href="/try-matrix" class="call-to-action">Start a conversation</a>
+            </div>
+            <img src="assets/frontpage/personal-graphic.svg" alt="An artist view of a chat timeline." />
         </div>
-        <img src="assets/frontpage/personal-graphic.svg" alt="An artist view of a chat timeline." />
         <div id="personal_bottom"></div>
     </div>
     <div id="use-case-community" class="section">
@@ -30,12 +32,13 @@
         <a href="/docs/communities" class="call-to-action">Reclaim your Space</a>
         <img src="assets/frontpage/community-graphic.svg" alt="An artist view of a chat community." />
     </div>
-    <div id="complex_apps" class="section">
+    <div id="complex-apps" class="section">
         <div class="col">
             <h2>Build advanced, rich communication applications on top of Matrix.</h2>
             <a href="/docs/technical" class="call-to-action">Start building apps</a>
         </div>
-        <img src="/images/element-call.gif" alt="A video showcasing Element Call and Third Room" />
+        <img id="complex-apps-image" src="https://via.placeholder.com/576x360.png"
+            alt="A video showcasing Element Call and Third Room" />
     </div>
     <div id="buildonmatrix" class="section">
         <img class="logo" src="images/matrix-favicon.svg" alt="The Matrix Logo" />
@@ -62,7 +65,7 @@
                 <div class="sponsor_text">
                     <h3>{{ sponsor.name }}</h3>
                     <p>{{ sponsor.description }}</p>
-                    <a href="{{ sponsor.website }}">Learn more</a>
+                    <a href="{{ sponsor.website }}">Visit {{ sponsor.name }}’s website</a>
                 </div>
             </div>
             {% endfor %}
