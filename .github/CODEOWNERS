@@ -1,2 +1,3 @@
 # https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 gatsby/content/blog/**/*synapse*.mdx @matrix-org/synapse-core
+gatsby/content/blog/**/*security*.mdx @matrix-org/security
