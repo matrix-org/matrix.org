@@ -132,7 +132,7 @@ room = "#nordeck:matrix.org"
 
 [[integrations]]
 name = "Matrix BarCamp"
-description = "A widget to organize virtual <a href=\"https://en.wikipedia.org/wiki/BarCamp\">Barcamps</a> in Matrix chat rooms."
+description = "A widget to organize virtual Barcamps in Matrix chat rooms."
 maintainer = "Nordeck"
 language = "TypeScript"
 licence = "Apache-2.0"
