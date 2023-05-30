@@ -1,6 +1,12 @@
 +++
 title = "Support Matrix"
 aliases = ["/supporters/"]
+template = "support.html"
+extra.summary = """
+As an individual, if you believe in our mission and want to contribute to Matrix
+as a common good, you can support our work financially. Join the thousands of
+people who support open, decentralised and secure communication.
+"""
 +++
 
 The Matrix.org Foundation is working hard to make sure Matrix is the best

@@ -1,0 +1,148 @@
+{% extends "page.html" %}
+{% block head_extra %}
+<meta name="description" content="{{ page.extra.summary }}">
+{% endblock head_extra %}
+{% block content %}
+<div class="page-header support">
+    <div class="hero-block">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.extra.summary }}</p>
+        <div class="donate-row">
+            <a class="call-to-action" href="https://www.patreon.com/matrixdotorg">
+                <img src="assets/patreon-icon.svg" alt="" />
+                Become a Patron
+            </a>
+            <a class="call-to-action" href="https://donorbox.org/keep-matrix-exciting">
+                <img src="assets/donorbox-icon.svg" alt="" />
+                Donate with donorbox
+            </a>
+            <a class="call-to-action" href="https://liberapay.com/matrixdotorg">
+                <img src="assets/liberapay-icon.svg" alt="" />
+                Fund with LiberaPay
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="support main">
+    <div id="join-foundation">
+        <h2>Join the Matrix.org Foundation</h2>
+        <p>
+            As an organisation, you can have the greatest impact on the
+            financial health of Matrix. Whether your organisation relies on
+            Matrix for its internal communication, built a Matrix-based product,
+            or want to be one of the organisations fuelling the change towards
+            better online communications, you can join the Matrix.org Foundation
+            as a member and run for the governing board.
+        </p>
+        <a class="call-to-action">Become a member</a>
+    </div>
+    <div id="the-spec">
+        <div class="content">
+            <div>
+                <h2>The Matrix Specification</h2>
+                <p>
+                    The Matrix Foundation maintains the Matrix Specification. It is a
+                    living document everybody is encouraged to contribute to. The
+                    Foundation’s Spec Core Team guides the contributors to make
+                    meaningful changes to the specification that make Matrix better for
+                    everyone. The team ensures that the changes work in practice and
+                    that they are in line with the Matrix Manifesto.
+                </p>
+                <p>
+                    The Specification is the building plan for everyone making Matrix
+                    products, and the Spec Core Team are its architects.
+                </p>
+            </div>
+            <img src="assets/spec-logo.svg" alt="The Matrix logo with rulers apparent" />
+        </div>
+    </div>
+    <div id="tangible-work">
+        <div class="content">
+            <img src="assets/frontpage/federation-visual-mobile.svg"
+                alt="An abstract representation of the federation" />
+            <div>
+                <h2>Tangible work</h2>
+                <p>
+                    We're pragmatists who don't only work in theory. We want
+                    Matrix to succeed in real life, so we make it happen in real
+                    life. We provide two homeserver implementations (Synapse and
+                    Dendrite), SDKs for clients, bridges and integrations in
+                    various languages, provide the libraries implementing the
+                    encryption Matrix relies on and get them audited.
+                </p>
+                <p>
+                    The Matrix.org Foundation provides software people can use
+                    as is, and software people can use to make their own
+                    products based on Matrix.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="all-your-comms">
+        <div class="content">
+            <div>
+                <h2>All your communication channels on one platform</h2>
+                <img src="assets/various-platforms.svg" alt="A series of platform logos" />
+                <p>
+                    We think providing software people can use is necessary, but
+                    not enough to keep the Matrix community vibrant. The Matrix
+                    community goes beyond clever engineers, smart developers,
+                    and careful administrators.
+                </p>
+                <p>
+                    Matrix aims to be an ubiquitous communication system. One
+                    that serves everyone. One that is not just for the experts.
+                    We’re happy to provide the matrix.org homeserver as an easy
+                    onboarding method for people who want a quick convenient
+                    set-up.
+                </p>
+            </div>
+            <img src="assets/frontpage/personal-graphic.svg" alt="An artist view of a chat timeline." />
+        </div>
+    </div>
+    <div id="open-dev">
+        <div class="content">
+            <h2>Open development, endless possibilities</h2>
+            <img src="assets/frontpage/community-graphic.svg" alt="An artist view of a chat community." />
+            <div>
+                <p>
+                    The strength in Matrix resides in the particular care it has for
+                    interoperability. Our ecosystem is very healthy thanks to all
+                    the developers and administrators creating gorgeous clients and
+                    hosting their own instances of homeservers.
+                </p>
+                <p>
+                    We write guides, we host Matrix Live, we publish weekly digests
+                    of the community activity, we promote Matrix at conferences, and
+                    we write and own several bridges to popular third-party
+                    platforms to ease the onboarding of new communities.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="help-us">
+        <div class="content">
+            <div class="blurb">
+                <h2>Help fund our work</h2>
+                <p>
+                    Matrix is not only a good answer to current challenges: it
+                    needs to stay relevant in the future. The Matrix.org
+                    Foundation funds substantial work to make sure Matrix
+                    addresses and will keep addressing actual issues.
+                </p>
+                <a class="call-to-action">Donate</a>
+            </div>
+            <div class="features-matrix">
+                <ul>
+                    <li class="supported">Development of the next generation of encryption and security features</li>
+                    <li class="supported">Integration of new authentication mechanism, like OpenID Connect (OIDC)</li>
+                    <li class="supported">Direct support for enterprise customers with existing identity
+                        managementservers</li>
+                    <li class="supported">Deployment of peer-to-peer (P2P) across the Matrix network</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
