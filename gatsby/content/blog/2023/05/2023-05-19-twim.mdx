@@ -132,25 +132,25 @@ Matrix client for Emacs
 
 [alphapapa](https://matrix.to/#/@alphapapa:matrix.org) says
 
-> [https://github.com/alphapapa/ement.el](Ement.el), a Matrix client for the [https://www.gnu.org/software/emacs/](GNU Emacs) Lisp machine and text editor, has been released at [https://github.com/alphapapa/ement.el/releases/tag/v0.9](version 0.9).  Changes since the last release include:
+> [Ement.el](https://github.com/alphapapa/ement.el), a Matrix client for the [GNU Emacs](https://www.gnu.org/software/emacs/) Lisp machine and text editor, has been released at [version 0.9](https://github.com/alphapapa/ement.el/releases/tag/v0.9).  Changes since the last release include:
 > 
 > *Additions*
 > 
-> + Option ~ement-room-timestamp-header-align~ controls how timestamp headers are aligned in room buffers.
-> + Option ~ement-room-view-hook~ runs functions when ~ement-room-view~ is called.  (By default, it refreshes the room list buffer.)
+> + Option `ement-room-timestamp-header-align` controls how timestamp headers are aligned in room buffers.
+> + Option `ement-room-view-hook` runs functions when `ement-room-view` is called.  (By default, it refreshes the room list buffer.)
 > + In the room list, middle-clicking a room which has a buffer closes its buffer.
-> + Basic support for video events.  (Thanks to [https://github.com/viiru-](Arto Jantunen).)
+> + Basic support for video events.  (Thanks to [Arto Jantunen](https://github.com/viiru-).)
 > 
 > *Changes*
 > 
-> + Using new option ~ement-room-timestamp-header-align~, timestamp headers default to right-aligned.  (With default settings, this keeps them near message timestamps and makes for a cleaner appearance.)
+> + Using new option `ement-room-timestamp-header-align`, timestamp headers default to right-aligned.  (With default settings, this keeps them near message timestamps and makes for a cleaner appearance.)
 > 
 > *Fixes*
 > 
 > + Recognition of certain MXID or displayname forms in outgoing messages when linkifying (aka "pilling") them.
-> + Unreadable room avatar images no longer cause errors.  (Fixes [https://github.com/alphapapa/ement.el/issues/147](#147).  Thanks to [https://github.com/jgarte](@jgarte) for reporting.)
-> + Don't error in ~ement-room-list~ when no rooms are joined.  (Fixes [https://github.com/alphapapa/ement.el/issues/123](#123).  Thanks to [https://github.com/Kabouik](@Kabouik) and [https://github.com/oantolin](Omar Antolín Camarena) for reporting.)
-> + Enable member/room completion in compose buffers.  (Fixes [https://github.com/alphapapa/ement.el/issues/115](#115).  Thanks to Thanks to [https://github.com/piater](Justus Piater) and [https://github.com/chasecaleb](Caleb Chase) for reporting.)
+> + Unreadable room avatar images no longer cause errors.  (Fixes [#147](https://github.com/alphapapa/ement.el/issues/147).  Thanks to [@jgarte](https://github.com/jgarte) for reporting.)
+> + Don't error in ~ement-room-list~ when no rooms are joined.  (Fixes [#123](https://github.com/alphapapa/ement.el/issues/123).  Thanks to [@Kabouik](https://github.com/Kabouik) and [Omar Antolín Camarena](https://github.com/oantolin) for reporting.)
+> + Enable member/room completion in compose buffers.  (Fixes [#115](https://github.com/alphapapa/ement.el/issues/115).  Thanks to Thanks to [Justus Piater](https://github.com/piater) and [Caleb Chase](https://github.com/chasecaleb) for reporting.)
 > 
 > Feel free to join us in the chat room: [https://matrix.to/#/#ement.el:matrix.org](#ement.el:matrix.org).
 
@@ -239,8 +239,6 @@ Multiplatform Kotlin SDK for Matrix
 
 [bnjbvr](https://matrix.to/#/@bnjbvr:delire.party) reports
 
-> @twim:cadair.com: 
-> 
 > Matrix bots in Rust and WebAssembly. If you're interested to follow the project, feel free to join [#trinity:delire.party](https://matrix.to/#/#trinity:delire.party) or get the code on [Github](https://github.com/bnjbvr/trinity).
 > 
 > Since last time, we've upgraded to the latest version of wasmtime, wit-bindgen and cargo-component, and even found [a bug in the toolchain](https://github.com/bytecodealliance/cargo-component/issues/80)! Thanks to the Bytecode Alliance folks for helping with a workaround.
