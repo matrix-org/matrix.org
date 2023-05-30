@@ -102,3 +102,39 @@ language = "TypeScript, Rust"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/matrix-hookshot"
 room = "#hookshot:half-shot.uk"
+
+[[integrations]]
+name = "NeoBoard"
+description = "A collaborative whiteboard widget for Matrix."
+maintainer = "Nordeck"
+language = "TypeScript"
+licence = "Apache-2.0"
+repository = "https://github.com/nordeck/matrix-neoboard"
+room = "#nordeck:matrix.org"
+
+[[integrations]]
+name = "Matrix Poll"
+description = "A widget to conduct advanced polls in Matrix rooms."
+maintainer = "Nordeck"
+language = "TypeScript"
+licence = "Apache-2.0"
+repository = "https://github.com/nordeck/matrix-poll"
+room = "#nordeck:matrix.org"
+
+[[integrations]]
+name = "Matrix Meetings"
+description = "A widget and bot to organize meetings and video conferences in Matrix chat rooms."
+maintainer = "Nordeck"
+language = "TypeScript"
+licence = "Apache-2.0"
+repository = "https://github.com/nordeck/matrix-meetings"
+room = "#nordeck:matrix.org"
+
+[[integrations]]
+name = "Matrix BarCamp"
+description = "A widget to organize virtual Barcamps in Matrix chat rooms."
+maintainer = "Nordeck"
+language = "TypeScript"
+licence = "Apache-2.0"
+repository = "https://github.com/nordeck/matrix-barcamp"
+room = "#nordeck:matrix.org"
