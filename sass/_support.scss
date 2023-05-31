@@ -20,7 +20,7 @@
         padding: .5rem 1rem;
 
         font-size: 1.125rem;
-        font-weight: 600rem;
+        font-weight: 600;
 
         @media (max-width: 767px) {
             justify-content: center;
@@ -57,6 +57,7 @@
 
         .call-to-action {
             background-color: #000;
+            font-weight: 600;
             color: #fff;
             border-radius: 9999px;
             padding: .5rem 2rem;
@@ -154,6 +155,7 @@
             color: #fff;
             border-radius: 9999px;
             padding: .5rem 2rem;
+            font-weight: 600;
 
             @media (max-width: 767px) {
                 text-align: center;
@@ -212,12 +214,14 @@
         display: grid;
         grid-template-columns: repeat(4, 15rem);
         gap: 1rem;
-        overflow-y: scroll;
-        overflow-x: visible;
+        overflow-y: auto;
+        padding-block-start: 1.5em;
+        margin-block-end: 2em;
 
         .tier-card {
             border: 1px solid var(--borders-color);
             border-radius: 16px;
+            background-color: #fff;
 
             display: flex;
             flex-direction: column;
@@ -248,25 +252,27 @@
 
         #most-popular {
             position: relative;
-            border-color: #000;
-            overflow: visible;
+            border: 2px solid #000;
 
             &::before {
-                overflow: visible;
                 content: "MOST POPULAR";
                 position: absolute;
-                top: -15px;
-                right: 0;
+                top: -2em;
+                right: -2px;
                 background-color: #000;
                 color: #fff;
                 border-radius: 8px;
                 font-size: .8rem;
-                padding: .2em;
+                padding: .2em 1em 2em 1em;
+                z-index: -1;
             }
         }
     }
 
     .call-to-action {
+        display: block;
+        max-width: fit-content;
+        font-weight: 600;
         background-color: #000;
         color: #fff;
         border-radius: 9999px;
