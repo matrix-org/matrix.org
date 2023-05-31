@@ -39,7 +39,7 @@
             <a href="{{ client.path }}" class="project-card client {{ clients::classes(client=client.extra) }}">
                 {# We're not using placeholders as a fallback because we want showcased clients to have an actual icon
                 #}
-                <img src="{{ client.extra.thumbnail }}" alt="{{ client.title }} Preview">
+                <img src="{{ client.extra.thumbnail }}" alt="{{ client.title }} Logo">
                 <h3>{{ client.title }}</h3>
                 <span>{{ client.content | safe }}</span>
                 <div class="platform-links">
@@ -63,11 +63,11 @@
 
     <div class="filters">
         <div class="filter-wrap">
-            <div id="filter-platform" class="filter">
+            <button id="filter-platform" class="filter">
                 Platform
                 <div class="divider"></div>
-                <img src="/assets/down-arrow.svg">
-            </div>
+                <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
+            </button>
             <div id="filter-platform-menu" class="filter-menu">
                 <p>The clients must support all of the platforms checked.</p>
                 <div class="filter-option">
@@ -91,18 +91,22 @@
                     <label for="platform-macos">macOS</label>
                 </div>
                 <div class="filter-option">
-                    <input id="platform-linux" type="checkbox">
-                    <label for="platform-linux">Linux (Flatpak)</label>
+                    <input id="platform-flathub" type="checkbox">
+                    <label for="platform-flathub">Linux (Flatpak)</label>
                 </div>
-                <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+                <div class="filter-option">
+                    <input id="platform-linux" type="checkbox">
+                    <label for="platform-linux">Linux (other)</label>
+                </div>
+                <div class="reset-links">Select <button>all</button> - <button>none</button></div>
             </div>
         </div>
         <div class="filter-wrap">
-            <div id="filter-maturity" class="filter">
+            <button id="filter-maturity" class="filter">
                 Maturity
                 <div class="divider"></div>
-                <img src="/assets/down-arrow.svg">
-            </div>
+                <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
+            </button>
             <div id="filter-maturity-menu" class="filter-menu">
                 <p>The client can support any of the maturity levels checked.</p>
                 <div class="filter-option">
@@ -118,18 +122,18 @@
                     <label for="maturity-alpha">Alpha</label>
                 </div>
                 <div class="filter-option">
-                    <input id="maturity-obsolete" type="checkbox" checked>
+                    <input id="maturity-obsolete" type="checkbox">
                     <label for="maturity-obsolete">Obsolete</label>
                 </div>
-                <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+                <div class="reset-links">Select <button>all</button> - <button>none</button></div>
             </div>
         </div>
         <div class="filter-wrap">
-            <div id="filter-licence" class="filter">
+            <button id="filter-licence" class="filter">
                 Licence
                 <div class="divider"></div>
-                <img src="/assets/down-arrow.svg">
-            </div>
+                <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
+            </button>
             <div id="filter-licence-menu" class="filter-menu">
                 <p>The client can support any of the licences checked.</p>
                 {% for licence in licences %}
@@ -138,15 +142,15 @@
                     <label for="licence-{{ licence | slugify }}">{{ licence }}</label>
                 </div>
                 {% endfor %}
-                <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+                <div class="reset-links">Select <button>all</button> - <button>none</button></div>
             </div>
         </div>
         <div class="filter-wrap">
-            <div id="filter-features" class="filter">
+            <button id="filter-features" class="filter">
                 Features
                 <div class="divider"></div>
-                <img src="/assets/down-arrow.svg">
-            </div>
+                <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
+            </button>
             <div id="filter-features-menu" class="filter-menu">
                 <p>The client must support all of the features checked.</p>
                 <div class="filter-option">
@@ -181,7 +185,7 @@
                     <input id="feature-multi-language" type="checkbox">
                     <label for="feature-multi-language">Multi-language</label>
                 </div>
-                <div class="reset-links">Select <a>all</a> - <a>none</a></div>
+                <div class="reset-links">Select <button>all</button> - <button>none</button></div>
             </div>
         </div>
     </div>
@@ -197,7 +201,7 @@
         {% endif %}
         <div>
             <a href="{{ client.path }}" class="project-card client {{ clients::classes(client=client.extra) }}">
-                <img src="./{{ thumbnail }}" alt="{{ client.title }} Preview">
+                <img src="./{{ thumbnail }}" alt="{{ client.title }} Logo">
                 <h3>{{ client.title }}</h3>
                 <span>{{ client.content | safe }}</span>
                 <div class="platform-links">

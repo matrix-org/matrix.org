@@ -6,6 +6,9 @@ platform-ios
 platform-android
 {% endif %}
 {% if client.packages.flathub.app_id %}
+platform-flathub
+{% endif %}
+{% if client.packages.other_linux_link %}
 platform-linux
 {% endif %}
 {% if client.packages.webapp %}

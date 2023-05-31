@@ -20,7 +20,7 @@ sso = false
 multi_account = false
 multi_language = false
 [extra.packages]
-other_install_links = "https://lily-is.land/kazv/kazv#compiled-executables"
+other_linux_link = "https://lily-is.land/kazv/kazv#compiled-executables"
 +++
 
 A convergent qml/kirigami client based on libkazv.

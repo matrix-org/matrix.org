@@ -19,7 +19,7 @@ sso = true
 multi_account = true
 multi_language = false
 [extra.packages]
-other_install_links = "https://github.com/diamondburned/gotktrix/releases"
+other_linux_link = "https://github.com/diamondburned/gotktrix/releases"
 +++
 
 Matrix client in Go and GTK4.

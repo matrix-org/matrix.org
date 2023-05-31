@@ -26,6 +26,30 @@ class Filter {
             }
         });
 
+        for (const item of filterMenu.children) {
+            if (item.classList.contains("filter-option") || item.classList.contains("reset-links")) {
+                for (const child of item.children) {
+                    child.addEventListener("blur", (event) => {
+                        setTimeout(() => {
+                            if (!filterMenu.contains(document.activeElement) && document.activeElement !== document.body) {
+                                filterMenu.classList.remove("display");
+                                filterOverlay.classList.remove("display");
+                                filterButton.classList.remove("expanded");
+                            }
+                        }, 0);
+                    });
+                }
+            }
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                filterMenu.classList.remove("display");
+                filterOverlay.classList.remove("display");
+                filterButton.classList.remove("expanded");
+            }
+        });
+
         filterOverlay.addEventListener("click", (event) => {
             filterMenu.classList.remove("display");
             filterOverlay.classList.remove("display");
@@ -106,7 +130,7 @@ class AllOfFilter extends Filter {
 
     refreshActiveState() {
         let filterButton = document.getElementById(this.filterId);
-        if(this.allOf.length === 0) {
+        if (this.allOf.length === 0) {
             filterButton.classList.remove("enabled");
         } else {
             filterButton.classList.add("enabled");
@@ -181,7 +205,7 @@ class AnyOfFilter extends Filter {
 
     refreshActiveState() {
         let filterButton = document.getElementById(this.filterId);
-        if(this.anyOf.length === this.numberOfOption) {
+        if (this.anyOf.length === this.numberOfOption) {
             filterButton.classList.remove("enabled");
         } else {
             filterButton.classList.add("enabled");
@@ -198,7 +222,7 @@ class AnyOfFilter extends Filter {
 function refreshCardsView(deckId, filters) {
     let anyOf = [];
     let allOf = [];
-    for(let filter of filters) {
+    for (let filter of filters) {
         anyOf = anyOf.concat(filter.anyOf);
         allOf = allOf.concat(filter.allOf);
     }
@@ -208,7 +232,7 @@ function refreshCardsView(deckId, filters) {
             if (child.classList.contains("project-card")) {
                 let project = child;
                 let filteredOut = false;
-                for(const filter of filters) {
+                for (const filter of filters) {
                     filteredOut = filteredOut || filter.projectIsFilteredOut(project);
                 }
 

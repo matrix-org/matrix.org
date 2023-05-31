@@ -11,6 +11,8 @@
             <p>{{ provider.description | markdown | safe }}</p>
         </div>
         <a href="{{ provider.website }}" class="call-to-action">Try them</a>
+        <p>{{ provider.description | markdown | safe }}</p>
+        <a href="{{ provider.website }}" class="call-to-action">Try {{ provider.name }}</a>
     </div>
     {% endfor %}
 </div>

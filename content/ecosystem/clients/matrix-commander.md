@@ -19,7 +19,7 @@ sso = false
 multi_account = false
 multi_language = false
 [extra.packages]
-other_install_links = "https://github.com/8go/matrix-commander#dependencies-and-installation"
+other_linux_link = "https://github.com/8go/matrix-commander#dependencies-and-installation"
 +++
 
 Simple but convenient CLI-based Matrix client app for sending and receiving.

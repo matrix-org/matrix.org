@@ -19,7 +19,7 @@ sso = false
 multi_account = false
 multi_language = false
 [extra.packages]
-other_install_links = "https://github.com/rumpelsepp/mnotify/#build"
+other_linux_link = "https://github.com/rumpelsepp/mnotify/#build"
 +++
 
 A matrix cli client

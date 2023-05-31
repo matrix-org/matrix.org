@@ -14,9 +14,11 @@
                 </a>
                 {% endif -%}
                 —
-                <a href="/author/{{ page.taxonomies.author | default(value=['unknown author']) | first | slugify }}">
-                    {{ page.taxonomies.author | default (value=["unknown author"]) | first }}
-                </a>
+                {% for author in page.taxonomies.author %}
+                <a href="/author/{{ author | default(value=['unknown author']) | slugify }}">
+                    {{ author | default(value=["unknown author"]) }}
+                </a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
             </span>
             {% if page.updated -%}
             <br>
