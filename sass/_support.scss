@@ -162,3 +162,115 @@
         }
     }
 }
+
+.membership {
+
+    max-width: 65rem;
+    padding-inline: 1rem;
+    margin-inline: auto;
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+
+    .representatives {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+
+        h3 {
+            text-align: center;
+        }
+
+        ul {
+            padding-inline: 0;
+            width: 100%;
+        }
+
+        li {
+            list-style: none;
+            text-align: center;
+            background-color: #fafafa;
+            border-radius: 8px;
+            margin-block: .5em;
+            padding: .5em 1rem;
+        }
+    }
+
+    .tiers-row {
+        display: grid;
+        grid-template-columns: repeat(4, 15rem);
+        gap: 1rem;
+        overflow-y: scroll;
+        overflow-x: visible;
+
+        .tier-card {
+            border: 1px solid var(--borders-color);
+            border-radius: 16px;
+
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+
+            h3 {
+                margin-inline: auto;
+                margin-block-start: .5rem;
+            }
+
+            .pricing {
+                background-color: #e9e9e9;
+                border-radius: 9999px;
+                margin-inline: auto;
+                padding-inline: .8em;
+            }
+
+            ul {
+                margin-block-start: 1rem;
+                padding-inline-start: 1em;
+
+                li {
+                    list-style-image: url('/assets/tick_supported.svg');
+                    margin-block: .3em;
+                }
+            }
+        }
+
+        #most-popular {
+            position: relative;
+            border-color: #000;
+            overflow: visible;
+
+            &::before {
+                overflow: visible;
+                content: "MOST POPULAR";
+                position: absolute;
+                top: -15px;
+                right: 0;
+                background-color: #000;
+                color: #fff;
+                border-radius: 8px;
+                font-size: .8rem;
+                padding: .2em;
+            }
+        }
+    }
+
+    .call-to-action {
+        background-color: #000;
+        color: #fff;
+        border-radius: 9999px;
+        padding: .5rem 2rem;
+        margin: 2rem auto;
+    }
+}
