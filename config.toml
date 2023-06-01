@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "matrix.org"
+base_url = "https://matrix.turbo.fish"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
