@@ -1,0 +1,141 @@
+{% extends "page.html" %}
+{% block head_extra %}
+<meta name="description" content="{{ page.extra.summary }}">
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        let mostPopular = document.getElementById("most-popular");
+        let tierList = mostPopular.parentElement;
+        let cardWidth = mostPopular.getBoundingClientRect().width;
+        let scrollto = mostPopular.offsetLeft - 16 - (tierList.clientWidth - cardWidth) / 2;
+        tierList.scrollLeft = scrollto;
+    });
+</script>
+{% endblock head_extra %}
+{% block content %}
+<div class="page-header support">
+    <div class="hero-block">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.extra.summary }}</p>
+    </div>
+</div>
+
+<div class="membership">
+    <div class="row">
+        <div>
+            <h2>The governing board</h2>
+            <p>
+                The Governing Board shall support the Guardians in their
+                governance of the Foundation by ensuring that the day to day
+                running of the Foundation is fair, equitable and supports the
+                overall balanced growth of the Matrix ecosystem and its
+                individual participants, without advantaging any specific
+                players.
+            </p>
+            <p>
+                The Governing Board shall carry out its advisory role under its
+                delegated authority from the Guardians and in accordance with
+                these Terms.
+            </p>
+            <p>
+                For the avoidance of doubt, the Guardians shall be under no
+                obligation to accept, act on or do anything analogous with the
+                Governing Board's recommendations.
+            </p>
+        </div>
+        <div class="specific-tasks">
+            <h3>Specific tasks will include</h3>
+            <div class="features-matrix">
+                <ul>
+                    <li class="supported">
+                        Approving the Foundation's budget, based on the Managing
+                        Director (MD)’s recommendations
+                    </li>
+                    <li class="supported">
+                        Approval of commercial partners and relationships for
+                        the Foundation with a value of over $50,000, be it as an
+                        individual contract or as a cumulative value with the
+                        same partner over the last 12 months.
+                    </li>
+                    <li class="supported">
+                        Approving initiatives and programs which will have a
+                        major impact on the brand and reputation of the
+                        Foundation, or create a new revenue stream.
+                    </li>
+                    <li class="supported">
+                        Providing a review and endorsement on a prioritised list
+                        of Spec Core Team ("SCT") priorities. The Governing
+                        Board shall not have the authority to appoint or remove
+                        SCT members (which rests solely with the Guardians).
+                    </li>
+                    <li class="supported">
+                        Providing post-meeting conclusions, recommendations and
+                        guidance on next steps to the Guardians.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="representatives">
+            <h3>Foundation Representatives</h3>
+            <ul>
+                <li>Managing Director</li>
+                <li>2 Spec Core Team Members</li>
+                <li>3 Guardians</li>
+            </ul>
+        </div>
+        <div class="representatives">
+            <h3>Members Representatives</h3>
+            <ul>
+                <li>1 per Platinum member (up to 4)</li>
+                <li>1 every 4 Gold member (up to 3)</li>
+                <li>1 every 10 Silver member (up to 2)</li>
+                <li>1 every 50 individual (up to 4)</li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h2>Membership tiers</h2>
+        <div class="tiers-row">
+            <div class="tier-card">
+                <h3>Individual</h3>
+                <div class="pricing">$60 / year</div>
+                <ul>
+                    <li>Free ticket to Matrix Conference</li>
+                </ul>
+            </div>
+            <div id="most-popular" class="tier-card">
+                <h3>Silver</h3>
+                <div class="pricing">$2k - 80k / year</div>
+                <ul>
+                    <li>Free ticket to Matrix Conference</li>
+                    <li>Logo on the sponsors page</li>
+                    <li>Medium discount on Matrix conference sponsorship</li>
+                    <li>Ability to post on the Matrix Job Board</li>
+                </ul>
+            </div>
+            <div class="tier-card">
+                <h3>Gold</h3>
+                <div class="pricing">$200k / year</div>
+                <ul>
+                    <li>Everything from Silver</li>
+                    <li>Bigger logo on the sponsors page</li>
+                    <li>A success story on the blog each year</li>
+                </ul>
+            </div>
+            <div class="tier-card">
+                <h3>Platinum</h3>
+                <div class="pricing">$500k / year</div>
+                <ul>
+                    <li>Everything from Gold</li>
+                    <li>Logo on the frontpage of matrix.org</li>
+                    <li>Press release on sponsorship</li>
+                    <li>Bigger discount on Matrix conference</li>
+                    <li>A dedicated Matrix Live episode each year</li>
+                </ul>
+            </div>
+        </div>
+        <a href="mailto:funding@matrix.org" class="call-to-action">Become a member</a>
+    </div>
+</div>
+{% endblock content %}
