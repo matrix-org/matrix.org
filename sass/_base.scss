@@ -105,6 +105,12 @@ ol:last-child {
     flex-direction: column;
     padding: 30px 40px;
 
+    a {
+        color: #999;
+        text-decoration: none;
+        margin-inline: .8rem;
+    }
+
     .internal-links {
         width: 100%;
         padding-bottom: 20px;
@@ -116,12 +122,6 @@ ol:last-child {
         @media (max-width: 767px) {
             flex-direction: column;
             text-align: center;
-        }
-
-        a {
-            color: #999;
-            text-decoration: none;
-            margin-inline: .8rem;
         }
     }
 
