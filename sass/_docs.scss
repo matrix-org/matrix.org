@@ -74,17 +74,23 @@ header {
     }
 
     ul {
-        border-left: 1px solid #bbb;
-        padding-left: 0;
+        padding-inline-start: 0;
         list-style: none;
 
         li {
-            padding-left: 1em;
+            margin-inline-start: 1em;
+            margin-block: .5em;
+
+            ul {
+                border-left: 1px solid #bbb;
+
+                li:hover {
+                    color: var(--color-link);
+                    text-decoration: underline;
+                }
+            }
         }
 
-        li:hover {
-            background-color: rgba(43, 140, 201, 0.1);
-        }
 
         a {
             color: var(--color-text);
