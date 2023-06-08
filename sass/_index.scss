@@ -315,6 +315,7 @@
         flex-direction: column;
         gap: 28px;
         padding: 250px 0 300px 0;
+        overflow: hidden;
 
         @media (max-width: 767px) {
             padding: 100px 35px 435px 35px;
