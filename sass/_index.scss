@@ -305,9 +305,8 @@
             outline: 20px solid black;
             border-radius: 30px;
             flex: auto;
-            max-width: 576px;
+            max-width: min(576px, 100%);
             margin: 20px;
-            max-width: 100%
         }
     }
 
