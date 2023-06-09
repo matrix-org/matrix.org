@@ -412,6 +412,10 @@
         }
 
         .call-to-action {
+            display: flex;
+            align-items: center;
+            gap: .5em;
+
             background-color: #fff;
             color: #000;
             font-size: 1.125rem;
@@ -419,6 +423,10 @@
             border-radius: 1000px;
             padding: .4em 2em;
             margin: 0 auto;
+
+            img {
+                max-height: 1.5em;
+            }
         }
     }
 
