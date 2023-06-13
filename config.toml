@@ -32,3 +32,8 @@ skip_anchor_prefixes = [
     # Spec page does not have anchors in the html it seems. (Probably loading using js.) This causes a false positive
     "https://spec.matrix.org/v1.3/changelog/",
 ]
+
+[search]
+# At which character to truncate the content to. Useful if you have a lot of pages and the index would
+# become too big to load on the site. Defaults to not being set.
+truncate_content_length = 256
