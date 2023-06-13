@@ -1,0 +1,135 @@
+<div id="howitworks">
+    <svg id="diagram"></svg>
+    <div id="legendBox">
+        <div class="legend" id="legend1">
+            <p>Here are three Matrix homeservers, each with one client connected.</p>
+            <p>The clients are all participating in the same Matrix room, which
+                is synchronised across the three participating servers.</p>
+        </div>
+        <div class="legend hidden" id="legend2">
+            Alice sends a JSON message to a room on her homeserver.
+            <pre>
+curl -XPOST
+ -d '{"msgtype":"m.text", "body":"hello"}'
+ "https://matrix.alice.com/_matrix/client
+ /v2/rooms/ROOM_ID/send/m.room.message
+ ?access_token=ACCESS_TOKEN"
+{
+  "event_id": "$YUwRidLecu:alice.com"
+}</pre>
+        </div>
+        <div class="legend hidden" id="legend3">
+            Alice's homeserver adds the JSON to its graph of history, linking
+            it to the most recent unlinked object(s) in the graph.
+            <br />
+            The server then signs the JSON <b>including the signatures of the
+                parent objects</b> to calculate a tamper-resistent signature for
+            the history.
+        </div>
+        <div class="legend hidden" id="legend4">
+            The server then sends the signed JSON over HTTPS to any other
+            servers which are participating in the room.
+            <pre>
+curl –XPOST –H 'Authorization: X-Matrix origin=alice.com,...' –d '{
+    "ts": 1413414391521,
+    "origin": "alice.com",
+    "destination": "bob.com",
+    "pdus": [{
+        "event_id": "$YUwRidLecu:alice.com",
+        "content": {
+        "body": "hello world",
+        "msgtype": "m.text"
+        },
+        ...
+        "pdu_type": "m.room.message",
+        "signatures": {
+        "matrix.org": {
+            "ed25519:auto": "jZXTwAH/7EZ..."
+        }
+        },
+        "sender": "@alice:alice.com"
+    }]
+}' https://matrix.bob.com:8448/_matrix/federation/v1/send/916d...</pre>
+        </div>
+        <div class="legend hidden" id="legend5">
+            The destination servers perform a series of checks on the message:
+            <ul>
+                <li>Validate the message signature to protect against tampering with history</li>
+                <li>Validate the HTTP request's auth signature to protect against identity spoofing</li>
+                <li>Validate whether Alice's historical permissions allow her to send this particular message</li>
+            </ul>
+            If these checks pass, the JSON is added to the destination servers' graphs.
+        </div>
+        <div class="legend hidden" id="legend6">
+            Destination clients receive Alice's message with a long-lived GET request.
+            (Clients are free to implement more efficient transports than polling as desired).
+            <pre>
+curl "https://matrix.bob.com/_matrix/client/v2/sync?access_token=ACCESS_TOKEN"
+{
+    "next_batch": "s72595_4483_1934",
+    "rooms": [{
+    "room_id": "!KrLWMLDnZAyTapqLWW:alice.com",
+    "events": {
+        "batch": [{
+        "event_id": "$YUwRidLecu:alice.com",
+        "type": "m.room.message",
+        "content": {
+            "body": "I am a fish",
+            "msgtype": "m.text",
+        },
+        "origin_server_ts": 1417731086797,
+        "sender": "@alice:alice.com"
+        }],
+    },
+    }]
+}</pre>
+        </div>
+        <div class="legend" id="legend7">
+            Bob sends a response to Alice's message, and his server adds his
+            message into his copy of the room's history, linking it to the most
+            recent unlinked object in the graph - Alice's last message.
+        </div>
+        <div class="legend hidden" id="legend8">
+            Meanwhile, Charlie also responds to Alice's message - racing with
+            Bob's message.
+            <br />
+            Alice, Bob and Charlie's homeservers all have different views of
+            the message history at this point - but Matrix is designed to
+            handle this inconsistency.
+        </div>
+        <div class="legend hidden" id="legend9">
+            Bob's homeserver relays his message through to Alice and Charlie's
+            servers, who accept it.
+            <br />
+            At this point Alice and Bob are in sync, but Charlie's room
+            history has split - both messages 2 and 3 follow on from message 1.
+            This is not a problem; Charlie's client will be told about Bob's
+            message and can handle it however it chooses.
+        </div>
+        <div class="legend hidden" id="legend10">
+            Charlie's homeserver relays his message through as well, at which
+            point all 3 servers have a consistent view of history again
+            (including the race between Bob and Charlie). All three clients
+            have seen all three messages, and the room history is now back in
+            sync across the participating servers.
+        </div>
+        <div class="legend hidden" id="legend11">
+            Later on, Alice sends another message - her homeserver adds it to
+            her history, and links it to the most recent unlinked objects in
+            the graph: Bob and Charlie's messages.
+            <br />
+            This effectively merges the
+            split in history and asserts the integrity of the room (or at
+            least her view of it).
+        </div>
+        <div class="legend hidden" id="legend12">
+            Alice's message is then relayed to the other participating
+            servers, which accept it and update their own history with the
+            same rules, ensuring eventual consistency and integrity of the
+            distributed room history.
+        </div>
+        <button class="legendNav">
+            Next
+        </button>
+    </div>
+</div>

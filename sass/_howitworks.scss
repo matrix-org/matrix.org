@@ -1,0 +1,66 @@
+#howitworks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-block-end: 2em;
+}
+
+#diagram {
+    max-width: 680px;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.legend pre {
+    font-size: 14px;
+    white-space: pre-wrap;
+}
+
+.legendNav {
+    margin-block-start: 1em;
+    background-color: #000;
+    color: #fff;
+    border-radius: 9999px;
+    padding: .5rem 1.5rem;
+    max-width: fit-content;
+    outline: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.networkNode circle {
+    stroke-width: 1px;
+    stroke: #ccc;
+}
+
+#diagram text {
+    font-size: 14px;
+}
+
+.message circle {
+    fill: #fff;
+    stroke-width: 3px;
+}
+
+.message text {
+    font-weight: bold;
+}
+
+.networkLink {
+    stroke: #ccc;
+    stroke-width: 3px;
+}
+
+.graphNode circle {
+    fill: #fff;
+    stroke-width: 3px;
+}
+
+.graphLink,
+.danglingGraphLink {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3px;
+}
