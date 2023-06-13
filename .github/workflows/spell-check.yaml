@@ -2,10 +2,8 @@ name: Spell Check
 on:
   push:
     branches:
-      - zola
+      - main
   pull_request:
-    branches:
-      - zola
 
 jobs:
   run:
