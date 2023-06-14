@@ -8,8 +8,10 @@ ecosystem.
 """
 +++
 
-Integrations allow you to bring content to and from third party platforms to
-make your conversations more productive… or more silly. You can see them as
-bridges, but not for chat.
+Integrations allow you to enrich your chat experience. This may include all
+kinds of things: Connecting to and from third party platforms to make your
+conversations more productive… or more silly – like bridges, but not for chat.
+Automate tasks with chat bots! Enrich your client's UI for specific use cases
+with widgets! Build your own chat experience.
 
 {{ all_integrations() }}
