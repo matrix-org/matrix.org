@@ -1,0 +1,27 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Contact: mailto:security@matrix.org
+Expires: 2024-01-30T23:00:00.000Z
+Encryption: https://matrix.org/.well-known/pgp-key.txt
+Acknowledgments: https://matrix.org/hall-of-fame
+Preferred-Languages: en
+Canonical: https://matrix.org/.well-known/security.txt
+Policy: https://matrix.org/security-disclosure-policy/
+-----BEGIN PGP SIGNATURE-----
+
+iQJIBAEBCAAyFiEEtXd2e+4DWLemT8jl1/9YA0BYH8UFAmM60mMUHHNlY3VyaXR5
+QG1hdHJpeC5vcmcACgkQ1/9YA0BYH8UqWA/7B8yfN0JbHVRkr3TsX6r9N3DuJJy1
+CX//tsSctPftLSHU8z453yeubjfCXrP0WJQEWHVtQBDAtdA5DrXrMlaAiQQU+aS0
+MS8fiBW/qRRkbNKdQmBtB7OqNhZl+YW/+kq7Z59991uaU44cQmON6yNpEVunXqdy
+wEs+z1PrPG8msoe+v7r4kfwYONjZTaSH1GdYpIkKGaK0zV+Ya/mqiZ/kqPNbJLdb
+AdkUWD2BJNSErck2Hb5mujVhPtDowyE6IGPPzfBS+6saaPPvfmhTufXSZqsCD/RO
+FSptsV7KxRchQvvUmkTNmwEQT68YrGXhTiM5D00fGqutGzQi1xpp6UKblyj/2Wjk
+MxkhzA78zPRFIhBzcZZyDE7c5WNh1dj8Qw8Mzn+ClPCqDVjsMk7vMaCS2AreeL8E
+N6RRLfrrmYEfn13j8iM4mGy6G8MfVzZbuTcC2ZJDNYriyr82nRKSCQ1CSfCLdh1C
+0ixU82x8LGu7tu9lua26Gdq/JVIUEE9U6ybjJRzrkFJmVnXmDGL8s7NpeqLVoFLw
+jMYxaW0A3I4y6wlQwJGeTwsP92lQT9abQnhNl4s1yAlCrNhF0SIT7Tl9pYVlartD
+ci95clSRHUa1qoWiGhSBS24k15ksY6ZOb1pNCycKpy02k59PgafGh8N9wnFF2xGl
+v7v3PuA2230HUDI=
+=E0Jp
+-----END PGP SIGNATURE-----
