@@ -138,6 +138,9 @@ ol:last-child {
             img {
                 margin-inline: .625rem;
             }
+            img:hover {
+                filter: brightness(0) invert(1);
+              }
         }
     }
 
