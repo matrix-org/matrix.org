@@ -8,7 +8,8 @@ extend-exclude = [
     # Username wrongly detected as typo
     "content/blog/2023/04/2023-04-14-this-week-in-matrix-2023-04-14.md",
     # Tries to parse svg and image files
-    "static/blog/img/"
+    "static/blog/img/",
+    "static/js/"
 ]
 
 [default]
