@@ -12,6 +12,8 @@ The Matrix Specification defines the interactions between all those.
 """
 +++
 
+{{ howitworks() }}
+
 Matrix works like email, but for instant messaging. People need to use a client
 to be able to write and receive messages, and they need providers to provide
 them an account on their homeserver.
