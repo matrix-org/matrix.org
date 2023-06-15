@@ -1,0 +1,18 @@
+# Remove the ACAO header which is added by default on Cloudflare Pages
+# Enables XSS filtering
+# Avoid MIME type sniffing
+# Set HSTS
+# Set X-Frame-Options
+# Referrer-Policy: default
+/*
+  ! Access-Control-Allow-Origin
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+
+# Allow ACAO for well-known client
+/.well-known/matrix/client
+  Access-Control-Allow-Origin: *
