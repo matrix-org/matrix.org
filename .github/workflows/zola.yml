@@ -2,14 +2,14 @@ name: Build site
 on:
   push:
     branches:
-      - zola
+      - main
   pull_request:
     branches:
-      - zola
+      - main
 
 jobs:
   deploy:
-    name: Build and deploy the site
+    name: Build the site
     runs-on: ubuntu-latest
     steps:
       - name: Repository checkout
@@ -25,12 +25,3 @@ jobs:
       - name: Build
         run: |
           ./zola build
-
-      - name: Deploy
-        if: github.event_name == 'push'
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-            folder: public
-            repository-name: matrix-org/zola-preview
-            branch: main
-            ssh-key: ${{ secrets.ZOLA_DEPLOY_KEY }}
