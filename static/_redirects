@@ -12,73 +12,73 @@
 /blog/home /
 /blog/home.html /
 /blog/try-matrix-now /try-matrix
-/blog/feed /atom.xml 
-/blog/category/security/feed /category/security/atom.xml 
+/blog/feed /atom.xml
+/blog/category/security/feed /category/security/atom.xml
 
 # Rewrite old landing page for the spec to the new spec docs
 /docs/spec https://spec.matrix.org
 
 
 # We used to keep the unstable spec under /docs/spec/unstable. Redirect the pages to their new home.
-/docs/spec/unstable/appendices.html https://spec.matrix.org/unstable/appendices 
-/docs/spec/unstable/application_service.html https://spec.matrix.org/unstable/application-service-api 
-/docs/spec/unstable/client_server.html https://spec.matrix.org/unstable/client_server 
-/docs/spec/unstable/howtos.html /docs/guides/client-server-api 
-/docs/spec/unstable/identity_service.html https://spec.matrix.org/unstable/identity-service-api 
-/docs/spec/unstable/index.html https://spec.matrix.org/unstable 
-/docs/spec/unstable/push_gateway.html https://spec.matrix.org/unstable/push-gateway-api 
-/docs/spec/unstable/server_server.html https://spec.matrix.org/unstable/server-server-api 
+/docs/spec/unstable/appendices.html https://spec.matrix.org/unstable/appendices
+/docs/spec/unstable/application_service.html https://spec.matrix.org/unstable/application-service-api
+/docs/spec/unstable/client_server.html https://spec.matrix.org/unstable/client_server
+/docs/spec/unstable/howtos.html /docs/guides/client-server-api
+/docs/spec/unstable/identity_service.html https://spec.matrix.org/unstable/identity-service-api
+/docs/spec/unstable/index.html https://spec.matrix.org/unstable
+/docs/spec/unstable/push_gateway.html https://spec.matrix.org/unstable/push-gateway-api
+/docs/spec/unstable/server_server.html https://spec.matrix.org/unstable/server-server-api
 
 # there also exist some broken links to the r0.2.0 spec.
-/docs/spec/r0.2.0/client_server.html https://spec.matrix.org/historical/client_server/r0.2.0.html 
+/docs/spec/r0.2.0/client_server.html https://spec.matrix.org/historical/client_server/r0.2.0.html
 
 # Rewrite old unstable spec doc requests to the equivalent page in the new spec docs
-/docs/spec/client_server/unstable https://spec.matrix.org/unstable/client-server-api 
-/docs/spec/server_server/unstable https://spec.matrix.org/unstable/server-server-api 
-/docs/spec/application_service/unstable https://spec.matrix.org/unstable/application-service-api 
-/docs/spec/identity_service/unstable https://spec.matrix.org/unstable/identity-service-api 
-/docs/spec/push_gateway/unstable https://spec.matrix.org/unstable/push-gateway-api 
+/docs/spec/client_server/unstable https://spec.matrix.org/unstable/client-server-api
+/docs/spec/server_server/unstable https://spec.matrix.org/unstable/server-server-api
+/docs/spec/application_service/unstable https://spec.matrix.org/unstable/application-service-api
+/docs/spec/identity_service/unstable https://spec.matrix.org/unstable/identity-service-api
+/docs/spec/push_gateway/unstable https://spec.matrix.org/unstable/push-gateway-api
 
 # Rewrite proposals path to new spec site
-/docs/spec/proposals https://spec.matrix.org/proposals 
+/docs/spec/proposals https://spec.matrix.org/proposals
 
 # Rewrite old "latest" spec doc requests to the equivalent page in the new spec docs
-/docs/spec/client_server/latest https://spec.matrix.org/latest/client-server-api 
-/docs/spec/server_server/latest https://spec.matrix.org/latest/server-server-api 
-/docs/spec/application_service/latest https://spec.matrix.org/latest/application-service-api 
-/docs/spec/identity_service/latest https://spec.matrix.org/latest/identity-service-api 
-/docs/spec/push_gateway/latest https://spec.matrix.org/latest/push-gateway-api 
+/docs/spec/client_server/latest https://spec.matrix.org/latest/client-server-api
+/docs/spec/server_server/latest https://spec.matrix.org/latest/server-server-api
+/docs/spec/application_service/latest https://spec.matrix.org/latest/application-service-api
+/docs/spec/identity_service/latest https://spec.matrix.org/latest/identity-service-api
+/docs/spec/push_gateway/latest https://spec.matrix.org/latest/push-gateway-api
 
 # https://github.com/matrix-org/matrix-spec/issues/2 / https://github.com/matrix-org/matrix-ansible-private/issues/5798
 /docs/api/client-server/ https://matrix.org/docs/api/
 
 # fixing up typos and 404s (please do not add to these, though; fix instead to generate the right URLs...)
-/blog/2019/05/03/security-updates-sydent-1-0-3-synapse-0-99-3-1-and-riot-android-0-9-0-0-8-99-0-8-2-b /blog/2019/05/03/security-updates-sydent-1-0-3-synapse-0-99-3-1-and-riot-android-0-9-0-0-8-99-0-8-28-a 
+/blog/2019/05/03/security-updates-sydent-1-0-3-synapse-0-99-3-1-and-riot-android-0-9-0-0-8-99-0-8-2-b /blog/2019/05/03/security-updates-sydent-1-0-3-synapse-0-99-3-1-and-riot-android-0-9-0-0-8-99-0-8-28-a
 /blog/2019/04/11/security-incident /blog/2019/04/11/we-have-discovered-and-addressed-a-security-breach-updated-2019-04-12
-/blog/2019/03/12/breaking-the-100bps-barrier-with-matrix-meshsim-coap-proxy /blog/2019/03/12/breaking-the-100-bps-barrier-with-matrix-meshsim-coap-proxy 
-/blog/2018/02/05/3d-video-calling-with-matrix-webrtc-and-webvr-at-fosdem-2018 /blog/2018/02/05/3-d-video-calling-with-matrix-webrtc-and-webvr-at-fosdem-2018 
-/blog/2020/02/01/on-privacy-versus-freedom /blog/2020/01/02/on-privacy-versus-freedom 
-/blog/2017/09/28/experiments-with-matrix-on-the-purism-librem5-starring-ubports-and-nheko/ /blog/2017/09/28/experiments-with-matrix-on-the-purism-librem-5-starring-ubports-and-nheko 
+/blog/2019/03/12/breaking-the-100bps-barrier-with-matrix-meshsim-coap-proxy /blog/2019/03/12/breaking-the-100-bps-barrier-with-matrix-meshsim-coap-proxy
+/blog/2018/02/05/3d-video-calling-with-matrix-webrtc-and-webvr-at-fosdem-2018 /blog/2018/02/05/3-d-video-calling-with-matrix-webrtc-and-webvr-at-fosdem-2018
+/blog/2020/02/01/on-privacy-versus-freedom /blog/2020/01/02/on-privacy-versus-freedom
+/blog/2017/09/28/experiments-with-matrix-on-the-purism-librem5-starring-ubports-and-nheko/ /blog/2017/09/28/experiments-with-matrix-on-the-purism-librem-5-starring-ubports-and-nheko
 
 # Static redirects for the zola rewrite
-/docs/guides/faq /faq 
-/docs/guides/ /docs/legacy 
-/clients/ /ecosystem/clients/ 
-/bots/ /ecosystem/integrations/ 
-/sdks/ /ecosystem/sdks/ 
-/bridges/ /ecosystem/bridges/ 
-/hosting/ /ecosystem/hosting 
-/otwsu/ /podcasts/otwsu 
-/twim /category/this-week-in-matrix/ 
+/docs/guides/faq /faq
+/docs/guides/ /docs/legacy
+/clients/ /ecosystem/clients/
+/bots/ /ecosystem/integrations/
+/sdks/ /ecosystem/sdks/
+/bridges/ /ecosystem/bridges/
+/hosting/ /ecosystem/hosting
+/otwsu/ /podcasts/otwsu
+/twim /category/this-week-in-matrix/
 
 # GIT
 /code http://github.com/matrix-org
 /code/ http://github.com/matrix-org
 
 # olm spec
-/docs/olm_signing.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/signing.md 
-/docs/spec/olm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/olm.md 
-/docs/spec/megolm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/megolm.md 
+/docs/olm_signing.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/signing.md
+/docs/spec/olm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/olm.md
+/docs/spec/megolm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/megolm.md
 
 ## Dynamic redirects (100 limit) ##
 ## Keep these below the static redirects ##
@@ -104,6 +104,6 @@
 
 # Dynamic redirects for the zola rewrite
 /clients/* /ecosystem/clients/:splat
-/blog/faq/* /faq 
+/blog/faq/* /faq
 /docs/howtos/* /docs/legacy/:splat
 /docs/projects/clients/:client_placeholder /ecosystem/clients/:client_placeholder
