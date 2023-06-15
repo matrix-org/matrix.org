@@ -72,8 +72,8 @@
 /twim /category/this-week-in-matrix/
 
 # GIT
-/code http://github.com/matrix-org
-/code/ http://github.com/matrix-org
+/code https://github.com/matrix-org
+/code/ https://github.com/matrix-org
 
 # olm spec
 /docs/olm_signing.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/signing.md
