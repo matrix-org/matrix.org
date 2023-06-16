@@ -1,6 +1,5 @@
 +++
 title = "Matrix.org Homeserver Terms and Conditions"
-slug = "Terms and Conditions"
 +++
 
 Please read this document carefully before accessing or using this service.

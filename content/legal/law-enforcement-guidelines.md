@@ -1,6 +1,5 @@
 +++
 title = "Law Enforcement Guidelines"
-slug = "Law Enforcement Guidelines"
 +++
 
 # Legal Guidelines
