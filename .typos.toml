@@ -9,7 +9,9 @@ extend-exclude = [
     "content/blog/2023/04/2023-04-14-this-week-in-matrix-2023-04-14.md",
     # Tries to parse svg and image files
     "static/blog/img/",
-    "static/js/"
+    "static/js/",
+    # contains German
+    "content/blog/2023/06/16-twim.md"
 ]
 
 [default]
