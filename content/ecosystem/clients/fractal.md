@@ -8,7 +8,7 @@ language = "Rust"
 last_release = "2023-03-09"
 maturity = "Beta"
 repo = "https://gitlab.gnome.org/GNOME/fractal"
-matrix_room = "#fractal:matrix.org"
+matrix_room = "#fractal:gnome.org"
 featured = false
 [extra.features]
 e2ee = true
