@@ -319,7 +319,7 @@ Synapse Maintenance Container – Docker container with tools for synapse & post
 > [docker run -it --rm registry.gitlab.com/mb-saces/synatainer:0.4.2] stui 13026 --help
 > ```
 > 
-> The tools scan the database for the issues and tells you which rooms are affected. Adding the `--fix` option, it ~~destroys your database~~ deletes the bogous extremeties. Use at your own risc. And make a backup.
+> The tools scan the database for the issues and tells you which rooms are affected. Adding the `--fix` option, it ~~destroys your database~~ deletes the bogus extremeties. Use at your own risc. And make a backup.
 > 
 > ***
 > 
