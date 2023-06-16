@@ -87,6 +87,6 @@ This Code of Conduct is based on the [TODO Group](https://twitter.com/todogroup)
 
 Version history
 
-1.0.0 - first version of document - August 2018
-1.1.0 - adding metadata and removing slugs - September 2019
-2.0.0 - major updates to reporting procedures  - June 2023
+- 1.0.0 - first version of document - August 2018
+- 1.1.0 - adding metadata and removing slugs - September 2019
+- 2.0.0 - major updates to reporting procedures  - June 2023

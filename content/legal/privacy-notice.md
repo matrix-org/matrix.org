@@ -313,17 +313,17 @@ If you want to make a complaint about the way we have processed your personal in
 
 ## Document History
 
-1.0.0 - document creation - August 2018
-1.0.1 - small fix in password section - October 2018
-1.1.0 - clarification update - August 2019
-1.1.1 - minor updates - September 2019
-1.2.0 - add metadata and remove slugs - September 2019
-1.2.1 - minor update - October 2019
-2.0.0 - document revision and branding changes - July 2020
-2.0.1 - minor update - October 2020
-2.0.2 - minor update - August 2022
-2.1.0 - clarifications on processors - November 2022
-3.0.0 - annual review and updates to processors - June 2023
-3.0.1 - minor clarification of 2.12 - June 2023
+- 1.0.0 - document creation - August 2018
+- 1.0.1 - small fix in password section - October 2018
+- 1.1.0 - clarification update - August 2019
+- 1.1.1 - minor updates - September 2019
+- 1.2.0 - add metadata and remove slugs - September 2019
+- 1.2.1 - minor update - October 2019
+- 2.0.0 - document revision and branding changes - July 2020
+- 2.0.1 - minor update - October 2020
+- 2.0.2 - minor update - August 2022
+- 2.1.0 - clarifications on processors - November 2022
+- 3.0.0 - annual review and updates to processors - June 2023
+- 3.0.1 - minor clarification of 2.12 - June 2023
 
 **A note to other startups**: this document was heavily inspired by Balsamiq's plain English ToS document. We were impressed by their championing of plain English, and wanted to reproduce that as much as possible in our own legal documentation. Feel free to draw similar inspiration from this document, though be sure to get any documents you produce checked over by a lawyer. Good luck!
