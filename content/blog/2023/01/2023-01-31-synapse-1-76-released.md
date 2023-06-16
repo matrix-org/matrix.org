@@ -12,6 +12,8 @@ as the new stable release this week. Synapse admins are encouraged to upgrade
 to it at their convenience. Please take a look at the [upgrade notes](https://matrix-org.github.io/synapse/v1.76/upgrade.html#upgrading-to-v1760)
 for any important information about upgrading.
 
+<!-- more -->
+
 ## Announcements
 
 The big news is that faster joins for all has arrived! When joining a room for the first time,

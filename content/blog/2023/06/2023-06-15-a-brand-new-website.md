@@ -22,6 +22,8 @@ I also need to thank Jonas Platte not only for his technical expertise but also 
 
 ![](/blog/img/new-morg.png)
 
+<!-- more -->
+
 ## Growing is exciting
 
 The website you have been used to for a few years grew organically with Matrix. The protocol was maturing, the community was getting wider, Matrix was getting more traction in various places, the commercial activity around Matrix allowed companies to hire people to work on the protocol and implementations around it, and as a lot of content was produced.

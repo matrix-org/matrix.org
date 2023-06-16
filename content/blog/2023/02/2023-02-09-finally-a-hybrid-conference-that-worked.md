@@ -22,6 +22,8 @@ has proved to be robust and served us well during the pandemic. Returning to an
 in-person conference didn’t mean we had to throw it all away… quite the
 opposite!
 
+<!-- more -->
+
 This year the OSS community could gather in-person, go see each other’s stands,
 and attend all too few of all the fascinating talks the speakers had prepared
 for us… but the conference was yet more.. Some of us couldn’t make it in person

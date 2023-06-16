@@ -13,6 +13,8 @@ as the new stable release this week. Synapse admins are encouraged to upgrade
 to it at their convenience. It seems like the blog post for [version 1.74](https://github.com/matrix-org/synapse/releases/tag/v1.74.0)
  was eaten by Santa's reindeer, so this post will also cover changes from it.
 
+<!-- more -->
+
 ## Announcements
 
 There were no special announcements for the 1.75 release.

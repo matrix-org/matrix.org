@@ -18,6 +18,7 @@ Matrix 1.6 sees just 7 MSCs get merged, though this is to be expected from a mai
 
 We’ve covered a couple of the MSCs below, but read on to the full changelog for the full picture.
 
+<!-- more -->
 
 ## MSC3030: Jump to date API
 

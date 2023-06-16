@@ -11,6 +11,8 @@ Greetings Matrix fans! We've published Synapse [version 1.77](https://github.com
 as the new stable release this week. Synapse admins are encouraged to upgrade
 to it at their convenience.
 
+<!-- more -->
+
 ## The new stuff
 
 ### Experimental support for intentional mentions (MSC3952)

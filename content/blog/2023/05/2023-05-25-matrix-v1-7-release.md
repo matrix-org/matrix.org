@@ -16,6 +16,7 @@ Adding support for a spec release can be a significant body of work. Instead of 
 
 Today, we see 15 MSCs achieve their formally adopted status. All of them bring forward some much-needed features to Matrix, and a few highlights are below. Read on to the full changelog for a complete overview, and for a sneak peak at what the Spec Core Team (SCT) is planning to look at for v1.8 👀
 
+<!-- more -->
 
 ## 🖼️ Finally, improvements to media in Matrix
 

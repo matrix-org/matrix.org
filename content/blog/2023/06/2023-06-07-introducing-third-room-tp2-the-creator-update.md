@@ -24,6 +24,8 @@ Today, we’re incredibly excited to announce **Third Room Technology Preview 2:
 As a reminder: the Third Room team is a tiny band formed by Robert, Nate and Ajay and operates outside of all the rest of our work on Matrix: the other 97% of our effort goes into making the core of Matrix amazing (particularly the underpinnings for Element X and the next generation of Matrix clients). However, Matrix is about more than just chat and VoIP, and Third Room provides an excellent showcase of Matrix’s abilities as a general purpose communication fabric.
 </blockquote>
 
+<!-- more -->
+
 ### Introducing Web Scene Graph
 
 <div style="text-align: center">

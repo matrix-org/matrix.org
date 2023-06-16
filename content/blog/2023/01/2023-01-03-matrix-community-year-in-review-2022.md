@@ -16,6 +16,7 @@ As we send off 2022 with a bang, it makes sense to look back on what we did this
 
 I tried to reach out to as many people I have seen do "stuff" on Matrix and have them write something they would see fitting for a year in review. Now, most people have better things to do between christmas and new years, so I hope you can excuse if some projects are missing. Also I probably forgot like half of the interesting people... HOWEVER! I hope you still enjoy what everyone wrote up. And don't forget to check out the official [Matrix Holiday Update 2022](https://matrix.org/blog/2022/12/25/the-matrix-holiday-update-2022) and of course read you weekly [TWIM](https://matrix.org/blog/category/this-week-in-matrix) to keep up to date with any cool projects you find.
 
+<!-- more -->
 
 <h2>Nheko D-Bus API</h2>
 <p>A D-Bus API for the Nheko Matrix client compatible with KRunner and Rofi.</p>

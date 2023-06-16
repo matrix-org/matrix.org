@@ -12,6 +12,8 @@ as the new stable release this week. Synapse admins are encouraged to upgrade
 to it at their convenience. Please take a look at the [upgrade notes](https://matrix-org.github.io/synapse/v1.78/upgrade.html#upgrading-to-v1780)
 for any important information about upgrading.
 
+<!-- more -->
+
 ## Announcements
 
 Please note that Synapse 1.78.0 replaces the `/_synapse/admin/v1/media/<server_name>/delete` admin API with an identical
