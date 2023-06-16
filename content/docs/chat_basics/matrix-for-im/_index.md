@@ -4,7 +4,7 @@ weight = 100
 template = "docs/with_menu.html"
 aliases = ["/docs/", "/docs/chat_basics/"]
 [extra]
-updated = "2022-10-18T16:00:00Z"
+updated = "2023-06-16T16:00:00Z"
 meta_description = """
 Matrix is an open protocol many apps can use for secure, decentralised
 communications. Your first steps with Matrix start here.
