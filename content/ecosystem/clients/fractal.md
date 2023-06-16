@@ -11,14 +11,14 @@ repo = "https://gitlab.gnome.org/GNOME/fractal"
 matrix_room = "#fractal:gnome.org"
 featured = false
 [extra.features]
-e2ee = true
+e2ee = false
 spaces = false
 voip_1to1 = false
 voip_jitsi = false
 widgets = false
 threads = false
-sso = true
-multi_account = true
+sso = false
+multi_account = false
 multi_language = true
 [extra.packages]
 flathub.app_id = "org.gnome.Fractal"
