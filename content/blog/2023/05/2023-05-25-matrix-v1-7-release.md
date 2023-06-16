@@ -1,7 +1,7 @@
 +++
 title = "Matrix v1.7 release"
 date = "2023-05-25T18:56:10Z"
-path = "/blog/2023/05/25/matrix-v1-7-release"
+path = "/blog/2023/05/25/matrix-v-1-7-release"
 
 [taxonomies]
 author = ["Travis Ralston"]
