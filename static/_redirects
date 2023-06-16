@@ -43,7 +43,9 @@
 /docs/spec/proposals https://spec.matrix.org/proposals
 
 # Rewrite old "latest" spec doc requests to the equivalent page in the new spec docs
+/docs/spec/client_server/latest.html https://spec.matrix.org/latest/client-server-api
 /docs/spec/client_server/latest https://spec.matrix.org/latest/client-server-api
+/docs/spec/server_server/latest.html https://spec.matrix.org/latest/server-server-api
 /docs/spec/server_server/latest https://spec.matrix.org/latest/server-server-api
 /docs/spec/application_service/latest https://spec.matrix.org/latest/application-service-api
 /docs/spec/identity_service/latest https://spec.matrix.org/latest/identity-service-api
