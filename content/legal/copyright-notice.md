@@ -66,9 +66,9 @@ It is our policy in appropriate circumstances to disable and/or terminate the ac
 
 ### Version history
 
-1.0.0 - first version of document - August 2018
-1.1.0 - adding metadata and removing slugs - September 2019
-1.2.0 - rebrand changes - July 2020
-1.2.1 - legal entity details fix - August 2022
-2.0.0 - add Element German legal entity - June 2023
+- 1.0.0 - first version of document - August 2018
+- 1.1.0 - adding metadata and removing slugs - September 2019
+- 1.2.0 - rebrand changes - July 2020
+- 1.2.1 - legal entity details fix - August 2022
+- 2.0.0 - add Element German legal entity - June 2023
 

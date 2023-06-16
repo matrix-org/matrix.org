@@ -219,11 +219,11 @@ You may also be subject to additional terms and conditions that may apply when y
 
 ## 15. Document History
 
-1.0.0 - first version of document - August 2018
-1.1.0 - adding metadata and removing slugs - September 2019
-1.2.0 - branding changes - July 2020
-1.2.1 - minor updates - July 2020
-1.2.2 - minor updates - August 2022
-2.0.0 - clarifications around the relationship between the Foundation and Element - June 2023
+- 1.0.0 - first version of document - August 2018
+- 1.1.0 - adding metadata and removing slugs - September 2019
+- 1.2.0 - branding changes - July 2020
+- 1.2.1 - minor updates - July 2020
+- 1.2.2 - minor updates - August 2022
+- 2.0.0 - clarifications around the relationship between the Foundation and Element - June 2023
 
 **A note to other startups:** this document was heavily inspired by [Balsamiq's plain English ToS document](https://docs.balsamiq.com/mybalsamiq/tos/). We were impressed by their championing of plain English, and wanted to reproduce that as much as possible in our own legal documentation. Feel free to draw similar inspiration from this document, though be sure to get any documents you produce checked over by a lawyer. Good luck!
