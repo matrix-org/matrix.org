@@ -1086,7 +1086,7 @@ Content-Type: application/json
 1. *Only* sign the keys mentioned above, do *not* sign any other keys.
 2. Use the correct key to sign the correct key type - self_signing for your own things, user_signing
    for other users and your own device key for your own master key.
-3. If you don't have the self_signing or user_signing keys cached, you might have to propmpt the user
+3. If you don't have the self_signing or user_signing keys cached, you might have to prompt the user
    to open their SSSS with their recovery passphrase / key.
 4. If you are doing the first verification with an own device you don't have any cross-signing keys
    yet. Signing the other persons device key doesn't make much sense, as it is likely already signed.
