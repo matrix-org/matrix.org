@@ -138,3 +138,7 @@ article.post {
     // scroll a bit further down so the header doesn't obstruct the content that was scrolled to
     scroll-margin-top: 60px;
 }
+
+h3 a {
+    color: var(--color-link);
+}
