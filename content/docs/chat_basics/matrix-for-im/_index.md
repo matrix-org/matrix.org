@@ -4,7 +4,7 @@ weight = 100
 template = "docs/with_menu.html"
 aliases = ["/docs/", "/docs/chat_basics/"]
 [extra]
-updated = "2022-10-18T16:00:00Z"
+updated = "2023-06-16T16:00:00Z"
 meta_description = """
 Matrix is an open protocol many apps can use for secure, decentralised
 communications. Your first steps with Matrix start here.
@@ -21,7 +21,7 @@ Matrix works a little like email, but instantaneous and secure:
   account, you can use different Matrix apps for the same Matrix account.
 
 Several apps exist, but we're going to go with Element for the sake of
-simplicity, as it's among the most advanced apps on the market.
+simplicity, as it's among the most fully-featured Matrix apps on the market.
 
 Once you are more comfortable with the basics and if you want to use another
 app, head to the [clients](/ecosystem/clients) section of this website.
