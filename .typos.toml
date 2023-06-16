@@ -15,12 +15,16 @@ extend-exclude = [
 [default]
 
 [default.extend-words]
-feld = "feld" # username
+requestor = "requestor" # valid spelling variant
 tha = "tha" # intentional, followed by apostrophe
+morg = "morg" # abbreviation for matrix.org, used in filename
 
+Allo = "Allo" # Google Allo
+CSAE = "CSAE" # abbreviation
 Flate = "Flate" # compression algorithm
 Konversation = "Konversation"
 Ther = "Ther" # intentionally not a complete word
+Twosday = "Twosday" # quoted, portmanteau
 
 # https://github.com/crate-ci/typos/issues/399
 ERRO = "ERRO"
@@ -42,7 +46,9 @@ ist = "ist" # raim.ist
 loca = "loca" # loca.lt
 onl = "onl" # supercable.onl
 ons = "ons" # add-ons
+Vai = "Vai" # VaiTon
 whos = "whos" # whos-in-this-room
 
-# Name
+# (user)names
+feld = "feld"
 Brose = "Brose"
