@@ -21,6 +21,7 @@ The DMA touches upon different key topics, from self-preferencing behaviour to a
 
 About 900 people participated online, and around 80 people were present in person: the maximum the room could hold. It was particularly fun to see representatives from the whole industry turning up in person, including folks from XMPP, MIMI (the new IETF working group on messaging interoperability), MLS, us from Matrix obviously (alongside Matrix ecosystem representatives from Beeper and NeoChat!) - all together with the Body of European Regulators for Electronic Communications ([BEREC](https://www.berec.europa.eu/en/berec/what-is-berec)), civil society representatives (like the Federation of German Consumer Organisations ([VZBV](https://VZBV.de)) and European Digital Rights ([EDRi](https://edri.org))), mobile network operators, local network agencies, and obviously some of those who are likely to be designated as gatekeepers, such as Meta, Apple and Google.
 
+<!-- more -->
 
 ## So what was discussed?
 
