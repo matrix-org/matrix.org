@@ -38,18 +38,28 @@
 /docs/spec/application_service/unstable https://spec.matrix.org/unstable/application-service-api
 /docs/spec/identity_service/unstable https://spec.matrix.org/unstable/identity-service-api
 /docs/spec/push_gateway/unstable https://spec.matrix.org/unstable/push-gateway-api
+#  and the .html suffix
+/docs/spec/client_server/unstable.html https://spec.matrix.org/unstable/client-server-api
+/docs/spec/server_server/unstable.html https://spec.matrix.org/unstable/server-server-api
+/docs/spec/application_service/unstable.html https://spec.matrix.org/unstable/application-service-api
+/docs/spec/identity_service/unstable.html https://spec.matrix.org/unstable/identity-service-api
+/docs/spec/push_gateway/unstable.html https://spec.matrix.org/unstable/push-gateway-api
 
 # Rewrite proposals path to new spec site
 /docs/spec/proposals https://spec.matrix.org/proposals
 
 # Rewrite old "latest" spec doc requests to the equivalent page in the new spec docs
-/docs/spec/client_server/latest.html https://spec.matrix.org/latest/client-server-api
 /docs/spec/client_server/latest https://spec.matrix.org/latest/client-server-api
-/docs/spec/server_server/latest.html https://spec.matrix.org/latest/server-server-api
 /docs/spec/server_server/latest https://spec.matrix.org/latest/server-server-api
 /docs/spec/application_service/latest https://spec.matrix.org/latest/application-service-api
 /docs/spec/identity_service/latest https://spec.matrix.org/latest/identity-service-api
 /docs/spec/push_gateway/latest https://spec.matrix.org/latest/push-gateway-api
+#  and the .html suffix
+/docs/spec/client_server/latest.html https://spec.matrix.org/latest/client-server-api
+/docs/spec/server_server/latest.html https://spec.matrix.org/latest/server-server-api
+/docs/spec/application_service/latest.html https://spec.matrix.org/latest/application-service-api
+/docs/spec/identity_service/latest.html https://spec.matrix.org/latest/identity-service-api
+/docs/spec/push_gateway/latest.html https://spec.matrix.org/latest/push-gateway-api
 
 # https://github.com/matrix-org/matrix-spec/issues/2 / https://github.com/matrix-org/matrix-ansible-private/issues/5798
 /docs/api/client-server/ https://playground.matrix.org/
