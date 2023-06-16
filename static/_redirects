@@ -94,12 +94,11 @@
 # Dynamic app specific rewrites that depend on the deployed version
 /blog/try-matrix-now/* /try-matrix/:splat
 
+# Dynamic old "latest" spec doc requests to the equivalent page in the new spec docs
+/docs/spec/rooms/* https://spec.matrix.org/latest/rooms/:splat
 
 # Dynamic old landing page for the spec to the new spec docs
 /docs/spec/* https://spec.matrix.org/:splat
-
-# Dynamic old "latest" spec doc requests to the equivalent page in the new spec docs
-/docs/spec/rooms/* https://spec.matrix.org/latest/rooms/:splat
 
 # Dynamic GIT
 /git/* https://git.matrix.org/:splat
