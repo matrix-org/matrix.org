@@ -65,6 +65,8 @@ image = "https://matrix.org/blog/img/matrix-logo.png"
 > 
 > Do read the MSC and give feedback if relations is something that excites you.
 
+<!-- more -->
+
 ## Dept of Servers 🏢
 
 ### Telodendria ([website](https://telodendria.io))
