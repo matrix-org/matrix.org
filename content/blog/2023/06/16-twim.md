@@ -20,7 +20,7 @@ image = "https://matrix.org/blog/img/matrix-logo.png"
 
 [Andrew Morgan (anoa) [GMT-6]](https://matrix.to/#/@andrewm:element.io) reports
 
-> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://spec.matrix.org/proposals.
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://spec.matrix.org/proposals>.
 > 
 > ## MSC Status
 > 
@@ -95,7 +95,7 @@ Synapse is a Matrix homeserver implementation developed by the matrix.org core t
 > * Correctly clear caches when we delete a room
 > * Enable support for [MSC3952](https://github.com/matrix-org/matrix-spec-proposals/pull/3952): intentional mentions
 > 
-> and much more. If you'd like to take a deep dive into the changes, you can find the release notes [here](https://github.com/matrix-org/synapse/releases/tag/v1.82.0) and as always, if you encounter a bug feel free to report it at https://github.com/matrix-org/synapse/issues/new/choose.
+> and much more. If you'd like to take a deep dive into the changes, you can find the release notes [here](https://github.com/matrix-org/synapse/releases/tag/v1.82.0) and as always, if you encounter a bug feel free to report it at <https://github.com/matrix-org/synapse/issues/new/choose>.
 
 ## Dept of Clients 📱
 
@@ -116,9 +116,6 @@ Matrix client for Emacs
 
 [alphapapa](https://matrix.to/#/@alphapapa:matrix.org) says
 
-> The following update is pre-formatted as Markdown for your convenience.
-> 
-> #+begin_src markdown
 > TWIM: [Ement.el](https://github.com/alphapapa/ement.el), a Matrix client for the [GNU Emacs](https://www.gnu.org/software/emacs/) text editor and Lisp machine, has been released at v0.10.  Changes include:
 > 
 > **Security Fixes**
@@ -150,7 +147,6 @@ Matrix client for Emacs
 > * Messages edited multiple times sometimes weren't correctly replaced.
 > 
 > Feel free to join us in the chat room, [#ement.el:matrix.org](https://matrix.to/#/#ement.el:matrix.org).
-> #+end_src
 
 ### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
 
@@ -252,7 +248,7 @@ Next-gen crypto-included SDK for developing Clients, Bots and Appservices; writt
 
 > For a while, I and a couple of other people have been working and testing on a bot to parse LaTeX and LilyPond expressions. This allows people on clients like Nheko to send and see math equations on LaTeX(and even more, like custom packages, and TikZ support) and sheet music with LilyPond, both on normal, and encrpyted rooms!
 > 
-> Check out the code(and maybe host your own): https://codeberg.org/lda/TexLiLy (mirror), https://git.freetards.xyz/lda/TexLiLy (original)
+> Check out the code(and maybe host your own): <https://codeberg.org/lda/TexLiLy> (mirror), <https://git.freetards.xyz/lda/TexLiLy> (original)
 > 
 > ![](/blog/img/e67c93d8a829055b8cb9141ecbd2b59ca35a4c3d.png)
 
@@ -269,7 +265,7 @@ A plugin-based Matrix bot system.
 > [maubot-join](https://github.com/williamkray/maubot-join) is a helpful plugin that allows you to turn off Maubot's auto-join feature, and rest assured that only a known list of users can invite your maubot to any new rooms.
 > [maubot-kickbot](https://github.com/williamkray/maubot-kickbot) will watch activity within the rooms in a Space and generate a report of inactive users. If you make your bot a moderator (or whatever your appropriate power-level is), the bot can also kick inactive users out of all rooms in the space and the space itself. Helpful for tidying up your community.
 > 
-> all of these plugins, and any other Maubot plugin I come across, can be found in a hopefully-easy-to-use list at https://maubotplugins.mssj.me. Please feel free to submit more that aren't here!
+> all of these plugins, and any other Maubot plugin I come across, can be found in a hopefully-easy-to-use list at <https://maubotplugins.mssj.me>. Please feel free to submit more that aren't here!
 
 ### flip-matrix-bot ([website](https://gitlab.com/FriendlyLinuxPlayers/flip-matrix-bot))
 
@@ -350,7 +346,7 @@ A Matrix bot for the [Friendly Linux Players](https://friendlylinuxplayers.org/)
 
 [uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) says
 
-> As promised, I've been working on the end-to-end encryption chapter of my [Matrix client tutorial](https://uhoreg.gitlab.io/matrix-tutorial/index.html).  I've recently added an sections on [uploading device keys and one-time keys](https://uhoreg.gitlab.io/matrix-tutorial/device_keys.html) and [keeping track of recipient devices](https://uhoreg.gitlab.io/matrix-tutorial/device_tracking.html), both which of were much longer than I expected (and they're not even complete yet).  Next up is the Megolm encryption and decryption section.  As usual, feedback is welome.  The source code is at https://gitlab.com/uhoreg/matrix-tutorial
+> As promised, I've been working on the end-to-end encryption chapter of my [Matrix client tutorial](https://uhoreg.gitlab.io/matrix-tutorial/index.html).  I've recently added an sections on [uploading device keys and one-time keys](https://uhoreg.gitlab.io/matrix-tutorial/device_keys.html) and [keeping track of recipient devices](https://uhoreg.gitlab.io/matrix-tutorial/device_tracking.html), both which of were much longer than I expected (and they're not even complete yet).  Next up is the Megolm encryption and decryption section.  As usual, feedback is welome.  The source code is at <https://gitlab.com/uhoreg/matrix-tutorial>
 
 ## Dept of Ping
 
