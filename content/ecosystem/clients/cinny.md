@@ -16,11 +16,11 @@ e2ee = true
 spaces = true
 voip_1to1 = false
 voip_jitsi = false
-widgets = true
+widgets = false
 threads = false
 sso = true
 multi_account = false
-multi_language = true
+multi_language = false
 [extra.packages]
 windows_installer = "https://github.com/cinnyapp/cinny-desktop/releases"
 macos_installer = "https://github.com/cinnyapp/cinny-desktop/releases"
