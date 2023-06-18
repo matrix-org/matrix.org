@@ -1,7 +1,7 @@
 +++
 title = "Introducing Third Room TP2: The Creator Update"
 date = "2023-06-07T15:15:43Z"
-path = "/blog/2023/06/07/introducing-third-room-tp2-the-creator-update"
+path = "/blog/2023/06/07/introducing-third-room-tp-2-the-creator-update"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
