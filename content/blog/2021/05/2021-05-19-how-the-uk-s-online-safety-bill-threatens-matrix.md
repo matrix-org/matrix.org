@@ -3,6 +3,7 @@ title = "How the UK's Online Safety Bill threatens Matrix"
 date = "2021-05-19T15:47:03Z"
 updated = "2021-05-19T14:48:44Z"
 path = "/blog/2021/05/19/how-the-uk-s-online-safety-bill-threatens-matrix"
+aliases = ["/blog/2021/05/19/how-the-u-ks-online-safety-bill-threatens-matrix"]
 
 [taxonomies]
 author = ["Denise Almeida"]
