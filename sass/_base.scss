@@ -1,5 +1,6 @@
 :root {
     --page-max-width: 57rem;
+    --page-with-toc-max-width: 81rem;
     --navbar-height: 5.937rem;
 
     --color-text: #333;
@@ -95,6 +96,10 @@ ol:last-child {
     }
 }
 
+.content.with-sidebar {
+    max-width: var(--page-with-toc-max-width);
+}
+
 .site-footer {
     position: relative;
     z-index: 1;
@@ -138,9 +143,10 @@ ol:last-child {
             img {
                 margin-inline: .625rem;
             }
+
             img:hover {
                 filter: brightness(0) invert(1);
-              }
+            }
         }
     }
 
