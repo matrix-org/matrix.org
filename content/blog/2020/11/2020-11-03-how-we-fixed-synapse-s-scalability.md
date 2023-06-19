@@ -1,6 +1,7 @@
 +++
 title = "How we fixed Synapse's scalability!"
 path = "/blog/2020/11/03/how-we-fixed-synapse-s-scalability"
+aliases = ["/blog/2020/11/03/how-we-fixed-synapses-scalability"]
 
 [taxonomies]
 author = ["Matthew Hodgson"]

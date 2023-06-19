@@ -1,6 +1,6 @@
 +++
 title = "The story of Giveth’s new Matrix chatbot"
-path = "/blog/2018/10/11/the-story-of-giveth-s-new-matrix-chatbot"
+path = "/blog/2018/10/11/the-story-of-giveths-new-matrix-chatbot"
 
 [taxonomies]
 author = ["Eli Etzioni"]

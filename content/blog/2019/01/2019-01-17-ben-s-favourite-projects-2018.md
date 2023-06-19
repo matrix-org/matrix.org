@@ -1,6 +1,7 @@
 +++
 title = "Ben's favourite projects 2018"
 path = "/blog/2019/01/17/ben-s-favourite-projects-2018"
+aliases = ["/blog/2019/01/17/bens-favourite-projects-2018"]
 
 [taxonomies]
 author = ["Ben Parsons"]
