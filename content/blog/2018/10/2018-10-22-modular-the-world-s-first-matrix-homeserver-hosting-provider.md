@@ -1,6 +1,7 @@
 +++
 title = "Modular: the world’s first Matrix homeserver hosting provider!"
 path = "/blog/2018/10/22/modular-the-world-s-first-matrix-homeserver-hosting-provider"
+aliases = ["/blog/2018/10/22/modular-the-worlds-first-matrix-homeserver-hosting-provider"]
 
 [taxonomies]
 author = ["Matthew Hodgson"]

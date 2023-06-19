@@ -1,6 +1,7 @@
 +++
 title = "Matrix’s ‘Olm’ End-to-end Encryption security assessment released - and implemented cross-platform on Riot at last!"
 path = "/blog/2016/11/21/matrix-s-olm-end-to-end-encryption-security-assessment-released-and-implemented-cross-platform-on-riot-at-last"
+aliases = ["/blog/2016/11/21/matrixs-olm-end-to-end-encryption-security-assessment-released-and-implemented-cross-platform-on-riot-at-last"]
 
 [taxonomies]
 author = ["Matthew Hodgson"]

@@ -1,6 +1,7 @@
 +++
 title = "Matrix and Riot confirmed as the basis for France's Secure Instant Messenger app"
 path = "/blog/2018/04/26/matrix-and-riot-confirmed-as-the-basis-for-france-s-secure-instant-messenger-app"
+aliases = ["/blog/2018/04/26/matrix-and-riot-confirmed-as-the-basis-for-france-s-secure-instant-messenger-app"]
 
 [taxonomies]
 author = ["Matthew Hodgson"]

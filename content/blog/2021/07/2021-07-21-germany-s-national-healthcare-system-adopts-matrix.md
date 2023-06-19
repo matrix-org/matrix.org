@@ -2,6 +2,7 @@
 title = "Germany’s national healthcare system adopts Matrix!"
 date = "2021-07-21T15:30:48Z"
 path = "/blog/2021/07/21/germany-s-national-healthcare-system-adopts-matrix"
+aliases = ["/blog/2021/07/21/germanys-national-healthcare-system-adopts-matrix"]
 
 [taxonomies]
 author = ["Matthew Hodgson"]

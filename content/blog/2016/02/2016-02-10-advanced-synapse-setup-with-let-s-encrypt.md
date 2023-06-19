@@ -1,6 +1,7 @@
 +++
 title = "Advanced Synapse setup with Let's Encrypt"
 path = "/blog/2016/02/10/advanced-synapse-setup-with-let-s-encrypt"
+aliases = ["/blog/2016/02/10/advanced-synapse-setup-with-lets-encrypt"]
 
 [taxonomies]
 author = ["David Baker"]
