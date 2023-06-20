@@ -16,14 +16,14 @@ enable the Foundation to be more autonomous and more powerful in growing the
 ecosystem. Well the day has come: the Foundation is now able to formally accept
 members! 
 
-So what is a member of the Matrix.org Foundation? It’s an organisation or
+So what is a member of the Matrix.org Foundation? It's an organisation or
 individual who financially supports the Foundation by paying a yearly membership
 fee, and in return gets some influence in driving the direction of Matrix and
-the Foundation’s activities.
+the Foundation's activities.
 
 The key has been to create a balanced governance model, to make sure the
 Foundation stays aligned with the [Matrix manifesto](https://matrix.org/about/#matrix-manifesto).
-For this we’ve created a [Governing Board](https://matrix.org/membership/) to
+For this we've created a [Governing Board](https://matrix.org/membership/) to
 set the direction of the Foundation whilst the membership fees will fuel our
 efforts to get us there.
 
@@ -42,7 +42,7 @@ enormous.
 philanthropic investors who believe in the fundamental right to control and
 privacy in online communication**. As an open standard for real time
 communications, Matrix brings the sovereignty, security and interoperability,
-which are key to having full control over one’s own communication. By
+which are key to having full control over one's own communication. By
 financially supporting the project, people who are aligned with our beliefs
 allow us to keep fighting for our collective rights, be it by providing secure
 software or persuading regulators to protect their citizens (such as our
@@ -72,31 +72,31 @@ development.
 
 ## Stay unbiased & vendor neutral
 
-The Matrix manifesto hasn’t changed. We still believe people should have full
+The Matrix manifesto hasn't changed. We still believe people should have full
 control over their own communication, not be locked in silos, be able to
 converse securely and privately, and that communication should be available to
 everyone as a free and open, unencumbered, standard and global network.
 
-The Foundation maintains the Matrix Specification, which formalises the behaviour expected from
-the various software components of the Matrix ecosystem. We believe it’s
+The Foundation maintains the Spec, which formalises the behaviour expected from
+the various software components of the Matrix ecosystem. We believe it's
 important for both individuals using the protocol - and organisations building
-products on top of it - to be part of the decision-making process when it comes to
-shaping the evolution and functionalities of Matrix. So we have designed
-membership tiers catering for all budgets, and mapped the Governing Board
-representatives evenly across the tiers.
+products on top of it - to be part of the decision process when it comes to
+shaping the evolution and features of Matrix. So we have designed membership
+tiers catering for all budgets, and mapped the Governing Board representatives
+evenly across the tiers.
 
-The Spec Core Team appointed by the Foundation’s Guardians is particularly
+The Spec Core Team appointed by the Foundation's Guardians is particularly
 vigilant against features which only benefit particular players, or are designed
 to somehow cripple or fragment the open protocol and ecosystem in favour of
 competitive advantage. As such it is a guardian of the neutrality of the
-protocol, making sure it will serve the general public’s interests and be a
+protocol, making sure it will serve the general public's interests and be a
 solid base to build robust products on for commercial organisations.
 
 
 ## Delivering from the get go
 
 The Matrix.org Foundation wants to take a more active stance in supporting the
-protocol. The Foundation needs to respond appropriately to the Governing Board’s
+protocol. The Foundation needs to respond appropriately to the Governing Board's
 recommendations. We are [hiring a Managing Director](https://apply.workable.com/elementio/j/0D7080B8A1/)
 who will be in charge of identifying and building programmes the Foundation can
 deliver, obtaining funding for it, building a team and overseeing the delivery
@@ -109,25 +109,25 @@ community etc. Their mission will overall be to make the ecosystem thrive and
 grow.
 
 A Managing Director working full time will also allow us to increase the
-Foundation’s transparency by allowing it to report more often on such
+Foundation's transparency by allowing it to report more often on such
 programmes, independently from any vendor.
 
-## Going where we’re expected to
+## Going where we're expected to
 
 The Governing Board is the new compass of the Foundation: it refines the vision
 of the Foundation and steers the Managing Director and Spec Core Team in the
 right direction.
 
 This gives the Governing Board a lot of power over the Foundation and Matrix,
-so we’ve put in place several safeguards to ensure the Foundation remains
-healthy. 
+so we've put in place several safeguards to ensure the Foundation remains
+healthy.
 
 For example, the Guardians remain the ultimate authority, should the Governing
 Board take decisions against the interest of Matrix, and the Governing Board
 cannot appoint or remove members of the Spec Core Team.
 
 To ensure that the Governing Board is representative from every stakeholder in
-the ecosystem, we’ve included both representatives from every membership levels,
+the ecosystem, we've included both representatives from every membership levels,
 including individuals, but also representatives of those who are rooted in its
 day to day operations (i.e. the MD and the Spec Core Team), and of the
 Guardians.
