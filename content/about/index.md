@@ -8,6 +8,91 @@ and manifesto.
 """
 +++
 
+Matrix is an open protocol for decentralised, secure communications.
+
+## Matrix Manifesto
+
+We believe:
+
+* People should have full control over their own communication.
+* People should not be locked into centralised communication silos, but instead
+  be free to pick who they choose to host their communication without limiting
+  who they can reach.
+* The ability to converse securely and privately is a basic human right.
+* Communication should be available to everyone as a free and open,
+  unencumbered, standard and global network.
+
+### Mission
+
+The Matrix.org Foundation exists to act as a neutral custodian for Matrix and to
+nurture it as efficiently as possible as a single unfragmented standard, for
+the greater benefit of the whole ecosystem, not benefiting or privileging any
+single player or subset of players.
+
+For clarity: the Matrix ecosystem is defined as anyone who uses the Matrix
+protocol. This includes (non-exhaustively):
+
+* End-users of Matrix clients.
+* Matrix client developers and testers.
+* Spec developers.
+* Server admins.
+* Matrix packagers & maintainers.
+* Companies building products or services on Matrix.
+* Bridge developers.
+* Bot developers.
+* Widget developers.
+* Server developers.
+* Matrix room and community moderators.
+* End-users who are using Matrix indirectly via bridges.
+* External systems which are bridged into Matrix.
+* Anyone using Matrix for data communications.
+
+"Greater benefit" is defined as maximising:
+
+* the number of Matrix-native end-users reachable on the open Matrix network.
+* the number of regular users on the Matrix network (e.g. 30-day retained
+  federated users).
+* the number of online servers in the open federation.
+* the number of developers building on Matrix.
+* the number of independent implementations which use Matrix.
+* the number of bridged end-users reachable on the open Matrix network.
+* the signal-to-noise ratio of the content on the open Matrix network
+  (i.e. minimising spam).
+* the ability for users to discover content on their terms (empowering them to
+  select what to see and what not to see).
+* the quality and utility of the Matrix spec (as defined by ease and ability
+  with which a developer can implement spec-compliant clients, servers, bots,
+  bridges, and other integrations without needing to refer to any other
+  external material).
+
+N.B. that we consider success to be the growth of the open federated network
+rather than closed deployments. For example, if WhatsApp adopted Matrix it
+wouldn't be a complete win unless they openly federated with the rest of the
+Matrix network.
+
+### Values
+
+As Matrix evolves, it's critical that the Matrix.org Foundation team members
+remain aligned on the overall philosophy of the project, particularly in more
+subjective areas. The values we follow are:
+
+* Supporting the whole long-term ecosystem rather than individual stakeholder gain.
+* Openness rather than proprietary lock-in.
+* Interoperability rather than fragmentation.
+* Cross-platform rather than platform-specific.
+* Collaboration rather than competition.
+* Accessibility rather than elitism.
+* Transparency rather than stealth.
+* Empathy rather than contrariness.
+* Pragmatism rather than perfection.
+* Proof rather than conjecture.
+
+Patent encumbered IP is strictly prohibited from being added to the standard.
+
+Making the specification rely on non-standard/unspecified behaviour of other
+systems or actors (such as SaaS services, even open-sourced, not governed by a
+standard protocol) shall not be accepted, either.
+
 ## Governance
 
 The evolution of Matrix is managed through an open governance process, looked
@@ -71,87 +156,6 @@ The full history of the rules can be followed via:
 One of the most important items defined in the Rules are The Guiding Principles
 of the project and the definition of the Spec Core Team, which are reproduced
 below from MSC1779 for ease of reference.
-
-### Matrix Manifesto
-
-We believe:
-
-* People should have full control over their own communication.
-* People should not be locked into centralised communication silos, but instead
-  be free to pick who they choose to host their communication without limiting
-  who they can reach.
-* The ability to converse securely and privately is a basic human right.
-* Communication should be available to everyone as a free and open,
-  unencumbered, standard and global network.
-
-### Mission
-
-The Matrix.org Foundation exists to act as a neutral custodian for Matrix and to
-nurture it as efficiently as possible as a single unfragmented standard, for
-the greater benefit of the whole ecosystem, not benefiting or privileging any
-single player or subset of players.
-
-For clarity: the Matrix ecosystem is defined as anyone who uses the Matrix
-protocol. This includes (non-exhaustively):
-
-* End-users of Matrix clients.
-* Matrix client developers and testers.
-* Spec developers.
-* Server admins.
-* Matrix packagers & maintainers.
-* Companies building products or services on Matrix.
-* Bridge developers.
-* Bot developers.
-* Widget developers.
-* Server developers.
-* Matrix room and community moderators.
-* End-users who are using Matrix indirectly via bridges.
-* External systems which are bridged into Matrix.
-* Anyone using Matrix for data communications.
-
-"Greater benefit" is defined as maximising:
-
-* the number of Matrix-native end-users reachable on the open Matrix network.
-* the number of regular users on the Matrix network (e.g. 30-day retained
-  federated users).
-* the number of online servers in the open federation.
-* the number of developers building on Matrix.
-* the number of independent implementations which use Matrix.
-* the number of bridged end-users reachable on the open Matrix network.
-* the signal-to-noise ratio of the content on the open Matrix network
-  (i.e. minimising spam).
-* the ability for users to discover content on their terms (empowering them to
-  select what to see and what not to see).
-* the quality and utility of the Matrix spec (as defined by ease and ability
-  with which a developer can implement spec-compliant clients, servers, bots,
-  bridges, and other integrations without needing to refer to any other
-  external material).
-
-N.B. that we consider success to be the growth of the open federated network
-rather than closed deployments. For example, if WhatsApp adopted Matrix it
-wouldn't be a complete win unless they openly federated with the rest of the
-Matrix network.
-
-### Values
-
-As Matrix evolves, it's critical that the Spec Core Team and Guardians are aligned on the overall philosophy of the project, particularly in more subjective areas. The values we follow are:
-
-* Supporting the whole long-term ecosystem rather than individual stakeholder gain.
-* Openness rather than proprietary lock-in.
-* Interoperability rather than fragmentation.
-* Cross-platform rather than platform-specific.
-* Collaboration rather than competition.
-* Accessibility rather than elitism.
-* Transparency rather than stealth.
-* Empathy rather than contrariness.
-* Pragmatism rather than perfection.
-* Proof rather than conjecture.
-
-Patent encumbered IP is strictly prohibited from being added to the standard.
-
-Making the specification rely on non-standard/unspecified behaviour of other
-systems or actors (such as SaaS services, even open-sourced, not governed by a
-standard protocol) shall not be accepted, either.
 
 ### The Spec Core Team
 
