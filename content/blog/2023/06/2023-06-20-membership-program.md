@@ -77,7 +77,7 @@ control over their own communication, not be locked in silos, be able to
 converse securely and privately, and that communication should be available to
 everyone as a free and open, unencumbered, standard and global network.
 
-The Foundation maintains the Spec, which formalises the behaviour expected from
+The Foundation maintains the Matrix Specification, which formalises the behaviour expected from
 the various software components of the Matrix ecosystem. We believe it’s
 important for both individuals using the protocol - and organisations building
 products on top of it - to be part of the decision process when it comes to
