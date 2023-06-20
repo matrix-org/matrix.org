@@ -30,6 +30,7 @@
     {% set og_description = "Matrix, the open protocol for secure decentralised communications" %}
     {% endif %}
     <meta property="og:description" content="{{ og_description }}" />
+    <meta name="description" content="{{ og_description }}" />
     {% if page.extra.image %}
     <meta property="og:image" content="{{ page.extra.image }}" />
     {% elif section.extra.image %}
