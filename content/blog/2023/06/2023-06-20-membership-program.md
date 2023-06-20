@@ -80,7 +80,7 @@ everyone as a free and open, unencumbered, standard and global network.
 The Foundation maintains the Matrix Specification, which formalises the behaviour expected from
 the various software components of the Matrix ecosystem. We believe it’s
 important for both individuals using the protocol - and organisations building
-products on top of it - to be part of the decision process when it comes to
+products on top of it - to be part of the decision-making process when it comes to
 shaping the evolution and functionalities of Matrix. So we have designed
 membership tiers catering for all budgets, and mapped the Governing Board
 representatives evenly across the tiers.
