@@ -2,8 +2,8 @@
 name = "Postmoogle"
 maintainer = "etke.cc"
 summary = """
-An Android app that wraps [mautrix-imessage](https://github.com/tulir/mautrix-imessage)
-to bridge SMS from your Android phone to Matrix.
+An Email to Matrix bridge. 1 room = 1 mailbox.
+Postmoogle is an actual SMTP server that allows you to send and receive emails on your matrix server.
 """
 maturity = "Stable"
 language = "Go"
