@@ -8,9 +8,35 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@matrixdotorg" />
     <meta name="twitter:creator" content="@matrixdotorg" />
-
+    {% if current_url %}
+    <meta property="og:url" content="{{ current_url }}" />
+    {% endif %}
+    {% if page.title %}
+    {% set title = page.title %}
+    {% elif section.title %}
+    {% set title = section.title %}
+    {% else %}
+    {% set title = "Matrix.org" %}
+    {% endif %}
+    <meta property="og:title" content="{{ title }}" />
+    {% if page.extra.meta_description %}
+    {% set og_description = page.extra.meta_description %}
+    {% elif section.extra.meta_description %}
+    {% set og_description = section.extra.meta_description %}
+    {% else %}
+    {% set og_description = "Matrix, the open protocol for secure decentralised communications" %}
+    {% endif %}
+    <meta property="og:description" content="{{ og_description }}" />
+    {% if page.extra.image %}
+    <meta property="og:image" content="{{ page.extra.image }}" />
+    {% elif section.extra.image %}
+    <meta property="og:image" content="{{ section.extra.image }}" />
+    {% else %}
+    <meta property="og:image" content="https://matrix.org/blog/img/matrix-logo.png" />
+    {% endif %}
     <title>
         {%- if config.mode == "serve" -%}&#x1F6E0;&#xFE0F; {% endif -%}
         {%- block html_title %}Matrix.org{% endblock html_title -%}
