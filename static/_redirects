@@ -108,7 +108,7 @@
 /docs/spec/rooms/* https://spec.matrix.org/latest/rooms/:splat
 
 # Dynamic old landing page for the spec to the new spec docs
-/docs/spec/* https://spec.matrix.org/:splat
+/docs/spec/* https://spec.matrix.org/legacy/:splat
 
 # Dynamic GIT
 /git/* https://git.matrix.org/:splat
