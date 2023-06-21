@@ -1,0 +1,29 @@
+---
+summary: Test login for m.login.email.
+---
+assignee: leonerd
+created: 2015-05-21 16:35:06.0
+creator: markjh
+description: ''
+id: '11552'
+key: SYT-7
+number: '7'
+priority: '1'
+project: '10300'
+reporter: markjh
+status: '10200'
+type: '2'
+updated: 2015-06-08 14:01:35.0
+votes: '0'
+watches: '2'
+workflowId: '11653'
+---
+actions:
+- author: leonerd
+  body: Awaiting SPEC-181
+  created: 2015-06-08 13:57:55.0
+  id: '11834'
+  issue: '11552'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-08 13:57:55.0

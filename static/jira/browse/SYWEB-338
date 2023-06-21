@@ -1,0 +1,23 @@
+---
+summary: Add broadcast of state events
+---
+created: 2015-03-27 13:40:49.0
+creator: aekeroth
+description: |-
+  Add broadcast of state events on the rootscope. Makes it easier to use state events when building on top of the SDK.
+
+  See pull request #9
+id: '11267'
+key: SYWEB-338
+number: '338'
+priority: '3'
+project: '10004'
+reporter: aekeroth
+status: '10100'
+type: '4'
+updated: 2015-03-27 13:40:49.0
+votes: '0'
+watches: '1'
+workflowId: '11367'
+---
+actions: null

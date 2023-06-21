@@ -1,0 +1,37 @@
+---
+summary: 'olm: Padding at end of decrypted plaintext'
+---
+created: 2017-03-12 18:47:32.0
+creator: penguin42
+description: |-
+  I'm seeing padding at the end of the output of olm_decrypt; It looks like PKCS#7 byte padding, e.g. printf'ing the buffer as a string:
+
+  {"sender":"@penguin42:matrix.org","sender_device":"TEINhKPZ85#fJr0K","keys":{"ed25519":"bvBV0JzQVOx4016sg5pq4LH5vdbI3Js152FD98FmeDo"},"recipient":"@penguin42:matrix.org","recipient_keys":{"ed25519":"LobkR8tYo2rsSnTpDuU+AdDN5CvZ+Tt+kMSscPHwvLg"},"type":"m.room_key","content":{"algorithm":"m.megolm.v1.aes-sha2","room_id":"!UCnwUWwIKhcpaPTHtR:sw1v.org","session_id":"jMg4A1p+Fj88ZFr50x79wH8gueWjknPhZPgE4vyHQO4","session_key":"AgAAAACR+MGa+88PoBty2uaxj+zyNud3DGdvevmA6oEhELU9qDKTZU4E1sB8pE4LuczbPqWXXXpUIGA0Jf+8+YumYfARE7MFNW8R6OuoovbOgNUyJ3gSqNsDPgao/s94jIpd5rZoUuUkDVvr2WbG96tiYzSpEqoEnMzrKxX4IcDBPyxJ0IzIOANafhY/PGRa+dMe/cB/ILnlo5Jz4WT4BOL8h0DuHsU/m9SbR82mLU2XNwq8S/BiBqyOmVKyCzoVnhKj9xtzYNNEhSVodfotUdt4B/wjX2fFm2GUP0y6+l1AesC9AA","chain_index":0}}^A
+  and I've seen 12 ^L's, and 4 ^D's etc.
+id: '13100'
+key: ORG-70
+number: '70'
+priority: '3'
+project: '10003'
+reporter: penguin42
+resolution: '10100'
+resolutiondate: 2017-03-13 12:08:36.0
+status: '5'
+type: '1'
+updated: 2017-03-13 12:08:37.0
+votes: '0'
+watches: '2'
+workflowId: '13200'
+---
+actions:
+- author: richvdh
+  body: |-
+    {{olm_decrypt}} doesn't NUL-terminate its output - if you need a NUL-terminated string, you have to allocate an oversized buffer and NUL-terminate it yourself.
+
+    The case is less clear with decrypt, but consider the case of encryption: {{olm_encrypt_message_length}} returns the actual number of characters in the encryption result, excluding the NUL. If {{olm_encrypt}} stuck a NUL on the end, it would overflow the buffer. Arguably {{olm_encrypt_message_length}} should return length+1, I guess, but that might break compatibility for people who expect it to return the actual result length.
+  created: 2017-03-13 12:08:21.0
+  id: '14000'
+  issue: '13100'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-13 12:08:21.0

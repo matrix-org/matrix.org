@@ -1,0 +1,39 @@
+---
+summary: Include the "join_rules" and other config for a room in the invite.
+---
+created: 2014-09-25 15:15:39.0
+creator: manu
+description: |-
+  This is annoying because we cannot know the public status of a room before joining it.
+  Once joined, we can check the m.room.join_rules room state to check if it is public.
+
+  Note: A user of this other HS will see this room as public.
+
+  Steps to reproduce:
+   - @alice:hs creates a public room #public:hs
+   - she invites @bob:hs2
+   - @bob:hs2 will see an invitation for a private room. The visibility of this room will be marked as private in the data he will receive.
+id: '10396'
+key: SPEC-63
+number: '63'
+priority: '2'
+project: '10001'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-01-21 11:57:55.0
+status: '5'
+type: '1'
+updated: 2015-01-21 11:57:55.0
+votes: '0'
+watches: '2'
+workflowId: '10499'
+---
+actions:
+- author: kegan
+  body: 'Landed on master: {{drafts/general_api.rst}}'
+  created: 2015-01-21 11:57:55.0
+  id: '11174'
+  issue: '10396'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:57:55.0

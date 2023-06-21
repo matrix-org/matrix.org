@@ -1,0 +1,99 @@
+---
+summary: Some users mysteriously have no presence (and weird dup messages)
+---
+created: 2014-09-18 15:49:54.0
+creator: matthew
+description: ''
+id: '10327'
+key: SYN-81
+number: '81'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-26 15:45:15.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:41.0
+votes: '0'
+watches: '4'
+workflowId: '10430'
+---
+actions:
+- author: kegan
+  body: |-
+    Web client can throw this up occasionally:
+
+    {code}
+    Failed to load resource: the server responded with a status of 500 (Internal Server Error) http://localhost:8008/_matrix/client/api/v1/presence/@username:localhost/status?access_token=QHVzZXJuYW1lOmxvY2FsaG9zdA...YnswlpIVXVhFJbZjOa
+
+    mPresence - Failed to send new presence state: {"data":{"error":"Internal server error"},"status":500,"config":{"method":"PUT","transformRequest":[null],"transformResponse":[null],"url":"http://localhost:8008/_matrix/client/api/v1/presence/@username:localhost/status","params":{"access_token":"QHVzZXJuYW1lOmxvY2FsaG9zdA...YnswlpIVXVhFJbZjOa"},"data":{"presence":"unavailable"},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json;charset=utf-8"}},"statusText":"Internal Server Error"}
+    {code}
+
+    Unfortunately couldn't grab any server-side logs :/
+  created: 2014-09-23 10:40:42.0
+  id: '10387'
+  issue: '10327'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 10:40:42.0
+- author: manu
+  body: |-
+    The get member list API (/rooms/{roomId}/members) and the presence API does not provide the same information.
+    The member list API seems to lie. Here is an example for Matthew who currently appears offline in my web app view:
+
+    * Last presence event:
+    {code}
+    {
+        "content": {
+            "avatar_url": "http://base.mxtelecom.com/~matthew/me.png",
+            "displayname": "Matthew",
+            "last_active_ago": 242,
+            "presence": "online",
+            "user_id": "@matthew:matrix.org"
+        },
+        "type": "m.presence"
+    }
+    {code}
+
+
+    * member list api:
+    {code}
+    {
+        "age": 489251578,
+        "content": {
+            "avatar_url": "http://base.mxtelecom.com/~matthew/me.png",
+            "displayname": "Matthew",
+            "membership": "join",
+            "presence": "offline",             <-- Strange !!!!!
+            "prev": "leave",
+            "status_msg": null
+        },
+        "event_id": "fIdVOiTSul@matrix.org",
+        "membership": "join",
+        "prev_content": {
+            "membership": "leave",
+            "prev": "join"
+        },
+        "prev_state": "iltukZJsJb@matrix.org",
+        "room_id": "!cURbafjkfsMDVwdRDQ:matrix.org",
+        "state_key": "@matthew:matrix.org",
+        "ts": 1411517420575,
+        "type": "m.room.member",
+        "user_id": "@matthew:matrix.org"
+    }
+    {code}
+  created: 2014-09-29 17:42:35.0
+  id: '10481'
+  issue: '10327'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-29 17:42:35.0
+- author: leonerd
+  body: Speculatively closing this one as I think it should be sorted as of 0.5.0 (SYN-72)
+  created: 2014-11-26 15:45:15.0
+  id: '10854'
+  issue: '10327'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 15:45:15.0

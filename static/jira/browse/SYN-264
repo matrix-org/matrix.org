@@ -1,0 +1,65 @@
+---
+summary: Improve performance of Presence
+---
+assignee: leonerd
+created: 2015-02-10 17:31:04.0
+creator: leonerd
+description: |-
+  As per various items of {IRC/Matrix} scrollback, the presence part of (room) initialSync and event streams contributes to a major part of its runtime slowness.
+
+  Find out why and fix it.
+id: '11033'
+key: SYN-264
+number: '264'
+priority: '1'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-03-23 17:31:52.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:09.0
+votes: '0'
+watches: '3'
+workflowId: '11133'
+---
+actions:
+- author: leonerd
+  body: SYN-202 is likely related, as it may indicate an unnecessary code path or at least odd shape of the code.
+  created: 2015-02-10 17:32:36.0
+  id: '11237'
+  issue: '11033'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-10 17:32:36.0
+- author: matthew
+  body: "Feb 10 10:41\tMatthew\twhat's the story with presence?\t\t\nFeb 10 10:41\t(IRC Mjark)\t@irc_Mjark:matrix.org\t I'm happy for us to prioritise performance improvements over getting a new release out.\t\t\nFeb 10 10:41\tErik\t@erikj:jki.re\t presence seems to take a few hundred ms to calculate for initial sync\t\t\nFeb 10 10:41\tMatthew\t erik: doing what?\t\t\nFeb 10 10:42\tMatthew\t mjark: cool\t\t\nFeb 10 10:42\tErik\t@erikj:jki.re\t I believe this loop: https://github.com/matrix-org/synapse/blob/master/synapse/handlers/presence.py#L861\t\t\nFeb 10 10:43\tMatthew\t and the fact that is_visible is a non trivial db hit\t\t\nFeb 10 10:44\tMatthew\t ok. that is trivially cacheable surely\t\t\nFeb 10 10:44\tErik\t@erikj:jki.re\t Its hard to tell exactly how long it takes, since it generally seems to be stuck behind other queries on the db thread\t\t\nFeb 10 10:45\tMatthew\t and updated when room membership changes\t\t\nFeb 10 10:45\tErik\t@erikj:jki.re\t Probably, though the fact that we loop through all of usercache each time and that grows boundlessly scares me a fair bit\t\t\nFeb 10 10:47\tErik\t@erikj:jki.re\t so i think there are two avenues to explore: a) optimizing that loop and b) re-architecting to avoid doing that loop\t\t\nFeb 10 10:48\tMatthew\t LeoNerd: are you around today? can you help on this please?\n\n..."
+  created: 2015-02-10 17:45:32.0
+  id: '11239'
+  issue: '11033'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-10 17:45:32.0
+- author: erikj
+  body: |-
+    For about 4 minutes (13:46:46 - 13:50:06) the user_rooms_intersect transaction was using ~60-80% of the time of the database thread. Example line from log:
+
+    {noformat}
+    Total database time: 90.134% {user_rooms_intersect(2010): 81.085%, get_state_groups(3): 5.038%, get_rooms_for_user_where_membership_is(24): 2.014%} {select_event(839): 1.901%, build_frozen_event(839): 1.394%, decode_json(839): 1.311%
+    {noformat}
+
+    This coincided with a restart of the IRC<->Matrix Freenode bridge.
+  created: 2015-02-11 13:54:07.0
+  id: '11240'
+  issue: '11033'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-02-11 13:54:07.0
+- author: leonerd
+  body: Recent work on the 'bugs/SYN-264' branch seems to have made improvement here, merged into develop.
+  created: 2015-02-11 18:41:19.0
+  id: '11241'
+  issue: '11033'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-11 18:41:19.0

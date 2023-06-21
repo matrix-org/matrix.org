@@ -1,0 +1,30 @@
+---
+summary: Fix horiz overscrolling on android on divi homepage
+---
+created: 2016-02-06 14:50:42.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12373'
+key: ORG-39
+number: '39'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:11:17.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:11:17.0
+votes: '0'
+watches: '2'
+workflowId: '12478'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix.org/issues/18
+  created: 2017-03-21 11:11:13.0
+  id: '14022'
+  issue: '12373'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:11:13.0

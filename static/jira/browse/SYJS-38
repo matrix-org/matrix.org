@@ -1,0 +1,62 @@
+---
+summary: JS SDK can have events stuck in 'sending' state despite having been sent
+---
+assignee: kegan
+created: 2015-12-17 15:57:16.0
+creator: matthew
+description: |-
+  So far today on bfa8dd0007f4a9cb4ac3472269018e6afe39e0d0 i've had two separate events which got stuck in state 'sending'.  This means that they were greyed out and stuck at the bottom of the timeline until I refreshed. Meanwhile, the events had actually sent.
+
+  I don't have network logs, but from inspecting the timeline with Kegan, the event is stuck at the bottom of the timeline:
+
+  {code}
+  92: MatrixEvent
+  _pushActions: Object
+  _txnId: "m1450365893080"
+  encrypted: false
+  event: Object
+  content: Object
+  body: "Boo_Boo_300.gif"
+  info: Object
+  h: 300
+  mimetype: "image/gif"
+  size: 15399
+  w: 223
+  __proto__: Object
+  msgtype: "m.image"
+  url: "mxc://matrix.org/uvCZgTzCOtQplDSUSiTVqZTg"
+  __proto__: Object
+  event_id: "$145036589396048tSACd:matrix.org"
+  origin_server_ts: 1450365893202
+  room_id: "!zOmsiVucpWbRRDjSwe:matrix.org"
+  sender: "@matthew2:matrix.org"
+  type: "m.room.message"
+  unsigned: Object
+  age: 175
+  transaction_id: "m1450365893080"
+  __proto__: Object
+  __proto__: Object
+  forwardLooking: true
+  sender: RoomMember
+  status: "sending"
+  target: null
+  __proto__: Object
+  {code}
+
+  ...but is not listed as in flight in the _txnToEvent data structure.  So it was sent, must have been received by /sync, but the event state was not correctly transitioned from sending to sent.
+id: '12218'
+key: SYJS-38
+number: '38'
+priority: '1'
+project: '10204'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-12-18 09:18:05.0
+status: '5'
+type: '1'
+updated: 2015-12-18 09:18:05.0
+votes: '0'
+watches: '1'
+workflowId: '12321'
+---
+actions: null

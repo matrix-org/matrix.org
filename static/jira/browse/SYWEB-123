@@ -1,0 +1,77 @@
+---
+summary: Behaviour when HS is down is horrible
+---
+created: 2014-10-27 15:21:58.0
+creator: matthew
+description: ''
+id: '10510'
+key: SYWEB-123
+number: '123'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-24 16:58:29.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:58.0
+votes: '0'
+watches: '3'
+workflowId: '10614'
+---
+actions:
+- author: kegan
+  body: |-
+    I have seen this in the wild before when network connectivity is poor.
+
+    I think this happens because we bundle the web client with the HS. If the HS dies on {{matrix.org}} but the web client is running on {{localhost}}, you never see a broken angular page (I can't repro it), and it seems to fail more gracefully (empty room lists, data from initial sync is preserved though so you can still go into rooms and see messages). It must be a peculiar combination of some {{xxx-controller.js}} files being unable to be loaded which is causing the broken angular pages.
+
+    I can't do much about this until I can reproduce it.
+  created: 2014-10-27 17:22:09.0
+  id: '10601'
+  issue: '10510'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 17:22:09.0
+- author: erikj
+  body: Could it be the fact that some things will be loaded from cache?
+  created: 2014-10-27 17:23:39.0
+  id: '10602'
+  issue: '10510'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-27 17:23:39.0
+- author: kegan
+  body: I've tried nuking the cache but to no avail.
+  created: 2014-10-27 17:24:53.0
+  id: '10603'
+  issue: '10510'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 17:24:53.0
+- author: erikj
+  body: No, I mean that it only blows up in such a way if it _does_ loads some things from cache, which would make it harder to reproduce.
+  created: 2014-10-27 17:30:21.0
+  id: '10605'
+  issue: '10510'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-27 17:30:21.0
+- author: matthew
+  body: the webclient on matrix.org is served by apache, not by the HS.  So yes, it doesn't leak a {{ }} style template, but it does show an ugly empty page with no recents or avatar or public rooms...
+  created: 2014-10-27 18:38:29.0
+  id: '10609'
+  issue: '10510'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-27 18:38:29.0
+- author: kegan
+  body: |-
+    Added spinners whilst doing requests.
+    Added error dialogs for timeouts.
+  created: 2014-11-24 16:58:29.0
+  id: '10827'
+  issue: '10510'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-24 16:58:29.0

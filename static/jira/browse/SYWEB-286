@@ -1,0 +1,31 @@
+---
+summary: Webclient should announce what version of the code it's running
+---
+assignee: kegan
+created: 2015-02-16 15:20:31.0
+creator: matthew
+description: ''
+id: '11077'
+key: SYWEB-286
+number: '286'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-03 11:06:34.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:55.0
+votes: '0'
+watches: '2'
+workflowId: '11177'
+---
+actions:
+- author: kegan
+  body: It looks like {{VERSION}} isn't being used anymore. I'll probably move that to sit in {{syweb/webclient}} then use that to announce the version of the code (via a GET). I'll also make {{__init__.py}} read {{VERSION}} instead of duplicating the version code all over the shop.
+  created: 2015-03-02 17:40:04.0
+  id: '11333'
+  issue: '11077'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-02 17:40:04.0

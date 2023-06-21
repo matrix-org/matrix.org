@@ -1,0 +1,36 @@
+---
+summary: Command/API endpoint/something to reload application services
+---
+created: 2015-10-04 22:57:39.0
+creator: illicitonion
+description: ''
+id: '11995'
+key: SYN-495
+number: '495'
+priority: '3'
+project: '10000'
+reporter: illicitonion
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:26.0
+votes: '0'
+watches: '2'
+workflowId: '12098'
+---
+actions:
+- author: illicitonion
+  body: Or at least being able to append on-the-fly
+  created: 2015-10-04 22:59:41.0
+  id: '12220'
+  issue: '11995'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-10-04 22:59:41.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1395'
+  created: 2016-11-07 18:28:26.0
+  id: '13704'
+  issue: '11995'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:26.0

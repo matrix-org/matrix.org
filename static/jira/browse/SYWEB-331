@@ -1,0 +1,20 @@
+---
+summary: Additions to the push settings lists should be appended, not prepended
+---
+created: 2015-03-13 20:36:46.0
+creator: matthew
+description: ''
+id: '11230'
+key: SYWEB-331
+number: '331'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-03-13 20:36:46.0
+votes: '0'
+watches: '1'
+workflowId: '11330'
+---
+actions: null

@@ -1,0 +1,20 @@
+---
+summary: removing room name yields blank room name rather than returning to the default name
+---
+created: 2016-01-22 10:41:42.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12341'
+key: SYIOS-201
+number: '201'
+priority: '3'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-01-22 10:41:42.0
+votes: '0'
+watches: '1'
+workflowId: '12446'
+---
+actions: null

@@ -1,0 +1,28 @@
+---
+summary: Debian package should also sort out a TURN for you
+---
+created: 2016-01-08 01:30:56.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12284'
+key: SYN-586
+number: '586'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:54.0
+votes: '0'
+watches: '2'
+workflowId: '12389'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1468'
+  created: 2016-11-07 18:28:54.0
+  id: '13773'
+  issue: '12284'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:54.0

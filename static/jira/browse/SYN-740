@@ -1,0 +1,28 @@
+---
+summary: Trim leading/trailing spaces when loading keywords for highlighting
+---
+created: 2016-07-27 07:06:25.0
+creator: kitsune
+description: ''
+id: '12773'
+key: SYN-740
+number: '740'
+priority: '3'
+project: '10000'
+reporter: kitsune
+status: '10100'
+type: '4'
+updated: 2016-11-07 18:29:48.0
+votes: '0'
+watches: '2'
+workflowId: '12873'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1575'
+  created: 2016-11-07 18:29:48.0
+  id: '13898'
+  issue: '12773'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:48.0

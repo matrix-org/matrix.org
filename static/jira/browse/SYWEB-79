@@ -1,0 +1,23 @@
+---
+summary: The webclient isn't aware of ratelimiting errors and should presumably queue and retry at the right rate if limited
+---
+assignee: kegan
+created: 2014-09-22 20:10:00.0
+creator: matthew
+description: ''
+id: '10369'
+key: SYWEB-79
+number: '79'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-25 16:55:37.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:01.0
+votes: '0'
+watches: '1'
+workflowId: '10472'
+---
+actions: null

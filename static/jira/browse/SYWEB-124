@@ -1,0 +1,20 @@
+---
+summary: Error messages on VoIP messages flicker up too briefly
+---
+created: 2014-10-27 15:36:15.0
+creator: matthew
+description: ''
+id: '10511'
+key: SYWEB-124
+number: '124'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2014-12-10 10:03:57.0
+votes: '0'
+watches: '1'
+workflowId: '10615'
+---
+actions: null

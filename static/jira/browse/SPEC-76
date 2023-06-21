@@ -1,0 +1,130 @@
+---
+summary: Media Repository
+---
+assignee: markjh
+created: 2014-12-02 15:45:19.0
+creator: markjh
+description: ''
+id: '10753'
+key: SPEC-76
+number: '76'
+priority: '1'
+project: '10001'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-06-02 17:41:58.0
+status: '5'
+type: '1'
+updated: 2015-06-02 17:41:58.0
+votes: '0'
+watches: '3'
+workflowId: '10853'
+---
+actions:
+- author: markjh
+  body: The "/content/" API doesn't work with SSL since most HS use self-signed certificates.
+  created: 2014-12-02 15:47:15.0
+  id: '10909'
+  issue: '10753'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-12-02 15:47:15.0
+- author: markjh
+  body: |-
+    Proposed API:
+
+    Uploading:
+    {noformat}
+    => POST /_matrix/media/v1/upload?access_token=<access_token> HTTP/1.1
+       Content-Type: <media-type>
+       Content-Disposition: attachment;filename=<filename>
+
+       <media>
+
+    <= HTTP/1.1 200 OK
+       Content-Type: application/json
+
+       {"server": <server-name>, "token": <media-id>}
+    {noformat}
+
+    Downloading:
+    {noformat}
+     => GET /_matrix/media/v1/download/<server-name>/<media-id> HTTP/1.1
+
+    <= HTTP/1.1 200 OK
+       Content-Type: <media-type>
+       Content-Disposition: attachment;filename=<filename>
+
+       <media>
+    {noformat}
+
+    Thumbnailing:
+
+    {noformat}
+    => GET /_matrix/media/v1/thumbnail/<server-name>/<media-id>?width=<w>&height=<h> HTTP/1.1
+
+    <= HTTP/1.1 200 OK
+       Content-Type: image/jpeg or image/png
+         
+       <thumbnail>
+    {noformat}
+  created: 2014-12-02 16:04:06.0
+  id: '10912'
+  issue: '10753'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-12-02 16:05:53.0
+- author: erikj
+  body: |-
+    For the thumbnailing api, we should probably allow:
+     * Specifying only one of width and height
+     * Specifying a "max-width" and "max-height"
+  created: 2014-12-02 16:06:50.0
+  id: '10913'
+  issue: '10753'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-02 16:06:50.0
+- author: markjh
+  body: Should we return image metadata in the JSON body of the "/upload" response?
+  created: 2014-12-02 16:07:29.0
+  id: '10914'
+  issue: '10753'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-12-02 16:07:29.0
+- author: erikj
+  body: |-
+    bq. Should we return image metadata in the JSON body of the "/upload" response?
+
+    I think it would make it easier for clients to fill out the metadata in the message JSON if the server did return it.
+  created: 2014-12-02 16:10:34.0
+  id: '10915'
+  issue: '10753'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-02 16:10:34.0
+- author: matthew
+  body: Yeah, let's return the metadata.  And let's request the thumbnail mime-type (it can always be ignored).
+  created: 2014-12-02 16:17:15.0
+  id: '10916'
+  issue: '10753'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-02 16:17:15.0
+- author: matthew
+  body: 'final feature req: please can we specify a resize param when thumbnailing to pick between: "distort", "crop", "letterbox" and "vitruvian" (perhaps namespaced to m.?). this will make my CSS *so* much more easy. We don''t have to implement vitruvian ;)'
+  created: 2014-12-02 19:47:30.0
+  id: '10918'
+  issue: '10753'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-02 19:47:30.0
+- author: markjh
+  body: We have a specification in specification/40_content_repository.rst
+  created: 2015-06-02 17:41:58.0
+  id: '11817'
+  issue: '10753'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-06-02 17:41:58.0

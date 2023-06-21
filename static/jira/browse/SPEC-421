@@ -1,0 +1,24 @@
+---
+summary: For reading events, the intended flow of operation is to call /_matrix/client/r0/initialSync
+---
+created: 2016-07-02 06:53:02.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  This is horribly stale and confusing
+id: '12729'
+key: SPEC-421
+number: '421'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-07-12 13:13:28.0
+status: '5'
+type: '1'
+updated: 2016-07-12 13:13:28.0
+votes: '0'
+watches: '1'
+workflowId: '12829'
+---
+actions: null

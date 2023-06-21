@@ -1,0 +1,118 @@
+---
+summary: 'MatrixBridge on #rust wedged'
+---
+assignee: kegan
+created: 2015-06-28 10:30:58.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Looks like it is still getting pings from irc.mozilla.org though, so this isn't the same failure condition as BOTS-65. Looks like it might be a duplicate connection somewhere? On #rust there is no MatrixBridge but on #rust-internals there is both MatrixBridge and MatrixBridge1 (and -internals doesn't seem wedged). And yes, that did mean #rust-internals was sending duplicates IRC > Matrix way, so both connections were getting data (unsurprising given neither ping timed out)
+id: '11712'
+key: BOTS-69
+number: '69'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-06-29 15:23:01.0
+status: '5'
+type: '1'
+updated: 2015-06-29 15:23:01.0
+votes: '0'
+watches: '2'
+workflowId: '11813'
+---
+actions:
+- author: kegan
+  body: |-
+    {code}
+    [...] STARTUP [...]
+    2015-06-28 02:55:38 INFO:database storeRoomMapping (id=!PcCidzjUKXHKImhTrB:matrix.org, addr=irc.mozilla.org, chan=#rust, config=true)
+    2015-06-28 02:55:38 INFO:database storeRoomMapping (id=!lolDFtQALMcObuZIaN:matrix.org, addr=irc.mozilla.org, chan=#rust-internals, config=true)
+    2015-06-28 02:55:38 INFO:irc Bot connecting to irc.mozilla.org (2 channels)
+    2015-06-28 02:55:38 INFO:irc-server Connecting to IRC server irc.mozilla.org as MatrixBridge (user=matrixirc)- Joining channels ["#rust","#rust-internals"]
+    2015-06-28 02:55:40 INFO:irc-server Server: irc.mozilla.org (MatrixBridge) connected (local port 51539). Joining 2 channels
+    2015-06-28 03:04:50 ERROR:irc-server Server: irc.mozilla.org (MatrixBridge) Network Error: {
+      "code": "ETIMEDOUT",
+      "errno": "ETIMEDOUT",
+      "syscall": "connect"
+    }
+    2015-06-28 03:04:50 INFO:irc Bot network failure: reconnecting in 3s.
+    [...]
+    2015-06-28 03:04:53 INFO:irc Bot connecting to irc.mozilla.org (2 channels)
+    2015-06-28 03:04:53 INFO:irc-server Connecting to IRC server irc.mozilla.org as MatrixBridge (user=matrixirc)- Joining channels ["#rust","#rust-internals"]
+    2015-06-28 03:05:08 ERROR:irc-server irc.mozilla.org (MatrixBridge) still not connected after 15000ms. Nudging connection...
+    2015-06-28 03:05:08 INFO:irc-server Connecting to IRC server irc.mozilla.org as MatrixBridge (user=matrixirc)- Joining channels ["#rust","#rust-internals"]
+    2015-06-28 03:05:23 ERROR:irc-server irc.mozilla.org (MatrixBridge) still not connected after 15000ms. Nudging connection...
+    2015-06-28 03:05:23 INFO:irc-server Connecting to IRC server irc.mozilla.org as MatrixBridge (user=matrixirc)- Joining channels ["#rust","#rust-internals"]
+    2015-06-28 03:05:38 ERROR:irc-server irc.mozilla.org (MatrixBridge) still not connected after 15000ms. Nudging connection...
+    2015-06-28 03:05:38 INFO:irc-server Connecting to IRC server irc.mozilla.org as MatrixBridge (user=matrixirc)- Joining channels ["#rust","#rust-internals"]
+    2015-06-28 03:05:41 DEBUG:irc-ident Set user matrixirc on port 51712
+    2015-06-28 03:05:54 DEBUG:irc-ident Set user matrixirc on port 51709
+    2015-06-28 03:05:56 ERROR:irc-server Server: irc.mozilla.org (MatrixBridge) Network Error: {
+      "code": "ETIMEDOUT",
+      "errno": "ETIMEDOUT",
+      "syscall": "connect"
+    }
+    2015-06-28 03:06:11 ERROR:irc-server Server: irc.mozilla.org (MatrixBridge) Network Error: {
+      "code": "ETIMEDOUT",
+      "errno": "ETIMEDOUT",
+      "syscall": "connect"
+    }
+    2015-06-28 03:07:44 INFO:irc-server Ping timeout: knifing connection for irc.mozilla.org on MatrixBridge
+    2015-06-28 03:07:44 ERROR:irc-server Server: irc.mozilla.org (MatrixBridge) Network Error: {
+      "msg": "Client-side ping timeout"
+    }
+    2015-06-28 03:07:44 INFO:irc Bot network failure: reconnecting in 3s.
+    2015-06-28 03:07:45 DEBUG:irc-server Received ping from fripp.mozilla.org directed at MatrixBridge
+    2015-06-28 03:07:47 INFO:irc Bot connecting to irc.mozilla.org (2 channels)
+    2015-06-28 03:07:47 INFO:irc-server Connecting to IRC server irc.mozilla.org as MatrixBridge (user=matrixirc)- Joining channels ["#rust","#rust-internals"]
+    2015-06-28 03:07:47 DEBUG:irc-ident Set user matrixirc on port 51750
+    2015-06-28 03:07:50 INFO:irc-server Server: irc.mozilla.org (MatrixBridge) connected (local port 51750). Joining 2 channels
+    2015-06-28 03:07:51 INFO:req [3t3xlf2y5rokc] [I->M] onMessage: irc.mozilla.org from=steveklabnik to=#rust-internals action={"action":"topic","protocol":"irc","topic":"1.1 today! | https://botbot.me/mozilla/rust-internals |  https://buildbot.rust-lang.org/homu/queue/rust"}
+    2015-06-28 03:09:46 DEBUG:irc-server Received ping from fripp.mozilla.org directed at MatrixBridge
+    2015-06-28 03:09:52 DEBUG:irc-server Received ping from fripp.mozilla.org directed at MatrixBridge
+    2015-06-28 03:11:47 DEBUG:irc-server Received ping from fripp.mozilla.org directed at MatrixBridge
+    2015-06-28 03:11:53 DEBUG:irc-server Received ping from fripp.mozilla.org directed at MatrixBridge
+    2015-06-28 03:11:54 INFO:irc-server Ping timeout: knifing connection for irc.mozilla.org on MatrixBridge
+    2015-06-28 03:11:54 ERROR:irc-server Server: irc.mozilla.org (MatrixBridge) Network Error: {
+      "msg": "Client-side ping timeout"
+    }
+    {code}
+  created: 2015-06-29 13:53:11.0
+  id: '11928'
+  issue: '11712'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-29 13:53:11.0
+- author: kegan
+  body: |-
+    So it looks like the failure mode here was:
+     - Connect (02:55:40) [connections=1]
+     - Disconnect (03:04:50) [connections=0]
+     - Connection attempt (03:04:53) [connections=0-1]
+     - Connection attempt (03:05:08) [connections=0-2]
+     - Connection attempt (03:05:23) [connections=0-3]
+     - Connection attempt (03:05:38) [connections=0-4]
+     - Connect (03:05:41) [connections=1-4]
+     - Connect (03:05:54) [connections=2-4]
+     - Disconnect (03:05:56) [connections=2-3] (NB: Know it isn't a connected one because there isn't a "Bot network failure" which triggers only after successful connections)
+     - Disconnect (03:06:11) [connections=2]
+
+    In other words, the connection attempts aren't cleaning up the IRC client connection. Looking at the source, we are calling {{client.disconnect();}} immediately after the "nudge" log line, indicating that the callbacks we attached to the IRC client are still being invoked even after explicitly asking for a disconnect. Looking at the node IRC source, {{disconnect()}} calls {{Socket.end()}} which, according to the docs, "Half-closes the socket. i.e., it sends a FIN packet. It is possible the server will still send some data.". We can either:
+     - Call {{Socket.destroy()}} to guarantee no more I/O.
+     - Detach all application listeners when disconnecting.
+  created: 2015-06-29 14:30:30.0
+  id: '11929'
+  issue: '11712'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-29 14:30:30.0
+- author: kegan
+  body: Fixed by forcibly not invoking the listeners after the nudge.
+  created: 2015-06-29 15:23:01.0
+  id: '11932'
+  issue: '11712'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-29 15:23:01.0

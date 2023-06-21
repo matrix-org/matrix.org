@@ -1,0 +1,445 @@
+---
+summary: Synapse died / Can't start again
+---
+created: 2016-04-06 19:05:39.0
+creator: simsa
+description: |-
+  Hi, I installed synapse with the debian repo. Synapse stopped running at April 2 and it will not start again.
+
+  Installed Version 0.14.0.
+
+  This are the last log lines from `/var/log/matrix-synapse/homeserver.log`:
+
+  {noformat}
+  2016-04-02 19:51:53,655 - synapse.federation.transport.server - 129 - INFO - PUT-118910- Request from matrix.org2016-04-02 19:51:53,656 - synapse.federation.transport.server - 214 - INFO - PUT-118910- Received txn 1459520347613 from matrix.org. (PDUs: 0, EDUs: 1, fail
+  ures: 0)
+  2016-04-02 19:51:53,673 - synapse.access.https.8448 - 511 - INFO - PUT-118910- 83.166.68.251 - 8448 - {matrix.org} Processed request: 20ms (3ms, 0ms) (8ms/2) 11B 200 "PUT /_matrix/federation/v1/send/1459520347613/ HTTP/1.1" "Synapse/0.14.0 (b=develop,a853cde,dirty)"
+  2016-04-02 19:51:55,855 - synapse.storage.TIME - 200 - INFO - - Total database time: 0.090% {set_received_txn_response(1): 0.086%, get_received_txn_response(1): 0.004%, who_forgot(0): 0.000%} {}
+  2016-04-02 19:52:05,856 - synapse.storage.TIME - 200 - INFO - - Total database time: 0.167% {update_pusher_last_token(2): 0.167%, who_forgot(0): 0.000%, user_get_threepids(0): 0.000%} {}
+  2016-04-02 19:52:11,829 - synapse.access.https.8448 - 479 - INFO - PUT-118911- 41.59.43.412 - 8448 - Received request: PUT /_matrix/federation/v1/send/1459347969219/
+  2016-04-02 19:52:11,833 - synapse.federation.transport.server - 129 - INFO - PUT-118911- Request from safaradeg.net
+  2016-04-02 19:52:11,834 - synapse.federation.transport.server - 214 - INFO - PUT-118911- Received txn 1459347969219 from safaradeg.net. (PDUs: 0, EDUs: 1, failures: 0)
+  2016-04-02 19:52:11,854 - synapse.access.https.8448 - 511 - INFO - PUT-118911- 41.59.43.412 - 8448 - {safaradeg.net} Processed request: 25ms (0ms, 0ms) (12ms/2) 11B 200 "PUT /_matrix/federation/v1/send/1459347969219/ HTTP/1.1" "Synapse/0.14.0"
+  2016-04-02 19:52:13,706 - synapse.http.server - 292 - WARNING - GET-118908- Not sending response to request <SynapseRequest at 0x7f3eb26e0b48 method=GET uri=/_matrix/client/r0/sync?timeout=30000&since=s5436_25218_1250_1134_4&access_token=<redacted> clientproto=HTTP/1.0 site=8008>, already disconnected.
+  2016-04-02 19:52:13,707 - synapse.access.http.8008 - 511 - INFO - GET-118908- 127.0.0.1 - 8008 - {@user1:my.domain.com} Processed request: 30007ms (8ms, 0ms) (0ms/0) 0B 200 "GET /_matrix/client/r0/sync?timeout=30000&since=s5436_25218_1250_1134_4&access_token=<redacted> HTTP/1.0" "Dalvik/1.6.0 (Linux; U; Android 4.4.4; GT-I9300 Build/KTU84Q)"
+  2016-04-02 19:52:15,855 - synapse.storage.TIME - 200 - INFO - - Total database time: 0.127% {set_received_txn_response(1): 0.123%, get_received_txn_response(1): 0.004%, who_forgot(0): 0.000%} {}
+  2016-04-02 19:52:22,068 - twisted - 154 - INFO - - Received SIGTERM, shutting down.
+  2016-04-02 19:52:22,070 - twisted - 154 - INFO - - (TLS Port 8448 Closed)
+  2016-04-02 19:52:22,071 - twisted - 154 - INFO - - Stopping factory <__main__.SynapseSite instance at 0x7f3ed6eab680>
+  2016-04-02 19:52:22,073 - twisted - 154 - INFO - - (TCP Port 8008 Closed)
+  2016-04-02 19:52:22,074 - twisted - 154 - INFO - - Stopping factory <__main__.SynapseSite instance at 0x7f3ed63d8050>
+  2016-04-02 19:52:22,085 - twisted - 154 - INFO - - Main loop terminated.
+  2016-04-02 19:52:22,086 - synapse.app.homeserver - 57 - WARNING - - Stopping daemon.
+  ~                                                                                    
+  {noformat}
+
+  Any idea what is wrong and how to solve this?
+
+  (P.S.: I anonymized the user user1:my.domain.com in the log)
+id: '12611'
+key: SYN-674
+number: '674'
+priority: '3'
+project: '10000'
+reporter: simsa
+resolution: '1'
+resolutiondate: 2016-04-11 09:25:05.0
+status: '5'
+type: '1'
+updated: 2016-04-11 09:25:05.0
+votes: '0'
+watches: '2'
+workflowId: '12711'
+---
+actions:
+- author: erikj
+  body: |-
+    The line:
+
+    bq. 2016-04-02 19:52:22,068 - twisted - 154 - INFO - - Received SIGTERM, shutting down.
+
+    suggests that something external to synapse sent it a SIGTERM. This would usually be due to someone manually stopping the service, though its possible some automated tooling decided to shut synapse down.
+
+    It's unlikely to be due to over resource usage - which is usually why synapse gets externally killed - as the kernel in those cases tends to simply SIGKILL the processes.
+  created: 2016-04-07 11:46:39.0
+  id: '12809'
+  issue: '12611'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-04-07 11:46:39.0
+- author: simsa
+  body: |-
+    Hi Erik,
+
+    thanks for your fast comment!
+    Trying to start matrix-synapse with "sudo service matrix-synapse start" doesn't work anymore and I do not get any log entry (Is there a debugging log anywhere?), so I don't know where to start.
+
+    Could you please have a look at my config file, maybe there is something wrong?
+
+    {noformat}
+    # vim:ft=yaml
+    # PEM encoded X509 certificate for TLS
+    #tls_certificate_path: "/etc/matrix-synapse/homeserver.tls.crt"
+    tls_certificate_path: "/etc/nginx/ssl/startssl/2016/chat.mydomain.com.crt"
+
+    # PEM encoded private key for TLS
+    #tls_private_key_path: "/etc/matrix-synapse/homeserver.tls.key"
+    tls_private_key_path: "/etc/nginx/ssl/startssl/2016/chat.mydomain.com.key"
+
+    # PEM dh parameters for ephemeral keys
+    #tls_dh_params_path: "/etc/matrix-synapse/homeserver.tls.dh"
+    tls_dh_params_path: "/etc/nginx/ssl/startssl/2016/chat.mydomain.com_dhparams.pem"
+
+    # Don't bind to the https port
+    no_tls: False
+
+    # Set this so that Synapse obeys nginx’s X-Forwarded-For headers, then IP addresess will be correct in Synapse’s logs
+    x_forwarded: true
+        resources:
+        – names: [client, webclient]
+          compress: true
+        – names: [federation]
+          compress: false
+
+    ## Server ##
+
+    # The port to listen for HTTPS requests on.
+    # For when matrix traffic is sent directly to synapse.
+    bind_port: 8448
+
+    # The port to listen for HTTP requests on.
+    # For when matrix traffic passes through loadbalancer that unwraps TLS.
+    unsecure_port: 8008
+
+    # Local interface to listen on.
+    # The empty string will cause synapse to listen on all interfaces.
+    bind_host: ""
+
+    # When running as a daemon, the file to store the pid in
+    pid_file: "/var/run/matrix-synapse.pid"
+
+    # Whether to serve a web client from the HTTP/HTTPS root resource.
+    web_client: False
+
+    # Set the soft limit on the number of file descriptors synapse can use
+    # Zero is used to indicate synapse should set the soft limit to the
+    # hard limit.
+    soft_file_limit: 0
+
+    # Turn on the twisted telnet manhole service on localhost on the given
+    # port.
+    #manhole: 9000
+
+    # Should synapse compress HTTP responses to clients that support it?
+    # This should be disabled if running synapse behind a load balancer
+    # that can do automatic compression.
+    gzip_responses: True
+
+
+    # Database configuration
+    database:
+      # The database engine name
+      name: "sqlite3"
+      # Arguments to pass to the engine
+      args:
+        # Path to the database
+        database: "/var/lib/matrix-synapse/homeserver.db"
+
+    # Number of events to cache in memory.
+    event_cache_size: "10K"
+
+
+
+    # Logging verbosity level.
+    verbose: 0
+
+    # File to write logging to
+    log_file: "/var/log/matrix-synapse/homeserver.log"
+
+    # A yaml python logging config file
+    log_config: "/etc/matrix-synapse/log.yaml"
+
+
+    ## Ratelimiting ##
+
+    # Number of messages a client can send per second
+    rc_messages_per_second: 0.2
+
+    # Number of message a client can send before being throttled
+    rc_message_burst_count: 10.0
+
+    # The federation window size in milliseconds
+    federation_rc_window_size: 1000
+
+    # The number of federation requests from a single server in a window
+    # before the server will delay processing the request.
+    federation_rc_sleep_limit: 10
+
+    # The duration in milliseconds to delay processing events from
+    # remote servers by if they go over the sleep limit.
+    federation_rc_sleep_delay: 500
+
+    # The maximum number of concurrent federation requests allowed
+    # from a single server
+    federation_rc_reject_limit: 50
+
+    # The number of federation requests to concurrently process from a
+    # single server
+    federation_rc_concurrent: 3
+
+
+
+    # Directory where uploaded images and attachments are stored.
+    media_store_path: "/var/lib/matrix-synapse/media"
+
+    # The largest allowed upload size in bytes
+    max_upload_size: "10M"
+
+    # Maximum number of pixels that will be thumbnailed
+    max_image_pixels: "32M"
+
+    ## Captcha ##
+
+    # This Home Server's ReCAPTCHA public key.
+    recaptcha_public_key: "XXXXXXXXXX"
+
+    # This Home Server's ReCAPTCHA private key.
+    recaptcha_private_key: "XXXXXXXXX"
+
+    # Enables ReCaptcha checks when registering, preventing signup
+    # unless a captcha is answered. Requires a valid ReCaptcha
+    # public/private key.
+    enable_registration_captcha: True
+
+    # When checking captchas, use the X-Forwarded-For (XFF) header
+    # as the client IP and not the actual client IP.
+    captcha_ip_origin_is_x_forwarded: False
+
+    # A secret key used to bypass the captcha test entirely.
+    #captcha_bypass_secret: "YOUR_SECRET_HERE"
+
+    # The API endpoint to use for verifying m.login.recaptcha responses.
+    recaptcha_siteverify_api: "https://www.google.com/recaptcha/api/siteverify"
+
+    ## Turn ##
+
+    # The public URIs of the TURN server to give to clients
+    turn_uris: ["turn:chat.mydomain.com:3478?transport=udp", "turn:chat.mydomain.com:3478?transport=tcp", "turn:chat.mydomain.com:5349?transport=udp", "turn:chat.mydomain.com:5349?transport=tcp"]
+
+    # The shared secret used to compute passwords for the TURN server
+    turn_shared_secret: "XXXXXXXXXXXXXXXXXXXXXXX"
+
+    # How long generated TURN credentials last
+    turn_user_lifetime: "1h"
+
+
+    ## Registration ##
+
+    # Enable registration for new users.
+    enable_registration: True
+
+    # Zugang zum Chat ohne Registrierung
+    allow_guest_access: True
+
+    # If set, allows registration by anyone who also has the shared
+    # secret, even if registration is otherwise disabled.
+    registration_shared_secret: "sharedsecret000"
+
+
+    ## Metrics ###
+
+    # Enable collection and rendering of performance metrics
+    enable_metrics: False
+
+    # Separate port to accept metrics requests on
+    # metrics_port: 8081
+
+    # Which host to bind the metric listener to
+    # metrics_bind_host: 127.0.0.1
+
+
+    # A list of application service config file to use
+    app_service_config_files: []
+
+
+    ## Signing Keys ##
+
+    # Path to the signing key to sign messages with
+    signing_key_path: "/etc/matrix-synapse/homeserver.signing.key"
+
+    # The keys that the server used to sign messages with but won't use
+    # to sign new messages. E.g. it has lost its private key
+    old_signing_keys: {}
+    #  "ed25519:auto":
+    #    # Base64 encoded public key
+    #    key: "The public part of your old signing key."
+    #    # Millisecond POSIX timestamp when the key expired.
+    #    expired_ts: 123456789123
+
+    # How long key response published by this server is valid for.
+    # Used to set the valid_until_ts in /key/v2 APIs.
+    # Determines how quickly servers will query to check which keys
+    # are still valid.
+    key_refresh_interval: "1d" # 1 Day.
+
+    # The trusted servers to download signing keys from.
+    perspectives:
+      servers:
+        "matrix.org":
+          verify_keys:
+            "ed25519:auto":
+              key: "XXXXXXXXXXXXXXXXXXXXXXXX"
+
+    {noformat}
+  created: 2016-04-07 13:20:05.0
+  id: '12812'
+  issue: '12611'
+  type: comment
+  updateauthor: simsa
+  updated: 2016-04-07 13:20:05.0
+- author: erikj
+  body: |-
+    Hmm, interesting. I would expect an error would appear in the console or in homeserver.log if it failed to start.
+
+    In either case it appears your config file has been corrupted, it doesn't even look like valid yaml. In particular:
+
+    {noformat}
+    # Set this so that Synapse obeys nginx’s X-Forwarded-For headers, then IP addresess will be correct in Synapse’s logs
+    x_forwarded: true
+        resources:
+        – names: [client, webclient]
+          compress: true
+        – names: [federation]
+          compress: false
+    {noformat}
+
+    This seems to mostly be using the old style configuration for listeners (bind_port, bind_host, etc), but the {{resources}} section is from the new style configuration.
+
+    I would recommend moving to the new style, as its more flexible. An example of the new style is:
+
+    {noformat}
+    listeners:
+      - port: 8448
+        bind_address: ''
+        type: http
+        tls: true
+        x_forwarded: false
+        resources:
+          - names: [client, webclient]
+            compress: false
+          - names: [federation]
+            compress: false
+
+      - port: 8080
+        bind_address: ''
+        type: http
+        tls: false
+        x_forwarded: true
+        resources:
+          - names: [client, webclient]
+            compress: false
+          - names: [federation]
+            compress: false
+
+      - port: 9092
+        bind_address: ''
+        type: http
+        tls: false
+        x_forwarded: false
+        resources:
+          - names: [metrics]
+            compress: false
+
+      - port: 9080
+        bind_address: 127.0.0.1
+        type: manhole
+    {noformat}
+
+    Those options deprecate bind_port/unsecure_port/bind_host/manhole/metrics_port and possibly some others.
+
+    Hope that helps!
+  created: 2016-04-07 13:29:46.0
+  id: '12813'
+  issue: '12611'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-04-07 13:29:46.0
+- author: simsa
+  body: |-
+    Hi Erik,
+
+    thanks, that helped a lot!
+
+    I removed the invalid lines from the config and got my matrix-synapse server finally to start again.
+    The old config was shipped with the debian-package and I added the invalid lines after reading this tutorial https://matrix.org/blog/2016/02/10/advanced-synapse-setup-with-lets-encrypt/ (part Federation behind the HTTP Proxy).
+
+    To get a valid new config, I tried to generate one with: 
+
+    {noformat}
+    python2.7 -m synapse.app.homeserver \
+      --server-name my.domain.com \
+      --config-path homeserver.yaml \
+      --generate-config --report-stats=no
+    {noformat}
+
+    but trying to restart the server did not work, and "sudo service matrix-synapse status" throws this error:
+
+    {noformat}
+    Apr 08 00:56:39 rexergie matrix-synapse[20471]: hs = setup(sys.argv[1:])
+    Apr 08 00:56:39 rexergie matrix-synapse[20471]: File "/usr/lib/python2.7/dist-packages/synapse/app/homeserver.py", line 421, in setup
+    Apr 08 00:56:39 rexergie matrix-synapse[20471]: hs.start_listening()
+    Apr 08 00:56:39 rexergie matrix-synapse[20471]: File "/usr/lib/python2.7/dist-packages/synapse/app/homeserver.py", line 207, in start_listening
+    Apr 08 00:56:39 rexergie matrix-synapse[20471]: self._listener_http(config, listener)
+    Apr 08 00:56:39 rexergie matrix-synapse[20471]: File "/usr/lib/python2.7/dist-packages/synapse/app/homeserver.py", line 168, in _listener_http
+    Apr 08 00:56:39 rexergie matrix-synapse[20471]: resources[WEB_CLIENT_PREFIX] = build_resource_for_web_client(self)
+    Apr 08 00:56:39 rexergie matrix-synapse[20471]: File "/usr/lib/python2.7/dist-packages/synapse/app/homeserver.py", line 99, in build_resource_f...b_client
+    Apr 08 00:56:39 rexergie matrix-synapse[20471]: % {"dep": DEPENDENCY_LINKS["matrix-angular-sdk"]}
+    Apr 08 00:56:39 rexergie matrix-synapse[20471]: KeyError: 'matrix-angular-sdk'
+    {noformat}
+
+    Is the new config not working with the debian package?
+  created: 2016-04-08 00:09:42.0
+  id: '12814'
+  issue: '12611'
+  type: comment
+  updateauthor: simsa
+  updated: 2016-04-08 00:09:42.0
+- author: erikj
+  body: |-
+    Ah, the example config in https://matrix.org/blog/2016/02/10/advanced-synapse-setup-with-lets-encrypt/ looks like its been badly wrapped. I'll try and get it fix.
+
+    The error is probably due to the fact that the default config generated by synapse tries to an include the old webclient, while the debian package doesn't. To fix this, either remove any config options related to "web client" or install the `matrix-synapse-angular-client` debian package. I shall try and get the debian package to give a more helpful error message in this case.
+  created: 2016-04-08 15:31:20.0
+  id: '12815'
+  issue: '12611'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-04-08 15:31:20.0
+- author: simsa
+  body: |-
+    {quote}install the `matrix-synapse-angular-client`{quote}
+
+    Perfekt, that did the trick!
+    Thank you very much for your fast and qualified help!
+  created: 2016-04-09 10:15:27.0
+  id: '12818'
+  issue: '12611'
+  type: comment
+  updateauthor: simsa
+  updated: 2016-04-09 10:15:27.0
+- author: simsa
+  body: How can I close this issue?
+  created: 2016-04-09 10:21:27.0
+  id: '12819'
+  issue: '12611'
+  type: comment
+  updateauthor: simsa
+  updated: 2016-04-09 10:21:27.0
+- author: erikj
+  body: You're welcome :)
+  created: 2016-04-11 09:24:59.0
+  id: '12821'
+  issue: '12611'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-04-11 09:24:59.0

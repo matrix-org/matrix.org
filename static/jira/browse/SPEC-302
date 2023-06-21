@@ -1,0 +1,28 @@
+---
+summary: howtos/client-server.html needs to be r0-ified
+---
+created: 2015-12-11 15:33:21.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12203'
+key: SPEC-302
+number: '302'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:03.0
+votes: '0'
+watches: '2'
+workflowId: '12306'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/599'
+  created: 2016-10-28 16:28:03.0
+  id: '13407'
+  issue: '12203'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:03.0

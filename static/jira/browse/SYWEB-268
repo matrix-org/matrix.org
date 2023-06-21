@@ -1,0 +1,37 @@
+---
+summary: joining rooms in firefox with double-hash prefixes fails
+---
+assignee: kegan
+created: 2015-02-01 20:04:06.0
+creator: matthew
+description: |-
+  http://matrix.org/beta/#/room/##foundry:matrix.org
+
+  ...fails and chucks you back to the homepage.  reported by brabo on #matrix:matrix.org
+id: '10992'
+key: SYWEB-268
+number: '268'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-03 11:54:51.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:01.0
+votes: '0'
+watches: '2'
+workflowId: '11092'
+---
+actions:
+- author: kegan
+  body: |-
+    Reproduced.
+
+    It looks like chrome is treating double hash rooms as {{#%23foo:bar}} but firefox treats this as {{##foo:bar}}. The {{room-controller}} extracts the room alias from the URL if it isn't passed the room ID or alias via {{$routeParams}}. The {{##}} makes the room alias extraction logic fail, resultiing in {{Error: cannot extract room alias}}.
+  created: 2015-02-02 10:49:45.0
+  id: '11202'
+  issue: '10992'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-02 10:49:45.0

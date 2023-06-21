@@ -1,0 +1,30 @@
+---
+summary: Add PonyChat (irc.ponychat.net) as a bridged network
+---
+created: 2015-11-23 20:21:01.0
+creator: xena
+description: ''
+id: '12134'
+key: BOTS-141
+number: '141'
+priority: '3'
+project: '10101'
+reporter: xena
+resolution: '2'
+resolutiondate: 2015-12-05 02:06:12.0
+status: '5'
+type: '3'
+updated: 2015-12-05 02:06:12.0
+votes: '0'
+watches: '1'
+workflowId: '12237'
+---
+actions:
+- author: xena
+  body: This may be irellevant. I have been working on a more tightly integrated setup.
+  created: 2015-12-02 17:28:41.0
+  id: '12414'
+  issue: '12134'
+  type: comment
+  updateauthor: xena
+  updated: 2015-12-02 17:28:41.0

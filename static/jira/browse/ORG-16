@@ -1,0 +1,25 @@
+---
+summary: Automate spec/supporting documentation releases
+---
+created: 2015-02-19 17:30:54.0
+creator: kegan
+description: |-
+  We could really do with a script which will run {{matrix-doc/scripts/matrix-org-gendoc.sh}} and then {{mv}} the resulting HTML from {{gen}} to the site.
+
+  It would also be nice if this was done whenever the {{specification}} or supporting documentation folders (i.e. the official public facing folders) were updated.
+id: '11104'
+key: ORG-16
+number: '16'
+priority: '2'
+project: '10003'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-20 15:23:05.0
+status: '5'
+type: '1'
+updated: 2015-02-20 15:23:05.0
+votes: '0'
+watches: '1'
+workflowId: '11204'
+---
+actions: null

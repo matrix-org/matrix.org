@@ -1,0 +1,31 @@
+---
+summary: Timezone changes are not reflected into the app
+---
+assignee: gforet
+created: 2015-04-27 10:45:36.0
+creator: manu
+description: ''
+id: '11374'
+key: SYIOS-126
+number: '126'
+priority: '3'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-09-28 16:25:54.0
+status: '5'
+type: '1'
+updated: 2015-09-28 16:25:54.0
+votes: '0'
+watches: '2'
+workflowId: '11474'
+---
+actions:
+- author: gforet
+  body: 'build # > 704'
+  created: 2015-09-28 16:25:54.0
+  id: '12183'
+  issue: '11374'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-09-28 16:25:54.0

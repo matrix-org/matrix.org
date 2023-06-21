@@ -1,0 +1,49 @@
+---
+summary: webclient DoSes the HS with room /initialSync after resuming after having been asleep for a bit
+---
+created: 2015-02-09 16:17:43.0
+creator: matthew
+description: |-
+  2015-02-09 15:54:04,900 - twisted - 455 - INFO - GET-1611 - "83.166.68.175" - - [09/Feb/2015:15:54:04 +0000] "GET /_matrix/client/api/v1/rooms/!zOmsiVucpWbRRDjSwe:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:06,043 - twisted - 455 - INFO - GET-1612 - "83.166.68.175" - - [09/Feb/2015:15:54:05 +0000] "GET /_matrix/client/api/v1/rooms/!zOmsiVucpWbRRDjSwe:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:06,660 - twisted - 455 - INFO - GET-1613 - "83.166.68.175" - - [09/Feb/2015:15:54:05 +0000] "GET /_matrix/client/api/v1/rooms/!cURbafjkfsMDVwdRDQ:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:07,172 - twisted - 455 - INFO - GET-1614 - "83.166.68.175" - - [09/Feb/2015:15:54:06 +0000] "GET /_matrix/client/api/v1/rooms/!zOmsiVucpWbRRDjSwe:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:08,533 - twisted - 455 - INFO - GET-1615 - "83.166.68.175" - - [09/Feb/2015:15:54:07 +0000] "GET /_matrix/client/api/v1/rooms/!cURbafjkfsMDVwdRDQ:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:08,935 - twisted - 455 - INFO - GET-1616 - "83.166.68.175" - - [09/Feb/2015:15:54:08 +0000] "GET /_matrix/client/api/v1/rooms/!zOmsiVucpWbRRDjSwe:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:10,454 - twisted - 455 - INFO - GET-1617 - "83.166.68.175" - - [09/Feb/2015:15:54:09 +0000] "GET /_matrix/client/api/v1/rooms/!cURbafjkfsMDVwdRDQ:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:10,787 - twisted - 455 - INFO - GET-1620 - "83.166.68.175" - - [09/Feb/2015:15:54:09 +0000] "GET /_matrix/client/api/v1/rooms/!zOmsiVucpWbRRDjSwe:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:11,997 - twisted - 455 - INFO - GET-1622 - "83.166.68.175" - - [09/Feb/2015:15:54:11 +0000] "GET /_matrix/client/api/v1/rooms/!cURbafjkfsMDVwdRDQ:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:12,332 - twisted - 455 - INFO - GET-1623 - "83.166.68.175" - - [09/Feb/2015:15:54:11 +0000] "GET /_matrix/client/api/v1/rooms/!zOmsiVucpWbRRDjSwe:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:16,579 - twisted - 455 - INFO - GET-1624 - "83.166.68.175" - - [09/Feb/2015:15:54:15 +0000] "GET /_matrix/client/api/v1/rooms/!cURbafjkfsMDVwdRDQ:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:16,827 - twisted - 455 - INFO - GET-1625 - "83.166.68.175" - - [09/Feb/2015:15:54:15 +0000] "GET /_matrix/client/api/v1/rooms/!zOmsiVucpWbRRDjSwe:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:18,051 - twisted - 455 - INFO - GET-1627 - "83.166.68.175" - - [09/Feb/2015:15:54:17 +0000] "GET /_matrix/client/api/v1/rooms/!cURbafjkfsMDVwdRDQ:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:18,420 - twisted - 455 - INFO - GET-1628 - "83.166.68.175" - - [09/Feb/2015:15:54:17 +0000] "GET /_matrix/client/api/v1/rooms/!zOmsiVucpWbRRDjSwe:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:19,795 - twisted - 455 - INFO - GET-1630 - "83.166.68.175" - - [09/Feb/2015:15:54:18 +0000] "GET /_matrix/client/api/v1/rooms/!cURbafjkfsMDVwdRDQ:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:20,290 - twisted - 455 - INFO - GET-1632 - "83.166.68.175" - - [09/Feb/2015:15:54:19 +0000] "GET /_matrix/client/api/v1/rooms/!zOmsiVucpWbRRDjSwe:matrix.org/initialSync?access_token=
+  2015-02-09 15:54:22,018 - twisted - 455 - INFO - GET-1637 - "83.166.68.175" - - [09/Feb/2015:15:54:20 +0000] "GET /_matrix/client/api/v1/rooms/!cURbafjkfsMDVwdRDQ:matrix.org/initialSync?access_token=
+
+  etc
+id: '11024'
+key: SYWEB-276
+number: '276'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-09 16:32:42.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:59.0
+votes: '0'
+watches: '2'
+workflowId: '11124'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-angular-sdk/commit/3c6340cd
+  created: 2015-02-09 16:32:42.0
+  id: '11230'
+  issue: '11024'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-09 16:32:42.0

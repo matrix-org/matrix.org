@@ -1,0 +1,30 @@
+---
+summary: Remove angular-sdk from the synapse distro; instead serve up a page to explain you should select a pretty client from http://matrix.org/blog/try-matrix-now
+---
+created: 2015-11-02 13:39:49.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  In future we could use a http://matrix.to link instead to get folks to select a client
+id: '12068'
+key: SYN-510
+number: '510'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:32.0
+votes: '0'
+watches: '2'
+workflowId: '12171'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1410'
+  created: 2016-11-07 18:28:32.0
+  id: '13719'
+  issue: '12068'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:32.0

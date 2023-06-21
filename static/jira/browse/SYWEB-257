@@ -1,0 +1,30 @@
+---
+summary: Infinite scrolling can result in duplicate messages
+---
+created: 2015-01-14 18:05:19.0
+creator: matthew
+description: ''
+id: '10934'
+key: SYWEB-257
+number: '257'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-01-15 09:56:31.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:04.0
+votes: '0'
+watches: '2'
+workflowId: '11034'
+---
+actions:
+- author: kegan
+  body: SYN-178
+  created: 2015-01-15 09:56:31.0
+  id: '11123'
+  issue: '10934'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-15 09:56:31.0

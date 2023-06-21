@@ -1,0 +1,25 @@
+---
+summary: Expose version numbers
+---
+created: 2014-12-03 12:08:52.0
+creator: kegan
+description: |-
+  Getting bug reports like SYWEB-203 are unhelpful without a meaningful indication of the version of the web client. We should add a marker somewhere to show the value of the VERSION file. Finer grain versioning would be nice, but more difficult to do.
+
+  This may tie into adding rage shake support (SYWEB-43)
+id: '10762'
+key: SYWEB-207
+number: '207'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-03-03 13:18:28.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:56.0
+votes: '0'
+watches: '1'
+workflowId: '10862'
+---
+actions: null

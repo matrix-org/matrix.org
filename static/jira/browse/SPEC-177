@@ -1,0 +1,31 @@
+---
+summary: Need to specify maximum length of events.
+---
+assignee: kegan
+created: 2015-06-02 01:20:03.0
+creator: matthew
+description: ''
+id: '11602'
+key: SPEC-177
+number: '177'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-10-14 16:19:03.0
+status: '5'
+type: '2'
+updated: 2015-10-14 16:19:03.0
+votes: '0'
+watches: '2'
+workflowId: '11703'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-doc/pull/105
+  created: 2015-10-14 16:19:03.0
+  id: '12269'
+  issue: '11602'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-14 16:19:03.0

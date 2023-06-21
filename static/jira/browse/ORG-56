@@ -1,0 +1,52 @@
+---
+summary: More nuance for room list
+---
+created: 2016-06-28 12:54:02.0
+creator: rickcogley
+description: |-
+  Hello - I see that I can set rooms so they do not appear in the room list for a given homeserver. 
+
+  One fairly large issue for companies trying to use a Synapse Homeserver with a Vector client, yet needing to keep names of rooms private, is that the "room list" is all or nothing. 
+
+  We can toggle room listing to off for all rooms, but, how does that work for a situation in which, we also want to have privacy. For example: 
+
+  If I have rooms to provide support for CLIENT-A and CLIENT-B, I want to be able to conveniently open them, but, I don't want users in the CLIENT-A org to see CLIENT-B's room. 
+
+  Is there a way to make this work? I think we can simply provide an URL to our clients, but it would be a pain to maintain that, for internal people. 
+
+  Ideas appreciated.
+id: '12724'
+key: ORG-56
+number: '56'
+priority: '3'
+project: '10003'
+reporter: rickcogley
+resolution: '10100'
+resolutiondate: 2016-06-28 13:54:42.0
+status: '5'
+type: '4'
+updated: 2016-06-28 14:06:57.0
+votes: '0'
+watches: '2'
+workflowId: '12824'
+---
+actions:
+- author: richvdh
+  body: |-
+    [~rickcogley]: the ORG project is for issues about the websites and a few bits of matrix.org infrastructure.
+
+    The best place to discuss your situation would probably be Matrix HQ.
+  created: 2016-06-28 13:54:42.0
+  id: '13028'
+  issue: '12724'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-28 13:54:42.0
+- author: rickcogley
+  body: whoops, sorry about that.
+  created: 2016-06-28 14:06:57.0
+  id: '13029'
+  issue: '12724'
+  type: comment
+  updateauthor: rickcogley
+  updated: 2016-06-28 14:06:57.0

@@ -1,0 +1,409 @@
+---
+summary: Format for rich text messages
+---
+created: 2014-10-06 14:18:15.0
+creator: kegan
+description: |-
+  Currently, {{m.text}} just supports a raw string. Whilst we have solved the attachment use case (via {{m.image}}, {{m.video}} and so on), we have no current way to specify markup for raw text.
+
+  After doing some research, there are a handful of options here:
+   - Roll our own format e.g. {code}
+    spans: [ 
+      { type: bold, start: 4, end: 9 }, 
+      { type: italic, start: 15, end: 21 } 
+    ]
+    {code}
+   - Use XHTML tags (and strip the nasty ones)
+   - Use BBCode
+   - Use Markdown
+   - Use reStructured Text (RST)
+
+  I would prefer that we didn't re-invent the wheel on this, so I'm against rolling our own format. Using XHTML tags *would* be fine, but the kicker is that there are unsafe tags which we'd want to strip (akin to XEP-0071). Clients may be lazy and not strip bad tags, and everything goes into a mess. For these reasons, I'm against using XHTML as the markup for this.
+
+  This leave BBCode and Markdown/RST. BBCode has been around for a long time, has easy regex parsing to map directly to HTML, though there are odd quirks with it such as ambiguous markup syntax. Markdown/RST have a lot of libraries for different languages to map to HTML, and provide a richer feature set than BBCode. As such, I'd prefer either Markdown or RST.
+
+  Without getting into the holy war of RST vs Markdown, RST is more mature *at the moment* since there is a well-defined spec http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html and not many different fragmented versions (unlike Markdown). That being said, *this will be fixed in the future* http://commonmark.org/ - I hold no real preference as to which we should use. It seems Markdown has a slightly nicer syntax and is geared more towards generating HTML *possibly*, which I feel may be more aligned with what we actually want from a markup language.
+
+  Thoughts welcome.
+id: '10453'
+key: SPEC-48
+number: '48'
+priority: '2'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:48.0
+votes: '0'
+watches: '5'
+workflowId: '10557'
+---
+actions:
+- author: kegan
+  body: |-
+    As for the message types, I would propose:
+     - {{m.text.markdown}}
+     - {{m.emote.markdown}}
+     - {{m.notice.markdown}}
+
+    We could be pedantic and go with {{m.text.markdown.commonmark}}, but not sure how much that will gain us. If we end up using reStructured Text instead, then {{m.text.rst}} etc. Given RST has a spec, this doesn't need another namespace beneath it.
+  created: 2014-10-06 14:46:29.0
+  id: '10527'
+  issue: '10453'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-06 14:46:29.0
+- author: erikj
+  body: I'm not sure I want to conflate the type of the message and the way it is formatted, i.e., it seems a bit weird to have "m.text" and "m.text.markdown" (or "m.text.plain" and "m.text.markdown".) Whether or not it's an emote/notice and how it is formatted seem to be fairly orthogonal.
+  created: 2014-10-06 14:50:49.0
+  id: '10529'
+  issue: '10453'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-06 14:50:49.0
+- author: erikj
+  body: Also, we need to consider fallback support for clients that don't understand whatever format we decide on. I guess things like format are human readable enough that it is probably fine to just output the raw content.
+  created: 2014-10-06 14:52:20.0
+  id: '10530'
+  issue: '10453'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-06 14:52:20.0
+- author: kegan
+  body: So you would propose keeping {{m.text}} and then what? Having a {{body_markdown}} key or something? That could get old pretty quick, since you'd still need to specify the {{body}} key for fallback, resulting in unnecessarily duplicated information.
+  created: 2014-10-06 15:33:25.0
+  id: '10532'
+  issue: '10453'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-06 15:33:25.0
+- author: erikj
+  body: 'Or you could have a {{body_type: markdown}}, which could be reused across different events.'
+  created: 2014-10-06 15:41:42.0
+  id: '10535'
+  issue: '10453'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-06 15:41:42.0
+- author: matthew
+  body: |-
+    body_types sound good to me, as long as we carefully separate the plain-text representation from whatever whacky rich-text representation we go for, so the event can be interpreted as a normal m.text and still work.
+
+    In terms of the representation to use - i think we need to support the richest common language, so as to interop as easily as possible with other platforms (after all, Matrix is intended as glue between platforms).  And that means HTML.  Agreed that it's a security nightmare, but if we start with a truly minimal subset and only add things in very conservatively, I suspect it could be okay?  Agreed it's a faff for the client writer who has to strip out the nasty stuff though, but it's not that much worse than programming against any other XSS exploit... More of a problem is how to actually style it - having <font color="red">foo</font> a la AIM is *EVIL*, and having <span style="#f00">foo</span> isn't much better.  We could deny CSS entirely?  Or provide a set of CSS classes we mandate must be supported?
+
+    Or we recommend markdown by default, and provide HTML for compat?  For the record I've really not enjoyed writing RST, whereas markdown generally feels quite intuitive.
+  created: 2014-10-06 17:57:21.0
+  id: '10540'
+  issue: '10453'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-06 17:57:21.0
+- author: erikj
+  body: |-
+    My concern with HTML is that its probably quite fiddly if you're not planning to dump it straight into a web view but still have some scope for formatting. I'm inclined to favour whatever is easier for clients and then let the bridges have the burden of reformatting as required.
+
+    It's worth noting that I don't _think_ markdown allows changing of fonts or colours.
+  created: 2014-10-06 18:09:04.0
+  id: '10542'
+  issue: '10453'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-06 18:09:04.0
+- author: matthew
+  body: |-
+    Other thoughts in favour of HTML:
+     * We want copy & paste to work on browsers, which means supporting HTML
+     * We get nice graphical HTML authoring functionality for free nowadays in browsers
+
+    Interesting that Lync separately supports RTF, HTML (and Ink) rich message payloads: http://blogs.technet.com/b/lync/archive/2009/03/04/rich-content-and-html-in-instant-messages.aspx
+
+    We absolutely do *not* want gateways to have to do crappy impedance mismatched conversions between these formats, but pass them through where we can - with instructions for clients to either show the plain-text equivalent, or do whatever security voodoo is required to show it safely.  I think the most useful thing the gateway could do is to convert it into our nice-rich-intermediary-common-language (i.e. HTML),whilst keeping the original around too for those who can understand it.
+
+    Erik: i don't understand "its probably quite fiddly if you're not planning to dump it straight into a web view but still have some scope for formatting".
+  created: 2014-10-06 18:28:08.0
+  id: '10544'
+  issue: '10453'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-06 18:28:08.0
+- author: leonerd
+  body: |-
+    I've just sat and skimmed over the CommonMark spec. There's nothing in there to support such formatting as colours, which I suspect were one of the original intents of this idea. It supports <em> and <strong>, but no other character-wise formatting (underlines? strikethrough? other fonts?). It seems that CommonMark, and other other Markdown-derived formats are all about high-level macro-structuring and not about the low-level character-formatting of text.
+
+    If we want to go down the HTML-like route, could it not make sense for homeservers to parse the incoming text, check all the tags against a whitelist and reject bad ones? Whatever's left it can presumbly just strip out automatically and come up with a plain-text body itself, can't it?
+  created: 2014-10-06 19:03:05.0
+  id: '10546'
+  issue: '10453'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-06 19:03:05.0
+- author: matthew
+  body: |-
+    Agreed that markdown isn't rich enough (although I really like the idea of supporting it as an optional body type).
+
+    We can certainly mandate that HS enforces HTML validation rules though to avoid pain for clients - it's equivalent to a web forum engine going and stripping off malicious HTML serverside before serving it up.  I also suggest that sanitizing HTML really is a solved problem these days - every single HTML-backed authoring system out there (Wordpress & co) has had to solve it.  We should be able to borrow an existing one (so long as it explicitly whitelists valid tags & attributes & valid attribute value grammars (e.g. valid URI schemes); there were some embarassingly sloppy ones back in the day that tried to strip invalid content rather than explicitly whitelist valid content).
+
+    The biggest challenge I see is to decide what level of styling to support.  Arbitrary CSS is a huge security hole too.  But predefined CSS class names is pretty clunky.  Again, I assume someone has solved this well - perhaps similarly providing a secure subset of CSS which can be used without risk of crashing browsers or doing cross-site attacks or abusing the rest of the page etc...  In fact, isn't this the problem that every RSS aggregator ever has had to solve?
+
+    Example approaches:
+     * http://codex.wordpress.org/Function_Reference/wp_kses
+     * http://jsoup.org/cookbook/cleaning-html/whitelist-sanitizer
+     * https://www.npmjs.org/package/sanitize-html
+     * https://github.com/rgrove/sanitize
+     * https://pythonhosted.org/feedparser/html-sanitization.html
+     * https://github.com/jsocol/bleach
+
+    Given Synapse is in pythonland, I suggest that bleach would be a good bet and seems widely respected.  But we'd need to obviously spell out the whitelist of tags, attributes & their allowed values etc in the spec.
+  created: 2014-10-06 23:17:14.0
+  id: '10547'
+  issue: '10453'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-06 23:17:14.0
+- author: matthew
+  body: |-
+    The more I think about this, the more dubious I am that the HS should be validating the messages.  Reasons are:
+     * Impossible with E2E encryption
+     * The client may want to apply further sanitation rules based on what its HTML renderer can actually handle
+     * Forces the HS to keep a sanitised copy of messages around alongside the 'official' one, which is a bit messy, and the sanitised copy's crypto signature will obviously be broken.
+
+    So my hunch is that "it's up to clients to sanity-check and escape untrusted content that they display - and untrusted content means stuff received from the rest of Matrix.  We provide SDKs that do this already to make it easier for client implementors.".  So we could use something like google-caja in JS to fix up the display (and cache it) on the client as required.
+
+    Obviously the big downside on this is that it increases the burden on client implementers.  But in practice, rich text is a relatively exotic feature - is this actually such a big problem?
+  created: 2014-10-07 00:14:40.0
+  id: '10548'
+  issue: '10453'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-07 00:14:40.0
+- author: matthew
+  body: |-
+    Final thought: we have to actually consider the use cases here:
+     1) Kegan wants his bot to emit spans of bold red text
+     2) Matthew wants the option of sometimes saying *CRAP* and for it to come out bold. I'd want it to be up to the client to give me the best UI for bolding the text (eg iOS could use the normal rich text styling; commandline client might do something markdowny, etc)
+     3) Amandine wants to copy hunks of formatted content from Chrome or Excel and paste them via a rich-text input field in Matrix to Matthew and have them come out looking vaguely right.
+     4) Gary wants to copy hunks of RTF out of powerpoint and send it to Matthew via Lync, which Matthew wants to receive with the intended formatting in Matrix.
+     5) ...i'm sure there are others.
+
+    3 and 4 mandate we support some level of flexible styling. 3 also implies we might need to do RTF->HTML conversions somewhere (ew) given both Windows and OSX are prone to using RTF on their clipboard by default, with HTML being a rather broken second class citizen. Clearly we need to specify a single featureful common language for the rich markup though, and given Matrix is all about being web-friendly and built-for-the-web, i guess HTML5 is it.
+  created: 2014-10-07 00:39:29.0
+  id: '10549'
+  issue: '10453'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-07 00:39:29.0
+- author: kegan
+  body: |-
+    I really dislike where this is headed: I would rather not have to rely on clients to sanitise HTML :/ We have the opportunity to remove an *entire* attack vector here, I think we should use *any* other form of markup language. It's all nice and well whitelisting tags, but it means jack all when lazy clients don't bother, and as far as I was aware, we want to make client implementations as easy as possible. I think using HTML is a huge design fail, because when a dev quickly hacks rich text support into their client and everything works fine, they dust their hands and call it a day, and can be completely unaware of the security hole they've just developed. We can do better than this.
+
+    As for the use cases: #1 and #2 can really be done by anything. #3: How exactly is this being copied? I'm not clear on how this actually works. #4: RTF > HTML > Some markup language would work, though I appreciate the indirection is mingy. 
+
+    I don't think saying "well we will just provide an SDK which will do the sanitisation" is a sufficiently good enough reason to use HTML. People can easily write a noddy "send message from A to B" client, and if rich text is in HTML, it's **trivial** for someone to think "oh okay, I'll just wodge that in quickly". It's too easy to get wrong I think.
+  created: 2014-10-07 09:42:11.0
+  id: '10550'
+  issue: '10453'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-07 09:44:55.0
+- author: matthew
+  body: If you can show me a markup language as expressive as HTML without XSS vulnerabilities, which has parity for converting stuff in & out of HTML (for displaying in webbrowsers and parsing HTML and RTF clipboard contents) then let's use it. But I *really* don't want to cripple our rich text support just because we can't trust client developers to avoid XSS attacks. Matrix is about improving user experience in the end - not being penalised by developmental quirks.
+  created: 2014-10-07 09:51:42.0
+  id: '10551'
+  issue: '10453'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-07 09:51:42.0
+- author: matthew
+  body: btw, what do others think?
+  created: 2014-10-07 09:52:19.0
+  id: '10552'
+  issue: '10453'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-07 09:52:19.0
+- author: kegan
+  body: What features do you want to support with rich text messages?
+  created: 2014-10-07 10:00:31.0
+  id: '10553'
+  issue: '10453'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-07 10:00:31.0
+- author: erikj
+  body: |-
+    For IM, most of the wanted formatting is going to be along the lines of bold, italics, underline, newlines and font colours. Email style messaging is where you'd want something more powerful (which is certainly a valid use case and something we need to support, but I think it's more reasonable for basic clients to not try and render complicated formatting)
+
+    bq. Erik: i don't understand "its probably quite fiddly if you're not planning to dump it straight into a web view but still have some scope for formatting".
+
+    As in, I might be writing a client in some framework that supports bold, italics, newlines etc, but definitely not full HTML. It would be pretty annoying if I had the choice between a) falling back to plain text and don't do any formatting or b) invoke an HTML parser (including figuring out the CSS?) and try and pull out the formatting I can render, given that most IMs are only going to include formatting that I actually support.
+
+    So my concern is that although HTML (+ CSS?) is really easy for web, it may be a lot harder for other platforms to render -- especially platforms where you have a limited number of formatting options (e.g. terminals).
+
+
+    With HTML is the proposal then to have the content included twice in the event, once formatted in HTML and the other in plain text? Or would it be up to receiving clients to strip out the HTML?
+  created: 2014-10-07 10:12:03.0
+  id: '10554'
+  issue: '10453'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-07 10:12:03.0
+- author: erikj
+  body: |-
+    bq. ... given Matrix is all about being web-friendly and built-for-the-web...
+
+    So long as we don't screw over other platforms :)
+  created: 2014-10-07 10:13:55.0
+  id: '10555'
+  issue: '10453'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-07 10:13:55.0
+- author: matthew
+  body: |-
+    I think the problem here is simply different use cases (which is why I tried to enumerate them).
+
+    For use case #1 (IRC-style bot output), then all we need featurewise is ANSI-style colour codes & bold, just like IRC.
+    For use case #2 (Markdown-style italics/bold/underline/superscript/explicit hyperlinks) for simple inline formatting, then it's a pretty small featureset too.
+    For use case #3 and #4 (sharing rich content snippets from other apps/clipboards/sites), we need the ability to accurately display any arbitrary formatted structured asset the OS might hand us.
+
+    For #1 and #2, we could use some random special minimal markup language, although I don't think that RST or Markdown actually help us.  Markdown doesn't do colours; RST does ugly stuff like:
+
+    {code}
+    .. role:: red
+    An example of using :red:`interpreted text`
+    {code}
+
+    So I still feel like we should solve all use cases with the same solution and just use (sanitized) HTML5.
+
+    In terms of formatting HTML for non-webbrowsers: surely this is pretty simple; worst case you just strip out the tags.  Failing that, you special case <b> and <i> tags and colour CSS.  Failing that, you fire up an HTML->txt prettyprinter library and everyone wins.
+
+    Kegan: sounds like we should chat about this one in person....
+  created: 2014-10-07 11:57:36.0
+  id: '10557'
+  issue: '10453'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-07 11:57:36.0
+- author: kegan
+  body: |-
+    I still don't get what "any arbitrary formatted structured asset the OS might hand us" would actually look like. Do you mean File > Open > foo.docx and have that go over the wire and be presented sanely? Surely in all these cases it would just be a foo > bar converter on the client and then it sends the bar format we agree upon, I don't see how this affects the discussion at all.
+
+    I also don't see how the ugliness of RST formatting is really relevant here, when the proposed alternative is HTML, which I think is just as ugly to read. For simple formatting, web clients would probably just have a rich text box (so I can CTRL+B to bold stuff for example, with a palette of colours) which would then be converted to either RST or HTML; the end-user would not be expected to write the markup on their own, so I don't see ugliness as a reason to not use it. Further, if you do want to do markup yourself (e.g. you're in a terminal), then surely the client can have whatever it wants (e.g. BBCode) which then converts it to RST/HTML, as per the foo > bar format I discussed earlier.
+
+    I'm just interested in having the format that goes over the wire be less risky than raw HTML. From what I can see, the main problem is that we need to be able to represent the feature set we want to have for rich text. I believe something like RST will meet that criteria. Yes, it is uglier than other formats out there, but who cares? Clients do not need to use the format that goes over the wire, they just need to be able to convert to it.
+  created: 2014-10-07 13:53:45.0
+  id: '10558'
+  issue: '10453'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-07 13:53:45.0
+- author: matthew
+  body: |-
+    "I still don't get what "any arbitrary formatted structured asset the OS might hand us" would actually look like."
+
+    http://www.htmlgoodies.com/html5/other/working-with-clipboard-apis-in-html5-web-apps.html#fbid=yMFNmHXW1ec
+
+    "I also don't see how the ugliness of RST formatting is really relevant here"
+
+    ah, sorry - i thought you were proposing the user author in RST.
+
+    "I'm just interested in having the format that goes over the wire be less risky than raw HTML. From what I can see, the main problem is that we need to be able to represent the feature set we want to have for rich text. I believe something like RST will meet that criteria."
+
+    My problem is that we need to be richer than RST.  I get the impression you have never had someone try to c+p you a wodge of Excel or Powerpoint over Lync and burst into tears when it gets crushed to ascii by bitlbee ;)
+  created: 2014-10-07 14:18:35.0
+  id: '10559'
+  issue: '10453'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-07 14:18:35.0
+- author: kegan
+  body: |-
+    After IRLing:
+     - RST has limitations like not being able to set individual table column widths, etc. There's some flexibility but not enough.
+     - There's probably Good Enough libraries out there to handle HTML sanitisation. 
+
+    I find it frustrating that in order to get the feature set we want we need to use HTML and open the can of worms, but it probably is the only way. I can't find any suitable alternatives.
+  created: 2014-10-07 15:08:46.0
+  id: '10561'
+  issue: '10453'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-07 15:08:46.0
+- author: kegan
+  body: |-
+    This has been stopgapped by adding in a new message format {{org.matrix.custom.text.html}} (note that it is NOT {{m.}}) which sends HTML. The content is sent with:
+    {code}
+    {
+      msgtype: m.text
+      body: <some html>
+    }
+    {code}
+
+    The web client runs through this with {{ng-bind-html}} which automatically runs it through {{$sanitize}}. Currently, this message format is used by NEB to highlight various notifications (creation/deletion of branches, failed tests, which branch is being pushed, etc) using bold and red/green only. 
+
+    Official support for rich text HTML will be introduced at a later date once a set of agreed tags can be made. I would be interested to know how clients are expected to strip raw HTML to the set of agreed tags, without providing our own sanitizing APIs. It's possible that some 3rd party APIs allow you to specify which tags to whitelist, but this immediately creates an inconsistent ruleset, increasing the attack surface of HTML injection attacks. :( Equally, if we provide our own sanitizing APIs, we will have to maintain them as new ways to bypass the filtering are found.
+  created: 2014-10-15 10:18:42.0
+  id: '10570'
+  issue: '10453'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-15 10:18:42.0
+- author: matthew
+  body: |-
+    This evolved as we want to retain backwards compatibility with normal m.room.message rather than it being a totally custom message type.  They now look like:
+
+    {code}
+    "type": "m.room.message",
+    "content": {
+        "body": "[matrix-org/matrix-ios-sdk] giomfo pushed to master: Handle new events notification  - https://github.com/matrix-org/matrix-ios-sdk/commit/c21e91a3",
+        "format": "org.matrix.custom.html",
+        "formatted_body": "[matrix-org/matrix-ios-sdk] giomfo pushed to <b>master</b>: Handle new events notification  - https://github.com/matrix-org/matrix-ios-sdk/commit/c21e91a3",
+        "msgtype": "m.text"
+      }
+    {code}
+  created: 2014-10-31 10:22:54.0
+  id: '10716'
+  issue: '10453'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-31 10:23:46.0
+- author: kegan
+  body: '@davidar:matrix.org on #matrix brought up a good point: we should also consider how we do formatting for math equations, e.g. having {{$a^2+b^2=c^2$}} render correctly with superscript 2s. There are a number of libraries which do this - https://www.mathjax.org/ and https://khan.github.io/KaTeX/ - I like the look of KaTeX since you could have the sending client pre-render the HTML for {{org.matrix.custom.html}} and set the fallback body to the (relatively readable) expression. Ultimately though, this seems like a client-specific widget on top of the HTML format, rather than a new format entirely.'
+  created: 2015-09-14 09:41:12.0
+  id: '12132'
+  issue: '10453'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-14 09:41:12.0
+- author: kegan
+  body: 'This is progressing: https://github.com/matrix-org/matrix-doc/pull/92'
+  created: 2015-10-13 17:24:18.0
+  id: '12256'
+  issue: '10453'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 17:24:18.0
+- author: richvdh
+  body: I think we now have support for rich text messages; however documentation of it is incomplete (https://github.com/matrix-org/matrix-doc/pull/92)
+  created: 2015-12-01 16:10:34.0
+  id: '12404'
+  issue: '10453'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 16:10:34.0
+- author: matthew
+  body: The rich text message implementation is based on the old org.matrix.custom.html hack - none of Kegan's suggestion from that PR has been built or finalised.
+  created: 2015-12-01 16:44:17.0
+  id: '12409'
+  issue: '10453'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-01 16:44:17.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/471'
+  created: 2016-10-28 16:26:48.0
+  id: '13246'
+  issue: '10453'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:48.0

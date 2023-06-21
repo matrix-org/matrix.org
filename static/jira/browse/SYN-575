@@ -1,0 +1,187 @@
+---
+summary: 'Guest access: /messages for pagination does not work'
+---
+created: 2016-01-05 15:33:43.0
+creator: kegan
+description: |-
+  Running against a Synapse on {{develop}} on {{07c33eff43f4c7095c3884c50649e4b498bde038}}
+
+  {code}
+  curl -XGET "http://localhost:8008/_matrix/client/api/v1/rooms/%21RnBlvNaDPZHyesseif%3Alocalhost/messages?from=t23-7634_6_24_13_1&limit=20&dir=b&access_token=MDAMqRCg"
+  {
+      "errcode": "M_FORBIDDEN",
+      "error": "User @-itdGdNrVMMBRqGuUNf:localhost does not have permission"
+  }
+  {code}
+
+  {{m.room.history_visibility}}:
+  {code}
+  {
+          "age": 282018,
+          "content": {
+              "history_visibility": "world_readable"
+          },
+          "event_id": "$145200777413NHeHg:localhost",
+          "origin_server_ts": 1452007774572,
+          "replaces_state": "$14520077516qhRGe:localhost",
+          "room_id": "!RnBlvNaDPZHyesseif:localhost",
+          "sender": "@foobar:localhost",
+          "state_key": "",
+          "type": "m.room.history_visibility",
+          "unsigned": {
+              "age": 282018,
+              "replaces_state": "$14520077516qhRGe:localhost"
+          },
+          "user_id": "@foobar:localhost"
+  },
+  {code}
+
+  {{m.room.guest_access}}:
+
+  {code}
+  {
+          "age": 229748,
+          "content": {
+              "guest_access": "can_join"
+          },
+          "event_id": "$145200782618OAOVY:localhost",
+          "origin_server_ts": 1452007826842,
+          "room_id": "!RnBlvNaDPZHyesseif:localhost",
+          "sender": "@foobar:localhost",
+          "state_key": "",
+          "type": "m.room.guest_access",
+          "unsigned": {
+              "age": 229748
+          },
+          "user_id": "@foobar:localhost"
+  }
+  {code}
+
+  {{m.room.power_levels}}:
+
+  {code}
+  {
+          "age": 305254,
+          "content": {
+              "ban": 50,
+              "events": {
+                  "m.room.avatar": 50,
+                  "m.room.canonical_alias": 50,
+                  "m.room.history_visibility": 100,
+                  "m.room.name": 50,
+                  "m.room.power_levels": 100
+              },
+              "events_default": 0,
+              "invite": 0,
+              "kick": 50,
+              "redact": 50,
+              "state_default": 50,
+              "users": {
+                  "@foobar:localhost": 100
+              },
+              "users_default": 0
+          },
+          "event_id": "$14520077513pMceQ:localhost",
+          "origin_server_ts": 1452007751336,
+          "room_id": "!RnBlvNaDPZHyesseif:localhost",
+          "sender": "@foobar:localhost",
+          "state_key": "",
+          "type": "m.room.power_levels",
+          "unsigned": {
+              "age": 305254
+          },
+          "user_id": "@foobar:localhost"
+  }
+  {code}
+
+  {{m.room.member}}:
+  {code}
+  {
+          "age": 209187,
+          "content": {
+              "avatar_url": null,
+              "displayname": null,
+              "kind": "guest",
+              "membership": "join"
+          },
+          "event_id": "$145200784723Kuxpv:localhost",
+          "origin_server_ts": 1452007847403,
+          "room_id": "!RnBlvNaDPZHyesseif:localhost",
+          "sender": "@-itdGdNrVMMBRqGuUNf:localhost",
+          "state_key": "@-itdGdNrVMMBRqGuUNf:localhost",
+          "type": "m.room.member",
+          "unsigned": {
+              "age": 209187
+          },
+          "user_id": "@-itdGdNrVMMBRqGuUNf:localhost"
+  }
+  {code}
+  Spec says it should work. P1 due to https://github.com/vector-im/vector-web/issues/81
+id: '12269'
+key: SYN-575
+number: '575'
+priority: '1'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-01-05 17:58:43.0
+status: '5'
+type: '1'
+updated: 2016-01-05 17:58:43.0
+votes: '0'
+watches: '1'
+workflowId: '12374'
+---
+actions:
+- author: kegan
+  body: |-
+    After joining the room, the {{/sync}} returns the right room ID under the {{join}} key but without any events.
+
+    {code}
+    {
+      "account_data": {
+        "events": []
+      },
+      "next_batch": "s7635_6_24_13_1",
+      "presence": {
+        "events": [
+          {
+            "content": {
+              "last_active_ago": 8378304,
+              "presence": "online"
+            },
+            "sender": "@-itdGdNrVMMBRqGuUNf:localhost",
+            "type": "m.presence"
+          }
+        ]
+      },
+      "rooms": {
+        "invite": {},
+        "join": {
+          "!RnBlvNaDPZHyesseif:localhost": {
+            "account_data": {
+              "events": []
+            },
+            "ephemeral": {
+              "events": []
+            },
+            "state": {
+              "events": []
+            },
+            "timeline": {
+              "events": [],
+              "limited": true,
+              "prev_batch": "t23-7634_6_24_13_1"
+            }
+          }
+        },
+        "leave": {}
+      }
+    }
+    {code}
+  created: 2016-01-05 15:40:09.0
+  id: '12511'
+  issue: '12269'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-01-05 15:40:09.0

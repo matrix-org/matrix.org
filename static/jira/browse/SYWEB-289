@@ -1,0 +1,62 @@
+---
+summary: Webclient should fail gracefully on unsupported browsers
+---
+created: 2015-02-18 14:20:43.0
+creator: matthew
+description: ''
+id: '11089'
+key: SYWEB-289
+number: '289'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-28 10:22:33.0
+status: '5'
+type: '1'
+updated: 2015-05-28 10:22:33.0
+votes: '0'
+watches: '2'
+workflowId: '11189'
+---
+actions:
+- author: kegan
+  body: Angular 1.3 simply doesn't support IE 8 and below, which version was this?
+  created: 2015-02-20 10:04:08.0
+  id: '11301'
+  issue: '11089'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-20 10:04:08.0
+- author: matthew
+  body: Whatever the standard Amdocs corporate Win7 image is.  Can't remember if it's IE8 or 9.
+  created: 2015-02-20 13:26:13.0
+  id: '11303'
+  issue: '11089'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-20 13:26:13.0
+- author: kegan
+  body: It's 8.
+  created: 2015-02-20 13:44:13.0
+  id: '11304'
+  issue: '11089'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-20 13:44:13.0
+- author: matthew
+  body: the failure mode is horrific; we need to improve it and explain what's going on then.
+  created: 2015-02-20 13:46:05.0
+  id: '11305'
+  issue: '11089'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-20 13:46:05.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-angular-sdk/commit/7089b645
+  created: 2015-05-28 10:22:33.0
+  id: '11806'
+  issue: '11089'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-28 10:22:33.0

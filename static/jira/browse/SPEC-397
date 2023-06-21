@@ -1,0 +1,38 @@
+---
+summary: Need a way to get all online users presences
+---
+created: 2016-04-29 12:38:51.0
+creator: manu
+description: |-
+  The first /sync, initialSync, implicitly sends presences of all online users.
+  This allows to be in-sync about all online users. This is currently the only way to get this information.
+
+  But a (mobile) client that has a resume capability avoids to do initialSync. Thus, it cannot know who is online on a resume and displays wrong presence values.
+
+  It would be nice to have mechanism to get all online users presences.
+  Mark suggested:
+   - Maybe if we added a filtering mechanism to the full_state flag we might be able to do something nicer here?
+   - Or just added another flag to /sync like the full_state flag?
+   - Or extended /sync to make it possible to submit a separate request to get the missing presence?
+id: '12641'
+key: SPEC-397
+number: '397'
+priority: '2'
+project: '10001'
+reporter: manu
+status: '10100'
+type: '4'
+updated: 2016-10-28 16:28:32.0
+votes: '0'
+watches: '2'
+workflowId: '12741'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/673'
+  created: 2016-10-28 16:28:32.0
+  id: '13482'
+  issue: '12641'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:32.0

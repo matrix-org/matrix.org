@@ -1,0 +1,80 @@
+---
+summary: To speed up initial sync, surely we should be using roomInitialSync more
+---
+created: 2014-11-27 18:04:26.0
+creator: matthew
+description: ''
+id: '10732'
+key: SYWEB-190
+number: '190'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-04 15:50:48.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:54.0
+votes: '0'
+watches: '3'
+workflowId: '10832'
+---
+actions:
+- author: kegan
+  body: |-
+    Did some curl tests:
+    - limit=1 gave results after 2s
+    - limit=30 gave results after 4s
+
+    Not sure how much this is worth the extra requests...
+  created: 2014-12-01 13:16:14.0
+  id: '10900'
+  issue: '10732'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 13:16:14.0
+- author: matthew
+  body: The use case here is for people on a crap network, where currently 2MB of initialsync is expensive and time consuming.
+  created: 2014-12-01 13:24:32.0
+  id: '10902'
+  issue: '10732'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-01 13:24:32.0
+- author: kegan
+  body: Reduced to 8. It has to be about 8, else it is possible to not get any displayable event from the sync (e.g. if it is set to 4, it is very possible you'd get {{m.room.create}}, {{m.room.alias}}, {{m.room.join_rules}}, {{m.room.power_levels}}, none of which you can display on the recents list.
+  created: 2014-12-04 15:50:48.0
+  id: '10954'
+  issue: '10732'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 15:50:48.0
+- author: matthew
+  body: ...display on the message history, no?
+  created: 2014-12-04 15:54:14.0
+  id: '10955'
+  issue: '10732'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-04 15:54:14.0
+- author: erikj
+  body: |-
+    I'm confused. Surely the limit should get the most recent messages? You would only get {{m.room.create}}, {{m.room.alias}}, {{m.room.join_rules}}, {{m.room.power_levels}} sequence if those were the only 4 events in the room, and so setting the limit to 8 wouldn't help?
+
+    Either way, there is always going to be a chance that the most recent N messages are not displayable (especially with call signalling), so we may want to decide what the best way of handling this failure mode is, and whether we want something in the protocol to handle this for us?
+  created: 2014-12-04 15:55:24.0
+  id: '10956'
+  issue: '10732'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-04 15:55:24.0
+- author: kegan
+  body: |-
+    Matthew: Yes, recents and message history.
+    Erik: Indeed, it's just a heuristic to try to get something presentable. It would be worth having something in the protocol for this I think, which could potentially be useful elsewhere (e.g. call events).
+  created: 2014-12-04 16:02:09.0
+  id: '10957'
+  issue: '10732'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 16:02:09.0

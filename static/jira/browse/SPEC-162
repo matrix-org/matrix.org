@@ -1,0 +1,100 @@
+---
+summary: End-to-End Crypto
+---
+created: 2014-09-23 01:38:44.0
+creator: matthew
+description: |-
+  End-to-end encryption in Matrix is currently a work-in-progress. A draft of the specification is being prepared on the [drafts/e2e branch of matrix-doc|https://matrix.org/speculator/spec/drafts%2Fe2e/client_server/unstable.html#end-to-end-encryption]. The purpose of this issue is to provide an overview of the work that is outstanding.
+
+  h4. An audit of the Olm library, and Olm's use in matrix
+
+  Matrix's cryptographic support has been designed according to our understanding of the latest security research and algorithms. However, none of the matrix.org team are trained security experts.
+
+  We would welcome an independent audit of our designs and implementations, to highlight any potential vulnerabilities.
+
+  h4. New device handling (SPEC-271)
+
+  We need better support for adding new devices to conversations.
+
+  h4. Protocol support for self-destructing messages (SPEC-138), and implementations in homeservers and clients
+
+  Once all recipients have received encrypted data, it is useless (even to the original recipients), because nobody can decrypt it. There is no point keeping such history in a DAG forever. Good security practice dictates that we destroy the ciphertext even if we are confident in the security of the encryption.
+
+  h4. Group chat support (SPEC-292)
+
+  {{m.room.encrypted}} events are a valid proof-of-concept to show that we can transmit encrypted data between clients; however this does not scale beyond a few users, and does not give a good user experience. SPEC-292 considers how this can be improved.
+
+  h4. Encryption controls on rooms (SPEC-293)
+
+  Not every room will need or want the same level of security. We need to define some controls for room administrators to use.
+
+  h4. Support for encryption of attachments (SPEC-24)
+
+  This might become obvious after SPEC-292, but we should remember to make sure that uploaded files can be encrypted as well as messages.
+id: '10371'
+key: SPEC-162
+number: '162'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:27:18.0
+votes: '5'
+watches: '17'
+workflowId: '10474'
+---
+actions:
+- author: eternaleye
+  body: |-
+    {quote}Once all recipients have received encrypted data, it is useless (even to the original recipients), because nobody can decrypt it. There is no point keeping such history in a DAG forever.{quote}
+
+    Counterpoint from https://lwn.net/Articles/634144/
+    {quote}
+    I'd argue that even with PFS, history sync is meaningful for a few reasons:
+
+    # Storage - if the client is only storing fixed-size keys, rather than variable-sized records, small clients (like phones) will be able to keep more history
+    # Reliability - fixed-size keys can trivially be saved as a packed array, either of keys or of \{timestamp, key\} tuples (for searching efficiency), while variable-length messages require more complex (and failure-prone) storage
+    # Verification - if the messages are encrypted using AEAD (and they should be!), keeping the key allows you to revalidate that yes, this _is_ the same message that was originally sent.
+    # Simplicity - keeping the behavior of history sync the same even with PFS reduces the number of corner cases to handle in the code (and possibly the protocol).
+    # Sharing - you want to show someone a past message, and you want them to trust that it actually happened when you say it did (and possibly the context, which are just more messages). If the server still has it, this is trivial: Send them the message identifier and the key, and let them fetch it themselves. This allows treating keys as read-capabilities for historic messages, which is a useful tool indeed.
+    {quote}
+  created: 2016-01-06 19:39:41.0
+  id: '12547'
+  issue: '10371'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-01-06 19:40:55.0
+- author: rickcogley
+  body: |-
+    Not sure if this is the right place for this, but, related to encryption, I'd like to see the ability to specify a message as "self destructing" after a certain period, where, after that period passes, the system auto-redacts the message. 
+
+    If not easily possible with single messages, then perhaps on a per-room basis. 
+
+    The use case I'm thinking of is, sharing passwords with a team, or, (if possible per message) on a 1:1 basis with a specific matrix user. 
+
+    I'd like to be able to share a password and have that message expire after x hours or days. The operational expectation would be, that people would copy the password to their secure storage systems, such as Zetetic Codebook or 1Password and the like. 
+
+    (Now I see the challenge here: Protocol support for self-destructing messages (SPEC-138)...)
+  created: 2016-06-27 09:24:31.0
+  id: '13021'
+  issue: '10371'
+  type: comment
+  updateauthor: rickcogley
+  updated: 2016-06-27 09:30:34.0
+- author: jimmycuadra
+  body: Rick, the "self-destructing" message concept is worrisome because it implies a security property that is not true and may mislead users. There has been some discussion about how to better support the use case you describe without making false promises. I believe the resolution of that discussion is represented in https://matrix.org/jira/browse/SPEC-138. You may want to watch that issue.
+  created: 2016-06-27 13:36:44.0
+  id: '13022'
+  issue: '10371'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-06-27 13:36:44.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/501'
+  created: 2016-10-28 16:27:18.0
+  id: '13309'
+  issue: '10371'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:18.0

@@ -1,0 +1,43 @@
+---
+summary: Fudge around flickering during echos
+---
+assignee: gforet
+created: 2014-12-15 16:08:44.0
+creator: matthew
+description: |-
+  [16:46]  <Arathorn> right. as a quick hacky fix, would it be possible to just to track whether we're waiting for our PUT to return, and if so, assume that anything that comes in from my user id with the same content in the eventstream is indeed an echo?
+  [16:46]  <Arathorn> as it looks like the proper fix is going to be a while out yet
+  [16:46]  <Arathorn> as it's got entangled with generally reviewing c-s API
+  [16:48]  <giom> ok in this case
+  [16:48]  <Arathorn> thanks.
+  [16:48]  <Arathorn> sorry for having to work around the crappiness.
+  [16:48]  <giom> Note if the user send twice the same msg
+  [16:49]  <giom> I will remove both (local echo) if we receive one of them from stream
+  [16:50]  <Arathorn> giom: well, either we remove them or we delay processing them until the send is complete
+  [16:50]  <Arathorn> (which was mjark's suggestion)
+  [16:51]  <Arathorn> which is cleaner, but a bit more of a pain to implement, i imagine.
+  [16:54]  <giom> ok will see :)
+id: '10817'
+key: SYIOS-17
+number: '17'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-16 09:32:16.0
+status: '6'
+type: '1'
+updated: 2014-12-16 13:10:36.0
+votes: '0'
+watches: '2'
+workflowId: '10917'
+---
+actions:
+- author: gforet
+  body: We hide outgoing messages received from events stream when the app is waiting for our PUT to return. (The messages are then shown on PUT answer).
+  created: 2014-12-16 09:32:16.0
+  id: '10998'
+  issue: '10817'
+  type: comment
+  updateauthor: gforet
+  updated: 2014-12-16 09:32:16.0

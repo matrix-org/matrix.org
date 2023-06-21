@@ -1,0 +1,28 @@
+---
+summary: Autojoin rooms
+---
+created: 2015-02-14 04:35:49.0
+creator: matthew
+description: ''
+id: '11056'
+key: SYN-275
+number: '275'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:44.0
+votes: '0'
+watches: '2'
+workflowId: '11156'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1286'
+  created: 2016-11-07 18:27:44.0
+  id: '13605'
+  issue: '11056'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:44.0

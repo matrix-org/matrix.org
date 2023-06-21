@@ -1,0 +1,55 @@
+---
+summary: 'IRC AS: Fatal exception (network)'
+---
+created: 2015-12-15 09:21:01.0
+creator: kegan
+description: |-
+  Bridge restarted with:
+  {code}
+  2015-12-15 07:50:39 ERROR:matrix-js-sdk GET http://matrix.org/_matrix/client/api/v1/initialSync (AS) HTTP null Error: {"code":"ECONNRESET"}
+  2015-12-15 07:50:39 ERROR:main FATAL EXCEPTION
+  2015-12-15 07:50:39 ERROR:main Error: socket hang up
+      at createHangUpError (http.js:1472:15)
+      at Socket.socketOnEnd [as onend] (http.js:1568:23)
+      at Socket.g (events.js:180:16)
+      at Socket.EventEmitter.emit (events.js:117:20)
+      at _stream_readable.js:920:16
+      at process._tickCallback (node.js:415:13)
+  2015-12-15 07:50:39 ERROR:main Terminating (exitcode=1)
+  {code}
+
+  Other failures in the logs:
+
+  {code}
+  2015-12-13 06:46:32 ERROR:main FATAL EXCEPTION
+  2015-12-13 06:46:32 ERROR:main Error: read ECONNRESET
+      at errnoException (net.js:901:11)
+      at TCP.onread (net.js:556:19)
+  2015-12-13 06:46:32 ERROR:main Terminating (exitcode=1)
+  {code}
+
+  {code}
+  2015-11-28 05:56:49 ERROR:main FATAL EXCEPTION
+  2015-11-28 05:56:49 ERROR:main Error: read ECONNRESET
+      at errnoException (net.js:901:11)
+      at TCP.onread (net.js:556:19)
+  2015-11-28 05:56:49 ERROR:main Terminating (exitcode=1)
+  {code}
+
+  Why the hell is the HTTP/network library throwing uncaught Errors? They should all be rejecting promises. The stack doesn't look like it is touching the bridge code...
+id: '12210'
+key: BOTS-147
+number: '147'
+priority: '1'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-06-02 10:07:30.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:07:30.0
+votes: '0'
+watches: '1'
+workflowId: '12313'
+---
+actions: null

@@ -1,0 +1,38 @@
+---
+summary: Ability to set your matrix displayname from IRC by msging MatrixBridge
+---
+created: 2014-10-15 13:57:58.0
+creator: matthew
+description: ''
+id: '10474'
+key: BOTS-3
+number: '3'
+priority: '3'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-06-02 10:53:01.0
+status: '5'
+type: '2'
+updated: 2016-06-02 10:53:01.0
+votes: '0'
+watches: '3'
+workflowId: '10578'
+---
+actions:
+- author: neb
+  body: 'By @kegan:matrix.org: this is a test'
+  created: 2015-05-11 13:47:07.0
+  id: '11734'
+  issue: '10474'
+  type: comment
+  updateauthor: neb
+  updated: 2015-05-11 13:47:07.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/55
+  created: 2016-06-02 10:53:01.0
+  id: '12970'
+  issue: '10474'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:53:01.0

@@ -1,0 +1,20 @@
+---
+summary: Handle multiple m.room.aliases events from different homeservers
+---
+created: 2015-11-25 14:56:59.0
+creator: gforet
+description: ''
+id: '12137'
+key: SYIOS-182
+number: '182'
+priority: '3'
+project: '10200'
+reporter: gforet
+status: '10100'
+type: '1'
+updated: 2015-11-25 14:58:10.0
+votes: '0'
+watches: '1'
+workflowId: '12240'
+---
+actions: null

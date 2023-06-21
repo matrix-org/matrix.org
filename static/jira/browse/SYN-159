@@ -1,0 +1,28 @@
+---
+summary: pip install chokes on a box with 512MB of RAM.
+---
+created: 2014-11-20 02:43:07.0
+creator: matthew
+description: ''
+id: '10691'
+key: SYN-159
+number: '159'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:25.0
+votes: '0'
+watches: '2'
+workflowId: '10791'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1245'
+  created: 2016-11-07 18:27:25.0
+  id: '13563'
+  issue: '10691'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:25.0

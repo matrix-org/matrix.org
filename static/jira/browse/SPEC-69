@@ -1,0 +1,35 @@
+---
+summary: The joining API in the client server should say how the client expects the server to join it to the room.
+---
+created: 2014-11-19 09:49:35.0
+creator: markjh
+description: |-
+  The HS needs to know the list of servers in the room in order to join it.
+
+  The joining API should tell the HS the list of servers. It could do this by referencing the invite event if the client has been invited. It could do this by giving the alias if the client is joining through an alias.
+
+  The joining API should fail clearly and consistently if the list of servers isn't specified. Otherwise people will write clients that fail to indicate the list of servers.
+id: '10680'
+key: SPEC-69
+number: '69'
+priority: '1'
+project: '10001'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-01-21 11:23:59.0
+status: '5'
+type: '1'
+updated: 2015-01-21 11:23:59.0
+votes: '0'
+watches: '2'
+workflowId: '10780'
+---
+actions:
+- author: kegan
+  body: 'Landed on master: {{drafts/general_api.rst}}'
+  created: 2015-01-21 11:23:59.0
+  id: '11163'
+  issue: '10680'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:23:59.0

@@ -1,0 +1,22 @@
+---
+summary: Mic input gets taken from device mic even if a BT headset is used
+---
+created: 2016-03-02 09:10:55.0
+creator: wldhx
+description: |-
+  Tested on Console#323 @ Android {4.4.2,6.0.1} with Android<->VectorDesktop voice calls.
+  Also, 'switch to external speaker' button in the lower right corner freezes in 'external speaker' position.
+id: '12538'
+key: SYAND-179
+number: '179'
+priority: '3'
+project: '10201'
+reporter: wldhx
+status: '10100'
+type: '1'
+updated: 2016-03-02 09:10:55.0
+votes: '0'
+watches: '1'
+workflowId: '12638'
+---
+actions: null

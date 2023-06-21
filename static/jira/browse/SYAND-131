@@ -1,0 +1,32 @@
+---
+summary: performance of catchup
+---
+created: 2015-09-25 08:35:49.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  I receive a lot of messages in a day because I'm on freenode channels. My phone in the office usually has no Internet connection so it does a catchup for the entire day in the evening whilst on mobile data. This process is slow, and even doing it on WiFi makes no difference, it's still slow. It seems to me that it takes the app ages to process a few messages and dump them onto the UI. To make matters worse, during this catchup I *cannot tap a recents entry to view a room*. I try to, but it just does nothing (I've tried tapping slower, more times, nothing helps). Please look into speeding up this catchup performance (which I don't believe is tied to the network connection quality) and most importantly allowing the user to navigate rooms whilst this is ongoing.
+id: '11942'
+key: SYAND-131
+number: '131'
+priority: '2'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-30 12:30:37.0
+status: '5'
+type: '1'
+updated: 2015-09-30 12:30:37.0
+votes: '0'
+watches: '2'
+workflowId: '12045'
+---
+actions:
+- author: m-ylecollen
+  body: It will be fixed in 0.5.1 release.
+  created: 2015-09-30 12:30:37.0
+  id: '12196'
+  issue: '11942'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-30 12:30:37.0

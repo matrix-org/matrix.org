@@ -1,0 +1,54 @@
+---
+summary: Remove dependency on jQuery
+---
+created: 2015-05-28 11:14:54.0
+creator: kegan
+description: |-
+  It would be nice to keep our dependency list as constrained as possible. We should be able to get away without using jQuery proper, and rely on jqLite instead. That being said, we are currently using features of jQuery which are not supported in jqLite (particularly DOM element manipulation).
+  {code}
+   $ grep -rn '$(' app/
+
+  app/room/room-controller.js:231:        var originalTopRow = $("#messageTable>tbody>tr:first")[0];
+  app/room/room-controller.js:246:                var wrapper = $("#messageTableWrapper")[0];
+  app/room/room-controller.js:247:                var table = $("#messageTable")[0];
+  app/room/room-controller.js:302:                $('#mainInput').val($('#mainInput').val() + name);
+  app/room/room-controller.js:308:        var input = $('#mainInput').val();
+  app/room/room-controller.js:320:                $('#mainInput').val('');
+  app/room/room-controller.js:325:                    $('#mainInput').val('');
+  app/room/room-controller.js:413:        var wrapper = $("#messageTableWrapper")[0];
+  app/room/room-controller.js:414:        var table = $("#messageTable")[0];
+  app/room/room-directive.js:273:                    $("#controlPanel").height(60 + newHeight - 19);
+  app/room/room-directive.js:274:                    $("#roomPage").css({ 'bottom': (60 + 10 + newHeight - 19) });
+  app/room/room-directive.js:275:                    $("#controlpanel-resizer").css({ 'bottom': (60 + newHeight - 19) });
+  app/room/room-directive.js:277:                        $("#messageTableWrapper").scrollTop(
+  app/room/room-directive.js:278:                            $("#messageTableWrapper").scrollTop() + newHeight - oldHeight
+  app/room/room-directive.js:398:                    var span = new $("<span />");
+  app/room/room-directive.js:475:                var x = event.pageX - $($attrs.resizerLeft).offset().left;
+  app/room/room-directive.js:489:                $($attrs.resizerLeft).css({
+  app/room/room-directive.js:492:                $($attrs.resizerRight).css({
+  app/room/room-directive.js:514:                $("#mainInput").height(y - 40);
+  app/room/room-directive.js:515:                $("#messageTableWrapper").scrollTop(
+  app/room/room-directive.js:516:                    $("#messageTableWrapper").scrollTop() + y - yPrev
+  app/room/room-directive.js:523:                $($attrs.resizerTop).css({
+  app/room/room-directive.js:526:                $($attrs.resizerBottom).css({
+  app/room/room-directive.js:536:                var x = event.pageX - $($attrs.resizerLeft).offset().left;
+  app/room/room-directive.js:550:                $($attrs.resizerLeft).css({
+  app/room/room-directive.js:553:                $($attrs.resizerRight).css({
+  {code}
+
+  jqLite supported functions:
+  https://docs.angularjs.org/api/ng/function/angular.element
+id: '11567'
+key: SYWEB-360
+number: '360'
+priority: '3'
+project: '10004'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2015-05-28 11:14:54.0
+votes: '0'
+watches: '1'
+workflowId: '11668'
+---
+actions: null

@@ -1,0 +1,28 @@
+---
+summary: Check that the "origin" in the transaction JSON matches the X-Matrix authorization origin.
+---
+created: 2014-10-14 10:52:56.0
+creator: markjh
+description: We need to check that the "origin" in the transaction JSON matches the "origin" in the HTTP signature. Otherwise servers will be able to spoof other servers.
+id: '10471'
+key: SYN-102
+number: '102'
+priority: '1'
+project: '10000'
+reporter: markjh
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:20.0
+votes: '0'
+watches: '2'
+workflowId: '10575'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1232'
+  created: 2016-11-07 18:27:20.0
+  id: '13554'
+  issue: '10471'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:20.0

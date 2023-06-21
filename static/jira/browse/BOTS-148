@@ -1,0 +1,32 @@
+---
+summary: Scrollback from remote newly-joined IRC bridge rooms produces blank events
+---
+created: 2015-12-27 01:14:46.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  See convo around $145117852980PFsAj:terracrypt.net on Matrix HQ
+id: '12251'
+key: BOTS-148
+number: '148'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 11:32:43.0
+status: '5'
+type: '1'
+updated: 2016-06-02 11:32:43.0
+votes: '0'
+watches: '2'
+workflowId: '12354'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/66
+  created: 2016-06-02 11:32:43.0
+  id: '12988'
+  issue: '12251'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 11:32:43.0

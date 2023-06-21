@@ -1,0 +1,40 @@
+---
+summary: Users should be able to see the name and history of rooms that they have left.
+---
+assignee: markjh
+created: 2015-08-28 15:44:13.0
+creator: markjh
+description: |-
+  The client should list the rooms that a user used to be present in.
+  The list should display the name of the room.
+  It should be possible to see the timeline of the room up to the point the user left.
+
+  Open Questions:
+    1) Should the user be able to see the current name of the room, or the name of the room when they left the room?
+    2) Should the user be able to remove rooms from this list?
+
+  Proposal #1
+  =========
+
+  Add rooms where the user has a m.room.member status of "leave" to the recent rooms list.
+  Only allow users to view the messages and state up to the point where they left the room.
+
+
+  Cons:
+  * No way to remove a room from the list.
+id: '11829'
+key: SPEC-216
+number: '216'
+priority: '1'
+project: '10001'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-12-10 15:42:40.0
+status: '5'
+type: '2'
+updated: 2015-12-10 15:42:41.0
+votes: '0'
+watches: '1'
+workflowId: '11932'
+---
+actions: null

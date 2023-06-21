@@ -1,0 +1,36 @@
+---
+summary: Way to force users to join a room
+---
+created: 2015-08-26 22:44:43.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11820'
+key: SPEC-214
+number: '214'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:34.0
+votes: '0'
+watches: '2'
+workflowId: '11923'
+---
+actions:
+- author: richvdh
+  body: why?
+  created: 2016-09-27 18:00:48.0
+  id: '13147'
+  issue: '11820'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 18:00:48.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/536'
+  created: 2016-10-28 16:27:34.0
+  id: '13344'
+  issue: '11820'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:34.0

@@ -1,0 +1,36 @@
+---
+summary: debian pkg creates world readable private key :(
+---
+created: 2016-04-03 21:07:42.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12608'
+key: SYN-671
+number: '671'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:22.0
+votes: '0'
+watches: '3'
+workflowId: '12708'
+---
+actions:
+- author: crashkopf
+  body: "My quick fix is something like this:\n{code:bash}\n#!/bin/bash\nUSER=\"matrix-synapse\"\nGROUP=\"matrix-synapse\"\n\nPRIVKEYFILE=/etc/matrix-synapse/homeserver.tls.key\nSIGNKEYFILE=/etc/matrix-synapse/homeserver.signing.key\n\nif ! getent group $GROUP >/dev/null; then\n  addgroup --quiet --system $GROUP\nfi\n\nif ! getent group $GROUP | cut -d : -f 4 | grep $USER > /dev/null; then\n\taddgroup $USER $GROUP\nfi\n\nif [ -f $PRIVKEYFILE ]; then \n\tchgrp $GROUP $PRIVKEYFILE\n\tchmod 640 $PRIVKEYFILE\nfi\n\nif [ -f $SIGNKEYFILE ]; then \n\tchgrp $GROUP $SIGNKEYFILE\n\tchmod 640 $SIGNKEYFILE\nfi\n{code}\n\nThe key files get created by the init script using {{--generate-config}} if they don't exist.   If there were an easy way to get {{tls_private_key_path}} and {{signing_key_path}} from the synapse.config module then the key permissions could be checked on every start."
+  created: 2016-04-04 02:40:29.0
+  id: '12805'
+  issue: '12608'
+  type: comment
+  updateauthor: crashkopf
+  updated: 2016-04-04 02:40:29.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1528'
+  created: 2016-11-07 18:29:22.0
+  id: '13837'
+  issue: '12608'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:22.0

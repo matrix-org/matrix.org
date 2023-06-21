@@ -1,0 +1,28 @@
+---
+summary: Ability to peek into invites
+---
+created: 2016-03-17 18:55:55.0
+creator: matthew
+description: ''
+id: '12564'
+key: SPEC-368
+number: '368'
+priority: '1'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:23.0
+votes: '0'
+watches: '2'
+workflowId: '12664'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/651'
+  created: 2016-10-28 16:28:23.0
+  id: '13460'
+  issue: '12564'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:23.0

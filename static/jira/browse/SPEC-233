@@ -1,0 +1,28 @@
+---
+summary: Define how to request a client plays a video/audio immediately on receipt (for PTT uses)
+---
+created: 2015-09-22 21:52:55.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11916'
+key: SPEC-233
+number: '233'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:40.0
+votes: '0'
+watches: '2'
+workflowId: '12019'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/547'
+  created: 2016-10-28 16:27:40.0
+  id: '13355'
+  issue: '11916'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:40.0

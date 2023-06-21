@@ -1,0 +1,37 @@
+---
+summary: Loading indicator when loading members list
+---
+created: 2015-07-09 15:33:31.0
+creator: bob
+description: |-
+  Loading the members list in a bigger room can take a while, e.g. on GPRS.
+  Unfortunately no indication is shown to user that the list is currently in loading state.
+
+  Such an indication would be nice.
+id: '11741'
+key: SYAND-98
+number: '98'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '5'
+resolutiondate: 2015-09-02 14:28:28.0
+status: '5'
+type: '4'
+updated: 2015-09-02 14:28:28.0
+votes: '0'
+watches: '2'
+workflowId: '11842'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    i don't reproduce this issue anymore on GPRS network and with matrix HQ room (> 1200 users).
+
+    the code has been improved to reduce its display time.
+  created: 2015-09-02 14:28:20.0
+  id: '12083'
+  issue: '11741'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-02 14:28:20.0

@@ -1,0 +1,31 @@
+---
+summary: IRC bridge 200 OKs transactions which have invalid HS token
+---
+assignee: kegan
+created: 2016-02-16 17:05:02.0
+creator: illicitonion
+description: ''
+id: '12402'
+key: BOTS-167
+number: '167'
+priority: '3'
+project: '10101'
+reporter: illicitonion
+resolution: '1'
+resolutiondate: 2016-06-02 10:44:30.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:44:30.0
+votes: '0'
+watches: '2'
+workflowId: '12507'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/52
+  created: 2016-06-02 10:44:30.0
+  id: '12964'
+  issue: '12402'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:44:30.0

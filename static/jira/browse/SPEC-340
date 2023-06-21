@@ -1,0 +1,30 @@
+---
+summary: Clear up confusion between 'event.age' and 'event.unsigned.age'
+---
+created: 2016-01-27 10:30:58.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  {{event.age}} exists only for backwards compatibility, but many of the example responses still show it, and don't show {{event.unsigned}} at all.
+id: '12352'
+key: SPEC-340
+number: '340'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:15.0
+votes: '0'
+watches: '2'
+workflowId: '12457'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/630'
+  created: 2016-10-28 16:28:15.0
+  id: '13438'
+  issue: '12352'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:15.0

@@ -1,0 +1,38 @@
+---
+summary: Disambiguating user names better
+---
+created: 2015-09-28 16:48:58.0
+creator: gforet
+description: ''
+id: '11959'
+key: SYAND-136
+number: '136'
+priority: '2'
+project: '10201'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-10-01 13:54:55.0
+status: '5'
+type: '2'
+updated: 2015-11-06 23:26:06.0
+votes: '0'
+watches: '2'
+workflowId: '12062'
+---
+actions:
+- author: richvdh
+  body: Just for the record, the android client appears to disambiguate using MXID, rather than with a numeric suffix.
+  created: 2015-11-05 09:26:24.0
+  id: '12321'
+  issue: '11959'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 09:26:24.0
+- author: richvdh
+  body: Hrm. It now uses a numeric suffix.
+  created: 2015-11-06 23:26:06.0
+  id: '12354'
+  issue: '11959'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-06 23:26:06.0

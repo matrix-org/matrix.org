@@ -1,0 +1,20 @@
+---
+summary: It's possible to set power, get an error, but your local client behaves as if the change succeeded
+---
+created: 2015-06-12 15:47:03.0
+creator: matthew
+description: "Ivan Shapovalov\n Tom M Riddle: your power_level is now 80, congrats.\t\nJun 12 15:42\n :D\t\nJun 12 15:42\n@voldemort:matrix.org\t\nTom M Riddle\n Ivan Shapovalov: no\t\nJun 12 15:43\n Settings say it's 100\t\nJun 12 15:43\n@intelfx:intelfx.name\t\nIvan Shapovalov\n Really? I see it as 80 in the property dump in the webclient.\t\nJun 12 15:43\n@voldemort:matrix.org\t\nTom M Riddle\n Well, let me refresh the page\t\nJun 12 15:43\n   \"users\": {\n    \"@intelfx:intelfx.name\": 90,\n    \"@matthew:matrix.org\": 10,\n    \"@voldemort:matrix.org\": 100\n  }\t\nJun 12 15:44\n Still says it's 100\t\nJun 12 15:44\n@intelfx:intelfx.name\t\nIvan Shapovalov\n let me refresh...\t\nJun 12 15:44\n@voldemort:matrix.org\t\nTom M Riddle\n And a complete-red round\t\nJun 12 15:44\n\t\nMatthew\n it never said antyhing other than 100 to me\t\nJun 12 15:44\n@erikj:jki.re\t\nErik\n 'tis 100 here too\t\nJun 12 15:44\n@intelfx:intelfx.name\t\nIvan Shapovalov\n yep.\t\nJun 12 15:44\n Looks like another bug in the webclient."
+id: '11644'
+key: SYWEB-374
+number: '374'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-06-12 15:47:03.0
+votes: '0'
+watches: '1'
+workflowId: '11745'
+---
+actions: null

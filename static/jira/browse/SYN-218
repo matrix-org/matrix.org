@@ -1,0 +1,28 @@
+---
+summary: Limit size of history requested in initialSync
+---
+created: 2014-12-24 17:25:15.0
+creator: matthew
+description: ''
+id: '10870'
+key: SYN-218
+number: '218'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:33.0
+votes: '0'
+watches: '2'
+workflowId: '10970'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1265'
+  created: 2016-11-07 18:27:33.0
+  id: '13583'
+  issue: '10870'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:33.0

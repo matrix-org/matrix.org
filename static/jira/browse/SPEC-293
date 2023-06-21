@@ -1,0 +1,51 @@
+---
+summary: Define semantics for encryption controls on rooms
+---
+created: 2015-12-07 18:51:09.0
+creator: richvdh
+description: |-
+  As far as end-to-end crypto goes, it is clear that one size will not fit all rooms. There are tradeoffs to be made between security and convenience. For example:
+
+  * What should the behaviour be when a new user joins a room? Existing users will have to share their ratchet keys with the new user.
+  ** Should existing users have to explicitly authorise them? Should they be prompted to do so, or should they be able to do this when they feel like it?
+  ** For more convenience and less security, we could automatically authorise new users and instead control access via the {{join_rules}} (so anyone invited to the room can see history).
+  ** Should we allow new users to see history up to a certain point *before* they joined (by sharing older ratchet keys with them?)
+  * How about when an existing user connects a new device?
+  ** Generally if you trust one device belonging to a user, you might as well trust all of them - but particularly paranoid configurations may prefer to authenticate each device separately.
+  ** It will feel strange if I can see further back in a conversation with one device (because it has access to earlier access keys) than with another. We could provide a mechanism for transferring other users' ratchet keys between devices.
+  * What should happen when a user/device leaves a room? Should we always rekey before sending any more messages? What if the user was only leaving temporarily and wants to come back later? If we let them come back, should they be able to see the history during their absence?
+  * Should homeservers keep copies of the (encrypted) history? This is useful for revisiting earlier conversations (provided the clients have kept copies of all of the relevant ratchet keys), but again may be unsatisfactory for conserverative operators.
+  * How long should receiving clients hold on to old message ratchet keys? We can't enforce this (I could always implement a client which stores every ratchet value), but we could at least provide hints.
+  * How often should sending clients rekey their message ratchets?
+
+  These options could be configured by room state events. We should define such events (and then implement them in clients.)
+id: '12185'
+key: SPEC-293
+number: '293'
+priority: '3'
+project: '10001'
+reporter: richvdh
+status: '1'
+type: '2'
+updated: 2016-10-28 16:27:59.0
+votes: '0'
+watches: '4'
+workflowId: '12288'
+---
+actions:
+- author: richvdh
+  body: See https://docs.google.com/document/d/1SEPMhNh6ztcrrbkGRSayVQ23bd3cfMPkTgGL4kBS9Ps for some initial progress on this.
+  created: 2016-06-30 17:59:49.0
+  id: '13041'
+  issue: '12185'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-30 17:59:49.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/590'
+  created: 2016-10-28 16:27:59.0
+  id: '13398'
+  issue: '12185'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:59.0

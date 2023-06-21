@@ -1,0 +1,34 @@
+---
+summary: Guest registration failure errors look broken
+---
+created: 2016-03-15 22:57:10.0
+creator: matthew
+description: |-
+  {code}
+  sierra:~ matthew$ curl 'http://127.0.0.1:8008/_matrix/client/r0/register?kind=guest' --data '{}'
+  "Guest access is disabled"
+  {code}
+
+  That does not look like a very matrixy error message, and Vector chokes on it.
+id: '12561'
+key: SYN-653
+number: '653'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:15.0
+votes: '0'
+watches: '2'
+workflowId: '12661'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1238'
+  created: 2016-11-07 18:29:15.0
+  id: '13822'
+  issue: '12561'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:15.0

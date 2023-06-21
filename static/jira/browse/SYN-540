@@ -1,0 +1,201 @@
+---
+summary: matrix.org and vector.im sydents are mis-configured and have bad historical records
+---
+assignee: dbkr
+created: 2015-12-07 16:52:01.0
+creator: kegan
+description: |-
+  This is a *p1* due to https://github.com/vector-im/vector-web/issues/419
+
+  Request:
+  {code}
+  POST /_matrix/client/api/v1/rooms/!OkpbgaYmmaoSeiGgjz:matrix.org/invite
+  {
+    "id_server": "vector.im",
+    "medium": "email",
+    "address": "kegan@matrix.org"
+  }
+  {code}
+
+  Logs:
+  {code}
+  2015-12-15 15:39:48,237 - synapse.access.http.8080 - 493 - INFO - POST-1953984 - 83.166.71.14 - 8080 - Received request: POST /_matrix/client/api/v1/rooms/!OkpbgaYmmaoSeiGgjz:matrix.org/invite?access_token=<redacted>
+  2015-12-15 15:39:48,240 - synapse.http.client - 79 - INFO - POST-1953984 - Sending request GET https://vector.im/_matrix/identity/api/v1/lookup?medium=email&address=kegan%40matrix.org
+  2015-12-15 15:39:48,260 - synapse.http.client - 85 - INFO - POST-1953984 - Received response to  GET https://vector.im/_matrix/identity/api/v1/lookup?medium=email&address=kegan%40matrix.org: 200
+  2015-12-15 15:39:48,261 - twisted - 154 - CRITICAL - POST-1953984 - Unhandled error in Deferred:
+  2015-12-15 15:39:48,261 - twisted - 154 - CRITICAL - POST-1953984 - 
+  2015-12-15 15:39:48,266 - synapse.http.outbound - 122 - INFO - POST-1953984 - {PUT-O-413917} [localhost] Sending request: PUT matrix://localhost/_matrix/federation/v1/invite/!OkpbgaYmmaoSeiGgjz:matrix.org/$1450193988109435RSxIp:matrix.org
+  2015-12-15 15:39:48,279 - synapse.http.outbound - 209 - INFO - POST-1953984 - {PUT-O-413917} [localhost] Result: 401 Unauthorized
+  2015-12-15 15:39:48,281 - synapse.http.server - 112 - ERROR - POST-1953984 - 401: Unauthorized
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 104, in wrapped_request_handler
+      yield d
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/http/server.py", line 232, in _async_render
+      callback_return = yield callback(request, *args)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/client/v1/room.py", line 455, in on_POST
+      txn_id
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/room.py", line 632, in do_3pid_invite
+      txn_id=txn_id,
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/message.py", line 230, in create_and_send_event
+      yield member_handler.change_membership(event, context, is_guest=is_guest)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/room.py", line 448, in change_membership
+      do_auth=do_auth,
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/room.py", line 600, in _do_local_membership_update
+      suppress_auth=(not do_auth),
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/_base.py", line 238, in handle_new_client_event
+      event,
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/federation.py", line 549, in send_invite
+      pdu=event
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/federation/federation_client.py", line 509, in send_invite
+      content=pdu.get_pdu_json(time_now),
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/federation/transport/client.py", line 216, in send_invite
+      data=content,
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/http/matrixfederationclient.py", line 289, in put_json
+      long_retries=long_retries,
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/http/matrixfederationclient.py", line 219, in _create_request
+      response.code, response.phrase, body
+  HttpResponseException: 401: Unauthorized
+  2015-12-15 15:39:48,281 - synapse.access.http.8080 - 525 - INFO - POST-1953984 - 83.166.71.14 - 8080 - {@kegan2:matrix.org} Processed request: 44ms (0ms, 0ms) (1ms/3) 46B 401 "POST /_matrix/client/api/v1/rooms/!OkpbgaYmmaoSeiGgjz:matrix.org/invite?access_token=<redacted> HTTP/1.1" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+  {code}
+
+  It looks like this request triggered a federation request because I also see this for the same room ID:
+
+  {code}
+  2015-12-15 15:39:48,267 - synapse.access.https.8448 - 493 - INFO - PUT-1953985 - 127.0.0.1 - 8448 - Received request: PUT /_matrix/federation/v1/invite/!OkpbgaYmmaoSeiGgjz:matrix.org/$1450193988109435RSxIp:matrix.org
+  2015-12-15 15:39:48,269 - synapse.http.outbound - 122 - INFO - PUT-1953985 - {POST-O-413918} [matrix.org] Sending request: POST matrix://matrix.org/_matrix/key/v2/query
+  2015-12-15 15:39:48,275 - synapse.http.outbound - 209 - INFO - PUT-1953985 - {POST-O-413918} [matrix.org] Result: 200 OK
+  2015-12-15 15:39:48,278 - synapse.federation.transport.server - 151 - ERROR - PUT-1953985 - authenticate_request failed
+  Traceback (most recent call last):
+    File "synapse/federation/transport/server.py", line 144, in new_code
+      (origin, content) = yield authenticator.authenticate_request(request)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/federation/transport/server.py", line 94, in authenticate_request
+      yield self.keyring.verify_json_for_server(origin, json_request)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/crypto/keyring.py", line 137, in handle_key_deferred
+      Codes.UNAUTHORIZED,
+  SynapseError: 401: Invalid signature for server matrix.org with key ed25519:auto
+  2015-12-15 15:39:48,279 - synapse.http.server - 109 - INFO - PUT-1953985 - <SynapseRequest at 0xa32204d0 method=PUT uri=/_matrix/federation/v1/invite/!OkpbgaYmmaoSeiGgjz:matrix.org/$1450193988109435RSxIp:matrix.org clientproto=HTTP/1.1 site=8448> SynapseError: 401 - Invalid signature for server matrix.org with key ed25519:auto
+  2015-12-15 15:39:48,279 - synapse.access.https.8448 - 525 - INFO - PUT-1953985 - 127.0.0.1 - 8448 - {None} Processed request: 12ms (0ms, 0ms) (1ms/3) 100B 401 "PUT /_matrix/federation/v1/invite/!OkpbgaYmmaoSeiGgjz:matrix.org/$1450193988109435RSxIp:matrix.org HTTP/1.1" "Synapse/0.12.0-rc1 (b=release-v0.12.0,e98e005)
+  {code}
+
+  Why is it doing federation requests _to itself_?
+id: '12184'
+key: SYN-540
+number: '540'
+priority: '1'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-01-07 15:43:29.0
+status: '5'
+type: '1'
+updated: 2016-01-07 15:43:29.0
+votes: '0'
+watches: '4'
+workflowId: '12287'
+---
+actions:
+- author: illicitonion
+  body: |-
+    The problem here, I believe, is that the vector.im identity server is misconfigured.
+
+    It should be signing things as "vector.im" but is in fact calling itself "matrix.org":
+
+    $ curl "https://vector.im/_matrix/identity/api/v1/lookup?medium=email&address=kegan%40matrix.org"
+    {"signatures": {"matrix.org": {"ed25519:0": "ZG4aNAF5preN9NoENppbpZ7rQtWntj3ZMfDBHE2ZlyKb0SpJfh94d23cT4/291X/AcLrIWBDNan4WmbJbAlNBw"}}, "not_after": 4603799441106, "ts": 1450199441106, "medium": "email", "address": "kegan@matrix.org", "mxid": "@kegan:matrix.org", "not_before": 1450199441106}
+
+    There is also the fun that there used to be id.matrix.org and matrix.org used inconsistently, and as far as I can tell the matrix.org ID server returns inconsistent results, depending on when someone confirmed their identity:
+
+    $ curl "https://matrix.org/_matrix/identity/api/v1/lookup?medium=email&address=kegan%40matrix.org"
+    {"medium": "email", "not_after": 4603799441106, "ts": 1450199441106, "signatures": {"matrix.org": {"ed25519:0": "ZG4aNAF5preN9NoENppbpZ7rQtWntj3ZMfDBHE2ZlyKb0SpJfh94d23cT4/291X/AcLrIWBDNan4WmbJbAlNBw"}}, "address": "kegan@matrix.org", "mxid": "@kegan:matrix.org", "not_before": 1450199441106}
+
+    $ curl "https://matrix.org/_matrix/identity/api/v1/lookup?medium=email&address=dawagner@gmail.com"
+    {"medium": "email", "not_after": 4582425849161, "ts": 1428825849161, "signatures": {"id.matrix.org": {"ed25519:0": "ENiU2YORYUJgE6WBMitU0mppbQjidDLanAusj8XS2nVRHPu+0t42OKA/r6zV6i2MzUbNQ3c3MiLScJuSsOiVDQ"}}, "address": "dawagner@gmail.com", "mxid": "@illicitonion:matrix.org", "not_before": 1428825849161}
+
+    What needs to happen is:
+
+    vector.im needs to call itself vector.im (or id.vector.im), and do so canonically.
+    matrix.org needs to call itself matrix.org (or id.matrix.org), and do so canonically.
+    They both need to consistently serve results as whatever they canonically call themselves.
+    All clients need to use the one canonical name for each of them.
+  created: 2015-12-15 19:16:47.0
+  id: '12473'
+  issue: '12184'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-12-15 19:16:47.0
+- author: markjh
+  body: The email address kegan was using to test with had been bound to a matrix account on "localhost". Synapse tried to talk to localhost to send the invite and this obviously failed.
+  created: 2015-12-16 10:26:56.0
+  id: '12475'
+  issue: '12184'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-12-16 10:26:56.0
+- author: illicitonion
+  body: Re-opening to track fix of my comment
+  created: 2015-12-16 10:49:40.0
+  id: '12476'
+  issue: '12184'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-12-16 10:49:40.0
+- author: dbkr
+  body: so, I'm fixing up the sydent databases to all be matrix.org since we have the luxury of being able to do so, but I can't find anything else wrong re vector.im being matrix.org
+  created: 2015-12-16 12:19:58.0
+  id: '12477'
+  issue: '12184'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-12-16 12:19:58.0

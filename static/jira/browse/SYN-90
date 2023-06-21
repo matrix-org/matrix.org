@@ -1,0 +1,66 @@
+---
+summary: pip install matrix-synapse
+---
+created: 2014-10-06 23:20:30.0
+creator: matthew
+description: ''
+id: '10455'
+key: SYN-90
+number: '90'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:18.0
+votes: '0'
+watches: '5'
+workflowId: '10559'
+---
+actions:
+- author: markjh
+  body: |-
+    Running:
+    {code}
+    pip install --user --process-dependency-links https://github.com/matrix-org/synapse/tarball/develop
+    {code}
+    will install synapse. 
+
+    Now we just to work out how to upload stuff to PyPI.
+  created: 2014-11-04 17:26:39.0
+  id: '10731'
+  issue: '10455'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-04 17:26:39.0
+- author: eternaleye
+  body: |-
+    A few nitpicks:
+
+    1.) --process-dependency-links is deprecated pending removal
+    2.) On some distributions, such as arch, python3 is the default - but synapse does not work on python3
+    3.) While --user allows installing dependencies without impinging on the system as a whole, it may not be sufficient - in particular, system dependencies that are later upgraded or uninstalled may break synapse.
+
+    The following command worked for me, and addresses all of the above issues:
+
+    {code:sh}pip2.7 install --user --upgrade --ignore-installed https://github.com/matrix-org/synapse/tarball/develop{code}
+
+    The --upgrade argument causes pip to install the best version available to satisfy dependencies rather than making do with what may already be present, and --ignore-installed tells it to not rely on system modules even if they are the best available version. The result is that only a change of Python version or config can break it, which is considerably less likely.
+
+    The command may also be abbreviated to:
+
+    {code:sh}pip2.7 install --user -UI https://github.com/matrix-org/synapse/tarball/develop{code}
+  created: 2015-12-11 05:25:12.0
+  id: '12470'
+  issue: '10455'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2015-12-11 05:27:51.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1224'
+  created: 2016-11-07 18:27:18.0
+  id: '13550'
+  issue: '10455'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:18.0

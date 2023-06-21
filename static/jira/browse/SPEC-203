@@ -1,0 +1,28 @@
+---
+summary: It'd be lovely to give folks the option of advertising which clients they use as part of their profile metadata
+---
+created: 2015-07-14 13:45:15.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11750'
+key: SPEC-203
+number: '203'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:31.0
+votes: '0'
+watches: '2'
+workflowId: '11851'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/529'
+  created: 2016-10-28 16:27:31.0
+  id: '13337'
+  issue: '11750'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:31.0

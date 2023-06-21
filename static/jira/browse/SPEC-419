@@ -1,0 +1,28 @@
+---
+summary: Clarify the meaning of the currently_active flags in presence events
+---
+created: 2016-06-29 09:28:39.0
+creator: neb
+description: ''
+id: '12725'
+key: SPEC-419
+number: '419'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-10-28 16:28:37.0
+votes: '0'
+watches: '2'
+workflowId: '12825'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/686'
+  created: 2016-10-28 16:28:37.0
+  id: '13495'
+  issue: '12725'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:37.0

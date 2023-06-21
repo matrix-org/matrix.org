@@ -1,0 +1,35 @@
+---
+summary: How do clients avoid downloading the whole memberlist when viewing a moderated room where most of the participants are viewers?
+---
+created: 2015-02-16 01:43:46.0
+creator: matthew
+description: |-
+  The equivalent of 'conference' mode on IRC servers - where you can't see who else is listening in on the room; you can only see the handful of people with permission to talk.
+
+  This presumably means
+  * adding a power level below which participants aren't shown in the membership list
+  * adding a power level above which participants are shown in the membership list if desired
+
+  or, just a way to filter/unfilter the membership list based on powerlevel?
+id: '11066'
+key: SPEC-109
+number: '109'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:01.0
+votes: '0'
+watches: '2'
+workflowId: '11166'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/421'
+  created: 2016-10-28 16:27:01.0
+  id: '13272'
+  issue: '11066'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:01.0

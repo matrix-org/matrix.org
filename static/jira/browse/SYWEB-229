@@ -1,0 +1,30 @@
+---
+summary: When resizing the recents, the room name should not be replaced by the timestamp
+---
+created: 2014-12-09 18:36:12.0
+creator: matthew
+description: ''
+id: '10792'
+key: SYWEB-229
+number: '229'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-03-03 13:31:06.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:52.0
+votes: '0'
+watches: '2'
+workflowId: '10892'
+---
+actions:
+- author: kegan
+  body: SYWEB-282
+  created: 2015-03-03 13:31:06.0
+  id: '11342'
+  issue: '10792'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-03 13:31:06.0

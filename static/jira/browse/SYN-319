@@ -1,0 +1,33 @@
+---
+summary: virtualenv usage for linux versions defaulting to paython3 should be "virtualenv env -p python2"
+---
+created: 2015-03-23 14:16:50.0
+creator: ingo
+description: |-
+  Installation documentation states to use 
+
+      virtualenv env
+
+  and then later make sure to use the right pip/python version
+
+  virtualenv has a switch to decide on the python version while creating the virtualenv, so the correct python-/pip2 get installed, just use
+
+      virtualenv env -p python2.7
+
+  which would install python2.7 and the appropriate pip in the virtualenv.
+id: '11258'
+key: SYN-319
+number: '319'
+priority: '3'
+project: '10000'
+reporter: ingo
+resolution: '1'
+resolutiondate: 2015-05-14 10:23:38.0
+status: '5'
+type: '4'
+updated: 2015-05-14 14:08:05.0
+votes: '0'
+watches: '1'
+workflowId: '11358'
+---
+actions: null

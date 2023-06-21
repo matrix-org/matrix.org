@@ -1,0 +1,49 @@
+---
+summary: Bad HTML parse hides message
+---
+created: 2015-06-01 09:47:11.0
+creator: kegan
+description: |-
+  This commit https://github.com/matrix-org/matrix-android-sdk/commit/3d248f57
+  was not displayed on the web client because:
+  {code}
+  Error: [$sanitize:badparse] http://errors.angularjs.org/1.3.13/$sanitize/badparse?p0=%3Cmatrix%20Id%20.…github.com%2Fmatrix-org%2Fmatrix-android-sdk%2Fcommit%2F3d248f57%3C%2Fa%3E
+      at Error (native)
+      at https://matrix.org/beta/lib/angular.min.js:6:417
+      at F (https://matrix.org/beta/lib/angular-sanitize.min.js:8:428)
+      at https://matrix.org/beta/lib/angular-sanitize.min.js:14:210
+      at https://matrix.org/beta/app/app-filter.js:134:12
+      at https://matrix.org/beta/lib/angular.min.js:193:414
+      at x.constant (https://matrix.org/beta/lib/angular.min.js:194:439)
+      at Object.<anonymous> (https://matrix.org/beta/lib/angular.min.js:107:417)
+      at l.$digest (https://matrix.org/beta/lib/angular.min.js:123:3)
+      at l.$apply (https://matrix.org/beta/lib/angular.min.js:126:58)
+  {code}
+
+  This was because the commit message text had <stuff> which was interpreted as HTML tags. We need to make sure we're escaping HTML tags for this.
+
+  I feel this is probably a regression, since SYWEB-245 is basically this again.
+id: '11570'
+key: SYWEB-361
+number: '361'
+priority: '1'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-02-10 16:05:23.0
+status: '5'
+type: '1'
+updated: 2016-02-10 16:05:23.0
+votes: '0'
+watches: '2'
+workflowId: '11671'
+---
+actions:
+- author: matthew
+  body: fixed in matrix-org/matrix-angular-sdk@bf673c8
+  created: 2016-02-10 16:05:15.0
+  id: '12603'
+  issue: '11570'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-10 16:05:15.0

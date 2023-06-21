@@ -1,0 +1,30 @@
+---
+summary: Signal hangup to other side if media permission denied
+---
+created: 2015-01-12 19:40:16.0
+creator: dbkr
+description: ''
+id: '10917'
+key: SYWEB-253
+number: '253'
+priority: '2'
+project: '10004'
+reporter: dbkr
+resolution: '5'
+resolutiondate: 2015-01-12 20:12:03.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:04.0
+votes: '0'
+watches: '1'
+workflowId: '11017'
+---
+actions:
+- author: dbkr
+  body: Actually the call was being hung up as a result of a timeout in which case the client probably shouldn't signal the hangup, so not a bug.
+  created: 2015-01-12 20:12:03.0
+  id: '11106'
+  issue: '10917'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-01-12 20:12:03.0

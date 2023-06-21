@@ -1,0 +1,24 @@
+---
+summary: Interface for 1:1 chats should look different
+---
+created: 2014-09-19 10:33:52.0
+creator: dbkr
+description: |-
+  If there are only 2 participants in a room:
+   * Hide the member list
+   * Move the other person's away information somewhere else
+   * Hide the sender name column in the chat table and move timestamps somewhere else.
+id: '10336'
+key: SYWEB-54
+number: '54'
+priority: '5'
+project: '10004'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2014-09-23 01:21:54.0
+votes: '0'
+watches: '1'
+workflowId: '10439'
+---
+actions: null

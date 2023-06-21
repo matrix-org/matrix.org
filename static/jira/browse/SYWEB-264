@@ -1,0 +1,20 @@
+---
+summary: Fall back to "body" key if failed to parse message.
+---
+created: 2015-01-27 13:14:55.0
+creator: erikj
+description: ''
+id: '10982'
+key: SYWEB-264
+number: '264'
+priority: '3'
+project: '10004'
+reporter: erikj
+status: '10100'
+type: '1'
+updated: 2015-01-27 13:14:55.0
+votes: '0'
+watches: '1'
+workflowId: '11082'
+---
+actions: null

@@ -1,0 +1,22 @@
+---
+summary: Historical displaynames in emotes seem to get lost after refreshing
+---
+created: 2014-11-20 02:17:26.0
+creator: matthew
+description: ''
+id: '10685'
+key: SYWEB-168
+number: '168'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-25 15:23:45.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:49.0
+votes: '0'
+watches: '1'
+workflowId: '10785'
+---
+actions: null

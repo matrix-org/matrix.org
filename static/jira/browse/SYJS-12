@@ -1,0 +1,30 @@
+---
+summary: Emit an event when an event is sent
+---
+created: 2015-06-23 13:48:40.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '11693'
+key: SYJS-12
+number: '12'
+priority: '3'
+project: '10204'
+reporter: neb
+resolution: '2'
+resolutiondate: 2015-06-23 14:17:58.0
+status: '5'
+type: '1'
+updated: 2015-06-23 14:17:58.0
+votes: '0'
+watches: '2'
+workflowId: '11794'
+---
+actions:
+- author: kegan
+  body: Should do stuff on the callback to {{MatrixClient.sendEvent}} for this. {{Room.timeline}} is supposed to be for NEW events added, rather than "some state on this event has been modified". Dumping this to {{Room.timeline}} would then start making it a God-Event, where it is called for all event changes, new events, etc which is not the intention for the SDK. This emission-creep becomes apparent when you consider you probably also want to know when the event failed to send and the SDK has given up retrying, which then is just mapping the resolve/reject callbacks of {{MatrixClient.sendEvent}} to events.
+  created: 2015-06-23 14:17:58.0
+  id: '11910'
+  issue: '11693'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-23 14:17:58.0

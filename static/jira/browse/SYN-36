@@ -1,0 +1,62 @@
+---
+summary: Backfill history over federation
+---
+assignee: erikj
+created: 2014-09-16 01:26:44.0
+creator: matthew
+description: ''
+id: '10069'
+key: SYN-36
+number: '36'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-22 13:46:10.0
+status: '5'
+type: '2'
+updated: 2015-05-26 16:13:34.0
+votes: '1'
+watches: '3'
+workflowId: '10370'
+---
+actions:
+- author: erikj
+  body: |-
+    We already have a federation backfill API which accepts a list of event ids and a limit N to request up to N messages before those event ids. The fundamental question is: when and with what do we trigger this API call?
+
+    In the simple case, we will have a single event id from our initial join event. When the user tries to paginate further back, we simply call the backfill API with that even id and some length. Its relatively easy to extend to when we have multiple "earliest" events: we call the backfill API when a user paginates further back than latest "earliest" event, i.e. the one with the max depth. ("further back" being defined as asking for events with a smaller depth).
+
+    Things become more complicated when there have been large branches. Currently, synapse will only pull in at most N missing events, potentially causing there to be a "gap" much more recently than the earliest chunk of events the server has seen, even though we have messages "in" that gap. When the user paginates should we try and fill in this gap? What happens if the client has already paginated back before the gap?
+
+    How do we deal with servers that have been down for hours/days?
+  created: 2015-05-07 15:21:27.0
+  id: '11725'
+  issue: '10069'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-07 15:21:27.0
+- author: erikj
+  body: 'One solution to the netsplit problem is to tell the client: "There are more events at this point, hit this API to request more events from this gap"'
+  created: 2015-05-07 15:22:32.0
+  id: '11727'
+  issue: '10069'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-07 15:22:32.0
+- author: erikj
+  body: 'The difference between the home server being down and recovering from a long split is perhaps: in the former we won''t have any messages in the "gap" and the latter we will.'
+  created: 2015-05-07 17:43:07.0
+  id: '11728'
+  issue: '10069'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-07 17:43:07.0
+- author: erikj
+  body: We also want to protect against the attack that a server tries to merge an, effectively, infinite branch, causing all paginations to go down that branch rather than the older branches.
+  created: 2015-05-07 17:49:48.0
+  id: '11729'
+  issue: '10069'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-07 17:49:48.0

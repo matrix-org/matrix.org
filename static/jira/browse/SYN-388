@@ -1,0 +1,50 @@
+---
+summary: Client IP logging can break when X-Forwarded-For is used.
+---
+created: 2015-05-22 13:56:10.0
+creator: erikj
+description: ''
+id: '11555'
+key: SYN-388
+number: '388'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-06-16 10:18:30.0
+status: '5'
+type: '1'
+updated: 2015-06-16 10:18:30.0
+votes: '0'
+watches: '1'
+workflowId: '11656'
+---
+actions:
+- author: erikj
+  body: |-
+    From {{twsited.web.http._XForwardedForRequest}}
+
+    {noformat}
+        def getClientIP(self):
+            """
+            @return: The client address (the first address) in the value of the
+                I{X-Forwarded-For header}.  If the header is not present, return
+                C{b"-"}.
+            """
+            return self._request.requestHeaders.getRawHeaders(
+                b"x-forwarded-for", [b"-"])[0].split(b",")[0].strip()
+    {noformat}
+  created: 2015-05-22 13:59:11.0
+  id: '11789'
+  issue: '11555'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-22 13:59:11.0
+- author: erikj
+  body: Thinking about it, this is probably the correct behaviour since we should only trust X-Forwarded-For headers if *all* incoming traffic is going through a HTTP proxy.
+  created: 2015-05-22 14:05:21.0
+  id: '11790'
+  issue: '11555'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-22 14:05:31.0

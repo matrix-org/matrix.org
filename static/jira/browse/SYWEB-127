@@ -1,0 +1,46 @@
+---
+summary: Clickable events means that clicking on a URL in a bubble shows both the event & the URL, which is a bit unexpected
+---
+created: 2014-10-28 09:14:31.0
+creator: matthew
+description: ''
+id: '10516'
+key: SYWEB-127
+number: '127'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-04 11:09:00.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:57.0
+votes: '0'
+watches: '2'
+workflowId: '10620'
+---
+actions:
+- author: matthew
+  body: ...and whilst clicking on images does the right thing, it's a shame we can't see the underlying event.  Perhaps clicking on the border of the image might be good enough for now?
+  created: 2014-10-28 09:16:06.0
+  id: '10611'
+  issue: '10516'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-28 09:16:06.0
+- author: kegan
+  body: Yeah I tried to get border-based clickable events working on images but I had difficulties.
+  created: 2014-10-29 10:10:36.0
+  id: '10619'
+  issue: '10516'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-29 10:10:36.0
+- author: kegan
+  body: Fixed when doing SYWEB-133.
+  created: 2014-11-04 11:09:01.0
+  id: '10722'
+  issue: '10516'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-04 11:09:01.0

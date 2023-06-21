@@ -1,0 +1,22 @@
+---
+summary: clarify matrix appservice node usage in the readme
+---
+created: 2015-09-18 18:24:50.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '11886'
+key: BOTS-108
+number: '108'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-24 10:53:47.0
+status: '5'
+type: '1'
+updated: 2015-09-24 10:53:47.0
+votes: '0'
+watches: '1'
+workflowId: '11989'
+---
+actions: null

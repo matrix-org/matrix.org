@@ -1,0 +1,24 @@
+---
+summary: If you start two PMs with an IRC user one of them silently fails
+---
+created: 2015-12-31 18:19:49.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  I accidentally started two PMs by double-clicking on iOS. The first one was silently blackholed. The second worked.
+id: '12259'
+key: BOTS-149
+number: '149'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-01-04 15:53:48.0
+status: '5'
+type: '1'
+updated: 2016-01-04 15:53:48.0
+votes: '0'
+watches: '1'
+workflowId: '12362'
+---
+actions: null

@@ -1,0 +1,28 @@
+---
+summary: A way for clients to know if their user is an HS admin
+---
+created: 2016-06-22 14:46:46.0
+creator: dbkr
+description: ''
+id: '12716'
+key: SPEC-417
+number: '417'
+priority: '3'
+project: '10001'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:37.0
+votes: '0'
+watches: '2'
+workflowId: '12816'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/685'
+  created: 2016-10-28 16:28:37.0
+  id: '13494'
+  issue: '12716'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:37.0

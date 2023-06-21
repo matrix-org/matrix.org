@@ -1,0 +1,39 @@
+---
+summary: Starting a 1:1 chat over federation may result in lost invite
+---
+assignee: matthew
+created: 2014-12-04 00:27:10.0
+creator: matthew
+description: ''
+id: '10767'
+key: SYWEB-210
+number: '210'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '4'
+resolutiondate: 2014-12-29 09:22:24.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:53.0
+votes: '0'
+watches: '2'
+workflowId: '10867'
+---
+actions:
+- author: kegan
+  body: How reproducible is this? The web client doesn't have any notion of federated rooms (the code paths are identical), so this seems unlikely to be solely a client-side bug. More information would be great.
+  created: 2014-12-04 08:33:06.0
+  id: '10939'
+  issue: '10767'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 08:33:06.0
+- author: kegan
+  body: It has been nearly a month since this was filed without further information. Closing until more information can be given.
+  created: 2014-12-29 09:22:24.0
+  id: '11035'
+  issue: '10767'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-29 09:22:24.0

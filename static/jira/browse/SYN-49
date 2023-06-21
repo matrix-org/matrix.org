@@ -1,0 +1,36 @@
+---
+summary: Push Notification Support
+---
+assignee: dbkr
+created: 2014-09-17 02:48:56.0
+creator: matthew
+description: |-
+  It would be *really* nice to get offline notifications when people bing you or message you.
+
+  This means having synapse talk to APNS (which can target Safari Push Notifications), or GCM (which can target Chrome Apps) to submit pushes.
+
+  In future the same functionality can obviously be used to push arbitrary matrix-enabled iOS & Android apps.
+id: '10313'
+key: SYN-49
+number: '49'
+priority: '3'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-02 10:19:49.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:26:18.0
+votes: '0'
+watches: '2'
+workflowId: '10378'
+---
+actions:
+- author: dbkr
+  body: We now support push :)
+  created: 2015-03-02 10:19:49.0
+  id: '11328'
+  issue: '10313'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-02 10:19:49.0

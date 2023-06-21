@@ -1,0 +1,23 @@
+---
+summary: When you receive an image, the client doesn't autoscroll to the bottom of the page
+---
+assignee: kegan
+created: 2015-01-12 00:14:38.0
+creator: matthew
+description: ''
+id: '10906'
+key: SYWEB-251
+number: '251'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-03 16:57:55.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:05.0
+votes: '0'
+watches: '1'
+workflowId: '11006'
+---
+actions: null

@@ -1,0 +1,22 @@
+---
+summary: No way to publish aliases after a room is created
+---
+created: 2015-06-17 09:46:08.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11662'
+key: SYN-421
+number: '421'
+priority: '2'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-04-07 11:57:30.0
+status: '5'
+type: '1'
+updated: 2016-04-07 11:57:30.0
+votes: '0'
+watches: '1'
+workflowId: '11763'
+---
+actions: null

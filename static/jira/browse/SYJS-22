@@ -1,0 +1,46 @@
+---
+summary: Implement access token refresh
+---
+created: 2015-08-28 10:46:43.0
+creator: illicitonion
+description: ''
+id: '11824'
+key: SYJS-22
+number: '22'
+priority: '2'
+project: '10204'
+reporter: illicitonion
+resolution: '2'
+resolutiondate: 2016-10-06 18:05:03.0
+status: '5'
+type: '2'
+updated: 2016-10-06 18:05:56.0
+votes: '0'
+watches: '3'
+workflowId: '11927'
+---
+actions:
+- author: kegan
+  body: Can you please supply unchanging doc? :D Thanks
+  created: 2015-11-03 10:34:45.0
+  id: '12306'
+  issue: '11824'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 10:34:45.0
+- author: richvdh
+  body: We've decided to remove refresh tokens from the matrix spec (see https://github.com/matrix-org/matrix-doc/pull/395), so this is no longer required.
+  created: 2016-10-06 18:05:03.0
+  id: '13164'
+  issue: '11824'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 18:05:03.0
+- author: richvdh
+  body: '(fwiw I had a go at fixing this as part of the discussion: see https://github.com/matrix-org/matrix-js-sdk/commit/1b4b7fdd9f94160ba253ae519657aac9c515116 )'
+  created: 2016-10-06 18:05:56.0
+  id: '13165'
+  issue: '11824'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 18:05:56.0

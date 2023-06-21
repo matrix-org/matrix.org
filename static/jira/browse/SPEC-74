@@ -1,0 +1,39 @@
+---
+summary: /createRoom 'visibility' should be 'join_rule'
+---
+created: 2014-11-28 15:22:43.0
+creator: leonerd
+description: |-
+  The actual effect of the {{/createRoom}} content key called {{visibility}} is actually to set the {{join_rule}} to either {{public}} or {{invite}} (most bizarrely).
+
+  Rather than this nonobvious interaction it would be nice if you can specify {{join_rule}} directly in the creation config.
+id: '10741'
+key: SPEC-74
+number: '74'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:52.0
+votes: '0'
+watches: '2'
+workflowId: '10841'
+---
+actions:
+- author: richvdh
+  body: I don't believe this is the case.
+  created: 2016-10-21 00:14:02.0
+  id: '13198'
+  issue: '10741'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-21 00:14:02.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/478'
+  created: 2016-10-28 16:26:52.0
+  id: '13254'
+  issue: '10741'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:52.0

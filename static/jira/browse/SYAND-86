@@ -1,0 +1,36 @@
+---
+summary: By pressing long on a image --> possible to forward the image
+---
+created: 2015-06-11 20:44:03.0
+creator: bob
+description: |-
+  As a user I want to have the option to forward an image in chat by long pressing on the image.
+
+  As a user I want to have the option to choose afterwards between "sharing with other apps" or directly sharing this to another chat in Matrix Console.
+id: '11640'
+key: SYAND-86
+number: '86'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-06-18 10:25:01.0
+status: '5'
+type: '4'
+updated: 2015-06-18 10:25:01.0
+votes: '0'
+watches: '2'
+workflowId: '11741'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    1 - The media must have been downloaded to have the forward/share options in the menu list.
+    2 - It also works for file.
+    3 - The forward/sharing should also work when displaying the image in fullscreen (i.e tap on the image to see it + long tap to share / forward it).
+  created: 2015-06-18 10:24:52.0
+  id: '11883'
+  issue: '11640'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-18 10:24:52.0

@@ -1,0 +1,51 @@
+---
+summary: Installation
+---
+created: 2016-10-03 11:43:31.0
+creator: vikasiz
+description: |-
+  I am trying to install on CentOS
+  https://github.com/matrix-org/synapse
+
+  cd ~/.synapse
+  python -m synapse.app.homeserver \
+      --server-name machine.my.domain.name \
+      --config-path homeserver.yaml \
+      --generate-config \
+      --report-stats=[yes|no]
+
+  The error is 
+  /root/.synapse/bin/python: No module named synapse.app
+
+  What do I use here
+  Also whats my.domain.name, currently have an IP from RackSpace
+  Do I use LocalHost here or the domain name I ultimately plan on using ???
+
+  Sorry am a starter here and might be asking stupid question
+id: '12846'
+key: ORG-66
+number: '66'
+priority: '2'
+project: '10003'
+reporter: vikasiz
+resolution: '10100'
+resolutiondate: 2016-10-03 16:25:14.0
+status: '5'
+type: '1'
+updated: 2016-10-03 16:25:14.0
+votes: '0'
+watches: '2'
+workflowId: '12946'
+---
+actions:
+- author: richvdh
+  body: |-
+    Please don't use this jira for general support questions. https://matrix.to/#/#matrix:matrix.org is the best place to get help.
+
+    As for your problem: have you followed the instructions at https://github.com/matrix-org/synapse/blob/master/README.rst#synapse-installation ?
+  created: 2016-10-03 16:25:14.0
+  id: '13153'
+  issue: '12846'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-03 16:25:14.0

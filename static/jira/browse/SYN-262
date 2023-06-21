@@ -1,0 +1,562 @@
+---
+summary: 'We need to reap sent_transactions (was: matrix.org''s homeserver.db is currently 1.3GB)'
+---
+created: 2015-02-09 20:18:12.0
+creator: matthew
+description: ''
+id: '11030'
+key: SYN-262
+number: '262'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:42.0
+votes: '0'
+watches: '3'
+workflowId: '11130'
+---
+actions:
+- author: matthew
+  body: |-
+    it's now 1.4GB...
+
+    $ cat homeserver.sql | grep -P -o '^INSERT INTO ".*?"' | sort | uniq -c
+       5297 INSERT INTO "access_tokens"
+       1046 INSERT INTO "copied_room_hosts"
+       7452 INSERT INTO "current_state_events"
+         39 INSERT INTO "destinations"
+     297415 INSERT INTO "event_auth"
+         63 INSERT INTO "event_backward_extremities"
+     112265 INSERT INTO "event_content_hashes"
+     117641 INSERT INTO "event_edge_hashes"
+     133789 INSERT INTO "event_edges"
+       1057 INSERT INTO "event_forward_extremities"
+     112270 INSERT INTO "event_json"
+     112270 INSERT INTO "event_reference_hashes"
+     112270 INSERT INTO "events"
+      63438 INSERT INTO "event_signatures"
+     146406 INSERT INTO "event_to_state_groups"
+        666 INSERT INTO "local_media_repository"
+       2351 INSERT INTO "local_media_repository_thumbnails"
+       1112 INSERT INTO "presence"
+        278 INSERT INTO "presence_allow_inbound"
+        317 INSERT INTO "presence_list"
+       1112 INSERT INTO "profiles"
+          8 INSERT INTO "pushers"
+          7 INSERT INTO "pushers_old"
+         30 INSERT INTO "push_rules"
+        217 INSERT INTO "redactions"
+          1 INSERT INTO "rejections"
+         67 INSERT INTO "remote_media_cache"
+        248 INSERT INTO "remote_media_cache_thumbnails"
+        346 INSERT INTO "room_aliases"
+        359 INSERT INTO "room_alias_servers"
+       1050 INSERT INTO "room_depth"
+        902 INSERT INTO "room_hosts"
+      18467 INSERT INTO "room_memberships"
+        509 INSERT INTO "room_names"
+        768 INSERT INTO "rooms"
+    2117803 INSERT INTO "sent_transactions"
+         34 INSERT INTO "server_signature_keys"
+         34 INSERT INTO "server_tls_certificates"
+          7 INSERT INTO "sqlite_sequence"
+      23202 INSERT INTO "state_events"
+       7962 INSERT INTO "state_forward_extremities"
+      57699 INSERT INTO "state_groups"
+    2934070 INSERT INTO "state_groups_state"
+        156 INSERT INTO "topics"
+          2 INSERT INTO "user_filters"
+       7089 INSERT INTO "user_ips"
+       1112 INSERT INTO "users"
+
+    Surely we should be reaping sent_transactions and do we *really* need all the state_groups_state table?
+  created: 2015-02-11 20:30:26.0
+  id: '11242'
+  issue: '11030'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-11 20:30:26.0
+- author: matthew
+  body: |-
+    What /is/ going on in the state_groups_state table?!
+
+    sqlite> select count(*) as c, event_id, room_id from state_groups_state group by event_id having c>1000;
+    18728|$1416420717069yeQaw:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1334|$1416420717073efgQs:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4103|$1416420717079YOCAM:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17061|$1416420717256OtQnJ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17055|$1416420717373CyQzu:localhost|!cURbafjkfsMDVwdRDQ:matrix.org
+    11460|$1416420717416rmLEi:snowtree.se|!cURbafjkfsMDVwdRDQ:matrix.org
+    17046|$1416420717541tMxRS:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17039|$1416420717681PQZlZ:31.48.80.57|!cURbafjkfsMDVwdRDQ:matrix.org
+    17038|$1416420717695IfEeI:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    13980|$1416420718205nfVXh:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2197|$1416420718348MiJRP:arasphere.net|!cURbafjkfsMDVwdRDQ:matrix.org
+    17027|$1416420718587gBgcl:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17026|$1416420718626WtLwU:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17025|$1416420718723rrfUb:leonerd.org.uk|!cURbafjkfsMDVwdRDQ:matrix.org
+    17022|$1416420718742aWcZC:negativecurvature.net|!cURbafjkfsMDVwdRDQ:matrix.org
+    17021|$1416420719541vTuOk:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17019|$1416420721952opPpr:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17017|$1416420722139jQMMX:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17016|$1416420722245JEMUj:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17015|$1416420722378xiuyM:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    16979|$1416420722861IKPvF:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17012|$1416420722891lHznP:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17007|$1416420725041TFMYe:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    13047|$1416420725095byNtM:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17005|$1416420725713kkKDz:hrfns.com|!cURbafjkfsMDVwdRDQ:matrix.org
+    17002|$1416420728634hhcEF:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    17001|$1416420728770xOTCX:jki.re|!cURbafjkfsMDVwdRDQ:matrix.org
+    16991|$1416420729770iszYu:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    16990|$1416420729802Vxmgt:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    16362|$1416420730169IMBUn:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    16952|$1416420730857BWSuf:localhost|!cURbafjkfsMDVwdRDQ:matrix.org
+    5822|$1416420733710niUzv:garden.of.the.hesperides.net|!cURbafjkfsMDVwdRDQ:matrix.org
+    14690|$1416420739404anSQd:erikjohnston.com|!cURbafjkfsMDVwdRDQ:matrix.org
+    16878|$1416420740732BUIPI:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    16865|$1416420741328tNpCM:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    16856|$1416420742498NURDH:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    16746|$1416420747169LbqDD:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    16737|$1416420747516KjAgo:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    16667|$1416420748597fYCJL:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1750|$1416420748650ALEbH:oddvar.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    14511|$1416420749214zjHnS:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4598|$1416420749290udlHc:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    16683|$1416420749996HpYrg:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    13028|$1416420750731RCRhm:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1144|$1416420751271pSwfl:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    16651|$1416420751468avuPh:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1139|$1416420751515oTpYH:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1247|$1416420751661trOnb:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    11159|$1416420752099GiKsg:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    13365|$1416420752536lbQfZ:jki.re|!cURbafjkfsMDVwdRDQ:matrix.org
+    11100|$1416420752737lsaMm:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    15396|$1416420752799lDevr:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3340|$1416420752986RNzxU:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    11755|$1416420753058nzRwW:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3204|$1416420753105jepIv:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    15166|$1416420753345DPfTb:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12930|$1416420757058cIVln:oddvar.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3905|$1416420757940YgaFr:arasphere.net|!cURbafjkfsMDVwdRDQ:matrix.org
+    9355|$1416420758336HjAWp:jki.re|!cURbafjkfsMDVwdRDQ:matrix.org
+    14947|$1416420758384LlPhN:perlsite.co.uk|!cURbafjkfsMDVwdRDQ:matrix.org
+    1010|$1416420758898SoPKi:jki.re|!cURbafjkfsMDVwdRDQ:matrix.org
+    13526|$1416420758924gcmew:jki.re|!cURbafjkfsMDVwdRDQ:matrix.org
+    12094|$1416420759785CZaZi:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12303|$1416420760186ueVaS:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    8559|$1416420760559doWho:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12299|$1416420760749tarbd:perlsite.co.uk|!cURbafjkfsMDVwdRDQ:matrix.org
+    12298|$1416420764288aMESI:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12297|$1416420764385Bezwf:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12296|$1416420764620SrZqe:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12295|$1416420764815XYYOU:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12294|$1416420764910oxoxx:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12293|$1416420764943vNPUg:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12292|$1416420765167GIAII:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12216|$1416420765957twmuz:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12290|$1416420767843KZcog:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12288|$1416420768430kqCPR:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12286|$1416420768977qjrsJ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12250|$1416420769433iriKL:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12283|$1416420769487kzgHZ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12282|$1416420769839TkpEc:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12281|$1416420769883mbmiP:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12280|$1416420769964YIkcK:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12279|$1416420770276OZVvv:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12278|$1416420770308BDbLJ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12277|$1416420770355vOHLV:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12276|$1416420770511QVbZP:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12275|$1416420770653FzCWl:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12274|$1416420770695MLBXi:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12063|$1416420770945OiBNK:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12270|$1416420770983yvZpg:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12269|$1416420771020wBDlp:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12266|$1416420771343AsGYg:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12265|$1416420771494YxZrr:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1127|$1416420771531LamDP:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12263|$1416420771615meROC:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12262|$1416420771674LcEJv:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12261|$1416420771789FgSru:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12260|$1416420771833IxsMK:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    6720|$1416420772380xnaFN:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12257|$1416420773136YMAWs:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12256|$1416420773386uUmgL:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12255|$1416420773831aRhEU:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    12254|$1416420774091sDPei:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    11697|$1416420776189PCIfU:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    11138|$1416420777391hUXIL:perlsite.co.uk|!cURbafjkfsMDVwdRDQ:matrix.org
+    11137|$1416420778621gCEbc:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    11136|$1416420779925FddIr:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    6177|$1416420781870eDykP:arasphere.net|!cURbafjkfsMDVwdRDQ:matrix.org
+    11134|$1416420782075mfgdS:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    11133|$1416420782378FesIb:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    11132|$1416420782443ALDeb:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    11131|$1416420782540XjQeq:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    11130|$1416420784368obHNx:sw1v.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    11129|$1416420786412ZNnEM:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    11122|$1416420786845pNTsS:garden.of.the.hesperides.net|!cURbafjkfsMDVwdRDQ:matrix.org
+    7294|$1416420787136OOjli:perlsite.co.uk|!cURbafjkfsMDVwdRDQ:matrix.org
+    11120|$1416420787173UGDfP:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    7220|$1416420787210VWMAK:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    7290|$1416420787269hLzzC:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    10566|$1416420788313pEEgy:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    10565|$1416420790393yoGdY:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    10564|$1416420790593Aiqkf:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    10563|$1416420792162Kmrsb:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    6703|$1416420796357lXqCS:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5567|$1416420797388wToqk:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5600|$1416420797517kIMlV:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5599|$1416420798229qWPPj:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5598|$1416420800107Biych:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5562|$1416420800314VRDdL:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5595|$1416420800390kxXMK:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4379|$1416420800542ElLoZ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5593|$1416420800590jvbdF:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5576|$1416420801535tbioV:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5575|$1416420801572gYZWA:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5566|$1416420806122vffRr:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5518|$1416420807158uVfVQ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1602|$1416420812295wdSTI:snowtree.se|!cURbafjkfsMDVwdRDQ:matrix.org
+    5539|$1416420812931FKFbw:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3421|$1416420813934cmWzy:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5537|$1416420814330mKmpu:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5536|$1416420814379evHzf:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5495|$1416420823046AgXHd:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    5185|$1416420826052EEJKQ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4919|$1416420826142uCJeQ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1168|$1416420826394tOkZQ:jki.re|!cURbafjkfsMDVwdRDQ:matrix.org
+    4965|$1416420826666gqKnw:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4964|$1416420826753JBQSZ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4963|$1416420826981TVtNH:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4714|$1416420829203leIQj:arasphere.net|!cURbafjkfsMDVwdRDQ:matrix.org
+    1096|$1416420830271KPsKp:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1239|$1416420834316BHbWV:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4002|$1416420834524uTuxw:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4001|$1416420834608FfPgp:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3972|$1416420843467mqeBw:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3958|$1416420844496FKHEL:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3954|$1416420845628lhRNm:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3828|$1416420846252riDut:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3943|$1416420846538aXHeS:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3881|$1416420849598nihOl:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3914|$1416420849820BWXAo:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3912|$1416420850182DXcTU:snowtree.se|!cURbafjkfsMDVwdRDQ:matrix.org
+    3911|$1416420850281vRZHA:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3788|$1416420850817wbVfW:perlsite.co.uk|!cURbafjkfsMDVwdRDQ:matrix.org
+    1161|$1416420851112NfpGD:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1127|$1416420851731wNqKS:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3889|$1416420853095KGDzT:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3888|$1416420853143MvZDR:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3885|$1416420854199YsWYb:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3879|$1416420854973HAjgm:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3878|$1416420855236cXoaU:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3876|$1416420855438wBkna:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3874|$1416420855597yokdg:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3869|$1416420856083YZABC:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3867|$1416420856199ZKlZU:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3862|$1416420856512QGtku:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3857|$1416420856805YrmqU:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3818|$1416420857342GqSmM:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3851|$1416420857508TOcuH:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3813|$1416420857867VguEm:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3720|$1416420858389munSo:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3800|$1416420858895HCMiK:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3829|$1416420861986HKBPg:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3819|$1416420862700lpTSc:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3823|$1416420862754wouYp:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2349|$1416420862809fqkmu:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3284|$1416420881907tfMSo:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2807|$1416420882174tftIX:arasphere.net|!cURbafjkfsMDVwdRDQ:matrix.org
+    3105|$1416420882365gKDth:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2579|$1416420882423YHwfE:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3313|$1416420882533LakGx:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2859|$1416420882591IaNeP:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3277|$1416420882647vrHND:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3274|$1416420882982TSUAr:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3299|$1416420884250mUuIr:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2910|$1416420884345vbjxa:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2565|$1416420884456JKmgp:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1086|$1416420884563BosKY:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1161|$1416420885191VRdgl:oddvar.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3252|$1416420885684ZUiip:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3285|$1416420885833sdHVD:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3284|$1416420885897AYGQm:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1030|$1416420886687VDmUZ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3267|$1416420889751UjLby:ply42.com|!cURbafjkfsMDVwdRDQ:matrix.org
+    3232|$1416420889857uPRnU:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3263|$1416420890276zZflv:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3051|$1416420891592ydDtW:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3260|$1416420891648Phmiy:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3259|$1416420892257xDLrQ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1135|$1416420892624aWeGe:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1373|$1416420910522mQfXQ:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1372|$1416420910529mzqgm:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1368|$1416420910538EkGDl:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1360|$1416420910571GKYlb:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1359|$1416420910579Luior:perlsite.co.uk|!XqBunHwQIXUiqCaoxq:matrix.org
+    1358|$1416420910588dZiXc:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1357|$1416420910596DtYDo:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1356|$1416420910606lQtFd:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1355|$1416420910616oFTTZ:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1350|$1416420910784pdqOM:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1229|$1416420910797aBfrs:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1346|$1416420910943cDMHw:localhost|!XqBunHwQIXUiqCaoxq:matrix.org
+    1343|$1416420911240NlpYz:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1342|$1416420911262iitPd:192.168.1.7|!XqBunHwQIXUiqCaoxq:matrix.org
+    1328|$1416420911472pnYfW:perlsite.co.uk|!XqBunHwQIXUiqCaoxq:matrix.org
+    1327|$1416420912022fJsQH:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1319|$1416420913229qPazk:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1317|$1416420914478UxsOL:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1307|$1416420915114lUDNm:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1303|$1416420915300YPOeT:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1301|$1416420915567BMEot:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1300|$1416420915742NQoXP:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1298|$1416420916528LUXWH:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1295|$1416420916884dajjM:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1294|$1416420918249zVeZL:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1283|$1416420930516ucDKo:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1139|$1416420930650ZDaIU:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1229|$1416420945969fiQue:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1226|$1416420948392SjmKV:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1183|$1416420962355lXWmM:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1120|$1416420992944OPvTv:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1113|$1416420994680SdKVt:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1083|$1416421009533vfDhR:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1073|$1416421015341kLOpD:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1049|$1416421032418vKMwW:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1030|$1416421046425hcSIy:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1029|$1416421049924bSkUU:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1027|$1416421050022ayPzD:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1026|$1416421050073wSUwI:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    1014|$1416421055396TJLpQ:matrix.org|!XqBunHwQIXUiqCaoxq:matrix.org
+    19328|$1416421146219OLQyu:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    18815|$1416421146223QSTqY:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1265|$1416421146227nKsys:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    9074|$1416421146232QncPa:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1174|$1416421146263glZNK:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    4313|$1416421146274yKWeG:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    14963|$1416421146299YpmVR:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2066|$1416421146309eARPg:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    10068|$1416421146320GCFcw:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    14402|$1416421146329mERPX:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    3183|$1416421146338tpiwT:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    4369|$1416421146381AXjcd:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1492|$1416421146404KhWvd:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    3663|$1416421146432knGyR:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2887|$1416421146445RczWe:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2880|$1416421146512AMdCQ:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    5328|$1416421146575SzvoL:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    7614|$1416421146609pJiiJ:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2666|$1416421146625AXGXu:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1749|$1416421146650rYlZG:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1751|$1416421146690wbwWl:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    11104|$1416421146746ruqpY:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    11218|$1416421146917VSlje:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1181|$1416421146947mJWdN:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    4410|$1416421146977YKvfo:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2704|$1416421147139gZSXr:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1545|$1416421147319hYrhd:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    7417|$1416421147365KwjfG:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    10599|$1416421147845NsqhF:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    10596|$1416421147956gQqxL:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    4740|$1416421147984UxosK:jki.re|!zOmsiVucpWbRRDjSwe:matrix.org
+    9474|$1416421148276PBzjo:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2674|$1416421148463hgdEP:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1135|$1416421148503PVCSJ:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1133|$1416421148527HXHip:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1147|$1416421148611eKkbs:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1148|$1416421148648MkrAu:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1146|$1416421148668QVUGu:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    4335|$1416421148781DdywD:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    8905|$1416421148804Jpiyh:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1516|$1416421148831wAJqj:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1144|$1416421149084Xgjxj:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2532|$1416421149221YWtbK:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    8332|$1416421150552eFDMF:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    5634|$1416421154085rTNTk:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1472|$1416421158011hcucm:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1472|$1416421159849QnKcw:jki.re|!zOmsiVucpWbRRDjSwe:matrix.org
+    3745|$1416421159894bPpkh:jki.re|!zOmsiVucpWbRRDjSwe:matrix.org
+    3186|$1416421159972JNyAn:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    3183|$1416421167345vfOuJ:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    3134|$1416421171549UUxap:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    7696|$1416421171905quVkq:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    7648|$1416421186652GjIbo:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    3223|$1416421186683vMQxx:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    3891|$1416421194308HHfEQ:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2870|$1416421214507wmOTk:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2679|$1416421221554QizEa:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2860|$1416421221583nLOLj:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2659|$1416421227761SornK:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2650|$1416421227795pubFc:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2741|$1416421227823shIQt:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2650|$1416421227852PWaKw:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2652|$1416421227910ebUmX:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2655|$1416421227942waklg:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2563|$1416421228269onXEn:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2724|$1416421228304sqzYP:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2657|$141642206210bmfyE:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2557|$141642206912HrMwZ:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    6848|$141642259736bhbbD:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1537|$141642270740OzbNf:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    4990|$14164230341lNztJ:jki.re|!zOmsiVucpWbRRDjSwe:matrix.org
+    3241|$1416445510195uloNs:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3240|$1416445670197icPGo:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2104|$1416473443254xGfiX:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1428|$1416511087782kxJvG:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4736|$14165809161079ZbSSh:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2752|$14166063101465pFkjW:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2745|$14167439957xglZv:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2742|$1416780564253TefsN:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1586|$141683152215uMhuQ:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1399|$1416836115142rMYPT:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2257|$14168371138akGnX:arasphere.net|!cURbafjkfsMDVwdRDQ:matrix.org
+    1987|$1416866413397IcNvH:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2248|$1416867312435NLKxe:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2242|$1416957540203zlxzY:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2238|$1417013427144QAcHW:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4569|$1417013736175xxFFU:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2027|$1417013967194djfqk:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2095|$141702577014bCGnN:jki.re|!cURbafjkfsMDVwdRDQ:matrix.org
+    2217|$14170296295LeIIC:erikjohnston.com|!cURbafjkfsMDVwdRDQ:matrix.org
+    2215|$141704862260MoIBx:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2213|$141704876262RZoSC:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2211|$1417095807380HBzYQ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2208|$1417099593526FZWAK:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2207|$14170999683OCInL:erikjohnston.com|!cURbafjkfsMDVwdRDQ:matrix.org
+    1357|$1417103832613TNbxa:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2164|$1417104408650AOkae:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2194|$14171061421mtTHy:cirrus.arasphere.net|!cURbafjkfsMDVwdRDQ:matrix.org
+    2177|$1417125474132OfRkJ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1705|$141717609411imsVh:oddvar.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    4560|$141718392527KvsmT:jki.re|!zOmsiVucpWbRRDjSwe:matrix.org
+    2180|$14171871451261oziXF:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2177|$14172006202497WEMJY:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2175|$14172035672516GMBsO:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2162|$14173154932688CZReB:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2158|$14173598842724vHlUe:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2144|$14174319322967uGhFp:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2031|$14174319332969moien:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2134|$14174443853211dCxto:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2123|$1417459708238uhgEK:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2110|$1417477647387oOhWh:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2112|$14174961724cfNYp:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1492|$141749957714iAPYf:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1456|$141751963416KpdNZ:vanderkraan.net|!cURbafjkfsMDVwdRDQ:matrix.org
+    2083|$141753132241UFuoo:matrix.sammachin.com|!cURbafjkfsMDVwdRDQ:matrix.org
+    2061|$1417534621111lzDjs:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1943|$141753604317OlkTF:matrix.grids.be|!cURbafjkfsMDVwdRDQ:matrix.org
+    3669|$1417537190278IcTDf:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2278|$141754693188BdygE:oddvar.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2037|$1417618361486Xtzlu:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2035|$1417621378681Cnepc:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2030|$1417634750101SlPLy:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2028|$1417635115137ZayGn:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2025|$1417643008213izCmA:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2024|$1417643021214qoqHj:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2007|$141768665313EpFRR:matrix.soho-piper.de|!cURbafjkfsMDVwdRDQ:matrix.org
+    1963|$1417690190323pCAID:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1227|$1417690190324ZjcOJ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1752|$1417690202325tTrYJ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1987|$1417709089288RlcJA:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1779|$1417715506392MMBRp:jki.re|!cURbafjkfsMDVwdRDQ:matrix.org
+    1448|$1417731087510TybiD:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3236|$1417731103524ljrwn:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1458|$1417802225631KlKgn:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1450|$14178232861VSwey:thewordnerd.info|!cURbafjkfsMDVwdRDQ:matrix.org
+    1201|$141791050336lsbKQ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1441|$141791152498QxdZc:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1410|$14179509961zWOTG:setkeh.com|!cURbafjkfsMDVwdRDQ:matrix.org
+    1409|$14179513534DovFi:setkeh.com|!cURbafjkfsMDVwdRDQ:matrix.org
+    1406|$14179928209jxfCB:matrix.telekomlabs.sk|!cURbafjkfsMDVwdRDQ:matrix.org
+    1359|$141805643076rYYvE:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3160|$1418062604190xPtfn:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1381|$1418069529275qJGzw:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1379|$1418085574402MALen:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1377|$1418117653503Pnhap:tp.mu|!cURbafjkfsMDVwdRDQ:matrix.org
+    1374|$1418121572539VMqay:tp.mu|!cURbafjkfsMDVwdRDQ:matrix.org
+    1371|$1418128287664kLdmJ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1366|$14182217572077VbmXh:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    2948|$14182323242338eGiGq:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1358|$14182346022386PpKtf:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1345|$1418308621344SsEQz:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1163|$141833676153yRNHl:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    1338|$1418340260219zrjqQ:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3110|$1418384259285cIBbw:jki.re|!zOmsiVucpWbRRDjSwe:matrix.org
+    1735|$1418384262286jEIEu:jki.re|!zOmsiVucpWbRRDjSwe:matrix.org
+    1213|$14183914271090SenTN:matrix.org|!cURbafjkfsMDVwdRDQ:matrix.org
+    3097|$1418653717447wmsFB:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1571|$1418751854151KvUKT:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2510|$1418810403597GzTSk:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1276|$14188899041522kiisW:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2690|$14188901074zWFzq:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1333|$1418898057186nINPL:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2055|$14194369061651aAtyg:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1520|$14194395611711OKCgP:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1110|$14199578692881DvBeI:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2603|$14199596292895twEDn:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1641|$14199667452910VWXpd:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1123|$14201992513483ZophC:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1130|$14202361973922trAfD:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2592|$14204503574252jWbkZ:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2571|$142055924810pSmVk:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2188|$142064604367hJWPe:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2491|$14210843042420iAQpO:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2057|$14211396143085lnaxm:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2476|$14211408323111OmzvJ:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1886|$14211434303186XKMju:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2457|$14212333482155DFJLF:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1049|$14212333662157nmJTH:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2453|$14212335402164WjLlu:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2452|$14212346622176CbjDN:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    2445|$14212550443026wkPPU:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1123|$14213387573870xtLhG:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1821|$1421339257133EvDBw:jki.re|!zOmsiVucpWbRRDjSwe:matrix.org
+    1413|$14213983994187yhCET:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1196|$14220084501192pkWOL:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1388|$14220271749VHYwx:oddvar.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1369|$1422368570498IvhZA:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1367|$1422536094509VOVWC:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1025|$1422611668284InoeS:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1356|$1422697086358IJpYh:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+    1190|$14230746194356FRKSL:matrix.org|!zOmsiVucpWbRRDjSwe:matrix.org
+  created: 2015-02-11 20:36:26.0
+  id: '11243'
+  issue: '11030'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-11 20:36:26.0
+- author: erikj
+  body: |-
+    sqlite_analyzer (http://www.sqlite.org/download.html) is a useful tool ftr. Most of the storage seems to disappears into state_groups_state.
+
+    state_groups_state really isn't optimized for storage, and I have ideas of how to make it a lot more efficient, but they require architectural/invasive changes of how we store current state.
+
+    I believe, without tooo much evidence, that there was a bug the first time I deployed the state cache to matrix.org that caused us to generate a new state group for every event. (There is also evidence that it was adding state groups for outliers as well.) This is fixed and the rate of growth seems to have slowed down. This is all very much guessing, I haven't had the time to investigate this fully.
+
+    The DB was 562MB on 6th Jan.
+  created: 2015-02-11 20:38:25.0
+  id: '11244'
+  issue: '11030'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-02-11 20:38:25.0
+- author: matthew
+  body: reopening 'cos we're still not reaping sent_transactions
+  created: 2015-04-16 23:57:10.0
+  id: '11501'
+  issue: '11030'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-16 23:57:10.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1282'
+  created: 2016-11-07 18:27:42.0
+  id: '13601'
+  issue: '11030'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:42.0

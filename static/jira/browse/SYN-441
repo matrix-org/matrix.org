@@ -1,0 +1,28 @@
+---
+summary: access token redaction in logs hinders debugging if it's the only way of tracking requests cross-device. perhaps show a hash instead?
+---
+created: 2015-07-29 17:49:23.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11773'
+key: SYN-441
+number: '441'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '3'
+updated: 2016-11-07 18:28:15.0
+votes: '0'
+watches: '2'
+workflowId: '11874'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1352'
+  created: 2016-11-07 18:28:15.0
+  id: '13674'
+  issue: '11773'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:15.0

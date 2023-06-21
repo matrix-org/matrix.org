@@ -1,0 +1,26 @@
+---
+summary: SDK should ignore duplicated events sent by the home server
+---
+assignee: manu
+created: 2014-12-10 15:57:17.0
+creator: manu
+description: |-
+  In order to protect the app against duplicated events sent by the HS, we should filter them at the sdk level.
+
+  testMXMemoryStorePaginateBackDuplicatesInRoomWithTwoUsers currently  fails because when paginating back, the HS sends an event it already sent in the initialSync.
+id: '10805'
+key: SYIOS-9
+number: '9'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-11 14:33:12.0
+status: '5'
+type: '1'
+updated: 2014-12-11 14:33:12.0
+votes: '0'
+watches: '1'
+workflowId: '10905'
+---
+actions: null

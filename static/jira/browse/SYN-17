@@ -1,0 +1,30 @@
+---
+summary: Presence info should persist over HS restarts
+---
+created: 2014-09-16 00:40:02.0
+creator: matthew
+description: ''
+id: '10042'
+key: SYN-17
+number: '17'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-03-31 10:35:10.0
+status: '5'
+type: '1'
+updated: 2016-03-31 10:35:10.0
+votes: '0'
+watches: '1'
+workflowId: '10351'
+---
+actions:
+- author: matthew
+  body: Apparently this needs a button on federation to re-request presence data after a HS has been restarted
+  created: 2014-09-16 00:40:40.0
+  id: '10000'
+  issue: '10042'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-16 00:40:40.0

@@ -1,0 +1,38 @@
+---
+summary: Messages for E2E to notify about new devices
+---
+created: 2015-11-17 13:39:11.0
+creator: markjh
+description: |-
+  When a user adds a new device it should send a message to the other devices that the user owns so that they can cross-sign the public key of the new device.
+
+  This should do some kind of crypto based off of a shared secret, e.g. an N digit code, to authenticate the new device.
+
+  Once the new device's key has been cross-signed by the old device key, then a message should be sent to all devices that the user is chatting with to add the new device to the conversation.
+id: '12112'
+key: SPEC-271
+number: '271'
+priority: '3'
+project: '10001'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2016-09-08 16:53:03.0
+status: '5'
+type: '2'
+updated: 2016-09-08 16:53:04.0
+votes: '0'
+watches: '3'
+workflowId: '12215'
+---
+actions:
+- author: richvdh
+  body: |-
+    We now have messages to notify about new devices (although, as with the rest of the stuff we've thrown in for E2E, they are woefully underspecced), so this is done.
+
+    Cross-signing is a *whole* other kettle of fish.
+  created: 2016-09-08 16:53:04.0
+  id: '13117'
+  issue: '12112'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-08 16:53:04.0

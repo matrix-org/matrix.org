@@ -1,0 +1,32 @@
+---
+summary: Support for ipv6 source addresses on IRC bridge
+---
+created: 2015-09-19 23:38:33.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  BOTS-100 and similar require us to connect via IPv6, with a different source addy for each connection
+id: '11899'
+key: BOTS-113
+number: '113'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:13:39.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:13:39.0
+votes: '0'
+watches: '2'
+workflowId: '12002'
+---
+actions:
+- author: kegan
+  body: Experimental support (untested since our DC doesn't do v6) is now done.
+  created: 2016-06-02 10:13:39.0
+  id: '12944'
+  issue: '11899'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:13:39.0

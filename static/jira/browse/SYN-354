@@ -1,0 +1,51 @@
+---
+summary: 500 when uploading jpg
+---
+created: 2015-04-22 18:28:01.0
+creator: erikj
+description: |-
+  {noformat}
+  2015-04-22 18:20:30,884 - synapse.rest.media.v1.upload_resource - 115 - ERROR -  - Failed to store file
+  Traceback (most recent call last):
+    File "synapse/rest/media/v1/upload_resource.py", line 105, in _async_render_POST
+      content_length, auth_user
+  IOError: cannot write mode P as JPEG
+  {noformat}
+
+  JPG I tried to upload is attached
+id: '11359'
+key: SYN-354
+number: '354'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '10100'
+resolutiondate: 2016-01-06 10:33:27.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:33:27.0
+votes: '0'
+watches: '1'
+workflowId: '11459'
+---
+actions:
+- author: erikj
+  body: Wait, its animated :/
+  created: 2015-04-22 18:28:29.0
+  id: '11518'
+  issue: '11359'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-22 18:28:29.0
+- author: erikj
+  body: |-
+    {noformat}
+    erikj@regina:~$ file Pictures/dirty.jpg 
+    Pictures/dirty.jpg: GIF image data, version 89a, 500 x 276
+    {noformat}
+  created: 2015-04-22 18:30:30.0
+  id: '11519'
+  issue: '11359'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-22 18:30:30.0

@@ -1,0 +1,36 @@
+---
+summary: Displaying keyboard has nasty animation artefacts
+---
+created: 2014-12-15 16:35:15.0
+creator: matthew
+description: |-
+  When you enter a room, and then tap on the text input box to display the keyboard:
+   * Some of the messages already present in the room become invisible whilst the keyboard slides into place
+   * It looks like the background of the (+) [ input box ] [send] area is transparent - and you can see random background content visible through the transparent bits.  It should surely be a solit shite background.
+id: '10820'
+key: SYIOS-18
+number: '18'
+priority: '3'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-16 07:28:20.0
+status: '6'
+type: '1'
+updated: 2014-12-16 09:32:46.0
+votes: '0'
+watches: '2'
+workflowId: '10920'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    fixed :
+
+    the keyboad opening and closing animations have been fixed
+  created: 2014-12-16 07:28:21.0
+  id: '10996'
+  issue: '10820'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2014-12-16 07:28:21.0

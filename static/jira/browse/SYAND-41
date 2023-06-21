@@ -1,0 +1,50 @@
+---
+summary: Name is displayed different in overview
+---
+created: 2015-03-05 20:35:42.0
+creator: bob
+description: |-
+  Android App, My Rooms, overview:
+
+  The name is displayed different between a message from the web client (e.g. @bobderbaumeister:matrix.org) and from the Android App (e.g. bob).
+
+  See attached screenshot.
+id: '11163'
+key: SYAND-41
+number: '41'
+priority: '3'
+project: '10201'
+reporter: bob
+status: '10100'
+type: '1'
+updated: 2015-03-09 20:38:23.0
+votes: '0'
+watches: '2'
+workflowId: '11263'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    the member displayname depends if there are some name conflicts.
+
+    In matrix HQ, there are many "Bob" : The matrix ID is appended to make sure to speak to the right one.
+
+    I assume you are the only bob in German chat.
+  created: 2015-03-09 07:23:14.0
+  id: '11365'
+  issue: '11163'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-09 07:23:14.0
+- author: bob
+  body: |-
+    sorry for my late response:
+
+    I am the only bob in the german chat, so this is fine for my perspective.
+    Unfortunately there is no bob the Matrix HQ anymore, so no test possbile... :-)
+  created: 2015-03-09 20:38:23.0
+  id: '11372'
+  issue: '11163'
+  type: comment
+  updateauthor: bob
+  updated: 2015-03-09 20:38:23.0

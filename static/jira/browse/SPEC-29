@@ -1,0 +1,36 @@
+---
+summary: Define how the policy server works
+---
+created: 2014-09-30 14:07:18.0
+creator: erikj
+description: ''
+id: '10428'
+key: SPEC-29
+number: '29'
+priority: '3'
+project: '10001'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-10-28 16:26:45.0
+votes: '0'
+watches: '3'
+workflowId: '10531'
+---
+actions:
+- author: markjh
+  body: We need to know what the API is before we can implement it.
+  created: 2014-11-18 14:44:12.0
+  id: '10798'
+  issue: '10428'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-18 14:44:12.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/465'
+  created: 2016-10-28 16:26:45.0
+  id: '13240'
+  issue: '10428'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:45.0

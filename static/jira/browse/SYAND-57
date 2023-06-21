@@ -1,0 +1,46 @@
+---
+summary: User-triggered duplicate messages
+---
+created: 2015-03-18 09:17:00.0
+creator: kegan
+description: |-
+  Affected version: Play store (0.2.3-alpha)
+
+  I tried to send a message, and it failed to be sent (went red). I then disconnected (via the drop down menu) and reconnected (by reopening the app) and didn't see the red message, so assumed it was black holed and sent it again. It ended up going through twice, presumably because the first message was indeed resent automatically, but it wasn't visible on the chat window.
+
+  Very hard to reproduce this, needs some combination of attempted retries/fails, can't really do it by killing the wifi.
+id: '11248'
+key: SYAND-57
+number: '57'
+priority: '2'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-03-19 16:10:05.0
+status: '5'
+type: '1'
+updated: 2015-03-19 16:10:47.0
+votes: '0'
+watches: '2'
+workflowId: '11348'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    It should be fixed with the latest code.
+
+    There is an upgrade of the UNSENT/SENDING/FAILED message statuses which should fix it.
+  created: 2015-03-19 16:10:05.0
+  id: '11409'
+  issue: '11248'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-19 16:10:05.0
+- author: m-ylecollen
+  body: I never reproduced it but i don't use a WWAN but a WLAN connection.
+  created: 2015-03-19 16:10:47.0
+  id: '11410'
+  issue: '11248'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-19 16:10:47.0

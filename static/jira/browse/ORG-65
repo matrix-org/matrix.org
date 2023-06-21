@@ -1,0 +1,20 @@
+---
+summary: make matrixbot warn if PRs have no DCO signoff
+---
+created: 2016-09-01 16:18:49.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12812'
+key: ORG-65
+number: '65'
+priority: '3'
+project: '10003'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-09-01 16:18:49.0
+votes: '0'
+watches: '1'
+workflowId: '12912'
+---
+actions: null

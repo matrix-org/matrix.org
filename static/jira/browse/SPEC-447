@@ -1,0 +1,52 @@
+---
+summary: spell out that /sync can return sections added by other modules
+---
+assignee: matthew
+created: 2016-08-27 19:59:37.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  eg account_data
+id: '12807'
+key: SPEC-447
+number: '447'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-08-30 17:59:03.0
+status: '5'
+type: '1'
+updated: 2016-08-30 17:59:03.0
+votes: '0'
+watches: '4'
+workflowId: '12907'
+---
+actions:
+- author: richvdh
+  body: |-
+    Do you have examples other than {{account_data}} ?
+
+    {{account_data}} is explicitly documented in the /sync response at the room level - I think it has just been omitted from the top level.
+  created: 2016-08-30 17:25:30.0
+  id: '13110'
+  issue: '12807'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-08-30 17:25:30.0
+- author: richvdh
+  body: 'In other words: do we need more than https://github.com/matrix-org/matrix-doc/pull/380?'
+  created: 2016-08-30 17:44:54.0
+  id: '13111'
+  issue: '12807'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-08-30 17:44:54.0
+- author: richvdh
+  body: 'per https://matrix.to/#/!HCXfdvrfksxuYnIFiJ:matrix.org/$1472576262163WRZCs:sw1v.org: let''s worry about it another time.'
+  created: 2016-08-30 17:58:57.0
+  id: '13112'
+  issue: '12807'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-08-30 17:58:57.0

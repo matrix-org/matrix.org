@@ -1,0 +1,74 @@
+---
+summary: We need to specify a way to flag whether a user is a bot or not (to allow bots to ignore each other when mirroring)
+---
+created: 2014-09-18 01:08:53.0
+creator: matthew
+description: ''
+id: '10319'
+key: SPEC-12
+number: '12'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:26:40.0
+votes: '0'
+watches: '4'
+workflowId: '10422'
+---
+actions:
+- author: kegan
+  body: Surely this would just be something like "Thou shalt not do some action if the message is m.notice." - See SPEC-18
+  created: 2014-10-06 13:49:52.0
+  id: '10523'
+  issue: '10319'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-06 13:49:52.0
+- author: matthew
+  body: pretty sure we don't want to mandate bots to only ever speak in notices. having a "i am a bot" flag is surely preferable?
+  created: 2014-10-06 13:53:55.0
+  id: '10524'
+  issue: '10319'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-06 13:53:55.0
+- author: kegan
+  body: 'This is true. I guess the bot flag would be part of the profile metadata. This slightly complicates matters for bot developers (given that there would be no information when a message comes in to say: "oh this is a bot, so ignore"; they have to persist member information and refer to that. This is probably the better trade-off though, to allow bots to use other {{msgtype}} values.'
+  created: 2014-10-06 14:22:08.0
+  id: '10525'
+  issue: '10319'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-06 14:22:08.0
+- author: leonerd
+  body: |-
+    How about adding it as a room membership data?
+
+    { membership: "join", displayname: "TTSBot", i_am_a_bot: true }
+  created: 2014-10-23 17:13:05.0
+  id: '10573'
+  issue: '10319'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-23 17:13:05.0
+- author: matthew
+  body: |-
+    Surely the bot's type needs to be announced, so that two bots know not to run concurrently etc of the same type:
+
+    { membership: "join", displayname: "TTSBot", bot_type: "org.matrix.ttsbot" }
+  created: 2014-10-23 17:21:17.0
+  id: '10574'
+  issue: '10319'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-23 17:21:17.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/431'
+  created: 2016-10-28 16:26:40.0
+  id: '13230'
+  issue: '10319'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:40.0

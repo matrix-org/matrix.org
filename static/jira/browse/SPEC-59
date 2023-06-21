@@ -1,0 +1,42 @@
+---
+summary: Gateway discussion suggested we reserve / in userids for namespacing
+---
+assignee: matthew
+created: 2014-10-27 11:29:36.0
+creator: matthew
+description: ''
+id: '10507'
+key: SPEC-59
+number: '59'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '10100'
+resolutiondate: 2016-09-27 17:22:38.0
+status: '5'
+type: '2'
+updated: 2016-09-27 17:22:38.0
+votes: '0'
+watches: '3'
+workflowId: '10611'
+---
+actions:
+- author: kegan
+  body: |-
+    Do we still want to do this? Seems reasonable; I can add it to https://github.com/matrix-org/matrix-doc/pull/3
+
+    It is *very common* to just be reserving user ID prefixes on bridges. This could potentially form part of an AS API v2 which sez "What path do you want?" which would then do the namespacing with /s.
+  created: 2015-10-13 17:23:23.0
+  id: '12255'
+  issue: '10507'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 17:23:31.0
+- author: richvdh
+  body: This kinda got superceded by SPEC-390 and SPEC-426.
+  created: 2016-09-27 17:22:28.0
+  id: '13135'
+  issue: '10507'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:22:28.0

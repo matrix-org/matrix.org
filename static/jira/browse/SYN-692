@@ -1,0 +1,28 @@
+---
+summary: Why does room creation take so long? (5s or so)
+---
+created: 2016-05-13 17:24:30.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12660'
+key: SYN-692
+number: '692'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:30.0
+votes: '0'
+watches: '2'
+workflowId: '12760'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1545'
+  created: 2016-11-07 18:29:30.0
+  id: '13856'
+  issue: '12660'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:30.0

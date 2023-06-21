@@ -1,0 +1,42 @@
+---
+summary: 500 on set_typing
+---
+created: 2015-02-18 11:52:04.0
+creator: erikj
+description: |-
+  {noformat}
+  2015-02-18 11:49:52,094 - synapse.http.server - 165 - ERROR -  - RoomMember(room_id=u'!lFdHwFlnCHQWDBxEjs:matrix.org', user=DomainSpecificString(localpart=u'matthew', domain=u'matrix.org'))
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 143, in _async_render
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/client/v1/room.py", line 518, in on_PUT
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/typing.py", line 128, in stopped_typing
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/handlers/typing.py", line 148, in _stopped_typing
+  KeyError: RoomMember(room_id=u'!lFdHwFlnCHQWDBxEjs:matrix.org', user=DomainSpecificString(localpart=u'matthew', domain=u'matrix.org'))
+  2015-02-18 11:49:52,097 - twisted - 455 - INFO -  - "83.166.68.175" - - [18/Feb/2015:11:49:51 +0000] "PUT /_matrix/client/api/v1/rooms/!lFdHwFlnCHQWDBxEjs:matrix.org/typing/@matthew:matrix.org?access_token=X HTTP/1.1" 500 33 "-" "matrixConsole/0 (iPhone; iOS 8.1.3; Scale/3.00)"
+  {noformat}
+id: '11086'
+key: SYN-281
+number: '281'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '5'
+resolutiondate: 2015-05-07 11:36:31.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:05.0
+votes: '0'
+watches: '1'
+workflowId: '11186'
+---
+actions: null

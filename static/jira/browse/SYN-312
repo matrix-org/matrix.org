@@ -1,0 +1,44 @@
+---
+summary: Bans don't work.
+---
+created: 2015-03-16 00:06:58.0
+creator: erikj
+description: ''
+id: '11242'
+key: SYN-312
+number: '312'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-04-22 16:11:13.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:07.0
+votes: '0'
+watches: '2'
+workflowId: '11342'
+---
+actions:
+- author: leonerd
+  body: |-
+    Could you possibly add a little more context to this bug? E.g. there's a test case in sytest that asserts that a ban does take effect; see:
+
+    https://github.com/matrix-org/sytest/blob/master/tests/36room-membership.pl#L152
+  created: 2015-04-22 16:03:21.0
+  id: '11515'
+  issue: '11242'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-22 16:03:21.0
+- author: erikj
+  body: |-
+    I actually think this was fixed and that the test in sytest was added to test the fix to this :)
+
+    But yeah, context would have been nice Erik...
+  created: 2015-04-22 16:10:57.0
+  id: '11516'
+  issue: '11242'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-22 16:10:57.0

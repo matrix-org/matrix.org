@@ -1,0 +1,45 @@
+---
+summary: Adding user metadata per room
+---
+assignee: markjh
+created: 2015-02-23 20:28:59.0
+creator: matthew
+description: |-
+  Sometimes we want to identify bridged users (e.g. nick completion as per original issue). There is no way to reliably do this currently: you have to do {{user_id}} regex parsing.
+
+  We need to spec out where we can find this out (extra JSON keys on {{m.room.member}}, something in the profile, etc) and what this should look like (URIs?) so informed clients can make decisions for things like visual representations, auto-complete, etc.
+
+  Original issue:
+  bq. If a Matrix user tab-completes to bing someone on IRC, it will autocomplete as (IRC) Arathorn or @irc_Arathorn:matrix.org.  This looks horrid to people on the IRC side of the bridge; we should either support autocompleting their IRC name on Matrix (probably the best bet) or the bridge could autoconvert through to the correct local idiom on the IRC side of the bridge.  Given how ugly @irc_Arathorn:matrix.org is in a message, and that bingers are for humans rather than machines, I'd prefer that we made the clients smarter about how they autocomplete, and/or expose IRC nicknames more intelligently to Matrix.
+id: '11130'
+key: SPEC-208
+number: '208'
+priority: '3'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-12-10 15:43:52.0
+status: '5'
+type: '2'
+updated: 2015-12-10 15:43:52.0
+votes: '0'
+watches: '2'
+workflowId: '11907'
+---
+actions:
+- author: kegan
+  body: 'We can''t make all clients do this, and it would involve *horrible* regexing of user IDs to _guess_ the IRC nick. I''m happy to automatically map user IDs / display names to the nick on the AS. A longer term solution would be to attach metadata (profile?) to the user to say something like {{origin: irc, nick: NickName}} which would allow clients to more easily autofill (we should probably make it generic enough for the autofill logic to work on other bridged services e.g. XMPP).'
+  created: 2015-07-31 12:03:19.0
+  id: '12046'
+  issue: '11130'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-31 12:03:19.0
+- author: matthew
+  body: Yup, i wasn't suggesting regexing the user IDs - but tracking metadata as you suggest.  In practice i'm not sure that autocompleting to Arathorn (IRC) is that bad an experience right now (now that we have the (IRC) as a suffix rather than a prefix).
+  created: 2015-07-31 12:10:50.0
+  id: '12047'
+  issue: '11130'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-31 12:10:50.0

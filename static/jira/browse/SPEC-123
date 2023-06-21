@@ -1,0 +1,36 @@
+---
+summary: Ability to blacklist users from contacting you.
+---
+created: 2015-03-08 19:23:09.0
+creator: matthew
+description: |-
+  We currently have no way of asking you server to blacklist groups of users from ever trying to contact you.  This is a pretty important abuse avoidance metric.
+
+  Open questions include:
+   * Per-user or per-group (need a generic way to manage lists of users then, but we kinda need that anyway)
+   * Ignore invites, or all traffic from these users?
+   * Can we build this into reputation analysis?
+
+  The use case here is that someone invites you to a chat, either with a nasty name or nasty contents after you accept the invite, and you never want to see them again.
+id: '11177'
+key: SPEC-123
+number: '123'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:06.0
+votes: '0'
+watches: '2'
+workflowId: '11277'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/435'
+  created: 2016-10-28 16:27:06.0
+  id: '13285'
+  issue: '11177'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:06.0

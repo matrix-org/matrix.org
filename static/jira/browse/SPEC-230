@@ -1,0 +1,30 @@
+---
+summary: API for changing displayname in a specific room
+---
+created: 2015-09-19 23:21:50.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Not high priority, but we theoretically support per-room display names and profile data - could be useful for manual disambiguating and other fun. Alien and others occasionally ask for it
+id: '11898'
+key: SPEC-230
+number: '230'
+priority: '4'
+project: '10001'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-10-28 16:27:39.0
+votes: '0'
+watches: '2'
+workflowId: '12001'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/545'
+  created: 2016-10-28 16:27:39.0
+  id: '13353'
+  issue: '11898'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:39.0

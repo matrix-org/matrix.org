@@ -1,0 +1,62 @@
+---
+summary: Room ID leak when pressing 'start chat' button in user page to remote user
+---
+created: 2014-09-19 10:27:35.0
+creator: dbkr
+description: |-
+  Go to a user in the URL bar
+  Click start chat
+  Room page opens with raw room ID above participant list and in recents (expected human readable room name: in this case, the name of the other person).
+
+  Suspect this is the same as syweb-17
+id: '10335'
+key: SYWEB-53
+number: '53'
+priority: '2'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2014-09-24 01:46:47.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:27.0
+votes: '0'
+watches: '3'
+workflowId: '10438'
+---
+actions:
+- author: matthew
+  body: This is reproduceable every time - but you have to invite a remote user over federation.
+  created: 2014-09-23 13:36:22.0
+  id: '10395'
+  issue: '10335'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 13:36:22.0
+- author: matthew
+  body: Somehow the room simply doesn't end up with any m.room.aliases events in it, from inspecting its state data from initialSync
+  created: 2014-09-23 15:48:58.0
+  id: '10411'
+  issue: '10335'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 15:48:58.0
+- author: matthew
+  body: ...however, this is business as usual; it's 1:1 and has no alias!
+  created: 2014-09-23 15:50:07.0
+  id: '10412'
+  issue: '10335'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 15:50:07.0
+- author: kegan
+  body: |-
+    Most likely because we don't (and shouldn't) set a room alias for every room. One to one "start chat" rooms should *surely* be named entirely client-side?
+
+    EDIT: Clash-tastic, ignore this.
+  created: 2014-09-23 15:50:29.0
+  id: '10413'
+  issue: '10335'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 15:51:02.0

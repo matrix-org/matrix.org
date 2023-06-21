@@ -1,0 +1,38 @@
+---
+summary: API for deleting user & room account_data
+---
+created: 2016-07-17 21:33:17.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  We seem to have deliberately avoided to specify a DELETE for account_data. Unsure why (possibly to simplify the /sync responses when it disappears?), but it's not ideal that as a result empty account_data objects start to stack up where people try to delete them
+id: '12754'
+key: SPEC-431
+number: '431'
+priority: '4'
+project: '10001'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-10-28 16:28:39.0
+votes: '0'
+watches: '2'
+workflowId: '12854'
+---
+actions:
+- author: richvdh
+  body: Yeah. We'll need synapse to support it first, of course...
+  created: 2016-07-18 11:50:26.0
+  id: '13063'
+  issue: '12754'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-18 11:50:26.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/692'
+  created: 2016-10-28 16:28:39.0
+  id: '13501'
+  issue: '12754'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:39.0

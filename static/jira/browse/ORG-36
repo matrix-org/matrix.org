@@ -1,0 +1,34 @@
+---
+summary: add https://github.com/Fxrh/Quaternion to try-matrix-now
+---
+assignee: oddvar
+created: 2016-01-21 23:15:20.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12339'
+key: ORG-36
+number: '36'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-02-12 15:52:48.0
+status: '5'
+type: '1'
+updated: 2016-02-12 15:52:48.0
+votes: '0'
+watches: '2'
+workflowId: '12444'
+---
+actions:
+- author: oddvar
+  body: |-
+    Done! 
+
+    See http://matrix.org/docs/projects/try-matrix-now.html and http://matrix.org/docs/projects/client/quaternion.html !
+  created: 2016-02-12 15:52:25.0
+  id: '12610'
+  issue: '12339'
+  type: comment
+  updateauthor: oddvar
+  updated: 2016-02-12 15:52:25.0

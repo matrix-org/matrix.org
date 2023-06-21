@@ -1,0 +1,137 @@
+---
+summary: Ability to specify a "senderAddress" 3PID when you try to enter a room
+---
+created: 2015-06-10 12:57:58.0
+creator: matthew
+description: |-
+  Currently users with ambiguous or missing display names are shown in the UI by their matrix ID.  It was always the intention to only show matrix IDs as the last ditch resort if we had no other way of referring to the user - and particularly, if users have associated 3PIDs to their account, we'd expect users to have the option of identifying themselves by 3PID rather than MXID when they enter a room.
+
+  In practice, this means that a user with an ambiguous or missing displayname could be identified in the app UI as "+447700900123" (which could in turn be used to synthesise a displayname by the application using an address book source) rather than "@matthew:matrix.org".  Apps would have the option of displaying ambiguous displaynames could be "Matthew Hodgson (+447700900123)" rather than "Matthew Hodgson (@matthew:matrix.org)".
+
+  Looking at the profile details of a room member, alongside their avatar, displayname and other profile info, we'd be able to track and show the 3PID they are identifying themselves by (if any) in the current room. Moreover apps could chose to use the 3PID to respond out of band (e.g. over the PSTN to a MSISDN) if Matrix itself is unavailable.  The whole point here is to hide matrix IDs from leaking into the app UI wherever possible, given they were always meant to be opaque IDs (and may become non-human-readable in some situations - e.g. bridged IDs or when we decentralise user accounts).
+
+  In practice, specwise this means giving a way for users to publish their canonical 3PID when inviting people into a room or joining a room.  The complications are that we need a way to stop people spoofing 3PIDs that aren't theirs, and handle the edge cases when 3PID mappings change.
+
+  Killing off user-visible mxids is a major UX requirement for glossy Matrix apps, hence tagging with the vector codename.
+id: '11629'
+key: SPEC-185
+number: '185'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '2'
+resolutiondate: 2015-09-07 17:21:45.0
+status: '5'
+type: '2'
+updated: 2015-09-07 17:52:28.0
+votes: '0'
+watches: '3'
+workflowId: '11730'
+---
+actions:
+- author: kegan
+  body: |-
+    This feels like it belongs with profile information and should be stamped by the HS when they send membership events (in much the same way that {{displayname}} and {{avatar_url}} are stamped onto the {{m.room.member}} {{content}} section by the HS). Given this is used for display, it would presumably also be nice to be able to backlink to say their Facebook page or Github page, so we need slightly more structured data than just a string.
+
+    The data format should be as clear as possible to indicate the type and value of the specific 3PID. This could be as simple as:
+    {code}
+    content: {
+      avatar_url :"mxc://whatever",
+      displayname: "Bob Smith",
+      membership: "join",
+      3pid: {
+        type: "github.com",
+        value: "FlyingSquirrels"
+      }
+    }
+    {code}
+
+    which could then be displayed on the UI as:
+    {code}
+             +---------+
+             | MUGSHOT |
+             +---------+
+    FlyingSquirrels (on github.com)
+    {code}
+
+    with various sensible formatting rules for things like emails/msisdns e.g:
+    {code}
+    3pid: {
+        type: "email",
+        value: "monkeywrench@gmail.com"
+      }
+
+         +---------+
+         | MUGSHOT |
+         +---------+
+    monkeywrench@gmail.com
+    {code}
+
+    bq. In practice, specwise this means giving a way for users to publish their canonical 3PID when inviting people into a room or joining a room.
+
+    Do we really want to limit it to one? Why not a list of 3PIDs with a {{canonical}} flag set on one of them (or just say they should be sorted in preference with index {{0}} being the canonical). Use case for this is if I'm a "FacebookSuperDuperHelper" app and I <3 Facebook and I want everyone to be known by FB IDs if they have one. This particular app may want to override the canonical 3PID with the Facebook one if they have one.
+
+    There's obviously huge outstanding security and practical issues:
+     - How do you prevent me spoofing this?
+     - Do you validate the mapping every time you receive an event? Cache instead? For how long?
+     - Any signatures attached to the {{3pid}} object to allow spoof checks without hitting the Identity Servers directly?
+     - How do you correct this when the mapping changes? Identity servers do not push out updates. Or do we just say that they don't get updated (historical 3pid support!), and rely on cache timers to expire when mappings change (so there will be some overlap after the mapping changes and when caches refresh).
+  created: 2015-06-10 14:08:15.0
+  id: '11842'
+  issue: '11629'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-10 14:08:15.0
+- author: matthew
+  body: |-
+    Could we just use URIs for 3pids - e.g. mailto:monkeywrench@gmail.com and xmpp:matthew@foo.com or whatever? even FB has the fb://profile/$id scheme.
+
+    I agree that we shouldn't limit the list of 3PIDs that a user can announce to just one - however, at this point, isn't it just profile data, with one 3pid flagged explicitly as canonical?
+  created: 2015-06-10 22:31:58.0
+  id: '11844'
+  issue: '11629'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-10 22:31:58.0
+- author: kegan
+  body: |-
+    URIs sound good to me.
+
+    bq. isn't it just profile data, with one 3pid flagged explicitly as canonical?
+
+    I'm not understanding what you're suggesting here? I was suggesting just using the first entry in the 3pid array as the canonical rather than having an explicit "canonical" key.
+  created: 2015-06-10 22:43:33.0
+  id: '11845'
+  issue: '11629'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-10 22:43:33.0
+- author: matthew
+  body: I was referring to "Why not a list of 3PIDs with a canonical flag set on one of them".  The specifics of whether that's done by ordering 3pids in a separate array datastructure, or just putting 3pids into 'normal' profile data and somehow flagging one of them is up for debate.  My point was just that it feels to me like 3pids that the user wants to publish should just live on the public profile information for the user alongside any other metadata they want to shove there.  The syntax used to flag a specific one as canonical for a given room is, well, just syntax.
+  created: 2015-06-11 00:19:49.0
+  id: '11846'
+  issue: '11629'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-11 00:19:49.0
+- author: illicitonion
+  body: We decided this should just be done through the already-existing display name field, and any desired additional information should be dumped on the profile.
+  created: 2015-09-07 17:21:28.0
+  id: '12114'
+  issue: '11629'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-09-07 17:21:28.0
+- author: matthew
+  body: |-
+    The reason for this in the end was that we didn't want to leak 3PIDs into a room just for disambiguation.  For instance, if Dan invited me as matthew@matrix.org into a room, I wouldn't want my email address to automatically be visible to everyone else in that room.
+
+    It's certainly useful for Dan's client in this instance to track the 3PID that he used to invite me - the reverse mxid->3PID mapping could be stored in client local storage or (better) in v2 API private user data storage.  But this is just a cosmetic client implementation detail (albeit one that should be standardised).
+
+    Meanwhile, we still need a nice standard way of disambiguating user names that doesn't leak ugly MXIDs and scare normal users.  Opening a new issue for that (SPEC-221)
+  created: 2015-09-07 17:52:21.0
+  id: '12115'
+  issue: '11629'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-07 17:52:21.0

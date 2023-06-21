@@ -1,0 +1,29 @@
+---
+summary: access token redaction in logs doesn't work if the _ of access_token is URI escaped
+---
+assignee: erikj
+created: 2015-07-29 17:48:37.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11772'
+key: SYN-440
+number: '440'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '10001'
+type: '1'
+updated: 2016-11-07 18:28:14.0
+votes: '0'
+watches: '2'
+workflowId: '11873'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1218'
+  created: 2016-11-07 18:28:14.0
+  id: '13673'
+  issue: '11772'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:14.0

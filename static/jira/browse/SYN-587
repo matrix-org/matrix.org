@@ -1,0 +1,28 @@
+---
+summary: Support W3C PushAPI for pushers
+---
+created: 2016-01-09 11:36:26.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12286'
+key: SYN-587
+number: '587'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:54.0
+votes: '0'
+watches: '2'
+workflowId: '12391'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1469'
+  created: 2016-11-07 18:28:54.0
+  id: '13774'
+  issue: '12286'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:54.0

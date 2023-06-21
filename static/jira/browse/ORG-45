@@ -1,0 +1,40 @@
+---
+summary: FAQ page has bad layout on mobile as it doesn't reflow
+---
+created: 2016-02-27 15:37:42.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12528'
+key: ORG-45
+number: '45'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:18:32.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:18:32.0
+votes: '0'
+watches: '3'
+workflowId: '12628'
+---
+actions:
+- author: matthew
+  body: Sames goes for API docs
+  created: 2016-02-27 15:48:44.0
+  id: '12727'
+  issue: '12528'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-27 15:48:44.0
+- author: richvdh
+  body: |-
+    API docs are covered at https://github.com/matrix-org/matrix-doc/issues/727
+    FAQ https://github.com/matrix-org/matrix-doc/issues/843
+  created: 2017-03-21 11:18:26.0
+  id: '14026'
+  issue: '12528'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:18:26.0

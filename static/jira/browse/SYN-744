@@ -1,0 +1,38 @@
+---
+summary: HTTP status code for incorrect password in UI auth is 403 (should be 401)
+---
+created: 2016-08-02 18:32:12.0
+creator: dbkr
+description: ''
+id: '12780'
+key: SYN-744
+number: '744'
+priority: '3'
+project: '10000'
+reporter: dbkr
+resolution: '10000'
+resolutiondate: 2016-10-19 10:01:09.0
+status: '5'
+type: '1'
+updated: 2016-10-19 10:01:09.0
+votes: '0'
+watches: '2'
+workflowId: '12880'
+---
+actions:
+- author: richvdh
+  body: This also affects /login, but I think we're happy to keep it that way.
+  created: 2016-10-06 22:46:23.0
+  id: '13172'
+  issue: '12780'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 22:46:23.0
+- author: richvdh
+  body: Fixed by https://github.com/matrix-org/synapse/pull/1160
+  created: 2016-10-19 10:01:09.0
+  id: '13192'
+  issue: '12780'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-19 10:01:09.0

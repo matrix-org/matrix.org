@@ -1,0 +1,28 @@
+---
+summary: Implement GA
+---
+created: 2014-09-16 00:33:37.0
+creator: matthew
+description: ''
+id: '10032'
+key: ORG-3
+number: '3'
+priority: '1'
+project: '10003'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2017-03-21 10:33:27.0
+votes: '0'
+watches: '2'
+workflowId: '10317'
+---
+actions:
+- author: richvdh
+  body: where? we have GA in some places, much to some people's chagrin.
+  created: 2017-03-21 10:33:27.0
+  id: '14004'
+  issue: '10032'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 10:33:27.0

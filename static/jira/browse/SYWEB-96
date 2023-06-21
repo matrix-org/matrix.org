@@ -1,0 +1,25 @@
+---
+summary: We need client library SDKs.
+---
+created: 2014-09-26 22:44:37.0
+creator: matthew
+description: |-
+  If we expect anyone to start building Matrix support into their existing apps, we need to provide mobile & web SDKs - the feedback was comprehensive from the TC Disrupt hackathon, at least.  APIs alone aren't good enough - people want something they can drop in and skin with a few lines of code.
+
+  We should get a plan together here before the London TC Disrupt event on Oct 16-18.
+id: '10403'
+key: SYWEB-96
+number: '96'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-12 17:41:09.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:58:05.0
+votes: '0'
+watches: '2'
+workflowId: '10506'
+---
+actions: null

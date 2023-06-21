@@ -1,0 +1,30 @@
+---
+summary: 'AS API: Notify ASes when users login/register'
+---
+created: 2015-09-23 11:26:30.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Where users are in the namespace(s) claimed by the AS. The use case here could be: Alice signs up on an HS, and immediately receives an invite from @happybot to say that they exist and potentially provide guided tutorials(?)
+id: '11933'
+key: SPEC-240
+number: '240'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:42.0
+votes: '0'
+watches: '2'
+workflowId: '12036'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/553'
+  created: 2016-10-28 16:27:42.0
+  id: '13361'
+  issue: '11933'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:42.0

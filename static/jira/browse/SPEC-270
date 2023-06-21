@@ -1,0 +1,36 @@
+---
+summary: Invent a robots.txt for IRC and get freenode & co to use it, so we can manage public scrollback sensibly
+---
+created: 2015-11-07 16:21:41.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12091'
+key: SPEC-270
+number: '270'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:53.0
+votes: '0'
+watches: '4'
+workflowId: '12194'
+---
+actions:
+- author: matthew
+  body: eternaleye suggests chanmode +U for unlogged
+  created: 2015-11-08 10:18:50.0
+  id: '12355'
+  issue: '12091'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-08 10:18:50.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/576'
+  created: 2016-10-28 16:27:53.0
+  id: '13384'
+  issue: '12091'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:53.0

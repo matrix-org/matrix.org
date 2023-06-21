@@ -1,0 +1,22 @@
+---
+summary: WebRTC call media setup failures for users behind squid
+---
+created: 2014-11-07 00:10:59.0
+creator: matthew
+description: ''
+id: '10624'
+key: SYWEB-139
+number: '139'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-03-12 13:13:37.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:52.0
+votes: '0'
+watches: '1'
+workflowId: '10724'
+---
+actions: null

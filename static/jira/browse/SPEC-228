@@ -1,0 +1,38 @@
+---
+summary: How can we enforce default permissions on a room (to prevent AS abuse)
+---
+created: 2015-09-19 22:00:24.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  There are situations where in order to interact with an AS, we want to either allow or deny users the ability to send or read AS-specific events (SPEC-227). We currently have nowhere to do this. Perhaps it should be part of the AS API - to let ASes apply preset power thresholds (including per-event thresholds) to rooms which are created in the namespaces they subscribe to
+id: '11896'
+key: SPEC-228
+number: '228'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:38.0
+votes: '0'
+watches: '2'
+workflowId: '11999'
+---
+actions:
+- author: neb
+  body: 'By @matthew:matrix.org: If we did this by giving the AS API a hook to let ASes inject permissions into a room before it''s created, we''d also need a way to do so to let them configure permissions when an already-created room federated onto the HS where the AS lives. This also sounds similar to needing a way for ASes to interact with rooms without technically being joined to them (SPEC-229)...'
+  created: 2015-09-19 22:33:26.0
+  id: '12144'
+  issue: '11896'
+  type: comment
+  updateauthor: neb
+  updated: 2015-09-19 22:33:26.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/543'
+  created: 2016-10-28 16:27:38.0
+  id: '13351'
+  issue: '11896'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:38.0

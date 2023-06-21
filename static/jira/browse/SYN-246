@@ -1,0 +1,28 @@
+---
+summary: Implement linearisation.
+---
+created: 2015-01-20 13:51:52.0
+creator: erikj
+description: ''
+id: '10959'
+key: SYN-246
+number: '246'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:40.0
+votes: '0'
+watches: '2'
+workflowId: '11059'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1276'
+  created: 2016-11-07 18:27:40.0
+  id: '13595'
+  issue: '10959'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:40.0

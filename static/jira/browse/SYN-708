@@ -1,0 +1,50 @@
+---
+summary: A lot of "Entered Measure without log context" in the log
+---
+created: 2016-06-12 13:10:56.0
+creator: simsa
+description: |-
+  Hi, 
+  yesterday I installed the new matrix-synapse version v0.16.0 on my Debian 8 server from repo. Since then I get every 5 seconds two lines in syslog like this:
+
+  {code}
+  Jun 12 06:38:23 servername python[12486]: 2016-06-12 06:38:23,661 - synapse.util.metrics - 67 - WARNING - - Entered Measure without log context: presence_handle_timeouts
+  Jun 12 06:38:23 servername python[12486]: 2016-06-12 06:38:23,664 - synapse.util.metrics - 67 - WARNING - - Entered Measure without log context: presence_update_states
+  {code}
+
+  Any idea what that means? Synapse is running fine so far.
+id: '12706'
+key: SYN-708
+number: '708'
+priority: '3'
+project: '10000'
+reporter: simsa
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:36.0
+votes: '0'
+watches: '2'
+workflowId: '12806'
+---
+actions:
+- author: simsa
+  body: |-
+    I also get a lot of:
+
+    {code}
+    Jun 12 14:12:07 servername python[2090]: 2016-06-12 14:12:07,645 - synapse.http.server - 314 - WARNING - GET-257- Context have unexpectedly changed <synapse.util.logcontext.LoggingContext object at 0x7fc8cc045440>, <synapse.util.logcontext.LoggingContext object at 0x7fc8cc045fa0>
+    {code}
+  created: 2016-06-12 13:14:21.0
+  id: '12996'
+  issue: '12706'
+  type: comment
+  updateauthor: simsa
+  updated: 2016-06-12 13:14:21.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1554'
+  created: 2016-11-07 18:29:36.0
+  id: '13869'
+  issue: '12706'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:36.0

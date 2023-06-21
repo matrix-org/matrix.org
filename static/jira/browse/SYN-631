@@ -1,0 +1,28 @@
+---
+summary: /sync doesn't return instantly for bans and kicks
+---
+created: 2016-02-14 21:06:20.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12398'
+key: SYN-631
+number: '631'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:08.0
+votes: '0'
+watches: '2'
+workflowId: '12503'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1499'
+  created: 2016-11-07 18:29:08.0
+  id: '13806'
+  issue: '12398'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:08.0

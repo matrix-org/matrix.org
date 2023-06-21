@@ -1,0 +1,56 @@
+---
+summary: People are getting CTCPs
+---
+assignee: kegan
+created: 2015-05-11 18:08:32.0
+creator: erikj
+description: |-
+  {noformat}
+  <SAL9000> what is it with the random CTCPs?
+  <erikj> SAL9000: What sort?
+  <erikj> From the MatrixBridge I presume?
+  <SAL9000> e.g. CTCP reply from M-rssbot: Matrix.org posted a new article
+  <LeoNerd> That's from the IRC bridge
+  <SAL9000> also, CTCP reply from M-neb: https://matrix.org/jira/browse/SPEC-139 : Consider factoring out event content into 'blobs' separate from graphs [Pending Triage,P3,...
+  ...
+  <erikj> Huh, interesting
+  <erikj> I wonder if the irc bridge is confused when it comes to notices
+  <erikj> I'll file a bug and poke the guy about it tomorrow
+  <SAL9000> so those were NOTICE-equivalents?
+  <erikj> They should have come through as notices
+  <erikj> and they appear to have done so on my xchat
+  <erikj> so I am very confused
+  <SAL9000> maybe some non-RFC behaviour that xchat is OK with?
+  <SAL9000> I'm using WeeChat 1.2-rc1 (git: v1.2-rc1) [compiled on Apr 28 2015 02:31:04]
+  <erikj> Quite possibly
+  {noformat}
+id: '11525'
+key: BOTS-38
+number: '38'
+priority: '1'
+project: '10101'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-12 10:59:34.0
+status: '5'
+type: '1'
+updated: 2015-05-12 10:59:34.0
+votes: '0'
+watches: '1'
+workflowId: '11626'
+---
+actions:
+- author: erikj
+  body: |-
+    {noformat}
+    <LeoNerd> read(5, ":M-neb!~neb__matr@ldc-prd-matrix-003.openmarket.com NOTICE #matrix-dev :\1https://matrix.org/jira/browse/BOTS-38 : People are getting CTCPs [Open,P1,reporter=Erik Johnston,assignee=]\1\r\n", 8192) = 184
+    <LeoNerd> ^-- that's just wrong
+    ...
+    <LeoNerd> That's a CTCP with the "verb" of https://matrix.org/jira/browse/BOTS-38  which understandably most clients ought to ignore
+    {noformat}
+  created: 2015-05-11 18:15:47.0
+  id: '11737'
+  issue: '11525'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-11 18:15:47.0

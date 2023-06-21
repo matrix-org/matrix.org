@@ -1,0 +1,28 @@
+---
+summary: audit M_UNKNOWN errors and make them meaningful - eg 'you are not invited'
+---
+created: 2015-06-17 18:58:23.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11665'
+key: SYN-422
+number: '422'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '4'
+updated: 2016-11-07 18:28:08.0
+votes: '0'
+watches: '2'
+workflowId: '11766'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1338'
+  created: 2016-11-07 18:28:08.0
+  id: '13659'
+  issue: '11665'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:08.0

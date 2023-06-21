@@ -1,0 +1,76 @@
+---
+summary: Test federation of room joining and event management
+---
+assignee: leonerd
+created: 2015-09-28 15:32:21.0
+creator: leonerd
+description: ''
+id: '11949'
+key: SYT-15
+number: '15'
+priority: '3'
+project: '10300'
+reporter: leonerd
+status: '3'
+type: '2'
+updated: 2016-02-09 16:12:08.0
+votes: '0'
+watches: '2'
+workflowId: '12052'
+---
+actions:
+- author: erikj
+  body: |-
+    Some example things to test:
+
+    - Getting the current state of a room.
+    - -Sending an event to a room the server isn't in.- migrated to SYT-45
+    - -Backfill.-
+    - -Getting an individual event.-
+    - -Invites.-
+  created: 2015-12-03 16:26:07.0
+  id: '12425'
+  issue: '11949'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-09 16:12:08.0
+- author: leonerd
+  body: Getting events - done https://github.com/matrix-org/sytest/commit/dc3f02f043dbbfbfab5f0fb7afac60333c466230
+  created: 2015-12-21 16:17:07.0
+  id: '12484'
+  issue: '11949'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-12-21 16:17:07.0
+- author: leonerd
+  body: Getting an individual event - done https://github.com/matrix-org/sytest/commit/597becc8064dd8fcf72cd76b637dbc4d79349223
+  created: 2015-12-21 16:19:46.0
+  id: '12485'
+  issue: '11949'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-12-21 16:19:46.0
+- author: leonerd
+  body: '"sending and event to a room the server isn''t in" now has its own bug - SYT-45'
+  created: 2016-01-07 17:10:20.0
+  id: '12552'
+  issue: '11949'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-01-07 17:10:20.0
+- author: leonerd
+  body: Backfill was done a while ago now.
+  created: 2016-02-08 15:34:13.0
+  id: '12595'
+  issue: '11949'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-08 15:34:13.0
+- author: leonerd
+  body: Invites done
+  created: 2016-02-09 16:11:50.0
+  id: '12600'
+  issue: '11949'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-09 16:11:50.0

@@ -1,0 +1,28 @@
+---
+summary: The call notification should be in fullscreen when the device is in standby mode.
+---
+created: 2015-09-30 12:33:51.0
+creator: m-ylecollen
+description: ''
+id: '11978'
+key: SYAND-138
+number: '138'
+priority: '3'
+project: '10201'
+reporter: m-ylecollen
+status: '10100'
+type: '1'
+updated: 2016-02-17 07:24:09.0
+votes: '0'
+watches: '2'
+workflowId: '12081'
+---
+actions:
+- author: mitchhentges
+  body: '"Standy" mode? Standby? Or maybe portrait (stood-up)? ¯\_(:/)_/¯'
+  created: 2016-02-17 00:01:37.0
+  id: '12626'
+  issue: '11978'
+  type: comment
+  updateauthor: mitchhentges
+  updated: 2016-02-17 00:01:37.0

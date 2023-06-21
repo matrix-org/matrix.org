@@ -1,0 +1,24 @@
+---
+summary: Paginating with /messages API returns a duplicate event on the last/border entry when there are 2 users in the room
+---
+created: 2014-12-10 16:04:16.0
+creator: manu
+description: |-
+  SYN-104 fix is fined for self chat room.
+  But the bug still exists where there are 2 users in the room
+id: '10807'
+key: SYN-197
+number: '197'
+priority: '2'
+project: '10000'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-01-15 10:57:31.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:03.0
+votes: '0'
+watches: '1'
+workflowId: '10907'
+---
+actions: null

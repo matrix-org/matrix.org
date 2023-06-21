@@ -1,0 +1,106 @@
+---
+summary: Reduce the proliferation of *_level events
+---
+created: 2014-09-16 18:47:23.0
+creator: leonerd
+description: ''
+id: '10304'
+key: SPEC-11
+number: '11'
+priority: '3'
+project: '10001'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2014-11-26 11:34:40.0
+status: '5'
+type: '3'
+updated: 2014-11-26 11:34:40.0
+votes: '0'
+watches: '3'
+workflowId: '10331'
+---
+actions:
+- author: leonerd
+  body: |-
+    Idea 1: Use a single 'm.room.level' event and use the sub-key to remember the individual level kind:
+
+    {noformat}
+    {
+      type: "m.room.level",
+      state_key: "ban",
+      content: { level: 20 },
+    }
+
+    {
+      type: "m.room.level",
+      state_key: "kick",
+      content: { level: 20 },
+    }
+    {noformat}
+  created: 2014-10-06 15:31:10.0
+  id: '10531'
+  issue: '10304'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-06 15:31:10.0
+- author: leonerd
+  body: |-
+    Idea 2: Use a single 'm.room.levels' event whose content stores all the level values
+
+    {noformat}
+    {
+      type: "m.room.levels",
+      content: {
+        kick: 20,
+        ban: 20,
+        add_state: 50,
+        ...
+      }
+    }
+    {noformat}
+  created: 2014-10-06 15:34:56.0
+  id: '10533'
+  issue: '10304'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-06 15:34:56.0
+- author: kegan
+  body: 'If there are no technical reasons why we can''t wodge them all together, I''d go with #2, else #1. No matter which we choose, it may be worth namespacing these are they are an arbitrary set of permissions, which we may want to leave extensible and can''t realistically cover all bases on (e.g. update_swear_word_list, create_purple_chicken, etc...) - so I would propose using {{m.kick}} {{m.ban}} and so on.'
+  created: 2014-10-06 15:38:25.0
+  id: '10534'
+  issue: '10304'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-06 15:38:25.0
+- author: leonerd
+  body: |-
+    +1 to 'm.' namespacing.
+
+    +1 to purple chickens.
+
+    I have no strong feelings on one big event, vs. lots of little events using the state key. I'm open to suggestions.
+  created: 2014-10-06 15:43:14.0
+  id: '10536'
+  issue: '10304'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-06 15:43:14.0
+- author: erikj
+  body: |-
+    If we use the {{state_key}} then I would like the contents of the events to have the same format, much like the current {{m.room.member}}. That way how to parse the events only depends on the event type.
+
+    Having them as separate events mean that you can apply different permissions on each, e.g. only admins can change the ban level but any moderator can mute the channel (by upping send event level). On the other hand, it means you can't update all the permissions atomically.
+  created: 2014-10-06 15:51:03.0
+  id: '10537'
+  issue: '10304'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-06 15:51:03.0
+- author: erikj
+  body: All power levels are in a single event now, m.room.power_levels
+  created: 2014-11-26 11:34:40.0
+  id: '10850'
+  issue: '10304'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-26 11:34:40.0

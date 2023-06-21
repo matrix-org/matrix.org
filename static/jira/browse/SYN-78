@@ -1,0 +1,44 @@
+---
+summary: Implement spec for restricting usernames & channel name charsets.
+---
+created: 2014-09-29 01:36:05.0
+creator: matthew
+description: ''
+id: '10414'
+key: SYN-78
+number: '78'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '10200'
+type: '2'
+updated: 2016-11-07 18:27:17.0
+votes: '0'
+watches: '2'
+workflowId: '10517'
+---
+actions:
+- author: matthew
+  body: split out case sensitivity into syn-109
+  created: 2014-10-27 08:39:13.0
+  id: '10581'
+  issue: '10414'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-27 08:39:13.0
+- author: richvdh
+  body: syn-109 became SPEC-289, ftr
+  created: 2015-12-10 09:45:47.0
+  id: '12457'
+  issue: '10414'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-10 09:46:13.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1220'
+  created: 2016-11-07 18:27:17.0
+  id: '13547'
+  issue: '10414'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:17.0

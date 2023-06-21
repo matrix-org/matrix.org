@@ -1,0 +1,30 @@
+---
+summary: 8.5 minutes is *way* too long a maximum retry period on ASes
+---
+created: 2016-05-06 15:28:59.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Surely ASes should poke the HS to say when they're back.
+id: '12653'
+key: SYN-688
+number: '688'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:28.0
+votes: '0'
+watches: '2'
+workflowId: '12753'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1541'
+  created: 2016-11-07 18:29:28.0
+  id: '13852'
+  issue: '12653'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:28.0

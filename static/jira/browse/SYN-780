@@ -1,0 +1,28 @@
+---
+summary: Ability to return total roomlist stats when paginating
+---
+created: 2016-09-27 15:35:25.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '12843'
+key: SYN-780
+number: '780'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:05.0
+votes: '0'
+watches: '2'
+workflowId: '12943'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1605'
+  created: 2016-11-07 18:30:05.0
+  id: '13935'
+  issue: '12843'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:05.0

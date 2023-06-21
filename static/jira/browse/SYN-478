@@ -1,0 +1,41 @@
+---
+summary: When matrix.org is down, many folks are stranded. How can we help them?
+---
+created: 2015-09-16 09:57:37.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  When matrix.org's VM fell over the other day, lots of people asked what backup server we can connect to. In practice I think they just want an alternative public server they can create an account on and use - obviously we don't have decentralised accounts or HA between synapses yet. We advertise oddvar.org on the wiki page, but I'm not sure it's being maintained - we could perhaps have an official backup.matrix.org HS or something for this purpose
+id: '11877'
+key: SYN-478
+number: '478'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:21.0
+votes: '0'
+watches: '3'
+workflowId: '11980'
+---
+actions:
+- author: oddvar
+  body: |-
+    oddvar.org is being maintained, but not as an official matrix.org alternative (and AFAIK it's only advertised on the https://matrix.org/blog/project/matrix-console-web/ page). 
+
+    The original intention was to have a list of known clients/servers which could then turn into a "recommended servers" list given that not everyone will/can run their own server. However this is separate to having a "matrix.org" grade alternative server that we commit to maintaining as well as matrix.org
+  created: 2015-09-16 12:00:46.0
+  id: '12133'
+  issue: '11877'
+  type: comment
+  updateauthor: oddvar
+  updated: 2015-09-16 12:00:46.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1371'
+  created: 2016-11-07 18:28:21.0
+  id: '13692'
+  issue: '11877'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:21.0

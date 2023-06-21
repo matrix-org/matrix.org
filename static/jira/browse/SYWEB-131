@@ -1,0 +1,20 @@
+---
+summary: Join events trigger desktop notifications even when they are not displayed,
+---
+created: 2014-10-31 15:27:03.0
+creator: erikj
+description: ''
+id: '10604'
+key: SYWEB-131
+number: '131'
+priority: '3'
+project: '10004'
+reporter: erikj
+status: '10100'
+type: '1'
+updated: 2014-10-31 15:27:03.0
+votes: '0'
+watches: '1'
+workflowId: '10704'
+---
+actions: null

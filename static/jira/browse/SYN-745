@@ -1,0 +1,41 @@
+---
+summary: Need best practices for importing old archives
+---
+created: 2016-08-02 20:09:44.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  How do we spoof TSes in old messages? How do we cancel/revert bad imports?
+id: '12782'
+key: SYN-745
+number: '745'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:50.0
+votes: '0'
+watches: '3'
+workflowId: '12882'
+---
+actions:
+- author: michaelpaul
+  body: |-
+    What about creating a script in Synapse to import data from a JSON file containing users, messages, rooms, etc?
+
+    Cancel/revert a bad import wouldn't be a problem in the case of a new server, if anything goes wrong the database can be recreated.
+  created: 2016-08-03 15:40:39.0
+  id: '13092'
+  issue: '12782'
+  type: comment
+  updateauthor: michaelpaul
+  updated: 2016-08-03 15:40:39.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1578'
+  created: 2016-11-07 18:29:50.0
+  id: '13902'
+  issue: '12782'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:50.0

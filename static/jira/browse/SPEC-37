@@ -1,0 +1,27 @@
+---
+summary: What to do if you get an event for an unknown room?
+---
+created: 2014-10-01 15:05:29.0
+creator: erikj
+description: |-
+  Servers may get sent events it doesn't think it should get. The primary example of this is if a server gets restarted with a clean database then it will get sent events for rooms it used to be in.
+
+  Since the join events will have been signed by the server, remote servers are able to prove that the server is in the room but has simply forgotten about the room. 
+
+  So the question is, how does the server recover/re-enter the room?
+id: '10437'
+key: SPEC-37
+number: '37'
+priority: '3'
+project: '10001'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-01-15 16:48:59.0
+status: '5'
+type: '2'
+updated: 2015-01-15 16:48:59.0
+votes: '0'
+watches: '1'
+workflowId: '10541'
+---
+actions: null

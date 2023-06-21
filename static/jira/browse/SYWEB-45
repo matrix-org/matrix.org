@@ -1,0 +1,23 @@
+---
+summary: When you hover over a small avatar in the messages list it should give you their user id like in the members list/
+---
+assignee: kegan
+created: 2014-09-18 15:11:33.0
+creator: erikj
+description: ''
+id: '10325'
+key: SYWEB-45
+number: '45'
+priority: '3'
+project: '10004'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2014-10-31 10:06:40.0
+status: '5'
+type: '4'
+updated: 2014-11-20 10:58:02.0
+votes: '0'
+watches: '1'
+workflowId: '10428'
+---
+actions: null

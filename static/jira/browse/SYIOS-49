@@ -1,0 +1,53 @@
+---
+summary: iOS badly misnames rooms with 2 users present
+---
+assignee: m-ylecollen
+created: 2015-01-12 00:13:09.0
+creator: matthew
+description: |-
+  * 1:1 private chats seem to be named after yourself, not the person you're talking to
+   * If there are only 2 people in a public room, the name of one of the participants seems to take priority over naming the room than its actual alias or topic.  e.g. #openwebrtc:matrix.org is shown as "Stefan Test" as the display name.
+
+  Meanwhile, #testing:matrix.org appears to only have 2 users rather than the >10 it really has, and claims to be called "Matthew" :/
+id: '10905'
+key: SYIOS-49
+number: '49'
+priority: '1'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-13 08:54:04.0
+status: '5'
+type: '1'
+updated: 2015-01-13 08:54:04.0
+votes: '0'
+watches: '3'
+workflowId: '11005'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    -> 1:1 private chats seem to be named after yourself, not the person you're talking to
+    There was a previous issue where the room name was hard written instead of letting the application displaying the name of the other member
+
+    -> #openwebrtc:matrix.org is properly displayed on my side.
+    The public room names are not updated with the member except if there is an issue with the public/private status.
+
+    ->#testing:matrix.org has 2 users (You and myself) + 1 left user (matael).
+    It really looks like  the room public statuses are corrupted.
+  created: 2015-01-12 10:16:25.0
+  id: '11089'
+  issue: '10905'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-12 10:37:48.0
+- author: gforet
+  body: |-
+    This issue is already fixed on develop.
+    Unfortunately wrong room name may still appear if someone uses iOS console build from master (for example: build #44).
+  created: 2015-01-13 08:54:04.0
+  id: '11110'
+  issue: '10905'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-13 08:54:04.0

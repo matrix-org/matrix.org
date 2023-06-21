@@ -1,0 +1,30 @@
+---
+summary: v2 redact event layout
+---
+created: 2015-05-21 11:48:13.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  v1 has the redacts key at the top level of the event. Is this really necessary? Given nearly every other event doesn't do this, it would be great to move it to content.redacts instead.
+id: '11544'
+key: SPEC-164
+number: '164'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:19.0
+votes: '0'
+watches: '2'
+workflowId: '11645'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/502'
+  created: 2016-10-28 16:27:19.0
+  id: '13310'
+  issue: '11544'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:19.0

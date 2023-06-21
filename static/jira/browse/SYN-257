@@ -1,0 +1,35 @@
+---
+summary: '"Failed to notify listener"'
+---
+created: 2015-02-06 10:51:36.0
+creator: erikj
+description: |-
+  {noformat}
+  2015-02-06 10:46:58,610 - synapse.notifier - 201 - ERROR -  - Failed to notify listener
+  Traceback (most recent call last):
+    File "/home/matrix/.local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/inte
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/.local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/pyth
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/notifier.py", line 170, in notify
+    File "/home/matrix/.local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/inte
+      result = g.send(result)
+    File "synapse/handlers/presence.py", line 825, in get_new_events_for_user
+  KeyError: DomainSpecificString(localpart=u'SamMachin', domain=u'tp.mu')
+  {noformat}
+id: '11007'
+key: SYN-257
+number: '257'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '5'
+resolutiondate: 2015-06-16 10:18:05.0
+status: '5'
+type: '1'
+updated: 2015-06-16 10:18:05.0
+votes: '0'
+watches: '1'
+workflowId: '11107'
+---
+actions: null

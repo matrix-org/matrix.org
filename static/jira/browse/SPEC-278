@@ -1,0 +1,33 @@
+---
+summary: Actually add v2 filters into the spec
+---
+assignee: illicitonion
+created: 2015-11-29 23:50:24.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  We have yaml for them, but not actually linked it into the spec verbiage seemingly
+id: '12151'
+key: SPEC-278
+number: '278'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-12-10 15:33:18.0
+status: '5'
+type: '1'
+updated: 2015-12-10 15:33:18.0
+votes: '0'
+watches: '2'
+workflowId: '12254'
+---
+actions:
+- author: richvdh
+  body: one for dan to look at during his spec release work
+  created: 2015-11-30 11:33:42.0
+  id: '12387'
+  issue: '12151'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-30 11:33:42.0

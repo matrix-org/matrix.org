@@ -1,0 +1,49 @@
+---
+summary: Explain the rationale for /account/password authentication
+---
+created: 2016-05-29 10:20:17.0
+creator: jimmycuadra
+description: |-
+  The C-S API's password change endpoint ({{POST /account/password}}) uses user-interactive authentication, but also mentions that an access token may be provided if there is an active session.
+
+  I chatted with Dave about this in #matrix-dev, and we covered a few things that could be clarified here:
+
+  {quote}
+  Why is U-I auth used when an access token would prove who you are?
+  {quote}
+
+  To be extra safe in ensuring that the password change request is coming from the real owner of the account, sort of like how services like GitHub make you reauthenticate with your password when you do certain "dangerous" actions. (I believe GitHub calls this "sudo mode.")
+
+  {quote}
+  If you have to use U-I auth, what is the purpose of also passing in an access token?
+  {quote}
+
+  So your active session can stay logged in even though the password changed. Other access tokens get revoked when the password is changed. So the access token as input to this API really means "expire all my access tokens except this one." The spec should explain that.
+
+  {quote}
+  Why bother keeping the one supplied access token valid rather than just revoking all of them and having the client reauthenticate? It already knows the new password, and it should already handle access token refreshing, as described by the client authentication section of the spec in general.
+  {quote}
+
+  Because clients (read: Vector) don't actually do this right now. If your current session's access token was revoked, Vector would log you out, not automatically log you in for a seamless experience. Maybe logging you out would actually be a good user experience, to make it super clear to the user that previous sessions using the old password have been ended. The client knows what password you submitted during the change request, so it could populate the login form and make it easy to log back in manually.
+id: '12682'
+key: SPEC-407
+number: '407'
+priority: '4'
+project: '10001'
+reporter: jimmycuadra
+status: '1'
+type: '4'
+updated: 2016-10-28 16:28:35.0
+votes: '0'
+watches: '2'
+workflowId: '12782'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/680'
+  created: 2016-10-28 16:28:35.0
+  id: '13489'
+  issue: '12682'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:35.0

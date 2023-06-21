@@ -1,0 +1,54 @@
+---
+summary: IRC AS spins when logging
+---
+assignee: kegan
+created: 2015-07-13 13:39:23.0
+creator: kegan
+description: |-
+  I noticed that there wasn't any traffic going to/from IRC, so I looked at the logs. The logs were showing nothing notable. It was not logging new messages either. I then attached a debugger using:
+  {code}
+  kill -s USR1 pid
+  node debug host:5858
+  debug> pause
+  debug> bt
+  {code}
+
+  Which produced:
+  {code}
+  #0 File._lazyDrain file.js:606:38
+  #1 file.js:167:12
+  #2 File.open file.js:362:3
+  #3 File.log file.js:157:10
+  #4 logger.js:180:17
+  #5 async.js:125:13
+  #6 native array.js:1120:24
+  #7 _each async.js:46:24
+  #8 async.each async.js:124:9
+  #9 Logger.log logger.js:208:9
+  {code}
+
+  htop indicated 100% CPU usage.
+id: '11748'
+key: BOTS-79
+number: '79'
+priority: '1'
+project: '10101'
+reporter: kegan
+resolution: '5'
+resolutiondate: 2015-08-17 13:14:38.0
+status: '5'
+type: '1'
+updated: 2015-08-17 13:14:38.0
+votes: '0'
+watches: '1'
+workflowId: '11849'
+---
+actions:
+- author: kegan
+  body: Can't reproduce on the refactored code.
+  created: 2015-08-17 13:14:38.0
+  id: '12060'
+  issue: '11748'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-08-17 13:14:38.0

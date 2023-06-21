@@ -1,0 +1,28 @@
+---
+summary: Why are so many guest joins duplicated?
+---
+created: 2016-02-01 21:55:02.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12360'
+key: SYN-613
+number: '613'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:03.0
+votes: '0'
+watches: '2'
+workflowId: '12465'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1487'
+  created: 2016-11-07 18:29:03.0
+  id: '13793'
+  issue: '12360'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:03.0

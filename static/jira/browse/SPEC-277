@@ -1,0 +1,30 @@
+---
+summary: We need to define how search handles prefixes and booleans
+---
+created: 2015-11-28 18:22:46.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Right now we don't return partial matches (other than via stemming) - which is a shame. If I search for Erik i'd expect to receive matches for ErikJohnston too.
+id: '12147'
+key: SPEC-277
+number: '277'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:55.0
+votes: '0'
+watches: '2'
+workflowId: '12250'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/581'
+  created: 2016-10-28 16:27:55.0
+  id: '13389'
+  issue: '12147'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:55.0

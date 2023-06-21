@@ -1,0 +1,20 @@
+---
+summary: If one user sends loads of messages, you can't see who sent them.
+---
+created: 2014-09-29 18:01:02.0
+creator: erikj
+description: ''
+id: '10419'
+key: SYWEB-103
+number: '103'
+priority: '3'
+project: '10004'
+reporter: erikj
+status: '10100'
+type: '1'
+updated: 2014-12-10 10:01:13.0
+votes: '0'
+watches: '1'
+workflowId: '10522'
+---
+actions: null

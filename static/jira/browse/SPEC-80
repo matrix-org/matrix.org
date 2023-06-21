@@ -1,0 +1,37 @@
+---
+summary: Message ordering can easily break badly on current c-s API
+---
+created: 2014-12-24 17:12:56.0
+creator: matthew
+description: |-
+  On a bad 'net connection, your PUTs can vary wildly in request duration, causing messages to hit your local HS in an entirely inconsistent order.
+
+  Our best for fixing for the baseline REST API is presumably to put a 'previous message' pointer on each message in order to imply the order, and have the local HS queue messages if it gets one whose logical timestamp is out-of-order.  There'd need to be a timeout if a missing message never appears (and meanwhile it becomes even more important for clients to retry sending messages).  Or alternatively we use monotonically incrementing transaction IDs from the client, to avoid having to wait a roundtrip to receive the event ID for the previous request before being able to send the next.
+
+  This problem goes away if using a stream protocol like JSON over websockets.
+
+  We must fix this in v2 of the c-s API.
+id: '10865'
+key: SPEC-80
+number: '80'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-21 11:19:01.0
+status: '5'
+type: '1'
+updated: 2015-01-21 11:19:01.0
+votes: '0'
+watches: '2'
+workflowId: '10965'
+---
+actions:
+- author: kegan
+  body: 'Landed on matrix-doc/master : {{drafts/general_api.rst}}'
+  created: 2015-01-21 11:19:01.0
+  id: '11159'
+  issue: '10865'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:19:01.0

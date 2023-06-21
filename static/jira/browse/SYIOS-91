@@ -1,0 +1,42 @@
+---
+summary: Config setting to pick membership order in a room
+---
+created: 2015-02-22 23:37:11.0
+creator: matthew
+description: ''
+id: '11120'
+key: SYIOS-91
+number: '91'
+priority: '3'
+project: '10200'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2015-02-24 21:59:37.0
+votes: '0'
+watches: '2'
+workflowId: '11220'
+---
+actions:
+- author: gforet
+  body: |-
+    How many sorting modes are actually expected? 2 or 3?
+
+    I would prefer 2 modes:
+    1 - Presence-state-then-alphabetic (which is better than Alphabetical)
+    and
+    2 - Last-active order (the current one).
+  created: 2015-02-24 15:54:34.0
+  id: '11314'
+  issue: '11120'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-24 15:54:34.0
+- author: matthew
+  body: Some people might still want to order the list alphabetically, no matter what the presence of the user is.  So i'd suggest (in keeping with the aethos of Console being feature-rich and flexible) we give all 3.
+  created: 2015-02-24 21:59:37.0
+  id: '11315'
+  issue: '11120'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-24 21:59:37.0

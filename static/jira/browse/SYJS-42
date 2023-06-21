@@ -1,0 +1,33 @@
+---
+summary: Retried sync requests can put duplicate data into timeline and end up with two concurrent syncs
+---
+created: 2016-01-27 14:40:36.0
+creator: dbkr
+description: |-
+  It appears that when trying to recover connectivity, we send some sync requests with timeout 0 and some with timeout 3000. Sometimes, both of these can return and this seems to cause the data returned from each to be added to the timeline, duplicating data. There also seem to be multiple sync requests make with the same token after this, so looks like each of these probably causes a new chain of syncs.
+
+  Suspected cause: polling /versions returns and triggers a sync with timeout 3000, meanwhile the timeout=0 request also returns.
+id: '12353'
+key: SYJS-42
+number: '42'
+priority: '1'
+project: '10204'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2016-09-27 15:41:06.0
+status: '5'
+type: '1'
+updated: 2016-09-27 15:41:06.0
+votes: '0'
+watches: '2'
+workflowId: '12458'
+---
+actions:
+- author: richvdh
+  body: I think this has gone away.
+  created: 2016-09-27 15:41:06.0
+  id: '13126'
+  issue: '12353'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 15:41:06.0

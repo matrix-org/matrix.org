@@ -1,0 +1,22 @@
+---
+summary: Set a default bind port from the server name when generating a config.
+---
+created: 2014-11-17 16:11:27.0
+creator: markjh
+description: ''
+id: '10659'
+key: SYN-147
+number: '147'
+priority: '3'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-05-07 11:56:07.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:04.0
+votes: '0'
+watches: '1'
+workflowId: '10759'
+---
+actions: null

@@ -1,0 +1,44 @@
+---
+summary: Android doesn't seem to specify width/height metadata for images it sends
+---
+created: 2015-03-29 22:46:21.0
+creator: matthew
+description: ''
+id: '11278'
+key: SYAND-62
+number: '62'
+priority: '2'
+project: '10201'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-30 13:50:44.0
+status: '5'
+type: '1'
+updated: 2015-03-30 13:50:44.0
+votes: '0'
+watches: '2'
+workflowId: '11378'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    It seems working properly on my side.
+
+    Could you send an image with no valid metadata ?
+  created: 2015-03-30 07:10:03.0
+  id: '11452'
+  issue: '11278'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-30 07:10:03.0
+- author: m-ylecollen
+  body: |-
+    the jpeg files were properly managed but the PNG files were not.
+
+    So, if no size is extracted from the exif header, decode the image to extract the usefull info.
+  created: 2015-03-30 13:50:44.0
+  id: '11453'
+  issue: '11278'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-30 13:50:44.0

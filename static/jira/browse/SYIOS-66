@@ -1,0 +1,51 @@
+---
+summary: 'Console: last outgoing message is stuck as local echo whereas the message has been delivered'
+---
+assignee: gforet
+created: 2015-01-23 11:06:03.0
+creator: gforet
+description: |-
+  This issue appears when the app switches in online mode whereas a room is displayed (in offline).
+
+  To reproduce:
+  1 - cold start the app in offline mode
+  2 - select an existing room
+  3 - switch the app in online mode
+  4- send a new message: this message is added as local echo (text in light grey) and it is not refreshed when message is delivered - NOK.
+
+  Investigation has been already done: This issue is due to the fact that event listeners are broken for the displayed room.
+
+  The issue concerns only the room displayed when the app becomes online.
+  The user must select another room to restore the right display of rooms.
+id: '10975'
+key: SYIOS-66
+number: '66'
+priority: '2'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-02-12 13:22:54.0
+status: '5'
+type: '1'
+updated: 2015-02-12 13:22:54.0
+votes: '0'
+watches: '1'
+workflowId: '11075'
+---
+actions:
+- author: gforet
+  body: This issue is blocked by SYIOS-62. Indeed we need change in MXSession API in order to be able to relaunch initial sync without restarting mxSession.
+  created: 2015-01-23 11:09:37.0
+  id: '11188'
+  issue: '10975'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-23 11:09:37.0
+- author: gforet
+  body: fix in next release 0.2.3
+  created: 2015-02-12 13:22:54.0
+  id: '11245'
+  issue: '10975'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-12 13:22:54.0

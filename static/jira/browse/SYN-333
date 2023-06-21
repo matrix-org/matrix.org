@@ -1,0 +1,28 @@
+---
+summary: Display name change events appear multiple times in some channels
+---
+created: 2015-04-07 01:04:49.0
+creator: matthew
+description: ''
+id: '11307'
+key: SYN-333
+number: '333'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:54.0
+votes: '0'
+watches: '2'
+workflowId: '11407'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1306'
+  created: 2016-11-07 18:27:54.0
+  id: '13627'
+  issue: '11307'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:54.0

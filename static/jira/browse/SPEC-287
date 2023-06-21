@@ -1,0 +1,41 @@
+---
+summary: Extract "Signing Events" section into an appendix
+---
+assignee: illicitonion
+created: 2015-12-02 13:20:19.0
+creator: jimmycuadra
+description: |-
+  It took me several read-throughs of the client-server spec to figure out that the "Signing Events" section applies to the client-server *and* server-server APIs, and that some knowledge of the server-server API is needed to make any sense of it.
+
+  Since I've been working with the spec and the JSON Schema files from matrix-doc side by side, I wondered for quite a while why the client-server spec was mentioning all these keys not represented in any of the JSON Schema files. The explanation and example JSON shown in the client-server spec include many keys that are not otherwise mentioned in the client-server spec. A good example is the list of non-essential keys in section 4.8.3 (1.9.3 on the master branch of matrix-doc). (I reference it by number because it has the same title as the parent section 4.8 (1.9 on master), which is also unfortunate. Perhaps the two could be distinguished better?)
+
+  I think the spec would be much easier to understand if the section on signatures was extracted into an appendix and pointed to whenever relevant in the client-server and server-server specs. As an appendix, it will probably need a new intro or some changes in wording to clarify that it's relevant to both APIs, and to be explicit about which parts are exclusive to one API or the other.
+id: '12167'
+key: SPEC-287
+number: '287'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '1'
+resolutiondate: 2015-12-10 15:30:36.0
+status: '5'
+type: '1'
+updated: 2015-12-10 15:30:36.0
+votes: '0'
+watches: '2'
+workflowId: '12270'
+---
+actions:
+- author: illicitonion
+  body: |-
+    It's worse than that, in fact! This shouldn't be *any* concern to the client-server API at all, and is purely a server-server concern.
+
+    I've put together a PR which moves it there and cleans up the language around this where it's unclear.
+
+    Sorry again for the hassle!
+  created: 2015-12-02 20:22:50.0
+  id: '12419'
+  issue: '12167'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-12-02 20:22:50.0

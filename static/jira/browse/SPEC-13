@@ -1,0 +1,30 @@
+---
+summary: How do we define that a room's scrollback should not be visible to new participants?
+---
+created: 2014-09-18 01:36:52.0
+creator: matthew
+description: ''
+id: '10320'
+key: SPEC-13
+number: '13'
+priority: '3'
+project: '10001'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-07-01 00:07:54.0
+status: '5'
+type: '2'
+updated: 2015-07-01 00:07:54.0
+votes: '0'
+watches: '1'
+workflowId: '10423'
+---
+actions:
+- author: matthew
+  body: Duplicate of SPEC-134
+  created: 2015-07-01 00:07:54.0
+  id: '11952'
+  issue: '10320'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-01 00:07:54.0

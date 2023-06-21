@@ -1,0 +1,23 @@
+---
+summary: Handle multiple m.room.aliases events from different homeservers
+---
+created: 2015-11-25 14:58:10.0
+creator: gforet
+description: |-
+  Presently only one m.room.aliases event is supported in room state handling. 
+
+  This is not correct: The room state need to be updated in order to support multiple m.room.aliases events. Indeed the entire set of known aliases for the room is the union of all the m.room.aliases events, one for each homeserver.
+id: '12138'
+key: SYAND-161
+number: '161'
+priority: '3'
+project: '10201'
+reporter: gforet
+status: '10100'
+type: '1'
+updated: 2015-11-25 14:58:10.0
+votes: '0'
+watches: '1'
+workflowId: '12241'
+---
+actions: null

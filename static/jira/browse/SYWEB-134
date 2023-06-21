@@ -1,0 +1,30 @@
+---
+summary: Desktop notifs leak !-style room IDs for 1:1 chats.
+---
+created: 2014-11-03 16:52:52.0
+creator: matthew
+description: ''
+id: '10610'
+key: SYWEB-134
+number: '134'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-10 17:26:45.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:01.0
+votes: '0'
+watches: '2'
+workflowId: '10710'
+---
+actions:
+- author: kegan
+  body: This was fixed in https://github.com/matrix-org/synapse/commit/d4c20c472b82e2a8851374743ec5075a58bb71ff
+  created: 2014-11-10 17:26:45.0
+  id: '10768'
+  issue: '10610'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-10 17:26:45.0

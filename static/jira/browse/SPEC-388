@@ -1,0 +1,62 @@
+---
+summary: Grammar for completely opaque APIs
+---
+created: 2016-04-19 10:37:08.0
+creator: richvdh
+description: |-
+  "Grammar" might be too strong a word, but we should probably make explicit that the following IDs are entirely implementation-specific byte sequences. The originators are allowed to create them however they like, and the recipient has to send them back as they arrived.
+
+  * Call IDs (as exposed in [{{m.call...}}|https://matrix.org/docs/spec/r0.0.1/client_server.html#id7] events)
+  * Filter IDs (as returned by [POST /user/$id/filter|https://matrix.org/docs/spec/r0.0.1/client_server.html#post-matrix-client-r0-user-userid-filter])
+  * Media IDs (from [mxc:// URIs|https://matrix.org/docs/spec/r0.0.1/client_server.html#id25])
+  * Session IDs (as used in the [auth API|https://matrix.org/docs/spec/r0.0.1/client_server.html#user-interactive-authentication-api])
+  * Transaction IDs (as used in [/send|https://matrix.org/docs/spec/r0.0.1/client_server.html#put-matrix-client-r0-rooms-roomid-send-eventtype-txnid] and other transactional PUT endpoints)
+  * Device IDs (as used in the [device API|https://docs.google.com/document/d/1H8Z5b9kGKuvFkfDR1uQHaKdYxBD03ZDjMGH1IXQ0Wbw] and others)
+  * Message IDs (as used in the store-and-forward messaging server API)
+id: '12631'
+key: SPEC-388
+number: '388'
+priority: '3'
+project: '10001'
+reporter: richvdh
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:28:29.0
+votes: '0'
+watches: '2'
+workflowId: '12731'
+---
+actions:
+- author: richvdh
+  body: |-
+    Hrm; there are encoding difficulties here.
+
+    Some of these IDs end up in JSON strings, which means that they must be interpreted as a sequence of unicode characters - they are *not* just byte sequences. Likewise, because our URIs are %-encoded UTF-8, having opaque byte sequences in our URIs would require part of a URI to be parsed as UTF-8, and part as 8-bit data, which most URI parsers would not be happy with.
+
+    As I see it there are two options here:
+    * Allow any unicode characters in these IDs, which puts the onus on recipients to correctly handle unicode characters - for instance, a client would need to parse UTF-16 {{\uXXXX}} sequences in the JSON response to {{POST /user/$id/filter}}, and then encode it as %-encoded UTF-8 in subsequent URI parameters.
+    * Restrict to a common set of ASCII, which puts the onus on originators to make sure that they aren't generating other characters.
+
+    Postel's law should guide us here. My inclination is to restrict these IDs to unreserved URI characters (ie, {{\[A-Za-z0-9._~-]}}: see [RFC3986|https://tools.ietf.org/html/rfc3986#section-2.3]) - but also to recommend that, if you receive such an ID, you parse it as a unicode string and re-encode it correctly when sending it on. This has the advantage that if you're writing a hacky bash script, you don't need to worry about escaping at all, whilst those creating IDs can still use base-64 to encode whatever they want.
+  created: 2016-04-19 11:03:52.0
+  id: '12847'
+  issue: '12631'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-19 11:03:52.0
+- author: richvdh
+  body: '`*` is used as a wildcard for device id, so must be forbidden as a device id.'
+  created: 2016-09-27 14:43:20.0
+  id: '13125'
+  issue: '12631'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 14:43:20.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/666'
+  created: 2016-10-28 16:28:29.0
+  id: '13475'
+  issue: '12631'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:29.0

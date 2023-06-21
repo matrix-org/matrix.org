@@ -1,0 +1,41 @@
+---
+summary: logout should expire refresh tokens.
+---
+created: 2016-03-14 10:32:27.0
+creator: erikj
+description: |-
+  Currently {{/logout}} only expires the access token for that session rather than the refresh token.
+
+  We need to track which "session" access and refresh tokens belong to so we can expire them.
+id: '12555'
+key: SYN-649
+number: '649'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2016-10-06 18:02:39.0
+status: '5'
+type: '1'
+updated: 2016-10-06 18:02:39.0
+votes: '0'
+watches: '2'
+workflowId: '12655'
+---
+actions:
+- author: richvdh
+  body: See SPEC-401 for questions over how this should work
+  created: 2016-05-09 14:44:49.0
+  id: '12912'
+  issue: '12555'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-09 14:44:49.0
+- author: richvdh
+  body: We've decided to remove refresh tokens from the matrix spec (see https://github.com/matrix-org/matrix-doc/pull/395), so this is no longer required.
+  created: 2016-10-06 18:02:39.0
+  id: '13162'
+  issue: '12555'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 18:02:39.0

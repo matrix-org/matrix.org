@@ -1,0 +1,37 @@
+---
+summary: 'Room directory: r0/directory/list/room/[roomId] returns unexpected "Unknown room" error'
+---
+created: 2016-06-29 11:39:34.0
+creator: gforet
+description: |-
+  For unknown reason the following request:
+
+  https://matrix.org/_matrix/client/r0/directory/list/room/!GzvmKcFNOiOmXzAQgi%3Amatrix.org?access_token=<redacted>
+
+  returns {"errcode":"M_UNKNOWN","error":"Unknown room"}
+
+  The used roomId corresponds to a room which is not listed in matrix.org's room directory (Only people who have been invited can access it).
+
+  Note: This room is a very old one, created before the definition of the room directory.
+id: '12727'
+key: SYN-716
+number: '716'
+priority: '2'
+project: '10000'
+reporter: gforet
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:39.0
+votes: '0'
+watches: '2'
+workflowId: '12827'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1387'
+  created: 2016-11-07 18:29:39.0
+  id: '13877'
+  issue: '12727'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:39.0

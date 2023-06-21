@@ -1,0 +1,41 @@
+---
+summary: Syncing bugs
+---
+assignee: kegan
+created: 2015-06-23 12:13:59.0
+creator: kegan
+description: |-
+  Retries:
+   - We need to retry {{/initialSync}} if it fails. Currently we get wedged.
+   - We need to emit an event when we recover from a {{syncError}} to let clients remove banners/warnings saying 'bad connection'.
+   - We need to exp backoff on {{/events}} in the event of a failure.
+   - We need to have a manual prod function to kick either {{/initialSync}} and/or {{/events}} if they are backing off.
+
+  Magic numbers:
+   - We need to expose {{/events?timeout=}} to clients.
+   - We should probably move {{historyLen}} to somewhere other than {{startClient}}. Part of {{opts}}?
+   - Room initial sync should be using {{historyLen}}.
+id: '11692'
+key: SYJS-11
+number: '11'
+priority: '1'
+project: '10204'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-11-05 15:55:42.0
+status: '5'
+type: '1'
+updated: 2015-11-05 15:55:43.0
+votes: '0'
+watches: '1'
+workflowId: '11793'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/pull/40
+  created: 2015-11-05 15:55:43.0
+  id: '12340'
+  issue: '11692'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-05 15:55:43.0

@@ -1,0 +1,39 @@
+---
+summary: Web client tries to join room by ID rather than by Alias which joining a remote room.
+---
+assignee: kegan
+created: 2014-11-18 20:20:44.0
+creator: markjh
+description: This doesn't work because the HS doesn't know which server to connect to in order to join the room. This is because the client tries to do the directory lookup itself.
+id: '10676'
+key: SYWEB-163
+number: '163'
+priority: '1'
+project: '10004'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-11-19 10:14:19.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:58.0
+votes: '0'
+watches: '2'
+workflowId: '10776'
+---
+actions:
+- author: kegan
+  body: How does a client join a room they have been invited to? They just have the room ID.
+  created: 2014-11-19 09:39:18.0
+  id: '10808'
+  issue: '10676'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-19 09:39:18.0
+- author: kegan
+  body: Uses the {{/join/$idOrAlias}} API now instead of looking up room aliases.
+  created: 2014-11-19 10:14:19.0
+  id: '10810'
+  issue: '10676'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-19 10:14:19.0

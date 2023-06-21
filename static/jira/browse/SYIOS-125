@@ -1,0 +1,22 @@
+---
+summary: MatrixKit datasources should indicate which cells has changed
+---
+created: 2015-04-27 10:42:29.0
+creator: manu
+description: |-
+  so that the app could make insertion and deletion animations.
+  Currently, datasources do not provide details on the changes. The application reloads all the views which makes the UI not smooth.
+id: '11373'
+key: SYIOS-125
+number: '125'
+priority: '2'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '2'
+updated: 2015-04-27 10:42:29.0
+votes: '0'
+watches: '1'
+workflowId: '11473'
+---
+actions: null

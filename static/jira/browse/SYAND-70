@@ -1,0 +1,36 @@
+---
+summary: Google rejected the Android Auto patch;  need to understand why
+---
+created: 2015-04-18 12:33:08.0
+creator: matthew
+description: |-
+  Google said:
+
+  "
+  This is a notification that your app, Matrix Console (Alpha), with package name org.matrix.androidsdk.alpha, has not been accepted as an Android Auto app on Google Play.
+  REASON FOR EXCLUSION:
+
+  -Your app includes features that distract the driver.
+
+  -Your app does not perform all functions properly or as expected from a user perspective.
+
+  -When messages are sent to the user, the messages are read out after the senders username.   
+
+  -Message groupings do not group together. When a message grouping is sent, only the last message is read out and only one message will be counted in the notification. 
+
+  Please refer to the following developer page for full details on the criteria that your app must meet to qualify as an Android Auto app on Google Play:
+  http://developer.android.com/distribute/essentials/quality/auto.html"
+id: '11345'
+key: SYAND-70
+number: '70'
+priority: '3'
+project: '10201'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-04-18 12:33:08.0
+votes: '0'
+watches: '1'
+workflowId: '11445'
+---
+actions: null

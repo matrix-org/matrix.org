@@ -1,0 +1,30 @@
+---
+summary: 'Public Room: room history is wrong when user joins for the second time.'
+---
+assignee: gforet
+created: 2015-10-30 12:33:36.0
+creator: gforet
+description: |-
+  To reproduce:
+
+  1/ Join a public room
+  2/ Leave the room
+  3/ Join again the room
+
+  --> most of the time, the most recent messages are missing in displayed history.
+id: '12054'
+key: SYIOS-170
+number: '170'
+priority: '2'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-10-30 15:59:20.0
+status: '5'
+type: '1'
+updated: 2015-10-30 15:59:20.0
+votes: '0'
+watches: '1'
+workflowId: '12157'
+---
+actions: null

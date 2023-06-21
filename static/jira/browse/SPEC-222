@@ -1,0 +1,36 @@
+---
+summary: Size limits on events, IDs, etc...
+---
+created: 2015-09-08 16:24:02.0
+creator: leonerd
+description: |-
+  Let's put limits on data sizing at last:
+
+        * Total event (timeline or state) size (65KB)
+        * User id length (255 including domain)
+        * Room id (255 including domain)
+        * Room name (255)
+        * Room topic (no limit other than implied by 65K)
+        * Avatar URL field (no limit other than implied by 65K)
+        * Avatar sizing (whatever image limits we already have for content
+        * Room aliases (255 including domain)  -- overlaps now with SPEC-1
+        * event id (255 including domain)
+        * state keys (255)  -- let's reserve a _ prefix too.
+        * event type (255)
+        * event key names, event field values - no limit, other than that implied by total 65K limit for event
+id: '11863'
+key: SPEC-222
+number: '222'
+priority: '3'
+project: '10001'
+reporter: leonerd
+resolution: '3'
+resolutiondate: 2015-10-13 17:19:22.0
+status: '5'
+type: '1'
+updated: 2015-10-13 17:19:22.0
+votes: '0'
+watches: '1'
+workflowId: '11966'
+---
+actions: null

@@ -1,0 +1,28 @@
+---
+summary: Remove the angular webclient, and give an explanation 'welcome page' instead which links to the various clients
+---
+created: 2016-04-03 12:56:21.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12607'
+key: SYN-670
+number: '670'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:21.0
+votes: '0'
+watches: '2'
+workflowId: '12707'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1527'
+  created: 2016-11-07 18:29:21.0
+  id: '13836'
+  issue: '12607'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:21.0

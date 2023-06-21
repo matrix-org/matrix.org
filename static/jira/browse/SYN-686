@@ -1,0 +1,30 @@
+---
+summary: synctl runs synapse.app.homeserver --daemonise which swallows stderr
+---
+created: 2016-05-04 11:18:41.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  just wasted 30 minutes because an uncaught exception sent to stderr was being swallowed by synctl >:(
+id: '12649'
+key: SYN-686
+number: '686'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:27.0
+votes: '0'
+watches: '2'
+workflowId: '12749'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1539'
+  created: 2016-11-07 18:29:27.0
+  id: '13850'
+  issue: '12649'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:27.0

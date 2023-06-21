@@ -1,0 +1,30 @@
+---
+summary: How do you get at the history of rooms you have left?
+---
+created: 2015-01-12 00:17:45.0
+creator: matthew
+description: ''
+id: '10908'
+key: SYWEB-252
+number: '252'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-01-12 15:58:43.0
+status: '5'
+type: '2'
+updated: 2015-08-28 15:59:19.0
+votes: '0'
+watches: '3'
+workflowId: '11008'
+---
+actions:
+- author: kegan
+  body: SYWEB-188
+  created: 2015-01-12 15:58:43.0
+  id: '11097'
+  issue: '10908'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-12 15:58:43.0

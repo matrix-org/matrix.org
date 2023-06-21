@@ -1,0 +1,28 @@
+---
+summary: We should consider how to send ephemeral events outside of rooms
+---
+created: 2015-07-15 10:42:26.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11757'
+key: SPEC-204
+number: '204'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:32.0
+votes: '0'
+watches: '2'
+workflowId: '11858'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/530'
+  created: 2016-10-28 16:27:32.0
+  id: '13338'
+  issue: '11757'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:32.0

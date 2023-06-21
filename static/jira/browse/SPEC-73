@@ -1,0 +1,31 @@
+---
+summary: Finer granularity on error responses
+---
+created: 2014-11-27 16:22:54.0
+creator: leonerd
+description: |-
+  It would be nice if we got more detail than the very generic {{M_FORBIDDEN}} when, for example, attempting to send a message to a room fails because you're not a member of it. Currently the IRC<->Matrix bridge is having to perform evil hackery of regexp matches against the intended-for-humans message string, in order to work out if that was the cause:
+
+  https://github.com/tm604/Matrix-IRCBridge/commit/cf1c372c9d089d43b93050a7b4ddd94281448bed#diff-fa4384ff1c710e597aba99c57e19eb6R361
+id: '10730'
+key: SPEC-73
+number: '73'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:51.0
+votes: '0'
+watches: '2'
+workflowId: '10830'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/477'
+  created: 2016-10-28 16:26:51.0
+  id: '13253'
+  issue: '10730'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:51.0

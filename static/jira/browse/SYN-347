@@ -1,0 +1,36 @@
+---
+summary: We don't get pushed for leaves/kicks, even when we ask (and we do see joins)
+---
+created: 2015-04-18 12:22:32.0
+creator: matthew
+description: ''
+id: '11342'
+key: SYN-347
+number: '347'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:27:56.0
+votes: '0'
+watches: '3'
+workflowId: '11442'
+---
+actions:
+- author: dbkr
+  body: What's the desired behaviour here?
+  created: 2015-05-14 12:53:15.0
+  id: '11750'
+  issue: '11342'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 12:53:15.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1310'
+  created: 2016-11-07 18:27:56.0
+  id: '13631'
+  issue: '11342'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:56.0

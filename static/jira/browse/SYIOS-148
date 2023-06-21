@@ -1,0 +1,20 @@
+---
+summary: Support Unfederated rooms
+---
+created: 2015-09-28 16:44:50.0
+creator: gforet
+description: ''
+id: '11956'
+key: SYIOS-148
+number: '148'
+priority: '1'
+project: '10200'
+reporter: gforet
+status: '10100'
+type: '2'
+updated: 2015-09-28 16:44:50.0
+votes: '0'
+watches: '1'
+workflowId: '12059'
+---
+actions: null

@@ -1,0 +1,44 @@
+---
+summary: 'Create room API: details of handling initial_state'
+---
+created: 2016-07-16 11:53:53.0
+creator: jimmycuadra
+description: |-
+  The {{initial_state}} parameter to the create room API accepts a list of state events that will be sent into the newly created room. Synapse implements this using an ordered dict, which has two implications:
+
+  # Order matters. There may not be a specific case where it makes a difference currently, but for future compatibility, the order events are sent should be preserved from the user's input.
+  # If the user's input contains more than one of the same (event_type, state_key), ones that come later in the list override previous ones. Only the last event for each unique tuple will actually be created.
+
+  The spec should say that these rules MUST be followed.
+id: '12751'
+key: SPEC-429
+number: '429'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '1'
+resolutiondate: 2016-07-18 14:58:41.0
+status: '5'
+type: '1'
+updated: 2016-07-18 14:58:41.0
+votes: '0'
+watches: '2'
+workflowId: '12851'
+---
+actions:
+- author: richvdh
+  body: Agreed.
+  created: 2016-07-18 11:40:49.0
+  id: '13062'
+  issue: '12751'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-18 11:40:49.0
+- author: richvdh
+  body: Hopefully fixed by https://github.com/matrix-org/matrix-doc/pull/362.
+  created: 2016-07-18 14:58:32.0
+  id: '13064'
+  issue: '12751'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-18 14:58:32.0

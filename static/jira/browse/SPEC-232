@@ -1,0 +1,30 @@
+---
+summary: Clarify what an ID server actually is. Everyone thinks it's where your credentials live.
+---
+created: 2015-09-22 21:50:38.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  FAQ needs updating too.
+id: '11914'
+key: SPEC-232
+number: '232'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:39.0
+votes: '0'
+watches: '2'
+workflowId: '12017'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/546'
+  created: 2016-10-28 16:27:39.0
+  id: '13354'
+  issue: '11914'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:39.0

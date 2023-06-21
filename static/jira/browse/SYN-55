@@ -1,0 +1,70 @@
+---
+summary: Per room initial sync
+---
+created: 2014-09-18 23:17:58.0
+creator: markjh
+description: ''
+id: '10332'
+key: SYN-55
+number: '55'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-24 01:51:34.0
+status: '1'
+type: '2'
+updated: 2014-11-18 17:53:02.0
+votes: '0'
+watches: '4'
+workflowId: '10435'
+---
+actions:
+- author: kegan
+  body: This has been somewhat addressed with the implementation of /rooms/$roomid/state
+  created: 2014-09-23 16:12:29.0
+  id: '10418'
+  issue: '10332'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 16:12:29.0
+- author: matthew
+  body: Done using the /state API
+  created: 2014-09-24 01:51:34.0
+  id: '10438'
+  issue: '10332'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-24 01:51:34.0
+- author: leonerd
+  body: |-
+    I'm not entirely sure this issue is completely resolved.
+
+    The `/state` request certainly helps, but it is prone to the very atomicity/race condition bugs that initialSync is supposed to avoid. We should still come up with a way to perform an initialSync on a room that will play nicely with respect to the eventstream.
+  created: 2014-10-07 15:24:14.0
+  id: '10562'
+  issue: '10332'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-07 15:24:14.0
+- author: leonerd
+  body: Furthermore, we verymuch would like a per-room initialSync in order for clients to fetch the initial presence state of other members of the room, because the existing presence implementation can't actually cope with that.
+  created: 2014-11-10 14:37:37.0
+  id: '10759'
+  issue: '10332'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-10 14:37:37.0
+- author: leonerd
+  body: |-
+    This has been mostly addressed now, with latest 'develop' branch of synapse implementing per-room initialSync.
+
+    There's some race conditions that could affect the client that can happen between performing a room initialSync and fetching the event stream, but those can mostly be handled by some careful ordering of requests from the client, and perhaps an extra parameter to the main {{GET /events}} API, to synchronise them. This still needs to be designed.
+
+    However, as a step at getting room initial presence working, this is looking good.
+  created: 2014-11-18 17:53:02.0
+  id: '10806'
+  issue: '10332'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-18 17:53:02.0

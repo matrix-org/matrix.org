@@ -1,0 +1,38 @@
+---
+summary: Test room tagging
+---
+created: 2015-09-29 15:17:10.0
+creator: leonerd
+description: ''
+id: '11968'
+key: SYT-24
+number: '24'
+priority: '1'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-03 18:51:56.0
+status: '5'
+type: '2'
+updated: 2015-11-03 18:51:56.0
+votes: '0'
+watches: '2'
+workflowId: '12071'
+---
+actions:
+- author: leonerd
+  body: Awaiting SPEC-218
+  created: 2015-09-29 16:39:50.0
+  id: '12193'
+  issue: '11968'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-29 16:39:50.0
+- author: markjh
+  body: https://github.com/matrix-org/sytest/pull/34
+  created: 2015-11-02 18:34:15.0
+  id: '12295'
+  issue: '11968'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-11-02 18:34:15.0

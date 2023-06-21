@@ -1,0 +1,37 @@
+---
+summary: VoIP events missing in SDK
+---
+assignee: manu
+created: 2015-03-12 21:40:45.0
+creator: stalund
+description: |-
+  Events missing:
+
+  NSString *const kMXEventTypeStringCallInvite        = @"m.call.invite";
+  NSString *const kMXEventTypeStringCallCandidates    = @"m.call.candidates";
+  NSString *const kMXEventTypeStringCallAnswer        = @"m.call.answer";
+  NSString *const kMXEventTypeStringCallHangup        = @"m.call.hangup";
+id: '11208'
+key: SYIOS-106
+number: '106'
+priority: '3'
+project: '10200'
+reporter: stalund
+resolution: '1'
+resolutiondate: 2015-03-16 08:15:12.0
+status: '5'
+type: '1'
+updated: 2015-03-16 08:15:12.0
+votes: '0'
+watches: '2'
+workflowId: '11308'
+---
+actions:
+- author: manu
+  body: Fixed in https://github.com/matrix-org/matrix-ios-sdk/commit/0b77dea41c59747f7f353a9a9446a799188b8420 and https://github.com/matrix-org/matrix-ios-sdk/commit/42a13f5df2af50120e5ac7b1b55d596fd3b75e43
+  created: 2015-03-16 08:15:12.0
+  id: '11398'
+  issue: '11208'
+  type: comment
+  updateauthor: manu
+  updated: 2015-03-16 08:15:12.0

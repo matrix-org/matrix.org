@@ -1,0 +1,49 @@
+---
+summary: Build system going forward
+---
+created: 2015-06-02 17:51:49.0
+creator: kegan
+description: |-
+  We want to add a LOT more logic to the JS SDK than the current HTTP API wrappers. Having it all in one file, {{matrix.js}} is going to be a Pain. We do however want to present a single file for developers (and probably a minified version using UglifyJS too!). This means we're going to want some sort of build system to do some tasks to get a single file in a {{dist/}} directory.
+
+  Typically, people would use Grunt or Gulp, but I feel that this would be a mistake (see http://blog.keithcirkel.co.uk/why-we-should-stop-using-grunt/ for some reasons why I dislike these things). We can use {{make}}(!) - https://blog.jcoglan.com/2014/02/05/building-javascript-projects-with-make/ - which to be honest, may be the KISS solution here. Developers can then just dump {{dist/matrix-0.1.0.js}} into their browser projects, or keep using {{npm install matrix-js-sdk}} which just pulls in {{dist/matrix-0.1.0.js}} as the main script.
+id: '11612'
+key: SYJS-4
+number: '4'
+priority: '2'
+project: '10204'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-06-04 08:18:36.0
+status: '5'
+type: '1'
+updated: 2015-06-04 08:18:36.0
+votes: '0'
+watches: '2'
+workflowId: '11713'
+---
+actions:
+- author: dbkr
+  body: Agreed, although bear in mind windows does not come with make. Since only people working on the SDK itself would have to worry about that it's not a huge problem but it's a bit of a shame to restrict a JS project to unix in such a significant way.
+  created: 2015-06-03 14:40:48.0
+  id: '11821'
+  issue: '11612'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-06-03 14:40:48.0
+- author: kegan
+  body: I've ended up compromising and using a generic {{npm run <script>}} method. The script is still unix-specific, but we at least don't design out replacing it with a python script in the future.
+  created: 2015-06-04 08:18:01.0
+  id: '11823'
+  issue: '11612'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-04 08:18:01.0
+- author: kegan
+  body: This has now been implemented.
+  created: 2015-06-04 08:18:36.0
+  id: '11824'
+  issue: '11612'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-04 08:18:36.0

@@ -1,0 +1,39 @@
+---
+summary: If I press the Settings button and something breaks (e.g. 503 error), there is no feedback
+---
+assignee: matthew
+created: 2014-12-04 00:28:33.0
+creator: matthew
+description: ''
+id: '10769'
+key: SYWEB-212
+number: '212'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2015-01-26 23:15:05.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:52.0
+votes: '0'
+watches: '2'
+workflowId: '10869'
+---
+actions:
+- author: kegan
+  body: Anything more specific than 'Something breaks'? Which request? Error dialogs can appear over the top of the Settings dialog (tested by trying to submit buggy membership JSON) so most likely the failing request just isn't hooked up to an error dialog.
+  created: 2014-12-04 08:45:22.0
+  id: '10941'
+  issue: '10769'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 08:45:22.0
+- author: matthew
+  body: What I was seeing was that clicking the cog settings button was silently failing whilst the server was 500ing.  I can't reproduce this now.
+  created: 2015-01-26 23:15:05.0
+  id: '11192'
+  issue: '10769'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-26 23:15:05.0

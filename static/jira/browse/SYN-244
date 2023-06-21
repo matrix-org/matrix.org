@@ -1,0 +1,31 @@
+---
+summary: Rejection of auth events are permanent.
+---
+created: 2015-01-16 16:07:31.0
+creator: erikj
+description: |-
+  Currently, if a server rejects an auth event in a room we never retry it. This is problematic if:
+  * There was a bug and we incorrectly rejected the auth event, but this bug gets fixed in a later version.
+  * We use the same rejection semantics for rejections due to signature failures/tampering and auth failures.
+id: '10945'
+key: SYN-244
+number: '244'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:38.0
+votes: '0'
+watches: '2'
+workflowId: '11045'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1274'
+  created: 2016-11-07 18:27:38.0
+  id: '13593'
+  issue: '10945'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:38.0

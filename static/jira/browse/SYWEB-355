@@ -1,0 +1,31 @@
+---
+summary: Web client supports IMG URLs (including remote) in HTML bodies
+---
+created: 2015-04-30 19:13:30.0
+creator: dbkr
+description: ''
+id: '11502'
+key: SYWEB-355
+number: '355'
+priority: '1'
+project: '10004'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2015-04-30 19:17:26.0
+votes: '0'
+watches: '1'
+workflowId: '11602'
+---
+actions:
+- author: dbkr
+  body: |-
+    For example:
+
+    {"msgtype":"m.text","body":"i","formatted_body":"<img src='//upload.wikimedia.org/wikipedia/de/2/27/Hello_Kitty_logo.svg' />","format":"org.matrix.custom.html"}
+  created: 2015-04-30 19:17:26.0
+  id: '11701'
+  issue: '11502'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-30 19:17:26.0

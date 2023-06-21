@@ -1,0 +1,35 @@
+---
+summary: Accessing published room directories on other servers
+---
+created: 2016-01-07 04:44:57.0
+creator: matthew
+description: |-
+  We need a way to solve the global directory problem in Matrix of discovering what published rooms exist out there.
+
+  Options include:
+   1. Let users manually specify the server they're querying when browsing the room directory in their client.  (This was the conclusion when this was last discussed IRL, iirc)
+   2. Let servers delegate /publicRooms through to other servers too - either cascading based on ones they know about, or based on a whitelist, or just a static list
+   3. Expose /publicRooms via an SEO-friendly web interface and hope Google handle it for us (ugh, depends on Google)
+   4. Shove it all into some kind of global data structure (DHT, etc), which we may need anyway in future for discovering distributed accounts.
+id: '12274'
+key: SPEC-320
+number: '320'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:28:08.0
+votes: '0'
+watches: '2'
+workflowId: '12379'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/611'
+  created: 2016-10-28 16:28:08.0
+  id: '13419'
+  issue: '12274'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:08.0

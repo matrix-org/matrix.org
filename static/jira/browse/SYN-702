@@ -1,0 +1,28 @@
+---
+summary: m.ignore_user_list plays badly with pagination
+---
+created: 2016-05-24 01:27:51.0
+creator: matthew
+description: ''
+id: '12674'
+key: SYN-702
+number: '702'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:34.0
+votes: '0'
+watches: '2'
+workflowId: '12774'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1378'
+  created: 2016-11-07 18:29:34.0
+  id: '13864'
+  issue: '12674'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:34.0

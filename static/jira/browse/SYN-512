@@ -1,0 +1,36 @@
+---
+summary: Setting receipts from client doesn't mind syntactically-invalid event IDs
+---
+created: 2015-11-03 17:46:22.0
+creator: leonerd
+description: |-
+  From sytest:
+
+  {noformat}
+  Response from POST /_matrix/client/v2_alpha/rooms/!aDJeXAaoqXQuEXEOKb:localhost:8001/receipt/m.read/TODOEVENTID for user=@_ANON_-19:localhost:8001:
+    HTTP/1.1 200 OK
+  {noformat}
+
+  I would have expected some 400-series error, as this isn't even syntactically valid as an event ID. Additionally, I'd probably expect synapse to complain if the given event ID didn't exist in the room, although there might be spec/impl. reasons to accept that anyway? I'm not sure.
+id: '12077'
+key: SYN-512
+number: '512'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:33.0
+votes: '0'
+watches: '2'
+workflowId: '12180'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1412'
+  created: 2016-11-07 18:28:33.0
+  id: '13721'
+  issue: '12077'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:33.0

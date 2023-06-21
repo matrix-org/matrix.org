@@ -1,0 +1,23 @@
+---
+summary: Room create events are being rate limited in cs API.
+---
+assignee: markjh
+created: 2015-04-21 14:13:22.0
+creator: markjh
+description: ''
+id: '11354'
+key: SYN-350
+number: '350'
+priority: '2'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-04-21 17:06:21.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:06.0
+votes: '0'
+watches: '1'
+workflowId: '11454'
+---
+actions: null

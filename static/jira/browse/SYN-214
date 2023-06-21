@@ -1,0 +1,33 @@
+---
+summary: Should we encourage client-side thumbnailing after all for low-latency file transfer?
+---
+created: 2014-12-24 16:50:46.0
+creator: matthew
+description: |-
+  With the new media repo, we've shifted to a model where the server is expected to thumbnail all content (we've even talked about the thumbnail_url parameter being obsoleted).
+
+  However, this has two big disadvantages:
+   * Thumbnailing huge images (especially when all the different clients in a room ask for the various resolutions they need simultaneously) can be a resource load on the server
+   * We can't quickly send a small thumbnail through in advance of the main image content.  Thus image sending becomes slooow (like hangouts), in that the whole image has to go from origin client->origin HS->dest HS before you can see a thumbnail of it on the dest client.  This is a major step backwards from Amdocs UC.
+
+  So... perhaps we need to support both approaches after all.  Server-side thumbnailing is available as a fallback for simple clients (e.g. web browsers who don't want to mess around with Canvas for client-side thumbnailing).  But we still support client-side thumbnails as an option.
+
+  This begs the question: what resolution(s) do we thumbnail when doing so clientside?  Perhaps we just mandate a resolution for default thumbnails, and this is then used to prepopulate the server-side cache (if available).
+
+  Does the wire protocol let us send the event describing an image before the main content has been uploaded?  Otherwise sending thumbnails in advance is going to be hard...
+id: '10862'
+key: SYN-214
+number: '214'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2016-01-06 17:09:43.0
+status: '5'
+type: '2'
+updated: 2016-01-06 17:09:43.0
+votes: '0'
+watches: '1'
+workflowId: '10962'
+---
+actions: null

@@ -1,0 +1,47 @@
+---
+summary: Semantics of retrying requests
+---
+assignee: kegan
+created: 2015-06-02 17:24:45.0
+creator: kegan
+description: |-
+  We want to add the option for the SDK to retry requests. However, we don't know how this combines with ordering of requests. For example, if you send a message then invite someone to a room, should the invite be queued until after the message was sent? What about custom event types?
+
+  Ultimately, we don't have enough information to be able to decide for every event type, so we need to expose this as an option on the retrying module. We want to have sensible defaults though (e.g. invites should not be queued behind messages). An API akin to this would meet these requirements:
+
+  {code}
+  retryOpts = {
+    // enable or disable retrying
+    enableRetries: true,
+
+    // return whether it should be queued or can be concurrent.
+    // Using a function here gives more flexibility (e.g. queue based
+    // on user_id and event.type rather than just event.type, etc)
+    getRetryAlgorithmForEvent: function(event) {
+      var concurrentEventTypes = [
+        "m.room.member", "m.room.topic", "m.room.name"
+      ];
+      if (concurrentEventTypes.indexOf(event.type) !== -1) {
+        return "concurrent";
+      }
+      return "queue";
+    }
+  };
+  {code}
+  We would have the function about as the default for {{getRetryAlgorithmForEvent}}. We would pass {{retryOpts}} to whatever the retry module is.
+id: '11610'
+key: SYJS-2
+number: '2'
+priority: '2'
+project: '10204'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-06-19 17:13:52.0
+status: '5'
+type: '1'
+updated: 2015-06-19 17:13:52.0
+votes: '0'
+watches: '1'
+workflowId: '11711'
+---
+actions: null

@@ -1,0 +1,51 @@
+---
+summary: Captcha process in loop; blocking new user registration
+---
+created: 2014-10-24 18:25:42.0
+creator: johnwoolf
+description: |-
+  On new matrix.org registration the captcha step gets stuck in a loop blocking the progress of registering a user. This happens with and without the email validation step. Attempting to login with the supplied registration credentials does not work either. Seems captcha is genuinely blocking. 
+
+  As an aside, this captcha seems a little wonky comparatively, Have we looked at other captcha options? Or bagging captcha altogether in favor of email or mobile number validation?
+id: '10486'
+key: ORG-11
+number: '11'
+priority: '1'
+project: '10003'
+reporter: johnwoolf
+resolution: '10000'
+resolutiondate: 2014-10-24 19:07:06.0
+status: '5'
+type: '1'
+updated: 2014-10-24 19:07:06.0
+votes: '0'
+watches: '2'
+workflowId: '10590'
+---
+actions:
+- author: johnwoolf
+  body: |-
+    Google Chrome Version 38.0.2125.104
+    OS X 10.9.2
+  created: 2014-10-24 18:27:18.0
+  id: '10577'
+  issue: '10486'
+  type: comment
+  updateauthor: johnwoolf
+  updated: 2014-10-24 18:27:18.0
+- author: dbkr
+  body: Filed SYWEB-109 which was the usability issue which caused this .
+  created: 2014-10-24 19:06:11.0
+  id: '10578'
+  issue: '10486'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-10-24 19:06:11.0
+- author: dbkr
+  body: Was a usability issue, filed as SYWEB-109.
+  created: 2014-10-24 19:07:06.0
+  id: '10579'
+  issue: '10486'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-10-24 19:07:06.0

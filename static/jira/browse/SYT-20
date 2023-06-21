@@ -1,0 +1,31 @@
+---
+summary: Test visibility of invite metadata
+---
+assignee: leonerd
+created: 2015-09-29 15:07:35.0
+creator: leonerd
+description: ''
+id: '11964'
+key: SYT-20
+number: '20'
+priority: '1'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-16 16:23:19.0
+status: '5'
+type: '2'
+updated: 2015-11-16 16:23:19.0
+votes: '0'
+watches: '1'
+workflowId: '12067'
+---
+actions:
+- author: leonerd
+  body: Awaiting SPEC-217
+  created: 2015-09-29 16:38:43.0
+  id: '12191'
+  issue: '11964'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-29 16:38:43.0

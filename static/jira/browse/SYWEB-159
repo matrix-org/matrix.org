@@ -1,0 +1,66 @@
+---
+summary: No progress for uploading images/files
+---
+assignee: kegan
+created: 2014-11-18 09:13:51.0
+creator: kegan
+description: |-
+  -there is no local echo or UI/UX feedback when sending an image or file - upload progress would be great-
+
+  There needs to be upload progress for files, rather than the current indeterminate bar.
+id: '10665'
+key: SYWEB-159
+number: '159'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-12-08 13:43:55.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:47.0
+votes: '0'
+watches: '2'
+workflowId: '10765'
+---
+actions:
+- author: matthew
+  body: "Amandine hit a classic example of this:\n\nDec 5 11:14 2014-12-04.1 Campaign Brief Scorecard Matrix FY'15.pptx\t\nDec 5 11:14 gah, matthew my file is not being sent!\t\nDec 5 11:14 oh here it is\t\nDec 5 11:15 2014-12-04.1 Campaign Brief Scorecard Matrix FY'15.pptx\t\nDec 5 11:15 either it was blocked and got unblocked when i sent my msg or it was just taking ages and given we're missing the user feedback....\t\nDec 5 11:15 sorry for double spam"
+  created: 2014-12-05 13:57:23.0
+  id: '10962'
+  issue: '10665'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-05 13:57:23.0
+- author: kegan
+  body: Ugh, annoyingly {{$http}} doesn't seem to support {{$q.notify}} progress... it's been added in https://github.com/angular/angular.js/pull/9258/commits but not merged in yet :/
+  created: 2014-12-05 16:48:13.0
+  id: '10970'
+  issue: '10665'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 16:48:13.0
+- author: kegan
+  body: What a mess... there's a huge thread on https://github.com/angular/angular.js/issues/1934 asking to expose the XHR request dating back to Feb 2013...
+  created: 2014-12-05 16:57:03.0
+  id: '10971'
+  issue: '10665'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 16:57:03.0
+- author: kegan
+  body: Proposing we just use https://github.com/danialfarid/angular-file-upload rather than getting involved with the tangled discussion on how best to expose the progress listener. The demo on there does indeed do progress bars.
+  created: 2014-12-05 17:03:06.0
+  id: '10972'
+  issue: '10665'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 17:03:06.0
+- author: kegan
+  body: Updated bug to reflect that the feedback is now provided, and it just needs the actual progress.
+  created: 2014-12-05 17:21:03.0
+  id: '10973'
+  issue: '10665'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 17:21:03.0

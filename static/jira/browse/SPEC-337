@@ -1,0 +1,44 @@
+---
+summary: Define semantics for state when filtered
+---
+created: 2016-01-22 09:45:09.0
+creator: erikj
+description: |-
+  What should happen if a user does a {{/sync}}, with a filter that excludes state from the timeline, but includes it in the state section?
+
+  Before, the "state" key included the state at the _end_ of the timeline, now it is the state at the _start_ of the timeline. This is problematic due to the fact you won't see any of the state updates in the timeline section (if filtered in timeline), and so the client can't work out the current state.
+id: '12340'
+key: SPEC-337
+number: '337'
+priority: '2'
+project: '10001'
+reporter: erikj
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:14.0
+votes: '0'
+watches: '2'
+workflowId: '12445'
+---
+actions:
+- author: richvdh
+  body: |-
+    I think the correct behaviour is still for the {{state}} key to represent the state at the start of the timeline.
+
+    Neglecting filtering for a minute, It's worth noting that the {{state}} key may be non-empty even in the absence of gappy syncs. In particular, the state conflict resolution algorithm can lead to state changes which do not appear in the timeline. Such changes need to appear in the {{state}} key.
+
+    By analogy, it would be ideal if state changes which had been filtered out of the timeline appeared in the {{state}} key of the following sync. However, I suspect this is hard to implement on the server-side, and probably of little real-world benefit. If clients care about a particular bit of state, they shouldn't filter it out of the timeline. So actually I think that the answer is that clients shouldn't rely on this behaviour, and servers should do whatever ends up being easiest.
+  created: 2016-02-01 15:25:02.0
+  id: '12591'
+  issue: '12340'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-02-01 15:25:02.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/627'
+  created: 2016-10-28 16:28:14.0
+  id: '13435'
+  issue: '12340'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:14.0

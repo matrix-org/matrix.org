@@ -1,0 +1,28 @@
+---
+summary: Inbound invites have no timestamp and so rise always to the top of recents
+---
+created: 2014-09-29 01:41:50.0
+creator: matthew
+description: ''
+id: '10415'
+key: SYWEB-101
+number: '101'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10200'
+type: '1'
+updated: 2014-11-27 13:13:45.0
+votes: '0'
+watches: '2'
+workflowId: '10518'
+---
+actions:
+- author: kegan
+  body: Blocked on /initialSync changes.
+  created: 2014-11-27 13:13:45.0
+  id: '10881'
+  issue: '10415'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-27 13:13:45.0

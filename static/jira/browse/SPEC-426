@@ -1,0 +1,122 @@
+---
+summary: Prevent signups from shadowing bridge ghosts
+---
+created: 2016-07-14 16:31:27.0
+creator: leonerd
+description: |-
+  The current mechanism we use to ensure a clean namespacing split between "human" (i.e. real signup) accounts vs. ghosts of 3PUs (such as IRC or gitter bridge ghosts) is that ASes that define these bridges can reserve themselves an "exclusive" part of the namespace, thus preventing new user signups within that namespace.
+
+  Unfortunately, this mechanism doesn't prevent clashes between historical users who had signed up before that particular namespace exclusion was added. For example, the gitter bridge was only added about 2 months ago; so anyone could have signed up a real user account called {{@gitter_anything:matrix.org}} before then. As we continue to gain more users and more bridges, the likelihood of a collision will increase.
+
+  Depending on how it's implemented, the potential issues of such a collusion could be:
+   * The user loses control of their account
+   * The AS is unable to puppet that account
+   * Information leakage - Matrix users trying to contact the 3PU via their matrix ghost inadvertantly talk to the real human account.
+
+  We need a better fix for this than the current mechanism.
+id: '12747'
+key: SPEC-426
+number: '426'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:38.0
+votes: '0'
+watches: '2'
+workflowId: '12847'
+---
+actions:
+- author: leonerd
+  body: |-
+    An easy way we could stop this in future (at least) is that just because spec happens to allow some particular set of characters in user IDs, we could reserve a character (or a pattern) in common for *all* AS-hosted bridges, rather than just the ones we're using now and continue to add. That way, the pattern will be reserved for future ones we add too.
+
+    Unfortunately, while it would be nice to suggest we'll reserve any user ID with an underscore in it (and thus capturing the existing IRC, Slack and Gitter bridges), that won't work because many existing users have underscores, and also it would be nice to let users have names with underscores in.
+
+    One idea that might be nice is to forbid accounts whose ID *start* with some particular name pattern; for example starting with a dot or underscore; while still allowing that character somewhere else inside. It's quite likely no human would ever want a leading dot in their name (or if they do they won't be too upset to be told it's not allowed); so one easy solution might be to have 3PUs have names of the form {{@.asname.3PUname-here:matrix.org}} for example. This still allows a real human to sign up an account of {{@firstname.lastname:matrix.org}} if they so desire it.
+
+    At this point, the bug becomes more a suggestion in the spec of "Ohyes, so you might want to reserve something like this", and the real bug becomes one to point at existing homeserver implementations, to allow that sort of restriction.
+  created: 2016-07-14 16:38:55.0
+  id: '13059'
+  issue: '12747'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-07-14 16:44:01.0
+- author: richvdh
+  body: |-
+    The idea of reserving mxids which start with a particular bit of punctuation sounds like an excellent idea. A spec PR to formalise it would be delightful :) 
+
+    Do we need to consider potentially overlapping AS identifiers though?  Can I have an AS which is registered as "gitter.snaffler" which will then scupper your chances as the real gitter bridge faced with user "snaffler"?
+  created: 2016-07-14 20:29:56.0
+  id: '13060'
+  issue: '12747'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-14 20:29:56.0
+- author: leonerd
+  body: |-
+    This doesn't need to be a SPEC bug to formalise it further. Specifically, synapse could just have a bit of code saying "Ah, I see you're trying to create a username starting with . and you're not an AS, so no, go away 403"
+
+    We still want to consider how different ASes split themselves from each other, sure; but that's why they're namespaced by the HS admin anyway. This is just a future-proofing mechanism to ensure we can always add new ASes in namespaces guaranteed not to be taken by existing signed-up users.
+  created: 2016-07-18 19:17:48.0
+  id: '13066'
+  issue: '12747'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-07-18 19:17:48.0
+- author: leonerd
+  body: |-
+    At current count, we have 16 users on matrix.org whose names begin with {{_}} but no users beginning with {{.}}, so I think {{.}} is heavily in favour.
+
+    as per
+
+    {noformat}
+    matrix=# SELECT COUNT(name) FROM matrix.users WHERE matrix.users.name LIKE '@.%';
+     count 
+    -------
+         0
+
+    matrix=# SELECT COUNT(name) FROM matrix.users WHERE matrix.users.name LIKE '@\_%';
+     count 
+    -------
+        16
+    {noformat}
+  created: 2016-07-22 15:39:39.0
+  id: '13075'
+  issue: '12747'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-07-22 15:39:39.0
+- author: richvdh
+  body: did we go with {{_}} in the end ?
+  created: 2016-09-27 17:21:38.0
+  id: '13134'
+  issue: '12747'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:21:38.0
+- author: leonerd
+  body: Yes. The new networks (IRC/OFTC, IRC/Snoonet, Slack) are using underscore-prefixed user IDs. Not a lot we can do that isn't very disruptive to existing IRC/Freenode, IRC/Mozilla or Gitter users though.
+  created: 2016-09-27 17:40:43.0
+  id: '13140'
+  issue: '12747'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-09-27 17:40:43.0
+- author: richvdh
+  body: So is the work to be done for this bug just to recommend that HSes reserve the {{@_}} namespace (and {{#_}} ?) for ASes?
+  created: 2016-09-27 17:49:43.0
+  id: '13143'
+  issue: '12747'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:49:43.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/689'
+  created: 2016-10-28 16:28:38.0
+  id: '13498'
+  issue: '12747'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:38.0

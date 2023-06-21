@@ -1,0 +1,20 @@
+---
+summary: Clear MXStore if the app systematically crashes at startup
+---
+created: 2015-11-20 09:30:43.0
+creator: manu
+description: ''
+id: '12125'
+key: SYIOS-177
+number: '177'
+priority: '2'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '4'
+updated: 2015-11-20 09:30:43.0
+votes: '0'
+watches: '1'
+workflowId: '12228'
+---
+actions: null

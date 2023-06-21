@@ -1,0 +1,28 @@
+---
+summary: Packaging for https://sandstorm.io
+---
+created: 2015-06-19 00:48:12.0
+creator: matthew
+description: ''
+id: '11668'
+key: SYN-423
+number: '423'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '3'
+updated: 2016-11-07 18:28:08.0
+votes: '0'
+watches: '2'
+workflowId: '11769'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1339'
+  created: 2016-11-07 18:28:08.0
+  id: '13660'
+  issue: '11668'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:08.0

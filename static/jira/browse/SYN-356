@@ -1,0 +1,28 @@
+---
+summary: Tell v2 clients "your stream is too old" if we fall off the end of the Presence remote_offline_serials list
+---
+created: 2015-04-23 19:04:45.0
+creator: leonerd
+description: ''
+id: '11363'
+key: SYN-356
+number: '356'
+priority: '4'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:57.0
+votes: '0'
+watches: '2'
+workflowId: '11463'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1312'
+  created: 2016-11-07 18:27:57.0
+  id: '13633'
+  issue: '11363'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:57.0

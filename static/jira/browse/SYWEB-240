@@ -1,0 +1,57 @@
+---
+summary: Scroll-to-bottom still doesn't fire reliably when switching between tabs
+---
+created: 2014-12-21 23:42:46.0
+creator: matthew
+description: |-
+  If I load curbaf in the webclient, and then switch to another conversation tab (especially one with images in the history), I see at first the most recent ~4 messages, courtesy of global iniitial sync.  Then, the remainder backfill in (great!).  However, the page does not scroll to the bottom to show the most recent content, but leaves you stuck looking at the oldest content.
+
+  Reproduced on current matrix.org/beta
+id: '10853'
+key: SYWEB-240
+number: '240'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-03-03 13:19:49.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:47.0
+votes: '0'
+watches: '2'
+workflowId: '10953'
+---
+actions:
+- author: kegan
+  body: I assume you mean _rooms_ and not tabs?
+  created: 2014-12-29 09:34:45.0
+  id: '11039'
+  issue: '10853'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-29 09:34:45.0
+- author: matthew
+  body: yes
+  created: 2014-12-29 10:45:40.0
+  id: '11040'
+  issue: '10853'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-29 10:45:40.0
+- author: kegan
+  body: Reproduced locally
+  created: 2015-01-02 11:46:47.0
+  id: '11044'
+  issue: '10853'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-02 11:46:47.0
+- author: kegan
+  body: SYWEB-251
+  created: 2015-03-03 13:19:49.0
+  id: '11336'
+  issue: '10853'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-03 13:19:49.0

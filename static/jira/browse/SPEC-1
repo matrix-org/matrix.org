@@ -1,0 +1,218 @@
+---
+summary: Need to specify the grammar for room aliases and user_ids.
+---
+assignee: richvdh
+created: 2014-09-15 23:29:36.0
+creator: matthew
+description: |-
+  We need to specify the grammar for internal protocol identifiers:
+
+  * event types
+  * room IDs
+
+  We need a grammar for ids that are used both in the protocol and are exposed to humans:
+
+  * room aliases
+  * user IDs
+
+  Additionally we may need to restrict the allowed characters in human readable names:
+
+  * room display names
+  * user display names
+id: '10006'
+key: SPEC-1
+number: '1'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2016-04-19 12:03:59.0
+status: '5'
+type: '2'
+updated: 2016-06-01 09:53:54.0
+votes: '0'
+watches: '9'
+workflowId: '10321'
+---
+actions:
+- author: kegan
+  body: This is outlined in docs/human-id-rules.rst and basically follows NAMEPREP/STRINGPREP - This needs to be implemented on the HS and have a bit more discussion.
+  created: 2014-09-16 09:28:52.0
+  id: '10106'
+  issue: '10006'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-16 09:28:52.0
+- author: matthew
+  body: This is getting more urgent, with people managing to create aliases which include whitespace, and other such insanity :(
+  created: 2015-04-07 20:28:41.0
+  id: '11476'
+  issue: '10006'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-07 20:28:41.0
+- author: markjh
+  body: We urgently need to give a grammar for the user ID and for the room ID since the v2 filter API makes assumptions that '*" is not a valid character in a room id or a user ID so that it can use it as a wildcard.
+  created: 2015-09-23 16:09:08.0
+  id: '12157'
+  issue: '10006'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-09-23 16:09:08.0
+- author: leonerd
+  body: |-
+    Can we make some initial progress here? I'd personally like to suggest some partial rules on character sets and the like. 
+
+    Definitely in:
+      * US-ASCII letters; lower and uppercase.
+      * Decimal digits
+      * Punctuation of _, -
+
+    Definitely out:
+      * Any kind of whitespace
+      * Punctuation of : or . except where required by string structure rules
+
+    This still leaves a great deal of punctuation characters undecided, not to mention any thoughts on Unicode...
+  created: 2015-09-23 16:14:50.0
+  id: '12158'
+  issue: '10006'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-23 16:14:50.0
+- author: matthew
+  body: |-
+    NB that Kegan did start this at https://github.com/matrix-org/matrix-doc/blob/master/drafts/model/third-party-id.rst
+
+    Mark: thanks for clarifying and sanitizing the description
+
+    My thoughts for room alises and user ids: "utf8, with a blacklist of explicitly disallowed characters (all whitespace, *, /, :, ., any others we want to reserve). you're not allowed to mix charsets (fsvo charset), and possibly deny other homomorph attacks eg l v I" IDs are compared case insensitively.
+
+     The internal identifiers can be much more strict. Display Names etc could just be length-limited utf8 strings with no restrictions, unless we want to protect against homomorph attacks by disambiguation somehow.
+  created: 2015-09-23 17:31:25.0
+  id: '12159'
+  issue: '10006'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-23 17:31:25.0
+- author: matthew
+  body: oh, and no zero length ids
+  created: 2015-09-23 17:35:40.0
+  id: '12160'
+  issue: '10006'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-23 17:35:40.0
+- author: richvdh
+  body: Possibly matthew meant to link to https://github.com/matrix-org/matrix-doc/blob/master/drafts/human-id-rules.rst (plus https://github.com/matrix-org/matrix-doc/pull/3).
+  created: 2015-11-05 09:43:05.0
+  id: '12325'
+  issue: '10006'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 09:43:05.0
+- author: matthew
+  body: er, yes. sorry. i'm a crank. but you knew that.
+  created: 2015-11-05 10:03:26.0
+  id: '12327'
+  issue: '10006'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-05 10:03:26.0
+- author: richvdh
+  body: |-
+    > Display Names etc could just be length-limited utf8 strings with no restrictions, unless we want to protect against homomorph attacks by disambiguation somehow.
+
+    I think we do want to protect against homomorph attacks, as per SPEC-221.
+  created: 2015-11-05 10:26:08.0
+  id: '12333'
+  issue: '10006'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 10:26:08.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-doc/pull/3 is the proposal, the one currently on {{master}} is very old early notes.
+  created: 2015-11-06 10:11:21.0
+  id: '12345'
+  issue: '10006'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-06 10:11:21.0
+- author: xena
+  body: |-
+    I think a reasonable thing would be to allow anything allowed in an RFC 1459 channel name but modified for matrix:
+
+    - Spaces are not allowed
+    - Commas are not allowed
+    - Colons are not allowed
+    - \007 (BEL) is not allowed
+  created: 2015-12-09 19:28:34.0
+  id: '12452'
+  issue: '10006'
+  type: comment
+  updateauthor: xena
+  updated: 2015-12-09 19:28:34.0
+- author: matthew
+  body: I've tried to incorporate tonight's discussions from HQ into https://github.com/matrix-org/matrix-doc/pull/3#issuecomment-163453706
+  created: 2015-12-10 01:05:00.0
+  id: '12453'
+  issue: '10006'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-10 01:05:00.0
+- author: neb
+  body: 'By @matthew:matrix.org: eternaleye suggests: Matthew: Unicode XID_Start XID_Continue* maybe? Matthew: Since those are meant to be identifiers, such as for programming languages to restrict variable names to. Matthew: (Rust does so, in fact, though it further restricts variables to ASCII unless you enable the unicode identifiers feature gate IIRC)'
+  created: 2016-01-04 23:06:08.0
+  id: '12498'
+  issue: '10006'
+  type: comment
+  updateauthor: neb
+  updated: 2016-01-04 23:06:08.0
+- author: eternaleye
+  body: |-
+    A similar ticket for display names may need opened separately, but today in #matrix:matrix.org it was discovered that display names permit whitespace that they probably shouldn't (a trailing \n\t\t on a display name caused some confusion).
+
+    Some whitespace cannot be blocked - the zero-width joiner, in particular, is [needed to construct the letterforms of some languages that Unicode does not support sufficiently|https://modelviewculture.com/pieces/i-can-text-you-a-pile-of-poo-but-i-cant-write-my-name]. In addition, spaces are widely used, and blocking those would likely cause widespread breakage. However, it is entirely possible that all other whitespace can be banned without detrimental effect.
+  created: 2016-03-10 14:56:08.0
+  id: '12759'
+  issue: '10006'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-03-10 14:59:29.0
+- author: eternaleye
+  body: |-
+    From #matrix:matrix.org:
+    {quote}
+    \* eternaleye would personally support a hard ban on anything outside of \[0-9A-Za-z_.-], and if people want to be silly with it then they can use punycode and render in the client
+    The dot supports corporate-style firstname.lastname (in countries where that's used), the underscore supports IRC-like names, the dash is needed for punycode, and the rest just are baseline
+    Punycode also allows representing anything other networks do, without needing state, so IRC nicks with backticks could just get punycoded by the AS.
+    Same for square brackets
+    (Display Name is all that gets shown when set anyways)
+    {quote}
+  created: 2016-03-18 22:33:53.0
+  id: '12767'
+  issue: '10006'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-03-18 22:33:53.0
+- author: richvdh
+  body: This issue is trying to cover too many different things. I'm going to split it up.
+  created: 2016-04-19 10:16:14.0
+  id: '12845'
+  issue: '10006'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-19 10:16:14.0
+- author: richvdh
+  body: |-
+    Now split up as follows:
+    * opaque IDs: SPEC-388
+    * room IDs and event IDs: SPEC-389
+    * user IDs: SPEC-390
+    * room aliases: SPEC-391
+    * display names: SPEC-392
+  created: 2016-04-19 12:03:44.0
+  id: '12850'
+  issue: '10006'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-19 12:03:44.0

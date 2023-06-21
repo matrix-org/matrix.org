@@ -1,0 +1,33 @@
+---
+summary: We need an admin method of reaping events from the DB
+---
+created: 2015-04-27 13:14:10.0
+creator: matthew
+description: |-
+  It's fairly horrible that the only way to expire rooms from our DB whose events we no longer want to cache is by manually editing the DB.  We need a script or admin API button to let admins clean up their DB of content they'd prefer not to store.
+
+  This is related to (and almost duplicated by) SPEC-141
+id: '11376'
+key: SYN-361
+number: '361'
+priority: '3'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-10-26 13:18:37.0
+status: '5'
+type: '2'
+updated: 2016-10-26 13:18:37.0
+votes: '0'
+watches: '2'
+workflowId: '11476'
+---
+actions:
+- author: richvdh
+  body: We have this now.
+  created: 2016-10-26 13:18:37.0
+  id: '13222'
+  issue: '11376'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-26 13:18:37.0

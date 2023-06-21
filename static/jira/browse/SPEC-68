@@ -1,0 +1,55 @@
+---
+summary: Should we switch the namespace of msgtype?
+---
+created: 2014-11-18 09:16:07.0
+creator: kegan
+description: |-
+  Matthew:
+  bq. we should switch namespace of msgtype away from m.text etc somehow - people get too confused.
+id: '10668'
+key: SPEC-68
+number: '68'
+priority: '2'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:50.0
+votes: '0'
+watches: '4'
+workflowId: '10768'
+---
+actions:
+- author: leonerd
+  body: Confused howso? Do you have some specific examples of confusion and a suggestion of what might be better?
+  created: 2014-11-26 18:26:37.0
+  id: '10871'
+  issue: '10668'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 18:26:37.0
+- author: matthew
+  body: |-
+    From a mail discussion with Joao:
+
+    <Joao> I believe msg type and events are sharing the same “m.” naming convention (e.g. m.text and m.room.message) which could be misleading. Btw, a “msgtype” and an “event type” are the same thing?
+
+    <Dave> Also a good point. msgtype and event type are two distinct things: messages are a type of event and then there are many different types of message (text message, image, etc). Also note that the message type comes within the event content and so will be encrypted when end to end encryption comes along, whereas the event type will be visible to the home server.
+
+    The original reason for having m.text was because it's so common that having m.msgtype.text or something would be redundant just to avoid confusion between namespaces (and imply a shared namespace).
+
+    I'm not sure what the correct solution here should be, but I agree with Joao that it's confusing at first.
+  created: 2014-11-27 23:02:29.0
+  id: '10890'
+  issue: '10668'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-27 23:02:29.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/475'
+  created: 2016-10-28 16:26:50.0
+  id: '13251'
+  issue: '10668'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:50.0

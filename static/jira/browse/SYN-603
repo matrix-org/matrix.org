@@ -1,0 +1,66 @@
+---
+summary: CS API txn ids are dropped on multiple requests
+---
+created: 2016-01-19 23:14:50.0
+creator: erikj
+description: |-
+  Currently we store the latest transaction id for a {{(path, access_token)}} tuple. This is problematic in the case tjat a client sends, say, two messages at the same time _and the first to arrive at the server is retried_. This first txn id is inserted into the transaction store, and is then immediately clobbered by the second txn id.
+
+  This results in duplicates.
+id: '12320'
+key: SYN-603
+number: '603'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:00.0
+votes: '1'
+watches: '4'
+workflowId: '12425'
+---
+actions:
+- author: eternaleye
+  body: |-
+    Another issue is that currently Matrix uses a two-phase commit, like so:
+    {code}
+    submit  :: txn -> server
+    confirm :: txn -> client
+    // server frees txn at some point
+    {code}
+
+    Because the server frees the txn without knowing that the client received the confirmation, this can result in eventual duplicates no matter what _storage_ strategy is used (except buffering forever).
+
+    (Erik raised that resubmitting past 1h is silly; I pointed out that knowing it's been 1h is depressingly nontrivial. Erik pointed out that he hates time; I concurred.)
+
+    A solution would be to use three-phase commit, like so:
+    {code}
+    submit  :: txn -> server
+    confirm :: txn -> client
+    reap    :: txn -> server // server frees txn immediately
+    {code}
+
+    As reap is inherently idempotent, it does _not_ need a txn itself.
+
+    This can be optimized further, by having reap take a _list_ of txn IDs to reap, and having it return a list of unreaped txns.
+
+    However, this raises the question of unbounded resource usage, if the client never reaps (and as Erik pointed out - unless it must, it won't.)
+
+    My suggestion is to, for txns submitted via post-reap API versions, reject the transaction with 'm.transactions.unreaped' (or similar) when the number of unreaped transactions is at a (configurable) cap.
+
+    For txns submitted by pre-reap API versions, some form of autoreaping is needed to avoid either unbounded resource usage or breaking clients. I suggest reaping the single oldest unreaped txn when the cap is reached; though Erik seems to favor a time-based component to the autoreaping.
+  created: 2016-01-19 23:43:57.0
+  id: '12578'
+  issue: '12320'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-01-20 00:08:59.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1481'
+  created: 2016-11-07 18:29:00.0
+  id: '13786'
+  issue: '12320'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:00.0

@@ -1,0 +1,28 @@
+---
+summary: We need CentOS installation dep instructions
+---
+created: 2014-12-24 19:51:25.0
+creator: matthew
+description: ''
+id: '10882'
+key: SYN-225
+number: '225'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:35.0
+votes: '0'
+watches: '3'
+workflowId: '10982'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1268'
+  created: 2016-11-07 18:27:35.0
+  id: '13586'
+  issue: '10882'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:35.0

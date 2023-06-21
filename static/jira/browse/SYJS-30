@@ -1,0 +1,32 @@
+---
+summary: Need events to tell when SDK has network connectivity (i.e. a function eventstream) or not.
+---
+created: 2015-10-08 16:41:51.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Needed for 'big red bar' style UI to warn people when their server is awol and their messages will be queued clientside
+id: '12010'
+key: SYJS-30
+number: '30'
+priority: '2'
+project: '10204'
+reporter: neb
+resolution: '3'
+resolutiondate: 2015-11-03 10:31:56.0
+status: '5'
+type: '1'
+updated: 2015-11-03 10:31:56.0
+votes: '0'
+watches: '2'
+workflowId: '12113'
+---
+actions:
+- author: kegan
+  body: Dupe of SYJS-11
+  created: 2015-11-03 10:31:56.0
+  id: '12303'
+  issue: '12010'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 10:31:56.0

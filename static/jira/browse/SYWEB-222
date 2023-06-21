@@ -1,0 +1,33 @@
+---
+summary: Raw room ID leaked when joining a room that the initiator has already left
+---
+created: 2014-12-05 14:56:20.0
+creator: dbkr
+description: |-
+  Possibly also just when the other person leaves after you've joined?
+
+  In any case, I don't know what we should display but I thought the idea was that we never, ever displayed raw room IDs in the UI.
+id: '10783'
+key: SYWEB-222
+number: '222'
+priority: '3'
+project: '10004'
+reporter: dbkr
+resolution: '4'
+resolutiondate: 2014-12-05 14:58:10.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:51.0
+votes: '0'
+watches: '1'
+workflowId: '10883'
+---
+actions:
+- author: dbkr
+  body: Actually, ignore me - this is not true.
+  created: 2014-12-05 14:58:10.0
+  id: '10966'
+  issue: '10783'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-12-05 14:58:10.0

@@ -1,0 +1,33 @@
+---
+summary: Add support for canonical alias
+---
+created: 2015-09-22 19:46:48.0
+creator: erikj
+description: ''
+id: '11909'
+key: SYAND-128
+number: '128'
+priority: '3'
+project: '10201'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-10-01 09:20:09.0
+status: '5'
+type: '2'
+updated: 2015-10-01 09:20:37.0
+votes: '0'
+watches: '2'
+workflowId: '12012'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    Should be fixed.
+
+    https://github.com/matrix-org/matrix-android-sdk/commit/bb166a4d
+  created: 2015-10-01 09:20:09.0
+  id: '12200'
+  issue: '11909'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-10-01 09:20:37.0

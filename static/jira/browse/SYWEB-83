@@ -1,0 +1,49 @@
+---
+summary: Need to validate the IDs we invite from home in 'send message'
+---
+created: 2014-09-23 19:49:28.0
+creator: matthew
+description: ''
+id: '10381'
+key: SYWEB-83
+number: '83'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '4'
+resolutiondate: 2014-11-25 17:47:32.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:02.0
+votes: '0'
+watches: '2'
+workflowId: '10484'
+---
+actions:
+- author: kegan
+  body: Need clarification on "validate"? Just making sure it is @localpart:domain? The server will refuse this anyway right?
+  created: 2014-10-29 10:15:47.0
+  id: '10622'
+  issue: '10381'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-29 10:15:47.0
+- author: kegan
+  body: |-
+    This is not validation, but saying whether or not the account exists.
+
+    The server already validates the entered username, ensuring it is of the form {{@localpart:domain}} but it doesn't let the client know if that address is connected to an existing account or not.
+  created: 2014-10-30 09:41:49.0
+  id: '10704'
+  issue: '10381'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-30 09:41:49.0
+- author: kegan
+  body: Nothing for the web client to do here. This is entirely a HS issue to reject if the user doesn't exist. Errors will be presented displaying whatever the HS returns.
+  created: 2014-11-25 17:47:32.0
+  id: '10846'
+  issue: '10381'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-25 17:47:32.0

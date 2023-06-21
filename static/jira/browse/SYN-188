@@ -1,0 +1,25 @@
+---
+summary: Implement presence timer system
+---
+created: 2014-12-03 19:27:20.0
+creator: leonerd
+description: |-
+  The presence system needs a number of timer-based behaviours adding before it all works as originally designed.
+
+  The memory cache needs occasional cleaning up, and status reminders need sending to remote HSes every so often. These should also be hooked into federation generally so as to get the "zero-byte liveness check" behaviour from it.
+id: '10765'
+key: SYN-188
+number: '188'
+priority: '2'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2016-04-07 11:48:48.0
+status: '5'
+type: '2'
+updated: 2016-04-07 11:48:48.0
+votes: '0'
+watches: '1'
+workflowId: '10865'
+---
+actions: null

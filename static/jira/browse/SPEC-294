@@ -1,0 +1,30 @@
+---
+summary: /sync docs should be clearer about the default message limit
+---
+created: 2015-12-08 14:23:18.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  The spec implies that you'll receive all messages since your {{since}} point. Actually we only receive the most recent N (10?) messages by default
+id: '12188'
+key: SPEC-294
+number: '294'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:00.0
+votes: '0'
+watches: '2'
+workflowId: '12291'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/591'
+  created: 2016-10-28 16:28:00.0
+  id: '13399'
+  issue: '12188'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:00.0

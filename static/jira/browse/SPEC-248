@@ -1,0 +1,28 @@
+---
+summary: Option to disable presence and/or typing notifs within a room, for those who want to avoid the noise
+---
+created: 2015-10-06 19:16:29.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12003'
+key: SPEC-248
+number: '248'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:44.0
+votes: '0'
+watches: '2'
+workflowId: '12106'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/557'
+  created: 2016-10-28 16:27:44.0
+  id: '13365'
+  issue: '12003'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:44.0

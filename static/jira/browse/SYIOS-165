@@ -1,0 +1,38 @@
+---
+summary: Join an empty room on one device is not properly dispatched to the other devices
+---
+created: 2015-10-22 08:42:20.0
+creator: m-ylecollen
+description: |-
+  When an account is shared between several devices, joining an empty room is not properly dispatched on the other devices.
+
+  Steps to reproduce
+  1 - use the same account on 2 IOS devices
+  2 - create a room on another account (with no message)
+  3 - Join the room on one of the IOS device
+
+  The joined room is displayed  at the history bottom because there is no more message in the room history.
+id: '12036'
+key: SYIOS-165
+number: '165'
+priority: '2'
+project: '10200'
+reporter: m-ylecollen
+resolution: '1'
+resolutiondate: 2015-10-22 09:06:24.0
+status: '5'
+type: '1'
+updated: 2015-10-22 09:06:24.0
+votes: '0'
+watches: '1'
+workflowId: '12139'
+---
+actions:
+- author: m-ylecollen
+  body: The room initial sync request was triggered with limit = 0 so the oldest messages was not retrieved.
+  created: 2015-10-22 09:06:24.0
+  id: '12275'
+  issue: '12036'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-10-22 09:06:24.0

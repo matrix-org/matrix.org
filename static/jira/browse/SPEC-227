@@ -1,0 +1,38 @@
+---
+summary: Ability to ACL based on event type
+---
+created: 2015-09-19 21:48:34.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  We already have scenarios where we want to give particular users or groups of users permission to send some types of events but not others... or perhaps be allowed to read some types of events but not others. We also need a way to somehow define default permissions for rooms so that users can't create new rooms without these restrictions - the use case for this is that there may be a AS subscribing to said new rooms, which may start picking up events that users inject in virgin rooms
+id: '11895'
+key: SPEC-227
+number: '227'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:37.0
+votes: '0'
+watches: '2'
+workflowId: '11998'
+---
+actions:
+- author: neb
+  body: 'By @matthew:matrix.org: Another way of doing this might be to enforce filters on clients at a per-HS level. However, this breaks badly in the face of federation. Mind you, so do default permissions on rooms (unless they''re applied by a chanserv-style bot... ugh...)'
+  created: 2015-09-19 21:52:28.0
+  id: '12142'
+  issue: '11895'
+  type: comment
+  updateauthor: neb
+  updated: 2015-09-19 21:52:28.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/542'
+  created: 2016-10-28 16:27:37.0
+  id: '13350'
+  issue: '11895'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:37.0

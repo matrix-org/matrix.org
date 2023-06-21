@@ -1,0 +1,90 @@
+---
+summary: Smarter MXKRoomDataSource on catching up
+---
+assignee: manu
+created: 2015-10-28 13:30:58.0
+creator: manu
+description: |-
+  In V1, when the app is resumed after a while, it receives a lot of events from the events stream.
+  All these events are put in the MXKRoomDataSource process queue and then processed.
+  Processing all these events cost time (between 10 and 50ms per event) and may be useless because not all events will be displayed. A room can receive 1000 new messages but only the last ones will be displayed.
+
+  Idea:
+  When the MXSession is in the syncing state, MXKRoomDataSource could be smarter by not processing all events in its queue if there are too numerous. In this case, it would be quicker to ignore the queue and fetch (and process) only last messages available in the MXStore
+id: '12049'
+key: SYIOS-167
+number: '167'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '2'
+resolutiondate: 2015-11-20 09:53:04.0
+status: '5'
+type: '1'
+updated: 2015-11-20 09:53:04.0
+votes: '0'
+watches: '2'
+workflowId: '12152'
+---
+actions:
+- author: gforet
+  body: |-
+    I'm not convinced by the suggested solution.
+
+    Currently the main thread is blocked by the server response parsing and not by the events processing. Indeed a specific queue is used to process events in MXKRoomDataSource instances. So the suggested change will not relieve the main thread.
+
+    It would be more efficient to detect a huge catch up in order to trigger an initial sync instead of processing several thousands of events.
+    The drawback of initial sync is to lose the unread status in each room. That is why the user must be prompted before trigger initial sync.
+
+    We may consider that catch up is huge when the server response contains the maximum number of events (1000).
+  created: 2015-11-09 13:53:35.0
+  id: '12356'
+  issue: '12049'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-11-09 13:53:35.0
+- author: manu
+  body: |-
+    There is a specific queue to process events in MXKRoomDataSource but it ends by doing things on the main thread. 2 of these things are time consuming:
+     - Updating the unread count at https://github.com/matrix-org/matrix-ios-kit/blob/master/MatrixKit/Models/Room/MXKRoomDataSource.m#L1961
+     - Posting the kMXKRoomDataSourceMetaDataChanged event at https://github.com/matrix-org/matrix-ios-kit/blob/master/MatrixKit/Models/Room/MXKRoomDataSource.m#L1990. This event triggers the recents VC update. It does it for each event received during the resuming. This is useless in the case of recents since they are only interested by the last event. The user can see that when the recents list slowly updates with cells moving all around.
+
+    The idea of doing an initialSync when the catchup is too huge is interesting. But how to define huge?
+    An initialSync request is huge too.
+
+    With my account, the matrix.org HS takes 3-5s to respond to an /initialSync request. For /events with the 1000 limit, it takes between 0.7s  and 1s.
+  created: 2015-11-10 08:03:02.0
+  id: '12358'
+  issue: '12049'
+  type: comment
+  updateauthor: manu
+  updated: 2015-11-10 08:03:02.0
+- author: manu
+  body: |-
+    FTR and to add figures to my last comment, this Instruments screenshot shows the time spent by [MXKRoomDataSource  processQueueEvents:] on the main thread.
+
+    It consumes twice more time than [MXSession handleLiveEvents:].
+
+
+    !Screen Shot 2015-11-10 at 09.10.57.png!
+  created: 2015-11-10 08:22:02.0
+  id: '12359'
+  issue: '12049'
+  type: comment
+  updateauthor: manu
+  updated: 2015-11-10 08:24:08.0
+- author: manu
+  body: |-
+    Smarter MXKRoomDataSource has no more interest with the improvements made in these PRs:
+    - https://github.com/matrix-org/matrix-ios-sdk/pull/35
+    - https://github.com/matrix-org/matrix-ios-sdk/pull/36
+    - https://github.com/matrix-org/matrix-ios-sdk/pull/37
+    - https://github.com/matrix-org/matrix-ios-sdk/pull/38
+    and:
+    - https://github.com/matrix-org/matrix-ios-kit/pull/28
+  created: 2015-11-20 09:53:04.0
+  id: '12376'
+  issue: '12049'
+  type: comment
+  updateauthor: manu
+  updated: 2015-11-20 09:53:04.0

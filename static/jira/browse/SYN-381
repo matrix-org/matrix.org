@@ -1,0 +1,31 @@
+---
+summary: Twisted defaults to select() reactor on OS X (and presumably BSD)
+---
+created: 2015-05-15 18:37:32.0
+creator: dbkr
+description: |-
+  This will mean that our increasing of the soft file limit on these platforms will be in vain since select() will only cope with 1024 FDs.
+
+  We could work around this by using the kqueue reactor on these platforms (http://twistedmatrix.com/documents/13.1.0/api/twisted.internet.kqreactor.html) although I don't know why Twisted doesn't use it by default when it's available.
+id: '11536'
+key: SYN-381
+number: '381'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:01.0
+votes: '0'
+watches: '2'
+workflowId: '11637'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1321'
+  created: 2016-11-07 18:28:01.0
+  id: '13642'
+  issue: '11536'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:01.0

@@ -1,0 +1,21 @@
+---
+summary: Add ability to cancel message sending
+---
+assignee: gforet
+created: 2015-10-16 15:12:45.0
+creator: gforet
+description: ''
+id: '12023'
+key: SYIOS-161
+number: '161'
+priority: '2'
+project: '10200'
+reporter: gforet
+status: '1'
+type: '2'
+updated: 2015-10-16 15:21:05.0
+votes: '0'
+watches: '1'
+workflowId: '12126'
+---
+actions: null

@@ -1,0 +1,36 @@
+---
+summary: Need specific error message if joining a room is refused because the user is a guest and guest access is not allowed
+---
+created: 2016-03-22 13:30:53.0
+creator: neb
+description: ''
+id: '12574'
+key: SYN-659
+number: '659'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:17.0
+votes: '0'
+watches: '3'
+workflowId: '12674'
+---
+actions:
+- author: dbkr
+  body: Actually, the error message is the same for guests even if the room is private and they still wouldn't be able to join even if they registered.
+  created: 2016-03-22 13:37:36.0
+  id: '12771'
+  issue: '12574'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-03-22 13:37:36.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1518'
+  created: 2016-11-07 18:29:17.0
+  id: '13826'
+  issue: '12574'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:17.0

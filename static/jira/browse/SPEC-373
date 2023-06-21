@@ -1,0 +1,28 @@
+---
+summary: Need to spec email validation polling behaviour
+---
+created: 2016-03-25 15:03:00.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12581'
+key: SPEC-373
+number: '373'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:25.0
+votes: '0'
+watches: '2'
+workflowId: '12681'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/656'
+  created: 2016-10-28 16:28:25.0
+  id: '13465'
+  issue: '12581'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:25.0

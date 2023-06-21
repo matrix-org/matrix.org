@@ -1,0 +1,34 @@
+---
+summary: We don't seem to have any way to invite users into a room :(
+---
+assignee: manu
+created: 2015-11-28 18:45:19.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12148'
+key: SYIOS-184
+number: '184'
+priority: '3'
+project: '10200'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-11-30 14:04:06.0
+status: '5'
+type: '1'
+updated: 2015-11-30 14:04:06.0
+votes: '0'
+watches: '2'
+workflowId: '12251'
+---
+actions:
+- author: manu
+  body: |-
+    There is a + button on the member list page.
+    But there was a bug on the invite power level which prevents this button from appearing.
+    This bug was indeed a workaround for SYN-190. As Synapse provides the invite power level now, the workaround has been removed and the bug disappears.
+  created: 2015-11-30 14:04:06.0
+  id: '12389'
+  issue: '12148'
+  type: comment
+  updateauthor: manu
+  updated: 2015-11-30 14:04:06.0

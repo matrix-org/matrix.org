@@ -1,0 +1,37 @@
+---
+summary: 500 if requesting a non-existent room alias
+---
+assignee: markjh
+created: 2014-11-19 14:22:15.0
+creator: erikj
+description: |-
+  {noformat}
+    File "synapse/handlers/directory.py", line 126, in on_directory_query
+      "room_id": result.room_id,
+  AttributeError: 'NoneType' object has no attribute 'room_id'
+  2014-11-19 14:19:40,803 - twisted - 455 - INFO - GET-3 - "127.0.0.1" - - [19/Nov/2014:14:19:40 +0000] "GET /_matrix/federation/v1/query/directory?room_alias=%23matrix-dev%3Amatrix.org HTTP/1.1" 500 33 "-" "Synapse"
+  {noformat}
+id: '10683'
+key: SYN-156
+number: '156'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-11-21 15:20:57.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:39.0
+votes: '0'
+watches: '2'
+workflowId: '10783'
+---
+actions:
+- author: markjh
+  body: Fixed https://github.com/matrix-org/synapse/commit/fd40a80a
+  created: 2014-11-21 15:20:57.0
+  id: '10819'
+  issue: '10683'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-21 15:20:57.0

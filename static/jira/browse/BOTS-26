@@ -1,0 +1,20 @@
+---
+summary: We should add a Matrix transport to Janus (popular embedded webrtc gw)
+---
+created: 2015-04-18 12:34:53.0
+creator: matthew
+description: ''
+id: '11349'
+key: BOTS-26
+number: '26'
+priority: '3'
+project: '10101'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2015-04-18 12:34:53.0
+votes: '0'
+watches: '1'
+workflowId: '11449'
+---
+actions: null

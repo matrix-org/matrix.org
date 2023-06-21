@@ -1,0 +1,84 @@
+---
+summary: Ability to constrain 3PID invites
+---
+created: 2016-02-18 23:17:41.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  would be very useful for an inviter or admin to be able to limit the lifetime of a 3pid invite, or how many times it is allowed to be followed, or critically whether the target's account has to match the invited 3pid or not
+id: '12501'
+key: SPEC-351
+number: '351'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:19.0
+votes: '0'
+watches: '4'
+workflowId: '12601'
+---
+actions:
+- author: illicitonion
+  body: |-
+    Policies I think are worth implementing:
+     * Allow n uses of token
+     * Expire token after n seconds
+     * Require matching 3pid binding
+
+    Any more for any more?
+  created: 2016-02-23 15:56:58.0
+  id: '12709'
+  issue: '12501'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-02-23 15:57:24.0
+- author: illicitonion
+  body: |-
+    Things that may be interesting but I'd like to defer:
+    * Constrain on email domain ==
+  created: 2016-02-23 16:10:32.0
+  id: '12710'
+  issue: '12501'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-02-23 16:10:32.0
+- author: matthew
+  body: these sound good. how in practice would the inviter select the constraint?
+  created: 2016-02-23 18:59:24.0
+  id: '12712'
+  issue: '12501'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-23 18:59:24.0
+- author: illicitonion
+  body: |-
+    So, this could be a server default, a room setting with default, or a per-invite UX. It's definitely an unclear thing to explain, though, so worth considering...
+
+    I don't have a good answer; do you?
+  created: 2016-02-24 11:33:36.0
+  id: '12713'
+  issue: '12501'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-02-24 11:33:36.0
+- author: matthew
+  body: |-
+    I totally failed to spot that you'd answered this - sorry.
+
+    I have no good answer to this either.  I guess the ideal thing would be for the inviter to get to chose, and for the client to pick sensible defaults.  Either that or we just pick a totally arbitrary default on sydent for now - something like "3 uses or 1 week elapses; whichever first".  And we just make sure the error is clear to the invitee that they should go bug the inviter to re-invite them if they get timed out.
+  created: 2016-03-02 16:11:51.0
+  id: '12733'
+  issue: '12501'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-02 16:11:51.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/638'
+  created: 2016-10-28 16:28:19.0
+  id: '13447'
+  issue: '12501'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:19.0

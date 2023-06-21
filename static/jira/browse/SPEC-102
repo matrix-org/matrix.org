@@ -1,0 +1,44 @@
+---
+summary: Spec /directory/list
+---
+created: 2015-02-02 22:54:03.0
+creator: matthew
+description: ''
+id: '11000'
+key: SPEC-102
+number: '102'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:59.0
+votes: '0'
+watches: '2'
+workflowId: '11100'
+---
+actions:
+- author: richvdh
+  body: It's the {{visibility}} flag on {{createRoom}}, but presumably we are looking for a way to change it post-hoc?
+  created: 2016-10-21 00:04:09.0
+  id: '13195'
+  issue: '11000'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-21 00:04:09.0
+- author: richvdh
+  body: we have /directory/list, but that isn't specced. Updating the summary accordingly.
+  created: 2016-10-21 00:20:37.0
+  id: '13200'
+  issue: '11000'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-21 00:20:37.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/417'
+  created: 2016-10-28 16:26:59.0
+  id: '13268'
+  issue: '11000'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:59.0

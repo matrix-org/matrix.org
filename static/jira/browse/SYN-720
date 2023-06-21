@@ -1,0 +1,30 @@
+---
+summary: Why don't we validate the JSON that clients submit for core event types like m.room.join_rules
+---
+created: 2016-07-03 09:42:05.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Especially in initial_state?
+id: '12735'
+key: SYN-720
+number: '720'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:41.0
+votes: '0'
+watches: '2'
+workflowId: '12835'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1391'
+  created: 2016-11-07 18:29:41.0
+  id: '13881'
+  issue: '12735'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:41.0

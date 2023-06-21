@@ -1,0 +1,30 @@
+---
+summary: We should somehow penalise users who try to do incremental /sync sans token
+---
+created: 2016-02-11 22:35:41.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  At the moment a /sync sans token kindasorta seems to work, leading people to try to do it and have it all break
+id: '12389'
+key: SPEC-347
+number: '347'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:17.0
+votes: '0'
+watches: '2'
+workflowId: '12494'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/635'
+  created: 2016-10-28 16:28:17.0
+  id: '13443'
+  issue: '12389'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:17.0

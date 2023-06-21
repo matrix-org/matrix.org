@@ -1,0 +1,22 @@
+---
+summary: We ask for a lot (too many?) permissions ,and don't explain why
+---
+created: 2015-12-10 16:43:54.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  See convo on HQ starting at $144976496311538uosIx:matrix.org. We might want to try initialising contactmanager later on, or at least documenting why we need the permissions we ask for
+id: '12198'
+key: SYAND-164
+number: '164'
+priority: '3'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-12-10 16:43:54.0
+votes: '0'
+watches: '1'
+workflowId: '12301'
+---
+actions: null

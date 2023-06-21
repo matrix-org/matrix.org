@@ -1,0 +1,34 @@
+---
+summary: No user feedback after hitting signup button whilst waiting for request to finish
+---
+assignee: kegan
+created: 2014-11-18 09:14:23.0
+creator: kegan
+description: ''
+id: '10666'
+key: SYWEB-160
+number: '160'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-12-08 14:17:35.0
+status: '5'
+type: '1'
+updated: 2014-12-08 14:17:35.0
+votes: '0'
+watches: '2'
+workflowId: '10766'
+---
+actions:
+- author: matthew
+  body: |-
+    I'm not sure we're on the same page here.  I just pointed my identity server to somewhere bogus and hit the "Sign Up" button.  The button returned straight back to where it was, and there are no errors or spinners or other feedback that it's actually doing anything (let alone failed entirely to talk to the ID server).
+
+    The use case here is on bad wifi when you hit Sign Up and nothing appears to happen, because an AJAX request is crawling away silently in the background - or sydent takes 30s to respond....
+  created: 2014-12-02 22:21:21.0
+  id: '10925'
+  issue: '10666'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-02 22:21:21.0

@@ -1,0 +1,30 @@
+---
+summary: IRC bridge mangles HTML URLs from markdown
+---
+created: 2016-03-05 18:13:31.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12547'
+key: BOTS-177
+number: '177'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:49:57.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:49:57.0
+votes: '0'
+watches: '2'
+workflowId: '12647'
+---
+actions:
+- author: kegan
+  body: Fixed on `develop`
+  created: 2016-06-02 10:49:57.0
+  id: '12969'
+  issue: '12547'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:49:57.0

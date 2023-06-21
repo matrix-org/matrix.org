@@ -1,0 +1,30 @@
+---
+summary: Why do we have both getRoomIdForAlias() and resolveRoomAlias()?
+---
+created: 2016-01-16 00:56:28.0
+creator: neb
+description: Submitted by @irc_Arathorn:openmarket.com
+id: '12309'
+key: SYJS-39
+number: '39'
+priority: '3'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:24:21.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:24:21.0
+votes: '0'
+watches: '2'
+workflowId: '12414'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/251
+  created: 2016-10-24 11:24:21.0
+  id: '13208'
+  issue: '12309'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:24:21.0

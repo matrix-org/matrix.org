@@ -1,0 +1,23 @@
+---
+summary: Relative dates for the channel list
+---
+created: 2015-03-13 00:01:05.0
+creator: jan
+description: |-
+  The current absolute dates/times in the channel list could be improved. A channel saying "Mar 12 23:15" doesn’t make clear when exactly it was. It saying "2 hours ago" is much more informative. :)
+
+  Of course, the full date could be shown as a tooltip when hovering over it. That’s actually the same we do in ownCloud for the modified date of files.
+id: '11216'
+key: SYWEB-326
+number: '326'
+priority: '3'
+project: '10004'
+reporter: jan
+status: '10100'
+type: '4'
+updated: 2015-03-13 00:01:05.0
+votes: '0'
+watches: '1'
+workflowId: '11316'
+---
+actions: null

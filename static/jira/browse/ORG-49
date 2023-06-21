@@ -1,0 +1,30 @@
+---
+summary: Old copies of the spec should warn in big red letters that they are stale
+---
+created: 2016-03-20 11:54:02.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12570'
+key: ORG-49
+number: '49'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:28:06.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:28:06.0
+votes: '0'
+watches: '2'
+workflowId: '12670'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix-doc/issues/845
+  created: 2017-03-21 11:28:06.0
+  id: '14029'
+  issue: '12570'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:28:06.0

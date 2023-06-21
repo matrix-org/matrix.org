@@ -1,0 +1,42 @@
+---
+summary: Add option in Console to join room thanks to its alias
+---
+assignee: gforet
+created: 2014-12-12 10:46:35.0
+creator: gforet
+description: ''
+id: '10814'
+key: SYIOS-16
+number: '16'
+priority: '2'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-02-02 12:43:28.0
+status: '5'
+type: '1'
+updated: 2015-02-02 12:43:54.0
+votes: '0'
+watches: '1'
+workflowId: '10914'
+---
+actions:
+- author: gforet
+  body: |-
+    /join command is now supported in Room screen
+
+    This option should be added in Home screen soon.
+  created: 2014-12-17 10:00:17.0
+  id: '11002'
+  issue: '10814'
+  type: comment
+  updateauthor: gforet
+  updated: 2014-12-17 10:00:17.0
+- author: gforet
+  body: Home screen has been updated
+  created: 2015-02-02 12:43:54.0
+  id: '11204'
+  issue: '10814'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-02 12:43:54.0

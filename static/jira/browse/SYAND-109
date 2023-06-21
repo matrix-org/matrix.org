@@ -1,0 +1,22 @@
+---
+summary: Add a setting to enable/disable rageshake in the settings menu
+---
+created: 2015-08-04 15:26:02.0
+creator: oddvar
+description: ''
+id: '11781'
+key: SYAND-109
+number: '109'
+priority: '3'
+project: '10201'
+reporter: oddvar
+resolution: '1'
+resolutiondate: 2015-09-02 17:08:03.0
+status: '5'
+type: '2'
+updated: 2015-09-02 17:08:03.0
+votes: '0'
+watches: '1'
+workflowId: '11882'
+---
+actions: null

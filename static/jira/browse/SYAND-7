@@ -1,0 +1,31 @@
+---
+summary: The console app needs to publish the current user's presence
+---
+assignee: joachim
+created: 2015-01-19 10:54:12.0
+creator: joachim
+description: ''
+id: '10954'
+key: SYAND-7
+number: '7'
+priority: '2'
+project: '10201'
+reporter: joachim
+resolution: '1'
+resolutiondate: 2015-01-27 09:04:15.0
+status: '5'
+type: '1'
+updated: 2015-01-27 09:04:15.0
+votes: '0'
+watches: '1'
+workflowId: '11054'
+---
+actions:
+- author: joachim
+  body: https://github.com/matrix-org/matrix-android-sdk/commit/49e411fc
+  created: 2015-01-27 09:04:15.0
+  id: '11194'
+  issue: '10954'
+  type: comment
+  updateauthor: joachim
+  updated: 2015-01-27 09:04:15.0

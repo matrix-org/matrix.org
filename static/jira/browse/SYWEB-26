@@ -1,0 +1,30 @@
+---
+summary: Topic query/set UI is broken on mobile CSS
+---
+created: 2014-09-16 01:31:24.0
+creator: matthew
+description: ''
+id: '10074'
+key: SYWEB-26
+number: '26'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-31 09:32:58.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:55.0
+votes: '0'
+watches: '2'
+workflowId: '10407'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/synapse/commit/51b81b472d6b2493c58721c5c4bcac1ae896b46a
+  created: 2014-10-31 09:32:58.0
+  id: '10707'
+  issue: '10074'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-31 09:32:58.0

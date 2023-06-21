@@ -1,0 +1,68 @@
+---
+summary: Content-repo should use Content-Disposition headers for filenames
+---
+assignee: erikj
+created: 2014-11-18 09:18:48.0
+creator: kegan
+description: |-
+  Matthew:
+  bq. content repo needs to know the original filenames of things it serves up, so we can serve the correct filename via Content-Disposition header rather than the crappy hash instead.
+id: '10669'
+key: SYN-150
+number: '150'
+priority: '2'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-07-07 11:23:24.0
+status: '5'
+type: '1'
+updated: 2015-07-07 11:23:24.0
+votes: '0'
+watches: '3'
+workflowId: '10769'
+---
+actions:
+- author: matthew
+  body: This makes the content repo unusable for sharing files, as the filenames get lost & mangled.
+  created: 2015-02-19 15:27:06.0
+  id: '11298'
+  issue: '10669'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-19 15:27:06.0
+- author: matthew
+  body: Whatever happens, we should serve up files with the correct extension (which would let Glowing Bear and similar IRCesque clients go and auto-inline the image)
+  created: 2015-03-14 02:50:21.0
+  id: '11396'
+  issue: '10669'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-14 02:50:21.0
+- author: erikj
+  body: |-
+    bq. Whatever happens, we should serve up files with the correct extension (which would let Glowing Bear and similar IRCesque clients go and auto-inline the image)
+
+    Don't they look at {{Content-Type}}?
+  created: 2015-06-29 16:00:27.0
+  id: '11935'
+  issue: '10669'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-29 16:00:27.0
+- author: erikj
+  body: I'll add a {{filename}} query parameter to the upload API.
+  created: 2015-06-29 16:20:59.0
+  id: '11937'
+  issue: '10669'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-29 16:20:59.0
+- author: matthew
+  body: they look at the filename; they can't see the content-type as they're an IRC client, not an HTTP client.
+  created: 2015-06-29 16:45:57.0
+  id: '11938'
+  issue: '10669'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-29 16:45:57.0

@@ -1,0 +1,89 @@
+---
+summary: 500 when trying to set non-ascii event type
+---
+created: 2014-11-25 11:04:59.0
+creator: kegan
+description: |-
+  {code}
+  2014-11-25 11:01:40,978 - synapse.storage._base - 74 - ERROR - PUT-2 - [SQL FAIL] {snapshot_room-0}
+  Traceback (most recent call last):
+    File "synapse/storage/_base.py", line 71, in execute
+      sql, *args, **kwargs
+  ProgrammingError: You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings.
+  2014-11-25 11:01:40,979 - synapse.storage._base - 111 - ERROR - PUT-2 - [TXN FAIL] {snapshot_room-0}
+  Traceback (most recent call last):
+    File "synapse/storage/_base.py", line 109, in inner_func
+      return func(LoggingTransaction(txn, name), *args, **kwargs)
+    File "synapse/storage/__init__.py", line 411, in _snapshot
+      state_key=state_key,
+    File "synapse/storage/event_federation.py", line 133, in _get_latest_state_in_room
+      retcol="event_id",
+    File "synapse/storage/_base.py", line 258, in _simple_select_onecol_txn
+      txn.execute(sql, keyvalues.values())
+    File "synapse/storage/_base.py", line 71, in execute
+      sql, *args, **kwargs
+  ProgrammingError: You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings.
+  2014-11-25 11:01:40,979 - synapse.http.server - 151 - ERROR - PUT-2 - You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings.
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 127, in _async_render
+      *m.groups()
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/room.py", line 169, in on_PUT
+      event=event
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/message.py", line 147, in store_room_data
+      snapshot = yield self.store.snapshot_room(event)
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/_base.py", line 121, in runInteraction
+      inner_func, *args, **kwargs
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/threadpool.py", line 196, in _worker
+      result = context.call(ctx, function, *args, **kwargs)
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/context.py", line 118, in callWithContext
+      return self.currentContext().callWithContext(ctx, func, *args, **kw)
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/context.py", line 81, in callWithContext
+      return func(*args,**kw)
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/enterprise/adbapi.py", line 448, in _runInteraction
+      result = interaction(trans, *args, **kw)
+    File "synapse/storage/_base.py", line 109, in inner_func
+      return func(LoggingTransaction(txn, name), *args, **kwargs)
+    File "synapse/storage/__init__.py", line 411, in _snapshot
+      state_key=state_key,
+    File "synapse/storage/event_federation.py", line 133, in _get_latest_state_in_room
+      retcol="event_id",
+    File "synapse/storage/_base.py", line 258, in _simple_select_onecol_txn
+      txn.execute(sql, keyvalues.values())
+    File "synapse/storage/_base.py", line 71, in execute
+      sql, *args, **kwargs
+  ProgrammingError: You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings.
+  {code}
+id: '10703'
+key: SYN-166
+number: '166'
+priority: '4'
+project: '10000'
+reporter: kegan
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:25.0
+votes: '0'
+watches: '2'
+workflowId: '10803'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1246'
+  created: 2016-11-07 18:27:25.0
+  id: '13564'
+  issue: '10703'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:25.0

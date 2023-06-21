@@ -1,0 +1,33 @@
+---
+summary: AS registration should require a human in the loop
+---
+created: 2015-03-23 15:49:08.0
+creator: kegan
+description: |-
+  +Attack vector:+ A compromised Application Service could register a regex for {{.*}}, obtaining all the events from the home server.
+  +Impact:+ Unexpected privacy breaches.
+  +Recommendation:+ We still want to support genuine ASes which need a global regex like {{.\*}} to do things like searching and logging. The key thing we're trying to fix here is the *unexpectedness*. We want the home server admin to be *aware* that the AS can effectively get root on the server. To enforce this, the {{/register}} API will be deprecated and removed, and the registration of ASes will be entirely based on {{homeserver.yaml}}. We considered adding this to the database instead (similar to how you have to insert the token into the database currently), but deemed that this would be better in the config as the database is really just storing state, of which this is not.
+id: '11259'
+key: SPEC-130
+number: '130'
+priority: '1'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-05-18 14:08:32.0
+status: '5'
+type: '1'
+updated: 2015-05-18 14:08:32.0
+votes: '0'
+watches: '1'
+workflowId: '11359'
+---
+actions:
+- author: kegan
+  body: Specced and implemented(!)
+  created: 2015-05-18 14:08:32.0
+  id: '11768'
+  issue: '11259'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-18 14:08:32.0

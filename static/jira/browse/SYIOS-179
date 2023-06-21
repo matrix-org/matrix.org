@@ -1,0 +1,22 @@
+---
+summary: Kill the matrix fork of openwebrtc-ios-sdk (https://github.com/matrix-org/openwebrtc-ios-sdk)
+---
+created: 2015-11-20 14:23:59.0
+creator: manu
+description: |-
+  The fork was created to manage video orientation.
+  It is no more required since it now supported by the master branch of the project
+id: '12127'
+key: SYIOS-179
+number: '179'
+priority: '3'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '4'
+updated: 2015-11-20 14:31:16.0
+votes: '0'
+watches: '1'
+workflowId: '12230'
+---
+actions: null

@@ -1,0 +1,58 @@
+---
+summary: Move access_tokens out of query params
+---
+created: 2015-03-09 10:29:11.0
+creator: erikj
+description: |-
+  Using access_tokens in query params is really quite insecure. We should do some combination of:
+  - Allow access_token in header
+  - Use a hmac scheme with and/or without expiration.
+id: '11188'
+key: SYN-299
+number: '299'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:46.0
+votes: '0'
+watches: '3'
+workflowId: '11288'
+---
+actions:
+- author: richvdh
+  body: We now use [macaroons|https://github.com/matrix-org/matrix-doc/blob/master/drafts/macaroons_caveats.rst], but the token is still in the query param, so presumably still suffers the same problems
+  created: 2015-12-01 15:18:57.0
+  id: '12394'
+  issue: '11188'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 15:18:57.0
+- author: eternaleye
+  body: |-
+    (copied from SPEC-112)
+
+    So, this bug had a few references to Macaroons, but I feel that none of the posts that did so explained how Macaroons help - so I'll try and do so.
+
+    The really nice thing with Macaroons is that *anyone* can further constrain them, but nobody can remove a constraint once it's added. This allows the client to constrain the macaroon sent back to the server to a very short lifetime (on the order of seconds), while the one it actually holds may have a very long validity period indeed. If anyone sniffs the in-flight Macaroon, it will (by and large) be useless too soon to do them any good.
+
+    In addition, it can be constrained to the operation in question (if Synapse supported such caveats), so the sniffed macaroon would (say) only be usable for sending messages (and not state events), or perhaps even only to a specific room.
+
+    It can also be constrained to the user's external IP, which helps even more.
+
+    This would (partially) resolve SYN-299, too, so I'm copying it there, although TBH the right solution to that is probably "Authorization: Macaroon <stuff>"
+  created: 2016-03-01 01:21:56.0
+  id: '12730'
+  issue: '11188'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-03-01 01:24:17.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1290'
+  created: 2016-11-07 18:27:46.0
+  id: '13610'
+  issue: '11188'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:46.0

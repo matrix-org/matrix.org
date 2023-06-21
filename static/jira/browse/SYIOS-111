@@ -1,0 +1,23 @@
+---
+summary: Retry HTTP requests with an exponential period
+---
+created: 2015-03-19 06:57:33.0
+creator: manu
+description: |-
+  The current implementation makes retries every 5s (with a jitter of 3s) for request errors that are not rate limit nor connection lost. 
+
+  5-8s for a first retry is bit long for a minor error. It could be 0,5s for the first retry then the period can exponentially grow up to the MXHTTPOperation.maxRetriesTime.
+id: '11251'
+key: SYIOS-111
+number: '111'
+priority: '3'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '1'
+updated: 2015-03-19 06:57:33.0
+votes: '0'
+watches: '1'
+workflowId: '11351'
+---
+actions: null

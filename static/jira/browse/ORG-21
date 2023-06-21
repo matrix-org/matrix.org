@@ -1,0 +1,33 @@
+---
+summary: Compile a list of all user content
+---
+created: 2015-03-16 12:31:03.0
+creator: silviof
+description: |-
+  A list of matrix related user content would be neat.
+
+  I think a wikipage on github does the job like it does for other projects. (eg: https://github.com/jgm/pandoc/wiki/Pandoc-Extras)
+id: '11243'
+key: ORG-21
+number: '21'
+priority: '3'
+project: '10003'
+reporter: silviof
+resolution: '10000'
+resolutiondate: 2017-03-21 10:57:15.0
+status: '5'
+type: '4'
+updated: 2017-03-21 10:57:15.0
+votes: '0'
+watches: '2'
+workflowId: '11343'
+---
+actions:
+- author: richvdh
+  body: This is pretty much what https://matrix.org/docs/projects/try-matrix-now.html#other does nowadays
+  created: 2017-03-21 10:57:10.0
+  id: '14011'
+  issue: '11243'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 10:57:10.0

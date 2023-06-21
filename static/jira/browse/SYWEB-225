@@ -1,0 +1,20 @@
+---
+summary: Support displaying m.video type for m.room.message
+---
+created: 2014-12-09 13:37:46.0
+creator: matthew
+description: ''
+id: '10788'
+key: SYWEB-225
+number: '225'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-03-02 17:40:59.0
+votes: '0'
+watches: '1'
+workflowId: '10888'
+---
+actions: null

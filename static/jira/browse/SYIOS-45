@@ -1,0 +1,23 @@
+---
+summary: Need to check the thumbnail params requested by iOS
+---
+assignee: gforet
+created: 2015-01-11 23:57:11.0
+creator: matthew
+description: ''
+id: '10898'
+key: SYIOS-45
+number: '45'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-14 17:34:36.0
+status: '5'
+type: '1'
+updated: 2015-01-14 17:34:36.0
+votes: '0'
+watches: '1'
+workflowId: '10998'
+---
+actions: null

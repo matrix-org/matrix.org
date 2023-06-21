@@ -1,0 +1,69 @@
+---
+summary: Only local rooms are shown in the recents list.
+---
+assignee: kegan
+created: 2014-09-17 18:19:20.0
+creator: erikj
+description: ''
+id: '10316'
+key: SYWEB-40
+number: '40'
+priority: '1'
+project: '10004'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-09-18 10:40:27.0
+status: '5'
+type: '1'
+updated: 2014-09-18 14:34:59.0
+votes: '0'
+watches: '3'
+workflowId: '10419'
+---
+actions:
+- author: kegan
+  body: The room is returned from /initialSync, and superficially appears to be being logged, but then it magically disappears. Not quite sure how. Hitting the room URL directly still works, so seems to be entirely a recents controller / recents.html bug. Still seems to be in $rootScope.events.rooms so this is entirely a display issue.
+  created: 2014-09-17 18:21:52.0
+  id: '10318'
+  issue: '10316'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-17 18:29:33.0
+- author: erikj
+  body: |-
+    Reproduction steps:
+    # Start homeservers via ./demo/start.sh
+    # Create accounts @bob:localhost:8480 and @alice:localhost:8481 on two different home servers.
+    # Bob creates a public room called #foo:localhost:8480
+    # Alice joins #foo:localhost:8480
+    # Bob goes to the recents page and refreshes. The room is still in the list.
+    # Alice does likewise, but the room is no longer in the recents list.
+  created: 2014-09-18 09:18:38.0
+  id: '10319'
+  issue: '10316'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-18 09:18:38.0
+- author: kegan
+  body: |-
+    This has been *patched*, not fixed. The underlying cause seems to be a logic error in the web client, where isLiveEvents and isStateEvents are being either set incorrectly or represent > 1 thing, and so fails on some cases.
+
+    Events are either state events or not, so having a variable 'isStateEvents' seems misleading, because events cannot be configured to be not state events. It seems this variable is being used to determine if it should clobber the web client's latest state of the world, but this will just depend on whether it is live, or from the initial sync [and there isn't anything there already]. I advise renaming isStateEvents to avoid confusion, and simplifying where possible the clobbering semantics between the event stream and /initialSync.
+  created: 2014-09-18 10:40:27.0
+  id: '10322'
+  issue: '10316'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-18 10:40:27.0
+- author: manu
+  body: |-
+    To reproduce the issue, displayname must be set for the user. If not, there is no pb.
+    The bug has been fixed by removing an old patch that was here to deduplicate join events. This patch is now buggy and obsolete
+
+    Note: isStateEvent is used for events coming from the state array of initialSync response.
+  created: 2014-09-18 14:34:32.0
+  id: '10329'
+  issue: '10316'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-18 14:34:32.0

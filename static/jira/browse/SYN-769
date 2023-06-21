@@ -1,0 +1,36 @@
+---
+summary: Room has got itself into broken state
+---
+created: 2016-09-13 17:53:53.0
+creator: dbkr
+description: ''
+id: '12829'
+key: SYN-769
+number: '769'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:02.0
+votes: '0'
+watches: '3'
+workflowId: '12929'
+---
+actions:
+- author: erikj
+  body: 'Looks like this was caused by a bug fixed by: https://github.com/matrix-org/synapse/pull/1117'
+  created: 2016-09-14 13:34:45.0
+  id: '13118'
+  issue: '12829'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-09-14 13:34:45.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1600'
+  created: 2016-11-07 18:30:02.0
+  id: '13926'
+  issue: '12829'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:02.0

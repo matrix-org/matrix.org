@@ -1,0 +1,82 @@
+---
+summary: I seem to be receiving some messages (join notifs) for rooms I am no longer joined to...
+---
+assignee: erikj
+created: 2014-09-16 22:01:17.0
+creator: matthew
+description: ''
+id: '10307'
+key: SYN-47
+number: '47'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-19 14:50:44.0
+status: '5'
+type: '1'
+updated: 2014-09-22 17:20:50.0
+votes: '0'
+watches: '2'
+workflowId: '10376'
+---
+actions:
+- author: erikj
+  body: |-
+    From the logs it appears matthew is talking about his @matthew:matrix.org account.
+
+    {noformat}
+    sqlite> select * from room_aliases where room_alias like "%irc%";
+    #matrixbetterthanirc?:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org
+    sqlite> select * from room_memberships where room_id = "!AJUNAmUUWFTHwYVXTI:matrix.org" ;
+    HgUnjQuqYf@matrix.org|@saftacatalinmihai:matrix.org|@saftacatalinmihai:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    HgUnjQuqYf@matrix.org|@saftacatalinmihai:matrix.org|@saftacatalinmihai:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    SgsAMLoICA@matrix.org|@sbysm:matrix.org|@sbysm:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    AxpDoyOxbT@matrix.org|@sbysm:matrix.org|@sbysm:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|leave
+    bgWKCMNMzi@matrix.org|@v:matrix.org|@v:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    vxQDkASSnN@matrix.org|@Manu:matrix.org|@Manu:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    LUKszhAVIu@matrix.org|@Manu:matrix.org|@Manu:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|leave
+    FXkkEBYYSm@matrix.org|@matthew:matrix.org|@matthew:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    PMSiFVfuoZ@matrix.org|@matthew:matrix.org|@matthew:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|leave
+    iEbnqYsxBe@matrix.org|@erikj:matrix.org|@erikj:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    tDafnGTdQE@matrix.org|@kegan:matrix.org|@kegan:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    LhoxhAxMVz@matrix.org|@kegan:matrix.org|@kegan:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|leave
+    YZRERpBYUN@matrix.org|@osman:matrix.org|@osman:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    nUiBUeNZgo@matrix.org|@osman:matrix.org|@osman:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|leave
+    VRliKMEesp@matrix.org|@Manu:matrix.org|@Manu:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    lsDdegEoWn@matrix.org|@filip:matrix.org|@filip:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    XKwvSELKqP@matrix.org|@jrocool:matrix.org|@jrocool:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    VXJlipyxYx@matrix.org|@matthew:matrix.org|@matthew:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    JVlurXFnXZ@matrix.org|@matthew:matrix.org|@matthew:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|leave
+    QqlQfasyim@matrix.org|@kegan:matrix.org|@kegan:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|join
+    AnqWxXocHS@matrix.org|@kegan:matrix.org|@kegan:matrix.org|!AJUNAmUUWFTHwYVXTI:matrix.org|leave
+    {noformat}
+  created: 2014-09-19 10:15:11.0
+  id: '10333'
+  issue: '10307'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-19 10:15:11.0
+- author: erikj
+  body: So it does look like matthew had legitimately left when he got the event.
+  created: 2014-09-19 10:16:07.0
+  id: '10334'
+  issue: '10307'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-19 10:16:07.0
+- author: erikj
+  body: |-
+    Using three demo home servers I am unable to reproduce using the following steps:
+    # @bob:localhost:8480 creates and joins #example:localhost:8480
+    # @alice:localhost:8481 joins #example:localhost:8480
+    # (They both send messages)
+    # @alice:localhost:8481 leaves
+    # @foo:localhost:8482  joins
+    # @alice:localohst:8481 does not see anything coming down the event stream.
+  created: 2014-09-19 10:20:20.0
+  id: '10335'
+  issue: '10307'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-19 10:20:20.0

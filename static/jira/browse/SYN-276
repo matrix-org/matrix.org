@@ -1,0 +1,25 @@
+---
+summary: Users *must* have permission to redact their own events.
+---
+created: 2015-02-16 01:39:16.0
+creator: matthew
+description: |-
+  We must always give users permission to redact their own events.
+
+  (The separate question of whether moderator redactions should look different to self-redactions is separate and can be handled in a seperate bug, if needed)
+id: '11064'
+key: SYN-276
+number: '276'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-05-07 11:44:32.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:12.0
+votes: '0'
+watches: '1'
+workflowId: '11164'
+---
+actions: null

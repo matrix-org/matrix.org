@@ -1,0 +1,129 @@
+---
+summary: Implement reset password feature
+---
+created: 2014-09-15 23:45:21.0
+creator: matthew
+description: ''
+id: '10018'
+key: SYN-11
+number: '11'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-23 11:33:06.0
+status: '5'
+type: '2'
+updated: 2016-03-16 10:28:14.0
+votes: '1'
+watches: '6'
+workflowId: '10345'
+---
+actions:
+- author: leonerd
+  body: |-
+    One thing that would be useful would be a really simple commandline script you could run:
+
+    {noformat}
+    $ reset-user-password --user "@foo:bar.com" --password "sekrit"
+    {noformat}
+
+    This code snippet may be helpful:
+
+    {noformat}
+    >>> import bcrypt
+    >>> print bcrypt.hashpw("xxxxxxxxxxxxx", bcrypt.gensalt())
+    $2a$12$xxxxxxxxxxxxxxxxxxxxxx.....
+    {noformat}
+  created: 2014-09-24 15:31:57.0
+  id: '10446'
+  issue: '10018'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-24 15:34:55.0
+- author: markjh
+  body: The home server on matrix.org should know the email addresses of whoever is signing up. It should be possible for it to send out password reset confirmation emails.
+  created: 2014-10-24 11:57:41.0
+  id: '10575'
+  issue: '10018'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-24 11:57:41.0
+- author: matthew
+  body: |-
+    There appears to be mass confusion over whether the HS or IS is responsible for sending out password reset confirmation tokens.
+
+    I think I was arguing for IS's to do it, given they already are responsible for out-of-band authentication for users whilst validating a 3PID during signup, and it makes sense to have all the out-of-band auth happen in the same place.  So I could go and trigger a password reset via email, or via Facebook, or SMS, or whatever.
+
+    However, Mark (as per above) is arguing for HS's, as it obviates the need to do a complicated trust dance with the IS, and the IS doesn't actually care what the result is.
+
+    Dave meanwhile argues against using the IS:
+
+    Nov 17 08:25:54 <dbkr>  [15:32:04] there are two kickers, I think, with doing pw recovery:
+    Nov 17 08:25:54 <dbkr>  [15:32:24] 1) The HS has to trust the binding between 3pid & mxid was made
+    Nov 17 08:25:54 <dbkr>  [15:32:39] which is why I want HSes to sign bindings
+    Nov 17 08:25:54 <dbkr>  [15:33:04] and 2) That sending auth tokens via the ISes would give the ISes access to anybody's account
+    Nov 17 08:25:54 <dbkr>  [15:33:15] or rather, to reset the password on anyone's account
+    Nov 17 08:25:54 <dbkr>  [15:34:48] which might just be something we have to live with: I don't see any way around the fact that whoever is on the path the password reset token takes can see it and therefore use it
+    Nov 17 08:25:54 <dbkr>  [15:35:11] unless you have lots of ID servers and pick one randomly as a transport
+    Nov 17 08:25:54 <dbkr>  [15:35:46] such that one ID server owner would have to try repeatedly to get a token that was sent through his IS server
+    Nov 17 08:25:54 <dbkr>  [15:36:04] and it would be obvious he (or somebody) was up to something
+    Nov 17 08:25:54 <dbkr>  [15:36:28] much like google have access to reset the password on any account I have anywhere on the Internet
+    Nov 17 08:25:54 <dbkr>  [15:44:09] or require 2 different IDs to be validated through two different ID servers I suppose
+
+    ...and I thought we reached a conclusion but have totally forgotten what it was >:(
+
+    Meanwhile Kegan went and implemented half of this already on synapse:  https://github.com/matrix-org/synapse/commit/c099b36
+
+    We also need to support changing passwords, although this could be by the same mechanism if we let users just specify a new password when they hit the reset button.
+
+    I think the conclusion for now is that the quickest route would definitely be to just have the HS manage it as an implementation-specific detail.  And if in future that HS API happened to want to delegate through to the IS to do the dirty work, it could, once that API has been fleshed out.
+  created: 2014-12-02 15:50:46.0
+  id: '10910'
+  issue: '10018'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-02 15:50:46.0
+- author: kegan
+  body: |-
+    I agree with implementing the HS-based approach. However, we need to make sure that the HS is told the email address that the user has authenticated with. I *think* the HS does have access to this information on Synapse, but it isn't required in the spec for identity auth: http://matrix.org/docs/spec/#email-based-identity-server
+
+    That being said, I don't want to force http://matrix.org/docs/spec/#email-based-identity-server to give the email address in the request, given it is not required and we shouldn't conflate that with resetting passwords. It should be a small amount of extra work to finish implementing this, as I had got up to the point of sending out emails from the HS when I thought "Hang on, should the IS do this?" and it got blocked.
+  created: 2014-12-03 12:02:38.0
+  id: '10927'
+  issue: '10018'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-03 12:02:38.0
+- author: dbkr
+  body: Fixed in csauth
+  created: 2015-04-23 11:33:06.0
+  id: '11523'
+  issue: '10018'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-23 11:33:06.0
+- author: richvdh
+  body: '[~dbkr]: This seems like it''s not really fixed, because you still have to do it manually?'
+  created: 2016-03-16 09:44:28.0
+  id: '12760'
+  issue: '10018'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-16 09:44:28.0
+- author: dbkr
+  body: So this bug was closed when I implemented the feature to allow user to reset their own passwords using their email address. Are you talking about an admin resetting a user's password?
+  created: 2016-03-16 10:05:45.0
+  id: '12761'
+  issue: '10018'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-03-16 10:05:45.0
+- author: richvdh
+  body: Turns out I just didn't know about the password-reset-via-email-address feature. I thought we didn't have one at all. I'll go back to my hole.
+  created: 2016-03-16 10:28:14.0
+  id: '12762'
+  issue: '10018'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-16 10:28:14.0

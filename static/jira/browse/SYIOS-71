@@ -1,0 +1,43 @@
+---
+summary: Current room should be highlighted in landscape mode
+---
+assignee: gforet
+created: 2015-02-09 10:22:16.0
+creator: matthew
+description: |-
+  -----> my comments <-----
+  Selected (active) room should be highlighted in landscape mode. 
+
+  ------------------------------
+  Application info
+  userId : @stalund:matrix.org
+  displayname : Stefan
+
+  homeServerURL : http://matrix.org
+  homeServer : matrix.org
+
+  matrixConsole version: 0.2.2
+  SDK version: 0.2.2
+  Build: (no build info)
+
+
+
+
+
+  Stefan
+id: '11015'
+key: SYIOS-71
+number: '71'
+priority: '1'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-13 13:08:59.0
+status: '5'
+type: '2'
+updated: 2015-02-13 13:08:59.0
+votes: '0'
+watches: '1'
+workflowId: '11115'
+---
+actions: null

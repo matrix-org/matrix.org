@@ -1,0 +1,22 @@
+---
+summary: I don't think we refresh turn server URLs when logging out & switching HS
+---
+created: 2014-11-04 17:03:05.0
+creator: dbkr
+description: ''
+id: '10619'
+key: SYWEB-137
+number: '137'
+priority: '2'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2014-11-27 16:06:28.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:50.0
+votes: '0'
+watches: '1'
+workflowId: '10719'
+---
+actions: null

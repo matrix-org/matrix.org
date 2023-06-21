@@ -1,0 +1,44 @@
+---
+summary: Add ability for server to drop privileges
+---
+created: 2015-02-13 01:10:59.0
+creator: nolan
+description: |-
+  I currently store SSL keys in /etc/ssl/private, which my OS makes 0700. However, I'd like for most of Synapse to run as an unprivileged user for obvious security reasons.
+
+  Could Synapse have --user and --group flags that make it run as a different user when launched as root, after configuration/initialization is complete? At least I'd like it if SSL certificates/keys were read as root so I don't have to copy keys or loosen perms on /etc/ssl/private.
+
+  Thanks!
+id: '11041'
+key: SYN-268
+number: '268'
+priority: '3'
+project: '10000'
+reporter: nolan
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:43.0
+votes: '0'
+watches: '3'
+workflowId: '11141'
+---
+actions:
+- author: erikj
+  body: |-
+    This should be fairly easy to implement, since I believe we already have read the necessary files by the time we daemonize. The places that would need to be changed are:
+    - Adding config option to: https://github.com/matrix-org/synapse/blob/master/synapse/config/server.py
+    - Pass the user/group config to Daemonize: https://github.com/matrix-org/synapse/blob/master/synapse/app/homeserver.py#L282
+  created: 2015-02-13 08:52:20.0
+  id: '11254'
+  issue: '11041'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-02-13 08:52:20.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1284'
+  created: 2016-11-07 18:27:43.0
+  id: '13603'
+  issue: '11041'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:43.0

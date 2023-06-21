@@ -1,0 +1,28 @@
+---
+summary: Why is https://matrix.org/_matrix/media/v1/thumbnail/matrix.org/lrSXiXxkpJiUPiysjomfVerj?width=320&height=240 grey?
+---
+created: 2015-09-15 19:20:17.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11873'
+key: SYN-476
+number: '476'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:20.0
+votes: '0'
+watches: '2'
+workflowId: '11976'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1370'
+  created: 2016-11-07 18:28:20.0
+  id: '13691'
+  issue: '11873'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:20.0

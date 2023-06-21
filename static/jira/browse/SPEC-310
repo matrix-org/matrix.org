@@ -1,0 +1,72 @@
+---
+summary: Consider renaming "state key" to "subtype" and making it optional
+---
+created: 2015-12-21 01:32:26.0
+creator: jimmycuadra
+description: |-
+  This is just my opinion, but perhaps it will be useful feedback anyway. I've found the implementation of state events via the "state key" field to be awkward. It took me a while to understand that what it really is is a "subtype" of the state event's "type" field—i.e. a way to further disambiguate similar or related pieces of state beyond just the type. I think actually calling it "subtype" would convey its purpose better.
+
+  Perhaps there's a historical reason it ended up this way, but it also seems awkward that for many state events, the value of the state key is required to be an empty string. To me this is a clear sign of a field that should be optional. Representing a lack of meaningful value as an empty string may be used by an implementation if it really needs to for some reason, but presenting that as the interface at the spec level feels like it could be improved. I think the interface would be much nicer if the state key (or subtype, if it gets renamed) was simply optional, and if present would always contain a meaningful value.
+id: '12231'
+key: SPEC-310
+number: '310'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '2'
+resolutiondate: 2016-06-29 12:02:52.0
+status: '5'
+type: '4'
+updated: 2016-06-29 12:02:52.0
+votes: '0'
+watches: '2'
+workflowId: '12334'
+---
+actions:
+- author: richvdh
+  body: |-
+    So, two separate issues here.
+
+    On the renaming: yes, {{state_key}} may not be the *best* name. I'm not wholly convinced by {{subtype}} either, though. For example, for {{m.room.member}} events, the {{state_key}} is a user's mxid. To me, that's not a subtype of {{m.room.member}}. But I suspect the conversation is going to be moot at this point - even if we come up with a perfect name, {{state_key}} isn't a sufficiently bad name to make us want to break compatibility with existing clients and deployed synapses.
+
+    On making it optional: the thing that distinguishes a state event from a message event (at least when a client receives those events from {{/sync}} and friends) is the presence of a {{state_key}} field - and a client needs to know whether an event is a message event or a timeline event so that it can keep its structures up-to-date. So the {{state_key}} sort-of *is* optional, but its absence makes an event into a message event. So... we could find a better way of distinguishing state events from message events, such as a boolean flag, and then mandate that only events which fit that criterion are allowed to have a {{state_key}}. But again, I'm not sold on the idea that it's worth the effort.
+  created: 2016-04-18 15:59:24.0
+  id: '12834'
+  issue: '12231'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 16:00:05.0
+- author: jimmycuadra
+  body: |-
+    I see that "subtype" is maybe not the right word either. Although the "naming and cache invalidation" meme is always relevant, the fact that something like this is difficult to describe and name indicates to me that the conceptual model isn't as good as it could be. I'll keep thinking about it and comment again if I can think of a name (and/or data structure) that conveys the purpose of this better.
+
+    Re backwards compatibility: That being a factor in deciding to leave potential warts in the spec really worries me. If Matrix sees huge adoption and lasts for many years, the current userbase of existing clients and servers are not what's going to matter—the spec is. Everyone has probably had the experience of working with some old standard and being frustrated about something that was baked in a long time ago and makes it harder to understand or work with. There's always some historical reason why we end up stuck with things like this, so I think it should require a very, very strong reason to keep something we know can be improved as-is because of the temporary burden of migrating existing tooling. Making the implementation of existing tools a reason to reject changes to the spec really hurts the spec.
+  created: 2016-04-20 16:07:17.0
+  id: '12877'
+  issue: '12231'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-04-20 16:07:17.0
+- author: richvdh
+  body: |-
+    At the risk of going on a tangent completely unrelated to this bug:
+
+    {quote}
+    Re backwards compatibility: That being a factor in deciding to leave potential warts in the spec really worries me. If Matrix sees huge adoption and lasts for many years, the current userbase of existing clients and servers are not what's going to matter—the spec is.
+    {quote}
+
+    As any software project develops, there will be times when you can look at a particular implementation and think "knowing what we do now, we could have done a better job here". And then you have a decision: you must balance the costs of fixing that decision against the costs of keeping the inferior design. The costs of fixing the decision will necessarily include an opportunity cost in terms of other things that don't happen because you took the time to work on one specific issue. 
+
+    Matrix is no different. The core Matrix team, and the other members of our ecosystem, do not have infinite time, and we must all choose how best to spend that time. Yes it's true that in the long term, all that matters is the spec - but if, after many years, we finally achieve the perfect spec, it's not much use if we have no users because they all lost interest as features failed to materialise, and nobody wants to develop a client because we keep making incompatible changes to the spec. To paraphrase: perfect is the enemy of good.
+
+    None of that is to say that we will never change the spec where there is a problem. But it is to say that the situation is not black-and-white: we must consider both sides of the argument, before rushing into changes.
+
+    So how does this apply to {{state_key}}? Well, I see the cost of keeping the old design, imperfect as it may be, as being pretty low. It's not *particularly* complicated (I remember Kegan explaining it to me on my first day on the project), and with some decent documentation it should be pretty easy to grasp. Meanwhile, I see the costs of changing it as high: every client must be changed to understand the new key.
+
+    So, by all means suggest better names, or better datastructures (you're right when you say that the fact we can't come up with a good name is a bad smell). Feel free, too, to try to convince us that in this case the costs of the current design are significant, and that you have an easy way to transition to a better design. We welcome the feedback and the suggestions. But remember we will be weighing our decision against all the other things we could be doing.
+  created: 2016-04-24 21:58:53.0
+  id: '12889'
+  issue: '12231'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-24 21:59:26.0

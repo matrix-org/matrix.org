@@ -1,0 +1,23 @@
+---
+summary: If the user receives an invit for a room while the app is off, the room will not appear in the recents
+---
+assignee: manu
+created: 2014-09-18 14:42:27.0
+creator: manu
+description: ''
+id: '10323'
+key: SYWEB-44
+number: '44'
+priority: '1'
+project: '10004'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-09-18 16:34:37.0
+status: '5'
+type: '1'
+updated: 2014-09-22 17:20:48.0
+votes: '0'
+watches: '1'
+workflowId: '10426'
+---
+actions: null

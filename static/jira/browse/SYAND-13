@@ -1,0 +1,22 @@
+---
+summary: Add "mark all as read" button.
+---
+created: 2015-02-02 18:17:31.0
+creator: erikj
+description: ''
+id: '10995'
+key: SYAND-13
+number: '13'
+priority: '3'
+project: '10201'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-02-17 12:37:40.0
+status: '5'
+type: '2'
+updated: 2015-02-17 12:37:40.0
+votes: '0'
+watches: '1'
+workflowId: '11095'
+---
+actions: null

@@ -1,0 +1,35 @@
+---
+summary: Historical displaynames (and perhaps avatars?) should be displayed
+---
+created: 2014-09-16 00:13:08.0
+creator: matthew
+description: |-
+  Currently if a user leaves a room, we no longer have any displayname available for them, as displaynames are currently propagated as presence events.  As a result their entry in the room history becomes their matrix ID.
+
+  Instead, we should look at the room history to determine what the user's displayname was at that point in time.
+
+  I'm unclear on what happens if we're paginating backwards, and pick an arbitrary historical point in time where we don't capture a displayname change events..
+id: '10025'
+key: SYWEB-11
+number: '11'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2014-10-31 09:37:21.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:58:00.0
+votes: '0'
+watches: '2'
+workflowId: '10395'
+---
+actions:
+- author: kegan
+  body: After clarification, this is a duplicate of SYWEB-116 (which has more information on this issue, hence closing this).
+  created: 2014-10-31 09:37:21.0
+  id: '10709'
+  issue: '10025'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-31 09:37:21.0

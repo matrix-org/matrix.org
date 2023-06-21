@@ -1,0 +1,20 @@
+---
+summary: VoIP call entries in chat messages table could display type of call
+---
+created: 2014-09-26 13:55:22.0
+creator: dbkr
+description: ''
+id: '10400'
+key: SYWEB-92
+number: '92'
+priority: '3'
+project: '10004'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2015-03-20 15:04:03.0
+votes: '0'
+watches: '1'
+workflowId: '10503'
+---
+actions: null

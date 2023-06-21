@@ -1,0 +1,30 @@
+---
+summary: We need a way to publish new config items in new releases
+---
+created: 2016-06-05 20:09:13.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  See https://vector.im/beta/#/room/!cURbafjkfsMDVwdRDQ:matrix.org/$14651520952UDiRs:matrix.freelock.com etc
+id: '12691'
+key: SYN-705
+number: '705'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:35.0
+votes: '0'
+watches: '2'
+workflowId: '12791'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1553'
+  created: 2016-11-07 18:29:35.0
+  id: '13867'
+  issue: '12691'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:35.0

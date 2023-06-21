@@ -1,0 +1,58 @@
+---
+summary: Add an API for getting auth flows
+---
+created: 2016-08-19 18:32:49.0
+creator: jimmycuadra
+description: ''
+id: '12798'
+key: SPEC-444
+number: '444'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '2'
+resolutiondate: 2016-08-22 09:31:02.0
+status: '5'
+type: '2'
+updated: 2016-08-22 09:31:02.0
+votes: '0'
+watches: '3'
+workflowId: '12898'
+---
+actions:
+- author: leonerd
+  body: |-
+    Also {{/r0/register}}, which has an even worse empty {{POST}} that yields a 401 response containing a {{flows}} key.
+
+    Sytest currently critically depends on this existing, which upsets non-synapse homeservers (e.g. ruma)
+  created: 2016-08-19 19:00:33.0
+  id: '13105'
+  issue: '12798'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-08-19 19:00:33.0
+- author: richvdh
+  body: |-
+    {quote}
+    Also /r0/register, which has an even worse empty POST that yields a 401 response containing a flows key.
+    {quote}
+
+    Uh, that would be as [specified|http://matrix.org/speculator/spec/HEAD/client_server/unstable.html#user-interactive-api-in-the-rest-api]?
+  created: 2016-08-22 09:28:52.0
+  id: '13106'
+  issue: '12798'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-08-22 09:28:52.0
+- author: richvdh
+  body: |-
+    {quote}
+    Vector and Synapse currently use an unspecified API, GET /login, to check for auth flows. There should be a dedicated API that clients to use to get the flows the homeserver supports. Perhaps /flows or /auth/flows or something like that.
+    {quote}
+    The correct solution here is really for /login to use the User-interactive login API: SYN-696.
+  created: 2016-08-22 09:31:02.0
+  id: '13107'
+  issue: '12798'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-08-22 09:31:02.0

@@ -1,0 +1,30 @@
+---
+summary: 'Content Repository: the repo should honour exif metadata'
+---
+created: 2014-12-22 13:27:30.0
+creator: gforet
+description: |-
+  Presently exif metadata are ignored by content repo.
+  --> pictures attached from an iPhone are wrong oriented.
+id: '10855'
+key: SYN-211
+number: '211'
+priority: '2'
+project: '10000'
+reporter: gforet
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:32.0
+votes: '0'
+watches: '2'
+workflowId: '10955'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1261'
+  created: 2016-11-07 18:27:32.0
+  id: '13579'
+  issue: '10855'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:32.0

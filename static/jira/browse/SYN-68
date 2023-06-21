@@ -1,0 +1,46 @@
+---
+summary: Federation invites from arasphere->matrix.org are taking about 20-30s to propagate
+---
+created: 2014-09-23 16:45:09.0
+creator: matthew
+description: ''
+id: '10379'
+key: SYN-68
+number: '68'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2014-09-24 01:50:15.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:31.0
+votes: '0'
+watches: '1'
+workflowId: '10482'
+---
+actions:
+- author: matthew
+  body: Actually, this is a homeserver federation issue.  It's taking *AGES* - about 20-30s for arasphere's HS to send a room invite to matrix.org.
+  created: 2014-09-23 19:18:17.0
+  id: '10430'
+  issue: '10379'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 19:18:17.0
+- author: matthew
+  body: (was "When I receive an invite and i'm on the home page, the Recents list doesn't get updated to tell me about it")
+  created: 2014-09-23 19:19:06.0
+  id: '10431'
+  issue: '10379'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 19:19:06.0
+- author: matthew
+  body: dup SYN-46
+  created: 2014-09-24 01:50:15.0
+  id: '10436'
+  issue: '10379'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-24 01:50:15.0

@@ -1,0 +1,402 @@
+---
+summary: 'Do we special-case 1:1 chats? (was: We need a way to flag 1:1 chats as 1:1)'
+---
+created: 2014-09-20 02:05:02.0
+creator: matthew
+description: ''
+id: '10355'
+key: SPEC-17
+number: '17'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-10-13 17:26:54.0
+status: '5'
+type: '2'
+updated: 2016-06-29 17:19:06.0
+votes: '1'
+watches: '7'
+workflowId: '10458'
+---
+actions:
+- author: kegan
+  body: |-
+    For the IRC use case, this is done via the room rules. For public rooms like #matrix: if the Matrix user joins it, they join via a room alias.
+
+    For private rooms like PMs, the Matrix user invites the @irc_user_uri to a room.
+
+    We don't need to flag up 1:1 in these cases, since it's implied private.
+  created: 2015-01-21 11:33:29.0
+  id: '11165'
+  issue: '10355'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:33:29.0
+- author: erikj
+  body: I think we do need a concept of a 1:1 room, otherwise gateways are going to get very confused when someone joins what they think is a 1:1 room. Currently we haven't implemented a way to make sure people cannot be invited into a room, though we have talked about a concept of a may_join list. We probably want to make sure that it is easy for clients to determine if a room is a 1:1 and make it easy to create them.
+  created: 2015-01-21 11:36:59.0
+  id: '11167'
+  issue: '10355'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-21 11:36:59.0
+- author: matthew
+  body: |-
+    This just came up again in Matrix HQ with a vengeance.  To summarise the discussion and conclusions:
+
+    Problems:
+     * IRC Bridges don't know whether to create a 1:1 chat as a PM or an ephemeral room
+     * 1:1 chats currently default to giving ops to the creator, not both parties, which feels strangely asymmetrical given both parties of the conversation are 'equal'.
+     * If you invite a 3rd user into a "1:1 chat", you currently leak all 1:1 history to them, which is not ideal.
+
+    Proposed solution:
+     * Specify a flag when creating a room to specify a preset for the type of room - e.g. 1:1, group (default), auditorium, etc.
+     * This pre-provisions default state for the room
+       * e.g. for 1:1 chat, the server can set up initial state for the room to specify: maximum number of participants (2); powerlevels to have opped both participants by default; don't share history with new users by default.
+     * The preset name (e.g. "1:1") can be also stored as a m.room.preset or m.room.intent state key as well, and used by bridges as a hint as to whether to create a PM or private room by default.
+     * *All* of this state could equally well have been configured by the client who created the room - however, as it's fiddly, it makes sense to provide a macro to create it serverside.
+
+    This is hopefully an acceptable compromise: it explicitly tags the existence of 1:1 chats and provides different behaviour by default for rooms which clients create with the intention of being used as 1:1 chats, rather than group rooms which happen to contain 2 people.  However, it uses the existing m.room.* state system rather than special-casing any logic in the server, and gives user the control to change the permissions and behaviour of the room after the fact, in order to (say) invite others into the conversation - which is a concrete use case we're seeing in the real world.
+
+    For this to work well, it needs us to flesh out a bit more room state management logic that we've been putting off so far:
+     * Need a way to specify maximum occupancy for a room (or alternatively a flag to disable invites on a room)
+     * Need a way to optionally restrict past history of a room being readable by new users (ideally the ability to set arbitrary thresholds beyond which past history is not visible - the effect you'd get in an e2e room by re-keying it)
+
+    It also presupposes that we support the concept of multiple concurrent 1:1 chats between pairs of users.  The fact is that we already support this today, and use it extensively.  I have multiple threads of conversation (e.g. social, work, specific-topic) with the same person in different rooms.  Obviously this doesn't map well onto bridges to things like IRC which don't support multiple concurrent PMs with the same person - the solution here is that the bridge gets to solve the problem as it sees fit.  The obvious thing to do is to turn the first chat which is flagged with m.room.preset=1:1 into a PM, and then any subsequent ones create ephemeral private channels on the ircd.  Also, if the Matrix user tries to invite a 3rd user into a room currently bridged to a PM, the bridge will obviously need to migrate the PM to a private channel to accomodate the conversation.
+
+    Finally, some clients may want to present a simple "WhatsApp" style UI, which assumes that you only ever have one 1:1 chat with any given user.  In practice, we *have* to support multiple chats with the same user in 'Recents' - although the app is welcome to gloss over this elsewhere, and try to reuse existing chats whereever possible when 'tapping on faces' in order to initiate/continue conversations.  It's up to the app how it tiebreaks between possible contenders (pick at random; pick most recent; show a list; etc).
+  created: 2015-03-27 12:26:59.0
+  id: '11437'
+  issue: '10355'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-27 12:30:19.0
+- author: dbkr
+  body: |-
+    The major thing here is that this still allows a 1:1 room to have new people invited in: it just requires the flag be cleared first. I believe this is counter to Erik's current proposal. Erik? I would also say that having these flags are mutable by either user makes them redundant.
+
+    Inviting users into a previously 1:1 room I think also requires the more advanced history visibility threshold: newly joined users must be able to see some of the history for inviting them into an existing room to be of any value.
+
+    Agreed that supporting multiple 1:1 chats is good, but I'd like to see some guidelines about:
+    1) How this affects room naming (ie. can we avoid two rooms which are displayed as the other party's name, eg. by asking clients to prompt users to set a name when creating a second 1:1 room)
+    2) When new chats get created. Agreed that clients should have flexibility but I would like some best practices to exist to avoid clients which just keep creating more 1:1 chats.
+    3) What room opens by default if you just tap on 'chat' from a user's profile. Agreed that clients can have flexibility but consistency would also be very good. Perhaps always pick the one created first?
+  created: 2015-03-27 13:45:30.0
+  id: '11439'
+  issue: '10355'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-27 13:45:30.0
+- author: matthew
+  body: |-
+    The intention is to absolutely allow 1:1 rooms to invite new people into them (with appropriate history access control). I strongly believe this is a feature we want to support - I have used it myself several times and found it very useful (e.g. to invite Amandine into a 1:1 with someone to cover for me whilst I'm on holiday).  Erik: is this actually counter to your proposal (if so, can you please detail and justify your current proposal)?
+
+    Totally agreed that we need a relatively sophisticated history visibility threshold for this to work - see my proposal in SPEC-134 (which is linked to this as a related issue).
+
+    Totally agreed that we need to strongly discourage clients from creating multiple 1:1 chats unless the user is *really* deliberately doing so.  In answer to the points:
+    1) Up to client to disambiguate - we recommend forcing the user to name secondary rooms (e.g. "Matthew/Dave Social Chat"), or appending a #2, #3 or whatever to the 3rd party.
+    2) Only ever create new chats if the user explicitly follows a specific UX flow to do so. (e.g. hit Advanced options, and 'start new chat')
+    3) By default always reuse the oldest chat with the user sounds good to me.  And yes consistency ftw.
+  created: 2015-03-27 14:01:09.0
+  id: '11441'
+  issue: '10355'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-27 14:01:09.0
+- author: dbkr
+  body: |-
+    Counterproposal:
+
+    What if you were able to fork off a new room from your 1:1 chat, taking a chunk of recent history to a new room?
+    Pros:
+     * Your original 1:1 chat remains intact, with all its history.
+     * You presumably started talking about something specific, so chat related to that is now in its own room.
+    Cons:
+     * Not sure about technical feasibility
+     * UI could be complex
+
+    Would this cover your use cases?
+  created: 2015-03-27 16:24:22.0
+  id: '11443'
+  issue: '10355'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-27 16:24:22.0
+- author: mpicher
+  body: |-
+    David's counterproposal seems like a reasonable approach.
+
+    I would envision this as the user experience:
+
+    * One of the users in a 1:1 chooses to fork the room
+    * User must enter a room name to fork to.
+    * User prompted to select 'first' message (i.e., the point in time from which the fork will begin)
+    ** Optionally you could also allow a user to select a 'last' message, this could complicate UX but allow better flexibility
+    * Ask other party in 1:1 if fork from 1:1 to room from 'first' message is acceptable
+    ** On agreement, copy all messages from 'first' message to latest (or last) message to new multi-party room.
+    ** On disagreement, notify fork initiator & cancel.
+  created: 2015-03-28 09:33:40.0
+  id: '11445'
+  issue: '10355'
+  type: comment
+  updateauthor: mpicher
+  updated: 2015-03-28 09:33:40.0
+- author: matthew
+  body: |-
+    I agree that Dave's suggestion is a valid solution to this and would cover the use cases.  However, I have some concerns:
+     * We need to support the UX for limiting visibility of historical content anyway (for E2E crypto; for rooms where folks simply don't want historical content to be visible to new users; etc - as per SPEC-134)
+     * I'd really like to support per-message ACLs in future (for IoT data; bridging to foreign environments with per-message ACLs like gitter or SMS bridges) - of which ACLing past history is basically a subset, so contorting to avoid ACLs feels unnecessary.
+     * Deliberately copying chunks of events from one room to another duplicates the data, and feels unnecessarily inefficient (unless we went down the git path of factoring out all messages into abstract blobs and wiring them together into different graphs)
+     * I still don't like the idea of special-casing logic for 1:1 rooms in any way on the server, rather than using our existing framework for extensible state configuring room behaviour (e.g. maximum participants; who has ops; etc).
+  created: 2015-03-28 23:01:22.0
+  id: '11446'
+  issue: '10355'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-28 23:01:22.0
+- author: erikj
+  body: |-
+    This is/was my initial proposal, ftr. It mainly ignores previous comments and proposals for now.
+
+    h3. "Permanent 1:1 Room" Proposal
+
+    This is a proposal for adding a concept of 1:1 rooms to Matrix. These 1:1 rooms would be permanently 1:1, and not upgradeable to group chats.
+
+    h4. Properties of 1:1 rooms
+    # Neither user has ops.
+    # No other user can join. Invites are disabled.
+    # The original users can rejoin if they left the room.
+
+    Open question: Should there be one unique, canonical 1:1 room for every pair of users?
+
+    h4. Use cases
+
+    h5. Addressed
+    * Bridges to protocols that have concepts of non-upgradable 1:1 rooms.
+    * Have a single (or small number of) rooms that are used to send quick, non sequitur messages without having to create a new room. Useful for e.g. "Where are you?" messages.
+    * When searching for a particular message it is obvious which room it would have been sent in. 
+    * It is "obvious" in which room a message should be sent.
+
+    h5. Not addressed
+    * Allowing other users to see and reply to threads that relate to a specific topic that happened in a 1:1 room; e.g. if a 1:1 chat ends up being solely about a given topic it would be nice to retroactively decide that the thread should have been in a separate group room. 
+
+    h4. User Experience
+
+    * In the recents list there will generally be at most one 1:1 room with a given user (excepting the case where you have e.g. "work chat" and "personal chat")
+    * There may be many named rooms with only two users in, e.g. "Trip to new york". These allow other users to be invited.
+    * When looking at a profile for a user there will be:
+    ** a button labelled either "Start chat" or "Go to chat" (or potentially just "chat") that takes you to the 1:1 room. (How does this work for multiple 1:1 rooms? Give user a list of 1:1 rooms to pick from?)
+    ** a button labelled "start new topic chat" or "discuss topic" that creates a new room with the two user
+
+    h4. Implementation.
+
+    Set the join rules and power level so that no one has ops and no one can be invited. Add the two users to the "may join" event.
+
+    This requires implementation of invite level and may join lists.
+
+    The state would be set by the creating home server. Either via some sort of "/createOneToOne" API or by the creator manually changing the state and finally dropping ops privileges (the former being the most likely).
+
+    h4. Comments
+
+    * This does not special case 1:1 rooms server side.
+    * All 1:1 chat happens in one (or very few) rooms. This is different than other proposals where 1:1 rooms were upgradable; in which case 1:1 chat history may end up split between many rooms, as each78 1:1 room gets upgraded and a new 1:1 room is created.
+    * Encouraging users to create new rooms for specific topics helps avoid the situation where it would be nice to upgrade or split out conversations from 1:1 rooms.
+  created: 2015-03-31 12:53:25.0
+  id: '11457'
+  issue: '10355'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-03-31 14:25:24.0
+- author: leonerd
+  body: |-
+    If I understand Erik's last proposal, then the idea is basically just to use various bits of room rules to enforce the human-level idea of what restrictions a 1:1 room has?
+
+    If so then yes, that's entirely what I designed the {{may_join}} field for in the first place. The plan was always that with the right combination of rules defined on the room at the time it was created, it's now a safely locked 1:1 room with the-above required semantics.
+
+    See also:
+      https://github.com/matrix-org/matrix-doc/blob/master/drafts/model/rooms.rst#room-creation-templates
+    and
+      https://github.com/matrix-org/matrix-doc/blob/master/drafts/model/rooms.rst#user-direct-message-rooms
+  created: 2015-03-31 15:07:52.0
+  id: '11458'
+  issue: '10355'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-03-31 15:12:17.0
+- author: matthew
+  body: |-
+    To try to summarise the various proposals above based on internal discussion over the course of today:
+
+    The main (only?) point of contention here is whether to restrict rooms flagged somehow as 1:1 from ever being able to include other members - i.e. whether we actually need the 'permenant 1:1' semantics of Erik's solution.
+
+    Dave/Erik imply you should never ever be able to override the room config and enable inviting, because we have insufficient ACLs to avoid accidentally leaking past/future history from the 1:1 room to the invited person - and that similar behaviour can be supported by letting 1:1 rooms be "forked" to share limited history in the context of a new group chat room.
+
+    Conversely, I think we should give users the flexibility to invite users into their 1:1 chats if they so desire (as we do currently in synapse), as unnecessarily constraining users and removing existing functionality doesn't appeal. The UX of forking a room encourages users to unilaterally violate the privacy expectations of the other participant (especially if the room was E2E), whereas ACLs may let both participants agree to share history. Meanwhile there's no guarantee the convo will continue in the forked room as opposed to the original, causing general confusion.
+
+    Given we need to support ACLs anyway to prevent leaking past/future history (eg for public rooms who don't want to be "logged" other than for currently joined members), my proposal is that we need to fix ACLs and then users/clients can have the choice of either ACLing or perhaps forking their rooms if folks see a need for the feature.
+
+    There is a sidebar distraction regarding E2E crypto: we may need similar UX for rekeying non-PFS rooms to "seal" history from being visible to those who don't have the symmetric key. However it turns out this is irrelevant, as for the 1:1 upgrade use case we probably want to set the ACLs in retrospect (eg "share history from this arbitrary point in the past") whereas we can't re-encrypt messages retroactively without seriously compromising privacy.
+
+    So, the question becomes whether it's possible to implement effective ACLs. Options are:
+     1. Trust HSes to only serve up partial views of the graph to clients who have access. This is very vulnerable to abuse by malicious HSes
+     2. Only federate chunks of the graph to HSes on a need to know basis. This works for the special case of hiding past history as a once-off for a room (equivalent to not backfilling a room), but subsequently causes holes in the graph which may need to be filled by redacted-style events (or can we just leave them gappy?)
+     3. Use something like symmetric keyed crypto on s2s messages to let servers share events on a need to know basis. This isn't obviously any better than option 2 and takes up more bw.
+     4. Implement ACLs as multiple views of the same room - each view having a different graph linking the same underlying events. This could also let events be shared between multiple rooms in future by factoring them out of the DAGs (eg for sharing messages between thread-per-room forums). This changes federation substantially, but could be quite powerful. Problems with the DAG scaling could be solved by having multiple sets of parent links for each message in the DAG, one set per ACL group, thus muxing the multiple DAGs into a single multi-linked tree. State events probably cannot be ACLed and have to stick in the room(s) they apply to, so that all members of the room see consistent state. NB this doesn't preclude ACLs also being enforced at the E2E level.
+
+    Our options here seem to be: 
+     a) leave it as is and don't ACL, and fork (cloning events) if you want to protect history. this means implementing forking serverside, which is new, kludgey but relatively little work. On the plus side, PFS E2E crypto would retain its privacy if you tried to do this on a PFS chat.
+     b) option 2 from above. apply ACLs for the special case of refusing to federate old history to HSes who have no access to know it - this is presumably a minor extension of the current federation validation rules.
+     c) option 4 from above: fullblown permsg ACLs via multidags.
+
+    My recommendation is option b - it sets us going in the direction of ACLs, avoids the hacky ming of forking, and isn't really lost work. Thoughts?
+  created: 2015-04-01 00:00:03.0
+  id: '11459'
+  issue: '10355'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-01 00:00:03.0
+- author: erikj
+  body: |-
+    bq. Dave/Erik imply you should never ever be able to override the room config and enable inviting, because we have insufficient ACLs to avoid accidentally leaking past/future history from the 1:1 room to the invited person
+
+    That's not correct, Dave's and my concerns are mainly UX:
+
+    # I think most users expect "1:1 chats" to be and remain private. Allowing one user to arbitrarily decide to upgrade the room and include history without the other's consent violates the other's expectations.
+    ** If no history is included, then I think the only difference between Matthew's proposal and creating a new room on invite is that the original two users do not get the previous history in the new room. Perhaps this could be solved via the "linking" proposal, i.e. where the creation event includes a pointer to the previous room and event?
+    ** If we do allow upgrades of 1:1 rooms, then I think we should not try to special case the UI on any clients to make it clear that it is a full group room. This helps to manage expectations and makes it clear these "1:1 rooms" do not work as they do in other chat systems.
+    # Encouraging users to upgrade 1:1 chats fragments users' 1:1 conversation history. After each upgrade of a 1:1 room the original users have to create a new room if they wish to carry on private 1:1 chat. Keeping 1:1 history in a single (or very few) places is desirable, e.g. it makes it easier to find previous messages and discussions.
+    # With the "permanent 1:1 room" proposal we give the choice between creating a room such that either 1) there is a guarantee that the chat is private to the two original members or 2) both participants are aware and able to invite third parties into the room. Allowing all rooms to be upgradable removes this choice from most users, except for those who are comfortable with manually editing the permissions.
+    # Having the ability to declare that rooms can only have two (or N) people in may very well be a feature that client and AS implementers expect, and it would certainly give them more flexibility. For example, bridging to networks which have a notion of a 1:1 room is easier and gives a more natural UX when the remote is mapped to a matrix room that forbids invites. 
+
+    bq. So, the question becomes whether it's possible to implement effective ACLs.
+
+    Would it be possible to move the ACL implementation discussion to another issue? I think it would make the discussions easier to follow if we did.
+  created: 2015-04-01 11:30:49.0
+  id: '11461'
+  issue: '10355'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-01 11:30:49.0
+- author: matthew
+  body: |-
+    {quote}
+    1. I think most users expect "1:1 chats" to be and remain private. Allowing one user to arbitrarily decide to upgrade the room and include history without the other's consent violates the other's expectations.
+    {quote}
+
+    I agree that we ideally want to let both members of a room agree that it can be upgradable, somehow. 
+
+    {quote}
+     * If no history is included, then I think the only difference between Matthew's proposal and creating a new room on invite is that the original two users do not get the previous history in the new room. Perhaps this could be solved via the "linking" proposal, i.e. where the creation event includes a pointer to the previous room and event?
+    {quote}
+
+    The whole reason to invite someone into a 1:1 chat is to (selectively) share history of the ongoing conversation with them and loop them into the conversation.  Otherwise you might as well create a new room.
+
+    {quote}
+     * If we do allow upgrades of 1:1 rooms, then I think we should not try to special case the UI on any clients to make it clear that it is a full group room. This helps to manage expectations and makes it clear these "1:1 rooms" do not work as they do in other chat systems.
+    {quote}
+
+    Totally agreed that we shouldn't special-case 1:1 room UI - just as we're not doing so far.
+
+    {quote}
+    2. Encouraging users to upgrade 1:1 chats fragments users' 1:1 conversation history. After each upgrade of a 1:1 room the original users have to create a new room if they wish to carry on private 1:1 chat. Keeping 1:1 history in a single (or very few) places is desirable, e.g. it makes it easier to find previous messages and discussions.
+    {quote}
+
+    This is only true if you adopt a forking approach.  If you invite people into the existing room as per the current behaviour and my suggestion, you just kick them out of the room again when you want your 1:1 chat back again.
+
+    {quote}
+    3. With the "permanent 1:1 room" proposal we give the choice between creating a room such that either 1) there is a guarantee that the chat is private to the two original members or 2) both participants are aware and able to invite third parties into the room. Allowing all rooms to be upgradable removes this choice from most users, except for those who are comfortable with manually editing the permissions.
+    {quote}
+
+    Don't understand this - where in the "permanent 1:1 room" proposal do we support both participants being aware and able to invite third parties into the room?  As far as I can tell it removes ops from both users, stopping them from having any flexibility to upgrade the room?
+
+    All I am asking for here is to give users to have the flexibility to reconfigure the room from the default we provide rather than nannying them unnecessarily.  I totally agree that the default settings for rooms created with a 1:1 "intent" should prevent inviting 3rd party users, and will need to be overridden (ideally by both users) to allow 3rd parties to be invited, as per my proposal.  In other words, both users have ops in the room and can control the room as they see fit, rather than the server annoyingly deciding it knows better because we think we should second-guess how users should use the system.
+
+    {quote}
+    4. Having the ability to declare that rooms can only have two (or N) people in may very well be a feature that client and AS implementers expect, and it would certainly give them more flexibility. For example, bridging to networks which have a notion of a 1:1 room is easier and gives a more natural UX when the remote is mapped to a matrix room that forbids invites.
+    {quote}
+
+    I'd like to prioritise flexibility for end-users over flexibility for AS implementers - especially if we provide an AS base library that handles upgrades of 1:1 to multichat elegantly.
+  created: 2015-04-01 14:31:32.0
+  id: '11462'
+  issue: '10355'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-01 14:31:32.0
+- author: matthew
+  body: have tried to move the ACL-specific design discussion to spec-134.
+  created: 2015-04-01 14:44:51.0
+  id: '11464'
+  issue: '10355'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-01 14:44:51.0
+- author: matthew
+  body: 'One other thought: it might be nicer to just let the user who creates the room specify the initial powerlevel config - letting them specify as many users as they chose to have ops (or have no ops at all, if that''s what you really want).  This shifts responsibility for the room config back to the client, but it doesn''t seem like that unreasonable a thing to do, as it''s frustrating to end up in a group chat room whose (idle) creator has ops, but would have delegated ops when the room was created had s/he been prompted to do so.'
+  created: 2015-04-09 14:05:35.0
+  id: '11478'
+  issue: '10355'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-09 14:05:35.0
+- author: matthew
+  body: Another use case for inviting users into a 1:1 chat is if I want to invite an AS into the room in order to bridge it to another medium (e.g. inviting in the OM SMS GW in order to get SMS notifs whenever something happens in that chat).
+  created: 2015-04-18 12:30:54.0
+  id: '11506'
+  issue: '10355'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-18 12:30:54.0
+- author: erikj
+  body: |-
+    IRL conclusion:
+
+    Add a "presets" key on to the /createRoom api, which has the following possible values (for now):
+    - {{one-to-one}}: All initial users (creator + those in invite list) have full ops and are added to the {{may_join}} list.
+    - {{group}}: Only creator has ops.
+
+    In addition, the user can specify a mapping of event_type -> content that are used to override the default auth events created by the given preset.
+  created: 2015-07-01 14:03:13.0
+  id: '11956'
+  issue: '10355'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-07-01 14:03:13.0
+- author: matthew
+  body: |-
+    Erik, did this actually happen?  Looking at synapse/handlers/room.py, I see:
+
+        PRESETS_DICT = {
+            RoomCreationPreset.PRIVATE_CHAT: {
+                "join_rules": JoinRules.INVITE,
+                "history_visibility": "invited",
+                "original_invitees_have_ops": False,
+            },
+            RoomCreationPreset.PUBLIC_CHAT: {
+                "join_rules": JoinRules.PUBLIC,
+                "history_visibility": "shared",
+                "original_invitees_have_ops": False,
+            },
+        }
+
+    ...neither of which sets "original_invitees_have_ops", and no evidence of a "presets" key.
+
+    Meanwhile, i see no mention of 'presets' in matrix-doc at all.  Can we finish this?
+  created: 2015-09-22 22:13:35.0
+  id: '12153'
+  issue: '10355'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-22 22:13:35.0
+- author: kegan
+  body: |-
+    Looks like this is now done:
+    https://github.com/matrix-org/matrix-doc/pull/63
+
+    Reopen this if it is still outstanding.
+  created: 2015-10-13 17:26:54.0
+  id: '12257'
+  issue: '10355'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 17:26:54.0

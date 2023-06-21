@@ -1,0 +1,78 @@
+---
+summary: License is missing & unspecified (needs LICENSE.txt)
+---
+created: 2016-06-16 03:31:30.0
+creator: dlmetcalf
+description: |-
+  The license on the spec itself has not been specified yet. From discussions, this was just an oversight.
+
+  License should be specified (e.g. as LICENSE.txt file) in the GitHub repo and generated web docs.  Matt suggests it will likely be ASLv2 or CC.
+
+  (The Olm spec has been specified and is public domain).
+id: '12710'
+key: SPEC-412
+number: '412'
+priority: '2'
+project: '10001'
+reporter: dlmetcalf
+resolution: '1'
+resolutiondate: 2016-07-12 23:15:57.0
+status: '5'
+type: '1'
+updated: 2016-07-12 23:15:57.0
+votes: '0'
+watches: '2'
+workflowId: '12810'
+---
+actions:
+- author: richvdh
+  body: |-
+    Certainly this is an unfortunate oversight.
+
+    By Matt, do you mean Matthew? :-p
+
+    (The Olm spec claims to be in the public domain, but is non-specific about its license.)
+  created: 2016-06-16 10:45:36.0
+  id: '13001'
+  issue: '12710'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-16 10:45:36.0
+- author: dlmetcalf
+  body: |-
+    Ah, yes.  I was referring to @Matthew.  :)   Thanks Richard.  
+
+    Regarding Olm, you are correct, in most (but not all) jurisdictions the dedication "The Olm specification (this document) is hereby placed in the public domain." is already valid and effective without license.  In some places that doesn't work though (e.g. due to irrevocable rights protected in legislation), so it should probably be made "CC0" - which effectively means it'll be public domain where possible, or under the most open license possible where not.
+  created: 2016-06-16 11:33:10.0
+  id: '13006'
+  issue: '12710'
+  type: comment
+  updateauthor: dlmetcalf
+  updated: 2016-06-16 11:33:10.0
+- author: richvdh
+  body: |-
+    It is notable that the standard CC-BY licenses explicitly do not make any statements about transfer of patents. We are keen to make it clear that we (and, importantly, any other contributors to the spec) are not claiming any patents over the documented APIs (to avoid any concerns over a future Oracle vs Google).  CC licenses are aimed at scientific and educational documents, where it is more appropriate to separate the patent from the copyright.
+
+    I think ASLv2 is appropriate for us; the spec is versioned and built in a similar way to software, and ASL is short and to the point.
+  created: 2016-06-16 13:22:46.0
+  id: '13008'
+  issue: '12710'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-16 13:22:46.0
+- author: dlmetcalf
+  body: Trademarks are another important issue.  If full applications not already filed, "Intent to Use" applications at least should be done immediately.  See also the recent dramas experienced by the Let's Encrypt team.
+  created: 2016-06-27 05:16:19.0
+  id: '13020'
+  issue: '12710'
+  type: comment
+  updateauthor: dlmetcalf
+  updated: 2016-06-27 05:16:19.0
+- author: richvdh
+  body: Fixed by https://github.com/matrix-org/matrix-doc/pull/357.
+  created: 2016-07-12 23:15:57.0
+  id: '13050'
+  issue: '12710'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-12 23:15:57.0

@@ -1,0 +1,33 @@
+---
+summary: To make it easiest to hyperlink the spec, include version number in URL?
+---
+assignee: illicitonion
+created: 2015-10-02 00:26:26.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  So, http://matrix.org/docs/spec would 302 to http://matrix.org/docs/spec/0.1.0, and in turn anyone linking to anchors could then get a unique and unbreakable link to http://matrix.org/docs/spec/0.1.0#voip or whatever, rather than all our http://matrix.org/docs/spec/#voip style links going stale or pointing to newer stuff than intended as the spec evolves
+id: '11987'
+key: SPEC-245
+number: '245'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-12-10 15:38:22.0
+status: '5'
+type: '1'
+updated: 2015-12-10 15:38:22.0
+votes: '0'
+watches: '2'
+workflowId: '12090'
+---
+actions:
+- author: kegan
+  body: This is pending the big {{r0}} switchover as discussed in SPEC-250.
+  created: 2015-10-14 15:29:57.0
+  id: '12267'
+  issue: '11987'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-14 15:29:57.0

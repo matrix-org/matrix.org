@@ -1,0 +1,30 @@
+---
+summary: next_batch is mentioned in the prose for /search, but not in the endpoint params
+---
+created: 2015-12-16 10:48:26.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12215'
+key: SPEC-305
+number: '305'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-12-17 14:13:13.0
+status: '5'
+type: '1'
+updated: 2015-12-17 14:13:13.0
+votes: '0'
+watches: '2'
+workflowId: '12318'
+---
+actions:
+- author: richvdh
+  body: Fixed by https://github.com/matrix-org/matrix-doc/pull/236
+  created: 2015-12-17 14:13:09.0
+  id: '12481'
+  issue: '12215'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-17 14:13:09.0

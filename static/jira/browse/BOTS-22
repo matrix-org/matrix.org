@@ -1,0 +1,37 @@
+---
+summary: Need to ensure IRC AS supports handling multiple 1:1 chats sensibly
+---
+created: 2015-03-29 23:17:29.0
+creator: matthew
+description: |-
+  The first 1:1 chat with an IRC user should be turned into a PM.
+
+  Secondary ones should cause a new private channel to be created (if the IRC server allows user creation of rooms), using some kind of configurable naming scheme (handling existing channel name clashes nicely).
+
+  If the Matrix user tries to invite a 3rd party into a 1:1 chat backed by a PM, the convo on IRC should be migrated to a new private channel.
+
+  See SPEC-17 for more ruminations on this.
+id: '11286'
+key: BOTS-22
+number: '22'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-06-02 11:27:27.0
+status: '5'
+type: '2'
+updated: 2016-06-02 11:27:27.0
+votes: '0'
+watches: '2'
+workflowId: '11386'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/64
+  created: 2016-06-02 11:27:27.0
+  id: '12986'
+  issue: '11286'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 11:27:27.0

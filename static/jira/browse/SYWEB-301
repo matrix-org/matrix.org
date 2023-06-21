@@ -1,0 +1,20 @@
+---
+summary: 'We should linkify @name:domain and #alias:domain in messages'
+---
+created: 2015-02-23 20:25:17.0
+creator: matthew
+description: ''
+id: '11129'
+key: SYWEB-301
+number: '301'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-02-23 20:39:14.0
+votes: '0'
+watches: '1'
+workflowId: '11229'
+---
+actions: null

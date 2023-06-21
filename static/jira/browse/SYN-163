@@ -1,0 +1,22 @@
+---
+summary: PDU auth_events and prev_events can be retrieved in a different order than they were stored
+---
+created: 2014-11-24 10:40:34.0
+creator: markjh
+description: ''
+id: '10697'
+key: SYN-163
+number: '163'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-01-15 10:51:52.0
+status: '5'
+type: '1'
+updated: 2015-01-15 13:34:46.0
+votes: '0'
+watches: '1'
+workflowId: '10797'
+---
+actions: null

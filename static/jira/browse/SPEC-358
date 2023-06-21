@@ -1,0 +1,28 @@
+---
+summary: /search spec says the only possible JSON body parameter is `search_categories`, but the example also has `order_by` and `groupings`
+---
+created: 2016-02-24 12:52:13.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12520'
+key: SPEC-358
+number: '358'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:20.0
+votes: '0'
+watches: '2'
+workflowId: '12620'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/644'
+  created: 2016-10-28 16:28:20.0
+  id: '13453'
+  issue: '12520'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:20.0

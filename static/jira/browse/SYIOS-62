@@ -1,0 +1,25 @@
+---
+summary: 'MXSession: The 2 initial steps (MXStore loading and events stream resume) should be performed separately'
+---
+assignee: manu
+created: 2015-01-20 15:54:13.0
+creator: gforet
+description: |-
+  The SDK should provide 2 distinct API to load the MXStore and resume the events stream in order to let the client handle separately this 2 steps.
+  Then the client will be able to relaunch initial sync on network failure without closing MXSession instance.
+id: '10960'
+key: SYIOS-62
+number: '62'
+priority: '2'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-02-09 15:16:04.0
+status: '5'
+type: '1'
+updated: 2015-02-09 15:16:04.0
+votes: '0'
+watches: '1'
+workflowId: '11060'
+---
+actions: null

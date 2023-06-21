@@ -1,0 +1,30 @@
+---
+summary: The event field returned by /context is not documented in the CS API
+---
+created: 2016-02-26 16:40:42.0
+creator: manu
+description: ''
+id: '12527'
+key: SPEC-360
+number: '360'
+priority: '3'
+project: '10001'
+reporter: manu
+resolution: '1'
+resolutiondate: 2016-09-27 17:51:14.0
+status: '5'
+type: '1'
+updated: 2016-09-27 17:51:14.0
+votes: '0'
+watches: '2'
+workflowId: '12627'
+---
+actions:
+- author: richvdh
+  body: this got fixed, somewhere along the line.
+  created: 2016-09-27 17:51:14.0
+  id: '13144'
+  issue: '12527'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:51:14.0

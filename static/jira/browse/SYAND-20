@@ -1,0 +1,22 @@
+---
+summary: 'App crashes if you scrollback and hit BACK before it finishes '
+---
+created: 2015-02-13 18:12:25.0
+creator: kegan
+description: ''
+id: '11052'
+key: SYAND-20
+number: '20'
+priority: '1'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-16 08:49:56.0
+status: '5'
+type: '1'
+updated: 2015-02-16 08:49:56.0
+votes: '0'
+watches: '1'
+workflowId: '11152'
+---
+actions: null

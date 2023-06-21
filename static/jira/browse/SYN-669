@@ -1,0 +1,35 @@
+---
+summary: I get events from a left room after upgrading my HS to 0.14
+---
+created: 2016-04-01 08:17:57.0
+creator: gergelypolonkai
+description: |-
+  After updating my personal HS to 0.14, I experience strange behaviour in my clients: Android’s Matrix Console shows me a room with user names as its name, while Vector web shows I’m joined to #matrix:matrix.org, even though I have left it weeks ago.
+
+  Upon “opening” the room, the Android Console is just loading and loading, failing to display any events after minutes; vector-web, on the other hand, shows me recent(ish) events, even though I’m pretty sure I don’t receive everything.
+
+  When I try to leave the room in Vector web, I get the error message “M_UNKNOWN: Room '!cURbafjkfsMDVwdRDQ:matrix.org' does not exist”
+
+  See events past https://vector.im/beta/#/room/!XqBunHwQIXUiqCaoxq:matrix.org/$145936987410rsFHA:polonkai.eu for some discussion about the problem.
+id: '12606'
+key: SYN-669
+number: '669'
+priority: '2'
+project: '10000'
+reporter: gergelypolonkai
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:21.0
+votes: '0'
+watches: '2'
+workflowId: '12706'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1526'
+  created: 2016-11-07 18:29:21.0
+  id: '13835'
+  issue: '12606'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:21.0

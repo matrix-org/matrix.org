@@ -1,0 +1,22 @@
+---
+summary: test with <stuff>
+---
+created: 2016-06-01 14:33:49.0
+creator: kegan
+description: ''
+id: '12686'
+key: BOTS-193
+number: '193'
+priority: '3'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-06-01 14:33:55.0
+status: '6'
+type: '1'
+updated: 2016-06-01 14:33:55.0
+votes: '0'
+watches: '1'
+workflowId: '12786'
+---
+actions: null

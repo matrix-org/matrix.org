@@ -1,0 +1,29 @@
+---
+summary: HTTP error 500 login/registration with non-ASCII characters in password
+---
+created: 2016-09-23 13:01:03.0
+creator: mienaikage
+description: |-
+  POST https://matrix.org/_matrix/client/api/v1/login Content-Type: application/json {"user":"@test:matrix.org","password":"ßßßßßß","type":"m.login.password"}
+
+  POST https://matrix.org/_matrix/client/api/v1/login Content-Type: application/json {"user":"@test:matrix.org","password":"éééééé","type":"m.login.password"}
+
+  Both receive the following response. Various other characters are affected.
+
+  { "errcode": "M_UNKNOWN", "error": "Internal server error" }
+id: '12839'
+key: SYN-776
+number: '776'
+priority: '3'
+project: '10000'
+reporter: mienaikage
+resolution: '3'
+resolutiondate: 2016-11-03 10:15:31.0
+status: '5'
+type: '1'
+updated: 2016-11-03 10:15:31.0
+votes: '0'
+watches: '1'
+workflowId: '12939'
+---
+actions: null

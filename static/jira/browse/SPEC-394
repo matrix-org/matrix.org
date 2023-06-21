@@ -1,0 +1,33 @@
+---
+summary: Read receipts can be sent for wrong event because client doesn't know what the last event is
+---
+created: 2016-04-22 10:10:58.0
+creator: dbkr
+description: |-
+  When streaming events in the client-server API, events will not necessarily come down in the order the server thinks is correct (ie. the order you would then get the messages in if you synced from scratch again). This causes a couple of issues:
+
+  1) Events can end up in a different order when you refresh the client (potentially confusing but probably not a huge deal)
+
+  2) Notifications can get stuck unread because the client sends a receipt for the most recent event to come down the stream, but it has no way to know that, as far is the server is concerned, this isn't actually the latest event. Therefore my notification for the actual latest message will remain unread, even though I've read that room, until either I re-sync a client from scratch and send an RR for the actual latest event or another messages arrives and I sent an RR for that.
+id: '12638'
+key: SPEC-394
+number: '394'
+priority: '3'
+project: '10001'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:31.0
+votes: '0'
+watches: '2'
+workflowId: '12738'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/670'
+  created: 2016-10-28 16:28:31.0
+  id: '13479'
+  issue: '12638'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:31.0

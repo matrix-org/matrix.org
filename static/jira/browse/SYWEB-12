@@ -1,0 +1,28 @@
+---
+summary: Need a way to view and edit room state
+---
+assignee: kegan
+created: 2014-09-16 00:31:20.0
+creator: matthew
+description: |-
+  We need a way to view and edit arbitrary room state.  Specifically:
+   * m.room.name and m.room.topic (already covered in the main UI)
+   * the ban list
+   * an avatar for the room?
+   * other arbitrary data?
+id: '10027'
+key: SYWEB-12
+number: '12'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-30 17:18:45.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:57:59.0
+votes: '0'
+watches: '1'
+workflowId: '10396'
+---
+actions: null

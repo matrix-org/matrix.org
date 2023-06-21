@@ -1,0 +1,30 @@
+---
+summary: receipts section still refers to initialSync
+---
+created: 2016-07-22 08:58:52.0
+creator: neb
+description: |-
+  Submitted by @richvdh:sw1v.org
+  really thought I'd got all of these...
+id: '12763'
+key: SPEC-435
+number: '435'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-10-28 16:28:40.0
+votes: '0'
+watches: '2'
+workflowId: '12863'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/695'
+  created: 2016-10-28 16:28:40.0
+  id: '13504'
+  issue: '12763'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:40.0

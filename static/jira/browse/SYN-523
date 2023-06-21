@@ -1,0 +1,59 @@
+---
+summary: Initialsync sometimes gives presence for only the current user
+---
+created: 2015-11-25 14:09:50.0
+creator: dbkr
+description: |-
+  Just repro'ed this & got initialsync that looks like:
+
+  {noformat}
+  {
+      "end": "s6709003_173146_25003_61646_780",
+      "presence": [
+          {
+              "content": {
+                  "avatar_url": "mxc://matrix.org/IssHdyiXMcSnRCxCzqoaocGL",
+                  "displayname": "Dave",
+                  "last_active_ago": 611940,
+                  "presence": "online",
+                  "user_id": "@dave:matrix.org"
+              },
+              "type": "m.presence"
+          }
+      ],
+  {noformat}
+
+  etc etc
+
+
+  Exact time of request: Wed, 25 Nov 2015 14:01:02 GMT
+id: '12136'
+key: SYN-523
+number: '523'
+priority: '2'
+project: '10000'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:36.0
+votes: '0'
+watches: '3'
+workflowId: '12239'
+---
+actions:
+- author: matthew
+  body: '[~markjh] - any thoughts on what could be going on here? I get it roughly 20% of the time currently, which makes presence pretty useless.'
+  created: 2015-12-14 22:35:41.0
+  id: '12472'
+  issue: '12136'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-14 22:35:41.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1420'
+  created: 2016-11-07 18:28:36.0
+  id: '13728'
+  issue: '12136'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:36.0

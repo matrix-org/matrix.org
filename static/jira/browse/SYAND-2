@@ -1,0 +1,32 @@
+---
+summary: Be smarter about recents
+---
+created: 2015-01-19 10:33:04.0
+creator: joachim
+description: |-
+  We need to enforce a white list of event types that update the room's recent display. Many events don't display any message but still update the room's latest event.
+  Typing notifs even update the room's most recent timestamp to 0 which then sends the room to the bottom of the list
+id: '10948'
+key: SYAND-2
+number: '2'
+priority: '1'
+project: '10201'
+reporter: joachim
+resolution: '1'
+resolutiondate: 2015-01-27 09:30:46.0
+status: '5'
+type: '1'
+updated: 2015-01-27 09:30:46.0
+votes: '0'
+watches: '1'
+workflowId: '11048'
+---
+actions:
+- author: joachim
+  body: https://github.com/matrix-org/matrix-android-sdk/commit/bdd2bbba
+  created: 2015-01-19 16:06:50.0
+  id: '11152'
+  issue: '10948'
+  type: comment
+  updateauthor: joachim
+  updated: 2015-01-19 16:06:50.0

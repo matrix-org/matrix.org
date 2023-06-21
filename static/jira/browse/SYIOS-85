@@ -1,0 +1,20 @@
+---
+summary: iOS appears to retry failed fetches for avatars every time they're needed
+---
+created: 2015-02-16 15:12:02.0
+creator: dbkr
+description: ''
+id: '11076'
+key: SYIOS-85
+number: '85'
+priority: '3'
+project: '10200'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2015-02-17 09:40:08.0
+votes: '0'
+watches: '1'
+workflowId: '11176'
+---
+actions: null

@@ -1,0 +1,22 @@
+---
+summary: 'Messages you send are treated as new messages '
+---
+created: 2015-02-13 18:24:33.0
+creator: kegan
+description: ''
+id: '11055'
+key: SYAND-23
+number: '23'
+priority: '2'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-16 07:43:14.0
+status: '5'
+type: '1'
+updated: 2015-02-16 07:43:14.0
+votes: '0'
+watches: '1'
+workflowId: '11155'
+---
+actions: null

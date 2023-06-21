@@ -1,0 +1,60 @@
+---
+summary: OSX install instructions didn't work out of the box
+---
+created: 2015-04-25 07:39:36.0
+creator: illicitonion
+description: |-
+  On OSX 10.10.2 with Xcode 6.3.1 installed, and Python 2.7.6 (barely used), I followed the instructions in README.md:
+
+  $ sudo easy_install pip
+  $ sudo pip install virtualenv
+  $ virtualenv ~/.virualenvs/synapse
+  $ source ~/.virtualenvs/synapse/bin/activate
+  $ pip install --process-dependency-links https://github.com/matrix-org/synapse/tarball/master
+
+  and got an error because libffi was missing. [if I paste the error message into here, Jira gives me a beautiful exception, I guess because of some unicode in there it doesn't understand].
+
+  I installed libffi with brew:
+  $ brew install pkg-config libffi
+
+  re-ran the pip command, and it worked fine.
+
+  It may be worth mentioning this in either the "Installing prerequisites on Mac OS X:" section, or the "Troubleshooting" section.
+id: '11365'
+key: SYN-358
+number: '358'
+priority: '3'
+project: '10000'
+reporter: illicitonion
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:57.0
+votes: '0'
+watches: '4'
+workflowId: '11465'
+---
+actions:
+- author: dbkr
+  body: Are you using python from homebrew or OS X's standard python?
+  created: 2015-05-14 11:52:57.0
+  id: '11747'
+  issue: '11365'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 11:52:57.0
+- author: dbkr
+  body: Response via email was that it's OS X python, which is surprising as OS X I think has libffi built in, and it's fine on my machine with neither libffi nor python from homebrew.
+  created: 2015-05-14 17:19:02.0
+  id: '11759'
+  issue: '11365'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 17:19:02.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1313'
+  created: 2016-11-07 18:27:57.0
+  id: '13634'
+  issue: '11365'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:57.0

@@ -1,0 +1,40 @@
+---
+summary: Setting up a new homeserver (and upgrading older ones) is painful w.r.t. generating new keys
+---
+assignee: markjh
+created: 2014-10-27 11:00:49.0
+creator: matthew
+description: |-
+  Lots of people (Manu, Giom, me) having problems upgrading homeservers or installing new ones due to the new crypto keys.
+
+  Need to walk through the process as a newbie (or look at someone else doing it) and audit the doc - both README.rst and any other tutorials people might be reading...
+id: '10502'
+key: SYN-113
+number: '113'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-04 16:31:19.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:45.0
+votes: '0'
+watches: '2'
+workflowId: '10606'
+---
+actions:
+- author: markjh
+  body: |-
+    I've updated the installation guide in the README.rst a bit.
+    https://github.com/matrix-org/synapse/commit/402d0809
+    https://github.com/matrix-org/synapse/commit/89ba802b
+    https://github.com/matrix-org/synapse/commit/dca3ba2f
+
+    I've tested the new installation instructions against a new install and it seems to work.
+  created: 2014-11-04 16:28:11.0
+  id: '10727'
+  issue: '10502'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-04 16:28:11.0

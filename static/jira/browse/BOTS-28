@@ -1,0 +1,20 @@
+---
+summary: NEB doesn't escape HTML entities in text when putting them into html formatted bodies
+---
+created: 2015-04-29 13:49:50.0
+creator: dbkr
+description: ''
+id: '11403'
+key: BOTS-28
+number: '28'
+priority: '2'
+project: '10101'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2015-04-29 13:49:50.0
+votes: '0'
+watches: '1'
+workflowId: '11503'
+---
+actions: null

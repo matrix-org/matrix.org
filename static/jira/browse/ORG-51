@@ -1,0 +1,30 @@
+---
+summary: guides should be updated for v2 sync
+---
+created: 2016-04-10 12:05:37.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '12615'
+key: ORG-51
+number: '51'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-05-05 11:46:33.0
+status: '5'
+type: '1'
+updated: 2016-05-05 11:46:49.0
+votes: '0'
+watches: '2'
+workflowId: '12715'
+---
+actions:
+- author: richvdh
+  body: dup of ORG-47
+  created: 2016-05-05 11:46:22.0
+  id: '12903'
+  issue: '12615'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-05 11:46:22.0

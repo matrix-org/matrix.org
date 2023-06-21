@@ -1,0 +1,44 @@
+---
+summary: Races in cache invalidation.
+---
+assignee: markjh
+created: 2015-05-05 11:55:01.0
+creator: markjh
+description: |-
+  Invalidating the cache after an INSERT can race with updating the cache after a SELECT leaving the cache with a stale entry.
+
+  {code}
+            Set K=V2                  Get K
+   ========================== =======================
+                              - Check Cache for K
+                              - DB Transaction
+                                * Select K; -> V1
+   - DB Transaction
+     * Update (K,V2);
+   - Invalidate Cache for K
+                              - Update Cache with (K,V1)
+  {code}
+id: '11504'
+key: SYN-369
+number: '369'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-05-05 17:46:50.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:09.0
+votes: '0'
+watches: '1'
+workflowId: '11604'
+---
+actions:
+- author: markjh
+  body: Since the cache logic happens entirely on the main synapse thread we can fix this by tracking a sequence number for each cache. A SELECT will only update the cache if the version number is the same before and after the SELECT executes and each time we INSERT a value we increment the version number.
+  created: 2015-05-05 12:00:09.0
+  id: '11717'
+  issue: '11504'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-05-05 12:00:09.0

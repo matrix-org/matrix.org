@@ -1,0 +1,24 @@
+---
+summary: Option on push notifs to withhold the body from push messages
+---
+created: 2015-09-22 22:25:04.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  As a privacy measure, give users the option to ask their HS not to prod sydent with the actual body of the message
+id: '11926'
+key: SYN-485
+number: '485'
+priority: '2'
+project: '10000'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-01-06 11:49:11.0
+status: '5'
+type: '1'
+updated: 2016-01-06 11:49:11.0
+votes: '0'
+watches: '1'
+workflowId: '12029'
+---
+actions: null

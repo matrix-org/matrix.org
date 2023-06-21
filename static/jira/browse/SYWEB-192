@@ -1,0 +1,50 @@
+---
+summary: After leaving a room by clicking on the (x) in recents, recents is corrupt
+---
+assignee: matthew
+created: 2014-11-27 19:15:17.0
+creator: matthew
+description: |-
+  I left #leorandomtest:matrix.org by hitting (x).  The recents list immediately updated to say that I'd left #hn:matrix.org instead (lies).
+
+  Also, we have a race condition that as I tap on the (x) the list might move under me depending on activities in the rooms, causing me to leave the wrong room.  We could mitigate it by using mouseover to freeze list updates if you're hovering over a (x).
+id: '10734'
+key: SYWEB-192
+number: '192'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2015-01-26 15:09:05.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:54.0
+votes: '0'
+watches: '2'
+workflowId: '10834'
+---
+actions:
+- author: kegan
+  body: For the race you mention, I would prefer if we got rid of the X and moved the Leave button from the settings cog to become a first-class citizen. See SYWEB-184
+  created: 2014-12-01 13:17:35.0
+  id: '10901'
+  issue: '10734'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 13:17:35.0
+- author: kegan
+  body: Not seeing any evidence of leaving a room via the X leaving a different room. Can you reproduce this?
+  created: 2014-12-01 14:33:46.0
+  id: '10906'
+  issue: '10734'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 14:33:46.0
+- author: matthew
+  body: I never saw this again.
+  created: 2015-01-26 15:09:05.0
+  id: '11190'
+  issue: '10734'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-26 15:09:05.0

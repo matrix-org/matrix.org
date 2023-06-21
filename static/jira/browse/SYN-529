@@ -1,0 +1,30 @@
+---
+summary: Password reset doesn't work on users with old accounts
+---
+created: 2015-11-28 19:20:55.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  If users created accounts and provided an email address only on sydent, then the HS doesn't know about it and apparently password reset fails with 'HS doesn't recognise this email address
+id: '12149'
+key: SYN-529
+number: '529'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:38.0
+votes: '0'
+watches: '2'
+workflowId: '12252'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1427'
+  created: 2016-11-07 18:28:38.0
+  id: '13734'
+  issue: '12149'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:38.0

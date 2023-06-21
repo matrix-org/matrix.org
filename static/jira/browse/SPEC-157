@@ -1,0 +1,41 @@
+---
+summary: Invite powerlevel
+---
+created: 2015-04-21 17:15:16.0
+creator: leonerd
+description: ''
+id: '11355'
+key: SPEC-157
+number: '157'
+priority: '3'
+project: '10001'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2016-06-13 09:29:47.0
+status: '5'
+type: '1'
+updated: 2016-06-13 09:29:47.0
+votes: '0'
+watches: '2'
+workflowId: '11455'
+---
+actions:
+- author: leonerd
+  body: |-
+    This has now been "silently" implemented in Synapse (https://github.com/matrix-org/synapse/commit/55fcf62e9cef9ef90dfdfc9f2fe3f6a6786780b8); by adding a key called "invite" to m.room.power_levels with the appropriate semantics.
+
+    This probably wants adding to official documentation if we're happy with the general idea.
+  created: 2015-04-29 19:26:04.0
+  id: '11607'
+  issue: '11355'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-29 19:26:04.0
+- author: richvdh
+  body: This was added in c-s spec 0.1.0.
+  created: 2016-06-13 09:29:47.0
+  id: '12997'
+  issue: '11355'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-13 09:29:47.0

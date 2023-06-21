@@ -1,0 +1,31 @@
+---
+summary: Swagger docs for CS V2 and AS
+---
+assignee: illicitonion
+created: 2015-03-14 02:51:22.0
+creator: matthew
+description: ''
+id: '11234'
+key: SPEC-127
+number: '127'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-12-10 15:52:24.0
+status: '5'
+type: '2'
+updated: 2015-12-10 15:52:24.0
+votes: '0'
+watches: '3'
+workflowId: '11334'
+---
+actions:
+- author: richvdh
+  body: I believe the V2 CS API is now mostly swaggered ([~illicitonion] ?) but the AS API still needs this treatment.
+  created: 2015-12-01 16:17:33.0
+  id: '12406'
+  issue: '11234'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 16:17:33.0

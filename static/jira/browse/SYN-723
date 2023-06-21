@@ -1,0 +1,28 @@
+---
+summary: Find a non-google alternative to reCAPTCHA to keep the Fdroid crowd happy
+---
+created: 2016-07-11 21:16:37.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12740'
+key: SYN-723
+number: '723'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:42.0
+votes: '0'
+watches: '2'
+workflowId: '12840'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1561'
+  created: 2016-11-07 18:29:42.0
+  id: '13884'
+  issue: '12740'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:42.0

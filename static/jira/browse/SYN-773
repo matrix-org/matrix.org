@@ -1,0 +1,30 @@
+---
+summary: synapse barfs if your password contains non-ascii characters
+---
+created: 2016-09-19 10:54:15.0
+creator: neb
+description: Submitted by @dave:matrix.org
+id: '12836'
+key: SYN-773
+number: '773'
+priority: '3'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-11-03 10:51:30.0
+status: '5'
+type: '1'
+updated: 2016-11-03 10:51:30.0
+votes: '0'
+watches: '2'
+workflowId: '12936'
+---
+actions:
+- author: dbkr
+  body: https://github.com/matrix-org/synapse/pull/1191
+  created: 2016-11-03 10:43:56.0
+  id: '13526'
+  issue: '12836'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-11-03 10:43:56.0

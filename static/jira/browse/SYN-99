@@ -1,0 +1,28 @@
+---
+summary: Federation tests don't test the actual transaction JSON sent.
+---
+created: 2014-10-14 10:41:40.0
+creator: markjh
+description: ''
+id: '10468'
+key: SYN-99
+number: '99'
+priority: '3'
+project: '10000'
+reporter: markjh
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:19.0
+votes: '0'
+watches: '2'
+workflowId: '10572'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1229'
+  created: 2016-11-07 18:27:19.0
+  id: '13552'
+  issue: '10468'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:19.0

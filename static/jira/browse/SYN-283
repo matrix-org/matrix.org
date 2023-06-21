@@ -1,0 +1,27 @@
+---
+summary: client/api/v1/login/fallback not implemented
+---
+created: 2015-02-19 09:09:07.0
+creator: manu
+description: |-
+  The method is described in the spec here: 
+  http://matrix.org/docs/spec/#fallback
+
+  But https://matrix.org/_matrix/client/api/v1/login/fallback returns:
+  {"errcode":"M_UNRECOGNIZED","error":"Unrecognized request"}
+id: '11092'
+key: SYN-283
+number: '283'
+priority: '2'
+project: '10000'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-05-07 11:36:12.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:05.0
+votes: '0'
+watches: '1'
+workflowId: '11192'
+---
+actions: null

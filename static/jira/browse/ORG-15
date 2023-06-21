@@ -1,0 +1,30 @@
+---
+summary: Website is broken on IE.
+---
+created: 2015-02-18 14:20:30.0
+creator: matthew
+description: ''
+id: '11088'
+key: ORG-15
+number: '15'
+priority: '2'
+project: '10003'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2017-03-21 10:51:25.0
+status: '5'
+type: '1'
+updated: 2017-03-21 10:51:25.0
+votes: '0'
+watches: '2'
+workflowId: '11188'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix.org/issues/12
+  created: 2017-03-21 10:51:25.0
+  id: '14008'
+  issue: '11088'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 10:51:25.0

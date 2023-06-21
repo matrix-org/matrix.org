@@ -1,0 +1,28 @@
+---
+summary: We should check "depth" increases.
+---
+created: 2014-12-10 11:58:10.0
+creator: erikj
+description: ''
+id: '10804'
+key: SYN-196
+number: '196'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:28.0
+votes: '0'
+watches: '2'
+workflowId: '10904'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1254'
+  created: 2016-11-07 18:27:28.0
+  id: '13572'
+  issue: '10804'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:28.0

@@ -1,0 +1,68 @@
+---
+summary: Inviting a user on a non-existent domain blocks for ages (indefinitely?)
+---
+created: 2015-10-25 00:57:20.0
+creator: neb
+description: ''
+id: '12039'
+key: SYN-511
+number: '511'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '10200'
+type: '1'
+updated: 2016-11-07 18:28:32.0
+votes: '0'
+watches: '5'
+workflowId: '12142'
+---
+actions:
+- author: kegan
+  body: The JS SDK just calls straight through to the HTTP API. Synapse will try the domain for a while then give up. When testing just now, it was about 30s before coming up with an Internal Server Error. Either way, this is not blocking forever and this is not the JS SDK's role to fix this.
+  created: 2015-11-03 10:23:11.0
+  id: '12297'
+  issue: '12039'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 10:23:50.0
+- author: matthew
+  body: Rather than won't fixing we should make this a spec or synapse bug then, as it's still a major bad UX bug(!!)
+  created: 2015-11-03 11:00:48.0
+  id: '12311'
+  issue: '12039'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-03 11:00:48.0
+- author: kegan
+  body: 30 seconds seems reasonable though?
+  created: 2015-11-03 11:24:23.0
+  id: '12314'
+  issue: '12039'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 11:24:23.0
+- author: matthew
+  body: It's terrible UX if the user mistypes an mxid and then sits there staring at a spinner for 30s.  If Synapse gets an early failure (i.e. a 500 or 404 or connection refused) from the target homeserver, it should fail immediately rather than block and timeout.
+  created: 2015-11-03 11:33:12.0
+  id: '12315'
+  issue: '12039'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-03 11:33:12.0
+- author: erikj
+  body: What timeouts would people like on this? Do we want a different timeout if we know the domain has a HS?
+  created: 2016-01-06 10:45:44.0
+  id: '12528'
+  issue: '12039'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 10:45:44.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1411'
+  created: 2016-11-07 18:28:32.0
+  id: '13720'
+  issue: '12039'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:32.0

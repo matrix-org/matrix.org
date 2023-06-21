@@ -1,0 +1,36 @@
+---
+summary: The webclient should announce the version of the homeserver you're logged into
+---
+created: 2014-09-22 18:23:33.0
+creator: matthew
+description: ''
+id: '10366'
+key: SYWEB-77
+number: '77'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10200'
+type: '2'
+updated: 2015-02-16 15:20:09.0
+votes: '0'
+watches: '2'
+workflowId: '10469'
+---
+actions:
+- author: kegan
+  body: Do we even have a version API?
+  created: 2014-11-26 17:22:10.0
+  id: '10866'
+  issue: '10366'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-26 17:22:10.0
+- author: kegan
+  body: Blocked on HS version API.
+  created: 2014-11-27 13:12:54.0
+  id: '10880'
+  issue: '10366'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-27 13:12:54.0

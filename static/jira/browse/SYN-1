@@ -1,0 +1,78 @@
+---
+summary: Homeservers should announce MOTD, canonical name, human name, version, etc...
+---
+created: 2014-09-15 23:24:58.0
+creator: matthew
+description: ''
+id: '10001'
+key: SYN-1
+number: '1'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '10200'
+type: '2'
+updated: 2016-11-07 18:27:09.0
+votes: '0'
+watches: '4'
+workflowId: '10335'
+---
+actions:
+- author: matthew
+  body: Increasing the priority on this as it's getting *really* confusing tracking which homeservers my various clients connect to.
+  created: 2014-11-26 00:57:37.0
+  id: '10848'
+  issue: '10001'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-26 00:57:37.0
+- author: matthew
+  body: Announcing the version would be particularly useful, to check whether a bug is due to a server being too old for a client or vice versa.
+  created: 2014-11-26 01:06:28.0
+  id: '10849'
+  issue: '10001'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-26 01:06:28.0
+- author: matthew
+  body: |-
+    ...and we need to actually announce the canonical hostname of the server, rather than guessing it from the C-S API url
+
+    ...and it'd be good to announce config data like maximum content upload size limit.
+  created: 2015-04-16 11:13:19.0
+  id: '11496'
+  issue: '10001'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-16 11:13:19.0
+- author: kegan
+  body: This surely falls under the remit of CS v2 capabilities API? https://github.com/matrix-org/matrix-doc/blob/master/drafts/general_api.rst#capabilities-api-ongoing
+  created: 2015-04-16 11:56:59.0
+  id: '11498'
+  issue: '10001'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-04-16 11:56:59.0
+- author: erikj
+  body: |-
+    There are a few separate classes of things we might wish to return to the client:
+
+    # Is it static or changes often, e.g. server name vs. message of the day.
+    # Is it for internal usage or for human consumption, e.g. turn uris vs message of the day.
+    # Is it something immediately required by the client to work, or can it be fetched after client startup.
+
+    It may be worth having multiple APIs for distributing this data, e.g. required static information gets sent once on login, whereas optional, dynamic data like MotD could be a separate API.
+  created: 2015-05-01 11:38:24.0
+  id: '11703'
+  issue: '10001'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-01 11:43:41.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1199'
+  created: 2016-11-07 18:27:09.0
+  id: '13530'
+  issue: '10001'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:09.0

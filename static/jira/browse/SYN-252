@@ -1,0 +1,44 @@
+---
+summary: /messages returns the same messages over and over again.
+---
+assignee: markjh
+created: 2015-01-29 01:14:04.0
+creator: markjh
+description: |-
+  {code}
+  Request
+  http://matrix.org/_matrix/client/api/v1/rooms/!XqBunHwQIXUiqCaoxq%3Amatrix.org/messages?dir=b&from=t19395-88727_79_74&limit=30
+
+  Response:
+  {
+    chunk: [...30 events...],
+    end: "t19395-88727_79_74",
+    start: "t19395-88727_79_74"
+  }
+  {code}
+id: '10987'
+key: SYN-252
+number: '252'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-01-29 01:53:16.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:26:22.0
+votes: '0'
+watches: '1'
+workflowId: '11087'
+---
+actions:
+- author: markjh
+  body: |-
+    Was passing the arguments to the _StreamToken constructor in the wrong order.
+    We didn't notice in any of our testing because the values tend to be the same on fresh home servers with only one room.
+  created: 2015-01-29 01:53:16.0
+  id: '11201'
+  issue: '10987'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-01-29 01:53:16.0

@@ -1,0 +1,57 @@
+---
+summary: Need to specify how federation rejects and handles invalid events
+---
+created: 2014-09-30 13:58:36.0
+creator: matthew
+description: ''
+id: '10424'
+key: SPEC-26
+number: '26'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-10-28 16:26:43.0
+votes: '0'
+watches: '3'
+workflowId: '10527'
+---
+actions:
+- author: erikj
+  body: We probably don't want to design out the ability to respond to events in a non-fatal way.
+  created: 2014-09-30 14:32:09.0
+  id: '10484'
+  issue: '10424'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-30 14:32:09.0
+- author: erikj
+  body: |-
+    * Do we reject events we see when we backfill?
+    * Do we want to be able to respond to EDUs as well as PDUs?
+  created: 2014-09-30 14:54:20.0
+  id: '10486'
+  issue: '10424'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-30 14:54:20.0
+- author: erikj
+  body: |-
+    We probably also want to eventually be told if the remote server accepted our event, so that we avoid the trap of potentially waiting for all eternity to see if our event is eventually rejected. On the flip side we definitely don't want to ACK each individual event we see as that could lead to an explosion in traffic. 
+
+    One solution is to assume that if we see an event from the remote server that includes our event somewhere in its PDU graph, then it has been accepted. While guaranteeing that the remote *will* send out such an event (even if it is effectively just an empty event) within some time frame. This way means that if we receive lots of events in quick succession from a server in a room, we only need to send out one event to ACK them all. Since this builds on top of the PDU graph, this does not help when said events are all from different rooms.
+  created: 2014-09-30 15:12:46.0
+  id: '10488'
+  issue: '10424'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-30 15:12:46.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/462'
+  created: 2016-10-28 16:26:43.0
+  id: '13237'
+  issue: '10424'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:43.0

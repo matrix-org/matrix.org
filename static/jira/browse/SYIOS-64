@@ -1,0 +1,29 @@
+---
+summary: 'Chat Room: unexpected blank lines are added into history when user types in growing textView'
+---
+assignee: m-ylecollen
+created: 2015-01-22 08:53:53.0
+creator: gforet
+description: |-
+  How to reproduce:
+  1 - open an existing chat room
+  2 - type several lines in growing textView
+  3 - dismiss keyboard (by pressing members icons for example)
+  4 - select growing textView again --> the keyboard appears
+  5 - add lines in growing text view --> blank lines are added at the bottom of chat history NOK
+id: '10972'
+key: SYIOS-64
+number: '64'
+priority: '2'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-01-23 11:54:19.0
+status: '5'
+type: '1'
+updated: 2015-01-23 11:54:19.0
+votes: '0'
+watches: '1'
+workflowId: '11072'
+---
+actions: null

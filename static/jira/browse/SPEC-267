@@ -1,0 +1,42 @@
+---
+summary: We need a better way of picking the user(s) to name an anonymous room for
+---
+created: 2015-11-05 10:23:03.0
+creator: richvdh
+description: |-
+  When a room has no explicit name or canonical alias, we name it after the members of the room ("Alice and Bob", "Alice and 3 others", etc).
+
+  We would like this name to be stable and consistent across clients. We need an algorithm to pick the right users.
+id: '12086'
+key: SPEC-267
+number: '267'
+priority: '3'
+project: '10001'
+reporter: richvdh
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:51.0
+votes: '0'
+watches: '1'
+workflowId: '12189'
+---
+actions:
+- author: richvdh
+  body: |-
+    Naming the room after the first user(s) to be invited is attractive, but
+    * we don't have that information in the data model currently
+    * it's not well-defined in the case of a branched event graph.
+  created: 2015-11-05 10:25:06.0
+  id: '12332'
+  issue: '12086'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 10:25:06.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/573'
+  created: 2016-10-28 16:27:51.0
+  id: '13381'
+  issue: '12086'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:51.0

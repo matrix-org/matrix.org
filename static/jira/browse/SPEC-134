@@ -1,0 +1,227 @@
+---
+summary: We surely need a way to clear/ACL scrollback for a room with various different semantics
+---
+created: 2014-11-07 00:29:37.0
+creator: matthew
+description: |-
+  I can think of many flavours of wanting to clear scrollback:
+   * Temporarily on a particular device (to save memory or to simply get a fresh screen)
+   * To censor old history from being visible on a given device
+   * To prune old history on your homeserver (to save disk space) - both on a permenant basis ("never backfill this!") and temporarily ("just save some disk space")
+   * To redact the events forever ("let us never speak of this scrollback again!")
+
+  The only one we actually support currently is redacting events forever - but only by looping through redacting them one by one, which is horrific.
+
+  Any ideas?
+id: '10625'
+key: SPEC-134
+number: '134'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:27:09.0
+votes: '1'
+watches: '7'
+workflowId: '10725'
+---
+actions:
+- author: matthew
+  body: We also need some kind of way to define whether scrollback should be hidden for new participants or not.
+  created: 2014-11-27 14:59:51.0
+  id: '10886'
+  issue: '10625'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-27 14:59:51.0
+- author: matthew
+  body: |-
+    We've repeatedly had folks asking for a way to optionally stop past history from being visible when you join a room.  Use cases include:
+
+     * bridging an IRC channel which requests that folks do not log/publish it or simply assumes that stuff which happens whilst users aren't joined is invisible
+     * inviting a 3rd user into a 1:1 chat and not wanting to share all history with them
+     * partial-PFS for e2e encrypted rooms
+
+    This is easy in an E2E world, as you simply re-key the room to demarcate a point that new users will not be able to decrypt beyond.
+
+    For non-E2E, we need equivalent behaviour which should be compatible with the UX of the E2E scenario.
+
+    My proposal is to have a new timeline event: m.room.rekey or m.room.hide_earlier_history or similar.  Any client with sufficient permissions can PUT this into the room - and it acts as a line in the sand beyond which no new users in a room are allowed to read scrollback.  We can also use it as the API in E2E used to trigger a rekey.
+  created: 2015-03-27 12:40:29.0
+  id: '11438'
+  issue: '10625'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-27 12:43:18.0
+- author: dbkr
+  body: I don't think either of these proposals cover the 2nd use case (sharing partial history with an new person invited to a chat) since you'd only be able to hide history previous to when you sent that event, which would be all history so far, meaning the new person wouldn't see any history at all. Have I misunderstood?
+  created: 2015-03-27 16:16:14.0
+  id: '11442'
+  issue: '10625'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-27 16:16:14.0
+- author: mpicher
+  body: |-
+    This probably should talk pruning and also archiving (# months to keep data before archiving to offline logs) and archive retention period (# of months to forever).  Just because something is pruned (by a user or admin) doesn't mean that it shouldn't also be archived.
+
+    Thinking here that pruning only refers to viewing of the messages, not the actual storage of them (inferred from m.room.hide_earlier_history reference).
+
+    It is important for industries that are regulated (government, healthcare, banking) and must report on things or if legally obliged to turn over history for X amount of time for Y user (and any interactions with Y user). It's also important that after the retention period that information is stricken from the archives.
+
+    Some rough ideas:
+
+    System Defaults:
+    - Scrollback time (amount of time viewed in scroll back when a user joins), 0 = no scrollback -> Prune time (minutes, hrs, weeks, months)
+    - Prune time (length of time until pruning occurs), 0 = no pruning -> XXX months
+    - Archive time (length of time before msgs are archived), 0 = no archiving (kept forever) -> XXX months
+    - Archive retention (length of time archives are kept for), 0 = infinite retention -> XXX months
+
+    Room Overrides
+    - Scrollback time
+    - Prune time
+    - Archive time (i would normally think you may not want this on a per room basis, but as soon as you don't have it somebody will want it)
+    - Archive retention (dittos)
+  created: 2015-03-27 16:47:38.0
+  id: '11444'
+  issue: '10625'
+  type: comment
+  updateauthor: mpicher
+  updated: 2015-03-27 16:47:38.0
+- author: mpicher
+  body: |-
+    The above comment probably has more relevance to SPEC-141....
+
+    One particular room scenaio I'm concerned with is that of a typical real-world meeting room.  Here's the scenario:
+    * Joe User has a personal Meeting room.  This is a standing room...  like a room attached to or within your own office.
+
+    Meeting 1:
+    Joe invites Jane in to a meeting.
+    The meeting concludes and Jane leaves.
+
+    Meeting 2:
+    Joe invites Bob in to a meeting.  (same room...)
+    The meeting concludes and Bob leaves.
+
+    Meeting 3:
+    Jane re-enters meeting room to discuss something with Joe.
+    Jane leaves the meeting.
+    * Jane should not see Joe & Bob's discussion (from Meeting 2).
+    * Should Jane see history from her first meeting with Joe? (from Meeting 1)
+
+    Meeting 4:
+    Bob re-enters meeting room to discuss something else with Joe.
+    Joe leaves the meeting.
+    * Bob should not see Joe & Jane's discussion (from Meetings 1 & 3).
+    * Should Bob see history from his first meeting with Joe? (from Meeting 2)
+
+    Meeting 5:
+    Jane and Bob both enter Joe's meeting room for a joint meeting.
+    * What should Jane and Bob see now in this new meeting in relation to their previous meetings with Joe?
+
+    In non-persistent communications this is easy, it's like an audio or video conference bridge in that you hear / see what you hear & see while you're in there.  Each connection to the room is a new experience for the user (there's no history) from that point in time until they leave.
+  created: 2015-04-01 09:16:13.0
+  id: '11460'
+  issue: '10625'
+  type: comment
+  updateauthor: mpicher
+  updated: 2015-04-01 09:16:13.0
+- author: matthew
+  body: |-
+    As requested by Erik, moving the "how to ACL history" discussion from spec-17 to here.  I suggest we keep this bug for tracking ACLs, and move any pruning content from HS discussion to SPEC-141.
+
+    To quote from spec-17:
+
+    {quote}
+    So, the question becomes whether it's possible to implement effective ACLs. Options are:
+    1. Trust HSes to only serve up partial views of the graph to clients who have access. This is very vulnerable to abuse by malicious HSes
+    2. Only federate chunks of the graph to HSes on a need to know basis. This works for the special case of hiding past history as a once-off for a room (equivalent to not backfilling a room), but subsequently causes holes in the graph which may need to be filled by redacted-style events (or can we just leave them gappy?)
+    3. Use something like symmetric keyed crypto on s2s messages to let servers share events on a need to know basis. This isn't obviously any better than option 2 and takes up more bw.
+    4. Implement ACLs as multiple views of the same room - each view having a different graph linking the same underlying events. This could also let events be shared between multiple rooms in future by factoring them out of the DAGs (eg for sharing messages between thread-per-room forums). This changes federation substantially, but could be quite powerful. Problems with the DAG scaling could be solved by having multiple sets of parent links for each message in the DAG, one set per ACL group, thus muxing the multiple DAGs into a single multi-linked tree. State events probably cannot be ACLed and have to stick in the room(s) they apply to, so that all members of the room see consistent state. NB this doesn't preclude ACLs also being enforced at the E2E level.
+    {quote}
+  created: 2015-04-01 14:44:32.0
+  id: '11463'
+  issue: '10625'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-01 14:44:32.0
+- author: erikj
+  body: |-
+    From a protocol implementation perspective, some thoughts are:
+    - Any rules deciding what can be federated and what can't need to be fairly efficient and consistent.
+    - Deciding whether to federate an event based on the current state of that event is fairly efficient, e.g. whether that server is in the room at the time.
+    - Keeping the same reliability mechanisms mean that there's a difference between "X can only federate after event Y" and "X can't see events A, B and C". For the former, we can simply refuse to federate those events to X, for the latter we would need to still send the redacted forms.
+    - These ACLs won't apply to auth events, e.g. joins, power levels, etc.
+
+    So, an implementation of "people can't see events before they joined" would only require a special state to be set at the time. The bug/feature with this is that if that state is set after a server has joined, they could continue to backfill past when they joined, since the special state only applies after it is set. The upside: there is little risk of races. Downside: surprising behaviour?
+  created: 2015-06-29 14:48:43.0
+  id: '11930'
+  issue: '10625'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-29 14:48:43.0
+- author: matthew
+  body: |-
+    From a UX perspective, I think all we need for now is a room setting to prevent history from being visible to new users.  Ideally this would be applicable on per-user granularity, but it would be fine to start off as a global setting.  The only UX subtlety is what happens when you turn history visibility back on - I suggest that we only make visible the history which occurs /after/ the setting is reenabled.  This avoids leaking stuff which folks thought was effectively off the record to non-members in the room.
+
+    Whilst the fullblown multiDAG idea is interesting I'm hoping we can avoid rewriting federation to support this.
+
+    Erik: I don't follow your suggestion in the comment above.
+  created: 2015-06-29 17:28:46.0
+  id: '11939'
+  issue: '10625'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-29 17:28:46.0
+- author: erikj
+  body: |-
+    bq. From a UX perspective, I think all we need for now is a room setting to prevent history from being visible to new users. Ideally this would be applicable on per-user granularity, but it would be fine to start off as a global setting. The only UX subtlety is what happens when you turn history visibility back on - I suggest that we only make visible the history which occurs /after/ the setting is reenabled. This avoids leaking stuff which folks thought was effectively off the record to non-members in the room.
+
+    That should be a relatively simple and sane thing to implement.
+
+    bq. Whilst the fullblown multiDAG idea is interesting I'm hoping we can avoid rewriting federation to support this.
+
+    Agreed.
+
+    bq. Erik: I don't follow your suggestion in the comment above.
+
+    Basically it implements your suggestion :)
+  created: 2015-06-30 10:16:22.0
+  id: '11945'
+  issue: '10625'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-30 10:16:22.0
+- author: erikj
+  body: 'Currently being implemented: https://github.com/matrix-org/synapse/pull/196'
+  created: 2015-07-06 10:57:54.0
+  id: '11968'
+  issue: '10625'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-07-06 10:57:54.0
+- author: matthew
+  body: The current implementation is problematic, as you can't historically set scrollback visibility. In practice it's rare to know at the time whether you want the current conversation to be visible or not to future people - it's something you typically decide afterwards at the point of (say) inviting others into the room.  This sounds to be Hard because of federation consistency issues when you start trying to change the behaviour of past events in retrospect... but we need to work out a way to fix it somehow.
+  created: 2015-09-22 22:17:57.0
+  id: '12154'
+  issue: '10625'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-22 22:17:57.0
+- author: matthew
+  body: SPEC-210 is the issue tracking retrospective history visibility.  Mental note to create new issues to track all the other history-storage issues conflated together in this issue and close this one off.
+  created: 2015-09-25 18:28:18.0
+  id: '12169'
+  issue: '10625'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-25 18:28:18.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/440'
+  created: 2016-10-28 16:27:09.0
+  id: '13290'
+  issue: '10625'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:09.0

@@ -1,0 +1,76 @@
+---
+summary: Synapse should support vhosting multiple domains off a single server someday
+---
+created: 2015-01-12 00:22:52.0
+creator: matthew
+description: ''
+id: '10911'
+key: SYN-233
+number: '233'
+priority: '4'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2016-10-07 13:08:20.0
+status: '5'
+type: '2'
+updated: 2016-10-07 13:08:33.0
+votes: '1'
+watches: '5'
+workflowId: '11011'
+---
+actions:
+- author: erikj
+  body: |-
+    This comes down to the question of how featureful we want the synapse implementation to be. I'm not convinced we want to add these sorts of features to the reference/basic server implementation.
+
+
+    How does this work with SSL certificates anyway?
+  created: 2015-01-15 11:17:29.0
+  id: '11124'
+  issue: '10911'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-15 11:17:29.0
+- author: mbrancaleoni
+  body: |-
+    for SSL is trivial, just add as many alternative names in the certificate subjectAltName as needed.
+
+    everytime a domain is added/removed, the certificate must be issued again.
+
+    OR use SNI, but twisted does not supports it out of the box, so 2 ways here:
+
+    * use a SNI ssl proxy like nginx in front
+    * use txSNI https://github.com/glyph/txsni
+       (reference: http://stackoverflow.com/questions/24994701/2-ssl-certificates-in-twisted )
+  created: 2016-05-18 10:47:11.0
+  id: '12921'
+  issue: '10911'
+  type: comment
+  updateauthor: mbrancaleoni
+  updated: 2016-05-18 10:47:11.0
+- author: nitrux
+  body: |-
+    I'd very much like Synapse/Matrix to have a VHost feature, too. However I think that relying on subjectAltName to make the SSL cert valid can give away sensitive information.
+    For example if you have one internal VHost with an internal subdomain and another public facing VHost, anybody on the public instance could see the internal domain and target attacks (e.g. privilege escalation, injection) against it.
+
+    Since Prosody already "kind of solved" this issue in the XMPP world, I recommend taking their approach:
+    They have a config file where you could specify a location for the public/private keys for each VHost individually. See also: https://prosody.im/doc/configure#encryption_and_security_settings
+
+    If the Matrix protocol supports STARTTLS, which is not the case, we shouldn't need SNI: https://prosody.im/issues/issue/409
+
+    Sadly my programming style isn't good enough for security-related tasks, so I won't be able to implement such drastic changes myself. I'd be more than willing to let a few Euros change hands if anybody volunteers to add VHost+SSL support though.
+  created: 2016-09-06 21:03:23.0
+  id: '13115'
+  issue: '10911'
+  type: comment
+  updateauthor: nitrux
+  updated: 2016-09-06 21:03:23.0
+- author: richvdh
+  body: Superceded by SYN-620
+  created: 2016-10-07 13:08:20.0
+  id: '13179'
+  issue: '10911'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-07 13:08:20.0

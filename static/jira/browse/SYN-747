@@ -1,0 +1,39 @@
+---
+summary: status_msg is overwritten on /sync requests
+---
+created: 2016-08-10 11:24:57.0
+creator: half-shot
+description: |-
+  When requesting /sync with set_presence, the presence will be overwritten entirely. This basically breaks status_msg since if a client tries to set it in a /presence request, synapse will overwrite more or less straight away.
+
+  Given that status_msg is a custom string provided by the user/client, it's probably better we don't overwrite it at all since that is likely to confuse.
+id: '12785'
+key: SYN-747
+number: '747'
+priority: '3'
+project: '10000'
+reporter: half-shot
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:51.0
+votes: '0'
+watches: '2'
+workflowId: '12885'
+---
+actions:
+- author: half-shot
+  body: Fixed by https://github.com/matrix-org/synapse/pull/997
+  created: 2016-08-11 17:28:26.0
+  id: '13093'
+  issue: '12785'
+  type: comment
+  updateauthor: half-shot
+  updated: 2016-08-11 17:28:26.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1580'
+  created: 2016-11-07 18:29:51.0
+  id: '13904'
+  issue: '12785'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:51.0

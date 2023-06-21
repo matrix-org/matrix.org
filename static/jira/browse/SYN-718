@@ -1,0 +1,28 @@
+---
+summary: 'Shrike sees everything in #rust:matrix.org as a personal highlight, but doesn''t know why'
+---
+created: 2016-07-02 16:48:52.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12732'
+key: SYN-718
+number: '718'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:40.0
+votes: '0'
+watches: '2'
+workflowId: '12832'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1388'
+  created: 2016-11-07 18:29:40.0
+  id: '13879'
+  issue: '12732'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:40.0

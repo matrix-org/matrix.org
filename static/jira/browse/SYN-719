@@ -1,0 +1,28 @@
+---
+summary: surely we should prune left members from initial /sync
+---
+created: 2016-07-02 20:14:36.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12733'
+key: SYN-719
+number: '719'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:41.0
+votes: '0'
+watches: '2'
+workflowId: '12833'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1390'
+  created: 2016-11-07 18:29:41.0
+  id: '13880'
+  issue: '12733'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:41.0

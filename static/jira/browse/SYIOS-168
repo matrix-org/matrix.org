@@ -1,0 +1,33 @@
+---
+summary: If you create a private room on vector-web but share history, iOS can't see that history
+---
+created: 2015-10-28 16:29:33.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12051'
+key: SYIOS-168
+number: '168'
+priority: '3'
+project: '10200'
+reporter: neb
+resolution: '5'
+resolutiondate: 2015-10-29 15:46:27.0
+status: '5'
+type: '1'
+updated: 2015-10-29 15:46:27.0
+votes: '0'
+watches: '2'
+workflowId: '12154'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    It has been tested yesterday.
+
+    It seems that the reporter used an old vector client..
+  created: 2015-10-29 15:46:27.0
+  id: '12285'
+  issue: '12051'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-10-29 15:46:27.0

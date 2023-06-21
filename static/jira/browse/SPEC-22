@@ -1,0 +1,36 @@
+---
+summary: How do you choose what Identity Server to use as a client?
+---
+created: 2014-09-26 22:47:58.0
+creator: matthew
+description: ''
+id: '10406'
+key: SPEC-22
+number: '22'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:42.0
+votes: '0'
+watches: '2'
+workflowId: '10509'
+---
+actions:
+- author: matthew
+  body: This is still very valid.  How should the client know whether to talk to id.matrix.org, id.dbkr.me, id.arasphere.net or wherever?  What if id.matrix.org has been compromised, or is down for maintenance, etc?  Relying on poor end-users to know what host to input isn't going to cut it.  Instead we need some decentralised directory for ID servers...
+  created: 2015-01-08 17:18:58.0
+  id: '11076'
+  issue: '10406'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-08 17:18:58.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/459'
+  created: 2016-10-28 16:26:42.0
+  id: '13234'
+  issue: '10406'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:42.0

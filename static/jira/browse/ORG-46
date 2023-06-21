@@ -1,0 +1,30 @@
+---
+summary: 83.166.64.18 SSL cert on coturn expired Nov 2015 :-/
+---
+created: 2016-03-04 02:45:33.0
+creator: matthew
+description: ''
+id: '12542'
+key: ORG-46
+number: '46'
+priority: '1'
+project: '10003'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2017-03-21 11:24:09.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:24:09.0
+votes: '0'
+watches: '2'
+workflowId: '12642'
+---
+actions:
+- author: richvdh
+  body: turn-ssl.matrix.org:443 now gives a *.matrix.org cert valid until Mar 11 21:23:12 2018, so I guess this is no longer valid
+  created: 2017-03-21 11:24:03.0
+  id: '14027'
+  issue: '12542'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:24:03.0

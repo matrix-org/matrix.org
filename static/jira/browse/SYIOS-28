@@ -1,0 +1,26 @@
+---
+summary: There is no way to view a user's mxid (or other profile info) on iOS
+---
+assignee: m-ylecollen
+created: 2014-12-21 01:27:54.0
+creator: matthew
+description: |-
+  I can't find a way to see the mxid of a user in a room on iOS.
+
+  I'd expect to go to the users list for the room and tap on an entry to take me to a 'profile page' for that user, as per the web.  This would show me their mxid, avatar, and any other profile info.
+id: '10842'
+key: SYIOS-28
+number: '28'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-24 10:21:21.0
+status: '5'
+type: '2'
+updated: 2014-12-24 10:21:21.0
+votes: '0'
+watches: '1'
+workflowId: '10942'
+---
+actions: null

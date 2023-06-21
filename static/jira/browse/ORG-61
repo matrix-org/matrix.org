@@ -1,0 +1,30 @@
+---
+summary: File rageshakes into private jira
+---
+created: 2016-07-31 21:24:31.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12777'
+key: ORG-61
+number: '61'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '2'
+resolutiondate: 2017-03-21 11:33:57.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:33:57.0
+votes: '0'
+watches: '2'
+workflowId: '12877'
+---
+actions:
+- author: richvdh
+  body: superceded by https://github.com/vector-im/riot-web/issues/3405
+  created: 2017-03-21 11:33:54.0
+  id: '14031'
+  issue: '12777'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:33:54.0

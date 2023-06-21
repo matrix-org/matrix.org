@@ -1,0 +1,22 @@
+---
+summary: Servers should autopoke federation on launch to tell folks they're back online
+---
+created: 2016-10-17 11:52:41.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12946'
+key: SYN-791
+number: '791'
+priority: '3'
+project: '10000'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-10-17 11:55:02.0
+status: '5'
+type: '1'
+updated: 2016-10-17 11:55:02.0
+votes: '0'
+watches: '1'
+workflowId: '13046'
+---
+actions: null

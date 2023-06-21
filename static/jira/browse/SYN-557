@@ -1,0 +1,89 @@
+---
+summary: Synapse tries to talk to localhost for backfill and throws the resulting 401 to the client
+---
+created: 2015-12-18 16:55:08.0
+creator: markjh
+description: |-
+  https://matrix.org/_matrix/client/api/v1/rooms/!XqBunHwQIXUiqCaoxq%3Amatrix.org/messages?from=t39707-1498290_3184_544_276431_2709&limit=20&dir=b&access_token=MDAxOGxvY2F0aW9uIG1hdHJpeC5vcmcKMDAxM2lkZW50aWZpZXIga2V5CjAwMTBjaWQgZ2VuID0gMQowMDI1Y2lkIHVzZXJfaWQgPSBAa2VnYW4yOm1hdHJpeC5vcmcKMDAxNmNpZCB0eXBlID0gYWNjZXNzCjAwMWRjaWQgdGltZSA8IDE0NTA0MzM1NTE3MTkKMDAyZnNpZ25hdHVyZSCAHp2ZbOCTiYItAbD3Q1FdGQUFNIBs_foeTMcY31gK-Qo
+
+  {code}
+  2015-12-18 16:20:36,471 - synapse.http.server - 112 - ERROR - GET-551494 - 401: Unauthorized
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 104, in wrapped_request_handler
+      yield d
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/http/server.py", line 235, in _async_render
+      callback_return = yield callback(request, *args)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/client/v1/room.py", line 346, in on_GET
+      as_client_event=as_client_event
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/message.py", line 139, in get_messages
+      room_id, room_token.topological
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/federation.py", line 507, in maybe_backfill
+      success = yield try_backfill(likely_domains)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/federation.py", line 476, in try_backfill
+      extremities=[e for e in extremities.keys()]
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/federation.py", line 306, in backfill
+      extremities=extremities,
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/federation/federation_client.py", line 191, in backfill
+      dest, context, extremities, limit)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/http/matrixfederationclient.py", line 393, in get_json
+      timeout=timeout,
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/http/matrixfederationclient.py", line 219, in _create_request
+      response.code, response.phrase, body
+  HttpResponseException: 401: Unauthorized
+  {code}
+id: '12227'
+key: SYN-557
+number: '557'
+priority: '2'
+project: '10000'
+reporter: markjh
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:45.0
+votes: '0'
+watches: '2'
+workflowId: '12330'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1451'
+  created: 2016-11-07 18:28:45.0
+  id: '13754'
+  issue: '12227'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:45.0

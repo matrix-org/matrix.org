@@ -1,0 +1,48 @@
+---
+summary: Specify the APIs required for maintaining room aliases
+---
+created: 2014-10-01 17:48:15.0
+creator: leonerd
+description: |-
+  Current spec says
+
+  {noformat}
+  .. TODO-doc kegan
+      - path to edit aliases 
+      - PUT /directory/room/<room alias>  { room_id : foo }
+      - GET /directory/room/<room alias> { room_id : foo, servers: [a.com, b.com] }
+      - format when retrieving list of aliases. NOT complete list.
+      - format for adding/removing aliases.
+  {noformat}
+id: '10440'
+key: SPEC-40
+number: '40'
+priority: '3'
+project: '10001'
+reporter: leonerd
+resolution: '3'
+resolutiondate: 2014-10-01 17:52:45.0
+status: '1'
+type: '1'
+updated: 2014-10-01 17:53:09.0
+votes: '0'
+watches: '1'
+workflowId: '10544'
+---
+actions:
+- author: leonerd
+  body: Dupe of SPEC-25
+  created: 2014-10-01 17:52:45.0
+  id: '10501'
+  issue: '10440'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-01 17:52:45.0
+- author: leonerd
+  body: Closed the wrong bug
+  created: 2014-10-01 17:53:09.0
+  id: '10502'
+  issue: '10440'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-01 17:53:09.0

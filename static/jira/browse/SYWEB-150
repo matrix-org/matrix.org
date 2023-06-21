@@ -1,0 +1,44 @@
+---
+summary: Raw room id displayed while room is loading.
+---
+created: 2014-11-12 15:13:06.0
+creator: markjh
+description: ''
+id: '10644'
+key: SYWEB-150
+number: '150'
+priority: '3'
+project: '10004'
+reporter: markjh
+status: '10100'
+type: '1'
+updated: 2014-11-12 15:39:57.0
+votes: '0'
+watches: '3'
+workflowId: '10744'
+---
+actions:
+- author: kegan
+  body: 'This is before {{/initialSync}} returns, there isn''t much we can do about that: the room ID is being pulled from the URL.'
+  created: 2014-11-12 15:15:02.0
+  id: '10779'
+  issue: '10644'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-12 15:15:02.0
+- author: matthew
+  body: Can we make getRoomDisplayName (or whatever it's called) simply never return strings that look like !roomid:domain?  Blank is better than leaking IDs...
+  created: 2014-11-12 15:38:40.0
+  id: '10780'
+  issue: '10644'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-12 15:38:40.0
+- author: kegan
+  body: It can return an empty string if you're allergic to room IDs, yes.
+  created: 2014-11-12 15:39:57.0
+  id: '10781'
+  issue: '10644'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-12 15:39:57.0

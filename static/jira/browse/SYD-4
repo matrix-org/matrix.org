@@ -1,0 +1,28 @@
+---
+summary: Ability to brand the mails that sydent sends out based on the HS which triggered them
+---
+created: 2014-12-02 22:13:46.0
+creator: matthew
+description: ''
+id: '10760'
+key: SYD-4
+number: '4'
+priority: '2'
+project: '10002'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-04-15 12:02:53.0
+votes: '0'
+watches: '2'
+workflowId: '10860'
+---
+actions:
+- author: dbkr
+  body: The mail sending is currently triggered by the client before it ever hits the home server. The client could tell the ID server what HS it was trying to auth against although that seems a little dicey.
+  created: 2015-04-15 12:02:53.0
+  id: '11491'
+  issue: '10760'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-15 12:02:53.0

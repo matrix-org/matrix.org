@@ -1,0 +1,43 @@
+---
+summary: Room event redaction needs specification
+---
+created: 2014-10-01 17:50:38.0
+creator: leonerd
+description: |-
+  Current spec mentions that redaction exists and defines an event name for it, but doesn't specify how you use it.
+
+  It needs to explain:
+   * what keys the event contains and what they mean
+   * the server- and client-side semanics required on receipt of such an event
+
+  It also needs to expand on
+
+  {noformat}
+  Currently, only room admins can redact events by sending a ``m.room.redacted``
+  event, but server admins also need to be able to redact events by a similar
+  mechanism.
+  {noformat}
+id: '10441'
+key: SPEC-41
+number: '41'
+priority: '3'
+project: '10001'
+reporter: leonerd
+resolution: '3'
+resolutiondate: 2014-10-01 17:53:35.0
+status: '5'
+type: '1'
+updated: 2014-10-01 17:57:57.0
+votes: '0'
+watches: '1'
+workflowId: '10545'
+---
+actions:
+- author: leonerd
+  body: Dupe of SPEC-25
+  created: 2014-10-01 17:53:35.0
+  id: '10503'
+  issue: '10441'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-01 17:53:35.0

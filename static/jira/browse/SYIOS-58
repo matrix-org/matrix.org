@@ -1,0 +1,44 @@
+---
+summary: When doing an initial sync app locks on iPad Mini
+---
+created: 2015-01-14 17:15:02.0
+creator: erikj
+description: ''
+id: '10933'
+key: SYIOS-58
+number: '58'
+priority: '2'
+project: '10200'
+reporter: erikj
+resolution: '5'
+resolutiondate: 2015-01-22 10:10:47.0
+status: '5'
+type: '1'
+updated: 2015-01-22 10:10:47.0
+votes: '0'
+watches: '3'
+workflowId: '11033'
+---
+actions:
+- author: manu
+  body: |-
+    Does it still crash with latest latest develop?
+
+    The loading wheel showed when the app starts corresponds to the cache loading and the resuming of the event stream.
+
+    Cache loading has been improved notably with this fix:
+    https://github.com/matrix-org/matrix-ios-sdk/commit/fd973addb697860c179be7171cce955ee3293c05
+  created: 2015-01-16 16:41:35.0
+  id: '11143'
+  issue: '10933'
+  type: comment
+  updateauthor: manu
+  updated: 2015-01-16 16:41:35.0
+- author: gforet
+  body: cannot reproduce with the current dev
+  created: 2015-01-22 10:10:47.0
+  id: '11181'
+  issue: '10933'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-22 10:10:47.0

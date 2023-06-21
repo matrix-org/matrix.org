@@ -1,0 +1,47 @@
+---
+summary: We shouldn't hammer on unavailable homeservers
+---
+assignee: erikj
+created: 2014-09-16 00:42:18.0
+creator: matthew
+description: |-
+  ...and we certainly shouldn't diskfill our logs with failed attempts to talk to non-existent homeservers.
+
+  We should presumably keep a retry scheme per-host, like email, and do exponential backoff.
+
+  We should presumably provide a button on the HS to force a retry on a given host when we know it's back (or when we see some traffic from it).
+id: '10044'
+key: SYN-19
+number: '19'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-18 14:06:51.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:26:18.0
+votes: '0'
+watches: '2'
+workflowId: '10353'
+---
+actions:
+- author: erikj
+  body: I'm waiting to do this until after Mark has finished hacking on the transport layer.
+  created: 2014-09-25 14:16:13.0
+  id: '10452'
+  issue: '10044'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-25 14:16:13.0
+- author: erikj
+  body: |-
+    My current thoughts on this is to have a table with three columns: hostname, next_retry and last_delta. If when want to send a PDU to a remote server and they are in the table, we don't bother trying and instead rely on the fact the PDU will be included in the next attempted retry (since new transactions are generated each time we attempt a retry). 
+
+    Before adding a host to the table we should probably try a few times transparently in the transport layer. In that case we can just set up a something that will check every few minutes if there is anything that we should now retry, saving us from having to keep track of timers and the like in memory. To check if  there is anything new would be as simple as a SELECT hostname FROM table WHERE next_retry < now".
+  created: 2014-09-25 14:28:35.0
+  id: '10454'
+  issue: '10044'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-25 14:28:35.0

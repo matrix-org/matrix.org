@@ -1,0 +1,30 @@
+---
+summary: Ability to reserve parts of the user namespace in general from being registered
+---
+created: 2016-03-28 23:35:35.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  A bit like we have for ASes, but as a general feature to let admins reserve chunks of namespace for specific clients etc
+id: '12585'
+key: SYN-665
+number: '665'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:19.0
+votes: '0'
+watches: '2'
+workflowId: '12685'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1522'
+  created: 2016-11-07 18:29:19.0
+  id: '13831'
+  issue: '12585'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:19.0

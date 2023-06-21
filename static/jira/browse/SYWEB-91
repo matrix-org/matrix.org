@@ -1,0 +1,22 @@
+---
+summary: VoIP call entries in the chat messages table appear in the wrong place
+---
+created: 2014-09-26 13:54:55.0
+creator: dbkr
+description: ''
+id: '10399'
+key: SYWEB-91
+number: '91'
+priority: '3'
+project: '10004'
+reporter: dbkr
+resolution: '3'
+resolutiondate: 2015-03-20 15:01:33.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:05.0
+votes: '0'
+watches: '1'
+workflowId: '10502'
+---
+actions: null

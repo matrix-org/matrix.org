@@ -1,0 +1,36 @@
+---
+summary: The static webclient content served by synapse has no cache control headers
+---
+created: 2014-11-26 01:13:31.0
+creator: matthew
+description: ''
+id: '10715'
+key: SYN-174
+number: '174'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:27.0
+votes: '0'
+watches: '3'
+workflowId: '10815'
+---
+actions:
+- author: dbkr
+  body: Twisted doesn't really seem to support this as far as I can tell. It does support If-Modified-Since though.
+  created: 2015-05-14 17:39:36.0
+  id: '11761'
+  issue: '10715'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 17:39:36.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1250'
+  created: 2016-11-07 18:27:27.0
+  id: '13568'
+  issue: '10715'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:27.0

@@ -1,0 +1,32 @@
+---
+summary: We should definitely not be rejecting uploaded files with UTF-8 filenames
+---
+created: 2015-08-26 11:39:40.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  It's causing huge problems for the Russian community, at the least. RFC6266 shows how you can put UTF8 in Content-Disposition header fields, and you should be able to just urlencode the UTF8 in querystring filename param
+id: '11819'
+key: SYN-456
+number: '456'
+priority: '1'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-08-28 10:49:26.0
+status: '5'
+type: '1'
+updated: 2015-08-28 10:49:26.0
+votes: '0'
+watches: '2'
+workflowId: '11922'
+---
+actions:
+- author: markjh
+  body: https://github.com/matrix-org/synapse/pull/259
+  created: 2015-08-26 17:31:01.0
+  id: '12075'
+  issue: '11819'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-08-26 17:31:01.0

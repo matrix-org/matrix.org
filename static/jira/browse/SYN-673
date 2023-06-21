@@ -1,0 +1,28 @@
+---
+summary: Option to lock registrations to email-only, locked to specific domains
+---
+created: 2016-04-06 10:02:51.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12610'
+key: SYN-673
+number: '673'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:23.0
+votes: '0'
+watches: '2'
+workflowId: '12710'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1243'
+  created: 2016-11-07 18:29:23.0
+  id: '13839'
+  issue: '12610'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:23.0

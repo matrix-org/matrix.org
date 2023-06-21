@@ -1,0 +1,28 @@
+---
+summary: Read-only webclient mode
+---
+created: 2014-09-16 00:36:36.0
+creator: matthew
+description: ''
+id: '10037'
+key: SYWEB-337
+number: '337'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2015-09-22 22:47:26.0
+votes: '2'
+watches: '3'
+workflowId: '10318'
+---
+actions:
+- author: matthew
+  body: originally this was for the frontpage of matrix.org. instead we'll be linking to a list of different matrix clients from the frontpage shortly - but it still might be fun for the angularjs client to start off with a read-only view, before forcing you to log-in if you want to say something.
+  created: 2015-03-23 17:28:34.0
+  id: '11430'
+  issue: '10037'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-23 17:28:34.0

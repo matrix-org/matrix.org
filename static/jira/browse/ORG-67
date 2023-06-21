@@ -1,0 +1,30 @@
+---
+summary: We need a hot-spare haproxy ready as a backup
+---
+created: 2016-10-13 19:32:43.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12858'
+key: ORG-67
+number: '67'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:36:34.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:36:34.0
+votes: '0'
+watches: '2'
+workflowId: '12958'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/internal-config/issues/82
+  created: 2017-03-21 11:36:29.0
+  id: '14032'
+  issue: '12858'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:36:29.0

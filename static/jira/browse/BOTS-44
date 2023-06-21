@@ -1,0 +1,30 @@
+---
+summary: IRC AS - add support for self signed ssl certs
+---
+created: 2015-05-18 09:00:11.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '11537'
+key: BOTS-44
+number: '44'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-01-26 09:52:10.0
+status: '5'
+type: '1'
+updated: 2016-01-26 09:52:10.0
+votes: '0'
+watches: '2'
+workflowId: '11638'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/pull/7
+  created: 2016-01-26 09:52:10.0
+  id: '12584'
+  issue: '11537'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-01-26 09:52:10.0

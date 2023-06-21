@@ -1,0 +1,33 @@
+---
+summary: old events have origin_server_ts=0 on the c-s api
+---
+created: 2014-10-18 02:07:44.0
+creator: matthew
+description: ''
+id: '10482'
+key: SYN-107
+number: '107'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-07 16:48:42.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:02.0
+votes: '0'
+watches: '2'
+workflowId: '10586'
+---
+actions:
+- author: markjh
+  body: |-
+    We store a timestamp in the PDU's table but not in the event's table. New events copy the timestamp across as a unrecognised key. However old events will be missing that key.
+
+    This will be fixed when the PDU and event tables are merged.
+  created: 2014-11-04 17:37:45.0
+  id: '10733'
+  issue: '10482'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-04 17:37:45.0

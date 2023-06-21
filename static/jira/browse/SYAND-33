@@ -1,0 +1,36 @@
+---
+summary: Number of unread messages disappears when entering another room
+---
+created: 2015-03-04 19:36:52.0
+creator: bob
+description: |-
+  Situation:
+
+  There are new messages in two room.
+  When entering the first room and afterwards going back to the overview (list) of the rooms, the number of unread message in room 2 disappeared even if I only entered room 1.
+id: '11154'
+key: SYAND-33
+number: '33'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-03-05 10:45:35.0
+status: '5'
+type: '1'
+updated: 2015-03-05 10:45:35.0
+votes: '0'
+watches: '2'
+workflowId: '11254'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    This issue was only triggered when the back button in the navigation bar is tapped.
+    It was fine with the android back button.
+  created: 2015-03-05 10:38:49.0
+  id: '11346'
+  issue: '11154'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-05 10:38:49.0

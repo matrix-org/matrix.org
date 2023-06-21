@@ -1,0 +1,23 @@
+---
+summary: Fixed rule_ids for specific push rules
+---
+assignee: dbkr
+created: 2015-02-13 13:52:01.0
+creator: dbkr
+description: ''
+id: '11043'
+key: SYN-269
+number: '269'
+priority: '2'
+project: '10000'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-02-26 18:09:22.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:22:41.0
+votes: '0'
+watches: '1'
+workflowId: '11143'
+---
+actions: null

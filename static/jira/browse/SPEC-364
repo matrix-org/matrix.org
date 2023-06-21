@@ -1,0 +1,37 @@
+---
+summary: Invite handling is broken when the inviter leaves the room
+---
+created: 2016-03-04 09:47:46.0
+creator: richvdh
+description: |-
+  Consider:
+
+  * alice@venus creates a room and invites bob@mars
+  * bob@mars joins and invites charlie@mars
+  * bob@mars leaves
+
+  At this point, `mars` no longer takes part in the federation of the room, and `charlie` can neither reject nor accept his invite, nor can he see the history of the room.
+
+  Should federation include servers with invited rather than joined members, or does this leak too much data? Or should we decouple the federation from members as per SPEC-300?
+id: '12543'
+key: SPEC-364
+number: '364'
+priority: '3'
+project: '10001'
+reporter: richvdh
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:22.0
+votes: '0'
+watches: '1'
+workflowId: '12643'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/648'
+  created: 2016-10-28 16:28:22.0
+  id: '13457'
+  issue: '12543'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:22.0

@@ -1,0 +1,64 @@
+---
+summary: Avatar URL not set in /initialSync when it should be
+---
+assignee: leonerd
+created: 2014-11-14 14:39:18.0
+creator: kegan
+description: |-
+  On the room {{!XqBunHwQIXUiqCaoxq:matrix.org}} (#matrix-dev), the user {{@neb:matrix.org}} does not have an {{avatar_url}} set for their {{m.room.member}} event. However, in the {{presence}} section of {{/initialSync}}, there IS an avatar URL. This event was not sent to the room, when it should've been.
+
+  This may be a historical bug, where Synapse used to not do that (send avatar urls to rooms when they changed), but now does, as I cannot reproduce this on a fresh account.
+id: '10655'
+key: SYN-143
+number: '143'
+priority: '2'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-01-07 13:13:26.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:04.0
+votes: '0'
+watches: '2'
+workflowId: '10755'
+---
+actions:
+- author: leonerd
+  body: |-
+    I now have a test in sytest confirming this bug for remote room users, though it works for local users.
+
+    https://github.com/matrix-org/sytest/commit/bbad767
+  created: 2014-11-26 19:17:07.0
+  id: '10875'
+  issue: '10655'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 19:17:07.0
+- author: kegan
+  body: This really needs to be fixed for historical accounts given the web client now relies on {{m.room.member}} being correct and doesn't use {{m.presence}} for avatar_url/displayname.
+  created: 2014-12-01 10:56:38.0
+  id: '10896'
+  issue: '10655'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 10:56:38.0
+- author: leonerd
+  body: |-
+    I managed to fix this last night as a side-effect of working on another bug (SYN-115). The faliing test in sytest is no longer failing, so I'll un-mark it.
+
+    I think therefore the only remaining problem is the bad data in historic room members.
+  created: 2014-12-03 13:12:16.0
+  id: '10932'
+  issue: '10655'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-12-03 13:12:16.0
+- author: kegan
+  body: This is no longer a bug with Synapse.
+  created: 2015-01-07 13:13:26.0
+  id: '11056'
+  issue: '10655'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-07 13:13:26.0

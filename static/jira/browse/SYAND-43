@@ -1,0 +1,29 @@
+---
+summary: Apparently login fails if the homeserver URL includes a trailing slash
+---
+assignee: matthew
+created: 2015-03-08 19:36:27.0
+creator: matthew
+description: ''
+id: '11181'
+key: SYAND-43
+number: '43'
+priority: '2'
+project: '10201'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-03-09 09:28:28.0
+votes: '0'
+watches: '2'
+workflowId: '11281'
+---
+actions:
+- author: m-ylecollen
+  body: There was an issue while creating an account but not with the login.
+  created: 2015-03-09 09:28:21.0
+  id: '11367'
+  issue: '11181'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-09 09:28:21.0

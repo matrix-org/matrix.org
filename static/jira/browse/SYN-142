@@ -1,0 +1,52 @@
+---
+summary: synctl should rotate logs
+---
+created: 2014-11-14 11:27:53.0
+creator: markjh
+description: |-
+  -Synctl should configure synapse to log somewhere by default preferably rotating the log files.-
+
+  It would be nice if synctl rotated logs.
+id: '10654'
+key: SYN-142
+number: '142'
+priority: '3'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-01-08 15:31:55.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:26:23.0
+votes: '0'
+watches: '4'
+workflowId: '10754'
+---
+actions:
+- author: matthew
+  body: 'In practice it''d be fine just to put log_file: homeserver.log in the default homeserver.yaml, surely.  If sytest barfs on this, we need to fix sytest.'
+  created: 2014-11-26 18:14:14.0
+  id: '10869'
+  issue: '10654'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-26 18:14:14.0
+- author: kegan
+  body: Fixed the immediate problem of not having logs, but log rotation would be great.
+  created: 2014-12-16 17:26:36.0
+  id: '11000'
+  issue: '10654'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-16 17:26:36.0
+- author: leonerd
+  body: |-
+    Another quick win here could be just having it close/reopen the file on SIGHUP.
+
+    That at least lets you manually 'mv' the file, or use logrotate/et.al. to do it. Although,. additionally having it inprocess would be good too.
+  created: 2014-12-16 17:40:50.0
+  id: '11001'
+  issue: '10654'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-12-16 17:40:50.0

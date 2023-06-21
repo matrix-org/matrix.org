@@ -1,0 +1,30 @@
+---
+summary: spec /logout_all
+---
+created: 2016-08-19 11:13:18.0
+creator: neb
+description: |-
+  Submitted by @richvdh:sw1v.org
+  We have an endpoint which invalidates all access tokens - shouldn't we spec it?
+id: '12797'
+key: SPEC-443
+number: '443'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:43.0
+votes: '0'
+watches: '3'
+workflowId: '12897'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/700'
+  created: 2016-10-28 16:28:43.0
+  id: '13509'
+  issue: '12797'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:43.0

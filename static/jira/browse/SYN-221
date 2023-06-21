@@ -1,0 +1,22 @@
+---
+summary: Federation request timeouts
+---
+created: 2014-12-24 19:08:54.0
+creator: matthew
+description: ''
+id: '10875'
+key: SYN-221
+number: '221'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-18 14:06:40.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:26:22.0
+votes: '0'
+watches: '1'
+workflowId: '10975'
+---
+actions: null

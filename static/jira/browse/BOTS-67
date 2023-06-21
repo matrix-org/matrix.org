@@ -1,0 +1,20 @@
+---
+summary: do we want to expose all of matrix's public channels into freenode?
+---
+created: 2015-06-27 20:20:39.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11710'
+key: BOTS-67
+number: '67'
+priority: '2'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-08-04 17:04:18.0
+votes: '0'
+watches: '1'
+workflowId: '11811'
+---
+actions: null

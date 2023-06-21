@@ -1,0 +1,28 @@
+---
+summary: /context returns a wrong start token
+---
+created: 2016-02-29 12:37:55.0
+creator: manu
+description: ''
+id: '12533'
+key: SYN-641
+number: '641'
+priority: '2'
+project: '10000'
+reporter: manu
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:12.0
+votes: '0'
+watches: '2'
+workflowId: '12633'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1508'
+  created: 2016-11-07 18:29:12.0
+  id: '13815'
+  issue: '12533'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:12.0

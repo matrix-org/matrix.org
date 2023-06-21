@@ -1,0 +1,27 @@
+---
+summary: Better highlighting of activity in recents
+---
+assignee: kegan
+created: 2014-09-19 12:59:35.0
+creator: matthew
+description: |-
+  It would be really nice to distinguish recents entries based on:
+   * Has a binger gone off there since you last checked?  (room title could be blue?)
+   * Has the history changed since you last checked? (room title could be red like xchat, or perhaps just highlight the background colour slightly?)
+   * Is it a pending invite?  Could be shown the same as the above.
+id: '10340'
+key: SYWEB-57
+number: '57'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-12 15:32:52.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:58:00.0
+votes: '0'
+watches: '2'
+workflowId: '10443'
+---
+actions: null

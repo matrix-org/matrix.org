@@ -1,0 +1,116 @@
+---
+summary: Do we want to specify a matrix:// URI scheme for rooms?
+---
+created: 2014-09-16 00:37:12.0
+creator: matthew
+description: ''
+id: '10039'
+key: SPEC-5
+number: '5'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:26:39.0
+votes: '0'
+watches: '4'
+workflowId: '10325'
+---
+actions:
+- author: kegan
+  body: Wasn't the whole point to represent rooms as room aliases? If this isn't representing a room alias, why use URI schemes for just that and not room IDs as well? This would make designing parsers easier since there are URI parsers out there, which is better than yet-another-custom-id-scheme.
+  created: 2014-09-16 09:35:07.0
+  id: '10108'
+  issue: '10039'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-16 09:35:07.0
+- author: markjh
+  body: 'A "matrix:" URI scheme might be nice for providing clickable links. We might not want to use URIs as human readable/writeable ids though.  In the same way that email addresses aren''t typically written as: {code}mailto:foo@bar{code}'
+  created: 2014-09-16 11:15:47.0
+  id: '10201'
+  issue: '10039'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-16 11:16:57.0
+- author: markjh
+  body: |-
+    {code}
+    matrix:@bob:example.org
+    {code}
+
+    Is a URI with a scheme of "matrix" and a path of "@bob.example.org"
+
+    {code}
+    matrix:#room:example.org
+    {code}
+
+    Is a URI with a scheme of "matrix" and a fragment of "room:example.org".
+  created: 2014-09-16 11:21:21.0
+  id: '10202'
+  issue: '10039'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-16 11:21:21.0
+- author: matthew
+  body: |-
+    My reason for proposing a URI scheme is so that things which implement URI handlers (e.g. web browsers, operating systems, etc) can click through into your favourite matrix client.
+
+    It's worth noting that according to timbl in rfc3986, URIs are meant to be hierarchical:
+
+       The following are two example URIs and their component parts:
+    {code}
+             foo://example.com:8042/over/there?name=ferret#nose
+             \_/   \______________/\_________/ \_________/ \__/
+              |           |            |            |        |
+           scheme     authority       path        query   fragment
+              |   _____________________|__
+             / \ /                        \
+             urn:example:animal:ferret:nose
+    {code}
+
+    ...which i think sadly may limit us to matrix://matrix.org/#matrix and matrix://matrix.org/@matthew - as sad as that is :/
+  created: 2014-09-16 11:26:09.0
+  id: '10203'
+  issue: '10039'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-16 11:26:09.0
+- author: markjh
+  body: They *should* be hierachical. However "mailto:" and "sip:" URIs are obvious counter examples.
+  created: 2014-09-16 16:01:44.0
+  id: '10301'
+  issue: '10039'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-16 16:01:44.0
+- author: matthew
+  body: |-
+    Having been thinking about this some more in the context of 3PIDs and AS API, I reckon we should go with:
+
+    mx://server/entity where entity is @user or #alias or !room.
+
+    This is also useful given that we're expressing 3PIDs everywhere as URIs, so also having matrix URIs around for symmetry is a Good Thing.
+  created: 2015-01-18 21:33:02.0
+  id: '11147'
+  issue: '10039'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-18 21:33:02.0
+- author: matthew
+  body: In practice this isn't good enough as iOS doesn't let multiple apps register for the same scheme.  Instead a workaround is as per ORG-26
+  created: 2015-09-22 18:32:36.0
+  id: '12149'
+  issue: '10039'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-22 18:32:36.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/455'
+  created: 2016-10-28 16:26:39.0
+  id: '13228'
+  issue: '10039'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:39.0

@@ -1,0 +1,85 @@
+---
+summary: Cannot port from Sqlite to Postgresql
+---
+created: 2015-07-02 03:45:46.0
+creator: jackvt93
+description: |-
+  Hi there,
+
+  I start install synapse on my server. Everything okay when i setup synapse server work with my sqlite. But, when i using script python for porting from sqlite to postgres then error occur.
+
+  ProgrammingError: syntax error at or near "NOT"
+  LINE 1: CREATE TABLE IF NOT EXISTS schema_version( Lock CHAR(1) NOT ...
+
+  P/s: My server running on Cent OS 6 x64
+id: '11723'
+key: SYN-431
+number: '431'
+priority: '3'
+project: '10000'
+reporter: jackvt93
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:11.0
+votes: '0'
+watches: '4'
+workflowId: '11824'
+---
+actions:
+- author: erikj
+  body: Which version of postgres are you using? It looks like {{IF NOT EXISTS}} was only added in postgres 9.1
+  created: 2015-07-02 10:30:19.0
+  id: '11958'
+  issue: '11723'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-07-02 10:32:33.0
+- author: matthew
+  body: We should assert a minimum supported postgres version in the docs and the script, needless to say.
+  created: 2015-07-02 18:19:41.0
+  id: '11959'
+  issue: '11723'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-02 18:19:41.0
+- author: jackvt93
+  body: |-
+    Thanks, i have found a solution for this problem (upgrade version of PostgreSQL).
+    Can you make a setup scripts which automatically generate database and config on PostgreSQL ?
+  created: 2015-07-03 03:03:31.0
+  id: '11960'
+  issue: '11723'
+  type: comment
+  updateauthor: jackvt93
+  updated: 2015-07-03 03:03:47.0
+- author: erikj
+  body: |-
+    bq. We should assert a minimum supported postgres version in the docs and the script, needless to say.
+
+    Agreed.
+
+    bq. Can you make a setup scripts which automatically generate database and config on PostgreSQL ?
+
+    Setting up the database and config requires a fair amount of input from the user, I believe. Though at some point we are planning on creating an interactive config creation script for synapse, so we might be able to include it in that.
+  created: 2015-07-03 10:08:35.0
+  id: '11964'
+  issue: '11723'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-07-03 10:08:35.0
+- author: jackvt93
+  body: Thanks for all.
+  created: 2015-07-06 03:08:37.0
+  id: '11967'
+  issue: '11723'
+  type: comment
+  updateauthor: jackvt93
+  updated: 2015-07-06 03:08:37.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1346'
+  created: 2016-11-07 18:28:11.0
+  id: '13667'
+  issue: '11723'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:11.0

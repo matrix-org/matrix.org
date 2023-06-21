@@ -1,0 +1,48 @@
+---
+summary: Generalized presence lists
+---
+created: 2014-10-03 16:22:36.0
+creator: leonerd
+description: |-
+  (migrated from https://github.com/matrix-org/synapse/issues/3)
+
+   KoFish commented 2014/09/04:
+
+  Rather than only storing one list per user on a HS the concept of lists could be abstracted into just having lists that certain users (private/public) can subscribe too. Similar to lists on twitter or facebook.
+
+  These would then work similar to how rooms work but instead just passing along the listed users presence events.
+id: '10450'
+key: SPEC-46
+number: '46'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '4'
+updated: 2016-10-28 16:26:47.0
+votes: '0'
+watches: '2'
+workflowId: '10554'
+---
+actions:
+- author: leonerd
+  body: |-
+    ara4n commented 2014/09/05:
+
+    Mmm, this would be really nice. Right now we do have early support for defining per-user presence lists seperate from rooms, but totally agreed that having arbitrary UNIX-group style lists that can then be used for ACLs, Presence, etc would be really nice.
+
+    Leo: how would this fit with the current presence-list management?
+  created: 2014-10-03 16:23:51.0
+  id: '10514'
+  issue: '10450'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-03 16:23:51.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/470'
+  created: 2016-10-28 16:26:47.0
+  id: '13245'
+  issue: '10450'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:47.0

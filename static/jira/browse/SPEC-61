@@ -1,0 +1,76 @@
+---
+summary: Join passwords
+---
+created: 2014-11-03 19:07:59.0
+creator: leonerd
+description: |-
+  AKA "join keys" on IRC. The idea that anyone can join an invite-only room if they present some shared secret.
+
+  Wanted because Matrix Internal is now invite-only, meaning the Matrix<->IRC bridge bot can no longer join, nor have its ghosts join the room.
+id: '10614'
+key: SPEC-61
+number: '61'
+priority: '2'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:26:49.0
+votes: '1'
+watches: '6'
+workflowId: '10714'
+---
+actions:
+- author: erikj
+  body: |-
+    {quote}
+    Wanted because Matrix Internal is now invite-only, meaning the Matrix<->IRC bridge bot can no longer join, nor have its ghosts join the room.
+    {quote}
+
+    I don't think this is needed for the bot, though it might be easier than changing the bot. So long as the bot gets invited to the room, then it should technically be able to invite the ghost users just before they join.
+  created: 2014-11-03 19:25:07.0
+  id: '10718'
+  issue: '10614'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-03 19:25:07.0
+- author: kegan
+  body: I agree that this shouldn't be needed for the bot. The IRC bot is always in the room right? Why can't it invite people before it blindly joins them?
+  created: 2014-11-04 09:19:10.0
+  id: '10719'
+  issue: '10614'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-04 09:19:10.0
+- author: erikj
+  body: (Though I think it would be a cool feature to have)
+  created: 2014-11-04 09:35:43.0
+  id: '10720'
+  issue: '10614'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-04 09:35:43.0
+- author: matthew
+  body: We need this for parity with IRC when IRC bridging.
+  created: 2015-07-01 00:15:22.0
+  id: '11955'
+  issue: '10614'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-01 00:15:22.0
+- author: fuzzy76
+  body: Any chance of getting this triaged? This is a pretty glaring omission for the IRC bridge.
+  created: 2016-05-20 08:45:53.0
+  id: '12924'
+  issue: '10614'
+  type: comment
+  updateauthor: fuzzy76
+  updated: 2016-05-20 08:45:53.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/473'
+  created: 2016-10-28 16:26:49.0
+  id: '13248'
+  issue: '10614'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:49.0

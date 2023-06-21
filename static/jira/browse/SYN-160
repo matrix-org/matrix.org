@@ -1,0 +1,31 @@
+---
+summary: Handling of limit query parameter is broken for global/room initialSync
+---
+created: 2014-11-20 14:04:11.0
+creator: kegan
+description: |-
+  Global {{/initialSync}} is broken because you can't get 0 messages for each room because the limit check is {{if not limit then limit = 0}}.
+
+  Room {{/initialSync}} is broken because you get 0 messages by default if you do not supply a {{limit=}} query parameter because the limit check is:
+  {code}
+  limit = pagin_config.limit if pagin_config else None
+  if limit is None:
+    limit=10
+  {code}
+  but the pagination config defaults limit to {{0}} and not {{None}} so the default 10 is never returned.
+id: '10693'
+key: SYN-160
+number: '160'
+priority: '2'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-01-15 10:55:30.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:09.0
+votes: '0'
+watches: '1'
+workflowId: '10793'
+---
+actions: null

@@ -1,0 +1,30 @@
+---
+summary: Add API to node as lib to get config as string
+---
+created: 2015-08-14 23:01:43.0
+creator: neb
+description: Submitted by @erikj:jki.re
+id: '11795'
+key: BOTS-91
+number: '91'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-17 16:58:59.0
+status: '5'
+type: '1'
+updated: 2015-09-17 16:58:59.0
+votes: '0'
+watches: '2'
+workflowId: '11897'
+---
+actions:
+- author: kegan
+  body: As an object now, but that's just a {{JSON.stringify}} away from a {{string}}
+  created: 2015-09-17 16:58:59.0
+  id: '12134'
+  issue: '11795'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-17 16:58:59.0

@@ -1,0 +1,28 @@
+---
+summary: Ideally, redacted messages should send an anti-push to clear them from notification lists
+---
+created: 2015-11-28 17:52:58.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12145'
+key: SYN-527
+number: '527'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:37.0
+votes: '0'
+watches: '2'
+workflowId: '12248'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1425'
+  created: 2016-11-07 18:28:37.0
+  id: '13732'
+  issue: '12145'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:37.0

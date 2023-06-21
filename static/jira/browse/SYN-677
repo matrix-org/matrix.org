@@ -1,0 +1,28 @@
+---
+summary: <Tor> I often get presence events from users my client has never seen or shared rooms with
+---
+created: 2016-04-11 16:24:36.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12619'
+key: SYN-677
+number: '677'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:24.0
+votes: '0'
+watches: '2'
+workflowId: '12719'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1532'
+  created: 2016-11-07 18:29:24.0
+  id: '13842'
+  issue: '12619'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:24.0

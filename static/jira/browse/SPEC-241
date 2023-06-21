@@ -1,0 +1,36 @@
+---
+summary: /_matrix/federation/v1/make_join is undocumented
+---
+created: 2015-09-24 19:06:36.0
+creator: leonerd
+description: ''
+id: '11941'
+key: SPEC-241
+number: '241'
+priority: '2'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:43.0
+votes: '0'
+watches: '2'
+workflowId: '12044'
+---
+actions:
+- author: leonerd
+  body: See also further thoughts on SPEC-424
+  created: 2015-09-28 16:50:04.0
+  id: '12184'
+  issue: '11941'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-28 16:50:04.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/554'
+  created: 2016-10-28 16:27:43.0
+  id: '13362'
+  issue: '11941'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:43.0

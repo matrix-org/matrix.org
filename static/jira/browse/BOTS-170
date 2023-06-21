@@ -1,0 +1,74 @@
+---
+summary: The IRC bridge crashes with a fatal error if it receives a 50x error
+---
+created: 2016-02-21 10:18:19.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12509'
+key: BOTS-170
+number: '170'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 09:59:01.0
+status: '6'
+type: '1'
+updated: 2016-06-02 09:59:01.0
+votes: '0'
+watches: '3'
+workflowId: '12609'
+---
+actions:
+- author: matthew
+  body: |-
+    This has been causing a world of pain over the last few days, since synapse was presumably deployed with some bug that cause sit to occasionally serve up 500s:
+
+    {code}
+    2016-02-20 21:05:34 ERROR:matrix-js-sdk PUT http://matrix.org/_matrix/client/api/v1/rooms/!XjCvwMSYaqGKTDOEmr%3Amatrix.org/send/m.room.message/m1456002320514 (@freenode_aaronpk:matrix.org) HTT
+    P 500 Error: undefined
+    2016-02-20 21:05:34 ERROR:main FATAL EXCEPTION
+    2016-02-20 21:05:34 ERROR:main TypeError: Cannot read property 'errcode' of undefined
+        at new MatrixError (/home/ircas/matrix-org/matrix-appservice-irc/node_modules/matrix-js-sdk/lib/http-api.js:384:29)
+        at /home/ircas/matrix-org/matrix-appservice-irc/node_modules/matrix-js-sdk/lib/http-api.js:352:19
+        at Request._callback (/home/ircas/matrix-org/matrix-appservice-irc/lib/mxlib/cs-extended-sdk.js:30:9)
+        at Request.self.callback (/home/ircas/matrix-org/matrix-appservice-irc/node_modules/request/request.js:199:22)
+        at emitTwo (events.js:87:13)
+        at Request.emit (events.js:172:7)
+        at Request.<anonymous> (/home/ircas/matrix-org/matrix-appservice-irc/node_modules/request/request.js:1036:10)
+        at emitOne (events.js:82:20)
+        at Request.emit (events.js:169:7)
+        at IncomingMessage.<anonymous> (/home/ircas/matrix-org/matrix-appservice-irc/node_modules/request/request.js:963:12)
+    {code}
+
+    Have tries to put a hot fix on /home/ircas/matrix-org/matrix-appservice-irc/node_modules/matrix-js-sdk/lib/http-api.js:384 for now, but this obviously needs to be fixed properly asap...
+  created: 2016-02-21 10:22:25.0
+  id: '12701'
+  issue: '12509'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-21 10:22:25.0
+- author: matthew
+  body: These look to have been 503s.
+  created: 2016-02-21 10:30:57.0
+  id: '12702'
+  issue: '12509'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-21 10:30:57.0
+- author: matthew
+  body: The hotfix seems superficially to have worked (but the bridge is still occasionally losing all state seemingly), so I've committed it to https://github.com/matrix-org/matrix-js-sdk/commit/363b08c4d8c71ba4f66c4a788032fb20350ea4ad.  However this is clearly on entirely the wrong branch for the IRC AS; i have no idea where I should be committing it there :(
+  created: 2016-02-22 10:35:51.0
+  id: '12703'
+  issue: '12509'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-22 10:35:51.0
+- author: kegan
+  body: Fixed on `develop` branch of the IRC bridge because it deps on `matrix-appservice-bridge@0.3.5` which deps on `matrix-js-sdk@0.4.1` which is a version with that fix in it.
+  created: 2016-06-02 09:59:01.0
+  id: '12937'
+  issue: '12509'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 09:59:01.0

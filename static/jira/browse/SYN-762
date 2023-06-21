@@ -1,0 +1,38 @@
+---
+summary: The can't rejoin empty room bug causes the aliases namespace to fill up with broken rooms
+---
+created: 2016-09-01 22:03:16.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  For instance, I can't delete an alias to an empty room because the room doesn't exist :|
+id: '12815'
+key: SYN-762
+number: '762'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:59.0
+votes: '0'
+watches: '3'
+workflowId: '12915'
+---
+actions:
+- author: matthew
+  body: actually, i'm not entirely sure that's true - perhaps there's a special case that lets you reuse aliases if they don't point to a valid room?  but you can't delete them via API?
+  created: 2016-09-01 22:42:14.0
+  id: '13113'
+  issue: '12815'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-09-01 22:42:14.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1594'
+  created: 2016-11-07 18:29:59.0
+  id: '13919'
+  issue: '12815'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:59.0

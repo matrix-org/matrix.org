@@ -1,0 +1,30 @@
+---
+summary: Notifications don't generate sound
+---
+created: 2015-11-07 19:21:44.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  gonz I don't get notifications with sound from the android app. Is there any reason this should be the case? gonz In the settings I have it set up so that it should notify with sound for mentions of my user-id/displayname. gonz Yet, it doesn't even activate the screen when I receive a notification, for example. It'll activate the LED, but no there's no real alert and you have to be paying attention to the phone to really notice it. I made a remind-command that will send reminders on a requested time, but it kind of depends on being reminded properly, which isn't the case right now. matthew: I downloaded the app from the Google Play store or whatever. gonz Tried 261, still getting silent notifications
+id: '12092'
+key: SYAND-158
+number: '158'
+priority: '3'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-11-16 17:31:18.0
+votes: '0'
+watches: '2'
+workflowId: '12195'
+---
+actions:
+- author: m-ylecollen
+  body: "Did you add some extra rules which could disable sound ?\t\n\n for example, you added a rule to be notified for any new messages in a room but without sound (the per room notifications).\n\n so, you will never get sound for this room messages even if there is a rule with your name: Your own rules has priority above the predefined rules."
+  created: 2015-11-16 17:31:18.0
+  id: '12367'
+  issue: '12092'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-11-16 17:31:18.0

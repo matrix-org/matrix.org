@@ -1,0 +1,31 @@
+---
+summary: Convert "user_id" keys to "sender" keys in PDUs
+---
+assignee: markjh
+created: 2014-11-18 20:44:11.0
+creator: markjh
+description: ''
+id: '10679'
+key: SYN-155
+number: '155'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-11-19 17:03:30.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:44.0
+votes: '0'
+watches: '1'
+workflowId: '10779'
+---
+actions:
+- author: markjh
+  body: Fixed for signatures and PDU json on the wire. We are still refering to user_id internally
+  created: 2014-11-19 17:04:49.0
+  id: '10812'
+  issue: '10679'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-19 17:04:49.0

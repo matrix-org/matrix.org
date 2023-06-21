@@ -1,0 +1,30 @@
+---
+summary: Adding email address to existing account doesn't work
+---
+created: 2015-01-19 09:51:50.0
+creator: dbkr
+description: ''
+id: '10947'
+key: SYWEB-262
+number: '262'
+priority: '1'
+project: '10004'
+reporter: dbkr
+resolution: '5'
+resolutiondate: 2015-01-19 09:55:28.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:02.0
+votes: '0'
+watches: '1'
+workflowId: '11047'
+---
+actions:
+- author: dbkr
+  body: Works here
+  created: 2015-01-19 09:55:28.0
+  id: '11149'
+  issue: '10947'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-01-19 09:55:28.0

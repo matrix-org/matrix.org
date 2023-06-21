@@ -1,0 +1,31 @@
+---
+summary: cs api should specify password safety limits for m.login.password or whatever
+---
+assignee: kegan
+created: 2015-07-15 18:26:35.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11758'
+key: SPEC-205
+number: '205'
+priority: '2'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-10-14 15:43:28.0
+status: '5'
+type: '1'
+updated: 2015-10-14 15:43:28.0
+votes: '0'
+watches: '2'
+workflowId: '11859'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-doc/pull/104
+  created: 2015-10-14 15:43:28.0
+  id: '12268'
+  issue: '11758'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-14 15:43:28.0

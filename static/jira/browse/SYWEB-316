@@ -1,0 +1,26 @@
+---
+summary: Chat room names don't reflect display name changes until refresh
+---
+created: 2015-03-11 10:19:02.0
+creator: dbkr
+description: |-
+  * Alice starts chat with Bob
+   * Alice's new chat is named 'Bob'
+   * Bob renames himself to Bert
+   * Alice's chat room is still called 'Bob'
+   * Alice refreshes browser
+   * Alice's chat is now called 'Bert'
+id: '11195'
+key: SYWEB-316
+number: '316'
+priority: '3'
+project: '10004'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2015-03-11 10:19:02.0
+votes: '0'
+watches: '1'
+workflowId: '11295'
+---
+actions: null

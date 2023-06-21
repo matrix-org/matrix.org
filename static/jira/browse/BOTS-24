@@ -1,0 +1,30 @@
+---
+summary: Slack bridge.
+---
+created: 2015-04-18 12:34:14.0
+creator: matthew
+description: ''
+id: '11346'
+key: BOTS-24
+number: '24'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-09-17 17:00:18.0
+status: '5'
+type: '2'
+updated: 2015-09-17 17:00:18.0
+votes: '0'
+watches: '2'
+workflowId: '11446'
+---
+actions:
+- author: kegan
+  body: BOTS-11
+  created: 2015-09-17 17:00:18.0
+  id: '12136'
+  issue: '11346'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-17 17:00:18.0

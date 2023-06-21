@@ -1,0 +1,28 @@
+---
+summary: Linkify room / user links
+---
+created: 2015-02-23 20:37:14.0
+creator: dbkr
+description: ''
+id: '11133'
+key: SYAND-32
+number: '32'
+priority: '3'
+project: '10201'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-02-16 23:34:13.0
+votes: '0'
+watches: '2'
+workflowId: '11233'
+---
+actions:
+- author: mitchhentges
+  body: When a full username or room name is in a message, the name should become a link. Tapping on the link will open the user's profile or room
+  created: 2016-02-16 23:34:13.0
+  id: '12620'
+  issue: '11133'
+  type: comment
+  updateauthor: mitchhentges
+  updated: 2016-02-16 23:34:13.0

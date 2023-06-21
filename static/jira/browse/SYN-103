@@ -1,0 +1,39 @@
+---
+summary: Stop sending "origin" and "destination" keys in EDUs in federation transactions
+---
+assignee: markjh
+created: 2014-10-14 16:35:40.0
+creator: markjh
+description: ''
+id: '10473'
+key: SYN-103
+number: '103'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-11-13 15:51:00.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:40.0
+votes: '0'
+watches: '1'
+workflowId: '10577'
+---
+actions:
+- author: markjh
+  body: Fixed synapse to stop expecting the "origin" to be contained in the EDU. Stopping sending the "origin" and "destination" is blocked until the next release is rolled out.
+  created: 2014-10-16 10:10:02.0
+  id: '10571'
+  issue: '10473'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-16 10:10:02.0
+- author: markjh
+  body: Since we are breaking federation anyway we might as well fix this while we are at it.
+  created: 2014-11-13 15:51:00.0
+  id: '10790'
+  issue: '10473'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-13 15:51:00.0

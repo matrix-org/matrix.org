@@ -1,0 +1,30 @@
+---
+summary: Add a local storage impl
+---
+created: 2015-06-19 17:12:14.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '11673'
+key: SYJS-9
+number: '9'
+priority: '2'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:26:11.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:26:11.0
+votes: '0'
+watches: '2'
+workflowId: '11774'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/253
+  created: 2016-10-24 11:26:11.0
+  id: '13210'
+  issue: '11673'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:26:11.0

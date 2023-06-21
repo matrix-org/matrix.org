@@ -1,0 +1,28 @@
+---
+summary: Should we consider getting synapse pushed into official distros (e.g. debian)?
+---
+created: 2016-06-18 23:13:04.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12712'
+key: SYN-712
+number: '712'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:38.0
+votes: '1'
+watches: '2'
+workflowId: '12812'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1558'
+  created: 2016-11-07 18:29:38.0
+  id: '13873'
+  issue: '12712'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:38.0

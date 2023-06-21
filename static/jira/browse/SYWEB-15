@@ -1,0 +1,25 @@
+---
+summary: We must *always* show the room alias as well as it's name in the UI
+---
+created: 2014-09-16 00:39:05.0
+creator: matthew
+description: |-
+  If a room has an alias, we should always show it in the UI in addition to its name - the alias is critical as the handle by which users locate rooms and uniquely identify them.
+
+  So the UI should show "Matthew's room (#matrix:matrix.org)" or similar rather than just "Matthew's room" if the room has a m.room.name of "Matthew's room".
+id: '10041'
+key: SYWEB-15
+number: '15'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '10000'
+resolutiondate: 2014-09-17 14:46:23.0
+status: '6'
+type: '2'
+updated: 2014-09-18 23:24:54.0
+votes: '0'
+watches: '1'
+workflowId: '10381'
+---
+actions: null

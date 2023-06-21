@@ -1,0 +1,35 @@
+---
+summary: Sending a file with file size > than limit of the HS
+---
+created: 2015-08-16 21:32:41.0
+creator: bob
+description: |-
+  When I am sending a file which is biger than the allloews file size, it seems that app tries to upload the file and then (after quite a while) I am getting an error message like "file to big". 
+
+  This should be checked BEFORE starting to upload...
+id: '11801'
+key: SYAND-116
+number: '116'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '2'
+resolutiondate: 2015-09-04 12:58:31.0
+status: '5'
+type: '1'
+updated: 2015-09-04 12:58:31.0
+votes: '0'
+watches: '2'
+workflowId: '11903'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    There is no API to retrieve the max media size.
+    I added this error message to make the difference with a "standard" upload error.
+  created: 2015-09-01 12:30:58.0
+  id: '12081'
+  issue: '11801'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-01 12:30:58.0

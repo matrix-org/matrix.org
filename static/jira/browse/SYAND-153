@@ -1,0 +1,41 @@
+---
+summary: GCM notifications randomly stop working
+---
+created: 2015-11-04 11:19:25.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  I noticed I wasn't receiving notifications; I then noticed that 'Use GCM' was unticked. When I clicked on it, it immediately unticked itself agan.
+id: '12080'
+key: SYAND-153
+number: '153'
+priority: '2'
+project: '10201'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-11-06 14:39:21.0
+votes: '0'
+watches: '3'
+workflowId: '12183'
+---
+actions:
+- author: richvdh
+  body: |-
+    Restarting the app brought back the 'Use GCM' tick.
+
+    [~M-ylecollen] says: "it seems that the application failed to retrieve the GCM token"
+  created: 2015-11-04 11:20:33.0
+  id: '12318'
+  issue: '12080'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-04 11:20:33.0
+- author: m-ylecollen
+  body: Should be fixed in version 260
+  created: 2015-11-06 14:39:21.0
+  id: '12349'
+  issue: '12080'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-11-06 14:39:21.0

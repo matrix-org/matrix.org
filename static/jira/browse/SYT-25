@@ -1,0 +1,39 @@
+---
+summary: Test 3PID invites
+---
+assignee: illicitonion
+created: 2015-09-29 15:18:16.0
+creator: leonerd
+description: ''
+id: '11969'
+key: SYT-25
+number: '25'
+priority: '1'
+project: '10300'
+reporter: leonerd
+status: '10200'
+type: '2'
+updated: 2015-09-29 16:41:25.0
+votes: '0'
+watches: '1'
+workflowId: '12072'
+---
+actions:
+- author: leonerd
+  body: Dan - assigning to you because I thought you were in progress on this one (or have already finished?)
+  created: 2015-09-29 15:41:32.0
+  id: '12188'
+  issue: '11969'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-29 15:41:32.0
+- author: leonerd
+  body: |-
+    Awaiting SYN-458
+    Also awaiting specification but there's no SPEC bug for that :(
+  created: 2015-09-29 16:41:25.0
+  id: '12194'
+  issue: '11969'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-29 16:41:25.0

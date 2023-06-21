@@ -1,0 +1,30 @@
+---
+summary: Scrollback should be more copy-pastable
+---
+created: 2014-12-09 18:37:49.0
+creator: matthew
+description: ''
+id: '10793'
+key: SYWEB-230
+number: '230'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-03-03 13:25:32.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:48.0
+votes: '0'
+watches: '2'
+workflowId: '10893'
+---
+actions:
+- author: kegan
+  body: SYWEB-249
+  created: 2015-03-03 13:25:32.0
+  id: '11339'
+  issue: '10793'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-03 13:25:32.0

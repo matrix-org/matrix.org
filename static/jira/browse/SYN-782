@@ -1,0 +1,30 @@
+---
+summary: Unable to leave a room over federation
+---
+created: 2016-10-05 13:42:37.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Reported by @vimacs:cnjabber.net who was running Synapse 0.18.0-1 from the Debian repo. They joined !ratDvlVeyXDBESNNpb:matrix.org (a bridged IRC room) and then came to me stating that even though they left the room, they did not leave the IRC channel. Looking at the IRC bridge logs, it became clear that matrix.org Synapse did not send any leave event to the bridge (bridge was up and running fine). When they tried to re-join the room they got 404 'No known servers' in their Synapse logs which they shared (Riot said 'It is not currently possible to re-join an empty room.'). I couldn't invite them to the room using the AS token because it said they were already in the room, so it sounds like the leave event really never made it to matrix.org. I fixed it in the end by kicking them from the room using the AS token.
+id: '12847'
+key: SYN-782
+number: '782'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:05.0
+votes: '0'
+watches: '2'
+workflowId: '12947'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1607'
+  created: 2016-11-07 18:30:05.0
+  id: '13937'
+  issue: '12847'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:05.0

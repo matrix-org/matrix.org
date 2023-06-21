@@ -1,0 +1,36 @@
+---
+summary: Tor only received PMs from me (weeks old) on his HS after he sent me a message; federation had got stuck somehow
+---
+created: 2015-07-29 14:18:18.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11771'
+key: SYN-439
+number: '439'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:14.0
+votes: '0'
+watches: '3'
+workflowId: '11872'
+---
+actions:
+- author: erikj
+  body: 'This is due to the fact we haven''t implemented all the reliability layers yet. The one that would help here is: keeping track of unsent transactions/pdus and resending them when we hear from the remote HS.'
+  created: 2015-08-28 11:00:33.0
+  id: '12076'
+  issue: '11771'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-08-28 11:00:33.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1351'
+  created: 2016-11-07 18:28:14.0
+  id: '13672'
+  issue: '11771'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:14.0

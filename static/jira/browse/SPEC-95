@@ -1,0 +1,50 @@
+---
+summary: v2 - Capabilities API
+---
+created: 2015-01-21 11:10:13.0
+creator: kegan
+description: |-
+  See SPEC-6 for client-server cap negotiation.
+  See SPEC-4 for client-client cap negotiation.
+  See SPEC-57 for server caps (possibly a subset of SPEC-6?)
+id: '10965'
+key: SPEC-95
+number: '95'
+priority: '1'
+project: '10001'
+reporter: kegan
+status: '1'
+type: '1'
+updated: 2016-10-28 16:26:57.0
+votes: '0'
+watches: '2'
+workflowId: '11065'
+---
+actions:
+- author: richvdh
+  body: what is this? a parent of the other bugs?
+  created: 2016-09-27 17:04:57.0
+  id: '13130'
+  issue: '10965'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:04:57.0
+- author: richvdh
+  body: |-
+    ok I think the other bugs were merged together here.
+
+    The other bugs assert that this is handled via the URI path prefixes, and sensible handling of 404s, but I'm not so sure. A server may not support all modules in the spec, so we need a way to determine which it does. Relying on 404s is a bit flaky as 404s can result from misconfiguration as well as lack of support.
+  created: 2016-09-27 17:07:44.0
+  id: '13131'
+  issue: '10965'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:07:44.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/490'
+  created: 2016-10-28 16:26:57.0
+  id: '13265'
+  issue: '10965'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:57.0

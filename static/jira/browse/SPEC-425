@@ -1,0 +1,33 @@
+---
+summary: Calculate room names server-side
+---
+created: 2016-07-12 11:45:56.0
+creator: richvdh
+description: |-
+  The [rules|https://matrix.org/docs/spec/client_server/r0.1.0.html#calculating-the-display-name-for-a-room] for calculating the display name of a room are complicated. It would be preferable to offload some of this work to the server.
+
+  This would probably mean adding a field to the {{/sync}} response.
+
+  Care would need to be taken to make sure that the textual parts of the name can be translated into the user's preferred language. This would probably mean providing the information in a structured manner (possibly as well as supplying preformatted strings in one or more languages for clients to use for simplicity if they prefer).
+id: '12741'
+key: SPEC-425
+number: '425'
+priority: '4'
+project: '10001'
+reporter: richvdh
+status: '1'
+type: '4'
+updated: 2016-10-28 16:28:38.0
+votes: '0'
+watches: '1'
+workflowId: '12841'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/688'
+  created: 2016-10-28 16:28:38.0
+  id: '13497'
+  issue: '12741'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:38.0

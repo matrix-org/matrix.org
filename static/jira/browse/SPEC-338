@@ -1,0 +1,28 @@
+---
+summary: Should we version per-event event schemas?
+---
+created: 2016-01-25 17:46:07.0
+creator: matthew
+description: ''
+id: '12347'
+key: SPEC-338
+number: '338'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:14.0
+votes: '0'
+watches: '2'
+workflowId: '12452'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/628'
+  created: 2016-10-28 16:28:14.0
+  id: '13436'
+  issue: '12347'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:14.0

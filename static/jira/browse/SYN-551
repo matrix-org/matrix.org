@@ -1,0 +1,50 @@
+---
+summary: Invite metadata should include m.room.aliases as well as m.room.canonical_alias
+---
+created: 2015-12-16 10:31:40.0
+creator: matthew
+description: ''
+id: '12214'
+key: SYN-551
+number: '551'
+priority: '1'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:44.0
+votes: '0'
+watches: '3'
+workflowId: '12317'
+---
+actions:
+- author: erikj
+  body: I thought the correct behaviour was to start listing members if there is neither a name nor a canonical alias?
+  created: 2016-01-05 15:40:59.0
+  id: '12512'
+  issue: '12214'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 15:40:59.0
+- author: erikj
+  body: |-
+    I would rather we fix:
+
+    * pre-existing rooms that should have a name to have a name and canonical alias
+    * clients to follow the guidelines on how to display rooms
+
+    than including a work around in the Spec.
+  created: 2016-01-05 16:08:01.0
+  id: '12513'
+  issue: '12214'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 16:08:01.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1447'
+  created: 2016-11-07 18:28:44.0
+  id: '13750'
+  issue: '12214'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:44.0

@@ -1,0 +1,22 @@
+---
+summary: Transparent PNGs/GIFs should be shown against a white background
+---
+created: 2015-02-27 21:21:23.0
+creator: matthew
+description: ''
+id: '11149'
+key: SYWEB-309
+number: '309'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-03 17:26:12.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:56.0
+votes: '0'
+watches: '1'
+workflowId: '11249'
+---
+actions: null

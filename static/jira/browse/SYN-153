@@ -1,0 +1,38 @@
+---
+summary: Exception when getting a room alias that doesn't exist.
+---
+created: 2014-11-18 17:41:53.0
+creator: markjh
+description: |-
+  {noformat}
+  Traceback (most recent call last):
+    File "synapse/federation/transport.py", line 343, in new_handler
+      origin, content, request.args, *args, **kwargs
+    File "/home/markjh/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/markjh/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGene
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/federation/replication.py", line 392, in on_query_request
+      response = yield self.query_handlers[query_type](args)
+    File "/home/markjh/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/handlers/directory.py", line 126, in on_directory_query
+      "room_id": result.room_id,
+  AttributeError: 'NoneType' object has no attribute 'room_id'
+  {noformat}
+id: '10674'
+key: SYN-153
+number: '153'
+priority: '2'
+project: '10000'
+reporter: markjh
+resolution: '3'
+resolutiondate: 2014-11-19 14:23:47.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:45.0
+votes: '0'
+watches: '1'
+workflowId: '10774'
+---
+actions: null

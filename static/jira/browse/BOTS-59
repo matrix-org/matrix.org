@@ -1,0 +1,39 @@
+---
+summary: IRC AS crashed with 2015-06-20 21:30:47 ERROR:main FATAL EXCEPTION (UTC time)
+---
+assignee: kegan
+created: 2015-06-20 22:37:43.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11681'
+key: BOTS-59
+number: '59'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '4'
+resolutiondate: 2015-06-22 11:51:26.0
+status: '5'
+type: '1'
+updated: 2015-06-22 11:51:26.0
+votes: '0'
+watches: '2'
+workflowId: '11782'
+---
+actions:
+- author: kegan
+  body: Looks like there was a huge netsplit from a bunch of virtual clients including the MatrixBridge which took ~5 minutes to reconnect. This events seems to be related to BOTS-61 since I see other long-numbered nicks trying to connect at this time.
+  created: 2015-06-22 09:21:08.0
+  id: '11895'
+  issue: '11681'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-22 09:21:08.0
+- author: kegan
+  body: Annoyingly, there is a [bug in winston|https://github.com/winstonjs/winston/issues/228] which means that there is a race between the file flushing and the process terminating, so we have no stack trace :/ I've worked around the bug so in the future this won't happen. As a result, closing this as {{Incomplete}}.
+  created: 2015-06-22 11:51:12.0
+  id: '11902'
+  issue: '11681'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-22 11:51:12.0

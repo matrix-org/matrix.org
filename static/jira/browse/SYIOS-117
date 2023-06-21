@@ -1,0 +1,20 @@
+---
+summary: Tapping on a username in the message list should copy it into my input buffer (poor man's autocomplete)
+---
+created: 2015-03-29 23:44:36.0
+creator: matthew
+description: ''
+id: '11293'
+key: SYIOS-117
+number: '117'
+priority: '2'
+project: '10200'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-03-29 23:44:36.0
+votes: '0'
+watches: '1'
+workflowId: '11393'
+---
+actions: null

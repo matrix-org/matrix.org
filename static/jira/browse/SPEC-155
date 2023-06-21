@@ -1,0 +1,28 @@
+---
+summary: Should we let users specify room-id when creating room, to make bridging easier?
+---
+created: 2015-04-18 12:36:07.0
+creator: matthew
+description: ''
+id: '11351'
+key: SPEC-155
+number: '155'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:15.0
+votes: '0'
+watches: '2'
+workflowId: '11451'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/495'
+  created: 2016-10-28 16:27:15.0
+  id: '13303'
+  issue: '11351'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:15.0

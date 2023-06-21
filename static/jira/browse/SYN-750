@@ -1,0 +1,28 @@
+---
+summary: Add synctl_cache_factor to the default config
+---
+created: 2016-08-13 18:11:16.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12793'
+key: SYN-750
+number: '750'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:52.0
+votes: '0'
+watches: '2'
+workflowId: '12893'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1583'
+  created: 2016-11-07 18:29:52.0
+  id: '13907'
+  issue: '12793'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:52.0

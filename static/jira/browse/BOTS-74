@@ -1,0 +1,33 @@
+---
+summary: wrap irc node library
+---
+assignee: kegan
+created: 2015-07-03 19:59:58.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  A number of problems on the AS have been due to the library not emitting or functioning correctly. We currently adds lots of reliability bodge in server.js but this is getting increasingly unruly. We need to expose a better api for the rest of the irc as to use.
+id: '11727'
+key: BOTS-74
+number: '74'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-07-31 10:32:01.0
+status: '5'
+type: '1'
+updated: 2015-07-31 10:32:15.0
+votes: '0'
+watches: '2'
+workflowId: '11828'
+---
+actions:
+- author: kegan
+  body: 'Fixed on {{matrix-memberlist-mirroring}} branch: the immediate problem of wrapping the {{node-irc}} library connections is now done in the form of {{ConnectionInstance}} s.'
+  created: 2015-07-31 10:32:01.0
+  id: '12039'
+  issue: '11727'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-31 10:32:15.0

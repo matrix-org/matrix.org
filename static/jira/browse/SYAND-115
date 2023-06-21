@@ -1,0 +1,61 @@
+---
+summary: Cannot see pictures from others users (own HS)
+---
+created: 2015-08-16 21:29:39.0
+creator: bob
+description: |-
+  Two users:
+  - User A
+  - User b
+
+  Own Homeserver.
+
+  When user A send pictures, user B is not able to see those in a room "hosted" in the local HS (and vice versa).
+
+  In the webclient the users are seeing those pictures.
+  So it is possbile an issue in the Android app.
+
+  Remark:
+  As there is still an issue with the certs, the HS is running in HTTP mode (not HTTPS).
+id: '11800'
+key: SYAND-115
+number: '115'
+priority: '3'
+project: '10201'
+reporter: bob
+status: '10100'
+type: '1'
+updated: 2015-09-06 12:32:51.0
+votes: '0'
+watches: '2'
+workflowId: '11902'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    I tried with Matthew's homeserver (http://arasphere.net).
+
+    user A was on matrix.org HS
+    user B was on arasphere.net HS.
+
+    A and B exchanged images without any problem.
+    Could you start a chat with an account in your homeserver and myself ?
+
+    I suspect that something is wrong in your homeserver but i believe it is better that i chek on the android client.
+  created: 2015-09-04 13:06:21.0
+  id: '12102'
+  issue: '11800'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-04 13:06:21.0
+- author: bob
+  body: |-
+    It seems to be a problem only on my Nexis 7 (with CM).
+
+    On a third device (Z3 Compact, 5.1) I get the images. On the Nexus 7 I never get images sent by others...
+  created: 2015-09-06 12:32:51.0
+  id: '12110'
+  issue: '11800'
+  type: comment
+  updateauthor: bob
+  updated: 2015-09-06 12:32:51.0

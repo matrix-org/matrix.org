@@ -1,0 +1,114 @@
+---
+summary: Content repository URLs are fragile and break nastily when people relocate their homeserver
+---
+assignee: markjh
+created: 2014-09-16 00:49:08.0
+creator: matthew
+description: |-
+  Currently users have to specify a --content-addr to say how they want to announce their HS's content repo.  This is unintuitive and painful for a user to do.  They can't just use the :8448 SSL listener, as it will be untrusted by normal web browsers.  So they have to somehow proxy it through an HTTP path they can expose - which is unnecessarily hard to setup and understand.  And even then, the URLs stored in messages break if the content repo prefix ever changes.
+
+  Suggestions are very welcome...
+id: '10049'
+key: SYN-24
+number: '24'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-07 13:23:02.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:26:19.0
+votes: '0'
+watches: '2'
+workflowId: '10358'
+---
+actions:
+- author: matthew
+  body: Is it sensible to proxy all content transfer through one's local HS - thus meaning remote HSes only need to be exposed for federation (complete with crazy untrusted listeners)?  This would mean needing streaming download support, but might be worth it (and then your local HS acts as a content cache...)
+  created: 2014-10-27 08:43:44.0
+  id: '10582'
+  issue: '10049'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-27 08:43:44.0
+- author: matthew
+  body: |-
+    Much RL discussion about this earlier today, as I'm getting fed up with seeing broken avatar images eeeeverywhere.  Our options for fixing this properly are basically:
+
+    1. Proxy everything through your local HS
+    2. Expose content by our normal c-s listener (either HTTPS with real cert, or HTTP)... but have to somehow advertise to the world where this resides.
+
+    Option 1 was dismissed as a potential XSS nightmare (by blindly exposing random 3rd party content out of our own URL space), and needlessly chewing bandwidth (although it does give you scope for thumbnailing/caching URIs in your own HS).
+    Option 2 is effectively where we're at today, but we do a terrible job of actually configuring things up properly - plus it's fragile.
+
+    Options 1 & 2 are not exclusive.
+
+    Suggestion to fix is to refine Option 2 for now:
+     * Force people to specify a sensible --content-addr URL for their homeserver, rather than defaulting to :8448, which we know will never work.  This probably means turning it into being a --client-server-api config option, which forces you to tell the server how its C-S API is exposed to the internet.  There should probably be a --server-server-api option too.  The server should refuse to run if the --client-server-api config option exposes a self-signed listener.  So, for instance, I might run: --client-server-api=https://arasphere.net (having proxied through on arasphere.net), and --server-server-api=https://arasphere.net:8448 (the default).  We could give people the option of using the :8008 HTTP listener for client-server, but we shouldn't make it the default, as we don't want to encourage no crypto.
+     * Make content repo URLs relative (with the option of including fully qualified ones when desired and for backwards compatibility).
+     * Relative URLs need to be resolved to the content repo for the given origin server.  Our HS discovers and caches remote repo URLs somehow (SPEC-57) and delivers them to clients as part of the room state.  Clients then use these URLs to form absolute content URLs.
+  created: 2014-11-10 16:39:22.0
+  id: '10760'
+  issue: '10049'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-10 16:39:22.0
+- author: matthew
+  body: (actually, we probably want to maintain the --content-server-api option too, in case the user wants to run a separate content-server to the main client-server API...)
+  created: 2014-11-10 16:44:19.0
+  id: '10761'
+  issue: '10049'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-10 16:44:19.0
+- author: matthew
+  body: |-
+    We've had a change of heart on this and gone for Option 1 in the end, as it's crap that a homeserver failure can destroy all the content associated with a given chat.
+
+    For the record, the current implementation notes are:
+
+     * In the immediate term: content repo should default to HTTP - or force you to set an explicit (correct) HTTPS content repo path
+     * Otherwise,  we should proxy via the local HS, hitting the remote HS via federation
+     * ...and use local paths in URLs
+     * We need to track the filename being uploaded (other than in the event), and serve it up via Content-Disposition when we download.  This probably means having a content table in the DB to track the content.  API could either request a token for the content or do a RESTful API.
+     * we should generate thumbnails on demand on the origin homeserver (the server may provide a best effort solution rather than targeting the requested resolution)
+      * mandate a given URI scheme for the thumbnails to encourage HSes not to lie about thumbnails, and prevent clients from lying about them:
+      * http://host/_matrix/_client/api/v1/content/hostname/path/thumbnail-640x480.jpg # perhaps?
+      * http://host/_matrix/_client/api/v1/content/hostname/path?thumbnail=true&width=640&height=480&format=jpg # perhaps?  
+
+    SYN-24 Content repository URLs are fragile and break nastily when people relocate their homeserver
+    SYN-150 Content-repo should use Content-Disposition headers for filenames
+    SYN-32 Server-side image thumbnailing
+
+
+    1) Should we be allowed to specify the server hosting the attachment content? Can it be different to the originating server of the message the content is attached to? Similarly for avatars? 
+      -> flagging content as "not to be replicated" could be quite a nice feature.  (and presumably degrades to the current behaviour, but with a sane repo prefix)
+
+    2) Should we track which events/state a given image is associated with? If we didn't how would we expunge old content?
+      -> oh, yes. probably.
+
+    3) I wonder if HSs should eagerly download attachments for a message to local cache...
+      -> might as well, although it could be configured to taste
+  created: 2014-11-25 16:59:46.0
+  id: '10842'
+  issue: '10049'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-25 16:59:46.0
+- author: matthew
+  body: As a very short-term immediate hack, can we please mandate that content_addr is present in the homeserver config YAML and needs to be set to something meaningful before the server will run?
+  created: 2014-11-26 18:14:57.0
+  id: '10870'
+  issue: '10049'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-26 18:14:57.0
+- author: kegan
+  body: Mark's content repo implements this.
+  created: 2015-01-07 13:23:02.0
+  id: '11058'
+  issue: '10049'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-07 13:23:02.0

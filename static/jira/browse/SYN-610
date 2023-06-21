@@ -1,0 +1,28 @@
+---
+summary: Why do Torrie's APNSes appear prefixed with her mxid rather than displayname?
+---
+created: 2016-01-27 04:32:45.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12350'
+key: SYN-610
+number: '610'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:02.0
+votes: '0'
+watches: '2'
+workflowId: '12455'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1485'
+  created: 2016-11-07 18:29:02.0
+  id: '13791'
+  issue: '12350'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:02.0

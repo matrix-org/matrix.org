@@ -1,0 +1,55 @@
+---
+summary: 'Matrix Console app slightly freezes when receiving a message '
+---
+assignee: manu
+created: 2015-01-14 10:43:43.0
+creator: manu
+description: |-
+  To reproduce it:
+   - Send a message
+   - While the message is in the echo state, continue typing random chars in the text view.
+
+   ->  When the app receives the ACK from the HS for this message (when the message becomes black), you can see the UI that stops repeating typed chars for a few hundred of ms.
+
+  Possible faulty candidates:
+   1 - MXFileStore write. The longer a room history is, the more it takes time to save room data. And this operation in currently done on the main thread.
+   2 - Message echo management.
+id: '10928'
+key: SYIOS-54
+number: '54'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-01-16 14:35:56.0
+status: '5'
+type: '1'
+updated: 2015-01-16 14:35:56.0
+votes: '0'
+watches: '2'
+workflowId: '11028'
+---
+actions:
+- author: gforet
+  body: About the second faulty candidate "Message echo management", we add multithreading to handle received events and back pagination. This fix several cases of app freeze.
+  created: 2015-01-16 09:46:51.0
+  id: '11141'
+  issue: '10928'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-16 09:46:51.0
+- author: manu
+  body: |-
+    [MXFileStore commit] code is now executed on a separate thread. 
+
+    Note we may be at the limit of the MXFileStore implementation.
+    MXFileStore manages one file per room. It stores data for a room by serialising the MXFileRoomStore object that represents this room. It uses NSObject serialisation. 
+    On a new event in a room, MXFileStore serialises the whole MXFileRoomStore object which takes more and more time as there are more messages in this object.
+
+    For illustration, caching a new message to a room already containing 700 messages takes 800ms on an iPhone 5s.
+  created: 2015-01-16 14:35:56.0
+  id: '11142'
+  issue: '10928'
+  type: comment
+  updateauthor: manu
+  updated: 2015-01-16 14:35:56.0

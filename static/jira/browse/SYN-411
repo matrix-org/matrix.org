@@ -1,0 +1,52 @@
+---
+summary: Should expose a way to force the HS to retry pending transactions to the AS
+---
+created: 2015-06-14 17:07:22.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  See @mirw:matrix.mirw.cw-ngv.com's feedback from tadhack June 14
+id: '11648'
+key: SYN-411
+number: '411'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:07.0
+votes: '0'
+watches: '3'
+workflowId: '11749'
+---
+actions:
+- author: kegan
+  body: |-
+    The AS went down, so the HS would've been backing off. Matthew's instinct here was right : "i suspect it's doing exponential backoff on retrying to the AS".
+
+    I'm open to suggestions on how to improve this, probably providing a way to kick the timers to retry immediately. How the kick is exposed (http poke, shell command, etc) and whether this is spec worthy would make for an interesting discussion.
+  created: 2015-06-14 17:23:35.0
+  id: '11861'
+  issue: '11648'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-14 17:23:35.0
+- author: kegan
+  body: |-
+    For record keeping, the transcript from #matrix:
+
+    I've just hit an issue where synapse doesn't seem to be notifying my application service of events. I see the events going from my browser to synapse... but then not on to the application service. homeserver.log doesn't show synapse attempting to send notifications (and they don't show up in tcpdump either). This was working earlier, but then there was a period where my application service was down, and I wonder whether synapse has "blacklisted" it?
+  created: 2015-06-14 17:27:25.0
+  id: '11862'
+  issue: '11648'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-14 17:27:25.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1334'
+  created: 2016-11-07 18:28:07.0
+  id: '13655'
+  issue: '11648'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:07.0

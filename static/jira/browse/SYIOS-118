@@ -1,0 +1,23 @@
+---
+summary: Hide unknown events by default
+---
+created: 2015-03-29 23:53:24.0
+creator: matthew
+description: |-
+  What are the defaults for hiding unknown events?
+
+  It'd be good to show only non-debugging ones by default - but I'm not sure this is the case...
+id: '11297'
+key: SYIOS-118
+number: '118'
+priority: '3'
+project: '10200'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-03-29 23:53:24.0
+votes: '0'
+watches: '1'
+workflowId: '11397'
+---
+actions: null

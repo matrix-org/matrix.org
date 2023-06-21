@@ -1,0 +1,45 @@
+---
+summary: Handling invites from /initialSync is unintuitive
+---
+created: 2014-10-17 16:17:47.0
+creator: kegan
+description: |-
+  There are 2 very different ways of recognising invites currently.
+
+  The first is when you are listening on the event stream and someone invites you: you get an {{m.room.member}} event which contains the invite. I like this because it is the same as when other people invite other people, it's all nice and consistent.
+
+  The second way is if you were NOT listening on the event stream and therefore hit {{/initialSync}} at a later time. Then, it comes down as this non-event, with {{membership}} and {{inviter}} keys. This does strictly contain the required information, but why not use the {{state}} array and dump the actual {{m.room.member}} event there?
+
+  As a result of this duality, clients have to have 2 separate ways of handling invites, and the latter is *horrible* since it isn't even coming down as an Event object!!
+id: '10481'
+key: SPEC-54
+number: '54'
+priority: '2'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-01-21 11:57:21.0
+status: '5'
+type: '1'
+updated: 2015-01-21 11:57:21.0
+votes: '1'
+watches: '2'
+workflowId: '10585'
+---
+actions:
+- author: manu
+  body: Having an {{m.room.member event}} in {{/initialSync}} for invitation will be helpful to get more information like the invitation timestamp
+  created: 2014-11-20 15:09:53.0
+  id: '10817'
+  issue: '10481'
+  type: comment
+  updateauthor: manu
+  updated: 2014-11-20 15:09:53.0
+- author: kegan
+  body: 'Landed on master: {{drafts/general_api.rst}}'
+  created: 2015-01-21 11:57:21.0
+  id: '11173'
+  issue: '10481'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:57:21.0

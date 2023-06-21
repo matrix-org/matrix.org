@@ -1,0 +1,60 @@
+---
+summary: We should veto m.login.password flows on plain-text transports like plain HTTP
+---
+created: 2016-02-11 16:31:01.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Meanwhile, implementing a flow for some mechanism like SCRAM for folks who can't speak TLS could be good - see https://twitter.com/HCornflower/status/697791409785450500
+id: '12387'
+key: SPEC-346
+number: '346'
+priority: '1'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:28:17.0
+votes: '0'
+watches: '3'
+workflowId: '12492'
+---
+actions:
+- author: matthew
+  body: |-
+    <eternaleye>
+    If you want to avoid exposing the password on the wire, there are two ways
+    One is to use a hashed challenge-response protocol. such as CHAP. As can be seen by the history of CHAP, this is very difficult to get right.
+    It also means the password must be stored plaintext in the DB, which is a non-started.
+    The other is to use an augmented PAKE, such as SRP or AugPAKE or SPAKE2 (which the IETF CFRG is working on)
+    These do not expose the password on the wire or in the database
+    Guest 4989: But more specifically, if what's sent over the wire is enough to log you in, and simply sending it is enough, it's "password equivalent", and has no security benefits over a password.
+    (Well, the above holds so long as it's opaque and time-invariant - macaroons have advantages due to the fact that they aren't always valid, but during the validity period, the above holds)
+
+    <Matthew (@matthew:matrix.org)>
+    the XMPP folks prodded me proudly at their password-alternative login mechanism
+    but i can't remember for the life of me what XEP it is
+    ah, SCRAM
+    https://tools.ietf.org/html/rfc6120#section-13.8.3
+    [1] RFC 6120 - Extensible Messaging and Presence Protocol (XMPP): Core
+
+    <eternaleye>
+    Matthew: Mm, SCRAM is a viable option, yeah
+    But again, it's not simply hashing it before sending it over the wire - to get better-than-password security, you need either an interactive protocol, or asymmetric crypto (and sometimes both)
+    Anyway, potentially of interest: https://tools.ietf.org/html/draft-irtf-cfrg-spake2-03
+    That's the augmented PAKE protocol I mentioned
+    SPAKE2+ is the augmented one, SPAKE2 is symmetric (both sides have plaintext)
+  created: 2016-03-30 18:53:15.0
+  id: '12802'
+  issue: '12387'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-30 18:53:15.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/634'
+  created: 2016-10-28 16:28:17.0
+  id: '13442'
+  issue: '12387'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:17.0

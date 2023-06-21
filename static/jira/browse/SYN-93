@@ -1,0 +1,22 @@
+---
+summary: Official support for non-sqlite backends
+---
+created: 2014-10-12 00:00:12.0
+creator: matthew
+description: ''
+id: '10462'
+key: SYN-93
+number: '93'
+priority: '3'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-07 11:56:45.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:04.0
+votes: '0'
+watches: '1'
+workflowId: '10566'
+---
+actions: null

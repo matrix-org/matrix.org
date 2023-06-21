@@ -1,0 +1,30 @@
+---
+summary: Changing one's own displayname doesn't show up in chat history.
+---
+created: 2015-03-08 19:15:59.0
+creator: matthew
+description: ''
+id: '11176'
+key: SYIOS-101
+number: '101'
+priority: '1'
+project: '10200'
+reporter: matthew
+resolution: '2'
+resolutiondate: 2015-03-12 13:41:32.0
+status: '5'
+type: '1'
+updated: 2015-03-12 13:41:32.0
+votes: '0'
+watches: '2'
+workflowId: '11276'
+---
+actions:
+- author: gforet
+  body: Invalid issue.
+  created: 2015-03-12 13:41:32.0
+  id: '11381'
+  issue: '11176'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-03-12 13:41:32.0

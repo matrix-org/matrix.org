@@ -1,0 +1,118 @@
+---
+summary: AS URI format
+---
+created: 2015-03-10 11:28:40.0
+creator: kegan
+description: |-
+  Context: http://matrix.org/docs/spec/#user-ids
+
+  We need to specify the API for how Application Services can register for URI queries (from the URI -> user_id/alias lookup API). Most likely this will be an extra key in {{/register}} e.g. {{uris}}, but what does it look like?
+
+  {code}
+  uris: [
+       {
+         "scheme": "irc",
+         "hierarchical_regex": ".*",
+         "query_regex": ".*",
+         "fragment_regex": ".*"
+       },
+     ]
+  {code}
+
+  Or just a blunt regex?
+
+  {code}
+  uris: [
+       {
+         "regex": "irc://.*"
+       }
+     ]
+  {code}
+
+  How do we handle clashes? We need to return exactly one ID in response to the URI request, so presumably say "It's up to the server admin not to install clashing ASes, HSes SHOULD just invoke the first match found: if there are multiple which one is returned is undefined"?
+id: '11189'
+key: SPEC-124
+number: '124'
+priority: '2'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:07.0
+votes: '0'
+watches: '3'
+workflowId: '11289'
+---
+actions:
+- author: kegan
+  body: |-
+    IRL Summary:
+     - We really can't have the solid 1:1 mapping between URI and Matrix ID because that would prevent *multiple* 3P protocols mapping through to the *same* room (e.g. Matrix+IRC+XMPP in the same room), because they need to share a generic/neutral namespace.
+     - It's annoying that clients need to poke the lookup API every time. The mapping from URI -> Matrix ID should be able to be done by the client (so we need a JSON representation of the mapping itself).
+     - Conclusion is to add a basic globbing/substitution scheme for mapping URIs -> Matrix ID, to prevent pathological regex being implemented on the client. It looks something like:
+
+    {code}
+    mappings: [
+      {
+        uri: "xmpp:*@chat.shakespeare.lit",
+        mapping: "#${USERINFO}.${HOST}:${HOMESERVER}  // e.g. #groupchat.chat.shakespeare.lit:matrix.org
+      },
+      {
+        uri: "xmpp:romeo@montague.net",
+        mapping: "@xmpp_${HOST}_${USERINFO}:${HOMESERVER}  // @xmpp_montague.net_romeo:matrix.org
+      }
+      { ... }
+    ]
+    {code}
+    The {{uri}} section supports globbing, and the {{mapping}} section supports substitution.
+
+    This will be sent in the AS {{/register}} call, and the HS can expose this information to clients if they want to manually do the mapping. Typically though they would hit the lookup API with a URI and get the mapping out the other end.
+
+    Some URIs aren't clear if the entity is a room or a user. We need to know this in order to respond to the mapping. For cases where it is unknown, it is safe for the mapping to omit the leading {{@}} or {{#}}, in which case it is up to the client to interpret the result according to the context of the action.
+  created: 2015-03-10 14:07:07.0
+  id: '11374'
+  issue: '11189'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-10 14:08:42.0
+- author: kegan
+  body: |-
+    Valid substitution variables include:
+
+    {code}
+    foo://username:password@example.com:8042/over/there/index.dtb?type=animal&name=narwhal#nose
+    \_/   \_______________/ \_________/ \__/                      \______________________/ \__/
+     |           |               |       |                                  |                |
+     |       USERINFO           HOST    PORT                              QUERY          FRAGMENT
+     |    \________________________________/\___________________/        
+    SCHEME                 |                          |         
+                      AUTHORITY                       |       
+                                                     PATH    
+    {code}
+
+    and {{HOMESERVER}} to indicate the home server domain (since registering Application Services may not know this).
+  created: 2015-03-10 14:15:09.0
+  id: '11375'
+  issue: '11189'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-10 14:15:52.0
+- author: matthew
+  body: |-
+    I think this got totally abandoned in favour of having a lookup API that clients can use to turn a URI into a MXID as per 'GET /_matrix/app/v1/user?uri=$url_encoded_uri' in the current AS spec.
+
+    Is it possible that this could also be handled by a generic canonicalisation API as per SPEC-62?
+  created: 2015-07-09 23:05:55.0
+  id: '11979'
+  issue: '11189'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-09 23:05:55.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/436'
+  created: 2016-10-28 16:27:07.0
+  id: '13286'
+  issue: '11189'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:07.0

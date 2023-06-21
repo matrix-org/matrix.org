@@ -1,0 +1,72 @@
+---
+summary: Web Client leaks memory over time
+---
+created: 2015-04-27 13:39:15.0
+creator: dbkr
+description: |-
+  Thought there was a bug for this but I can't find one.
+
+  It looks to me like memory is leaked when changing rooms. At least, switching between Matrix HQ and matrix-dev a few time caused the memory size to grow by 100MB or so.
+id: '11378'
+key: SYWEB-354
+number: '354'
+priority: '1'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-04-28 14:39:33.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:53.0
+votes: '0'
+watches: '2'
+workflowId: '11478'
+---
+actions:
+- author: matthew
+  body: |-
+    I've halfheartedly dug into this a few times, before getting fed up with Angular and concentrating more on playing with React/Flux.  I did a bunch of heap dumps and tried to understand the deltas - the minimised Angular makes it pretty hard to see who's retaining what where.  Superficially it looked like jquery DOM caches were occupying most of the space.
+
+    Convo with Kegan from Apr 22 was:
+
+    15:44:34       Ara4n just had another look at angular leaking
+    15:44:40       Ara4n it looks like jquery cache things leakings omehow
+    15:45:15       Ara4n we seem to be using angular 1.3.13
+    15:45:54       Ara4n whereas we're on 1.3.15 now (or 1.4.0-rc.0)
+    15:46:13       Ara4n kegan: shall I upgrade it?
+
+    16:59:48       kegan I don't think it is an angular problem 
+    17:00:10       kegan Jquery does cache dom elements 
+    17:00:30       kegan And upgrading jquery fixed a lot of the problems before 
+    17:00:48       kegan But I'd be surprised if it's still that as the cause. 
+    17:01:17       kegan Ftr to debug this, use the Room object counts 
+    17:02:08       kegan And then get it to cull a room (by having an incoming message for a room you're not viewing which has >100 msgs stored) 
+    17:02:32       Ara4n which Room object counts?
+    17:02:40       kegan The count should remain stable (diffs on the heap in chrome show +1 - 1)
+    17:02:52       Ara4n oh, right, number of Rooms on the heap
+    17:03:17       kegan When you heap dump in chrome you get object type counts 
+    17:03:23       kegan Yarp
+    17:04:28       kegan But you'll find that it never does the - 1
+    17:15:59       kegan Solve that and you're well on the way to fixing our mem leak woes
+  created: 2015-04-27 13:57:50.0
+  id: '11541'
+  issue: '11378'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-27 13:57:50.0
+- author: matthew
+  body: a really obvious next step would be to repro the problem against non-minimised angular, ftr.
+  created: 2015-04-27 14:05:57.0
+  id: '11542'
+  issue: '11378'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-27 14:05:57.0
+- author: dbkr
+  body: 'I''ve fixed an instance where we were attaching event listeners to the root scope in the room controller and then not cleaning them up which reduces memory leakage in my experiments. Marking this resolved for now: let''s reopen if it''s still a problem.'
+  created: 2015-04-28 14:39:29.0
+  id: '11601'
+  issue: '11378'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-28 14:39:29.0

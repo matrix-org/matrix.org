@@ -1,0 +1,26 @@
+---
+summary: There is no scrollback whenever I join an invited room.
+---
+assignee: kegan
+created: 2014-11-26 02:39:46.0
+creator: matthew
+description: |-
+  If I receive an invite to a room and join it, I never see any scrollback.  This can be very confusing, when people include messages in the room after sending the invite, but the messages don't appear until you explicitly refresh the window after having joined the room.
+
+  (Should we even be letting people send messages when their invite hasn't yet been accepted?)
+id: '10716'
+key: SYWEB-181
+number: '181'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-26 10:44:47.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:04.0
+votes: '0'
+watches: '1'
+workflowId: '10816'
+---
+actions: null

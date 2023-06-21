@@ -1,0 +1,31 @@
+---
+summary: 'v2: /sync 400s with invalid token'
+---
+created: 2015-02-06 15:40:58.0
+creator: kegan
+description: |-
+  Tried to use {{/sync}} but it kept 400ing me with:
+  {code}
+  {"errcode":"M_UNKNOWN","error":"Invalid token 't72-53716'"}
+  {code}
+
+  But I didn't use any token in my request:
+  {code}
+  http://matrix.org/_matrix/client/v2_alpha/sync?access_token=QGtlZ2Fu[...]oN&filter=0&limit=15&timeout=30000
+  {code}
+id: '11008'
+key: SYN-258
+number: '258'
+priority: '1'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-06 16:08:28.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:26:19.0
+votes: '0'
+watches: '1'
+workflowId: '11108'
+---
+actions: null

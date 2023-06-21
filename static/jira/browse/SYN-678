@@ -1,0 +1,30 @@
+---
+summary: Error when trying to join an empty room should be more explicit
+---
+created: 2016-04-12 12:57:34.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  It is currently {"errcode":"M_UNKNOWN","error":"No known servers"} - i am having to string match on the error message to display a more coherent one in Vector :(
+id: '12621'
+key: SYN-678
+number: '678'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:24.0
+votes: '0'
+watches: '2'
+workflowId: '12721'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1533'
+  created: 2016-11-07 18:29:24.0
+  id: '13843'
+  issue: '12621'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:24.0

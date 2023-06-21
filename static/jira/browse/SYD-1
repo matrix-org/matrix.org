@@ -1,0 +1,28 @@
+---
+summary: Sydent shouldn't let people sign up for :localhost matrix IDs
+---
+created: 2014-09-16 00:34:41.0
+creator: matthew
+description: ''
+id: '10033'
+key: SYD-1
+number: '1'
+priority: '2'
+project: '10002'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2014-09-18 23:53:53.0
+votes: '0'
+watches: '1'
+workflowId: '10332'
+---
+actions:
+- author: matthew
+  body: (That said, we need a way for people playing with a simple default Synapse install on localhost to be able to log into it.  Perhaps we should just disable ID-server based signup if a synapse is running on localhost?)
+  created: 2014-09-16 01:03:16.0
+  id: '10001'
+  issue: '10033'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-16 01:03:16.0

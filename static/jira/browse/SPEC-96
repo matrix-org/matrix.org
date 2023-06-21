@@ -1,0 +1,34 @@
+---
+summary: v2 - Invites and Knocks
+---
+created: 2015-01-21 11:51:46.0
+creator: kegan
+description: |-
+  See SPEC-60 for room knock support.
+
+  There are outstanding issues with inviting users to rooms, namely:
+   - Clients need to know why they are being invited (e.g. a reason key, just like for kicks/bans). However, this opens up a spam vector where any user can send any other user a string. Do we really want to do that?
+   - It may be useful to send other state information such as the room name, topic, etc. How is this specified in this request? Does the inviter even specify this, or is it a room config option which fields are shared? This has a lot of parallels with the published room API which exposes some state events.  
+  - How do we prevent spam attacks via the room name/topic? The spam attack vector may be something we're just going to have to deal with. Ultimately, we need to expose more data about the room. This data is going to be set by the client. Compromises like "just give the event type" don't really fix the problem "because.my.event.type.could.be.like.this".
+id: '10966'
+key: SPEC-96
+number: '96'
+priority: '1'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:26:57.0
+votes: '0'
+watches: '2'
+workflowId: '11066'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/491'
+  created: 2016-10-28 16:26:57.0
+  id: '13266'
+  issue: '10966'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:57.0

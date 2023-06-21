@@ -1,0 +1,33 @@
+---
+summary: Be more intelligent when setting user-agent option
+---
+created: 2015-06-04 08:26:30.0
+creator: kegan
+description: |-
+  We currently have a config option {{noUserAgent}} which is default {{false}}. Aside from the not not double-negative, which is confusing, we should be trying to guess if the environment is a browser and then set the default based off that. Otherwise, the "simple" case will whine about not setting user-agent strings when run in a browser.
+
+  Provided we are clear on how this default is set e.g. {{var setUserAgent = (window ? false : true);}} then this should be fine.
+id: '11620'
+key: SYJS-6
+number: '6'
+priority: '3'
+project: '10204'
+reporter: kegan
+resolution: '2'
+resolutiondate: 2015-06-29 17:34:42.0
+status: '5'
+type: '1'
+updated: 2015-06-29 17:34:42.0
+votes: '0'
+watches: '1'
+workflowId: '11721'
+---
+actions:
+- author: kegan
+  body: We don't set the user agent now.
+  created: 2015-06-29 17:34:42.0
+  id: '11940'
+  issue: '11620'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-29 17:34:42.0

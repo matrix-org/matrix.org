@@ -1,0 +1,42 @@
+---
+summary: We are never doing any memory housekeeping, so the webclient leaks inevitably over time.
+---
+assignee: kegan
+created: 2014-09-22 10:37:45.0
+creator: matthew
+description: |-
+  Right never we never clean up 'old' memory.  This means:
+   * Our map used to spot duplicate events grows ever bigger and will leak over time
+   * If we paginate back through history, we never reap the content we've paginated in.  We could expire it if it hasn't been looked at for a while - or whenever the user swaps rooms, or both?
+   * I assume we build up data structures for all the rooms we view, and never expire them even if the room hasn't been viewed in ages.
+
+  Right now the webclient can push a box into swap death if left idling for a few days - this is obviously a terrible experience, especially as people tend to just leave matrix chugging away in a background tab somewhere.
+id: '10360'
+key: SYWEB-71
+number: '71'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-20 14:47:26.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:47.0
+votes: '0'
+watches: '2'
+workflowId: '10463'
+---
+actions:
+- author: kegan
+  body: |-
+    The event ID map culling is done.
+
+    The actual events though is non trivial. Ideally we would store each chunk then nuke the oldest chunk, but this involves rolling the old room state forward, etc.
+
+    The easy option will be to hijack room initial sync and blow away the entire room and reconstruct it from room initial sync. That will be the solution in the medium term.
+  created: 2014-11-18 17:56:30.0
+  id: '10807'
+  issue: '10360'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-18 17:56:30.0

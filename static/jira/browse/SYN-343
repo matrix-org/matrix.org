@@ -1,0 +1,53 @@
+---
+summary: Non-present users can still ban other users
+---
+created: 2015-04-14 15:40:51.0
+creator: leonerd
+description: |-
+  `m.room.power_levels` allows you to give an elevated powerlevel to potential room members even of users not currently present in the room.
+
+  If you give an elevated powerlevel to a user who is not present the room, this powerlevel allows that user to ban other users from the room; despite not being a member of it. This doesn't apply to other actions - e.g. invite or set room names.
+
+  To reproduce:
+
+    User A creates room R
+    User A sets powerlevel of B to 100
+
+  At this point,
+
+    User B can ban other users from room R
+id: '11332'
+key: SYN-343
+number: '343'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-04-15 18:13:53.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:03.0
+votes: '0'
+watches: '1'
+workflowId: '11432'
+---
+actions:
+- author: leonerd
+  body: |-
+    Actually it turns out that you don't even need to be banned. Simply set a powerlevel sufficiently high, and the user can do it despite never being a member.
+
+    (test added in 20ce67b)
+  created: 2015-04-15 17:21:01.0
+  id: '11492'
+  issue: '11332'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-15 17:21:01.0
+- author: leonerd
+  body: Fixed by e6e130b
+  created: 2015-04-15 18:13:53.0
+  id: '11493'
+  issue: '11332'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-15 18:13:53.0

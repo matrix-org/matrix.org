@@ -1,0 +1,43 @@
+---
+summary: When loaded via HTTPS it tries to talk HTTP to the identity server.
+---
+created: 2014-12-20 16:49:55.0
+creator: erikj
+description: |-
+  {noformat}
+   Mixed Content: The page at 'https://matrix.org/beta/#/register' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://matrix.org:8090/_matrix/identity/api/v1/validate/email/requestToken'. This request has been blocked; the content must be served over HTTPS.
+  {noformat}
+
+  The identity server is set to: {{http://matrix.org:8090}}
+id: '10840'
+key: SYWEB-239
+number: '239'
+priority: '1'
+project: '10004'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-12-20 17:39:14.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:50.0
+votes: '0'
+watches: '1'
+workflowId: '10940'
+---
+actions:
+- author: erikj
+  body: This means that registrations fail if an email is specified (as that triggers it to try and talk to the identity server, which fails)
+  created: 2014-12-20 16:57:47.0
+  id: '11009'
+  issue: '10840'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-20 16:57:47.0
+- author: erikj
+  body: Since the matrix.org apache routes ID server requests to the correct place, I've changed the default ID server to be //matrix.org instead of http://matrix.org:8090.
+  created: 2014-12-20 17:39:14.0
+  id: '11010'
+  issue: '10840'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-20 17:39:14.0

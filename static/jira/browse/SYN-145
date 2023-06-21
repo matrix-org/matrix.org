@@ -1,0 +1,22 @@
+---
+summary: Federation Errors aren't handled in handlers/federation
+---
+created: 2014-11-14 19:18:42.0
+creator: markjh
+description: ''
+id: '10657'
+key: SYN-145
+number: '145'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-02-18 14:05:56.0
+status: '6'
+type: '1'
+updated: 2015-05-14 13:39:43.0
+votes: '0'
+watches: '1'
+workflowId: '10757'
+---
+actions: null

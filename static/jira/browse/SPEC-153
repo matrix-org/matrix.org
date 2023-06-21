@@ -1,0 +1,33 @@
+---
+summary: Room avatars
+---
+created: 2015-04-18 12:14:31.0
+creator: matthew
+description: ''
+id: '11339'
+key: SPEC-153
+number: '153'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-11-01 22:21:07.0
+status: '5'
+type: '2'
+updated: 2015-11-01 22:21:07.0
+votes: '0'
+watches: '2'
+workflowId: '11439'
+---
+actions:
+- author: erikj
+  body: |-
+    This is now done!
+
+    https://github.com/matrix-org/matrix-doc/commit/ae90d15b3c6955779356466a6edb6e7e6d48c105
+  created: 2015-11-01 22:21:07.0
+  id: '12287'
+  issue: '11339'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-11-01 22:21:07.0

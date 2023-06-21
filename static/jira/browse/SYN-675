@@ -1,0 +1,54 @@
+---
+summary: /initialSync doesn't return all the state events it should
+---
+created: 2016-04-10 12:07:36.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  missed room name event
+id: '12616'
+key: SYN-675
+number: '675'
+priority: '3'
+project: '10000'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:23.0
+votes: '0'
+watches: '4'
+workflowId: '12716'
+---
+actions:
+- author: erikj
+  body: Was this an actual bug, or was it just cached value?
+  created: 2016-04-18 16:43:09.0
+  id: '12838'
+  issue: '12616'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-04-18 16:43:09.0
+- author: kegan
+  body: This did go away with time IIRC, so cached value.
+  created: 2016-04-19 09:11:30.0
+  id: '12844'
+  issue: '12616'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-04-19 09:11:30.0
+- author: richvdh
+  body: If initialsync is deprecated, do we care?
+  created: 2016-07-04 14:48:23.0
+  id: '13045'
+  issue: '12616'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-04 14:48:23.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1530'
+  created: 2016-11-07 18:29:23.0
+  id: '13840'
+  issue: '12616'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:23.0

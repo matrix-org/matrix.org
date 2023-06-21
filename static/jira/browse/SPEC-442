@@ -1,0 +1,83 @@
+---
+summary: Should we explain how idempotency works?
+---
+created: 2016-08-18 12:00:41.0
+creator: jimmycuadra
+description: |-
+  In any API that uses transaction IDs, the spec should explain a few things that it currently does not:
+
+  * What is the grammar for a transaction ID? How can the client generate something the server is guaranteed to see as a valid transaction ID? (This is probably included as part of the JIRA issue for formalizing the grammar of opaque IDs.)
+  * Exactly what guarantees does the use of transaction IDs provide to the client for the given API? (e.g. for /rooms/:room_id/send/:event_type/:txn_id, it simply says "it will be used by the server to ensure idempotency of requests," but how?)
+  * If a request with a duplicate transaction ID and the same content is sent, what does the server do?
+  * If a request with a duplicate transaction ID and different content is sent, what does the server do?
+  * When, if ever, is it safe for a client to reuse a transaction ID? The spec suggests they are scoped by access token, but that means that if a client restores previously used access tokens after a relaunch, it must also restore transaction IDs used with that access token, which could be an implementation detail significant to clients.
+  * How do requests keyed by transaction ID behave in the face of concurrent server processes? (This question was prompted by noticing that Synapse's implementation just caches requests/transactions in an in-memory dict.)
+  * How long does the server remember requests keyed by transaction ID? (What happens if the server restarts and loses its in-memory cache in between two requests with the same transaction ID?)
+id: '12796'
+key: SPEC-442
+number: '442'
+priority: '5'
+project: '10001'
+reporter: jimmycuadra
+status: '1'
+type: '4'
+updated: 2016-10-28 16:28:42.0
+votes: '0'
+watches: '2'
+workflowId: '12896'
+---
+actions:
+- author: richvdh
+  body: |-
+    I kinda agree the spec could be clearer, but I'm not entirely sure it's up to us to explain how transaction ids make idempotency work.
+
+    > What is the grammar for a transaction ID? How can the client generate something the server is guaranteed to see as a valid transaction ID? (This is probably included as part of the JIRA issue for formalizing the grammar of opaque IDs.)
+
+    yes, it is. Specifically, SPEC-388, where transaction IDs are explicitly mentioned.
+
+    > Exactly what guarantees does the use of transaction IDs provide to the client for the given API? (e.g. for /rooms/:room_id/send/:event_type/:txn_id, it simply says "it will be used by the server to ensure idempotency of requests," but how?)
+    > If a request with a duplicate transaction ID and the same content is sent, what does the server do?
+    > If a request with a duplicate transaction ID and different content is sent, what does the server do?
+
+    Basically:
+    * The server keeps a list of transaction IDs it has seen
+    * If it sees the same transaction ID twice, it shouldn't reprocess any changes, but should send the client a 200 with the response again (as it has to assume that the client didn't get the response the first time)
+    * It's up to the client to make sure the request is the same; if it doesn't, the server is basically free to do what it wants. From a server's POV, it may make sense to store the exact response from the first request so that it can replay it, or it may make sense to figure out what the response would have been had it processed the second request fully.
+
+    > When, if ever, is it safe for a client to reuse a transaction ID? The spec suggests they are scoped by access token, but that means that if a client restores previously used access tokens after a relaunch, it must also restore transaction IDs used with that access token, which could be an implementation detail significant to clients.
+
+    Yes, that is correct. Clients should probably make sure their transaction ids have a monotonic (eg, include the unix timestamp as a component) so that they don't need to worry about saving the used transaction ids.
+
+    > How do requests keyed by transaction ID behave in the face of concurrent server processes? (This question was prompted by noticing that Synapse's implementation just caches requests/transactions in an in-memory dict.)
+
+    The server needs to make sure that concurrent requests with the same txn id are treated the same as serialised requests with the same txn id. In practice, that means that the server needs to take a lock on the transaction id, and block subsequent requests for the transaction id until it has finished dealing with the first one. Synapse may or may not get this right!
+
+    > How long does the server remember requests keyed by transaction ID? 
+
+    long enough to be reasonably sure that a client isn't going to retry the request. In practice: anything above a few minutes will be fine. This is certainly something which should be specced.
+
+    > (What happens if the server restarts and loses its in-memory cache in between two requests with the same transaction ID?)
+
+    sadness ensues. Technically the transaction list needs to be persisted to disk to avoid this.
+  created: 2016-08-19 11:31:10.0
+  id: '13103'
+  issue: '12796'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-08-19 11:31:10.0
+- author: jimmycuadra
+  body: FTR the title I originally gave this issue better represents what I was asking. Implementation details don't need to be enforced by the spec, but it should explain what the client can expect and what the server must guarantee.
+  created: 2016-08-19 18:29:00.0
+  id: '13104'
+  issue: '12796'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-08-19 18:29:00.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/699'
+  created: 2016-10-28 16:28:42.0
+  id: '13508'
+  issue: '12796'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:42.0

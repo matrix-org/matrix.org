@@ -1,0 +1,24 @@
+---
+summary: Fix prometheus heap/rss metrics
+---
+created: 2015-06-22 15:54:46.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  They are done per PID, so new lines are added every restart unless you restart the statsd_prometheus_bridge. This isn't great, we should find a better way of doing this then expose a prometheus endpoint more publicly (rather than via ssh tunnels)
+id: '11688'
+key: BOTS-63
+number: '63'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-08-04 13:59:19.0
+status: '5'
+type: '1'
+updated: 2015-08-04 13:59:19.0
+votes: '0'
+watches: '1'
+workflowId: '11789'
+---
+actions: null

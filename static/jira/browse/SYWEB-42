@@ -1,0 +1,30 @@
+---
+summary: Room names sometimes mysteriously don't appear in recents or in the name of a room
+---
+created: 2014-09-18 00:42:45.0
+creator: matthew
+description: ''
+id: '10318'
+key: SYWEB-42
+number: '42'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-24 01:48:17.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:28.0
+votes: '0'
+watches: '1'
+workflowId: '10421'
+---
+actions:
+- author: matthew
+  body: should be fixed by new room state API
+  created: 2014-09-24 01:48:17.0
+  id: '10434'
+  issue: '10318'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-24 01:48:17.0

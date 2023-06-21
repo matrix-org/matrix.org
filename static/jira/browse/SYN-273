@@ -1,0 +1,61 @@
+---
+summary: 500 when spamming /createRoom
+---
+created: 2015-02-13 16:03:55.0
+creator: kegan
+description: |-
+  I'll admit, I was being somewhat aggressive creating rooms when doing this, but then I got 500d (I also got rate limited but that was a different request <,<)
+
+  Date:Fri, 13 Feb 2015 15:58:25 GMT
+  http://matrix.org/_matrix/client/api/v1/createRoom?access_token=QGt[...]
+
+  {code}
+  {
+    "visibility":"private",
+    "invite":["@+447700900404:openmarket.com"]
+  }
+  {code}
+id: '11050'
+key: SYN-273
+number: '273'
+priority: '2'
+project: '10000'
+reporter: kegan
+resolution: '10000'
+resolutiondate: 2015-05-07 11:42:14.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:12.0
+votes: '0'
+watches: '2'
+workflowId: '11150'
+---
+actions:
+- author: erikj
+  body: |-
+    {noformat}
+    2015-02-13 15:59:43,614 - synapse.http.matrixfederationclient - 154 - WARNING - POST-3828 - Sending request failed to openmarket.com: PUT /_matrix/federation/v1/invite/!VkUmUuHoQVifVhxHhv:matrix.org/$142384309252
+    NIwfa:matrix.org : User timeout caused connection failure.
+    2015-02-13 15:59:43,615 - synapse.http.matrixfederationclient - 455 - WARNING - POST-3828 - User timeout caused connection failure.
+    2015-02-13 15:59:43,616 - synapse.http.server - 165 - ERROR - POST-3828 - User timeout caused connection failure.
+    Traceback (most recent call last):
+      File "synapse/http/server.py", line 143, in _async_render
+    TimeoutError: User timeout caused connection failure.
+    2015-02-13 15:59:43,617 - twisted - 455 - INFO - POST-3828 - "83.166.68.175" - - [13/Feb/2015:15:59:42 +0000] "POST /_matrix/client/api/v1/createRoom?access_token=QGtlZ2FuMjptYXRyaXgub3Jn.RiFyhuWQnOfxZPPgqs HTTP/
+    1.1" 500 33 "http://localhost:8000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.94 Safari/537.36"
+    2015-02-13 15:59:43,618 - synapse.http.server - 177 - INFO - POST-3828 - Processed request: 91387ms - POST /_matrix/client/api/v1/createRoom
+    {noformat}
+  created: 2015-02-13 16:09:47.0
+  id: '11256'
+  issue: '11050'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-02-13 16:09:47.0
+- author: erikj
+  body: So the reason it fails is that openmarket.com is not a matrix server.
+  created: 2015-02-13 16:10:07.0
+  id: '11257'
+  issue: '11050'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-02-13 16:10:07.0

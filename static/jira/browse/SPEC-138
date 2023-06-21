@@ -1,0 +1,74 @@
+---
+summary: Ability to send out-of-band events
+---
+created: 2015-03-29 23:04:43.0
+creator: matthew
+description: |-
+  We need the ability to send messages outside the context of a room; this is useful for things like sharing keys for group chats (SPEC-292).
+
+  What are out-of-band events?
+
+  * They events are deleted from a server when they have been downloaded by all recipients.
+  *- The sender HS will need to store the event until the recipient HSes have received the event.
+  *- A recipient HS will need to store the event until the recipient devices have received the event.
+  * Presumably they are never received via pagination calls, so are never elided from a sync.
+
+  What changes are needed in matrix to support them?
+
+  * New C-S API for sending events: needs:
+  *- the list of recipients
+  *-  list of devices (which might be {{all}} (to make sure it goes to all devices) or {{any}} (which indicates that sending it to a single device is adequate))
+  * New S-S semantics for sending events.
+  *- The existing S-S federation assumes that events are part of a persistent DAG.
+  * New C-S semantics for receiving messages:
+  *- Need to send out-of-band events down the sync pipe
+  *- Clients need to tell the server that they have received a message so that the server can delete the message. Possibly we can infer this if the client sends another `sync`.
+
+  Implementation Questions:
+   * How does the HS know when it can delete an event? (we probably need the ability to flag old devices as inactive)
+id: '11283'
+key: SPEC-138
+number: '138'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:27:10.0
+votes: '0'
+watches: '6'
+workflowId: '11383'
+---
+actions:
+- author: oliveruv
+  body: |-
+    Had a discussion with Matthew about this on #matrix. We both agreed that, in the UX, this should not be presented to users as "self destructing message" or similar. Implying to the user that the message is self destructing is a lie.
+
+    The reasoning behind this is that there is no guarantee that clients or servers that get a message will actually destruct it or its key. Users who see a message can screen shot it, etc. This idea inherits all the security flaws of traditional DRM schemes.
+
+    Thus, any UX must make clear that destruction of the message is a suggestion, not a certainty.
+  created: 2016-04-21 00:42:13.0
+  id: '12881'
+  issue: '11283'
+  type: comment
+  updateauthor: oliveruv
+  updated: 2016-04-21 00:42:13.0
+- author: richvdh
+  body: |-
+    [~OliverUv]: I see these events as primitives for implementing higher-level functionality, rather than something that will be exposed directly in the UI.
+
+    (Have rephrased slightly to remove the emphasis on 'self-destructing').
+  created: 2016-06-09 11:20:48.0
+  id: '12993'
+  issue: '11283'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-09-29 00:45:26.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/443'
+  created: 2016-10-28 16:27:10.0
+  id: '13293'
+  issue: '11283'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:10.0

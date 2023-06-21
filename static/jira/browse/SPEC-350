@@ -1,0 +1,28 @@
+---
+summary: unread_notifications are nowhere to be found in the spec(!)
+---
+created: 2016-02-17 15:44:03.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12406'
+key: SPEC-350
+number: '350'
+priority: '1'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:18.0
+votes: '0'
+watches: '2'
+workflowId: '12511'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/487'
+  created: 2016-10-28 16:28:18.0
+  id: '13446'
+  issue: '12406'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:18.0

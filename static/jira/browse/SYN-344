@@ -1,0 +1,66 @@
+---
+summary: Add thumbnailing support to media repository for SVGs
+---
+created: 2015-04-15 11:14:39.0
+creator: markjh
+description: |-
+  Python Image Library can't read SVG so the current PIL based thumbnailing code can't generate a thumbnail for an SVG.
+
+  For now we might just want to return the original image since it is already scalable.
+id: '11334'
+key: SYN-344
+number: '344'
+priority: '2'
+project: '10000'
+reporter: markjh
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:56.0
+votes: '1'
+watches: '4'
+workflowId: '11434'
+---
+actions:
+- author: matthew
+  body: |-
+    this is starting to get annoying given our heavy use of SVGs in vector and similar.
+
+    It's bad practice to return the raw SVG (but better than nothing) given if I upload a 2MB SVG it'd suck if everyone ended up downloading a 2MB SVG thumbnail...
+  created: 2016-02-07 23:11:23.0
+  id: '12594'
+  issue: '11334'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-07 23:11:23.0
+- author: matthew
+  body: Alternatively we could do something like pyrsvg and http://stackoverflow.com/questions/6589358/convert-svg-to-png-in-python
+  created: 2016-04-02 02:05:16.0
+  id: '12803'
+  issue: '11334'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-04-02 02:05:16.0
+- author: matthew
+  body: Workaround using the original image at https://github.com/matrix-org/synapse/commit/2c838f6459db35ad9812a83184d85a06ca5d940a. Closing this to hand over to that PR
+  created: 2016-04-02 22:59:44.0
+  id: '12804'
+  issue: '11334'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-04-02 22:59:44.0
+- author: matthew
+  body: had to back this out due to https://github.com/matrix-org/synapse/commit/bd77216d06518ace2ec6213aa0ac0c834e923456
+  created: 2016-04-14 15:01:55.0
+  id: '12822'
+  issue: '11334'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-04-14 15:01:55.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1309'
+  created: 2016-11-07 18:27:56.0
+  id: '13630'
+  issue: '11334'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:56.0

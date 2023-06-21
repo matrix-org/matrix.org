@@ -1,0 +1,22 @@
+---
+summary: recents.html should directly use data from $rootScope.events.rooms
+---
+created: 2014-09-16 01:12:54.0
+creator: matthew
+description: ''
+id: '10060'
+key: SYWEB-20
+number: '20'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '10000'
+resolutiondate: 2014-09-16 09:34:43.0
+status: '6'
+type: '1'
+updated: 2014-09-18 23:34:16.0
+votes: '0'
+watches: '1'
+workflowId: '10382'
+---
+actions: null

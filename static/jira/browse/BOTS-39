@@ -1,0 +1,26 @@
+---
+summary: 'IRC AS: Spurious user queries'
+---
+assignee: kegan
+created: 2015-05-12 15:04:48.0
+creator: kegan
+description: |-
+  The IRC AS is receiving what looks to be 1 onUserQuery per real IRC user on OM IRC. It shouldn't be doing that. We should be pre-emptively creating the user when we get an onUserQuery to prevent Synapse from re-querying it when it next sees it. 
+
+  Currently, we only make Matrix users when the IRC user says something: this was fine before we introduced membership list syncing, but now we have tons of lurkers which get queried (due to the join/leaves) and never created as proper Matrix users, which slows down the whole thing on startup (when the IRC AS gets the member lists for each channel).
+id: '11527'
+key: BOTS-39
+number: '39'
+priority: '1'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-05-18 14:09:17.0
+status: '5'
+type: '1'
+updated: 2015-05-18 14:09:17.0
+votes: '0'
+watches: '1'
+workflowId: '11628'
+---
+actions: null

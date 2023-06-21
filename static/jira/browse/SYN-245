@@ -1,0 +1,28 @@
+---
+summary: Emit and allow 404 when inviting a remote user in federation.
+---
+created: 2015-01-19 10:33:21.0
+creator: erikj
+description: ''
+id: '10949'
+key: SYN-245
+number: '245'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:39.0
+votes: '0'
+watches: '2'
+workflowId: '11049'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1275'
+  created: 2016-11-07 18:27:39.0
+  id: '13594'
+  issue: '10949'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:39.0

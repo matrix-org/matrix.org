@@ -1,0 +1,40 @@
+---
+summary: The matrix.org:8448 cert is expired
+---
+created: 2016-02-06 11:23:30.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Is this actually a problem? It's certainly a bit embarassing
+id: '12371'
+key: SYN-619
+number: '619'
+priority: '3'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-07 12:44:19.0
+status: '5'
+type: '1'
+updated: 2016-10-07 12:44:19.0
+votes: '0'
+watches: '2'
+workflowId: '12476'
+---
+actions:
+- author: richvdh
+  body: |-
+    Not any more apparently:
+
+            Validity
+                Not Before: Dec  9 08:23:00 2015 GMT
+                Not After : Mar 11 21:23:12 2018 GMT
+            Subject: CN=*.matrix.org
+
+    Not a synapse bug anyway.
+  created: 2016-10-07 12:44:14.0
+  id: '13173'
+  issue: '12371'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-07 12:44:14.0

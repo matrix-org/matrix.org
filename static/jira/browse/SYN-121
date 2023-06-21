@@ -1,0 +1,49 @@
+---
+summary: Request to join local room by alias fails with "Unable to join remote room"
+---
+created: 2014-10-30 19:12:50.0
+creator: leonerd
+description: |-
+  Most most bizarre. Latest {{sytest}} code currently produces the following:
+
+  {noformat}
+  Requesting:
+    POST https://localhost:8001/_matrix/client/api/v1/join/%23testing-room:localhost:8001?access_token=QDAxcmVnaXN0ZXItdXNlcjpsb2NhbGhvc3Q6ODAwMQ...ybwBBTcqXRhyPRNLOD HTTP/1.1
+    Host: localhost
+    Content-Length: 2
+    Content-Type: text/json
+    
+    {}
+  -- 
+  Response from https://localhost:8001/_matrix/client/api/v1/join/%23testing-room:localhost:8001?access_token=QDAxcmVnaXN0ZXItdXNlcjpsb2NhbGhvc3Q6ODAwMQ...ybwBBTcqXRhyPRNLOD:
+    HTTP/1.1 500 Internal Server Error
+    Date: Thu, 30 Oct 2014 19:09:19 GMT
+    Transfer-Encoding: chunked
+    Server: TwistedWeb/14.0.0
+    Content-Type: application/json
+    Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+    Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+    Access-Control-Allow-Origin: *
+    
+    {"errcode":"M_UNKNOWN","error":"Unable to join remote room"}
+  {noformat}
+
+  Addtionally, the failure takes about 10 seconds to happen; it isn't instant.
+
+  This happens if I create a room with an alias, then leave it, then try to join it again by that alias.
+id: '10601'
+key: SYN-121
+number: '121'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2014-11-13 16:02:14.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:39.0
+votes: '0'
+watches: '1'
+workflowId: '10701'
+---
+actions: null

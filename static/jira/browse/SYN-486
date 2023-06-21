@@ -1,0 +1,30 @@
+---
+summary: Redactions should redact attachments they refer to
+---
+created: 2015-09-22 22:57:19.0
+creator: matthew
+description: ''
+id: '11931'
+key: SYN-486
+number: '486'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2016-01-06 02:32:14.0
+status: '5'
+type: '2'
+updated: 2016-01-06 02:32:14.0
+votes: '0'
+watches: '1'
+workflowId: '12034'
+---
+actions:
+- author: matthew
+  body: dup syn-216
+  created: 2016-01-06 02:32:14.0
+  id: '12519'
+  issue: '11931'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-06 02:32:14.0

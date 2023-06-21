@@ -1,0 +1,32 @@
+---
+summary: We should spec that AS virtual user IDs should be prefixed with _
+---
+created: 2016-07-22 15:32:30.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Both to stop collisions between real-users camping on potential future virtual-user namespaces, and to give a very handwavey hint that a given bridged user is actually running on a bridge rather than being a phishing enduser... assuming you trust the HS/AS you are talking to. which is a big if.
+id: '12766'
+key: SPEC-436
+number: '436'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-07-22 16:40:19.0
+status: '5'
+type: '1'
+updated: 2016-07-22 16:40:19.0
+votes: '0'
+watches: '2'
+workflowId: '12866'
+---
+actions:
+- author: leonerd
+  body: See also SPEC-426
+  created: 2016-07-22 15:40:03.0
+  id: '13076'
+  issue: '12766'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-07-22 15:40:03.0

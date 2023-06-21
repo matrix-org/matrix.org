@@ -1,0 +1,28 @@
+---
+summary: Hold notification pokes for users that are online
+---
+created: 2015-03-12 11:59:09.0
+creator: dbkr
+description: ''
+id: '11200'
+key: SYN-306
+number: '306'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:48.0
+votes: '1'
+watches: '3'
+workflowId: '11300'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1293'
+  created: 2016-11-07 18:27:48.0
+  id: '13614'
+  issue: '11200'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:48.0

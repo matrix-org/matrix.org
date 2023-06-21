@@ -1,0 +1,28 @@
+---
+summary: Implement 'remove 3PID' API from spec-330
+---
+created: 2016-01-20 15:07:14.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12325'
+key: SYN-604
+number: '604'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:00.0
+votes: '0'
+watches: '2'
+workflowId: '12430'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1482'
+  created: 2016-11-07 18:29:00.0
+  id: '13787'
+  issue: '12325'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:00.0

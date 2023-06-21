@@ -1,0 +1,28 @@
+---
+summary: Track which IP addresses are sending requests with bad signatures.
+---
+created: 2014-10-13 16:57:31.0
+creator: markjh
+description: ''
+id: '10463'
+key: SYN-94
+number: '94'
+priority: '2'
+project: '10000'
+reporter: markjh
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:19.0
+votes: '0'
+watches: '2'
+workflowId: '10567'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1226'
+  created: 2016-11-07 18:27:19.0
+  id: '13551'
+  issue: '10463'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:19.0

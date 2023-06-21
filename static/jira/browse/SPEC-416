@@ -1,0 +1,61 @@
+---
+summary: Document all event keys shown in examples
+---
+created: 2016-06-22 06:42:59.0
+creator: jimmycuadra
+description: |-
+  The client-server spec shows events as JSON in examples for various API responses. Many of these contain keys that are not described anywhere in the spec. Reading the unstable federation spec, it seems that they are related to federation, but anything that appears in the client-server spec should be explained there. In particular, I've noticed at least the following event keys that are never explained:
+
+  * age
+  * origin_server_ts
+  * replaces_state
+
+  Looking at the implementation in Synapse, there many more keys that appear in the stored JSON for each event that are not shown at all in the client-server spec, including at least:
+
+  * auth_events
+  * depth
+  * origin
+  * hashes
+  * prev_events
+  * prev_state
+  * signatures
+  * unsigned
+
+  These are all mostly explained in the federation spec, but if they would ever appear in the JSON of an event sent to or returned by the client-server API, they should be explained at least briefly there.
+
+  There is also an inconsistency for the "age" key, which appears at the top level of the JSON in the client-server spec's examples, but exists within the "unsigned" object under the "age_ts" key in Synapse's database.
+
+  Since many of these undocumented keys seem to be stored as part of the event itself, it's important to understand how they should be persisted for future compatibility with federation (for example by ruma, before ruma-federation is implemented). This also means that a lot of the details in the "signing events" section of the federation spec may in fact be relevant to the client-server spec.
+id: '12715'
+key: SPEC-416
+number: '416'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:36.0
+votes: '0'
+watches: '2'
+workflowId: '12815'
+---
+actions:
+- author: jimmycuadra
+  body: |-
+    I don't see a way to edit the issue, but I wanted to add:
+
+    I think the "event structure" section of the client-server spec is where this information should be. It should explain, in addition to the purpose/meanings of these keys, which of them apply to which "kinds" of events (basic events, room events, and state events).
+  created: 2016-06-22 07:36:45.0
+  id: '13013'
+  issue: '12715'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-06-22 07:36:45.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/684'
+  created: 2016-10-28 16:28:36.0
+  id: '13493'
+  issue: '12715'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:36.0

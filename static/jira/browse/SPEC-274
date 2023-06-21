@@ -1,0 +1,90 @@
+---
+summary: Registration v2 improvements
+---
+created: 2015-11-19 10:35:48.0
+creator: kegan
+description: |-
+  v2 registration in its current form has the following problems:
+   - We don't allow servers to enforce orderings between stages (eg captcha before email)
+   - We don't uniquely identify stages with distinct params (eg {{m.login.oauth}} for Google vs Github)
+   - We don't allow users to submit multiple stages at once.
+
+  I had a nice chat with eternaleye about some of these issues and the main points were:
+   - We can't enforce captcha before email full stop because the email sending step is done directly by the client to the IS, which has no knowledge of registration flows.
+   - For stages which have side effects (like sending an email), you really have three options:
+      -- Eager sending with whitelists. Clients tell the server "I can do these stages". When the server sees that pre-requisite stages are complete AND the client can do the side-effectful stage (e.g. {{m.login.email.identity}}) it eagerly sends the email / does the side effect knowing that the client will be able to do the whole thing.
+      -- Are two-step (one step to trigger the side effect, one step to fulfil it). There's no additional RTT costs since side effects inherently involve an extra RTT (e.g. do stuff > side effect > do more stuff)
+      -- Are externally done (but you lose any ability to do ordering).
+   - Each stage should really have an opaque {{id}} to distinguish between the *same type* with *different params* (E.g. oauth type hitting Google vs Github) which is sent up to the server.
+   - The value of having {{params}} at the top-level separate from its stage is questionable and in its current form (where this consists of keys with the stage type) don't actually allow you to do the Github vs Google case because you'd clobber {{params\["m.login.oauth"\]}}. Suggestion was to tie params with the actual stage rather than be top-level e.g.
+      {code}
+       flows: [
+          [
+              {
+                  type: "m.login.oauth2",
+                  id: "sth",
+                  params: {
+                      url :"http://google.whatever"
+                  }
+              }
+          ]
+      ]
+      {code}
+   - We should allow clients to submit multiple stages at once. This could be done using an auth dict like:
+      {code}
+      "auth" : {
+        "session" : "xxxxx",
+        "fulfills" : [
+          {type: m.auth.login, id: "abc", ...},
+          {type: .... }
+        ]
+      }
+      {code}
+     For this to play nicely with ordering, servers would hold back processing later stages even if they have received the data from the client until all previous stages are done (e.g. stages \[A,B,C\], client submits A,C, only A is processed since they haven't done B yet).
+
+  Proposed actions:
+   - Swap to an {{id}} system with coupled {{params}}.
+   - Allow clients to submit multiple stages at once (e.g. with a list of auth dicts).
+id: '12119'
+key: SPEC-274
+number: '274'
+priority: '2'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:54.0
+votes: '0'
+watches: '4'
+workflowId: '12222'
+---
+actions:
+- author: eternaleye
+  body: |-
+    Note that the second and third options for side-effectful stages can be hybridized, so as to retain the separation of concerns where the HS doesn't need to know about _how_ sending emails works, while tying the IS' behavior to the auth flow.
+
+    Specifically, the "first step" can return a token that the IS needs to be handed in order to trigger the side effect, and then the side-effect carries the information that needs fed into the "fulfillment" step of the auth stage.
+
+    This might be a perfect application of third-party caveats in macaroons - the information in the side effect (email, etc) can be the discharge macaroon.
+  created: 2015-11-20 03:58:49.0
+  id: '12374'
+  issue: '12119'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2015-11-20 03:58:49.0
+- author: eternaleye
+  body: SPEC-118 possibly related
+  created: 2016-01-29 03:51:09.0
+  id: '12590'
+  issue: '12119'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-01-29 03:51:09.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/578'
+  created: 2016-10-28 16:27:54.0
+  id: '13386'
+  issue: '12119'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:54.0

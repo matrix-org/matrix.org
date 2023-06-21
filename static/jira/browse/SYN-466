@@ -1,0 +1,30 @@
+---
+summary: Tell clients which images and thumbnails are transparent
+---
+created: 2015-08-30 01:27:10.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  If the server detected image transparency whilst thumbnailing, it could tell the client somehow so the client could display them better
+id: '11840'
+key: SYN-466
+number: '466'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:19.0
+votes: '0'
+watches: '2'
+workflowId: '11943'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1366'
+  created: 2016-11-07 18:28:19.0
+  id: '13687'
+  issue: '11840'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:19.0

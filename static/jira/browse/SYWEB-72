@@ -1,0 +1,53 @@
+---
+summary: Using ng-keydown for key-up/key-down is probably a bad idea performancewise
+---
+assignee: kegan
+created: 2014-09-22 10:39:57.0
+creator: matthew
+description: |-
+  It's possible to chew 100% CPU currently by holding down a key on autorepeat in the webclient.
+
+  I suspect some of this is caused to having to evaluate the ng-keydown expression for every keypress, as well as the autocomplete directive.  Would be good to turn ng-keydown into a general directive and probably combine it with autocomplete - or possibly even switch to plain old JS to avoid Angular overheads.
+id: '10361'
+key: SYWEB-72
+number: '72'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-23 16:32:37.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:28.0
+votes: '0'
+watches: '2'
+workflowId: '10464'
+---
+actions:
+- author: kegan
+  body: |-
+    This appears to have been fixed after the initial round of fixes to stop typing delays.
+
+    I cannot reproduce the 100% CPU spinning like I could before. top showed moderate increases in CPU usage (<50%) which is comparable to <textarea>s in other websites e.g. Github. It even passes my "smash fingers on keyboard and see if there is any noticable delay" test.
+  created: 2014-09-23 16:32:37.0
+  id: '10422'
+  issue: '10361'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 16:32:37.0
+- author: kegan
+  body: This can be reproduced provided you have lots of messages in the chat window.
+  created: 2014-09-23 16:38:16.0
+  id: '10423'
+  issue: '10361'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 16:38:16.0
+- author: kegan
+  body: 'Confirmed: If you remove the ng-keydown on the textarea, performance improves dramatically. Also, fwiw, autocomplete is *not* a directive here.'
+  created: 2014-09-23 16:40:31.0
+  id: '10424'
+  issue: '10361'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 16:41:41.0

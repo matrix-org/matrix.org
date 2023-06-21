@@ -1,0 +1,33 @@
+---
+summary: Specify which rooms is used for PMing a user
+---
+created: 2016-06-29 17:16:33.0
+creator: dbkr
+description: |-
+  The Matrix spec should at least suggest which room is the 'correct' one to use when a user PMs another user.
+
+  https://docs.google.com/document/d/1syTsFUN66p0GLuz5aBSN7F41orI5RJbF4KGlMWpdjtk/edit?usp=sharing
+id: '12728'
+key: SPEC-420
+number: '420'
+priority: '3'
+project: '10001'
+reporter: dbkr
+resolution: '3'
+resolutiondate: 2016-06-30 07:14:15.0
+status: '5'
+type: '1'
+updated: 2016-06-30 07:17:46.0
+votes: '0'
+watches: '2'
+workflowId: '12828'
+---
+actions:
+- author: richvdh
+  body: Oh, perhaps it's not quite a dupe of SPEC-413?
+  created: 2016-06-30 07:17:46.0
+  id: '13039'
+  issue: '12728'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-30 07:17:46.0

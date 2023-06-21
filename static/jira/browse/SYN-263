@@ -1,0 +1,57 @@
+---
+summary: APNS is surprisingly high latency
+---
+created: 2015-02-09 22:40:04.0
+creator: matthew
+description: ''
+id: '11032'
+key: SYN-263
+number: '263'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2016-01-06 10:24:54.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:24:54.0
+votes: '0'
+watches: '2'
+workflowId: '11132'
+---
+actions:
+- author: dbkr
+  body: |-
+    Can you define 'sending a push'? Synapse sending the HTTP poke?
+
+    Using it earlier, the pushes were coming through to my phone several seconds before the messages appeared in my browser.
+  created: 2015-02-09 22:46:22.0
+  id: '11235'
+  issue: '11032'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-02-09 22:46:22.0
+- author: matthew
+  body: |-
+    repro steps:
+     * Join matrix.org as a new user and join #matrix:matrix.org
+     * Say something
+     * Watch desktop notification fire almost instantly from your 'normal' webclient
+     * Wait a few seconds
+     * Watch the push arrive on your phone.
+
+    Is it simply that i'm the most recently configured push config for synapse, so i'm last in the list of pushes that synapse is doing in series for the room?
+  created: 2015-02-09 22:52:05.0
+  id: '11236'
+  issue: '11032'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-09 22:52:05.0
+- author: dbkr
+  body: Empirically, several seconds (3 in my test) elapse between synapse sending the event down the event stream (which happens almost instantly) and the pusher sending the notification poke. The queries Erik mentioned that the pusher is doing probably don't help with this.
+  created: 2015-05-14 10:51:43.0
+  id: '11746'
+  issue: '11032'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 10:51:43.0

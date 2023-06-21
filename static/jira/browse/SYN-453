@@ -1,0 +1,43 @@
+---
+summary: '@alien:mtrx.me can''t join !mHIzfmDaswOshUSeBd:matrix.org'
+---
+created: 2015-08-20 21:28:31.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  looks like auth is failing due to a redaction event failing to serialise somehow: TypeError: <FrozenEvent event_id='$14233411411056zlikI:matrix.org', type='m.room.redaction', state_key='None'> is not JSON serializable
+id: '11814'
+key: SYN-453
+number: '453'
+priority: '1'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-01-05 16:16:33.0
+status: '5'
+type: '1'
+updated: 2016-01-05 16:16:33.0
+votes: '0'
+watches: '4'
+workflowId: '11917'
+---
+actions:
+- author: alien
+  body: Tried android client with same result - "internal server error".
+  created: 2015-08-21 02:19:49.0
+  id: '12069'
+  issue: '11814'
+  type: comment
+  updateauthor: alien
+  updated: 2015-08-21 02:19:49.0
+- author: erikj
+  body: |-
+    This was due to a bug in an unreleased version of synapse that was running on matrix.org, this should now be fixed. 
+
+    Fix: https://github.com/matrix-org/synapse/commit/1f7642efa9f7165706593d745aab467b7fdddd67
+  created: 2015-08-21 10:19:26.0
+  id: '12070'
+  issue: '11814'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-08-21 10:19:26.0

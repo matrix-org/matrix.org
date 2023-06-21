@@ -1,0 +1,33 @@
+---
+summary: 'IRC AS: Handle external entities'
+---
+created: 2015-09-17 17:05:33.0
+creator: kegan
+description: |-
+  If you have Github set up to splat commits into an IRC channel, it's done by using bot users which never join the channel specified, but emit notices instead. The IRC AS treats this as a real user, provisions an account and sends a message from that bot user, but never parts it again, leading to lots and lots of {{GitHub123456789}} users on the Matrix side.
+
+  We need to think of how we can gracefully do this, possibly by sending the messages from the AS itself? {{@appservice-irc:domain.com}}
+id: '11881'
+key: BOTS-107
+number: '107'
+priority: '2'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-06-02 10:19:57.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:19:57.0
+votes: '0'
+watches: '1'
+workflowId: '11984'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/42
+  created: 2016-06-02 10:19:57.0
+  id: '12948'
+  issue: '11881'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:19:57.0

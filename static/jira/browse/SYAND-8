@@ -1,0 +1,31 @@
+---
+summary: Add a retry option for unsent messages
+---
+assignee: joachim
+created: 2015-01-19 13:13:45.0
+creator: joachim
+description: ''
+id: '10955'
+key: SYAND-8
+number: '8'
+priority: '1'
+project: '10201'
+reporter: joachim
+resolution: '1'
+resolutiondate: 2015-01-22 15:03:40.0
+status: '5'
+type: '4'
+updated: 2015-01-22 15:03:40.0
+votes: '0'
+watches: '1'
+workflowId: '11055'
+---
+actions:
+- author: joachim
+  body: https://github.com/matrix-org/matrix-android-sdk/commit/cb457557
+  created: 2015-01-22 15:03:40.0
+  id: '11183'
+  issue: '10955'
+  type: comment
+  updateauthor: joachim
+  updated: 2015-01-22 15:03:40.0

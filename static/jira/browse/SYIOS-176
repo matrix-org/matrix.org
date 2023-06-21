@@ -1,0 +1,36 @@
+---
+summary: Single word highlighting failed
+---
+assignee: manu
+created: 2015-11-17 20:49:49.0
+creator: gforet
+description: |-
+  Single word highlighting seems broken on iOS. Says by default it breaks on word boundaries, but "yo" is still matching stuff like "you" which should require a "yo*" as per the example text.
+
+  (see attached screenshots)
+id: '12114'
+key: SYIOS-176
+number: '176'
+priority: '2'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-11-18 11:20:07.0
+status: '5'
+type: '1'
+updated: 2015-11-18 11:20:07.0
+votes: '0'
+watches: '2'
+workflowId: '12217'
+---
+actions:
+- author: manu
+  body: |-
+    Fixed.
+    Created MXPushRuleTests to unitary test such things.
+  created: 2015-11-18 11:20:07.0
+  id: '12370'
+  issue: '12114'
+  type: comment
+  updateauthor: manu
+  updated: 2015-11-18 11:20:07.0

@@ -1,0 +1,163 @@
+---
+summary: 'SynapseError: 404: Presence information not visible'
+---
+assignee: leonerd
+created: 2014-12-16 16:36:54.0
+creator: erikj
+description: |-
+  {noformat}
+  2014-12-16 16:33:50,845 - synapse.api.errors - 43 - INFO - GET-1164 - SynapseError: 404, Presence information not visible
+  2014-12-16 16:33:50,846 - synapse.handlers.message - 346 - ERROR - GET-1164 - Failed to get member presence of u'@irc_Am:matrix.org'
+  Traceback (most recent call last):
+    File "synapse/handlers/message.py", line 341, in room_initial_sync
+    File "/home/matrix/.local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/handlers/presence.py", line 175, in get_state
+  SynapseError: 404: Presence information not visible
+  {noformat}
+id: '10828'
+key: SYN-202
+number: '202'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-06-16 10:41:57.0
+status: '5'
+type: '1'
+updated: 2015-06-16 10:41:57.0
+votes: '0'
+watches: '2'
+workflowId: '10928'
+---
+actions:
+- author: erikj
+  body: It would be nice to fix this since it makes it very hard to find errors in the logs. Either this is an actual bug or it shouldn't be logged as an ERROR.
+  created: 2015-01-12 15:19:21.0
+  id: '11095'
+  issue: '10828'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-12 15:19:21.0
+- author: erikj
+  body: I've changed this to log as a WARNING. I am still unsure if this ERROR is expected or not.
+  created: 2015-02-06 10:56:41.0
+  id: '11221'
+  issue: '10828'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-02-06 10:56:41.0
+- author: leonerd
+  body: 17:34 <M-Mjark> It happens regularly on matrix.org. I'd suggest staring at the logs and database.
+  created: 2015-02-10 17:35:22.0
+  id: '11238'
+  issue: '10828'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-10 17:35:22.0
+- author: leonerd
+  body: |-
+    Well, whatever it is it must be rather subtle. Sytest doesn't manage to trigger it, by:
+
+    {noformat}
+    ./run-tests.pl --python ../synapse/env/bin/python -S --server-grep "Failed to get member presence"
+    {noformat}
+  created: 2015-02-12 15:21:26.0
+  id: '11246'
+  issue: '10828'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-12 15:21:26.0
+- author: leonerd
+  body: |-
+    Example from real synapse logs:
+
+    {noformat}
+    2015-02-12 16:07:36,019 - synapse.api.errors - 46 - INFO - GET-29552 - SynapseError: 404, Presence information not visible
+    2015-02-12 16:07:36,019 - synapse.handlers.message - 392 - WARNING - GET-29552 - Failed to get member presence of u'@irc_M-bobderbaumeist:matrix.org'
+    2015-02-12 16:07:36,030 - synapse.api.errors - 46 - INFO - GET-29552 - SynapseError: 404, Presence information not visible
+    2015-02-12 16:07:36,030 - synapse.handlers.message - 392 - WARNING - GET-29552 - Failed to get member presence of u'@tushar:matrix.org'
+    ... (repeats a few more times for more users)
+    2015-02-12 16:07:36,698 - twisted - 455 - INFO - GET-29552 - "83.166.68.175" - - [12/Feb/2015:16:07:36 +0000] "GET /_matrix/client/api/v1/rooms/!XqBunHwQIXUiqCaoxq:matrix.org/initialSync?access_token=xxx&limit=30 HTTP/1.1" 200 80746 "https://matrix.org/beta/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36"
+    2015-02-12 16:07:36,699 - synapse.http.server - 177 - INFO - GET-29552 - Processed request: 3209ms 200 GET /_matrix/client/api/v1/rooms/!XqBunHwQIXUiqCaoxq:matrix.org/initialSync
+    2015-02-12 16:07:36,733 - twisted - 455 - INFO - GET-29579 - "83.166.68.175" - - [12/Feb/2015:16:07:36 +0000] "GET /_matrix/client/api/v1/rooms/!XqBunHwQIXUiqCaoxq:matrix.org/initialSync?access_token=xxx&limit=30 HTTP/1.1" 200 79057 "https://matrix.org/beta/" "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.91 Safari/537.36"
+    {noformat}
+  created: 2015-02-12 16:14:31.0
+  id: '11248'
+  issue: '10828'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-12 16:14:49.0
+- author: leonerd
+  body: |-
+    Some notes of analysis:
+
+     * !XqBunHwQIXUiqCaoxq:matrix.org is #matrix-dev:matrix.org
+
+     * @irc_M-bobderbaumeist:matrix.org and @tushar:matrix.org indeed to not appear to be members of this particular room
+
+    The question thus becomes: why is it trying to look them up anyway?
+  created: 2015-02-12 17:05:44.0
+  id: '11249'
+  issue: '10828'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-12 17:05:44.0
+- author: leonerd
+  body: |-
+    Ah, most curiously the actual error string "Failed to get member presence" doesn't appear in handlers/presence.py. It comes from handlers/message.py. Which appears to just be looping over "all" the members, even the not-joined ones (i.e. ones who have left).
+
+    Most likely an easy test in sytest and fix in synapse.
+  created: 2015-02-12 18:14:41.0
+  id: '11250'
+  issue: '10828'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-12 18:14:41.0
+- author: leonerd
+  body: |-
+    Woo. \o/ I fiiiiiiiinally have a test that provokes it:
+
+    {noformat}
+    Running tests/90jira/SYN-202.pl...
+      Testing if: Left room members do not cause problems for presence... 
+       | Registered users... OK
+       | Created room... OK
+       | Joined room... OK
+       | Left room... OK
+    [server 8001]: 2015-02-12 19:06:55,615 - synapse.handlers.message - 395 - WARNING -  - Failed to get member presence of u'@SYN-202-user2:localhost:8001'
+       +--- PASS
+    {noformat}
+  created: 2015-02-12 19:07:33.0
+  id: '11251'
+  issue: '10828'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-12 19:07:33.0
+- author: leonerd
+  body: Now fixed by 860b1b4
+  created: 2015-02-12 19:14:07.0
+  id: '11252'
+  issue: '10828'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-12 19:14:07.0
+- author: erikj
+  body: |-
+    They're still happening on v0.7.0d
+
+    {noformat}
+    2015-02-13 16:05:01,752 - synapse.handlers.message - 390 - ERROR - GET-5453 - Failed to get member presence of u'@irc_Kegan:matrix.org'
+    Traceback (most recent call last):
+      File "synapse/handlers/message.py", line 385, in room_initial_sync
+      File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+        result = g.send(result)
+      File "synapse/handlers/presence.py", line 180, in get_state
+    SynapseError: 404: Presence information not visible
+    {noformat}
+  created: 2015-02-13 16:06:43.0
+  id: '11255'
+  issue: '10828'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-02-13 16:06:43.0

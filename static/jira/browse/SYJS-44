@@ -1,0 +1,30 @@
+---
+summary: event queueing on send seems to break if the server returns a 500
+---
+created: 2016-05-06 17:44:52.0
+creator: neb
+description: Submitted by @dave:matrix.org
+id: '12654'
+key: SYJS-44
+number: '44'
+priority: '3'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:25:25.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:25:25.0
+votes: '0'
+watches: '2'
+workflowId: '12754'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/252
+  created: 2016-10-24 11:25:25.0
+  id: '13209'
+  issue: '12654'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:25:25.0

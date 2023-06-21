@@ -1,0 +1,24 @@
+---
+summary: this is a title
+---
+created: 2016-06-24 16:18:21.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  this is a body
+id: '12718'
+key: BOTS-206
+number: '206'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-07-05 16:25:04.0
+status: '5'
+type: '1'
+updated: 2016-07-05 16:25:05.0
+votes: '0'
+watches: '1'
+workflowId: '12818'
+---
+actions: null

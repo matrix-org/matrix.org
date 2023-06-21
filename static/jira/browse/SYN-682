@@ -1,0 +1,38 @@
+---
+summary: Should we return m.presence events in /sync at all for offline users?
+---
+created: 2016-04-29 15:00:20.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  I'd expect that we wouldn't return any m.presence at all for offline users - and this is what Vector expects
+id: '12642'
+key: SYN-682
+number: '682'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:26.0
+votes: '0'
+watches: '3'
+workflowId: '12742'
+---
+actions:
+- author: erikj
+  body: During initial sync?
+  created: 2016-04-29 15:07:40.0
+  id: '12894'
+  issue: '12642'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-04-29 15:07:40.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1535'
+  created: 2016-11-07 18:29:26.0
+  id: '13846'
+  issue: '12642'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:26.0

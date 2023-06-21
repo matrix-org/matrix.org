@@ -1,0 +1,22 @@
+---
+summary: Webclient should look only at m.rooms.aliases for the aliases of a given room, and can ignore the aliases key returned by initialSync
+---
+created: 2014-09-15 23:32:58.0
+creator: matthew
+description: ''
+id: '10009'
+key: SYWEB-5
+number: '5'
+priority: '4'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-25 12:41:05.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:51.0
+votes: '0'
+watches: '1'
+workflowId: '10390'
+---
+actions: null

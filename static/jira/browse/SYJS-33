@@ -1,0 +1,53 @@
+---
+summary: Self signed certificates not working
+---
+created: 2015-11-02 18:34:17.0
+creator: skaverat
+description: |-
+  When using synapse with self signed certificates, the request dies with
+
+  {{Error: unable to verify the first certificate}}
+
+  This is fixed by using {{rejectUnauthorized: false}} in the request opts.
+
+  Making this flag optional might be useful for "do you trust this certificate?" confirmations.
+id: '12070'
+key: SYJS-33
+number: '33'
+priority: '3'
+project: '10204'
+reporter: skaverat
+resolution: '1'
+resolutiondate: 2016-10-24 11:23:48.0
+status: '5'
+type: '4'
+updated: 2016-10-24 11:23:48.0
+votes: '0'
+watches: '2'
+workflowId: '12173'
+---
+actions:
+- author: kegan
+  body: Devs can manually fix this by hooking into the request function, but we should have better support for self-signed certs in general (actually specifying the fingerprint and allowing it to be explicitly trusted which is the remembered).
+  created: 2015-11-03 10:40:19.0
+  id: '12307'
+  issue: '12070'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 10:40:19.0
+- author: skaverat
+  body: 'note: this happens when using a non-browser environment like electron, which doesn''t allow adding certificates manually or accepting unknown certificates manually'
+  created: 2015-11-03 11:37:04.0
+  id: '12316'
+  issue: '12070'
+  type: comment
+  updateauthor: skaverat
+  updated: 2015-11-03 11:37:04.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/250
+  created: 2016-10-24 11:23:48.0
+  id: '13207'
+  issue: '12070'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:23:48.0

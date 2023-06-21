@@ -1,0 +1,20 @@
+---
+summary: 'MXMemoryStore: allow memory reaping'
+---
+created: 2014-12-10 11:00:57.0
+creator: manu
+description: ''
+id: '10801'
+key: SYIOS-6
+number: '6'
+priority: '2'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '2'
+updated: 2014-12-10 11:00:57.0
+votes: '0'
+watches: '1'
+workflowId: '10901'
+---
+actions: null

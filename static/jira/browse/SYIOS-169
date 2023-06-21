@@ -1,0 +1,38 @@
+---
+summary: Improve MXEvent conversion
+---
+assignee: gforet
+created: 2015-10-29 17:06:10.0
+creator: manu
+description: |-
+  The app spends a certain amount of time for converting MXEvent objects from JSON. It may worth to optimise it.
+
+  Two ideas:
+   - Skip Mantle. Try to do the conversion by hand and compare the conversion duration.
+   - Process batch of events within a thread. On an initialSync, processing thousands of state events for a room has visible impact on the UI. They could be converted in MXRestClient before calling the request success block callback
+id: '12053'
+key: SYIOS-169
+number: '169'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-11-04 08:57:26.0
+status: '5'
+type: '4'
+updated: 2015-11-20 09:41:54.0
+votes: '0'
+watches: '1'
+workflowId: '12156'
+---
+actions:
+- author: manu
+  body: |-
+    FTR, the 1st idea, skip Mantle, Mantle has been implemented on a separate commits batch: https://github.com/matrix-org/matrix-ios-sdk/pull/38.
+    MXEvents processing is now more than 10x quicker.
+  created: 2015-11-20 09:41:54.0
+  id: '12375'
+  issue: '12053'
+  type: comment
+  updateauthor: manu
+  updated: 2015-11-20 09:41:54.0

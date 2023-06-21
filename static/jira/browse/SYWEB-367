@@ -1,0 +1,20 @@
+---
+summary: The 2 user VoIP limit doesn't consider departed users(!)
+---
+created: 2015-06-02 01:07:58.0
+creator: matthew
+description: ''
+id: '11594'
+key: SYWEB-367
+number: '367'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-06-02 01:07:58.0
+votes: '0'
+watches: '1'
+workflowId: '11695'
+---
+actions: null

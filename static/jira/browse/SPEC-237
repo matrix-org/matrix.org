@@ -1,0 +1,78 @@
+---
+summary: Anonymous or 'Guest' access
+---
+assignee: illicitonion
+created: 2015-09-22 22:46:48.0
+creator: matthew
+description: |-
+  We are seeing more and more reason to support anonymous access in Matrix:
+   * SEO (SYWEB-283)
+   * Read only accounts (SYN-320)
+   * Ease of on-boarding (SYWEB-337 and https://github.com/vector-im/vector-web/issues/81)
+
+  Options are:
+   * Spec a way to have truly anonymous read-only access on a HS (i.e. no actual account provisioned at all)
+   * Spec a way to auto-register a 'guest' user, which can be subsequently ugpraded into a real user.  This feels more flexible and useful.
+
+  Assuming we have 'guest' users, we will need ACLs to control them - with new thresholds defining whether they can join, or even write in a given room.  By default we shouldn't let them write, although we might want to allow joins to public rooms by default.
+id: '11928'
+key: SPEC-237
+number: '237'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-12-10 15:40:41.0
+status: '5'
+type: '1'
+updated: 2015-12-10 15:40:41.0
+votes: '0'
+watches: '3'
+workflowId: '12031'
+---
+actions:
+- author: markjh
+  body: |-
+    The simplest solution I can think of is to just create "@anonymous:<server_name>" accounts. The server can hand out CS tokens that allow users to look at rooms or to upload messages using that account, and channel ops can allow anonymous access from a server to a channel by inviting the @anonymous:<server_name> account. If the channel ops want to only give read only access then they adjust the power-levels of the @anonymous user appropriately. 
+
+    This has the advantage of just working with the existing federation model.
+    I'm not sure that it will serve all of the needs, especially upgrading anonymous accounts to real accounts.
+  created: 2015-10-09 18:09:08.0
+  id: '12233'
+  issue: '11928'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-10-09 18:09:08.0
+- author: markjh
+  body: If we could add caveats to macaroons that restricted their use to a particular room, or made them read-only it would be possible to give a token to a service that could then hand out restricted versions of them for anonymous access.
+  created: 2015-10-09 18:16:34.0
+  id: '12234'
+  issue: '11928'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-10-09 18:16:34.0
+- author: markjh
+  body: Alternatively it might be nicer to consider allowing an homeserver itself to join the room, without directly joining a user, allowing it to read messages for guest users without having to join those users to the room.
+  created: 2015-10-09 18:35:39.0
+  id: '12235'
+  issue: '11928'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-10-09 18:35:39.0
+- author: matthew
+  body: |-
+    I like the idea of a standard @anonymous account, but it doesn't help the main use case of https://github.com/vector-im/vector-web/issues/81: letting guest users gradually sign up to become real users (and granting them limited read & even write access until they do). Don't you also have the problem that the anonymous users will all share the same recents list?
+
+    Options that I see are:
+     1. special casing it for now for Vector (ie have the Vector HS enforce some non-federation aware access controls for its guest users)
+     2. implement group ACLs, and have a standard Guest group
+     3. some kind of nasty hack roughly compatible with current federation like giving anon users negative power by default
+     4.  special case anon users in federation somehow. but this feels to me like we might as well go ahead and create group ACLs if we were doing that.
+
+    what do you think?
+  created: 2015-10-09 18:59:03.0
+  id: '12236'
+  issue: '11928'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-10-09 18:59:03.0

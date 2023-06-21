@@ -1,0 +1,47 @@
+---
+summary: Tapping on APNS needs to take you to the right room
+---
+assignee: gforet
+created: 2015-02-09 20:06:43.0
+creator: matthew
+description: ''
+id: '11028'
+key: SYIOS-75
+number: '75'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-19 13:07:57.0
+status: '5'
+type: '2'
+updated: 2015-02-20 10:26:46.0
+votes: '0'
+watches: '3'
+workflowId: '11128'
+---
+actions:
+- author: gforet
+  body: Assign to Dave in order to add "room_id" key in push notification on server side.
+  created: 2015-02-19 09:56:25.0
+  id: '11291'
+  issue: '11028'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-19 09:56:25.0
+- author: dbkr
+  body: Done
+  created: 2015-02-19 11:06:59.0
+  id: '11292'
+  issue: '11028'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-02-19 11:06:59.0
+- author: gforet
+  body: 'Test build #351: ok'
+  created: 2015-02-19 13:07:57.0
+  id: '11295'
+  issue: '11028'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-19 13:07:57.0

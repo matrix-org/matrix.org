@@ -1,0 +1,39 @@
+---
+summary: synapse picking dead servers when joining rooms and not picking different ones when it retries?
+---
+created: 2016-07-21 15:42:04.0
+creator: neb
+description: Submitted by @dave:matrix.org
+id: '12762'
+key: SYN-733
+number: '733'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:46.0
+votes: '0'
+watches: '3'
+workflowId: '12862'
+---
+actions:
+- author: dbkr
+  body: |-
+    I've now seen a couple of people reporting logs similar to: https://vector.im/develop/#/room/!XqBunHwQIXUiqCaoxq:matrix.org/$146911178742yWwDe:kentshikama.com
+
+    Looks like synapse is picking a dead server to use to join a room then when it doesn't respond, not trying another one. Apparently it still fails even if you try & join again?
+  created: 2016-07-21 15:43:47.0
+  id: '13074'
+  issue: '12762'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-07-21 15:43:47.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1569'
+  created: 2016-11-07 18:29:46.0
+  id: '13892'
+  issue: '12762'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:46.0

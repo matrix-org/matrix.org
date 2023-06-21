@@ -1,0 +1,52 @@
+---
+summary: auto-scroll is broken
+---
+created: 2014-10-28 10:08:12.0
+creator: markjh
+description: |-
+  The message list doesn't auto scroll on new messages even when scrolled to the bottom of the screen. On a possibly related note the message list will occasionally jump up one pixel while I am viewing it.
+
+  Running 37.0.2062.120 Ubuntu 14.04 (281580) (64-bit).
+id: '10518'
+key: SYWEB-128
+number: '128'
+priority: '2'
+project: '10004'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-10-29 11:13:28.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:56.0
+votes: '0'
+watches: '2'
+workflowId: '10622'
+---
+actions:
+- author: kegan
+  body: Also worth noting that you've changed to 75% zoom not 100%.
+  created: 2014-10-29 10:09:11.0
+  id: '10618'
+  issue: '10518'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-29 10:09:11.0
+- author: kegan
+  body: |-
+    There are some serious auto-scrolling issues. I've been able to reproduce no scrolling on both locally sent (via another client) and incoming messages from other users. In all cases where auto-scroll did not work, the message list had scrolled up a bit.
+
+    Matthew, what is the desired behaviour here? We currently do not bump the user to the bottom of the list when any message comes in, which I presume is so scrollback viewing isn't annoying. I assume we want to keep that behaviour. In which case, this may be as simple as increasing the leeway between when they are at the "bottom" of the list vs when they are not.
+  created: 2014-10-29 10:25:04.0
+  id: '10625'
+  issue: '10518'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-29 10:25:04.0
+- author: kegan
+  body: Added a small buffer to the calculation to determine if you're at the bottom of the list.
+  created: 2014-10-29 11:13:28.0
+  id: '10626'
+  issue: '10518'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-29 11:13:28.0

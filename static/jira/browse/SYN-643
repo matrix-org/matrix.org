@@ -1,0 +1,45 @@
+---
+summary: /messages no longer respects history_visibility world-readable correctly
+---
+assignee: richvdh
+created: 2016-03-02 15:11:00.0
+creator: matthew
+description: |-
+  If you backpaginate in #gsoc:matrix.org as a registered user you can get back to the very beginning of the room.  However, the room was created with history_visibility of 'joined' which was then changed to 'world-readable' halfway through.  The 'world-readable' visibility should only take effect from the point that it was changed, and not take effect retrospectively(!)  This is a serious privacy breach.
+
+  If you try to reproduce this as a guest, it works correctly however.
+id: '12540'
+key: SYN-643
+number: '643'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '10100'
+resolutiondate: 2016-03-02 16:57:32.0
+status: '5'
+type: '1'
+updated: 2016-03-02 16:57:32.0
+votes: '0'
+watches: '2'
+workflowId: '12640'
+---
+actions:
+- author: richvdh
+  body: |-
+    I see no evidence of the room being created with a history_visibility of {{joined}}:
+
+    {noformat}
+    matrix=# select * from events where room_id='!WZbLERcNJxrvkxPfyV:matrix.org' and type='m.room.history_visibility' order by topological_ordering;
+     stream_ordering | topological_ordering |             event_id              |           type            |            room_id             |                 content                 | unrecognized_keys | processed | outlier | depth | origin_server_ts 
+    -----------------+----------------------+-----------------------------------+---------------------------+--------------------------------+-----------------------------------------+-------------------+-----------+---------+-------+------------------
+            14252097 |                    5 | $1456854003272022TyAXz:matrix.org | m.room.history_visibility | !WZbLERcNJxrvkxPfyV:matrix.org | {"history_visibility":"shared"}         |                   | t         | f       |     5 |    1456854003036
+            14252951 |                   48 | $1456854761272788HgmWt:matrix.org | m.room.history_visibility | !WZbLERcNJxrvkxPfyV:matrix.org | {"history_visibility":"world_readable"} |                   | t         | f       |    48 |    1456854761820
+    {noformat}
+
+    This is behaving as intended.
+  created: 2016-03-02 16:57:15.0
+  id: '12737'
+  issue: '12540'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-02 16:57:15.0

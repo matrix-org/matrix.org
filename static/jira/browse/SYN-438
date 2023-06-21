@@ -1,0 +1,40 @@
+---
+summary: registration v2_alpha password skipping
+---
+created: 2015-07-28 15:10:17.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  v2_alpha currently forces you to define a password even if you're an AS. This breaks the IRC AS currently when trying to use the JS SDK (which just supports v2_alpha and no v1).
+id: '11768'
+key: SYN-438
+number: '438'
+priority: '2'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-07-29 10:58:10.0
+status: '5'
+type: '1'
+updated: 2015-07-29 10:58:10.0
+votes: '0'
+watches: '3'
+workflowId: '11869'
+---
+actions:
+- author: erikj
+  body: We seem to have lost the {{type}} parameter in v2
+  created: 2015-07-28 15:20:55.0
+  id: '12034'
+  issue: '11768'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-07-28 15:20:55.0
+- author: kegan
+  body: https://github.com/matrix-org/synapse/pull/210
+  created: 2015-07-29 10:58:10.0
+  id: '12036'
+  issue: '11768'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-29 10:58:10.0

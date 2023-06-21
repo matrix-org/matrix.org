@@ -1,0 +1,38 @@
+---
+summary: Interoperability profiles
+---
+created: 2015-09-03 17:11:58.0
+creator: matthew
+description: ''
+id: '11849'
+key: SPEC-219
+number: '219'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-10-13 16:32:49.0
+status: '5'
+type: '2'
+updated: 2015-10-13 16:33:31.0
+votes: '0'
+watches: '2'
+workflowId: '11952'
+---
+actions:
+- author: matthew
+  body: The conversation is advancing in https://github.com/matrix-org/matrix-doc/pull/52#issuecomment-141699759
+  created: 2015-09-19 20:10:06.0
+  id: '12141'
+  issue: '11849'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-19 20:10:06.0
+- author: kegan
+  body: 'Resolved and implemented: https://github.com/matrix-org/matrix-doc/pull/65'
+  created: 2015-10-13 16:33:31.0
+  id: '12246'
+  issue: '11849'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 16:33:31.0

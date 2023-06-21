@@ -1,0 +1,38 @@
+---
+summary: Write spec for restricting usernames & channel name charsets.
+---
+created: 2015-05-14 13:45:54.0
+creator: dbkr
+description: ''
+id: '11531'
+key: SPEC-163
+number: '163'
+priority: '3'
+project: '10001'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-12-10 09:43:53.0
+status: '5'
+type: '2'
+updated: 2015-12-10 09:46:47.0
+votes: '0'
+watches: '3'
+workflowId: '11632'
+---
+actions:
+- author: kegan
+  body: Isn't this just SPEC-1?
+  created: 2015-10-13 17:45:26.0
+  id: '12260'
+  issue: '11531'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 17:45:26.0
+- author: richvdh
+  body: sounds like it
+  created: 2015-12-10 09:43:54.0
+  id: '12456'
+  issue: '11531'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-10 09:43:54.0

@@ -1,0 +1,45 @@
+---
+summary: Unit test the storage layer.
+---
+assignee: erikj
+created: 2014-09-18 14:10:49.0
+creator: erikj
+description: |-
+  Currently, the storage layer isn't tested at all. This is suboptimal. Easiest way to do this is to use an in memory sqlite3 database.
+
+  Branch: test-sqlite-memory
+id: '10321'
+key: SYN-51
+number: '51'
+priority: '3'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-09-18 14:26:10.0
+status: '5'
+type: '3'
+updated: 2014-09-22 17:20:49.0
+votes: '0'
+watches: '1'
+workflowId: '10424'
+---
+actions:
+- author: erikj
+  body: |-
+    This looks fine.
+
+    My only architectural/code style comment is that I think I would prefer to have the unit tests split up a bit more, there seems to be a tendency currently for one unit test to do multiple test. This makes it harder to see a) what exactly each test is testing and b) exactly what is breaking when the test breaks. This is probably a discussion to be had independently of this particular item.
+  created: 2014-09-18 14:15:58.0
+  id: '10327'
+  issue: '10321'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-18 14:15:58.0
+- author: erikj
+  body: We probably want to convert existing tests that use MemoryDataStore to use this, but I think we still should have unit tests that mock the storage layer as well.
+  created: 2014-09-18 14:16:52.0
+  id: '10328'
+  issue: '10321'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-18 14:16:52.0

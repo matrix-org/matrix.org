@@ -1,0 +1,23 @@
+---
+summary: We have to validate events arriving via federation at the application layer
+---
+assignee: erikj
+created: 2014-09-16 01:37:40.0
+creator: matthew
+description: ''
+id: '10077'
+key: SYN-38
+number: '38'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-13 15:54:09.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:06:41.0
+votes: '0'
+watches: '1'
+workflowId: '10371'
+---
+actions: null

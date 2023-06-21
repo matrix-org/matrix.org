@@ -1,0 +1,20 @@
+---
+summary: Test federation of room-related EDUs (typing, room presence)
+---
+created: 2015-09-28 15:33:27.0
+creator: leonerd
+description: ''
+id: '11950'
+key: SYT-16
+number: '16'
+priority: '3'
+project: '10300'
+reporter: leonerd
+status: '10100'
+type: '2'
+updated: 2015-09-28 15:34:30.0
+votes: '0'
+watches: '1'
+workflowId: '12053'
+---
+actions: null

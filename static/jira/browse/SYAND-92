@@ -1,0 +1,65 @@
+---
+summary: Number of unread messages in notifications
+---
+created: 2015-06-27 13:02:22.0
+creator: bob
+description: ''
+id: '11708'
+key: SYAND-92
+number: '92'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-07-10 13:19:24.0
+status: '5'
+type: '4'
+updated: 2015-07-10 13:19:24.0
+votes: '0'
+watches: '2'
+workflowId: '11809'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    The unread messages counter badge is supported on some devices groupd (depends in the manufacturer).
+    It doesn'ty work on other ones.
+  created: 2015-07-08 14:33:16.0
+  id: '11972'
+  issue: '11708'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-07-08 15:55:07.0
+- author: m-ylecollen
+  body: |-
+    I tested some other devices
+
+    -> Nexus 6 devices (Lolilop / Motorola devices).
+
+    The gmail application has no badge when there are some unseen (or unread) messages.
+    The notification does not seem to contain any unread messages counter
+
+    -> Moto Razr HD (XT925)
+    The email application has badge not matrix app.
+  created: 2015-07-08 16:03:47.0
+  id: '11973'
+  issue: '11708'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-07-08 16:03:47.0
+- author: m-ylecollen
+  body: |-
+    The application badges are not managed by some launchers.
+
+    The frequently used trick consists in updating the application icon (by using activity-alias).
+    a new message -> disable previous application icon -> enable the new one (i.e. with the unread message count drawn on it).
+
+    It seems being used in motoemail.apk (Motorola's email client application).
+
+    The choosen fix consists in displaying the counter in the notification (in the avatar top right).
+  created: 2015-07-10 13:19:12.0
+  id: '11981'
+  issue: '11708'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-07-10 13:19:12.0

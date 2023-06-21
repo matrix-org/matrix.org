@@ -1,0 +1,43 @@
+---
+summary: 'Push can stop working for a user '
+---
+assignee: dbkr
+created: 2015-06-04 18:43:33.0
+creator: dbkr
+description: |-
+  Several people are reporting that they stop getting push.
+
+  Observations from the field:
+
+   * It starts working if they toggle push (ie. re-set the pusher)
+
+  I have also found a user in the broken state and observed the following:
+
+   * Restarting synapse fixes their push
+   * Restarting synapse also causes messages sent in the interim to get pushed (the invite I sent previously that did not arrive came through after restarting synapse)
+
+  Therefore I think this is caused by the event stream that the pusher uses failing.
+id: '11622'
+key: SYN-409
+number: '409'
+priority: '1'
+project: '10000'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2016-03-15 11:53:00.0
+status: '5'
+type: '1'
+updated: 2016-03-15 11:53:00.0
+votes: '0'
+watches: '1'
+workflowId: '11723'
+---
+actions:
+- author: dbkr
+  body: 'We could probably do with more try/catch in the pusher loop: it could be getting an exception and dying'
+  created: 2015-06-04 21:54:03.0
+  id: '11828'
+  issue: '11622'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-06-04 21:54:03.0

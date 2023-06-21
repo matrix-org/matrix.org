@@ -1,0 +1,28 @@
+---
+summary: Setting up federation is way too errorprone and doesn't give good enough errors
+---
+created: 2016-07-27 23:06:22.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12775'
+key: SYN-741
+number: '741'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:49.0
+votes: '0'
+watches: '2'
+workflowId: '12875'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1576'
+  created: 2016-11-07 18:29:49.0
+  id: '13899'
+  issue: '12775'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:49.0

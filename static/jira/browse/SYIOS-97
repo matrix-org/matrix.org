@@ -1,0 +1,30 @@
+---
+summary: Odd error message joining rooms that don't exist
+---
+created: 2015-02-24 14:00:10.0
+creator: dbkr
+description: ''
+id: '11134'
+key: SYIOS-97
+number: '97'
+priority: '1'
+project: '10200'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-02-24 15:04:09.0
+status: '5'
+type: '1'
+updated: 2015-02-24 15:04:09.0
+votes: '0'
+watches: '1'
+workflowId: '11234'
+---
+actions:
+- author: dbkr
+  body: 'This was synapse''s bug: fixed there.'
+  created: 2015-02-24 15:04:09.0
+  id: '11313'
+  issue: '11134'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-02-24 15:04:09.0

@@ -1,0 +1,30 @@
+---
+summary: 'Angular chokes on room aliases with multiple #''s in the alias name (i think)'
+---
+created: 2014-09-16 00:45:49.0
+creator: matthew
+description: ''
+id: '10048'
+key: SYWEB-155
+number: '155'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2014-11-25 17:04:12.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:47.0
+votes: '0'
+watches: '2'
+workflowId: '10357'
+---
+actions:
+- author: kegan
+  body: Can't reproduce this. Even tried jumping to /room/##foo:matrix.org and it still worked fine.
+  created: 2014-11-25 17:04:12.0
+  id: '10843'
+  issue: '10048'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-25 17:04:12.0

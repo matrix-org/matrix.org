@@ -1,0 +1,28 @@
+---
+summary: Persist/seed retry schedule to speed up initial servers
+---
+created: 2015-11-01 22:15:19.0
+creator: matthew
+description: ''
+id: '12064'
+key: SPEC-258
+number: '258'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:47.0
+votes: '0'
+watches: '2'
+workflowId: '12167'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/564'
+  created: 2016-10-28 16:27:47.0
+  id: '13372'
+  issue: '12064'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:47.0

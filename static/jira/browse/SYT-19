@@ -1,0 +1,23 @@
+---
+summary: Test canonical room aliases
+---
+assignee: leonerd
+created: 2015-09-29 15:07:11.0
+creator: leonerd
+description: ''
+id: '11963'
+key: SYT-19
+number: '19'
+priority: '1'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-04 16:07:06.0
+status: '5'
+type: '2'
+updated: 2015-11-04 16:07:06.0
+votes: '0'
+watches: '1'
+workflowId: '12066'
+---
+actions: null

@@ -1,0 +1,31 @@
+---
+summary: TURN needs to be easier to set up
+---
+created: 2014-09-26 22:46:24.0
+creator: matthew
+description: |-
+  Whilst we support TURN now, it's dauntingly complicated for a casual homeserver user to set up.
+
+  We need to either make it easier to use existing external TURN services and/or host our own public TURN service (as Matrix.org) for the betterment of humanity.
+id: '10404'
+key: SYN-76
+number: '76'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:16.0
+votes: '0'
+watches: '2'
+workflowId: '10507'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1219'
+  created: 2016-11-07 18:27:16.0
+  id: '13546'
+  issue: '10404'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:16.0

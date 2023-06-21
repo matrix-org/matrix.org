@@ -1,0 +1,22 @@
+---
+summary: Simultaneous ringing is broken on WebRTC
+---
+created: 2015-02-16 01:32:18.0
+creator: matthew
+description: ''
+id: '11060'
+key: SYWEB-281
+number: '281'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-20 14:15:19.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:56.0
+votes: '0'
+watches: '1'
+workflowId: '11160'
+---
+actions: null

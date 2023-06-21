@@ -1,0 +1,31 @@
+---
+summary: Ask syweb where the webclient is installed
+---
+created: 2015-08-07 18:17:56.0
+creator: leonerd
+description: |-
+  Ask syweb where the web client is, rather than just presuming it's under {{.__file__}}. That way,  the debian package can declare that actually it lives in a different place, because debian packaging requires that the javascript lives in {{/usr/share/javascript/...}}.
+
+  (This does first depend on a later release of matrix-angular-sdk; see SYWEB-381)
+id: '11787'
+key: SYN-443
+number: '443'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:15.0
+votes: '0'
+watches: '2'
+workflowId: '11888'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1353'
+  created: 2016-11-07 18:28:15.0
+  id: '13675'
+  issue: '11787'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:15.0

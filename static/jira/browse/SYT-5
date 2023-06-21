@@ -1,0 +1,42 @@
+---
+summary: Test the federation key distribution APIs
+---
+assignee: leonerd
+created: 2015-05-21 16:29:08.0
+creator: markjh
+description: ''
+id: '11549'
+key: SYT-5
+number: '5'
+priority: '3'
+project: '10300'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-07-09 15:27:40.0
+status: '5'
+type: '2'
+updated: 2015-07-09 15:27:40.0
+votes: '0'
+watches: '2'
+workflowId: '11650'
+---
+actions:
+- author: leonerd
+  body: |-
+    Some initial testing now written into
+
+      https://github.com/matrix-org/sytest/blob/federation/tests/50federation/01keys.pl
+  created: 2015-07-07 20:18:01.0
+  id: '11971'
+  issue: '11549'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-07-07 20:18:01.0
+- author: leonerd
+  body: Now merged into master at 2d6e364
+  created: 2015-07-09 15:26:46.0
+  id: '11978'
+  issue: '11549'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-07-09 15:26:46.0

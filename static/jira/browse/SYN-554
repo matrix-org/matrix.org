@@ -1,0 +1,39 @@
+---
+summary: Federation is far too sensitive to trailing /'s on some URLs
+---
+created: 2015-12-17 20:38:45.0
+creator: leonerd
+description: |-
+  {noformat}
+  Response from GET /_matrix/federation/v1/event/$0:localhost:34657:
+    HTTP/1.1 400 Bad Request
+  {noformat}
+
+  vs.
+
+  {noformat}
+  Response from GET /_matrix/federation/v1/event/$0:localhost:35040/:
+    HTTP/1.1 200 OK
+  {noformat}
+id: '12220'
+key: SYN-554
+number: '554'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:45.0
+votes: '0'
+watches: '2'
+workflowId: '12323'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1450'
+  created: 2016-11-07 18:28:45.0
+  id: '13753'
+  issue: '12220'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:45.0

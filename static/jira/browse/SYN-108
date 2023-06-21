@@ -1,0 +1,42 @@
+---
+summary: Poor handling of users that don't exist
+---
+created: 2014-10-24 14:15:50.0
+creator: leonerd
+description: |-
+  When you attempt to interact with a non-existing user, no indication of this fact happens.
+
+  Such cases as:
+
+   * invites to a room
+   * viewing a profile page
+id: '10485'
+key: SYN-108
+number: '108'
+priority: '2'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:21.0
+votes: '0'
+watches: '2'
+workflowId: '10589'
+---
+actions:
+- author: matthew
+  body: this is still an embarrassing problem. according to syn-134 the federation_authorization branch should be 404ing invites to nonexistent users, but it doesn't :(
+  created: 2015-04-16 11:52:54.0
+  id: '11497'
+  issue: '10485'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-16 11:52:54.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1233'
+  created: 2016-11-07 18:27:21.0
+  id: '13555'
+  issue: '10485'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:21.0

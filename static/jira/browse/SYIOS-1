@@ -1,0 +1,31 @@
+---
+summary: Register our pod on CocoaPods
+---
+assignee: manu
+created: 2014-12-10 09:39:08.0
+creator: manu
+description: ''
+id: '10796'
+key: SYIOS-1
+number: '1'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-18 16:54:42.0
+status: '5'
+type: '2'
+updated: 2014-12-18 16:54:42.0
+votes: '0'
+watches: '1'
+workflowId: '10896'
+---
+actions:
+- author: manu
+  body: The Matrix SDK v0.1.0 pod is available
+  created: 2014-12-18 16:54:42.0
+  id: '11005'
+  issue: '10796'
+  type: comment
+  updateauthor: manu
+  updated: 2014-12-18 16:54:42.0

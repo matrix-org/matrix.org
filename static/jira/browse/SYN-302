@@ -1,0 +1,32 @@
+---
+summary: Rooms where all user members are 'left' can arrive in initialSync
+---
+created: 2015-03-10 17:24:40.0
+creator: matthew
+description: |-
+  [17:18]  <M-Tor> I'm getting a room from initialSync where all the members have membership = 'leave'
+  [17:19]  <M-Tor> do not want.
+id: '11191'
+key: SYN-302
+number: '302'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '2'
+resolutiondate: 2016-01-06 10:27:51.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:27:51.0
+votes: '0'
+watches: '2'
+workflowId: '11291'
+---
+actions:
+- author: erikj
+  body: Not sure if this is still happening, but either way this doesn't actually do any harm, afaik, and isn't a bug in /sync.
+  created: 2016-01-06 10:27:51.0
+  id: '12526'
+  issue: '11191'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 10:27:51.0

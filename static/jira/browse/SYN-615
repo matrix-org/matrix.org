@@ -1,0 +1,30 @@
+---
+summary: /search returns redacted events
+---
+created: 2016-02-04 10:17:27.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  Even if the matching text has later been redacted, /search still returns a redacted event
+id: '12365'
+key: SYN-615
+number: '615'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:03.0
+votes: '0'
+watches: '2'
+workflowId: '12470'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1488'
+  created: 2016-11-07 18:29:03.0
+  id: '13794'
+  issue: '12365'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:03.0

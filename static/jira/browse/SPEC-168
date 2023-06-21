@@ -1,0 +1,31 @@
+---
+summary: 'Spell out that # should be escaped as %23 in URIs that take room aliases'
+---
+assignee: kegan
+created: 2015-06-02 00:07:32.0
+creator: matthew
+description: ''
+id: '11575'
+key: SPEC-168
+number: '168'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-10-14 15:04:11.0
+status: '5'
+type: '2'
+updated: 2015-10-14 15:04:11.0
+votes: '0'
+watches: '2'
+workflowId: '11676'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-doc/pull/100
+  created: 2015-10-14 15:04:11.0
+  id: '12262'
+  issue: '11575'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-14 15:04:11.0

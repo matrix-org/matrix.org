@@ -1,0 +1,115 @@
+---
+summary: Roundtrip GET-then-PUT of m.room.power_levels changes ban behaviour
+---
+created: 2015-04-21 19:57:03.0
+creator: leonerd
+description: |-
+  sytest's tests/38room-levels.pl needs to alter room powerlevels to test their effect. Simply adding a trivial fetch-then-set of the current state manages to break the 'ban' level:
+
+  {noformat}
+  Requesting:
+    GET https://localhost:8001/_matrix/client/api/v1/rooms/!guoGjPkvILFcoUckVV:localhost:8001/state/m.room.power_levels?access_token=...
+  -- 
+  Response from https://localhost:8001/_matrix/client/api/v1/rooms/!guoGjPkvILFcoUckVV:localhost:8001/state/m.room.power_levels?access_token=...:
+    HTTP/1.1 200 OK
+    
+    {"ban":50,"events":{"m.room.name":100,"m.room.power_levels":100},"events_default":0,"kick":50,"redact":50,"state_default":50,"users":{"@01register-user:localhost:8001":100},"users_default":0}
+  -- 
+  Requesting:
+    PUT https://localhost:8001/_matrix/client/api/v1/rooms/!guoGjPkvILFcoUckVV:localhost:8001/state/m.room.power_levels?access_token=...
+    
+    {"users":{"@01register-user:localhost:8001":"100"},"state_default":"50","kick":"50","ban":"50","redact":"50","events_default":"0","users_default":"0","events":{"m.room.power_levels":"100","m.room.name":"100"}}
+  -- 
+  Response from https://localhost:8001/_matrix/client/api/v1/rooms/!guoGjPkvILFcoUckVV:localhost:8001/state/m.room.power_levels?access_token=...:
+    HTTP/1.1 200 OK
+  {noformat}
+
+  Causes:
+
+  {noformat}
+    Testing if: 'ban' event respects room powerlevel... 
+     +--- FAIL:
+   | Expected to fail at powerlevel=0 but it didn't at ./run-tests.pl line 292.
+   +----------------------
+    Testing if: setting 'm.room.name' respects room powerlevel... 
+     | Fails at powerlevel 0... OK
+     | Succeeds at powerlevel 100... OK
+     +--- PASS
+    Testing if: setting 'm.room.power_levels' respects room powerlevel... 
+     | Fails at powerlevel 0... OK
+     | Succeeds at powerlevel 100... OK
+     +--- PASS
+  {noformat}
+
+  Though the other levels work OK.
+id: '11356'
+key: SYN-351
+number: '351'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-04-21 20:22:16.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:06.0
+votes: '0'
+watches: '1'
+workflowId: '11456'
+---
+actions:
+- author: leonerd
+  body: Hmmm.. I wonder if it has to do with the fact we got integers, but returned strings.
+  created: 2015-04-21 20:03:59.0
+  id: '11510'
+  issue: '11356'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-21 20:03:59.0
+- author: leonerd
+  body: |-
+    Ooopsie.
+
+    {noformat}
+                print "I wonder how user's level of %r compares to ban level of %r" % (user_level, ban_level)
+    {noformat}
+
+    in synapse causes:
+
+    {noformat}
+    Running tests/38room-levels.pl...
+      Preparing: Creating a new test room... DONE
+      Testing if: 'ban' event respects room powerlevel... 
+    I wonder how user's level of u'0' compares to ban level of 50
+       +--- FAIL:
+     | Expected to fail at powerlevel=0 but it didn't at ./run-tests.pl line 292.
+    {noformat}
+
+    Due to
+
+    {noformat}
+    >>> 0 < 50
+    True
+    >>> u'0' + 50
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: coercing to Unicode: need string or buffer, int found
+    >>> u'0' < 50
+    False
+    {noformat}
+
+    Python I am disappoint.
+  created: 2015-04-21 20:11:20.0
+  id: '11511'
+  issue: '11356'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-21 20:14:02.0
+- author: leonerd
+  body: Fixed by 3a7d7a3 + b568c02
+  created: 2015-04-21 20:22:16.0
+  id: '11512'
+  issue: '11356'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-21 20:22:16.0

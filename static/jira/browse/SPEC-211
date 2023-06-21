@@ -1,0 +1,83 @@
+---
+summary: if all users leave a room, the room should not wink out of existence.
+---
+created: 2015-08-20 17:30:21.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  we need to keep a HS or two in the room somehow to 'keep the lights on' and preserve history even if all the participating users leave. this would also be helpful as a way for ASes to interact with rooms without needing an explicit AS user joined.
+id: '11812'
+key: SPEC-211
+number: '211'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:33.0
+votes: '0'
+watches: '5'
+workflowId: '11915'
+---
+actions:
+- author: matthew
+  body: The idea of letting ASes participate in a room without explicitly joining is finally specced in SPEC-229
+  created: 2015-09-19 22:32:37.0
+  id: '12143'
+  issue: '11812'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-19 22:32:37.0
+- author: matthew
+  body: Could SPEC-216 help with this?  If the act of leaving a room doesn't actually part the user from it entirely, can these 'left' users keep the room alive?  Only if the users explicitly discard the room and its history (as per SPEC-224) would the server stop participating - and if all the users discarded it the room would wink out of existence, which is probably what's wanted in that instance.
+  created: 2015-09-25 18:19:52.0
+  id: '12167'
+  issue: '11812'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-25 18:20:04.0
+- author: matthew
+  body: |-
+    I'm assuming this is the same thing, but if someone can check:
+
+    rgh
+    I've set up a home server but I'm seeing some very odd behaviour. I can create a room but if I leave the room I can't get back into it.
+    I get the following error message in the log:  "RuntimeError: Failed to send to any server"
+
+    Matthew (@matthew:matrix.org)
+    erm, how very strange
+    can you pastebin more context from the logs somewhere?
+    or send it to me 1:1
+
+    rgh
+    Matthew (@matthew:matrix.org):  Yeah, I can. Give me a couple of minutes.
+    @matthew:matrix.org: Here's a gist: https://gist.github.com/filterfish/8d7ff314fe50a53097f9
+
+    rgh
+    I've added as much info as I can think of.  Hopefully it's clear what each bit is!
+  created: 2015-09-29 12:28:57.0
+  id: '12185'
+  issue: '11812'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-29 12:28:57.0
+- author: alien
+  body: |-
+    1. Create a room, exit it, try to rejoin and you get "interneal server error" in Vector (shouldn't be a better way to indicate non-existing room?)
+    2. Try to recreate the room and you get "M_UNKNOWN: Room alias already taken".
+
+    One can probably live with 1, but 2 is really annoying.
+  created: 2015-12-07 10:07:19.0
+  id: '12431'
+  issue: '11812'
+  type: comment
+  updateauthor: alien
+  updated: 2015-12-07 10:07:19.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/534'
+  created: 2016-10-28 16:27:33.0
+  id: '13342'
+  issue: '11812'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:33.0

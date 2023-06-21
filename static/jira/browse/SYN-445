@@ -1,0 +1,36 @@
+---
+summary: we should support horizontally scaling ASes by roundrobining transactions where viable
+---
+created: 2015-08-13 23:44:31.0
+creator: neb
+description: ''
+id: '11791'
+key: SYN-445
+number: '445'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10200'
+type: '2'
+updated: 2016-11-07 18:28:16.0
+votes: '0'
+watches: '4'
+workflowId: '11893'
+---
+actions:
+- author: erikj
+  body: Does the current AS api support this?
+  created: 2016-01-06 10:43:03.0
+  id: '12527'
+  issue: '11791'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 10:43:03.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1355'
+  created: 2016-11-07 18:28:16.0
+  id: '13677'
+  issue: '11791'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:16.0

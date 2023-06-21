@@ -1,0 +1,88 @@
+---
+summary: Unhandled Error - TLS certificate doesn't match
+---
+created: 2015-05-18 13:31:28.0
+creator: erikj
+description: |-
+  {noformat}
+  2015-05-18 13:29:06,580 - twisted - 455 - ERROR - - Unhandled Error
+  Traceback (most recent call last):
+    File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 423, in errback
+      self._startRunCallbacks(fail)
+    File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 490, in _startRunCallbacks
+      self._runCallbacks()
+    File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 577, in _runCallbacks
+      current.result = callback(current.result, *args, **kw)
+    File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1155, in gotResult
+      _inlineCallbacks(r, g, deferred)
+  --- <exception caught here> ---
+    File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 166, in _get_server_verify_key_impl
+      server_name, key_ids
+    File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 401, in get_server_verify_key_v1_direct
+      raise ValueError("TLS certificate doesn't match")
+  exceptions.ValueError: TLS certificate doesn't match
+  {noformat}
+id: '11539'
+key: SYN-382
+number: '382'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '5'
+resolutiondate: 2016-01-06 10:34:48.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:34:49.0
+votes: '0'
+watches: '1'
+workflowId: '11640'
+---
+actions:
+- author: erikj
+  body: |-
+    Also
+
+    {noformat}
+    2015-05-18 13:29:06,602 - twisted - 455 - ERROR - - Unhandled Error
+    Traceback (most recent call last):
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 423, in errback
+        self._startRunCallbacks(fail)
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 490, in _startRunCallbacks
+        self._runCallbacks()
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 577, in _runCallbacks
+        current.result = callback(current.result, *args, **kw)
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1155, in gotResult
+        _inlineCallbacks(r, g, deferred)
+    --- <exception caught here> ---
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+        result = result.throwExceptionIntoGenerator(g)
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+        return g.throw(self.type, self.value, self.tb)
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 166, in _get_server_verify_key_impl
+        server_name, key_ids
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+        result = result.throwExceptionIntoGenerator(g)
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+        return g.throw(self.type, self.value, self.tb)
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 382, in get_server_verify_key_v1_direct
+        server_name, self.hs.tls_context_factory
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+        result = result.throwExceptionIntoGenerator(g)
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+        return g.throw(self.type, self.value, self.tb)
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/synapse/crypto/keyclient.py", line 55, in fetch_server_key
+        raise IOError("Cannot get key for %r" % server_name)
+    exceptions.IOError: Cannot get key for 'oddvar.org'
+    {noformat}
+  created: 2015-05-18 13:32:14.0
+  id: '11766'
+  issue: '11539'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-18 13:32:14.0

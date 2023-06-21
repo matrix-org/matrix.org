@@ -1,0 +1,63 @@
+---
+summary: 500 GET /_matrix/client/api/v1/pushrules/
+---
+created: 2015-05-22 17:33:52.0
+creator: erikj
+description: |-
+  {noformat}
+  2015-05-22 17:04:53,057 - synapse.http.server - 113 - ERROR - GET-134 - Failed handle request synapse.http.server._async_render on <synapse.rest.client.v1.ClientV1RestResource object at 0x3cbd190>: <Request at 0x
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 90, in wrapped_request_handler
+      yield d
+  TypeError: ord() expected string of length 1, but dict found
+  {noformat}
+id: '11557'
+key: SYN-390
+number: '390'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-26 10:20:45.0
+status: '5'
+type: '1'
+updated: 2015-05-26 16:13:34.0
+votes: '0'
+watches: '1'
+workflowId: '11658'
+---
+actions:
+- author: erikj
+  body: |-
+    A possibly related stack trace, from a {{POST /_matrix/client/api/v1/pushers/set}}
+
+    {noformat}
+    2015-05-26 07:32:53,950 - twisted - 455 - ERROR - POST-58048 - Unhandled Error
+    Traceback (most recent call last):
+      File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1155, in gotResult
+        _inlineCallbacks(r, g, deferred)
+      File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+        result = g.send(result)
+      File "synapse/push/__init__.py", line 279, in start
+        actions = yield self._actions_for_event(single_event)
+      File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1237, in unwindGenerator
+        return _inlineCallbacks(None, gen, Deferred())
+    --- <exception caught here> ---
+      File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+        result = g.send(result)
+      File "synapse/push/__init__.py", line 78, in _actions_for_event
+        r['conditions'] = json.loads(r['conditions'])
+      File "/home/erikj/.local/lib/python2.7/site-packages/simplejson/__init__.py", line 505, in loads
+        return _default_decoder.decode(s)
+      File "/home/erikj/.local/lib/python2.7/site-packages/simplejson/decoder.py", line 370, in decode
+        obj, end = self.raw_decode(s)
+      File "/home/erikj/.local/lib/python2.7/site-packages/simplejson/decoder.py", line 395, in raw_decode
+        ord0 = ord(s[idx])
+    exceptions.TypeError: ord() expected string of length 1, but dict found
+    {noformat}
+  created: 2015-05-26 09:36:07.0
+  id: '11792'
+  issue: '11557'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-26 09:36:07.0

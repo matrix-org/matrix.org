@@ -1,0 +1,40 @@
+---
+summary: Formally track haproxy perf in grafana
+---
+created: 2016-10-13 19:35:10.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  It's informally tracked on erik's box atm; would be very nice to have formal monitoring graphs
+id: '12859'
+key: ORG-68
+number: '68'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:40:24.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:40:24.0
+votes: '0'
+watches: '3'
+workflowId: '12959'
+---
+actions:
+- author: leonerd
+  body: This is probably now handled by the use of {{haproxy_exporter}}
+  created: 2016-10-28 17:21:50.0
+  id: '13525'
+  issue: '12859'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-10-28 17:21:50.0
+- author: richvdh
+  body: https://github.com/matrix-org/internal-config/issues/83
+  created: 2017-03-21 11:40:20.0
+  id: '14033'
+  issue: '12859'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:40:20.0

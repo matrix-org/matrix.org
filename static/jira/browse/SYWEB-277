@@ -1,0 +1,31 @@
+---
+summary: Make summary pages of images/links
+---
+created: 2015-02-13 09:46:48.0
+creator: spacehobo
+description: |-
+  Many IRC channels have bots creating "summary pages" full of just the links posted into the channel, using the link text, page title, or image/video thumbnail to cue the user into what's being linked.  Typically the rest of the line is also included as commentary on the image, and if replies can be tracked they can be included as well.
+
+  Examples are click.olinko.net and squink.olinko.net
+id: '11042'
+key: SYWEB-277
+number: '277'
+priority: '3'
+project: '10004'
+reporter: spacehobo
+status: '10100'
+type: '2'
+updated: 2015-02-13 17:55:49.0
+votes: '0'
+watches: '2'
+workflowId: '11142'
+---
+actions:
+- author: kegan
+  body: I wonder if this belongs in BOTS for NEB to do instead of the web client, to benefit mobile users.
+  created: 2015-02-13 17:55:49.0
+  id: '11258'
+  issue: '11042'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-13 17:55:49.0

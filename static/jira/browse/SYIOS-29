@@ -1,0 +1,41 @@
+---
+summary: viewing mxc:// URLs broken on dev
+---
+assignee: matthew
+created: 2014-12-21 01:30:18.0
+creator: matthew
+description: ''
+id: '10843'
+key: SYIOS-29
+number: '29'
+priority: '1'
+project: '10200'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2015-01-11 23:55:34.0
+status: '5'
+type: '1'
+updated: 2015-01-11 23:55:34.0
+votes: '0'
+watches: '2'
+workflowId: '10943'
+---
+actions:
+- author: gforet
+  body: |-
+    Matthew, I cannot reproduce SYIOS-29. I'm surprised because the described behavior is the expected one for build < 62.
+    Was the blank image observed on the iphone which attached the picture?
+  created: 2014-12-22 14:05:49.0
+  id: '11024'
+  issue: '10843'
+  type: comment
+  updateauthor: gforet
+  updated: 2014-12-22 14:05:49.0
+- author: matthew
+  body: seems ok now
+  created: 2015-01-11 23:55:34.0
+  id: '11078'
+  issue: '10843'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-11 23:55:34.0

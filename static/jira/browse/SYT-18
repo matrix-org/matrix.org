@@ -1,0 +1,39 @@
+---
+summary: Test unfederated rooms
+---
+assignee: leonerd
+created: 2015-09-29 15:06:47.0
+creator: leonerd
+description: ''
+id: '11962'
+key: SYT-18
+number: '18'
+priority: '1'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-02 17:07:08.0
+status: '5'
+type: '2'
+updated: 2015-11-02 17:07:08.0
+votes: '0'
+watches: '1'
+workflowId: '12065'
+---
+actions:
+- author: leonerd
+  body: Awaiting SPEC-101
+  created: 2015-09-29 16:37:22.0
+  id: '12190'
+  issue: '11962'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-29 16:37:34.0
+- author: leonerd
+  body: Done and merged.
+  created: 2015-11-02 17:07:08.0
+  id: '12293'
+  issue: '11962'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-11-02 17:07:08.0

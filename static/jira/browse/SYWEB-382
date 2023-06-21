@@ -1,0 +1,20 @@
+---
+summary: We shouldn't show a registration button at all if reg is disabled on the current HS
+---
+created: 2015-09-07 00:18:27.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11858'
+key: SYWEB-382
+number: '382'
+priority: '2'
+project: '10004'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-09-07 00:18:27.0
+votes: '0'
+watches: '1'
+workflowId: '11961'
+---
+actions: null

@@ -1,0 +1,28 @@
+---
+summary: Support hooking up to 3rd party TURN servers
+---
+created: 2016-10-11 23:02:30.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12856'
+key: SYN-786
+number: '786'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:06.0
+votes: '0'
+watches: '2'
+workflowId: '12956'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1611'
+  created: 2016-11-07 18:30:06.0
+  id: '13941'
+  issue: '12856'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:06.0

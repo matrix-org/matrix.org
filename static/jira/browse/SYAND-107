@@ -1,0 +1,37 @@
+---
+summary: Add account screen --> prefilled list of know Matrix servers
+---
+created: 2015-07-27 14:17:27.0
+creator: bob
+description: |-
+  In the "Add Account" screen the user should have a list of pre-filled Matrix Servers to choose from.
+
+  Maybe there is api available that shows the "known Matrix servers"?!?!
+
+
+
+  see a of prefilled Matrix-Servers too choose from.
+id: '11767'
+key: SYAND-107
+number: '107'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '2'
+resolutiondate: 2015-09-02 16:11:40.0
+status: '5'
+type: '4'
+updated: 2015-09-02 16:11:40.0
+votes: '0'
+watches: '2'
+workflowId: '11868'
+---
+actions:
+- author: m-ylecollen
+  body: There is no available API to list the matrix servers.
+  created: 2015-09-02 16:11:31.0
+  id: '12086'
+  issue: '11767'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-02 16:11:31.0

@@ -1,0 +1,39 @@
+---
+summary: pynacl installation problems makes installing Synapse insanely hard
+---
+assignee: markjh
+created: 2014-10-27 10:56:39.0
+creator: matthew
+description: |-
+  At TC Disrupt London hackathon we saw several people entirely fail to run synapse because they couldn't install the deps on a virginal OSX 10.9 machine.
+
+  The problem that setuptools pulls in the wrong pynacl, that you then have to manually remove and pip install (complete with confusions over ~/.local versus system installs etc) is a huge mess.
+
+  Are we not better off depending on our own package until the fix lands?
+id: '10501'
+key: SYN-112
+number: '112'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-04 16:52:43.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:46.0
+votes: '0'
+watches: '2'
+workflowId: '10605'
+---
+actions:
+- author: markjh
+  body: |-
+    I've added a dependency link for pynacl on github pointing at the current master where they seem to have fixed some of the installation problems https://github.com/pyca/pynacl/commit/52dbe2dc33f1a062317a098ca9afb77aadd13ab1
+
+    Hopefully that should make it easier for people to install pynacl.
+  created: 2014-11-04 16:51:42.0
+  id: '10728'
+  issue: '10501'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-04 16:51:42.0

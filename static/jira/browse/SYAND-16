@@ -1,0 +1,47 @@
+---
+summary: No feedback when failing to login
+---
+created: 2015-02-09 09:57:01.0
+creator: kegan
+description: |-
+  Tried to login and got:
+
+  {code}
+  01-04 01:41:18.070  2506  2506 E RestAdapterCallback: com.android.org.bouncycastle.jce.exception.ExtCertPathValidatorException: Could not validate certificate: current time: Sun Jan 04 01:41:18 EET 2004, validation time: Sat Aug 30 00:39:32 EEST 2014 url=https://matrix.org/_matrix/client/api/v1/login
+  {code}
+
+  which is fine because the device was set to 2004, not 2015, but there was no error message displayed, making me very confused (and forcing me to dig out adb logcat to work out what was happening).
+id: '11010'
+key: SYAND-16
+number: '16'
+priority: '1'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-18 15:25:41.0
+status: '5'
+type: '1'
+updated: 2015-02-18 15:26:44.0
+votes: '1'
+watches: '3'
+workflowId: '11110'
+---
+actions:
+- author: pvagner
+  body: This also prevents us logging into own home server installs with self generated certificates for https connections. I think at the end ability to accept invalid or missmatched certificate would be usefull.
+  created: 2015-02-16 11:13:56.0
+  id: '11262'
+  issue: '11010'
+  type: comment
+  updateauthor: pvagner
+  updated: 2015-02-16 11:13:56.0
+- author: m-ylecollen
+  body: |-
+    The error description is now displayed.
+    The ability to accept invalid or missmatched certificate is a P3 feature request. it could be done later.
+  created: 2015-02-18 15:26:44.0
+  id: '11280'
+  issue: '11010'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-02-18 15:26:44.0

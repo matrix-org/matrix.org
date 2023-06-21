@@ -1,0 +1,93 @@
+---
+summary: Need to spec out m.notice
+---
+assignee: leonerd
+created: 2014-09-22 08:59:18.0
+creator: kegan
+description: ''
+id: '10359'
+key: SPEC-18
+number: '18'
+priority: '2'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-03 18:09:14.0
+status: '5'
+type: '1'
+updated: 2015-02-03 18:09:14.0
+votes: '0'
+watches: '4'
+workflowId: '10462'
+---
+actions:
+- author: kegan
+  body: Without conflating this too much, I wonder if this should also provide the ability to specify formatting instructions for the text? Or have a dedicated subtype e.g. m.notice (text only) and m.notice.formatted (text + colour/style information). Mainly mentioning this so bots can put things in angry red or happy green.
+  created: 2014-10-06 09:45:25.0
+  id: '10519'
+  issue: '10359'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-06 09:46:31.0
+- author: erikj
+  body: We need to think about how to do formatted bodies in general.
+  created: 2014-10-06 09:46:44.0
+  id: '10520'
+  issue: '10359'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-06 09:46:44.0
+- author: kegan
+  body: I'm proposing that {{m.notice}} just uses a {{body}} key, in the same way that {{m.emote}} does. For formatted notices, I propose {{m.notice.markdown}} as per SPEC-48.
+  created: 2014-10-06 14:47:53.0
+  id: '10528'
+  issue: '10359'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-06 14:47:53.0
+- author: markjh
+  body: Should this be a separate m.room.notice? Or should it be a flag on the existing m.room.message type?
+  created: 2014-11-24 13:33:50.0
+  id: '10821'
+  issue: '10359'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-24 13:33:50.0
+- author: leonerd
+  body: |-
+    I think a central question to ask is whether {{m.room.emote}} can be a notice as well.
+
+    Taking a view of IRC for a moment: PRIVMSG and NOTICE are the two basic methods for getting messages into channels, and orthogonally to that, the message could be plain text or could be CTCP ACTION, so all four possibilities are covered.
+  created: 2014-11-24 13:38:09.0
+  id: '10822'
+  issue: '10359'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-24 13:38:09.0
+- author: kegan
+  body: |-
+    The event types are used to either filter on (e.g. don't show me notices) or for stylistic purposes. There is {{msgtype}} but that is purely for stylistic information: usually clients would say, display the image URL to the user if they didn't want to download it, rather than just not show the message at all. In contrast, people may not want any bot spam at all, so would want to filter the entire group of messages.
+
+    That's my reasoning anyway: there's a lot of overlap (e.g. why not use a {{isBot}} flag), so ultimately I don't mind how this is expressed.
+  created: 2014-11-26 17:13:05.0
+  id: '10862'
+  issue: '10359'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-26 17:13:05.0
+- author: leonerd
+  body: Created pull req https://github.com/matrix-org/matrix-doc/pull/8
+  created: 2015-01-21 18:27:58.0
+  id: '11179'
+  issue: '10359'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-01-21 18:27:58.0
+- author: leonerd
+  body: Done
+  created: 2015-02-03 18:09:14.0
+  id: '11213'
+  issue: '10359'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-03 18:09:14.0

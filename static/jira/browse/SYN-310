@@ -1,0 +1,28 @@
+---
+summary: M_UNKNOWN error is needlessly ambiguous when joining a remote room if your federation is broken
+---
+created: 2015-03-13 15:17:06.0
+creator: matthew
+description: ''
+id: '11222'
+key: SYN-310
+number: '310'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:49.0
+votes: '0'
+watches: '2'
+workflowId: '11322'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1296'
+  created: 2016-11-07 18:27:49.0
+  id: '13617'
+  issue: '11222'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:49.0

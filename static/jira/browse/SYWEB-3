@@ -1,0 +1,83 @@
+---
+summary: The recents list should visually differentiate between public & private rooms somehow
+---
+assignee: kegan
+created: 2014-09-15 23:29:02.0
+creator: matthew
+description: ''
+id: '10005'
+key: SYWEB-3
+number: '3'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-17 16:11:05.0
+status: '5'
+type: '2'
+updated: 2014-09-18 23:12:03.0
+votes: '0'
+watches: '4'
+workflowId: '10417'
+---
+actions:
+- author: kegan
+  body: |-
+    This is annoying. The public/private flag is stored in the Rooms table, but /initialSync doesn't hit anywhere near that. The current code goes something like:
+    {code}
+      GET /initialSync
+        message_handler.snapshot_all_rooms
+          get_rooms_for_user_where_membership_is  // queries the events table, along with state event joins, returning all the "invited" and "joined" rooms
+          for each room:
+            json_entry = event
+            json_entry.append(store.get_recent_events_for_room)
+            json_entry.append(store.get_current_state)
+    {code}
+
+    I *can* add another append to get the visibility of the room (which as a short term fix will work), but adding [N_room] additional database queries makes me sad. :( There will need to be some optimisations to this, as initial sync is slow already as it is.
+  created: 2014-09-17 15:58:12.0
+  id: '10305'
+  issue: '10005'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-17 15:58:12.0
+- author: kegan
+  body: Ended up just pulling all the public rooms then checking if a room ID is in the list.
+  created: 2014-09-17 16:11:05.0
+  id: '10309'
+  issue: '10005'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-17 16:11:05.0
+- author: manu
+  body: Reopened because it needs to be implemented in client side now
+  created: 2014-09-17 16:22:51.0
+  id: '10310'
+  issue: '10005'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-17 16:22:51.0
+- author: kegan
+  body: Actually fixed now.
+  created: 2014-09-17 16:43:33.0
+  id: '10311'
+  issue: '10005'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-17 16:43:33.0
+- author: erikj
+  body: This should probably use the join_rule rather than whether it is in the "public room lists", as this property is completely local to the given server.
+  created: 2014-09-18 11:33:56.0
+  id: '10323'
+  issue: '10005'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-18 11:33:56.0
+- author: kegan
+  body: Actually actually fixed now.
+  created: 2014-09-18 11:36:28.0
+  id: '10324'
+  issue: '10005'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-18 11:36:28.0

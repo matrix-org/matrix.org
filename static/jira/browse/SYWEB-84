@@ -1,0 +1,86 @@
+---
+summary: room.inviter doesn't always get set, meaning we should search messages for invites instead
+---
+assignee: manu
+created: 2014-09-24 01:45:34.0
+creator: matthew
+description: |-
+  Originally the code searched messages for invites to try to work out who an invite was from.  More recently we seem to have room.inviter as a field, but it's not always set.  
+
+  What is the right way currently to find out who an invite is from?
+id: '10382'
+key: SYWEB-84
+number: '84'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-04 11:33:18.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:02.0
+votes: '0'
+watches: '3'
+workflowId: '10485'
+---
+actions:
+- author: matthew
+  body: This currently causes things to break when one HS invites a user on another remote HS.  The remote HS doesn't know who the invite is from since http://git.io/CyjUUQ (the whole "this should be unnecessary now") given it no longer looks at the messages to find the invite, but instead assumes room.inviter exists.  Is this wrong?
+  created: 2014-09-24 01:57:35.0
+  id: '10439'
+  issue: '10382'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-24 01:57:35.0
+- author: manu
+  body: |-
+    room.iniviter is set when you get the a room invit from initialSync.
+
+    In case of a live invite event, which is the use case here, this event does not contain inviter but user_id (of the inviter). This live event does not go into room metadata in $rootscope as per initialSync or {room_id}/state data but it goes to the room messages list.
+
+    We cannot make a {room_id}/state request to get equivalent data. The server rejects the request because the user is not in the room.
+
+    In this particular case, we should read the room messages to retrieve the invite event. This is what the code into "this should be unnecessary now" commented section does.
+  created: 2014-09-24 13:54:59.0
+  id: '10440'
+  issue: '10382'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-24 13:54:59.0
+- author: matthew
+  body: Okay.  Is a cleaner workaround then not to populate up the room metadata in $rootscope based on the live invite event, rather than the hack of iterating through all the messages looking for invites?
+  created: 2014-09-24 13:59:20.0
+  id: '10441'
+  issue: '10382'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-24 13:59:20.0
+- author: manu
+  body: |-
+    I still feel not comfortable to hack data in $rootscope.events. It stores data and events as they come from the HS (not actually true but almost). As a default implementation of Matrix, this approach is educative from my point of view.
+    If we need a workaround or a special handling, it is better to apply it where it is required so that other projects can easily see it.
+  created: 2014-09-24 15:19:51.0
+  id: '10445'
+  issue: '10382'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-24 15:19:51.0
+- author: kegan
+  body: |-
+    The problem here is that {{/initialSync}} is returning an {{inviter}} key which doesn't exist when a "live" invite event comes down. Realistically, the one from initial sync should be the actual {{m.room.member}} invite event and not randomly an {{inviter}} key. There is a bug for this on SPEC-54.
+
+    Even taking this into account, there is *no need* to search through the messages, since {{room.members}} will be populated with your user ID and a membership of {{invite}}. See {{components/matrix/matrix-filter.js}} which looks for an invite event without needing to go through all the messages.
+  created: 2014-10-30 10:12:00.0
+  id: '10706'
+  issue: '10382'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-30 10:12:00.0
+- author: kegan
+  body: Resolving as this is no longer an issue.
+  created: 2014-11-04 11:33:19.0
+  id: '10726'
+  issue: '10382'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-04 11:33:19.0

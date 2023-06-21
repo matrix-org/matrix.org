@@ -1,0 +1,38 @@
+---
+summary: Wire up reset password button
+---
+created: 2014-09-15 23:45:01.0
+creator: matthew
+description: ''
+id: '10017'
+key: SYWEB-6
+number: '6'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-23 11:33:20.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:51.0
+votes: '1'
+watches: '4'
+workflowId: '10391'
+---
+actions:
+- author: kegan
+  body: Blocked on reset password API on HS.
+  created: 2014-11-27 13:12:06.0
+  id: '10879'
+  issue: '10017'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-27 13:12:06.0
+- author: dbkr
+  body: Fixed in csauth
+  created: 2015-04-23 11:33:20.0
+  id: '11524'
+  issue: '10017'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-23 11:33:20.0

@@ -1,0 +1,22 @@
+---
+summary: Server provides reason for /kick but not /ban
+---
+created: 2014-09-16 00:08:50.0
+creator: matthew
+description: ''
+id: '10023'
+key: SYN-13
+number: '13'
+priority: '3'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-13 16:01:21.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:41.0
+votes: '0'
+watches: '1'
+workflowId: '10347'
+---
+actions: null

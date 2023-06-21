@@ -1,0 +1,33 @@
+---
+summary: Presence list REST URL should follow presence state
+---
+created: 2014-10-15 17:08:05.0
+creator: leonerd
+description: |-
+  GET /presence/{userId}/status  vs  GET /presence/list/{userId}
+
+  Since nothing currently uses presence lists, we should change the latter to match the former.
+id: '10477'
+key: SPEC-53
+number: '53'
+priority: '3'
+project: '10001'
+reporter: leonerd
+resolution: '3'
+resolutiondate: 2014-11-10 14:34:38.0
+status: '5'
+type: '1'
+updated: 2014-11-10 14:34:38.0
+votes: '0'
+watches: '1'
+workflowId: '10581'
+---
+actions:
+- author: leonerd
+  body: Duplicate of SPEC-42
+  created: 2014-11-10 14:34:38.0
+  id: '10758'
+  issue: '10477'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-10 14:34:38.0

@@ -1,0 +1,28 @@
+---
+summary: Specify interoperability profiles for media msgtypes like m.audio, m.video and m.image
+---
+created: 2015-06-02 00:20:35.0
+creator: matthew
+description: ''
+id: '11578'
+key: SPEC-169
+number: '169'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:20.0
+votes: '0'
+watches: '2'
+workflowId: '11679'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/505'
+  created: 2016-10-28 16:27:20.0
+  id: '13313'
+  issue: '11578'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:20.0

@@ -1,0 +1,42 @@
+---
+summary: Message ordering on bad networks
+---
+assignee: matthew
+created: 2015-10-16 15:22:14.0
+creator: gforet
+description: ''
+id: '12024'
+key: SYIOS-162
+number: '162'
+priority: '2'
+project: '10200'
+reporter: gforet
+status: '10100'
+type: '2'
+updated: 2015-10-29 15:34:35.0
+votes: '0'
+watches: '2'
+workflowId: '12127'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    The messages are sortered by the serverTs timestamp. So, it is based on the server time.
+    On blah, as far i remember, it was based on the message timestamp i.e. the sender set the timestamp. They were no such issue.
+
+    Do you expect that the unsent / pending messages stuck the following messages sending ?
+    What about media upload stuck ? Should they suspend remaining messages sending ?
+
+    for example,
+    1 - sending "Hello"
+    2 - sending "the world"
+
+    Do you expect that "the world" is not sent if
+    1 - "Hello" was sending  ?
+    2 - "Hello" sending is cancelled  after 3 retries ?
+  created: 2015-10-29 15:34:24.0
+  id: '12283'
+  issue: '12024'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-10-29 15:34:24.0

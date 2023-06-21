@@ -1,0 +1,46 @@
+---
+summary: WebRTC should be gracefully disabled on unsupported webbrowsers
+---
+created: 2014-09-16 00:35:23.0
+creator: matthew
+description: ''
+id: '10035'
+key: SYWEB-14
+number: '14'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-19 16:28:42.0
+status: '5'
+type: '2'
+updated: 2014-09-22 17:20:47.0
+votes: '0'
+watches: '3'
+workflowId: '10398'
+---
+actions:
+- author: manu
+  body: voip is a particular feature of SYWEB-13 list
+  created: 2014-09-19 15:57:41.0
+  id: '10342'
+  issue: '10035'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-19 15:57:41.0
+- author: dbkr
+  body: 'This needs to be done both ways: unsupported browsers need to reject calls.'
+  created: 2014-09-19 17:19:35.0
+  id: '10347'
+  issue: '10035'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-09-19 17:19:35.0
+- author: dbkr
+  body: 648fd2a
+  created: 2014-09-19 18:26:03.0
+  id: '10350'
+  issue: '10035'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-09-19 18:26:03.0

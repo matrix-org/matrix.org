@@ -1,0 +1,30 @@
+---
+summary: Avatar updating in conversation/room
+---
+created: 2016-02-17 04:35:25.0
+creator: jackvt93
+description: Hello,
+id: '12403'
+key: SYAND-174
+number: '174'
+priority: '3'
+project: '10201'
+reporter: jackvt93
+resolution: '10100'
+resolutiondate: 2016-02-17 07:07:46.0
+status: '5'
+type: '4'
+updated: 2016-02-17 07:07:46.0
+votes: '0'
+watches: '2'
+workflowId: '12508'
+---
+actions:
+- author: m-ylecollen
+  body: 'The member avatar is the one when the user sent the message : it is not the latest one.'
+  created: 2016-02-17 07:07:33.0
+  id: '12627'
+  issue: '12403'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 07:07:33.0

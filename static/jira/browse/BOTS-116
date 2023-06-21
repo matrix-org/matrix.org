@@ -1,0 +1,40 @@
+---
+summary: '" (IRC)" attached to usernames when mentioning others in IRC'
+---
+created: 2015-09-22 20:00:02.0
+creator: chreekat
+description: |-
+  Sorry if I'm doing this wrong; never used JIRA before.
+
+  A matrix user joined us in #snowdrift on Freenode, which is cool. When that person mentions others in the channel, however, " (IRC)" is appended to their name, e.g.,
+
+      > chreekat (IRC): will wait for the merge.
+
+  That is distracting to all of us who are actually in the channel. We already know the user is talking to someone on IRC. :)
+id: '11911'
+key: BOTS-116
+number: '116'
+priority: '2'
+project: '10101'
+reporter: chreekat
+status: '1'
+type: '1'
+updated: 2016-01-26 09:48:41.0
+votes: '0'
+watches: '2'
+workflowId: '12014'
+---
+actions:
+- author: matthew
+  body: |-
+    Hi Bryan - thanks for the bug report; sorry about this.  It's already been filed as https://github.com/vector-im/vector-web/issues/99 and SYWEB-332.  However, fixing this properly would be to identify users in Matrix in a group based on the network they're bridged from - which is SPEC-107.
+
+    In the short term, we should just fix the clients.  In the long term, we should do it via bridges.  Or we could just turn off the (IRC) suffix entirely on the bridge as the quickest fix.
+
+    This might be the best bet, in fact, given it doesn't matter that much whether the user is on IRC or not in practice on the Matrix side - and the userid tells you that if you /really/ care that much.
+  created: 2015-09-22 21:41:45.0
+  id: '12152'
+  issue: '11911'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-22 21:41:45.0

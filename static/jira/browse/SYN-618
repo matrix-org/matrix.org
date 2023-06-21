@@ -1,0 +1,30 @@
+---
+summary: How do we reset federation retry timers?
+---
+created: 2016-02-05 20:56:49.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  If folks have problems setting up federation, synapse seems to blacklist them aggressively now. How do you reset the retry timers short of tweaking the DB and restarting the server?
+id: '12369'
+key: SYN-618
+number: '618'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:04.0
+votes: '0'
+watches: '2'
+workflowId: '12474'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1490'
+  created: 2016-11-07 18:29:04.0
+  id: '13796'
+  issue: '12369'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:04.0

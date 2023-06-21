@@ -1,0 +1,38 @@
+---
+summary: We should synthesise identicons for users with no avatar
+---
+created: 2015-02-02 22:09:02.0
+creator: matthew
+description: ''
+id: '10996'
+key: SYWEB-270
+number: '270'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-03 10:29:22.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:09:00.0
+votes: '0'
+watches: '2'
+workflowId: '11096'
+---
+actions:
+- author: kegan
+  body: Commit 48c83fb7
+  created: 2015-02-03 10:29:22.0
+  id: '11210'
+  issue: '10996'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-03 10:29:22.0
+- author: kegan
+  body: And commit 7502e7ec for intelligent fallback.
+  created: 2015-02-03 10:45:36.0
+  id: '11211'
+  issue: '10996'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-03 10:45:36.0

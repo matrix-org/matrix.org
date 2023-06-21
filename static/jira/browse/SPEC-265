@@ -1,0 +1,28 @@
+---
+summary: Allow state keys to start with an @
+---
+created: 2015-11-04 02:14:08.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12079'
+key: SPEC-265
+number: '265'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:51.0
+votes: '0'
+watches: '2'
+workflowId: '12182'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/571'
+  created: 2016-10-28 16:27:51.0
+  id: '13379'
+  issue: '12079'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:51.0

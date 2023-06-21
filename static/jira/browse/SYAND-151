@@ -1,0 +1,25 @@
+---
+summary: rotating the device kills the 'add account' dialog
+---
+created: 2015-11-02 10:13:31.0
+creator: richvdh
+description: |-
+  1: enter username and password.
+  2: put device down to look up HS details.
+  3: device decides to rotate screen.
+  4: dialog disappears.
+  5: throw device out of window in rage
+id: '12066'
+key: SYAND-151
+number: '151'
+priority: '3'
+project: '10201'
+reporter: richvdh
+status: '10100'
+type: '1'
+updated: 2015-11-02 10:13:31.0
+votes: '0'
+watches: '1'
+workflowId: '12169'
+---
+actions: null

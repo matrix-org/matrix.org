@@ -1,0 +1,23 @@
+---
+summary: Enable/disable overlay for push rules
+---
+assignee: dbkr
+created: 2015-02-13 13:54:25.0
+creator: dbkr
+description: ''
+id: '11044'
+key: SYN-270
+number: '270'
+priority: '2'
+project: '10000'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-02-26 18:08:42.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:22:43.0
+votes: '0'
+watches: '1'
+workflowId: '11144'
+---
+actions: null

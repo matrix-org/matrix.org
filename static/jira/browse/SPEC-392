@@ -1,0 +1,100 @@
+---
+summary: Grammar and disambiguation of display names
+---
+created: 2016-04-19 12:01:46.0
+creator: richvdh
+description: |-
+  Both users and rooms can have display names. I *think* we can apply the same rules to both users and rooms, so I am covering both under this issue.
+
+  The emphasis here is on human-readability - they are not really meant for machine interpretation (modulo highlighting of mentions). Display names must therefore support the full gamut of unicode: non-bmp characters, zalgo, RTL scripts, etc.
+
+  However, things are complicated by the desire to disambiguate users. Currently, if we have two "Matthew"s in a room, we disambiguate them by also showing the user id. So the question is: how do we determine if we need to disambiguate users, and can we design the grammar of them to make this easier. For instance: do we allow empty displaynames, or those containing only whitespace? Do we allow names to start or end with whitespace, or contain sequences of whitespace characters? Do we mandate a certain sort of Unicode normalisation?
+id: '12635'
+key: SPEC-392
+number: '392'
+priority: '3'
+project: '10001'
+reporter: richvdh
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:28:30.0
+votes: '0'
+watches: '3'
+workflowId: '12735'
+---
+actions:
+- author: richvdh
+  body: See also SPEC-221, which discusses what we can do once we figure out that two displaynames are ambiguous.
+  created: 2016-04-19 12:12:03.0
+  id: '12855'
+  issue: '12635'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-19 12:12:03.0
+- author: richvdh
+  body: Should there be a length limit? Would it apply to unicode codepoints, normalised unicode codepoints, or composed characters?
+  created: 2016-04-19 12:17:25.0
+  id: '12858'
+  issue: '12635'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-19 12:17:25.0
+- author: eternaleye
+  body: '"Modulo highlighting of mentions" - this should probably be done via Unicode-spec-compliant collation, so as to avoid problems regarding composed/decomposed/etc, but that opens a whole new can of worms due to collation being locale-dependent :('
+  created: 2016-04-19 13:24:27.0
+  id: '12865'
+  issue: '12635'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-04-19 13:24:27.0
+- author: eternaleye
+  body: |-
+    Also, porting over a comment from SPEC-1:
+
+    {quote}
+    A similar ticket for display names may need opened separately, but today in #matrix:matrix.org it was discovered that display names permit whitespace that they probably shouldn't (a trailing \n\t\t on a display name caused some confusion).
+
+    Some whitespace cannot be blocked - the zero-width joiner, in particular, is needed to construct the letterforms of some languages that Unicode does not support sufficiently. In addition, spaces are widely used, and blocking those would likely cause widespread breakage. However, it is entirely possible that all other whitespace can be banned without detrimental effect.
+    {quote}
+
+    I stand by this - the vast majority of whitespace is not meaningful in what is essentially a "line-like" value, and has empirically caused real confusion when accidentally inserted.
+  created: 2016-04-19 13:27:42.0
+  id: '12866'
+  issue: '12635'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-04-19 13:27:42.0
+- author: richvdh
+  body: |-
+    I'm reluctant to base the requirements for this bug around mentions - as you have pointed out it is thorny due to being locale-dependent. I would rather we had richer interface for mentions (I quite like the way jira does it, actually), but that is a topic for a separate bug.
+
+    >  (a trailing \n\t\t on a display name caused some confusion)
+
+    [~eternaleye]: Can you enlarge on this? was it simply that someone was not getting notifications when they might have expected it, because the name didn't match?
+  created: 2016-04-24 21:09:43.0
+  id: '12886'
+  issue: '12635'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-24 21:09:43.0
+- author: eternaleye
+  body: |-
+    Nothing to do with mentions - more that, in essentially any case where a display name is presented, vertical whitespace is entirely nonsensical (and in the existing clients, that case was mistaken for a bug in either rendering or markdown formatting for quite a while before it was figured out).
+
+    In essence, vertical whitespace makes sense only in documents - and the same is true of most horizontal whitespace, such as tab characters. As a display name is essentially a line-oriented context that gets embedded in a document-like context, allowing them is the visual equivalent of breaking encapsulation.
+
+    It consistently confuses the humans *reading* it, not the computers matching against it.
+  created: 2016-04-24 21:15:03.0
+  id: '12887'
+  issue: '12635'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-04-24 21:15:03.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/669'
+  created: 2016-10-28 16:28:30.0
+  id: '13478'
+  issue: '12635'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:30.0

@@ -1,0 +1,22 @@
+---
+summary: android client joining rooms without user permission
+---
+created: 2015-06-21 15:19:27.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Not sure if this is android or what. I joined #vuc last week and then left it. I now see that I joined it again at 12:42 but I never did this. Will need to check synapse logs to confirm it was android that did this.
+id: '11685'
+key: SYAND-89
+number: '89'
+priority: '2'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-06-21 15:19:27.0
+votes: '0'
+watches: '1'
+workflowId: '11786'
+---
+actions: null

@@ -1,0 +1,110 @@
+---
+summary: Can't upload JPEGs
+---
+created: 2014-12-21 11:49:00.0
+creator: erikj
+description: |-
+  {noformat}
+  2014-12-21 11:47:59,693 - synapse.media.v1.upload_resource - 107 - ERROR -  - Failed to store file
+  Traceback (most recent call last):
+    File "synapse/media/v1/upload_resource.py", line 96, in _async_render_POST
+      yield self._generate_local_thumbnails(media_id, media_info)
+  IOError: decoder jpeg not available
+  {noformat}
+id: '10847'
+key: SYN-208
+number: '208'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-01-06 11:44:04.0
+status: '5'
+type: '1'
+updated: 2015-05-14 13:59:55.0
+votes: '0'
+watches: '4'
+workflowId: '10947'
+---
+actions:
+- author: matthew
+  body: which server? i uploaded a jpeg to matrix.org on friday fine
+  created: 2014-12-21 12:19:22.0
+  id: '11012'
+  issue: '10847'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-21 12:19:22.0
+- author: erikj
+  body: My one jki.re
+  created: 2014-12-21 12:19:43.0
+  id: '11013'
+  issue: '10847'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-21 12:19:43.0
+- author: kegan
+  body: |-
+    You need to apt-get extra dependencies. Found this out when installing on cygwin.
+
+    {code}
+    The content repository requires additional packages and will be unable to process uploads without them:
+     - libjpeg8
+     - libjpeg8-devel
+     - zlib
+    {code}
+  created: 2014-12-22 08:58:02.0
+  id: '11019'
+  issue: '10847'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-22 08:58:02.0
+- author: erikj
+  body: Oh, then this really needs to go in the UPGRADE and README
+  created: 2014-12-22 10:49:21.0
+  id: '11020'
+  issue: '10847'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-22 10:49:21.0
+- author: erikj
+  body: After installing those I still get the same error.
+  created: 2014-12-22 10:59:54.0
+  id: '11021'
+  issue: '10847'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-22 10:59:54.0
+- author: kegan
+  body: |-
+    You need to reinstall pillow.
+
+    {code}
+    pip uninstall pillow
+    pip install pillow --user
+    {code}
+
+    In the compilation phase, it will have a big box saying if JPEG support is available.
+  created: 2014-12-22 13:58:43.0
+  id: '11022'
+  issue: '10847'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-22 13:58:43.0
+- author: markjh
+  body: |-
+    You might want to install libjeg-dev as per http://stackoverflow.com/questions/8915296/python-image-library-fails-with-message-decoder-jpeg-not-available-pil.
+
+    {code}
+    # install libjpeg-dev with apt
+    sudo apt-get install libjpeg-dev
+
+    # reinstall pillow
+    pip install -I pillow
+    {code}
+  created: 2014-12-22 13:59:55.0
+  id: '11023'
+  issue: '10847'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-12-22 13:59:55.0

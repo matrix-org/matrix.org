@@ -1,0 +1,38 @@
+---
+summary: Calling a non-webrtc enabled browser fails silently.
+---
+created: 2014-12-04 00:28:12.0
+creator: matthew
+description: ''
+id: '10768'
+key: SYWEB-211
+number: '211'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-20 15:02:55.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:53.0
+votes: '0'
+watches: '2'
+workflowId: '10868'
+---
+actions:
+- author: dbkr
+  body: They shouldn't get stuck in an inconsistent UI state but they can't reject calls because then you wouldn't be able to pick up the call if you had another client that did support it.
+  created: 2015-03-12 13:12:30.0
+  id: '11380'
+  issue: '10768'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-12 13:12:30.0
+- author: dbkr
+  body: 'This should work much better now: please feed back if you notice problems.'
+  created: 2015-03-20 15:02:55.0
+  id: '11418'
+  issue: '10768'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-20 15:02:55.0

@@ -1,0 +1,31 @@
+---
+summary: Adding markdown when sending msgs
+---
+created: 2016-01-13 14:49:53.0
+creator: gforet
+description: |-
+  MatrixKit should support markdown by adding 'formatted_body' and 'format' fields in event content (see [sendTextMessage:success:failure:] in MXKRoomDataSource class).
+
+  Note: web client uses external lib: https://github.com/chjj/marked
+id: '12295'
+key: SYIOS-197
+number: '197'
+priority: '2'
+project: '10200'
+reporter: gforet
+status: '1'
+type: '1'
+updated: 2016-06-22 17:26:38.0
+votes: '0'
+watches: '1'
+workflowId: '12400'
+---
+actions:
+- author: gforet
+  body: filed in https://github.com/matrix-org/matrix-ios-kit/issues/124
+  created: 2016-06-22 17:26:18.0
+  id: '13016'
+  issue: '12295'
+  type: comment
+  updateauthor: gforet
+  updated: 2016-06-22 17:26:38.0

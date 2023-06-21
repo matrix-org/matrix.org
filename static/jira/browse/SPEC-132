@@ -1,0 +1,353 @@
+---
+summary: API Reference (was Spec Structuring)
+---
+assignee: kegan
+created: 2015-03-23 16:24:33.0
+creator: kegan
+description: |-
+  At the moment, the specification and API docs (swagger) overlap somewhat. This makes maintenance difficult as you need to update multiple places. However, splitting them out entirely isn't desirable, as it makes the specification very difficult to grok without real-world examples and familiar looking HTTP requests.
+
+  After discussing this with Matthew, we propose auto-genning a lot more of the spec than we currently are. We are *not* proposing auto-genning the entire spec, just segments of it. The swagger docs should be annotated with more description and real-world examples to make them be able to stand alone more than they currently can. This should then be passed through a "templating-like" system to structure it as a part of the specification. This keeps the maintenance burden down, makes the spec easier to grok, and provides a consistent layout format (the template) for specifying object models along with their keys/descriptions/etc.
+
+  In addition, we propose using JSON Schema ( http://json-schema.org/ ) to spec out the strucutre of all {{m.}} events. In addition to the benefits mentioned earlier, this allows developers to *trivially* verify incoming events using the actual specification schema coupled with one of the many Validators written for JSON Schema (languages include Python, Javascript, etc).
+
+  The end result, would be a specification workflow something like this:
+  {code}
+   Event Schemas ------+
+    (JSON Schema)      |
+                       |
+                       V
+  API Docs---------> Templating ------> Specification
+  (Swagger)           System                (RST)
+                       ^
+                       |
+            Core Spec + Templates
+                   (RST)
+  {code}
+  Things which could be part of API docs includes:
+   - C-S API
+   - S-S API
+   - AS API
+   - Push API
+   - Content Repo API
+
+  Things which can be part of the event schemas:
+   - Message events ({{m.room.message}} and {{msgtype}} s)
+   - VoIP events
+   - Power level events
+   - Member events
+   - etc.
+
+  Things which would be part of the core spec:
+   - Introduction / Overview
+   - Architecture
+   - Event stream / pagination / stream token
+   - Security considerations
+   - Rationale (As big clear boxes saying that it is rationale: we opted for this over having rationale in the {{supporting-docs}} folder in {{matrix-doc}})
+id: '11261'
+key: SPEC-132
+number: '132'
+priority: '2'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-12-10 15:52:02.0
+status: '5'
+type: '1'
+updated: 2015-12-10 15:52:02.0
+votes: '0'
+watches: '2'
+workflowId: '11361'
+---
+actions:
+- author: kegan
+  body: |-
+    Breaking this down into subtasks:
+     - Events
+       ** -Write JSON schema files for all {{m.}} events-.
+       ** -Write spec template for event JSON.-
+       ** -Setup Jenkins to automatically validate schemas/examples on commits.-
+     - Swagger
+       ** Add more JSON keys outside the remit of swagger to tie more information with each HTTP API.
+       ** Write spec template for swagger JSON.
+     - Core spec
+       ** Convert existing docs in {{spec/}} to remove duplicate info from Swagger/JSON schema and replace with {{$VAR_NAMES}}.
+     - Templating system
+       ** -Implement the templating system to do the replacements / formatting, etc.-
+  created: 2015-05-18 14:20:33.0
+  id: '11769'
+  issue: '11261'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-20 16:35:06.0
+- author: kegan
+  body: |-
+    Event templates:
+     - Should be able to extract just the content part (like the spec currently does in places e.g. http://matrix.org/docs/spec/#room-events )
+     - Should be able to extract the event type
+     - Should be able to extract the "core" fields.
+     - Should be able to extract {{msgtype}} from {{m.room.message}} (could special case this given it's just this event type)
+  created: 2015-05-18 17:38:59.0
+  id: '11770'
+  issue: '11261'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-18 17:38:59.0
+- author: kegan
+  body: |-
+    Possible template 
+    {code} 
+    $EVENT.TYPE
+    -----------
+    Summary: $EVENT.SUMMARY
+    Type: $EVENT.PARENT # State event, message event, etc
+    Description: $EVENT.DESCRIPTION
+    JSON Format: $EVENT.CONTENT
+    Example: $EXAMPLE.CONTENT
+    {code} 
+    This format follows very closely to the current spec. 
+
+    All of these keys can be represented as normal json schema keys without the need for custom keys (need some python magic to extract the parent bit but that's not hard)
+  created: 2015-05-18 18:26:27.0
+  id: '11771'
+  issue: '11261'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-18 18:26:27.0
+- author: kegan
+  body: |-
+    The templating system should probably allow arbitrary RST documents to be splatted through rather than {{skeleton.rst}} only as is the case currently. This would allow us to more progressively chip away at the main RST without having to do it all at once e.g:
+    {code}
+     $ ./build.py ../specification/20_events.rst
+    {code}
+    This would still do all the units and sections, but if the variable names aren't in the given file then nothing happens and it is passed through untouched. Only if there is a {room_events} placeholder would it then dump in the relevant section. After that, we can just hook up that build command to {{gendoc.py}} and start getting the benefits of the new templating system immediately.
+  created: 2015-05-19 17:57:50.0
+  id: '11776'
+  issue: '11261'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-19 17:59:17.0
+- author: kegan
+  body: |-
+    Looking at how to present the event data (and later the swagger HTTP API data), and there is a clear winner which is:
+    {code}
+    Some title
+    --------------
+    A description if it is required but it's not always there. It's not very long though.
+    +----------------------------------------------+
+    | Parameter |  Type  |       Description       |
+    +-----------+--------+-------------------------+
+    |    foo    | string | Required. This is a foo.|
+    +-----------+--------+-------------------------+
+    |  barbaz   |integer | Some text.              |
+    +-----------+--------+-------------------------+
+
+    Example:
+      {
+        foo: "flibble_gibble",
+        barbaz: 329562526587
+      }
+    {code}
+    This style is used by Github, Tumblr, Facebook, StackExchange, Google+ and Twitter. I propose we use this for both event descriptions and HTTP API descriptions.
+  created: 2015-05-20 16:42:29.0
+  id: '11777'
+  issue: '11261'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-20 16:43:11.0
+- author: kegan
+  body: |-
+    Example for {{m.call.invite}}:
+    {code}
+    ``m.call.invite``
+    -----------------
+    This event is sent by the caller when they wish to establish a call.
+
+    ========= ======= ==========================================================
+    Parameter   Type  Description
+    ========= ======= ==========================================================
+    call_id   string  **Required.** A unique identifier for the call
+    offer     Offer   **Required.** The session description.
+    version   integer **Required.** The version of the VoIP specification this message
+                      adheres to. This specification is version 0.
+    lifetime  integer **Required.** The time in milliseconds that the invite is valid for.
+                      Once the invite age exceeds this value, clients should
+                      discard it. They should also no longer show the call
+                      as awaiting an answer in the UI.
+    ========= ======= ==========================================================
+
+    ``Offer``
+
+    ========= ======= ==========================================================
+    Parameter   Type  Description
+    ========= ======= ==========================================================
+    type      string  **Required.** The type of session description, in this case 'offer'
+    sdp       string   **Required.** The SDP text of the session description
+    ========= ======= ==========================================================
+
+    Example::
+
+      {
+        "version" : 0,
+        "call_id": "12345",
+        "offer": {
+          "type" : "offer",
+          "sdp" : "v=0\r\no=- 6584580628695956864 2 IN IP4 127.0.0.1[...]"
+        }
+      }
+    {code}
+  created: 2015-05-20 17:28:28.0
+  id: '11778'
+  issue: '11261'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-20 17:28:28.0
+- author: matthew
+  body: This looks super-awesome. I don't think we should shy away from comprehensive descriptions of the event/API (in terms of "A description if it is required but it's not always there. It's not very long though.").  It obviously shouldn't be unnecessarily long, but it should be complete and informative rather than unnecessarily cryptic or terse.
+  created: 2015-05-21 00:07:18.0
+  id: '11779'
+  issue: '11261'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-05-21 00:07:18.0
+- author: kegan
+  body: |-
+    Room events feedback:
+     - {{join_rules}} needs to state that {{knock}} and {{private}} aren't implemented and are just reserved keywords currently.
+     - Key ordering needs to be alphabetical in the table.
+  created: 2015-05-21 16:53:48.0
+  id: '11785'
+  issue: '11261'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-21 16:53:48.0
+- author: kegan
+  body: |-
+    Remaining stuff pre-swagger work:
+    - -AS API needs layout changes from current spec.-
+    - -{{msgtype}} section needs to be templated (keep section separate from {{m.room.message}} because else it bloats the event list too much.-
+    - -Presence needs to be templated.-
+
+    Swagger JSON:
+    - AS API needs docs (!)
+    - Federation API needs docs (!)
+    - All APIs need extra information to give example API calls and descriptions.
+    - All APIs need to reference back to JSON Schema core data types rather than referencing its own data model.
+
+    Outputs:
+    - Spec (Event info, HTTP API info)
+    - HTTP API Reference (gut Swagger UI and replace with a noddy HTML reference "cheatsheet" designed for people who just want to get at the endpoints rather than explaining ALL THE THINGS)
+
+    There will be duplication between HTTP API Reference and the Spec (mentioning HTTP API paths etc) but they will be generated from the same source (swagger JSON).
+  created: 2015-05-26 17:58:52.0
+  id: '11794'
+  issue: '11261'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-28 10:58:03.0
+- author: kegan
+  body: |-
+    Desirable API Reference page features:
+     - Single page API for CTRL+F fun. Would be nice if the format allowed it to be on multiple pages too (by group or by API endpoint). In light of this, I think each API endpoint MUST have a group specified (e.g. Room, Account, Directory, ContentRepo) to allow for grouping by API. The actual HTML can then have a huge list of every API endpoint on the left-hand side (in sections based on its "group"), which when clicked either jump to the right bit in single-page view, or links through to the api endpoint page / group page with jump section.
+     - Actually cover all the possible cases of the endpoint (including commonly missed things like error code response bodies, headers, etc).
+
+    API Reference proposed template:
+    {code}
+    POST /some/<room_id>/path
+    -------------------------
+
+    A description of what this endpoint does. This should be straight-forward
+    and to the point. Any gotchas with this API endpoint should be mentioned
+    here, including when it will produce an error response. We may want to 
+    have some flags or options present for every endpoint, as shown in the 
+    section below.
+
+    :Rate-limited: YUP
+    :Requires auth: YUP
+    :OAuth2 scope: Write
+
+    Request format:
+
+    =========== ================= ============== ================
+     parameter   parameter type        value     description
+    =========== ================= ============== ================
+     foo         query parameter   {StreamToken}  For pagination.
+     bar         JSON key            Integer      Something.
+     baz         JSON key            String       A thing.
+     room_id     path                String       Path params!
+     X-Auth      Header            {AccessToken}  Token with auth.
+    =========== ================= ============== ================
+
+    Response format: (200 OK)
+
+    =========== ================= ============== ====================
+     parameter   parameter type        value     description
+    =========== ================= ============== ====================
+     key         JSON key            String       A description.
+     nested      JSON key            Object       A thing which has a 
+                                                  certain ``value``.
+     submitted   JSON key            {Event}      The event sent.
+     X-Limit     Header              Integer      Rate limit left.
+    =========== ================= ============== ====================
+
+    Response format: (403 Forbidden)
+
+    =========== ================= ============== ================
+     parameter   parameter type        value     description
+    =========== ================= ============== ================
+     errcode     JSON key          {MatrixError}  A Matrix ``M_`` 
+                                                  error code. Can
+                                                  be "M_NOPENOPE",
+                                                  "M_HELLNO", or
+                                                  "M_INYOURDREAMS".
+     X-Limit     Header              Integer      Rate limit left.
+    =========== ================= ============== ================
+
+    Example request::
+
+      POST
+      X-Auth: sdkufhwgWEGwfefg487s
+
+      https://localhost:8008/_matrix/client/api/v1/some/%21wefwuifhwei%3Abar/path?foo=val
+
+        {
+          "bar": 55,
+          "baz": "flibble"
+        }
+
+    Example response::
+
+      200 OK
+      Content-Type: application/json
+      X-Limit: 1146
+
+      {
+        "key": "value",
+        "nested": {
+          "value": "which isn't an Object Type"
+        },
+        "submitted": {
+          "type": "m.room.message",
+          "user_id": "@foo:bar",
+          "room_id": "!wefwuifhwei:bar",
+          "content": {
+            "body": "something here",
+            "msgtype": "m.text"
+          }
+        }
+      }
+    {code}
+  created: 2015-05-28 16:05:34.0
+  id: '11810'
+  issue: '11261'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-28 16:05:34.0
+- author: kegan
+  body: This is now mostly done, so renaming to the only big thing left. :)
+  created: 2015-10-13 16:41:07.0
+  id: '12248'
+  issue: '11261'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 16:41:07.0

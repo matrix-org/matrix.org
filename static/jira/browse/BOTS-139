@@ -1,0 +1,25 @@
+---
+summary: 'IRC AS: Prioritise ordering when connecting users on startup'
+---
+created: 2015-11-16 17:42:22.0
+creator: kegan
+description: |-
+  At least 1 client needs to be connected on a channel for it to be logged in Matrix. When we startup, clients are connected arbitrarily to the IRC network and channels. We should prioritise users who would bridge the most number of channels which are not currently being tracked.
+
+  This will reduce the impact of downtime when restarting the bridge.
+id: '12111'
+key: BOTS-139
+number: '139'
+priority: '2'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-11-26 10:15:23.0
+status: '5'
+type: '1'
+updated: 2015-11-26 10:15:23.0
+votes: '0'
+watches: '1'
+workflowId: '12214'
+---
+actions: null

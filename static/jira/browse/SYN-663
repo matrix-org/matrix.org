@@ -1,0 +1,30 @@
+---
+summary: app service should validate config on startup, including regexes, and gives sensible errors
+---
+created: 2016-03-24 12:51:55.0
+creator: neb
+description: |-
+  Submitted by @dave:matrix.org
+  Could probably do this by compiling them at startup which would also be faster?
+id: '12579'
+key: SYN-663
+number: '663'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:18.0
+votes: '0'
+watches: '2'
+workflowId: '12679'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1520'
+  created: 2016-11-07 18:29:18.0
+  id: '13829'
+  issue: '12579'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:18.0

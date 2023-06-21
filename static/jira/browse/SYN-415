@@ -1,0 +1,29 @@
+---
+summary: Failed to push, no response.
+---
+created: 2015-06-16 11:07:08.0
+creator: erikj
+description: |-
+  {noformat}
+  2015-06-15 18:22:27,598 - synapse.push.httppusher - 143 - ERROR -  - Failed to push http://matrix.org/_matrix/push/v1/notify 
+  Traceback (most recent call last):
+    File "synapse/push/httppusher.py", line 141, in reset_badge_count
+      resp = yield self.httpCli.post_json_get_json(self.url, d)
+  ResponseNeverReceived: [<twisted.python.failure.Failure <class 'twisted.internet.error.ConnectionDone'>>]
+  {noformat}
+id: '11652'
+key: SYN-415
+number: '415'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '5'
+resolutiondate: 2016-01-06 11:09:23.0
+status: '5'
+type: '1'
+updated: 2016-01-06 11:09:23.0
+votes: '0'
+watches: '1'
+workflowId: '11753'
+---
+actions: null

@@ -1,0 +1,38 @@
+---
+summary: Need a way to negotiate features between clients & homeservers
+---
+created: 2014-09-16 01:04:25.0
+creator: matthew
+description: ''
+id: '10054'
+key: SPEC-6
+number: '6'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '4'
+resolutiondate: 2015-01-21 11:10:45.0
+status: '5'
+type: '2'
+updated: 2015-01-21 11:10:45.0
+votes: '0'
+watches: '2'
+workflowId: '10326'
+---
+actions:
+- author: kegan
+  body: That and versioning of said features would be nice, e.g. super-efficient client-server transport v 2.1.3
+  created: 2014-09-16 09:27:31.0
+  id: '10105'
+  issue: '10054'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-16 09:27:31.0
+- author: leonerd
+  body: Versioning of the protocol itself is already nicely handled by that /v1/ prefix - eventually could we not just start by having a client request something out out /v2/ or /v1.1/ or whatever? If the server doesn't understand, it'll just return a 404 and the client will have to fall back on v1.
+  created: 2014-09-16 12:55:15.0
+  id: '10209'
+  issue: '10054'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-16 12:55:15.0

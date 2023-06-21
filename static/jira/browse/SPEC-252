@@ -1,0 +1,28 @@
+---
+summary: Support for multi-stream WebRTC calls
+---
+created: 2015-10-21 01:54:41.0
+creator: matthew
+description: ''
+id: '12034'
+key: SPEC-252
+number: '252'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:45.0
+votes: '0'
+watches: '2'
+workflowId: '12137'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/560'
+  created: 2016-10-28 16:27:45.0
+  id: '13368'
+  issue: '12034'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:45.0

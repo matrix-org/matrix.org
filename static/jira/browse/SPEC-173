@@ -1,0 +1,28 @@
+---
+summary: We should define m.* events for setting up webrtc data channel
+---
+created: 2015-06-02 01:10:22.0
+creator: matthew
+description: ''
+id: '11597'
+key: SPEC-173
+number: '173'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:21.0
+votes: '0'
+watches: '2'
+workflowId: '11698'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/507'
+  created: 2016-10-28 16:27:21.0
+  id: '13315'
+  issue: '11597'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:21.0

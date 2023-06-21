@@ -1,0 +1,113 @@
+---
+summary: GCM seems unreliable - Nolan never gets pushed for prosody's msgs
+---
+created: 2015-06-17 01:05:36.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11661'
+key: SYAND-88
+number: '88'
+priority: '1'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-06-18 10:26:00.0
+status: '5'
+type: '1'
+updated: 2015-06-18 10:26:28.0
+votes: '0'
+watches: '3'
+workflowId: '11762'
+---
+actions:
+- author: m-ylecollen
+  body: Nolan does not receive notifications form "prosody Vereable Context(".
+  created: 2015-06-17 07:30:09.0
+  id: '11869'
+  issue: '11661'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-17 07:30:09.0
+- author: m-ylecollen
+  body: |-
+    It seems that something is wrong on server side : is it linked to the IRC / matrix bridge ?
+
+    1 - the prosody Vereable Context( messages don't always trigger push notifications (we performed some ping tests the 06/17/2015 at 07:30 Uk time)
+
+    2 - the notifications did not make sense. 
+    "prosody Vereable Context(" sent "ping yannick, or else"
+    i received a notification with the following items :
+
+     membership : join -----> (why a membership event) 
+     unread : 1
+     type : m.room.member
+     room_alias : #matrix:matrix.org
+     id : $1434522242689bZKtO:matrix.org
+     sender_display_name : prosodyContext (IRC) -----> i would have expected prosody Vereable Context( 
+     content : {"avatar_url":null,"membership":"join","displayname":"prosodyContext (IRC)"}
+     sender : @freenode_prosodyContext:matrix.org
+     collapse_key : do_not_collapse
+     room_name : Matrix HQ
+     room_id : !cURbafjkfsMDVwdRDQ:matrix.org
+    ---------------------------------------------------------------------------
+    With another account, the notification contains the fields
+     body : Vkghu
+     unread : 1
+      type : m.room.message
+     id : $1434522422695mrtBd:matrix.org
+     sender : @ylecollen1978:matrix.org
+     content : {"body":"Vkghu","msgtype":"m.text"}
+     sender_display_name : entry 2
+     collapse_key : do_not_collapse
+     msgtype : m.text
+     room_name : testAndroid23f
+     room_id : !IqpVhsSQJOooTpfJwv:matrix.org
+  created: 2015-06-17 07:51:01.0
+  id: '11870'
+  issue: '11661'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-17 07:51:27.0
+- author: kegan
+  body: The irc AS will strip out bad characters like spaces from the user name. It's possible that this is then affecting whether the word is bingable. Does it work if they specify the stripped down name?
+  created: 2015-06-17 08:42:59.0
+  id: '11872'
+  issue: '11661'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-17 08:42:59.0
+- author: kegan
+  body: After reading the bug for this, it seems unlikely that the irc AS is the cause here. Join and leave events by default send push notifications. Prosody joined on irc to ping Nolan, which triggered the push to yannick.
+  created: 2015-06-17 08:53:04.0
+  id: '11873'
+  issue: '11661'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-17 08:53:04.0
+- author: m-ylecollen
+  body: |-
+    Kegan 
+
+    "prosody Vereable Context(" sent a message to my account (ylecollen) : it did not work.
+    My displayname has no bad character.
+
+    I also tried ylecollen sends a message to _ylc? : a push notification is received by _ylc?
+  created: 2015-06-17 08:56:13.0
+  id: '11874'
+  issue: '11661'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-17 08:56:13.0
+- author: m-ylecollen
+  body: |-
+    Nolan's device was under CM 12.1.
+
+    It works properly on the official Android 5.1.1 so, it seems being a CM12.1 issue.
+
+    This behaviour has been checked with Nolan.
+  created: 2015-06-18 10:26:00.0
+  id: '11884'
+  issue: '11661'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-18 10:26:28.0

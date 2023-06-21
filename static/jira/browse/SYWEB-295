@@ -1,0 +1,22 @@
+---
+summary: URLs like https://matrix.org/beta/#/room/#matrix:matrix.org break horribly if you're not logged in already
+---
+created: 2015-02-20 00:49:45.0
+creator: matthew
+description: ''
+id: '11105'
+key: SYWEB-295
+number: '295'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-27 11:31:17.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:53.0
+votes: '0'
+watches: '1'
+workflowId: '11205'
+---
+actions: null

@@ -1,0 +1,30 @@
+---
+summary: 'Maint: Split out event mapping from client.js to mapper.js'
+---
+created: 2015-12-08 17:37:29.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '12190'
+key: SYJS-37
+number: '37'
+priority: '2'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:30:44.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:30:44.0
+votes: '0'
+watches: '2'
+workflowId: '12293'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/261
+  created: 2016-10-24 11:30:44.0
+  id: '13218'
+  issue: '12190'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:30:44.0

@@ -1,0 +1,23 @@
+---
+summary: Tapping on your account in settings can stack up transitions
+---
+assignee: gforet
+created: 2015-09-16 09:54:16.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  If you go to settings and keep hammering on the account in order to edit its settings, it can take a while to respond as it talks to the network. When it returns, all the taps fire one after another and you get pushed deep onto a stack of settings pages. We should have a spinner whilst it's loading and collapse the transitions into 1.
+id: '11876'
+key: SYIOS-136
+number: '136'
+priority: '2'
+project: '10200'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-09-28 15:55:27.0
+votes: '0'
+watches: '1'
+workflowId: '11979'
+---
+actions: null

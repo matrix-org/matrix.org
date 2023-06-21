@@ -1,0 +1,33 @@
+---
+summary: After upgrading to latest develop, all 1:1 rise to the top in recents
+---
+created: 2014-09-16 15:06:27.0
+creator: matthew
+description: ''
+id: '10300'
+key: SYWEB-33
+number: '33'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-31 09:35:00.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:54.0
+votes: '0'
+watches: '2'
+workflowId: '10411'
+---
+actions:
+- author: kegan
+  body: |-
+    Cannot reproduce.
+
+    Only invitations are at the top of the recent activity list, which makes sense.
+  created: 2014-10-31 09:35:00.0
+  id: '10708'
+  issue: '10300'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-31 09:35:00.0

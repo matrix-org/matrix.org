@@ -1,0 +1,22 @@
+---
+summary: I occasionally see None@None as a value for prev_state key.
+---
+created: 2014-09-23 14:09:44.0
+creator: erikj
+description: ''
+id: '10376'
+key: SYN-65
+number: '65'
+priority: '4'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-11-26 14:32:18.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:37.0
+votes: '0'
+watches: '1'
+workflowId: '10479'
+---
+actions: null

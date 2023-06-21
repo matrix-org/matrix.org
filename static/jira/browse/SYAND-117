@@ -1,0 +1,25 @@
+---
+summary: Add contact sharing via NFC
+---
+created: 2015-08-16 21:48:49.0
+creator: bob
+description: |-
+  As a user it would be great to exchange user IDs via NFC.
+
+  After a positve exchange via NFC a room should be created with both parties as members.
+
+  This would make it easier to add users to Matrix as the users only need to "touch" each others devices... :-)
+id: '11802'
+key: SYAND-117
+number: '117'
+priority: '3'
+project: '10201'
+reporter: bob
+status: '10100'
+type: '4'
+updated: 2015-08-16 21:48:49.0
+votes: '0'
+watches: '1'
+workflowId: '11904'
+---
+actions: null

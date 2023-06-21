@@ -1,0 +1,33 @@
+---
+summary: Sensible error message for remote joins by room ID
+---
+created: 2014-12-08 18:19:30.0
+creator: leonerd
+description: |-
+  Attempts to join a remote room by ID when the home server doesn't have any users in it yet always fail, because the HS doesn't have the candidate list. However, its error message makes this far from clear. It should be much more obvious, something to the tune of
+
+  {noformat}
+  Unable to join a new room by room ID without a candidate list
+  {noformat}
+id: '10787'
+key: SYN-194
+number: '194'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:28.0
+votes: '0'
+watches: '2'
+workflowId: '10887'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1253'
+  created: 2016-11-07 18:27:28.0
+  id: '13571'
+  issue: '10787'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:28.0

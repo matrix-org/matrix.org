@@ -1,0 +1,404 @@
+---
+summary: Need to sanity-check nomenclature for state-events and non-state-events
+---
+created: 2014-09-16 00:28:42.0
+creator: matthew
+description: |-
+  I am not convinced that our naming is clear enough for the different types of events.
+
+  Currently we have something like:
+
+  1) "events which appear in the eventstream (eeeeverything)"
+  2) "state-events" (metadata-for-rooms which are returned when querying /rooms/<roomid>/state, and collapse when you overwrite the same state key.  doesn't include messages in the room)
+  3) "non-state-events" (e.g. a timeline of events associated with a room which don't appear in /state(?), e.g. messages)
+  4) events which appear when you paginate /messages  (non-state-events, and some "collapsed" state events showing where room names are changed etc).
+
+  I've probably got this wrong, which is perhaps evidence enough that the current names and categorisation is too confusing.
+
+  Specifically, we have a distinction between "events as they happen (i.e. the event stream)", and "timelines expressed in the current state".  For instance, our eventstream may include a 'kill event' to remove a given message - but the current timeline of messages for a room will then include neither the given message nor the kill event.  This distinction feels lost in the current nomenclature.
+
+  My thought experiment in SF was to maintain a single datastructure of state for a room - containing messages as well as per-room state.  The current state can be thought of as being like a directory tree versioned in a VCS.  Then seperately, you have the list of incremental changes which apply to that directory tree as the state evolves over time.  This is like the changelog for that VCS.  The incremental changes are the event stream; the current snapshot describes all state about the room (the timeline of messages; the metadata etc).
+
+  A distinction like this could make the different types of event quite clear: that things you receive on the events stream are literally events, describing deltas to the state.
+
+  Meanwhile, everything in /state lets you directly access the current object store of state associated with that room.
+
+  Finally, you get domain-specific helper methods like /messages which might then be better called /timeline which let you query and paginate particular types of state in the room - e.g. the list of messages and other objects which build up the chronological chat timeline of the room.  They can also provide domain-specific magic such as injecting in objects to describe display-name changes, if that's what the client asked for.
+
+  Alternatively, at the very least, we need to rename /room/<room_id>/messages as something saner, given it doesn't remotely just return a list of messages any more.
+
+  Thoughts welcome...
+id: '10026'
+key: SPEC-3
+number: '3'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-10-13 16:55:05.0
+status: '5'
+type: '3'
+updated: 2015-10-13 16:55:26.0
+votes: '0'
+watches: '4'
+workflowId: '10323'
+---
+actions:
+- author: kegan
+  body: |-
+    In SF, we agreed on renaming /rooms/<room_id>/messages to be /rooms/<room_id>/events iirc given it returns ALL (state+non-state) events for that room.
+
+    In general, I *really* like combining them into one. In practice, I am skeptical that this will work without having the exact same bodge we have. A few off-the-top-of-my-head:
+     - You still need to compress feedback, so there will always be one RPC-like API which is a stand-out. (point 4)
+     - Some state events are displayed and therefore are *special*, how exactly do you propose we deal with that? For example, topic changes we need to know AND they should come down with messages, but random state events like send_event_level, room_aliases, or custom events we don't necessarily want to send down. (point 4)
+     - How do you plan on coping with the 'hole' that develops which I mentioned in SF? This occurs because you are proposing that messages will become state events. If they do, I only want the most recent 5 messages, so I put a limit of 5 on it and everything works. Except that A: You need to say which events you want, and B: I still want to know the topic for the room, but it was set 10 messages ago and so the limit will prevent it from appearing. How horrible will the queries be to get the information we actually *need*?
+     - Do you propose some kind of generic query language to say which events you do/do not want? What are the performance implications of this?
+  created: 2014-09-16 09:25:14.0
+  id: '10104'
+  issue: '10026'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-16 09:25:14.0
+- author: erikj
+  body: |-
+    I'm inclined to leave the nomenclature debate to others as my view currently is that arbitrary sequences of characters are arbitrary (even if they are important). However, I do what to highlight a few points.
+
+    Currently the server keeps track of and indexes the "current state" , allowing clients and other servers to query it. Once the server is in a room it will *always* have the current state and will never need to go and ask another server for it. This means that no matter what state the actual client is interested in it's always going to be on their server and therefore guaranteed to be accessible. This approach requires servers knowing which events are classified as "state" and which are not.
+
+    The alternative is not having such a distinction, and making clients specify what they want the server to return. This has big implications for the server, as it has no idea what may be queried in this manner and thus can't give any guarantees about having that state locally. There is great scope here to try and make the server more intelligent and start guessing what things the client might query, but this would drastically increase its complexity. Another option would be to mark which things can be queried when they are uploaded by remote clients, but then we are back to the current implementation.
+
+
+    In my view we have two related data structures we want to query: 
+    # a dictionary with the current state, used for querying the current name, membership lists etc.
+    # a directed acyclic graph (DAG) representing previous "messages" or other actions or events, used for pagination.
+
+    Feedback and updating/deleting messages throw a slight spanner in the works here. The plan (on my part at least) for handling these is to append new nodes to the end of DAG which also refer back to the message they are related to. For deletion of messages by admins, this would make the server not include the old message/event/node when talking to clients. The server would probably also collate these "related" nodes into the original when paginating backwards.
+
+    So in this model /currentState and /state/... would query the dictionary, /events would give you deltas to the DAG (and the DAG includes deltas to the dictionary), and pagination would allow walking of a slightly modified DAG backwards (e.g. with collated feedback and not including deleted nodes, etc.)
+  created: 2014-09-16 11:48:11.0
+  id: '10204'
+  issue: '10026'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-16 11:48:11.0
+- author: matthew
+  body: |-
+    Firstly: I am in no way suggesting we should ditch domain-specific RPC-like APIs.  This is what the "Finally" paragraph in the original bug is talking about :) We clearly have to have a <room>/messages or /scrollback or /timeline or whatever.  In SF we suggested it could be called /objects, given it describes a snapshot of state at a given version, rather than a series of deltas like the main events stream (/events) does.  /objects is way too generic in retrospect.
+
+    In terms of your bullet points above, respectively:
+     a) Yes, we definitely need an API which queries state having collapsed feedback and other updated events - and also is aware of the other data you are interested in when paginating back through scrollback.
+     b+c) So when you're paginating scrollback, we need to decide whether the semantics are whether we're winding back time (i.e. is room state a temporal object database, and we're slowly checking out previous revisions of its history?) or simply scrolling through the current room state, which happens to include some historical data.  I think this is basically the main confusion here.
+
+    If we are winding back time, then we expect to see all the relevant delta events (perhaps with edits collapsed): e.g. "This message was added to the room's message buffer".  "This user changed their name".  "This room's name was changed".  And then seperately we should be able to query state at a given version of the room - i.e. "what was the contents of the memberslist at version #1234?" or "What was this user's displayname at version #1234" which helps us fill in the holes.
+
+    However, if we consider the message buffer just to be part of the state of the room, we have two totally different classes of object flying around: the delta events you find in an eventstream - and then separately the "objects in the historical message buffer", some of which coincidentally happen to look like events.  And we have to infer things like historical displaynames by either evil hacks like prev_content & content keys (which don't work if you paginate through an old page where the displayname isn't updated) - or by going and querying a separate temporal database of the membership list anyway.
+
+    So, the problem for me is really one of naming - given the two options above end up looking very similar in terms of the shape of the API.
+
+    My suggestion would be that we consider paginating to be winding back time - which means we get genuine events as we paginate backwards (yay - which is what we have already) - but we add the ability to query the overall state objectdatabase temporally (i.e. "what was the m.room.topic at version #1234?" and "what was the membership list at version #1234).
+
+    This means that we no longer have the distinction of "events", "state-events" and "non-state-events".
+
+    Instead we have "events" - which are messages which update state, and "state" which are objects which describe the total state of a room at a given point.  "state" includes metadata like m.room.topic, the members list, as well as the messages buffer.  We don't necessarily have to provide an API to get at the raw messages buffer (although it might be nice to have for completeness).  When we suck on the global event stream, we get events.  These can be paginated if one wanted to try to build up (or deconstruct) your client's global history event-by-event.  When we paginate backwards through a room, we likewise get the equivalent events scoped to that room.  In fact the only difference to the current API is the idea that when we query "state" we can also give a version # to determine the snapshot we are querying.
+
+    Thoughts?
+  created: 2014-09-16 11:49:28.0
+  id: '10205'
+  issue: '10026'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-16 11:49:28.0
+- author: erikj
+  body: |-
+    {quote}
+    ... but we add the ability to query the overall state objectdatabase temporally (i.e. "what was the m.room.topic at version #1234?" and "what was the membership list at version #1234).
+    {quote}
+
+    This is fine (ish), but I don't think it should completely replace the idea of _prev_content_ as this would allow clients to say things like "Foo changed name from X to Y" without having to do separate HTTP hits.
+
+    Also, the only time we expose an idea of a "version" is for event and pagination stream tokens, which only define "versions" for the beginning and end of the returned chunk and not for individual events.
+  created: 2014-09-16 12:13:55.0
+  id: '10206'
+  issue: '10026'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-16 12:13:55.0
+- author: erikj
+  body: |-
+    The current distinct concepts that I can think of are:
+     # A room dictionary that holds a mutable list of key, value pairs that get updated over the "topological time" (for lack of a better word)
+     # "topological time"/"ordering"/"versions"
+     # Nodes in the DAG.
+     # Nodes in the DAG that updates the room dictionary.
+     # Nodes in the DAG that relate to earlier nodes in some fashion, including:
+         ** Metadata, e.g. feedback.
+         ** Updates, e.g. "s/teh/the/g"
+         ** Deletions
+     # The data returned when walking the DAG backwards / paginating backwards. This will be a modified view of the DAG, i.e. coalescing related nodes, hiding deleted nodes etc.
+     # Current entries in the dictionary.
+     # Things that come down the event stream.
+     # Things that come down the event stream that are (or add) nodes in the DAG.
+     # Things that come down the event stream, but aren't part of a DAG (e.g., presence)
+  created: 2014-09-16 12:36:21.0
+  id: '10207'
+  issue: '10026'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-16 12:37:28.0
+- author: matthew
+  body: |-
+    This glossary looks good to me.  I'd add: 0. The total set of data associated with a room (its topic, name, users, message buffer, etc).
+
+    My proposal for re-naming would be:
+
+    0. room state ("state" for short)
+    1. metadata dictionary  (or room dict? or just dict?)
+    2. versions
+    3. events
+    4. metadata events
+    5. override events
+    6. collapsed events
+    7. metadata key/values
+    8. events
+    9. persistent events (aka PDUs)
+    10. ephemeral events (aka EDUs)
+  created: 2014-09-16 12:46:38.0
+  id: '10208'
+  issue: '10026'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-16 12:46:38.0
+- author: matthew
+  body: |-
+    oh, and I'd also mention that the /room/<roomid>/messages API should then indeed be rechristened /room/<roomid>/timeline or something more neutral given it yields collapsed events (and collapsed_events is too long a name).
+
+    Where does an event fit into the above taxonomy that describes a user in a room changing their display name?
+  created: 2014-09-16 12:57:23.0
+  id: '10210'
+  issue: '10026'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-16 12:57:23.0
+- author: matthew
+  body: (I've split the question of whether we need a temporal API for querying historical room metadata (née state) into a separate JIRA - SPEC-10
+  created: 2014-09-16 12:59:55.0
+  id: '10213'
+  issue: '10026'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-16 12:59:55.0
+- author: markjh
+  body: |-
+    I don't like "metadata" for 4. It doesn't convey to me that the event is an update to value of that key within the room.
+
+    "override" doesn't seem right for 5 since we intend these messages to be used for comments, delivery receipts, and ice-candidates and signalling for voip.
+  created: 2014-09-16 13:51:51.0
+  id: '10214'
+  issue: '10026'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-16 13:55:44.0
+- author: matthew
+  body: |-
+    4. metadata update events?
+    5. layered events? additive events?
+  created: 2014-09-16 14:14:20.0
+  id: '10215'
+  issue: '10026'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-16 14:14:20.0
+- author: erikj
+  body: 'If anything I think #5 should be metadata, as they are actually data about other data (at least in the feedback and co. case) whereas #4 is more data about the room. Certainly I don''t think calling #4 matches the computer science usage of the word.'
+  created: 2014-09-16 14:23:50.0
+  id: '10217'
+  issue: '10026'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-16 14:23:50.0
+- author: markjh
+  body: 'Would something like "child event" work for #5? It might capture the idea that those messages come down the stream as part of the "parent event" better.'
+  created: 2014-09-16 14:27:54.0
+  id: '10218'
+  issue: '10026'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-16 14:27:54.0
+- author: markjh
+  body: I would quite like to reserve the term "metadata" to refer to data like timestamps under the "meta" key which is not covered by the signature in signed JSON.
+  created: 2014-09-16 14:30:41.0
+  id: '10219'
+  issue: '10026'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-16 14:31:18.0
+- author: matthew
+  body: |-
+    Okay, so we need a better name for #4.  Happy with 'child events' for #5.
+
+    4. update events? room dict events?
+
+    ..and we call the room dict a room dict, rather than a metadata dict?
+  created: 2014-09-16 15:01:47.0
+  id: '10300'
+  issue: '10026'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-16 15:01:47.0
+- author: erikj
+  body: 'Calling both #3 and #8 events might get a bit confusing as you wouldn''t have a name for events in the DAG, i.e. a room. Though that might be acceptable.'
+  created: 2014-09-17 16:00:11.0
+  id: '10306'
+  issue: '10026'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-17 16:00:11.0
+- author: erikj
+  body: Although I'm not 100% sure about room dict events, but I'm happy enough to go with that for now.
+  created: 2014-09-17 16:00:47.0
+  id: '10307'
+  issue: '10026'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-17 16:00:47.0
+- author: matthew
+  body: |-
+    Proposal:
+
+    0. *room state* or *state* for short - The total set of data associated with a room (its topic, name, users, message buffer, etc).
+    1. *room dict* or *dict* for short - A room dictionary that holds a mutable list of key, value pairs that get updated over the "topological time" (for lack of a better word)
+    2. *versions*  - "topological time"/"ordering"/"versions"
+    3. *events* - Nodes in the DAG.
+    4. *update events* -  Nodes in the DAG that updates the room dictionary.
+    5. *child events* - Nodes in the DAG that relate to earlier nodes in some fashion, including: Metadata, e.g. feedback; Updates (e.g. "s/teh/the/g"); Deletions
+    6. *collapsed events* - The data returned when walking the DAG backwards / paginating backwards. This will be a modified view of the DAG, i.e. coalescing related nodes, hiding deleted nodes etc.
+    7. *room dict keys/values* - Current entries in the dictionary.
+    8. *events* - Things that come down the event stream.
+    9. *persistent events* - Things that come down the event stream that are (or add) nodes in the DAG.
+    10. *ephemeral events* - Things that come down the event stream, but aren't part of a DAG (e.g., presence)
+  created: 2014-09-17 16:04:59.0
+  id: '10308'
+  issue: '10026'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-17 16:04:59.0
+- author: matthew
+  body: |-
+    This is stuck, which is a shame, because I still think the terminology is confusing and impedes understanding of the spec.  It's particularly bad because I can't find a single place where the current terminology is actually fully defined.  Can someone (Erik?) please draw up a table of the 11 items above, giving the current names, the suggested new names, and the description?  If the decision is to stick with what we have, then that could be a valid outcome - but i'd rather we a) defined what we have, b) did so deliberately rather than drifting into it...
+
+    (It seems the definition of #1 above is partial, as well, if the room dict maps (<event_type>, <state_key>) -> <event> (as per SPEC-8), as is #7)
+  created: 2014-10-06 18:05:09.0
+  id: '10541'
+  issue: '10026'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-06 18:05:09.0
+- author: erikj
+  body: I'm happy to do a table of definitions.
+  created: 2014-10-06 18:09:31.0
+  id: '10543'
+  issue: '10026'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-06 18:09:31.0
+- author: erikj
+  body: |-
+    See {{docs/definitions.rst}} for an initial attempt at defining some of the terms used, also copied below:
+
+    {panel:title=docs/definitions.rst|titleBGColor=#F7D6C1|bgColor=#FFFFCE}
+    # *Event* -- A JSON object that represents a piece of information to be distributed to the the room. The object includes a payload and metadata, including a `type` used to indicate what the payload is for and how to process them. It also includes one or more references to previous events. 
+    # *Event graph* -- Events and their references to previous events form a directed acyclic graph. All events must be a descendant of the first event in a room, except for a few special  circumstances.
+    # *State event* -- A state event is an event that has a non-null string valued `state_key` field. It may also include a `prev_state` key referencing exactly one state event with the same type and state key, in the same event graph.
+    # *State tree* -- A state tree is a tree formed by a collection of state events that have the same type and state key (all in the same event graph. 
+    # *State resolution algorithm* -- An algorithm that takes a state tree as input and selects a single leaf node.
+    # *Current state event* -- The leaf node of a given state tree that has been selected by the state resolution algorithm.
+    # *Room state* / *state dictionary* / *current state* -- A mapping of the pair (event type, state key) to the current state event for that pair.
+    # *Room* -- An event graph and its associated state dictionary. An event is in the room if it is part of the event graph.
+    # *Topological ordering* -- The partial ordering that can be extracted from the event graph due to it being a DAG.
+
+    (The state definitions are purposely slightly ill-defined, since if we allow deleting events we might end up with multiple state trees for a given event type and state key pair.)
+
+    h4. Federation specific
+    # *(Persistent data unit) PDU* -- An encoding of an event for distribution of the server to server protocol.
+    # *(Ephemeral data unit) EDU* -- A piece of information that is sent between servers and doesn't encode an event.
+
+    h4. Client specific
+    # *Child events* -- Events that reference a single event in the same room independently of the event graph.
+    # *Collapsed events* -- Events that have all child events that reference it included in the JSON object.
+    {panel}
+  created: 2014-10-07 11:43:16.0
+  id: '10556'
+  issue: '10026'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-07 11:43:16.0
+- author: matthew
+  body: |-
+    Okay, thanks Erik.
+
+    On thinking about this *much* more over the weekend, I have a new proposal for clarifying the terminology which is hopefully simpler:
+
+    In the end, we have two classes of events flying around: ones which incrementally update the event dictionary associated with a room (so called "state events") - and ones which don't (so called "non-state events").  Between them, they make up the timeline of activity within a room.
+
+    Given the common usage by far for "non-state events" is to just describe the actual communication within a room, I suggest we just call them "message events".  This is "message" in a more generic usage than instant messaging - it describes an event that relates to an attempt to communicate some data (e.g. an IM, a deletion event, feedback event, VoIP setup event etc).
+
+    It is in contrast with a "room state event", or "state event" for short - whose name remains the same, but describes instead the global state of the room itself within which the message events exist.
+
+    And so the distinction ends up basically between the communication in the room (message events) and the room itself.
+
+    Final thought: should we rename state events to be "room events", given they are always scoped to updating the state for a given room?  And avoids the ambiguity of the 'state' word?
+  created: 2014-10-13 12:44:50.0
+  id: '10564'
+  issue: '10026'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-13 12:44:50.0
+- author: erikj
+  body: |-
+    {quote}
+    Final thought: should we rename state events to be "room events", given they are always scoped to updating the state for a given room? And avoids the ambiguity of the 'state' word?
+    {quote}
+
+    But message events also relate to rooms?
+  created: 2014-10-13 12:58:17.0
+  id: '10565'
+  issue: '10026'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-13 12:58:17.0
+- author: matthew
+  body: |-
+    Just as much as "state events" could relate to messages in a room...  But fair point.
+
+    If nobody objects to renaming "non-state events" as "message events" then I propose we do so tomorrow (to give Kegan a chance to chip in)
+
+    I suggest we then rename:
+     * /events to /eventstream
+     * /room/<roomid>/messages to /room/<roomid>/events
+
+    ...and we finally have something which feels clear.
+  created: 2014-10-13 13:04:48.0
+  id: '10566'
+  issue: '10026'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-13 13:04:48.0
+- author: erikj
+  body: Works for me :)
+  created: 2014-10-13 13:05:16.0
+  id: '10567'
+  issue: '10026'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-13 13:05:16.0
+- author: kegan
+  body: |-
+    *Exactly one year later...*
+
+    Better late than never... This branch https://github.com/matrix-org/matrix-doc/tree/proofing removes all references in the spec to "non-state" events.
+  created: 2015-10-13 16:55:05.0
+  id: '12250'
+  issue: '10026'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 16:55:26.0

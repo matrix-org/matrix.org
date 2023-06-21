@@ -1,0 +1,60 @@
+---
+summary: Invites don't tell you what you're being invited to.
+---
+created: 2014-10-27 10:22:42.0
+creator: matthew
+description: ''
+id: '10492'
+key: SYWEB-113
+number: '113'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10200'
+type: '1'
+updated: 2014-12-08 14:21:34.0
+votes: '0'
+watches: '2'
+workflowId: '10596'
+---
+actions:
+- author: kegan
+  body: The event that comes down does not contain room name or alias information. To give this information, we would need to make some state events publicly accessible without being joined into a room. In any case, this requires a corresponding SYN issue to give the required information.
+  created: 2014-10-27 10:31:58.0
+  id: '10583'
+  issue: '10492'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 10:31:58.0
+- author: matthew
+  body: We don't even say that an invite is an invite though, which is really confusing.  The least it could say is "Invite from <name>" rather than just "<Name> <Name>" as it does currently....
+  created: 2014-12-01 14:09:06.0
+  id: '10903'
+  issue: '10492'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-01 14:09:06.0
+- author: kegan
+  body: |-
+    It actually says:
+
+    {code}
+    @user:matrix.org
+    User Display Name invited you
+    {code}
+
+    currently. What do you want this changed to?
+  created: 2014-12-01 14:30:51.0
+  id: '10904'
+  issue: '10492'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 14:30:51.0
+- author: kegan
+  body: Blocked on SYN-175
+  created: 2014-12-08 14:21:34.0
+  id: '10981'
+  issue: '10492'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-08 14:21:34.0

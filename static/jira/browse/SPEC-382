@@ -1,0 +1,30 @@
+---
+summary: Users don't have permission to retract invites they sent themselves
+---
+created: 2016-04-13 00:42:32.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  You need the 'kick' power level to retract an invite, and normal users don't have that, so can't rescind invites they accidentally send. This feels wrong.
+id: '12623'
+key: SPEC-382
+number: '382'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:29.0
+votes: '0'
+watches: '2'
+workflowId: '12723'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/664'
+  created: 2016-10-28 16:28:29.0
+  id: '13473'
+  issue: '12623'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:29.0

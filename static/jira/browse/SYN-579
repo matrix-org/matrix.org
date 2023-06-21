@@ -1,0 +1,33 @@
+---
+summary: media API on latest develop no longer crops images correctly
+---
+assignee: erikj
+created: 2016-01-07 18:53:50.0
+creator: matthew
+description: |-
+  on latest synapse, how come asking for a ?width=240&height=240&method=crop thumbnail
+  returns me a 320x207px image?! (original image was 1280x831px) >:(
+id: '12277'
+key: SYN-579
+number: '579'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-01-07 19:39:30.0
+status: '5'
+type: '1'
+updated: 2016-01-07 19:39:30.0
+votes: '0'
+watches: '1'
+workflowId: '12382'
+---
+actions:
+- author: matthew
+  body: mark fixed this in  https://github.com/matrix-org/synapse/pull/475 - thanks :)
+  created: 2016-01-07 19:39:22.0
+  id: '12553'
+  issue: '12277'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-07 19:39:22.0

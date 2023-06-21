@@ -1,0 +1,32 @@
+---
+summary: 'Can''t highlight words in messages '
+---
+created: 2015-02-17 21:55:31.0
+creator: kegan
+description: ''
+id: '11083'
+key: SYAND-26
+number: '26'
+priority: '2'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-18 13:09:02.0
+status: '5'
+type: '1'
+updated: 2015-02-18 15:27:42.0
+votes: '0'
+watches: '2'
+workflowId: '11183'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    -> The user has to tap outside the textView to open the Redact/Resent menu (like hangout)
+    -> The user can now select text in the textview.
+  created: 2015-02-18 15:27:42.0
+  id: '11281'
+  issue: '11083'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-02-18 15:27:42.0

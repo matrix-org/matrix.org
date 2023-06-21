@@ -1,0 +1,37 @@
+---
+summary: Every time you press a key in the input textbox, Angular runs the digest and recomputes the world
+---
+created: 2014-09-15 23:31:30.0
+creator: matthew
+description: Angular goes and runs digest and recomputes every filter (which can be quite heavy, doing things like resolving room ids to room aliases via local storage) on the rooms page every time the user presses a key in mainInput :-/
+id: '10008'
+key: SYWEB-4
+number: '4'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-20 00:50:42.0
+status: '5'
+type: '1'
+updated: 2014-09-22 17:20:49.0
+votes: '0'
+watches: '1'
+workflowId: '10389'
+---
+actions:
+- author: matthew
+  body: |-
+    CPU also looks to be being chewed badly by:
+
+                // Log some information that lead to this leak
+                console.log("Room ID leak for " + room_id);
+                console.log("room object: " + JSON.stringify(room, undefined, 4));   
+
+    in matrix-filter.js
+  created: 2014-09-20 01:12:58.0
+  id: '10354'
+  issue: '10008'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-20 01:12:58.0

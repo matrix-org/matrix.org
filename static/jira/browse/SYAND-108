@@ -1,0 +1,38 @@
+---
+summary: don't keep the event stream open when the app is closed
+---
+created: 2015-07-28 18:19:08.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  later builds on develop are sucking my battery because there is an open tcp connection from the app. See bug report I sent.
+id: '11769'
+key: SYAND-108
+number: '108'
+priority: '1'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-07-29 07:58:08.0
+status: '5'
+type: '1'
+updated: 2015-07-29 07:58:08.0
+votes: '0'
+watches: '2'
+workflowId: '11870'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    the steps to reproduce
+
+    1- the application is active and there is a network connection
+    2- the network connection is lost
+    3- the application is put in background
+    4- the network connection is retrieved  -
+  created: 2015-07-29 07:57:58.0
+  id: '12035'
+  issue: '11769'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-07-29 07:57:58.0

@@ -1,0 +1,22 @@
+---
+summary: IRC-style commands should be case insensitive
+---
+created: 2014-09-29 01:35:03.0
+creator: matthew
+description: ''
+id: '10413'
+key: SYWEB-100
+number: '100'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-25 16:00:37.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:09:04.0
+votes: '0'
+watches: '1'
+workflowId: '10516'
+---
+actions: null

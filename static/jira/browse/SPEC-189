@@ -1,0 +1,64 @@
+---
+summary: Published Rooms.
+---
+created: 2015-06-18 16:38:59.0
+creator: erikj
+description: |-
+  We currently have a {{publicRooms}} API, but we haven't decided what should be listed here or how its managed.
+
+  The current (bad) behaviour is that when a room is create on the HS with a {{visibility: true}} option on, then it gets added to the list. A room is only included in the list if the HS has an alias for it.
+id: '11667'
+key: SPEC-189
+number: '189'
+priority: '2'
+project: '10001'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-10-28 16:27:25.0
+votes: '0'
+watches: '4'
+workflowId: '11768'
+---
+actions:
+- author: erikj
+  body: |-
+    Suggestions:
+
+    # Publishedness is a property of the room alias, and is handled by the directory server. (Suggested by Leo)
+    # Publishedness is a property of the room per HS, so {{/publicRooms}} becomes a list of rooms that may be of interest to users of that HS. Its up to the HS how this list is curated, either manually or by users via an API. A room doesn't need to have an alias, but should have either a name or alias to appear in the list.
+  created: 2015-06-18 16:44:53.0
+  id: '11888'
+  issue: '11667'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-07 04:39:33.0
+- author: matthew
+  body: We can't use room names to unambiguously identify rooms in a directory listing because room names are not unique.  Therefore we must use aliases, as they are unambiguous, and so published rooms simply mean an alias which is publicly listed in a directory somewhere.
+  created: 2015-06-18 23:01:41.0
+  id: '11889'
+  issue: '11667'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-18 23:01:41.0
+- author: kegan
+  body: |-
+    Fwiw v2 sez is https://github.com/matrix-org/matrix-doc/blob/master/drafts/general_api.rst#published-room-list-api-draft
+
+    By forcing an alias to exist we are designing out the ability to search for a room by name or topic when an alias doesn't exist.
+
+    Do we really need the rooms to be completely unambiguous in the result set? Consider Reddit for example, which allows posts to have the same name. There isn't any unambiguous identifier, you need to infer from upvotes, timestamp, author, etc. Are we designing out the ability to integrate with third parties which have this ambiguous behaviour?
+  created: 2015-06-18 23:58:53.0
+  id: '11890'
+  issue: '11667'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-18 23:58:53.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/517'
+  created: 2016-10-28 16:27:25.0
+  id: '13325'
+  issue: '11667'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:25.0

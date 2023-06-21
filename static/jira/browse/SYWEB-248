@@ -1,0 +1,28 @@
+---
+summary: Request correct thumbnail sizes from the content repo
+---
+created: 2015-01-11 23:57:51.0
+creator: matthew
+description: ''
+id: '10899'
+key: SYWEB-248
+number: '248'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2015-03-14 02:46:24.0
+votes: '0'
+watches: '1'
+workflowId: '10999'
+---
+actions:
+- author: matthew
+  body: This isn't fixed - all avatar aspect ratio is wrong on Firefox, for instance, as we seem to be squidging non-square avatar thumbnails (both big and small ones) into the square-with-border-radius images.
+  created: 2015-03-14 02:46:24.0
+  id: '11394'
+  issue: '10899'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-14 02:46:24.0

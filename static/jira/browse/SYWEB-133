@@ -1,0 +1,22 @@
+---
+summary: Can't select text due to it bringing up JSON view of events
+---
+created: 2014-11-03 15:37:47.0
+creator: erikj
+description: ''
+id: '10608'
+key: SYWEB-133
+number: '133'
+priority: '3'
+project: '10004'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-11-04 11:07:18.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:01.0
+votes: '0'
+watches: '1'
+workflowId: '10708'
+---
+actions: null

@@ -1,0 +1,35 @@
+---
+summary: Server is not federating - endless load of public room list...
+---
+created: 2015-06-24 20:55:00.0
+creator: bob
+description: |-
+  I am connected to a Server that is not federating, but the public room list is loaded in an endless loop...
+
+  I guess the solution would be to deactivate the public rooms i the settings when the server you are connected to is not federating.
+id: '11697'
+key: SYAND-91
+number: '91'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-06-26 15:06:30.0
+status: '5'
+type: '1'
+updated: 2015-06-26 15:07:11.0
+votes: '0'
+watches: '2'
+workflowId: '11798'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    The roomSummaryAdapter did not manage properly homeserver with no public room.
+    It was assumed that there were always some public rooms so the spinner was displayed until to get some
+  created: 2015-06-26 15:07:11.0
+  id: '11922'
+  issue: '11697'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-26 15:07:11.0

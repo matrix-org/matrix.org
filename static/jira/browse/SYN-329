@@ -1,0 +1,25 @@
+---
+summary: We need a better way of telling users about config changes
+---
+created: 2015-03-30 17:10:53.0
+creator: matthew
+description: |-
+  [12:09]  <erikj> and its a bit sucky that we don't auto upgrade the config files
+  [12:09]  <erikj> especially since we have zero mechanism to inform users about changes
+  [12:09]  <erikj> since pip doesn't include the CHANGELOG or UPGRADES
+id: '11298'
+key: SYN-329
+number: '329'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-05-14 11:49:08.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:08.0
+votes: '0'
+watches: '1'
+workflowId: '11398'
+---
+actions: null

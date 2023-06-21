@@ -1,0 +1,31 @@
+---
+summary: If you try to join a non-existent room from the homepage everything breaks horribly
+---
+assignee: kegan
+created: 2014-11-18 20:42:53.0
+creator: matthew
+description: ''
+id: '10677'
+key: SYWEB-164
+number: '164'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2014-11-19 09:51:14.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:59.0
+votes: '0'
+watches: '2'
+workflowId: '10777'
+---
+actions:
+- author: kegan
+  body: Duplicate of SYWEB-166 - This is a user feedback issue where the error isn't communicated with the user.
+  created: 2014-11-19 09:51:14.0
+  id: '10809'
+  issue: '10677'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-19 09:51:42.0

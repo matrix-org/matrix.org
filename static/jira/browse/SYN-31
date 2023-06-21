@@ -1,0 +1,41 @@
+---
+summary: Strange things happen with presence if you run an HS without a DB file
+---
+created: 2014-09-16 01:16:14.0
+creator: matthew
+description: |-
+  * When launching HS with no db file, the HS returns 500 http errors on presense PUT requests
+  After restarting it, it continues to generates 500 errors for users previously created BUT correctly manages presence PUT on new created users
+  HS log:
+  <Manu> 2014-09-04 14:42:24,442 - synapse.handlers.presence - 199 - DEBUG - Invoked 'set_state' with args: auth_user=DomainSpecificString(localpart=u'saf', domain=u'lo..., self=<synapse.handlers.presence.PresenceHandler object ..., target_user=DomainSpecificString(localpart='saf', domain='loca..., state={'presence': u'unavailable'}
+  <Manu> 2014-09-04 14:42:24,442 - synapse.handlers.presence - 227 - DEBUG - Updating presence state of saf to unavailable
+  <Manu> 2014-09-04 14:42:24,443 - synapse.http.server - 141 - ERROR - 'presence'
+  <Manu> Traceback (most recent call last):
+  <Manu>   File "/Users/manu/UC/matrix/github/synapse/synapse/http/server.py", line 116, in _async_render
+  <Manu>     *m.groups()
+  <Manu> KeyError: 'presence'
+  <Manu> 2014-09-04 14:42:24,443 - twisted - 455 - INFO - "127.0.0.1" - - [04/Sep/2014:12:42:23 +0000] "PUT /_matrix/client/api/v1/presence/@saf:localhost/status?access_token=QHNhZjpsb2NhbGhvc3Q..pfojCtYJgjXQnEzzjv HTTP/1.1" 500 33 "https://localhost:8448/_matrix/client/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2"
+id: '10062'
+key: SYN-31
+number: '31'
+priority: '5'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-19 17:34:04.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:39.0
+votes: '0'
+watches: '2'
+workflowId: '10365'
+---
+actions:
+- author: leonerd
+  body: Dupe of SYN-72; fixed.
+  created: 2014-11-19 17:34:04.0
+  id: '10815'
+  issue: '10062'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-19 17:34:04.0

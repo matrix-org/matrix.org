@@ -1,0 +1,27 @@
+---
+summary: Useless back pagination request when entering a room
+---
+assignee: manu
+created: 2016-01-28 10:44:11.0
+creator: manu
+description: |-
+  [MXKRoomDataSource paginateBackMessagesToFillRect] is wrong.
+
+  The first time it is called, it has no bubbles. So, it bases its events need computation on 44px per event, which results for a need of 20 messages on a iPhone 5s. 
+  As the store contains 10 messages (at least), it may need to make a server request to get all 20 messages.
+
+  It is a pity because most of time 5 messages is enough to fill the screen.
+id: '12355'
+key: SYIOS-204
+number: '204'
+priority: '2'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '1'
+updated: 2016-01-28 10:45:52.0
+votes: '0'
+watches: '1'
+workflowId: '12460'
+---
+actions: null

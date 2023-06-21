@@ -1,0 +1,30 @@
+---
+summary: Need to incorporate "layman's guide to matrix" video & use case bumpf
+---
+created: 2015-03-08 18:18:33.0
+creator: matthew
+description: ''
+id: '11171'
+key: ORG-19
+number: '19'
+priority: '1'
+project: '10003'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2017-03-21 10:54:45.0
+status: '5'
+type: '2'
+updated: 2017-03-21 10:54:45.0
+votes: '0'
+watches: '2'
+workflowId: '11271'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix.org/issues/13
+  created: 2017-03-21 10:54:45.0
+  id: '14010'
+  issue: '11171'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 10:54:45.0

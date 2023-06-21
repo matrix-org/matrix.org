@@ -1,0 +1,48 @@
+---
+summary: 'Push rules: Add a mechanism to notify Matrix clients when push rules have been modified'
+---
+created: 2015-02-11 12:59:53.0
+creator: manu
+description: |-
+  A Matrix client can apply obsolete push rules because another client changed them.
+  The reason it that the first client has currently no mean to know there was a change.
+id: '11035'
+key: SPEC-106
+number: '106'
+priority: '2'
+project: '10001'
+reporter: manu
+resolution: '1'
+resolutiondate: 2016-05-19 16:45:47.0
+status: '5'
+type: '1'
+updated: 2016-05-19 16:45:47.0
+votes: '0'
+watches: '2'
+workflowId: '11135'
+---
+actions:
+- author: dbkr
+  body: I'm not yet sure what the best way to do this would be. I think this is blocked on having a mechanism to do the same with profile data, etc. Currently a display name, for example, is only updated on other clients because it comes down as a state change event for every room you're in.
+  created: 2015-02-27 15:58:51.0
+  id: '11320'
+  issue: '11035'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-02-27 15:58:51.0
+- author: dbkr
+  body: Actually, that's not true, display name changes come down as presence events, but they're EDUs so that doesn't help us.
+  created: 2015-02-27 16:04:39.0
+  id: '11321'
+  issue: '11035'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-02-27 16:04:39.0
+- author: manu
+  body: We can now get push rules change notification with the account_data field received in /sync.
+  created: 2016-05-19 16:45:47.0
+  id: '12923'
+  issue: '11035'
+  type: comment
+  updateauthor: manu
+  updated: 2016-05-19 16:45:47.0

@@ -1,0 +1,22 @@
+---
+summary: Do we need to keep providing an alias key in the initialSync room object?
+---
+created: 2014-09-15 23:33:32.0
+creator: matthew
+description: ''
+id: '10010'
+key: SYN-5
+number: '5'
+priority: '4'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-26 14:24:26.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:41.0
+votes: '0'
+watches: '1'
+workflowId: '10339'
+---
+actions: null

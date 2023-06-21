@@ -1,0 +1,23 @@
+---
+summary: Add an access log.
+---
+assignee: dbkr
+created: 2014-11-20 18:05:18.0
+creator: markjh
+description: ''
+id: '10694'
+key: SYN-161
+number: '161'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-04-30 14:01:20.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:10.0
+votes: '0'
+watches: '2'
+workflowId: '10794'
+---
+actions: null

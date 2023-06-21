@@ -1,0 +1,36 @@
+---
+summary: Support for thumbnailing huge images
+---
+created: 2014-12-24 16:08:51.0
+creator: matthew
+description: http://matrix.org/_matrix/media/v1/thumbnail/matrix.org/QmnqpOnUryevRCyQLeiseZzx?width=320&height=320 doesn't thumbnail at all due to the source image being huge.
+id: '10861'
+key: SYN-213
+number: '213'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:32.0
+votes: '0'
+watches: '3'
+workflowId: '10961'
+---
+actions:
+- author: erikj
+  body: We need to make sure that it doesn't cause synapse to use all the memory.
+  created: 2015-05-07 11:52:25.0
+  id: '11723'
+  issue: '10861'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-07 11:52:25.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1262'
+  created: 2016-11-07 18:27:32.0
+  id: '13580'
+  issue: '10861'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:32.0

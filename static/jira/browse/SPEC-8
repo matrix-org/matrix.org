@@ -1,0 +1,113 @@
+---
+summary: How to delete "state".
+---
+assignee: erikj
+created: 2014-09-16 12:40:20.0
+creator: erikj
+description: |-
+  h4. Motivation
+  Currently, when a user leaves a room they keep an entry in the current state table which is never deleted. For large, old, busy rooms this could easily lead to the current state table being huge as it would contain an event for every use that has ever been in the room. 
+
+  Since these entries are not used for anything, it would be much more convenient if the act of leaving simply involved removing the corresponding membership entry from the current state.
+
+
+  h4. Problems
+  The main problem with removing entries from current state is making it work with the state conflict resolution algorithm. The algorithm *must* have these properties:
+  # Not depend on server state.
+  # Not depend on order events were received in.
+
+  Currently, the algorithm works by comparing the current state with the newly proposed state. If they are on separate branches of the tree then the two separate branches are compared.
+
+  However, if we have removed the entry from the current state we have nothing to compare any new state events with, and so it is treated as if it is completely new state. Thus by property 2, a deletion can only take effect if there are no other undeleted branches of the state tree, which doesn't really work very well.
+id: '10200'
+key: SPEC-8
+number: '8'
+priority: '4'
+project: '10001'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-10-28 16:26:39.0
+votes: '0'
+watches: '3'
+workflowId: '10328'
+---
+actions:
+- author: erikj
+  body: |-
+    After a lot of thought, I've come to the conclusion that for now we can't "delete" state, i.e. remove it from the current state dictionary from POV of federation. This is because the state resolution algorithm assumes that we have a pointer to the current state.
+
+    So we're left with the idea of tombstoning, i.e. mark the event as having been deleted, but still keep it in the current state dictionary.
+
+    If we can ever guarantee that we will never see (or accept) an event that will reference another part of the state tree, then we can safely remove the tombstone from the current state dictionary. Currently it is unclear whether we would ever be able to guarantee that.
+  created: 2014-10-06 14:25:24.0
+  id: '10526'
+  issue: '10200'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-06 14:25:24.0
+- author: matthew
+  body: I'm having SPEC-3 style terminology confusion here.  What actually is a 'state table'?  Isn't the problem here being a stale entry in the members list, as opposed to the keys associated with the state dict for a room?
+  created: 2014-10-06 17:36:27.0
+  id: '10538'
+  issue: '10200'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-06 17:36:27.0
+- author: erikj
+  body: |-
+    The state table is a mapping from {{(<event_type>, <state_key>) -> <event>}}.
+
+    The members list is a subset of the state table, i.e. {{("m.room.member", <user_id>) -> <membership_event>}}. Currently if someone leaves the room they still have an entry in the state table (and so the members list)
+  created: 2014-10-06 17:40:02.0
+  id: '10539'
+  issue: '10200'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-06 17:40:02.0
+- author: matthew
+  body: |-
+    Okay, much clearer, thanks.  Sorry for being thick/ill, but:
+
+    "If we can guarantee that we will never see (or accept) an event that will reference another part of the state tree, then we can safely remove the tombstone from the current state dictionary."
+
+    Why would an event that references "another part of the state tree" impact on our ability to remove the tombstone?  Isn't "another part of the state tree" unrelated to our tombstone by definition?
+  created: 2014-10-06 18:32:28.0
+  id: '10545'
+  issue: '10200'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-06 18:32:28.0
+- author: erikj
+  body: If we get a state update that references a different branch of the state tree than the one we attached the tombstone to, then we would need to apply the state resolution algorithm on those two branches to see which one wins. However, if we've removed the tombstone from the state dictionary then when we get the state update we won't know about / have a reference to the tombstoned branch and so can't apply state resolution to both (in practice this would mean that we would blindly accept the update.)
+  created: 2014-10-07 14:19:50.0
+  id: '10560'
+  issue: '10200'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-07 14:19:50.0
+- author: erikj
+  body: |-
+    So I think I've come up with a solution, which basically hinges on the fact the event graph gives us a partial ordering we can rely on.
+
+    The solution basically involves:
+    - remove the prev_state key, it can essentially be derived from the prev_events.
+    - state resolution only happens when we receive state on different branches of the events graph.
+    - deletions of events always lose state resolution.
+    - be able to query what the state was on given event (to do authentorization)
+
+    We don't even need tombstones!
+  created: 2014-10-09 17:14:15.0
+  id: '10563'
+  issue: '10200'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-09 17:14:15.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/456'
+  created: 2016-10-28 16:26:39.0
+  id: '13229'
+  issue: '10200'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:39.0

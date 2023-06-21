@@ -1,0 +1,36 @@
+---
+summary: Investigate issue with new users not having 'status_msg' presence information
+---
+created: 2015-10-07 14:12:44.0
+creator: leonerd
+description: ''
+id: '12008'
+key: SYT-34
+number: '34'
+priority: '3'
+project: '10300'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-11-29 13:38:43.0
+votes: '0'
+watches: '2'
+workflowId: '12111'
+---
+actions:
+- author: richvdh
+  body: There appears to be an issue wherein {{/events}} sometimes returns the *old* presence information (which is currently causing failures in the 'Anonymous users' tests). Could this be related?
+  created: 2015-11-14 17:36:31.0
+  id: '12362'
+  issue: '12008'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-14 17:36:31.0
+- author: richvdh
+  body: See also https://github.com/matrix-org/synapse/issues/1658
+  created: 2016-11-29 13:38:43.0
+  id: '13946'
+  issue: '12008'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-29 13:38:43.0

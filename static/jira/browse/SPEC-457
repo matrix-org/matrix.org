@@ -1,0 +1,38 @@
+---
+summary: API to get directory information per-room
+---
+created: 2016-09-18 15:52:56.0
+creator: neb
+description: |-
+  Submitted by @richvdh:sw1v.org
+  We provide a way to list all public rooms, and their public information, without an access token; we should probably allow this per-room as well
+id: '12834'
+key: SPEC-457
+number: '457'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:48.0
+votes: '1'
+watches: '3'
+workflowId: '12934'
+---
+actions:
+- author: richvdh
+  body: maybe something like {{GET /publicRooms/<roomId>}} ?
+  created: 2016-09-18 15:54:27.0
+  id: '13120'
+  issue: '12834'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-18 15:54:27.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/711'
+  created: 2016-10-28 16:28:48.0
+  id: '13520'
+  issue: '12834'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:48.0

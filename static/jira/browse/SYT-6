@@ -1,0 +1,46 @@
+---
+summary: Test the media repostitory
+---
+assignee: leonerd
+created: 2015-05-21 16:32:01.0
+creator: markjh
+description: ''
+id: '11550'
+key: SYT-6
+number: '6'
+priority: '3'
+project: '10300'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-09-10 16:43:27.0
+status: '5'
+type: '2'
+updated: 2015-09-10 16:43:27.0
+votes: '0'
+watches: '2'
+workflowId: '11651'
+---
+actions:
+- author: leonerd
+  body: |-
+    Basic upload/download is tested by
+
+    https://github.com/matrix-org/sytest/blob/master/tests/10apidoc/40content.pl
+
+    This doesn't test thumbnailing or filename content-disposition headers.
+
+    I'm unsure the extent to which that thumbnailing could be tested. E.g. it could request a scaled or cropped version of some template uploaded PNG image, and assert that it gets something that looks to have valid PNG magic and seems to parse and is about the right size. I don't imagine putting actual image content analysis into sytest would be reasonable though :)
+  created: 2015-06-25 18:50:32.0
+  id: '11919'
+  issue: '11550'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-25 18:50:32.0
+- author: leonerd
+  body: Some basic checking of likely implementation errors is now in place. Specifically, it tests that uploading a .png image then asking for a thumbnail of it pulls back *something* that has a valid PNG image header on it. I think this is probably good enough for an initial hit, until we have more detailed behaviours that need more specific testing.
+  created: 2015-09-10 16:43:19.0
+  id: '12126'
+  issue: '11550'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-10 16:43:19.0

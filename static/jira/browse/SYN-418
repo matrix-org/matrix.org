@@ -1,0 +1,85 @@
+---
+summary: roomInitialSync on a local room can take a very long time (10s)
+---
+created: 2015-06-16 11:56:51.0
+creator: matthew
+description: |-
+  The user experience of /join #matrix:matrix.org from a user on matrix.org is currently really bad - it takes 5-10s to join an existent local room.
+
+  We could hide this by reducing limit from 30 to 8 in the webclient, but I'm totally failing to see the right place to do this.
+id: '11655'
+key: SYN-418
+number: '418'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-01-06 09:29:48.0
+status: '5'
+type: '1'
+updated: 2016-01-06 09:29:48.0
+votes: '0'
+watches: '2'
+workflowId: '11756'
+---
+actions:
+- author: erikj
+  body: |-
+    Room initial sync seems to be doing:
+
+    {noformat}
+    current_state = yield self.state.get_current_state(
+        room_id=room_id,
+    )
+
+    yield self.auth.check_joined_room(
+        room_id, user_id,
+        current_state=current_state
+    )
+
+    …
+
+    messages, token = yield self.store.get_recent_events_for_room(
+        room_id,
+        limit=limit,
+        end_token=now_token.room_key,
+    )
+
+    …
+
+    for m in room_members:
+        try:
+            member_presence = yield presence_handler.get_state(
+                target_user=UserID.from_string(m.user_id),
+                auth_user=auth_user,
+                as_event=True,
+            )
+            presence.append(member_presence)
+        except SynapseError:
+            …
+    {noformat}
+
+
+    These can probably be parallelised.
+  created: 2015-06-16 16:45:50.0
+  id: '11867'
+  issue: '11655'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-16 16:45:50.0
+- author: erikj
+  body: '{{presence.get_state}} seems to be doing {{is_presence_visible}}, which is unecessary in this instance, and {{store.get_presence_state}} before looking in the cache.'
+  created: 2015-06-16 16:46:57.0
+  id: '11868'
+  issue: '11655'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-16 16:47:18.0
+- author: erikj
+  body: This seems to have been fixed
+  created: 2016-01-06 09:29:48.0
+  id: '12522'
+  issue: '11655'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 09:29:48.0

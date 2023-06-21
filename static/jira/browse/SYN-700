@@ -1,0 +1,149 @@
+---
+summary: Pushers sometimes don't run when they are supposed to
+---
+created: 2016-05-23 15:40:12.0
+creator: richvdh
+description: |-
+  For example:
+
+  Yannick sent a message (event id {{$1463997181504812DqPmS:matrix.org}}) in #android at 10:53:04:
+  {noformat}
+  2016-05-23 10:53:01,230 - synapse.access.http.8080 - 59 - INFO - PUT-8525776 - 92.139.29.127 - 8080 - Received request: PUT /_matrix/client/r0/rooms/!GnEEPYXUhoaHbkFBNX:matrix.org/send/m.room.message/m1463997175156.85?access_token=<redacted>
+  2016-05-23 10:53:04,078 - synapse.access.http.8080 - 91 - INFO - PUT-8525776 - 92.139.29.127 - 8080 - {@ylecollen:matrix.org} Processed request: 2847ms (59ms, 0ms) (182ms/7) 48B 200 "PUT /_matrix/client/r0/rooms/!GnEEPYXUhoaHbkFBNX:matrix.org/send/m.room.message/m1463997175156.85?access_token=<redacted> HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+  {noformat}
+
+  This is sent to sw1v.org over federation. From the matrix.sw1v.org logs:
+  {noformat}
+  2016-05-23 10:53:04,226 - synapse.access.https.8448 - 59 - INFO - PUT-264350- 83.166.68.251 - 8448 - Received request: PUT /_matrix/federation/v1/send/1463587938781/
+  2016-05-23 10:53:04,229 - synapse.federation.transport.server - 130 - INFO - PUT-264350- Request from matrix.org
+  2016-05-23 10:53:04,229 - synapse.federation.transport.server - 215 - INFO - PUT-264350- Received txn 1463587938781 from matrix.org. (PDUs: 1, EDUs: 0, failures: 0)
+  2016-05-23 10:53:04,243 - synapse.state - 176 - DEBUG - PUT-264350- Invoked 'resolve_state_groups' with args: self=<synapse.state.StateHandler object at 0x7f9266ea3f..., room_id=!GnEEPYXUhoaHbkFBNX:matrix.org, event_ids=[u'$1463997082354ImWRs:sw1v.org'], state_key=, event_type=None
+  2016-05-23 10:53:04,243 - synapse.state - 188 - DEBUG - PUT-264350- resolve_state_groups event_ids [u'$1463997082354ImWRs:sw1v.org']
+  2016-05-23 10:53:04,249 - synapse.state - 196 - DEBUG - PUT-264350- resolve_state_groups state_groups [95596L]
+  2016-05-23 10:53:04,251 - synapse.state - 176 - DEBUG - PUT-264350- Invoked 'resolve_state_groups' with args: self=<synapse.state.StateHandler object at 0x7f9266ea3f..., room_id=!GnEEPYXUhoaHbkFBNX:matrix.org, event_ids=['$1463997082354ImWRs:sw1v.org'], state_key=, event_type=None
+  2016-05-23 10:53:04,251 - synapse.state - 188 - DEBUG - PUT-264350- resolve_state_groups event_ids ['$1463997082354ImWRs:sw1v.org']
+  2016-05-23 10:53:04,255 - synapse.state - 196 - DEBUG - PUT-264350- resolve_state_groups state_groups [95596L]
+  2016-05-23 10:53:04,257 - synapse.api.auth - 109 - DEBUG - PUT-264350- Auth events: ['$14436406121534rzQMF:ygrek.org.ua', '$1462266209497332YrRqz:matrix.org', '$144291057447098FGHln:matrix.org', '$143957766014965EPQlq:matrix.org', '$1449139528428535gstzn:matrix.org', '$1446499861421576evLFe:matrix.org', '$1463
+  2016-05-23 10:53:04,260 - synapse.api.auth - 838 - DEBUG - PUT-264350- Invoked '_can_send_event' with args: auth_events={(u'm.room.member', u'@ygrek:ygrek.org.ua'): <Froz..., self=<synapse.api.auth.Auth object at 0x7f9266ea3e50>, event=<FrozenEvent event_id='$1463997181504812DqPmS:matr...
+  2016-05-23 10:53:04,260 - synapse.api.auth - 131 - DEBUG - PUT-264350- Allowing! <FrozenEvent event_id='$1463997181504812DqPmS:matrix.org', type='m.room.message', state_key='None'>
+  2016-05-23 10:53:04,298 - synapse.access.https.8448 - 91 - INFO - PUT-264350- 83.166.68.251 - 8448 - {matrix.org} Processed request: 72ms (29ms, 3ms) (17ms/9) 49B 200 "PUT /_matrix/federation/v1/send/1463587938781/ HTTP/1.1" "Synapse/0.14.0 (b=develop,1e98f2c)"
+  {noformat}
+
+  There doesn't appear to be any attempt to run the pushers, and I never got notified about this event (or other subsequent events in the same room).
+id: '12673'
+key: SYN-700
+number: '700'
+priority: '3'
+project: '10000'
+reporter: richvdh
+resolution: '1'
+resolutiondate: 2016-06-15 21:17:49.0
+status: '5'
+type: '1'
+updated: 2016-06-15 21:17:49.0
+votes: '0'
+watches: '2'
+workflowId: '12773'
+---
+actions:
+- author: erikj
+  body: 'Server version seems to be: {{Synapse/0.14.0 (b=develop,2d98c96)}}'
+  created: 2016-05-26 18:12:10.0
+  id: '12932'
+  issue: '12673'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-05-26 18:12:10.0
+- author: richvdh
+  body: |-
+    What I hadn't realised is that there is an exception further up in the logs:
+
+    {noformat}
+    2016-06-14 23:42:28,999 - twisted - 154 - CRITICAL - GET-1- Unhandled Error
+    Traceback (most recent call last):
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/log.py", line 101, in callWithLogger
+        return callWithContext({"system": lp}, func, *args, **kw)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/log.py", line 84, in callWithContext
+        return context.call({ILogContext: newCtx}, func, *args, **kw)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/context.py", line 118, in callWithContext
+        return self.currentContext().callWithContext(ctx, func, *args, **kw)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/context.py", line 81, in callWithContext
+        return func(*args,**kw)
+    --- <exception caught here> ---
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/posixbase.py", line 597, in _doReadOrWrite
+        why = selectable.doRead()
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/tcp.py", line 209, in doRead
+        return self._dataReceived(data)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+        rval = self.protocol.dataReceived(data)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/protocols/tls.py", line 421, in dataReceived
+        self._write(bytes)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/protocols/tls.py", line 574, in _write
+        self._producer.pauseProducing()
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/protocols/tls.py", line 189, in pauseProducing
+        self._producer.pauseProducing()
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/web/client.py", line 1082, in pauseProducing
+        self._task.pause()
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/task.py", line 447, in pause
+        self._checkFinish()
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/task.py", line 507, in _checkFinish
+        raise self._completionState
+    twisted.internet.task.TaskDone: 
+
+    2016-06-14 23:42:29,001 - twisted - 154 - CRITICAL - GET-1- Unhandled Error
+    Traceback (most recent call last):
+      File "/home/rav/matrix/synapse/synapse/app/homeserver.py", line 430, in in_thread
+        reactor.run()
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/base.py", line 1194, in run
+        self.mainLoop()
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/base.py", line 1206, in mainLoop
+        self.doIteration(t)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/epollreactor.py", line 396, in doPoll
+        log.callWithLogger(selectable, _drdw, selectable, fd, event)
+    --- <exception caught here> ---
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/log.py", line 101, in callWithLogger
+        return callWithContext({"system": lp}, func, *args, **kw)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/log.py", line 84, in callWithContext
+        return context.call({ILogContext: newCtx}, func, *args, **kw)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/context.py", line 118, in callWithContext
+        return self.currentContext().callWithContext(ctx, func, *args, **kw)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/context.py", line 81, in callWithContext
+        return func(*args,**kw)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/posixbase.py", line 610, in _doReadOrWrite
+        self._disconnectSelectable(selectable, why, inRead)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/posixbase.py", line 258, in _disconnectSelectable
+        selectable.connectionLost(failure.Failure(why))
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/tcp.py", line 479, in connectionLost
+        self._commonConnection.connectionLost(self, reason)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/tcp.py", line 287, in connectionLost
+        abstract.FileDescriptor.connectionLost(self, reason)
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/abstract.py", line 204, in connectionLost
+        self.producer.stopProducing()
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/protocols/tls.py", line 209, in stopProducing
+        self._producer.stopProducing()
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/web/client.py", line 1041, in stopProducing
+        self._task.stop()
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/task.py", line 497, in stop
+        self._checkFinish()
+      File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/task.py", line 507, in _checkFinish
+        raise self._completionState
+    twisted.internet.task.TaskDone: 
+    {noformat}
+
+    This happens soon after starting synapse, and no pushes work once it does.
+
+    It looks like a race condition in the depths of twisted. I've raised https://twistedmatrix.com/trac/ticket/8473.
+  created: 2016-06-15 00:07:02.0
+  id: '12998'
+  issue: '12673'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-15 00:07:02.0
+- author: richvdh
+  body: Fixed by https://github.com/matrix-org/synapse/pull/870
+  created: 2016-06-15 21:17:49.0
+  id: '13000'
+  issue: '12673'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-15 21:17:49.0

@@ -1,0 +1,28 @@
+---
+summary: API to add server admins
+---
+created: 2014-09-30 10:09:37.0
+creator: erikj
+description: ''
+id: '10420'
+key: SYN-82
+number: '82'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:18.0
+votes: '0'
+watches: '2'
+workflowId: '10523'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1223'
+  created: 2016-11-07 18:27:18.0
+  id: '13549'
+  issue: '10420'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:18.0

@@ -1,0 +1,30 @@
+---
+summary: Consider zipping HTTP responses
+---
+created: 2014-11-26 17:43:28.0
+creator: leonerd
+description: ''
+id: '10720'
+key: SYN-176
+number: '176'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '3'
+resolutiondate: 2015-01-07 13:26:38.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:08.0
+votes: '0'
+watches: '2'
+workflowId: '10820'
+---
+actions:
+- author: kegan
+  body: SYN-182
+  created: 2015-01-07 13:26:38.0
+  id: '11059'
+  issue: '10720'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-07 13:26:38.0

@@ -1,0 +1,44 @@
+---
+summary: Slack bridge
+---
+created: 2014-12-02 14:34:22.0
+creator: matthew
+description: |-
+  It'd probably make sense to build a slack<->matrix bridge just like the IRC one, as slack is getting increasing penetration and we'd like to obviously let it play nice with Matrix.
+
+  Reuqest comes from James at Truphone, plus I suspect Amandine would secretly like one too.
+id: '10752'
+key: BOTS-11
+number: '11'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-09-17 16:59:39.0
+status: '5'
+type: '2'
+updated: 2015-09-17 16:59:39.0
+votes: '0'
+watches: '3'
+workflowId: '10852'
+---
+actions:
+- author: leonerd
+  body: The way my er-rewrite branch of the IRC bridge now works means that IRC and Matrix are just two plugins into a shared "message bus" inbetween. If we write a slack plugin for that, then instantly we get any combination of up-to 3-way bridging if required.
+  created: 2015-02-03 18:12:52.0
+  id: '11216'
+  issue: '10752'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-03 18:12:52.0
+- author: kegan
+  body: |-
+    This is now A Thing.
+
+    https://github.com/matrix-org/matrix-appservice-slack
+  created: 2015-09-17 16:59:39.0
+  id: '12135'
+  issue: '10752'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-17 16:59:39.0

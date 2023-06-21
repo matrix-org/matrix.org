@@ -1,0 +1,22 @@
+---
+summary: Horrible experience trying to enter a new HS in settings
+---
+created: 2015-11-09 16:29:43.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Every time you enter a new HS URL, it forgets your username & password. If the HS is inaccessible, it can lock up trying to talk to it. The username/password details are sometimes shown over the top of the error message, hiding it. Large error messages can push the login button off the bottom of the page
+id: '12100'
+key: SYIOS-173
+number: '173'
+priority: '3'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-11-09 16:29:43.0
+votes: '0'
+watches: '1'
+workflowId: '12203'
+---
+actions: null

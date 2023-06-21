@@ -1,0 +1,52 @@
+---
+summary: We need a way to be able to expire data from a HS.
+---
+created: 2015-02-24 17:50:40.0
+creator: matthew
+description: |-
+  This could be implementation-specific, or via a standard admin API.
+
+  Eitherway, we need a way to tell HSes to:
+   * no longer store this room
+   * only keep N messages for this room
+   * expire more than N messages for this room
+   * only keep X days of messages for this room
+   * purge state from this room (as opposed to messages)?
+id: '11135'
+key: SPEC-141
+number: '141'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:12.0
+votes: '1'
+watches: '3'
+workflowId: '11235'
+---
+actions:
+- author: matthew
+  body: The "No longer store this room" use case is now important given the history of rooms we have left are now returned to clients - we need a way to tell the server "no, really, leave and forget this conversation forever please".
+  created: 2015-09-10 16:02:55.0
+  id: '12124'
+  issue: '11135'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-10 16:02:55.0
+- author: matthew
+  body: (A workaround for this in the short term would be to tag rooms you want to purge as 'purge' or something via SPEC-218 and filter them out on the client, but clearly this should be done serverside)
+  created: 2015-09-10 16:07:10.0
+  id: '12125'
+  issue: '11135'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-10 16:07:10.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/447'
+  created: 2016-10-28 16:27:12.0
+  id: '13296'
+  issue: '11135'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:12.0

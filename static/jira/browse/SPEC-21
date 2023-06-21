@@ -1,0 +1,27 @@
+---
+summary: We need to specify maximum sizes and other validation criteria for various data types
+---
+created: 2014-09-25 15:42:47.0
+creator: matthew
+description: |-
+  For instance:
+   * What's the maximum size for an event?
+     * A user ID?
+     * A room ID?
+     * A room alias?
+id: '10397'
+key: SPEC-21
+number: '21'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-10-13 17:01:29.0
+status: '5'
+type: '1'
+updated: 2015-10-13 17:01:29.0
+votes: '0'
+watches: '1'
+workflowId: '10500'
+---
+actions: null

@@ -1,0 +1,30 @@
+---
+summary: Ratelimit all of the CS API that creates events
+---
+created: 2014-10-16 10:17:18.0
+creator: markjh
+description: ''
+id: '10479'
+key: SYN-105
+number: '105'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-01-08 15:37:12.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:26:23.0
+votes: '0'
+watches: '2'
+workflowId: '10583'
+---
+actions:
+- author: kegan
+  body: We now rate limit all events from CS.
+  created: 2015-01-08 15:37:12.0
+  id: '11066'
+  issue: '10479'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-08 15:37:12.0

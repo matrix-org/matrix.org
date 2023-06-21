@@ -1,0 +1,30 @@
+---
+summary: public_baseurl config option is not canonicalised with / suffix correctly
+---
+created: 2016-05-13 18:14:14.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  The param is fixed up, but nothing uses the fixed value anywhere?
+id: '12662'
+key: SYN-694
+number: '694'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:31.0
+votes: '0'
+watches: '2'
+workflowId: '12762'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1374'
+  created: 2016-11-07 18:29:31.0
+  id: '13858'
+  issue: '12662'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:31.0

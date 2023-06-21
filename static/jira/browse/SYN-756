@@ -1,0 +1,30 @@
+---
+summary: Check if we are vulnerable to AES crash vuln in pycrypto
+---
+created: 2016-08-27 20:58:37.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  https://github.com/dlitz/pycrypto/issues/176 and https://pony7.fr/ctf:public:32c3:cryptmsg
+id: '12808'
+key: SYN-756
+number: '756'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:56.0
+votes: '0'
+watches: '2'
+workflowId: '12908'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1589'
+  created: 2016-11-07 18:29:56.0
+  id: '13913'
+  issue: '12808'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:56.0

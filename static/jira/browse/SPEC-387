@@ -1,0 +1,39 @@
+---
+summary: Improve documentation of token auth
+---
+created: 2016-04-18 17:31:48.0
+creator: richvdh
+description: |-
+  https://matrix.org/docs/spec/r0.0.1/client_server.html#token-based is unclear; in particular:
+
+  * several people have confused this token with access tokens and refresh tokens; it would be helpful to spell out that these tokens are a third sort of token.
+  * the spec says the token must be a macaroon, but does not clarify what a macaroon is.
+id: '12630'
+key: SPEC-387
+number: '387'
+priority: '3'
+project: '10001'
+reporter: richvdh
+resolution: '1'
+resolutiondate: 2016-10-06 18:12:14.0
+status: '5'
+type: '1'
+updated: 2016-10-06 18:12:15.0
+votes: '0'
+watches: '2'
+workflowId: '12730'
+---
+actions:
+- author: richvdh
+  body: |-
+    https://github.com/matrix-org/matrix-doc/pull/395 removed the compulsory macaroonification
+
+    https://github.com/matrix-org/matrix-doc/pull/367 clarified token login.
+
+    Accordingly, I think this is fixed.
+  created: 2016-10-06 18:12:15.0
+  id: '13171'
+  issue: '12630'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 18:12:15.0

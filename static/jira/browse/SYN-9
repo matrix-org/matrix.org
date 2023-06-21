@@ -1,0 +1,28 @@
+---
+summary: We should reap kicked users from the membership list
+---
+created: 2014-09-15 23:42:43.0
+creator: matthew
+description: ''
+id: '10014'
+key: SYN-9
+number: '9'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:10.0
+votes: '0'
+watches: '2'
+workflowId: '10343'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1203'
+  created: 2016-11-07 18:27:10.0
+  id: '13534'
+  issue: '10014'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:10.0

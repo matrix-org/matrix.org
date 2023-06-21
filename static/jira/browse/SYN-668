@@ -1,0 +1,30 @@
+---
+summary: We really really really need to update the matrix.org IS
+---
+created: 2016-03-30 18:02:29.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  People are getting 500s when trying to use it with Vector
+id: '12603'
+key: SYN-668
+number: '668'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:21.0
+votes: '0'
+watches: '2'
+workflowId: '12703'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1525'
+  created: 2016-11-07 18:29:21.0
+  id: '13834'
+  issue: '12603'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:21.0

@@ -1,0 +1,30 @@
+---
+summary: default priority on JIRA should be null, not P3 :/
+---
+created: 2016-02-23 00:20:54.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12517'
+key: ORG-42
+number: '42'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '2'
+resolutiondate: 2017-03-21 11:11:41.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:11:41.0
+votes: '0'
+watches: '2'
+workflowId: '12617'
+---
+actions:
+- author: richvdh
+  body: jira is dead
+  created: 2017-03-21 11:11:41.0
+  id: '14023'
+  issue: '12517'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:11:41.0

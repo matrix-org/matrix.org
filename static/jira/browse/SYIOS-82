@@ -1,0 +1,20 @@
+---
+summary: Use iOS8 push notifs to do an inline-reply function or swipe-to-reply or similar.
+---
+created: 2015-02-16 01:47:45.0
+creator: matthew
+description: ''
+id: '11070'
+key: SYIOS-82
+number: '82'
+priority: '3'
+project: '10200'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2015-02-16 08:21:07.0
+votes: '0'
+watches: '1'
+workflowId: '11170'
+---
+actions: null

@@ -1,0 +1,127 @@
+---
+summary: Synapse config makes debianising package difficult
+---
+created: 2015-06-16 17:17:43.0
+creator: leonerd
+description: |-
+  The current arrangement of the config file makes building a debian package somewhat harder than it probably ought to be.
+
+  Of specific note is the fact that a single default config file cannot be shipped in the package, because it would have to specify a hostname. Instead, one has to be created by the administrator after it's installed.
+
+  However, the default new config file will want to place things like the PID file and {{media_store}} directory next to the config file, as siblings in the directory. Given as this directory would be {{/etc/matrix-synapse}} in a debian package, that is non-ideal.
+
+  Ideally the PID file lives in {{/var/run/synapse}} and the media store is somewhere under {{/var/lib/synapse}}
+id: '11658'
+key: SYN-420
+number: '420'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-08-07 17:57:25.0
+status: '5'
+type: '4'
+updated: 2015-08-07 17:57:25.0
+votes: '0'
+watches: '2'
+workflowId: '11759'
+---
+actions:
+- author: leonerd
+  body: Actually there's a suggestion (yet to be confirmed) that {{generate-config}} can read an existing config file as a template. So if that's the case that may suffice.
+  created: 2015-08-06 10:16:53.0
+  id: '12053'
+  issue: '11658'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-08-06 10:16:53.0
+- author: leonerd
+  body: |-
+    Annoyingly,
+
+    {noformat}
+    $ /usr/bin/python -m "synapse.app.homeserver" --config-path /etc/matrix-synapse/homeserver.yaml --generate-config
+    Must specify a server_name to a generate config for.
+    {noformat}
+
+    My config file already has the server name in it; why do I need to specify it a second time?
+
+    Maybe it would be better to have a {{--generate-keys}} instead?
+  created: 2015-08-06 17:18:48.0
+  id: '12054'
+  issue: '11658'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-08-06 17:18:48.0
+- author: markjh
+  body: Yeah. That's not intended behaviour. It would probably be better --generate-config just handled the case where we wanted to generate a config file, and --generate-keys created the keys if they didn't exist.
+  created: 2015-08-06 17:29:40.0
+  id: '12055'
+  issue: '11658'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-08-06 17:29:40.0
+- author: leonerd
+  body: |-
+    Right. Some improvement. I now have a debian package that asks the user for server name via debconf and manages that in the config file. It generates keys on startup.
+
+    It's a bit noisy though:
+
+    {noformat}
+    $ sudo /etc/init.d/matrix-synapse restart
+    [....] Restarting matrix-synapse: matrix-synapseConfig file '/etc/matrix-synapse/homeserver.yaml' already exists
+    Generating any missing keys for 'a.different.name'
+    2015-08-06 17:31:29,973 - synapse.python_dependencies - 102 - INFO - - Using 'yaml' version '3.11' from '/usr/lib/python2.7/dist-packages/yaml/__init__.pyc' to satisfy 'pyyaml'
+    2015-08-06 17:31:29,973 - synapse.python_dependencies - 102 - INFO - - Using 'bcrypt' version None from '/usr/lib/python2.7/dist-packages/bcrypt/__init__.pyc' to satisfy 'py-bcrypt'
+    2015-08-06 17:31:29,973 - synapse.python_dependencies - 102 - INFO - - Using 'PIL' version None from '/usr/lib/python2.7/dist-packages/PIL/__init__.pyc' to satisfy 'pillow'
+    2015-08-06 17:31:29,973 - synapse.python_dependencies - 102 - INFO - - Using 'frozendict' version None from '/usr/lib/python2.7/dist-packages/frozendict/__init__.pyc' to satisfy 'frozendict>=0.4'
+    2015-08-06 17:31:29,974 - synapse.python_dependencies - 102 - INFO - - Using 'syweb' version '0.6.6' from '/usr/lib/python2.7/dist-packages/syweb/__init__.pyc' to satisfy 'matrix_angular_sdk>=0.6.6'
+    2015-08-06 17:31:29,974 - synapse.python_dependencies - 102 - INFO - - Using 'OpenSSL' version '0.15.1' from '/usr/lib/python2.7/dist-packages/OpenSSL/__init__.pyc' to satisfy 'pyopenssl>=0.14'
+    2015-08-06 17:31:29,974 - synapse.python_dependencies - 102 - INFO - - Using 'twisted' version '14.0.2' from '/usr/lib/python2.7/dist-packages/twisted/__init__.pyc' to satisfy 'Twisted==14.0.2'
+    2015-08-06 17:31:29,974 - synapse.python_dependencies - 102 - INFO - - Using 'pydenticon' version None from '/usr/lib/python2.7/dist-packages/pydenticon/__init__.pyc' to satisfy 'pydenticon'
+    2015-08-06 17:31:29,974 - synapse.python_dependencies - 102 - INFO - - Using 'service_identity' version '1.0.0' from '/usr/lib/python2.7/dist-packages/service_identity/__init__.pyc' to satisfy 'service_identity>=1.0.0'
+    2015-08-06 17:31:29,974 - synapse.python_dependencies - 102 - INFO - - Using 'daemonize' version None from '/usr/lib/python2.7/dist-packages/daemonize.pyc' to satisfy 'daemonize'
+    2015-08-06 17:31:29,974 - synapse.python_dependencies - 102 - INFO - - Using 'nacl' version '0.3.0' from '/usr/lib/python2.7/dist-packages/nacl/__init__.pyc' to satisfy 'pynacl>=0.0.3'
+    2015-08-06 17:31:29,975 - synapse.python_dependencies - 102 - INFO - - Using 'syutil' version '0.0.7' from '/usr/lib/python2.7/dist-packages/syutil/__init__.pyc' to satisfy 'syutil>=0.0.7'
+    2015-08-06 17:31:29,975 - synapse.python_dependencies - 102 - INFO - - Using 'pyasn1' version '0.1.7' from '/usr/lib/python2.7/dist-packages/pyasn1/__init__.pyc' to satisfy 'pyasn1'
+    2015-08-06 17:31:29,975 - synapse.python_dependencies - 102 - INFO - - Using 'ujson' version '1.33' from '/usr/lib/python2.7/dist-packages/ujson.x86_64-linux-gnu.so' to satisfy 'ujson'
+    2015-08-06 17:31:29,999 - synapse.app.homeserver - 423 - INFO - - Server hostname: a.different.name
+    2015-08-06 17:31:29,999 - synapse.app.homeserver - 424 - INFO - - Server version: Synapse/0.9.2
+    2015-08-06 17:31:30,033 - synapse.app.homeserver - 177 - INFO - - Adding the web client.
+    2015-08-06 17:31:30,033 - synapse.app.homeserver - 196 - INFO - - Attaching <twisted.web.resource.EncodingResourceWrapper object at 0x7f91a15f3b90> to path /_matrix/client/api/v1
+    2015-08-06 17:31:30,034 - synapse.app.homeserver - 196 - INFO - - Attaching <twisted.web.resource.EncodingResourceWrapper object at 0x7f91a15f3e50> to path /_matrix/client/v2_alpha
+    2015-08-06 17:31:30,034 - synapse.app.homeserver - 196 - INFO - - Attaching <synapse.http.server.JsonResource object at 0x7f91a16a09d0> to path /_matrix/federation/v1
+    2015-08-06 17:31:30,034 - synapse.app.homeserver - 196 - INFO - - Attaching <synapse.rest.media.v0.content_repository.ContentRepoResource instance at 0x7f91a15cd518> to path /_matrix/content
+    2015-08-06 17:31:30,034 - synapse.app.homeserver - 196 - INFO - - Attaching <synapse.rest.key.v1.server_key_resource.LocalKey instance at 0x7f91a15e6710> to path /_matrix/key/v1
+    2015-08-06 17:31:30,034 - synapse.app.homeserver - 196 - INFO - - Attaching <synapse.rest.key.v2.KeyApiV2Resource instance at 0x7f91a161fcb0> to path /_matrix/key/v2
+    2015-08-06 17:31:30,034 - synapse.app.homeserver - 196 - INFO - - Attaching <synapse.rest.media.v1.media_repository.MediaRepositoryResource instance at 0x7f91a15c6290> to path /_matrix/media/v1
+    2015-08-06 17:31:30,035 - synapse.app.homeserver - 196 - INFO - - Attaching FilePath('/home/leo/src/matrix/deb/matrix-synapse-0.9.2/static') to path /_matrix/static
+    2015-08-06 17:31:30,035 - synapse.app.homeserver - 196 - INFO - - Attaching FilePath('/usr/lib/python2.7/dist-packages/syweb/webclient') to path /_matrix/client
+    2015-08-06 17:31:30,035 - synapse.app.homeserver - 454 - INFO - - Preparing database: {'args': {'cp_max': 1, 'cp_openfun': <bound method Sqlite3Engine.on_new_connection of <synapse.storage.engines.sqlite3.Sqlite3Engine object at 0x7f91a7e5a4d0>>, 'check_same_thread': False, 'cp_min': 1, 'database': '/var/lib/matrix-synapse/homeserver.db'}, 'name': 'sqlite3'}...
+    2015-08-06 17:31:30,037 - synapse.app.homeserver - 476 - INFO - - Database prepared in {'args': {'cp_max': 1, 'cp_openfun': <bound method Sqlite3Engine.on_new_connection of <synapse.storage.engines.sqlite3.Sqlite3Engine object at 0x7f91a7e5a4d0>>, 'check_same_thread': False, 'cp_min': 1, 'database': '/var/lib/matrix-synapse/homeserver.db'}, 'name': 'sqlite3'}.
+    2015-08-06 17:31:30,039 - twisted - 455 - INFO - - SynapseSite (TLS) starting on 8448
+    2015-08-06 17:31:30,039 - twisted - 455 - INFO - - Starting factory <__main__.SynapseSite instance at 0x7f91a15e6488>
+    2015-08-06 17:31:30,040 - synapse.app.homeserver - 265 - INFO - - Synapse now listening on port 8448
+    2015-08-06 17:31:30,040 - twisted - 455 - INFO - - SynapseSite starting on 8008
+    2015-08-06 17:31:30,040 - twisted - 455 - INFO - - Starting factory <__main__.SynapseSite instance at 0x7f91a15e6758>
+    2015-08-06 17:31:30,041 - synapse.app.homeserver - 277 - INFO - - Synapse now listening on port 8008
+    /var/run/matrix-synapse.pid
+    . ok 
+    {noformat}
+  created: 2015-08-06 17:35:39.0
+  id: '12056'
+  issue: '11658'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-08-06 17:35:39.0
+- author: leonerd
+  body: |-
+    These issues are now resolved by
+
+    https://github.com/matrix-org/synapse/commit/e69b669
+  created: 2015-08-07 17:57:25.0
+  id: '12057'
+  issue: '11658'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-08-07 17:57:25.0

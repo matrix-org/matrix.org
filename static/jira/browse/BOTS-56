@@ -1,0 +1,46 @@
+---
+summary: we should bridge irc.mozilla.org as well as freenode
+---
+created: 2015-06-19 20:39:51.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11676'
+key: BOTS-56
+number: '56'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-08-04 17:03:37.0
+status: '5'
+type: '1'
+updated: 2015-08-04 17:03:37.0
+votes: '0'
+watches: '3'
+workflowId: '11777'
+---
+actions:
+- author: kegan
+  body: Any reason why we don't just do this now? We can run it like we did on freenode before we got an i-line?
+  created: 2015-06-22 15:39:13.0
+  id: '11904'
+  issue: '11676'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-22 15:39:13.0
+- author: matthew
+  body: happy to do it asap. i just don't know what the per-IP connection limit is.  looks like MAXCHANNELS per user is 100 (as opposed to freenode's 120).  Guess we can set it going and see when it barfs on the per-IP limit?
+  created: 2015-06-23 02:38:31.0
+  id: '11907'
+  issue: '11676'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-23 02:38:31.0
+- author: kegan
+  body: Looks to be <50 given https://bugzilla.mozilla.org/show_bug.cgi?id=901009
+  created: 2015-06-23 08:16:59.0
+  id: '11908'
+  issue: '11676'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-23 08:16:59.0

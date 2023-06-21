@@ -1,0 +1,28 @@
+---
+summary: Redacted events retain origin_server_ts key
+---
+created: 2016-08-30 04:25:58.0
+creator: ben.e.saunders@gmail.com
+description: ''
+id: '12811'
+key: SYN-759
+number: '759'
+priority: '4'
+project: '10000'
+reporter: ben.e.saunders@gmail.com
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:58.0
+votes: '0'
+watches: '2'
+workflowId: '12911'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1591'
+  created: 2016-11-07 18:29:58.0
+  id: '13916'
+  issue: '12811'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:58.0

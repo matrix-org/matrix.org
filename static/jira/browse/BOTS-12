@@ -1,0 +1,22 @@
+---
+summary: IRC Bridge doesn't handle resends for unsent msgs
+---
+created: 2014-12-21 22:17:19.0
+creator: matthew
+description: ''
+id: '10850'
+key: BOTS-12
+number: '12'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-07-31 11:56:46.0
+status: '5'
+type: '2'
+updated: 2015-07-31 11:56:47.0
+votes: '0'
+watches: '1'
+workflowId: '10950'
+---
+actions: null

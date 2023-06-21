@@ -1,0 +1,54 @@
+---
+summary: Messages should have linkable URLs
+---
+created: 2014-09-20 00:45:52.0
+creator: matthew
+description: "I'm seeing a lot of scenarios where it'd be really nice to be able to link to a given message.  E.g:\n\nitsnotmoi:\tgotcha. i wondered if clicking to an idle nick would take me to their last said thing but it takes me to their ID page\t\nMatthew: mm, having recent history on the ID page could be rather useful though - \"Foo was last seen at <foo> in #bar:baz.com - saying <clicky linked messages>\""
+id: '10351'
+key: SYWEB-65
+number: '65'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2014-11-25 17:38:41.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:48.0
+votes: '0'
+watches: '3'
+workflowId: '10454'
+---
+actions:
+- author: kegan
+  body: |-
+    Need more clarification.
+
+    There already are clickable URLs.
+  created: 2014-10-31 09:43:12.0
+  id: '10712'
+  issue: '10351'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-31 09:43:12.0
+- author: matthew
+  body: |-
+    I tried to clarify in the description.
+
+    The ask here is to provide a URL schema in the client which lets you jump to specific messages - e.g. http://server/_matrix/client/#/message/<msgid> - or perhaps http://server/_matrix/client//#/room/!XqBunHwQIXUiqCaoxq:matrix.org/message/<msgid>, so i can say:
+
+    "Kegan: what did you make of this convo? http://server/_matrix/client//#/room/!XqBunHwQIXUiqCaoxq:matrix.org/message/<msgid>"
+  created: 2014-10-31 10:12:13.0
+  id: '10715'
+  issue: '10351'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-31 10:12:13.0
+- author: kegan
+  body: SYWEB-95
+  created: 2014-11-25 17:38:41.0
+  id: '10844'
+  issue: '10351'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-25 17:38:41.0

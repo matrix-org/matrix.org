@@ -1,0 +1,61 @@
+---
+summary: Validation errors in error responses
+---
+created: 2016-05-20 10:19:53.0
+creator: jimmycuadra
+description: |-
+  It would be very useful if error responses included a Rails-style errors object with details of why a request was rejected on a per-field basis. Right now, when you submit a request with a large and complicated structure and an error is returned, it can be very difficult to figure out why it was rejected, since all you have to go on is an error code and a single, general message.
+
+  I'm imagining something like this:
+
+  {code:javascript}
+  {
+    "errcode": "M_BAD_JSON",
+    "error": "The request failed validation.",
+    "errors": {
+      "base": [
+        "You cannot supply both the foo and the bar key at the same time."
+      ],
+      "fields": {
+        "foo": [
+          "cannot be blank"
+        ],
+        "bar": [
+          "must be a positive integer"
+        ]
+      }
+    }
+  }
+  {code}
+
+  The {{errors}} key-value pair itself would be optional for backwards compatibility and if there would be nothing valuable to put there for a given request, but if present, it would contain both base and field-level validation error messages, either of which could be empty if they don't apply.
+id: '12670'
+key: SPEC-405
+number: '405'
+priority: '4'
+project: '10001'
+reporter: jimmycuadra
+status: '1'
+type: '4'
+updated: 2016-10-28 16:28:34.0
+votes: '0'
+watches: '2'
+workflowId: '12770'
+---
+actions:
+- author: richvdh
+  body: Seems like a good idea. I like the fact that this wouldn't be necessary for either server or client, so could be introduced without much pain.
+  created: 2016-05-23 16:47:47.0
+  id: '12928'
+  issue: '12670'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-23 16:47:47.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/678'
+  created: 2016-10-28 16:28:34.0
+  id: '13487'
+  issue: '12670'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:34.0

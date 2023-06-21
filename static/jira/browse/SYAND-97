@@ -1,0 +1,22 @@
+---
+summary: When swipping from left in a room an empty white space is displayed
+---
+created: 2015-07-09 15:29:48.0
+creator: bob
+description: ''
+id: '11740'
+key: SYAND-97
+number: '97'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-07-10 09:07:39.0
+status: '5'
+type: '1'
+updated: 2015-07-10 09:07:39.0
+votes: '0'
+watches: '1'
+workflowId: '11841'
+---
+actions: null

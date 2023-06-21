@@ -1,0 +1,72 @@
+---
+summary: Reduce confusion between topological and stream position tokens
+---
+created: 2015-11-05 17:33:26.0
+creator: richvdh
+description: |-
+  The client-server API has two types of position identifiers, representing two views of the ordering of events:
+  * topological (tNN-NNN_NNN_NNN_NNN) (aka pagination token)
+  * stream (sNNN_NNN_NNN_NNN)
+
+  A topological position only makes sense within the context of a particular room, and refers to a particular point on the event DAG. The events between two topo tokens are subject to change, as the DAG changes over time.
+
+  A stream position is a global identifier across all rooms, and refers to a point on the timeline of when the server received the event (which may be wildly different to where it fits on the graph, or where it happened in a different server's timeline).
+
+  {{/sync}} returns events in the stream timeline order, and takes a stream position token as a 'since' parameter.
+
+  {{/room/<x>/messages}} works in the topological timeline order, and takes a topological token as a 'from' parameter.
+
+  It's easy to misunderstand what one can do with these tokens. In particular, {{/sync}} currently returns:
+  * {{next_batch}}: a streaming token from which streaming can be resumed next time
+  * {{rooms.x.timeline.prev_batch}}: a topological token. The idea is that you can back-populate from here.
+
+  We should do our best to reduce the confusion by making sure that we have a consistent set of names which make it clear what sort of token is expected.
+id: '12088'
+key: SPEC-268
+number: '268'
+priority: '3'
+project: '10001'
+reporter: richvdh
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:52.0
+votes: '0'
+watches: '1'
+workflowId: '12191'
+---
+actions:
+- author: richvdh
+  body: |-
+    I floated one idea, which was to make {{/messages}} take both sorts of tokens, and don't make clients worry about the differences.
+
+    However, on further consideration, even if we did allow {{/messages}} to take both sorts of tokens, I think a client really needs to understand the difference between the two sorts of token (for instance: the scoping to room vs global). [~erikj] thought it would probably only add to the confusion. So I think that idea is probably flawed.
+  created: 2015-11-05 18:15:41.0
+  id: '12341'
+  issue: '12088'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 18:15:41.0
+- author: richvdh
+  body: So should we just rename the {{next_batch}} field in the {{/sync}} response? How about {{global_stream_position}}? (I think 'next' can be implicit here, since the stream position explicitly only ever goes forward.)
+  created: 2015-11-05 18:17:29.0
+  id: '12342'
+  issue: '12088'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 18:17:29.0
+- author: richvdh
+  body: A decision on this has been deferred pending figuring out where we want to go with topo tokens and stream tokens in general (and whether it makes sense to support topo tokens in the C-S API at all)
+  created: 2015-11-19 11:36:06.0
+  id: '12372'
+  issue: '12088'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-19 11:36:06.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/574'
+  created: 2016-10-28 16:27:52.0
+  id: '13382'
+  issue: '12088'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:52.0

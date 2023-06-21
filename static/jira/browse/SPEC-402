@@ -1,0 +1,32 @@
+---
+summary: Should HSes send email invites now?
+---
+created: 2016-05-11 17:39:12.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  To make them easier to brand. The actual binding operation would still be done by the IS
+id: '12657'
+key: SPEC-402
+number: '402'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '4'
+resolutiondate: 2016-09-27 17:56:01.0
+status: '5'
+type: '1'
+updated: 2016-09-27 17:56:01.0
+votes: '0'
+watches: '2'
+workflowId: '12757'
+---
+actions:
+- author: richvdh
+  body: maybe? who knows? This is a bit vague right now.
+  created: 2016-09-27 17:56:01.0
+  id: '13146'
+  issue: '12657'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:56:01.0

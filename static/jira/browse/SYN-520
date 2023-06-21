@@ -1,0 +1,22 @@
+---
+summary: synctl should surely run synapse inside a restarter loop
+---
+created: 2015-11-22 09:14:34.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12129'
+key: SYN-520
+number: '520'
+priority: '1'
+project: '10000'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-03-15 11:56:15.0
+status: '5'
+type: '1'
+updated: 2016-03-15 11:56:15.0
+votes: '0'
+watches: '1'
+workflowId: '12232'
+---
+actions: null

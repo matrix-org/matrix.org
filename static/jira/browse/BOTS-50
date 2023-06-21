@@ -1,0 +1,30 @@
+---
+summary: Check matrix appservice node is appropriate for a non-http register api world
+---
+created: 2015-06-13 21:54:20.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '11647'
+key: BOTS-50
+number: '50'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '2'
+resolutiondate: 2015-06-15 09:17:53.0
+status: '5'
+type: '1'
+updated: 2015-06-15 09:17:53.0
+votes: '0'
+watches: '2'
+workflowId: '11748'
+---
+actions:
+- author: kegan
+  body: Yup, still appropriate. README seems pretty clear on this.
+  created: 2015-06-15 09:17:53.0
+  id: '11864'
+  issue: '11647'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-15 09:17:53.0

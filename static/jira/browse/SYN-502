@@ -1,0 +1,55 @@
+---
+summary: /login 500s on invalid email addresses
+---
+created: 2015-10-20 10:56:12.0
+creator: kegan
+description: |-
+  Hit /login with a bad email address and password. You get 500'd. Stack:
+  {code}
+  2015-10-20 10:52:29,158 - synapse.http.server - 108 - ERROR - POST-681228 - Failed handle request synapse.http.server._async_render on <synapse.rest.client.v1.ClientV1RestResource object at 0x51a6710>: <SynapseRe
+  quest at 0x7f239dc2e128 method=POST uri=/_matrix/client/api/v1/login? clientproto=HTTP/1.1 site=8080>
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 87, in wrapped_request_handler
+      yield d
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/http/server.py", line 214, in _async_render
+      callback_return = yield callback(request, *args)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/client/v1/login.py", line 68, in on_POST
+      result = yield self.do_password_login(login_submission)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/rest/client/v1/login.py", line 107, in do_password_login
+      if not user_id.startswith('@'):
+  AttributeError: 'NoneType' object has no attribute 'startswith'
+  {code}
+
+  Version: a8945d24d10e74c9011a2ba934799a201d19e12c
+id: '12032'
+key: SYN-502
+number: '502'
+priority: '2'
+project: '10000'
+reporter: kegan
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:29.0
+votes: '0'
+watches: '2'
+workflowId: '12135'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1402'
+  created: 2016-11-07 18:28:29.0
+  id: '13711'
+  issue: '12032'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:29.0

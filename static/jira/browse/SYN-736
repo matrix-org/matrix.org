@@ -1,0 +1,28 @@
+---
+summary: Stats reporting should distinguish real from bridged users
+---
+created: 2016-07-23 02:30:14.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12767'
+key: SYN-736
+number: '736'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:47.0
+votes: '0'
+watches: '2'
+workflowId: '12867'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1572'
+  created: 2016-11-07 18:29:47.0
+  id: '13895'
+  issue: '12767'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:47.0

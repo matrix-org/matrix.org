@@ -1,0 +1,30 @@
+---
+summary: Support for client-side thumbnailing
+---
+created: 2015-11-01 22:00:08.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  It would be nice to be able to send thumbnails from clients in advance of the contents they thumbnail, to give perceptually fast file transfer - especially if combined with streaming file transfers. The event structure doesn't let us do that currently - and server-side thumbnail generation gets in the way too. We'd need to find a way to discourage clients from lying about their thumbnails.
+id: '12063'
+key: SPEC-257
+number: '257'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:47.0
+votes: '0'
+watches: '2'
+workflowId: '12166'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/563'
+  created: 2016-10-28 16:27:47.0
+  id: '13371'
+  issue: '12063'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:47.0

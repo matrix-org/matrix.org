@@ -1,0 +1,72 @@
+---
+summary: arasphere.net's homeserver 500'd on trying to (re)-join /#matrix:matrix.org after upgrade
+---
+created: 2014-10-31 18:17:11.0
+creator: matthew
+description: |-
+  I upgraded arasphere to 0.4.2 and synctl restarted.  It claimed before not to be joined into #matrix:matrix.org.  On /join #matrix:matrix.org (from the home page), i got:
+
+  {code}
+  "Can't join room: {"errcode":"M_UNKNOWN","error":"Unable to join remote room"}
+  {code}
+
+  and logs full of:
+
+  {code}
+  2014-10-31 18:03:14,650 - root - 41 - ERROR - SynapseError: 500, Unable to join remote room
+  2014-10-31 18:03:14,651 - synapse.http.server - 131 - ERROR - <Request at 0x17cb098 method=POST uri=/_matrix/client/api/v1/join/%23matrix%3Amatrix.org?access_token=... clientproto=HTTP/1.1> SynapseError: 500 - Unable to join remote room
+  {code}
+
+  {code}
+  2014-10-31 18:08:53,634 - synapse.util.lockutils - 45 - DEBUG - Releasing lock for key=u'!cURbafjkfsMDVwdRDQ:matrix.org'
+  2014-10-31 18:08:53,634 - synapse.storage.SQL - 52 - DEBUG - [SQL] SELECT pdu_id, origin, prev_pdu_id, prev_origin, context FROM pdu_edges WHERE pdu_i
+  d = ? AND origin = ?
+  2014-10-31 18:08:53,634 - synapse.storage.SQL - 57 - DEBUG - [SQL values] <ViQpQQgGfC>, <jki.re>
+  2014-10-31 18:08:53,634 - synapse.handlers.federation - 168 - ERROR - Failed to get current state for room !cURbafjkfsMDVwdRDQ:matrix.org
+  Traceback (most recent call last):
+    File "synapse/handlers/federation.py", line 150, in on_receive_pdu
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenera
+  tor
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/federation/replication.py", line 272, in get_state_for_context
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenera
+  tor
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/federation/replication.py", line 467, in _handle_new_pdu
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenera
+  tor
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/federation.py", line 101, in on_receive_pdu
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenera
+  tor
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/state.py", line 116, in handle_new_state
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/state.py", line 159, in _handle_new_state
+  Exception: Conflict resolution failed
+  {code}
+id: '10606'
+key: SYN-124
+number: '124'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2014-11-26 14:34:34.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:40.0
+votes: '0'
+watches: '1'
+workflowId: '10706'
+---
+actions: null

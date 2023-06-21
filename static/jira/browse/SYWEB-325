@@ -1,0 +1,23 @@
+---
+summary: Improve autocomplete with suggestions
+---
+created: 2015-03-12 23:57:00.0
+creator: jan
+description: |-
+  Mentioning people supports autocomplete by typing part of a persons username and pressing tab.
+
+  That could be improved by showing suggestions while typing, similar to how Twitter, IRCcloud, Github and the like are doing.
+id: '11215'
+key: SYWEB-325
+number: '325'
+priority: '3'
+project: '10004'
+reporter: jan
+status: '10100'
+type: '4'
+updated: 2015-03-12 23:57:00.0
+votes: '0'
+watches: '1'
+workflowId: '11315'
+---
+actions: null

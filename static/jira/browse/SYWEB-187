@@ -1,0 +1,38 @@
+---
+summary: Pre-calculate more names
+---
+assignee: kegan
+created: 2014-11-27 10:01:20.0
+creator: kegan
+description: |-
+  We currently pre-caclulate the room name and dump it in {{Room.name}}. 
+
+  I propose we also do this with {{User.name}} and {{RoomMember.name}} to avoid having things like 
+  {code}
+  {{msg.__room_member.cnt.displayname || msg.user_id | mUserDisplayName:room_id:true}}
+  {code}
+  lying around the HTML in 5 different places. This is not only DRY, but it is convenient in the HTML (you can just use {{msg.__room_member.name}}) and is less error-prone. It's also more efficient since potentially costly filters are not repeatedly invoked.
+id: '10725'
+key: SYWEB-187
+number: '187'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-11-27 14:56:10.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:06.0
+votes: '0'
+watches: '1'
+workflowId: '10825'
+---
+actions:
+- author: kegan
+  body: Not bothering with {{User.name}} since it's a trivial filter.
+  created: 2014-11-27 14:56:10.0
+  id: '10885'
+  issue: '10725'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-27 14:56:10.0

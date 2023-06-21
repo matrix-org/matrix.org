@@ -1,0 +1,24 @@
+---
+summary: Room info page UX
+---
+created: 2015-06-10 18:27:53.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  EditTexts are missing hints, so it isn't clear where to type. There's no Submit button (it is an android anti-pattern to submit when you back out of the page. Backing out should ask if you want to discard your changes.) There shouldn't be an option to set room aliases, this should be done by the HS only.
+id: '11634'
+key: SYAND-82
+number: '82'
+priority: '3'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-06-12 07:46:13.0
+status: '5'
+type: '1'
+updated: 2015-06-12 07:46:13.0
+votes: '0'
+watches: '1'
+workflowId: '11735'
+---
+actions: null

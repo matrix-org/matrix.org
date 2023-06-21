@@ -1,0 +1,25 @@
+---
+summary: Synapse doesn't work with (now current) Twisted 15
+---
+created: 2015-01-30 11:15:26.0
+creator: dbkr
+description: |-
+  Due to dependencies on twisted.web.client._URI.
+
+  I've changed the dependency to twisted==14.0.2 but this isn't really a long term solution.
+id: '10989'
+key: SYN-253
+number: '253'
+priority: '2'
+project: '10000'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2016-01-06 10:24:22.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:24:22.0
+votes: '0'
+watches: '1'
+workflowId: '11089'
+---
+actions: null

@@ -1,0 +1,51 @@
+---
+summary: SQLBaseStore _simple_delete method don't working
+---
+created: 2015-09-28 10:15:08.0
+creator: blropb
+description: |-
+  SQLBaseStore()._simple_delete not use args in return interaction
+  https://github.com/matrix-org/synapse/blob/master/synapse/storage/_base.py#L753
+
+  ====FIX====
+      def _simple_delete(self, table, keyvalues, desc="_simple_delete"):
+          """Executes a DELETE query on the named table.
+
+          Args:
+              table : string giving the table name
+              keyvalues : dict of column names and values to select the row with
+          """
+
+          return self.runInteraction(desc, self._simple_delete_txn, table, keyvalues)
+id: '11945'
+key: SYAND-132
+number: '132'
+priority: '3'
+project: '10201'
+reporter: blropb
+resolution: '2'
+resolutiondate: 2015-09-30 12:35:03.0
+status: '5'
+type: '1'
+updated: 2015-09-30 12:35:03.0
+votes: '0'
+watches: '2'
+workflowId: '12048'
+---
+actions:
+- author: blropb
+  body: excuse me, wrong project choice, remove pls
+  created: 2015-09-28 10:30:32.0
+  id: '12176'
+  issue: '11945'
+  type: comment
+  updateauthor: blropb
+  updated: 2015-09-28 10:30:32.0
+- author: m-ylecollen
+  body: Wrong project
+  created: 2015-09-30 12:35:03.0
+  id: '12198'
+  issue: '11945'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-30 12:35:03.0

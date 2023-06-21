@@ -1,0 +1,26 @@
+---
+summary: Set profile displayname or avatar_url takes ages
+---
+assignee: erikj
+created: 2014-11-19 16:28:07.0
+creator: manu
+description: |-
+  The following request on the attached db takes 20s on my brand new macbookpro:
+
+  curl 'http://localhost:8080/_matrix/client/api/v1/profile/%40mxAlice%3Alocalhost%3A8480/displayname?access_token=QG14QWxpY2U6bG9jYWxob3N0Ojg0ODA..yZUcbuhxWcPbngQiNS' -X PUT --data-binary '{"displayname":"mxAlice4"}'
+id: '10684'
+key: SYN-157
+number: '157'
+priority: '2'
+project: '10000'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-05-07 13:51:52.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:07.0
+votes: '0'
+watches: '1'
+workflowId: '10784'
+---
+actions: null

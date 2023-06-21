@@ -1,0 +1,30 @@
+---
+summary: Webclient chokes on video events
+---
+created: 2015-02-16 22:51:47.0
+creator: matthew
+description: ''
+id: '11081'
+key: SYWEB-287
+number: '287'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-03-02 17:40:54.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:55.0
+votes: '0'
+watches: '2'
+workflowId: '11181'
+---
+actions:
+- author: kegan
+  body: SYWEB-225
+  created: 2015-03-02 17:40:54.0
+  id: '11334'
+  issue: '11081'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-02 17:40:54.0

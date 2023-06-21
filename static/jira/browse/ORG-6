@@ -1,0 +1,56 @@
+---
+summary: Add "Maintenance", "Defect" and "Feature" categories for issues in JIRA
+---
+created: 2014-09-16 18:28:48.0
+creator: markjh
+description: |-
+  Can we some sort of multi-valued field for categorising issues in JIRA. I propose the following categories:
+
+   * "Feature": Adds a new button or label to the UI or a new method or parameter to an externally visible API.
+   * "Defect": An existing button or label in the UI or an existing method in an externally visible API isn't working as well as we want it to. That can mean anything from crashing to displaying wrong value or being too slow to be usable. This therefore includes things that are done to improve performance.
+   * "Maintenance": Something that makes developers lives easier like improving the codes structure, better logging and debug tools, better unit tests.
+
+  The categories aren't entirely exclusive. A change to re-factor database logic in a server might make the code easier to work with putting it in the "Maintenance" but also might fix problems with database performance at the same time putting it in the "Defect" category. So it should be possible to assign multiple categories to a single issue.
+id: '10303'
+key: ORG-6
+number: '6'
+priority: '3'
+project: '10003'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-01-20 10:16:50.0
+status: '5'
+type: '2'
+updated: 2015-01-20 10:16:50.0
+votes: '0'
+watches: '1'
+workflowId: '10320'
+---
+actions:
+- author: markjh
+  body: '"Feature" and "Defect" overlap slightly with the JIRA types New Feature and Bug. It might be sufficient to add a Maintenance type but it is sometimes nice to put an issue in multiple categories.'
+  created: 2014-09-16 19:07:26.0
+  id: '10302'
+  issue: '10303'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-16 19:07:26.0
+- author: markjh
+  body: |-
+    "class", "category", "tags" are things that I might accept as a name for this field.
+
+    I guess we could preserve the type field to indicate if it is new code or fixing old code or just doing something.
+  created: 2014-09-17 17:12:52.0
+  id: '10314'
+  issue: '10303'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-17 17:12:52.0
+- author: markjh
+  body: We might want to use "Defect/Improvement" instead of "Defect" to make people happier about assigning it to issues
+  created: 2014-09-17 17:14:19.0
+  id: '10315'
+  issue: '10303'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-17 17:14:19.0

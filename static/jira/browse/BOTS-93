@@ -1,0 +1,32 @@
+---
+summary: 'IRC AS: Re-invite matrix users who leave their PM room'
+---
+created: 2015-08-20 10:09:12.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  If you have a PM room with an IRC user and then the Matrix user leaves the room, any subsequent messages the IRC user sends will be black holed effectively. We should invite the user who left back to the room (or create a new room and clobber, which may be easier to avoid constantly checking room state)
+id: '11811'
+key: BOTS-93
+number: '93'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:18:57.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:18:57.0
+votes: '0'
+watches: '2'
+workflowId: '11914'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/41
+  created: 2016-06-02 10:18:57.0
+  id: '12947'
+  issue: '11811'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:18:57.0

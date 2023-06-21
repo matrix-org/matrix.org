@@ -1,0 +1,30 @@
+---
+summary: Logging is way too cryptic - can't see what happens to which HTTP client requests
+---
+created: 2014-09-16 00:41:15.0
+creator: matthew
+description: ''
+id: '10043'
+key: SYN-18
+number: '18'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-14 19:23:36.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:06:40.0
+votes: '0'
+watches: '3'
+workflowId: '10352'
+---
+actions:
+- author: markjh
+  body: https://github.com/matrix-org/synapse/pull/13
+  created: 2014-11-14 11:37:03.0
+  id: '10792'
+  issue: '10043'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-14 11:37:03.0

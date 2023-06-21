@@ -1,0 +1,23 @@
+---
+summary: Loading feedback when scrolling up for older messages
+---
+created: 2015-03-12 23:21:21.0
+creator: jan
+description: |-
+  The ability to scroll up and have the older messages lazily load is really cool! A small but very useful enhancement would be to show loading feedback while it’s processing. Just a small loading spinner would suffice.
+
+  Feel free to use the spinner we use in ownCloud: https://github.com/owncloud/core/blob/master/core/img/loading.gif (very simple and quite widely used)
+id: '11209'
+key: SYWEB-319
+number: '319'
+priority: '4'
+project: '10004'
+reporter: jan
+status: '10100'
+type: '4'
+updated: 2015-03-12 23:21:21.0
+votes: '0'
+watches: '1'
+workflowId: '11309'
+---
+actions: null

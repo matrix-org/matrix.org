@@ -1,0 +1,47 @@
+---
+summary: Guests can't join a room that's created on a different homeserver until a real user has joined that room from the same homeserver
+---
+created: 2016-03-18 10:15:11.0
+creator: neb
+description: Submitted by @dave:matrix.org
+id: '12565'
+key: SYN-655
+number: '655'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:16.0
+votes: '0'
+watches: '3'
+workflowId: '12665'
+---
+actions:
+- author: dbkr
+  body: |-
+    Irrespective of peeking, apparently.
+
+    Just says, "Guest access not allowed"
+  created: 2016-03-18 10:18:11.0
+  id: '12763'
+  issue: '12565'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-03-18 10:18:11.0
+- author: richvdh
+  body: Any idea why this might be? It sounds like a relatively easy fix?
+  created: 2016-06-27 22:33:34.0
+  id: '13024'
+  issue: '12565'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-27 22:33:34.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1515'
+  created: 2016-11-07 18:29:16.0
+  id: '13823'
+  issue: '12565'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:16.0

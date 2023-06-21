@@ -1,0 +1,39 @@
+---
+summary: Consider migrating from JIRA to GitHub Issues
+---
+assignee: richvdh
+created: 2016-02-09 09:56:16.0
+creator: jimmycuadra
+description: |-
+  For better or for worse, GitHub is the center of of open source software development today. Many if not most open source projects are hosted there. Matrix's code is hosted there, but the issue tracker is here, creating a split in tooling that most projects don't have and requiring people to sign up for an additional service to get involved. This creates a larger barrier to entry for contribution to Matrix.
+
+  Matrix's JIRA installation is also quite slow compared to GitHub. Though JIRA provides more features than GitHub Issues, many of them are not used, and effectively complicate the user experience without much benefit. I think using GitHub Issues for bug tracking, feature requests, and some amount of discussion about code for all of Matrix's projects would improve the experience for people interested in getting involved with Matrix.
+id: '12379'
+key: ORG-40
+number: '40'
+priority: '3'
+project: '10003'
+reporter: jimmycuadra
+resolution: '10000'
+resolutiondate: 2016-04-18 15:10:53.0
+status: '5'
+type: '3'
+updated: 2016-04-18 15:10:53.0
+votes: '0'
+watches: '2'
+workflowId: '12484'
+---
+actions:
+- author: richvdh
+  body: |-
+    We've discussed this a few times within the team, and the likelihood is that it won't be the last time it comes up.
+
+    Certainly the split between GitHub for code and Jira for bugs is less than satisfactory, and Jira is not without its issues (speed and overcomplexity being high among them). Nevertheless the feeling for now is that GitHub's issue-tracking is weak, and we're going to stick with Jira for at least the spec and Synapse for now. It's true that many open source projects use GitHub for their issue tracking, but Jira is not uncommon either.
+
+    I'm going to close this for now, not because we're dismissing migrating to Jira out of hand, but because the subject comes up regularly (within the team as well as in the public forums) and I don't think there's any value in having the issue open to remind us about it.
+  created: 2016-04-18 15:10:23.0
+  id: '12829'
+  issue: '12379'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 15:10:23.0

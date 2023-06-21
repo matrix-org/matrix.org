@@ -1,0 +1,20 @@
+---
+summary: Offline users don't show when they were last seen
+---
+created: 2015-06-02 00:38:40.0
+creator: matthew
+description: ''
+id: '11586'
+key: SYIOS-129
+number: '129'
+priority: '2'
+project: '10200'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-06-02 00:38:40.0
+votes: '0'
+watches: '1'
+workflowId: '11687'
+---
+actions: null

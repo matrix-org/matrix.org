@@ -1,0 +1,22 @@
+---
+summary: When a user updates their avatar, the timeline event for the change should show the new, not old, avatar.
+---
+created: 2015-04-20 17:46:38.0
+creator: matthew
+description: ''
+id: '11352'
+key: SYAND-72
+number: '72'
+priority: '3'
+project: '10201'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-22 08:23:44.0
+status: '5'
+type: '1'
+updated: 2015-04-22 08:23:44.0
+votes: '0'
+watches: '1'
+workflowId: '11452'
+---
+actions: null

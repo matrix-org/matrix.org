@@ -1,0 +1,33 @@
+---
+summary: 'Push: Flag events from the events stream that must be notified to the end user'
+---
+assignee: erikj
+created: 2015-03-12 11:02:21.0
+creator: manu
+description: |-
+  Currently, every client platform must implement the push rules logic in order to manage in-app notifications.
+  So, there is N implementations of them which seems risky in term of bug.
+
+  Could we keep the logic in one place: the homeserver and make the homeserver notify clients with additional information in events coming down the events stream?
+id: '11196'
+key: SYN-304
+number: '304'
+priority: '2'
+project: '10000'
+reporter: manu
+status: '3'
+type: '4'
+updated: 2016-11-07 18:27:48.0
+votes: '0'
+watches: '2'
+workflowId: '11296'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1292'
+  created: 2016-11-07 18:27:48.0
+  id: '13613'
+  issue: '11196'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:48.0

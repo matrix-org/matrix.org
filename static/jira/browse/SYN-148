@@ -1,0 +1,23 @@
+---
+summary: Alias events are created before the creation events for a room.
+---
+assignee: markjh
+created: 2014-11-17 16:20:20.0
+creator: erikj
+description: ''
+id: '10660'
+key: SYN-148
+number: '148'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-11-18 15:04:45.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:38.0
+votes: '0'
+watches: '1'
+workflowId: '10760'
+---
+actions: null

@@ -1,0 +1,77 @@
+---
+summary: Changing displayname is catastrophically slow.
+---
+created: 2015-03-13 20:35:47.0
+creator: matthew
+description: ''
+id: '11229'
+key: SYN-311
+number: '311'
+priority: '1'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:50.0
+votes: '0'
+watches: '6'
+workflowId: '11329'
+---
+actions:
+- author: matthew
+  body: |-
+    Kodo did this ~10 times in a row, each one taking ~180s despite him being in only a handful of channels, and took out matrix.org.
+
+    We need to fix this, *and* do dup suppression on the requests to avoid them stacking up and DoSing the world.
+  created: 2015-05-21 18:29:25.0
+  id: '11786'
+  issue: '11229'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-05-21 18:29:25.0
+- author: neb
+  body: 'By @kegan:matrix.org: this is a design problem. We need to send an event in every room, we cant get around that. We could maybe draw it out over time so it doesnt block other requests though.'
+  created: 2015-05-21 18:59:01.0
+  id: '11787'
+  issue: '11229'
+  type: comment
+  updateauthor: neb
+  updated: 2015-05-21 18:59:01.0
+- author: markjh
+  body: |-
+    I think this is because updating the display name causes synapse to emit join events for every room the user is in. Whenever synapse emits a join event in a room it broadcasts the presence to every remote server in the room. I think sending the presence per remote server per room is what is causing some of the problems.
+
+    Hopefully this will be improved by https://github.com/matrix-org/synapse/pull/410
+  created: 2015-12-03 13:16:04.0
+  id: '12424'
+  issue: '11229'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-12-03 13:16:04.0
+- author: erikj
+  body: |-
+    [~markjh]: Was this improved?
+
+    Longer term I would like to separate out profile information from joins, and potentially other things to make this nicer.
+  created: 2016-01-06 17:56:43.0
+  id: '12546'
+  issue: '11229'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 17:56:43.0
+- author: leonerd
+  body: I'd also be interested to see if this issue was improved by my recent fix to the way server key handling happens - the bugfix where it requeried every remote server every time...
+  created: 2016-01-13 20:11:04.0
+  id: '12570'
+  issue: '11229'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-01-13 20:11:04.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1297'
+  created: 2016-11-07 18:27:50.0
+  id: '13618'
+  issue: '11229'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:50.0

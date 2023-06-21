@@ -1,0 +1,41 @@
+---
+summary: Remote typing notifications do not time out
+---
+created: 2015-11-19 19:37:06.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Penguinball has had 'Jul is typing...' stuck on their HS for days
+id: '12121'
+key: SYN-518
+number: '518'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:34.0
+votes: '0'
+watches: '3'
+workflowId: '12224'
+---
+actions:
+- author: matthew
+  body: |-
+    And again, as of 23:10 GMT today:
+    Jon (@jon:terracrypt.net)
+    Ryan Rix: Vector has shown you as "typing" for the last few hours for me
+  created: 2016-01-02 23:42:05.0
+  id: '12494'
+  issue: '12121'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-02 23:42:05.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1415'
+  created: 2016-11-07 18:28:34.0
+  id: '13724'
+  issue: '12121'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:34.0

@@ -1,0 +1,60 @@
+---
+summary: Ability to edit room alias list in the room directory
+---
+created: 2014-09-15 23:27:06.0
+creator: matthew
+description: ''
+id: '10003'
+key: SYWEB-2
+number: '2'
+priority: '1'
+project: '10004'
+reporter: matthew
+status: '10200'
+type: '2'
+updated: 2015-01-02 16:57:26.0
+votes: '0'
+watches: '2'
+workflowId: '10388'
+---
+actions:
+- author: kegan
+  body: If only server admins can edit this list, what use is there to providing a UI at this time?
+  created: 2014-10-27 12:07:21.0
+  id: '10591'
+  issue: '10003'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 12:07:21.0
+- author: kegan
+  body: What was the conclusion on this? Do we need a corresponding SYN issue for alias creators to have permissions to delete their own aliases?
+  created: 2014-12-29 09:23:33.0
+  id: '11036'
+  issue: '10003'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-29 09:23:33.0
+- author: matthew
+  body: that would be SYN-83, and seperately the bigger question in SYN-66.
+  created: 2014-12-29 10:51:13.0
+  id: '11041'
+  issue: '10003'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-29 10:51:13.0
+- author: kegan
+  body: Linked in corresponding SYN issues.
+  created: 2015-01-02 11:40:16.0
+  id: '11043'
+  issue: '10003'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-02 11:40:16.0
+- author: kegan
+  body: Blocked on corresponding SYN issues.
+  created: 2015-01-02 16:57:26.0
+  id: '11045'
+  issue: '10003'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-02 16:57:26.0

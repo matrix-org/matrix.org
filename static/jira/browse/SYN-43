@@ -1,0 +1,52 @@
+---
+summary: We need a flag on rooms to make them local-HS only.
+---
+assignee: erikj
+created: 2014-09-16 14:56:31.0
+creator: matthew
+description: ''
+id: '10209'
+key: SYN-43
+number: '43'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-01-06 17:20:45.0
+status: '5'
+type: '2'
+updated: 2016-01-06 17:20:45.0
+votes: '0'
+watches: '3'
+workflowId: '10373'
+---
+actions:
+- author: matthew
+  body: What about the idea of supporting subsets of federation where data is allowed to reside?  E.g. if company A acquires B, their respective HSes should trust each other without having to migrate all the accounts from HS B to A...
+  created: 2014-09-29 01:52:55.0
+  id: '10462'
+  issue: '10209'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-29 01:52:55.0
+- author: matthew
+  body: |-
+    So, i brought this up again on IRC given I continue to see it as a priority for any non-toy usage of Matrix.  Conclusion was that you might as well have an m.room.allowed_homeservers state key on a room which suitably empowered individuals can edit, which specifies the domains of the homeservers who are trusted to federate with this room.  e.g.: m.room.allowed_homeservers: ["openmarket.com", "mxtelecom.com"].
+
+    It could be nice to make these lists somehow reusable, and optionally immutable for the security paranoid.
+
+    Can someone tell me how hard this would actually be to implement on synapse?
+  created: 2014-10-03 18:06:12.0
+  id: '10516'
+  issue: '10209'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-03 18:06:12.0
+- author: erikj
+  body: We now support non-federatable rooms
+  created: 2016-01-06 17:20:45.0
+  id: '12545'
+  issue: '10209'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 17:20:45.0

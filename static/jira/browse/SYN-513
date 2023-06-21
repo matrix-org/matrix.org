@@ -1,0 +1,25 @@
+---
+summary: If I delete a room tag, i don't seem to get an event down the stream to tell me
+---
+assignee: markjh
+created: 2015-11-08 13:40:20.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  This is a major problem in keeping clients in sync, especially as the current implementation on vector relies on the server confirming operations via the events stream to keep the client state in sync with the UI
+id: '12093'
+key: SYN-513
+number: '513'
+priority: '1'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-11-09 15:17:06.0
+status: '5'
+type: '1'
+updated: 2015-11-09 15:17:06.0
+votes: '0'
+watches: '1'
+workflowId: '12196'
+---
+actions: null

@@ -1,0 +1,30 @@
+---
+summary: Should we have a dedicated API for measuring lag?
+---
+created: 2016-02-02 14:12:46.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  It could be nice to have a way to tell clients how lagged they are - either as a ping/pong API, or more metadata on /sync, or perhaps something in the transport layer
+id: '12361'
+key: SPEC-341
+number: '341'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:15.0
+votes: '0'
+watches: '2'
+workflowId: '12466'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/631'
+  created: 2016-10-28 16:28:15.0
+  id: '13439'
+  issue: '12361'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:15.0

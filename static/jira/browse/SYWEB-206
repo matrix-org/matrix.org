@@ -1,0 +1,42 @@
+---
+summary: The member list UI is not updated when the power level of an user changes
+---
+assignee: manu
+created: 2014-12-03 11:10:42.0
+creator: manu
+description: ''
+id: '10761'
+key: SYWEB-206
+number: '206'
+priority: '2'
+project: '10004'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-03 13:23:01.0
+status: '6'
+type: '1'
+updated: 2015-05-14 14:08:55.0
+votes: '0'
+watches: '2'
+workflowId: '10861'
+---
+actions:
+- author: kegan
+  body: |-
+    This was fixed on latest develop (SYWEB-195).
+
+    Can you confirm this is fixed when running off develop?
+  created: 2014-12-03 12:19:44.0
+  id: '10931'
+  issue: '10761'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-03 12:19:44.0
+- author: manu
+  body: It has been already fixed with the last version of code
+  created: 2014-12-03 13:23:01.0
+  id: '10933'
+  issue: '10761'
+  type: comment
+  updateauthor: manu
+  updated: 2014-12-03 13:23:01.0

@@ -1,0 +1,30 @@
+---
+summary: How come there is no PUT /unban if there's a PUT /ban in the RPCish API?
+---
+created: 2014-09-16 00:31:54.0
+creator: matthew
+description: ''
+id: '10028'
+key: SPEC-78
+number: '78'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-09-27 17:19:41.0
+status: '5'
+type: '2'
+updated: 2016-09-27 17:19:41.0
+votes: '0'
+watches: '2'
+workflowId: '10348'
+---
+actions:
+- author: richvdh
+  body: 'there''s a `POST /unban`: https://matrix.org/docs/spec/client_server/r0.2.0.html#post-matrix-client-r0-rooms-roomid-unban'
+  created: 2016-09-27 17:19:41.0
+  id: '13133'
+  issue: '10028'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:19:41.0

@@ -1,0 +1,39 @@
+---
+summary: Until SYN-28 is fixed, servers should refuse to let you rename themselves.
+---
+assignee: dbkr
+created: 2015-02-11 13:30:18.0
+creator: matthew
+description: ''
+id: '11036'
+key: SYN-266
+number: '266'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-28 14:37:05.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:09.0
+votes: '0'
+watches: '2'
+workflowId: '11136'
+---
+actions:
+- author: dbkr
+  body: Awaiting PR review
+  created: 2015-04-24 18:16:56.0
+  id: '11535'
+  issue: '11036'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-24 18:16:56.0
+- author: dbkr
+  body: Resolving now PR is merged
+  created: 2015-04-28 14:37:05.0
+  id: '11600'
+  issue: '11036'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-28 14:37:05.0

@@ -1,0 +1,30 @@
+---
+summary: Hook up a google site search box to search the matrix.org site
+---
+created: 2016-07-02 14:23:27.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12731'
+key: ORG-57
+number: '57'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:29:43.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:29:43.0
+votes: '0'
+watches: '2'
+workflowId: '12831'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix.org/issues/19
+  created: 2017-03-21 11:29:43.0
+  id: '14030'
+  issue: '12731'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:29:43.0

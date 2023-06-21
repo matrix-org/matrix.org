@@ -1,0 +1,30 @@
+---
+summary: Uploading images flickers badly
+---
+created: 2015-01-12 00:02:04.0
+creator: matthew
+description: ''
+id: '10902'
+key: SYIOS-47
+number: '47'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-12 12:38:29.0
+status: '5'
+type: '1'
+updated: 2015-01-12 12:38:29.0
+votes: '0'
+watches: '2'
+workflowId: '11002'
+---
+actions:
+- author: gforet
+  body: The white flickering is fixed
+  created: 2015-01-12 12:38:29.0
+  id: '11091'
+  issue: '10902'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-12 12:38:29.0

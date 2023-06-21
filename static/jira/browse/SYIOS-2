@@ -1,0 +1,23 @@
+---
+summary: 'MXRoom: add shortcut methods like inviteUser, postMessage, etc.'
+---
+assignee: manu
+created: 2014-12-10 10:33:29.0
+creator: manu
+description: ''
+id: '10797'
+key: SYIOS-2
+number: '2'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-11 17:37:58.0
+status: '5'
+type: '2'
+updated: 2014-12-11 17:37:58.0
+votes: '0'
+watches: '1'
+workflowId: '10897'
+---
+actions: null

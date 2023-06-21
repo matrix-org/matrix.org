@@ -1,0 +1,36 @@
+---
+summary: Concept of blocking IP users (ban by IP).
+---
+created: 2014-12-24 23:18:10.0
+creator: fox
+description: |-
+  I as a user XMPP, appreciate it for including anonymity, but XMPP has a problem with blocking.
+  I do not understand why they were not smart enough to ban by ip but without disclosing it.
+
+  I suggest in Matrix make so:
+  1. We can to ban the already known IP (obtained outside the Matrix).
+  2. We can ban by IP, but the IP is not issued! You can show hash ­­– IP + salt. Salt should be become attached to the server, so that it was impossible to make some rainbow tables, and built not on the basis of the domain name, but rather on server hardware.
+  3. Subnet ban as for me a very bad decision, but it can be done without disclosing IP (you can do a hash on every part of IP ­­– "solthash.solthash.solthash.solthash").
+  4. Can make settings the server and/or rooms where specify display the IP or not, but when entering in such chatroom (which shows IP) should be a warning with confirmation for enter to the chatroom (this is important!). In addition possible in the account settings, add checkbox "not to enter the room where the displayed IP".
+id: '10885'
+key: SPEC-82
+number: '82'
+priority: '3'
+project: '10001'
+reporter: fox
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:26:53.0
+votes: '0'
+watches: '2'
+workflowId: '10985'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/481'
+  created: 2016-10-28 16:26:53.0
+  id: '13257'
+  issue: '10885'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:53.0

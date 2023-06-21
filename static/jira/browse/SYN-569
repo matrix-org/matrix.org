@@ -1,0 +1,67 @@
+---
+summary: Allow 3PID invites in /createRoom
+---
+assignee: erikj
+created: 2016-01-04 15:45:31.0
+creator: kegan
+description: ''
+id: '12264'
+key: SYN-569
+number: '569'
+priority: '1'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-01-05 15:30:10.0
+status: '5'
+type: '2'
+updated: 2016-01-05 15:30:10.0
+votes: '0'
+watches: '2'
+workflowId: '12367'
+---
+actions:
+- author: erikj
+  body: |-
+    I propose adding a new key to /createRoom:
+
+    {noformat}
+    "invite_3pid": [
+      {
+        "id_server": "matrix.org",
+        "medium": "email",
+        "address": "cheeky@monkey.com"
+      },
+      ...
+    ]
+    {noformat}
+  created: 2016-01-05 10:34:10.0
+  id: '12499'
+  issue: '12264'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 10:34:10.0
+- author: erikj
+  body: Currently Synapse sets the power levels of members invited in {{/createRoom}} to 100. This would be difficult/impossible to do for 3pid invites. Is this inconsistency an issue?
+  created: 2016-01-05 10:47:41.0
+  id: '12501'
+  issue: '12264'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 10:47:41.0
+- author: erikj
+  body: https://github.com/matrix-org/matrix-doc/pull/247
+  created: 2016-01-05 10:54:07.0
+  id: '12502'
+  issue: '12264'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 10:54:07.0
+- author: kegan
+  body: Probably not an issue.
+  created: 2016-01-05 11:09:34.0
+  id: '12503'
+  issue: '12264'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-01-05 11:09:34.0

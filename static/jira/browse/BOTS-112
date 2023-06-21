@@ -1,0 +1,20 @@
+---
+summary: NEB's !github fails if args include non-ASCII UTF8
+---
+created: 2015-09-19 16:06:01.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11893'
+key: BOTS-112
+number: '112'
+priority: '2'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-09-19 16:06:01.0
+votes: '0'
+watches: '1'
+workflowId: '11996'
+---
+actions: null

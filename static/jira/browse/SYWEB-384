@@ -1,0 +1,40 @@
+---
+summary: invites from unreachable hosts not deleteable
+---
+created: 2016-02-18 21:20:16.0
+creator: silviof
+description: |-
+  I have tested the federation with a friend with some setup issues. I have received many invites which I could not join. Now the server is gone and the invites are in my room list.
+  I could not delete them.
+id: '12500'
+key: SYWEB-384
+number: '384'
+priority: '3'
+project: '10004'
+reporter: silviof
+resolution: '1'
+resolutiondate: 2017-04-20 12:59:07.0
+status: '5'
+type: '1'
+updated: 2017-04-20 12:59:07.0
+votes: '0'
+watches: '2'
+workflowId: '12600'
+---
+actions:
+- author: silviof
+  body: I'm alone with this failure?
+  created: 2016-04-23 23:48:51.0
+  id: '12885'
+  issue: '12500'
+  type: comment
+  updateauthor: silviof
+  updated: 2016-04-23 23:48:51.0
+- author: richvdh
+  body: https://github.com/matrix-org/synapse/issues/761
+  created: 2017-04-20 12:58:58.0
+  id: '14036'
+  issue: '12500'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-04-20 12:58:58.0

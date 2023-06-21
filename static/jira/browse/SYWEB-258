@@ -1,0 +1,22 @@
+---
+summary: Client proclaims "joining room" whenever you load the webclient to a room, even if you're already joined
+---
+created: 2015-01-15 11:34:23.0
+creator: matthew
+description: ''
+id: '10936'
+key: SYWEB-258
+number: '258'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-20 09:58:43.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:04.0
+votes: '0'
+watches: '1'
+workflowId: '11036'
+---
+actions: null

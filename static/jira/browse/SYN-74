@@ -1,0 +1,22 @@
+---
+summary: Joining a remotely federated room seems to take aaaages
+---
+created: 2014-09-25 13:26:24.0
+creator: erikj
+description: ''
+id: '10393'
+key: SYN-74
+number: '74'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-13 15:55:09.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:43.0
+votes: '0'
+watches: '1'
+workflowId: '10496'
+---
+actions: null

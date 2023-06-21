@@ -1,0 +1,39 @@
+---
+summary: On Screen Keyboard can end up hiding the most recent messages in a room
+---
+assignee: manu
+created: 2015-02-09 10:20:08.0
+creator: matthew
+description: |-
+  Sometimes when task switching with the text box in focus and therefore the on-screen keyboard focused, the bottom of the message view gets confused. Even if I scroll it all the way so that I should be able to see the most recent message, it displays the most recent message behind the OSK. Rotating the screen and rotating back again can fix it. I've noticed it in portrait mode but it may also happen in landscape.
+
+  iPhone 6 plus. iOS 8.1.3
+
+
+  ------------------------------
+  Application info
+  userId : @robswain:matrix.org
+  displayname : Rob Swain
+
+  homeServerURL : http://matrix.org
+  homeServer : matrix.org
+
+  matrixConsole version: 0.2.2
+  SDK version: 0.2.2
+  Build: (no build info)
+id: '11013'
+key: SYIOS-69
+number: '69'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-25 16:59:14.0
+status: '5'
+type: '1'
+updated: 2015-02-25 16:59:14.0
+votes: '0'
+watches: '1'
+workflowId: '11113'
+---
+actions: null

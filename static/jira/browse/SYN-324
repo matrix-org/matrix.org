@@ -1,0 +1,54 @@
+---
+summary: Confusion with AS rooms/aliases namespaces and APIs
+---
+created: 2015-03-28 15:48:23.0
+creator: nolan
+description: |-
+  The spec gives this example:
+
+    namespaces: {
+      users: [
+        {
+          "exclusive": true,
+          "regex": "@irc\.freenode\.net/.*"
+        }
+      ],
+      aliases: [
+        {
+          "exclusive": true,
+          "regex": "#irc\.freenode\.net/.*"
+        }
+      ],
+      rooms: [
+        {
+          "exclusive": true,
+          "regex": "!irc\.freenode\.net/.*"
+        }
+
+  Yet you have /users, /transactions and /rooms endpoints. There is no /aliases endpoint, and it would seem /rooms is for aliases. So, questions:
+
+  1. Is there some way to track aliases from an AS perspective, and if so why might I want this?
+
+  2. Why /rooms and not /aliases?
+id: '11270'
+key: SYN-324
+number: '324'
+priority: '3'
+project: '10000'
+reporter: nolan
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:27:52.0
+votes: '0'
+watches: '2'
+workflowId: '11370'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1301'
+  created: 2016-11-07 18:27:52.0
+  id: '13622'
+  issue: '11270'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:52.0

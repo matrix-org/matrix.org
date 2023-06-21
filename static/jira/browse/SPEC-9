@@ -1,0 +1,55 @@
+---
+summary: How to do related events, e.g. feedback, updates work protocol wise?
+---
+assignee: erikj
+created: 2014-09-16 12:41:08.0
+creator: erikj
+description: ''
+id: '10201'
+key: SPEC-9
+number: '9'
+priority: '2'
+project: '10001'
+reporter: erikj
+resolution: '3'
+resolutiondate: 2016-06-16 11:42:09.0
+status: '5'
+type: '2'
+updated: 2016-06-16 11:42:09.0
+votes: '0'
+watches: '2'
+workflowId: '10329'
+---
+actions:
+- author: erikj
+  body: We need to think about how deletions interact with state updates (including membership events) and the Pdu graphs.
+  created: 2014-09-19 17:15:36.0
+  id: '10346'
+  issue: '10201'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-19 17:15:36.0
+- author: richvdh
+  body: '[~erikj]: given we have (specced) redactions, is this now a duplicate of SPEC-410?'
+  created: 2016-06-16 11:28:20.0
+  id: '13003'
+  issue: '10201'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-16 11:28:20.0
+- author: erikj
+  body: Yeah, probably
+  created: 2016-06-16 11:31:32.0
+  id: '13005'
+  issue: '10201'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-06-16 11:31:32.0
+- author: richvdh
+  body: sweet
+  created: 2016-06-16 11:42:09.0
+  id: '13007'
+  issue: '10201'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-16 11:42:09.0

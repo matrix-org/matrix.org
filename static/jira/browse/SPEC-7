@@ -1,0 +1,63 @@
+---
+summary: Timestamps need clarification
+---
+created: 2014-09-16 01:18:34.0
+creator: matthew
+description: |-
+  hsob_ts is a horrible horrible name.
+
+  I have no idea what timestamp fields I should be using in the webclient to describe messages versus membership changes etc.
+id: '10064'
+key: SPEC-7
+number: '7'
+priority: '3'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-12 14:14:51.0
+status: '5'
+type: '2'
+updated: 2014-11-12 14:14:51.0
+votes: '0'
+watches: '4'
+workflowId: '10327'
+---
+actions:
+- author: kegan
+  body: |-
+    There are many places where you can apply timestamps including:
+     - On the client
+     - When it reaches your home server
+     - When it reaches the destination home server
+     - When it reaches the destination client
+
+    There is no 'correct' timestamp to use, though home servers are preferred for consistency across multiple devices, it is by no means concrete (e.g. local caching before the message is sent will be using the client timestamp).
+
+    Rather than having unhelpful t1-4 names, the key describes where the timestamp was taken, in this case hsob_ts = home server outbound timestamp. Proposals for a name which isn't "home_server_outbound_timestamp" welcome.
+  created: 2014-09-16 09:30:58.0
+  id: '10107'
+  issue: '10064'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-16 09:32:12.0
+- author: leonerd
+  body: |-
+    Maybe:
+
+      origin_client_time
+      origin_server_time
+      dest_server_time
+  created: 2014-09-16 12:58:05.0
+  id: '10211'
+  issue: '10064'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-16 12:58:05.0
+- author: markjh
+  body: We now use origin_server_ts instead of hsob_ts. We don't include any other timestamps yet but "origin_client_ts" and "dest_server_ts" seem like reasonable suggestions.
+  created: 2014-11-12 14:14:51.0
+  id: '10778'
+  issue: '10064'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-12 14:14:51.0

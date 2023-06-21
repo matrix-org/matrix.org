@@ -1,0 +1,46 @@
+---
+summary: Business card ID lookup API
+---
+created: 2014-11-04 11:05:45.0
+creator: markjh
+description: ''
+id: '10616'
+key: SPEC-62
+number: '62'
+priority: '1'
+project: '10001'
+reporter: markjh
+resolution: '2'
+resolutiondate: 2015-12-10 15:58:26.0
+status: '5'
+type: '2'
+updated: 2015-12-10 15:58:26.0
+votes: '0'
+watches: '3'
+workflowId: '10716'
+---
+actions:
+- author: leonerd
+  body: Discussions had IRL on 13th April suggest this feature can also be used to handle case-folding of human-typed strings; e.g. "Matthew" -> "matthew".
+  created: 2015-04-13 18:10:07.0
+  id: '11486'
+  issue: '10616'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-13 18:10:07.0
+- author: leonerd
+  body: Personally I like it because it lets my HS perform other kinds of "canonicalisation" by way of user-specified aliases, such that I can remap "paul" and "leonerd" to "leo", or whatever I wanted to do.
+  created: 2015-04-13 18:35:37.0
+  id: '11488'
+  issue: '10616'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-13 18:35:37.0
+- author: illicitonion
+  body: This will either by fixed by aliases or by 3pids. It is definitely not a feature in its own right.
+  created: 2015-12-10 15:58:26.0
+  id: '12463'
+  issue: '10616'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-12-10 15:58:26.0

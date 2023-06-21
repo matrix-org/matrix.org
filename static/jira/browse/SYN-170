@@ -1,0 +1,28 @@
+---
+summary: Report image transparency
+---
+created: 2014-11-25 22:05:28.0
+creator: matthew
+description: ''
+id: '10708'
+key: SYN-170
+number: '170'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:26.0
+votes: '0'
+watches: '2'
+workflowId: '10808'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1248'
+  created: 2016-11-07 18:27:26.0
+  id: '13566'
+  issue: '10708'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:26.0

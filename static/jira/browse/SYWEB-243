@@ -1,0 +1,30 @@
+---
+summary: No UX feedback when /join-ing rooms.
+---
+created: 2014-12-24 17:55:48.0
+creator: matthew
+description: ''
+id: '10872'
+key: SYWEB-243
+number: '243'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-12 15:35:29.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:47.0
+votes: '0'
+watches: '2'
+workflowId: '10972'
+---
+actions:
+- author: kegan
+  body: Also when doing "Start Chat" on the user page.
+  created: 2015-01-08 16:57:41.0
+  id: '11069'
+  issue: '10872'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-08 16:57:41.0

@@ -1,0 +1,57 @@
+---
+summary: Support for modular auth
+---
+created: 2015-06-02 00:15:40.0
+creator: matthew
+description: |-
+  Currently synapse's registration logic is limited to LoginType.DUMMY, LoginType.RECAPTCHA and LoginType.EMAIL_IDENTITY - and is not remotely modular.
+
+  It would be much nicer to provide a modular auth architecture so that synapses can auth users against CAS, LDAP, PAM, OAuth 2 etc.
+id: '11577'
+key: SYN-396
+number: '396'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-11-07 14:35:42.0
+status: '5'
+type: '2'
+updated: 2016-11-07 14:36:25.0
+votes: '1'
+watches: '4'
+workflowId: '11678'
+---
+actions:
+- author: matthew
+  body: This is doubly true with the arrival of ericsson's SAML2 support on the scene.
+  created: 2015-07-08 19:58:14.0
+  id: '11975'
+  issue: '11577'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-08 19:58:14.0
+- author: richvdh
+  body: See also SYN-696
+  created: 2016-05-17 09:11:52.0
+  id: '12919'
+  issue: '11577'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-17 09:11:52.0
+- author: erikj
+  body: https://github.com/matrix-org/synapse/pull/1155
+  created: 2016-11-07 14:35:39.0
+  id: '13527'
+  issue: '11577'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-11-07 14:35:39.0
+- author: matthew
+  body: looks like Erik did this - yay! \o/
+  created: 2016-11-07 14:36:25.0
+  id: '13528'
+  issue: '11577'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-11-07 14:36:25.0

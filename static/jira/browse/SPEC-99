@@ -1,0 +1,181 @@
+---
+summary: v2 - Receipts
+---
+assignee: erikj
+created: 2015-01-21 13:40:38.0
+creator: kegan
+description: |-
+  Mostly efficiency issues are outstanding. Sending events for each message isn't great, especially if they end up in the event graph.
+
+  bq. Convert to EDUs for markers with periodic PDUs to reduce event graph size?
+
+  Is this feasible? What does this look like?
+id: '10969'
+key: SPEC-99
+number: '99'
+priority: '1'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-09-18 09:59:45.0
+status: '5'
+type: '1'
+updated: 2015-09-18 09:59:45.0
+votes: '0'
+watches: '3'
+workflowId: '11069'
+---
+actions:
+- author: erikj
+  body: |-
+    bq. Convert to EDUs for markers with periodic PDUs to reduce event graph size?
+
+    This should be feasible. Every time an event is read/delivered to a client, the server either:
+
+    * If the room is small and it has been more than, say, 5 minutes the server emits a PDU (i.e., we only send a PDU max every 5 minutes)
+    * Otherwise, the server emits an EDU.
+
+    For "large" rooms, we need to be careful to:
+
+    # Not fill up the room with PDUs.
+    # Don't send the information for each user down an initial sync to clients.
+    # Coalesce such EDUs on the sending server?
+  created: 2015-06-29 15:00:32.0
+  id: '11931'
+  issue: '10969'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-29 15:00:32.0
+- author: markjh
+  body: |-
+    Would it make sense to split out the history of read receipts from the message history itself?
+    Possibly by "branching" the PDU graph in some fashion. I think we planned something like this for handling server level read receipts.
+
+    {code}
+    PDU graph:
+
+     A's        A and B   B's
+     Receipts   Messages  Receipts
+     --------   --------  --------
+
+     Receipt -> Message
+                   |
+                   V
+                Message <- Receipt
+                   |           
+                   V          
+     Receipt -> Message <- Receipt
+
+    {code}
+  created: 2015-06-29 15:44:52.0
+  id: '11933'
+  issue: '10969'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-06-29 15:44:52.0
+- author: erikj
+  body: |-
+    bq. Would it make sense to split out the history of read receipts from the message history itself?
+
+    I assume this is because you can prune these events? Which would mean we would have only "read up to here markers", without any ability to say roughly when an event was delivered/read. That can probably be done purely through EDUs.
+  created: 2015-06-29 15:59:25.0
+  id: '11934'
+  issue: '10969'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-29 15:59:25.0
+- author: markjh
+  body: |-
+    Actually I'd prefer that the APIs both client-to-server and server-to-server were based around "read up to here" markers. Clients only need to transmit one value whenever they sync a block of messages, rather than a value per message sync'd. Servers only need to store a value per-client per-room rather than in the worst-case a PDU per client per message.
+
+    If we did go for "read up to here" markers then there isn't much point in emitting PDUs at all.
+  created: 2015-06-29 16:09:09.0
+  id: '11936'
+  issue: '10969'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-06-29 16:09:09.0
+- author: erikj
+  body: For a first cut we can just do EDU "read up to here" markers, and see if we want PDUs later.
+  created: 2015-06-30 10:13:10.0
+  id: '11944'
+  issue: '10969'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-30 10:13:10.0
+- author: erikj
+  body: |-
+    h3. Suggested implementation
+
+    EDUs sent between servers and to clients look like:
+
+    {noformat}
+    {
+        "type": "m.receipt",
+        "content": {
+            "$1435641916114394fHBLK:matrix.org": {
+                "read": ["@erikj:jki.re", ...]
+            },
+            ...
+        }
+    }
+    {noformat}
+
+    We only tell clients about the markers corresponding to events they have, e.g. in initial sync we don't send event ids that are not included in the given timeline. In v2 during a /sync, when the server responds with a truncated/limited timeline we should resync the markers (only including markers for the events sent).
+
+    The client informs the server where it has read up to by sending the last event id to the server. The server will need to compare this to the linearisation when generating EDUs for sending over federation.
+  created: 2015-06-30 14:04:10.0
+  id: '11946'
+  issue: '10969'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-30 14:11:46.0
+- author: erikj
+  body: 'Current progress in implementing this can be found at: https://github.com/matrix-org/synapse/pull/199'
+  created: 2015-07-07 16:23:31.0
+  id: '11970'
+  issue: '10969'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-07-07 16:23:31.0
+- author: erikj
+  body: |-
+    The current client API is as follows:
+
+    Clients will get events in the following format:
+
+    {noformat}
+    {
+        "type": "m.receipt",
+        "room_id": "!KpjVgQyZpzBwvMBsnT:jki:re"
+        "content": {
+            "$1435641916114394fHBLK:matrix.org": {
+                "read": {
+                    "@erikj:jki.re": { "ts": 1436451550453 },
+                    ...
+                }
+            },
+            ...
+        }
+    }
+    {noformat}
+
+    Multiple receipts for a single room will be coalesced into a single event.
+
+    In initialSync there is a separate top level key {{receipts}} that lists all receipts.
+
+    A client sends a read receipt by: {{POST /_matrix/client/v2_alpha/rooms/<room>/receipt/read/<event>}}
+  created: 2015-07-09 15:21:02.0
+  id: '11977'
+  issue: '10969'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-07-09 15:22:32.0
+- author: erikj
+  body: https://github.com/matrix-org/matrix-doc/blob/master/specification/46_receipts.rst
+  created: 2015-09-18 09:59:39.0
+  id: '12137'
+  issue: '10969'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-09-18 09:59:39.0

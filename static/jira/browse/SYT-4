@@ -1,0 +1,129 @@
+---
+summary: Test app services.
+---
+created: 2015-05-21 16:25:54.0
+creator: markjh
+description: ''
+id: '11548'
+key: SYT-4
+number: '4'
+priority: '1'
+project: '10300'
+reporter: markjh
+status: '1'
+type: '2'
+updated: 2015-07-01 17:59:39.0
+votes: '0'
+watches: '3'
+workflowId: '11649'
+---
+actions:
+- author: leonerd
+  body: Added a bunch of tests in SYT- branch, merged at bcebda0
+  created: 2015-06-22 18:16:45.0
+  id: '11906'
+  issue: '11548'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-22 18:16:45.0
+- author: kegan
+  body: |-
+    The ones I'm interested in are below (some of these may already be implemented).
+
+    Masquerading:
+     - -Can an AS masquerade as a user outside of its registered user ID regex? Expect: No.-
+     - -Can a real user create a room alias within an AS's registered alias regex? Expect: No.-
+     - -Can a real user register an account within an AS's registered user ID regex? Expect: No.-
+
+    HS -> AS comms:
+     - -Does the HS use the assigned HS token from the appservice config file specfied when communicating with the AS? Expect: Yes.-
+     - Does the HS use exponential backoff if it fails to communicate with the AS? Expect: Yes.
+     - Does the HS resend the first transaction *exactly as it was* if you respond with a failure code (e.g. HTTP 500)? Expect: Yes. (subsequent transactions may be batched or individual, but the first one HAS to be the same as it was when it was first sent because we don't know if the AS processed the transaction correctly).
+
+    Room checks:
+     - -Does the HS check for local room aliases (set via {{/directory}}) when determining whether to send the event to an AS based on the room alias regex? Expect: Yes-
+     - -Does the HS check {{m.room.aliases}} (which may contain remote HS aliases) when determining whether to send the event to an AS based on the room alias regex? Expect: Yes (Expected failure though due to SYN-400)-
+     - -Does the HS check the {{user_id}} of an event when determining whether to send it to an AS based on the user ID regex? Expect: Yes.-
+     - -Does the HS check the {{state_key}} of an {{m.room.member}} event when determining whether to send it to an AS based on the user ID regex? Expect: Yes.-
+
+    Query checks:
+     - -Does the HS poke the user query API if and only if the {{user_id}} in question is "claimed" by the HS and does not exist on the HS? Expect: Yes.-
+     - -Does the HS poke the alias query API if and only if the room alias in question is "claimed" by the HS and does not exist on the HS? Expect: Yes.-
+  created: 2015-06-23 09:08:47.0
+  id: '11909'
+  issue: '11548'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-07-01 17:58:15.0
+- author: leonerd
+  body: Using theabove as a TODO list, I've marked strikethrough on the parts already done.
+  created: 2015-06-26 15:49:27.0
+  id: '11923'
+  issue: '11548'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-26 15:49:27.0
+- author: leonerd
+  body: 'Kegan: I''m not sure I really understand what the "Room checks" section of tests mean. Can you explain them in a little more detail?'
+  created: 2015-06-30 16:20:17.0
+  id: '11947'
+  issue: '11548'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-30 16:20:17.0
+- author: kegan
+  body: |-
+    The appservice part of Synapse will receive every single event, where it then determines which ASes it should send the event to, if any. Which ASes are chosen depends on the regex they supplied at registration. The purpose of "room checks" is to make sure that Synapse is looking at the event in the right places (e.g. keys) when determining who to send it to.
+
+    For example, an AS interested in all user IDs starting {{@irc_}} should get this event:
+    {code}
+    {
+      content: {
+        msgtype: "m.text",
+        body: "hello"
+      },
+      type: "m.room.message",
+      room_id: "!foo:bar"
+      user_id: "@irc_foobar:localhost",    <--- because of this
+      event_id: "$12876412GER:localhost",
+      origin_server_ts: 1435678314357
+    }
+    {code}
+    _Does the HS check the user_id of an event when determining whether to send it to an AS based on the user ID regex? Expect: Yes._
+
+    However, all is not that simple. It should *also* get this event:
+
+    {code}
+    {
+      content: {
+        membership: "invite"
+      },
+      state_key: "@irc_foobar:localhost",     <--- because of this
+      type: "m.room.member",
+      room_id: "!foo:bar"
+      user_id: "@alice:localhost",
+      event_id: "$12876412GER:localhost",
+      origin_server_ts: 1435678314357
+    }
+    {code}
+    _Does the HS check the state_key of an m.room.member event when determining whether to send it to an AS based on the user ID regex? Expect: Yes._
+
+    The places where we should look is not limited to the event keys. For example, if the AS is interested in aliases starting {{#irc_}} and {{#irc_foo:localhost}} mapped to {{!foo:bar}}, we would expect events with the {{room_id}} of {{!foo:bar}} to go to that AS.
+  created: 2015-06-30 16:37:26.0
+  id: '11949'
+  issue: '11548'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-30 16:37:26.0
+- author: leonerd
+  body: |-
+    Rightthen. As of b24d19a, all of theabove is implemented with the exception of the failure/backoff cases. Namely, to requote:
+
+     - Does the HS use exponential backoff if it fails to communicate with the AS? Expect: Yes.
+     - Does the HS resend the first transaction exactly as it was if you respond with a failure code (e.g. HTTP 500)? Expect: Yes. (subsequent transactions may be batched or individual, but the first one HAS to be the same as it was when it was first sent because we don't know if the AS processed the transaction correctly).
+  created: 2015-07-01 17:59:39.0
+  id: '11957'
+  issue: '11548'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-07-01 17:59:39.0

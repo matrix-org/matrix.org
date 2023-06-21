@@ -1,0 +1,25 @@
+---
+summary: A room created with another Matrix client does not appear in recents
+---
+created: 2015-09-21 10:21:20.0
+creator: manu
+description: |-
+  - open the iOS console app, go to the recents tab
+  - create a room from another Matrix client (do not do nothing more in it)
+  -> the iOS console app does not show the newly created room
+
+  If you tape a message in this room with the other Matrix client, the iOS app will show the room
+id: '11903'
+key: SYIOS-139
+number: '139'
+priority: '2'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '1'
+updated: 2015-09-21 10:21:20.0
+votes: '0'
+watches: '1'
+workflowId: '12006'
+---
+actions: null

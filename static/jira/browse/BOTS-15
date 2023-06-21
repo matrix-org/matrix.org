@@ -1,0 +1,31 @@
+---
+summary: NEB should announce comments on line numbers on PRs
+---
+assignee: illicitonion
+created: 2015-02-06 09:40:09.0
+creator: kegan
+description: ''
+id: '11006'
+key: BOTS-15
+number: '15'
+priority: '2'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-09-11 15:01:31.0
+status: '6'
+type: '1'
+updated: 2015-09-11 15:01:31.0
+votes: '0'
+watches: '2'
+workflowId: '11106'
+---
+actions:
+- author: illicitonion
+  body: https://github.com/Kegsay/Matrix-NEB/pull/8
+  created: 2015-09-11 14:13:10.0
+  id: '12128'
+  issue: '11006'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-09-11 14:13:10.0

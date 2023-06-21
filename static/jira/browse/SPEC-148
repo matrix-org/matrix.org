@@ -1,0 +1,28 @@
+---
+summary: Can servers easily "rejoin" a room?
+---
+created: 2015-04-08 15:20:19.0
+creator: erikj
+description: ''
+id: '11316'
+key: SPEC-148
+number: '148'
+priority: '3'
+project: '10001'
+reporter: erikj
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:13.0
+votes: '0'
+watches: '2'
+workflowId: '11416'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/450'
+  created: 2016-10-28 16:27:13.0
+  id: '13299'
+  issue: '11316'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:13.0

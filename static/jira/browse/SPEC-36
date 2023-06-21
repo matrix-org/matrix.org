@@ -1,0 +1,58 @@
+---
+summary: How to deal with large rooms.
+---
+created: 2014-10-01 10:42:32.0
+creator: erikj
+description: |-
+  For every user in the room we currently have a dedicated state event for them.  For large rooms with many 1000s or more members this becomes less than ideal  due to the overhead for both clients and servers.
+
+  The protocol itself only requires knowledge of which servers are in the room.
+id: '10435'
+key: SPEC-36
+number: '36'
+priority: '3'
+project: '10001'
+reporter: erikj
+status: '1'
+type: '1'
+updated: 2016-10-28 16:26:46.0
+votes: '0'
+watches: '3'
+workflowId: '10539'
+---
+actions:
+- author: markjh
+  body: |-
+    For rooms that have a large number of participants split over a small number of servers we can use the existing full mesh protocol by distributing a list of member servers using membership PDUs for a participant on each server to prove that it should be in the list.
+
+    For rooms with a large number of participating servers we might need to look at new protocols for distributing the messages without each server needing to know the full list.
+  created: 2014-10-01 10:54:25.0
+  id: '10496'
+  issue: '10435'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-01 10:54:25.0
+- author: richvdh
+  body: Is this bug about alternatives to full-mesh routing, or about reducing the number of state events flying around?
+  created: 2015-12-01 15:51:32.0
+  id: '12399'
+  issue: '10435'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 15:51:32.0
+- author: richvdh
+  body: full-mesh alternatives seems to be SPEC-45, so I assume it's the latter? is this a real problem?
+  created: 2015-12-01 16:02:54.0
+  id: '12401'
+  issue: '10435'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 16:02:54.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/467'
+  created: 2016-10-28 16:26:46.0
+  id: '13242'
+  issue: '10435'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:46.0

@@ -1,0 +1,27 @@
+---
+summary: Sytest failed to detect that receiving room events in synapse was broken
+---
+created: 2015-05-21 15:57:39.0
+creator: markjh
+description: |-
+  Synapse was failing to relay room events to event streams that connected *after* the client joined the room at commit a551c5dad7e3643f36654a374f6a0d5700b7ea7f.
+
+  The bug was caused by an internal cache being incorrectly populated when the event stream started, however the internal cache was being correctly updated when the user subsequently joined a room.
+
+  Sytest failed to detect the problem because it doesn't have any tests where the user starts the event stream *after* it has joined the room.
+id: '11545'
+key: SYT-1
+number: '1'
+priority: '1'
+project: '10300'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-05-26 09:03:17.0
+status: '5'
+type: '2'
+updated: 2015-05-26 09:03:17.0
+votes: '0'
+watches: '1'
+workflowId: '11646'
+---
+actions: null

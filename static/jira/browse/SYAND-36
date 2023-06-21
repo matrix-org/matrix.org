@@ -1,0 +1,63 @@
+---
+summary: Emoji support
+---
+created: 2015-03-04 19:43:19.0
+creator: bob
+description: ''
+id: '11157'
+key: SYAND-36
+number: '36'
+priority: '3'
+project: '10201'
+reporter: bob
+status: '10100'
+type: '4'
+updated: 2015-03-22 20:25:59.0
+votes: '0'
+watches: '2'
+workflowId: '11257'
+---
+actions:
+- author: m-ylecollen
+  body: The user can already install a keyboard which supports emojis.
+  created: 2015-03-05 13:47:36.0
+  id: '11348'
+  issue: '11157'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-05 13:47:36.0
+- author: m-ylecollen
+  body: Add Emojis support like WhatApps does.
+  created: 2015-03-05 14:00:12.0
+  id: '11353'
+  issue: '11157'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-05 14:00:12.0
+- author: bob
+  body: |-
+    additional remark:
+
+    on my nexus 7 (with CM 11, Android 4.4.4) I am able to use emojis, but not on n Nexus 4 (Stock Android 5.0)
+    I did not install an additional keyboard on both devices... 
+
+    strange, strange...
+  created: 2015-03-09 21:37:55.0
+  id: '11373'
+  issue: '11157'
+  type: comment
+  updateauthor: bob
+  updated: 2015-03-09 21:37:55.0
+- author: bob
+  body: |-
+    Additional info.
+
+    The emojis are also accessable on my Nexus 5 with stock android when pressing the "Return" key long.
+
+    Is there a way to move the access of the emojis on the left side from the text input field, so that we have the emojis in direct access?
+  created: 2015-03-22 20:25:26.0
+  id: '11426'
+  issue: '11157'
+  type: comment
+  updateauthor: bob
+  updated: 2015-03-22 20:25:59.0

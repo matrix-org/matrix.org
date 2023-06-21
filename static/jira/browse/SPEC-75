@@ -1,0 +1,22 @@
+---
+summary: Clients need to advertise whether they can talk VoIP (and other caps)
+---
+created: 2014-12-01 22:35:30.0
+creator: matthew
+description: ''
+id: '10748'
+key: SPEC-75
+number: '75'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2014-12-01 22:36:38.0
+status: '5'
+type: '2'
+updated: 2014-12-01 22:36:38.0
+votes: '0'
+watches: '1'
+workflowId: '10848'
+---
+actions: null

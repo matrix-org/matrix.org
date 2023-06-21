@@ -1,0 +1,23 @@
+---
+summary: We *have* to fire desktop notifications for inbound VoIP/Video calls...
+---
+assignee: kegan
+created: 2014-09-22 17:20:14.0
+creator: matthew
+description: ''
+id: '10364'
+key: SYWEB-75
+number: '75'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-26 11:30:51.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:47.0
+votes: '0'
+watches: '1'
+workflowId: '10467'
+---
+actions: null

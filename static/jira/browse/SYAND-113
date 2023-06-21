@@ -1,0 +1,66 @@
+---
+summary: Cap the number of messages loaded when you tap a room
+---
+created: 2015-08-07 18:12:28.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  I often go long periods without using the Android app so I get tons of unread messages stacking up. When I tap on a room, it can spend up to 15s loading these onto the list view on the ui thread. We should apply a cap (say 20 messages), then paginate locally for more.
+id: '11785'
+key: SYAND-113
+number: '113'
+priority: '2'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-04 12:46:36.0
+status: '5'
+type: '1'
+updated: 2015-09-04 12:46:36.0
+votes: '0'
+watches: '3'
+workflowId: '11886'
+---
+actions:
+- author: m-ylecollen
+  body: it will be required to implement the API v2 (like the IOS client).
+  created: 2015-09-01 12:33:04.0
+  id: '12082'
+  issue: '11785'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-01 12:33:04.0
+- author: kegan
+  body: This doesn't require any server-side changes to support. All I ask is that you don't put every single unread message into the {{ListView}}, and instead just the first 20 or so and then paginate *locally* (against the db) for more. This never hits the server so doesn't need any v2 changes.
+  created: 2015-09-02 17:11:44.0
+  id: '12087'
+  issue: '11785'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-02 17:11:44.0
+- author: m-ylecollen
+  body: |-
+    It should be improved by now 
+    1  -
+    https://github.com/matrix-org/matrix-android-sdk/commit/c6c1d724a5a667afb62f2af4bba876681415eb34
+
+    The application store stores a a bunch of events but when a 20 messages back pagination is required, it might return more that 20 messages because there is no token in the 20 messages to start a back pagination.
+    RoomActivity -> requires to Room class -> requires to the storage
+    The Room class buffers the storage response and provides 20 messages to the RoomActivity.
+    The buffer is filled / used for the next pagination so the RoomActivity will always get 20 messages at each pagination
+
+    2 - 
+    https://github.com/matrix-org/matrix-android-sdk/commit/77a0ae125504e51e381113c35d27730062afb916
+    When the storage returns the events/messages chunk, the room state might be retro computed so there is a linked room state for each events.
+    The roomState deepCopy used to slow down the requestHistory because the deepCopy takes time on rooms with lot of members.
+    The roomState is deep-cloned only when there is state update.
+
+    3 - the messages are added one be one during the initial catchup.
+    Add them in one time instead of one by one does not improve the UX. (i tried a a 180 events bunch).
+    The rendering seems slow.
+  created: 2015-09-04 12:46:31.0
+  id: '12099'
+  issue: '11785'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-04 12:46:31.0

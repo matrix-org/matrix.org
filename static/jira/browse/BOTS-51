@@ -1,0 +1,49 @@
+---
+summary: irc as identd with ssl does not work
+---
+created: 2015-06-16 15:53:15.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org Jun 16 15:19
+
+  Erik
+  bq.  it keeps reconnecting again and again. I have a PCAP of it making a connection out, and then rejecting it when it gets the ident connection. also, it looks like its doing ident before its finishing the SSL handshake? looks like it *may* be doing identd before SSL has "finished" setting up
+
+  Leo
+  bq. There's no inherent need for the IRC server to wait for SSL to finish, before asking ident
+
+  The AS currently listens for a {{connect}} callback on the Socket ( https://nodejs.org/api/net.html#net_event_connect ) where it then attempts to extract the {{localPort}} assigned ( https://nodejs.org/api/net.html#net_socket_localport ) and sets a mapping for that username and port combo.
+
+  By the sounds of this, the IRC server in question was prodding the AS for ident info before this callback was received, so it replied "I have no clue what you're on about". The server in question *requires* ident auth to connect, so this then knifed the connection, so it attempted to reconnect ad infinitum.
+id: '11657'
+key: BOTS-51
+number: '51'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:10:48.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:10:48.0
+votes: '0'
+watches: '3'
+workflowId: '11758'
+---
+actions:
+- author: matthew
+  body: More folks are noticing that their Matrix'd IRC connections aren't SSL'd.  We need to find time to fix this.  Perhaps shifting to ipv6 rather than messing with identd would be sufficient.
+  created: 2015-09-22 22:20:35.0
+  id: '12155'
+  issue: '11657'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-22 22:20:35.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/39
+  created: 2016-06-02 10:10:48.0
+  id: '12942'
+  issue: '11657'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:10:48.0

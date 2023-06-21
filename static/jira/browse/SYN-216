@@ -1,0 +1,28 @@
+---
+summary: When we redact events, any mxc content they refer to should be redacted too
+---
+created: 2014-12-24 16:59:55.0
+creator: matthew
+description: ''
+id: '10864'
+key: SYN-216
+number: '216'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:32.0
+votes: '0'
+watches: '2'
+workflowId: '10964'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1263'
+  created: 2016-11-07 18:27:32.0
+  id: '13581'
+  issue: '10864'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:32.0

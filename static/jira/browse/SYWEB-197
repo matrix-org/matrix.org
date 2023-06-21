@@ -1,0 +1,66 @@
+---
+summary: Login page does not work
+---
+created: 2014-11-30 14:30:35.0
+creator: erikj
+description: |-
+  {noformat}
+   TypeError: Cannot read property 'then' of undefined
+      at Function.MatrixCallFactory.MatrixCall.getTurnServer (https://jki.re/synapse/app/components/matrix/matrix-call.js:67:38)
+      at Object.MatrixCallFactory (https://jki.re/synapse/app/components/matrix/matrix-call.js:86:16)
+      at Object.invoke (https://jki.re/synapse/lib/angular.js:4129:17)
+      at Object.enforcedReturnValue [as $get] (https://jki.re/synapse/lib/angular.js:3982:37)
+      at Object.invoke (https://jki.re/synapse/lib/angular.js:4129:17)
+      at https://jki.re/synapse/lib/angular.js:3947:37
+      at getService (https://jki.re/synapse/lib/angular.js:4088:39)
+      at Object.invoke (https://jki.re/synapse/lib/angular.js:4120:13)
+      at extend.instance (https://jki.re/synapse/lib/angular.js:8370:21)
+      at https://jki.re/synapse/lib/angular.js:7618:13
+  {noformat}
+
+  Master is fine, but not develop.
+id: '10742'
+key: SYWEB-197
+number: '197'
+priority: '1'
+project: '10004'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-12-01 09:30:40.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:56.0
+votes: '0'
+watches: '3'
+workflowId: '10842'
+---
+actions:
+- author: matthew
+  body: |-
+    I can't reproduce this using latest develop of synapse + matrix-angular-sdk.
+
+    Line 67 of matrix-call.js is:
+
+            matrixService.getTurnServer().then(function(response) {
+
+    …and matrixService.getTurnServer() is:
+
+            getTurnServer: function() {
+                return doRequest("GET", "/voip/turnServer");
+            }
+
+    So, i'm have no idea why doRequest() would be returning undefined for you in these circumstances.
+  created: 2014-11-30 23:31:58.0
+  id: '10893'
+  issue: '10742'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-30 23:31:58.0
+- author: kegan
+  body: Looks like it only returns undefined if there is no {{config}}  in {{matrixService}}. Turns out that this true if there was nothing in local storage. Fixed.
+  created: 2014-12-01 09:30:40.0
+  id: '10894'
+  issue: '10742'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 09:30:40.0

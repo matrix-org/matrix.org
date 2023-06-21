@@ -1,0 +1,24 @@
+---
+summary: We should have a service availability and status tool thingio for matrix.org
+---
+created: 2016-08-02 18:36:54.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Shamelessly ripping off https://status.github.com/
+id: '12781'
+key: ORG-62
+number: '62'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:34:26.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:34:26.0
+votes: '0'
+watches: '1'
+workflowId: '12881'
+---
+actions: null

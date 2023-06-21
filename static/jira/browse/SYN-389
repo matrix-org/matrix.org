@@ -1,0 +1,72 @@
+---
+summary: Allow multiple, configurable listeners.
+---
+assignee: erikj
+created: 2015-05-22 14:18:18.0
+creator: erikj
+description: |-
+  It would be nice to be able to specify multiple listeners and what APIs are configured for them. For example something like:
+
+  {noformat}
+  listeners:
+      - port: 8080
+        tls: false
+        apis: [client, federation]
+        xforwardedfor: true
+        interface: 127.0.0.1
+      ...
+  {noformat}
+
+  This would allow us to e.g. use XForwardedFor on some listeners and not others.
+id: '11556'
+key: SYN-389
+number: '389'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-07-07 11:23:16.0
+status: '5'
+type: '2'
+updated: 2015-07-07 11:23:16.0
+votes: '0'
+watches: '1'
+workflowId: '11657'
+---
+actions:
+- author: erikj
+  body: |-
+    Current proposal is:
+
+    {noformat}
+            listeners:
+              - port: 8008
+                tls: false
+                bind_address: ''
+                type: http
+
+                resources:
+                  - names: [client, webclient]
+                    compress: true
+                  - names: [federation]
+                    compress: false
+
+              - port: 8448
+                tls: true
+                bind_address: ''
+                type: http
+
+                x_forwarded: False
+
+                resources:
+                  - names: [client, webclient]
+                    compress: true
+                  - names: [federation]
+                    compress: false
+    {noformat}
+  created: 2015-06-12 18:06:18.0
+  id: '11859'
+  issue: '11556'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-12 18:06:18.0

@@ -1,0 +1,36 @@
+---
+summary: Do we stop people from spoofing event IDs?
+---
+created: 2015-02-09 10:34:22.0
+creator: matthew
+description: ''
+id: '11018'
+key: SPEC-103
+number: '103'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:59.0
+votes: '0'
+watches: '3'
+workflowId: '11118'
+---
+actions:
+- author: kegan
+  body: From a spec perspective, I was under the impression event IDs were just opaque blobs, so the fact that they have domains wouldn't be taken into consideration. We should define what action should be taken in the event of two conflicting events with the same ID though.
+  created: 2015-03-05 14:07:53.0
+  id: '11355'
+  issue: '11018'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-05 14:07:53.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/418'
+  created: 2016-10-28 16:26:59.0
+  id: '13269'
+  issue: '11018'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:59.0

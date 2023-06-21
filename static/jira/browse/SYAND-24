@@ -1,0 +1,34 @@
+---
+summary: Respond to IMs directly from push
+---
+created: 2015-02-16 01:48:14.0
+creator: matthew
+description: ''
+id: '11071'
+key: SYAND-24
+number: '24'
+priority: '3'
+project: '10201'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-19 16:53:35.0
+status: '5'
+type: '2'
+updated: 2015-02-19 16:53:35.0
+votes: '0'
+watches: '2'
+workflowId: '11171'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    The notifications can be expanded.
+    There are 2 buttons 
+    > quick reply : it opens a dialog to respond to send a message into the room without opening the application
+    > Open : it opens the dedicated room view.
+  created: 2015-02-19 15:10:17.0
+  id: '11296'
+  issue: '11071'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-02-19 16:39:04.0

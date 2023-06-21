@@ -1,0 +1,75 @@
+---
+summary: We should re-use existing 1:1 chats rather than creating new ones when tapping on a Contact
+---
+created: 2015-02-09 10:22:49.0
+creator: matthew
+description: ''
+id: '11016'
+key: SYIOS-72
+number: '72'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-09 10:28:15.0
+status: '5'
+type: '2'
+updated: 2015-02-09 10:46:26.0
+votes: '0'
+watches: '3'
+workflowId: '11116'
+---
+actions:
+- author: manu
+  body: |-
+    It has been fixed in 0.2.2.
+    Commit: https://github.com/matrix-org/matrix-ios-sdk/commit/a7c515090e106c58f789b0003cf85aeda402f167
+  created: 2015-02-09 10:28:15.0
+  id: '11225'
+  issue: '11016'
+  type: comment
+  updateauthor: manu
+  updated: 2015-02-09 10:28:15.0
+- author: matthew
+  body: |-
+    Weird, this was from a rageshake built against 0.2.2 yesterday (i assume):
+
+    Something went wrong on my Matrix client : 
+
+
+    -----> my comments <-----
+
+    Clicking someone that I already have a conversation with should not trigger another room to be created. Sure, this is more of an opinion than a bug but I think you would agree 
+    ------------------------------
+    Application info
+    userId : @stalund:matrix.org
+    displayname : Stefan
+
+    homeServerURL : http://matrix.org
+    homeServer : matrix.org
+
+    matrixConsole version: 0.2.2
+    SDK version: 0.2.2
+    Build: (no build info)
+  created: 2015-02-09 10:31:06.0
+  id: '11226'
+  issue: '11016'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-09 10:31:06.0
+- author: matthew
+  body: agreed that I can't reproduce it. will ask Stefan to clarify.
+  created: 2015-02-09 10:32:20.0
+  id: '11227'
+  issue: '11016'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-09 10:32:20.0
+- author: stalund
+  body: Sorry, it did not actually generate a new chat. The popup dialog looked the same as before and I did not click the button to start the chat since I was afraid to create a duplicate one. You can close this ticket.
+  created: 2015-02-09 10:46:26.0
+  id: '11228'
+  issue: '11016'
+  type: comment
+  updateauthor: stalund
+  updated: 2015-02-09 10:46:26.0

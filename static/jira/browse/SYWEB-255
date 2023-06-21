@@ -1,0 +1,30 @@
+---
+summary: '''age'' key has disappeared so VoIP calls never expire.'
+---
+created: 2015-01-12 20:22:52.0
+creator: dbkr
+description: ''
+id: '10919'
+key: SYWEB-255
+number: '255'
+priority: '2'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-01-13 10:17:53.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:05.0
+votes: '0'
+watches: '1'
+workflowId: '11019'
+---
+actions:
+- author: dbkr
+  body: 'Synapse now sends age again: fixed by erik in 39585bf5560e64bf6fca7d043cc3357b5dba59de'
+  created: 2015-01-13 10:17:53.0
+  id: '11112'
+  issue: '10919'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-01-13 10:17:53.0

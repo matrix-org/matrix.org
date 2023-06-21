@@ -1,0 +1,98 @@
+---
+summary: 'Clarifications to v2 auth flows:'
+---
+created: 2015-06-10 13:54:33.0
+creator: matthew
+description: |-
+  Shidan Gouran gave some useful feedback on confusion when trying to implement v2 auth flows:
+
+  <Shidan Gouran> Not sure what I'm doing wrong, I'm logging in with posting {"username": "shidan", "password": "the_password"} and I've set the Content-Type to application/json .. am I missing anything?
+  <Shidan Gouran> This is the error I'm getting: { "errcode": "M_UNKNOWN", "error": "Missing JSON keys." }
+
+  On 03/06/2015 01:17, Matthew Hodgson wrote:
+  > [23:25]  <M-ShidanGouran> how does one change the password can't find an endpoint for that in the docs
+  > [23:26]  * M-Matthew looks
+  > [23:30]  <Arathorn> http://matrix.org/docs/spec/#changing-password
+  > [23:31]  <Arathorn> the swagger API docs are a bit stale, but the spec is pretty up-to-date and getting prettier and more complete by the day
+  > [23:31]  <Arathorn> (plus we just shifted to versioned releases at last)
+  > [23:32]  <M-ShidanGouran> ah ok thanks
+  > [23:32]  <Arathorn> the swagger API docs will get updated shortly too.
+  > [23:35]  <Arathorn> Bobby Tables: the erlang looks cool
+  > [23:35]  * Arathorn wonders what the
+  > [23:35]  <Arathorn> _Else ->
+  > [23:35]  <Arathorn>    asd
+  > [23:35]  <Arathorn> is up to
+  > [23:36]  <Arathorn> are you happy for me to add it to matrix.org/blog/try-matrix-now with an "in early development" warning?
+  > [23:37]  <Arathorn> (i suspect nobody will try to use it as anything more than a hello world example, but it might get more eyeballs/review/kudos/contributions)
+  > [23:38]  <M-BobbyTables1> Sure, go ahead
+  > [00:00]  <Arathorn> Bobby Tables: done - thanks :)
+  > [00:34]  <M-ShidanGouran> so if I change my password and get a 401 with a session then I know it was done successfully?
+  > [00:48]  <Arathorn> i'm surprised if 401 means success
+  > [00:51]  <Arathorn> right, reading the spec a bit, it says: "This API endpoint uses the User-Interactive Authentication API."
+  > [00:51]  * M-ShidanGouran1 (~shidan__b@ldc-prd-matrix-003.openmarket.com) has joined #matrix
+  > [00:51]  <M-ShidanGouran1> ok then im not quite clear on this "If the home server deems the authentication attempt to be successful but still requires more stages to be completed, it returns HTTP status 401 along with the same object as when no authentication was attempted, with the addition of the completed key which is an array of stage type the client has completed successfully"
+  > [00:52]  <Arathorn> in other words, you post to POST $V2PREFIX/account/password, and it 401s you if it needs further credentials to let you do the operation
+  > [00:52]  <Arathorn> right - i think that sentence is trying to say that it keeps hitting you with 401s demanding more credentials until it's satisfied
+  > [00:54]  <M-ShidanGouran1> ok so then for this response: {"flows":[{"stages":["m.login.password"]},{"stages":["m.login.email.identity"]}],"params":{},"session":"xjnFIDzEYImHuaoFrmmIcXCV"} what would be the next step?? sorry for being dense, just not getting it!! :)
+  > [00:54]  <Arathorn> (we rewrote the auth API a few weeks ago, so the doc may not have fully settled down yet...)
+  > [00:55]  <Arathorn> so you respond to that with...
+  > [00:58]  <Arathorn> POST /_matrix/client/v2_alpha/account/password { "new_password": "s3cr3t", "auth": { "type": "m.login.password", "session": "xjnFIDzEYImHuaoFrmmIcXCV", "user": "@foo:bar.com", "password": "currentpassword" }}
+  > [00:58]  <Arathorn> i.e. you resubmit the JSON for the request itself: { "new_password": "s3cr3t" }
+  > [00:58]  <Arathorn> with the auth key, which contains the credentials for a given flow
+  > [00:58]  <Arathorn> in this instance, "m.login.password" is first
+  > [00:59]  <Arathorn> which is documented at http://matrix.org/docs/spec/#password-based
+  > [01:00]  <Arathorn> and i think that's enough. i don't think that you also have to jump through the m.login.email.identity hoop when changing password
+  > [01:01]  <Arathorn> if you do, it's more complicated, as you'd need to handshake with a matrix identity server, and that is certainly underdocumented currently.
+  > [01:01]  <Arathorn> for the record, changing password is one of the most fiddly APIs there is in the whole spec
+  > [01:05]  <Arathorn> right, my explanation seems to match the implementation in the angularjs web client
+  > [01:05]  <Arathorn> https://github.com/matrix-org/matrix-angular-sdk/commit/c3c187ced542d40ce495f78b1537c4c109907acc
+  > [01:05]  <Zappelin> Title: Add password changing via new API. Adds a temporary way to call stuff matrix-org/matrix-angular-sdk@c3c187c  GitHub (at github.com)
+  > [01:06]  <M-Matthew> ...which basically says:
+  > [01:06]  <M-Matthew> +        var authDict = {
+  > [01:07]  <M-Matthew> +            type: 'm.login.password',
+  > [01:07]  <M-Matthew> +            user: matrixService.config().user_id,
+  > [01:07]  <M-Matthew> +            password: $scope.password.oldpw
+  > [01:07]  <M-Matthew> +        };
+  > [01:07]  <M-Matthew> + matrixService.setPassword($scope.password.newpw, authDict).
+  > [01:07]  <M-Matthew> ...
+  > [01:07]  <M-Matthew> +        setPassword: function(newPassword, authDict) {
+  > [01:07]  <M-Matthew> +            var body = {'auth': authDict, 'new_password': newPassword}
+  > [01:07]  <M-Matthew> +            return doV2Request("POST", "/account/password", undefined, body);
+  > [01:07]  <M-Matthew> +        }
+  > [01:07]  <M-Matthew> i'm confused as to why there's an m.login.email.identity stage there
+  > [01:07]  <M-Matthew> s/stage/flow/
+  > [01:07]  <M-Matthew> dave: are they alternative flows?
+  > [01:07]  <M-ShidanGouran> ya i see that, this makes sense for things that are n-legged and email but it would be much friendlier if there was a setting to just do a post for one stepped methods
+  > [01:08]  <M-Matthew> well, the problem is that you don't know what auth the server is configured to prompt you with
+  > [01:08]  <M-Matthew> so you could cheat and assume that m.login.password will always be enough
+  > [01:08]  <M-Matthew> in which case it is indeed a simple POST
+  > [01:09]  <M-Matthew> oh, except you need the session param :(
+  > [01:09]  <M-Matthew> actually, the angularjs implementation skips the session param, so perhaps it's optional
+  > [01:10]  <M-Matthew> eitherway, it's done there as a single POST
+  > [01:11]  <M-Matthew> so you could cheat and just do POST /_matrix/client/v2_alpha/account/password { "new_password": "s3cr3t", "auth": { "type": "m.login.password", "user": "@foo:bar.com", "password": "currentpassword" }}
+  > [01:11]  <M-Matthew> ...and you're sorted.
+  > [01:11]  <M-Matthew> (and sucks if the server requires better proof of your current identity than m.login.password)
+id: '11631'
+key: SPEC-186
+number: '186'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '4'
+resolutiondate: 2016-04-18 15:24:38.0
+status: '5'
+type: '1'
+updated: 2016-04-18 15:24:38.0
+votes: '0'
+watches: '2'
+workflowId: '11732'
+---
+actions:
+- author: richvdh
+  body: TLDR
+  created: 2016-04-18 15:24:38.0
+  id: '12832'
+  issue: '11631'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 15:24:38.0

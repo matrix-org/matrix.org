@@ -1,0 +1,30 @@
+---
+summary: update CS howto to use /sync
+---
+created: 2016-03-05 19:37:00.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12548'
+key: ORG-47
+number: '47'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-05-05 11:47:29.0
+status: '5'
+type: '1'
+updated: 2016-05-05 11:47:29.0
+votes: '0'
+watches: '2'
+workflowId: '12648'
+---
+actions:
+- author: richvdh
+  body: This got done by [~leonerd] in https://github.com/matrix-org/matrix-doc/pull/314 (and subsequently deployed)
+  created: 2016-05-05 11:47:14.0
+  id: '12904'
+  issue: '12548'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-05 11:47:14.0

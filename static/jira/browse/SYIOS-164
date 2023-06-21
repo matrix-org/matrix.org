@@ -1,0 +1,31 @@
+---
+summary: Duplicated events on bad networks
+---
+assignee: gforet
+created: 2015-10-16 15:26:21.0
+creator: gforet
+description: ''
+id: '12026'
+key: SYIOS-164
+number: '164'
+priority: '1'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-10-16 16:52:28.0
+status: '5'
+type: '1'
+updated: 2015-10-28 14:33:28.0
+votes: '0'
+watches: '1'
+workflowId: '12129'
+---
+actions:
+- author: gforet
+  body: Send event to room by using PUT method instead of POST.
+  created: 2015-10-16 16:52:28.0
+  id: '12273'
+  issue: '12026'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-10-16 16:52:28.0

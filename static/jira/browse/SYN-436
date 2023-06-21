@@ -1,0 +1,28 @@
+---
+summary: investigate ed25519 batch verification for speeding up DAG key validation
+---
+created: 2015-07-14 14:17:49.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11751'
+key: SYN-436
+number: '436'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '3'
+updated: 2016-11-07 18:28:13.0
+votes: '0'
+watches: '2'
+workflowId: '11852'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1349'
+  created: 2016-11-07 18:28:13.0
+  id: '13670'
+  issue: '11751'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:13.0

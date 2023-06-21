@@ -1,0 +1,36 @@
+---
+summary: Registration is broken
+---
+created: 2015-01-08 09:36:18.0
+creator: dbkr
+description: |-
+  It is currently impossible to register on matrix.org, with or without an email address. A 500 is returned from _matrix/client/api/v1/register
+
+  Here is the suspect looking line in the log:
+
+  2015-01-08 09:32:06,945 - synapse.http.server - 159 - ERROR - POST-171001 - Header entry 'User-Agent' should be list but
+   found instance of <type 'str'> instead
+id: '10895'
+key: SYN-231
+number: '231'
+priority: '1'
+project: '10000'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-01-08 10:00:09.0
+status: '5'
+type: '1'
+updated: 2015-01-08 10:00:09.0
+votes: '0'
+watches: '1'
+workflowId: '10995'
+---
+actions:
+- author: dbkr
+  body: This only affects servers with CAPTCHA enabled.
+  created: 2015-01-08 09:37:25.0
+  id: '11065'
+  issue: '10895'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-01-08 09:37:25.0

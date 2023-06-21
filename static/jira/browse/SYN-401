@@ -1,0 +1,28 @@
+---
+summary: Content repo should name content by hashes to factor out duplicates
+---
+created: 2015-06-02 13:46:53.0
+creator: matthew
+description: ''
+id: '11606'
+key: SYN-401
+number: '401'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:04.0
+votes: '0'
+watches: '2'
+workflowId: '11707'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1328'
+  created: 2016-11-07 18:28:04.0
+  id: '13649'
+  issue: '11606'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:04.0

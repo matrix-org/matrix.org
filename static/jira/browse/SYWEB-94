@@ -1,0 +1,28 @@
+---
+summary: TURN over TLS doesn't seem to be working on Firefox
+---
+created: 2014-09-26 22:39:30.0
+creator: matthew
+description: ''
+id: '10401'
+key: SYWEB-94
+number: '94'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2014-09-29 09:20:13.0
+votes: '0'
+watches: '2'
+workflowId: '10504'
+---
+actions:
+- author: dbkr
+  body: https://bugzilla.mozilla.org/show_bug.cgi?id=949703
+  created: 2014-09-29 09:19:36.0
+  id: '10463'
+  issue: '10401'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-09-29 09:19:36.0

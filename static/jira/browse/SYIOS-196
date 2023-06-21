@@ -1,0 +1,34 @@
+---
+summary: Performance issue in MXKContactManager when resuming the app
+---
+assignee: gforet
+created: 2016-01-05 15:02:15.0
+creator: manu
+description: |-
+  The attached profiling screenshot shows that MXKContactManager does 2 time-consuming things on the UI thread.
+
+  This is more visible with Vector than Console because Vector considers all user's rooms members as contact.
+id: '12268'
+key: SYIOS-196
+number: '196'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2016-01-06 08:51:05.0
+status: '5'
+type: '1'
+updated: 2016-01-06 08:51:05.0
+votes: '0'
+watches: '2'
+workflowId: '12373'
+---
+actions:
+- author: gforet
+  body: https://github.com/matrix-org/matrix-ios-kit/commit/7c41d776639855370c21e7b28b9fd34abc546db1
+  created: 2016-01-06 08:51:05.0
+  id: '12521'
+  issue: '12268'
+  type: comment
+  updateauthor: gforet
+  updated: 2016-01-06 08:51:05.0

@@ -1,0 +1,25 @@
+---
+summary: Add a link thumbnailer
+---
+created: 2015-05-10 20:36:40.0
+creator: bob
+description: |-
+  As a user I want to see the content of a posted link as a thumbnail.
+
+  Maybe this is interesting:
+
+  https://github.com/gottfrois/link_thumbnailer
+id: '11516'
+key: SYAND-75
+number: '75'
+priority: '3'
+project: '10201'
+reporter: bob
+status: '10100'
+type: '4'
+updated: 2015-05-10 20:36:40.0
+votes: '0'
+watches: '1'
+workflowId: '11617'
+---
+actions: null

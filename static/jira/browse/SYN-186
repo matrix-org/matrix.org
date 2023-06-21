@@ -1,0 +1,42 @@
+---
+summary: shouldn't be able to set blank displaynames
+---
+assignee: dbkr
+created: 2014-12-02 16:01:41.0
+creator: matthew
+description: ''
+id: '10754'
+key: SYN-186
+number: '186'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-14 14:22:01.0
+status: '5'
+type: '1'
+updated: 2015-05-26 16:13:34.0
+votes: '0'
+watches: '3'
+workflowId: '10854'
+---
+actions:
+- author: oddvar
+  body: or maybe rather "when a user has a blank displayname we should use their user localpart instead"?
+  created: 2014-12-02 16:03:43.0
+  id: '10911'
+  issue: '10754'
+  type: comment
+  updateauthor: oddvar
+  updated: 2014-12-02 16:03:43.0
+- author: dbkr
+  body: |-
+    Since we start with no displayname (ie. displayname == null) if you signup without specifying one, I'm interpreting this to be that we should treat setiing the display name to null as removing it: this is now implemented.
+
+    Note that the web client does not display this gracefully.
+  created: 2015-05-14 14:22:01.0
+  id: '11754'
+  issue: '10754'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 14:22:01.0

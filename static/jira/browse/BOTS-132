@@ -1,0 +1,31 @@
+---
+summary: matrix-appservice-verto really needs to store the conference focus in room state somewhere to avoid splitbrains
+---
+created: 2015-11-02 23:47:42.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12073'
+key: BOTS-132
+number: '132'
+priority: '3'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-01-05 13:21:32.0
+votes: '0'
+watches: '2'
+workflowId: '12176'
+---
+actions:
+- author: illicitonion
+  body: |-
+    Right now the verto bridge is hard-coded that the user must be :matrix.org, and its name is deterministically generated from the room ID, which conveniently means that you can't invite multiple different verto users into a room to start multiple conferences in parallel.
+
+    We wish to remove the hard-coded username restrictions, which means we may end up in a situation where multiple conference users are present in one room. We should use a state event or something to choose which one the canonical one is.
+  created: 2016-01-05 13:21:32.0
+  id: '12506'
+  issue: '12073'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-01-05 13:21:32.0

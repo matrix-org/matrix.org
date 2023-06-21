@@ -1,0 +1,38 @@
+---
+summary: bridge relayed irc->matrix pm to Levans as an invite but the actual msg only appeared after a HS restart
+---
+created: 2016-02-22 14:18:51.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12513'
+key: BOTS-171
+number: '171'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:46:05.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:46:05.0
+votes: '0'
+watches: '2'
+workflowId: '12613'
+---
+actions:
+- author: neb
+  body: 'By @matthew:matrix.org: This is with a remote HS, but using the matrix.org irc bridge'
+  created: 2016-02-22 14:31:48.0
+  id: '12704'
+  issue: '12513'
+  type: comment
+  updateauthor: neb
+  updated: 2016-02-22 14:31:48.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/53
+  created: 2016-06-02 10:46:05.0
+  id: '12966'
+  issue: '12513'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:46:05.0

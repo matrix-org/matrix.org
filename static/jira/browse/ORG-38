@@ -1,0 +1,32 @@
+---
+summary: Add to FAQ that SRVs can't point to CNAMEs
+---
+created: 2016-02-05 21:21:51.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  The symptoms are that the synapse that the misconfigured one is trying to connect to ends up trying to download keys from itself, which gets *very* confusing
+id: '12370'
+key: ORG-38
+number: '38'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:07:25.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:07:25.0
+votes: '0'
+watches: '2'
+workflowId: '12475'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix-doc/issues/842
+  created: 2017-03-21 11:07:20.0
+  id: '14021'
+  issue: '12370'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:07:20.0

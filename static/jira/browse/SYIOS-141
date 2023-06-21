@@ -1,0 +1,26 @@
+---
+summary: It's too easy to send duplicate messages on iOS on bad networks
+---
+created: 2015-09-22 21:46:30.0
+creator: matthew
+description: |-
+  This is because iOS seems to use POST rather than PUT and doesn't specify transaction IDs, I think:
+
+      NSString *path = [NSString stringWithFormat:@"v1/rooms/%@/send/%@", roomId, eventTypeString];
+      return [httpClient requestWithMethod:@"POST"
+id: '11912'
+key: SYIOS-141
+number: '141'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-10-28 14:33:35.0
+status: '5'
+type: '1'
+updated: 2015-10-28 14:33:35.0
+votes: '0'
+watches: '1'
+workflowId: '12015'
+---
+actions: null

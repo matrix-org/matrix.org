@@ -1,0 +1,22 @@
+---
+summary: IRC Bridge could specify the 'right' irc_Nickname displaynames for users.
+---
+created: 2014-11-07 00:09:20.0
+creator: matthew
+description: ''
+id: '10623'
+key: BOTS-9
+number: '9'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-07-28 14:06:00.0
+status: '5'
+type: '1'
+updated: 2015-07-28 14:06:00.0
+votes: '0'
+watches: '1'
+workflowId: '10723'
+---
+actions: null

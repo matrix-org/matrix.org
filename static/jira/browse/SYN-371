@@ -1,0 +1,67 @@
+---
+summary: Failed to persist event
+---
+assignee: erikj
+created: 2015-05-05 16:10:55.0
+creator: erikj
+description: |-
+  {noformat}
+    File "synapse/storage/events.py", line 53, in persist_event
+      current_state=current_state,
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/_base.py", line 375, in runInteraction
+      inner_func, *args, **kwargs
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/threadpool.py", line 196, in _worker
+      result = context.call(ctx, function, *args, **kwargs)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/context.py", line 118, in callWithContext
+      return self.currentContext().callWithContext(ctx, func, *args, **kw)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/context.py", line 81, in callWithContext
+      return func(*args,**kw)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/enterprise/adbapi.py", line 288, in _runWithConnection
+      result = func(conn, *args, **kw)
+    File "synapse/storage/_base.py", line 327, in inner_func
+      *args, **kwargs
+    File "synapse/util/logutils.py", line 84, in wrapped
+      return f(*args, **kwargs)
+    File "synapse/storage/events.py", line 104, in _persist_event_txn
+      current_state=current_state,
+    File "synapse/util/logutils.py", line 84, in wrapped
+      return f(*args, **kwargs)
+    File "synapse/storage/events.py", line 137, in _persist_event_txn
+      "state_key": event.state_key,
+    File "synapse/util/logutils.py", line 84, in wrapped
+      return f(*args, **kwargs)
+    File "synapse/storage/_base.py", line 452, in _simple_insert_txn
+      txn.execute(sql, values.values())
+    File "synapse/storage/_base.py", line 188, in execute
+      sql, *args, **kwargs
+  IntegrityError: duplicate key value violates unique constraint "state_forward_extremities_event_id_room_id_key"
+  DETAIL:  Key (event_id, room_id)=($143083765914UnTOA:jki.re, !MlGRhDEEtPYkqKpUeX:openmarket.com) already exists.
+  {noformat}
+id: '11506'
+key: SYN-371
+number: '371'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-07 13:52:13.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:10.0
+votes: '0'
+watches: '1'
+workflowId: '11606'
+---
+actions:
+- author: erikj
+  body: This is due to us having already persisted this event, and the insert happening before the duplicate check.
+  created: 2015-05-05 16:11:30.0
+  id: '11718'
+  issue: '11506'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-05 16:11:30.0

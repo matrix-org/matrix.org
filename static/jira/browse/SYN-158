@@ -1,0 +1,30 @@
+---
+summary: Joining a room over federation is still slooooow
+---
+created: 2014-11-20 02:19:37.0
+creator: matthew
+description: ''
+id: '10687'
+key: SYN-158
+number: '158'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-01-15 11:06:59.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:06.0
+votes: '0'
+watches: '1'
+workflowId: '10787'
+---
+actions:
+- author: matthew
+  body: "Meanwhile, the errors in the logs are slightly alarming:\n\n[Error] Unknown error: {\"data\":{\"error\":\"Joining #matrix-dev:matrix.org\"}}\n\tshowError (dialog-service.js, line 87)\n\tonError (room-controller.js, line 316)\n\t(anonymous function) (event-handler-service.js, line 612)\n\tprocessQueue (angular.js, line 12988)\n\t(anonymous function) (angular.js, line 13004)\n\t$eval (angular.js, line 14204)\n\t$digest (angular.js, line 14020)\n\t$apply (angular.js, line 14308)\n\t(anonymous function) (app-directive.js, line 24)\n\tdispatch (jquery-1.11.1.min.js, line 3)\n\thandle (jquery-1.11.1.min.js, line 3)\n[Log] onInit (room-controller.js, line 325)\n[Error] TypeError: null is not an object (evaluating 'scope.roomId')\n\t(anonymous function) (room-directive.js, line 233)\n\tdispatch (jquery-1.11.1.min.js, line 3)\n\thandle (jquery-1.11.1.min.js, line 3)\n[Log] resolveRoomIdentifier: #matrix-dev:matrix.org -> !XqBunHwQIXUiqCaoxq:matrix.org (event-handler-service.js, line 364)\n[Log] [EventStream] Got response from s285_213_0 to s285_215_0 (event-stream-service.js, line 65)\n[Log] [EventStream] Got response from s285_215_0 to s291_219_0 (event-stream-service.js, line 65)\n[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (bootstrap.css.map, line 0)\n[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (angular-sanitize.min.js.map, line 0)\n[Error] Failed to load resource: the server responded with a status of 404 (Not Found) (angular-route.min.js.map, line 0)\n[Log] [EventStream] Got response from s291_219_0 to s291_234_0 (event-stream-service.js, line 65)\n[Log] [EventStream] Got response from s291_234_0 to s367_234_0 (event-stream-service.js, line 65)\n[Log] [EventStream] Got response from s367_234_0 to s367_235_0 (event-stream-service.js, line 65)\n[Log] handleRoomInitialSync: !XqBunHwQIXUiqCaoxq:matrix.org (66 state events) 2 events (event-handler-service.js, line 498)\n[Log] discarding duplicate event: { (event-handler-service.js, line 402)\n    \"age\": 28469,\n    \"content\": {\n        \"avatar_url\": \"http://matrix.tp.mu:8008/_matrix/content/QG1hdHRoZXc6dHAubXUOeJQMWFMvUdqdeLovZKsyaOT.aW1hZ2UvanBlZw==.jpeg\",\n        \"displayname\": \"Matthew Hodgson\",\n        \"membership\": \"join\"\n    },\n    \"event_id\": \"$141712811919qeBZe:tp.mu\",\n    \"membership\": \"join\",\n    \"origin_server_ts\": 1417128121361,\n    \"room_id\": \"!XqBunHwQIXUiqCaoxq:matrix.org\",\n    \"state_key\": \"@matthew:tp.mu\",\n    \"type\": \"m.room.member\",\n    \"unsigned\": {\n        \"age\": 1225\n    },\n    \"user_id\": \"@matthew:tp.mu\"\n}\n[Log] joinRoom: Joined room !XqBunHwQIXUiqCaoxq:matrix.org (event-handler-service.js, line 654)\n[Log] Viewing => !XqBunHwQIXUiqCaoxq:matrix.org (event-reaper-service.js, line 71)\n[Log] Scrolling to bottom (room-controller.js, line 128)"
+  created: 2014-11-27 22:46:00.0
+  id: '10888'
+  issue: '10687'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-27 22:46:00.0

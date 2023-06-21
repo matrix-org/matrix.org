@@ -1,0 +1,22 @@
+---
+summary: Tapping on desktop notifs should take you to the right room for that notif
+---
+created: 2014-09-19 16:21:53.0
+creator: matthew
+description: ''
+id: '10343'
+key: SYWEB-58
+number: '58'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-29 11:30:54.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:58:00.0
+votes: '0'
+watches: '1'
+workflowId: '10446'
+---
+actions: null

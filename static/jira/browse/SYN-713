@@ -1,0 +1,28 @@
+---
+summary: Please can we suppress all the log context spam debugging somehow!
+---
+created: 2016-06-26 16:24:02.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12719'
+key: SYN-713
+number: '713'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:38.0
+votes: '0'
+watches: '2'
+workflowId: '12819'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1384'
+  created: 2016-11-07 18:29:38.0
+  id: '13874'
+  issue: '12719'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:38.0

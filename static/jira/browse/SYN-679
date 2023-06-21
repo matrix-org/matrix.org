@@ -1,0 +1,126 @@
+---
+summary: Push notifications not functioning
+---
+created: 2016-04-12 20:44:46.0
+creator: rrix
+description: |-
+  I have had a number of pushers entries simply fail to work, since a few weeks now, at least.
+
+  synapse=# select * from pushers;
+   480 | @rrix:whatthefuck.computer |         6994 | mobile_1245475184 | http | im.vector.app.android      | im.vector.alpha | SM-T710             | {REDACTED} | 1460398004333 | en   | {"url":"https://matrix.org/_matrix/push/v1/notify"} | s2199039_61590480_217177_207_0 | 1460419050527 |              
+   470 | @rrix:whatthefuck.computer |         7430 | mobile_1245475184 | http | org.matrix.console.android | org.matrix.androidsdk.alpha | SM-T710             | {REDACTED} | 1460095151818 | en   | {"url":"https://matrix.org/_matrix/push/v1/notify"} | s2199039_3770_217177_209_5     | 1460419050515 |              
+   118 | @rrix:whatthefuck.computer |          926 | mobile_1245475184 | http | org.matrix.console.android | org.matrix.androidsdk.alpha | LG-V498             | {REDACTED} | 1455593485374 | en   | {"url":"https://matrix.org/_matrix/push/v1/notify"} | s2199039_366925_217177_171_0   | 1460419050530 |              
+  (3 rows)
+
+  And then I deleted those and created two new ones which also fail:
+
+   470 | @rrix:whatthefuck.computer |         6994 | mobile_1245475184 | http | im.vector.app.android      | im.vector.alpha             | SM-T710             | {REDACTED | 1460420382598 | en   | {"url":"https://matrix.org/_matrix/push/v1/notify"} | s2206303_64684_7_219498_209_5 | 1460490147070 |              
+   471 | @rrix:whatthefuck.computer |         7430 | mobile_1245475184 | http | org.matrix.console.android | org.matrix.androidsdk.alpha | SM-T710             | {REDACTED} | 1460420443804 | en   | {"url":"https://matrix.org/_matrix/push/v1/notify"} | s2206303_64709_8_219498_209_5 | 1460490147059 |              
+  (2 rows)
+
+  Let me know if you need the REDACTED bits or anything else to help debug; Matthew was pretty sure bad things could be done with them, so I'm not putting them in Jira. 
+  This is also happening with the same device on the matrix.org HS, so maybe it's something tied to my device specifically? (bad GCM token or something?)
+id: '12622'
+key: SYN-679
+number: '679'
+priority: '3'
+project: '10000'
+reporter: rrix
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:25.0
+votes: '0'
+watches: '4'
+workflowId: '12722'
+---
+actions:
+- author: dbkr
+  body: Presumably there are no push notifications working from your home server at all? I can see some coming from your home server in the sygnal logs that are going to  GCM and not being rejected, so it looks like they could be going to an app somewhere. Could you rageshake in the app so we can get the app logs?
+  created: 2016-04-19 10:23:21.0
+  id: '12846'
+  issue: '12622'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-04-19 10:23:21.0
+- author: rrix
+  body: I just did a rageshake from ryan@whatthefuck.computer about an hour ago, and referenced this issue in it
+  created: 2016-04-19 21:08:18.0
+  id: '12872'
+  issue: '12622'
+  type: comment
+  updateauthor: rrix
+  updated: 2016-04-19 21:08:18.0
+- author: m-ylecollen
+  body: |-
+    The android logs don't contain any GCM event
+
+    When a GCM push is received, you have "onMessageReceived" (you can filter the logs with the tag "GcmListenerService").
+
+    There was a received message "breaking news : Judge..." which fulfilles a bing rule.
+  created: 2016-04-20 09:58:22.0
+  id: '12873'
+  issue: '12622'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-04-20 10:01:29.0
+- author: dbkr
+  body: 'Thanks. Yannick is investigating: it looks like the GCM isn''t getting to your phone for some reason. You might also want to update to the latest client version.'
+  created: 2016-04-20 10:00:12.0
+  id: '12874'
+  issue: '12622'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-04-20 10:00:12.0
+- author: m-ylecollen
+  body: |-
+    Another question about your android device : does it use an official ROM ?
+
+    if the GCM registration fails, you should have a "listen for events" in the notifications list.
+
+    The latest android client tries to perform another GCM registration when the application is debackgrounded.
+  created: 2016-04-20 10:36:57.0
+  id: '12875'
+  issue: '12622'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-04-20 10:39:31.0
+- author: m-ylecollen
+  body: |-
+    So after chatting with Ryan yesterday, it seems that the push works properly on my side with an account created on the Ryan's home server
+
+    To summarize the test i've done on my side with the new account (test on a Asus ZE550KL android 5.0.1
+    1- 1:1 chat : i've got the pushes when the application is on foreground, background or the device is in idle mode
+    2- private group chat (3 members) : seems ok too
+    3- i joined a public rooms on the Ryan's HS : i got the pushes in the 3 cases. I created a dedicated rule to have notifications with sound for this room : it worked properly too.
+
+    Tell me if you think i forgot some use cases but everything seems working on my side.
+    Is it a device issue ?
+  created: 2016-04-21 07:41:47.0
+  id: '12882'
+  issue: '12622'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-04-21 07:41:47.0
+- author: rrix
+  body: |-
+    Also, per our chat yesterday, I found that GCM is claiming a successful register:
+
+    D/RestAdapterCallback(17534): Succeed : [manageHttpPusher]
+    D/GcmRegistrationManager(17534): registerPusher succeeded
+    D/GcmRegistrationManager(17534): registerSessions : session @rrix:whatthefuck.computer is registred
+    D/GcmRegistrationManager(17534): registerSessions : all the sessions are registred
+    D/MXFileStore(17534): loadReceipts 69 rooms in 315 ms
+  created: 2016-04-21 08:47:35.0
+  id: '12883'
+  issue: '12622'
+  type: comment
+  updateauthor: rrix
+  updated: 2016-04-21 08:47:35.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1363'
+  created: 2016-11-07 18:29:25.0
+  id: '13844'
+  issue: '12622'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:25.0

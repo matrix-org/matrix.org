@@ -1,0 +1,30 @@
+---
+summary: We should only disambiguate room names with aliases when they are ambiguous (same as for display names)
+---
+created: 2015-07-15 02:06:12.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11754'
+key: SYJS-19
+number: '19'
+priority: '2'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:27:35.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:27:35.0
+votes: '0'
+watches: '2'
+workflowId: '11855'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/256
+  created: 2016-10-24 11:27:35.0
+  id: '13213'
+  issue: '11754'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:27:35.0

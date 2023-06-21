@@ -1,0 +1,30 @@
+---
+summary: Should be able to insert new lines
+---
+created: 2015-02-25 10:13:47.0
+creator: kegan
+description: ''
+id: '11137'
+key: SYWEB-303
+number: '303'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '3'
+resolutiondate: 2015-03-03 13:29:50.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:55.0
+votes: '0'
+watches: '1'
+workflowId: '11237'
+---
+actions:
+- author: kegan
+  body: SYWEB-223
+  created: 2015-03-03 13:29:50.0
+  id: '11341'
+  issue: '11137'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-03 13:29:50.0

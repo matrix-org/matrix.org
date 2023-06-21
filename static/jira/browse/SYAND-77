@@ -1,0 +1,27 @@
+---
+summary: Unread messages counter is not resetted
+---
+created: 2015-05-10 21:11:18.0
+creator: bob
+description: |-
+  App is running in the background and the user am in room YXZ.
+  Some messages were written in room YXZ.
+  The user reopens the app and navigates back to the room overview.
+
+  In the message overview the number of unread is still shown, despite the user had already read the messages.
+id: '11518'
+key: SYAND-77
+number: '77'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-05-11 07:55:10.0
+status: '5'
+type: '1'
+updated: 2015-05-11 07:55:10.0
+votes: '0'
+watches: '1'
+workflowId: '11619'
+---
+actions: null

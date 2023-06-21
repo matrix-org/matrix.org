@@ -1,0 +1,79 @@
+---
+summary: We need to decide whether we expect users to have a local working copy of the source or not.
+---
+assignee: markjh
+created: 2014-12-24 18:06:23.0
+creator: matthew
+description: |-
+  Currently the README.rst guides you through installing Synapse directly via pip via:
+
+  {code}
+  pip install --user --process-dependency-links https://github.com/matrix-org/synapse/tarball/master
+  {code}
+
+  Meanwhile, other instructions like UPGRADE.rst assume that you have a local git working copy of the source which you can do things like:
+
+  {code}
+  To pull in new dependencies, run::
+
+      python setup.py develop --user
+
+  This update includes a change to the database schema. To upgrade you first need
+  to upgrade the database by running::
+
+      python scripts/upgrade_db_to_v0.6.0.py <db> <server_name> <signing_key>
+  {code}
+
+  We need to standardise on how we expect people to run Synapse to avoid writing confusing instructions like this.
+
+  My suggestion is that we follow the classic UNIX autoconf pattern, and encourage them to download a tarball, expand it into a source dir, and install it from there.  Only if they are actually developing on it should they run the synapse from the download directory.
+
+  So:
+
+  {code}
+  # for initial install:
+  git clone https://github.com/matrix-org/synapse.git
+  python setup.py install --user # or --prefix if preferred
+
+  # for upgrades:
+  git pull
+  # to pull in any new deps:
+  python setup.py install --user # or --prefix if preferred
+  {code}
+
+  Does this sound okay?
+id: '10873'
+key: SYN-219
+number: '219'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-06 15:17:38.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:26:24.0
+votes: '0'
+watches: '2'
+workflowId: '10973'
+---
+actions:
+- author: kegan
+  body: |-
+    Provided this has got the caveats about requiring {{libjpeg-dev}}, {{libffi-dev}}, {{python-dev}}, etc then yes this sounds fine. I've installed synapse on a number of fresh devices recently, and it's not painful at all to do this via {{git clone}} rather than {{pip install}}. 
+
+    That being said, there's also issues with the synapse executable, which {{pip install}} allows you to create. It doesn't fully work properly atm iirc thanks to distutils suckage. If we go down the {{git clone}} route, we'd have to tell people to put {{synctl}} on their PATH, but that doesn't seem too bad.
+  created: 2015-01-08 15:43:20.0
+  id: '11067'
+  issue: '10873'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-08 15:43:20.0
+- author: matthew
+  body: Alternatively, should we switch to using virtualenv to avoid messes like https://github.com/matrix-org/synapse/commit/80e89772 (if that would actually help)?
+  created: 2015-01-08 20:40:25.0
+  id: '11077'
+  issue: '10873'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-08 20:40:25.0

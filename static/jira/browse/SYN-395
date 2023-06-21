@@ -1,0 +1,60 @@
+---
+summary: Captcha registration broken
+---
+created: 2015-05-28 17:30:01.0
+creator: erikj
+description: |-
+  On develop:
+
+  {noformat}
+  2015-05-28 17:21:42,117 - synapse.http.server - 113 - ERROR - POST-1890 - Failed handle request synapse.http.server._async_render on <synapse.rest.client.v2_alpha.ClientV2AlphaRestResource object at 0x27ac390>: <Request at 0x9cf5a70 method=POST uri=/_matrix/client/v2_alpha/register clientproto=HTTP/1.1>
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 90, in wrapped_request_handler
+      yield d
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/http/server.py", line 225, in _async_render
+      callback_return = yield callback(request, *args)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/client/v2_alpha/register.py", line 100, in on_POST
+      flows, body, self.hs.get_ip_from_request(request)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/auth.py", line 107, in check_auth
+      result = yield self.checkers[authdict['type']](authdict, clientip)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/handlers/auth.py", line 201, in _check_recaptcha
+      resp_body = simplejson.loads(data)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/simplejson/__init__.py", line 505, in loads
+      return _default_decoder.decode(s)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/simplejson/decoder.py", line 370, in decode
+      obj, end = self.raw_decode(s)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/simplejson/decoder.py", line 395, in raw_decode
+      ord0 = ord(s[idx])
+  KeyError: 0
+  2015-05-28 17:21:42,142 - synapse.access.http - 515 - INFO - POST-1890 - "83.166.71.14" - - [28/May/2015:16:21:41 +0000] "POST /_matrix/client/v2_alpha/register HTTP/1.1" 500 49 "https://matrix.org/beta/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36"
+  {noformat}
+id: '11569'
+key: SYN-395
+number: '395'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-28 18:05:28.0
+status: '5'
+type: '1'
+updated: 2015-06-12 18:04:00.0
+votes: '0'
+watches: '1'
+workflowId: '11670'
+---
+actions: null

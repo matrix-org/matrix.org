@@ -1,0 +1,30 @@
+---
+summary: Please can we ship a homeserver.yaml.sample
+---
+created: 2016-09-18 19:03:30.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  So that folks can see more easily what the new options are that they should be c+p'ing into their live config
+id: '12835'
+key: SYN-772
+number: '772'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:03.0
+votes: '0'
+watches: '2'
+workflowId: '12935'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1433'
+  created: 2016-11-07 18:30:03.0
+  id: '13929'
+  issue: '12835'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:03.0

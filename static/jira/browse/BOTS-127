@@ -1,0 +1,20 @@
+---
+summary: nuke (IRC) suffixes from displaynames on irc bridge on moznet
+---
+created: 2015-10-21 18:30:34.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12035'
+key: BOTS-127
+number: '127'
+priority: '2'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-01-26 09:48:43.0
+votes: '0'
+watches: '1'
+workflowId: '12138'
+---
+actions: null

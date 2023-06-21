@@ -1,0 +1,31 @@
+---
+summary: Public channels with 2 users should not be mistaken as a 1:1 chat
+---
+assignee: manu
+created: 2014-09-20 01:12:29.0
+creator: matthew
+description: ''
+id: '10353'
+key: SYWEB-67
+number: '67'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-24 12:18:04.0
+status: '1'
+type: '1'
+updated: 2014-09-25 15:19:08.0
+votes: '0'
+watches: '2'
+workflowId: '10456'
+---
+actions:
+- author: manu
+  body: HS does not provide the right visibility information. We cannot know if a room is public before joining it.
+  created: 2014-09-25 15:19:08.0
+  id: '10455'
+  issue: '10353'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-25 15:19:08.0

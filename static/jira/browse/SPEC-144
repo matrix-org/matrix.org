@@ -1,0 +1,31 @@
+---
+summary: Some of our examples give http:// rather than https:// URLs. they shouldn't.
+---
+assignee: kegan
+created: 2015-03-29 23:51:07.0
+creator: matthew
+description: ''
+id: '11296'
+key: SPEC-144
+number: '144'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-10-14 14:45:03.0
+status: '5'
+type: '1'
+updated: 2015-10-14 14:45:03.0
+votes: '0'
+watches: '2'
+workflowId: '11396'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-doc/pull/99
+  created: 2015-10-14 14:45:03.0
+  id: '12261'
+  issue: '11296'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-14 14:45:03.0

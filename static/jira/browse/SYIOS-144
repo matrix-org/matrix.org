@@ -1,0 +1,22 @@
+---
+summary: Ability to send messages in the background
+---
+created: 2015-09-22 22:19:40.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  ...would be awesome, especially for those of us on bad connections. Being able to hit send, and background the app, and be confident that the message will get through rather than having to keep the app running for ages in the fg would be lovely. We had it on UC, too.
+id: '11923'
+key: SYIOS-144
+number: '144'
+priority: '2'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-09-22 22:19:40.0
+votes: '0'
+watches: '1'
+workflowId: '12026'
+---
+actions: null

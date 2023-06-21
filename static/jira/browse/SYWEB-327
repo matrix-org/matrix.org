@@ -1,0 +1,23 @@
+---
+summary: Hide "set topic" from room title if user does not have access to do so
+---
+created: 2015-03-13 10:15:34.0
+creator: bnvk
+description: |-
+  It's poor UX to be shown a button that then you're unable to use usually... unless "requesting access" is a desired thing, which I don't think is the case here!
+
+  Easy solution, hide the button unless user has access
+id: '11217'
+key: SYWEB-327
+number: '327'
+priority: '3'
+project: '10004'
+reporter: bnvk
+status: '10100'
+type: '1'
+updated: 2015-03-13 10:15:34.0
+votes: '0'
+watches: '1'
+workflowId: '11317'
+---
+actions: null

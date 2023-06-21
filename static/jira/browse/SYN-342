@@ -1,0 +1,35 @@
+---
+summary: How should a fault-tolerant application service connect to Matrix?
+---
+created: 2015-04-12 13:56:23.0
+creator: matt-williams
+description: |-
+  I built a SIP/Matrix gateway.  For carrier-grade SIP, we want to avoid single points of failure.  How should a fault-tolerant SIP/Matrix gateway connect to Matrix?
+
+  It's possible to build an application service using an active/backup fault-tolerance architecture, where only one of the pair is connected into Matrix at a time (or both are connected but only one processes events).
+
+  I can't currently see a way of building an application service using a clustered architecture where many servers are all active but only a subset of these are required for capacity.  Each instance in the cluster could connect to Matrix, but then events would be duplicated - we only need each event to be delivered to the cluster once.
+
+  The SIP approach (using multiple SRV records, one pointing to each host in the cluster) is outlined in RFC 3263.  An alternative might be to allow application services to specify a "group" they're joining when they register.
+id: '11330'
+key: SYN-342
+number: '342'
+priority: '3'
+project: '10000'
+reporter: matt-williams
+status: '10100'
+type: '4'
+updated: 2016-11-07 18:27:55.0
+votes: '0'
+watches: '2'
+workflowId: '11430'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1308'
+  created: 2016-11-07 18:27:55.0
+  id: '13629'
+  issue: '11330'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:55.0

@@ -1,0 +1,33 @@
+---
+summary: why the Matrix is open source and other messaging platform are paid what is its limits in relation to other
+---
+created: 2016-05-04 12:19:11.0
+creator: mohamed abdessamad
+description: ''
+id: '12650'
+key: ORG-53
+number: '53'
+priority: '3'
+project: '10003'
+reporter: mohamed abdessamad
+resolution: '10100'
+resolutiondate: 2016-05-05 11:33:05.0
+status: '5'
+type: '3'
+updated: 2016-05-05 11:33:05.0
+votes: '0'
+watches: '2'
+workflowId: '12750'
+---
+actions:
+- author: richvdh
+  body: |-
+    This bug-tracker is not intended as a general Q&A forum.
+
+    I suggest you read the FAQ (in particular http://matrix.org/docs/guides/faq.html#why-have-you-released-this-as-open-source) and if you have specific questions which are not answered there, ask them in #matrix:matrix.org / irc://irc.freenode.net/matrix.
+  created: 2016-05-05 11:33:05.0
+  id: '12898'
+  issue: '12650'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-05 11:33:05.0

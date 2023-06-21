@@ -1,0 +1,43 @@
+---
+summary: POST /join/:room_id does not reflect the room ID back in response
+---
+created: 2015-01-12 15:39:54.0
+creator: leonerd
+description: |-
+  POST to .../join/:room_alias returns a result that contains the converted ID of the room
+
+  POST to .../join/:room_id does not.
+
+  This complicates the design of clients, which break if they just blindly pass "the user supplied room name/id/thing string" into the join URL then try to parse the room_id from the result.
+id: '10915'
+key: SYN-234
+number: '234'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-01-13 17:29:57.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:11.0
+votes: '0'
+watches: '1'
+workflowId: '11015'
+---
+actions:
+- author: leonerd
+  body: Currently tested (with expect_fail) in sytest commit b3a84b1
+  created: 2015-01-12 15:44:24.0
+  id: '11096'
+  issue: '10915'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-01-12 15:44:24.0
+- author: leonerd
+  body: Fixed by https://github.com/matrix-org/synapse/commit/34a5fbe2
+  created: 2015-01-13 17:29:57.0
+  id: '11115'
+  issue: '10915'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-01-13 17:29:57.0

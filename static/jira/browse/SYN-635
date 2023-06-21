@@ -1,0 +1,28 @@
+---
+summary: GETting _matrix/ should serve up something more helpful and selfdocumenting than a 405
+---
+created: 2016-02-22 01:02:26.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12512'
+key: SYN-635
+number: '635'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:09.0
+votes: '0'
+watches: '2'
+workflowId: '12612'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1502'
+  created: 2016-11-07 18:29:09.0
+  id: '13809'
+  issue: '12512'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:09.0

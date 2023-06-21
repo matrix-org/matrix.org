@@ -1,0 +1,79 @@
+---
+summary: Improve the SQL schema versioning system
+---
+assignee: erikj
+created: 2014-09-23 17:28:12.0
+creator: leonerd
+description: |-
+  Currently it's a total mess because I forgot to explain to people how it should work. Ignoring for a moment what it does now, we'd like that it be arranged something like the following:
+
+   * Use the SQLite {{USER_VERSION}} pragma to track a monotonic version number on the user's data
+
+   * Developers will write 'delta' SQL files that apply some schema change to the database
+   * At release time, any of the current outstanding changes get merged into a single "next version" delta file, to be placed in the {{delta}} directory
+
+  Additionally, we can keep in source a {{current.sql}} file (maintained by an autogeneration script) that effectively combines all of the deltas, such that developers can easily inspect the current state of the world, and that new homeserver instances don't have to go trawling back through potentially-years of delta history to construct their tables.
+
+  This means that the following additional changes need to be applied to the code structure:
+
+   * Create a table called something like {{extra_schemas}} with a single TEXT column, that developer versions of the homeserver can use to track which extra schemas are applied. On startup, check the {{schema/new}} directory for extra files that haven't been applied; apply any that are new and record that it has done so.
+
+  At the time we make a new release, we can then concatenate all of the "new" files into a single "next version" SQL file, added to the {{schema/delta}} directory. External users' servers will now use this to apply all of their changes and bump the {{USER_VERSION}} number.
+
+  Additionally, as developers, we will have to take care to apply the remaining schema changes and bump the version on local "under-development" databases as appropriate after such a schema-changing release.
+
+  -----
+
+  I believe this model best combines the ability for multiple developers to be independently working on non-clashing schema changes for the 'next' version, while balancing the simplicity of the external view of updates, being a single atomic change that just increments from one version number to the next. We as developers will then be working to the 'baseline' version plus some set of 'in-flight' changes
+id: '10380'
+key: SYN-67
+number: '67'
+priority: '2'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-03-06 10:28:54.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:22:42.0
+votes: '0'
+watches: '2'
+workflowId: '10483'
+---
+actions:
+- author: erikj
+  body: |-
+    Comments:
+    * Would it be possible to not use {{USER_VERISON}}, since it's an SQLite specific feature?
+    * We need support for delta python scripts to do some upgrades.
+    * Why do we need one delta file at release time? So long as we're sure all the scripts/sql files are orthogonal I don't see what we gain from squishing them down, other than extra complexity at release time. To be honest, I think its clearer if orthogonal deltas are in different files, e.g. {{schema/delta/15/rejections.sql}}.
+
+    A concrete proposal might be:
+    # Delta scripts (.py and .sql) are stored in a directory, e.g. {{delta/<version>/rejections.py}}.
+    # There is a new table that stores the current version (and maybe what delta files it has executed?)
+    # When upgrading, look for all scripts in the appropriate delta directories excluding the old version up to and including the new version. The execution of order of the scripts doesn't matter since they are all orthogonal. Update the current version table with new version.
+
+    If we also keep track of which delta scripts we've run for the current version, it might make it nicer for people developing on synapse when they pull in a new database change.
+
+    We do need to be careful to make sure the delta scripts *are* orthogonal before releasing, but this is going to be a lot easier than having to remember to run various scripts before releasing.
+
+    We probably do want to support making it *relatively* easy for people to run actual implementations off of develop, since I certainly do it from time to time.
+  created: 2015-01-27 17:22:34.0
+  id: '11197'
+  issue: '10380'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-27 17:22:34.0
+- author: markjh
+  body: |-
+    Keeping the delta files separate seems very sensible to me.
+
+    Tracking which files have been applied is a good idea for deployments from develop. We might need to be careful about changing the schema files on develop in that case.
+
+    Using a table to track which release versions have been applied rather than using sqlite specific features would be nice if we want to try using a different SQL database implementation.
+  created: 2015-01-27 17:50:53.0
+  id: '11198'
+  issue: '10380'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-01-27 17:50:53.0

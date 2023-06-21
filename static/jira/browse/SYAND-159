@@ -1,0 +1,42 @@
+---
+summary: Android<->Android calls echo
+---
+created: 2015-11-12 11:36:31.0
+creator: wldhx
+description: |-
+  Reported by @brothermechanic:matrix.org
+
+  In Android<- >Android voice/video calls echo makes talking virtually impossible (Android<->vector.im is fine). Persists in both normal and speakerphone modes.
+  Tested Matrix Console versions: #255-ish, #261
+id: '12105'
+key: SYAND-159
+number: '159'
+priority: '2'
+project: '10201'
+reporter: wldhx
+resolution: '1'
+resolutiondate: 2015-11-18 07:10:54.0
+status: '5'
+type: '1'
+updated: 2015-11-18 07:10:54.0
+votes: '0'
+watches: '2'
+workflowId: '12208'
+---
+actions:
+- author: wldhx
+  body: 'Tested Android versions: 4.4.2 <-> 4.2.2.'
+  created: 2015-11-12 11:39:38.0
+  id: '12361'
+  issue: '12105'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-11-12 11:39:38.0
+- author: m-ylecollen
+  body: 'Fix in the build #273'
+  created: 2015-11-18 07:10:54.0
+  id: '12369'
+  issue: '12105'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-11-18 07:10:54.0

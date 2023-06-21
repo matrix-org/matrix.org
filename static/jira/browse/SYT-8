@@ -1,0 +1,28 @@
+---
+summary: Test login for m.login.recaptcha
+---
+created: 2015-05-21 16:55:41.0
+creator: markjh
+description: ''
+id: '11553'
+key: SYT-8
+number: '8'
+priority: '1'
+project: '10300'
+reporter: markjh
+status: '1'
+type: '2'
+updated: 2015-06-23 15:24:53.0
+votes: '0'
+watches: '2'
+workflowId: '11654'
+---
+actions:
+- author: leonerd
+  body: This one is going to be hard to test unless synapse can be dynamically reconfigured with various registration requirements, so as to set up that one test can run that requires recaptcha, without all of them needing it.
+  created: 2015-06-23 15:24:53.0
+  id: '11911'
+  issue: '11553'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-23 15:24:53.0

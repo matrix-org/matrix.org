@@ -1,0 +1,22 @@
+---
+summary: Matthew can't give ops to users on matrix.org
+---
+created: 2014-09-15 23:28:26.0
+creator: matthew
+description: ''
+id: '10004'
+key: SYN-3
+number: '3'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2014-09-24 22:11:30.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:31.0
+votes: '0'
+watches: '1'
+workflowId: '10337'
+---
+actions: null

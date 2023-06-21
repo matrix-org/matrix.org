@@ -1,0 +1,54 @@
+---
+summary: Tap-to-insert-nick should work on all events
+---
+created: 2015-08-04 16:10:29.0
+creator: oddvar
+description: ''
+id: '11782'
+key: SYAND-110
+number: '110'
+priority: '3'
+project: '10201'
+reporter: oddvar
+resolution: '1'
+resolutiondate: 2015-09-04 16:47:50.0
+status: '5'
+type: '2'
+updated: 2015-09-04 16:47:50.0
+votes: '0'
+watches: '3'
+workflowId: '11883'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    Tap on event opens an actions lists.
+
+    i added the copy action to let you copy the message body in the clipboard.
+  created: 2015-09-03 10:45:48.0
+  id: '12089'
+  issue: '11782'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-03 10:45:48.0
+- author: alien
+  body: |-
+    Hmmm I don't think - tap, copy, tap, paste, deleting "joined", inserting ":" manually - is a proper way to insert nick. 
+    Add action "insert nick" maybe?
+  created: 2015-09-03 11:05:48.0
+  id: '12090'
+  issue: '11782'
+  type: comment
+  updateauthor: alien
+  updated: 2015-09-03 11:05:48.0
+- author: m-ylecollen
+  body: |-
+    Done : you can paste the username to the text editor on tapping on
+    1 - an other member message
+    2 - a room event message (renaming room, XX joined...)
+  created: 2015-09-03 12:37:10.0
+  id: '12091'
+  issue: '11782'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-03 12:37:10.0

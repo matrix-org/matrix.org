@@ -1,0 +1,30 @@
+---
+summary: Reduce interdepencency between tests
+---
+created: 2015-09-30 13:20:43.0
+creator: leonerd
+description: ''
+id: '11979'
+key: SYT-33
+number: '33'
+priority: '3'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-19 20:08:21.0
+status: '5'
+type: '4'
+updated: 2015-11-19 20:08:21.0
+votes: '0'
+watches: '1'
+workflowId: '12082'
+---
+actions:
+- author: leonerd
+  body: This has now largely been done by use of the various "fixture" objects instead of shared users persisted across many tests using the test env.
+  created: 2015-11-19 20:08:21.0
+  id: '12373'
+  issue: '11979'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-11-19 20:08:21.0

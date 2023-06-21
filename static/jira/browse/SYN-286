@@ -1,0 +1,30 @@
+---
+summary: Federated presence is broken, matrix.org->tp.mu on 0.7.1-r2
+---
+created: 2015-02-22 23:32:39.0
+creator: matthew
+description: ''
+id: '11115'
+key: SYN-286
+number: '286'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2015-08-28 10:57:46.0
+status: '5'
+type: '1'
+updated: 2015-08-28 10:57:46.0
+votes: '2'
+watches: '2'
+workflowId: '11215'
+---
+actions:
+- author: jamesbody
+  body: Point of contact/owner of matrix.tp.mu is Andy Smith  [ andy.smith@truphone.com ]
+  created: 2015-05-07 12:17:54.0
+  id: '11724'
+  issue: '11115'
+  type: comment
+  updateauthor: jamesbody
+  updated: 2015-05-07 12:17:54.0

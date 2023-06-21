@@ -1,0 +1,36 @@
+---
+summary: Server-side ignore functionality
+---
+created: 2015-07-12 15:16:23.0
+creator: matthew
+description: ''
+id: '11746'
+key: SPEC-202
+number: '202'
+priority: '1'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:31.0
+votes: '0'
+watches: '3'
+workflowId: '11847'
+---
+actions:
+- author: xena
+  body: I ran into a situation today in Matrix HQ (not naming the user in the sake of not spreading this drama here) where such a server side ignore would be useful to resolve a situation involving said user. In general I think this is a blocker for deployment of Matrix to places.
+  created: 2015-12-09 17:17:46.0
+  id: '12450'
+  issue: '11746'
+  type: comment
+  updateauthor: xena
+  updated: 2015-12-09 17:17:46.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/528'
+  created: 2016-10-28 16:27:31.0
+  id: '13336'
+  issue: '11746'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:31.0

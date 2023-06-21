@@ -1,0 +1,34 @@
+---
+summary: Presence liveness (grey/green in webclient) is broken on new 1:1 chats
+---
+created: 2014-11-03 16:46:39.0
+creator: matthew
+description: |-
+  To reproduce:
+   * Start fresh homeserver
+   * User 1 invites user 2 via the message box on the homepage of the webclient
+   * Both users see each other as grey in the UI, both before & after joining the 1:1 room.
+id: '10609'
+key: SYN-125
+number: '125'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-26 16:30:57.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:40.0
+votes: '0'
+watches: '2'
+workflowId: '10709'
+---
+actions:
+- author: leonerd
+  body: Should now be fixed by SYN-72
+  created: 2014-11-26 16:30:57.0
+  id: '10858'
+  issue: '10609'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 16:30:57.0

@@ -1,0 +1,42 @@
+---
+summary: Webclient doesn't re-connect well after connectivity glitches
+---
+assignee: matthew
+created: 2014-11-26 02:42:30.0
+creator: matthew
+description: |-
+  Whenever I close my laptop or switch networks the webclients seem to get wedged and not recover when connectivity is restored.  pre 0.5 I believe they would correctly restore themselves.  This means that you have to manually refresh the browser tabs to get them listening to events again.
+
+  Manu fixed this ages ago; this looks to be a regression introduced in the last few weeks.
+id: '10717'
+key: SYWEB-182
+number: '182'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-26 16:56:03.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:03.0
+votes: '0'
+watches: '2'
+workflowId: '10817'
+---
+actions:
+- author: kegan
+  body: Can't reproduce this. Tried nuking the connection on Chrome, waited a couple of minutes, and when the connection came back it was all fine. Logs would be helpful at this point. There should be bleating on [EventStream] or failed GETs to /events.
+  created: 2014-11-26 14:04:32.0
+  id: '10852'
+  issue: '10717'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-26 14:04:32.0
+- author: kegan
+  body: There was a bug which caused /initialSync to never retry if it failed. This is now fixed.
+  created: 2014-11-26 16:56:03.0
+  id: '10859'
+  issue: '10717'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-26 16:56:03.0

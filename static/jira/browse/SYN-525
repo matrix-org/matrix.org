@@ -1,0 +1,28 @@
+---
+summary: Typing notifications latch on if server restarts while someone is typing
+---
+created: 2015-11-27 14:02:49.0
+creator: illicitonion
+description: ''
+id: '12141'
+key: SYN-525
+number: '525'
+priority: '3'
+project: '10000'
+reporter: illicitonion
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:37.0
+votes: '0'
+watches: '2'
+workflowId: '12244'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1422'
+  created: 2016-11-07 18:28:37.0
+  id: '13730'
+  issue: '12141'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:37.0

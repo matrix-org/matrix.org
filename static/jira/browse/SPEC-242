@@ -1,0 +1,36 @@
+---
+summary: Consider the implications of which server creates the event ID as part of the make_join/send_join dance
+---
+created: 2015-09-28 16:49:50.0
+creator: leonerd
+description: |-
+  In the subtle multi-way handshake that is federation's make_join+send_join dance to join a new user on there are two candidate ways that the event ID of the newly-created {{m.room.member}} event gets specified.
+
+    1) The assisting server returns one in the protoevent returned by {{make_join}}
+    2) The joining server sets one when it makes the final event and posts it to {{send_join}}
+
+  Provided that event ID is domained to either of the servers, and is thus covered by the signatures when both sign the event, it at first doesn't appear to matter which server's choice of ID actually gets persisted in the final version of the event.
+
+  We might want to carefully consider the implications of either choice and make a requirement in the specification, when it gets documented. (See also SPEC-241)
+id: '11960'
+key: SPEC-242
+number: '242'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '4'
+updated: 2016-10-28 16:27:43.0
+votes: '0'
+watches: '2'
+workflowId: '12063'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/555'
+  created: 2016-10-28 16:27:43.0
+  id: '13363'
+  issue: '11960'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:43.0

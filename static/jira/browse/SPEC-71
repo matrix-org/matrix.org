@@ -1,0 +1,58 @@
+---
+summary: Directory-service "list" verb
+---
+created: 2014-11-26 17:59:48.0
+creator: leonerd
+description: |-
+  Add a property to room alias mappings to store whether they are "listed":
+
+  {noformat}
+    PUT .../directory/room/:alias
+    { room_id: "!foobar:example.org", listed: true }
+  {noformat}
+
+  Add a "list" verb to retrieve only those aliases marked as listed:
+
+  {noformat}
+    GET .../directory/rooms
+  {noformat}
+
+  This might then serve as a replacement of, or at least in addition to, the current {{/publicRooms}} URL, which seems somewhat at odds with the unrelated concept of a room being "public"; which there relates to permission to join without an invite.
+id: '10721'
+key: SPEC-71
+number: '71'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:51.0
+votes: '0'
+watches: '2'
+workflowId: '10821'
+---
+actions:
+- author: leonerd
+  body: Of course, {{GET .../directory/rooms}} by itself isn't sufficient a replacement as that would only serve room IDs. A true replacement might be called {{GET .../listedRooms}} or somesuch, and offer the full initialSync-style response containing room state and a snapshot of a few recent messages in the room.
+  created: 2014-11-26 18:02:08.0
+  id: '10868'
+  issue: '10721'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 18:02:08.0
+- author: leonerd
+  body: See also SPEC-64
+  created: 2014-11-26 18:27:33.0
+  id: '10873'
+  issue: '10721'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 18:27:33.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/476'
+  created: 2016-10-28 16:26:51.0
+  id: '13252'
+  issue: '10721'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:51.0

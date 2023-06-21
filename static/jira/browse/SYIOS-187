@@ -1,0 +1,20 @@
+---
+summary: The app crashes when pressing "Start Chat" several times in member detail page
+---
+created: 2015-12-03 14:20:27.0
+creator: manu
+description: ''
+id: '12174'
+key: SYIOS-187
+number: '187'
+priority: '1'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '1'
+updated: 2015-12-03 14:20:27.0
+votes: '0'
+watches: '1'
+workflowId: '12277'
+---
+actions: null

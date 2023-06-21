@@ -1,0 +1,25 @@
+---
+summary: Please make another release
+---
+created: 2015-08-07 18:14:31.0
+creator: leonerd
+description: |-
+  The most recent release of matrix-angular-sdk is too old to include a commit I recently made:
+
+    bf51e25 Have installed_location() return the dirname of __file__, not file itself, so the caller doesn't have to os.path.dirname() it manually
+
+  Having this in a release means that a comparable change can be made within synapse that would neaten up some details in the debian package.
+id: '11786'
+key: SYWEB-381
+number: '381'
+priority: '3'
+project: '10004'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2015-08-07 18:17:56.0
+votes: '0'
+watches: '1'
+workflowId: '11887'
+---
+actions: null

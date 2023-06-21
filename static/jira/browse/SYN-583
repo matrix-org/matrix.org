@@ -1,0 +1,30 @@
+---
+summary: We need a config option to make new rooms unfederatable by default on a server
+---
+created: 2016-01-07 23:02:24.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Use case is if you really don't want your users creating federatable public rooms from your HS, but happy for them to join others
+id: '12281'
+key: SYN-583
+number: '583'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:53.0
+votes: '0'
+watches: '2'
+workflowId: '12386'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1466'
+  created: 2016-11-07 18:28:53.0
+  id: '13771'
+  issue: '12281'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:53.0

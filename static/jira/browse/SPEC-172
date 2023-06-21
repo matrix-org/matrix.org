@@ -1,0 +1,247 @@
+---
+summary: Searchable history API
+---
+assignee: erikj
+created: 2014-11-07 00:43:19.0
+creator: matthew
+description: |-
+  It'd be lovely to be able to do full-text search on history.  Architecturally it'd be nice for the search engine to be pluggable.
+
+  Open Questions:
+  * Can you search rooms that you are not in?
+  * Is search something that a domain must implement or is it an optional API?
+
+  Response Format Proposal R1
+  ========================
+
+  {code}
+  {
+      // Include how the results are grouped in the response
+      // so that an SDK can interpret the results without needing
+      // to understand the query.
+      "grouped_by": "<'sender' or 'room'>"
+      // The order of the groups is determined by the ordering
+      // constraints in the query.
+      "groups": [{
+          "id": "<room_id or sender_id>",
+          // Include the name in-case the client hasn't seen 
+          // a "join" event for this entity.
+          "display_name": "<room_name or sender_name>",
+          "avatar_url": "<room_avatar or sender_avatar>",
+          // Array of events in an order determined by the
+          // ordering constraints in the query.
+          "results": [{
+              "<event_key>": "<event_value>"
+          }],
+          // An opaque token to get the next set of results for this group.
+          "next_results": "<next_results_token>"
+      }],
+      // An opaque token to get the next set of groups for this query result.
+      "next_groups": "<next_groups_token>"
+  }
+  {code}
+
+  {code}
+  GET <prefix>/search/next_groups/<next_groups_token> HTTP/1.1
+  GET <prefix>/search/next_results/<room_id or sender_id>/<next_results_token> HTTP/1.1
+  {code}
+id: '10630'
+key: SPEC-172
+number: '172'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-12-10 15:49:17.0
+status: '5'
+type: '2'
+updated: 2015-12-10 15:49:17.0
+votes: '2'
+watches: '5'
+workflowId: '10730'
+---
+actions:
+- author: matthew
+  body: This is increasingly important.  Originally the expectation was to implement this as an AS.  However, the more I think about it the more I think it should be a core CS API, to avoid fragmentation between different ASes implementing different APIs.  We should also set a precedent for clients implementing it by default.
+  created: 2015-06-02 01:01:36.0
+  id: '11815'
+  issue: '10630'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-02 01:01:36.0
+- author: erikj
+  body: |-
+    I was thinking of something along the lines of:
+
+    {noformat}
+    {
+      "event_map": {
+        "<event_id>": {
+            "rank": 0.5234156548,
+            "event": { ... }
+        },
+        ...
+      },
+      "groups": {
+        "<group>": {
+          "rank": 0.214,
+          "events": ["<event_id">, ...],
+        },
+        ...
+      },
+      "next_batch": "<some_token>"
+    }
+    {noformat}
+
+    Where {{groups}} and {{next_batch}} are optional depending on if the server supports them (and are requested).  As a first cut impl on synapse we wouldn't implement either of those.
+
+    The advantage of this format is its fairly extensible, so advanced servers could add more information and knobs to twiddle. Its a bit annoying that the {{event_map}} is a map rather than a list though.
+
+    Thoughts?
+  created: 2015-10-01 17:26:13.0
+  id: '12201'
+  issue: '10630'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-10-01 17:26:13.0
+- author: erikj
+  body: |-
+    For {{m.room.message}}, things that we may want to filter on:
+
+    - {{msgtype}}
+    - {{room_id}}
+    - {{sender}}
+    - {{time}}
+
+    Things we want to do full text search over:
+
+    - {{body}}
+
+    Anything else? Would we want to do FTS over {{sender + body}} ?
+  created: 2015-10-02 11:30:04.0
+  id: '12207'
+  issue: '10630'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-10-02 11:30:04.0
+- author: matthew
+  body: |-
+    I suggest the FTS index is over the (sender, display name, body).  Ideally we'd also search alias, name and topic of rooms - and even membership details (even if members haven't said anything).
+
+    The grouping feels like a premature optimisation, but if you want to define it (but not bother implementing it yet) i guess it doesn't harm that much.
+
+    I'm surprised that the response format doesn't seem to give the total number of results either per group or global - surely this is key info?
+  created: 2015-10-02 14:09:30.0
+  id: '12208'
+  issue: '10630'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-10-02 14:09:30.0
+- author: erikj
+  body: |-
+    OOI, when would you want to search across an alias of a room?
+
+    bq. I  suggest the FTS index is over the (sender, display name, body).
+
+    Would the search be over the current display name, or the display name at the time?
+
+    bq. I'm surprised that the response format doesn't seem to give the total number of results either per group or global - surely this is key info?
+
+    Oops, yes that would be handy.
+  created: 2015-10-02 14:16:53.0
+  id: '12209'
+  issue: '10630'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-10-02 14:16:53.0
+- author: erikj
+  body: |-
+    bq. The grouping feels like a premature optimisation, but if you want to define it (but not bother implementing it yet) i guess it doesn't harm that much.
+
+    It's more there to make sure we don't design it completely out.
+  created: 2015-10-02 14:18:20.0
+  id: '12210'
+  issue: '10630'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-10-02 14:18:20.0
+- author: matthew
+  body: 'If I joined a room by somehow entering or selecting ''#zarquon:matrix.org'', and then i go to the ''spotlight'' or ''google'' style One True Search Interface in my app and enter the string search term ''zarquon'' (which may not appear anywhere else in that room), I might feel rather surprised if #zarquon isn''t shown in the list.  Just as I would if Google didn''t bother to index the words in a URL path.'
+  created: 2015-10-02 15:03:28.0
+  id: '12213'
+  issue: '10630'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-10-02 15:03:28.0
+- author: erikj
+  body: Aah, so you want FTS across alias and separately FTS across other things, rather than FTS over the concatenations of, say, sender + body?
+  created: 2015-10-02 15:48:26.0
+  id: '12215'
+  issue: '10630'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-10-02 15:48:26.0
+- author: erikj
+  body: |-
+    So the things we may (currently) want to search over are:
+
+    \\
+
+    * {{m.room.message}} / {{m.room.name}} / {{m.room.topic}} events':
+    ** {{body}} / {{name}} / {{topic}} -- supporting searching using FTS.
+    ** {{sender}} -- searching exactly
+    ** {{origin_server_ts}}  -- searching by range
+    ** {{msgtype}} -- exactly
+    ** {{room_id}} -- exactly
+
+    * Current profile information: display name, matrix id, etc, support searching using FTS.
+
+    * Current room information: name, topic, aliases,  support searching using FTS.
+
+    \\
+
+    Depending on where the search box is, we may want to search over everything or just specific things. For example, a search box in the recents list might only search through the "current room information", a search box in a room might only search through the message events in that room, etc. A global spotlight search box would probably search over everything ^1^.
+
+    ---
+
+    ^1^ For given definitions thereof.
+  created: 2015-10-05 13:35:47.0
+  id: '12221'
+  issue: '10630'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-10-05 13:35:47.0
+- author: neb
+  body: 'By @matthew:matrix.org: we should probably also search historical display names (who said what?) and topics, room names etc at some point. but I wouldn''t optimise for this, other than observing that indexing state via the timeline events rather than worrying about the concept of current state might be an easier impl'
+  created: 2015-10-06 11:34:22.0
+  id: '12222'
+  issue: '10630'
+  type: comment
+  updateauthor: neb
+  updated: 2015-10-06 11:34:22.0
+- author: erikj
+  body: |-
+    From IRL:
+
+    Matthew:
+    {quote}
+    1. /sync and /search APIs could potentially be unified in the future (to provide firehose style semantics, with non-realtime-search as a subset use case), but as one is inherently realtime and the other is inherently not-realtime, it doesn't make sense to rush this as the architectures required would be very different
+    2. /search API is then free to use its own pagination parameters/API to navigate back and forth between search results.
+    3. it was a mistake that search API returns results ordered by relevance rather than timeline (the wireframe designs got it right; matthew failed to communicate this to erik)
+    4. for now (synapsegeddon) we should prioritise ordering search results by timeline rather than relevance
+    5. please can we return those results as an ordered map list rather than a map
+    6. we need state to correctly display the context of those results. the choice is precomputing it serverside versus handing the client the subset of the 'relevant' state events so the client can work it out itself.  we flipflopped badly on this; sounds like we don't really care right now - it might be easier as a first cut just to send a precomputed value.  This will not be disambiguated however (nor would we be able to disambiguate clientside either).  If we don't precompute, then clients would ideally specify the 'relevant' state that they're interested in - but we don't want to have to define that API, so for now we could hardcode the server to make an executive decision.
+    7. we need to be able to search on sender as well as message bodies - the use case is "when did kegan last say something?" or "how active has bill been recently?" or "what was the last etherpad URL that mark sent"?
+    7.1 (this is what prompted the whole discussion of unifying /sync and /search in the first place, making search a v2 filter that can be applied to /sync and /messages).
+    7.2  However, as we don't want to unify them now (point 1), we can handle it entirely using the /search API, by applying the sender filter as a v2 filter on top of the /search results.  However, in order to support searching on a null search term (i.e. "show me all messages from Kegan") we'd need to extend the search API to intelligently fall through to using that index for now.
+    7.3 Dan pointed out that searching on mxid or 3pid rather than historical displayname makes much more sense for those use cases (although post-synapsegeddon we could possibly worry about edge cases like historical display names)
+    7.4 I can't remember if we decided whether it would be up to the client or server to resolve 3PIDs to MXIDs when searching based on 3PID in that instance.
+    8 When 'clicking through' a result in order to actually view the historical room at that point in time, we'd use the /messages API.  This needs to keyed on either the event ID of the message in question (which gives us "show me this message in full context" semantics), or the batch-tokens for the before/after context from the original search result.
+    9 In future, the /messages API could be extended to also return its own 'nested' context around the messages that it returns.  For instance, if you use /messages with a v2 filter to return all net.arasphere.foo events, you might want to see a few events of context around them.  This sounds like it would be a good thing, but we can't think of a use case for it for Synapsegeddon or search right now.
+    {quote}
+  created: 2015-10-29 15:01:22.0
+  id: '12282'
+  issue: '10630'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-10-29 21:14:33.0

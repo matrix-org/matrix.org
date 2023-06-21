@@ -1,0 +1,30 @@
+---
+summary: Trying to add an alias to the room directory when you don't have permission gives unrecognised access token error
+---
+created: 2016-03-22 12:32:18.0
+creator: neb
+description: |-
+  Submitted by @dave:matrix.org
+  Tried as guest. This means you get logged out of vector
+id: '12573'
+key: SYN-658
+number: '658'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:17.0
+votes: '0'
+watches: '2'
+workflowId: '12673'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1517'
+  created: 2016-11-07 18:29:17.0
+  id: '13825'
+  issue: '12573'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:17.0

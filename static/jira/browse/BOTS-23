@@ -1,0 +1,23 @@
+---
+summary: IRC users created by the bridge should use displayname rather than userid as the basis for their IRC nick
+---
+assignee: kegan
+created: 2015-03-29 23:43:54.0
+creator: matthew
+description: ''
+id: '11292'
+key: BOTS-23
+number: '23'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-12 14:55:44.0
+status: '5'
+type: '2'
+updated: 2015-05-12 14:55:44.0
+votes: '0'
+watches: '1'
+workflowId: '11392'
+---
+actions: null

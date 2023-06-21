@@ -1,0 +1,60 @@
+---
+summary: Gapped incremental sync returns more left rooms than expected.
+---
+created: 2016-01-11 17:14:18.0
+creator: markjh
+description: |-
+  Incremental syncs from when a client has been offline for a while and there are many updates on the server include more left rooms than were expected.
+
+  https://github.com/matrix-org/synapse/blob/master/synapse/handlers/sync.py#L606 should probably check that the room_sync is not empty before adding it to the response.
+id: '12289'
+key: SYN-589
+number: '589'
+priority: '2'
+project: '10000'
+reporter: markjh
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:55.0
+votes: '0'
+watches: '3'
+workflowId: '12394'
+---
+actions:
+- author: markjh
+  body: I've added a sync response exhibiting this bug, but with the "timeline" portions of the sync response removed.
+  created: 2016-01-12 11:29:32.0
+  id: '12563'
+  issue: '12289'
+  type: comment
+  updateauthor: markjh
+  updated: 2016-01-12 11:29:32.0
+- author: erikj
+  body: |-
+    The request that generated this was (apparently) of the form:
+
+    {noformat}
+    https://matrix.org/_matrix/client/v2_alpha/sync?access_token=...&since=s10734877_250226_35660_410173_3020&timeout=30000
+    {noformat}
+  created: 2016-01-12 13:34:38.0
+  id: '12564'
+  issue: '12289'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-12 13:34:38.0
+- author: erikj
+  body: https://github.com/matrix-org/synapse/pull/481
+  created: 2016-01-12 15:06:23.0
+  id: '12565'
+  issue: '12289'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-12 15:06:23.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1471'
+  created: 2016-11-07 18:28:55.0
+  id: '13776'
+  issue: '12289'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:55.0

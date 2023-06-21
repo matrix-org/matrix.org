@@ -1,0 +1,30 @@
+---
+summary: Access token invalidated after synapse restarted
+---
+created: 2015-11-27 13:50:59.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  I was polling on vector.im/beta happily and then matrix.org was restarted. I then proceeded to get 403s with M_UNRECOGNISED_TOKEN. Refreshing didn't help. I had to log back in again.
+id: '12140'
+key: SYN-524
+number: '524'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:36.0
+votes: '0'
+watches: '2'
+workflowId: '12243'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1421'
+  created: 2016-11-07 18:28:36.0
+  id: '13729'
+  issue: '12140'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:36.0

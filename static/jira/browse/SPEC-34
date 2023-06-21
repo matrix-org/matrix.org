@@ -1,0 +1,155 @@
+---
+summary: Define how application services work in Matrix.
+---
+created: 2014-09-30 15:10:05.0
+creator: matthew
+description: |-
+  We really have a bit of a huge blank right now on how application-layer services should work in Matrix.
+
+  For instance, if I want to do video/voice-conferencing in Matrix, where do I start?  Where does the entity live which listens to the WebRTC setup events from the various clients in a room, and generate the appropriate responses?  If we call this the 'focus', is this a bot or a homeserver-module or a policy-server or an MCU which happens to speak the matrix s-s API?
+
+  Similarly, if I was implementing a Lync bridge or a SIP gateway - it's deeply hacky to do so as a bot.  But we don't seem to have any way defined yet (or hooks in synapse) for "backing" a room by something which implements higher-level application logic - e.g. synthesising users from a remote system, or injecting/filtering events as required.
+id: '10433'
+key: SPEC-34
+number: '34'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-18 14:06:34.0
+status: '5'
+type: '2'
+updated: 2015-05-18 14:06:34.0
+votes: '0'
+watches: '3'
+workflowId: '10536'
+---
+actions:
+- author: kegan
+  body: |-
+    Surely the "hooks" though are home server / policy server implementation-dependent. This has no scope in the specification IMO. Synapse itself is supposed to be the *reference* implementation, so it doesn't really belong there either. What good does defining a method for "backing a room by something which implements higher-level application logic" do? The brave souls who do the integration are wodging 2 interfaces together. The specification is enough to define the possible hook points (onJoinRoom, onSendEvent, onConnectEventStream, etc..) so I feel we're feature-creeping by actually setting in stone (the spec) the One True Way integration should occur.
+
+    Even if you make the argument "well as the reference impl, we should have those hook points well defined", it doesn't really gain us anything in terms of HS implementation, and we can't possibly define every single HS > application service hook. Finally, AFAIK Synapse should not be used for enterprise servers, so having the hooks there serves no purposes other than looking pretty.
+
+    That being said, I agree that there is this gap here, but I feel that this should be filled in by example eg "here's a way you could do a SIP gateway!", rather than saying "we have decreed that is shall be done like so".
+  created: 2014-10-03 17:46:33.0
+  id: '10515'
+  issue: '10433'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-03 17:50:26.0
+- author: matthew
+  body: |-
+    The use case for application services isn't for enterprisey stuff.  All I want is a way to show that it's possible to build a gateway/bridge/random-application-logic relatively easily on Matrix, and in future perhaps provide a server-side SDK to make it even easier.
+
+    So an example of "here's a way you could do a SIP gw!" sounds great - and all i'm proposing is that we could architect synapse to demonstrate the necessary hook points, so said example could be built on the existing demo codebase rather than having to create an entirely new one just because.
+
+    I'm also slightly sceptical that "The specification is enough to define the possible hook points (onJoinRoom, onSendEvent, onConnectEventStream, etc..)" is actually currently true.  And in the end we certainly don't want folks to have to write their own HS to implement an AS - hence suggesting we aim either for a server-SDK in future, or an easily hackable reference HS, or a combination of the two.
+
+    (Oh dear, this could end up looking like the mutant offspring of Java Servlets & SIP Servlets...  or possibly something like:
+
+    {code}
+    import org.matrix.serverapis.*;
+
+    HomeServer hs = HomeServerFactory.getInstance("matrixgateways.com:8448");
+    boolean actsAsPolicyServer = true;
+    Room room = hs.createRoom("#testing:matrixgateways.com", actsAsPolicyServer);
+    room.onJoinRoom(new JoinCallback(User u, Room r) {
+        log.info(u + " tried to join " + r);
+        if (!u.getUserId().startsWith("matthew")) return new Failure("UVAAAAVU");
+    });
+    {code}
+
+    Hm, i have a fever and should probably shut up now and sleep...)
+  created: 2014-10-03 18:21:42.0
+  id: '10517'
+  issue: '10433'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-03 18:26:38.0
+- author: kegan
+  body: |-
+    I like the idea of a server-side SDK.
+
+    The point I am trying to get across is that I don't think Synapse itself is a good choice for providing a server-side SDK. We really need at least 2 server implementations: reference (e.g. synapse) and one you should probably run if you're doing this for real. It's the latter which would be a good choice for a server-side SDK imo.
+  created: 2014-10-06 09:34:55.0
+  id: '10518'
+  issue: '10433'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-06 09:34:55.0
+- author: matthew
+  body: |-
+    So, we had a big session on this last thursday at the end of the October matrix workshop. 
+    Notes ended up on the spectacularly misnamed https://etherpad.openmarket.com/MatrixBattlePlan
+
+    Main conclusions were:
+     * Four different API levels:
+     1) Storage API abstraction - the API that lets you expose your existing messaging store & service via Matrix using a homeserver.
+     2) Passive Services - an extension of the existing client-server API for services which gives you permission to invisibly join rooms and sniff particular events (globally), but no ability to intercept the lifecycle of the events in the server.  This eliminates any fundamental operational dependency between the server and the bots.  It smells & feels a lot like IRC Services.
+     3) Active Services - separate API which exposes hooks into the server's event lifecycle (per user; per room; per message etc).  The service subscribes to particular hooks, and has the option to revoke/modify things which happen.  This is what you'd use to implement an XMPP gateway or something.
+     4) Policy Server - an API which all homeservers submit messages to before injecting them into a room.  This sounds suspiciously like it should be implemented as a subset of an Active Service?
+
+    Assuming everyone is happy with it, we need to specify the APIs in more detail asap, potentially working through the use cases again as a sanity check.
+
+    Folks are clamouring to see server-side APIs so they can get building SIP gateways and similar...
+  created: 2014-10-28 11:46:52.0
+  id: '10613'
+  issue: '10433'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-28 11:46:52.0
+- author: markjh
+  body: |-
+    Policy Services are set on a per room level and are honoured by *every* home server in the room. On reflection we would need to use them to implement an XMPP bridge if a XMPP aware home server tried to bridge an non XMPP aware home server to the XMPP MUC since the other homeserver wouldn't be aware of the rules for communicating with a MUC.
+
+    Active Services are purely used to enforce policy onto your own user-base so aren't suitable for being used in a bridge.
+  created: 2014-10-28 12:02:29.0
+  id: '10614'
+  issue: '10433'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-28 12:02:29.0
+- author: matthew
+  body: Surely any room where you enforce policy needs to be enforced consistently across all users in a room.  An Active Service which only operates on local users is useless (unless all users are local).  So surely active services /are/ policy services then?
+  created: 2014-10-28 16:37:19.0
+  id: '10615'
+  issue: '10433'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-28 16:37:19.0
+- author: matthew
+  body: Worth noting that a very related idea here is the idea of implementing a generic Storage API to allow existing services to easily expose their current conversation history via a HS to Matrix.  It's unclear when you'd want to use this rather than the active AS API, though - and whether a storage API would be good enough to allow the store to be evolved both by the incumbent app and the Matrix HS.
+  created: 2014-11-29 23:45:59.0
+  id: '10892'
+  issue: '10433'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-29 23:45:59.0
+- author: matthew
+  body: |-
+    Something else we need to consider here is how to map auth between Matrix and a given service.
+
+    E.g. if I ran an SMS gateway, and i need to bill people for the outbound SMS traffic, how do I map from their matrix IDs through to my random SMS account/password combos?  Do I really want to delegate my whole auth implementation through to Matrix's?
+  created: 2014-12-15 19:01:54.0
+  id: '10995'
+  issue: '10433'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-15 19:01:54.0
+- author: kegan
+  body: See https://github.com/matrix-org/matrix-doc/pull/5
+  created: 2015-01-05 17:30:55.0
+  id: '11053'
+  issue: '10433'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-05 17:30:55.0
+- author: kegan
+  body: Specced and actually implemented(!)
+  created: 2015-05-18 14:06:34.0
+  id: '11767'
+  issue: '10433'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-18 14:06:34.0

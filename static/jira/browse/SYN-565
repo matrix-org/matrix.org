@@ -1,0 +1,28 @@
+---
+summary: all ephemeral events are fetched in an incremental sync in order to get the user's currect read receipt
+---
+created: 2015-12-22 17:13:13.0
+creator: neb
+description: Submitted by @dave:matrix.org
+id: '12242'
+key: SYN-565
+number: '565'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:48.0
+votes: '0'
+watches: '2'
+workflowId: '12345'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1227'
+  created: 2016-11-07 18:28:48.0
+  id: '13761'
+  issue: '12242'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:48.0

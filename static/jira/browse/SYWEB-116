@@ -1,0 +1,71 @@
+---
+summary: Historical displayname support
+---
+assignee: kegan
+created: 2014-10-27 10:39:16.0
+creator: matthew
+description: ''
+id: '10496'
+key: SYWEB-116
+number: '116'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-04 10:36:59.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:57:55.0
+votes: '0'
+watches: '4'
+workflowId: '10600'
+---
+actions:
+- author: kegan
+  body: |-
+    Display names are not lost when you leave and rejoin a room. Further, the text being displayed is of the form:
+
+    {{@oddvar:matrix.org changed their display name from onkey to oddvar}}
+
+    To me, this seems like this issue is already fixed, but just want to check.
+  created: 2014-10-29 10:18:52.0
+  id: '10623'
+  issue: '10496'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-29 10:18:52.0
+- author: erikj
+  body: |-
+    When John left a room yesterday I'm pretty sure the webclient (from master) reverted to using his user_id.
+
+    The other related question is whether the display name used next to a message should be the current display name or the display name that was in use at the time. For example, if people keep saying things like "Bob: fooooo" then it's confusing if Bob has since changed his display name.
+  created: 2014-10-29 10:23:29.0
+  id: '10624'
+  issue: '10496'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-29 10:23:29.0
+- author: matthew
+  body: 'Erik speaks the truth.  My concern is that we definitely don''t seem to show scrollback with the historical name that was in use at the time.  This is a disaster for the "Bob: fooo" use case.  And distinctly ugly from the John suddenly becoming @john.woolf:matrix.org on leaving Matrix Internal yesterday perspective.'
+  created: 2014-10-29 22:54:08.0
+  id: '10702'
+  issue: '10496'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-29 22:54:08.0
+- author: leonerd
+  body: The Perl client uses a "two sets of room state" model to handle back-pagination of these; it keeps one set of "forward" state and one set of "backward", updating it in reverse on incoming state changes backwards through pagination and uses that to handle displaynames of historic messages. I believe the mobile clients do (or intend to do) something similar as well. Perhaps this is a model that can be used in web too?
+  created: 2014-10-30 09:42:18.0
+  id: '10705'
+  issue: '10496'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-30 09:42:18.0
+- author: kegan
+  body: Fixed on {{webclient-room-data-restructure}} branch, which will be pushed to {{develop}} in the near future.
+  created: 2014-11-04 10:36:59.0
+  id: '10721'
+  issue: '10496'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-04 10:36:59.0

@@ -1,0 +1,41 @@
+---
+summary: We should link to matrix-doc repo more clearly on the spec html, and the contributing instructions
+---
+created: 2016-07-18 22:39:36.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12757'
+key: SPEC-433
+number: '433'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '4'
+resolutiondate: 2016-09-27 17:40:34.0
+status: '5'
+type: '1'
+updated: 2016-09-27 17:40:34.0
+votes: '0'
+watches: '2'
+workflowId: '12857'
+---
+actions:
+- author: richvdh
+  body: |-
+    The contributing instructions, as far as I know, are only at https://github.com/matrix-org/matrix-doc/blob/master/CONTRIBUTING.rst, so if you've got that far, presumably you can find the matrix-doc repo.
+
+    Where did you have in mind in the spec? we could add a paragraph about contributing to the intro I guess.
+  created: 2016-07-20 16:53:38.0
+  id: '13073'
+  issue: '12757'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-20 16:53:38.0
+- author: richvdh
+  body: reopen if you have more info
+  created: 2016-09-27 17:40:34.0
+  id: '13139'
+  issue: '12757'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:40:34.0

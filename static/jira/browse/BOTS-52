@@ -1,0 +1,49 @@
+---
+summary: IRC AS doesn't propagate matrix display name changes to IRC (or vice versa)
+---
+created: 2015-06-17 01:01:39.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11660'
+key: BOTS-52
+number: '52'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:32:25.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:32:25.0
+votes: '0'
+watches: '2'
+workflowId: '11761'
+---
+actions:
+- author: kegan
+  body: |-
+    Matrix to irc propagation is hard because the two protocols scope names differently. Matrix allows per room display names but irc is per connection (global). We could manage this by just applying the most recent name change, but we need to accept mismatches are unavoidable.
+
+    Irc to matrix propagation is possible, though fiddly to implement (since the nick change necessitates a new user id, invites to all of the rooms the user was previously in, etc).
+  created: 2015-06-17 08:38:56.0
+  id: '11871'
+  issue: '11660'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-17 08:38:56.0
+- author: kegan
+  body: After thinking about this more, I wonder whether it would be more accurate to map Matrix user IDs to IRC user@host instead - in which case nick changes are just display name changes. Other points still hold though.
+  created: 2015-08-04 17:01:13.0
+  id: '12051'
+  issue: '11660'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-08-04 17:01:13.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/48
+  created: 2016-06-02 10:32:25.0
+  id: '12957'
+  issue: '11660'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:32:25.0

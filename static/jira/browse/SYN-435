@@ -1,0 +1,22 @@
+---
+summary: the synapse readme says you should rename the 'auto' key in <server name>.signing.key when changing the key. this is stale .
+---
+created: 2015-07-09 00:56:06.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11737'
+key: SYN-435
+number: '435'
+priority: '2'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-01-06 11:20:36.0
+status: '5'
+type: '1'
+updated: 2016-01-06 11:20:36.0
+votes: '0'
+watches: '1'
+workflowId: '11838'
+---
+actions: null

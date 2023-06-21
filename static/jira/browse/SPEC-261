@@ -1,0 +1,30 @@
+---
+summary: 'Receipts module: Should clients ACK their own messages'
+---
+created: 2015-11-03 15:07:51.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  No, they should not. We don't say this in the spec though. We should in the Client Behaviour bit.
+id: '12074'
+key: SPEC-261
+number: '261'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:49.0
+votes: '0'
+watches: '2'
+workflowId: '12177'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/567'
+  created: 2016-10-28 16:27:49.0
+  id: '13375'
+  issue: '12074'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:49.0

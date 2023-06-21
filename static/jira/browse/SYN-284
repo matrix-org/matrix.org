@@ -1,0 +1,46 @@
+---
+summary: We need to actually censor redactions from the DB
+---
+created: 2015-02-20 01:31:07.0
+creator: matthew
+description: ''
+id: '11108'
+key: SYN-284
+number: '284'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:45.0
+votes: '0'
+watches: '3'
+workflowId: '11208'
+---
+actions:
+- author: erikj
+  body: |-
+    My first question is: what is the point of the current redactions system? The current implementation of it seems to be trying to do two separate things.
+
+    Originally, the intent was that redactions should be used to remove content that _server admins_ wouldn't want on their server, e.g. illegal content. In this scenario it's important that admins can cause redacted content to be deleted. The idea was to have an admin API that allowed you to look at the redacted event before deciding whether or not to delete it.
+
+    However, people can now redact their own events, which is used as a crude "retraction" mechanism. In my opinion these shouldn't be auto deleted (and also shouldn't be flagged to server admins lest they look at the retracted content). For example, if someone sends a bunch of abusive messages into Matrix HQ and later retracts them, moderators still need to be able to see what those messages were when people complain so that they can take the appropriate action.
+
+    On a more practical level, whether we delete content or not is not something we can enforce on a server. Certainly the first thing I would do would be to disable it on my server, and I'm fairly sure I would not be in the minority in doing that. Why? Because its infuriating to have messages disappear while I'm reading/responding simply because the author decided to or accidentally redacted their event, which has happened several times now. Given this, I'm not entirely sure what the purpose or need of having redacted events auto deleted from any server really is.
+
+
+    My opinion on this mess is: we should have separate redact and retract mechanisms and implement the admin API for dealing with redactions, but never delete retractions from the DB (we could possibly have a separate flag for asking server admins to redact the event).
+  created: 2016-01-06 09:57:39.0
+  id: '12523'
+  issue: '11108'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 09:57:39.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1287'
+  created: 2016-11-07 18:27:45.0
+  id: '13606'
+  issue: '11108'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:45.0

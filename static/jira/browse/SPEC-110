@@ -1,0 +1,28 @@
+---
+summary: Need a way to specify a limit on the amount of history that servers can collectively store for a room.
+---
+created: 2015-02-16 22:48:03.0
+creator: matthew
+description: ''
+id: '11080'
+key: SPEC-110
+number: '110'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:01.0
+votes: '0'
+watches: '2'
+workflowId: '11180'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/422'
+  created: 2016-10-28 16:27:01.0
+  id: '13273'
+  issue: '11080'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:01.0

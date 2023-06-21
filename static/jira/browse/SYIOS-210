@@ -1,0 +1,20 @@
+---
+summary: self-redaction is greyed out. users should always be able to self-redact
+---
+created: 2016-04-13 22:59:18.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12625'
+key: SYIOS-210
+number: '210'
+priority: '3'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-04-13 22:59:18.0
+votes: '0'
+watches: '1'
+workflowId: '12725'
+---
+actions: null

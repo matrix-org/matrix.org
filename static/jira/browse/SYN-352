@@ -1,0 +1,28 @@
+---
+summary: No unit tests for 'ban' powerlevel test
+---
+created: 2015-04-21 20:21:34.0
+creator: leonerd
+description: ''
+id: '11357'
+key: SYN-352
+number: '352'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:56.0
+votes: '0'
+watches: '2'
+workflowId: '11457'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1311'
+  created: 2016-11-07 18:27:56.0
+  id: '13632'
+  issue: '11357'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:56.0

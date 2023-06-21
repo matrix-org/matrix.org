@@ -1,0 +1,30 @@
+---
+summary: Add github issue submission to NEB
+---
+created: 2015-09-05 14:31:18.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '11856'
+key: BOTS-102
+number: '102'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-07 10:14:07.0
+status: '5'
+type: '1'
+updated: 2015-09-07 10:14:07.0
+votes: '0'
+watches: '2'
+workflowId: '11959'
+---
+actions:
+- author: kegan
+  body: https://github.com/Kegsay/Matrix-NEB/commit/5b45aebc123ae84fb47a37a367a7de797deeb6b4
+  created: 2015-09-07 10:14:07.0
+  id: '12112'
+  issue: '11856'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-07 10:14:07.0

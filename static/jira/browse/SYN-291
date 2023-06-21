@@ -1,0 +1,22 @@
+---
+summary: uploads dir should be cleaned out and made configurable in location
+---
+created: 2015-02-24 21:03:53.0
+creator: matthew
+description: ''
+id: '11136'
+key: SYN-291
+number: '291'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-01-06 10:26:00.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:26:00.0
+votes: '0'
+watches: '1'
+workflowId: '11236'
+---
+actions: null

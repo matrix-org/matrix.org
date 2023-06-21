@@ -1,0 +1,36 @@
+---
+summary: Jumping in and out of rooms when messages are received
+---
+assignee: gforet
+created: 2015-02-19 11:19:02.0
+creator: dbkr
+description: |-
+  iOS Client seems to jump in and out of rooms when messages are received. For example, for me, If I'm in Matrix Internal and Matthew sends a message in that room (or any other), it will jump back out to the recents screen. If I'm in the recents screen and I get a message, it jumps into that room.
+
+  I suspect this is a problem with in-app APNS handling, so you'll probably need a production build of the app to reproduce these problems.
+id: '11094'
+key: SYIOS-86
+number: '86'
+priority: '1'
+project: '10200'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-02-20 10:27:11.0
+status: '5'
+type: '1'
+updated: 2015-02-20 10:27:11.0
+votes: '0'
+watches: '2'
+workflowId: '11194'
+---
+actions:
+- author: gforet
+  body: |-
+    Already fixed by:
+    https://github.com/matrix-org/matrix-ios-sdk/commit/87bebd65a8c99d8ac4277af7ac9b8b41a5247e9e
+  created: 2015-02-20 10:27:11.0
+  id: '11302'
+  issue: '11094'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-20 10:27:11.0

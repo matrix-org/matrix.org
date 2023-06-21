@@ -1,0 +1,26 @@
+---
+summary: infinite-scroll is not called if the message list does not fill the div
+---
+assignee: kegan
+created: 2014-09-25 13:58:58.0
+creator: manu
+description: |-
+  If the screen can contain the 30 last messages without needing to enable the div scrolling, it is impossible to paginate back. $scope.paginateMore connected to infinite-scroll is never call.
+
+  This situation can also happen when the first pagination fails somehow. In this case, the user cannot paginate back to retrieve missing messages
+id: '10394'
+key: SYWEB-89
+number: '89'
+priority: '2'
+project: '10004'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-04 13:05:45.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:03.0
+votes: '0'
+watches: '1'
+workflowId: '10497'
+---
+actions: null

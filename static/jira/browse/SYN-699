@@ -1,0 +1,137 @@
+---
+summary: 500 errors/races when joining federated rooms
+---
+created: 2016-05-18 18:59:15.0
+creator: neb
+description: |-
+  Submitted by @richvdh:sw1v.org
+
+  I tried to join {{#fedtest:cloudfleet.io}}, and got a 500:
+
+  {noformat}
+  2016-05-18 18:37:24,083 - synapse.access.http.8008 - 59 - INFO - POST-118352- 127.0.0.1 - 8008 - Received request: POST /_matrix/client/r0/join/%23fedtest:cloudfleet.io?access_token=<redacted>
+  2016-05-18 18:37:24,086 - synapse.http.outbound - 122 - INFO - POST-118352- {GET-O-32481} [cloudfleet.io] Sending request: GET matrix://cloudfleet.io/_matrix/federation/v1/query/directory?room_alias=%23fedtest%3Acloudfleet.io
+  2016-05-18 18:37:24,158 - synapse.http.outbound - 209 - INFO - POST-118352- {GET-O-32481} [cloudfleet.io] Result: 200 OK
+  2016-05-18 18:37:24,475 - synapse.state - 176 - DEBUG - POST-118352- Invoked 'resolve_state_groups' with args: self=<synapse.state.StateHandler object at 0x7f9266ea3f..., room_id=!FrNGefQiFNDIhkEUig:cloudfleet.io, event_ids=[], state_key=, event_type=None
+  2016-05-18 18:37:24,475 - synapse.state - 188 - DEBUG - POST-118352- resolve_state_groups event_ids []
+  2016-05-18 18:37:24,512 - synapse.state - 196 - DEBUG - POST-118352- resolve_state_groups state_groups []
+  2016-05-18 18:37:24,613 - synapse.http.outbound - 122 - INFO - POST-118352- {GET-O-32524} [cloudfleet.io] Sending request: GET matrix://cloudfleet.io/_matrix/federation/v1/make_join/!FrNGefQiFNDIhkEUig:cloudfleet.io/@richvdh:sw1v.org
+  2016-05-18 18:37:24,732 - synapse.http.outbound - 209 - INFO - POST-118352- {GET-O-32524} [cloudfleet.io] Result: 200 OK
+  2016-05-18 18:37:24,736 - synapse.http.outbound - 122 - INFO - POST-118352- {PUT-O-32525} [cloudfleet.io] Sending request: PUT matrix://cloudfleet.io/_matrix/federation/v1/send_join/!FrNGefQiFNDIhkEUig:cloudfleet.io/$1463593044122iNtMe:sw1v.org
+  2016-05-18 18:37:24,832 - synapse.access.https.8448 - 59 - INFO - PUT-118355- 46.101.187.89 - 8448 - Received request: PUT /_matrix/federation/v1/send/1463591190458/
+  2016-05-18 18:37:24,834 - synapse.federation.transport.server - 130 - INFO - PUT-118355- Request from cloudfleet.io
+  2016-05-18 18:37:24,835 - synapse.federation.transport.server - 215 - INFO - PUT-118355- Received txn 1463591190458 from cloudfleet.io. (PDUs: 0, EDUs: 1, failures: 0)
+  2016-05-18 18:37:24,849 - synapse.access.https.8448 - 91 - INFO - PUT-118355- 46.101.187.89 - 8448 - {cloudfleet.io} Processed request: 17ms (0ms, 0ms) (5ms/3) 11B 200 "PUT /_matrix/federation/v1/send/1463591190458/ HTTP/1.1" "Synapse/0.14.0"
+  2016-05-18 18:37:24,855 - synapse.http.outbound - 209 - INFO - POST-118352- {PUT-O-32525} [cloudfleet.io] Result: 200 OK
+  2016-05-18 18:37:24,865 - synapse.http.outbound - 122 - INFO - - {POST-O-32526} [matrix.org] Sending request: POST matrix://matrix.org/_matrix/key/v2/query
+  2016-05-18 18:37:24,867 - synapse.http.endpoint - 184 - INFO - - Connecting to 83.166.64.33:8448
+  2016-05-18 18:37:25,913 - synapse.http.outbound - 209 - INFO - - {POST-O-32526} [matrix.org] Result: 200 OK
+  2016-05-18 18:37:25,923 - synapse.crypto.keyring - 123 - ERROR - - Got Exception when downloading keys for cloudfleet.io: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/rav/matrix/synapse/synapse/crypto/keyring.py", line 109, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/rav/matrix/synapse/synapse/crypto/keyring.py", line 260, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+     <exception repeats several times>
+  2016-05-18 18:37:25,929 - synapse.federation.federation_base - 147 - WARNING - POST-118352- Signature check failed for $146256043318JUMNq:cloudfleet.io
+  2016-05-18 18:37:25,929 - synapse.federation.federation_base - 147 - WARNING - POST-118352- Signature check failed for $146255378517MYXAn:cloudfleet.io
+  2016-05-18 18:37:25,930 - synapse.federation.federation_base - 147 - WARNING - POST-118352- Signature check failed for $146255111812ColXZ:cloudfleet.io
+  2016-05-18 18:37:25,932 - synapse.federation.federation_base - 147 - WARNING - POST-118352- Signature check failed for $146255111811eiZNb:cloudfleet.io
+  2016-05-18 18:37:25,933 - synapse.federation.federation_base - 147 - WARNING - POST-118352- Signature check failed for $146255115615delBA:cloudfleet.io
+  2016-05-18 18:37:25,934 - synapse.federation.federation_base - 147 - WARNING - POST-118352- Signature check failed for $146255115613XoSwg:cloudfleet.io
+  2016-05-18 18:37:25,934 - synapse.federation.federation_base - 147 - WARNING - POST-118352- Signature check failed for $14625511187whQIu:cloudfleet.io
+  2016-05-18 18:37:25,936 - synapse.federation.federation_base - 147 - WARNING - POST-118352- Signature check failed for $146255115614QbJgj:cloudfleet.io
+  2016-05-18 18:37:25,937 - synapse.federation.federation_base - 147 - WARNING - POST-118352- Signature check failed for $14625511189zeDoR:cloudfleet.io
+  2016-05-18 18:37:25,938 - synapse.federation.federation_base - 147 - WARNING - POST-118352- Signature check failed for $146255111810uyuil:cloudfleet.io
+  2016-05-18 18:37:25,939 - synapse.federation.federation_base - 147 - WARNING - POST-118352- Signature check failed for $14625511188wSFpu:cloudfleet.io
+  2016-05-18 18:37:25,949 - synapse.federation.federation_base - 87 - WARNING - POST-118352- Failed to find copy of $146255378517MYXAn:cloudfleet.io with valid signature
+  2016-05-18 18:37:25,950 - synapse.federation.federation_base - 87 - WARNING - POST-118352- Failed to find copy of $146256043318JUMNq:cloudfleet.io with valid signature
+  2016-05-18 18:37:25,950 - synapse.federation.federation_base - 87 - WARNING - POST-118352- Failed to find copy of $146255111812ColXZ:cloudfleet.io with valid signature
+  2016-05-18 18:37:25,950 - synapse.federation.federation_base - 87 - WARNING - POST-118352- Failed to find copy of $146255111811eiZNb:cloudfleet.io with valid signature
+  2016-05-18 18:37:25,951 - synapse.federation.federation_base - 87 - WARNING - POST-118352- Failed to find copy of $146255115615delBA:cloudfleet.io with valid signature
+  2016-05-18 18:37:25,951 - synapse.federation.federation_base - 87 - WARNING - POST-118352- Failed to find copy of $146255115613XoSwg:cloudfleet.io with valid signature
+  2016-05-18 18:37:25,951 - synapse.federation.federation_base - 87 - WARNING - POST-118352- Failed to find copy of $14625511187whQIu:cloudfleet.io with valid signature
+  2016-05-18 18:37:25,951 - synapse.federation.federation_base - 87 - WARNING - POST-118352- Failed to find copy of $146255115614QbJgj:cloudfleet.io with valid signature
+  2016-05-18 18:37:25,951 - synapse.federation.federation_base - 87 - WARNING - POST-118352- Failed to find copy of $14625511189zeDoR:cloudfleet.io with valid signature
+  2016-05-18 18:37:25,952 - synapse.federation.federation_base - 87 - WARNING - POST-118352- Failed to find copy of $146255111810uyuil:cloudfleet.io with valid signature
+  2016-05-18 18:37:25,952 - synapse.federation.federation_base - 87 - WARNING - POST-118352- Failed to find copy of $14625511188wSFpu:cloudfleet.io with valid signature
+  2016-05-18 18:37:25,959 - synapse.http.server - 135 - ERROR - POST-118352- Failed handle request synapse.http.server._async_render on <synapse.rest.ClientRestResource object at 0x7f9266e96cd0>: <SynapseRequest at 0x7f9218765878 method=POST uri=/_matrix/client/r0/join/%23fedtest:cloudfleet.io?access_token=<redacted> clientproto=HTTP/1.1 site=8008>
+  Traceback (most recent call last):
+    File "/home/rav/matrix/synapse/synapse/http/server.py", line 114, in wrapped_request_handler
+      yield request_handler(self, request)
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/home/rav/matrix/synapse/synapse/http/server.py", line 260, in _async_render
+      callback_return = yield callback(request, **kwargs)
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/home/rav/matrix/synapse/synapse/rest/client/v1/room.py", line 253, in on_POST
+      third_party_signed=content.get("third_party_signed", None),
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/home/rav/matrix/synapse/synapse/handlers/room_member.py", line 186, in update_membership
+      ratelimit=ratelimit,
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/home/rav/matrix/synapse/synapse/handlers/room_member.py", line 262, in _update_membership
+      remote_room_hosts, room_id, target, content
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/home/rav/matrix/synapse/synapse/handlers/room_member.py", line 152, in remote_join
+      content,
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/home/rav/matrix/synapse/synapse/handlers/federation.py", line 642, in do_invite_join
+      auth_chain, state, event
+    File "/home/rav/matrix/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/rav/matrix/synapse/synapse/handlers/federation.py", line 1190, in _persist_auth_tree
+      for e_id, _ in e.auth_events
+    File "/home/rav/matrix/synapse/synapse/handlers/federation.py", line 1190, in <dictcomp>
+      for e_id, _ in e.auth_events
+  KeyError: '$14625511189zeDoR:cloudfleet.io'
+  2016-05-18 18:37:25,963 - synapse.access.http.8008 - 91 - INFO - POST-118352- 127.0.0.1 - 8008 - {@richvdh:sw1v.org} Processed request: 1879ms (29ms, 13ms) (7ms/4) 67B 500 "POST /_matrix/client/r0/join/%23fedtest:cloudfleet.io?access_token=<redacted> HTTP/1.1" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+  {noformat}
+
+  It's possible I've missed a couple of relevant lines in all the federation noise, but it looks like it's a race somewhere.
+id: '12668'
+key: SYN-699
+number: '699'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:33.0
+votes: '0'
+watches: '2'
+workflowId: '12768'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1550'
+  created: 2016-11-07 18:29:33.0
+  id: '13863'
+  issue: '12668'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:33.0

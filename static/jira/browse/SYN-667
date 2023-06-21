@@ -1,0 +1,28 @@
+---
+summary: Document content_addr conf parameter
+---
+created: 2016-03-30 12:57:12.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12602'
+key: SYN-667
+number: '667'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:20.0
+votes: '0'
+watches: '2'
+workflowId: '12702'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1524'
+  created: 2016-11-07 18:29:20.0
+  id: '13833'
+  issue: '12602'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:20.0

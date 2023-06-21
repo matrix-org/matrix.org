@@ -1,0 +1,35 @@
+---
+summary: Ability to preview the contents of private invites without joining
+---
+created: 2015-12-04 13:38:52.0
+creator: matthew
+description: |-
+  The intention on Vector was that we would support this, however the guest access has ended up geared for previewing public room (on the local HS) instead.
+
+  The use case here is to let users optionally screen invites before joining/rejecting them.  To work over federation, we'd need to actually 'join' the room (by joining it as a server rather than a client) sufficiently to display the preview if the user chooses.
+
+  Clients could also use this API to speed up joins, by preemptively 'joining' the room on receiving the invite, at the expense of encouraging their server to preload whatever crap was in that room whether you wanted it or not, which is a bit horrid but something of a user/admin behaviour choice.
+
+  Would be nice to get this in in the short-to-medium term.
+id: '12176'
+key: SPEC-290
+number: '290'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:58.0
+votes: '0'
+watches: '2'
+workflowId: '12279'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/587'
+  created: 2016-10-28 16:27:58.0
+  id: '13395'
+  issue: '12176'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:58.0

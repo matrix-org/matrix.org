@@ -1,0 +1,20 @@
+---
+summary: Push notif settings broken on mobile safari
+---
+created: 2015-06-02 01:05:46.0
+creator: matthew
+description: ''
+id: '11593'
+key: SYWEB-366
+number: '366'
+priority: '1'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-06-02 01:05:46.0
+votes: '0'
+watches: '1'
+workflowId: '11694'
+---
+actions: null

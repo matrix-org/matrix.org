@@ -1,0 +1,70 @@
+---
+summary: 500 on hitting invalid URL
+---
+created: 2015-04-26 17:48:59.0
+creator: erikj
+description: |-
+  {noformat}
+  curl "http://matrix.org/_matrix/client/api/v1/directory/room/" -v
+  * Hostname was NOT found in DNS cache
+  *   Trying 83.166.64.33...
+  * Connected to matrix.org (83.166.64.33) port 80 (#0)
+  > GET /_matrix/client/api/v1/directory/room/ HTTP/1.1
+  > User-Agent: curl/7.37.1
+  > Host: matrix.org
+  > Accept: */*
+  > 
+  < HTTP/1.1 500 Internal Server Error
+  < Date: Sun, 26 Apr 2015 16:48:12 GMT
+  * Server Synapse/0.8.1-r3 (b=develop,cf59d68) is not blacklisted
+  < Server: Synapse/0.8.1-r3 (b=develop,cf59d68)
+  < Content-Length: 33
+  < Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+  < Access-Control-Allow-Origin: *
+  < Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+  < Content-Type: application/json
+  < Vary: Accept-Encoding
+  < Connection: close
+  < 
+  * Closing connection 0
+  {"error":"Internal server error"}
+  {noformat}
+id: '11367'
+key: SYN-360
+number: '360'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:58.0
+votes: '0'
+watches: '2'
+workflowId: '11467'
+---
+actions:
+- author: erikj
+  body: |-
+    {noformat}
+    2015-04-26 17:48:12,689 - synapse.http.server - 171 - INFO - GET-900823 - Received request: GET /_matrix/client/api/v1/directory/room/
+    2015-04-26 17:48:12,690 - synapse.http.server - 199 - ERROR - GET-900823 - string index out of range
+    Traceback (most recent call last):
+      File "synapse/http/server.py", line 174, in _async_render
+        code, response = yield callback(request, *args)
+    IndexError: string index out of range
+    2015-04-26 17:48:12,692 - twisted - 455 - INFO - GET-900823 - "83.166.68.175" - - [26/Apr/2015:16:48:12 +0000] "GET /_matrix/client/api/v1/directory/room/ HTTP/1.1" 500 33 "-" "curl/7.37.1"
+    {noformat}
+  created: 2015-04-26 17:55:05.0
+  id: '11536'
+  issue: '11367'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-26 17:55:05.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1314'
+  created: 2016-11-07 18:27:58.0
+  id: '13635'
+  issue: '11367'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:58.0

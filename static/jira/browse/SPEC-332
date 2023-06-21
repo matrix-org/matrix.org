@@ -1,0 +1,28 @@
+---
+summary: APIs to add/remove rooms from the public directory list
+---
+created: 2016-01-21 10:55:16.0
+creator: neb
+description: Submitted by @irc_Arathorn:openmarket.com
+id: '12331'
+key: SPEC-332
+number: '332'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:12.0
+votes: '0'
+watches: '2'
+workflowId: '12436'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/622'
+  created: 2016-10-28 16:28:12.0
+  id: '13430'
+  issue: '12331'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:12.0

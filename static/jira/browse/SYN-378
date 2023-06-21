@@ -1,0 +1,65 @@
+---
+summary: Can't disable non-default pushrules
+---
+assignee: dbkr
+created: 2015-05-14 10:38:04.0
+creator: dbkr
+description: |-
+  {noformat}
+  Traceback (most recent call last):
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 423, in errback
+      self._startRunCallbacks(fail)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 490, in _startRunCallbacks
+      self._runCallbacks()
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 577, in _runCallbacks
+      current.result = callback(current.result, *args, **kw)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1155, in gotResult
+      _inlineCallbacks(r, g, deferred)
+  --- <exception caught here> ---
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/push_rule.py", line 211, in set_push_rule_enabled
+      desc="set_push_rule_enabled",
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/_base.py", line 425, in runInteraction
+      inner_func, *args, **kwargs
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/threadpool.py", line 196, in _worker
+      result = context.call(ctx, function, *args, **kwargs)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/context.py", line 118, in callWithContext
+      return self.currentContext().callWithContext(ctx, func, *args, **kw)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/context.py", line 81, in callWithContext
+      return func(*args,**kw)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/enterprise/adbapi.py", line 288, in _runWithConnection
+      result = func(conn, *args, **kw)
+    File "synapse/storage/_base.py", line 378, in inner_func
+      return func(txn, *args, **kwargs)
+    File "synapse/storage/_base.py", line 588, in _simple_upsert_txn
+      txn.execute(sql, allvalues.values())
+    File "synapse/storage/_base.py", line 210, in execute
+      self._do_execute(self.txn.execute, sql, *args)
+    File "synapse/storage/_base.py", line 235, in _do_execute
+      sql, *args
+  psycopg2.IntegrityError: null value in column "id" violates not-null constraint
+  DETAIL:  Failing row contains (null, @dave:matrix.org, global/content/dbkr, 0).
+  {noformat}
+id: '11530'
+key: SYN-378
+number: '378'
+priority: '1'
+project: '10000'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-05-14 11:45:14.0
+status: '5'
+type: '1'
+updated: 2015-05-26 10:46:22.0
+votes: '0'
+watches: '1'
+workflowId: '11631'
+---
+actions: null

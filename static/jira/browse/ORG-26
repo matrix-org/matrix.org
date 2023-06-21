@@ -1,0 +1,44 @@
+---
+summary: Set up matrix.to fake-URL-handler service
+---
+created: 2015-09-22 18:31:46.0
+creator: matthew
+description: |-
+  Something like:
+
+  https://matrix.to/#alias:matrix.org
+  https://matrix.to/@user:matrix.org
+
+  Would need JS to make # do the right thing, and is a bit naughty with URL escaping rules.
+id: '11907'
+key: ORG-26
+number: '26'
+priority: '2'
+project: '10003'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-06-27 22:21:27.0
+status: '5'
+type: '2'
+updated: 2016-06-27 22:21:27.0
+votes: '0'
+watches: '2'
+workflowId: '12010'
+---
+actions:
+- author: matthew
+  body: 'It should also support hyperlinking to specific events - perhaps: https://matrix.to/$144977573355dMtrv:oob.systems/oob.systems - of the form matrix.to/event-id/host where the /host is required in order to give a hint as to what server that event is known to reside on.  It could conceivably be optional, at which point you''d hope that the server specified in the suffix of the original event was still up and try to talk to it to get the event.  Actually implementing this seriously will need support in Matrix for servers (rather than clients) joining public rooms over federation (i can''t find the bug for this, so created SPEC-300 for now)'
+  created: 2015-12-10 19:33:45.0
+  id: '12467'
+  issue: '11907'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-10 19:43:11.0
+- author: richvdh
+  body: This has been done
+  created: 2016-06-27 22:21:27.0
+  id: '13023'
+  issue: '11907'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-27 22:21:27.0

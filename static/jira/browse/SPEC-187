@@ -1,0 +1,30 @@
+---
+summary: AS API auth mechanism
+---
+created: 2015-06-10 22:20:28.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Should we have both a hs and as token? We've been getting reports (who?) that it isn't clear who sets the tokens and it may be better to just used a shared secret.Will one token like this suffice? If they are the same and the AS to HS traffic is sniffed (because hey cs api allows http right?) then an attacker can spoof HS to AS traffic and potentially send shit to a remote bridge.
+id: '11637'
+key: SPEC-187
+number: '187'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:24.0
+votes: '0'
+watches: '2'
+workflowId: '11738'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/515'
+  created: 2016-10-28 16:27:24.0
+  id: '13323'
+  issue: '11637'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:24.0

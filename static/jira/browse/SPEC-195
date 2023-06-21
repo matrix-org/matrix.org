@@ -1,0 +1,33 @@
+---
+summary: Spec currently lies about case-sensitivity
+---
+assignee: kegan
+created: 2015-06-26 10:02:46.0
+creator: kegan
+description: |-
+  4.1.1 - User IDs *are* case-sensitive.
+  4.1.4.1 - Room aliases *are* case-sensitive.
+id: '11705'
+key: SPEC-195
+number: '195'
+priority: '1'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-10-13 17:02:51.0
+status: '5'
+type: '1'
+updated: 2015-10-13 17:02:52.0
+votes: '0'
+watches: '1'
+workflowId: '11806'
+---
+actions:
+- author: kegan
+  body: Removed reference in branch https://github.com/matrix-org/matrix-doc/tree/proofing - We will do this properly once https://github.com/matrix-org/matrix-doc/pull/3 lands.
+  created: 2015-10-13 17:02:52.0
+  id: '12251'
+  issue: '11705'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 17:02:52.0

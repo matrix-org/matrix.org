@@ -1,0 +1,28 @@
+---
+summary: Review code and look for dead code paths
+---
+created: 2015-01-12 22:14:44.0
+creator: erikj
+description: ''
+id: '10923'
+key: SYN-238
+number: '238'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:37.0
+votes: '0'
+watches: '2'
+workflowId: '11023'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1271'
+  created: 2016-11-07 18:27:37.0
+  id: '13589'
+  issue: '10923'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:37.0

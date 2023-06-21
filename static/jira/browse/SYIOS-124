@@ -1,0 +1,23 @@
+---
+summary: I18n
+---
+created: 2015-04-27 10:37:35.0
+creator: manu
+description: |-
+  Console and MatrixKit contain a certain amount of string that are not localised.
+  It would be good to add an open way to translate them.
+  The MatrixKit pod should come with its own i18n files.
+id: '11372'
+key: SYIOS-124
+number: '124'
+priority: '3'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '2'
+updated: 2015-04-27 10:37:35.0
+votes: '0'
+watches: '1'
+workflowId: '11472'
+---
+actions: null

@@ -1,0 +1,72 @@
+---
+summary: Prevent AS routing loops
+---
+created: 2015-03-23 16:05:12.0
+creator: kegan
+description: |-
+  +Problem:+ Two application services A and B are on IRC channel {{#foo}}. They both echo messages when a new IRC user joins the room, and when new Matrix users join the room. Alice on IRC joins the room:
+  {code}
+  [ ] indicates the *sender*
+
+           IRC Channel                            Matrix Room
+  -------------------------------------------------------------
+  [IRC] Alice has joined #foo.
+                                        [A] IRC-Alice joined.
+                                        [B] IRC_Alice joined.
+  [B] IRC-Alice has joined #foo.
+  [A] IRC_Alice has joined #foo
+                                        [A] IRC-IRC-Alice joined.
+                                        [B] IRC_IRC_Alice joined.
+  [B] IRC-IRC-Alice has joined #foo.
+  [A] IRC_IRC_Alice has joined #foo.
+                                        [A] IRC-IRC-IRC-Alice joined.
+                                        [B] IRC_IRC_IRC_Alice joined.
+  ...
+  {code}
+
+  We should advise that AS developers mark virtual users as 'bots' and ignore bot traffic to prevent this. However, we need stronger guarantees to prevent this to avoid flooding both the IRC channel and Matrix with events.
+
+  One technique would be to put a new state event which is enforced by home servers which determines which HS domains can use application services to monitor this room, e.g. the room pointed to by {{#irc_python:matrix.freenode.net}} may have a state event saying only application services registered to the HS domain {{matrix.freenode.net}} should be passed events in this room. This breaks the infinite loop on the Matrix end by preventing {{B}} from receiving the join events. This relies on home servers implementing these rules, which is deemed more probable than relying on ASes to implement these rules, given we expect there to be many more AS implementations than HS implementations.
+
+  Alternative suggestions welcome.
+id: '11260'
+key: SPEC-131
+number: '131'
+priority: '1'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:08.0
+votes: '0'
+watches: '4'
+workflowId: '11360'
+---
+actions:
+- author: erikj
+  body: On the other hand, we probably do want to support multiple bridges if they are bridging to different protocols/endpoints. For example, having an IRC and XMPP bridge in the same room. In fact, it's not unreasonable to have a matrix room bridged to multiple IRC channels/networks.
+  created: 2015-03-23 16:11:32.0
+  id: '11427'
+  issue: '11260'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-03-23 16:11:32.0
+- author: matthew
+  body: |-
+    Absolutely - it's critical to support multiple ASes bridging (matrixing?) a single Matrix room with multiple foreign channels (IRC servers, XMPP servers, Gitter, etc).  But it's a *disaster* if any random user in the room can go and absentmindedly fire up an AS to bridge that room into an IRC channel which overlaps with an existing IRC bridge... and cause a join or message loop.  Hence suggesting you explicitly state which HSes are allowed to run AS bridges for a given Matrix room, so that the room admins can instruct well-behaved ASes to avoid looping disaster.
+
+    A nice side-effect is that this list of authorised bridges can also be used as useful metadata to detail which foreign rooms a given matrix room is linked to.  (e.g. "ooh, this is bridged to irc://irc.freenode.net/matrix as well as xmpp://wherever!", and show it to the user/client as part of the room metadata).
+  created: 2015-03-29 22:57:30.0
+  id: '11448'
+  issue: '11260'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-29 22:57:30.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/439'
+  created: 2016-10-28 16:27:08.0
+  id: '13289'
+  issue: '11260'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:08.0

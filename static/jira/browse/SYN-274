@@ -1,0 +1,30 @@
+---
+summary: Make it possible to have public rooms that are only public to a specific HS domain
+---
+created: 2015-02-13 16:28:55.0
+creator: stalund
+description: ''
+id: '11051'
+key: SYN-274
+number: '274'
+priority: '3'
+project: '10000'
+reporter: stalund
+resolution: '3'
+resolutiondate: 2015-02-14 03:37:35.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:12.0
+votes: '0'
+watches: '2'
+workflowId: '11151'
+---
+actions:
+- author: matthew
+  body: dup SYN-43 (sorry, should have remembered we already had this)
+  created: 2015-02-14 03:37:35.0
+  id: '11259'
+  issue: '11051'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-14 03:37:35.0

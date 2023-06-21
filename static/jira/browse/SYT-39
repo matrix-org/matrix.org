@@ -1,0 +1,34 @@
+---
+summary: Check that ->main::expect_http_FOO is used correctly
+---
+assignee: leonerd
+created: 2015-11-18 23:14:19.0
+creator: leonerd
+description: |-
+  Bad:
+
+  {noformat}
+  foo->then( sub { bar } )->then( sub { baz } )->main::expect_http_403
+  {noformat}
+
+  Good:
+
+  {noformat}
+  foo->then( sub { bar } )->then( sub { baz->main::expect_http_403 } )
+  {noformat}
+id: '12117'
+key: SYT-39
+number: '39'
+priority: '3'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-19 20:07:10.0
+status: '5'
+type: '1'
+updated: 2015-11-19 20:07:10.0
+votes: '0'
+watches: '1'
+workflowId: '12220'
+---
+actions: null

@@ -1,0 +1,30 @@
+---
+summary: Ability to reject 3PID invites
+---
+created: 2016-03-01 17:35:08.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  At some point it would be nice if 3rd party folks could interact with matrix just enough to reject a 3PID invite, without having to first accept it and then leave to make their rejection known
+id: '12536'
+key: SPEC-362
+number: '362'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:21.0
+votes: '0'
+watches: '2'
+workflowId: '12636'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/647'
+  created: 2016-10-28 16:28:21.0
+  id: '13456'
+  issue: '12536'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:21.0

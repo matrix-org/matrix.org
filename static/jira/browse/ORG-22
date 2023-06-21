@@ -1,0 +1,30 @@
+---
+summary: matrix.org needs <noscript/> for "how does it work"
+---
+created: 2015-03-29 23:45:01.0
+creator: matthew
+description: ''
+id: '11294'
+key: ORG-22
+number: '22'
+priority: '2'
+project: '10003'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2017-03-21 10:58:28.0
+status: '5'
+type: '2'
+updated: 2017-03-21 10:58:28.0
+votes: '0'
+watches: '2'
+workflowId: '11394'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix.org/issues/14
+  created: 2017-03-21 10:58:28.0
+  id: '14012'
+  issue: '11294'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 10:58:28.0

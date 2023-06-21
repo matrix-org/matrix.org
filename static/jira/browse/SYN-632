@@ -1,0 +1,64 @@
+---
+summary: Synchronise guest accounts for a given 3PID invite
+---
+created: 2016-02-18 16:45:59.0
+creator: matthew
+description: |-
+  If I receive a 3PID invite by email and follow it as a guest on multiple devices, it would be good if the resulting guest sessions shared the same guest account.  The suggestion is to create a guest account associated with this unbound 3PID and include the resulting access_token in the 3PID invite URL.  Clients which already have an access_token would prefer their existing token (or possibly give the user the option to logout and join the room as a guest).  Clients with no access_token would use it to join as the existing shared guest user.  This helps prevent guest access proliferation.
+
+  We could advise the user to upgrade their guest account if we see the account being used multiple times from different devices, so that they can reliably rescue their history.  (Although it's worth noting that they will always be able to recover this history by following the link in the invite, unless we expire the invite after some metric).
+id: '12408'
+key: SYN-632
+number: '632'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-02-24 14:05:45.0
+status: '5'
+type: '2'
+updated: 2016-02-24 14:05:45.0
+votes: '0'
+watches: '2'
+workflowId: '12513'
+---
+actions:
+- author: illicitonion
+  body: |-
+    Synapse side in https://github.com/matrix-org/synapse/pull/604
+    Sydent side is purely a matter of changing the email template to include {guest_access_token}
+
+    If we want to re-use guest accounts consistently across different invites for the same 3pid, that's some more work - not sure whether it's worth doing; Matthew?
+  created: 2016-02-24 12:50:05.0
+  id: '12714'
+  issue: '12408'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-02-24 12:50:05.0
+- author: matthew
+  body: |-
+    Have checked with Amandine and the desire here is that all invites for the same unbound 3pid will share the same guest access token - we are effectively building up that user's "real" account in order to upgrade them nicely when they register. Fragmenting each new invite into a new guest account (unless they happen to follow the invites on the same device) goes against this.
+
+    How much more faff to track the guest accesstokens properly per 3pid?
+  created: 2016-02-24 13:01:03.0
+  id: '12715'
+  issue: '12408'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-24 13:01:03.0
+- author: illicitonion
+  body: Not much faff :) Will add that functionality
+  created: 2016-02-24 13:02:54.0
+  id: '12716'
+  issue: '12408'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-02-24 13:02:54.0
+- author: illicitonion
+  body: Implemented in https://github.com/matrix-org/synapse/pull/604
+  created: 2016-02-24 14:05:25.0
+  id: '12717'
+  issue: '12408'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-02-24 14:05:25.0

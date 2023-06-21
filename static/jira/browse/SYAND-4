@@ -1,0 +1,43 @@
+---
+summary: Add a local echo
+---
+assignee: joachim
+created: 2015-01-19 10:44:44.0
+creator: joachim
+description: ''
+id: '10951'
+key: SYAND-4
+number: '4'
+priority: '1'
+project: '10201'
+reporter: joachim
+resolution: '1'
+resolutiondate: 2015-01-22 10:25:46.0
+status: '5'
+type: '2'
+updated: 2015-01-22 10:25:46.0
+votes: '0'
+watches: '1'
+workflowId: '11051'
+---
+actions:
+- author: joachim
+  body: |-
+    Done by displaying the message immediately once it's sent. We need something more for image messages however because the actual message is only sent once the image has been uploaded, which can take a while
+    https://github.com/matrix-org/matrix-android-sdk/commit/596a449e8c62a36ca2ffefa57bd288c892620c5e
+  created: 2015-01-22 08:39:12.0
+  id: '11180'
+  issue: '10951'
+  type: comment
+  updateauthor: joachim
+  updated: 2015-01-22 10:24:31.0
+- author: joachim
+  body: |-
+    Finished by adding a loading wheel while uploading images
+    https://github.com/matrix-org/matrix-android-sdk/commit/27e35fb4cb9abdf917371732f6e9cfbb594c4108
+  created: 2015-01-22 10:25:46.0
+  id: '11182'
+  issue: '10951'
+  type: comment
+  updateauthor: joachim
+  updated: 2015-01-22 10:25:46.0

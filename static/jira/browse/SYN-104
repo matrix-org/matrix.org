@@ -1,0 +1,60 @@
+---
+summary: Paginating with /messages API returns a duplicate event on the last/border entry
+---
+assignee: markjh
+created: 2014-10-15 15:49:56.0
+creator: kegan
+description: ''
+id: '10476'
+key: SYN-104
+number: '104'
+priority: '1'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-11-18 16:49:39.0
+status: '5'
+type: '1'
+updated: 2014-12-10 16:04:16.0
+votes: '0'
+watches: '3'
+workflowId: '10580'
+---
+actions:
+- author: markjh
+  body: |-
+    This looks like a straight forward off by one when calculating the "end" token when going backwards.
+
+    {noformat}
+
+    request:
+      dir=f&from=t4-54_31_0&limit=2
+    Response:
+      $14163275035dCAgN:localhost:8480
+      $14163275946vaIce:localhost:8480
+      "end": "t6-56_31_0",
+      "start": "t4-54_31_0"
+
+    Request:
+      dir=b&from=t6-56_31_0&limit=2
+    Response:
+      $14163275946vaIce:localhost:8480
+      $14163275035dCAgN:localhost:8480
+      "end": "t5-55_31_0", <- should be "t4-54_31_0".
+      "start": "t6-56_31_0"
+
+    {noformat}
+  created: 2014-11-18 16:33:42.0
+  id: '10802'
+  issue: '10476'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-18 16:33:42.0
+- author: markjh
+  body: Looks to be working correctly now.
+  created: 2014-11-18 16:49:39.0
+  id: '10803'
+  issue: '10476'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-18 16:49:39.0

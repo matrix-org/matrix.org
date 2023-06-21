@@ -1,0 +1,30 @@
+---
+summary: Postgres full text search fails to index terms including .'s
+---
+created: 2015-11-28 18:20:15.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  So searching for 'foo' doesn't return 'foo.png', as 'foo.png' is not split into 'foo' and 'png'
+id: '12146'
+key: SYN-528
+number: '528'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:37.0
+votes: '0'
+watches: '2'
+workflowId: '12249'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1426'
+  created: 2016-11-07 18:28:37.0
+  id: '13733'
+  issue: '12146'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:37.0

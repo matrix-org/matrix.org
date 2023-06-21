@@ -1,0 +1,58 @@
+---
+summary: Direct file transfer using WebRTC Data channels
+---
+created: 2015-04-01 18:51:58.0
+creator: alien
+description: |-
+  I think we do need direct file transfers between users (using WebRTC data channels) as we discussed already on IRC the other day.
+  Now this is an c2c feature that does not affect the Matrix core directly, but so are the videocalls (which use the aforementioned WebRTC). Why yes to videocalls and no to file transfers?
+
+  IMO it is improper to place the burden of implementation of this function solely on the community. We risk incurring eventual fragmentation problems due to a plethora of incompatible implementations (with the majority of them not utilising the WebRTC data channels, implementing file tranfers the old Jabber-way instead). Do we really need that?
+
+  The majority of potential users I have conversed with on this topic agree that such functionality is a must. For some of them it is even more important than video calls. It is inconvenient to open another application just to send a file directly.
+id: '11304'
+key: SYWEB-343
+number: '343'
+priority: '3'
+project: '10004'
+reporter: alien
+status: '1'
+type: '2'
+updated: 2015-04-01 20:06:40.0
+votes: '3'
+watches: '4'
+workflowId: '11404'
+---
+actions:
+- author: ginto
+  body: This is obviously most wanted thing.
+  created: 2015-04-01 19:00:39.0
+  id: '11466'
+  issue: '11304'
+  type: comment
+  updateauthor: ginto
+  updated: 2015-04-01 19:00:39.0
+- author: dbkr
+  body: 'The suggestion, I think, was that we''re open to third parties suggesting a spec, or adopting the spec used by a third party implementation. Absolutely agreed the we should define a spec for it: a core goal of Matrix is to prevent fragmentation of competing implementations of equal merit. If the important part is the to define the spec here, I''d suggest moving this to the SPEC project?'
+  created: 2015-04-01 19:17:42.0
+  id: '11467'
+  issue: '11304'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-01 19:17:42.0
+- author: mordechai
+  body: It would be rather pleasant to have direct file transfers. Hey, it has been around for ages, almost every other messenger had it implemented. And those who implemented it via proxies and 3rd party additions weren't the best generally.
+  created: 2015-04-01 19:41:44.0
+  id: '11468'
+  issue: '11304'
+  type: comment
+  updateauthor: mordechai
+  updated: 2015-04-01 19:41:44.0
+- author: dbkr
+  body: Agreed - it would certainly be a good feature. I'll just create a new spec bug and update this one.
+  created: 2015-04-01 19:58:51.0
+  id: '11469'
+  issue: '11304'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-01 19:58:51.0

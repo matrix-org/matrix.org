@@ -1,0 +1,41 @@
+---
+summary: Main input is locked out if you are not currently in a channel, stopping you from entering IRC-style commands
+---
+created: 2014-12-24 17:46:11.0
+creator: matthew
+description: ''
+id: '10871'
+key: SYWEB-242
+number: '242'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2015-01-28 11:23:47.0
+votes: '0'
+watches: '2'
+workflowId: '10971'
+---
+actions:
+- author: kegan
+  body: |-
+    I don't think keeping the text area enabled is good UX here.
+
+    The main purpose of the text area is to type messages into a room. IRC commands are provided as nice shortcuts, but are ultimately in my mind secondary to the primary purpose of the box, which is to type messages. If the ability to type messages is removed, keeping the text area just for IRC commands to me seems wrong. It's not like you can't do the action by going back to the home page (all other joins are a click away from recents, so it's JUST room alias joining that is the issue here). 
+
+    EDIT: In case it wasn't clear: by keeping the text box enabled you will inevitably have people type messages into the box (which may be considerably long), then hit Send only for it to fonx you. This is why I feel it is bad UX to keep it enabled.
+  created: 2014-12-29 09:31:29.0
+  id: '11038'
+  issue: '10871'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-29 09:32:50.0
+- author: matthew
+  body: Well, i guess this is personal taste.  I quite like the IRC idiom that the text box is for both commands and text, and just because you're not currently in a room doesn't mean that CLI should be disabled and you should be forced to use the GUI.  We want the reference apps to be familiar to IRC users, so I personally think we should fix this (at low priority).
+  created: 2015-01-26 23:16:58.0
+  id: '11193'
+  issue: '10871'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-26 23:16:58.0

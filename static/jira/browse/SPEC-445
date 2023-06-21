@@ -1,0 +1,41 @@
+---
+summary: Auth for media repo
+---
+created: 2016-08-20 19:38:55.0
+creator: neb
+description: |-
+  The media repository is currently unauthed; anybody can access posted images, avatars, etc, if they know the URI.
+
+  One solution to this might be to use cookies with custom macaroons to limit access.
+
+  Submitted by @matthew:matrix.org
+id: '12800'
+key: SPEC-445
+number: '445'
+priority: '5'
+project: '10001'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:43.0
+votes: '0'
+watches: '3'
+workflowId: '12900'
+---
+actions:
+- author: matthew
+  body: Actually, E2E provides quite an elegant solution for this, in that you can't decrypt the content if you don't have the keys.  (Then again, from a corp security perspective they prolly don't even want you downloading the encrypted data)
+  created: 2016-08-24 18:00:03.0
+  id: '13109'
+  issue: '12800'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-08-24 18:00:03.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/701'
+  created: 2016-10-28 16:28:43.0
+  id: '13510'
+  issue: '12800'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:43.0

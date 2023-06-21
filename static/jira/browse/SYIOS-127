@@ -1,0 +1,20 @@
+---
+summary: Paginating during infinite scroll causes nasty scroll jumps
+---
+created: 2015-04-27 13:11:34.0
+creator: matthew
+description: ''
+id: '11375'
+key: SYIOS-127
+number: '127'
+priority: '3'
+project: '10200'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-04-27 13:11:34.0
+votes: '0'
+watches: '1'
+workflowId: '11475'
+---
+actions: null

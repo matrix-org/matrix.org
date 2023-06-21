@@ -1,0 +1,30 @@
+---
+summary: Implement read receipts
+---
+created: 2015-09-18 10:01:30.0
+creator: erikj
+description: ''
+id: '11885'
+key: SYJS-25
+number: '25'
+priority: '3'
+project: '10204'
+reporter: erikj
+resolution: '3'
+resolutiondate: 2015-09-19 23:45:36.0
+status: '5'
+type: '2'
+updated: 2015-09-19 23:45:36.0
+votes: '0'
+watches: '2'
+workflowId: '11988'
+---
+actions:
+- author: matthew
+  body: dup SYJS-24
+  created: 2015-09-19 23:45:36.0
+  id: '12147'
+  issue: '11885'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-19 23:45:36.0

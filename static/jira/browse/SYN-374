@@ -1,0 +1,28 @@
+---
+summary: Retry transactions across restart.
+---
+created: 2015-05-07 11:49:13.0
+creator: erikj
+description: ''
+id: '11511'
+key: SYN-374
+number: '374'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:01.0
+votes: '0'
+watches: '2'
+workflowId: '11611'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1320'
+  created: 2016-11-07 18:28:01.0
+  id: '13641'
+  issue: '11511'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:01.0

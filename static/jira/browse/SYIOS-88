@@ -1,0 +1,23 @@
+---
+summary: Rageshake needs to be less sensitive by x2 or so
+---
+assignee: gforet
+created: 2015-02-19 15:11:07.0
+creator: matthew
+description: ''
+id: '11097'
+key: SYIOS-88
+number: '88'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-20 10:12:35.0
+status: '5'
+type: '2'
+updated: 2015-02-20 10:12:35.0
+votes: '0'
+watches: '1'
+workflowId: '11197'
+---
+actions: null

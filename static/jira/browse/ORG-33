@@ -1,0 +1,30 @@
+---
+summary: animations broken on front page of matrix.org on Safari
+---
+created: 2015-12-15 15:38:14.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12211'
+key: ORG-33
+number: '33'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:03:32.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:03:32.0
+votes: '0'
+watches: '2'
+workflowId: '12314'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix.org/issues/17
+  created: 2017-03-21 11:03:32.0
+  id: '14018'
+  issue: '12211'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:03:32.0

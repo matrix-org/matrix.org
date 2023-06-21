@@ -1,0 +1,71 @@
+---
+summary: Un-authable membership events can corrupt HS room state
+---
+assignee: markjh
+created: 2016-07-22 14:48:04.0
+creator: dbkr
+description: |-
+  See https://vector.im/develop/#/room/!DgvjtOljKujDBrxyHk:matrix.org/$1469181498665GNapO:kolm.io for scrollback of me trying to figure out why Yaniel can't speak in Matrix HQ.
+
+  Matrix.org seemed to get a consistent membership event for him but his HS is having none of it and will not let him join nor leave. I see a lot of the classic, "Event content has been tampered, redacting" log lines on both servers (and not for the un-authable event).
+id: '12765'
+key: SYN-735
+number: '735'
+priority: '1'
+project: '10000'
+reporter: dbkr
+status: '3'
+type: '1'
+updated: 2016-11-07 18:29:47.0
+votes: '0'
+watches: '2'
+workflowId: '12865'
+---
+actions:
+- author: richvdh
+  body: |-
+    From Dylanger:
+
+    > Basically I took richvdh's identity
+    > And his domain
+    > Under my HS
+    > Had his privs
+    > Then gave myself permissions
+
+    > I just changed my HS'es domain name 
+    > In YAML
+
+    So Dylanger has convinced his own HS that he has admin, and used that to generate a kick event, which has then been sent to Yaniel's, which has then accepted the kick despite the broken auth chain.
+  created: 2016-07-25 12:05:15.0
+  id: '13079'
+  issue: '12765'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-25 12:05:15.0
+- author: dbkr
+  body: I think the spoofed event ID here is $14691813430ugbai:onedefence.com
+  created: 2016-07-25 14:34:15.0
+  id: '13080'
+  issue: '12765'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-07-25 14:34:15.0
+- author: richvdh
+  body: |-
+    From [~erikj]:
+    > I don't think it was the spoof that actually caused the issues, but that auth rejected events were accidentally being inserted inserted into the state
+    > (as opposed to events that were rejected way earlier due to bad sigs)
+  created: 2016-07-26 10:29:21.0
+  id: '13083'
+  issue: '12765'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-26 10:29:21.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1571'
+  created: 2016-11-07 18:29:47.0
+  id: '13894'
+  issue: '12765'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:47.0

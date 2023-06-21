@@ -1,0 +1,20 @@
+---
+summary: synapse doesn't relay EDUs to ASes. this is a problem for xmpptrix
+---
+created: 2015-08-14 22:55:55.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11794'
+key: BOTS-90
+number: '90'
+priority: '1'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-08-14 22:55:55.0
+votes: '0'
+watches: '1'
+workflowId: '11896'
+---
+actions: null

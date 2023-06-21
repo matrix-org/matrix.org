@@ -1,0 +1,24 @@
+---
+summary: The pusher URL for sygnal should be HTTPS, not HTTP
+---
+created: 2015-09-16 09:41:26.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Otherwise remote HSes end up speaking plain HTTP to the matrix.org sygnal(!)
+id: '11874'
+key: SYAND-125
+number: '125'
+priority: '1'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-16 09:55:52.0
+status: '5'
+type: '1'
+updated: 2015-09-16 09:55:52.0
+votes: '0'
+watches: '1'
+workflowId: '11977'
+---
+actions: null

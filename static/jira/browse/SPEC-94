@@ -1,0 +1,41 @@
+---
+summary: Test the gendoc script
+---
+created: 2015-01-20 17:20:18.0
+creator: kegan
+description: |-
+  The {{gendoc.sh}} script is useful, but would be nicer if it were more generic
+  (e.g. removing the {{scp}} line, modifying where it stores the html files, etc). As it stands, it feels very fragile and scary because it assumes certain folders exist e.g. {{workspace}} and it directly {{scp}} s to other machines, even if previous commands fail. Given this script *is available on Github*, we should really make this a genuinely useful tool to HTML-ise the docs.
+
+  In addition, errors thrown by this script (from blobbing together disparate RSTs) are *extremely* useful to know, and would've caught:
+   - https://github.com/matrix-org/matrix-doc/commit/109c8a97
+   - https://github.com/matrix-org/matrix-doc/commit/62471348
+
+  so I would like it if there was a Jenkins project setup to test just that: {{cat}} into a single RST then parse it and make sure there are 0 errors.
+id: '10961'
+key: SPEC-94
+number: '94'
+priority: '2'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-19 16:46:57.0
+status: '5'
+type: '1'
+updated: 2015-02-19 16:46:57.0
+votes: '0'
+watches: '1'
+workflowId: '11061'
+---
+actions:
+- author: kegan
+  body: |-
+    There are now RST syntax checks being done by Jenkins.
+
+    The {{gendoc.sh}} script has been split up into {{gendoc.py}} which does the {{cat}} and {{rst2html}} work, and {{matrix-org-gendoc.sh}} which has the perl specific guff for matrix.org
+  created: 2015-02-19 16:46:57.0
+  id: '11299'
+  issue: '10961'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-19 16:46:57.0

@@ -1,0 +1,30 @@
+---
+summary: 'Duplicate messages: off by one token for /initialSync /messages'
+---
+created: 2014-11-27 12:22:22.0
+creator: kegan
+description: ''
+id: '10727'
+key: SYN-178
+number: '178'
+priority: '1'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-01-12 17:40:15.0
+status: '5'
+type: '1'
+updated: 2015-05-14 13:57:53.0
+votes: '0'
+watches: '1'
+workflowId: '10827'
+---
+actions:
+- author: kegan
+  body: The algorithm used for determining chunks from the database isn't clear. Topological vs stream ordering vs when to subtract 1 (or whether we don't need to). This should be documented better.
+  created: 2015-01-12 17:40:15.0
+  id: '11100'
+  issue: '10727'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-12 17:40:15.0

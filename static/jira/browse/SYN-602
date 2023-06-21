@@ -1,0 +1,30 @@
+---
+summary: Non-guest access users don't have access to world-readable history?
+---
+created: 2016-01-18 20:06:20.0
+creator: matthew
+description: ''
+id: '12318'
+key: SYN-602
+number: '602'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-03-09 23:41:34.0
+status: '5'
+type: '1'
+updated: 2016-03-09 23:41:34.0
+votes: '0'
+watches: '2'
+workflowId: '12423'
+---
+actions:
+- author: blide
+  body: Already fixed. Now method don't throw that kind of exception. https://github.com/matrix-org/synapse/commit/da417aa56d3582ab91805b1a623c18691995a3e6#diff-0ed14aea4396065f63d471b54e46cde4L319
+  created: 2016-03-09 18:22:51.0
+  id: '12758'
+  issue: '12318'
+  type: comment
+  updateauthor: blide
+  updated: 2016-03-09 20:02:17.0

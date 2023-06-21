@@ -1,0 +1,28 @@
+---
+summary: Move to log_config as the default way of configuring your logs
+---
+created: 2015-04-30 16:03:39.0
+creator: dbkr
+description: ''
+id: '11501'
+key: SYN-368
+number: '368'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '1'
+type: '4'
+updated: 2016-11-07 18:27:59.0
+votes: '0'
+watches: '2'
+workflowId: '11601'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1317'
+  created: 2016-11-07 18:27:59.0
+  id: '13638'
+  issue: '11501'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:59.0

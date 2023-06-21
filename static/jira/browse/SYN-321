@@ -1,0 +1,30 @@
+---
+summary: Link pusher lifetime to access token (/session) lifetime
+---
+created: 2015-03-24 15:03:33.0
+creator: dbkr
+description: ''
+id: '11263'
+key: SYN-321
+number: '321'
+priority: '2'
+project: '10000'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-04-23 11:49:13.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:08.0
+votes: '0'
+watches: '1'
+workflowId: '11363'
+---
+actions:
+- author: dbkr
+  body: Pushers are now linked to an access token, so they can now be removed if and when we ever expire access tokens.
+  created: 2015-04-23 11:49:13.0
+  id: '11526'
+  issue: '11263'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-23 11:49:13.0

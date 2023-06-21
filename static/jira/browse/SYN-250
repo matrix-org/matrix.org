@@ -1,0 +1,42 @@
+---
+summary: Uncleanly aborted CS connections make presence get stuck
+---
+assignee: dbkr
+created: 2015-01-26 13:51:11.0
+creator: dbkr
+description: |-
+  * Set up a user with one client connected in a room where you can see their presence. Client event stream timeout is 30s.
+   * Connect the client
+   > Observe presence goes to online
+   * Cleanly shut down client
+   > Observe presence goes to offline
+   * Start up client
+   > Presence goes online again
+   * Uncleanly terminate client
+   > Presence stays online for over 5 minutes (seems to go offline again after a few more minutes)
+
+  Expected: Presence should go back to being offline after a couple of minutes at most (which would be 4x the event stream timeout). Probably more like 40 or 60s.
+id: '10978'
+key: SYN-250
+number: '250'
+priority: '2'
+project: '10000'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-01-27 16:13:20.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:26:18.0
+votes: '0'
+watches: '1'
+workflowId: '11078'
+---
+actions:
+- author: dbkr
+  body: Fixed in pushers branch eba89f0 / 5eacaeb
+  created: 2015-01-27 16:13:20.0
+  id: '11196'
+  issue: '10978'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-01-27 16:13:20.0

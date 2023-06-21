@@ -1,0 +1,28 @@
+---
+summary: room avatars are broken on email notifs
+---
+created: 2016-05-13 18:25:35.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12663'
+key: SYN-695
+number: '695'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:32.0
+votes: '0'
+watches: '2'
+workflowId: '12763'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1546'
+  created: 2016-11-07 18:29:32.0
+  id: '13859'
+  issue: '12663'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:32.0

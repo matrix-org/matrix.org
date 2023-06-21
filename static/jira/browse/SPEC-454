@@ -1,0 +1,36 @@
+---
+summary: Define a whitelist of the servers a room is allowed to federate with
+---
+created: 2016-09-12 14:12:35.0
+creator: matthew
+description: ''
+id: '12827'
+key: SPEC-454
+number: '454'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:47.0
+votes: '0'
+watches: '2'
+workflowId: '12927'
+---
+actions:
+- author: matthew
+  body: This is actually pretty urgent, as it's the single biggest inhibitor for enterprise/corporate usage, where it's absolutely vital to be able to say "please let this room never leave this set of servers".  I'll compromise on a P2.
+  created: 2016-09-27 17:33:19.0
+  id: '13136'
+  issue: '12827'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-09-27 17:33:19.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/709'
+  created: 2016-10-28 16:28:47.0
+  id: '13518'
+  issue: '12827'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:47.0

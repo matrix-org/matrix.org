@@ -1,0 +1,28 @@
+---
+summary: synapse readme is broken for generating config as it now requires --report-stats
+---
+created: 2015-12-05 16:47:08.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12177'
+key: SYN-535
+number: '535'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:39.0
+votes: '0'
+watches: '2'
+workflowId: '12280'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1434'
+  created: 2016-11-07 18:28:39.0
+  id: '13738'
+  issue: '12177'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:39.0

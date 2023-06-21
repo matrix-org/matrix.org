@@ -1,0 +1,30 @@
+---
+summary: Background message sending
+---
+created: 2015-03-11 01:21:44.0
+creator: matthew
+description: ''
+id: '11194'
+key: SYIOS-104
+number: '104'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-27 10:54:46.0
+status: '5'
+type: '2'
+updated: 2015-04-27 10:54:46.0
+votes: '0'
+watches: '2'
+workflowId: '11294'
+---
+actions:
+- author: manu
+  body: This has been fixed for a while
+  created: 2015-04-27 10:54:46.0
+  id: '11537'
+  issue: '11194'
+  type: comment
+  updateauthor: manu
+  updated: 2015-04-27 10:54:46.0

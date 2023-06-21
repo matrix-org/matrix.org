@@ -1,0 +1,28 @@
+---
+summary: Speed up persist_event
+---
+created: 2015-06-03 16:46:21.0
+creator: erikj
+description: ''
+id: '11618'
+key: SYN-407
+number: '407'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '3'
+updated: 2016-11-07 18:28:06.0
+votes: '0'
+watches: '2'
+workflowId: '11719'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1332'
+  created: 2016-11-07 18:28:06.0
+  id: '13653'
+  issue: '11618'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:06.0

@@ -1,0 +1,74 @@
+---
+summary: Should we support invitations to register with Matrix as first class citizens?
+---
+created: 2015-06-20 22:23:07.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11679'
+key: SPEC-190
+number: '190'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:26.0
+votes: '0'
+watches: '4'
+workflowId: '11780'
+---
+actions:
+- author: srakonza
+  body: |-
+    The idea here is to be able to facilitate / bootstrap individuals into the Matrix system by invitation.  This invitation would contain an invite code (or a URL containing an invite code).  It would be delivered by any arbitrary system external to Matrix: QR code, Twitter, SMS, email distribution list, post-it note, etc.  This invite code would lead the consumer to sign in or create a Matrix account - likely through a specific home server.  Optionally, it would contain information to lead the new Matrix user into joining a specific room; and once joining the room, it could direct the room member to a specific event.
+
+    In addition to the capabilities above, an invite code may contain restrictions:
+    Start/End Date Time - Restricted by date and time.  Only during the defined period would the invite code be honored.
+    Accept Count Limit - A limited number of users may accept the invitation.
+    Required 3rd party Auth - A particular auth may be required to accept the invitation.  The home server may not require email validation, but a particular invite may.
+
+
+    One more thing - perhaps a stretch goal - it should be possible to trace back a registered user to the invitation and/or user who initiated the invite.  Basically, it would be nice to have analytics on which users are spreading the word and getting others into the system.
+  created: 2015-06-21 00:31:10.0
+  id: '11893'
+  issue: '11679'
+  type: comment
+  updateauthor: srakonza
+  updated: 2015-06-21 00:45:34.0
+- author: kegan
+  body: |-
+    Is there any reason why this should be supported as a *first-class* citizen? The ideas you mention can all be done by a specific HS, and from what I can see there isn't anything here which requires a standard technique to be specified.
+
+    An example of how this could be done on a HS:
+    - HS adds a new endpoint {{/invitation}} which accepts a query param {{token=}}
+    - Whenever a user on a given HS wants to invite someone, they {{POST}} to {{/invitation}} with some information about the invitee(s) for customisation (e.g. their name, number of invites requested, whatever). The HS can enforce that users use 3p auth or apply arbitrary time restrictions on redemption of these tokens, or allow the inviter to do this (with sensible limits).
+    - HS returns a URL (this could be a bit.ly link for QR codes)
+    - User can either send this link in an email, via twitter, make a QR code for it.
+    - When an invitee follows the link, it prompts them to login/register (this is always going to be specific to a HS even now)
+    - HS injects room invites / whatever information from the {{POST}} (i.e. the "lead the new Matrix user into joining a specific room" bit)
+
+    With respect to analytics, this again is entirely up to the HS how they want to expose this (hitting an external service like Google Analytics, storing stats in a metrics service like prometheus or statsd, exposing an HTTP "admin" endpoint for server admins to probe, providing a script to trawl an {{invite_transactions.log}}.
+
+    I generally like the concept of invitations to register because I agree with you that it facilitates takeup rates, but I don't think this is something that should be specced formally.
+  created: 2015-06-22 09:12:24.0
+  id: '11894'
+  issue: '11679'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-22 09:12:24.0
+- author: srakonza
+  body: I accept your terms. :)
+  created: 2015-06-24 01:17:39.0
+  id: '11913'
+  issue: '11679'
+  type: comment
+  updateauthor: srakonza
+  updated: 2015-06-24 01:17:39.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/518'
+  created: 2016-10-28 16:27:26.0
+  id: '13326'
+  issue: '11679'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:26.0

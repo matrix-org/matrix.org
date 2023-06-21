@@ -1,0 +1,30 @@
+---
+summary: Decentralised identity
+---
+created: 2016-09-27 19:39:58.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Somehow we've got this far without a bug tracking replacing sydent and the Identity Service with a decentralised equivalent. There's been lots of discussion about this, talking about using existing decentralised identity systems or ledgers ranging from keybase, blockstack (onename), webfist, stellar.org, evernym, uport.me, namecoin, WebAuthn, WebID, Alpenhorn's anytrust model, etc. We haven't yet found a good solution for simply replacing the email->mxid mapping system of the current ISes with a decentralised one, given the problem of validating an email address in a decentralised manner, when emails themselves are inherently centralised to the SMTP servers responsible for that domain, and existing SMTP have very limited hooks for validating the identity of its users.
+id: '12844'
+key: SPEC-458
+number: '458'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:48.0
+votes: '0'
+watches: '3'
+workflowId: '12944'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/712'
+  created: 2016-10-28 16:28:48.0
+  id: '13521'
+  issue: '12844'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:48.0

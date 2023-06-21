@@ -1,0 +1,78 @@
+---
+summary: Room ID leaks for 1:1 in recents when getting invitation from initialSync
+---
+created: 2014-09-19 08:32:11.0
+creator: manu
+description: |-
+  1- Alice invites Bob
+  2- Bob refreshes the web app
+  -> Bob sees the room ID in his recents list
+
+  The information provided by initialSync does not allow to determine we are in q 1:1 room. So, the code does not try to compute a room name
+id: '10334'
+key: SYWEB-52
+number: '52'
+priority: '2'
+project: '10004'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-09-24 01:46:30.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:27.0
+votes: '0'
+watches: '3'
+workflowId: '10437'
+---
+actions:
+- author: kegan
+  body: |-
+    You haven't joined yet, so there is no information provided given you are still an outsider. The initial sync API *should* return who invited you though, so you can display the inviter's name.
+
+    Indeed, there is an "inviter" key which you can use, which should be used instead of the room ID.
+  created: 2014-09-23 10:50:30.0
+  id: '10389'
+  issue: '10334'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 10:50:30.0
+- author: manu
+  body: Agreed but the renaming is done for only 1:1 room. Here we cannot know how many users are in the room in advance.
+  created: 2014-09-23 12:30:27.0
+  id: '10393'
+  issue: '10334'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-23 12:30:27.0
+- author: kegan
+  body: Then surely the best thing to display would be "@bob:domain's invitiation" rather than "!fiugwefyufweiufg:domain" ?
+  created: 2014-09-23 12:31:51.0
+  id: '10394'
+  issue: '10334'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 12:31:51.0
+- author: matthew
+  body: This may be related to SYWEB-53 and SYWEB-17 too?
+  created: 2014-09-23 13:48:20.0
+  id: '10397'
+  issue: '10334'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 13:48:20.0
+- author: kegan
+  body: Different mechanisms I think. The problem with this is that an invite from /initialSync gives you limited information, so you can only really display things like "@bob:domain's invitation". The other bugs are simply that 1:1 rooms are not correctly displaying the name of the user as the room name, even after you've joined them.
+  created: 2014-09-23 16:09:17.0
+  id: '10417'
+  issue: '10334'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 16:09:17.0
+- author: matthew
+  body: The two are entangled - some of the time the client doesn't have an accurate rooms.members datastructure because it hasn't been able to query the room's state - and so can't display the correct name... even after you've joined it.
+  created: 2014-09-23 17:22:29.0
+  id: '10426'
+  issue: '10334'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 17:22:29.0

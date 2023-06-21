@@ -1,0 +1,30 @@
+---
+summary: Changing displayname makes /sync resend the entire room state
+---
+created: 2015-11-08 21:39:32.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  After I change displayname (or avatar, etc), /sync sends my clients a complete state update for any affected room. Which is a lot of data
+id: '12095'
+key: SYN-515
+number: '515'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:34.0
+votes: '0'
+watches: '2'
+workflowId: '12198'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1414'
+  created: 2016-11-07 18:28:34.0
+  id: '13723'
+  issue: '12095'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:34.0

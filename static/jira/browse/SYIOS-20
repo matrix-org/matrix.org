@@ -1,0 +1,38 @@
+---
+summary: Switch to 'modern' webclient style UI for displaying power levels
+---
+assignee: m-ylecollen
+created: 2014-12-15 17:19:06.0
+creator: matthew
+description: |-
+  Currently the (i) button on iOS takes us to a *really* ugly contact list for the channel.
+
+   * Rather than horizontal bars for power levels, we could consider using mini pie-charts like on iOS.  Or just a number would be less ugly.
+   * Rather than age-on-green, we could put a presence circle round the avatar for consistency on web client.
+   * We have no option to start a conversation with a user as selected from the contact list.
+   * On iPhone 6+ (iOS 8.1), the list doesn't take up the whole page and leaves a weird greyed out ugly space at the bottom.
+   * We surely shouldn't be showing left users at all (other than as a debugging option in settings)
+id: '10824'
+key: SYIOS-20
+number: '20'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-17 15:25:50.0
+status: '6'
+type: '2'
+updated: 2014-12-18 12:38:53.0
+votes: '0'
+watches: '2'
+workflowId: '10924'
+---
+actions:
+- author: gforet
+  body: The following point "On iPhone 6+ (iOS 8.1), the list doesn't take up the whole page and leaves a weird greyed out ugly space at the bottom." has been fixed.
+  created: 2014-12-16 15:03:19.0
+  id: '10999'
+  issue: '10824'
+  type: comment
+  updateauthor: gforet
+  updated: 2014-12-16 15:03:19.0

@@ -1,0 +1,36 @@
+---
+summary: Support multiple bind addresses
+---
+created: 2015-04-27 21:27:48.0
+creator: matthew
+description: ''
+id: '11380'
+key: SYN-363
+number: '363'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:59.0
+votes: '0'
+watches: '2'
+workflowId: '11480'
+---
+actions:
+- author: matthew
+  body: This would be pretty trivial to do - just needs the config options to be improved, and start_listening in app/homeserver.py to be fixed up to loop over reactor.listenSSL() and/or reactor.listenTCP() - similarly for JsonResource in http/server.py.
+  created: 2015-04-27 21:37:29.0
+  id: '11543'
+  issue: '11380'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-27 21:37:29.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1316'
+  created: 2016-11-07 18:27:59.0
+  id: '13637'
+  issue: '11380'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:59.0

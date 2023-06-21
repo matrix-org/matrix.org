@@ -1,0 +1,39 @@
+---
+summary: Federated remote private rooms leaking room IDs
+---
+assignee: matthew
+created: 2014-10-27 11:07:04.0
+creator: matthew
+description: ''
+id: '10503'
+key: SYWEB-119
+number: '119'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2014-11-25 21:44:20.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:54.0
+votes: '0'
+watches: '2'
+workflowId: '10607'
+---
+actions:
+- author: kegan
+  body: Can you post the {{/initialSync}} for this room please?
+  created: 2014-11-12 11:55:45.0
+  id: '10773'
+  issue: '10503'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-12 11:55:45.0
+- author: matthew
+  body: i haven't seen this again for ages (probably due to federation being hosed).  I'll reopen it if/when it reappears.
+  created: 2014-11-25 21:44:06.0
+  id: '10847'
+  issue: '10503'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-25 21:44:06.0

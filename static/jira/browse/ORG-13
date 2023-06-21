@@ -1,0 +1,47 @@
+---
+summary: We need end to end testing of matrix.org
+---
+created: 2015-01-12 21:59:48.0
+creator: matthew
+description: ''
+id: '10921'
+key: ORG-13
+number: '13'
+priority: '1'
+project: '10003'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2017-03-21 10:40:15.0
+status: '5'
+type: '2'
+updated: 2017-03-21 10:40:15.0
+votes: '0'
+watches: '2'
+workflowId: '11021'
+---
+actions:
+- author: matthew
+  body: |-
+    Currently we have no end-to-end testing of the main matrix.org deployment.  This means:
+
+     * Signup has repeatedly been broken for various flows and we've failed to notice.
+     * We have no visibility on when the synapse is overloaded
+     * VoIP has been broken for various TURN configurations and we've failed to notice.
+
+    The suggestion is to run some blunt tests (either using a framework or manually) on top of PhantomJS against the live service, with a few 'magic' hooks in the HS to allow the tests to reset state in matrix.org before they run (e.g. for creating new users and to bypass captcha).  (Or we could just use an official admin API for deleting users to reset state).
+
+    VoIP is obviously harder to test, especially as PhantomJS doesn't include WebRTC; perhaps we should just mandate a manual testing process for VoIP and CAPTCHA and other hard-to-test stuff.
+  created: 2015-01-28 11:29:57.0
+  id: '11200'
+  issue: '10921'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-28 11:29:57.0
+- author: richvdh
+  body: https://github.com/matrix-org/internal-config/issues/80
+  created: 2017-03-21 10:40:15.0
+  id: '14007'
+  issue: '10921'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 10:40:15.0

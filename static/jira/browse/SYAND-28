@@ -1,0 +1,82 @@
+---
+summary: We should publish the app in fdroid store
+---
+created: 2015-02-22 23:38:13.0
+creator: matthew
+description: ''
+id: '11122'
+key: SYAND-28
+number: '28'
+priority: '2'
+project: '10201'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-10-09 06:51:33.0
+votes: '2'
+watches: '4'
+workflowId: '11222'
+---
+actions:
+- author: friedger
+  body: |-
+    Here is the guide: https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md#setting-up-fdroiddata-and-submitting-apps
+    Needs some project management authority to decide on the values.
+  created: 2015-04-02 12:55:45.0
+  id: '11470'
+  issue: '11122'
+  type: comment
+  updateauthor: friedger
+  updated: 2015-04-02 12:55:45.0
+- author: matthew
+  body: |-
+    Hearing increasing requests for this from the FOSS community, e.g.:
+
+    @alexl:matrix.org
+    Great! But ouch it's not available on F-droid
+    Instead Telegram does...
+  created: 2015-09-06 17:33:18.0
+  id: '12111'
+  issue: '11122'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-06 17:33:18.0
+- author: oddvar
+  body: |-
+    I looked at this. Two problems currently: we use google play-services-gcm and google analytics. F-droid doesn't support proprietary software. For analytics it looks like we could just add https://github.com/mar-v-in/NoAnalytics instead, but AFAIK there's no good alternative for GCM. We could make it optional, but that'd be more work than just not including the library. 
+
+    Gradle lets you add flavors of your app, so we could have one "foss" and one "standard" (with google deps). (see  http://stackoverflow.com/questions/18196974/how-to-define-different-dependencies-for-different-product-flavors and https://github.com/openrightsgroup/Android-Probe/issues/2)
+
+    There certainly seems like a need for a good foss chat platform. Interestingly, TextSecure decided *not* to distribute on f-droid: https://github.com/WhisperSystems/TextSecure/issues/127
+  created: 2015-09-18 15:16:15.0
+  id: '12138'
+  issue: '11122'
+  type: comment
+  updateauthor: oddvar
+  updated: 2015-09-18 15:16:15.0
+- author: matthew
+  body: can't we just disable GCM and fall back to the behaviour of chewing CPUblike we used to before we had GCM?
+  created: 2015-09-18 15:32:49.0
+  id: '12139'
+  issue: '11122'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-18 15:32:49.0
+- author: wldhx
+  body: |-
+    @oddvar, @matthew
+    > We could make GCM optional but that'd be more work
+    > can't we just disable GCM
+    Not sure about disabling while building, but the notifications should be functional on devices w/o gapps after SYAND-140 is closed (which seems pretty close as of writing).
+
+    Also,
+    > Interestingly, TextSecure decided not to distribute on f-droid
+    So, unofficial builds have appeared:
+    - https://fdroid.eutopia.cz/
+    - https://github.com/JavaJens/TextSecure
+  created: 2015-10-09 06:51:33.0
+  id: '12231'
+  issue: '11122'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-10-09 06:51:33.0

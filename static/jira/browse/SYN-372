@@ -1,0 +1,38 @@
+---
+summary: Reduce the number of round trips required to fetch server signing keys when joining a room.
+---
+created: 2015-05-06 13:29:37.0
+creator: markjh
+description: |-
+  When a synapse joins a room for the first time it needs to obtain the signing keys for all the servers in the room so it can verify the events for that server.
+  It currently checks for keys individually as it processes each event.
+id: '11508'
+key: SYN-372
+number: '372'
+priority: '2'
+project: '10000'
+reporter: markjh
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:00.0
+votes: '0'
+watches: '2'
+workflowId: '11608'
+---
+actions:
+- author: markjh
+  body: Instead of checking for keys individually synapse should collect a list of keys that it is missing and query for them in bulk from the perspective servers using the bulk /keys/v2/query API.
+  created: 2015-05-06 13:30:58.0
+  id: '11720'
+  issue: '11508'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-05-06 13:30:58.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1318'
+  created: 2016-11-07 18:28:00.0
+  id: '13639'
+  issue: '11508'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:00.0

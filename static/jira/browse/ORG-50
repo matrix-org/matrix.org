@@ -1,0 +1,39 @@
+---
+summary: swagger ui on matrix.org is broken on Safari 9.1
+---
+assignee: oddvar
+created: 2016-04-10 12:05:12.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '12614'
+key: ORG-50
+number: '50'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-05-06 11:23:22.0
+status: '5'
+type: '1'
+updated: 2016-05-06 11:23:22.0
+votes: '0'
+watches: '2'
+workflowId: '12714'
+---
+actions:
+- author: neb
+  body: 'By @kegan:matrix.org: no text is displayed, open sans issue?'
+  created: 2016-04-10 12:08:17.0
+  id: '12820'
+  issue: '12614'
+  type: comment
+  updateauthor: neb
+  updated: 2016-04-10 12:08:17.0
+- author: oddvar
+  body: should be fixed now as per https://github.com/matrix-org/matrix-doc/issues/270
+  created: 2016-05-06 11:22:57.0
+  id: '12907'
+  issue: '12614'
+  type: comment
+  updateauthor: oddvar
+  updated: 2016-05-06 11:22:57.0

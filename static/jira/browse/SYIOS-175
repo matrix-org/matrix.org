@@ -1,0 +1,20 @@
+---
+summary: Channel names aren't becoming links properly
+---
+created: 2015-11-17 20:35:56.0
+creator: gforet
+description: ''
+id: '12113'
+key: SYIOS-175
+number: '175'
+priority: '2'
+project: '10200'
+reporter: gforet
+status: '1'
+type: '1'
+updated: 2015-11-17 20:36:23.0
+votes: '0'
+watches: '1'
+workflowId: '12216'
+---
+actions: null

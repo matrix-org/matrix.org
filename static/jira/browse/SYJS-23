@@ -1,0 +1,30 @@
+---
+summary: Reap old events from memory
+---
+created: 2015-09-07 18:16:11.0
+creator: dbkr
+description: ''
+id: '11862'
+key: SYJS-23
+number: '23'
+priority: '3'
+project: '10204'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2016-10-24 11:17:55.0
+status: '5'
+type: '2'
+updated: 2016-10-24 11:17:55.0
+votes: '0'
+watches: '2'
+workflowId: '11965'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/247
+  created: 2016-10-24 11:17:55.0
+  id: '13204'
+  issue: '11862'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:17:55.0

@@ -1,0 +1,30 @@
+---
+summary: Joining and leaving a room in the same batch should result in a full state sync
+---
+created: 2015-11-08 21:23:46.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  If a user joins a room, then immediately leaves it, so that /sync returns both events in the same batch - should /sync return the complete state for that room (as it does normally when joining a room)?
+id: '12094'
+key: SYN-514
+number: '514'
+priority: '5'
+project: '10000'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:33.0
+votes: '0'
+watches: '2'
+workflowId: '12197'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1413'
+  created: 2016-11-07 18:28:33.0
+  id: '13722'
+  issue: '12094'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:33.0

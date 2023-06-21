@@ -1,0 +1,23 @@
+---
+summary: A room joined with another Matrix client does not appear in recents
+---
+created: 2015-09-21 10:11:39.0
+creator: manu
+description: |-
+  - open the iOS console app, go to the recents tab
+  - join #test:matrix.org from another Matrix client
+  -> the iOS console app does not show the newly joined room
+id: '11902'
+key: SYIOS-138
+number: '138'
+priority: '2'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '1'
+updated: 2015-09-21 10:21:20.0
+votes: '0'
+watches: '1'
+workflowId: '12005'
+---
+actions: null

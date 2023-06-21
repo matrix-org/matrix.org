@@ -1,0 +1,40 @@
+---
+summary: 500's in InitialSync in File "synapse/handlers/presence.py", line 862, in get_pagination_rows
+---
+created: 2014-12-24 16:52:41.0
+creator: matthew
+description: |-
+  2014-12-24 16:37:24,079 - synapse.http.server - 157 - ERROR - GET-268808 - DomainSpecificString(localpart=u'oej', domain=u'tp.mu')
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 133, in _async_render
+    File "/home/matrix/.local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/.local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/initial_sync.py", line 35, in on_GET
+    File "/home/matrix/.local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/.local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/message.py", line 245, in snapshot_all_rooms
+    File "/home/matrix/.local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/handlers/presence.py", line 862, in get_pagination_rows
+  KeyError: DomainSpecificString(localpart=u'oej', domain=u'tp.mu')
+  2014-12-24 16:37:24,082 - twisted - 455 - INFO - GET-268808 - "83.166.68.175" - - [24/Dec/2014:16:37:23 +0000] "GET /_matrix/client/api/v1/initialSync?access_token=QGlyY19MZW9OZXJkOm1hdHJpeC5vcmc...........&limit=0 HTTP/1.1" 500 33 "-" "Net::Async::Matrix"
+id: '10863'
+key: SYN-215
+number: '215'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-06 10:00:37.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:06.0
+votes: '0'
+watches: '1'
+workflowId: '10963'
+---
+actions: null

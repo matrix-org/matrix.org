@@ -1,0 +1,20 @@
+---
+summary: Provide a mock for the SDK
+---
+created: 2015-03-05 10:17:46.0
+creator: manu
+description: ''
+id: '11161'
+key: SYIOS-99
+number: '99'
+priority: '3'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '1'
+updated: 2015-03-05 10:17:46.0
+votes: '0'
+watches: '1'
+workflowId: '11261'
+---
+actions: null

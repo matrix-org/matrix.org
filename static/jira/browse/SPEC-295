@@ -1,0 +1,64 @@
+---
+summary: Helper support for inlining URL previews in clients
+---
+created: 2015-12-09 12:26:39.0
+creator: matthew
+description: |-
+  We would love to inline URLs in matrix clients like Facebook or Slack does.  This means that if someone references a URL in their message, the client would go and display the Open Graph data for it, or perhaps a thumbnail if it's an image/video, etc.
+
+  CORS however means that the traffic would have to be proxied by the server, which means that the server needs to provide a helper API to do this.  Obviously there are major security issues with giving an API that lets servers make arbitrary HTTP pokes - obvious ones that immediately spring to mind are:
+
+   * If the server is running on an internal network, it can start poking HTTP endpoints that are firewalled from the internet
+   * If the server is asked to proxy malicious content (e.g. maliciously malformed Flash), it could compromise the user's client or browser.  This is also a concern for the media repository in general to some extent - really folks should host their user generated content on a dedicated domain.
+   * If the server doesn't cache content, you could end up DoSing the target URL
+   * The target URL could be huge and end up chewing loads of bandwidth & storage for the HS.
+   * You'd probably want a way of disabling this per-room or per-target-host or something anyway.
+
+  Given this requires a server-side API, we should spec it, even as a (very) optional module of the spec.  Given it has zero dependencies on the rest of Matrix, it could be an entirely separate API to CS API, but for now it might as well be a CS optional module.
+
+  This sort-of relates to SPEC-48 and https://github.com/matrix-org/matrix-doc/pull/92, which hints at ways of attaching metadata within a message to URLs - however, I suggest this issue is kept firmly separate.
+
+  This also related to ancient Angular-era SYWEB-179 and SYWEB-34.
+
+  The Vector related bugs are https://github.com/vector-im/vector-web/issues/437 and https://github.com/vector-im/vector-web/issues/184.
+id: '12191'
+key: SPEC-295
+number: '295'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:28:00.0
+votes: '0'
+watches: '2'
+workflowId: '12294'
+---
+actions:
+- author: matthew
+  body: The API itself would presumably take a URL and return a JSON blob with a bunch of helpful metadata about that URL - i.e. its opengraph tags, and an MXC url for a thumbnail of it and the actual contents if the URL was an image/video/audio file.  The client's linkifier should pull out URLs in messages clientside and hit this API asynchronously to tell the server to go and spider the target and return the metadata (or a cache of the metadata).  We wouldn't do this proactively serverside as there's no guarantee that a given client would actually care about this metadata, and it's a slow and heavy process best done in the background.
+  created: 2015-12-09 12:30:38.0
+  id: '12446'
+  issue: '12191'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-09 12:30:38.0
+- author: matthew
+  body: |-
+    Another way of doing this could be to do it entirely clientside; embedding the target content via iframes or img/video tags - this is how Glowing Bear does it: https://github.com/glowing-bear/glowing-bear/blob/master/js/plugins.js#L184-L201.  This is vulnerable to pixel tracking and DoSing the target server however, and only works with services which expose stuff suitable for embedding.
+
+    Alternatively, services which expose a JSONP endpoint can also be spidered clientside circumventing CORS as per https://github.com/glowing-bear/glowing-bear/blob/master/js/plugins.js#L164-L174 and https://github.com/glowing-bear/glowing-bear/blob/master/js/plugins.js#L404-L423.  However, this is a huge security problem as you end up trusting the target content almost entirely, given it can run (almost) arbitrary JS in your client based on whatever it serves up.
+  created: 2015-12-09 12:49:30.0
+  id: '12447'
+  issue: '12191'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-09 12:49:30.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/592'
+  created: 2016-10-28 16:28:00.0
+  id: '13400'
+  issue: '12191'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:00.0

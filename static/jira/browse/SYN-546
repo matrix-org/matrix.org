@@ -1,0 +1,44 @@
+---
+summary: '@tdfischer:oob.systems''s APNS pushes are not resolved to her displayname'
+---
+created: 2015-12-10 22:30:01.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12201'
+key: SYN-546
+number: '546'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:43.0
+votes: '0'
+watches: '3'
+workflowId: '12304'
+---
+actions:
+- author: matthew
+  body: also, avatar isn't showing up in HQ (on iOS), although bizarrely the displayname is.
+  created: 2015-12-10 22:40:12.0
+  id: '12468'
+  issue: '12201'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-10 22:40:12.0
+- author: matthew
+  body: This looks to be the same as https://github.com/vector-im/vector-web/issues/312
+  created: 2015-12-11 03:41:31.0
+  id: '12469'
+  issue: '12201'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-11 03:41:31.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1443'
+  created: 2016-11-07 18:28:43.0
+  id: '13747'
+  issue: '12201'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:43.0

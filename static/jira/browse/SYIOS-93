@@ -1,0 +1,33 @@
+---
+summary: Do we prune old history automatically? if not, we should.
+---
+created: 2015-02-22 23:41:27.0
+creator: matthew
+description: ''
+id: '11124'
+key: SYIOS-93
+number: '93'
+priority: '2'
+project: '10200'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2015-02-24 13:32:26.0
+votes: '0'
+watches: '2'
+workflowId: '11224'
+---
+actions:
+- author: manu
+  body: |-
+    The answer is no.
+    The cache usage showed in the setting page is the sum of the matrix events cache (MXFileStore) size and the media cache size.
+
+    The media cache uses much more memory and is easier to prune.
+    MXFileStore is a bit more complicated to prune. We need to be able to restart the pagination from the right token after pruning the history. This should be easier with CS api v2.
+  created: 2015-02-24 10:12:23.0
+  id: '11311'
+  issue: '11124'
+  type: comment
+  updateauthor: manu
+  updated: 2015-02-24 10:12:23.0

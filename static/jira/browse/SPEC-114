@@ -1,0 +1,50 @@
+---
+summary: We need an admin interface & API for provisioning ASes
+---
+assignee: kegan
+created: 2015-02-22 23:28:26.0
+creator: matthew
+description: ''
+id: '11114'
+key: SPEC-114
+number: '114'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '3'
+type: '2'
+updated: 2016-10-28 16:27:03.0
+votes: '0'
+watches: '3'
+workflowId: '11214'
+---
+actions:
+- author: kegan
+  body: We could expose some admin functions if the server admin bit is flipped in the database for that user, but I'm wary about making it too easy to provision ASes given they have read access to the entire home server... I would prefer a script or something which would do the insert, rather than allowing remote provisioning.
+  created: 2015-03-05 13:53:19.0
+  id: '11350'
+  issue: '11114'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-05 13:53:19.0
+- author: matthew
+  body: |-
+    After this, we sprouted a register API... which was then removed after SPEC-130 because it was considered too dangerous for abuse.
+
+    However, we've now gone full circle, and it feels pretty clunky to provision ASes - they have to generate chunks of config files which have to be kept in sync with their own config, and the HS has to be restarted to pick up the config changes.
+
+    Perhaps a better compromise would be to add AS provisioning explicitly to an admin API, which is locked to localhost and needs an HS-admin-specific password to be provided to do anything.  The resulting security model isn't much worse than requiring users to have permission to write to the HS config file and restart the server, but much better suited to automation purposes such as autoprovisioning ASes, and would avoid the mess of having to maintain two separate config files (the AS's config and the HS's registration config).
+  created: 2015-09-19 22:46:02.0
+  id: '12145'
+  issue: '11114'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-19 22:46:02.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/426'
+  created: 2016-10-28 16:27:03.0
+  id: '13277'
+  issue: '11114'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:03.0

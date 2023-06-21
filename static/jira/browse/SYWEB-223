@@ -1,0 +1,87 @@
+---
+summary: Improved multiline navigation in input box
+---
+created: 2014-12-06 20:22:10.0
+creator: matthew
+description: |-
+  From AlienCQ:
+
+  Here is new input box proposal, as we spoke on irc:
+
+  Up/Down - navigation in multiline editor
+  Ctrl+Up/Down - Message history
+  Enter - send message
+  Shift+Enter - line break in multiline editor
+
+  Additionally:
+  1. It's more convenient to have simple dragbar to resize input box, rather than a handle in a corner.
+  2. The frame around input box is too thick - less space for the editor itself.
+
+  See Psi+ inputbox for an example.
+
+  ------------------
+
+  My suggestion is that Up/Down should still do message history unless you actually have multiline input, at which point it should change to navigating within the multiline --M
+id: '10784'
+key: SYWEB-223
+number: '223'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-04 16:57:18.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:50.0
+votes: '2'
+watches: '2'
+workflowId: '10884'
+---
+actions:
+- author: matthew
+  body: |-
+    done on develop as of 84c67b15. I want to keep the current behaviour that normal up/down keys navigate history (as per normal readline-style navigation), so the way it's implemented is:
+     * shift-enter: enter linebreak
+     * enter: send
+     * up/down: navigate history, unless you're in a multiline text input, where it navigates within that message instead. if you try to go 'off the top' or 'off the bottom', it back into navigating history.
+  created: 2015-04-04 16:57:08.0
+  id: '11471'
+  issue: '10784'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-04 16:57:08.0
+- author: alien
+  body: |-
+    I think we really need ctrl-up/down as explicit shortcuts to history navigation. It's too long to scroll through every line in multiline messages.
+
+    Additionally: IMO, resizing handle should be placed in different location (see attached picture).
+  created: 2015-04-04 19:21:19.0
+  id: '11472'
+  issue: '10784'
+  type: comment
+  updateauthor: alien
+  updated: 2015-04-04 19:21:19.0
+- author: matthew
+  body: Implemented ctrl-up/down too. agreed the CSS needs to be fixed somehow too.
+  created: 2015-04-06 21:32:43.0
+  id: '11473'
+  issue: '10784'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-06 21:32:43.0
+- author: matthew
+  body: CSS is fixed by autoexpanding the text input on multiline entry (up to a max of 3 lines, currently).  A draggable expander as suggested by Alien could also be nice at some point.
+  created: 2015-04-06 22:25:51.0
+  id: '11474'
+  issue: '10784'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-06 22:25:51.0
+- author: matthew
+  body: i put in a draggable expander too for good luck. (if you drag it, it clobbers the autoexpanding behaviour, unless you shrink it back to default).
+  created: 2015-04-07 01:00:35.0
+  id: '11475'
+  issue: '10784'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-07 01:00:35.0

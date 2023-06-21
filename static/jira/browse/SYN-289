@@ -1,0 +1,30 @@
+---
+summary: We should only push to inactive users.
+---
+created: 2015-02-22 23:40:36.0
+creator: matthew
+description: ''
+id: '11123'
+key: SYN-289
+number: '289'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '2'
+resolutiondate: 2015-03-12 12:00:25.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:05.0
+votes: '0'
+watches: '2'
+workflowId: '11223'
+---
+actions:
+- author: dbkr
+  body: This is planned for once we have read receipts. I think just completely dropping a push because the HS thinks that user is online at the time is a bad idea and will lead to lost push. We should hold the push for a given amount of time and then notify if it's still unread after then.
+  created: 2015-03-12 12:00:25.0
+  id: '11379'
+  issue: '11123'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-12 12:00:25.0

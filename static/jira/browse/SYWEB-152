@@ -1,0 +1,40 @@
+---
+summary: Room controller restructuring
+---
+assignee: kegan
+created: 2014-11-12 17:20:05.0
+creator: kegan
+description: |-
+  This issue serves as a working place for all the things that should be done to make {{room-controller.js}} less beastly. Currently, this file is doing way too much, and it is difficult to unit test as a result.
+
+  There are several bits of logic which should be shifted out of this controller, including:
+   - -IRC command logic (e.g. parsing text to see if it's a /kick, then invoking {{matrixService.kick}})-
+   - -Maintenance of the member list in a room (this is done for us now via {{modelService}}, we should be using that.-
+   - Room join logic (incl requesting state events, etc)
+   - -Up arrow history (this should really be a directive since it's fiddling with the {{mainInput}}. The directive should contain the messages it can cycle through in its own {{$scope}}.)-
+
+  These can then be tested in isolation, along with the actual room-controller.
+id: '10647'
+key: SYWEB-152
+number: '152'
+priority: '1'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-11-17 11:04:53.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:54.0
+votes: '0'
+watches: '1'
+workflowId: '10747'
+---
+actions:
+- author: kegan
+  body: Just "Room join logic (incl requesting state events, etc)" remains on this, which will be done by the event-handler-service.
+  created: 2014-11-14 15:59:22.0
+  id: '10793'
+  issue: '10647'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-14 15:59:22.0

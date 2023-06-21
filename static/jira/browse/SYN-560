@@ -1,0 +1,51 @@
+---
+summary: Extraneous requests for already-known events during client pagination
+---
+assignee: erikj
+created: 2015-12-21 17:47:21.0
+creator: leonerd
+description: |-
+  A sytest test observes that synapse makes extraneous {{/event/:event_id}} requests for events it is known at that time to already have, when the client makes a pagination request.
+
+  More specifically, when the client calls {{/messages}} at
+    https://github.com/matrix-org/sytest/blob/8511ea309840ee03403f3d73f5178d80362f6610/tests/50federation/34room-backfill.pl#L78
+
+  the Synapse-Under-Test has already been told the m.room.create and m.room.member event for the creator, as part of the {{/send_join}} response. Additionally, by inspecting its sqlite database just before it makes that call, those events do indeed appear in the file. However, by running this test, the SUT is observed to make two {{/event/}} requests over federation with the event IDs of these very two events anyway.
+id: '12236'
+key: SYN-560
+number: '560'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:46.0
+votes: '0'
+watches: '2'
+workflowId: '12339'
+---
+actions:
+- author: leonerd
+  body: After some analysis, it seems to be getting slightly confused around {{synapse/handlers/federation.py}} lines 310 or so. It computes the list of "dangling edges" in the backfilled chunk response (which in our case is an empty set, because the backfill returns the entire history of the room, as it's so small). As this list of edges is empty, it doesn't manages to look up any existing auth events for the room. It then notices that it needs two, and makes outbound requests for them.
+  created: 2015-12-21 18:31:29.0
+  id: '12486'
+  issue: '12236'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-12-21 18:31:29.0
+- author: leonerd
+  body: An initial fix for this bug is now pushed to the {{paul/SYN-560}} branch. Still to be answered is what might happen if the backfill result doesn't contain the required event, but the local event database still did. I'm unclear currently whether that would therefore appear in the edges list and be picked up, or not.
+  created: 2015-12-21 18:33:30.0
+  id: '12487'
+  issue: '12236'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-12-21 18:33:30.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1453'
+  created: 2016-11-07 18:28:46.0
+  id: '13756'
+  issue: '12236'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:46.0

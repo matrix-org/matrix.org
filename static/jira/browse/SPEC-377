@@ -1,0 +1,30 @@
+---
+summary: Need to put notify metadata on events
+---
+created: 2016-03-29 22:25:12.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  To save client writers from having to exec push rules clientside - eg quaternion
+id: '12601'
+key: SPEC-377
+number: '377'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:27.0
+votes: '1'
+watches: '3'
+workflowId: '12701'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/660'
+  created: 2016-10-28 16:28:27.0
+  id: '13469'
+  issue: '12601'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:27.0

@@ -1,0 +1,36 @@
+---
+summary: HS should validate ID server associations
+---
+created: 2015-03-16 17:52:41.0
+creator: dbkr
+description: ''
+id: '11245'
+key: SYN-314
+number: '314'
+priority: '2'
+project: '10000'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:50.0
+votes: '0'
+watches: '2'
+workflowId: '11345'
+---
+actions:
+- author: dbkr
+  body: The HS now remembers what email addresses are associated with an account and will only add to this list if it's validated the association. They can still be bound in the ID server without say-so from the HS.
+  created: 2015-04-23 11:51:00.0
+  id: '11527'
+  issue: '11245'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-23 11:51:00.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1298'
+  created: 2016-11-07 18:27:50.0
+  id: '13619'
+  issue: '11245'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:50.0

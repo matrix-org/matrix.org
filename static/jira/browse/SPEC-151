@@ -1,0 +1,59 @@
+---
+summary: Key distribution. HS need to acquire the public keys for other HSes.
+---
+assignee: markjh
+created: 2014-09-30 14:03:51.0
+creator: matthew
+description: |-
+  Homeservers need to be able to get the public keys for other homeservers.
+
+  This needs to work even if:
+  * The other homeserver is no longer online.
+  * The other homeserver has lost it's private key.
+
+  Currently homeservers acquire the public key for a remote server by contacting the server directly. This is vulnerable to DNS poisoning and MITM attacks, and doesn't work if the remote server is offline.
+
+  Currently homeservers expect mutual signatures of both the event signing public key and the tls certificate the key is served from to make MITM harder. This is impossible if the private key is lost.
+id: '10426'
+key: SPEC-151
+number: '151'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-23 16:52:17.0
+status: '5'
+type: '2'
+updated: 2015-04-23 16:52:17.0
+votes: '0'
+watches: '2'
+workflowId: '10529'
+---
+actions:
+- author: matthew
+  body: We need this if we're ever to allow users to revoke their public keys (e.g. if they lose their private keys, but want to somehow continue under the same DNS)
+  created: 2015-02-09 16:29:54.0
+  id: '11229'
+  issue: '10426'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-09 16:29:54.0
+- author: markjh
+  body: |-
+    As a first cut we can borrow from Perspectives http://perspectives-project.org/ and have a list of servers on the public internet which HSes can query to find the public keys for remote servers. These servers would cache the keys so the remote server wouldn't have to be online in order to find the keys. Additionally these servers could support some kind of bulk lookup mechanism which could speed up joining large rooms by reducing the number of requests needed to get the signing keys for remote servers.
+
+    Initially we would run such a server on matrix.org, However since the HSes don't need to upload their keys to these servers, instead the servers download the keys as needed. Therefore it is largely up to the server admins themselves to pick which servers they trust to lookup keys on their behalf. So we can avoid building a central trust root into the core matrix protocol.
+  created: 2015-04-13 14:14:07.0
+  id: '11485'
+  issue: '10426'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-04-13 14:14:07.0
+- author: markjh
+  body: https://github.com/matrix-org/matrix-doc/pull/14
+  created: 2015-04-23 16:52:17.0
+  id: '11531'
+  issue: '10426'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-04-23 16:52:17.0

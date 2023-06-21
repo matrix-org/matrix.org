@@ -1,0 +1,84 @@
+---
+summary: Calls to set presence state occasionally 500
+---
+created: 2014-09-25 13:09:41.0
+creator: erikj
+description: |-
+  {noformat}
+  PUT /_matrix/client/api/v1/presence/@bob:localhost:8480/status?access_token=QGJvYjpsb2NhbGhvc3Q6ODQ4MA...YfkPjNHJeDPLEKaFNI HTTP/1.1
+  Host: localhost:8080
+  Connection: keep-alive
+  Content-Length: 21
+  Accept: application/json, text/plain, */*
+  Origin: http://localhost:8080
+  User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36
+  Content-Type: application/json;charset=UTF-8
+  Referer: http://localhost:8080/_matrix/client/
+  Accept-Encoding: gzip,deflate,sdch
+  Accept-Language: en-GB,en-US;q=0.8,en;q=0.6
+  Cookie: csrftoken=uVcPJ3fd8YrtWNdM2Yn4cynwcQ95xVit
+
+  {"presence":"online"}
+  {noformat}
+
+  The logs were not helpful:
+
+  {noformat}
+  2014-09-25 13:06:35,552 - synapse.handlers.presence - 199 - DEBUG - Invoked 'set_state' with args: auth_user=DomainSpecificString(localpart=u'bob', domain=u'lo..., self=<synapse.handlers.presence.PresenceHandler object ..., target_user=DomainSpecificString(localpart='bob', domain='loca..., state={'presence': u'online'}
+  2014-09-25 13:06:35,552 - synapse.handlers.presence - 227 - DEBUG - Updating presence state of bob to online
+  2014-09-25 13:06:35,552 - synapse.http.server - 141 - ERROR - 'presence'
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 116, in _async_render
+      *m.groups()
+  KeyError: 'presence'
+  {noformat}
+id: '10391'
+key: SYN-72
+number: '72'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-11-19 17:33:28.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:42.0
+votes: '0'
+watches: '2'
+workflowId: '10494'
+---
+actions:
+- author: erikj
+  body: |-
+    {noformat}
+    2014-10-31 13:43:57,704 - twisted - 455 - ERROR - Unhandled Error
+    Traceback (most recent call last):
+      File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defe
+        result = f(*args, **kw)
+      File "synapse/util/logutils.py", line 67, in wrapped
+        return f(*args, **kwargs)
+      File "synapse/handlers/presence.py", line 274, in started_user_eventstream
+        self.set_state(user, user, {"presence": PresenceState.ONLINE})
+      File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defe
+        return _inlineCallbacks(None, gen, Deferred())
+    --- <exception caught here> ---
+      File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defe
+        result = g.send(result)
+      File "synapse/handlers/presence.py", line 230, in set_state
+        was_level = self.STATE_LEVELS[statuscache.get_state()["presence"]]
+    exceptions.KeyError: 'presence'
+    {noformat}
+  created: 2014-10-31 13:45:27.0
+  id: '10717'
+  issue: '10391'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-31 13:45:27.0
+- author: leonerd
+  body: I think https://github.com/matrix-org/synapse/commit/03dc63f6 should fix it.
+  created: 2014-11-19 17:33:16.0
+  id: '10814'
+  issue: '10391'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-19 17:33:16.0

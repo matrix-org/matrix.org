@@ -1,0 +1,31 @@
+---
+summary: 3pid invites should not issue guest access tokens on invite
+---
+created: 2016-03-14 14:05:17.0
+creator: erikj
+description: |-
+  Context: https://github.com/matrix-org/synapse/pull/604
+
+  In particular, this means that if we support having captchas on guest account creation the above API allows one to bypass the captchas.
+id: '12558'
+key: SYN-651
+number: '651'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '10100'
+type: '2'
+updated: 2016-11-07 18:29:14.0
+votes: '0'
+watches: '2'
+workflowId: '12658'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1513'
+  created: 2016-11-07 18:29:14.0
+  id: '13820'
+  issue: '12558'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:14.0

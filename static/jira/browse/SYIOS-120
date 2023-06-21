@@ -1,0 +1,20 @@
+---
+summary: 'Console: Memory leaks check'
+---
+created: 2015-04-27 10:07:29.0
+creator: manu
+description: ''
+id: '11368'
+key: SYIOS-120
+number: '120'
+priority: '2'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '3'
+updated: 2015-04-27 10:07:29.0
+votes: '0'
+watches: '1'
+workflowId: '11468'
+---
+actions: null

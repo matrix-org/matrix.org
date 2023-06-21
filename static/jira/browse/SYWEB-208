@@ -1,0 +1,53 @@
+---
+summary: Chrome's WebRTC doesn't appear to support HTTP(S) proxies that require auth
+---
+created: 2014-12-03 15:48:01.0
+creator: dbkr
+description: ''
+id: '10763'
+key: SYWEB-208
+number: '208'
+priority: '2'
+project: '10004'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2015-03-12 13:16:05.0
+votes: '0'
+watches: '2'
+workflowId: '10863'
+---
+actions:
+- author: matthew
+  body: Given an NTLM-specific auth issue was filed and fixed for Chrome 38 (https://code.google.com/p/chromium/issues/detail?id=395614) i'd be very surprised if it didn't work at all in Chrome 39.
+  created: 2014-12-03 18:49:59.0
+  id: '10935'
+  issue: '10763'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-03 18:49:59.0
+- author: matthew
+  body: |-
+    Actually, looks like they may have only fixed it for NTLM based on the patch:
+
+    https://chromium.googlesource.com/chromium/src/+/260631aa62e2096045adb0e3780ef562ef12bb4f%5E%21/#F0
+
+    in that they may be failing to look in the right place for non-NTLM/Kerberos-style credentials (i.e. basic auth)
+  created: 2014-12-03 18:53:25.0
+  id: '10936'
+  issue: '10763'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-03 18:54:02.0
+- author: dbkr
+  body: |-
+    Filed upstream, with patch:
+
+    https://code.google.com/p/chromium/issues/detail?id=439560
+    https://codereview.chromium.org/786503002/
+  created: 2014-12-05 21:49:05.0
+  id: '10978'
+  issue: '10763'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-12-05 22:28:14.0

@@ -1,0 +1,38 @@
+---
+summary: Adding a push rule after an existing rule fails.
+---
+created: 2016-01-12 18:25:05.0
+creator: markjh
+description: ''
+id: '12293'
+key: SYN-592
+number: '592'
+priority: '2'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2016-01-28 18:27:25.0
+status: '5'
+type: '1'
+updated: 2016-01-28 18:27:25.0
+votes: '0'
+watches: '1'
+workflowId: '12398'
+---
+actions:
+- author: markjh
+  body: See https://github.com/matrix-org/sytest/pull/140 for sytests
+  created: 2016-01-12 18:40:44.0
+  id: '12566'
+  issue: '12293'
+  type: comment
+  updateauthor: markjh
+  updated: 2016-01-12 18:40:44.0
+- author: markjh
+  body: https://github.com/matrix-org/synapse/pull/531
+  created: 2016-01-28 18:27:25.0
+  id: '12589'
+  issue: '12293'
+  type: comment
+  updateauthor: markjh
+  updated: 2016-01-28 18:27:25.0

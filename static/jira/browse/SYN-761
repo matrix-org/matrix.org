@@ -1,0 +1,30 @@
+---
+summary: Send pushes for encrypted messages
+---
+created: 2016-09-01 17:55:29.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Obviously these shouldn't include human-visible message contents
+id: '12814'
+key: SYN-761
+number: '761'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:58.0
+votes: '0'
+watches: '2'
+workflowId: '12914'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1593'
+  created: 2016-11-07 18:29:58.0
+  id: '13918'
+  issue: '12814'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:58.0

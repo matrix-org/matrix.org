@@ -1,0 +1,161 @@
+---
+summary: Invite/join dance
+---
+created: 2014-09-30 14:27:16.0
+creator: erikj
+description: ''
+id: '10429'
+key: SPEC-30
+number: '30'
+priority: '3'
+project: '10001'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-01-15 16:42:02.0
+status: '5'
+type: '2'
+updated: 2016-07-04 07:12:55.0
+votes: '0'
+watches: '3'
+workflowId: '10532'
+---
+actions:
+- author: erikj
+  body: The current implementation is to send an event with a special invite_join type to the remote server, and wait for it to send you the appropriate join message asynchronously.
+  created: 2014-09-30 14:55:57.0
+  id: '10487'
+  issue: '10429'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-30 14:55:57.0
+- author: erikj
+  body: |-
+    The current implementation would probably work assuming we did error responses correctly.
+
+    The other options is to have a separate API that on successful join returns the JOIN event. The problem with this though is that it's possible to start getting the events for the room being sent to you before you see the response of the API call, which may or may not be a problem.
+  created: 2014-09-30 16:47:17.0
+  id: '10492'
+  issue: '10429'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-30 16:47:17.0
+- author: erikj
+  body: |-
+    IRL from Mjark: we need to think about various attacks and signing concerns.
+
+    h3. Problems/attacks
+    # HS A claims to have invited B without telling B.
+    # HS A invites B without telling the rest of the room.
+    # HS A invites B, B lies and comes back forgetting about the invite.
+    # What should the invite contain? Can the invitee see any information about the room.
+
+    (1) can be solved by having B sign the invite event, but (2) is more difficult and not such a big problem. (3)'s solution is probably just to make sure that we support reinvite's.
+
+    (4) Obviously we want the invite that shows up on the client to be human friendly and informative, rather than just "You have been invited to a room". Should the invite allow the HS to see the state of the room so that it can get membership lists and room names? Or should this be included explicitly in the invite event?
+
+    h3. Current suggestion
+    Have /invite and /join APIs to do this. When a server receives a /invite it signs the invite event and then returns it to prove it's been told about the invite. The /join should make the remote HS send out join events and return the current state as well as the join event it sent out.
+  created: 2014-09-30 17:53:02.0
+  id: '10493'
+  issue: '10429'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-30 17:53:02.0
+- author: erikj
+  body: |-
+    h3. Model
+    Server _A_, _B_ and _C_ are in a room. _A_ wants to invite server _X_.
+    # _A_ calls /invite on _X_, that includes the invite event _A_ will send to the room.
+    # _X_ responds to /invite with the signature of the invite event to confirm it saw the event.
+    # _A_ sends the signed invite event to _B_ and _C_.
+
+    Now _X_ wants to accept the invite and join the room. (If the room is public, the _X_ doesn't need to have been invited.)
+    # _X_ calls /join on _A_.
+    # _A_ sends out a join event to _B_ and _C_ (and possibly _X_?).
+    # _A_ responds to /join with the current state.
+    # _X_ is now in the room.
+
+
+    h3. Questions
+    # How does an invited server get enough information about the room to display the invite to the client?
+    ## Should the invited server be able to request the current state of the room if it wants to?
+    ## Should the invite request include the current state? How does this interact with large rooms which have large amounts of current state?
+    ## Should public rooms allow servers not in the room to query current state?
+    # How does a server joining a remote to a room insert the join event into the PDU graph with suitable signatures (from the server joining)?
+    ## Does it even need to be inserted at the edge of the graph? Or can we just insert it after the invite?
+    ## How does this work for public rooms where server don't need to have seen an invite?
+    # How does a server being joined to a room get told the current state of the room, and get updates to the state made by other servers in the room that may not have seen the join?
+
+    h3. Possible Answers (that may pose more questions)
+    # The invite request *should* include the current state, but doesn't have to. Servers that have been invited to a room can query the current state.
+    # When an invite exists the invited server can give the server doing the join a signed join event that references the invite. If there is no invite, then the server wanting to join has nothing to hand to point to. Do we want to allow events to not reference anything?
+    # The current state can be returned in the response to the /join API call. Thereafter if the server that did the joining sees any new events from other servers, it will (eventually) send an event (that may be a server feedback event) that references the new event to the newly joined server, which can then tell if it missed anything. Effectively we rely on the same mechanism that heals netsplits.
+  created: 2014-10-01 11:32:27.0
+  id: '10497'
+  issue: '10429'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-01 11:32:27.0
+- author: erikj
+  body: |-
+    h3. Trust
+    This model requires a certain amount of trust of the server you join via (server _X_ trusts _A_ in the model above.) There are two main attacks:
+    # Server does not propagate the join to other servers in the room.
+    # Server only tells you about a subset of the state. For example, they might only tell you about members on their own server, and never send events to you that reference events from other servers, thus generating a netsplit which no one else is aware of.
+  created: 2014-10-01 11:55:21.0
+  id: '10498'
+  issue: '10429'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-01 11:55:21.0
+- author: erikj
+  body: And how does this work with policy servers?
+  created: 2014-10-01 14:00:10.0
+  id: '10499'
+  issue: '10429'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-01 14:00:18.0
+- author: erikj
+  body: |-
+    To handle the problem of signing join events, I propose a two step join process. The first step would hit an API on the remote server that returned a suitable join event that could be edited and then signed (the remote server here supplying the entries for the pdu graph and a pointer to indicate why you are allowed to join). This event can then be sent to the policy server if necessary (or anywhere else) to be signed. The signed event is then sent via another API call (not using the standard transaction API) to the remote server for it to distribute to other participants in the room. The remote server, _once it has successfully processed your join event_, will then respond with the current state.
+
+    The second step cannot be done via the usual transaction API, as we need to get the current state _after_ we are sure the server has processed and accepted our join event. Getting a response from the transaction API merely guarantees that the event will get processed.
+  created: 2014-10-01 16:55:31.0
+  id: '10500'
+  issue: '10429'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-01 16:55:31.0
+- author: markjh
+  body: Once server X has completed step 2) of the Invite dance and has signed the "invite" event could it start talking to other servers in the room to distribute the invite event and to get the current state? or does it always have to talk through A?
+  created: 2014-10-02 16:12:07.0
+  id: '10506'
+  issue: '10429'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-02 16:12:07.0
+- author: erikj
+  body: I don't think there is a particular reason that we can't do that, other than it seems nicer to have a server that has up to date state to do the distribution of events.
+  created: 2014-10-02 16:20:01.0
+  id: '10507'
+  issue: '10429'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-02 16:20:01.0
+- author: erikj
+  body: Oh, you meant why can't _X_ talk to _B_ instead of _A_ after step 2, as opposed to distributing the event to all participants itself. I can't think why not, except it might make auth a little trickier since it needs to check it had valid signatures? And that the PDU graph is sane?
+  created: 2014-10-03 10:02:31.0
+  id: '10513'
+  issue: '10429'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-03 10:02:31.0
+- author: kuralsiz
+  body: can you help me , I 'm new
+  created: 2016-07-04 07:12:55.0
+  id: '13044'
+  issue: '10429'
+  type: comment
+  updateauthor: kuralsiz
+  updated: 2016-07-04 07:12:55.0

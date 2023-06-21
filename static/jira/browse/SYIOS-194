@@ -1,0 +1,22 @@
+---
+summary: we should support triggering a sync on receiving push and generating local notifs
+---
+created: 2015-12-28 11:33:37.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  a la Signal/TextSecure, who manage e2e pushes by sending a contentless push to the app via apns, which triggers a bg sync to get the e2e content and decrypt it and display it as a local notif
+id: '12254'
+key: SYIOS-194
+number: '194'
+priority: '3'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-05-05 11:33:44.0
+votes: '0'
+watches: '1'
+workflowId: '12357'
+---
+actions: null

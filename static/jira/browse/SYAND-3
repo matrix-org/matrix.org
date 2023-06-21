@@ -1,0 +1,23 @@
+---
+summary: Global and room settings
+---
+created: 2015-01-19 10:42:41.0
+creator: joachim
+description: |-
+  - Customize notifications per room or globally
+  - Sort room members by last active time or alphabetically
+  - Display members who have left the room or not
+id: '10950'
+key: SYAND-3
+number: '3'
+priority: '2'
+project: '10201'
+reporter: joachim
+status: '10100'
+type: '2'
+updated: 2015-01-19 10:42:41.0
+votes: '0'
+watches: '1'
+workflowId: '11050'
+---
+actions: null

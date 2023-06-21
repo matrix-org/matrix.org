@@ -1,0 +1,41 @@
+---
+summary: Actually implement delivery reports
+---
+created: 2014-09-16 01:21:28.0
+creator: matthew
+description: ''
+id: '10066'
+key: SYN-33
+number: '33'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-04-07 11:47:55.0
+status: '5'
+type: '2'
+updated: 2016-04-07 11:47:55.0
+votes: '0'
+watches: '2'
+workflowId: '10367'
+---
+actions:
+- author: matthew
+  body: |-
+    ...and read notifications.
+
+    Although we might want to consider doing these as "delivered up to" and "read up to" state events, rather than per-message, to minimise traffic. Can anyone think of a group chat medium which actually does track them per-message?  Facebook Messenger group chats perhaps?
+  created: 2014-12-04 14:47:44.0
+  id: '10952'
+  issue: '10066'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-04 14:47:44.0
+- author: erikj
+  body: You're going to have fun with linearization and out of order events if you use state events.
+  created: 2014-12-04 14:50:23.0
+  id: '10953'
+  issue: '10066'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-04 14:50:30.0

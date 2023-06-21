@@ -1,0 +1,30 @@
+---
+summary: IRC Bridge doesn't like user ids with dots in them
+---
+assignee: kegan
+created: 2015-05-10 11:19:12.0
+creator: erikj
+description: |-
+  For example, @no.mates:matrix.org doesn't get relayed to IRC with:
+
+  {noformat}
+  2015-05-10 10:17:46 ERROR:irc-server Server: irc.freenode.net (M-no.mates) Error: {"prefix":"hobana.freenode.net","server":"hobana.freenode.net","command":"err_erroneusnickname","rawCommand":"432","commandType":"error","args":["*","M-no.mates","Erroneous Nickname"]}
+  {noformat}
+
+  @no.mates:matrix.org started off with no displayname, but latter added "talented". After adding, he still didn't get bridged to IRC
+id: '11514'
+key: BOTS-31
+number: '31'
+priority: '1'
+project: '10101'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-11 17:31:23.0
+status: '5'
+type: '1'
+updated: 2015-05-11 17:31:23.0
+votes: '0'
+watches: '1'
+workflowId: '11615'
+---
+actions: null

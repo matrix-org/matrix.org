@@ -1,0 +1,24 @@
+---
+summary: Remove disconnect option
+---
+created: 2015-06-10 18:22:07.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Now that we use GCM when in the background, we always disconnect from the event stream when the app is backgrounded. As a result, the disconnect option makes no sense. We may want to keep it for users who don't use GCM maybe? Perhaps it should only be shown if GCM is disabled?
+id: '11633'
+key: SYAND-81
+number: '81'
+priority: '3'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-06-11 14:46:33.0
+status: '5'
+type: '1'
+updated: 2015-06-11 14:46:33.0
+votes: '0'
+watches: '1'
+workflowId: '11734'
+---
+actions: null

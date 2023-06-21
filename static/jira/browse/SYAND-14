@@ -1,0 +1,32 @@
+---
+summary: We should synthesise identicons for users without avatars
+---
+created: 2015-02-02 22:09:48.0
+creator: matthew
+description: ''
+id: '10998'
+key: SYAND-14
+number: '14'
+priority: '2'
+project: '10201'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-18 15:29:25.0
+status: '5'
+type: '2'
+updated: 2015-02-18 15:29:25.0
+votes: '0'
+watches: '2'
+workflowId: '11098'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    The latest update has been done in 
+    https://github.com/matrix-org/matrix-android-sdk/commit/e0b658dcc744fd0579a236db7c623112d3b5f743
+  created: 2015-02-18 15:29:25.0
+  id: '11282'
+  issue: '10998'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-02-18 15:29:25.0

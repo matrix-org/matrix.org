@@ -1,0 +1,23 @@
+---
+summary: Invalid username / password dialog box disappears automatically about half a second after appearing
+---
+assignee: m-ylecollen
+created: 2014-12-17 17:53:07.0
+creator: dbkr
+description: ''
+id: '10831'
+key: SYIOS-22
+number: '22'
+priority: '3'
+project: '10200'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2014-12-18 08:35:49.0
+status: '6'
+type: '1'
+updated: 2014-12-23 15:18:47.0
+votes: '0'
+watches: '1'
+workflowId: '10931'
+---
+actions: null

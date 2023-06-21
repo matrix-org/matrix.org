@@ -1,0 +1,179 @@
+---
+summary: We need an access control model for room aliases.
+---
+created: 2014-09-23 14:16:12.0
+creator: matthew
+description: |-
+  Split out from SYN-2.
+
+  In the current model, room aliases reside logically on directory servers, and we don't specify any way of controlling who is allowed to edit them.
+
+  This is a security concern, as we need to define who has permission to delete aliases (SYN-2).  The problem of repointing an alias is equivalent to deleting & then recreating it.
+
+  We could let the directory server specify its own rules for who can modify aliases - but explaining to users how a custom permission model works, and providing a standard interface in their client to edit that permission model, feels both fragmented and confusing.  Forcing the user to manipulate a custom out-of-band permissions model seems wrong and confusing when Matrix already has its own permissions model built in (power levels).
+
+  Therefore, I propose that directory servers must always be associated with a homeserver - and thus be able to correlate the aliases they advertise with the room in question on said homeserver.  This then allows you to use the power levels for the users in that room to decide who is allowed to edit the alias.
+
+  So, you could set a state key of m.room.edit_alias_level, and mandate that a user needs a power level of at least X in the room to change that room's aliases.  The DS would then enforce this behaviour.  This means that clients can leverage their existing power-level management APIs to control who can edit room aliases, rather than having to go out-of-band to a potentially alternative ACL system to manage them.
+id: '10377'
+key: SPEC-90
+number: '90'
+priority: '1'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:26:56.0
+votes: '0'
+watches: '5'
+workflowId: '10480'
+---
+actions:
+- author: kegan
+  body: |-
+    I agree with this. I feel that realistically:
+    {quote}
+    directory servers must always be associated with a homeserver
+    {quote}
+    is required in order for this to not suck, for all the reasons Matthew has outlined (explaining different permission models, enforcement, etc).
+
+    I am assuming the home server hosting the alias though would need to be inside the room, in order to check the edit_alias level, and send the event which propagates the alias information. What is preventing a NastyHS from just ignoring the room entirely and setting the link, given that the resolution of #room:nastyhs.com is done by directly hitting nastyhs.com without ever thinking about the room?
+
+    I guess I'm prodding for more information on the vague "The DS would then enforce this behaviour" --- what if it doesn't? What incentive is there to make the HS play ball at all in fact?
+  created: 2014-09-23 14:26:25.0
+  id: '10400'
+  issue: '10377'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 14:28:21.0
+- author: matthew
+  body: 'Kegan: this is a general problem of untrustworthy HSes, i think?  At least we are proposing elsewhere techniques for blacklisting known malicious HSes.  At some point we have to trust the server implementation - and if we have HSes which break powerlevel rules, we have to find a way to kick them out of the gang.  SPEC-2 and friends.'
+  created: 2014-09-23 14:36:46.0
+  id: '10401'
+  issue: '10377'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 14:36:46.0
+- author: markjh
+  body: |-
+    I'm still unclear as to:
+     1) what attacks you are trying to mitigate against here?
+     2) What the intended HS policy if two rooms claim the same alias? Is the intended HS policy to allow first come/first serve registration of room aliases?
+     3) If room aliases are first come/first serve then is someone camping on desirable room aliases a problem?
+     4) Does the user setting the room alias have to be on the HS the alias is for?
+  created: 2014-09-23 14:39:58.0
+  id: '10403'
+  issue: '10377'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-23 14:39:58.0
+- author: kegan
+  body: |-
+    This isn't a power level abuse though. This is:
+     - PUT /nastyhs/roomalias/#cake ---> !nastyroomid:matrix.org
+     - Nasty HS does *nothing* but store the mapping in its database. Does not inform or send anything.
+     - Nasty person irl: "OH HEY GUYS, CHECK THIS OUT!!!! #cake:nastyhs.com
+     - Unsuspecting client: GET /nastyhs/roomalias/#cake ----> Joins !nastyroomid:matrix.org
+
+    This is abuse from not advertising they created the link, and therefore not enforcing any of the links created, etc. I'm obviously saying this with an air to the malicious, but this could also be due to congestion/network issues which could manifest itself like this.
+  created: 2014-09-23 14:41:36.0
+  id: '10404'
+  issue: '10377'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 14:41:36.0
+- author: erikj
+  body: |-
+    There are a couple of use cases that I assume would be ruled out by the proposed method:
+    # Users on their own servers can keep a list of aliases that they control that point to rooms they/their users are interested in.
+    # Some servers might want to stay in control over who gets to create aliases, e.g., to enforce naming conventions. Freenode is an example where they want single hash prefixes to indicate "official" channels. I can easily see something like github wanting to have a directory server that points say "#matrix-org/synapse:github.com" to the "official" matrix project channel, where this could be defined in the project admin settings.
+
+    My understanding of the current model is: It is up to the HS to determine who is allowed to create/edit aliases, but there *is* a standard interface for doing so. I think a reasonable ruleset for matrix.org is that anyone who is in a room can create an alias and only the creator of an alias can delete one. Maybe there should be a standard interface for getting all the aliases you are allowed to edit.
+
+    (Note that currently the permissions are purely server scoped (as opposed to room scoped) since it is a purely server side operation to create and edit room aliases.)
+
+    From an implementation perspective, there is no way of enforcing HS to obey the power level rules. Unlike for events where they need to get sent to other HSes, changes to room aliases do not need to be propagated to other HSes and so there is no way for other to discover "bad" HSes. Indeed, even if HSes get kicked out of a room for disobeying the power levels, the HS can still create and edit its own room aliases as much as it likes.
+  created: 2014-09-23 14:45:02.0
+  id: '10405'
+  issue: '10377'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-23 14:45:02.0
+- author: matthew
+  body: |-
+    Kegan: I understand we can't protect against a malicious HS here; but we can at least specify standard rules for well-behaviour HSes to abide by.  Just as can't I can't stop people shipping UNIX kernels which ignore chmod(2), it doesn't stop UNIX permissions being a useful concept...
+
+    Mjark:
+
+    1) Attack is that random users start going and deleting aliases; repointing them to malicious places; or squatting on the namespace
+    2) FCFS, but for a camping situation we'll need an admin user on the HS to tiebreak and kick off a squatter if needed.
+    3) Yes
+    4) I suggest yes.
+
+    Erik:
+    1. I see no reason why users can't maintain their own aliases on their own homeservers.
+    2. Agreed that servers might want to assert additional permissions if they so desire - i don't think we should specify that out.
+    Otherwise, you seem to be agreeing with my problem statement in the original comment.
+
+    So, i'd like to propose:
+     * DSes are by default associated with HSes, and SHOULD use the HS's permission model to manage modification of the directory data.
+     * DSes can go off and implement their own crazy permission rules if they so desire (e.g. Erik's github restricted namespace) - but it's consciously introducing fragmentation and may lead to a bad UX if people find a DS doesn't follow the normal recommended rules.
+     * I suggest the normal recommended rules are:
+       * You have to be in a room to create an alias to it.
+       * You can only modify aliases on your local HS.
+       * You have to have a certain powerlevel to edit aliases for a room.
+       * Only a HS admin can override aliases and remove them without being in a room (to fix squatting problems).
+
+    Does this work for everyone?
+  created: 2014-09-23 15:42:33.0
+  id: '10408'
+  issue: '10377'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 15:42:33.0
+- author: kegan
+  body: |-
+    This seems reasonable, though I don't see there being much fragmentation being introduced by following different permission rules. The common path for room aliases would be to use them to resolve #foo to !bar, which will be consistent across all platforms. Only the creation/edit/deletion of them can fragment.
+
+    Are we planning on allowing a way to see if the HS I'm about to trust to resolve this #foo to !bar has actually played ball and put the right state events in the room? Or is this back into "trust the domain" territory, and we provide no safeguards to the common path of resolving #foo to !bar?
+  created: 2014-09-23 16:01:47.0
+  id: '10415'
+  issue: '10377'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 16:02:14.0
+- author: erikj
+  body: |-
+    Matthew: I wasn't disagreeing with your statement we should have security, I was mostly commenting on your proposal.
+
+    {quote}
+    1) Attack is that random users start going and deleting aliases; repointing them to malicious places; or squatting on the namespace
+    {quote}
+    This is also mostly fixed by saying only the original creator and HS admins can delete aliases.
+
+    {quote}
+    DSes can go off and implement their own crazy permission rules if they so desire (e.g. Erik's github restricted namespace) - but it's consciously introducing fragmentation and may lead to a bad UX if people find a DS doesn't follow the normal recommended rules.
+    {quote}
+    What is the bad UX here? That if you try and set and/or edit room aliases you might get an error popup linking you to that server's rules? That doesn't strike me as _particularly_ bad.
+
+    I guess the counter proposal is that the default permission scheme is:
+    * Anyone can create aliases for rooms that they are in (though I don't really see the attack if you allow people to add aliases to rooms they are not in.)
+    * You can only delete aliases that you have created, unless you are a server admin.
+
+    I don't see the benefit of room ops being able to delete aliases if and only if they are on the same server. In fact, this sounds like exactly the sort of counter intuitive UX that people are trying to avoid.
+
+    There is one edge case that I can think of where the ability for room admins to repoint aliases they didn't create would be helpful: when everything is being moved to a different room and the old room is being closed.
+  created: 2014-09-23 16:15:28.0
+  id: '10419'
+  issue: '10377'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-23 16:15:28.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/486'
+  created: 2016-10-28 16:26:56.0
+  id: '13262'
+  issue: '10377'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:56.0

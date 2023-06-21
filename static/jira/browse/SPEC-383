@@ -1,0 +1,30 @@
+---
+summary: Spec /logout endpoint
+---
+created: 2016-04-13 22:33:32.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12624'
+key: SPEC-383
+number: '383'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-05-09 13:33:39.0
+status: '5'
+type: '1'
+updated: 2016-05-09 13:57:19.0
+votes: '0'
+watches: '2'
+workflowId: '12724'
+---
+actions:
+- author: richvdh
+  body: 'Now done: http://matrix.org/docs/spec/client_server/r0.1.0.html#post-matrix-client-r0-logout'
+  created: 2016-05-09 13:33:39.0
+  id: '12910'
+  issue: '12624'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-09 13:33:39.0

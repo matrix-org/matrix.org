@@ -1,0 +1,30 @@
+---
+summary: Ability to send arbitrary attachments (not just images)
+---
+created: 2014-10-31 10:19:35.0
+creator: matthew
+description: ''
+id: '10603'
+key: SYWEB-130
+number: '130'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-25 17:44:33.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:50.0
+votes: '0'
+watches: '2'
+workflowId: '10703'
+---
+actions:
+- author: kegan
+  body: Matthew added this.
+  created: 2014-11-25 17:44:34.0
+  id: '10845'
+  issue: '10603'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-25 17:44:34.0

@@ -1,0 +1,46 @@
+---
+summary: Servers can get stuck repeatedly asking for the same events.
+---
+assignee: erikj
+created: 2014-11-26 01:03:21.0
+creator: matthew
+description: If a server gets confused when it starts up (particularly if its been down for a while), it can get into a state where it keeps requesting the same events and each time rejecting those events.
+id: '10711'
+key: SYN-172
+number: '172'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-06 10:00:25.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:26:23.0
+votes: '0'
+watches: '2'
+workflowId: '10811'
+---
+actions:
+- author: erikj
+  body: |-
+    Likely causes:
+    * Trying to backfill 1000s of missing events one at a time.
+    * If the local server disagrees about an auth event, this can cause it to throw away (reject) a large number of events subsequent events. When a new event is received it tries to pull in the rejected ones (because it currently doesn't store any record of them) all the way back to the first rejected one, at which point the auth checks fails, it throws everything away, etc. etc.
+  created: 2015-01-15 22:54:39.0
+  id: '11139'
+  issue: '10711'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-15 22:54:39.0
+- author: erikj
+  body: |-
+    Things that should be done, and may fix this:
+    * Have a more intelligent way to pull in large numbers of missing events.
+    * Implement auth conflict resolution.
+    * Record an event if we really do reject it, to save us from constantly requesting it again and again.
+  created: 2015-01-15 22:56:05.0
+  id: '11140'
+  issue: '10711'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-15 22:56:05.0

@@ -1,0 +1,28 @@
+---
+summary: Sydent requires http.client_http_base config which is undocumented
+---
+created: 2015-09-04 10:46:21.0
+creator: illicitonion
+description: ''
+id: '11852'
+key: SYD-12
+number: '12'
+priority: '3'
+project: '10002'
+reporter: illicitonion
+status: '10100'
+type: '1'
+updated: 2015-09-04 10:51:53.0
+votes: '0'
+watches: '1'
+workflowId: '11955'
+---
+actions:
+- author: illicitonion
+  body: Also http.verify_response_template
+  created: 2015-09-04 10:51:53.0
+  id: '12096'
+  issue: '11852'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-09-04 10:51:53.0

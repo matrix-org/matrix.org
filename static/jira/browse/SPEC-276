@@ -1,0 +1,51 @@
+---
+summary: Provide clear, consistent, organized information about the structure of events
+---
+assignee: kegan
+created: 2015-11-28 11:33:23.0
+creator: jimmycuadra
+description: |-
+  I'm starting to work on some libraries for Matrix and am having some difficulty in figuring out the exact structure of events. Currently the information I need is spread across various sections in the specification and in the JSON Schema files in {{matrix-docs/event-schemas}}.
+
+  From the specification itself, it's very often not clear if a particular field is required for a certain event type, and if it's not, if there is a default value for the field. It'd be very useful to have "required" (boolean) and "default" (specific value) columns added to the tables describing event fields wherever an event is detailed.
+
+  What the specification says about required fields is also not always consistent with what is in the JSON Schema files in the matrix-docs repo, if I'm understanding everything correctly. For example, section 4.7.1 (Event Fields) describes its fields as "fields all events must have," but the JSON Schema files in the Git repository don't have either of these fields marked as required (https://github.com/matrix-org/matrix-doc/blob/0.2.0/event-schemas/schema/v1/core-event-schema/event.json). In section 4.7.2, it's stated that room events "MUST" have the given fields, but again, the JSON Schema specifies only one of the three fields as required (https://github.com/matrix-org/matrix-doc/blob/0.2.0/event-schemas/schema/v1/core-event-schema/room_event.json). It's also confusing that 4.7.2 uses the standard RFC language ("MUST") but 4.7.1 does not. As the reader, it makes me wonder if this is just an inconsistency in the writing or if the fields in 4.7.1 are not actually required.
+
+  It's also difficult to use the specification as a reference for events because they are distributed across several sections in the document. The specification of event structure is intermixed with the specification of the REST API, so I have to constantly bounce around between various areas of the document to find things related to the events themselves.
+id: '12143'
+key: SPEC-276
+number: '276'
+priority: '2'
+project: '10001'
+reporter: jimmycuadra
+status: '1'
+type: '1'
+updated: 2016-10-28 16:27:55.0
+votes: '0'
+watches: '3'
+workflowId: '12246'
+---
+actions:
+- author: matthew
+  body: |-
+    Huge thanks for the feedback on this.  In theory, the event schemas *should* be the truth, and in practice the contents of the spec is generated from the JSON schemas.  However, it's possible that stuff is out of sync in some places.  Meanwhile, we are constantly wrestling how best to present these, in terms of the trade-off between showing REST endpoints and collating stuff like event definitions together.
+
+    The good news is that it's very easy to generate alternative representations of the spec out of the github.com/matrix-org/matrix-doc repository.  For instance, https://github.com/matrix-org/matrix-doc/blob/master/specification/targets.yaml describes the high-level structure of the spec document.  If you wanted to gather all the events together, then one could just create a file and embed all the event descriptions in it as {{ whatever_event }}, a bit like https://github.com/matrix-org/matrix-doc/blob/master/specification/events.rst does but without the descriptions.  We will certainly look at providing a quick reference of all of the events in this manner in future - the reason we've made the spec generator so flexible is to allow rapid refactoring as well as generating multiple different 'views' of the underlying data.
+
+    In terms of the specific issues with 4.7.1: yes, all events MUST (and this should be capitalised) have content and type, and the schema should be reflecting this; it looks like a bug on the schema :(. Similarly in 4.7.2, yes, all room events MUST have an event_id, room_id and user_id, and the schema should reflect this.
+
+    We are still working on the spec, as you can see - we'll get this fixed up asap.
+  created: 2015-11-28 12:01:06.0
+  id: '12384'
+  issue: '12143'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-28 12:01:06.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/580'
+  created: 2016-10-28 16:27:55.0
+  id: '13388'
+  issue: '12143'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:55.0

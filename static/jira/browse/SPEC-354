@@ -1,0 +1,28 @@
+---
+summary: If a HS can't talk to another HS, perhaps we should show the remote users as explicitly unavailable by a custom presence state
+---
+created: 2016-02-19 16:48:39.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12507'
+key: SPEC-354
+number: '354'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:20.0
+votes: '0'
+watches: '2'
+workflowId: '12607'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/641'
+  created: 2016-10-28 16:28:20.0
+  id: '13450'
+  issue: '12507'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:20.0

@@ -1,0 +1,30 @@
+---
+summary: Auto-showing images/content is a security risk, especially over federation
+---
+created: 2015-11-01 21:53:30.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Clients which auto-show thumbnails (i.e. all graphical ones) currently force the local HS to cache the remote content. Thus malicious content can be easily pushed (rather than pulled) over federation. We should either send blurred thumbnails or something or just provide option on graphical clients to only load (and thus mirror) on demand. Or possibly sidestep mirroring entirely.
+id: '12062'
+key: SPEC-256
+number: '256'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:46.0
+votes: '0'
+watches: '2'
+workflowId: '12165'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/562'
+  created: 2016-10-28 16:27:46.0
+  id: '13370'
+  issue: '12062'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:46.0

@@ -1,0 +1,46 @@
+---
+summary: the GET form of /login has gone missing from swagger and spec
+---
+created: 2016-05-16 09:36:40.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  https://vector.im/develop/#/room/!cURbafjkfsMDVwdRDQ:matrix.org/$1463366511623274ugkiT:matrix.org and https://vector.im/develop/#/room/!XqBunHwQIXUiqCaoxq:matrix.org/$1463386502639703zaWin:matrix.org
+id: '12664'
+key: SPEC-403
+number: '403'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-10-28 16:28:34.0
+votes: '0'
+watches: '2'
+workflowId: '12764'
+---
+actions:
+- author: richvdh
+  body: There are some words about it in https://github.com/matrix-org/matrix-doc/blob/master/attic/v1_registration_login.rst (which should be put out of its misery); and the swagger once had it at https://github.com/matrix-org/matrix-doc/blob/ade0ad5ed15c0cb7be7f573e50c25b97ea920117/api/client-server/api-docs-login#L7
+  created: 2016-05-16 10:16:34.0
+  id: '12918'
+  issue: '12664'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-16 10:16:34.0
+- author: richvdh
+  body: Really we should probably just make login use the interactive-auth flow (SYN-696)
+  created: 2016-10-19 10:02:15.0
+  id: '13193'
+  issue: '12664'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-19 10:02:15.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/677'
+  created: 2016-10-28 16:28:34.0
+  id: '13486'
+  issue: '12664'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:34.0

@@ -1,0 +1,22 @@
+---
+summary: upload_dir should be a configurable path and not hardcoded to 'uploads'
+---
+created: 2015-06-19 02:21:31.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11670'
+key: SYN-425
+number: '425'
+priority: '2'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-06-19 09:30:30.0
+status: '5'
+type: '1'
+updated: 2015-06-19 09:30:30.0
+votes: '0'
+watches: '1'
+workflowId: '11771'
+---
+actions: null

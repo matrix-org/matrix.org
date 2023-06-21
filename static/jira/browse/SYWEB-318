@@ -1,0 +1,43 @@
+---
+summary: Improve layout density of Name, Avatar, and Date, and Actions (join, etc)
+---
+created: 2015-03-12 21:12:01.0
+creator: bnvk
+description: |-
+  Here is my first pass / attempt at making the message thread interface a tiny bit better on the eyes! Things to note that I'm doing:
+
+  - Moved name above message & matched font size
+  - Left aligning name & message
+  - Increased spacing between messages
+  - Right aligned date- can be visible always (or only on hover)
+  - Moved "you" chats to same (left) side as "them" messages
+id: '11206'
+key: SYWEB-318
+number: '318'
+priority: '3'
+project: '10004'
+reporter: bnvk
+status: '10100'
+type: '4'
+updated: 2015-03-12 23:20:30.0
+votes: '2'
+watches: '3'
+workflowId: '11306'
+---
+actions:
+- author: jan
+  body: As talked about in the IRC, I wholeheartedly agree with Brennan’s mockup. :)
+  created: 2015-03-12 23:17:59.0
+  id: '11382'
+  issue: '11206'
+  type: comment
+  updateauthor: jan
+  updated: 2015-03-12 23:17:59.0
+- author: matthew
+  body: I agree that it's a huge improvement, and on thinking further it doesn't go too far in needlessly threatening other chat apps.  Still slightly worried about vertical density being too sparse, but let's see how it feels in person :)
+  created: 2015-03-12 23:20:30.0
+  id: '11383'
+  issue: '11206'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-12 23:20:30.0

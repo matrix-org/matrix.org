@@ -1,0 +1,22 @@
+---
+summary: synctl should run the python in a loop in case it segfaults
+---
+created: 2015-12-13 04:20:56.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12205'
+key: SYN-548
+number: '548'
+priority: '3'
+project: '10000'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-09-01 11:32:45.0
+status: '5'
+type: '1'
+updated: 2016-09-01 11:32:45.0
+votes: '0'
+watches: '1'
+workflowId: '12308'
+---
+actions: null

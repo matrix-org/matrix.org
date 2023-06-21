@@ -1,0 +1,46 @@
+---
+summary: A GET request on /messages with no parameter now returns a 500 Internal server error
+---
+assignee: leonerd
+created: 2014-11-24 15:38:52.0
+creator: manu
+description: |-
+  The pb exists only on the develop branch. No pb with master which version is 0.5.0.
+
+  I suspect https://github.com/matrix-org/synapse/commit/5f19c55731deef0381338fcab9847f5c762a36c8 created the regression.
+
+  HS log:
+
+  2014-11-24 16:11:40,221 - synapse.storage.stream - 206 - DEBUG -  GET-7 - Invoked 'paginate_room_events' with args: direction=b, from_key=s9, self=<synapse.storage.DataStore object at 0x10d5352d0>, with_feedback=True, limit=None, to_key=None, room_id=!gIenRhSfDExyyJygtE:localhost:8480
+  2014-11-24 16:11:40,221 - synapse.http.server - 151 - ERROR - GET-7 - int() argument must be a string or a number, not 'NoneType'
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 127, in _async_render
+      *m.groups()
+  TypeError: int() argument must be a string or a number, not 'NoneType'
+id: '10699'
+key: SYN-164
+number: '164'
+priority: '2'
+project: '10000'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-02 18:02:33.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:38.0
+votes: '0'
+watches: '2'
+workflowId: '10799'
+---
+actions:
+- author: leonerd
+  body: |-
+    Now fixed by 3bf2b4b.
+
+    Also adding some tests to sytest for it
+  created: 2014-12-02 18:02:33.0
+  id: '10917'
+  issue: '10699'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-12-02 18:02:33.0

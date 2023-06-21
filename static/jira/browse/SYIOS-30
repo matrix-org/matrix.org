@@ -1,0 +1,45 @@
+---
+summary: iOS needs typing notifs like the web client
+---
+assignee: gforet
+created: 2014-12-21 01:44:03.0
+creator: matthew
+description: ''
+id: '10845'
+key: SYIOS-30
+number: '30'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-14 08:50:52.0
+status: '5'
+type: '2'
+updated: 2015-01-14 08:50:52.0
+votes: '0'
+watches: '3'
+workflowId: '10945'
+---
+actions:
+- author: manu
+  body: |-
+    Done in SDK side.
+    The app can now use [MXRoom sendTypingNotification] and listen to MXEventTypeTypingNotification event type for changes sent by the server.
+    On MXEventTypeTypingNotification, the app can use MXRoom.typingUsers to get the updated list of users currently typing.
+  created: 2014-12-24 13:35:12.0
+  id: '11030'
+  issue: '10845'
+  type: comment
+  updateauthor: manu
+  updated: 2014-12-24 13:35:12.0
+- author: gforet
+  body: |-
+    iOS Console send typing notification (when the user is typing continuously, a typing notif is sent every 10 sec (with a timeout = 20 sec).
+
+    A typing badge (black keyboard) is added on room member's avatar when this member is typing.
+  created: 2015-01-14 08:50:52.0
+  id: '11116'
+  issue: '10845'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-14 08:50:52.0

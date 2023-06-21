@@ -1,0 +1,28 @@
+---
+summary: Allow turning on captcha for guest account creation
+---
+created: 2016-03-14 14:03:51.0
+creator: erikj
+description: ''
+id: '12557'
+key: SYN-650
+number: '650'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '10100'
+type: '2'
+updated: 2016-11-07 18:29:14.0
+votes: '0'
+watches: '2'
+workflowId: '12657'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1512'
+  created: 2016-11-07 18:29:14.0
+  id: '13819'
+  issue: '12557'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:14.0

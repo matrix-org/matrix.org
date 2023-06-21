@@ -1,0 +1,28 @@
+---
+summary: Invites to non-existent domains should be queued and retried rather than discarded
+---
+created: 2015-11-05 00:28:04.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12085'
+key: SPEC-266
+number: '266'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:51.0
+votes: '0'
+watches: '2'
+workflowId: '12188'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/572'
+  created: 2016-10-28 16:27:51.0
+  id: '13380'
+  issue: '12085'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:51.0

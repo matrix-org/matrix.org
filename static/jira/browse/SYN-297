@@ -1,0 +1,30 @@
+---
+summary: matrix.org's synapse has RSZ of 6.3GB and VSZ of 8.2GB
+---
+created: 2015-03-08 19:28:12.0
+creator: matthew
+description: ''
+id: '11180'
+key: SYN-297
+number: '297'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-04-14 15:47:42.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:03.0
+votes: '0'
+watches: '2'
+workflowId: '11280'
+---
+actions:
+- author: leonerd
+  body: Dupe of SYN-315
+  created: 2015-04-14 15:47:42.0
+  id: '11489'
+  issue: '11180'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-14 15:47:42.0

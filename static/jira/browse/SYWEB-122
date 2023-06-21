@@ -1,0 +1,43 @@
+---
+summary: We need to thumbnail uploaded avatars
+---
+created: 2014-10-27 13:02:08.0
+creator: matthew
+description: |-
+  Giom has a beautiful but huge avatar photo: https://matrix.org/_matrix/content/QEdpb206bWF0cml4Lm9yZwBdtWLdarEYePfxsGAqcyIWRj.aW1hZ2UvanBlZw==.jpeg
+
+  This sogs up all the available bandwidth, and is a bit of a shame given we do clientside thumbnailing already.  I suggest we aim for 128x128 or something for now.
+
+  Obviously this should be serverside thumbnails in future (not least to make implementation easier for other clients)
+id: '10509'
+key: SYWEB-122
+number: '122'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-12 16:50:42.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:58.0
+votes: '0'
+watches: '2'
+workflowId: '10613'
+---
+actions:
+- author: kegan
+  body: 'Blocked: the HS needs to provide this.'
+  created: 2014-12-08 13:44:44.0
+  id: '10980'
+  issue: '10509'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-08 13:44:44.0
+- author: kegan
+  body: Now uses content repo mxc:// URIs.
+  created: 2015-01-12 16:50:42.0
+  id: '11099'
+  issue: '10509'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-12 16:50:42.0

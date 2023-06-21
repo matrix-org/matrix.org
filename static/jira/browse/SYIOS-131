@@ -1,0 +1,20 @@
+---
+summary: it would be great if tapping on a nickname copied it into the text input box, as an alternative to tab completion
+---
+created: 2015-06-17 22:21:30.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11666'
+key: SYIOS-131
+number: '131'
+priority: '2'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-06-17 22:21:30.0
+votes: '0'
+watches: '1'
+workflowId: '11767'
+---
+actions: null

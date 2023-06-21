@@ -1,0 +1,28 @@
+---
+summary: .m.rule.room_one_to_one sample uses a wrong rule id (".m.rule.room_two_members")
+---
+created: 2016-01-15 07:41:55.0
+creator: manu
+description: ''
+id: '12303'
+key: SPEC-325
+number: '325'
+priority: '3'
+project: '10001'
+reporter: manu
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:09.0
+votes: '0'
+watches: '2'
+workflowId: '12408'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/615'
+  created: 2016-10-28 16:28:09.0
+  id: '13423'
+  issue: '12303'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:09.0

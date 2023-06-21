@@ -1,0 +1,22 @@
+---
+summary: All login failures trigger 'Invalid username / password'
+---
+created: 2014-12-17 17:51:40.0
+creator: dbkr
+description: ''
+id: '10830'
+key: SYIOS-21
+number: '21'
+priority: '3'
+project: '10200'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2014-12-18 09:55:29.0
+status: '6'
+type: '1'
+updated: 2014-12-23 15:19:43.0
+votes: '0'
+watches: '1'
+workflowId: '10930'
+---
+actions: null

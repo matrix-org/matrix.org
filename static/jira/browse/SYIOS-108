@@ -1,0 +1,69 @@
+---
+summary: I can't re-enter existing chats when tapping through contact details
+---
+assignee: gforet
+created: 2015-03-13 18:22:37.0
+creator: matthew
+description: |-
+  To reproduce:
+  1. tap on an avatar in a groupchat of a user you already have a 1:1 convo with
+  2. on their contact details page, tap 'start chat'.
+  3. nothing happens.
+id: '11223'
+key: SYIOS-108
+number: '108'
+priority: '1'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-16 10:44:15.0
+status: '5'
+type: '1'
+updated: 2015-03-16 10:44:15.0
+votes: '0'
+watches: '2'
+workflowId: '11323'
+---
+actions:
+- author: jan
+  body: This is similar to the web interface, where a separate chat with the same person is started. See SYWEB-324
+  created: 2015-03-13 20:12:20.0
+  id: '11388'
+  issue: '11223'
+  type: comment
+  updateauthor: jan
+  updated: 2015-03-13 20:12:20.0
+- author: matthew
+  body: |-
+    It's actually a bit different - iOS already tries to have the 'right' functionality of reusing existing chats.  It just gets it wrong in this particular UI flow.
+
+    Separately, we do want to support having multiple 1:1 chats with the same user if you really want to - but agreed this should not remotely be the default behaviour.
+  created: 2015-03-13 20:31:41.0
+  id: '11389'
+  issue: '11223'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-13 20:31:52.0
+- author: jan
+  body: |-
+    > we do want to support having multiple 1:1 chats with the same user if you really want to
+
+    What would be the use case though?
+  created: 2015-03-13 20:38:28.0
+  id: '11390'
+  issue: '11223'
+  type: comment
+  updateauthor: jan
+  updated: 2015-03-13 20:38:28.0
+- author: matthew
+  body: |-
+    a) Separating conversation threads.  For instance, I might want to entirely separate my social and professional conversations with someone on my team at work.
+    b) Supporting bridging to other chat ecosystems which already have this semantics - e.g. in Lync, you can open multiple conversations with the same person for different topics.  To bridge to Lync, we need to support the same.
+
+    Agreed we should not be doing it by default though.
+  created: 2015-03-13 20:42:49.0
+  id: '11391'
+  issue: '11223'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-13 20:42:49.0

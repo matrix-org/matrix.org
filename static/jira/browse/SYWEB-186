@@ -1,0 +1,37 @@
+---
+summary: Module / service / filter / directive names
+---
+created: 2014-11-27 09:52:08.0
+creator: kegan
+description: |-
+  We have a (relatively) consistent way of naming controllers, but for filters and services we're using a mix of approaches. I would prefer to include the type of dependency in the name given you don't instantly know otherwise (modulo injected filters which angular suffixes with {{Filter}}).
+
+  Based on this, I propose:
+   - Services shall have the suffix {{Service}}
+   - Filters shall start with a lower-case {{f}} (specifically NOT with the suffix {{Filter}} since this would make injected filters {{fooFilterFilter}})
+   - Controllers continue as they are with the suffix {{Controller}}
+   - Directives shall have the suffix {{Directive}} (slightly annoying that it is longer given it will be written in the HTML, but consistency trumps the extra characters imo)
+
+  Dependencies should also really be namespaced for matrix, given we're encouraging people to use bits and pieces, we don't want our stuff to namespace collide with theirs. I propose they should be standardised with the prefix {{mx}}.
+
+  So the end result will look something like:
+   - {{HomeController}} -> {{mxHomeController}}
+   - {{mUserDisplayName}} -> {{mxfUserDisplayName}}
+   - {{eventStreamService}} -> {{mxEventStreamService}}
+   - {{commandHistory}} -> {{mxCommandHistoryDirective}} (or {{mx-command-history-directive}} in the HTML)
+
+  A lot of these decisions are arbitrary with some justification, but the lack of consistency is frustrating currently.
+id: '10724'
+key: SYWEB-186
+number: '186'
+priority: '2'
+project: '10004'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2014-11-27 09:52:08.0
+votes: '0'
+watches: '1'
+workflowId: '10824'
+---
+actions: null

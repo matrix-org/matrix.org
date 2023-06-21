@@ -1,0 +1,20 @@
+---
+summary: Test login for m.login.oauth2
+---
+created: 2015-05-22 17:39:10.0
+creator: markjh
+description: ''
+id: '11558'
+key: SYT-9
+number: '9'
+priority: '1'
+project: '10300'
+reporter: markjh
+status: '1'
+type: '2'
+updated: 2015-06-08 14:01:39.0
+votes: '0'
+watches: '1'
+workflowId: '11659'
+---
+actions: null

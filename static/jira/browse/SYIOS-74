@@ -1,0 +1,64 @@
+---
+summary: Recents tab takes ages to load.
+---
+assignee: manu
+created: 2015-02-09 14:12:12.0
+creator: matthew
+description: |-
+  My 6+ is taking at least 2-3s to load the Recents tab on cold launch, even after clearing history (and then repopulating the cache).
+
+  My suggestions for speed up are:
+   * Profile the deserialisation from disk. Am surprised that it's a bottleneck.
+   * Use the v2 /sync API rather than the painfully slow /initialSync
+   * Consider switching to Core Data rather than serialised data structures
+   * Prioritise the initial sync over the public room list request
+
+  ...
+id: '11022'
+key: SYIOS-74
+number: '74'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-18 14:28:25.0
+status: '5'
+type: '1'
+updated: 2015-10-16 13:15:19.0
+votes: '0'
+watches: '2'
+workflowId: '11122'
+---
+actions:
+- author: manu
+  body: |-
+    To start from the cache, the app needs:
+    * 1. Load data from its cache
+    ** 1.1. Initialise MXFileStore which preloads all room messages
+    ** 1.2. Retrieve room states from MXFileStore to build MXRoom object
+
+    * 2. Update data from the HS
+    ** 2.1. Get an updated version of all users presences (which is implemented in CS API v1 by doing an /initialSync)
+    ** 2.2. Start the events stream from the token stored in the cache
+  created: 2015-02-18 14:16:40.0
+  id: '11278'
+  issue: '11022'
+  type: comment
+  updateauthor: manu
+  updated: 2015-02-18 14:16:40.0
+- author: manu
+  body: |-
+    Step #1.1 duration has been improved by overriding NSCoding methods in MXEvent rather than using Mantle ones. MXFileRoom has been modified to use these MXEvent NSCoding operations.
+
+    Step #1.2 has been improved by overriding MXRoomMemberEventContent JSON deserialisation. This skips the Mantle default generic method. This is critical here  because most of room state events are m.room.member events
+
+    These optimisations improved the cache loading time by a factor of 10.
+
+    Step #2.1, can be now done in parallel via an option in MXSession. So the app, can decide to run #2.2 just after #1.2.
+    This saves between 1s to 20s depending on the network quality.
+  created: 2015-02-18 14:28:25.0
+  id: '11279'
+  issue: '11022'
+  type: comment
+  updateauthor: manu
+  updated: 2015-02-18 14:28:25.0

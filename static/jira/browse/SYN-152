@@ -1,0 +1,49 @@
+---
+summary: Presence exception
+---
+created: 2014-11-18 13:38:41.0
+creator: kegan
+description: |-
+  Latest develop, new database, seen a few:
+  {code}
+  Unhandled Error
+  Traceback (most recent call last):
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 139, in maybeDeferred
+      result = f(*args, **kw)
+    File "synapse/util/logutils.py", line 67, in wrapped
+      return f(*args, **kwargs)
+    File "synapse/handlers/presence.py", line 279, in stopped_user_eventstream
+      self.set_state(user, user, {"presence": PresenceState.OFFLINE})
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1237, in unwindGenerator
+      return _inlineCallbacks(None, gen, Deferred())
+  --- <exception caught here> ---
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/handlers/presence.py", line 230, in set_state
+      was_level = self.STATE_LEVELS[statuscache.get_state()["presence"]]
+  exceptions.KeyError: 'presence'
+  {code}
+id: '10671'
+key: SYN-152
+number: '152'
+priority: '1'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-11-26 15:22:39.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:39.0
+votes: '0'
+watches: '2'
+workflowId: '10771'
+---
+actions:
+- author: leonerd
+  body: Dup of SYN-72
+  created: 2014-11-26 15:22:39.0
+  id: '10853'
+  issue: '10671'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 15:22:39.0

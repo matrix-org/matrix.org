@@ -1,0 +1,40 @@
+---
+summary: Reading status is not synced between two Android devices
+---
+created: 2015-03-14 14:16:28.0
+creator: bob
+description: ''
+id: '11239'
+key: SYAND-56
+number: '56'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '2'
+resolutiondate: 2015-03-16 16:25:59.0
+status: '5'
+type: '1'
+updated: 2015-03-16 16:25:59.0
+votes: '0'
+watches: '2'
+workflowId: '11339'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    There is no current API to manage it.
+    It will be done later.
+  created: 2015-03-16 16:17:21.0
+  id: '11400'
+  issue: '11239'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-16 16:17:21.0
+- author: m-ylecollen
+  body: by now
+  created: 2015-03-16 16:25:59.0
+  id: '11401'
+  issue: '11239'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-16 16:25:59.0

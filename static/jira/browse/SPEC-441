@@ -1,0 +1,31 @@
+---
+summary: Spell out that the common case for /register is the m.login.dummy flow, and can skip session
+---
+assignee: richvdh
+created: 2016-08-14 18:25:12.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12795'
+key: SPEC-441
+number: '441'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-08-15 13:46:26.0
+status: '5'
+type: '1'
+updated: 2016-08-15 13:46:26.0
+votes: '0'
+watches: '2'
+workflowId: '12895'
+---
+actions:
+- author: richvdh
+  body: fixed (hopefully) by https://github.com/matrix-org/matrix-doc/pull/371
+  created: 2016-08-15 13:46:26.0
+  id: '13100'
+  issue: '12795'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-08-15 13:46:26.0

@@ -1,0 +1,34 @@
+---
+summary: Consider factoring out event content into 'blobs' separate from graphs
+---
+created: 2015-03-29 23:09:14.0
+creator: matthew
+description: |-
+  There are various scenarios where we might want to share a single event between multiple rooms:
+   * If we 'fork' a room in order to change visibility rules (as per Dave's proposal in SPEC-17)
+   * If we build a twitter clone where messages get stored in multiple rooms (per-hashtag, per-mention, etc) for ease of indexing/consumption
+   * If we want to easily move threads between rooms in a forum-per-room forum scenario
+
+  I wonder if it'd be worth considering going further towards a git-style data model sooner than later where events are stored and referred separately from event graphs, allowing them to be easily factored out between multiple graphs.
+id: '11284'
+key: SPEC-139
+number: '139'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:11.0
+votes: '1'
+watches: '3'
+workflowId: '11384'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/444'
+  created: 2016-10-28 16:27:11.0
+  id: '13294'
+  issue: '11284'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:11.0

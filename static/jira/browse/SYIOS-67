@@ -1,0 +1,70 @@
+---
+summary: We should synthesise identicons for users with no avatar
+---
+assignee: manu
+created: 2015-02-02 22:09:24.0
+creator: matthew
+description: ''
+id: '10997'
+key: SYIOS-67
+number: '67'
+priority: '5'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-18 16:44:58.0
+status: '5'
+type: '2'
+updated: 2015-02-18 16:44:58.0
+votes: '0'
+watches: '2'
+workflowId: '11097'
+---
+actions:
+- author: matthew
+  body: |-
+    [16:32]  -M-neb/#matrix-dev- Manu updated SYIOS-67 - We should synthesise identicons for users with no avatar [P2, In Progress] https://matrix.org/jira/browse/SYIOS-67
+    [16:34]  <Arathorn> Manu: on SYIOS-67, be aware that I fixed the HS to autogenerate identicons for new users
+    [16:35]  -M-neb/#matrix-dev- https://matrix.org/jira/browse/SYIOS-67 : We should synthesise identicons for users with no avatar [In Progress,P2,reporter=Matthew Hodgson,assignee=Emmanuel ROHEE]
+    [16:35]  <Arathorn> which makes that bug much less important now
+    [16:35]  <Arathorn> sorry for not having updated it
+  created: 2015-02-09 16:43:46.0
+  id: '11231'
+  issue: '10997'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-09 16:43:46.0
+- author: manu
+  body: |-
+    SDK now exposes  [MXUser identiconOfSize] and [MXRestClient urlOfIdenticon:].
+    The app does not use it right now since it is no more required (cf Matthew's comment).
+  created: 2015-02-09 16:54:58.0
+  id: '11232'
+  issue: '10997'
+  type: comment
+  updateauthor: manu
+  updated: 2015-02-09 16:54:58.0
+- author: manu
+  body: No more required since home server auto generates identicons
+  created: 2015-02-09 16:55:55.0
+  id: '11233'
+  issue: '10997'
+  type: comment
+  updateauthor: manu
+  updated: 2015-02-09 16:55:55.0
+- author: matthew
+  body: we might want to do this for completeness eventually. but it's not a priority at all.
+  created: 2015-02-09 17:01:43.0
+  id: '11234'
+  issue: '10997'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-09 17:01:43.0
+- author: manu
+  body: As avatars of some (old) users are still undefined home server side, use the "/_matrix/media/v1/identicon/" API like the webclient
+  created: 2015-02-18 16:44:58.0
+  id: '11287'
+  issue: '10997'
+  type: comment
+  updateauthor: manu
+  updated: 2015-02-18 16:44:58.0

@@ -1,0 +1,40 @@
+---
+summary: We should mandate that /publicRooms requires an access_token
+---
+created: 2016-01-08 01:38:41.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Such that people who want to ACL the directory depending on who's viewing it can do so
+id: '12285'
+key: SPEC-321
+number: '321'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:08.0
+votes: '0'
+watches: '3'
+workflowId: '12390'
+---
+actions:
+- author: dbkr
+  body: |-
+    Do we make this an option, or do we just do it everywhere?
+    I can see the value of keeping a public room list you can get without an access token, maybe rooms that are neither peekable or joinable by guests don't appear unless you give an access token? I think I'd prefer to have separate endpoints because getting a partial roomlist if your access token has expired sounds like the way madness lies. I think I would rather have endpoints that either work all the time or only when you have a valid login.
+  created: 2016-01-26 17:00:02.0
+  id: '12585'
+  issue: '12285'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-01-26 17:00:02.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/612'
+  created: 2016-10-28 16:28:08.0
+  id: '13420'
+  issue: '12285'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:08.0

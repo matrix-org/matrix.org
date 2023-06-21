@@ -1,0 +1,30 @@
+---
+summary: API for deleting filters
+---
+created: 2016-09-04 22:50:09.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  We have create but not delete. We should also expire old ones
+id: '12820'
+key: SPEC-449
+number: '449'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:45.0
+votes: '0'
+watches: '2'
+workflowId: '12920'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/704'
+  created: 2016-10-28 16:28:45.0
+  id: '13513'
+  issue: '12820'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:45.0

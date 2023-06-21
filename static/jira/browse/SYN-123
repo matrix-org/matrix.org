@@ -1,0 +1,33 @@
+---
+summary: 'I vaped arasphere''s HS DB, set it running again, and rapidly joined #matrix:matrix.org.  User list was partial at best.'
+---
+created: 2014-10-31 18:13:41.0
+creator: matthew
+description: |-
+  to reproduce:
+  ./synctl stop
+  rm homeserver.db
+  ./synctl start
+  # register for account with existing name, already joined to #matrix:matrix.org
+  # log in as account
+  # enter #matrix:matrix.org
+  # see that only ~10 people are present in the contact list for the room.
+  # wait a bit
+  # hit refresh
+  # see all 140 people are present.
+id: '10605'
+key: SYN-123
+number: '123'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2014-11-26 14:34:25.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:39.0
+votes: '0'
+watches: '1'
+workflowId: '10705'
+---
+actions: null

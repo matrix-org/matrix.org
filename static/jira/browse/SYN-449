@@ -1,0 +1,45 @@
+---
+summary: Failed to set display name
+---
+created: 2015-08-17 09:44:06.0
+creator: kegan
+description: |-
+  This only happens very very occasionally.
+
+  From the IRC bridge:
+  {code}
+  2015-08-17 08:19:43 ERROR:matrix-js-sdk PUT http://matrix.org/_matrix/client/api/v1/profile/%40freenode_mateop%3Amatrix.org/displayname (@freenode_mateop:matrix.org) HTTP 404 Error: {"errcode":"M_UNKNOWN","error"
+  :"No row found"}
+  {code}
+
+  Synapse logs:
+  {code}
+  2015-08-17 09:19:43,717 - synapse.access.http.8080 - 474 - INFO - PUT-1370556 - 83.166.68.175 - 8080 - Received request: PUT /_matrix/client/api/v1/profile/@freenode_mateop:matrix.org/displayname?access_token=<redacted>&user_id=%40freenode_mateop%3Amatrix.org
+  2015-08-17 09:19:43,721 - synapse.api.errors - 49 - INFO - PUT-1370556 - StoreError: 404, No row found
+  2015-08-17 09:19:43,733 - synapse.http.server - 91 - INFO - PUT-1370556 - <SynapseRequest at 0xe6c8e710 method=PUT uri=/_matrix/client/api/v1/profile/@freenode_mateop:matrix.org/displayname?access_token=<redacted>&user_id=%40freenode_mateop%3Amatrix.org clientproto=HTTP/1.1 site=8080> SynapseError: 404 - No row found
+  2015-08-17 09:19:43,734 - synapse.access.http.8080 - 491 - INFO - PUT-1370556 - 83.166.68.175 - 8080 - {None} Processed request: 17ms 46B 404 "PUT /_matrix/client/api/v1/profile/@freenode_mateop:matrix.org/displayname?access_token=<redacted>&user_id=%40freenode_mateop%3Amatrix.org HTTP/1.1" "None"
+  {code}
+
+  It's worth noting that I had just finished registering the user and then immediately *after the 200 response* did this request; possibly a race between {{/register}} and {{/displayname}}?
+id: '11804'
+key: SYN-449
+number: '449'
+priority: '2'
+project: '10000'
+reporter: kegan
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:17.0
+votes: '0'
+watches: '2'
+workflowId: '11906'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1358'
+  created: 2016-11-07 18:28:17.0
+  id: '13680'
+  issue: '11804'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:17.0

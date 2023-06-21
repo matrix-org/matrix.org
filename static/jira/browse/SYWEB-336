@@ -1,0 +1,53 @@
+---
+summary: Implement support for emoji icons
+---
+created: 2015-03-20 01:48:13.0
+creator: bnvk
+description: |-
+  In almost all modern web & mobile chat clients there is support for emoji icons, thus Matrix should have this too :)
+
+  I suggest implementing the method which supports :smile: and :) style emoji detection / creation!
+id: '11253'
+key: SYWEB-336
+number: '336'
+priority: '3'
+project: '10004'
+reporter: bnvk
+status: '10100'
+type: '4'
+updated: 2015-03-20 16:18:37.0
+votes: '1'
+watches: '3'
+workflowId: '11353'
+---
+actions:
+- author: dbkr
+  body: 'We don''t have support for doing :smile: style notation but we do support emoji as long as it can be entered into the text box (Mac now supports this as of Mavericks, iOS has an emoji keyboard and Android has several I think). We could do something to let users on other platforms use them too though.'
+  created: 2015-03-20 14:58:55.0
+  id: '11416'
+  issue: '11253'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-20 14:58:55.0
+- author: bnvk
+  body: |-
+    Hey David, slightly confused by your comment- I know you don't have :smile: style notation. Are you saying the API can't support it or you don't plan to implement it or just that you have not implemented it yet?
+
+    I filed the issue as it's something on my personal use case / radar as something I think Matrix should have. I'm filing issues for these sort of features that I am not actually working on at the moment. Should I not be doing so?
+  created: 2015-03-20 16:07:23.0
+  id: '11420'
+  issue: '11253'
+  type: comment
+  updateauthor: bnvk
+  updated: 2015-03-20 16:07:23.0
+- author: dbkr
+  body: |-
+    Oh no, please keep filing thing like this: I was just adding the information that this is all technically feasible and that we support proper UTF-8 emoji characters right now - we just don't have an interface built into the app to translate :smile: into a UTF-8 smile (as I think in any case we'd want to send the emoji over as a UTF-8 emoji rather than sending ':smile:' over the wire).
+
+    In an ideal world, everybody's OSes / browsers would let them enter emoji natively, but in practice not all platforms are there yet so it would probably a good idea to add client-side support of :smile: syntax as you say, although we could also do this by adding an emoji-picker or something.
+  created: 2015-03-20 16:18:37.0
+  id: '11425'
+  issue: '11253'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-20 16:18:37.0

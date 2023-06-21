@@ -1,0 +1,31 @@
+---
+summary: Authorization rules to prevent users from private channels simply don't seem to exist?!
+---
+assignee: erikj
+created: 2014-10-28 09:17:49.0
+creator: matthew
+description: ''
+id: '10517'
+key: SYN-116
+number: '116'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-13 15:54:32.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:44.0
+votes: '0'
+watches: '2'
+workflowId: '10621'
+---
+actions:
+- author: erikj
+  body: We do check the join_rules, but we also check the "visibility" value for backwards compatibility. This is fixed in the federation_authorization branch.
+  created: 2014-10-28 10:04:17.0
+  id: '10612'
+  issue: '10517'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-28 10:04:17.0

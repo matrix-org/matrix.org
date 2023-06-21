@@ -1,0 +1,28 @@
+---
+summary: sygnal's README claims it doesn't do GCM. This is a lie.
+---
+created: 2015-09-19 16:01:34.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11890'
+key: SYN-481
+number: '481'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:22.0
+votes: '0'
+watches: '2'
+workflowId: '11993'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1376'
+  created: 2016-11-07 18:28:22.0
+  id: '13695'
+  issue: '11890'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:22.0

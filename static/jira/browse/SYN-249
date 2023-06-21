@@ -1,0 +1,28 @@
+---
+summary: current_state_events table is sometimes out of date.
+---
+created: 2015-01-23 15:16:19.0
+creator: erikj
+description: ''
+id: '10976'
+key: SYN-249
+number: '249'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:40.0
+votes: '0'
+watches: '2'
+workflowId: '11076'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1277'
+  created: 2016-11-07 18:27:40.0
+  id: '13596'
+  issue: '10976'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:40.0

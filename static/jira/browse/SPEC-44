@@ -1,0 +1,34 @@
+---
+summary: Consider if more protocol strings should be "m." prefixed
+---
+created: 2014-10-02 17:10:38.0
+creator: leonerd
+description: |-
+  There's at least two places in the spec that contain strings that are not "m."-prefixed:
+
+   * Federation query names
+   * Profile keys
+
+  We might want to consider if either of these are likely to be sufficiently extensible that we should namespace them, to allow 3rd-party extensions to play nicely.
+id: '10447'
+key: SPEC-44
+number: '44'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '3'
+updated: 2016-10-28 16:26:46.0
+votes: '0'
+watches: '2'
+workflowId: '10551'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/468'
+  created: 2016-10-28 16:26:46.0
+  id: '13243'
+  issue: '10447'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:46.0

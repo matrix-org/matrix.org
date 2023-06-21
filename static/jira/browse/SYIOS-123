@@ -1,0 +1,23 @@
+---
+summary: Show messages à la iOS Messages app
+---
+assignee: manu
+created: 2015-04-27 10:31:23.0
+creator: manu
+description: |-
+  Show messages with coloured bubbles like in the post-iOS7 messages app.
+  Add an option in the settings to switch messages rendering (Default Console cells / iOS style cells) at runtime.
+id: '11371'
+key: SYIOS-123
+number: '123'
+priority: '2'
+project: '10200'
+reporter: manu
+status: '3'
+type: '2'
+updated: 2015-04-29 07:29:58.0
+votes: '0'
+watches: '1'
+workflowId: '11471'
+---
+actions: null

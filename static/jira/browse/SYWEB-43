@@ -1,0 +1,52 @@
+---
+summary: We need rageshake (i.e. a way to submit javascript bug reports)
+---
+created: 2014-09-18 14:42:17.0
+creator: matthew
+description: ''
+id: '10322'
+key: SYWEB-43
+number: '43'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2014-11-12 17:38:33.0
+votes: '0'
+watches: '2'
+workflowId: '10425'
+---
+actions:
+- author: matthew
+  body: Rageshake should also anonymise any accesstokens present to avoid horrible security messes
+  created: 2014-09-22 18:39:39.0
+  id: '10369'
+  issue: '10322'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-22 18:39:39.0
+- author: kegan
+  body: '{{#rageshakes:matrix.org}}? :)'
+  created: 2014-10-27 17:28:03.0
+  id: '10604'
+  issue: '10322'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 17:28:03.0
+- author: matthew
+  body: love it :D although shoving them straight into jira might be a bit better...
+  created: 2014-10-27 18:05:08.0
+  id: '10608'
+  issue: '10322'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-27 18:05:08.0
+- author: kegan
+  body: Presumably we want logs and a snapshot for debugging. We also presumably want this to be behind a captcha.
+  created: 2014-11-12 17:38:33.0
+  id: '10783'
+  issue: '10322'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-12 17:38:33.0

@@ -1,0 +1,30 @@
+---
+summary: Peeking into rooms doesn't work over federation
+---
+created: 2016-06-27 22:28:14.0
+creator: neb
+description: |-
+  Submitted by @richvdh:sw1v.org
+  This is a well-known issue, presumably blocked on SPEC-300, but we didn't seem to have a tracking bug for it
+id: '12723'
+key: SYN-715
+number: '715'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:39.0
+votes: '0'
+watches: '2'
+workflowId: '12823'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1559'
+  created: 2016-11-07 18:29:39.0
+  id: '13876'
+  issue: '12723'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:39.0

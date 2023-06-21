@@ -1,0 +1,30 @@
+---
+summary: Trying to register a fully-qualified '@localpart:server.org' fails non-obviously
+---
+created: 2014-09-22 17:46:32.0
+creator: leonerd
+description: ''
+id: '10365'
+key: SYWEB-76
+number: '76'
+priority: '3'
+project: '10004'
+reporter: leonerd
+resolution: '3'
+resolutiondate: 2014-10-31 09:39:37.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:53.0
+votes: '0'
+watches: '2'
+workflowId: '10468'
+---
+actions:
+- author: kegan
+  body: Fixed as per SYWEB-109
+  created: 2014-10-31 09:39:37.0
+  id: '10710'
+  issue: '10365'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-31 09:39:37.0

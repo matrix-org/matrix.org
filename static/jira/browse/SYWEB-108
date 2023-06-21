@@ -1,0 +1,30 @@
+---
+summary: Better navigation for the multiline text input
+---
+created: 2014-10-15 22:10:57.0
+creator: matthew
+description: ''
+id: '10478'
+key: SYWEB-108
+number: '108'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-03-03 13:28:17.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:09:03.0
+votes: '0'
+watches: '2'
+workflowId: '10582'
+---
+actions:
+- author: kegan
+  body: SYWEB-223
+  created: 2015-03-03 13:28:17.0
+  id: '11340'
+  issue: '10478'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-03 13:28:17.0

@@ -1,0 +1,22 @@
+---
+summary: IRC bridge needs an if (chans == 0) then disconnect() check
+---
+created: 2016-01-14 16:38:34.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12302'
+key: BOTS-151
+number: '151'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-01-14 17:59:53.0
+status: '5'
+type: '1'
+updated: 2016-01-14 17:59:53.0
+votes: '0'
+watches: '1'
+workflowId: '12407'
+---
+actions: null

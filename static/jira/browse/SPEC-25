@@ -1,0 +1,103 @@
+---
+summary: Spec for m.room.redaction
+---
+assignee: erikj
+created: 2014-09-27 00:04:27.0
+creator: matthew
+description: ''
+id: '10411'
+key: SPEC-25
+number: '25'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-15 16:42:11.0
+status: '5'
+type: '2'
+updated: 2015-01-15 16:42:11.0
+votes: '0'
+watches: '2'
+workflowId: '10514'
+---
+actions:
+- author: erikj
+  body: |-
+    REST API:
+    {noformat}
+    POST /_matrix/client/api/v1/rooms/<room_id>/redact/<event_id>
+    {
+      "reason": <reason field>
+    }
+    {noformat}
+
+    Redaction event:
+    {noformat}
+    {
+      "type":"m.room.redaction",
+      "content":{"reason": <reason message>},
+      "redacts": <event_id to redact>,
+      "room_id":  <room id>,
+      ...
+    }
+    {noformat}
+
+    When you get an event that has been redacted down, it will look like:
+    {noformat}
+    {
+      "content": {},
+      "redacted_because": {
+        "content": {
+          "reason": <reason message>,
+        },
+        "room_id": <room id>,
+        "type": "m.room.redaction",
+        "user_id": <user who redacted event>,
+        ...
+      },
+      "room_id":  <room id>,
+      "type": "m.room.message",
+      ... 
+    },
+    {noformat}
+  created: 2014-09-29 16:12:47.0
+  id: '10477'
+  issue: '10411'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 16:12:47.0
+- author: erikj
+  body: I've added the _m.room.redaction_ into the spec, but I don't know where the other details should go.
+  created: 2014-09-29 16:37:28.0
+  id: '10478'
+  issue: '10411'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 16:37:28.0
+- author: matthew
+  body: start a new section called redactions or mutable events or something?
+  created: 2014-09-29 16:46:33.0
+  id: '10479'
+  issue: '10411'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-29 16:46:33.0
+- author: erikj
+  body: |-
+    I've added a redactions section.
+
+    How do I add the rest api to the api docs?
+  created: 2014-09-29 17:22:49.0
+  id: '10480'
+  issue: '10411'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 17:22:49.0
+- author: erikj
+  body: I've added the details of what the server should do on receipt of a redaction event. In reality it can do whatever it wants, and its probably a reasonable implementation to flag it up to a server admin for verification before actually redacting an event.
+  created: 2014-10-01 18:16:47.0
+  id: '10504'
+  issue: '10411'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-10-01 18:19:38.0

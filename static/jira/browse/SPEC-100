@@ -1,0 +1,30 @@
+---
+summary: v2 - Presence
+---
+created: 2015-01-22 09:26:46.0
+creator: kegan
+description: ''
+id: '10973'
+key: SPEC-100
+number: '100'
+priority: '1'
+project: '10001'
+reporter: kegan
+resolution: '4'
+resolutiondate: 2016-06-29 11:53:26.0
+status: '5'
+type: '1'
+updated: 2016-06-29 11:53:26.0
+votes: '0'
+watches: '2'
+workflowId: '11073'
+---
+actions:
+- author: richvdh
+  body: think most of it is there
+  created: 2016-06-29 11:53:26.0
+  id: '13032'
+  issue: '10973'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-29 11:53:26.0

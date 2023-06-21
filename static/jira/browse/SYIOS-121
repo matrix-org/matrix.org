@@ -1,0 +1,25 @@
+---
+summary: Support multi-account
+---
+created: 2015-04-27 10:20:14.0
+creator: manu
+description: |-
+  Add the support of multisession needs several impacts at UI level like:
+  * The recents list must show the recents of different accounts in different sections
+  * Add an option somewhere to add an account
+  * When creating a room, ask the user which account to use
+  * Local notification: add the targeted account in the popup information
+id: '11369'
+key: SYIOS-121
+number: '121'
+priority: '2'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '2'
+updated: 2015-04-27 14:08:47.0
+votes: '0'
+watches: '1'
+workflowId: '11469'
+---
+actions: null

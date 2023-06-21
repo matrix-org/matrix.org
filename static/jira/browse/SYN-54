@@ -1,0 +1,22 @@
+---
+summary: Old rooms without join_rules appear wrong in recents on webclient
+---
+created: 2014-09-18 16:08:17.0
+creator: matthew
+description: ''
+id: '10328'
+key: SYN-54
+number: '54'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-26 14:32:02.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:39.0
+votes: '0'
+watches: '1'
+workflowId: '10431'
+---
+actions: null

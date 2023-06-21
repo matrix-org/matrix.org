@@ -1,0 +1,30 @@
+---
+summary: Refs aren't rendered properly
+---
+created: 2015-12-21 16:27:47.0
+creator: illicitonion
+description: ''
+id: '12235'
+key: SPEC-312
+number: '312'
+priority: '1'
+project: '10001'
+reporter: illicitonion
+resolution: '1'
+resolutiondate: 2016-09-27 16:50:13.0
+status: '5'
+type: '1'
+updated: 2016-09-27 16:50:13.0
+votes: '0'
+watches: '2'
+workflowId: '12338'
+---
+actions:
+- author: richvdh
+  body: presumably this got fixed
+  created: 2016-09-27 16:50:13.0
+  id: '13127'
+  issue: '12235'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 16:50:13.0

@@ -1,0 +1,71 @@
+---
+summary: I'm seeing desktop notifs for messages in the room i'm currently non-idle and speaking in
+---
+created: 2014-09-19 19:12:47.0
+creator: matthew
+description: |-
+  My client is non-idle, and is foregrounded, and i'm typing in the room.
+
+  However whenever anyone says anything, I get it also relayed as a desktop notification.
+
+  This is Really Annoying,
+id: '10347'
+key: SYWEB-62
+number: '62'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-20 01:46:00.0
+status: '5'
+type: '1'
+updated: 2014-09-22 17:20:47.0
+votes: '0'
+watches: '2'
+workflowId: '10450'
+---
+actions:
+- author: kegan
+  body: |-
+    Chrome has a big bug in Linux where being minimised does not trigger hidden = true. This has been fixed in an unreleased version. 
+
+    I had to decide whether to always show notifications (ensuring even if minimised you wouldn't miss anything) or using the hidden var and risk people not being notified. I went with the former.
+  created: 2014-09-19 21:04:20.0
+  id: '10352'
+  issue: '10347'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-19 21:04:20.0
+- author: matthew
+  body: i'll shove in an if(chrome && linux) then...
+  created: 2014-09-19 21:13:39.0
+  id: '10353'
+  issue: '10347'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-19 21:13:39.0
+- author: matthew
+  body: |-
+    I've just reverted to the original behaviour of only issuing notifications if document.hidden == true... or your presence is idle because you haven't interacted with the app for a few minutes.
+
+    This is far better than notifying for everything - even when the window is in the foreground, especially if you are binging on everything that happens.
+
+    We clearly have hugely different ideas of how desktop notifications should work.  I expect the common case is to notify you whenever anything happens in any of your channels - just like iMessage/Blah/WhatsApp etc notify you whenever anything happens in any chat.  You can then refine the notifs with bingwords if you so desire.
+
+    This means the default behaviour is to bing on everything - which means that you *really* don't want it binging on everything when you actually are using the app in the foreground!
+
+    I understand the difference in worldview now, but I think we should avoid changing existing behaviour of features which work without some consultation with whoever wrote them, otherwise users will see features mysteriously flapping around and consider it flakiness.
+  created: 2014-09-20 01:45:49.0
+  id: '10355'
+  issue: '10347'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-20 01:45:49.0
+- author: matthew
+  body: Fixed in a0c3da1
+  created: 2014-09-20 01:46:29.0
+  id: '10356'
+  issue: '10347'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-20 01:46:29.0

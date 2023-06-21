@@ -1,0 +1,45 @@
+---
+summary: 'Pagination: specify returned tokens when the end of pagination is hit.'
+---
+created: 2016-01-06 10:56:18.0
+creator: gforet
+description: |-
+  This information is missing in the specification of "rooms/roomId/messages" API.
+
+  Presently when we hit the end of pagination the chunk is empty and both tokens start/end are equal (see attachment EndOfPagination.png).
+id: '12271'
+key: SPEC-319
+number: '319'
+priority: '3'
+project: '10001'
+reporter: gforet
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:07.0
+votes: '0'
+watches: '2'
+workflowId: '12376'
+---
+actions:
+- author: gforet
+  body: |-
+    Note: chunk.count =0 is not enough to decide end of pagination. The client must check start token = end token in server response.
+
+    Indeed the client may receive empty chunk during back pagination on a period where the user was outside the room.
+
+    Example: I joined a room, I left it, others sent more than 20 messages while I am outside, then I joined again.
+    I receive empty chunk when I scroll back in room history. The start/end tokens are different in this case.
+  created: 2016-01-06 11:21:08.0
+  id: '12537'
+  issue: '12271'
+  type: comment
+  updateauthor: gforet
+  updated: 2016-01-06 11:21:08.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/610'
+  created: 2016-10-28 16:28:07.0
+  id: '13418'
+  issue: '12271'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:07.0

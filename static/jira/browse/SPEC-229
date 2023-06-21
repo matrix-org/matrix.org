@@ -1,0 +1,28 @@
+---
+summary: Can ASes participate in a room (e.g. setting power levels) without having explicitly joined?
+---
+created: 2015-09-19 22:31:44.0
+creator: matthew
+description: ''
+id: '11897'
+key: SPEC-229
+number: '229'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:38.0
+votes: '0'
+watches: '2'
+workflowId: '12000'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/544'
+  created: 2016-10-28 16:27:38.0
+  id: '13352'
+  issue: '11897'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:38.0

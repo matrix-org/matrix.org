@@ -1,0 +1,49 @@
+---
+summary: Push notifs from rooms with no explicit name or alias are indistinguishable from 1:1 notifs
+---
+created: 2015-03-29 22:43:53.0
+creator: matthew
+description: |-
+  I have a private room with Oddvar & Amandine which has no name nor alias.  When I get APNS pushes from traffic in it, it just says "Amandine: foo" rather than "Amandine in Oddvar/Amandine room: foo" or similar.
+
+  To make it distinguishable from 1:1 chats with Amandine, I suggest we at least say "Amandine in Group Chat: foo" or even "Amandine in room with Oddvar and 4 others: foo" or whatever.
+id: '11276'
+key: SYN-325
+number: '325'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-06-29 17:13:55.0
+status: '5'
+type: '1'
+updated: 2016-06-29 17:13:55.0
+votes: '0'
+watches: '2'
+workflowId: '11376'
+---
+actions:
+- author: dbkr
+  body: We should decide whether this is done by treating 1:1 rooms differently, if we have such a thing, or if we just do it based on the number of room members.
+  created: 2015-05-14 12:58:53.0
+  id: '11751'
+  issue: '11276'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 12:58:53.0
+- author: dbkr
+  body: Setting to block as I think this is better done once the way os clear on spec-17.
+  created: 2015-05-14 17:37:38.0
+  id: '11760'
+  issue: '11276'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 17:37:38.0
+- author: dbkr
+  body: Fixed by https://github.com/matrix-org/synapse/pull/894
+  created: 2016-06-29 17:13:55.0
+  id: '13036'
+  issue: '11276'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-06-29 17:13:55.0

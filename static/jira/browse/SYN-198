@@ -1,0 +1,36 @@
+---
+summary: Add support for dropping privileges when run as a Daemon
+---
+created: 2014-12-13 18:24:01.0
+creator: erikj
+description: ''
+id: '10816'
+key: SYN-198
+number: '198'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:29.0
+votes: '0'
+watches: '2'
+workflowId: '10916'
+---
+actions:
+- author: erikj
+  body: https://github.com/thesharp/daemonize/blob/master/daemonize.py#L23
+  created: 2014-12-13 18:24:13.0
+  id: '10992'
+  issue: '10816'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-13 18:24:13.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1255'
+  created: 2016-11-07 18:27:29.0
+  id: '13573'
+  issue: '10816'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:29.0

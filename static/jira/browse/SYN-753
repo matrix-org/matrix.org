@@ -1,0 +1,30 @@
+---
+summary: tags should persist for rooms you leave
+---
+created: 2016-08-21 08:41:05.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  eternaleye says his custom tags get lost when the bridge kicks him
+id: '12801'
+key: SYN-753
+number: '753'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:54.0
+votes: '0'
+watches: '2'
+workflowId: '12901'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1586'
+  created: 2016-11-07 18:29:54.0
+  id: '13910'
+  issue: '12801'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:54.0

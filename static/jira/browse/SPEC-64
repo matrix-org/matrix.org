@@ -1,0 +1,108 @@
+---
+summary: Clarification needed of the relationship between visibility and join rules
+---
+created: 2014-11-04 23:52:56.0
+creator: kofish
+description: ''
+id: '10621'
+key: SPEC-64
+number: '64'
+priority: '3'
+project: '10001'
+reporter: kofish
+resolution: '1'
+resolutiondate: 2016-10-21 00:18:34.0
+status: '5'
+type: '4'
+updated: 2016-10-21 00:18:34.0
+votes: '0'
+watches: '5'
+workflowId: '10721'
+---
+actions:
+- author: erikj
+  body: |-
+    We should make clearer that (currently) `visibility` relates to the public room list and doesn't have any affect on the actual `join_rules`.
+
+    There is some scope for allowing the visibility attribute to be federated and affect the default join_rule attribute - both in terms of what to assume when a join_rule event is missing and what to assume when we dont specify a join_rule when calling the /create_room/ api.
+  created: 2014-11-08 21:32:37.0
+  id: '10748'
+  issue: '10621'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-08 21:32:37.0
+- author: matthew
+  body: |-
+    i suggest we take "visibility" to simply mean whether the room's is advertised by alias in a directory list somewhere. Does this actually need to be an attribute on the room (other than the list of aliases a room knows itself to have been advertised by)?
+
+    Then the rules concerning whether a given user is allowed to join a room are completely orthogonal to whether its aliases are advertised publically or not.
+  created: 2014-11-08 23:28:45.0
+  id: '10751'
+  issue: '10621'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-08 23:28:45.0
+- author: erikj
+  body: |-
+    {quote}
+    Does this actually need to be an attribute on the room (other than the list of aliases a room knows itself to have been advertised by)?
+    {quote}
+
+    Probably not. It depends on how we want to do the "public room list." We could, for example, tag rooms with the visibility so that remote HS can include it in their public room lists.
+  created: 2014-11-08 23:35:22.0
+  id: '10752'
+  issue: '10621'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-08 23:37:12.0
+- author: matthew
+  body: what alias would other HSes then use for advertising it? room names obviously don't work as they're nonunique...
+  created: 2014-11-08 23:44:14.0
+  id: '10753'
+  issue: '10621'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-08 23:44:14.0
+- author: erikj
+  body: Hmm, true. They could pull out some aliases from the room info and occasionally check them for accuracy, but its probably not something we want to encourage.
+  created: 2014-11-08 23:46:22.0
+  id: '10754'
+  issue: '10621'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-08 23:46:22.0
+- author: matthew
+  body: |-
+    The more I think about this, the more I think the directory services (and visibility there-in) should be separated entirely from the question of federation and room settings etc.
+
+    I'm not sure that just because a random user on the arasphere.net HS happens to join #donkey:matrix.org I want to see the #donkey:matrix.org alias advertised by arasphere.
+  created: 2014-11-09 22:29:07.0
+  id: '10755'
+  issue: '10621'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-09 22:29:07.0
+- author: leonerd
+  body: +1 to Matthew's last comment. The idea with directory servers was always intended to be something quite separate from the rooms themselves. The name "directory" because it logically is compiled by some different entity; the manager(s) of the directory giving their opinion of what rooms should be reached under what names.
+  created: 2014-11-10 13:45:35.0
+  id: '10756'
+  issue: '10621'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-10 13:45:35.0
+- author: leonerd
+  body: See also SPEC-71
+  created: 2014-11-26 18:27:20.0
+  id: '10872'
+  issue: '10621'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 18:27:20.0
+- author: richvdh
+  body: I think the spec is now clear on the difference between {{visibility}} and {{join_rules}}.
+  created: 2016-10-21 00:18:34.0
+  id: '13199'
+  issue: '10621'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-21 00:18:34.0

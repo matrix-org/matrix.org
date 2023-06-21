@@ -1,0 +1,30 @@
+---
+summary: We could have a step-by-step installer UI
+---
+created: 2016-04-30 09:46:02.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  as per https://vector.im/develop/#/room/!XqBunHwQIXUiqCaoxq:matrix.org/$1461997032192277vmueQ:matrix.org
+id: '12643'
+key: SYN-683
+number: '683'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:26.0
+votes: '0'
+watches: '2'
+workflowId: '12743'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1536'
+  created: 2016-11-07 18:29:26.0
+  id: '13847'
+  issue: '12643'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:26.0

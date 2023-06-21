@@ -1,0 +1,44 @@
+---
+summary: Signing transactions
+---
+created: 2014-09-30 14:33:59.0
+creator: erikj
+description: ''
+id: '10430'
+key: SPEC-31
+number: '31'
+priority: '3'
+project: '10001'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-10-28 16:26:45.0
+votes: '0'
+watches: '3'
+workflowId: '10533'
+---
+actions:
+- author: markjh
+  body: Rather than signing transactions we might want to work out a way to sign all the server to server requests and responses.
+  created: 2014-09-30 14:35:45.0
+  id: '10485'
+  issue: '10430'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-30 14:35:45.0
+- author: richvdh
+  body: Is this still valid? It looks like it got superceded by SPEC-33
+  created: 2015-12-01 15:48:57.0
+  id: '12398'
+  issue: '10430'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 15:48:57.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/466'
+  created: 2016-10-28 16:26:45.0
+  id: '13241'
+  issue: '10430'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:45.0

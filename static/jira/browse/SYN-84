@@ -1,0 +1,43 @@
+---
+summary: We need to validate SSL certs in federation
+---
+created: 2014-09-30 13:52:51.0
+creator: matthew
+description: ''
+id: '10422'
+key: SYN-84
+number: '84'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-01-06 10:07:04.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:07:04.0
+votes: '0'
+watches: '3'
+workflowId: '10525'
+---
+actions:
+- author: markjh
+  body: |-
+    The X509 certificate of the server and the ed25519 are checked against each other when downloading the verify key for a server.
+
+    However the certificate isn't checked for subsequent requests.
+
+    We should check the validity of the remote server using something like http://perspectives-project.org/
+  created: 2015-01-15 13:25:09.0
+  id: '11132'
+  issue: '10422'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-01-15 13:25:09.0
+- author: matthew
+  body: Presumably we could also implement ACME and just use letsencrypt.org for everything rather than ever doing self-signed X.509s...
+  created: 2015-01-15 13:49:56.0
+  id: '11133'
+  issue: '10422'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-15 13:49:56.0

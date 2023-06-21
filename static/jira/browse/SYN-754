@@ -1,0 +1,28 @@
+---
+summary: Messages are (assumed) not being resent if the recipient HS is down until the recipient talks first
+---
+created: 2016-08-21 22:38:39.0
+creator: half-shot
+description: Context here https://vector.im/beta/#/room/!cURbafjkfsMDVwdRDQ:matrix.org/$147181403523rupod:half-shot.uk
+id: '12802'
+key: SYN-754
+number: '754'
+priority: '4'
+project: '10000'
+reporter: half-shot
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:54.0
+votes: '0'
+watches: '2'
+workflowId: '12902'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1587'
+  created: 2016-11-07 18:29:54.0
+  id: '13911'
+  issue: '12802'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:54.0

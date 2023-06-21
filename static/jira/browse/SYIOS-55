@@ -1,0 +1,41 @@
+---
+summary: High resolution avatars create memory pressure
+---
+assignee: gforet
+created: 2015-01-14 13:56:34.0
+creator: manu
+description: |-
+  This is sensible for old device with small memory amount like iPhone 4.
+  The UIImage hosting the avatar should not use the full resolution of the image.
+id: '10930'
+key: SYIOS-55
+number: '55'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-01-14 17:33:21.0
+status: '5'
+type: '1'
+updated: 2015-01-14 17:33:21.0
+votes: '0'
+watches: '2'
+workflowId: '11030'
+---
+actions:
+- author: manu
+  body: Using Matrix media repository URL size params should help
+  created: 2015-01-14 14:02:30.0
+  id: '11119'
+  issue: '10930'
+  type: comment
+  updateauthor: manu
+  updated: 2015-01-14 14:02:30.0
+- author: gforet
+  body: 'Fixed by: https://github.com/matrix-org/matrix-ios-sdk/commit/4cf91108'
+  created: 2015-01-14 17:33:21.0
+  id: '11121'
+  issue: '10930'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-14 17:33:21.0

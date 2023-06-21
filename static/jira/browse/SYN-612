@@ -1,0 +1,632 @@
+---
+summary: 'Got Exception when downloading keys for matrix.org: AlreadyCalledError'
+---
+created: 2016-01-28 09:26:38.0
+creator: erikj
+description: |-
+  {{@matt:matrix.matthughes.info}} was trying to join Matrix HQ, but had to restart server. After restart he successfully joined.
+
+  {noformat}
+  2016-01-28 00:55:00,628 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:00,629 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:00,629 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:00,629 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:00,631 - twisted - 154 - INFO - - Stopping factory <twisted.web.client._HTTP11ClientFactory instance at 0x7fa277077878>
+  2016-01-28 00:55:00,652 - twisted - 154 - INFO - - Stopping factory <twisted.web.client._HTTP11ClientFactory instance at 0x7fa277f7ecb0>
+  2016-01-28 00:55:00,946 - twisted - 154 - INFO - - Stopping factory <twisted.web.client._HTTP11ClientFactory instance at 0x7fa2770c4b00>
+  2016-01-28 00:55:01,200 - synapse.access.https.8448 - 493 - INFO - PUT-103- 170.75.162.237 - 8448 - Received request: PUT /_matrix/federation/v1/send/1452301516780/
+  2016-01-28 00:55:01,475 - synapse.federation.federation_base - 138 - WARNING - PUT-95- Event content has been tampered, redacting $1416420782075mfgdS:matrix.org: {'origin': 'matrix.org', 'signatures': {'jki.re': {'ed25519:auto': 'Nz2asT2/H1nVEB0Xo5ulvsdbri3hxWLvaoNiXuwKwQSoH9Cyp7ibN1kqhQp2t5/4VG6IDwXwItsb+bWFb3XUAg'}, 'matrix.org': {'ed25519:auto': 'gsW16iVGi/xbaoLwE08OJIzpGWzRDp1v9Gz/3fyow5CIzsytYbjtXq8/DANvDvFPGun2EAY/GAtrtocb9HoHAA'}}, 'origin_server_ts': 1410066043261, 'sender': '@jugenmu:matrix.org', 'event_id': '$1416420782075mfgdS:matrix.org', 'type': 'm.room.member', 'prev_events': (('$1416420782042PMvsi:matrix.org', <frozendict {'sha256': 'Na5Ocs8IvRV3vTKY0fLIZTzq45s6KxgbBG6vwnsTJAg'}>),), 'depth': 2965, 'state_key': '@jugenmu:matrix.org', 'unsigned': {'age': 5701813848}, 'content': <frozendict {'membership': 'join', 'avatar_url': None, 'displayname': 'jugenmu'}>, 'membership': 'join', 'prev_state': (), 'room_id': '!cURbafjkfsMDVwdRDQ:matrix.org', 'auth_events': (('$1416420777055lOvHI:matrix.org', <frozendict {'sha256': 'oKO4tX8rrBz7/yAZUy0kwNv/6O0gnEMbUb4gn6Bppao'}>), ('$1416420758924gcmew:jki.re', <frozendict {'sha256': '2JKiQ/IU6X9x7ghwjONKP6i7NehvysyOxFPS0L6gUBw'}>)), 'hashes': <frozendict {'sha256': 'kscqrBLIf7tkXvym5837lsw27I/i9VgHayKBPg1H1v8'}>, 'stream_ordering': 3936}
+  2016-01-28 00:55:01,501 - synapse.federation.federation_base - 138 - WARNING - PUT-95- Event content has been tampered, redacting $1416420779925FddIr:matrix.org: {'origin': 'matrix.org', 'signatures': {'jki.re': {'ed25519:auto': 'nbdQnmmfMa9/BIpZ6VkNumw0kka2c+10wpu5v2hZ6QmecsljI0ms3+jGVFeDHkVrdlNwHtZqS2AasQiCGKPGBw'}, 'matrix.org': {'ed25519:auto': 'Paqk8SSCZV1s/WjUUUUp7x8U9WfoXSGAOINhrPh5Y4Kim+sJb4e12U20QG8TW3z/87Y3FDrlmSfOiAvwWqrmCg'}}, 'origin_server_ts': 1410022554491, 'sender': '@jackdoe:matrix.org', 'event_id': '$1416420779925FddIr:matrix.org', 'type': 'm.room.member', 'prev_events': (('$1416420779893iuIPd:jki.re', <frozendict {'sha256': 'NilKGSmNFUAYOO+w8rNBfepV6Kt7Q68pAfeuTBLE2WI'}>),), 'depth': 2893, 'state_key': '@jackdoe:matrix.org', 'unsigned': {'age': 5701812162}, 'content': <frozendict {'membership': 'join', 'avatar_url': None, 'displayname': 'borislav nikolov'}>, 'membership': 'join', 'prev_state': (), 'room_id': '!cURbafjkfsMDVwdRDQ:matrix.org', 'auth_events': (('$1416420777055lOvHI:matrix.org', <frozendict {'sha256': 'oKO4tX8rrBz7/yAZUy0kwNv/6O0gnEMbUb4gn6Bppao'}>), ('$1416420758924gcmew:jki.re', <frozendict {'sha256': '2JKiQ/IU6X9x7ghwjONKP6i7NehvysyOxFPS0L6gUBw'}>)), 'hashes': <frozendict {'sha256': '+6sEAGaxwqz4q8CxDDqSVGrdw3D7htCyVW1Mg+sE0T0'}>, 'stream_ordering': 3803}
+  2016-01-28 00:55:01,526 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,533 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $143761008715066JghvC:matrix.org
+  2016-01-28 00:55:01,534 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,534 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,535 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $144984558583215HIMeI:matrix.org
+  2016-01-28 00:55:01,535 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,535 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for brabo.quickly.undo.it: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,536 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1423276851128mtuUO:brabo.quickly.undo.it
+  2016-01-28 00:55:01,536 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,536 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,537 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1416420853143MvZDR:matrix.org
+  2016-01-28 00:55:01,537 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,537 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,538 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $144765849071025zHaMY:matrix.org
+  2016-01-28 00:55:01,538 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,539 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,539 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1443973677235030PWZXG:matrix.org
+  2016-01-28 00:55:01,539 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,540 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,540 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1420631991186HDYdp:matrix.org
+  2016-01-28 00:55:01,540 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,541 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,541 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $144115627127219OksMg:matrix.org
+  2016-01-28 00:55:01,541 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,542 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,542 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $144805524015183JMoLA:matrix.org
+  2016-01-28 00:55:01,542 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,543 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,543 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $144930242512348TStMB:matrix.org
+  2016-01-28 00:55:01,543 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,544 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,544 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $144436847076542wRMNj:matrix.org
+  2016-01-28 00:55:01,545 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,545 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,545 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $14244400442543vqCVt:matrix.org
+  2016-01-28 00:55:01,546 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,546 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,546 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $14338965904202txcap:matrix.org
+  2016-01-28 00:55:01,547 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,547 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,548 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1441607840479477lVmBW:matrix.org
+  2016-01-28 00:55:01,548 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,548 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,549 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $14278046933452xUKpc:matrix.org
+  2016-01-28 00:55:01,549 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,550 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,550 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $14230816724410HCoSa:matrix.org
+  2016-01-28 00:55:01,550 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,551 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,551 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $144242199017969YAyce:matrix.org
+  2016-01-28 00:55:01,551 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,552 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for safaradeg.net: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,552 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1452004331106BrKMn:safaradeg.net
+  2016-01-28 00:55:01,552 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,553 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,553 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1446448904380671YPzHI:matrix.org
+  2016-01-28 00:55:01,553 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,554 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,554 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $143538689343222kNcmk:matrix.org
+  2016-01-28 00:55:01,555 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,555 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,555 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $144291062547106vwmmT:matrix.org
+  2016-01-28 00:55:01,556 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,556 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for infoserver.lv: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,556 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1439976697112sQmaK:infoserver.lv
+  2016-01-28 00:55:01,557 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,557 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,557 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $14435297881419IcVES:matrix.org
+  2016-01-28 00:55:01,558 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,558 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,559 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $142668645741qwqNQ:matrix.org
+  2016-01-28 00:55:01,559 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,559 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,560 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1416420721952opPpr:matrix.org
+  2016-01-28 00:55:01,561 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,561 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for brabo.quickly.undo.it: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,561 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1423282196186tzhnY:brabo.quickly.undo.it
+  2016-01-28 00:55:01,562 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,562 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,562 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $143552026378549KSslC:matrix.org
+  2016-01-28 00:55:01,563 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,563 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,563 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1446202648219365dxPIa:matrix.org
+  2016-01-28 00:55:01,564 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,564 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,564 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $143516616911984HoKQK:matrix.org
+  2016-01-28 00:55:01,565 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,565 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,565 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1438514239295140LhaER:matrix.org
+  2016-01-28 00:55:01,566 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,566 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,566 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1441625399527150nsGkH:matrix.org
+  2016-01-28 00:55:01,567 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,567 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,567 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $14250324203263oohvg:matrix.org
+  2016-01-28 00:55:01,568 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,569 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for testmatrix.0pt.pw: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,569 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $142747051321yMiJk:testmatrix.0pt.pw
+  2016-01-28 00:55:01,570 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,570 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,570 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1444941287468852cddeD:matrix.org
+  2016-01-28 00:55:01,571 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,571 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,571 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1416420796357lXqCS:matrix.org
+  2016-01-28 00:55:01,572 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,572 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,572 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $144029528253266XnPHO:matrix.org
+  2016-01-28 00:55:01,573 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,573 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,573 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $1443896611201125VsuWO:matrix.org
+  2016-01-28 00:55:01,574 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,574 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for jigpu.no-ip.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,575 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $145309555819HmUnJ:jigpu.no-ip.org
+  2016-01-28 00:55:01,575 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,576 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 251, in do_iterations
+      merged_results[group.server_name][key_id],
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 393, in callback
+      self._startRunCallbacks(result)
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 494, in _startRunCallbacks
+      raise AlreadyCalledError
+  AlreadyCalledError
+  2016-01-28 00:55:01,576 - synapse.federation.federation_base - 147 - WARNING - PUT-95- Signature check failed for $145273560575507MUiwa:matrix.org
+  2016-01-28 00:55:01,576 - synapse.util.logcontext - 229 - WARNING - PUT-95- Restoring dead context: PUT-95@7fa277f10410
+  2016-01-28 00:55:01,577 - synapse.crypto.keyring - 119 - ERROR - PUT-95- Got Exception when downloading keys for matrix.org: AlreadyCalledError 
+  Traceback (most recent call last):
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 105, in handle_key_deferred
+      _, _, key_id, verify_key = yield deferred
+    File "/home/ubuntu/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+   {noformat}
+id: '12354'
+key: SYN-612
+number: '612'
+priority: '2'
+project: '10000'
+reporter: hughesm02
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:03.0
+votes: '0'
+watches: '3'
+workflowId: '12459'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1486'
+  created: 2016-11-07 18:29:03.0
+  id: '13792'
+  issue: '12354'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:03.0

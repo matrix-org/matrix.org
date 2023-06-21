@@ -1,0 +1,41 @@
+---
+summary: The ability to link a registered IRC nick to a specific Matrix account
+---
+created: 2014-10-15 13:59:25.0
+creator: matthew
+description: |-
+  If I have a registered IRC nick on Freenode, it'd be nice if the MatrixBridge was able to map that through to my actual Matrix ID (assuming I gave the MatrixBridge an accesstoken to use on my behalf).
+
+  Or alternatively the MatrixBridge would expose a login dance of some kind to let me add an IRC->MXID mapping on an ID server and create the association that way.
+id: '10475'
+key: BOTS-4
+number: '4'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-06-02 11:29:18.0
+status: '5'
+type: '2'
+updated: 2016-06-02 11:29:18.0
+votes: '0'
+watches: '2'
+workflowId: '10579'
+---
+actions:
+- author: kegan
+  body: Blocked until we get something OAuth-like which ASes can use.
+  created: 2015-08-17 13:25:28.0
+  id: '12062'
+  issue: '10475'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-08-17 13:25:28.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/65
+  created: 2016-06-02 11:29:18.0
+  id: '12987'
+  issue: '10475'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 11:29:18.0

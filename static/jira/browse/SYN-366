@@ -1,0 +1,92 @@
+---
+summary: 'Failed to start: Upgrading to develop with `key_distribution` branch'
+---
+created: 2015-04-29 13:46:57.0
+creator: erikj
+description: |-
+  Synapse refuses to start with:
+
+  {noformat}
+  /home/erikj/.local/lib/python2.7/site-packages/cffi-0.8.6-py2.7-linux-x86_64.egg/cffi/vengine_cpy.py:177: UserWarning: reimporting '_cffi__xfc3ea7cdx80e323ca' might overwrite older definitions
+    % (self.verifier.get_module_name()))
+  Traceback (most recent call last):
+    File "/usr/lib/python2.7/runpy.py", line 162, in _run_module_as_main
+      "__main__", fname, loader, pkg_name)
+    File "/usr/lib/python2.7/runpy.py", line 72, in _run_code
+      exec code in run_globals
+    File "/home/erikj/synapse/synapse/app/homeserver.py", line 500, in <module>
+      main()
+    File "/home/erikj/synapse/synapse/app/homeserver.py", line 495, in main
+      hs = setup(sys.argv[1:])
+    File "/home/erikj/synapse/synapse/app/homeserver.py", line 367, in setup
+      generate_section="Homeserver"
+    File "synapse/config/_base.py", line 180, in load_config
+      return cls(args)
+    File "synapse/config/tls.py", line 27, in __init__
+      super(TlsConfig, self).__init__(args)
+    File "synapse/config/server.py", line 21, in __init__
+      super(ServerConfig, self).__init__(args)
+    File "synapse/config/database.py", line 23, in __init__
+      super(DatabaseConfig, self).__init__(args)
+    File "synapse/config/logger.py", line 26, in __init__
+      super(LoggingConfig, self).__init__(args)
+    File "synapse/config/ratelimiting.py", line 21, in __init__
+      super(RatelimitConfig, self).__init__(args)
+    File "synapse/config/repository.py", line 21, in __init__
+      super(ContentRepositoryConfig, self).__init__(args)
+    File "synapse/config/captcha.py", line 21, in __init__
+      super(CaptchaConfig, self).__init__(args)
+    File "synapse/config/voip.py", line 21, in __init__
+      super(VoipConfig, self).__init__(args)
+    File "synapse/config/registration.py", line 26, in __init__
+      super(RegistrationConfig, self).__init__(args)
+    File "synapse/config/metrics.py", line 21, in __init__
+      super(MetricsConfig, self).__init__(args)
+    File "synapse/config/appservice.py", line 21, in __init__
+      super(AppServiceConfig, self).__init__(args)
+    File "synapse/config/key.py", line 31, in __init__
+      args.old_signing_key_path
+    File "synapse/config/key.py", line 95, in read_old_signing_keys
+      "Error reading old signing keys."
+  synapse.config._base.ConfigError: Error reading old signing keys.
+  {noformat}
+id: '11402'
+key: SYN-366
+number: '366'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-04-29 14:47:21.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:07.0
+votes: '0'
+watches: '2'
+workflowId: '11502'
+---
+actions:
+- author: erikj
+  body: I had not upgraded syutil to the expected version.
+  created: 2015-04-29 13:50:42.0
+  id: '11604'
+  issue: '11402'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-29 13:50:42.0
+- author: markjh
+  body: This was due to synapse not picking up the correct version syutil.
+  created: 2015-04-29 14:46:42.0
+  id: '11605'
+  issue: '11402'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-04-29 14:46:42.0
+- author: markjh
+  body: I've made synapse check that it has the correct version of syutil.
+  created: 2015-04-29 14:47:21.0
+  id: '11606'
+  issue: '11402'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-04-29 14:47:21.0

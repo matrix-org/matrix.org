@@ -1,0 +1,33 @@
+---
+summary: Events need size limits
+---
+created: 2014-11-24 17:53:52.0
+creator: kegan
+description: |-
+  Nothing is preventing people uploading 5MB event content (state and non-state). This is a Bad Thing. There should be a reasonable limit in place, and it's quick to check.
+
+  This should ideally be done ASAP to prevent Malicious Mike from injecting huge events and make everyone's /initialSync take years.
+id: '10702'
+key: SYN-165
+number: '165'
+priority: '2'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-01-06 17:21:47.0
+status: '5'
+type: '2'
+updated: 2016-01-06 17:21:47.0
+votes: '0'
+watches: '1'
+workflowId: '10802'
+---
+actions:
+- author: kegan
+  body: Got bit by this on the AS API side today. This should be fairly trivial to do.
+  created: 2015-05-11 14:35:13.0
+  id: '11736'
+  issue: '10702'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-11 14:35:13.0

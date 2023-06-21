@@ -1,0 +1,22 @@
+---
+summary: Show metadata for room name changes in chat history
+---
+created: 2014-09-15 23:23:35.0
+creator: matthew
+description: ''
+id: '10000'
+key: SYWEB-1
+number: '1'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '10000'
+resolutiondate: 2014-09-16 01:49:46.0
+status: '6'
+type: '2'
+updated: 2014-09-18 23:11:18.0
+votes: '0'
+watches: '1'
+workflowId: '10379'
+---
+actions: null

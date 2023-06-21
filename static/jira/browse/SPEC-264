@@ -1,0 +1,33 @@
+---
+summary: Asymmetry of GET /rooms/:room_id/state vs. .../state/:type/:key
+---
+created: 2015-11-03 17:58:38.0
+creator: leonerd
+description: |-
+  If you {{GET}} the entire room state, what you get back is a JSON list, containing individual events. Within those events, are content keys.
+
+  If you {{GET}} a single state message, what comes back is just the value of {{content}}, not the entire event.
+
+  When we get around to designing client API v2 for this, we should redesign it for more symmetry. The specific use-case I have in mind is wanting to find the {{event_id}} of my own {{m.room.member}} event in a room. I can't just {{GET}} that one event because I'll only get the content; instead I have to {{GET}} the entire room state and iterate over it to find the appropriate event.
+id: '12078'
+key: SPEC-264
+number: '264'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:50.0
+votes: '0'
+watches: '2'
+workflowId: '12181'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/570'
+  created: 2016-10-28 16:27:50.0
+  id: '13378'
+  issue: '12078'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:50.0

@@ -1,0 +1,40 @@
+---
+summary: Would be nice to have a way to flag messages as alerts to a channel (and force notifs). A bit like /notice on IRC.
+---
+assignee: kegan
+created: 2014-09-18 15:33:59.0
+creator: matthew
+description: ''
+id: '10326'
+key: SPEC-14
+number: '14'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:26:40.0
+votes: '1'
+watches: '4'
+workflowId: '10429'
+---
+actions:
+- author: kegan
+  body: |-
+    This should be specified for v2.
+
+    Another use case would be for sticky threads. We need to be able to distinguish "important" messages basically.
+  created: 2015-01-08 17:12:59.0
+  id: '11075'
+  issue: '10326'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-08 17:12:59.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/445'
+  created: 2016-10-28 16:26:40.0
+  id: '13231'
+  issue: '10326'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:40.0

@@ -1,0 +1,132 @@
+---
+summary: IRC AS spawned a MatrixBridge1170 out of nowhere and started bridging everything in duplicate
+---
+assignee: kegan
+created: 2015-06-21 01:00:39.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11683'
+key: BOTS-61
+number: '61'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-07-31 10:31:00.0
+status: '5'
+type: '1'
+updated: 2015-07-31 10:31:00.0
+votes: '0'
+watches: '2'
+workflowId: '11784'
+---
+actions:
+- author: kegan
+  body: |-
+    Earliest reference to {{MatrixBridge1170}}
+    {code}
+    2015-06-20 23:50:26 INFO:req [5h7c7ktlv2ko8] [I->M] onMessage: irc.freenode.net from=ChanServ to=MatrixBridge1170 action={"action":"notice","protocol":"irc","text":"[##c++] a topical
+    {code}
+
+    Messages looked to be duplicated on the Matrix side only ({{#matrix}}):
+    {code}
+    MatrixBridge1170 (matrixirc@gateway/shell/matrix.org/x-juyrdlwcglvuftbg) has joined #matrix
+    * Arathorn -> sleep on it
+    * Arathorn wonders wtf MatrixBridge1170 is?
+    <Arathorn> breeding matrixbridges sounds like a very bad thing
+    <Arathorn> and now in duplicate :-/
+    <M-Eric> whee
+
+    vs
+
+    * Arathorn (IRC) -> sleep on it
+    * Arathorn (IRC) -> sleep on it
+    * Arathorn (IRC) wonders wtf MatrixBridge1170 is?
+    * Arathorn (IRC) wonders wtf MatrixBridge1170 is?
+    breeding matrixbridges sounds like a very bad thing
+    breeding matrixbridges sounds like a very bad thing
+    and now in duplicate :-/
+    and now in duplicate :-/
+    whee
+    {code}
+
+    Logs:
+
+    {code}
+    2015-06-20 23:53:11 INFO:req [2owfzoml8w6c4] [I->M] onMessage: irc.freenode.net from=Arathorn to=#matrix action={"action":"message","protocol":"irc","text":"breeding matrixbridges sounds like a very bad thing"}
+    2015-06-20 23:53:11 INFO:req [2owfzoml8w6c4] [I->M] Mapped to action: {"action":"message","protocol":"matrix","body":"breeding matrixbridges sounds like a very bad thing"}
+    2015-06-20 23:53:11 INFO:req [2owfzoml8w6c4] [I->M] Mapped nick Arathorn to {"isVirtual":true,"protocol":"matrix","userId":"@freenode_Arathorn:matrix.org"}
+    2015-06-20 23:53:11 INFO:req [2owfzoml8w6c4] [I->M] Relaying in room !cURbafjkfsMDVwdRDQ:matrix.org
+    2015-06-20 23:53:11 INFO:req [2owfzoml8w6c4] [I->M] sendAction -> {"action":"message","protocol":"matrix","body":"breeding matrixbridges sounds like a very bad thing"}
+    2015-06-20 23:53:11 DEBUG:req [2owfzoml8w6c4] [I->M] PUT https://matrix.org/_matrix/client/api/v1/rooms/!cURbafjkfsMDVwdRDQ%3Amatrix.org/send/m.room.message/m1434844391024 (@freenode_Arathorn:matrix.org) Body: {"msgtype":"m.text","body":"breeding matrixbridges sounds like a very bad thing"}
+    2015-06-20 23:53:11 INFO:req [1dim260hoq68] [I->M] onMessage: irc.freenode.net from=Arathorn to=#matrix action={"action":"message","protocol":"irc","text":"breeding matrixbridges sounds like a very bad thing"}
+    2015-06-20 23:53:11 INFO:req [1dim260hoq68] [I->M] Mapped to action: {"action":"message","protocol":"matrix","body":"breeding matrixbridges sounds like a very bad thing"}
+    2015-06-20 23:53:11 INFO:req [1dim260hoq68] [I->M] Mapped nick Arathorn to {"isVirtual":true,"protocol":"matrix","userId":"@freenode_Arathorn:matrix.org"}
+    2015-06-20 23:53:11 INFO:req [1dim260hoq68] [I->M] Relaying in room !cURbafjkfsMDVwdRDQ:matrix.org
+    2015-06-20 23:53:11 INFO:req [1dim260hoq68] [I->M] sendAction -> {"action":"message","protocol":"matrix","body":"breeding matrixbridges sounds like a very bad thing"}
+    2015-06-20 23:53:11 DEBUG:req [1dim260hoq68] [I->M] PUT https://matrix.org/_matrix/client/api/v1/rooms/!cURbafjkfsMDVwdRDQ%3Amatrix.org/send/m.room.message/m1434844391055 (@freenode_Arathorn:matrix.org) Body: {"msgtype":"m.text","body":"breeding matrixbridges sounds like a very bad thing"}
+    2015-06-20 23:53:12 DEBUG:req [1dim260hoq68] [I->M] HTTP 200 : {"event_id":"$14348443916469VTJEg:matrix.org"}
+    2015-06-20 23:53:12 DEBUG:req [1dim260hoq68] [I->M] SUCCESS - 1149 ms
+    2015-06-20 23:53:12 DEBUG:req [2owfzoml8w6c4] [I->M] HTTP 200 : {"event_id":"$14348443916468NascE:matrix.org"}
+    2015-06-20 23:53:12 DEBUG:req [2owfzoml8w6c4] [I->M] SUCCESS - 1745 ms
+    {code}
+
+    This to me smells like the {{MatrixBridge}} was knifed but didn't unhook itself, so a new connection was made and hooked itself in. Unclear why {{1170}} was chosen as the number, the IRC client library starts at 1 and then increments on nick conflicts, so it seems to me like the {{1170}} isn't coming from the IRC AS. The duplicates would've been one way only because an incoming IRC message would've been received per-connection on the IRC side, but singletons on the Matrix side (since we just grab the current bot IRC connection).
+
+    Need to check the behaviour of the IRC AS when the {{MatrixBridge}} is knifed to try to reproduce this locally.
+  created: 2015-06-22 09:42:24.0
+  id: '11896'
+  issue: '11683'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-22 09:42:24.0
+- author: kegan
+  body: |-
+    Connection info:
+    {code}
+    2015-06-20 21:42:49 ERROR:irc-server irc.freenode.net (MatrixBridge) still not connected after 15000ms. Nudging connection...
+    2015-06-20 21:42:49 DEBUG:irc-ident Port 41522 is matrixirc
+    2015-06-20 21:42:49 DEBUG:irc-ident 41522, 6667 : USERID : UNIX : matrixirc
+    2015-06-20 21:42:50 DEBUG:irc-ident CLOSE
+    2015-06-20 21:42:51 INFO:irc-server Server: irc.freenode.net (MatrixBridge) connected (local port 41522). Joining 14 channels
+
+    2015-06-20 21:43:25 ERROR:irc-server Server: irc.freenode.net (MatrixBridge) Network Error: {
+      "code": "EPIPE"
+    }
+    [... continued EPIPEs ...]
+    2015-06-20 23:50:12 ERROR:irc-server Server: irc.freenode.net (MatrixBridge) Network Error: {
+      "code": "EPIPE"
+    }
+    2015-06-20 23:50:13 ERROR:irc-server Server: irc.freenode.net (MatrixBridge) Network Error: {
+      "code": "EPIPE"
+    }
+    [...]
+    2015-06-20 23:50:18 DEBUG:irc-ident Port 39634 is matrixirc
+    2015-06-20 23:50:18 DEBUG:irc-ident 39634, 6667 : USERID : UNIX : matrixirc
+    2015-06-20 23:50:18 DEBUG:irc-ident CLOSE
+    2015-06-20 23:50:20 INFO:irc-server Server: irc.freenode.net (MatrixBridge) connected (local port 39634). Joining 14 channels
+    {code}
+
+    We should probably be doing a complete reconnect on {{EPIPE}}, but we don't seem to be.
+  created: 2015-06-22 10:18:55.0
+  id: '11900'
+  issue: '11683'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-22 10:18:55.0
+- author: kegan
+  body: Still investigating repro case on this.
+  created: 2015-06-22 15:40:17.0
+  id: '11905'
+  issue: '11683'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-22 15:40:17.0
+- author: kegan
+  body: 'Fixed on {{matrix-memberlist-mirroring}} branch: New connection logic fixes this by knifing the connection on EPIPEs, and enforcing 1 instance per client. This logic was previously different(!) for clients vs the bridge; it is now standardised.'
+  created: 2015-07-31 10:31:00.0
+  id: '12038'
+  issue: '11683'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-31 10:31:00.0

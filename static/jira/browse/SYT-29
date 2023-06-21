@@ -1,0 +1,46 @@
+---
+summary: Add torture tests of data size limits
+---
+assignee: illicitonion
+created: 2015-09-29 15:33:39.0
+creator: leonerd
+description: ''
+id: '11973'
+key: SYT-29
+number: '29'
+priority: '2'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-02 10:12:57.0
+status: '5'
+type: '2'
+updated: 2015-11-02 10:12:57.0
+votes: '0'
+watches: '2'
+workflowId: '12076'
+---
+actions:
+- author: leonerd
+  body: |-
+    A start of this now exists at
+
+      https://github.com/matrix-org/sytest/blob/develop/tests/80torture/03events.pl#L58
+
+    Likely still needs more though.
+
+    Dan - you touched it last - thoughts? :)
+  created: 2015-10-28 20:02:35.0
+  id: '12279'
+  issue: '11973'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-10-28 20:02:35.0
+- author: illicitonion
+  body: I added some. I have no intention to add any more in the near future.
+  created: 2015-11-02 10:12:44.0
+  id: '12289'
+  issue: '11973'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-11-02 10:12:44.0

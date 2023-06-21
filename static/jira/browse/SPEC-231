@@ -1,0 +1,33 @@
+---
+summary: Spec how macaroons can be used for HMAC per-request security so clients can implement it
+---
+created: 2015-09-22 21:49:47.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11913'
+key: SPEC-231
+number: '231'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-10-26 20:41:04.0
+status: '5'
+type: '2'
+updated: 2016-10-26 20:41:04.0
+votes: '0'
+watches: '2'
+workflowId: '12016'
+---
+actions:
+- author: richvdh
+  body: |-
+    We no longer require access tokens to be macaroons, and in any case they wouldn't be much good for HMACing requests. 
+
+    Closing this in favour of SPEC-112
+  created: 2016-10-26 20:40:08.0
+  id: '13225'
+  issue: '11913'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-26 20:40:08.0

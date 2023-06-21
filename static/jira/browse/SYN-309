@@ -1,0 +1,28 @@
+---
+summary: We should let the user explicitly authorise pushers, to avoid malicious apps installing a pusher that intercepts all their traffic.
+---
+created: 2015-03-13 13:09:39.0
+creator: matthew
+description: ''
+id: '11220'
+key: SYN-309
+number: '309'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:49.0
+votes: '0'
+watches: '2'
+workflowId: '11320'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1295'
+  created: 2016-11-07 18:27:49.0
+  id: '13616'
+  issue: '11220'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:49.0

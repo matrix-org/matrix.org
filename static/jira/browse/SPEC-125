@@ -1,0 +1,96 @@
+---
+summary: We need a way of specifing the default alias for a room
+---
+created: 2015-03-14 02:48:44.0
+creator: matthew
+description: ''
+id: '11232'
+key: SPEC-125
+number: '125'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-10-13 17:14:22.0
+status: '5'
+type: '2'
+updated: 2015-10-13 17:14:22.0
+votes: '1'
+watches: '5'
+workflowId: '11332'
+---
+actions:
+- author: dbkr
+  body: In fairly extensive conversation on Matrix HQ on 25/3/2015, it was decided we should indeed do this. There is still some debate as to how hard this should be tied into the identity of the room as it's presented to the users, ie. Do we show the canonical alias (or any alias) in the sidebar and/or title of a client?
+  created: 2015-03-25 15:39:10.0
+  id: '11436'
+  issue: '11232'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-25 15:39:10.0
+- author: dbkr
+  body: |-
+    Revisited today and reached a conclusions on this. We recommend clients (and implement in official clients):
+
+     * The room name is always first and foremost. The room alias is displayed afterwards in brackets where space permits in both recents list and the title of the room.
+     * If there is no room name, the alias should be displayed by itself, formatted as an alias as per...
+     * Aliases must always be formatted consistently and differently from room names, for example, a text based UI could present them in brackets.
+  created: 2015-04-13 18:27:20.0
+  id: '11487'
+  issue: '11232'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-13 18:27:20.0
+- author: erikj
+  body: There is now support for {{m.room.canonical_alias}} on the server side. This needs to be specced.
+  created: 2015-08-28 15:49:11.0
+  id: '12077'
+  issue: '11232'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-08-28 15:49:11.0
+- author: erikj
+  body: |-
+    https://github.com/matrix-org/matrix-doc/blob/master/event-schemas/schema/v1/m.room.canonical_alias
+    https://github.com/matrix-org/matrix-doc/blob/master/event-schemas/examples/v1/m.room.canonical_alias
+
+    Example:
+    {noformat}
+    {
+      "age": 242352,
+      "content": {
+        "alias": "#somewhere:localhost"
+      },
+      "state_key": "",
+      "origin_server_ts": 1431961217939,
+      "event_id": "$WLGTSEFSEF:localhost",
+      "type": "m.room.canonical_alias",
+      "room_id": "!Cuyf34gef24t:localhost",
+      "user_id": "@example:localhost"
+    }
+    {noformat}
+  created: 2015-09-22 19:45:55.0
+  id: '12150'
+  issue: '11232'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-09-22 19:45:55.0
+- author: erikj
+  body: |-
+    To set the canonical alias you simply need to set the state event as normal.
+
+    Pending stuff on server side: Set the canonical alias if specified in room creation.
+  created: 2015-09-22 19:50:02.0
+  id: '12151'
+  issue: '11232'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-09-22 19:50:02.0
+- author: kegan
+  body: This is now live.
+  created: 2015-10-13 17:14:22.0
+  id: '12253'
+  issue: '11232'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 17:14:22.0

@@ -1,0 +1,20 @@
+---
+summary: Doesn't abide by spec when sending files
+---
+created: 2015-05-27 15:20:59.0
+creator: kegan
+description: ''
+id: '11564'
+key: SYWEB-357
+number: '357'
+priority: '2'
+project: '10004'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2015-05-27 15:20:59.0
+votes: '0'
+watches: '1'
+workflowId: '11665'
+---
+actions: null

@@ -1,0 +1,92 @@
+---
+summary: Consider IPFS as an alternative to MXC for Matrix's file repository
+---
+created: 2015-09-10 11:27:20.0
+creator: matthew
+description: |-
+  Currently we use our basic mxc:// distributed URI scheme for sharing file attachments between matrix servers.  This is a very naive system where you PUT files to your local HS, and then users in the room on remote HSes request the file from their local HS, which downloads and caches a copy on their behalf in order to decentralise the contents.
+
+  There are some problems here:
+   * No streaming file transfer (yet)
+   * Caching semantics of the remote copies are up to that HS; it's relatively easy for all the HSes to decide to expire the content and lose the original forever
+   * It has no mechanism for discovering which servers have cached copies of a file, so once the originating server discards its copy there is no way for it or another server to recover a file.
+   * There is no built-in check to confirm that a file downloaded from a server matches the file that was uploaded. For example we don't include the hash of the file in the mxc uri.
+   * Your HS needs storage for all the files it's consciously cached
+   * It has no mechanism for grouping files together into a hierarchical namespace or otherwise labelling files so that they could be accessed by desktop tools.
+   * ...?
+
+  It's an interesting thought experiment to consider whether supporting IPFS URLs as well as MXC URLs in m.file (and similar) events would help with this. Clients which aren't IPFS-aware would need to go via an IPFS bridge; ones which are running an IPFS node would be able to go use IPFS itself.
+
+  Thoughts?
+id: '11865'
+key: SPEC-223
+number: '223'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:36.0
+votes: '0'
+watches: '5'
+workflowId: '11968'
+---
+actions:
+- author: matthew
+  body: '(IPFS is http://ipfs.io and currently basically a P2P decentralised DAG-based global filesystem, a bit like S3 or similar - but evolving into a potential replacement for the web itself in terms of a decentralised place for arbitrary hypertext and anything could live: https://github.com/ipfs/ipfs.  It''s evolving to support storing arbitrary JSON content, and could sprout realtime JSON transfer behaviour in future).'
+  created: 2015-09-10 11:35:43.0
+  id: '12121'
+  issue: '11865'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-10 11:35:43.0
+- author: markjh
+  body: |-
+    {quote}
+    * No streaming file transfer (yet)
+    {quote}
+
+    Since IPFS splits large files into smaller chunks it looks like it should be possible to stream files, that is have one node download a file while it is still being uploaded.
+  created: 2015-09-10 12:03:13.0
+  id: '12122'
+  issue: '11865'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-09-10 12:03:13.0
+- author: markjh
+  body: |-
+    A few questions:
+     * How would we generated thumbnails for content hosted on IPFS?
+     * How easy is it to block illegal content from a server?
+  created: 2015-09-10 14:15:09.0
+  id: '12123'
+  issue: '11865'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-09-10 14:15:09.0
+- author: erikj
+  body: Will IPFS allow us to do ACLs?
+  created: 2015-09-10 17:38:59.0
+  id: '12127'
+  issue: '11865'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-09-10 17:38:59.0
+- author: davidar
+  body: |-
+    @markjh There are plans for a blacklisting service to block illegal content from participating nodes: https://github.com/ipfs/gateway-dmca-denylist
+    @erikj IPFS doesn't yet have a permission model, but it's a planned feature.
+  created: 2015-09-12 09:52:54.0
+  id: '12129'
+  issue: '11865'
+  type: comment
+  updateauthor: davidar
+  updated: 2015-09-12 09:52:54.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/539'
+  created: 2016-10-28 16:27:36.0
+  id: '13347'
+  issue: '11865'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:36.0

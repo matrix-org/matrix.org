@@ -1,0 +1,23 @@
+---
+summary: Difficult to find out how to return to chats Settings
+---
+created: 2015-03-12 23:42:53.0
+creator: jan
+description: |-
+  When in the settings screen, it’s really difficult to figure out how to return to the chats as it replaces the main window.
+
+  That could easily be fixed by changing it from replacing the whole site to making it just a modal. That way it would be clear you can just close it to return to the chats.
+id: '11212'
+key: SYWEB-322
+number: '322'
+priority: '1'
+project: '10004'
+reporter: jan
+status: '10100'
+type: '4'
+updated: 2015-03-12 23:48:22.0
+votes: '0'
+watches: '1'
+workflowId: '11312'
+---
+actions: null

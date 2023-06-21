@@ -1,0 +1,22 @@
+---
+summary: Moznet would like a suffix for Matrix users rather than an M-prefix - e.g -M
+---
+created: 2015-09-22 22:04:38.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11921'
+key: BOTS-117
+number: '117'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-24 10:50:51.0
+status: '5'
+type: '1'
+updated: 2015-09-24 10:50:51.0
+votes: '0'
+watches: '1'
+workflowId: '12024'
+---
+actions: null

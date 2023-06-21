@@ -1,0 +1,22 @@
+---
+summary: Refactor/rearchitect the federation layers.
+---
+created: 2015-01-12 22:18:58.0
+creator: erikj
+description: ''
+id: '10926'
+key: SYN-241
+number: '241'
+priority: '3'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-07 11:46:53.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:04.0
+votes: '0'
+watches: '1'
+workflowId: '11026'
+---
+actions: null

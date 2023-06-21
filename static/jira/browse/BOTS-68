@@ -1,0 +1,38 @@
+---
+summary: would be lovely if webrtc call events were turned into a URL to the matrix webclient by the IRC AS
+---
+created: 2015-06-28 08:18:34.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11711'
+key: BOTS-68
+number: '68'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:29:59.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:29:59.0
+votes: '0'
+watches: '2'
+workflowId: '11812'
+---
+actions:
+- author: kegan
+  body: This would be preferring one client over another though.
+  created: 2015-08-17 13:23:08.0
+  id: '12061'
+  issue: '11711'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-08-17 13:23:08.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/47
+  created: 2016-06-02 10:29:59.0
+  id: '12956'
+  issue: '11711'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:29:59.0

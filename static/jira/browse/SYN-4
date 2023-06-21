@@ -1,0 +1,30 @@
+---
+summary: Homeservers sometimes take 15-45s to respond to initialSync from the browser
+---
+created: 2014-09-15 23:30:45.0
+creator: matthew
+description: ''
+id: '10007'
+key: SYN-4
+number: '4'
+priority: '4'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-15 11:18:16.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:03.0
+votes: '0'
+watches: '2'
+workflowId: '10338'
+---
+actions:
+- author: leonerd
+  body: 'A small additional point: I don''t think this is related to the browser, as the exact same behaviour is observeable via my Perl client. This still talks the HTTP REST API but doesn''t use any of the JavaScript/Angular/etc... code'
+  created: 2014-09-17 17:07:26.0
+  id: '10312'
+  issue: '10007'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-17 17:07:26.0

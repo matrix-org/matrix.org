@@ -1,0 +1,23 @@
+---
+summary: Redactions appear in recents even if they've been nuked from the room itself.
+---
+assignee: kegan
+created: 2015-02-20 01:29:49.0
+creator: matthew
+description: ''
+id: '11107'
+key: SYWEB-297
+number: '297'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-03 09:56:32.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:52.0
+votes: '0'
+watches: '1'
+workflowId: '11207'
+---
+actions: null

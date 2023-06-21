@@ -1,0 +1,30 @@
+---
+summary: Users can't set a room's canonical alias if they are connected from a different server to that of the alias
+---
+created: 2016-01-22 20:01:46.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Surely anyone with sufficient power should be able to create a canonical alias? See https://github.com/vector-im/vector-web/issues/739
+id: '12344'
+key: SYN-609
+number: '609'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:02.0
+votes: '0'
+watches: '2'
+workflowId: '12449'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1484'
+  created: 2016-11-07 18:29:02.0
+  id: '13790'
+  issue: '12344'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:02.0

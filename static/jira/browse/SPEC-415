@@ -1,0 +1,30 @@
+---
+summary: mark deprecated endpoints with their replacements
+---
+created: 2016-06-21 20:34:10.0
+creator: neb
+description: Submitted by @richvdh:sw1v.org
+id: '12714'
+key: SPEC-415
+number: '415'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-07-13 11:32:01.0
+status: '5'
+type: '1'
+updated: 2016-07-13 11:32:01.0
+votes: '0'
+watches: '2'
+workflowId: '12814'
+---
+actions:
+- author: richvdh
+  body: Fixed by https://github.com/matrix-org/matrix-doc/pull/355
+  created: 2016-07-13 11:32:01.0
+  id: '13053'
+  issue: '12714'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-13 11:32:01.0

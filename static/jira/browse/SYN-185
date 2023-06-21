@@ -1,0 +1,39 @@
+---
+summary: We need to actually check the reference hashes on received events
+---
+created: 2014-12-02 14:14:22.0
+creator: matthew
+description: |-
+  We don't check that the hash in a reference in the prev_events, auth_events or prev_state actually matches the hash of the referenced event.
+
+  This means that the origin server of an event can change the contents if it update the hashes and signatures and synapse won't notice that the event doesn't match.
+id: '10751'
+key: SYN-185
+number: '185'
+priority: '1'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:27.0
+votes: '0'
+watches: '3'
+workflowId: '10851'
+---
+actions:
+- author: markjh
+  body: Do you mean the reference hash rather than the content hash? Cause we check the content hash for events received over federation.
+  created: 2014-12-10 16:45:29.0
+  id: '10986'
+  issue: '10751'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-12-10 16:46:57.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1252'
+  created: 2016-11-07 18:27:27.0
+  id: '13570'
+  issue: '10751'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:27.0

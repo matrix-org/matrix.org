@@ -1,0 +1,20 @@
+---
+summary: shift-click to autocomplete should work on members list as well as rooms
+---
+created: 2014-12-02 13:29:55.0
+creator: matthew
+description: ''
+id: '10750'
+key: SYWEB-202
+number: '202'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2014-12-10 10:00:00.0
+votes: '0'
+watches: '1'
+workflowId: '10850'
+---
+actions: null

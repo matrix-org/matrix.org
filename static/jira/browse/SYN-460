@@ -1,0 +1,24 @@
+---
+summary: Do we really need synapses to know their public SSL cert when behind an LB?
+---
+created: 2015-08-29 17:59:25.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Can't they discover it?
+id: '11834'
+key: SYN-460
+number: '460'
+priority: '2'
+project: '10000'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-10-07 13:02:18.0
+status: '5'
+type: '2'
+updated: 2016-10-07 13:02:18.0
+votes: '0'
+watches: '1'
+workflowId: '11937'
+---
+actions: null

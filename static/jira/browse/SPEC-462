@@ -1,0 +1,30 @@
+---
+summary: Case sensitive keyword support for notifs
+---
+created: 2016-10-09 18:43:21.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  eg to distinguish baker (job) from Baker (surname)
+id: '12854'
+key: SPEC-462
+number: '462'
+priority: '4'
+project: '10001'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:49.0
+votes: '0'
+watches: '2'
+workflowId: '12954'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/714'
+  created: 2016-10-28 16:28:49.0
+  id: '13523'
+  issue: '12854'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:49.0

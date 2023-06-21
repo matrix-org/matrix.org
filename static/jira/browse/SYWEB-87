@@ -1,0 +1,36 @@
+---
+summary: /deop silently fails with bogus params
+---
+created: 2014-09-24 16:19:23.0
+creator: matthew
+description: |-
+  /deop <random string>
+
+  ...silently appears to succeed,
+id: '10387'
+key: SYWEB-87
+number: '87'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-27 17:32:37.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:02.0
+votes: '0'
+watches: '2'
+workflowId: '10490'
+---
+actions:
+- author: kegan
+  body: |-
+    Cannot reproduce.
+
+    This appears to be fixed. Doing {{/deop foo bar war}} correctly prints out a usage for {{/deop}} and doing {{/deop fuhweifugweryigfwe}} shows the request failed.
+  created: 2014-10-27 17:32:37.0
+  id: '10606'
+  issue: '10387'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 17:32:37.0

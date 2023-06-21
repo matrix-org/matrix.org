@@ -1,0 +1,35 @@
+---
+summary: Actual per-room initialSync
+---
+created: 2014-09-24 14:04:09.0
+creator: matthew
+description: |-
+  It'd be cool to have a genuine initialSync API (not just the /rooms/<room>/state API) to pull in both state & messages for a given room.
+
+  This would make it a bit faster and easier to lazy-load rooms rather than relying on the slow ugly current initialSync.
+
+  However it means we need to work out how the pagination tokens would work.
+id: '10385'
+key: SYN-69
+number: '69'
+priority: '3'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-15 11:14:16.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:26:17.0
+votes: '0'
+watches: '2'
+workflowId: '10488'
+---
+actions:
+- author: manu
+  body: 'This API is specified here: http://matrix.org/docs/api/client-server/#!/-rooms/get_room_sync_data'
+  created: 2014-09-24 15:04:59.0
+  id: '10444'
+  issue: '10385'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-24 15:04:59.0

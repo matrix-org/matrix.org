@@ -1,0 +1,28 @@
+---
+summary: With multiple devices, a message sent from one device does not appear on another
+---
+assignee: gforet
+created: 2014-12-18 15:04:51.0
+creator: manu
+description: |-
+  - Open the same room with the same user account in the iOS Matrix Console and in another Matrix client like the webclient
+  - Send a message with the other Matrix client
+
+  -> This message will not be displayed on the iOS Matrix Console.
+  Note we can see it in the  iOS Matrix Console recents.
+id: '10833'
+key: SYIOS-23
+number: '23'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-19 13:17:20.0
+status: '6'
+type: '1'
+updated: 2014-12-23 15:17:18.0
+votes: '0'
+watches: '1'
+workflowId: '10933'
+---
+actions: null

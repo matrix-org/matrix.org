@@ -1,0 +1,20 @@
+---
+summary: UI for adding custom override/underride rules
+---
+created: 2015-02-27 18:51:08.0
+creator: dbkr
+description: ''
+id: '11147'
+key: SYWEB-308
+number: '308'
+priority: '3'
+project: '10004'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2015-02-27 18:52:59.0
+votes: '0'
+watches: '1'
+workflowId: '11247'
+---
+actions: null

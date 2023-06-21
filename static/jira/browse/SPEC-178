@@ -1,0 +1,32 @@
+---
+summary: 'AS: Should be clear that the AS token chosen must be unique-per-HS'
+---
+created: 2015-06-02 13:08:06.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  else you may get a clash and everyone is sad :(
+id: '11605'
+key: SPEC-178
+number: '178'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '3'
+resolutiondate: 2015-10-13 17:43:12.0
+status: '5'
+type: '1'
+updated: 2015-10-13 17:43:18.0
+votes: '0'
+watches: '2'
+workflowId: '11706'
+---
+actions:
+- author: kegan
+  body: SPEC-207
+  created: 2015-10-13 17:43:12.0
+  id: '12258'
+  issue: '11605'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 17:43:12.0

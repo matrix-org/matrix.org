@@ -1,0 +1,22 @@
+---
+summary: demo about matxi client
+---
+created: 2016-08-11 13:41:34.0
+creator: ebelibe
+description: |-
+  Could you please tell me if matix client on Anriod support the voice call?
+  I have tried, however, the peer shows the state of the caller, but it cannot receive the call normally.
+id: '12786'
+key: SYAND-180
+number: '180'
+priority: '2'
+project: '10201'
+reporter: ebelibe
+status: '10100'
+type: '1'
+updated: 2016-08-11 13:41:34.0
+votes: '0'
+watches: '1'
+workflowId: '12886'
+---
+actions: null

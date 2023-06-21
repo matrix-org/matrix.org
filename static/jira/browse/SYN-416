@@ -1,0 +1,28 @@
+---
+summary: Add support for a test harness
+---
+created: 2015-06-16 11:48:22.0
+creator: erikj
+description: ''
+id: '11653'
+key: SYN-416
+number: '416'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:08.0
+votes: '0'
+watches: '2'
+workflowId: '11754'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1336'
+  created: 2016-11-07 18:28:08.0
+  id: '13657'
+  issue: '11653'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:08.0

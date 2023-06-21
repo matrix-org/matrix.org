@@ -1,0 +1,27 @@
+---
+summary: Add a room picture (avatar)
+---
+created: 2015-05-10 21:05:13.0
+creator: bob
+description: |-
+  As a admin of a root I want to have to the ability to set an avatar image of a room.
+
+  See SPEC-153.
+
+  In the room overview (start page) the image should be shown on the left side, before the name of the room.
+  In a room the avatar should be shown between the back arow and the name of the room. 
+  Tipping on the image should give an admin the ability to change the avatar image.
+id: '11517'
+key: SYAND-76
+number: '76'
+priority: '3'
+project: '10201'
+reporter: bob
+status: '10100'
+type: '4'
+updated: 2015-05-10 21:05:13.0
+votes: '0'
+watches: '2'
+workflowId: '11618'
+---
+actions: null

@@ -1,0 +1,22 @@
+---
+summary: Cmd/ctrl-clicking on recents entries doesn't open room in new tab
+---
+created: 2014-11-03 14:59:26.0
+creator: matthew
+description: ''
+id: '10607'
+key: SYWEB-132
+number: '132'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-08 10:24:27.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:51.0
+votes: '0'
+watches: '1'
+workflowId: '10707'
+---
+actions: null

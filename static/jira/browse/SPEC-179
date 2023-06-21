@@ -1,0 +1,28 @@
+---
+summary: API to redact or delete entire rooms, or all messages from a given user
+---
+created: 2015-06-02 14:55:37.0
+creator: matthew
+description: ''
+id: '11607'
+key: SPEC-179
+number: '179'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:23.0
+votes: '0'
+watches: '2'
+workflowId: '11708'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/511'
+  created: 2016-10-28 16:27:23.0
+  id: '13319'
+  issue: '11607'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:23.0

@@ -1,0 +1,58 @@
+---
+summary: We sometimes return old presence.
+---
+created: 2016-03-15 13:07:47.0
+creator: erikj
+description: |-
+  Symptom: A user is returned as online, despite having not been seen for 13h (and other servers claim they're offline).
+
+  {{@tdfischer:oob.systems}} 's presence is returned as:
+
+  {noformat}
+  UserPresenceState(
+    user_id=u'@tdfischer:oob.systems',
+    state='online',
+    last_active_ts=1457999510586,
+    last_federation_update_ts=1458036868682,
+    last_user_sync_ts=0L,
+    status_msg=None,
+    currently_active=False
+  )
+  {noformat}
+
+  And {{@tdfischer:oob.systems}} is not in {{unpersisted_users_changes}}. The database claims:
+
+  {noformat}
+  matrix=# select * from presence_stream where user_id = '@tdfischer:oob.systems';
+   stream_id |        user_id         | state  | last_active_ts | last_federation_update_ts | last_user_sync_ts | status_msg | currently_active 
+  -----------+------------------------+--------+----------------+---------------------------+-------------------+------------+------------------
+      806670 | @tdfischer:oob.systems | online |  1457999510586 |             1458036868682 |                 0 |            | f
+  (1 row)
+  {noformat}
+
+  this is at: 1458047255791 - Tue 2016-03-15 13:07:35 GMT on matrix.org
+
+
+  matrix.org was restarted during this period
+id: '12559'
+key: SYN-652
+number: '652'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:15.0
+votes: '0'
+watches: '2'
+workflowId: '12659'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1514'
+  created: 2016-11-07 18:29:15.0
+  id: '13821'
+  issue: '12559'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:15.0

@@ -1,0 +1,30 @@
+---
+summary: Incorrect API paths in API doc
+---
+created: 2016-04-20 21:37:01.0
+creator: dbkr
+description: ''
+id: '12636'
+key: SPEC-393
+number: '393'
+priority: '1'
+project: '10001'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2016-05-06 12:40:32.0
+status: '5'
+type: '1'
+updated: 2016-05-06 12:40:32.0
+votes: '0'
+watches: '2'
+workflowId: '12736'
+---
+actions:
+- author: richvdh
+  body: Fixed by https://github.com/matrix-org/matrix-doc/pull/329
+  created: 2016-05-06 12:40:32.0
+  id: '12909'
+  issue: '12636'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-06 12:40:32.0

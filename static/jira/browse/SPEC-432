@@ -1,0 +1,65 @@
+---
+summary: Event Quoting
+---
+created: 2016-07-18 19:14:26.0
+creator: leonerd
+description: ''
+id: '12756'
+key: SPEC-432
+number: '432'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:40.0
+votes: '0'
+watches: '2'
+workflowId: '12856'
+---
+actions:
+- author: leonerd
+  body: |-
+    See also
+      https://docs.google.com/document/d/14KT6-BFdqgG9Qyknzs6gZycWX8bPLPE-EpFNdJiAzMI/edit
+  created: 2016-07-18 19:15:35.0
+  id: '13065'
+  issue: '12756'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-07-18 19:15:35.0
+- author: richvdh
+  body: |-
+    The google doc doesn't have much info.
+
+    Why is this different to the 'quote' button we currently have?
+  created: 2016-09-27 17:42:31.0
+  id: '13141'
+  issue: '12756'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:42:31.0
+- author: leonerd
+  body: The current quote is purely a clientside text copy with some markdown formatting. It would be nice if we could also name the underlying event ID in the newly-posted one that we're quoting from, so that clients can offer a "Go back to see this event" clicky button. Of course if that was a quoted reply too then users can start walking backwards up a long chain of messages... A Thread, if you like....
+  created: 2016-09-27 18:34:09.0
+  id: '13148'
+  issue: '12756'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-09-27 18:34:09.0
+- author: richvdh
+  body: ah ha..
+  created: 2016-09-27 18:45:19.0
+  id: '13149'
+  issue: '12756'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 18:45:19.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/693'
+  created: 2016-10-28 16:28:40.0
+  id: '13502'
+  issue: '12756'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:40.0

@@ -1,0 +1,55 @@
+---
+summary: Linked emails are lost when logout then login
+---
+created: 2015-01-20 09:53:50.0
+creator: manu
+description: |-
+  When I link an email on the settings page. I can then see in list in the "Linked emails" section of this page.
+  But if I login/logout, this list becomes empty.
+
+  It seems there is no API to fetch the user's 3PIDs list.
+id: '10957'
+key: SYWEB-263
+number: '263'
+priority: '2'
+project: '10004'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-04-23 11:52:15.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:02.0
+votes: '0'
+watches: '3'
+workflowId: '11057'
+---
+actions:
+- author: kegan
+  body: |-
+    Blocked on there being an HS API to hit as per:
+    {code}
+    <M-Manu> In the webclient, if I logout and login, the list is empty.
+    [...]
+    <dbkr> and no, I don't think there is a way to list 3pids
+    <dbkr> 'cos the problem is the ID server doesn't actually know who you are
+    <dbkr> in fact yeah, the HS would track that list
+    <M-Manu> thanks dbkr. Does user's HS know user PIDs?
+    <M-Manu> ah ok
+    <M-Manu> and is there an API to get it? :)
+    <dbkr> it is told, I'm not sure whether it stores them
+    <dbkr> I don't think there's an api
+    {code}
+  created: 2015-01-20 10:01:21.0
+  id: '11153'
+  issue: '10957'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-20 10:01:21.0
+- author: dbkr
+  body: Fixed in csauth.
+  created: 2015-04-23 11:52:15.0
+  id: '11528'
+  issue: '10957'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-23 11:52:15.0

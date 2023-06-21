@@ -1,0 +1,33 @@
+---
+summary: We only rate-limit message events - surely we should rate-limit state events too.
+---
+created: 2014-10-27 10:49:13.0
+creator: matthew
+description: ''
+id: '10498'
+key: SYN-111
+number: '111'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2014-10-27 17:00:55.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:46.0
+votes: '0'
+watches: '2'
+workflowId: '10602'
+---
+actions:
+- author: kegan
+  body: |-
+    Not sure where you got that idea from.
+
+    From the source: rate limiting is applied on room creation, room non-state events and redaction events. However. they are not applied to state events, which may be an oversight.
+  created: 2014-10-27 10:53:22.0
+  id: '10586'
+  issue: '10498'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 10:53:22.0

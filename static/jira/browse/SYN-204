@@ -1,0 +1,31 @@
+---
+summary: Apply limits to requested content from C-S APIs
+---
+created: 2014-12-18 08:21:29.0
+creator: kegan
+description: |-
+  bq. <Manu2> cool. I made a initialSync for thousands messages per room to fill my permanent storage. The request times out and then, the HS was no more responding for any requests 
+
+  We should be imposing internal limits to prevent this sort of thing.
+id: '10832'
+key: SYN-204
+number: '204'
+priority: '2'
+project: '10000'
+reporter: kegan
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:30.0
+votes: '0'
+watches: '2'
+workflowId: '10932'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1258'
+  created: 2016-11-07 18:27:30.0
+  id: '13576'
+  issue: '10832'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:30.0

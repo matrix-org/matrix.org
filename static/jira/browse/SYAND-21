@@ -1,0 +1,22 @@
+---
+summary: 'Hitting resend on a message creates a duplicate message '
+---
+created: 2015-02-13 18:17:16.0
+creator: kegan
+description: ''
+id: '11053'
+key: SYAND-21
+number: '21'
+priority: '2'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-16 07:43:31.0
+status: '5'
+type: '1'
+updated: 2015-02-16 07:43:31.0
+votes: '0'
+watches: '1'
+workflowId: '11153'
+---
+actions: null

@@ -1,0 +1,25 @@
+---
+summary: 'README: a wrong port is mentioned for the Demo Web Client'
+---
+created: 2014-10-02 13:20:46.0
+creator: gforet
+description: |-
+  In section "Running The Demo Web Client", 
+  The provided port :8080 is wrong. The actual port is *8448*.
+  -> "The homeserver runs a web client by default at http://localhost:8448."
+id: '10444'
+key: SYN-87
+number: '87'
+priority: '2'
+project: '10000'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2014-10-02 14:12:51.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:36.0
+votes: '0'
+watches: '1'
+workflowId: '10548'
+---
+actions: null

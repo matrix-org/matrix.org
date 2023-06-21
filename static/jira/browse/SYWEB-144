@@ -1,0 +1,39 @@
+---
+summary: <title/> of the window should be updated with number of unread messages to make it easier to avoid missing notifs
+---
+assignee: kegan
+created: 2014-11-07 01:58:55.0
+creator: matthew
+description: ''
+id: '10633'
+key: SYWEB-144
+number: '144'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-25 15:51:15.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:53.0
+votes: '0'
+watches: '3'
+workflowId: '10733'
+---
+actions:
+- author: kegan
+  body: This may not be necessary anymore given SYWEB-57 is now implemented?
+  created: 2014-11-12 17:48:22.0
+  id: '10787'
+  issue: '10633'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-12 17:48:22.0
+- author: erikj
+  body: I still would quite like it as SYWEB-57 doesn't help if you're on a different tab.
+  created: 2014-11-12 17:49:22.0
+  id: '10788'
+  issue: '10633'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-12 17:49:22.0

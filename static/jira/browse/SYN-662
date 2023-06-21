@@ -1,0 +1,41 @@
+---
+summary: users can't see their own leave events
+---
+assignee: richvdh
+created: 2016-03-24 10:26:40.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  this means clients end up getting confused - see https://github.com/vector-im/vector-web/issues/368
+id: '12578'
+key: SYN-662
+number: '662'
+priority: '3'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-04-06 17:57:47.0
+status: '5'
+type: '1'
+updated: 2016-04-06 17:57:47.0
+votes: '0'
+watches: '2'
+workflowId: '12678'
+---
+actions:
+- author: richvdh
+  body: I'll take a look at this
+  created: 2016-03-24 17:08:45.0
+  id: '12772'
+  issue: '12578'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-24 17:08:45.0
+- author: richvdh
+  body: Fixed by https://github.com/matrix-org/synapse/pull/699
+  created: 2016-04-06 17:57:47.0
+  id: '12806'
+  issue: '12578'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-06 17:57:47.0

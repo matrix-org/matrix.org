@@ -1,0 +1,26 @@
+---
+summary: Wrong behaviour when the user closes the current room
+---
+created: 2014-10-10 21:28:17.0
+creator: gforet
+description: |-
+  When the user leaves the current room by pressing the (x) icon in recents list, the room is still displayed with the following message:
+  "You have been kicked by xxx (@xxx:matrix.org)" where xxx is the user display name
+
+  Expected behaviour: The current room should be removed from recents and next room should be opened.
+id: '10460'
+key: SYWEB-106
+number: '106'
+priority: '2'
+project: '10004'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2014-11-24 15:14:07.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:04.0
+votes: '0'
+watches: '1'
+workflowId: '10564'
+---
+actions: null

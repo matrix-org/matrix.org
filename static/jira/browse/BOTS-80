@@ -1,0 +1,90 @@
+---
+summary: 'IRC AS: Line splitting logic isn''t quite right'
+---
+created: 2015-07-15 09:53:22.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Long messages are being split, but aren't quite right, it's missing a bit in the middle.
+id: '11756'
+key: BOTS-80
+number: '80'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-07-31 11:48:29.0
+status: '5'
+type: '1'
+updated: 2015-07-31 11:48:29.0
+votes: '0'
+watches: '3'
+workflowId: '11857'
+---
+actions:
+- author: kegan
+  body: |-
+    Message in question:
+    {code}
+    {
+      "origin_server_ts": 1436949780535,
+      "user_id": "@robswain:matrix.org",
+      "event_id": "$1436949780128419fmBue:matrix.org",
+      "content": {
+        "body": "the suggestion for multi-way is to have an AS that handles some new events like - start / stop conference that are used for provisioning resources and obtaining some kind of conference id and pin code or whatever. the information necessary to initiate signalling with the conferencing resources then gets sent back to the room as state. the client sees the state change and then knows that the resources are available and can make it possible to join or join automatically depending on desired client behaviour.",
+        "msgtype": "m.text"
+      },
+      "room_id": "!cURbafjkfsMDVwdRDQ:matrix.org",
+      "type": "m.room.message",
+      "age": 1153
+    } 
+    {code}
+
+    IRC side:
+    {code}
+    <M-RobSwain> the suggestion for multi-way is to have an AS that handles some new events like - start / stop conference that are used for provisioning resources and obtaining some kind of conference id and pin code or whatever. the information necessary to initiate signalling with the conferencing resources then gets sent back to the room as state. the client sees the state change and then knows that the resources are available and can
+    <M-RobSwain> automatically depending on desired client behaviour.
+    {code}
+
+    Missing bit:
+    {code}
+    [resources are available and can]    make it possible to join or join  [automatically depending on desired client behaviour.]
+    {code}
+  created: 2015-07-15 09:55:35.0
+  id: '11990'
+  issue: '11756'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-15 09:55:35.0
+- author: erikj
+  body: 'This may be caused by ridiculously long hosts for IRC users. For example M-RobSwain is: {{M-RobSwain!robswain__@gateway/shell/matrix.org/x-qdcppabolkczhdvj}}, which is 65 chars.'
+  created: 2015-07-15 09:57:02.0
+  id: '11991'
+  issue: '11756'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-07-15 09:57:02.0
+- author: kegan
+  body: I think you're right. It's probably miscalculating the number of bytes available for payload, because they don't check with the server's idea of their hostmask (which can change during the session e.g. due to authentication) to calculate the length of the preamble as seen on the receiving end. Should be able to run some local tests to confirm this .
+  created: 2015-07-31 10:43:22.0
+  id: '12042'
+  issue: '11756'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-31 10:43:22.0
+- author: kegan
+  body: https://github.com/martynsmith/node-irc/issues/288
+  created: 2015-07-31 10:46:35.0
+  id: '12043'
+  issue: '11756'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-31 10:46:35.0
+- author: kegan
+  body: Fixed on https://github.com/matrix-org/node-irc
+  created: 2015-07-31 11:48:29.0
+  id: '12045'
+  issue: '11756'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-31 11:48:29.0

@@ -1,0 +1,29 @@
+---
+summary: 'UX: Enable/disable icon for push notifications isn''t clear'
+---
+created: 2015-06-12 09:35:08.0
+creator: kegan
+description: |-
+  After not looking at the push notification section of the web client for months, then going into it for the second time, I was surprised at how unintuitive the play/pause icons are. It's really hard to see at a glance if a notification is on or off.
+
+  I think it would be better to have an on/off toggle rather than play/pause like so:
+  {code}
+  +---------------+
+  | ON XX____ OFF | Notify me when people join or leave rooms
+  +---------------+
+  {code}
+  Coupled with colour coding (e.g. green/red) it makes it easier to see at a glance which things are active, without trying to scan down a list of teeny tiny icons like we have to currently.
+id: '11642'
+key: SYWEB-372
+number: '372'
+priority: '3'
+project: '10004'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2015-06-12 09:35:08.0
+votes: '0'
+watches: '1'
+workflowId: '11743'
+---
+actions: null

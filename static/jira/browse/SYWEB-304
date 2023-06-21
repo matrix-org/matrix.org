@@ -1,0 +1,44 @@
+---
+summary: Improve push rule UI and add override / underride rules.
+---
+created: 2015-02-25 14:31:45.0
+creator: dbkr
+description: ''
+id: '11140'
+key: SYWEB-304
+number: '304'
+priority: '3'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-02-27 18:50:21.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:57.0
+votes: '0'
+watches: '1'
+workflowId: '11240'
+---
+actions:
+- author: dbkr
+  body: |-
+    Push rule UI now has:
+     * Toggles for server default rules
+     * Ability to set sound for content, room & sender rules
+     * More feedback and error handling
+
+    No custom override / underride rule adding yet, but this should cover most of the important bits of push.
+  created: 2015-02-27 18:49:25.0
+  id: '11322'
+  issue: '11140'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-02-27 18:49:25.0
+- author: dbkr
+  body: Actually, going to make a separate bug for custom override/underride rules.
+  created: 2015-02-27 18:50:21.0
+  id: '11323'
+  issue: '11140'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-02-27 18:50:21.0

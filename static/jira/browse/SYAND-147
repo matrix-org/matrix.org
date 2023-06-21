@@ -1,0 +1,35 @@
+---
+summary: The app appears to report presence as online when it receives a push.
+---
+created: 2015-10-20 00:44:04.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Surely the act of receiving a push shouldn't make presence claim the user is online and non-idle
+id: '12031'
+key: SYAND-147
+number: '147'
+priority: '2'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-11-05 07:23:47.0
+votes: '0'
+watches: '2'
+workflowId: '12134'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    It is a API V1 issue (feature?).
+
+    When a push is received, the android client triggers an event? request: The server assumes that the user is online because of its sending.
+
+    It should be fixed when the API V2 will be supported.
+  created: 2015-11-05 07:23:47.0
+  id: '12319'
+  issue: '12031'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-11-05 07:23:47.0

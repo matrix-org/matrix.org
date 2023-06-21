@@ -1,0 +1,22 @@
+---
+summary: conf user can get wedged in a room
+---
+created: 2015-10-26 09:47:52.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  A particular sequence of invites/candidates can result in the bridge thinking there is a user on the conf when really there isn't. Manifested as the voip user never leaving the group chat room. It looks like it wedged after receiving an m.call.invite, which was never passed on to FS. Need to check state machine edge cases.
+id: '12041'
+key: BOTS-128
+number: '128'
+priority: '2'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-10-26 09:47:52.0
+votes: '0'
+watches: '1'
+workflowId: '12144'
+---
+actions: null

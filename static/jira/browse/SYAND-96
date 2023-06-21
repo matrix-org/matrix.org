@@ -1,0 +1,73 @@
+---
+summary: Support for self-signed certificates.
+---
+created: 2015-07-09 11:00:08.0
+creator: erikj
+description: |-
+  Currently by default new installations of Synapse generate and use self-signed SSL certificates.  This works when using the web client since browsers will ask the user whether they should trust a certificate. IOS supports this as it allows you to import certificates.
+
+  Possible solutions:
+
+  * -Import using CADroid- this doesn't work apparently. Trying: https://coderwall.com/p/wv6fpq/add-self-signed-ssl-certificate-to-android-for-browsing
+  * -See if accepting the certificate in a browser on the phone propagates to the app.-
+  * Add support in the app to import certificates for that connection (https://developer.android.com/training/articles/security-ssl.html#SelfSigned ) 
+  * Add support in the app to turn off certificate checking.
+  * Add support in the app for prompting a user if they want to trust the server certificate returned by the server (displaying the fingerprints)
+
+  I do not know which of those options a) work and b) are feasible.
+id: '11738'
+key: SYAND-96
+number: '96'
+priority: '2'
+project: '10201'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2015-07-13 08:32:32.0
+votes: '0'
+watches: '4'
+workflowId: '11839'
+---
+actions:
+- author: erikj
+  body: |-
+    An amusing way of solving this would be to have the homeserver output a QR code with the URL and SSL fingerprint, and then have the android app consume the QR code to automatically connect.
+
+    Ooooh, we could also have the QR codes include a one time key to log into the account!
+  created: 2015-07-09 11:28:49.0
+  id: '11976'
+  issue: '11738'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-07-09 11:28:49.0
+- author: skaverat
+  body: |-
+    I played around with certificate generation and created following script.
+
+    It creates a CA certificate with the "CA:true" constraint, allowing android to import the certificate.
+
+    https://gist.github.com/SkaveRat/9fce0c63458c369a9095
+
+    The important part is "-extensions v3_ca" while creating the CA
+  created: 2015-07-11 18:53:47.0
+  id: '11982'
+  issue: '11738'
+  type: comment
+  updateauthor: skaverat
+  updated: 2015-07-11 18:53:47.0
+- author: matthew
+  body: Presumably we could have synapse autogenerate its self-signed keys with the CA:true constraint turned on already?
+  created: 2015-07-12 14:28:57.0
+  id: '11983'
+  issue: '11738'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-12 14:29:10.0
+- author: neb
+  body: 'By @kegan:matrix.org: there is no reason why we cannot make the app ask for a .crt from the device storage. Alternatively, we may be able to automatically add the key by hitting the hs url (after a user prompt with fingerprint) to avoid intermediary files. How sensibly that can be done I dont know.'
+  created: 2015-07-13 08:32:32.0
+  id: '11985'
+  issue: '11738'
+  type: comment
+  updateauthor: neb
+  updated: 2015-07-13 08:32:32.0

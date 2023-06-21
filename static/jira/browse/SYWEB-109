@@ -1,0 +1,31 @@
+---
+summary: No error displayed if HS rejects the username in registration
+---
+assignee: kegan
+created: 2014-10-24 19:05:24.0
+creator: dbkr
+description: ''
+id: '10487'
+key: SYWEB-109
+number: '109'
+priority: '1'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2014-10-27 11:59:36.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:02.0
+votes: '0'
+watches: '2'
+workflowId: '10591'
+---
+actions:
+- author: kegan
+  body: Reproduced locally.
+  created: 2014-10-27 11:55:06.0
+  id: '10590'
+  issue: '10487'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 11:55:06.0

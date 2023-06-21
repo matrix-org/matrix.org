@@ -1,0 +1,36 @@
+---
+summary: We lack a way to publish public metadata about a room
+---
+created: 2015-07-08 19:54:28.0
+creator: matthew
+description: ''
+id: '11736'
+key: SPEC-200
+number: '200'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:30.0
+votes: '0'
+watches: '2'
+workflowId: '11837'
+---
+actions:
+- author: matthew
+  body: It'd also be nice if we could put this in the publicrooms API somehow, and let people query on metadata (e.g. 'room type')
+  created: 2015-07-08 19:56:48.0
+  id: '11974'
+  issue: '11736'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-08 19:56:48.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/526'
+  created: 2016-10-28 16:27:30.0
+  id: '13334'
+  issue: '11736'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:30.0

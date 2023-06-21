@@ -1,0 +1,82 @@
+---
+summary: IRC AS can fall silent yet still ack messages
+---
+created: 2016-01-20 11:38:35.0
+creator: kegan
+description: |-
+  I was looking into why the following message was not relayed from Matrix to IRC (#matrix FN):
+  {code}
+  {
+    "origin_server_ts": 1453246685337, // Tue 2016-01-19 23:38:05 GMT
+    "sender": "@LeoNerd:matrix.org",
+    "event_id": "$145324668519864fwpTO:matrix.org",
+    "age": 36640140,
+    "unsigned": {
+      "age": 36640140
+    },
+    "content": {
+      "body": "Are we still on?",
+      "msgtype": "m.text"
+    },
+    "room_id": "!cURbafjkfsMDVwdRDQ:matrix.org",
+    "user_id": "@LeoNerd:matrix.org",
+    "type": "m.room.message"
+  }
+  {code}
+
+  I do not know which txn ID this event was bundled into. What I do know is that the IRC AS was 200 OKing /transactions/\{txnId\} requests, but they were taking a while around this time. Some timings:
+
+  {code}
+  23:37:48 - txn 9556413
+  23:37:52 - OK (4s)
+  23:38:00 - txn 9556414
+  23:38:09 - OK (9s)
+  23:38:09 - txn 9556415
+  23:38:19 - OK (10s)
+  23:38:19 - txn 9556416
+  23:38:23 - OK (4s)
+  {code}
+
+  Grepping the IRC AS logs showed nothing for these transactions. It turns out there are no logs at all from 2016-01-19 21:01:04 until it was restarted at 2016-01-20 00:36:24.
+
+  Several issues here:
+   - Why no logs?
+   - Why no bridging (Synapse seems to think it got to the AS, but without logs we don't know why it failed to bridge)
+   - Why so long? These requests should be responding much quicker than in the seconds.
+
+  There's also the following (this happened to a bunch of messages):
+  {code}
+  2016-01-19 20:55:46 INFO:req [7h92q3cw42gwc] [I->M] onMessage: irc.freenode.net from=zapotah (null@irc.freenode.net) to=##networking
+  2016-01-19 20:55:59 ERROR:req [7h92q3cw42gwc] [I->M] DELAYED - Taking too long. (>10000ms)
+  2016-01-19 21:01:01 ERROR:req [7h92q3cw42gwc] [I->M] DEAD - Removing request (>310000ms)
+  {code}
+
+  No other logs for that request ID, but other messages were still flowing, so possible edge case code path?
+
+  Prometheus logs around this time show Something Bad happening around 20:20. The success rate of messages drops significantly (the freenode bridge crying for help) and the delay/fail rate increases (from delayed/dead messages). This persists until the bridge restarts. Logs around this time shows it all starts to kick off at 2016-01-19 20:22:39. There's nothing obvious in the logs that indicates that anything is catastrophically wrong.
+
+  I speculate that something (perhaps the DB?) failed abruptly which then caused all of this. I think this because the AS was still 200 OKing transactions (this never hits the DB, it just emits the event then sends the OK) and there's no logging at all beyond the initial event emission (and then timeouts for delay/dead). This would make sense if the DB fell over because the first thing {{onMessage}} does is hit the DB for the list of mapped rooms {{getIrcChannelsForRoomId}}
+id: '12323'
+key: BOTS-155
+number: '155'
+priority: '1'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-06-02 10:02:39.0
+status: '6'
+type: '1'
+updated: 2016-06-02 10:02:39.0
+votes: '0'
+watches: '1'
+workflowId: '12428'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/36
+  created: 2016-06-02 10:02:39.0
+  id: '12938'
+  issue: '12323'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:02:39.0

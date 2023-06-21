@@ -1,0 +1,28 @@
+---
+summary: search API lies and claims that it takes a v2 filter
+---
+created: 2015-12-11 02:37:03.0
+creator: matthew
+description: ''
+id: '12202'
+key: SPEC-301
+number: '301'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:03.0
+votes: '0'
+watches: '2'
+workflowId: '12305'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/598'
+  created: 2016-10-28 16:28:03.0
+  id: '13406'
+  issue: '12202'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:03.0

@@ -1,0 +1,20 @@
+---
+summary: Animated GIF playback should be reset when you tap on a thumbnail to view it fullscreen.
+---
+created: 2015-01-28 00:14:08.0
+creator: matthew
+description: ''
+id: '10984'
+key: SYWEB-265
+number: '265'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-01-28 00:14:08.0
+votes: '0'
+watches: '1'
+workflowId: '11084'
+---
+actions: null

@@ -1,0 +1,34 @@
+---
+summary: Fudge around flickering during echos
+---
+created: 2014-12-15 16:09:10.0
+creator: matthew
+description: |-
+  [16:46]  <Arathorn> right. as a quick hacky fix, would it be possible to just to track whether we're waiting for our PUT to return, and if so, assume that anything that comes in from my user id with the same content in the eventstream is indeed an echo?
+  [16:46]  <Arathorn> as it looks like the proper fix is going to be a while out yet
+  [16:46]  <Arathorn> as it's got entangled with generally reviewing c-s API
+  [16:48]  <giom> ok in this case
+  [16:48]  <Arathorn> thanks.
+  [16:48]  <Arathorn> sorry for having to work around the crappiness.
+  [16:48]  <Arathorn> kegan: similarly on the webclient?
+  [16:48]  <giom> Note if the user send twice the same msg
+  [16:49]  <giom> I will remove both (local echo) if we receive one of them from stream
+  [16:49]  <kegan> yeah I can do that.
+  [16:50]  <Arathorn> giom: well, either we remove them or we delay processing them until the send is complete
+  [16:50]  <Arathorn> (which was mjark's suggestion)
+  [16:51]  <Arathorn> which is cleaner, but a bit more of a pain to implement, i imagine.
+  [16:54]  <giom> ok will see :)
+id: '10818'
+key: SYWEB-233
+number: '233'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2014-12-15 16:09:10.0
+votes: '0'
+watches: '1'
+workflowId: '10918'
+---
+actions: null

@@ -1,0 +1,32 @@
+---
+summary: Test message redactions
+---
+created: 2015-09-29 15:08:37.0
+creator: leonerd
+description: ''
+id: '11965'
+key: SYT-21
+number: '21'
+priority: '2'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-06 19:29:49.0
+status: '5'
+type: '2'
+updated: 2015-11-06 19:29:49.0
+votes: '0'
+watches: '1'
+workflowId: '12068'
+---
+actions:
+- author: leonerd
+  body: |-
+    This was in fact already tested:
+        https://github.com/matrix-org/sytest/blob/develop/tests/30rooms/10redactions.pl#L38
+  created: 2015-11-06 19:29:49.0
+  id: '12352'
+  issue: '11965'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-11-06 19:29:49.0

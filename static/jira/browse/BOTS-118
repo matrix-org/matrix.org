@@ -1,0 +1,32 @@
+---
+summary: 'appservice-node: Shift url setting to method calls'
+---
+created: 2015-09-23 14:08:39.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  A number of people (myself included) tend to pass the wrong url to the constructor to AppServiceRegistration, we can clarify this by changing this to a no-arg constructor and explicitly exposing setAppServiceUrl and setHomeserverUrl which removes ambiguity
+id: '11934'
+key: BOTS-118
+number: '118'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-24 11:17:15.0
+status: '5'
+type: '1'
+updated: 2015-09-24 11:17:15.0
+votes: '0'
+watches: '2'
+workflowId: '12037'
+---
+actions:
+- author: kegan
+  body: 0.2.3
+  created: 2015-09-24 11:17:15.0
+  id: '12165'
+  issue: '11934'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-24 11:17:15.0

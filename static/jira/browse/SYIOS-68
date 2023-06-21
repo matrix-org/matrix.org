@@ -1,0 +1,40 @@
+---
+summary: Rageshake needs to include device info and logfiles
+---
+created: 2015-02-09 10:19:19.0
+creator: matthew
+description: ''
+id: '11012'
+key: SYIOS-68
+number: '68'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-20 15:56:37.0
+status: '5'
+type: '2'
+updated: 2015-02-20 15:56:37.0
+votes: '0'
+watches: '2'
+workflowId: '11112'
+---
+actions:
+- author: gforet
+  body: Let's consider SYIOS-87 to add Logs files to Rageshake.
+  created: 2015-02-20 15:55:18.0
+  id: '11306'
+  issue: '11012'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-20 15:55:18.0
+- author: gforet
+  body: |-
+    Device info has been added.
+    Log files will be added soon - see SYIOS-87.
+  created: 2015-02-20 15:56:37.0
+  id: '11307'
+  issue: '11012'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-20 15:56:37.0

@@ -1,0 +1,58 @@
+---
+summary: Outbound federation `/get_missing_events` violates (non-existent) spec
+---
+created: 2015-12-18 16:49:35.0
+creator: leonerd
+description: |-
+  In certain situations[1] synapse can make an outbound federation request to an endpoint called {{/get_missing_events}}. A typical request looks like
+
+  {noformat}
+  Received request:
+    POST /_matrix/federation/v1/get_missing_events/!ssTibPPiaXVVxszhMf:localhost:8001 HTTP/1.1
+    Authorization: X-Matrix origin=localhost:8001,key="ed25519:auto",sig="sCRTGESmzbO1qL9KTAeqbAhTk/mcOCXyD1CGNJhMsQr/07TSuIvOwxxKIzGZ2hpOu6ieYZhXlZrT2dMr2SuPBw"
+    Host: localhost:38038
+    User-Agent: Synapse/0.12.0-rc2 (b=develop,10f82b4)
+    Content-Length: 106
+    Content-Type: application/json
+    
+    {"earliest_events":["$0:localhost:38038"],"latest_events":["$2:localhost:38038"],"limit":10,"min_depth":1}
+  {noformat}
+
+  This endpoint isn't at all specified, but this isn't the subject of this bug. This request is a {{POST}} whose body lacks an {{origin}} field. The federation spec says all {{POST}} bodies must have one, and this will be checked against the Auth header. In the above scenario, the federation server built into sytest rejects it immediately with
+
+  {noformat}
+  Sending response to /_matrix/federation/v1/get_missing_events/!ssTibPPiaXVVxszhMf:localhost:8001:
+    403 Forbidden
+    Content-Length: 94
+    Content-Type: application/json
+    
+    {"error":"'origin' in Authorization header does not match content","errcode":"M_UNAUTHORIZED"}
+  {noformat}
+
+  ---
+
+  [1]: Such as receiving an event whose {{prev_events}} field lists an event the synapse doesn't yet have.
+id: '12226'
+key: SYN-556
+number: '556'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-12-18 18:35:39.0
+status: '5'
+type: '1'
+updated: 2015-12-18 18:35:39.0
+votes: '0'
+watches: '1'
+workflowId: '12329'
+---
+actions:
+- author: leonerd
+  body: Actually on a closer inspection, it's OK to lack an {{origin}} field entirely. The auth check just wants to ensure that if there's a field, it matches the one in the header.
+  created: 2015-12-18 18:35:39.0
+  id: '12482'
+  issue: '12226'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-12-18 18:35:39.0

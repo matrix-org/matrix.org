@@ -1,0 +1,44 @@
+---
+summary: Avatar & displayname missing in the "More" tab
+---
+assignee: m-ylecollen
+created: 2014-12-24 20:08:05.0
+creator: matthew
+description: ''
+id: '10884'
+key: SYIOS-42
+number: '42'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-05 08:22:14.0
+status: '5'
+type: '1'
+updated: 2015-01-05 08:22:14.0
+votes: '0'
+watches: '2'
+workflowId: '10984'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    It works on my side.
+
+    Is it possible that there was a network issue while downloading the avatar & display name ?
+
+    They are only downloaded when the "more" tab is selected and the initial sync / catchup is done
+  created: 2015-01-05 07:31:10.0
+  id: '11046'
+  issue: '10884'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-05 07:42:31.0
+- author: m-ylecollen
+  body: The avatar and the displayname are retrieved from the local storage until the initial sync is done.
+  created: 2015-01-05 08:22:14.0
+  id: '11047'
+  issue: '10884'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-05 08:22:14.0

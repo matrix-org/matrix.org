@@ -1,0 +1,75 @@
+---
+summary: Spurious "Can't load user profile" errors in feedback whenever you try to call someone
+---
+assignee: kegan
+created: 2014-12-01 15:19:03.0
+creator: matthew
+description: |-
+  Presumably related to avatars never loading when you call someone.
+
+  Also, we should kill the feedback section entirely in favour of the bootstrap error alerts that Kegan's using elsewhere in the app.
+id: '10747'
+key: SYWEB-201
+number: '201'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-05 17:40:36.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:57.0
+votes: '0'
+watches: '2'
+workflowId: '10847'
+---
+actions:
+- author: kegan
+  body: This piece of code isn't looking for existing profiles from the User. Will fix that. I am not however going to change this particular message to be an error dialog, given it is secondary to the intended action (calling someone) and could get rather annoying...
+  created: 2014-12-04 10:06:34.0
+  id: '10945'
+  issue: '10747'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 10:06:34.0
+- author: matthew
+  body: if we're still expecting the feedback div to be used, we need to change where it sits, as currently it's half-off the bottom of the page.  how often is it now being used?
+  created: 2014-12-04 12:56:24.0
+  id: '10946'
+  issue: '10747'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-04 12:56:24.0
+- author: kegan
+  body: |-
+    Currently, {{feedback}} is used for:
+
+    _Ones marked with (X) are ones I propose to move to error dialogs._
+
+    Room page:
+     - Successfully inviting someone to a room (X - Success dialog)
+     - Failing to upload image/file (X)
+
+    Homepage:
+     - Failing to load your own profile info
+
+    Settings:
+     - Failing to upload image (X)
+     - Failing to load your own profile info
+
+    User page:
+     - Failing to create a room with the target user. (X)
+  created: 2014-12-04 13:12:45.0
+  id: '10947'
+  issue: '10747'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 13:12:45.0
+- author: matthew
+  body: Okay, so we need to put it somewhere more sensible (or shrink the font-size so it fits). will just go fix it now.
+  created: 2014-12-04 14:47:01.0
+  id: '10951'
+  issue: '10747'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-04 14:47:01.0

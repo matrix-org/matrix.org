@@ -1,0 +1,38 @@
+---
+summary: Why do we show the captcha both at signup and validation?
+---
+created: 2014-12-04 00:29:19.0
+creator: matthew
+description: ''
+id: '10770'
+key: SYWEB-213
+number: '213'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-23 11:55:14.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:52.0
+votes: '0'
+watches: '3'
+workflowId: '10870'
+---
+actions:
+- author: kegan
+  body: 'This is just a visibility bug: It''s the same captcha on the validate screen and the signup screen.'
+  created: 2014-12-04 08:37:18.0
+  id: '10940'
+  issue: '10770'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 08:37:18.0
+- author: dbkr
+  body: Fixed in csauth.
+  created: 2015-04-23 11:55:14.0
+  id: '11530'
+  issue: '10770'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-23 11:55:14.0

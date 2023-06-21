@@ -1,0 +1,30 @@
+---
+summary: Ability to transfer arbitrary files.
+---
+created: 2014-11-07 00:41:48.0
+creator: matthew
+description: ''
+id: '10629'
+key: SYWEB-142
+number: '142'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-24 15:17:37.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:52.0
+votes: '0'
+watches: '2'
+workflowId: '10729'
+---
+actions:
+- author: kegan
+  body: Matthew did this.
+  created: 2014-11-24 15:17:37.0
+  id: '10823'
+  issue: '10629'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-24 15:17:37.0

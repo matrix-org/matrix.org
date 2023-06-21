@@ -1,0 +1,23 @@
+---
+summary: Partial text input should be remembered per-room
+---
+assignee: gforet
+created: 2015-02-13 15:13:51.0
+creator: matthew
+description: ''
+id: '11048'
+key: SYIOS-79
+number: '79'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-16 09:37:31.0
+status: '5'
+type: '2'
+updated: 2015-02-16 09:37:31.0
+votes: '0'
+watches: '1'
+workflowId: '11148'
+---
+actions: null

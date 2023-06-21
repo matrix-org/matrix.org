@@ -1,0 +1,22 @@
+---
+summary: Synapse should give a more helpful error if you try to join a room by id that the HS isn't part of.
+---
+created: 2014-11-18 20:16:54.0
+creator: markjh
+description: ''
+id: '10675'
+key: SYN-154
+number: '154'
+priority: '3'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-01-07 15:22:41.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:07.0
+votes: '0'
+watches: '1'
+workflowId: '10775'
+---
+actions: null

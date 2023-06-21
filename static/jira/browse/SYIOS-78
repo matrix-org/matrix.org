@@ -1,0 +1,31 @@
+---
+summary: New signups aren't showing their identicons
+---
+assignee: manu
+created: 2015-02-11 22:19:22.0
+creator: matthew
+description: ''
+id: '11037'
+key: SYIOS-78
+number: '78'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-18 17:07:43.0
+status: '5'
+type: '1'
+updated: 2015-02-18 17:07:43.0
+votes: '0'
+watches: '2'
+workflowId: '11137'
+---
+actions:
+- author: manu
+  body: Fixed in https://github.com/matrix-org/matrix-ios-sdk/commit/34b6f9bce61af5c19756ecd49a6a0a5c639da48c
+  created: 2015-02-18 17:07:43.0
+  id: '11289'
+  issue: '11037'
+  type: comment
+  updateauthor: manu
+  updated: 2015-02-18 17:07:43.0

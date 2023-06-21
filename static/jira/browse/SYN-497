@@ -1,0 +1,30 @@
+---
+summary: HS apparently doesn't block when clients provision an AS-backed virtual room
+---
+created: 2015-10-06 19:25:21.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  jfred reports whilst building matrix-xmpp-bridge that when a client asks to join a non-existent alias backed by an AS, the HS doesn't block until the AS has created the room. As a result, the client sees a 404
+id: '12004'
+key: SYN-497
+number: '497'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:27.0
+votes: '0'
+watches: '2'
+workflowId: '12107'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1397'
+  created: 2016-11-07 18:28:27.0
+  id: '13706'
+  issue: '12004'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:27.0

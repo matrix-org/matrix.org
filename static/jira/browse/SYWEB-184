@@ -1,0 +1,24 @@
+---
+summary: Move invite/join options to the main screen
+---
+created: 2014-11-27 09:24:37.0
+creator: kegan
+description: |-
+  Erik wrote:
+  bq. I also dislike the fact that the leave and invite buttons have been moved to the small settings buttons, probably mostly because you barely notice them at the top due to all the state events
+
+  I agree with this, having a door with an arrow for leave, and a person with a + for invite next to the settings cog would be good I think.
+id: '10722'
+key: SYWEB-184
+number: '184'
+priority: '2'
+project: '10004'
+reporter: kegan
+status: '10100'
+type: '4'
+updated: 2015-03-03 17:29:37.0
+votes: '0'
+watches: '1'
+workflowId: '10822'
+---
+actions: null

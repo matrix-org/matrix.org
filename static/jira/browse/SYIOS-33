@@ -1,0 +1,33 @@
+---
+summary: Current dev shows lots of rooms with blank recents entries which crash on entry
+---
+assignee: gforet
+created: 2014-12-21 22:18:51.0
+creator: matthew
+description: |-
+  This is strange because blank recents have been fixed in previous build.
+  BTW we need to investigate the reason of the crash. Is it possible to be invited in one of these rooms?
+id: '10851'
+key: SYIOS-33
+number: '33'
+priority: '1'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-23 14:11:22.0
+status: '5'
+type: '1'
+updated: 2014-12-23 14:11:22.0
+votes: '0'
+watches: '2'
+workflowId: '10951'
+---
+actions:
+- author: gforet
+  body: reproduced
+  created: 2014-12-22 16:51:17.0
+  id: '11025'
+  issue: '10851'
+  type: comment
+  updateauthor: gforet
+  updated: 2014-12-22 16:51:17.0

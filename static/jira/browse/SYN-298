@@ -1,0 +1,65 @@
+---
+summary: 'First time folks join #matrix:matrix.org on a newly federated homeserver, state seems to go missing'
+---
+assignee: erikj
+created: 2015-03-08 23:29:33.0
+creator: matthew
+description: |-
+  [22:59]  <M-DJSundog> if it makes you feel better, I can only see avatars, no names
+  [23:00]  <M-matthew> DJSundog: ererereerm, that's exciting. in the webclient? what browser?
+  [23:00]  <M-matthew> DJSundog: and assuming it's the webclient, does it magically fix itself if you refresh?
+  [23:01]  <M-DJSundog> Chrome 41 on Mac, and I'll let you know right after I refresh right after I send this event
+  [23:01]  <M-matthew> chrome on osx should be fine. i suspect you've hit a weird caching bug a few people have reported
+  [23:01]  * M-matthew bugs it
+  [23:02]  <M-DJSundog> Yes, it did. Also adds the room name (which was just my name before, hence my confusion) and all the pretty presence pips
+id: '11187'
+key: SYN-298
+number: '298'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-01-05 15:29:53.0
+status: '5'
+type: '1'
+updated: 2016-01-05 15:29:53.0
+votes: '0'
+watches: '3'
+workflowId: '11287'
+---
+actions:
+- author: djsundog
+  body: 'If it helps, I also grabbed a screenshot of what I saw on my end before reloading the page: https://dl.dropboxusercontent.com/u/1317/matrix-client.png'
+  created: 2015-03-09 01:29:24.0
+  id: '11362'
+  issue: '11187'
+  type: comment
+  updateauthor: djsundog
+  updated: 2015-03-09 01:29:24.0
+- author: matthew
+  body: that is very useful - thanks. looks like the entire state for the room (other than the timeline itself) went mysteriously missing.
+  created: 2015-03-09 01:34:18.0
+  id: '11363'
+  issue: '11187'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-09 01:34:18.0
+- author: matthew
+  body: "This is still happening...\nsteinex joined\t##newhere:matrix.org\nJul 3 20:02 mhh, why is this channel shown as !NDppukZLHbKAjWWQIe:matrix.org? ;-)\t\nJul 3 20:03 <Matthew> hm, try hitting refresh in the webclient - it's a client bug (sort of)"
+  created: 2015-07-03 23:27:37.0
+  id: '11966'
+  issue: '11187'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-03 23:27:37.0
+- author: steinex
+  body: |-
+    FWIW:
+
+    I see the same erroneous room name inside the iOS Client, so it can't be a bug in the web client per se. Refreshing the web client does not help in my case.
+  created: 2015-07-12 15:22:02.0
+  id: '11984'
+  issue: '11187'
+  type: comment
+  updateauthor: steinex
+  updated: 2015-07-12 15:22:02.0

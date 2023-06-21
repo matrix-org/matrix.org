@@ -1,0 +1,22 @@
+---
+summary: We need a VoIP echo/test answerphone service
+---
+created: 2015-08-29 16:05:34.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  suggest we just use FS and verto
+id: '11833'
+key: BOTS-99
+number: '99'
+priority: '2'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-08-29 16:05:34.0
+votes: '0'
+watches: '1'
+workflowId: '11936'
+---
+actions: null

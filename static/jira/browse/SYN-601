@@ -1,0 +1,57 @@
+---
+summary: Allow the deletion of room event history
+---
+created: 2016-01-18 14:40:00.0
+creator: erikseres
+description: |-
+  Would it be possible/not against the general conceptual design of Matrix to implement an API or provide a maintenance feature that allows to delete room history that is older than a given timestamp or is in excess of N events?
+
+  We are working on a project that needs to keep the most recent N messages that are not older than T timestamp and flush the rest. Either keeping N most recent events or keeping events that are more recent than T timestamp, regardless of count, would work for our needs.
+
+  If there is no plan to add this feature or it is contradictory to the design, is there a workaround to this?
+id: '12317'
+key: SYN-601
+number: '601'
+priority: '3'
+project: '10000'
+reporter: erikseres
+status: '10100'
+type: '2'
+updated: 2016-11-07 18:28:59.0
+votes: '0'
+watches: '3'
+workflowId: '12422'
+---
+actions:
+- author: matthew
+  body: We absolutely need to provide a way to expire data older than a timestamp or N events.  SPEC-141 (and linked bugs) is where this is being tracked - we just haven't got to it yet :)
+  created: 2016-01-18 20:04:43.0
+  id: '12575'
+  issue: '12317'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-18 20:04:43.0
+- author: richvdh
+  body: Don't we have this, via the admin API?
+  created: 2016-10-26 13:17:06.0
+  id: '13221'
+  issue: '12317'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-26 13:17:06.0
+- author: richvdh
+  body: 'Also: dup of SYN-361?'
+  created: 2016-10-26 13:19:12.0
+  id: '13223'
+  issue: '12317'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-26 13:19:12.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1480'
+  created: 2016-11-07 18:28:59.0
+  id: '13785'
+  issue: '12317'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:59.0

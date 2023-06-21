@@ -1,0 +1,32 @@
+---
+summary: DI RoomMembers for RoomState for testing
+---
+created: 2015-06-27 12:56:02.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Add a 2nd param to RoomState which is a function to invoke to create a new RoomMember to avoid doing implicit assertions like we currently do on RoomState UTs. If no 2nd param is supplied, use default impl.
+id: '11707'
+key: SYJS-13
+number: '13'
+priority: '3'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:16:38.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:16:38.0
+votes: '0'
+watches: '2'
+workflowId: '11808'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/245
+  created: 2016-10-24 11:16:38.0
+  id: '13202'
+  issue: '11707'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:16:38.0

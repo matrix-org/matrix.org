@@ -1,0 +1,30 @@
+---
+summary: We should not be sending push notifs for active users.
+---
+created: 2016-06-04 13:00:09.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  see https://vector.im/beta/#/room/!cURbafjkfsMDVwdRDQ:matrix.org/$146503941833gLTpZ:err.no
+id: '12690'
+key: SYN-704
+number: '704'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:35.0
+votes: '0'
+watches: '2'
+workflowId: '12790'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1552'
+  created: 2016-11-07 18:29:35.0
+  id: '13866'
+  issue: '12690'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:35.0

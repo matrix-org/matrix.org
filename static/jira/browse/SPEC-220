@@ -1,0 +1,36 @@
+---
+summary: can we include retry hints in room state to speed up initial federation?
+---
+created: 2015-09-06 21:58:04.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11857'
+key: SPEC-220
+number: '220'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:35.0
+votes: '0'
+watches: '2'
+workflowId: '11960'
+---
+actions:
+- author: richvdh
+  body: is this the same as SPEC-258?
+  created: 2016-09-27 17:15:31.0
+  id: '13132'
+  issue: '11857'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:15:39.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/537'
+  created: 2016-10-28 16:27:35.0
+  id: '13345'
+  issue: '11857'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:35.0

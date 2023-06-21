@@ -1,0 +1,55 @@
+---
+summary: I cannot create rooms.
+---
+created: 2014-11-24 16:49:48.0
+creator: erikj
+description: |-
+  It fails at lookup:
+
+  {noformat}
+  {"errcode":"M_NOT_FOUND","error":"Room alias u'#test:localhost:8480' not found"}
+  {noformat}
+id: '10700'
+key: SYWEB-175
+number: '175'
+priority: '1'
+project: '10004'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-11-24 17:09:23.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:03.0
+votes: '0'
+watches: '3'
+workflowId: '10800'
+---
+actions:
+- author: erikj
+  body: This is with a demo client.
+  created: 2014-11-24 16:50:59.0
+  id: '10825'
+  issue: '10700'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-24 16:50:59.0
+- author: markjh
+  body: |-
+    I'm seeing the same error trying to create a room:
+    {noformat}
+    joinRoom: {"data":{"errcode":"M_NOT_FOUND","error":"Room alias u'#bar:localhost:8482' not found"},"status":404,"config":{"method":"GET","transformRequest":[null],"transformResponse":[null],"url":"http://localhost:8082/_matrix/client/api/v1/directory/room/%23bar%3Alocalhost%3A8482","params":{"access_token":"QGJvYjpsb2NhbGhvc3Q6ODQ4Mg...hBbqcZSoamCuJPPtJE"},"data":{},"headers":{"Accept":"application/json, text/plain, */*"}},"statusText":"Not Found"} 
+    {noformat}
+  created: 2014-11-24 16:56:54.0
+  id: '10826'
+  issue: '10700'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-24 16:56:54.0
+- author: kegan
+  body: An ugly hack was added so clients could check to see if you failed to join a room because the alias didn't exist. This hack broke when the HS was updated to actually return more useful errcodes.
+  created: 2014-11-24 17:09:23.0
+  id: '10828'
+  issue: '10700'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-24 17:09:23.0

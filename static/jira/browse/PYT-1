@@ -1,0 +1,35 @@
+---
+summary: room leave not properly implemented
+---
+created: 2015-03-01 11:39:14.0
+creator: silviof
+description: |-
+  If I try to use the room.leave function in python-sdk I get on the server log a
+
+  2015-03-01 10:38:14,891 - synapse.http.server - 153 - INFO - POST-3778 - <Request at 0x36c5440 method=POST uri=/_matrix/client/api/v1/rooms/!CYDNZvYYjlfkkJbjRh:localhost/leave?access_token=QGNvbnNvbGU6bG9jYWxob3N0.nZRJDdkgjfbEPjXJiG clientproto=HTTP/1.1> SynapseError: 400 - Content must be a JSON object.
+
+  wireshark tells me that the body of the json object is empty.
+id: '11151'
+key: PYT-1
+number: '1'
+priority: '3'
+project: '10202'
+reporter: silviof
+resolution: '1'
+resolutiondate: 2015-03-04 09:55:22.0
+status: '5'
+type: '1'
+updated: 2015-03-04 09:55:23.0
+votes: '0'
+watches: '1'
+workflowId: '11251'
+---
+actions:
+- author: silviof
+  body: and `user_id` of client/leave are never used. https://github.com/matrix-org/matrix-python-sdk/blob/master/matrix_client/client.py#L205
+  created: 2015-03-01 22:41:57.0
+  id: '11327'
+  issue: '11151'
+  type: comment
+  updateauthor: silviof
+  updated: 2015-03-01 22:41:57.0

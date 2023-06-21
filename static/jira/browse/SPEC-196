@@ -1,0 +1,28 @@
+---
+summary: ability to opt out of sharing presence to folks in a room
+---
+created: 2015-06-28 22:42:49.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11716'
+key: SPEC-196
+number: '196'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:28.0
+votes: '0'
+watches: '2'
+workflowId: '11817'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/523'
+  created: 2016-10-28 16:27:28.0
+  id: '13331'
+  issue: '11716'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:28.0

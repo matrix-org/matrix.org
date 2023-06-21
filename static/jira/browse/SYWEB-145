@@ -1,0 +1,43 @@
+---
+summary: Incorrect message when m.room.member updates both displayname and avatar_url
+---
+assignee: kegan
+created: 2014-11-10 00:19:31.0
+creator: matthew
+description: |-
+  -1. Avatar updates are inconsistent - they seem to take effect globally (which /might/ be the correct behaviour?), other than if one is not set at all, when it then appears historically blank.  Either we should keep them historically accurate or globally in sync.-
+
+  2. Updating avatar & displayname at the same time results in two "displayname updated" notifications.
+id: '10636'
+key: SYWEB-145
+number: '145'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2014-12-01 14:50:35.0
+votes: '0'
+watches: '2'
+workflowId: '10736'
+---
+actions:
+- author: kegan
+  body: |-
+    #1 : I vote for historically accurate.
+
+    #2 : Reproduced locally. The events which are sent down when this happens has both {{avatar_url}} and {{displayname}} changing. The order of the checks means that {{displayname}} has priority if both have changed, so you never see the avatar URL change.
+  created: 2014-11-10 17:18:03.0
+  id: '10765'
+  issue: '10636'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-10 17:18:03.0
+- author: matthew
+  body: 'I think i got confused on #1 - they /are/ historically accurate, and this is right behaviour.'
+  created: 2014-11-10 17:21:26.0
+  id: '10767'
+  issue: '10636'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-10 17:21:26.0

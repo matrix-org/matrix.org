@@ -1,0 +1,22 @@
+---
+summary: Synapse should yell loudly if pillow lacks support for JPEG or PNG
+---
+created: 2015-01-05 17:13:15.0
+creator: matthew
+description: ''
+id: '10888'
+key: SYN-228
+number: '228'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-06 11:44:00.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:08.0
+votes: '0'
+watches: '1'
+workflowId: '10988'
+---
+actions: null

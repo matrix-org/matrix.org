@@ -1,0 +1,28 @@
+---
+summary: Need to spec "validated_at" and "added_at" fields in account/3pid
+---
+created: 2016-03-31 16:12:30.0
+creator: manu
+description: ''
+id: '12605'
+key: SPEC-379
+number: '379'
+priority: '2'
+project: '10001'
+reporter: manu
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:28.0
+votes: '0'
+watches: '2'
+workflowId: '12705'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/661'
+  created: 2016-10-28 16:28:28.0
+  id: '13470'
+  issue: '12605'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:28.0

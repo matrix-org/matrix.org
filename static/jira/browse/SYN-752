@@ -1,0 +1,28 @@
+---
+summary: Consider a --disable-legacy-apis option
+---
+created: 2016-08-19 19:07:06.0
+creator: leonerd
+description: ''
+id: '12799'
+key: SYN-752
+number: '752'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '2'
+updated: 2016-11-07 18:29:53.0
+votes: '0'
+watches: '2'
+workflowId: '12899'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1585'
+  created: 2016-11-07 18:29:53.0
+  id: '13909'
+  issue: '12799'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:53.0

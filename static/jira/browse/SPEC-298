@@ -1,0 +1,30 @@
+---
+summary: '"Room Event Fields" claims that room events have a "room_id" field.'
+---
+created: 2015-12-10 13:16:10.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  This doesn't seem to be mentioned in the spec ( http://matrix.org/docs/spec/r0.0.0/client_server.html#room-event-fields says it is Required) and has made me lose about an hour trying to figure out wtf is going on with my parsing :(
+id: '12195'
+key: SPEC-298
+number: '298'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:02.0
+votes: '0'
+watches: '2'
+workflowId: '12298'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/595'
+  created: 2016-10-28 16:28:02.0
+  id: '13403'
+  issue: '12195'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:02.0

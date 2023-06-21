@@ -1,0 +1,36 @@
+---
+summary: How does E2E encryption work for attachments?
+---
+created: 2014-09-26 22:52:22.0
+creator: matthew
+description: ''
+id: '10408'
+key: SPEC-24
+number: '24'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:26:43.0
+votes: '0'
+watches: '5'
+workflowId: '10511'
+---
+actions:
+- author: richvdh
+  body: This might fall out as a natural consequence of SPEC-292
+  created: 2015-12-07 12:55:46.0
+  id: '12436'
+  issue: '10408'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-07 12:55:46.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/461'
+  created: 2016-10-28 16:26:43.0
+  id: '13236'
+  issue: '10408'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:43.0

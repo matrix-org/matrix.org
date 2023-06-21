@@ -1,0 +1,28 @@
+---
+summary: events are converted to dicts when processing push push in action_generator
+---
+created: 2015-12-22 17:12:41.0
+creator: neb
+description: Submitted by @dave:matrix.org
+id: '12241'
+key: SYN-564
+number: '564'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:48.0
+votes: '0'
+watches: '2'
+workflowId: '12344'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1457'
+  created: 2016-11-07 18:28:48.0
+  id: '13760'
+  issue: '12241'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:48.0

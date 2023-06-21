@@ -1,0 +1,28 @@
+---
+summary: push is processed twice because the pushers still run the rules themselves rather than pulling out of the event_actions table
+---
+created: 2015-12-22 17:11:53.0
+creator: neb
+description: Submitted by @dave:matrix.org
+id: '12240'
+key: SYN-563
+number: '563'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:47.0
+votes: '0'
+watches: '2'
+workflowId: '12343'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1456'
+  created: 2016-11-07 18:28:47.0
+  id: '13759'
+  issue: '12240'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:47.0

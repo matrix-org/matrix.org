@@ -1,0 +1,22 @@
+---
+summary: IRC bridge should part IRC users when they leave the room
+---
+created: 2015-02-18 22:16:28.0
+creator: matthew
+description: ''
+id: '11091'
+key: BOTS-19
+number: '19'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-12 16:55:16.0
+status: '5'
+type: '2'
+updated: 2015-08-27 23:59:01.0
+votes: '0'
+watches: '1'
+workflowId: '11191'
+---
+actions: null

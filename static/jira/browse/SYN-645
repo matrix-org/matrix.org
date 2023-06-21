@@ -1,0 +1,39 @@
+---
+summary: /sync gives bad prev_batch token for unlimited timelines
+---
+assignee: markjh
+created: 2016-03-08 11:40:09.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  For an initial {{/sync}}, if a room's timeline is small enough to fit into the limit, we get a {{prev_batch}} which corresponds to the *end* of the timeline rather than the start. This is exacerbating https://github.com/vector-im/vector-web/issues/1089.
+id: '12550'
+key: SYN-645
+number: '645'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:13.0
+votes: '1'
+watches: '4'
+workflowId: '12650'
+---
+actions:
+- author: richvdh
+  body: Fancy taking a look, [~markjh]?
+  created: 2016-03-08 17:58:20.0
+  id: '12756'
+  issue: '12550'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-08 17:58:20.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1509'
+  created: 2016-11-07 18:29:13.0
+  id: '13816'
+  issue: '12550'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:13.0

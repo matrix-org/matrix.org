@@ -1,0 +1,23 @@
+---
+summary: Split out more of the abstract test-running core from the actual `run-tests.pl`
+---
+created: 2015-11-09 14:19:09.0
+creator: leonerd
+description: |-
+  If the core test-running logic was extracted into some .pm living in lib/SyTest then it could have its own tests to assert that the logic itself works.
+
+  Mmm, tests of tests....
+id: '12097'
+key: SYT-37
+number: '37'
+priority: '3'
+project: '10300'
+reporter: leonerd
+status: '10100'
+type: '4'
+updated: 2015-11-09 14:19:09.0
+votes: '0'
+watches: '1'
+workflowId: '12200'
+---
+actions: null

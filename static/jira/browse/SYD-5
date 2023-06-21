@@ -1,0 +1,30 @@
+---
+summary: apparently adding email addresses to an existing account is broken
+---
+created: 2015-01-19 09:02:41.0
+creator: matthew
+description: ''
+id: '10946'
+key: SYD-5
+number: '5'
+priority: '1'
+project: '10002'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-19 09:52:20.0
+status: '5'
+type: '1'
+updated: 2015-01-19 09:52:37.0
+votes: '0'
+watches: '2'
+workflowId: '11046'
+---
+actions:
+- author: dbkr
+  body: Moved to SYWEB-262
+  created: 2015-01-19 09:52:37.0
+  id: '11148'
+  issue: '10946'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-01-19 09:52:37.0

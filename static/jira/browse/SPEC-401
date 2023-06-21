@@ -1,0 +1,33 @@
+---
+summary: /logout does not invalidate refresh tokens
+---
+created: 2016-05-09 14:01:44.0
+creator: richvdh
+description: |-
+  Currently /logout only expires the access token for that session rather than the refresh token.
+
+  We should also expire the refresh token, but it's not clear how best to implement this (should we track which access tokens belong to which refresh tokens and automatically expire the refresh token? or should we make it an explicit parameter? What happens if the refresh token has been used already?)
+id: '12655'
+key: SPEC-401
+number: '401'
+priority: '3'
+project: '10001'
+reporter: richvdh
+resolution: '2'
+resolutiondate: 2016-10-06 18:02:30.0
+status: '5'
+type: '1'
+updated: 2016-10-06 18:02:30.0
+votes: '0'
+watches: '1'
+workflowId: '12755'
+---
+actions:
+- author: richvdh
+  body: We've decided to remove refresh tokens from the matrix spec (see https://github.com/matrix-org/matrix-doc/pull/395), so this is no longer required.
+  created: 2016-10-06 18:02:30.0
+  id: '13161'
+  issue: '12655'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 18:02:30.0

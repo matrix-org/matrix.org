@@ -1,0 +1,22 @@
+---
+summary: Highlight rules don't work in one-to-one rooms
+---
+created: 2015-04-06 19:48:28.0
+creator: dbkr
+description: ''
+id: '11306'
+key: SYWEB-344
+number: '344'
+priority: '3'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-04-24 14:27:32.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:48.0
+votes: '0'
+watches: '1'
+workflowId: '11406'
+---
+actions: null

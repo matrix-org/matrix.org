@@ -1,0 +1,30 @@
+---
+summary: 'SDK: User last activity is broken'
+---
+created: 2016-02-19 07:57:36.0
+creator: manu
+description: ''
+id: '12502'
+key: SYIOS-209
+number: '209'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '2'
+resolutiondate: 2016-02-23 14:24:26.0
+status: '5'
+type: '1'
+updated: 2016-02-23 14:24:26.0
+votes: '0'
+watches: '1'
+workflowId: '12602'
+---
+actions:
+- author: manu
+  body: Presence was disabled on matrix.org hs
+  created: 2016-02-23 14:24:26.0
+  id: '12707'
+  issue: '12502'
+  type: comment
+  updateauthor: manu
+  updated: 2016-02-23 14:24:26.0

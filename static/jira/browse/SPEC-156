@@ -1,0 +1,33 @@
+---
+summary: Implement ID forwarding (like email .forward files)
+---
+created: 2014-09-16 00:45:20.0
+creator: matthew
+description: |-
+  We want people to run their own homeservers.
+
+  If people get too attached to their @foo:matrix.org IDs, they may never want to run their own homeserver.
+
+  So we need to specify and implement the ability for @foo:matrix.org to point through to @foo:foo.net so that the user can actually exist on their own HS.
+id: '10047'
+key: SPEC-156
+number: '156'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:27:15.0
+votes: '0'
+watches: '2'
+workflowId: '10356'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/496'
+  created: 2016-10-28 16:27:15.0
+  id: '13304'
+  issue: '10047'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:15.0

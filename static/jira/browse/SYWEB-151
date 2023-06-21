@@ -1,0 +1,70 @@
+---
+summary: CSS issues.
+---
+created: 2014-11-12 15:43:22.0
+creator: markjh
+description: |-
+  A couple of issues with the webclient CSS.
+
+  1) TOPIC: The topic is displayed behind the chat window.
+  2) WS: There is a lot of space wasted due to the channel list.
+  3) SB: There is a scrollbar where no scrollbar should be.
+id: '10645'
+key: SYWEB-151
+number: '151'
+priority: '3'
+project: '10004'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-11-26 17:17:15.0
+status: '1'
+type: '1'
+updated: 2014-11-26 17:26:06.0
+votes: '0'
+watches: '3'
+workflowId: '10745'
+---
+actions:
+- author: markjh
+  body: On Chromium Version 37.0.2062.120 Ubuntu 14.04 (281580) (64-bit)
+  created: 2014-11-12 15:49:49.0
+  id: '10782'
+  issue: '10645'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-12 15:49:49.0
+- author: kegan
+  body: Furthermore, there is inexplicably some chunky whitespace just above the bottom row (where you type) between the content (recents/chat window/user list) and the edge of the bottom row. I can't see any {{<div>}} using this space.
+  created: 2014-11-17 08:53:11.0
+  id: '10796'
+  issue: '10645'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-17 08:53:11.0
+- author: kegan
+  body: Matthew has fixed these issues as far as I can see.
+  created: 2014-11-26 17:17:15.0
+  id: '10863'
+  issue: '10645'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-26 17:17:15.0
+- author: erikj
+  body: |-
+    bq. 1) TOPIC: The topic is displayed behind the chat window.
+
+    This is still not fixed. More specifically, it breaks on chrome when you have a long title.
+  created: 2014-11-26 17:21:13.0
+  id: '10865'
+  issue: '10645'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-26 17:21:13.0
+- author: kegan
+  body: Will make a separate bug for that.
+  created: 2014-11-26 17:23:50.0
+  id: '10867'
+  issue: '10645'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-26 17:23:50.0

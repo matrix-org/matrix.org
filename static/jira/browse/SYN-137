@@ -1,0 +1,28 @@
+---
+summary: Why is StateHandler called a Handler when it's not in handlers/ and doesn't inherit from BaseHandler?
+---
+created: 2014-11-10 18:15:07.0
+creator: matthew
+description: ''
+id: '10640'
+key: SYN-137
+number: '137'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:24.0
+votes: '0'
+watches: '2'
+workflowId: '10740'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1242'
+  created: 2016-11-07 18:27:24.0
+  id: '13561'
+  issue: '10640'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:24.0

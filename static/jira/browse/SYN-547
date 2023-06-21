@@ -1,0 +1,31 @@
+---
+summary: /rooms/:room_id/messages required 'from' parameter isn't
+---
+created: 2015-12-11 15:35:00.0
+creator: leonerd
+description: |-
+  Spec claims that the {{from}} parameter to a {{/rooms/:room_id/messages}} request is a required parameter. However, at time of writing every request that sytest makes lacks this parameter, so evidentially synapse is quite happy with its absence.
+
+  Reporting this as a SYN bug but I suppose it could equally be a SPEC bug instead
+id: '12204'
+key: SYN-547
+number: '547'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:43.0
+votes: '0'
+watches: '2'
+workflowId: '12307'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1445'
+  created: 2016-11-07 18:28:43.0
+  id: '13748'
+  issue: '12204'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:43.0

@@ -1,0 +1,28 @@
+---
+summary: roblabla's HS has missing msgs https://vector.im/develop/#/room/!cURbafjkfsMDVwdRDQ:matrix.org/$14619232963vsCQk:cmc.im
+---
+created: 2016-05-01 17:25:06.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12645'
+key: SYN-684
+number: '684'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:26.0
+votes: '0'
+watches: '2'
+workflowId: '12745'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1537'
+  created: 2016-11-07 18:29:26.0
+  id: '13848'
+  issue: '12645'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:26.0

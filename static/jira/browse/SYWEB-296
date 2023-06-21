@@ -1,0 +1,30 @@
+---
+summary: Whenever you send an image, the client doesn't rescroll to show it properly
+---
+created: 2015-02-20 01:22:01.0
+creator: matthew
+description: ''
+id: '11106'
+key: SYWEB-296
+number: '296'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-03-03 13:21:29.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:52.0
+votes: '0'
+watches: '2'
+workflowId: '11206'
+---
+actions:
+- author: kegan
+  body: SYWEB-251
+  created: 2015-03-03 13:21:29.0
+  id: '11337'
+  issue: '11106'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-03 13:21:29.0

@@ -1,0 +1,68 @@
+---
+summary: We should track private rooms we exit so we can rejoin them (to rescue their history)
+---
+assignee: kegan
+created: 2014-11-27 16:41:22.0
+creator: matthew
+description: ''
+id: '10731'
+key: SYWEB-188
+number: '188'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-08-28 15:59:39.0
+votes: '1'
+watches: '4'
+workflowId: '10831'
+---
+actions:
+- author: kegan
+  body: |-
+    Then don't leave the room?
+
+    When you do an /initialSync, you do not get the contents of the left room at all. Being in the room gives you the right to see the history. As a result, we can only ever do this when you initially hit leave (since refreshing the page will wipe the cached data). This just seems wrong to me.
+  created: 2014-12-05 08:54:46.0
+  id: '10958'
+  issue: '10731'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 08:54:46.0
+- author: erikj
+  body: I think this is something that should be moved to SPEC to be included when redesigning the client-server API.
+  created: 2014-12-05 10:12:25.0
+  id: '10960'
+  issue: '10731'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-05 10:12:25.0
+- author: matthew
+  body: |-
+    "Then don't leave the room" is missing the point.  If I *have* left a room (e.g. close a 1:1 chat), and then realise i want to go back in and read its history later on, I'm currently screwed.
+
+    I'll I'm proposing is a filter or some other way to tell the HS to include info about left-rooms as well as current-rooms, so that clients can get at historical rooms such that they can rejoin them if so desired.  This could either by applied on normal /sync (and potentially waste lots of bandwidth), or be pulls in by a specific /sync filtered on just historical rooms.
+
+    Kegan: any objection to me shoving a include_old_rooms flag or similar in filters?
+  created: 2015-01-26 15:00:36.0
+  id: '11189'
+  issue: '10731'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-26 15:00:36.0
+- author: kegan
+  body: |-
+    I would prefer that we didn't include this flag just yet.
+
+    Given you cannot receive updates to this room because you have left it, why are we dumping this data on /sync? This feels like this should be a separate API to request information on rooms you've left. 
+
+    Even that feels a bit bleurgh to me, because ultimately you left the room. If your client caches the messages in that room for viewing later then cool, and if your client doesn't, then tough. I do not buy the "rejoin them(the room) if so desired" use case. I can always join via a room alias without needing this information, or if it is an invite room then no amount of knowledge about past messages will help me rejoin.
+
+    I guess my main problem with this is that I feel that it is cleaner to treat a user who has left the room as never having been in the room, and this violates that. That being said, I can see a use case for storing old messages on your home server, but I don't think we should be mixing that in with the regular /sync stuff.
+  created: 2015-01-26 15:18:16.0
+  id: '11191'
+  issue: '10731'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-26 15:18:16.0

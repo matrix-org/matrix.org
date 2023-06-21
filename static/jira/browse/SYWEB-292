@@ -1,0 +1,20 @@
+---
+summary: HTML entities aren't decoded correctly in the side bar
+---
+created: 2015-02-19 15:38:06.0
+creator: dbkr
+description: ''
+id: '11100'
+key: SYWEB-292
+number: '292'
+priority: '3'
+project: '10004'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2015-03-03 15:57:31.0
+votes: '0'
+watches: '1'
+workflowId: '11200'
+---
+actions: null

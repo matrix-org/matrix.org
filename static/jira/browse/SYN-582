@@ -1,0 +1,62 @@
+---
+summary: Synapse can send many presence events causing clients to send many sync requests
+---
+created: 2016-01-07 20:31:03.0
+creator: dbkr
+description: |-
+  Have just had Vector DoSing synapse with requests on my local setup. It looks like this is synapse's fault: the sync token is different each time and it's sending a single presence event each time for a certain user with a different last_active_ago.
+
+  Marking this P1 because this could cause the server to get hammered if hits production.
+
+  HAR log: https://matrix.org/_matrix/media/v1/download/matrix.org/iFzzljHBBXDoNuzjvPXWoxZe
+id: '12280'
+key: SYN-582
+number: '582'
+priority: '1'
+project: '10000'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2016-03-15 11:53:21.0
+status: '5'
+type: '1'
+updated: 2016-03-15 11:53:21.0
+votes: '0'
+watches: '2'
+workflowId: '12385'
+---
+actions:
+- author: erikj
+  body: |-
+    What we could do is batch up presence events so we only wake up the {{/sync}} at most once every 500ms/1s (due to presence events). This would allow a bit of batching to happen.
+
+    Over what timeframe were you seeing this?
+  created: 2016-01-08 10:10:02.0
+  id: '12555'
+  issue: '12280'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-08 10:10:02.0
+- author: dbkr
+  body: I only let it go for 5 or 10 seconds before either refreshing the page or killing synapse. I appeared to be able to repro it fairly readily though.
+  created: 2016-01-08 10:12:20.0
+  id: '12556'
+  issue: '12280'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-01-08 10:12:20.0
+- author: dbkr
+  body: I can only repro this with the kegan/guest_access branch of vector so it looks like this is a bug with presence and guest users.
+  created: 2016-01-08 11:07:16.0
+  id: '12557'
+  issue: '12280'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-01-08 11:07:16.0
+- author: erikj
+  body: https://github.com/matrix-org/synapse/pull/480
+  created: 2016-01-12 11:22:00.0
+  id: '12562'
+  issue: '12280'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-12 11:22:00.0

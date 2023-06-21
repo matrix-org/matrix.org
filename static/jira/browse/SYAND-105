@@ -1,0 +1,77 @@
+---
+summary: '"Zalgo''d" Special characters in username crashes client'
+---
+created: 2015-07-22 20:43:41.0
+creator: skaverat
+description: |-
+  Changed my name to something from this generator:
+  http://www.marlborotech.com/Zalgo.html
+
+  This crashes my own client. Other clients don't seem to be affected. These characters in messages don't seem to be a problem.
+
+  Logcat stacktrace:
+  {code}
+  07-22 21:26:22.635 E/AndroidRuntime(32320): FATAL EXCEPTION: main
+  07-22 21:26:22.635 E/AndroidRuntime(32320): Process: org.matrix.androidsdk.alpha, PID: 32320
+  07-22 21:26:22.635 E/AndroidRuntime(32320): java.util.ConcurrentModificationException
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at java.util.HashMap$HashIterator.nextEntry(HashMap.java:787)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at java.util.HashMap$ValueIterator.next(HashMap.java:819)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at org.matrix.androidsdk.rest.model.bingrules.RoomMemberCountCondition.getNumberOfMembers(RoomMemberCountCondition.java:79)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at org.matrix.androidsdk.rest.model.bingrules.RoomMemberCountCondition.isSatisfied(RoomMemberCountCondition.java:51)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at org.matrix.androidsdk.util.BingRulesManager.eventMatchesConditions(BingRulesManager.java:210)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at org.matrix.androidsdk.util.BingRulesManager.fulfilledBingRule(BingRulesManager.java:168)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at org.matrix.androidsdk.MXSession.fulfillRule(MXSession.java:521)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at org.matrix.androidsdk.util.EventUtils.shouldHighlight(EventUtils.java:48)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at org.matrix.console.activity.HomeActivity$10$6.run(HomeActivity.java:660)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at android.os.Handler.handleCallback(Handler.java:739)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at android.os.Handler.dispatchMessage(Handler.java:95)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at android.os.Looper.loop(Looper.java:135)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at android.app.ActivityThread.main(ActivityThread.java:5312)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at java.lang.reflect.Method.invoke(Native Method)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at java.lang.reflect.Method.invoke(Method.java:372)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:901)
+  07-22 21:26:22.635 E/AndroidRuntime(32320):     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:696)
+  07-22 21:26:37.230 E/AndroidRuntime(32625): FATAL EXCEPTION: main
+  07-22 21:26:37.230 E/AndroidRuntime(32625): Process: org.matrix.androidsdk.alpha, PID: 32625
+  07-22 21:26:37.230 E/AndroidRuntime(32625): java.lang.NullPointerException: Attempt to invoke interface method 'int java.lang.CharSequence.length()' on a null object reference
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at java.util.regex.Matcher.reset(Matcher.java:177)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at java.util.regex.Matcher.<init>(Matcher.java:90)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at java.util.regex.Pattern.matcher(Pattern.java:297)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at org.matrix.androidsdk.util.BingRulesManager.caseInsensitiveFind(BingRulesManager.java:116)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at org.matrix.androidsdk.util.BingRulesManager.fulfilledBingRule(BingRulesManager.java:158)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at org.matrix.androidsdk.MXSession.fulfillRule(MXSession.java:521)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at org.matrix.androidsdk.util.EventUtils.shouldHighlight(EventUtils.java:48)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at org.matrix.console.activity.HomeActivity$10$6.run(HomeActivity.java:660)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at android.os.Handler.handleCallback(Handler.java:739)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at android.os.Handler.dispatchMessage(Handler.java:95)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at android.os.Looper.loop(Looper.java:135)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at android.app.ActivityThread.main(ActivityThread.java:5312)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at java.lang.reflect.Method.invoke(Native Method)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at java.lang.reflect.Method.invoke(Method.java:372)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:901)
+  07-22 21:26:37.230 E/AndroidRuntime(32625):     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:696)
+  {code}
+id: '11764'
+key: SYAND-105
+number: '105'
+priority: '3'
+project: '10201'
+reporter: skaverat
+resolution: '1'
+resolutiondate: 2015-07-23 13:31:54.0
+status: '5'
+type: '1'
+updated: 2015-07-23 13:31:54.0
+votes: '0'
+watches: '1'
+workflowId: '11865'
+---
+actions:
+- author: skaverat
+  body: 'Note/Workaround: app usable again after deleting app data'
+  created: 2015-07-22 23:59:59.0
+  id: '12031'
+  issue: '11764'
+  type: comment
+  updateauthor: skaverat
+  updated: 2015-07-22 23:59:59.0

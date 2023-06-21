@@ -1,0 +1,22 @@
+---
+summary: We could use a presence state for ASes to advertise when their remote users are inaccessible
+---
+created: 2016-02-19 16:43:19.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  E.g. if there's an IRC netsplit, I'd expect the AS to warn that the presence of half its bridged IRC users has gone missing
+id: '12506'
+key: BOTS-169
+number: '169'
+priority: '3'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-02-19 16:43:19.0
+votes: '0'
+watches: '1'
+workflowId: '12606'
+---
+actions: null

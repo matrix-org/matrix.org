@@ -1,0 +1,51 @@
+---
+summary: Revoke access_tokens.
+---
+created: 2014-09-29 15:54:17.0
+creator: erikj
+description: ''
+id: '10418'
+key: SYN-80
+number: '80'
+priority: '3'
+project: '10000'
+reporter: erikj
+resolution: '3'
+resolutiondate: 2016-07-19 08:38:36.0
+status: '5'
+type: '2'
+updated: 2016-07-19 08:38:36.0
+votes: '0'
+watches: '2'
+workflowId: '10521'
+---
+actions:
+- author: erikj
+  body: |-
+    From SYN-48:
+
+    {quote}
+    *TODO:* We need to include a session identifier so that people can use it to revoke particular access_token. We could use the access_token itself, but returning access_tokens seems a bit insecure, even if you can only WHOIS yourself or if you are a server admin.
+    {quote}
+  created: 2014-09-29 15:55:47.0
+  id: '10474'
+  issue: '10418'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 15:55:47.0
+- author: richvdh
+  body: This bug needs some more detail. Is it about an admin interface which revokes access_tokens? Isn't it then the same as SPEC-243?
+  created: 2016-05-09 14:51:09.0
+  id: '12914'
+  issue: '10418'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-09 14:51:09.0
+- author: richvdh
+  body: assuming it is the same as SPEC-243, unless anybody wants to clarify
+  created: 2016-07-19 08:38:36.0
+  id: '13069'
+  issue: '10418'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-19 08:38:36.0

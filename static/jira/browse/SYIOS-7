@@ -1,0 +1,25 @@
+---
+summary: Add the ability to cancel [MXRoom paginateBackMessages]
+---
+assignee: manu
+created: 2014-12-10 11:04:51.0
+creator: manu
+description: |-
+  It is possible to unregister listeners but not the success or the failure callback of this method.
+  This can be a constraint for the app if the user change the displayed room while the current one is paginating.
+id: '10802'
+key: SYIOS-7
+number: '7'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-12 17:31:47.0
+status: '5'
+type: '2'
+updated: 2014-12-12 17:31:47.0
+votes: '0'
+watches: '1'
+workflowId: '10902'
+---
+actions: null

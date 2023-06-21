@@ -1,0 +1,25 @@
+---
+summary: Merge PDUs and events.
+---
+assignee: erikj
+created: 2014-11-04 17:35:08.0
+creator: markjh
+description: |-
+  PDUs and events are stored in different tables in synapse.
+  Since they contain the same data it makes more sense for them to be stored in one place.
+id: '10620'
+key: SYN-128
+number: '128'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-11-13 15:53:59.0
+status: '5'
+type: '3'
+updated: 2014-11-20 10:06:38.0
+votes: '0'
+watches: '1'
+workflowId: '10720'
+---
+actions: null

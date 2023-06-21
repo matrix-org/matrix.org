@@ -1,0 +1,23 @@
+---
+summary: Join room on accepting voip call if not already joined
+---
+assignee: dbkr
+created: 2014-09-19 11:44:24.0
+creator: dbkr
+description: ''
+id: '10337'
+key: SYWEB-55
+number: '55'
+priority: '2'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2014-09-19 17:24:04.0
+status: '5'
+type: '1'
+updated: 2014-09-22 17:20:48.0
+votes: '0'
+watches: '1'
+workflowId: '10440'
+---
+actions: null

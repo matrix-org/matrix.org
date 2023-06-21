@@ -1,0 +1,23 @@
+---
+summary: Username autocompletion should be sorted by activity instead of alphabetically
+---
+created: 2015-03-13 20:11:16.0
+creator: jan
+description: |-
+  Currently when using tab to autocomplete, it can take a lot of time to tab to the correct person. That’s because it’s sorted alphabetically instead of by activity.
+
+  If it’s sorted so that the most recently active people are suggested first, it would be much more helpful.
+id: '11228'
+key: SYWEB-330
+number: '330'
+priority: '3'
+project: '10004'
+reporter: jan
+status: '10100'
+type: '4'
+updated: 2015-03-13 20:11:16.0
+votes: '0'
+watches: '1'
+workflowId: '11328'
+---
+actions: null

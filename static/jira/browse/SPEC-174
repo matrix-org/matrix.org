@@ -1,0 +1,38 @@
+---
+summary: Multi-way VoIP
+---
+created: 2015-06-02 01:12:28.0
+creator: matthew
+description: |-
+  Need to specify a standard profile for multi-way VoIP/Video calls.
+
+  Options include:
+   * Signalling for all calls is mixed into the same room (useful for multicast traffic)
+   * Signalling between calls and conference server is in side-channel 1:1 rooms
+   * We use EDUs of some kind for non-stateful conference signalling
+
+  Do we do SFU, MCU, full mesh, multicast, or some combination?
+
+  Do we hook into Jitsi or Kurento or Janus or FreeSWITCH or what?
+id: '11598'
+key: SPEC-174
+number: '174'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:21.0
+votes: '0'
+watches: '2'
+workflowId: '11699'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/508'
+  created: 2016-10-28 16:27:21.0
+  id: '13316'
+  issue: '11598'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:21.0

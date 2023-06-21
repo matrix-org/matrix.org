@@ -1,0 +1,28 @@
+---
+summary: AS API needs a way to let ASes deprovision users
+---
+created: 2015-06-24 11:13:12.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11695'
+key: SPEC-191
+number: '191'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:26.0
+votes: '0'
+watches: '2'
+workflowId: '11796'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/519'
+  created: 2016-10-28 16:27:26.0
+  id: '13327'
+  issue: '11695'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:26.0

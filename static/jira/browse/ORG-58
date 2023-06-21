@@ -1,0 +1,31 @@
+---
+summary: add libqmatrixclient to sdks
+---
+assignee: oddvar
+created: 2016-07-12 12:15:03.0
+creator: richvdh
+description: ''
+id: '12742'
+key: ORG-58
+number: '58'
+priority: '3'
+project: '10003'
+reporter: richvdh
+resolution: '1'
+resolutiondate: 2016-07-20 15:31:19.0
+status: '6'
+type: '4'
+updated: 2016-07-20 15:31:24.0
+votes: '0'
+watches: '2'
+workflowId: '12842'
+---
+actions:
+- author: oddvar
+  body: Added and published!
+  created: 2016-07-20 15:31:00.0
+  id: '13072'
+  issue: '12742'
+  type: comment
+  updateauthor: oddvar
+  updated: 2016-07-20 15:31:00.0
