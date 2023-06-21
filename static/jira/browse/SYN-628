@@ -1,0 +1,36 @@
+---
+summary: Debian package for ARM CPUs
+---
+created: 2016-02-12 11:32:19.0
+creator: bob
+description: ''
+id: '12390'
+key: SYN-628
+number: '628'
+priority: '3'
+project: '10000'
+reporter: bob
+status: '10100'
+type: '4'
+updated: 2016-11-07 18:29:07.0
+votes: '1'
+watches: '3'
+workflowId: '12495'
+---
+actions:
+- author: jontheniceguy
+  body: https://github.com/matrix-org/synapse/issues/390 relates to this.
+  created: 2016-07-20 10:16:14.0
+  id: '13071'
+  issue: '12390'
+  type: comment
+  updateauthor: jontheniceguy
+  updated: 2016-07-20 10:16:14.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1496'
+  created: 2016-11-07 18:29:07.0
+  id: '13803'
+  issue: '12390'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:07.0

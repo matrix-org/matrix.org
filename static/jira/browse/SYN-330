@@ -1,0 +1,28 @@
+---
+summary: Auto upgrade config files.
+---
+created: 2015-03-30 17:24:59.0
+creator: erikj
+description: ''
+id: '11299'
+key: SYN-330
+number: '330'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:53.0
+votes: '0'
+watches: '2'
+workflowId: '11399'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1303'
+  created: 2016-11-07 18:27:53.0
+  id: '13624'
+  issue: '11299'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:53.0

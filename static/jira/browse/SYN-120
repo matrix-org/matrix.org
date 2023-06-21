@@ -1,0 +1,53 @@
+---
+summary: Serverside validation for m.room.power_levels event.
+---
+created: 2014-10-30 17:46:12.0
+creator: matthew
+description: ''
+id: '10600'
+key: SYN-120
+number: '120'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:22.0
+votes: '0'
+watches: '3'
+workflowId: '10700'
+---
+actions:
+- author: markjh
+  body: |-
+    Taken from "Matrix Internal".
+
+    {code}
+    {
+      "@LeoNerd:matrix.org": 100,
+      "@Mjark:matrix.org": "100",
+      "@dave:matrix.org": "100",
+      "@erikj:jki.re": "100",
+      "@kegan:matrix.org": "100",
+      "@matthew:matrix.org": "100",
+      "@neb:matrix.org": 100,
+      "@oddvar:matrix.org": 99,
+      "default": 0
+    }
+    {code}
+
+    Possibly due differences between Leo's perl client and the web client? We should probably have better C2S and S2S validation for the event content.
+  created: 2014-11-04 17:22:49.0
+  id: '10730'
+  issue: '10600'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-04 17:22:49.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1237'
+  created: 2016-11-07 18:27:22.0
+  id: '13558'
+  issue: '10600'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:22.0

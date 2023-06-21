@@ -1,0 +1,28 @@
+---
+summary: Search should be accent insensitive
+---
+created: 2016-03-29 12:56:04.0
+creator: manu
+description: ''
+id: '12600'
+key: SYN-666
+number: '666'
+priority: '2'
+project: '10000'
+reporter: manu
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:20.0
+votes: '0'
+watches: '2'
+workflowId: '12700'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1523'
+  created: 2016-11-07 18:29:20.0
+  id: '13832'
+  issue: '12600'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:20.0

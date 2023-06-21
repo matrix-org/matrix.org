@@ -1,0 +1,22 @@
+---
+summary: 500 Internal Server Error when responding to a duplicate join request
+---
+created: 2015-09-07 10:07:28.0
+creator: markjh
+description: "Synapse on matrix.org received the same join request from an IRC AS three times in a row:\n\n{code}\n2015-09-07 09:20:28,559 - synapse.access.http.8080 - 489 - INFO - POST-2589501 - 83.166.68.175 - 8080 - Received request: POST /_matrix/client/api/v1/join/!aLzAblVWcEouFYpXnK:matrix.org?access_token=<redacted>&user_id=%40freenode_DexterBo%3Amatrix.org\n2015-09-07 09:20:29,429 - synapse.access.http.8080 - 489 - INFO - POST-2589507 - 83.166.68.175 - 8080 - Received request: POST /_matrix/client/api/v1/join/!aLzAblVWcEouFYpXnK:matrix.org?access_token=<redacted>&user_id=%40freenode_DexterBo%3Amatrix.org\n2015-09-07 09:20:29,522 - synapse.access.http.8080 - 489 - INFO - POST-2589508 - 83.166.68.175 - 8080 - Received request: POST /_matrix/client/api/v1/join/!aLzAblVWcEouFYpXnK:matrix.org?access_token=<redacted>&user_id=%40freenode_DexterBo%3Amatrix.org\n{code}\n\nThe first request succeeded. The subsequent requests failed with integrity constraint errors in the database.\n\n{code}\n\_ File \"synapse/http/server.py\", line 86, in wrapped_request_handler\n\_\_\_ yield d\n\_ File \"synapse/http/server.py\", line 213, in _async_render\n\_\_\_ callback_return = yield callback(request, *args)\n\_ File \"synapse/rest/client/v1/room.py\", line 254, in on_POST\n\_\_\_ txn_id=txn_id,\n\_ File \"synapse/handlers/message.py\", line 235, in create_and_send_event\n\_\_\_ yield member_handler.change_membership(event, context)\n\_ File \"synapse/handlers/room.py\", line 402, in change_membership\n\_\_\_ yield self._do_join(event, context, do_auth=do_auth)\n\_ File \"synapse/handlers/room.py\", line 523, in _do_join\n\_\_\_ do_auth=do_auth,\n\_ File \"synapse/handlers/room.py\", line 583, in _do_local_membership_update\n\_\_\_ suppress_auth=(not do_auth),\n\_ File \"synapse/handlers/_base.py\", line 127, in handle_new_client_event\n\_\_\_ event, context=context\n\_ File \"synapse/storage/events.py\", line 118, in persist_event\n\_\_\_ current_state=current_state,\n\_ File \"synapse/storage/_base.py\", line 311, in runInteraction\n\_\_\_ inner_func, *args, **kwargs\n\_ File \"/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/threadpool.py\", line 196, in _worker\n\_\_\_ result = context.call(ctx, function, *args, **kwargs)\n\_ File \"/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/enterprise/adbapi.py\", line 285, in _runWithConnection\n\_\_\_ result = func(conn, *args, **kw)\n\_ File \"synapse/storage/_base.py\", line 239, in _new_transaction\n\_\_\_ r = func(txn, *args, **kwargs)\n\_ File \"synapse/storage/events.py\", line 191, in _persist_event_txn\n\_\_\_ is_new_state=is_new_state,\n\_ File \"synapse/storage/events.py\", line 451, in _persist_events_txn\n\_\_\_ \"event_id\": event.event_id,\n\_ File \"synapse/storage/_base.py\", line 501, in _simple_upsert_txn\n\_\_\_ txn.execute(sql, allvalues.values())\n\_ File \"synapse/storage/_base.py\", line 76, in execute\n\_\_\_ self._do_execute(self.txn.execute, sql, *args)\n\_ File \"synapse/storage/_base.py\", line 101, in _do_execute\n\_\_\_ sql, *args\nIntegrityError: duplicate key value violates unique constraint \"current_state_events_room_id_type_state_key_key\"\nDETAIL:\_ Key (room_id, type, state_key)=(!aLzAblVWcEouFYpXnK:matrix.org, m.room.member, @freenode_DexterBo:matrix.org) already exists.\n{code}"
+id: '11860'
+key: SYN-474
+number: '474'
+priority: '2'
+project: '10000'
+reporter: markjh
+resolution: '3'
+resolutiondate: 2016-01-06 11:45:48.0
+status: '5'
+type: '1'
+updated: 2016-01-06 11:45:48.0
+votes: '0'
+watches: '1'
+workflowId: '11963'
+---
+actions: null

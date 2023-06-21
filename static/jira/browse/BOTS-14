@@ -1,0 +1,28 @@
+---
+summary: NEB should <br/> and not \n in HTML bodies
+---
+created: 2015-01-27 10:56:18.0
+creator: kegan
+description: ''
+id: '10981'
+key: BOTS-14
+number: '14'
+priority: '3'
+project: '10101'
+reporter: kegan
+status: '1'
+type: '1'
+updated: 2015-01-27 10:59:50.0
+votes: '0'
+watches: '1'
+workflowId: '11081'
+---
+actions:
+- author: kegan
+  body: And should escape incoming webhook text before sending as HTML.
+  created: 2015-01-27 10:59:50.0
+  id: '11195'
+  issue: '10981'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-27 10:59:50.0

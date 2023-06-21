@@ -1,0 +1,57 @@
+---
+summary: Room membership count lies in many different ways.
+---
+created: 2015-03-12 12:30:54.0
+creator: matthew
+description: |-
+  The membership count reported in Recents doesn't match that in Public Rooms - and can also be out of sync with the size of the membership list and the actual observed current members of a room:
+
+  [11:13]  <M-testme> [08:35:06] Hi guys ...
+  [11:13]  <M-testme> [08:36:12] Speaking of playing with the api, I'm just now playing with it. I have to newly created rooms, and when querying /publicRooms I get (among others) num_joined_members: 49
+  [11:13]  <M-testme> [08:36:27] Where do these other 48 members come from?
+  [11:13]  <M-matthew> [09:24:20] weird
+  [11:13]  <M-matthew> [09:24:27] sounds like a bug
+  [11:13]  <M-matthew> [09:24:54] perhaps you keep rejoining it as the same user and the count keeps increasing?
+  [11:13]  <M-kegan> [09:26:44] seems likely: most of the default clients won't rejoin if it remembers it had already joined, but if you're playing with the API then it is possible that this is a failure case we aren't seeing
+  [11:13]  * M-kegan [09:27:08] still doesn't quite get the rationale behind not treating multiple joins as noops
+  [11:13]  <M-matthew> [09:27:29] it's a bug surely?
+  [11:13]  <M-Tor> [09:28:09] haven't we already established that the public rooms number of users is way off?
+  [11:13]  <M-kegan> [09:32:24] iirc federation needs multiple joins for something. It may be a bug that those are being sent to the client maybe, but I don't know.
+  [11:13]  <M-kegan> [09:32:32] and yes, it is way off Tor
+  [11:13]  <M-testme> [09:35:02] Looks like a bug to me, I queried directly after creating the room.
+  [11:13]  <M-matthew> [09:47:52] that's even stranger then.
+
+  [11:29]  <M-Tor> hm, my script and angular is now off by one for nicks in this channel :p
+  [11:29]  <LeoNerd> Counting yourself?
+  [11:29]  <M-Tor> better than before, wonder who it is that can't count
+  [11:29]  <M-Tor> I am in my script, yes
+
+  [12:07]  <M-matthew> Erik: any inspiration on the room count nightmare?
+  [12:08]  <M-matthew> *room member count
+  [12:28]  <M-erikj> Not really
+  [12:28]  <M-erikj> could be the current_state_events table getting out of sync with the actual state
+  [12:29]  <M-erikj> or a table is returning duplicate rows somewhere
+
+  etc.
+id: '11201'
+key: SYN-307
+number: '307'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:49.0
+votes: '0'
+watches: '2'
+workflowId: '11301'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1294'
+  created: 2016-11-07 18:27:49.0
+  id: '13615'
+  issue: '11201'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:49.0

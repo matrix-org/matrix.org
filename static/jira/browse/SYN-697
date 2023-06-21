@@ -1,0 +1,28 @@
+---
+summary: Joining a room over federation can still result in missing state (e.g. memberlist in vector) https://vector.im/develop/#/room/!DdJkzRliezrwpNebLk:matrix.org/$146348290526EDNWx:sw1v.org
+---
+created: 2016-05-17 12:07:28.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12666'
+key: SYN-697
+number: '697'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:32.0
+votes: '0'
+watches: '2'
+workflowId: '12766'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1548'
+  created: 2016-11-07 18:29:32.0
+  id: '13861'
+  issue: '12666'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:32.0

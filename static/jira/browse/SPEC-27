@@ -1,0 +1,33 @@
+---
+summary: We need to define the validation rules applied to federation events.
+---
+assignee: erikj
+created: 2014-09-30 14:00:29.0
+creator: matthew
+description: |-
+  My notes from talking to Mjark yesterday:
+  * Rules that we apply to check whether things aren't valid.  Too loose, we risk spoofing - too tight, we risk DoS (perhaps)
+
+  A main question: should you reject stuff which is included in a transaction from a server, but isn't originally from that server, and is invalid?  Answer: probably. However you need to check you can't engineer a state where a malicious server encourages a legitimate server to accept an invalid message.
+id: '10425'
+key: SPEC-27
+number: '27'
+priority: '1'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:26:44.0
+votes: '0'
+watches: '2'
+workflowId: '10528'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/463'
+  created: 2016-10-28 16:26:44.0
+  id: '13238'
+  issue: '10425'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:44.0

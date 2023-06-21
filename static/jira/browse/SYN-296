@@ -1,0 +1,39 @@
+---
+summary: Changing displayname for @matthew:matrix.org fails with 403
+---
+created: 2015-03-08 19:26:37.0
+creator: matthew
+description: |-
+  2015-03-08 19:24:47,348 - synapse.http.server - 138 - INFO - PUT-2273300 - Received request: PUT /_matrix/client/api/v1/profile/@matthew:matrix.org/displayname
+
+  ...
+
+  2015-03-08 19:24:51,227 - synapse.api.errors - 47 - INFO - PUT-2273300 - AuthError: 403, You are not allowed to join this room
+  2015-03-08 19:24:51,228 - synapse.api.auth - 86 - INFO - PUT-2273300 - Event auth check failed on event <FrozenEvent event_id='$142584269014834QovVV:matrix.org', type='m.room.member', state_key='@matthew:matrix.org'> with msg: You are not allowed to join this room
+  2015-03-08 19:24:51,228 - synapse.api.auth - 88 - INFO - PUT-2273300 - Denying! <FrozenEvent event_id='$142584269014834QovVV:matrix.org', type='m.room.member', state_key='@matthew:matrix.org'>
+  2015-03-08 19:24:51,230 - synapse.http.server - 153 - INFO - PUT-2273300 - <Request at 0xfbb5d4d0 method=PUT uri=/_matrix/client/api/v1/profile/@matthew:matrix.org/displayname?access_token=secret clientproto=HTTP/1.1> SynapseError: 403 - You are not allowed to join this room
+  2015-03-08 19:24:51,230 - twisted - 455 - INFO - PUT-2273300 - "83.166.68.175" - - [08/Mar/2015:19:24:50 +0000] "PUT /_matrix/client/api/v1/profile/@matthew:matrix.org/displayname?access_token=secret HTTP/1.1" 403 73 "https://matrix.org/beta/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36"
+id: '11179'
+key: SYN-296
+number: '296'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-09 10:06:32.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:03.0
+votes: '0'
+watches: '1'
+workflowId: '11279'
+---
+actions:
+- author: matthew
+  body: "Tor also has problems with his:\n\n\"M_UNKNOWN\t\n No known servers\t\ngot that as a reply to my nick changing, but looks like it still worked\""
+  created: 2015-03-08 19:51:18.0
+  id: '11361'
+  issue: '11179'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-08 19:51:18.0

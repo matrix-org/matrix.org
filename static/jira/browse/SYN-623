@@ -1,0 +1,49 @@
+---
+summary: Rooms can get into a very confused state where guests' join requests are 200ed but never actually joined
+---
+created: 2016-02-08 17:52:34.0
+creator: dbkr
+description: ''
+id: '12377'
+key: SYN-623
+number: '623'
+priority: '2'
+project: '10000'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:05.0
+votes: '0'
+watches: '2'
+workflowId: '12482'
+---
+actions:
+- author: dbkr
+  body: |-
+    The room #testingGuest:matrix.org appears to have started out with guest access enabled and then has it disabled. When loading the timeline for this room, the state is given with guest access enabled (since this reflects the state at the point represented by the start of the timeline) and the timeline then contains an event setting guest access to disabled.
+
+    Currently this can be witnessed by creating a guest account on matrix.org from vector, clicking on 'Testing Guest Access' in the directory and clicking join. No composer bar appears because the join request succeeds but there is no join event for the user in the room state that comes down.
+
+    Unsure yet whether it's possible to get a new room into this state.
+  created: 2016-02-08 17:56:54.0
+  id: '12597'
+  issue: '12377'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-02-08 17:56:54.0
+- author: dbkr
+  body: 'Better still, when I sync my account, the room comes down with state guest_access: can_join and no guest_access state events in the timeline (the timeline has 7 events). When I try to join the room as a guest, I get the same room state but a timeline 10 events, of which the last (9) is Amandine setting guest_access to forbidden with event id $145461849139154seYfI:matrix.org!'
+  created: 2016-02-08 18:27:58.0
+  id: '12598'
+  issue: '12377'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-02-08 18:29:20.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1492'
+  created: 2016-11-07 18:29:05.0
+  id: '13799'
+  issue: '12377'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:05.0

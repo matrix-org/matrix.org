@@ -1,0 +1,31 @@
+---
+summary: Support context/threads for messages
+---
+created: 2016-01-16 11:35:02.0
+creator: somantiq
+description: |-
+  Extend https://github.com/matrix-org/matrix-doc/blob/master/event-schemas/schema/m.room.message properties with an optional "context" property, consisting of a title and URI.
+
+  Reasoning: Most conversations happen in a specific context or are part of a thread. Some chat apps support this explicitly (Zulip, Flowdock), some have issues open for this (https://github.com/RocketChat/Rocket.Chat/issues/1112). From my experience of using Slack extensively, even if there is no support for context in the app, especially with integrations you end up inventing your own way of indicating context (typically as a link) in the body of each message, which only adds to the noise. Matrix should have a standard support for context as early as possible so the context gets federated properly.
+id: '12310'
+key: SPEC-326
+number: '326'
+priority: '2'
+project: '10001'
+reporter: somantiq
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:28:09.0
+votes: '0'
+watches: '2'
+workflowId: '12415'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/616'
+  created: 2016-10-28 16:28:09.0
+  id: '13424'
+  issue: '12310'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:09.0

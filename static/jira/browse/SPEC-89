@@ -1,0 +1,52 @@
+---
+summary: Default power levels should let randoms rename the room & topic
+---
+created: 2015-01-12 18:02:31.0
+creator: matthew
+description: ''
+id: '10916'
+key: SPEC-89
+number: '89'
+priority: '1'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:26:55.0
+votes: '0'
+watches: '3'
+workflowId: '11016'
+---
+actions:
+- author: erikj
+  body: (Pedantically points out that IRC semantics don't allow _anyone_ to change the room name after creation)
+  created: 2015-01-12 18:06:12.0
+  id: '11102'
+  issue: '10916'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-12 18:06:12.0
+- author: erikj
+  body: I think we should protect the name of the room by default for new public rooms, as I'm not sure I want randoms to happily rename the room when I'm not around. At least for private rooms I'm more likely to trust the participants.
+  created: 2015-01-12 18:09:16.0
+  id: '11103'
+  issue: '10916'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-12 18:09:16.0
+- author: erikj
+  body: (Moved to SPEC as the issue here is to decide /what/ the defaults should be. Implementing this in synapse should be easy.)
+  created: 2015-01-15 11:31:52.0
+  id: '11127'
+  issue: '10916'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-15 11:31:52.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/485'
+  created: 2016-10-28 16:26:55.0
+  id: '13261'
+  issue: '10916'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:55.0

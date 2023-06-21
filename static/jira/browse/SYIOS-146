@@ -1,0 +1,20 @@
+---
+summary: Support anonymous access in Matrix client
+---
+created: 2015-09-28 16:27:46.0
+creator: gforet
+description: ''
+id: '11952'
+key: SYIOS-146
+number: '146'
+priority: '2'
+project: '10200'
+reporter: gforet
+status: '10100'
+type: '1'
+updated: 2015-09-28 16:29:55.0
+votes: '0'
+watches: '1'
+workflowId: '12055'
+---
+actions: null

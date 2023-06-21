@@ -1,0 +1,28 @@
+---
+summary: Might be interesting to have a way to restrict a room to particular types of events
+---
+created: 2015-06-02 00:37:40.0
+creator: matthew
+description: ''
+id: '11585'
+key: SPEC-171
+number: '171'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:21.0
+votes: '0'
+watches: '2'
+workflowId: '11686'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/506'
+  created: 2016-10-28 16:27:21.0
+  id: '13314'
+  issue: '11585'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:21.0

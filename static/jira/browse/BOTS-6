@@ -1,0 +1,76 @@
+---
+summary: IRC bridge appears to leak memory
+---
+assignee: leonerd
+created: 2014-10-27 15:40:26.0
+creator: leonerd
+description: ''
+id: '10512'
+key: BOTS-6
+number: '6'
+priority: '3'
+project: '10101'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2014-10-29 14:50:25.0
+status: '5'
+type: '1'
+updated: 2014-10-29 14:50:25.0
+votes: '0'
+watches: '1'
+workflowId: '10616'
+---
+actions:
+- author: leonerd
+  body: |-
+    This appears to be a leak of IO::Socket::SSL sockets of some kind. According to {{pmat-count}}:
+
+    {noformat}
+    Perl memory dumpfile from perl 5.14.2
+    Heap contains 2628323 objects
+      Kind                 Count      (blessed) 
+      ARRAY                117003     1901      
+      CODE                 4480                 
+      FORMAT               2                    
+      GLOB                 75804      68633     
+      HASH                 275875     68917     
+      IO                   68669      68669     
+      PAD                  3187                 
+      PADLIST              3110                 
+      PADNAMES             3110                 
+      REF                  434625     12        
+      REGEXP               995        75        
+      SCALAR               1641132    15        
+      STASH                331                  
+    {noformat}
+
+    Which sounds like a leak of around 68,600 filehandle objects of some kind.
+
+    Additionally, looking at the dump in the GTK explorer yields a large amount of {{IO::Socket::SSL}} globs, {{IO::Socket::SSL::SSL_Context}} hashes and {{IO::File}} IO objects. Perhaps a {{Net::Async::HTTP}} bug.
+  created: 2014-10-27 15:51:31.0
+  id: '10596'
+  issue: '10512'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-27 15:51:31.0
+- author: leonerd
+  body: |-
+    Huh. I thought this felt oddly familiar. It's a repeat of
+
+      https://rt.cpan.org/Ticket/Display.html?id=93107
+
+    Most expedient workaround: InstallI {{IO::Async::Loop::Ppoll}} and use that instead, avoiding {{IO::Poll}}.
+  created: 2014-10-27 16:16:17.0
+  id: '10597'
+  issue: '10512'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-27 16:16:17.0
+- author: leonerd
+  body: Having updated to {{IO::Ppoll}} instead, this bug seems to have gone away. Heap dump file after 2 days is a mere 9MiB in size now, roughly the same size it is at initial creation. Certainly much better than the ~250MiB file I pulled on Monday.
+  created: 2014-10-29 14:37:44.0
+  id: '10627'
+  issue: '10512'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-29 14:37:44.0

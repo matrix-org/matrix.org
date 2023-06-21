@@ -16,3 +16,7 @@
 # Allow ACAO for well-known client
 /.well-known/matrix/client
   Access-Control-Allow-Origin: *
+
+# Add content type for jira archive
+/jira/browse/*
+  Content-Type: text/plain

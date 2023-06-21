@@ -1,0 +1,28 @@
+---
+summary: We should mandate homeservers declare a postmaster@ equivalent so we can talk to their admins if needed
+---
+created: 2015-01-12 00:26:14.0
+creator: matthew
+description: ''
+id: '10912'
+key: SPEC-87
+number: '87'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:26:55.0
+votes: '0'
+watches: '2'
+workflowId: '11012'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/484'
+  created: 2016-10-28 16:26:55.0
+  id: '13260'
+  issue: '10912'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:55.0

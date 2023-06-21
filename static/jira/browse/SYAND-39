@@ -1,0 +1,25 @@
+---
+summary: Loading Indicator for Public rooms
+---
+created: 2015-03-04 19:49:59.0
+creator: bob
+description: |-
+  There should be some "Loading Indicator" when a (possible quite long) list of rublic rooms is "in loading" state.
+
+  For me it is ofter not clear what is going below the Public room bar...
+id: '11160'
+key: SYAND-39
+number: '39'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-03-05 16:16:10.0
+status: '5'
+type: '4'
+updated: 2015-03-05 16:16:10.0
+votes: '0'
+watches: '1'
+workflowId: '11260'
+---
+actions: null

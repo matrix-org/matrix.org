@@ -1,0 +1,43 @@
+---
+summary: Do we need an C-S API for querying historical room metadata?
+---
+created: 2014-09-16 12:59:28.0
+creator: matthew
+description: |-
+  Currently we handle historical room metadata (e.g. topic changes) by supplying an event which has a prev_content key to show the previous value of said metadata.  This means that as the user paginates back through history of a room, they know what the current value should be. 
+
+  However, this doesn't allow arbitrary querying of historical state if you're not paginating - e.g. when doing a search on room history.  It also is a bit inefficient, as it doubles the size of these events.
+
+  Do we need a separate API for querying the room metadata state at a given version token?
+id: '10203'
+key: SPEC-10
+number: '10'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-21 11:45:08.0
+status: '5'
+type: '2'
+updated: 2015-01-21 11:45:08.0
+votes: '0'
+watches: '2'
+workflowId: '10330'
+---
+actions:
+- author: kegan
+  body: I don't see a good use case for this which isn't addressed by Contextual Windowing in v2.
+  created: 2015-01-08 17:06:39.0
+  id: '11072'
+  issue: '10203'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-08 17:06:39.0
+- author: kegan
+  body: 'Landed on matrix-doc master: {{drafts/general_api.rst}} - Contextual Windowing.'
+  created: 2015-01-21 11:45:08.0
+  id: '11169'
+  issue: '10203'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:45:08.0

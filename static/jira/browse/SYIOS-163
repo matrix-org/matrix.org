@@ -1,0 +1,33 @@
+---
+summary: Add ability to see if an image has been sent or not
+---
+assignee: gforet
+created: 2015-10-16 15:23:00.0
+creator: gforet
+description: ''
+id: '12025'
+key: SYIOS-163
+number: '163'
+priority: '1'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-10-19 09:40:17.0
+status: '5'
+type: '1'
+updated: 2015-10-19 09:40:18.0
+votes: '0'
+watches: '1'
+workflowId: '12128'
+---
+actions:
+- author: gforet
+  body: |-
+    The attachment view is semi transparent during event sending.
+    This view becomes opaque when the attachment is successfully sent.
+  created: 2015-10-19 09:40:18.0
+  id: '12274'
+  issue: '12025'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-10-19 09:40:18.0

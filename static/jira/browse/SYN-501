@@ -1,0 +1,28 @@
+---
+summary: Querying a remote avatar from the local content repo that no longer exists should yield 404, not 500
+---
+created: 2015-10-19 12:32:23.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12028'
+key: SYN-501
+number: '501'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:29.0
+votes: '0'
+watches: '2'
+workflowId: '12131'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1401'
+  created: 2016-11-07 18:28:29.0
+  id: '13710'
+  issue: '12028'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:29.0

@@ -1,0 +1,97 @@
+---
+summary: Unable to join room from invite
+---
+assignee: erikj
+created: 2015-05-27 10:03:06.0
+creator: kegan
+description: |-
+  @erikj:jki.re tried to invite me to a room on matrix.org. I tried to accept the invite, but I got {{M_FORBIDDEN}}.
+
+  Logs:
+  {code}
+  2015-05-27 09:37:20,752 - synapse.api.errors - 49 - INFO - POST-160161 - AuthError: 403, You are not invited to this room.
+  2015-05-27 09:37:20,752 - synapse.api.auth - 95 - INFO - POST-160161 - Event auth check failed on event <FrozenEvent event_id='$1432715840563wAcOE:matrix.org', type='m.room.member', state_key='@kegan:matrix.org'> with msg: You are not invited to this room.
+  2015-05-27 09:37:20,752 - synapse.api.auth - 97 - INFO - POST-160161 - Denying! <FrozenEvent event_id='$1432715840563wAcOE:matrix.org', type='m.room.member', state_key='@kegan:matrix.org'>
+  2015-05-27 09:37:20,753 - synapse.http.server - 96 - INFO - POST-160161 - <Request at 0x7f73b8fb2c20 method=POST uri=/_matrix/client/api/v1/join/!FGXeDOylLihwfdKAIx:matrix.org?access_token=Q...z clientproto=HTTP/1.1> SynapseError: 403 - You are not invited to this room.
+  {code}
+
+  Tables:
+  {code}
+  matrix=# select * from current_state_events where room_id='!FGXeDOylLihwfdKAIx:matrix.org';
+              event_id             |            room_id             |        type         |      state_key       
+  ---------------------------------+--------------------------------+---------------------+----------------------
+   $14303139322251Ramrw:matrix.org | !FGXeDOylLihwfdKAIx:matrix.org | m.room.create       | 
+   $14303139322252rsqrU:matrix.org | !FGXeDOylLihwfdKAIx:matrix.org | m.room.member       | @matthew:matrix.org
+   $14303139322253TjCGS:matrix.org | !FGXeDOylLihwfdKAIx:matrix.org | m.room.power_levels | 
+   $14303139322254VVBVS:matrix.org | !FGXeDOylLihwfdKAIx:matrix.org | m.room.join_rules   | 
+   $14303139322255nqGBz:matrix.org | !FGXeDOylLihwfdKAIx:matrix.org | m.room.name         | 
+   $143032087038RpYoY:matrix.org   | !FGXeDOylLihwfdKAIx:matrix.org | m.room.member       | @Amandine:matrix.org
+   $14303139652262XGNWX:matrix.org | !FGXeDOylLihwfdKAIx:matrix.org | m.room.member       | @dave:matrix.org
+   $14303142352281hyJky:matrix.org | !FGXeDOylLihwfdKAIx:matrix.org | m.room.member       | @LeoNerd:matrix.org
+   $14303145062VZgjQ:jki.re        | !FGXeDOylLihwfdKAIx:matrix.org | m.room.member       | @erikj:jki.re
+   $14303145582303AGiaB:matrix.org | !FGXeDOylLihwfdKAIx:matrix.org | m.room.member       | @erikj:matrix.org
+   $14303153642333GdavZ:matrix.org | !FGXeDOylLihwfdKAIx:matrix.org | m.room.member       | @Mjark:matrix.org
+   $14308178894948eqKdS:matrix.org | !FGXeDOylLihwfdKAIx:matrix.org | m.room.member       | @oddvar:matrix.org
+   $143271537433tXvpR:jki.re       | !FGXeDOylLihwfdKAIx:matrix.org | m.room.member       | @kegan:matrix.org
+  (13 rows)
+
+
+  matrix=# select * from event_forward_extremities where room_id='!FGXeDOylLihwfdKAIx:matrix.org';
+              event_id            |            room_id             
+  --------------------------------+--------------------------------
+   $1432682040457xLkgy:matrix.org | !FGXeDOylLihwfdKAIx:matrix.org
+  (1 row)
+
+
+  matrix=# select * from rejections where event_id='$143271537433tXvpR:jki.re';
+   event_id | reason | last_check 
+  ----------+--------+------------
+  (0 rows)
+
+
+  matrix=# select * from events natural inner join rejections where room_id='!FGXeDOylLihwfdKAIx:matrix.org';
+   event_id | stream_ordering | topological_ordering | type | room_id | content | unrecognized_keys | processed | outlier | depth | reason | last_check 
+  ----------+-----------------+----------------------+------+---------+---------+-------------------+-----------+---------+-------+--------+------------
+  (0 rows)
+
+
+  matrix=# select * from events where event_id='$143271537433tXvpR:jki.re';
+   stream_ordering | topological_ordering |         event_id          |     type      |            room_id             |         content         | unrecognized_keys | processed | outlier | depth 
+  -----------------+----------------------+---------------------------+---------------+--------------------------------+-------------------------+-------------------+-----------+---------+-------
+            283467 |                   61 | $143271537433tXvpR:jki.re | m.room.member | !FGXeDOylLihwfdKAIx:matrix.org | {"membership":"invite"} |                   | t         | f       |    61
+  (1 row)
+
+  {code}
+
+  Running on commit:
+  {code}
+  commit 554c63ca604f3b8e9a3e8cde143eb319bf750c00
+  Author: Mark Haines <mark.haines@matrix.org>
+  Date:   Tue May 26 15:03:49 2015 +0100
+  {code}
+
+  Logs around the time the invite was sent @ {{1432715374354}}:
+  {code}
+  2015-05-27 09:29:34,588 - synapse.http.matrixfederationclient - 197 - INFO -  - Received response 200 OK for jki.re: PUT /_matrix/federation/v1/send/1432649887462/
+  2015-05-27 09:29:34,589 - synapse.federation.transaction_queue - 324 - INFO -  - TX [jki.re] {1432649887462} got 200 response
+  2015-05-27 09:29:34,622 - synapse.http.server - 86 - INFO - PUT-158078 - Received request: PUT /_matrix/federation/v1/invite/!FGXeDOylLihwfdKAIx:matrix.org/$143271537433tXvpR:jki.re
+  [...]
+  2015-05-27 09:29:34,746 - synapse.access.https - 515 - INFO - PUT-158078 - "-" - - [27/May/2015:08:29:34 +0000] "PUT /_matrix/federation/v1/invite/!FGXeDOylLihwfdKAIx:matrix.org/$143271537433tXvpR:jki.re HTTP/1.1" 200 1117 "-" "Synapse/0.9.1 (b=release-v0.9.1,554c63c)"
+  2015-05-27 09:29:34,746 - synapse.http.server - 126 - INFO - PUT-158078 - Processed request: 123ms 200 PUT /_matrix/federation/v1/invite/!FGXeDOylLihwfdKAIx:matrix.org/$143271537433tXvpR:jki.re
+  {code}
+id: '11560'
+key: SYN-392
+number: '392'
+priority: '1'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-09-16 16:37:38.0
+status: '5'
+type: '1'
+updated: 2015-09-16 16:37:38.0
+votes: '0'
+watches: '1'
+workflowId: '11661'
+---
+actions: null

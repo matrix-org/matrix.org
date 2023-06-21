@@ -1,0 +1,22 @@
+---
+summary: It'd be nice if the up & down keys let you step through the history as per readline or xchat
+---
+created: 2014-09-15 23:58:26.0
+creator: matthew
+description: ''
+id: '10020'
+key: SYWEB-7
+number: '7'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '10000'
+resolutiondate: 2014-09-17 13:39:06.0
+status: '6'
+type: '2'
+updated: 2014-09-18 23:12:56.0
+votes: '0'
+watches: '1'
+workflowId: '10380'
+---
+actions: null

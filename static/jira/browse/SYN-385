@@ -1,0 +1,59 @@
+---
+summary: We do not log enough about federation traffic to debug problems properly
+---
+assignee: erikj
+created: 2015-05-20 23:00:49.0
+creator: matthew
+description: |-
+  Whilst diagnosing tonight's DoS we hit a bunch of problems:
+
+  * We're not logging source IP on incoming federation requests(!)
+  * TS field on received txns is unhelpfully blank
+  * transaction_id_to_pdu is misleadingly blank and should probably be dropped
+  * We don't log the contents of federation traffic anywhere - we can't even see if they're PDU or EDUs (other than through metrics counters).  We should at least log the event types, or even stash the events or event types somewhere in the DB for diagnostic purposes.
+id: '11543'
+key: SYN-385
+number: '385'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:02.0
+votes: '0'
+watches: '3'
+workflowId: '11644'
+---
+actions:
+- author: erikj
+  body: We should also log server version when we shut down.
+  created: 2015-05-21 09:41:58.0
+  id: '11780'
+  issue: '11543'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-21 09:41:58.0
+- author: erikj
+  body: |-
+    I would quite like the following metrics, (min, avg, max, count, sum, sum of squared):
+    - Incoming transactions by origin
+    - Number of edus in a transaction
+    - Number of pdus in a transaction
+    - Response time
+    - Response code
+
+    I'm not sure how suitable prometheus compares with graphite for such things.
+  created: 2015-05-21 13:51:21.0
+  id: '11784'
+  issue: '11543'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-21 13:51:21.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1322'
+  created: 2016-11-07 18:28:02.0
+  id: '13643'
+  issue: '11543'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:02.0

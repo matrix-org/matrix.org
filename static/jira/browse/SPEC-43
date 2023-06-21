@@ -1,0 +1,30 @@
+---
+summary: Should error codes be namespaced like event types?
+---
+created: 2014-10-02 16:41:15.0
+creator: erikj
+description: ''
+id: '10446'
+key: SPEC-43
+number: '43'
+priority: '3'
+project: '10001'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-10-06 13:27:38.0
+status: '5'
+type: '2'
+updated: 2014-10-06 13:27:38.0
+votes: '0'
+watches: '2'
+workflowId: '10550'
+---
+actions:
+- author: kegan
+  body: They already are namespaced, e.g. M_FORBIDDEN is in the namespace m, just like event types.
+  created: 2014-10-06 13:27:38.0
+  id: '10521'
+  issue: '10446'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-06 13:27:38.0

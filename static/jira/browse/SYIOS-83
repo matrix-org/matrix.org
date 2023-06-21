@@ -1,0 +1,94 @@
+---
+summary: When uploading an image, the bubble order jumps around
+---
+assignee: gforet
+created: 2015-02-16 01:51:00.0
+creator: matthew
+description: ''
+id: '11072'
+key: SYIOS-83
+number: '83'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-18 16:08:14.0
+status: '5'
+type: '1'
+updated: 2015-02-18 16:08:14.0
+votes: '0'
+watches: '2'
+workflowId: '11172'
+---
+actions:
+- author: gforet
+  body: |-
+    Note: The actual timestamp of the attachment is set at the end of upload.
+    Solution: During attachment uploading, any new outgoing and incoming message must be inserted above the attachment bubble.
+  created: 2015-02-16 08:20:29.0
+  id: '11261'
+  issue: '11072'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-16 08:20:29.0
+- author: matthew
+  body: This would be quite surprising behaviour for a user, who expects sent messages to be appended to the list, not inserted above uploading attachments.  Imagine how bad it'd be if you upload a series of pictures, send a text, only for the text to disappear off the top of the page.  Surely we just set the timestamp at the beginning of the upload instead?
+  created: 2015-02-17 00:01:13.0
+  id: '11270'
+  issue: '11072'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-17 00:01:13.0
+- author: gforet
+  body: |-
+    The timestamp is not set by the client. It is set by the server when message is posted.
+    That is why attachment does not have actual timestamp until the end of upload.
+    We need to wait for this upload to get back the attachment uri in matrix content repository before posting the attachment and then obtain the attachment timestamp.
+
+    I don't think the client can force the message timestamp, do I am wrong?
+
+    In order to avoid jump around, we should keep the uploading attachment at the bottom of the room history. Is that ok?
+  created: 2015-02-17 10:15:56.0
+  id: '11271'
+  issue: '11072'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-17 10:15:56.0
+- author: matthew
+  body: Okay. can we not just set our own timestamp clientside and ignore what the server says for uploaded images, as a workaround?
+  created: 2015-02-17 10:22:34.0
+  id: '11272'
+  issue: '11072'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-17 10:22:34.0
+- author: gforet
+  body: No, because you will not have the same history order for all users (and for all devices).
+  created: 2015-02-17 10:30:42.0
+  id: '11273'
+  issue: '11072'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-17 10:30:42.0
+- author: gforet
+  body: |-
+    I implemented my suggestion "keep the uploading attachment at the bottom of the room history", and the result is not convincing :(. I decided to not commit changes.
+    The weak point of this solution is to handle correctly the scroller offset to focus on live stream at the bottom of the history when upload is in progress...
+
+    The right solution should be to display uploading attachments outside the history, and add them into history when attachment is done.
+
+    At the end, I will implement the Matthew's suggestion :"set our own timestamp clientside and ignore what the server says for uploaded images". The actual timestamp will be considered in case of a room history refresh (for example: when user goes back to Recents and selects again the room).
+  created: 2015-02-18 15:39:17.0
+  id: '11284'
+  issue: '11072'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-18 15:39:17.0
+- author: gforet
+  body: Workaround done.
+  created: 2015-02-18 16:08:14.0
+  id: '11285'
+  issue: '11072'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-18 16:08:14.0

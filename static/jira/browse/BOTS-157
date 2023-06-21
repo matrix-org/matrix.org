@@ -1,0 +1,30 @@
+---
+summary: OtherSqueaky's inverted colour scheme doesn't map to Matrix
+---
+created: 2016-01-22 18:49:06.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12343'
+key: BOTS-157
+number: '157'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 11:05:01.0
+status: '5'
+type: '1'
+updated: 2016-06-02 11:05:01.0
+votes: '0'
+watches: '2'
+workflowId: '12448'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/62
+  created: 2016-06-02 11:05:01.0
+  id: '12982'
+  issue: '12343'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 11:05:01.0

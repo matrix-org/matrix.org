@@ -1,0 +1,38 @@
+---
+summary: Test token expiry and refresh
+---
+created: 2015-09-29 15:10:58.0
+creator: leonerd
+description: ''
+id: '11966'
+key: SYT-22
+number: '22'
+priority: '1'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-06 19:53:40.0
+status: '5'
+type: '2'
+updated: 2015-11-06 19:53:40.0
+votes: '0'
+watches: '1'
+workflowId: '12069'
+---
+actions:
+- author: leonerd
+  body: Some code already exists in {{tests/10apidoc/02login.pl}} so this might already be done
+  created: 2015-09-29 15:11:35.0
+  id: '12187'
+  issue: '11966'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-29 15:11:35.0
+- author: leonerd
+  body: Was already done
+  created: 2015-11-06 19:53:40.0
+  id: '12353'
+  issue: '11966'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-11-06 19:53:40.0

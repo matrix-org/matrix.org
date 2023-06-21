@@ -1,0 +1,79 @@
+---
+summary: 'TypeError: checkpw() argument 2 must be string or read-only buffer, not None'
+---
+created: 2015-04-25 21:55:35.0
+creator: thijs
+description: |-
+  When you create a user with the username '' and password '' using the shared secret registration method and then login with the returned user_id and the same '' password, it throws a TypeError on server and returns 500 error to the client:
+
+  {code:python}
+  response = register_new_user('', '', self.server_url, self.secret)
+  username = response['user_id']
+  response = request_login(username, '', self.server_url, self.secret)
+  {code}
+
+  {code}
+  2015-04-25 22:45:24,963 - synapse.http.server - 171 - INFO - POST-53 - Received request: POST /_matrix/client/api/v1/login
+  2015-04-25 22:45:24,967 - synapse.http.server - 199 - ERROR - POST-53 - checkpw() argument 2 must be string or read-only buffer, not None
+  Traceback (most recent call last):
+    File "/foo/.virtualenvs/bar/src/synapse/synapse/http/server.py", line 174, in _async_render
+      code, response = yield callback(request, *args)
+    File "/foo/.virtualenvs/bar/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/foo/.virtualenvs/bar/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/foo/.virtualenvs/bar/src/synapse/synapse/rest/client/v1/login.py", line 40, in on_POST
+      result = yield self.do_password_login(login_submission)
+    File "/foo/.virtualenvs/bar/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/foo/.virtualenvs/bar/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/foo/.virtualenvs/bar/src/synapse/synapse/rest/client/v1/login.py", line 56, in do_password_login
+      password=login_submission["password"])
+    File "/foo/.virtualenvs/bar/lib/python2.7/site-packages/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "/foo/.virtualenvs/bar/src/synapse/synapse/handlers/login.py", line 61, in login
+      if bcrypt.checkpw(password, stored_hash):
+  TypeError: checkpw() argument 2 must be string or read-only buffer, not None
+  2015-04-25 22:45:25,008 - twisted - 455 - INFO - POST-53 - "127.0.0.1" - - [25/Apr/2015:20:45:24 +0000] "POST /_matrix/client/api/v1/login HTTP/1.1" 500 33 "-" "Python-urllib/2.7"
+  {code}
+id: '11366'
+key: SYN-359
+number: '359'
+priority: '3'
+project: '10000'
+reporter: thijs
+resolution: '1'
+resolutiondate: 2015-05-14 18:02:14.0
+status: '5'
+type: '1'
+updated: 2015-05-26 16:13:33.0
+votes: '0'
+watches: '3'
+workflowId: '11466'
+---
+actions:
+- author: dbkr
+  body: I've fixed a related bug affecting shared secret auth but I'm unable to reproduce this. How are you hitting the API? Looks like you're doing it programatically rather than via a client?
+  created: 2015-05-14 12:08:30.0
+  id: '11748'
+  issue: '11366'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 12:08:30.0
+- author: thijs
+  body: I'm using the requests library to call the API. After fetching the latest synapse server code my test suite is not showing the traceback anymore so the issue seems fixed, feel free to close this ticket.
+  created: 2015-05-14 17:51:40.0
+  id: '11762'
+  issue: '11366'
+  type: comment
+  updateauthor: thijs
+  updated: 2015-05-14 17:51:40.0
+- author: dbkr
+  body: Okay, thanks!
+  created: 2015-05-14 18:02:14.0
+  id: '11763'
+  issue: '11366'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 18:02:14.0

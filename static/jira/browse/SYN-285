@@ -1,0 +1,22 @@
+---
+summary: --no-tls should not try to read ssl.pem
+---
+created: 2015-02-21 13:48:21.0
+creator: matthew
+description: ''
+id: '11112'
+key: SYN-285
+number: '285'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-06 11:35:10.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:22:42.0
+votes: '0'
+watches: '1'
+workflowId: '11212'
+---
+actions: null

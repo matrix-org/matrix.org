@@ -1,0 +1,32 @@
+---
+summary: Formal AS support
+---
+created: 2015-07-31 16:45:26.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  On develop currently we have bodge support for ASes by allowing custom query parameters to be sent on every request per MatrixClient instance. It would be better to have a specific method for sending events as an AS for people who want to use a single instance to send as multiple people. This would probably look like {{sendAppServiceEvent(opts, callback)}} where opts can have {{userId}}, etc - we may also want to consider adding a {{state}} parameter which is just directly passed to the {{request}} module (this is specifically useful in the IRC AS which uses this as the request ID for logging purposes. We should formally support a misc key which we will pass to the {{request}} module for people who are doing stuff like that).
+id: '11778'
+key: SYJS-21
+number: '21'
+priority: '2'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:29:16.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:29:16.0
+votes: '0'
+watches: '2'
+workflowId: '11879'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/258
+  created: 2016-10-24 11:29:16.0
+  id: '13215'
+  issue: '11778'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:29:16.0

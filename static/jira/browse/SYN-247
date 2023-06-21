@@ -1,0 +1,30 @@
+---
+summary: Reduce activity timer granularity to avoid too many quick updates
+---
+created: 2015-01-20 18:14:49.0
+creator: leonerd
+description: ''
+id: '10962'
+key: SYN-247
+number: '247'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-03-23 17:27:14.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:02.0
+votes: '0'
+watches: '1'
+workflowId: '11062'
+---
+actions:
+- author: leonerd
+  body: Should now be solved by ed008e8
+  created: 2015-03-23 17:26:50.0
+  id: '11429'
+  issue: '10962'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-03-23 17:26:50.0

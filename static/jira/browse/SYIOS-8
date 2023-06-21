@@ -1,0 +1,33 @@
+---
+summary: Reliable SDK version
+---
+assignee: manu
+created: 2014-12-10 11:09:18.0
+creator: manu
+description: |-
+  The SDK version is defined in the lib project settings.
+  The issue is that CocoaPods get only  source files. It does not care of the project settings. So we loose the definition of MatrixSDKVersionNumber & MatrixSDKVersionString when building the app code.
+id: '10803'
+key: SYIOS-8
+number: '8'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-16 09:25:07.0
+status: '5'
+type: '2'
+updated: 2014-12-16 09:25:07.0
+votes: '0'
+watches: '1'
+workflowId: '10903'
+---
+actions:
+- author: manu
+  body: The app can now use MatrixSDKVersion
+  created: 2014-12-16 09:25:07.0
+  id: '10997'
+  issue: '10803'
+  type: comment
+  updateauthor: manu
+  updated: 2014-12-16 09:25:07.0

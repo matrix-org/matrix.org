@@ -1,0 +1,30 @@
+---
+summary: kill off tokenrefresh
+---
+created: 2016-10-06 18:26:03.0
+creator: neb
+description: |-
+  Submitted by @richvdh:sw1v.org
+  synapse has various half-written bits of tokenrefresh, which is waiting to be a security vulnerability. We should kill it off.
+id: '12852'
+key: SYN-784
+number: '784'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:06.0
+votes: '0'
+watches: '2'
+workflowId: '12952'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1609'
+  created: 2016-11-07 18:30:06.0
+  id: '13939'
+  issue: '12852'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:06.0

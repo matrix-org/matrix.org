@@ -1,0 +1,28 @@
+---
+summary: If all users leave we should intelligently handle room aliases for it.
+---
+created: 2015-04-08 15:12:08.0
+creator: erikj
+description: ''
+id: '11314'
+key: SYN-337
+number: '337'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:55.0
+votes: '0'
+watches: '2'
+workflowId: '11414'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1307'
+  created: 2016-11-07 18:27:55.0
+  id: '13628'
+  issue: '11314'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:55.0

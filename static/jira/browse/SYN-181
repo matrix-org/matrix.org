@@ -1,0 +1,22 @@
+---
+summary: /initialSync returns the same room 3 times over
+---
+created: 2014-11-27 19:51:12.0
+creator: matthew
+description: ''
+id: '10735'
+key: SYN-181
+number: '181'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-05-07 11:55:13.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:05.0
+votes: '0'
+watches: '1'
+workflowId: '10835'
+---
+actions: null

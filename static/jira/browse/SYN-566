@@ -1,0 +1,38 @@
+---
+summary: We need a way of redacting offensive avatars and displaynames
+---
+created: 2015-12-26 10:12:41.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Currently the best you can do is redact the events which introduce the contents onto the timeline. However, the profile data remains intact and so the membership list etc continues as is. Given we have per-room profile data we should use it to redact the information from the room.
+id: '12246'
+key: SYN-566
+number: '566'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:49.0
+votes: '0'
+watches: '3'
+workflowId: '12349'
+---
+actions:
+- author: matthew
+  body: 'To clarify: the redact API worked as intended (removing human readable contents of a join event: displayname and avatar). However, we have a seperate problem that the redacted data still leaks into the view of the room via the user''s global profile data. I am proposing that redacting a this data on a join or profile event should also remove it from the per-room profile data (and that we should implement and uphold per-room profile data). This could be done as a synapse-specific feature for now, hence filing it here rather than blocking it on Matrix spec.'
+  created: 2015-12-26 12:49:22.0
+  id: '12490'
+  issue: '12246'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-26 12:49:22.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1458'
+  created: 2016-11-07 18:28:49.0
+  id: '13762'
+  issue: '12246'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:49.0

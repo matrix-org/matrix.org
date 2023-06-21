@@ -1,0 +1,28 @@
+---
+summary: Ability to pin messages in a room
+---
+created: 2015-09-22 22:26:15.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11927'
+key: SPEC-236
+number: '236'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:41.0
+votes: '0'
+watches: '2'
+workflowId: '12030'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/550'
+  created: 2016-10-28 16:27:41.0
+  id: '13358'
+  issue: '11927'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:41.0

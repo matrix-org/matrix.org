@@ -1,0 +1,22 @@
+---
+summary: micro freezing when typing
+---
+created: 2015-10-14 08:37:04.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  sometimes when I am typing the entire keyboard locks up for around half a second before resuming. This will repeat for a while as I continue to type. This can be due to the app (ui thread contention) or the keyboard software itself. I'm using SwiftKey and never have this problem on other apps. In addition, a clean install of the app seems to fix this for a while.
+id: '12015'
+key: SYAND-144
+number: '144'
+priority: '2'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-10-14 08:37:04.0
+votes: '0'
+watches: '1'
+workflowId: '12118'
+---
+actions: null

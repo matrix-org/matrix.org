@@ -1,0 +1,28 @@
+---
+summary: pztrn got a series of 400 errors in trying to log in on android. 4th time lucky
+---
+created: 2015-08-31 00:45:07.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11842'
+key: SYAND-121
+number: '121'
+priority: '1'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-09-04 16:58:25.0
+votes: '0'
+watches: '2'
+workflowId: '11945'
+---
+actions:
+- author: pztrn
+  body: 'More input: I''m on synapse 0.9.3 and latest available Android Console from Play Market, and have troubles to sign in to HTTPS listener with StartSSL certificate, it constantly says "Network Error".'
+  created: 2015-09-04 16:55:45.0
+  id: '12108'
+  issue: '11842'
+  type: comment
+  updateauthor: pztrn
+  updated: 2015-09-04 16:58:25.0

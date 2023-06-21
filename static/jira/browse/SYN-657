@@ -1,0 +1,38 @@
+---
+summary: Cannot reject invites from remote servers when the inviter has already left
+---
+created: 2016-03-19 19:03:57.0
+creator: richvdh
+description: |-
+  Steps to repeat:
+
+  * Send an invite to a room to a user on another HS
+  * Leave the room
+  * On the other account, reject the invite
+  * Nothing appears to happen (the room is still shown)
+  * Reject it again
+  * M_FORBIDDEN
+id: '12568'
+key: SYN-657
+number: '657'
+priority: '3'
+project: '10000'
+reporter: richvdh
+resolution: '1'
+resolutiondate: 2016-06-01 09:10:51.0
+status: '5'
+type: '1'
+updated: 2016-06-01 09:11:10.0
+votes: '0'
+watches: '1'
+workflowId: '12668'
+---
+actions:
+- author: richvdh
+  body: Apparently [~erikj] fixed this in https://github.com/matrix-org/synapse/pull/691.
+  created: 2016-06-01 09:10:51.0
+  id: '12933'
+  issue: '12568'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-01 09:10:51.0

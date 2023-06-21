@@ -1,0 +1,59 @@
+---
+summary: Ordering of users in a room memberlist should be by most recent activity in a room - not global presence activity
+---
+assignee: manu
+created: 2014-09-16 01:36:25.0
+creator: matthew
+description: |-
+  I expect the ordering of users in a room to reflect who has been active most recently in a given room (which is admittedly different to most IRC clients, but I think it's a fun feature).  This is slightly hard to implement as we only track activity currently based on global presence state.
+
+  However, the ordering is currently neither of these - offline users are ordered all over the place, and recently talking users often never move to the top of the list either.
+id: '10076'
+key: SYWEB-28
+number: '28'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2014-09-24 15:02:34.0
+votes: '0'
+watches: '2'
+workflowId: '10408'
+---
+actions:
+- author: manu
+  body: |-
+    Members strange ordering has been fixed. Members needed to be sorted according to their absolute time of their last activity.
+    Members who do not have last_active_time_ago value go at the end of the list. Such members are then sorted each other according to their presence state. Available first, offline last.
+
+    However, the ordering requested by the ticket is not implemented since some data are missing
+  created: 2014-09-23 17:02:50.0
+  id: '10425'
+  issue: '10076'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-23 17:02:50.0
+- author: matthew
+  body: |-
+    So we currently order by the last globally active time?
+
+    Presumably we could order by the last locally active time in the room - we just need to look at when we last saw an event from someone in the room?  (Modulo pagination problems)?
+  created: 2014-09-23 17:38:15.0
+  id: '10427'
+  issue: '10076'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 17:38:15.0
+- author: manu
+  body: |-
+    Yes, it is ordered by the last globally active time. This is the information the presence API provides and this is what we wanted to show at first.
+
+    We can change order as you described. The pagination problem could be fixed by the HS. 
+    When we make a request to get the members list of a room, the server could provide the time when users have been active for the last time in this room.
+  created: 2014-09-24 15:02:34.0
+  id: '10443'
+  issue: '10076'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-24 15:02:34.0

@@ -1,0 +1,30 @@
+---
+summary: We should never display notifs for our own messages
+---
+created: 2014-09-16 14:54:54.0
+creator: matthew
+description: ''
+id: '10208'
+key: SYWEB-32
+number: '32'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '10000'
+resolutiondate: 2014-09-17 10:22:04.0
+status: '6'
+type: '1'
+updated: 2014-09-18 23:30:26.0
+votes: '0'
+watches: '2'
+workflowId: '10386'
+---
+actions:
+- author: manu
+  body: Implemented with the bingWords feature
+  created: 2014-09-17 10:22:02.0
+  id: '10304'
+  issue: '10208'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-17 10:22:02.0

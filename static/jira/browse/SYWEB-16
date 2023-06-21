@@ -1,0 +1,31 @@
+---
+summary: When sending an invite over federation, the remote user sees the name of the resulting invite room as *their* name rather than the inviters
+---
+assignee: manu
+created: 2014-09-16 01:06:08.0
+creator: matthew
+description: ''
+id: '10055'
+key: SYWEB-16
+number: '16'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-19 08:08:33.0
+status: '5'
+type: '1'
+updated: 2014-09-22 17:20:49.0
+votes: '0'
+watches: '2'
+workflowId: '10399'
+---
+actions:
+- author: manu
+  body: The room name cannot be the current user name now
+  created: 2014-09-19 08:08:33.0
+  id: '10332'
+  issue: '10055'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-19 08:08:33.0

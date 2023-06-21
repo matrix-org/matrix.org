@@ -1,0 +1,38 @@
+---
+summary: 'Error joining room alias that doesn''t exist: TypeError: Cannot read property ''errcode'' of undefined'
+---
+created: 2014-11-21 15:17:24.0
+creator: markjh
+description: |-
+  When testing http://localhost:8082/_matrix/client/#/room/#%E2%98%95:localhost:8480 where #%E2%98%95:localhost:8480 doesn't exists.
+
+  {noformat}
+  resolveRoomIdentifier: lookup failed. {"errcode":"M_NOT_FOUND","error":"Room alias u'#%E2%98%95:localhost:8480' not found"} event-handler-service.js:323
+  joinRoom: {"errcode":"M_NOT_FOUND","error":"Room alias u'#%E2%98%95:localhost:8480' not found"} event-handler-service.js:510
+  TypeError: Cannot read property 'errcode' of undefined
+   at http://localhost:8082/_matrix/client/app/room/room-controller.js:395:25
+  {noformat}
+id: '10695'
+key: SYWEB-173
+number: '173'
+priority: '1'
+project: '10004'
+reporter: markjh
+resolution: '4'
+resolutiondate: 2014-11-24 11:09:59.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:00.0
+votes: '0'
+watches: '2'
+workflowId: '10795'
+---
+actions:
+- author: kegan
+  body: How old is this? There is no {{errcode}} references at all in {{room-controller.js}}.
+  created: 2014-11-21 15:21:37.0
+  id: '10820'
+  issue: '10695'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-21 15:21:37.0

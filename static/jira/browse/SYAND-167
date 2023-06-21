@@ -1,0 +1,22 @@
+---
+summary: 'registration is apparently broken: AttributeError: RegistrationHandler object has no attribute captcha_client'
+---
+created: 2015-12-17 23:06:34.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12221'
+key: SYAND-167
+number: '167'
+priority: '3'
+project: '10201'
+reporter: neb
+resolution: '3'
+resolutiondate: 2015-12-17 23:07:22.0
+status: '5'
+type: '1'
+updated: 2015-12-17 23:07:22.0
+votes: '0'
+watches: '1'
+workflowId: '12324'
+---
+actions: null

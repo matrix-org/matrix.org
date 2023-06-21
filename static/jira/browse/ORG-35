@@ -1,0 +1,28 @@
+---
+summary: Remove mailman from http://matrix.org/mailman entirely
+---
+created: 2016-01-04 00:43:21.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12263'
+key: ORG-35
+number: '35'
+priority: '3'
+project: '10003'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2017-03-21 11:05:13.0
+votes: '0'
+watches: '2'
+workflowId: '12366'
+---
+actions:
+- author: richvdh
+  body: What does this mean? http://matrix.org/mailman is a 404
+  created: 2017-03-21 11:05:13.0
+  id: '14019'
+  issue: '12263'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:05:13.0

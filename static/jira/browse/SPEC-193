@@ -1,0 +1,31 @@
+---
+summary: Content repo doesn't explain how to set the filename
+---
+created: 2015-06-25 18:10:13.0
+creator: leonerd
+description: |-
+  {{https://github.com/matrix-org/matrix-doc/blob/master/specification/40_content_repository.rst}}
+
+  Documents that when you {{GET}}, you'll get a {{Content-Disposition}} header giving the upload filename. Does not document how you set that when you {{POST}}.
+id: '11702'
+key: SPEC-193
+number: '193'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:27.0
+votes: '0'
+watches: '2'
+workflowId: '11803'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/521'
+  created: 2016-10-28 16:27:27.0
+  id: '13329'
+  issue: '11702'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:27.0

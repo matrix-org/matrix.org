@@ -1,0 +1,28 @@
+---
+summary: Bad UX when updating avatar & display name in settings
+---
+assignee: m-ylecollen
+created: 2014-12-24 16:03:48.0
+creator: matthew
+description: |-
+  When I set an avatar and displayname for the first time, it's very unclear as to when the avatar actually get sets set. When I uploaded the avatar everything seemed okay, but on setting a display name, it flickered on and off, appeared with the wrong orientation, and then reappeared correctly again.
+
+  Either we need to submit avatar & displayname changes immediately, or go back to having a formal "Update" button on the UI for saving either.
+
+  This contradicts my previous suggestion that we should somehow automatically apply displayname changes rather than having an explicit Save button - apologies; i'm a crank...
+id: '10859'
+key: SYIOS-38
+number: '38'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-05 16:00:37.0
+status: '5'
+type: '1'
+updated: 2015-01-05 16:00:37.0
+votes: '0'
+watches: '1'
+workflowId: '10959'
+---
+actions: null

@@ -1,0 +1,430 @@
+---
+summary: Public API Architecture
+---
+assignee: kegan
+created: 2015-06-03 13:19:04.0
+creator: kegan
+description: |-
+  This issue relates to the changes that need to be made in order to transition the
+  JS SDK from being HTTP-level wrappers into a fully-fledged client SDK. The ground
+  work for this was done in PR #4 ( https://github.com/matrix-org/matrix-js-sdk/pull/4 )
+  and this issue aims to finish specifying the public-facing APIs which developers
+  can work off of.
+
+  Current Architecture
+  ====================
+
+  NB: All the code blocks represent the JS SDK structure as it is today, NOT the
+  result of the proposed changes.
+
+  {code}
+  sdk = require("matrix-js-sdk"); // or window.matrixcs
+   |
+   +--- request(fn)  // invoked for HTTP requests, takes fn(opts, callback)
+   |
+   +--- MatrixClient  // constructor for client API
+   |
+   +--- createClient  // helper for constructing client API
+   |
+   +--- MatrixEvent  // constructor for event
+   |
+   +--- MatrixInMemoryStore  //constructor for default store
+   |
+   +--- usePromises(bool)  // config flag for enabling promises.
+  {code}
+  Proposed changes: 
+   - Use an {{opts}} object for {{MatrixClient}} for extensibility. Constructor
+     will look like {{new MatrixClient(opts)}}. If {{opts}} is a {{string}}, use
+     that as the base URL (similar to how {{creds}} currently functions).
+   - Remove {{createClient}} as it just proxies {{new MatrixClient(**args)}}.
+   - Remove {{usePromises}} and move it to {{MatrixClient.opts}} to keep config in one place.
+   - Document the exact API for the {{request}} function for clarity. Remove the
+     function from being a top-level on the SDK to being an {{opts}} options.
+
+  Proposed additions:
+   - A {{version}} option to the new {{opts}} object to toggle CS v1/v2.
+   - A {{usePromises}} option to the new {{opts}} object to toggle callbacks/promises.
+   - Add a new constructor {{MatrixHttpApi}} for developers who just want the noddy
+     HTTP API without any bells and whistles.
+   - A {{RetryHandler}} option to the new {{opts}} object to control how
+     {{MatrixClient}} will handles retries when sending events.
+
+  {code}
+  MatrixClient(creds,config,store)
+   |
+   +--- members: ---- config
+   |                  credentials
+   |                  store
+   |                  fromToken
+   |                  clientRunning
+   |
+  functions: 
+    isLoggedIn
+    getFriendlyRoomName, getFriendlyDisplayName (store required)
+    startClient(fn, historyLen)
+                |
+                +---- fn(err, events, isLive)
+    stopClient
+
+    HTTP API
+    [Rooms]
+    createRoom, joinRoom, setRoomName, setRoomTopic, setPowerLevel, getStateEvent, sendStateEvent, sendEvent, sendMessage, sendTextMessage, sendEmoteMessage, sendImageMessage, sendHtmlMessage, sendTyping, redactEvent, invite, leave, kick, ban, unban
+
+    [Profile]
+    getProfileInfo, setProfileInfo, setDisplayName, setAvatarUrl, getThreePids, addThreePid, setPresence
+
+    [Public]
+    publicRooms, registerFlows, loginFlows, resolveRoomAlias
+
+    [Sync]
+    initialSync, roomInitialSync, roomState, scrollback, eventStream
+
+    [Register/Login]
+    login, register, loginWithPassword
+
+    [Push]
+    pushRules, addPushRule, deletePushRule
+
+    [VoIP]
+    turnServer
+
+    [URI]
+    getHttpUriForMxc, getIdenticonUri, getContentUri
+  {code}
+  Proposed changes:
+   - Split out the "HTTP API" section into another object {{MatrixHttpApi}}. This
+     new object is either constructed by the {{MatrixClient}} and is used as a member
+     variable, or is done via prototypical inheritance (so {{MatrixClient}} IS a
+     {{MatrixHttpApi}}). Leaning towards the former to reduce complexity and coupling
+     between the HTTP API and "high-level" API. Main consideration in favour of
+     inheritance is the message resending use case (we have helper functions on HTTP
+     API to send text/image/emote/etc. We want to use them in the "high level" API
+     but also want to do retries for these requests. We either define every helper
+     function again in order to add retry support (ew!) or we hook into the base
+     function that all the helpers call and make assumptions about the implementation
+     of {{MatrixHttpApi}} (ewww!).)
+   - Remove {{getFriendlyDisplayName}} and {{getFriendlyRoomName}} and move them to
+     be caluclated and cached as {{RoomMember.name}} and {{Room.name}} respectively.
+     The cache is updated on any event which modifies the algorithm.
+
+  Proposed additions:
+   - {{send*Event}} functions which also do retries and queuing using the new
+     {{RetryHandler}}. This also handles rate limiting.
+   - {{joinRoom}} function which NOOPs if you're already joined and handles doing
+     room initial sync after the join.
+   
+
+  {code}
+  MatrixEvent(event)
+   |
+   +--- members --- event
+   |
+   |
+  functions
+   getId, getSender, getType, getRoomId, getTs, getContent, isState
+  {code}
+  Proposed additions:
+   - Another event class {{RoomEvent}}, see below.
+
+  {code}
+  MatrixInMemoryStore()
+   |
+   +--- members --- rooms { $ROOMID: { state:{}, timeline:[] } }
+   |                presence { $USERID: MatrixEvent }
+   |
+   |
+  functions
+   setStateEvents, setStateEvent, getStateEvents, getStateEvent, setEvents,
+   getEvents, setPresenceEvents, getPresenceEvents, getRoomList, 
+  {code}
+  Proposed changes:
+   - Change the value of the rooms mapping from being POJOs to being {{Room}} objects.
+   - Remove the countless set/get functions with {{getRoom}} and {{setRoom}}, keeping
+     {{getRoomList}} which now returns an array of {{Room}} objects.
+   - Remove set/get presence events with {{getUser}} and {{setUser}} which return
+     {{User}} objects.
+
+  Proposed additions:
+   - {{setMaxHistoryPerRoom}} and {{reapOldMessages}} functions.
+   - {{setRoomAliasMapping}} and {{getRoomByAlias}} functions.
+
+
+  New classes:
+
+  {code}
+  RoomEvent(MatrixEvent)
+   |
+   +--- additional members --- sender<RoomMember> // e.g. m.room.member inviter
+                               target<RoomMember>  // e.g. m.room.member invitee
+                               status<enum[failed,sending,sent]>
+  {code}
+
+  The purpose of the RoomEvent class is to add extra information to the event, namely room
+  member information.
+
+  {code}
+  RoomMember(roomId, userId)
+   |
+   +--- members --- event<RoomEvent> // the m.room.member event
+                    powerLevel // the power level of this user [raw]
+                    powerLevelNorm // the normalised power level of this user
+                    typing // true if they are typing
+                    name // the name of this room member
+                    user // the User object for this room member
+  {code}
+
+  The purpose of the RoomMember class is to represent a complete member in the room, beyond
+  that supported by {{m.room.member}} events.
+
+
+  {code}
+  Room(roomId)
+   |
+   +--- members --- roomId <string>, 
+   |                oldState <RoomState>,
+   |                currentState <RoomState>,
+   |                timeline <array>,
+   |                name <string>,  // this is getFriendlyRoomName but cached.
+   |
+  functions
+   add/get/setMessageEvents
+   add/get/setStateEvents
+   helpers e.g. isMemberInRoom(userId)
+                getPowerLevel(userId, isNormalised=false)
+                getMemberCount()
+  {code}
+
+  The purpose of the Room class is to tie together all room information into a single
+  coherent object which can be returned from APIs.
+
+  {code}
+  RoomState()
+   |
+   +--- members --- members {userId: RoomMember}
+                    paginationToken <String>
+                    stateEvents {eventType: {stateKey: {RoomEvent} } }
+  {code}
+
+  The purpose of the RoomState class is to group together state events and room
+  members, along with pagination tokens so that the historical display name can
+  be calculated.
+
+  {code}
+  User(userId)
+   |
+   +--- members --- userId <string>
+   |                presence <MatrixEvent>
+   |                profile <MatrixEvent> // NB: Synapse doesn't do m.profile yet
+   |
+   functions
+    getName (from presence or m.profile when we get around to it)
+    getLastActiveAgo
+  {code}
+
+  The purpose of this class is to tie together *current* information for a user.
+
+  *End Result*
+
+  The resulting architecture would look something like:
+  {code}
+  sdk = require("matrix-js-sdk"); // or window.matrixcs
+   |
+   +--- MatrixClient(opts)
+   |                   |        // default options
+   |                   +----- { 
+   |                            usePromises: false,
+   |                            version: "2",
+   |                            request: function(opts, callback) { ... },
+   |                            retryHandler: function(event) { ... },
+   |                            store: new MatrixInMemoryStore(),
+   |                            // internal, made for v1/v2 depending on 'version'.
+   |                            _http: new MatrixHttpApi()
+   |                          }
+   |
+   |    // classes which developers can access.
+   +--- MatrixEvent, RoomEvent, Room, RoomMember, RoomState, User, MatrixInMemoryStore
+
+
+  MatrixClient
+   |
+   +--- members --- opts, clientRunning
+   |
+  functions
+   send*Event (like MatrixHttpApi)
+   startClient
+   stopClient
+   joinRoom(roomIdOrAlias)
+   isLoggedIn
+   getStore (returns MatrixInMemoryStore from opts)
+
+
+  MatrixInMemoryStore
+   |
+   +--- members --- rooms { $ROOMID: Room }
+   |                users { $USERID: User }
+  functions
+   getRoomList()
+   setMaxHistoryPerRoom(5)
+   reapOldMessages(roomIds)
+   getRoomByAlias(roomAlias)
+   setRoomAliasMapping(roomAlias, roomId)
+   getRoom(roomId)
+   setRoom(Room)
+   getUser(userId)
+   setUser(User)
+
+
+  Object Schema
+  -------------
+
+  Room(roomId)
+    roomId <String>
+    name <String>
+    timeline <RoomEvent[]>
+    oldState <RoomState>
+    currentState <RoomState>
+                     |
+                  RoomState()
+                    stateEvents <{eventType:{stateKey:RoomEvent}}>
+                    paginationToken<String>
+                    members<{userId:RoomMember}>
+                                       |
+                                    RoomMember(roomId, userId)
+                                      event <RoomEvent>
+                                      powerLevel <Integer>
+                                      powerLevelNorm <Integer>
+                                      typing <Boolean>
+                                      name <String>
+                                      user <User>
+                                              |
+                                            User(userId)
+                                              userId <String>
+                                              presence <MatrixEvent>
+
+  RoomEvent(MatrixEvent)
+    <MatrixEvent fields>
+    sender <RoomMember>
+    target <RoomMember>
+    status <String>
+  {code}
+
+  This closely follows the current model for {{matrix-angular-sdk}}.
+id: '11616'
+key: SYJS-5
+number: '5'
+priority: '1'
+project: '10204'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-06-12 17:32:36.0
+status: '5'
+type: '1'
+updated: 2015-06-12 17:32:36.0
+votes: '0'
+watches: '1'
+workflowId: '11717'
+---
+actions:
+- author: kegan
+  body: |-
+    Outstanding unresolved issues:
+     - How do developers get access to incoming events? Should be possible without access to a {{Store}}.
+     - How do developers access other HTTP API calls (e.g. leaving a room?) - Add wrappers on the various objects? E.g. {{Room.leave()}} ?
+  created: 2015-06-03 13:24:39.0
+  id: '11820'
+  issue: '11616'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-03 13:24:39.0
+- author: kegan
+  body: |-
+    bq. How do developers get access to incoming events?
+    This is currently done via {{MatrixClient.startClient(callback, historyLen)}} where {{callback}} is {{function(err, eventArray, isLive)}} and is invoked for initial sync events and event stream events. This is possible without a {{Store}} object. This is probably good enough for now.
+
+    bq. How do developers access other HTTP API calls (e.g. leaving a room?)
+    Our options are:
+
+     - #1: Directly access {{MatrixClient._http}}
+     ** Pro: No need for wrappers on Client; things just work.
+     ** Con: Confusing if these HTTP calls should update state but don't.
+     ** Con: Confusing that you need to access a private member like this to get at some functionality.
+
+     - #2: Add methods on the object models {{Room.leave()}}
+     ** Pro: Object-orientation is nice as it naturally groups together HTTP API calls.
+     ** Con: Creates dependency hell as to construct a {{Room}} you now *MUST* have a {{MatrixClient}} to hit the HTTP API and update state.
+     ** Con: Can be annoying that in order to do some functions you need to have a certain Object. This may be fine at first but will compound if we ever decide to use an ORM or something (you'd need to hit the database to get a {{Room}} just to leave it(!)).
+     ** Con: Not all HTTP API calls map nicely to Objects (e.g. {{/publicRooms}}).
+
+     - #3: Add wrappers in MatrixClient around every HTTP API call
+     ** Pro: Keeps {{MatrixClient}} as the main public API, not needing to access private members or special Objects.
+     ** Con: Making wrappers for every HTTP API call is annoying, especially since we have helper functions in the HTTP API.
+
+    - #4: Make MatrixClient inherit from MatrixHttpApi 
+     ** Pro: No wrappers!
+     ** Pro: Keeps {{MatrixClient}} as the main public API, not needing to access private members or special Objects.
+     ** Con: Makes assumptions about how MatrixHttpApi works internally.
+     ** Con: If you add a new function to MatrixHttpApi which needs MatrixClient to do something to keep state consistent, no errors/nothing happens to inform the developer of this. This can be the cause of subtle errors.
+  created: 2015-06-04 10:51:45.0
+  id: '11826'
+  issue: '11616'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-04 10:51:45.0
+- author: kegan
+  body: We've decided to strip {{MatrixHttpApi}} to be literally just a generic function to invoke the REST API, and move the function-per-rest-call logic to {{MatrixClient}}.
+  created: 2015-06-04 13:44:52.0
+  id: '11827'
+  issue: '11616'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-04 13:44:52.0
+- author: kegan
+  body: We've also decided that {{MatrixClient}} should *not* have the functions {{initialSync}} and {{eventStream}} because it is unclear and confusing what they would do in this context. To perform these operations, developers should just call {{startClient}} which will handle doing the sync/stream. Developers can always access the underlying {{MatrixHttpApi}} to issue the raw call if they so desire.
+  created: 2015-06-05 13:32:11.0
+  id: '11829'
+  issue: '11616'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-05 13:32:11.0
+- author: kegan
+  body: |-
+    bq. Remove createClient as it just proxies new MatrixClient(**args).
+
+    Keeping {{createClient}} because it automatically sets up the {{request}} dependency.
+
+    bq. Remove usePromises and move it to MatrixClient.opts to keep config in one place.
+
+    Removed {{usePromises}} entirely; we always return Promises but will invoke callbacks
+    if one is supplied.
+
+    bq. Document the exact API for the request function for clarity. Remove the function from being a top-level on the SDK to being an opts options.
+
+    Can't make this an {{opts}} option because the dependency needs to be satisfied on
+    the module level, rather than the {{MatrixClient}} level.
+  created: 2015-06-08 11:01:39.0
+  id: '11832'
+  issue: '11616'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-08 11:01:39.0
+- author: kegan
+  body: |-
+    {{Room}} and {{RoomState}} contain a lot of the logic which currently resides in {{MatrixInMemoryStore}}. We have decided that {{MatrixInMemoryStore}} should have less business logic in it, and just be a (de)serialisation layer, meaning it just has methods like {{getRoom}} and {{storeRoom}}. This has some nice benefits:
+     - It makes it easier to swap in different storage layers.
+     - It allows us to reuse the code/logic we're using to model {{Rooms}} and {{RoomState}} since it will always be using the object properties.
+
+    The downside here is that we require the complete {{Room}} to be in-memory at once, particularly the {{RoomState}}. This is a decent trade-off though for the added simplicity, and this doesn't design out only having 1 {{Room}} in memory at a time.
+  created: 2015-06-08 14:44:55.0
+  id: '11835'
+  issue: '11616'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-08 14:44:55.0
+- author: kegan
+  body: Released in v0.1.0
+  created: 2015-06-12 17:32:36.0
+  id: '11857'
+  issue: '11616'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-12 17:32:36.0

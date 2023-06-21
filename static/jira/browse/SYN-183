@@ -1,0 +1,34 @@
+---
+summary: Updating avatar URL and displayname at the same time results in weird m.room.member events
+---
+created: 2014-12-01 14:50:21.0
+creator: kegan
+description: |-
+  Update both the avatar URL and displayname of a user who is in a few rooms at the same time. You will get *two* m.room.member events which have exactly the same content (with both keys changed). I would expect either:
+   - 2 m.room.member events with a single changed key per event.
+   - 1 m.room.member event with 2 changed keys.
+  But not 2 m.room.member events with 2 changed keys (the same ones).
+
+  This is annoying because it results in things like SYWEB-145. It's also not easy to fix, because if you diff the {{prev_content}} and {{content}} you get the same diff (both avatar and name) twice, resulting in.. a duplicate message.
+id: '10745'
+key: SYN-183
+number: '183'
+priority: '2'
+project: '10000'
+reporter: kegan
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:27.0
+votes: '0'
+watches: '2'
+workflowId: '10845'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1251'
+  created: 2016-11-07 18:27:27.0
+  id: '13569'
+  issue: '10745'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:27.0

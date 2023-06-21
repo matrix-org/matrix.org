@@ -1,0 +1,20 @@
+---
+summary: Separate the SDK and Matrix Console into two separate projects
+---
+created: 2015-01-19 10:51:34.0
+creator: joachim
+description: ''
+id: '10953'
+key: SYAND-6
+number: '6'
+priority: '3'
+project: '10201'
+reporter: joachim
+status: '10100'
+type: '4'
+updated: 2015-01-19 10:51:34.0
+votes: '0'
+watches: '1'
+workflowId: '11053'
+---
+actions: null

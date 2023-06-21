@@ -1,0 +1,28 @@
+---
+summary: 50x responses from HSes via federation don't seem to increase the retry timer
+---
+created: 2016-01-07 03:23:49.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12273'
+key: SYN-578
+number: '578'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:51.0
+votes: '0'
+watches: '2'
+workflowId: '12378'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1463'
+  created: 2016-11-07 18:28:51.0
+  id: '13768'
+  issue: '12273'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:51.0

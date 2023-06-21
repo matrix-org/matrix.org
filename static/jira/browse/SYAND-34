@@ -1,0 +1,46 @@
+---
+summary: Implement autostart for Matrix
+---
+created: 2015-03-04 19:38:30.0
+creator: bob
+description: ''
+id: '11155'
+key: SYAND-34
+number: '34'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2016-02-17 07:23:17.0
+status: '5'
+type: '1'
+updated: 2016-02-17 07:23:17.0
+votes: '0'
+watches: '3'
+workflowId: '11255'
+---
+actions:
+- author: m-ylecollen
+  body: -> We should be using GCM (which will start the app on an incoming push)
+  created: 2015-03-05 13:50:21.0
+  id: '11349'
+  issue: '11155'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-05 13:50:21.0
+- author: mitchhentges
+  body: I would mark the other as a duplicate, but it has already been marked as "open", rather than "triage"
+  created: 2016-02-16 23:28:32.0
+  id: '12619'
+  issue: '11155'
+  type: comment
+  updateauthor: mitchhentges
+  updated: 2016-02-16 23:28:32.0
+- author: m-ylecollen
+  body: the client supports GCM so the application is auto started when a bingable message is received.
+  created: 2016-02-17 07:23:17.0
+  id: '12635'
+  issue: '11155'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 07:23:17.0

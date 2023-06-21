@@ -1,0 +1,20 @@
+---
+summary: Do we delete pushers when logging out of an account?
+---
+created: 2015-10-05 10:27:23.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11996'
+key: SYIOS-154
+number: '154'
+priority: '2'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-10-05 10:27:23.0
+votes: '0'
+watches: '1'
+workflowId: '12099'
+---
+actions: null

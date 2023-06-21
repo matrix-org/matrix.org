@@ -1,0 +1,36 @@
+---
+summary: 'Content repository: No API for finding info on a document'
+---
+created: 2016-09-03 01:47:21.0
+creator: penguin42
+description: |-
+  There's no API for a client to request information from the HS on a document prior to attempting to download it.  While the event may optionally have some information on an included file/image it's odd not to be able to query it from the repository.
+
+  Things I might want to know before attempting a download:
+    a) Size in bytes (before asking for a ziggabyte file that I'll discard part way through)
+     b) content type
+     for images:
+          c) width/height
+         ? d) what size thumbnails (if any) the server would prefer us to ask for; e.g. a list of cached sizes it has.
+id: '12816'
+key: SPEC-448
+number: '448'
+priority: '3'
+project: '10001'
+reporter: penguin42
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:44.0
+votes: '0'
+watches: '2'
+workflowId: '12916'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/703'
+  created: 2016-10-28 16:28:44.0
+  id: '13512'
+  issue: '12816'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:44.0

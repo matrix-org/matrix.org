@@ -1,0 +1,30 @@
+---
+summary: Make navigation consistent over all pages
+---
+created: 2014-09-16 00:33:22.0
+creator: matthew
+description: ''
+id: '10031'
+key: ORG-2
+number: '2'
+priority: '1'
+project: '10003'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2017-03-21 10:33:52.0
+status: '5'
+type: '3'
+updated: 2017-03-21 10:33:52.0
+votes: '0'
+watches: '2'
+workflowId: '10316'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix.org/issues/11
+  created: 2017-03-21 10:31:54.0
+  id: '14003'
+  issue: '10031'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 10:31:54.0

@@ -1,0 +1,28 @@
+---
+summary: Control of DEBUG_CACHES
+---
+created: 2015-06-25 17:30:32.0
+creator: leonerd
+description: ''
+id: '11701'
+key: SYN-428
+number: '428'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:10.0
+votes: '0'
+watches: '2'
+workflowId: '11802'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1343'
+  created: 2016-11-07 18:28:10.0
+  id: '13664'
+  issue: '11701'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:10.0

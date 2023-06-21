@@ -1,0 +1,45 @@
+---
+summary: We should try to force people to enable desktop notifs
+---
+assignee: kegan
+created: 2014-12-04 13:32:56.0
+creator: matthew
+description: ''
+id: '10774'
+key: SYWEB-216
+number: '216'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2014-12-10 09:59:58.0
+votes: '0'
+watches: '2'
+workflowId: '10874'
+---
+actions:
+- author: kegan
+  body: Or perhaps a modal dialog asking you if you would like them (which then takes you to settings?) and a checkbox for "Don't ask me again"? Then we can display then whenever you are on the homepage (depending on the checkbox value).
+  created: 2014-12-04 13:58:48.0
+  id: '10948'
+  issue: '10774'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 13:58:48.0
+- author: matthew
+  body: wfm
+  created: 2014-12-04 14:01:47.0
+  id: '10949'
+  issue: '10774'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-04 14:01:47.0
+- author: matthew
+  body: as long as they can easily get back to the homepage after setting it up; don't want to strand people in settings
+  created: 2014-12-04 14:02:13.0
+  id: '10950'
+  issue: '10774'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-04 14:02:13.0

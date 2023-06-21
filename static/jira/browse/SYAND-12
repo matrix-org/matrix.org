@@ -1,0 +1,30 @@
+---
+summary: 'Emotes do not have timestamps '
+---
+created: 2015-01-29 07:52:15.0
+creator: kegan
+description: ''
+id: '10988'
+key: SYAND-12
+number: '12'
+priority: '2'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-18 15:30:59.0
+status: '5'
+type: '1'
+updated: 2015-02-18 15:30:59.0
+votes: '0'
+watches: '2'
+workflowId: '11088'
+---
+actions:
+- author: m-ylecollen
+  body: They have by now.
+  created: 2015-02-18 15:30:59.0
+  id: '11283'
+  issue: '10988'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-02-18 15:30:59.0

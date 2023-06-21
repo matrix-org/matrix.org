@@ -1,0 +1,88 @@
+---
+summary: admin interface for expiring refresh tokens
+---
+created: 2015-09-30 19:17:35.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11981'
+key: SPEC-243
+number: '243'
+priority: '2'
+project: '10001'
+reporter: neb
+resolution: '2'
+resolutiondate: 2016-10-06 18:04:03.0
+status: '5'
+type: '1'
+updated: 2016-10-06 18:04:03.0
+votes: '0'
+watches: '4'
+workflowId: '12084'
+---
+actions:
+- author: richvdh
+  body: '[~matthew] what''s the usecase for this?'
+  created: 2015-12-01 15:27:40.0
+  id: '12395'
+  issue: '11981'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 15:27:40.0
+- author: matthew
+  body: if a refresh token gets leaked, that account is owned forever. therefore admins need to be able to log that user out by expiring the refresh token and forcing them to log back in again and get a new one.
+  created: 2015-12-01 16:43:09.0
+  id: '12408'
+  issue: '11981'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-01 16:43:09.0
+- author: richvdh
+  body: |-
+    surely we need more than this. We need a way for users to expire their own refresh tokens if they believe a refresh token has been compromised. 
+
+    Further, a user may be logged in concurrently from several devices, so it is reasonable for them to have several refresh tokens active concurrently. When a client finds its refresh_token has already been used, it should assume that refresh_token has been compromised and invalidate it and its successors - so we need a way to identify the successors of a given refresh token (presumably some sort of device_id).
+
+    An interface listing currently active refresh_tokens, and their last-accessed details, might also be useful.
+  created: 2016-04-18 16:54:03.0
+  id: '12839'
+  issue: '11981'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 16:54:03.0
+- author: richvdh
+  body: Actually it may be fine just to invalidate *all* refresh tokens if you think one has been compromised.
+  created: 2016-04-18 17:11:27.0
+  id: '12840'
+  issue: '11981'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 17:11:27.0
+- author: richvdh
+  body: |-
+    {quote}
+    Actually it may be fine just to invalidate all refresh tokens if you think one has been compromised.
+    {quote}
+
+    No, this would be bad. Consider:
+
+    * Device 1 finds its refresh token has expired, so demands an invalidation of all refresh tokens
+    * I log in with device 1, and everything is happy for a while
+    * I try to use device 2. Its refresh token no longer works, so it demands an invalidation of all refresh tokens.
+    * repeat
+  created: 2016-05-06 10:10:27.0
+  id: '12906'
+  issue: '11981'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-06 10:10:27.0
+- author: richvdh
+  body: |-
+    We've decided to remove refresh tokens from the matrix spec (see https://github.com/matrix-org/matrix-doc/pull/395), so this is no longer required.
+
+    We have logout_all which allows users to invalidate all of their access tokens.
+  created: 2016-10-06 18:03:54.0
+  id: '13163'
+  issue: '11981'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 18:03:54.0

@@ -1,0 +1,31 @@
+---
+summary: Background sync on push notification
+---
+assignee: m-ylecollen
+created: 2015-10-16 14:53:23.0
+creator: gforet
+description: ''
+id: '12021'
+key: SYIOS-159
+number: '159'
+priority: '1'
+project: '10200'
+reporter: gforet
+status: '1'
+type: '2'
+updated: 2015-11-06 13:15:48.0
+votes: '0'
+watches: '1'
+workflowId: '12124'
+---
+actions:
+- author: gforet
+  body: |-
+    The mechanism has been implemented. 
+    It is still disabled because the sync api v1 forces the user presence in 'online' mode, this involves wrong behavior of  the push server.
+  created: 2015-11-06 13:15:48.0
+  id: '12347'
+  issue: '12021'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-11-06 13:15:48.0

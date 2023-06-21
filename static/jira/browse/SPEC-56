@@ -1,0 +1,49 @@
+---
+summary: Make 'm.profile' inform of profile changes
+---
+created: 2014-10-21 17:19:26.0
+creator: leonerd
+description: |-
+  We used to abuse {{m.presence}} to send updates as EDUs when users' profile information changed. Now we don't do that any more.
+
+  This therefore means the only way you'll know of someone's profile change is if you share at least one room with them, so you can observe an updated {{m.room.member}} event. If you have no rooms in common but still care about the user (e.g. because a client implements a generic "contact list") we still need a different way to handle this.
+
+  Add a new EDU/event type of {{m.profile}} and use that to handle profile changes.
+id: '10483'
+key: SPEC-56
+number: '56'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-10-28 16:26:48.0
+votes: '0'
+watches: '3'
+workflowId: '10587'
+---
+actions:
+- author: leonerd
+  body: Also make sure to have a 'user_id' field at the toplevel of the event, rather than hiding it inside the 'content' sub-dict.
+  created: 2014-11-26 18:28:32.0
+  id: '10874'
+  issue: '10483'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 18:28:32.0
+- author: kegan
+  body: I assume {{m.profile}} will be the current displayname/avatar_url etc for a user, not specific to any room (so basically whatever they PUT to /profile), and that {{m.room.member}} will contain the same keys as {{m.profile}} with room specific additions if applicable.
+  created: 2014-12-01 10:20:07.0
+  id: '10895'
+  issue: '10483'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 10:20:07.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/472'
+  created: 2016-10-28 16:26:48.0
+  id: '13247'
+  issue: '10483'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:48.0

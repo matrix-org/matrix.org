@@ -1,0 +1,55 @@
+---
+summary: Store in-progress messages
+---
+assignee: manu
+created: 2015-11-27 12:22:15.0
+creator: gforet
+description: ''
+id: '12139'
+key: SYIOS-183
+number: '183'
+priority: '1'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2016-01-25 10:57:46.0
+status: '5'
+type: '1'
+updated: 2016-01-25 10:57:46.0
+votes: '0'
+watches: '2'
+workflowId: '12242'
+---
+actions:
+- author: manu
+  body: |-
+    Implemented at the kit and sdk level.
+    https://github.com/matrix-org/matrix-ios-kit/pull/56
+    https://github.com/matrix-org/matrix-ios-sdk/pull/62
+
+    Vector and Console take benefit of it.
+  created: 2016-01-19 16:47:43.0
+  id: '12576'
+  issue: '12139'
+  type: comment
+  updateauthor: manu
+  updated: 2016-01-19 16:47:43.0
+- author: manu
+  body: We also need to manage the unsent messages not only the message the user is typing
+  created: 2016-01-19 16:57:45.0
+  id: '12577'
+  issue: '12139'
+  type: comment
+  updateauthor: manu
+  updated: 2016-01-19 16:57:45.0
+- author: manu
+  body: |-
+    Unsent messages storing has been implemented in:
+    - https://github.com/matrix-org/matrix-ios-sdk/pull/64
+    - https://github.com/matrix-org/matrix-ios-kit/pull/57
+  created: 2016-01-25 10:57:46.0
+  id: '12583'
+  issue: '12139'
+  type: comment
+  updateauthor: manu
+  updated: 2016-01-25 10:57:46.0

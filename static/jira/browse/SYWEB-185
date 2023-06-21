@@ -1,0 +1,34 @@
+---
+summary: Joining a room doesn't always load pictures on the user list
+---
+assignee: kegan
+created: 2014-11-27 09:31:53.0
+creator: kegan
+description: |-
+  Joined #vuc and didn't see my own avatar URL or a few other peoples. In fact, I think I only saw erik's. Refreshing the page showed the avatars correctly. 
+
+  Possible that room initial sync isn't returning {{avatar_url}} with the {{m.presence}}? Or angular digest woe?
+id: '10723'
+key: SYWEB-185
+number: '185'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-12-01 10:57:52.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:03.0
+votes: '0'
+watches: '1'
+workflowId: '10823'
+---
+actions:
+- author: kegan
+  body: Blocked on SYN-179.
+  created: 2014-11-27 12:59:09.0
+  id: '10878'
+  issue: '10723'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-27 12:59:09.0

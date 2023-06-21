@@ -1,0 +1,28 @@
+---
+summary: Source avatars from gravatars if we have an email 3PID
+---
+created: 2014-09-16 01:22:47.0
+creator: matthew
+description: ''
+id: '10067'
+key: SYN-34
+number: '34'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:13.0
+votes: '0'
+watches: '2'
+workflowId: '10368'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1210'
+  created: 2016-11-07 18:27:13.0
+  id: '13540'
+  issue: '10067'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:13.0

@@ -1,0 +1,48 @@
+---
+summary: WebRTC sometimes fails for localhost<->localhost calls if you have OpenVPN
+---
+created: 2015-10-07 16:08:38.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  This has screwed over too many demos for me. Mitigated for now by turning off openvpn. Dave has lots of emails showing the failure mode
+id: '12009'
+key: SYJS-29
+number: '29'
+priority: '3'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:21:47.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:21:47.0
+votes: '0'
+watches: '3'
+workflowId: '12112'
+---
+actions:
+- author: dbkr
+  body: about:webrtc from firefox
+  created: 2015-10-07 16:12:38.0
+  id: '12224'
+  issue: '12009'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-10-07 16:12:38.0
+- author: dbkr
+  body: webrtc_internals_dump.txt from a separate chrome <--> chrome incognito call
+  created: 2015-10-07 16:18:36.0
+  id: '12225'
+  issue: '12009'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-10-07 16:18:36.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/248
+  created: 2016-10-24 11:21:47.0
+  id: '13205'
+  issue: '12009'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:21:47.0

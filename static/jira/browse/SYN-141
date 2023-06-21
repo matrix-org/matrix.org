@@ -1,0 +1,80 @@
+---
+summary: 'Cannot join rooms with aliases containing 4-byte UTF-8 '
+---
+assignee: markjh
+created: 2014-11-13 16:02:24.0
+creator: markjh
+description: ''
+id: '10653'
+key: SYN-141
+number: '141'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-11-18 17:26:29.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:39.0
+votes: '0'
+watches: '1'
+workflowId: '10753'
+---
+actions:
+- author: markjh
+  body: |-
+    Traceback
+
+    {noformat}
+    Traceback (most recent call last):
+      File "synapse/http/server.py", line 116, in _async_render
+        *m.groups()
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+        result = result.throwExceptionIntoGenerator(g)
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+        return g.throw(self.type, self.value, self.tb)
+      File "synapse/federation/transport.py", line 343, in new_handler
+        origin, content, request.args, *args, **kwargs
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+        result = result.throwExceptionIntoGenerator(g)
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+        return g.throw(self.type, self.value, self.tb)
+      File "synapse/federation/replication.py", line 380, in on_query_request
+        response = yield self.query_handlers[query_type](args)
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+        result = result.throwExceptionIntoGenerator(g)
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+        return g.throw(self.type, self.value, self.tb)
+      File "synapse/handlers/directory.py", line 130, in on_directory_query
+        room_alias
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+        result = result.throwExceptionIntoGenerator(g)
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+        return g.throw(self.type, self.value, self.tb)
+      File "synapse/storage/directory.py", line 45, in get_association_from_room_alias
+        allow_none=True,
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/python/threadpool.py", line 196, in _worker
+        result = context.call(ctx, function, *args, **kwargs)
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/python/context.py", line 118, in callWithContext
+        return self.currentContext().callWithContext(ctx, func, *args, **kw)
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/python/context.py", line 81, in callWithContext
+        return func(*args,**kw)
+      File "/home/markjh/.local/lib/python2.7/site-packages/twisted/enterprise/adbapi.py", line 448, in _runInteraction
+        result = interaction(trans, *args, **kw)
+      File "synapse/storage/_base.py", line 101, in inner_func
+        return func(LoggingTransaction(txn, name), *args, **kwargs)
+      File "synapse/storage/_base.py", line 226, in _simple_select_one_onecol_txn
+        retcol=retcol,
+      File "synapse/storage/_base.py", line 244, in _simple_select_onecol_txn
+        txn.execute(sql, keyvalues.values())
+      File "synapse/storage/_base.py", line 68, in execute
+        sql, *args, **kwargs
+    ProgrammingError: You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings.
+
+    {noformat}
+  created: 2014-11-13 18:22:39.0
+  id: '10791'
+  issue: '10653'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-13 18:22:39.0

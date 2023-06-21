@@ -1,0 +1,28 @@
+---
+summary: AS loop protection
+---
+created: 2015-06-01 23:54:13.0
+creator: matthew
+description: ''
+id: '11573'
+key: BOTS-46
+number: '46'
+priority: '1'
+project: '10101'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2015-06-17 12:04:30.0
+votes: '0'
+watches: '2'
+workflowId: '11674'
+---
+actions:
+- author: kegan
+  body: Linked related issue. tl;dr the HS needs to enforce this based on a state event in a room. Enforcement is done by simply not passing the event to the AS if they aren't "owning" the room.
+  created: 2015-06-17 12:04:30.0
+  id: '11879'
+  issue: '11573'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-17 12:04:30.0

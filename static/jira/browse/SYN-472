@@ -1,0 +1,30 @@
+---
+summary: default to gravatars for avatars if available
+---
+created: 2015-09-03 21:14:46.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11850'
+key: SYN-472
+number: '472'
+priority: '2'
+project: '10000'
+reporter: neb
+resolution: '3'
+resolutiondate: 2015-09-09 11:36:23.0
+status: '5'
+type: '1'
+updated: 2015-09-09 11:36:23.0
+votes: '0'
+watches: '2'
+workflowId: '11953'
+---
+actions:
+- author: matthew
+  body: dup syn-34
+  created: 2015-09-09 11:36:23.0
+  id: '12120'
+  issue: '11850'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-09 11:36:23.0

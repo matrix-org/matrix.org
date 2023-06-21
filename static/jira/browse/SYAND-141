@@ -1,0 +1,76 @@
+---
+summary: Apparently we're playing the ringtone where we should be playing a ringback tone when placing outbound calls
+---
+assignee: matthew
+created: 2015-10-05 15:27:29.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11998'
+key: SYAND-141
+number: '141'
+priority: '2'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-02-16 23:04:40.0
+status: '6'
+type: '1'
+updated: 2016-02-16 23:04:48.0
+votes: '0'
+watches: '5'
+workflowId: '12101'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    The android console application uses the same sound as the console webclient.
+
+    the android vector will use the same sound as the vector webclient.
+  created: 2015-10-08 12:26:07.0
+  id: '12227'
+  issue: '11998'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-10-08 12:26:07.0
+- author: alien
+  body: |-
+    Console webclient probably uses wrong sound, but that's not a good reason to make same mistake in android console. I was confused with ringer sound instead of ringback.
+    I would reopen the ticket :)
+  created: 2015-10-08 12:50:31.0
+  id: '12228'
+  issue: '11998'
+  type: comment
+  updateauthor: alien
+  updated: 2015-10-08 12:50:31.0
+- author: matthew
+  body: reopening and assigning to me to check whether i've got the sounds wrong on vector (although I think I'd have noticed...)
+  created: 2015-10-11 22:46:44.0
+  id: '12238'
+  issue: '11998'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-10-11 22:46:44.0
+- author: alien
+  body: Vector's RBT is fine
+  created: 2015-10-12 11:43:36.0
+  id: '12239'
+  issue: '11998'
+  type: comment
+  updateauthor: alien
+  updated: 2015-10-12 11:43:36.0
+- author: oddvar
+  body: 'fixed on branch: https://github.com/matrix-org/matrix-android-console/tree/oddvar/ringback-fix'
+  created: 2015-10-16 15:19:58.0
+  id: '12271'
+  issue: '11998'
+  type: comment
+  updateauthor: oddvar
+  updated: 2015-10-16 15:19:58.0
+- author: matthew
+  body: thanks Oddvar :)
+  created: 2015-10-16 15:35:22.0
+  id: '12272'
+  issue: '11998'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-10-16 15:35:22.0

@@ -1,0 +1,49 @@
+---
+summary: 'Docs: Be clearer on how to use the request module / satisfy dependency'
+---
+created: 2015-05-18 09:32:58.0
+creator: kegan
+description: |-
+  The current {{README}} mentions about the {{request}} dependency and has an example for Node and the browser, but it isn't clear on how the dependency is satisfied. We should be making the possible options available much more clear given it is a pre-req to using the SDK. 
+
+  We should outline how to:
+   - Use Browserify and Node
+   - Use the stand-alone request module ({{browser-requests.js}} in the {{examples}} folder)
+   - A custom request module which uses another HTTP library (e.g. {{$http}})
+
+  We may want to consider packaging a specific version of {{browser-requests}} with the SDK (rather than it being dumped in {{examples}}) to make it work out of the box, then address questions like "But I want to use Angular!" in an FAQ section.
+id: '11538'
+key: SYJS-1
+number: '1'
+priority: '2'
+project: '10204'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-06-08 10:56:22.0
+status: '5'
+type: '4'
+updated: 2015-06-08 10:56:22.0
+votes: '0'
+watches: '1'
+workflowId: '11639'
+---
+actions:
+- author: kegan
+  body: |-
+    bq. We may want to consider packaging a specific version of browser-requests with the SDK (rather than it being dumped in examples) to make it work out of the box, then address questions like "But I want to use Angular!" in an FAQ section.
+
+    This is what I have ended up doing, need to make the FAQ for Angular then I will close this issue.
+  created: 2015-06-04 08:19:43.0
+  id: '11825'
+  issue: '11538'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-04 08:19:43.0
+- author: kegan
+  body: Added docs for the request function and callback.
+  created: 2015-06-08 10:56:22.0
+  id: '11830'
+  issue: '11538'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-08 10:56:22.0

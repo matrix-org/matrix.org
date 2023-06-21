@@ -1,0 +1,35 @@
+---
+summary: When restarting Matrix Console from the cache, users presences are lost
+---
+assignee: manu
+created: 2014-12-24 14:45:26.0
+creator: manu
+description: |-
+  MXStore does not and should not store presence events in the MXStore as they are volatile information: they are valid at a giving time and may be invalid at the time the SDK starts.
+
+  When the SDK starts, after loading data from the MXStore, it should make a request to the server to get the up-to-date presence of all the user's friends.
+  But the only API to get this information is the global initialSync which was the request we tried to avoid in order to allow a quick start.
+id: '10858'
+key: SYIOS-37
+number: '37'
+priority: '1'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-24 16:01:19.0
+status: '5'
+type: '1'
+updated: 2014-12-24 16:01:19.0
+votes: '0'
+watches: '1'
+workflowId: '10958'
+---
+actions:
+- author: manu
+  body: All users presence is obtained by making a global initial sync
+  created: 2014-12-24 16:01:19.0
+  id: '11032'
+  issue: '10858'
+  type: comment
+  updateauthor: manu
+  updated: 2014-12-24 16:01:19.0

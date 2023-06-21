@@ -1,0 +1,61 @@
+---
+summary: Users can send 3pid invites to guests which don't get revoked if guest access is revoked from the room
+---
+assignee: illicitonion
+created: 2016-02-12 15:49:46.0
+creator: illicitonion
+description: ''
+id: '12392'
+key: SPEC-349
+number: '349'
+priority: '3'
+project: '10001'
+reporter: illicitonion
+status: '1'
+type: '1'
+updated: 2016-10-28 16:28:17.0
+votes: '0'
+watches: '3'
+workflowId: '12497'
+---
+actions:
+- author: illicitonion
+  body: Guests can't actually issue invites.
+  created: 2016-02-24 14:53:18.0
+  id: '12718'
+  issue: '12392'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-02-24 14:53:18.0
+- author: matthew
+  body: ugh, i totally mis-filed this - sorry. have fixed the description and reopened.
+  created: 2016-02-25 10:19:07.0
+  id: '12719'
+  issue: '12392'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-25 10:19:07.0
+- author: matthew
+  body: hang on - I didn't even submit this. wtf? eitherway, have edited to be what I think the bug was talking about...
+  created: 2016-02-25 10:19:26.0
+  id: '12720'
+  issue: '12392'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-25 10:19:26.0
+- author: illicitonion
+  body: Also not an issue; either they try to join as a guest, at which point they won't be allowed to join the room because they don't match its current join rules, or they try to join as a real user, at which point they should be allowed to join the room and so can.
+  created: 2016-02-27 13:05:00.0
+  id: '12726'
+  issue: '12392'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-02-27 13:05:00.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/637'
+  created: 2016-10-28 16:28:17.0
+  id: '13445'
+  issue: '12392'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:17.0

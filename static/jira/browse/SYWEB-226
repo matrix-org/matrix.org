@@ -1,0 +1,30 @@
+---
+summary: rapidly switching between rooms still means scroll-to-bottom can get lost if messages arrive whilst switching
+---
+created: 2014-12-09 13:38:45.0
+creator: matthew
+description: ''
+id: '10789'
+key: SYWEB-226
+number: '226'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-09 14:09:27.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:51.0
+votes: '0'
+watches: '2'
+workflowId: '10889'
+---
+actions:
+- author: kegan
+  body: This appears to have just been a {{$digest}} issue.
+  created: 2014-12-09 14:09:27.0
+  id: '10984'
+  issue: '10789'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-09 14:09:27.0

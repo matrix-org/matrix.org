@@ -1,0 +1,42 @@
+---
+summary: Presence still lies weirdly
+---
+assignee: manu
+created: 2014-09-24 22:08:39.0
+creator: matthew
+description: "Using current develop:\n\non #matrix:matrix.org as @matthew:matrix.org:\n\nMatthew Sep 24 21:43\n* Matthew wonders why his memberslist has ladyt active 1m ago\t\nSep 24 21:43 when ladyt has most certainly not been online in the last 6 hours or so"
+id: '10388'
+key: SYWEB-93
+number: '93'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-24 17:58:21.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:06.0
+votes: '0'
+watches: '2'
+workflowId: '10491'
+---
+actions:
+- author: matthew
+  body: I'm seeing this again - despite Alexandre not being online at all, it claims that he's online and has the same last active age as me, having invited him into a new room.  It looks hugely as if Manu's memberlist reordering stuff sometimes leaves the presence info completely wrong.  Meanwhile LadyT claims to be online again, and she definitely isn't.
+  created: 2014-09-26 20:25:27.0
+  id: '10460'
+  issue: '10388'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-26 20:25:27.0
+- author: kegan
+  body: |-
+    Resolving this for now. If this is still an issue, another bug with more information would be great.
+
+    Leo has fixed a lot to do with presence, and I've implemented the necessary fixes on the web client (e.g. room initial sync), so I suspect presence is better now.
+  created: 2014-11-24 17:58:21.0
+  id: '10830'
+  issue: '10388'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-24 17:58:21.0

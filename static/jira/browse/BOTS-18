@@ -1,0 +1,20 @@
+---
+summary: 'IRC: Handle m.{file,audio,video} analogously to m.image'
+---
+created: 2015-02-16 19:59:05.0
+creator: leonerd
+description: ''
+id: '11078'
+key: BOTS-18
+number: '18'
+priority: '3'
+project: '10101'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-01-04 15:37:50.0
+votes: '0'
+watches: '1'
+workflowId: '11178'
+---
+actions: null

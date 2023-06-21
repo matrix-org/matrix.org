@@ -1,0 +1,46 @@
+---
+summary: 'Chat Room: Cannot scroll to bottom when keyboard is opened whereas the growing textView contains multi-lines text'
+---
+created: 2015-01-20 13:02:42.0
+creator: gforet
+description: |-
+  How to reproduce:
+  1 - open an existing chat room
+  2 - type several lines in growing textView
+  3 - dismiss keyboard (by pressing members icons for example)
+  4 - select growing textView again --> the keyboard appears
+  5 - scroll chat history to the bottom: we are not able to see the most recents messages NOK
+id: '10958'
+key: SYIOS-61
+number: '61'
+priority: '2'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-01-21 15:53:29.0
+status: '6'
+type: '1'
+updated: 2015-01-22 08:45:56.0
+votes: '0'
+watches: '2'
+workflowId: '11058'
+---
+actions:
+- author: gforet
+  body: 'Note: The scrolling is restored when we add a new line in growing textView'
+  created: 2015-01-20 13:15:26.0
+  id: '11154'
+  issue: '10958'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-20 13:15:26.0
+- author: m-ylecollen
+  body: |-
+    Should be fixed in 
+    https://github.com/matrix-org/matrix-ios-sdk/commit/eaee2e14
+  created: 2015-01-21 15:53:29.0
+  id: '11175'
+  issue: '10958'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-21 15:53:29.0

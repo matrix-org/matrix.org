@@ -1,0 +1,53 @@
+---
+summary: Pass more data to identity server on 3pid invite
+---
+assignee: illicitonion
+created: 2015-12-15 20:34:10.0
+creator: illicitonion
+description: |-
+  Room ID
+  Canonical room alias
+  Room join rules
+  Room avatar URL
+
+  User ID
+  User display name
+  User avatar URL
+
+  Join link
+id: '12212'
+key: SYN-550
+number: '550'
+priority: '1'
+project: '10000'
+reporter: illicitonion
+resolution: '1'
+resolutiondate: 2016-01-05 17:07:31.0
+status: '5'
+type: '1'
+updated: 2016-01-05 17:07:31.0
+votes: '0'
+watches: '2'
+workflowId: '12315'
+---
+actions:
+- author: matthew
+  body: |-
+    +Room name
+    -Join link (which should be part of the template).
+
+    Otherwise i'm good with this.
+  created: 2015-12-15 20:40:51.0
+  id: '12474'
+  issue: '12212'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-15 20:40:51.0
+- author: illicitonion
+  body: I did this a while ago
+  created: 2016-01-05 17:07:31.0
+  id: '12517'
+  issue: '12212'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-01-05 17:07:31.0

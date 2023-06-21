@@ -1,0 +1,43 @@
+---
+summary: You should always be able to invite people into a publicly-joinable room
+---
+created: 2015-06-12 15:48:47.0
+creator: matthew
+description: |-
+  [15:33]  <M-Matthew> also, how come i'm not allowed to invite you into it?
+  [15:33]  <M-Erik> k
+  [15:35]  <M-Erik> hmm, odd that you can't invite
+  [15:36]  <M-Erik> I assume you were granted power before they up'd the invite level?
+  [15:36]  <Ara4n> they didn't up the level though
+  [15:36]  <Ara4n> you got in uninvited
+  [15:37]  <M-Erik> Well, the invite level is set to 10
+  [15:37]  <Ara4n> dave/kegan: *please* let's make sure that the react SDK actually displays all state changes in the timeline
+  [15:37]  <Ara4n> so how did you manage to join?
+  [15:37]  <M-Erik> because its a public room?
+  [15:38]  <M-Dave> the client?
+  [15:38]  <M-Erik> Why you would add an invite level to a public room is an interesting question, and is quite an unintuitive thing to do
+  [15:42]  <Ara4n> if you do, it surely shouldn't stop you from inviting people given it's public
+  [15:43]  <M-Erik> I guess we could special case it to ignore the invite rule if its public
+  [15:43]  <Ara4n> doesn't seem unreasonable
+id: '11645'
+key: SYN-410
+number: '410'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:06.0
+votes: '0'
+watches: '2'
+workflowId: '11746'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1333'
+  created: 2016-11-07 18:28:06.0
+  id: '13654'
+  issue: '11645'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:06.0

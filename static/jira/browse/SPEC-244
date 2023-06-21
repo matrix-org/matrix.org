@@ -1,0 +1,38 @@
+---
+summary: Logout API to let users vape their own access/refresh tokens
+---
+created: 2015-09-30 19:20:03.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11982'
+key: SPEC-244
+number: '244'
+priority: '1'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-04-18 16:41:23.0
+status: '5'
+type: '1'
+updated: 2016-05-09 14:44:05.0
+votes: '0'
+watches: '2'
+workflowId: '12085'
+---
+actions:
+- author: richvdh
+  body: we have a logout API, but it needs speccing (SPEC-383)
+  created: 2016-04-18 16:41:07.0
+  id: '12837'
+  issue: '11982'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 16:41:07.0
+- author: richvdh
+  body: See also SPEC-401
+  created: 2016-05-09 14:44:05.0
+  id: '12911'
+  issue: '11982'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-09 14:44:05.0

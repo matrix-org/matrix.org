@@ -1,0 +1,33 @@
+---
+summary: If I leave a room it takes me to the home view, but my room is still present in the recents list
+---
+created: 2014-09-23 16:43:59.0
+creator: matthew
+description: ''
+id: '10378'
+key: SYWEB-81
+number: '81'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-29 10:14:48.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:58:01.0
+votes: '0'
+watches: '2'
+workflowId: '10481'
+---
+actions:
+- author: kegan
+  body: |-
+    This was fixed at some point.
+
+    Cannot reproduce.
+  created: 2014-10-29 10:14:48.0
+  id: '10621'
+  issue: '10378'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-29 10:14:48.0

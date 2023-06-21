@@ -1,0 +1,60 @@
+---
+summary: Test push
+---
+assignee: leonerd
+created: 2015-05-21 16:24:37.0
+creator: markjh
+description: ''
+id: '11547'
+key: SYT-3
+number: '3'
+priority: '1'
+project: '10300'
+reporter: markjh
+status: '1'
+type: '2'
+updated: 2015-09-28 15:38:45.0
+votes: '0'
+watches: '3'
+workflowId: '11648'
+---
+actions:
+- author: leonerd
+  body: |-
+    A test now exists at
+      https://github.com/matrix-org/sytest/tree/master/tests/50push
+
+    I don't know to what extent this should be considered sufficient and the bug closed.
+  created: 2015-06-08 13:00:45.0
+  id: '11833'
+  issue: '11547'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-08 13:00:45.0
+- author: leonerd
+  body: 'Dave: I''m not sure to what extent this test is sufficient. Can you comment on whether more is required, and if so what areas would also want testing?'
+  created: 2015-06-25 17:32:00.0
+  id: '11918'
+  issue: '11547'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-25 17:32:00.0
+- author: leonerd
+  body: |-
+    Test was renamed, now lives at
+
+      https://github.com/matrix-org/sytest/blob/master/tests/61push/01message-pushed.pl
+  created: 2015-09-28 15:33:45.0
+  id: '12181'
+  issue: '11547'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-28 15:33:45.0
+- author: dbkr
+  body: Looks good. In an ideal world we'd go through adding push rules to test that the server correctly implemented all parts of the push rules spec. Technically the default rules (ie. what pushes you get on a fresh account without adding or removing any push rules) are server impl specific so we should not really be testing them. This is an excellent start though.
+  created: 2015-09-28 15:38:45.0
+  id: '12182'
+  issue: '11547'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-09-28 15:38:45.0

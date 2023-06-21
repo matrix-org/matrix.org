@@ -1,0 +1,30 @@
+---
+summary: Make search terms optional?
+---
+created: 2016-04-21 15:32:10.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Such that one can search for all messages from a given sender
+id: '12637'
+key: SYN-681
+number: '681'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:25.0
+votes: '0'
+watches: '2'
+workflowId: '12737'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1534'
+  created: 2016-11-07 18:29:25.0
+  id: '13845'
+  issue: '12637'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:25.0

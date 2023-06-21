@@ -1,0 +1,22 @@
+---
+summary: Fix presence/profile schemas
+---
+created: 2015-02-03 09:49:56.0
+creator: erikj
+description: ''
+id: '11001'
+key: SYN-256
+number: '256'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-07 11:43:37.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:07.0
+votes: '0'
+watches: '1'
+workflowId: '11101'
+---
+actions: null

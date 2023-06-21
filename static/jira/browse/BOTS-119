@@ -1,0 +1,40 @@
+---
+summary: 'IRC AS: Do a looong exp backoff connecting to IRC servers'
+---
+created: 2015-09-24 09:57:29.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  It looks like the w3c IRC server went down at some point, but the bridge just tried for a couple of minutes then sulked and gave up trying to connect that user. Instead, we should continue trying exponentially into the days (and then give up) to help for cases like the server going down for some planned 24h maintenance
+id: '11938'
+key: BOTS-119
+number: '119'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-11-16 16:48:18.0
+status: '5'
+type: '1'
+updated: 2015-11-16 16:48:18.0
+votes: '0'
+watches: '2'
+workflowId: '12041'
+---
+actions:
+- author: neb
+  body: 'By @kegan:matrix.org: Rob Swain brings up a good point that a backoff in hours isn''t great since that means matrix users will be stuck waiting for the backoff before restoring the bridge, even if the IRC server is back up. Putting a cap in the tens of minutes probably won''t hurt anyone.'
+  created: 2015-09-24 10:17:37.0
+  id: '12164'
+  issue: '11938'
+  type: comment
+  updateauthor: neb
+  updated: 2015-09-24 10:17:37.0
+- author: kegan
+  body: BOTS-135
+  created: 2015-11-16 16:48:18.0
+  id: '12366'
+  issue: '11938'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-16 16:48:18.0

@@ -1,0 +1,31 @@
+---
+summary: Mail notifications
+---
+created: 2014-11-25 21:51:19.0
+creator: matthew
+description: |-
+  A huge driver to remind people that Matrix exists would be to send them an opt-out weekly digest email or similar of notifications (and email notifications when people invite them).  I'm thinking a weekly mail saying "You missed 245 messages on #matrix:matrix.org.. 126 on #matrix-dev:matrix.org; click here to unsubscribe"... and then realtime updates to tell you whenever someone's trying to PM you.
+
+  Hopefully the utility of the updates would outweigh their spamminess - and I think it helped Facebook's uptakes loads (especially before push notifs were a thing).
+id: '10707'
+key: SYN-169
+number: '169'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:25.0
+votes: '0'
+watches: '2'
+workflowId: '10807'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1247'
+  created: 2016-11-07 18:27:25.0
+  id: '13565'
+  issue: '10707'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:25.0

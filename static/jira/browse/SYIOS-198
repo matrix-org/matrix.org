@@ -1,0 +1,22 @@
+---
+summary: Messages should transition from grey->black when the send request returns 200 OK
+---
+created: 2016-01-14 13:56:50.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Seemingly we wait for the echo to appear from /sync before we transition?
+id: '12300'
+key: SYIOS-198
+number: '198'
+priority: '3'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-01-14 13:56:50.0
+votes: '0'
+watches: '1'
+workflowId: '12405'
+---
+actions: null

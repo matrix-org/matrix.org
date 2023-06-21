@@ -1,0 +1,31 @@
+---
+summary: Messages sometimes disappear having arrived and been displayed
+---
+created: 2015-03-19 14:20:22.0
+creator: dbkr
+description: |-
+  No further information on this yet, but I'm definitely getting some messages arrive and then disappear again. Just now, Matthew typed a bunch of messages, then the penultimate one of the batch disappeared at some point after it had arrived. Refreshing the page makes the message appear in the right place. I can't find it anywhere else on the page so I don't think it's been reordered.
+
+  No useful information in the console log. Develop webclient connected to matrix.org.
+id: '11252'
+key: SYWEB-335
+number: '335'
+priority: '1'
+project: '10004'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2015-05-15 11:03:23.0
+votes: '0'
+watches: '1'
+workflowId: '11352'
+---
+actions:
+- author: dbkr
+  body: I've just had this happen again in Matrix HQ. It could have been that a new message arriving from Matthew ("sorry, i thought this was desktop chrome") somehow caused the preceding one ("* Matthew bugs it") to disappear instead.
+  created: 2015-05-15 11:03:23.0
+  id: '11764'
+  issue: '11252'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-15 11:03:23.0

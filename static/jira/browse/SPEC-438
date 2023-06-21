@@ -1,0 +1,31 @@
+---
+summary: Example inconsistent with the spec
+---
+assignee: richvdh
+created: 2016-07-27 07:03:02.0
+creator: kitsune
+description: ''
+id: '12772'
+key: SPEC-438
+number: '438'
+priority: '3'
+project: '10001'
+reporter: kitsune
+resolution: '1'
+resolutiondate: 2016-08-01 10:06:39.0
+status: '5'
+type: '1'
+updated: 2016-08-01 10:06:39.0
+votes: '0'
+watches: '2'
+workflowId: '12872'
+---
+actions:
+- author: richvdh
+  body: This was fixed by https://github.com/matrix-org/matrix-doc/pull/365.
+  created: 2016-08-01 10:06:39.0
+  id: '13091'
+  issue: '12772'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-08-01 10:06:39.0

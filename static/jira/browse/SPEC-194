@@ -1,0 +1,28 @@
+---
+summary: Return number of requests left before you are rate-limited
+---
+created: 2015-06-26 10:00:37.0
+creator: kegan
+description: ''
+id: '11704'
+key: SPEC-194
+number: '194'
+priority: '2'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:28.0
+votes: '0'
+watches: '2'
+workflowId: '11805'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/522'
+  created: 2016-10-28 16:27:28.0
+  id: '13330'
+  issue: '11704'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:28.0

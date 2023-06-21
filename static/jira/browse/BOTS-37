@@ -1,0 +1,31 @@
+---
+summary: 'AS API: Large events can block events forever'
+---
+assignee: kegan
+created: 2015-05-11 14:25:52.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Sending huge events can cause a 413 Request Entity Too Large which are then retried with backoff. This isn't great because it will never ever be sent successfully. The API should be treating 4xx responses as a success with respect to transactions. As an aside, t would be nice to have a meta-channel to inform the AS API that it is missing events (possibly with the HTTP response code it got, given the 413 was completely transparent on the AS logs due to it being done in the guts of an HTTP parser
+id: '11524'
+key: BOTS-37
+number: '37'
+priority: '2'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-07-28 14:04:44.0
+votes: '0'
+watches: '2'
+workflowId: '11625'
+---
+actions:
+- author: kegan
+  body: Reducing priority on this; the immediate problem with the IRC bridge has been fixed, but the spec should be clear on what should be treated as an acceptable failure or not.
+  created: 2015-05-12 10:53:11.0
+  id: '11739'
+  issue: '11524'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-12 10:53:11.0

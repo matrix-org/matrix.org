@@ -1,0 +1,36 @@
+---
+summary: Video calling video orientation signalling
+---
+created: 2015-06-01 10:58:08.0
+creator: dbkr
+description: ''
+id: '11571'
+key: SPEC-166
+number: '166'
+priority: '2'
+project: '10001'
+reporter: dbkr
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:19.0
+votes: '0'
+watches: '2'
+workflowId: '11672'
+---
+actions:
+- author: dbkr
+  body: 'Actually Chrome does this: http://www.ietf.org/mail-archive/web/rtcweb/current/msg08977.html (https://code.google.com/p/webrtc/issues/detail?id=4145) so I think that''s a pretty strong argument for doing the same.'
+  created: 2015-06-01 12:44:15.0
+  id: '11812'
+  issue: '11571'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-06-01 12:44:15.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/503'
+  created: 2016-10-28 16:27:19.0
+  id: '13311'
+  issue: '11571'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:19.0

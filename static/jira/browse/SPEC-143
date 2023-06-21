@@ -1,0 +1,33 @@
+---
+summary: AS rate limiting behaviour
+---
+created: 2015-03-29 23:38:55.0
+creator: matthew
+description: |-
+  I think we need to think more carefully about AS rate limiting behaviour - specifically:
+
+   * HSes should not ratelimit ASes which are trying to lazyload content into a room
+   * ASes should only be limited per-room, not globally per-HS
+   * ...
+id: '11289'
+key: SPEC-143
+number: '143'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:12.0
+votes: '0'
+watches: '2'
+workflowId: '11389'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/448'
+  created: 2016-10-28 16:27:12.0
+  id: '13297'
+  issue: '11289'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:12.0

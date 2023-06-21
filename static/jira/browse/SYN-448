@@ -1,0 +1,73 @@
+---
+summary: 'cannot paginate beyond a certain point in #matrix-dev'
+---
+created: 2015-08-16 20:31:41.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  On Android, I can't go beyond the attached picture.
+id: '11799'
+key: SYN-448
+number: '448'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:16.0
+votes: '0'
+watches: '4'
+workflowId: '11901'
+---
+actions:
+- author: kegan
+  body: |-
+    Logs:
+    {code}
+    2015-08-16 20:29:16,849 - synapse.access.http.8080 - 474 - INFO - GET-1174513 - 83.166.68.175 - 8080 - Received request: GET /_matrix/client/api/v1/rooms/!XqBunHwQIXUiqCaoxq:matrix.org/messages?dir=b&from=t40793-1859290_38524_7520_1&limit=20&access_token=<redacted>
+    2015-08-16 20:29:16,892 - synapse.http.outbound - 117 - INFO - GET-1174513 - {GET-O-761471} [matrix.org] Sending request: GET matrix://matrix.org/_matrix/federation/v1/backfill/!XqBunHwQIXUiqCaoxq:matrix.org/?limit=100&v=%24141881326710lKsZH%3Anegativecurvature.net&v=%2414229720470EGZhu%3Ajki.re&v=%24142065226722bWvPd%3Acirrus.arasphere.net&v=%2414187545253uXvFH%3Anegativecurvature.net&v=%2414188127746eKIIM%3Anegativecurvature.net&v=%24141875666110yGiSq%3Ajki.re&v=%24141753589783whHVy%3Aoddvar.org&v=%2414396814951757TifFF%3Amatrix.sipgate.net&v=%2414187456425Ojtrz%3Ajki.re&v=%2414259308140PzRgE%3Aleonerd.org.uk&v=%2414187544922mIfPV%3Anegativecurvature.net
+    2015-08-16 20:29:19,056 - synapse.http.outbound - 192 - INFO - GET-1174513 - {GET-O-761471} [matrix.org] Result: 200 OK
+    2015-08-16 20:29:19,108 - synapse.http.outbound - 117 - INFO - GET-1174513 - {POST-O-761501} [matrix.org] Sending request: POST matrix://matrix.org/_matrix/key/v2/query
+    2015-08-16 20:29:19,132 - synapse.http.outbound - 192 - INFO - GET-1174513 - {POST-O-761501} [matrix.org] Result: 200 OK
+    2015-08-16 20:29:19,305 - synapse.handlers.federation - 306 - INFO - GET-1174513 - backfill: Got 100 events with 2 edges
+    2015-08-16 20:29:19,307 - synapse.http.outbound - 117 - INFO - GET-1174513 - {GET-O-761502} [matrix.org] Sending request: GET matrix://matrix.org/_matrix/federation/v1/state/!XqBunHwQIXUiqCaoxq:matrix.org/?event_id=%24142065164111WeeSw%3Aarasphere.net
+    2015-08-16 20:29:19,373 - synapse.http.outbound - 192 - INFO - GET-1174513 - {GET-O-761502} [matrix.org] Result: 500 Internal Server Error
+    2015-08-16 20:29:19,373 - synapse.api.errors - 49 - INFO - GET-1174513 - HttpResponseException: 500, Internal Server Error
+    2015-08-16 20:29:19,374 - synapse.handlers.federation - 475 - INFO - GET-1174513 - Failed to backfill from matrix.org because 500: Internal Server Error
+    2015-08-16 20:29:19,375 - synapse.http.outbound - 117 - INFO - GET-1174513 - {GET-O-761504} [perlsite.co.uk] Sending request: GET matrix://perlsite.co.uk/_matrix/federation/v1/backfill/!XqBunHwQIXUiqCaoxq:matrix.org/?limit=100&v=%24141881326710lKsZH%3Anegativecurvature.net&v=%2414229720470EGZhu%3Ajki.re&v=%24142065226722bWvPd%3Acirrus.arasphere.net&v=%2414187545253uXvFH%3Anegativecurvature.net&v=%2414188127746eKIIM%3Anegativecurvature.net&v=%24141875666110yGiSq%3Ajki.re&v=%24141753589783whHVy%3Aoddvar.org&v=%2414396814951757TifFF%3Amatrix.sipgate.net&v=%2414187456425Ojtrz%3Ajki.re&v=%2414259308140PzRgE%3Aleonerd.org.uk&v=%2414187544922mIfPV%3Anegativecurvature.net
+    2015-08-16 20:29:19,396 - synapse.http.matrixfederationclient - 175 - WARNING - GET-1174513 - {GET-O-761504} Sending request failed to perlsite.co.uk: GET matrix://perlsite.co.uk/_matrix/federation/v1/backfill/!XqBunHwQIXUiqCaoxq:matrix.org/?limit=100&v=%24141881326710lKsZH%3Anegativecurvature.net&v=%2414229720470EGZhu%3Ajki.re&v=%24142065226722bWvPd%3Acirrus.arasphere.net&v=%2414187545253uXvFH%3Anegativecurvature.net&v=%2414188127746eKIIM%3Anegativecurvature.net&v=%24141875666110yGiSq%3Ajki.re&v=%24141753589783whHVy%3Aoddvar.org&v=%2414396814951757TifFF%3Amatrix.sipgate.net&v=%2414187456425Ojtrz%3Ajki.re&v=%2414259308140PzRgE%3Aleonerd.org.uk&v=%2414187544922mIfPV%3Anegativecurvature.net: ConnectionRefusedError - ConnectionRefusedError: Connection refused
+    2015-08-16 20:29:32,720 - synapse.http.matrixfederationclient - 175 - WARNING - GET-1174513 - {GET-O-761504} Sending request failed to perlsite.co.uk: GET matrix://perlsite.co.uk/_matrix/federation/v1/backfill/!XqBunHwQIXUiqCaoxq:matrix.org/?limit=100&v=%24141881326710lKsZH%3Anegativecurvature.net&v=%2414229720470EGZhu%3Ajki.re&v=%24142065226722bWvPd%3Acirrus.arasphere.net&v=%2414187545253uXvFH%3Anegativecurvature.net&v=%2414188127746eKIIM%3Anegativecurvature.net&v=%24141875666110yGiSq%3Ajki.re&v=%24141753589783whHVy%3Aoddvar.org&v=%2414396814951757TifFF%3Amatrix.sipgate.net&v=%2414187456425Ojtrz%3Ajki.re&v=%2414259308140PzRgE%3Aleonerd.org.uk&v=%2414187544922mIfPV%3Anegativecurvature.net: TimeoutError - TimeoutError: 
+    2015-08-16 20:29:37,498 - synapse.http.matrixfederationclient - 175 - WARNING - GET-1174513 - {GET-O-761504} Sending request failed to perlsite.co.uk: GET matrix://perlsite.co.uk/_matrix/federation/v1/backfill/!XqBunHwQIXUiqCaoxq:matrix.org/?limit=100&v=%24141881326710lKsZH%3Anegativecurvature.net&v=%2414229720470EGZhu%3Ajki.re&v=%24142065226722bWvPd%3Acirrus.arasphere.net&v=%2414187545253uXvFH%3Anegativecurvature.net&v=%2414188127746eKIIM%3Anegativecurvature.net&v=%24141875666110yGiSq%3Ajki.re&v=%24141753589783whHVy%3Aoddvar.org&v=%2414396814951757TifFF%3Amatrix.sipgate.net&v=%2414187456425Ojtrz%3Ajki.re&v=%2414259308140PzRgE%3Aleonerd.org.uk&v=%2414187544922mIfPV%3Anegativecurvature.net: ConnectionRefusedError - ConnectionRefusedError: Connection refused
+    2015-08-16 20:29:44,312 - synapse.http.matrixfederationclient - 175 - WARNING - GET-1174513 - {GET-O-761504} Sending request failed to perlsite.co.uk: GET matrix://perlsite.co.uk/_matrix/federation/v1/backfill/!XqBunHwQIXUiqCaoxq:matrix.org/?limit=100&v=%24141881326710lKsZH%3Anegativecurvature.net&v=%2414229720470EGZhu%3Ajki.re&v=%24142065226722bWvPd%3Acirrus.arasphere.net&v=%2414187545253uXvFH%3Anegativecurvature.net&v=%2414188127746eKIIM%3Anegativecurvature.net&v=%24141875666110yGiSq%3Ajki.re&v=%24141753589783whHVy%3Aoddvar.org&v=%2414396814951757TifFF%3Amatrix.sipgate.net&v=%2414187456425Ojtrz%3Ajki.re&v=%2414259308140PzRgE%3Aleonerd.org.uk&v=%2414187544922mIfPV%3Anegativecurvature.net: ConnectionRefusedError - ConnectionRefusedError: Connection refused
+    2015-08-16 20:29:52,343 - synapse.http.matrixfederationclient - 175 - WARNING - GET-1174513 - {GET-O-761504} Sending request failed to perlsite.co.uk: GET matrix://perlsite.co.uk/_matrix/federation/v1/backfill/!XqBunHwQIXUiqCaoxq:matrix.org/?limit=100&v=%24141881326710lKsZH%3Anegativecurvature.net&v=%2414229720470EGZhu%3Ajki.re&v=%24142065226722bWvPd%3Acirrus.arasphere.net&v=%2414187545253uXvFH%3Anegativecurvature.net&v=%2414188127746eKIIM%3Anegativecurvature.net&v=%24141875666110yGiSq%3Ajki.re&v=%24141753589783whHVy%3Aoddvar.org&v=%2414396814951757TifFF%3Amatrix.sipgate.net&v=%2414187456425Ojtrz%3Ajki.re&v=%2414259308140PzRgE%3Aleonerd.org.uk&v=%2414187544922mIfPV%3Anegativecurvature.net: ConnectionRefusedError - ConnectionRefusedError: Connection refused
+    2015-08-16 20:30:10,067 - synapse.http.matrixfederationclient - 175 - WARNING - GET-1174513 - {GET-O-761504} Sending request failed to perlsite.co.uk: GET matrix://perlsite.co.uk/_matrix/federation/v1/backfill/!XqBunHwQIXUiqCaoxq:matrix.org/?limit=100&v=%24141881326710lKsZH%3Anegativecurvature.net&v=%2414229720470EGZhu%3Ajki.re&v=%24142065226722bWvPd%3Acirrus.arasphere.net&v=%2414187545253uXvFH%3Anegativecurvature.net&v=%2414188127746eKIIM%3Anegativecurvature.net&v=%24141875666110yGiSq%3Ajki.re&v=%24141753589783whHVy%3Aoddvar.org&v=%2414396814951757TifFF%3Amatrix.sipgate.net&v=%2414187456425Ojtrz%3Ajki.re&v=%2414259308140PzRgE%3Aleonerd.org.uk&v=%2414187544922mIfPV%3Anegativecurvature.net: ConnectionRefusedError - ConnectionRefusedError: Connection refused
+    2015-08-16 20:30:10,067 - synapse.http.outbound - 192 - INFO - GET-1174513 - {GET-O-761504} [perlsite.co.uk] Result: ConnectionRefusedError - ConnectionRefusedError: Connection refused
+    2015-08-16 20:30:10,068 - synapse.handlers.federation - 484 - ERROR - GET-1174513 - Failed to backfill from perlsite.co.uk because Connection was refused by other side: 111: Connection refused.
+    2015-08-16 20:30:10,070 - synapse.http.outbound - 117 - INFO - GET-1174513 - {GET-O-761852} [localhost] Sending request: GET matrix://localhost/_matrix/federation/v1/backfill/!XqBunHwQIXUiqCaoxq:matrix.org/?limit=100&v=%24141881326710lKsZH%3Anegativecurvature.net&v=%2414229720470EGZhu%3Ajki.re&v=%24142065226722bWvPd%3Acirrus.arasphere.net&v=%2414187545253uXvFH%3Anegativecurvature.net&v=%2414188127746eKIIM%3Anegativecurvature.net&v=%24141875666110yGiSq%3Ajki.re&v=%24141753589783whHVy%3Aoddvar.org&v=%2414396814951757TifFF%3Amatrix.sipgate.net&v=%2414187456425Ojtrz%3Ajki.re&v=%2414259308140PzRgE%3Aleonerd.org.uk&v=%2414187544922mIfPV%3Anegativecurvature.net
+    2015-08-16 20:30:10,573 - synapse.http.outbound - 192 - INFO - GET-1174513 - {GET-O-761852} [localhost] Result: 401 Unauthorized
+    2015-08-16 20:30:10,574 - synapse.api.errors - 49 - INFO - GET-1174513 - HttpResponseException: 401, Unauthorized
+    2015-08-16 20:30:10,577 - synapse.http.server - 94 - ERROR - GET-1174513 - 401: Unauthorized
+    2015-08-16 20:30:10,579 - synapse.access.http.8080 - 491 - INFO - GET-1174513 - 83.166.68.175 - 8080 - {@kegan:matrix.org} Processed request: 53730ms 62B 401 "GET /_matrix/client/api/v1/rooms/!XqBunHwQIXUiqCaoxq:matrix.org/messages?dir=b&from=t40793-1859290_38524_7520_1&limit=20&access_token=<redacted> HTTP/1.1" "Dalvik/1.6.0 (Linux; U; Android 4.4.2; SM-G900F Build/KOT49H)"
+    {code}
+  created: 2015-08-25 13:52:59.0
+  id: '12073'
+  issue: '11799'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-08-25 13:52:59.0
+- author: markjh
+  body: Reading the logs it looks like it was trying to backfill messages from "perlsite.co.uk" which seems a bit odd.
+  created: 2015-08-25 14:02:14.0
+  id: '12074'
+  issue: '11799'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-08-25 14:02:14.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1357'
+  created: 2016-11-07 18:28:16.0
+  id: '13679'
+  issue: '11799'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:16.0

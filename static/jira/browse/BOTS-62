@@ -1,0 +1,22 @@
+---
+summary: Having a way to discover public IRC channels via /LIST over the IRC AS could be useful
+---
+created: 2015-06-21 14:37:42.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11684'
+key: BOTS-62
+number: '62'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-01-04 15:38:50.0
+status: '5'
+type: '1'
+updated: 2016-01-04 15:38:50.0
+votes: '0'
+watches: '1'
+workflowId: '11785'
+---
+actions: null

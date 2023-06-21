@@ -1,0 +1,35 @@
+---
+summary: Expose registration API
+---
+assignee: manu
+created: 2014-12-10 10:50:25.0
+creator: manu
+description: ''
+id: '10800'
+key: SYIOS-5
+number: '5'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-01-21 17:21:30.0
+status: '5'
+type: '2'
+updated: 2015-01-21 17:21:30.0
+votes: '0'
+watches: '1'
+workflowId: '10900'
+---
+actions:
+- author: manu
+  body: |-
+    The SDK already allowed to register with the password-based flow (http://matrix.org/docs/spec/#password-based)
+
+    A generic register method has been added to make request for any kind of flow stage.
+    An equivalent method for login has been added too.
+  created: 2015-01-21 17:21:30.0
+  id: '11178'
+  issue: '10800'
+  type: comment
+  updateauthor: manu
+  updated: 2015-01-21 17:21:30.0

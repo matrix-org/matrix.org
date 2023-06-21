@@ -1,0 +1,90 @@
+---
+summary: We need a way for users to invalidate access_tokens (e.g. by hitting logout)
+---
+created: 2015-02-09 00:22:57.0
+creator: matthew
+description: ''
+id: '11009'
+key: SYN-259
+number: '259'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '4'
+resolutiondate: 2016-07-19 08:37:47.0
+status: '5'
+type: '2'
+updated: 2016-07-19 08:37:47.0
+votes: '0'
+watches: '4'
+workflowId: '11109'
+---
+actions:
+- author: dbkr
+  body: |-
+    I think we should tie this in to the authentication work, if and when we're switching to Macaroons. If we actually mandated Macaroons in the spec (which we would need to, at least optionally, in order to use third party caveats because they require the client to go & get proof from the third party) then logout would be almost certainly be a no-op since it would be quite rare for a server to store data for each session when using Macaroons.
+
+    Separately, in what situation would a user or client know that a particular access token had been leaked and therefore know which token to revoke (or which device to log out)? The more common solution to this problem is that the user changes their password if they suspect someone might have access to their account who shouldn't. Changing their password would then invalidate all their sessions.
+  created: 2015-05-01 11:21:35.0
+  id: '11702'
+  issue: '11009'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-01 11:21:35.0
+- author: dbkr
+  body: Setting as blocked, pending feedback.
+  created: 2015-05-14 10:25:57.0
+  id: '11744'
+  issue: '11009'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 10:25:57.0
+- author: matthew
+  body: |-
+    From #quaternion:matrix.org:
+
+    {quote}
+    eternaleye
+    Personally, I'd actually implement it like so: The server issues two tokens, the access_token and the refresh_token. The access_token always has at least two caveats: "session" and "epoch", referring to a 2-tuple in the DB, and the refresh_token has the same. The refresh_token's only used with two API endpoints: "refresh" and "logout". Refresh increments the epoch, then returns a new refresh token and access token. Logout deletes the row. This makes independent refresh of multiple clients trivial, and you can set other constraints on access_token (mandating a refresh) or refresh_token (mandating a re-login). Old tokens, then, refer to session = NULL and epoch = NULL. If the user has ever used a new-style token, reject old tokens. After some time, deimplement old tokens.
+    You can do a sneaky thing of inserting (null, null) for each user, and refresh deletes that and inserts a new-style row
+    Thus not needing any additional state
+
+    Also, access tokens aren't even constrained to be macaroons - but since Synapse's are, it can take advantage of that.
+    {quote}
+  created: 2016-03-04 01:16:43.0
+  id: '12744'
+  issue: '11009'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-04 01:17:19.0
+- author: eternaleye
+  body: |-
+    I'll also add that, if Macaroons become spec-level, I'd change this - make Matrix care _only_ about access tokens, and issue access tokens with a third-party caveat for a refresh service. The refresh service handles refresh and logout entirely within itself, issuing discharge macaroons that satisfy the third-party caveat. One can then implement _any_ desired logic in the refresh service, with a default one built into Synapse.
+
+    Nice effects there include that the auth token can be very long lived indeed (indefinitely, even), and the only thing the client needs to fetch frequently would be a small, short-lived discharge macaroon, possibly with caveats like IP address.
+
+    This also avoids storing any session state at all in the HS itself.
+
+    Oh, also - I'd suggest looking into Boulangerie, which is an effort to make a schema language for Macaroon caveats.
+  created: 2016-03-04 01:48:10.0
+  id: '12745'
+  issue: '11009'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-03-04 01:48:10.0
+- author: richvdh
+  body: 'I''m not sure what this bug is about. We have a way for users to invalidate access_tokens: http://matrix.org/docs/spec/client_server/r0.1.0.html#post-matrix-client-r0-logout. Can someone clarify?'
+  created: 2016-05-09 14:49:45.0
+  id: '12913'
+  issue: '11009'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-09 14:49:45.0
+- author: richvdh
+  body: Nobody knows.
+  created: 2016-07-19 08:37:47.0
+  id: '13068'
+  issue: '11009'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-19 08:37:47.0

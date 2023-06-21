@@ -1,0 +1,31 @@
+---
+summary: ' There''s no way to discover new/changed config options when upgrading synapse'
+---
+created: 2016-01-07 19:14:47.0
+creator: neb
+description: |-
+  Generating a new config in synapse generates a default yaml file explaining all the options, but that doesn't give an easy way for a server admin to find documentation for the new options.
+
+  We could publish a copy of the default config somewhere either by hosting in github/matrix.org or by adding an option to synapse to print a default config.
+id: '12278'
+key: SYN-580
+number: '580'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:52.0
+votes: '0'
+watches: '3'
+workflowId: '12383'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1464'
+  created: 2016-11-07 18:28:52.0
+  id: '13769'
+  issue: '12278'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:52.0

@@ -1,0 +1,30 @@
+---
+summary: It's very unclear from the /sync doc that the state block describes state as of the beginning of the timeline block, and not the end
+---
+created: 2016-02-23 00:16:25.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Unless i'm completely missing something
+id: '12516'
+key: SPEC-356
+number: '356'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:20.0
+votes: '0'
+watches: '4'
+workflowId: '12616'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/642'
+  created: 2016-10-28 16:28:20.0
+  id: '13451'
+  issue: '12516'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:20.0

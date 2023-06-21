@@ -1,0 +1,44 @@
+---
+summary: We don't show displayname for parted users
+---
+created: 2015-02-16 01:36:41.0
+creator: matthew
+description: ''
+id: '11063'
+key: SYWEB-284
+number: '284'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-02-16 17:18:20.0
+votes: '0'
+watches: '2'
+workflowId: '11163'
+---
+actions:
+- author: kegan
+  body: The leave event does not include this information. Since we always display the "later" state for room members, this means no avatar or display name.
+  created: 2015-02-16 13:18:11.0
+  id: '11264'
+  issue: '11063'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-16 13:18:11.0
+- author: matthew
+  body: Right. So surely we should propagate last-known info if nothing contradicts it?  Or fix the leave event to include this info?
+  created: 2015-02-16 17:05:25.0
+  id: '11268'
+  issue: '11063'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-16 17:05:25.0
+- author: kegan
+  body: I feel that the leave event should contain the info, given the member hasn't suddenly lost their avatar/display name, especially so given the whole point of blobbing this information together was to make it easy for clients...
+  created: 2015-02-16 17:18:20.0
+  id: '11269'
+  issue: '11063'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-16 17:18:20.0

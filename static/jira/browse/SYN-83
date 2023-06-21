@@ -1,0 +1,30 @@
+---
+summary: Let room alias creators remove room aliases.
+---
+created: 2014-09-30 11:46:12.0
+creator: erikj
+description: ''
+id: '10421'
+key: SYN-83
+number: '83'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2016-03-10 13:52:10.0
+status: '5'
+type: '2'
+updated: 2016-03-10 13:52:10.0
+votes: '0'
+watches: '1'
+workflowId: '10524'
+---
+actions:
+- author: erikj
+  body: Currently we don't track who created an alias, so we will need to add that to the DB.
+  created: 2014-09-30 11:48:03.0
+  id: '10483'
+  issue: '10421'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-30 11:48:03.0

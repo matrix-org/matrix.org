@@ -1,0 +1,28 @@
+---
+summary: AS config files interface clarity
+---
+created: 2015-12-03 16:13:34.0
+creator: dbkr
+description: ''
+id: '12175'
+key: SPEC-288
+number: '288'
+priority: '3'
+project: '10001'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:57.0
+votes: '0'
+watches: '2'
+workflowId: '12278'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/585'
+  created: 2016-10-28 16:27:57.0
+  id: '13393'
+  issue: '12175'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:57.0

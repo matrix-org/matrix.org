@@ -1,0 +1,31 @@
+---
+summary: Support user-interactive authentication api in /login
+---
+created: 2016-05-17 09:10:54.0
+creator: richvdh
+description: |-
+  Currently {{/login}} uses a stripped-down form of the user-interactive authentication API, where the POSTed parameters look like the contents of an {{auth}} dict, and it supports a GET version which replies with a 200 whose contents look like those of the 401 response in the user-interactive auth api.
+
+  This is inconsistent and confusing; we should switch it over to the user-interactive authentication API proper (and then spec it so that clients can use it).
+id: '12665'
+key: SYN-696
+number: '696'
+priority: '3'
+project: '10000'
+reporter: richvdh
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:32.0
+votes: '0'
+watches: '3'
+workflowId: '12765'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1547'
+  created: 2016-11-07 18:29:32.0
+  id: '13860'
+  issue: '12665'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:32.0

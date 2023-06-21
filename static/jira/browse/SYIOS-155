@@ -1,0 +1,25 @@
+---
+summary: Handle the hostname of the Home Server from Login response
+---
+created: 2015-10-06 14:26:09.0
+creator: gforet
+description: |-
+  In case of successful login, the hostname of the server is provided in server response thanks to key named 'home_server' (https://matrix.org/docs/spec/#login).
+
+  This hostname is presently ignored by MatrixSDK. Indeed the 'homeserver' field defined in MXCredentials object is used to store the server url.
+
+  Support hostname in MXCredentials object implies to refactor the field 'homeserver'. CAUTION: this refactoring impacts the existing credentials stored on device. A patch must be implemented to guarantee the backward compatibility.
+id: '12002'
+key: SYIOS-155
+number: '155'
+priority: '2'
+project: '10200'
+reporter: gforet
+status: '10100'
+type: '1'
+updated: 2015-10-06 14:26:09.0
+votes: '0'
+watches: '1'
+workflowId: '12105'
+---
+actions: null

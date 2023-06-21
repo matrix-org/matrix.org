@@ -1,0 +1,38 @@
+---
+summary: Inviting a user by email gets into an inconsistent state if you don't have sufficient power in the room
+---
+created: 2016-01-27 10:02:32.0
+creator: neb
+description: ''
+id: '12351'
+key: SYN-611
+number: '611'
+priority: '1'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-06-02 13:37:20.0
+status: '5'
+type: '1'
+updated: 2016-06-02 13:37:20.0
+votes: '0'
+watches: '3'
+workflowId: '12456'
+---
+actions:
+- author: erikj
+  body: https://github.com/matrix-org/sytest/commit/11211dfbd96bb9bad5cd69154d9c7b7de836f8fa
+  created: 2016-01-27 11:14:10.0
+  id: '12586'
+  issue: '12351'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-27 11:14:10.0
+- author: matthew
+  body: fixed by https://github.com/matrix-org/synapse/pull/814
+  created: 2016-06-02 13:37:16.0
+  id: '12990'
+  issue: '12351'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-06-02 13:37:16.0

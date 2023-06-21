@@ -1,0 +1,31 @@
+---
+summary: We seem to be relaying typing notifs for rooms that users are not members of.
+---
+assignee: leonerd
+created: 2015-03-29 23:46:03.0
+creator: matthew
+description: ''
+id: '11295'
+key: SYN-328
+number: '328'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-15 23:50:35.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:08.0
+votes: '0'
+watches: '2'
+workflowId: '11395'
+---
+actions:
+- author: leonerd
+  body: Fixed by f2cf375
+  created: 2015-04-15 23:50:35.0
+  id: '11495'
+  issue: '11295'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-15 23:50:35.0

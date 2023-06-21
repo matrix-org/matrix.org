@@ -1,0 +1,43 @@
+---
+summary: Document user access tokens
+---
+created: 2016-02-09 10:11:28.0
+creator: jimmycuadra
+description: ''
+id: '12380'
+key: SPEC-344
+number: '344'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '10000'
+resolutiondate: 2016-05-05 11:19:22.0
+status: '5'
+type: '1'
+updated: 2016-05-05 11:19:22.0
+votes: '0'
+watches: '2'
+workflowId: '12485'
+---
+actions:
+- author: richvdh
+  body: |-
+    Okay. Firstly, I think there has been some confusion here between token-based auth, and access tokens. They are completely different types of token; you can use `m.login.token` to get an access token. (Or you could, if synapse implenented it). You are not the first or last person to get confused by this; I have raised SPEC-387.
+
+    As for an access_token: the implementation here is quite deliberately left up to the homeserver. The fact that it might expire is mentioned in https://matrix.org/docs/spec/r0.0.1/client_server.html#post-matrix-client-r0-register and https://matrix.org/docs/spec/r0.0.1/client_server.html#post-matrix-client-r0-login; how it is generated and checked is an implementation detail.
+
+    Certainly an "overview of authentication in Matrix" would not go amiss in any way; this probably ties in closely with SPEC-308.
+  created: 2016-04-18 17:39:04.0
+  id: '12842'
+  issue: '12380'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 17:39:04.0
+- author: richvdh
+  body: closing in favour of SPEC-387 and SPEC-308.
+  created: 2016-05-05 11:19:10.0
+  id: '12897'
+  issue: '12380'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-05 11:19:10.0

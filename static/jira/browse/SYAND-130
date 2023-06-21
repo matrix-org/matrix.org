@@ -1,0 +1,22 @@
+---
+summary: Support viewing history for rooms you have left
+---
+created: 2015-09-22 22:23:22.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  ...as per https://github.com/matrix-org/matrix-doc/pull/40. This should also handle UX nicely when you are kicked from a room without the app being open
+id: '11925'
+key: SYAND-130
+number: '130'
+priority: '2'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-09-22 22:23:22.0
+votes: '0'
+watches: '1'
+workflowId: '12028'
+---
+actions: null

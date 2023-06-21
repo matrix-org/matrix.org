@@ -1,0 +1,22 @@
+---
+summary: Merge Pdu and Events tables
+---
+created: 2014-09-25 13:15:55.0
+creator: erikj
+description: ''
+id: '10392'
+key: SYN-73
+number: '73'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '3'
+resolutiondate: 2014-11-13 15:58:44.0
+status: '5'
+type: '3'
+updated: 2014-11-20 10:06:42.0
+votes: '0'
+watches: '1'
+workflowId: '10495'
+---
+actions: null

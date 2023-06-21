@@ -1,0 +1,22 @@
+---
+summary: Users need a way to invalidate access tokens - i.e. log out.
+---
+created: 2015-11-17 23:57:14.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12115'
+key: SPEC-272
+number: '272'
+priority: '1'
+project: '10001'
+reporter: neb
+resolution: '3'
+resolutiondate: 2015-12-10 15:39:55.0
+status: '5'
+type: '1'
+updated: 2015-12-10 15:39:55.0
+votes: '0'
+watches: '1'
+workflowId: '12218'
+---
+actions: null

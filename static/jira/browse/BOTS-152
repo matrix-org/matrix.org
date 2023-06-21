@@ -1,0 +1,30 @@
+---
+summary: IRC->Matrix PMs are ignored unless the IRC nick being PMed has precisely the right case
+---
+created: 2016-01-15 10:29:23.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12306'
+key: BOTS-152
+number: '152'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 11:04:07.0
+status: '5'
+type: '1'
+updated: 2016-06-02 11:04:07.0
+votes: '0'
+watches: '2'
+workflowId: '12411'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/61
+  created: 2016-06-02 11:04:07.0
+  id: '12981'
+  issue: '12306'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 11:04:07.0

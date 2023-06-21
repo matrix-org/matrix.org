@@ -1,0 +1,32 @@
+---
+summary: 'IRC AS: Broadcast matrix room'
+---
+created: 2015-11-16 17:16:07.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  It might be nice if IRC bridges could splat startup/stats/etc to a list of matrix rooms (e.g. #irc:matrix.org) which could then also provide poor Matrix users advance warning of any global connection woes
+id: '12110'
+key: BOTS-138
+number: '138'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '2'
+resolutiondate: 2016-06-02 11:01:17.0
+status: '5'
+type: '1'
+updated: 2016-06-02 11:01:17.0
+votes: '0'
+watches: '2'
+workflowId: '12213'
+---
+actions:
+- author: kegan
+  body: Punting for now.
+  created: 2016-06-02 11:01:17.0
+  id: '12979'
+  issue: '12110'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 11:01:17.0

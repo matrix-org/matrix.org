@@ -1,0 +1,29 @@
+---
+summary: Events aren't synchronized across federated servers before users join
+---
+created: 2015-04-12 13:41:46.0
+creator: matt-williams
+description: |-
+  As an application service, I create a room, inviting a user, and then immediately send a "m.call.invite" event to try to set up the call.  I don't wait for the user to join.
+
+  If the user is on the same home server, they are notified of the event when they join the room.
+
+  If the user is on a different home server, they are not notified, and the event is dropped.
+
+  If I wait for the user to join before I send the "m.call.invite" event, it is always delivered correctly.
+id: '11329'
+key: SYN-341
+number: '341'
+priority: '3'
+project: '10000'
+reporter: matt-williams
+resolution: '3'
+resolutiondate: 2015-05-07 11:02:48.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:04.0
+votes: '0'
+watches: '1'
+workflowId: '11429'
+---
+actions: null

@@ -1,0 +1,41 @@
+---
+summary: Think about how we join multiple AS bridges in one Matrix room
+---
+created: 2015-11-06 16:44:54.0
+creator: leonerd
+description: |-
+  Having ASes steal attempts to join room aliases and lazily provision the rooms is great for the first time you join an "external" room via an AS bridge. E.g. #freenode_#neovim:matrix.org. But this doesn't help when I want to create a second AS bridge with the same Matrix room - say I also want to bring in the "neovim" project from gitter.im into the same room.
+
+  One way this could likely work is that an existing Matrix user in the Matrix/Freenode room could invite some Matrix entity representing the Gitter AS to join that room, and then explain to the Gitter AS which room on the Gitter side it should bridge to.
+
+  I furthermore wonder if we could use some invite metadata for this? E.g. send an invite to the Gitter AS user, with a field saying "the gitter room you should bridge is called 'neovim'", or whatever. Then it can accept or reject the invite conditionally on it being able to perform that.
+id: '12089'
+key: SPEC-269
+number: '269'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '4'
+updated: 2016-10-28 16:27:52.0
+votes: '0'
+watches: '3'
+workflowId: '12192'
+---
+actions:
+- author: kegan
+  body: 'Note to self: This is basically dynamically allowing Matrix users to bridge explicit rooms (like in config files). It would be really nice to have.'
+  created: 2015-11-06 16:47:07.0
+  id: '12350'
+  issue: '12089'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-06 16:47:07.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/575'
+  created: 2016-10-28 16:27:52.0
+  id: '13383'
+  issue: '12089'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:52.0

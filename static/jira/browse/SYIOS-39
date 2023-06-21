@@ -1,0 +1,46 @@
+---
+summary: Show power level changes properly
+---
+created: 2014-12-24 16:06:52.0
+creator: matthew
+description: ''
+id: '10860'
+key: SYIOS-39
+number: '39'
+priority: '2'
+project: '10200'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2015-01-13 09:08:34.0
+votes: '0'
+watches: '2'
+workflowId: '10960'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    It was fixed the 24th december at 16:32.
+
+    The members list was not refreshed when any event was triggers (including the power level updates)
+  created: 2015-01-05 08:50:02.0
+  id: '11048'
+  issue: '10860'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-05 08:50:02.0
+- author: matthew
+  body: |-
+    The problem here is that we need to show something like...
+
+    "Arathorn has now power-level 100"
+
+    ...or similar in the scrollback.  Instead, unless we have "show all events", this is missing.
+
+    (This may be because in C-S API v1 it's not easy to see which of all the power level events have changed)
+  created: 2015-01-05 15:12:08.0
+  id: '11052'
+  issue: '10860'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-05 15:12:08.0

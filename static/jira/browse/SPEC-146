@@ -1,0 +1,28 @@
+---
+summary: Specify direct client-to-client file transfers
+---
+created: 2015-04-01 19:59:32.0
+creator: dbkr
+description: ''
+id: '11305'
+key: SPEC-146
+number: '146'
+priority: '3'
+project: '10001'
+reporter: dbkr
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:13.0
+votes: '1'
+watches: '3'
+workflowId: '11405'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/449'
+  created: 2016-10-28 16:27:13.0
+  id: '13298'
+  issue: '11305'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:13.0

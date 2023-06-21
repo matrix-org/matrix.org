@@ -1,0 +1,28 @@
+---
+summary: Per-device presence.
+---
+created: 2014-12-24 17:21:53.0
+creator: matthew
+description: ''
+id: '10869'
+key: SYN-217
+number: '217'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:33.0
+votes: '0'
+watches: '2'
+workflowId: '10969'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1264'
+  created: 2016-11-07 18:27:33.0
+  id: '13582'
+  issue: '10869'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:33.0

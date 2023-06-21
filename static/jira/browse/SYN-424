@@ -1,0 +1,103 @@
+---
+summary: Synapse install crashes out on minimal Digitalocean host
+---
+created: 2015-06-19 01:14:25.0
+creator: matthew
+description: |-
+  Jun 13 13:01:12 <Arathorn>      dave/erik: on a clean debian digital ocean install i'm having problems with pyopenssl
+  Jun 13 13:04:06 <M-matthew>     >>> import OpenSSL
+  Jun 13 13:04:07 <M-matthew>     ImportError: No module named cryptography.hazmat.bindings.openssl.binding
+  Jun 13 13:04:10 <M-matthew>     and
+  Jun 13 13:05:56 <M-matthew>     and then
+  Jun 13 13:05:57 <M-matthew>     synapse.python_dependencies.MissingRequirementError: Can't import 'OpenSSL' which is part of 'pyopenssl>=0.14'
+  Jun 13 13:05:59 <M-matthew>     when trying to synctl
+  Jun 13 13:06:01 <M-matthew>     :(
+  Jun 13 13:07:21 <Arathorn>      i think it's because the pip install crapped out
+  Jun 13 13:07:42 <Arathorn>      of the deps
+  Jun 13 13:10:17 <Arathorn>      manually running pip install cryptography # seems to have fixed it slightly
+  Jun 13 13:10:20 <Arathorn>      but now it's stuck on service_identity
+  Jun 13 13:10:25 <Arathorn>      despite claiming it's already satisfide
+  Jun 13 13:11:41 <M-matthew>     ...which is now failing with ImportError: No module named pyasn1_modules.rfc2459
+  Jun 13 13:12:45 <M-matthew>     fixed with pip install pip install pyasn1_modules
+  Jun 13 13:12:46 <M-matthew>     pip install pyasn1_modules
+  Jun 13 13:12:49 <M-matthew>     even
+  Jun 13 13:12:50 <M-matthew>     and then
+  Jun 13 13:12:57 <M-matthew>     pip install characteristic
+  Jun 13 13:12:59 <M-matthew>     seemingly
+  Jun 13 13:13:03 <M-matthew>     i have no idea what'sgoing on there
+  Jun 13 13:13:10 <M-matthew>     it's like pip crashed out and got totally stuck >:(
+
+  Conclusion was that pip randomly hung the first time I ran it whilst trying to compile some native crypto code, and then subsequently didn't recover its state nicely and I had to manually install the deps.
+id: '11669'
+key: SYN-424
+number: '424'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:09.0
+votes: '0'
+watches: '3'
+workflowId: '11770'
+---
+actions:
+- author: erikj
+  body: Haven't seen this again.
+  created: 2016-01-06 11:11:33.0
+  id: '12533'
+  issue: '11669'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 11:11:33.0
+- author: matthew
+  body: I've seen it since. What happens is that pip runs out of mem on a 512MB host, and leaves things in an inconsistent state when you try to resume.
+  created: 2016-01-06 11:16:15.0
+  id: '12535'
+  issue: '11669'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-06 11:16:15.0
+- author: erikj
+  body: |-
+    Oh is that what it is? What on earth is PIP doing with its life?
+
+    I'm really not sure what we can do about it though
+  created: 2016-01-06 11:18:42.0
+  id: '12536'
+  issue: '11669'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 11:18:42.0
+- author: matthew
+  body: use xargs or whatever to install the deps one by one rather than having pip try to do the whole tree in one fell swoop and run out of ram whilst doing so?
+  created: 2016-01-06 11:26:40.0
+  id: '12538'
+  issue: '11669'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-06 11:26:40.0
+- author: erikj
+  body: I guess we can add it to the instructions, but in general we can't make pip do that with {{pip install synapse}}
+  created: 2016-01-06 11:30:14.0
+  id: '12539'
+  issue: '11669'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 11:30:14.0
+- author: matthew
+  body: file a bug against pip?
+  created: 2016-01-06 11:32:57.0
+  id: '12540'
+  issue: '11669'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-06 11:32:57.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1340'
+  created: 2016-11-07 18:28:09.0
+  id: '13661'
+  issue: '11669'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:09.0

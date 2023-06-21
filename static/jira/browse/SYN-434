@@ -1,0 +1,22 @@
+---
+summary: Implement the API for key management for end to end encryption.
+---
+created: 2015-07-06 19:02:09.0
+creator: markjh
+description: ''
+id: '11733'
+key: SYN-434
+number: '434'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-08-25 14:09:59.0
+status: '5'
+type: '2'
+updated: 2015-12-07 12:23:56.0
+votes: '0'
+watches: '2'
+workflowId: '11834'
+---
+actions: null

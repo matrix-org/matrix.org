@@ -1,0 +1,30 @@
+---
+summary: /op caches old user IDs on failure and gets confused
+---
+created: 2015-06-12 15:36:24.0
+creator: matthew
+description: "Tom M Riddle\n >in the webclient, /op @alien:matrix.org 50\n>should work\nIt does not.\t\n\nMatthew\n it just worked for me in a test room...\t\nJun 12 15:31\n\nTom M Riddle\n Error\nNot a valid user_id: Alien (M_UNKNOWN)\t\nJun 12 15:32\n\t\nTom M Riddle\n Matthew: No, and it stills says \"Alien\" in the error. Seems like it was cached somewhere from the first time when I tried by the username instead of ID.\t\n\t\nMatthew\n right, this sounds like a stupid javascript bug in the client then caching the old value\t\nJun 12 15:33\n um, hit refresh and try again? O:-)"
+id: '11643'
+key: SYWEB-373
+number: '373'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-07-17 18:01:55.0
+status: '5'
+type: '1'
+updated: 2015-07-17 18:01:55.0
+votes: '0'
+watches: '1'
+workflowId: '11744'
+---
+actions:
+- author: matthew
+  body: dup SYWEB-342
+  created: 2015-07-17 18:01:55.0
+  id: '12029'
+  issue: '11643'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-17 18:01:55.0

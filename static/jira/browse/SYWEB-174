@@ -1,0 +1,26 @@
+---
+summary: Duplicate messages (local echo not replaced with real message)
+---
+assignee: kegan
+created: 2014-11-24 13:32:40.0
+creator: kegan
+description: |-
+  Just had this happen to me.
+
+  The cause is that the message I just sent was received from {{/events}} *before* getting the {{event_id}} back from the {{PUT}}.
+id: '10698'
+key: SYWEB-174
+number: '174'
+priority: '1'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-11-24 14:44:01.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:00.0
+votes: '0'
+watches: '1'
+workflowId: '10798'
+---
+actions: null

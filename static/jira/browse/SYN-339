@@ -1,0 +1,33 @@
+---
+summary: Notification listener's timeouts aren't being cancelled.
+---
+assignee: markjh
+created: 2015-04-09 10:11:19.0
+creator: markjh
+description: ''
+id: '11320'
+key: SYN-339
+number: '339'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-04-13 13:48:42.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:11.0
+votes: '0'
+watches: '1'
+workflowId: '11420'
+---
+actions:
+- author: markjh
+  body: |-
+    Deployed to matrix.org. The listener objects don't seem to be leaking anymore.
+    Looks likes this was caused by a 10 year timeout set by the push notification code. This leak should only have affected servers with push enabled. It looks like only matrix.org had push enabled.
+  created: 2015-04-13 13:48:42.0
+  id: '11484'
+  issue: '11320'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-04-13 13:48:42.0

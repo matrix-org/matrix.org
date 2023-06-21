@@ -1,0 +1,23 @@
+---
+summary: Add reusable authentication views to MatrixKit
+---
+assignee: gforet
+created: 2015-04-27 10:22:16.0
+creator: manu
+description: ''
+id: '11370'
+key: SYIOS-122
+number: '122'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-11-13 13:14:01.0
+status: '5'
+type: '2'
+updated: 2015-11-13 13:14:01.0
+votes: '0'
+watches: '1'
+workflowId: '11470'
+---
+actions: null

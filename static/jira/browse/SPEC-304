@@ -1,0 +1,45 @@
+---
+summary: JSON schema stuff appears to be mis-represented in the r0.0.0 spec HTML
+---
+assignee: illicitonion
+created: 2015-12-16 10:29:10.0
+creator: matthew
+description: |-
+  Looking at 
+
+  http://matrix.org/docs/spec/r0.0.0/client_server.html#get-matrix-client-r0-rooms-roomid-members
+
+  There are sections like "StrippedState" which then goes on about content/state_key/type which have nothing to do with StrippedState.  It feels like the section headers are not in sync with the content.  This is very very confusing.
+id: '12213'
+key: SPEC-304
+number: '304'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:03.0
+votes: '0'
+watches: '2'
+workflowId: '12316'
+---
+actions:
+- author: richvdh
+  body: |-
+    I don't really get the problem here. They are state events; but it's not the full state, hence StrippedState. http://matrix.org/docs/spec/client_server/r0.2.0.html#m-room-member talks in more detail.
+
+    Are you after a different type name?
+  created: 2016-09-27 17:00:03.0
+  id: '13129'
+  issue: '12213'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:00:03.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/600'
+  created: 2016-10-28 16:28:03.0
+  id: '13408'
+  issue: '12213'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:03.0

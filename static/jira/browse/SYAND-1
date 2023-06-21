@@ -1,0 +1,47 @@
+---
+summary: Sign release APKs
+---
+created: 2015-01-14 20:35:23.0
+creator: bob
+description: |-
+  I tried to install the android app (app-released-unsigned.apk) on Nexus with CM11 (I can install apps from unknown sources).
+
+  When clicking on install, it says "App not installed", no error message.
+id: '10935'
+key: SYAND-1
+number: '1'
+priority: '3'
+project: '10201'
+reporter: bob
+status: '10100'
+type: '1'
+updated: 2015-01-19 11:54:23.0
+votes: '0'
+watches: '2'
+workflowId: '11035'
+---
+actions:
+- author: bob
+  body: 'update: with the debug version it is working...'
+  created: 2015-01-14 20:45:34.0
+  id: '11122'
+  issue: '10935'
+  type: comment
+  updateauthor: bob
+  updated: 2015-01-14 20:45:34.0
+- author: joachim
+  body: Yes, this is because the release apk is currently unsigned. We need to either sign it or stop building it for now
+  created: 2015-01-16 17:18:33.0
+  id: '11145'
+  issue: '10935'
+  type: comment
+  updateauthor: joachim
+  updated: 2015-01-16 17:18:33.0
+- author: bob
+  body: OK, thanks for the feedback. I would suggest signing it, seems not so much effort for me... :-)
+  created: 2015-01-17 20:25:50.0
+  id: '11146'
+  issue: '10935'
+  type: comment
+  updateauthor: bob
+  updated: 2015-01-17 20:25:50.0

@@ -1,0 +1,31 @@
+---
+summary: Backwardly-extensible history in bridged portal rooms
+---
+created: 2016-07-28 15:59:54.0
+creator: leonerd
+description: |-
+  It would be lovely if bridged portal rooms that come from some bridged universe that supports history fetching (e.g. Gitter or Slack) could themselves be represented by lazy history backfill inside Matrix, matching the way that individual Matrix HSes can lazily backfill history from other HSes.
+
+  There's an annoying asymmetry in that native Matrix rooms can be lazily backfilled over server-to-server federation, but there isn't a similar ability for portal rooms bridged from a 3PN.
+id: '12776'
+key: SPEC-440
+number: '440'
+priority: '4'
+project: '10001'
+reporter: leonerd
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:42.0
+votes: '0'
+watches: '2'
+workflowId: '12876'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/698'
+  created: 2016-10-28 16:28:42.0
+  id: '13507'
+  issue: '12776'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:42.0

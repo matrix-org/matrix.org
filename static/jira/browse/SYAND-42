@@ -1,0 +1,48 @@
+---
+summary: Until we have native support for editing push settings, we should link to the Settings page of the webclient to adjust them from the Settings tab
+---
+created: 2015-03-08 18:15:39.0
+creator: matthew
+description: |-
+  David,
+
+  we need a push settings dedicated webpage (like the login).
+  Opening the webclient page requires to register to the webclient too.
+id: '11169'
+key: SYAND-42
+number: '42'
+priority: '1'
+project: '10201'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-03-09 16:23:29.0
+votes: '0'
+watches: '3'
+workflowId: '11269'
+---
+actions:
+- author: dbkr
+  body: 'Conclusion from #matrix-dev, this would need a way of letting the user open the web client and be logged in (by passing an access token or something).'
+  created: 2015-03-09 10:23:59.0
+  id: '11368'
+  issue: '11169'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-09 10:23:59.0
+- author: kegan
+  body: You would need to pass the credentials in a URI, which if you want to open the browser, limits you to something like query parameters. There's obvious security concerns exposing the {{access_token}} publicly like this. You would also need to pass in other credentials in order for the SDK to actually work (namely the home server base URL and your user ID). At this point, I feel it's better to just work on implementing native support rather than trying to fudge this.
+  created: 2015-03-09 10:27:20.0
+  id: '11369'
+  issue: '11169'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-09 10:28:45.0
+- author: m-ylecollen
+  body: We're waiting that the webclient is currently updated to have an understand UX.
+  created: 2015-03-09 16:23:29.0
+  id: '11370'
+  issue: '11169'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-09 16:23:29.0

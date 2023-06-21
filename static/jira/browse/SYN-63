@@ -1,0 +1,39 @@
+---
+summary: Ability to blacklist IPs from connecting to a server at all
+---
+created: 2014-09-23 11:29:56.0
+creator: matthew
+description: |-
+  As a security feature, we need the equivalent of an IRC K-line - specifying what IP netmasks aren't allowed to connect to a given HS at all.
+
+  This would only be settable by a server admin - so we need that concept too.
+id: '10374'
+key: SYN-63
+number: '63'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '10200'
+type: '2'
+updated: 2016-11-07 18:27:16.0
+votes: '0'
+watches: '3'
+workflowId: '10477'
+---
+actions:
+- author: xena
+  body: This should also have some way of having a ban history, even after a ban expires.
+  created: 2015-12-09 17:26:24.0
+  id: '12451'
+  issue: '10374'
+  type: comment
+  updateauthor: xena
+  updated: 2015-12-09 17:26:24.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1217'
+  created: 2016-11-07 18:27:16.0
+  id: '13545'
+  issue: '10374'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:16.0

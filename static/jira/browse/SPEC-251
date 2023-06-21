@@ -1,0 +1,29 @@
+---
+summary: 'AS: Specify how exclusive registrations interact'
+---
+assignee: kegan
+created: 2015-10-16 13:17:56.0
+creator: illicitonion
+description: ''
+id: '12020'
+key: SPEC-251
+number: '251'
+priority: '3'
+project: '10001'
+reporter: illicitonion
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:45.0
+votes: '0'
+watches: '2'
+workflowId: '12123'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/559'
+  created: 2016-10-28 16:27:45.0
+  id: '13367'
+  issue: '12020'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:45.0

@@ -1,0 +1,33 @@
+---
+summary: Peer-to-peer Matrix
+---
+created: 2016-09-15 00:00:06.0
+creator: matthew
+description: |-
+  I just realised we don't actually have a spec bug for a possible evolution of Matrix to be p2p.  To quote the GSoC suggestion:
+
+  "Matrix currently follows a client-server architecture, where the servers federate together. This means that to host your own conversations in Matrix you have to own and maintain a server with a static IP and DNS SRV record etc. This isolates many people from running their own Matrix nodes. An interesting experiment would be to write a homeserver variant (probably in Node.js) which advertises itself via a DHT or similar (e.g. using js-libp2p) and uses WebRTC data channels for p2p synchronisation of message graph data. This could make it much easier to run homeservers - either as a standalone node daemon, or built into a desktop or even web client. Such a server would implement the basic features of today's Matrix C-S API, but obviously break compatibility with today's Matrix S-S API. An extension might be to write a bridge between the two federation protocols."
+
+  An extension beyond this could be to then relay the data off onion-routing and pond-style store-and-forward servers in order to protect metadata.
+id: '12830'
+key: SPEC-455
+number: '455'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:47.0
+votes: '0'
+watches: '2'
+workflowId: '12930'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/710'
+  created: 2016-10-28 16:28:47.0
+  id: '13519'
+  issue: '12830'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:47.0

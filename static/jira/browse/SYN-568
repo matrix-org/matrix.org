@@ -1,0 +1,30 @@
+---
+summary: We might want to turn generate_dh_params back on
+---
+created: 2015-12-28 21:20:20.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Unless it genuinely slows down installation, let's turn it back on rather than reusing the rfc params
+id: '12255'
+key: SYN-568
+number: '568'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:49.0
+votes: '0'
+watches: '2'
+workflowId: '12358'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1228'
+  created: 2016-11-07 18:28:49.0
+  id: '13763'
+  issue: '12255'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:49.0

@@ -1,0 +1,46 @@
+---
+summary: Missing origin_server_ts and age in events from v2 /sync
+---
+created: 2015-12-01 14:35:47.0
+creator: matthew
+description: |-
+  <Tor> I noticed one new thing that didn't happen before in the old API, some events are missing the chunk['origin_server_ts']
+
+  maybe it should be noted down in the differences, or is it a bug?
+  this is the full chunk:
+    content:
+      membership: join
+    sender: @appservice_irc:hveem.no
+    type: m.room.member
+    unsigned:
+    event_id: $1448115051103CTwcB:hveem.no
+    state_key: @appservice_irc:hveem.no
+
+  no age, no origin server ts
+id: '12161'
+key: SYN-532
+number: '532'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '10100'
+resolutiondate: 2016-10-21 00:10:50.0
+status: '5'
+type: '1'
+updated: 2016-10-21 00:10:50.0
+votes: '0'
+watches: '2'
+workflowId: '12264'
+---
+actions:
+- author: richvdh
+  body: |-
+    {{origin_server_ts}} should be there
+
+    {{age}} is in {{unsigned}}
+  created: 2016-10-21 00:10:42.0
+  id: '13197'
+  issue: '12161'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-21 00:10:42.0

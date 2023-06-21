@@ -1,0 +1,39 @@
+---
+summary: Run synapse with "synapse.storage._base.DEBUG_CACHES" turned on
+---
+created: 2015-05-21 16:05:20.0
+creator: markjh
+description: ''
+id: '11546'
+key: SYT-2
+number: '2'
+priority: '2'
+project: '10300'
+reporter: markjh
+status: '10200'
+type: '2'
+updated: 2015-06-25 17:31:05.0
+votes: '0'
+watches: '2'
+workflowId: '11647'
+---
+actions:
+- author: leonerd
+  body: |-
+    Firstly this would need some ability to turn it on from outside - likely a config parameter or commandline flag.
+
+    Ideas?
+  created: 2015-06-23 15:32:26.0
+  id: '11912'
+  issue: '11546'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-23 15:32:26.0
+- author: leonerd
+  body: Awaiting an ability to control this flag in synapse.
+  created: 2015-06-25 17:29:35.0
+  id: '11917'
+  issue: '11546'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-25 17:29:35.0

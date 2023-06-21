@@ -1,0 +1,42 @@
+---
+summary: Per-user storage.
+---
+created: 2014-10-04 20:38:25.0
+creator: erikj
+description: |-
+  bq. Hmm - maybe a machine-readable (free form JSON?) per-user storage? Or a key-value store associated with a login where clients are supposed to store/share their settings... 
+  -- Corion
+
+  Having the ability to store one or maybe multiple blobs of JSON servers side in a per user (and maybe separately per device?) sounds like a nice thing to have.
+id: '10452'
+key: SPEC-47
+number: '47'
+priority: '3'
+project: '10001'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-12-01 16:06:40.0
+status: '5'
+type: '2'
+updated: 2015-12-01 16:06:40.0
+votes: '0'
+watches: '3'
+workflowId: '10556'
+---
+actions:
+- author: matthew
+  body: we have this in v2 api
+  created: 2015-07-01 00:13:26.0
+  id: '11953'
+  issue: '10452'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-01 00:13:26.0
+- author: richvdh
+  body: http://matrix.org/speculator/spec/head/client_server.html#client-config
+  created: 2015-12-01 16:06:20.0
+  id: '12403'
+  issue: '10452'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 16:06:20.0

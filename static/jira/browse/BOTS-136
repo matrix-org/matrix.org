@@ -1,0 +1,40 @@
+---
+summary: 'IRC AS: IPv6 addresses need to be entered directly'
+---
+created: 2015-11-12 09:40:38.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  If you type a domain, it'll do the AAAA-lookup but then use v4, *obviously*. If it find a valid v6, it should really be using it. This is on Node v0.10.x
+id: '12103'
+key: BOTS-136
+number: '136'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 11:00:49.0
+status: '5'
+type: '1'
+updated: 2016-06-02 11:00:49.0
+votes: '0'
+watches: '3'
+workflowId: '12206'
+---
+actions:
+- author: illicitonion
+  body: Hopefully this magically gets fixed by updating node? Is there a trivial-ish way to test?
+  created: 2016-01-05 13:11:17.0
+  id: '12505'
+  issue: '12103'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-01-05 13:11:17.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/60
+  created: 2016-06-02 11:00:49.0
+  id: '12978'
+  issue: '12103'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 11:00:49.0

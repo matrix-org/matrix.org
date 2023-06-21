@@ -1,0 +1,31 @@
+---
+summary: Use HTTPS when talking to IdentityServer and check its TLS certificate.
+---
+assignee: dbkr
+created: 2014-10-02 14:33:00.0
+creator: markjh
+description: ''
+id: '10445'
+key: SYN-88
+number: '88'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-04-24 14:49:36.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:02.0
+votes: '0'
+watches: '2'
+workflowId: '10549'
+---
+actions:
+- author: dbkr
+  body: Fixed in csauth
+  created: 2015-04-24 14:49:36.0
+  id: '11533'
+  issue: '10445'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-24 14:49:36.0

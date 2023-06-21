@@ -1,0 +1,28 @@
+---
+summary: How do we specify sounds for notifications in a way that works between different apps?
+---
+created: 2015-02-25 14:37:51.0
+creator: dbkr
+description: ''
+id: '11142'
+key: SPEC-117
+number: '117'
+priority: '3'
+project: '10001'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2016-10-28 16:27:04.0
+votes: '0'
+watches: '2'
+workflowId: '11242'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/429'
+  created: 2016-10-28 16:27:04.0
+  id: '13280'
+  issue: '11142'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:04.0

@@ -1,0 +1,30 @@
+---
+summary: Ability to override the displayname for users & rooms that get served to you
+---
+created: 2016-07-14 18:43:39.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  This could be done by account_data, both per-room (for overriding m.room.name and membership names within rooms) and globally (for overriding user displaynames globally)
+id: '12748'
+key: SPEC-427
+number: '427'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:39.0
+votes: '1'
+watches: '2'
+workflowId: '12848'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/690'
+  created: 2016-10-28 16:28:39.0
+  id: '13499'
+  issue: '12748'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:39.0

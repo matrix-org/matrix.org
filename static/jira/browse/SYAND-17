@@ -1,0 +1,40 @@
+---
+summary: Crash on login on master
+---
+created: 2015-02-09 09:58:49.0
+creator: kegan
+description: "{code}\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: FATAL EXCEPTION: main\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: java.lang.RuntimeException: Unable to resume activity {org.matrix.matrixandroidsdk/org.matrix.matrixandroidsdk.activity.HomeActivity}: java.lang.NullPointerException\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat android.app.ActivityThread.performResumeActivity(ActivityThread.java:2456)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat android.app.ActivityThread.handleResumeActivity(ActivityThread.java:2484)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:1998)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat android.app.ActivityThread.access$600(ActivityThread.java:127)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat android.app.ActivityThread$H.handleMessage(ActivityThread.java:1159)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat android.os.Handler.dispatchMessage(Handler.java:99)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat android.os.Looper.loop(Looper.java:137)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat android.app.ActivityThread.main(ActivityThread.java:4507)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat java.lang.reflect.Method.invokeNative(Native Method)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat java.lang.reflect.Method.invoke(Method.java:511)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:978)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:745)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat dalvik.system.NativeStart.main(Native Method)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: Caused by: java.lang.NullPointerException\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat org.matrix.androidsdk.rest.model.User.addEventListener(User.java:111)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat org.matrix.matrixandroidsdk.MyPresenceManager.<init>(MyPresenceManager.java:69)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat org.matrix.matrixandroidsdk.MyPresenceManager.getInstance(MyPresenceManager.java:94)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat org.matrix.matrixandroidsdk.activity.HomeActivity.onResume(HomeActivity.java:195)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat android.app.Instrumentation.callActivityOnResume(Instrumentation.java:1157)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat android.app.Activity.performResume(Activity.java:4543)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \tat android.app.ActivityThread.performResumeActivity(ActivityThread.java:2446)\n02-09 01:46:00.376  2506  2506 E AndroidRuntime: \t... 12 more\n{code}"
+id: '11011'
+key: SYAND-17
+number: '17'
+priority: '1'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-09 10:14:03.0
+status: '5'
+type: '1'
+updated: 2015-02-09 10:14:03.0
+votes: '0'
+watches: '2'
+workflowId: '11111'
+---
+actions:
+- author: kegan
+  body: This happens all the time, master is completely broken currently.
+  created: 2015-02-09 09:59:43.0
+  id: '11222'
+  issue: '11011'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-09 09:59:43.0
+- author: m-ylecollen
+  body: |-
+    Should be fixed in 
+    https://github.com/matrix-org/matrix-android-sdk/commit/ac2a8394
+  created: 2015-02-09 10:14:03.0
+  id: '11223'
+  issue: '11011'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-02-09 10:14:03.0

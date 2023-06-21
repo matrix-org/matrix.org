@@ -1,0 +1,38 @@
+---
+summary: 'javascript-sdk does not respond to requests on port 8448. Listens only on port 8008 which has "tls: false" in homeserver.yaml'
+---
+created: 2016-03-14 14:03:45.0
+creator: pawan176
+description: ''
+id: '12556'
+key: SYJS-43
+number: '43'
+priority: '3'
+project: '10204'
+reporter: pawan176
+resolution: '10100'
+resolutiondate: 2016-09-27 15:41:55.0
+status: '5'
+type: '1'
+updated: 2016-09-27 15:41:55.0
+votes: '0'
+watches: '2'
+workflowId: '12656'
+---
+actions:
+- author: richvdh
+  body: I don't understand this. The js-sdk doesn't listen on any ports at all. It's a client.
+  created: 2016-03-18 10:36:44.0
+  id: '12764'
+  issue: '12556'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-18 10:36:44.0
+- author: pawan176
+  body: I wanted to say synapse server. I am so sorry!
+  created: 2016-03-18 17:44:43.0
+  id: '12766'
+  issue: '12556'
+  type: comment
+  updateauthor: pawan176
+  updated: 2016-03-18 17:44:43.0

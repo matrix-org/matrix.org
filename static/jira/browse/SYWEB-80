@@ -1,0 +1,41 @@
+---
+summary: 'On initial sync error: "ReferenceError: $scope is not defined"'
+---
+created: 2014-09-23 11:20:27.0
+creator: erikj
+description: |-
+  {noformat}
+  ReferenceError: $scope is not defined
+      at http://localhost:8080/_matrix/client/components/matrix/event-stream-service.js:138:17
+      at http://localhost:8080/_matrix/client/js/angular.min.js:103:505
+      at m.$eval (http://localhost:8080/_matrix/client/js/angular.min.js:118:56)
+      at m.$digest (http://localhost:8080/_matrix/client/js/angular.min.js:115:106)
+      at m.$apply (http://localhost:8080/_matrix/client/js/angular.min.js:118:386)
+      at l (http://localhost:8080/_matrix/client/js/angular.min.js:77:80)
+      at u (http://localhost:8080/_matrix/client/js/angular.min.js:81:389)
+      at XMLHttpRequest.v.onreadystatechange (http://localhost:8080/_matrix/client/js/angular.min.js:82:477) 
+  {noformat}
+id: '10372'
+key: SYWEB-80
+number: '80'
+priority: '3'
+project: '10004'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-10-31 09:41:58.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:01.0
+votes: '0'
+watches: '2'
+workflowId: '10475'
+---
+actions:
+- author: kegan
+  body: This has since been fixed.
+  created: 2014-10-31 09:41:58.0
+  id: '10711'
+  issue: '10372'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-31 09:41:58.0

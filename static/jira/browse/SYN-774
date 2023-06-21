@@ -1,0 +1,44 @@
+---
+summary: A way for ASes to poke synapse to retry the timeout queue
+---
+created: 2016-09-22 13:46:03.0
+creator: leonerd
+description: |-
+  If an AS is down for a while, synapse rightly starts backing up the queue, retrying less often. But you can get it into a state where the retry timeout is so slow that it can take many minutes after restarting your AS before messages start flowing again.
+
+  It would be nice for synapse to have a button that ASes can poke to say "Hi, I started up now", and synapse can then try flushing the queue again early.
+
+  (I'll have a go at writing this now)
+id: '12837'
+key: SYN-774
+number: '774'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '2'
+updated: 2016-11-07 18:30:03.0
+votes: '0'
+watches: '2'
+workflowId: '12937'
+---
+actions:
+- author: leonerd
+  body: |-
+    On further thought, it seems that any entirely nontrivial bridge will probably start talking to synapse as soon as it starts. Current examples are that the IRC bridge performs a full {{/initialSync}} and that slack and gitter bridges request the state events out of their currently-mapped rooms.
+
+    It may therefore be sufficient that synapse just bumps ASes up the retry queue if it sees inbound requests from the AS's auth token.
+  created: 2016-10-05 16:29:04.0
+  id: '13157'
+  issue: '12837'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-10-05 16:29:04.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1601'
+  created: 2016-11-07 18:30:03.0
+  id: '13930'
+  issue: '12837'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:03.0

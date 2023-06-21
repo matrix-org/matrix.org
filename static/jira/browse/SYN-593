@@ -1,0 +1,69 @@
+---
+summary: /events/:eventId endpoint allows access to events from before the user joined the room
+---
+created: 2016-01-13 13:33:13.0
+creator: neb
+description: |-
+  {code}
+  curl 'https://matrix.org/_matrix/client/api/v1/events/$1416421146527WDCdP:matrix.org?access_token=<redacted>'
+  {
+      "age": 36270900773,
+      "content": {
+          "body": "can haz invite?",
+          "msgtype": "m.text"
+      },
+      "event_id": "$1416421146527WDCdP:matrix.org",
+      "origin_server_ts": 1414157883323,
+      "room_id": "!zOmsiVucpWbRRDjSwe:matrix.org",
+      "sender": "@irc_kegan:matrix.org",
+      "stream_ordering": 16594,
+      "type": "m.room.message",
+      "unsigned": {
+          "age": 36270900773
+      },
+      "user_id": "@irc_kegan:matrix.org"
+  }
+  {code}
+id: '12294'
+key: SYN-593
+number: '593'
+priority: '3'
+project: '10000'
+reporter: richvdh
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:55.0
+votes: '0'
+watches: '3'
+workflowId: '12399'
+---
+actions:
+- author: erikj
+  body: Were you joined at the time? What was the history visibility?
+  created: 2016-01-13 13:40:49.0
+  id: '12568'
+  issue: '12294'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-13 13:40:49.0
+- author: richvdh
+  body: |-
+    Yes, I was joined at the time. To be fair, in the above example, the history visibility at the time of the event was unset; however I can also reproduce it on a later event, once the history_visibility was set to `invite` (but still before I joined the room):
+
+    {code}
+    curl 'https://matrix.org/_matrix/client/api/v1/events/$143769525125400gNQaz:matrix.org?access_token=<redacted>'
+    {code}
+  created: 2016-01-13 14:03:36.0
+  id: '12569'
+  issue: '12294'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-01-13 14:03:36.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1472'
+  created: 2016-11-07 18:28:55.0
+  id: '13777'
+  issue: '12294'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:55.0

@@ -1,0 +1,31 @@
+---
+summary: Infinite loop in case of back pagination on new created room
+---
+assignee: manu
+created: 2015-01-15 12:43:54.0
+creator: gforet
+description: |-
+  To reproduce:
+  - create a new room
+  - when the room is opened, trigger a back pagination by scrolling down
+
+  --> The pagination is looping infinitely 
+
+  Investigation:
+  The origin of this issue is located in SDK([mxRoom canPaginate], this method return YES whereas all events have been retrieved.
+id: '10938'
+key: SYIOS-59
+number: '59'
+priority: '2'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-01-16 15:48:13.0
+status: '5'
+type: '1'
+updated: 2015-01-16 15:48:13.0
+votes: '0'
+watches: '1'
+workflowId: '11038'
+---
+actions: null

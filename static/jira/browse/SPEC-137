@@ -1,0 +1,34 @@
+---
+summary: The spec is woefully confused about what a "public" room means.
+---
+assignee: kegan
+created: 2015-03-29 22:59:32.0
+creator: matthew
+description: ''
+id: '11281'
+key: SPEC-137
+number: '137'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-10-14 16:37:13.0
+status: '5'
+type: '1'
+updated: 2015-10-14 16:37:13.0
+votes: '0'
+watches: '2'
+workflowId: '11381'
+---
+actions:
+- author: kegan
+  body: |-
+    https://github.com/matrix-org/matrix-doc/pull/94 makes the spec consistently refer to "published room list" and includes an NB on the {{/createRoom}} API about the {{visibility}} key.
+
+    https://github.com/matrix-org/matrix-doc/pull/94/files#diff-6452284110fbab8799b51fbd4b0b425cR53
+  created: 2015-10-14 16:37:13.0
+  id: '12270'
+  issue: '11281'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-14 16:37:13.0

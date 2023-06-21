@@ -1,0 +1,30 @@
+---
+summary: vector.im SSL is unhealthy based on www.ssllabs.com
+---
+created: 2015-12-02 13:17:12.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12166'
+key: ORG-32
+number: '32'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '1'
+resolutiondate: 2017-03-21 11:06:30.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:06:30.0
+votes: '0'
+watches: '2'
+workflowId: '12269'
+---
+actions:
+- author: richvdh
+  body: It's grade B now. I think that's ok
+  created: 2017-03-21 11:06:25.0
+  id: '14020'
+  issue: '12166'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:06:25.0

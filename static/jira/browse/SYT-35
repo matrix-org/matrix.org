@@ -1,0 +1,31 @@
+---
+summary: Neaten up 'return unless COND' style
+---
+created: 2015-11-06 19:03:38.0
+creator: leonerd
+description: |-
+  There's a lot of older code (that predates {{STYLE-GUIDE.rst}}) which is written in the form
+
+  {noformat}
+      return unless CONDITION;
+  {noformat}
+
+  especially in filters used by {{await_event_for}} or similar places. These should probably be updated to reflect the prevailing style suggested by the style guide into
+
+  {noformat}
+      CONDITION or return;
+  {noformat}
+id: '12090'
+key: SYT-35
+number: '35'
+priority: '3'
+project: '10300'
+reporter: leonerd
+status: '10100'
+type: '4'
+updated: 2015-11-06 19:03:38.0
+votes: '0'
+watches: '1'
+workflowId: '12193'
+---
+actions: null

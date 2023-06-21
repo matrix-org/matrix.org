@@ -1,0 +1,30 @@
+---
+summary: AS API doc doesn't tell you what its API URL prefix is
+---
+created: 2015-03-14 02:50:59.0
+creator: matthew
+description: ''
+id: '11233'
+key: SPEC-126
+number: '126'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '4'
+resolutiondate: 2015-10-13 17:12:04.0
+status: '5'
+type: '1'
+updated: 2015-10-13 17:12:05.0
+votes: '0'
+watches: '2'
+workflowId: '11333'
+---
+actions:
+- author: kegan
+  body: We don't expose endpoints on the HS anymore (this was previously complaining about {{/register}}
+  created: 2015-10-13 17:12:05.0
+  id: '12252'
+  issue: '11233'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 17:12:05.0

@@ -1,0 +1,30 @@
+---
+summary: Need proposal for link info bot response event format
+---
+created: 2016-04-15 10:05:38.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  So vector can recognise them to suppress them in favour of its own previewing
+id: '12627'
+key: SPEC-384
+number: '384'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:29.0
+votes: '0'
+watches: '2'
+workflowId: '12727'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/665'
+  created: 2016-10-28 16:28:29.0
+  id: '13474'
+  issue: '12627'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:29.0

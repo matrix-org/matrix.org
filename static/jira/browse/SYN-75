@@ -1,0 +1,38 @@
+---
+summary: Crypto sign HTTP requests for federation
+---
+created: 2014-09-25 14:15:15.0
+creator: markjh
+description: ''
+id: '10395'
+key: SYN-75
+number: '75'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-10-14 10:07:59.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:06:43.0
+votes: '0'
+watches: '1'
+workflowId: '10498'
+---
+actions:
+- author: markjh
+  body: We sign the requests at the HTTP layer since synapse might be deployed behind an HTTP load balancer which is doing the TLS. Otherwise we would be able to use TLS client certificates to prove the identity of the server requesting the data.
+  created: 2014-10-02 22:58:37.0
+  id: '10510'
+  issue: '10395'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-02 22:58:37.0
+- author: markjh
+  body: https://github.com/matrix-org/synapse/pull/8
+  created: 2014-10-13 16:49:52.0
+  id: '10568'
+  issue: '10395'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-13 16:49:52.0

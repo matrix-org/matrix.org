@@ -1,0 +1,30 @@
+---
+summary: Why do we put event types in the URL when sending messages?
+---
+created: 2016-01-25 17:48:11.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  It seems redundant data and doesn't buy us anything. I don't see how it's 'RESTy'. It does make it easier to filter for URLs in the Chrome network panel, but that's a pretty minor win
+id: '12348'
+key: SPEC-339
+number: '339'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:15.0
+votes: '0'
+watches: '2'
+workflowId: '12453'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/629'
+  created: 2016-10-28 16:28:15.0
+  id: '13437'
+  issue: '12348'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:15.0

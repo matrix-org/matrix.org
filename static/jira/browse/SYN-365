@@ -1,0 +1,58 @@
+---
+summary: Pusher Unhandled error
+---
+created: 2015-04-28 18:32:23.0
+creator: erikj
+description: |-
+  {noformat}
+  2015-04-28 18:31:25,470 - synapse.push.pusherpool - 171 - INFO -  - Starting 1 pushers
+  2015-04-28 18:31:25,470 - twisted - 455 - ERROR -  - Unhandled error in Deferred:
+  2015-04-28 18:31:25,472 - twisted - 455 - ERROR -  - Unhandled Error
+  Traceback (most recent call last):
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 382, in callback
+      self._startRunCallbacks(result)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 490, in _startRunCallbacks
+      self._runCallbacks()
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 577, in _runCallbacks
+      current.result = callback(current.result, *args, **kw)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1155, in gotResult
+      _inlineCallbacks(r, g, deferred)
+  --- <exception caught here> ---
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/push/pusherpool.py", line 52, in start
+      self._start_pushers(pushers)
+    File "synapse/push/pusherpool.py", line 173, in _start_pushers
+      p = self._create_pusher(pusherdict)
+    File "synapse/push/pusherpool.py", line 147, in _create_pusher
+      failing_since=pusherdict['failing_since']
+    File "synapse/push/httppusher.py", line 46, in __init__
+      "'url' required in data for HTTP pusher"
+  synapse.push.PusherConfigException: 'url' required in data for HTTP pusher
+  {noformat}
+
+  This is running develop: 1783c7
+id: '11401'
+key: SYN-365
+number: '365'
+priority: '3'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-14 14:26:47.0
+status: '5'
+type: '1'
+updated: 2015-05-26 16:13:34.0
+votes: '0'
+watches: '2'
+workflowId: '11501'
+---
+actions:
+- author: dbkr
+  body: This is now fixed (ie. we catch the exception)
+  created: 2015-05-14 14:26:47.0
+  id: '11755'
+  issue: '11401'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 14:26:47.0

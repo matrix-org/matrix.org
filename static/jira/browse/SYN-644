@@ -1,0 +1,55 @@
+---
+summary: as_users.py schema upgrade chokes badly if you have no ids on your ASes
+---
+assignee: illicitonion
+created: 2016-03-04 18:19:23.0
+creator: matthew
+description: |-
+  Trying to upgrade to latest synapse develop, and everything broke because my hs.yaml had an AS defined in it with no ID.  30/as_users.py schema update script broke, and left the schema inconsistent because it started to run but didn't finish. Had to faff around manually claiming that as_users had applied itself correctly.
+
+  Need to fix this before folks with ASes try to upgrade and get bitten by this.
+id: '12544'
+key: SYN-644
+number: '644'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-03-08 17:46:07.0
+status: '5'
+type: '1'
+updated: 2016-03-08 17:46:07.0
+votes: '0'
+watches: '2'
+workflowId: '12644'
+---
+actions:
+- author: illicitonion
+  body: |-
+    And the script is idempotent, so attempting to run it more than once should be fine.
+
+    The homeserver shouldn't mark the delta as applied if the python failed (which I should have done). So it should keep re-trying the script until you add the ID you need.
+
+    How were things inconsistent? What's the problem here?
+  created: 2016-03-08 11:24:51.0
+  id: '12753'
+  issue: '12544'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-03-08 11:24:51.0
+- author: matthew
+  body: My hs.yaml referred to an as-respoke.yaml or something for a respoke AS registration. That file lacked an appservice_id key or whatever your new AS id key is called. I git pulled my synapse and ran it; it tried to upgrade itself. The as_users.py upgrade script failed (i think) because of the missing key in the AS yaml. Trying to run synapse resulted in it trying to reapply the schema upgrade again, which failed as the appservice id column had already been added to the users table (from memory). So I had to manually insert the applied schema delta for as_users.py to stop it from running again and progress.
+  created: 2016-03-08 16:44:01.0
+  id: '12754'
+  issue: '12544'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-08 16:44:01.0
+- author: illicitonion
+  body: Fixed with https://github.com/matrix-org/synapse/pull/633
+  created: 2016-03-08 17:45:53.0
+  id: '12755'
+  issue: '12544'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-03-08 17:45:53.0

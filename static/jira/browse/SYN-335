@@ -1,0 +1,39 @@
+---
+summary: Aliases containing whitespace should not be creatable.
+---
+assignee: dbkr
+created: 2015-04-07 20:29:29.0
+creator: matthew
+description: ''
+id: '11311'
+key: SYN-335
+number: '335'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-14 13:22:23.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:11.0
+votes: '0'
+watches: '2'
+workflowId: '11411'
+---
+actions:
+- author: dbkr
+  body: 'I''m failing to create an account whose username contains whitespace: what''s the origin of this bug?'
+  created: 2015-05-14 12:51:30.0
+  id: '11749'
+  issue: '11311'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 12:51:30.0
+- author: dbkr
+  body: Oops, bug is talking about aliases, not usernames.
+  created: 2015-05-14 13:00:06.0
+  id: '11752'
+  issue: '11311'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 13:00:06.0

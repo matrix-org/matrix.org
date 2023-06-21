@@ -1,0 +1,47 @@
+---
+summary: reports from the field of voip not working on 0.3.2
+---
+assignee: dbkr
+created: 2014-09-18 18:08:26.0
+creator: matthew
+description: "Thom\nSep 18 18:05\n\tHmm... Calling side needs a lot of work\t\nSep 18 18:05\nCall Connecting for quite some time, then just terminates (Adam's side says \"user not responding\")\t\nSep 18 18:06\n:(\t\n@arathorn:arasphere.net\nSep 18 18:06\nthom: for 1:1 voip?\t\nAdam Parkes\nSep 18 18:06\n\tyes\t\nThom\nSep 18 18:06\n\tarathorn: Correct\t\n@arathorn:arasphere.net\nSep 18 18:06\nare you both on the latest & greatest webclient (i.e. reloaded the page in the last hour or so?)\t\nThom\nSep 18 18:06\n\tI believe so\t\nAdam Parkes\nSep 18 18:07\n\tlatest and buggiest ;)\t\n@arathorn:arasphere.net\nSep 18 18:07\nbugs are decreasing, if you can believe that :)\t\nSep 18 18:07\nand patches welcome ;P\t\noddvar\nSep 18 18:07\n\tboth using chrome?\t\nAdam Parkes\nSep 18 18:07\n\twe both just refreshed, no joy\t\nThom\nSep 18 18:07\n\toddvar: Yes\t\nAdam Parkes\nSep 18 18:07\n\tboth on chrome\t\n@arathorn:arasphere.net\nSep 18 18:07\nokay, we'll see if we can reproduce it"
+id: '10331'
+key: SYWEB-49
+number: '49'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-19 19:19:43.0
+status: '6'
+type: '1'
+updated: 2014-09-26 14:03:03.0
+votes: '0'
+watches: '2'
+workflowId: '10434'
+---
+actions:
+- author: matthew
+  body: This still isn't working - I tried two voice calls between Demosthenes & me on the latest develop branch (running off arasphere.net), and both calls got stuck in state "Connecting call...".  Irritatingly the logs are lost due to vast spammy logging in matrix-filter.js.  In both instances he created the room; invited me; I joined; we spoke; he called me; call got stuck in Connecting at both ends.
+  created: 2014-09-20 02:07:20.0
+  id: '10357'
+  issue: '10331'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-20 02:07:20.0
+- author: matthew
+  body: Still not working - here's console logs for Alexandre->me failing.
+  created: 2014-09-22 18:35:52.0
+  id: '10368'
+  issue: '10331'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-22 18:35:52.0
+- author: dbkr
+  body: We now have TURN so VoIP should work for any users that have any sort of non-web proxy connectivity (those are blocked on ORG-8).
+  created: 2014-09-26 14:00:02.0
+  id: '10459'
+  issue: '10331'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-09-26 14:00:02.0

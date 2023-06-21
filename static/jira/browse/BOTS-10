@@ -1,0 +1,30 @@
+---
+summary: IRC namespace collisions
+---
+created: 2014-11-18 09:14:56.0
+creator: kegan
+description: ''
+id: '10667'
+key: BOTS-10
+number: '10'
+priority: '2'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-07-28 14:05:40.0
+status: '5'
+type: '1'
+updated: 2015-07-28 14:05:40.0
+votes: '0'
+watches: '1'
+workflowId: '10767'
+---
+actions:
+- author: kegan
+  body: Fixed with ASes.
+  created: 2015-07-28 14:05:40.0
+  id: '12033'
+  issue: '10667'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-28 14:05:40.0

@@ -1,0 +1,30 @@
+---
+summary: Directory list API missing from the spec
+---
+created: 2016-06-11 12:45:27.0
+creator: jimmycuadra
+description: ''
+id: '12705'
+key: SPEC-411
+number: '411'
+priority: '2'
+project: '10001'
+reporter: jimmycuadra
+resolution: '3'
+resolutiondate: 2016-06-11 14:01:06.0
+status: '5'
+type: '1'
+updated: 2016-06-11 14:01:06.0
+votes: '0'
+watches: '2'
+workflowId: '12805'
+---
+actions:
+- author: richvdh
+  body: Thanks Jimmy. Sad but true.
+  created: 2016-06-11 14:01:06.0
+  id: '12995'
+  issue: '12705'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-11 14:01:06.0

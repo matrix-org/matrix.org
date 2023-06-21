@@ -1,0 +1,58 @@
+---
+summary: /rooms/{roomId}/initialSync API does not return the same messages as rooms/{roomId}/messages over federation
+---
+created: 2015-09-21 13:55:57.0
+creator: gforet
+description: |-
+  After joining an IRC one to one channel, the initial sync request triggers by "api/v1/rooms/[roomId]/initialSync" with a limit =10 provides only one event as "messages" whereas there are more than 3 messages in the chat.
+
+  For information:
+  1-  "history_visibility" = invited;
+  2- the messages show up if we hit the /messages API
+
+  To reproduce:
+  1- From IRC chat, userA select a userB to open a dialog window (no one to one channel must exist for these 2 users).
+  2 - In irc window userA sends 3 messages.
+  3- on a Matrix client, userB selects the invitation from recents
+  --> userB join the room and trigger an initialSync for this room
+  Presently the room history is not provided during the room initial sync: NOK
+id: '11905'
+key: SYN-482
+number: '482'
+priority: '2'
+project: '10000'
+reporter: gforet
+resolution: '2'
+resolutiondate: 2016-03-09 11:45:26.0
+status: '5'
+type: '1'
+updated: 2016-03-09 11:45:26.0
+votes: '0'
+watches: '2'
+workflowId: '12008'
+---
+actions:
+- author: markjh
+  body: Reproduced by https://github.com/matrix-org/sytest/commit/2032961e5fc
+  created: 2015-09-22 11:23:20.0
+  id: '12148'
+  issue: '11905'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-09-22 11:23:20.0
+- author: markjh
+  body: If I recall correctly I had a go at fixingthis by making room initialSync do backfill, but then [~erikj] talked me out of it because it might cause problems if the server started backfilling without a client explicitly asking for it by hitting /messages.
+  created: 2016-01-06 13:58:21.0
+  id: '12544'
+  issue: '11905'
+  type: comment
+  updateauthor: markjh
+  updated: 2016-01-06 13:58:21.0
+- author: markjh
+  body: After discussing this with [~erikj] we decided to not make initialSync hit backfill messages, therefore it is expected that initialSync and messages will return different things
+  created: 2016-03-09 11:45:26.0
+  id: '12757'
+  issue: '11905'
+  type: comment
+  updateauthor: markjh
+  updated: 2016-03-09 11:45:26.0

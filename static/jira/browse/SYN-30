@@ -1,0 +1,60 @@
+---
+summary: Can haz typing notifications please? O:-)
+---
+created: 2014-09-16 01:15:15.0
+creator: matthew
+description: ''
+id: '10061'
+key: SYN-30
+number: '30'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-07 13:17:15.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:26:18.0
+votes: '0'
+watches: '2'
+workflowId: '10364'
+---
+actions:
+- author: matthew
+  body: |-
+    i'm assuming that the client should hit a given URL every N seconds whilst someone is typing
+    If the user deletes what they were typing, the URL should be reset.
+    If the user stops typing, the client just stops sending updates
+    meanwhile the server times out and resets the state & URL after M seconds of idle
+    The client tells the server the value of M it should be using to time out the requests.
+    the proposal on https://etherpad.openmarket.com/SynapseTodo was:
+
+    - PUT or GET /members/rooms/$roomid/members/$userid/typing  { timeout: M } 
+
+    and a {} to reset
+
+    Leo: all I need from you then is to implement that URL, persisting it to DB and propagating it as an EDU to all the members of a room - sending it only once when someone starts typing, and once when the reset state happens.
+    ...and in the event of a HS<->HS connection timing out, reset all the typing notifs from the lost HS
+    ...and in the event of M seconds expiring, resetting specific typing notif state.
+  created: 2014-09-16 01:23:56.0
+  id: '10002'
+  issue: '10061'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-16 01:24:16.0
+- author: kegan
+  body: The path seems weird, I would prefer parity with the other APIs, so something like /rooms/$roomid/typing for the RPC-like API and /rooms/$roomid/state/m.room.typing/$userid for the state event+key. I'm happy with the content.
+  created: 2014-09-16 09:43:09.0
+  id: '10109'
+  issue: '10061'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-16 09:43:09.0
+- author: kegan
+  body: Yes, you can haz.
+  created: 2015-01-07 13:17:15.0
+  id: '11057'
+  issue: '10061'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-07 13:17:15.0

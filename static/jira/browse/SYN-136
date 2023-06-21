@@ -1,0 +1,28 @@
+---
+summary: We need to be consistent on how we pass around JSON-derived objects
+---
+created: 2014-11-10 17:24:21.0
+creator: matthew
+description: ''
+id: '10639'
+key: SYN-136
+number: '136'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:23.0
+votes: '0'
+watches: '2'
+workflowId: '10739'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1241'
+  created: 2016-11-07 18:27:23.0
+  id: '13560'
+  issue: '10639'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:23.0

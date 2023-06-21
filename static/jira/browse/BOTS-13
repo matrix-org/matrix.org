@@ -1,0 +1,30 @@
+---
+summary: Support for mxc:// URLs in IRC when bridging images and other content.
+---
+created: 2014-12-24 17:19:44.0
+creator: matthew
+description: ''
+id: '10868'
+key: BOTS-13
+number: '13'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-03 18:11:43.0
+status: '5'
+type: '2'
+updated: 2015-02-03 18:11:44.0
+votes: '0'
+watches: '2'
+workflowId: '10968'
+---
+actions:
+- author: leonerd
+  body: This was solved a while ago
+  created: 2015-02-03 18:11:44.0
+  id: '11215'
+  issue: '10868'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-03 18:11:44.0

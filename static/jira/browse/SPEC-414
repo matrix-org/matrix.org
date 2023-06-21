@@ -1,0 +1,30 @@
+---
+summary: '''Events'' section still refers to /initialSync'
+---
+created: 2016-06-21 20:23:19.0
+creator: neb
+description: Submitted by @richvdh:sw1v.org
+id: '12713'
+key: SPEC-414
+number: '414'
+priority: '1'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-07-13 10:56:58.0
+status: '5'
+type: '1'
+updated: 2016-07-13 10:56:58.0
+votes: '0'
+watches: '2'
+workflowId: '12813'
+---
+actions:
+- author: richvdh
+  body: fixed by https://github.com/matrix-org/matrix-doc/pull/352
+  created: 2016-07-13 10:56:58.0
+  id: '13051'
+  issue: '12713'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-13 10:56:58.0

@@ -1,0 +1,46 @@
+---
+summary: Add more metadata to m.room.member events (for bots and ASes)
+---
+created: 2015-02-20 14:52:19.0
+creator: kegan
+description: |-
+  Lifted from AS API discussion and other linked issues:
+
+  Sometimes we want to identify bridged users (e.g. nick completion as per original issue). There is no way to reliably do this currently: you have to do {{user_id}} regex parsing.
+
+  We need to spec out where we can find this out (extra JSON keys on {{m.room.member}}, something in the profile, etc) and what this should look like (URIs?) so informed clients can make decisions for things like visual representations, auto-complete, etc.
+
+  Original issue:
+  bq. If a Matrix user tab-completes to bing someone on IRC, it will autocomplete as (IRC) Arathorn or @irc_Arathorn:matrix.org.  This looks horrid to people on the IRC side of the bridge; we should either support autocompleting their IRC name on Matrix (probably the best bet) or the bridge could autoconvert through to the correct local idiom on the IRC side of the bridge.  Given how ugly @irc_Arathorn:matrix.org is in a message, and that bingers are for humans rather than machines, I'd prefer that we made the clients smarter about how they autocomplete, and/or expose IRC nicknames more intelligently to Matrix.
+
+
+  {code}
+  .. TODO
+    Sometimes application services need to create rooms (e.g. when lazy loading 
+    from room aliases). Created rooms need to have a user that created them, so 
+    federation works (as it relies on an entry existing in m.room.member). We 
+    should be able to add metadata to m.room.member to state that this user is an 
+    application service, a virtual user, etc.
+  {code}
+id: '11109'
+key: SPEC-113
+number: '113'
+priority: '1'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:02.0
+votes: '0'
+watches: '2'
+workflowId: '11209'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/425'
+  created: 2016-10-28 16:27:02.0
+  id: '13276'
+  issue: '11109'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:02.0

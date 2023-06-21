@@ -1,0 +1,65 @@
+---
+summary: Unread messages in room list
+---
+created: 2015-06-11 20:40:35.0
+creator: bob
+description: |-
+  I got the following issue:
+
+  I click on a notification and I will be forwarded to the room. Afterwards I go back to the room list. Unfortunately the messages from the room I just came from to the overview are still shown as unread...
+id: '11639'
+key: SYAND-85
+number: '85'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-06-18 16:37:01.0
+status: '5'
+type: '1'
+updated: 2015-06-18 16:37:01.0
+votes: '0'
+watches: '2'
+workflowId: '11740'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    It should be fixed with the latest console application.
+    If you succeed to reproduce it, please provide me the steps to reproduce.
+
+    My tested use cases (with success)
+
+    use case 1
+    -> the room has no unread message. The client is in the home page
+    1 - put the app in background
+    2 - send some messages to the app : notifications are displayed
+    3 - tap on a notification 
+
+    -> the room is opened with the latest messages
+    -> go back to home page : the unread messages counter is resetted
+
+    use case 2
+    Same as use case 1 except that the room has some unread messages before going to background.
+  created: 2015-06-12 09:11:06.0
+  id: '11855'
+  issue: '11639'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-12 09:11:06.0
+- author: bob
+  body: with newest Android Console built is it fixed.
+  created: 2015-06-18 16:35:06.0
+  id: '11886'
+  issue: '11639'
+  type: comment
+  updateauthor: bob
+  updated: 2015-06-18 16:35:06.0
+- author: m-ylecollen
+  body: As bob said.
+  created: 2015-06-18 16:37:01.0
+  id: '11887'
+  issue: '11639'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-18 16:37:01.0

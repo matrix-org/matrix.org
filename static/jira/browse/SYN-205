@@ -1,0 +1,51 @@
+---
+summary: 0.6.0 cannot create a private room and invite someone
+---
+created: 2014-12-18 15:35:05.0
+creator: kegan
+description: |-
+  Using the {{/createRoom}} API on release-v0.6.0 branch, I cannot create a private room and invite a user to it.
+
+  Logs:
+  {code}
+  2014-12-18 15:32:14,415 - synapse.api.errors - 44 - INFO - POST-29 - SynapseError: 400, Event does not have key sender
+  2014-12-18 15:32:14,416 - synapse.http.server - 147 - INFO - POST-29 - <Request at 0x6fffdcbfb90 method=POST uri=/_matrix/client/api/v1/createRoom?access_token=QGZvb2JhcjI6bG9jYWxob3N0.sKFRQMeyiDqcIcrGJW clientproto=HTTP/1.1> SynapseError: 400 - Event does not have key sender
+  2014-12-18 15:32:14,417 - twisted - 455 - INFO - POST-29 - "127.0.0.1" - - [18/Dec/2014:15:32:14 +0000] "POST /_matrix/client/api/v1/createRoom?access_token=QGZvb2JhcjI6bG9jYWxob3N0.sKFRQMeyiDqcIcrGJW HTTP/1.1" 400 64 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0"
+  {code}
+id: '10835'
+key: SYN-205
+number: '205'
+priority: '1'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-12-19 11:52:33.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:38.0
+votes: '0'
+watches: '2'
+workflowId: '10935'
+---
+actions:
+- author: leonerd
+  body: |-
+    Seems to be a specific cornercase of the atomic {{/createRoom}} with an {{invite}} list in the JSON body.
+
+    There wasn't a sytest test for this because that part of the API seems not to be documented yet.
+
+    Having added an API test I can now confirm it indeed fails.
+  created: 2014-12-19 11:48:54.0
+  id: '11006'
+  issue: '10835'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-12-19 11:48:54.0
+- author: leonerd
+  body: Now fixed by https://github.com/matrix-org/synapse/commit/5739e6c6
+  created: 2014-12-19 11:52:45.0
+  id: '11007'
+  issue: '10835'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-12-19 11:52:45.0

@@ -1,0 +1,28 @@
+---
+summary: Add cache to get_server_verify_keys
+---
+created: 2015-06-03 16:19:14.0
+creator: erikj
+description: ''
+id: '11617'
+key: SYN-406
+number: '406'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:06.0
+votes: '0'
+watches: '2'
+workflowId: '11718'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1331'
+  created: 2016-11-07 18:28:06.0
+  id: '13652'
+  issue: '11617'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:06.0

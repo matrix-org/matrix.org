@@ -1,0 +1,111 @@
+---
+summary: Retry and queueing UX
+---
+created: 2015-06-25 12:01:20.0
+creator: kegan
+description: |-
+  _Foreword: This isn't a bug with the SPEC; this is just something that is a "Recommended best practice" for client implementations._
+
+  This issue concerns the retry and queueing behaviour of messages which are sent in a room. The example below will be referenced throughout:
+  {code}
+
+  A --> B --> C -- || --> D
+
+  - A,B,C,D are all events which have been sent by the user.
+
+  What happens:
+  - User hits "Send" on A.
+  - A transitions to state=SENDING.
+  - User hits "Send" on B.
+  - B transitions to state=QUEUED.
+  - User hits "Send" on C.
+  - C transitions to state=QUEUED.
+  - A has failed to send, and transitions to state=FAILED.
+  - Time passes.
+  - User hits "Send" on D.
+  {code}
+
+  What should happen to events B, C and D in this scenario? Conclusions:
+  - When A transitions to {{state=FAILED}}, B and C should immediately transition to {{state=FAILED}}^Matthew suggested not transitioning to FAILED but keeping them as QUEUED _"so the user can see "ah, B and C are stuck in a queue because A failed""_ . The problem with this though is now if I glance up at B and see "queued" I have no idea if I need to do anything to it to make it send. I have to look at A and see if it is failed (then I need to do something) or sending (I don't need to do anything). This is problematic if A B C are not all visible on the screen at once (big messages).^ . The app starts a timer for {{n}} seconds ^the purpose of the timer is to prevent people typing quickly from accidentally sending a message. e.g. hit send on A B C (all grey sending colour) and typing next message (D) and then A fails which fails B and C (A B C all red now) and I hit send just as I look up to the message list^.
+  - When the user hits "Send" on D:
+   ** If > {{n}} seconds ago: Transition D to {{state=SENDING}}.
+   ** else: Transition D to {{state=FAILED}}.
+  - All {{FAILED}} messages should have a {{reason}} enum why they failed. Suggested values:
+   ** {{NETWORK_ERROR}} - Message didn't send due to network error. (e.g. couldn't connect)
+   ** {{SERVER_ERROR}} - Message didn't send due to a server error (e.g. 500, can include the error code itself somewhere)
+   ** {{BACKLOG}} - Message didn't send because the previous message did not send.
+   ** {{CANCELLED}} - Message was explicitly cancelled by the user (Why aren't we just removing this from the screen at this point?)
+  - If the user taps an {{FAILED}} message, they can:
+   ** Delete the message locally (removes from the view; won't ever try resending)
+   ** Resend "from this point onwards" (retries the tapped message *and subsequent messages*).
+  - If the user taps a {{SENDING}} message, they can cancel it, transitioning it to {{state=FAILED}}.
+  - If the user taps on a {{QUEUED}} message, they can cancel it, or "retry from this point" to make it the head of the queue. Anything before this message will transition to {{FAILED}}.
+
+  State descriptions:
+   - {{SENDING}} - The app is actively trying to send the message. This can include retrying (before the app gives up retrying).
+   - {{SENT}} - The app has sent the message (200 OK).
+   - {{FAILED}} - The app failed to send the message. It will not be automatically retried. The user needs to take some form of action to retry this.
+   - {{QUEUED}} - The app _will_ try to send this message, depending on the outcome of previous messages.
+
+  State diagram:
+  {code}
+        1
+      +---> FAILED <-+
+      |    2|  ^3    |
+      |     V  |     |
+  Msg--4-> SENDING ---5--> SENT
+      |        ^     |
+     6|       7|    8|
+      +---> QUEUED---+
+
+  Reasons for transitions:
+  1 : => FAILED
+      * User hits send on a new message whilst timer is < n secs.
+  2 : FAILED => SENDING
+      * User explicitly hits resend on this message.
+      * Previous message was sent.
+  3 : SENDING => FAILED
+      * App has given up trying to send this.
+      * User has explicitly stopped trying to send this.
+  4 : => SENDING
+      * User hits send on a message; nothing in queue; no running timer.
+  5 : SENDING => SENT
+      * App gets 200 OK for a message.
+  6 : => QUEUED
+      * User hits send on a message; an earlier message is being
+        sent; no running timer.
+  7 : QUEUED => SENDING
+      * App sent previous message, now trying this message.
+  8 : QUEUED => FAILED
+      * An earlier message was failed.
+      * User has explicitly stopped trying to send this.
+      
+  {code}
+
+  What does the app do when the user submits a new message and the previous message is:
+   - {{SENDING}} : Put the new message into {{QUEUED}}.
+   - {{SENT}} : Put the new message into {{SENDING}}.
+   - {{FAILED}} : If > {{n}} seconds, put new message into {{SENDING}}. If < {{n}} seconds, put new message into {{FAILED}}.
+   - {{QUEUED}} : Put new message into {{QUEUED}}.
+id: '11700'
+key: SPEC-192
+number: '192'
+priority: '3'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:27.0
+votes: '0'
+watches: '2'
+workflowId: '11801'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/520'
+  created: 2016-10-28 16:27:27.0
+  id: '13328'
+  issue: '11700'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:27.0

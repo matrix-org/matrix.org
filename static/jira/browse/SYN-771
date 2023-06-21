@@ -1,0 +1,44 @@
+---
+summary: 500 error on /sendToDevice if destination user is ill-formed
+---
+created: 2016-09-17 18:26:06.0
+creator: neb
+description: |-
+  Submitted by @richvdh:sw1v.org
+
+  {code}
+  $ curl 'https://matrix.org/_matrix/client/unstable/sendToDevice/m.new_device/m1474132576890.1?access_token=<...>' -X PUT --data-binary '{"messages":{"@userId":{}}}' 
+  {"errcode":"M_UNKNOWN","error":"Internal server error"}
+  {code}
+
+  stacktrace is:
+
+  {code}
+  2016-09-17 18:16:25,433 - synapse.http.server - 139 - ERROR - PUT-2695429 - Failed handle request synapse.http.server._async_render on <synapse.rest.ClientRestResource object at 0x5dd1310>: <XForwardedForRequest at 0x7fbb9dca8560 method=PUT uri=/_matrix/client/unstable/sendToDevice/m.new_device/m1474132576890.0?access_token=<redacted> clientproto=HTTP/1.1 site=8080>
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 116, in wrapped_request_handler
+      yield request_handler(self, request, request_metrics)
+  IndexError: list index out of range
+  {code}
+id: '12833'
+key: SYN-771
+number: '771'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:02.0
+votes: '0'
+watches: '2'
+workflowId: '12933'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1432'
+  created: 2016-11-07 18:30:02.0
+  id: '13928'
+  issue: '12833'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:02.0

@@ -1,0 +1,32 @@
+---
+summary: Back pagination does not work well for self chat
+---
+assignee: gforet
+created: 2015-01-14 16:38:40.0
+creator: manu
+description: |-
+  Steps to reproduce:
+   - create a self chat
+   - post more than 10 messages
+   - restart the app
+   - come back to the room
+   - paginate back
+
+  -> Pagination will take ages - the UI is even frozen sometimes. When the loading wheel disappears, no older messages appear.
+  If you press the screen to see messages timestamps, the older messages appear.
+id: '10932'
+key: SYIOS-57
+number: '57'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-01-16 09:49:40.0
+status: '5'
+type: '1'
+updated: 2015-01-16 09:49:40.0
+votes: '0'
+watches: '1'
+workflowId: '11032'
+---
+actions: null

@@ -1,0 +1,20 @@
+---
+summary: Sydent should log properly, not to a screen session
+---
+created: 2016-02-02 22:52:17.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12363'
+key: SYD-13
+number: '13'
+priority: '3'
+project: '10002'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-02-02 22:52:17.0
+votes: '0'
+watches: '1'
+workflowId: '12468'
+---
+actions: null

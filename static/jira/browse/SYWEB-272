@@ -1,0 +1,20 @@
+---
+summary: Create room dialog uses wrong server name.
+---
+created: 2015-02-04 09:41:44.0
+creator: erikj
+description: ''
+id: '11002'
+key: SYWEB-272
+number: '272'
+priority: '3'
+project: '10004'
+reporter: erikj
+status: '10100'
+type: '1'
+updated: 2015-02-04 09:41:44.0
+votes: '0'
+watches: '1'
+workflowId: '11102'
+---
+actions: null

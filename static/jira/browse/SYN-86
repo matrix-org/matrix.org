@@ -1,0 +1,38 @@
+---
+summary: ./synctl usage must be clarified in README
+---
+created: 2014-10-02 09:55:16.0
+creator: erikj
+description: |-
+  Some information are missing in README:
+
+  1- in 'Quick Start' section: "run ``./synctl start`` twice (once to generate a config; once to actually run) " is wrong. I run several time this cmd and no config was generated.
+
+  2- ``./synctl start`` returns  the following message:
+  "No config file found
+  To generate a config file, run 'python --generate-config'"
+  More instruction is required on this instruction (what is the config name expected by synctl?)
+id: '10443'
+key: SYN-86
+number: '86'
+priority: '1'
+project: '10000'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2014-10-02 11:00:12.0
+status: '5'
+type: '1'
+updated: 2014-10-02 11:02:33.0
+votes: '0'
+watches: '2'
+workflowId: '10547'
+---
+actions:
+- author: dbkr
+  body: Fixed README to not lie, fixed synctl to generate correct instructions and added clarification when generating a config file.
+  created: 2014-10-02 11:00:12.0
+  id: '10505'
+  issue: '10443'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-10-02 11:00:12.0

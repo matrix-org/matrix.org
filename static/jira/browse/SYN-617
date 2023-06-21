@@ -1,0 +1,31 @@
+---
+summary: How come https://matrix.org/_matrix/media/r0 doesn't work, but /v1 does?
+---
+assignee: illicitonion
+created: 2016-02-05 00:04:39.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12368'
+key: SYN-617
+number: '617'
+priority: '3'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-02-05 11:25:05.0
+status: '5'
+type: '1'
+updated: 2016-02-05 11:25:05.0
+votes: '0'
+watches: '2'
+workflowId: '12473'
+---
+actions:
+- author: illicitonion
+  body: Fixed by https://github.com/matrix-org/synapse/pull/559
+  created: 2016-02-05 11:25:05.0
+  id: '12592'
+  issue: '12368'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-02-05 11:25:05.0

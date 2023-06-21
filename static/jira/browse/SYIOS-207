@@ -1,0 +1,31 @@
+---
+summary: 'SDK: Consider removing MXEventDirectionSync'
+---
+created: 2016-02-17 08:14:10.0
+creator: manu
+description: |-
+  With the use of v2 sync, ALL events received from /sync are notified as MXEventDirectionForwards. MXEventDirectionSync is no more used
+  Do we need to fix that? Or is it better to remove the concept of informing sdk users about events coming while starting or resuming the session?
+
+  The js and android SDK does not have such concept.
+  The main issue if we remove it is that it will break a certain amount of SDK tests.
+
+  This issue is showed by the failure of tests:
+  - testListenerForAllLiveEvents
+  - testListenerForSyncEvents
+id: '12405'
+key: SYIOS-207
+number: '207'
+priority: '1'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2016-03-07 15:02:23.0
+status: '5'
+type: '1'
+updated: 2016-03-07 15:02:23.0
+votes: '0'
+watches: '1'
+workflowId: '12510'
+---
+actions: null

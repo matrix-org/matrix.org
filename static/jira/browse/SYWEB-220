@@ -1,0 +1,38 @@
+---
+summary: If logged in twice on the same room, new messages you send don't make the other tab autoscroll to bottom
+---
+created: 2014-12-05 13:56:09.0
+creator: matthew
+description: |-
+  [13:50]  <Arathorn> i wonder if other tabs should scroll to bottom when they see you say something
+  [13:50]  <Arathorn> or just need to make it clearer when there's new content scrolled off the bottom
+  [13:51]  <Arathorn> oh, actually, there's another problem here
+  [13:51]  * Arathorn files
+  [13:52]  <Arathorn> actually, kegan: have you already fixed this?
+  [13:52]  <Arathorn> i have two tabs logged in as the same person, looking at the same room. if i send a message in one room, the other tab doesn't autoscroll down
+  [13:52]  <Arathorn> is this the same problem that local echo'd messages don't trigger an autoscroll?
+  [13:52]  <Arathorn> (both tabs were scrolled to the bottom of the screen in the first place)
+id: '10781'
+key: SYWEB-220
+number: '220'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-05 14:49:29.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:51.0
+votes: '0'
+watches: '2'
+workflowId: '10881'
+---
+actions:
+- author: kegan
+  body: Cannot reproduce on latest develop.
+  created: 2014-12-05 14:49:29.0
+  id: '10964'
+  issue: '10781'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 14:49:29.0

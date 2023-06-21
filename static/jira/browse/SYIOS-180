@@ -1,0 +1,52 @@
+---
+summary: Bad scrolling performance on iOS9
+---
+assignee: gforet
+created: 2015-11-20 17:06:48.0
+creator: manu
+description: |-
+  The scrolling on the room page is significantly slower on iOS9. The experience is really bad on a 5c iOS9 whereas the scrolling is fluid on a 5c iOS8.
+
+  Profiling indicates that the app spends lot of time in recomputing constraints (see screenshot).
+
+  Some pointers:
+  - Auto Layout in iOS 9 much slower?: https://forums.developer.apple.com/thread/15754
+  - One best practice: http://stackoverflow.com/questions/18746929/using-auto-layout-in-uitableview-for-dynamic-cell-layouts-variable-row-heights/18746930#18746930
+id: '12128'
+key: SYIOS-180
+number: '180'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-12-01 17:40:30.0
+status: '5'
+type: '4'
+updated: 2015-12-01 17:40:30.0
+votes: '0'
+watches: '2'
+workflowId: '12231'
+---
+actions:
+- author: gforet
+  body: |-
+    Here is a video which compares ios console v0.5.7 on iPhone 5c (iOS 9.1 vs iOS 8.2):
+
+    https://matrix.org/_matrix/media/v1/download/matrix.org/MRYQWTrQSISLoKoWrTHlUuDm
+  created: 2015-12-01 09:58:13.0
+  id: '12391'
+  issue: '12128'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-12-01 09:58:13.0
+- author: gforet
+  body: |-
+    We have to use a width constraint to update message text view frame during bubble cell rendering (instead of forcing its full frame).
+
+    see the scrolling improvement in this new video: https://matrix.org/_matrix/media/v1/download/matrix.org/ixqfkZCaEBhzUTcGIJOCQnug
+  created: 2015-12-01 17:40:30.0
+  id: '12410'
+  issue: '12128'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-12-01 17:40:30.0

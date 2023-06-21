@@ -1,0 +1,62 @@
+---
+summary: Support arbitrary metadata on invites
+---
+created: 2016-02-23 13:15:20.0
+creator: matthew
+description: |-
+  A request from [~Rugvip] is to support the ability to include arbitrary metadata in invites, so that clients can perform business logic on the invite without having to accept it.  The given example is:
+
+  {quote}
+  let's say you're creating an online game on top of synapse, and you can invite users either to chat channels or to game lobbies
+  and if a room is a game lobby or not is determined by a key in the create state
+  You could of course do it with weird hacks in the room name, avatar, w/e
+  or what the hell, why not just make the invite state types configurable? :D
+  defaulting to the current ones
+  {quote}
+id: '12518'
+key: SPEC-357
+number: '357'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:28:20.0
+votes: '0'
+watches: '3'
+workflowId: '12618'
+---
+actions:
+- author: matthew
+  body: |-
+    Sounds like folks are happy with this idea, given we can already put arbitrary data on the events which /are/ allowed, it's not a big deal to let arbitrary events in general... as long as:
+
+    a) clients consider the info as purely informational (ie *not* trust it as actual data from the room, given at best it will be a stale cache thereof)
+    b) and not rely on it for the core behaviour of the client - it would really suck if invites became fragmented and my generic matrix client couldn't meaningfully accept them without understanding random associated events.
+
+    Personally I would be much happier if we instead encouraged the invitee to peek into the invited room to inspect the *real* state of what they were being invited to, rather than this weird fake stale version of the state, but given that boat has already sailed I'm not sure it makes things much worse to provide the requested flexibility here and allow arbitrary events in the invite.
+  created: 2016-02-23 14:23:59.0
+  id: '12706'
+  issue: '12518'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-23 14:23:59.0
+- author: dbkr
+  body: |-
+    I don't see how including this information is useful really, if the client can't trust it for anything (and therefore can't reasonably display it to the user, at least not without also displaying a warning) - especially in this case which is where the user is actually making a trust decision.
+
+    Is it really too late to mandate peeking for invite metadata? There's a sensible migration path since we can continue to include the metadata in the invite in the transition period.
+  created: 2016-02-23 14:35:53.0
+  id: '12708'
+  issue: '12518'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-02-23 14:35:53.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/643'
+  created: 2016-10-28 16:28:20.0
+  id: '13452'
+  issue: '12518'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:20.0

@@ -1,0 +1,28 @@
+---
+summary: Structured logging and metrics with elasticsearch
+---
+created: 2015-05-07 10:39:54.0
+creator: erikj
+description: ''
+id: '11510'
+key: SYN-373
+number: '373'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:00.0
+votes: '1'
+watches: '3'
+workflowId: '11610'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1319'
+  created: 2016-11-07 18:28:00.0
+  id: '13640'
+  issue: '11510'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:00.0

@@ -1,0 +1,30 @@
+---
+summary: Text as content upload file type
+---
+created: 2016-02-11 07:33:10.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  dcg_mx (@sbts) came up with this one. This is to basically give us pastebin using matrix's media repo, which could be very very useful for bridges etc. It would also allow clients to maybe display a send
+id: '12385'
+key: SYN-626
+number: '626'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:07.0
+votes: '0'
+watches: '2'
+workflowId: '12490'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1495'
+  created: 2016-11-07 18:29:07.0
+  id: '13802'
+  issue: '12385'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:07.0

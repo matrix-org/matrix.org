@@ -1,0 +1,44 @@
+---
+summary: SEO for content on matrix public channels
+---
+assignee: matthew
+created: 2015-02-16 01:35:53.0
+creator: matthew
+description: |-
+  I'd like Google to be able to index public matrix rooms easily (unless people flag them as do-not-index) - this makes the valuable information in scrollback much more accessible, and makes it feel more like a mailing list substitute.  From a marketing-Matrix perspective this is fairly important.
+
+  This requires:
+   * Defining do-not-index state for a room, and honouring it with robots.txt or user-agent analysis or similar
+   * Supporting anonymous accounts
+   * Ensuring that page contents is navigable and paginatable (might involve turning off angular if we detect a search engine user agent)
+   * Ideally we'd also expose per-message URIs to make content more findable, too.
+id: '11062'
+key: SYWEB-283
+number: '283'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-09-22 22:47:10.0
+votes: '1'
+watches: '3'
+workflowId: '11162'
+---
+actions:
+- author: kegan
+  body: We would need to make public channels read-only without an {{access_token}}. I was under the impression we thought about this and decided against it?
+  created: 2015-02-16 12:56:17.0
+  id: '11263'
+  issue: '11062'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-16 12:56:17.0
+- author: matthew
+  body: I don't remember us deciding against it - meanwhile, we're seeing more requests for read-only clients (e.g. from randy@vuc, and si-m1).  At least being able to support anonymous sign-in with read-only semantics for public rooms feels like a really useful thing to be able to do.
+  created: 2015-03-23 17:22:24.0
+  id: '11428'
+  issue: '11062'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-23 17:22:24.0

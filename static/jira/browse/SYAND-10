@@ -1,0 +1,30 @@
+---
+summary: Manage redact
+---
+created: 2015-01-27 09:15:55.0
+creator: joachim
+description: ''
+id: '10980'
+key: SYAND-10
+number: '10'
+priority: '3'
+project: '10201'
+reporter: joachim
+status: '10100'
+type: '2'
+updated: 2015-02-04 17:04:28.0
+votes: '0'
+watches: '1'
+workflowId: '11080'
+---
+actions:
+- author: joachim
+  body: |-
+    The removing messages part is done:
+    https://github.com/matrix-org/matrix-android-sdk/commit/7e105e7a
+  created: 2015-02-04 17:04:28.0
+  id: '11218'
+  issue: '10980'
+  type: comment
+  updateauthor: joachim
+  updated: 2015-02-04 17:04:28.0

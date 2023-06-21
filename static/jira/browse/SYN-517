@@ -1,0 +1,25 @@
+---
+summary: Don't complain about missing 'prev_state' from /make_join
+---
+created: 2015-11-13 17:21:01.0
+creator: leonerd
+description: |-
+  If a federation {{/make_join}} result does not contain a {{prev_state}} key, the entire client {{/join}} request fails with 500 ISE. Federation doesn't actually care what the contents of that key is because it never looks at it, so putting anything there is sufficient to shut it up.
+
+  This appears to be simply because it tries deserialising the protoevent using an actual event object type. I'd prefer not to have to supply this workaround, and second of all, to have to document it. :)
+id: '12108'
+key: SYN-517
+number: '517'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-13 17:48:01.0
+status: '5'
+type: '4'
+updated: 2015-11-13 17:48:01.0
+votes: '0'
+watches: '1'
+workflowId: '12211'
+---
+actions: null

@@ -1,0 +1,88 @@
+---
+summary: We need a way to flag that certain operations (e.g. kicks) shouldn't be shown in the timeline
+---
+created: 2014-09-19 12:56:58.0
+creator: matthew
+description: ''
+id: '10339'
+key: SPEC-16
+number: '16'
+priority: '3'
+project: '10001'
+reporter: matthew
+resolution: '10000'
+resolutiondate: 2015-12-01 15:45:19.0
+status: '5'
+type: '1'
+updated: 2015-12-01 16:05:25.0
+votes: '0'
+watches: '4'
+workflowId: '10442'
+---
+actions:
+- author: erikj
+  body: Surely we want to see when someone has left the room whenever we get told someone has joined the room?
+  created: 2014-09-19 12:58:48.0
+  id: '10339'
+  issue: '10339'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-19 12:58:48.0
+- author: erikj
+  body: |-
+    I'm quite cautious about adding the ability to mark arbitrary events as "hidden", as it could be very confusing for users when sometimes they get notified about people leaving and sometimes don't. This sounds more like it should be a client side setting, like IRC's "don't show join/part messages" options.
+
+    In this particular case you would probably want to add a reason field so that if they were shown then it would say something like "Foo has been kicked (was idle for more than 7 days)"
+
+    It's also worth noting that the events would still need to be propagated to the users so that their state was correctly updated, the most the server could do was filter it out when you paginate back.
+
+    Or maybe events should be marked in some way to indicate they were don'y automatically, rather than by a human user?
+  created: 2014-09-19 13:09:16.0
+  id: '10340'
+  issue: '10339'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-19 13:09:16.0
+- author: matthew
+  body: |-
+    All I was trying to suggest was some advisory metadata on some operations saying "this is internal workings; feel free not to show it to the end-user".  The viewing client can then chose to suppress it if the flag is present.  It could be combined with another flag on the room itself saying whether the per-message suppression flag should be upheld, so that users can see whether their client has been asked to hide 'irrelevant' events.
+
+    I wasn't suggesting having the server filter anything.
+  created: 2014-09-19 13:18:59.0
+  id: '10341'
+  issue: '10339'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-19 13:18:59.0
+- author: kegan
+  body: Given we can kick/ban with a {{reason}} now, that should be sufficient for this, no? E.g. {{if reason == 'idle' then don't display}}
+  created: 2015-01-08 17:12:05.0
+  id: '11074'
+  issue: '10339'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-08 17:12:05.0
+- author: kegan
+  body: This doesn't feel like a spec thing to me, but a client-side decision to show or not show this information. Leaving open for a few more days for counter-cases, then closing.
+  created: 2015-01-21 11:30:04.0
+  id: '11164'
+  issue: '10339'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:30:04.0
+- author: richvdh
+  body: I think 'a few more days' have elapsed.
+  created: 2015-12-01 15:45:19.0
+  id: '12397'
+  issue: '10339'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 15:45:19.0
+- author: matthew
+  body: A better solution to this would be to batch together mass join/part/kicks in the UI anyway, which we have a separate bug for in vector. https://github.com/vector-im/vector-web/issues/349
+  created: 2015-12-01 16:05:25.0
+  id: '12402'
+  issue: '10339'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-01 16:05:25.0

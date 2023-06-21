@@ -1,0 +1,80 @@
+---
+summary: Failed to notify listener tight loop
+---
+assignee: erikj
+created: 2015-05-20 21:11:36.0
+creator: erikj
+description: |-
+  Many many of these:
+
+  {noformat}
+  2015-05-20 21:07:18,049 - synapse.notifier - 298 - ERROR -  - Failed to notify listener
+  Traceback (most recent call last):
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/notifier.py", line 267, in notify
+      
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/Twisted-14.0.2-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/handlers/presence.py", line 870, in get_new_events_for_user
+      self._remote_sendmap[user].remove(origin)
+  KeyError: DomainSpecificString(localpart='erikj', domain='arasphere.net')
+  {noformat}
+id: '11542'
+key: SYN-384
+number: '384'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-22 13:46:26.0
+status: '5'
+type: '1'
+updated: 2015-05-26 16:13:34.0
+votes: '0'
+watches: '1'
+workflowId: '11643'
+---
+actions:
+- author: erikj
+  body: |-
+    It appears the actual line that caused it to explode was:
+
+    {noformat}
+            for observed_user in cachemap.keys():
+                cached = cachemap[observed_user]   # <-- line 870
+
+                if cached.serial <= from_key or cached.serial > max_serial:
+                    continue
+
+                if not (yield self.is_visible(observer_user, observed_user)):
+                    continue
+
+                ...
+    {noformat}
+
+    This can happen since we yield in the middle of the loop.
+  created: 2015-05-21 09:45:05.0
+  id: '11781'
+  issue: '11542'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-21 09:47:00.0
+- author: erikj
+  body: These errors had appeared occasionally throughout the day, but increased in frequency between 20:00 and 21:00 BST
+  created: 2015-05-21 09:49:56.0
+  id: '11782'
+  issue: '11542'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-21 09:49:56.0
+- author: erikj
+  body: This seems to me like a non fatal exception, and was probably exasperated by increased database latency.
+  created: 2015-05-21 09:51:15.0
+  id: '11783'
+  issue: '11542'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-21 09:51:15.0

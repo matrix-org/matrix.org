@@ -1,0 +1,47 @@
+---
+summary: Thumbnailing doesn't seem to change size
+---
+created: 2015-06-25 20:48:07.0
+creator: leonerd
+description: |-
+  I uploaded a PNG file (279 x 129 pixels; it is in fact the matrix.org logo file). I then ask for a 32x32 thumbnail. The image I get back remains the original size:
+
+  {noformat}
+  $ wget 'https://localhost:8001/_matrix/media/v1/thumbnail/localhost:8001/lUrovTvOMbcPgynUmfLrfvvP?height=32&method=scale&width=32' --no-check-certificate
+  $ file lUrovTvOMbcPgynUmfLrfvvP\?height\=32\&method\=scale\&width\=32 
+  lUrovTvOMbcPgynUmfLrfvvP?height=32&method=scale&width=32: PNG image data, 279 x 129, 8-bit/color RGBA, non-interlaced
+  {noformat}
+
+  Though interestingly, it isn't just the original file. It has been altered:
+
+  {noformat}
+  $ cksum tests/51content-repo/test.png 
+  3329030393 2239 tests/51content-repo/test.png
+
+  $ cksum lUrovTvOMbcPgynUmfLrfvvP\?height\=32\&method\=scale\&width\=32 
+  2639847968 2679 lUrovTvOMbcPgynUmfLrfvvP?height=32&method=scale&width=32
+  {noformat}
+
+  (amusingly the "thumbnail" takes more bytes to express than the original ;) )
+id: '11703'
+key: SYN-429
+number: '429'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:11.0
+votes: '0'
+watches: '2'
+workflowId: '11804'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1344'
+  created: 2016-11-07 18:28:11.0
+  id: '13665'
+  issue: '11703'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:11.0

@@ -1,0 +1,30 @@
+---
+summary: We should maintain separate input buffers in the textarea depending on what tab you'lre talking on
+---
+created: 2014-12-02 22:09:04.0
+creator: matthew
+description: ''
+id: '10758'
+key: SYWEB-205
+number: '205'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-03 13:27:06.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:55.0
+votes: '0'
+watches: '2'
+workflowId: '10858'
+---
+actions:
+- author: kegan
+  body: 'Just to clarify: The purpose of this is presumably so if I type "abc" in Room A, switch into Room B and type "def" then switch back to Room A, the "abc" text is still there?'
+  created: 2014-12-03 12:16:36.0
+  id: '10930'
+  issue: '10758'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-03 12:16:36.0

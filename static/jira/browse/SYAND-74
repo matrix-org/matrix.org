@@ -1,0 +1,35 @@
+---
+summary: Add setting to avoid showing Public rooms
+---
+created: 2015-05-10 20:30:59.0
+creator: bob
+description: ''
+id: '11515'
+key: SYAND-74
+number: '74'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '2'
+resolutiondate: 2015-05-11 06:46:34.0
+status: '5'
+type: '4'
+updated: 2015-05-11 06:46:34.0
+votes: '0'
+watches: '2'
+workflowId: '11616'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    There is already a setting to avoid displaying the public rooms in the recents.
+
+    1 - Go to the settings page
+    2 - Rooms section
+    3 - Display public rooms with recents
+  created: 2015-05-11 06:46:34.0
+  id: '11731'
+  issue: '11515'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-05-11 06:46:34.0

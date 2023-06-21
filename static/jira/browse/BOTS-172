@@ -1,0 +1,30 @@
+---
+summary: IRC->Matrix HTML tags went missing on $145376423162040dSrhV:matrix.org
+---
+created: 2016-02-23 13:25:01.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12519'
+key: BOTS-172
+number: '172'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:48:27.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:48:27.0
+votes: '0'
+watches: '2'
+workflowId: '12619'
+---
+actions:
+- author: kegan
+  body: Fixed on `develop`
+  created: 2016-06-02 10:48:27.0
+  id: '12967'
+  issue: '12519'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:48:27.0

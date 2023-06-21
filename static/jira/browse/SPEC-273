@@ -1,0 +1,28 @@
+---
+summary: Option to disable read receipts per room
+---
+created: 2015-11-19 01:45:52.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12118'
+key: SPEC-273
+number: '273'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:53.0
+votes: '0'
+watches: '2'
+workflowId: '12221'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/577'
+  created: 2016-10-28 16:27:53.0
+  id: '13385'
+  issue: '12118'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:53.0

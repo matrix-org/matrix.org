@@ -1,0 +1,30 @@
+---
+summary: Implement read receipts
+---
+created: 2015-09-18 10:00:13.0
+creator: erikj
+description: ''
+id: '11882'
+key: SYAND-126
+number: '126'
+priority: '2'
+project: '10201'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2016-02-17 07:18:43.0
+status: '5'
+type: '2'
+updated: 2016-02-17 07:18:43.0
+votes: '0'
+watches: '2'
+workflowId: '11985'
+---
+actions:
+- author: m-ylecollen
+  body: The read receipts are fully implemented since the release 0.5.2
+  created: 2016-02-17 07:18:43.0
+  id: '12633'
+  issue: '11882'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 07:18:43.0

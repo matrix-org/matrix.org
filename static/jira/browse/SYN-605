@@ -1,0 +1,30 @@
+---
+summary: Until we have APIs for managing the room directory, please can we filter unjoinable rooms from the directory list as a workaround
+---
+created: 2016-01-21 10:53:12.0
+creator: neb
+description: Submitted by @irc_Arathorn:openmarket.com
+id: '12330'
+key: SYN-605
+number: '605'
+priority: '3'
+project: '10000'
+reporter: neb
+resolution: '2'
+resolutiondate: 2016-03-22 12:47:41.0
+status: '5'
+type: '1'
+updated: 2016-03-22 12:47:41.0
+votes: '0'
+watches: '2'
+workflowId: '12435'
+---
+actions:
+- author: matthew
+  body: we now have APIs for managing the room dir.
+  created: 2016-03-22 12:47:32.0
+  id: '12770'
+  issue: '12330'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-22 12:47:32.0

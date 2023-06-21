@@ -1,0 +1,97 @@
+---
+summary: 500 ISE when multiple clients race to join the same room over federation
+---
+created: 2015-03-18 18:13:03.0
+creator: leonerd
+description: |-
+  A test in `syload` has multiple users on the 8002-port server join the same (remote) room on 8001. When doing this, the 8002 server dies:
+
+  {noformat}
+  [server 8002]: 2015-03-18 17:59:04,592 - synapse.storage._base - 159 - ERROR -  - [SQL FAIL] {_simple_insert-11a}
+  [server 8002]: Traceback (most recent call last):
+  [server 8002]:   File "/home/leo/src/matrix/synapse/synapse/storage/_base.py", line 156, in execute
+  [server 8002]:     sql, *args, **kwargs
+  [server 8002]: IntegrityError: UNIQUE constraint failed: rooms.room_id
+  [server 8002]: 2015-03-18 17:59:04,592 - synapse.storage._base - 280 - ERROR -  - [TXN FAIL] {_simple_insert-11a}
+  [server 8002]: Traceback (most recent call last):
+  [server 8002]:   File "/home/leo/src/matrix/synapse/synapse/storage/_base.py", line 278, in inner_func
+  [server 8002]:     return func(LoggingTransaction(txn, name), *args, **kwargs)
+  [server 8002]:   File "/home/leo/src/matrix/synapse/synapse/util/logutils.py", line 84, in wrapped
+  [server 8002]:     return f(*args, **kwargs)
+  [server 8002]:   File "/home/leo/src/matrix/synapse/synapse/storage/_base.py", line 368, in _simple_insert_txn
+  [server 8002]:     txn.execute(sql, values.values())
+  [server 8002]:   File "/home/leo/src/matrix/synapse/synapse/storage/_base.py", line 156, in execute
+  [server 8002]:     sql, *args, **kwargs
+  [server 8002]: IntegrityError: UNIQUE constraint failed: rooms.room_id
+  {noformat}
+
+  If instead I change the test slightly so that one user joins and after success, the others join, then this failure no longer happens.
+id: '11250'
+key: SYN-318
+number: '318'
+priority: '2'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:52.0
+votes: '0'
+watches: '2'
+workflowId: '11350'
+---
+actions:
+- author: leonerd
+  body: |-
+    Still happening as of 6825eef.
+
+    Current stack trace:
+
+    {noformat}
+    2015-06-29 17:34:58,306 - synapse.http.server - 107 - ERROR - POST-23 - Failed handle request synapse.http.server._async_render on <synapse.rest.client.v1.ClientV1RestResource object at 0x7fed794de6d0>: <SynapseRequest at 0x7fed78ee6908 method=POST uri=/_matrix/client/api/v1/join/%23test-1:localhost:8001?access_token=<redacted> clientproto=HTTP/1.1 site=8002>
+    Traceback (most recent call last):
+      File "/home/leo/src/matrix/synapse/synapse/http/server.py", line 86, in wrapped_request_handler
+        yield d
+      File "/home/leo/src/matrix/synapse/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+        result = result.throwExceptionIntoGenerator(g)
+      File "/home/leo/src/matrix/synapse/env/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+        return g.throw(self.type, self.value, self.tb)
+      File "/home/leo/src/matrix/synapse/synapse/http/server.py", line 213, in _async_render
+        callback_return = yield callback(request, *args)
+      File "/home/leo/src/matrix/synapse/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+        result = result.throwExceptionIntoGenerator(g)
+      File "/home/leo/src/matrix/synapse/env/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+        return g.throw(self.type, self.value, self.tb)
+      File "/home/leo/src/matrix/synapse/synapse/rest/client/v1/room.py", line 241, in on_POST
+        ret_dict = yield handler.join_room_alias(user, identifier)
+      File "/home/leo/src/matrix/synapse/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+        result = result.throwExceptionIntoGenerator(g)
+      File "/home/leo/src/matrix/synapse/env/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+        return g.throw(self.type, self.value, self.tb)
+      File "/home/leo/src/matrix/synapse/synapse/handlers/room.py", line 395, in join_room_alias
+        yield self._do_join(event, context, room_hosts=hosts, do_auth=True)
+      File "/home/leo/src/matrix/synapse/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+        result = result.throwExceptionIntoGenerator(g)
+      File "/home/leo/src/matrix/synapse/env/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+        return g.throw(self.type, self.value, self.tb)
+      File "/home/leo/src/matrix/synapse/synapse/handlers/room.py", line 453, in _do_join
+        context
+      File "/home/leo/src/matrix/synapse/env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+        result = g.send(result)
+      File "/home/leo/src/matrix/synapse/synapse/handlers/federation.py", line 660, in do_invite_join
+        room_queue = self.room_queues[room_id]
+    KeyError: '!HVnbDqXJchLIlebJch:localhost:8001'
+    {noformat}
+  created: 2015-06-29 17:36:03.0
+  id: '11941'
+  issue: '11250'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-29 17:36:03.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1300'
+  created: 2016-11-07 18:27:52.0
+  id: '13621'
+  issue: '11250'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:52.0

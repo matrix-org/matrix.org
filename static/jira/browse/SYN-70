@@ -1,0 +1,50 @@
+---
+summary: 500 when /deop @matthew:matrix.org on arasphere.net
+---
+created: 2014-09-24 16:10:18.0
+creator: matthew
+description: |-
+  2014-09-24 16:07:00,737 - synapse.http.server - 141 - ERROR - 'dict' object has no attribute 'content'
+  Traceback (most recent call last):
+    File "/home/matthew/synapse/synapse/http/server.py", line 116, in _async_render
+      *m.groups()
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/home/matthew/synapse/synapse/rest/room.py", line 162, in on_PUT
+      event=event
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/home/matthew/synapse/synapse/handlers/message.py", line 152, in store_room_data
+      yield self.auth.check(event, snapshot, raises=True)
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/home/matthew/synapse/synapse/api/auth.py", line 71, in check
+      yield self._check_power_levels(event)
+    File "/usr/local/lib/python2.7/dist-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/matthew/synapse/synapse/api/auth.py", line 379, in _check_power_levels
+      if int(old_list.content[r]) > user_level:
+  AttributeError: 'dict' object has no attribute 'content'
+  2014-09-24 16:07:00,823 - twisted - 455 - INFO - "83.166.71.24" - - [24/Sep/2014:15:06:59 +0000] "PUT /_matrix/client/api/v1/rooms/!VLSZrKMWHAafemmHZW%3Aarasphere.net/state/m.room.power_levels?access_token=QGFyYXRob3JuOmFyYXNwaGVyZS5uZXQ..FrdnUsQCwYpGjbVqNj HTTP/1.1" 500 33 "http://localhost:8008/_matrix/client/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.77.4 (KHTML, like Gecko) Version/7.0.5 Safari/537.77.4"
+id: '10386'
+key: SYN-70
+number: '70'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-24 16:16:23.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:32.0
+votes: '0'
+watches: '1'
+workflowId: '10489'
+---
+actions: null

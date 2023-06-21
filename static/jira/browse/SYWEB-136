@@ -1,0 +1,25 @@
+---
+summary: Image attachments are sent incorrectly over the wire
+---
+created: 2014-11-04 10:46:52.0
+creator: kegan
+description: |-
+  The spec says (and has always done afaik) that the {{body}} key for {{m.image}} should be used as the alt-text of an image. However, the web client currently uses the {{body}} key as the {{info}} key.
+
+  This can be fixed without breaking the web client, and should be done ASAP.
+id: '10615'
+key: SYWEB-136
+number: '136'
+priority: '1'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-11-04 11:26:34.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:01.0
+votes: '0'
+watches: '1'
+workflowId: '10715'
+---
+actions: null

@@ -1,0 +1,32 @@
+---
+summary: Add Semi-Anonymous Rooms
+---
+created: 2015-11-02 20:21:06.0
+creator: wldhx
+description: |-
+  Semi-Anonymous Room - A room in which an occupant's full ID can be discovered by room admins only. In such room occupant may choose an ID which does not expose his "usual"/full ID by which he is identified outside the context of a room.
+  _(An adaptation of XEP-045::SARs)_
+
+  Allows for more privacy / identity management.
+id: '12071'
+key: SPEC-260
+number: '260'
+priority: '4'
+project: '10001'
+reporter: wldhx
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:49.0
+votes: '0'
+watches: '2'
+workflowId: '12174'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/566'
+  created: 2016-10-28 16:27:49.0
+  id: '13374'
+  issue: '12071'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:49.0

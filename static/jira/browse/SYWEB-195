@@ -1,0 +1,39 @@
+---
+summary: Members list not picking up power level.
+---
+assignee: kegan
+created: 2014-11-28 14:26:08.0
+creator: erikj
+description: ''
+id: '10739'
+key: SYWEB-195
+number: '195'
+priority: '2'
+project: '10004'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-12-01 13:08:54.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:54.0
+votes: '0'
+watches: '2'
+workflowId: '10839'
+---
+actions:
+- author: kegan
+  body: 100% reproducible, only on Erik's federated user. Humm...
+  created: 2014-12-01 12:44:44.0
+  id: '10898'
+  issue: '10739'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 12:44:44.0
+- author: kegan
+  body: Turns out it was the order the state events were processed. It processed power levels THEN the member, which never re-caclulated the power level for that member.
+  created: 2014-12-01 13:08:54.0
+  id: '10899'
+  issue: '10739'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 13:08:54.0

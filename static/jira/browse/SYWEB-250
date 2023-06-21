@@ -1,0 +1,38 @@
+---
+summary: Kicks don't seem to be visible in chat history in the webclient.
+---
+created: 2015-01-12 00:02:54.0
+creator: matthew
+description: ''
+id: '10903'
+key: SYWEB-250
+number: '250'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2015-01-23 09:25:56.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:05.0
+votes: '0'
+watches: '2'
+workflowId: '11003'
+---
+actions:
+- author: kegan
+  body: I can't reproduce this. Any logs / rooms / evidence for this? Seems to work with /initialSync as well as from /messages.
+  created: 2015-01-12 14:32:13.0
+  id: '11094'
+  issue: '10903'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-12 14:32:13.0
+- author: kegan
+  body: Reopen if you can reproduce.
+  created: 2015-01-23 09:25:57.0
+  id: '11185'
+  issue: '10903'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-23 09:25:57.0

@@ -1,0 +1,20 @@
+---
+summary: Safari support for (lack of) VoIP UI
+---
+created: 2014-09-19 18:25:05.0
+creator: dbkr
+description: ''
+id: '10345'
+key: SYWEB-60
+number: '60'
+priority: '3'
+project: '10004'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2014-09-23 01:21:51.0
+votes: '0'
+watches: '1'
+workflowId: '10448'
+---
+actions: null

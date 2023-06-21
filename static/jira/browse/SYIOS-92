@@ -1,0 +1,21 @@
+---
+summary: iOS seems to re-download images after you've uploaded them. This is inefficient.
+---
+assignee: gforet
+created: 2015-02-22 23:37:55.0
+creator: matthew
+description: ''
+id: '11121'
+key: SYIOS-92
+number: '92'
+priority: '3'
+project: '10200'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2015-02-24 13:33:35.0
+votes: '0'
+watches: '1'
+workflowId: '11221'
+---
+actions: null

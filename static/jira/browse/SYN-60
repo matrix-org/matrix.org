@@ -1,0 +1,172 @@
+---
+summary: '"preshared secret" registration bypass mode'
+---
+assignee: leonerd
+created: 2014-09-22 18:25:43.0
+creator: leonerd
+description: |-
+  It would be great if there was a (though non-default) registration flow that bypasses the captcha test on presentation of, say, a preshared secret. That is, if I present
+
+    { type => "m.login.psk-override", key => "MyS3kr1tKey" }
+
+  I am then allowed to bypass the captcha test.
+
+  This is a P1 because this is verymuch required to make the bidirectional IRC <-> Matrix bridging bot[1] be capable of creating "ghost" users on the Matrix side to track the IRC users.
+
+  [1]: https://github.com/tm604/Matrix-IRCBridge
+
+  -----
+
+  An extra-shiney icing-on-the-cake would be that after presenting this preshared key, the homeserver could alter its response to attempts to create users who already exist. Rather than sending an error it could simply silently succeed, returning the access_code of an existing user (Provided, of course, that this PSK override method was used to create it in the first place ;) ). This feature would remove the current need for the IRC bot to maintain a local database of access_tokens for ghosted Matrix users.
+id: '10367'
+key: SYN-60
+number: '60'
+priority: '1'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2014-09-23 16:17:54.0
+status: '5'
+type: '2'
+updated: 2014-09-25 17:41:32.0
+votes: '0'
+watches: '2'
+workflowId: '10470'
+---
+actions:
+- author: kegan
+  body: |-
+    I'd prefer not to modify the behaviour depending on the login type used. If you get an M_USER_IN_USE, you should really then just use the /login path instead.
+
+    I'm also wary about completely breaking the whole point of the captcha, which is to prevent bots being able to register. By adding in the psk-override, there's nothing stopping a bot spam generating those to use to register new accounts, completely bypassing captchas, in which case we shouldn't bother with it since it is just over-complicating things.
+
+    If the psk-override was given to a set of "trusted" users I guess it could work though, but in that case it feels more like it shouldn't be a publicised flow, given Joe Bloggs wouldn't be able to use it.
+  created: 2014-09-23 10:05:04.0
+  id: '10380'
+  issue: '10367'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 10:05:04.0
+- author: leonerd
+  body: |-
+    The entire point of the preshared secret is exactly that - to bypass the captcha and _allow_ bots to sign up users. Obviously we'd be using this sparingly, sharing that secret with only the bots we trust to use it "sensibly". Such feature is required by the IRC <-> Matrix bridge bot, if it's going to create "ghost" users in both directions to fill in for users in the other place.
+
+    Also if we have a way to allow signup flows without actually advertising them upfront that would be fine - our special bot would know it's allowed to do this anyway, regardless of whether the server announces it to everyone.
+  created: 2014-09-23 10:20:10.0
+  id: '10382'
+  issue: '10367'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-23 10:20:10.0
+- author: leonerd
+  body: Actually it occurs to me, this doesn't need to be a different flow at all. It could just be a different response to the captcha stage. Allow the captcha checking function in the HS to bypass the check if the response arrives with the preshared secret in a key. We wouldn't need to announce this at all to anyone, it becomes non-obvious from the outside that this is going on.
+  created: 2014-09-23 10:23:48.0
+  id: '10384'
+  issue: '10367'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-23 10:23:48.0
+- author: kegan
+  body: |-
+    Then sure, I see no reason to not allow this. This should probably be added as another login type to the specification, given people may wish to use this type for other purposes not related to bypassing captchas, but matrix.org will not advertise this as a valid login flow.
+
+    EDIT: Argh, clash! It could be nice to spec this out a bit more, given it could be useful to other people, rather than wodging on a custom key, but up to you.
+  created: 2014-09-23 10:25:49.0
+  id: '10385'
+  issue: '10367'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 10:26:38.0
+- author: leonerd
+  body: |-
+    (as IRL'ed): For now, to get it off the ground today, I'll add a simple check to the captcha code in the matrix.org HS, to allow bypassing the captcha on presentation of a "captcha_bypass_secret" - obviously the value of which should come from the config file, and not checked in to the code ;)
+
+    We don't need to spec that up yet, as this will just allow us to actually run the bridge bot. Once it's up and working, we can then work out how to make a proper spec for the behaviour, and migrate it over to that once it's nicely defined.
+  created: 2014-09-23 10:32:16.0
+  id: '10386'
+  issue: '10367'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-23 10:32:16.0
+- author: leonerd
+  body: Please review/merge https://github.com/matrix-org/synapse/tree/jira/SYN-60
+  created: 2014-09-23 14:38:06.0
+  id: '10402'
+  issue: '10367'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-23 14:38:06.0
+- author: kegan
+  body: |-
+    Looks okay, though a few concerns:
+    {code}
+    if (register_json["captcha_bypass_secret"] == self.hs.config.captcha_bypass_secret):
+    {code}
+    Most people will not set the bypass secret, meaning a 0 length string would bypass the captcha. This shouldn't be the case and should be fixed before being merged.
+
+    Whilst not required, it may also be nice to use a secret which is scoped to a request rather than a magic string, given that if that secret somehow leaks over the wire, it would compromise the entire space of secrets. Doing something like HMAC on [shared_secret + ip of client + randomly generated string on the client which is sent in a key] would at least scope any leaks to just that request.
+  created: 2014-09-23 15:03:41.0
+  id: '10406'
+  issue: '10367'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 15:03:41.0
+- author: leonerd
+  body: |-
+    Getting at the client's IP address that the server will see from within the client itself will be hard. However, given as this only protects attempts to register a new user, once a given user_id is registered the HMAC for that will be useless anyway. Therefore, I think simply HMAC'ing the user ID will be sufficient.
+
+    It also looks easy enough from perl or python:
+
+    {noformat}
+    $ perl -E 'use Digest::HMAC_MD5 "hmac_md5_hex"; say hmac_md5_hex("u002", "foobar")'
+    9d7d6f5da21b37e3afd80c48a444bec9
+
+    $ python
+    Python 2.7.8 (default, Sep  9 2014, 22:08:43) 
+    [GCC 4.9.1] on linux2
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import hmac
+    >>> print hmac.new(key="foobar", msg="u002").hexdigest()
+    9d7d6f5da21b37e3afd80c48a444bec9
+    {noformat}
+  created: 2014-09-23 15:41:57.0
+  id: '10407'
+  issue: '10367'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-23 15:41:57.0
+- author: kegan
+  body: |-
+    Agreed, this seems sensible.
+
+    As discussed irl, the registration Session object will need to remember which user ID has successfully bypassed the captcha in order to enforce that they continue to use that user ID in later steps.
+  created: 2014-09-23 15:44:00.0
+  id: '10410'
+  issue: '10367'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 15:44:00.0
+- author: leonerd
+  body: Added HMAC check and better checks of config file settings. Please re-review
+  created: 2014-09-23 15:59:23.0
+  id: '10414'
+  issue: '10367'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-23 15:59:23.0
+- author: kegan
+  body: Looks great!
+  created: 2014-09-23 16:06:17.0
+  id: '10416'
+  issue: '10367'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 16:06:17.0
+- author: kegan
+  body: This is now implemented server-side as far as I can tell.
+  created: 2014-09-23 16:17:54.0
+  id: '10420'
+  issue: '10367'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 16:17:54.0

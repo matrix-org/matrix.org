@@ -1,0 +1,324 @@
+---
+summary: Memory usage grows at a near-constant unbounded rate
+---
+created: 2015-03-17 11:47:55.0
+creator: leonerd
+description: |-
+  Synapse on matrix.org seems to grow linearly in memory usage without bounds, until it is killed and restarted.
+
+  Interestingly, my homeserver at leonerd.org.uk shows totally-flat memory usage when no clients are connected to, though it is still receiving federation messages. It just has no clients, nor is generating outbound federation traffic of its own.
+id: '11246'
+key: SYN-315
+number: '315'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '4'
+updated: 2016-11-07 18:27:51.0
+votes: '0'
+watches: '5'
+workflowId: '11346'
+---
+actions:
+- author: leonerd
+  body: |-
+    Some further analysis here on the results of `syload` under various 2minute tests.
+
+    Hammering it with:
+
+    `/initialSync` requests alone, with no messages or eventstreams ==> no growth.
+
+    Sending a message with no local viewers at all (not even the sending user) ==> grows ~8k per message:
+    {noformat}
+    tested [2223 in 2m00s; 18.52/sec]...
+    process_resource_maxrss |   245891072 |   264699904   +18808832 (8461.01 /call)
+    {noformat}
+
+    Sending a message with only the sending user viewing the room ==> grows ~52k per message
+    {noformat}
+    tested [1869 in 2m00s; 15.57/sec]...
+    process_resource_maxrss |   285736960 |   384155648   +98418688 (52658.47 /call)
+    {noformat}
+
+    Sending a message with 3 other local viewers as well as the sender ==> grows ~54k per message
+    {noformat}
+    tested [621 in 2m00s; 5.17/sec]...
+    process_resource_maxrss |   401752064 |   435781632   +34029568 (54798.02 /call)
+    {noformat}
+
+    Sending a message with the same 3 local viewers + remote viewers over federation ==> grows ~52k per message
+    {noformat}
+    tested [509 in 2m00s; 4.24/sec]...
+    process_resource_maxrss |   442925056 |   469762048   +26836992 (52724.94 /call)
+    {noformat}
+
+    Receiving a message over federation with all 4 local viewers, but no local senders ==> grows ~52k per message
+    {noformat}
+    tested [572 in 2m00s; 4.77/sec]...
+    process_resource_maxrss |   472530944 |   502366208   +29835264 (52159.55 /call)
+    {noformat}
+
+    Receiving a message over federation with no local viewers ==> grows ~13k per message
+    {noformat}
+    tested [535 in 2m00s; 4.46/sec]...
+    process_resource_maxrss |   504758272 |   511885312   +7127040 (13321.57 /call)
+    {noformat}
+  created: 2015-03-18 19:10:10.0
+  id: '11404'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-03-18 19:10:10.0
+- author: leonerd
+  body: It's also interesting to note that with four local actors (1 sender or 3 viewers, or 4 viewers), the leak rate of 52k/message is around four times that of having no local actors, receiving on federation, where it's 13k/message.
+  created: 2015-03-18 19:11:54.0
+  id: '11405'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-03-18 19:11:54.0
+- author: erikj
+  body: Is this with or without the caches?
+  created: 2015-03-18 19:32:40.0
+  id: '11406'
+  issue: '11246'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-03-18 19:32:40.0
+- author: leonerd
+  body: With; basically stock code off `develop`. I'll put in a quick oneline hack to just bypass all of the caches and try it again.
+  created: 2015-03-19 10:27:13.0
+  id: '11407'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-03-19 10:27:13.0
+- author: leonerd
+  body: |-
+    With the caching layer disabled (by having it not store anything in the dict, so every request looks like a miss)
+
+    Sending (no viewers):
+    {noformat}
+    process_resource_maxrss |   244072448 |   266092544   +22020096 (9483.25 /call)
+    {noformat}
+
+    Sending (only sender viewing):
+    {noformat}
+    process_resource_maxrss |   282673152 |   379551744   +96878592 (53642.63 /call)
+    {noformat}
+
+    Sending (other local viewers):
+    {noformat}
+    process_resource_maxrss |   389906432 |   420167680   +30261248 (53089.91 /call)
+    {noformat}
+
+    Sending (local and remote viewers):
+    {noformat}
+    process_resource_maxrss |   423378944 |   449429504   +26050560 (56022.71 /call)
+    {noformat}
+
+    Receiving (local viewers):
+    {noformat}
+    process_resource_maxrss |   457654272 |   526893056   +69238784 (128457.86 /call)
+    {noformat}
+
+    Receiving (no local viewers):
+    {noformat}
+    process_resource_maxrss |   534740992 |   534757376   +16384 (29.90 /call)
+    {noformat}
+
+    This very last one is somewhat interesting - suggests that actually there isn't a leak when receiving with no viewers, other than the extra usage the cache consumes. This also agrees with my observation on `leonerd.org.uk`.
+  created: 2015-03-19 12:52:41.0
+  id: '11408'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-03-19 12:52:41.0
+- author: leonerd
+  body: |-
+    Now doing some `manhole+objgraph` based debugging around the first leaking test (local sender + just itself viewing):
+
+    Before the test:
+    {noformat}
+    >>> objgraph.show_most_common_types()
+    dict                       21171
+    tuple                      13741
+    function                   10282
+    frozendict                 7025
+    list                       3647
+    weakref                    3057
+    builtin_function_or_method 2045
+    instance                   1757
+    PointerType                1492
+    wrapper_descriptor         1315
+    {noformat}
+
+    After having done {{tested [1777 in 2m00s; 14.81/sec]}}:
+    {noformat}
+    >>> objgraph.show_most_common_types()
+    dict                   46240
+    tuple                  27002
+    frozendict             21746
+    function               10992
+    list                   6524
+    weakref                3183
+    _EventInternalMetadata 3108
+    FrozenEvent            3108
+    instance               2589
+    cell                   2131
+    {noformat}
+  created: 2015-03-19 17:59:17.0
+  id: '11411'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-03-19 17:59:17.0
+- author: leonerd
+  body: Huh; oops. Turns out a lot of those were still coming from the main *getEvents* LruCache. I'll disable that and try it again...
+  created: 2015-03-19 18:17:30.0
+  id: '11412'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-03-19 18:17:30.0
+- author: leonerd
+  body: |-
+    Before:
+
+    {noformat}
+    >>> objgraph.show_growth()
+    function                      10282    +10282
+    dict                          10108    +10108
+    tuple                          7596     +7596
+    list                           3587     +3587
+    weakref                        3234     +3234
+    builtin_function_or_method     2045     +2045
+    instance                       1759     +1759
+    PointerType                    1492     +1492
+    wrapper_descriptor             1315     +1315
+    type                           1251     +1251
+    {noformat}
+
+    After doing {{tested [476 in 2m00s; 3.97/sec]}}:
+
+    {noformat}
+    >>> objgraph.show_growth()
+    dict                      11606     +1498
+    frozendict                  780      +780
+    list                       4356      +769
+    tuple                      8332      +736
+    cell                       1013      +326
+    function                  10436      +154
+    FrozenEvent                 130      +130
+    _EventInternalMetadata      130      +130
+    instance                   1886      +127
+    instancemethod              584       +85
+    {noformat}
+
+    Amusingly there therefore, we could only possibly have leaked 1 list, 1 frozendict and 3 dicts per event, maximum. Everything else grew too little to account for it.
+
+    Hmmmmm.
+  created: 2015-03-19 18:31:45.0
+  id: '11413'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-03-19 18:31:45.0
+- author: leonerd
+  body: |-
+    Turns out in my previous tests of memory leaking, I forgot about the *getEvents* LruCache. Running again with that disabled too is much slower, but leaks much less. Confusingly, some of the tests that do more things don't appear to leak, while subsets of that do. I suspect at this point we're not even looking at a leak at all, just extra memory temporarily used for results, etc..., combined with the extra usage in that cache.
+
+    Annoyingly, maxrss isn't the most useful metric to be looking at here, but I can't work out how to ask Python itself how much memory it thinks it's allocated to internal objects :(
+  created: 2015-03-19 19:16:17.0
+  id: '11414'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-03-19 19:16:17.0
+- author: leonerd
+  body: |-
+    Well, that doesn't seem to pan out.
+    We tried an experiment at capping the getEvents cache to 1024 entries, a limit it hit well within a few hours, growing in memory from a restart-time level of 185MiB to 2.3GiB. After that, it stayed at 1024 entries for almost a day, by which point it grew in memory usae to 5.5GiB.
+
+    So yes, more leakage than just the cache.
+  created: 2015-03-25 15:31:35.0
+  id: '11435'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-03-25 15:31:35.0
+- author: leonerd
+  body: |-
+    Looking again at today's graphs after almost a week of continuous uptime shows another curious fact.
+
+    It seems like the notifiers list grows fairly unbounded, and that sharp increases in memory usage do look correlated with increases in notifiers. This is also supported by my home server, which has no notifiers because there's no client connected to it, and its memory usage hasn't grown a byte in two weeks.
+
+    We seem to be currently missing an "open file descriptors" metric count; I'll add one of those and then we can compare that to the notifier list - maybe we're failing to notice some cases of clients disconnecting?
+  created: 2015-04-01 17:46:15.0
+  id: '11465'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-01 17:46:15.0
+- author: markjh
+  body: |-
+    We are attempting to reproduce the memory leak using syload so that we can study the heap with objgraph. Latest develop (5b89052d2f) doesn't appear to leak memory doing basic message sending. In order to try and reproduce the leak we intend to expand the range of things syload tests.
+
+    We will need to test:
+    * -Sending messages with listening clients-
+    * -Sending messages with transaction ids-.
+    * -Sending messages over federation-.
+    * -Receiving messages over federation-.
+    * Joining/leaving rooms.
+    * -Typing/presence with listening clients-.
+    * Sending messages with pushers.
+
+    We should test Application Servers at some point. But we believe that the memory leak was present before the application server code was added so we shouldn't need to include tests for them in order to find the leak.
+  created: 2015-04-08 16:14:21.0
+  id: '11477'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-09 19:02:46.0
+- author: leonerd
+  body: |-
+    Have added:
+      [master c91770a] Perform a room send test with client-specified transaction IDs
+  created: 2015-04-09 17:44:40.0
+  id: '11480'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-09 17:44:40.0
+- author: leonerd
+  body: '[master d8ccb02] Some load tests involving EDUs - presence and typing notifications'
+  created: 2015-04-09 19:02:32.0
+  id: '11482'
+  issue: '11246'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-09 19:02:32.0
+- author: indrora
+  body: |-
+    I can confirm that this is definitely happening as well. 
+
+    I'm running on a Ramnode instance (256M real, 128M swap) and Synapse is getting OOMKilled about every 4 hours. At the moment, I've got my settings scaled way back.
+
+    One thing I've found eats *lots* of memory is the webclient. Removing the webclient from my config has slowed the time-to-oomkill fairly heftily. I've been unable to disable the non-HTTPS listener without crashing, and that's fodder for another ticket, but I'd assume that that would cut the memory footprint by about a third or so.
+
+    Note that my instance ( cortex.zaibatsutel.net ) is only joined up to two rooms: #matrix:matrix.org and #matrix-dev:matrix.org
+  created: 2015-09-26 16:42:01.0
+  id: '12174'
+  issue: '11246'
+  type: comment
+  updateauthor: indrora
+  updated: 2015-09-26 16:42:01.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1299'
+  created: 2016-11-07 18:27:51.0
+  id: '13620'
+  issue: '11246'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:51.0

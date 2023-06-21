@@ -1,0 +1,101 @@
+---
+summary: Binging doesn't pick up userids if prefixed with an @
+---
+assignee: kegan
+created: 2014-09-18 17:45:01.0
+creator: matthew
+description: |-
+  Messages sent to @arathorn don't cause arathorn's binger to fire (or be highlighted in blue).
+
+  Be careful testing this, given tm604's twitter bridge will turn these into twitter messages(!)
+id: '10330'
+key: SYWEB-48
+number: '48'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-29 17:46:41.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:02.0
+votes: '0'
+watches: '2'
+workflowId: '10433'
+---
+actions:
+- author: kegan
+  body: |-
+    The full user ID includes the domain, else saying @bob will bing:
+
+     - @bob:matrix.org
+     - @bob:domain.com
+     - @bob:foo.org
+
+    If there is only one @bob then we can do this.
+  created: 2014-09-19 17:39:06.0
+  id: '10349'
+  issue: '10330'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-19 17:57:45.0
+- author: matthew
+  body: |-
+    If I say @bob and leave it ambiguous, I think all the people called @bob /should/ be binged, surely?
+
+    I think we should in general let people skip the domain, as it's just a horrible mouthful to have to keep typing :arasphere.net everywhere if it's unambiguous who I was talking about (i.e. there being only one @arathorn in the room)
+  created: 2014-09-19 18:45:05.0
+  id: '10351'
+  issue: '10330'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-19 18:45:05.0
+- author: kegan
+  body: |-
+    {quote}
+    If I say @bob and leave it ambiguous, I think all the people called @bob /should/ be binged, surely?
+    {quote}
+
+    I think you have answered your own question on this. Yes, from a pattern matching perspective @bob *should* bing everyone. However, people will not use it like that, and will instead "skip the domain, as it's just a horrible mouthful to have to keep typing :arasphere.net everywhere".
+
+    I agree we should be able to use @bob if it is _unambiguous_ but I disagree with @bob binging all bobs.
+  created: 2014-09-22 08:51:21.0
+  id: '10358'
+  issue: '10330'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-22 08:51:21.0
+- author: matthew
+  body: |-
+    I think I did answer my own question... with the opposite answer to yours ;)
+
+    If I am lazy and type @bob and it's ambiguous, I don't expect the bing to be silently discarded by the system to penalise me for being lazy.  Instead, I expect all the bobs present to get binged, and then castigate me for being ambiguous.  It's more important to get the message through (badly) than not at all.  If we've trained the user to drop the domain occasionally for convenience, we don't want to randomly penalise them if they don't notice that a @bob:otherdomain.com joins the room when they try to bing the previously unambiguous bob.  Meanwhile, tab-complete helps encourage them anyway to be unambiguous.
+
+    In the end, I think we should just fix this by binging on expressions anyway, defaulting to literally \b(<username>|<displayName>)\b anyway - e.g. \b(matthew|Matthew Hodgson)\b.  This then caters for people manually typing Matthew, and @Matthew, and @matthew:matrix.org, and "Matthew Hodgson" if they're so crazy to do so.
+
+    And if you don't like this, you can override the regexp to bing on whatever refinement you like.
+
+    Is this acceptable?
+  created: 2014-09-23 01:08:43.0
+  id: '10373'
+  issue: '10330'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 01:08:43.0
+- author: kegan
+  body: |-
+    The current logic is similar, but with stricter matching criteria. That is, @bob:domain and Bob Jones are the bing words, which does not accept partials like "@bob" or "bob:domain". The problem with:
+    {quote}
+    This then caters for people manually typing Matthew, and @Matthew, and @matthew:matrix.org, and "Matthew Hodgson"
+    {quote}
+    is that if I have the unfortunate honour of being called "tea" or some other awfully short username, I will get binged whenever "tea"/"teapot"/"teacup" are mentioned. That may be sufficiently rare that:
+    {quote}
+    you can override the regexp to bing on whatever refinement you like.
+    {quote}
+    will suffice though. I'll implement \b(<username>|<displayName>)\b and we can see how much of an annoyance it is.
+  created: 2014-09-23 09:53:01.0
+  id: '10379'
+  issue: '10330'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 09:53:01.0

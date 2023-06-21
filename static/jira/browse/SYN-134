@@ -1,0 +1,30 @@
+---
+summary: We shouldn't let people invite (or otherwise manipulate) non-existent users
+---
+created: 2014-11-07 21:07:18.0
+creator: matthew
+description: ''
+id: '10634'
+key: SYN-134
+number: '134'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-01-15 13:22:17.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:11.0
+votes: '0'
+watches: '2'
+workflowId: '10734'
+---
+actions:
+- author: erikj
+  body: As of federation_authorization branch, a homeserver should probably reject a /invite/ request with a 404 (or equivalent.)
+  created: 2014-11-08 21:27:30.0
+  id: '10747'
+  issue: '10634'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-08 21:27:30.0

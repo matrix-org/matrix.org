@@ -1,0 +1,42 @@
+---
+summary: Test new messages received between room invite and join
+---
+created: 2015-06-22 17:25:43.0
+creator: leonerd
+description: |-
+  If a room receives new messages after you are invited to it but before you join it, when you eventually do join the event stream ought not contain those extra messages yet, but should only start from the point in time that you joined.
+
+  Check that this is the case.
+id: '11689'
+key: SYT-11
+number: '11'
+priority: '3'
+project: '10300'
+reporter: leonerd
+status: '10200'
+type: '2'
+updated: 2015-06-25 17:28:52.0
+votes: '0'
+watches: '1'
+workflowId: '11790'
+---
+actions:
+- author: leonerd
+  body: |-
+    This has nothing to do with invites, and is simply because of the way that the event stream uses your *current* room memberships to filter historic events, so if that history includes a room join event, then history before that will be visible from before you joined.
+
+    This is well-known, and testing it in sytest isn't useful.
+  created: 2015-06-25 17:28:28.0
+  id: '11915'
+  issue: '11689'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-25 17:28:28.0
+- author: leonerd
+  body: Probably unfixable in 'v1.
+  created: 2015-06-25 17:28:52.0
+  id: '11916'
+  issue: '11689'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-06-25 17:28:52.0

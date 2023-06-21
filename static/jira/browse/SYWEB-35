@@ -1,0 +1,22 @@
+---
+summary: 'joins/parts should trigger desktop notifications. I keep missing people joining #matrix:matrix.org :('
+---
+created: 2014-09-16 23:10:53.0
+creator: matthew
+description: ''
+id: '10308'
+key: SYWEB-35
+number: '35'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '10000'
+resolutiondate: 2014-09-17 08:41:35.0
+status: '6'
+type: '2'
+updated: 2014-09-18 23:31:17.0
+votes: '0'
+watches: '1'
+workflowId: '10387'
+---
+actions: null

@@ -1,0 +1,30 @@
+---
+summary: We should let folks define a list of banned user IDs and displayName regexps
+---
+created: 2016-07-18 10:26:46.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  So that if an admin doesn't want people on their server using 'bad' words in their nicks/displaynames they can enforce it. This would also then reduce the amount of problems with bridged networks then rejecting 'bad' nicks and displaynames as per https://github.com/matrix-org/matrix-appservice-irc/issues/103
+id: '12755'
+key: SYN-729
+number: '729'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:45.0
+votes: '0'
+watches: '2'
+workflowId: '12855'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1566'
+  created: 2016-11-07 18:29:45.0
+  id: '13889'
+  issue: '12755'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:45.0

@@ -1,0 +1,51 @@
+---
+summary: Add a way to resend unsent message
+---
+assignee: m-ylecollen
+created: 2014-12-11 09:35:52.0
+creator: manu
+description: ''
+id: '10809'
+key: SYIOS-12
+number: '12'
+priority: '1'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-01-13 16:56:14.0
+status: '5'
+type: '1'
+updated: 2015-01-13 16:56:14.0
+votes: '0'
+watches: '2'
+workflowId: '10909'
+---
+actions:
+- author: manu
+  body: MXStore has now an interface to retrieve an event with its id from the storage
+  created: 2014-12-11 15:09:54.0
+  id: '10987'
+  issue: '10809'
+  type: comment
+  updateauthor: manu
+  updated: 2014-12-11 15:09:54.0
+- author: m-ylecollen
+  body: 'c748ad54 allows to resend text messages : the user has to tap on the "unsent" text to resend it.'
+  created: 2015-01-12 16:38:41.0
+  id: '11098'
+  issue: '10809'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-12 16:38:41.0
+- author: m-ylecollen
+  body: |-
+    the unsent medias can be resent from 43db0895.
+
+    the user will need to tap on the unsent text to resend them.
+    There is no automatic resent (when the network comes back for example)
+  created: 2015-01-13 16:56:14.0
+  id: '11113'
+  issue: '10809'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-13 16:56:14.0

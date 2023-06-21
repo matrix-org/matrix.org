@@ -1,0 +1,93 @@
+---
+summary: Can't reject an invitation to a room where everyone else has left
+---
+created: 2016-03-01 14:25:48.0
+creator: neb
+description: Submitted by @richvdh:matrix.org
+id: '12535'
+key: SYN-642
+number: '642'
+priority: '3'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-03-04 09:35:54.0
+status: '5'
+type: '1'
+updated: 2016-03-21 11:20:24.0
+votes: '0'
+watches: '3'
+workflowId: '12635'
+---
+actions:
+- author: richvdh
+  body: |-
+    Posting a {{/leave}} gives a 500 error:
+
+    {code}
+    2016-03-01 14:40:12,030 - synapse.http.server - 124 - ERROR - POST-42 - Failed handle request synapse.http.server._async_render on <synapse.rest.ClientRestResource object at 0x7fc110132490>: <SynapseRequest at 0x7fc111855bd8 method=POST uri=/_matrix/client/r0/rooms/!FnoMdCZBmBuPLzfKXE:localhost:8001/leave?access_token=<redacted> clientproto=HTTP/1.1 site=8001>
+    Traceback (most recent call last):
+      File "/home/rav/work/synapse/synapse/http/server.py", line 103, in wrapped_request_handler
+        yield request_handler(self, request)
+      File "/home/rav/work/synapse/synapse/http/server.py", line 236, in _async_render
+        callback_return = yield callback(request, *args)
+      File "/home/rav/work/synapse/synapse/rest/client/v1/room.py", line 467, in on_POST
+        third_party_signed=content.get("third_party_signed", None),
+      File "/home/rav/work/synapse/synapse/handlers/room.py", line 462, in update_membership
+        from_client=True,
+      File "/home/rav/work/synapse/synapse/handlers/room.py", line 550, in send_membership_event
+        event.user_id
+      File "/home/rav/work/synapse/synapse/handlers/federation.py", line 800, in do_remotely_reject_invite
+        "leave"
+      File "/home/rav/work/synapse/synapse/handlers/federation.py", line 826, in _make_and_verify_event
+        content,
+      File "/home/rav/work/synapse/synapse/federation/federation_client.py", line 422, in make_membership_event
+        raise RuntimeError("Failed to send to any server.")
+    RuntimeError: Failed to send to any server.
+    {code}
+  created: 2016-03-01 14:31:42.0
+  id: '12731'
+  issue: '12535'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-01 14:42:30.0
+- author: richvdh
+  body: |-
+    The problem here is that the join/reject code looks at the list of locally active members of the room to decide whether it should send the join/reject over federation. Since there are no active users, it enters the federation code - which then fails when it discovers that the 'remote' server is itself.
+
+    A simplish workaround would be to handle a rejection locally if the sender of the invite was a local user. However, there is actually a larger problem here. Consider:
+
+    # alice@venus creates the room
+    # alice@venus invites bob@venus and claire@mars
+    # claire@mars joins the room
+    # alice@venus leaves the room
+    # claire@mars invites davina@jupiter
+    # davina@jupiter joins the room
+    # claire@mars leaves
+    # bob@venus rejects the invite
+
+    Under the above proposal, Bob's rejection could be handled at `venus`; however at this point federation is somewhat broken:  `venus` thinks that `mars` is still interested in the room (which it is not), and has never heard about `jupiter`, so Davina and her friends will see the pending invitation forever. It's probably possible to come up with a less contrived example.
+
+    Really, there should be no difference in experience for Bob regardless of whether Alice has left or not: he should be able to join the room, and if the history_visibility allows it, see the room history - and for that to work, some level of federation needs to happen between the participating servers up until the point Bob rejects the invite (presumably either by allowing servers to be included in rooms independently of users, or by making invited members count for the point of view of federation).
+  created: 2016-03-01 17:21:39.0
+  id: '12732'
+  issue: '12535'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-01 17:21:39.0
+- author: richvdh
+  body: The immediate problem has hopefully been fixed by https://github.com/matrix-org/synapse/pull/615.
+  created: 2016-03-04 09:35:54.0
+  id: '12746'
+  issue: '12535'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-04 09:35:54.0
+- author: richvdh
+  body: SPEC-364 to track the larger problem here
+  created: 2016-03-04 09:48:08.0
+  id: '12747'
+  issue: '12535'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-04 09:48:08.0

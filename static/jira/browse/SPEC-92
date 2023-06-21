@@ -1,0 +1,60 @@
+---
+summary: Per-room Activity Times
+---
+created: 2015-01-15 18:10:13.0
+creator: leonerd
+description: |-
+  As part of killing the bad idea that is the global "last_active_age" timer, we need a way for servers to send the activity age of each member of the room, to new clients that join/initialSync the room.
+
+  This is only needed on initialSync because thereafter, m.room.message or m.room.member(JOIN) events will bump the timer, so clients can track that number themselves with no extra message overhead.
+
+  What is needed then, is that the server store the timestamp of the most recent message (or JOIN membership event) for every member of every room. It then sends this as part of the initialSync data about that room.
+id: '10942'
+key: SPEC-92
+number: '92'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:56.0
+votes: '0'
+watches: '4'
+workflowId: '11042'
+---
+actions:
+- author: matthew
+  body: |-
+    Let's not completely kill the last_active_age timer - it's still useful to know how globally idle a user is.
+
+    But agreed that it'd be nice to also track how idle a user is within the context of a given room.  As you say, this is just tracking as part of the membership state for a room the last time any given user interacted with the room.  We can then sync it around like the rest of the membership state information.  The clients can then track this clientside after the initial sync.
+  created: 2015-01-15 18:51:08.0
+  id: '11136'
+  issue: '10942'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-15 18:51:08.0
+- author: leonerd
+  body: OK; I guess if we want to keep the global idleness timer, we can then move it down to a lower resolution. Say, only bump it if it's more than 5 minutes old? Does 5 minutes sound reasonable?
+  created: 2015-01-15 19:45:58.0
+  id: '11137'
+  issue: '10942'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-01-15 19:45:58.0
+- author: matthew
+  body: suggest  every 1m for granularity to the nearest minute, which is more familiar and easy to express than nearest 5mins
+  created: 2015-01-15 19:57:48.0
+  id: '11138'
+  issue: '10942'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-15 19:57:48.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/488'
+  created: 2016-10-28 16:26:56.0
+  id: '13263'
+  issue: '10942'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:56.0

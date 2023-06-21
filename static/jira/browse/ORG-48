@@ -1,0 +1,30 @@
+---
+summary: We should make Dave's letsencrypt blog post a proper guide
+---
+created: 2016-03-15 20:30:38.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12560'
+key: ORG-48
+number: '48'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:27:06.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:27:06.0
+votes: '0'
+watches: '2'
+workflowId: '12660'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix-doc/issues/844
+  created: 2017-03-21 11:27:06.0
+  id: '14028'
+  issue: '12560'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:27:06.0

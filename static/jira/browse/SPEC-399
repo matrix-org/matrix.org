@@ -1,0 +1,30 @@
+---
+summary: Need a way to discover the bridges for a given room
+---
+created: 2016-05-02 13:25:01.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Use case is wanting to list a 'you can also get to #foo:matrix.org via Slack, XMPP, IRC etc at these URLs' on matrix.to
+id: '12646'
+key: SPEC-399
+number: '399'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:33.0
+votes: '0'
+watches: '2'
+workflowId: '12746'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/675'
+  created: 2016-10-28 16:28:33.0
+  id: '13484'
+  issue: '12646'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:33.0

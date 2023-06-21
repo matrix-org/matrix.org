@@ -1,0 +1,32 @@
+---
+summary: Attach higher-level abstractions to events earlier
+---
+created: 2015-07-01 16:00:18.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  If you listen for 'event', the sender/target properties will not be set on them as they only get set in the context of a Room (where the list of RoomMembers can be extracted). This is mainly because we're creating new MatrixEvents for 'event' emissions, rather than reusing the ones we passed to the Room objects. If they were shared, they would magically have the correct properties. We need to be careful when explaining how this works without a store though (no store = no Room context = no sender/target properties on raw 'event' emissions).
+id: '11721'
+key: SYJS-14
+number: '14'
+priority: '2'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:26:47.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:26:47.0
+votes: '0'
+watches: '2'
+workflowId: '11822'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/254
+  created: 2016-10-24 11:26:47.0
+  id: '13211'
+  issue: '11721'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:26:47.0

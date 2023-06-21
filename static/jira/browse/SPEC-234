@@ -1,0 +1,28 @@
+---
+summary: Define metadata for tagging images as NSFW, so clients can blur thumbnails etc
+---
+created: 2015-09-22 21:59:20.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11917'
+key: SPEC-234
+number: '234'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:40.0
+votes: '0'
+watches: '2'
+workflowId: '12020'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/548'
+  created: 2016-10-28 16:27:40.0
+  id: '13356'
+  issue: '11917'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:40.0

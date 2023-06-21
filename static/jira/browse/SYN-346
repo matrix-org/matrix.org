@@ -1,0 +1,106 @@
+---
+summary: certificate verify failed when registering user
+---
+assignee: erikj
+created: 2015-04-16 15:30:00.0
+creator: thijs
+description: |-
+  After setting up a server from a git checkout (and running tests) an error occurs when you try to create a user:
+  {code:python}
+  $ register_new_matrix_user -c homeserver.yaml https://localhost:8448New user localpart [Triplan]: foo
+  Password: 
+  Confirm password: 
+  Sending registration request...
+  Traceback (most recent call last):
+    File "/Users/Triplan/.virtualenvs/synapse/bin/register_new_matrix_user", line 6, in <module>
+      exec(compile(open(__file__).read(), __file__, 'exec'))
+    File "/Users/Triplan/Sites/projects/synapse/register_new_matrix_user", line 149, in <module>
+      register_new_user(args.user, args.password, args.server_url, secret)
+    File "/Users/Triplan/Sites/projects/synapse/register_new_matrix_user", line 97, in register_new_user
+      request_registration(user, password, server_location, shared_secret)
+    File "/Users/Triplan/Sites/projects/synapse/register_new_matrix_user", line 52, in request_registration
+      f = urllib2.urlopen(req)
+    File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 154, in urlopen
+      return opener.open(url, data, timeout)
+    File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 431, in open
+      response = self._open(req, data)
+    File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 449, in _open
+      '_open', req)
+    File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 409, in _call_chain
+      result = func(*args)
+    File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1240, in https_open
+      context=self._context)
+    File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1197, in do_open
+      raise URLError(err)
+  urllib2.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:581)>
+  {code}
+id: '11336'
+key: SYN-346
+number: '346'
+priority: '3'
+project: '10000'
+reporter: thijs
+resolution: '1'
+resolutiondate: 2015-04-17 15:20:19.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:04.0
+votes: '0'
+watches: '2'
+workflowId: '11436'
+---
+actions:
+- author: erikj
+  body: |-
+    Hmm, looks like urllib2 now checks SSL certs as of 2.7.9.
+
+    https://hg.python.org/cpython/raw-file/v2.7.9/Misc/NEWS
+  created: 2015-04-16 19:02:14.0
+  id: '11499'
+  issue: '11336'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-16 19:02:53.0
+- author: thijs
+  body: Are there any workarounds besides downgrading python?
+  created: 2015-04-16 21:34:34.0
+  id: '11500'
+  issue: '11336'
+  type: comment
+  updateauthor: thijs
+  updated: 2015-04-16 21:34:34.0
+- author: erikj
+  body: |-
+    http://stackoverflow.com/a/28048260 probably works.
+
+    Unfortunately, that code snippet doesn't work in versions <2.7.9
+  created: 2015-04-17 12:07:26.0
+  id: '11502'
+  issue: '11336'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-17 12:07:26.0
+- author: erikj
+  body: Oh, or of course you can specify the HTTP url for the home server. The port is configured via {{--unsecure-port}}
+  created: 2015-04-17 13:14:07.0
+  id: '11503'
+  issue: '11336'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-17 13:14:07.0
+- author: erikj
+  body: 'A non tested fix is at: https://github.com/matrix-org/synapse/pull/124'
+  created: 2015-04-17 13:32:37.0
+  id: '11504'
+  issue: '11336'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-17 13:32:37.0
+- author: erikj
+  body: This should be fixed as of hotfix {{v0.8.1-r4}}. Please reopen if that doesn't fix things :)
+  created: 2015-04-17 15:20:19.0
+  id: '11505'
+  issue: '11336'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-17 15:20:19.0

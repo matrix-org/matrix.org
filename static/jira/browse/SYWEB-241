@@ -1,0 +1,33 @@
+---
+summary: Any HTTP request can fail due to rate-limiting on the server, and need to be retried.  Do we handle this for all of them?
+---
+created: 2014-12-24 17:15:03.0
+creator: matthew
+description: ''
+id: '10867'
+key: SYWEB-241
+number: '241'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-29 09:27:53.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:47.0
+votes: '0'
+watches: '2'
+workflowId: '10967'
+---
+actions:
+- author: kegan
+  body: |-
+    Yes it is.
+
+    All requests which go via {{matrix-service.js}} will check for rate limiting errors (matrix-service.js:88). All requests to a HS go through {{matrix-service.js}}. Therefore, all requests can handle being rate limited.
+  created: 2014-12-29 09:27:53.0
+  id: '11037'
+  issue: '10867'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-29 09:27:53.0

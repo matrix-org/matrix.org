@@ -1,0 +1,44 @@
+---
+summary: Crash when attempting to attach image on iPad
+---
+assignee: gforet
+created: 2015-03-03 15:07:18.0
+creator: dbkr
+description: |-
+  Apple just found this whilst reviewing.
+
+  In addition, during review, your app crashed on iPad running iOS 8.1.3 iPhone running iOS 8.1.3 when we:
+
+  1. Launch the app
+  2. Tap on one of the group chat
+  3. Tap on the plus icon on the lower left
+  4. Tap on the Attach button
+
+  This occurred when your app was used: 
+
+  - On Wi-Fi
+  - On cellular network
+id: '11153'
+key: SYIOS-98
+number: '98'
+priority: '1'
+project: '10200'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-03-03 16:05:40.0
+status: '5'
+type: '1'
+updated: 2015-03-03 16:05:40.0
+votes: '0'
+watches: '2'
+workflowId: '11253'
+---
+actions:
+- author: gforet
+  body: Console presented a UIAlertController of style UIAlertControllerStyleActionSheet without providing location information for this popover. We provide now sourceView and sourceRect through the alert controller's popoverPresentationController.
+  created: 2015-03-03 16:05:40.0
+  id: '11343'
+  issue: '11153'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-03-03 16:05:40.0

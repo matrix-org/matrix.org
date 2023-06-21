@@ -1,0 +1,34 @@
+---
+summary: We appear to be setting a UA of 'None' in console :(
+---
+created: 2015-07-29 23:58:39.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11774'
+key: SYIOS-134
+number: '134'
+priority: '1'
+project: '10200'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-10 13:33:26.0
+status: '5'
+type: '1'
+updated: 2016-06-10 13:33:26.0
+votes: '0'
+watches: '2'
+workflowId: '11875'
+---
+actions:
+- author: manu
+  body: |-
+    We use the default UA of AFNetworking which gives something like this:
+    User-Agent: matrixConsole/0.5.0 (iPhone; iOS 8.3; Scale/2.00)
+
+    This is what I get in my HTTP server logs. I tried with Console from the App Store and Console built from the develop branch.
+  created: 2015-07-30 07:05:12.0
+  id: '12037'
+  issue: '11774'
+  type: comment
+  updateauthor: manu
+  updated: 2015-07-30 07:05:12.0

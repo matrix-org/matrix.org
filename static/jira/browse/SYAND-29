@@ -1,0 +1,30 @@
+---
+summary: Messages in "delivery status" are not seen
+---
+created: 2015-02-23 20:21:00.0
+creator: bob
+description: ''
+id: '11126'
+key: SYAND-29
+number: '29'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-02-26 07:52:35.0
+status: '5'
+type: '1'
+updated: 2015-02-26 07:52:35.0
+votes: '0'
+watches: '2'
+workflowId: '11226'
+---
+actions:
+- author: m-ylecollen
+  body: 'The message is now displayed in delivery status : the UI is the same as the sent one.'
+  created: 2015-02-26 07:52:35.0
+  id: '11318'
+  issue: '11126'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-02-26 07:52:35.0

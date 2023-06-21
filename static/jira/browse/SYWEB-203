@@ -1,0 +1,44 @@
+---
+summary: Duplicated messages
+---
+created: 2014-12-02 17:29:34.0
+creator: oddvar
+description: |-
+  Randomly some lines were duplicated - even quadruplicated in one instance (see attached screenshot)
+
+  This was on oddvar.org's webclient/homeserver.
+id: '10756'
+key: SYWEB-203
+number: '203'
+priority: '3'
+project: '10004'
+reporter: oddvar
+status: '10100'
+type: '1'
+updated: 2014-12-03 13:27:15.0
+votes: '0'
+watches: '2'
+workflowId: '10856'
+---
+actions:
+- author: kegan
+  body: I did fix an issue with duplicate messages a few days ago. How old is this?
+  created: 2014-12-03 12:05:27.0
+  id: '10928'
+  issue: '10756'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-03 12:05:27.0
+- author: oddvar
+  body: |-
+    this is from yesterday - I can also see it today at 11:13 - see http://squeaky.openmarket.com/paste/id/20141203132429982
+
+    13:26:29 oddvar@bespin:~/src/matrix.org/matrix-angular-sdk$ git status
+    On branch develop
+    Your branch is up-to-date with 'origin/develop'.
+  created: 2014-12-03 13:27:15.0
+  id: '10934'
+  issue: '10756'
+  type: comment
+  updateauthor: oddvar
+  updated: 2014-12-03 13:27:15.0

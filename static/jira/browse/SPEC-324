@@ -1,0 +1,70 @@
+---
+summary: kicking is confusing and poorly defined
+---
+assignee: illicitonion
+created: 2016-01-14 14:00:57.0
+creator: illicitonion
+description: |-
+  Currently, whether one can join a room is defined by:
+
+  Always: If that user's membership state is "ban", they may not join the room.
+
+  1) If a room's m.room.join_rules join_rule is set to "invite", their current membership must be exactly "invite".
+  2) If a room's m.room.join_rules is set to "public", they can always join unless their membership state is "ban".
+
+  Leaving a room sets one's membership state to "leave".
+
+  Being kicked from a room is the same as leaving a room, but ACLs are consulted to make sure power levels allow this to be done.
+
+  Being banned from a room sets one's membership state to "ban", and implicitly kicks them.
+
+  Un-banning is implemented as setting a membership state to "leave".
+
+  Rescinding an invite is implemented as setting a membership state to "leave".
+
+  This causes confusion, because it is not obvious that "kicking" a banned user will actually un-ban them.
+
+  There are three-ish solutions to this problem:
+
+  1) Don't allow /kick to be called on banned users, instead require an explicit /unban call. This require more state resolution on the server, but is probably the simplest solution all-around.
+  2) Introduce a new "kicked" state which is identical to "leave" except servers will refuse to make a state change from "banned" to "kicked" (I don't think this is a great plan, because it's quite non-obvious).
+  3) Fix client UIs to reflect this (e.g. hide their "kick" button when a user is banned, or relabel it "unban"). This may cause problems in the case of state conflicts.
+
+  This is also made more complex by the fact that clients can explicitly set state manually. I guess if people are doing this, they need to be carefully aware of the spec and the nuances of what they're doing. We could, alternatively, not allow state events to be set explicitly if there is an API which sets them instead. This could be interesting, but potentially confusing.
+id: '12301'
+key: SPEC-324
+number: '324'
+priority: '1'
+project: '10001'
+reporter: illicitonion
+resolution: '1'
+resolutiondate: 2016-01-15 16:32:29.0
+status: '5'
+type: '1'
+updated: 2016-01-15 16:32:29.0
+votes: '0'
+watches: '2'
+workflowId: '12406'
+---
+actions:
+- author: matthew
+  body: '#1 sounds fine to me.'
+  created: 2016-01-14 18:11:24.0
+  id: '12572'
+  issue: '12301'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-14 18:11:24.0
+- author: illicitonion
+  body: |-
+    Implemented #1:
+
+    https://github.com/matrix-org/matrix-doc/pull/264
+    https://github.com/matrix-org/synapse/pull/501
+    https://github.com/matrix-org/sytest/pull/148
+  created: 2016-01-15 16:32:29.0
+  id: '12573'
+  issue: '12301'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-01-15 16:32:29.0

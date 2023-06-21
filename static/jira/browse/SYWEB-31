@@ -1,0 +1,30 @@
+---
+summary: Font in <textarea/> is ugly on Linux in the main input
+---
+created: 2014-09-16 14:54:23.0
+creator: matthew
+description: ''
+id: '10207'
+key: SYWEB-31
+number: '31'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-19 17:00:37.0
+status: '5'
+type: '1'
+updated: 2014-09-22 17:20:49.0
+votes: '0'
+watches: '2'
+workflowId: '10410'
+---
+actions:
+- author: manu
+  body: On Windows chrome too
+  created: 2014-09-18 16:38:34.0
+  id: '10330'
+  issue: '10207'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-18 16:38:34.0

@@ -1,0 +1,56 @@
+---
+summary: Specify a means for clients to "edit" previous messages
+---
+created: 2016-06-09 22:40:33.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12700'
+key: SPEC-410
+number: '410'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:36.0
+votes: '1'
+watches: '4'
+workflowId: '12800'
+---
+actions:
+- author: richvdh
+  body: As with redactions, this will presumably take the form of an event which refers to the original event.
+  created: 2016-06-16 11:30:12.0
+  id: '13004'
+  issue: '12700'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-16 11:30:12.0
+- author: leonerd
+  body: |-
+    Since Gitter has the ability to perform message updates (it lets users edit their most recent message) the Matrix-Gitter bridge has to handle this. Currently it does it by performing a diff between the old and new content, stripping a common prefix and suffix and then presenting the resulting change on the Matrix side in a (somewhat) helpful way. I've made mention of this spec bug in the code there, so if a better means arrives in Matrix to represent this it can be updated.
+
+    See
+      https://github.com/matrix-org/matrix-appservice-gitter/commit/07601348996ed83e957b00a3c555508b46739e92
+  created: 2016-07-12 20:12:46.0
+  id: '13049'
+  issue: '12700'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-07-12 20:12:46.0
+- author: andrewjdr
+  body: Pretty, pretty please with sugar on top add this soon.
+  created: 2016-09-23 10:43:01.0
+  id: '13122'
+  issue: '12700'
+  type: comment
+  updateauthor: andrewjdr
+  updated: 2016-09-23 10:43:01.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/682'
+  created: 2016-10-28 16:28:36.0
+  id: '13491'
+  issue: '12700'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:36.0

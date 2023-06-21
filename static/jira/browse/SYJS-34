@@ -1,0 +1,32 @@
+---
+summary: linting and jenkins
+---
+created: 2015-11-12 12:47:07.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  npm run lint should be the same as what jenkins is doing
+id: '12106'
+key: SYJS-34
+number: '34'
+priority: '2'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:30:21.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:30:21.0
+votes: '0'
+watches: '2'
+workflowId: '12209'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/260
+  created: 2016-10-24 11:30:21.0
+  id: '13217'
+  issue: '12106'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:30:21.0

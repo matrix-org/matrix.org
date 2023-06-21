@@ -1,0 +1,63 @@
+---
+summary: If I leave a 1:1 chat, i can't rejoin it.
+---
+created: 2014-09-29 01:43:44.0
+creator: matthew
+description: ''
+id: '10417'
+key: SYN-79
+number: '79'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '10200'
+type: '1'
+updated: 2016-11-07 18:27:18.0
+votes: '0'
+watches: '3'
+workflowId: '10520'
+---
+actions:
+- author: erikj
+  body: |-
+    This sounds like an example where the behaviour of a 1:1 room is different from that of a private group chat.
+
+    If a 1:1 room is implemented in terms of a room with the following properties:
+    * No one can invite
+    * The two people are in the "may join" list.
+    Then if one participant leaves a room they can always rejoin.
+  created: 2015-01-15 13:18:27.0
+  id: '11129'
+  issue: '10417'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-15 13:18:27.0
+- author: erikj
+  body: |-
+    We also want to be careful about the fact that if everyone leaves a room, then we currently have no way to resurrect it.
+
+    I guess the question is, why do users leave a 1:1 chat? Is it so they no longer get notified? That should be done via a different mechanism. 
+
+    Would it be easier to just create a new 1:1 chat if a participant leaves?
+  created: 2015-01-15 13:20:21.0
+  id: '11130'
+  issue: '10417'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-15 13:20:21.0
+- author: erikj
+  body: Need input
+  created: 2016-01-06 10:47:58.0
+  id: '12529'
+  issue: '10417'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 10:47:58.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1221'
+  created: 2016-11-07 18:27:18.0
+  id: '13548'
+  issue: '10417'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:18.0

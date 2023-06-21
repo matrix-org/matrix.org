@@ -1,0 +1,30 @@
+---
+summary: Use refresh tokens to limit access_token lifetime
+---
+created: 2015-09-28 16:39:36.0
+creator: gforet
+description: ''
+id: '11954'
+key: SYIOS-147
+number: '147'
+priority: '1'
+project: '10200'
+reporter: gforet
+resolution: '2'
+resolutiondate: 2016-10-06 18:06:51.0
+status: '5'
+type: '2'
+updated: 2016-10-06 18:06:51.0
+votes: '0'
+watches: '2'
+workflowId: '12057'
+---
+actions:
+- author: richvdh
+  body: We've decided to remove refresh tokens from the matrix spec (see https://github.com/matrix-org/matrix-doc/pull/395), so this is no longer required.
+  created: 2016-10-06 18:06:51.0
+  id: '13167'
+  issue: '11954'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 18:06:51.0

@@ -1,0 +1,43 @@
+---
+summary: 'IRC AS: Guest users don''t work'
+---
+created: 2016-01-25 18:05:47.0
+creator: kegan
+description: |-
+  See https://github.com/matrix-org/matrix-appservice-irc/issues/12
+
+  {code}
+  2016-01-17 03:17:10 ERROR:client-connection XS--qKKCJKOmKjcpcjvHdO@scootaloo.ponychat.net: {"command":"ERROR","rawCommand":"ERROR","commandType":"normal","args":["Closing Link: ns501493.ip-142-4-215.net (Invalid username [-qkkcjkomk])"]}
+  {code}
+id: '12349'
+key: BOTS-159
+number: '159'
+priority: '1'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-06-02 10:06:02.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:06:02.0
+votes: '0'
+watches: '1'
+workflowId: '12454'
+---
+actions:
+- author: kegan
+  body: They do now, because we use numeric IDs. Underlying bug needs to be fixed still.
+  created: 2016-03-04 17:35:14.0
+  id: '12749'
+  issue: '12349'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-03-04 17:35:14.0
+- author: kegan
+  body: See GH issue.
+  created: 2016-06-02 10:06:02.0
+  id: '12940'
+  issue: '12349'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:06:02.0

@@ -1,0 +1,32 @@
+---
+summary: New room subscription did not occur in Anroid app
+---
+created: 2015-03-12 21:18:23.0
+creator: bob
+description: |-
+  I joined a room (#design:matrix.org) but the group is not immediatlly occuring in the Android app.
+  I needed to restart the Android app.
+id: '11207'
+key: SYAND-51
+number: '51'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-03-13 08:16:09.0
+status: '5'
+type: '1'
+updated: 2015-03-13 08:16:09.0
+votes: '0'
+watches: '2'
+workflowId: '11307'
+---
+actions:
+- author: m-ylecollen
+  body: 'It was a devices synchronization : Joining a public room on one device was not synchronized on other devices with the same account.'
+  created: 2015-03-13 07:16:50.0
+  id: '11385'
+  issue: '11207'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-13 08:15:53.0

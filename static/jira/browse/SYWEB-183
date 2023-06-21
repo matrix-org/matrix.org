@@ -1,0 +1,26 @@
+---
+summary: 'CSS: Room name and topic drop behind the user list on small window widths'
+---
+created: 2014-11-26 17:26:00.0
+creator: kegan
+description: |-
+  - Go to #matrix-dev
+   - Shrink the width of the window.
+   - Room name and topic drop down and go behind the user list.
+
+  Expected:
+   - It to stay on the same level and start ...ing the name/topic.
+id: '10719'
+key: SYWEB-183
+number: '183'
+priority: '2'
+project: '10004'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2014-12-10 09:56:25.0
+votes: '0'
+watches: '1'
+workflowId: '10819'
+---
+actions: null

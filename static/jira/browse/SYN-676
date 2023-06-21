@@ -1,0 +1,35 @@
+---
+summary: Enabling/disabling a unknown default push rule should 404.
+---
+created: 2016-04-11 12:54:21.0
+creator: markjh
+description: |-
+  {code}
+  PUT /_matrix/client/r0/pushrules/global/override/.not.a.default.rule/enabled
+
+  {"enabled":true}
+  {code}
+
+  The above request should fail with a 404.
+id: '12618'
+key: SYN-676
+number: '676'
+priority: '3'
+project: '10000'
+reporter: markjh
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:24.0
+votes: '0'
+watches: '2'
+workflowId: '12718'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1531'
+  created: 2016-11-07 18:29:24.0
+  id: '13841'
+  issue: '12618'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:24.0

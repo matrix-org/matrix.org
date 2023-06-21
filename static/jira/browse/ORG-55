@@ -1,0 +1,112 @@
+---
+summary: Guest cannot join even if they know the URL
+---
+created: 2016-06-26 22:38:09.0
+creator: rickcogley
+description: |-
+  Hello - thank you for Matrix, Vector, Synapse. 
+
+  Ultimately I'd like to be able to enable "live chat" on my website, allowing visitors to connect to a specific room, with a presence message showing whether it's office hours or not. 
+
+  For now, a URL to a vector room will work for me. However when I try to set that up, I cannot get it to work. Here's what I tried. 
+
+  In Chrome: 
+
+  * set up test room in my synapse home server using vector.im, set it accessible to "Anyone who knows the room's link, including guests", and set its address. 
+  * connect to test room using user A in vector.im, the admin who made the room and did its settings. 
+  * connect to test room using user B via matrix.org attached to my homeserver.
+
+  In firefox, 
+
+  * access the room's URL on my homeserver, not logged into my homeserver
+  * see the "You are trying to access a room. Would you like to join in order to participate in the discussion?" message, and click "join"
+  * vector.im returns "It is not currently possible to re-join an empty room."
+
+  What I expect is, when I click join without being logged in, that it will smoothly let me join. 
+
+  What I'd really like, as a feature request, is to _not_ have to ask users to click anything at all, since some non-English-speakers will have trouble just reading that one sentence. 
+
+  Hope this explains it and please advise if it does not. Thanks!
+id: '12720'
+key: ORG-55
+number: '55'
+priority: '3'
+project: '10003'
+reporter: rickcogley
+resolution: '3'
+resolutiondate: 2016-06-27 22:39:50.0
+status: '5'
+type: '1'
+updated: 2016-06-28 12:45:45.0
+votes: '0'
+watches: '2'
+workflowId: '12820'
+---
+actions:
+- author: rickcogley
+  body: |-
+    I was logged into a different homeserver in another tab in Firefox, so, what I observe is a bit different now. 
+
+    I logged out of the other tab, then refreshed the test room URL. 
+
+    When I click "join", it asks what I'd like my username to be. I accept the default it suggests. 
+
+    Then I get: 
+
+    "Failed to join the room. This room is private or inaccessible to guests. You may be able to join if you register."
+
+    However, the room is set as guest-accessible, confirming both in vector.im room settings, and, homeserver "matrix.org" site (on 8448) settings for that room.
+  created: 2016-06-26 22:41:57.0
+  id: '13018'
+  issue: '12720'
+  type: comment
+  updateauthor: rickcogley
+  updated: 2016-06-26 22:41:57.0
+- author: rickcogley
+  body: I tried making a second room, and I get the same thing twice.
+  created: 2016-06-26 22:42:31.0
+  id: '13019'
+  issue: '12720'
+  type: comment
+  updateauthor: rickcogley
+  updated: 2016-06-26 22:42:31.0
+- author: richvdh
+  body: |-
+    Indeed this should work; it's quite an important flow to us too. However, I think you're running into at least three problems.
+
+    1. For quite a long time, there was a bug in Vector which (sometimes) made it give the "It is not currently possible to re-join an empty room" when you (as a logged-in user) tried to join a room over federation. This was https://github.com/vector-im/vector-web/issues/1532 and should be fixed by now, in the latest version of Vector.
+
+    2. Guest access doesn't work over federation; this is SYN-655 and as I've commented there, I personally am not really sure why not.
+
+    3. This isn't actually something you mention here, but peeking into a room (ie, being able to read the content of the room before you join it - or even before you register a guest username) also doesn't work. This is a long-standing and somewhat tricky bug; I've just raised SYN-715 as a place to track it.
+
+    One final suggestion which might help with your usecase: how about hosting your own copy of Vector (it's only static javascript) which uses your homeserver by default? I think that will then Just Work.
+  created: 2016-06-27 22:38:41.0
+  id: '13025'
+  issue: '12720'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-27 22:38:41.0
+- author: rickcogley
+  body: Hosting my own is no problem. I'll try that Richard. Thanks!
+  created: 2016-06-27 23:47:41.0
+  id: '13026'
+  issue: '12720'
+  type: comment
+  updateauthor: rickcogley
+  updated: 2016-06-27 23:47:41.0
+- author: rickcogley
+  body: |-
+    Just a heads up to close the loop: 
+
+    I installed my own vector, and it does work to allow the "join" link to work correctly. 
+
+    There were some problems with VoIP, which required that the private vector be served on httpS rather than straight httP. That's fixed, and it's all working. 
+
+    However, this still does not help with the problem of there being any link at all to click. It would be best if we can specify a way to "force join" the room immediately.
+  created: 2016-06-28 12:45:45.0
+  id: '13027'
+  issue: '12720'
+  type: comment
+  updateauthor: rickcogley
+  updated: 2016-06-28 12:45:45.0

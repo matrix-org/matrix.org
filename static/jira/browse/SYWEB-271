@@ -1,0 +1,20 @@
+---
+summary: Allow user to pick an identicon at account creation
+---
+created: 2015-02-02 22:11:27.0
+creator: matthew
+description: ''
+id: '10999'
+key: SYWEB-271
+number: '271'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-02-02 22:11:27.0
+votes: '0'
+watches: '1'
+workflowId: '11099'
+---
+actions: null

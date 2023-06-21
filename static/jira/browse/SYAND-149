@@ -1,0 +1,45 @@
+---
+summary: randomly logged out
+---
+created: 2015-10-31 17:09:30.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  this was not immediately after an upgrade...
+id: '12058'
+key: SYAND-149
+number: '149'
+priority: '1'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-11-05 09:33:42.0
+status: '5'
+type: '1'
+updated: 2015-11-05 09:33:42.0
+votes: '0'
+watches: '2'
+workflowId: '12161'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    I got this issue yesterday.
+
+    It seems that the room messages file was corrupted (it is gzipped).
+
+    The application will not anymore log out : it will trigger an initial sync (it is a better UX) and display a toast to display the error reason.
+  created: 2015-11-05 09:27:28.0
+  id: '12322'
+  issue: '12058'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-11-05 09:28:15.0
+- author: m-ylecollen
+  body: An initial sync will be performed if the file store is corrupted.
+  created: 2015-11-05 09:33:42.0
+  id: '12324'
+  issue: '12058'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-11-05 09:33:42.0

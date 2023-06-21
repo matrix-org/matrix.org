@@ -1,0 +1,28 @@
+---
+summary: /messages?dir=f from a historical point to a /sync prev_batch returns a duplicate event
+---
+created: 2016-09-23 08:14:51.0
+creator: ben.e.saunders@gmail.com
+description: ''
+id: '12838'
+key: SYN-775
+number: '775'
+priority: '3'
+project: '10000'
+reporter: ben.e.saunders@gmail.com
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:03.0
+votes: '0'
+watches: '2'
+workflowId: '12938'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1602'
+  created: 2016-11-07 18:30:03.0
+  id: '13931'
+  issue: '12838'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:03.0

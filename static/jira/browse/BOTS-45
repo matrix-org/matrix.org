@@ -1,0 +1,40 @@
+---
+summary: IRC AS didn't strip a <font> tag
+---
+assignee: kegan
+created: 2015-06-01 16:48:32.0
+creator: kegan
+description: |-
+  On this event:
+  {code}
+  {
+    "origin_server_ts": 1433173310380,
+    "user_id": "@rssbot:matrix.org",
+    "event_id": "$1433173310229usPwn:matrix.org",
+    "content": {
+      "body": "Matrix.org posted a new article: Matrix wins “Most Entertaining Demo” at Kamailio World! ( http://matrix.org/blog/2015/06/01/matrix-wins-most-entertaining-demo-at-kamailio-world/ )",
+      "msgtype": "m.notice",
+      "formatted_body": "<i>Matrix.org</i> posted a new article: Matrix wins “Most Entertaining Demo” at Kamailio World! <font color=\"#7F7F7F\">( http://matrix.org/blog/2015/06/01/matrix-wins-most-entertaining-demo-at-kamailio-world/ )</font>",
+      "format": "org.matrix.custom.html"
+    },
+    "room_id": "!cURbafjkfsMDVwdRDQ:matrix.org",
+    "type": "m.room.message",
+    "age": 868
+  } 
+  {code}
+id: '11572'
+key: BOTS-45
+number: '45'
+priority: '2'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-06-17 14:21:07.0
+status: '5'
+type: '1'
+updated: 2015-06-17 14:21:07.0
+votes: '0'
+watches: '1'
+workflowId: '11673'
+---
+actions: null

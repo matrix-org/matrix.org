@@ -1,0 +1,30 @@
+---
+summary: '"Try Matrix Now!" link is too hard to find.'
+---
+created: 2015-03-08 18:17:31.0
+creator: matthew
+description: ''
+id: '11170'
+key: ORG-18
+number: '18'
+priority: '1'
+project: '10003'
+reporter: matthew
+resolution: '10100'
+resolutiondate: 2017-03-21 10:53:43.0
+status: '5'
+type: '1'
+updated: 2017-03-21 10:53:43.0
+votes: '0'
+watches: '2'
+workflowId: '11270'
+---
+actions:
+- author: richvdh
+  body: This seems like an issue that has probably gone away
+  created: 2017-03-21 10:53:43.0
+  id: '14009'
+  issue: '11170'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 10:53:43.0

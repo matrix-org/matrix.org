@@ -1,0 +1,30 @@
+---
+summary: automate uploading docs to gh-pages
+---
+created: 2015-10-14 09:46:03.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '12017'
+key: SYJS-31
+number: '31'
+priority: '3'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:22:34.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:22:34.0
+votes: '0'
+watches: '2'
+workflowId: '12120'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/249
+  created: 2016-10-24 11:22:34.0
+  id: '13206'
+  issue: '12017'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:22:34.0

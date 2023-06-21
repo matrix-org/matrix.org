@@ -1,0 +1,22 @@
+---
+summary: Update OpenWebRTC lib version in Podfile
+---
+created: 2015-11-20 14:20:51.0
+creator: manu
+description: |-
+  I have just modified the Console podfile to force to use the 0.3.1 version of OpenWebRTC lib because newer releases, 0.3.90 and 0.3.91, generate link errors.
+  This limitation needs to be removed once OWR fixed the link errors. Errors were undefined symbols for _iconv, etc (http://matrix.org/jenkins/job/MatrixConsoleiOSDevelop/803/console)
+id: '12126'
+key: SYIOS-178
+number: '178'
+priority: '3'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '4'
+updated: 2015-11-20 14:31:16.0
+votes: '0'
+watches: '1'
+workflowId: '12229'
+---
+actions: null

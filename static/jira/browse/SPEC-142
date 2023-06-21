@@ -1,0 +1,34 @@
+---
+summary: Ability to refuse a room to federate onto your HS
+---
+created: 2015-03-29 23:34:39.0
+creator: matthew
+description: ''
+id: '11287'
+key: SPEC-142
+number: '142'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-09-01 12:51:00.0
+status: '5'
+type: '2'
+updated: 2015-11-02 16:03:43.0
+votes: '0'
+watches: '2'
+workflowId: '11387'
+---
+actions:
+- author: leonerd
+  body: |-
+    This bug is marked as resolved and also a duplicate of SPEC-101. But they look opposite to me:
+
+      SPEC-101 - forbid rooms hosted inside my server from getting out
+      SPEC-142 - forbid rooms hosted elsewhere from getting into my server
+  created: 2015-11-02 16:03:43.0
+  id: '12292'
+  issue: '11287'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-11-02 16:03:43.0

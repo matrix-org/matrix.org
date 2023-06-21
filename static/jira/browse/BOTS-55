@@ -1,0 +1,24 @@
+---
+summary: 'IRC AS: Bot should try to join hard-coded mappings'
+---
+created: 2015-06-19 11:08:11.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  If I put a channel to room ID mapping in the config file, the bot should attempt to join the room ID on startup so it can grab metadata which isn't trickled down to it such as m.room.member events for display names.
+id: '11672'
+key: BOTS-55
+number: '55'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-06-22 08:58:02.0
+status: '5'
+type: '1'
+updated: 2015-06-22 08:58:02.0
+votes: '0'
+watches: '1'
+workflowId: '11773'
+---
+actions: null

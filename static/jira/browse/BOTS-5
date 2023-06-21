@@ -1,0 +1,30 @@
+---
+summary: IRC bridge doesn't understand notices.  Very sad.
+---
+created: 2014-10-27 11:17:31.0
+creator: matthew
+description: ''
+id: '10504'
+key: BOTS-5
+number: '5'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-03 18:10:55.0
+status: '5'
+type: '2'
+updated: 2015-02-03 18:10:56.0
+votes: '0'
+watches: '2'
+workflowId: '10608'
+---
+actions:
+- author: leonerd
+  body: Now fixed
+  created: 2015-02-03 18:10:56.0
+  id: '11214'
+  issue: '10504'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-02-03 18:10:56.0

@@ -1,0 +1,28 @@
+---
+summary: LDAP login flow
+---
+created: 2015-07-03 18:46:07.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11726'
+key: SYN-432
+number: '432'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:12.0
+votes: '0'
+watches: '2'
+workflowId: '11827'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1347'
+  created: 2016-11-07 18:28:12.0
+  id: '13668'
+  issue: '11726'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:12.0

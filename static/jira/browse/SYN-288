@@ -1,0 +1,28 @@
+---
+summary: Support SVG avatars & images
+---
+created: 2015-02-22 23:35:02.0
+creator: matthew
+description: ''
+id: '11117'
+key: SYN-288
+number: '288'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:45.0
+votes: '0'
+watches: '3'
+workflowId: '11217'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1288'
+  created: 2016-11-07 18:27:45.0
+  id: '13607'
+  issue: '11117'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:45.0

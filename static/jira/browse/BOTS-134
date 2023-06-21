@@ -1,0 +1,22 @@
+---
+summary: Relay errors if you try to PM a user who's gone offline
+---
+created: 2015-11-09 20:28:21.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12101'
+key: BOTS-134
+number: '134'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-01-04 15:45:36.0
+status: '5'
+type: '1'
+updated: 2016-01-04 15:45:36.0
+votes: '0'
+watches: '1'
+workflowId: '12204'
+---
+actions: null

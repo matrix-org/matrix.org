@@ -1,0 +1,24 @@
+---
+summary: Disable notifications for public rooms by default.
+---
+created: 2015-09-16 09:52:10.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  We should only only send notifications by default for public rooms if you are binged. New users should be provisioned with the right defaults. My bad for getting this wrong.
+id: '11875'
+key: SYN-477
+number: '477'
+priority: '1'
+project: '10000'
+reporter: neb
+resolution: '3'
+resolutiondate: 2015-09-16 16:40:04.0
+status: '5'
+type: '1'
+updated: 2015-09-16 16:40:04.0
+votes: '0'
+watches: '1'
+workflowId: '11978'
+---
+actions: null

@@ -1,0 +1,22 @@
+---
+summary: Need a method to resolve a list of 3PIDs
+---
+created: 2015-01-21 09:54:51.0
+creator: manu
+description: |-
+  Currently, /identity/api/v1/lookup manages only one 3PID at a time.
+  This requires to make a lot of requests to lookup an entire phonebook.
+id: '10964'
+key: SYD-7
+number: '7'
+priority: '2'
+project: '10002'
+reporter: manu
+status: '10100'
+type: '2'
+updated: 2015-01-21 09:54:51.0
+votes: '0'
+watches: '1'
+workflowId: '11064'
+---
+actions: null

@@ -1,0 +1,23 @@
+---
+summary: We should scroll to the bottom of the page after things like VoIP calls otherwise the notification messages are hidden.
+---
+assignee: kegan
+created: 2014-11-20 02:25:09.0
+creator: matthew
+description: ''
+id: '10689'
+key: SYWEB-171
+number: '171'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-25 10:26:54.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:01.0
+votes: '0'
+watches: '1'
+workflowId: '10789'
+---
+actions: null

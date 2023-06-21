@@ -1,0 +1,47 @@
+---
+summary: Surely we should recommend an algorithm to use for ratelimiting?
+---
+created: 2014-09-22 20:43:02.0
+creator: matthew
+description: ''
+id: '10370'
+key: SPEC-19
+number: '19'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-10-28 16:26:41.0
+votes: '0'
+watches: '3'
+workflowId: '10473'
+---
+actions:
+- author: kegan
+  body: |-
+    A sensibly high threshold for rate limiting such that in the common use case it cannot be triggered should suffice imo. We don't need to do anything else.
+
+    As for being harsh on client implementors, I don't think it is too bad to expect clients to retry. After all, most mobile developers have to deal with crappy networks, and basic retry schemes aren't terrible to implement. The rate limiting clause just means you need 1 extra if statement to schedule the next attempt to a different time.
+  created: 2014-10-06 13:36:08.0
+  id: '10522'
+  issue: '10370'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-06 13:36:08.0
+- author: kegan
+  body: It may be worth considering doing Github style {{X-RateLimit-Limit}} {{X-RateLimit-Remaining}} {{X-RateLimit-Reset}} headers on responses, to let clients know before they get bump up against the limit.
+  created: 2015-01-21 11:36:15.0
+  id: '11166'
+  issue: '10370'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:36:15.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/458'
+  created: 2016-10-28 16:26:41.0
+  id: '13233'
+  issue: '10370'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:41.0

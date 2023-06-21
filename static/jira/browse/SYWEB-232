@@ -1,0 +1,27 @@
+---
+summary: Http URLs should open in a new tab.
+---
+created: 2014-12-12 15:35:03.0
+creator: markjh
+description: |-
+  <M-Mjark> Shouldn't links opened from the webclient open in a new tab?
+  <dbkr> yeah, I filed that bug
+  <dbkr> I think
+  <M-Mjark> I keep clicking on jenkins build links and losing my webclient.
+  * M-erikj agrees with mjark
+id: '10815'
+key: SYWEB-232
+number: '232'
+priority: '3'
+project: '10004'
+reporter: markjh
+resolution: '3'
+resolutiondate: 2014-12-12 15:39:09.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:48.0
+votes: '0'
+watches: '1'
+workflowId: '10915'
+---
+actions: null

@@ -1,0 +1,28 @@
+---
+summary: We should show users "last logged in" info on login so they can track if anyone is abusing their access token.
+---
+created: 2015-03-13 13:10:20.0
+creator: matthew
+description: ''
+id: '11221'
+key: SYWEB-328
+number: '328'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-03-13 13:10:56.0
+votes: '0'
+watches: '1'
+workflowId: '11321'
+---
+actions:
+- author: matthew
+  body: ideally we'd show them all the current & recent sessions we know about.
+  created: 2015-03-13 13:10:56.0
+  id: '11387'
+  issue: '11221'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-13 13:10:56.0

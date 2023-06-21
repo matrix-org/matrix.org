@@ -1,0 +1,28 @@
+---
+summary: InitialSync doesn't trigger federation backfill.
+---
+created: 2015-07-06 09:25:10.0
+creator: erikj
+description: ''
+id: '11730'
+key: SYN-433
+number: '433'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:12.0
+votes: '0'
+watches: '2'
+workflowId: '11831'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1348'
+  created: 2016-11-07 18:28:12.0
+  id: '13669'
+  issue: '11730'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:12.0

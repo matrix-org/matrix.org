@@ -1,0 +1,31 @@
+---
+summary: Presence information is not present in initial v2 /sync
+---
+assignee: markjh
+created: 2015-12-08 14:16:32.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  Tor reports that when he does an initial /sync, he only gets presence information for himself (and it's {{unavailable}}). We don't appear to have a test for this case
+id: '12187'
+key: SYN-542
+number: '542'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:41.0
+votes: '0'
+watches: '2'
+workflowId: '12290'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1440'
+  created: 2016-11-07 18:28:41.0
+  id: '13743'
+  issue: '12187'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:41.0

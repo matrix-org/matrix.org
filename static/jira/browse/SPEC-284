@@ -1,0 +1,55 @@
+---
+summary: 'matrix-doc: scripts/generate-http-docs.sh errors'
+---
+assignee: illicitonion
+created: 2015-12-01 13:53:01.0
+creator: jimmycuadra
+description: |-
+  The script in the matrix-doc repository at {{scripts/generate-http-docs.sh}} produces a few errors and doesn't complete successfully. Output from my machine:
+
+  {code}
+  ~/Code/matrix-doc/scripts (master) $ ./generate-http-docs.sh
+  batesian: Parsing input template: ../scripts/tmp/http_apis
+  batesian: Creating output for: ../scripts/tmp/http_apis
+  batesian: Output file for: ../scripts/tmp/http_apis
+  gen/http_apis:1296: (ERROR/3) Undefined substitution referenced: "initialSync".
+  gen/http_apis:3193: (ERROR/3) Unknown target name: "pushers".
+  gen/http_apis:3996: (ERROR/3) Unknown target name: "user-interactive authentication".
+  gen/http_apis:4018: (ERROR/3) Unknown target name: "room events".
+  gen/http_apis:4099: (ERROR/3) Unknown target name: "room events".
+  {code}
+id: '12160'
+key: SPEC-284
+number: '284'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '1'
+resolutiondate: 2015-12-10 15:30:48.0
+status: '5'
+type: '1'
+updated: 2015-12-10 15:30:48.0
+votes: '0'
+watches: '2'
+workflowId: '12263'
+---
+actions:
+- author: illicitonion
+  body: |-
+    Thanks for the bug report! This will be fixed by https://github.com/matrix-org/matrix-doc/pull/202
+
+    When you say it doesn't complete successfully; for me it completes fine, but has a couple of errors as side-effects; does it not produce html for you?
+  created: 2015-12-02 19:03:39.0
+  id: '12416'
+  issue: '12160'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-12-02 19:03:39.0
+- author: jimmycuadra
+  body: Sorry, I phrased that badly. I have the same results you do. {{gen/http_apis.html}} does get created but with docutils errors at the bottom for the missing data.
+  created: 2015-12-03 02:17:57.0
+  id: '12420'
+  issue: '12160'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2015-12-03 02:17:57.0

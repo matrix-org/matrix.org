@@ -1,0 +1,28 @@
+---
+summary: How do I filter out archived rooms in a v2 /sync?
+---
+created: 2015-12-01 20:43:32.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12163'
+key: SPEC-285
+number: '285'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:57.0
+votes: '0'
+watches: '2'
+workflowId: '12266'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/584'
+  created: 2016-10-28 16:27:57.0
+  id: '13392'
+  issue: '12163'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:57.0

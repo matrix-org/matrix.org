@@ -1,0 +1,38 @@
+---
+summary: Speed up launch and viewing rooms by caching events.
+---
+assignee: manu
+created: 2014-12-15 17:12:46.0
+creator: matthew
+description: |-
+  The iOS app is alas almost unusable day-to-day currently because it doesn't cache any events at all clientside, and meanwhile initialSync and roomInitialSync take *way* too long to respond on the current synapse implementation, especially when synapse is being overloaded.
+
+  Whilst this will get a bit better shortly with erik's performance improvements, it's critical that we cache the events locally.
+
+  I don't care if this happens via a proper persistent coredata mxstore or something blunter and less sophisticated (the in-memory mxstore combined with blunt datastructure dumping at close/launch), but i think this is the top priority on the usability of the iOS app now.
+id: '10823'
+key: SYIOS-19
+number: '19'
+priority: '1'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-18 15:10:02.0
+status: '5'
+type: '2'
+updated: 2014-12-18 15:10:02.0
+votes: '0'
+watches: '2'
+workflowId: '10923'
+---
+actions:
+- author: manu
+  body: |-
+    Console now uses MXFileStore, a store based on MXMemoryStore.
+    It bumps MXMemoryStore data into the file system. At app launch, it rebuilds MXMemoryStore data from the stored files.
+  created: 2014-12-18 15:10:02.0
+  id: '11004'
+  issue: '10823'
+  type: comment
+  updateauthor: manu
+  updated: 2014-12-18 15:10:02.0

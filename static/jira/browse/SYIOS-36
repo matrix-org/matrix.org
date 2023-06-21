@@ -1,0 +1,24 @@
+---
+summary: Fix MXRoomStateDynamicTests testLiveEventsForScenario2 & testBackPaginationForScenario2 tests
+---
+created: 2014-12-23 09:57:57.0
+creator: manu
+description: |-
+  These tests have been disabled with Synapse 0.6.0 because they do not pass anymore and loop forever with this version.
+
+  Pb:
+  After building a room with scenario #2, this room is no more returned in the global initialSync as if the user does no more belong to it.
+id: '10857'
+key: SYIOS-36
+number: '36'
+priority: '3'
+project: '10200'
+reporter: manu
+status: '1'
+type: '1'
+updated: 2015-01-05 09:34:49.0
+votes: '0'
+watches: '1'
+workflowId: '10957'
+---
+actions: null

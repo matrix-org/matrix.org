@@ -1,0 +1,30 @@
+---
+summary: IRC AS could auto-pastebin large messages to avoid spamming
+---
+created: 2015-06-23 18:47:08.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11694'
+key: BOTS-64
+number: '64'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:53:37.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:53:37.0
+votes: '0'
+watches: '2'
+workflowId: '11795'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/56
+  created: 2016-06-02 10:53:37.0
+  id: '12971'
+  issue: '11694'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:53:37.0

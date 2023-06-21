@@ -1,0 +1,22 @@
+---
+summary: Content repository should have its own http client.
+---
+created: 2015-06-02 17:15:18.0
+creator: erikj
+description: ''
+id: '11609'
+key: SYN-403
+number: '403'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-06-16 10:40:25.0
+status: '5'
+type: '1'
+updated: 2015-06-16 10:40:25.0
+votes: '0'
+watches: '1'
+workflowId: '11710'
+---
+actions: null

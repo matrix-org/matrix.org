@@ -1,0 +1,28 @@
+---
+summary: Ability to see what rooms a user is in
+---
+created: 2015-06-09 16:49:48.0
+creator: matthew
+description: ''
+id: '11627'
+key: SPEC-183
+number: '183'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:24.0
+votes: '0'
+watches: '2'
+workflowId: '11728'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/513'
+  created: 2016-10-28 16:27:24.0
+  id: '13321'
+  issue: '11627'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:24.0

@@ -1,0 +1,30 @@
+---
+summary: specify a max displayname size
+---
+created: 2016-10-10 10:52:03.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  65K feels prone to abuse
+id: '12855'
+key: SPEC-463
+number: '463'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:49.0
+votes: '0'
+watches: '2'
+workflowId: '12955'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/715'
+  created: 2016-10-28 16:28:49.0
+  id: '13524'
+  issue: '12855'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:49.0

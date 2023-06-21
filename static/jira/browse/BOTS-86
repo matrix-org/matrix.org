@@ -1,0 +1,32 @@
+---
+summary: 'IRC AS: Error channel from bridge to matrix'
+---
+created: 2015-08-12 16:37:47.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Sometimes the bridge will fail to do things which can be resolved by a matrix user (e.g. setting power levels if the bridge isn't in charge). We should send notices to the affected matrix room from the AS user to indicate this. These notices won't be bridged to IRC because they originate from the bridge.
+id: '11789'
+key: BOTS-86
+number: '86'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:17:59.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:17:59.0
+votes: '0'
+watches: '2'
+workflowId: '11890'
+---
+actions:
+- author: kegan
+  body: '`develop` now has a feedback channel'
+  created: 2016-06-02 10:17:59.0
+  id: '12946'
+  issue: '11789'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:17:59.0

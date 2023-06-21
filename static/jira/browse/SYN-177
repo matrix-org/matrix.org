@@ -1,0 +1,76 @@
+---
+summary: Let's do github-style identicons for unknown users
+---
+created: 2014-11-25 21:45:37.0
+creator: matthew
+description: |-
+  Currently things get really ugly if you have fleets of users who haven't specified avatars (especially for IRC bridged users etc).
+
+  Let's give everyone github-style identicons - https://gist.github.com/richardkundl/9071847 looks like quite a fun implementation, although it'd make more sense to generate them in python serverside rather than in javascript clientside.  Eitherway, should be a quick fun hack to make the userlists less ugly and the bubbles more easily differentiatable.
+id: '10706'
+key: SYN-177
+number: '177'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-19 12:30:20.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:26:16.0
+votes: '0'
+watches: '3'
+workflowId: '10806'
+---
+actions:
+- author: kegan
+  body: This should really be done on the HS, not on the client. Proposing to move this to SYN.
+  created: 2014-11-26 17:00:14.0
+  id: '10860'
+  issue: '10706'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-26 17:00:14.0
+- author: matthew
+  body: oops, this was meant to be filed against SYN in the first place.
+  created: 2014-11-26 20:08:48.0
+  id: '10876'
+  issue: '10706'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-26 20:08:48.0
+- author: markjh
+  body: I've added a "/_matrix/media/v1/identicon/" API in https://github.com/matrix-org/synapse/pull/46
+  created: 2015-02-02 17:54:23.0
+  id: '11206'
+  issue: '10706'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-02-02 17:54:23.0
+- author: matthew
+  body: |-
+    Whilst we have an API, we're not using it anywhere.
+
+    As per RL discussion, Synapse should explicitly create identicon images as the avatar for users who sign-up and don't specify an avatar.  This ensures that the avatar of a user is consistent no matter who views it.  We can shove a URI fragment on the mxc URI to show that it's been automatically assigned, to allow exotic clients to override the avatar should they desire.
+  created: 2015-02-02 22:08:05.0
+  id: '11208'
+  issue: '10706'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-02 22:08:05.0
+- author: matthew
+  body: Also, we should go through and manually set identicons as the avatars for users on matrix.org who didn't specify avatars.
+  created: 2015-02-02 22:10:17.0
+  id: '11209'
+  issue: '10706'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-02 22:10:17.0
+- author: matthew
+  body: this all happened. (other than historical ones for matrix.org, which probably doesn't matter that much).
+  created: 2015-02-19 12:30:20.0
+  id: '11293'
+  issue: '10706'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-19 12:30:20.0

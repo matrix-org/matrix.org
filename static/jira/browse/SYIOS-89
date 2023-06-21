@@ -1,0 +1,33 @@
+---
+summary: Send images with right orientation
+---
+assignee: gforet
+created: 2015-02-19 17:11:54.0
+creator: matthew
+description: ''
+id: '11103'
+key: SYIOS-89
+number: '89'
+priority: '1'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-19 17:44:25.0
+status: '5'
+type: '2'
+updated: 2015-02-19 17:44:25.0
+votes: '0'
+watches: '2'
+workflowId: '11203'
+---
+actions:
+- author: gforet
+  body: |-
+    Already fixed, commit 0b5eff1fc83cd87139b44e5be8d0f9819100b6a5 (on develop).
+    build #354.
+  created: 2015-02-19 17:44:25.0
+  id: '11300'
+  issue: '11103'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-19 17:44:25.0

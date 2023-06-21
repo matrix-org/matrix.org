@@ -1,0 +1,58 @@
+---
+summary: 'Failed to get member presence '
+---
+assignee: erikj
+created: 2015-06-16 10:42:38.0
+creator: erikj
+description: |-
+  I'm seeing the following happening a lot:
+
+  {noformat}
+  2015-06-16 10:07:02,767 - synapse.handlers.message - 410 - ERROR - GET-17349 - Failed to get member presence of u'@er.ikj:jki.re'
+  Traceback (most recent call last):
+    File "synapse/handlers/message.py", line 405, in room_initial_sync
+      as_event=True,
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/presence.py", line 203, in get_state
+      state = yield self.store.get_presence_state(target_user.localpart)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/_base.py", line 462, in runInteraction
+      inner_func, *args, **kwargs
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/threadpool.py", line 196, in _worker
+      result = context.call(ctx, function, *args, **kwargs)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/context.py", line 118, in callWithContext
+      return self.currentContext().callWithContext(ctx, func, *args, **kw)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/context.py", line 81, in callWithContext
+      return func(*args,**kw)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/enterprise/adbapi.py", line 288, in _runWithConnection
+      result = func(conn, *args, **kw)
+    File "synapse/storage/_base.py", line 457, in inner_func
+      conn, desc, after_callbacks, func, *args, **kwargs
+    File "synapse/storage/_base.py", line 390, in _new_transaction
+      r = func(txn, *args, **kwargs)
+    File "synapse/storage/_base.py", line 838, in _simple_select_one_txn
+      raise StoreError(404, "No row found")
+  StoreError: 404: No row found
+  {noformat}
+id: '11650'
+key: SYN-413
+number: '413'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-08-28 10:55:49.0
+status: '5'
+type: '1'
+updated: 2015-08-28 10:55:49.0
+votes: '0'
+watches: '1'
+workflowId: '11751'
+---
+actions: null

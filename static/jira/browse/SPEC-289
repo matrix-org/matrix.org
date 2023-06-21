@@ -1,0 +1,84 @@
+---
+summary: User id comparisons should be case insensitive
+---
+created: 2014-10-27 08:38:49.0
+creator: matthew
+description: |-
+  I'm seeing more and more disasters with people failing to identify users correctly due to case sensitive IDs.  For instance Amandine's business cards say @amandine:matrix.org whereas she's registered as @Amandine:matrix.org.
+
+  Splitting this out from SYN-78
+id: '10488'
+key: SPEC-289
+number: '289'
+priority: '1'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-10-28 16:27:57.0
+votes: '0'
+watches: '3'
+workflowId: '10592'
+---
+actions:
+- author: markjh
+  body: |-
+    If we want any level of flexibility for this lookup we need the HS to implement mapping from printed user-id to actual matrix ID.
+
+    Unless we restrict the space of IDs to fit into ASCII then rigorously defining a case insensitive match is slightly painful.
+  created: 2014-11-04 11:13:09.0
+  id: '10723'
+  issue: '10488'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-04 11:13:09.0
+- author: markjh
+  body: Blocked by specifying a lookup API.
+  created: 2015-01-15 13:16:25.0
+  id: '11128'
+  issue: '10488'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-01-15 13:16:25.0
+- author: matthew
+  body: |-
+    The current plan of action on this (as discussed IRL yesterday evening is):
+
+     * Store IDs case-sensitively in the DB
+     * Compare them case-sensitively in the code & protocol
+     * Canonicalise them either at the origin client or origin HS by querying a lookup API on the destination HS (as per SPEC-62).  This adds a roundtrip, but it may be suppressable by combining with some other roundtrip.
+
+    Open questions are:
+     * Do you do the canonicalisation lookup from the origin client (yet another random thing to expect clients to remember to do, which they will never remember to)
+     * Do you do the canonicalisation lookup from the origin HS?
+     * Do you use a user alias->id (assuming user aliases were separated from underlying IDs) lookup to also perform the canonicalisation?
+  created: 2015-04-14 18:41:37.0
+  id: '11490'
+  issue: '10488'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-14 18:41:37.0
+- author: matthew
+  body: this looks to have been mistakenly closed; the problem is still glaringly open.
+  created: 2015-12-04 11:37:42.0
+  id: '12427'
+  issue: '10488'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-04 11:37:42.0
+- author: richvdh
+  body: A solution to this (at least for invites) is proposed at https://docs.google.com/document/d/1B7q_3ruJzeQTg-uJHe1UScxbVLzgm451c25OjpYcojI.
+  created: 2016-07-14 09:55:47.0
+  id: '13057'
+  issue: '10488'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-14 09:55:47.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/586'
+  created: 2016-10-28 16:27:57.0
+  id: '13394'
+  issue: '10488'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:57.0

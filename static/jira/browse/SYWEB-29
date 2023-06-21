@@ -1,0 +1,27 @@
+---
+summary: Improve room page content loading
+---
+assignee: manu
+created: 2014-09-16 09:44:37.0
+creator: manu
+description: |-
+  There is some flickering when opening a room. The user can see these steps:
+     - showing first the single most recent line of content
+     - and then the "top" of the history of the room
+     - and then scrolling down to the "bottom" of the history of the room
+id: '10100'
+key: SYWEB-29
+number: '29'
+priority: '1'
+project: '10004'
+reporter: manu
+resolution: '10000'
+resolutiondate: 2014-09-16 15:17:17.0
+status: '6'
+type: '1'
+updated: 2014-09-18 23:30:03.0
+votes: '0'
+watches: '1'
+workflowId: '10385'
+---
+actions: null

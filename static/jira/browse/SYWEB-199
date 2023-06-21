@@ -1,0 +1,39 @@
+---
+summary: Implement typing notifications
+---
+assignee: kegan
+created: 2014-12-01 12:28:49.0
+creator: kegan
+description: ''
+id: '10744'
+key: SYWEB-199
+number: '199'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-01-08 16:56:57.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:56.0
+votes: '0'
+watches: '1'
+workflowId: '10844'
+---
+actions:
+- author: kegan
+  body: Blocked on C-S API for this.
+  created: 2014-12-08 10:28:09.0
+  id: '10979'
+  issue: '10744'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-08 10:28:09.0
+- author: kegan
+  body: This is now implemented.
+  created: 2015-01-08 16:56:57.0
+  id: '11068'
+  issue: '10744'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-08 16:56:57.0

@@ -1,0 +1,30 @@
+---
+summary: banning, leaving etc should explicitly spell out that you need an access_token
+---
+created: 2016-03-26 21:28:05.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  http://matrix.org/docs/spec/r0.0.1/client_server.html#id128 makes it sound like you don't need one.
+id: '12584'
+key: SPEC-375
+number: '375'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:26.0
+votes: '0'
+watches: '2'
+workflowId: '12684'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/658'
+  created: 2016-10-28 16:28:26.0
+  id: '13467'
+  issue: '12584'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:26.0

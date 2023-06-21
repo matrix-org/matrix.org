@@ -1,0 +1,28 @@
+---
+summary: Voice/Video Call Type Switching
+---
+created: 2015-03-20 15:05:40.0
+creator: dbkr
+description: ''
+id: '11254'
+key: SPEC-129
+number: '129'
+priority: '3'
+project: '10001'
+reporter: dbkr
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:08.0
+votes: '0'
+watches: '2'
+workflowId: '11354'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/438'
+  created: 2016-10-28 16:27:08.0
+  id: '13288'
+  issue: '11254'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:08.0

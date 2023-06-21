@@ -1,0 +1,20 @@
+---
+summary: Redacted join events don't update in the UI unless you force a resync
+---
+created: 2015-12-26 10:22:29.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12247'
+key: SYIOS-191
+number: '191'
+priority: '3'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-12-26 10:22:29.0
+votes: '0'
+watches: '1'
+workflowId: '12350'
+---
+actions: null

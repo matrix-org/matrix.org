@@ -1,0 +1,28 @@
+---
+summary: We don't have a formal privacy policy. We need one.
+---
+created: 2015-03-08 18:18:57.0
+creator: matthew
+description: ''
+id: '11172'
+key: ORG-20
+number: '20'
+priority: '1'
+project: '10003'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2017-03-21 11:43:25.0
+votes: '0'
+watches: '2'
+workflowId: '11272'
+---
+actions:
+- author: richvdh
+  body: riot.im privacy policy is at https://riot.im/legal/Riot%20-%20Privacy%20Policy%20%252812%20September%202016%2529_Final.html, ftr. (catchy URL)
+  created: 2017-03-21 11:43:25.0
+  id: '14034'
+  issue: '11172'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:43:25.0

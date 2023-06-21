@@ -1,0 +1,30 @@
+---
+summary: API to disable users
+---
+created: 2016-06-13 22:04:21.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  See https://vector.im/develop/#/room/#freenode_#matrix:matrix.org/$146584875980tePPf:synapse.sirkit.pro for associated discussion
+id: '12708'
+key: SYN-710
+number: '710'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:37.0
+votes: '0'
+watches: '2'
+workflowId: '12808'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1556'
+  created: 2016-11-07 18:29:37.0
+  id: '13871'
+  issue: '12708'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:37.0

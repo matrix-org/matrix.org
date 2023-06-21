@@ -1,0 +1,31 @@
+---
+summary: Rewrite README.md
+---
+created: 2015-10-06 20:38:48.0
+creator: illicitonion
+description: |-
+  It's large and not structured to be useful to users right now.
+
+  It also lies quite a lot.
+id: '12005'
+key: SYN-498
+number: '498'
+priority: '2'
+project: '10000'
+reporter: illicitonion
+status: '1'
+type: '3'
+updated: 2016-11-07 18:28:27.0
+votes: '0'
+watches: '2'
+workflowId: '12108'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1398'
+  created: 2016-11-07 18:28:27.0
+  id: '13707'
+  issue: '12005'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:27.0

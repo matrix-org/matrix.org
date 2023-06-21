@@ -1,0 +1,31 @@
+---
+summary: Duplicate suppress HTTP requests to prevent synapse being DOSed.
+---
+created: 2015-08-25 14:07:56.0
+creator: markjh
+description: |-
+  If we receive a request which is identical to a request we are already processing we should use the result of the request we are already processing to respond to the new request.
+
+  Otherwise a client may give up on a request and submit an identical request, which will likely take an identical amount of processing time causing the client to give up on the request and submit an identical request....
+id: '11818'
+key: SYN-455
+number: '455'
+priority: '1'
+project: '10000'
+reporter: markjh
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:18.0
+votes: '0'
+watches: '2'
+workflowId: '11921'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1361'
+  created: 2016-11-07 18:28:18.0
+  id: '13683'
+  issue: '11818'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:18.0

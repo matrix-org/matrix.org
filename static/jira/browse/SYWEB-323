@@ -1,0 +1,30 @@
+---
+summary: Home page is confusing and duplicates existing elements
+---
+created: 2015-03-12 23:48:22.0
+creator: jan
+description: |-
+  It’s a bit confusing what the home page is good for:
+
+  * start chat / join room interface should be rolled into the main chat interface, in the sidebar where it relates to the channels which already exist
+  * recent conversations is already the sidebar in the main chat interface
+  * the only thing really separate is the »Public rooms« section
+
+  So here’s what could be changed:
+  * By default, the chat interface is opened instead of the home page
+  * In the sidebar there would be the means to join a new channel, and maybe suggested channels from the public channels
+  * The public channels list would be a separate thing you could open, similar to the settings view (also in modal manner, referencing SYWEB-322
+id: '11213'
+key: SYWEB-323
+number: '323'
+priority: '1'
+project: '10004'
+reporter: jan
+status: '10100'
+type: '4'
+updated: 2015-03-12 23:48:22.0
+votes: '0'
+watches: '1'
+workflowId: '11313'
+---
+actions: null

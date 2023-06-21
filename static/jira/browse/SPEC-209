@@ -1,0 +1,30 @@
+---
+summary: speccing a consistent baseline set of slash commands across clients
+---
+created: 2015-08-18 10:23:40.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Whether these are implemented by server, client sdks or clients appears to be controversial. But we should at least spec the commands that users should expect to work.
+id: '11806'
+key: SPEC-209
+number: '209'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:32.0
+votes: '0'
+watches: '2'
+workflowId: '11909'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/532'
+  created: 2016-10-28 16:27:32.0
+  id: '13340'
+  issue: '11806'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:32.0

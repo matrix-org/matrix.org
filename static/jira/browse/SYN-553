@@ -1,0 +1,38 @@
+---
+summary: Message was skipped from a /event request
+---
+created: 2015-12-17 15:57:29.0
+creator: markjh
+description: |-
+  A number of clients seem to have missed event "$14503483133jTbPT:v42.dk" from their /events response.
+
+  However if those users make requests to /events and to /messages with appropriate tokens they seem to return the event.
+
+  {code}
+  https://matrix.org/_matrix/client/api/v1/events?from=s8602206_61825_9120_269714_2701
+  https://matrix.org/_matrix/client/api/v1/rooms/!XqBunHwQIXUiqCaoxq:matrix.org/messages?from=t54497-0_0_0_0_0&dir=b&limit=1
+  {code}
+
+  [~markjh] thinks that this behaviour is consistent with the streaming token for an /events being advanced beyond that event before the persist_event transaction had completed. However that shouldn't be possible as synapse tracks which events have and haven't been persisted and only lets the stream token advance if all the events have been persisted.
+id: '12219'
+key: SYN-553
+number: '553'
+priority: '3'
+project: '10000'
+reporter: markjh
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:45.0
+votes: '0'
+watches: '2'
+workflowId: '12322'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1449'
+  created: 2016-11-07 18:28:45.0
+  id: '13752'
+  issue: '12219'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:45.0

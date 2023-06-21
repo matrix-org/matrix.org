@@ -1,0 +1,38 @@
+---
+summary: No m.presence keys
+---
+created: 2014-10-14 13:01:58.0
+creator: kegan
+description: ''
+id: '10472'
+key: SPEC-52
+number: '52'
+priority: '1'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-11-26 16:30:09.0
+status: '5'
+type: '1'
+updated: 2014-11-26 16:30:09.0
+votes: '0'
+watches: '2'
+workflowId: '10576'
+---
+actions:
+- author: leonerd
+  body: This will probably be done as part of SPEC-56
+  created: 2014-11-26 16:29:36.0
+  id: '10856'
+  issue: '10472'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 16:29:36.0
+- author: leonerd
+  body: Dupe SPEC-56
+  created: 2014-11-26 16:30:09.0
+  id: '10857'
+  issue: '10472'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 16:30:09.0

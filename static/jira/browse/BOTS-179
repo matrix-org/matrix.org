@@ -1,0 +1,23 @@
+---
+summary: NEB asks for JIRA URL on startup if not set
+---
+created: 2016-03-12 17:51:04.0
+creator: gergelypolonkai
+description: |-
+  If jira.json doesn't have a url key, NEB asks for one with raw_input. However, the on-screen logs cover the input message, and raw_input blocks the bot from starting, which is not very machine-friendly.
+
+  It should either fail to start (with a proper error message), or the JIRA plugin should automagically disable itself if the URL is not present.
+id: '12554'
+key: BOTS-179
+number: '179'
+priority: '3'
+project: '10101'
+reporter: gergelypolonkai
+status: '1'
+type: '1'
+updated: 2016-03-12 17:51:04.0
+votes: '0'
+watches: '1'
+workflowId: '12654'
+---
+actions: null

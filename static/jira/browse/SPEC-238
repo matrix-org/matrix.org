@@ -1,0 +1,28 @@
+---
+summary: Buddy pounce features
+---
+created: 2015-09-22 22:55:06.0
+creator: matthew
+description: ''
+id: '11929'
+key: SPEC-238
+number: '238'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:42.0
+votes: '0'
+watches: '2'
+workflowId: '12032'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/551'
+  created: 2016-10-28 16:27:42.0
+  id: '13359'
+  issue: '11929'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:42.0

@@ -1,0 +1,23 @@
+---
+summary: Update join state when someone changes their display name.
+---
+assignee: erikj
+created: 2014-09-16 12:41:36.0
+creator: erikj
+description: ''
+id: '10202'
+key: SYN-40
+number: '40'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '10000'
+resolutiondate: 2014-09-17 15:06:59.0
+status: '6'
+type: '1'
+updated: 2014-09-18 23:04:47.0
+votes: '0'
+watches: '1'
+workflowId: '10334'
+---
+actions: null

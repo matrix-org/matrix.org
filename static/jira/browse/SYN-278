@@ -1,0 +1,30 @@
+---
+summary: Content repo needs to store & serve up filenames
+---
+created: 2015-02-16 22:46:39.0
+creator: matthew
+description: ''
+id: '11079'
+key: SYN-278
+number: '278'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-02-19 15:26:31.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:11.0
+votes: '0'
+watches: '1'
+workflowId: '11179'
+---
+actions:
+- author: matthew
+  body: dup SYN-150
+  created: 2015-02-19 15:26:31.0
+  id: '11297'
+  issue: '11079'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-19 15:26:31.0

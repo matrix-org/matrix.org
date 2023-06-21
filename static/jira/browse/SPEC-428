@@ -1,0 +1,30 @@
+---
+summary: Spell out account_data in /sync doc, or that /sync is extensible by modules
+---
+created: 2016-07-16 10:21:43.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12750'
+key: SPEC-428
+number: '428'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-09-27 17:45:59.0
+status: '5'
+type: '1'
+updated: 2016-09-27 17:45:59.0
+votes: '0'
+watches: '2'
+workflowId: '12850'
+---
+actions:
+- author: richvdh
+  body: fixed by https://github.com/matrix-org/matrix-doc/pull/380
+  created: 2016-09-27 17:45:59.0
+  id: '13142'
+  issue: '12750'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:45:59.0

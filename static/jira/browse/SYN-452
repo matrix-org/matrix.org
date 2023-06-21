@@ -1,0 +1,60 @@
+---
+summary: we should provide a setting to supress msg contents in push notifs in general
+---
+created: 2015-08-18 21:16:08.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11808'
+key: SYN-452
+number: '452'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:17.0
+votes: '0'
+watches: '4'
+workflowId: '11911'
+---
+actions:
+- author: neb
+  body: 'By @matthew:matrix.org: this could be per room to avoid leaking msg contents unnecessarily to apple and google'
+  created: 2015-08-18 21:18:21.0
+  id: '12064'
+  issue: '11808'
+  type: comment
+  updateauthor: neb
+  updated: 2015-08-18 21:18:21.0
+- author: tfheen
+  body: |-
+    I tested this, and it works fine to just comment out https://github.com/matrix-org/synapse/blob/master/synapse/push/httppusher.py#L91-L92.
+
+    The IOS client at least then says "$user posted in $channel", so you lose the notification text, but if SYIOS-194 and SYAND-139 are fixed, we should be able to just drop those lines with no loss of functionality, I think.
+  created: 2016-03-28 19:18:31.0
+  id: '12774'
+  issue: '11808'
+  type: comment
+  updateauthor: tfheen
+  updated: 2016-03-28 19:18:31.0
+- author: matthew
+  body: |-
+    This bug is a mess, as it conflates together two things:
+     * A setting to let users say "please don't show contents of notifications in the lockscreen of my phone"
+     * An architectural change to never send push notification bodies to APNS or GCM, and instead transfer the body out-of-band of the push.
+
+    I've split out the latter into SYN-687
+  created: 2016-05-05 11:33:56.0
+  id: '12899'
+  issue: '11808'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-05-05 11:33:56.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1360'
+  created: 2016-11-07 18:28:17.0
+  id: '13682'
+  issue: '11808'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:17.0

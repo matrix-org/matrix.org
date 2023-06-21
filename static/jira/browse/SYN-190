@@ -1,0 +1,30 @@
+---
+summary: Add an "invite" level to power level events.
+---
+created: 2014-12-04 12:48:43.0
+creator: erikj
+description: ''
+id: '10772'
+key: SYN-190
+number: '190'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-04-29 19:28:09.0
+status: '5'
+type: '2'
+updated: 2015-11-30 13:54:17.0
+votes: '0'
+watches: '2'
+workflowId: '10872'
+---
+actions:
+- author: leonerd
+  body: This was implemented by https://github.com/matrix-org/synapse/commit/55fcf62e9cef9ef90dfdfc9f2fe3f6a6786780b8
+  created: 2015-04-29 19:28:09.0
+  id: '11608'
+  issue: '10772'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-29 19:28:09.0

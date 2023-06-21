@@ -1,0 +1,25 @@
+---
+summary: Remove EventFactory and have only one Event type rather than subtypes
+---
+created: 2014-11-10 17:23:28.0
+creator: matthew
+description: |-
+  During the "fix Synapse" workshop session, we concluded:
+   * EventFactory should be turned into an EventValidator (or we could use constructors to validate events)
+   * We should only have one Event object type, rather than loads of subtypes.
+id: '10638'
+key: SYN-135
+number: '135'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-15 11:04:37.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:26:17.0
+votes: '0'
+watches: '1'
+workflowId: '10738'
+---
+actions: null

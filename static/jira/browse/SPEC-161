@@ -1,0 +1,98 @@
+---
+summary: A generic way for homeservers to send useful utility information to clients
+---
+created: 2015-05-01 16:59:40.0
+creator: dbkr
+description: |-
+  Use cases include:
+
+   * Server name
+   * Message of the day (and/or Home Server brand image)
+   * TURN credentials
+
+  We should also decide on a base set of things that clients should expect to receive in this API.
+id: '11503'
+key: SPEC-161
+number: '161'
+priority: '2'
+project: '10001'
+reporter: dbkr
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:17.0
+votes: '0'
+watches: '3'
+workflowId: '11603'
+---
+actions:
+- author: dbkr
+  body: There has been discussion on adding server data to /sync in https://github.com/matrix-org/matrix-doc/pull/6
+  created: 2015-05-01 17:02:16.0
+  id: '11704'
+  issue: '11503'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-01 17:02:16.0
+- author: dbkr
+  body: |-
+    There is general consensus that we should use the /sync API for this and make it as similar as possible to existing mechanisms for syncing data.
+
+    There is ongoing discussion about how such data could be split between being returned by /login and /sync to get some data to the client earlier.
+  created: 2015-05-01 17:33:04.0
+  id: '11705'
+  issue: '11503'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-01 17:33:04.0
+- author: dbkr
+  body: |-
+    We have three ideas here:
+
+    1) Only the bare minimum necessary to proceed is returned by /login.
+        * Keeps API pure, clean & easy to understand
+
+    2) Certain other information may be returned by /login (but nothing that would also come in /sync)
+        * A halfway house between the two: improves perceived speed but still keeps API reasonably simple
+
+    3) Allow any set of keys/values to come down in response to /login that then may be updated by /sync
+        * Is not that hard since clients should just treat them as events & process them in the same way?
+        * Offers the most flexibility.
+  created: 2015-05-01 17:47:36.0
+  id: '11706'
+  issue: '11503'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-01 17:47:36.0
+- author: markjh
+  body: |-
+    I dislike option 3 because:
+    * It doesn't allow the client to filter what information comes down in the /login.
+    * Client developers may not release that the information that comes down in /login may be updated by information coming down in /sync. This will cause loads of subtle and annoying bugs.
+
+    I am happy with option 2 provided that:
+    * It doesn't return the unnecessary information by default, the client must explicitly ask for it. Otherwise clients on low bandwidth connections may find that their /sync gets stuck behind the /login response.
+    * The unnecessary information is only ever return informational, e.g. MOTD or server branding image, i.e nothing that will break the clients if they don't bother looking at it or cache it indefinitely.
+
+    The difference between Option 1 and Option 2 at this point is whether we give explicit recommendations on what unnecessary information to return. This entirely hinges on whether we can find a good use case where having this unnecessary information between /login and /sync will improve the UX.
+  created: 2015-05-01 18:15:31.0
+  id: '11707'
+  issue: '11503'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-05-01 18:15:31.0
+- author: dbkr
+  body: The user's matrix ID could also be returned here. It is currently sent on login/register but sending it in a call that the client can make subsequently would allow clients to work having just been given an access_token (as is the norm in OAuth).
+  created: 2015-05-07 15:22:18.0
+  id: '11726'
+  issue: '11503'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-07 15:22:18.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/500'
+  created: 2016-10-28 16:27:17.0
+  id: '13308'
+  issue: '11503'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:17.0

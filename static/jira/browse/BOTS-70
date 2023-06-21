@@ -1,0 +1,91 @@
+---
+summary: MatrixBridge ended up with a random nick
+---
+created: 2015-06-28 10:34:24.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  At some point, the MatrixBridge has ended up with the nick 5EXABJ6GG (a /whois indicates it is the bridge). No indication that the AS knowingly did this in the logs; I've seen Freenode rename nicks like this when there are netsplits, need to see how we can best detect this so we can reissue a /nick on the bridge itself.
+id: '11713'
+key: BOTS-70
+number: '70'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-06-29 10:50:53.0
+status: '5'
+type: '1'
+updated: 2015-06-29 10:50:53.0
+votes: '0'
+watches: '2'
+workflowId: '11814'
+---
+actions:
+- author: kegan
+  body: |-
+    Logs from IRC on 28/06 on #matrix-dev:
+    {code}
+    03:52 * MatrixBridge has quit (Remote host closed the connection)
+    03:56 * MatrixBridge (matrixirc@gateway/shell/matrix.org/x-ppbdqbcrjapyujex) has joined #matrix-dev
+    03:57 * MatrixBridge is now known as 5EXABJ6GG
+    03:57 * MatrixBridge (matrixirc@gateway/shell/matrix.org/x-gngdpbityeshsnky) has joined #matrix-dev
+    03:57 * MatrixBridge has quit (Remote host closed the connection)
+    {code}
+
+    Looks like the quits were caused by different exceptions caused by the IRC lib we're using:
+    {code}
+    2015-06-28 02:52:27 ERROR:main FATAL EXCEPTION
+    2015-06-28 02:52:27 ERROR:main TypeError: Cannot call method 'indexOf' of undefined
+        at /home/ircas/matrix-org/matrix-appservice-irc/node_modules/irc/lib/irc.js:272:53
+        at Array.forEach (native)
+        at Client.<anonymous> (/home/ircas/matrix-org/matrix-appservice-irc/node_modules/irc/lib/irc.js:259:26)
+        at Client.EventEmitter.emit (events.js:95:17)
+        at iterator (/home/ircas/matrix-org/matrix-appservice-irc/node_modules/irc/lib/irc.js:756:26)
+        at Array.forEach (native)
+        at Socket.<anonymous> (/home/ircas/matrix-org/matrix-appservice-irc/node_modules/irc/lib/irc.js:751:15)
+        at Socket.EventEmitter.emit (events.js:95:17)
+        at Socket.<anonymous> (_stream_readable.js:746:14)
+        at Socket.EventEmitter.emit (events.js:92:17)
+    2015-06-28 02:52:27 ERROR:main Terminating (exitcode=1)
+    {code}
+
+    {code}
+    2015-06-28 02:55:37 ERROR:main FATAL EXCEPTION
+    2015-06-28 02:55:37 ERROR:main TypeError: Cannot call method 'replace' of undefined
+        at /home/ircas/matrix-org/matrix-appservice-irc/node_modules/irc/lib/irc.js:278:71
+        at Array.forEach (native)
+        at Client.<anonymous> (/home/ircas/matrix-org/matrix-appservice-irc/node_modules/irc/lib/irc.js:259:26)
+        at Client.EventEmitter.emit (events.js:95:17)
+        at iterator (/home/ircas/matrix-org/matrix-appservice-irc/node_modules/irc/lib/irc.js:756:26)
+        at Array.forEach (native)
+        at Socket.<anonymous> (/home/ircas/matrix-org/matrix-appservice-irc/node_modules/irc/lib/irc.js:751:15)
+        at Socket.EventEmitter.emit (events.js:95:17)
+        at Socket.<anonymous> (_stream_readable.js:746:14)
+        at Socket.EventEmitter.emit (events.js:92:17)
+    2015-06-28 02:55:37 ERROR:main Terminating (exitcode=1)
+    {code}
+
+    These exceptions are throw by the channel user modes processing code when {{channel.users\[user\]}} is {{undefined}}.
+  created: 2015-06-29 09:35:09.0
+  id: '11925'
+  issue: '11713'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-29 09:35:09.0
+- author: kegan
+  body: 'This commit fixes the exceptions: https://github.com/martynsmith/node-irc/commit/d3777983d133daa72ccf93a94b2f4dde2b9723a0 which is in {{0.3.12}}. Updated min version.'
+  created: 2015-06-29 10:12:44.0
+  id: '11926'
+  issue: '11713'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-29 10:12:44.0
+- author: kegan
+  body: Exceptions fixed (using node-irc 0.3.12) and nick change fixed with test.
+  created: 2015-06-29 10:50:53.0
+  id: '11927'
+  issue: '11713'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-29 10:50:53.0

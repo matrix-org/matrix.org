@@ -1,0 +1,37 @@
+---
+summary: 'olm: olm_account_identity_keys content not documented, can''t extract keys individually?'
+---
+created: 2017-01-29 20:16:25.0
+creator: penguin42
+description: |-
+  (I can't find anywhere else to report olm bugs?!)
+  I *think* olm_account_identity_keys generates a chunk of JSON containing the identity keys, but olm.h doesn't say.
+  It's actually a pain it works this way; I'm building JSON structures using glib so am now going to have to parse this JSON to extract them so I can stuff them back into my own JSON structure.
+  (I suspect this might also get the 'algorithms' list which I also need, but which again I don't see a way to get out of olm.h)
+id: '13000'
+key: ORG-69
+number: '69'
+priority: '3'
+project: '10003'
+reporter: penguin42
+resolution: '3'
+resolutiondate: 2017-03-21 11:40:43.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:40:43.0
+votes: '0'
+watches: '2'
+workflowId: '13100'
+---
+actions:
+- author: richvdh
+  body: |-
+    Yup, there is no way to extract the keys individually.
+
+    In general a wish has been expressed for lower-level APIs to libolm which don't do some of the JSON/base64 wrapping. I've raised https://github.com/matrix-org/olm/issues/1 to track it.
+  created: 2017-03-13 12:15:38.0
+  id: '14001'
+  issue: '13000'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-13 12:15:38.0

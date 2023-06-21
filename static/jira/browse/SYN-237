@@ -1,0 +1,33 @@
+---
+summary: Improve tests.
+---
+created: 2015-01-12 22:09:56.0
+creator: erikj
+description: |-
+  Due to lack of time, the unit tests have bit rotted quite a bit.
+
+  The two main issues are:
+    1. Most code written in the past few months haven't had tests written for them.
+    2. The tests that are there difficult to debug and are hard to maintain (e.g. large amounts of boiler plate is duplicated everywhere)
+id: '10922'
+key: SYN-237
+number: '237'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:36.0
+votes: '0'
+watches: '2'
+workflowId: '11022'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1270'
+  created: 2016-11-07 18:27:36.0
+  id: '13588'
+  issue: '10922'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:36.0

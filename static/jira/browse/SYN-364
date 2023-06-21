@@ -1,0 +1,71 @@
+---
+summary: Unicode error running sytest against postgresql on jenkins.
+---
+created: 2015-04-28 17:03:39.0
+creator: markjh
+description: |-
+  [server 8001]:   File "/var/lib/jenkins/jobs/Synapse-NEB/workspace/synapse/storage/_base.py", line 326, in inner_func
+  [server 8001]:     *args, **kwargs
+  [server 8001]:   File "/var/lib/jenkins/jobs/Synapse-NEB/workspace/synapse/util/logutils.py", line 84, in wrapped
+  [server 8001]:     return f(*args, **kwargs)
+  [server 8001]:   File "/var/lib/jenkins/jobs/Synapse-NEB/workspace/synapse/storage/_base.py", line 451, in _simple_insert_txn
+  [server 8001]:     txn.execute(sql, values.values())
+  [server 8001]:   File "/var/lib/jenkins/jobs/Synapse-NEB/workspace/synapse/storage/_base.py", line 188, in execute
+  [server 8001]:     sql, *args, **kwargs
+  [server 8001]: UnicodeEncodeError: 'ascii' codec can't encode character u'\u2615' in position 1: ordinal not in range(128)
+id: '11400'
+key: SYN-364
+number: '364'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-04-29 13:17:38.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:07.0
+votes: '0'
+watches: '2'
+workflowId: '11500'
+---
+actions:
+- author: erikj
+  body: |-
+    The character set of the database was set to {{SQL_ASCII}}. 
+
+    Recreating the database with the following works:
+
+    {noformat}
+    CREATE DATABASE sytestjenkins ENCODING 'UTF8' LC_COLLATE='C' LC_CTYPE='C' template=template0 OWNER sytestjenkins;
+    {noformat}
+
+    We should make synapse check the postgres database is correctly set up before starting.
+  created: 2015-04-29 11:26:47.0
+  id: '11602'
+  issue: '11400'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-29 11:26:47.0
+- author: erikj
+  body: |-
+    Previous set up was:
+
+    {noformat}
+    postgres=# \l
+                                      List of databases
+         Name      |     Owner     | Encoding  | Collate | Ctype |   Access privileges   
+    ---------------+---------------+-----------+---------+-------+-----------------------
+     postgres      | postgres      | SQL_ASCII | C       | C     | 
+     sytestjenkins | sytestjenkins | SQL_ASCII | C       | C     | 
+     template0     | postgres      | SQL_ASCII | C       | C     | =c/postgres          +
+                   |               |           |         |       | postgres=CTc/postgres
+     template1     | postgres      | SQL_ASCII | C       | C     | =c/postgres          +
+                   |               |           |         |       | postgres=CTc/postgres
+    (4 rows)
+    {noformat}
+  created: 2015-04-29 11:27:30.0
+  id: '11603'
+  issue: '11400'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-29 11:27:30.0

@@ -1,0 +1,20 @@
+---
+summary: Webclient should be able to have profile_tag
+---
+created: 2015-03-06 15:34:28.0
+creator: dbkr
+description: ''
+id: '11166'
+key: SYWEB-312
+number: '312'
+priority: '3'
+project: '10004'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2015-03-06 15:34:28.0
+votes: '0'
+watches: '1'
+workflowId: '11266'
+---
+actions: null

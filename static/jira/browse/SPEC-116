@@ -1,0 +1,28 @@
+---
+summary: Add a way to list pushers.
+---
+created: 2015-02-25 14:29:15.0
+creator: dbkr
+description: ''
+id: '11138'
+key: SPEC-116
+number: '116'
+priority: '3'
+project: '10001'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2016-10-28 16:27:03.0
+votes: '0'
+watches: '2'
+workflowId: '11238'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/428'
+  created: 2016-10-28 16:27:03.0
+  id: '13279'
+  issue: '11138'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:03.0

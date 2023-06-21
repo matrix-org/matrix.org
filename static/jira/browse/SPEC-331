@@ -1,0 +1,30 @@
+---
+summary: Please can we spell out that /events has been deprecated by /sync?
+---
+created: 2016-01-21 00:47:49.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  And likewise any other old ex-v1 APIs
+id: '12329'
+key: SPEC-331
+number: '331'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:11.0
+votes: '0'
+watches: '2'
+workflowId: '12434'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/621'
+  created: 2016-10-28 16:28:11.0
+  id: '13429'
+  issue: '12329'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:11.0

@@ -1,0 +1,30 @@
+---
+summary: Why are our event schemas a mix of JSON and YAML?
+---
+created: 2016-03-04 18:39:41.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  core-event-schema is YAML, but the rest is JSON...
+id: '12545'
+key: SPEC-365
+number: '365'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:22.0
+votes: '0'
+watches: '2'
+workflowId: '12645'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/649'
+  created: 2016-10-28 16:28:22.0
+  id: '13458'
+  issue: '12545'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:22.0

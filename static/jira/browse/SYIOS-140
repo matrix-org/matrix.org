@@ -1,0 +1,23 @@
+---
+summary: Add support for canonical alias
+---
+assignee: gforet
+created: 2015-09-22 19:47:26.0
+creator: erikj
+description: ''
+id: '11910'
+key: SYIOS-140
+number: '140'
+priority: '3'
+project: '10200'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-11-26 14:08:52.0
+status: '5'
+type: '2'
+updated: 2015-11-26 14:08:52.0
+votes: '0'
+watches: '1'
+workflowId: '12013'
+---
+actions: null

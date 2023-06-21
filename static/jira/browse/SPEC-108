@@ -1,0 +1,70 @@
+---
+summary: Users should be able to delete/undelete messages.
+---
+created: 2015-02-16 01:40:52.0
+creator: matthew
+description: ''
+id: '11065'
+key: SPEC-108
+number: '108'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:27:00.0
+votes: '0'
+watches: '4'
+workflowId: '11165'
+---
+actions:
+- author: kegan
+  body: |-
+    What exactly needs to be specced here?
+     - If they are just deleting their view of the world, then surely just {{DELETE FROM messages WHERE event_id = ?}}
+     - If they are deleting shared state, we have redactions.
+  created: 2015-03-05 13:59:24.0
+  id: '11352'
+  issue: '11065'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-05 13:59:24.0
+- author: illicitonion
+  body: Users can now redact their own messages. This probably covers enough of this use-case for us to care about.
+  created: 2015-12-10 15:54:23.0
+  id: '12462'
+  issue: '11065'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-12-10 15:54:23.0
+- author: matthew
+  body: |-
+    Please don't close bugs which describe features which are still open.
+
+    Redaction obliterates a message from all participants in a room.
+
+    Deletion lets you clean up your view of a conversation (e.g. deleting images you don't want to see or store, or ugly big messages) without impacting anyone else.
+
+    It's a valid use case which is entirely separate from redaction - although I agree it's probably lower than P1 priority.  The correct thing here is to deprioritise the bug rather than declare it invalid and close it.
+  created: 2015-12-10 16:02:56.0
+  id: '12464'
+  issue: '11065'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-10 16:02:56.0
+- author: matthew
+  body: 'In answer to Kegan''s question: it''s basically a matter of implementing per-message ACLs (or possibly filters), such that a user can say "please stop showing me this event".  Unsure how ''delete from messages'' would achieve this.'
+  created: 2015-12-10 16:04:01.0
+  id: '12465'
+  issue: '11065'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-10 16:04:13.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/420'
+  created: 2016-10-28 16:27:00.0
+  id: '13271'
+  issue: '11065'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:00.0

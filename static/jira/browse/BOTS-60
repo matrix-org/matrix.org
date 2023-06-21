@@ -1,0 +1,81 @@
+---
+summary: '/join #freenode_#node.js:matrix.org doesn''t work (no mapped msgs), perhaps as the canonical IRC channel name is #Node.js'
+---
+assignee: kegan
+created: 2015-06-20 23:14:55.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11682'
+key: BOTS-60
+number: '60'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-06-22 15:37:13.0
+status: '5'
+type: '1'
+updated: 2015-06-22 15:37:13.0
+votes: '0'
+watches: '3'
+workflowId: '11783'
+---
+actions:
+- author: kegan
+  body: |-
+    The proposed cause seems to be bang on:
+    {code}
+    2015-06-20 20:52:41 INFO:req [44lva8gjh52co] [M->I] onAliasQuery #freenode_#node.js:matrix.org
+    2015-06-20 20:52:41 INFO:req [44lva8gjh52co] [M->I] Mapped to #node.js on irc.freenode.net
+    2015-06-20 20:52:41 INFO:req [44lva8gjh52co] [M->I] Bot is now tracking channel.
+    2015-06-20 20:52:41 DEBUG:req [44lva8gjh52co] [M->I] POST https://matrix.org/_matrix/client/api/v1/createRoom (AS) Body: {"room_alias_name":"freenode_#node.js","name":"#node.js","visibility":"private"}
+
+    [...]
+
+    2015-06-20 20:52:42 INFO:req [2xx5gsfhmbk0k] [I->M] No mapped matrix rooms for IRC channel #Node.js
+    {code}
+
+    This isn't as simple as doing case-insensitve matches though as it brings up some interesting conundrums. We should probably map {{#freenode_#node.js:matrix.org}} and {{#freenode_#Node.js:matrix.org}} to the *same* room, else if you have one Matrix user in one room and one Matrix user in another room, there will be split history.
+  created: 2015-06-22 09:47:12.0
+  id: '11897'
+  issue: '11682'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-22 09:47:12.0
+- author: matthew
+  body: Surely the right solution here is to implement a room alias canonicalisation API like that implied by spec-1. There's no difference here to joining a pure matrix room using the wrong capitalisation of its alias and needing to be told the alias's canonical form.
+  created: 2015-06-22 09:51:50.0
+  id: '11898'
+  issue: '11682'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-22 09:51:50.0
+- author: kegan
+  body: |-
+    This may be the correct way, but fails to help right now given that the canonicalisation API would need to be specced, added to all client SDKs and implemented in all clients.
+
+    Proposed behaviour for the IRC AS now to fix the immediate problem would be:
+    {code}
+    onAliasQuery:
+      channel = case-insensitve match for channel
+      if channel:
+        create new alias and map to mapped room ID. 
+      else:
+        create the room with the given alias.
+    {code}
+
+    This would also require case-insensitive matching on incoming IRC messages (e.g. {{#Node.js}} to map correctly to {{#node.js}}). Incoming Matrix messages should just work since the ircd will treat {{#node.js}} and {{#Node.js}} as the same. Need to add integration tests for these new cases.
+  created: 2015-06-22 10:02:29.0
+  id: '11899'
+  issue: '11682'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-22 10:02:29.0
+- author: kegan
+  body: All working now.
+  created: 2015-06-22 15:37:13.0
+  id: '11903'
+  issue: '11682'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-22 15:37:13.0

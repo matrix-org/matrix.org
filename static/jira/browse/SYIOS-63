@@ -1,0 +1,30 @@
+---
+summary: Calculate room names for 3+ members if no room name/alias
+---
+created: 2015-01-21 14:08:23.0
+creator: manu
+description: ''
+id: '10970'
+key: SYIOS-63
+number: '63'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-01-21 16:45:28.0
+status: '5'
+type: '1'
+updated: 2015-01-21 16:45:28.0
+votes: '0'
+watches: '2'
+workflowId: '11070'
+---
+actions:
+- author: m-ylecollen
+  body: should be fixed in  https://github.com/matrix-org/matrix-ios-sdk/commit/cbf9b7ac
+  created: 2015-01-21 16:45:28.0
+  id: '11177'
+  issue: '10970'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-21 16:45:28.0

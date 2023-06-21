@@ -1,0 +1,20 @@
+---
+summary: support native tunneling through orbot without iptables like chatsecure does
+---
+created: 2015-10-30 22:18:55.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12057'
+key: SYAND-148
+number: '148'
+priority: '3'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-10-30 22:18:55.0
+votes: '0'
+watches: '1'
+workflowId: '12160'
+---
+actions: null

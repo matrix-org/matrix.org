@@ -1,0 +1,35 @@
+---
+summary: /tokenrefresh can only be called once so is vulnerable to failure
+---
+created: 2016-04-18 17:10:49.0
+creator: richvdh
+description: |-
+  There is a problem if client sends the POST for a {{/tokenrefresh}} but for some reason does not receive the response; this leaves the client without a valid {{refresh_token}}.
+
+  Proposed solution is to allow (or better, require) the client to pass a client-generated secret. The HS should then allow re-use of the refresh token, provided the returned {{access_token}} / {{refresh_token}} have not been used since.
+
+  Alternative solution might be to not actually expire the {{refresh_token}} on successful {{/tokenrefresh}}, but instead to wait until the returned {{access_token}} / {{refresh_token}} are used.
+id: '12629'
+key: SPEC-386
+number: '386'
+priority: '3'
+project: '10001'
+reporter: richvdh
+resolution: '2'
+resolutiondate: 2016-10-06 18:07:05.0
+status: '5'
+type: '1'
+updated: 2016-10-06 18:07:05.0
+votes: '0'
+watches: '1'
+workflowId: '12729'
+---
+actions:
+- author: richvdh
+  body: We've decided to remove refresh tokens from the matrix spec (see https://github.com/matrix-org/matrix-doc/pull/395), so this is no longer required.
+  created: 2016-10-06 18:07:05.0
+  id: '13168'
+  issue: '12629'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 18:07:05.0

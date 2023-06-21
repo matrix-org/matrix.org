@@ -1,0 +1,22 @@
+---
+summary: Can we avoid leaking push message bodies to Apple by having the push be a simple prod to get the client to sync and display a local notif?
+---
+created: 2015-09-30 19:24:02.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  See syand-139 for the equivalent on android
+id: '11983'
+key: SYIOS-150
+number: '150'
+priority: '2'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-09-30 19:24:02.0
+votes: '0'
+watches: '1'
+workflowId: '12086'
+---
+actions: null

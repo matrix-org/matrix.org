@@ -1,0 +1,49 @@
+---
+summary: Calculate room names for 3+ members if no room name/alias
+---
+created: 2015-01-15 11:50:39.0
+creator: kegan
+description: |-
+  {code}
+  erikj likes the scheme where you just list participants
+  <Arathorn> it doesn't scale very well though
+  <Arathorn> just calling it "Creator's Group Chat" might be good enough
+  <Arathorn> and encourage users to rename the room
+  <kegan> hmm.. not sure.
+  <erikj> I think list of participants works quite well for small numbers of people, a lot better than "X's Group Chat"
+  <erikj> its how facebook does it
+  <erikj> I'm not sure how hang out or whatsapp does these things?
+  <kegan> my main gripe with these algorithmic ones is that it changes, so if people come and go I'm always like "hang on, what was the name of the room now?"
+  <kegan> so then in my head I end up keying off the timestamp
+  <kegan> but then again this is asking the purpose of room names: a unique thing to key off, or a summary of the room
+  <M-matthew> unique thing to key off.
+  <kegan> then we don't really want it to be changing then, do we?
+  <M-matthew> hence "X's Group Chat" suggestion
+  * kegan nods
+  <kegan> was just trying to work through the justification for it
+  <M-matthew> it's up to the client implementer
+  <M-matthew> but given the current webclient (and iOS) UI, i suggest we just do X's Group Chat for now
+  <kegan> it'll still presumably fall back to the other person's name if 3 members drop to 2
+  <M-matthew> sure.
+  * M-matthew dithers a bit
+  <M-matthew> perhaps erik's right
+  <M-matthew> as it's otherwise pretty inconsistent
+  <kegan> mmm
+  <M-matthew> okay, let's just go for list of names and see how it goes
+  {code}
+id: '10937'
+key: SYWEB-259
+number: '259'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-01-21 13:36:45.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:04.0
+votes: '0'
+watches: '1'
+workflowId: '11037'
+---
+actions: null

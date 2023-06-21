@@ -1,0 +1,20 @@
+---
+summary: Test GET /.../rooms/:room_id/messages with dir != "b"
+---
+created: 2015-11-19 18:54:01.0
+creator: leonerd
+description: ''
+id: '12120'
+key: SYT-40
+number: '40'
+priority: '3'
+project: '10300'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2015-11-19 18:54:01.0
+votes: '0'
+watches: '1'
+workflowId: '12223'
+---
+actions: null

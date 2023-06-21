@@ -1,0 +1,28 @@
+---
+summary: we should cache/track when users last spoke in a room for presence and idle-kicking etc
+---
+created: 2015-06-29 23:00:49.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11719'
+key: SPEC-197
+number: '197'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:29.0
+votes: '0'
+watches: '2'
+workflowId: '11820'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/524'
+  created: 2016-10-28 16:27:29.0
+  id: '13332'
+  issue: '11719'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:29.0

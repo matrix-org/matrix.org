@@ -1,0 +1,38 @@
+---
+summary: Reloading appservices
+---
+created: 2015-08-12 14:51:19.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  It would be nice to be able to add, modify or remove app service registrations at runtime without having to restart the HS to reload homeserver.yaml - something like ./load-appservice.py appservice-registration.yaml
+id: '11788'
+key: SYN-444
+number: '444'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:15.0
+votes: '0'
+watches: '3'
+workflowId: '11889'
+---
+actions:
+- author: neb
+  body: 'By @matthew:matrix.org: the API that it hits should probably be specced as a rest endpoint in the admin namespace to allow future automation. (obviously this admin endpoint should be heavily locked down and probably not getatable from the AS itself)'
+  created: 2015-08-12 14:54:56.0
+  id: '12059'
+  issue: '11788'
+  type: comment
+  updateauthor: neb
+  updated: 2015-08-12 14:54:56.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1354'
+  created: 2016-11-07 18:28:15.0
+  id: '13676'
+  issue: '11788'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:15.0

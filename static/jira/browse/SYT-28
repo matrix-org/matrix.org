@@ -1,0 +1,39 @@
+---
+summary: Test client-side search
+---
+assignee: markjh
+created: 2015-09-29 15:24:50.0
+creator: leonerd
+description: ''
+id: '11972'
+key: SYT-28
+number: '28'
+priority: '2'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2016-11-29 16:36:37.0
+status: '5'
+type: '2'
+updated: 2016-11-29 16:36:37.0
+votes: '0'
+watches: '3'
+workflowId: '12075'
+---
+actions:
+- author: markjh
+  body: I've started running some test for search https://github.com/matrix-org/sytest/pull/72
+  created: 2015-11-16 11:33:44.0
+  id: '12365'
+  issue: '11972'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-11-16 11:33:44.0
+- author: richvdh
+  body: Closing this as we have an initial test in place
+  created: 2016-11-29 16:36:37.0
+  id: '13947'
+  issue: '11972'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-29 16:36:37.0

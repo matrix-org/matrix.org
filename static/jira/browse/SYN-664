@@ -1,0 +1,140 @@
+---
+summary: Creating a room with remote invites fails
+---
+created: 2016-03-25 15:49:07.0
+creator: erikj
+description: |-
+  Report by @tfheen:matrix.org
+
+  {noformat}
+  mars 25 16:27:18 nixos.err.no synapse[19614]: synapse.access.http.8008: [POST-27] 178.255.151.162 - 8008 - Received request: POST /_matrix/client/api/v1/rooms/!txZowdOZZbUjfeOONe:err.no/invite?access_token=<redacted>
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.http.outbound: [POST-27] {PUT-O-1} [matrix.org, @tfheen:err.no] Sending request: PUT matrix://matrix.org, @tfheen:err.no/_matrix/federation/v1/invite/!txZowdOZZbUjfeOONe:err.no/$14589196388vQnQW:err.no
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.http.matrixfederationclient: [POST-27] {PUT-O-1} Sending request failed to matrix.org, @tfheen:err.no: PUT matrix://matrix.org, @tfheen:err.no/_matrix/federation/v1/invite/!txZowdOZZbUjfeOONe:err.no/$14589196388vQnQW:err.no: ValueError - ValueError: invalid literal for int() with base 10: 'err.no'
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.access.http.8008: [GET-28] 178.255.151.162 - 8008 - Received request: GET /_matrix/client/api/v1/rooms/!txZowdOZZbUjfeOONe:err.no/messages?access_token=<redacted>&dir=b&from=t1-1_3_0_1_1&limit=30
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.access.http.8008: [GET-28] 178.255.151.162 - 8008 - {@tfheen:err.no} Processed request: 8ms (6ms, 0ms) (0ms/2) 62B 200 "GET /_matrix/client/api/v1/rooms/!txZowdOZZbUjfeOONe:err.no/messages?access_token=<redacted>&dir=b&from=t1-1_3_0_1_1&limit=30 HTTP/1.1" "matrixConsole/0.6.2 (iPhone; iOS 9.3; Scale/2.00)"
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.access.http.8008: [POST-29] 178.255.151.162 - 8008 - Received request: POST /_matrix/client/v2_alpha/rooms/!txZowdOZZbUjfeOONe:err.no/receipt/m.read/$14589196387figCO:err.no?access_token=<redacted>
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.access.http.8008: [POST-29] 178.255.151.162 - 8008 - {@tfheen:err.no} Processed request: 105ms (4ms, 0ms) (97ms/2) 22B 200 "POST /_matrix/client/v2_alpha/rooms/!txZowdOZZbUjfeOONe:err.no/receipt/m.read/$14589196387figCO:err.no?access_token=<redacted> HTTP/1.1" "matrixConsole/0.6.2 (iPhone; iOS 9.3; Scale/2.00)"
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.access.http.8008: [GET-26] 178.255.151.162 - 8008 - {@tfheen:err.no} Processed request: 506ms (4ms, 2ms) (6ms/4) 245B 200 "GET /_matrix/client/v2_alpha/sync?access_token=<redacted>&since=s9_3_0_1_1&timeout=30000 HTTP/1.1" "matrixConsole/0.6.2 (iPhone; iOS 9.3; Scale/2.00)"
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.access.http.8008: [GET-30] 178.255.151.162 - 8008 - Received request: GET /_matrix/client/v2_alpha/sync?access_token=<redacted>&since=s9_3_0_2_1&timeout=30000
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.rest.client.v2_alpha.sync: [GET-30] /sync: user=DomainSpecificString(localpart=u'tfheen', domain=u'err.no'), timeout=30000, since='s9_3_0_2_1', set_presence='online', filter_id=None
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.http.matrixfederationclient: [POST-27] {PUT-O-1} Sending request failed to matrix.org, @tfheen:err.no: PUT matrix://matrix.org, @tfheen:err.no/_matrix/federation/v1/invite/!txZowdOZZbUjfeOONe:err.no/$14589196388vQnQW:err.no: ValueError - ValueError: invalid literal for int() with base 10: 'err.no'
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.access.http.8008: [PUT-31] 178.255.151.162 - 8008 - Received request: PUT /_matrix/client/api/v1/rooms/!txZowdOZZbUjfeOONe:err.no/typing/@tfheen:err.no?access_token=<redacted>
+  mars 25 16:27:19 nixos.err.no synapse[19614]: synapse.access.http.8008: [PUT-31] 178.255.151.162 - 8008 - {@tfheen:err.no} Processed request: 4ms (4ms, 0ms) (0ms/0) 22B 200 "PUT /_matrix/client/api/v1/rooms/!txZowdOZZbUjfeOONe:err.no/typing/@tfheen:err.no?access_token=<redacted> HTTP/1.1" "matrixConsole/0.6.2 (iPhone; iOS 9.3; Scale/2.00)"
+  mars 25 16:27:20 nixos.err.no synapse[19614]: synapse.http.matrixfederationclient: [POST-27] {PUT-O-1} Sending request failed to matrix.org, @tfheen:err.no: PUT matrix://matrix.org, @tfheen:err.no/_matrix/federation/v1/invite/!txZowdOZZbUjfeOONe:err.no/$14589196388vQnQW:err.no: ValueError - ValueError: invalid literal for int() with base 10: 'err.no'
+  mars 25 16:27:22 nixos.err.no synapse[19614]: synapse.http.matrixfederationclient: [POST-27] {PUT-O-1} Sending request failed to matrix.org, @tfheen:err.no: PUT matrix://matrix.org, @tfheen:err.no/_matrix/federation/v1/invite/!txZowdOZZbUjfeOONe:err.no/$14589196388vQnQW:err.no: ValueError - ValueError: invalid literal for int() with base 10: 'err.no'
+  mars 25 16:27:22 nixos.err.no synapse[19614]: synapse.http.outbound: [POST-27] {PUT-O-1} [matrix.org, @tfheen:err.no] Result: ValueError - ValueError: invalid literal for int() with base 10: 'err.no'
+  mars 25 16:27:22 nixos.err.no synapse[19614]: synapse.http.server: [POST-27] Failed handle request synapse.http.server._async_render on <synapse.rest.ClientRestResource object at 0x7f9cb90ca110>: <SynapseRequest at 0x7f9cb627d878 method=POST uri=/_matrix/client/api/v1/rooms/!txZowdOZZbUjfeOONe:err.no/invite?access_token=<redacted> clientproto=HTTP/1.1 site=8008>
+                                                Traceback (most recent call last):
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/http/server.py", line 104, in wrapped_request_handler
+                                                    yield d
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+                                                    result = result.throwExceptionIntoGenerator(g)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+                                                    return g.throw(self.type, self.value, self.tb)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/http/server.py", line 235, in _async_render
+                                                    callback_return = yield callback(request, *args)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+                                                    result = result.throwExceptionIntoGenerator(g)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+                                                    return g.throw(self.type, self.value, self.tb)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/rest/client/v1/room.py", line 489, in on_POST
+                                                    is_guest=is_guest,
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+                                                    result = result.throwExceptionIntoGenerator(g)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+                                                    return g.throw(self.type, self.value, self.tb)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/handlers/message.py", line 232, in create_and_send_event
+                                                    yield member_handler.change_membership(event, context, is_guest=is_guest)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+                                                    result = result.throwExceptionIntoGenerator(g)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+                                                    return g.throw(self.type, self.value, self.tb)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/handlers/room.py", line 448, in change_membership
+                                                    do_auth=do_auth,
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+                                                    result = result.throwExceptionIntoGenerator(g)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+                                                    return g.throw(self.type, self.value, self.tb)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/handlers/room.py", line 600, in _do_local_membership_update
+                                                    suppress_auth=(not do_auth),
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+                                                    result = result.throwExceptionIntoGenerator(g)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+                                                    return g.throw(self.type, self.value, self.tb)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/handlers/_base.py", line 238, in handle_new_client_event
+                                                    event,
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+                                                    result = result.throwExceptionIntoGenerator(g)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+                                                    return g.throw(self.type, self.value, self.tb)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/handlers/federation.py", line 549, in send_invite
+                                                    pdu=event
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+                                                    result = result.throwExceptionIntoGenerator(g)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+                                                    return g.throw(self.type, self.value, self.tb)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/federation/federation_client.py", line 509, in send_invite
+                                                    content=pdu.get_pdu_json(time_now),
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+                                                    result = result.throwExceptionIntoGenerator(g)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+                                                    return g.throw(self.type, self.value, self.tb)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/federation/transport/client.py", line 216, in send_invite
+                                                    data=content,
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+                                                    result = result.throwExceptionIntoGenerator(g)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+                                                    return g.throw(self.type, self.value, self.tb)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/http/matrixfederationclient.py", line 289, in put_json
+                                                    long_retries=long_retries,
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+                                                    result = g.send(result)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/http/matrixfederationclient.py", line 159, in _create_request
+                                                    send_request,
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/util/logcontext.py", line 271, in preserve_context_over_fn
+                                                    res = fn(*args, **kwargs)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/http/matrixfederationclient.py", line 150, in send_request
+                                                    producer
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/util/logcontext.py", line 271, in preserve_context_over_fn
+                                                    res = fn(*args, **kwargs)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/web/client.py", line 1594, in request
+                                                    endpoint = self._getEndpoint(parsedURI)
+                                                  File "/nix/store/7wimwv66ag4nra00x23cf949yj01y03w-python2.7-Twisted-15.5.0/lib/python2.7/site-packages/twisted/web/client.py", line 1578, in _getEndpoint
+                                                    return self._endpointFactory.endpointForURI(uri)
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/http/matrixfederationclient.py", line 72, in endpointForURI
+                                                    ssl_context_factory=self.tls_server_context_factory
+                                                  File "/nix/store/pi38nkgjs6jr4k6plwmdpgnvq4vz048b-matrix-synapse-0.12.0/lib/python2.7/site-packages/synapse/http/endpoint.py", line 44, in matrix_federation_endpoint
+                                                    port = int(domain_port[1]) if domain_port[1:] else None
+                                                ValueError: invalid literal for int() with base 10: 'err.no'
+  mars 25 16:27:22 nixos.err.no synapse[19614]: synapse.access.http.8008: [POST-27] 178.255.151.162 - 8008 - {@tfheen:err.no} Processed request: 3654ms (27ms, 4ms) (1ms/3) 67B 500 "POST /_matrix/client/api/v1/rooms/!txZowdOZZbUjfeOONe:err.no/invite?access_token=<redacted> HTTP/1.1" "matrixConsole/0.6.2 (iPhone; iOS 9.3; Scale/2.00)"
+  {noformat}
+id: '12582'
+key: SYN-664
+number: '664'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:19.0
+votes: '0'
+watches: '2'
+workflowId: '12682'
+---
+actions:
+- author: erikj
+  body: 'Logs: https://gist.githubusercontent.com/tfheen/e802ceca794f3dcf5d90/raw/d7bf6557fd836350b52831b2135afca4e6cb50eb/gistfile1.txt'
+  created: 2016-03-25 15:49:34.0
+  id: '12773'
+  issue: '12582'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-03-25 15:49:34.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1521'
+  created: 2016-11-07 18:29:19.0
+  id: '13830'
+  issue: '12582'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:19.0

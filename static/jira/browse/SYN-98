@@ -1,0 +1,44 @@
+---
+summary: Test failure "Oopsie" race condition
+---
+created: 2014-10-14 10:25:14.0
+creator: kegan
+description: |-
+  There was a CI test failure on commit https://github.com/matrix-org/synapse/commit/693d0b8f4562d79ca00e05ce0cfd2d8c7b175b59 which could only be reproduced on the CI box when coverage was turned on. It was 100% reproducible, on that box only. The next commit "fixed" it. This issue is here to serve as a marker for a known test race.
+
+  The test fails with:
+  {code}
+  [ERROR]
+  Traceback (most recent call last):
+  Failure: exceptions.Exception: 22 Oopsie
+
+  tests.test_state.StateTestCase.test_power_level_succeed
+  {code}
+
+  It turns out that this exception is thrown *in another test*: {{tests/test_distributor.py:test_signal_catch_no_suppress}}. Somehow, this exception is being thrown in a subsequent test sometimes.
+
+  http://matrix.org/jenkins/job/Synapse/13/
+id: '10467'
+key: SYN-98
+number: '98'
+priority: '2'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-11-25 16:57:49.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:37.0
+votes: '0'
+watches: '1'
+workflowId: '10571'
+---
+actions:
+- author: kegan
+  body: This has since been fixed.
+  created: 2014-11-25 16:57:49.0
+  id: '10840'
+  issue: '10467'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-25 16:57:49.0

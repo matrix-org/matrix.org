@@ -1,0 +1,48 @@
+---
+summary: Users should be able to "tag" rooms.
+---
+assignee: markjh
+created: 2015-09-03 16:03:18.0
+creator: markjh
+description: |-
+  Users should be able to set tags on rooms.
+
+  These tags would only be visible to that user.
+
+  These tags could be used to control where the room is displayed in the UI, For example rooms with a "favourite" tag could be moved to the top of the recents list.
+
+  These tags could be used in notification rules. For example to only send notifications for channels with a "work" tag during working hours.
+
+  These tags should appear in the room list displayed to the user.
+id: '11848'
+key: SPEC-218
+number: '218'
+priority: '1'
+project: '10001'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-12-10 15:42:15.0
+status: '5'
+type: '2'
+updated: 2015-12-10 15:42:15.0
+votes: '0'
+watches: '2'
+workflowId: '11951'
+---
+actions:
+- author: matthew
+  body: 'for the use case of persisting room UI layout info in the server, I suspect we should also include a way of recording the positioning/ordering of rooms in the user''s recents list.  (i.e. this is favourite #1, this is favourite #2, this is the bottom most of my ''archive'' tags) etc.'
+  created: 2015-09-03 17:12:38.0
+  id: '12094'
+  issue: '11848'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-03 17:12:38.0
+- author: markjh
+  body: https://github.com/matrix-org/matrix-doc/pull/132
+  created: 2015-11-02 18:33:49.0
+  id: '12294'
+  issue: '11848'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-11-02 18:33:49.0

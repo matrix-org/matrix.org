@@ -1,0 +1,28 @@
+---
+summary: allow push rules with finite lifespan (mute for 6 hours, stylee
+---
+created: 2015-08-16 18:29:09.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11798'
+key: SYN-447
+number: '447'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:16.0
+votes: '0'
+watches: '2'
+workflowId: '11900'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1356'
+  created: 2016-11-07 18:28:16.0
+  id: '13678'
+  issue: '11798'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:16.0

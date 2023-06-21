@@ -1,0 +1,30 @@
+---
+summary: Better audit trail for federated activity
+---
+created: 2016-08-27 21:19:07.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Would be interesting to say 'please list the interactions server X has had with my server
+id: '12809'
+key: SYN-757
+number: '757'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:57.0
+votes: '0'
+watches: '2'
+workflowId: '12909'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1590'
+  created: 2016-11-07 18:29:57.0
+  id: '13914'
+  issue: '12809'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:57.0

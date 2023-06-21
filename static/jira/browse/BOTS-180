@@ -1,0 +1,30 @@
+---
+summary: Report prometheus stats for irc joins/parts
+---
+created: 2016-03-17 11:27:15.0
+creator: matthew
+description: ''
+id: '12562'
+key: BOTS-180
+number: '180'
+priority: '1'
+project: '10101'
+reporter: matthew
+resolution: '10000'
+resolutiondate: 2016-06-02 09:37:36.0
+status: '6'
+type: '1'
+updated: 2016-06-02 09:37:36.0
+votes: '0'
+watches: '2'
+workflowId: '12662'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/35
+  created: 2016-06-02 09:37:36.0
+  id: '12936'
+  issue: '12562'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 09:37:36.0

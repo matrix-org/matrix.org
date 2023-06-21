@@ -1,0 +1,23 @@
+---
+summary: Pull-to-refresh to kick the eventstream
+---
+assignee: m-ylecollen
+created: 2015-10-16 15:04:50.0
+creator: gforet
+description: ''
+id: '12022'
+key: SYIOS-160
+number: '160'
+priority: '1'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-11-06 13:32:33.0
+status: '5'
+type: '2'
+updated: 2015-11-06 13:32:33.0
+votes: '0'
+watches: '1'
+workflowId: '12125'
+---
+actions: null

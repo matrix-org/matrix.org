@@ -1,0 +1,23 @@
+---
+summary: Message typing area size
+---
+created: 2015-03-12 23:35:49.0
+creator: jan
+description: |-
+  Currently the message input field extends the whole width. This is a bit strange since the display of the messages itself is narrower than that.
+
+  Better would be to have the input field be the same width as the messageTable, to have it properly aligned with the messages above.
+id: '11211'
+key: SYWEB-321
+number: '321'
+priority: '3'
+project: '10004'
+reporter: jan
+status: '10100'
+type: '4'
+updated: 2015-03-12 23:35:49.0
+votes: '0'
+watches: '1'
+workflowId: '11311'
+---
+actions: null

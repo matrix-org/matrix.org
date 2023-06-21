@@ -1,0 +1,25 @@
+---
+summary: Switching between rooms is horribly slow.
+---
+created: 2015-02-09 16:14:16.0
+creator: matthew
+description: |-
+  Sped it up a bit by disabling peity.  Need to:
+   1) swap peity out for static piecharts (just pre-render 20 or so and pull them is as pngs)
+   2) consider keeping a cache of rooms in the DOM and hiding/showing as needed.
+id: '11023'
+key: SYWEB-275
+number: '275'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-02 17:35:48.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:58.0
+votes: '0'
+watches: '1'
+workflowId: '11123'
+---
+actions: null

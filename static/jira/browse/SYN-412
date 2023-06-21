@@ -1,0 +1,369 @@
+---
+summary: Notifiers are leaking again
+---
+created: 2015-06-16 10:21:43.0
+creator: erikj
+description: ''
+id: '11649'
+key: SYN-412
+number: '412'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-06-18 12:01:39.0
+status: '5'
+type: '1'
+updated: 2015-06-18 12:02:12.0
+votes: '0'
+watches: '1'
+workflowId: '11750'
+---
+actions:
+- author: erikj
+  body: '{{_NotifierUserStream.listeners}} seem to be keeping 100s of {{_NotificationListener}} around'
+  created: 2015-06-17 10:41:22.0
+  id: '11875'
+  issue: '11649'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-17 10:41:22.0
+- author: erikj
+  body: It appears that most {{_NotificationListener}} haven't been notified.
+  created: 2015-06-17 13:57:19.0
+  id: '11880'
+  issue: '11649'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-17 13:57:19.0
+- author: erikj
+  body: |-
+    Looks like the timeouts aren't working correctly.
+
+    {noformat}
+    >>> for l in sorted(objgraph.by_type("_NotificationListener"), key=lambda l: l.created): print not l.notified, datetime.fromtimestamp(l.created/1000).strftime(' %H:%M:%S'), l.timeout/1000
+    False  15:40:49 27
+    False  15:40:49 28
+    False  15:40:50 27
+    False  15:40:58 32
+    False  15:40:58 31
+    False  15:41:18 27
+    False  15:41:21 31
+    False  15:41:21 30
+    False  15:41:22 27
+    False  15:41:29 27
+    False  15:41:32 28
+    False  15:41:48 27
+    False  15:41:52 29
+    False  15:41:53 31
+    False  15:41:54 32
+    False  15:41:57 31
+    False  15:42:02 31
+    False  15:42:02 28
+    False  15:42:21 32
+    False  15:42:22 28
+    False  15:42:24 32
+    False  15:42:29 28
+    False  15:42:34 31
+    False  15:42:36 32
+    False  15:42:54 31
+    False  15:42:54 28
+    False  15:42:59 30
+    False  15:43:00 32
+    False  15:43:05 29
+    False  15:43:15 32
+    False  15:43:25 30
+    False  15:43:26 31
+    False  15:43:29 28
+    False  15:43:29 29
+    False  15:43:36 30
+    False  15:43:37 31
+    False  15:43:51 31
+    False  15:43:58 29
+    False  15:43:59 32
+    False  15:44:00 30
+    False  15:44:06 28
+    False  15:44:10 229
+    False  15:44:10 337
+    False  15:44:12 27
+    False  15:44:28 27
+    False  15:44:30 32
+    False  15:44:31 29
+    False  15:44:33 32
+    False  15:44:34 253
+    False  15:44:34 291
+    False  15:44:36 255
+    False  15:44:36 342
+    False  15:44:38 30
+    False  15:44:40 259
+    False  15:44:40 266
+    False  15:44:41 260
+    False  15:44:41 232
+    False  15:44:51 30
+    False  15:44:51 270
+    False  15:44:51 276
+    False  15:44:53 271
+    False  15:44:53 356
+    False  15:44:55 353
+    False  15:44:55 273
+    False  15:44:55 269
+    False  15:44:55 273
+    False  15:44:55 292
+    False  15:44:57 28
+    False  15:44:57 340
+    False  15:44:57 276
+    False  15:44:57 302
+    False  15:44:59 27
+    False  15:44:59 279
+    False  15:45:02 27
+    False  15:45:03 282
+    False  15:45:03 254
+    False  15:45:04 283
+    False  15:45:04 243
+    False  15:45:07 286
+    False  15:45:07 251
+    False  15:45:08 31
+    False  15:45:09 29
+    False  15:45:12 278
+    False  15:45:16 295
+    False  15:45:16 288
+    False  15:45:18 297
+    False  15:45:18 264
+    False  15:45:24 32
+    False  15:45:27 29
+    False  15:45:30 309
+    False  15:45:30 278
+    False  15:45:31 30
+    False  15:45:32 28
+    False  15:45:34 312
+    False  15:45:34 316
+    False  15:45:37 315
+    False  15:45:37 245
+    False  15:45:37 315
+    False  15:45:37 341
+    False  15:45:38 27
+    False  15:45:41 320
+    False  15:45:41 285
+    False  15:45:44 337
+    False  15:45:47 32
+    False  15:45:49 328
+    False  15:45:49 230
+    False  15:45:51 330
+    False  15:45:51 367
+    False  15:45:58 336
+    False  15:45:58 336
+    False  15:45:58 282
+    False  15:45:58 337
+    False  15:45:58 282
+    False  15:45:58 371
+    False  15:45:59 31
+    False  15:45:59 27
+    False  15:45:59 337
+    False  15:46:00 32
+    False  15:46:02 341
+    False  15:46:02 261
+    False  15:46:04 343
+    False  15:46:04 253
+    False  15:46:05 30
+    False  15:46:12 32
+    False  15:46:13 352
+    False  15:46:13 242
+    False  15:46:16 27
+    False  15:46:16 31
+    False  15:46:20 359
+    False  15:46:20 291
+    False  15:46:21 27
+    False  15:46:21 360
+    False  15:46:21 330
+    False  15:46:24 363
+    False  15:46:24 292
+    False  15:46:28 27
+    False  15:46:29 29
+    False  15:46:34 32
+    False  15:46:35 29
+    False  15:46:36 375
+    False  15:46:36 273
+    False  15:46:40 379
+    False  15:46:40 291
+    False  15:46:42 30
+    False  15:46:44 383
+    False  15:46:44 295
+    False  15:46:44 28
+    False  15:46:48 31
+    False  15:46:48 27
+    False  15:46:50 30
+    False  15:46:50 389
+    False  15:46:50 269
+    False  15:47:00 30
+    False  15:47:00 30
+    False  15:47:06 29
+    False  15:47:11 28
+    False  15:47:14 30
+    False  15:47:15 30
+    False  15:47:19 28
+    False  15:47:19 31
+    False  15:47:20 31
+    False  15:47:32 30
+    False  15:47:33 32
+    False  15:47:35 27
+    False  15:47:44 32
+    False  15:47:45 30
+    False  15:47:49 27
+    False  15:47:50 31
+    False  15:47:52 32
+    False  15:47:52 32
+    False  15:47:55 333
+    False  15:47:55 332
+    False  15:47:55 30
+    False  15:47:59 30
+    False  15:48:01 27
+    False  15:48:01 30
+    False  15:48:02 30
+    False  15:48:03 27
+    False  15:48:04 31
+    False  15:48:04 31
+    False  15:48:05 29
+    False  15:48:05 27
+    False  15:48:06 30
+    False  15:48:10 291
+    False  15:48:10 313
+    False  15:48:10 28
+    False  15:48:10 27
+    False  15:48:10 304
+    False  15:48:10 27
+    False  15:48:10 32
+    False  15:48:10 32
+    False  15:48:10 27
+    False  15:48:10 300
+    False  15:48:10 224
+    False  15:48:10 290
+    False  15:48:10 309
+    False  15:48:10 284
+    False  15:48:10 382
+    False  15:48:10 378
+    False  15:48:10 327
+    False  15:48:10 273
+    False  15:48:10 269
+    False  15:48:10 29
+    False  15:48:10 285
+    False  15:48:10 302
+    False  15:48:10 300
+    False  15:48:10 329
+    False  15:48:10 32
+    False  15:48:10 361
+    False  15:48:10 243
+    False  15:48:10 307
+    False  15:48:10 321
+    False  15:48:10 28
+    False  15:48:10 28
+    False  15:48:10 319
+    False  15:48:10 367
+    False  15:48:10 30
+    False  15:48:10 30
+    False  15:48:10 30
+    False  15:48:10 284
+    False  15:48:10 244
+    False  15:48:10 29
+    False  15:48:10 307
+    False  15:48:10 256
+    False  15:48:10 306
+    False  15:48:10 235
+    False  15:48:10 299
+    False  15:48:10 322
+    False  15:48:10 248
+    False  15:48:10 309
+    False  15:48:10 346
+    False  15:48:10 389
+    False  15:48:10 307
+    False  15:48:10 383
+    False  15:48:10 31
+    False  15:48:10 340
+    False  15:48:10 286
+    False  15:48:10 29
+    False  15:48:10 30
+    False  15:48:10 27
+    False  15:48:10 27
+    False  15:48:10 293
+    False  15:48:10 256
+    False  15:48:10 28
+    False  15:48:10 289
+    False  15:48:10 290
+    False  15:48:10 335
+    False  15:48:10 301
+    False  15:48:10 324
+    False  15:48:10 28
+    False  15:48:10 27
+    False  15:48:10 28
+    False  15:48:10 32
+    False  15:48:10 31
+    False  15:48:10 30
+    False  15:48:10 330
+    False  15:48:10 244
+    False  15:48:10 327
+    False  15:48:10 249
+    False  15:48:10 273
+    False  15:48:10 253
+    False  15:48:10 31
+    False  15:48:10 27
+    False  15:48:10 246
+    False  15:48:10 224
+    False  15:48:10 29
+    False  15:48:10 270
+    False  15:48:10 248
+    False  15:48:10 300
+    False  15:48:10 311
+    False  15:48:10 29
+    False  15:48:10 29
+    False  15:48:10 32
+    False  15:48:11 27
+    False  15:48:11 32
+    False  15:48:11 30
+    False  15:48:11 31
+    False  15:48:11 31
+    False  15:48:11 32
+    False  15:48:11 28
+    False  15:48:11 29
+    False  15:48:11 28
+    False  15:48:11 30
+    False  15:48:11 32
+    False  15:48:11 32
+    False  15:48:11 31
+    False  15:48:11 30
+    False  15:48:11 31
+    False  15:48:11 31
+    False  15:48:11 32
+    False  15:48:11 28
+    False  15:48:11 28
+    False  15:48:11 27
+    False  15:48:12 31
+    False  15:48:12 28
+    False  15:48:12 28
+    False  15:48:13 31
+    False  15:48:13 29
+    False  15:48:13 28
+    False  15:48:14 28
+    False  15:48:16 30
+    False  15:48:16 29
+    False  15:48:16 31
+    False  15:48:17 28
+    False  15:48:17 27
+    False  15:48:18 32
+    False  15:48:24 27
+    False  15:48:24 27
+    False  15:48:26 28
+    False  15:48:26 31
+    {noformat}
+  created: 2015-06-17 15:48:56.0
+  id: '11882'
+  issue: '11649'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-17 15:49:28.0
+- author: erikj
+  body: Above comment is a lie, {{not l.notified}} should be {{l.notified()}}
+  created: 2015-06-18 12:02:12.0
+  id: '11885'
+  issue: '11649'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-18 12:02:12.0

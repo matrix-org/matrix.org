@@ -1,0 +1,49 @@
+---
+summary: Should m.login.password require a hashed password rather than a plaintext password?
+---
+created: 2016-03-30 18:21:09.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  To stop leaking human-intelligible passwords to synapse
+id: '12604'
+key: SPEC-378
+number: '378'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-03-30 18:51:55.0
+status: '5'
+type: '1'
+updated: 2016-03-30 18:51:55.0
+votes: '0'
+watches: '2'
+workflowId: '12704'
+---
+actions:
+- author: matthew
+  body: |-
+    Answer: probably not, based on:
+
+    <eternaleye>
+    I do have strong thoughts, specifically "please, for the love of $deity, don't"
+    It's unambiguously worse in every way
+    It complicates the spec, complicates clients, provides no security benefit whatsoever, and constitutes rolling your own crypto.
+    In fact, it weakens security, because now if either the prehash or the hash used to store it in the DB are collision-vulnerable, then some types of attacker have an easier time.
+
+    This is very close to SPEC-346 so closing as a dup thereof
+  created: 2016-03-30 18:51:47.0
+  id: '12800'
+  issue: '12604'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-30 18:51:47.0
+- author: matthew
+  body: dup SPEC-346
+  created: 2016-03-30 18:51:55.0
+  id: '12801'
+  issue: '12604'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-30 18:51:55.0

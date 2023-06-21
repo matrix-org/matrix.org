@@ -1,0 +1,41 @@
+---
+summary: Requesting a 128x128 cropped profile photo returns a 96x96 one still
+---
+assignee: erikj
+created: 2015-08-30 00:41:14.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  This makes the big avatars look horrible in vector. e.g. https://matrix.org/_matrix/media/v1/thumbnail/matrix.org/wfFyHupLRQPWoabaSLWFiNOx?width=128&height=128&method=crop as an example
+id: '11838'
+key: SYN-464
+number: '464'
+priority: '1'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-01-05 17:41:20.0
+status: '5'
+type: '1'
+updated: 2016-01-05 17:41:20.0
+votes: '0'
+watches: '2'
+workflowId: '11941'
+---
+actions:
+- author: erikj
+  body: This looks like its only an issue for {{method=crop}} and works correctly for {{method=scale}}
+  created: 2016-01-05 16:18:22.0
+  id: '12516'
+  issue: '11838'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 16:18:22.0
+- author: erikj
+  body: https://github.com/matrix-org/synapse/pull/464
+  created: 2016-01-05 17:32:37.0
+  id: '12518'
+  issue: '11838'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 17:32:37.0

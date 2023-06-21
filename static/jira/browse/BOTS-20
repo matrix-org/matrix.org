@@ -1,0 +1,50 @@
+---
+summary: IRC <--> Matrix messages unreliable
+---
+created: 2015-02-19 10:38:19.0
+creator: kegan
+description: |-
+  I was saying stuff on #matrix on internal IRC, and one of my messages was not sent to Matrix Internal.
+
+  IRC line that wasn't sent:
+  {code}
+  10:30am 19/02/2015
+  <kegan> Mjark, oh.
+  {code}
+
+  Previous IRC line that was successfully sent to Matrix:
+  {code}
+  10:30am 19/02/2015
+  <kegan> https://github.com/matrix-org/matrix-angular-sdk/commit/3b8de501b3486bbad5497b9e02c0789491fe6ac1
+  {code}
+
+  EDIT: And again, last night on Matrix internal the reverse happened. I said on Matrix:
+  {code}
+  19:42 19/02/2015 - Event ID = $14243749291512xIwDR:matrix.org
+  /me wastes his evening after discovering http://securityreactions.tumblr.com
+  {code}
+  And this was not relayed into #matrix.
+id: '11093'
+key: BOTS-20
+number: '20'
+priority: '1'
+project: '10101'
+reporter: kegan
+resolution: '5'
+resolutiondate: 2015-05-12 10:52:08.0
+status: '5'
+type: '1'
+updated: 2015-05-12 10:52:08.0
+votes: '0'
+watches: '1'
+workflowId: '11193'
+---
+actions:
+- author: kegan
+  body: This was with the perl one.
+  created: 2015-05-12 10:52:08.0
+  id: '11738'
+  issue: '11093'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-12 10:52:08.0

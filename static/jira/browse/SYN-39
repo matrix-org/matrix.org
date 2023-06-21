@@ -1,0 +1,31 @@
+---
+summary: We need to crypto-sign events per-HS and only accept crypto-valid events
+---
+assignee: markjh
+created: 2014-09-16 01:38:09.0
+creator: matthew
+description: ''
+id: '10078'
+key: SYN-39
+number: '39'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-14 19:23:17.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:06:41.0
+votes: '0'
+watches: '2'
+workflowId: '10372'
+---
+actions:
+- author: markjh
+  body: https://github.com/matrix-org/synapse/commit/de1ec90133031cf6
+  created: 2014-11-14 19:23:17.0
+  id: '10794'
+  issue: '10078'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-14 19:23:17.0

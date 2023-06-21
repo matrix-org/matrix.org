@@ -1,0 +1,28 @@
+---
+summary: Implement server level feedback.
+---
+created: 2015-01-14 13:22:09.0
+creator: erikj
+description: ''
+id: '10929'
+key: SYN-242
+number: '242'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:38.0
+votes: '0'
+watches: '2'
+workflowId: '11029'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1207'
+  created: 2016-11-07 18:27:38.0
+  id: '13592'
+  issue: '10929'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:38.0

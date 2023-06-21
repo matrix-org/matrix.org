@@ -1,0 +1,28 @@
+---
+summary: Implement a MXStore version with Realm
+---
+created: 2016-01-20 11:24:30.0
+creator: manu
+description: |-
+  https://realm.io
+
+  Lot of people move from CoreData to Realm. Reasons are: performance, better multithreading support, easier maintenance, etc...
+
+  FTR, MXCoreDataStore is not used because CoreData fails to handle thousands of state events a room can have. Indeed, CD is not good to handle thousands of entries changes in a db even with multithreading techniques advised by Apple.
+  For this case, MXCoreDataStore performance is worse than MXFileStore. That's why we continue to use the basic MXFileStore.
+
+  Realm could be a good candidate. It worths to test it.
+id: '12322'
+key: SYIOS-200
+number: '200'
+priority: '2'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '1'
+updated: 2016-01-20 11:24:30.0
+votes: '0'
+watches: '1'
+workflowId: '12427'
+---
+actions: null

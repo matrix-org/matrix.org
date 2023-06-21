@@ -1,0 +1,32 @@
+---
+summary: IRC virtual users are shown as a weird mix of @freenode_foo:matrix.org user IDs and displaynames
+---
+created: 2016-01-23 01:09:28.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  See #matrix:matrix.org/$145351116337607hGbfy:matrix.org for more details
+id: '12346'
+key: BOTS-158
+number: '158'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 11:06:44.0
+status: '5'
+type: '1'
+updated: 2016-06-02 11:06:44.0
+votes: '0'
+watches: '2'
+workflowId: '12451'
+---
+actions:
+- author: kegan
+  body: This is now fixed (ran the one-time script to fixup all `@freenode_` display names).
+  created: 2016-06-02 11:06:44.0
+  id: '12983'
+  issue: '12346'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 11:06:44.0

@@ -1,0 +1,55 @@
+---
+summary: Check the TLS certificate matches the fingerprint in the key response when connecting to a server over federation
+---
+created: 2015-08-28 14:29:59.0
+creator: markjh
+description: ''
+id: '11827'
+key: SYN-457
+number: '457'
+priority: '1'
+project: '10000'
+reporter: markjh
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:18.0
+votes: '1'
+watches: '2'
+workflowId: '11930'
+---
+actions:
+- author: richvdh
+  body: |-
+    why is this an important thing to do?
+
+    People are setting up their synapses with federation behind reverse-proxies and not telling synapse about the cert. If we ever fix it, we're going to break them. In the meantime, confusion reigns.
+  created: 2016-10-07 13:00:14.0
+  id: '13176'
+  issue: '11827'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-07 13:00:14.0
+- author: richvdh
+  body: (how do we cope with replacing certs on the reverse-proxy?)
+  created: 2016-10-07 13:03:20.0
+  id: '13177'
+  issue: '11827'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-07 13:03:20.0
+- author: richvdh
+  body: apparently we check the tls cert on first connection but not thereafter
+  created: 2016-10-07 13:18:12.0
+  id: '13180'
+  issue: '11827'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-07 13:18:12.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1362'
+  created: 2016-11-07 18:28:18.0
+  id: '13684'
+  issue: '11827'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:18.0

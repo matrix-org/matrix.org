@@ -1,0 +1,32 @@
+---
+summary: Inviting an IRC AS virtual user into an existing Matrix room should work.
+---
+created: 2015-10-05 21:22:58.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  I've seen people do this several times and be disappointed that it doesn't spontaneously create a private IRC channel which mirrors the Matrix room in question
+id: '12000'
+key: BOTS-125
+number: '125'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:24:04.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:24:04.0
+votes: '0'
+watches: '2'
+workflowId: '12103'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/44
+  created: 2016-06-02 10:24:01.0
+  id: '12952'
+  issue: '12000'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:24:01.0

@@ -1,0 +1,39 @@
+---
+summary: When you post a multiline message, the bubble vertical spacing gets confused.
+---
+assignee: gforet
+created: 2015-01-12 00:16:04.0
+creator: matthew
+description: ''
+id: '10907'
+key: SYIOS-50
+number: '50'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-14 13:06:23.0
+status: '5'
+type: '1'
+updated: 2015-01-14 13:06:23.0
+votes: '0'
+watches: '2'
+workflowId: '11007'
+---
+actions:
+- author: gforet
+  body: Reproduced - investigation in progress
+  created: 2015-01-13 08:41:45.0
+  id: '11109'
+  issue: '10907'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-13 08:41:45.0
+- author: gforet
+  body: fixed in v0.2.1
+  created: 2015-01-14 13:06:23.0
+  id: '11117'
+  issue: '10907'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-14 13:06:23.0

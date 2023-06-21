@@ -1,0 +1,38 @@
+---
+summary: Tab-complete is buggy
+---
+assignee: kegan
+created: 2014-09-16 00:06:29.0
+creator: matthew
+description: |-
+  First time you hit tab-complete it just blinks red at you.
+
+  You can't cycle back and forth through the whole list.  Instead it should calculate the possible hits and then cache them as you cycle, allowing you to wrap around and go backwards with shift-tab etc.
+
+  We should ditch the space between the trailing : and the nickname as it's ugly.
+
+  We might want to autocomplete usernames rather than full @foo:domain IDs.
+id: '10021'
+key: SYWEB-8
+number: '8'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-23 12:27:17.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:29.0
+votes: '0'
+watches: '2'
+workflowId: '10392'
+---
+actions:
+- author: manu
+  body: Full @foo:domain IDs autocompletion is nice when using IRC-style commands like "/ban @foo:domain". So, we should keep it.
+  created: 2014-09-16 09:10:42.0
+  id: '10100'
+  issue: '10021'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-16 09:10:42.0

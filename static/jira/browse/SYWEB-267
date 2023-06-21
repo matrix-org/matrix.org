@@ -1,0 +1,20 @@
+---
+summary: TURN fails between IPv6 and IPv4 networks
+---
+created: 2015-02-01 12:26:37.0
+creator: matthew
+description: ''
+id: '10991'
+key: SYWEB-267
+number: '267'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-02-01 12:26:37.0
+votes: '0'
+watches: '1'
+workflowId: '11091'
+---
+actions: null

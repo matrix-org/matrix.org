@@ -1,0 +1,75 @@
+---
+summary: Rejecting room invites
+---
+assignee: illicitonion
+created: 2015-08-28 15:24:22.0
+creator: markjh
+description: |-
+  It should be possible to reject an invite so that it is removed from the recent rooms list.
+  If an invite was rejected "A <invited_user> rejected <inviting_user>'s invite" message should appear in the room timeline.
+
+  Open Questions:
+  * Should it be possible to re-invite a user that has rejected an invite?
+
+  Proposal #1
+  =========
+  Set the "m.room.member" state to "leave".
+
+  Pro:
+  * Works with existing event schema.
+
+  Cons:
+  * Might collide with work to allow clients to view room history for rooms that they have left SPEC-216.
+
+  Proposal #2
+  =========
+  Set the "m.room.member" state to "reject".
+
+  Pros:
+  * Clearer and less likely to collide with existing states.
+
+  Cons:
+  * Requires new membership state.
+id: '11828'
+key: SPEC-215
+number: '215'
+priority: '1'
+project: '10001'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-12-10 15:42:48.0
+status: '5'
+type: '2'
+updated: 2015-12-10 15:42:48.0
+votes: '0'
+watches: '3'
+workflowId: '11931'
+---
+actions:
+- author: erikj
+  body: I would prefer using the existing state {{leave}} rather than adding a new state, since a new state would require all clients to update. Unless there is a reason why we need to keep track in the future of whether someone had been invited and then rejected the invite?
+  created: 2015-09-09 10:23:10.0
+  id: '12117'
+  issue: '11828'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-09-09 10:23:10.0
+- author: kegan
+  body: |-
+    I would also prefer to use the existing state {{leave}} rather than adding a new state.
+
+    My particular use case:
+    I am writing a conferencing bridge. I want to hangup the call from a user when they leave the room. I have to currently see if their membership is {{leave}} or {{ban}}, and if this went ahead, {{reject}} to know if they have state changed to not being in the room anymore. It would be nicer to have the reason split out from the actual state of the member e.g.:
+    {code}
+    content: {
+      membership: "leave",
+      reason_code: "reject"
+    }
+    {code}
+    NB: {{reason}} is already taken for the human readable reason why someone was kicked/banned - so opting for {{reason_code}} which also indicates the intent is for clients to be able to switch/case on it.
+  created: 2015-09-09 10:32:26.0
+  id: '12118'
+  issue: '11828'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-09 10:32:26.0

@@ -1,0 +1,43 @@
+---
+summary: IRC AS needs to allow people to register their virtual IRC client with NickServ
+---
+created: 2015-06-28 14:38:40.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Some channels (##chat) prevent you from speaking unless you're registered (unknown flag though, since that channel has +CPcntjf https://freenode.net/using_the_network.shtml ). Other channels have +r to prevent you from joining unless you're registered. Should the AS automatically register M- nicks with NickServ?
+id: '11714'
+key: BOTS-71
+number: '71'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-08-05 16:16:21.0
+status: '5'
+type: '1'
+updated: 2015-08-05 16:16:21.0
+votes: '0'
+watches: '2'
+workflowId: '11815'
+---
+actions:
+- author: kegan
+  body: |-
+    +r : This mode prevents users who are not identified to NickServ from joining the channel. Users will receive a server notice explaining this if they try to join. /mode #channel +q $~a can be used to prevent unregistered users from speaking in channel while allowing them to join
+
+    So in other words, the client can join but is being quieted with +q. We should be able to detect this.
+  created: 2015-06-28 14:41:52.0
+  id: '11924'
+  issue: '11714'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-28 14:41:52.0
+- author: kegan
+  body: Matrix users can register with NickServ by creating a 1:1 room with {{@freenode_NickServ:matrix.org}} then saying stuff like {{identify passw0rd}}. It's not SASL and it is being proxyed through the AS, but for registering IRC nicks it is adequate for now.
+  created: 2015-08-05 16:16:21.0
+  id: '12052'
+  issue: '11714'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-08-05 16:16:21.0

@@ -1,0 +1,57 @@
+---
+summary: 'Invited room: Show metadata and support rejection'
+---
+assignee: manu
+created: 2015-11-16 16:29:01.0
+creator: gforet
+description: ''
+id: '12109'
+key: SYIOS-174
+number: '174'
+priority: '1'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-12-03 09:39:24.0
+status: '5'
+type: '1'
+updated: 2015-12-03 09:39:24.0
+votes: '0'
+watches: '2'
+workflowId: '12212'
+---
+actions:
+- author: manu
+  body: |-
+    With https://github.com/matrix-org/matrix-ios-sdk/pull/42, the SDK processes and provides the information contained in invite_room_state.
+    The rejection can be done with [room leave].
+
+    Does this ticket concern only Vector? Do we have change Console UI?
+  created: 2015-12-02 14:41:14.0
+  id: '12413'
+  issue: '12109'
+  type: comment
+  updateauthor: manu
+  updated: 2015-12-02 14:41:14.0
+- author: gforet
+  body: |-
+    iOS console should display metadata.
+    Rejection UI is expected at least on Vector.
+  created: 2015-12-03 09:24:57.0
+  id: '12421'
+  issue: '12109'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-12-03 09:24:57.0
+- author: manu
+  body: |-
+    Extract of "https://github.com/matrix-org/matrix-ios-sdk/pull/42":
+
+    A user can now get a subset of the room state when it is invited.
+    As MatrixKit is magic, thanks to this change in the SDK, the room name where the user is invited displays now the room name in the recents list [in console].
+  created: 2015-12-03 09:39:24.0
+  id: '12422'
+  issue: '12109'
+  type: comment
+  updateauthor: manu
+  updated: 2015-12-03 09:39:24.0

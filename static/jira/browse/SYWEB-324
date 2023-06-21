@@ -1,0 +1,25 @@
+---
+summary: Starting another chat with the same person creates a separate chat
+---
+created: 2015-03-12 23:54:05.0
+creator: jan
+description: |-
+  1. I have a chat with Brennan open
+  2. I go to Brennan’s profile and click »start chat« again
+  3. A new separate chat with Brennan opens
+
+  This is very confusing. Instead, the existing chat with that person should be opened. Otherwise you have two separate conversations with the same person – one might write in the first, the other in the second.
+id: '11214'
+key: SYWEB-324
+number: '324'
+priority: '2'
+project: '10004'
+reporter: jan
+status: '10100'
+type: '4'
+updated: 2015-03-12 23:54:05.0
+votes: '0'
+watches: '1'
+workflowId: '11314'
+---
+actions: null

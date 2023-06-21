@@ -1,0 +1,143 @@
+---
+summary: Register and login API bizarreness
+---
+created: 2016-04-14 17:55:21.0
+creator: leonerd
+description: |-
+  The following terminal log of {{curl}} requests demonstrates an amusing failure.
+
+  Start with a totally nuked database on a test homeserver. Then ask to create a user but accidentally specify the {{username}} parameter as simply {{user}}:
+
+  {noformat}
+  $ curl -k -XPOST -d '{"user":"example", "password":"wordpass", "auth": {"type":"m.login.dummy"}}' $HS/register
+  {
+      "access_token": "MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyNGNpZCB1c2VyX2lkID0gQDA6bG9jYWxob3N0OjgwODAKMDAxNmNpZCB0eXBlID0gYWNjZXNzCjAwMWRjaWQgdGltZSA8IDE0NjA2NTYxMTA0NzEKMDAyZnNpZ25hdHVyZSD2r_yCuVLSBPLsYecBajuacKgw8-mDdcN1tYYmqrdAmAo",
+      "home_server": "localhost:8080",
+      "refresh_token": "MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyNGNpZCB1c2VyX2lkID0gQDA6bG9jYWxob3N0OjgwODAKMDAxN2NpZCB0eXBlID0gcmVmcmVzaAowMDIxY2lkIG5vbmNlID0gXmU5ZXJxbGVLLkZfPXZ5LAowMDJmc2lnbmF0dXJlIFgSrH7heEUe9ZEFnkJRoRtel0TZxiLyUgHNHtaIKNd1Cg",
+      "user_id": "@0:localhost:8080"
+  }
+  {noformat}
+
+  The response shows it has created guest user 0. We then try to login anyway as the user we intended to create:
+
+  {noformat}
+  $ curl -k -XPOST -d '{"user":"example", "password":"wordpass", "type":"m.login.password"}' $HS/login
+  {
+      "access_token": "MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyYWNpZCB1c2VyX2lkID0gQGV4YW1wbGU6bG9jYWxob3N0OjgwODAKMDAxNmNpZCB0eXBlID0gYWNjZXNzCjAwMWRjaWQgdGltZSA8IDE0NjA2NTYxNDA1MDYKMDAyZnNpZ25hdHVyZSBx-GIhEH8y6w1z4_8Xau97BrS03jCha2xv4dZRy2PHEwo",
+      "home_server": "localhost:8080",
+      "refresh_token": "MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyYWNpZCB1c2VyX2lkID0gQGV4YW1wbGU6bG9jYWxob3N0OjgwODAKMDAxN2NpZCB0eXBlID0gcmVmcmVzaAowMDIxY2lkIG5vbmNlID0ga2pEST1vd0JnXlFvVjd6VAowMDJmc2lnbmF0dXJlIGR6rw-GGJx3VGlpHax55vuXmVsSZAy51D3TSh8t3fgNCg",
+      "user_id": "@example:localhost:8080"
+  }
+  {noformat}
+
+  This works and gives us an access token. Note carefully the returned user ID.
+
+  It turns out the parameters were ignored. We can supply any password we like, and get the same access token.
+
+  {noformat}
+  $ curl -k -XPOST -d '{"user":"example", "password":"XXX", "type":"m.login.password"}' $HS/login
+  {
+      "access_token": "MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyYWNpZCB1c2VyX2lkID0gQGV4YW1wbGU6bG9jYWxob3N0OjgwODAKMDAxNmNpZCB0eXBlID0gYWNjZXNzCjAwMWRjaWQgdGltZSA8IDE0NjA2NTYxNTU3MjQKMDAyZnNpZ25hdHVyZSA2cok_MY7e-mLEzU3TmShpof-ZbNmizR4UbGAoKktAPQo",
+      "home_server": "localhost:8080",
+      "refresh_token": "MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyYWNpZCB1c2VyX2lkID0gQGV4YW1wbGU6bG9jYWxob3N0OjgwODAKMDAxN2NpZCB0eXBlID0gcmVmcmVzaAowMDIxY2lkIG5vbmNlID0gZllxWHVYS0xpdFh4cnpXMAowMDJmc2lnbmF0dXJlIJTvufMK7czA8iRmeB7a6br5KqiMad_wpH37Xf6pJX-LCg",
+      "user_id": "@example:localhost:8080"
+  }
+  {noformat}
+
+  In fact, we don't even need to know a valid user ID; we can literally ask the server to give us an access token based on zero knowledge.
+
+  {noformat}
+  $ curl -k -XPOST -d '{"user":"XXX", "password":"XXX", "type":"m.login.password"}' $HS/login
+  {
+      "access_token": "MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyNmNpZCB1c2VyX2lkID0gQFhYWDpsb2NhbGhvc3Q6ODA4MAowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAxZGNpZCB0aW1lIDwgMTQ2MDY1NjE2OTMzNwowMDJmc2lnbmF0dXJlIK01a1DCZJQNOxZsOw0382OOzJGlOSDQY-V_tPyWlsPVCg",
+      "home_server": "localhost:8080",
+      "refresh_token": "MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyNmNpZCB1c2VyX2lkID0gQFhYWDpsb2NhbGhvc3Q6ODA4MAowMDE3Y2lkIHR5cGUgPSByZWZyZXNoCjAwMjFjaWQgbm9uY2UgPSBQckw6LVZJbmkrbWU2S2ouCjAwMmZzaWduYXR1cmUgR1qW3Oem3PPcEN9Q65XWbXXrK9Wt-Y5pgjmGGMpwwMkK",
+      "user_id": "@XXX:localhost:8080"
+  }
+  {noformat}
+
+  But if we try to actually log in as that actual user;
+
+  {noformat}
+  $ curl -k -XPOST -d '{"user":"0", "password":"XXX", "type":"m.login.password"}' $HS/login
+  {
+      "errcode": "M_FORBIDDEN",
+      "error": ""
+  }
+  {noformat}
+id: '12626'
+key: SYN-680
+number: '680'
+priority: '2'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2016-04-14 18:34:47.0
+status: '5'
+type: '1'
+updated: 2016-04-14 18:41:26.0
+votes: '0'
+watches: '2'
+workflowId: '12726'
+---
+actions:
+- author: leonerd
+  body: |-
+    By now inspecting the database, we find more oddness going on:
+
+    Every one of our {{/login}} requests has created an access token:
+
+    {noformat}
+    sqlite> select * from access_tokens;
+    2|@0:localhost:8080||MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyNGNpZCB1c2VyX2lkID0gQDA6bG9jYWxob3N0OjgwODAKMDAxNmNpZCB0eXBlID0gYWNjZXNzCjAwMWRjaWQgdGltZSA8IDE0NjA2NTYxMTA0NzEKMDAyZnNpZ25hdHVyZSD2r_yCuVLSBPLsYecBajuacKgw8-mDdcN1tYYmqrdAmAo|
+    3|@example:localhost:8080||MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyYWNpZCB1c2VyX2lkID0gQGV4YW1wbGU6bG9jYWxob3N0OjgwODAKMDAxNmNpZCB0eXBlID0gYWNjZXNzCjAwMWRjaWQgdGltZSA8IDE0NjA2NTYxNDA1MDYKMDAyZnNpZ25hdHVyZSBx-GIhEH8y6w1z4_8Xau97BrS03jCha2xv4dZRy2PHEwo|
+    4|@example:localhost:8080||MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyYWNpZCB1c2VyX2lkID0gQGV4YW1wbGU6bG9jYWxob3N0OjgwODAKMDAxNmNpZCB0eXBlID0gYWNjZXNzCjAwMWRjaWQgdGltZSA8IDE0NjA2NTYxNTU3MjQKMDAyZnNpZ25hdHVyZSA2cok_MY7e-mLEzU3TmShpof-ZbNmizR4UbGAoKktAPQo|
+    5|@XXX:localhost:8080||MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyNmNpZCB1c2VyX2lkID0gQFhYWDpsb2NhbGhvc3Q6ODA4MAowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAxZGNpZCB0aW1lIDwgMTQ2MDY1NjE2OTMzNwowMDJmc2lnbmF0dXJlIK01a1DCZJQNOxZsOw0382OOzJGlOSDQY-V_tPyWlsPVCg|
+    {noformat}
+
+    Yet, trying to use any of these access tokens to perform some API hit fails.
+
+    {noformat}
+    $ curl -k -XPOST -d '{}' $HS/createRoom?access_token=MDAxY2xvY2F0aW9uIGxvY2FsaG9zdDo4MDgwCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAyYWNpZCB1c2VyX2lkID0gQGV4YW1wbGU6bG9jYWxob3N0OjgwODAKMDAxNmNpZCB0eXBlID0gYWNjZXNzCjAwMWRjaWQgdGltZSA8IDE0NjA2NTYxNDA1MDYKMDAyZnNpZ25hdHVyZSBx-GIhEH8y6w1z4_8Xau97BrS03jCha2xv4dZRy2PHEwo
+    {
+        "errcode": "M_UNKNOWN_TOKEN",
+        "error": "Unrecognised access token."
+    }
+    {noformat}
+
+    This yields a line in synapse's log
+
+    {noformat}
+    2016-04-14 17:57:00,798 - synapse.http.server - 109 - INFO - POST-5- <SynapseRequest at 0x7fbbe8f32b90 method=POST uri=/_matrix/client/r0/createRoom?access_token=<redacted> clientproto=HTTP/1.1 site=8080> SynapseError: 403 - Unrecognised access token.
+    {noformat}
+
+    This is because while the access token exists, the actual user does not
+
+    {noformat}
+    sqlite> select * from users;
+    @0:localhost:8080|$2a$12$GR6nTcePr.4GX8Y1b9T8duSP7I8DOs3wtUbp/HZdW9YrmmRDutNe.|1460652510|0||0|
+    {noformat}
+
+    So the actual {{JOIN}} query that lives (currently) in {{synapse/storage/registration.py}} line 323 fails to match anything.
+  created: 2016-04-14 17:58:30.0
+  id: '12823'
+  issue: '12626'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-04-14 17:58:30.0
+- author: dbkr
+  body: https://github.com/matrix-org/synapse/pull/729
+  created: 2016-04-14 18:34:31.0
+  id: '12824'
+  issue: '12626'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-04-14 18:34:31.0
+- author: leonerd
+  body: https://github.com/matrix-org/sytest/pull/228
+  created: 2016-04-14 18:41:26.0
+  id: '12825'
+  issue: '12626'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-04-14 18:41:26.0

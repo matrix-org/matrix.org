@@ -1,0 +1,36 @@
+---
+summary: If another of my clients joins a room, webclient doesn't update its recents or state
+---
+assignee: kegan
+created: 2014-11-27 18:04:53.0
+creator: matthew
+description: ''
+id: '10733'
+key: SYWEB-191
+number: '191'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-03 15:05:57.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:54.0
+votes: '0'
+watches: '2'
+workflowId: '10833'
+---
+actions:
+- author: kegan
+  body: |-
+    Tested:
+     - Recents do update correctly.
+     - Room initial sync though isn't done, so no member list, etc.
+
+    Is there anything else?
+  created: 2014-12-01 14:32:42.0
+  id: '10905'
+  issue: '10733'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 14:32:42.0

@@ -1,0 +1,28 @@
+---
+summary: synctl start fails silently if not executed from your synapse homedir
+---
+created: 2014-11-26 01:05:43.0
+creator: matthew
+description: ''
+id: '10712'
+key: SYN-173
+number: '173'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:26.0
+votes: '0'
+watches: '2'
+workflowId: '10812'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1249'
+  created: 2016-11-07 18:27:26.0
+  id: '13567'
+  issue: '10712'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:26.0

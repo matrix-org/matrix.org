@@ -1,0 +1,28 @@
+---
+summary: List mechanism for pushers
+---
+created: 2015-02-25 14:30:05.0
+creator: dbkr
+description: ''
+id: '11139'
+key: SYN-292
+number: '292'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:45.0
+votes: '0'
+watches: '2'
+workflowId: '11239'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1289'
+  created: 2016-11-07 18:27:45.0
+  id: '13608'
+  issue: '11139'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:45.0

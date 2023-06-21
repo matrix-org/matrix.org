@@ -1,0 +1,25 @@
+---
+summary: Example should involve login, not registration
+---
+created: 2015-10-04 14:15:32.0
+creator: illicitonion
+description: |-
+  https://github.com/matrix-org/matrix-python-sdk
+
+  I've watched several people try to run this code against matrix.org, and get an error that a captcha is required to register.
+
+  We should make the example code actually work.
+id: '11994'
+key: PYT-4
+number: '4'
+priority: '3'
+project: '10202'
+reporter: illicitonion
+status: '10100'
+type: '1'
+updated: 2015-10-04 14:15:32.0
+votes: '0'
+watches: '2'
+workflowId: '12097'
+---
+actions: null

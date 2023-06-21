@@ -1,0 +1,28 @@
+---
+summary: swagger lies about url for /directory/room, and misses the /directory path element, says Xena
+---
+created: 2016-01-17 20:08:19.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12316'
+key: SPEC-328
+number: '328'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:10.0
+votes: '0'
+watches: '2'
+workflowId: '12421'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/618'
+  created: 2016-10-28 16:28:10.0
+  id: '13426'
+  issue: '12316'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:10.0

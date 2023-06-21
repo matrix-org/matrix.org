@@ -1,0 +1,46 @@
+---
+summary: Should room creators always be able to give themselves power?
+---
+created: 2016-03-19 21:41:25.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Currently if the admins accidentally deop themselves from a room, the room is screwed. Should we special-case whoever created the room to be able to fix that mess?
+id: '12569'
+key: SPEC-369
+number: '369'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '1'
+type: '4'
+updated: 2016-10-28 16:28:24.0
+votes: '0'
+watches: '3'
+workflowId: '12669'
+---
+actions:
+- author: neb
+  body: 'By @matthew:matrix.org: An interesting extension could be to formally have the concept of ''founder'' or ''ownership'', that can be xferred between users, but never de-owned (unlike you can de-op yourself)'
+  created: 2016-03-19 21:51:04.0
+  id: '12769'
+  issue: '12569'
+  type: comment
+  updateauthor: neb
+  updated: 2016-03-19 21:51:04.0
+- author: matthew
+  body: increasing priority given the number of people accidentally deopping themselves and having an orphaned room
+  created: 2016-07-03 08:22:33.0
+  id: '13042'
+  issue: '12569'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-07-03 08:22:33.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/652'
+  created: 2016-10-28 16:28:24.0
+  id: '13461'
+  issue: '12569'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:24.0

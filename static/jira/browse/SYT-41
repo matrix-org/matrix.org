@@ -1,0 +1,26 @@
+---
+summary: Add a "running status" oneline display in terminal output mode
+---
+assignee: leonerd
+created: 2015-11-19 20:06:14.0
+creator: leonerd
+description: |-
+  When in terminal mode, it might be nice to keep a running status of PASS/FAIL state, along with test count.
+
+  This could even display the number of tests still to run, once we have the two-phase "load and run" split that needs to happen.
+id: '12122'
+key: SYT-41
+number: '41'
+priority: '4'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-12-07 14:55:12.0
+status: '5'
+type: '4'
+updated: 2015-12-07 14:55:12.0
+votes: '0'
+watches: '1'
+workflowId: '12225'
+---
+actions: null

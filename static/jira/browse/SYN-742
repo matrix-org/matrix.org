@@ -1,0 +1,30 @@
+---
+summary: synctl restart doesn't work
+---
+created: 2016-07-31 22:53:43.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  on active servers it fails with 'twisted.internet.error.CannotListenError: Couldn't listen on any:8448: [Errno 98] Address already in use.' on trying to restart. running synctl start then continues to fail, saying that the address is still already in use. (did it fail to stop? did it already restart? who knows...). you then have to explicitly stop, wait and start again to bring things back
+id: '12778'
+key: SYN-742
+number: '742'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:49.0
+votes: '0'
+watches: '2'
+workflowId: '12878'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1577'
+  created: 2016-11-07 18:29:49.0
+  id: '13900'
+  issue: '12778'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:49.0

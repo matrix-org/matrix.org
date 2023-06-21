@@ -1,0 +1,34 @@
+---
+summary: Support for running "ad-hoc" servers
+---
+created: 2015-03-08 18:55:23.0
+creator: matthew
+description: |-
+  Lots of people have said they'd love to run a matrix server, but it'd cost too much to maintain a VPS.
+
+  It'd be fun to do the thought experiment to work out really what's needed to run a server clientside, e.g. on a phone.  Obvious things that come to mind are:
+
+   * A dialect of the s-s API which lets a firewalled server always initiate connections (be it long-poll or websockets or TURN or whatever), whilst somehow handling new invites?
+   * .well-known URIs or dyndns SRV or whatever for discovering where the server currently is (if folks are discovering it)
+id: '11175'
+key: SPEC-122
+number: '122'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:06.0
+votes: '0'
+watches: '2'
+workflowId: '11275'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/434'
+  created: 2016-10-28 16:27:06.0
+  id: '13284'
+  issue: '11175'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:06.0

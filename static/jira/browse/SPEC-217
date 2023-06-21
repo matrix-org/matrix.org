@@ -1,0 +1,56 @@
+---
+summary: Display the room name and other information about the room to invited users
+---
+created: 2014-11-26 17:07:12.0
+creator: kegan
+description: |-
+  Currently, if you're invited to a room, you only get the {{m.room.member}} event. This means you do not know the name of the room you're about to join, or any aliases. This makes display on a recents screen rather frustrating, opting for "so and so has invited you to a room".
+
+  Proposal # 1
+  =========
+  Exposing a subset of state events to invited users, like {{m.room.name}} and {{m.room.aliases}} in a room /initialSync or room /state request.
+
+  Proposal # 2
+  =========
+
+  Include a subset of the room state such as the name, and aliases within the invite event itself.
+id: '10718'
+key: SPEC-217
+number: '217'
+priority: '2'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-10-05 13:02:16.0
+status: '5'
+type: '2'
+updated: 2015-11-16 16:29:01.0
+votes: '0'
+watches: '2'
+workflowId: '10818'
+---
+actions:
+- author: erikj
+  body: This is blocked by client to server version 2.
+  created: 2015-01-15 13:23:32.0
+  id: '11131'
+  issue: '10718'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-15 13:23:32.0
+- author: erikj
+  body: |-
+    Federation has the problem that annoyingly the {{/invite}} API doesn't seem to have a wrapping object, i.e. the content _is_ the event, rather than having the event as a subkey. This is annoying.
+
+    Solutions:
+
+    # Create new API endpoint, new servers will try new API endpoint and then fallback to the old one.
+    # Hack the extra information into the unsigned bit of the event.
+    # Start thinking about a v2 federation API.
+    # Have the receiving server do a separate query for the current state of the invite event.
+  created: 2015-09-09 11:08:01.0
+  id: '12119'
+  issue: '10718'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-09-09 11:11:51.0

@@ -1,0 +1,28 @@
+---
+summary: Tweak xpath in URL previewing to ignore HTML hidden attributes
+---
+created: 2016-05-24 10:42:40.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12675'
+key: SYN-703
+number: '703'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:34.0
+votes: '0'
+watches: '2'
+workflowId: '12775'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1551'
+  created: 2016-11-07 18:29:34.0
+  id: '13865'
+  issue: '12675'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:34.0

@@ -1,0 +1,25 @@
+---
+summary: Creation of new room/chat via a "pen"-icon in the room list
+---
+created: 2015-07-27 14:12:42.0
+creator: bob
+description: |-
+  As a user I want to create a new room/chat via a "pen"-icon in the room list at the bottom right.
+
+  Like in Gmail.
+
+  In a chat the icon should not be displayed
+id: '11766'
+key: SYAND-106
+number: '106'
+priority: '3'
+project: '10201'
+reporter: bob
+status: '10100'
+type: '4'
+updated: 2015-07-27 14:12:42.0
+votes: '0'
+watches: '1'
+workflowId: '11867'
+---
+actions: null

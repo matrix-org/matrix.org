@@ -1,0 +1,102 @@
+---
+summary: We should switch to the using the new content repo for attachments & avatars
+---
+assignee: kegan
+created: 2014-12-11 18:07:06.0
+creator: matthew
+description: |-
+  The new content repo has landed, and is docced currently mainly at https://github.com/matrix-org/synapse/blob/develop/synapse/media/v1/media_repository.py#L28
+
+  We should switch to using it asap.  This means:
+   * Using relative rather than absolute URLs in the events
+   * Not bothering to generate client-side thumbnails, as the quality serverside is hopefully better
+   * Displaying thumbnails using the thumbnails API
+
+  Does this mean we should kill off the thumbnail_url field entirely from events?
+id: '10811'
+key: SYWEB-231
+number: '231'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-18 15:08:46.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:49.0
+votes: '0'
+watches: '3'
+workflowId: '10911'
+---
+actions:
+- author: markjh
+  body: Yep the thumbnail_url field can go away.
+  created: 2014-12-11 18:11:43.0
+  id: '10988'
+  issue: '10811'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-12-11 18:11:43.0
+- author: kegan
+  body: This will require changes to {{m.image}} spec. How are we supposed to send images to things which are not in the content repo?
+  created: 2014-12-12 09:44:00.0
+  id: '10989'
+  issue: '10811'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-12 09:44:00.0
+- author: kegan
+  body: 'This was clarified: we''re using {{mxc://}} uris to specify matrix content.'
+  created: 2014-12-15 09:34:04.0
+  id: '10993'
+  issue: '10811'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-15 09:34:04.0
+- author: kegan
+  body: |-
+    In the interests of including as much info as possible, this is what the API for the "new content repo" is:
+    {code}
+    File uploading and downloading.
+        Uploads are POSTed to a resource which returns a token which is used to GET
+        the download::
+            => POST /_matrix/media/v1/upload HTTP/1.1
+               Content-Type: <media-type>
+               <media>
+            <= HTTP/1.1 200 OK
+               Content-Type: application/json
+               { "content-uri": "mxc://<server-name>/<media-id>" }
+            => GET /_matrix/media/v1/download/<server-name>/<media-id> HTTP/1.1
+            <= HTTP/1.1 200 OK
+               Content-Type: <media-type>
+               Content-Disposition: attachment;filename=<upload-filename>
+               <media>
+        Clients can get thumbnails by supplying a desired width and height and
+        thumbnailing method::
+            => GET /_matrix/media/v1/thumbnail/<server_name>
+                    /<media-id>?width=<w>&height=<h>&method=<m> HTTP/1.1
+            <= HTTP/1.1 200 OK
+               Content-Type: image/jpeg or image/png
+               <thumbnail>
+        The thumbnail methods are "crop" and "scale". "scale" trys to return an
+        image where either the width or the height is smaller than the requested
+        size. The client should then scale and letterbox the image if it needs to
+        fit within a given rectangle. "crop" trys to return an image where the
+        width and height are close to the requested size and the aspect matches
+        the requested size. The client should scale the image if it needs to fit
+        within a given rectangle.
+    {code}
+  created: 2014-12-15 16:35:16.0
+  id: '10994'
+  issue: '10811'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-15 16:35:16.0
+- author: kegan
+  body: Fixed on {{annotated-events}} branch.
+  created: 2014-12-18 15:08:46.0
+  id: '11003'
+  issue: '10811'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-18 15:08:46.0

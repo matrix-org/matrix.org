@@ -1,0 +1,146 @@
+---
+summary: 'IRC AS: Duplicate messages matrix-side'
+---
+created: 2015-11-25 10:04:13.0
+creator: kegan
+description: |-
+  24 Nov 23:38
+
+  IRC Side:
+  {code}
+  23:38 * M-intelfx (intelfxint@gateway/shell/matrix.org/x-ywtwwlgnaeegvvln) has joined #matrix
+  23:38 <M-intelfx> The beta Vector client is very nice, btw.
+  23:40 <M-intelfx> Huh? Why am I duplicated by the IRC bridge? :)
+
+  23:57 * 20WACI3YG (intelfxmat@gateway/shell/matrix.org/x-qiadbxfsrtnuguyz) has joined #matrix
+  23:57 <20WACI3YG> Let's try this way.
+  {code}
+
+  Matrix side:
+  {code}
+  Ivan Shapovalov (@intelfx:intelfx.name): The beta Vector client is very nice, btw.
+  M-intelfx (IRC) joined the room.
+  M-intelfx (IRC): The beta Vector client is very nice, btw.
+  Ivan Shapovalov (@intelfx:intelfx.name): Huh? Why am I duplicated by the IRC bridge? :)
+  M-intelfx (IRC): Huh? Why am I duplicated by the IRC bridge? :)
+
+  intelfx (@intelfx:matrix.org): Let's try this way.
+  {code}
+
+  Logs:
+  {code}
+  2015-11-24 23:38:45 INFO:req [bbyxjzv0l3www] [M->I] m.room.message usr=@intelfx:intelfx.name rm=!cURbafjkfsMDVwdRDQ:matrix.org
+  2015-11-24 23:38:45 INFO:req [bbyxjzv0l3www] [M->I] Relaying message in #matrix on irc.freenode.net
+  2015-11-24 23:38:45 DEBUG:req [bbyxjzv0l3www] [M->I] Returning cached bridged client @intelfx:intelfx.name
+  2015-11-24 23:38:45 INFO:req [bbyxjzv0l3www] [M->I] Sending msg in #matrix as M-intelfx
+  2015-11-24 23:38:45 DEBUG:irc-client <M-intelfx@irc.freenode.net#a0j947z7d5sgk> (@intelfx:intelfx.name) Joining channel #matrix
+  2015-11-24 23:38:45 DEBUG:irc-client <M-intelfx@irc.freenode.net#a0j947z7d5sgk> (@intelfx:intelfx.name) Joined channel #matrix
+  2015-11-24 23:38:45 DEBUG:req [bbyxjzv0l3www] [M->I] SUCCESS - 391 ms
+
+
+  2015-11-24 23:38:47 INFO:req [jfxlq7c2ll440] [I->M] onMessage: irc.freenode.net from=M-intelfx (null@irc.freenode.net) to=#matrix
+  2015-11-24 23:38:47 DEBUG:matrix-js-sdk POST http://matrix.org/_matrix/client/v2_alpha/register (AS) Body: {"auth":{},"username":"freenode_M-intelfx"}
+  2015-11-24 23:38:50 INFO:req [jfxlq7c2ll440] [I->M] Mapped to {"isVirtual":true,"protocol":"matrix","userId":"@freenode_M-intelfx:matrix.org","displayName":"M-intelfx (IRC)"}
+  2015-11-24 23:38:52 DEBUG:req [jfxlq7c2ll440] [I->M] SUCCESS - 5651 ms
+  {code}
+
+  It should've picked up the I->M side was a virtual user, but it failed to. It thought it was using a cached client so the interesting bit is what is the state of that connection. The connection looked to be alive (receiving pings, though annoyingly we don't log the connection instance ID in this). The timings of the pings and the origin server is illuminating though:
+
+  {code}
+  2015-11-24 23:31:48 DEBUG:client-connection Received ping from cameron.freenode.net directed at M-intelfx
+  [24s]
+  2015-11-24 23:32:12 DEBUG:client-connection Received ping from asimov.freenode.net directed at M-intelfx
+  [1m 46s]
+  2015-11-24 23:33:58 DEBUG:client-connection Received ping from cameron.freenode.net directed at M-intelfx
+  [29s]
+  2015-11-24 23:34:27 DEBUG:client-connection Received ping from asimov.freenode.net directed at M-intelfx
+  [1m 41s]
+  2015-11-24 23:36:08 DEBUG:client-connection Received ping from cameron.freenode.net directed at M-intelfx
+  [34s]
+  2015-11-24 23:36:42 DEBUG:client-connection Received ping from asimov.freenode.net directed at M-intelfx
+  [1m  36s]
+  2015-11-24 23:38:18 DEBUG:client-connection Received ping from cameron.freenode.net directed at M-intelfx
+  {code}
+
+  You can clearly see pings from 2 servers, indicating 2 connection instances for this nick. Grepping further afield, it looks like:
+
+  {code}
+  2015-11-16 17:27:54 INFO:irc-client <M-intelfx@irc.freenode.net#a0j947z7d5sgk> (@intelfx:intelfx.name) Connecting to IRC server irc.freenode.net as M-intelfx (user=intelfxint)
+  2015-11-16 17:27:56 DEBUG:irc-client <M-intelfx@irc.freenode.net#a0j947z7d5sgk> (@intelfx:intelfx.name) connected!
+  2015-11-21 17:27:56 INFO:irc-client <M-intelfx@irc.freenode.net#a0j947z7d5sgk> (@intelfx:intelfx.name) Idle timeout has expired
+  2015-11-21 17:27:56 INFO:irc-client <M-intelfx@irc.freenode.net#a0j947z7d5sgk> (@intelfx:intelfx.name) Not disconnecting because irc.freenode.net is mirroring matrix membership lists
+  {code}
+
+  His matrix.org user:
+
+  {code}
+  2015-11-16 17:28:39 INFO:irc-client <M-intelfx@irc.freenode.net#bion5hs2eo848> (@intelfx:matrix.org) Connecting to IRC server irc.freenode.net as M-intelfx (user=intelfxmat)
+  2015-11-16 17:28:41 DEBUG:client-pool Connected with nick 'M-intelfx1' instead of desired nick 'M-intelfx'
+  2015-11-22 03:43:38 ERROR:client-connection M-intelfx@irc.freenode.net: {"command":"ERROR","rawCommand":"ERROR","commandType":"normal","args":["Closing Link: gateway/shell/matrix.org/x-ufiwesbeopqhxsaf (Ping timeout: 244 seconds)"]}
+  2015-11-22 03:43:38 INFO:client-connection disconnect()ing M-intelfx@irc.freenode.net - raw_error
+  2015-11-22 03:43:38 DEBUG:client-pool onClientDisconnected: <bion5hs2eo848> Reconnecting M-intelfx1@irc.freenode.net in 10000ms
+  2015-11-22 03:43:48 INFO:irc-client <M-intelfx@irc.freenode.net#kakx3kvehj44c> (@intelfx:matrix.org) Connecting to IRC server irc.freenode.net as M-intelfx (user=intelfxmat)
+  2015-11-22 03:45:46 ERROR:client-connection M-intelfx@irc.freenode.net still not connected after 30000ms. Killing connection.
+  2015-11-22 03:45:46 INFO:client-connection disconnect()ing M-intelfx@irc.freenode.net - timeout
+  2015-11-22 03:46:24 DEBUG:irc-client <M-intelfx@irc.freenode.net#kakx3kvehj44c> (@intelfx:matrix.org) connected!
+  2015-11-22 03:46:24 DEBUG:irc-client <M-intelfx@irc.freenode.net#kakx3kvehj44c> (@intelfx:matrix.org) _keepAlive; Restarting 432000s idle timeout
+  2015-11-22 03:46:24 INFO:client-pool <kakx3kvehj44c> Reconnected M-intelfx@irc.freenode.net
+  2015-11-22 03:55:27 INFO:irc-client <M-intelfx@irc.freenode.net#kakx3kvehj44c> (@intelfx:matrix.org) NICK: Nick changed from 'M-intelfx' to '20WACI3YG'.
+  {code}
+
+  So this actually looks like it is *not* a connection problem, but a logic error in the bridge which is fetching the wrong (matrix.org) connection when it really meant to fetch the intelfx.name connection.
+
+  This is plausible since we still wrongly key off the "desired nick" for much internal state, which is *usually* okay but in this case is not. This never clashes with {{!nick}} commands because that is the "actual nick" rather than the "desired" one. We should instead be keying off the ident username which we can guarantee has a 1:1 mapping between user_id and client connection.
+id: '12135'
+key: BOTS-142
+number: '142'
+priority: '2'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-06-02 10:12:34.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:12:34.0
+votes: '0'
+watches: '1'
+workflowId: '12238'
+---
+actions:
+- author: kegan
+  body: |-
+    So this is a story about how you should *never trust your IRC server*. But first, some architecture:
+     - The bridge maintains a map of nick -> IRC Client connection. This nick is initially set to the "desired" nick which is used before we've connected to the IRC server and is clobbered when we actually know what nick we got. This is kept in sync when {{NICK}} changes come down, so is constantly changing so we know who our clients are.
+     - In the nominal case, this works well. The IRC server forbids clashes so we don't run the risk of clobbering our nicks, right? But then, _a wild netsplit appears!_.
+     - At 3:43 am on 22 Nov a netsplit occurred. One of these users got disconnected and tried to reconnect. It did eventually, but it _got assigned to an existing nick_ since there was an ongoing netsplit. This clobbered the client connection in the map.
+     - This was resolved at 3:55am but the damage was already done. The server assigned the now clashing nick to an arbitrary value {{20WACI3YG}}. The netsplit clobbered the existing connection instance. This meant when the bridge tried to look up existing clients with the incoming nick which was clobbered it didn't find anything, and so treated it as a genuine IRC message, resulting in the dupe.
+  created: 2015-11-25 17:45:11.0
+  id: '12381'
+  issue: '12135'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-25 17:45:11.0
+- author: kegan
+  body: As for fixes, we can store this as a map of Nick -> [Client] which would prevent us clobbering the client instance. Lookups on a nick would nominally return the right thing still. Nick changes would be *hilarious* to handle correctly because we don't know *which client* the {{NICK}} change event refers to. Yay.
+  created: 2015-11-25 17:47:26.0
+  id: '12382'
+  issue: '12135'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-25 17:47:26.0
+- author: kegan
+  body: This can be somewhat fixed by broadcasting the IRC client with the {{nick-change}} event such that you know which client instance's nick was changed.
+  created: 2015-11-25 17:58:34.0
+  id: '12383'
+  issue: '12135'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-25 17:58:34.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/27
+  created: 2016-06-02 10:12:34.0
+  id: '12943'
+  issue: '12135'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:12:34.0

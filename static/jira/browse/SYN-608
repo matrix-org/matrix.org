@@ -1,0 +1,60 @@
+---
+summary: Repeated calls to /sync increases the number of entries in .rooms.invite[].invite_state.events
+---
+created: 2016-01-21 17:30:03.0
+creator: erikj
+description: |-
+  For an account with a single pending invite, the following curl produces the following results:
+
+  {code}
+  while curl 'http://localhost:8080/_matrix/client/r0/sync?access_token=<token>' -fs;
+  do :; 
+  done | jq '.rooms.invite[].invite_state.events | length'
+  {code}
+
+  {noformat}
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  10
+  11
+  12
+  13
+  14
+  15
+  ...
+  {noformat}
+id: '12337'
+key: SYN-608
+number: '608'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:01.0
+votes: '0'
+watches: '2'
+workflowId: '12442'
+---
+actions:
+- author: erikj
+  body: 'Probably due to:  https://github.com/matrix-org/synapse/blob/297ede/synapse/rest/client/v2_alpha/sync.py#L240'
+  created: 2016-01-21 17:30:30.0
+  id: '12581'
+  issue: '12337'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-21 17:30:30.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1483'
+  created: 2016-11-07 18:29:01.0
+  id: '13789'
+  issue: '12337'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:01.0

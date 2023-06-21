@@ -1,0 +1,26 @@
+---
+summary: iOS can receive & display messages multiple times when on bad connections
+---
+assignee: manu
+created: 2015-02-22 23:27:55.0
+creator: matthew
+description: |-
+  I was flickering on & off EDGE, and received this message 3 times in total.
+
+  Are we failing to do event-ID based dup suppression?  Any idea where these came from?
+id: '11113'
+key: SYIOS-90
+number: '90'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-25 14:37:37.0
+status: '5'
+type: '1'
+updated: 2015-02-25 14:37:37.0
+votes: '0'
+watches: '1'
+workflowId: '11213'
+---
+actions: null

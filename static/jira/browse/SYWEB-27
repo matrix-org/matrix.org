@@ -1,0 +1,22 @@
+---
+summary: We don't need to show the user-count in Recents in the room sidepanel - takes up too much room
+---
+created: 2014-09-16 01:33:48.0
+creator: matthew
+description: ''
+id: '10075'
+key: SYWEB-27
+number: '27'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '10000'
+resolutiondate: 2014-09-16 16:07:52.0
+status: '6'
+type: '1'
+updated: 2014-09-18 23:29:18.0
+votes: '0'
+watches: '1'
+workflowId: '10384'
+---
+actions: null

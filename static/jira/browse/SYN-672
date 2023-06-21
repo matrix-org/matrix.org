@@ -1,0 +1,28 @@
+---
+summary: Do we warn people to add dan's new app service IDs since 0.13?
+---
+created: 2016-04-05 08:30:55.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12609'
+key: SYN-672
+number: '672'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:22.0
+votes: '0'
+watches: '2'
+workflowId: '12709'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1529'
+  created: 2016-11-07 18:29:22.0
+  id: '13838'
+  issue: '12609'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:22.0

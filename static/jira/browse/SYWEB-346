@@ -1,0 +1,20 @@
+---
+summary: chat history (when hitting up-arrow) seems to leak between rooms. is this a bug or feature?
+---
+created: 2015-04-07 01:31:39.0
+creator: matthew
+description: ''
+id: '11310'
+key: SYWEB-346
+number: '346'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-04-07 01:31:39.0
+votes: '0'
+watches: '1'
+workflowId: '11410'
+---
+actions: null

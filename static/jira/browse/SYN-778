@@ -1,0 +1,79 @@
+---
+summary: 'AttributeError: ''DataStore'' object has no attribute ''_get_events_txn'' errors'
+---
+created: 2016-09-26 01:15:02.0
+creator: matthew
+description: |-
+  cirrus.arasphere.net's logs are full of:
+
+  {code}
+  2016-09-26 00:14:13,862 - synapse.storage.background_updates - 111 - ERROR - - Error doing update
+  Traceback (most recent call last):
+    File "synapse/storage/background_updates.py", line 108, in start_doing_background_updates
+      self.BACKGROUND_UPDATE_DURATION_MS
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1183, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/background_updates.py", line 151, in do_next_background_update
+      res = yield self._do_background_update(update_name, desired_duration_ms)
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1183, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/background_updates.py", line 185, in _do_background_update
+      items_updated = yield update_handler(progress, batch_size)
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1183, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/events.py", line 1393, in _background_reindex_origin_server_ts
+      self.EVENT_ORIGIN_SERVER_TS_NAME, reindex_search_txn
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1183, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/_base.py", line 312, in runInteraction
+      inner_func, *args, **kwargs
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/python/threadpool.py", line 246, in inContext
+      result = inContext.theWork()
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/python/threadpool.py", line 262, in <lambda>
+      inContext.theWork = lambda: context.call(ctx, func, *args, **kw)
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/python/context.py", line 118, in callWithContext
+      return self.currentContext().callWithContext(ctx, func, *args, **kw)
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/python/context.py", line 81, in callWithContext
+      return func(*args,**kw)
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/enterprise/adbapi.py", line 307, in _runWithConnection
+      compat.reraise(excValue, excTraceback)
+    File "/home/matrix/.synapse/local/lib/python2.7/site-packages/twisted/enterprise/adbapi.py", line 298, in _runWithConnection
+      result = func(conn, *args, **kw)
+    File "synapse/storage/_base.py", line 306, in inner_func
+      func, *args, **kwargs
+    File "synapse/storage/_base.py", line 235, in _new_transaction
+      r = func(txn, *args, **kwargs)
+    File "synapse/storage/events.py", line 1358, in reindex_search_txn
+      events = self._get_events_txn(txn, event_ids)
+  AttributeError: 'DataStore' object has no attribute '_get_events_txn'
+  {code}
+id: '12841'
+key: SYN-778
+number: '778'
+priority: '1'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:04.0
+votes: '0'
+watches: '2'
+workflowId: '12941'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1604'
+  created: 2016-11-07 18:30:04.0
+  id: '13933'
+  issue: '12841'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:04.0

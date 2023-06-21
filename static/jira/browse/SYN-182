@@ -1,0 +1,38 @@
+---
+summary: 'Transfer-Encoding: gzip on static file resources'
+---
+created: 2014-11-27 22:35:10.0
+creator: matthew
+description: ''
+id: '10737'
+key: SYN-182
+number: '182'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-26 10:08:06.0
+status: '5'
+type: '2'
+updated: 2015-05-26 16:13:33.0
+votes: '0'
+watches: '2'
+workflowId: '10837'
+---
+actions:
+- author: dbkr
+  body: Done.
+  created: 2015-05-14 16:43:15.0
+  id: '11757'
+  issue: '10737'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 16:43:15.0
+- author: dbkr
+  body: Reverted for static file resources because of https://twistedmatrix.com/trac/ticket/7678
+  created: 2015-05-19 13:22:04.0
+  id: '11775'
+  issue: '10737'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-19 13:22:04.0

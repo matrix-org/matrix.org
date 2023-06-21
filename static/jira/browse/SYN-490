@@ -1,0 +1,68 @@
+---
+summary: Federation 'send_join' response has extraneous [200, $data] wrapping
+---
+created: 2015-09-25 18:25:32.0
+creator: leonerd
+description: |-
+  Hard to say if this is an impl. or a spec bug as the {{make_join}} / {{send_join}} API is completely undocumented, so for now I'm reporting it as an impl bug.
+
+  The JSON response body to a {{send_join}} request arrives with an extra layer of wrapping, being placed into a list with the number 200 in the first position and the actual event data in the second. I believe this comes from the implementation having
+
+     defer.returnValue((200, content))
+
+  style code in it twice; once at
+
+    https://github.com/matrix-org/synapse/blob/efeeff29f66f14fd4744413a3fd211d01e6c302a/synapse/federation/federation_server.py#L250
+
+  and once again at
+
+    https://github.com/matrix-org/synapse/blob/efeeff29f66f14fd4744413a3fd211d01e6c302a/synapse/federation/transport/server.py#L314
+id: '11943'
+key: SYN-490
+number: '490'
+priority: '4'
+project: '10000'
+reporter: leonerd
+status: '10200'
+type: '1'
+updated: 2016-11-07 18:28:25.0
+votes: '0'
+watches: '2'
+workflowId: '12046'
+---
+actions:
+- author: leonerd
+  body: |-
+    As a solution: I imagine one of these wants removing, though this would change the on-the-wire- format of join messages. We'd have to first ensure that that the federation client can accept a response in either format (which should be a trivial test of the toplevel container type), and additionally publish some sort of announcement for developers of other homeservers to adapt it suitably.
+
+    Or maybe ignore it for v1 and fix that in federation v2?
+  created: 2015-09-25 18:27:34.0
+  id: '12168'
+  issue: '11943'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-25 18:27:34.0
+- author: leonerd
+  body: 'Conclusion: So much other stuff in federation needs fixing that we''ll have to adopt a "v2" sometime anyway. So we''ll just ignore this for now and treat it as a v1 quirk (much like HTTP 1.1''s "referer" header)'
+  created: 2015-11-02 15:13:32.0
+  id: '12291'
+  issue: '11943'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-11-02 15:13:32.0
+- author: leonerd
+  body: Also the {{/invite}} API
+  created: 2016-02-08 17:20:10.0
+  id: '12596'
+  issue: '11943'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-08 17:43:58.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1383'
+  created: 2016-11-07 18:28:25.0
+  id: '13700'
+  issue: '11943'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:25.0

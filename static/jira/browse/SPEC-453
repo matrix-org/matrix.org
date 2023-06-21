@@ -1,0 +1,44 @@
+---
+summary: Spec the implicit limit on /syncs
+---
+created: 2016-09-11 01:32:35.0
+creator: neb
+description: If you call {{/sync}} without a filter, or with a filter without a limit, it will use a default limit. We should spec this.
+id: '12825'
+key: SPEC-453
+number: '453'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-10-28 16:28:46.0
+votes: '0'
+watches: '3'
+workflowId: '12925'
+---
+actions:
+- author: pik
+  body: Will this be a single generic limit, or a number servers can advertise / communicate to clients?
+  created: 2016-09-14 20:01:34.0
+  id: '13119'
+  issue: '12825'
+  type: comment
+  updateauthor: pik
+  updated: 2016-09-14 20:01:34.0
+- author: richvdh
+  body: '[~pik]: it''s a default. There''s no need for servers to advertise it to clients.'
+  created: 2016-09-27 17:33:20.0
+  id: '13137'
+  issue: '12825'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:33:20.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/708'
+  created: 2016-10-28 16:28:46.0
+  id: '13517'
+  issue: '12825'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:46.0

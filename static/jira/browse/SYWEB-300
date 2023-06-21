@@ -1,0 +1,39 @@
+---
+summary: Look into CPU usage when swapping rooms
+---
+created: 2015-02-23 09:17:01.0
+creator: kegan
+description: |-
+  channel = #matrix
+
+  bq. switching back to this channel sometimes gnaws on CPU for a bit, or at least it blocks firefox enough to go dim
+
+  Find out if it is due to:
+   - # messages
+   - # users
+   - # events
+   - Something completely different
+id: '11125'
+key: SYWEB-300
+number: '300'
+priority: '1'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-03-02 17:33:04.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:55.0
+votes: '0'
+watches: '1'
+workflowId: '11225'
+---
+actions:
+- author: kegan
+  body: Since swapping out to {{jquery-2.1.3}} the performance when swapping rooms has improved. The bulk of the time spent is in a {{$digest}} cycle, with a lot of it being down to routing/rendering, but even so, the cycle doesn't take long.
+  created: 2015-03-02 17:33:04.0
+  id: '11332'
+  issue: '11125'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-02 17:33:04.0

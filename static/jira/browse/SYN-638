@@ -1,0 +1,28 @@
+---
+summary: /login responds M_UNKNOWN if content is not JSON
+---
+created: 2016-02-25 16:12:43.0
+creator: gergelypolonkai
+description: ''
+id: '12525'
+key: SYN-638
+number: '638'
+priority: '3'
+project: '10000'
+reporter: gergelypolonkai
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:11.0
+votes: '0'
+watches: '2'
+workflowId: '12625'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1505'
+  created: 2016-11-07 18:29:11.0
+  id: '13812'
+  issue: '12525'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:11.0

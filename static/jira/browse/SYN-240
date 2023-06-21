@@ -1,0 +1,28 @@
+---
+summary: Implement state and auth chain healing in federation.
+---
+created: 2015-01-12 22:17:25.0
+creator: erikj
+description: ''
+id: '10925'
+key: SYN-240
+number: '240'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:38.0
+votes: '0'
+watches: '2'
+workflowId: '11025'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1273'
+  created: 2016-11-07 18:27:38.0
+  id: '13591'
+  issue: '10925'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:38.0

@@ -1,0 +1,46 @@
+---
+summary: '"Away status" support'
+---
+created: 2015-12-02 00:13:22.0
+creator: matthew
+description: ''
+id: '12165'
+key: SPEC-286
+number: '286'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '4'
+resolutiondate: 2016-06-29 12:11:30.0
+status: '5'
+type: '2'
+updated: 2016-06-29 12:11:30.0
+votes: '0'
+watches: '3'
+workflowId: '12268'
+---
+actions:
+- author: leonerd
+  body: |-
+    Is this not the status message field? That's freeform text, you can put whatever you want there.
+
+    {noformat}
+    {
+      "presence": "unavailable",
+      "status_msg": "Looking after my pet goldfish."
+    }
+    {noformat}
+  created: 2016-06-25 13:43:06.0
+  id: '13017'
+  issue: '12165'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-06-25 13:43:06.0
+- author: richvdh
+  body: You'd think so. rejecting pending further info.
+  created: 2016-06-29 12:11:30.0
+  id: '13035'
+  issue: '12165'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-29 12:11:30.0

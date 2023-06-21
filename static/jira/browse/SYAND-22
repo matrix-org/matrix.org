@@ -1,0 +1,22 @@
+---
+summary: 'Don''t display dialogs on new messages! '
+---
+created: 2015-02-13 18:20:04.0
+creator: kegan
+description: ''
+id: '11054'
+key: SYAND-22
+number: '22'
+priority: '1'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-16 07:43:21.0
+status: '5'
+type: '1'
+updated: 2015-02-16 07:43:21.0
+votes: '0'
+watches: '1'
+workflowId: '11154'
+---
+actions: null

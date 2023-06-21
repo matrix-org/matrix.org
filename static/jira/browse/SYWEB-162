@@ -1,0 +1,35 @@
+---
+summary: 'Trying to join #<unicode hot beverage>:localhost:8480 on the webclients took me to http://localhost:8082/_matrix/client/#/room/#%E2%98%95:localhost:8480 which didn''t display anything.'
+---
+created: 2014-11-18 17:25:26.0
+creator: markjh
+description: ''
+id: '10673'
+key: SYWEB-162
+number: '162'
+priority: '2'
+project: '10004'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-11-18 17:54:20.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:58.0
+votes: '0'
+watches: '1'
+workflowId: '10773'
+---
+actions:
+- author: markjh
+  body: |-
+    {noformat}
+    Request URL:http://localhost:8082/_matrix/client/api/v1/directory/room/%23%25E2%2598%2595%3Alocalhost%3A8480?access_token=QGJvYjpsb2NhbGhvc3Q6ODQ4Mg...eNPMOOoGGwCPtnEyOr
+    {noformat}
+
+    Looks like it isn't being urldecoded at somepoint. So it is ending up being urlencoded twice.
+  created: 2014-11-18 17:40:12.0
+  id: '10804'
+  issue: '10673'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-18 17:40:12.0

@@ -1,0 +1,37 @@
+---
+summary: Cannot join room that was invited to
+---
+created: 2015-07-30 17:32:52.0
+creator: neb
+description: |-
+  Two accounts: A and B.
+
+  A created a room. A invited B. A set B's level to 100 (tied with A). A left the room. B invited A back into the room. A tried to join but got M_FORBIDDEN. Event auth check failed on $1438273561789XYFYf:openmarket.com
+
+  Same thing happens if the room creator isn't the one who leaves (e.g. B leaves instead). It must be due to tying power levels.
+
+  EDIT: Eventually I was able to join (in the B leaves scenario); something federation related? I don't know why it would suddenly work otherwise.
+id: '11776'
+key: SYN-442
+number: '442'
+priority: '1'
+project: '10000'
+reporter: neb
+resolution: '5'
+resolutiondate: 2015-08-25 13:12:30.0
+status: '5'
+type: '1'
+updated: 2015-08-25 13:12:30.0
+votes: '0'
+watches: '2'
+workflowId: '11877'
+---
+actions:
+- author: markjh
+  body: I've added a test to sytest which checks whether the room creator can be re-invited over federation. I haven't been able to reproduce the M_FORBIDDEN error described above.
+  created: 2015-08-25 13:12:30.0
+  id: '12072'
+  issue: '11776'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-08-25 13:12:30.0

@@ -1,0 +1,37 @@
+---
+summary: Add a --sqlite-async config option to disable fsync on sqlite for those who want it
+---
+created: 2015-04-27 15:30:18.0
+creator: matthew
+description: |-
+  [15:23]  <M-intelfx1> Matthew: yeah, it's OK already. And, I guess, it was partially (if not almost completely) caused by the fact that I initially used a very strange filesystem to store synapse's data.
+  [15:23]  <M-intelfx1> Actually, if there was a way to disable fsyncing its database...
+  [15:24]  <Arathorn> erikj: have we played with pragma synchronous = off; ?
+  [15:24]  <Arathorn> (which i think disables fsyncs for sqlite)
+  [15:27]  <M-erikj> I haven't tried it, no
+  [15:27]  <M-intelfx1> Arathorn (IRC): I think it would be useful to allow setting synchronous=off, for people with transactional filesystems like me :)
+  [15:28]  <Arathorn> i agree
+  [15:28]  <Arathorn> kinda surprised we've never tried it...
+  [15:28]  <M-erikj> Our primary problems are reads though?
+id: '11379'
+key: SYN-362
+number: '362'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:58.0
+votes: '0'
+watches: '2'
+workflowId: '11479'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1315'
+  created: 2016-11-07 18:27:58.0
+  id: '13636'
+  issue: '11379'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:58.0

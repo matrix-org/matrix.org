@@ -1,0 +1,64 @@
+---
+summary: Clickable events to display their JSON
+---
+assignee: kegan
+created: 2014-10-27 11:25:21.0
+creator: matthew
+description: ''
+id: '10506'
+key: SYWEB-121
+number: '121'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-27 16:30:35.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:57:57.0
+votes: '0'
+watches: '2'
+workflowId: '10610'
+---
+actions:
+- author: kegan
+  body: Need clarification on what this should look like exactly. What "view" do you mean? A modal dialog? A popover? A tooltip? Some text appearing in-line with the bubble/above it?
+  created: 2014-10-27 15:32:13.0
+  id: '10592'
+  issue: '10506'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 15:32:13.0
+- author: matthew
+  body: |-
+    any of the above; i have no particular vision for it.  tooltip won't work as it's too small unless you do it as a hovering div.
+
+    I'd suggest a simple modal dialog, as per:
+
+    [16:32]  <M-matthew> or just a hidden div with position: absolute; left: 50%; top: 50%; margin-left: -300px; margin-top: -100px; width: 600px; height: 200px;
+    [16:32]  <M-matthew> display: none
+    [16:32]  <M-matthew> and then display: block
+    [16:32]  <M-matthew> when you want to see it?
+    [16:33]  <M-kegan> you clearly have a vision of what this should look like, so I'm leaving this up to you. Displaying the content is easy since it's just {{ msg }}
+  created: 2014-10-27 15:35:29.0
+  id: '10593'
+  issue: '10506'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-27 15:35:29.0
+- author: kegan
+  body: How far are we going for displaying the JSON? Full blown collapsible formatting ala https://github.com/mohsen1/json-formatter/ or just <pre> tags with some pretty-printing? Linking URLs at all (e.g. images)?
+  created: 2014-10-27 15:39:00.0
+  id: '10594'
+  issue: '10506'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 15:39:00.0
+- author: matthew
+  body: for now just <pre/>?  we can put lipstick and suspenders on it down the road, unless you are on a particular mission :)
+  created: 2014-10-27 15:40:30.0
+  id: '10595'
+  issue: '10506'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-27 15:40:30.0

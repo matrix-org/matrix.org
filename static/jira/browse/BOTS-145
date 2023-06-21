@@ -1,0 +1,52 @@
+---
+summary: Cannot create bridged IRC channel for a foreign homeserver
+---
+created: 2015-12-02 17:33:23.0
+creator: xena
+description: |-
+  I have a homeserver named yochat.biz, I wanted to have it be able to bridge #ponydevs on PonyChat with #ponydevs:matrix.org. Adding the bridge settings for the long ID for yochat.biz -> matrix.org did not work at all.
+
+  What is the process for having a foreign homeserver act as an IRC bridge for a local channel?
+id: '12169'
+key: BOTS-145
+number: '145'
+priority: '3'
+project: '10101'
+reporter: xena
+resolution: '4'
+resolutiondate: 2016-06-22 15:30:55.0
+status: '5'
+type: '1'
+updated: 2016-06-22 15:30:55.0
+votes: '0'
+watches: '3'
+workflowId: '12272'
+---
+actions:
+- author: matthew
+  body: |-
+    Bridging based on room id like this should work; there are no such things as "local" channels as the rooms are equal over all servers. The only time this fails would be if you were bridging the room based on its alias, but you're not. And even if you were, you could get around it by creating a #ponydevs:yochat.biz that points to the right room id.
+
+    Does the bridge work otherwise?
+  created: 2015-12-10 01:27:05.0
+  id: '12454'
+  issue: '12169'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-10 01:27:05.0
+- author: kegan
+  body: Need more information on the setup here, as I'm not sure what is being done.
+  created: 2016-06-02 11:07:32.0
+  id: '12984'
+  issue: '12169'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 11:07:32.0
+- author: kegan
+  body: Spoken to Xena about it, and this is no longer an issue.
+  created: 2016-06-22 15:30:55.0
+  id: '13014'
+  issue: '12169'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-22 15:30:55.0

@@ -1,0 +1,20 @@
+---
+summary: Disabling an account on settings screen should disable push
+---
+created: 2015-12-22 00:25:11.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12237'
+key: SYIOS-189
+number: '189'
+priority: '3'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-12-22 00:25:11.0
+votes: '0'
+watches: '1'
+workflowId: '12340'
+---
+actions: null

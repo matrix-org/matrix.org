@@ -1,0 +1,26 @@
+---
+summary: IRC bridge wrong nick on image sending
+---
+created: 2015-05-13 12:05:42.0
+creator: kegan
+description: |-
+  {code}
+  <MatrixBridge> <Guest68489> posted an image: https://matrix.org/_matrix/media/v1/download/matrix.org/BpUTTeTrgjLeHJDEPkvctGEK - doglime.gif (2024KB)
+  {code}
+  Where guest == @kegan:matrix.org
+id: '11528'
+key: BOTS-40
+number: '40'
+priority: '2'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-05-13 14:26:53.0
+status: '5'
+type: '1'
+updated: 2015-05-13 14:26:53.0
+votes: '0'
+watches: '1'
+workflowId: '11629'
+---
+actions: null

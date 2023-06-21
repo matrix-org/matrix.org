@@ -1,0 +1,46 @@
+---
+summary: Support Indexed DB API backing store as superior to HTML5 local storage?
+---
+created: 2015-09-19 23:46:10.0
+creator: matthew
+description: ''
+id: '11900'
+key: SYJS-26
+number: '26'
+priority: '2'
+project: '10204'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-10-24 11:29:36.0
+status: '5'
+type: '2'
+updated: 2016-10-24 11:29:36.0
+votes: '0'
+watches: '2'
+workflowId: '12003'
+---
+actions:
+- author: kegan
+  body: Currently everything is in memory until SYJS-9 is done. I'm open to the idea of a proper DB-backed API but would like to observe the shortcomings of the local storage impl first before committing to anything else.
+  created: 2015-11-03 10:33:33.0
+  id: '12304'
+  issue: '11900'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 10:33:33.0
+- author: kegan
+  body: Blocked on SYJS-9
+  created: 2015-11-03 10:33:50.0
+  id: '12305'
+  issue: '11900'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 10:33:50.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/259
+  created: 2016-10-24 11:29:36.0
+  id: '13216'
+  issue: '11900'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:29:36.0

@@ -1,0 +1,61 @@
+---
+summary: Generated 'm.room.aliases' events lack prev_content
+---
+created: 2014-10-07 17:54:22.0
+creator: leonerd
+description: |-
+  I created a testing room; along with it came the initial alias event:
+
+  {noformat}
+  {
+    age => 344505906,
+    content => { aliases => ["#leorandomtest:matrix.org"] },
+    event_id => "FwnYDwsZJu\@matrix.org",
+    room_id => "!AycvujqWQFRaNYZafV:matrix.org",
+    state_key => "matrix.org",
+    ts => 1412355579866,
+    type => "m.room.aliases",
+    user_id => "\@LeoNerd:matrix.org",
+  },
+  {noformat}
+
+  When later I added a new alias to the directory server, the generated event announced this in the list of known aliases, but didn't include a `prev_content` field to contain the previously-known ones:
+
+  {noformat}
+  {
+    age => 1109125,
+    content => {
+      aliases => ["#leorandomtest:matrix.org", "#leo-testing:matrix.org"],
+    },
+    event_id => "nrEbfroaSS\@matrix.org",
+    room_id => "!AycvujqWQFRaNYZafV:matrix.org",
+    state_key => "matrix.org",
+    ts => 1412698972303,
+    type => "m.room.aliases",
+    user_id => "\@LeoNerd:matrix.org",
+  },
+  {noformat}
+id: '10457'
+key: SYN-91
+number: '91'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-01-07 13:30:46.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:04.0
+votes: '0'
+watches: '2'
+workflowId: '10561'
+---
+actions:
+- author: kegan
+  body: This has since been fixed.
+  created: 2015-01-07 13:30:46.0
+  id: '11061'
+  issue: '10457'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-07 13:30:46.0

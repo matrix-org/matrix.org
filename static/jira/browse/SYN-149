@@ -1,0 +1,69 @@
+---
+summary: When creating a room, make sure it goes m.room.create and then the join
+---
+assignee: markjh
+created: 2014-11-17 17:09:12.0
+creator: erikj
+description: ''
+id: '10661'
+key: SYN-149
+number: '149'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-11-18 16:04:36.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:38.0
+votes: '0'
+watches: '2'
+workflowId: '10761'
+---
+actions:
+- author: markjh
+  body: |-
+    What is the desired ordering?
+
+    Currently I think it is:
+    * m,room.create
+    * m.room.power_levels
+    * m.room.join_rules
+    * m.room.name
+    * m.room.topic
+    * m.room.join
+    * m.room.invite
+
+
+    Is the idea that the m.room.join comes immediately after the m.room.join_rules?
+  created: 2014-11-18 15:11:31.0
+  id: '10799'
+  issue: '10661'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-18 15:11:31.0
+- author: markjh
+  body: s/m.room.(join|invite)/m.room.membership/
+  created: 2014-11-18 15:13:56.0
+  id: '10800'
+  issue: '10661'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-18 15:13:56.0
+- author: erikj
+  body: |-
+    * m,room.create
+    * m.room.join
+    * m.room.power_levels
+    * m.room.join_rules
+    * m.room.name
+    * m.room.topic
+    * m.room.invite
+
+    Crucially m.room.join *must* come straight after m.room.create
+  created: 2014-11-18 15:14:01.0
+  id: '10801'
+  issue: '10661'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-18 15:14:01.0

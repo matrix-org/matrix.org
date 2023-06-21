@@ -1,0 +1,41 @@
+---
+summary: Avatars seem to be re-fetched for every new message, rather than cached(?!)
+---
+created: 2014-11-03 17:12:02.0
+creator: matthew
+description: |-
+  If someone sets a huge avatar (1280x960px or similar), and you're on a slow connection (e.g. satellite in-flight), it becomes very obvious that sometimes the webclient seems to pull in the avatar from the remote HS every time the user says something.  This seems unintuitive, but if we're serving the content without any caching headers, it's possible?
+
+  The combination of avatar photos not being thumbnailed; the lack of caching; and the horror that we load avatars from their local HS over the federation listener combines to provide a fairly shocking experience.
+id: '10611'
+key: SYWEB-135
+number: '135'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-25 09:23:07.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:51.0
+votes: '0'
+watches: '2'
+workflowId: '10711'
+---
+actions:
+- author: matthew
+  body: 'have shoved Cache-Control: public,max-age=86400,s-maxage=86400 on them, which should hopefully help a bit...'
+  created: 2014-11-11 05:38:28.0
+  id: '10770'
+  issue: '10611'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-11 05:38:28.0
+- author: kegan
+  body: We now have cache headers. Haven't seen this since.
+  created: 2014-11-25 09:23:07.0
+  id: '10831'
+  issue: '10611'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-25 09:23:07.0

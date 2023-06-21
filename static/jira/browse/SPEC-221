@@ -1,0 +1,108 @@
+---
+summary: We need a better way of disambiguating users with the same display name than mxids.
+---
+created: 2015-09-07 17:52:13.0
+creator: matthew
+description: |-
+  Right now we disambiguate via MXID on the client.  This isn't great, as MXIDs are ugly and not supposed to be shown to normal end-users in glossy apps.  It also increases clientside complexity in performing the disambiguation.
+
+  We can't reliably disambiguate via 3PIDs, as users may not want their 3PIDs to be leaked to the wider room.
+
+  Perhaps we can just disambiguate with some kind of custom suffix in the displayname as calculated by the server (e.g. an emoji, or #1/#2/#3).  Or perhaps we can use the whole idea of groups to disambiguate (e.g. Matthew from the Matrix Core Team group, v. Matthew from Debian Core Team group) or whatever.  Or even just list the homeserver friendly name that the user has come from?
+
+  TBD.
+id: '11861'
+key: SPEC-221
+number: '221'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:35.0
+votes: '0'
+watches: '3'
+workflowId: '11964'
+---
+actions:
+- author: matthew
+  body: |-
+    Actually, it probably doesn't even need to be consistent.  As long as the client can distinguish between the different users (and have a way of digging deeper to see which one is 'real'), then the fact they then autocomplete their names using the ambiguous display name isn't necessarily a problem.
+
+    For instance, the client could just disambiguate based on colour, or appending an emoji, or whatever (and then ignore the disambiguating random suffix when autocompleting).
+  created: 2015-09-07 18:35:16.0
+  id: '12116'
+  issue: '11861'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-07 18:35:16.0
+- author: alien
+  body: Just make sure suffix/emoji/etc appended such way users can't set it as part of their nick themself. (for example - on different background color).
+  created: 2015-10-08 10:29:49.0
+  id: '12226'
+  issue: '11861'
+  type: comment
+  updateauthor: alien
+  updated: 2015-10-08 10:29:49.0
+- author: richvdh
+  body: |-
+    I've heard it stated as a desirable feature that the disambiguation be reasonably consistent across clients. Certainly I can see that if my web client and my android client have "Matthew (1)" and "Matthew (2)" in different orders, there's a potential source for confusion. It would be even worse if all the Matthews got renumbered at the drop of a hat - because then history wouldn't even be consistent within a given client.
+
+    Disambiguating using numeric suffixes doesn't seem particularly satisfactory.
+  created: 2015-11-05 09:31:55.0
+  id: '12323'
+  issue: '11861'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 09:31:55.0
+- author: richvdh
+  body: 'Furthermore: what constitutes "the same display name"? "richvdh" vs "Richvdh" vs  "rïchvdh" vs "richvdh" (cyrillic c, except not really because Jira)? We probably want to be restricting display names to one language (as per SPEC-1 / https://github.com/matrix-org/matrix-doc/pull/3) to avoid homograph attacks.'
+  created: 2015-11-05 10:12:24.0
+  id: '12331'
+  issue: '11861'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 10:12:24.0
+- author: alien
+  body: I agree that numberic suffixes aren't great, but strongly disagree with the idea to restrict display names language.
+  created: 2015-11-05 11:06:04.0
+  id: '12334'
+  issue: '11861'
+  type: comment
+  updateauthor: alien
+  updated: 2015-11-05 11:06:04.0
+- author: richvdh
+  body: '[~alien]: can you be more specific with your objections? For avoidance of doubt: my suggestion is that any one display name should contain only characters from one script.'
+  created: 2015-11-05 15:19:06.0
+  id: '12339'
+  issue: '11861'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 15:19:06.0
+- author: alien
+  body: If you do it, matrix will be more restrictive in nicknames than any other IM/chat platforms, including xmpp and even some irc networks. People won't love it. I won't love it either. Display name is a form of self-expression and should be free as much as possible. Homograph attacks (but they'll have different mxid anyway?) should be prevented by other means (some hash-to-picture indicator for example).
+  created: 2015-11-05 22:02:53.0
+  id: '12343'
+  issue: '11861'
+  type: comment
+  updateauthor: alien
+  updated: 2015-11-05 22:02:53.0
+- author: richvdh
+  body: |-
+    I'm coming around to the view that preventing mixed-script displaynames doesn't solve anything anyway, because (for example) you can still duplicate some Latin names in Cyrillic. It's probably worse to prevent clashes 99% of the time - thus making people think that clashes don't happen - than it is to prevent them 90% of the time. 
+
+    Anyway, this is more a topic for SPEC-1. This bug is about what we do when we've found a clash.
+  created: 2015-11-05 22:47:24.0
+  id: '12344'
+  issue: '11861'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 22:47:24.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/538'
+  created: 2016-10-28 16:27:35.0
+  id: '13346'
+  issue: '11861'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:35.0

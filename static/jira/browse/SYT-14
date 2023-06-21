@@ -1,0 +1,30 @@
+---
+summary: tests/10apidoc/02login.pl gets upset by a single flow whose type isn't "m.login.password"
+---
+created: 2015-09-24 18:00:42.0
+creator: leonerd
+description: ''
+id: '11940'
+key: SYT-14
+number: '14'
+priority: '3'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-09-25 14:56:35.0
+status: '5'
+type: '1'
+updated: 2015-09-25 14:56:35.0
+votes: '0'
+watches: '1'
+workflowId: '12043'
+---
+actions:
+- author: leonerd
+  body: Fixed by [develop f853ccc]
+  created: 2015-09-25 14:56:35.0
+  id: '12166'
+  issue: '11940'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-25 14:56:35.0

@@ -1,0 +1,349 @@
+---
+summary: FreeSWITCH segfaults when we fail to detrickle ICE correctly in the verto bridge because HS->AS transactions can get in the wrong order
+---
+assignee: kegan
+created: 2016-03-03 18:13:55.0
+creator: matthew
+description: |-
+  I suspect the failure to detrickle also causes calls to intermittently fail entirely.
+
+  The segfaults look like this:
+
+  {code}
+  (gdb) bt
+  #0  __strcmp_sse42 () at ../sysdeps/x86_64/multiarch/strcmp.S:260
+  #1  0x00007fa92549fc8d in switch_core_media_activate_rtp (session=0x7fa90c021d08) at src/switch_core_media.c:6251
+  #2  0x00007fa915fab758 in verto_tech_media (tech_pvt=0x7fa90c101a30, r_sdp=<optimized out>, sdp_type=<optimized out>) at mod_verto.c:2240
+  #3  verto_tech_media (tech_pvt=0x7fa90c101a30, r_sdp=<optimized out>, sdp_type=<optimized out>) at mod_verto.c:2223
+  #4  0x00007fa915fab82b in verto_media (session=0x7fa90c021d08) at mod_verto.c:2418
+  #5  verto_send_media_indication (session=session@entry=0x7fa90c021d08, method=method@entry=0x7fa915fae975 "verto.answer") at mod_verto.c:2465
+  #6  0x00007fa915fabb14 in messagehook (session=0x7fa90c021d08, msg=0x7fa907711770) at mod_verto.c:2535
+  #7  0x00007fa925478f84 in switch_core_session_perform_receive_message (session=0x7fa90c021d08, message=message@entry=0x7fa907711770, file=file@entry=0x7fa915661ec0 "mod_dptools.c", func=func@entry=0x7fa915666440 "answer_function", line=line@entry=1309)
+      at src/switch_core_session.c:868
+  {code}
+
+  ...which looks like a null dereference somewhere in...
+
+  {code}
+                                  if (a_engine->rtcp_mux > 0 && !strcmp(a_engine->ice_in.cands[a_engine->ice_in.chosen[1]][1].con_addr, a_engine->ice_in.cands[a_engine->ice_in.chosen[0]][0].con_addr)
+                                          && a_engine->ice_in.cands[a_engine->ice_in.chosen[1]][1].con_port == a_engine->ice_in.cands[a_engine->ice_in.chosen[0]][0].con_port) {
+  {code}
+
+  when processing ICE candiates and seeing mismatched RTP and RTCP candidates.
+
+  Meanwhile, the call that crashes it from Firefox has 1 call invite + 3 candidates:
+
+  {code}
+  v=0
+  o=mozilla...THIS_IS_SDPARTA-44.0.2 4365088332289342396 0 IN IP4 0.0.0.0
+  s=-
+  t=0 0
+  a=sendrecv
+  a=fingerprint:sha-256 18:DB:29:E6:C7:44:2F:A2:AC:BE:3E:1A:CF:25:5C:7A:E1:0A:DF:32:9D:E5:18:86:95:87:26:4A:9E:DF:A0:2E
+  a=group:BUNDLE sdparta_0 sdparta_1
+  a=ice-options:trickle
+  a=msid-semantic:WMS *
+  m=audio 9 UDP/TLS/RTP/SAVPF 109 9 0 8
+  c=IN IP4 0.0.0.0
+  a=sendrecv
+  a=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level
+  a=ice-pwd:d26dbfc021a5dfb67816d801da818f05
+  a=ice-ufrag:4fccd89f
+  a=mid:sdparta_0
+  a=msid:{01d2845f-c296-4d1a-a9ca-0d993a70589b} {9f8599b3-278e-4437-8384-3731ca8461be}
+  a=rtcp-mux
+  a=rtpmap:109 opus/48000/2
+  a=rtpmap:9 G722/8000/1
+  a=rtpmap:0 PCMU/8000
+  a=rtpmap:8 PCMA/8000
+  a=setup:actpass
+  a=ssrc:1692995449 cname:{f187f95c-da34-4c11-998b-d5527ae10c1e}
+  m=video 9 UDP/TLS/RTP/SAVPF 120 126 97
+  c=IN IP4 0.0.0.0
+  a=sendrecv
+  a=fmtp:126 profile-level-id=42e01f;level-asymmetry-allowed=1;packetization-mode=1
+  a=fmtp:97 profile-level-id=42e01f;level-asymmetry-allowed=1
+  a=fmtp:120 max-fs=12288;max-fr=60
+  a=ice-pwd:d26dbfc021a5dfb67816d801da818f05
+  a=ice-ufrag:4fccd89f
+  a=mid:sdparta_1
+  a=msid:{01d2845f-c296-4d1a-a9ca-0d993a70589b} {0568f1d6-f329-4eb2-9907-0c5b44d4c74c}
+  a=rtcp-fb:120 nack
+  a=rtcp-fb:120 nack pli
+  a=rtcp-fb:120 ccm fir
+  a=rtcp-fb:126 nack
+  a=rtcp-fb:126 nack pli
+  a=rtcp-fb:126 ccm fir
+  a=rtcp-fb:97 nack
+  a=rtcp-fb:97 nack pli
+  a=rtcp-fb:97 ccm fir
+  a=rtcp-mux
+  a=rtpmap:120 VP8/90000
+  a=rtpmap:126 H264/90000
+  a=rtpmap:97 H264/90000
+  a=setup:actpass
+  a=ssrc:916254511 cname:{f187f95c-da34-4c11-998b-d5527ae10c1e}
+  {code}
+
+  and then:
+
+  {code}
+  {"candidate":"candidate:0 1 UDP 2122252543 131.254.15.55 53897 typ host","sdpMLineIndex":0,"sdpMid":"sdparta_0"},
+  {"candidate":"candidate:3 1 UDP 2122187007 172.17.42.1 40522 typ host","sdpMLineIndex":0,"sdpMid":"sdparta_0"},
+  {"candidate":"candidate:0 2 UDP 2122252542 131.254.15.55 59712 typ host","sdpMLineIndex":0,"sdpMid":"sdparta_0"},
+  {"candidate":"candidate:3 2 UDP 2122187006 172.17.42.1 33823 typ host","sdpMLineIndex":0,"sdpMid":"sdparta_0"},
+  {"candidate":"candidate:0 1 UDP 2122252543 131.254.15.55 36311 typ host","sdpMLineIndex":1,"sdpMid":"sdparta_1"},
+  {"candidate":"candidate:3 1 UDP 2122187007 172.17.42.1 59697 typ host","sdpMLineIndex":1,"sdpMid":"sdparta_1"},
+  {"candidate":"candidate:0 2 UDP 2122252542 131.254.15.55 48094 typ host", "sdpMLineIndex":1,"sdpMid":"sdparta_1"},
+  {"candidate":"candidate:3 2 UDP 2122187006 172.17.42.1 46496 typ host","sdpMLineIndex":1,"sdpMid":"sdparta_1"}
+  {code}
+
+  and then:
+
+  {code}
+  {"candidate":"candidate:7 1 UDP 8265727 83.166.68.175 57250 typ relay raddr 83.166.68.175 rport 57250","sdpMLineIndex":0,"sdpMid":"sdparta_0"}
+  {"candidate":"candidate:6 2 UDP 8331262 83.166.68.175 62268 typ relay raddr 83.166.68.175 rport 62268","sdpMLineIndex":0,"sdpMid":"sdparta_0"}
+  {code}
+
+  and finally:
+
+  {code}
+  {"candidate":"candidate:7 2 UDP 8265726 83.166.68.175 51145 typ relay raddr 83.166.68.175 rport 51145","sdpMLineIndex":0,"sdpMid":"sdparta_0"},
+  {"candidate":"candidate:6 1 UDP 8331263 83.166.68.175 58486 typ relay raddr 83.166.68.175 rport 58486","sdpMLineIndex":1,"sdpMid":"sdparta_1"},
+  {"candidate":"candidate:7 1 UDP 8265727 83.166.68.175 62629 typ relay raddr 83.166.68.175 rport 62629","sdpMLineIndex":1,"sdpMid":"sdparta_1"},
+  {"candidate":"candidate:7 2 UDP 8265726 83.166.68.175 54898 typ relay raddr 83.166.68.175 rport 54898","sdpMLineIndex":1,"sdpMid":"sdparta_1"}
+  {code}
+
+  The problem is that these events, despite having the right stream & topological ordering in the events table in synapse, get delivered to the AS in the wrong order; the invite gets sent after the first two candidates.
+
+  As a result, the AS ignores the first two candidates... and then gathers the final candidate onto the invite.  In this instance, this means that the SDP sent to the freeswitch looks like this:
+
+  {code}
+  v=0
+  o=mozilla...THIS_IS_SDPARTA-44.0.2 4365088332289342396 0 IN IP4 0.0.0.0
+  s=-
+  t=0 0
+  a=sendrecv
+  a=fingerprint:sha-256 18:DB:29:E6:C7:44:2F:A2:AC:BE:3E:1A:CF:25
+  :5C:7A:E1:0A:DF:32:9D:E5:18:86:95:87:26:4A:9E:DF:A0:2E
+  a=group:BUNDLE sdparta_0 sdparta_1
+  a=ice-options:trickle
+  a=msid-semantic:WMS *
+  m=audio 9 UDP/TLS/RTP/SAVPF 109 9 0 8
+  c=IN IP4 10.10.10.10
+  a=candidate:7 2 UDP 8265726 83.166.68.175 51145 typ relay raddr 83.166.68.175 rport 51145
+  a=sendrecv
+  a=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level
+  a=ice-pwd:d26dbfc021a5dfb67816d801da818f05
+  a=ice-ufrag:4fccd89f
+  a=mid:sdparta_0
+  a=msid:{01d2845f-c296-4d1a-a9ca-0d993a70589b} {9f8599b3-278e-4437-8384-3731ca8461be}
+  a=rtcp-mux
+  a=rtpmap:109 opus/48000/2
+  a=rtpmap:9 G722/8000/1
+  a=rtpmap:0 PCMU/8000
+  a=rtpmap:8 PCMA/8000
+  a=setup:actpass
+  a=ssrc:1692995449 cname:{f187f95c-da34-4c11-998b-d5527ae10c1e}
+  m=video 9 UDP/TLS/RTP/SAVPF 120 126 97
+  c=IN IP4 10.10.10.10
+  a=candidate:7 2 UDP 8265726 83.166.68.175 54898 typ relay raddr 83.166.68.175 rport 54898
+  a=candidate:7 1 UDP 8265727 83.166.68.175 62629 typ relay raddr 83.166.68.175 rport 62629
+  a=candidate:6 1 UDP 8331263 83.166.68.175 58486 typ relay raddr 83.166.68.175 rport 58486
+  a=sendrecv
+  a=fmtp:126 profile-level-id=42e01f;level-asymmetry-allowed=1;packetization-mode=1
+  a=fmtp:97 profile-level-id=42e01f;level-asymmetry-allowed=1
+  a=fmtp:120 max-fs=12288;max-fr=60
+  a=ice-pwd:d26dbfc021a5dfb67816d801da818f05
+  a=ice-ufrag:4fccd89f
+  a=mid:sdparta_1
+  a=msid:{01d2845f-c296-4d1a-a9ca-0d993a70589b} {0568f1d6-f329-4eb2-9907-0c5b44d4c74c}
+  a=rtcp-fb:120 nack
+  a=rtcp-fb:120 nack pli
+  a=rtcp-fb:120 ccm fir
+  a=rtcp-fb:126 nack
+  a=rtcp-fb:126 nack pli
+  a=rtcp-fb:126 ccm fir
+  a=rtcp-fb:97 nack
+  a=rtcp-fb:97 nack pli
+  a=rtcp-fb:97 ccm fir
+  a=rtcp-mux
+  a=rtpmap:120 VP8/90000
+  a=rtpmap:126 H264/90000
+  a=rtpmap:97 H264/90000
+  a=setup:actpass
+  a=ssrc:916254511 cname:{f187f95c-da34-4c11-998b-d5527ae10c1e}
+  {code}
+
+  ...and the mismatched RTP/RTCP candidates are sufficient to segfault FS.
+
+  Two problems:
+  * Synapse absolutely shouldn't be sending the events out of order
+  * AS should gather the ICE correctly:
+
+     * It should never forward incomplete candidate pairs
+     * It shouldn't drop candidates received before an INVITE
+     * The current metric for finishing gathering (we have seen relay or srflx candidates) is insufficient - we should prolly wait for the host candidates too at the least.
+id: '12541'
+key: BOTS-175
+number: '175'
+priority: '1'
+project: '10101'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-03-04 18:23:35.0
+votes: '1'
+watches: '1'
+workflowId: '12641'
+---
+actions:
+- author: matthew
+  body: |-
+    Kegan asked for more details of the ordering problem:
+
+    an excerpt of:
+    {code}
+    select * from events where room_id='!UsoNWsdlSGAQJwEUdp:matrix.org' order by stream_ordering;
+    {code}
+
+    shows the invite + 3 candidates in the right order...
+
+    {code}
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    stream_ordering      | 14340016
+    topological_ordering | 8
+    event_id             | $1456995870352529KGLcY:matrix.org
+    type                 | m.call.invite
+    room_id              | !UsoNWsdlSGAQJwEUdp:matrix.org
+    content              | {"call_id":"c1456995863946","lifetime":60000,"offer":{"sdp":"v=0\r\no=mozilla...THIS_IS_SDPARTA-44.0.2 4365088332289342396 0 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=sendrecv\r\na=fingerprint:sha-256 18:DB:29:E6:C7:44:2F:A2:AC:BE:3E:1A:CF:25:5C:7A:E1:0
+    A:DF:32:9D:E5:18:86:95:87:26:4A:9E:DF:A0:2E\r\na=group:BUNDLE sdparta_0 sdparta_1\r\na=ice-options:trickle\r\na=msid-semantic:WMS *\r\nm=audio 9 UDP/TLS/RTP/SAVPF 109 9 0 8\r\nc=IN IP4 0.0.0.0\r\na=sendrecv\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=
+    ice-pwd:d26dbfc021a5dfb67816d801da818f05\r\na=ice-ufrag:4fccd89f\r\na=mid:sdparta_0\r\na=msid:{01d2845f-c296-4d1a-a9ca-0d993a70589b} {9f8599b3-278e-4437-8384-3731ca8461be}\r\na=rtcp-mux\r\na=rtpmap:109 opus/48000/2\r\na=rtpmap:9 G722/8000/1\r\na=rtpmap:0 PCMU/8000\r\na=
+    rtpmap:8 PCMA/8000\r\na=setup:actpass\r\na=ssrc:1692995449 cname:{f187f95c-da34-4c11-998b-d5527ae10c1e}\r\nm=video 9 UDP/TLS/RTP/SAVPF 120 126 97\r\nc=IN IP4 0.0.0.0\r\na=sendrecv\r\na=fmtp:126 profile-level-id=42e01f;level-asymmetry-allowed=1;packetization-mode=1\r\na=
+    fmtp:97 profile-level-id=42e01f;level-asymmetry-allowed=1\r\na=fmtp:120 max-fs=12288;max-fr=60\r\na=ice-pwd:d26dbfc021a5dfb67816d801da818f05\r\na=ice-ufrag:4fccd89f\r\na=mid:sdparta_1\r\na=msid:{01d2845f-c296-4d1a-a9ca-0d993a70589b} {0568f1d6-f329-4eb2-9907-0c5b44d4c74c
+    }\r\na=rtcp-fb:120 nack\r\na=rtcp-fb:120 nack pli\r\na=rtcp-fb:120 ccm fir\r\na=rtcp-fb:126 nack\r\na=rtcp-fb:126 nack pli\r\na=rtcp-fb:126 ccm fir\r\na=rtcp-fb:97 nack\r\na=rtcp-fb:97 nack pli\r\na=rtcp-fb:97 ccm fir\r\na=rtcp-mux\r\na=rtpmap:120 VP8/90000\r\na=rtpmap:
+    126 H264/90000\r\na=rtpmap:97 H264/90000\r\na=setup:actpass\r\na=ssrc:916254511 cname:{f187f95c-da34-4c11-998b-d5527ae10c1e}\r\n","type":"offer"},"version":0}
+    unrecognized_keys    | 
+    processed            | t
+    outlier              | f
+    depth                | 8
+    origin_server_ts     | 1456995870852
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    stream_ordering      | 14340017
+    topological_ordering | 9
+    event_id             | $1456995870352530pSsSe:matrix.org
+    type                 | m.call.candidates
+    room_id              | !UsoNWsdlSGAQJwEUdp:matrix.org
+    content              | {"call_id":"c1456995863946","candidates":[{"candidate":"candidate:0 1 UDP 2122252543 131.254.15.55 53897 typ host","sdpMLineIndex":0,"sdpMid":"sdparta_0"},{"candidate":"candidate:3 1 UDP 2122187007 172.17.42.1 40522 typ host","sdpMLineIndex":0,"sd
+    pMid":"sdparta_0"},{"candidate":"candidate:0 2 UDP 2122252542 131.254.15.55 59712 typ host","sdpMLineIndex":0,"sdpMid":"sdparta_0"},{"candidate":"candidate:3 2 UDP 2122187006 172.17.42.1 33823 typ host","sdpMLineIndex":0,"sdpMid":"sdparta_0"},{"candidate":"candidate:0 1
+     UDP 2122252543 131.254.15.55 36311 typ host","sdpMLineIndex":1,"sdpMid":"sdparta_1"},{"candidate":"candidate:3 1 UDP 2122187007 172.17.42.1 59697 typ host","sdpMLineIndex":1,"sdpMid":"sdparta_1"},{"candidate":"candidate:0 2 UDP 2122252542 131.254.15.55 48094 typ host",
+    "sdpMLineIndex":1,"sdpMid":"sdparta_1"},{"candidate":"candidate:3 2 UDP 2122187006 172.17.42.1 46496 typ host","sdpMLineIndex":1,"sdpMid":"sdparta_1"}],"version":0}
+    unrecognized_keys    | 
+    processed            | t
+    outlier              | f
+    depth                | 9
+    origin_server_ts     | 1456995870977
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    stream_ordering      | 14340018
+    topological_ordering | 10
+    event_id             | $1456995871352531EgUvI:matrix.org
+    type                 | m.call.candidates
+    room_id              | !UsoNWsdlSGAQJwEUdp:matrix.org
+    content              | {"call_id":"c1456995863946","candidates":[{"candidate":"candidate:7 1 UDP 8265727 83.166.68.175 57250 typ relay raddr 83.166.68.175 rport 57250","sdpMLineIndex":0,"sdpMid":"sdparta_0"},{"candidate":"candidate:6 2 UDP 8331262 83.166.68.175 62268 ty
+    p relay raddr 83.166.68.175 rport 62268","sdpMLineIndex":0,"sdpMid":"sdparta_0"}],"version":0}
+    unrecognized_keys    | 
+    processed            | t
+    outlier              | f
+    depth                | 10
+    origin_server_ts     | 1456995871093
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    stream_ordering      | 14340019
+    topological_ordering | 11
+    event_id             | $1456995871352532nXqva:matrix.org
+    type                 | m.call.candidates
+    room_id              | !UsoNWsdlSGAQJwEUdp:matrix.org
+    content              | {"call_id":"c1456995863946","candidates":[{"candidate":"candidate:7 2 UDP 8265726 83.166.68.175 51145 typ relay raddr 83.166.68.175 rport 51145","sdpMLineIndex":0,"sdpMid":"sdparta_0"},{"candidate":"candidate:6 1 UDP 8331263 83.166.68.175 58486 ty
+    p relay raddr 83.166.68.175 rport 58486","sdpMLineIndex":1,"sdpMid":"sdparta_1"},{"candidate":"candidate:7 1 UDP 8265727 83.166.68.175 62629 typ relay raddr 83.166.68.175 rport 62629","sdpMLineIndex":1,"sdpMid":"sdparta_1"},{"candidate":"candidate:7 2 UDP 8265726 83.166
+    .68.175 54898 typ relay raddr 83.166.68.175 rport 54898","sdpMLineIndex":1,"sdpMid":"sdparta_1"}],"version":0}
+    unrecognized_keys    | 
+    processed            | t
+    outlier              | f
+    depth                | 11
+    origin_server_ts     | 1456995871450
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    {code}
+
+    ...meanwhile the logfile on the AS shows:
+
+    {code}
+    83.166.68.251 - - [03/Mar/2016:09:04:25 +0000] "PUT /transactions/13874?access_token=91a0ed7ddb6555ee27d3a17c3d87b72547b5ba0330b159e864a8c63b51108840 HTTP/1.1" 200 2 "-" "Synapse/0.13.3 (b=develop,e8d34bc)"
+
+    83.166.68.251 - - [03/Mar/2016:09:04:31 +0000] "PUT /transactions/13875?access_token=supersecret HTTP/1.1" 200 2 "-" "Synapse/0.13.3 (b=develop,e8d34bc)"
+
+    Call candidates: room=!UsoNWsdlSGAQJwEUdp:matrix.org member=@xxx:matrix.org content={"call_id":"c1456995863946","candidates":[{"candidate":"candidate:0 1 UDP 2122252543 131.254.15.55 53897 typ host","sdpMLineIndex":0,"sdpMid":"sdparta_0"},{"candidate":"candid
+    ate:3 1 UDP 2122187007 172.17.42.1 40522 typ host","sdpMLineIndex":0,"sdpMid":"sdparta_0"},{"candidate":"candidate:0 2 UDP 2122252542 131.254.15.55 59712 typ host","sdpMLineIndex":0,"sdpMid":"sdparta_0"},{"candidate":"candidate:3 2 UDP 2122187006 172.17.42.1 33823 typ h
+    ost","sdpMLineIndex":0,"sdpMid":"sdparta_0"},{"candidate":"candidate:0 1 UDP 2122252543 131.254.15.55 36311 typ host","sdpMLineIndex":1,"sdpMid":"sdparta_1"},{"candidate":"candidate:3 1 UDP 2122187007 172.17.42.1 59697 typ host","sdpMLineIndex":1,"sdpMid":"sdparta_1"},{
+    "candidate":"candidate:0 2 UDP 2122252542 131.254.15.55 48094 typ host","sdpMLineIndex":1,"sdpMid":"sdparta_1"},{"candidate":"candidate:3 2 UDP 2122187006 172.17.42.1 46496 typ host","sdpMLineIndex":1,"sdpMid":"sdparta_1"}],"version":0}
+    [8nqunpclewgsk] Handling request
+    [8nqunpclewgsk] FAILED (6ms) 'Received candidates for unknown call'
+    83.166.68.251 - - [03/Mar/2016:09:04:31 +0000] "PUT /transactions/13876?access_token=supersecret HTTP/1.1" 200 2 "-" "Synapse/0.13.3 (b=develop,e8d34bc)"
+
+    Call candidates: room=!UsoNWsdlSGAQJwEUdp:matrix.org member=@xxx:matrix.org content={"call_id":"c1456995863946","candidates":[{"candidate":"candidate:7 1 UDP 8265727 83.166.68.175 57250 typ relay raddr 83.166.68.175 rport 57250","sdpMLineIndex":0,"sdpMid":"sd
+    parta_0"},{"candidate":"candidate:6 2 UDP 8331262 83.166.68.175 62268 typ relay raddr 83.166.68.175 rport 62268","sdpMLineIndex":0,"sdpMid":"sdparta_0"}],"version":0}
+    [f37u1j24qk0s8] Handling request
+    [f37u1j24qk0s8] FAILED (15ms) 'Received candidates for unknown call'
+    Call invite: room=!UsoNWsdlSGAQJwEUdp:matrix.org member=@xxx:matrix.org content={"call_id":"c1456995863946","lifetime":60000,"offer":{"sdp":"v=0\r\no=mozilla...THIS_IS_SDPARTA-44.0.2 4365088332289342396 0 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=sendrecv\r\na=fing
+    erprint:sha-256 18:DB:29:E6:C7:44:2F:A2:AC:BE:3E:1A:CF:25:5C:7A:E1:0A:DF:32:9D:E5:18:86:95:87:26:4A:9E:DF:A0:2E\r\na=group:BUNDLE sdparta_0 sdparta_1\r\na=ice-options:trickle\r\na=msid-semantic:WMS *\r\nm=audio 9 UDP/TLS/RTP/SAVPF 109 9 0 8\r\nc=IN IP4 0.0.0.0\r\na=send
+    recv\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=ice-pwd:d26dbfc021a5dfb67816d801da818f05\r\na=ice-ufrag:4fccd89f\r\na=mid:sdparta_0\r\na=msid:{01d2845f-c296-4d1a-a9ca-0d993a70589b} {9f8599b3-278e-4437-8384-3731ca8461be}\r\na=rtcp-mux\r\na=rtpmap:109 
+    opus/48000/2\r\na=rtpmap:9 G722/8000/1\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=setup:actpass\r\na=ssrc:1692995449 cname:{f187f95c-da34-4c11-998b-d5527ae10c1e}\r\nm=video 9 UDP/TLS/RTP/SAVPF 120 126 97\r\nc=IN IP4 0.0.0.0\r\na=sendrecv\r\na=fmtp:126 profile-
+    level-id=42e01f;level-asymmetry-allowed=1;packetization-mode=1\r\na=fmtp:97 profile-level-id=42e01f;level-asymmetry-allowed=1\r\na=fmtp:120 max-fs=12288;max-fr=60\r\na=ice-pwd:d26dbfc021a5dfb67816d801da818f05\r\na=ice-ufrag:4fccd89f\r\na=mid:sdparta_1\r\na=msid:{01d2845
+    f-c296-4d1a-a9ca-0d993a70589b} {0568f1d6-f329-4eb2-9907-0c5b44d4c74c}\r\na=rtcp-fb:120 nack\r\na=rtcp-fb:120 nack pli\r\na=rtcp-fb:120 ccm fir\r\na=rtcp-fb:126 nack\r\na=rtcp-fb:126 nack pli\r\na=rtcp-fb:126 ccm fir\r\na=rtcp-fb:97 nack\r\na=rtcp-fb:97 nack pli\r\na=rtc
+    p-fb:97 ccm fir\r\na=rtcp-mux\r\na=rtpmap:120 VP8/90000\r\na=rtpmap:126 H264/90000\r\na=rtpmap:97 H264/90000\r\na=setup:actpass\r\na=ssrc:916254511 cname:{f187f95c-da34-4c11-998b-d5527ae10c1e}\r\n","type":"offer"},"version":0}
+    [8bcerq60vn4sg] Handling request
+    [-] GET https://matrix.org/_matrix/client/api/v1/rooms/!ebYRNcfIShCeAsFkRY%3Amatrix.org/state (@fs_IWViWVJOY2ZJU2hDZUFzRmtSWTptYXRyaXgub3Jn:matrix.org) Body: 
+    [-] GET https://matrix.org/_matrix/client/api/v1/rooms/!ebYRNcfIShCeAsFkRY%3Amatrix.org/state (@fs_IWViWVJOY2ZJU2hDZUFzRmtSWTptYXRyaXgub3Jn:matrix.org) HTTP 200 [{"origin_server_ts":1456937009869,"sender":"@yyy:matrix.org","event_id":"
+    Add matrix side for fs_user @fs_IWViWVJOY2ZJU2hDZUFzRmtSWTptYXRyaXgub3Jn:matrix.org (@xxx:matrix.org)
+    Storing verto call on ext=3504 fs_user=@fs_IWViWVJOY2ZJU2hDZUFzRmtSWTptYXRyaXgub3Jn:matrix.org matrix_users=2
+    [8bcerq60vn4sg] SUCCESS (421ms) undefined
+    83.166.68.251 - - [03/Mar/2016:09:04:32 +0000] "PUT /transactions/13877?access_token=supersecret HTTP/1.1" 200 2 "-" "Synapse/0.13.3 (b=develop,e8d34bc)"
+
+    Call candidates: room=!UsoNWsdlSGAQJwEUdp:matrix.org member=@xxx:matrix.org content={"call_id":"c1456995863946","candidates":[{"candidate":"candidate:7 2 UDP 8265726 83.166.68.175 51145 typ relay raddr 83.166.68.175 rport 51145","sdpMLineIndex":0,"sdpMid":"sd
+    parta_0"},{"candidate":"candidate:6 1 UDP 8331263 83.166.68.175 58486 typ relay raddr 83.166.68.175 rport 58486","sdpMLineIndex":1,"sdpMid":"sdparta_1"},{"candidate":"candidate:7 1 UDP 8265727 83.166.68.175 62629 typ relay raddr 83.166.68.175 rport 62629","sdpMLineIndex
+    ":1,"sdpMid":"sdparta_1"},{"candidate":"candidate:7 2 UDP 8265726 83.166.68.175 54898 typ relay raddr 83.166.68.175 rport 54898","sdpMLineIndex":1,"sdpMid":"sdparta_1"}],"version":0}
+    Gathered enough candidates for c1456995863946
+    index=0 - m=audio 9 UDP/TLS/RTP/SAVPF 109 9 0 8
+    Inserted candidate candidate:7 2 UDP 8265726 83.166.68.175 51145 typ relay raddr 83.166.68.175 rport 51145 at m= index 0
+    index=1 - m=video 9 UDP/TLS/RTP/SAVPF 120 126 97
+    Inserted candidate candidate:6 1 UDP 8331263 83.166.68.175 58486 typ relay raddr 83.166.68.175 rport 58486 at m= index 1
+    Inserted candidate candidate:7 1 UDP 8265727 83.166.68.175 62629 typ relay raddr 83.166.68.175 rport 62629 at m= index 1
+    Inserted candidate candidate:7 2 UDP 8265726 83.166.68.175 54898 typ relay raddr 83.166.68.175 rport 54898 at m= index 1
+    {code}
+
+    ...i.e. 2 of the candidates are received before the invite.
+  created: 2016-03-04 18:07:33.0
+  id: '12750'
+  issue: '12541'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-04 18:11:26.0
+- author: matthew
+  body: actually I guess another possibility is that the AS responded to these transactions out of order, given we can't see which transaction matches which event.  In general I assume ASes should be able to handle out-of-order events anyway... or are transaction IDs meant to given a guaranteed ordering?
+  created: 2016-03-04 18:12:12.0
+  id: '12751'
+  issue: '12541'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-04 18:12:12.0
+- author: matthew
+  body: |-
+    This doesn't coincide with any server restarts - the first one that day was
+
+    {code}
+    2016-03-03 13:47:00,396 - synapse.app.homeserver - 196 - INFO -  - Synapse now listening on port 8448
+    {code}
+  created: 2016-03-04 18:23:35.0
+  id: '12752'
+  issue: '12541'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-04 18:23:35.0

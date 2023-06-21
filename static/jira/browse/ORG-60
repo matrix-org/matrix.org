@@ -1,0 +1,22 @@
+---
+summary: Consider adding a line to the privacy policies to spell out that we aim for minimum personal data retention
+---
+created: 2016-07-13 17:46:42.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  ...and that stuff like storing HTTP logs indefinitely is a bootstrapping process to help us debug and tune the system whilst we're in beta
+id: '12745'
+key: ORG-60
+number: '60'
+priority: '3'
+project: '10003'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-07-13 17:47:38.0
+votes: '0'
+watches: '1'
+workflowId: '12845'
+---
+actions: null

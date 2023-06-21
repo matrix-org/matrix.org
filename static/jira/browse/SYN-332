@@ -1,0 +1,31 @@
+---
+summary: Extend synapse admin script
+---
+created: 2015-04-01 17:32:09.0
+creator: dbkr
+description: |-
+  We have a command line script to add a new user: it would be nice to be able to do other things with it like reset a user's password, possibly extending it out into a synadmin script or something. Erik points out this does give it more access which could be a concern, security wise.
+
+  Blocked on working out security tradeoffs.
+id: '11303'
+key: SYN-332
+number: '332'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '10200'
+type: '2'
+updated: 2016-11-07 18:27:54.0
+votes: '0'
+watches: '2'
+workflowId: '11403'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1305'
+  created: 2016-11-07 18:27:54.0
+  id: '13626'
+  issue: '11303'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:54.0

@@ -1,0 +1,22 @@
+---
+summary: Uploading new avatar does not update membership state.
+---
+created: 2014-12-21 12:14:50.0
+creator: erikj
+description: ''
+id: '10848'
+key: SYN-209
+number: '209'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '5'
+resolutiondate: 2016-01-06 10:22:08.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:22:08.0
+votes: '0'
+watches: '1'
+workflowId: '10948'
+---
+actions: null

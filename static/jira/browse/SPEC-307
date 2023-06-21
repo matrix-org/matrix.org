@@ -1,0 +1,30 @@
+---
+summary: Lazy-loading 'left' rooms is very heavy and painful
+---
+created: 2015-12-18 16:35:26.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  There is no filter to ask for just rooms that the user has left, forcing the client to re-download all the other rooms too again, which is almost certainly redundant data
+id: '12225'
+key: SPEC-307
+number: '307'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:04.0
+votes: '0'
+watches: '2'
+workflowId: '12328'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/602'
+  created: 2016-10-28 16:28:04.0
+  id: '13410'
+  issue: '12225'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:04.0

@@ -1,0 +1,28 @@
+---
+summary: if a homeserver doesn't resolve DNS anymore, thumbnail-requests end in HTTP 500
+---
+created: 2015-09-05 11:51:34.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11855'
+key: SYN-473
+number: '473'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:20.0
+votes: '0'
+watches: '2'
+workflowId: '11958'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1368'
+  created: 2016-11-07 18:28:20.0
+  id: '13689'
+  issue: '11855'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:20.0

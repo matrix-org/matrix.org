@@ -1,0 +1,28 @@
+---
+summary: Paginatable and searchable public room directory listing
+---
+created: 2014-09-16 01:31:02.0
+creator: matthew
+description: ''
+id: '10073'
+key: SPEC-120
+number: '120'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '3'
+updated: 2016-10-28 16:27:05.0
+votes: '0'
+watches: '2'
+workflowId: '10406'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/432'
+  created: 2016-10-28 16:27:05.0
+  id: '13282'
+  issue: '10073'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:05.0

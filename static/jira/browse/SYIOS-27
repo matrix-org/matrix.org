@@ -1,0 +1,48 @@
+---
+summary: App should default to Recents Tab on launch (other than initial launch)
+---
+assignee: gforet
+created: 2014-12-21 01:26:16.0
+creator: matthew
+description: |-
+  First time you ever launch the app, we should be on the "Home" tab (which should probably be renamed "Room List" or similar).
+
+  After the user has actually joined some rooms, then subsequent launches should surely default to the "Recents" tab.
+
+  We should load the Recents tab as quickly as possible from the mxstore cache (albeit with a spinner whilst the eventstream catches up), to let the user jump quickly to the room they are interested in (even if the eventstream is still catching up)
+id: '10841'
+key: SYIOS-27
+number: '27'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-02 12:47:01.0
+status: '5'
+type: '2'
+updated: 2015-02-02 12:47:01.0
+votes: '0'
+watches: '2'
+workflowId: '10941'
+---
+actions:
+- author: gforet
+  body: |-
+    A first change has been done in order to launch the app on Recents tab for logged user.
+
+    We still need to rename "Home" tab, suggested label is: "Rooms" (but I'm not convinced).
+    A change at SDK level is required to speed up Recents tab loading (see SYIOS-26)
+  created: 2014-12-23 14:23:38.0
+  id: '11028'
+  issue: '10841'
+  type: comment
+  updateauthor: gforet
+  updated: 2014-12-23 14:23:38.0
+- author: gforet
+  body: All points are done except renaming of the Home tab.
+  created: 2015-02-02 12:47:01.0
+  id: '11205'
+  issue: '10841'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-02 12:47:01.0

@@ -1,0 +1,38 @@
+---
+summary: Bridge disconnects and incorrectly starts up when synapse restarts
+---
+created: 2016-02-11 18:40:25.0
+creator: erikj
+description: ''
+id: '12388'
+key: BOTS-162
+number: '162'
+priority: '1'
+project: '10101'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2016-06-02 10:00:36.0
+status: '6'
+type: '1'
+updated: 2016-06-02 10:00:36.0
+votes: '0'
+watches: '3'
+workflowId: '12493'
+---
+actions:
+- author: matthew
+  body: In the ircas logs lots of node exiting with error 1 :/
+  created: 2016-02-11 22:53:14.0
+  id: '12609'
+  issue: '12388'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-11 22:53:14.0
+- author: kegan
+  body: Sounds like this was caused by BOTS-170
+  created: 2016-03-04 17:34:22.0
+  id: '12748'
+  issue: '12388'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-03-04 17:34:22.0

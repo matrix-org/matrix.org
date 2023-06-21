@@ -1,0 +1,30 @@
+---
+summary: We seem to be leaking memory over time, which eventually slows us down
+---
+created: 2014-11-26 01:00:40.0
+creator: matthew
+description: ''
+id: '10710'
+key: SYN-171
+number: '171'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-07 16:17:00.0
+status: '5'
+type: '3'
+updated: 2015-05-14 14:08:07.0
+votes: '0'
+watches: '2'
+workflowId: '10810'
+---
+actions:
+- author: erikj
+  body: We have fixed some memory leaks. We probably want to check for others, but for now it seems to be a lot better.
+  created: 2015-01-15 11:28:01.0
+  id: '11126'
+  issue: '10710'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-15 11:28:01.0

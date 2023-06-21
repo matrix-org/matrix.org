@@ -1,0 +1,33 @@
+---
+summary: User queriable /version, /ping, /time etc
+---
+created: 2015-03-29 22:34:45.0
+creator: matthew
+description: |-
+  We track basic whois data (SYN-48), but don't give any way to expose querying it and other metadata (local time, ping-time) by end-users.
+
+  It's debatable whether we want to turn this on by default (like XMPP and IRC) and have powerusers be smart enough to disable it for privacy reasons, or make it a server-admin only function, or make it opt-in.
+
+  Creating bug to aid debate.
+id: '11275'
+key: SPEC-136
+number: '136'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:10.0
+votes: '0'
+watches: '3'
+workflowId: '11375'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/442'
+  created: 2016-10-28 16:27:10.0
+  id: '13292'
+  issue: '11275'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:10.0

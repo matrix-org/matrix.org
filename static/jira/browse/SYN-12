@@ -1,0 +1,190 @@
+---
+summary: Ability to delete messages
+---
+created: 2014-09-15 23:57:42.0
+creator: matthew
+description: |-
+  Currently we have no way of deleting rogue messages on a channel (or 
+  otherwise mutating existing messages).
+
+  Options include:
+  1) We could send 'kill events' which tells the world to vape a previous event.
+  2) Send update message event which modifies the keys in an existing message (but can't change the message's type)
+
+  I prefer the idea of generic mutable events, which then also let us go and implement things like feedback in a more generic fashion.
+
+  However, given the security severity of this particular issue, we might want to implement 'kill' events as a quick fix...
+id: '10019'
+key: SYN-12
+number: '12'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-25 16:54:36.0
+status: '5'
+type: '2'
+updated: 2014-11-20 11:00:17.0
+votes: '0'
+watches: '2'
+workflowId: '10346'
+---
+actions:
+- author: erikj
+  body: We need to think about how deletions interact with state updates (including membership events) and the Pdu graphs.
+  created: 2014-09-19 17:06:27.0
+  id: '10345'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-19 17:06:27.0
+- author: erikj
+  body: Another issue with doing deletions via the update mechanism is that it makes it harder to delete updates from messages (as updates should probably be limited to a depth of one). Is this a problem?
+  created: 2014-09-19 17:20:02.0
+  id: '10348'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-19 17:20:02.0
+- author: erikj
+  body: |-
+    Requirements:
+    # Delete/hide events, including child/update events 
+    # Undelete events that were previously deleted.
+  created: 2014-09-22 10:43:57.0
+  id: '10360'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-22 10:43:57.0
+- author: erikj
+  body: Since we don't want to support updates on updates but _do_ want to support deleting deletes, the simplest solution is to have deletions as a separate class of events.
+  created: 2014-09-22 10:46:33.0
+  id: '10361'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-22 10:46:33.0
+- author: erikj
+  body: Handling the deletion of deletes is actually OK to implement. One way of doing it, at least, is to have a table of "this event_id deletes that event_id". Thus if you see a deletion of a deletion then you can simply remove the row rather than adding a new row and having to do recursive checks.
+  created: 2014-09-22 10:48:17.0
+  id: '10362'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-22 10:48:17.0
+- author: erikj
+  body: |-
+    How does this interact with state? Should it a) effectively unset the state or b) revert to the previous state. 
+
+    I think (b) is probably nicer and more intuitive. This will require us to redo state resolution and inform clients of the state we reverted to when we tell them about a deletion.
+  created: 2014-09-22 14:27:47.0
+  id: '10363'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-22 14:27:47.0
+- author: erikj
+  body: On further thought and IRL discussions, some content cannot be deleted/redacted (e.g., power levels, membership states). This leaves the option of simply removing all keys that are not required by the protocol and returning that pruned event whenever it's asked for. This means that all state should handle the fact it might get an empty content (except special states defined in the spec).
+  created: 2014-09-22 16:10:26.0
+  id: '10365'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-22 16:10:26.0
+- author: erikj
+  body: To avoid my head exploding, let's just say that deleting deletions that deletes a delete is not allowed.
+  created: 2014-09-22 16:51:57.0
+  id: '10366'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-22 16:51:57.0
+- author: erikj
+  body: For undeleting we will also need to retransmit data to clients.
+  created: 2014-09-22 16:52:27.0
+  id: '10367'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-22 16:52:27.0
+- author: erikj
+  body: |-
+    (Work on this has been done in a 'deletions' branch. I have mostly forgotten to tag commits with the jira issue :/)
+
+    Work still to be done:
+    # Retransmitting undeleted events.
+    # Auth.
+  created: 2014-09-23 16:19:26.0
+  id: '10421'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-23 16:19:26.0
+- author: erikj
+  body: Auth has now been added.
+  created: 2014-09-23 17:38:19.0
+  id: '10428'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-23 17:42:58.0
+- author: erikj
+  body: |-
+    Deleted/pruned events will now come down as:
+
+    {noformat}
+    {
+        "age": 808085,
+        "content": {},
+        "event_id": "GBjXNVRAGy@localhost:8481",
+        "pruned_because": {
+            "age_ts": 1411490119816,
+            "content": {
+                "hsob_ts": 1411490119790
+            },
+            "deletes": "GBjXNVRAGy@localhost:8481",
+            "event_id": "bnpfaToddo@localhost:8480",
+            "room_id": "!JxwnlnESSPnMmvLlOX:localhost:8480",
+            "ts": 1411490119789,
+            "type": "m.room.deletion",
+            "user_id": "@bob:localhost:8480"
+        },
+        "room_id": "!JxwnlnESSPnMmvLlOX:localhost:8480",
+        "type": "m.room.message",
+        "user_id": "@alice:localhost:8481"
+    },
+    {noformat}
+
+    Note the _pruned_because_ key and the fact that _content_ still exists, but is empty. For some events, e.g. membership, some content keys that are known safe will be kept.
+  created: 2014-09-23 17:46:22.0
+  id: '10429'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-23 17:47:46.0
+- author: erikj
+  body: |-
+    The implementation of this has turned into "redactions". Redactions are as described above (modulo renaming everything to redaction) except that there is no way to unredact events. This allows HSes to actually delete offending content rather than having to keep it around in case it get's unredacted. Redaction events can now be "redacted" themselves.
+
+    At some point server admins should have the ability to redact events without being in the room. This can probably be done simply by pruning the event keys directly, without needing to send an event about it.
+
+    The signing will need to take redaction into account, but I think mjark is already on top of that.
+
+    I think having moderation as a separate API is now the best way to go. This could then allow hiding and unhiding of events by moderators, but with caveats such as not being allowed to hide membership or moderation events etc., which allows a cleaner and simpler implementation.
+
+    This would basically separate the two vaguely orthogonal cases of wanting to delete illegal/very bad content that could have been attached to any event and hiding/removing messages from rooms because someone said something not very nice.
+  created: 2014-09-24 16:03:08.0
+  id: '10447'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-24 16:06:00.0
+- author: erikj
+  body: If someone could have a quick look? https://github.com/matrix-org/synapse/compare/develop...deletions?expand=1
+  created: 2014-09-25 10:10:11.0
+  id: '10448'
+  issue: '10019'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-25 10:10:11.0

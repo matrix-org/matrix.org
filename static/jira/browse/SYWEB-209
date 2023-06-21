@@ -1,0 +1,30 @@
+---
+summary: Webclient doesn't auto paginate if there is no scrollbar.
+---
+created: 2014-12-03 16:04:15.0
+creator: erikj
+description: ''
+id: '10764'
+key: SYWEB-209
+number: '209'
+priority: '2'
+project: '10004'
+reporter: erikj
+resolution: '3'
+resolutiondate: 2014-12-04 09:54:29.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:56.0
+votes: '0'
+watches: '2'
+workflowId: '10864'
+---
+actions:
+- author: kegan
+  body: SYWEB-89
+  created: 2014-12-04 08:28:53.0
+  id: '10938'
+  issue: '10764'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 08:28:53.0

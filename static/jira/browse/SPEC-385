@@ -1,0 +1,66 @@
+---
+summary: PUT requests should use the JSON body for all request parameters
+---
+created: 2016-04-17 13:06:16.0
+creator: jimmycuadra
+description: |-
+  There are three PUT APIs in the client-server spec I found that have some request parameters listed as coming from the query string and others as coming from the JSON in the body of the request. With the exception of the access token, query strings should not be used outside of GET requests.
+
+  The three APIs are:
+
+  * 3.2.1. {{/register}}: https://matrix.org/speculator/spec/HEAD/client_server.html#post-matrix-client-unstable-register
+  * 11.10.1.4.1: {{/pushrules/\{scope}/\{kind}/\{ruleId}/}}: https://matrix.org/speculator/spec/HEAD/client_server.html#put-matrix-client-unstable-pushrules-scope-kind-ruleid
+  * 11.12.1.1: {{/search}}: https://matrix.org/speculator/spec/HEAD/client_server.html#post-matrix-client-unstable-search
+
+  The query string parameters should be moved into the JSON body parameters.
+id: '12628'
+key: SPEC-385
+number: '385'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '10100'
+resolutiondate: 2016-04-24 22:54:05.0
+status: '5'
+type: '1'
+updated: 2016-04-24 22:54:05.0
+votes: '0'
+watches: '2'
+workflowId: '12728'
+---
+actions:
+- author: richvdh
+  body: |-
+    Possibly... I imagine we could look at each in turn and find more-or-less valid reasons why those parameters are query parameters rather than passed in the body.  For instance, with {{/pushrules/...}}, it means that the uploaded object matches that which will then be returned by the corresponding [GET request|http://matrix.org/speculator/spec/HEAD/client_server.html#get-matrix-client-unstable-pushrules-scope-kind-ruleid].
+
+    Is there a particular reason why you feel query strings should be avoided for PUTs, POSTs and friends?
+  created: 2016-04-18 17:50:39.0
+  id: '12843'
+  issue: '12628'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 17:50:39.0
+- author: jimmycuadra
+  body: |-
+    I haven't looked at the push rules and search APIs in detail yet—I came across this while working on {{/register}} and just wanted to be thorough when reporting the issue.
+
+    For {{/register}}, the reason using the query string seems wrong is that the information in it (the {{kind}} field, which can either be "user" or "guest", and if omitted defaults to "user") is completely relevant to the object represented in the JSON payload. I don't see a reason for the separation.
+
+    Implementation wise, it just complicates the details of how to convert the HTTP request into a programming-language-specific type that represents the registration request with all the relevant information. But even if the implementation wasn't a factor, in its current form, it's like if you had an API to create a user record consisting of first name, last name, age, and gender, and gender was in the query string while the other three were in the body of the request—doesn't make much sense.
+  created: 2016-04-20 16:37:57.0
+  id: '12880'
+  issue: '12628'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-04-20 16:37:57.0
+- author: richvdh
+  body: |-
+    OK; I think we should consider these on a case-by-case-basis rather than having a blanket "query params on PUTs are bad, mmmkay?".
+
+    Can't argue with your logic for {{/register}}. Have opened SPEC-396 accordingly, and will close this one.
+  created: 2016-04-24 22:53:51.0
+  id: '12892'
+  issue: '12628'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-24 22:53:51.0

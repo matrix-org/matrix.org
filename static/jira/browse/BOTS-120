@@ -1,0 +1,43 @@
+---
+summary: Nick templates don't get applied retrospectively
+---
+created: 2015-09-24 10:49:56.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  We currently store the nick used for an IRC client in prep for persisting their desired nick. This means that if you change the nick template in the config, it doesn't get applied to the IRC clients which were made before the change. We should do the trick we do for channels (from_config flag) to know if the nick was set by the user explicitly vs whatever the config says
+id: '11939'
+key: BOTS-120
+number: '120'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '2'
+resolutiondate: 2016-06-02 10:23:10.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:23:10.0
+votes: '0'
+watches: '3'
+workflowId: '12042'
+---
+actions:
+- author: illicitonion
+  body: |-
+    I'm not sure about this feature. I view the nick template as a "default if none is specified" rather than a "deterministic function to determine what your nick should always be in case you set it". As as user, I don't really want my nick changing underneath me.
+
+    I would rather provide a hook or something so that admins can rename individual accounts, and have people write a script to do this as a one-off if they really need, rather than change the default behaviour.
+  created: 2016-01-05 13:23:41.0
+  id: '12507'
+  issue: '11939'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-01-05 13:23:41.0
+- author: kegan
+  body: As discussed, this won't be done but will be possible via scripts.
+  created: 2016-06-02 10:23:10.0
+  id: '12951'
+  issue: '11939'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:23:10.0

@@ -1,0 +1,22 @@
+---
+summary: If you rotate the screen from portrait to landscape and back again, you end up a ways back in scrollback
+---
+created: 2015-11-01 18:23:05.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Doesn't happen with the keyboard open; happens only on first rotation
+id: '12061'
+key: SYAND-150
+number: '150'
+priority: '3'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-11-01 18:23:05.0
+votes: '0'
+watches: '1'
+workflowId: '12164'
+---
+actions: null

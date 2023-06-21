@@ -1,0 +1,39 @@
+---
+summary: Spec for transferring VoIP Calls
+---
+created: 2015-04-10 10:06:53.0
+creator: dbkr
+description: |-
+  Both sides will have to support this for it to work so it's going to suck if we get clients that don't support it: we should spec it sooner rather than later.
+
+  Requirements:
+    * Between different devices (same person)
+    * Same device moving networks
+    * Transferring a call switchboard style in-house
+    * Possibly: just redirecting a call somewhere else entirely?
+
+  Some of these would be just transferring the media (ie. ICE renegotiation). Others would involve moving signalling too.
+
+  For just moving media, it would be nice to keep this as simple as possible, possibly just telling the client to start ICE over again.
+id: '11326'
+key: SPEC-150
+number: '150'
+priority: '3'
+project: '10001'
+reporter: dbkr
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:14.0
+votes: '0'
+watches: '2'
+workflowId: '11426'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/493'
+  created: 2016-10-28 16:27:14.0
+  id: '13301'
+  issue: '11326'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:14.0

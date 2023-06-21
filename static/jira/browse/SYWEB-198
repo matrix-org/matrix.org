@@ -1,0 +1,36 @@
+---
+summary: Consider making the public rooms list ordered (optionally?) by activity
+---
+created: 2014-11-30 23:56:37.0
+creator: matthew
+description: ''
+id: '10743'
+key: SYWEB-198
+number: '198'
+priority: '4'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-03-03 13:17:50.0
+votes: '0'
+watches: '2'
+workflowId: '10843'
+---
+actions:
+- author: kegan
+  body: How would this actually work without being joined to all the public rooms evar?
+  created: 2015-01-12 13:43:49.0
+  id: '11093'
+  issue: '10743'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-12 13:43:49.0
+- author: kegan
+  body: 'Dropping priority: we order on # members now which is a lot better than alphabetically. I don''t think ordering by activity is going to be practical either, but it is a nice-to-have.'
+  created: 2015-03-03 13:17:50.0
+  id: '11335'
+  issue: '10743'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-03 13:17:50.0

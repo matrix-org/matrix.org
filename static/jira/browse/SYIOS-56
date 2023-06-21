@@ -1,0 +1,35 @@
+---
+summary: 'Console: Add cache size handling in Settings'
+---
+assignee: m-ylecollen
+created: 2015-01-14 14:44:43.0
+creator: gforet
+description: |-
+  - Add a slider to let user fix the suitable cache size.
+  - Handle this cache size when app is running.
+id: '10931'
+key: SYIOS-56
+number: '56'
+priority: '2'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-01-19 15:54:20.0
+status: '5'
+type: '1'
+updated: 2015-01-19 15:54:20.0
+votes: '0'
+watches: '2'
+workflowId: '11031'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    Should be fixed in 
+    https://github.com/matrix-org/matrix-ios-sdk/commit/34b33764
+  created: 2015-01-19 15:54:20.0
+  id: '11151'
+  issue: '10931'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-19 15:54:20.0

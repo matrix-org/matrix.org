@@ -1,0 +1,37 @@
+---
+summary: Way to peek at name, topic and aliases of a room before you join.
+---
+created: 2015-03-25 15:43:29.0
+creator: dbkr
+description: |-
+  Problems to solve:
+
+  1) Showing name / topic / alias of a room you've been invited to before you join
+  2) Showing name / topic / alias of a public room before you join it
+  3) Showing name / topic / alias of a private room before you request admission
+
+  If we have this, there is a question of whether the recommended user experience for clients involves showing them this information when they try to join a room before the client actually attempts to join so they can back out if it's not actually what they wanted, or whether the client just joins anyway and assumes they'll leave if it wasn't what they expected.
+id: '11266'
+key: SPEC-133
+number: '133'
+priority: '2'
+project: '10001'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-12-10 15:51:45.0
+status: '5'
+type: '2'
+updated: 2015-12-10 15:51:45.0
+votes: '0'
+watches: '2'
+workflowId: '11366'
+---
+actions:
+- author: illicitonion
+  body: This got implemented as invite_room_state
+  created: 2015-12-10 15:51:41.0
+  id: '12459'
+  issue: '11266'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-12-10 15:51:41.0

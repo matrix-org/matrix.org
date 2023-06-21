@@ -1,0 +1,30 @@
+---
+summary: We need a knob to configure overall cache size
+---
+created: 2015-09-14 16:58:29.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  To stop people's HSes getting OOMed if they're running on a VPS or similar with constrained RAM
+id: '11872'
+key: SYN-475
+number: '475'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:20.0
+votes: '0'
+watches: '2'
+workflowId: '11975'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1369'
+  created: 2016-11-07 18:28:20.0
+  id: '13690'
+  issue: '11872'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:20.0

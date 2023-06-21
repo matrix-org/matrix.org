@@ -1,0 +1,26 @@
+---
+summary: Disable user signup in the default config
+---
+assignee: erikj
+created: 2015-03-13 13:08:46.0
+creator: matthew
+description: |-
+  It can be an unpleasant surprise for folks running homeservers to discover they have public signup turned on.
+
+  We should disable it by default, and provide a script & instructions for manually creating accounts.  If the user enables it, we should encourage them to set up a captcha too.
+id: '11219'
+key: SYN-308
+number: '308'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-05-07 11:16:32.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:03.0
+votes: '0'
+watches: '1'
+workflowId: '11319'
+---
+actions: null

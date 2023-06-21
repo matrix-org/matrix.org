@@ -1,0 +1,31 @@
+---
+summary: Review architecture of handlers.
+---
+created: 2015-01-12 22:16:49.0
+creator: erikj
+description: |-
+  Due to the evolving nature of how we process and store events, exactly what the handlers should look like and how they are split up should be reviewed.
+
+  For example, we currently have a lot of the event processing code in the base handler, which does not seem the most intuitive place to put it.
+id: '10924'
+key: SYN-239
+number: '239'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:37.0
+votes: '0'
+watches: '2'
+workflowId: '11024'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1272'
+  created: 2016-11-07 18:27:37.0
+  id: '13590'
+  issue: '10924'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:37.0

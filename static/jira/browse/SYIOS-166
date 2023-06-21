@@ -1,0 +1,29 @@
+---
+summary: m.call.* events don't appear to be shown in the timeline in build 746
+---
+assignee: matthew
+created: 2015-10-25 22:50:06.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12040'
+key: SYIOS-166
+number: '166'
+priority: '3'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-10-29 16:11:18.0
+votes: '0'
+watches: '2'
+workflowId: '12143'
+---
+actions:
+- author: m-ylecollen
+  body: "only some call events are displayed\t\nThe both mobile clients have the same behaviour as the web client for example\t\n-> the candidates events are not traced\n-> the end of call events are not traced\t\n\nIt would be nice to have  the call elapsed time.\t\n\nSo, we're waiting after the updated expected behaviour."
+  created: 2015-10-29 16:10:54.0
+  id: '12286'
+  issue: '12040'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-10-29 16:11:04.0

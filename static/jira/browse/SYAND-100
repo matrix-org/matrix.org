@@ -1,0 +1,239 @@
+---
+summary: Listener on DataHandler not working
+---
+created: 2015-07-16 03:13:46.0
+creator: jackvt93
+description: |-
+  Hi everyone,
+
+  I have problem when using matrix android sdk. The code below not fire the listener when initial sync complete. My current sdk from your mater branch. I have checked out yesterday.
+
+  mSession.getDataHandler().addListener(mEventListener);
+
+  By the way, i have tried the matrix sdk in your sample (may it older) and it working.
+id: '11759'
+key: SYAND-100
+number: '100'
+priority: '3'
+project: '10201'
+reporter: jackvt93
+resolution: '5'
+resolutiondate: 2015-09-02 14:30:49.0
+status: '5'
+type: '1'
+updated: 2015-09-02 14:30:49.0
+votes: '0'
+watches: '2'
+workflowId: '11860'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    Weird, it works properly with the console application (this is the application which uses the SDK by now) : Have a look on SplashActivity.
+
+    Could you try your credentials with the console application ?
+    Are you sure that the initial sync is really finished ?
+    Could you provide us some logs ?
+  created: 2015-07-16 07:31:38.0
+  id: '11992'
+  issue: '11759'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-07-16 07:31:38.0
+- author: jackvt93
+  body: |-
+    Thanks @yannick, 
+
+    As i said,  i have tried the matrix sdk in your sample (console application) and it work and when i use sdk version v0.4.3 it not work.
+
+    I'm not sure about the initial sync complete. But, i've waited 30 mins. 
+
+    By the way, i have found some source of sdk (version 0.4.3) for finding out problems and then i saw the code below in class  DefaultEventsThreadListener.class 
+
+    @Override
+        public void onInitialSyncComplete(InitialSyncResponse response) {
+            // sanity check
+            if (null != response) {
+                // Handle presence events
+                mData.handleLiveEvents(response.presence);
+
+                // Convert rooms from response
+                for (RoomResponse roomResponse : response.rooms) {
+                    mData.handleInitialRoomResponse(roomResponse);
+                }
+
+                // save the latest token
+                //mData.getStore().setEventStreamToken(response.end);
+                //mData.getStore().commit();
+            }
+
+
+            mData.onInitialSyncComplete();
+        }
+
+    i have commented lines mData.getStore().setEventStreamToken(response.end) and mData.getStore().commit() and it work
+
+    It look like the store developing and it not done yet.
+  created: 2015-07-16 09:33:33.0
+  id: '11993'
+  issue: '11759'
+  type: comment
+  updateauthor: jackvt93
+  updated: 2015-07-16 09:34:26.0
+- author: m-ylecollen
+  body: |-
+    I tried my side with the 0.4.3 : it seems working properly (i compiled again the SDK code).
+
+    i suspect an infinite loop, a crash or a thread lock in one of theses both methods (even if i never got one).
+    Could you investigate where the lock is ?
+
+    thank you
+  created: 2015-07-16 09:53:37.0
+  id: '11994'
+  issue: '11759'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-07-16 09:53:37.0
+- author: jackvt93
+  body: |-
+    You sure it work properly ?. I dont know what my wrong, but my writing so simple, just login -> get session -> add listener and the answer is not work.
+
+    private IMXEventListener mEventListener = new MXEventListener() {
+
+            @Override
+            public void onInitialSyncComplete() {
+                super.onInitialSyncComplete();
+
+                // Go to the home page
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                SplashActivity.this.finish();
+            }
+        };
+
+    I've waited, and nothing occur in onInitialSyncComplete() function
+
+    Could you show me your code or samples you wrote ?
+
+    Thank you :D
+  created: 2015-07-17 02:25:29.0
+  id: '12006'
+  issue: '11759'
+  type: comment
+  updateauthor: jackvt93
+  updated: 2015-07-17 03:44:27.0
+- author: m-ylecollen
+  body: |-
+    The console application could not work if onInitialSyncComplete was not called.
+
+    The code is the console one : i.e. i recompiled the SDK in debug (clean build), make a fresh install.
+
+    I never tested on the device emulator.
+
+    Could you check why the code seems tuck in theses two lines ?
+
+    //mData.getStore().setEventStreamToken(response.end);
+    //mData.getStore().commit();
+  created: 2015-07-17 06:20:24.0
+  id: '12007'
+  issue: '11759'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-07-17 06:24:36.0
+- author: jackvt93
+  body: |-
+    Note that: two lines above in "matrix android sdk" source code and i have commented it for finding out problems. 
+
+    In matrix-andriod-sdk version 0.2.4-dev i don't saw two that lines
+    In matrix-android-sdk version 04.3 it visible.
+
+    I went to implementations of that functions and i saw:
+    - setEventStreamToken(response.end): Just set token(string type) to member of a class
+    - commit() is blank function
+
+    I think the problems are sdk not stable version. It seem developing and would have more changes
+
+    Finally, i using matrix-sdk version 0.2.4-dev (used by samples app) for my application.
+
+    P/s: I've been tested on Google Nexus 7
+  created: 2015-07-17 08:36:25.0
+  id: '12008'
+  issue: '11759'
+  type: comment
+  updateauthor: jackvt93
+  updated: 2015-07-17 08:36:25.0
+- author: m-ylecollen
+  body: |-
+    The latest SDK uses a file cache (it was not defined in version 0.2.4) : it explains why theses both lines have been added.
+
+    the SDK should be stable : it is used by the console application. 
+
+    We could find out why it does not work with your help because i don't reproduce it.
+
+    If you don't want to help, use 0.2.4-dev sdk.
+  created: 2015-07-17 08:41:59.0
+  id: '12009'
+  issue: '11759'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-07-17 08:41:59.0
+- author: jackvt93
+  body: |-
+    Thanks you.
+
+    Could you tell me your device model used for test ?
+  created: 2015-07-17 09:12:34.0
+  id: '12010'
+  issue: '11759'
+  type: comment
+  updateauthor: jackvt93
+  updated: 2015-07-17 09:12:34.0
+- author: m-ylecollen
+  body: |-
+    I'm testing on
+    -> Razr X910 - android 4.1
+    -> Razr HD XT 925 -  Android 4.4
+    -> Samsung S3 - Android 4.3
+    -> Nexus 7 - Android 5.1.1
+    -> Nexus 6 - android 5.1.1
+  created: 2015-07-17 09:15:35.0
+  id: '12011'
+  issue: '11759'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-07-17 09:34:49.0
+- author: jackvt93
+  body: |-
+    I've tested on Nexus 7 and Android 5.0
+
+    Could you check my logcat ?
+    http://textuploader.com/asiwm
+
+    Sorry, i can't post my logcat here.
+  created: 2015-07-17 09:36:33.0
+  id: '12026'
+  issue: '11759'
+  type: comment
+  updateauthor: jackvt93
+  updated: 2015-07-17 09:43:15.0
+- author: m-ylecollen
+  body: |-
+    go to #android:matrix.org : it is a bug report tool.
+
+    The support will be easier and faster on chat.
+  created: 2015-07-17 09:51:56.0
+  id: '12027'
+  issue: '11759'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-07-17 12:16:59.0
+- author: jackvt93
+  body: |-
+    Thanks @lecollen for all
+
+    My problem was resolved.
+  created: 2015-07-20 13:21:12.0
+  id: '12030'
+  issue: '11759'
+  type: comment
+  updateauthor: jackvt93
+  updated: 2015-07-20 13:21:20.0

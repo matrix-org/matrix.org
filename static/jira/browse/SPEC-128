@@ -1,0 +1,28 @@
+---
+summary: We should support revealing whether the user is currently typing on mobile/web/etc
+---
+created: 2015-03-15 00:36:49.0
+creator: matthew
+description: ''
+id: '11241'
+key: SPEC-128
+number: '128'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:07.0
+votes: '1'
+watches: '3'
+workflowId: '11341'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/437'
+  created: 2016-10-28 16:27:07.0
+  id: '13287'
+  issue: '11241'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:07.0

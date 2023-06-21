@@ -1,0 +1,20 @@
+---
+summary: We should retain focus on the input box when scrolling around through history
+---
+created: 2014-12-04 13:04:04.0
+creator: matthew
+description: ''
+id: '10773'
+key: SYWEB-215
+number: '215'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2014-12-10 10:00:00.0
+votes: '0'
+watches: '1'
+workflowId: '10873'
+---
+actions: null

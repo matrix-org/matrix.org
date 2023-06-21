@@ -1,0 +1,28 @@
+---
+summary: Autocomplete ignores displaynames of invited users in a room who have yet to join
+---
+created: 2015-01-15 13:29:24.0
+creator: matthew
+description: ''
+id: '10941'
+key: SYWEB-261
+number: '261'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-03-03 17:07:31.0
+votes: '0'
+watches: '2'
+workflowId: '11041'
+---
+actions:
+- author: kegan
+  body: Display names? Invited users don't have display names yet, unless you propose breaking room isolation and reading profile data from {{m.profile}} (which I would prefer we didn't, given nothing else requires this).
+  created: 2015-03-03 17:07:31.0
+  id: '11344'
+  issue: '10941'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-03 17:07:31.0

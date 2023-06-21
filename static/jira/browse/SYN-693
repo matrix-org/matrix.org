@@ -1,0 +1,28 @@
+---
+summary: Make unsubscribe links on email notifs not require a login
+---
+created: 2016-05-13 17:56:32.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12661'
+key: SYN-693
+number: '693'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:31.0
+votes: '0'
+watches: '2'
+workflowId: '12761'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1372'
+  created: 2016-11-07 18:29:31.0
+  id: '13857'
+  issue: '12661'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:31.0

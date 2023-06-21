@@ -1,0 +1,104 @@
+---
+summary: We need to re-consider splitting users into alias & underlying opaque ID
+---
+created: 2015-04-14 18:59:57.0
+creator: matthew
+description: |-
+  Back when we defined rooms as split between aliases and IDs, there was a discussion over also splitting users between aliases and IDs too.  At the time, the argument for doing so was "for symmetry", which didn't cut it, but we're starting to see concrete reasons why this could be a good thing to do.  This bug is intended to gather together reasons to do so.
+
+  * We can use alias->ID api to also handle canonicalising case as per SYN-109 rather than SPEC-62
+  * We get email-style aliasing for free, allowing easy consolidation of various accounts to point at One True Account, and avoid having to support multiple accounts in clients
+  * We could use it for horizontal scaling, HA, and decentralising user accounts in general - replicating a single user account over multiple servers
+  * We could use it as the basis for a portability/account migration system.
+
+  Obviously the risks include:
+   * Another waste-of-time holy war over how to present aliases to users in UI as they're a many:one mapping.  Needless to say, I suggest we just present them like email addresses (which are after all also many:one, effectively)
+   * Lots of security challenges in terms of which accounts are allowed to reside on which HSes, and how you prevent phishing attacks, and how you encrypt user data to protect them sufficiently.
+
+  If this idea went ahead, I suggest we adopt a syntax like:
+
+  @matthew:matrix.org <-- user alias
+  ^opaque_id:matrix.org <-- user id
+
+  I suggest using ^ as the sigil, as it doesn't escape in URLs, doesn't mean anything else, and is easily visually recognisable.
+
+  Yes, this would be a major backwards-incompatible change to the event format if we start shoving ^'s everywhere - so we need to decide to do so sooner than later if we are.
+
+  I suggest we consider using public key fingerprint as the opaque ID for the user (if this makes any sense at all).
+id: '11333'
+key: SPEC-152
+number: '152'
+priority: '1'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:27:15.0
+votes: '0'
+watches: '3'
+workflowId: '11433'
+---
+actions:
+- author: eternaleye
+  body: One thing that may be worth considering is making the ^opaque_id the hash of some variety of key, and aliases are inserted as Signed(alias || separator || opaque_id), such that the signature is with the key that the opaque_id is the hash of. This avoids the possibility of mappings that the opaque_id's user didn't consent to (both are present in the signature, the id/sig pair is self-certifying), and may be possible to link to e2e, such that keys for an ID are also self-certifying.
+  created: 2015-12-04 10:42:02.0
+  id: '12426'
+  issue: '11333'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2015-12-04 10:45:13.0
+- author: eternaleye
+  body: One other option - rather than '\^' use '\~' - all of the benefits of '\^' apply, with the added bonus that using '~' to mean "something user-specific" is a long-standing convention (Unix, mapping public_html, etc).
+  created: 2016-01-14 11:33:41.0
+  id: '12571'
+  issue: '11333'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-01-14 11:34:05.0
+- author: eternaleye
+  body: |-
+    Further arguments in favor of '~':
+
+    - It's an explicit [unreserved character in the URI spec|https://tools.ietf.org/html/rfc3986#section-2.3], cutting back on the escaping needed
+    - ^ is a shell metacharacter that causes execution of commands from history
+  created: 2016-04-19 13:19:54.0
+  id: '12864'
+  issue: '11333'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-04-19 13:20:29.0
+- author: richvdh
+  body: Why do we want to break the world by using ^ as the sigil for opaque IDs, rather than using the current @user_ids and layering aliases on top?
+  created: 2016-04-19 14:07:21.0
+  id: '12867'
+  issue: '11333'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-19 14:07:21.0
+- author: eternaleye
+  body: Isn't it the other way around? My understanding was that opaque IDs would be opaque in the sense of SPEC-388; the current @-form mxids would transparently grow an opaque-id backing and upgrade to aliases.
+  created: 2016-04-19 14:49:21.0
+  id: '12869'
+  issue: '11333'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-04-19 14:49:43.0
+- author: matthew
+  body: |-
+    This bug is quite stale now - who knows if we'd use public keys as the underlying identifier (discovered by a DHT or whatever) or a ^user:domain or a ~user:domain or whatever.  I'd be anxious that we keep @user:domain as public-facing user IDs for compatibility with existing conversations etc - and it would then be an indirection through to the underlying ID (which could be hosted on multiple HSes etc).  Effectively the @user:domain ID could become a 3PID mapping.  Anyway, this is all completely not designed yet and up in the air, other than the desire for decentralised accounts.
+
+    See https://github.com/matrix-org/GSoC/blob/master/IDEAS.md#decentralised-accounts for other thoughts.
+  created: 2016-04-19 14:51:53.0
+  id: '12870'
+  issue: '11333'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-04-19 14:51:53.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/494'
+  created: 2016-10-28 16:27:15.0
+  id: '13302'
+  issue: '11333'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:15.0

@@ -1,0 +1,30 @@
+---
+summary: Joining a room with an alias needs poking before it refreshes on recents
+---
+created: 2014-11-24 17:51:23.0
+creator: kegan
+description: ''
+id: '10701'
+key: SYWEB-176
+number: '176'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-11-24 18:08:55.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:02.0
+votes: '0'
+watches: '2'
+workflowId: '10801'
+---
+actions:
+- author: markjh
+  body: The room name above "Set Topic" wasn't set correctly for me when creating a room either. It was labelled as though it was a self-chat. After I refreshed the page it was labelled correctly.
+  created: 2014-11-24 17:58:12.0
+  id: '10829'
+  issue: '10701'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-24 17:58:12.0

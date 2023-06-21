@@ -1,0 +1,30 @@
+---
+summary: Spec url previews
+---
+created: 2016-05-01 12:26:11.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Might be interesting to spec per-room URL and IP blacklist/whitelists too
+id: '12644'
+key: SPEC-398
+number: '398'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:32.0
+votes: '0'
+watches: '2'
+workflowId: '12744'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/674'
+  created: 2016-10-28 16:28:32.0
+  id: '13483'
+  issue: '12644'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:32.0

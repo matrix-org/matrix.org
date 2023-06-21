@@ -1,0 +1,25 @@
+---
+summary: irc as private bridging readme
+---
+assignee: kegan
+created: 2015-07-04 21:43:01.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Make sure that the readme and howto are crystal clear that the user must invite the bit into invite only rooms before it can bridge irc users.
+id: '11728'
+key: BOTS-75
+number: '75'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 11:33:59.0
+status: '5'
+type: '1'
+updated: 2016-06-02 11:33:59.0
+votes: '0'
+watches: '1'
+workflowId: '11829'
+---
+actions: null

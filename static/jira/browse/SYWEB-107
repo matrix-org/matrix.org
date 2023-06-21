@@ -1,0 +1,34 @@
+---
+summary: kick invited member is not correctly displayed
+---
+assignee: matthew
+created: 2014-10-10 21:39:25.0
+creator: gforet
+description: |-
+  When a user "John" kicks an invited member "Bob", the event is not correctly displayed. The web client displays "John @Bob:matrix.org" instead of "John kicked @Bob:matrix.org".
+
+  The word *kicked* is missing because the m.room.member with content = {"membership":"leave", "pref":"invite"} is not parsed correctly.
+id: '10461'
+key: SYWEB-107
+number: '107'
+priority: '3'
+project: '10004'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2014-10-24 21:16:44.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:03.0
+votes: '0'
+watches: '1'
+workflowId: '10565'
+---
+actions:
+- author: gforet
+  body: 'ara4n: fix the bug where kicks of unjoined users aren''t displayed sensibly in the history  - https://github.com/matrix-org/synapse/commit/1342bced'
+  created: 2014-10-24 21:16:44.0
+  id: '10580'
+  issue: '10461'
+  type: comment
+  updateauthor: gforet
+  updated: 2014-10-24 21:16:44.0

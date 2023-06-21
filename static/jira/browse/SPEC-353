@@ -1,0 +1,30 @@
+---
+summary: Consensus-based or moderated room state setting
+---
+created: 2016-02-19 16:01:32.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  There have been a few use cases where it would be useful if all (or most) of the users in a room agree on setting some room state before it takes effect - or where a proposal for room state might need to be moderated by an admin. For instance, all users in a room may need to opt in before history visibility rules are changed. Or users may propose a new avatar for the room which the admin can approve. There are some clear problems here (100% consensus breaks if even one user has gone awol), and avatars could be proposed in-band or OOB without needing dedicated protocol support for it, but it's an interesting idea
+id: '12505'
+key: SPEC-353
+number: '353'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:19.0
+votes: '0'
+watches: '2'
+workflowId: '12605'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/640'
+  created: 2016-10-28 16:28:19.0
+  id: '13449'
+  issue: '12505'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:19.0

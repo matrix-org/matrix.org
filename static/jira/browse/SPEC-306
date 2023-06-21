@@ -1,0 +1,30 @@
+---
+summary: Way to subscribe to public room directory changes
+---
+created: 2015-12-18 08:53:45.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Needed when browsing and searching the directory to ensure that it's entirely up to date
+id: '12224'
+key: SPEC-306
+number: '306'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:04.0
+votes: '0'
+watches: '2'
+workflowId: '12327'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/601'
+  created: 2016-10-28 16:28:04.0
+  id: '13409'
+  issue: '12224'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:04.0

@@ -1,0 +1,40 @@
+---
+summary: Clashing nicks can cause local echos
+---
+assignee: kegan
+created: 2015-05-13 15:01:11.0
+creator: kegan
+description: |-
+  Two Matrix users with the same display name e.g. "Matthew" can cause local echos by doing the following:
+   - First Matrix user says something
+   - Second Matrix user says something
+   - First Matrix user says something again (this will echo)
+
+  For whatever reason, the virtual IRC user check is failing in this scenario.
+id: '11529'
+key: BOTS-41
+number: '41'
+priority: '1'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-05-13 17:54:15.0
+status: '5'
+type: '1'
+updated: 2015-05-13 17:54:15.0
+votes: '0'
+watches: '1'
+workflowId: '11630'
+---
+actions:
+- author: kegan
+  body: |-
+    So it turns out that the server pool which maintains a map of domain+nick to {{VirtualIrcUser}} was being clobbered incorrectly by fixing BOTS-29 (the race condition one). It would clobber it with a nick which was not yet verified as being free on the IRC server. As a result of the clobber, the bridge effectively forgot it was maintaining the clobbered virtual IRC user.
+
+    Fix for this will be to stage connections in the pool until they can be verified, using them only if there is no verified (connected) match.
+  created: 2015-05-13 16:26:27.0
+  id: '11742'
+  issue: '11529'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-13 16:26:27.0

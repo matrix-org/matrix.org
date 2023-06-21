@@ -1,0 +1,28 @@
+---
+summary: Provide a full reference of all the different error codes
+---
+created: 2015-12-21 01:12:19.0
+creator: jimmycuadra
+description: ''
+id: '12230'
+key: SPEC-309
+number: '309'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+status: '10100'
+type: '4'
+updated: 2016-10-28 16:28:05.0
+votes: '0'
+watches: '2'
+workflowId: '12333'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/603'
+  created: 2016-10-28 16:28:05.0
+  id: '13411'
+  issue: '12230'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:05.0

@@ -1,0 +1,40 @@
+---
+summary: Factor out profiles from membership events
+---
+created: 2016-07-03 08:26:50.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  The number of different ways you can receive profile data is confusing, and makes it hard to do per-room profiles efficiently. See https://vector.im/beta/#/room/!XqBunHwQIXUiqCaoxq:matrix.org/$14675282581486KurIs:ralith.com for details
+id: '12734'
+key: SPEC-422
+number: '422'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-07-12 12:47:41.0
+status: '5'
+type: '1'
+updated: 2016-07-12 12:47:41.0
+votes: '0'
+watches: '2'
+workflowId: '12834'
+---
+actions:
+- author: richvdh
+  body: Is this not SPEC-56?
+  created: 2016-07-04 00:12:19.0
+  id: '13043'
+  issue: '12734'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-04 00:12:19.0
+- author: richvdh
+  body: assuming it is until proven otherwise
+  created: 2016-07-12 12:47:41.0
+  id: '13047'
+  issue: '12734'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-12 12:47:41.0

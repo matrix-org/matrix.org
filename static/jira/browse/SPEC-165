@@ -1,0 +1,56 @@
+---
+summary: Address the security risks around MXC URIs
+---
+assignee: kegan
+created: 2015-05-27 10:28:37.0
+creator: kegan
+description: |-
+  {code}
+  <M-Matthew> do we have an *enormous* security hole in mxc:// URLs, in terms of letting HSes request arbitrary content? (and so expose their private HTTP space?)
+  <M-Matthew> i was pondering an attack of flavour mxc://127.0.0.1/../../../some_service/etc/passwd
+  <M-Mjark> We don't allow "/" in the content-id part.
+  {code}
+
+  This is a problem: particularly since the request will be made by the target HS (which may be on a private network).
+
+  The Security section of the content repository docs does not address manipulating the paths of MXC URIs. We should be explicitly addressing this (e.g. the path segment extracted from the URL of the request should be restricted to protect against directory traversal attacks. Passing through a regex is strongly advised given the sheer amount of odd representations of {{../}} e.g. percent-encoded like {{%2e%2e%2f}} or UTF-8 encoded traversals like {{%c1%1c}}
+id: '11562'
+key: SPEC-165
+number: '165'
+priority: '1'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-10-14 15:28:57.0
+status: '5'
+type: '1'
+updated: 2015-10-14 15:28:57.0
+votes: '0'
+watches: '2'
+workflowId: '11663'
+---
+actions:
+- author: markjh
+  body: I'd propose that at the very least we should allow "[-_0-9A-Za-z]" to allow the url-safe base64 specified in http://tools.ietf.org/html/rfc4648.
+  created: 2015-05-27 10:40:50.0
+  id: '11796'
+  issue: '11562'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-05-27 10:40:50.0
+- author: kegan
+  body: Sounds good to me.
+  created: 2015-05-27 10:52:46.0
+  id: '11797'
+  issue: '11562'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-27 10:52:46.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-doc/pull/103
+  created: 2015-10-14 15:28:57.0
+  id: '12265'
+  issue: '11562'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-14 15:28:57.0

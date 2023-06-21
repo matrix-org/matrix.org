@@ -1,0 +1,98 @@
+---
+summary: Explain the purpose of refresh tokens
+---
+created: 2016-02-09 09:49:41.0
+creator: jimmycuadra
+description: |-
+  In the client-server API, a few endpoints that return access tokens for the user also return a field called "refresh_token." The spec describes it as a token which can be exchanged for a new access token. When exchanged, the refresh token is invalidated and a new one is returned along with the new access token.
+
+  It's not clear what benefit this mechanism provides. If the access tokens expire after sometime and must be refreshed, it seems like the user should have to re-authenticate using the same mechanism they used to get their first access token. If they can simply get a new access token with another token that was provided from the same API call, it seems to defeat the purpose of having an access token that expires.
+id: '12378'
+key: SPEC-343
+number: '343'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '10100'
+resolutiondate: 2016-10-06 18:01:55.0
+status: '5'
+type: '1'
+updated: 2016-10-06 18:01:56.0
+votes: '0'
+watches: '2'
+workflowId: '12483'
+---
+actions:
+- author: richvdh
+  body: |-
+    Yes, the intention is very much that access_tokens should expire. Currently they do not, under synapse - this is SYN-533.
+
+    Refresh_tokens have two advantages:
+    * Because they are used much less frequently (and only in a POST body rather than in query params), it is harder for them to be intercepted and stolen. This means that you can limit the damage done by a leaked access_token by expiring them more frequently than would be acceptable if the user had to type in their credentials again.
+    * They are single-use - so if a refresh_token *is* compromised, we can tell, and invalidate it (although currently there is no way to do so. SPEC-243 is relevant here).
+
+    The principles of separate refresh_tokens and access_tokens are also present in OAuth.
+
+    As with much of the auth documentation, it's true that this is not clear in the spec, and some words to explain the interaction of the different tokens would certainly be helpful.
+  created: 2016-04-18 17:14:54.0
+  id: '12841'
+  issue: '12378'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 17:14:54.0
+- author: jimmycuadra
+  body: |-
+    There's a very good explanation as it pertains to OAuth in this answer to a question about it on Stack Overflow: http://stackoverflow.com/a/12885823/242493
+
+    His explanation makes sense to me. Does the fact that the refresh token is optional in the specification mean that it's up to a homeserver implementation which of the two approaches to take? If that's true, the only downside is that the client needs to know how to do the more complicated flow, even if the homeserver it's being used with doesn't actually use refresh tokens.
+
+    My understanding is that Synapse actually looks up access tokens in the database to check for revocation on each request, which would imply that it shouldn't bother with refresh tokens, but I'm not sure whether or not it uses refresh tokens.
+
+    The argument that refresh tokens are necessary because access tokens might get leaked doesn't seem compelling to me. While the Matrix spec unfortunately doesn't mandate TLS, that seems like it would cover concerns about access tokens being leaked through query parameters.
+  created: 2016-04-20 16:27:13.0
+  id: '12879'
+  issue: '12378'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-04-20 16:27:13.0
+- author: richvdh
+  body: |-
+    {quote}
+    Does the fact that the refresh token is optional in the specification mean that it's up to a homeserver implementation which of the two approaches to take? 
+    {quote}
+
+    Yes, it's basically up to the homeserver to decide whether a refresh token is helpful: it is not obliged to issue them if it does not see fit. However, see below as to why I think they are helpful :).
+
+    {quote}
+    My understanding is that Synapse actually looks up access tokens in the database to check for revocation on each request, 
+    {quote}
+
+    It uses an in-memory cache. That amounts to the same thing as long as all client requests hit the same instance of Synapse (which they do currently, but will not forever).
+
+    {quote}
+    While the Matrix spec unfortunately doesn't mandate TLS, that seems like it would cover concerns about access tokens being leaked through query parameters.
+    {quote}
+
+    Even with TLS, query-params end up in all manner of log files (HTTP load-balancers, for instance: matrix.org points at an apache, which proxies to our synapse instance). Keeping access-tokens short-lived helps mitigate this risk.
+
+    However, that Stack Overflow answer misses a critical point, which is that refresh tokens can be single-use: indeed {{/tokenrefresh}} can and should return a new refresh token every time you refresh the access token. The critical point here is that you then know if your refresh token has been compromised, and can revoke it. If you just stick with a single token, then it could be weeks before you discover that token has been compromised.
+
+    {quote}
+    but I'm not sure whether or not it uses refresh tokens.
+    {quote}
+
+    For the record: synapse issues refresh tokens, and you can use them to refresh access tokens. However, since it does not currently expire access tokens, we don't really get the benefit of them.
+  created: 2016-04-24 22:40:33.0
+  id: '12891'
+  issue: '12378'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-24 22:40:33.0
+- author: richvdh
+  body: We've decided to remove refresh tokens from the matrix spec (see https://github.com/matrix-org/matrix-doc/pull/395), so this is no longer required.
+  created: 2016-10-06 18:01:56.0
+  id: '13160'
+  issue: '12378'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 18:01:56.0

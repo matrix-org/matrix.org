@@ -1,0 +1,28 @@
+---
+summary: We still need to properly document how to set up SSL LBs in the README or similar
+---
+created: 2015-09-22 21:51:11.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11915'
+key: SYN-484
+number: '484'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '3'
+updated: 2016-11-07 18:28:23.0
+votes: '0'
+watches: '2'
+workflowId: '12018'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1377'
+  created: 2016-11-07 18:28:23.0
+  id: '13696'
+  issue: '11915'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:23.0

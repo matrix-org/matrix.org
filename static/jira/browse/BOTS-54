@@ -1,0 +1,22 @@
+---
+summary: irc AS identd gets confused on reporting local ports of ssl'd irc conns
+---
+created: 2015-06-17 11:48:57.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11664'
+key: BOTS-54
+number: '54'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '3'
+resolutiondate: 2015-06-17 12:39:32.0
+status: '5'
+type: '1'
+updated: 2015-06-17 12:39:42.0
+votes: '0'
+watches: '1'
+workflowId: '11765'
+---
+actions: null

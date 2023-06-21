@@ -1,0 +1,31 @@
+---
+summary: time stamps don't obey the system formatting
+---
+assignee: gforet
+created: 2015-10-02 14:51:37.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11989'
+key: SYIOS-152
+number: '152'
+priority: '2'
+project: '10200'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-10-19 17:21:54.0
+status: '5'
+type: '1'
+updated: 2015-10-19 17:21:54.0
+votes: '0'
+watches: '2'
+workflowId: '12092'
+---
+actions:
+- author: gforet
+  body: 'From aaron: "I have time set to 24 hour, and that isn''t honored"'
+  created: 2015-10-02 15:47:30.0
+  id: '12214'
+  issue: '11989'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-10-02 15:47:30.0

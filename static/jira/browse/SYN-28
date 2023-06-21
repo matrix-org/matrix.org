@@ -1,0 +1,65 @@
+---
+summary: We need a way to rename homeservers
+---
+created: 2014-09-16 01:02:37.0
+creator: matthew
+description: |-
+  The current common use case for Synapse is that people install it running as localhost - have a play with it; see that it's good.
+
+  They then want to expose the same server to run as --server-name foo.net - except there isn't (as far as I know) an easy way to change the server-name without vaping the whole HS DB.  We need one.
+id: '10053'
+key: SYN-28
+number: '28'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:13.0
+votes: '0'
+watches: '3'
+workflowId: '10362'
+---
+actions:
+- author: erikj
+  body: |-
+    I don't think this can be done once the home server has federated with anyone else, since the remote will will always send to the old server name.
+
+    For the special case of renaming from a localhost we can probably write a script that goes and rewrites the local DB.
+  created: 2014-09-25 16:11:48.0
+  id: '10456'
+  issue: '10053'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-25 16:11:48.0
+- author: matthew
+  body: |-
+    We need to think this through better before it's too late.
+
+    If I decide to rebrand from foo.com to bar.com, it sounds like my only choice is to create a new HS DB containing the same account/profile names as before, and then somehow bootstrap these new users into the same rooms as the old ones (by inviting them using the old users)?
+
+    This feels very unwieldy.  I guess supporting forwarding addresses would be a step in the better direction, and then we can migrate like email.  For now, however, I can't see anything better than a script which creates the new DB and helps guide you through rejoining your users into rooms as the new user (and possibly leaving those rooms as the old user).
+
+    (Thank goodness we don't have 1:1 rooms!)
+  created: 2015-02-02 18:34:17.0
+  id: '11207'
+  issue: '10053'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-02 18:34:17.0
+- author: erikj
+  body: The old users won't necessarily have permission to invite new users into the room.
+  created: 2015-02-03 13:19:11.0
+  id: '11212'
+  issue: '10053'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-02-03 13:19:11.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1209'
+  created: 2016-11-07 18:27:13.0
+  id: '13539'
+  issue: '10053'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:13.0

@@ -1,0 +1,39 @@
+---
+summary: We need a way to hide given messages from specific room members
+---
+created: 2015-01-12 00:08:33.0
+creator: matthew
+description: |-
+  If you're trying to loadbalance messages between multiple users in the same room, you may want to make the message only visible to subsets of the room at any given time.
+
+  This is similar to ACLing off historical message visibility if you so desire.
+id: '10904'
+key: SPEC-84
+number: '84'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:26:54.0
+votes: '0'
+watches: '2'
+workflowId: '11004'
+---
+actions:
+- author: matthew
+  body: Another use case for this is an email gateway, where you want to put an inbox into a room - but want to let other people view that inbox, but only the messages they were cc'd on.
+  created: 2015-03-29 22:31:41.0
+  id: '11447'
+  issue: '10904'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-29 22:31:41.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/482'
+  created: 2016-10-28 16:26:54.0
+  id: '13258'
+  issue: '10904'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:54.0

@@ -1,0 +1,23 @@
+---
+summary: We should pick the target homeserver based on our matrix ID when logging in
+---
+created: 2014-12-08 15:29:09.0
+creator: matthew
+description: |-
+  <Amandine> surely if i login as @Amandine:matrix.org it should recognize i'm logging into matrix.org
+
+  If users log in with an mxid, why are we bothering prompting confusingly for homeserver URL at all?  We should discover it from the domain in their matrix ID.  Might need a better mechanism (e.g. well-known URIs) for mapping from homeserver domains to actual C-S API URLs.
+id: '10786'
+key: SYWEB-224
+number: '224'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-07-08 14:01:19.0
+votes: '0'
+watches: '1'
+workflowId: '10886'
+---
+actions: null

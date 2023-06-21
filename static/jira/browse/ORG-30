@@ -1,0 +1,38 @@
+---
+summary: Change all 'matrix.org/beta' mentions to 'vector.im'
+---
+created: 2015-11-02 22:53:50.0
+creator: wldhx
+description: ''
+id: '12072'
+key: ORG-30
+number: '30'
+priority: '3'
+project: '10003'
+reporter: wldhx
+resolution: '1'
+resolutiondate: 2017-03-21 11:01:41.0
+status: '5'
+type: '4'
+updated: 2017-03-21 11:01:41.0
+votes: '0'
+watches: '2'
+workflowId: '12175'
+---
+actions:
+- author: wldhx
+  body: Discussed @#matrix:matrix.org - the old client is essentially deprecated and looks scary _(and I should have written this in desc but can't modify the issue now)_.
+  created: 2015-11-02 22:57:03.0
+  id: '12296'
+  issue: '12072'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-11-02 22:57:03.0
+- author: richvdh
+  body: I think this is done now
+  created: 2017-03-21 11:01:41.0
+  id: '14016'
+  issue: '12072'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:01:41.0

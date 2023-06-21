@@ -1,0 +1,30 @@
+---
+summary: Adding an application service token requires server restart
+---
+created: 2015-03-28 15:10:14.0
+creator: nolan
+description: ''
+id: '11268'
+key: SYN-322
+number: '322'
+priority: '3'
+project: '10000'
+reporter: nolan
+resolution: '1'
+resolutiondate: 2015-05-14 10:16:53.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:08.0
+votes: '0'
+watches: '2'
+workflowId: '11368'
+---
+actions:
+- author: dbkr
+  body: Closing this because AS tokens have now changed so they're set up in the config file instead. You'll still have to reload, but this is expected for config file changes, whereas having to restart to pick something up from the db was very counterintuitive.
+  created: 2015-05-14 10:16:53.0
+  id: '11743'
+  issue: '11268'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 10:16:53.0

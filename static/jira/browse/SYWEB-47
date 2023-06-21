@@ -1,0 +1,37 @@
+---
+summary: We should show power level changes (and *any* kind of events like these) in the scrollback
+---
+assignee: kegan
+created: 2014-09-18 16:12:42.0
+creator: matthew
+description: ''
+id: '10329'
+key: SYWEB-47
+number: '47'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2014-11-25 17:45:58.0
+votes: '0'
+watches: '2'
+workflowId: '10432'
+---
+actions:
+- author: kegan
+  body: By "and *any* kind of events like these" you mean any power level change events?
+  created: 2014-10-29 10:12:15.0
+  id: '10620'
+  issue: '10329'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-29 10:12:15.0
+- author: matthew
+  body: i mean "any event which changes how the room logic behaves".  e.g. power level changes; display names changes; avatar changes; room topic changes; room name changes... in the 'matrix console' client i'd suggest that we show /any/ state event (at least as an option) in the room history rather than hiding ones we don't understand...
+  created: 2014-10-29 22:51:47.0
+  id: '10701'
+  issue: '10329'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-29 22:51:47.0

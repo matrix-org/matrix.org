@@ -1,0 +1,36 @@
+---
+summary: Error storing remote keys
+---
+assignee: markjh
+created: 2015-04-30 15:15:36.0
+creator: markjh
+description: |-
+  2015-04-30 15:10:02,800 - synapse.rest.key.v2.remote_key_resource - 222 - ERROR - GET-2 - Failed to get key for 'localhost:8480'
+  Traceback (most recent call last):
+    File "/src/github/matrix-org/synapse/synapse/rest/key/v2/remote_key_resource.py", line 219, in query_keys
+      server_name, key_ids
+  TypeError: _simple_insert() got an unexpected keyword argument 'or_replace'
+id: '11500'
+key: SYN-367
+number: '367'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-04-30 15:21:54.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:07.0
+votes: '0'
+watches: '1'
+workflowId: '11600'
+---
+actions:
+- author: markjh
+  body: Looks like we have to use _simple_upsert instead.
+  created: 2015-04-30 15:16:40.0
+  id: '11700'
+  issue: '11500'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-04-30 15:16:40.0

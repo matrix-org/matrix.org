@@ -1,0 +1,45 @@
+---
+summary: How do you decide whether a room has unread messages?
+---
+created: 2015-12-14 13:47:19.0
+creator: dbkr
+description: |-
+  We need to decide how one determines whether a room is 'unread' or not, ie. how we decide what events cause a room to be considered unread.
+
+  I believe the 5 options are:
+
+  *Set it in stone*: define in the Matrix spec which events do and do not cause a room to be considered unread. Neither clients not users would be able to modify this behaviour.
+
+  *Use push_rules*: Add an action to the pushrules system that causes an event to trigger 'unreadness'. This is extremely flexible but could be very heavyweight since the dump implementation would store a push action for every message that causes a room to be unread. We could also not store 'unread' actions and run push rules each time to determine unreadness, since we'd only need to do this for every message in the live stream and messages backwards in each room in an initial sync until we found one that caused unreadness (we never care about unreadness for pagination).
+
+  *Simpler config system*: Use some different system to push_rules that's based on user input but simple enough that we could use it for messages in an initial sync and every message in an event stream.
+
+  *The wild west option*: (ie. what we do now) Let clients decide what events cause a room to be marked unread. Clients will not always have enough information to determine this but no two given clients will necessarily use the same rules anyway.
+
+  *Unspecified server behaviour*: Leave it equally unspecified but make the server dictate it to the client so it's server-specific behaviour rather than client specific behaviour, so all your clients will always show the same for each room but may be inconsistent between server when different server impls appear on the scene. Will need the server to mark whether each event in the live stream counts in the unread status or not, ie. live stream gains bytes. 
+
+  P1 because this blocks Vector P1 feature, "Unread state sync" (https://github.com/vector-im/vector-web/issues/469)
+id: '12208'
+key: SPEC-303
+number: '303'
+priority: '1'
+project: '10001'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-12-14 17:24:59.0
+status: '5'
+type: '1'
+updated: 2015-12-14 17:24:59.0
+votes: '0'
+watches: '1'
+workflowId: '12311'
+---
+actions:
+- author: dbkr
+  body: Sounds like we've converged on the wild west option, apart from that we backfill more history (up to a limit) if we haven't found an event that causes the room to be marked unread or reached our read marker. We should make sure we have a sensible way to make it configurable in the future.
+  created: 2015-12-14 17:24:30.0
+  id: '12471'
+  issue: '12208'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-12-14 17:24:30.0

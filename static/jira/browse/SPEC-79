@@ -1,0 +1,28 @@
+---
+summary: We need a way to restrict the permissions specific matrix apps have to utilise your account.
+---
+created: 2014-12-09 18:42:38.0
+creator: matthew
+description: "Both Hugh NS and jercos on IRC have called out that if you are handing your matrix HS credentials to an increasingly large set of random matrix-enabled apps, you are trusting these apps with a *lot* of power.  (See IRC convo with jercos below).\n\nMy suggestion is that we either need much better support for creating ephemeral IDs which somehow fwd to your official one, but only have the ability to access rooms & history that they are explicitly invited to... or we need a formal FB-permissions model which specifies ACLs for a given app when you hand over your matrix credentials.\n\nDec 8 21:37 (IRC jercos) wow, that what-is-the-matrix post sounds like a local security nightmare\t\nDec 8 21:37  send a private message to a friend? now *every app* on your phone knows about it. and then suddenly you get google ads for things you've PMed people about.\t\nDec 8 21:46 (IRC Arathorn) @irc_Arathorn:matrix.org\t jercos: how would google get to see the msg to advertise it?\t\nDec 8 21:47  if you don't want ads, don't use spyware apps which upload your messages to google :)\t\nDec 8 21:47  or use end-to-end crypto\t\nDec 8 21:48  to contrast: \"send an email to a friend? now *every mail client* on your phone knows about it.\"\t\nDec 8 21:48  except you don't get google ads because a) you don't use google for your server, you run it yourself or use someone who respects your privacy\t\nDec 8 21:49  b) you choose mail clients who don't randomly go and datamine your mail.\t\nDec 8 21:49  so i think it's a fairly major win for local security\t\nDec 8 21:49  (but then again i'm not exactly neutral :-)\t\nDec 8 21:50 (IRC jercos) @irc_jercos:matrix.org\t Arathorn: I don't log into my email account from 20 different apps as a matter of policy\t\nDec 8 21:50 * (IRC jercos) shrugs\t\nDec 8 21:50 (IRC Arathorn) @irc_Arathorn:matrix.org\t i wouldn't expect you would with matrix either\t\nDec 8 21:50 (IRC jercos) @irc_jercos:matrix.org\t obviously an informed user would very carefully choose what apps to use\t\nDec 8 21:50 (IRC Arathorn) @irc_Arathorn:matrix.org\t you'd just pick a few favourite apps\t\nDec 8 21:51  the one with the best video calling... the one with the sexy UX... the one with the bes tgroupchat\t\nDec 8 21:51 (IRC jercos) @irc_jercos:matrix.org\t an uninformed user can e.g., \"sign in with google\" without giving an app access to their mailbox\t\nDec 8 21:51 (IRC Arathorn) @irc_Arathorn:matrix.org\t so it's no different to me having mailbox, k9, native imap and roundcube or similar for my mail accounts\t\nDec 8 21:52 (IRC jercos) @irc_jercos:matrix.org\t specifically using the example in the article, what stops the football app from reading your IMs?\t\nDec 8 21:52  maybe it's a well-behaved football app, but if it *can* read your IMs, that breaks the implied security model around apps\t\nDec 8 21:52 (IRC Arathorn) @irc_Arathorn:matrix.org\t jercos: you have to explictly pick your server. and even uninformed users can pick not-google (just as today with email)\t\nDec 8 21:53  in that example, yes - your football app could read your IMs. it's a good point i guess\t\nDec 8 21:53  either we need to support multiple personas more easily\t\nDec 8 21:53  (the equivalent of throwaway mail accounts)\t\nDec 8 21:53  or everything ACLed off by default\t\nDec 8 21:54  or per-app ACLs\t\nDec 8 21:54  will have a think.\t\nDec 8 21:54  in retrospect it is a good point :)\t\nDec 8 21:54 (IRC jercos) @irc_jercos:matrix.org\t :D plenty of room to add that security\t\nDec 8 21:55  and to boot, that specific example I would see being more useful as a matrix-powered service than a matrix app\t\nDec 8 21:55  like text message updates, subscribe and get them without installing anything\t\nDec 8 21:56  but the genericism that would allow it to be used as a carrier of data to an app could just as easily wind up with a dedicated account being made automatically for that app\t\nDec 8 22:39 (IRC Arathorn) @irc_Arathorn:matrix.org\t yup. you could implement the security either through throwaway accounts or per-app ACLs or some other model\t\nDec 8 22:39  but agreed that we need it."
+id: '10794'
+key: SPEC-79
+number: '79'
+priority: '1'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:26:52.0
+votes: '0'
+watches: '2'
+workflowId: '10894'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/479'
+  created: 2016-10-28 16:26:52.0
+  id: '13255'
+  issue: '10794'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:52.0

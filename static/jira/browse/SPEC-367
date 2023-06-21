@@ -1,0 +1,53 @@
+---
+summary: m.presence claims it should have a content.user_id, which appears to be a lie
+---
+created: 2016-03-17 13:46:26.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12563'
+key: SPEC-367
+number: '367'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-10-28 16:28:23.0
+votes: '0'
+watches: '2'
+workflowId: '12663'
+---
+actions:
+- author: richvdh
+  body: |-
+    Empirically they don't have a {{content.user_id}}; they have a {{sender}}:
+
+    {noformat}
+    {
+        content: {presence: "online", last_active_ago: 570, currently_active: true},
+        sender: "@richvdh:matrix.org",
+        type: "m.presence"
+    }
+    {noformat}
+  created: 2016-06-29 11:58:34.0
+  id: '13033'
+  issue: '12563'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-29 11:59:14.0
+- author: richvdh
+  body: could be a difference between events received via {{/events}} and those received via {{/sync}}? In which case we should doc the new format and note it in the [migration guide|http://matrix.org/docs/guides/client-server-migrating-from-v1.html]
+  created: 2016-06-29 12:01:05.0
+  id: '13034'
+  issue: '12563'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-29 12:01:05.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/650'
+  created: 2016-10-28 16:28:23.0
+  id: '13459'
+  issue: '12563'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:23.0

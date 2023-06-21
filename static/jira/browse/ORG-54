@@ -1,0 +1,24 @@
+---
+summary: 'Change the homeServer '
+---
+created: 2016-05-05 15:14:25.0
+creator: mohamed abdessamad
+description: |-
+  hi ,
+  i would ask hou i can change the name of the homserver  Matrix.org to my homserver Odoo 8 that i you s in my backend
+id: '12652'
+key: ORG-54
+number: '54'
+priority: '3'
+project: '10003'
+reporter: mohamed abdessamad
+resolution: '10100'
+resolutiondate: 2016-05-05 15:33:22.0
+status: '5'
+type: '3'
+updated: 2016-05-05 15:33:22.0
+votes: '0'
+watches: '1'
+workflowId: '12752'
+---
+actions: null

@@ -1,0 +1,23 @@
+---
+summary: When switching between rooms, pagination flickers between the top of the room before jumping to the bottom of the page
+---
+assignee: manu
+created: 2014-09-16 14:53:23.0
+creator: matthew
+description: ''
+id: '10206'
+key: SYWEB-30
+number: '30'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-17 16:13:43.0
+status: '5'
+type: '1'
+updated: 2014-09-18 23:30:11.0
+votes: '0'
+watches: '1'
+workflowId: '10409'
+---
+actions: null

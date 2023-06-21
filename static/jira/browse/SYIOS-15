@@ -1,0 +1,41 @@
+---
+summary: Entering a room should show all cached history from global initialsync until the room initialsync completes
+---
+assignee: gforet
+created: 2014-12-11 21:28:59.0
+creator: matthew
+description: ''
+id: '10813'
+key: SYIOS-15
+number: '15'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-16 20:35:36.0
+status: '6'
+type: '2'
+updated: 2014-12-23 15:20:21.0
+votes: '0'
+watches: '3'
+workflowId: '10913'
+---
+actions:
+- author: gforet
+  body: In order to improve entering new room, the matrix SDK will have to notify the events listener when all data from cached history has been reviewed. Then the sample app will be able to display available data while the older events are downloaded.
+  created: 2014-12-12 10:24:55.0
+  id: '10990'
+  issue: '10813'
+  type: comment
+  updateauthor: gforet
+  updated: 2014-12-12 10:24:55.0
+- author: manu
+  body: |-
+    MXRoom.remainingMessagesForPaginationInStore is now available in the SDK.
+    The app can use it to load messages only from the store.
+  created: 2014-12-12 16:29:24.0
+  id: '10991'
+  issue: '10813'
+  type: comment
+  updateauthor: manu
+  updated: 2014-12-12 16:29:24.0

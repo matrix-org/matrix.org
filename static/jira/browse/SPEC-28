@@ -1,0 +1,28 @@
+---
+summary: How do we handle homeserver key upgrades?
+---
+created: 2014-09-30 14:05:50.0
+creator: matthew
+description: ''
+id: '10427'
+key: SPEC-28
+number: '28'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:44.0
+votes: '0'
+watches: '2'
+workflowId: '10530'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/464'
+  created: 2016-10-28 16:26:44.0
+  id: '13239'
+  issue: '10427'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:44.0

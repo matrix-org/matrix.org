@@ -1,0 +1,27 @@
+---
+summary: Get rid of the spinner when paginating from cache
+---
+created: 2015-12-02 16:41:34.0
+creator: manu
+description: |-
+  With the last performance improvements, this spinner kills the UX performance feeling. Specially with those lines:
+
+  https://github.com/matrix-org/matrix-ios-kit/blob/c9959c680d1566e26b0d3892cf3298e5fac4f7dc/MatrixKit/Controllers/MXKRoomViewController.m#L1347-L1348
+
+  Getting messages from the cache takes 10ms.
+  The computation in the paginateBackMessages success block takes 20-40ms.
+  It is a pity to delay the display by 300ms only to make the spinner more visible.
+id: '12168'
+key: SYIOS-185
+number: '185'
+priority: '2'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '4'
+updated: 2015-12-02 16:41:34.0
+votes: '0'
+watches: '1'
+workflowId: '12271'
+---
+actions: null

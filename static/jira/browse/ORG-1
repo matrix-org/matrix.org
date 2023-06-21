@@ -1,0 +1,38 @@
+---
+summary: Finish FAQ
+---
+created: 2014-09-16 00:33:07.0
+creator: matthew
+description: ''
+id: '10030'
+key: ORG-1
+number: '1'
+priority: '1'
+project: '10003'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2017-03-21 10:33:41.0
+status: '5'
+type: '2'
+updated: 2017-03-21 10:33:41.0
+votes: '0'
+watches: '2'
+workflowId: '10315'
+---
+actions:
+- author: matthew
+  body: this is getting more urgent; the content is stale and incomplete and folks like Dave Winer are linking to it as the entry point to the site :(
+  created: 2015-03-08 19:14:27.0
+  id: '11359'
+  issue: '10030'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-08 19:14:27.0
+- author: richvdh
+  body: https://github.com/matrix-org/matrix-doc/issues/841
+  created: 2017-03-21 10:31:10.0
+  id: '14002'
+  issue: '10030'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 10:31:10.0

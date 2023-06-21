@@ -1,0 +1,44 @@
+---
+summary: Clarify that the email settings in the HS only affect password reset emails
+---
+created: 2014-12-02 09:20:47.0
+creator: rainer.piper
+description: |-
+  I change the settings in homeserver.yaml
+
+  email_from_address: noreply@soho-piper.de
+  email_smtp_server: smtp.soho-piper.de
+  with no effect.
+  The Validation Token is still coming from noreply@matrix.org.
+id: '10749'
+key: SYN-184
+number: '184'
+priority: '3'
+project: '10000'
+reporter: rainer.piper
+resolution: '1'
+resolutiondate: 2015-04-23 11:47:10.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:06.0
+votes: '0'
+watches: '2'
+workflowId: '10849'
+---
+actions:
+- author: dbkr
+  body: The validation tokens are sent directly by the identity server rather than the home server, which is why this isn't affecting your validation tokens. Password reset emails are sent by the home server, so this setting will affect them. We could make this clearer, although I believe the long term goal is still to have all email etc. sent by the ID server.
+  created: 2014-12-02 09:32:24.0
+  id: '10908'
+  issue: '10749'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-12-02 09:32:24.0
+- author: dbkr
+  body: The email support that never was now removed from synapse, along with these options.
+  created: 2015-04-23 11:47:10.0
+  id: '11525'
+  issue: '10749'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-23 11:47:10.0

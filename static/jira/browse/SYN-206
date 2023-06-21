@@ -1,0 +1,38 @@
+---
+summary: 500 when talking to media repo
+---
+created: 2014-12-20 16:46:48.0
+creator: erikj
+description: |-
+  {noformat}
+  2014-12-20 16:40:18,566 - synapse.media.v1.base_resource - 66 - ERROR -  - Failed handle request synapse.media.v1.thumbnail_resource._async_render_GET on <synapse.media.v1.thumbnail_resource.ThumbnailResource instance at 0x24eb200>
+  Traceback (most recent call last):
+    File "synapse/media/v1/base_resource.py", line 55, in wrapped_request_handler
+      yield request_handler(self, request)
+  TypeError: 'NoneType' object has no attribute '__getitem__'
+  2014-12-20 16:40:18,567 - twisted - 455 - INFO -  - "212.71.233.145" - - [20/Dec/2014:16:40:18 +0000] "GET /_matrix/media/v1/thumbnail/matrix.org/PFjzOWxbDpBoEdSuXUyPIoGb?width=200&height=200 HTTP/1.1" 500 40 "https://jki.re/synapse/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2251.0 Safari/537.36"
+  {noformat}
+id: '10839'
+key: SYN-206
+number: '206'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-01-07 13:07:18.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:03.0
+votes: '0'
+watches: '2'
+workflowId: '10939'
+---
+actions:
+- author: kegan
+  body: Mark fixed this.
+  created: 2015-01-07 13:07:18.0
+  id: '11055'
+  issue: '10839'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-07 13:07:18.0

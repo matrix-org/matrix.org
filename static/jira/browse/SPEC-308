@@ -1,0 +1,137 @@
+---
+summary: Authentication API is unclear/misleading
+---
+created: 2015-12-21 00:56:47.0
+creator: jimmycuadra
+description: |-
+  There are some incongruencies between the description of the interactive auth system and the API calls that are labeled as involving it. I'll provide a list of various things that are not clear to me (as of r0.0.0) and perhaps the two sections can be address in general to make these things more clear.
+
+  * The title of section 3.2 implies that all API calls in the section involve the interactive auth system, yet some of them include a line saying "Requires auth: Yes" and others don't. Why is this line necessary if everything in this section uses interactive auth?
+  * The /register endpoint has "username" and "password" as optional request parameters, but it's not clear what these mean in the context of user-interactive authentication. If interactive auth happens before the real /register API call is processed, hasn't identity already been established? In which case, why are a user and password required? If this endpoint in fact does not require interactive auth, then how does it relate to the various authentication types in the interactive system? Does it create an account stored on the homeserver by which the `m.login.password` auth type is used for other endpoints?
+  * Similar to the previous point, the /login endpoint has required request parameters for "user" and "password" and says that "currently only `m.login.password` is supported. This is also confusing, because the point of the interactive auth system (as I understand it) is to decouple the specifics of the authentication mechanism from APIs requiring authentication. Matthew told me this is simply outdated documentation, so maybe it just needs to be updated to reflect the latest developments.
+  * Section 3 lacks any examples of user-interactive authentication as it is applied to any specific API endpoint. That is, interactive auth is only describe in general terms, but the reader is never shown a complete example of interactive auth being used with a real endpoint from the client-server API, so it's not clear what the flow of request/responses look like and how the parameters required for auth are structured alongside parameters required by a specific API endpoint, and what the semantic differences between them when they have fields that seem to be of similar meaning like "user."
+  * Nitpick: Use consistent language and typesetting for referring to the interactive part. Is it "User-Interactive Authentication API" or "User-Interactive Authentication mechanism?"
+id: '12229'
+key: SPEC-308
+number: '308'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '1'
+resolutiondate: 2016-05-23 17:43:36.0
+status: '5'
+type: '4'
+updated: 2016-05-23 17:43:36.0
+votes: '0'
+watches: '3'
+workflowId: '12332'
+---
+actions:
+- author: jimmycuadra
+  body: |-
+    I just talked to Dave on IRC and he helped clarify a lot of this. I'll include the important points here to make it more clear how the spec can be updated to address this issue:
+
+    * The section on user-interactive authentication does not make it clear that "authentication" in this context is not equivalent to the the standard concept of logging into a system with some sort of credentials (e.g. the user gives the server a login and password and the server gives them back a session cookie). User-interactive authentication is about proving that you are in control of some external resource like an email address.
+    * Once a user has completed the user-interactive authentication flow, they can use the newly authorized external resource as credentials for completing the registration process. This is why the /register endpoint contains a `bind_email` parameter despite not having any parameter for an email address itself: the email address comes from the dictionary supplied through user-interactive authentication. It should be made more explicit for the /register API that data provided via user-interactive authentication may be important in completing the operation and that it exists outside the scope of what is documented for that specific API endpoint.
+    * Apparently the /login API is in some sort of transitional process, where it currently does not use user-interactive authentication (which is why it explicitly takes a username and password, even though there is an `m.login.password` user-interactive authentication type.) In the future, it is expected to simply create an access token for a user that has already proved their identity via user-interactive authentication. Right now, there is nothing at all in the spec that indicates this transition, which is very confusing and makes it hard to understand how the endpoint relates to user-interactive authentication. (I had a similar confusing experience previously, because many of the event syncing APIs were not marked as deprecated as they should have been in a previous version of the spec.)
+  created: 2016-04-07 11:16:29.0
+  id: '12807'
+  issue: '12229'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-05-05 11:38:01.0
+- author: jimmycuadra
+  body: 'Another point that should be made clear in the spec: Which flows a homeserver supports for user-interactive authentication is not fixed for all the different API endpoints. Each endpoint may support a different set of flows. For example, it doesn''t make sense for /register to support `m.login.password` because the username and password being requested are part of the actual request for that endpoint, and so it would be redundant to use that auth flow. Meanwhile, the /login endpoint *would* support `m.login.password` to use the username and password an account was previously registered with.'
+  created: 2016-04-07 12:05:49.0
+  id: '12811'
+  issue: '12229'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-04-07 12:05:49.0
+- author: jimmycuadra
+  body: 'These transitional APIs also raise the question: what does Synapse _actually do_ right now? Which APIs is Vector using for these registration and login flows?'
+  created: 2016-04-20 15:59:18.0
+  id: '12876'
+  issue: '12229'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-04-20 15:59:18.0
+- author: richvdh
+  body: |-
+    Sadly it is well-known that the auth API is not clearly described in the spec currently, and the transitional state of it only serves to compound the confusion; I've updated the subject of the bug to better reflect the scope of the problem. Thank you for the very helpful descriptions of specific areas of concern.
+
+    As for what Vector does right now, that is probably better discussed over IM than in Jira. You know where to find us :)
+  created: 2016-04-24 21:21:35.0
+  id: '12888'
+  issue: '12229'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-24 21:21:35.0
+- author: eternaleye
+  body: |-
+    A couple of related tickets:
+
+    SPEC-118 - login flows are represented as lists in the up-front JSON, but execute as trees
+    SPEC-274 - multiple issues, including:
+    - login flow representation cannot describe multiple instances of the same stage type with distinct parameter sets (example: Google OAuth + Github OAuth)
+    - login flows cannot impose ordering constraints between stages (example: captcha before email)
+    - clients cannot submit multiple stages at once (important for reducing chattiness/user-visible delay during login)
+  created: 2016-04-26 00:57:52.0
+  id: '12893'
+  issue: '12229'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-04-26 01:00:20.0
+- author: jimmycuadra
+  body: |-
+    Since SPEC-344 was closed, let's make sure when this issue is addressed it covers an explanation of access tokens and refresh tokens. For quick reference, this is what Richard said about access tokens in the other issue:
+
+    bq. As for an access_token: the implementation here is quite deliberately left up to the homeserver. The fact that it might expire is mentioned in https://matrix.org/docs/spec/r0.0.1/client_server.html#post-matrix-client-r0-register and https://matrix.org/docs/spec/r0.0.1/client_server.html#post-matrix-client-r0-login; how it is generated and checked is an implementation detail.
+
+    Documentation on refresh tokens is being discussed in SPEC-343.
+  created: 2016-05-05 12:11:42.0
+  id: '12905'
+  issue: '12229'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-05-05 12:11:42.0
+- author: richvdh
+  body: |-
+    {quote}
+    Since SPEC-344 was closed, let's make sure when this issue is addressed it covers an explanation of access tokens and refresh tokens.
+    {quote}
+
+    The user-interactive authentication API is actually quite orthogonal to the business of refresh tokens and access tokens, so I don't think we need to track that here as well as in SPEC-343.
+  created: 2016-05-09 14:51:47.0
+  id: '12915'
+  issue: '12229'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-09 14:51:47.0
+- author: richvdh
+  body: |-
+    [~jimmycuadra]: I believe I've addressed some of the concerns mentioned here in the latest spec release (http://matrix.org/docs/spec/client_server/r0.1.0.html#client-authentication): in particular, I hope I have resolved the confusion about which APIs actually use the user-interactive mechanism today (which is to say, /register and /password), by making the `auth` param and the `401` response explicit.
+
+    There's certainly plenty more work to be done here, but the problem is that this bug is now quite noisy as it mixes together work which still needs to be done with stuff that has been addressed or at least improved. How would you feel about replacing this bug with finer-grained ones?
+  created: 2016-05-09 14:52:42.0
+  id: '12916'
+  issue: '12229'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-09 14:52:42.0
+- author: jimmycuadra
+  body: Sorry for the slow response. Yes, I think it is a good idea to split up remaining work here into more granular pieces. Feel free to close, but let me know if there are new issues spun off from this one that I should watch. :}
+  created: 2016-05-21 17:52:51.0
+  id: '12925'
+  issue: '12229'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-05-21 17:52:51.0
+- author: richvdh
+  body: 'OK, I''m going to close this for now. While there are some valid points raised here which haven''t really been addressed, most of them seem a bit premature. There remains plenty of work to be done around the authentication APIs (for example: support for OAuth; moving /login to the user-interactive api (SYN-696), etc etc), so there doesn''t seem much point in worrying about the precise wording of what we have.'
+  created: 2016-05-23 17:43:21.0
+  id: '12931'
+  issue: '12229'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-23 17:43:21.0

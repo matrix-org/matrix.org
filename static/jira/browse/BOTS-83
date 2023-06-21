@@ -1,0 +1,47 @@
+---
+summary: We need a way of hot-redeploying the IRC AS otherwise we'll get crucified by freenode users every time we restart it
+---
+assignee: kegan
+created: 2015-07-31 15:53:56.0
+creator: neb
+description: Submitted by @irc_Arathorn:openmarket.com
+id: '11777'
+key: BOTS-83
+number: '83'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:08:33.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:08:39.0
+votes: '0'
+watches: '2'
+workflowId: '11878'
+---
+actions:
+- author: kegan
+  body: Looks like we can just do {{delete require.cache\['path/to/file.js']}} which will then reload it. This will need some refactoring to support properly.
+  created: 2015-08-04 16:55:03.0
+  id: '12049'
+  issue: '11777'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-08-04 16:55:03.0
+- author: kegan
+  body: On hold whilst we add more layers (AS > Bridge > IRC) which makes hot-redeploying a matter of reloading the IRC layer.
+  created: 2015-08-11 10:04:24.0
+  id: '12058'
+  issue: '11777'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-08-11 10:04:24.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/38
+  created: 2016-06-02 10:08:39.0
+  id: '12941'
+  issue: '11777'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:08:39.0

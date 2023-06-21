@@ -1,0 +1,36 @@
+---
+summary: Thumbnailing with 'crop' leads to bad client layout unless the client requests a supported resolution/aspect ratio
+---
+created: 2016-01-07 19:37:13.0
+creator: matthew
+description: |-
+  If you don't have dynamic thumbnail sizing turned on, the 'crop' option returns one of a predefined set of image sizes.  By default this is currently 96x96 or 32x32.
+
+  This is almost totally useless as an API for client developers, as the only reason you'd ever ask for 'crop' is to get an image of precisely the requested aspect ratio in order to correctly populate a given layout.  Otherwise you might as well have done the crop entirely clientside in order to get it right.
+
+  Options i see include:
+   * Make crop always dynamic
+   * Remove it entirely and tell clients to take a 'scale' image and fix it clientside if they want it to be right
+   * Specify the set of aspects that it would support in the spec, so client developers know what it can and can't do, and when they need to fix it up clientside.
+id: '12279'
+key: SYN-581
+number: '581'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:53.0
+votes: '0'
+watches: '2'
+workflowId: '12384'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1465'
+  created: 2016-11-07 18:28:53.0
+  id: '13770'
+  issue: '12279'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:53.0

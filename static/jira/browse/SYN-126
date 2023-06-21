@@ -1,0 +1,30 @@
+---
+summary: Add cache headers to content repo
+---
+created: 2014-11-04 11:24:26.0
+creator: erikj
+description: ''
+id: '10617'
+key: SYN-126
+number: '126'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-11-13 16:01:44.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:06:37.0
+votes: '0'
+watches: '2'
+workflowId: '10717'
+---
+actions:
+- author: matthew
+  body: 'have shoved Cache-Control: public,max-age=86400,s-maxage=86400 on them, which should hopefully help a bit...'
+  created: 2014-11-11 05:38:51.0
+  id: '10771'
+  issue: '10617'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-11 05:38:51.0

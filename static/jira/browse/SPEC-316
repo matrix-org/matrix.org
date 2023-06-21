@@ -1,0 +1,30 @@
+---
+summary: please can we mark /initialsync and /events as deprecated?
+---
+created: 2015-12-30 10:52:30.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  r0 is needlessly confusing by shoving v1 and v2 apis together at the same level but not explaining which is preferred
+id: '12258'
+key: SPEC-316
+number: '316'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:06.0
+votes: '0'
+watches: '2'
+workflowId: '12361'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/607'
+  created: 2016-10-28 16:28:06.0
+  id: '13415'
+  issue: '12258'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:06.0

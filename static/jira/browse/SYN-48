@@ -1,0 +1,221 @@
+---
+summary: We really need /whois style info.
+---
+assignee: erikj
+created: 2014-09-17 02:44:27.0
+creator: matthew
+description: ''
+id: '10312'
+key: SYN-48
+number: '48'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-29 16:00:34.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:06:46.0
+votes: '0'
+watches: '3'
+workflowId: '10377'
+---
+actions:
+- author: matthew
+  body: Would be nice to track useragents (i.e. client versions too), and last-seen per device.
+  created: 2014-09-23 01:23:49.0
+  id: '10374'
+  issue: '10312'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 01:23:49.0
+- author: kegan
+  body: who exactly would be able to do this? The room creator? What scope is the ban? The room? The HS completely? I imagine the latter, which would require the concept of an admin user on the HS which currently doesn't exist afaik.
+  created: 2014-09-23 10:42:43.0
+  id: '10388'
+  issue: '10312'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 10:42:43.0
+- author: matthew
+  body: |-
+    This is my bad for conflating two different issues here - the need for /whois, and the need for IP-based banning.
+
+    For /whois, anyone would be able to whois anyone else unless they have told their HS (somehow in a way to be specified) that they want to not be whoisable.
+
+    For IP-based bans, I suggest we copy IRC and have bans-per-room.
+
+    Meanwhile, we do have the concept of a 'admin user on the HS' - which is the dude who set the HS running, and specifies the config & cmdline options.  We just don't link it to one or more matrix users.  We probably should, so that they can change the running config in realtime and do klines etc.
+
+    I'll split this into 3 separate issues.
+  created: 2014-09-23 11:25:49.0
+  id: '10390'
+  issue: '10312'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 11:25:49.0
+- author: matthew
+  body: Split off into SYN-62, SYN-63 and SYN-64
+  created: 2014-09-23 12:19:44.0
+  id: '10391'
+  issue: '10312'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 12:19:44.0
+- author: erikj
+  body: |-
+    I'm going to go with the format:
+    {noformat}
+    {
+      "user_id": "@erikj:jki.re",
+      "devices": [
+        {
+          "device_id": "foobar12345",
+          "ips": ["127.0.0.1", "10.9.64.147"],
+        }
+      ]
+    }
+    {noformat}
+
+    This effectively mandates having a concept of _device ids_.
+  created: 2014-09-29 10:40:29.0
+  id: '10464'
+  issue: '10312'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 10:41:29.0
+- author: erikj
+  body: 'Currently in Synapse all device ids are _NULL_, so should we allow _"device_id": null_? Or should we allow _devices_ to have one entry without a _device_id_ column?'
+  created: 2014-09-29 10:44:32.0
+  id: '10465'
+  issue: '10312'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 10:44:32.0
+- author: matthew
+  body: |-
+    i suggest we do deviceid:null and in future mandate them.
+
+    can we track user-agent too?
+  created: 2014-09-29 10:46:32.0
+  id: '10466'
+  issue: '10312'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-29 10:46:32.0
+- author: erikj
+  body: |-
+    {quote}
+    can we track user-agent too?
+    {quote}
+
+    Sure. Do you want them correlated to IP address? As in, do you want to see which user agents came from which IPs?
+  created: 2014-09-29 10:48:41.0
+  id: '10467'
+  issue: '10312'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 10:48:41.0
+- author: matthew
+  body: |-
+    yup. the intention was to track the details of what c-s connections there are:
+     their src ip (and port)
+     the user agent
+     their age
+     their idleness
+  created: 2014-09-29 10:52:39.0
+  id: '10468'
+  issue: '10312'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-29 10:52:39.0
+- author: erikj
+  body: Presumably you also want historical data, not just for current connections?
+  created: 2014-09-29 10:54:51.0
+  id: '10469'
+  issue: '10312'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 10:54:51.0
+- author: matthew
+  body: might as well. that gives us /whowas too ;-)
+  created: 2014-09-29 10:56:06.0
+  id: '10470'
+  issue: '10312'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-29 10:56:06.0
+- author: erikj
+  body: |-
+    {quote}
+    their age
+    their idleness
+    {quote}
+
+    These involve slightly more effort, since it basically requires us to keep track of per device presence (which we currently don't do)
+  created: 2014-09-29 11:01:46.0
+  id: '10471'
+  issue: '10312'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 11:01:46.0
+- author: erikj
+  body: |-
+    Current implementation returns:
+    {noformat}
+    {
+      "devices": [
+        {
+          "device_id": null,
+          "sessions": [
+            {
+              "connections": [
+                {
+                  "ip": "127.0.0.1",
+                  "last_seen": 1411996332123,
+                  "user_agent": "curl/7.31.0-DEV"
+                },
+                {
+                  "ip": "127.0.0.1",
+                  "last_seen": 1411998714881,
+                  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "user_id": "@bob:localhost:8480"
+    }
+    {noformat}
+
+    Where a session is a bunch of requests that came from the same access_token. Suggestions for better names welcome. 
+
+    *TODO:* We need to include a session identifier so that people can use it to revoke particular access_token. We could use the access_token itself, but returning access_tokens seems a bit insecure, even if you can only WHOIS yourself or if you are a server admin.
+  created: 2014-09-29 14:59:28.0
+  id: '10472'
+  issue: '10312'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 15:27:55.0
+- author: erikj
+  body: |-
+    {quote}
+    TODO: We need to include a session identifier so that people can use it to revoke particular access_token. We could use the access_token itself, but returning access_tokens seems a bit insecure, even if you can only WHOIS yourself or if you are a server admin.
+    {quote}
+
+    I'm leaving this for when someone does SYN-80.
+  created: 2014-09-29 15:55:28.0
+  id: '10473'
+  issue: '10312'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 15:55:28.0
+- author: erikj
+  body: Pushed to develop.
+  created: 2014-09-29 16:00:34.0
+  id: '10475'
+  issue: '10312'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-29 16:00:34.0

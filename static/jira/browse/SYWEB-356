@@ -1,0 +1,30 @@
+---
+summary: Full screen image shows last-viewed image until the new one loads
+---
+created: 2015-05-07 06:06:50.0
+creator: illicitonion
+description: |-
+  With a slow internet connection (or large images):
+
+  In a room:
+  Click on an image message to full-screen-view it.
+  Dismiss it.
+  Click on another image message to full-screen-view it.
+
+  Notice that the old image is full-screen'd until the new one loads.
+
+  You can simulate this really clearly if in synapse/rest/media/v1/base_resource.py you add a time.sleep(3) in _download_remote_file on the serving path
+id: '11509'
+key: SYWEB-356
+number: '356'
+priority: '3'
+project: '10004'
+reporter: illicitonion
+status: '10100'
+type: '1'
+updated: 2015-05-07 06:06:50.0
+votes: '0'
+watches: '1'
+workflowId: '11609'
+---
+actions: null

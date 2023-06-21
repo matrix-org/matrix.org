@@ -1,0 +1,23 @@
+---
+summary: Lots of unhandled deferred exceptions.
+---
+assignee: erikj
+created: 2015-05-08 14:58:29.0
+creator: erikj
+description: ''
+id: '11512'
+key: SYN-375
+number: '375'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-22 13:45:54.0
+status: '5'
+type: '1'
+updated: 2015-05-26 16:13:35.0
+votes: '0'
+watches: '1'
+workflowId: '11613'
+---
+actions: null

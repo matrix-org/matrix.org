@@ -1,0 +1,41 @@
+---
+summary: Support unfederated rooms
+---
+assignee: erikj
+created: 2015-01-25 14:23:18.0
+creator: erikj
+description: |-
+  We probably want to be able to mark rooms as server local to stop the room from being federated to remote servers.
+
+  This is to support the business use case of private, internal rooms with sensitive data in it.
+id: '10977'
+key: SPEC-101
+number: '101'
+priority: '1'
+project: '10001'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-10-05 12:52:00.0
+status: '5'
+type: '2'
+updated: 2015-10-05 12:52:00.0
+votes: '0'
+watches: '2'
+workflowId: '11077'
+---
+actions:
+- author: matthew
+  body: |-
+    This is now urgent for the use case of exposing all of our internal chat systems into Matrix without them accidentally federating everywhere and leaking their contents (especially prior to E2E crypto).
+
+    Suggestion is to add a parameter to createRoom which embeds a parameter in to the m.room.create event which makes them immutably unfederatable forever.
+
+    This is because dynamic configuration of which servers are allowed to federate with the room is tricky in terms of how you handle nodes in the graph whose accessibility dynamically changes.
+
+    In future, I suggest we handle dynamic access to a room via join lists - (per domain and per user), and then rely on normal room rules (kick/ban) to evict servers which are no longer allowed to federate the room.  This is slightly more prone to implementation bugs causing unexpected federation, but solves the complexities of chunks of the event graph sources mysteriously appearing/disappearing as the rules change were we bluntly ACLing federation rather than room joining.
+  created: 2015-04-10 15:55:55.0
+  id: '11483'
+  issue: '10977'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-10 15:55:55.0

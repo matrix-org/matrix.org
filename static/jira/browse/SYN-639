@@ -1,0 +1,65 @@
+---
+summary: (re?)joining Matrix HQ gets all the events, then decides most of the join events have been tampered and redacts them
+---
+assignee: erikj
+created: 2016-02-26 13:02:02.0
+creator: neb
+description: Submitted by @dave:matrix.org
+id: '12526'
+key: SYN-639
+number: '639'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:11.0
+votes: '0'
+watches: '5'
+workflowId: '12626'
+---
+actions:
+- author: dbkr
+  body: |-
+    Ivan Shapovalov (@intelfx:intelfx.name) nuked his HS database and when it came back, he ended up with a corrupt matrix HQ. Leaving then rejoining doesn't help. Thousands of, "Event content has been tampered, redacting" in the logs.
+
+    https://matrix.org/_matrix/media/v1/download/intelfx.name/qCAmVVbxqnupvZzolyGqTmMn
+
+
+    logs: https://intelfx.name/files/synapse-log-2016-02-26-14%3a49%3a04.log
+    warnings: https://intelfx.name/files/synapse-warnings-2016-02-26-14%3a49%3a04.log
+    errors: https://intelfx.name/files/synapse-errors-2016-02-26-14%3a49%3a04.log
+  created: 2016-02-26 13:04:24.0
+  id: '12723'
+  issue: '12526'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-02-26 13:04:24.0
+- author: dbkr
+  body: 'Update: matrixhq has now sorted itself out but other rooms are still broken'
+  created: 2016-02-26 13:07:19.0
+  id: '12724'
+  issue: '12526'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-02-26 13:07:19.0
+- author: intelfx
+  body: |-
+    So,
+    1) all re-joined rooms get affected;
+    2) this is not influenced by regenerating or retaining HS's signing keys on db nuke;
+    3) In fact, rooms "heal" themselves after some time. Exact conditions unknown, but each affected room got "healed" after a long enough conversation on that room (where "long enough" is not really defined, but exchanging one to three test messages didn't help).
+  created: 2016-03-03 00:16:53.0
+  id: '12739'
+  issue: '12526'
+  type: comment
+  updateauthor: intelfx
+  updated: 2016-03-03 00:16:53.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1506'
+  created: 2016-11-07 18:29:11.0
+  id: '13813'
+  issue: '12526'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:11.0

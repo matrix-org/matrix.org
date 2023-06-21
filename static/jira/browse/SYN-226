@@ -1,0 +1,28 @@
+---
+summary: We need to warn about the existence of rate limiting and advise on how to configure it in the YAML
+---
+created: 2014-12-24 19:52:31.0
+creator: matthew
+description: ''
+id: '10883'
+key: SYN-226
+number: '226'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:36.0
+votes: '0'
+watches: '2'
+workflowId: '10983'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1269'
+  created: 2016-11-07 18:27:36.0
+  id: '13587'
+  issue: '10883'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:36.0

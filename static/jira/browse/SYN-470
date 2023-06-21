@@ -1,0 +1,226 @@
+---
+summary: Upgrade to 0.10.0 failure
+---
+created: 2015-09-03 15:51:18.0
+creator: tb0hdan
+description: |-
+  Upgrade using pip from 0.9.3 to 0.10.0 fails:
+
+  {code}
+  Downloading https://github.com/matrix-org/synapse/tarball/master (487kB)
+      100% 487kB 1.5MB/s
+      Complete output from command python setup.py egg_info:
+      Traceback (most recent call last):
+        File "<string>", line 20, in <module>
+        File "/tmp/pip-Xwr1jr-build/setup.py", line 59, in <module>
+          scripts=["synctl"] + glob.glob("scripts/*"),
+        File "/usr/lib/python2.7/distutils/core.py", line 112, in setup
+          _setup_distribution = dist = klass(attrs)
+        File "/home/matrix/.synapse/local/lib/python2.7/site-packages/setuptools/dist.py", line 268, in __init__
+          self.fetch_build_eggs(attrs['setup_requires'])
+        File "/home/matrix/.synapse/local/lib/python2.7/site-packages/setuptools/dist.py", line 313, in fetch_build_eggs
+          replace_conflicting=True,
+        File "/home/matrix/.synapse/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 836, in resolve
+          dist = best[req.key] = env.best_match(req, ws, installer)
+        File "/home/matrix/.synapse/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 1081, in best_match
+          return self.obtain(req, installer)
+        File "/home/matrix/.synapse/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 1093, in obtain
+          return installer(requirement)
+        File "/home/matrix/.synapse/local/lib/python2.7/site-packages/setuptools/dist.py", line 368, in fetch_build_egg
+          links = self.dependency_links[:]
+      TypeError: unhashable type
+id: '11846'
+key: SYN-470
+number: '470'
+priority: '3'
+project: '10000'
+reporter: tb0hdan
+resolution: '4'
+resolutiondate: 2016-10-07 12:51:27.0
+status: '5'
+type: '1'
+updated: 2016-10-07 12:51:27.0
+votes: '0'
+watches: '7'
+workflowId: '11949'
+---
+actions:
+- author: matthew
+  body: What OS? I can't repro this on debian...
+  created: 2015-09-03 23:04:14.0
+  id: '12095'
+  issue: '11846'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-03 23:04:14.0
+- author: tb0hdan
+  body: |-
+    Debian 7.8 x86_64
+    Python 2.7.3
+    Pip 7.1.2
+
+
+    With the latest commit to master:
+
+    {code}
+    $ pip install --upgrade --process-dependency-links https://github.com/matrix-org/synapse/tarball/master
+    Collecting https://github.com/matrix-org/synapse/tarball/master
+    /home/matrix/.synapse/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+      InsecurePlatformWarning
+    /home/matrix/.synapse/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+      InsecurePlatformWarning
+      Downloading https://github.com/matrix-org/synapse/tarball/master (487kB)
+        100% 487kB 622kB/s
+        Complete output from command python setup.py egg_info:
+        Not found: ['https://github.com/matrix-org/syutil/tarball/v0.0.7/#egg=syutil-0.0.7',
+        Not found: 'https://github.com/matrix-org/matrix-angular-sdk/tarball/v0.6.6/#egg=matrix_angular_sdk-0.6.6']
+
+        Installed /tmp/easy_install-ilxROO/mock-1.3.0/.eggs/pbr-1.6.0-py2.7.egg
+
+        Installed /tmp/pip-PO2Sm4-build/.eggs/mock-1.3.0-py2.7.egg
+        Searching for setuptools-trial
+        Reading https://pypi.python.org/simple/setuptools_trial/
+        Best match: setuptools-trial 0.5.12
+        Downloading https://pypi.python.org/packages/source/s/setuptools_trial/setuptools_trial-0.5.12.tar.gz#md5=f16f4237c9ee483a0cd13208849d96ad
+        Processing setuptools_trial-0.5.12.tar.gz
+        Writing /tmp/easy_install-l2y3mm/setuptools_trial-0.5.12/setup.cfg
+        Running setuptools_trial-0.5.12/setup.py -q bdist_egg --dist-dir /tmp/easy_install-l2y3mm/setuptools_trial-0.5.12/egg-dist-tmp-L4dI0L
+        creating /tmp/pip-PO2Sm4-build/.eggs/setuptools_trial-0.5.12-py2.7.egg
+        Extracting setuptools_trial-0.5.12-py2.7.egg to /tmp/pip-PO2Sm4-build/.eggs
+
+        Installed /tmp/pip-PO2Sm4-build/.eggs/setuptools_trial-0.5.12-py2.7.egg
+        Traceback (most recent call last):
+          File "<string>", line 20, in <module>
+          File "/tmp/pip-PO2Sm4-build/setup.py", line 59, in <module>
+            scripts=["synctl"] + glob.glob("scripts/*"),
+          File "/usr/lib/python2.7/distutils/core.py", line 112, in setup
+            _setup_distribution = dist = klass(attrs)
+          File "/home/matrix/.synapse/local/lib/python2.7/site-packages/setuptools/dist.py", line 268, in __init__
+            self.fetch_build_eggs(attrs['setup_requires'])
+          File "/home/matrix/.synapse/local/lib/python2.7/site-packages/setuptools/dist.py", line 313, in fetch_build_eggs
+            replace_conflicting=True,
+          File "/home/matrix/.synapse/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 836, in resolve
+            dist = best[req.key] = env.best_match(req, ws, installer)
+          File "/home/matrix/.synapse/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 1074, in best_match
+            dist = working_set.find(req)
+          File "/home/matrix/.synapse/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 711, in find
+            raise VersionConflict(dist, req)
+        pkg_resources.VersionConflict: (Twisted 14.0.2 (/home/matrix/.synapse/lib/python2.7/site-packages), Requirement.parse('Twisted>=15.1.0'))
+
+        ----------------------------------------
+    Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-PO2Sm4-build
+    {code}
+  created: 2015-09-04 11:53:47.0
+  id: '12097'
+  issue: '11846'
+  type: comment
+  updateauthor: tb0hdan
+  updated: 2015-09-04 11:53:47.0
+- author: skaverat
+  body: Now getting the same error as Bohdan
+  created: 2015-09-04 12:33:24.0
+  id: '12098'
+  issue: '11846'
+  type: comment
+  updateauthor: skaverat
+  updated: 2015-09-04 12:33:24.0
+- author: erikj
+  body: 'Can you try: {{pip install --upgrade setuptools}}?'
+  created: 2015-09-04 12:47:43.0
+  id: '12100'
+  issue: '11846'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-09-04 12:47:43.0
+- author: skaverat
+  body: '{{Requirement already up-to-date: setuptools in ./lib/python2.7/site-packages}}'
+  created: 2015-09-04 12:50:44.0
+  id: '12101'
+  issue: '11846'
+  type: comment
+  updateauthor: skaverat
+  updated: 2015-09-04 12:51:25.0
+- author: erikj
+  body: |-
+    {{pip install --upgrade twisted}} looks to work. I'm really not sure why it doesn't work.
+
+    I also can't reproduce this in a fresh virtualenv, so looks to only affect people upgrading.
+  created: 2015-09-04 13:09:01.0
+  id: '12103'
+  issue: '11846'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-09-04 13:09:01.0
+- author: tb0hdan
+  body: |-
+    These steps are confirmed to work for 0.9.3 to 0.10.0 upgrade:
+
+    {code}
+    pip install --upgrade twisted
+    pip install --upgrade --process-dependency-links https://github.com/matrix-org/synapse/tarball/master
+    {code}
+  created: 2015-09-04 14:21:57.0
+  id: '12104'
+  issue: '11846'
+  type: comment
+  updateauthor: tb0hdan
+  updated: 2015-09-04 14:21:57.0
+- author: rzr@gna.org
+  body: |-
+    I confirm synapse failed to install on fresh debian jessie :
+
+    {noformat}
+    pip install --process-dependency-links https://github.com/matrix-org/synapse/tarball/master
+    Downloading/unpacking https://github.com/matrix-org/synapse/tarball/master
+      Downloading master (487kB): 487kB downloaded
+      Running setup.py (path:/tmp/pip-w6xUMX-build/setup.py) egg_info for package from https://github.com/matrix-org/synapse/tarball/master
+        mock requires setuptools>=17.1. Aborting installation
+    {noformat}
+
+    Trying manual install seems to workaround previous problem
+
+    {noformat}
+
+    (.synapse)root@pi:/etc# pip install --upgrade setuptools
+    Downloading/unpacking setuptools from https://pypi.python.org/packages/3.4/s/setuptools/setuptools-18.3.1-py2.py3-none-any.whl#md5=a21a4d02d0bab2eac499cca72faeb076
+      Downloading setuptools-18.3.1-py2.py3-none-any.whl (462kB): 462kB downloaded
+    Installing collected packages: setuptools
+      Found existing installation: setuptools 5.5.1
+        Uninstalling setuptools:
+          Successfully uninstalled setuptools
+    Successfully installed setuptools
+    Cleaning up...
+    (.synapse)root@pi:/etc# pip install --upgrade mock      
+    Downloading/unpacking mock
+      Downloading mock-1.3.0-py2.py3-none-any.whl (56kB): 56kB downloaded
+    Downloading/unpacking funcsigs (from mock)
+      Downloading funcsigs-0.4-py2.py3-none-any.whl
+    Downloading/unpacking six>=1.7 (from mock)
+      Downloading six-1.9.0-py2.py3-none-any.whl
+    Downloading/unpacking pbr>=0.11 (from mock)
+      Downloading pbr-1.6.0-py2.py3-none-any.whl (87kB): 87kB downloaded
+    Installing collected packages: mock, funcsigs, six, pbr
+    Successfully installed mock funcsigs six pbr
+    Cleaning up...
+    (.synapse)root@pi:/etc# pip install --process-dependency-links https://github.com/matrix-org/synapse/tarball/master
+    ...
+    {noformat}
+
+
+    Alternative is to test native debian packages (thx @erikj1) :
+
+    http://matrix.org/packages/debian
+  created: 2015-09-07 11:06:22.0
+  id: '12113'
+  issue: '11846'
+  type: comment
+  updateauthor: rzr@gna.org
+  updated: 2015-09-07 11:14:18.0
+- author: richvdh
+  body: This bug is over a year old. I'm assuming that the reporter has either solved the problem or lost interest and switched to Slack.
+  created: 2016-10-07 12:51:27.0
+  id: '13175'
+  issue: '11846'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-07 12:51:27.0

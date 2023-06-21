@@ -1,0 +1,42 @@
+---
+summary: '"404 row not found" when changing the display name of a AS ghost'
+---
+created: 2016-01-04 17:03:56.0
+creator: markjh
+description: |-
+  https://github.com/matrix-org/sytest/tree/markjh/ghost_displaynames/tests/60app-services/04displayname.pl
+
+  Steps:
+    AS doesn't register a ghost user
+    AS creates a room as a ghost user.
+    AS tries to change the display name of the ghost user.
+
+  {code}
+  HTTP/1.1 404 Not Found
+  Date: Mon, 04 Jan 2016 17:03:01 GMT
+  Server: Synapse/0.12.0 (b=develop,t=v0.12.0,f35f8d0)
+   
+  {"errcode":"M_UNKNOWN","error":"No row found"}
+  {code}
+id: '12265'
+key: SYN-572
+number: '572'
+priority: '2'
+project: '10000'
+reporter: markjh
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:51.0
+votes: '0'
+watches: '2'
+workflowId: '12370'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1461'
+  created: 2016-11-07 18:28:51.0
+  id: '13766'
+  issue: '12265'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:51.0

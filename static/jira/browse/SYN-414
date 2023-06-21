@@ -1,0 +1,95 @@
+---
+summary: 'IntegrityError: duplicate key value violates unique constraint "remote_media_cache_media_origin_media_id_key"'
+---
+created: 2015-06-16 11:05:27.0
+creator: erikj
+description: |-
+  {noformat}
+  2015-06-15 19:03:41,862 - synapse.http.server - 114 - ERROR - GET-4134 - Failed handle request synapse.rest.media.v1.download_resource._async_render_GET on <synapse.rest.media.v1.download_resource.DownloadResource instance at 0x2c9a5a8>: <Request at 0x4f6f7a0 method=GET uri=/_matrix/media/v1/download/matrix.org/aIutxWVGMdeiKOIFhdHQdyhS clientproto=HTTP/1.1>
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 91, in wrapped_request_handler
+      yield d
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/media/v1/download_resource.py", line 39, in _async_render_GET
+      yield self._respond_remote_file(request, server_name, media_id)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/media/v1/download_resource.py", line 58, in _respond_remote_file
+      media_info = yield self._get_remote_media(server_name, media_id)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/media/v1/base_resource.py", line 106, in _get_remote_media_impl
+      server_name, media_id
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/media/v1/base_resource.py", line 138, in _download_remote_file
+      filesystem_id=file_id,
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/_base.py", line 547, in _simple_insert
+      self._simple_insert_txn, table, values,
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/_base.py", line 462, in runInteraction
+      inner_func, *args, **kwargs
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/threadpool.py", line 196, in _worker
+      result = context.call(ctx, function, *args, **kwargs)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/context.py", line 118, in callWithContext
+      return self.currentContext().callWithContext(ctx, func, *args, **kw)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/context.py", line 81, in callWithContext
+      return func(*args,**kw)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/enterprise/adbapi.py", line 288, in _runWithConnection
+      result = func(conn, *args, **kw)
+    File "synapse/storage/_base.py", line 457, in inner_func
+      conn, desc, after_callbacks, func, *args, **kwargs
+    File "synapse/storage/_base.py", line 390, in _new_transaction
+      r = func(txn, *args, **kwargs)
+    File "synapse/util/logutils.py", line 84, in wrapped
+      return f(*args, **kwargs)
+    File "synapse/storage/_base.py", line 565, in _simple_insert_txn
+      txn.execute(sql, vals)
+    File "synapse/storage/_base.py", line 230, in execute
+    File "synapse/storage/_base.py", line 230, in execute
+      self._do_execute(self.txn.execute, sql, *args)
+    File "synapse/storage/_base.py", line 255, in _do_execute
+      sql, *args
+  IntegrityError: duplicate key value violates unique constraint "remote_media_cache_media_origin_media_id_key"
+  DETAIL:  Key (media_origin, media_id)=(matrix.org, aIutxWVGMdeiKOIFhdHQdyhS) already exists.
+
+  2015-06-15 19:03:41,864 - synapse.access.http - 525 - INFO - GET-4134 - "127.0.0.1" - - [15/Jun/2015:18:03:41 +0000] "GET /_matrix/media/v1/download/matrix.org/aIutxWVGMdeiKOIFhdHQdyhS HTTP/1.1" 500 33 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36"
+  {noformat}
+id: '11651'
+key: SYN-414
+number: '414'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:07.0
+votes: '0'
+watches: '2'
+workflowId: '11752'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1335'
+  created: 2016-11-07 18:28:07.0
+  id: '13656'
+  issue: '11651'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:07.0

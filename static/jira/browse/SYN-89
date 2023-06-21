@@ -1,0 +1,60 @@
+---
+summary: Binger config should be stored serverside
+---
+created: 2014-10-03 18:29:34.0
+creator: matthew
+description: |-
+  Might be nice if all your different clients magically binged you for the right things already, rather than it being stored in local storage as is currently the case with webclient.
+
+  Also pretty much needed for APNS/GCM style push notifications to work.
+
+  NB that we have a harder problem to solve here than normal, as we don't want the user to be bombarded with every single matrix compatible app notifying them whenever something happens in matrix...
+id: '10451'
+key: SYN-89
+number: '89'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-06 10:29:35.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:26:23.0
+votes: '0'
+watches: '2'
+workflowId: '10555'
+---
+actions:
+- author: matthew
+  body: |-
+    Now we have mobile clients, this is starting to get increasingly important.  It's horrible that the webclient stores the binger regexps only clientside - we need to share the same notifs on the clientside too.
+
+    (We also need to define which devices the notifs go to, but that's a separate issue...)
+  created: 2014-10-27 10:52:04.0
+  id: '10585'
+  issue: '10451'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-27 10:52:04.0
+- author: kegan
+  body: This needs more thought I feel. On some devices I may want all messages (e.g. mobile devices), whereas on web I may just one one or two key words mentioning my name. A per device config, or at least per device *type* config, would be the best solution here I think.
+  created: 2014-10-27 11:49:45.0
+  id: '10588'
+  issue: '10451'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 11:49:45.0
+- author: matthew
+  body: |-
+    Agreed.  It needs to be a hierarchy to specify the settings:
+     a) globally
+     b) per device
+     c) per room
+
+    I suggest we cascade from globally and then override at whatever granularity per-room or per-device is needed
+  created: 2014-10-27 18:03:00.0
+  id: '10607'
+  issue: '10451'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-27 18:03:00.0

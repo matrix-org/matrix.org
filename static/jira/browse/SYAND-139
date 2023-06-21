@@ -1,0 +1,20 @@
+---
+summary: If receiving a push notif with no body, we should call /sync to pull down the body of the message and (optionally) display it
+---
+created: 2015-09-30 17:30:58.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11980'
+key: SYAND-139
+number: '139'
+priority: '2'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-05-05 11:33:44.0
+votes: '0'
+watches: '1'
+workflowId: '12083'
+---
+actions: null

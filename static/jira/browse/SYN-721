@@ -1,0 +1,28 @@
+---
+summary: We need a way to let HS admins stop random users publishing rooms on their directory, if they don't want to
+---
+created: 2016-07-05 19:50:10.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12737'
+key: SYN-721
+number: '721'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:41.0
+votes: '0'
+watches: '2'
+workflowId: '12837'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1392'
+  created: 2016-11-07 18:29:41.0
+  id: '13882'
+  issue: '12737'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:41.0

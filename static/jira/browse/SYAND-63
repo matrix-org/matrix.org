@@ -1,0 +1,20 @@
+---
+summary: When clicking on a profile picture, the picture should be shown in fullscreen
+---
+created: 2015-04-09 20:45:34.0
+creator: bob
+description: ''
+id: '11321'
+key: SYAND-63
+number: '63'
+priority: '3'
+project: '10201'
+reporter: bob
+status: '10100'
+type: '2'
+updated: 2015-04-09 20:45:34.0
+votes: '0'
+watches: '1'
+workflowId: '11421'
+---
+actions: null

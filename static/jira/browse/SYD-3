@@ -1,0 +1,38 @@
+---
+summary: Clickable URLs in signup mails
+---
+created: 2014-12-02 22:12:47.0
+creator: matthew
+description: ''
+id: '10759'
+key: SYD-3
+number: '3'
+priority: '2'
+project: '10002'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-23 11:28:23.0
+status: '5'
+type: '2'
+updated: 2015-04-23 11:30:10.0
+votes: '0'
+watches: '2'
+workflowId: '10859'
+---
+actions:
+- author: matthew
+  body: In other words, when we receive an email validation we should click the URL, not c+p the validation PIN
+  created: 2014-12-02 22:13:11.0
+  id: '10924'
+  issue: '10759'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-02 22:13:11.0
+- author: dbkr
+  body: Fixed in csauth changes
+  created: 2015-04-23 11:28:23.0
+  id: '11521'
+  issue: '10759'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-23 11:28:23.0

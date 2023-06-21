@@ -1,0 +1,38 @@
+---
+summary: The postgres migration script seems to try to migrate all sent_transactions *older* than yesterday, not *newer*
+---
+created: 2015-08-29 21:30:41.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Why are we even trying to migrate sent_transactions which aren't in flight at all? Why do we even keep old sent_transactions?
+id: '11836'
+key: SYN-462
+number: '462'
+priority: '2'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-01-06 11:42:05.0
+status: '5'
+type: '1'
+updated: 2016-01-06 11:42:05.0
+votes: '0'
+watches: '2'
+workflowId: '11939'
+---
+actions:
+- author: erikj
+  body: |-
+    Current behaviour is:
+
+    - Port the last 24 hours of sent_transasctions
+    - Port the latest sent_transactions for each domain
+
+    This is de-duplication and since new transactions point to previous txn_id
+  created: 2016-01-06 11:42:05.0
+  id: '12542'
+  issue: '11836'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 11:42:05.0

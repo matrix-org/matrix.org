@@ -1,0 +1,71 @@
+---
+summary: 'IRC AS: Retry client connections forever'
+---
+created: 2015-11-10 09:34:01.0
+creator: kegan
+description: |-
+  When the bridge cannot communicate with the outside world, client connections should be retried ad infinitum. In the past this wasn't crucial since the {{MatrixBridge}} was the entity responsible for passing I->M traffic, but in a no-bot world, it is crucial that clients are reconnected at some point else they will lose I->M traffic.
+
+  Related logs:
+  {code}
+  2015-11-09 10:25:38 ERROR:client-connection Server: irc.freenode.net (M-RyanRix) Network Error: {
+    "msg": "Client-side ping timeout"
+  }
+  2015-11-09 10:26:18 ERROR:client-connection M-RyanRix@irc.freenode.net still not connected after 30000ms. Killing connection.
+  2015-11-09 10:26:50 ERROR:client-connection M-RyanRix@irc.freenode.net still not connected after 30000ms. Killing connection.
+  2015-11-09 10:27:25 ERROR:client-connection M-RyanRix@irc.freenode.net still not connected after 30000ms. Killing connection.
+  2015-11-09 10:27:25 ERROR:client-pool <ep6hb9fmh9cgo> Failed to reconnect M-Ryan Rix@irc.freenode.net
+  {code}
+
+  These also occurred afterwards which needs investigating:
+
+  {code}
+  2015-11-09 10:32:50 ERROR:client-connection Server: irc.freenode.net (M-RyanRix) Network Error: {
+    "code": "ENOTFOUND",
+    "errno": "ENOTFOUND",
+    "syscall": "getaddrinfo"
+  }
+  2015-11-09 10:40:57 ERROR:client-connection M-RyanRix@irc.freenode.net RECV a notice event for a dead connection
+  2015-11-09 10:40:57 ERROR:client-connection M-RyanRix@irc.freenode.net RECV a notice event for a dead connection
+  2015-11-09 10:40:57 ERROR:client-connection M-RyanRix@irc.freenode.net RECV a notice event for a dead connection
+  2015-11-09 10:40:57 ERROR:client-connection M-RyanRix@irc.freenode.net RECV a notice event for a dead connection
+  2015-11-09 10:40:57 ERROR:client-connection M-RyanRix@irc.freenode.net RECV a notice event for a dead connection
+  2015-11-09 10:40:57 ERROR:client-connection M-RyanRix@irc.freenode.net RECV a notice event for a dead connection
+  2015-11-09 10:40:57 ERROR:client-connection M-RyanRix@irc.freenode.net RECV a notice event for a dead connection
+  2015-11-09 10:40:57 ERROR:client-connection M-RyanRix@irc.freenode.net RECV a notice event for a dead connection
+  2015-11-09 10:40:58 ERROR:client-connection M-RyanRix@irc.freenode.net: {"command":"ERROR","rawCommand":"ERROR","commandType":"normal","args":["Reconnecting too fast, throttled."]}
+  2015-11-09 10:41:41 ERROR:client-connection Server: irc.freenode.net (M-RyanRix) Network Error: {
+    "code": "ETIMEDOUT",
+    "errno": "ETIMEDOUT",
+    "syscall": "read"
+  }
+  2015-11-09 10:50:57 ERROR:client-connection Server: irc.freenode.net (M-RyanRix) Network Error: {
+    "msg": "Client-side ping timeout"
+  }
+  2015-11-09 10:50:57 ERROR:client-connection Server: irc.freenode.net (M-RyanRix) Network Error: {
+    "msg": "Client-side ping timeout"
+  }
+  {code}
+
+  A manual kick (by saying something on Matrix) was enough to kick this:
+  {code}
+  2015-11-09 22:50:50 INFO:irc-client <M-Ryan Rix@irc.freenode.net#c3b1iwkw0d4c4> (@rrix:whatthefuck.computer) Connecting to IRC server irc.freenode.net as M-RyanRix (user=rrixwhatth)
+  {code}
+
+  This ties back into reporting IRC connection state to Matrix users - BOTS-103
+id: '12102'
+key: BOTS-135
+number: '135'
+priority: '1'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-11-16 16:33:29.0
+status: '5'
+type: '1'
+updated: 2015-11-16 16:33:29.0
+votes: '0'
+watches: '1'
+workflowId: '12205'
+---
+actions: null

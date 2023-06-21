@@ -1,0 +1,30 @@
+---
+summary: Registering an AS or using a MAC does not work in v2_alpha.
+---
+created: 2015-05-22 11:55:29.0
+creator: erikj
+description: |-
+  /synapse/rest/client/v2_alpha/register.py, line 111, in on_POST:
+
+  {noformat}
+  if 'password' not in params:
+      raise SynapseError(400, "", Codes.MISSING_PARAM)
+  {noformat}
+
+  {{params}} may not be bound at this point.
+id: '11554'
+key: SYN-387
+number: '387'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '5'
+resolutiondate: 2016-01-06 10:37:59.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:37:59.0
+votes: '0'
+watches: '1'
+workflowId: '11655'
+---
+actions: null

@@ -1,0 +1,28 @@
+---
+summary: Enumerate all events created when a room is created
+---
+created: 2016-06-09 13:37:33.0
+creator: jimmycuadra
+description: ''
+id: '12695'
+key: SPEC-409
+number: '409'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+status: '1'
+type: '1'
+updated: 2016-10-28 16:28:35.0
+votes: '0'
+watches: '2'
+workflowId: '12795'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/681'
+  created: 2016-10-28 16:28:35.0
+  id: '13490'
+  issue: '12695'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:35.0

@@ -1,0 +1,33 @@
+---
+summary: Make idempotent API endpoints return the same pending promise
+---
+created: 2016-01-20 15:56:01.0
+creator: kegan
+description: |-
+  We've had issues in the past where clients can tightloop doing scrollback requests because they spam scrollback() which then spams the server. One of the solutions to this was to return the *same pending promise* if a request was ongoing.
+
+  This can be applied to a ton of other APIs, such as receipts. We should have a genericish way of applying this to the JS SDK method calls. One way would be to do a map of path -> Promise, and abuse the fact that most idemponent endpoints have their idempotency in the path. This isn't true for everything (e.g. presence), so we could extend this to inspect some parts of the body. It's a good start though.
+id: '12326'
+key: SYJS-40
+number: '40'
+priority: '2'
+project: '10204'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-10-24 11:31:14.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:31:14.0
+votes: '0'
+watches: '1'
+workflowId: '12431'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/262
+  created: 2016-10-24 11:31:14.0
+  id: '13219'
+  issue: '12326'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:31:14.0

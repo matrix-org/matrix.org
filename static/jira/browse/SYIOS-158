@@ -1,0 +1,24 @@
+---
+summary: Speed up the app launch
+---
+assignee: manu
+created: 2015-10-16 13:15:19.0
+creator: gforet
+description: |-
+  Console spins for ages every time you launch.
+
+  Suggestion: Consider switching to Core Data rather than serialised data structures.
+id: '12019'
+key: SYIOS-158
+number: '158'
+priority: '1'
+project: '10200'
+reporter: gforet
+status: '1'
+type: '1'
+updated: 2015-10-16 13:16:12.0
+votes: '0'
+watches: '1'
+workflowId: '12122'
+---
+actions: null

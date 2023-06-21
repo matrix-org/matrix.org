@@ -1,0 +1,25 @@
+---
+summary: Test /_matrix/client/r0/account/3pid
+---
+created: 2015-12-16 11:16:53.0
+creator: markjh
+description: |-
+  https://matrix.org/docs/spec/r0.0.0/client_server.html#post-matrix-client-r0-account-3pid
+
+  Test that the client can bind a 3pid via the HS.
+
+  Check that an email can be bound by another client, clobbering the previous associate.
+id: '12216'
+key: SYT-43
+number: '43'
+priority: '1'
+project: '10300'
+reporter: markjh
+status: '10100'
+type: '1'
+updated: 2015-12-16 11:17:12.0
+votes: '0'
+watches: '1'
+workflowId: '12319'
+---
+actions: null

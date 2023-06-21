@@ -1,0 +1,22 @@
+---
+summary: multi window mode with android console in 5.1.1 doesn't work on Galaxy Note.
+---
+created: 2016-02-14 20:18:15.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  OS complains 'Cant open app in pop-up view'
+id: '12397'
+key: SYAND-172
+number: '172'
+priority: '3'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-02-14 20:18:15.0
+votes: '0'
+watches: '1'
+workflowId: '12502'
+---
+actions: null

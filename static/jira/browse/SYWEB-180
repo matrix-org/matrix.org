@@ -1,0 +1,50 @@
+---
+summary: bootstrap popups don't have focus so you can't close them from the keyboard
+---
+assignee: kegan
+created: 2014-11-26 01:10:47.0
+creator: matthew
+description: ''
+id: '10714'
+key: SYWEB-180
+number: '180'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-05 11:01:02.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:03.0
+votes: '0'
+watches: '2'
+workflowId: '10814'
+---
+actions:
+- author: kegan
+  body: |-
+    ESC does work on all dialogs as far as I know.
+
+    Enter does not: it may be possible for simple error/success dialogs, but things like the Create Room dialog would be awkward I think. Having enter dismiss the dialog vs  creating a room becomes confusing as to know what will happen.
+  created: 2014-11-26 13:50:45.0
+  id: '10851'
+  issue: '10714'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-26 13:50:45.0
+- author: matthew
+  body: Standard idiom for modal dialog boxes is that their default action has keyboard-focus so you can hit enter to Ok.  If there's no default action, then you don't have focus (although it'd be at least polite to be able to use the tab key to get to the right button).  I don't know of any OS that doesn't do this... therefore we need to in the web interface too.
+  created: 2014-11-27 22:47:30.0
+  id: '10889'
+  issue: '10714'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-27 22:47:30.0
+- author: kegan
+  body: Close buttons now have focus as per https://github.com/matrix-org/matrix-angular-sdk/commit/b50241c8
+  created: 2014-12-05 11:01:02.0
+  id: '10961'
+  issue: '10714'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 11:01:02.0

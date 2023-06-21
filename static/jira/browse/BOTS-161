@@ -1,0 +1,30 @@
+---
+summary: Guest access and IRC plays badly as idents can't start with a -
+---
+created: 2016-02-01 19:20:25.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12359'
+key: BOTS-161
+number: '161'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:40:30.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:40:30.0
+votes: '0'
+watches: '2'
+workflowId: '12464'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/12
+  created: 2016-06-02 10:40:30.0
+  id: '12961'
+  issue: '12359'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:40:30.0

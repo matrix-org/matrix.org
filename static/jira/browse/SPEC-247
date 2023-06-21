@@ -1,0 +1,30 @@
+---
+summary: More powerful contact roster / presence lists / addressbook
+---
+created: 2015-10-02 19:25:10.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  XMPP folk constantly miss rosters - grouped lists of contacts whose presence you can view, which also acts as a standard contact list across multiple clients. We should do better to accomodate this.
+id: '11992'
+key: SPEC-247
+number: '247'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:44.0
+votes: '0'
+watches: '2'
+workflowId: '12095'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/556'
+  created: 2016-10-28 16:27:44.0
+  id: '13364'
+  issue: '11992'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:44.0

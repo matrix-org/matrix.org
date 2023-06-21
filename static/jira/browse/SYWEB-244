@@ -1,0 +1,20 @@
+---
+summary: File uploads shouldn't be modal
+---
+created: 2014-12-24 19:41:26.0
+creator: matthew
+description: ''
+id: '10879'
+key: SYWEB-244
+number: '244'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2014-12-29 09:25:08.0
+votes: '0'
+watches: '1'
+workflowId: '10979'
+---
+actions: null

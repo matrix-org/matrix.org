@@ -1,0 +1,31 @@
+---
+summary: read receipts code looks like it will break it more than one at a time comes from federation?
+---
+created: 2015-12-14 18:02:46.0
+creator: dbkr
+description: |-
+  https://github.com/matrix-org/synapse/blob/develop/synapse/handlers/receipts.py#L85
+
+  Seems to return after the first receipt
+id: '12209'
+key: SYN-549
+number: '549'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:43.0
+votes: '0'
+watches: '2'
+workflowId: '12312'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1446'
+  created: 2016-11-07 18:28:43.0
+  id: '13749'
+  issue: '12209'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:43.0

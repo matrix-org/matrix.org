@@ -1,0 +1,20 @@
+---
+summary: A status.matrix.org page could be useful for giving visibility on latency etc of matrix.org HS
+---
+created: 2016-02-21 14:03:32.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12511'
+key: ORG-41
+number: '41'
+priority: '3'
+project: '10003'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2017-03-21 11:34:26.0
+votes: '0'
+watches: '1'
+workflowId: '12611'
+---
+actions: null

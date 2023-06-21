@@ -1,0 +1,29 @@
+---
+summary: Add read receipts to the example /sync response
+---
+assignee: markjh
+created: 2015-11-03 15:20:27.0
+creator: neb
+description: Submitted by @irc_Arathorn:openmarket.com
+id: '12075'
+key: SPEC-262
+number: '262'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:49.0
+votes: '0'
+watches: '2'
+workflowId: '12178'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/568'
+  created: 2016-10-28 16:27:49.0
+  id: '13376'
+  issue: '12075'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:49.0

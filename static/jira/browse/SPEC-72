@@ -1,0 +1,50 @@
+---
+summary: Consider adding txnId in event content
+---
+created: 2014-11-27 11:05:14.0
+creator: manu
+description: |-
+  When posting a message with PUT /rooms/{roomId}/send/{eventType}/{txnId}, the client can provide a txnId.
+  It will be useful for the app when it gets back this event to be able to retrieve this txnId.
+
+  The use case that is currently a problem is local echo.
+  When the app posts a message, this message can come down in the event stream before the response of the post request.
+  This is hard for the app to guess that this live event is indeed already locally echoed.
+
+  For simple case, ie one local at a time, it can lead to some flickering: the echo and the true message can be displayed in the same time for short time.
+id: '10726'
+key: SPEC-72
+number: '72'
+priority: '2'
+project: '10001'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-01-21 11:19:01.0
+status: '5'
+type: '2'
+updated: 2015-01-21 11:19:01.0
+votes: '0'
+watches: '2'
+workflowId: '10826'
+---
+actions:
+- author: manu
+  body: |-
+    One workaround for the app (or the sdk) would be to pause the event stream before making the post message request and resume it when it gets the request response.
+    So that the app will know the event id of the posted messages before it comes down in the event stream.
+
+    Not nice but it should help to avoid flickering.
+  created: 2014-11-27 11:06:54.0
+  id: '10877'
+  issue: '10726'
+  type: comment
+  updateauthor: manu
+  updated: 2014-11-27 11:06:54.0
+- author: kegan
+  body: 'Landed on matrix-doc/master : {{drafts/general_api.rst}}'
+  created: 2015-01-21 11:19:01.0
+  id: '11158'
+  issue: '10726'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:19:01.0

@@ -1,0 +1,34 @@
+---
+summary: Read-only accounts
+---
+assignee: erikj
+created: 2015-03-23 17:24:15.0
+creator: matthew
+description: ''
+id: '11262'
+key: SYN-320
+number: '320'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-04-07 11:47:29.0
+status: '5'
+type: '2'
+updated: 2016-04-07 11:47:29.0
+votes: '1'
+watches: '4'
+workflowId: '11362'
+---
+actions:
+- author: kegan
+  body: |-
+    We need to be able to grant scoped permissions in general to accounts (think ASes masquerading), so I would treat this as a different form of login (OAuth2 scopes) rather than a flag on the account. 
+
+    For example: m.login.oauth2 with a scopes key with values like rooms=read, write, create. Check the OAuth2 implementations for the de facto scope format (we shouldn't use json values here)
+  created: 2015-03-23 18:28:17.0
+  id: '11431'
+  issue: '11262'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-23 18:31:06.0

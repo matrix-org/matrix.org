@@ -1,0 +1,60 @@
+---
+summary: Presence lies bizarrely for invited users who haven't yet joined a room.
+---
+created: 2014-10-28 14:42:44.0
+creator: matthew
+description: ''
+id: '10519'
+key: SYN-119
+number: '119'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '10100'
+resolutiondate: 2016-01-06 10:15:00.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:15:00.0
+votes: '0'
+watches: '3'
+workflowId: '10623'
+---
+actions:
+- author: kegan
+  body: |-
+    This appears to be Synapse related. I've traced this back to {{/members}} API call which is returning (amongst other members):
+
+    {code}
+    {
+      "age":115928864,
+      "content":{
+        "last_active_ago":298496,
+        "membership":"invite",
+        "presence":"unavailable",
+        "status_msg":null
+      },
+      "event_id":"xSoJGAiPbg@matrix.org",
+      "membership":"invite",
+      "origin_server_ts":1414485807860,
+      "room_id":"!zOmsiVucpWbRRDjSwe:matrix.org",
+      "state_key":"@joaocalv:matrix.org",
+      "type":"m.room.member",
+      "user_id":"@matthew:matrix.org"
+    }
+    {code}
+
+    The web client is using the {{last_active_ago}} value to set the last seen time.
+  created: 2014-10-29 17:01:56.0
+  id: '10700'
+  issue: '10519'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-29 17:01:56.0
+- author: erikj
+  body: This was a bug in angular.
+  created: 2016-01-06 10:15:00.0
+  id: '12524'
+  issue: '10519'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 10:15:00.0

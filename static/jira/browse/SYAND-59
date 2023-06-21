@@ -1,0 +1,36 @@
+---
+summary: Creator of a room leaves the room --> What should happen?
+---
+created: 2015-03-22 20:18:57.0
+creator: bob
+description: |-
+  Situation:
+  Creater of the room leaves the room. All left members are not able to invite other users.
+
+  Question:
+  Is this the expected behavior?
+  Should the room be deleted and all members be kicked out when the creator leaves the room?
+id: '11256'
+key: SYAND-59
+number: '59'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '2'
+resolutiondate: 2015-03-24 14:27:25.0
+status: '5'
+type: '4'
+updated: 2015-03-24 14:27:25.0
+votes: '0'
+watches: '2'
+workflowId: '11356'
+---
+actions:
+- author: kegan
+  body: This is expected behaviour. If you don't want the creator to have control over the room, then someone else should have the same power level as the room creator (there is no other difference).
+  created: 2015-03-24 11:03:37.0
+  id: '11432'
+  issue: '11256'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-24 11:03:37.0

@@ -1,0 +1,39 @@
+---
+summary: Merge PDU and Event objects
+---
+assignee: markjh
+created: 2014-11-14 19:21:52.0
+creator: markjh
+description: ''
+id: '10658'
+key: SYN-146
+number: '146'
+priority: '2'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-11-17 10:43:10.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:06:39.0
+votes: '0'
+watches: '1'
+workflowId: '10758'
+---
+actions:
+- author: markjh
+  body: https://github.com/matrix-org/synapse/compare/merge_pdu_event_objects
+  created: 2014-11-14 21:28:14.0
+  id: '10795'
+  issue: '10658'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-14 21:28:14.0
+- author: markjh
+  body: https://github.com/matrix-org/synapse/pull/14
+  created: 2014-11-17 10:43:10.0
+  id: '10797'
+  issue: '10658'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-17 10:43:10.0

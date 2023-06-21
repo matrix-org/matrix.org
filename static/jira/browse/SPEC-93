@@ -1,0 +1,52 @@
+---
+summary: Profiles.
+---
+created: 2015-01-19 14:01:01.0
+creator: erikj
+description: ''
+id: '10956'
+key: SPEC-93
+number: '93'
+priority: '1'
+project: '10001'
+reporter: erikj
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:26:57.0
+votes: '1'
+watches: '4'
+workflowId: '11056'
+---
+actions:
+- author: stalund
+  body: This is something we are interested in as well. Any chance you could up the prio?
+  created: 2016-03-03 13:51:03.0
+  id: '12741'
+  issue: '10956'
+  type: comment
+  updateauthor: stalund
+  updated: 2016-03-03 13:51:03.0
+- author: matthew
+  body: Yup, we need it too in the very near future as part of implementing group ACLs at last (and needing somewhere to track what users are in).
+  created: 2016-03-03 14:04:35.0
+  id: '12742'
+  issue: '10956'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-03 14:04:35.0
+- author: stalund
+  body: Thanks!
+  created: 2016-03-03 14:17:18.0
+  id: '12743'
+  issue: '10956'
+  type: comment
+  updateauthor: stalund
+  updated: 2016-03-03 14:17:18.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/489'
+  created: 2016-10-28 16:26:57.0
+  id: '13264'
+  issue: '10956'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:57.0

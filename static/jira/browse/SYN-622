@@ -1,0 +1,30 @@
+---
+summary: '@lx:matrix.org typing notification appears stuck on in Matrix HQ'
+---
+created: 2016-02-06 22:31:43.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12375'
+key: SYN-622
+number: '622'
+priority: '3'
+project: '10000'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-07-31 23:19:01.0
+status: '5'
+type: '1'
+updated: 2016-07-31 23:19:01.0
+votes: '0'
+watches: '2'
+workflowId: '12480'
+---
+actions:
+- author: matthew
+  body: dup syn-518
+  created: 2016-07-31 23:19:01.0
+  id: '13090'
+  issue: '12375'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-07-31 23:19:01.0

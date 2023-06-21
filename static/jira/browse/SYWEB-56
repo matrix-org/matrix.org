@@ -1,0 +1,30 @@
+---
+summary: After being invited to a chat, I can only see myself in participants list
+---
+created: 2014-09-19 12:05:46.0
+creator: dbkr
+description: ''
+id: '10338'
+key: SYWEB-56
+number: '56'
+priority: '2'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2014-09-24 01:47:52.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:30.0
+votes: '0'
+watches: '2'
+workflowId: '10441'
+---
+actions:
+- author: matthew
+  body: fixed by using the new room state API
+  created: 2014-09-24 01:47:52.0
+  id: '10433'
+  issue: '10338'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-24 01:47:52.0

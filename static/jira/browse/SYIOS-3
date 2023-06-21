@@ -1,0 +1,23 @@
+---
+summary: Add API to set the power level of an user
+---
+assignee: manu
+created: 2014-12-10 10:35:01.0
+creator: manu
+description: ''
+id: '10798'
+key: SYIOS-3
+number: '3'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-11 16:01:32.0
+status: '5'
+type: '2'
+updated: 2014-12-11 16:01:32.0
+votes: '0'
+watches: '1'
+workflowId: '10898'
+---
+actions: null

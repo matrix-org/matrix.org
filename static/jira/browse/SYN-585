@@ -1,0 +1,40 @@
+---
+summary: default config in matrix-synapse 0.12.0-2 debian pkg is stale
+---
+created: 2016-01-07 23:07:27.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  apparently it lacks upload_paths, and listener resources, and all sorts
+id: '12283'
+key: SYN-585
+number: '585'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2016-03-15 11:55:12.0
+status: '5'
+type: '1'
+updated: 2016-03-15 11:55:12.0
+votes: '0'
+watches: '3'
+workflowId: '12388'
+---
+actions:
+- author: matthew
+  body: the lack of upload paths means the pkg just doesn't run at all out of the box apparently, do setting p1
+  created: 2016-01-09 23:03:42.0
+  id: '12558'
+  issue: '12283'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-09 23:03:42.0
+- author: erikj
+  body: What distribution was this for? The packages correctly starts on both wheezy and trusty for me (in a schroot).
+  created: 2016-01-11 09:46:35.0
+  id: '12559'
+  issue: '12283'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-11 09:46:35.0

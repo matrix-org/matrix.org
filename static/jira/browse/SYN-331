@@ -1,0 +1,31 @@
+---
+summary: 'invite: "single string"  should fail more obviously'
+---
+created: 2015-03-31 14:26:08.0
+creator: leonerd
+description: |-
+  The current failure message is a very non-obvious complaint that '@' isn't a valid user identifer. This fails because of the implementation quirk in Python that any string is iterable as a list of one-character substrings.
+
+  Ideally, a invite "list" of a single string should instead return an error message to the effect that it was expecting a list, got a string. That would immediately alert the unwary client developer to this fact.
+id: '11301'
+key: SYN-331
+number: '331'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:53.0
+votes: '0'
+watches: '2'
+workflowId: '11401'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1304'
+  created: 2016-11-07 18:27:53.0
+  id: '13625'
+  issue: '11301'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:53.0

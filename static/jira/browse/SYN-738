@@ -1,0 +1,38 @@
+---
+summary: Prevent human signups that begin with `_`
+---
+created: 2016-07-25 16:15:24.0
+creator: leonerd
+description: To distinguish human from AS-ghost accounts.
+id: '12769'
+key: SYN-738
+number: '738'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2016-07-29 16:51:17.0
+status: '5'
+type: '4'
+updated: 2016-07-29 16:51:17.0
+votes: '0'
+watches: '1'
+workflowId: '12869'
+---
+actions:
+- author: leonerd
+  body: Should this be a configuration option? We don't want to allow new user signups beginning with `_` on matrix.org, because of clashes with ASes; but maybe other sites wouldn't mind that?
+  created: 2016-07-25 16:24:03.0
+  id: '13082'
+  issue: '12769'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-07-25 16:24:03.0
+- author: leonerd
+  body: This is now committed into synapse(develop) and tested
+  created: 2016-07-29 16:51:09.0
+  id: '13089'
+  issue: '12769'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-07-29 16:51:09.0

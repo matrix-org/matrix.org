@@ -1,0 +1,30 @@
+---
+summary: m.call events going Matrix->IRC (or Slack etc) should be converted into matrix.to URLs (or vector.im URLs) to let non-Matrix users participate in calls
+---
+created: 2016-02-19 14:43:09.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12503'
+key: BOTS-168
+number: '168'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:44:54.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:44:54.0
+votes: '0'
+watches: '2'
+workflowId: '12603'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/47
+  created: 2016-06-02 10:44:54.0
+  id: '12965'
+  issue: '12503'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:44:54.0

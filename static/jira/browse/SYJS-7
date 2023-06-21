@@ -1,0 +1,250 @@
+---
+summary: Notifying SDK developers of incoming changes
+---
+created: 2015-06-09 13:56:28.0
+creator: kegan
+description: |-
+  After the user has called {{MatrixClient.startClient}} the SDK will begin to
+  receive events (from {{/initialSync}} at first and then periodically from
+  {{/events}}). How we notify the SDK developer of this is the subject of this issue.
+
+  Desirable properties in a notification system:
+   * Low-level access to the {{MatrixEvents}} received. Not everyone wants to use a 
+     store and handle the object model, so we shouldn't force them. There should be
+     a way to be pinged for a list of {{MatrixEvents}}.
+   * High-level "one-way binding" access. At the other end of the spectrum, people
+     may be binding the object model to the UI (e.g. binding {{Room.timeline}} to
+     a list). Depending on the framework, they may not automagically update this
+     list when elements are added/removed. We need to inform the developer somehow.
+     The "desirable property" here is referring to providing this notification
+     mechanism in the SDK.
+
+  *Method #1* (current implementation)
+  {code}
+                                      limit= for initial sync / amount from store
+                                             |
+   MatrixClient.startClient(callback, historyLength)
+                               |           
+          function(err, events, isLive) { ... }
+
+  isLive = true if events from /events, else false.
+  events = MatrixEvent[] (unordered from /initialSync, in HTTP response order for /events)
+  err = An error if there was one (e.g. network error), else null.
+  {code}
+   * Pro : Simple API; just feeding the events it got.
+   * Con : You have to do the {{room_id}} to {{Room}} lookup yourself.
+   * Con : You have to work out the delta between {{Room}} instances yourself.
+   * Con : 'isLive' isn't very descriptive and won't handle v2 /sync well at all
+     where we mix together initialSync/events.
+   * Con : 'err' is unhelpful, as it doesn't give the developer any means of recovering
+     or doing something to fix the error.
+
+  *Method #2* (same as #1 but with a notifier/observer pattern)
+  {code}
+  Every object in the object model (Room, RoomState, RoomMember, RoomSummary, 
+  User) has the following instance methods:
+
+  .registerListener(listener, propertyType)
+  .unregisterListener(listener)
+  .notifyListeners(propertyType[, params])
+
+
+  propertyType = The name of the property on the object (e.g. 'members' for 
+                 RoomState.members, 'timeline' for Room.timeline). Can be null for
+                 notifications on any change.
+  listener     = function(entity[, params]) { ... } where entity=an object instance
+                 and params are a straight-pass through of what was provided to
+                 .notifyListeners(). An example of what 'params' may contain would
+                 be the index positions of new items added to 'timeline'.
+  {code}
+   * Pro : Very common pattern which lowers the learning curve of the SDK.
+   * Pro : Allows notifications per high-level object.
+   * Pro : Allows notifications per high-level object property.
+   * Con : Requires access to the object instance before you can listen on it. This
+     means you need additional callbacks for things like {{onNewRoom(Room)}} so the
+     SDK developer can start adding listeners to the object instance.
+
+  *Method #3* (same as #1 but with additional callback)
+  {code}
+    MatrixClient.startClient(callback, hiLevelCallback, historyLength)
+                                                |
+                          function(entity, changedProperty[, params]) { ... }
+
+   entity = An object instance (e.g. a Room, a User, a RoomState)
+   changedProperty = The name of the property which changed, or null for new entities.
+   params = Additional change info (e.g. index positions of new items if
+            changedProperty == 'timeline')
+  {code}
+   * Pro : Allows notifications per high-level object.
+   * Pro : Allows notifications per high-level object property.
+   * Pro : Provides a single callback for high-level changes, rather than a web
+     of notifiers and {{onNewXXX()}} callbacks.
+   * Con : Requires use of {{typeof}} to determine the {{entity}}. This could be
+     seen as a code smell. Could have 1 callback per entity type to get around this,
+     or an explicit "entityType" string parameter, but this is being unnecessarily
+     convoluted at this point.
+
+  *Method #4* (combining high and low level callbacks)
+  {code}
+  MatrixClient.startClient(callback, historyLength)
+                               |
+          function(events, entityMap) { ... }
+
+
+   events    = A list of MatrixEvents like #1.
+   entityMap = An object which looks like:
+               {
+                 $entity: {
+                   $propertyChanged: [$param, $param, ...]
+                 }
+               }
+               For example:
+               {
+                 room{Object}: {
+                   timeline: [45, 65],
+                   name: []
+                 }
+               }
+  {code}
+   * Pro : Allows notifications per high-level object.
+   * Pro : Allows notifications per high-level object property.
+   * Pro : Provides a single callback which can be sliced and diced how the developer
+     wants. This may just be implementing {{function(events)...}} in the low-level
+     use case.
+   * Con : Still needs {{typeof}} on the {{$entity}} to make sense of the object type.
+
+  Outstanding issues:
+   * How do we present errors when streaming/syncing and how do we expect developers to recover from this?
+id: '11625'
+key: SYJS-7
+number: '7'
+priority: '1'
+project: '10204'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-06-12 17:32:49.0
+status: '5'
+type: '1'
+updated: 2015-06-12 17:32:49.0
+votes: '0'
+watches: '2'
+workflowId: '11726'
+---
+actions:
+- author: markjh
+  body: |-
+    It's claimed that Method #1 doesn't tell you which rooms have changed.
+    bq. Con : Doesn't tell you which Rooms changed.
+    But don't the room-ids in the list of raw events will give you that information?
+  created: 2015-06-09 14:51:36.0
+  id: '11836'
+  issue: '11625'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-06-09 14:52:05.0
+- author: kegan
+  body: I meant the room *object instance* which is why it had a capital R, but I see your point, will clarify.
+  created: 2015-06-09 14:53:49.0
+  id: '11837'
+  issue: '11625'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-09 14:53:49.0
+- author: kegan
+  body: |-
+    We've settled on doing this using {{EventEmitters}}. That is, there will be an emitter attached to instances of:
+     - {{MatrixClient}} - Global listener for new rooms, etc
+     - {{Room}} - Scoped listener for room name changes, timeline changes, etc.
+     - {{RoomState}} - Scoped listener for member changes, state event changes, etc.
+     - {{User}} - Scoped listener for presence changes, display name changes, etc.
+     - {{RoomMember}} - Scoped listener for display name changes, power level changes, etc.
+
+    The *general* emitter contract is that the event key is the property of the instance to watch (e.g. {{name}} for watching {{Room.name}}) and the first parameter of the invoked function is the {{MatrixEvent}} which triggered the change. For example:
+    {code}
+    var room = matrixClient.getRoom("!foo:bar");
+    room.on("name", function(event) {
+      // if I'm a high-level client I can now hit room.name for the new value to update the UI
+      var newName = room.name;
+    });
+
+    matrixClient.on("event", function(event) {
+      // if I'm a low-level client I now have a stream of incoming events, not scoped to anything in particular.
+    });
+    {code}
+
+    The proposed events to emit to start off with:
+     * {{MatrixClient}}
+     ** {{event}} - Called for every event. First parameter is the {{MatrixEvent}}.
+     ** {{room}} - Called whenever a new {{Room}} is created. Need to decide on semantics with the store (invoke once per stored Room? Will that invoke 100 times every startup if I was backed by local storage?). First parameter is the new {{room_id}} (string). Second parameter is the {{Room}} high level object.
+     * {{Room}}
+     ** {{name}} - Called when the name is updated. First parameter is the {{MatrixEvent}}, which may be {{m.room.name}}, {{m.room.aliases}}, {{m.room.member}} depending on the name logic.
+     ** {{timeline}} - Called when the timeline is updated. First parameter is the {{MatrixEvent}} added to the timeline, Second parameter is a {{boolean}} to say if it was added to the end (new) or start (old) of the timeline.
+     * {{RoomState}}
+     ** {{members}} - Called whenever the member list is updated.  First parameter is the {{MatrixEvent}} ({{m.room.member}}). Second parameter is the {{RoomMember}} high-level object.
+     ** {{events}} - Called whenever the state events dictionary is updated. First parameter is the {{MatrixEvent}}. I do not propose having more filters on the key here: developers can just inspect the {{MatrixEvent.type}} and {{MatrixEvent.state_key}} to see if they want to handle it. To keep with convention, I will need to change the property name {{RoomState.stateEvents}} to {{RoomState.events}}.
+     * {{RoomMember}}
+     ** {{typing}} - Called whenever the typing state changes. First parameter is the {{MatrixEvent}} ({{m.typing}}).
+     ** {{powerLevel}} - Called whenever the power level for this member changes. First parameter is the {{MatrixEvent}} ({{m.room.power_levels}}).
+     ** {{name}} - Called whenever the name of this member changes. First parameter is the {{MatrixEvent}} ({{m.room.member}}).
+     * {{User}}
+     ** {{presence}} - Called whenever presence changes. First parameter is the {{MatrixEvent}} ({{m.presence}}).
+     ** {{displayName}} - Called whenever the display name changes. First parameter is the {{MatrixEvent}} ({{m.presence}}).
+     ** {{avatarUrl}} - Called whenever the avatar URL changes. First parameter is the {{MatrixEvent}} ({{m.presence}}).
+  created: 2015-06-09 17:30:20.0
+  id: '11838'
+  issue: '11625'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-09 17:36:03.0
+- author: kegan
+  body: |-
+    After yet more discussion, there's some major pitfalls with this approach. Let's say you want to monitor all the {{typing}} changes for all room members. With this approach, you'd need to walk the object graph like so:
+    {code}
+    matrixClient.on("room", function(roomId, roomObj) {
+      roomObj.currentState.on("members", function(event, roomMemberObj) {
+        roomMemberObj.on("typing", function(event) {
+          // do stuff
+        });
+      });
+    });
+    {code}
+
+    This is pretty convoluted. We've veered towards the global callback system again (reinforced by saying "in v2 you can apply filters server-side, so you should be doing it there and not client-side after the fact). The new proposal (same typing example) looks like:
+
+    {code}
+    matrixClient.on("RoomMember.typing", function(typingEvent, roomMember) {
+      // do stuff, apply additional filtering per room e.g. if (roomMember.roomId === "!foo:bar") { return; }
+    });
+    {code}
+
+    This means that only {{MatrixClient}} will be an {{EventEmitter}}, with the following event keys:
+     * {{event}} - First param => {{MatrixEvent}}
+     * {{room}} - First param => {{room_id}} (string), Second param {{Room}}.
+     * {{Room.name}}, {{Room.timeline}}
+     * {{RoomState.members}}, {{RoomState.events}}
+     * {{RoomMember.typing}}, {{RoomMember.powerLevel}}, {{RoomMember.name}}
+     * {{User.presence}}, {{User.displayName}}, {{User.avatarUrl}}
+
+    In all of the events with {{ClassNamePrefixes}}, the first parameter is the {{MatrixEvent}} which triggered the change, the second parameter is the *object instance which changed* e.g. The {{Room}} object. These prefixes are nice because it means we don't need to {{typeof}} to know what that 2nd parameter will be :D This also neatly combines "new" objects and updates to existing objects into the same place.
+  created: 2015-06-09 18:05:12.0
+  id: '11839'
+  issue: '11625'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-09 18:06:50.0
+- author: kegan
+  body: 'In order to actually emit events from {{MatrixClient}}, we basically need to have a way to notify it from the models... which looks a lot like #2. We''re using the same event names though, so there''s no extra APIs involved here, and will also appease people who really really want to scope their listeners to specific objects. Overall, this feels like a decent solution.'
+  created: 2015-06-11 10:42:19.0
+  id: '11850'
+  issue: '11625'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-11 10:42:19.0
+- author: kegan
+  body: Released in v0.1.0
+  created: 2015-06-12 17:32:49.0
+  id: '11858'
+  issue: '11625'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-12 17:32:49.0

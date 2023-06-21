@@ -1,0 +1,30 @@
+---
+summary: sender is sometimes null for join messages
+---
+created: 2015-07-09 11:24:13.0
+creator: dbkr
+description: ''
+id: '11739'
+key: SYJS-16
+number: '16'
+priority: '2'
+project: '10204'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-07-14 12:00:31.0
+status: '5'
+type: '1'
+updated: 2015-07-14 12:00:31.0
+votes: '0'
+watches: '2'
+workflowId: '11840'
+---
+actions:
+- author: kegan
+  body: This was reproduced when streaming (only; initial sync is fine) and a join event (no prev_content) comes down.
+  created: 2015-07-13 14:22:59.0
+  id: '11988'
+  issue: '11739'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-13 14:22:59.0

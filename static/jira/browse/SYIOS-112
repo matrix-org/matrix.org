@@ -1,0 +1,25 @@
+---
+summary: iOS Client needs to handle unrecognised token responses
+---
+created: 2015-03-25 10:27:17.0
+creator: dbkr
+description: |-
+  http://matrix.org/docs/spec/#api-standards
+
+  ie. A response with errcode: M_UNKNOWN_TOKEN. The spec makes no reference to what HTTP status code this comes with so I'd suggest not relying on one and just looking for the app-level error code.
+id: '11264'
+key: SYIOS-112
+number: '112'
+priority: '1'
+project: '10200'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2016-06-10 12:58:08.0
+status: '5'
+type: '1'
+updated: 2016-06-10 12:58:08.0
+votes: '0'
+watches: '1'
+workflowId: '11364'
+---
+actions: null

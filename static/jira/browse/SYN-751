@@ -1,0 +1,30 @@
+---
+summary: It's very confusing that if you try to /register with an m.login.password auth type, you just get back 'M_MISSING_PARAM' with no reason
+---
+created: 2016-08-14 18:05:45.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Given that m.login.password is never a valid registration flow, and you probably want m.login.dummy instead
+id: '12794'
+key: SYN-751
+number: '751'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:53.0
+votes: '0'
+watches: '2'
+workflowId: '12894'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1584'
+  created: 2016-11-07 18:29:53.0
+  id: '13908'
+  issue: '12794'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:53.0

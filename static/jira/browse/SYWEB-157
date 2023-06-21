@@ -1,0 +1,22 @@
+---
+summary: Give user feedback when saving changes on the profile screen
+---
+created: 2014-11-18 09:11:39.0
+creator: kegan
+description: ''
+id: '10663'
+key: SYWEB-157
+number: '157'
+priority: '3'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-11-19 14:12:48.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:56.0
+votes: '0'
+watches: '1'
+workflowId: '10763'
+---
+actions: null

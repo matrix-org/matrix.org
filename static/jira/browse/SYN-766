@@ -1,0 +1,41 @@
+---
+summary: timeline events can duplicate state events in a room's /sync response
+---
+created: 2016-09-06 01:36:02.0
+creator: ben.e.saunders@gmail.com
+description: |-
+  When requesting a full_state /sync with a filter limiting the number of room timeline events to 50, synapse 0.17.1 may send a response where the first timeline event exactly byte-for-byte duplicates one of the state events. The events I've observed this happening with are membership transitions, likely because those are the most common state events.
+
+  This contradicts the specification's statement that the state represents "all state up to the start of the timeline"
+
+  Two example Joined Room objects from /sync concerning #nix:matrix.org are attached.
+id: '12821'
+key: SYN-766
+number: '766'
+priority: '3'
+project: '10000'
+reporter: ben.e.saunders@gmail.com
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:00.0
+votes: '0'
+watches: '2'
+workflowId: '12921'
+---
+actions:
+- author: ben.e.saunders@gmail.com
+  body: 'It looks like this is also easy to reproduce on #homeowners:matrix.org'
+  created: 2016-09-06 01:40:30.0
+  id: '13114'
+  issue: '12821'
+  type: comment
+  updateauthor: ben.e.saunders@gmail.com
+  updated: 2016-09-06 01:40:30.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1597'
+  created: 2016-11-07 18:30:00.0
+  id: '13923'
+  issue: '12821'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:00.0

@@ -1,0 +1,31 @@
+---
+summary: '"500 ISE" federation dumping ground'
+---
+created: 2015-12-10 15:40:37.0
+creator: leonerd
+description: |-
+  This is less a bug, and more a general dumping-ground list of things that can upset federation and cause a 500 ISE, which ought ideally to be some kind of 4xx "bad request" response instead.
+
+   * {{prev_events}} as a list of event IDs, rather than a list of 2-element [ID, hash] sub-lists
+id: '12196'
+key: SYN-544
+number: '544'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:42.0
+votes: '0'
+watches: '2'
+workflowId: '12299'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1225'
+  created: 2016-11-07 18:28:42.0
+  id: '13745'
+  issue: '12196'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:42.0

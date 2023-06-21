@@ -1,0 +1,44 @@
+---
+summary: Start on boot
+---
+created: 2015-05-20 16:26:36.0
+creator: nolan
+description: |-
+  It would be great if the Android client started automatically on boot. As it stands I have to remember to start it every time my devices boot, which makes it feel a bit less polished and integrated. I often forget to do this for days, which isn't an issue with other messaging apps I run.
+
+  Thanks.
+id: '11541'
+key: SYAND-78
+number: '78'
+priority: '3'
+project: '10201'
+reporter: nolan
+status: '1'
+type: '2'
+updated: 2016-02-16 23:28:32.0
+votes: '0'
+watches: '3'
+workflowId: '11642'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    GCM Management
+    The application automatically starts on boot when a notification is received.
+  created: 2015-06-11 13:17:33.0
+  id: '11853'
+  issue: '11541'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-11 13:17:43.0
+- author: nolan
+  body: |-
+    It would be nice if this feature wasn't tied to GCM, since it isn't immediately obvious that the client requires it. I.e. should I not wish to use GCM, maybe because my phone doesn't have Google apps running on it, I should still be able to have the client start on boot and not have to remember to restart it every time. Almost every messaging app I run has this ability.
+
+    Thanks.
+  created: 2015-06-11 13:56:25.0
+  id: '11854'
+  issue: '11541'
+  type: comment
+  updateauthor: nolan
+  updated: 2015-06-11 13:56:25.0

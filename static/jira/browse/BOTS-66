@@ -1,0 +1,30 @@
+---
+summary: 'does the irc as handle channel redirects nicely? eg #foo -> ##foo'
+---
+created: 2015-06-27 20:13:33.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11709'
+key: BOTS-66
+number: '66'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:26:51.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:26:51.0
+votes: '0'
+watches: '2'
+workflowId: '11810'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/40
+  created: 2016-06-02 10:26:51.0
+  id: '12954'
+  issue: '11709'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:26:51.0

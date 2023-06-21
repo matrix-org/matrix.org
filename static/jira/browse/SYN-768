@@ -1,0 +1,30 @@
+---
+summary: Synapse failed to handle (decline/reject) a stuck invitation
+---
+created: 2016-09-12 21:55:57.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  A stuck invitation can happen if the underlying room doesn't exist or isn't reachable anymore. See https://matrix.to/#/!XqBunHwQIXUiqCaoxq:matrix.org/$14716132091022KOFGT:im.nostrodomo.tk and https://matrix.to/#/!XqBunHwQIXUiqCaoxq:matrix.org/$14716827511116yRXiS:im.nostrodomo.tk for the details.
+id: '12828'
+key: SYN-768
+number: '768'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:01.0
+votes: '0'
+watches: '2'
+workflowId: '12928'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1599'
+  created: 2016-11-07 18:30:01.0
+  id: '13925'
+  issue: '12828'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:01.0

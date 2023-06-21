@@ -1,0 +1,20 @@
+---
+summary: neb fails to comment when there are 's
+---
+created: 2015-07-13 08:33:17.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '11747'
+key: BOTS-78
+number: '78'
+priority: '2'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-07-13 08:33:17.0
+votes: '0'
+watches: '1'
+workflowId: '11848'
+---
+actions: null

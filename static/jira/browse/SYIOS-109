@@ -1,0 +1,42 @@
+---
+summary: Message resending problems
+---
+created: 2015-03-13 20:05:45.0
+creator: matthew
+description: |-
+  Apologies if this is a duplicate, but:
+   * Unsent messages don't resend automatically
+   * If you switch away from a room with unsent messages and go back again, the messages appear to disappear.
+
+  [19:45]  <M-max> [19:32:47] While I think about it, the tap targets for resending unsent messages seem a bit small. how about a button that says send unsent messages? Wish google hangouts had that - would be much less irritating
+  [19:45]  <M-matthew> [19:33:46] agreed
+  [19:45]  <M-matthew> [19:33:54] although resending should happen automatically
+  [19:45]  <M-max> [19:37:03] Doesn't seem to work
+  [19:45]  <M-max> [19:41:44] Worse, it forgets the messages
+  [19:45]  <MatrixBridge> [19:42:15] <M-max> posted image: https://matrix.org/_matrix/media/v1/download/matrix.org/blGcoCcyuZWNkjdmeyaDPTyC - Image
+id: '11224'
+key: SYIOS-109
+number: '109'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-27 10:56:27.0
+status: '5'
+type: '1'
+updated: 2015-04-27 10:56:27.0
+votes: '0'
+watches: '2'
+workflowId: '11324'
+---
+actions:
+- author: manu
+  body: |-
+    Failed sent are now retried
+    Since MatrixKit, an unsent message is kept when you switch room. It is even displayed in the recents now.
+  created: 2015-04-27 10:56:27.0
+  id: '11538'
+  issue: '11224'
+  type: comment
+  updateauthor: manu
+  updated: 2015-04-27 10:56:27.0

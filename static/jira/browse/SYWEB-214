@@ -1,0 +1,22 @@
+---
+summary: outgoing/incoming calls should say whether they're video/voice in the convo history
+---
+created: 2014-12-04 11:44:00.0
+creator: matthew
+description: ''
+id: '10771'
+key: SYWEB-214
+number: '214'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-03-20 15:03:39.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:52.0
+votes: '0'
+watches: '1'
+workflowId: '10871'
+---
+actions: null

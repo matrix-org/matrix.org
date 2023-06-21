@@ -1,0 +1,35 @@
+---
+summary: Last update time shown as Jan 01 01:00
+---
+created: 2015-10-13 12:49:26.0
+creator: richvdh
+description: ''
+id: '12014'
+key: SYAND-143
+number: '143'
+priority: '3'
+project: '10201'
+reporter: richvdh
+resolution: '1'
+resolutiondate: 2015-11-05 07:26:41.0
+status: '5'
+type: '1'
+updated: 2015-11-05 07:26:41.0
+votes: '0'
+watches: '2'
+workflowId: '12117'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    It was triggered because the read receipts were displayed in the recents.
+
+    It has been fixed since on ev branch.
+
+    The read receipts events have no valid time (ts =0) so they are displayed with this dummy timestamp.
+  created: 2015-11-05 07:26:41.0
+  id: '12320'
+  issue: '12014'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-11-05 07:26:41.0

@@ -1,0 +1,30 @@
+---
+summary: presence needs an "offline" state defined
+---
+created: 2015-01-12 00:21:25.0
+creator: matthew
+description: ''
+id: '10910'
+key: SPEC-86
+number: '86'
+priority: '3'
+project: '10001'
+reporter: matthew
+resolution: '10100'
+resolutiondate: 2016-06-29 11:51:49.0
+status: '5'
+type: '2'
+updated: 2016-06-29 11:51:49.0
+votes: '0'
+watches: '2'
+workflowId: '11010'
+---
+actions:
+- author: richvdh
+  body: It does
+  created: 2016-06-29 11:51:49.0
+  id: '13030'
+  issue: '10910'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-29 11:51:49.0

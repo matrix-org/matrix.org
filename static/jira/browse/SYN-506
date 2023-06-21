@@ -1,0 +1,36 @@
+---
+summary: Directory API gives 500 error for non-existent servers
+---
+created: 2015-10-26 10:55:35.0
+creator: neb
+description: |-
+  {noformat}
+  curl 'https://matrix.org/_matrix/client/api/v1/directory/room/%23abc%3Axyz'
+  {"error":"Internal server error"}
+  {noformat}
+
+  Possibly only happens when server name is not a valid domain name?
+
+  Makes the UX pretty ugly when you put a typo in the name of a room you are trying to join.
+id: '12042'
+key: SYN-506
+number: '506'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:31.0
+votes: '0'
+watches: '2'
+workflowId: '12145'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1406'
+  created: 2016-11-07 18:28:31.0
+  id: '13715'
+  issue: '12042'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:31.0

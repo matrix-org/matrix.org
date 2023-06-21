@@ -1,0 +1,52 @@
+---
+summary: We really should stop users from creating mappings for invalid HSes
+---
+created: 2016-02-09 12:30:07.0
+creator: matthew
+description: |-
+  Invalid mappings for valid email addresses clog up the DB and cause horribly obscure errors when you try to invite a user based on these addresses.  Especially when people use their real IDs here (like i have) :(
+
+  {code}
+  sqlite> select mxid from global_threepid_associations where mxid like '%:localhost';
+  @matthew:localhost
+  @medmatest:localhost
+  @medma:localhost
+  @s4b:localhost
+  @jamesbody:localhost
+  @jamesbody:localhost
+  @jamesbody:localhost
+  @s4b:localhost
+  @suhail:localhost
+  @alice4:localhost
+  @TimePath:localhost
+  @TimePath:localhost
+  @jpdionne:localhost
+  @mectors:localhost
+  @chris.simpson:localhost
+  @pcoca:localhost
+  @mectors:localhost
+  @pcoca:localhost
+  @snappy:localhost
+  @test:localhost
+  @test:localhost
+  @test:localhost
+  @Irina:localhost
+  @-ldhENstPlYGYiOVXGr:localhost
+  @bev:localhost
+  @Pedro:localhost
+  @silox:localhost
+  {code}
+id: '12381'
+key: SYD-15
+number: '15'
+priority: '1'
+project: '10002'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-02-09 12:30:07.0
+votes: '0'
+watches: '1'
+workflowId: '12486'
+---
+actions: null

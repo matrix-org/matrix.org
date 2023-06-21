@@ -1,0 +1,20 @@
+---
+summary: We should symbolize crash reports correctly somehow !jira create syios p2 We should route rageshakes in a private jira
+---
+created: 2015-06-25 10:35:41.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11698'
+key: SYIOS-132
+number: '132'
+priority: '2'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-06-25 10:35:41.0
+votes: '0'
+watches: '1'
+workflowId: '11799'
+---
+actions: null

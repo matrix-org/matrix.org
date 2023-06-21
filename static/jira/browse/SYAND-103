@@ -1,0 +1,43 @@
+---
+summary: local profile picture orientation is wrong
+---
+created: 2015-07-22 16:33:02.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  go to settings. Tap your picture. Select a picture taken from a camera (with exif data). Orientation displayed locally is wrong. This wrong orientation is also applied when uploading.
+id: '11762'
+key: SYAND-103
+number: '103'
+priority: '2'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-04 16:45:53.0
+status: '5'
+type: '1'
+updated: 2015-09-04 16:45:53.0
+votes: '0'
+watches: '2'
+workflowId: '11863'
+---
+actions:
+- author: m-ylecollen
+  body: It has been fixed on the develop branch.
+  created: 2015-09-02 16:07:54.0
+  id: '12085'
+  issue: '11762'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-02 16:07:54.0
+- author: m-ylecollen
+  body: |-
+    It should OK by now.
+
+    Tested on a Samsung S3.
+  created: 2015-09-04 16:45:53.0
+  id: '12107'
+  issue: '11762'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-04 16:45:53.0

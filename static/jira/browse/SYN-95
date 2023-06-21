@@ -1,0 +1,25 @@
+---
+summary: Only allow servers that are in a room to access events for that room.
+---
+created: 2014-10-13 17:05:14.0
+creator: markjh
+description: |-
+  Only allow home servers that have a member in a room to access the events within a room.
+
+  We might need to have a list of servers in the room config that can access the room anyway.
+id: '10464'
+key: SYN-95
+number: '95'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-11-13 15:52:47.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:06:43.0
+votes: '0'
+watches: '1'
+workflowId: '10568'
+---
+actions: null

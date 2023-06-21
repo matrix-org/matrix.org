@@ -1,0 +1,31 @@
+---
+summary: Why is 'kind' a query param for '/register' ?
+---
+created: 2016-04-24 22:51:21.0
+creator: richvdh
+description: |-
+  Surely it should be in the body of the POST, along with the rest of the params?
+
+  http://matrix.org/speculator/spec/HEAD/client_server.html#post-matrix-client-unstable-register
+id: '12640'
+key: SPEC-396
+number: '396'
+priority: '3'
+project: '10001'
+reporter: richvdh
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:31.0
+votes: '0'
+watches: '1'
+workflowId: '12740'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/672'
+  created: 2016-10-28 16:28:31.0
+  id: '13481'
+  issue: '12640'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:31.0

@@ -1,0 +1,28 @@
+---
+summary: adding push rule, disabling it, deleting it then adding new rule means the new rule starts off disabled.
+---
+created: 2016-01-15 09:47:53.0
+creator: dbkr
+description: ''
+id: '12305'
+key: SYN-596
+number: '596'
+priority: '2'
+project: '10000'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:57.0
+votes: '0'
+watches: '2'
+workflowId: '12410'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1475'
+  created: 2016-11-07 18:28:57.0
+  id: '13780'
+  issue: '12305'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:57.0

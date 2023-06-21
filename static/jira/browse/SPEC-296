@@ -1,0 +1,29 @@
+---
+summary: Ability to filter in v2 sync based on the msgtype of m.room.message events
+---
+assignee: markjh
+created: 2015-12-09 12:54:43.0
+creator: matthew
+description: ''
+id: '12192'
+key: SPEC-296
+number: '296'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:28:01.0
+votes: '0'
+watches: '2'
+workflowId: '12295'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/593'
+  created: 2016-10-28 16:28:01.0
+  id: '13401'
+  issue: '12192'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:01.0

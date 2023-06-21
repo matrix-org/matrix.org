@@ -1,0 +1,146 @@
+---
+summary: Support for proxy and load balancers
+---
+created: 2014-11-25 15:48:22.0
+creator: tb0hdan
+description: |-
+  As a Synapse user I would like to be able to place it behind proxy (e.g. nginx, haproxy) or load balancer (e.g. aws-elb) to take care of SSL termination and to provide application scalability.
+
+  This implies properly handling X-Forwarded-Proto handler and allowing
+  HTTP-only mode with Synapse.
+id: '10704'
+key: SYN-167
+number: '167'
+priority: '3'
+project: '10000'
+reporter: tb0hdan
+resolution: '1'
+resolutiondate: 2016-10-07 12:45:46.0
+status: '5'
+type: '2'
+updated: 2016-10-07 12:45:46.0
+votes: '0'
+watches: '5'
+workflowId: '10804'
+---
+actions:
+- author: erikj
+  body: |-
+    There is already a --no-tls flag that will disable the HTTPS listeners and a --unsecure-port option to specify a HTTP listener, allowing you to run them behind an SSL terminator and load balancer.
+
+    We need still need to think about how this works with X-Forwarded- headers, including for request logging and IPs for the captcha.
+  created: 2014-11-25 16:02:18.0
+  id: '10833'
+  issue: '10704'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-25 16:02:18.0
+- author: kegan
+  body: IPs for the captcha already do handle X-Forwarded-For headers if that config option is set.
+  created: 2014-11-25 16:05:13.0
+  id: '10834'
+  issue: '10704'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-25 16:05:13.0
+- author: erikj
+  body: Hmm, true. Although we do still need to add configuration options for whitelisting IPs that are allowed to send HTTP traffic with X-Forwarded-For headers attached.
+  created: 2014-11-25 16:06:54.0
+  id: '10835'
+  issue: '10704'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-25 16:06:54.0
+- author: tb0hdan
+  body: |-
+    When running client as follows there's issue with media handling:
+    {code}
+    python -m synapse.app.homeserver -c homeserver.yaml --pid-file homeserver.pid --no-tls --unsecure-port 8008
+    {code}
+
+    {code}
+    https://somedomain.ddns.net:8448/_matrix/content/base64here.png
+    {code}
+  created: 2014-11-25 16:19:56.0
+  id: '10836'
+  issue: '10704'
+  type: comment
+  updateauthor: tb0hdan
+  updated: 2014-11-25 16:19:56.0
+- author: erikj
+  body: |-
+    The only issue when I tried this was that I was using a self signed certificate, which meant that I had to manually open the image in another tab (in the web client) and accept the certificate. (This is a known annoyance we are hoping to fix soon.)
+
+    Alternatively, you can change the content repository location to point to the http address using --content-addr (e.g. http://somedomain.ddns.net:8080)
+  created: 2014-11-25 16:27:18.0
+  id: '10837'
+  issue: '10704'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-25 16:27:18.0
+- author: erikj
+  body: We should probably also make a how-to about running synapse behind load balancers :)
+  created: 2014-11-25 16:29:38.0
+  id: '10838'
+  issue: '10704'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-25 16:29:38.0
+- author: tb0hdan
+  body: |-
+    Running synapse using following command:
+    {code}
+    python -m synapse.app.homeserver -c homeserver.yaml --pid-file homeserver.pid --no-tls --unsecure-port 8008 --content-addr http://somedomain.ddns.net:8008
+    {code}
+
+    seems to solve wrong link issue for newly uploaded images only, old ones are still provided as 'https....'
+
+    Guess it would be nicer to have single switch for running behing proxy.
+  created: 2014-11-25 16:53:44.0
+  id: '10839'
+  issue: '10704'
+  type: comment
+  updateauthor: tb0hdan
+  updated: 2014-11-25 16:53:44.0
+- author: matthew
+  body: We're about to fix the content repository problem - it's really embarrassing that historical URLs are hardcoded to the wrong address, and clearly we shouldn't be ever having to accept self-signed certificates in the browser.  SYN-24 is the main issue tracking this.
+  created: 2014-11-25 16:58:10.0
+  id: '10841'
+  issue: '10704'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-25 16:58:10.0
+- author: matthew
+  body: |-
+    We have further problems here:
+     * If you want to put your federation API behind an HTTPS LB, connections from remote homeservers won't trust the LB's cert at all; they will try to grab the cert over HTTPS from your homeserver, and object if it doesn't match the one presented in the SSL handshake.  The workaround for now is to copy your LB's cert over the top of your Synapse's self-signed one... and for now you also need to copy the private key too, so the SSL ctxt sets up right :((
+
+    So, to fix:
+     * Should remote servers trust officially signed X.509 certs, and ignore the out-of-band cert discovery process designed for self-signed ones?
+     * Alternatively, synapse shouldn't care if the private key is invalid if its SSL listener isn't actually being used
+     * We should have a way to disable synapse's SSL listener entirely (e.g. by deleting it from the config), if an HTTP LB is being used.
+  created: 2014-12-05 19:19:47.0
+  id: '10975'
+  issue: '10704'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-05 19:19:47.0
+- author: matthew
+  body: Also, we need a better mechanism than SRV records for discovering client-server API.  well-known URIs would be a better bet.  Plus we should probably support them for server-server API (although let them be trumped by SRV if people want to faff with SRV)
+  created: 2014-12-05 19:21:05.0
+  id: '10976'
+  issue: '10704'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-05 19:21:05.0
+- author: richvdh
+  body: |-
+    synapse works behind a proxy.
+
+    the other things here are different bugs.
+  created: 2016-10-07 12:45:46.0
+  id: '13174'
+  issue: '10704'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-07 12:45:46.0

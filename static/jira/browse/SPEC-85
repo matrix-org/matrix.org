@@ -1,0 +1,111 @@
+---
+summary: Image orientation metadata
+---
+created: 2015-01-12 00:20:38.0
+creator: matthew
+description: |-
+  *Context:*
+  Pictures aren't always represented the Right Way Up. It is common to have EXIF data embedded into the file which tells the app/viewer/program the correct orientation of the image, which it then uses to display the image the Right Way Up.
+
+  *The problem:*
+  How do we handle this in Matrix, which is being run on a range of devices (Android, iOS, Web, etc)?
+
+  Proposals:
+
+  *#1 : Matrix {{m.room.message}} metadata*
+  Simply add the correct orientation information to the {{m.room.message}} event when sending, along with the existing {{w}} and {{h}} keys.
+   - Pro: All Matrix clients will be able to get at the orientation information even if they cannot read EXIF information.
+   - Con: How do you handle inconsistent metadata (EXIF says 90deg clockwise, JSON says 180deg)?
+  - Con: At what point do you say "for X metadata (e.g. tags, colour spaces, pixel formats), look in the EXIF?" Do we support all EXIF? What about XMP? How do we avoid duplicating all this metadata in the JSON?
+
+  *#2 : Homeserver query parameter*
+  Make this a homeserver problem and allow Matrix clients to add query parameters like {{?right_way_up=true}} to _both_ thumbnail and hires Content Repository HTTP GET requests.
+   - Pro: We can enforce that homeservers should be able to read EXIF data, so requesting clients can get the image the right way up (from the EXIF) without having to be able to read EXIF themselves.
+   - Con: Cannot specify a custom orientation if it isn't the right way up and the cilent cannot read EXIF.
+
+  *#3 : Homeserver query parameter with metadata overrides*
+  This is identical to #2 but with the ability for the client to specify custom orientation information on upload (e.g. when uploading the file they can add query parameters?)
+   - Pro: Same as #2.
+   - Pro: Allows clients who cannot read EXIF but who know that the image is the Wrong Way Up to specify the Right Way Up.
+   - Con: Inconsistent metadata. Same as #1 (since they cannot read the EXIF, they cannot make sure there are no conflicts).
+   - Con: At what point do you stop adding metadata? Same as #1
+
+  *#4 - Do nothing.*
+  Don't handle this at all.
+   - Pro: No risk of inconsistencies.
+   - Con: We rely on clients being able to read EXIF data.
+
+  *#5 - Server annotates the event.*
+  {panel}
+  Uploading client specifies rotation info in the EXIF, fixing the EXIF as required.
+  Uploading HS precomputes thumbnails rotating the image to a display orientation the image based on the EXIF.
+  Uploading client sends an m.room.message event referencing the mxc:// returned by the upload.
+  Uploading HS modifies the event with W+H of the image in the display orientation as it is being sent.
+  Downloading client uses the W+H in the event content to compute the size of the thumbnail it needs. It requests that thumbnail from its HS and assumes that the HS will return the thumnail in the size it requests.
+  Downloading HSes can return the thumbnail size requested, but may choose to return a different size. 
+  Downloading HSes should return the thumbnail in the display orientation.
+  Downloading clients can request that their HS returns the image itself in the display orientation.
+  {panel}
+  - Pro: Downloading clients don't need to understand EXIF
+  - Pro: Uploading clients don't need to understand EXIF unless their camera is recording broken EXIF.
+  - Pro: Downloading clients never need to rotate the thumbnail.
+  - Pro: Since the rotation is recorded in EXIF it will be preserved over mxc:// federation.
+  - Pro: Downloading clients can correctly estimate the dimensions of the thumbnail using the W+H in the event.
+  - Con: The image must be sufficiently uploaded for the server to read the EXIF metadata before the m.room.message event can be sent.
+  - Con: A lot of special casing for m.room.message event sending serverside.
+
+  *#6 - EXIF rewrite extension.*
+  Same as option #5 but the uploading server may rewrite the EXIF data with the correct rotation data if the client asks.
+  - Pro: If the client knows the EXIF is wrong but can't rewrite the EXIF itself then the server can rewrite the EXIF for it.
+
+  *#7 - Server returns W+H from the upload.*
+  Same as option #5 but the upload server returns the correct W+H to the uploading client. The uploading client uses the W+H to set the W+H in the m.room.message content.
+  - Pro: The homeserver doesn't need to special case the m.room.message events.
+  - Con: The client needs to take information it gets from the HS and send it right back again: clients may not support re-sending all info that the mxc server gives it?
+
+  A lot of this boils down to what the lowest common denominator is, and that I think is older versions of Android with buggy cameras. These cameras often don't set the EXIF correctly (!) - they either don't say or outright lie. In these cases, you can hardcode lookups from device build to the "Right Way Up". Critically though, Android has supported reading and writing EXIF data since Android 2.0 (!) so there is no reason why clients cannot set the right oritentation in EXIF.
+id: '10909'
+key: SPEC-85
+number: '85'
+priority: '1'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:54.0
+votes: '0'
+watches: '3'
+workflowId: '11009'
+---
+actions:
+- author: matthew
+  body: This is urgent - iOS is uploading images with EXIF that nothing can display.
+  created: 2015-02-05 20:29:11.0
+  id: '11219'
+  issue: '10909'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-05 20:29:11.0
+- author: kegan
+  body: |-
+    My view: I think we should go with #2,  but consider #4.
+
+    Rationale on #4:
+    If the client cannot read EXIF data, then tough. The rationale here is that we cannot realistically enforce that every client submits an {{orientation}} key when uploading, so there may be lightweight clients which just send the image without any additional metadata. It will appear wrong for Little-Client-No-EXIF but display right on any sensible client which parses EXIF information.
+
+    Rationale on #2:
+    This is a slightly more handholdy version than the tough approach on #4. We can handle the rotations server-side and then let Little-Client-No-EXIF download images the Right Way Up. I seriously don't buy the argument that there are clients which do both A: Send things the wrong way around, and B: Cannot correct for this in the EXIF before sending. The added benefit to doing this though is to allow *thumbnails* to be sensibly downloaded without having to faff with EXIF. We would need to be Very Clear in the spec what {{w}} and {{h}} mean then in this context (pre or post orientation change).
+  created: 2015-05-27 14:23:44.0
+  id: '11805'
+  issue: '10909'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-27 14:23:44.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/483'
+  created: 2016-10-28 16:26:54.0
+  id: '13259'
+  issue: '10909'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:54.0

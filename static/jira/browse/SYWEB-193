@@ -1,0 +1,28 @@
+---
+summary: Unread counters in <title/> tag should be in sync over multiple devices/tabs
+---
+created: 2014-11-27 22:02:54.0
+creator: matthew
+description: ''
+id: '10736'
+key: SYWEB-193
+number: '193'
+priority: '4'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2014-12-05 08:57:07.0
+votes: '0'
+watches: '2'
+workflowId: '10836'
+---
+actions:
+- author: kegan
+  body: Dropping to P4 given we have no such syncing mechanism in place yet, nor the concept of multiple devices.
+  created: 2014-12-05 08:57:07.0
+  id: '10959'
+  issue: '10736'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 08:57:07.0

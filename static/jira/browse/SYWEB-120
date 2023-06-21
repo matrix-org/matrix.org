@@ -1,0 +1,63 @@
+---
+summary: Private rooms like "Matrix Internal" displayed in bold in recents
+---
+assignee: kegan
+created: 2014-10-27 11:24:29.0
+creator: matthew
+description: ''
+id: '10505'
+key: SYWEB-120
+number: '120'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-27 11:53:07.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:57.0
+votes: '0'
+watches: '2'
+workflowId: '10609'
+---
+actions:
+- author: kegan
+  body: |-
+    It is displayed as such because:
+
+    {code}
+    <td ng-class="room['m.room.join_rules'].content.join_rule == 'public' ? 'recentsRoomName recentsPublicRoom' : 'recentsRoomName'">
+    {code}
+
+    Sure enough, in {{/initialSync}} I can clearly see:
+    {code}
+    {
+      "age": 254260373,
+      "content": {
+        "join_rule": "public"
+      },
+      "event_id": "twphopalZx@matrix.org",
+      "origin_server_ts": 1414155949861,
+      "required_power_level": 100,
+      "room_id": "!zOm...we:matrix.org",
+      "state_key": "",
+      "type": "m.room.join_rules",
+      "user_id": "@LeoNerd:matrix.org"
+    }
+    {code}
+
+    The {{visibility}} of the room however is {{private}} but this is not sent via federation, so was deemed a poor way to determine public/private rooms. In other words, this room *is in fact public* if someone knows the room ID they can join it.
+  created: 2014-10-27 11:45:38.0
+  id: '10587'
+  issue: '10505'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 11:45:38.0
+- author: kegan
+  body: Erik updated the join_rules to be correct.
+  created: 2014-10-27 11:53:07.0
+  id: '10589'
+  issue: '10505'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 11:53:07.0

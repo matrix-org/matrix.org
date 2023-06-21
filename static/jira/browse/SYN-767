@@ -1,0 +1,30 @@
+---
+summary: make MAX_STATE_DELTA_HOPS a config option.
+---
+created: 2016-09-12 01:45:18.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  also, shouldn't https://github.com/matrix-org/synapse/pull/1065/files#diff-6cd862b9c39d92122bcf8eb949a4ca94R1599 be using MAX_STATE_DELTA_HOPS rather than being hardcoded to 100?
+id: '12826'
+key: SYN-767
+number: '767'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:01.0
+votes: '0'
+watches: '2'
+workflowId: '12926'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1598'
+  created: 2016-11-07 18:30:01.0
+  id: '13924'
+  issue: '12826'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:01.0

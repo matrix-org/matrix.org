@@ -1,0 +1,39 @@
+---
+summary: API for key management for end to end encryption.
+---
+assignee: richvdh
+created: 2015-07-06 19:00:28.0
+creator: markjh
+description: ''
+id: '11732'
+key: SPEC-198
+number: '198'
+priority: '1'
+project: '10001'
+reporter: markjh
+resolution: '10000'
+resolutiondate: 2015-12-07 12:27:21.0
+status: '5'
+type: '2'
+updated: 2015-12-07 12:27:21.0
+votes: '0'
+watches: '3'
+workflowId: '11833'
+---
+actions:
+- author: markjh
+  body: https://github.com/matrix-org/matrix-doc/pull/24
+  created: 2015-08-04 11:30:49.0
+  id: '12048'
+  issue: '11732'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-08-04 11:30:49.0
+- author: richvdh
+  body: This is now in the draft e2e spec http://matrix.org/speculator/spec/drafts%2Fe2e/client_server.html so the initial job of speccing an API is done. It could do with being swaggerified, but that can wait for now.
+  created: 2015-12-07 12:27:08.0
+  id: '12435'
+  issue: '11732'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-07 12:27:08.0

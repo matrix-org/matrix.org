@@ -1,0 +1,44 @@
+---
+summary: Asus Nexus 7 (WIFI model) support
+---
+created: 2015-06-02 00:51:40.0
+creator: matthew
+description: |-
+  > From: Kjeld Mortensen 
+  > Date: 22 May 2015 08:43:36 BST
+  > Subject: Matrix Console support on Asus Nexus 7
+  >
+  > Do you plan to support Asus Nexus 7 (WIFI model) in the future?
+  >
+  > Thanks,
+  > -- 
+  > Best regards,
+  >
+  > Kjeld Mortensen, PhD, systems manager
+id: '11588'
+key: SYAND-79
+number: '79'
+priority: '3'
+project: '10201'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2015-06-11 13:16:48.0
+status: '5'
+type: '1'
+updated: 2015-06-11 13:16:48.0
+votes: '0'
+watches: '2'
+workflowId: '11689'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    I performed some tests on the nexus 7 (lollipop) : the matrix application seems broken properly.
+
+    i'm using it as a tablet reference.
+  created: 2015-06-11 13:16:33.0
+  id: '11852'
+  issue: '11588'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-11 13:16:33.0

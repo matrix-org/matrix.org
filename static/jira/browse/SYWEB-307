@@ -1,0 +1,30 @@
+---
+summary: Settings page breaks with JS error if no config.js
+---
+created: 2015-02-26 16:23:12.0
+creator: dbkr
+description: ''
+id: '11144'
+key: SYWEB-307
+number: '307'
+priority: '1'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-02-27 11:13:49.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:57.0
+votes: '0'
+watches: '2'
+workflowId: '11244'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-angular-sdk/commit/99028965
+  created: 2015-02-27 11:13:49.0
+  id: '11319'
+  issue: '11144'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-27 11:13:49.0

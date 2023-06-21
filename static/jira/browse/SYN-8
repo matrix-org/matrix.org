@@ -1,0 +1,50 @@
+---
+summary: Rooms should have the option of kicking out lurkers
+---
+created: 2014-09-15 23:40:30.0
+creator: matthew
+description: |-
+  #matrix:matrix.org is full of lots of lurkers who have joined once and don't look to be coming back anytime soon.  It would be lovely to have a setting on the room to boot them out to stop bloating the membershiplist.
+
+  One way of doing this is to run a bot as a privileged user on the channel to issue kick events to the right people.
+
+  This is a bit kludgy though - it would be nicer if the HS for the highest-power user on a channel could go and automatically issue the appropriate events to clear things up.
+
+  (Unclear how this works with e2e encryption)
+id: '10013'
+key: SYN-8
+number: '8'
+priority: '1'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:10.0
+votes: '0'
+watches: '3'
+workflowId: '10342'
+---
+actions:
+- author: matthew
+  body: |-
+    I can't believe this has been open for >2 years - it's becoming a defining UX problem of Matrix.
+
+    After talking to [~erikj] tonight, there are basically two solutions:
+     * Use presence data (nowadays persisted, yay!) to run a bot per-channel to clear out idlers from a channel.
+     * Use presence data (or access_token usage info) on a HS to let HS admins "clean up" idlers on their server - parting them from public rooms etc, perhaps based on idler policy hints in room state.
+
+    There's concern that fixing up Guest access and other changes might be entangled with the 2nd solution, so i suggest we go for the 1st solution at least as a short-term fix.
+  created: 2016-10-04 18:30:54.0
+  id: '13154'
+  issue: '10013'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-10-04 18:30:54.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1202'
+  created: 2016-11-07 18:27:10.0
+  id: '13533'
+  issue: '10013'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:10.0

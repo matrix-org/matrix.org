@@ -1,0 +1,69 @@
+---
+summary: displayname is missing in emotes when talking in federated room
+---
+created: 2014-12-02 22:07:35.0
+creator: matthew
+description: ''
+id: '10757'
+key: SYWEB-204
+number: '204'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-04 09:33:57.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:57.0
+votes: '0'
+watches: '2'
+workflowId: '10857'
+---
+actions:
+- author: matthew
+  body: (It turns up looking right in the recents tab)
+  created: 2014-12-02 22:10:02.0
+  id: '10923'
+  issue: '10757'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-02 22:10:02.0
+- author: matthew
+  body: It's not just for federated chat - I'm now getting it in a 1:1 chat with a local-HS user.  Unclear what the pattern is.  This is with latest develop branch webclient.
+  created: 2014-12-02 22:44:04.0
+  id: '10926'
+  issue: '10757'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-02 22:44:04.0
+- author: kegan
+  body: |-
+    Display names are obtained from two different events: {{m.presence}} and {{m.room.member}}. The idea is that {{m.presence}} contains the latest display name (set via profile REST), and {{m.room.member}} contains the potentially historic display names.
+
+    Synapse has not always followed this though for older events, so some things (if the m.room.member was sent a long time ago) may not be set at all. 
+
+    I recently changed the web client to use only the values provided from {{m.room.member}} and NOT {{m.presence}} for rooms, so it is possible that this is creating problems with older events. Try creating a brand new room and see if you can reproduce this.
+
+    EDIT: Though the user ID should be the ultimate fallback, so displaying nothing is definitely a client bug somewhere: any errors in the log?
+  created: 2014-12-03 12:13:17.0
+  id: '10929'
+  issue: '10757'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-03 12:14:42.0
+- author: kegan
+  body: Pattern on this is when you join a new room it seems. Looks like {{__room_member}} isn't set.
+  created: 2014-12-04 09:00:47.0
+  id: '10942'
+  issue: '10757'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 09:00:47.0
+- author: kegan
+  body: Turns out this was actually due to not setting event.__room_member for events which are locally echoed then subsequently clobbered with the 'real' event. Added regression test.
+  created: 2014-12-04 09:33:57.0
+  id: '10943'
+  issue: '10757'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 09:33:57.0

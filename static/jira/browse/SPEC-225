@@ -1,0 +1,28 @@
+---
+summary: Can we use E2E keys and key management in DTLS to secure SRTP in WebRTC from being MITMed?
+---
+created: 2015-09-10 23:53:19.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11867'
+key: SPEC-225
+number: '225'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:36.0
+votes: '0'
+watches: '2'
+workflowId: '11970'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/540'
+  created: 2016-10-28 16:27:36.0
+  id: '13348'
+  issue: '11867'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:36.0

@@ -1,0 +1,34 @@
+---
+summary: Pagination only seems to pull in a few messages on first launch, not full page
+---
+assignee: matthew
+created: 2015-03-08 19:40:57.0
+creator: matthew
+description: ''
+id: '11186'
+key: SYAND-45
+number: '45'
+priority: '2'
+project: '10201'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-03-09 06:59:32.0
+votes: '0'
+watches: '2'
+workflowId: '11286'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    On first launch, the first messages are provided by the initial sync.
+
+    When a room is opened, the client paginates until to fill the page (20 messages / pagination). There is no valid heuristic to compute the right numbers of message to fill a page.
+
+    The same behaviour seems being implemented on the web client.
+  created: 2015-03-09 06:56:10.0
+  id: '11364'
+  issue: '11186'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-09 06:59:32.0

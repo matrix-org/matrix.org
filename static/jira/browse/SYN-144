@@ -1,0 +1,74 @@
+---
+summary: Dodgy keys in PDUs on the wire
+---
+assignee: markjh
+created: 2014-11-14 19:01:07.0
+creator: markjh
+description: |-
+  Why does the PDU have "replaces_state" and "membership" keys?
+  Should the "state_hash" be in "unsigned"?
+  Does the "content" need a "prev" key?
+
+  {code}
+
+  {
+    'auth_events': [
+      ['$14159890691TVbTX:localhost:8480', {'sha256': 'JRcYYFVWfQ02ZJcKQVslDYwQyTJsDiGwYlj+ZI5tvQQ'}], 
+      ['$14159890692OokTc:localhost:8480', {'sha256': 'h2Vmuks3ru4FVJBSipwv2exp3HiG15sKew8n+xGWAtE'}]
+    ],
+    'content': {
+      'avatar_url': None,
+      'displayname': None,
+      'membership': 'join',
+      'prev': 'join'
+    },
+    'depth': 6,
+    'event_id': '$14159890872jzWyA:localhost:8482',
+    'hashes': {'sha256': 'ny6brlEuTs99Wz1TZOktOuZngw/x6uRNukDpX03Z6SQ'},
+    'membership': 'join',
+    'origin': 'localhost:8482',
+    'origin_server_ts': 1415989087792,
+    'prev_events': [
+      ['$14159890861UHrrX:localhost:8482', {'sha256': 'ZOEm/9C13UmjPOLlUGV2eAFRPqEBbKW76UIpUT5VZ+Q'}]
+    ],
+    'prev_state': [
+      ['$14159890861UHrrX:localhost:8482', {'sha256': 'ZOEm/9C13UmjPOLlUGV2eAFRPqEBbKW76UIpUT5VZ+Q'}]
+    ],
+    'replaces_state': '$14159890861UHrrX:localhost:8482',
+    'room_id': '!MnmvAcLFUxhlcGVwtW:localhost:8480',
+    'signatures': {
+      'localhost:8482': {
+        'ed25519:auto': 'p5v2CsrZCcyhCaWNGM1yr/n3U1CrvqFmDWlPIEAthxWwbJndiB9S9osn+R2D+ngBmE9mW4R7JjzP/3ZjyknZBw'
+      }
+    },
+    'state_hash': {'sha256': 'BvZWROfhD+ToPlOjkHaQeyKXP/oe1TaAvgKqqVRtFYY'},
+    'state_key': '@bob:localhost:8482',
+    'type': 'm.room.member',
+    'unsigned': {'age': 323},
+    'user_id': '@bob:localhost:8482'
+  }
+  {code}
+id: '10656'
+key: SYN-144
+number: '144'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-11-19 17:05:44.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:38.0
+votes: '0'
+watches: '1'
+workflowId: '10756'
+---
+actions:
+- author: markjh
+  body: Fixed the dodgy keys on the wire and in the signatures. However they are still being generated internally.
+  created: 2014-11-19 17:05:44.0
+  id: '10813'
+  issue: '10656'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-19 17:05:44.0

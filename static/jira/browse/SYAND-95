@@ -1,0 +1,22 @@
+---
+summary: Tap on displayname to insert into textbox as poor man's autocomplete
+---
+created: 2015-07-07 10:15:07.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11734'
+key: SYAND-95
+number: '95'
+priority: '2'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-07-08 15:19:12.0
+status: '5'
+type: '1'
+updated: 2015-07-08 15:19:12.0
+votes: '0'
+watches: '1'
+workflowId: '11835'
+---
+actions: null

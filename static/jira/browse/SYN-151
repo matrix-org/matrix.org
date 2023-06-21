@@ -1,0 +1,28 @@
+---
+summary: Policy Server Support
+---
+created: 2014-11-18 13:24:28.0
+creator: markjh
+description: ''
+id: '10670'
+key: SYN-151
+number: '151'
+priority: '1'
+project: '10000'
+reporter: markjh
+status: '10200'
+type: '2'
+updated: 2016-11-07 18:27:24.0
+votes: '0'
+watches: '2'
+workflowId: '10770'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1244'
+  created: 2016-11-07 18:27:24.0
+  id: '13562'
+  issue: '10670'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:24.0

@@ -1,0 +1,32 @@
+---
+summary: 'IRC AS: +r isn''t handled gracefully'
+---
+created: 2015-08-19 14:22:55.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Some channels require that you are registered with NickServ to join them. Unfortunately, the message stating this isn't being handled as it isn't an 'error' as such, so the AS blindly tries to join a few times before giving up. We should be looking for this and then give up sooner. It would probably be polite to tell the user about this too.
+id: '11810'
+key: BOTS-92
+number: '92'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-28 10:39:37.0
+status: '5'
+type: '1'
+updated: 2015-09-28 10:39:37.0
+votes: '0'
+watches: '2'
+workflowId: '11913'
+---
+actions:
+- author: kegan
+  body: '{{node-irc}} now recognises the err code for this {{477}}'
+  created: 2015-09-28 10:39:37.0
+  id: '12177'
+  issue: '11810'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-28 10:39:37.0

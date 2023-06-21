@@ -1,0 +1,28 @@
+---
+summary: If there aren't enough visible events in a room during global initialsync, recents gets confused
+---
+created: 2014-12-15 16:09:47.0
+creator: matthew
+description: ''
+id: '10819'
+key: SYWEB-234
+number: '234'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10200'
+type: '1'
+updated: 2015-01-19 11:56:14.0
+votes: '0'
+watches: '2'
+workflowId: '10919'
+---
+actions:
+- author: kegan
+  body: Blocked on CS v2.
+  created: 2015-01-19 11:56:14.0
+  id: '11150'
+  issue: '10819'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-19 11:56:14.0

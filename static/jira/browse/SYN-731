@@ -1,0 +1,33 @@
+---
+summary: /tokenrefresh doesn't expire the old access_token
+---
+created: 2016-07-19 11:50:09.0
+creator: richvdh
+description: |-
+  The spec says that /tokenrefresh should expire the access token when it expires the refresh token.
+
+  Implementing this requires us to track the correspondence between access_tokens and refresh_tokens.
+id: '12759'
+key: SYN-731
+number: '731'
+priority: '3'
+project: '10000'
+reporter: richvdh
+resolution: '2'
+resolutiondate: 2016-10-06 18:07:15.0
+status: '5'
+type: '1'
+updated: 2016-10-06 18:07:15.0
+votes: '0'
+watches: '1'
+workflowId: '12859'
+---
+actions:
+- author: richvdh
+  body: We've decided to remove refresh tokens from the matrix spec (see https://github.com/matrix-org/matrix-doc/pull/395), so this is no longer required.
+  created: 2016-10-06 18:07:15.0
+  id: '13169'
+  issue: '12759'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 18:07:15.0

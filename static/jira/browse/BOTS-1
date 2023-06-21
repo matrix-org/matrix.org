@@ -1,0 +1,22 @@
+---
+summary: IRC Bridge isn't UTF-8 safe
+---
+created: 2014-09-30 13:55:54.0
+creator: matthew
+description: ''
+id: '10423'
+key: BOTS-1
+number: '1'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2015-02-03 18:14:32.0
+status: '5'
+type: '1'
+updated: 2015-02-03 18:14:32.0
+votes: '0'
+watches: '1'
+workflowId: '10526'
+---
+actions: null

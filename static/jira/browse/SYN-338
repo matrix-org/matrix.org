@@ -1,0 +1,31 @@
+---
+summary: ExpiringCache raises when evicting due to being too large.
+---
+assignee: erikj
+created: 2015-04-08 16:33:24.0
+creator: erikj
+description: |-
+  {code}
+  sorted_entries = sorted(
+      self._cache.items(),
+      key=lambda k, v: v.time,
+  )
+  {code}
+
+  The lambda should only take a single argument.
+id: '11317'
+key: SYN-338
+number: '338'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-04-08 16:43:39.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:11.0
+votes: '0'
+watches: '1'
+workflowId: '11417'
+---
+actions: null

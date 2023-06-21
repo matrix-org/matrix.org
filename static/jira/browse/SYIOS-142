@@ -1,0 +1,30 @@
+---
+summary: When you upload an image, it seems to re-download it immediately afterwards
+---
+created: 2015-09-22 22:02:20.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11919'
+key: SYIOS-142
+number: '142'
+priority: '3'
+project: '10200'
+reporter: neb
+resolution: '5'
+resolutiondate: 2015-09-22 23:00:43.0
+status: '5'
+type: '1'
+updated: 2015-09-22 23:00:43.0
+votes: '0'
+watches: '2'
+workflowId: '12022'
+---
+actions:
+- author: matthew
+  body: aaron tells me this got fixed
+  created: 2015-09-22 23:00:43.0
+  id: '12156'
+  issue: '11919'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-22 23:00:43.0

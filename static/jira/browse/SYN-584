@@ -1,0 +1,55 @@
+---
+summary: We need a config option to limit /publicRooms to registered users only
+---
+created: 2016-01-07 23:03:01.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Use case is to stop sensitive publicroom data leaking from an otherwise federated HS. This is relevant to our own 'private' HS!
+id: '12282'
+key: SYN-584
+number: '584'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:53.0
+votes: '0'
+watches: '3'
+workflowId: '12387'
+---
+actions:
+- author: matthew
+  body: |-
+    A workaround patch I did for Charlie on HQ:
+
+    {code}
+    (env)sierra:synapse matthew$ git diff
+    diff --git a/synapse/rest/client/v1/room.py b/synapse/rest/client/v1/room.py
+    index 926f77d..ed80908 100644
+    --- a/synapse/rest/client/v1/room.py
+    +++ b/synapse/rest/client/v1/room.py
+    @@ -284,6 +284,7 @@ class PublicRoomListRestServlet(ClientV1RestServlet):
+
+         @defer.inlineCallbacks
+         def on_GET(self, request):
+    +        user, _, _ = yield self.auth.get_user_by_req(request)
+             handler = self.handlers.room_list_handler
+             data = yield handler.get_public_room_list()
+             defer.returnValue((200, data))
+    {code}
+  created: 2016-01-07 23:20:48.0
+  id: '12554'
+  issue: '12282'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-07 23:20:48.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1467'
+  created: 2016-11-07 18:28:53.0
+  id: '13772'
+  issue: '12282'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:53.0

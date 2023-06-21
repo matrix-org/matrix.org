@@ -1,0 +1,28 @@
+---
+summary: add filters support to /messages
+---
+created: 2016-02-10 16:57:22.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12382'
+key: SPEC-345
+number: '345'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:16.0
+votes: '0'
+watches: '2'
+workflowId: '12487'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/633'
+  created: 2016-10-28 16:28:16.0
+  id: '13441'
+  issue: '12382'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:16.0

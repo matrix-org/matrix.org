@@ -1,0 +1,31 @@
+---
+summary: Querying "room state" on a room alias gives unhelpful error messages
+---
+created: 2015-12-10 16:19:08.0
+creator: leonerd
+description: |-
+  Due to a small client bug I embedded a room alias in a query to {{GET /rooms/:room_id/state}} rather than the room ID.
+
+  Synapse's error result was simply to tell me 403 you're not in the room, rather than to point out that the room ID wasn't syntactically valid; as it could know from the # instead of ! symbol.
+id: '12197'
+key: SYN-545
+number: '545'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:42.0
+votes: '0'
+watches: '2'
+workflowId: '12300'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1442'
+  created: 2016-11-07 18:28:42.0
+  id: '13746'
+  issue: '12197'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:42.0

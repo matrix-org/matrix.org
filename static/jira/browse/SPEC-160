@@ -1,0 +1,53 @@
+---
+summary: Support for HSes (or ASes) to participate in a room irrespective of whether members are present
+---
+created: 2015-04-27 13:28:30.0
+creator: matthew
+description: |-
+  Currently, a room can only be replicated on a HS if that HS has a user present in the room.  This introduces some potential limitations:
+
+  * You can't deliberately replicate a room over a cluster of HSes for HA
+  * The HS (or AS) can't participate in a room as an admin superuser as suggested in SPEC-159, to ensure there's always a 'god' user present in case of disaster.
+  * You can't have invisible AS users
+  * ...probably others i've forgotten.
+id: '11377'
+key: SPEC-160
+number: '160'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:17.0
+votes: '0'
+watches: '3'
+workflowId: '11477'
+---
+actions:
+- author: erikj
+  body: |-
+    Other use cases:
+     - Allow HSes to have aliases for rooms even if all its users have left.
+     - Allow rooms to be kept alive if all users leave.
+  created: 2015-04-27 13:31:00.0
+  id: '11539'
+  issue: '11377'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-27 13:31:00.0
+- author: erikj
+  body: One way to implement this is by allowing generic entities to send events rather than just users; where entity here is probably just users and servers.
+  created: 2015-04-27 13:33:33.0
+  id: '11540'
+  issue: '11377'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-27 13:33:33.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/499'
+  created: 2016-10-28 16:27:17.0
+  id: '13307'
+  issue: '11377'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:17.0

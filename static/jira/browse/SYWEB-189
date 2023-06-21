@@ -1,0 +1,31 @@
+---
+summary: Profile information should be read from 'm.room.members' state events, not presence
+---
+assignee: kegan
+created: 2014-11-27 12:56:05.0
+creator: kegan
+description: ''
+id: '10728'
+key: SYWEB-189
+number: '189'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-01-12 13:39:30.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:06.0
+votes: '0'
+watches: '1'
+workflowId: '10828'
+---
+actions:
+- author: kegan
+  body: This issue is fixed but there are some users who have now lost their avatar URL (e.g. NEB). See SYN-143
+  created: 2014-12-01 10:57:30.0
+  id: '10897'
+  issue: '10728'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 10:57:30.0

@@ -1,0 +1,30 @@
+---
+summary: 'Register #matrix on freenode.net'
+---
+created: 2014-09-16 00:36:55.0
+creator: matthew
+description: ''
+id: '10038'
+key: ORG-5
+number: '5'
+priority: '2'
+project: '10003'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-20 10:17:11.0
+status: '5'
+type: '2'
+updated: 2015-01-20 10:17:11.0
+votes: '0'
+watches: '2'
+workflowId: '10319'
+---
+actions:
+- author: dbkr
+  body: I believe this is done?
+  created: 2014-09-26 13:59:16.0
+  id: '10458'
+  issue: '10038'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-09-26 13:59:16.0

@@ -1,0 +1,28 @@
+---
+summary: Spell out that 1GB min RAM atm, and that requires dialled down cache factor
+---
+created: 2016-08-13 18:10:01.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12791'
+key: SYN-748
+number: '748'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:52.0
+votes: '0'
+watches: '2'
+workflowId: '12891'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1581'
+  created: 2016-11-07 18:29:52.0
+  id: '13905'
+  issue: '12791'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:52.0

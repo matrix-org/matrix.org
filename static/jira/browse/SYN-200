@@ -1,0 +1,33 @@
+---
+summary: Configurable caching for the media repo
+---
+created: 2014-12-15 19:04:56.0
+creator: matthew
+description: |-
+  Rescued from https://github.com/matrix-org/synapse/pull/23:
+
+  Is there any way to configure the cache behaviour? We don't seem to track the age of remote content - it's surely important to let people specify how to reap content; whether it's by expiring old content or limiting the total size of the cache in bytes.
+
+  Is there a way to tell the HS to proactively suck in content for a room? Given HS messages are proactively pushed throughout the mesh of participating servers, it seems that it could be nice to (optionally) have my HS pre-cache the attachments too to avoid the origin having disappeared by the time i get round to viewing them - assuming disk space isn't a problem.
+id: '10826'
+key: SYN-200
+number: '200'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:29.0
+votes: '0'
+watches: '2'
+workflowId: '10926'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1256'
+  created: 2016-11-07 18:27:29.0
+  id: '13574'
+  issue: '10826'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:29.0

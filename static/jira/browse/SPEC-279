@@ -1,0 +1,31 @@
+---
+summary: Only publish the latest tagged version of the spec to matrix.org
+---
+assignee: illicitonion
+created: 2015-11-30 02:56:42.0
+creator: jimmycuadra
+description: ''
+id: '12153'
+key: SPEC-279
+number: '279'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '1'
+resolutiondate: 2015-12-10 15:33:06.0
+status: '5'
+type: '1'
+updated: 2015-12-10 15:33:06.0
+votes: '0'
+watches: '2'
+workflowId: '12256'
+---
+actions:
+- author: illicitonion
+  body: I'm in fact working on this right now :)
+  created: 2015-11-30 12:58:26.0
+  id: '12388'
+  issue: '12153'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-11-30 12:58:26.0

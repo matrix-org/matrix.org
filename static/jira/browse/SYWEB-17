@@ -1,0 +1,22 @@
+---
+summary: After a 1:1 voip call in a newly created room over federation, the room alias goes missing
+---
+created: 2014-09-16 01:06:49.0
+creator: matthew
+description: ''
+id: '10056'
+key: SYWEB-17
+number: '17'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-24 01:46:40.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:30.0
+votes: '0'
+watches: '1'
+workflowId: '10400'
+---
+actions: null

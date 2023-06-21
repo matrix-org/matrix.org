@@ -1,0 +1,63 @@
+---
+summary: Delete user
+---
+assignee: kegan
+created: 2014-10-07 10:55:19.0
+creator: manu
+description: ''
+id: '10456'
+key: SPEC-50
+number: '50'
+priority: '2'
+project: '10001'
+reporter: manu
+resolution: '1'
+resolutiondate: 2016-08-19 11:15:37.0
+status: '5'
+type: '2'
+updated: 2016-08-19 11:15:37.0
+votes: '0'
+watches: '5'
+workflowId: '10560'
+---
+actions:
+- author: kegan
+  body: This should be specified in v2.
+  created: 2015-01-08 17:04:49.0
+  id: '11071'
+  issue: '10456'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-08 17:04:49.0
+- author: kegan
+  body: 'Landed on matrix-doc/master : {{drafts/general_api.rst}}'
+  created: 2015-01-21 11:19:01.0
+  id: '11160'
+  issue: '10456'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:19:01.0
+- author: dbkr
+  body: As far as I can see, this file gives the required behaviour of such an API but doesn't actually specify it?
+  created: 2015-05-14 14:31:26.0
+  id: '11756'
+  issue: '10456'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 14:31:26.0
+- author: erikj
+  body: This really also needs to specify what it actually means to delete an account, what does the server have to do? Simply lock the account and revoke all access tokens?
+  created: 2016-04-07 11:54:17.0
+  id: '12810'
+  issue: '10456'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-04-07 11:54:17.0
+- author: richvdh
+  body: This appears to be http://matrix.org/docs/spec/client_server/r0.2.0.html#post-matrix-client-r0-account-deactivate. If more is needed please make it clear what.
+  created: 2016-08-19 11:15:37.0
+  id: '13101'
+  issue: '10456'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-08-19 11:15:37.0

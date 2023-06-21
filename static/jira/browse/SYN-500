@@ -1,0 +1,33 @@
+---
+summary: demo/start.sh fails on osx
+---
+created: 2015-10-14 15:19:51.0
+creator: neic
+description: |-
+  BSD readlink does not have the {{-f}}-flag. demo/start.dh fails with {{readlink: illegal option -- f}} on line 11.
+
+  As a workaround: You can remove the {{-f}}-flag and have a worse {{$PYTHONPATH}}, or, if you have {{brew}}, you can install GNU {{coreutils}} and use {{greadlink}} instead.
+
+  I'm not sure what is a good fix.
+id: '12018'
+key: SYN-500
+number: '500'
+priority: '5'
+project: '10000'
+reporter: neic
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:28.0
+votes: '0'
+watches: '2'
+workflowId: '12121'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1400'
+  created: 2016-11-07 18:28:28.0
+  id: '13709'
+  issue: '12018'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:28.0

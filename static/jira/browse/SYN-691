@@ -1,0 +1,28 @@
+---
+summary: Consider using pillow-simd to speed up thumbnailing on x86-64 architecture
+---
+created: 2016-05-13 17:21:58.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12659'
+key: SYN-691
+number: '691'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:30.0
+votes: '0'
+watches: '2'
+workflowId: '12759'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1544'
+  created: 2016-11-07 18:29:30.0
+  id: '13855'
+  issue: '12659'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:30.0

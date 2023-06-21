@@ -1,0 +1,60 @@
+---
+summary: There is some race condition where your messages don't seem to get added to a room.
+---
+assignee: kegan
+created: 2014-12-05 13:06:33.0
+creator: matthew
+description: |-
+  Either:
+   a) the room stops scrolling to bottom when you hit send
+   b) local echo fails
+   c) the digest fails.
+
+  It comes back if you switch to another room and back again.
+
+  It may be related to a race when typing too quickly after switching between rooms.
+
+  Both Amandine & I have seen this.
+id: '10777'
+key: SYWEB-218
+number: '218'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-05 15:19:14.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:53.0
+votes: '0'
+watches: '2'
+workflowId: '10877'
+---
+actions:
+- author: kegan
+  body: |-
+    Reproduced locally.
+
+    This is caused by sending a message before the reaping process can complete.
+  created: 2014-12-05 14:56:05.0
+  id: '10965'
+  issue: '10777'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 14:56:05.0
+- author: kegan
+  body: Right so this happens because if you click back quickly, the {{RoomController}} loads the old room which is then promptly deleted and replaced with the new room. Any messages sent are added to the NEW room and not the one hooked up to the DOM. If we provide a broadcast saying "hey here is the room you should be using now" then that should fix this.
+  created: 2014-12-05 15:09:59.0
+  id: '10967'
+  issue: '10777'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 15:09:59.0
+- author: kegan
+  body: Did that, and can no longer reproduce this.
+  created: 2014-12-05 15:19:14.0
+  id: '10968'
+  issue: '10777'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 15:19:14.0

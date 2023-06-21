@@ -1,0 +1,30 @@
+---
+summary: Captcha re-fires every time you re-validate login
+---
+created: 2015-03-08 18:51:41.0
+creator: matthew
+description: ''
+id: '11174'
+key: SYWEB-313
+number: '313'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-23 11:53:12.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:05.0
+votes: '0'
+watches: '2'
+workflowId: '11274'
+---
+actions:
+- author: dbkr
+  body: Fixed in csauth
+  created: 2015-04-23 11:53:12.0
+  id: '11529'
+  issue: '11174'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-23 11:53:12.0

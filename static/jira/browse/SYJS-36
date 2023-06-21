@@ -1,0 +1,24 @@
+---
+summary: 'Maint: Split out crypto from client.js to crypto.js'
+---
+created: 2015-12-08 17:37:07.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  There's hundreds of lines of crypto in client.js which can sit in its own file with a small amount of work.
+id: '12189'
+key: SYJS-36
+number: '36'
+priority: '2'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-09-27 15:44:26.0
+status: '5'
+type: '1'
+updated: 2016-09-27 15:44:26.0
+votes: '0'
+watches: '1'
+workflowId: '12292'
+---
+actions: null

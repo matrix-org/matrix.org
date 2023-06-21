@@ -1,0 +1,37 @@
+---
+summary: Ability for servers (not users) to join rooms over federation
+---
+created: 2015-12-10 19:36:56.0
+creator: matthew
+description: |-
+  Can't find the bug for this so opening one just in case it's never been filed.
+
+  There are many places we've seen where it could be useful for servers to participate in a room's federation even if none of their users are joined to the room:
+
+  * Non-member access to remote servers (peeking at message history) (SYN-715)
+  * -Hyperlinking to message IDs (ORG-26)- (This requires a room id anyway)
+  * ASes which are subscribed to events from 'remote' rooms
+  * Replication of rooms for HA between different homeserver clusters
+  * ...and probably many more.
+id: '12200'
+key: SPEC-300
+number: '300'
+priority: '4'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:02.0
+votes: '0'
+watches: '2'
+workflowId: '12303'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/597'
+  created: 2016-10-28 16:28:02.0
+  id: '13405'
+  issue: '12200'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:02.0

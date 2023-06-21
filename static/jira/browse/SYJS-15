@@ -1,0 +1,32 @@
+---
+summary: Provide more guidance on which events to listen for
+---
+created: 2015-07-01 16:21:26.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  The examples in the README just do it, but they don't explain why. The SDK allows people to listen for things in so many different ways; we need to tell people the recommended approaches and why (e.g. why use 'RoomMember.membership' and not just 'event' for processing invites).
+id: '11722'
+key: SYJS-15
+number: '15'
+priority: '3'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:17:25.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:17:25.0
+votes: '0'
+watches: '2'
+workflowId: '11823'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/246
+  created: 2016-10-24 11:17:25.0
+  id: '13203'
+  issue: '11722'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:17:25.0

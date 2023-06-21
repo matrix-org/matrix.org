@@ -1,0 +1,30 @@
+---
+summary: cross-federation invites may cause duplicate invites; one works and other 403s
+---
+created: 2015-12-06 00:57:52.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  See Dusk's feedback from HQ
+id: '12181'
+key: SYN-538
+number: '538'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:40.0
+votes: '0'
+watches: '2'
+workflowId: '12284'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1437'
+  created: 2016-11-07 18:28:40.0
+  id: '13741'
+  issue: '12181'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:40.0

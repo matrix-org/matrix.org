@@ -1,0 +1,25 @@
+---
+summary: 'IRC AS: Handle more IRC errors rather than rage quitting'
+---
+created: 2015-11-18 14:37:14.0
+creator: kegan
+description: |-
+  If the bridge receives an IRC error code it doesn't recognise, it reconnects that client thinking that everything is ruined. It does this because we can't possibly handle every error code for each specific IRC server (some have the same err code to mean different things :( ). We should handle as many of the error codes as possible to avoid needlessly disconnecting and reconnecting people though.
+
+  In this case, Erik got reconnected because he set the topic in a channel he wasn't an op in (code {{482}}).
+id: '12116'
+key: BOTS-140
+number: '140'
+priority: '2'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-03-15 14:17:15.0
+status: '5'
+type: '1'
+updated: 2016-03-15 14:17:15.0
+votes: '0'
+watches: '1'
+workflowId: '12219'
+---
+actions: null

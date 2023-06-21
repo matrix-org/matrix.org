@@ -1,0 +1,48 @@
+---
+summary: Publish Matrix Android SDK on Maven
+---
+created: 2016-02-16 12:29:39.0
+creator: mitchhentges
+description: |-
+  Right now, consumers need to copy the jar and put it in their `libs` folder for Maven/Gradle to consume.
+
+  When upgrades come out, the jar needs to be updated manually.
+
+  The SDK should be available on Maven Central / Sonatype
+id: '12399'
+key: SYAND-173
+number: '173'
+priority: '3'
+project: '10201'
+reporter: mitchhentges
+resolution: '2'
+resolutiondate: 2016-02-17 07:11:08.0
+status: '5'
+type: '2'
+updated: 2016-02-17 07:11:08.0
+votes: '0'
+watches: '2'
+workflowId: '12504'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    1 - The SDK will be pushed on maven the server APIs will be stable.
+
+    There are too many updates by now.
+
+    2 - there are too many issues on the current SDK
+  created: 2016-02-17 07:09:31.0
+  id: '12628'
+  issue: '12399'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 07:10:48.0
+- author: m-ylecollen
+  body: Won't fix by now
+  created: 2016-02-17 07:11:08.0
+  id: '12629'
+  issue: '12399'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 07:11:08.0

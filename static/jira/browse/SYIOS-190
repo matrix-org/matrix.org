@@ -1,0 +1,20 @@
+---
+summary: /msg command. also, sync all slashcommands together across the various clients
+---
+created: 2015-12-24 14:55:26.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12243'
+key: SYIOS-190
+number: '190'
+priority: '3'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-12-24 14:55:26.0
+votes: '0'
+watches: '1'
+workflowId: '12346'
+---
+actions: null

@@ -1,0 +1,28 @@
+---
+summary: Unnecessary application tag in SDK manifest
+---
+created: 2015-03-12 11:21:18.0
+creator: rugvip
+description: |-
+  The application tag in the sdk manifest adds attributes that collide with applications that it's included in, e.g.
+
+  Error:(9, 9) Execution failed for task ':app:processDebugManifest'.
+  > Manifest merger failed : Attribute application@icon value=(@mipmap/ic_launcher) from AndroidManifest.xml:9:9
+      is also present at test:matrix-sdk:unspecified:15:9 value=(@drawable/ic_launcher)
+      Suggestion: add 'tools:replace="android:icon"' to <application> element at AndroidManifest.xml:7:5 to override
+
+  Afaik the application tag doesn't really serve any purpose and could be removed
+id: '11198'
+key: SYAND-48
+number: '48'
+priority: '3'
+project: '10201'
+reporter: rugvip
+status: '10100'
+type: '1'
+updated: 2015-03-12 11:21:18.0
+votes: '0'
+watches: '1'
+workflowId: '11298'
+---
+actions: null

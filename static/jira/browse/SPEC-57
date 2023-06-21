@@ -1,0 +1,30 @@
+---
+summary: We need a way to get a list of services. E.g. contact servers, content repo.
+---
+created: 2014-10-22 10:49:41.0
+creator: erikj
+description: ''
+id: '10484'
+key: SPEC-57
+number: '57'
+priority: '2'
+project: '10001'
+reporter: erikj
+resolution: '4'
+resolutiondate: 2015-01-21 11:48:50.0
+status: '5'
+type: '1'
+updated: 2015-01-21 11:48:55.0
+votes: '0'
+watches: '2'
+workflowId: '10588'
+---
+actions:
+- author: kegan
+  body: SPEC-95
+  created: 2015-01-21 11:48:50.0
+  id: '11171'
+  issue: '10484'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:48:50.0

@@ -1,0 +1,49 @@
+---
+summary: Supporting arbitrary small-scale 3rd party ID systems.
+---
+created: 2014-09-16 01:41:45.0
+creator: matthew
+description: |-
+  I'm concerned that we've accidentally designed out the scenario where Bob has a cool app with an existing account DB in it - and wants to Matrix-enable his users.
+
+  Do they all have to go and manually sign up for separate Matrix accounts on a separate HS?  Does he run a HS himself?  Does he autoprovision these new accounts?  (If so, the idea of one-matrix-id-per-user gets alarmingly broken)  Does he force the user to enter their matrix HS details in order to link their existing app account to Matrix?  Or a combination of the two, where their @username:bobsoft.com forwards through to @matthew:matrix.org?
+
+  It's critical that we let existing communities easily build on Matrix and get this story straight.  Suggestions welcome.
+id: '10079'
+key: SPEC-149
+number: '149'
+priority: '4'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:27:14.0
+votes: '0'
+watches: '3'
+workflowId: '10333'
+---
+actions:
+- author: dbkr
+  body: This sounds like a SPEC bug rather than sydent, I think? Sounds like the answer would be to run an HS that supports a third party auth provider like CAS or PAM?
+  created: 2015-04-09 16:31:36.0
+  id: '11479'
+  issue: '10079'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-09 16:31:36.0
+- author: matthew
+  body: 'There are two parts here: 1) having a HS which supports a third party auth provider, and then 2) ensuring that you can actually map arbitrary 3rd party identifiers through to matrix IDs.  The second one is why this was filed against sydent.  Agreed it''s a spec issue though in the end - designing how extensible decentralised ID servers actually should work.'
+  created: 2015-06-02 00:12:00.0
+  id: '11814'
+  issue: '10079'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-02 00:12:00.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/451'
+  created: 2016-10-28 16:27:14.0
+  id: '13300'
+  issue: '10079'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:14.0

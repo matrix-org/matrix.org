@@ -1,0 +1,45 @@
+---
+summary: Better support for discovering public rooms
+---
+created: 2015-01-05 18:14:49.0
+creator: matthew
+description: |-
+  Big discussion on #matrix-dev just now about how better to support public room discovery.  Options presented boiled down to:
+
+  1) ditch room directories entirely
+  2) directories show local rooms only (as is)
+  3) submit the /rooms/list URLs to Google and pray
+  4) run our own spider (how would it discover servers?)
+  5) run our own 'tracker' directory servers that HSes chose to advertise to (or can act as spiders themselves)
+  6) HS API let users query room lists from named servers (so both local and specific remote servers)
+  7) Let users advertise their own rooms on whatever directories they desire.
+
+  Suggestion is to shift to option #6 for now.
+
+  In future, we could do a combo of #4 and #5 (e.g. a dir.matrix.org service), to which HSes have the option of advertising themselves.  The dir spider AS then connects via a trivial anonymous AS API-style subscription to the list of all public room events, and sits there spidering what's going on and showing an up-to-date view of the world.
+
+  And there's nothing stopping users doing #7 entirely out-of-band.  Or #3.
+id: '10889'
+key: SPEC-83
+number: '83'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-21 11:19:00.0
+status: '5'
+type: '2'
+updated: 2015-01-21 11:19:00.0
+votes: '0'
+watches: '2'
+workflowId: '10989'
+---
+actions:
+- author: kegan
+  body: 'Landed on matrix-doc/master : {{drafts/general_api.rst}}'
+  created: 2015-01-21 11:19:00.0
+  id: '11156'
+  issue: '10889'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:19:00.0

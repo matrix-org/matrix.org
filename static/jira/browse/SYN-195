@@ -1,0 +1,22 @@
+---
+summary: The first message sent into a remote room after restarting a server may get lost
+---
+created: 2014-12-09 18:46:23.0
+creator: matthew
+description: "Whenever I upgrade arasphere.net's server and restart it, the first message I send into #matrix:matrix.org is never echoed or persisted by matrix.org itself.  Other servers (e.g. jki.re) seem to see it though.  I reproduced this yesterday, resulting in the following convo:\n\nMatthew: \"erik: are you familiar with the bug where the first message sent after restarting a federated server seems to disappear into the void?\t\n e.g. \"test\" there (after restarting arasphere)\t\n i'm not sure i've filed it; but it's consistent for arasphere->matrix.org\t\n\nErik: I see a \"test\"\t(but only on jki.re)\n\nAlso, relatedly? @matthew:arasphere.net isn't appearing in the membership list for #matrix:matrix.org (on my matrix.org client) at all"
+id: '10795'
+key: SYN-195
+number: '195'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2015-06-16 10:15:47.0
+status: '5'
+type: '1'
+updated: 2015-06-16 10:15:47.0
+votes: '0'
+watches: '1'
+workflowId: '10895'
+---
+actions: null

@@ -1,0 +1,41 @@
+---
+summary: Support for FB-style Likes or Reddit/Slashdot style voting
+---
+created: 2015-03-29 22:23:58.0
+creator: matthew
+description: |-
+  Currently we have no good way to model 'voting' metadata about messages (e.g. FB likes or Reddit/Slashcode up/downvotes).  The best we can do is to synchronise around 'update' messages in the v2 CS-API - this could get *very* noisy and heavyweight for a typical FB-style "1M likes!" scenario.
+
+  We could help mitigate this by coalescing certain updates into the original event - both for server->client and server->server synchronisation.  However, this can never work in an E2E crypto world (unless we don't encrypt the vote, which doesn't seem great).  Worth noting that an E2E room with lots of participants becomes increasingly insecure to the point that it might as well not be E2E, as the room is only as safe as the security of the clients connected to it, so we might be able to sidestep this in practice somehow.  Alternatively, we could try to fix the scalability implications of syncing all these 'like' events by somehow QoSing them: federating them at lower priority; having them semi-ephemeral and parented only to the event they describe to avoid disrupting the main message graph; putting them in a separate message graph; etc.
+
+  In a non-e2e world, we could coalesce... I believe having a HS say "150 users Liked this message" is no more open to abuse than trusting a HS to accurately report /any/ message from its users.  But then we need a mechanism to de-coalesce on demand (e.g. to actually start paginating through the list of 1M users who hit 'Like').
+id: '11274'
+key: SPEC-135
+number: '135'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:10.0
+votes: '1'
+watches: '3'
+workflowId: '11374'
+---
+actions:
+- author: matthew
+  body: (might be also good to be able to filter on vote count, too, to implement reddit/slashdot style thresholding)
+  created: 2015-03-29 23:33:06.0
+  id: '11449'
+  issue: '11274'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-29 23:33:06.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/441'
+  created: 2016-10-28 16:27:10.0
+  id: '13291'
+  issue: '11274'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:10.0

@@ -1,0 +1,116 @@
+---
+summary: Sign server to server requests and responses
+---
+assignee: markjh
+created: 2014-09-30 14:36:56.0
+creator: markjh
+description: |-
+  We should sign the JSON HTTP requests and responses in the server to server protocol.
+
+  h3. Signature Format
+
+  The signature will need to convey the server creating the request/response, the key they used to sign it, the signature bytes.
+
+  The signature will need to be in either an HTTP header or as part of the URI since we need it for GET requests.
+
+   1) Use an HTTP "Authorization" header with a custom auth type. 
+  {code}
+  GET / HTTP/1.1
+  Authorization: X-Matrix origin=hs.example.com,key="ed25519:key1",sig="abcdef..."
+  {code}
+   2) Add a custom "Matrix Auth" HTTP header.
+  {code}
+  GET / HTTP/1.1
+  X-Matrix-Auth: origin=hs.example.com,key="ed25519:key1",sig="abcdef..."
+  {code}
+   3) Add a query parameter to the URI.
+  {code}
+  GET /?origin=hs.example.com&key=ed25519%3Akey1&sig=abcdef... HTTP/1.1
+  {code}
+
+  h3. Signature Contents
+
+  The signature should cover the URI+method, the origin and destination servers and the JSON contents.
+id: '10432'
+key: SPEC-33
+number: '33'
+priority: '3'
+project: '10001'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2014-11-12 13:13:29.0
+status: '5'
+type: '1'
+updated: 2014-11-12 13:13:29.0
+votes: '0'
+watches: '2'
+workflowId: '10535'
+---
+actions:
+- author: matthew
+  body: 'my vote would be for #1, ftr, given we''re basically using it as Authorization is intended to be used.'
+  created: 2014-09-30 15:58:37.0
+  id: '10489'
+  issue: '10432'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-30 15:58:37.0
+- author: markjh
+  body: |-
+    My first thought is to turn the HTTP request/response into a JSON object, Sign that using the JSON signing algorithm. Add the signatures as HTTP Authorization headers.
+
+    Something like:
+    {code}
+    {
+      "method": "GET",
+      "uri": "/path",
+      "origin": "origin.hs.example.com",
+      "destintation": "destination.hs.example.com",
+      "content": { JSON content... },
+      "signatures": {
+         "origin.hs.example.com": {
+            "ed25519:key1": "ABCDEF..."
+         }
+       }
+    }
+    {code}
+
+    to
+
+    {code}
+    GET /path HTTP/1.1
+    Authorization: X-Matrix origin=origin.example.com,key="ed25519:key1",sig="ABCDEF..."
+    Content-Type: application/json
+
+    {JSON content}
+    {code}
+  created: 2014-09-30 18:13:06.0
+  id: '10494'
+  issue: '10432'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-30 18:13:06.0
+- author: markjh
+  body: We could do something similar for responses or we could leave it up to the TLS authentication to auth the server.
+  created: 2014-09-30 18:36:00.0
+  id: '10495'
+  issue: '10432'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-30 18:36:00.0
+- author: markjh
+  body: We don't sign the Headers because load-balancers might modify the headers. We don't rely on TLS for integrity because we can't necessarily get at the client certificate because a load-balancer might be in the way. We assume that everything is JSON in the federation protocol so we don't bother including the content-type in the signature.
+  created: 2014-10-14 11:05:59.0
+  id: '10569'
+  issue: '10432'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-14 11:05:59.0
+- author: markjh
+  body: Matrix-doc has been updated with the authentication headers.
+  created: 2014-11-12 13:13:22.0
+  id: '10776'
+  issue: '10432'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-12 13:13:22.0

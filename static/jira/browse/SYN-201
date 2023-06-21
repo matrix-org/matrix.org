@@ -1,0 +1,60 @@
+---
+summary: Should we trust remote thumbnails to avoid regenerating local ones?
+---
+created: 2014-12-15 19:10:25.0
+creator: matthew
+description: |-
+  Currently the media repo implementation rethumbnails all content it receives.
+
+  So if A sends a video to B, B will not be able to see the message meaningfully (i.e. with a thumbnail) until the whole video has been replicated over to B's server where it can be thumbnailed.
+
+  I propose that we should trust A's thumbnails of the content and save us the  pain and delay of re-thumbnailing it ourselves.  This gives us a much better UX, as we can send the thumbnail in advance of the file itself having been replicated over to B (and indeed without ever needing to replicate the content to B, if B doesn't care to download it).
+id: '10827'
+key: SYN-201
+number: '201'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:30.0
+votes: '0'
+watches: '3'
+workflowId: '10927'
+---
+actions:
+- author: erikj
+  body: |-
+    Personally I'm against this, as it sets a bad precedence for the future.
+
+    Do we know how long the delay is? It seems odd that download full image and then thumbnailing should take _significantly_ longer than just downloading a thumbnail.
+  created: 2016-01-06 10:50:21.0
+  id: '12530'
+  issue: '10827'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 10:50:21.0
+- author: matthew
+  body: my point is that this stops us from ever sending thumbnails in advance of content to allow the "zero latency" filetransfer we had in UC. this is a real shame for ux. the delay is as long as it takes to shift a 40MB vid from A to B or whatever. happy to drop prio tho.
+  created: 2016-01-06 11:05:14.0
+  id: '12531'
+  issue: '10827'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-06 11:05:14.0
+- author: erikj
+  body: Ah, I had forgotten about how large videos are.
+  created: 2016-01-06 11:14:32.0
+  id: '12534'
+  issue: '10827'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 11:14:32.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1257'
+  created: 2016-11-07 18:27:30.0
+  id: '13575'
+  issue: '10827'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:30.0

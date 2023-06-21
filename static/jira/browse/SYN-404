@@ -1,0 +1,59 @@
+---
+summary: MySQL support
+---
+created: 2015-06-02 18:51:17.0
+creator: erikj
+description: |-
+  The main blocker for implementing MySQL support is as follows:
+
+  Synapse requires the ability to store full UTF8, which means using the MySQL charset utf8mb4 (*not* utf8, which only works for 3 byte utf8). MySQL only supports binary or case insensitive collations for utf8mb4, so we are forced to use binary collations. 
+
+  This would be exactly what we want, except this causes the python mysql connector to output those rows as bytes rather than as unicode objects (which is what the storage layer expects). The current storage layer does not know which columns are meant to be unicode strings and which are legitimately meant to be raw bytes.
+
+  Thus, to support MySQL one of two things need to happen:
+  # The storage layer is told (either statically or when functions are invoked on it,) which columns are unicode and which are raw bytes.
+  # The storage layer always returns raw bytes, and leaves the decoding and interpretation to the callers.
+
+  ---
+
+  A lesser problem is dealing with the incompatibilities between SQL schemas for different databases. While it is possible for SQLite and PostgreSQL or MySQL to share the same schemas, this will not work if we want to support all three. The simplest solution is to have separate schemas for each database, however a) we would need to be careful to ensure the schemas were kept in sync and b) this may require the storage layer to make different queries for different databases, which it currently doesn't do.
+id: '11613'
+key: SYN-404
+number: '404'
+priority: '3'
+project: '10000'
+reporter: erikj
+resolution: '2'
+resolutiondate: 2015-06-02 18:52:14.0
+status: '5'
+type: '2'
+updated: 2015-06-12 18:03:59.0
+votes: '0'
+watches: '2'
+workflowId: '11714'
+---
+actions:
+- author: erikj
+  body: Due to the fact we now support PostgreSQL, the core team are unlikely to be implementing this.
+  created: 2015-06-02 18:52:14.0
+  id: '11818'
+  issue: '11613'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-02 18:52:14.0
+- author: matthew
+  body: |-
+    The SQL schema incompatibility problem is specious, in my opinion.  We should never be spending time trying to coerce any two SQL backends to consume the same DDL schema, given SQL is so badly standardised that it's a huge coincidence if the same schema happens to work efficiently and correctly in two different database backends.  It's like noticing that Icelandic and Welsh have some matching words and grammar, and then trying to communicate only in the intersection of the two languages rather than just translate from one to the other.  The correct solution here would be to have a generic schema (in whatever dialect) and then postprocess it into the appropriate dialect for the required backend - mangling the data types, keywords, indexes, etc to match whatever that backend requires.
+
+    If someone wanted to implement mysql/mariadb support for synapse, they thus need to:
+     * Possibly write a mangling function to turn the current schema into a mysql dialect
+     * Possibly tweak some of the queries in the storage layer to express them in mysql syntax
+     * Go through the storage layer explicitly overriding which columns return unicode text, and which return raw bytes.  (Given relatively few return raw bytes, i'd assume you could assume unicode and override where necessary.  A quick grep through the schema suggests this is just needed for event_content_hashes.hash, event_signatures.signature, event_edge_hashes.hash, server_tls_certificates.tls_certificate, server_signature_keys.verify_key, pushers.push_key, pushers.data, user_filters.filter_json, received_transactions.response_json).  It's not entirely clear why JSON is sometimes stored as unicode and sometimes as bytea.
+
+    Whilst the core team isn't going to be doing this work any time soon as we're currently happy with postgres, we'd of course consider contributions adding this functionality in.
+  created: 2015-06-03 00:35:28.0
+  id: '11819'
+  issue: '11613'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-03 00:35:28.0

@@ -1,0 +1,23 @@
+---
+summary: 'MXRestClient: need joinAlias method'
+---
+assignee: manu
+created: 2014-12-10 10:36:08.0
+creator: manu
+description: ''
+id: '10799'
+key: SYIOS-4
+number: '4'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2014-12-12 10:38:58.0
+status: '5'
+type: '2'
+updated: 2014-12-12 10:38:58.0
+votes: '0'
+watches: '1'
+workflowId: '10899'
+---
+actions: null

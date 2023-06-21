@@ -1,0 +1,49 @@
+---
+summary: Downloading from the media repository is staggeringly slow
+---
+created: 2016-01-15 17:46:55.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  It's always been slow, but today it seems to be downloading content at around 40KB/s (on OM wifi).
+id: '12307'
+key: SYN-597
+number: '597'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:58.0
+votes: '0'
+watches: '3'
+workflowId: '12412'
+---
+actions:
+- author: matthew
+  body: |-
+    {code}
+    sierra:~ matthew$ time wget 'https://matrix.org/_matrix/media/v1/download/matrix.org/xNTZpOfZtfJLdhcoKqoIEAAK'
+    --2016-01-15 17:47:40--  https://matrix.org/_matrix/media/v1/download/matrix.org/xNTZpOfZtfJLdhcoKqoIEAAK
+    Resolving matrix.org... 83.166.64.33
+    Connecting to matrix.org|83.166.64.33|:443... connected.
+    HTTP request sent, awaiting response... 200 OK
+    Length: 1853174 (1.8M) [image/jpeg]
+    Saving to: 'xNTZpOfZtfJLdhcoKqoIEAAK'
+
+    xNTZpOfZtfJLdhcoKqoIEAAK        12%[=====>                                              ] 231.81K  34.7KB/s   eta 48s   
+    {code}
+  created: 2016-01-15 17:48:31.0
+  id: '12574'
+  issue: '12307'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-15 17:48:31.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1476'
+  created: 2016-11-07 18:28:58.0
+  id: '13781'
+  issue: '12307'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:58.0

@@ -1,0 +1,49 @@
+---
+summary: Per room initial sync
+---
+created: 2014-09-16 00:10:53.0
+creator: matthew
+description: ''
+id: '10024'
+key: SYWEB-10
+number: '10'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-24 01:51:21.0
+status: '5'
+type: '2'
+updated: 2014-09-25 17:41:29.0
+votes: '0'
+watches: '2'
+workflowId: '10394'
+---
+actions:
+- author: manu
+  body: |-
+    The webclient needs to call initialSync for a particular room (http://matrix.org/docs/api/client-server/#!/-rooms/get_room_sync_data) to get states of a new joined room. This states data contains power level information.
+
+    This API is not available HS side
+  created: 2014-09-16 09:17:09.0
+  id: '10102'
+  issue: '10024'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-16 09:17:09.0
+- author: manu
+  body: 'Note: the webclient could mimic this missing API by making a global initialSync request and filtering the result for a particular room'
+  created: 2014-09-16 09:18:26.0
+  id: '10103'
+  issue: '10024'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-16 09:18:26.0
+- author: matthew
+  body: done using the /state API
+  created: 2014-09-24 01:51:21.0
+  id: '10437'
+  issue: '10024'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-24 01:51:21.0

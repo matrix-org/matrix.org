@@ -1,0 +1,31 @@
+---
+summary: Auth stage types refer to protocols
+---
+created: 2015-04-23 15:54:01.0
+creator: dbkr
+description: |-
+  The spec currently allows home servers to list ways the it requires a client to authenticate by protocol. This means that it's impossible for a server to require the client completes more than one auth stage if they use the same protocol, eg. oauth2 to both twitter and facebook.
+
+  I think what the home server cares about is the *what* is authenticated (eg. the user's synapse username and password, the user's ownership of an email address or the user's ownership of a twitter account) and *who* it is authenticated with (eg. the home server, a given identity server or Twitter). The protocol the client needs to speak to do that auth is a purely technical concern.
+id: '11360'
+key: SPEC-158
+number: '158'
+priority: '3'
+project: '10001'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:16.0
+votes: '0'
+watches: '2'
+workflowId: '11460'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/497'
+  created: 2016-10-28 16:27:16.0
+  id: '13305'
+  issue: '11360'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:16.0

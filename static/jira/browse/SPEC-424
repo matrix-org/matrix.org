@@ -1,0 +1,36 @@
+---
+summary: surely /context should return state as of first event, for consistency with /sync
+---
+created: 2016-07-06 18:42:30.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12738'
+key: SPEC-424
+number: '424'
+priority: '4'
+project: '10001'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-10-28 16:28:38.0
+votes: '0'
+watches: '2'
+workflowId: '12838'
+---
+actions:
+- author: richvdh
+  body: I agree, but fixing it is likely to be a PITA at this point.
+  created: 2016-09-27 17:53:48.0
+  id: '13145'
+  issue: '12738'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-27 17:53:48.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/687'
+  created: 2016-10-28 16:28:38.0
+  id: '13496'
+  issue: '12738'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:38.0

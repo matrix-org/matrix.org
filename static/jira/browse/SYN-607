@@ -1,0 +1,36 @@
+---
+summary: .m.rule.member_event is too dumb
+---
+created: 2016-01-21 11:47:25.0
+creator: dbkr
+description: ''
+id: '12336'
+key: SYN-607
+number: '607'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:00.0
+votes: '0'
+watches: '2'
+workflowId: '12441'
+---
+actions:
+- author: dbkr
+  body: https://github.com/matrix-org/synapse/pull/514 disables the rule to to fix this temporarily
+  created: 2016-01-21 11:51:59.0
+  id: '12579'
+  issue: '12336'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-01-21 11:51:59.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1231'
+  created: 2016-11-07 18:29:00.0
+  id: '13788'
+  issue: '12336'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:00.0

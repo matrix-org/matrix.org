@@ -1,0 +1,31 @@
+---
+summary: Errors when internet connection unavailable are way too intrusive
+---
+assignee: gforet
+created: 2015-02-16 01:27:43.0
+creator: matthew
+description: ''
+id: '11058'
+key: SYIOS-80
+number: '80'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-18 16:42:26.0
+status: '5'
+type: '1'
+updated: 2015-02-18 16:42:26.0
+votes: '0'
+watches: '2'
+workflowId: '11158'
+---
+actions:
+- author: gforet
+  body: Network reachability error is displayed only once.
+  created: 2015-02-18 16:42:26.0
+  id: '11286'
+  issue: '11058'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-18 16:42:26.0

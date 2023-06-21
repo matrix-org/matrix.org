@@ -1,0 +1,38 @@
+---
+summary: /messages filter param should reflect that it takes a filter component, not a filter collection
+---
+created: 2016-09-07 21:36:21.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  also, it needs to be specced.
+id: '12823'
+key: SPEC-451
+number: '451'
+priority: '4'
+project: '10001'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-10-28 16:28:45.0
+votes: '0'
+watches: '3'
+workflowId: '12923'
+---
+actions:
+- author: matthew
+  body: Superficially /messages and /sync both take filter params.  Except /sync is a 'filter collection' (which may be either an ID or a blob of JSON, and is also known as a 'filter'), whereas /messages takes a 'filter component' as a blob of JSON (sometimes called a 'filter').  At the very least, the params should be named differently, and the whole naming convention should be untangled.
+  created: 2016-09-07 21:47:01.0
+  id: '13116'
+  issue: '12823'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-09-07 21:47:01.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/706'
+  created: 2016-10-28 16:28:45.0
+  id: '13515'
+  issue: '12823'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:45.0

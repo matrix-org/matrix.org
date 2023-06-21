@@ -1,0 +1,30 @@
+---
+summary: v2 /sync can get duplicate invite events for invite_state
+---
+created: 2015-12-10 13:03:08.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  The number of dupes seems to vary per request. This isn't a critical thing since clients will presumably clobber this state, but it is resulting in more bytes over the wire than necessary. !RdWSEBDLaUjybtznro:matrix.org was an affected room for user @kegan3:matrix.org
+id: '12194'
+key: SYN-543
+number: '543'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:41.0
+votes: '0'
+watches: '2'
+workflowId: '12297'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1441'
+  created: 2016-11-07 18:28:41.0
+  id: '13744'
+  issue: '12194'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:41.0

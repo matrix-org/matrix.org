@@ -1,0 +1,73 @@
+---
+summary: GET /events tests room membership at the wrong time
+---
+created: 2014-10-28 17:04:44.0
+creator: leonerd
+description: |-
+  Consider two users, A and B. User A creates a room and then B joins the room. In the meantime, user B is occasionally polling their event stream, updating tokens, etc.. However, the exact set of events that user B sees from their event stream will depend on the timing of their polling.
+
+  {noformat}
+     A                  B
+  create room
+  set up room
+                      poll /events
+                      join room
+                      poll /events
+  {noformat}
+  In this case, user B sees only their own {{m.room.member}} event on the event stream, as that was the only new event visible.
+
+  {noformat}
+     A                  B
+                      poll /events
+  create room
+  set up room
+                      join room
+                      poll /events
+  {noformat}
+  In this case in the current implementation, user B sees the room creation event and all the room setup events, even though _at the time_ they were not a member of the room. This is because the delta between user B's event stream tokens selects all those events, and they are filtered based on *current* membership of the room and thus they all get returned.
+id: '10520'
+key: SYN-117
+number: '117'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:21.0
+votes: '0'
+watches: '3'
+workflowId: '10624'
+---
+actions:
+- author: markjh
+  body: |-
+    I tackled this issue in previous projects by synthesising list of rooms the client is in at the *start* token of the request and then updating that list dynamically as new join/leave events appear in the stream.
+
+    This doesn't work very well if there are a mixture of "joins" and "leaves" for the same room in the stream since the client won't know which messages were excluded.
+  created: 2014-10-28 17:21:47.0
+  id: '10616'
+  issue: '10520'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-28 17:21:47.0
+- author: leonerd
+  body: |-
+    Actually it occurs to me you can post-process the events quite nicely.
+
+    Start off with the code as it is, then walk backwards through the proposed list of events, seeing if there are any that we have to remove. Construct the set of rooms that the requesting user is currently in, and walk backwards over the list of proposed events, updating that set of rooms by inspecting the {{prev_content}} of any room membership events about the requesting user themself, and use that set to further exclude other room events that they ought not have been allowed to see.
+
+    In effect this will mean that if the event list _would_ have (under the current) implementation been the room create and setup events, then the join (as in the scenario), the post-processing filter will notice the room join, updating the previous state of membership to not present, and then realise the requesting user at that moment is not a member of the room so should not be able to see the setup and create events.
+  created: 2014-10-28 18:23:51.0
+  id: '10617'
+  issue: '10520'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-28 18:27:23.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1235'
+  created: 2016-11-07 18:27:21.0
+  id: '13556'
+  issue: '10520'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:21.0

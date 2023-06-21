@@ -1,0 +1,66 @@
+---
+summary: Allow people to redact their own messages.
+---
+assignee: illicitonion
+created: 2015-01-21 16:02:27.0
+creator: erikj
+description: ''
+id: '10971'
+key: SYN-248
+number: '248'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2016-01-06 02:33:02.0
+status: '5'
+type: '2'
+updated: 2016-01-06 02:33:02.0
+votes: '0'
+watches: '2'
+workflowId: '11071'
+---
+actions:
+- author: erikj
+  body: This could be a per room option?
+  created: 2015-01-21 16:02:38.0
+  id: '11176'
+  issue: '10971'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-21 16:02:38.0
+- author: erikj
+  body: |-
+    My reservation with allowing this is that it may encourage HS's and clients to ignore redactions, thus decreasing their usefulness in other cases.
+
+    Perhaps this should be done via moderation features? Or as a separate feature?
+  created: 2015-05-07 11:46:26.0
+  id: '11721'
+  issue: '10971'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-07 11:46:26.0
+- author: matthew
+  body: I don't buy the idea that this encourages HS or clients to ignore redactions.  Letting users redact their own verbiage is just polite, imo.
+  created: 2015-06-29 23:57:41.0
+  id: '11942'
+  issue: '10971'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-29 23:57:41.0
+- author: matthew
+  body: Also, if we let users in future edit their own messages (for s/foo/bar/ style alterations), i suspect we should let them redact them too.
+  created: 2015-06-29 23:59:21.0
+  id: '11943'
+  issue: '10971'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-29 23:59:21.0
+- author: matthew
+  body: this happened.
+  created: 2016-01-06 02:33:02.0
+  id: '12520'
+  issue: '10971'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-06 02:33:02.0

@@ -1,0 +1,28 @@
+---
+summary: User Interactive Auth should validate parameters sent on every request
+---
+created: 2016-10-14 14:50:35.0
+creator: dbkr
+description: ''
+id: '12862'
+key: SYN-789
+number: '789'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:07.0
+votes: '0'
+watches: '2'
+workflowId: '12962'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1612'
+  created: 2016-11-07 18:30:07.0
+  id: '13943'
+  issue: '12862'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:07.0

@@ -1,0 +1,189 @@
+---
+summary: Client should be able to push notifications without GCM
+---
+created: 2015-10-01 20:46:32.0
+creator: wldhx
+description: |-
+  As a user w/o gapps, I'd still like to have push notifications.
+  These are received via long polling anyway (as stated by @matthew:matrix.org), but the client gets suspended virtually every app switch (by @alien:matrix.org).
+  We probably need some sort of persistence (think persistent notification). Should also look into similar applications like conversations.im.
+id: '11986'
+key: SYAND-140
+number: '140'
+priority: '2'
+project: '10201'
+reporter: wldhx
+resolution: '1'
+resolutiondate: 2015-10-12 06:56:07.0
+status: '5'
+type: '4'
+updated: 2015-10-12 06:56:07.0
+votes: '0'
+watches: '4'
+workflowId: '12089'
+---
+actions:
+- author: wldhx
+  body: Looked into conversations.im ([conversations/services/NotificationService.java|https://github.com/hlad/Conversations/blob/master/src/main/java/eu/siacs/conversations/services/NotificationService.java]), looks like we need a [foreground service|http://developer.android.com/guide/components/services.html#Foreground].
+  created: 2015-10-01 20:58:23.0
+  id: '12202'
+  issue: '11986'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-10-01 20:58:23.0
+- author: wldhx
+  body: '\*$summary: able to *get* push notifications (don''t have the rights to change it)'
+  created: 2015-10-01 21:05:46.0
+  id: '12203'
+  issue: '11986'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-10-01 21:05:56.0
+- author: erikj
+  body: I believe we may already support this if you disable GCM in the settings? We certainly used a foreground service in the days before we spec'ed implemented push in Matrix.
+  created: 2015-10-01 21:08:06.0
+  id: '12204'
+  issue: '11986'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-10-01 21:08:06.0
+- author: wldhx
+  body: |-
+    Seems like it does not work for me (I am *completely* sure I do not receive notifications until I bring the client to front) and @alien:matrix.org.
+    GCM checkbox does not activate if I press on it (activation animation proceeds to unchecked state).
+  created: 2015-10-01 21:14:53.0
+  id: '12205'
+  issue: '11986'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-10-01 21:14:53.0
+- author: m-ylecollen
+  body: |-
+    Which application version do you use ?
+    Which device ? Which android version ?
+    Do you use your own home server ?
+
+    I tried with version 0.5.1 : it works properly with and without GCM.
+
+    ->"GCM checkbox does not activate if I press on it "
+    Means that the server rejects the GCM registration : we used to have an issue with very long matrix Id
+
+    -> Did you check your notification rules ?
+  created: 2015-10-02 08:51:20.0
+  id: '12206'
+  issue: '11986'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-10-02 08:57:27.0
+- author: wldhx
+  body: |-
+    Version: 0.5.2-beta (build #257)
+    Device / Android version: OnePlus One (bacon / find7op) / Omni 5.1.1-20150614-find7op (SELinux enforcing)
+    Home server is matrix.org.
+
+    > GCM checkbox does not activate if I press on it
+    > means server rejects GCM registration
+    It might also be caused by lack of gapps (Google Apps).
+
+    > Did you check your notification rules ?
+    I believe I have.
+  created: 2015-10-02 14:44:34.0
+  id: '12211'
+  issue: '11986'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-10-02 16:34:36.0
+- author: m-ylecollen
+  body: |-
+    I tested on a nexus 6 with official android 5.1.1 with no issue.
+
+    we already got some issues with cyanogen versions (it worked properly with official rom releases with the same account).
+
+    Your android version seems beeing an unofficial one so it is difficult for us to fix an issue without having the device.
+
+    You could send us a bug report :
+    1- when you're trying to enable GCM
+    2- When the client doesn't receive message while being in background. 
+    We will have a look.
+
+    Could you check with another device with the same account ?
+
+    thank you for your help.
+  created: 2015-10-02 14:59:12.0
+  id: '12212'
+  issue: '11986'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-10-02 15:30:27.0
+- author: matthew
+  body: 'Dmitriy: if you can drop by #android:matrix.org to discuss this with Yannick at some point it''d be appreciated :)'
+  created: 2015-10-02 16:21:38.0
+  id: '12216'
+  issue: '11986'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-10-02 16:21:38.0
+- author: wldhx
+  body: |-
+    @M-ylecollen: I suspect the issue is associated with lack of gapps on my device as GCM probably depends on them. Will send BR later if still needed.
+    @matthew: Will do a bit later.
+  created: 2015-10-02 16:31:15.0
+  id: '12217'
+  issue: '11986'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-10-02 16:31:15.0
+- author: wldhx
+  body: 'Followup: yes, GCM does require gapps, as stated in [the official docs|https://developers.google.com/cloud-messaging/android/client].'
+  created: 2015-10-02 16:38:42.0
+  id: '12218'
+  issue: '11986'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-10-02 16:38:42.0
+- author: wldhx
+  body: |-
+    Some tests:
+     - bacon / 5.1.1 / no gapps ([fuller specs|https://matrix.org/jira/browse/SYAND-140?focusedCommentId=12211&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-12211]): no bg service notification, no notifications if app not on foreground
+     - manta / 4.4.2 / gapps: quite the opposite (that is, everything works as it should both with or without GCM activated)
+
+    I have a few more devices with different ROMs and configurations (and smth like 40-50 Asus TF-201s to tinker with ;-)), will do some more testing.
+  created: 2015-10-02 19:27:42.0
+  id: '12219'
+  issue: '11986'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-10-02 19:27:42.0
+- author: m-ylecollen
+  body: |-
+    wldhx,
+
+    this behaviour should be fixed by now (on the develop branch).
+
+    I don't close the issue until you tell us if the issue is fixed on your side (as we don't have the right device).
+
+    Your use case was not properly managed : the events thread was not started if the push identifier was not retrieved.
+
+    Notice that the GCM setting will be disable in your case.
+  created: 2015-10-08 15:25:46.0
+  id: '12229'
+  issue: '11986'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-10-08 15:25:46.0
+- author: wldhx
+  body: '@M-ylecollen: I''ve installed the corresponding build on find7op. The bg service notification ("Listening <...>") has appeared, will test a bit more just to be sure before closing.'
+  created: 2015-10-09 06:42:56.0
+  id: '12230'
+  issue: '11986'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-10-09 06:42:56.0
+- author: wldhx
+  body: I believe we can close this issue now - I've had no problems on find7op so far (though I haven't had the time to test on other devices) - and reopen should we find it is not fixed in all cases.
+  created: 2015-10-11 08:59:39.0
+  id: '12237'
+  issue: '11986'
+  type: comment
+  updateauthor: wldhx
+  updated: 2015-10-11 08:59:39.0

@@ -1,0 +1,55 @@
+---
+summary: If you are the last person to leave a room, the room name is shown with name ? in react UI
+---
+assignee: kegan
+created: 2015-07-15 02:06:59.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11755'
+key: SYJS-20
+number: '20'
+priority: '2'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:28:35.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:28:35.0
+votes: '0'
+watches: '3'
+workflowId: '11856'
+---
+actions:
+- author: kegan
+  body: This is an interesting case here. There is no room name, room alias (canonical or otherwise) and no members to say "Alice and Bob". What *should* be displayed in this case?
+  created: 2015-11-03 10:28:01.0
+  id: '12300'
+  issue: '11755'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 10:28:01.0
+- author: matthew
+  body: '"Empty room (was Alice & Bob)" - i.e. look at the left room.member events if there are no non-left ones?'
+  created: 2015-11-03 10:56:31.0
+  id: '12309'
+  issue: '11755'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-03 10:56:31.0
+- author: kegan
+  body: WFM
+  created: 2015-11-03 10:58:24.0
+  id: '12310'
+  issue: '11755'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 10:58:24.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/257
+  created: 2016-10-24 11:28:35.0
+  id: '13214'
+  issue: '11755'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:28:35.0

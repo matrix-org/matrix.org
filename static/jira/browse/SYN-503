@@ -1,0 +1,28 @@
+---
+summary: Content repo could restrict access to users who can read the associated event
+---
+created: 2015-10-20 15:30:40.0
+creator: matthew
+description: ''
+id: '12033'
+key: SYN-503
+number: '503'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:29.0
+votes: '0'
+watches: '2'
+workflowId: '12136'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1403'
+  created: 2016-11-07 18:28:29.0
+  id: '13712'
+  issue: '12033'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:29.0

@@ -1,0 +1,30 @@
+---
+summary: README quick start is confusing.
+---
+created: 2014-10-10 15:51:42.0
+creator: erikj
+description: ''
+id: '10459'
+key: SPEC-51
+number: '51'
+priority: '1'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-07-01 00:14:26.0
+status: '5'
+type: '1'
+updated: 2015-07-01 00:14:27.0
+votes: '0'
+watches: '2'
+workflowId: '10563'
+---
+actions:
+- author: matthew
+  body: fixed ages back.
+  created: 2015-07-01 00:14:26.0
+  id: '11954'
+  issue: '10459'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-01 00:14:26.0

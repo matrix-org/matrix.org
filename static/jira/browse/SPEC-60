@@ -1,0 +1,39 @@
+---
+summary: room knock support
+---
+assignee: kegan
+created: 2014-10-27 11:33:20.0
+creator: matthew
+description: ''
+id: '10508'
+key: SPEC-60
+number: '60'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '4'
+resolutiondate: 2015-01-21 11:52:08.0
+status: '5'
+type: '2'
+updated: 2015-01-21 11:52:16.0
+votes: '0'
+watches: '2'
+workflowId: '10612'
+---
+actions:
+- author: kegan
+  body: This should be included in v2.
+  created: 2015-01-08 17:03:50.0
+  id: '11070'
+  issue: '10508'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-08 17:03:50.0
+- author: kegan
+  body: SPEC-96
+  created: 2015-01-21 11:52:08.0
+  id: '11172'
+  issue: '10508'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:52:08.0

@@ -1,0 +1,199 @@
+---
+summary: 'V2 sync: return state corresponding to the *start* of the timeline'
+---
+assignee: richvdh
+created: 2015-10-28 11:24:27.0
+creator: richvdh
+description: |-
+  h3. Background
+
+  Consider a timeline like the following
+
+  {noformat}
+   [M0]->[S1]->[M2]->[S3]->[M4]->[S5]->[M6]->[S7]->[M8]->
+  ^----------------^                  ^----------------^
+          |                                    |
+   timeline in sync1                    timeline in sync2
+  {noformat}
+
+  (where 'Mn' represents a message event, and 'Sn' represents a state event).  A client performs an initial sync (sync1); it then waits a bit before doing another sync (sync2), leading to a gap in the timelines.
+
+  The question revolves around what point on the timeline the {{state}} table returned by {{/sync}} should represent. Currently, it represents the state at the end of the returned timeline (which, given {{/sync}} does not support historical requests, is the most recent state). For example, sync1 will currently return a state table which corresponds to the state after M2 (ie, including the change introduced by S1); sync2 returns the delta between M2 and S9, which is to say \[S3, S5, S7].
+
+  This approach makes implementation of clients tricky and error-prone, however. Consider that M6 and M8 are both messages from the same user, and S7 changes that user's displayname (or avatar, etc). To correctly display this, when processing sync2, the client must:
+  * Update its internal state table to that returned the /sync call
+  * Work backwards through the timeline:
+  ** M8: display the message with the displayname in the state table
+  ** S7: Update a *copy* of the state table with the {{prev_content}} given in S7
+  ** M6: display the message with the displayname from the copy of the state table.
+
+  This is tiresome for a number of reasons:
+  * The client has to copy the state table
+  * The client has to be able to process state events in both the forward and the backward direction
+  * If the client has to emit message events in order (as may be the case for many frameworks: eg libpurple, weechat), it is even more painful - particularly if you want to show the changes due to S3 and S5 at the correct point in the timeline.
+  * It means that state events are duplicated between the timeline and the state table (leading to the {{event_map}})
+  * It means that we have to return a {{prev_content}} for each state change, which is largely redundant.
+
+  h3. Proposal
+
+  It is proposed that instead {{/sync}} should return the state corresponding to the *start* of the returned timeline. In the example above:
+  * sync1 would return a state table corresponding to the state before M0
+  * sync2 would return the delta between M2 and M6 - ie, \[S3, S5].
+
+  In the case of an incremental {{/sync}} with {{timeline.limited == False}}, we would therefore expect the state table to be empty.
+
+  The algorithm for the client then becomes:
+  * Process the events in the state table:
+  ** Write any interesting changes (joins/parts/etc) to the UI
+  ** Update the internal state table
+  * Process the events in the timeline
+  ** Write any interesting changes (messages/joins/parts/etc) to the UI
+  ** For state events, update the internal state table
+
+  h3. Counterarguments
+
+  * /sync no longer returns the 'current' state - you have to iterate the timeline array to get the current state.
+  ** You probably have to iterate the timeline array anyway, to get the messages. If you really don't care about messages, you should probably do 'limit=0' or call {{/state}} anyway. In any case, having to iterate two json arrays is hardly much more onerous than having to iterate one.
+  * Client implementors will shoot themselves by forgetting to iterate the timeline
+  ** The general case is that the state array will be empty, because there will be no gap since the previous sync. So this would become obvious pretty quickly.
+  * Client implementors will shoot themselves by forgetting to iterate the state table
+  ** On the initial sync, it's pretty clear you need to iterate the state table, and there's not much difference from a client's POV between processing an initial sync and processing an incremental one - so once you've done it for the initial sync, you're likely to remember to do it for subsequent ones.
+id: '12048'
+key: SPEC-254
+number: '254'
+priority: '3'
+project: '10001'
+reporter: richvdh
+resolution: '1'
+resolutiondate: 2015-12-10 15:37:48.0
+status: '5'
+type: '4'
+updated: 2015-12-10 15:37:48.0
+votes: '0'
+watches: '4'
+workflowId: '12151'
+---
+actions:
+- author: richvdh
+  body: |-
+    Other things we should change at the same time:
+
+    * {{prev_content}} becomes redundant - we shouldn't return it by default. (Is there an argument that it might still be useful? In which case it could be optional?)
+    * We should get rid of the {{event_map}} and just return the events inline.
+    * Should we rename the {{state}} key? What to?
+  created: 2015-10-28 16:03:45.0
+  id: '12276'
+  issue: '12048'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-10-28 16:03:45.0
+- author: erikj
+  body: This does assume that state events that are in the timeline actually take affect.
+  created: 2015-10-28 16:36:58.0
+  id: '12278'
+  issue: '12048'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-10-28 16:36:58.0
+- author: gforet
+  body: |-
+    I agree with Richard's proposal, except about 'prev_content'.
+
+    This field 'prev_content' is still relevant for the following reasons:
+    - When a member leaves a room, his previous membership is useful to know if he left the room or if he is unbanned...
+    - In case of profile change, the ios client uses the prev-content to know the attributes which have been actually updated.
+    - In case of back pagination, we still need to process state in backward direction.
+  created: 2015-10-29 09:49:03.0
+  id: '12280'
+  issue: '12048'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-10-29 09:49:03.0
+- author: richvdh
+  body: |-
+    Thanks for the feedback, Giom.
+
+    In the case of back pagination, you wouldn't be using /sync: the behaviour could be different between /sync and /messages.
+
+    Your points are good though. I think we should keep prev_content by default.
+  created: 2015-10-29 13:08:26.0
+  id: '12281'
+  issue: '12048'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-10-29 13:08:26.0
+- author: markjh
+  body: |-
+    Currently the v2 filters allow state events to have a different filter to the timeline events.
+
+    What happens if the client filters out an event from the timeline but still wants to see it in the current state?
+    Would the event be added to the timeline anyway? Or would we add it the state dictionary even though there wasn't a "gap" in the sync?
+  created: 2015-10-29 15:40:40.0
+  id: '12284'
+  issue: '12048'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-10-29 15:40:40.0
+- author: richvdh
+  body: Interesting. Does it necessarily make sense to have separate filters for timeline and state events? The change we're suggesting here blurs the boundary between the way message and state events.
+  created: 2015-11-02 09:56:41.0
+  id: '12288'
+  issue: '12048'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-02 09:56:41.0
+- author: richvdh
+  body: |-
+    Things get more complicated here in the face of a branching event graph, with conflicts on the two branches.
+
+    Consider:
+
+    {noformat}
+           .---- E3 <--- S4 <--.
+           V                   |
+    S1 <- E2                  E5 <-- E8
+           ^                   |
+           '---- E6 <--- S7 <--'
+    {noformat}
+
+    (Xn, where n represents the stream ordering in the homeserver's timeline. Sn represents a state event; En a message event.)
+
+    Three different cases:
+    * S7 takes precedence over S4 (S4 is "Bob sets m.room.name"; S7 is "Alice kicks Bob").
+    ** Client supplies {{since=S4}}. Returned results should have: {{state_delta: \[-S4], timeline: \[E5, E6, S7, E8]}}
+    ** Client supplies {{since=E2}}. Returned results should have: {{state_delta: \[], timeline: \[E3, E5, E6, S7, E8]}}. S4 should be *excluded* from this timeline.
+    * S4 takes precedence over S7 (S4 is "Alice kicks Bob"; S7 is "Bob sets m.room.name"). S7 should always be excluded from the timeline.
+
+    It looks like we need a way to figure out that an event was rejected when it was merged into the room state, so that it can be excluded from the timeline.
+
+    Question: should a rejected event be pushed to the client with a flag, so that the client can display some indication of it, or should it be omitted entirely? I'm thinking the latter, initially at least.
+  created: 2015-11-05 14:21:30.0
+  id: '12335'
+  issue: '12048'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 14:21:30.0
+- author: richvdh
+  body: (I now realise this is what [~erikj] meant in his [comment|https://matrix.org/jira/browse/SPEC-254?focusedCommentId=12278&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-12278])
+  created: 2015-11-05 14:23:52.0
+  id: '12336'
+  issue: '12048'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 14:28:36.0
+- author: richvdh
+  body: Given that v2 /sync doesn't correctly handle conflicting state changes currently, my inclination is to gloss over this for now.
+  created: 2015-11-05 14:33:32.0
+  id: '12337'
+  issue: '12048'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 14:33:32.0
+- author: richvdh
+  body: This change landed with https://github.com/matrix-org/synapse/pull/373, and the documentation update is in https://github.com/matrix-org/matrix-doc/pull/164
+  created: 2015-11-19 10:05:21.0
+  id: '12371'
+  issue: '12048'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-19 10:05:21.0

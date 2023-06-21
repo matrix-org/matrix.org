@@ -1,0 +1,28 @@
+---
+summary: Need to consider how to filter out m.call.* events from group rooms
+---
+created: 2016-08-22 20:57:45.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12803'
+key: SYN-755
+number: '755'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:56.0
+votes: '0'
+watches: '2'
+workflowId: '12903'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1588'
+  created: 2016-11-07 18:29:56.0
+  id: '13912'
+  issue: '12803'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:56.0

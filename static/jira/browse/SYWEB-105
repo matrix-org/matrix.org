@@ -1,0 +1,33 @@
+---
+summary: Desktop notifications are suppressed on non-room pages (settings, homepage, etc)
+---
+created: 2014-10-03 13:10:51.0
+creator: kegan
+description: ''
+id: '10449'
+key: SYWEB-105
+number: '105'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '5'
+resolutiondate: 2014-11-12 17:44:13.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:03.0
+votes: '0'
+watches: '1'
+workflowId: '10553'
+---
+actions:
+- author: kegan
+  body: |-
+    This has since been fixed.
+
+    Cannot reproduce.
+  created: 2014-11-12 17:44:13.0
+  id: '10786'
+  issue: '10449'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-12 17:44:13.0

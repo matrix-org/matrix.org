@@ -1,0 +1,58 @@
+---
+summary: Tor sees presence events from users who aren't on his server and he doesn't share a room with.
+---
+created: 2015-12-01 12:36:30.0
+creator: matthew
+description: |-
+  "1:
+    type: m.presence
+    content:
+      presence: offline
+    sender: @Caerdwyn:home.rdash.in
+  2:
+    type: m.presence
+    content:
+      presence: offline
+    sender: @yoesak:matrix.org
+  3:
+    type: m.presence
+    content:
+      presence: offline
+    sender: @jasim:matrix.org
+  4:
+    type: m.presence
+    content:
+      presence: offline
+    sender: @bobderbaumeister:matrix.org
+  5:
+    type: m.presence
+    content:
+      presence: offline
+    sender: @ribotmaximus:matrix.org
+
+  getting repeated events for these, on a client on a different homeserver, which shares no room with any of them
+  it shares a room with one client at all that lives on matrix.org, and that's @xt:matrix.org, which might share rooms with those, but that's 2 steps of separation"
+
+  Could be related to SYN-530 somehow.
+id: '12158'
+key: SYN-531
+number: '531'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:38.0
+votes: '0'
+watches: '2'
+workflowId: '12261'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1429'
+  created: 2016-11-07 18:28:38.0
+  id: '13736'
+  issue: '12158'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:38.0

@@ -1,0 +1,20 @@
+---
+summary: Transparent GIFs/PNGs should be shown on a white background plinth, not black
+---
+created: 2015-03-29 23:42:33.0
+creator: matthew
+description: ''
+id: '11291'
+key: SYIOS-116
+number: '116'
+priority: '2'
+project: '10200'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-03-29 23:42:33.0
+votes: '0'
+watches: '1'
+workflowId: '11391'
+---
+actions: null

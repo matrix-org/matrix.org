@@ -1,0 +1,77 @@
+---
+summary: Get all member info
+---
+created: 2016-02-17 04:46:16.0
+creator: jackvt93
+description: |-
+  Hi, 
+
+  Is there have any ways to get all members information by using matrix android sdk. I want to get all members info for showing hints (or autocomplete) when user inputs first character of displayname/userid.
+id: '12404'
+key: SYAND-175
+number: '175'
+priority: '3'
+project: '10201'
+reporter: jackvt93
+status: '10100'
+type: '4'
+updated: 2016-02-17 10:20:09.0
+votes: '0'
+watches: '2'
+workflowId: '12509'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    Why do you mean by get all member info ?
+
+    All room members or any known users ?
+  created: 2016-02-17 07:11:50.0
+  id: '12630'
+  issue: '12404'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 07:11:50.0
+- author: jackvt93
+  body: I means all members existed on server like search member bar on vector web
+  created: 2016-02-17 09:43:08.0
+  id: '12636'
+  issue: '12404'
+  type: comment
+  updateauthor: jackvt93
+  updated: 2016-02-17 09:43:08.0
+- author: m-ylecollen
+  body: |-
+    I don't think that the webclient makes a request to list the known members on server side
+
+    It depends what you expect to do
+    1 -  mSession.getDataHandler().getStore().getUsers() to have all the known users by the client (room members or presence)
+    2 - mRoom.getMembers() for a dedicated room
+  created: 2016-02-17 09:58:34.0
+  id: '12637'
+  issue: '12404'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 09:59:12.0
+- author: jackvt93
+  body: |-
+    Yeah, i think so. But my purposes are help user easy in inviting unknown members (by userId or Display name)
+
+    If one newly member is registered, we can't find that user if he/she does't joins or creates some rooms.
+  created: 2016-02-17 10:13:05.0
+  id: '12638'
+  issue: '12404'
+  type: comment
+  updateauthor: jackvt93
+  updated: 2016-02-17 10:13:05.0
+- author: m-ylecollen
+  body: |-
+    There is an invitation by email feature but it not yet implemented on the android client.
+
+    But, it is possible to invite an user if you know his/her matrix ID.
+  created: 2016-02-17 10:20:09.0
+  id: '12639'
+  issue: '12404'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 10:20:09.0

@@ -1,0 +1,28 @@
+---
+summary: Allow users to permanently remove rooms from the recent list.
+---
+assignee: illicitonion
+created: 2015-09-10 16:27:34.0
+creator: markjh
+description: |-
+  Users may wish to permanently delete a conversation from the list of rooms that comes down in /initialSync.
+
+  This should be a permanent operation, it should not be possible to recover the room. Otherwise this is just a special case of the filtering the room list.
+
+  If all users on an HS have deleted the room, then that room may be deleted from the HS.
+id: '11866'
+key: SPEC-224
+number: '224'
+priority: '1'
+project: '10001'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-12-10 15:41:38.0
+status: '5'
+type: '1'
+updated: 2015-12-10 15:41:38.0
+votes: '0'
+watches: '1'
+workflowId: '11969'
+---
+actions: null

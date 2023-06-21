@@ -1,0 +1,24 @@
+---
+summary: 'IRC AS: IPv6 support for outbound conns'
+---
+created: 2015-11-12 09:50:06.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Each connected IRC client should be able to have a different v6 address. This needs the bridge to be able to bind to different source IPs f.e. client
+id: '12104'
+key: BOTS-137
+number: '137'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-01-04 17:22:43.0
+status: '5'
+type: '1'
+updated: 2016-01-04 17:22:43.0
+votes: '0'
+watches: '1'
+workflowId: '12207'
+---
+actions: null

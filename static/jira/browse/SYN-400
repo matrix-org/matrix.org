@@ -1,0 +1,39 @@
+---
+summary: 'AS: Failure to pass events for rooms which have foreign room aliases but an alias regex of .*'
+---
+created: 2015-06-02 12:57:51.0
+creator: neb
+description: ''
+id: '11604'
+key: SYN-400
+number: '400'
+priority: '2'
+project: '10000'
+reporter: kegan
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:04.0
+votes: '0'
+watches: '3'
+workflowId: '11705'
+---
+actions:
+- author: erikj
+  body: |-
+    The room_alias regex, imo, should only apply to local aliases from the canonical room aliases table.
+
+    Having a separate key that allows you to filter on the state events would be better (but still not necessarily a good thing to support), since the alias state events are informational only, and can be entirely wrong.
+  created: 2016-01-06 11:08:28.0
+  id: '12532'
+  issue: '11604'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 11:08:28.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1327'
+  created: 2016-11-07 18:28:04.0
+  id: '13648'
+  issue: '11604'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:04.0

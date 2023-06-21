@@ -1,0 +1,59 @@
+---
+summary: Public rooms sometimes appear as 2-member rooms for some reason.
+---
+assignee: manu
+created: 2015-03-12 18:02:24.0
+creator: matthew
+description: |-
+  [18:00]  <M-Amandine> Strange bug: I have a room called "Matthew" which only shows Matthew and I in it but actually has the content of #design:
+  [18:01]  <MatrixBridge> <M-Amandine> posted : https://matrix.org/_matrix/media/v1/download/matrix.org/OpcLBdOmrWONtIrxZAQrYgXn - Image
+  [18:01]  <Arathorn> i reported this bug too yesterday.  for me design was called "Julien" and had just me & Julien in it
+id: '11202'
+key: SYIOS-105
+number: '105'
+priority: '1'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-27 13:46:17.0
+status: '5'
+type: '1'
+updated: 2015-03-27 13:46:17.0
+votes: '0'
+watches: '3'
+workflowId: '11302'
+---
+actions:
+- author: gforet
+  body: |-
+    Reproduced.
+
+    1- Join a public room from web client whereas the iOS console is on recents tab -> The iOS console adds a new recent with a wrong display name (the user display name in my case). During investigation, I noticed that the provided room state is incomplete (only one member,...).
+
+    2 - Open the room -> only one message is displayed, only one member is present.
+
+    3 - Trigger scroll back -> display the room history (OK), but the room title is still wrong (NOK) and the other members are not listed into room state attributes (NOK).
+  created: 2015-03-13 08:40:46.0
+  id: '11386'
+  issue: '11202'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-03-13 08:40:46.0
+- author: manu
+  body: |-
+    The pb is that when you join a room from another device, the ios device sees events from this new room coming down the events stream BUT it does not do an initialSync on the room so it misses the room state and all computations (room members, room name,...) based on the state are wrong.
+    The SDK needs to do the room initialSync and then inform the app that there is a new room. It can be implemented by a new callback, delegate or listener mechanism.
+  created: 2015-03-16 08:11:03.0
+  id: '11397'
+  issue: '11202'
+  type: comment
+  updateauthor: manu
+  updated: 2015-03-16 08:11:03.0
+- author: manu
+  body: The problem has been solved like on the webclient. If the SDK receives data from a room it does not know yet, it will make an initialSync on it to get the full room state.
+  created: 2015-03-27 13:46:17.0
+  id: '11440'
+  issue: '11202'
+  type: comment
+  updateauthor: manu
+  updated: 2015-03-27 13:46:17.0

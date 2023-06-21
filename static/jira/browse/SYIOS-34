@@ -1,0 +1,30 @@
+---
+summary: Support typing notifications
+---
+created: 2014-12-22 10:49:21.0
+creator: manu
+description: ''
+id: '10854'
+key: SYIOS-34
+number: '34'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '3'
+resolutiondate: 2014-12-23 14:16:37.0
+status: '6'
+type: '2'
+updated: 2014-12-23 15:16:23.0
+votes: '0'
+watches: '2'
+workflowId: '10954'
+---
+actions:
+- author: gforet
+  body: see SYIOS-30
+  created: 2014-12-23 14:16:37.0
+  id: '11027'
+  issue: '10854'
+  type: comment
+  updateauthor: gforet
+  updated: 2014-12-23 14:16:37.0

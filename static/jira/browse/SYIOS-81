@@ -1,0 +1,31 @@
+---
+summary: Ability to send messages in the background
+---
+assignee: manu
+created: 2015-02-16 01:28:20.0
+creator: matthew
+description: ''
+id: '11059'
+key: SYIOS-81
+number: '81'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-18 17:02:04.0
+status: '5'
+type: '2'
+updated: 2015-02-18 17:02:04.0
+votes: '0'
+watches: '2'
+workflowId: '11159'
+---
+actions:
+- author: manu
+  body: Enabled the AFNetworking option to do that.
+  created: 2015-02-18 17:02:04.0
+  id: '11288'
+  issue: '11059'
+  type: comment
+  updateauthor: manu
+  updated: 2015-02-18 17:02:04.0

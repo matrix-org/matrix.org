@@ -1,0 +1,40 @@
+---
+summary: Issues showing the home screen with self-built android app
+---
+created: 2015-02-16 11:34:31.0
+creator: pvagner
+description: |-
+  I've built the Android app my-self against Android SDK 21 instead of Android SDK 19 and after logging in the app stops unexpectedly.
+  By looging at logcat I think login and initial sync is attempted but there might be an issue with the UI.
+id: '11075'
+key: SYAND-25
+number: '25'
+priority: '3'
+project: '10201'
+reporter: pvagner
+resolution: '1'
+resolutiondate: 2015-02-16 14:45:55.0
+status: '5'
+type: '1'
+updated: 2015-02-16 14:45:55.0
+votes: '0'
+watches: '2'
+workflowId: '11175'
+---
+actions:
+- author: m-ylecollen
+  body: I tried with a nexus 6. It works properly.
+  created: 2015-02-16 13:42:07.0
+  id: '11265'
+  issue: '11075'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-02-16 13:42:07.0
+- author: m-ylecollen
+  body: I fixed the null getActionBar issue but i don't have the right device to test.
+  created: 2015-02-16 14:19:22.0
+  id: '11267'
+  issue: '11075'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-02-16 14:19:22.0

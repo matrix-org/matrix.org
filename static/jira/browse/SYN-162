@@ -1,0 +1,34 @@
+---
+summary: Bogus pagination token when the beginning of the room history is reached
+---
+created: 2014-11-24 10:32:05.0
+creator: joachim
+description: |-
+  After paginating to the top of the room history, the last request returns the oldest events with a pagination token of the form: t-1-18815_786_0.
+  It seems the -1 at the beginning is not expected. Requesting older messages from this token results in a M_UNKNOWN - Unknown token error.
+
+  <erikj> I bet you that was introduced by whoever fixed the off by one bug the other day
+id: '10696'
+key: SYN-162
+number: '162'
+priority: '3'
+project: '10000'
+reporter: joachim
+resolution: '1'
+resolutiondate: 2015-01-07 13:28:05.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:11.0
+votes: '0'
+watches: '3'
+workflowId: '10796'
+---
+actions:
+- author: kegan
+  body: This is now fixed.
+  created: 2015-01-07 13:28:05.0
+  id: '11060'
+  issue: '10696'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-07 13:28:05.0

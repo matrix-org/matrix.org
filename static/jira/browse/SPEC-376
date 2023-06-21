@@ -1,0 +1,30 @@
+---
+summary: Support for custom ephemeral event types
+---
+created: 2016-03-29 00:19:45.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  To stop TimePath from abusing typing notifications as a discovery mechanism for in-game lobby rooms
+id: '12586'
+key: SPEC-376
+number: '376'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:27.0
+votes: '0'
+watches: '2'
+workflowId: '12686'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/659'
+  created: 2016-10-28 16:28:27.0
+  id: '13468'
+  issue: '12586'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:27.0

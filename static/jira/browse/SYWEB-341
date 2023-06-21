@@ -1,0 +1,20 @@
+---
+summary: Filter boxes for searching on rooms, member list, messages
+---
+created: 2015-03-29 22:51:29.0
+creator: matthew
+description: ''
+id: '11280'
+key: SYWEB-341
+number: '341'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-03-29 22:51:29.0
+votes: '1'
+watches: '2'
+workflowId: '11380'
+---
+actions: null

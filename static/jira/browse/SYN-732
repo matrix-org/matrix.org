@@ -1,0 +1,28 @@
+---
+summary: Button to expire old URL previews
+---
+created: 2016-07-21 11:41:57.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12761'
+key: SYN-732
+number: '732'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:46.0
+votes: '0'
+watches: '2'
+workflowId: '12861'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1568'
+  created: 2016-11-07 18:29:46.0
+  id: '13891'
+  issue: '12761'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:46.0

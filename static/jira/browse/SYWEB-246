@@ -1,0 +1,27 @@
+---
+summary: Selectable notifications
+---
+created: 2015-01-06 20:53:17.0
+creator: jasnejac
+description: |-
+  It would be really nice to see selectable notifications on all "vanilla" clients.
+
+  By selectable, I mean:
+
+  - per room
+  - potentially per user
+  - maybe a selection of assignable different sounds
+id: '10892'
+key: SYWEB-246
+number: '246'
+priority: '3'
+project: '10004'
+reporter: jasnejac
+status: '10100'
+type: '2'
+updated: 2015-01-06 20:53:17.0
+votes: '0'
+watches: '1'
+workflowId: '10992'
+---
+actions: null

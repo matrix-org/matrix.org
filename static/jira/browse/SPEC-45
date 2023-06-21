@@ -1,0 +1,60 @@
+---
+summary: Alternative room transports to full mesh
+---
+created: 2014-10-02 17:41:23.0
+creator: markjh
+description: |-
+  We shouldn't assume that every room will use full mesh. Ideally rooms should be have configuration along with the policy server explaining how to distribute events amongst the participating servers.
+
+  We could have a list of distribution protocols in the room config with two transports that servers MUST support:
+
+  1) The current full mesh transport.
+  2) A simple list of endpoints to pass events to.
+
+  Rooms SHOULD support at least one of these two transports. A server can then always join the room by falling back to the simple list of endpoints if it doesn't understand the other federation protocols in the room.
+id: '10448'
+key: SPEC-45
+number: '45'
+priority: '3'
+project: '10001'
+reporter: markjh
+status: '1'
+type: '2'
+updated: 2016-10-28 16:26:47.0
+votes: '0'
+watches: '4'
+workflowId: '10552'
+---
+actions:
+- author: matthew
+  body: what is the use case for this? who is actually going to be implementing extensible room sync protocols? is it to let us rewrite the algo in future without breaking the world, or to allow folks implementing their own s2s APIs have an easier learning curve? or something else?
+  created: 2014-10-02 18:17:20.0
+  id: '10508'
+  issue: '10448'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-10-02 18:17:20.0
+- author: markjh
+  body: To allow alternative sync protocols in the future. I think it would be useful to allow servers to create rooms using newer protocols without having to worry about locking out older servers from those chat rooms.
+  created: 2014-10-02 18:22:50.0
+  id: '10509'
+  issue: '10448'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-02 18:22:50.0
+- author: matthew
+  body: Ftr, there have been some vague suggestions around circular hashing, petri nets, clos switches or DHT-based routing thrown around, but nothing concrete afaik.
+  created: 2015-12-01 16:11:39.0
+  id: '12405'
+  issue: '10448'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-01 16:12:00.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/469'
+  created: 2016-10-28 16:26:47.0
+  id: '13244'
+  issue: '10448'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:47.0

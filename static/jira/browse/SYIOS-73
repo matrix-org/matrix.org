@@ -1,0 +1,23 @@
+---
+summary: Text area input font should match that used in bubbles
+---
+assignee: gforet
+created: 2015-02-09 10:25:12.0
+creator: matthew
+description: ''
+id: '11017'
+key: SYIOS-73
+number: '73'
+priority: '3'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-12 16:07:49.0
+status: '5'
+type: '1'
+updated: 2015-02-12 16:07:49.0
+votes: '0'
+watches: '1'
+workflowId: '11117'
+---
+actions: null

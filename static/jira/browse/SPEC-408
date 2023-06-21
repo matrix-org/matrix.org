@@ -1,0 +1,101 @@
+---
+summary: User message API
+---
+created: 2016-06-06 17:47:40.0
+creator: jfrederickson
+description: |-
+  IMO it would be helpful to have an API to message specific users without knowing what room they're in. Of course, Matrix doesn't treat 1-1 conversations any different than any other room, but I think it would be helpful to have a convenience API to send someone a message. The semantics could be something like this:
+
+  To message a user:
+  * Check if a room already exists (maybe by iterating through rooms looking for a 1-1 chat with that contact, or maybe store a list of "canonical" rooms for specific users, although you'd then need to update that list if either party invited someone else into the room)
+  * If room exists, send message in that room
+  * If room doesn't exist, create a new room with sane defaults for 1-1 chats (don't show history to newly invited users, drop power levels from both users, etc)
+
+  I think this would be nice for a few reasons:
+
+  * Currently, starting a new chat with someone from Vector and other clients will create a new room and invite the other user, regardless of whether a room already exists or not. Furthermore, these rooms tend to be created with the same default settings as other rooms, which may not always make sense for 1-1 rooms (should one of the users be a room admin, for example?)
+  * As it stands now, "sending a message to a user" isn't a meaningful concept - every message has to be in a room. This makes it more difficult to make e.g. voice interfaces that ask for a recipient from your contact list and send messages accordingly.
+id: '12693'
+key: SPEC-408
+number: '408'
+priority: '3'
+project: '10001'
+reporter: jfrederickson
+resolution: '2'
+resolutiondate: 2016-06-17 10:17:07.0
+status: '5'
+type: '2'
+updated: 2016-06-17 10:17:24.0
+votes: '0'
+watches: '2'
+workflowId: '12793'
+---
+actions:
+- author: richvdh
+  body: |-
+    {quote}
+    Currently, starting a new chat with someone from Vector and other clients will create a new room and invite the other user, regardless of whether a room already exists or not. Furthermore, these rooms tend to be created with the same default settings as other rooms, which may not always make sense for 1-1 rooms (should one of the users be a room admin, for example?)
+    {quote}
+
+    This is actually a bug in vector (https://github.com/vector-im/vector-web/issues/1613): the intention is that the client looks for appropriate rooms.
+
+    {quote}
+    As it stands now, "sending a message to a user" isn't a meaningful concept - every message has to be in a room. This makes it more difficult to make e.g. voice interfaces that ask for a recipient from your contact list and send messages accordingly.
+    {quote}
+
+    I don't quite follow why the fact that every message needs to be in a room makes your usecase difficult. Certainly we could do better at making a suitable room easier to find, but in general putting messages in rooms is somewhat fundamental to matrix's operation.
+
+    We are considering adding support for out-of-band messages which get deleted from the server once the recipient has received them (SPEC-138), but I don't think that's quite what you want.
+
+    This issue feels like it presupposes a solution, but I'm confused as to what problem you are trying to solve. Are you seeing missing features in vector/other clients, or are you trying to develop your own client?
+  created: 2016-06-09 11:28:53.0
+  id: '12994'
+  issue: '12693'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-09 11:28:53.0
+- author: richvdh
+  body: '[~jfrederickson]: can you clarify your usecase please'
+  created: 2016-06-16 10:56:50.0
+  id: '13002'
+  issue: '12693'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-16 10:56:50.0
+- author: jfrederickson
+  body: |-
+    Sorry about that - I would like to develop my own client (the aforementioned voice-controlled one) and to do so conveniently I need to be able to send messages to a specific person. The UX flow I'm envisioning is something like (as a voice command):
+
+    "Send a message to Jon"
+
+    Or, alternatively:
+
+    "Send a message in Matrix HQ"
+
+    The former requires a way to select the most appropriate room to send the message in. I agree that this issue does presuppose a solution, it's just the one I thought of first since it most closely matches the way other protocols (e.g. XMPP) work.
+
+    Another option would be to have an API endpoint that, given a MXID, returns a RoomID corresponding to the best room to contact that user in.
+
+    The scenario I want to avoid is one in which my client has slightly different rules for selecting a room than Vector, leading to multiple rooms being created if a user switches between clients and uses the "Start Chat" button in Vector. Putting this logic in the HS rather than each of the clients would ensure that it's consistent between all clients.
+  created: 2016-06-16 22:31:49.0
+  id: '13009'
+  issue: '12693'
+  type: comment
+  updateauthor: jfrederickson
+  updated: 2016-06-16 22:31:49.0
+- author: richvdh
+  body: Right. Well, I agree we need a consistent way of picking the room we're going to use. I'll raise this as a different bug.
+  created: 2016-06-17 10:08:08.0
+  id: '13010'
+  issue: '12693'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-17 10:08:08.0
+- author: richvdh
+  body: raised as SPEC-413
+  created: 2016-06-17 10:17:07.0
+  id: '13011'
+  issue: '12693'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-17 10:17:24.0

@@ -1,0 +1,59 @@
+---
+summary: Clients don't get told about remote users going offline
+---
+assignee: leonerd
+created: 2015-02-09 18:48:32.0
+creator: erikj
+description: ''
+id: '11027'
+key: SYN-261
+number: '261'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-04-23 19:03:33.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:09.0
+votes: '0'
+watches: '3'
+workflowId: '11127'
+---
+actions:
+- author: leonerd
+  body: |-
+    That sounds quite plausible (I'll make a sytest case for it).
+
+    Annoyingly, that delete from the cache is basically required, to stop the cache growing without bounds. So it's not an easy solution to just not perform that delete, as it would lead to much growth.
+
+    However, a nice solution that would work in v2 and most usually degrade nicely for v1 would be to store a list of previous presence state serial numbers at which users went offline, and the user ID string(s) that went offline in that revision. When serving up a client request for new presence state, it's then just a matter of adding to the returned state some synthesized presence events to note that those users are now offline. If that list were correctly maintained[*] it would eat relatively little extra memory, but allow clients to be promtly informed of offline remote peers going back as far as the server has history.
+
+    There this model breaks down, is that it still grows memory without bounds, so ideally we want to cap the backward horizon at some level, carefully picked as a tradeoff between memory usage and client resync requirements. If a client tries to resync from an age of history so old that it's fallen off the list, the v2 sync API has [TODO(paul): or should have?] a way to say "Your sync token is too old for this stream source; please invalidate your cache and resync from now". The v1 sync API lacks this but that's the best we can do.
+
+    [*]: Careful maintanence of the list means: ensuring that a given user ID appears in it atmost once, and is correctly removed again once a user comes online again. Managing this list right means it will continue to not use much memory, so justifies allowing a large potential horizon limit, because in practice it will rarely expire.
+  created: 2015-04-22 16:50:43.0
+  id: '11517'
+  issue: '11027'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-22 16:50:43.0
+- author: leonerd
+  body: Sytest commit 4a61130 proves the existence of this bug
+  created: 2015-04-22 19:14:41.0
+  id: '11520'
+  issue: '11027'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-22 19:14:41.0
+- author: leonerd
+  body: |-
+    I believe this is now (mostly) fixed by synapse develop e1e5e53.
+
+    One issue still remaining is the implementation for a v2 API that can tell the client "your stream token is too old; you need to resync". But I don't believe v2 specs that at all, so for now this is the best that can be done.
+  created: 2015-04-23 19:03:08.0
+  id: '11532'
+  issue: '11027'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-23 19:03:08.0

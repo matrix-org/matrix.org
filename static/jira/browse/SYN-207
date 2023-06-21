@@ -1,0 +1,161 @@
+---
+summary: We should set a precedent for targeting the precise thumbnail resolution, not an approximation.
+---
+created: 2014-12-21 01:43:32.0
+creator: matthew
+description: |-
+  As discussed on IRC, i believe we should serve up images at precisely the requested resolution in the media repository by default.  This allows designers and app developers to implement pixel-perfect layouts knowing that they will get the best possible quality image for a given resolution (and thus enable more exotic UIs like Wire's fullscreen avatars).
+
+  I believe we should only pre-cache thumbnails at various preset resolutions if performance for thumbnailing or diskspace really is a bottleneck - and so make that an option for admins to enable if desired (much like expiring old message history or old cached attachments, and other optional optimisations).  Otherwise we are prematurely optimising at the expense of the UX.
+id: '10844'
+key: SYN-207
+number: '207'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:31.0
+votes: '0'
+watches: '3'
+workflowId: '10944'
+---
+actions:
+- author: erikj
+  body: What is the behaviour if the content is smaller than the desired resolution?
+  created: 2014-12-21 11:06:12.0
+  id: '11011'
+  issue: '10844'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-21 11:06:12.0
+- author: matthew
+  body: |-
+    obviously there's no point in upscaling images, so we'd just serve the original if something bigger is requested.
+
+    The rationale here is that if people are uploading huuuge images, and i ask for (say) a 480x960 thumbnail to fill my screen, i don't want to be forced to download the huge original just because the HS decided that it was only going to thumbnail 100x100 and 320x320 or something.
+
+    And as a designer I would want the best looking image in thst scenario - resamplee once from the original rather than via an intermediate.
+
+    In other words, we want to try to support giving people the stuff they ask for by default, only compromising if resources really are constrained.
+  created: 2014-12-21 12:28:09.0
+  id: '11014'
+  issue: '10844'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-21 12:28:09.0
+- author: erikj
+  body: |-
+    Designers and client implementers thus need to handle the case where the content repo does not respond with the exact resolution that is being requested. So is your main concern then that you want to be able to request any resolution, but with a "guarantee" that you're not going to accidentally download the original 50MB image?
+
+    If so, could we not simply thumbnail at increasing resolutions. For example, if you requested 480x960, the server may respond with 720x1440. These increasing thumbnails do not need to be precomputed, but can be cached once computed for the first time (e.g. in a CDN.)
+
+    My main concern is for large scale deployments; my understanding is that rescaling images are relatively expensive CPU wise. If a content repository dynamically generates thumbnails, then the usefulness of CDNs is limited (if different apps all ask for different resolutions.) I am cautious about creating an expectation of Matrix services that can only be fulfilled by smaller scale deployments.
+  created: 2014-12-21 13:03:03.0
+  id: '11015'
+  issue: '10844'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-21 13:03:03.0
+- author: erikj
+  body: I agree that we should not be overly concerned with performance, and should not prematurely optimise our code base. However, I believe we do need to make sure that our solutions can scale without loss of quality of any of the services.
+  created: 2014-12-21 13:06:09.0
+  id: '11016'
+  issue: '10844'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-21 13:06:09.0
+- author: matthew
+  body: |-
+    Yes, clients will always have to handle a different resolution of image being returned. I wasn't suggesting changing the contract; just preferring that we try to return the request resolution if at all possible.
+
+    We could preencode a pyramid of images, but then we will always be resampling the image twice; once for the prerender and once again for the actual display resolution. This loss of quality makes me sad; i'd prefer we give the best image we can.
+
+    In terms of the required storage & cpu resources... i am not expecting us to see a wide range of requested image sizes; probably less than a precomputed pyramid. The only argument i can see against generating the 'right' sizes by default is if it becomes a DoS risk for malicious clients chewing CPU and filling disk.
+
+    Hmm. I'm trying to think how we'd actually sidestep the DoS risk...
+  created: 2014-12-21 21:54:40.0
+  id: '11017'
+  issue: '10844'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-21 21:54:40.0
+- author: erikj
+  body: |-
+    I'm not necessarily suggesting we pre-compute the pyramid, but having a pyramid allows us a guarantee that only X amount of CPU and RAM are going to be used per image. 
+
+    bq. ... i am not expecting us to see a wide range of requested image sizes...
+
+    Why not? Surely each app would decide to use a different size depending on their design and the screen space available for it? What is the point of having an API that allows you to get arbitrary size thumbnails if we don't think anyone is going to use it?
+
+    Off the top of my head, there are at least two ways to mitigate against DoS attacks:
+     - Requests to the media repository require an access token, and thus we can apply rate limiting.
+     - Allowing the servers to cap the amount of CPU and RAM that is dedicated to producing thumbnails for any given image.
+  created: 2014-12-22 19:31:01.0
+  id: '11026'
+  issue: '10844'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-12-22 19:31:30.0
+- author: matthew
+  body: |-
+    [20:11]  <M-leonh> I'm currently looking into image scaling and it's behaving in a weird way
+    [20:11]  <M-leonh> s/scaling/thumbnailing/
+    [20:11]  <Arathorn> i think matrix.org is running 0.7.0a
+    [20:11]  * Arathorn checks
+    [20:11]  <Arathorn> client or server misbehaviour?
+    [20:12]  <M-leonh> Server.
+    [20:12]  <Arathorn> right, matrix.org is on master as of a268c31 (i.e. 0.7.0a)
+    [20:12]  <M-leonh> https://matrix.org/_matrix/media/v1/thumbnail/matrix.org/CoQtPDCsBFDtQIxdkrUzhBKI?width=300&height=300&method=crop
+    [20:12]  <M-leonh> gives a thumbnail 96x96 in size
+    [20:12]  <Arathorn> 300x300 is advisory
+    [20:13]  <Arathorn> if the original image is smaller, or it precalculated it at a smaller size, then you're not guaranteed you get the size you asked for
+    [20:13]  <Arathorn> as much as that irritates me; the concern is letting people DoS the server by requesting arbitrary sizes
+    [20:13]  <Arathorn> right, so the original image is 2448x3264
+    [20:13]  <M-leonh> Ah, that makes sense.
+    [20:13]  <Arathorn> iirc we precalculate 96x96 and 320x320?
+    [20:14]  <Arathorn> hm, nope...
+    [20:14]  * Arathorn looks more carefully
+    [20:14]  <M-leonh> Wouldn't a way around that be to only allow authed views of the image and do per-user rate limiting?
+    [20:14]  <M-leonh> (theoretically, not saying it's a priority
+    [20:14]  <Arathorn> i'd much prefer that
+    [20:15]  <Arathorn> but for some reason mjark/erik have some Very Strong Ideas about not wasting disk space with accurately sized images ;)
+    [20:15]  <Arathorn> i think there's a holy war in a JIRA about it
+    [20:16]  <Arathorn> right, so for some reason, the server in its infinite wisdom chose to precalculate:
+    [20:16]  <Arathorn> 180-240-image-jpeg-scale
+    [20:16]  <Arathorn> 32-32-image-jpeg-crop
+    [20:16]  <Arathorn> 360-480-image-jpeg-scale
+    [20:16]  <Arathorn> 96-96-image-jpeg-crop
+    [20:16]  <Arathorn> i guess because it belives that crops are only used for smallish profile photos
+    [20:16]  <Arathorn> whereas scales are used for actual thumbnails
+    [20:16]  <Arathorn> which is sadly misguided, given we show big cropped images as avatars in things like the settings page.
+    [20:16]  <Arathorn> on the webclient
+    [20:17]  <M-leonh> Image messages also.
+    [20:18]  <Arathorn> you'd normally want to show image message thumbnails as a scaled image rather than a cropped image, surely?
+
+    In the current setup, does this mean we can only crop images to be square in shape?
+  created: 2015-02-12 20:19:46.0
+  id: '11253'
+  issue: '10844'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-12 20:19:46.0
+- author: matthew
+  body: |-
+    Servers which approximate thumbnail resolution can cause major quality problems on certain clients, which will resize the image using nearest-neighbour to fit in the actual intended space, which can look astonishingly ugly.  Another reason why Synapse should be setting a good example for quality.
+
+    Still need an answer on the cropping point above.
+  created: 2015-06-02 01:18:09.0
+  id: '11816'
+  issue: '10844'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-02 01:18:09.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1259'
+  created: 2016-11-07 18:27:31.0
+  id: '13577'
+  issue: '10844'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:31.0

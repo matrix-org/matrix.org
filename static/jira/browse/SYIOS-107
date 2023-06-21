@@ -1,0 +1,27 @@
+---
+summary: 'Console: In-App notifications does not work since changes in push rules spec'
+---
+assignee: manu
+created: 2015-03-13 11:13:23.0
+creator: gforet
+description: |-
+  Since last changes in push rules handling, matrixSDK receives the following rule in first position in override section:
+   {"actions" =  ( "dont_notify"); "conditions" =  (); "default" = 1; "enabled" = 0; "rule_id" = ".m.rule.master";}
+
+  Matrix SDK does not support the field `enabled` into rules definition. So no In-App notification is triggered because of this first rule.
+id: '11218'
+key: SYIOS-107
+number: '107'
+priority: '1'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-03-13 14:17:20.0
+status: '5'
+type: '1'
+updated: 2015-03-13 14:17:20.0
+votes: '0'
+watches: '1'
+workflowId: '11318'
+---
+actions: null

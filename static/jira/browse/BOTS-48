@@ -1,0 +1,32 @@
+---
+summary: irc as needs to log clearly if it barfs on registration when run using forever
+---
+assignee: kegan
+created: 2015-06-10 21:56:42.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '11636'
+key: BOTS-48
+number: '48'
+priority: '1'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-08-04 17:05:15.0
+votes: '0'
+watches: '2'
+workflowId: '11737'
+---
+actions:
+- author: kegan
+  body: |-
+    This isn't easy to do. Forever provides no way of outputting to the console unless you don't run it as a daemon :/
+
+    Verbosity and debug messages do nothing, {{-f --fifo}} is unimplemented but documented in {{forever --help}} as looking what we want. The only workaround I can provide is {{forever logs 0}} to tail the logs :/
+  created: 2015-06-17 14:00:17.0
+  id: '11881'
+  issue: '11636'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-17 14:00:17.0

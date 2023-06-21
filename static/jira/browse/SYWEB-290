@@ -1,0 +1,33 @@
+---
+summary: Implement linuxfr.org style norloges
+---
+created: 2015-02-19 15:14:55.0
+creator: matthew
+description: |-
+  LinuxFR.org chat implementation has an interesting feature called norloges - see linuxfr.org/wiki/tribune#les-horloges.
+
+  These are timestamps which can also be used as unique(?) IDs for identifying messages for threading purposes.  So when responding to a particular message in the past, you go and click on its timestamp, which copies the timestamp into your text entry box.  Your response is thus tagged as a response to that particular message - providing a simple threading mechanism.
+
+  It would be fun to use this as a UI backed by v2's 'relates-to' feature in order to implement basic threading.
+id: '11098'
+key: SYWEB-290
+number: '290'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10200'
+type: '2'
+updated: 2015-03-03 17:10:32.0
+votes: '0'
+watches: '2'
+workflowId: '11198'
+---
+actions:
+- author: kegan
+  body: Blocked on v2 {{relates_to}}
+  created: 2015-03-03 17:10:32.0
+  id: '11345'
+  issue: '11098'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-03 17:10:32.0

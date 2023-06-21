@@ -1,0 +1,41 @@
+---
+summary: Room rejoining fails
+---
+created: 2015-12-28 02:49:19.0
+creator: matthew
+description: |-
+  If I /part a room in vector on my local homeserver and then try to rejoin it via /join #foo:sierra, it fails with an instant 500:
+
+  {code}
+  2015-12-28 02:37:56,424 - synapse.access.http.8008 - 493 - INFO - POST-415- 127.0.0.1 - 8008 - Received request: POST /_matrix/client/api/v1/join/%23foo%3Asierra?access_token=<redacted>
+  2015-12-28 02:37:56,432 - synapse.http.server - 125 - ERROR - POST-415- Failed handle request synapse.http.server._async_render on <synapse.rest.ClientRestResource object at 0x112e08c50>: <SynapseReques
+  t at 0x11047d710 method=POST uri=/_matrix/client/api/v1/join/%23foo%3Asierra?access_token=<redacted> clientproto=HTTP/1.1 site=8008>
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 104, in wrapped_request_handler
+      yield d
+  RuntimeError: Failed to send to any server.
+  {code}
+id: '12253'
+key: SYN-567
+number: '567'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-12-28 02:57:48.0
+status: '5'
+type: '1'
+updated: 2015-12-28 02:57:48.0
+votes: '0'
+watches: '1'
+workflowId: '12356'
+---
+actions:
+- author: matthew
+  body: dup SPEC-211
+  created: 2015-12-28 02:57:48.0
+  id: '12491'
+  issue: '12253'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-28 02:57:48.0

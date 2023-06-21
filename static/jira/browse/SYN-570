@@ -1,0 +1,36 @@
+---
+summary: 1:1 pushes should skip mentioning the room name if it's the same as the sender's name
+---
+created: 2015-02-16 01:46:18.0
+creator: matthew
+description: ''
+id: '11069'
+key: SYN-570
+number: '570'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:50.0
+votes: '0'
+watches: '3'
+workflowId: '12368'
+---
+actions:
+- author: dbkr
+  body: This should already be the case?
+  created: 2016-06-29 17:15:09.0
+  id: '13037'
+  issue: '11069'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-06-29 17:15:09.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1459'
+  created: 2016-11-07 18:28:50.0
+  id: '13764'
+  issue: '11069'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:50.0

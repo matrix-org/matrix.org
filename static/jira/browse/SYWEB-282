@@ -1,0 +1,20 @@
+---
+summary: Resizing the sidebar should prioritise room names over timestamps
+---
+created: 2015-02-16 01:32:40.0
+creator: matthew
+description: ''
+id: '11061'
+key: SYWEB-282
+number: '282'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-03-03 13:31:11.0
+votes: '0'
+watches: '1'
+workflowId: '11161'
+---
+actions: null

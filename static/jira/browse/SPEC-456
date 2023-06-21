@@ -1,0 +1,24 @@
+---
+summary: Petname support - the ability to rename users & rooms to personal displaynames
+---
+created: 2016-09-15 21:58:18.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  We could fudge this with account_data, i guess, but needs to be specced a bit
+id: '12832'
+key: SPEC-456
+number: '456'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-09-27 17:47:14.0
+status: '5'
+type: '2'
+updated: 2016-09-27 17:47:14.0
+votes: '0'
+watches: '1'
+workflowId: '12932'
+---
+actions: null

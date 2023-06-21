@@ -1,0 +1,40 @@
+---
+summary: Undismissable invitations via IRC bridges
+---
+created: 2016-03-19 18:41:36.0
+creator: richvdh
+description: |-
+  From Dusk in HQ:
+
+  {noformat}
+  Cae and I had IRC bridges running
+  I was connected to rooms using mine
+  and he invited me to rooms on his
+  those invites resulted in failed connections to the IRC Network
+  because of that I had 22 notifications from INFOSERV
+  that I couldn't get rid of
+  {noformat}
+id: '12567'
+key: BOTS-181
+number: '181'
+priority: '3'
+project: '10101'
+reporter: richvdh
+resolution: '3'
+resolutiondate: 2016-03-19 19:06:24.0
+status: '5'
+type: '1'
+updated: 2016-03-19 19:06:24.0
+votes: '0'
+watches: '1'
+workflowId: '12667'
+---
+actions:
+- author: richvdh
+  body: Actually this looks exactly like SYN-657 so in the absence of evidence to the contrary, let's start there
+  created: 2016-03-19 19:06:03.0
+  id: '12768'
+  issue: '12567'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-19 19:06:03.0

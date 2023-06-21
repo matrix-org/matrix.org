@@ -1,0 +1,52 @@
+---
+summary: The "unavailable" presence state should surely actually be "away"
+---
+created: 2014-09-16 01:12:15.0
+creator: matthew
+description: |-
+  We currently set a user as "unavailable" if they've been idle for 5 minutes or whatever in the webclient.
+
+  In practice, surely "unavailable" should mean "i am busy; go away".  Whereas "idle" or "away" should mean "i don't seem to be using Matrix currently".
+id: '10059'
+key: SPEC-15
+number: '15'
+priority: '5'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-10-28 16:26:41.0
+votes: '0'
+watches: '3'
+workflowId: '10363'
+---
+actions:
+- author: leonerd
+  body: |-
+    I picked "unavailable" as the state name because in practice the real condition is carried in the string field. The string could say "busy" or "away" or "idle" or whatever. The semantics of the application ought arguably to be the same in all situations.
+
+    "unavailable" in some way declares that the would-be recipient of the message is unlikely to reply any time soon. "away" would suggest they aren't even going to read it, whereas "busy" might mean "I am at my desk but doing something super-imporant so please don't distract me".
+
+    ((Also shouldn't this be a SPEC bug?))
+  created: 2014-09-17 17:12:34.0
+  id: '10313'
+  issue: '10059'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-17 17:12:34.0
+- author: richvdh
+  body: bit late now
+  created: 2016-06-29 11:52:37.0
+  id: '13031'
+  issue: '10059'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-29 11:52:37.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/452'
+  created: 2016-10-28 16:26:41.0
+  id: '13232'
+  issue: '10059'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:41.0

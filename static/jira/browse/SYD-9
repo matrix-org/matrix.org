@@ -1,0 +1,30 @@
+---
+summary: Sydent's 2FA mails are missing a Date header and so look spammy
+---
+created: 2015-03-29 23:39:24.0
+creator: matthew
+description: ''
+id: '11290'
+key: SYD-9
+number: '9'
+priority: '1'
+project: '10002'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-23 11:29:02.0
+status: '5'
+type: '1'
+updated: 2015-04-23 11:29:02.0
+votes: '0'
+watches: '2'
+workflowId: '11390'
+---
+actions:
+- author: dbkr
+  body: Fixed in csauth changes
+  created: 2015-04-23 11:29:02.0
+  id: '11522'
+  issue: '11290'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-23 11:29:02.0

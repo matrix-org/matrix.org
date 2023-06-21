@@ -1,0 +1,31 @@
+---
+summary: We should never be sending contents of messages to push servers.
+---
+created: 2016-05-05 11:33:44.0
+creator: matthew
+description: |-
+  Splitting this out from SYN-452.
+
+  We simply shouldn't be ever sending the plain text of push notifications to APNS or GCM - instead we should send them a prod to fire up the app and receive the message contents via Matrix (and so apply E2E crypto to it, if we want to display it in the UI).
+id: '12651'
+key: SYN-687
+number: '687'
+priority: '1'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-11-07 18:29:28.0
+votes: '0'
+watches: '2'
+workflowId: '12751'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1540'
+  created: 2016-11-07 18:29:28.0
+  id: '13851'
+  issue: '12651'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:28.0

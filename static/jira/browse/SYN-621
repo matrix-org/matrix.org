@@ -1,0 +1,30 @@
+---
+summary: keyclient error messages log the source host:port not dest address for failed conns.
+---
+created: 2016-02-06 16:33:06.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  this is *very* confusing - a failed connection to download keys from the remote server says 'connection to 83.166.x.y:12345 failed :/
+id: '12374'
+key: SYN-621
+number: '621'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:05.0
+votes: '0'
+watches: '2'
+workflowId: '12479'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1234'
+  created: 2016-11-07 18:29:05.0
+  id: '13798'
+  issue: '12374'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:05.0

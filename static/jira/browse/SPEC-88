@@ -1,0 +1,60 @@
+---
+summary: We should not waste bandwidth echoing events back to the clients that sent them.
+---
+created: 2014-12-15 16:50:17.0
+creator: matthew
+description: |-
+  Currently all events I PUT (including implicit events like typing notifs and presence activity updates) come back down my own eventstream as soon as I send them.
+
+  This causes deduplication problems and wastes bandwidth.
+
+  Surely we should just kill them.
+
+  N.B. that other clients on the same account will want to see them, such that they have a consistent view of the world.
+
+  Meanwhile this means that clients need to support local echo properly as a 'first class citizen'.
+
+  This could be an optional param (for clients which don't support local echo as a first class citizen and are relaying on the eventstream to keep a consistent view of the world).
+id: '10821'
+key: SPEC-88
+number: '88'
+priority: '3'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-21 11:42:26.0
+status: '5'
+type: '2'
+updated: 2015-04-20 08:40:02.0
+votes: '0'
+watches: '2'
+workflowId: '10921'
+---
+actions:
+- author: kegan
+  body: 'Landed on matrix-doc master: {{drafts/general_api.rst}}'
+  created: 2015-01-21 11:42:26.0
+  id: '11168'
+  issue: '10821'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:42:26.0
+- author: matthew
+  body: 'Kegan: is this still actually fixed in v2 (even after we descoped action IDs)?  It''s excruciatingly painful on v1 to work around, and wondering if it might even be worth just putting an echo=false param on /eventStream and /sync for v1 & v2 respectively....'
+  created: 2015-04-19 20:38:46.0
+  id: '11507'
+  issue: '10821'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-19 20:38:46.0
+- author: kegan
+  body: |-
+    V2 supports correct echo suppression (via action ids which afaik is not descoped), as well as a "compact" option to return extra/modified keys in the 200 OK rather than the full event. 
+
+    In v2 like v1, the event appears in the event stream. This is crucial to provide ordering information else you race between the event stream and the send message api.
+  created: 2015-04-20 08:40:02.0
+  id: '11508'
+  issue: '10821'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-04-20 08:40:02.0

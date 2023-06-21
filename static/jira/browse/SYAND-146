@@ -1,0 +1,27 @@
+---
+summary: Have more explicit indication of state change on login attempt
+---
+created: 2015-10-19 21:11:35.0
+creator: johnwoolf
+description: |-
+  When making a login attempt the only indication of something having happened (or happening) between pressing login and either logging in or getting an error toast is a graying of the text on the already gray login and create account buttons. 
+
+  This is inconsistent with modern app UX and android design guides. 
+
+  Suggestion: use and indeterminate progress indicator. For example, a circular or circular integrated progress indicator. 
+
+  See https://www.google.com/design/spec/components/progress-activity.html# for reference.
+id: '12030'
+key: SYAND-146
+number: '146'
+priority: '3'
+project: '10201'
+reporter: johnwoolf
+status: '10100'
+type: '4'
+updated: 2015-10-19 21:11:35.0
+votes: '0'
+watches: '1'
+workflowId: '12133'
+---
+actions: null

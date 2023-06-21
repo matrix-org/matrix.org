@@ -1,0 +1,30 @@
+---
+summary: README needs to spell out to never delete your private keys
+---
+created: 2015-03-29 23:01:00.0
+creator: matthew
+description: ''
+id: '11282'
+key: SYN-327
+number: '327'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-24 16:14:31.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:08.0
+votes: '0'
+watches: '2'
+workflowId: '11382'
+---
+actions:
+- author: dbkr
+  body: Note added, although we should keep this up to date as Mark's V2 stuff evolves.
+  created: 2015-04-24 16:14:31.0
+  id: '11534'
+  issue: '11282'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-04-24 16:14:31.0

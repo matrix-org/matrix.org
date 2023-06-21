@@ -1,0 +1,25 @@
+---
+summary: Flaky test in 30rooms/60anonymousaccess.pl depends on `m.presence` ordering
+---
+created: 2015-12-21 16:10:51.0
+creator: leonerd
+description: |-
+  E.g. see http://matrix.org/jenkins/job/Sytest-Branches/552/tapResults/
+
+  {noformat}
+  # Got "m.presence", expected "m.typing" for event type at tests/30rooms/60anonymousaccess.pl line 178.
+  {noformat}
+id: '12234'
+key: SYT-44
+number: '44'
+priority: '3'
+project: '10300'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2015-12-21 16:10:51.0
+votes: '0'
+watches: '1'
+workflowId: '12337'
+---
+actions: null

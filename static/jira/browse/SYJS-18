@@ -1,0 +1,30 @@
+---
+summary: If you rapidly send messages on react-sdk against a slow HS the local timeline can get out of order until you refresh
+---
+created: 2015-07-13 19:33:16.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11749'
+key: SYJS-18
+number: '18'
+priority: '2'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:27:12.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:27:12.0
+votes: '0'
+watches: '2'
+workflowId: '11850'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/255
+  created: 2016-10-24 11:27:12.0
+  id: '13212'
+  issue: '11749'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:27:12.0

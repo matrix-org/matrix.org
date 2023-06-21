@@ -1,0 +1,82 @@
+---
+summary: Error getting keys from 'matrix.org'
+---
+assignee: erikj
+created: 2015-05-19 10:21:59.0
+creator: markjh
+description: ''
+id: '11540'
+key: SYN-383
+number: '383'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-05-22 13:46:37.0
+status: '5'
+type: '1'
+updated: 2015-05-26 16:13:34.0
+votes: '0'
+watches: '2'
+workflowId: '11641'
+---
+actions:
+- author: erikj
+  body: |-
+    Now fails with following exception (after adding logging):
+
+    {noformat}
+    2015-05-19 10:55:14,639 - root - 144 - ERROR - - Unable to getting key ['ed25519:auto'] for 'thewordnerd.info' from 'matrix.org'
+    Traceback (most recent call last):
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 138, in get_key
+        server_name, key_ids, perspective_name, perspective_keys
+    TypeError: string indices must be integers, not str
+    {noformat}
+
+    and
+
+    {noformat}
+    2015-05-19 10:55:14,643 - root - 144 - ERROR - - Unable to getting key ['ed25519:auto'] for 'matrix.org' from 'matrix.org'
+    Traceback (most recent call last):
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/synapse/crypto/keyring.py", line 140, in get_key
+        defer.returnValue(result)
+      File "/home/erikj/test_matrix/testmatrix1/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1076, in returnValue
+        raise _DefGen_Return(
+    {noformat}
+  created: 2015-05-19 10:57:02.0
+  id: '11772'
+  issue: '11540'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-19 10:57:02.0
+- author: erikj
+  body: 'The {{_DefGen_Return}} is caused by the fact we have a generic {{try ... except: ...}} which will catch {{BaseExceptions}} including {{_DefGen_Return}}.'
+  created: 2015-05-19 11:13:49.0
+  id: '11773'
+  issue: '11540'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-19 11:13:49.0
+- author: erikj
+  body: |-
+    The {{TypeError: string indices must be integers, not str}} exception is due to:
+
+    {noformat}
+    for key_id, key_data in response_json["verify_keys"].items():
+        ...
+        key_base64 = key_data["key"]
+        ...
+    {noformat}
+
+    Where {{response_json}} includes:
+    {noformat}
+    'verify_keys': {
+       'ed25519:auto': 'h3zOGO9pFJ+6MEZlbQIwylrf1ANVnQto408Uez+biaw'
+    }
+    {noformat}
+  created: 2015-05-19 11:25:09.0
+  id: '11774'
+  issue: '11540'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-19 11:25:09.0

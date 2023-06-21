@@ -1,0 +1,39 @@
+---
+summary: we should bridge OFTC.net IRC
+---
+created: 2015-09-04 15:11:31.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11853'
+key: BOTS-100
+number: '100'
+priority: '3'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-01-26 09:48:38.0
+votes: '0'
+watches: '3'
+workflowId: '11956'
+---
+actions:
+- author: davidar
+  body: |-
+    This would be great. Relevant contact details can be found at http://www.oftc.net/staff/
+
+    I can try to get into contact with someone at OFTC if that would help?
+  created: 2015-09-12 09:55:26.0
+  id: '12130'
+  issue: '11853'
+  type: comment
+  updateauthor: davidar
+  updated: 2015-09-12 09:55:26.0
+- author: matthew
+  body: Feedback is that as long as we use a different ipv6 source IP for each connection they're fine with us connecting.  will open a bug for that.
+  created: 2015-09-19 23:37:59.0
+  id: '12146'
+  issue: '11853'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-19 23:37:59.0

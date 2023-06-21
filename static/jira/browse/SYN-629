@@ -1,0 +1,28 @@
+---
+summary: Using a room alias in `/room/<room_id>/` APIs should 400
+---
+created: 2016-02-12 16:02:38.0
+creator: erikj
+description: ''
+id: '12393'
+key: SYN-629
+number: '629'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:07.0
+votes: '0'
+watches: '2'
+workflowId: '12498'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1497'
+  created: 2016-11-07 18:29:07.0
+  id: '13804'
+  issue: '12393'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:07.0

@@ -1,0 +1,38 @@
+---
+summary: search returns redacted events
+---
+created: 2015-12-22 16:15:42.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  if the search term matches the sender of a redacted event, /search returns it; which seems silly
+id: '12238'
+key: SYN-561
+number: '561'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:46.0
+votes: '0'
+watches: '2'
+workflowId: '12341'
+---
+actions:
+- author: richvdh
+  body: It also returns the redaction itself in the context; which is, at least, unhelpful. Vector doesn't display the redaction event, so this ends up looking like a search result which lacks context.
+  created: 2015-12-22 16:17:47.0
+  id: '12488'
+  issue: '12238'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-22 16:29:34.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1454'
+  created: 2016-11-07 18:28:46.0
+  id: '13757'
+  issue: '12238'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:46.0

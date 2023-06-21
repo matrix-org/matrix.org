@@ -1,0 +1,22 @@
+---
+summary: We still need a way to optionally evict idle users from a room.
+---
+created: 2014-11-07 01:29:25.0
+creator: matthew
+description: ''
+id: '10631'
+key: SYN-133
+number: '133'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2014-11-26 14:35:24.0
+status: '5'
+type: '2'
+updated: 2014-12-19 18:11:40.0
+votes: '0'
+watches: '1'
+workflowId: '10731'
+---
+actions: null

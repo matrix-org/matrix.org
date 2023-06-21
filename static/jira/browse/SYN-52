@@ -1,0 +1,22 @@
+---
+summary: Add a way of whitelisting IP ranges to use for X-Forwarded-For support.
+---
+created: 2014-09-18 15:05:05.0
+creator: erikj
+description: ''
+id: '10324'
+key: SYN-52
+number: '52'
+priority: '3'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2016-01-06 17:34:29.0
+status: '5'
+type: '2'
+updated: 2016-01-06 17:34:29.0
+votes: '0'
+watches: '1'
+workflowId: '10427'
+---
+actions: null

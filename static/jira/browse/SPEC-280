@@ -1,0 +1,30 @@
+---
+summary: Add explanations for the enum variants of m.room.member's membership
+---
+created: 2015-11-30 03:19:43.0
+creator: jimmycuadra
+description: ''
+id: '12154'
+key: SPEC-280
+number: '280'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '1'
+resolutiondate: 2016-04-18 15:18:51.0
+status: '5'
+type: '1'
+updated: 2016-04-18 15:18:51.0
+votes: '0'
+watches: '2'
+workflowId: '12257'
+---
+actions:
+- author: richvdh
+  body: This is now covered at https://matrix.org/docs/spec/r0.0.1/client_server.html#m-room-member.
+  created: 2016-04-18 15:17:58.0
+  id: '12830'
+  issue: '12154'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 15:17:58.0

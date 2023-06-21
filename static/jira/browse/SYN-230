@@ -1,0 +1,88 @@
+---
+summary: 'Typing Notification: client requests fail if the timeout defined in previous request is reached'
+---
+assignee: leonerd
+created: 2015-01-06 14:50:34.0
+creator: gforet
+description: |-
+  Consider the room A, if the client sends a typing notification (typing:true, timeout:20) without sending any other notification during 20 seconds, then any new typing notification (with typing:true) fails: "Internal server error".
+  This error is systematic, the client cannot anymore send typing notification for this room A.
+id: '10891'
+key: SYN-230
+number: '230'
+priority: '2'
+project: '10000'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-01-13 17:00:46.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:26:17.0
+votes: '0'
+watches: '2'
+workflowId: '10991'
+---
+actions:
+- author: leonerd
+  body: 'Handler-level logic is happy in this situation: https://github.com/matrix-org/synapse/commit/968dc988'
+  created: 2015-01-12 18:02:55.0
+  id: '11101'
+  issue: '10891'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-01-12 18:02:55.0
+- author: leonerd
+  body: 'Also happy via the REST layer: https://github.com/matrix-org/synapse/commit/9c804bc3'
+  created: 2015-01-12 18:32:35.0
+  id: '11104'
+  issue: '10891'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-01-12 18:32:35.0
+- author: leonerd
+  body: |-
+    And yet, {{sytest}} can provoke it into failing:
+
+    {noformat}
+    [server 8001]: 2015-01-12 19:11:37,112 - synapse.federation.replication - 818 - INFO -  - TX [localhost:8002] _attempt_new_transaction
+    [server 8001]: 2015-01-12 19:11:37,116 - synapse.federation.replication - 881 - INFO -  - TX [localhost:8002] Sending transaction [1421089890365]
+    [server 8001]: 2015-01-12 19:11:37,117 - synapse.http.matrixfederationclient - 96 - INFO -  - Sending request to localhost:8002: PUT /_matrix/federation/v1/send/1421089890365/
+    [server 8001]: 2015-01-12 19:11:37,118 - twisted - 455 - INFO -  - Starting factory <twisted.web.client._HTTP11ClientFactory instance at 0x7f4e8c8d6a70>
+    [server 8001]: 2015-01-12 19:11:37,138 - synapse.http.server - 159 - ERROR - PUT-184 - Tried to cancel an already-called event.
+    [server 8001]: Traceback (most recent call last):
+    [server 8001]:   File "synapse/http/server.py", line 135, in _async_render
+    [server 8001]:     *args
+    [server 8001]:   File "/home/leo/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+    [server 8001]:     result = result.throwExceptionIntoGenerator(g)
+    [server 8001]:   File "/home/leo/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+    [server 8001]:     return g.throw(self.type, self.value, self.tb)
+    [server 8001]:   File "synapse/rest/room.py", line 492, in on_PUT
+    [server 8001]:     timeout=content.get("timeout", 30000),
+    [server 8001]:   File "/home/leo/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+    [server 8001]:     result = g.send(result)
+    [server 8001]:   File "synapse/handlers/typing.py", line 84, in started_typing
+    [server 8001]:     self.clock.cancel_call_later(self._member_typing_timer[member])
+    [server 8001]:   File "synapse/util/__init__.py", line 47, in cancel_call_later
+    [server 8001]:     timer.cancel()
+    [server 8001]:   File "/home/leo/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/base.py", line 88, in cancel
+    [server 8001]:     raise error.AlreadyCalled
+    [server 8001]: AlreadyCalled: Tried to cancel an already-called event.
+    [server 8001]: 2015-01-12 19:11:37,139 - twisted - 455 - INFO - PUT-184 - "127.0.0.1" - - [12/Jan/2015:19:11:36 +0000] "PUT /_matrix/client/api/v1/rooms/!aXyTWKqBbZcnhcaChy:localhost:8001/typing/@01register-user:localhost:8001?access_token=QDAxcmVnaXN0ZXItdXNlcjpsb2NhbGhvc3Q6ODAwMQ...ZugmwtidJQLGLeeAgl HTTP/1.1" 500 33 "-" "Perl + Net::Async::HTTP/0.37"
+       +--- FAIL:
+     | HTTP Request failed (500 Internal Server Error) at ./run-tests.pl line 215.
+     +----------------------
+    {noformat}
+  created: 2015-01-12 19:12:35.0
+  id: '11105'
+  issue: '10891'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-01-12 19:12:35.0
+- author: leonerd
+  body: Fixed by https://github.com/matrix-org/synapse/commit/c2e7c84
+  created: 2015-01-13 17:00:38.0
+  id: '11114'
+  issue: '10891'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-01-13 17:00:38.0

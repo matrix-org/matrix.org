@@ -1,0 +1,31 @@
+---
+summary: Synapse never uses its own key cache
+---
+assignee: leonerd
+created: 2015-12-18 21:35:40.0
+creator: leonerd
+description: ''
+id: '12228'
+key: SYN-558
+number: '558'
+priority: '2'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-12-21 11:59:07.0
+status: '5'
+type: '1'
+updated: 2015-12-21 11:59:07.0
+votes: '0'
+watches: '1'
+workflowId: '12331'
+---
+actions:
+- author: leonerd
+  body: Fixed by https://github.com/matrix-org/synapse/commit/a6ba41e0785f8f597713bd023e1f6dc3a3d966ea on develop
+  created: 2015-12-21 11:59:07.0
+  id: '12483'
+  issue: '12228'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-12-21 11:59:07.0

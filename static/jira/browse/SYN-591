@@ -1,0 +1,40 @@
+---
+summary: Adding a push rule before an existing rule fails.
+---
+created: 2016-01-12 18:21:27.0
+creator: markjh
+description: |-
+  Adding push rule using http://matrix.org/docs/spec/r0.0.1/client_server.html#put-matrix-client-r0-pushrules-scope-kind-ruleid after an existing rule by passing "?before=$rule_id".
+  Passing "?before=$scope/$kind/$rule_id" seems to work, but the former is probably the expected behaviour, and is what is currently documented.
+id: '12292'
+key: SYN-591
+number: '591'
+priority: '2'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2016-01-28 18:27:10.0
+status: '5'
+type: '1'
+updated: 2016-01-28 18:27:10.0
+votes: '0'
+watches: '1'
+workflowId: '12397'
+---
+actions:
+- author: markjh
+  body: See https://github.com/matrix-org/sytest/pull/140 for sytests
+  created: 2016-01-12 18:41:04.0
+  id: '12567'
+  issue: '12292'
+  type: comment
+  updateauthor: markjh
+  updated: 2016-01-12 18:41:04.0
+- author: markjh
+  body: https://github.com/matrix-org/synapse/pull/531
+  created: 2016-01-28 18:27:10.0
+  id: '12588'
+  issue: '12292'
+  type: comment
+  updateauthor: markjh
+  updated: 2016-01-28 18:27:10.0

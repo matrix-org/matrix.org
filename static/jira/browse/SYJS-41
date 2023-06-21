@@ -1,0 +1,35 @@
+---
+summary: Retry scheduling can incorrectly move onto subsequent events
+---
+created: 2016-01-20 16:32:59.0
+creator: kegan
+description: |-
+  Message A was sent.
+  Message B was sent 5182 ms later.
+  Message A was sent *again* ~8mins later.
+
+  The scheduling code seems to pop failed events off and then tries to send the next event which would corrupt ordering (it should auto-fail subsequent ones if the first one dies). Unsure why Message A was resent so much later.. possible resend() call?
+id: '12327'
+key: SYJS-41
+number: '41'
+priority: '2'
+project: '10204'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-10-24 11:31:55.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:31:55.0
+votes: '0'
+watches: '1'
+workflowId: '12432'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/263
+  created: 2016-10-24 11:31:55.0
+  id: '13220'
+  issue: '12327'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:31:55.0

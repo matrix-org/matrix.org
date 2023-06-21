@@ -1,0 +1,30 @@
+---
+summary: Avatar changes result in 'X has joined' notifications
+---
+created: 2015-12-27 11:54:23.0
+creator: neb
+description: Submitted by @richvdh:matrix.org
+id: '12252'
+key: SYAND-169
+number: '169'
+priority: '3'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-02-17 07:15:02.0
+status: '5'
+type: '1'
+updated: 2016-02-17 07:15:02.0
+votes: '0'
+watches: '2'
+workflowId: '12355'
+---
+actions:
+- author: m-ylecollen
+  body: It has been fixed in the latest release 0.5.3
+  created: 2016-02-17 07:15:02.0
+  id: '12631'
+  issue: '12252'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 07:15:02.0

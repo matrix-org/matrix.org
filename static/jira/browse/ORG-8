@@ -1,0 +1,38 @@
+---
+summary: Port 443 listener for TLS TURN server
+---
+created: 2014-09-26 12:18:24.0
+creator: dbkr
+description: ''
+id: '10398'
+key: ORG-8
+number: '8'
+priority: '3'
+project: '10003'
+reporter: dbkr
+resolution: '3'
+resolutiondate: 2017-03-21 10:36:56.0
+status: '5'
+type: '1'
+updated: 2017-03-21 10:36:56.0
+votes: '0'
+watches: '2'
+workflowId: '10501'
+---
+actions:
+- author: dbkr
+  body: We could also get a cert for the IP address which would temporarily work around https://code.google.com/p/webrtc/issues/detail?id=3868
+  created: 2014-09-26 13:42:18.0
+  id: '10457'
+  issue: '10398'
+  type: comment
+  updateauthor: dbkr
+  updated: 2014-09-26 13:42:18.0
+- author: richvdh
+  body: https://github.com/matrix-org/internal-config/issues/79
+  created: 2017-03-21 10:36:56.0
+  id: '14006'
+  issue: '10398'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 10:36:56.0

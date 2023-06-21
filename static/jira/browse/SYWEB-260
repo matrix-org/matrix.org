@@ -1,0 +1,22 @@
+---
+summary: Invite rooms should be highlighted so you don't miss them.
+---
+created: 2015-01-15 13:29:02.0
+creator: matthew
+description: ''
+id: '10940'
+key: SYWEB-260
+number: '260'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-20 10:49:27.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:09:02.0
+votes: '0'
+watches: '1'
+workflowId: '11040'
+---
+actions: null

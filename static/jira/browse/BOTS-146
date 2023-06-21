@@ -1,0 +1,21 @@
+---
+summary: Need to unbodge the group functionality from the SMS AS
+---
+assignee: dbkr
+created: 2015-12-02 23:33:24.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12172'
+key: BOTS-146
+number: '146'
+priority: '3'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-01-04 15:49:37.0
+votes: '0'
+watches: '1'
+workflowId: '12275'
+---
+actions: null

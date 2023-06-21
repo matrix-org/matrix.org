@@ -1,0 +1,30 @@
+---
+summary: Display name disambiguation should apply to *both* clashing names
+---
+created: 2015-07-09 18:05:54.0
+creator: dbkr
+description: ''
+id: '11742'
+key: SYJS-17
+number: '17'
+priority: '1'
+project: '10204'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-07-13 11:33:16.0
+status: '5'
+type: '1'
+updated: 2015-07-13 11:33:16.0
+votes: '0'
+watches: '2'
+workflowId: '11843'
+---
+actions:
+- author: kegan
+  body: After talking IRL, the bug is that there is a {{Dave (@dave:matrix.org)}} on some messages and {{Dave}} on others.  This is due to disambiguation, as there is also a {{@dave:dbkr.me}} in the room. It is expected behaviour to have the user ID disambiguated when there are >1 user with the same display name. However, *both* names should be disambiguated, but only one of them is, which is a valid bug. Renaming issue.
+  created: 2015-07-13 10:18:28.0
+  id: '11986'
+  issue: '11742'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-13 10:18:28.0

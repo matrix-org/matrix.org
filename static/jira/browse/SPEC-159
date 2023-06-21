@@ -1,0 +1,83 @@
+---
+summary: Ability for server admins to acquire privileges in arbitrary rooms to resolve power struggles
+---
+created: 2014-11-27 13:18:04.0
+creator: matthew
+description: |-
+  Server admins currently have access to:
+   * /whois users
+   * delete aliases.
+
+  However, there are use cases for at least:
+   a) Redacting messages (both locally and globally)
+   b) Acquiring powerlevel in rooms in order to sort out problems
+   c) Injecting messages into a room
+   d) Overriding state in a room (updating topics; kicking users; etc)
+
+  Possible solutions include:
+   1) Creating the idea of global admins.  Needless to say this is totally against the decentralised philosophy of Matrix and is totally off the table.
+   2) Allow server admins to inject events on their own server into the client-server API.  This would act as a local overlay on top of the canonical federated representation of a room, supporting local WALL use cases.  Supports only use case c) from the above.
+   3) Let servers optionally insert admins into the permissions data for all new rooms created on them, thus allowing admins to help out in times of strife.  This would need to be combined with only allowing public rooms to be advertised on the server if they were created on that server.  This solves use case b, and by extension a, c and d.  However, it makes the act of where you create a room slightly more significant.  It's unclear whether you'd also want admins inserted into private rooms, so that users can petition admins to sort out powerstruggles in their private group chats.  Perhaps this would be another config option for the HS.
+   4) Abuse our current lack of E2E crypto and spoof messages from the room creator (or whoever does have power) to give ops to an admin.
+
+  Right now, #4 is the most practical option for solving our current problem of cleaning up orphaned garbage rooms on matrix.org's HS.
+
+  In future, #3 seems like the best solution to make this more manageable in the longer term.
+
+  #2 is useful too, but doesn't really solve the actual problem we were considering here - it'd only help us inject a local message saying "you're in the wrong place" which is visible only to non-federated users, which is of questionable value for cleaning up security messes.
+id: '10729'
+key: SPEC-159
+number: '159'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:16.0
+votes: '0'
+watches: '3'
+workflowId: '10829'
+---
+actions:
+- author: erikj
+  body: |-
+    I believe the use case here is that there is currently a public room #newhere:matrix.org that we want to close and redirect current and future participants to #matrix:matrix.org instead.
+
+    One way to do this would be to set the topic to something constructive and increase the power level required to send events. However, this requires ops privileges in the room, which Matthew doesn't have.
+  created: 2014-11-27 13:33:22.0
+  id: '10882'
+  issue: '10729'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-27 13:33:22.0
+- author: erikj
+  body: Its worth noting that servers can (theoretically) locally close rooms by 403'ing all attempts to post into that room from local clients and ignoring incoming events from federation. This would allow server admins to post a message to the room and then close it (without any changes to the spec.)
+  created: 2014-11-27 13:35:25.0
+  id: '10883'
+  issue: '10729'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-27 13:35:25.0
+- author: erikj
+  body: |-
+    Drawbacks to #3:
+
+    You won't be able to manage rooms on your server that you did not create (or created before you decided to turn on server admins.) 
+
+    Only works for public rooms, unless you also explicitly allow server admins the ability to join any room.
+
+    Remote users are required to trust the server admins of the server that created the room - at any point those admins could decide to be malicious and e.g. kick everyone out of the room. This sounds like one of those things that could be a major turn off to people, and thus discourage servers from implementing this to avoid being seen as "bad."
+  created: 2014-11-27 13:49:07.0
+  id: '10884'
+  issue: '10729'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-27 13:49:07.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/498'
+  created: 2016-10-28 16:27:16.0
+  id: '13306'
+  issue: '10729'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:16.0

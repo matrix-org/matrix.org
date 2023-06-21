@@ -1,0 +1,69 @@
+---
+summary: problem to connection to a own homeserver
+---
+created: 2015-02-21 12:22:37.0
+creator: silviof
+description: |-
+  I got a network error with all android apps which I can find.
+
+  * http://matrix.org/console/download
+  * all from this page http://matrix.org/jenkins/job/MatrixAndroidSDK
+
+  My matrix-server is running on https://docker.port1024.net:8448
+
+  I get no connection to this server from the android client, but with a web-browser from the same mobile phone.
+id: '11111'
+key: SYAND-27
+number: '27'
+priority: '3'
+project: '10201'
+reporter: silviof
+resolution: '2'
+resolutiondate: 2015-03-10 09:07:22.0
+status: '5'
+type: '1'
+updated: 2015-03-10 09:07:22.0
+votes: '0'
+watches: '2'
+workflowId: '11211'
+---
+actions:
+- author: silviof
+  body: If I run synapse on 443 I have the same problem.
+  created: 2015-02-22 08:34:45.0
+  id: '11308'
+  issue: '11111'
+  type: comment
+  updateauthor: silviof
+  updated: 2015-02-22 08:34:45.0
+- author: matthew
+  body: |-
+    the assumption is that the self-signed SSL cert is causing android to choke.
+
+    Solutions are:
+     * Find a real SSL cert (e.g. a free one from startssl or letsencrypt or whatever)
+     * Make your own CA and use that (and add it to your phone)
+     * Use https://f-droid.org/repository/browse/?fdfilter=cert&fdid=at.bitfire.cadroid to specify an exception?
+     * Use HTTP (ugh).
+  created: 2015-02-22 23:24:40.0
+  id: '11309'
+  issue: '11111'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-22 23:24:40.0
+- author: silviof
+  body: I have a own CA. So I will use a own certificate. I will share my conclusion here, but this needs time. Thx @Matthew so far.
+  created: 2015-02-23 07:43:08.0
+  id: '11310'
+  issue: '11111'
+  type: comment
+  updateauthor: silviof
+  updated: 2015-02-23 07:43:08.0
+- author: silviof
+  body: I have tested with a own CA with import in android and works well. So it can be closed.
+  created: 2015-03-09 07:40:12.0
+  id: '11366'
+  issue: '11111'
+  type: comment
+  updateauthor: silviof
+  updated: 2015-03-09 07:40:12.0

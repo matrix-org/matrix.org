@@ -1,0 +1,30 @@
+---
+summary: Our doc for the right syntax of filters is cryptic
+---
+created: 2016-02-12 11:35:24.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Lots of people try applying filters of { limit: 250 } rather than { room: { timeline: { limit: 250 }}} - we need to spell this out more clearly somehow
+id: '12391'
+key: SPEC-348
+number: '348'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:17.0
+votes: '0'
+watches: '2'
+workflowId: '12496'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/636'
+  created: 2016-10-28 16:28:17.0
+  id: '13444'
+  issue: '12391'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:17.0

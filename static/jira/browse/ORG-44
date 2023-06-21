@@ -1,0 +1,30 @@
+---
+summary: Need MySQL repl for matrix.org's WP and Jira
+---
+created: 2016-02-24 16:16:58.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12522'
+key: ORG-44
+number: '44'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:16:36.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:16:36.0
+votes: '0'
+watches: '2'
+workflowId: '12622'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/internal-config/issues/81
+  created: 2017-03-21 11:16:36.0
+  id: '14025'
+  issue: '12522'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:16:36.0

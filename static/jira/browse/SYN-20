@@ -1,0 +1,24 @@
+---
+summary: URL logging lies and inserts spurious semi-colons
+---
+created: 2014-09-16 00:43:07.0
+creator: matthew
+description: |-
+  2014-09-03 18:35:26,722 - synapse.http.client - 167 - DEBUG - Sending request to matrix.org: GET /_matrix/federation/v1/query/directory;?room_alias=%23secret%3Amatrix.org
+  [18:41]  <LeoNerd> Arathorn: Yeah; that ';' seems to be a weird logging artefact. My log contains those, but the actual queries worked fine, and later the log reports "GET /_matrix/federation/v1/query/directory?room_alias=%23test-room%3Alocalhost%3A8001 HTTP/1.1" 200 77 "-" "Synapse"
+id: '10045'
+key: SYN-20
+number: '20'
+priority: '3'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-26 14:25:51.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:40.0
+votes: '0'
+watches: '1'
+workflowId: '10354'
+---
+actions: null

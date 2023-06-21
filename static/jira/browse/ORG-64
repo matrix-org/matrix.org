@@ -1,0 +1,33 @@
+---
+summary: 'matrix.to: support non-ascii room aliases'
+---
+created: 2016-08-25 15:38:10.0
+creator: richvdh
+description: |-
+  Rooms with non-ascii characters in their aliases give "Invalid room alias, user ID or message permalink ...".
+
+  We probably need to sort out https://matrix.org/jira/browse/SPEC-391 before we can address this.
+id: '12806'
+key: ORG-64
+number: '64'
+priority: '3'
+project: '10003'
+reporter: richvdh
+resolution: '1'
+resolutiondate: 2016-09-19 15:55:16.0
+status: '5'
+type: '1'
+updated: 2016-09-19 15:55:16.0
+votes: '0'
+watches: '1'
+workflowId: '12906'
+---
+actions:
+- author: richvdh
+  body: dup of https://github.com/matrix-org/matrix.to/issues/1
+  created: 2016-09-19 15:55:16.0
+  id: '13121'
+  issue: '12806'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-09-19 15:55:16.0

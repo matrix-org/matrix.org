@@ -1,0 +1,37 @@
+---
+summary: Allow passing in listen-mode sockets
+---
+created: 2015-06-02 16:57:17.0
+creator: leonerd
+description: |-
+  There's a number of situations in which it would be helpful if synapse could use existing listen-mode TCP sockets that are passed in as pre-opened FDs, instead of having it create them:
+
+   * sytest
+   * systemd
+   * any security-sensitive setup where synapse should be on port 80 or 443, and yet not run as root
+
+  By taking some commandline arguments with "fd" instead of "port", this could easily be managed; e.g.
+
+    python -m synapse.app.homeserver --listen-fd 3
+id: '11608'
+key: SYN-402
+number: '402'
+priority: '4'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:05.0
+votes: '0'
+watches: '2'
+workflowId: '11709'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1329'
+  created: 2016-11-07 18:28:05.0
+  id: '13650'
+  issue: '11608'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:05.0

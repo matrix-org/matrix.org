@@ -1,0 +1,79 @@
+---
+summary: Grammar for room aliases
+---
+created: 2016-04-19 11:36:13.0
+creator: richvdh
+description: |-
+  Room aliases are intended to be 
+
+  * human-readable
+  * unique
+
+  They have some structure: {{#<alias>:<homeserver>}}.
+
+  We need to specify a grammar for them, including which characters they may contain, and how they should be interpreted. Can they contain punctuation or whitespace characters? Should they be allowed to contain non-ascii characters, and if so, how should they be normalised? Should they be case-insensitive, and if so, in what locale?
+id: '12634'
+key: SPEC-391
+number: '391'
+priority: '3'
+project: '10001'
+reporter: richvdh
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:30.0
+votes: '0'
+watches: '2'
+workflowId: '12734'
+---
+actions:
+- author: richvdh
+  body: |-
+    From [~matthew]:
+
+    {quote}
+    My thoughts for room alises and user ids: "utf8, with a blacklist of explicitly disallowed characters (all whitespace, *, /, :, ., any others we want to reserve). you're not allowed to mix charsets (fsvo charset), and possibly deny other homomorph attacks eg l v I".
+    IDs are compared case insensitively.
+
+    oh, and no zero length ids
+    {quote}
+  created: 2016-04-19 12:15:53.0
+  id: '12856'
+  issue: '12634'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-19 12:15:53.0
+- author: richvdh
+  body: |-
+    From [~eternaleye]: 
+    {quote}
+    The zero-width joiner, in particular, is [needed to construct the letterforms of some languages that Unicode does not support sufficiently|https://modelviewculture.com/pieces/i-can-text-you-a-pile-of-poo-but-i-cant-write-my-name].
+    {quote}
+  created: 2016-04-19 12:26:31.0
+  id: '12860'
+  issue: '12634'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-19 12:26:31.0
+- author: richvdh
+  body: |-
+    https://github.com/matrix-org/matrix-doc/blob/human-id-rules/drafts/human-id-rules.rst proposes:
+
+    {quote}
+    * MUST NOT contain a :
+    * MUST NOT contain one of the 107 blacklisted characters on this list: http://kb.mozillazine.org/Network.IDN.blacklist_chars
+    * After stripping " 0-9, +, -, \[, \], _, and the space character it MUST NOT contain characters from >1 language, defined by the exemplar characters on http://cldr.unicode.org/
+    {quote}
+  created: 2016-04-19 12:55:50.0
+  id: '12863'
+  issue: '12634'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-19 12:55:50.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/668'
+  created: 2016-10-28 16:28:30.0
+  id: '13477'
+  issue: '12634'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:30.0

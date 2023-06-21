@@ -1,0 +1,46 @@
+---
+summary: Support for discovering API endpoints via .well-known URIs
+---
+created: 2015-03-08 18:27:34.0
+creator: matthew
+description: |-
+  We have several reasons why we might want to use .well-known URIs to discover API endpoints:
+
+   * Clients which can't query SRV records (e.g. webclients trying to discover the C-S API for a given user ID's domain)
+   * Admins who don't want to use the /_matrix convention, and adhere to  RFC5785 instead
+   * Admins who can't create SRV records
+   * Dynamic .well-known URIs to help discover nomadic homeservers
+
+  See also SYWEB-224 and SYN-167
+
+  We should just get on and do it.  Unsure whether SRV should trump .well-known URIs or not for server-server traffic.
+id: '11173'
+key: SPEC-121
+number: '121'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:05.0
+votes: '0'
+watches: '3'
+workflowId: '11273'
+---
+actions:
+- author: matthew
+  body: "Some potential considerations regarding SSL SNI (server name indicators):\n\neternaleye (IRC)\n M-Erik: ISTR there having been a problematic interaction in the past between SRV and SNI with how Matrix used them, which showed up when one person using CloudFlare tried to set it up\t\nJul 6 22:45\n M-Erik: And there was a discussion re: using .well-known/ JSON to do what is currently being done with SRV\t\nJul 6 22:46\n M-Erik: Did that wind up going anywhere?\n\n...\n\n[02:32]  <eternaleye> [01:42:58] Arathorn: IIRC, the issue with CloudFlare was that SNI + SRV sends SNI for the name the SRV record is _on_, while the cert was for the name it _points to_\n[02:32]  <eternaleye> [01:44:30] Arathorn: The relevant RFC lays out that the SNI being for the domain the record is _on_ is the correct one: https://tools.ietf.org/html/rfc6125#section-6\n[02:32]  <Zappelin> [01:44:32] Title: RFC 6125 - Representation and Verification of Domain-Based Application Service Identity within Internet Public Key Infrastructure Using X.509 (PKIX) Certificates in the Context of Transport Layer Security (TLS) (at tools.ietf.org)\n[02:32]  <eternaleye> [01:45:56] Arathorn: So _matrix._tcp.matrix.org would use an SNI value of \"matrix.org\", even if the SRV record points to \"blargfoo.org\"\n[02:32]  <eternaleye> [01:47:52] Arathorn: SPEC-121 came out of that discussion, but I dunno if a ticket got filed for that actual issue\n[02:32]  -M-NEBot/#matrix- [01:48:06] https://matrix.org/jira/browse/SPEC-121 : Support for discovering API endpoints via .well-known URIs [Pending Triage,P2,reporter=Matthew Hodgson,assignee=]\n[02:32]  <eternaleye> [01:48:38] Arathorn: If well-known is used, though, that \"resolution\" happens in the application level, and SNI will almost certainly be \"blargfoo.org\" there.\n[02:32]  <eternaleye> [01:48:47] Arathorn: Not sure what's better, though\n[02:32]  <eternaleye> [01:49:46] Arathorn: The current behavior prevents some common things on existing sites from coexisting with Matrix, while the latter behavior would make running multiple Matrix services on one port infeasible.\n[02:32]  <eternaleye> [01:50:11] Arathorn: I'll also note that CNAME behaves similarly to SRV here - the \"from\" is in the SNI, not the \"to\""
+  created: 2015-07-07 02:52:13.0
+  id: '11969'
+  issue: '11173'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-07 02:52:13.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/433'
+  created: 2016-10-28 16:27:05.0
+  id: '13283'
+  issue: '11173'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:05.0

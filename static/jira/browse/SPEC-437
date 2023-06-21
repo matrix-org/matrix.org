@@ -1,0 +1,30 @@
+---
+summary: AS API ping path
+---
+created: 2016-07-26 18:39:40.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  the API should define a NOP /heartbeat path which HSes can hit on startup to check liveness of ASes. There have been many occasions where people accidently set the wrong url and having this means we can fail faster
+id: '12771'
+key: SPEC-437
+number: '437'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:41.0
+votes: '0'
+watches: '2'
+workflowId: '12871'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/696'
+  created: 2016-10-28 16:28:41.0
+  id: '13505'
+  issue: '12771'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:41.0

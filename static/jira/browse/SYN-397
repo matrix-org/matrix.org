@@ -1,0 +1,28 @@
+---
+summary: An overloaded server may trigger presence feedback from other servers causing a presence storm
+---
+created: 2015-06-02 00:56:03.0
+creator: matthew
+description: ''
+id: '11589'
+key: SYN-397
+number: '397'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:03.0
+votes: '0'
+watches: '2'
+workflowId: '11690'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1324'
+  created: 2016-11-07 18:28:03.0
+  id: '13645'
+  issue: '11589'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:03.0

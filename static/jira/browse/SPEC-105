@@ -1,0 +1,30 @@
+---
+summary: Current VoIP events don't support simultaneous ringing
+---
+created: 2015-02-09 18:30:39.0
+creator: matthew
+description: ''
+id: '11025'
+key: SPEC-105
+number: '105'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-20 10:08:12.0
+status: '5'
+type: '1'
+updated: 2015-03-20 10:08:12.0
+votes: '0'
+watches: '2'
+workflowId: '11125'
+---
+actions:
+- author: dbkr
+  body: 'This should work fine with the spec as it stands: you just watch for answer events for the same call-id.'
+  created: 2015-03-20 10:08:12.0
+  id: '11415'
+  issue: '11025'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-20 10:08:12.0

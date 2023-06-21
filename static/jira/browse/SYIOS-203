@@ -1,0 +1,33 @@
+---
+summary: iOS crashes on non numeric power levels
+---
+assignee: manu
+created: 2016-01-22 20:33:11.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  In general we should be validating JSON from the server enough that we don't crash....
+id: '12345'
+key: SYIOS-203
+number: '203'
+priority: '2'
+project: '10200'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-01-28 09:46:20.0
+status: '5'
+type: '1'
+updated: 2016-01-28 09:46:20.0
+votes: '0'
+watches: '2'
+workflowId: '12450'
+---
+actions:
+- author: manu
+  body: Done in https://github.com/matrix-org/matrix-ios-sdk/pull/70
+  created: 2016-01-28 09:46:20.0
+  id: '12587'
+  issue: '12345'
+  type: comment
+  updateauthor: manu
+  updated: 2016-01-28 09:46:20.0

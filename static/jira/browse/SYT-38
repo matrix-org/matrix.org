@@ -1,0 +1,48 @@
+---
+summary: tests/90jira/SYN-115.pl is flaky
+---
+created: 2015-11-09 16:25:15.0
+creator: illicitonion
+description: |-
+  I just ran a sytest and got:
+
+  Running tests/90jira/SYN-115.pl...
+    Testing if: New federated private chats get full presence information (SYN-115)... 
+     | Created a room... OK
+     | Sent invite... OK
+     | Received invite... OK
+     | Joined room... OK
+     | User @_ANON_-172:localhost:8002 received presence for @_ANON_-172:localhost:8002... OK
+     | User @_ANON_-171:localhost:8001 received presence for @_ANON_-171:localhost:8001... OK
+     | User @_ANON_-171:localhost:8001 received presence for @_ANON_-172:localhost:8002... OK
+     +--- FAIL:
+   | Timed out waiting for @_ANON_-172:localhost:8002 to receive all presence at ./run-tests.pl line 462.
+   +----------------------
+  Registered new user _ANON_-171
+  Registered new user _ANON_-172
+
+  I re-ran and it worked. Unfortunately I don't have any more logs, sorry :(
+id: '12098'
+key: SYT-38
+number: '38'
+priority: '3'
+project: '10300'
+reporter: illicitonion
+resolution: '5'
+resolutiondate: 2016-11-29 16:38:06.0
+status: '5'
+type: '1'
+updated: 2016-11-29 16:38:06.0
+votes: '0'
+watches: '2'
+workflowId: '12201'
+---
+actions:
+- author: richvdh
+  body: Haven't seen this for a while.
+  created: 2016-11-29 16:38:06.0
+  id: '13948'
+  issue: '12098'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-29 16:38:06.0

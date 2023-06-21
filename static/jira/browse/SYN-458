@@ -1,0 +1,23 @@
+---
+summary: Allow users to invite 3PIDs to rooms
+---
+assignee: illicitonion
+created: 2015-08-28 16:22:06.0
+creator: illicitonion
+description: ''
+id: '11830'
+key: SYN-458
+number: '458'
+priority: '1'
+project: '10000'
+reporter: illicitonion
+resolution: '1'
+resolutiondate: 2016-01-06 10:05:19.0
+status: '5'
+type: '2'
+updated: 2016-01-06 10:05:19.0
+votes: '0'
+watches: '1'
+workflowId: '11933'
+---
+actions: null

@@ -1,0 +1,40 @@
+---
+summary: v2 - Relates to
+---
+created: 2015-01-21 13:38:50.0
+creator: kegan
+description: |-
+  bq. Should be able to specify more relationship info other than just the event type. Forcing that m.room.message A "relates_to" another m.room.message B means that A is a threaded conversation reply to B is needlessly restrictive. What if A and B relate to each other by some other metric (e.g. they are part of a group rather than a thread? or we distinguish mail-style threading from multithreaded-IM threading for the same set of messages? etc)? E.g. 
+  {code}
+  "relates_to" : [["in_reply_to", "$event_id1"], ["another_type_of_relation", "$event_id2"]]
+  {code}
+id: '10968'
+key: SPEC-98
+number: '98'
+priority: '1'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:26:58.0
+votes: '0'
+watches: '3'
+workflowId: '11068'
+---
+actions:
+- author: half-shot
+  body: Would this be limited to room 'm.room.message' messages, or would it be worth implementing it as part of the root event data so any event can relate to another?
+  created: 2016-05-17 09:17:51.0
+  id: '12920'
+  issue: '10968'
+  type: comment
+  updateauthor: half-shot
+  updated: 2016-05-17 09:28:24.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/492'
+  created: 2016-10-28 16:26:58.0
+  id: '13267'
+  issue: '10968'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:58.0

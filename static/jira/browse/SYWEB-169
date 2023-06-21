@@ -1,0 +1,30 @@
+---
+summary: Joining a new room from homepage should actually enter the room page once you're joined
+---
+created: 2014-11-20 02:18:07.0
+creator: matthew
+description: ''
+id: '10686'
+key: SYWEB-169
+number: '169'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2014-11-24 15:18:06.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:49.0
+votes: '0'
+watches: '2'
+workflowId: '10786'
+---
+actions:
+- author: kegan
+  body: It does.
+  created: 2014-11-24 15:18:06.0
+  id: '10824'
+  issue: '10686'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-24 15:18:06.0

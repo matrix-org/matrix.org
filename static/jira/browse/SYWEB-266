@@ -1,0 +1,34 @@
+---
+summary: You can't upload two files with the same filename in a row, seemingly
+---
+assignee: kegan
+created: 2015-01-28 00:17:38.0
+creator: matthew
+description: ''
+id: '10985'
+key: SYWEB-266
+number: '266'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-03 13:50:47.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:01.0
+votes: '0'
+watches: '2'
+workflowId: '11085'
+---
+actions:
+- author: kegan
+  body: |-
+    Reproduced.
+
+    This seems to be caused by the fact that the file is only sent when the watcher fires, which it won't do if the filename doesn't change(!)
+  created: 2015-02-02 10:51:28.0
+  id: '11203'
+  issue: '10985'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-02 10:51:28.0

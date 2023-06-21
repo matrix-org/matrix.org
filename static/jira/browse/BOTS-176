@@ -1,0 +1,20 @@
+---
+summary: If an AS goes offline it takes ages for the HS to notice it again, and then the HS DoSes it
+---
+created: 2016-03-04 18:55:39.0
+creator: matthew
+description: ''
+id: '12546'
+key: BOTS-176
+number: '176'
+priority: '1'
+project: '10101'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-03-04 18:55:39.0
+votes: '0'
+watches: '1'
+workflowId: '12646'
+---
+actions: null

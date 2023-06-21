@@ -1,0 +1,30 @@
+---
+summary: irc bridge AS appears as offline in presence, which is offputting and confusing
+---
+created: 2015-08-29 00:50:11.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11832'
+key: BOTS-98
+number: '98'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:56:45.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:56:45.0
+votes: '0'
+watches: '2'
+workflowId: '11935'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/58
+  created: 2016-06-02 10:56:45.0
+  id: '12973'
+  issue: '11832'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:56:45.0

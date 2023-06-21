@@ -1,0 +1,79 @@
+---
+summary: Federation doesn't play nice with IPv6
+---
+created: 2015-02-01 12:26:18.0
+creator: matthew
+description: "Servers with v6 resolvers seem to have problems federating - see synacktik from #matrix:matrix.org:\n\nFeb 1 12:31\n http://pastebin.com/giEhadsG\n\n\ni have ipv6 running on this server, yeah\t\nFeb 1 12:55\n dual stack\t\nFeb 1 12:59\n well thats interesting\t\nFeb 1 13:00\n removed my v6 resolvers"
+id: '10990'
+key: SYN-254
+number: '254'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:41.0
+votes: '0'
+watches: '4'
+workflowId: '11090'
+---
+actions:
+- author: matthew
+  body: |-
+    The problem seems to be that twisted's http agent is hardcoded to ipv4:
+    http://twistedmatrix.com/pipermail/twisted-python/2012-August/026012.html
+  created: 2015-03-14 00:33:33.0
+  id: '11392'
+  issue: '10990'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-14 00:33:33.0
+- author: matthew
+  body: |-
+    ...and our federation endpoint is hardcoded to ipv4 too:
+
+    {code}
+        if ssl_context_factory is None:
+            transport_endpoint = TCP4ClientEndpoint
+            default_port = 8008
+        else:
+            transport_endpoint = SSL4ClientEndpoint
+            endpoint_kw_args.update(sslContextFactory=ssl_context_factory)
+            default_port = 8448
+    {code}
+  created: 2015-03-14 00:53:43.0
+  id: '11393'
+  issue: '10990'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-14 00:53:59.0
+- author: sanderr
+  body: |-
+    Twisted uses its own resolver lib, which plays nice with IPv4 addresses, but not with IPv6. Related to [twisted ticket #4362|https://twistedmatrix.com/trac/ticket/4362].
+
+    {code:python}
+    python -m twisted.conch.stdio
+
+    >>> from twisted.names import client
+    >>> resolver = client.createResolver(servers=[('2001:4860:4860::8888', 53)])
+    >>> resolver.getHostByName('google.com')
+    <Deferred at 0x7f9fa9e14908 current result: <twisted.python.failure.Failure <class 'twisted.internet.error.InvalidAddressError'>>>
+    >>> resolver = client.createResolver(servers=[('8.8.8.8', 53)])
+    >>> resolver.getHostByName('google.com')
+    <Deferred at 0x7f9fa9e279e0 waiting on Deferred at 0x7f9fa9e27c68>
+    >>>
+    {code}
+  created: 2015-08-19 13:22:40.0
+  id: '12066'
+  issue: '10990'
+  type: comment
+  updateauthor: sanderr
+  updated: 2015-08-19 13:24:56.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1279'
+  created: 2016-11-07 18:27:41.0
+  id: '13598'
+  issue: '10990'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:41.0

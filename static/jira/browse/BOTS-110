@@ -1,0 +1,109 @@
+---
+summary: 'Unable to join Freenode channel #ft_kickass'
+---
+assignee: kegan
+created: 2015-09-19 00:00:00.0
+creator: rrix
+description: ''
+id: '11888'
+key: BOTS-110
+number: '110'
+priority: '2'
+project: '10101'
+reporter: rrix
+resolution: '1'
+resolutiondate: 2016-06-22 16:03:53.0
+status: '5'
+type: '1'
+updated: 2016-06-22 16:03:53.0
+votes: '0'
+watches: '3'
+workflowId: '11991'
+---
+actions:
+- author: kegan
+  body: This channel has {{+S}} set (SSL only) which we currently don't do because of BOTS-51 - when this bug is resolved it should Just Work.
+  created: 2015-09-24 09:33:15.0
+  id: '12163'
+  issue: '11888'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-24 09:33:15.0
+- author: matthew
+  body: |-
+    Ryan removed the +S (the room is now just +ns) and still broken.  I see no attempts to join the room at all, though, so i think the problem is that the bridge's DB has corrupt state left over from previous attempts:
+
+    $ cat rooms.db | grep -i kickass
+    {"room_id":"!QRsXmHRKrxahKgCCxb:matrix.org","irc_addr":"irc.freenode.net","irc_chan":"#ft_kickass","from_config":false,"type":"channel","_id":"Lub0DPfRN7NxCc1g"}
+    {"room_id":"!QRsXmHRKrxahKgCCxb:matrix.org","irc_addr":"irc.freenode.net","irc_chan":"#ft_kickass","from_config":false,"type":"channel","_id":"MeQghpmcDXbKekuU"}
+    {"room_id":"!QRsXmHRKrxahKgCCxb:matrix.org","irc_addr":"irc.freenode.net","irc_chan":"#ft_kickass","from_config":false,"type":"channel","_id":"Rqeapm800RozcHDF"}
+    {"room_id":"!QRsXmHRKrxahKgCCxb:matrix.org","irc_addr":"irc.freenode.net","irc_chan":"#ft_kickass","from_config":false,"type":"channel","_id":"ZghhNsJPIcj6SFRC"}
+
+    ...looks deeply wrong; surely there should only be 1 entry?
+  created: 2015-11-15 00:57:10.0
+  id: '12363'
+  issue: '11888'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-15 00:57:10.0
+- author: kegan
+  body: The db file you're grepping is an append-only log. You'd need to make sure these entries aren't being deleted; a simple grep isn't sufficient. It sounds plausible that the room the bridge is trying to use is a bit screwy.
+  created: 2015-11-16 10:22:10.0
+  id: '12364'
+  issue: '11888'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-16 10:22:10.0
+- author: rrix
+  body: '*gently nudges* Is it possible to remove those rooms from the AOL?'
+  created: 2015-12-07 15:53:02.0
+  id: '12440'
+  issue: '11888'
+  type: comment
+  updateauthor: rrix
+  updated: 2015-12-07 15:53:02.0
+- author: kegan
+  body: |-
+    I can nuke them from the db yes. What would be the purpose of doing this?
+    EDIT: *regains context* - Right, yes, I can do that.
+  created: 2015-12-08 09:38:21.0
+  id: '12443'
+  issue: '11888'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-12-08 09:39:45.0
+- author: kegan
+  body: What is the current failure mode if you try to join {{#freenode_#ft_kickass:matrix.org}} ?
+  created: 2015-12-08 09:43:59.0
+  id: '12444'
+  issue: '11888'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-12-08 09:43:59.0
+- author: rrix
+  body: |-
+    Just an M_UNKNOWN 403
+
+    {"errcode":"M_UNKNOWN","error":"Forbidden"}
+  created: 2015-12-10 05:34:15.0
+  id: '12455'
+  issue: '11888'
+  type: comment
+  updateauthor: rrix
+  updated: 2015-12-10 05:34:15.0
+- author: kegan
+  body: Was this ever resolved?
+  created: 2016-06-02 10:21:58.0
+  id: '12950'
+  issue: '11888'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:21:58.0
+- author: kegan
+  body: 'bq. Kegan: yeah, not the SSL issue but the weird database state was resolved at some point'
+  created: 2016-06-22 16:03:53.0
+  id: '13015'
+  issue: '11888'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-22 16:03:53.0

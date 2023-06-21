@@ -1,0 +1,35 @@
+---
+summary: If someone accidentally hits Deny on their WebRTC permissions, we *have* to tell the user why the service is broken
+---
+created: 2014-12-01 15:17:00.0
+creator: matthew
+description: ''
+id: '10746'
+key: SYWEB-200
+number: '200'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-01 15:39:01.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:56.0
+votes: '0'
+watches: '2'
+workflowId: '10846'
+---
+actions:
+- author: kegan
+  body: |-
+    Fixed.
+
+    This would've been particularly cryptic given denying it once denies it forevar on chrome unless you hit the tiny camera with an X. Calls do _appear_ to spontaneously fail after accepting.
+
+    This now uses an error dialog so it's much more in your face when something goes wrong. This applies to all forms of call errors.
+  created: 2014-12-01 15:39:01.0
+  id: '10907'
+  issue: '10746'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-01 15:39:32.0

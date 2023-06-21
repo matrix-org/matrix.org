@@ -1,0 +1,42 @@
+---
+summary: We should generate sensible default names for rooms serverside rather than relying on clients to get it right.
+---
+created: 2015-02-11 01:07:10.0
+creator: matthew
+description: |-
+  Currently if a room has no explicit name (e.g. Matrix HQ) it's up to the client to synthesise one by looking at the membership list, etc.  This is not ideal, because:
+
+  * It means we have to xfer the whole membership list just to display the Recents index
+  * It means clients have to get the logic right, and be consistent across multiple different implementations (which currently we fail abjectly at).
+
+  So let's do it serverside instead.  We can even internationalise it if needed
+id: '11034'
+key: SYN-265
+number: '265'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:43.0
+votes: '0'
+watches: '2'
+workflowId: '11134'
+---
+actions:
+- author: richvdh
+  body: This would be the implementation of SPEC-425
+  created: 2016-07-12 11:54:20.0
+  id: '13046'
+  issue: '11034'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-12 11:54:20.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1283'
+  created: 2016-11-07 18:27:43.0
+  id: '13602'
+  issue: '11034'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:43.0

@@ -1,0 +1,68 @@
+---
+summary: MatrixBridge ping timed out and didn't reconnect
+---
+created: 2015-06-26 10:23:56.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  No evidence in logs of receiving a close event. Should do manual keep-alives.
+
+  IRC:
+  {code}
+  03:31 * MatrixBridge has quit (Ping timeout: 265 seconds)
+  {code}
+
+  Logs:
+  {code} (UTC so -1 hour)
+  Last received I->M:
+  2015-06-26 02:22:37 INFO:req [kfp2bfi4fk0ww] [I->M] onMessage: irc.freenode.net [...]
+  {code}
+id: '11706'
+key: BOTS-65
+number: '65'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-06-26 11:58:41.0
+status: '5'
+type: '1'
+updated: 2015-06-26 11:58:41.0
+votes: '0'
+watches: '2'
+workflowId: '11807'
+---
+actions:
+- author: kegan
+  body: |-
+    So the bot is automatically responding to {{ping}} requests with {{pong}}. However, there is no mechanism to knife the connection if it hasn't received anything (incl pings) for a while. This should probably be added. Quick test on freenode shows a ping rate of roughly every 2 minutes when no traffic is passing through:
+    {code}
+    2015-06-26 09:55:57 DEBUG:irc-server RECV ping => testmatrixbot => wolfe.freenode.net
+    2015-06-26 09:57:12 DEBUG:irc-server RECV ping => M-example => leguin.freenode.net
+    2015-06-26 09:58:21 DEBUG:irc-server RECV ping => testmatrixbot => wolfe.freenode.net
+    2015-06-26 09:59:18 DEBUG:irc-server RECV ping => M-example => leguin.freenode.net
+    2015-06-26 10:00:45 DEBUG:irc-server RECV ping => testmatrixbot => wolfe.freenode.net
+    {code}
+
+    Pings are only sent when the client in question doesn't send anything for a while, so we need to take into account the last active times of the client when determining whether to knife or not.
+  created: 2015-06-26 11:08:34.0
+  id: '11920'
+  issue: '11706'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-26 11:08:34.0
+- author: kegan
+  body: |-
+    This has been resolved by applying the following:
+     - Start a timer when connecting for {{PING_TIMEOUT_MS}} (set to 6 mins currently).
+     - Listen for {{ping}} events from the server. Refresh the ping timeout timer.
+     - Decorate the {{client.send}} method to refresh the ping timeout timer every time it is invoked.
+     - If the timer expires, emit a {{netError}} (which all clients respond to by reconnecting).
+
+    This fixes the problem because the bot's TCP connection died without the bot knowing. RFC 1459 states that there should always be the occasional ping/pong to keep the connection alive. If there is no ping for a while, we'll now know about it and emit an error so we can reconnect.
+  created: 2015-06-26 11:58:27.0
+  id: '11921'
+  issue: '11706'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-26 11:58:27.0

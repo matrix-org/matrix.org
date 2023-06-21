@@ -1,0 +1,35 @@
+---
+summary: Improved mechanisms for discovering rooms
+---
+created: 2014-12-21 23:21:14.0
+creator: matthew
+description: |-
+  [23:16]  <scounder> hmm anyone know if matrix allows people with similar interests to find each other in a conference room without actually knowing each other first?
+  [23:18]  <Arathorn> hmm, there's nothing explicitly to support it
+  [23:18]  <Arathorn> and our room listing mechanisms are pretty basic at the moment
+  [23:18]  <Arathorn> but it'd certainly be interesting to support specifying more metadata about rooms than their topic, name and alias
+  [23:19]  <Arathorn> to make that easier
+
+  Aside from this, we need APIs for searching & paginating the public room listing, and exposing for search engines (and possibly aggregating across multiple homeservers)
+id: '10852'
+key: SYN-210
+number: '210'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:31.0
+votes: '0'
+watches: '2'
+workflowId: '10952'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1260'
+  created: 2016-11-07 18:27:31.0
+  id: '13578'
+  issue: '10852'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:31.0

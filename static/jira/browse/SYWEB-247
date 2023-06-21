@@ -1,0 +1,23 @@
+---
+summary: Setting room Topic
+---
+created: 2015-01-10 13:27:43.0
+creator: stalund
+description: |-
+  I was trying to set the room Topic from a user that did not have permission to set it. Why show that button at all in this scenario?
+
+  https://github.com/matrix-org/matrix-angular-sdk/issues/4#issuecomment-69451748
+id: '10897'
+key: SYWEB-247
+number: '247'
+priority: '4'
+project: '10004'
+reporter: stalund
+status: '10100'
+type: '4'
+updated: 2015-01-10 13:27:43.0
+votes: '0'
+watches: '1'
+workflowId: '10997'
+---
+actions: null

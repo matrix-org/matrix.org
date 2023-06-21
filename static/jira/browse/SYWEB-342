@@ -1,0 +1,35 @@
+---
+summary: /op command with an invalid user ID gives same error for subsequent /op commands
+---
+created: 2015-04-01 16:52:49.0
+creator: dbkr
+description: |-
+  /op flibble
+   -> Invalid user ID: flibble
+
+  /op @valid:user.id
+   -> Invalid user ID: flibble
+id: '11302'
+key: SYWEB-342
+number: '342'
+priority: '2'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-07-17 18:01:36.0
+status: '5'
+type: '1'
+updated: 2015-07-17 18:01:36.0
+votes: '0'
+watches: '2'
+workflowId: '11402'
+---
+actions:
+- author: matthew
+  body: fixed in js sdk
+  created: 2015-07-17 18:01:36.0
+  id: '12028'
+  issue: '11302'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-17 18:01:36.0

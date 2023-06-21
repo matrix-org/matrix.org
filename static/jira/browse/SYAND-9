@@ -1,0 +1,31 @@
+---
+summary: Locally add highlighting for rooms with unread messages
+---
+assignee: joachim
+created: 2015-01-27 09:13:47.0
+creator: joachim
+description: ''
+id: '10979'
+key: SYAND-9
+number: '9'
+priority: '3'
+project: '10201'
+reporter: joachim
+resolution: '1'
+resolutiondate: 2015-01-28 10:08:31.0
+status: '5'
+type: '2'
+updated: 2015-01-28 10:08:31.0
+votes: '0'
+watches: '1'
+workflowId: '11079'
+---
+actions:
+- author: joachim
+  body: https://github.com/matrix-org/matrix-android-sdk/commit/4629f8bc
+  created: 2015-01-28 10:08:31.0
+  id: '11199'
+  issue: '10979'
+  type: comment
+  updateauthor: joachim
+  updated: 2015-01-28 10:08:31.0

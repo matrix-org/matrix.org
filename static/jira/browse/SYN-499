@@ -1,0 +1,30 @@
+---
+summary: Content repository cache management
+---
+created: 2015-10-06 22:22:58.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  If someone purges files from their synapse's content directories, synapse should probably notice when it next tries to access them and try to pull them back in from other servers.
+id: '12007'
+key: SYN-499
+number: '499'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:28.0
+votes: '0'
+watches: '2'
+workflowId: '12110'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1399'
+  created: 2016-11-07 18:28:28.0
+  id: '13708'
+  issue: '12007'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:28.0

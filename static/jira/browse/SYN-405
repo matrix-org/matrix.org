@@ -1,0 +1,33 @@
+---
+summary: Dynamically turning on and off profiling.
+---
+created: 2015-06-03 10:06:10.0
+creator: erikj
+description: |-
+  It would be nice if we could:
+
+  * Turn on/off profiling of synapse without restarting the server.
+  * Choose between different profilers, e.g. cProfile, pyinstrument and twisted-theseus.
+  * Choose what to profile, e.g everything or each individual reactor.runUntilCurrent and reactor.doIteration.
+id: '11615'
+key: SYN-405
+number: '405'
+priority: '2'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:05.0
+votes: '0'
+watches: '2'
+workflowId: '11716'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1330'
+  created: 2016-11-07 18:28:05.0
+  id: '13651'
+  issue: '11615'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:05.0

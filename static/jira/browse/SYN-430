@@ -1,0 +1,28 @@
+---
+summary: implement acceptance handshakes for presence list membership
+---
+created: 2015-06-28 22:43:39.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11717'
+key: SYN-430
+number: '430'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:11.0
+votes: '0'
+watches: '2'
+workflowId: '11818'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1345'
+  created: 2016-11-07 18:28:11.0
+  id: '13666'
+  issue: '11717'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:11.0

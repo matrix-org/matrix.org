@@ -1,0 +1,56 @@
+---
+summary: Media REST handler is very fragile
+---
+created: 2016-09-23 19:32:53.0
+creator: leonerd
+description: |-
+  If you forget to supply the size parameter to {{thumb}} it gets really upset:
+
+  e.g.
+  {noformat}
+  http://localhost:7680/_matrix/media/v1/thumbnail/localhost:8080/OMmFYElmJLpPIxKJvEosINpk
+  {noformat}
+
+  Results in 500 ISE and a log file containing:
+
+  {noformat}
+  2016-09-23 19:30:48,756 - synapse.http.server - 139 - ERROR - GET-50- Failed handle request synapse.rest.media.v1.thumbnail_resource._async_render_GET on <synapse.rest.media.v1.thumbnail_resource.ThumbnailResource instance at 0x7f6be3994f80>: <SynapseRequest at 0x7f6be542a1b8 method=GET uri=/_matrix/media/v1/thumbnail/localhost:8080/OMmFYElmJLpPIxKJvEosINpk clientproto=HTTP/1.1 site=7680>
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 118, in wrapped_request_handler
+      yield request_handler(self, request)
+    File "/home/leo/src/matrix/synapse/.tox/py27/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1183, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/leo/src/matrix/synapse/.tox/py27/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/media/v1/thumbnail_resource.py", line 64, in _async_render_GET
+      request, media_id, width, height, method, m_type
+    File "/home/leo/src/matrix/synapse/.tox/py27/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1185, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/rest/media/v1/thumbnail_resource.py", line 96, in _respond_local_thumbnail
+      width, height, method, m_type, thumbnail_infos
+    File "synapse/rest/media/v1/thumbnail_resource.py", line 317, in _select_thumbnail
+      size_quality = abs((d_w - t_w) * (d_h - t_h))
+  TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+  {noformat}
+id: '12840'
+key: SYN-777
+number: '777'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:04.0
+votes: '0'
+watches: '2'
+workflowId: '12940'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1603'
+  created: 2016-11-07 18:30:04.0
+  id: '13932'
+  issue: '12840'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:04.0

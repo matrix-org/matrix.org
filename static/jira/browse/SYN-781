@@ -1,0 +1,36 @@
+---
+summary: fetching remote public room list sometimes returns nothing
+---
+created: 2016-09-28 17:41:01.0
+creator: neb
+description: Submitted by @dave:matrix.org
+id: '12845'
+key: SYN-781
+number: '781'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:05.0
+votes: '0'
+watches: '3'
+workflowId: '12945'
+---
+actions:
+- author: dbkr
+  body: If you go to the (new) room directory and enter loki.sockspls.com in the field, the type a character and delete it a few times, sooner or later you'll get no results. Type something else and the one room will come back.
+  created: 2016-09-28 17:42:51.0
+  id: '13150'
+  issue: '12845'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-09-28 17:42:51.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1606'
+  created: 2016-11-07 18:30:05.0
+  id: '13936'
+  issue: '12845'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:05.0

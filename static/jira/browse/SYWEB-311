@@ -1,0 +1,20 @@
+---
+summary: Interface for device specific rules
+---
+created: 2015-03-06 15:33:31.0
+creator: dbkr
+description: ''
+id: '11165'
+key: SYWEB-311
+number: '311'
+priority: '3'
+project: '10004'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2015-03-06 15:34:28.0
+votes: '0'
+watches: '1'
+workflowId: '11265'
+---
+actions: null

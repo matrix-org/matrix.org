@@ -1,0 +1,28 @@
+---
+summary: Ability to switch between voice & video calls
+---
+created: 2014-09-26 22:47:19.0
+creator: matthew
+description: ''
+id: '10405'
+key: SYWEB-97
+number: '97'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-03-20 15:05:40.0
+votes: '0'
+watches: '2'
+workflowId: '10508'
+---
+actions:
+- author: dbkr
+  body: Needs speccing out to decide how we'd support this, both protocol and UX wise.
+  created: 2015-03-20 15:04:50.0
+  id: '11419'
+  issue: '10405'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-20 15:04:50.0

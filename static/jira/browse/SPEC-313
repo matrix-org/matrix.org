@@ -1,0 +1,73 @@
+---
+summary: Provide a high level overview of the different event syncing API endpoints
+---
+created: 2015-12-25 09:20:24.0
+creator: jimmycuadra
+description: |-
+  The client-server API spec could benefit from a small section that provides a high level overview of the various API endpoints that involving fetching or synchronizing events. A few of them have similar URLs and their individual descriptions don't make it super clear what the difference is and when a client application should use a given endpoint.
+
+  I'd be happy to submit a PR with this write up, but I'd need to make sure my assumptions about what these are for are correct. Here are the endpoints I think should be covered and what I understand them to be for:
+
+  * GET /_matrix/client/r0/events: The main endpoint the client calls repeatedly to retrieve the latest events since once it's caught up with the current state of things. It returns events of all types that are relevant to the particular user.
+  * GET /_matrix/client/r0/initialSync: The endpoint the client calls the very first time a user ever connects to a homeserver. Provides events for presence, room membership, etc.
+  * GET /_matrix/client/r0/sync: This one is not clear to me. Its description seems to suggest a use case that sort of combines /events and /initialSync, but why that's necessary is not clear. Maybe it's intended to be used on subsequent starts of the client application when some state is already stored client side? As in, /initialSync happens literally once ever, and /sync happens once per application launch/wake from sleep.
+  * GET /_matrix/client/r0/rooms/\{roomId\}/initialSync: Like the general /initialSync, but scoped to a specific room. Unclear why this is ever needed if the general /events, /initialSync, and /sync return room events.
+  * GET /_matrix/client/r0/rooms/\{roomId\}/messages: Seems like a non-realtime way of querying for room messages, as opposed to /events which is the long-poll endpoint for getting the latest events of all types. Unclear what use case this supports that the other endpoints don't handle.
+id: '12244'
+key: SPEC-313
+number: '313'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+status: '10100'
+type: '4'
+updated: 2016-10-28 16:28:06.0
+votes: '0'
+watches: '2'
+workflowId: '12347'
+---
+actions:
+- author: richvdh
+  body: |-
+    [r0.0.1 of the spec|https://matrix.org/docs/spec/r0.0.1/client_server.html] hopefully makes the intention clearer here, by explicitly deprecating a number of the endpoints. To summarise:
+
+    * {{GET /_matrix/client/r0/events}}, {{GET /_matrix/client/r0/initialSync}} and {{GET /_matrix/client/r0/rooms/\{roomId}/initialSync}} are deprecated, and replaced with {{GET /_matrix/client/r0/sync}}, which fixed a number of problems with the original design. 
+    * The exception to the above is, sadly, "peeking" (viewing the events in a room without having joined it), which still use {{/events}} and {{/rooms/\{roomId}/initalSync}}, mostly because we haven't yet come up with a better solution. Spec r0.0.1 makes a mess of this; [git master|http://matrix.org/speculator/spec/HEAD/client_server.html#room-previews] is better.
+    * {{GET /_matrix/client/r0/rooms/\{roomId}/messages}} is indeed non-realtime. It is for loading room history - for example, for back-paginating, or for working forward or backward from a point in old room history.
+
+    Do you think this is clearer in current versions of the spec, or does it still need clarification?
+  created: 2016-04-18 16:12:58.0
+  id: '12835'
+  issue: '12244'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 16:14:30.0
+- author: jimmycuadra
+  body: I should have updated this issue since r0.0.1 was released, because marking the majority of those endpoints as deprecated does help clarify things greatly. I was not aware of your second bullet point though, which does increase the confusion again. I'd normally interpret a deprecated API to mean that it's functionality that is being removed completely, or that some other API has supplanted it. It seems unusual to deprecate an API if there's anything that actually still uses it and there's not a new API to replace it. Not to mention that transitional use of deprecated APIs is not mentioned in the spec, so how would anyone have known this?
+  created: 2016-04-20 16:10:53.0
+  id: '12878'
+  issue: '12244'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-04-20 16:10:53.0
+- author: richvdh
+  body: |-
+    Perhaps a little history will help here: We decided to deprecate {{/rooms/\{roomId}/initialSync}} and {{/events}} and only after that, realised the need for peeking. Due to various reasons, the peeking implementation got done in a bit of a rush and should be considered more of a proof-of-concept/prototype than our ideal design, and we ended up using the endpoints that were almost doing what we wanted rather than speccing and implementing complete new ones. (In this case, we fully intend to break backwards compatibility to clean this up.)
+
+    Peeking actually uses a special variant of {{/events}}, with a {{room_id}} parameter: it is documented [here|http://matrix.org/speculator/spec/HEAD/client_server.html#id56] and particular mention of the fact it is special and that the regular {{/events}} is deprecated.
+
+    {{/rooms/\{roomId}/initialSync}} does not make this clear, it is true. Uh... PRs welcome?
+  created: 2016-04-24 22:10:26.0
+  id: '12890'
+  issue: '12244'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-24 22:10:26.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/605'
+  created: 2016-10-28 16:28:06.0
+  id: '13413'
+  issue: '12244'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:06.0

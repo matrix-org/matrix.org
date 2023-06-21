@@ -1,0 +1,212 @@
+---
+summary: Didn't get push notification
+---
+created: 2015-12-07 09:49:44.0
+creator: kegan
+description: |-
+  Tor mentioned me by name on Matrix HQ and I didn't get push on Android for it. The event in question:
+
+  {code}
+  {
+    "origin_server_ts": 1449388574062,
+    "user_id": "@Tor:hveem.no",
+    "event_id": "$14493885749HIWtQ:hveem.no",
+    "content": {
+      "body": "Kegan: please merge :-)",
+      "msgtype": "m.text"
+    },
+    "room_id": "!cURbafjkfsMDVwdRDQ:matrix.org",
+    "type": "m.room.message",
+    "age": 917
+  }
+  {code}
+
+  I opened the Android app several hours later and when it did a normal catch up it then binged me on the Android device (which was probably due to client-side bing logic rather than getting a push).
+id: '12182'
+key: SYAND-163
+number: '163'
+priority: '2'
+project: '10201'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2015-12-09 15:34:23.0
+votes: '0'
+watches: '5'
+workflowId: '12285'
+---
+actions:
+- author: kegan
+  body: Push was working before and seems to be working now.
+  created: 2015-12-07 09:51:15.0
+  id: '12430'
+  issue: '12182'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-12-07 09:51:15.0
+- author: bob
+  body: |-
+    Push is not working for me in Android console 0.5.2.
+
+    Since 06. Dec I am not getting any notifs in Android.
+
+    When starting the APP the sync starts and I am getting the messages.
+  created: 2015-12-07 10:10:23.0
+  id: '12432'
+  issue: '12182'
+  type: comment
+  updateauthor: bob
+  updated: 2015-12-07 10:10:23.0
+- author: dbkr
+  body: |-
+    The push notification was sent to GCM:
+
+    2015-12-06 07:56:17,032 sygnal.gcmpushkin DEBUG Successfully sent notification $14493885749HIWtQ:hveem.no to **kegan's gcm key censored** as 0:1449388576973541%869bf29ef9fd7ecd
+  created: 2015-12-07 10:30:56.0
+  id: '12433'
+  issue: '12182'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-12-07 10:30:56.0
+- author: dbkr
+  body: bob has two pushers, both of which were rejected upstream at 2015-12-06 21:08:52 causing them to be deleted.
+  created: 2015-12-07 10:46:54.0
+  id: '12434'
+  issue: '12182'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-12-07 10:46:54.0
+- author: skaverat
+  body: |-
+    {code:json}
+    {
+      "age": -38879,
+      "content": {
+        "body": "Skaverat: ping",
+        "msgtype": "m.text"
+      },
+      "event_id": "$1449493031162888BWkCB:matrix.org",
+      "origin_server_ts": 1449493031441,
+      "room_id": "!GnEEPYXUhoaHbkFBNX:matrix.org",
+      "type": "m.room.message",
+      "user_id": "@bobderbaumeister:matrix.org"
+    }
+
+    {
+      "age": -38915,
+      "content": {
+        "body": "[ZALGODNICK] ping",
+        "msgtype": "m.text"
+      },
+      "event_id": "$1449490380160532kdMzd:matrix.org",
+      "origin_server_ts": 1449490380384,
+      "room_id": "!GnEEPYXUhoaHbkFBNX:matrix.org",
+      "type": "m.room.message",
+      "user_id": "@bobderbaumeister:matrix.org"
+    }
+    {code}
+
+    Both didn't trigger a push notification to android console 279
+
+    This however triggered instantly:
+    {code:json}
+    {
+      "age": -41975,
+      "content": {
+        "body": "SkaveRat: Empirically not, but I can?",
+        "msgtype": "m.text"
+      },
+      "event_id": "$144948552161RfniL:jki.re",
+      "origin_server_ts": 1449485521982,
+      "room_id": "!GnEEPYXUhoaHbkFBNX:matrix.org",
+      "type": "m.room.message",
+      "user_id": "@erikj:jki.re"
+    }
+    {code}
+  created: 2015-12-07 13:47:32.0
+  id: '12439'
+  issue: '12182'
+  type: comment
+  updateauthor: skaverat
+  updated: 2015-12-07 13:47:32.0
+- author: jfrederickson
+  body: |-
+    Sent this message:
+
+    {code}
+    {
+      "age": 5479,
+      "content": {
+        "body": "Jon (@jon:terracrypt.net): Test again",
+        "msgtype": "m.text"
+      },
+      "event_id": "$1449532692219034dMWWm:matrix.org",
+      "origin_server_ts": 1449532692244,
+      "room_id": "!WRIhDDWHvpnipvwyHe:terracrypt.net",
+      "type": "m.room.message",
+      "user_id": "@jfred:matrix.org"
+    }
+    {code}
+
+    Synapse sent this to matrix.org:
+
+    {code}
+    2015-12-07 18:58:17,718 - synapse.push - 137 - INFO - - global/content/.m.rule.contains_user_name matches for user @jon:terracrypt.n
+    et, event $1449532692219034dMWWm:matrix.org
+    2015-12-07 18:58:17,722 - twisted - 154 - INFO - - Starting factory <twisted.web.client._HTTP11ClientFactory instance at 0x7fa006933
+    bd8>
+    2015-12-07 18:58:17,723 - synapse.http.client - 79 - INFO - - Sending request POST https://matrix.org/_matrix/push/v1/notify
+    {code}
+
+    Message was received by GCM:
+
+    {code}
+    12-07 18:58:17.018 D/GmsGcmMcsInput( 1217): Incoming message: DataMessageStanza{id=7061BBA6, from=546327642826, category=org.matrix.androidsdk.alpha, token=do_not_collapse, app_data=[AppData{key=room_id, value=!WRIhDDWHvpnipvwyHe:terracrypt.net}, AppData{key=unread, value=1}, AppData{key=body, value=Jon (@jon:terracrypt.net): Test again}, AppData{key=type, value=m.room.message}, AppData{key=content, value={"body":"Jon (@jon:terracrypt.net): Test again","msgtype":"m.text"}}, AppData{key=room_name, value=pushtest}, AppData{key=sender, value=@jfred:matrix.org}, AppData{key=id, value=$1449532692219034dMWWm:matrix.org}, AppData{key=msgtype, value=m.text}], from_trusted_server=false, persistent_id=0:1449532698109300%869bf29ef9fd7ecd, sent=1449532698095}
+    {code}
+
+    However, the application did not create a notification to display this message.
+  created: 2015-12-08 00:10:35.0
+  id: '12442'
+  issue: '12182'
+  type: comment
+  updateauthor: jfrederickson
+  updated: 2015-12-08 00:37:38.0
+- author: dbkr
+  body: Moving to Android as it looks very much like this is unrelated to synapse
+  created: 2015-12-08 10:55:42.0
+  id: '12445'
+  issue: '12182'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-12-08 10:55:42.0
+- author: skaverat
+  body: |-
+    Some logs from my HS
+
+    When I deactivate (I also get an error toast with "M_UNKNOWN" when I do this)
+    {code}
+    2015-12-09 14:33:30,051 - synapse.http.server - 92 - INFO - POST-27747 - <SynapseRequest at 0x7fdfcbaab200 method=POST uri=/_matrix/client/api/v1/pushers/set?access_token=<redacted> clientproto=HTTP/1.1 site=61448> SynapseError: 404 - No row found
+    {code}
+
+    When I activate it:
+    {code}
+    2015-12-09 14:39:55,960 - synapse.http.outbound - 122 - INFO - PUT-45 - {POST-O-155} [matrix.org] Sending request: POST matrix://matrix.org/_matrix/key/v2/query
+    2015-12-09 14:39:56,188 - synapse.http.outbound - 209 - INFO - PUT-45 - {POST-O-155} [matrix.org] Result: 200 OK
+    {code}
+
+
+    hard to see which logs are relevant, as there is sooo much noise in the HS logs
+  created: 2015-12-09 13:43:56.0
+  id: '12448'
+  issue: '12182'
+  type: comment
+  updateauthor: skaverat
+  updated: 2015-12-09 13:43:56.0
+- author: skaverat
+  body: Should be noted, that I don't have an entry in the {{pushers}} table on my HS
+  created: 2015-12-09 15:34:23.0
+  id: '12449'
+  issue: '12182'
+  type: comment
+  updateauthor: skaverat
+  updated: 2015-12-09 15:34:23.0

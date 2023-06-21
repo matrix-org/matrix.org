@@ -1,0 +1,30 @@
+---
+summary: We shouldn't let people DoS us via /sync
+---
+created: 2016-03-22 14:01:55.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  If people are hammering us too rapidly on /sync without a timeout or with too small a timeout, presumably we should insert an implicit timeout to slow them down. c.f. the current DoS from 93.92.200.183
+id: '12575'
+key: SYN-660
+number: '660'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:18.0
+votes: '0'
+watches: '2'
+workflowId: '12675'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1239'
+  created: 2016-11-07 18:29:18.0
+  id: '13827'
+  issue: '12575'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:18.0

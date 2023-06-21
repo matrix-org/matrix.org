@@ -1,0 +1,41 @@
+---
+summary: IRC library emits erroneous quit events
+---
+assignee: kegan
+created: 2015-07-03 18:03:16.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  The node IRC library is emitting quit events for EVERY channel the listener is in. This makes the AS attempt to leave every room the bot is in for the quitting client. We may need to fork the project at this rate to fix it.
+id: '11725'
+key: BOTS-73
+number: '73'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-07-31 11:48:10.0
+status: '5'
+type: '1'
+updated: 2015-07-31 11:48:10.0
+votes: '0'
+watches: '2'
+workflowId: '11826'
+---
+actions:
+- author: kegan
+  body: The problem here is that we need to listen for quits and parts in order to get the full scope of leaves from IRC. The library doesn't know which channels were really quit, so it assumes it was every one that the listener (aka the bot) was in. This is wrong. As a result, every time an IRC client QUIT event comes down the bridge's connection, it causes N onPart events (where N = the number of connected channels; so ~40) which then make the user and attempt to {{/leave}} 40 rooms that they were never in.
+  created: 2015-07-03 18:07:53.0
+  id: '11965'
+  issue: '11725'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-03 18:07:53.0
+- author: kegan
+  body: Fixed on https://github.com/matrix-org/node-irc
+  created: 2015-07-31 11:48:10.0
+  id: '12044'
+  issue: '11725'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-31 11:48:10.0

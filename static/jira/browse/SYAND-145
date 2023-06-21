@@ -1,0 +1,29 @@
+---
+summary: Have explicit, persistent login error message
+---
+created: 2015-10-19 20:45:24.0
+creator: johnwoolf
+description: |-
+  On the Android client an unsuccessful login results in a toast containing the  error message "Unable to login: (M_FORBIDDEN)".
+
+  A couple issues here:
+  - The toast is easy to miss, leaving a bewildered user looking at a stationary form without indication of something having happened. 
+  - The message itself is non-specific. There is no way to know if one failed authentication because of fat fingers or a maintenance event or whatever.  
+
+  Alternatives:
+  - Create a better error message, for example, "Invalid login credentials" or "Login credentials not recognized".
+  - Ditch the toast and update the UI to display the UX-friendly message as above.
+id: '12029'
+key: SYAND-145
+number: '145'
+priority: '3'
+project: '10201'
+reporter: johnwoolf
+status: '10100'
+type: '4'
+updated: 2015-10-19 20:45:24.0
+votes: '0'
+watches: '1'
+workflowId: '12132'
+---
+actions: null

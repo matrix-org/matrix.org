@@ -1,0 +1,32 @@
+---
+summary: Ability to delete your account
+---
+created: 2015-09-22 09:49:10.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Needed for privacy policy compliance stuff
+id: '11906'
+key: SYN-483
+number: '483'
+priority: '2'
+project: '10000'
+reporter: neb
+resolution: '3'
+resolutiondate: 2015-11-29 01:55:10.0
+status: '5'
+type: '1'
+updated: 2015-11-29 01:55:10.0
+votes: '0'
+watches: '2'
+workflowId: '12009'
+---
+actions:
+- author: matthew
+  body: dup SYN-349
+  created: 2015-11-29 01:55:10.0
+  id: '12385'
+  issue: '11906'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-29 01:55:10.0

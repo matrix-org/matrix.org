@@ -1,0 +1,80 @@
+---
+summary: Building Decentralized Moderate-able Applications with Matrix
+---
+created: 2016-08-24 21:32:26.0
+creator: pik
+description: |-
+  I've been playing around with Matrix the past couple days and built a toy comment system ( there are 5 actions, CREATE/REPLY, EDIT, UPVOTE, FLAG ). Currently Matrix is used only to provide a distributed `<message log>` where upvote/flag/edit events are aggregated on the client to produce current state:
+
+  ```html
+  <message log> -> <client> -> <aggregation> -> <state> 
+  ```
+
+  An alternative I had a chance to discuss with Matthew briefly and which seems to be in the works for Matrix as well (in some shape or form e.g. the Vector client still doesn't have /edit or /emote support) is one that looks more like this (I guess this is what happens for changes to room permissions / opts atm ?):
+  ```html
+  <message log> -> <aggregation> -> <state> -> <client>
+  ```
+
+  As long as a set of servers agree on how the particular set of messages should be aggregated they can deterministically
+  arrive at a state. It could be said that in this case `<state>` is something like a 'view' of the `<message log>` with an important exception that while the `<message log>` can deterministically produce state, it's not altogether necessary to be keep the message log (and it can be pruned from the servers, as long as reconstructing state from scratch is no longer important).
+
+  The rather neat thing about this is that a similar approach can be applied to moderation:
+
+  ```html
+  <message log> -> <redaction> -> <aggregation> -> <state>
+  ```
+
+  On the other hand this is not obviously better than most centralized services yet, since moderation is still singularly controlled by how the `<redaction>` method is statically defined and its permissions are implemented. To achieve decentralized moderation or rather to make it impossible to have a monopoly on redaction the approach could be tweak. Byzantine consensus is hard - and in this case it's probably not necessary as long as one is willing to opt for a model which sometimes produces divergent states.
+
+  The above approach could be improved on by introducing a trust paradigm <trust paradigm> instead of a static <redaction> paradigm. The <trust paradigm> parses a
+  <trust model>, at it's most basic this is constructed from .e.g a set of moderator identities that belong to the DELETE, PATCH groups - but this could be further elaborated by allowing trust to be chained or a set of identities to be obtained from a curated server. The key thing being that while this can allow for content moderation it is also now possible to revoke trust of abusive or censorial moderation. The system than looks as follows:
+
+  ```html
+  <message log> -> <trust paradigm> -> <aggregation> -> <state>
+  ```
+
+  This hasn't yet specified whether the <trust paradigm> application should happen client or server side. In more intensive use-cases it would make sense for it to happen on home-servers since the parsing may simply be too slow for the client. In this case I could see Home Servers being able to implement one, or any # of the following:
+
+  1) Has a single <trust paradigm> and only serves a single state.
+  <message log> -> <trust paradigm> -> <aggregation> -> <state> -> <client>
+
+  2) Has a single <trust paradigm> but also serves unfiltered message log (up to XXX time in history) for the client to
+  aggregate manually:
+  ( Recent events )
+  <message log> -> <client>
+  ( Historical events, Message Log is pruned)
+  <message log> -> <trust paradigm> -> <aggregation> -> <state> -> <client>
+
+  3) Support a subset of possible trust-models:
+  client -> /POST <trust-model-1>
+  <message log> -> <trust paradigm (trust-model-1)> -> <aggregation> -> <state (1)> -> <client>
+  client -> /POST <trust-model-2>
+  <message log> -> <trust paradigm (trust-model-2)> -> <aggregation> -> <state (2)> -> <client>
+
+  Somethings which would really help to have in Matrix, or directions whose development would greatly interest me: 
+
+  - The ability to create a room with minimal Proof of Work per message threshold. ( The PoW Threshold could be advertised by the initial HS creating the room, which would then proceed to drop messages not meeting such a threshold - other HS could choose to respect this Threshold or not ).
+
+  - Strong Identities ( cryptographically verified ).
+id: '12804'
+key: SPEC-446
+number: '446'
+priority: '3'
+project: '10001'
+reporter: pik
+status: '10100'
+type: '4'
+updated: 2016-10-28 16:28:44.0
+votes: '0'
+watches: '2'
+workflowId: '12904'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/702'
+  created: 2016-10-28 16:28:44.0
+  id: '13511'
+  issue: '12804'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:44.0

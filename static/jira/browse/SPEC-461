@@ -1,0 +1,30 @@
+---
+summary: m.tag' is missing its schema
+---
+created: 2016-10-06 17:05:07.0
+creator: neb
+description: Submitted by @richvdh:sw1v.org
+id: '12851'
+key: SPEC-461
+number: '461'
+priority: '1'
+project: '10001'
+reporter: neb
+resolution: '10100'
+resolutiondate: 2016-10-13 17:53:55.0
+status: '5'
+type: '1'
+updated: 2016-10-13 17:53:55.0
+votes: '0'
+watches: '2'
+workflowId: '12951'
+---
+actions:
+- author: richvdh
+  body: Actually it looks fine. The schema of a tag is deliberately undefined.
+  created: 2016-10-13 17:53:47.0
+  id: '13184'
+  issue: '12851'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-13 17:53:47.0

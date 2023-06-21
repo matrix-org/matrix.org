@@ -1,0 +1,38 @@
+---
+summary: The only way to change a user's power_level currently is to set the power_levels for everyone in the room.  This seems very hacky.
+---
+created: 2014-10-06 17:26:59.0
+creator: matthew
+description: ''
+id: '10454'
+key: SPEC-49
+number: '49'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-21 11:47:06.0
+status: '5'
+type: '1'
+updated: 2015-01-21 11:47:06.0
+votes: '0'
+watches: '3'
+workflowId: '10558'
+---
+actions:
+- author: leonerd
+  body: The point of putting them all in one big blob was to ensure atomicity of checking the changing user's levels against the levels of other users they are setting. This ensures that you can't get stuck in a situation where the two remaining "room ops" each race to fight for removing ops from the other, thus leaving the room broken. This forces linearisation.
+  created: 2014-11-10 13:52:01.0
+  id: '10757'
+  issue: '10454'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-10 13:52:01.0
+- author: kegan
+  body: 'Landed on matrix-doc master: {{drafts/general_api.rst}} - Patching power levels'
+  created: 2015-01-21 11:47:06.0
+  id: '11170'
+  issue: '10454'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-21 11:47:06.0

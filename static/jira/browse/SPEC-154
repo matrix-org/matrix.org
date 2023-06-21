@@ -1,0 +1,31 @@
+---
+summary: Nowhere in the spec do we mention the dir= param, but all of synapse's pagination code depends on it!
+---
+assignee: kegan
+created: 2015-04-18 12:23:53.0
+creator: matthew
+description: ''
+id: '11343'
+key: SPEC-154
+number: '154'
+priority: '1'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-10-14 15:29:29.0
+status: '5'
+type: '1'
+updated: 2015-10-14 15:29:29.0
+votes: '0'
+watches: '2'
+workflowId: '11443'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-doc/pull/94
+  created: 2015-10-14 15:29:29.0
+  id: '12266'
+  issue: '11343'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-14 15:29:29.0

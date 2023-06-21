@@ -1,0 +1,29 @@
+---
+summary: Synapse on startup can fail to send pending transactions to ASes
+---
+created: 2016-01-20 10:44:43.0
+creator: kegan
+description: |-
+  _Filing this as a BOTS issue rather than SYN to keep all AS/bridge related "stuff" together_
+
+  Context:
+  The IRC bridge relayed a matrix message that was 3 days old.
+
+  Details:
+  The message was sent as the server was shot in the head. The entry was added to the db as something that should be sent. Then it restarted. On startup, the recoverer checks for all "down" (prev connection failures) ASes and then tries to retry to those ASes. But in this case, the freenode bridge never had any connectivity problems so it wasn't ever marked as down (but it still had pending items to send). As a result, the message was never sent to the AS until there was a connection failure, which happened 3 days later.
+
+  This should be a pretty simple fix to check for pending transactions on startup as opposed to down status, since that's what really counts.
+id: '12321'
+key: BOTS-154
+number: '154'
+priority: '2'
+project: '10101'
+reporter: kegan
+status: '1'
+type: '1'
+updated: 2016-01-20 10:44:43.0
+votes: '0'
+watches: '1'
+workflowId: '12426'
+---
+actions: null

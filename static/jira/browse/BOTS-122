@@ -1,0 +1,32 @@
+---
+summary: IRC AS needs a way to feed back to users if the connection bounces
+---
+created: 2015-10-01 01:54:57.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  1:31:20 AM Ryan Rix The IRC AS should notify users if the connection bounces, I keep having to re-nick myself but don't notice since I don't see those sorts of notices .
+id: '11984'
+key: BOTS-122
+number: '122'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:57:05.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:57:05.0
+votes: '0'
+watches: '2'
+workflowId: '12087'
+---
+actions:
+- author: kegan
+  body: Fixed on `develop`
+  created: 2016-06-02 10:57:05.0
+  id: '12974'
+  issue: '11984'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:57:05.0

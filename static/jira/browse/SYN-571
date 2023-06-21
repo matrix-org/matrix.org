@@ -1,0 +1,28 @@
+---
+summary: How do I configure push to tell me when people join/leave a channel (or other metadata)?
+---
+created: 2015-02-16 01:44:47.0
+creator: matthew
+description: ''
+id: '11067'
+key: SYN-571
+number: '571'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:28:50.0
+votes: '0'
+watches: '2'
+workflowId: '12369'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1460'
+  created: 2016-11-07 18:28:50.0
+  id: '13765'
+  issue: '11067'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:50.0

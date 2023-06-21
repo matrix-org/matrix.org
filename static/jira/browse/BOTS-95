@@ -1,0 +1,24 @@
+---
+summary: How should we ratelimit traffic from ASes?
+---
+created: 2015-08-24 10:18:09.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  It's easy for ASes to get ratelimited to the point of uselessness - e.g. try msging nickserv HELP and see the mess :(
+id: '11816'
+key: BOTS-95
+number: '95'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-01-04 15:24:07.0
+status: '5'
+type: '1'
+updated: 2016-01-04 15:24:07.0
+votes: '0'
+watches: '1'
+workflowId: '11919'
+---
+actions: null

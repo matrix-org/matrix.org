@@ -1,0 +1,36 @@
+---
+summary: Exception, lack of 'width' param
+---
+created: 2015-02-18 11:55:01.0
+creator: erikj
+description: |-
+  {noformat}
+  2015-02-18 11:49:36,045 - synapse.rest.media.v1.base_resource - 57 - ERROR -  - 400: Missing integer argument 'width'
+  Traceback (most recent call last):
+    File "synapse/rest/media/v1/base_resource.py", line 55, in wrapped_request_handler
+  SynapseError: 400: Missing integer argument 'width'
+  {noformat}
+id: '11087'
+key: SYN-282
+number: '282'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-02-18 13:38:22.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:26:16.0
+votes: '0'
+watches: '2'
+workflowId: '11187'
+---
+actions:
+- author: markjh
+  body: https://github.com/matrix-org/synapse/pull/81
+  created: 2015-02-18 12:06:43.0
+  id: '11275'
+  issue: '11087'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-02-18 12:06:43.0

@@ -1,0 +1,27 @@
+---
+summary: Ignore calls we have previously hung up
+---
+assignee: dbkr
+created: 2014-09-25 10:31:00.0
+creator: dbkr
+description: |-
+  * Receive a call
+  * Reject it
+  * Refresh browser
+  * Cal starts ringing again
+id: '10390'
+key: SYWEB-88
+number: '88'
+priority: '3'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-03-12 14:18:15.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:03.0
+votes: '0'
+watches: '1'
+workflowId: '10493'
+---
+actions: null

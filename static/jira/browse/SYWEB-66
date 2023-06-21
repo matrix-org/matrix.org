@@ -1,0 +1,30 @@
+---
+summary: Out-of-order voip call notifs
+---
+created: 2014-09-20 01:00:12.0
+creator: matthew
+description: ''
+id: '10352'
+key: SYWEB-66
+number: '66'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-20 15:01:59.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:48.0
+votes: '0'
+watches: '2'
+workflowId: '10455'
+---
+actions:
+- author: dbkr
+  body: I can't reproduce this now
+  created: 2015-03-20 15:01:59.0
+  id: '11417'
+  issue: '10352'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-20 15:01:59.0

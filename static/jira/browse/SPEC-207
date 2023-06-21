@@ -1,0 +1,33 @@
+---
+summary: 'AS API: tokens should be unique'
+---
+assignee: kegan
+created: 2015-08-16 11:05:17.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  We allow users to set the tokens for the AS. We need to be clear that these tokens MUST be unique, as that is the only way the HS can identify the AS when it uses the CS API
+id: '11797'
+key: SPEC-207
+number: '207'
+priority: '2'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-10-14 15:16:50.0
+status: '5'
+type: '1'
+updated: 2015-10-14 15:16:50.0
+votes: '0'
+watches: '2'
+workflowId: '11899'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-doc/pull/102
+  created: 2015-10-14 15:16:50.0
+  id: '12264'
+  issue: '11797'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-14 15:16:50.0

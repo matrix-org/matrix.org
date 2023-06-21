@@ -1,0 +1,30 @@
+---
+summary: We need a way to whitelist or auth given IPs as creating accounts without captchas
+---
+created: 2014-09-19 13:03:00.0
+creator: matthew
+description: ''
+id: '10341'
+key: SYN-56
+number: '56'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2014-09-23 01:34:25.0
+status: '5'
+type: '2'
+updated: 2014-09-25 17:41:31.0
+votes: '0'
+watches: '1'
+workflowId: '10444'
+---
+actions:
+- author: matthew
+  body: dups SYN-60
+  created: 2014-09-23 01:34:26.0
+  id: '10376'
+  issue: '10341'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 01:34:26.0

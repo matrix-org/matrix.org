@@ -1,0 +1,28 @@
+---
+summary: Project layout
+---
+assignee: kegan
+created: 2014-11-12 17:28:01.0
+creator: kegan
+description: |-
+  We are almost following http://www.artandlogic.com/blog/2013/05/ive-been-doing-it-wrong-part-1-of-3/ when it comes to project structure, but not quite.
+
+  Notably, there is no top-level {{app}} directory, making it REALLY ANNOYING to say where our {{.js}} files are (see {{test/karma.conf.js}} for proof of the ugliness currently). I am proposing that the folders {{home, login, recents, room, user, settings, components}} all go into a directory {{app}} e.g. {{app/home}}. This *includes* {{components}} since that contains huge amounts of our business logic. I also want to move the {{app*}} files which are currently in the top-level into the {{app}} folder.
+
+  I am not proposing we leak our test {{.spec.js}} files into the general project structure, unlike what the link above advises.
+id: '10648'
+key: SYWEB-153
+number: '153'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-11-17 13:48:10.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:55.0
+votes: '0'
+watches: '1'
+workflowId: '10748'
+---
+actions: null

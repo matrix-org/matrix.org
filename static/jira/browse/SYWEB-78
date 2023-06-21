@@ -1,0 +1,38 @@
+---
+summary: We are still leaking room IDs *everywhere*
+---
+created: 2014-09-22 18:26:12.0
+creator: matthew
+description: ''
+id: '10368'
+key: SYWEB-78
+number: '78'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-24 01:46:22.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:27.0
+votes: '0'
+watches: '2'
+workflowId: '10471'
+---
+actions:
+- author: manu
+  body: The case of the screenshot happens because you join a new room. As there is no API to make an initialSync on a particular room, the webclient cannot know the room states/metadata. It cannot know the members count and so, it does not try to rename this 1:1 room.
+  created: 2014-09-23 08:43:36.0
+  id: '10377'
+  issue: '10368'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-23 08:43:36.0
+- author: matthew
+  body: I think i've fixed all of these now (i hope)
+  created: 2014-09-24 01:46:22.0
+  id: '10432'
+  issue: '10368'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-24 01:46:22.0

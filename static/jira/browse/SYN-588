@@ -1,0 +1,48 @@
+---
+summary: /sync doesn't return in a timely manner if timeout=1
+---
+created: 2016-01-11 16:24:44.0
+creator: kegan
+description: ''
+id: '12288'
+key: SYN-588
+number: '588'
+priority: '2'
+project: '10000'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:55.0
+votes: '0'
+watches: '2'
+workflowId: '12393'
+---
+actions:
+- author: kegan
+  body: |-
+    Sample requests on my local HS:
+    {code}
+    Chronological order:
+    200 GET OK - http://localhost:8008/_matrix/client/v2_alpha/sync?filter=1&timeout=30000&since=s7749_5_4_14_1&access_token=MDA...
+    Failed because I ./synctl stopped it - http://localhost:8008/_matrix/client/v2_alpha/sync?filter=1&timeout=30000&since=s7750_5_4_14_1&access_token=MDA...
+    [ ./synctl start ]
+    Blocks forever - http://localhost:8008/_matrix/client/v2_alpha/sync?filter=1&timeout=1&since=s7750_5_4_14_1&access_token=MDA...
+    [3 mins later]
+    Blocks forever - http://localhost:8008/_matrix/client/v2_alpha/sync?filter=1&timeout=1&since=s7750_5_4_14_1&access_token=MDA...
+    {code}
+
+    This works correctly if {{timeout=0}}
+  created: 2016-01-11 16:31:19.0
+  id: '12561'
+  issue: '12288'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-01-11 16:32:07.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1470'
+  created: 2016-11-07 18:28:55.0
+  id: '13775'
+  issue: '12288'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:55.0

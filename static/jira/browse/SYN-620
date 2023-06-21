@@ -1,0 +1,39 @@
+---
+summary: Support vhosts over federation
+---
+created: 2016-02-06 12:24:25.0
+creator: neb
+description: |-
+  Two problems:
+  * Federation doesn't send an SNI indication (because twisted), so for vhosted servers we tend to end up on the default.
+  * We send the server_name in the Host header, rather than what the SRV tells us to use.
+id: '12372'
+key: SYN-620
+number: '620'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:05.0
+votes: '1'
+watches: '5'
+workflowId: '12477'
+---
+actions:
+- author: richvdh
+  body: 'doublemalt (re)submitted a PR to try to get twisted to implement SNI in the http client: https://github.com/twisted/twisted/pull/281.'
+  created: 2016-07-13 14:43:59.0
+  id: '13054'
+  issue: '12372'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-13 14:43:59.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1491'
+  created: 2016-11-07 18:29:05.0
+  id: '13797'
+  issue: '12372'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:05.0

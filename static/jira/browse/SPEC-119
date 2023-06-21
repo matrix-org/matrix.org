@@ -1,0 +1,30 @@
+---
+summary: We should ratelimit based on message size as well as message rate
+---
+created: 2015-02-27 12:02:04.0
+creator: matthew
+description: ''
+id: '11146'
+key: SPEC-119
+number: '119'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-12-10 15:53:18.0
+status: '5'
+type: '2'
+updated: 2015-12-10 15:53:18.0
+votes: '0'
+watches: '2'
+workflowId: '11246'
+---
+actions:
+- author: illicitonion
+  body: We limited message size. That should be sufficient.
+  created: 2015-12-10 15:53:11.0
+  id: '12460'
+  issue: '11146'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-12-10 15:53:11.0

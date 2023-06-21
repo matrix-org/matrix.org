@@ -1,0 +1,60 @@
+---
+summary: When users change avatar URL the m.room.member event lacks 'prev_content'
+---
+assignee: erikj
+created: 2014-09-19 15:46:01.0
+creator: leonerd
+description: |-
+  A moment ago Kegan set a new avatar URL. The event down the event stream was:
+
+  {noformat}
+    {
+      age => 155527,
+      content => {
+        avatar_url => "https://matrix.org/_matrix/content/QGtlZ2FuOm1hdHJpeC5vcmcgZMiBXLrEZiQnSvyXcrdautg.aW1hZ2UvanBlZw==.jpeg",
+        displayname => "Kegan",
+        membership => "join",
+        prev => "join",
+      },
+      event_id => "kCeAWjrhhu\@matrix.org",
+      membership => "join",
+      room_id => "!cURbafjkfsMDVwdRDQ:matrix.org",
+      state_key => "\@kegan:matrix.org",
+      ts => 1411137390771,
+      type => "m.room.member",
+      user_id => "\@kegan:matrix.org",
+    },
+  {noformat}
+
+  Because this lacked a 'prev_content' my client thought it was a JOIN event, thus displaying:
+
+  {noformat}
+    15:36  => Kegan [@kegan:matrix.org] joined
+  {noformat}
+id: '10342'
+key: SYN-57
+number: '57'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2014-09-19 16:46:54.0
+status: '5'
+type: '1'
+updated: 2014-09-22 17:20:49.0
+votes: '0'
+watches: '2'
+workflowId: '10445'
+---
+actions:
+- author: erikj
+  body: |-
+    This was due to the fact that the _prev_state_ key for the event referenced one that was not in the database. This is due to a bug (that has since been fixed) where we sometimes stored event ids in the table without a "@matrix.org" suffix.
+
+    Therefore, this should only effect state that updates quite old state on matrix.org.
+  created: 2014-09-19 16:46:38.0
+  id: '10344'
+  issue: '10342'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-19 16:46:38.0

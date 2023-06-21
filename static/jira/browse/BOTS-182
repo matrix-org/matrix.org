@@ -1,0 +1,40 @@
+---
+summary: 'IRC AS: Support /whois in the admin room'
+---
+created: 2016-04-12 10:04:57.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  This is specifically so users can check to see if the IRC user they want to speak to is online, given we can't do member list syncing I->M
+id: '12620'
+key: BOTS-182
+number: '182'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:37:27.0
+status: '5'
+type: '1'
+updated: 2016-06-08 04:32:18.0
+votes: '0'
+watches: '3'
+workflowId: '12720'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/50
+  created: 2016-06-02 10:37:27.0
+  id: '12959'
+  issue: '12620'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:37:27.0
+- author: rryan
+  body: This is marked resolved but based on reading the code I don't believe it is -- does that mean someone has done this but it's not merged to master yet? I'd like to contribute a fix here if nobody else is working on it!
+  created: 2016-06-08 04:32:18.0
+  id: '12992'
+  issue: '12620'
+  type: comment
+  updateauthor: rryan
+  updated: 2016-06-08 04:32:18.0

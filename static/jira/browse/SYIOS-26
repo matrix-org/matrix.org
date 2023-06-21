@@ -1,0 +1,36 @@
+---
+summary: The app can work offline when debackgrounded but not when restarting from cold
+---
+assignee: gforet
+created: 2014-12-19 10:31:02.0
+creator: manu
+description: |-
+  Currently, when restarting the app with a permanent MXStore, [MXSession start] currently calls the success callback only after the response of the first event stream request.
+
+  Find a way to indicate to the app that some data are already available (but not up-to-date) so that the app can work offline.
+id: '10837'
+key: SYIOS-26
+number: '26'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-01-06 09:40:37.0
+status: '5'
+type: '4'
+updated: 2015-01-06 09:40:37.0
+votes: '0'
+watches: '1'
+workflowId: '10937'
+---
+actions:
+- author: manu
+  body: |-
+    [MXSession start] takes a new callback parameter: onStoreDataReady. This callback is called when the data from the store is loaded and usable by the SDK client.
+    The legacy callback (onInitialSyncDone) is still here but has been renamed to onServerSyncDone. It is still called when the store data is in-sync with the home server.
+  created: 2014-12-24 09:56:25.0
+  id: '11029'
+  issue: '10837'
+  type: comment
+  updateauthor: manu
+  updated: 2014-12-24 09:56:25.0

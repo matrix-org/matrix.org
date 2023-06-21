@@ -1,0 +1,28 @@
+---
+summary: Changing the display name in a m.room.member event doesn't appear in incremental sync
+---
+created: 2016-06-10 14:18:05.0
+creator: markjh
+description: ''
+id: '12701'
+key: SYN-707
+number: '707'
+priority: '3'
+project: '10000'
+reporter: markjh
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:36.0
+votes: '0'
+watches: '2'
+workflowId: '12801'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1382'
+  created: 2016-11-07 18:29:36.0
+  id: '13868'
+  issue: '12701'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:36.0

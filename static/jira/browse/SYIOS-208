@@ -1,0 +1,27 @@
+---
+summary: '[MXSession startWithMessagesLimit] is now useless as the limit is not passed to /sync'
+---
+assignee: manu
+created: 2016-02-18 09:17:40.0
+creator: manu
+description: |-
+  The limit argument has no more effect since v2.
+  Should we remove the method or fix it (in the same manner as the 250 limit was set)?
+
+  The method is heavily used in SDK tests to set initial test conditions. Note this can be implemented by other means.
+id: '12407'
+key: SYIOS-208
+number: '208'
+priority: '1'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2016-02-23 16:57:34.0
+status: '6'
+type: '1'
+updated: 2016-02-23 16:57:40.0
+votes: '0'
+watches: '1'
+workflowId: '12512'
+---
+actions: null

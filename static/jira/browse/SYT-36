@@ -1,0 +1,38 @@
+---
+summary: 30rooms/12thirdpartyinvite.pl breaks IO::Async::Loop::Epoll
+---
+created: 2015-11-09 14:11:19.0
+creator: leonerd
+description: |-
+  {noformat}
+    Testing if: 3pid invite join valid signature but unreachable ID server are rejected... Use of uninitialized value in numeric eq (==) at /usr/share/perl5/IO/Async/Loop/Epoll.pm line 288.
+  FAIL:
+   | Timed out waiting for test at ./run-tests.pl line 462.
+   +----------------------
+  {noformat}
+
+  However, by overriding to fallback and use {{IO::Async::Loop::Poll}}:
+
+  {noformat}
+  $ IO_ASYNC_LOOP=Poll ./run-tests-in-tox 
+  ...
+    Testing if: 3pid invite join valid signature but unreachable ID server are rejected... PASS
+  {noformat}
+
+  Low-prio. for now as it has an easy workaround and only seems to affect me anyway; most people don't have the epoll loop installed anyway.
+id: '12096'
+key: SYT-36
+number: '36'
+priority: '3'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-10 15:07:59.0
+status: '5'
+type: '1'
+updated: 2015-11-10 15:07:59.0
+votes: '0'
+watches: '1'
+workflowId: '12199'
+---
+actions: null

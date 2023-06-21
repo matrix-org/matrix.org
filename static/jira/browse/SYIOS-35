@@ -1,0 +1,33 @@
+---
+summary: Crash reporting
+---
+assignee: manu
+created: 2014-12-22 14:28:17.0
+creator: matthew
+description: ''
+id: '10856'
+key: SYIOS-35
+number: '35'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-24 10:15:42.0
+status: '5'
+type: '2'
+updated: 2015-02-24 10:15:42.0
+votes: '0'
+watches: '2'
+workflowId: '10956'
+---
+actions:
+- author: manu
+  body: |-
+    It has been fixed with SYIOS-87.
+    When the app crashes, next time the user will start it, it will be invited to send the crash log by email as bug reports.
+  created: 2015-02-24 10:15:42.0
+  id: '11312'
+  issue: '10856'
+  type: comment
+  updateauthor: manu
+  updated: 2015-02-24 10:15:42.0

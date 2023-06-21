@@ -1,0 +1,28 @@
+---
+summary: if I log in as "Ralith", the access token does not work for sync, but if I log in as "ralith" it does. Both logins succeed.
+---
+created: 2016-07-02 06:54:38.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12730'
+key: SYN-717
+number: '717'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:40.0
+votes: '0'
+watches: '2'
+workflowId: '12830'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1560'
+  created: 2016-11-07 18:29:40.0
+  id: '13878'
+  issue: '12730'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:40.0

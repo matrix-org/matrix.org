@@ -1,0 +1,38 @@
+---
+summary: users without webcams can't join VCs via verto
+---
+created: 2015-09-19 16:02:37.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11891'
+key: BOTS-111
+number: '111'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '4'
+resolutiondate: 2015-09-24 09:18:36.0
+status: '5'
+type: '1'
+updated: 2015-09-24 09:18:36.0
+votes: '0'
+watches: '2'
+workflowId: '11994'
+---
+actions:
+- author: kegan
+  body: This is a client-side problem. This is not specific to the Verto AS.
+  created: 2015-09-24 09:16:51.0
+  id: '12161'
+  issue: '11891'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-24 09:16:51.0
+- author: kegan
+  body: https://github.com/vector-im/vector-web/issues/188
+  created: 2015-09-24 09:18:36.0
+  id: '12162'
+  issue: '11891'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-09-24 09:18:36.0

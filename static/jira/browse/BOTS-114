@@ -1,0 +1,22 @@
+---
+summary: matrix-appservice-purple needs to exist
+---
+created: 2015-09-20 00:50:27.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  I resurrected node-purple; someone needs to wire it into a matrix-appservice-bridge to finish off bridging Lync and friends
+id: '11901'
+key: BOTS-114
+number: '114'
+priority: '2'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-09-20 00:50:27.0
+votes: '1'
+watches: '2'
+workflowId: '12004'
+---
+actions: null

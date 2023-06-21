@@ -1,0 +1,28 @@
+---
+summary: Test NACL signing.
+---
+created: 2014-10-14 10:43:36.0
+creator: markjh
+description: ''
+id: '10469'
+key: SYN-100
+number: '100'
+priority: '3'
+project: '10000'
+reporter: markjh
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:20.0
+votes: '0'
+watches: '2'
+workflowId: '10573'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1230'
+  created: 2016-11-07 18:27:20.0
+  id: '13553'
+  issue: '10469'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:20.0

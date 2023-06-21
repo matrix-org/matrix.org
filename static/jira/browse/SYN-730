@@ -1,0 +1,28 @@
+---
+summary: increase default file transfer limit to 50MB
+---
+created: 2016-07-19 09:19:01.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12758'
+key: SYN-730
+number: '730'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:45.0
+votes: '0'
+watches: '2'
+workflowId: '12858'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1567'
+  created: 2016-11-07 18:29:45.0
+  id: '13890'
+  issue: '12758'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:45.0

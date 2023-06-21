@@ -1,0 +1,23 @@
+---
+summary: If images have an alpha channel, we shouldn't add a dropshadow clientside
+---
+created: 2014-11-25 22:06:19.0
+creator: matthew
+description: |-
+  ...otherwise it looks really ugly if you end up with two dropshadows.
+
+  See SYN-170 for the serverside bug.
+id: '10709'
+key: SYWEB-178
+number: '178'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2014-11-25 22:06:19.0
+votes: '0'
+watches: '1'
+workflowId: '10809'
+---
+actions: null

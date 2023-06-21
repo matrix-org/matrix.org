@@ -1,0 +1,38 @@
+---
+summary: Desktop notifications can spam badly - especially after coming back from sleep
+---
+created: 2014-09-16 01:20:32.0
+creator: matthew
+description: ''
+id: '10065'
+key: SYWEB-21
+number: '21'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-08 14:22:57.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:59.0
+votes: '0'
+watches: '2'
+workflowId: '10403'
+---
+actions:
+- author: kegan
+  body: We should really be tagging notifications so when you flood the browser can simply clobber.
+  created: 2014-10-31 09:45:57.0
+  id: '10713'
+  issue: '10065'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-31 09:45:57.0
+- author: kegan
+  body: Notifications are now tagged so they can clobber.
+  created: 2014-12-08 14:22:57.0
+  id: '10982'
+  issue: '10065'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-08 14:22:57.0

@@ -1,0 +1,30 @@
+---
+summary: Support specifying e.g. a different distribution model.
+---
+created: 2014-10-01 16:18:19.0
+creator: erikj
+description: ''
+id: '10438'
+key: SPEC-38
+number: '38'
+priority: '3'
+project: '10001'
+reporter: erikj
+resolution: '3'
+resolutiondate: 2015-01-15 18:03:13.0
+status: '5'
+type: '2'
+updated: 2015-01-15 18:03:13.0
+votes: '0'
+watches: '2'
+workflowId: '10542'
+---
+actions:
+- author: leonerd
+  body: Dupe of SPEC-45
+  created: 2015-01-15 18:03:13.0
+  id: '11135'
+  issue: '10438'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-01-15 18:03:13.0

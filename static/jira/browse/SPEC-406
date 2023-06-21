@@ -1,0 +1,41 @@
+---
+summary: Document event size errors
+---
+created: 2016-05-21 17:49:48.0
+creator: jimmycuadra
+description: ''
+id: '12671'
+key: SPEC-406
+number: '406'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+status: '1'
+type: '1'
+updated: 2016-10-28 16:28:34.0
+votes: '0'
+watches: '2'
+workflowId: '12771'
+---
+actions:
+- author: richvdh
+  body: |-
+    Yes, there really really should.
+
+    Synapse returns an HTTP 413 with a matrix error code of {{M_TOO_LARGE}} when a client tries to send such an event.
+
+    Clients aren't expected to provide a way of sending the complete works of Shakespeare in an event...
+  created: 2016-05-23 17:27:39.0
+  id: '12929'
+  issue: '12671'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-23 17:27:39.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/679'
+  created: 2016-10-28 16:28:34.0
+  id: '13488'
+  issue: '12671'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:34.0

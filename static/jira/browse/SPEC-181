@@ -1,0 +1,31 @@
+---
+summary: Specify the HS <-> IS communication protocol
+---
+assignee: richvdh
+created: 2015-06-08 13:55:50.0
+creator: leonerd
+description: ''
+id: '11624'
+key: SPEC-181
+number: '181'
+priority: '3'
+project: '10001'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2016-04-18 15:37:28.0
+status: '5'
+type: '2'
+updated: 2016-04-18 15:37:28.0
+votes: '0'
+watches: '2'
+workflowId: '11725'
+---
+actions:
+- author: richvdh
+  body: This is http://matrix.org/speculator/spec/HEAD/identity_service.html.
+  created: 2016-04-18 15:37:14.0
+  id: '12833'
+  issue: '11624'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 15:37:14.0

@@ -1,0 +1,30 @@
+---
+summary: pztrn got a series of 400 errors in trying to log in on android. 4th time lucky
+---
+created: 2015-08-31 00:45:18.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11843'
+key: SYAND-122
+number: '122'
+priority: '1'
+project: '10201'
+reporter: neb
+resolution: '3'
+resolutiondate: 2015-09-01 12:28:12.0
+status: '5'
+type: '1'
+updated: 2015-09-01 12:28:12.0
+votes: '0'
+watches: '2'
+workflowId: '11946'
+---
+actions:
+- author: m-ylecollen
+  body: SYAND-121
+  created: 2015-09-01 12:28:12.0
+  id: '12080'
+  issue: '11843'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-01 12:28:12.0

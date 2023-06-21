@@ -1,0 +1,43 @@
+---
+summary: Ability for users or admins to send arbitrary IRC commands through the IRC AS
+---
+created: 2015-04-23 16:54:02.0
+creator: matthew
+description: ''
+id: '11361'
+key: BOTS-27
+number: '27'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-06-02 10:35:37.0
+status: '5'
+type: '2'
+updated: 2016-06-02 10:35:37.0
+votes: '0'
+watches: '3'
+workflowId: '11461'
+---
+actions:
+- author: illicitonion
+  body: |-
+    I'm not convinced we want this functionality (though I'm also not convinced that we don't).
+
+    In general, I would rather provide an equal baseline for all clients/bridges, and force us to actually represent any meaningful command in the actual Matrix spec, rather than breaking our abstraction layers. I don't like, for instance, the idea of some IRC users using DCC file transfer which wouldn't at all work for non-IRC users, when we have a file transfer spec.
+
+    Anyone want to have a discussion?
+  created: 2016-01-05 13:09:45.0
+  id: '12504'
+  issue: '11361'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-01-05 13:09:45.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/49
+  created: 2016-06-02 10:35:37.0
+  id: '12958'
+  issue: '11361'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:35:37.0

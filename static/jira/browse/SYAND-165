@@ -1,0 +1,30 @@
+---
+summary: 'Notifcation says: "User YXZ joined", but when opening Matrix is it said "User YXZ changed their avatar"'
+---
+created: 2015-12-13 11:41:30.0
+creator: bob
+description: ''
+id: '12206'
+key: SYAND-165
+number: '165'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2016-02-17 07:15:56.0
+status: '5'
+type: '1'
+updated: 2016-02-17 07:15:56.0
+votes: '0'
+watches: '2'
+workflowId: '12309'
+---
+actions:
+- author: m-ylecollen
+  body: it has been fixed in 0.5.3
+  created: 2016-02-17 07:15:56.0
+  id: '12632'
+  issue: '12206'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 07:15:56.0

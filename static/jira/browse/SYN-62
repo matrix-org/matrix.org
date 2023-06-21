@@ -1,0 +1,28 @@
+---
+summary: IP-based channel bans as per IRC.
+---
+created: 2014-09-23 11:28:26.0
+creator: matthew
+description: ''
+id: '10373'
+key: SYN-62
+number: '62'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:15.0
+votes: '0'
+watches: '2'
+workflowId: '10476'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1216'
+  created: 2016-11-07 18:27:15.0
+  id: '13544'
+  issue: '10373'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:15.0

@@ -1,0 +1,30 @@
+---
+summary: any user can currently query any other user's displayname and avatar over federation if they know their userid.
+---
+created: 2016-03-26 20:44:53.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  this seems needlessly leaky
+id: '12583'
+key: SPEC-374
+number: '374'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:26.0
+votes: '0'
+watches: '2'
+workflowId: '12683'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/657'
+  created: 2016-10-28 16:28:26.0
+  id: '13466'
+  issue: '12583'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:26.0

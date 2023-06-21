@@ -1,0 +1,32 @@
+---
+summary: Need more rationale for why /sync response separates state and timeline
+---
+created: 2016-07-04 06:47:02.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  See https://vector.im/beta/#/room/!cURbafjkfsMDVwdRDQ:matrix.org/$14676102054038bmzdo:ralith.com and similar
+id: '12736'
+key: SPEC-423
+number: '423'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-07-13 10:57:31.0
+status: '5'
+type: '1'
+updated: 2016-07-13 10:57:31.0
+votes: '0'
+watches: '2'
+workflowId: '12836'
+---
+actions:
+- author: richvdh
+  body: fixed by https://github.com/matrix-org/matrix-doc/pull/352
+  created: 2016-07-13 10:57:31.0
+  id: '13052'
+  issue: '12736'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-13 10:57:31.0

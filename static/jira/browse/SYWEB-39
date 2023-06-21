@@ -1,0 +1,39 @@
+---
+summary: Handle join events where the displayname or avatar has been changed
+---
+assignee: kegan
+created: 2014-09-17 15:11:30.0
+creator: erikj
+description: |-
+  When a user updates their displayname and/or avatar the server will send out join events containing the updated displayname/avatar. By looking at the _prev_content_ key it is possible to display these as e.g.:
+
+  {noformat}
+  Foo changed their display name from Bob to Alice
+  {noformat}
+id: '10314'
+key: SYWEB-39
+number: '39'
+priority: '2'
+project: '10004'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-09-23 09:49:10.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:30.0
+votes: '0'
+watches: '2'
+workflowId: '10416'
+---
+actions:
+- author: kegan
+  body: |-
+    https://github.com/matrix-org/synapse/commit/b5c9d994
+
+    May need to be further prettified but it's there.
+  created: 2014-09-23 09:49:10.0
+  id: '10378'
+  issue: '10314'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-23 09:49:10.0

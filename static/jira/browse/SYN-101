@@ -1,0 +1,33 @@
+---
+summary: Add flag to make HS accept unsigned requests for backwards compat.
+---
+created: 2014-10-14 10:48:13.0
+creator: markjh
+description: |-
+  To make it easier to deploy versions of synapse that sign HTTP requests we could add a flag to allow unsigned requests so that servers that are too old to sign the requests can still talk to us.
+
+  Something like "--allow-unsigned".
+id: '10470'
+key: SYN-101
+number: '101'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '2'
+resolutiondate: 2014-10-24 12:01:39.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:06:40.0
+votes: '0'
+watches: '1'
+workflowId: '10574'
+---
+actions:
+- author: markjh
+  body: We've already pushed the new  home server with other changes that broken backwards compatibility and everyone had to update anyway.
+  created: 2014-10-24 12:01:39.0
+  id: '10576'
+  issue: '10470'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-24 12:01:39.0

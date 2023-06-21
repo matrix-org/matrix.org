@@ -1,0 +1,35 @@
+---
+summary: Human ID Rules are vague and will interact badly with federation auth
+---
+created: 2014-10-01 17:31:34.0
+creator: leonerd
+description: |-
+  There's a start at rules for limiting Unicode homograph attacks in user/room ID strings documented in docs/human-id-rules.rst.
+
+  At this stage it's more of a vague description than a concrete specification of rules. It needs expanding into a concrete definition, and merging into the main spec.
+
+  There's also the complex question of how it will interact with server federation security rules, because of the fact that two different servers may have different UCDs, and therefore come to different decisions about the mixed-scriptness of a given ID string. They therefore cannot use the local UCD to reject incoming federation events, otherwise two servers could come to different opinions on the validity of the same message, and hence the state of the room as a whole.
+id: '10439'
+key: SPEC-39
+number: '39'
+priority: '3'
+project: '10001'
+reporter: leonerd
+resolution: '3'
+resolutiondate: 2015-01-08 17:09:28.0
+status: '5'
+type: '1'
+updated: 2015-01-08 17:09:28.0
+votes: '0'
+watches: '2'
+workflowId: '10543'
+---
+actions:
+- author: kegan
+  body: SPEC-1
+  created: 2015-01-08 17:09:28.0
+  id: '11073'
+  issue: '10439'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-08 17:09:28.0

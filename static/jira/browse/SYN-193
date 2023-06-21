@@ -1,0 +1,66 @@
+---
+summary: 500 when trying to hit content URL
+---
+created: 2014-12-08 11:02:15.0
+creator: kegan
+description: |-
+  Tried to upload a file, which worked. Tried to hit the URL, which 500d.
+
+  https://matrix.org/_matrix/content/QGtlZ2FuOm1hdHJpeC5vcmccSDBeJhBhmdGYeQRcKpXGwMW
+
+  I suspect there was something wrong with the upload given I have been toying with it, but I don't expect the HS to 500.
+id: '10785'
+key: SYN-193
+number: '193'
+priority: '2'
+project: '10000'
+reporter: kegan
+resolution: '4'
+resolutiondate: 2016-01-06 10:19:42.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:19:42.0
+votes: '0'
+watches: '2'
+workflowId: '10885'
+---
+actions:
+- author: erikj
+  body: |-
+    Might be related:
+    {noformat}
+    2015-03-06 10:09:48,565 - twisted - 455 - ERROR -  - Unhandled Error
+    Traceback (most recent call last):
+      File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/protocols/basic.py", line 571, in dataReceived
+        why = self.lineReceived(line)
+      File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/web/http.py", line 1656, in lineReceived
+        self.allContentReceived()
+      File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/web/http.py", line 1731, in allContentReceived
+        req.requestReceived(command, path, version)
+      File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/web/http.py", line 827, in requestReceived
+        self.process()
+    --- <exception caught here> ---
+      File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/web/server.py", line 189, in process
+        self.render(resrc)
+      File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/web/server.py", line 238, in render
+        body = resrc.render(self)
+      File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/web/resource.py", line 250, in render
+        return m(request)
+      File "synapse/rest/media/v0/content_repository.py", line 127, in render_GET
+        
+    exceptions.IndexError: list index out of range
+    {noformat}
+  created: 2015-03-06 15:32:56.0
+  id: '11358'
+  issue: '10785'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-03-06 15:32:56.0
+- author: erikj
+  body: That's not a valid URL anymore
+  created: 2016-01-06 10:19:42.0
+  id: '12525'
+  issue: '10785'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 10:19:42.0

@@ -1,0 +1,50 @@
+---
+summary: We need a way of defining groups that users belong to.
+---
+created: 2015-02-12 20:45:04.0
+creator: matthew
+description: |-
+  We need to somehow define & maintain decentralised lists of users.  These would be useful for:
+
+   * Letting users declare affiliation to certain organisations/groups/guilds/whatever in their profiles.  (e.g. so that @matthew:matrix.org can prove that he's an official member of the Matrix.org team, or that @stalund:matrix.org can prove he's an official OpenWebRTC team member, or whatever)
+   * Applying ACLs per group rather than per user
+
+  Suggestions on a postcard...
+id: '11039'
+key: SPEC-107
+number: '107'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:00.0
+votes: '0'
+watches: '2'
+workflowId: '11139'
+---
+actions:
+- author: matthew
+  body: This could also help us identify users who have been bridged in from afar (e.g. replace the (IRC) suffix)
+  created: 2015-03-14 02:47:29.0
+  id: '11395'
+  issue: '11039'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-14 02:47:29.0
+- author: matthew
+  body: This should just be profile info.  It'd also be useful to publish what clients people are using, as an advertising feature.
+  created: 2015-08-30 01:29:59.0
+  id: '12078'
+  issue: '11039'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-08-30 01:29:59.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/419'
+  created: 2016-10-28 16:27:00.0
+  id: '13270'
+  issue: '11039'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:00.0

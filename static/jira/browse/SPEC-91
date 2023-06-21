@@ -1,0 +1,30 @@
+---
+summary: Change default power levels.
+---
+created: 2015-01-15 13:14:42.0
+creator: erikj
+description: ''
+id: '10939'
+key: SPEC-91
+number: '91'
+priority: '3'
+project: '10001'
+reporter: erikj
+resolution: '3'
+resolutiondate: 2015-12-01 16:20:44.0
+status: '5'
+type: '2'
+updated: 2015-12-01 16:20:44.0
+votes: '0'
+watches: '2'
+workflowId: '11039'
+---
+actions:
+- author: richvdh
+  body: just a dupe of SPEC-89
+  created: 2015-12-01 16:20:44.0
+  id: '12407'
+  issue: '10939'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 16:20:44.0

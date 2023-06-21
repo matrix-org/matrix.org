@@ -1,0 +1,31 @@
+---
+summary: Invite cancellation is indistinct from kick/leave
+---
+created: 2016-03-22 15:47:02.0
+creator: leonerd
+description: |-
+  If you opt to leave a room (or someone else kicks you), you receive an {{m.room.member}} event that sets your own {{membership}} state to {{leave}}. If someone cancels an invite on you before you joined, you get a membership state change to {{leave}}.
+
+  The only way to distinguish these two cases is to examine the previous state, to see if it used to be {{invite}} or {{joined}}. However, the membership state event you receive over the event stream doesn't contain the previous state, it only contains the event ID the previous state was in. Since you're no longer a member of the room, you don't have the necessary permission to look at that state event to remind yourself what that state was.
+id: '12576'
+key: SPEC-372
+number: '372'
+priority: '2'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:25.0
+votes: '0'
+watches: '2'
+workflowId: '12676'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/655'
+  created: 2016-10-28 16:28:25.0
+  id: '13464'
+  issue: '12576'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:25.0

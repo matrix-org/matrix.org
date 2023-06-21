@@ -1,0 +1,22 @@
+---
+summary: Need a button to disable signups, to prevent everyone running an HS running a public matrix hosting service...
+---
+created: 2014-09-16 00:37:45.0
+creator: matthew
+description: ''
+id: '10040'
+key: SYN-16
+number: '16'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-06 10:45:21.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:22:43.0
+votes: '0'
+watches: '1'
+workflowId: '10350'
+---
+actions: null

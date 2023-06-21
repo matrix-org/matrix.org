@@ -1,0 +1,49 @@
+---
+summary: matrix.org IRC AS seemingly stopped for 30 minutes and then spontaneously restarted
+---
+assignee: kegan
+created: 2015-07-10 16:04:48.0
+creator: matthew
+description: |-
+  2015-07-10 13:29:24 INFO:req [jgqzfu5pn6ogw] [I->M] onMessage: irc.freenode.net from=ljarvis to=#ruby action={"action":"emote","protocol":"irc","text":"throws beer everywhere"}
+  2015-07-10 13:29:24 INFO:req [jgqzfu5pn6ogw] [I->M] Mapped to action: {"action":"emote","protocol":"matrix","body":"throws beer everywhere"}
+  2015-07-10 13:29:24 INFO:req [1hoxmi3cdm688] [I->M] onMessage: irc.freenode.net from=floWS to=#dogecoin action={"action":"message","protocol":"irc","text":"re o/"}
+  2015-07-10 13:29:24 INFO:req [1hoxmi3cdm688] [I->M] Mapped to action: {"action":"message","protocol":"matrix","body":"re o/"}
+  2015-07-10 13:29:24 INFO:req [4gsgp8z5470gc] [I->M] onMessage: irc.freenode.net from=cryptix to=#ipfs action={"action":"message","protocol":"irc","text":"than you can use /ipns/$domain instead of /ipns/$peerid"}
+  2015-07-10 14:03:41 INFO:stats statsd endpoint: {"hostname":"127.0.0.1","port":9878}
+  2015-07-10 14:03:41 INFO:irc-ident Configuring ident server => {"enabled":true,"port":1113,"hashUsernames":false}
+  2015-07-10 14:03:41 INFO:database connectToDatabase -> nedb://data
+
+  (times are UTC apparently)
+id: '11744'
+key: BOTS-76
+number: '76'
+priority: '1'
+project: '10101'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-07-31 10:34:32.0
+status: '5'
+type: '1'
+updated: 2015-07-31 10:34:32.0
+votes: '0'
+watches: '2'
+workflowId: '11845'
+---
+actions:
+- author: kegan
+  body: Looks like this is the same as BOTS-79.
+  created: 2015-07-13 13:40:06.0
+  id: '11987'
+  issue: '11744'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-13 13:40:06.0
+- author: kegan
+  body: 'Reason to believe that this is a manifestation of BOTS-79 : The restart is the process OOMing.'
+  created: 2015-07-31 10:34:32.0
+  id: '12041'
+  issue: '11744'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-31 10:34:32.0

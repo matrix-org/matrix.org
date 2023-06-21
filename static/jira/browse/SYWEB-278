@@ -1,0 +1,32 @@
+---
+summary: Cannot delete a content push rule if its pattern is "*"
+---
+assignee: dbkr
+created: 2015-02-13 14:29:41.0
+creator: manu
+description: |-
+  To reproduce:
+   - In the Per-Word notifications section, add a new rule with * in the text input
+   - Click on its delete button
+  -> The deletion has no effect
+
+  The webclient makes a wrong request for deleting the rule:
+  bq. https://matrix.org/_matrix/client/api/v1/pushrules/global/content/undefined?access_token=...
+
+  This is certainly due to rule_id that is missing for this rule when the HS responds to GET /pushRules/
+id: '11046'
+key: SYWEB-278
+number: '278'
+priority: '2'
+project: '10004'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-02-25 14:21:42.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:59.0
+votes: '0'
+watches: '1'
+workflowId: '11146'
+---
+actions: null

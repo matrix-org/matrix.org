@@ -1,0 +1,28 @@
+---
+summary: On startup handle unprocessed events.
+---
+created: 2014-10-31 09:38:22.0
+creator: erikj
+description: ''
+id: '10602'
+key: SYN-122
+number: '122'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:23.0
+votes: '0'
+watches: '2'
+workflowId: '10702'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1240'
+  created: 2016-11-07 18:27:23.0
+  id: '13559'
+  issue: '10602'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:23.0

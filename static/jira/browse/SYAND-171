@@ -1,0 +1,86 @@
+---
+summary: Missing push notifications
+---
+assignee: mitchhentges
+created: 2016-01-12 11:22:31.0
+creator: kegan
+description: |-
+  I noticed that push notifications on Android seemed to be rather flakey. Sometimes I would get pushed. Sometimes I would not get pushed. I spent this morning trying to reproduce the bug in controlled circumstances and have now succeeded.
+
+  This was reproduced on build {{develop-288}}.
+
+  Repro steps:
+   - Open the app.
+   - With a *different* account, send a message to the android app. Make sure it is received. Everything is normal.
+   - Close the app by pressing the HOME button.
+   - Run {{adb logcat -v time | grep -Ei "onMessage|catchup"}} - The purpose of this command is to tail the logs and pick out when the android app receives a push notification ({{GcmListenerServer: onMessageReceived}}, and when the catchup is initiated {{MXSession: catchupEventStream}}).
+   - Change the network the android device is on to a *slow* network else you'll never kill the connection in time.
+   - With the *different* account, send a message with a bing word (e.g. mention the android user's name).
+   - Watching the output of logcat, immediately kill the wifi/mobile data connection the moment {{onMessageReceived}} is logged. You need to be fast.
+   - If you did it correctly, the notification will *not appear*. This is expected because the catchup request didn't succeed. This is not a bug.
+   - Now, open the app. The message mentioning the user should not be present.
+   - Close the app by pressing the HOME button.
+   - Re-enable the network connection (full speed).
+   - No notification ever appears, even though logcat indicates that a catchup is indeed being performed. This is the bug.
+
+  Notes:
+   - You *must* open the app the 2nd time else this bug will not occur.
+   - I've tried these repro steps a few times now and it is 100% reliable.
+id: '12290'
+key: SYAND-171
+number: '171'
+priority: '1'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-02-17 15:33:49.0
+status: '5'
+type: '1'
+updated: 2016-02-17 15:33:49.0
+votes: '0'
+watches: '2'
+workflowId: '12395'
+---
+actions:
+- author: mitchhentges
+  body: Confirmed for commit a4f6fd5fe589c79cd226293fd76420cb2fa812b6.
+  created: 2016-02-16 18:38:50.0
+  id: '12614'
+  issue: '12290'
+  type: comment
+  updateauthor: mitchhentges
+  updated: 2016-02-16 18:38:50.0
+- author: mitchhentges
+  body: A workaround to this issue is to disable GCM
+  created: 2016-02-16 19:10:48.0
+  id: '12615'
+  issue: '12290'
+  type: comment
+  updateauthor: mitchhentges
+  updated: 2016-02-16 19:10:48.0
+- author: mitchhentges
+  body: |-
+    This issue appears to be here: https://github.com/matrix-org/matrix-android-sdk/blob/master/matrix-sdk/src/main/java/org/matrix/androidsdk/util/BingRulesManager.java#L84
+    When `getAllBingRules` fails, `isReady` isn't set to true again. This should be an easy fix
+  created: 2016-02-16 20:54:47.0
+  id: '12616'
+  issue: '12290'
+  type: comment
+  updateauthor: mitchhentges
+  updated: 2016-02-16 20:54:47.0
+- author: mitchhentges
+  body: PR at https://github.com/matrix-org/matrix-android-sdk/pull/36
+  created: 2016-02-16 22:33:42.0
+  id: '12617'
+  issue: '12290'
+  type: comment
+  updateauthor: mitchhentges
+  updated: 2016-02-16 22:33:42.0
+- author: mitchhentges
+  body: Putting "in review"
+  created: 2016-02-16 23:08:05.0
+  id: '12618'
+  issue: '12290'
+  type: comment
+  updateauthor: mitchhentges
+  updated: 2016-02-16 23:08:05.0

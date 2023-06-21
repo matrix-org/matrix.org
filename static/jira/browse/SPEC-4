@@ -1,0 +1,52 @@
+---
+summary: Client capability negotiation (for VoIP and other features)
+---
+created: 2014-09-16 00:36:11.0
+creator: matthew
+description: ''
+id: '10036'
+key: SPEC-4
+number: '4'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '4'
+resolutiondate: 2015-01-21 11:11:25.0
+status: '5'
+type: '2'
+updated: 2015-01-21 11:11:25.0
+votes: '0'
+watches: '2'
+workflowId: '10324'
+---
+actions:
+- author: markjh
+  body: |-
+    Can this be sent along with the presence information when a client connects?
+
+    If multiple clients are online for a given user at the same time how would we aggregate the different capabilities for the different clients?
+  created: 2014-09-16 10:50:30.0
+  id: '10200'
+  issue: '10036'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-16 10:50:30.0
+- author: leonerd
+  body: This could/should become part of the per-device presence information, along with "am I a mobiile phone"-like signal to suggest limited typing/screen space.
+  created: 2014-09-16 12:59:21.0
+  id: '10212'
+  issue: '10036'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-16 12:59:21.0
+- author: matthew
+  body: |-
+    The fact we still haven't got a way to negotiate what features are available between a given pair of clients is increasingly unfortunate, especially for VoIP.  I'm not sure that presence solves this, given presence isn't currently per-device, and we may need to announce/query a large set of capabilities for the extensions a given client supports rather than use brute force.
+
+    Philipp Hanke recommended we take a close look at XEP-115, as a way of advertising & negotiating caps with minimal bandwidth by doing it in terms of hashes rather than actual content.
+  created: 2014-12-24 16:00:27.0
+  id: '11031'
+  issue: '10036'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-24 16:00:27.0

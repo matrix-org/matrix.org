@@ -1,0 +1,23 @@
+---
+summary: Test "events from a past life" of SUT
+---
+created: 2016-01-07 16:43:35.0
+creator: leonerd
+description: |-
+  There's a bunch of self-repair behaviour that the server-under-test ought to perform; e.g. if presented with a {{m.room.member}} event that it had signed for one of its users, that it doesn't remember. It would be nice to test those, because it's rare that situation comes up in practice, and we don't have any existing test for it.
+
+  As to how to implement it, it would need some server-specific code to steal the SUT's private key (e.g. in synapse's case it's just stored in a text file), so that sytest can use it to fake a signature of a "past life" version of the server.
+id: '12275'
+key: SYT-45
+number: '45'
+priority: '3'
+project: '10300'
+reporter: leonerd
+status: '10100'
+type: '2'
+updated: 2016-01-07 16:43:35.0
+votes: '0'
+watches: '1'
+workflowId: '12380'
+---
+actions: null

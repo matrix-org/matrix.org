@@ -1,0 +1,95 @@
+---
+summary: Using /join to join a remote room from a federated homeserver fails to display room name
+---
+created: 2015-03-10 14:41:09.0
+creator: djsundog
+description: |-
+  Steps to reproduce:
+
+  1) Create a new account on http://homeserver.reclaim.technology:8008
+  2) Log into account on http://homeserver.reclaim.technology:8008
+  3) Join a public room by clicking on it on the displayed list
+  4) Once in room, type: /join #matrix:matrix.org
+
+  Expected behavior: state placing user in #matrix:matrix.org and showing user relevant info
+  Actual behavior: Room name is not populated and the room ID is displayed instead
+
+  JS console output after /join #matrix-dev:matrix.org:
+
+  "Unknown error: {"data":{"error":"Joining #code:matrix.org"}}" dialog-service.js:97
+  .showError() dialog-service.js:97
+  $scope.send/<.onError() room-controller.js:322
+  .sendMessage/<() event-handler-service.js:642
+  f/<() angular.min.js:112
+  Pe/this.$get</l.prototype.$eval() angular.min.js:125
+  Pe/this.$get</l.prototype.$digest() angular.min.js:122
+  Pe/this.$get</l.prototype.$apply() angular.min.js:126
+  <anonymous> app-directive.js:24
+  n.event.dispatch() jquery-2.1.3.min.js:3
+  n.event.add/r.handle() jquery-2.1.3.min.js:3
+
+  "resolveRoomIdentifier: #code:matrix.org -> !pQcaFHTRybSgwLISeL:matrix.org" event-handler-service.js:369
+  "[EventStream] Got response from s1717_2721_246 to s1717_2760_246" event-stream-service.js:108
+  "[EventStream] Got response from s1717_2760_246 to s1769_2760_246" event-stream-service.js:108
+  "handleRoomInitialSync: !pQcaFHTRybSgwLISeL:matrix.org (51 state events) 1 events" event-handler-service.js:509
+  "discarding duplicate event: {
+      "age": 60,
+      "content": {
+          "avatar_url": "mxc://homeserver.reclaim.technology/APsmndrHTJZyHJeSzOThrpDf",
+          "displayname": "DJSundog",
+          "membership": "join"
+      },
+      "event_id": "$142599759228JgFNt:homeserver.reclaim.technology",
+      "origin_server_ts": 1425997592459,
+      "room_id": "!pQcaFHTRybSgwLISeL:matrix.org",
+      "state_key": "@DJSundog:homeserver.reclaim.technology",
+      "type": "m.room.member",
+      "user_id": "@DJSundog:homeserver.reclaim.technology"
+  }" event-handler-service.js:407
+  "joinRoom: Joined room !pQcaFHTRybSgwLISeL:matrix.org" event-handler-service.js:683
+  "Viewing => !pQcaFHTRybSgwLISeL:matrix.org"
+
+  Note, if you then log in using the same account on matrix.org, the room name still shows as the room ID instead. Has not resolved overnight.
+id: '11190'
+key: SYN-301
+number: '301'
+priority: '1'
+project: '10000'
+reporter: djsundog
+resolution: '3'
+resolutiondate: 2015-08-28 10:57:55.0
+status: '5'
+type: '1'
+updated: 2015-08-28 10:57:55.0
+votes: '0'
+watches: '3'
+workflowId: '11290'
+---
+actions:
+- author: erikj
+  body: |-
+    This is probably caused since we incrementally persist state for new rooms rather than persisting it all atomically. If a client then gets given these events it will probably trigger the client to fetch the current state (which will be a partial view since not all state would have been retrieved at that point).
+
+    This is a theory and needs to be confirmed.
+  created: 2015-03-10 14:50:51.0
+  id: '11376'
+  issue: '11190'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-03-10 14:50:51.0
+- author: djsundog
+  body: 'Additional info: reproduction seems to be spurious at best, I''ve registered accounts both through matrix.org and homeserver.reclaim.techology at this point and had it both fail and succeed using /join #blah:matrix.org from homeserver.reclaim.technology - let me know if there are specific cases you''d like me to test'
+  created: 2015-03-10 14:54:01.0
+  id: '11377'
+  issue: '11190'
+  type: comment
+  updateauthor: djsundog
+  updated: 2015-03-10 14:54:01.0
+- author: matthew
+  body: "Tor also has scenarios with federated homeservers losing room names:\n\nMar 10 17:01\nTor: and I have two channels that's federated from matrix.org that lost their aliases again\t\n #matrix-dev being one of them\t\n I can see the state when clicking on the cog, but the bufferlist displays the room id"
+  created: 2015-03-10 17:19:31.0
+  id: '11378'
+  issue: '11190'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-10 17:19:31.0

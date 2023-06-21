@@ -1,0 +1,41 @@
+---
+summary: Calling scrollback() whilst a req is ongoing results in dupes
+---
+assignee: kegan
+created: 2015-11-30 09:56:06.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  We only update the token when we get the response. We probably should be kinder to clients and give them a cached promise from the first invocation until the request returns
+id: '12155'
+key: SYJS-35
+number: '35'
+priority: '3'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-03-18 10:38:48.0
+status: '5'
+type: '1'
+updated: 2016-03-18 10:38:48.0
+votes: '0'
+watches: '3'
+workflowId: '12258'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/pull/50
+  created: 2015-12-04 17:37:50.0
+  id: '12428'
+  issue: '12155'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-12-04 17:37:50.0
+- author: richvdh
+  body: Looks like this is fixed
+  created: 2016-03-18 10:38:48.0
+  id: '12765'
+  issue: '12155'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-03-18 10:38:48.0

@@ -1,0 +1,23 @@
+---
+summary: Partial text-entry should be remembered per room
+---
+assignee: kegan
+created: 2015-02-13 15:14:24.0
+creator: matthew
+description: ''
+id: '11049'
+key: SYWEB-279
+number: '279'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-03 11:32:57.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:59.0
+votes: '0'
+watches: '1'
+workflowId: '11149'
+---
+actions: null

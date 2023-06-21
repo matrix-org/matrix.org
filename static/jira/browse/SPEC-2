@@ -1,0 +1,28 @@
+---
+summary: Decide how to handle HSes which break the power level rules
+---
+created: 2014-09-15 23:44:00.0
+creator: matthew
+description: ''
+id: '10015'
+key: SPEC-2
+number: '2'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-10-28 16:26:39.0
+votes: '0'
+watches: '2'
+workflowId: '10322'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/454'
+  created: 2016-10-28 16:26:39.0
+  id: '13227'
+  issue: '10015'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:39.0

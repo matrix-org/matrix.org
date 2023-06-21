@@ -1,0 +1,32 @@
+---
+summary: e2e upload API allows you to POST keys for other user's UIDs
+---
+created: 2015-10-05 15:40:34.0
+creator: leonerd
+description: |-
+  An accidental bug in sytest:
+    https://github.com/matrix-org/sytest/blob/b5c03fb7764d5d64a4272d5af88bcc46fac90ecd/tests/41end-to-end-keys/01-upload-key.pl#L21
+
+  creates a user whose name is {{_ANON_-6:localhost}} but then manages to POST a key for a different {{user_id}}. I expect this ought to have failed with 403 instead.
+id: '11999'
+key: SYN-496
+number: '496'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:26.0
+votes: '0'
+watches: '2'
+workflowId: '12102'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1396'
+  created: 2016-11-07 18:28:26.0
+  id: '13705'
+  issue: '11999'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:26.0

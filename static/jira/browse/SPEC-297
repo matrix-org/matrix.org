@@ -1,0 +1,30 @@
+---
+summary: Clarify which events come down on which keys in /sync
+---
+created: 2015-12-10 12:06:48.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  At the moment things like the ephemeral block have an unhelpful description just saying that typing is something that can appear in that block. We should explicitly state which events go where or provide a way to deduce them based on the kind of event and then explain the steps you perform to work it out
+id: '12193'
+key: SPEC-297
+number: '297'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:01.0
+votes: '0'
+watches: '2'
+workflowId: '12296'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/594'
+  created: 2016-10-28 16:28:01.0
+  id: '13402'
+  issue: '12193'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:01.0

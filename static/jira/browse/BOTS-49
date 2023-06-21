@@ -1,0 +1,42 @@
+---
+summary: IRC bridge should turn IRC joins/parts into presence state rather than actual matrix join/parts
+---
+assignee: illicitonion
+created: 2015-06-12 16:04:44.0
+creator: matthew
+description: ''
+id: '11646'
+key: BOTS-49
+number: '49'
+priority: '2'
+project: '10101'
+reporter: matthew
+resolution: '2'
+resolutiondate: 2016-01-04 16:36:49.0
+status: '5'
+type: '2'
+updated: 2016-01-04 16:36:49.0
+votes: '0'
+watches: '3'
+workflowId: '11747'
+---
+actions:
+- author: kegan
+  body: Provided clients sort member lists based on presence, we may be able to get away by just sending presence events.
+  created: 2015-08-04 16:59:11.0
+  id: '12050'
+  issue: '11646'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-08-04 16:59:11.0
+- author: illicitonion
+  body: |-
+    This proposal is a hack to compensate for two issues:
+    1) Synapse cannot scale to full membership list syncing. We should fix this in synapse (or dendron).
+    2) UX spam for many joins and parts. We should fix this in the clients. https://github.com/vector-im/vector-web/issues/349 covers this for vector web.
+  created: 2016-01-04 16:36:49.0
+  id: '12495'
+  issue: '11646'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-01-04 16:36:49.0

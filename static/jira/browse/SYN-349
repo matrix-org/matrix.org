@@ -1,0 +1,30 @@
+---
+summary: Implement delete user (from SPEC-50)
+---
+created: 2015-04-18 12:35:39.0
+creator: matthew
+description: ''
+id: '11350'
+key: SYN-349
+number: '349'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-08-19 11:16:06.0
+status: '5'
+type: '2'
+updated: 2016-08-19 11:16:06.0
+votes: '0'
+watches: '3'
+workflowId: '11450'
+---
+actions:
+- author: richvdh
+  body: we have /account/deactivate
+  created: 2016-08-19 11:16:06.0
+  id: '13102'
+  issue: '11350'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-08-19 11:16:06.0

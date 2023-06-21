@@ -1,0 +1,38 @@
+---
+summary: '"My Rooms" doesn''t display UTF-8 correctly'
+---
+created: 2015-02-09 10:45:45.0
+creator: kegan
+description: ''
+id: '11021'
+key: SYAND-19
+number: '19'
+priority: '2'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-02-18 13:36:16.0
+status: '5'
+type: '1'
+updated: 2015-02-18 13:36:16.0
+votes: '0'
+watches: '2'
+workflowId: '11121'
+---
+actions:
+- author: m-ylecollen
+  body: Neither chrome..
+  created: 2015-02-18 13:33:51.0
+  id: '11276'
+  issue: '11021'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-02-18 13:33:51.0
+- author: kegan
+  body: This is fixed on develop
+  created: 2015-02-18 13:36:16.0
+  id: '11277'
+  issue: '11021'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-02-18 13:36:16.0

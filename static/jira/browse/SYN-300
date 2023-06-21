@@ -1,0 +1,28 @@
+---
+summary: Send-content flag for pushers
+---
+created: 2015-03-05 14:28:51.0
+creator: dbkr
+description: ''
+id: '11162'
+key: SYN-300
+number: '300'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:47.0
+votes: '0'
+watches: '3'
+workflowId: '11262'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1291'
+  created: 2016-11-07 18:27:47.0
+  id: '13611'
+  issue: '11162'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:47.0

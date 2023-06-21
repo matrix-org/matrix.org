@@ -1,0 +1,38 @@
+---
+summary: We need a config option to disable registration
+---
+created: 2015-02-17 23:08:05.0
+creator: dbkr
+description: ''
+id: '11084'
+key: SYN-279
+number: '279'
+priority: '1'
+project: '10000'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-03-06 10:33:04.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:22:42.0
+votes: '0'
+watches: '2'
+workflowId: '11184'
+---
+actions:
+- author: dbkr
+  body: Obviously we need to still allow ASes to create users
+  created: 2015-02-18 00:43:17.0
+  id: '11274'
+  issue: '11084'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-02-18 00:43:17.0
+- author: matthew
+  body: We should also disable registration by default, providing an admin script to create new accounts at the commandline (or even an admin interface on the web client), otherwise this really is a huge security issue for the network as a whole, in terms of making it trivial for people to autoregister spammy accounts etc.
+  created: 2015-02-19 12:47:21.0
+  id: '11294'
+  issue: '11084'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-19 12:49:19.0

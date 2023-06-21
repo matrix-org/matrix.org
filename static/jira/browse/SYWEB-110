@@ -1,0 +1,31 @@
+---
+summary: private rooms like "Matrix Internal" leak their room ID in desktop notifs
+---
+assignee: kegan
+created: 2014-10-27 10:12:19.0
+creator: matthew
+description: ''
+id: '10489'
+key: SYWEB-110
+number: '110'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-27 17:06:02.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:53.0
+votes: '0'
+watches: '2'
+workflowId: '10593'
+---
+actions:
+- author: kegan
+  body: Reproduced locally.
+  created: 2014-10-27 16:50:11.0
+  id: '10600'
+  issue: '10489'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 16:50:11.0

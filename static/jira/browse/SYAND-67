@@ -1,0 +1,22 @@
+---
+summary: Screen doesn't turn on for incoming messages
+---
+created: 2015-04-10 09:42:20.0
+creator: kegan
+description: ''
+id: '11325'
+key: SYAND-67
+number: '67'
+priority: '2'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-04-10 14:51:41.0
+status: '5'
+type: '1'
+updated: 2015-04-10 14:51:41.0
+votes: '0'
+watches: '1'
+workflowId: '11425'
+---
+actions: null

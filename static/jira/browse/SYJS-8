@@ -1,0 +1,64 @@
+---
+summary: We should track a 3PID for room members for friendlier identification in the UI than MXIDs
+---
+created: 2015-06-10 13:33:53.0
+creator: matthew
+description: |-
+  This is the flipside of SPEC-185.  For improved UI/UX, we want apps to only show matrix IDs in the UI/UX as a last resort.  Therefore we need to help them track the 3PID they should be using to refer to users with missing or ambiguous displaynames in a given room.
+
+  I propose we track on RoomMember a single field called 3PID which is the 3PID which we are using as a friendly identifier for the user in the UI.  Obviously mxid continues to be the actual pkey for identifying to the user everywhere else.
+
+  This 3PID mapping would be populated two different ways:
+
+  1. When a peer sends a room invite or joins a room, they will need to publish the 3PID they wish to be identified by (if any) in the event of their displayname being inadequate.  This can also give apps the option of associating the matrix user with an entry in an external addressbook by correlating 3PID.
+
+  2. When your own user starts a conversation with a peer (e.g. inviting them into a room), it may do so by identifying the user via 3PID (and then resolving this to an mxid via the ID service in order to actually communicate to them).  In this scenario, the UI should probably label the invited peer with the 3PID that we chose to identify them, rather than showing them as an mxid or alternative 3PID in the absence of a displayname.
+
+  It's unclear what you do if there's a conflict between #1 and #2 (e.g. if you invite a user into a room with one 3PID, and then they say they want to be referred to by another 3PID, what do we do?  They will probably have published their preferred 3PID to the client anyway, so the mapping will already have leaked to the client - we might as well use it in the UI at that point.  But it could be a bad UX if I invite someone as matthew@matrix.org but they then pop up in my recents as matilda@gmail.com...)
+id: '11630'
+key: SYJS-8
+number: '8'
+priority: '2'
+project: '10204'
+reporter: matthew
+resolution: '2'
+resolutiondate: 2015-11-03 10:25:19.0
+status: '5'
+type: '2'
+updated: 2015-11-03 10:25:19.0
+votes: '0'
+watches: '2'
+workflowId: '11731'
+---
+actions:
+- author: kegan
+  body: |-
+    bq. a single field called 3PID which is the 3PID which we are using as a friendly identifier for the user in the UI
+
+    What type is this? Should we allow multiple preferred 3PIDs (hinting at an array?). Should we be specifying the type of 3PID (e.g. 'email', 'github', etc) hinting at using {{Objects}} over {{Strings}}?
+
+    bq. It's unclear what you do if there's a conflict between #1 and #2 (e.g. if you invite a user into a room with one 3PID, and then they say they want to be referred to by another 3PID, what do we do? They will probably have published their preferred 3PID to the client anyway, so the mapping will already have leaked to the client - we might as well use it in the UI at that point. But it could be a bad UX if I invite someone as matthew@matrix.org but they then pop up in my recents as matilda@gmail.com...)
+
+    wrt conflicts we should always go with the user's intent. If Alice invites {{matthew@matrix.org}} then it should always be labelled as that to Alice, even if Matthew sends back stuff saying they want to be known as {{matilda@gmail.com}}. It doesn't really make sense to overwrite the user on this one.
+  created: 2015-06-10 13:48:21.0
+  id: '11840'
+  issue: '11630'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-10 13:48:21.0
+- author: kegan
+  body: Blocked on semantics/implementation for SPEC-185
+  created: 2015-06-10 13:49:02.0
+  id: '11841'
+  issue: '11630'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-10 13:49:25.0
+- author: kegan
+  body: Rejected as a concept due to SPEC-185 - We don't want to leak 3PIDs just for disambiguation.
+  created: 2015-11-03 10:25:19.0
+  id: '12298'
+  issue: '11630'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 10:25:19.0

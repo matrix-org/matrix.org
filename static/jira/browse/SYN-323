@@ -1,0 +1,33 @@
+---
+summary: Make AS registration idempotent
+---
+created: 2015-03-28 15:13:27.0
+creator: nolan
+description: |-
+  In trying to create an application service, one of the first tasks I perform is requesting a hs_token. If my service is already registered, though, the registration call fails.
+
+  I understand there is an unregister call, but it seems like it'd be more convenient if the registration call either did nothing for identical cases, or updated the registration if it differs. It would simplify AS initialization if it could simply register itself rather than also handling the case of previous AS registration but lost token.
+id: '11269'
+key: SYN-323
+number: '323'
+priority: '3'
+project: '10000'
+reporter: nolan
+resolution: '10000'
+resolutiondate: 2015-05-14 16:52:10.0
+status: '5'
+type: '1'
+updated: 2015-05-26 16:13:34.0
+votes: '0'
+watches: '2'
+workflowId: '11369'
+---
+actions:
+- author: dbkr
+  body: ASes don't register at all now, so this no longer relevant. Thanks for pointing it out though.
+  created: 2015-05-14 16:52:10.0
+  id: '11758'
+  issue: '11269'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-05-14 16:52:10.0

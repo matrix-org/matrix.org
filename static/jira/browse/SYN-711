@@ -1,0 +1,30 @@
+---
+summary: URL Preview can go wild and chew CPU for 60s
+---
+created: 2016-06-14 18:01:55.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  See https://vector.im/develop/#/room/#matrix-core:matrix.org/$1465910496442jtvso:jki.re
+id: '12709'
+key: SYN-711
+number: '711'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:37.0
+votes: '0'
+watches: '2'
+workflowId: '12809'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1557'
+  created: 2016-11-07 18:29:37.0
+  id: '13872'
+  issue: '12709'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:37.0

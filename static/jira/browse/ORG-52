@@ -1,0 +1,43 @@
+---
+summary: swagger ui is missing the base path
+---
+created: 2016-04-10 12:15:29.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  it has no mention of /_matrix/client/r0 at all, misleading people into trying things like domain.com/createRoom
+id: '12617'
+key: ORG-52
+number: '52'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-05-06 12:39:10.0
+status: '5'
+type: '1'
+updated: 2016-05-06 12:39:10.0
+votes: '0'
+watches: '2'
+workflowId: '12717'
+---
+actions:
+- author: richvdh
+  body: |-
+    It is in tiny grey letters at the bottom of http://matrix.org/docs/api/client-server/, but it's certainly easy to miss.
+
+    We could try to make it more visible, but adding it to each endpoint would require more significant patching of swagger-ui :/.
+  created: 2016-05-05 11:38:08.0
+  id: '12901'
+  issue: '12617'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-05 11:38:08.0
+- author: richvdh
+  body: Or it would require me not to be an idiot. Fixed by https://github.com/matrix-org/matrix-doc/pull/329
+  created: 2016-05-06 12:39:02.0
+  id: '12908'
+  issue: '12617'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-06 12:39:02.0

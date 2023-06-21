@@ -1,0 +1,66 @@
+---
+summary: Setting profile + joining a room can race
+---
+created: 2016-10-12 16:15:56.0
+creator: leonerd
+description: |-
+  The Slack bridge appears to be triggering a race condition of some kind in synapse that most regular users would be too slow to provoke. Namely, that if concurrently a client tries to set a displayname/avatar image and join a room, the member event in the room never ends up with that profile information.
+
+  For example, the user {{@_slack_decentralizedweb_U1BLXG620:matrix.org}} is in the room {{!WBhcGXTDMlzyTPWoJv:matrix.org}} (which is {{##decentralizedweb-general:matrix.org}}. The user themself does have a profile set:
+
+  {noformat}
+  $ matrixtool client -u @LeoNerd:matrix.org json /_matrix/client/r0/profile/@_slack_decentralizedweb_U1BLXG620:matrix.org
+  {
+     "displayname" : "pfrazee",
+     "avatar_url" : "mxc://matrix.org/SBrnbsCSCpVFLZOArSPNaSni"
+  }
+  {noformat}
+
+  However, their {{m.room.member}} event in the room does not contain this information:
+
+  {noformat}
+  $ matrixtool client -u @LeoNerd:matrix.org json /_matrix/client/r0/rooms/'!WBhcGXTDMlzyTPWoJv:matrix.org'/state/m.room.member/@_slack_decentralizedweb_U1BLXG620:matrix.org
+  {
+     "membership" : "join",
+     "displayname" : null,
+     "avatar_url" : null
+  }
+  {noformat}
+id: '12857'
+key: SYN-787
+number: '787'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:07.0
+votes: '0'
+watches: '2'
+workflowId: '12957'
+---
+actions:
+- author: leonerd
+  body: I'm aware that setting a profile and joining a room isn't well-defined, but I would expect that by the time both requests have finished, the user will be present in the room and their member event in that room would have the correct profile in it. Whether other users see them join with the profile already set, or if they join first and then it updates, would be undefined.
+  created: 2016-10-12 16:18:32.0
+  id: '13181'
+  issue: '12857'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-10-12 16:18:32.0
+- author: leonerd
+  body: I've now fixed the code for the bridge not to provoke this bug, and bumped the member event for all the ghost users to fix their profile details, so this is no longer directly affecting the bridged users. But would be nice to fix the underlying race condition regardless.
+  created: 2016-10-12 19:12:11.0
+  id: '13182'
+  issue: '12857'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-10-12 19:12:11.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1444'
+  created: 2016-11-07 18:30:07.0
+  id: '13942'
+  issue: '12857'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:07.0

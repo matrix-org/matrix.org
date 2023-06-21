@@ -1,0 +1,52 @@
+---
+summary: iOS SDK needs to handle retrying messages which are unsent
+---
+assignee: manu
+created: 2014-12-21 22:15:56.0
+creator: matthew
+description: ''
+id: '10849'
+key: SYIOS-32
+number: '32'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-18 15:21:40.0
+status: '5'
+type: '2'
+updated: 2015-03-19 06:57:33.0
+votes: '0'
+watches: '2'
+workflowId: '10949'
+---
+actions:
+- author: matthew
+  body: Particularly important for handling messages which get legitimately rejected due to rate limiting.
+  created: 2014-12-21 22:18:04.0
+  id: '11018'
+  issue: '10849'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-21 22:18:04.0
+- author: matthew
+  body: '*Any* HTTP hit that cannot be sent should be retried by the client (as the webclient does).'
+  created: 2015-01-07 23:07:42.0
+  id: '11062'
+  issue: '10849'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-07 23:07:42.0
+- author: manu
+  body: |-
+    Messages and most requests, ie all except typing notif and events stream, are automatically retried during 3 mins.
+    In case of lost network, we wait for the connection being up again before retrying.
+    For other errors, like HS down, we retry up to 3 times. The time between retries is random value between 5 and 8s.
+
+    Retries are made one by one in order to respect the messages order
+  created: 2015-03-18 15:21:40.0
+  id: '11403'
+  issue: '10849'
+  type: comment
+  updateauthor: manu
+  updated: 2015-03-18 15:21:40.0

@@ -1,0 +1,30 @@
+---
+summary: 'Various reports of synapse returning 500 on joining HQ from new servers, but being okay for #test'
+---
+created: 2016-08-07 21:21:57.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  e.g. https://vector.im/develop/#/room/!cURbafjkfsMDVwdRDQ:matrix.org/$1470595731338524vVqBd:matrix.org
+id: '12783'
+key: SYN-746
+number: '746'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:51.0
+votes: '0'
+watches: '2'
+workflowId: '12883'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1579'
+  created: 2016-11-07 18:29:51.0
+  id: '13903'
+  issue: '12783'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:51.0

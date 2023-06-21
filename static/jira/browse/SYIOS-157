@@ -1,0 +1,24 @@
+---
+summary: sends duplicate messages on bad connections
+---
+created: 2015-10-14 08:43:48.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  We are probably using POST to send messages. We should be using PUT with transaction ids (this is just a random id you can generate, Web uses the time now with a random number). When you retry messages, this id should remain the same so the server can suppress the duplicate.
+id: '12016'
+key: SYIOS-157
+number: '157'
+priority: '1'
+project: '10200'
+reporter: neb
+resolution: '3'
+resolutiondate: 2015-10-28 14:31:33.0
+status: '5'
+type: '1'
+updated: 2015-10-28 14:31:33.0
+votes: '0'
+watches: '1'
+workflowId: '12119'
+---
+actions: null

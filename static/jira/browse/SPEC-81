@@ -1,0 +1,31 @@
+---
+summary: An explicit websocket (or web push) profile for the client-server API
+---
+created: 2014-12-24 19:18:35.0
+creator: matthew
+description: |-
+  Something that has come up repeatedly in recent WebRTC conferences (San Jose and Paris) is that whilst folks understand and respect the decision to have REST as the only mandatory baseline C-S API, they'd still really really like an optional stream-oriented API of some flavour like Web Sockets to avoid having to poll and potential battery-life/bandwidth implications.  And they reason that this optional API should be specified by Matrix to avoid fragmentation.
+
+  So we should do it.
+id: '10878'
+key: SPEC-81
+number: '81'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:26:53.0
+votes: '0'
+watches: '2'
+workflowId: '10978'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/480'
+  created: 2016-10-28 16:26:53.0
+  id: '13256'
+  issue: '10878'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:53.0

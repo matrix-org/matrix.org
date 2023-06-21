@@ -1,0 +1,54 @@
+---
+summary: IRC bridge should not try to relay HTML for Matrix->IRC, other than possibly bold, and use the plain text instead
+---
+created: 2015-11-29 15:25:50.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12150'
+key: BOTS-143
+number: '143'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 11:02:16.0
+status: '5'
+type: '1'
+updated: 2016-06-02 11:02:16.0
+votes: '0'
+watches: '3'
+workflowId: '12253'
+---
+actions:
+- author: kegan
+  body: Err why? This will ruin a lot of github spam. I thought the whole point was to bridge as accurately as possible.
+  created: 2015-11-30 08:39:34.0
+  id: '12386'
+  issue: '12150'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-30 08:39:34.0
+- author: matthew
+  body: the problem that people were complaining about is that they write some markdown to render some sexy HTML, and expect to see the markdown on IRC rather than a bastardised version of the HTML.  I.e. `*foo*` should be rendered with the asterisks on IRC, rather than rendered to italics which are then dropped.
+  created: 2015-12-01 23:33:36.0
+  id: '12411'
+  issue: '12150'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-01 23:33:36.0
+- author: neb
+  body: 'By @kegan:matrix.org: We do not know that the message body is actually Markdown. It cannot be changed without also screwing over Github/Jenkins NEB messages. If we implemented the matrix-doc rich text PR then we could do this.'
+  created: 2015-12-02 07:21:15.0
+  id: '12412'
+  issue: '12150'
+  type: comment
+  updateauthor: neb
+  updated: 2015-12-02 07:21:15.0
+- author: kegan
+  body: The underlying problem here was that the bridge wasn't doing all the conversions correctly, resulting in things being missed/subtlety being dropped. This is now fixed (if there are tags that are unhandled, the bridge sends the fallback body instead).
+  created: 2016-06-02 11:02:16.0
+  id: '12980'
+  issue: '12150'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 11:02:16.0

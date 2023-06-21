@@ -1,0 +1,31 @@
+---
+summary: Server-side image thumbnailing
+---
+assignee: markjh
+created: 2014-09-16 01:17:41.0
+creator: matthew
+description: ''
+id: '10063'
+key: SYN-32
+number: '32'
+priority: '3'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-06 10:31:22.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:26:22.0
+votes: '0'
+watches: '1'
+workflowId: '10366'
+---
+actions:
+- author: matthew
+  body: This makes the app unusable also for anyone on a browser without canvas.  Also, the quality of the canvas thumbnailing is questionable (in terms of the resampling filter used).
+  created: 2014-09-19 12:51:08.0
+  id: '10338'
+  issue: '10063'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-19 12:51:08.0

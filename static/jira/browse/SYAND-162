@@ -1,0 +1,28 @@
+---
+summary: Caerdwyn reports avatars are not correctly persisted across room changes
+---
+created: 2015-12-02 17:57:03.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12170'
+key: SYAND-162
+number: '162'
+priority: '3'
+project: '10201'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-12-02 17:59:30.0
+votes: '0'
+watches: '2'
+workflowId: '12273'
+---
+actions:
+- author: matthew
+  body: 'For instance, my avatar is missing in #ponydevs:matrix.org but present in #matrix:matrix.org'
+  created: 2015-12-02 17:59:30.0
+  id: '12415'
+  issue: '12170'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-02 17:59:30.0

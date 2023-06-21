@@ -1,0 +1,25 @@
+---
+summary: 'Room name on recents doesn''t update '
+---
+created: 2015-04-10 08:35:07.0
+creator: kegan
+description: |-
+  Go into a room and give it a name. Give it another name. Go back to recents. The first name is used instead. Expected: the most recent name. 
+
+  Version: latest develop 297
+id: '11322'
+key: SYAND-64
+number: '64'
+priority: '2'
+project: '10201'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-04-10 12:48:31.0
+status: '5'
+type: '1'
+updated: 2015-04-10 12:48:31.0
+votes: '0'
+watches: '1'
+workflowId: '11422'
+---
+actions: null

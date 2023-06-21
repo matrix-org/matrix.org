@@ -1,0 +1,41 @@
+---
+summary: Cannot tell which room I am in from recents list. - CSS colors
+---
+created: 2014-11-28 09:39:12.0
+creator: erikj
+description: |-
+  -There are two entries highlighted in the recents. I thought that colour indicated which room you were in?-
+
+  On some monitors, it's hard to see which room is selected vs binged vs new message.
+id: '10738'
+key: SYWEB-194
+number: '194'
+priority: '2'
+project: '10004'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-01-16 08:36:03.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:55.0
+votes: '0'
+watches: '2'
+workflowId: '10838'
+---
+actions:
+- author: erikj
+  body: Hmm, so it turns out that you have to look at my monitor from the side to tell the difference between the first two colours :(
+  created: 2014-11-28 09:41:24.0
+  id: '10891'
+  issue: '10738'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-28 09:41:24.0
+- author: kegan
+  body: ftr I also get this on my laptop at home :(
+  created: 2014-12-04 09:35:24.0
+  id: '10944'
+  issue: '10738'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-04 09:35:24.0

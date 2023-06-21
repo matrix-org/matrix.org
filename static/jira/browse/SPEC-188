@@ -1,0 +1,28 @@
+---
+summary: we actually need to spec how to specify per-room profile data
+---
+created: 2015-06-16 23:16:17.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11659'
+key: SPEC-188
+number: '188'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:25.0
+votes: '1'
+watches: '3'
+workflowId: '11760'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/516'
+  created: 2016-10-28 16:27:25.0
+  id: '13324'
+  issue: '11659'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:25.0

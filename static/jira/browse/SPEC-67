@@ -1,0 +1,30 @@
+---
+summary: m.file msgtype
+---
+created: 2014-11-12 17:51:28.0
+creator: kegan
+description: ''
+id: '10649'
+key: SPEC-67
+number: '67'
+priority: '2'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-12-09 18:48:07.0
+status: '5'
+type: '1'
+updated: 2014-12-09 18:48:07.0
+votes: '0'
+watches: '2'
+workflowId: '10749'
+---
+actions:
+- author: matthew
+  body: I did this a while back
+  created: 2014-12-09 18:48:07.0
+  id: '10985'
+  issue: '10649'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-12-09 18:48:07.0

@@ -1,0 +1,44 @@
+---
+summary: We need an actual usage stats interface
+---
+created: 2015-08-28 23:05:36.0
+creator: neb
+description: ''
+id: '11831'
+key: SYN-459
+number: '459'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:18.0
+votes: '0'
+watches: '4'
+workflowId: '11934'
+---
+actions:
+- author: erikj
+  body: Is this different from the current anonymous usage stats reporting?
+  created: 2016-01-06 11:35:12.0
+  id: '12541'
+  issue: '11831'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-06 11:35:12.0
+- author: matthew
+  body: this bug was talking about usage stats, but please make sure there's a bug for exposing a queryable admin API (and web interface or shell tools or whatever) so that folks can see who is using their server
+  created: 2016-01-06 11:44:40.0
+  id: '12543'
+  issue: '11831'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-06 11:44:40.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1364'
+  created: 2016-11-07 18:28:18.0
+  id: '13685'
+  issue: '11831'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:18.0

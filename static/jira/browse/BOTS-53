@@ -1,0 +1,98 @@
+---
+summary: IRC Bridging Semantics
+---
+created: 2015-06-17 11:00:18.0
+creator: matthew
+description: |-
+  There are some questions over the ideal mapping between freenode & Matrix channels in the IRC AS.  Here are some observations just to try to track the problems and ideal behaviour.
+
+  * IRC->Matrix membership mapping - it's vital to show which IRC users are currently joined to the IRC channel otherwise the Matrix users simply don't know if the IRC user they're talking to is online.
+
+  * Matrix->IRC membership mapping - unless we time out idle users (either at the AS or HS), full mapping could result in creating huge numbers of IRC users representing idle Matrix users, which will appear as a DoS to freenode and exceed our connection limits.  From the IRC perspective we want to see Matrix users who are likely lurking in the channel (i.e. recently using Matrix).  AS Timeouts will inevitably cause the membership lists to be out of sync between IRC & Matrix but it's the best we can do... unless we idle out the users in Matrix too via a bot or HS or similar.  This may be the best bet if we can handle the UX gracefully (i.e. have users who have been idled out rejoin those channels gracefully when they next use Matrix).  For now, i suggest we time out idle users on the AS and see how bad it feels.
+
+  * IRC->Matrix Join/Part mapping - IRC is very spammy on join/part; Matrix isn't.  However, it's important to know whether the person you're talking to on IRC is actually there.  I suggest we turn it on by default, and in future find a better way of representing whether IRC users are present or not (e.g. via presence rather than joins/parts) to avoid spamming up the timeline with joins and parts.
+
+  * Published rooms - IRC has the concept of +s to say whether the room should be secret and hidden from the room list or not.  Matrix currently doesn't let you easily edit the public alias directory.  In order to soft launch the freenode bridge it would be best if we didn't publish aliases for the freeenode rooms in the room directory; later on we could then map IRC's +s setting both IRC->Matrix and Matrix->IRC.  Any of this however means having a way to edit the public alias directory.  Needless to say the AS shouldn't assume that bridged rooms will be published in the directory.
+
+  * Mapping other data - we need to map nickname changes, topics, and other metadata.  They all pose their own challenges due to the impedance mismatches between Matrix and IRC.
+id: '11663'
+key: BOTS-53
+number: '53'
+priority: '2'
+project: '10101'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2015-08-17 13:37:34.0
+votes: '0'
+watches: '2'
+workflowId: '11764'
+---
+actions:
+- author: kegan
+  body: |-
+    I agree with everything that you've said, along with your suggestions for improvements (e.g. presence rather than join/parts).
+
+    bq. Mapping other data - we need to map nickname changes, topics, and other metadata. They all pose their own challenges due to the impedance mismatches between Matrix and IRC.
+
+    Given this issue is trying to summarise the semantics, what other data specifically? I'm aware of nick changes and topics, but that's about it. It would be great to have a comprehensive list of "things we want to sync through to Matrix", especially if there are specific challenges with mapping certain bits of data. I for one was only vaguely aware of +s for example. Annoyingly, IRC is an interesting case because there are de facto rules not in the RFC (see allowing _ in nicks as an example), so I need someone more knowledgeable on IRC to outline the unwritten rules.
+
+    As an aside, I don't think any of these semantics are *specific* to Freenode; these are just sensible semantics a well-behaved IRC AS should have I think.
+
+    Some additions we've spoken about previously:
+     * Matrix to Nick mappings - We currently give the freedom to map on the user ID or the display name, and the AS just strips out bad characters. It currently manages duplicates only when there is a nick conflict, by appending a number and trying again. Is this the optimal behaviour? Two users with the same name would be mapped to identical nicks, so would sometimes get TheirNick1 or TheirNick2 depending on who connected first.
+     * Matrix user_id -> IRC user names mapping - The number of characters allowed in IRC user names is abysmal. A quick {{/whois}} on freenode pins this at a paltry 10 characters. The IRC AS currently strips bad characters then dumps as much of the {{user_id}} as it can, but often the home server domain is lost, sometimes entirely. Given these usernames should remain static for each user, it sounds as if we really need to apply the win95-style LONGNAM~1 semantics and actually persist which username is assigned to which user ID (we can't forget the mapping, else you get into the race problem outlined in the bullet point above). We should also be thinking about what happens when the counter ticks over (e.g. 10 Matrix users each on separate home servers with the {{user_id}} {{@alexandra:<homeserver>}} would initially mark something like {{ALEXANDR-1}}, {{ALEXANDR-2}}, {{ALEXANDR-3}}, but then would tick over to 10, so we'd probably just lose another character? E.g. {{ALEXAND-10}}, but by that point it has a separate identifier so perhaps you'd expect {{ALEXAND-1}}? The IRC AS currently does not do win95-style long name semantics at all.
+  created: 2015-06-17 11:23:46.0
+  id: '11877'
+  issue: '11663'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-17 11:23:46.0
+- author: matthew
+  body: The obvious other stuff to map is power levels and access control.
+  created: 2015-06-17 11:37:42.0
+  id: '11878'
+  issue: '11663'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-17 11:37:42.0
+- author: matthew
+  body: |-
+    In terms of join/part and membership mapping, my proposal for the actual behaviour of freenode<->Matrix is that globally active Matrix users should be visible on IRC through bridged channels they participate in - however, we should not proactively join the virtual users to IRC if they have been idled out.
+
+    In practice, this means:
+     * Matrix->Freenode joins cause a virtual IRC user to immediately join IRC.
+     * Matrix->Freenode parts cause a virtual IRC user to immediately leave IRC.
+     * If a Matrix client has been globally idle for more than N days, we assume the user is no longer actively monitoring Matrix and so time out their virtual IRC user (quitting it with reason "idle timeout").  [Question: should we keep relaying push notifications for that channel to the user via MatrixBridge?]
+     * Freenode->Matrix joins cause a virtual Matrix user to immediately join
+     * Freenode->Matrix parts cause the virtual Matrix user to immediately leave, so that Matrix users know that the IRC user they were talking to can no longer see what they're saying.  (A nice refinement could be for clients to suppress part/join spam or virtual users, however this really is a UI refinement best left to the client).
+
+    Finally, we have the option of synchronising the Freenode->Matrix membership list when the bridge joins a channel or restarts.  This could be dangerous as a big Freenode membership list (e.g. 1500 users on #freenode) could DoS Matrix as it creates all the virtual users.  There could also be problems distinguishing nickname changes from new users during restarts, although this isn't a big deal assuming that the sync prunes stale virtual users on the Matrix side as well as adding new ones.  If this is possible without DoSing, it would certainly be good in terms of accurately showing which users are present in the room (and it also would help our Matrix usage stats enormously ;)
+
+    Similarly, we have the option of synchronising the Matrix membership list into Freenode.  This is tricky because Matrix tends to accumulate many users in rooms, and we have limited connections into Freenode.  My suggestion is to synchronise non-globally-idle Matrix users to IRC when the bridge restarts or joins a channel.  If we're worried about this being seen as a join flood by freenode, then we could join them incrementally - but it's a real shame that the IRC users will then not be able to see who's actually visible in the Matrix room at first, and so witness weird Matrix conversations where users are talking to 'invisible' Matrix users who have yet to reply.
+  created: 2015-06-19 00:10:13.0
+  id: '11891'
+  issue: '11663'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-19 00:10:13.0
+- author: kegan
+  body: |-
+    Update on all the work done so far:
+     - We now do {{LONGNAM_1}} for usernames.
+     - We now mirror IRC -> MX and MX -> IRC membership lists (initial/incremental)
+
+    Things we probably want to support:
+     - "Change presence instead of joining/leaving matrix rooms"
+     - Sensibly mapping ops / power levels (huge impedance mismatches here :( )
+     - Mapping topics (needs power level changing)
+     - Adding/removing from published room list (Blocked on SPEC-102)
+
+    Issues we've found:
+     - Synapse doesn't gracefully handle lots of room state events currently. We need to support this better before we can really do IRC -> Matrix membership lists properly.
+  created: 2015-08-17 13:37:34.0
+  id: '12063'
+  issue: '11663'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-08-17 13:37:34.0

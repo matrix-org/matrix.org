@@ -1,0 +1,30 @@
+---
+summary: Need a way to specify whether a given user is happy for guests to PM them
+---
+created: 2016-09-06 17:32:09.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Critical for guest VCs, and also for people like Wilson who want guests to be able to PM them
+id: '12822'
+key: SPEC-450
+number: '450'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:45.0
+votes: '0'
+watches: '3'
+workflowId: '12922'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/705'
+  created: 2016-10-28 16:28:45.0
+  id: '13514'
+  issue: '12822'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:45.0

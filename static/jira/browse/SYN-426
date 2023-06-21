@@ -1,0 +1,28 @@
+---
+summary: insecure is spelt insecure, not unsecure...
+---
+created: 2015-06-19 02:21:44.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11671'
+key: SYN-426
+number: '426'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:09.0
+votes: '0'
+watches: '2'
+workflowId: '11772'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1341'
+  created: 2016-11-07 18:28:09.0
+  id: '13662'
+  issue: '11671'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:09.0

@@ -1,0 +1,38 @@
+---
+summary: Pending PDU/EDUs linearly increased.
+---
+created: 2015-06-03 17:39:48.0
+creator: erikj
+description: ''
+id: '11619'
+key: SYN-408
+number: '408'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '5'
+resolutiondate: 2015-09-17 14:24:22.0
+status: '5'
+type: '1'
+updated: 2015-09-17 14:24:22.0
+votes: '0'
+watches: '1'
+workflowId: '11720'
+---
+actions:
+- author: erikj
+  body: matrix.org is on d15f166093c121d93b8d0bcb53e55e1369b4ea84
+  created: 2015-06-03 17:40:52.0
+  id: '11822'
+  issue: '11619'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-03 17:40:52.0
+- author: erikj
+  body: Looks like connections to tp.mu are being blackholed, but for some reason they are not being timed out correctly.
+  created: 2015-06-17 11:15:08.0
+  id: '11876'
+  issue: '11619'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-17 11:15:08.0

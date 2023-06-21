@@ -1,0 +1,30 @@
+---
+summary: m.spoilers and m.punchline msg types
+---
+created: 2015-12-21 12:56:10.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  or something, would be kinda fun for telling clients to hide message bodies where appropriate. more seriously, m.nsfw too
+id: '12232'
+key: SPEC-311
+number: '311'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:05.0
+votes: '0'
+watches: '2'
+workflowId: '12335'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/604'
+  created: 2016-10-28 16:28:05.0
+  id: '13412'
+  issue: '12232'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:05.0

@@ -1,0 +1,20 @@
+---
+summary: Avatar updates seem to be missing from timeline
+---
+created: 2015-04-13 14:18:39.0
+creator: matthew
+description: When a user updates their avatar, we no longer (on develop) see a "Foo has changed their profile photo" timeline event.
+id: '11331'
+key: SYWEB-351
+number: '351'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2015-04-13 14:18:39.0
+votes: '0'
+watches: '1'
+workflowId: '11431'
+---
+actions: null

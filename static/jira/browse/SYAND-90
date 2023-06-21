@@ -1,0 +1,49 @@
+---
+summary: The very first pagination jumps the scroll bar
+---
+assignee: m-ylecollen
+created: 2015-06-22 08:14:20.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  go into a room. Scroll up to the top quickly and it will start to load more messages. The first time it does this it incorrectly moves the screen down a bit. Doing this a second time works correctly.
+id: '11687'
+key: SYAND-90
+number: '90'
+priority: '2'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-02-17 17:12:11.0
+status: '5'
+type: '1'
+updated: 2016-02-17 17:12:11.0
+votes: '0'
+watches: '3'
+workflowId: '11788'
+---
+actions:
+- author: m-ylecollen
+  body: 'It could happen because some images were not yet downloaded : the downloaded images have some other dimensions than the expected ones (they might be undefined). So, the history height changes a bit and triggers this drop effect.'
+  created: 2015-06-22 10:27:43.0
+  id: '11901'
+  issue: '11687'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-22 10:27:43.0
+- author: mitchhentges
+  body: Even in a room without images, every time that a new page is loaded, the view gets bumped up by about a row of text
+  created: 2016-02-16 23:47:15.0
+  id: '12622'
+  issue: '11687'
+  type: comment
+  updateauthor: mitchhentges
+  updated: 2016-02-16 23:47:15.0
+- author: m-ylecollen
+  body: fixed in https://github.com/matrix-org/matrix-android-sdk/commit/4d57b71f
+  created: 2016-02-17 17:12:02.0
+  id: '12640'
+  issue: '11687'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 17:12:02.0

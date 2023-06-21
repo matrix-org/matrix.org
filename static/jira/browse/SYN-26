@@ -1,0 +1,52 @@
+---
+summary: Under no circumstances should we accept federation traffic from homeservers who think they are called 'localhost' (unless we are also localhost)
+---
+assignee: markjh
+created: 2014-09-16 00:57:02.0
+creator: matthew
+description: ''
+id: '10051'
+key: SYN-26
+number: '26'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-27 16:37:10.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:06:46.0
+votes: '0'
+watches: '2'
+workflowId: '10360'
+---
+actions:
+- author: matthew
+  body: A sensible refinement here is surely that we shouldn't accept traffic from a server unless we can also route back to it... or find its public key (at least at the point where it first makes contact)
+  created: 2014-09-23 01:25:09.0
+  id: '10375'
+  issue: '10051'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-23 01:25:09.0
+- author: markjh
+  body: |-
+    When we start authenticating federation traffic servers running on "localhost" won't be able to supply the verification key to remote servers.
+
+    They will still be able to provide the verification key to local servers.
+
+    As a result remote servers will reject all their federation traffic. Local servers will accept their federation traffic.
+  created: 2014-09-25 14:20:12.0
+  id: '10453'
+  issue: '10051'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-25 14:20:12.0
+- author: markjh
+  body: Now that SYN-75 is complete it should be impossible for a server to accept traffic from a server that it cannot route back to to find its public key.
+  created: 2014-10-27 16:37:10.0
+  id: '10598'
+  issue: '10051'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-27 16:37:10.0

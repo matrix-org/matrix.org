@@ -1,0 +1,23 @@
+---
+summary: We need a libpurple matrix plugin
+---
+created: 2014-10-08 12:04:05.0
+creator: matthew
+description: |-
+  Filing this under Synapse in the absence of anywhere better.
+
+  It would make a *huge* difference if the pidgin/adium/bitlbee-style crew could use libpurple to jack into Matrix.
+id: '10458'
+key: BOTS-30
+number: '30'
+priority: '2'
+project: '10101'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2015-05-07 11:57:22.0
+votes: '0'
+watches: '1'
+workflowId: '11612'
+---
+actions: null

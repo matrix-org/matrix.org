@@ -1,0 +1,36 @@
+---
+summary: Need an m.room.* event for specifying accent colours (primary and secondary) for a room UI
+---
+created: 2015-11-02 17:03:22.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12069'
+key: SPEC-259
+number: '259'
+priority: '2'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:48.0
+votes: '0'
+watches: '3'
+workflowId: '12172'
+---
+actions:
+- author: matthew
+  body: N.B. this should be private user data - just because I want my rooms to be bright pink shouldn't change it for other people!
+  created: 2015-11-17 00:37:30.0
+  id: '12368'
+  issue: '12069'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-17 00:37:30.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/565'
+  created: 2016-10-28 16:27:48.0
+  id: '13373'
+  issue: '12069'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:48.0

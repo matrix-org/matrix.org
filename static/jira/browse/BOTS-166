@@ -1,0 +1,45 @@
+---
+summary: ircas silently eats exceptions on console
+---
+created: 2016-02-16 15:33:07.0
+creator: leonerd
+description: |-
+  While attempting to generate registration file, the service was silently stopping before it created the file. Much debugging later found the problem to be BOTS-165. But that problem itself was obscured by the AS silently consuming errors. We eventually found that through bisection of throwing known exceptions and tracking it down to the line
+
+  {noformat}
+  --- a/lib/irc-appservice.js
+  +++ b/lib/irc-appservice.js
+  @@ -27,7 +27,7 @@ var dbConnPromise = null;
+   module.exports.configure = function(config) {
+       if (config.logging) {
+           logging.configure(config.logging);
+  -        logging.setUncaughtExceptionLogger(log);
+  +        // logging.setUncaughtExceptionLogger(log);
+       }
+       if (config.statsd.hostname) {
+           stats.setEndpoint(config.statsd);
+  {noformat}
+id: '12401'
+key: BOTS-166
+number: '166'
+priority: '3'
+project: '10101'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2016-06-02 10:43:30.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:43:30.0
+votes: '0'
+watches: '2'
+workflowId: '12506'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/blob/develop/lib/main.js#L98
+  created: 2016-06-02 10:43:30.0
+  id: '12963'
+  issue: '12401'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:43:30.0

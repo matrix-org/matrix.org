@@ -1,0 +1,38 @@
+---
+summary: Unable to send message in room (403)
+---
+created: 2016-05-10 20:22:32.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  sw1v invited a matrix.org user to the offsite room. This seemingly (not confirmed) corrupted state for the room somewhere down the line. As a result, oddvar/dbkr/myself could not send any messages in that room. It spontaneously fixed itself around 1h later. Mark suspects it may have been a bad state cache which caused it. Checking the logs on matrix.org indicated that sw1v sent a federation invite. Mark was surprised at this as it should only do this if matrix.org was NOT in the room. The log line in question is: 2016-05-10 18:49:05,665 - synapse.access.http.8080 - 91 - INFO - PUT-331902 - 109.74.200.146 - 8080 - {sw1v.org} Processed request: 38ms (0ms, 0ms) (3ms/1) 1806B 200 "PUT /_matrix/federation/v1/invite/!qvexBSLAApNfNMslmn:matrix.org/$14629025451556SHVwN:sw1v.org HTTP/1.1
+id: '12656'
+key: SYN-689
+number: '689'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:29.0
+votes: '0'
+watches: '2'
+workflowId: '12756'
+---
+actions:
+- author: neb
+  body: 'By @kegan:matrix.org: There were 3 federation invites from sw1v, the later two were 2016-05-10 18:49:19,122 - synapse.access.http.8080 - 91 - INFO - PUT-332545 - 109.74.200.146 - 8080 - {sw1v.org} Processed request: 234ms (10ms, 0ms) (15ms/1) 1965B 200 "PUT /_matrix/federation/v1/invite/!qvexBSLAApNfNMslmn:matrix.org/$14629025581557tcKum:sw1v.org HTTP/1.1 Synapse/0.14.0 (b=develop,3c79bdd)" and 2016-05-10 18:49:35,746 - synapse.access.http.8080 - 91 - INFO - PUT-333146 - 109.74.200.146 - 8080 - {sw1v.org} Processed request: 33ms (0ms, 0ms) (6ms/1) 2169B 200 "PUT /_matrix/federation/v1/invite/!qvexBSLAApNfNMslmn:matrix.org/$14629025751558dKCqU:sw1v.org HTTP/1.1 Synapse/0.14.0 (b=develop,3c79bdd)"'
+  created: 2016-05-10 20:27:36.0
+  id: '12917'
+  issue: '12656'
+  type: comment
+  updateauthor: neb
+  updated: 2016-05-10 20:27:36.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1542'
+  created: 2016-11-07 18:29:29.0
+  id: '13853'
+  issue: '12656'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:29.0

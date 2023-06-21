@@ -1,0 +1,23 @@
+---
+summary: Bolding of room names is peculiar
+---
+created: 2015-10-13 11:46:23.0
+creator: richvdh
+description: |-
+  For some reason, my Android console is displaying my private chat with Amandine in bold (see screenshot).
+
+  (For what it's worth, as a new user, I would expect bold to mean 'unread messages' rather than 'important room', but that's a side issue)
+id: '12013'
+key: SYAND-142
+number: '142'
+priority: '3'
+project: '10201'
+reporter: richvdh
+status: '10100'
+type: '1'
+updated: 2015-10-13 11:46:23.0
+votes: '0'
+watches: '1'
+workflowId: '12116'
+---
+actions: null

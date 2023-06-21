@@ -1,0 +1,22 @@
+---
+summary: 'Pusher: the implicit "push you for all non-you events" rule should be explicitly listed by the /pushRules/ request '
+---
+created: 2015-02-12 10:45:56.0
+creator: manu
+description: "The discussion on #matrix-dev:matrix.org:\n\nManu: Is this default behavior \"push you for all non-you events\" defined by a push rule? I cannot see it when I list my push rules\t\nDave:  nope, it's the default if no rules match\t\nMatthew: it's implicit, annoyingly. when dave is back in pushland i hope it will be made explicit\t\nDave:  yeah, I should either mandate it in the spec or add it somewhere in the pushrules return\t\nMatthew:  explicitness ftw. and then it can be disabled too."
+id: '11038'
+key: SYN-267
+number: '267'
+priority: '2'
+project: '10000'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-02-26 18:59:29.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:22:42.0
+votes: '0'
+watches: '1'
+workflowId: '11138'
+---
+actions: null

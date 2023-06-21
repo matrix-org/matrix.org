@@ -1,0 +1,22 @@
+---
+summary: ASes need a way to tell the HS when they're back to avoid having to wait for retry cycle from the HS
+---
+created: 2015-08-28 14:04:10.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11826'
+key: BOTS-97
+number: '97'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '3'
+resolutiondate: 2015-08-28 14:04:40.0
+status: '5'
+type: '1'
+updated: 2015-08-28 14:04:40.0
+votes: '0'
+watches: '1'
+workflowId: '11929'
+---
+actions: null

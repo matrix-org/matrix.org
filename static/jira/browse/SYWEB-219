@@ -1,0 +1,31 @@
+---
+summary: Feedback when network connectivity is dead
+---
+assignee: kegan
+created: 2014-12-05 13:25:36.0
+creator: matthew
+description: ''
+id: '10779'
+key: SYWEB-219
+number: '219'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-05 14:46:38.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:53.0
+votes: '0'
+watches: '2'
+workflowId: '10879'
+---
+actions:
+- author: kegan
+  body: Both knifing the connection client-side and showing the user on the UI are now implemented.
+  created: 2014-12-05 14:46:38.0
+  id: '10963'
+  issue: '10779'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 14:46:38.0

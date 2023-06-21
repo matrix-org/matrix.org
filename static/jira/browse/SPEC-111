@@ -1,0 +1,28 @@
+---
+summary: A way to mark room as special custom-protocol rooms
+---
+created: 2015-02-18 15:32:40.0
+creator: dbkr
+description: ''
+id: '11090'
+key: SPEC-111
+number: '111'
+priority: '3'
+project: '10001'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:01.0
+votes: '0'
+watches: '2'
+workflowId: '11190'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/423'
+  created: 2016-10-28 16:27:01.0
+  id: '13274'
+  issue: '11090'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:01.0

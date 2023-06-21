@@ -1,0 +1,33 @@
+---
+summary: Set Gravatar for matrix@matrix.org
+---
+created: 2016-02-24 13:44:49.0
+creator: dbkr
+description: ''
+id: '12521'
+key: ORG-43
+number: '43'
+priority: '2'
+project: '10003'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2017-03-21 11:14:30.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:14:30.0
+votes: '0'
+watches: '2'
+workflowId: '12621'
+---
+actions:
+- author: richvdh
+  body: |-
+    This happened:
+
+    https://www.gravatar.com/58247dcec2712583de197de9bdc0fefc
+  created: 2017-03-21 11:14:30.0
+  id: '14024'
+  issue: '12521'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:14:30.0

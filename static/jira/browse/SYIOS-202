@@ -1,0 +1,33 @@
+---
+summary: IOS should no longer reset badge count on launch
+---
+assignee: gforet
+created: 2016-01-22 14:22:15.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Badge count should be entirely managed by APNS from Synapse
+id: '12342'
+key: SYIOS-202
+number: '202'
+priority: '3'
+project: '10200'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-03-03 09:42:04.0
+status: '5'
+type: '1'
+updated: 2016-03-03 09:42:04.0
+votes: '0'
+watches: '2'
+workflowId: '12447'
+---
+actions:
+- author: matthew
+  body: Actually, we could also manage it from within the app by updating it to the right number based on the notificationCount field in /sync response
+  created: 2016-01-22 14:24:10.0
+  id: '12582'
+  issue: '12342'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-22 14:24:10.0

@@ -1,0 +1,38 @@
+---
+summary: Test rejection of room invites
+---
+created: 2015-09-29 15:23:10.0
+creator: leonerd
+description: ''
+id: '11971'
+key: SYT-27
+number: '27'
+priority: '1'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-11-20 14:25:25.0
+status: '5'
+type: '2'
+updated: 2015-11-20 14:25:25.0
+votes: '0'
+watches: '1'
+workflowId: '12074'
+---
+actions:
+- author: leonerd
+  body: Awaiting SPEC-215
+  created: 2015-09-29 16:39:14.0
+  id: '12192'
+  issue: '11971'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-29 16:39:14.0
+- author: leonerd
+  body: This was added a while ago; https://github.com/matrix-org/sytest/commit/1e087bc5de8844ed1c4b20fc65819c0d0d313810
+  created: 2015-11-20 14:25:25.0
+  id: '12379'
+  issue: '11971'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-11-20 14:25:25.0

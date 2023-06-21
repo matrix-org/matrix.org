@@ -1,0 +1,51 @@
+---
+summary: I can kick someone with a higher power level than my own (and other powerlevel confusion)
+---
+created: 2014-12-05 13:48:28.0
+creator: joachim
+description: |-
+  If my power level allows me to kick/ban, I can do it to someone whose power level is higher.
+  Not intended apparently
+id: '10780'
+key: SYN-192
+number: '192'
+priority: '2'
+project: '10000'
+reporter: joachim
+resolution: '1'
+resolutiondate: 2016-10-21 00:06:05.0
+status: '5'
+type: '1'
+updated: 2016-10-21 00:06:05.0
+votes: '0'
+watches: '4'
+workflowId: '10880'
+---
+actions:
+- author: matthew
+  body: In general, we need to think through and finalise the semantics for power level ACLs - e.g. should users of the same power level be able to kick each other?  Should I be able to delegate my power level to anyone, or do I need a threshold to do so, and if so does the target need to have less power than me already? etc.
+  created: 2015-06-16 12:28:11.0
+  id: '11866'
+  issue: '10780'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-16 12:28:11.0
+- author: erikj
+  body: |-
+    You shouldn't be able to affect (e.g. kick/ban/change power level) any other user with greater *or equal* power level to your own. Everything else can remain as it is for now.
+
+    We need to add a power level option for the "clear history" flag and whether users can see history for before they join.
+  created: 2015-06-30 16:29:29.0
+  id: '11948'
+  issue: '10780'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-30 16:29:29.0
+- author: richvdh
+  body: I believe this got fixed.
+  created: 2016-10-21 00:06:05.0
+  id: '13196'
+  issue: '10780'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-21 00:06:05.0

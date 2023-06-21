@@ -1,0 +1,30 @@
+---
+summary: 'registration on Android is apparently broken: AttributeError: ''RegistrationHandler'' object has no attribute ''captcha_client'''
+---
+created: 2015-12-17 23:06:45.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12222'
+key: SYN-555
+number: '555'
+priority: '1'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-01-05 16:14:45.0
+status: '5'
+type: '1'
+updated: 2016-01-05 16:14:45.0
+votes: '0'
+watches: '2'
+workflowId: '12325'
+---
+actions:
+- author: erikj
+  body: Is this on matrix.org? Is this using the fallback mechanism? Presumably registration isn't broken on matrix.org in general?
+  created: 2016-01-05 16:12:15.0
+  id: '12514'
+  issue: '12222'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 16:12:21.0

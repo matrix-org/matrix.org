@@ -1,0 +1,36 @@
+---
+summary: After outage, synapse should prod its destinations to encourage them to retry submitting pending traffic
+---
+created: 2015-09-27 09:05:11.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11944'
+key: SYN-491
+number: '491'
+priority: '2'
+project: '10000'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:25.0
+votes: '0'
+watches: '2'
+workflowId: '12047'
+---
+actions:
+- author: neb
+  body: 'By @matthew:matrix.org: intelfx: I think Ive spotted a minor usability issue: if my HS has a downtime (and comes back afterwards), I dont see any messages which were sent during the downtime until someone sends a message _after_ the downtime. The latter apparently causes the HS to retrieve the missing vertices of the history graph (which is a very neat demonstration of the Matrix core functionality, btw!), but it would be good if a HS was able to "pull the current HEAD" off the room (speaking in terms of git) or something like that automatically when it comes back online.'
+  created: 2015-09-27 09:05:50.0
+  id: '12175'
+  issue: '11944'
+  type: comment
+  updateauthor: neb
+  updated: 2015-09-27 09:05:50.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1386'
+  created: 2016-11-07 18:28:25.0
+  id: '13701'
+  issue: '11944'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:25.0

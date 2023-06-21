@@ -1,0 +1,60 @@
+---
+summary: Specify /login/saml2
+---
+created: 2015-11-27 19:27:44.0
+creator: illicitonion
+description: |-
+  * Synapse implements the following unspecified APIs:
+   ** /login/saml2
+   ** -/login/cas-
+   ** -/login/cas/redirect-
+   ** -/login/cas/ticket-
+id: '12142'
+key: SPEC-275
+number: '275'
+priority: '2'
+project: '10001'
+reporter: illicitonion
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:54.0
+votes: '0'
+watches: '2'
+workflowId: '12245'
+---
+actions:
+- author: richvdh
+  body: some of these are covered by https://github.com/matrix-org/matrix-doc/pull/171, which is sadly stalled.
+  created: 2016-04-18 15:21:47.0
+  id: '12831'
+  issue: '12142'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-18 15:21:47.0
+- author: richvdh
+  body: Do we actually want to do this, rather than convert /login to use the user-interactive API (SYN-696)?
+  created: 2016-05-23 17:42:08.0
+  id: '12930'
+  issue: '12142'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-05-23 17:42:08.0
+- author: richvdh
+  body: |-
+    The CAS endpoints were specced by https://github.com/matrix-org/matrix-doc/pull/367 (see http://matrix.org/speculator/spec/HEAD/client_server/unstable.html#cas-based-client-login).
+
+    The saml one still needs doing.
+  created: 2016-08-22 09:33:07.0
+  id: '13108'
+  issue: '12142'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-08-22 09:33:07.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/579'
+  created: 2016-10-28 16:27:54.0
+  id: '13387'
+  issue: '12142'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:54.0

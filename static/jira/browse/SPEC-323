@@ -1,0 +1,30 @@
+---
+summary: /sync doc is very unclear on how filter 'limit' works
+---
+created: 2016-01-13 18:29:18.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  We should make it clear that a (the?) common case is to call /sync with a limit, and explain how this results in gapping events if the limit is hit. See convo around $145270896130747HcDTA:matrix.org in HQ
+id: '12299'
+key: SPEC-323
+number: '323'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:09.0
+votes: '0'
+watches: '2'
+workflowId: '12404'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/614'
+  created: 2016-10-28 16:28:09.0
+  id: '13422'
+  issue: '12299'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:09.0

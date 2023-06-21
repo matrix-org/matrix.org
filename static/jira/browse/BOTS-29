@@ -1,0 +1,114 @@
+---
+summary: IRC bridge echoed messages
+---
+assignee: kegan
+created: 2015-05-06 10:29:04.0
+creator: erikj
+description: |-
+  After restarting the openmarket homeserver (this may or may not be related), messages posted in matrix-dev from matrix were echoed back to matrix from their IRC user.
+
+  {noformat}
+  2015-05-06 09:20:06 INFO:req [202v6g9en6tcw] [M->I]m.room.message usr=@Mjark:matrix.org rm=!XqBunHwQIXUiqCaoxq:matrix.org body=Hmm
+  2015-05-06 09:20:06 INFO:req [202v6g9en6tcw] Mapped to action: {"action":"message","protocol":"irc","text":"Hmm"}
+  2015-05-06 09:20:06 INFO:main 83.166.68.176 - - [06/May/2015:09:20:06 +0000] "PUT /transactions/10282?access_token=3576fa05ea4ebfdab78d2c57bf410a6650da62674690bef594730cb51db5ed1f_crc274552e8 HTTP/1.1" 200 2 "-" 
+  "Synapse/0.8.1-r4 (b=develop,f4664a6)" 
+  2015-05-06 09:20:06 INFO:req [202v6g9en6tcw] Relaying message in #matrix-dev on irc.freenode.net
+  2015-05-06 09:20:06 DEBUG:irc Returning cached virtual irc user @Mjark:matrix.org
+  2015-05-06 09:20:06 INFO:req [202v6g9en6tcw] Sending action as: M-Mjark
+  2015-05-06 09:20:06 DEBUG:req [202v6g9en6tcw] SUCCESS - 2 ms
+  2015-05-06 09:20:06 INFO:req [8x1zv6jtkd8gk] [I->M]onMessage: irc.freenode.net from=M-Mjark1 to=#matrix-dev action={"action":"message","protocol":"irc","text":"Hmm"}
+  2015-05-06 09:20:06 INFO:req [8x1zv6jtkd8gk] Mapped to action: {"action":"message","protocol":"matrix","body":"Hmm"}
+  2015-05-06 09:20:06 DEBUG:matrix-js-sdk POST https://matrix.org/_matrix/client/api/v1/register (AS) Body: {"user":"freenode_M-Mjark1","type":"m.login.application_service"}
+  2015-05-06 09:20:07 DEBUG:matrix-js-sdk HTTP 200 : {"access_token":"QGZyZWVub2RlX00tTWphcmsxOm1hdHJpeC5vcmc..PHYdKOMJQliRzKpefJ","h
+  2015-05-06 09:20:07 DEBUG:matrix-js-sdk PUT https://matrix.org/_matrix/client/api/v1/profile/%40freenode_M-Mjark1%3Amatrix.org/displayname (@freenode_M-Mjark1:matrix.org) Body: {"displayname":"M-Mjark1 (IRC)"}
+  2015-05-06 09:20:08 DEBUG:matrix-js-sdk HTTP 200 : {}
+  2015-05-06 09:20:08 INFO:req [8x1zv6jtkd8gk] Mapped nick M-Mjark1 to {"isVirtual":true,"protocol":"matrix","userId":"@freenode_M-Mjark1:matrix.org"}
+  2015-05-06 09:20:08 INFO:req [8x1zv6jtkd8gk] [I->M]Relaying in room !XqBunHwQIXUiqCaoxq:matrix.org
+  2015-05-06 09:20:08 INFO:req [8x1zv6jtkd8gk] sendAction -> {"action":"message","protocol":"matrix","body":"Hmm"}
+  2015-05-06 09:20:08 DEBUG:req [8x1zv6jtkd8gk] PUT https://matrix.org/_matrix/client/api/v1/rooms/!XqBunHwQIXUiqCaoxq%3Amatrix.org/send/m.room.message/m1430904008263 (@freenode_M-Mjark1:matrix.org) Body: {"msgtype
+  ":"m.text","body":"Hmm"}
+  2015-05-06 09:20:08 ERROR:req [8x1zv6jtkd8gk] PUT https://matrix.org/_matrix/client/api/v1/rooms/!XqBunHwQIXUiqCaoxq%3Amatrix.org/send/m.room.message/m1430904008263 (@freenode_M-Mjark1:matrix.org) HTTP 403 Error:
+   {"errcode":"M_FORBIDDEN","error":"User @freenode_M-Mjark1:matrix.org not in room !XqBunHwQIXUiqCaoxq:matrix.org (None)"}
+  2015-05-06 09:20:08 DEBUG:req [8x1zv6jtkd8gk] POST https://matrix.org/_matrix/client/api/v1/join/!XqBunHwQIXUiqCaoxq%3Amatrix.org (@freenode_M-Mjark1:matrix.org) Body: {}
+  2015-05-06 09:20:09 DEBUG:req [8x1zv6jtkd8gk] HTTP 200 : {"room_id":"!XqBunHwQIXUiqCaoxq:matrix.org"}
+  2015-05-06 09:20:09 DEBUG:req [8x1zv6jtkd8gk] PUT https://matrix.org/_matrix/client/api/v1/rooms/!XqBunHwQIXUiqCaoxq%3Amatrix.org/send/m.room.message/m1430904009955 (@freenode_M-Mjark1:matrix.org) Body: {"msgtype
+  ":"m.text","body":"Hmm"}
+  2015-05-06 09:20:11 INFO:req [dg44nv749b4g0] onUserQuery: @freenode_M-Mjark1:matrix.org
+  2015-05-06 09:20:11 INFO:irc Querying for nick M-Mjark1 on irc.freenode.net
+  2015-05-06 09:20:11 INFO:req [dg44nv749b4g0] Creating virtual user for M-Mjark1 on irc.freenode.net
+  2015-05-06 09:20:11 INFO:req [dg44nv749b4g0] Created virtual user @freenode_M-Mjark1:matrix.org
+  2015-05-06 09:20:11 DEBUG:req [dg44nv749b4g0] SUCCESS - 475 ms
+  2015-05-06 09:20:11 INFO:main 83.166.68.176 - - [06/May/2015:09:20:11 +0000] "GET /users/%40freenode_M-Mjark1%3Amatrix.org?access_token=3576fa05ea4ebfdab78d2c57bf410a6650da62674690bef594730cb51db5ed1f_crc274552e8
+   HTTP/1.1" 200 2 "-" "Synapse/0.8.1-r4 (b=develop,f4664a6)" 
+  2015-05-06 09:20:13 INFO:req [6tbu7rxaavock] onUserQuery: @freenode_M-Mjark1:matrix.org
+  2015-05-06 09:20:13 INFO:irc Querying for nick M-Mjark1 on irc.freenode.net
+  2015-05-06 09:20:13 DEBUG:req [8x1zv6jtkd8gk] HTTP 200 : {"event_id":"$1430904010107bpGRU:matrix.org"}
+  2015-05-06 09:20:13 DEBUG:req [8x1zv6jtkd8gk] SUCCESS - 6843 ms
+  2015-05-06 09:20:13 INFO:req [6tbu7rxaavock] Creating virtual user for M-Mjark1 on irc.freenode.net
+  2015-05-06 09:20:13 INFO:req [6tbu7rxaavock] Created virtual user @freenode_M-Mjark1:matrix.org
+  2015-05-06 09:20:13 DEBUG:req [6tbu7rxaavock] SUCCESS - 530 ms
+  2015-05-06 09:20:13 INFO:main 83.166.68.176 - - [06/May/2015:09:20:13 +0000] "GET /users/%40freenode_M-Mjark1%3Amatrix.org?access_token=3576fa05ea4ebfdab78d2c57bf410a6650da62674690bef594730cb51db5ed1f_crc274552e8
+   HTTP/1.1" 200 2 "-" "Synapse/0.8.1-r4 (b=develop,f4664a6)" 
+  2015-05-06 09:20:15 INFO:req [g9j0qe5p7yg4g] onUserQuery: @freenode_M-Mjark1:matrix.org
+  2015-05-06 09:20:15 INFO:irc Querying for nick M-Mjark1 on irc.freenode.net
+  2015-05-06 09:20:15 INFO:req [g9j0qe5p7yg4g] Creating virtual user for M-Mjark1 on irc.freenode.net
+  2015-05-06 09:20:15 INFO:req [g9j0qe5p7yg4g] Created virtual user @freenode_M-Mjark1:matrix.org
+  2015-05-06 09:20:15 DEBUG:req [g9j0qe5p7yg4g] SUCCESS - 344 ms
+  2015-05-06 09:20:15 INFO:main 83.166.68.176 - - [06/May/2015:09:20:15 +0000] "GET /users/%40freenode_M-Mjark1%3Amatrix.org?access_token=3576fa05ea4ebfdab78d2c57bf410a6650da62674690bef594730cb51db5ed1f_crc274552e8
+   HTTP/1.1" 200 2 "-" "Synapse/0.8.1-r4 (b=develop,f4664a6)" 
+  2015-05-06 09:20:15 INFO:main 83.166.68.176 - - [06/May/2015:09:20:15 +0000] "PUT /transactions/10283?access_token=3576fa05ea4ebfdab78d2c57bf410a6650da62674690bef594730cb51db5ed1f_crc274552e8 HTTP/1.1" 200 2 "-" 
+  "Synapse/0.8.1-r4 (b=develop,f4664a6)" 
+  {noformat}
+id: '11507'
+key: BOTS-29
+number: '29'
+priority: '2'
+project: '10101'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-13 12:04:53.0
+status: '5'
+type: '1'
+updated: 2015-05-13 12:04:53.0
+votes: '0'
+watches: '2'
+workflowId: '11607'
+---
+actions:
+- author: kegan
+  body: |-
+    Recently bumped into this when neb tried to send stuff quickly (M-neb and M-neb1 were sprouted). This smells like a race condition when the AS receives messages from Matrix and checks to see if there is an IRC connection, then connects to IRC if there isn't an active IRC connection.
+
+    This should be testable in the integration tests (inject 2 matrix messages, expect a single connect call on the IRC side).
+  created: 2015-05-11 14:32:22.0
+  id: '11735'
+  issue: '11507'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-11 14:33:24.0
+- author: kegan
+  body: |-
+    This is caused by a netsplit on freenode. Had it happen to me. Logs from IRC:
+
+    {code}
+    * M-kegan1 (~kegan__ma@ldc-prd-matrix-003.openmarket.com) has joined #matrix-dev
+    * M-kegan has quit (*.net *.split)
+    <M-kegan1> ping
+    {code}
+  created: 2015-05-13 09:35:53.0
+  id: '11740'
+  issue: '11507'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-13 09:35:53.0
+- author: kegan
+  body: |-
+    Reproduced locally by sending {{KILL}} commands to an IRC client and quickly changing your own nick so there is a nick clash (forcing it to append 1) before it reconnects.
+
+    The problem here is with the initial assignment of the IRC nick. Whilst the bot does modify everything correctly when it receives {{nick}} events, there isn't a {{nick}} event when you *first connect*. As the nick doesn't match what was fed into {{irc.Client(opts)}} we then get a mismatch and it thinks the nick is a distinct user, causing the echo. The node IRC library does modify {{Client.nick}} when it gets {{err_nicknameinuse}} so why this isn't showing up correctly in the debug REPL is confusing: we may be incorrectly clobbering it?
+  created: 2015-05-13 10:40:13.0
+  id: '11741'
+  issue: '11507'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-13 10:40:13.0

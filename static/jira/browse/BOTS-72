@@ -1,0 +1,57 @@
+---
+summary: Connect callback can fire seemingly randomly
+---
+assignee: kegan
+created: 2015-06-30 17:41:26.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  A new MatrixBridge joined but we never attempted to connect another one. Logs suggest the connect callback fired ('connected' log) without a corresponding 'connecting' log. Lots of requests on ident for ports which we don't think anyone is on currently.
+id: '11720'
+key: BOTS-72
+number: '72'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-07-31 10:33:42.0
+status: '5'
+type: '1'
+updated: 2015-07-31 10:33:42.0
+votes: '0'
+watches: '2'
+workflowId: '11821'
+---
+actions:
+- author: kegan
+  body: |-
+    {code}
+    2015-06-30 12:54:21 INFO:irc-server Connecting to IRC server irc.freenode.net as MatrixBridge (user=matrixirc)
+    2015-06-30 12:54:23 INFO:irc-server Server: irc.freenode.net (MatrixBridge) connected (local port 56639). Joining 47 channels
+    [...]
+    2015-06-30 16:03:32 INFO:irc-server Server: irc.freenode.net (MatrixBridge) connected (local port 56639). Joining 47 channels
+    {code}
+
+    There were no duplicates from IRC > Matrix, probably because the hooks were never added (this is done in the connecting log line).
+  created: 2015-06-30 17:44:28.0
+  id: '11950'
+  issue: '11720'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-30 17:44:28.0
+- author: kegan
+  body: Connect callback is invoked exactly once after the register {{this.once('registered', callback);}} which is emitted after a {{rpl_welcome}}.
+  created: 2015-06-30 17:47:05.0
+  id: '11951'
+  issue: '11720'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-30 17:47:05.0
+- author: kegan
+  body: 'Fixed on {{matrix-memberlist-mirroring}} branch: Connections are done in a serial manner per user, with client-side timeouts.'
+  created: 2015-07-31 10:33:42.0
+  id: '12040'
+  issue: '11720'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-31 10:33:42.0

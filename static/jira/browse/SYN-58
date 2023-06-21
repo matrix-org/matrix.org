@@ -1,0 +1,33 @@
+---
+summary: initialSync with limit=0 ignores limit
+---
+created: 2014-09-19 19:20:06.0
+creator: leonerd
+description: ''
+id: '10348'
+key: SYN-58
+number: '58'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2014-11-20 19:34:33.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:41.0
+votes: '0'
+watches: '1'
+workflowId: '10451'
+---
+actions:
+- author: leonerd
+  body: |-
+    Fixed by
+
+    [develop 5f19c55] SYN-58: Allow passing explicit limit=0 to initialSync to request no messages at all; missing still implies default 10
+  created: 2014-11-20 19:34:33.0
+  id: '10818'
+  issue: '10348'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-20 19:34:33.0

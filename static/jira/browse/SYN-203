@@ -1,0 +1,47 @@
+---
+summary: Media repo GET 500s on small images with large width/height param
+---
+created: 2014-12-17 14:30:28.0
+creator: kegan
+description: |-
+  Original image dims: 25x25
+  Requested: 320x320
+
+  Stack:
+  {code}
+  2014-12-17 14:26:33,852 - synapse.media.v1.base_resource - 66 - ERROR -  - Failed handle request synapse.media.v1.thumbnail_resource._async_render_GET on <synapse.media.v1.thumbnail_resource.ThumbnailResource instance at 0x7fc65571bea8>
+  Traceback (most recent call last):
+    File "synapse/media/v1/base_resource.py", line 55, in wrapped_request_handler
+      yield request_handler(self, request)
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/media/v1/thumbnail_resource.py", line 45, in _async_render_GET
+      request, media_id, width, height, method, m_type
+    File "/home/kegan/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/media/v1/thumbnail_resource.py", line 66, in _respond_local_thumbnail
+      width, height, method, m_type, thumbnail_infos
+    File "synapse/media/v1/thumbnail_resource.py", line 182, in _select_thumbnail
+      return min(info_list)[-1]
+  ValueError: min() arg is an empty sequence
+  {code}
+
+  Expected: Return the original image if both width and height are < requested width and height.
+id: '10829'
+key: SYN-203
+number: '203'
+priority: '2'
+project: '10000'
+reporter: kegan
+resolution: '5'
+resolutiondate: 2016-01-06 10:21:51.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:21:51.0
+votes: '0'
+watches: '1'
+workflowId: '10929'
+---
+actions: null

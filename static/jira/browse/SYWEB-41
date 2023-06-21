@@ -1,0 +1,31 @@
+---
+summary: Joining new chatrooms doesn't trigger a pagination; scrollback is missing
+---
+assignee: manu
+created: 2014-09-18 00:15:58.0
+creator: matthew
+description: ''
+id: '10317'
+key: SYWEB-41
+number: '41'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-18 18:35:40.0
+status: '5'
+type: '1'
+updated: 2014-09-22 17:20:48.0
+votes: '0'
+watches: '1'
+workflowId: '10420'
+---
+actions:
+- author: matthew
+  body: hopefully fixed by  http://git.io/BtHb9w (shouldn't this have autoassociated somehow to JIRA)?
+  created: 2014-09-18 18:35:40.0
+  id: '10331'
+  issue: '10317'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-18 18:35:40.0

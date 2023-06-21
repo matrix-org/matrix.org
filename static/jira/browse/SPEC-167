@@ -1,0 +1,28 @@
+---
+summary: m.call.* events need a way to handle call errors
+---
+created: 2015-06-01 23:57:06.0
+creator: matthew
+description: ''
+id: '11574'
+key: SPEC-167
+number: '167'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:20.0
+votes: '0'
+watches: '2'
+workflowId: '11675'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/504'
+  created: 2016-10-28 16:27:20.0
+  id: '13312'
+  issue: '11574'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:20.0

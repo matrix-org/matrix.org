@@ -1,0 +1,47 @@
+---
+summary: Credentials persist across logout.
+---
+assignee: gforet
+created: 2015-01-07 16:41:12.0
+creator: erikj
+description: ''
+id: '10894'
+key: SYIOS-44
+number: '44'
+priority: '2'
+project: '10200'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-01-22 16:28:53.0
+status: '5'
+type: '1'
+updated: 2015-01-23 09:44:03.0
+votes: '0'
+watches: '2'
+workflowId: '10994'
+---
+actions:
+- author: gforet
+  body: Cannot reproduced
+  created: 2015-01-13 09:00:51.0
+  id: '11111'
+  issue: '10894'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-13 09:00:51.0
+- author: gforet
+  body: Reproduced and fixed
+  created: 2015-01-22 16:28:53.0
+  id: '11184'
+  issue: '10894'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-22 16:28:53.0
+- author: gforet
+  body: A second commit has been done in SDK in order to release credentials on logout.
+  created: 2015-01-23 09:44:03.0
+  id: '11186'
+  issue: '10894'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-23 09:44:03.0

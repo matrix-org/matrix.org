@@ -1,0 +1,282 @@
+---
+summary: Clients should be aware private rooms can optionally have aliases
+---
+created: 2014-10-27 10:27:42.0
+creator: matthew
+description: |-
+  Is it really just me who finds it *really* distasteful that private rooms without aliases have no way of being uniquely identified out of band!??
+
+  I want to say to people "hey, i'll invite you to #matrix-internal:matrix.org" rather than "hey, i'll invite you to the room which happens to be currently called a really generic non-unique name like 'Matrix Internal'"
+
+  All I propose is that we encourage people to define aliases for private rooms to make them easier to discuss OOB.  It's not compulsory, but it would be really nice for the 'Matrix Internal' use case...
+id: '10493'
+key: SYWEB-138
+number: '138'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2014-11-04 17:13:12.0
+status: '1'
+type: '1'
+updated: 2014-11-07 09:20:42.0
+votes: '0'
+watches: '5'
+workflowId: '10597'
+---
+actions:
+- author: kegan
+  body: |-
+    bq. I want to say to people "hey, i'll invite you to #matrix-internal:matrix.org" rather than "hey, i'll invite you to the room which happens to be currently called a really generic non-unique name like 'Matrix Internal'"
+
+    Room aliases are not much better for this. The room alias "happens to be currently called" #matrix-internal:matrix.org which happens to point to this room ID. Whilst it is unique, it can be pointed to different rooms, and you can have N aliases per room. What would you display in this case? What would you do if all the room aliases were deleted, or ones were changed?
+
+    The main grievance with room names that I can see is the lack of uniqueness between rooms. Room aliases give the impression of uniqueness but this impression is misplaced. Room aliases were not designed to serve as a unique way to identify a room, for _any length of time other than the moment of joining the room_. I strongly dislike the idea of persisting the alias beyond this period of time, because it can just simply *lie* to you, which I believe is worse than not providing a unique ID. The current architecture simply does not allow for a human-readable lifelong room ID, and I think setting the precedent to "encourage people to define aliases for private rooms to make them easier to discuss OOB" is going inevitably mislead people who are less familiar with the Matrix architecture.
+
+    I would prefer to say "yes, we do not have lifelong human-readable room IDs in order to allow us to do X Y Z" than saying "use room aliases to identify rooms, but mind out for gotchas A B C".
+  created: 2014-10-27 10:46:34.0
+  id: '10584'
+  issue: '10493'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-27 10:46:34.0
+- author: markjh
+  body: 'Hangouts works fine using human readable names. Blah works fine using human readable names. You have the option of creating a #alias if you really want one.'
+  created: 2014-11-04 17:13:12.0
+  id: '10729'
+  issue: '10493'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-04 17:13:12.0
+- author: erikj
+  body: |-
+    {quote}
+    All I propose is that we encourage people to define aliases for private rooms to make them easier to discuss OOB. It's not compulsory, but it would be really nice for the 'Matrix Internal' use case...
+    {quote}
+
+    I think this is going to get to be an annoying UX as we start having more users and rooms. What alias do you pick? #fridayplans? #foo? #asdas? #123456? #pleaseletthisonebeunused? Its going to be quite hard to pick unique alias names that are also actually descriptive or at least human readable.
+
+    Facebook also doesn't support unique names for group chats or even for their "groups". Generally people I know refer to group chats like "Oh, I'll invite you to the chat about the holiday plans" and groups by their group names, which seems to work really quite well.
+
+    {quote}
+    "hey, i'll invite you to the room which happens to be currently called a really generic non-unique name like 'Matrix Internal'"
+    {quote}
+
+    Rename it to something less generic then? O: -)
+  created: 2014-11-04 17:27:16.0
+  id: '10732'
+  issue: '10493'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-04 17:27:59.0
+- author: matthew
+  body: |-
+    How can I even knock (when we have knock support) on a private room to enter it if it has no alias?
+
+    All I am asking is that we provide UI and expectation that people can specify unique identifiers for entering private rooms, if they so desire. And a classic example of this is making Matrix Internal be #matrix-internal:matrix.org so I can tell people where to knock to join it (or provide password-based access or whatever - or simply rejoin it after losing history) without an invite.
+
+    Is this really so controversial?!?
+  created: 2014-11-05 01:10:04.0
+  id: '10734'
+  issue: '10493'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-05 01:10:04.0
+- author: erikj
+  body: |-
+    For rooms which allow knocking or have join passwords, then it makes sense to have a room alias because people can legitimately interact with the room without having to be invited. If they are strictly private rooms, like one to one chat or just an ad-hoc group chat, then there is no reason to have a room alias. 
+
+    Personally, I really really dislike the idea of conflating room aliases and unique identifiers, as they are not the same. Its going to be hard enough for people to understand that room aliases could change and/or have multiple room aliases per room without heavily implying in the UI that aliases can be used as names.
+  created: 2014-11-05 09:52:19.0
+  id: '10735'
+  issue: '10493'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-05 09:52:19.0
+- author: leonerd
+  body: |-
+    I'm not sure I follow. If you want to be able to tell people "go join #matrix-internal:matrix.org", then why not just set an alias now?
+
+    Is the problem the fact that aliases are always listed in the /publicRooms list? Maybe we need "hidden" aliases - aliases which are useable but not listed. Maybe that would solve the problem here?
+
+    I really don't see a need to add a *third* namespace to the things that can refer to rooms, beyond the current (internal) opaque IDs, and human-readable aliases.
+  created: 2014-11-05 15:26:51.0
+  id: '10736'
+  issue: '10493'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-05 15:26:51.0
+- author: leonerd
+  body: Also, I very much like referring to the room whose {{m.room.name}} field is "Matrix Internal" as "Matrix Internal", for that is its name. If we don't want to use the room name field to store the name of the room, then what point is there in having it?
+  created: 2014-11-05 15:29:37.0
+  id: '10737'
+  issue: '10493'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-05 15:29:37.0
+- author: markjh
+  body: |-
+    I think we are all in agreement that knock-able rooms and password-protected rooms need a route-able ID. However ad-hoc rooms that are invite-only do not need one. If we enable knock-ing or set a join password then we should encourage/require people to set an alias.
+
+    But this bug's title and description appears to be about how the rooms are referred to or displayed. It appears that Matthew is arguing for IRC-style channel names for every room. Everyone else seems to agree that we don't want to require an alias for every room and that people can refer to channels by their human readable name out of band.
+  created: 2014-11-05 15:44:35.0
+  id: '10738'
+  issue: '10493'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-11-05 15:44:35.0
+- author: matthew
+  body: |-
+    I'm not arguing for IRC-style channel names for every room - only knockable/passworded/out-of-band-accessible ones (or rooms which may need to be knockable/passworded in future).  In otherwords, to not have a crappy assumption that "private rooms do not have aliases".
+
+    I think we're all in agreement - we need to just ensure that the client behaviour reflects this.
+  created: 2014-11-05 15:46:06.0
+  id: '10739'
+  issue: '10493'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-05 15:46:06.0
+- author: leonerd
+  body: |-
+    So far we have a model in which _any_ room is allowed to have globally-routable human-readable aliases pointed at it, but no room needs to have them. Some types of room use (such as knockable or publicly-joinable rooms) are not useful if you don't give them an alias, but in our current implementation that's "the user's problem".
+
+    Is anyone here suggesting a change to this model? If so, can you clarify exactly what change you are proposing to make? Are we going to move to *require* a room alias in any particular situation, or *forbid* one at any time?
+
+    Personally I think our current setup is fine - anything can be given an alias, and users ought to give aliases to some kinds of rooms to make them useful to others, but all of those are optional.
+  created: 2014-11-05 15:55:05.0
+  id: '10740'
+  issue: '10493'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-05 15:55:28.0
+- author: kegan
+  body: |-
+    bq. Personally I think our current setup is fine - anything can be given an alias, and users ought to give aliases to some kinds of rooms to make them useful to others, but all of those are optional.
+
+    I agree with this. I don't have anything more to add to this without rehashing what Erik, Mark and Leo have already said.
+  created: 2014-11-05 16:01:41.0
+  id: '10741'
+  issue: '10493'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-05 16:01:41.0
+- author: matthew
+  body: |-
+    This bug is a really depressing saga of failure to communicate in all directions; not helped by my inflammatory description field.
+
+    This whole issue came from the fact that I can easily imagine a scenario where we want Matrix Internal to be accessible to users who knock or have a password.  In fact, we have this situation today, for getting the BridgeBot in there.
+
+    At the time, I asked if we can specify an alias to do this, and the reaction was: "why would private rooms need aliases?"
+
+    Eitherway, the current behaviour of the spec and the server is indeed fine - we /can/ create aliases for both public and private rooms, and it's up to us if we want to expose them via aliases.  I was never trying to require or forbid aliases.  "It appears that Matthew is arguing for IRC-style channel names for every room." is also incorrect.  There is no suggestion of any "third namespace" for pointing to rooms.
+
+    All I suggested was as per the very first comment:
+
+    {quote}
+    All I propose is that we encourage people to define aliases for private rooms to make them easier to discuss OOB. It's not compulsory, but it would be really nice for the 'Matrix Internal' use case...
+    {quote}
+
+    I'd now clarify that to be:
+
+    {quote}
+    All I propose is that we encourage people to define aliases for private rooms to make them easier to manipulate OOB, if appropriate. It's not compulsory, but it would be really nice for the 'Matrix Internal' use case...
+    {quote}
+
+    So, right now, the web client doesn't let us specify aliases for private rooms (or indeed edit aliases for rooms at all).  So once the clients support this, and as long as the clients don't assume that private rooms have no aliases (which is i think currently the case on the webclient), then I we can close this bug.  Renaming it to reflect.
+  created: 2014-11-06 00:21:50.0
+  id: '10742'
+  issue: '10493'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-06 00:21:50.0
+- author: matthew
+  body: moving this to webclient as this is a client issue in the end.
+  created: 2014-11-06 00:24:32.0
+  id: '10743'
+  issue: '10493'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-06 00:24:32.0
+- author: erikj
+  body: |-
+    Matthew:
+
+    {quote}
+    All I propose is that we encourage people to define aliases for private rooms to make them easier to manipulate OOB, if appropriate. It's not compulsory, but it would be really nice for the 'Matrix Internal' use case...
+    {quote}
+
+    What do you mean by private room? In my mind this is either a strictly no-one-new-may-join or invite-only room. In which case my reaction is still "why would private rooms need aliases?" If the user changes it the permissions to be more liberal, then I'm happy for the clients to then ask the user if they want to add an alias.
+
+    \\
+
+    {quote}
+    ... only knockable/passworded/out-of-band-accessible ones (or rooms which may need to be knockable/passworded in future)
+    {quote}
+
+    Using the term "private room" to refer to such rooms I feel is a bit misleading, since we also have no-one-new-may-join and invite-only concepts.
+
+    \\
+
+    {quote}
+    ... encourage ...
+    {quote}
+
+    This is where my major gripe is. I'm quite happy to allow all private rooms to have aliases, but I don't want to _actively encourage_ people to give no-one-new-may-join and invite-only rooms aliases. See my comments above for reasoning.
+
+    \\
+
+    On the other hand, from your various other comments, it seems you may be arguing for:
+
+    {quote}
+    We should encourage people to define aliases for rooms where that can potentially be joined without an invite, e.g. public, knockable and password protected rooms.
+    {quote}
+
+    \\
+
+    {quote}
+    So, right now, the web client doesn't let us specify aliases for private rooms (or indeed edit aliases for rooms at all).
+    {quote}
+
+    They let you specify room aliases on creation, fwiw.
+
+    \\
+
+    {quote}
+    Clients should be aware private rooms can optionally have aliases
+    {quote}
+
+    They are. Though I don't feel the title accurately reflects the discussion.
+  created: 2014-11-06 10:58:24.0
+  id: '10744'
+  issue: '10493'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-06 10:58:24.0
+- author: matthew
+  body: |-
+    By "private room", i have been meaning any room which the public is not free to join unhindered - hence apparently the gap in discussion.
+
+    I agree there is no reason to give a room which can only be joined by invite an alias.
+
+    "Encourage" is too strong a word.  I just want the clients to support adding aliases to 'private' rooms, and be aware that 'private' rooms may have aliases (for whatever definition of private).
+
+    As far as I know, the webclient assumes that private rooms (e.g. Matrix Internal) do not have aliases.  And there's certainly no way to add them currently.  So I think the (new) title of the bug stands, especially if you don't get hung up on the word 'private'.
+  created: 2014-11-06 23:24:21.0
+  id: '10745'
+  issue: '10493'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-06 23:24:21.0
+- author: kegan
+  body: |-
+    bq. As far as I know, the webclient assumes that private rooms (e.g. Matrix Internal) do not have aliases.
+
+    The web client has always supported aliases for private rooms. In fact, it currently *forces* you set an alias for every type of room (The 'Create Room' button is greyed out if an alias isn't entered).
+
+    The only thing the web client does not (and has never) supported was editing and deleting aliases, as per SYWEB-2
+  created: 2014-11-07 09:20:42.0
+  id: '10746'
+  issue: '10493'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-07 09:20:42.0

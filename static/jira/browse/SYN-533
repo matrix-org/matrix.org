@@ -1,0 +1,30 @@
+---
+summary: Expire access_tokens
+---
+created: 2015-12-01 15:32:17.0
+creator: richvdh
+description: ''
+id: '12162'
+key: SYN-533
+number: '533'
+priority: '3'
+project: '10000'
+reporter: richvdh
+resolution: '2'
+resolutiondate: 2016-10-06 18:07:31.0
+status: '5'
+type: '4'
+updated: 2016-10-06 18:07:31.0
+votes: '0'
+watches: '2'
+workflowId: '12265'
+---
+actions:
+- author: richvdh
+  body: We've decided to remove refresh tokens from the matrix spec (see https://github.com/matrix-org/matrix-doc/pull/395), so this is no longer required.
+  created: 2016-10-06 18:07:31.0
+  id: '13170'
+  issue: '12162'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 18:07:31.0

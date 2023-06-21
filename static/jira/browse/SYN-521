@@ -1,0 +1,28 @@
+---
+summary: History visibility + federation = strange blank events in the timeline
+---
+created: 2015-11-22 14:54:37.0
+creator: matthew
+description: Both davidar and jfred have encountered joining a freenode channel over federation from their personal HSes and seeing a fleet of blank events in Vector - see attached images.  It's less clear what's going on with davidar's one, as it shows him talking (perhaps from the matrix.org HS rather than davidar.io?)
+id: '12131'
+key: SYN-521
+number: '521'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:35.0
+votes: '0'
+watches: '2'
+workflowId: '12234'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1418'
+  created: 2016-11-07 18:28:35.0
+  id: '13726'
+  issue: '12131'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:35.0

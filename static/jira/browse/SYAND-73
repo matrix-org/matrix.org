@@ -1,0 +1,30 @@
+---
+summary: Android doesn't pick up TZ changes sensibly
+---
+created: 2015-04-20 23:46:23.0
+creator: matthew
+description: ''
+id: '11353'
+key: SYAND-73
+number: '73'
+priority: '2'
+project: '10201'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-04-21 06:32:44.0
+status: '5'
+type: '1'
+updated: 2015-04-21 06:33:14.0
+votes: '0'
+watches: '2'
+workflowId: '11453'
+---
+actions:
+- author: m-ylecollen
+  body: It has been fixed weeks ago.
+  created: 2015-04-21 06:33:14.0
+  id: '11509'
+  issue: '11353'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-04-21 06:33:14.0

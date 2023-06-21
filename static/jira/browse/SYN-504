@@ -1,0 +1,71 @@
+---
+summary: Federation no longer upholds retry_interval for exponential backoff when talking to dead servers
+---
+assignee: erikj
+created: 2015-10-22 20:07:22.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  We're trying to connect every ~10s to dead servers despite destinations.retry_interval being 3600000ms (1h). Also, each failed request logs the connection failure 12 times...
+id: '12037'
+key: SYN-504
+number: '504'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2016-11-07 18:28:30.0
+votes: '0'
+watches: '4'
+workflowId: '12140'
+---
+actions:
+- author: matthew
+  body: |-
+    It seems we (still) have a really serious regression on federation retries
+    arasphere is trying to hammer dead homeservers for every event it emits
+
+    sqlite> select * from destinations where destination='tyler.cat';
+    tyler.cat|1452137060029|15000000
+
+    implies to me that it should be trying tyler.cat every 4 hours?  (15 million milliseconds)
+    but i'm seeing every event I emit into matrix hq from arasphere causing at least 5 retries over federation to that server:
+
+    2016-01-07 03:16:24,131 - synapse.http.matrixfederationclient - 183 - WARNING - GET-31539 - {GET-O-371} Sending request failed to tyler.cat: GET matrix://tyler.cat/_matrix/media/v1/download/tyler.cat/LPaWtHDwcLyglmqQlsDKBySP: ConnectionRefusedError - ConnectionRefusedError: Connection refused
+    2016-01-07 03:17:02,587 - synapse.http.matrixfederationclient - 183 - WARNING -  - {PUT-O-3794} Sending request failed to tyler.cat: PUT matrix://tyler.cat/_matrix/federation/v1/send/1451931591285/: ConnectionRefusedError - ConnectionRefusedError: Connection refused
+    ConnectionRefusedError - ConnectionRefusedError: Connection refused
+    2016-01-07 03:24:20,340 - synapse.http.matrixfederationclient - 183 - WARNING -  - {PUT-O-4600} Sending request failed to tyler.cat: PUT matrix://tyler.cat/_matrix/federation/v1/send/1451931592091/: ConnectionRefusedError - ConnectionRefusedError: Connection refused
+  created: 2016-01-07 03:32:03.0
+  id: '12548'
+  issue: '12037'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-01-07 03:32:03.0
+- author: erikj
+  body: Hmm, it seems to be working correctly on jki.re
+  created: 2016-01-07 11:14:53.0
+  id: '12549'
+  issue: '12037'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-07 11:14:53.0
+- author: erikj
+  body: |-
+    After restarting `arasphere.net` to turn on manhole, the retry time for `tyler.cat` seems to have been reset and is now incrementing correctly.
+
+    No idea what's going on, will continue to monitor.
+  created: 2016-01-07 15:18:00.0
+  id: '12551'
+  issue: '12037'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-07 15:18:00.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1404'
+  created: 2016-11-07 18:28:30.0
+  id: '13713'
+  issue: '12037'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:30.0

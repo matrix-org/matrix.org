@@ -1,0 +1,33 @@
+---
+summary: Add a certificate pinning mechanism to the federation key APIs
+---
+created: 2016-01-19 18:12:48.0
+creator: markjh
+description: |-
+  Add a way for home-server operators to promise in the /key responses that they won't lose the private keys for their HS.
+
+  Then other HSes that have observed that key won't accept a different key for that domain, giving stronger guarantees against MITM attacks.
+
+  Something like https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning
+id: '12319'
+key: SPEC-329
+number: '329'
+priority: '2'
+project: '10001'
+reporter: markjh
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:11.0
+votes: '0'
+watches: '2'
+workflowId: '12424'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/619'
+  created: 2016-10-28 16:28:11.0
+  id: '13427'
+  issue: '12319'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:11.0

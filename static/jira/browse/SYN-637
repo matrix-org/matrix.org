@@ -1,0 +1,35 @@
+---
+summary: Use JWT for third-party authentication
+---
+created: 2016-02-25 11:59:08.0
+creator: nikriek@gmail.com
+description: |-
+  CAS and SAML aren't really lightweight as sometimes needed. Therefore I'd like to propose another method for third-party authentication using JavaScript Web Tokens. 
+
+  The client authentication with an identity provider with it's own flow. The IS provides a signed JWT that includes user information. Using the token we can login at the homeserver in two different ways. 
+  1. The homeserver decrypts the JWT using his private key. If the contained user_id exists in the database, the the homeserver returns an access_token. 
+  2. The JWT replaces matrix own access_token flow. Therefore we would not query the DB for the existence of an access_token, but using the information in the JWT. 
+
+  The first approach would break less things, I guess. What do you think?
+id: '12523'
+key: SYN-637
+number: '637'
+priority: '3'
+project: '10000'
+reporter: nikriek@gmail.com
+status: '10100'
+type: '2'
+updated: 2016-11-07 18:29:10.0
+votes: '0'
+watches: '2'
+workflowId: '12623'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1504'
+  created: 2016-11-07 18:29:10.0
+  id: '13811'
+  issue: '12523'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:10.0

@@ -1,0 +1,22 @@
+---
+summary: Lots of problems on iPhone5 and iOS8 sending photos
+---
+created: 2015-10-06 20:55:00.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Photo previews appear entirely blank, and camera & video capture don't work at all. Sounds like the same memory contention problems we've seen in the past with UC.
+id: '12006'
+key: SYIOS-156
+number: '156'
+priority: '1'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-10-06 20:55:00.0
+votes: '0'
+watches: '1'
+workflowId: '12109'
+---
+actions: null

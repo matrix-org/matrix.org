@@ -1,0 +1,84 @@
+---
+summary: Users can set room power_levels higher than their own
+---
+assignee: leonerd
+created: 2015-04-21 21:37:37.0
+creator: leonerd
+description: |-
+  A fragment from (uncommitted) sytest test output:
+
+  {noformat}
+    Testing if: Users cannot set redact powerlevel higher than their own... 
+  p1 {
+    ban => 10000000,
+    events => { "m.room.name" => 100, "m.room.power_levels" => 100, "m.room.topic" => 0 },
+    events_default => 0,
+    kick => 10000000,
+    redact => 25,
+    state_default => 50,
+    users => {
+      "\@01register-user:localhost:8001" => 100,
+      "\@some-random-user:here"          => 50,
+    },
+    users_default => 0,
+  }
+     | Succeeds at setting 25... OK
+  p2 {
+    ban => 10000000,
+    events => { "m.room.name" => 100, "m.room.power_levels" => 100, "m.room.topic" => 0 },
+    events_default => 0,
+    kick => 10000000,
+    redact => 10000000,
+    state_default => 50,
+    users => {
+      "\@01register-user:localhost:8001" => 100,
+      "\@some-random-user:here"          => 50,
+    },
+    users_default => 0,
+  }
+     +--- FAIL:
+   | Expected not to succeed at changing redact higher than my own at ./run-tests.pl line 292.
+   +----------------------
+  {noformat}
+
+  I wasn't expecting to be able to set a level higher than my own - namely, 100.
+id: '11358'
+key: SYN-353
+number: '353'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-04-22 14:24:29.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:05.0
+votes: '0'
+watches: '2'
+workflowId: '11458'
+---
+actions:
+- author: erikj
+  body: |-
+    So what is the change here? It looks like redact level is being set from 25 -> 50?
+
+    The file code in question is: https://github.com/matrix-org/synapse/blob/master/synapse/api/auth.py#L613
+  created: 2015-04-21 22:34:26.0
+  id: '11513'
+  issue: '11358'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-04-21 22:34:26.0
+- author: leonerd
+  body: |-
+    No, the code was attempting (and succeeding) to raise the required level to 10000000.
+
+    This turned out to be another case of python "helpfully" comparing strings and ints.
+
+    Now fixed by a16eaa0
+  created: 2015-04-22 14:23:51.0
+  id: '11514'
+  issue: '11358'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-04-22 14:23:51.0

@@ -1,0 +1,26 @@
+---
+summary: Android Wear specific notification
+---
+created: 2015-07-17 12:38:14.0
+creator: skaverat
+description: |-
+  Current notifications are rather bulky on an android wear device:
+
+  https://matrix.org/_matrix/media/v1/download/matrix.org/jFYYDZTBJGrldAudtemUgFwl
+
+  It's possible to style notifications for wear devices:
+  https://developer.android.com/training/wearables/notifications/creating.html
+id: '11760'
+key: SYAND-101
+number: '101'
+priority: '3'
+project: '10201'
+reporter: skaverat
+status: '10100'
+type: '4'
+updated: 2015-07-17 12:38:14.0
+votes: '0'
+watches: '1'
+workflowId: '11861'
+---
+actions: null

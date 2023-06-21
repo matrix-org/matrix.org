@@ -1,0 +1,28 @@
+---
+summary: Should we consider seqnums rather than txnids for CS API to make it possible to spot missing msgs and make ordering easier?
+---
+created: 2016-01-21 22:14:16.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12338'
+key: SPEC-336
+number: '336'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:13.0
+votes: '0'
+watches: '2'
+workflowId: '12443'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/626'
+  created: 2016-10-28 16:28:13.0
+  id: '13434'
+  issue: '12338'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:13.0

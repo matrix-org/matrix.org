@@ -1,0 +1,28 @@
+---
+summary: Script to export all your logs by repeatedly calling /sync and /messages
+---
+created: 2016-07-22 09:59:28.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12764'
+key: SYN-734
+number: '734'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:46.0
+votes: '0'
+watches: '2'
+workflowId: '12864'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1570'
+  created: 2016-11-07 18:29:46.0
+  id: '13893'
+  issue: '12764'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:46.0

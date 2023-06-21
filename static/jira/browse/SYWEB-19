@@ -1,0 +1,25 @@
+---
+summary: Need a way of initiating chats with arbitrary users
+---
+created: 2014-09-16 01:11:00.0
+creator: matthew
+description: |-
+  Needs some kind of form to let you start a new chat with an arbitrary ID - e.g. start a convo with @god:matrix.org even if you're not in any of the same channels as him.
+
+  It should support 3PIDs as well as matrix IDs - and if the email address isn't known, it should cough up a mailto: URL to encourage you to mail the person to get involved in Matrix.
+id: '10058'
+key: SYWEB-19
+number: '19'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-23 13:42:40.0
+status: '5'
+type: '2'
+updated: 2014-09-25 17:41:29.0
+votes: '0'
+watches: '1'
+workflowId: '10402'
+---
+actions: null

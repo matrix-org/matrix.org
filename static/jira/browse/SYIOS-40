@@ -1,0 +1,31 @@
+---
+summary: Any HTTP request can fail due to rate-limiting on the server, and need to be retried.
+---
+assignee: manu
+created: 2014-12-24 17:14:36.0
+creator: matthew
+description: ''
+id: '10866'
+key: SYIOS-40
+number: '40'
+priority: '1'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-02-17 11:00:58.0
+status: '5'
+type: '1'
+updated: 2015-02-17 11:00:59.0
+votes: '0'
+watches: '1'
+workflowId: '10966'
+---
+actions:
+- author: matthew
+  body: I'm seeing a lot of 'msg unsent' errors when typing quickly on iOS.  I assume i'm hitting the rate-limiting.  Clearly the client should be retrying automatically rather than sulking.
+  created: 2015-02-16 01:29:55.0
+  id: '11260'
+  issue: '10866'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-16 01:29:55.0

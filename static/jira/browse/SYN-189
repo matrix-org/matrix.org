@@ -1,0 +1,30 @@
+---
+summary: The first message sent to a remote room after joining always seems to be lost
+---
+created: 2014-12-04 00:25:39.0
+creator: matthew
+description: ''
+id: '10766'
+key: SYN-189
+number: '189'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-01-06 11:46:56.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:26:17.0
+votes: '0'
+watches: '2'
+workflowId: '10866'
+---
+actions:
+- author: kegan
+  body: SYN-195
+  created: 2015-01-06 11:46:56.0
+  id: '11054'
+  issue: '10766'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-01-06 11:46:56.0

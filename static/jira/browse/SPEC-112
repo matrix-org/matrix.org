@@ -1,0 +1,125 @@
+---
+summary: The security offered by access_token is way too weak, especially for non-TLS client traffic.
+---
+assignee: matthew
+created: 2015-02-19 15:07:08.0
+creator: matthew
+description: |-
+  1) access_tokens never change (unless you log out)
+  2) they are trivial to sniff from non-TLS HTTP traffic and/or clientside logs.
+
+  Surely we should be using an actual digest handshake or HMAC or similar to make it a /little/ harder for clients' access_tokens to not be silently sequestered?
+id: '11095'
+key: SPEC-112
+number: '112'
+priority: '1'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:02.0
+votes: '0'
+watches: '6'
+workflowId: '11195'
+---
+actions:
+- author: matthew
+  body: https://github.com/rescrv/libmacaroons could be a fun possible solution to this.
+  created: 2015-02-26 00:03:09.0
+  id: '11317'
+  issue: '11095'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-26 00:03:09.0
+- author: kegan
+  body: |-
+    We will have trouble getting any kind of simple {{curl}}-like example if we end up forcing {{HMAC}} on everything, and it will increase the burden of even noddy client examples. Time-limited {{access_token}} s are an improvement on the baseline, without (much) added complexity, but give much worse sniffing protection than {{HMAC}}.
+
+    We should support alternative authentication mechanisms, but I don't feel that they should be applied by default, since by default people should be using HTTPS. If we do end up doing time limited tokens, we might want to look into the OAuth2 guidelines, and consider if we should be supporting OAuth2 login completely (where clients redirect to your home server to login, then get a token back). The added benefit to that of course would be the ability to define app-specific redirect URIs (e.g. {{myapp://}}) which is nice on mobile clients since their apps can intercept them.
+  created: 2015-03-05 13:43:56.0
+  id: '11347'
+  issue: '11095'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-05 13:43:56.0
+- author: kegan
+  body: We now use macaroons and provide a {{/tokenrefresh}} endpoint. I feel this can be closed now but would like to check.
+  created: 2015-10-13 16:43:47.0
+  id: '12249'
+  issue: '11095'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 16:43:47.0
+- author: richvdh
+  body: |-
+    This bug is a bit handwavey; it's not clear what would represent a satisfactory implementation to allow closure.
+
+    Tokens don't actually expire yet (SYN-533), so the presence of a {{/tokenrefresh}} endpoint isn't particularly relevant; and macaroons are as susceptible to sniffing out of http logs as the old tokens were (SYN-299).
+
+    OTOH without concrete suggestions about what else would be better, my inclination is to close this bug.
+  created: 2015-12-01 15:36:36.0
+  id: '12396'
+  issue: '11095'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 15:36:36.0
+- author: jimmycuadra
+  body: Possibly a bit off topic, but what is the reason for allowing non-TLS connections in the client-server API? This might not be an issue of TLS was mandated by the spec.
+  created: 2015-12-30 11:23:03.0
+  id: '12492'
+  issue: '11095'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2015-12-30 11:23:03.0
+- author: matthew
+  body: Both to make it trivial to debug (e.g. to allow tcpdumping http problems without TLS getting in the way), and to support utterly stupid clients like IOT devices which aren't smart enough to talk TLS.
+  created: 2015-12-30 13:58:50.0
+  id: '12493'
+  issue: '11095'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-30 13:58:50.0
+- author: gergelypolonkai
+  body: |-
+    In either case, I'd like to see a token invalidating endpoint, for cases like when the token gets compromised.
+
+    You also mention logging out, but I cannot see anything about that in the spec.
+  created: 2016-02-26 22:00:52.0
+  id: '12725'
+  issue: '11095'
+  type: comment
+  updateauthor: gergelypolonkai
+  updated: 2016-02-26 22:00:52.0
+- author: eternaleye
+  body: |-
+    So, this bug had a few references to Macaroons, but I feel that none of the posts that did so explained how Macaroons help - so I'll try and do so.
+
+    The really nice thing with Macaroons is that *anyone* can further constrain them, but nobody can remove a constraint once it's added. This allows the client to constrain the macaroon sent back to the server to a very short lifetime (on the order of seconds), while the one it actually holds may have a very long validity period indeed. If anyone sniffs the in-flight Macaroon, it will (by and large) be useless too soon to do them any good.
+
+    In addition, it can be constrained to the operation in question (if Synapse supported such caveats), so the sniffed macaroon would (say) only be usable for sending messages (and not state events), or perhaps even only to a specific room.
+
+    It can also be constrained to the user's external IP, which helps even more.
+
+    This would (partially) resolve SYN-299, too, so I'm copying it there, although TBH the right solution to that is probably "Authorization: Macaroon <stuff>"
+  created: 2016-03-01 01:21:22.0
+  id: '12729'
+  issue: '11095'
+  type: comment
+  updateauthor: eternaleye
+  updated: 2016-03-01 01:24:05.0
+- author: richvdh
+  body: 'An interesting and well-written article discussing  the problems with simple bearer tokens in oath,  much of which rings true for us: https://hueniverse.com/2010/09/29/oauth-bearer-tokens-are-a-terrible-idea/'
+  created: 2016-10-26 20:36:53.0
+  id: '13224'
+  issue: '11095'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-26 20:36:53.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/424'
+  created: 2016-10-28 16:27:02.0
+  id: '13275'
+  issue: '11095'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:02.0

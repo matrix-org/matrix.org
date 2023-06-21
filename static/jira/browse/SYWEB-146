@@ -1,0 +1,1263 @@
+---
+summary: Room IDs often get leaked in recents on current develop branch
+---
+assignee: kegan
+created: 2014-11-10 01:10:04.0
+creator: matthew
+description: ''
+id: '10637'
+key: SYWEB-146
+number: '146'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-12 11:24:18.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:03.0
+votes: '0'
+watches: '2'
+workflowId: '10737'
+---
+actions:
+- author: kegan
+  body: Can you open the network tab when you refresh and dump the /initialSync JSON here pretty please? O:)
+  created: 2014-11-10 16:51:11.0
+  id: '10762'
+  issue: '10637'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-10 16:51:11.0
+- author: matthew
+  body: |-
+    {code}
+    {
+        "end": "s1442_146_0",
+        "presence": [
+            {
+                "content": {
+                    "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXcyOmVjaG8tbWF0cml4TLYbzGxvmdiXTxIGNHgtKtXU.aW1hZ2UvanBlZw==.jpeg",
+                    "displayname": "Amandine",
+                    "last_active_ago": 15235771,
+                    "user_id": "@matthew2:echo-matrix"
+                },
+                "type": "m.presence"
+            },
+            {
+                "content": {
+                    "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXc6ZWNoby1tYXRyaXgKvuEDgxIzNNMiAPLNLvHKPns.aW1hZ2UvanBlZw==.jpeg",
+                    "displayname": "Matthew",
+                    "last_active_ago": 7,
+                    "presence": "online",
+                    "user_id": "@matthew:echo-matrix"
+                },
+                "type": "m.presence"
+            }
+        ],
+        "rooms": [
+            {
+                "membership": "join",
+                "messages": {
+                    "chunk": [
+                        {
+                            "age": 1916989339,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388778348,
+                                "note": "64",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "HoSxkqsdwY@echo-matrix",
+                            "origin_server_ts": 1413721326280,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916988910,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388783310,
+                                "note": "64",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "iKiUrKxovY@echo-matrix",
+                            "origin_server_ts": 1413721326710,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916988785,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388783949,
+                                "note": "64",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "fVJamPrHNJ@echo-matrix",
+                            "origin_server_ts": 1413721326835,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916988253,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388789711,
+                                "note": "60",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "jggWxKQBMS@echo-matrix",
+                            "origin_server_ts": 1413721327367,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916988028,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388792027,
+                                "note": "60",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "mSsEayKxnD@echo-matrix",
+                            "origin_server_ts": 1413721327592,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916987602,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388795950,
+                                "note": "62",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "kzZIvhbfve@echo-matrix",
+                            "origin_server_ts": 1413721328018,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916987474,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388796747,
+                                "note": "62",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "HlZCvijwOF@echo-matrix",
+                            "origin_server_ts": 1413721328146,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916987046,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388801949,
+                                "note": "64",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "vutfpdHNnA@echo-matrix",
+                            "origin_server_ts": 1413721328575,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916986918,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388802669,
+                                "note": "64",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "JZlnwHtBOK@echo-matrix",
+                            "origin_server_ts": 1413721328703,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916986592,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388806270,
+                                "note": "65",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "wJivcxHytn@echo-matrix",
+                            "origin_server_ts": 1413721329029,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916986464,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388806826,
+                                "note": "65",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "KCPBOOgsNr@echo-matrix",
+                            "origin_server_ts": 1413721329157,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916986139,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388810831,
+                                "note": "64",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "DzRqbzXyLN@echo-matrix",
+                            "origin_server_ts": 1413721329482,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916986112,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388810908,
+                                "note": "60",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "mgMhCVERkF@echo-matrix",
+                            "origin_server_ts": 1413721329509,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916985968,
+                            "content": {
+                                "body": "C",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "PBDcsvMyFT@echo-matrix",
+                            "origin_server_ts": 1413721329654,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916985944,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388811310,
+                                "note": "67",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "CiPOiKlOVL@echo-matrix",
+                            "origin_server_ts": 1413721329678,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916985915,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388811387,
+                                "note": "60",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "jZMQAVGaID@echo-matrix",
+                            "origin_server_ts": 1413721329707,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916985893,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388811706,
+                                "note": "67",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "IoQoQpBKve@echo-matrix",
+                            "origin_server_ts": 1413721329729,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916985868,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388811745,
+                                "note": "64",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "LCalnpwCCh@echo-matrix",
+                            "origin_server_ts": 1413721329754,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916984338,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388828829,
+                                "note": "60",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "MTHSgCfrnJ@echo-matrix",
+                            "origin_server_ts": 1413721331284,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916984214,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388829627,
+                                "note": "60",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "dcnyvbwDQj@echo-matrix",
+                            "origin_server_ts": 1413721331409,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916984181,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388830107,
+                                "note": "62",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "DmQEaJsrWK@echo-matrix",
+                            "origin_server_ts": 1413721331442,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916984055,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388831386,
+                                "note": "62",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "dKVitlPfaY@echo-matrix",
+                            "origin_server_ts": 1413721331569,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916983931,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388832587,
+                                "note": "64",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "OfMDAZYRFx@echo-matrix",
+                            "origin_server_ts": 1413721331693,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916983896,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388833148,
+                                "note": "64",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "DCkCNXdqrj@echo-matrix",
+                            "origin_server_ts": 1413721331728,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916983773,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388834268,
+                                "note": "65",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "KkRWdoqBmR@echo-matrix",
+                            "origin_server_ts": 1413721331851,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916983641,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388835067,
+                                "note": "65",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "pvefKQhaRn@echo-matrix",
+                            "origin_server_ts": 1413721331983,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916983516,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388836268,
+                                "note": "67",
+                                "state": "on",
+                                "velocity": 68
+                            },
+                            "event_id": "PjaGwCFEuk@echo-matrix",
+                            "origin_server_ts": 1413721332108,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916983479,
+                            "content": {
+                                "channel": 1,
+                                "midi_ts": 388836987,
+                                "note": "67",
+                                "state": "off",
+                                "velocity": 0
+                            },
+                            "event_id": "KcTfnaiJZT@echo-matrix",
+                            "origin_server_ts": 1413721332146,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "org.matrix.midi",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1916977907,
+                            "content": {
+                                "body": "",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "ZhFHNVMowO@echo-matrix",
+                            "origin_server_ts": 1413721337718,
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@Manu:echo-matrix"
+                        },
+                        {
+                            "age": 63594597,
+                            "content": {
+                                "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXc6ZWNoby1tYXRyaXgKvuEDgxIzNNMiAPLNLvHKPns.aW1hZ2UvanBlZw==.jpeg",
+                                "displayname": "Matthew",
+                                "membership": "join",
+                                "prev": "join"
+                            },
+                            "event_id": "lHRNpouOCu@echo-matrix",
+                            "membership": "join",
+                            "origin_server_ts": 1415574721028,
+                            "prev_content": {
+                                "avatar_url": null,
+                                "displayname": "Matthew",
+                                "membership": "join"
+                            },
+                            "prev_state": "FFTvROridQ@echo-matrix",
+                            "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                            "state_key": "@matthew:echo-matrix",
+                            "type": "m.room.member",
+                            "user_id": "@matthew:echo-matrix"
+                        }
+                    ],
+                    "end": "s1442_146_0",
+                    "start": "t1376-1378_146_0"
+                },
+                "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                "state": [
+                    {
+                        "age": 1940911991,
+                        "content": {
+                            "aliases": [
+                                "#midi:echo-matrix"
+                            ]
+                        },
+                        "event_id": "AlgceYyVkc@echo-matrix",
+                        "origin_server_ts": 1413697403648,
+                        "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                        "state_key": "echo-matrix",
+                        "type": "m.room.aliases",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1940911996,
+                        "content": {
+                            "creator": "@matthew:echo-matrix"
+                        },
+                        "event_id": "nPQDPaCCnL@echo-matrix",
+                        "origin_server_ts": 1413697403643,
+                        "required_power_level": 100,
+                        "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.create",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1940911996,
+                        "content": {
+                            "@matthew:echo-matrix": 100,
+                            "default": 0
+                        },
+                        "event_id": "McLqjerNDy@echo-matrix",
+                        "origin_server_ts": 1413697403643,
+                        "required_power_level": 100,
+                        "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.power_levels",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1940911996,
+                        "content": {
+                            "join_rule": "public"
+                        },
+                        "event_id": "zhYxrEuGBK@echo-matrix",
+                        "origin_server_ts": 1413697403643,
+                        "required_power_level": 100,
+                        "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.join_rules",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1940911997,
+                        "content": {
+                            "level": 100
+                        },
+                        "event_id": "jGcayNBlEW@echo-matrix",
+                        "origin_server_ts": 1413697403643,
+                        "required_power_level": 100,
+                        "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.add_state_level",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1940911997,
+                        "content": {
+                            "level": 0
+                        },
+                        "event_id": "NDNmHkpkFH@echo-matrix",
+                        "origin_server_ts": 1413697403643,
+                        "required_power_level": 100,
+                        "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.send_event_level",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1940911997,
+                        "content": {
+                            "ban_level": 50,
+                            "kick_level": 50,
+                            "redact_level": 50
+                        },
+                        "event_id": "juCtRHSiQv@echo-matrix",
+                        "origin_server_ts": 1413697403643,
+                        "required_power_level": 100,
+                        "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.ops_levels",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1940821715,
+                        "content": {
+                            "avatar_url": null,
+                            "displayname": null,
+                            "membership": "join"
+                        },
+                        "event_id": "vvGKjFZxIy@echo-matrix",
+                        "membership": "join",
+                        "origin_server_ts": 1413697493925,
+                        "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                        "state_key": "@Manu:echo-matrix",
+                        "type": "m.room.member",
+                        "user_id": "@Manu:echo-matrix"
+                    },
+                    {
+                        "age": 63594612,
+                        "content": {
+                            "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXc6ZWNoby1tYXRyaXgKvuEDgxIzNNMiAPLNLvHKPns.aW1hZ2UvanBlZw==.jpeg",
+                            "displayname": "Matthew",
+                            "membership": "join",
+                            "prev": "join"
+                        },
+                        "event_id": "lHRNpouOCu@echo-matrix",
+                        "membership": "join",
+                        "origin_server_ts": 1415574721028,
+                        "prev_content": {
+                            "avatar_url": null,
+                            "displayname": "Matthew",
+                            "membership": "join"
+                        },
+                        "prev_state": "FFTvROridQ@echo-matrix",
+                        "room_id": "!GaUcuyvZyXfoqmQTNR:echo-matrix",
+                        "state_key": "@matthew:echo-matrix",
+                        "type": "m.room.member",
+                        "user_id": "@matthew:echo-matrix"
+                    }
+                ],
+                "visibility": "public"
+            },
+            {
+                "membership": "join",
+                "messages": {
+                    "chunk": [
+                        {
+                            "age": 1025423721,
+                            "content": {
+                                "level": 0
+                            },
+                            "event_id": "ozInjNUVNJ@echo-matrix",
+                            "origin_server_ts": 1414612891932,
+                            "required_power_level": 100,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "state_key": "",
+                            "type": "m.room.send_event_level",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1025423721,
+                            "content": {
+                                "ban_level": 50,
+                                "kick_level": 50,
+                                "redact_level": 50
+                            },
+                            "event_id": "TClddbHuaV@echo-matrix",
+                            "origin_server_ts": 1414612891932,
+                            "required_power_level": 100,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "state_key": "",
+                            "type": "m.room.ops_levels",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1025423641,
+                            "content": {
+                                "avatar_url": null,
+                                "displayname": "Matthew",
+                                "membership": "join"
+                            },
+                            "event_id": "JZuVYyOZak@echo-matrix",
+                            "membership": "join",
+                            "origin_server_ts": 1414612892012,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "state_key": "@matthew:echo-matrix",
+                            "type": "m.room.member",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1025420409,
+                            "content": {},
+                            "event_id": "jNGZqNopqh@echo-matrix",
+                            "redacted_because": {
+                                "age_ts": 1414612902575,
+                                "content": {},
+                                "event_id": "ujGiDUGPHu@echo-matrix",
+                                "origin_server_ts": 1414612902575,
+                                "redacts": "jNGZqNopqh@echo-matrix",
+                                "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                                "type": "m.room.redaction",
+                                "user_id": "@matthew:echo-matrix"
+                            },
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1025419653,
+                            "content": {
+                                "body": ":D",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "szcypOuiJf@echo-matrix",
+                            "origin_server_ts": 1414612896001,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 1025413079,
+                            "content": {},
+                            "event_id": "ujGiDUGPHu@echo-matrix",
+                            "origin_server_ts": 1414612902575,
+                            "redacts": "jNGZqNopqh@echo-matrix",
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.redaction",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 63746933,
+                            "content": {
+                                "body": "testing",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "ridjZJRuSa@echo-matrix",
+                            "origin_server_ts": 1415574568721,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 63744671,
+                            "content": {
+                                "body": "one two three",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "QdeiPHHJoC@echo-matrix",
+                            "origin_server_ts": 1415574570983,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 63743848,
+                            "content": {
+                                "body": ":D",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "NklrPDsNno@echo-matrix",
+                            "origin_server_ts": 1415574571806,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 63726799,
+                            "content": {
+                                "avatar_url": null,
+                                "displayname": "Matthew2",
+                                "membership": "join"
+                            },
+                            "event_id": "Dwoqozgwhr@echo-matrix",
+                            "membership": "join",
+                            "origin_server_ts": 1415574588855,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "state_key": "@matthew2:echo-matrix",
+                            "type": "m.room.member",
+                            "user_id": "@matthew2:echo-matrix"
+                        },
+                        {
+                            "age": 63723035,
+                            "content": {
+                                "body": "From C to shining sea",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "AFuaGsjBEm@echo-matrix",
+                            "origin_server_ts": 1415574592619,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew2:echo-matrix"
+                        },
+                        {
+                            "age": 63719512,
+                            "content": {
+                                "body": "this is a typical conversation",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "KjMSRScFXn@echo-matrix",
+                            "origin_server_ts": 1415574596142,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew2:echo-matrix"
+                        },
+                        {
+                            "age": 63714371,
+                            "content": {
+                                "body": "is it? i'm not so sure",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "SewxZTtlvd@echo-matrix",
+                            "origin_server_ts": 1415574601283,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 63711658,
+                            "content": {
+                                "body": "well, it's all localhost",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "TjeIvfUSoG@echo-matrix",
+                            "origin_server_ts": 1415574603996,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 63710012,
+                            "content": {
+                                "body": "yes, it is",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "cKFjTACYVN@echo-matrix",
+                            "origin_server_ts": 1415574605643,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew2:echo-matrix"
+                        },
+                        {
+                            "age": 63706381,
+                            "content": {
+                                "body": "better than nothing",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "pihQOlLlxP@echo-matrix",
+                            "origin_server_ts": 1415574609274,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew2:echo-matrix"
+                        },
+                        {
+                            "age": 63705093,
+                            "content": {
+                                "body": "wheeeeeeeee",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "dsUtHxlxZH@echo-matrix",
+                            "origin_server_ts": 1415574610562,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew2:echo-matrix"
+                        },
+                        {
+                            "age": 63703349,
+                            "content": {
+                                "body": "wheeeeee",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "XrupAmBEjX@echo-matrix",
+                            "origin_server_ts": 1415574612306,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 63702125,
+                            "content": {
+                                "body": "woo",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "kwmfazJuoz@echo-matrix",
+                            "origin_server_ts": 1415574613530,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 63700749,
+                            "content": {
+                                "body": ":D",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "qrKUtVkueW@echo-matrix",
+                            "origin_server_ts": 1415574614906,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 63594588,
+                            "content": {
+                                "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXc6ZWNoby1tYXRyaXgKvuEDgxIzNNMiAPLNLvHKPns.aW1hZ2UvanBlZw==.jpeg",
+                                "displayname": "Matthew",
+                                "membership": "join",
+                                "prev": "join"
+                            },
+                            "event_id": "sTxBlpdrLf@echo-matrix",
+                            "membership": "join",
+                            "origin_server_ts": 1415574721067,
+                            "prev_content": {
+                                "avatar_url": null,
+                                "displayname": "Matthew",
+                                "membership": "join"
+                            },
+                            "prev_state": "JZuVYyOZak@echo-matrix",
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "state_key": "@matthew:echo-matrix",
+                            "type": "m.room.member",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 62911957,
+                            "content": {
+                                "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXcyOmVjaG8tbWF0cml4QWDGrDfxkxQFXRuXdZZAXOXB.aW1hZ2UvcG5n.png",
+                                "displayname": "Matthew2",
+                                "membership": "join",
+                                "prev": "join"
+                            },
+                            "event_id": "lVHdJQojhK@echo-matrix",
+                            "membership": "join",
+                            "origin_server_ts": 1415575403698,
+                            "prev_content": {
+                                "avatar_url": null,
+                                "displayname": "Matthew2",
+                                "membership": "join"
+                            },
+                            "prev_state": "Dwoqozgwhr@echo-matrix",
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "state_key": "@matthew2:echo-matrix",
+                            "type": "m.room.member",
+                            "user_id": "@matthew2:echo-matrix"
+                        },
+                        {
+                            "age": 62892349,
+                            "content": {
+                                "body": "testing",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "XcsxsCDCyM@echo-matrix",
+                            "origin_server_ts": 1415575423306,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew2:echo-matrix"
+                        },
+                        {
+                            "age": 62884870,
+                            "content": {
+                                "body": "ooh, historical avatars",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "xZNZKvzRQp@echo-matrix",
+                            "origin_server_ts": 1415575430786,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew2:echo-matrix"
+                        },
+                        {
+                            "age": 62881717,
+                            "content": {
+                                "body": "that's exciting.",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "vLercwvRAt@echo-matrix",
+                            "origin_server_ts": 1415575433939,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 62679492,
+                            "content": {
+                                "topic": "Testing on my local HS"
+                            },
+                            "event_id": "qVfisyyZwU@echo-matrix",
+                            "origin_server_ts": 1415575636164,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "state_key": "",
+                            "type": "m.room.topic",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 59816560,
+                            "content": {
+                                "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXcyOmVjaG8tbWF0cml4TLYbzGxvmdiXTxIGNHgtKtXU.aW1hZ2UvanBlZw==.jpeg",
+                                "displayname": "Amandine",
+                                "membership": "join",
+                                "prev": "join"
+                            },
+                            "event_id": "qQOSWOoEnF@echo-matrix",
+                            "membership": "join",
+                            "origin_server_ts": 1415578499096,
+                            "prev_content": {
+                                "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXcyOmVjaG8tbWF0cml4QWDGrDfxkxQFXRuXdZZAXOXB.aW1hZ2UvcG5n.png",
+                                "displayname": "Matthew2",
+                                "membership": "join",
+                                "prev": "join"
+                            },
+                            "prev_state": "lVHdJQojhK@echo-matrix",
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "state_key": "@matthew2:echo-matrix",
+                            "type": "m.room.member",
+                            "user_id": "@matthew2:echo-matrix"
+                        },
+                        {
+                            "age": 59816545,
+                            "content": {
+                                "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXcyOmVjaG8tbWF0cml4TLYbzGxvmdiXTxIGNHgtKtXU.aW1hZ2UvanBlZw==.jpeg",
+                                "displayname": "Amandine",
+                                "membership": "join",
+                                "prev": "join"
+                            },
+                            "event_id": "xeKPAuhBDF@echo-matrix",
+                            "membership": "join",
+                            "origin_server_ts": 1415578499111,
+                            "prev_content": {
+                                "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXcyOmVjaG8tbWF0cml4QWDGrDfxkxQFXRuXdZZAXOXB.aW1hZ2UvcG5n.png",
+                                "displayname": "Matthew2",
+                                "membership": "join",
+                                "prev": "join"
+                            },
+                            "prev_state": "lVHdJQojhK@echo-matrix",
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "state_key": "@matthew2:echo-matrix",
+                            "type": "m.room.member",
+                            "user_id": "@matthew2:echo-matrix"
+                        },
+                        {
+                            "age": 56358360,
+                            "content": {
+                                "body": "test",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "UhBSMWLPhR@echo-matrix",
+                            "origin_server_ts": 1415581957296,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew:echo-matrix"
+                        },
+                        {
+                            "age": 15235876,
+                            "content": {
+                                "body": "testing...",
+                                "msgtype": "m.text"
+                            },
+                            "event_id": "TZOrJaPnAT@echo-matrix",
+                            "origin_server_ts": 1415623079780,
+                            "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                            "type": "m.room.message",
+                            "user_id": "@matthew2:echo-matrix"
+                        }
+                    ],
+                    "end": "s1442_146_0",
+                    "start": "t5-1412_146_0"
+                },
+                "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                "state": [
+                    {
+                        "age": 1025423722,
+                        "content": {
+                            "aliases": [
+                                "#test:echo-matrix"
+                            ]
+                        },
+                        "event_id": "khAdtOhlXG@echo-matrix",
+                        "origin_server_ts": 1414612891938,
+                        "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                        "state_key": "echo-matrix",
+                        "type": "m.room.aliases",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1025423729,
+                        "content": {
+                            "creator": "@matthew:echo-matrix"
+                        },
+                        "event_id": "jflizGfnpl@echo-matrix",
+                        "origin_server_ts": 1414612891932,
+                        "required_power_level": 100,
+                        "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.create",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1025423729,
+                        "content": {
+                            "@matthew:echo-matrix": 100,
+                            "default": 0
+                        },
+                        "event_id": "qnEKCDoXUG@echo-matrix",
+                        "origin_server_ts": 1414612891932,
+                        "required_power_level": 100,
+                        "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.power_levels",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1025423729,
+                        "content": {
+                            "join_rule": "public"
+                        },
+                        "event_id": "VHvShtNewx@echo-matrix",
+                        "origin_server_ts": 1414612891932,
+                        "required_power_level": 100,
+                        "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.join_rules",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1025423729,
+                        "content": {
+                            "level": 100
+                        },
+                        "event_id": "yvPGsONzFQ@echo-matrix",
+                        "origin_server_ts": 1414612891932,
+                        "required_power_level": 100,
+                        "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.add_state_level",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1025423730,
+                        "content": {
+                            "level": 0
+                        },
+                        "event_id": "ozInjNUVNJ@echo-matrix",
+                        "origin_server_ts": 1414612891932,
+                        "required_power_level": 100,
+                        "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.send_event_level",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 1025423730,
+                        "content": {
+                            "ban_level": 50,
+                            "kick_level": 50,
+                            "redact_level": 50
+                        },
+                        "event_id": "TClddbHuaV@echo-matrix",
+                        "origin_server_ts": 1414612891932,
+                        "required_power_level": 100,
+                        "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.ops_levels",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 63594595,
+                        "content": {
+                            "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXc6ZWNoby1tYXRyaXgKvuEDgxIzNNMiAPLNLvHKPns.aW1hZ2UvanBlZw==.jpeg",
+                            "displayname": "Matthew",
+                            "membership": "join",
+                            "prev": "join"
+                        },
+                        "event_id": "sTxBlpdrLf@echo-matrix",
+                        "membership": "join",
+                        "origin_server_ts": 1415574721067,
+                        "prev_content": {
+                            "avatar_url": null,
+                            "displayname": "Matthew",
+                            "membership": "join"
+                        },
+                        "prev_state": "JZuVYyOZak@echo-matrix",
+                        "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                        "state_key": "@matthew:echo-matrix",
+                        "type": "m.room.member",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 62679498,
+                        "content": {
+                            "topic": "Testing on my local HS"
+                        },
+                        "event_id": "qVfisyyZwU@echo-matrix",
+                        "origin_server_ts": 1415575636164,
+                        "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                        "state_key": "",
+                        "type": "m.room.topic",
+                        "user_id": "@matthew:echo-matrix"
+                    },
+                    {
+                        "age": 59816552,
+                        "content": {
+                            "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXcyOmVjaG8tbWF0cml4TLYbzGxvmdiXTxIGNHgtKtXU.aW1hZ2UvanBlZw==.jpeg",
+                            "displayname": "Amandine",
+                            "membership": "join",
+                            "prev": "join"
+                        },
+                        "event_id": "xeKPAuhBDF@echo-matrix",
+                        "membership": "join",
+                        "origin_server_ts": 1415578499111,
+                        "prev_content": {
+                            "avatar_url": "https://echo-matrix:8448/_matrix/content/QG1hdHRoZXcyOmVjaG8tbWF0cml4QWDGrDfxkxQFXRuXdZZAXOXB.aW1hZ2UvcG5n.png",
+                            "displayname": "Matthew2",
+                            "membership": "join",
+                            "prev": "join"
+                        },
+                        "prev_state": "lVHdJQojhK@echo-matrix",
+                        "room_id": "!NVamPjwddpyInMpGSE:echo-matrix",
+                        "state_key": "@matthew2:echo-matrix",
+                        "type": "m.room.member",
+                        "user_id": "@matthew2:echo-matrix"
+                    }
+                ],
+                "visibility": "public"
+            }
+        ]
+    }
+    {code}
+  created: 2014-11-10 16:54:03.0
+  id: '10763'
+  issue: '10637'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-10 16:55:16.0
+- author: kegan
+  body: |-
+    This appears to be a $digest bug. The event is parsed and is dumped into matrixService.roomIdToAlias which is then used by the room name filter to try to get an alias. If the page is loaded *before* this value is set, it will appear as a room ID. Since matrixService.roomIdToAlias is not tied to any $scope, it isn't automatically updated. This is exacerbated by the fact that the storage of the mapping is completely transient. This would also explain why it's inconsistent, reproing 70% of the time.
+
+    We should be telling interested parties about the new mapping. Whether this is best done via a $scope update or some other mechanism I don't know.
+  created: 2014-11-10 17:05:59.0
+  id: '10764'
+  issue: '10637'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-10 17:06:29.0
+- author: kegan
+  body: On closer inspection, it looks like the {{m.room.aliases}} event from {{/initialSync}} isn't being used to update the mapping. Instead, the state event is dumped into the room state for the room and that is that. It should also update the mapping (the {{modelService}} should do this, and the current code should be moved from {{matrixService}}).
+  created: 2014-11-10 17:51:56.0
+  id: '10769'
+  issue: '10637'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-10 17:51:56.0

@@ -1,0 +1,39 @@
+---
+summary: Clicking the cross next to a room you haven't yet joined gives an error
+---
+created: 2014-12-05 14:52:31.0
+creator: dbkr
+description: |-
+  Clicking the cross next to a room you haven't yet joined gives an error because it tries to leave the room and can't because you haven't joined it.
+
+  It should probably just ignore the invite (with some mechanism to mark it as having been 'ignored' so other clients no longer show them room).
+id: '10782'
+key: SYWEB-221
+number: '221'
+priority: '3'
+project: '10004'
+reporter: dbkr
+status: '10200'
+type: '1'
+updated: 2015-03-06 09:33:10.0
+votes: '0'
+watches: '2'
+workflowId: '10882'
+---
+actions:
+- author: kegan
+  body: This ties into generally "rejecting an invite" (which is really what is meant by this user action), which is not currently specced.
+  created: 2014-12-05 15:21:00.0
+  id: '10969'
+  issue: '10782'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 15:21:00.0
+- author: kegan
+  body: Need API for rejecting an invite.
+  created: 2014-12-05 17:22:47.0
+  id: '10974'
+  issue: '10782'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-05 17:22:47.0

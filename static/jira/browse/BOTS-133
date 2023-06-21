@@ -1,0 +1,221 @@
+---
+summary: A Matrix<->Gitter bridge
+---
+assignee: leonerd
+created: 2015-11-05 17:31:10.0
+creator: leonerd
+description: |-
+  I would be eternally grateful if we had a Matrix<->Gitter solution. The current one that Freenode's #neovim uses directly between IRC and Gitter really annoys me (and several others). Their code lives at
+
+    https://github.com/finnp/gitter-irc-bot/blob/master/index.js
+
+  Fortunately, that's also in javascript, so I expect it ought to be easy enough for someone to take theabove and replace the IRC parts with Matrix AS library instead, and expand out from there.
+id: '12087'
+key: BOTS-133
+number: '133'
+priority: '3'
+project: '10101'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2016-05-04 18:18:15.0
+status: '6'
+type: '2'
+updated: 2016-09-09 17:42:01.0
+votes: '0'
+watches: '1'
+workflowId: '12190'
+---
+actions:
+- author: leonerd
+  body: |-
+    Can someone (Likely Kegan?) give a 30-second reply on this? Ideally I'd love to see
+
+     *  URLs of existing code examples of other bridges
+
+     * Information on how to run another one
+
+    There's more to creating a new bridge than simply writing some JS code. Even if we manage to have a piece of JS code that runs and does the right thing, where in practice does it run? I.e. all the operational-level questions.
+  created: 2015-12-06 21:50:51.0
+  id: '12429'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-12-06 21:50:51.0
+- author: leonerd
+  body: |-
+    General "how to rnu a matrix.org AS" instructions now live at
+
+      https://etherpad.openmarket.com/MatrixDotOrgASDeployment
+  created: 2016-02-10 14:12:09.0
+  id: '12601'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-10 14:12:09.0
+- author: leonerd
+  body: 'Step 1: created https://github.com/matrix-org/matrix-appservice-gitter'
+  created: 2016-02-10 14:12:30.0
+  id: '12602'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-10 14:12:30.0
+- author: leonerd
+  body: 'Step 1a: actually wrote some code. It actually works; at least between (real) gitter and a temporary localhost synapse.'
+  created: 2016-02-10 19:43:28.0
+  id: '12604'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-10 19:43:28.0
+- author: leonerd
+  body: |-
+    Steps 2 & 3 done.
+
+    {noformat}
+    gitteras@ldc-prd-matrix-003:~$ 
+    {noformat}
+  created: 2016-02-11 16:40:54.0
+  id: '12605'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-11 16:41:02.0
+- author: leonerd
+  body: 'Step 4 done: picked 3511'
+  created: 2016-02-11 19:02:09.0
+  id: '12606'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-11 19:02:09.0
+- author: leonerd
+  body: |-
+    Step 5 done:
+
+    {noformat}
+    gitteras@ldc-prd-matrix-003:~/matrix-appservice-gitter$ pwd
+    /home/gitteras/matrix-appservice-gitter
+    {noformat}
+  created: 2016-02-11 19:02:42.0
+  id: '12607'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-11 19:02:42.0
+- author: leonerd
+  body: |-
+    Step 6 was done by the AS bridge library's {{-u -r}} options.
+
+    Step 8 is partly done; file committed into {{internal-config}} repo. Have not restarted synapse itself yet as that's a little disruptive to users, and it's not urgently needed yet. With that file in place, it'll be picked up next time the server gets restarted for some other reason, which is good enough. I'll continue the final steps sometime after that.
+  created: 2016-02-11 22:22:31.0
+  id: '12608'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-11 22:22:31.0
+- author: leonerd
+  body: An initial attempt is now running, sufficient for me to 3-way bridge a test channel of mine.
+  created: 2016-02-16 18:06:17.0
+  id: '12613'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-16 18:06:17.0
+- author: leonerd
+  body: |-
+    I now have a room bridged between Matrix and Gitter. The following steps were required to set that up:
+
+     * As a normal github user, create a new room on gitter.im attached to a github organisation.
+     * As that user on github, invite 'matrixbot' to join the organisation
+     * Log in to github as the matrixbot user and accept the invitation
+     * Add the 'matrixbot' user to the gitter.im room using the gitter UI
+     * Add the mapping of gitter room name to matrix room ID to {{internal-config}}'s {{gitter-config.yaml}} and restart the bridge AS
+
+    I expect there is some opportunity in here to streamline the process somewhat; at least in terms of having matrixbot itself perform the steps that required masquerading as it.
+  created: 2016-02-17 17:29:13.0
+  id: '12641'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-17 17:29:13.0
+- author: leonerd
+  body: On further investigation, it seems that this can be reduced down if you create a new room on gitter that's not directly tied to a github organisation, because that gives you free ability to adjust the members of the room yourself. You can then invite matrixbot to that room, and once it's added to the config file it starts working. So that removes the tricky step of having to accept an organisation invite on github as the matrixbot user itself.
+  created: 2016-02-17 17:52:03.0
+  id: '12642'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-17 17:52:03.0
+- author: leonerd
+  body: 'See also: this bug is mentioned by gitterHQ: https://github.com/gitterHQ/gitter/issues/1076'
+  created: 2016-02-18 18:26:57.0
+  id: '12643'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-02-18 18:26:57.0
+- author: leonerd
+  body: |-
+    Now does some attempt at formatted messages.
+
+    Next things to consider:
+      * Setting avatar images on ghosted Matrix-side users
+      * Presence notifications
+      * Per-room optional topic sync
+  created: 2016-04-08 17:06:24.0
+  id: '12816'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-04-08 17:06:24.0
+- author: leonerd
+  body: |-
+    Hm. Avatar setting is a little trickier than I thought - needs content upload to the homeserver's media repo because Vector will only display mxc:// URLs, not plain https ones.
+
+    Presence notification will require information out of gitter users - I'm asking gitterHQ about that now.
+  created: 2016-04-08 19:01:17.0
+  id: '12817'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-04-08 19:01:17.0
+- author: leonerd
+  body: |-
+    Avatar copying is now done, give or take a bugfix needed to {{matrix-js-sdk}}
+
+    Presence (which Gitter calls "eyeballs") isn't quite supported by their official API, but the developers suggest to me:
+
+    {noformat}
+    @leonerd We have online presence eyeballs but that info is only accessible in halley/faye websockets api iirc
+    You use /v1/eyeballs but you need to pass a socketId
+
+    var realtimeClient = require('gitter-realtime-client');
+    var client = new realtimeClient.RealtimeClient({ token: GITTER_ACCESS_TOKEN });
+    // GET `/v1/eyeballs` with { socketId: client.getClientId() }
+
+    https://github.com/gitterHQ/realtime-client/blob/4eba1fc1e9ab920d2bf6e3c69c1f44923d4a9b2c/lib/realtime-client.js#L429
+    note, I am not sure if that code actually works but I think should get you pretty close
+    {noformat}
+  created: 2016-04-22 17:34:31.0
+  id: '12884'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-04-22 17:34:31.0
+- author: leonerd
+  body: Presence is now done, via another little reacharound past the matrix-appservice-bridge code to get at the underlying js-sdk client object directly.
+  created: 2016-05-03 17:46:44.0
+  id: '12895'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-05-03 17:46:44.0
+- author: leonerd
+  body: A basic attempt is now up and running. I'm tracking further small issues and bugs in github instead
+  created: 2016-05-04 18:18:15.0
+  id: '12896'
+  issue: '12087'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-05-04 18:18:15.0

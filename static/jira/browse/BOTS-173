@@ -1,0 +1,30 @@
+---
+summary: IRC AS honours errant m.room.topic events sent as non-state events, when surely it should only honour them if state events.
+---
+created: 2016-02-27 15:47:48.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12529'
+key: BOTS-173
+number: '173'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:49:41.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:49:41.0
+votes: '0'
+watches: '2'
+workflowId: '12629'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/54
+  created: 2016-06-02 10:49:41.0
+  id: '12968'
+  issue: '12529'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:49:41.0

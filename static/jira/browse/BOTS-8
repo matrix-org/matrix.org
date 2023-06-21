@@ -1,0 +1,81 @@
+---
+summary: Some bridged users mysteriously departed
+---
+created: 2014-11-03 18:58:13.0
+creator: leonerd
+description: |-
+  I've no idea what happened.
+
+  On Matrix Internal:
+
+  {noformat}
+  11:16 <@irc_oddvar:matrix.org> king of the pump?
+  14:16  <= @irc_oddvar:matrix.org left
+  14:16  <= @irc_erikj:matrix.org left
+  14:16  <= @irc_LeoNerd:matrix.org left
+  15:05 * @irc_Arathorn:matrix.org is stuck in a tightloop of distractions and errands...
+  {noformat}
+
+  On #matrix on IRC:
+
+  {noformat}
+  11:16 <oddvar> king of the pump?
+  12:46 *** Joins: Toaster [tel22@host81-138-8-249.in-addr.btopenworld.com] has joined #matrix
+  14:25 <LeoNerd> erikj: Å
+  15:05 * Arathorn is stuck in a tightloop of distractions and errands but should eventually make it in...
+  {noformat}
+
+  On the bot output
+
+  {noformat}
+  [IRC] Text message in #matrix: king of the pump?
+    [IRC] sending text for irc_oddvar - king of the pump?
+  [Matrix] in !zOmsiVucpWbRRDjSwe:matrix.org: king of the pump?
+  Use of uninitialized value in string eq at /home/matrix/lib/perl5/Net/Async/Matrix.pm line 902.
+  Use of uninitialized value in string eq at /home/matrix/lib/perl5/Net/Async/Matrix.pm line 902.
+  Use of uninitialized value in string eq at /home/matrix/lib/perl5/Net/Async/Matrix.pm line 902.
+  Longpoll failed - Connection closed while awaiting header
+  Longpoll failed - Connection closed while awaiting header
+  Longpoll failed - Connection closed while awaiting header
+  log: TODO: Room event on unknown room ID !XqBunHwQIXUiqCaoxq:matrix.org not about myself
+  log: TODO: Room event on unknown room ID !XqBunHwQIXUiqCaoxq:matrix.org not about myself
+  [Matrix] have a room ID: !XqBunHwQIXUiqCaoxq:matrix.org
+  [Matrix] have a room ID: !cURbafjkfsMDVwdRDQ:matrix.org
+  Use of uninitialized value in string eq at /home/matrix/lib/perl5/Net/Async/Matrix.pm line 902.
+  ARGH: Room '!cURbafjkfsMDVwdRDQ:matrix.org' already has a member '@irc_LeoNerd:matrix.org'
+  [IRC] Text message in #matrix: erikj: {U+FFFD}
+    [IRC] sending text for irc_LeoNerd - erikj: {U+FFFD}
+  Matrix failure: Net::Async::Matrix=HASH(0x16a0190) 403 Forbidden http HTTP::Response=HASH(0x1fcf540) HTTP::Request=HASH(0x1e78af0)
+  IRC failure: 403 Forbidden
+  HTTP failure details:
+  Requested URL: POST https://matrix.org/_matrix/client/api/v1/rooms/!zOmsiVucpWbRRDjSwe:matrix.org/send/m.room.message?access_token=QGlyY19MZW9OZXJkOm1hdHJpeC5vcmc..jjKCCrYDWpkPnVtoFb
+  Response 403 Forbidden
+   | {"errcode":"M_FORBIDDEN","error":"User @irc_LeoNerd:matrix.org not in room !zOmsiVucpWbRRDjSwe:matrix.org (<synapse.api.events.room.RoomMemberEvent object at 0x5790ed0>)"}
+  [IRC] CTCP action in #matrix: is stuck in a tightloop of distractions and errands but should eventually make it in...
+    [IRC] sending emote for irc_Arathorn - is stuck in a tightloop of distractions and errands but should eventually make it in...
+  [Matrix] in !zOmsiVucpWbRRDjSwe:matrix.org: is stuck in a tightloop of distractions and errands but should eventually make it in...
+  {noformat}
+id: '10613'
+key: BOTS-8
+number: '8'
+priority: '3'
+project: '10101'
+reporter: leonerd
+resolution: '5'
+resolutiondate: 2015-01-15 17:24:10.0
+status: '6'
+type: '1'
+updated: 2015-01-15 17:24:10.0
+votes: '0'
+watches: '1'
+workflowId: '10713'
+---
+actions:
+- author: leonerd
+  body: Hasn't happened since, and no indication of what it was. I think I'll just close it and ignore for now.
+  created: 2015-01-15 17:24:01.0
+  id: '11134'
+  issue: '10613'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-01-15 17:24:01.0

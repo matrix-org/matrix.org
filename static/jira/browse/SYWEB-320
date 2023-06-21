@@ -1,0 +1,28 @@
+---
+summary: User list on the right shuffles around a lot
+---
+created: 2015-03-12 23:25:51.0
+creator: jan
+description: |-
+  Currently the user list on the right is sorted by activity. That’s great in itself, but too many things count as »activity«:
+  * looking at the channel
+  * typing
+  * actually posting a message
+
+  This results in it moving around a lot which is very distracting.
+
+  To alleviate this a bit, only the act of actually posting a message should make one move up the list.
+id: '11210'
+key: SYWEB-320
+number: '320'
+priority: '3'
+project: '10004'
+reporter: jan
+status: '10100'
+type: '4'
+updated: 2015-03-12 23:25:51.0
+votes: '0'
+watches: '1'
+workflowId: '11310'
+---
+actions: null

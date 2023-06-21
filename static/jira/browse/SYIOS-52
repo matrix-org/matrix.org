@@ -1,0 +1,46 @@
+---
+summary: App crashes when attempting to send message on iPad Mini
+---
+created: 2015-01-12 09:54:10.0
+creator: erikj
+description: ''
+id: '10914'
+key: SYIOS-52
+number: '52'
+priority: '1'
+project: '10200'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-01-12 12:33:10.0
+status: '5'
+type: '1'
+updated: 2015-01-12 12:33:10.0
+votes: '0'
+watches: '2'
+workflowId: '11014'
+---
+actions:
+- author: erikj
+  body: This was an iPad mini running iOS 7.0.6
+  created: 2015-01-12 10:01:58.0
+  id: '11087'
+  issue: '10914'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-12 10:01:58.0
+- author: erikj
+  body: This was on integration 139, which was on develop branch revision c9a624
+  created: 2015-01-12 10:02:29.0
+  id: '11088'
+  issue: '10914'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-01-12 10:02:29.0
+- author: m-ylecollen
+  body: Should be fixed in f9c785eb
+  created: 2015-01-12 12:33:10.0
+  id: '11090'
+  issue: '10914'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-12 12:33:10.0

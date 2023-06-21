@@ -1,0 +1,31 @@
+---
+summary: Desktop notifs for joins break if user has no displayname
+---
+assignee: kegan
+created: 2014-09-29 01:42:29.0
+creator: matthew
+description: ''
+id: '10416'
+key: SYWEB-102
+number: '102'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-10-31 11:56:51.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:03.0
+votes: '0'
+watches: '2'
+workflowId: '10519'
+---
+actions:
+- author: kegan
+  body: Reproduced locally.
+  created: 2014-10-31 10:09:31.0
+  id: '10714'
+  issue: '10416'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-10-31 10:09:31.0

@@ -1,0 +1,31 @@
+---
+summary: Until we have native support for editing push settings, we should link to the Settings page of the webclient to adjust them from the Settings tab
+---
+assignee: manu
+created: 2015-03-08 18:13:56.0
+creator: matthew
+description: ''
+id: '11168'
+key: SYIOS-100
+number: '100'
+priority: '1'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-03-16 08:16:45.0
+status: '5'
+type: '2'
+updated: 2015-03-16 08:16:45.0
+votes: '0'
+watches: '2'
+workflowId: '11268'
+---
+actions:
+- author: manu
+  body: Done in https://github.com/matrix-org/matrix-ios-sdk/commit/93d498f85a4c62eca0d2ea90d0a5057f3c24db73
+  created: 2015-03-16 08:16:45.0
+  id: '11399'
+  issue: '11168'
+  type: comment
+  updateauthor: manu
+  updated: 2015-03-16 08:16:45.0

@@ -1,0 +1,57 @@
+---
+summary: Tor sees 1000 presence events on all clients on his HS whenever he restarts ivarbot
+---
+created: 2015-11-30 01:03:12.0
+creator: matthew
+description: |-
+  Tor runs his own HS.  Whenever he restarts ivarbot (connected to it), his other clients receive ~1000 presence events: snippets of convo below:
+
+  <Tor> Something strange is happening here on my matrix-client
+  whenever I restart ivarbot, my other clients on the same server gets a 1000-entry eventstream with a bunch of presence messages
+  and many of them aren't even unique
+  debug output of json: https://xt.gg/ss/2015-11-29_13-20-12.png
+
+  it comes in 3 chunks I think
+  3 different event responses
+  first one is almost all verkstad, but not quite
+  trying to load one of the URLs up in firefox for inspecting and it's complaining about invalid json, but it loads fine in jq.. so I'm still investigating
+  https://xt.gg/ss/2015-11-29_13-45-53.png
+
+  so the invalid json is error on my part
+  but why restarting one client resulsts in over 100k json presence events is still weird
+id: '12152'
+key: SYN-530
+number: '530'
+priority: '1'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:38.0
+votes: '0'
+watches: '2'
+workflowId: '12255'
+---
+actions:
+- author: matthew
+  body: |-
+    <Tor> "remember I told you about that account that is not on any matrix.org rooms? Now I restarted ivarbot, which means full login+initialsync on that client. And now my bob-client got a presence updated with exactly 1000 entries in it. With most of them being offline
+    1000:
+      type: m.presence
+      content:
+        presence: offline
+      sender: @leon:matrix.org"
+  created: 2015-12-01 12:36:54.0
+  id: '12392'
+  issue: '12152'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-12-01 12:36:54.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1428'
+  created: 2016-11-07 18:28:38.0
+  id: '13735'
+  issue: '12152'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:38.0

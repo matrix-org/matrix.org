@@ -1,0 +1,38 @@
+---
+summary: The fact the AS is ratelimited by the HS makes IRC bridging to NickServ etc unusable
+---
+assignee: illicitonion
+created: 2015-11-01 13:02:30.0
+creator: matthew
+description: |-
+  If I say 'help' to NickServ over an IRC bridge, the HS rate limiting makes the response totally unusable.
+
+  We should have a way to just turn off rate limiting for ASes, and rely on downstream HSes ratelimiting federation traffic (in future based on reputation).   This is same semantics as an ircd not ratelimiting ircservices for the same reason.
+id: '12060'
+key: BOTS-131
+number: '131'
+priority: '1'
+project: '10101'
+reporter: matthew
+status: '3'
+type: '1'
+updated: 2016-01-11 13:39:49.0
+votes: '0'
+watches: '2'
+workflowId: '12163'
+---
+actions:
+- author: erikj
+  body: |-
+    I'm slightly nervous that this'll trigger any federation ratelimiting that we have or will want to add. It would be unfortunate if a user on a random remote server could cause your server to be ratelimited by just PM'ing NickServ "help". I don't _think_ there are ratelimits that would be triggered by this behaviour, though.
+
+
+    Ideally, it would be nice if we could buffer the messages a bit, but that might adversely affect UX (as different messages no longer look like different messages).
+
+    To be honest, I don't know what the correct solution is here.
+  created: 2016-01-11 13:39:37.0
+  id: '12560'
+  issue: '12060'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-11 13:39:49.0

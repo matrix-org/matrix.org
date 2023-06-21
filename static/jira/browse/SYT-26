@@ -1,0 +1,20 @@
+---
+summary: Test anonymous/guest access
+---
+created: 2015-09-29 15:21:52.0
+creator: leonerd
+description: ''
+id: '11970'
+key: SYT-26
+number: '26'
+priority: '2'
+project: '10300'
+reporter: leonerd
+status: '1'
+type: '2'
+updated: 2015-09-29 15:42:10.0
+votes: '0'
+watches: '1'
+workflowId: '12073'
+---
+actions: null

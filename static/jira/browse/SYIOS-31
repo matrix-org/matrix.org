@@ -1,0 +1,31 @@
+---
+summary: Multiple server support
+---
+created: 2014-12-21 01:44:53.0
+creator: matthew
+description: |-
+  It'd be great to structure the iOS app such that it supports multiple server connections from the outset (and check that the iOS SDK can handle them well).
+
+  E.g. I want to log in as both @matthew:matrix.org and @matthew:arasphere.net on my iPhone.
+id: '10846'
+key: SYIOS-31
+number: '31'
+priority: '3'
+project: '10200'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-01-16 16:44:17.0
+votes: '0'
+watches: '2'
+workflowId: '10946'
+---
+actions:
+- author: manu
+  body: The SDK is ready for multi-user but MXFileStore is not ready yet.
+  created: 2015-01-16 16:44:17.0
+  id: '11144'
+  issue: '10846'
+  type: comment
+  updateauthor: manu
+  updated: 2015-01-16 16:44:17.0

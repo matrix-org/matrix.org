@@ -1,0 +1,30 @@
+---
+summary: MXC urls should terminate with a usable filename extension
+---
+created: 2015-11-02 00:49:53.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Such that weechat/glowing bear and other clients have a hope of inlining images. This was originally https://matrix.org/jira/browse/SYN-150?focusedCommentId=11396&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-11396 but it looks to have got lost
+id: '12065'
+key: SYN-509
+number: '509'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:32.0
+votes: '0'
+watches: '2'
+workflowId: '12168'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1409'
+  created: 2016-11-07 18:28:32.0
+  id: '13718'
+  issue: '12065'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:32.0

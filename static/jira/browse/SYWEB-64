@@ -1,0 +1,30 @@
+---
+summary: Need a line in scrollback when people change nicks
+---
+created: 2014-09-20 00:40:42.0
+creator: matthew
+description: ''
+id: '10350'
+key: SYWEB-64
+number: '64'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-04 11:27:34.0
+status: '5'
+type: '2'
+updated: 2014-11-20 10:57:57.0
+votes: '0'
+watches: '2'
+workflowId: '10453'
+---
+actions:
+- author: kegan
+  body: Fixed as part of SYWEB-116
+  created: 2014-11-04 11:27:34.0
+  id: '10724'
+  issue: '10350'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-04 11:27:34.0

@@ -1,0 +1,51 @@
+---
+summary: cannot view images
+---
+created: 2015-07-03 08:54:24.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  sent a gif, tried tapping it to view, crashes reliably.
+id: '11724'
+key: SYAND-93
+number: '93'
+priority: '1'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-07-03 09:13:12.0
+status: '5'
+type: '1'
+updated: 2015-07-03 09:13:12.0
+votes: '0'
+watches: '3'
+workflowId: '11825'
+---
+actions:
+- author: neb
+  body: 'By @kegan:matrix.org: using develop #54'
+  created: 2015-07-03 08:56:50.0
+  id: '11961'
+  issue: '11724'
+  type: comment
+  updateauthor: neb
+  updated: 2015-07-03 08:56:50.0
+- author: m-ylecollen
+  body: |-
+    The client used to crash because imageMessage.info was not defined.
+
+    I'm waiting after the GA crash logs to check
+  created: 2015-07-03 09:05:32.0
+  id: '11962'
+  issue: '11724'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-07-03 09:05:32.0
+- author: kegan
+  body: "From logcat:\n{code}\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: DEBUG\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: Build : 7\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: Version : 0.4.2\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: Phone : SM-G900F (G900FXXU1ANCE 4.4.2 REL)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: Thread: main, Activity:org.matrix.console.activity.RoomActivity, Exception: java.lang.NullPointerException\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat org.matrix.console.adapters.ConsoleMessagesAdapter.listImageMessages(ConsoleMessagesAdapter.java:88)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat org.matrix.console.adapters.ConsoleMessagesAdapter.onImageClick(ConsoleMessagesAdapter.java:119)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat org.matrix.androidsdk.adapters.MessagesAdapter$4.onClick(MessagesAdapter.java:768)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat android.view.View.performClick(View.java:4640)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat android.view.View$PerformClick.run(View.java:19421)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat android.os.Handler.handleCallback(Handler.java:733)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat android.os.Handler.dispatchMessage(Handler.java:95)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat android.os.Looper.loop(Looper.java:136)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat android.app.ActivityThread.main(ActivityThread.java:5476)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat java.lang.reflect.Method.invokeNative(Native Method)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat java.lang.reflect.Method.invoke(Method.java:515)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:1268)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1084)\n07-03 09:11:03.360 22367 22367 E FATAL EXCEPTION: \tat dalvik.system.NativeStart.main(Native Method)\n{code}"
+  created: 2015-07-03 09:11:25.0
+  id: '11963'
+  issue: '11724'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-03 09:11:25.0

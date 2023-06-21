@@ -1,0 +1,28 @@
+---
+summary: Message read state needs to be synchronised across clients/devices
+---
+created: 2015-02-09 10:21:16.0
+creator: matthew
+description: ''
+id: '11014'
+key: SYIOS-70
+number: '70'
+priority: '2'
+project: '10200'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2015-02-12 16:11:39.0
+votes: '0'
+watches: '1'
+workflowId: '11114'
+---
+actions:
+- author: matthew
+  body: reported by Stefan Ålund
+  created: 2015-02-09 10:21:45.0
+  id: '11224'
+  issue: '11014'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-02-09 10:21:45.0

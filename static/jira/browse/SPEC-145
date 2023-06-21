@@ -1,0 +1,64 @@
+---
+summary: Homeserver vhosting
+---
+created: 2015-03-31 02:21:49.0
+creator: matthew
+description: |-
+  We need to specify any considerations specific to homeserver vhosting - whilst it's not that high up the todo-list on synapse (SYN-233), it's an obvious thing for more performant implementations like jSynapse to do.
+
+  Obvious concerns are:
+   * How do you handle TLS with multiple HS domains hosted by the same server?  Do they all share the same TLS cert?  If so, does the self-signed cert need to include SANs or wildcards or something?  Or do we have multiple listeners?
+   * Obviously the whole HS object model has to support the additional layer of indirection for vhosting, with config specifiable per-virtual-HS as well as across the whole deployment.
+
+  Thoughts should go here, and then we'll shove it in the spec.
+id: '11300'
+key: SPEC-145
+number: '145'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '4'
+resolutiondate: 2016-10-07 13:06:15.0
+status: '5'
+type: '2'
+updated: 2016-10-07 13:06:15.0
+votes: '1'
+watches: '5'
+workflowId: '11400'
+---
+actions:
+- author: erikj
+  body: |-
+    bq. Obviously the whole HS object model has to support the additional layer of indirection for vhosting, with config specifiable per-virtual-HS as well as across the whole deployment.
+
+    Surely that's an implementation problem?
+  created: 2015-03-31 10:09:17.0
+  id: '11454'
+  issue: '11300'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-03-31 10:09:17.0
+- author: erikj
+  body: The client server API might require a little bit of thought, as users will need to register/login on the different vhosts.
+  created: 2015-03-31 10:09:59.0
+  id: '11455'
+  issue: '11300'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-03-31 10:09:59.0
+- author: dbkr
+  body: 'I can''t see any reason to add restrictions on this in the spec: I would say home server implementations should be free to support whatever they want to here. The only thing we might need in the spec is make sure that a server knows which vhost a client is trying to talk to, so perhaps we should add that any new transports will need to have an equivalent of HTTP''s Host header. Any reason why we should place restrictions on what certs your virtual HS uses, as long as they''re valid?'
+  created: 2015-03-31 10:23:30.0
+  id: '11456'
+  issue: '11300'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-03-31 10:23:30.0
+- author: richvdh
+  body: I'm with dave. I'm not clear what needs to go in the spec for this.
+  created: 2016-10-07 13:06:15.0
+  id: '13178'
+  issue: '11300'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-07 13:06:15.0

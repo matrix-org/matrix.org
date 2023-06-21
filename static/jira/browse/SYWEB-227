@@ -1,0 +1,32 @@
+---
+summary: Red-bar of doom doesn't autoclear as I'd hope on latest webclient
+---
+created: 2014-12-09 13:39:49.0
+creator: matthew
+description: ''
+id: '10790'
+key: SYWEB-227
+number: '227'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2014-12-09 14:05:03.0
+votes: '0'
+watches: '2'
+workflowId: '10890'
+---
+actions:
+- author: kegan
+  body: |-
+    <kegan> because it doesn't know that the connection isn't deaded
+    <kegan> see under giom's(?) complaint about not being able to detect if there are no new events
+
+    In other words, the event stream is polling, but the red bar will only update after timeout_ms + max_poll_timeout if there are no new events arriving down the stream, which on the web client is ~34s
+  created: 2014-12-09 14:03:43.0
+  id: '10983'
+  issue: '10790'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-12-09 14:05:03.0

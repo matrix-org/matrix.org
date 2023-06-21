@@ -1,0 +1,30 @@
+---
+summary: 'irc bridge: would be helpful to let the admin inject commands on behalf of MatrixBridge'
+---
+created: 2015-06-20 21:22:02.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11678'
+key: BOTS-58
+number: '58'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-01-04 17:02:03.0
+status: '5'
+type: '1'
+updated: 2016-01-04 17:02:03.0
+votes: '0'
+watches: '2'
+workflowId: '11779'
+---
+actions:
+- author: illicitonion
+  body: Modified BOTS-27 to indicate admins should be able to do this too.
+  created: 2016-01-04 17:02:03.0
+  id: '12496'
+  issue: '11678'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-01-04 17:02:03.0

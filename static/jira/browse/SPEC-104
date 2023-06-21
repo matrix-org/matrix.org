@@ -1,0 +1,38 @@
+---
+summary: Should we split the CS API up into multiple paths which can be versioned seperately?
+---
+created: 2015-02-09 10:36:01.0
+creator: matthew
+description: ''
+id: '11019'
+key: SPEC-104
+number: '104'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-10-13 17:18:19.0
+status: '5'
+type: '1'
+updated: 2015-10-13 17:18:19.0
+votes: '0'
+watches: '2'
+workflowId: '11119'
+---
+actions:
+- author: kegan
+  body: There's a few ways we can slice and dice this, but I agree in principle that finer granularity would be nice on the CS side.
+  created: 2015-03-05 14:06:14.0
+  id: '11354'
+  issue: '11019'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-05 14:06:14.0
+- author: kegan
+  body: SPEC-250
+  created: 2015-10-13 17:18:19.0
+  id: '12254'
+  issue: '11019'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 17:18:19.0

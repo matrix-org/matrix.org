@@ -1,0 +1,27 @@
+---
+summary: Can't assign alias while creating room as application service
+---
+created: 2015-04-12 13:35:00.0
+creator: matt-williams
+description: |-
+  I'm using the application service API.
+
+  If I issue a createRoom request specifying an alias that is exclusive to my application service, it is rejected with "This alias is reserved by an application service."
+
+  I read the code and it looks as though the issue is that create_room in synapse/handlers/room.py calls into create_assocation, rather than into create_appservice_association.
+id: '11328'
+key: SYN-340
+number: '340'
+priority: '3'
+project: '10000'
+reporter: matt-williams
+resolution: '1'
+resolutiondate: 2015-08-11 10:50:20.0
+status: '5'
+type: '1'
+updated: 2015-08-11 10:50:20.0
+votes: '0'
+watches: '1'
+workflowId: '11428'
+---
+actions: null

@@ -1,0 +1,33 @@
+---
+summary: Images should be available in Gallery Apps
+---
+created: 2015-03-14 14:10:55.0
+creator: bob
+description: ''
+id: '11237'
+key: SYAND-54
+number: '54'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-03-17 16:34:23.0
+status: '5'
+type: '4'
+updated: 2015-03-17 16:34:23.0
+votes: '0'
+watches: '2'
+workflowId: '11337'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    Only the high res pictures are stored.
+
+    It does not make sense to save the thumbnails.
+  created: 2015-03-17 16:34:19.0
+  id: '11402'
+  issue: '11237'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-17 16:34:19.0

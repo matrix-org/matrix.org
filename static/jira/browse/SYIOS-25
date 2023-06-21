@@ -1,0 +1,38 @@
+---
+summary: 'Console: display app version in settings'
+---
+assignee: gforet
+created: 2014-12-18 16:54:20.0
+creator: gforet
+description: |-
+  This app version should specify SDK version too (see MatrixSDKVersion).
+  Note: both versions should be equal most of the time.
+  Suggested format: 
+  if (app_version != MatrixSDKVersion)
+     app_version (<MatrixSDKVersion>)
+  else
+     app_version
+id: '10836'
+key: SYIOS-25
+number: '25'
+priority: '3'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-01-14 13:26:57.0
+status: '5'
+type: '2'
+updated: 2015-01-14 13:26:57.0
+votes: '0'
+watches: '1'
+workflowId: '10936'
+---
+actions:
+- author: gforet
+  body: fixed in v0.2.1
+  created: 2015-01-14 13:26:57.0
+  id: '11118'
+  issue: '10836'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-14 13:26:57.0

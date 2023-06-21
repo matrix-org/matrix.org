@@ -1,0 +1,31 @@
+---
+summary: Test discarding of room history
+---
+assignee: illicitonion
+created: 2015-09-29 15:36:28.0
+creator: leonerd
+description: ''
+id: '11976'
+key: SYT-32
+number: '32'
+priority: '2'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2016-11-29 16:38:38.0
+status: '5'
+type: '2'
+updated: 2016-11-29 16:38:38.0
+votes: '0'
+watches: '1'
+workflowId: '12079'
+---
+actions:
+- author: leonerd
+  body: https://github.com/matrix-org/sytest/pull/76
+  created: 2015-11-20 14:14:12.0
+  id: '12378'
+  issue: '11976'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-11-20 14:14:12.0

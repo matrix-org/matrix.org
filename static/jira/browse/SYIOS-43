@@ -1,0 +1,22 @@
+---
+summary: Recents tab on an iPad mini always shows a room view.
+---
+created: 2015-01-07 16:39:53.0
+creator: erikj
+description: ''
+id: '10893'
+key: SYIOS-43
+number: '43'
+priority: '1'
+project: '10200'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-01-12 08:18:21.0
+status: '5'
+type: '1'
+updated: 2015-01-12 08:18:21.0
+votes: '0'
+watches: '1'
+workflowId: '10993'
+---
+actions: null

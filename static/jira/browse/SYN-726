@@ -1,0 +1,36 @@
+---
+summary: Invites should be rejectable even if the remote server has subsequently gone awol
+---
+created: 2016-07-15 21:09:15.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12749'
+key: SYN-726
+number: '726'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:44.0
+votes: '0'
+watches: '3'
+workflowId: '12849'
+---
+actions:
+- author: erikj
+  body: They should be already?
+  created: 2016-07-18 09:44:29.0
+  id: '13061'
+  issue: '12749'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-07-18 09:44:29.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1564'
+  created: 2016-11-07 18:29:44.0
+  id: '13887'
+  issue: '12749'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:44.0

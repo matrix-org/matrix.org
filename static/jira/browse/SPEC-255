@@ -1,0 +1,30 @@
+---
+summary: 'Content repo needs a param to force download via Content-disposition: attachment'
+---
+created: 2015-10-28 22:58:51.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Vector needs this to implement 'download' buttons for images and videos, for users who don't want to view them in-browser
+id: '12052'
+key: SPEC-255
+number: '255'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:46.0
+votes: '0'
+watches: '2'
+workflowId: '12155'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/561'
+  created: 2016-10-28 16:27:46.0
+  id: '13369'
+  issue: '12052'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:46.0

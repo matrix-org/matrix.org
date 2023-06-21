@@ -1,0 +1,27 @@
+---
+summary: Presence activity updates should be temporally quantised and otherwise only sent when strictly necessary
+---
+created: 2014-09-16 00:56:23.0
+creator: matthew
+description: |-
+  Currently we have the embarassing situation that whenever Bob does *anything* (e.g. sends a message in a room somewhere), then if I'm tracking Bob's presence I get a presence update saying "Bob's aliiiiiiiiive!".  This information is doubly irrelevant if i'm in the same room as Bob, and I just saw him send a message.
+
+  So, at the least:
+   * We should only send activity updates for users whose activity you wouldn't otherwise be able to see
+   * We should perhaps rate-limit those updates to be batched to the nearest 10s or so.
+id: '10050'
+key: SYN-25
+number: '25'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-04-07 11:48:18.0
+status: '5'
+type: '2'
+updated: 2016-04-07 11:48:18.0
+votes: '0'
+watches: '1'
+workflowId: '10359'
+---
+actions: null

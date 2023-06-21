@@ -1,0 +1,20 @@
+---
+summary: Per-room notifications get a bit confused about rooms you've subsequently left
+---
+created: 2015-07-06 11:47:02.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11731'
+key: SYWEB-380
+number: '380'
+priority: '2'
+project: '10004'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-07-06 11:47:02.0
+votes: '0'
+watches: '1'
+workflowId: '11832'
+---
+actions: null

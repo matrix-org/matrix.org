@@ -1,0 +1,28 @@
+---
+summary: synapse should run in a process checker to protect from OOMs (and dump cores for debugging segfaults)
+---
+created: 2015-09-19 15:39:26.0
+creator: neb
+description: Submitted by @irc_Arathorn:openmarket.com
+id: '11889'
+key: SYN-480
+number: '480'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '2'
+updated: 2016-11-07 18:28:22.0
+votes: '0'
+watches: '2'
+workflowId: '11992'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1375'
+  created: 2016-11-07 18:28:22.0
+  id: '13694'
+  issue: '11889'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:22.0

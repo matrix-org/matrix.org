@@ -1,0 +1,30 @@
+---
+summary: /join endpoint doc makes it look like it only takes room IDs
+---
+created: 2016-01-03 22:53:42.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  http://matrix.org/docs/spec/r0.0.0/client_server.html#post-matrix-client-r0-join-roomid should use 'roomIdOrAlias' rather than 'roomId' to describe the param, and spell out that it can be both
+id: '12262'
+key: SPEC-318
+number: '318'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:07.0
+votes: '0'
+watches: '2'
+workflowId: '12365'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/609'
+  created: 2016-10-28 16:28:07.0
+  id: '13417'
+  issue: '12262'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:07.0

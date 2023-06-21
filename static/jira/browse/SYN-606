@@ -1,0 +1,36 @@
+---
+summary: Peeking as a non-guest does not wake up /events
+---
+assignee: erikj
+created: 2016-01-21 10:55:44.0
+creator: kegan
+description: |-
+  If you peek into a room as a non-guest (that is, you are hitting {{/events}} with a {{room_id=}} of the room you're peeking into), it will wait the full {{timeout=}} before returning events.
+
+  This is not 100% reproducible. Joining then leaving the peeked room seems to mess with the state such that:
+   - {{/events}} returns in a timely manner.
+   - You don't get any events from the point where you *left* the room even though it is {{world_readable}}.
+id: '12332'
+key: SYN-606
+number: '606'
+priority: '2'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-01-22 13:03:02.0
+status: '5'
+type: '1'
+updated: 2016-01-22 13:03:02.0
+votes: '0'
+watches: '1'
+workflowId: '12437'
+---
+actions:
+- author: kegan
+  body: Running Server:Synapse/0.12.0 (b=develop,69adf8c)
+  created: 2016-01-21 12:52:53.0
+  id: '12580'
+  issue: '12332'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-01-21 12:52:53.0

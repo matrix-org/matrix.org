@@ -1,0 +1,23 @@
+---
+summary: Sydent requires undocumented file res/email.template
+---
+created: 2015-09-04 10:44:19.0
+creator: illicitonion
+description: |-
+  It would be nice if this were documented.
+  Or existed.
+  Or you were warned before it receives a request to send an email.
+id: '11851'
+key: SYD-11
+number: '11'
+priority: '3'
+project: '10002'
+reporter: illicitonion
+status: '10100'
+type: '1'
+updated: 2015-09-04 10:44:19.0
+votes: '0'
+watches: '1'
+workflowId: '11954'
+---
+actions: null

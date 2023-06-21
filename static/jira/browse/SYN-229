@@ -1,0 +1,22 @@
+---
+summary: Return content-length when downloading from media repo
+---
+created: 2015-01-06 11:16:17.0
+creator: markjh
+description: ''
+id: '10890'
+key: SYN-229
+number: '229'
+priority: '2'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-01-06 11:33:16.0
+status: '5'
+type: '1'
+updated: 2015-03-06 15:26:22.0
+votes: '0'
+watches: '1'
+workflowId: '10990'
+---
+actions: null

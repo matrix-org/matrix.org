@@ -1,0 +1,33 @@
+---
+summary: /whois spam
+---
+created: 2015-05-15 10:38:31.0
+creator: kegan
+description: |-
+  Still getting lots of onUserQuery events, we should be:
+   - Queuing them rather than processing them all asyncly.
+   - Stop /whois'ing if we've recently done so.
+id: '11533'
+key: BOTS-42
+number: '42'
+priority: '2'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-05-15 16:23:31.0
+status: '5'
+type: '1'
+updated: 2015-05-15 16:23:31.0
+votes: '0'
+watches: '1'
+workflowId: '11634'
+---
+actions:
+- author: kegan
+  body: Stopping /whois checks for now.
+  created: 2015-05-15 16:23:31.0
+  id: '11765'
+  issue: '11533'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-05-15 16:23:31.0

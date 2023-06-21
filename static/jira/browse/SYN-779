@@ -1,0 +1,68 @@
+---
+summary: Slow performance leak
+---
+created: 2016-09-26 15:30:49.0
+creator: leonerd
+description: |-
+  I suspect synapse (or one of its components) has a slow performance leak that makes performance progressively worse while its uptime increases, that goes away on reboot.
+
+  The RTT flame graph over the weekend was looking increasingly unhappy until 10am this morning, whereupon by 10:30 or so it had totally calmed down again.
+
+  This coincides with
+
+  {noformat}
+  10:08 * erik restarting matrix.org
+  {noformat}
+id: '12842'
+key: SYN-779
+number: '779'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:04.0
+votes: '0'
+watches: '2'
+workflowId: '12942'
+---
+actions:
+- author: leonerd
+  body: RTT tester "receive time" flame graph over the weekend + this morning.
+  created: 2016-09-26 15:34:32.0
+  id: '13123'
+  issue: '12842'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-09-26 15:34:32.0
+- author: leonerd
+  body: |-
+    What's particularly interesting is that all of the buckets were trending up towards 50%, not 100%.  I'd be tempted to blame that one of the synchrotron was being slow, except that
+
+     * We run three synchrotron currently, and
+     * The frontend dendron "LB" performs sticky session pinning by access token, so the RTT tester ought to be hitting the same backend synchrotron each time.
+  created: 2016-09-26 15:37:46.0
+  id: '13124'
+  issue: '12842'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-09-26 15:37:46.0
+- author: leonerd
+  body: |-
+    Well, this is interesting. Last weekend (and in fact Friday) we didn't restart the synapse either, only this time no performance leak has been observed. The receive RTT graph is looking happy and flat, barely even any flecks of blue.
+
+    I wonder if last weekend's slowdown was specific to some of the traffic it saw; e.g. a lot of the freenode DDoS was happening around that time.
+  created: 2016-10-03 11:16:28.0
+  id: '13151'
+  issue: '12842'
+  type: comment
+  updateauthor: leonerd
+  updated: 2016-10-03 11:16:28.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1438'
+  created: 2016-11-07 18:30:04.0
+  id: '13934'
+  issue: '12842'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:04.0

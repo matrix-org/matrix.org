@@ -1,0 +1,30 @@
+---
+summary: calling /sync as an AS user fails subtly
+---
+created: 2016-07-11 12:22:00.0
+creator: neb
+description: |-
+  Submitted by @richvdh:sw1v.org
+  It returns no events when called with a `since` parameter. We should either make it work properly, or reject it
+id: '12739'
+key: SYN-722
+number: '722'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:42.0
+votes: '0'
+watches: '2'
+workflowId: '12839'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1393'
+  created: 2016-11-07 18:29:42.0
+  id: '13883'
+  issue: '12739'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:42.0

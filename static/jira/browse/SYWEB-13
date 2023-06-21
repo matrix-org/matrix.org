@@ -1,0 +1,82 @@
+---
+summary: We must refuse to run on unsupported web-browsers
+---
+assignee: manu
+created: 2014-09-16 00:35:12.0
+creator: matthew
+description: ''
+id: '10034'
+key: SYWEB-13
+number: '13'
+priority: '1'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-19 16:28:24.0
+status: '5'
+type: '2'
+updated: 2014-09-22 17:20:48.0
+votes: '0'
+watches: '2'
+workflowId: '10397'
+---
+actions:
+- author: manu
+  body: |-
+    We may not completely want to refuse to run on a given web-browsers type and version. It may be preferable to disable the features that are not supported by a browser like we plan to do for voip.
+    Here is a the list of needed browser capabilities and how there are supported by the browsers.
+
+    The "modern"/HTML5 features currently required by the webclient are:
+     - WebStorage (localStorage, sessionStorage): http://caniuse.com/#feat=namevalue-storage
+     - FileReader API: http://www.caniuse.com/#feat=filereader
+     - FileList API: http://www.caniuse.com/#feat=input-file-multiple
+     - Canvas: http://www.caniuse.com/#feat=canvas
+     - webrtc: http://www.caniuse.com/#feat=rtcpeerconnection
+
+    *Mandatory features*
+    - WebStorage: Several parts of the app used WebStorage, so this feature is quite mandatory but it is widely supported. We can refuse to run on browsers that do not support it.
+
+    *Optional features*
+    Other features are limited to an app component which can be disabled at runtime (with information provided to the user):
+     - FileReader,  FileList to select a file to upload
+     - Canvas to produce thumbnail for HTML5 file image
+     - webRTC to voip
+
+    *IE case*
+    IE 10 and IE 11 run the same HTML5 features of our scope. The webclient runs correctly on both version except 2 bugs that should be fixable:
+     - Buttons in the header are taller than the header
+     - The upload of image and avatar do not work
+
+    IE 9: The app layout is the same as IE10/11. The input file selection does not work and crashed the app (FileList is not available). There are workarounds.
+    IE 8: not tested. too old
+  created: 2014-09-19 12:31:56.0
+  id: '10336'
+  issue: '10034'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-19 12:39:56.0
+- author: matthew
+  body: |-
+    As first cut, please let's just lock out IE8 and earlier, and anyone who doesn't have webstorage.
+
+    Agreed the other features (VoIP and image-sending) can be disabled if the browser doesn't support them.
+
+    For image-sending, we *have* to implement server-side thumbnailing to support this scenario - but that's a separate bug (SYN-32)
+  created: 2014-09-19 12:50:00.0
+  id: '10337'
+  issue: '10034'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-19 12:51:28.0
+- author: manu
+  body: |-
+    If running IE 8 or older, or if the browser does not support web storage, the app starts on a "non supported" page indicating the browser user agent and the reason why the app does not start.
+
+    The "send image" and the "call" button are disabled if the browser lacks the feature. 
+    There is a tip explaining the reason when the user mouses over these buttons
+  created: 2014-09-19 16:28:24.0
+  id: '10343'
+  issue: '10034'
+  type: comment
+  updateauthor: manu
+  updated: 2014-09-19 16:28:24.0

@@ -1,0 +1,30 @@
+---
+summary: Bubbles sometimes appear in duplicate, one unsent
+---
+created: 2014-09-29 01:34:46.0
+creator: matthew
+description: ''
+id: '10412'
+key: SYWEB-99
+number: '99'
+priority: '3'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-04 11:31:01.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:04.0
+votes: '0'
+watches: '2'
+workflowId: '10515'
+---
+actions:
+- author: kegan
+  body: Haven't seen this for a long time.
+  created: 2014-11-04 11:31:01.0
+  id: '10725'
+  issue: '10412'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-04 11:31:01.0

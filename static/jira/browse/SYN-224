@@ -1,0 +1,36 @@
+---
+summary: We should mandate a postmaster@ style admin account for HSes so admins are contactable when needed
+---
+created: 2014-12-24 19:45:40.0
+creator: matthew
+description: ''
+id: '10881'
+key: SYN-224
+number: '224'
+priority: '2'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:34.0
+votes: '0'
+watches: '3'
+workflowId: '10981'
+---
+actions:
+- author: erikj
+  body: Or include it as part of a {{/server-info}} API.
+  created: 2015-05-07 11:48:11.0
+  id: '11722'
+  issue: '10881'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-07 11:48:11.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1267'
+  created: 2016-11-07 18:27:34.0
+  id: '13585'
+  issue: '10881'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:34.0

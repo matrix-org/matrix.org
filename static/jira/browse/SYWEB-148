@@ -1,0 +1,62 @@
+---
+summary: Some angular directives are getting run *lots*
+---
+assignee: kegan
+created: 2014-11-11 15:39:38.0
+creator: matthew
+description: |-
+  I made the mistake of putting a console.log into getUserDisplayName (currently still there, but commented out).  It resulted in several hundred lines being logged every 5s, as the buddy list in #matrix:matrix.org got refreshed or something - each log iteration taking a good second of CPU to actually run!
+
+  We need to be paranoid and make sure only the right stuff gets recalculated during a digest, or waste all the CPU evar.
+id: '10642'
+key: SYWEB-148
+number: '148'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2014-11-12 13:34:25.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:04.0
+votes: '0'
+watches: '2'
+workflowId: '10742'
+---
+actions:
+- author: kegan
+  body: Indeed, it appears the user list updating is the cause of this. Commenting out {{$timeout(updateMemberListPresenceAge, 5 * 1000);}} improves the situation. Trying to find the root cause now..
+  created: 2014-11-12 12:48:22.0
+  id: '10774'
+  issue: '10642'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-12 12:48:22.0
+- author: kegan
+  body: |-
+    Short answer:
+     - Filters get called a lot; often > once per {{$digest}} - http://www.bennadel.com/blog/2489-how-often-do-filters-execute-in-angularjs.htm
+     - Any time we update anything in {{$scope}} we're triggering a digest.
+     - Therefore, filters get called a lot.
+     - You can manually do filters via {{$watch}} if the filter computation is long.
+
+    The filter for {{getUserDisplayName}} isn't complex, so it is unlikely to be causing the "good second of CPU to actually run". Something else in the digest cycle must be taking a while.
+  created: 2014-11-12 13:03:10.0
+  id: '10775'
+  issue: '10642'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-12 13:03:10.0
+- author: kegan
+  body: |-
+    Did some profiling:
+
+    The biggest users were {{hasMatch}} in {{notification-service.js}} and {{getUserDisplayName}} in {{event-handler-service.js}}. They were probably being recomputed in the $digest hence why they are showing up. For context, normal GC times was *4 times* the combined amount in these 2 methods; it is not worth optimising these methods.
+
+    Going to close this until there are some CPU profiles demonstrating long digest cycles; I can't reproduce this.
+  created: 2014-11-12 13:34:18.0
+  id: '10777'
+  issue: '10642'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-12 13:34:18.0

@@ -1,0 +1,24 @@
+---
+summary: clicking email verification links on the wrong device doesn't work
+---
+created: 2015-08-30 00:23:37.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  To quote: I hit the link on my phone and it took me to the registration page with an error message but when I did it in my browser that's currently logged into Vector, it worked
+id: '11837'
+key: SYN-463
+number: '463'
+priority: '2'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-01-06 11:46:40.0
+status: '5'
+type: '1'
+updated: 2016-01-06 11:46:40.0
+votes: '0'
+watches: '1'
+workflowId: '11940'
+---
+actions: null

@@ -1,0 +1,30 @@
+---
+summary: Cannot accept or reject invites
+---
+created: 2016-02-11 06:38:40.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Dusk on synapse 0.13.1 kept getting M_UNKNOWN with the text 'Forbidden'. This makes it impossible to remove the room invite.
+id: '12383'
+key: SYN-624
+number: '624'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:06.0
+votes: '0'
+watches: '2'
+workflowId: '12488'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1493'
+  created: 2016-11-07 18:29:06.0
+  id: '13800'
+  issue: '12383'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:06.0

@@ -1,0 +1,127 @@
+---
+summary: Races when joining rooms
+---
+created: 2015-08-21 09:41:07.0
+creator: kegan
+description: |-
+  If you try to {{/join}} a room twice in quick succession, there's a race which can {{500}} a request.
+
+  {{POST-225216}}
+  {code}
+  2015-08-20 23:28:08,681 - synapse.access.http.8080 - 474 - INFO - POST-225216 - 83.166.68.175 - 8080 - Received request: POST /_matrix/client/api/v1/join/!XDgfRcuqoeMEVGlPMI:matrix.org?access_token=<redacted>&use
+  r_id=%40freenode_ps10gel%3Amatrix.org
+  2015-08-20 23:28:13,977 - synapse.storage._base - 247 - WARNING - POST-225216 - [TXN OPERROR] {persist_event-f7987} could not serialize access due to concurrent update
+   0/5
+  2015-08-20 23:28:15,200 - synapse.access.http.8080 - 491 - INFO - POST-225216 - 83.166.68.175 - 8080 - {@freenode_ps10gel:matrix.org} Processed request: 6519ms 44B 200 "POST /_matrix/client/api/v1/join/!XDgfRcuqoeMEVGlPMI:matrix.org?access_token=<redacted>&user_id=%40freenode_ps10gel%3Amatrix.org HTTP/1.1" "None"
+  {code}
+
+  {{POST-225217}}
+  {code}
+  2015-08-20 23:28:08,685 - synapse.access.http.8080 - 474 - INFO - POST-225217 - 83.166.68.175 - 8080 - Received request: POST /_matrix/client/api/v1/join/!XDgfRcuqoeMEVGlPMI:matrix.org?access_token=<redacted>&use
+  r_id=%40freenode_ps10gel%3Amatrix.org
+  2015-08-20 23:28:13,978 - synapse.storage._base - 247 - WARNING - POST-225217 - [TXN OPERROR] {persist_event-f7988} could not serialize access due to concurrent update
+   0/5
+  2015-08-20 23:28:15,347 - synapse.http.server - 107 - ERROR - POST-225217 - Failed handle request synapse.http.server._async_render on <synapse.rest.client.v1.ClientV1RestResource object at 0x42e5a90>: <SynapseRequest at 0x2f341290 method=POST uri=/_matrix/client/api/v1/join/!XDgfRcuqoeMEVGlPMI:matrix.org?access_token=<redacted>&user_id=%40freenode_ps10gel%3Amatrix.org clientproto=HTTP/1.1 site=8080>
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 86, in wrapped_request_handler
+      yield d
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/http/server.py", line 213, in _async_render
+      callback_return = yield callback(request, *args)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/client/v1/room.py", line 254, in on_POST
+      txn_id=txn_id,
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/message.py", line 235, in create_and_send_event
+      yield member_handler.change_membership(event, context)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/room.py", line 401, in change_membership
+      yield self._do_join(event, context, do_auth=do_auth)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/room.py", line 522, in _do_join
+      do_auth=do_auth,
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/room.py", line 582, in _do_local_membership_update
+      suppress_auth=(not do_auth),
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/_base.py", line 111, in handle_new_client_event
+      event, context=context
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/events.py", line 118, in persist_event
+      current_state=current_state,
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/storage/_base.py", line 311, in runInteraction
+      inner_func, *args, **kwargs
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/threadpool.py", line 196, in _worker
+      result = context.call(ctx, function, *args, **kwargs)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/context.py", line 118, in callWithContext
+      return self.currentContext().callWithContext(ctx, func, *args, **kw)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/context.py", line 81, in callWithContext
+      return func(*args,**kw)
+    File "/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/enterprise/adbapi.py", line 285, in _runWithConnection
+      result = func(conn, *args, **kw)
+    File "synapse/storage/_base.py", line 306, in inner_func
+      conn, desc, after_callbacks, func, *args, **kwargs
+    File "synapse/storage/_base.py", line 239, in _new_transaction
+      r = func(txn, *args, **kwargs)
+    File "synapse/util/logutils.py", line 84, in wrapped
+      return f(*args, **kwargs)
+    File "synapse/storage/events.py", line 191, in _persist_event_txn
+      is_new_state=is_new_state,
+    File "synapse/util/logutils.py", line 84, in wrapped
+      return f(*args, **kwargs)
+    File "synapse/storage/events.py", line 451, in _persist_events_txn
+      "event_id": event.event_id,
+    File "synapse/storage/_base.py", line 501, in _simple_upsert_txn
+      txn.execute(sql, allvalues.values())
+    File "synapse/storage/_base.py", line 76, in execute
+      self._do_execute(self.txn.execute, sql, *args)
+    File "synapse/storage/_base.py", line 101, in _do_execute
+      sql, *args
+  IntegrityError: duplicate key value violates unique constraint "current_state_events_room_id_type_state_key_key"
+  DETAIL:  Key (room_id, type, state_key)=(!XDgfRcuqoeMEVGlPMI:matrix.org, m.room.member, @freenode_ps10gel:matrix.org) already exists.
+  2015-08-20 23:28:15,353 - synapse.access.http.8080 - 491 - INFO - POST-225217 - 83.166.68.175 - 8080 - {@freenode_ps10gel:matrix.org} Processed request: 6668ms 33B 500 "POST /_matrix/client/api/v1/join/!XDgfRcuqoeMEVGlPMI:matrix.org?access_token=<redacted>&user_id=%40freenode_ps10gel%3Amatrix.org HTTP/1.1" "None"
+  {code}
+id: '11815'
+key: SYN-454
+number: '454'
+priority: '2'
+project: '10000'
+reporter: kegan
+resolution: '3'
+resolutiondate: 2016-01-06 11:34:19.0
+status: '5'
+type: '1'
+updated: 2016-01-06 11:34:19.0
+votes: '0'
+watches: '1'
+workflowId: '11918'
+---
+actions: null

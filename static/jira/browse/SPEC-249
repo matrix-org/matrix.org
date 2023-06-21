@@ -1,0 +1,30 @@
+---
+summary: Protect privacy by providing way of stripping EXIF and other metadata on images
+---
+created: 2015-10-11 17:04:54.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Unclear whether this should be done client-by-client (and risk clients getting it wrong and breaking privacy), or a helpful function which we can recommend the content repository to implement...
+id: '12011'
+key: SPEC-249
+number: '249'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:44.0
+votes: '0'
+watches: '2'
+workflowId: '12114'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/558'
+  created: 2016-10-28 16:27:44.0
+  id: '13366'
+  issue: '12011'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:44.0

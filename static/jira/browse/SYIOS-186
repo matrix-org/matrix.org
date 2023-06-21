@@ -1,0 +1,20 @@
+---
+summary: Play button overlay is stuck on when playing back videos
+---
+created: 2015-12-02 22:45:08.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12171'
+key: SYIOS-186
+number: '186'
+priority: '3'
+project: '10200'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2015-12-02 22:45:08.0
+votes: '0'
+watches: '1'
+workflowId: '12274'
+---
+actions: null

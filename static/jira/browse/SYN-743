@@ -1,0 +1,30 @@
+---
+summary: URL Preview can take 35s to do XPath queries on a 1.0MB of HTML with 7500 tags
+---
+created: 2016-08-02 16:25:33.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  See (internal room) https://vector.im/develop/#/room/!zOmsiVucpWbRRDjSwe:matrix.org/$147014997714710MlGcH:matrix.org for sordid details
+id: '12779'
+key: SYN-743
+number: '743'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:50.0
+votes: '0'
+watches: '2'
+workflowId: '12879'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1405'
+  created: 2016-11-07 18:29:50.0
+  id: '13901'
+  issue: '12779'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:50.0

@@ -1,0 +1,23 @@
+---
+summary: freenode say that we're generating connections with non-unique idents, thus missing the whole point of the identd
+---
+assignee: kegan
+created: 2015-07-10 21:32:14.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11745'
+key: BOTS-77
+number: '77'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-08-04 13:59:01.0
+status: '5'
+type: '1'
+updated: 2015-08-04 13:59:01.0
+votes: '0'
+watches: '1'
+workflowId: '11846'
+---
+actions: null

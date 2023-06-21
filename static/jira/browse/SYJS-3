@@ -1,0 +1,35 @@
+---
+summary: Promise abstraction going forward
+---
+created: 2015-06-02 17:32:36.0
+creator: kegan
+description: |-
+  The current noddy JS SDK just does HTTP API calls. This makes wrapping the functions to be "promise compatible" trivial. We want to expand the JS SDK to do things like retrying requests. This means that the SDK needs to know if it is using promises or callbacks.
+
+  How do we manage this sensibly? Should we be explicitly stating {{client.returnType = "promise"}}? How would that prevent inconsistencies (e.g. saying it returns promises but really invokes callbacks). Should we just inspect the args to see if it is {{Thenable}}? Will we design out the ability to swap to co-routines in the future?
+
+  Ultimately, the retry handler needs to be able to wrap the HTTP response in some way to potentially stop the callback being invoked / promise being resolved/rejected. It then needs to redo the request and then do the right thing when it succeeds.
+id: '11611'
+key: SYJS-3
+number: '3'
+priority: '2'
+project: '10204'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-06-08 10:57:02.0
+status: '5'
+type: '1'
+updated: 2015-06-08 10:57:02.0
+votes: '0'
+watches: '1'
+workflowId: '11712'
+---
+actions:
+- author: kegan
+  body: We always return Promises, but if they specify a callback we will invoke that as well.
+  created: 2015-06-08 10:57:02.0
+  id: '11831'
+  issue: '11611'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-08 10:57:02.0

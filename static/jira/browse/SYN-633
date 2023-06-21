@@ -1,0 +1,43 @@
+---
+summary: SAAS Availability
+---
+created: 2016-02-20 20:29:00.0
+creator: souvikbhattacharyas
+description: ''
+id: '12508'
+key: SYN-633
+number: '633'
+priority: '2'
+project: '10000'
+reporter: souvikbhattacharyas
+status: '10100'
+type: '2'
+updated: 2016-11-07 18:29:09.0
+votes: '0'
+watches: '2'
+workflowId: '12608'
+---
+actions:
+- author: souvikbhattacharyas
+  body: |-
+    Hi,
+    I am planning to deploy Synapses server in Cloud  as SAAS. So, please let me know that if Synapses server has that support or not. If not then any work around to solve that. My scenario is given below:
+
+    1) Suppose 2 companies exist. Company A & Company B.
+    2) Now both Company have some users. Company A = A1 & A2 Company B=B1 & B2. 
+    3) Both of the company register to matrix.
+    4) Now when Company A will login they will be able to see the online users related to their own companies only now others companies. The company will be able to create groups share screen only among them.
+  created: 2016-02-20 20:34:43.0
+  id: '12700'
+  issue: '12508'
+  type: comment
+  updateauthor: souvikbhattacharyas
+  updated: 2016-02-20 20:34:43.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1500'
+  created: 2016-11-07 18:29:09.0
+  id: '13807'
+  issue: '12508'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:09.0

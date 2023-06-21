@@ -1,0 +1,30 @@
+---
+summary: m.image content is inconsistent
+---
+created: 2014-11-13 15:45:11.0
+creator: erikj
+description: ''
+id: '10650'
+key: SYWEB-154
+number: '154'
+priority: '2'
+project: '10004'
+reporter: erikj
+resolution: '3'
+resolutiondate: 2014-11-13 15:46:24.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:56.0
+votes: '0'
+watches: '2'
+workflowId: '10750'
+---
+actions:
+- author: kegan
+  body: SYWEB-136
+  created: 2014-11-13 15:46:24.0
+  id: '10789'
+  issue: '10650'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-13 15:46:24.0

@@ -1,0 +1,84 @@
+---
+summary: 500 when PUTing to a push rule twice.
+---
+created: 2015-05-26 10:59:16.0
+creator: markjh
+description: |-
+  {code}
+  2015-05-26 11:04:00,325 - synapse.http.server - 111 - ERROR - PUT-321 - Failed handle request synapse.http.server._async_render on <synTraceback (most recent call last):
+    File "/src/github/matrix-org/synapse/synapse/http/server.py", line 88, in wrapped_request_handler
+      yield request_handler(self, request)
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerato    return g.throw(self.type, self.value, self.tb)
+    File "/src/github/matrix-org/synapse/synapse/http/server.py", line 223, in _async_render
+      callback_return = yield callback(request, *args)
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerato    return g.throw(self.type, self.value, self.tb)
+    File "/src/github/matrix-org/synapse/synapse/rest/client/v1/push_rule.py", line 82, in on_PUT
+      after=after
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerato    return g.throw(self.type, self.value, self.tb)
+    File "/src/github/matrix-org/synapse/synapse/storage/push_rule.py", line 82, in add_push_rule
+      **vals
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerato    return g.throw(self.type, self.value, self.tb)
+    File "/src/github/matrix-org/synapse/synapse/storage/_base.py", line 431, in runInteraction
+      inner_func, *args, **kwargs
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/python/threadpool.py", line 196, in _worker
+      result = context.call(ctx, function, *args, **kwargs)
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/python/context.py", line 118, in callWithContext
+      return self.currentContext().callWithContext(ctx, func, *args, **kw)
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/python/context.py", line 81, in callWithContext
+      return func(*args,**kw)
+    File "/home/markjh/envs/synapse/local/lib/python2.7/site-packages/twisted/enterprise/adbapi.py", line 288, in _runWithConnection
+      result = func(conn, *args, **kw)
+    File "/src/github/matrix-org/synapse/synapse/storage/_base.py", line 384, in inner_func
+      return func(txn, *args, **kwargs)
+    File "/src/github/matrix-org/synapse/synapse/storage/push_rule.py", line 192, in _add_push_rule_highest_priority_txn
+      values=new_rule,
+    File "/src/github/matrix-org/synapse/synapse/util/logutils.py", line 84, in wrapped
+      return f(*args, **kwargs)
+    File "/src/github/matrix-org/synapse/synapse/storage/_base.py", line 507, in _simple_insert_txn
+      txn.execute(sql, vals)
+    File "/src/github/matrix-org/synapse/synapse/storage/_base.py", line 216, in execute
+      self._do_execute(self.txn.execute, sql, *args)
+    File "/src/github/matrix-org/synapse/synapse/storage/_base.py", line 241, in _do_execute
+      sql, *args
+  IntegrityError: UNIQUE constraint failed: push_rules.user_name, push_rules.rule_id
+  {code}
+id: '11559'
+key: SYN-391
+number: '391'
+priority: '2'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2016-02-16 16:06:33.0
+status: '5'
+type: '1'
+updated: 2016-02-26 15:25:12.0
+votes: '0'
+watches: '1'
+workflowId: '11660'
+---
+actions:
+- author: markjh
+  body: I've added a test to a branch of synapse https://github.com/matrix-org/sytest/tree/bugs/SYN-391
+  created: 2015-05-26 11:11:04.0
+  id: '11793'
+  issue: '11559'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-05-26 11:11:04.0
+- author: markjh
+  body: https://github.com/matrix-org/synapse/pull/578
+  created: 2016-02-16 16:06:33.0
+  id: '12612'
+  issue: '11559'
+  type: comment
+  updateauthor: markjh
+  updated: 2016-02-16 16:06:33.0

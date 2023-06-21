@@ -1,0 +1,30 @@
+---
+summary: Presence notifications sometimes appear from unknown users on remote homeservers
+---
+created: 2015-09-23 23:33:07.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Looking at all the events appearing on my eventstream, i'm seeing occasional m.presence ones from users i otherwise know nothing about who are on remote homeservers. wtf?
+id: '11936'
+key: SYN-489
+number: '489'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:24.0
+votes: '0'
+watches: '2'
+workflowId: '12039'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1381'
+  created: 2016-11-07 18:28:24.0
+  id: '13699'
+  issue: '11936'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:24.0

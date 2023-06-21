@@ -1,0 +1,37 @@
+---
+summary: Support Forum
+---
+created: 2014-11-20 10:34:24.0
+creator: dbkr
+description: |-
+  We need an official forum for supporting people with using Matrix. Ideal properties would be:
+
+   * Threaded conversation
+   * Ability to paste chunks of text
+   * Searchable
+   * State of a thread (open / resolved)
+   * Ability to create bugs in Jira linked to a thread of conversation (and link backwards) with as much help as possible (autofilling Jira fields)
+
+  Currently we have Jira and the github issue tracker and the latter is being used as a support forum, which actually fulfils most of the requirements. A cheap option would be to formalise this and actually point people there for support which would get us almost everything except Jira integration.
+id: '10692'
+key: ORG-12
+number: '12'
+priority: '3'
+project: '10003'
+reporter: dbkr
+status: '10100'
+type: '4'
+updated: 2015-05-07 20:05:04.0
+votes: '1'
+watches: '2'
+workflowId: '10792'
+---
+actions:
+- author: mistake
+  body: I would love to see Matrix eat its own dog food and thread messages with timestamps and search filters. Live chat tech support is privileged to the IRC few. The reasons are immense to make it a reasonable request to have live help a part of research, and it would be a real distinct feature for Matrix as a greater support tool.
+  created: 2015-05-07 19:58:07.0
+  id: '11730'
+  issue: '10692'
+  type: comment
+  updateauthor: mistake
+  updated: 2015-05-07 20:05:03.0

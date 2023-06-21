@@ -1,0 +1,50 @@
+---
+summary: File uploads (and downloads) should be able to happen in parallel, with basic progress meters
+---
+assignee: m-ylecollen
+created: 2014-12-24 19:42:06.0
+creator: matthew
+description: ''
+id: '10880'
+key: SYIOS-41
+number: '41'
+priority: '3'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-07 10:17:08.0
+status: '5'
+type: '2'
+updated: 2015-01-07 10:17:09.0
+votes: '0'
+watches: '2'
+workflowId: '10980'
+---
+actions:
+- author: gforet
+  body: |-
+    Ok for adding progress meters.
+
+    Matthew, what do you mean by "single concurrent"? Presently upload/download requests are already performed in parallel.
+  created: 2015-01-05 09:28:07.0
+  id: '11049'
+  issue: '10880'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-05 09:28:07.0
+- author: matthew
+  body: oh, my bad - i didn't realise. i guess we just need some trivial UI then to show their progress.  (perhaps piecharts, given we already have them for power levels, and it avoids UI overlap with other apps...)
+  created: 2015-01-05 10:04:07.0
+  id: '11050'
+  issue: '10880'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-01-05 10:04:07.0
+- author: gforet
+  body: ok thanks Matthew
+  created: 2015-01-05 10:05:28.0
+  id: '11051'
+  issue: '10880'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-05 10:05:28.0

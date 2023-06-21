@@ -1,0 +1,28 @@
+---
+summary: Need to be clearer that the params to /sync are query params rather than a JSON body
+---
+created: 2016-04-09 21:17:06.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12613'
+key: SPEC-381
+number: '381'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:28.0
+votes: '0'
+watches: '2'
+workflowId: '12713'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/663'
+  created: 2016-10-28 16:28:28.0
+  id: '13472'
+  issue: '12613'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:28.0

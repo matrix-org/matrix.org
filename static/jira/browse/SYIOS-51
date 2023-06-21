@@ -1,0 +1,30 @@
+---
+summary: spinner appears when backgrounding recents page
+---
+created: 2015-01-12 08:17:59.0
+creator: matthew
+description: ''
+id: '10913'
+key: SYIOS-51
+number: '51'
+priority: '3'
+project: '10200'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2015-01-12 13:20:16.0
+status: '5'
+type: '1'
+updated: 2015-01-12 13:20:16.0
+votes: '0'
+watches: '2'
+workflowId: '11013'
+---
+actions:
+- author: m-ylecollen
+  body: Should be fixed in eeaadbf8
+  created: 2015-01-12 13:20:16.0
+  id: '11092'
+  issue: '10913'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-12 13:20:16.0

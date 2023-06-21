@@ -1,0 +1,30 @@
+---
+summary: URL previews break weirdly on weird mime-types
+---
+created: 2016-05-12 22:26:25.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  https://github.com/matrix-org/synapse/releases.atom returns a zero-byte 200 OK response - see https://vector.im/develop/#/room/!cURbafjkfsMDVwdRDQ:matrix.org/$1463086853288114TZQNT:matrix.org
+id: '12658'
+key: SYN-690
+number: '690'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:29.0
+votes: '0'
+watches: '2'
+workflowId: '12758'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1543'
+  created: 2016-11-07 18:29:29.0
+  id: '13854'
+  issue: '12658'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:29.0

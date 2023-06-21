@@ -1,0 +1,57 @@
+---
+summary: M_UNAUTHORIZED if 'Authorization' header value contains optional whitespace
+---
+created: 2015-07-14 18:36:22.0
+creator: leonerd
+description: |-
+  It's a little unclear from the spec, but I believe the intention is that the federation {{Authorization}} header is supposed to follow RFC7235 format. To quote:
+
+  {noformat}
+   Authorization = credentials
+
+    credentials = auth-scheme [ 1*SP ( token68 / [ ( "," / auth-param )
+      *( OWS "," [ OWS auth-param ] ) ] ) ]
+  {noformat}
+
+  The {{OWS}} parts in there suggest that "optional whitespace" is allowed between comma-separated {{auth-param}} components.
+
+  However, while synapse is happy with
+
+  {noformat}
+  Authorization: X-Matrix origin="localhost:33515",key="ed25519:1",sig="hNMLqNd1T+JUVc53JxpRUtV8uTeAFiz/H8ewf5BffPz4Pem3EiIOq7L06B3fNHmWrW+ZVBkdG1tGEU9Fyl+lAA"
+  {noformat}
+
+  it breaks with
+
+  {noformat}
+  Authorization: X-Matrix origin="localhost:48078", key="ed25519:1", sig="24xkXS8iJE9dCdU5j0GRym4eps+vzUYvYaPosjdjU/G2etNQGVc1erInpmjJJHlJoJu1GDb8H3JzXQga47oADg"
+  {noformat}
+
+  In the latter case, the resulting error message is:
+
+  {noformat}
+  400 Bad Request
+  {"errcode":"M_UNAUTHORIZED","error":"Malformed Authorization header"}
+  {noformat}
+id: '11753'
+key: SYN-437
+number: '437'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:13.0
+votes: '0'
+watches: '2'
+workflowId: '11854'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1350'
+  created: 2016-11-07 18:28:13.0
+  id: '13671'
+  issue: '11753'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:13.0

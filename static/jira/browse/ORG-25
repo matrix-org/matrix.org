@@ -1,0 +1,31 @@
+---
+summary: 'Let''s make a #matrix-spam for the botspam and keep #matrix-dev for actual developer discussion'
+---
+assignee: matthew
+created: 2015-09-19 21:22:37.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11894'
+key: ORG-25
+number: '25'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-11-03 17:24:33.0
+status: '5'
+type: '1'
+updated: 2015-11-03 17:24:33.0
+votes: '0'
+watches: '2'
+workflowId: '11997'
+---
+actions:
+- author: matthew
+  body: done
+  created: 2015-11-03 17:24:33.0
+  id: '12317'
+  issue: '11894'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-03 17:24:33.0

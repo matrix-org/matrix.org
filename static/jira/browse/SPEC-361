@@ -1,0 +1,39 @@
+---
+summary: A way to distinguish guest or AS-ghost room members
+---
+created: 2016-02-29 17:03:12.0
+creator: leonerd
+description: |-
+  It would be useful if a client can distinguish at a glance of the members list (i.e. the set of {{m.room.member}}) events which users are guests, which are ghosts of which ASes, etc...
+
+  One way that this could be done easily is by adding another profile-like field, to be supplied along with the {{displayname}} and {{avatar_url}} fields there.
+id: '12534'
+key: SPEC-361
+number: '361'
+priority: '3'
+project: '10001'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:21.0
+votes: '0'
+watches: '3'
+workflowId: '12634'
+---
+actions:
+- author: matthew
+  body: Yup. this could be done by extensible profile data, namespaced to the bridge itself, but i'm a bit worried that it's trivially spoofable and unnecessarily 'magic'.  It feels slightly nicer to me if the AS was to 'sign' the user into participating in a given usergroup - i believe Erik's plan for user groups is some kind of crypto-based mechanism where the group owner signs the members to prove their membership.  Then there's no spoofing, and we can put whatever metadata we like on the group itself?
+  created: 2016-02-29 17:11:31.0
+  id: '12728'
+  issue: '12534'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-29 17:11:31.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/646'
+  created: 2016-10-28 16:28:21.0
+  id: '13455'
+  issue: '12534'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:21.0

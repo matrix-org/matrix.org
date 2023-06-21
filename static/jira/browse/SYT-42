@@ -1,0 +1,43 @@
+---
+summary: Two-phase "load and run" split
+---
+assignee: leonerd
+created: 2015-11-19 20:10:41.0
+creator: leonerd
+description: |-
+  Rather than loading and running each test file as we go, we should load all the .pl files at startup before any are run. This has two benefits:
+
+    1. Compile errors are found much faster, before earlier tests have run
+    2. When running in partial mode (requesting just one or a few files) the dependency analysis can skip over any test that `provides` anything we don't need. Right now it still has to run them all in case we need it later.
+id: '12123'
+key: SYT-42
+number: '42'
+priority: '2'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-12-03 13:15:19.0
+status: '5'
+type: '4'
+updated: 2015-12-03 13:15:19.0
+votes: '0'
+watches: '1'
+workflowId: '12226'
+---
+actions:
+- author: leonerd
+  body: Before this happens, we need to finish migrating everything to using fixtures, and get rid of the inline code and prepare blocks, and the use of the test env. to pass values around. This is currently ongoing in the {{paul/fixtures}} branch.
+  created: 2015-11-20 18:06:04.0
+  id: '12380'
+  issue: '12123'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-11-20 18:06:04.0
+- author: leonerd
+  body: Done
+  created: 2015-12-03 13:15:19.0
+  id: '12423'
+  issue: '12123'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-12-03 13:15:19.0

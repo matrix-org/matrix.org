@@ -1,0 +1,56 @@
+---
+summary: 'IRC AS: Bad nick change confirmation messages'
+---
+created: 2015-10-28 16:25:49.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+
+  <M-kegan> so the nick change request took about 50s
+  <M-kegan> which is Long
+  <M-kegan> in this time, a listener for nick changes is attached at the point where the NICK command is sent (there are no request/response pairings in IRC), and the nick change picked up was for someone else which that client instance is connected to
+  <M-kegan> the NICK change should've gone through though, so I'm surprised that your nick was still M-RyanRix
+  <M-kegan> I'm guessing what's happened here is that the NICK command was lost to the aether, which is why it took 50s (it won't resolve until it sees a NICK come back from the server)
+id: '12050'
+key: BOTS-130
+number: '130'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:25:24.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:25:24.0
+votes: '0'
+watches: '2'
+workflowId: '12153'
+---
+actions:
+- author: kegan
+  body: |-
+    Relevant logs here:
+    {code}
+    2015-10-28 15:57:40 INFO:req [btvmw6amxv4s4] [M->I] @rrix:whatthefuck.computer wants to change their nick on irc.freenode.net to matrrix
+    2015-10-28 15:57:40 DEBUG:req [btvmw6amxv4s4] [M->I] Returning cached bridged client @rrix:whatthefuck.computer
+    [ At this point the NICK is sent (there is no more logging in the code) ]
+    2015-10-28 15:57:50 ERROR:req [btvmw6amxv4s4] [M->I] DELAYED - Taking too long. (>10000ms)
+    2015-10-28 15:58:31 INFO:req [btvmw6amxv4s4] [M->I] sendAction -> {"action":"notice","protocol":"matrix","body":"Nick changed from 'Lcawte|Away' to 'Lcawte'."}
+    2015-10-28 15:58:31 DEBUG:req [btvmw6amxv4s4] [M->I] SUCCESS - 51607 ms
+    {code}
+
+    It's worth noting that this connection was the main client claiming events for a lot of incoming messages, so the connection itself seemed fine.
+  created: 2015-10-28 16:36:22.0
+  id: '12277'
+  issue: '12050'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-28 16:36:22.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/45
+  created: 2016-06-02 10:25:24.0
+  id: '12953'
+  issue: '12050'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:25:24.0

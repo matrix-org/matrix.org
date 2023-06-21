@@ -1,0 +1,20 @@
+---
+summary: Remove the 0.3s blank screen when opening a room
+---
+created: 2016-02-01 14:16:56.0
+creator: manu
+description: 'The reason of the blank screen is explained in the code: https://github.com/matrix-org/matrix-ios-kit/blob/d4f230f1bfe1757d01c6315b63793a42c054c5f4/MatrixKit/Controllers/MXKRoomViewController.m#L276'
+id: '12358'
+key: SYIOS-205
+number: '205'
+priority: '3'
+project: '10200'
+reporter: manu
+status: '10100'
+type: '4'
+updated: 2016-02-01 14:16:56.0
+votes: '0'
+watches: '1'
+workflowId: '12463'
+---
+actions: null

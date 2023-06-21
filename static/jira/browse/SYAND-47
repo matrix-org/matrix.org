@@ -1,0 +1,33 @@
+---
+summary: Update robolectric plugin
+---
+created: 2015-03-12 11:20:22.0
+creator: rugvip
+description: |-
+  When importing the sdk module into another project the gradle sync fails with the following error if using robolectric-gradle-plugin 0.14.0
+
+  Error:(12, 0) Cannot add a configuration with name 'testCompile' as a configuration with that name already exists.
+
+  Upgrading to robolectric-gradle-plugin 1.0.1 solves the issue. The plugin id is changed from robolectric to org.robolectric when upgrading.
+id: '11197'
+key: SYAND-47
+number: '47'
+priority: '3'
+project: '10201'
+reporter: rugvip
+status: '10100'
+type: '1'
+updated: 2016-02-16 23:37:30.0
+votes: '0'
+watches: '2'
+workflowId: '11297'
+---
+actions:
+- author: mitchhentges
+  body: Roboelectric is updated to 3.0 in https://github.com/matrix-org/matrix-android-sdk/pull/35
+  created: 2016-02-16 23:37:30.0
+  id: '12621'
+  issue: '11197'
+  type: comment
+  updateauthor: mitchhentges
+  updated: 2016-02-16 23:37:30.0

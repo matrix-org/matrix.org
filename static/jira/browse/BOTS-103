@@ -1,0 +1,22 @@
+---
+summary: We really need to feedback errors etc when the IRC bridge can't join channels
+---
+created: 2015-09-07 00:58:37.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11859'
+key: BOTS-103
+number: '103'
+priority: '1'
+project: '10101'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-01-04 15:16:10.0
+status: '5'
+type: '1'
+updated: 2016-01-04 15:16:10.0
+votes: '0'
+watches: '1'
+workflowId: '11962'
+---
+actions: null

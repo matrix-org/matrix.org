@@ -1,0 +1,159 @@
+---
+summary: Ability to change history visibility retrospectively.
+---
+created: 2015-08-19 13:17:35.0
+creator: erikj
+description: |-
+  h3. Background
+
+  The IRC bridge provisioned rooms without the {{m.room.history_visibility}} flag set. This was a mistake and needed to be rectified. However, {{m.room.history_visibility}} doesn't allow retroactively changing the visibility of past events.
+
+  The solutions available at the time were:
+  * Redact every message.
+  * Manually delete old history from the room.
+  * Change the matrix room the IRC bridged to and seal the old room.
+
+  h3. Problem
+
+  We don't currently have a way to retroactively say either:
+  * users can only see events if they were joined at the time
+  * new users can't see history from before a given event.
+id: '11809'
+key: SPEC-210
+number: '210'
+priority: '2'
+project: '10001'
+reporter: erikj
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:33.0
+votes: '0'
+watches: '4'
+workflowId: '11912'
+---
+actions:
+- author: erikj
+  body: Another solution may be to add a bulk redaction API, since redactions are designed to retroactively redact events that contained information we didn't want to leak to the room.
+  created: 2015-08-19 13:22:30.0
+  id: '12065'
+  issue: '11809'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-08-19 13:22:30.0
+- author: erikj
+  body: The UX of existing users in the case were the room suddenly changes to "users can only see events if they were joined at the time" is something I feel may confuse users. Some of their devices may have the full scrollback, but new devices will no longer be able to see it. This is not that dissimilar to redactions.
+  created: 2015-08-19 13:24:47.0
+  id: '12067'
+  issue: '11809'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-08-19 13:24:47.0
+- author: erikj
+  body: How these are implemented on the server side efficiently is something that needs to be looked at. Currently all auth visibility checks are done based solely on the state at that event, and not any future state.
+  created: 2015-08-19 13:26:12.0
+  id: '12068'
+  issue: '11809'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-08-19 13:26:12.0
+- author: matthew
+  body: |-
+    I was just thinking about this some more in the context of giving rooms power level presets (https://github.com/matrix-org/matrix-doc/pull/63), and a UX discussion I had with Kelnar the other week.
+
+    Here's a possible solution:
+     * Require that *all* users in a room have agreed to share history for a given (optionally open-ended) timeframe in order to share the history over that timeframe with new participants.  Unless everyone explicitly opts in for said timeframe, that history is withheld from new users.
+     * This could be done by requiring that all users insert a new history_acl state event, describing the timeline they authorise their messages to be visible to new users over.
+     * It's up to users to use or configure a client that reflects their privacy preferences - either not inserting history_acl events by default (thus making all their history unshareable by default), or to insert a history_acl event by default into their rooms allowing history sharing from t=0 to t=infinity, if they are happy to be on the public record.
+     * Timeframes could be described based on event ID - i.e. "i am happy for my history to be shared with randoms between $foo:matrix.org and $bar:matrix.org".  Both 'from' and 'to' IDs are optional and if missing mean either the beginning or end of time, respectively.
+     * Rooms can be configured to have a global always_share_history or similar state event - this could in fact be the current history_visibility state event.  If history_visibility is set to "shared" (as you might want on a public room), then the per-user preferences are ignored and history is visible.  Users should be warned in the UI that they are speaking in a publicly archived room.
+
+    The UI/UX of this would be that when a user wants to share history, they set the state event to assert what they want to share.  Ideally, users in the room would get a prompt of some kind from their client to ask them if they agree with sharing (with the option of refining the timeframe being shared) - thus submitting their own state event.  However, for clients that don't support that, you'd rely on the actual human room conversation to encourage participants to give permission to share the history.  You'd also rely on human intervention to get users who have left the room to rejoin it and submit their state event to change the visibility.
+
+    Shortcomings:
+     * What if I want to share history with only specific users?  We could add info into the history_acl event to describe which users or groups of users the ACL applies to...
+     * What if I only care about my messages, but don't want to block other people's messages?  At this point, we've descended into fullblown message ACLs... (SPEC-84), and it's not entirely clear whether this is best done by state events or some kind of first-class ACL citizen concept.  In fact, solving this whole thing via state events may be a shortsighted mistake.
+
+    Erik: would this be implementable serverside, especially in terms of federation complications?
+  created: 2015-09-25 18:57:55.0
+  id: '12170'
+  issue: '11809'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-25 19:03:56.0
+- author: matthew
+  body: P.S. if we solve this, then I /think/ it also solves Erik's main point of contention on SPEC-17 - that sharing 1:1 history by inviting randoms into the room is a misfeature.  Hopefully this level of control over sharing history mitigates this concern, as no 1:1 history will ever randomly leak to new users... unless both users explicitly opted in to do so.
+  created: 2015-09-25 19:01:27.0
+  id: '12171'
+  issue: '11809'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-25 19:01:27.0
+- author: markjh
+  body: |-
+    {quote}
+    Require that all users in a room have agreed to share history for a given (optionally open-ended) timeframe in order to share the history over that timeframe with new participants. Unless everyone explicitly opts in for said timeframe, that history is withheld from new users.
+    {quote}
+
+    This has a certain similarity with what I was planning for sharing history with E2E ratchets. A client wanting to read history would have to ask the authors of the history to give them the public keys needed to authenticate the history. (They'd be able to decode the history by getting the keys of other people but until they received the keys directly they'd have no way to knowing if the history was forged)
+  created: 2015-09-25 19:29:18.0
+  id: '12172'
+  issue: '11809'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-09-25 19:29:18.0
+- author: matthew
+  body: |-
+    I think the same UI/UX could be shared by both in general: if a user opts in to sharing their history with new users, then it's very unlikely they wouldn't also want to prove that they actually said it. The semantics don't match precisely, though, as E2E key sharing happens separately for every new user - but in this proposal once everyone agrees to share history it occurs automatically for all new users. So in practice I suspect clients would want to autosubmit E2E keys if the user had agreed to share their history with new users.
+
+    Powerusers can run custom clients which handle key submission seperately from history visibility, but this is unusual unless you have a use case where you really need deniability.
+  created: 2015-09-25 23:07:08.0
+  id: '12173'
+  issue: '11809'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-25 23:07:08.0
+- author: erikj
+  body: |-
+    From an implementation perspective:
+
+    How do we know if a user/server can see a given event in the room?
+
+    * Can permissions get changed or revoked? Do we make sure that the state events involved _always_ grant more permission rather than less? Otherwise the server would need to start searching around for any state events that may grant permissions, rather than just looking at current state.
+
+    * How do we do "ranges" in a DAG? This is quite complicated, as the linearisation of the DAG to a client stream may not be nicely reversible. It's a problem that we saw when implementing receipts, and was glossed over since it's not the absolute end of the world that a message is mistakenly marked as read or unread in the really quite rare case the heuristic doesn't match correctly.
+
+    * How do we determine if an event is actually in one of the ranges? It sounds like a graph reachability problem. It's _probably_ doable relatively (ish) efficiently. Maybe. For given definitions of efficiently in terms of time/cpu/storage.
+  created: 2015-09-29 16:16:53.0
+  id: '12189'
+  issue: '11809'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-09-29 16:16:53.0
+- author: matthew
+  body: |-
+    "Can permissions get changed or revoked?"
+    I was assuming that each user has one state event that gets to define their preferences on history visibility.  I guess this could be one or more timeframes if you wanted to be comprehensive.  Overwriting the state event lets you change and revoke previous permissions.  Surely 'searching around for state events that may grant permissions' isn't too onerous - you only care about the current state of the room, which then determines at any given point how much history is visible.
+
+    "How do we do 'ranges' in a DAG?"
+    I guess the problem here is that if the DAG bifurcates, our range may apply to one side of the fork but not the other.  I'd have thought hide-by-default semantics would be good enough in the face of these kind of edge cases.  So if I say opt in for sharing history between events A and C, but a HS hasn't seen C yet, it should just ignore the range and keep things hidden.
+
+    "How do we determine if an event is in a range"?
+    I'd have assumed naively that whenever a server sees an ACL state event, it'd go and colour in the graph, tagging which events have been made visible for which users in the room.  We could perhaps optimise this by giving IDs to unforked chains of events, rather than tracking them event by event?
+
+    This feels very much like something we want to consider for dendron's DAG modelling, especially as for Vector "share history by default with a warning" semantics are probably fine.
+
+    I'd still be interested in a guess at how much work it'd be tho :)
+  created: 2015-09-29 20:30:13.0
+  id: '12195'
+  issue: '11809'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-29 20:30:13.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/533'
+  created: 2016-10-28 16:27:33.0
+  id: '13341'
+  issue: '11809'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:33.0

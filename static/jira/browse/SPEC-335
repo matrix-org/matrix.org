@@ -1,0 +1,28 @@
+---
+summary: How do we remove malicious remote aliases from being advertised in m.room.aliases for a room?
+---
+created: 2016-01-21 11:12:23.0
+creator: neb
+description: Submitted by @irc_Arathorn:openmarket.com
+id: '12335'
+key: SPEC-335
+number: '335'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:13.0
+votes: '0'
+watches: '2'
+workflowId: '12440'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/625'
+  created: 2016-10-28 16:28:13.0
+  id: '13433'
+  issue: '12335'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:13.0

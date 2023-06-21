@@ -1,0 +1,39 @@
+---
+summary: Telegram bot/bridge
+---
+created: 2016-08-08 11:26:24.0
+creator: leonerd
+description: |-
+  If we wanted to consider some sort of Matrix-Telegram bridge, this API might be useful and interesting:
+
+  https://core.telegram.org/bots
+id: '12784'
+key: BOTS-208
+number: '208'
+priority: '4'
+project: '10101'
+reporter: leonerd
+status: '1'
+type: '2'
+updated: 2016-10-05 15:18:16.0
+votes: '2'
+watches: '3'
+workflowId: '12884'
+---
+actions:
+- author: dahu
+  body: Maybe the full client API is more suited for a bridge https://core.telegram.org
+  created: 2016-10-05 12:12:26.0
+  id: '13155'
+  issue: '12784'
+  type: comment
+  updateauthor: dahu
+  updated: 2016-10-05 12:12:26.0
+- author: aaronraimist
+  body: 'Work has been started on a Telegram bridge at this GitHub repository: https://github.com/SijmenSchoon/telematrix'
+  created: 2016-10-05 15:18:16.0
+  id: '13156'
+  issue: '12784'
+  type: comment
+  updateauthor: aaronraimist
+  updated: 2016-10-05 15:18:16.0

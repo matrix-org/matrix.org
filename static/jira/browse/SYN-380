@@ -1,0 +1,57 @@
+---
+summary: User registration UnboundLocalError
+---
+assignee: erikj
+created: 2015-05-14 16:36:48.0
+creator: thijs
+description: |-
+  I just created a new virtualenv and installed synapse from source. After that I created a config and wanted to register a new user, eg.
+  {code}
+  register_new_matrix_user -c homeserver.yaml https://localhost:8448
+  {code}
+  but this resulted in the following traceback:
+  {code:python}
+  2015-05-14 17:27:56,826 - synapse.http.server - 86 - INFO - POST-0- Received request: POST /_matrix/client/v2_alpha/register
+  2015-05-14 17:27:56,828 - synapse.http.server - 111 - ERROR - POST-0- Failed handle request synapse.http.server._async_render on <synapse.rest.client.v2_alpha.ClientV2AlphaRestResource object at 0x42c3250>: <Request at 0x42cb488 method=POST uri=/_matrix/client/v2_alpha/register clientproto=HTTP/1.1>
+  Traceback (most recent call last):
+    File "/home/foo/.virtualenvs/bar/src/synapse/synapse/http/server.py", line 88, in wrapped_request_handler
+      yield request_handler(self, request)
+    File "/home/foo/.virtualenvs/bar/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/foo/.virtualenvs/bar/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "/home/foo/.virtualenvs/bar/src/synapse/synapse/http/server.py", line 223, in _async_render
+      callback_return = yield callback(request, *args)
+    File "/home/foo/.virtualenvs/bar/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "/home/foo/.virtualenvs/bar/src/synapse/synapse/rest/client/v2_alpha/register.py", line 111, in on_POST
+      if 'password' not in params:
+  UnboundLocalError: local variable 'params' referenced before assignment
+  {code}
+id: '11532'
+key: SYN-380
+number: '380'
+priority: '2'
+project: '10000'
+reporter: thijs
+resolution: '1'
+resolutiondate: 2015-05-22 12:00:56.0
+status: '5'
+type: '1'
+updated: 2015-05-22 12:00:56.0
+votes: '0'
+watches: '2'
+workflowId: '11633'
+---
+actions:
+- author: erikj
+  body: |-
+    Fixed in commit: 254aa3c986256de0c71d36078682c7904e27145b
+
+    This is scheduled to be included in v0.9.1
+  created: 2015-05-22 12:00:56.0
+  id: '11788'
+  issue: '11532'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-22 12:00:56.0

@@ -1,0 +1,23 @@
+---
+summary: Show error when using HTTP home server url from HTTPS
+---
+created: 2015-02-15 23:48:05.0
+creator: erikj
+description: |-
+  Currently, if a user sets the home server url on the login form to be HTTP when the webclient is loaded over HTTPS, chrome will silently fail to login.
+
+  This particularly affects users with lastpass, which also stores the home server url. (We don't necessarily want to discourage lastpass from storing the url, since that is the correct behaviour)
+id: '11057'
+key: SYWEB-280
+number: '280'
+priority: '3'
+project: '10004'
+reporter: erikj
+status: '10100'
+type: '1'
+updated: 2015-02-15 23:48:05.0
+votes: '0'
+watches: '1'
+workflowId: '11157'
+---
+actions: null

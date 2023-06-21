@@ -1,0 +1,65 @@
+---
+summary: Application Specific User Settings
+---
+created: 2016-10-14 01:11:19.0
+creator: pik
+description: |-
+  Suppose ApplicationFoo using Matrix as a backend wants to enable a user to persist their ApplicationFoo specific settings. The rather simple solution to this is to have an invite-only channel which is private to the user, to which the user than writes their ApplicationFoo settings. 
+  e.g. `<UserId>:<ApplicationFoo>:Settings`
+
+  Unfortunately there isn't an obvious way to reserve such a namespace (and creating reserved name-spaces might posit a whole set of problems).  
+
+  A simple addition to the Specification/Synapse to address this would be to allow a UserProfile to also have a Key-Value store (say a rather small one 64kb per user). The User could than write, 
+
+  PUT /profile/<userId>/ 
+  { ApplicationFooSettingsRoomName: <RegisteredPrivateRoomId>}
+
+  When logging into ApplicationFoo the user would similarly allow `ApplicationFooSettingsRoomName` to be retrieved and the messages in that room parsed to build up their settings state. Note the profile would only need to store the name of the room, not the entire set of custom application specific settings (which should keep it small / quick retrieve).
+id: '12860'
+key: SPEC-464
+number: '464'
+priority: '3'
+project: '10001'
+reporter: pik
+resolution: '10100'
+resolutiondate: 2016-10-17 09:47:00.0
+status: '5'
+type: '4'
+updated: 2016-10-18 10:35:56.0
+votes: '0'
+watches: '2'
+workflowId: '12960'
+---
+actions:
+- author: richvdh
+  body: This is what the [Client Config|http://matrix.org/docs/spec/client_server/r0.2.0.html#client-config] module is for. Does that not fit the bill?
+  created: 2016-10-14 09:23:47.0
+  id: '13185'
+  issue: '12860'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-14 09:23:47.0
+- author: richvdh
+  body: Let us know if you need more info.
+  created: 2016-10-17 09:47:00.0
+  id: '13188'
+  issue: '12860'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-17 09:47:00.0
+- author: pik
+  body: Yes, account_data should fill the need - but I am using tags for key-value storage at the moment as unlike tags I couldn't seem to find a GET method for account_data, is it always included on sync? Do the sdk's just need to be updated?
+  created: 2016-10-17 23:33:53.0
+  id: '13190'
+  issue: '12860'
+  type: comment
+  updateauthor: pik
+  updated: 2016-10-17 23:34:07.0
+- author: richvdh
+  body: Yes, {{account_data}} is returned by {{/sync}} - either when it is called without a {{since}} parameter, or when there is a change to the data. The advantage of doing that rather than using a GET method is that you will be notified immediately if there is a change on another instance of the application.
+  created: 2016-10-18 10:35:56.0
+  id: '13191'
+  issue: '12860'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-18 10:35:56.0

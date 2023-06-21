@@ -1,0 +1,30 @@
+---
+summary: implement the back button on the 'how it works' anim
+---
+created: 2015-10-26 23:05:12.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12044'
+key: ORG-29
+number: '29'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:01:12.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:01:12.0
+votes: '0'
+watches: '2'
+workflowId: '12147'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix.org/issues/16
+  created: 2017-03-21 11:01:12.0
+  id: '14015'
+  issue: '12044'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:01:12.0

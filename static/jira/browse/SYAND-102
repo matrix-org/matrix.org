@@ -1,0 +1,35 @@
+---
+summary: Accepted room invites not properly resolved
+---
+created: 2015-07-17 16:11:11.0
+creator: skaverat
+description: |-
+  Accepting an invite from the webclient, and (freshly) opening the android client afterwards, displays the room state still as "invited"
+
+  Joining the room by clicking results in a second "X joined the room" event
+id: '11761'
+key: SYAND-102
+number: '102'
+priority: '3'
+project: '10201'
+reporter: skaverat
+resolution: '1'
+resolutiondate: 2015-09-04 16:42:12.0
+status: '5'
+type: '1'
+updated: 2015-09-04 16:42:12.0
+votes: '0'
+watches: '2'
+workflowId: '11862'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    The issue was triggered when the push notifications was disabled on this room.
+    The catchup method did not properly manage the joining event.
+  created: 2015-09-02 15:42:46.0
+  id: '12084'
+  issue: '11761'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-02 15:42:46.0

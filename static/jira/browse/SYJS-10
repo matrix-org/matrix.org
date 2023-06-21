@@ -1,0 +1,48 @@
+---
+summary: Reduce dep tree
+---
+created: 2015-06-19 17:13:08.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  This problem seems to almost entirely be down to 'request' which is pulling in things like har-validator
+id: '11674'
+key: SYJS-10
+number: '10'
+priority: '3'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-10-24 11:15:57.0
+status: '5'
+type: '1'
+updated: 2016-10-24 11:15:57.0
+votes: '0'
+watches: '3'
+workflowId: '11775'
+---
+actions:
+- author: kegan
+  body: Short of using a different request library, there isn't much we can do about this.
+  created: 2015-11-03 10:26:07.0
+  id: '12299'
+  issue: '11674'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 10:26:07.0
+- author: matthew
+  body: This is a major problem for running on constrained devices like Tessels.  I'd rather we didn't resolve valid bugs as won't-fix, especially when there's a solution ('using a different request library').  Will bump down the priority instead.
+  created: 2015-11-03 11:02:11.0
+  id: '12313'
+  issue: '11674'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-03 11:08:26.0
+- author: kegan
+  body: https://github.com/matrix-org/matrix-js-sdk/issues/244
+  created: 2016-10-24 11:15:57.0
+  id: '13201'
+  issue: '11674'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-10-24 11:15:57.0

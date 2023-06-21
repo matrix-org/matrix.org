@@ -1,0 +1,22 @@
+---
+summary: Switching between landscape and portrait should keep the state
+---
+created: 2015-06-11 16:49:42.0
+creator: oddvar
+description: ''
+id: '11638'
+key: SYAND-84
+number: '84'
+priority: '3'
+project: '10201'
+reporter: oddvar
+resolution: '1'
+resolutiondate: 2015-06-12 12:30:37.0
+status: '5'
+type: '2'
+updated: 2015-06-12 12:30:37.0
+votes: '0'
+watches: '1'
+workflowId: '11739'
+---
+actions: null

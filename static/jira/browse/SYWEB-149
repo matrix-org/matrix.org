@@ -1,0 +1,28 @@
+---
+summary: User's Matrix address in top bar pulsates in Safari when hovering over the sender to show timestamps
+---
+created: 2014-11-11 18:10:49.0
+creator: dbkr
+description: ''
+id: '10643'
+key: SYWEB-149
+number: '149'
+priority: '3'
+project: '10004'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2014-11-26 17:20:52.0
+votes: '0'
+watches: '2'
+workflowId: '10743'
+---
+actions:
+- author: kegan
+  body: This is a Safari only bug. When the timestamps fade in, the user's @user:domain on the top bar changes from bold/normal then reverts back after the animation.
+  created: 2014-11-26 17:20:52.0
+  id: '10864'
+  issue: '10643'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-26 17:20:52.0

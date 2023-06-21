@@ -1,0 +1,87 @@
+---
+summary: Federated channel loses information, takes a long time to sync
+---
+created: 2015-02-28 16:41:43.0
+creator: ytjohn
+description: |-
+  I have Synapse/0.7.1-r2 installed from pip/github. 
+  I am running nginx on a public server in front of it:
+   - https://matrix.ytnoc.net:443/ -> proxied to http 8009
+   - https://matrix.ytnoc.net:8448/ -> proxied to https 8448
+  I have copied my key and crt in use on the nginx server down to my homeserver install and restarted (had to do this before federation worked).
+
+  I can initiate 1:1 chats or join rooms on matrix.org from matrix.ytnoc.net. If I join an active room like #matrix-dev:matrix.org, it takes well over a minute to synchronize. I only had one instance where I saw all the user avatars and the channel name show up.  The rest of the time, the channel name on the left is replace my my local id (@kb3dfz:matrix.ytnoc.net).  See screenshot.
+
+  #test:matrix.org seems to be working just fine with federation.
+
+  I have attached homeserver.log
+id: '11150'
+key: SYN-293
+number: '293'
+priority: '3'
+project: '10000'
+reporter: ytjohn
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:27:46.0
+votes: '0'
+watches: '3'
+workflowId: '11250'
+---
+actions:
+- author: ytjohn
+  body: |-
+    Once I open an incognito browser (for different cache) I did get more, mainly avatars and images. The channel ID showed up, not the alias. 
+
+    So I feel there's still some disconnect, but not a big one.
+  created: 2015-02-28 16:57:51.0
+  id: '11325'
+  issue: '11150'
+  type: comment
+  updateauthor: ytjohn
+  updated: 2015-02-28 16:57:51.0
+- author: ytjohn
+  body: 'After 24 hours, the channel alias still hasn''t shown up, just the ID (as seen in the screenshot). I can click on the cog and see the alias. I just submitting it as is, changing it to be an alias on my server, and listing both: `["#matrix-dev:matrix.org", "#matrix-dev:matrix.ytnoc.net"]`. In all cases, it reverts back to the list propogated from matrix.org.'
+  created: 2015-03-01 20:13:59.0
+  id: '11326'
+  issue: '11150'
+  type: comment
+  updateauthor: ytjohn
+  updated: 2015-03-01 20:13:59.0
+- author: ytjohn
+  body: Can a project admin edit the description? I think some of my initial issues (no avatars) were browser cache related, and the key issue remaining is that the channel alias won't show up.
+  created: 2015-03-02 13:38:53.0
+  id: '11329'
+  issue: '11150'
+  type: comment
+  updateauthor: ytjohn
+  updated: 2015-03-02 13:38:53.0
+- author: erikj
+  body: Did you have multiple clients open? Were the ones that did not get the complete state the ones that you didn't use to join the room?
+  created: 2015-03-02 13:46:07.0
+  id: '11330'
+  issue: '11150'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-03-02 13:46:07.0
+- author: ytjohn
+  body: |-
+    I initially had one client open. It did not get the room member's list/complete state (first screenshot). It showed the room as my username.  Later, upon opening an incognito client, I got the member list, and it showed the room id and member list. Refreshing my main client got the room id and member list to show. m.room.alias can be viewed by clicking on the gear, but does not appear on the left channel list.
+
+    This finicky behavior seems to be based on room size.
+    Joining #test:matrix.org worked just fine.
+    Joining #matrix:matrix.org (today) shows me usernames on the left side (screenshot "usernames only"). Hitting the gear, no m.room.alias appears. I see the same in chrome, chrome incognito, firefox.
+  created: 2015-03-02 14:08:47.0
+  id: '11331'
+  issue: '11150'
+  type: comment
+  updateauthor: ytjohn
+  updated: 2015-03-02 14:08:47.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1211'
+  created: 2016-11-07 18:27:46.0
+  id: '13609'
+  issue: '11150'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:46.0

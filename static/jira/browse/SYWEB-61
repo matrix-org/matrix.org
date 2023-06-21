@@ -1,0 +1,20 @@
+---
+summary: Remote video view scales horizontally but not veritically to short browser windows
+---
+created: 2014-09-19 18:27:59.0
+creator: dbkr
+description: ''
+id: '10346'
+key: SYWEB-61
+number: '61'
+priority: '3'
+project: '10004'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2014-09-23 01:21:51.0
+votes: '0'
+watches: '1'
+workflowId: '10449'
+---
+actions: null

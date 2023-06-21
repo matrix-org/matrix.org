@@ -1,0 +1,423 @@
+---
+summary: It takes ages to read/write from sockets when busy.
+---
+created: 2015-05-27 11:18:13.0
+creator: erikj
+description: ''
+id: '11563'
+key: SYN-394
+number: '394'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2016-01-06 10:40:51.0
+status: '5'
+type: '1'
+updated: 2016-01-06 10:40:51.0
+votes: '0'
+watches: '1'
+workflowId: '11664'
+---
+actions:
+- author: erikj
+  body: |-
+    Data for particular sending of message.
+
+    Tcpdump on the same box as synapse:
+
+    {noformat}
+    No.     Time            Source                src port Destination           dest port Protocol Length Info
+       1059 10:53:46.412383 83.166.68.175         46319    83.166.68.176         8080      TCP      74     46319 > http-alt [SYN] Seq=0 Win=14600 Len=0 MSS=1460 SACK_PERM=1 TSval=2149439273 TSecr=0 WS=128
+       1060 10:53:46.412413 83.166.68.176         8080     83.166.68.175         46319     TCP      74     http-alt > 46319 [SYN, ACK] Seq=0 Ack=1 Win=14480 Len=0 MSS=1460 SACK_PERM=1 TSval=1182933671 TSecr=2149439273 WS=128
+       1061 10:53:46.412851 83.166.68.175         46319    83.166.68.176         8080      TCP      66     46319 > http-alt [ACK] Seq=1 Ack=1 Win=14720 Len=0 TSval=2149439274 TSecr=1182933671
+       1062 10:53:46.412984 83.166.68.175         46319    83.166.68.176         8080      HTTP     975    PUT /_matrix/client/api/v1/rooms/!vfFxDRtZSSdspfTSEr:matrix.org/send/m.room.message/m1432720426380?access_token=<redacted> HTTP/1.1  (application/json)
+       1063 10:53:46.413041 83.166.68.176         8080     83.166.68.175         46319     TCP      66     http-alt > 46319 [ACK] Seq=1 Ack=910 Win=16384 Len=0 TSval=1182933671 TSecr=2149439274
+       1508 10:53:47.752006 83.166.68.176         8080     83.166.68.175         46319     HTTP     510    HTTP/1.1 200 OK  (application/json)
+       1509 10:53:47.752473 83.166.68.175         46319    83.166.68.176         8080      TCP      66     46319 > http-alt [ACK] Seq=910 Ack=445 Win=15744 Len=0 TSval=2149439608 TSecr=1182934006
+       1511 10:53:47.752789 83.166.68.175         46319    83.166.68.176         8080      TCP      66     46319 > http-alt [FIN, ACK] Seq=910 Ack=445 Win=15744 Len=0 TSval=2149439609 TSecr=1182934006
+       1569 10:53:47.789830 83.166.68.176         8080     83.166.68.175         46319     TCP      66     http-alt > 46319 [ACK] Seq=445 Ack=911 Win=16384 Len=0 TSval=1182934016 TSecr=2149439609
+       1679 10:53:48.444867 83.166.68.176         8080     83.166.68.175         46319     TCP      66     http-alt > 46319 [FIN, ACK] Seq=445 Ack=911 Win=16384 Len=0 TSval=1182934179 TSecr=2149439609
+       1680 10:53:48.445301 83.166.68.175         46319    83.166.68.176         8080      TCP      66     46319 > http-alt [ACK] Seq=911 Ack=446 Win=15744 Len=0 TSval=2149439782 TSecr=1182934179
+    {noformat}
+
+    Relevant syscalls:
+
+    {noformat}
+    10:53:45.841159 epoll_wait(9, {{EPOLLIN, {u32=10, u64=10}}}, 51, 708) = 1 <0.000021> <-- previous epoll_wait.
+    ...
+    10:53:46.687784 epoll_wait(9, {{EPOLLIN, {u32=10, u64=10}}, {EPOLLOUT, {u32=52, u64=52}}, {EPOLLOUT, {u32=62, u64=62}}, {EPOLLOUT, {u32=41, u64=41}}, {EPOLLOUT, {u32=63, u64=63}}, {EPOLLOUT, {u32=49, u64=49}}, {E
+    POLLOUT, {u32=87, u64=87}}, {EPOLLOUT, {u32=64, u64=64}}, {EPOLLOUT, {u32=53, u64=53}}, {EPOLLOUT, {u32=44, u64=44}}, {EPOLLOUT, {u32=69, u64=69}}, {EPOLLOUT, {u32=37, u64=37}}, {EPOLLOUT, {u32=50, u64=50}}, {EPO
+    LLOUT, {u32=83, u64=83}}, {EPOLLOUT, {u32=38, u64=38}}, {EPOLLOUT, {u32=65, u64=65}}, {EPOLLOUT, {u32=46, u64=46}}, {EPOLLOUT, {u32=84, u64=84}}, {EPOLLOUT, {u32=78, u64=78}}, {EPOLLIN, {u32=7, u64=7}}, {EPOLLOUT
+    , {u32=47, u64=47}}, {EPOLLOUT, {u32=86, u64=86}}, {EPOLLOUT, {u32=45, u64=45}}, {EPOLLOUT, {u32=54, u64=54}}, {EPOLLOUT, {u32=31, u64=31}}, {EPOLLOUT, {u32=42, u64=42}}, {EPOLLOUT, {u32=61, u64=61}}, {EPOLLOUT, 
+    {u32=67, u64=67}}, {EPOLLOUT, {u32=70, u64=70}}, {EPOLLOUT, {u32=77, u64=77}}, {EPOLLOUT, {u32=40, u64=40}}, {EPOLLOUT, {u32=56, u64=56}}, {EPOLLOUT, {u32=66, u64=66}}, {EPOLLOUT, {u32=68, u64=68}}, {EPOLLOUT, {u
+    32=43, u64=43}}}, 51, 0) = 35 <0.000066>
+    10:53:46.698085 accept(7, {sa_family=AF_INET, sin_port=htons(46319), sin_addr=inet_addr("83.166.68.175")}, [16]) = 71 <0.000027>
+    10:53:46.698237 fcntl(71, F_GETFD)      = 0 <0.000016>
+    10:53:46.698394 fcntl(71, F_SETFD, FD_CLOEXEC) = 0 <0.000034>
+    10:53:46.698560 fcntl(71, F_GETFL)      = 0x2 (flags O_RDWR) <0.000016>
+    10:53:46.698638 fcntl(71, F_SETFL, O_RDWR|O_NONBLOCK) = 0 <0.000016>
+    10:53:46.698792 epoll_ctl(9, EPOLL_CTL_ADD, 71, {EPOLLIN, {u32=71, u64=71}}) = 0 <0.000024>
+    10:53:46.921624 epoll_wait(9, {{EPOLLIN, {u32=10, u64=10}}, {EPOLLIN, {u32=52, u64=52}}, {EPOLLIN, {u32=62, u64=62}}, {EPOLLIN, {u32=41, u64=41}}, {EPOLLIN, {u32=63, u64=63}}, {EPOLLIN, {u32=49, u64=49}}, {EPOLLIN, {u32=87, u64=87}}, {EPOLLIN, {u32=64, u64=64}}, {EPOLLIN, {u32=53, u64=53}}, {EPOLLIN, {u32=44, u64=44}}, {EPOLLIN, {u32=69, u64=69}}, {EPOLLIN, {u32=37, u64=37}}, {EPOLLIN, {u32=50, u64=50}}, {EPOLLIN, {u32=83, u64=83}}, {EPOLLIN, {u32=38, u64=38}}, {EPOLLIN, {u32=65, u64=65}}, {EPOLLIN, {u32=46, u64=46}}, {EPOLLIN, {u32=84, u64=84}}, {EPOLLIN, {u32=78, u64=78}}, {EPOLLIN, {u32=7, u64=7}}, {EPOLLIN, {u32=47, u64=47}}, {EPOLLIN, {u32=86, u64=86}}, {EPOLLIN, {u32=45, u64=45}}, {EPOLLIN, {u32=54, u64=54}}, {EPOLLIN, {u32=31, u64=31}}, {EPOLLIN, {u32=42, u64=42}}, {EPOLLIN, {u32=61, u64=61}}, {EPOLLIN, {u32=67, u64=67}}, {EPOLLIN, {u32=70, u64=70}}, {EPOLLIN, {u32=77, u64=77}}, {EPOLLIN, {u32=40, u64=40}}, {EPOLLIN, {u32=56, u64=56}}, {EPOLLIN, {u32=66, u64=66}}, {EPOLLIN, {u32=68, u64=68}}, {EPOLLIN, {u32=43, u64=43}}, {EPOLLIN, {u32=60, u64=60}}, {EPOLLIN, {u32=71, u64=71}}, {EPOLLIN, {u32=72, u64=72}}, {EPOLLIN, {u32=73, u64=73}}, {EPOLLIN, {u32=74, u64=74}}, {EPOLLIN, {u32=75, u64=75}}, {EPOLLIN, {u32=76, u64=76}}, {EPOLLIN, {u32=79, u64=79}}, {EPOLLIN, {u32=80, u64=80}}, {EPOLLIN, {u32=82, u64=82}}, {EPOLLIN, {u32=81, u64=81}}, {EPOLLIN, {u32=85, u64=85}}, {EPOLLIN, {u32=88, u64=88}}, {EPOLLIN, {u32=89, u64=89}}, {EPOLLIN, {u32=90, u64=90}}, {EPOLLIN, {u32=91, u64=91}}, {EPOLLIN, {u32=92, u64=92}}, {EPOLLIN, {u32=93, u64=93}}, {EPOLLIN, {u32=94, u64=94}}, {EPOLLIN, {u32=95, u64=95}}, {EPOLLIN, {u32=96, u64=96}}, {EPOLLIN, {u32=98, u64=98}}, {EPOLLIN, {u32=99, u64=99}}, {EPOLLIN, {u32=100, u64=100}}, {EPOLLIN, {u32=101, u64=101}}, {EPOLLIN, {u32=102, u64=102}}, {EPOLLIN, {u32=103, u64=103}}, {EPOLLOUT, {u32=59, u64=59}}}, 79, 125) = 63 <0.000050>
+    10:53:46.949871 recvfrom(71, "PUT /_matrix/client/api/v1/rooms"..., 65536, 0, NULL, NULL) = 909 <0.000016>
+    10:53:46.951238 getsockname(71, {sa_family=AF_INET, sin_port=htons(8080), sin_addr=inet_addr("83.166.68.176")}, [16]) = 0 <0.000010>
+    10:53:47.280610 epoll_ctl(9, EPOLL_CTL_MOD, 71, {EPOLLIN|EPOLLOUT, {u32=71, u64=71}}) = 0 <0.000024>
+    10:53:47.403705 epoll_wait(9, {{EPOLLIN, {u32=59, u64=59}}, {EPOLLIN, {u32=74, u64=74}}, {EPOLLIN, {u32=75, u64=75}}, {EPOLLIN, {u32=76, u64=76}}, {EPOLLIN, {u32=86, u64=86}}, {EPOLLIN, {u32=7, u64=7}}, {EPOLLIN, {u32=40, u64=40}}, {EPOLLIN, {u32=47, u64=47}}, {EPOLLIN, {u32=63, u64=63}}, {EPOLLIN, {u32=64, u64=64}}, {EPOLLIN, {u32=46, u64=46}}, {EPOLLIN, {u32=44, u64=44}}, {EPOLLIN, {u32=67, u64=67}}, {EPOLLIN, {u32=68, u64=68}}, {EPOLLOUT, {u32=45, u64=45}}, {EPOLLOUT, {u32=62, u64=62}}, {EPOLLOUT, {u32=50, u64=50}}, {EPOLLOUT, {u32=42, u64=42}}, {EPOLLOUT, {u32=52, u64=52}}, {EPOLLIN, {u32=10, u64=10}}, {EPOLLOUT, {u32=69, u64=69}}, {EPOLLIN, {u32=35, u64=35}}, {EPOLLIN, {u32=37, u64=37}}, {EPOLLIN, {u32=60, u64=60}}, {EPOLLIN, {u32=72, u64=72}}, {EPOLLIN, {u32=88, u64=88}}, {EPOLLIN, {u32=89, u64=89}}, {EPOLLOUT, {u32=70, u64=70}}, {EPOLLOUT, {u32=49, u64=49}}, {EPOLLOUT, {u32=31, u64=31}}, {EPOLLOUT, {u32=66, u64=66}}, {EPOLLOUT, {u32=53, u64=53}}, {EPOLLOUT, {u32=54, u64=54}}, {EPOLLOUT, {u32=65, u64=65}}, {EPOLLOUT, {u32=43, u64=43}}, {EPOLLOUT, {u32=56, u64=56}}, {EPOLLOUT, {u32=61, u64=61}}, {EPOLLIN, {u32=8, u64=8}}, {EPOLLOUT, {u32=71, u64=71}}, {EPOLLOUT, {u32=87, u64=87}}, {EPOLLOUT, {u32=82, u64=82}}, {EPOLLOUT, {u32=77, u64=77}}, {EPOLLOUT, {u32=38, u64=38}}, {EPOLLOUT, {u32=79, u64=79}}, {EPOLLOUT, {u32=85, u64=85}}, {EPOLLOUT, {u32=84, u64=84}}, {EPOLLOUT, {u32=41, u64=41}}, {EPOLLOUT, {u32=83, u64=83}}, {EPOLLOUT, {u32=78, u64=78}}, {EPOLLOUT, {u32=81, u64=81}}, {EPOLLOUT, {u32=73, u64=73}}, {EPOLLOUT, {u32=80, u64=80}}}, 66, 152) = 52 <0.000043>
+    10:53:47.751920 sendto(71, "HTTP/1.1 200 OK\r\nTransfer-Encodi"..., 444, 0, NULL, 0) = 444 <0.000098>
+    10:53:47.752241 epoll_ctl(9, EPOLL_CTL_MOD, 71, {EPOLLIN, {u32=71, u64=71}}) = 0 <0.000028>
+    10:53:47.846007 epoll_wait(9, {{EPOLLOUT, {u32=59, u64=59}}, {EPOLLIN, {u32=7, u64=7}}, {EPOLLOUT, {u32=40, u64=40}}, {EPOLLOUT, {u32=47, u64=47}}, {EPOLLOUT, {u32=63, u64=63}}, {EPOLLOUT, {u32=64, u64=64}}, {EPOLLOUT, {u32=46, u64=46}}, {EPOLLOUT, {u32=44, u64=44}}, {EPOLLOUT, {u32=67, u64=67}}, {EPOLLOUT, {u32=68, u64=68}}, {EPOLLIN, {u32=45, u64=45}}, {EPOLLIN, {u32=62, u64=62}}, {EPOLLIN, {u32=50, u64=50}}, {EPOLLIN, {u32=52, u64=52}}, {EPOLLIN, {u32=10, u64=10}}, {EPOLLIN, {u32=69, u64=69}}, {EPOLLOUT, {u32=35, u64=35}}, {EPOLLOUT, {u32=37, u64=37}}, {EPOLLOUT, {u32=60, u64=60}}, {EPOLLOUT, {u32=72, u64=72}}, {EPOLLOUT, {u32=88, u64=88}}, {EPOLLOUT, {u32=89, u64=89}}, {EPOLLIN, {u32=70, u64=70}}, {EPOLLIN, {u32=49, u64=49}}, {EPOLLIN, {u32=31, u64=31}}, {EPOLLIN, {u32=66, u64=66}}, {EPOLLIN, {u32=53, u64=53}}, {EPOLLIN, {u32=54, u64=54}}, {EPOLLIN, {u32=43, u64=43}}, {EPOLLIN, {u32=71, u64=71}}, {EPOLLIN, {u32=87, u64=87}}, {EPOLLIN, {u32=82, u64=82}}, {EPOLLIN, {u32=77, u64=77}}, {EPOLLIN, {u32=38, u64=38}}, {EPOLLIN, {u32=79, u64=79}}, {EPOLLIN, {u32=85, u64=85}}, {EPOLLIN, {u32=84, u64=84}}, {EPOLLIN, {u32=41, u64=41}}, {EPOLLIN, {u32=83, u64=83}}, {EPOLLIN, {u32=78, u64=78}}, {EPOLLIN, {u32=81, u64=81}}, {EPOLLIN, {u32=73, u64=73}}, {EPOLLIN, {u32=80, u64=80}}, {EPOLLIN, {u32=74, u64=74}}, {EPOLLIN, {u32=75, u64=75}}, {EPOLLIN, {u32=76, u64=76}}, {EPOLLIN, {u32=86, u64=86}}, {EPOLLOUT, {u32=42, u64=42}}, {EPOLLOUT, {u32=65, u64=65}}, {EPOLLOUT, {u32=61, u64=61}}, {EPOLLIN, {u32=90, u64=90}}}, 65, 74) = 51 <0.000066>
+    10:53:48.444489 recvfrom(71, "", 65536, 0, NULL, NULL) = 0 <0.000013>
+    10:53:48.444575 epoll_ctl(9, EPOLL_CTL_DEL, 71, {EPOLLRDNORM|EPOLLWRBAND|EPOLLHUP|0x27aa820, {u32=0, u64=20098424015683584}}) = 0 <0.000013>
+    10:53:48.444831 shutdown(71, 2 /* send and receive */) = 0 <0.000083>
+    10:53:48.444976 close(71)               = 0 <0.000021>
+    {noformat}
+  created: 2015-05-27 11:21:36.0
+  id: '11798'
+  issue: '11563'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-27 11:21:36.0
+- author: erikj
+  body: It's interesting to note that there was ~800ms between the two consecutive `epoll_wait` calls just before the `accept`. This suggests that the delay is because the process is busy, rather than delays in epoll notifying us.
+  created: 2015-05-27 11:23:49.0
+  id: '11799'
+  issue: '11563'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-27 11:23:49.0
+- author: erikj
+  body: |-
+    Running {{strace -tt -T -C -p <pid>}} while sending a few messages results in:
+
+    {noformat}
+    % time     seconds  usecs/call     calls    errors syscall
+    ------ ----------- ----------- --------- --------- ----------------
+     86.22    0.003611           1      4213       632 futex
+      5.11    0.000214           0       749           sendto
+      3.51    0.000147           0      2043       146 stat
+      2.01    0.000084           0      1775           write
+      1.10    0.000046           0     10846           gettimeofday
+      0.93    0.000039           0       666           close
+      0.41    0.000017           0       869        92 recvfrom
+      0.41    0.000017           0       208           getsockopt
+      0.31    0.000013           0       362           getsockname
+      0.00    0.000000           0       334           read
+      0.00    0.000000           0       742       540 open
+      0.00    0.000000           0        14           fstat
+      0.00    0.000000           0        12           mmap
+      0.00    0.000000           0        12           munmap
+      0.00    0.000000           0       294           socket
+      0.00    0.000000           0       208       104 connect
+      0.00    0.000000           0       229        54 accept
+      0.00    0.000000           0       285           recvmsg
+      0.00    0.000000           0       274           shutdown
+      0.00    0.000000           0       190         3 bind
+      0.00    0.000000           0      1704           fcntl
+      0.00    0.000000           0         4           getdents
+      0.00    0.000000           0         2           getrusage
+      0.00    0.000000           0      1338           time
+      0.00    0.000000           0       356           epoll_wait
+      0.00    0.000000           0      2523           epoll_ctl
+    ------ ----------- ----------- --------- --------- ----------------
+    100.00    0.004188                 30252      1571 total
+    {noformat}
+
+    So we seem to be spending a large portion of our time waiting on `futex`. 
+
+    Looking at which futexs we wait on produces:
+
+    {noformat}
+       3559 futex(0x3d7b3d0,
+        125 futex(0x7f73d1a01e40,
+        102 futex(0x2a1fec0,
+         19 futex(0x7f73c400ea60,
+          7 futex(0x8e2e6e0,
+          7 futex(0x7f73c6604ec0,
+          7 futex(0x64c3260,
+          7 futex(0x62d8060,
+          7 futex(0x56b84a0,
+          7 futex(0x3b27c60,
+          7 futex(0x24206c0,
+          6 futex(0xb62a610,
+          6 futex(0x7f73c4482e80,
+          6 futex(0x53ccea0,
+          5 futex(0xdeb9da0,
+          5 futex(0xdd34700,
+          5 futex(0xcd15fe0,
+          5 futex(0xad1caf0,
+          5 futex(0x7f73c505f930,
+          5 futex(0x7843040,
+          5 futex(0x5a6f4e0,
+          5 futex(0x513c920,
+          5 futex(0x5078520,
+          5 futex(0x483e8c0,
+          4 futex(0xdcdf3c0,
+          4 futex(0xbbe83d0,
+          4 futex(0x9d8cd30,
+          4 futex(0x7f73c7268700,
+          4 futex(0x7f73c65f9a00,
+          4 futex(0x7f73c4b903f0,
+          4 futex(0x7bade00,
+          4 futex(0x74c5ac0,
+          4 futex(0x6241ec0,
+          4 futex(0x502de90,
+          4 futex(0x4cd4780,
+          3 futex(0xd468ca0,
+          3 futex(0xbf5e570,
+          3 futex(0xaf009c0,
+          3 futex(0x9b84790,
+          3 futex(0x9a89070,
+          3 futex(0x9948420,
+          3 futex(0x92b5fd0,
+          3 futex(0x91b5a50,
+          3 futex(0x8c56830,
+          3 futex(0x89fcff0,
+          3 futex(0x7f73c6490b60,
+          3 futex(0x7f73c5cc1e40,
+          3 futex(0x7f73c46286e0,
+          3 futex(0x79d6860,
+          3 futex(0x78b2780,
+          3 futex(0x7330010,
+          3 futex(0x727c8f0,
+          3 futex(0x6add800,
+          3 futex(0x695fb20,
+          3 futex(0x676dd60,
+          3 futex(0x67169d0,
+          3 futex(0x505cae0,
+          3 futex(0x4c0ff00,
+          3 futex(0x4b74720,
+          3 futex(0x4b492c0,
+          3 futex(0x49c3250,
+          3 futex(0x257d860,
+          2 futex(0xdeebd30,
+          2 futex(0xded9900,
+          2 futex(0xd778590,
+          2 futex(0xd703710,
+          2 futex(0xd6a77c0,
+          2 futex(0xd61aee0,
+          2 futex(0xb9fee90,
+          2 futex(0xb7819a0,
+          2 futex(0xb6271f0,
+          2 futex(0x9c395e0,
+          2 futex(0x9436650,
+          2 futex(0x8fea780,
+          2 futex(0x8f3fbe0,
+          2 futex(0x8e36950,
+          2 futex(0x8ac0330,
+          2 futex(0x88d7d00,
+          2 futex(0x856e790,
+          2 futex(0x7f73c6ed3190,
+          2 futex(0x7f73c6483a00,
+          2 futex(0x7f73c60d2c50,
+          2 futex(0x7f73c5d41b50,
+          2 futex(0x7f73c5d1ab30,
+          2 futex(0x7f73c5c9aab0,
+          2 futex(0x7f73c4617340,
+          2 futex(0x7f73c46074d0,
+          2 futex(0x7f73c45fb540,
+          2 futex(0x7f73c4265ed0,
+          2 futex(0x7f73c4228850,
+          2 futex(0x7f73c4212390,
+          2 futex(0x75c4ed0,
+          2 futex(0x71c1950,
+          2 futex(0x6d46bf0,
+          2 futex(0x67efe50,
+          2 futex(0x67207e0,
+          2 futex(0x5f379b0,
+          2 futex(0x5a5a480,
+          2 futex(0x5a5a450,
+          2 futex(0x525e8b0,
+          2 futex(0x4c51400,
+          2 futex(0x49be2b0,
+          2 futex(0x47fec30,
+          2 futex(0x459e440,
+          2 futex(0x4420890,
+          1 futex(0xe53e3b0,
+          1 futex(0xd962370,
+          1 futex(0xcb607b0,
+          1 futex(0xcaee190,
+          1 futex(0xc650660,
+          1 futex(0xc01c160,
+          1 futex(0xbe42280,
+          1 futex(0xbcf9dc0,
+          1 futex(0xbae2dc0,
+          1 futex(0xb572aa0,
+          1 futex(0xb084380,
+          1 futex(0xabef500,
+          1 futex(0xa2b7360,
+          1 futex(0xa066500,
+          1 futex(0x9fb00c0,
+          1 futex(0x9fa4460,
+          1 futex(0x9f5d0e0,
+          1 futex(0x9f21770,
+          1 futex(0x9dba8b0,
+          1 futex(0x9a89ef0,
+          1 futex(0x910dfc0,
+          1 futex(0x90472f0,
+          1 futex(0x8d7a680,
+          1 futex(0x8d69eb0,
+          1 futex(0x89e3b40,
+          1 futex(0x88ef0b0,
+          1 futex(0x86616d0,
+          1 futex(0x84540a0,
+          1 futex(0x7f73c6c18fd0,
+          1 futex(0x7f73c6b65f00,
+          1 futex(0x7f73c6959270,
+          1 futex(0x7f73c68c7940,
+          1 futex(0x7f73c6604f00,
+          1 futex(0x7f73c61ddda0,
+          1 futex(0x7f73c5e6c340,
+          1 futex(0x7f73c5e4df00,
+          1 futex(0x7f73c5b9bad0,
+          1 futex(0x7f73c5987530,
+          1 futex(0x7f73c55de760,
+          1 futex(0x7f73c548a3e0,
+          1 futex(0x7f73c4ddd4a0,
+          1 futex(0x7f73c4d1ba70,
+          1 futex(0x7f73c47811b0,
+          1 futex(0x7f73c46f1960,
+          1 futex(0x7f73c4278010,
+          1 futex(0x7f73b1f83110,
+          1 futex(0x7bf5150,
+          1 futex(0x75d0900,
+          1 futex(0x73b9880,
+          1 futex(0x6cce2e0,
+          1 futex(0x6ca67f0,
+          1 futex(0x6af5850,
+          1 futex(0x69ab050,
+          1 futex(0x6956e80,
+          1 futex(0x690c1a0,
+          1 futex(0x6843d40,
+          1 futex(0x67169a0,
+          1 futex(0x62a3740,
+          1 futex(0x6246910,
+          1 futex(0x6226410,
+          1 futex(0x6118e30,
+          1 futex(0x5d7e430,
+          1 futex(0x5d1fba0,
+          1 futex(0x5c41910,
+          1 futex(0x5a625c0,
+          1 futex(0x550d520,
+          1 futex(0x548a9d0,
+          1 futex(0x53ee520,
+          1 futex(0x512f500,
+          1 futex(0x503c4b0,
+          1 futex(0x4ffdb90,
+          1 futex(0x4c805b0,
+          1 futex(0x4c44450,
+          1 futex(0x4c14500,
+          1 futex(0x4bac6b0,
+          1 futex(0x48c39a0,
+          1 futex(0x47cea20,
+          1 futex(0x4493690,
+          1 futex(0x39bba60,
+          1 futex(0x24ac740,
+    {noformat}
+
+    So looks like we're spending a lot of time waiting on a single futex. This is probable the global interpreter lock?
+  created: 2015-05-27 11:28:48.0
+  id: '11800'
+  issue: '11563'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-27 11:28:48.0
+- author: erikj
+  body: On the other hand, we only spent 400ms waiting in syscalls over ~13s.
+  created: 2015-05-27 11:42:42.0
+  id: '11801'
+  issue: '11563'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-27 11:42:42.0
+- author: erikj
+  body: Actually, that {{strace -C}} only counts CPU time spent in the kernel, not wall clock time.
+  created: 2015-05-27 11:51:32.0
+  id: '11802'
+  issue: '11563'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-27 11:51:32.0
+- author: erikj
+  body: |-
+    The actual sum of times:
+
+    {noformat}
+    5.05078 epoll_wait
+    0.356894 futex
+    0.25445 gettimeofday
+    0.065459 epoll_ctl
+    0.057654 stat
+    0.057047 write
+    0.044667 sendto
+    0.037246 fcntl
+    0.027074 time
+    0.025842 recvfrom
+    0.020648 open
+    0.020382 close
+    0.015508 shutdown
+    0.01002 connect
+    0.009689 socket
+    0.009515 read
+    0.008738 recvmsg
+    0.008508 getsockname
+    0.008062 accept
+    0.005055 bind
+    0.004465 getsockopt
+    0.00051 munmap
+    0.000352 getdents
+    0.00034 fstat
+    0.000265 mmap
+    ...
+    {noformat}
+  created: 2015-05-27 11:57:13.0
+  id: '11803'
+  issue: '11563'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-27 11:57:13.0
+- author: erikj
+  body: So we're spending 5s / 13s waiting in epoll_wait, and 300ms waiting for futex's.
+  created: 2015-05-27 11:57:40.0
+  id: '11804'
+  issue: '11563'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-27 11:57:40.0
+- author: erikj
+  body: |-
+    {{call_graph.svg}} is from running perf against jki.re.
+
+    There seems to be a fair amount of time spent in libcrypto.so.1.0.0:bn_sqr4x_mont
+  created: 2015-05-28 14:47:23.0
+  id: '11808'
+  issue: '11563'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-28 14:50:12.0
+- author: erikj
+  body: |-
+    {{matrix-org-perf.svg}} is from matrix.org, again, a lot of time seems to be being spent in ssl (~18%).
+
+    These are 30s snapshots at 500hz.
+  created: 2015-05-28 14:50:50.0
+  id: '11809'
+  issue: '11563'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-28 14:52:10.0
+- author: erikj
+  body: It looks like we were not pooling our connections, and so were spending a lot of time doing SSL handshakes (which are expensive)
+  created: 2015-05-29 09:38:34.0
+  id: '11811'
+  issue: '11563'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-05-29 09:38:34.0
+- author: erikj
+  body: I've turned on connection pooling for federation requests and added an option for turning off compression. This seems to have helped, but there are still slow bits in places. CProfile claims its DomainSpecificString::from_string in synapse.handlers.room.get_room_members, but a) that seems to mainly be a artefact of cProfile and b) caching the calculations doesn't seem to have helped that much.
+  created: 2015-06-01 15:57:37.0
+  id: '11813'
+  issue: '11563'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-01 15:57:37.0

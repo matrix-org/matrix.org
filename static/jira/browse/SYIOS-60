@@ -1,0 +1,34 @@
+---
+summary: In a self chat, Console takes ages to paginate back - even if messages are in cache
+---
+assignee: gforet
+created: 2015-01-16 13:52:24.0
+creator: manu
+description: |-
+  The more you paginate, the longer the loading wheel is displayed.
+
+  In this case of self chat, the app seems to spend its life in [RoomMessage contentSize].
+id: '10944'
+key: SYIOS-60
+number: '60'
+priority: '2'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-01-20 14:05:47.0
+status: '5'
+type: '1'
+updated: 2015-01-20 14:05:47.0
+votes: '0'
+watches: '2'
+workflowId: '11044'
+---
+actions:
+- author: gforet
+  body: Text content size are now updated only when it is necessary
+  created: 2015-01-20 14:05:47.0
+  id: '11155'
+  issue: '10944'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-01-20 14:05:47.0

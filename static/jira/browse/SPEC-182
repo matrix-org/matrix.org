@@ -1,0 +1,40 @@
+---
+summary: 'AS API: Move where creating users is documented further up in the AS API section'
+---
+assignee: kegan
+created: 2015-06-09 15:09:48.0
+creator: leonerd
+description: |-
+  On the subject of how an Application Service creates a user, the AS docs simply note:
+
+  {{noformat}}
+     it must create the user via the CS API.
+  {{noformat}}
+
+  It's unclear in context that this means a: the {/register} API, and moreover that the AS must use the special {m.login.application_service} flow type, which is admittedly documented itself separately, lower down in the doc.
+
+  A brief mention of that detail specifically would aid its readability.
+id: '11626'
+key: SPEC-182
+number: '182'
+priority: '3'
+project: '10001'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-10-14 15:13:18.0
+status: '5'
+type: '1'
+updated: 2015-10-14 15:13:18.0
+votes: '0'
+watches: '2'
+workflowId: '11727'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-doc/pull/101
+  created: 2015-10-14 15:13:18.0
+  id: '12263'
+  issue: '11626'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-14 15:13:18.0

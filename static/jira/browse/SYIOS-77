@@ -1,0 +1,39 @@
+---
+summary: How do I invite users to a room on iOS?
+---
+assignee: matthew
+created: 2015-02-09 20:26:17.0
+creator: matthew
+description: ''
+id: '11031'
+key: SYIOS-77
+number: '77'
+priority: '2'
+project: '10200'
+reporter: matthew
+resolution: '10000'
+resolutiondate: 2015-02-19 09:49:20.0
+status: '5'
+type: '2'
+updated: 2015-02-19 09:49:20.0
+votes: '0'
+watches: '2'
+workflowId: '11131'
+---
+actions:
+- author: gforet
+  body: Currently "Invite" option is listed in Menu related to (+) button.
+  created: 2015-02-12 15:49:21.0
+  id: '11247'
+  issue: '11031'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-12 15:49:21.0
+- author: gforet
+  body: No change was required
+  created: 2015-02-19 09:49:20.0
+  id: '11290'
+  issue: '11031'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-19 09:49:20.0

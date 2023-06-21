@@ -1,0 +1,33 @@
+---
+summary: node.js IRC client ignores CTCP requests
+---
+created: 2015-09-29 17:20:38.0
+creator: bugmenot
+description: |-
+  A colleague joined an IRC channel from the node.js Matrix client, and their account was doing dumb stuff like prefixing their nick with an M and adding (IRC) after everyone's nicks when they tab-completed. Curious about what was wrong with their setup, I sent the client a CTCP version request. I did not get a response. 
+
+  Correct behavior would be to respond to CTCP version requests with information about the client version.
+id: '11977'
+key: SYAND-137
+number: '137'
+priority: '3'
+project: '10201'
+reporter: bugmenot
+resolution: '2'
+resolutiondate: 2015-09-30 12:35:35.0
+status: '5'
+type: '1'
+updated: 2015-09-30 12:35:35.0
+votes: '0'
+watches: '2'
+workflowId: '12080'
+---
+actions:
+- author: m-ylecollen
+  body: Wrong project
+  created: 2015-09-30 12:35:35.0
+  id: '12199'
+  issue: '11977'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-30 12:35:35.0

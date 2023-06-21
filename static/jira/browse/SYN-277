@@ -1,0 +1,22 @@
+---
+summary: initial sync returning same room multiple times
+---
+created: 2015-02-16 10:41:37.0
+creator: erikj
+description: ''
+id: '11074'
+key: SYN-277
+number: '277'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '5'
+resolutiondate: 2015-05-26 10:04:51.0
+status: '5'
+type: '1'
+updated: 2015-05-26 16:13:33.0
+votes: '0'
+watches: '1'
+workflowId: '11174'
+---
+actions: null

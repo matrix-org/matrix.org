@@ -1,0 +1,54 @@
+---
+summary: Support for encryption in group chats
+---
+created: 2015-12-07 12:53:19.0
+creator: richvdh
+description: |-
+  {{m.room.encrypted}} events work as a proof-of-concept to demonstrate that we can transfer data securely between clients, but this:
+  * does not scale to more than a few devices per room
+  * is incompatible with any sort of history visibility (even the original recipients of a message can only read a message once)
+
+  The [draft e2e spec|http://matrix.org/speculator/spec/drafts%2Fe2e/client_server/unstable.html#a-possible-design-for-group-chat-using-olm] contains some initial ideas about a design, but this needs fleshing out.
+
+  As an alternative approach, it would also be interesting to consider a very simple encryption protocol, whereby there is a single shared secret for each room, which is used as a key for a cipher. This secret could be shared between participants using 1:1 Olm channels. The main disadvantage of such an approach is that it does not offer Forward Security, or privacy from departed members, without regular rekeying. This opens further questions: when would you rekey, and who is responsible for initiating such a process?
+id: '12183'
+key: SPEC-292
+number: '292'
+priority: '3'
+project: '10001'
+reporter: richvdh
+status: '1'
+type: '2'
+updated: 2016-10-28 16:27:59.0
+votes: '2'
+watches: '7'
+workflowId: '12286'
+---
+actions:
+- author: richvdh
+  body: |-
+    Currently, the draft spec is missing details on the transport to be used by the proposed messages: what event types would be required, and what fields would they have?
+
+    Another thing that is missing is the ability for room admins to configure security. This is the subject of SPEC-293.
+  created: 2015-12-07 19:06:39.0
+  id: '12441'
+  issue: '12183'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-07 19:06:39.0
+- author: richvdh
+  body: For anyone interested in following progress here, I've started some notes on the design of this at https://docs.google.com/document/d/1igtE-wd7f7dXlGgo52ivt-omFmtDVNMTtlQ7-sD1Ofg.
+  created: 2016-06-15 13:59:40.0
+  id: '12999'
+  issue: '12183'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-06-15 13:59:40.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/589'
+  created: 2016-10-28 16:27:59.0
+  id: '13397'
+  issue: '12183'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:59.0

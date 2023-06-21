@@ -1,0 +1,22 @@
+---
+summary: We need a way to resolve 3rd party room and users to an appropriate bridge
+---
+created: 2015-09-13 13:54:36.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  It's nuts to expect normal users to know the #network_#channel:matrix.org style syntax; instead we should have a way to ask a given HS what its default recommendation for resolving a remote room or user to an AS would be.
+id: '11870'
+key: BOTS-105
+number: '105'
+priority: '2'
+project: '10101'
+reporter: neb
+status: '1'
+type: '1'
+updated: 2015-09-13 13:54:36.0
+votes: '0'
+watches: '1'
+workflowId: '11973'
+---
+actions: null

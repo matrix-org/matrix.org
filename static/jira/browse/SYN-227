@@ -1,0 +1,71 @@
+---
+summary: Can't download full size images from repo.
+---
+created: 2014-12-29 13:29:11.0
+creator: erikj
+description: |-
+  {noformat}
+  2014-12-29 13:26:58,361 - synapse.media.v1.base_resource - 66 - ERROR -  - Failed handle request synapse.media.v1.download_resource._async_render_GET on <synapse.media.v1.download_resource.DownloadResource instance at 0x1b94c68>
+  Traceback (most recent call last):
+    File "synapse/media/v1/base_resource.py", line 55, in wrapped_request_handler
+      yield request_handler(self, request)
+    File "/home/erikj/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/erikj/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/media/v1/download_resource.py", line 43, in _async_render_GET
+      yield self._respond_remote_file(request, server_name, media_id)
+    File "/home/erikj/.local/lib/python2.7/site-packages/Twisted-14.0.0-py2.7-linux-x86_64.egg/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/media/v1/download_resource.py", line 61, in _respond_remote_file
+      media_type = media_info["media_type"]
+  TypeError: 'NoneType' object has no attribute '__getitem__'
+  {noformat}
+
+  On jki.re I get a 500 when trying to view the full size image of: 
+  {noformat}
+   {
+    "content": {
+      "body": "santoddvar.png",
+      "info": {
+        "h": 267,
+        "mimetype": "image/png",
+        "size": 102200,
+        "w": 150
+      },
+      "msgtype": "m.image",
+      "url": "mxc://matrix.org/qpwbcbqQwPnProOjpoJGWKSL"
+    },
+    "event_id": "$14198595612488sxMkI:matrix.org",
+    "origin_server_ts": 1419859561340,
+    "room_id": "!cURbafjkfsMDVwdRDQ:matrix.org",
+    "type": "m.room.message",
+    "user_id": "@oddvar:matrix.org"
+  } 
+  {noformat}
+
+  The thumbnail appears works.
+id: '10887'
+key: SYN-227
+number: '227'
+priority: '1'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2014-12-29 14:03:45.0
+status: '5'
+type: '1'
+updated: 2015-01-15 13:36:02.0
+votes: '0'
+watches: '2'
+workflowId: '10987'
+---
+actions:
+- author: markjh
+  body: Fixed in v0.6.0b
+  created: 2014-12-29 14:03:45.0
+  id: '11042'
+  issue: '10887'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-12-29 14:03:45.0

@@ -1,0 +1,69 @@
+---
+summary: v2 login flow representation
+---
+created: 2015-02-26 17:51:01.0
+creator: kegan
+description: |-
+  Consider if a tree-only approach is going to be better than using string arrays.
+
+  {code}
+  Complete stages:
+  foo -> bar
+    `--> baz
+
+  alice -> bob -> charlie
+
+  stages: [
+    {
+      type: "foo",
+      stages: [
+        { type: "bar" },
+        { type: "baz" }
+      ]
+    },
+    {
+      type: "alice",
+      stages: [
+        {
+          type: "bob",
+          stages: [
+            { type: "charlie" }
+          ]
+        }
+      ]
+    }
+  ]
+  {code}
+
+  @eternaleye for suggestion:
+  {code}
+  M-kegan: Well, if "next" can be a list, then the sensible thing IMO is to replace the 'stages' list with a 'stages' tree.
+  M-kegan: Basically, instead of info: [{type, stages}] where stages: [type], have info: [{type, stages}] where stages: info
+  M-kegan: And then the absence of 'stages' indicates bottoming out on the auth flow.
+  M-kegan: Plus, if the next key is also an info (for a subtree), then it can just be treated as recursion in clients.
+  M-kegan: Also, it being a tree would allow stuff like a client library pruning by the auth methods it supports before returning the info to its caller
+  M-kegan: I guess part of it is that I feel the different representations may be a source of implementation bugs (especially server-side)
+  M-kegan: Another benefit is that server-side implementations could actually represent the auth setup as a tree, and just have a serializer to generate the appropriate json
+  {code}
+id: '11145'
+key: SPEC-118
+number: '118'
+priority: '2'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:04.0
+votes: '0'
+watches: '4'
+workflowId: '11245'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/430'
+  created: 2016-10-28 16:27:04.0
+  id: '13281'
+  issue: '11145'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:04.0

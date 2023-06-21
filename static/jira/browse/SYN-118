@@ -1,0 +1,28 @@
+---
+summary: Consider some "debug"-type access URLs
+---
+created: 2014-10-29 14:30:30.0
+creator: leonerd
+description: ''
+id: '10521'
+key: SYN-118
+number: '118'
+priority: '4'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '4'
+updated: 2016-11-07 18:27:22.0
+votes: '0'
+watches: '1'
+workflowId: '10625'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1236'
+  created: 2016-11-07 18:27:22.0
+  id: '13557'
+  issue: '10521'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:22.0

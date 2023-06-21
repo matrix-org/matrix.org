@@ -1,0 +1,20 @@
+---
+summary: 'When searching for the string "spam" via "search room", #matrix-spam:matrix.org is NOT found'
+---
+created: 2015-12-13 11:43:41.0
+creator: bob
+description: ''
+id: '12207'
+key: SYAND-166
+number: '166'
+priority: '3'
+project: '10201'
+reporter: bob
+status: '10100'
+type: '1'
+updated: 2015-12-13 11:43:41.0
+votes: '0'
+watches: '1'
+workflowId: '12310'
+---
+actions: null

@@ -1,0 +1,30 @@
+---
+summary: Check gravatar when new user registers with email.
+---
+created: 2015-03-06 21:45:10.0
+creator: erikj
+description: ''
+id: '11167'
+key: SYN-295
+number: '295'
+priority: '3'
+project: '10000'
+reporter: erikj
+resolution: '3'
+resolutiondate: 2015-03-08 19:28:51.0
+status: '5'
+type: '2'
+updated: 2015-05-14 14:08:02.0
+votes: '0'
+watches: '2'
+workflowId: '11267'
+---
+actions:
+- author: matthew
+  body: syn-34
+  created: 2015-03-08 19:28:51.0
+  id: '11360'
+  issue: '11167'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-08 19:28:51.0

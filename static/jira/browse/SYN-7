@@ -1,0 +1,28 @@
+---
+summary: If the HS doesn't think there are any users in a room, perhaps it should have the (default) option of autoexpiring the alias from its directory?
+---
+created: 2014-09-15 23:35:21.0
+creator: matthew
+description: ''
+id: '10012'
+key: SYN-7
+number: '7'
+priority: '4'
+project: '10000'
+reporter: matthew
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:09.0
+votes: '0'
+watches: '2'
+workflowId: '10341'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1201'
+  created: 2016-11-07 18:27:09.0
+  id: '13532'
+  issue: '10012'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:09.0

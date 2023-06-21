@@ -1,0 +1,20 @@
+---
+summary: binger should only highlight matching words, not the whole bubble (in my opinion)
+---
+created: 2014-09-17 02:01:01.0
+creator: matthew
+description: ''
+id: '10311'
+key: SYWEB-38
+number: '38'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '1'
+type: '1'
+updated: 2015-04-06 19:47:20.0
+votes: '0'
+watches: '1'
+workflowId: '10415'
+---
+actions: null

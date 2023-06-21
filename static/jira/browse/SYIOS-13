@@ -1,0 +1,30 @@
+---
+summary: Add redaction support
+---
+created: 2014-12-11 09:43:46.0
+creator: manu
+description: ''
+id: '10810'
+key: SYIOS-13
+number: '13'
+priority: '3'
+project: '10200'
+reporter: manu
+resolution: '1'
+resolutiondate: 2015-02-06 09:16:25.0
+status: '5'
+type: '1'
+updated: 2015-02-06 09:16:25.0
+votes: '0'
+watches: '2'
+workflowId: '10910'
+---
+actions:
+- author: gforet
+  body: Redact is supported in next version 0.2.2
+  created: 2015-02-06 09:16:25.0
+  id: '11220'
+  issue: '10810'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-02-06 09:16:25.0

@@ -1,0 +1,39 @@
+---
+summary: Formalise rules for picking existing 1:1 conversations
+---
+created: 2016-06-17 10:14:58.0
+creator: richvdh
+description: |-
+  Vector has a "start chat" button which is supposed (modulo https://github.com/vector-im/vector-web/issues/1613 ) to re-use existing chats, and in general it should be possible to send a message to someone without first going through a room-picking dance.
+
+  This could take the form of a list of rules for clients to follow, or an API which picks a room for you.
+id: '12711'
+key: SPEC-413
+number: '413'
+priority: '2'
+project: '10001'
+reporter: richvdh
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:36.0
+votes: '0'
+watches: '3'
+workflowId: '12811'
+---
+actions:
+- author: dbkr
+  body: Preoposal in https://docs.google.com/document/d/1syTsFUN66p0GLuz5aBSN7F41orI5RJbF4KGlMWpdjtk/edit?usp=sharing
+  created: 2016-06-30 09:27:03.0
+  id: '13040'
+  issue: '12711'
+  type: comment
+  updateauthor: dbkr
+  updated: 2016-06-30 09:27:03.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/683'
+  created: 2016-10-28 16:28:36.0
+  id: '13492'
+  issue: '12711'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:36.0

@@ -1,0 +1,30 @@
+---
+summary: JIRA's dashboard introduction block should serve logo via HTTPS
+---
+created: 2015-11-13 12:32:14.0
+creator: wldhx
+description: ''
+id: '12107'
+key: ORG-31
+number: '31'
+priority: '5'
+project: '10003'
+reporter: wldhx
+resolution: '2'
+resolutiondate: 2017-03-21 11:02:02.0
+status: '5'
+type: '4'
+updated: 2017-03-21 11:02:02.0
+votes: '0'
+watches: '2'
+workflowId: '12210'
+---
+actions:
+- author: richvdh
+  body: We're no longer using jira
+  created: 2017-03-21 11:02:02.0
+  id: '14017'
+  issue: '12107'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:02:02.0

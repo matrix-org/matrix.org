@@ -1,0 +1,35 @@
+---
+summary: Homeservers as OAuth authorization endpoints (resource owners)
+---
+created: 2015-07-25 23:07:16.0
+creator: kegan
+description: |-
+  We want third parties (ASes, random web apps which use OAuth to login as someone) to be able to act on behalf of real matrix users. Currently, they simply can't, as they can't authenticate as a given {{user_id}}.
+
+  We should probably expose a CS HTTP API endpoint {{/oauth}} which expects to be hit with a {{redirect_uri}}, {{scopes}}, etc and ideally a browser-sent {{access_token}} from the redirect (obviously not automatic given the token is a query param and not a {{Cookie}} :( ). If not logged in, you'd need to login *as usual* for that HS (e.g. {{m.login.password}}) and then go to the "Accept scopes" page. This will then return a token which the 3rd party service can use as an {{access_token}}.
+
+  Note that this is _completely different_ to the role HSes play during reg/login where we ARE the "web app" wanting to authenticate on another 3rd party (FB/G+/etc).
+
+  This is becoming increasingly important as more services wish to authenticate as *existing* user IDs rather than having user ID fragmentation/namespace hell.
+id: '11765'
+key: SPEC-206
+number: '206'
+priority: '1'
+project: '10001'
+reporter: kegan
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:27:32.0
+votes: '0'
+watches: '2'
+workflowId: '11866'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/531'
+  created: 2016-10-28 16:27:32.0
+  id: '13339'
+  issue: '11765'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:32.0

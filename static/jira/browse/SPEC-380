@@ -1,0 +1,41 @@
+---
+summary: Explain the bind_email parameter to the registration endpoint better
+---
+created: 2016-04-07 07:40:39.0
+creator: jimmycuadra
+description: |-
+  In section 3.2.1 of the client-server spec, request parameter "bind_email" is described as:
+
+  > If true, the server binds the email used for authentication to the Matrix ID with the ID Server.
+
+  There should be more context about what this means. What email? None of the other request parameters are an email address. What ID server? What does "binding" the email mean? What are the implications of binding or not binding an email address?
+id: '12612'
+key: SPEC-380
+number: '380'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:28.0
+votes: '0'
+watches: '2'
+workflowId: '12712'
+---
+actions:
+- author: jimmycuadra
+  body: See my first comment in https://matrix.org/jira/browse/SPEC-308 for an explanation of why `bind_email` was so confusing. I'll still leave this issue open as an explanation of what binding actually does is still missing.
+  created: 2016-04-07 11:17:35.0
+  id: '12808'
+  issue: '12612'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-04-07 11:17:35.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/662'
+  created: 2016-10-28 16:28:28.0
+  id: '13471'
+  issue: '12612'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:28.0

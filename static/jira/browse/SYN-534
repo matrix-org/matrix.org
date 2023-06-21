@@ -1,0 +1,28 @@
+---
+summary: Why don't we put synapse on pypi?
+---
+created: 2015-12-02 23:37:01.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12173'
+key: SYN-534
+number: '534'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:39.0
+votes: '0'
+watches: '2'
+workflowId: '12276'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1431'
+  created: 2016-11-07 18:28:39.0
+  id: '13737'
+  issue: '12173'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:39.0

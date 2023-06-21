@@ -1,0 +1,39 @@
+---
+summary: Fix REST paths that conflate actions with parameters
+---
+created: 2014-10-01 18:55:53.0
+creator: leonerd
+description: |-
+  Random example:
+
+    GET $PREFIX/presence/:user_id/state
+    GET $PREFIX/presence/list/
+
+  What if my user ID is "list"?
+id: '10442'
+key: SPEC-42
+number: '42'
+priority: '3'
+project: '10001'
+reporter: leonerd
+resolution: '4'
+resolutiondate: 2016-06-29 12:01:46.0
+status: '5'
+type: '1'
+updated: 2016-06-29 12:01:46.0
+votes: '0'
+watches: '2'
+workflowId: '10546'
+---
+actions:
+- author: richvdh
+  body: |-
+    user ids always have '@' and ':' in, so this situation can't arise.
+
+    Do you have other examples? Otherwise, I am inclined to close this.
+  created: 2015-12-01 15:54:26.0
+  id: '12400'
+  issue: '10442'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 15:54:26.0

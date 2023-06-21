@@ -1,0 +1,28 @@
+---
+summary: State group storage is very inefficient
+---
+created: 2016-07-17 01:35:05.0
+creator: matthew
+description: ''
+id: '12753'
+key: SYN-727
+number: '727'
+priority: '1'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:44.0
+votes: '0'
+watches: '2'
+workflowId: '12853'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1565'
+  created: 2016-11-07 18:29:44.0
+  id: '13888'
+  issue: '12753'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:44.0

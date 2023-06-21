@@ -1,0 +1,39 @@
+---
+summary: HS should be able to announce what URIs they can gateway
+---
+created: 2015-07-09 23:14:32.0
+creator: matthew
+description: |-
+  When designing the AS API (somewhere in the guts of https://github.com/matrix-org/matrix-doc/pull/5 or an associated etherpad) Kegan and I discussed the idea of homeservers being able to advertise the capabilities of the ASes they have configured - especially if those ASes can act as a gateway to another network.  This in turn could be useful for clients to be able to 'do the right thing' automatically if asked to join a foreign URI, assuming they know what servers are available.
+
+  This might involve advertising capabilities via well-known URIs (SPEC-121), tracking how URI->MXIDs are converted (SPEC-124), or the stuff which is meant to advertise what URIs a given room is bridged to (SPEC-131).
+id: '11743'
+key: SPEC-201
+number: '201'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:30.0
+votes: '0'
+watches: '2'
+workflowId: '11844'
+---
+actions:
+- author: matthew
+  body: '(Kegan: i would *love* to know where the original conversation about this went - I can''t find it anywhere :( )'
+  created: 2015-07-09 23:42:18.0
+  id: '11980'
+  issue: '11743'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-07-09 23:42:18.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/527'
+  created: 2016-10-28 16:27:30.0
+  id: '13335'
+  issue: '11743'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:30.0

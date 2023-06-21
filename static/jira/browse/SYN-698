@@ -1,0 +1,89 @@
+---
+summary: 3PID invite failure
+---
+created: 2016-05-18 11:32:13.0
+creator: matthew
+description: |-
+  Trevor tried to do a 3pid invite by email in a small private room with me & Amandine and got a 500:
+
+  {code}
+  2016-05-18 11:23:47,000 - synapse.http.client - 92 - INFO - POST-674789 - Received response to  POST https://matrix.org/_matrix/identity/api/v1/store-invite: 500
+  2016-05-18 11:23:47,000 - synapse.http.server - 135 - ERROR - POST-674789 - Failed handle request synapse.http.server._async_render on <synapse.rest.ClientRestResource object at 0x3f44d10>: <XForwardedForRequest at 0x7fa23e7c
+  43f8 method=POST uri=/_matrix/client/r0/rooms/!UFXRtuwBNRjrwPSNKd:matrix.org/invite?access_token=<redacted> clientproto=HTTP/1.1 site=8080>
+  Traceback (most recent call last):
+    File "synapse/http/server.py", line 114, in wrapped_request_handler
+      yield request_handler(self, request)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/http/server.py", line 260, in _async_render
+      callback_return = yield callback(request, **kwargs)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/client/v1/room.py", line 481, in on_POST
+      txn_id
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/room_member.py", line 431, in do_3pid_invite
+      txn_id=txn_id
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/room_member.py", line 537, in _make_and_store_3pid_invite
+      inviter_avatar_url=inviter_avatar_url
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1126, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/handlers/room_member.py", line 640, in _ask_id_server_for_third_party_invite
+      invite_config
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/http/client.py", line 127, in post_urlencoded_get_json
+      defer.returnValue(json.loads(body))
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/simplejson/__init__.py", line 516, in loads
+      return _default_decoder.decode(s)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/simplejson/decoder.py", line 370, in decode
+      obj, end = self.raw_decode(s)
+    File "/mnt/disk/home/matrix/venv-synapse/local/lib/python2.7/site-packages/simplejson/decoder.py", line 400, in raw_decode
+      return self.scan_once(s, idx=_w(s, idx).end())
+  JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+  2016-05-18 11:23:47,001 - synapse.access.http.8080 - 91 - INFO - POST-674789 - 46.247.9.153 - 8080 - {@trevorm:matrix.org} Processed request: 255ms (0ms, 0ms) (0ms/0) 55B 500 "POST /_matrix/client/r0/rooms/!UFXRtuwBNRjrwPSNKd
+  :matrix.org/invite?access_token=<redacted> HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+  {code}
+id: '12667'
+key: SYN-698
+number: '698'
+priority: '1'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:33.0
+votes: '0'
+watches: '2'
+workflowId: '12767'
+---
+actions:
+- author: matthew
+  body: Trevor was using the wrong IS (matrix.org), which 500'd him. Synapse then choked on the 500.  Synapse shouldn't choke.
+  created: 2016-05-18 12:36:10.0
+  id: '12922'
+  issue: '12667'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-05-18 12:36:10.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1549'
+  created: 2016-11-07 18:29:33.0
+  id: '13862'
+  issue: '12667'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:33.0

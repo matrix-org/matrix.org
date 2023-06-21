@@ -1,0 +1,31 @@
+---
+summary: Voice Call / Video call / Settings buttons aren't obviously buttons
+---
+assignee: matthew
+created: 2014-11-11 14:30:53.0
+creator: dbkr
+description: ''
+id: '10641'
+key: SYWEB-147
+number: '147'
+priority: '3'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2014-11-11 15:19:13.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:58:03.0
+votes: '0'
+watches: '2'
+workflowId: '10741'
+---
+actions:
+- author: matthew
+  body: weird - i expected <button/> to do the right thing cursorwise.  overridden now.
+  created: 2014-11-11 15:19:04.0
+  id: '10772'
+  issue: '10641'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-11 15:19:04.0

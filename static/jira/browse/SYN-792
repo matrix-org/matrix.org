@@ -1,0 +1,42 @@
+---
+summary: Things needed for riot room directory
+---
+created: 2016-10-20 12:10:04.0
+creator: dbkr
+description: |-
+  Aggregate bug of thing needed for riot to do the things it does on the room directory screen properly:
+
+  1) Filter by network (most urgent)
+  We filter the room directory list by network, which is currently done by getting everything and filtering rooms based on whether they have a single alias that matches a pattern specified in the config (eg. if a room has only one alias and it looks like "#freenode_#channel:matrix.org', it's in the 'freenode' network. We therefore have to keep fetching more rooms if we don't have enough matching ones. If we had an extra parameter to tell the server to do this filtering for us, this would be less insane. Presumably the parameter would take the networks from the list we get from /thirdparty/protocols.
+
+  2) Getting a list of networks from the server
+  We currently have the list returned by /thirdparty/protocols which is what we need, except that:
+    1) It needs to also include networks that have bridged rooms but are not portal-joinable (eg. slack) and tell us this
+    2) Needs to work over federation, presumably in the same way as /publicRooms
+
+  3) Probably also a way of an HS specifying other HSes to include in the room dir, akin to the now-defunct HS third party room listings option.
+
+  4) Proper third party network search (But we don't do this now)
+  It's quite confusing that we have a dropdown selector and a search bar, but it only searches rooms that happen to be bridged right now, which doesn't really make sense for a user: you just want to find a third party room and join it. We've seen several instances of people getting confused by this. It would be very cool for bridges to be able to search for locations on their 3p network and bridge that right through to the client.
+id: '12990'
+key: SYN-792
+number: '792'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:30:08.0
+votes: '0'
+watches: '2'
+workflowId: '13090'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1614'
+  created: 2016-11-07 18:30:08.0
+  id: '13945'
+  issue: '12990'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:30:08.0

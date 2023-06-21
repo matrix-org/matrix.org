@@ -1,0 +1,23 @@
+---
+summary: 'mxSession: myUser displayName and avatarUrl must be retrieved from server when mxSession is started'
+---
+assignee: manu
+created: 2014-12-11 09:00:25.0
+creator: gforet
+description: ''
+id: '10808'
+key: SYIOS-11
+number: '11'
+priority: '2'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2014-12-11 15:08:49.0
+status: '5'
+type: '1'
+updated: 2014-12-11 15:08:49.0
+votes: '0'
+watches: '1'
+workflowId: '10908'
+---
+actions: null

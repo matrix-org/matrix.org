@@ -1,0 +1,41 @@
+---
+summary: Android push seems to be creating duplicate pushers for the same user which is bogging down synapse
+---
+created: 2015-07-14 14:25:06.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11752'
+key: SYAND-99
+number: '99'
+priority: '1'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-02-17 07:20:58.0
+status: '5'
+type: '1'
+updated: 2016-02-17 07:20:58.0
+votes: '0'
+watches: '2'
+workflowId: '11853'
+---
+actions:
+- author: neb
+  body: 'By @erikj:jki.re: This may be caused by people turning on and off their push in the settings'
+  created: 2015-07-14 14:30:03.0
+  id: '11989'
+  issue: '11752'
+  type: comment
+  updateauthor: neb
+  updated: 2015-07-14 14:30:03.0
+- author: m-ylecollen
+  body: |-
+    Many push registration issues have been fixed on the client (identifier ...).
+
+    it seems working properly by now.
+  created: 2016-02-17 07:20:58.0
+  id: '12634'
+  issue: '11752'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2016-02-17 07:20:58.0

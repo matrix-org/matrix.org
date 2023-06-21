@@ -1,0 +1,33 @@
+---
+summary: Upload of images should be indicated
+---
+created: 2015-02-23 20:23:33.0
+creator: bob
+description: |-
+  When uploading an image it should indicated that the upload is in progress. currently there is not such an indication.
+
+  Maybe it could be indicated with a progess bar or circle?!?!
+id: '11128'
+key: SYAND-31
+number: '31'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-03-09 16:48:17.0
+status: '5'
+type: '2'
+updated: 2015-03-09 16:48:17.0
+votes: '0'
+watches: '2'
+workflowId: '11228'
+---
+actions:
+- author: m-ylecollen
+  body: Will be fixed in 0.2.3
+  created: 2015-03-09 16:48:17.0
+  id: '11371'
+  issue: '11128'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-03-09 16:48:17.0

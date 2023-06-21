@@ -1,0 +1,31 @@
+---
+summary: 'bridge #gsoc:matrix.org to #matrix-gsoc on freenode and add it to our gsoc profile'
+---
+assignee: kegan
+created: 2016-03-02 10:07:59.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12539'
+key: BOTS-174
+number: '174'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-03-02 16:18:41.0
+status: '5'
+type: '1'
+updated: 2016-03-02 16:18:41.0
+votes: '0'
+watches: '2'
+workflowId: '12639'
+---
+actions:
+- author: kegan
+  body: Mapping made; will be picked up on next restart.
+  created: 2016-03-02 16:18:41.0
+  id: '12735'
+  issue: '12539'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-03-02 16:18:41.0

@@ -1,0 +1,30 @@
+---
+summary: APNS push is quite delayed these days
+---
+created: 2016-02-04 20:19:14.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Seeing about 4-5s between receiving an event on my eventstream and receiving it via APNS. Am sure it used to be faster
+id: '12366'
+key: SYN-616
+number: '616'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:04.0
+votes: '0'
+watches: '2'
+workflowId: '12471'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1489'
+  created: 2016-11-07 18:29:04.0
+  id: '13795'
+  issue: '12366'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:04.0

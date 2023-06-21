@@ -1,0 +1,30 @@
+---
+summary: unbans do not propagate to federated servers
+---
+created: 2016-07-13 20:37:37.0
+creator: neb
+description: |-
+  Submitted by @richvdh:sw1v.org
+  1. ban user on remote server \ 2. re-invite user on remote server \ 3. user receives invite but their HS still thinks they are banned
+id: '12746'
+key: SYN-725
+number: '725'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:43.0
+votes: '0'
+watches: '2'
+workflowId: '12846'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1563'
+  created: 2016-11-07 18:29:43.0
+  id: '13886'
+  issue: '12746'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:43.0

@@ -1,0 +1,24 @@
+---
+summary: We should not send push notifs for public rooms by default
+---
+created: 2015-08-30 01:34:50.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  This is getting urgent, as people are turning off their push entirely due to it
+id: '11841'
+key: SYN-467
+number: '467'
+priority: '1'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-01-05 16:21:31.0
+status: '5'
+type: '1'
+updated: 2016-01-05 16:21:31.0
+votes: '0'
+watches: '1'
+workflowId: '11944'
+---
+actions: null

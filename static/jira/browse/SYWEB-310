@@ -1,0 +1,30 @@
+---
+summary: '"User not in room" /  M_FORBIDDEN Error if you try to close a room before joining it'
+---
+created: 2015-03-06 09:31:55.0
+creator: dbkr
+description: ''
+id: '11164'
+key: SYWEB-310
+number: '310'
+priority: '2'
+project: '10004'
+reporter: dbkr
+resolution: '3'
+resolutiondate: 2015-03-06 09:33:06.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:05.0
+votes: '0'
+watches: '2'
+workflowId: '11264'
+---
+actions:
+- author: kegan
+  body: SYWEB-221
+  created: 2015-03-06 09:33:06.0
+  id: '11356'
+  issue: '11164'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-06 09:33:06.0

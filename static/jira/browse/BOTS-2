@@ -1,0 +1,45 @@
+---
+summary: IRC bridge can no longer register new Matrix users
+---
+assignee: leonerd
+created: 2014-09-30 15:56:11.0
+creator: matthew
+description: |-
+  [15:51]  <LeoNerd>   [IRC] sending text for irc_Mjark - I am invisible to the Matrix because my nick begins with "M".
+  [15:51]  <LeoNerd> IRC failure: Net::Async::IRC=HASH(0x280ddd8) 403 Forbidden http HTTP::Response=HASH(0x5e041b18) HTTP::Request=HASH(0x5e1b1948)
+  [15:51]  <LeoNerd> Same reason that Toast3r can't speak. I think I'll have to look more into that
+id: '10434'
+key: BOTS-2
+number: '2'
+priority: '1'
+project: '10101'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-30 16:26:44.0
+status: '5'
+type: '1'
+updated: 2014-09-30 16:26:44.0
+votes: '0'
+watches: '2'
+workflowId: '10538'
+---
+actions:
+- author: leonerd
+  body: |-
+    Having put more logging in, I think the bot just can't sign up any new users at all:
+
+    [Matrix] failed to register or login for new user - Unsure how to register (server supports m.login.recaptcha,m.login.email.identity,m.login.password m.login.recaptcha,m.login.password)
+  created: 2014-09-30 16:10:33.0
+  id: '10490'
+  issue: '10434'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-30 16:10:33.0
+- author: leonerd
+  body: Fixed. Turns out to have been missing Digest::HMAC_SHA1 which is an optional dependency of NaMatrix, only used for the captcha bypass feature. I've now added a warning to NaMatrix if it tries to use that but fails when it's missing - previously it was totally silent.
+  created: 2014-09-30 16:26:18.0
+  id: '10491'
+  issue: '10434'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-30 16:26:18.0

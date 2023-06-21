@@ -1,0 +1,43 @@
+---
+summary: Test federation with perspective servers.
+---
+created: 2015-06-24 11:45:10.0
+creator: erikj
+description: ''
+id: '11696'
+key: SYT-12
+number: '12'
+priority: '3'
+project: '10300'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-09-28 15:34:21.0
+status: '5'
+type: '2'
+updated: 2015-09-28 15:34:21.0
+votes: '0'
+watches: '3'
+workflowId: '11797'
+---
+actions:
+- author: leonerd
+  body: |-
+    This has been started in
+
+      https://github.com/matrix-org/sytest/blob/master/tests/50federation/01keys.pl
+
+    Does this look sufficient?
+  created: 2015-09-28 15:30:49.0
+  id: '12179'
+  issue: '11696'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-09-28 15:30:49.0
+- author: markjh
+  body: Yep. That looks good enough as a starting point.
+  created: 2015-09-28 15:33:10.0
+  id: '12180'
+  issue: '11696'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-09-28 15:33:10.0

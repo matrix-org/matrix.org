@@ -1,0 +1,32 @@
+---
+summary: 'IRC AS: Create tests for bans'
+---
+created: 2015-08-03 15:44:47.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  Individual users as well as the bot
+id: '11780'
+key: BOTS-85
+number: '85'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 11:22:55.0
+status: '5'
+type: '1'
+updated: 2016-06-02 11:22:55.0
+votes: '0'
+watches: '2'
+workflowId: '11881'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/63
+  created: 2016-06-02 11:22:55.0
+  id: '12985'
+  issue: '11780'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 11:22:55.0

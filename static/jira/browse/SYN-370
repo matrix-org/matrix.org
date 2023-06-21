@@ -1,0 +1,25 @@
+---
+summary: Pushers performance
+---
+created: 2015-05-05 15:44:12.0
+creator: erikj
+description: |-
+  A lot of database time seems to be spent processing push. Due to the way push is implemented we do the same computation for an event for each pusher in that room.
+
+  The "transaction execution time" graphs are showing quite large bumps due to this. In particular the "get_current_state" transaction often exceed 1s/s with only 27 pushers.
+id: '11505'
+key: SYN-370
+number: '370'
+priority: '2'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2016-01-06 17:28:20.0
+status: '5'
+type: '3'
+updated: 2016-01-06 17:28:20.0
+votes: '0'
+watches: '1'
+workflowId: '11605'
+---
+actions: null

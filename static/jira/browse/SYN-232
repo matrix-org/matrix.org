@@ -1,0 +1,23 @@
+---
+summary: Check the version of python dependencies when starting to catch dodgy installations early
+---
+assignee: markjh
+created: 2015-01-08 14:49:02.0
+creator: markjh
+description: ''
+id: '10896'
+key: SYN-232
+number: '232'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-01-08 17:09:51.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:26:23.0
+votes: '0'
+watches: '1'
+workflowId: '10996'
+---
+actions: null

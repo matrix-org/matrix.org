@@ -1,0 +1,28 @@
+---
+summary: We need to monitor and triage 500 errors from the server (and other FATAL etc) - piping them into email monitoring or whatever
+---
+created: 2016-02-21 10:24:05.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12510'
+key: SYN-634
+number: '634'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:09.0
+votes: '0'
+watches: '2'
+workflowId: '12610'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1501'
+  created: 2016-11-07 18:29:09.0
+  id: '13808'
+  issue: '12510'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:09.0

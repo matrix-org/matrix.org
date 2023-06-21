@@ -1,0 +1,28 @@
+---
+summary: Recents should only order itself by 'meaningful' activity
+---
+created: 2015-02-16 01:45:35.0
+creator: matthew
+description: ''
+id: '11068'
+key: SYWEB-285
+number: '285'
+priority: '2'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-03-29 23:50:29.0
+votes: '0'
+watches: '1'
+workflowId: '11168'
+---
+actions:
+- author: matthew
+  body: This is particularly bad when I change my own nick or avatar, as it destroys the order of all my recents.
+  created: 2015-03-29 23:50:29.0
+  id: '11451'
+  issue: '11068'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-29 23:50:29.0

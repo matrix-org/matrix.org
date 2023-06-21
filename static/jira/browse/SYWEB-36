@@ -1,0 +1,31 @@
+---
+summary: Displayname disambiguation is broken - when someone's displayname is no longer ambiguous we don't strip the (@user:domain) suffix
+---
+assignee: manu
+created: 2014-09-17 01:17:31.0
+creator: matthew
+description: ''
+id: '10309'
+key: SYWEB-36
+number: '36'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-25 10:50:00.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:31.0
+votes: '0'
+watches: '3'
+workflowId: '10413'
+---
+actions:
+- author: kegan
+  body: As mentioned by Matthew in commit [019f3a66|https://github.com/matrix-org/synapse/commit/019f3a66] in app-filter.js:63 FIXME
+  created: 2014-09-18 13:51:11.0
+  id: '10326'
+  issue: '10309'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-18 13:54:13.0

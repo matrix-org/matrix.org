@@ -1,0 +1,49 @@
+---
+summary: 'IRC AS: Tight-looping on netsplits'
+---
+created: 2016-02-01 10:13:34.0
+creator: kegan
+description: |-
+  The IRC bridge wedged yesterday afternoon. The logs were unhelpful:
+
+  {code}
+  [...] Lots more QUITs
+  2016-01-31 12:25:04 DEBUG:irc-client-events M-liberdiko1 is claiming a hash for cmd QUIT
+  2016-01-31 12:25:04 DEBUG:irc-client-events M-liberdiko1 is claiming a hash for cmd QUIT
+  2016-01-31 12:25:04 DEBUG:irc-client-events M-liberdiko1 is claiming a hash for cmd QUIT
+  2016-01-31 12:25:04 DEBUG:irc-client-events M-liberdiko1 is claiming a hash for cmd QUIT
+  2016-01-31 12:25:04 DEBUG:irc-client-events M-liberdiko1 is claiming a hash for cmd QUIT
+  2016-01-31 12:25:04 DEBUG:irc-client-events M-liberdiko1 is claiming a hash for cmd QUIT
+  2016-01-31 12:25:04 DEBUG:irc-client-events M-liberdiko1 is claiming a hash for cmd QUIT
+  [ Matthew restarts bridge ]
+  2016-01-31 14:25:19 INFO:stats statsd endpoint: {"hostname":"127.0.0.1","port":9878,"jobName":"freenode"} (name: freenode)
+  2016-01-31 14:25:19 INFO:irc-ident Configuring ident server => {"enabled":true,"port":1113}
+  {code}
+
+  No logs for 2 hours! Looking at other monitoring on this box indicates that CPU usage was taking up a whole core aka it was tight looping for 2 hours. Looking at freenode when this happened and there was a *massive* netsplit  which I suspect triggered this behaviour.
+
+  Without logs this will be an interesting investigation (though the lack of logs is also incredibly informative as it hints at where in the stack the tight loop may be)
+id: '12357'
+key: BOTS-160
+number: '160'
+priority: '1'
+project: '10101'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-06-02 10:02:46.0
+status: '6'
+type: '1'
+updated: 2016-06-02 10:02:46.0
+votes: '0'
+watches: '1'
+workflowId: '12462'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/36
+  created: 2016-06-02 10:02:46.0
+  id: '12939'
+  issue: '12357'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:02:46.0

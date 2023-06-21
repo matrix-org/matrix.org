@@ -1,0 +1,30 @@
+---
+summary: How do we handle rooms losing all its users?
+---
+created: 2015-04-08 15:19:44.0
+creator: erikj
+description: ''
+id: '11315'
+key: SPEC-147
+number: '147'
+priority: '3'
+project: '10001'
+reporter: erikj
+resolution: '3'
+resolutiondate: 2015-10-13 17:44:32.0
+status: '5'
+type: '2'
+updated: 2015-10-13 17:44:37.0
+votes: '0'
+watches: '2'
+workflowId: '11415'
+---
+actions:
+- author: kegan
+  body: SPEC-211
+  created: 2015-10-13 17:44:32.0
+  id: '12259'
+  issue: '11315'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 17:44:32.0

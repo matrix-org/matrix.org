@@ -1,0 +1,30 @@
+---
+summary: We need a high level whitepaper explaining how matrix works.
+---
+created: 2015-06-02 00:08:59.0
+creator: matthew
+description: ''
+id: '11576'
+key: ORG-24
+number: '24'
+priority: '3'
+project: '10003'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2017-03-21 11:43:52.0
+status: '5'
+type: '2'
+updated: 2017-03-21 11:43:52.0
+votes: '0'
+watches: '2'
+workflowId: '11677'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix-doc/issues/846
+  created: 2017-03-21 11:43:48.0
+  id: '14035'
+  issue: '11576'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:43:48.0

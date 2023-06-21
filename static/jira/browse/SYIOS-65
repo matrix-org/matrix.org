@@ -1,0 +1,34 @@
+---
+summary: 'iOS8: In case of search in Recents, keyboard is not dismissed when user selects a room'
+---
+created: 2015-01-22 12:03:28.0
+creator: gforet
+description: |-
+  on iOS 8:
+  1- start search in Recents
+  2- select a filtered room
+  3- the keyboard is not dismissed NOK
+id: '10974'
+key: SYIOS-65
+number: '65'
+priority: '2'
+project: '10200'
+reporter: gforet
+resolution: '1'
+resolutiondate: 2015-01-23 10:03:15.0
+status: '5'
+type: '1'
+updated: 2015-01-23 10:03:15.0
+votes: '0'
+watches: '2'
+workflowId: '11074'
+---
+actions:
+- author: m-ylecollen
+  body: https://github.com/matrix-org/matrix-ios-sdk/commit/b7537a03
+  created: 2015-01-23 10:03:15.0
+  id: '11187'
+  issue: '10974'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-01-23 10:03:15.0

@@ -1,0 +1,90 @@
+---
+summary: Refine coding style and conventions (particularly w.r.t. storage API)
+---
+created: 2014-09-17 17:17:12.0
+creator: leonerd
+description: |-
+  Simply saying "PEP-8" is in no way sufficient guidance to achieve a level of consistency in code style. It's good for explaining the literal letter-by-letter arrangement of the source code, but many higher-level concepts have gone unaddressed and are quite varied in style between authors currently.
+
+  In particular two thoughts come to mind:
+
+  # Whether the storage layer should be passed in ID strings, or internal User/RoomID objects; and whether it should return simple strings/hashes/lists, or higher-level application objects.
+  # Whether "internal helper" code, such as many of the pseudo-closures being passed into the {{ADBAPI}} {{.runInteraction}} method, should exist as toplevel methods on the relevant objects, or as inner definitions within the "public" API method that calls them.
+id: '10315'
+key: SYN-50
+number: '50'
+priority: '3'
+project: '10000'
+reporter: leonerd
+status: '1'
+type: '3'
+updated: 2016-11-07 18:27:15.0
+votes: '0'
+watches: '4'
+workflowId: '10418'
+---
+actions:
+- author: leonerd
+  body: WRT issue '2' I would vote in favour of using internal definitions instead of other methods, because this reduces the external interface of the class concerned. It makes it obvious to readers that the method is only used in this one place, because it cannot be seen from elsewhere. This is useful for code-review and unit testing purposes.
+  created: 2014-09-17 17:22:49.0
+  id: '10316'
+  issue: '10315'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-09-17 17:22:49.0
+- author: kegan
+  body: |-
+    Issue 1: I would prefer if it was POP[ython]Os as the input/output to the storage layer, without having a dependency on internal User/RoomID objects. I say this because I believe the storage layer should be as thin as possible in terms of "I just want to persist this stuff, just do it" and "I just want the data I'm requesting without any funny business". In other words, if the storage layer *requires* these internal User/RoomID objects, what the 'eck is it up to? Moving that logic up a bit and then using POPOs would be preferable IMO.
+
+    Issue 2: I also vote for internal definitions.
+  created: 2014-09-17 17:48:31.0
+  id: '10317'
+  issue: '10315'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-17 17:48:31.0
+- author: markjh
+  body: 'Issue 1: I prefer it if the storage layer stored the application objects we wanted to store. Otherwise the users of the storage layer have to pre-serialise the user-id objects before passing them to the store leaking implementation details of how the objects are stored in the database.'
+  created: 2014-09-18 09:51:17.0
+  id: '10320'
+  issue: '10315'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-18 09:51:17.0
+- author: markjh
+  body: |-
+    Issue 2: I prefer internal definitions as long has the resulting overall function definitions are small enough to remain clear. Sometimes it is nice to separate out the internal function if it makes sense independent of the outer function.
+
+    Some of the internal functions in the storage layer are split out so that they can be called from more than one public method in the storage API.
+  created: 2014-09-18 09:57:57.0
+  id: '10321'
+  issue: '10315'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-09-18 10:02:43.0
+- author: kegan
+  body: 'wrt Mark''s Issue 1: I agree that we shouldn''t be leaking implementation details of serialisation. How much of the burden to serialise though should be shoved onto the store vs the object serialising itself? I would prefer if an object knew how to serialise itself, but that is contingent on a well-defined storage procedure, which I don''t think we have.'
+  created: 2014-09-18 11:52:33.0
+  id: '10325'
+  issue: '10315'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-09-18 11:52:33.0
+- author: matthew
+  body: |-
+    There was much discussion about this the other week.  Conclusions were:
+     * The storage API should be either high level or low level.  It has to be aware of business objects in some places in order to handle transactions properly.  Therefore we should be consistently high-level - dealing in terms of objects rather than primitives (unless the business object itself /are/ primitives, or we're deliberately exposing a method which returns a single primitive).  In other words, we shouldn't be passing around rows or tuples of raw DB values - we should be passing them as objects instead.
+  created: 2014-11-10 17:19:43.0
+  id: '10766'
+  issue: '10315'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-10 17:19:43.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1215'
+  created: 2016-11-07 18:27:15.0
+  id: '13543'
+  issue: '10315'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:15.0

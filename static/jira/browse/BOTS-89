@@ -1,0 +1,30 @@
+---
+summary: if an irc AS only bridges one ircd, the bot PM commands shouldn't need an explicit IRC server specified surely
+---
+created: 2015-08-14 22:23:22.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11793'
+key: BOTS-89
+number: '89'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:14:24.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:14:24.0
+votes: '0'
+watches: '2'
+workflowId: '11895'
+---
+actions:
+- author: kegan
+  body: Done on `develop`
+  created: 2016-06-02 10:14:24.0
+  id: '12945'
+  issue: '11793'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:14:24.0

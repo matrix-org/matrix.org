@@ -1,0 +1,28 @@
+---
+summary: Handle resending requests that we didn't successfully send if we restart.
+---
+created: 2014-09-16 15:15:42.0
+creator: erikj
+description: ''
+id: '10301'
+key: SYN-44
+number: '44'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '2'
+updated: 2016-11-07 18:27:14.0
+votes: '0'
+watches: '2'
+workflowId: '10374'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1214'
+  created: 2016-11-07 18:27:14.0
+  id: '13542'
+  issue: '10301'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:14.0

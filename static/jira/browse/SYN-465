@@ -1,0 +1,22 @@
+---
+summary: As we have no way to retrospectively change room history, we should always default to sharing it (even on private chats), otherwise it can never be shared
+---
+created: 2015-08-30 01:10:54.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11839'
+key: SYN-465
+number: '465'
+priority: '1'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-01-05 15:29:36.0
+status: '5'
+type: '1'
+updated: 2016-01-05 15:29:36.0
+votes: '0'
+watches: '1'
+workflowId: '11942'
+---
+actions: null

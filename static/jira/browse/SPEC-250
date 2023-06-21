@@ -1,0 +1,141 @@
+---
+summary: Spec structure and versioning
+---
+assignee: illicitonion
+created: 2015-10-12 15:15:12.0
+creator: kegan
+description: |-
+  Abstract
+  ------------
+
+  This outlines changes to the way CS, AS, Push and Federation endpoints are versioned. It also outlines changes to how the spec is structured and presented on matrix.org.
+
+  Current State
+  ------------------
+
+  Currently we have versions for:
+   - Client-Server paths (v1/v2_alpha)
+   - Federation paths
+   - Application Services paths
+   - Push paths
+   - The spec itself (v0.2.0)
+
+  We have several problems we're trying to resolve:
+   - It is unclear how the version of the spec itself relates to the paths if at all.
+   - Clients currently implement most of v1 (not v1 registration) and a tiny bit of v2_alpha (registration). This is not a good thing because it is difficult to say that a client supports v1 or that a server implements v2 if we are mixing versions. We want a standard number.
+   - The spec itself is incredibly large and that makes digesting it difficult. It is targeting different audiences but this isn't clear since it's all in one document.
+
+  Proposal
+  ------------
+  Version numbers are replaced with "release" numbers. They are scoped based on which entities are communicating. This means that there will be different "release" numbers for Client-Server, Server-Server, Server-AppService and Server-PushGateway. This practically makes very little difference for AS/Federation/Push.
+
+  Starting immediately for Client-Server, use of {{v1}} and {{v2_alpha}} in the path is deprecated and replaced with "release 0" {{r0}}. The intent of this release is to accurately map the state of things as they are *today*. This means that {{r0}} is effectively the same as {{v1}} *except for registration* where it points to {{v2_alpha}}. The paths {{v1}} and {{v2_alpha}} will still be accessible but the spec will only talk about {{r0}}. At the end of Synapsegeddon, a new release will be performed: {{r1}}. This will include the {{/sync}} API endpoint.
+
+  The spec itself will be broken into 5 different pages:
+  {code}
+              Overview
+    ____________|_____________
+    |        |       |       |
+   CS        SS     AS    Push
+  {code}
+  These pages are *versioned independently of each other*. The version of each page maps to the *major part* of the path, and changes to the document which do not adjust the APIs just get *minor* bumps. For the immediate release, the versions will be:
+   - Client-Server (r0, v0.2.0)
+   - Federation (r0, v0.2.0)
+   - Application Services (r0, v0.2.0)
+   - Push (r0, v0.2.0)
+
+  For example. when the next client-server release is ready, it will be bumped to Client-Server (r1, v1.0.0). If there are some minor edits after this, it will be bumped to (r1, v1.0.1) and so on. New endpoints (or backwards-compatible changes) bump the minor version (e.g. v1.0.0 -> v1.1.0). Backwards incompatible changes bumps the major version (v1.0.0 -> v2.0.0).
+
+  Internally, we may want to try out new APIs. These can be done using the existing "version" numbering ({{v2_alpha}} etc). These are documented in an "*unstable* specification" for people to implement if they want to be bleeding-edge. Changes to "unstable" can occur without warning and can be backwards incompatible from previous incarnations of "unstable".
+
+  This resolves all the problems outlined earlier:
+   - The version of the spec now does map to the URL paths sensibly.
+   - Clients will now implement a complete "release" (r0) rather than the mix of v1 and v2_alpha.
+   - The spec is now split up making it much more digestible to the intended target audience.
+
+  Rationale
+  -------------
+   - The introduction of release numbers was done to break away from the incoherent mess of versions we have (we couldn't agree whether versions were per API endpoint or per protocol (CS/Fed/AS) or globally (per spec release). This makes it clear it is for a document (and each document is split per protocol). This allows us to standardise on {{r0}} to accurately map how all of our clients are currently doing things.
+   - The spec being broken up allows us to more accurately map the versions of each protocol without affecting other protocols. For example, just because we release Client-Server r2 doesn't mean we should be forced to add Federation r2. Push was added as a surprise document because there is no reason to couple it to the Client-Server release schedule. We decided to map based on protocol because internally the entity in question can do the mapping between versions if required: there is no coupling whatsoever.
+
+  Unanswered questions
+  -------------------------------
+   - Dan mentioned that he would like there to be more coupling between version numbers on CS/Federation/AS because mapping between versions is a bit of a pain. He recognises it is a big can of worms and doesn't want this to block the current proposal. We may decide in the future to bunch together the protocol versions (e.g. r2 CS, r1 AS, r2 Federation => Specification #1 (s1)) but this is by no means thought through yet.
+id: '12012'
+key: SPEC-250
+number: '250'
+priority: '1'
+project: '10001'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2015-12-10 15:37:47.0
+status: '5'
+type: '1'
+updated: 2015-12-10 15:37:47.0
+votes: '0'
+watches: '7'
+workflowId: '12115'
+---
+actions:
+- author: dbkr
+  body: |-
+    What are we proposing doing in the case where we have an API that is stable and servers can implement but since no servers currently do implement it, clients will still need to use the old version? My understanding is that only the new version will be in the current spec document in this case.
+
+    I remain uncomfortable with the internal API testing versions since they seem to be justified by the current situation of registration being on a different version to the rest of the CS API. I think there's a tacit assumption that this is something we want to support in the future and we're introducing significant complication to the versioning system (if not actually to the spec) to accommodate it. I don't see any reason this API testing can't be done at the 'r' level.
+
+    If we do keep the dual 'v' / 'r' system, is there a reason we've shifted from using 'v' to 'r for the API version and then reused 'v' as the endpoint versioning prefix?
+  created: 2015-10-12 15:48:40.0
+  id: '12240'
+  issue: '12012'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-10-12 15:48:40.0
+- author: illicitonion
+  body: Note that my desire to couple CS/SS/AS is actually because I think the models should be the same, rather than because mapping versions is a pain.
+  created: 2015-10-12 16:06:43.0
+  id: '12241'
+  issue: '12012'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-10-12 16:06:43.0
+- author: illicitonion
+  body: 'Dave: Yes, clients would not be restricted to supporting one particular version of the API. I personally quite like the idea of a "supported releases?" endpoint which the client can query, and then will ideally consistently speak one release with that server for an entire "session".'
+  created: 2015-10-12 16:08:35.0
+  id: '12242'
+  issue: '12012'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-10-12 16:08:35.0
+- author: kegan
+  body: |-
+    bq. I remain uncomfortable with the internal API testing versions
+
+    I also feel that numbering internal APIs with versions is a bit weird and pointless. I'm happy to make internal stuff use a constant, clearer, prefix like {{/unstable}} (which also neatly maps to the unstable version of the spec). This would obviate the need for {{v1}}, {{v2}}, {{v3}} etc.
+  created: 2015-10-12 17:12:08.0
+  id: '12243'
+  issue: '12012'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-12 17:12:08.0
+- author: matthew
+  body: |-
+    My reason for wanting to keep a consistent internal naming convention for development APIs is just so we have a consistent handle for discussing them across the team - eg coordinating the name of the spec draft and the name of the impl etc. I want a way to say "hey Mark, how's the v2 of the sync api looking?" rather than "how's the new sync api" or "the updated sync api" or "the crappily-named-experiment api looking?". And suggesting consecutive integer version numbers if people want them is as good a consistent description as any. I have no problem with the convention including using "unstable" as rather than "v${n+1}" too.
+
+    What do other folks think?
+  created: 2015-10-12 20:39:12.0
+  id: '12244'
+  issue: '12012'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-10-12 20:39:12.0
+- author: kegan
+  body: |-
+    bq. My reason for wanting to keep a consistent internal naming convention for development APIs is just so we have a consistent handle for discussing them across the team - eg coordinating the name of the spec draft and the name of the impl etc. I want a way to say "hey Mark, how's the v2 of the sync api looking?" rather than "how's the new sync api" or "the updated sync api" or "the crappily-named-experiment api looking?". And suggesting consecutive integer version numbers if people want them is as good a consistent description as any. I have no problem with the convention including using "unstable" as rather than "v${n+1}"
+
+    So can I confirm you're happy with {{/unstable}} ? Pointed Dan / Dave at this and they're happy so I don't think anything else is outstanding which is preventing me from implementing this if you're okay with {{/unstable}}.
+  created: 2015-10-13 16:15:47.0
+  id: '12245'
+  issue: '12012'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 16:15:47.0

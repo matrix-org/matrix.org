@@ -1,0 +1,48 @@
+---
+summary: Can ASes spoof real users?
+---
+created: 2015-06-02 00:21:52.0
+creator: matthew
+description: |-
+  Need to decide whether ASes are allowed to spoof real users.
+
+  Pro: lets ASes act on behalf of users on the server - e.g. for performing autoresponses etc.
+
+  Cons: breaks E2E crypto; spoofing is ripe for abuse.
+id: '11579'
+key: SPEC-170
+number: '170'
+priority: '2'
+project: '10001'
+reporter: matthew
+resolution: '2'
+resolutiondate: 2015-12-10 15:49:51.0
+status: '5'
+type: '1'
+updated: 2015-12-10 15:49:51.0
+votes: '0'
+watches: '3'
+workflowId: '11680'
+---
+actions:
+- author: kegan
+  body: |-
+    My vote: No. If they want to send messages as a real user, they should be getting permission via OAuth (which will then give them an {{access_token}} they can use specifically for that user.
+
+    This means the AS would need to have a way to discover the OAuth endpoint to point the user at. This isn't specific to ASes; this is also a problem for some indieweb stuff. We need the HS to act *as an OAuth authorization endpoint* rather than just allowing clients to register/login using OAuth on a 3rd party site like FB/G+.
+
+    This probably means having a CS API endpoint {{/oauth}} which expects to be hit with a {{redirect_uri}}, {{scopes}}, etc and ideally a browser-sent {{access_token}} from the redirect (obviously not automatic given the token is a query param and not a {{Cookie}} :( ). If not logged in, you'd need to login *as usual* (e.g. {{m.login.password}}) and then go to the "Accept scopes" page.
+  created: 2015-07-25 22:57:10.0
+  id: '12032'
+  issue: '11579'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-07-25 22:57:10.0
+- author: illicitonion
+  body: I agree with Kegan.
+  created: 2015-12-10 15:49:43.0
+  id: '12458'
+  issue: '11579'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-12-10 15:49:43.0

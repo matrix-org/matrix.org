@@ -1,0 +1,30 @@
+---
+summary: WebRTC call notification messages appear out-of-order, especially on federated chats
+---
+created: 2014-10-27 10:38:23.0
+creator: matthew
+description: ''
+id: '10495'
+key: SYWEB-115
+number: '115'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2014-11-12 17:43:31.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:57:55.0
+votes: '0'
+watches: '2'
+workflowId: '10599'
+---
+actions:
+- author: kegan
+  body: SYWEB-66
+  created: 2014-11-12 17:43:31.0
+  id: '10785'
+  issue: '10495'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-12 17:43:31.0

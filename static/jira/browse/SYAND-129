@@ -1,0 +1,32 @@
+---
+summary: Errors from login failures are apparently not shown that clearly
+---
+created: 2015-09-22 22:07:15.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  When login fails due to something like bad SSL certificates or inaccessible HS, we should be abundantly clear what the actual underlying reason is.
+id: '11922'
+key: SYAND-129
+number: '129'
+priority: '2'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-30 12:31:27.0
+status: '5'
+type: '1'
+updated: 2015-09-30 12:31:27.0
+votes: '0'
+watches: '2'
+workflowId: '12025'
+---
+actions:
+- author: m-ylecollen
+  body: Should be fixed in release 0.5.1
+  created: 2015-09-30 12:31:27.0
+  id: '12197'
+  issue: '11922'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-30 12:31:27.0

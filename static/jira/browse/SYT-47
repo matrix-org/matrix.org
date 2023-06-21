@@ -1,0 +1,23 @@
+---
+summary: Presence sync test fails without user displaynames
+---
+created: 2016-01-13 17:34:05.0
+creator: leonerd
+description: |-
+  Recent commits to clean up tests by not setting user displaynames or avatar URLs unnecessarily caused some inadvertent breakage of tests that shouldn't depend on that. E.g.
+
+    https://github.com/matrix-org/sytest/commit/e5bcb9f6330a1ade011c7df1280475e19e0c4ca1
+id: '12298'
+key: SYT-47
+number: '47'
+priority: '3'
+project: '10300'
+reporter: leonerd
+status: '10100'
+type: '1'
+updated: 2016-01-13 17:34:05.0
+votes: '0'
+watches: '1'
+workflowId: '12403'
+---
+actions: null

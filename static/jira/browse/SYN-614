@@ -1,0 +1,30 @@
+---
+summary: Huge spikes of 401s today
+---
+created: 2016-02-02 18:48:29.0
+creator: matthew
+description: Looks like Erik's deploy at 9am broke something on guest access perhaps?
+id: '12362'
+key: SYN-614
+number: '614'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2016-07-19 08:37:04.0
+status: '5'
+type: '1'
+updated: 2016-07-19 08:37:04.0
+votes: '0'
+watches: '2'
+workflowId: '12467'
+---
+actions:
+- author: richvdh
+  body: I'm assuming this has either been fixed or was a transient.
+  created: 2016-07-19 08:37:04.0
+  id: '13067'
+  issue: '12362'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-19 08:37:04.0

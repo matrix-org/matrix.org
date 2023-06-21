@@ -1,0 +1,49 @@
+---
+summary: Signing PDUs.
+---
+created: 2014-09-30 14:34:11.0
+creator: erikj
+description: ''
+id: '10431'
+key: SPEC-32
+number: '32'
+priority: '3'
+project: '10001'
+reporter: erikj
+resolution: '10000'
+resolutiondate: 2015-12-01 15:06:22.0
+status: '5'
+type: '2'
+updated: 2015-12-01 15:06:22.0
+votes: '0'
+watches: '3'
+workflowId: '10534'
+---
+actions:
+- author: markjh
+  body: Mostly documented at https://github.com/matrix-org/synapse/blob/server2server_signing/docs/server-server/signing.rst
+  created: 2014-10-02 23:06:14.0
+  id: '10511'
+  issue: '10431'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-02 23:06:14.0
+- author: markjh
+  body: |-
+    We could include the hashes of the previous PDUs in the event. This would give a git-like integrity check for the entire message history as well as for the event itself. I think this is a useful protection against attacks which involve changing history.
+
+    I don't think using the signatures of the previous messages rather than the hashes provides any better protection against changing the history. Also we can resign messages past messages without damaging the integrity checks so we can introduce signing without throwing away history. (Provided that we can compute the incremental hashes for all the messages)
+  created: 2014-10-02 23:16:25.0
+  id: '10512'
+  issue: '10431'
+  type: comment
+  updateauthor: markjh
+  updated: 2014-10-02 23:16:25.0
+- author: richvdh
+  body: I believe this is done. please shout if not.
+  created: 2015-12-01 15:04:51.0
+  id: '12393'
+  issue: '10431'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-12-01 15:04:51.0

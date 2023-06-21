@@ -1,0 +1,39 @@
+---
+summary: Be consistent on typesetting of "homeserver"/"home server"
+---
+assignee: illicitonion
+created: 2015-12-01 12:36:54.0
+creator: jimmycuadra
+description: ''
+id: '12159'
+key: SPEC-283
+number: '283'
+priority: '3'
+project: '10001'
+reporter: jimmycuadra
+resolution: '1'
+resolutiondate: 2015-12-02 19:25:06.0
+status: '5'
+type: '1'
+updated: 2015-12-02 19:25:06.0
+votes: '0'
+watches: '2'
+workflowId: '12262'
+---
+actions:
+- author: illicitonion
+  body: 'Yeah, this is really annoying. Fixed: https://github.com/matrix-org/matrix-doc/commit/2f3a00fe34b2414484ab2c2265c571d84db9328b'
+  created: 2015-12-02 19:24:37.0
+  id: '12417'
+  issue: '12159'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-12-02 19:24:37.0
+- author: illicitonion
+  body: https://github.com/matrix-org/matrix-doc/commit/2f3a00fe34b2414484ab2c2265c571d84db9328b
+  created: 2015-12-02 19:25:06.0
+  id: '12418'
+  issue: '12159'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2015-12-02 19:25:06.0

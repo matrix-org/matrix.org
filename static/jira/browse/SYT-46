@@ -1,0 +1,23 @@
+---
+summary: Abstract out client API from federation tests
+---
+created: 2016-01-07 16:52:03.0
+creator: leonerd
+description: |-
+  Currently the tests under {{tests/50federation}} are all centred around the federation aspects of the server-under-test. But due to the way the servers work, it's not really possible to test federation on its own, as anything starts off from a request from a user. As a result, there are uses of the client API among these test files.
+
+  It would be a nice feature one day to abstract away the smallest amount of client API that's being used by the federation tests, so that if a different kind of server was being tested that didn't use the Matrix client API (random thoughts: an ircd that had a Matrix federation façade) that abstraction could still provide the required functionality in whatever manner was appropriate to that server, and the federation tests could then still check that the federation façade was behaving as required.
+id: '12276'
+key: SYT-46
+number: '46'
+priority: '4'
+project: '10300'
+reporter: leonerd
+status: '10100'
+type: '2'
+updated: 2016-01-07 16:52:03.0
+votes: '0'
+watches: '1'
+workflowId: '12381'
+---
+actions: null

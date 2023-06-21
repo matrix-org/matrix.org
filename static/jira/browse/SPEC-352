@@ -1,0 +1,69 @@
+---
+summary: Semantics for notifying everyone in a room - the equivalent to slack or Rocket.Chat's @all
+---
+created: 2016-02-19 15:11:45.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  This could be bodged with a HS-specific default notif rule, but would be nice if the spec provided one that could be turned on and off. We could just go and use @all perhaps
+id: '12504'
+key: SPEC-352
+number: '352'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:19.0
+votes: '0'
+watches: '4'
+workflowId: '12604'
+---
+actions:
+- author: matthew
+  body: (There is general concern that this is very prone to abuse.  But we might want to mitigate this by anti-abuse measures rather than disallow it entirely)
+  created: 2016-02-25 12:41:42.0
+  id: '12721'
+  issue: '12504'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-25 12:41:42.0
+- author: matthew
+  body: suggestion from Half-Shot is that these could be limited by a power level to prevent abuse.
+  created: 2016-02-25 12:59:05.0
+  id: '12722'
+  issue: '12504'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-02-25 12:59:05.0
+- author: jfrederickson
+  body: |-
+    CCLXI mentioned something in Matrix HQ that sounds interesting as well:
+
+    "If you had tags, you could also mention @moderators, @everyone, @first_time_users..."
+
+    Perhaps things like this could be room-specific (or group-specific, depending on the semantics of group membership).
+
+    EDIT: Obviously with user-specific overrides and configurable defaults as well.
+  created: 2016-04-14 21:01:45.0
+  id: '12826'
+  issue: '12504'
+  type: comment
+  updateauthor: jfrederickson
+  updated: 2016-04-14 21:02:37.0
+- author: matthew
+  body: Yup, completely agreed. Groups would be a great way to solve this.
+  created: 2016-04-14 22:17:45.0
+  id: '12827'
+  issue: '12504'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-04-14 22:17:45.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/639'
+  created: 2016-10-28 16:28:19.0
+  id: '13448'
+  issue: '12504'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:19.0

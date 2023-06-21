@@ -1,0 +1,22 @@
+---
+summary: adding non-latin notification doesn't work - "Failed to add rule"
+---
+created: 2015-04-07 01:09:00.0
+creator: matthew
+description: ''
+id: '11308'
+key: SYN-334
+number: '334'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '5'
+resolutiondate: 2015-05-14 10:35:37.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:10.0
+votes: '0'
+watches: '1'
+workflowId: '11408'
+---
+actions: null

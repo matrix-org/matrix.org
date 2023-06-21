@@ -1,0 +1,22 @@
+---
+summary: Perhaps the server should hint what 1:1 rooms should be reused for a given pair of users, rather than the client having to guess
+---
+created: 2015-10-02 19:00:25.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11991'
+key: SPEC-246
+number: '246'
+priority: '3'
+project: '10001'
+reporter: neb
+resolution: '3'
+resolutiondate: 2016-06-30 07:15:16.0
+status: '5'
+type: '1'
+updated: 2016-06-30 07:15:16.0
+votes: '0'
+watches: '1'
+workflowId: '12094'
+---
+actions: null

@@ -1,0 +1,31 @@
+---
+summary: synctl restart should restart all workers by default
+---
+created: 2016-07-25 14:27:22.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+
+  Currently synctl will only restart all the workers if a ``-a`` option is given supplying the worker config directory.
+id: '12768'
+key: SYN-737
+number: '737'
+priority: '3'
+project: '10000'
+reporter: matthew
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:48.0
+votes: '0'
+watches: '2'
+workflowId: '12868'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1573'
+  created: 2016-11-07 18:29:48.0
+  id: '13896'
+  issue: '12768'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:48.0

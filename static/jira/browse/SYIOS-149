@@ -1,0 +1,38 @@
+---
+summary: Disambiguating user names better
+---
+created: 2015-09-28 16:48:45.0
+creator: gforet
+description: ''
+id: '11958'
+key: SYIOS-149
+number: '149'
+priority: '2'
+project: '10200'
+reporter: gforet
+status: '10100'
+type: '2'
+updated: 2015-10-09 10:01:19.0
+votes: '0'
+watches: '1'
+workflowId: '12061'
+---
+actions:
+- author: gforet
+  body: |-
+    Using numeric suffixes (e.g. Matthew (1), Matthew (2)) is not relevant. On which criteria this index may be based to be constant in time?
+
+    ----
+    I'm not really enthusiastic about the Android implementation:
+    "The index is the position in the sorted matrix ids list : this list contains the matrix ID of each member which has the same display name.
+    Thus, the index should be constant until a new member has the same displayname."
+    In a group with 3 Matthew, the client will display Matthew(1), Matthew(2) and Matthew(3) according to alphabetic order of their userid
+    The pb of this implementation is how to handle a new member with the same displayname whose userid is inserted before  Matthew(2) in the sorted userid tab.
+    With the current imple, the new member is named Matthew(2); Matthew (2) becomes Matthew(3); Matthew(3) becomes Matthew(4) in chat history since the join of the last Matthew.
+    We discuss here, and did not find a solution to fix correctly this issue on client side. Only the server may disambiguate user names in group chat.
+  created: 2015-10-09 10:01:19.0
+  id: '12232'
+  issue: '11958'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-10-09 10:01:19.0

@@ -1,0 +1,47 @@
+---
+summary: Specify discovery semantics for AS bridges
+---
+created: 2015-02-22 23:36:09.0
+creator: matthew
+description: ''
+id: '11118'
+key: SPEC-115
+number: '115'
+priority: '2'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:27:03.0
+votes: '0'
+watches: '3'
+workflowId: '11218'
+---
+actions:
+- author: kegan
+  body: '? Surely this is the lookup API defined http://matrix.org/docs/spec/#user-ids'
+  created: 2015-03-05 13:55:29.0
+  id: '11351'
+  issue: '11118'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-05 13:55:29.0
+- author: matthew
+  body: |-
+    No - this is different to that and SPEC-124.
+
+    The question here is more: "Is there some kind of service directory I can use to discover that I can gateway to sip:foo@amdocs.com via the AS at @foo:lync.amdocs.com" rather than if you already know that lync.amdocs.com is running a GW of some kind.
+  created: 2015-03-12 23:23:41.0
+  id: '11384'
+  issue: '11118'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-03-12 23:23:41.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/427'
+  created: 2016-10-28 16:27:03.0
+  id: '13278'
+  issue: '11118'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:27:03.0

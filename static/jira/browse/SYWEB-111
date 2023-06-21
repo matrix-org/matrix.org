@@ -1,0 +1,38 @@
+---
+summary: private rooms like "Matrix Internal" don't update their contents in the Recents pane at all after you accept the initial invite
+---
+created: 2014-10-27 10:14:31.0
+creator: matthew
+description: ''
+id: '10490'
+key: SYWEB-111
+number: '111'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-25 09:24:29.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:55.0
+votes: '0'
+watches: '2'
+workflowId: '10594'
+---
+actions:
+- author: kegan
+  body: Have you been able to reproduce this? I haven't, but I experienced it as well as you for Matrix Internal.
+  created: 2014-11-12 17:42:01.0
+  id: '10784'
+  issue: '10490'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-12 17:42:01.0
+- author: kegan
+  body: Restructured the way we're updating messages, haven't seen this since.
+  created: 2014-11-25 09:24:29.0
+  id: '10832'
+  issue: '10490'
+  type: comment
+  updateauthor: kegan
+  updated: 2014-11-25 09:24:29.0

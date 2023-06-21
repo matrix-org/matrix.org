@@ -1,0 +1,30 @@
+---
+summary: How can you tell whether a given Room ID exists on your current HS?
+---
+created: 2016-02-25 14:16:36.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Might be nice to have /rooms/.../state return 404 rather than 403 or something?
+id: '12524'
+key: SPEC-359
+number: '359'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:21.0
+votes: '0'
+watches: '2'
+workflowId: '12624'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/645'
+  created: 2016-10-28 16:28:21.0
+  id: '13454'
+  issue: '12524'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:21.0

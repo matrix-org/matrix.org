@@ -1,0 +1,43 @@
+---
+summary: 500 on "GET /_matrix/media/v1/download/..."
+---
+created: 2015-04-16 09:55:29.0
+creator: erikj
+description: |-
+  Stack trace:
+
+  {noformat}
+  2015-04-15 21:09:43,461 - synapse.rest.media.v1.base_resource - 66 - ERROR -  - Failed handle request synapse.rest.media.v1.download_resource._async_render_GET on <synapse.rest.media.v1.download_resource.Download...
+  Traceback (most recent call last):
+    File "synapse/rest/media/v1/base_resource.py", line 55, in wrapped_request_handler
+      yield request_handler(self, request)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1097, in _inlineCallbacks
+      result = result.throwExceptionIntoGenerator(g)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/python/failure.py", line 389, in throwExceptionIntoGenerator
+      return g.throw(self.type, self.value, self.tb)
+    File "synapse/rest/media/v1/download_resource.py", line 43, in _async_render_GET
+      yield self._respond_remote_file(request, server_name, media_id)
+    File "/home/erikj/.local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1099, in _inlineCallbacks
+      result = g.send(result)
+    File "synapse/rest/media/v1/download_resource.py", line 64, in _respond_remote_file
+      media_type = media_info["media_type"]
+  TypeError: 'NoneType' object has no attribute '__getitem__'
+  {noformat}
+
+  This was on the {{postgres}} branch (commit: {{5b31af}}), but I don't think there have been any changes to that part of the code.
+id: '11335'
+key: SYN-345
+number: '345'
+priority: '3'
+project: '10000'
+reporter: erikj
+resolution: '1'
+resolutiondate: 2015-05-07 11:00:53.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:04.0
+votes: '0'
+watches: '1'
+workflowId: '11435'
+---
+actions: null

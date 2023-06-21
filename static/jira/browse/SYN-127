@@ -1,0 +1,24 @@
+---
+summary: Automate synapse database upgrades and package upgrade scripts with synapse when it is installed
+---
+created: 2014-11-04 16:37:04.0
+creator: markjh
+description: |-
+  The schema versions will run SQL deltas against the database automatically when the homeserver starts. Unfortunately some upgrades will want to run python code to migrate the data between the old and new schemas.
+  We currently provide ad-hoc scripts along with encouragement for people to run them manually. It would be good if those scripts were packaged along with synapse itself and were run automatically. (Taking appropriate precautions like making backups of the old data).
+id: '10618'
+key: SYN-127
+number: '127'
+priority: '1'
+project: '10000'
+reporter: markjh
+resolution: '1'
+resolutiondate: 2015-03-06 10:08:54.0
+status: '5'
+type: '2'
+updated: 2015-03-06 15:22:43.0
+votes: '0'
+watches: '1'
+workflowId: '10718'
+---
+actions: null

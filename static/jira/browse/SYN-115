@@ -1,0 +1,159 @@
+---
+summary: Presence still lies on newly joined federated rooms.
+---
+assignee: leonerd
+created: 2014-10-27 18:16:48.0
+creator: matthew
+description: |-
+  To reproduce:
+   1) @matthew:arasphere.net creates a new room to chat with @Amandine:matrix.org (creating it from the homepage of the webclient)
+   2) On matthew's *own* client, he appears offline - see screenshot.
+   
+  Feel free to route to the webclient if we think it's the webclient's fault.
+id: '10513'
+key: SYN-115
+number: '115'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-12-05 19:36:58.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:38.0
+votes: '0'
+watches: '2'
+workflowId: '10617'
+---
+actions:
+- author: leonerd
+  body: |-
+    With any luck, the new room initialSync API should fix this.
+
+    Currently on 'develop' branch of synapse and matrix-angular-sdk.
+  created: 2014-11-18 17:48:52.0
+  id: '10805'
+  issue: '10513'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-18 17:48:52.0
+- author: leonerd
+  body: This in addition to the SYN-72 fix, hopefully this is now sorted too.
+  created: 2014-11-19 17:56:59.0
+  id: '10816'
+  issue: '10513'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-19 17:56:59.0
+- author: leonerd
+  body: Speculatively closing
+  created: 2014-11-26 15:57:19.0
+  id: '10855'
+  issue: '10513'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-11-26 15:57:19.0
+- author: matthew
+  body: |-
+    If only!
+
+    So the /initialSync you see after firing up a new HS on cirrus.arasphere.net and joining #matrix:matrix.org simply has a blank presence key.  The json begins:
+
+    {code}
+    {
+        "end": "s547_15_0",
+        "presence": [],
+        "rooms": [{
+    {code}
+  created: 2014-11-27 20:36:11.0
+  id: '10887'
+  issue: '10513'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-11-27 20:36:11.0
+- author: leonerd
+  body: |-
+    Tried steps to recreate on two new blank HSes.
+
+    create user @alice:localhost:8001
+    create user @bob:localhost:8002
+
+    alice invites bob to private chat
+
+    bob accepts
+
+    alice can see online presence of both alice and bob
+    bob can see online presence only of bob, not alice.
+
+    These seem stable after refresh.
+  created: 2014-12-02 19:53:58.0
+  id: '10919'
+  issue: '10513'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-12-02 19:53:58.0
+- author: leonerd
+  body: Furthermore, while alice:localhost:8001's /initialSync gives correct presence at toplevel, bob's is very wrong. It contains bob, three users who aren't even in any of the same rooms as bob, and a lack of alice, who does share a room. Also the toplevel 'rooms' key contains the same room three times.
+  created: 2014-12-02 19:58:43.0
+  id: '10920'
+  issue: '10513'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-12-02 19:58:43.0
+- author: leonerd
+  body: https://github.com/matrix-org/synapse/commit/10eb8f07   may help
+  created: 2014-12-02 21:44:52.0
+  id: '10921'
+  issue: '10513'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-12-02 21:44:52.0
+- author: leonerd
+  body: Except it doesn't. Bug still persists :(
+  created: 2014-12-02 21:49:15.0
+  id: '10922'
+  issue: '10513'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-12-02 21:49:15.0
+- author: leonerd
+  body: |-
+    GOT IT. Ish.
+
+    When bob joins the room on alice's HS, this HS notices a new user in the room and sends a presence push:
+
+    [server 8001]: 2014-12-03 18:30:29,658 - synapse.handlers.presence - 756 - DEBUG -  -  | push to remote domain localhost:8002
+    [server 8001]: 2014-12-03 18:30:29,658 - synapse.federation.replication - 141 - DEBUG -  - Invoked 'send_edu' with args: content={'push': [{'last_active_ago': 275, 'user_id': u'@a..., self=<ReplicationLayer(localhost:8001)>, destination=localhost:8002, edu_type=m.presence
+
+    bob's HS receives this but says:
+
+    [server 8002]: 2014-12-03 18:30:29,726 - synapse.handlers.presence - 651 - DEBUG -  - Incoming presence update from DomainSpecificString(localpart=u'alice', domain=u'localhost:8001', is_mine=False)
+    [server 8002]: 2014-12-03 18:30:29,727 - synapse.handlers.presence - 663 - DEBUG -  -  | no interested observers or room IDs
+
+    It's only later on that bob's HS eventually says:
+
+    [server 8002]: 2014-12-03 18:30:29,731 - synapse.api.auth - 69 - DEBUG - POST-40 - Allowing! (RoomMemberEvent, {u'origin': u'localhost:8001', u'signatures': {u'localhost:8001': {u'ed25519:auto': u'VedAUlwUeVMai0wxNDwgMxw3fFrsIEJ1+5fNJDCUF+/CphYlMX7pKG0onY8vwCR1ipFYk+mDTAVwH/29cxD7AQ'}}, 'unrecognized_keys': {u'unsigned': {u'age': 277}}, u'auth_events': [[u'$141763142933XQGoP:localhost:8001', {u'sha256': u'rq+y/Ew9Udk/hIpqlfjIg+PC+GQwghmh7MnLs3oKjh8'}]], 'state_hash': {u'sha256': u'wHoFQOSVWtfVPW8ZPEkKQQtbTO0ix+0dDr7+gLjA3gk'}, 'user_id': u'@alice:localhost:8001', u'event_id': u'$141763142934ibZvL:localhost:8001', u'content': {u'membership': u'join', u'avatar_url': None, u'displayname': None}, u'prev_state': [], u'room_id': u'!OIEUkosjVnaSwdcpMT:localhost:8001', u'type': u'm.room.member', 'age_ts': 1417631429702, 'old_state_events': None, 'outlier': True, u'state_key': u'@alice:localhost:8001', u'membership': u'join', u'hashes': {u'sha256': u'n5D1bJbD2OKx/a/i+FJj9sUk0b9o/BaAEmjMf+ob9G8'}, 'state_group': None, u'origin_server_ts': 1417631429397, 'state_events': None, u'prev_events': [[u'$141763142933XQGoP:localhost:8001', {u'sha256': u'rq+y/Ew9Udk/hIpqlfjIg+PC+GQwghmh7MnLs3oKjh8'}]], u'depth': 1})
+    ...
+
+    I.e. the presence push comes from 8001->8002 before the room join event is actually acknowledged, so when 8002 receives it it doesn't know what to do, because the user hasn't joined yet from its perspective.
+
+    I'm not sure what's the best solution to this; either
+
+     1) Have 8001 (alice's HS) delay emitting presence information until after it has emitted the response to the JOIN request, or
+     2) Have 8002 (bob's HS) store incoming presence pushes for users it doesn't yet know about, so at least they'll be in its local cached for when it does.
+
+    I'm not sure I like either option - 1 feels fragile and prone to more ordering problems in the future, and 2 requires HSes to spend more memory storing information "just in case".
+  created: 2014-12-03 18:57:58.0
+  id: '10937'
+  issue: '10513'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-12-03 18:57:58.0
+- author: leonerd
+  body: Fixed currently by option 2, though we'll have to remember adding the timer support to flush the "not needed" entries that we'd start accumulating because of the lack of test.
+  created: 2014-12-05 19:36:53.0
+  id: '10977'
+  issue: '10513'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-12-05 19:36:53.0

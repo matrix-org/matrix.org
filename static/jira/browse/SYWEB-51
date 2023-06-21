@@ -1,0 +1,39 @@
+---
+summary: Poorman's formatting *bold* /italic/ _underline_
+---
+created: 2014-09-18 23:49:54.0
+creator: leonerd
+description: |-
+  Poorman's formatting of
+
+  {noformat}
+  *bold* /italics/ _underline_
+  {noformat}
+
+  as per IRC
+
+  Though obviously this will depend on having a SPEC semantic for rich-formatted messages in the first place.
+id: '10333'
+key: SYWEB-51
+number: '51'
+priority: '4'
+project: '10004'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-03-03 13:23:11.0
+status: '5'
+type: '4'
+updated: 2015-05-14 14:08:50.0
+votes: '0'
+watches: '1'
+workflowId: '10436'
+---
+actions:
+- author: kegan
+  body: We support markdown now.
+  created: 2015-03-03 13:23:11.0
+  id: '11338'
+  issue: '10333'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-03-03 13:23:11.0

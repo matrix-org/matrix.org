@@ -1,0 +1,39 @@
+---
+summary: push rules are run bluntly for each user in the room on every message that comes into the server
+---
+created: 2015-12-22 17:06:22.0
+creator: neb
+description: Submitted by @dave:matrix.org
+id: '12239'
+key: SYN-562
+number: '562'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:47.0
+votes: '0'
+watches: '3'
+workflowId: '12342'
+---
+actions:
+- author: dbkr
+  body: |-
+    This could be optimised in a few ways, including:
+     * Getting a standard answer for the default rules and not running default rules for every user (modulo user_id and display_name)
+     * Finding rulesets that only had simple event_match conditions and just matching against those rather than running the full rules.
+  created: 2015-12-22 17:11:25.0
+  id: '12489'
+  issue: '12239'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-12-22 17:11:25.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1455'
+  created: 2016-11-07 18:28:47.0
+  id: '13758'
+  issue: '12239'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:47.0

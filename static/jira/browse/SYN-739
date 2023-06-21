@@ -1,0 +1,91 @@
+---
+summary: spoofed event breaks federation
+---
+created: 2016-07-26 14:08:56.0
+creator: neb
+description: |-
+  Submitted by @richvdh:sw1v.org
+  My synapse stopped receiving events from matrix.org :/
+
+  {noformat}
+  2016-07-26 09:11:22,296 - synapse.federation.federation_server - 401 - INFO - POST-1697003 - on_get_missing_events: earliest_events: ['$1469174462142clfVA:sw1v.org', '$14643771981
+  37506fBmTL:matrix.org', '$1469484567207843yidoT:matrix.org'], latest_events: ['$1469520681268194HFidk:matrix.org'], limit: 10, min_depth: 17
+  2016-07-26 09:11:25,447 - synapse.crypto.keyring - 123 - ERROR -  - Got Exception when downloading keys for sw1v.org: AlreadyCalledError 
+  2016-07-26 09:11:25,448 - synapse.federation.federation_base - 150 - WARNING - PUT-1696852 - Signature check failed for $14691961290OomEO:sw1v.org
+  2016-07-26 09:11:25,448 - synapse.crypto.keyring - 123 - ERROR -  - Got Exception when downloading keys for sw1v.org: AlreadyCalledError 
+  2016-07-26 09:11:25,448 - synapse.federation.federation_base - 150 - WARNING - PUT-1696852 - Signature check failed for $14691962031Kdruf:sw1v.org
+  2016-07-26 09:11:25,462 - synapse.http.outbound - 122 - INFO - PUT-1696852 - {GET-O-2532471} [sw1v.org] Sending request: GET matrix://sw1v.org/_matrix/federation/v1/event/$1469196
+  1290OomEO:sw1v.org/
+  2016-07-26 09:11:25,463 - synapse.http.outbound - 122 - INFO - PUT-1696852 - {GET-O-2532472} [sw1v.org] Sending request: GET matrix://sw1v.org/_matrix/federation/v1/event/$1469196
+  2031Kdruf:sw1v.org/
+  2016-07-26 09:11:25,779 - synapse.http.outbound - 209 - INFO - PUT-1696852 - {GET-O-2532471} [sw1v.org] Result: 404 Not Found
+  2016-07-26 09:11:25,780 - synapse.federation.federation_base - 90 - WARNING - PUT-1696852 - Failed to find copy of $14691961290OomEO:sw1v.org with valid signature
+  2016-07-26 09:11:25,931 - synapse.http.outbound - 209 - INFO - PUT-1696852 - {GET-O-2532472} [sw1v.org] Result: 404 Not Found
+  2016-07-26 09:11:25,931 - synapse.federation.federation_base - 90 - WARNING - PUT-1696852 - Failed to find copy of $14691962031Kdruf:sw1v.org with valid signature
+  2016-07-26 09:11:25,934 - synapse.http.outbound - 122 - INFO - PUT-1696852 - {GET-O-2532473} [0db.nl] Sending request: GET matrix://0db.nl/_matrix/federation/v1/event/$14691962031Kdruf:sw1v.org/
+  2016-07-26 09:11:26,012 - synapse.federation.federation_server - 565 - INFO -  - Still missing 1 events for room '!cURbafjkfsMDVwdRDQ:matrix.org': ['$14691962031Kdruf:sw1v.org']...
+  2016-07-26 09:11:26,134 - synapse.access.http.8080 - 59 - INFO - GET-1697055 - 83.242.11.10 - 8080 - Received request: GET /_matrix/federation/v1/event/$14691962031Kdruf:sw1v.org/
+  2016-07-26 09:11:26,156 - synapse.access.http.8080 - 91 - INFO - GET-1697055 - 83.242.11.10 - 8080 - {hveem.no} Processed request: 22ms (0ms, 0ms) (0ms/0) 2B 404 "GET /_matrix/federation/v1/event/$14691962031Kdruf:sw1v.org/ HTTP/1.1" "Synapse/0.16.1-r1"
+  2016-07-26 09:11:27,930 - synapse.federation.transaction_queue - 356 - INFO -  - TX [sw1v.org] not ready for retry yet - dropping transaction for now
+  2016-07-26 09:11:28,255 - synapse.federation.transaction_queue - 356 - INFO -  - TX [sw1v.org] not ready for retry yet - dropping transaction for now
+  2016-07-26 09:11:28,935 - synapse.access.http.8080 - 59 - INFO - GET-1697128 - 159.203.251.210 - 8080 - Received request: GET /_matrix/federation/v1/event/$14691962031Kdruf:sw1v.org/
+  2016-07-26 09:11:28,937 - synapse.access.http.8080 - 91 - INFO - GET-1697128 - 159.203.251.210 - 8080 - {philsnow.io} Processed request: 2ms (0ms, 0ms) (0ms/0) 2B 404 "GET /_matrix/federation/v1/event/$14691962031Kdruf:sw1v.org/ HTTP/1.1" "Synapse/0.16.0"
+  2016-07-26 09:11:31,342 - synapse.federation.transaction_queue - 356 - INFO -  - TX [sw1v.org] not ready for retry yet - dropping transaction for now
+  2016-07-26 09:11:31,723 - synapse.federation.transaction_queue - 356 - INFO -  - TX [sw1v.org] not ready for retry yet - dropping transaction for now
+  2016-07-26 09:11:32,405 - synapse.federation.transaction_queue - 356 - INFO -  - TX [sw1v.org] not ready for retry yet - dropping transaction for now
+  2016-07-26 09:11:32,872 - synapse.federation.transaction_queue - 356 - INFO -  - TX [sw1v.org] not ready for retry yet - dropping transaction for now
+  2016-07-26 09:11:34,620 - synapse.federation.transaction_queue - 356 - INFO -  - TX [sw1v.org] not ready for retry yet - dropping transaction for now
+  2016-07-26 09:11:36,771 - synapse.federation.transaction_queue - 356 - INFO -  - TX [sw1v.org] not ready for retry yet - dropping transaction for now
+  [etc]
+  {noformat}
+
+  I suspect that {{$14691962031Kdruf:sw1v.org}} was spoofed by Dylanger. Either way sw1v.org shouldn't be blacklisted if it returns a 404. One also has to assume that hveem.no has blacklisted matrix.org. Generally it's all a bit fucked.
+id: '12770'
+key: SYN-739
+number: '739'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:48.0
+votes: '0'
+watches: '3'
+workflowId: '12870'
+---
+actions:
+- author: markjh
+  body: |-
+    Looks like the same limiter is being applied for both sending messages and for getting events.
+
+    https://github.com/matrix-org/synapse/blob/2b8f1a956c6a1d767a3b60e84e7d0afe5857fb0d/synapse/federation/federation_client.py#L168
+  created: 2016-07-26 17:06:21.0
+  id: '13084'
+  issue: '12770'
+  type: comment
+  updateauthor: markjh
+  updated: 2016-07-26 17:06:21.0
+- author: markjh
+  body: Except that should be handled by https://github.com/matrix-org/synapse/blob/9371019133bf16cec163d58fe69aa701c8ca5305/synapse/util/retryutils.py#L94
+  created: 2016-07-26 17:21:08.0
+  id: '13085'
+  issue: '12770'
+  type: comment
+  updateauthor: markjh
+  updated: 2016-07-26 17:21:08.0
+- author: markjh
+  body: Except maybe the key client errors are to blame? Cause they aren't CodeMessage exceptions and I think they also go through the retry limiter.
+  created: 2016-07-26 17:23:44.0
+  id: '13086'
+  issue: '12770'
+  type: comment
+  updateauthor: markjh
+  updated: 2016-07-26 17:24:16.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1574'
+  created: 2016-11-07 18:29:48.0
+  id: '13897'
+  issue: '12770'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:48.0

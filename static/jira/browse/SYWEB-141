@@ -1,0 +1,26 @@
+---
+summary: There is no retry schedule for 'unsent' messages.
+---
+assignee: kegan
+created: 2014-11-07 00:38:16.0
+creator: matthew
+description: |-
+  It seems to be a major screw-up that if a message fails to send, we have no way to trigger a resend - either manually, or via some kind of retry.
+
+  I suggest that we do a few (3) retries if the request fails, ideally with exponential backoff - and then if it's still dead, we give the user a way to kick the process going again.
+id: '10628'
+key: SYWEB-141
+number: '141'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-26 16:54:46.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:52.0
+votes: '0'
+watches: '1'
+workflowId: '10728'
+---
+actions: null

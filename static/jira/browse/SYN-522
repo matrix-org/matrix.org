@@ -1,0 +1,30 @@
+---
+summary: Random segfaults seen on matrix.org and davidar.io
+---
+created: 2015-11-22 15:49:26.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Nov 22 07:09:21 ldc-prd-matrix-004 kernel: [6205102.578758] python[46269]: segfault at 0 ip 00000000004c2f20 sp 00007fff19894090 error 4 in python[400000+257000]
+id: '12132'
+key: SYN-522
+number: '522'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:35.0
+votes: '0'
+watches: '2'
+workflowId: '12235'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1419'
+  created: 2016-11-07 18:28:35.0
+  id: '13727'
+  issue: '12132'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:35.0

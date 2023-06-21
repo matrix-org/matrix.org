@@ -1,0 +1,32 @@
+---
+summary: create room dialog shows misleading alias hint
+---
+created: 2015-06-10 18:33:16.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  it shows a full alias but what you're really setting is the *local part*
+id: '11635'
+key: SYAND-83
+number: '83'
+priority: '3'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-06-17 12:29:00.0
+status: '5'
+type: '1'
+updated: 2015-06-17 12:29:01.0
+votes: '0'
+watches: '2'
+workflowId: '11736'
+---
+actions:
+- author: kegan
+  body: Look at the web client for a better way of representing this.
+  created: 2015-06-10 18:35:15.0
+  id: '11843'
+  issue: '11635'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-10 18:35:15.0

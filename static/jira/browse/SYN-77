@@ -1,0 +1,113 @@
+---
+summary: Joining remote rooms over federation is slow.
+---
+assignee: erikj
+created: 2014-09-26 22:53:01.0
+creator: matthew
+description: ''
+id: '10409'
+key: SYN-77
+number: '77'
+priority: '1'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2016-01-05 15:30:06.0
+status: '5'
+type: '3'
+updated: 2016-01-05 15:30:06.0
+votes: '0'
+watches: '2'
+workflowId: '10512'
+---
+actions:
+- author: matthew
+  body: |-
+    echo:~ matthew$ cat slow\ invite.txt  | grep '\[SQL\]'| cut -d' ' -f11- | sort  | uniq -c | sort -n
+       1 INSERT INTO room_add_state_levels (event_id, room_id, level) VALUES(?, ?, ?)
+       1 INSERT INTO room_default_levels (event_id, room_id, level) VALUES(?, ?, ?)
+       1 INSERT INTO room_join_rules (event_id, join_rule, room_id) VALUES(?, ?, ?)
+       1 INSERT INTO room_ops_levels (event_id, ban_level, kick_level, room_id) VALUES(?, ?, ?, ?)
+       1 INSERT INTO room_power_levels (event_id, user_id, room_id, level) VALUES(?, ?, ?, ?)
+       1 INSERT INTO room_send_event_levels (event_id, room_id, level) VALUES(?, ?, ?)
+       1 INSERT INTO rooms (is_public, room_id, creator) VALUES(?, ?, ?)
+       1 INSERT OR REPLACE INTO sent_transactions (id, transaction_id, destination, ts, response_code, response_json) VALUES (?, ?, ?, ?, ?, ?)
+       1 SELECT e.* FROM events as e INNER JOIN current_state_events as c ON e.event_id = c.event_id INNER JOIN state_events as s ON e.event_id = s.event_id WHERE c.room_id = ?  AND s.type = ? AND s.state_key = ? 
+       1 SELECT id, transaction_id, destination, ts, response_code, response_json FROM sent_transactions WHERE destination = ? ORDER BY id DESC LIMIT 1
+       1 SELECT join_rule FROM room_join_rules as r INNER JOIN current_state_events as c ON r.event_id = c.event_id WHERE c.room_id = ? 
+       1 SELECT level FROM room_power_levels as r INNER JOIN current_state_events as c ON r.event_id = c.event_id WHERE c.room_id = ? AND r.user_id = ? 
+       1 SELECT r.room_id, n.name, t.topic, group_concat(a.room_alias, '') FROM rooms AS r LEFT JOIN (SELECT topics.event_id as event_id, topics.room_id as room_id, topic FROM topics INNER JOIN current_state_events as c ON c.event_id = topics.event_id ) AS t ON t.room_id = r.room_id LEFT JOIN (SELECT room_names.event_id as event_id, room_names.room_id as room_id, name FROM room_names INNER JOIN current_state_events as c ON c.event_id = room_names.event_id ) AS n ON n.room_id = r.room_id INNER JOIN room_aliases AS a ON a.room_id = r.room_id WHERE r.is_public = ? GROUP BY r.room_id 
+       1 SELECT room_id, is_public, creator FROM rooms WHERE room_id=?
+       1 UPDATE sent_transactions SET response_code = ?, response_json = ? WHERE transaction_id = ? AND destination = ?
+       2 INSERT OR IGNORE INTO room_hosts (room_id, host) VALUES (?, ?)
+       2 INSERT OR REPLACE INTO context_depth (context, min_depth) VALUES (?,?)
+       2 SELECT avatar_url FROM profiles WHERE user_id = ?
+       2 SELECT displayname FROM profiles WHERE user_id = ?
+       2 SELECT state, status_msg, mtime FROM presence WHERE user_id = ?
+       3 INSERT INTO room_memberships (event_id, room_id, membership, user_id, sender) VALUES(?, ?, ?, ?, ?)
+       3 SELECT p.pdu_id, p.origin, p.context, p.pdu_type, p.ts, p.depth, p.is_state, p.content_json, p.unrecognized_keys, p.outlier, p.have_processed, s.state_key, s.power_level, s.prev_state_id, s.prev_state_origin FROM state_pdus as s INNER JOIN pdus as p ON s.pdu_id = p.pdu_id AND s.origin = p.origin INNER JOIN current_state as c ON s.pdu_id = c.pdu_id AND s.origin = c.origin WHERE s.context = ? AND s.pdu_type = ? AND s.state_key = ? 
+       8 INSERT INTO current_state_events (event_id, type, room_id, state_key) VALUES(?, ?, ?, ?)
+       8 INSERT INTO state_events (event_id, type, room_id, state_key) VALUES(?, ?, ?, ?)
+       8 SELECT pdu_id, origin FROM current_state WHERE context = ?
+       8 SELECT users.name FROM access_tokens LEFT JOIN users ON users.id = access_tokens.user_id WHERE token = ?
+       9 DELETE FROM pdu_backward_extremities WHERE EXISTS (SELECT 1 FROM pdus AS pdus WHERE pdu_backward_extremities.pdu_id = pdus.pdu_id AND pdu_backward_extremities.origin = pdus.origin AND not pdus.outlier )
+       9 INSERT INTO events (topological_ordering, outlier, event_id, unrecognized_keys, content, room_id, processed, type) VALUES(?, ?, ?, ?, ?, ?, ?, ?)
+       9 INSERT INTO pdu_forward_extremities (pdu_id, origin, context) SELECT ?, ?, ? WHERE NOT EXISTS (SELECT 1 FROM pdu_edges WHERE prev_pdu_id = ? AND prev_origin = ?)
+       9 INSERT OR REPLACE INTO current_state (pdu_id, origin, context, pdu_type, state_key) VALUES (?, ?, ?, ?, ?)
+       9 INSERT OR REPLACE INTO pdus (pdu_id, origin, context, pdu_type, ts, depth, is_state, content_json, unrecognized_keys, outlier, have_processed) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       9 INSERT OR REPLACE INTO state_pdus (pdu_id, origin, context, pdu_type, state_key, power_level, prev_state_id, prev_state_origin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+       9 SELECT e.* FROM events as e INNER JOIN room_memberships as m ON e.event_id = m.event_id INNER JOIN current_state_events as c ON m.event_id = c.event_id WHERE m.user_id = ? and e.room_id = ? LIMIT 1
+       9 SELECT min_depth FROM context_depth WHERE context = ?
+       9 SELECT p.pdu_id, p.origin, p.depth FROM pdus as p INNER JOIN pdu_forward_extremities as f ON p.pdu_id = f.pdu_id AND f.origin = p.origin WHERE f.context = ?
+      11 SELECT * FROM events as e WHERE ((room_id IN (SELECT m.room_id FROM room_memberships as m INNER JOIN current_state_events as c ON m.event_id = c.event_id WHERE m.user_id = ? AND m.membership = 'join')) OR (event_id IN (SELECT m.event_id FROM room_memberships as m INNER JOIN current_state_events as c ON m.event_id = c.event_id WHERE m.user_id = ? ))) AND e.stream_ordering > ? AND e.stream_ordering <= ? AND e.outlier = 0 ORDER BY stream_ordering ASC LIMIT 1000 
+      13 SELECT host FROM room_hosts WHERE room_id = ?
+      14 SELECT MAX(stream_ordering) as m FROM events
+      64 SELECT p.pdu_id, p.origin, p.context, p.pdu_type, p.ts, p.depth, p.is_state, p.content_json, p.unrecognized_keys, p.outlier, p.have_processed, s.state_key, s.power_level, s.prev_state_id, s.prev_state_origin FROM pdus as p LEFT JOIN state_pdus as s ON p.pdu_id = s.pdu_id AND p.origin = s.origin WHERE p.pdu_id = ? AND p.origin = ? 
+      64 SELECT pdu_id, origin, prev_pdu_id, prev_origin, context FROM pdu_edges WHERE pdu_id = ? AND origin = ?
+  created: 2014-09-26 23:15:12.0
+  id: '10461'
+  issue: '10409'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-26 23:15:12.0
+- author: matthew
+  body: 'As of 0.9.2 it still takes over 30s to join #matrix:matrix.org over federation, which means that the join times out and you have a horrible UX (quite aside for the delay).'
+  created: 2015-06-16 12:19:46.0
+  id: '11865'
+  issue: '10409'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-06-16 12:19:46.0
+- author: erikj
+  body: |-
+    join_timeline.png:
+    Trying to join #matrix:matrix.org on v0.9.2 with a fresh server using sqlite.
+
+    Red: get_server_verify_keys
+    Blue: have_events
+    Green: persist_event
+  created: 2015-06-19 14:41:00.0
+  id: '11892'
+  issue: '10409'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-19 15:15:31.0
+- author: erikj
+  body: |-
+    join_timeline_new.png is after the following work:
+
+    * Remove needless have_events query
+    * Bulk server key fetches
+    * Bulk insertion of events
+
+    There are two big gaps in the timeline:
+    # After fetching keys: this is us processing a transaction from matrix.org that include 789 EDUs, one for each current member. This results in doing 789 get_rooms_for_user_where_membership_is TXNs.
+    # The second gap is after storing server keys: This is when we start doing all the signature and hash checks.
+
+    Total time to join: ~12s. Note: the test server is very close to matrix.org server (the same DC)
+  created: 2015-06-24 15:22:17.0
+  id: '11914'
+  issue: '10409'
+  type: comment
+  updateauthor: erikj
+  updated: 2015-06-24 15:23:08.0

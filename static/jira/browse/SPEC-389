@@ -1,0 +1,60 @@
+---
+summary: Grammar for room IDs and event IDs
+---
+created: 2016-04-19 11:09:19.0
+creator: richvdh
+description: |-
+  Room IDs and Event IDs are opaque to the user (they should never be seen), but they do have some syntax within the protocol; this means that they can be more baroque than User IDs, but are not as freeform as some other IDs (SPEC-388).
+
+  We should ensure their syntax is well-specified, and make sure we know which characters they can include.
+id: '12632'
+key: SPEC-389
+number: '389'
+priority: '1'
+project: '10001'
+reporter: richvdh
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:29.0
+votes: '0'
+watches: '2'
+workflowId: '12732'
+---
+actions:
+- author: richvdh
+  body: |-
+    From [~markjh]:
+
+    {quote}
+    ... the v2 filter API makes assumptions that '*" is not a valid character in a room id or a user ID so that it can use it as a wildcard.
+    {quote}
+  created: 2016-04-19 12:10:21.0
+  id: '12854'
+  issue: '12632'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-04-19 12:10:21.0
+- author: richvdh
+  body: The local-part could have the same grammar as the completely-opaque IDs (SPEC-388)?
+  created: 2016-07-13 14:55:53.0
+  id: '13055'
+  issue: '12632'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-13 14:55:53.0
+- author: jimmycuadra
+  body: Probably also relevant to SPEC-388, the character set should probably be limited to avoid things that would be ambiguous or "annoying" when displayed, like whitespace and newlines. Also, if the opaque ID can contain a colon, that would make it harder to figure out which colon delimits the opaque ID from the IP/hostname and from the port.
+  created: 2016-07-22 23:55:07.0
+  id: '13078'
+  issue: '12632'
+  type: comment
+  updateauthor: jimmycuadra
+  updated: 2016-07-22 23:55:07.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/667'
+  created: 2016-10-28 16:28:29.0
+  id: '13476'
+  issue: '12632'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:29.0

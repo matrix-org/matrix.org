@@ -1,0 +1,52 @@
+---
+summary: Inviting over federation takes 20-30s
+---
+assignee: erikj
+created: 2014-09-16 21:22:10.0
+creator: matthew
+description: ''
+id: '10305'
+key: SYN-46
+number: '46'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-09-25 13:27:27.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:32.0
+votes: '0'
+watches: '2'
+workflowId: '10375'
+---
+actions:
+- author: matthew
+  body: also creating a room when inviting someone takes 20-30s atm between arasphere & matrix.org and vice versa
+  created: 2014-09-24 01:48:50.0
+  id: '10435'
+  issue: '10305'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-24 01:48:50.0
+- author: matthew
+  body: It just took 32s for an invite to get from arasphere.net to matrix.org.  Attached are the logs on arasphere.net's HS, showing a pause of 25s in the middle of it after "Invoked '_attempt_new_transaction"
+  created: 2014-09-24 14:23:02.0
+  id: '10442'
+  issue: '10305'
+  type: comment
+  updateauthor: matthew
+  updated: 2014-09-24 14:23:02.0
+- author: erikj
+  body: |-
+    {noformat}
+    2014-09-24 14:19:16,071 - synapse.federation.replication - 630 - DEBUG - TX [matrix.org] Marked as delivered
+    {noformat}
+
+    That line suggests it was successfully sent to the remote HS, and so the delay is more likely to be in the remote. My guess is that the event stream for the remote user was not correctly woken up, so it didn't get delivered until the longpoll restarted.
+  created: 2014-09-25 11:08:40.0
+  id: '10449'
+  issue: '10305'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-09-25 11:08:40.0

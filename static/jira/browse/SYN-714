@@ -1,0 +1,35 @@
+---
+summary: Support auth in mail notifications
+---
+created: 2016-06-27 08:17:04.0
+creator: ogarcia
+description: |-
+  Please, add smtp auth support to mail notification for events.
+
+  I think that this issue can be solved in minutes. Simply adding 3 vars and small modification in python function:
+
+  smtp_auth: true|false
+  smtp_user: xxx
+  smtp_passwd: xxx
+id: '12721'
+key: SYN-714
+number: '714'
+priority: '2'
+project: '10000'
+reporter: ogarcia
+status: '10100'
+type: '4'
+updated: 2016-11-07 18:29:39.0
+votes: '0'
+watches: '2'
+workflowId: '12821'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1385'
+  created: 2016-11-07 18:29:39.0
+  id: '13875'
+  issue: '12721'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:39.0

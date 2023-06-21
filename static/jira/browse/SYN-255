@@ -1,0 +1,28 @@
+---
+summary: Check that invited user's HS has signed invite event.
+---
+created: 2015-02-02 16:33:24.0
+creator: erikj
+description: ''
+id: '10994'
+key: SYN-255
+number: '255'
+priority: '3'
+project: '10000'
+reporter: erikj
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:41.0
+votes: '0'
+watches: '2'
+workflowId: '11094'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1280'
+  created: 2016-11-07 18:27:41.0
+  id: '13599'
+  issue: '10994'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:41.0

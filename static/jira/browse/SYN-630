@@ -1,0 +1,30 @@
+---
+summary: 'I just got a flurry of 403s in the middle of trying to talk in #test:matrix.org'
+---
+created: 2016-02-14 19:53:23.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  I was happily chatting away in #test:matrix.org when suddenly all my attempts to interact failed with 403, 'user not in room'. wtf? Went away after restarting vector
+id: '12396'
+key: SYN-630
+number: '630'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:08.0
+votes: '0'
+watches: '2'
+workflowId: '12501'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1498'
+  created: 2016-11-07 18:29:08.0
+  id: '13805'
+  issue: '12396'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:08.0

@@ -1,0 +1,60 @@
+---
+summary: Typing notifications end up in the wrong rooms
+---
+created: 2015-03-17 15:45:15.0
+creator: manu
+description: |-
+  Peoples receiving typing notification events in the event streams for rooms where they are not in.
+
+  It is easy to reproduce on iOS or weechat since such not expected event are logged.
+
+  On my account, I can see that Amandine and Matthew are typing in !lFdHwFlnCHQWDBxEjs:matrix.org.
+id: '11247'
+key: SYN-316
+number: '316'
+priority: '2'
+project: '10000'
+reporter: manu
+resolution: '3'
+resolutiondate: 2015-04-15 23:37:25.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:08:06.0
+votes: '1'
+watches: '2'
+workflowId: '11347'
+---
+actions:
+- author: matthew
+  body: |-
+    Weechat's logging of these looks like:
+
+    [18:40]  <Arathorn> 2015-03-22 18:24:02             err: Event for unknown room
+    [18:40]  <Arathorn> 2015-03-22 18:24:02             event: 
+    [18:40]  <Arathorn> 2015-03-22 18:24:02               room_id: !HjjwYMMXiHADPTNaWC:matrix.org
+    [18:40]  <Arathorn> 2015-03-22 18:24:02               type: m.typing
+    [18:40]  <Arathorn> 2015-03-22 18:24:02               content: 
+    [18:40]  <Arathorn> 2015-03-22 18:24:02                 user_ids: 
+    [18:40]  <Arathorn> 2015-03-22 18:24:02                   1: @ixi:matrix.org
+    [18:41]  <Arathorn> where
+    [18:41]  <Arathorn> #empathicdetermination:matrix.org|!HjjwYMMXiHADPTNaWC:matrix.org
+    [18:42]  <Arathorn> you'll be shocked and stunned to hear i'm not a member of #empathicdetermination:matrix.org
+
+    so to repro it, it's trivial: just fire up a weechat with tor's plugin, comment out the two lines which suppress logging of rogue typing notifs; watch the errors stack up.
+
+    [18:45]  <Arathorn> +                        elseif chunk.type and chunk.type == 'm.typing' then
+    [18:45]  <Arathorn> +                            -- Ignore typing events for unknown rooms
+  created: 2015-04-09 18:59:19.0
+  id: '11481'
+  issue: '11247'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-09 18:59:19.0
+- author: matthew
+  body: dup SYN-328
+  created: 2015-04-15 23:37:25.0
+  id: '11494'
+  issue: '11247'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-04-15 23:37:25.0

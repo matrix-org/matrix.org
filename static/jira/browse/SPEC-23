@@ -1,0 +1,34 @@
+---
+summary: Alternative identity server models
+---
+created: 2014-09-26 22:51:51.0
+creator: matthew
+description: |-
+  Our identity server model has some shortcomings:
+   * The trusted clique could be seen to act as an oligarchic point of control
+   * The clique replicates all state over itself; unlike DNS root servers which partition the dataset
+   * We don't have a way to map tokens to arbitrary 3rd party credentials unless one of our trusted clique validates said 3rd party credentials.  So otherwise you're stuck using @myapp-$uid:myapp.com style IDs, which is rather foul.
+
+  Could something like bitauth help us on this?
+id: '10407'
+key: SPEC-23
+number: '23'
+priority: '3'
+project: '10001'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2016-10-28 16:26:42.0
+votes: '0'
+watches: '2'
+workflowId: '10510'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/460'
+  created: 2016-10-28 16:26:42.0
+  id: '13235'
+  issue: '10407'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:26:42.0

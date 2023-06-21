@@ -1,0 +1,20 @@
+---
+summary: Would be nice if (IRC) suffixes were stripped when autocompleting
+---
+created: 2015-03-14 02:47:06.0
+creator: matthew
+description: ''
+id: '11231'
+key: SYWEB-332
+number: '332'
+priority: '3'
+project: '10004'
+reporter: matthew
+status: '10100'
+type: '2'
+updated: 2015-09-22 21:42:06.0
+votes: '0'
+watches: '1'
+workflowId: '11331'
+---
+actions: null

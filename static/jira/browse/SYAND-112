@@ -1,0 +1,39 @@
+---
+summary: Special character username not hilighted in chatlog
+---
+created: 2015-08-07 13:11:00.0
+creator: skaverat
+description: |-
+  Having a Zalgo'd nick (http://www.marlborotech.com/Zalgo.html), it works fine getting a hilight on the "base" username, but the colored hilight in the chatlog is missing.
+
+  e.g.: Zahlgo'd "SkaveRat" will get a notification on plaintext "SkaveRat", but the message will not be hilighted
+id: '11784'
+key: SYAND-112
+number: '112'
+priority: '3'
+project: '10201'
+reporter: skaverat
+resolution: '1'
+resolutiondate: 2015-09-03 14:56:42.0
+status: '5'
+type: '1'
+updated: 2015-09-03 14:56:42.0
+votes: '0'
+watches: '2'
+workflowId: '11885'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    Should be fixed with 
+    https://github.com/matrix-org/matrix-android-console/commit/368eb03fc373218a8a6a17e4ffaf88342ef24e14
+
+    and 
+
+    https://github.com/matrix-org/matrix-android-sdk/commit/2e586cb138ff4ead68b76da23738f78df3c5ffb2
+  created: 2015-09-03 14:56:42.0
+  id: '12092'
+  issue: '11784'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-03 14:56:42.0

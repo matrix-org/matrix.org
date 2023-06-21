@@ -1,0 +1,30 @@
+---
+summary: Should users with sufficient to power to invite in a room be able to join without invite?
+---
+created: 2016-04-23 12:21:41.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  Seems very strange that an administrator can leave a room and then not get back in if it is invite only, but they are an administrator...
+id: '12639'
+key: SPEC-395
+number: '395'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:31.0
+votes: '0'
+watches: '3'
+workflowId: '12739'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/671'
+  created: 2016-10-28 16:28:31.0
+  id: '13480'
+  issue: '12639'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:31.0

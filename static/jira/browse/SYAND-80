@@ -1,0 +1,60 @@
+---
+summary: image uploading pie chart lies
+---
+assignee: m-ylecollen
+created: 2015-06-10 18:06:01.0
+creator: neb
+description: |-
+  Submitted by @kegan:matrix.org
+  it immediately jumps to 95% then sits there doing nothing.
+id: '11632'
+key: SYAND-80
+number: '80'
+priority: '3'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-06-11 13:14:49.0
+status: '5'
+type: '1'
+updated: 2015-06-11 13:14:49.0
+votes: '0'
+watches: '3'
+workflowId: '11733'
+---
+actions:
+- author: m-ylecollen
+  body: The image upload is stuck because the the client is waiting after the server response.
+  created: 2015-06-11 07:47:41.0
+  id: '11847'
+  issue: '11632'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-11 07:47:49.0
+- author: kegan
+  body: |-
+    It doesn't ever gradually move to 95% though. There is no 0-95%. That is the bug.
+
+    Before,I'm guessing 0 to 95% was for uploading the image then 95 to 100% getting the response after sending the message? We have lost the upload progress bit.
+  created: 2015-06-11 08:42:14.0
+  id: '11848'
+  issue: '11632'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-06-11 08:42:14.0
+- author: m-ylecollen
+  body: Right, the progress seems broken.
+  created: 2015-06-11 08:45:27.0
+  id: '11849'
+  issue: '11632'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-11 08:45:27.0
+- author: m-ylecollen
+  body: Add setFixedLengthStreamingMode to avoid that the URL connection cache the data before really uploading it.
+  created: 2015-06-11 13:14:33.0
+  id: '11851'
+  issue: '11632'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-06-11 13:14:33.0

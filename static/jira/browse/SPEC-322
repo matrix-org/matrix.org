@@ -1,0 +1,72 @@
+---
+summary: We need a way of cancelling 3PID invites
+---
+created: 2016-01-13 17:29:58.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12296'
+key: SPEC-322
+number: '322'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-10-28 16:28:08.0
+votes: '0'
+watches: '4'
+workflowId: '12401'
+---
+actions:
+- author: illicitonion
+  body: Could you describe the flow you expect users to take?
+  created: 2016-02-23 18:19:03.0
+  id: '12711'
+  issue: '12296'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-02-23 18:19:03.0
+- author: matthew
+  body: In a matrix client I expect to be able to click on a 3PID invite and hit a cancel button.  We could conceivably notify the 3PID target that the invite has been retracted, but in practice it's probably not worth it and we can just give them a "sorry, this invite is no longer valid" when they try to accept it.
+  created: 2016-03-02 16:13:46.0
+  id: '12734'
+  issue: '12296'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-02 16:13:46.0
+- author: illicitonion
+  body: |-
+    Who should be allowed to do this? Right now, this doesn't exist for regular invites.
+
+    The original inviter? Anyone with "kick" power level? A new power level?
+
+    After some discussion with Erik and Mjark, there's no way to establish a happens-before relationship between the invite being cancelled and an attempted join event, so we're not going to be able to be resilient to people forking the graph and joining despite the cancellation. We can do this check in a federation-join by having the danced-with server check *its* current state, but that may be wrong.
+
+    Either way, I think this requires enough thought that Erik will probably end up being the one to do it :)
+  created: 2016-03-02 16:55:26.0
+  id: '12736'
+  issue: '12296'
+  type: comment
+  updateauthor: illicitonion
+  updated: 2016-03-02 16:55:26.0
+- author: matthew
+  body: |-
+    It does already exist for regular invites.  If you kick the invitee from the room, they are no longer invited.
+
+    Anyone with "kick" power level should be able to retract invites.
+
+    But bleurgh and fair enough regarding the causality mess.  Sounds like Erik gets this prize then - although I'd hope we can directly take inspiration from non-3PID invites...
+  created: 2016-03-02 18:14:22.0
+  id: '12738'
+  issue: '12296'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-03-02 18:14:22.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/613'
+  created: 2016-10-28 16:28:08.0
+  id: '13421'
+  issue: '12296'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:08.0

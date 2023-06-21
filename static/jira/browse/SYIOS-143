@@ -1,0 +1,33 @@
+---
+summary: When you send a panorama, it doesn't tell you the resolutions it's targetting, and the predicted res and sizing are tiiiiny
+---
+assignee: gforet
+created: 2015-09-22 22:03:27.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  E.g. a typical panorama has an origianal filesize of 5-10MB. The 'Large' predicted size is 70KB(!) and it doesn't tell me what resolution it's aiming for. We got this right in UC; we should do so too here in Matrix
+id: '11920'
+key: SYIOS-143
+number: '143'
+priority: '2'
+project: '10200'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-28 15:24:45.0
+status: '5'
+type: '1'
+updated: 2015-09-28 15:24:45.0
+votes: '0'
+watches: '2'
+workflowId: '12023'
+---
+actions:
+- author: gforet
+  body: 'build #704'
+  created: 2015-09-28 15:24:45.0
+  id: '12178'
+  issue: '11920'
+  type: comment
+  updateauthor: gforet
+  updated: 2015-09-28 15:24:45.0

@@ -1,0 +1,22 @@
+---
+summary: Sydent needs to provide clickable auth links in emails rather than c+p PINs
+---
+created: 2015-03-29 22:48:40.0
+creator: matthew
+description: ''
+id: '11279'
+key: SYD-8
+number: '8'
+priority: '2'
+project: '10002'
+reporter: matthew
+resolution: '3'
+resolutiondate: 2015-04-23 11:30:17.0
+status: '5'
+type: '2'
+updated: 2015-04-23 11:30:17.0
+votes: '0'
+watches: '1'
+workflowId: '11379'
+---
+actions: null

@@ -1,0 +1,32 @@
+---
+summary: Allow moving the app to SD card
+---
+created: 2015-08-27 18:58:37.0
+creator: neb
+description: Submitted by @kegan:matrix.org
+id: '11821'
+key: SYAND-119
+number: '119'
+priority: '2'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-09-04 16:13:48.0
+status: '5'
+type: '1'
+updated: 2015-09-04 16:13:48.0
+votes: '0'
+watches: '2'
+workflowId: '11924'
+---
+actions:
+- author: m-ylecollen
+  body: |-
+    Should be fixed with 
+    https://github.com/matrix-org/matrix-android-console/commit/b3ec5ba116ae72a7f439d323222dd2615bd488c0
+  created: 2015-09-04 16:13:44.0
+  id: '12106'
+  issue: '11821'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-04 16:13:44.0

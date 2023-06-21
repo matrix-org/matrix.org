@@ -1,0 +1,30 @@
+---
+summary: We need a demo/staging/test HS for matrix.org
+---
+created: 2015-10-06 09:35:45.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12001'
+key: ORG-27
+number: '27'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '2'
+resolutiondate: 2017-03-21 11:00:03.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:00:03.0
+votes: '0'
+watches: '2'
+workflowId: '12104'
+---
+actions:
+- author: richvdh
+  body: maybe. I don't think the reason we don't have one is because we've forgotten about it. I don't think there is any value in keeping this bug open.
+  created: 2017-03-21 11:00:03.0
+  id: '14013'
+  issue: '12001'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:00:03.0

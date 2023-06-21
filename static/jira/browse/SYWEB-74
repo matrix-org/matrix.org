@@ -1,0 +1,27 @@
+---
+summary: 'Emote desktop notifications sometimes lack a name: "undefined waves"'
+---
+assignee: manu
+created: 2014-09-22 16:08:05.0
+creator: kegan
+description: |-
+  {quote}
+  Erik Johnston (@erikj:jki.re) waves
+  {quote}
+  Came up as 'undefined waves' in the notification.
+id: '10363'
+key: SYWEB-74
+number: '74'
+priority: '2'
+project: '10004'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2014-09-24 15:53:06.0
+status: '5'
+type: '1'
+updated: 2014-09-25 17:41:28.0
+votes: '0'
+watches: '1'
+workflowId: '10466'
+---
+actions: null

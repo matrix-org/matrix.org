@@ -1,0 +1,39 @@
+---
+summary: 'Joining #pto:oob.systems from arasphere results in partial room state'
+---
+assignee: erikj
+created: 2016-02-28 01:28:47.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  This matches intelfx's complaints in HQ from a few days ago. The room is shown to have 4 users, and no name/alias/topic
+id: '12530'
+key: SYN-640
+number: '640'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:29:12.0
+votes: '0'
+watches: '3'
+workflowId: '12630'
+---
+actions:
+- author: intelfx
+  body: So we have SYN-639 already for this thing :)
+  created: 2016-03-03 00:20:45.0
+  id: '12740'
+  issue: '12530'
+  type: comment
+  updateauthor: intelfx
+  updated: 2016-03-03 00:21:31.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1507'
+  created: 2016-11-07 18:29:12.0
+  id: '13814'
+  issue: '12530'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:29:12.0

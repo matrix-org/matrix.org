@@ -1,0 +1,39 @@
+---
+summary: Stop people trying to send state events through the non state-event API
+---
+created: 2016-10-06 01:32:53.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12848'
+key: SPEC-459
+number: '459'
+priority: '3'
+project: '10001'
+reporter: neb
+status: '1'
+type: '4'
+updated: 2016-10-28 16:28:49.0
+votes: '0'
+watches: '2'
+workflowId: '12948'
+---
+actions:
+- author: richvdh
+  body: |-
+    Suggestions:
+    * Add a warning to the spec
+    * SYN-783
+  created: 2016-10-06 16:47:30.0
+  id: '13159'
+  issue: '12848'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-06 16:47:30.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/713'
+  created: 2016-10-28 16:28:49.0
+  id: '13522'
+  issue: '12848'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:49.0

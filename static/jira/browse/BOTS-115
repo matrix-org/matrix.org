@@ -1,0 +1,21 @@
+---
+summary: matrix-appservice-bridge intent.sendMessage messes with send ordering
+---
+assignee: kegan
+created: 2015-09-21 11:23:46.0
+creator: illicitonion
+description: ''
+id: '11904'
+key: BOTS-115
+number: '115'
+priority: '2'
+project: '10101'
+reporter: illicitonion
+status: '1'
+type: '1'
+updated: 2015-09-21 11:23:46.0
+votes: '0'
+watches: '1'
+workflowId: '12007'
+---
+actions: null

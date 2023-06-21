@@ -1,0 +1,23 @@
+---
+summary: leaving your current room by hitting the (x) in recents button leaves you stuck in limbo
+---
+assignee: kegan
+created: 2014-11-20 02:31:37.0
+creator: matthew
+description: ''
+id: '10690'
+key: SYWEB-172
+number: '172'
+priority: '2'
+project: '10004'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-24 15:13:33.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:01.0
+votes: '0'
+watches: '1'
+workflowId: '10790'
+---
+actions: null

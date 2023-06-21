@@ -1,0 +1,22 @@
+---
+summary: 'turn on irc->matrix join propagation for #ipfs'
+---
+created: 2015-10-17 13:48:39.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12027'
+key: BOTS-126
+number: '126'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-11-16 17:49:49.0
+status: '5'
+type: '1'
+updated: 2015-11-16 17:49:49.0
+votes: '0'
+watches: '1'
+workflowId: '12130'
+---
+actions: null

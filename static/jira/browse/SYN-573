@@ -1,0 +1,68 @@
+---
+summary: Leaving a room does not come immediately down /sync
+---
+created: 2016-01-05 10:31:28.0
+creator: kegan
+description: ''
+id: '12266'
+key: SYN-573
+number: '573'
+priority: '2'
+project: '10000'
+reporter: kegan
+resolution: '1'
+resolutiondate: 2016-01-05 14:59:19.0
+status: '5'
+type: '1'
+updated: 2016-01-05 14:59:19.0
+votes: '0'
+watches: '2'
+workflowId: '12371'
+---
+actions:
+- author: kegan
+  body: This repro steps here is to type "/part" into Vector in a room. The first {{/sync}} response looks to be due to {{m.typing}} returning with an empty {{user_ids}} array (since you've finished executing the command).
+  created: 2016-01-05 10:35:27.0
+  id: '12500'
+  issue: '12266'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-01-05 10:35:27.0
+- author: erikj
+  body: |-
+    This looks to be because we don't wake up {{/sync}} if there are changes to archived rooms:
+
+    {code:python}
+        def __nonzero__(self):
+            """Make the result appear empty if there are no updates. This is used
+            to tell if the notifier needs to wait for more events when polling for
+            events.
+            """
+            return bool(
+                self.presence or self.joined or self.invited
+            )
+    {code}
+
+    https://github.com/matrix-org/synapse/blob/0ee01383252cafd30ed92e3b655847d07cacee3a/synapse/handlers/sync.py#L118
+  created: 2016-01-05 14:45:43.0
+  id: '12508'
+  issue: '12266'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 14:45:43.0
+- author: erikj
+  body: https://github.com/matrix-org/synapse/pull/461
+  created: 2016-01-05 14:59:09.0
+  id: '12509'
+  issue: '12266'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 14:59:09.0
+- author: erikj
+  body: Done
+  created: 2016-01-05 14:59:14.0
+  id: '12510'
+  issue: '12266'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 14:59:14.0

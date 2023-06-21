@@ -1,0 +1,36 @@
+---
+summary: Ability to subscribe to an unread notifications count of all rooms with all other events filtered
+---
+created: 2016-07-27 09:28:21.0
+creator: kentshikama
+description: ''
+id: '12774'
+key: SPEC-439
+number: '439'
+priority: '3'
+project: '10001'
+reporter: kentshikama
+status: '1'
+type: '2'
+updated: 2016-10-28 16:28:41.0
+votes: '0'
+watches: '2'
+workflowId: '12874'
+---
+actions:
+- author: richvdh
+  body: '[~KentShikama]: if you haven''t already, I suggest discussing this with Erik. It sounds quite like the usecase of mobile clients which want to monitor for notifications without using a notification-push service. It''s unlikely to see much attention here.'
+  created: 2016-07-27 16:44:42.0
+  id: '13087'
+  issue: '12774'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-07-27 16:44:42.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/matrix-doc/issues/697'
+  created: 2016-10-28 16:28:41.0
+  id: '13506'
+  issue: '12774'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-10-28 16:28:41.0

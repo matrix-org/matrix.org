@@ -1,0 +1,30 @@
+---
+summary: make sure the site looks sensible with JS turned off
+---
+created: 2015-10-26 23:04:58.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '12043'
+key: ORG-28
+number: '28'
+priority: '3'
+project: '10003'
+reporter: neb
+resolution: '3'
+resolutiondate: 2017-03-21 11:00:37.0
+status: '5'
+type: '1'
+updated: 2017-03-21 11:00:37.0
+votes: '0'
+watches: '2'
+workflowId: '12146'
+---
+actions:
+- author: richvdh
+  body: https://github.com/matrix-org/matrix.org/issues/15
+  created: 2017-03-21 11:00:37.0
+  id: '14014'
+  issue: '12043'
+  type: comment
+  updateauthor: richvdh
+  updated: 2017-03-21 11:00:37.0

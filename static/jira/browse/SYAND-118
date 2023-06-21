@@ -1,0 +1,33 @@
+---
+summary: Android app shows call in progress as notification, but call anready ended.
+---
+created: 2015-08-16 21:50:52.0
+creator: bob
+description: |-
+  Android app shows call in progress as notification, but call already ended.
+
+  Additionally I cannot remove the notification.
+id: '11803'
+key: SYAND-118
+number: '118'
+priority: '3'
+project: '10201'
+reporter: bob
+resolution: '1'
+resolutiondate: 2015-09-01 12:13:52.0
+status: '5'
+type: '1'
+updated: 2015-09-01 12:13:52.0
+votes: '0'
+watches: '2'
+workflowId: '11905'
+---
+actions:
+- author: m-ylecollen
+  body: It has been fixed on pristine branch (and merge in the develop one).
+  created: 2015-09-01 12:13:52.0
+  id: '12079'
+  issue: '11803'
+  type: comment
+  updateauthor: m-ylecollen
+  updated: 2015-09-01 12:13:52.0

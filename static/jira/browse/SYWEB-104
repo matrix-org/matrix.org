@@ -1,0 +1,23 @@
+---
+summary: Per-room binging
+---
+created: 2014-10-01 13:51:33.0
+creator: oddvar
+description: |-
+  It would be nice to be able to set up different bingwords for different rooms/be able to enable bingwords only on certain rooms
+
+  Example: I am interested in being binged on the word pub in #social:matrix.org but not in #matrix-dev:matrix.org
+id: '10436'
+key: SYWEB-104
+number: '104'
+priority: '3'
+project: '10004'
+reporter: oddvar
+status: '10100'
+type: '2'
+updated: 2014-10-01 13:51:33.0
+votes: '0'
+watches: '1'
+workflowId: '10540'
+---
+actions: null

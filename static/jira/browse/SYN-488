@@ -1,0 +1,28 @@
+---
+summary: Consider colour codes in log output when logging to console to ease visual parsing
+---
+created: 2015-09-23 19:48:26.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11935'
+key: SYN-488
+number: '488'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:24.0
+votes: '0'
+watches: '2'
+workflowId: '12038'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1380'
+  created: 2016-11-07 18:28:24.0
+  id: '13698'
+  issue: '11935'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:24.0

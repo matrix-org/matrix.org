@@ -1,0 +1,38 @@
+---
+summary: we shouldn't be leaking message contents in push notifications.
+---
+created: 2015-08-18 21:15:09.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11807'
+key: SPEC-213
+number: '213'
+priority: '1'
+project: '10001'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-10-13 16:34:51.0
+status: '5'
+type: '1'
+updated: 2015-10-13 16:34:51.0
+votes: '0'
+watches: '3'
+workflowId: '11910'
+---
+actions:
+- author: matthew
+  body: at least on gcm, the push should just be a trigger to /sync
+  created: 2015-09-19 18:05:32.0
+  id: '12140'
+  issue: '11807'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-09-19 18:05:32.0
+- author: kegan
+  body: The specification points this out in the security considerations in the push module. This is now an implementation issue.
+  created: 2015-10-13 16:34:48.0
+  id: '12247'
+  issue: '11807'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-10-13 16:34:48.0

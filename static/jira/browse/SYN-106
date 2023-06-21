@@ -1,0 +1,52 @@
+---
+summary: /publicRooms does not list a new public room
+---
+created: 2014-10-16 18:21:23.0
+creator: leonerd
+description: |-
+  I create a new room
+
+  {noformat}
+        $do_request_json_authed->(
+           method => "POST",
+           uri    => "/createRoom",
+
+           content => {
+              visibility => "public",
+           },
+        )
+  {noformat}
+
+  This succeeds, but then a subsequent request to `/publicRooms` yields an empty list:
+
+  {noformat}
+  { chunk => [], end => "END", start => "START" }
+  {noformat}
+
+  For reference, room creation test now lives in integration test system at
+
+    https://github.com/matrix-org/sytest/blob/master/tests/10apidoc/30room-create.pl
+id: '10480'
+key: SYN-106
+number: '106'
+priority: '3'
+project: '10000'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2014-10-20 17:46:53.0
+status: '5'
+type: '1'
+updated: 2014-11-20 10:06:37.0
+votes: '0'
+watches: '1'
+workflowId: '10584'
+---
+actions:
+- author: leonerd
+  body: Effectively this was a documentation issue. To classify as a "public" room, the room also needs a room alias name. Creating one without a name makes it private. I have now updated the docs.
+  created: 2014-10-20 17:46:41.0
+  id: '10572'
+  issue: '10480'
+  type: comment
+  updateauthor: leonerd
+  updated: 2014-10-20 17:46:41.0

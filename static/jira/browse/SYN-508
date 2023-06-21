@@ -1,0 +1,30 @@
+---
+summary: 1:1 invite received over federation -> no scrollback until you reload vector
+---
+created: 2015-11-01 12:52:37.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  This might be a 'flakiness over federation' on 0.10.0 though?
+id: '12059'
+key: SYN-508
+number: '508'
+priority: '3'
+project: '10000'
+reporter: neb
+status: '10100'
+type: '1'
+updated: 2016-11-07 18:28:32.0
+votes: '0'
+watches: '2'
+workflowId: '12162'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1408'
+  created: 2016-11-07 18:28:32.0
+  id: '13717'
+  issue: '12059'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:32.0

@@ -1,0 +1,38 @@
+---
+summary: VoIP is broken
+---
+created: 2015-01-12 20:14:20.0
+creator: dbkr
+description: ''
+id: '10918'
+key: SYWEB-254
+number: '254'
+priority: '1'
+project: '10004'
+reporter: dbkr
+resolution: '1'
+resolutiondate: 2015-01-12 20:23:30.0
+status: '5'
+type: '1'
+updated: 2015-05-14 14:09:05.0
+votes: '0'
+watches: '1'
+workflowId: '11018'
+---
+actions:
+- author: dbkr
+  body: Fixed by checking the presence of the age key before setting the timeout.
+  created: 2015-01-12 20:23:30.0
+  id: '11107'
+  issue: '10918'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-01-12 20:23:30.0
+- author: dbkr
+  body: Opened new issue to track disappearance of the 'age' key.
+  created: 2015-01-12 20:24:17.0
+  id: '11108'
+  issue: '10918'
+  type: comment
+  updateauthor: dbkr
+  updated: 2015-01-12 20:24:17.0

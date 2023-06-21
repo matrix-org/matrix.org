@@ -1,0 +1,59 @@
+---
+summary: Device keeps ringing when a call is answered on another device
+---
+created: 2015-11-02 12:48:39.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  I had to poweroff my phone to get it to stop ringing :/
+id: '12067'
+key: SYAND-152
+number: '152'
+priority: '3'
+project: '10201'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-11-06 11:54:36.0
+status: '5'
+type: '1'
+updated: 2015-11-06 11:54:39.0
+votes: '0'
+watches: '2'
+workflowId: '12170'
+---
+actions:
+- author: richvdh
+  body: Better yet, of course, would be for it to know the call has been answered on another device and to stop ringing automagically.
+  created: 2015-11-02 12:49:23.0
+  id: '12290'
+  issue: '12067'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-02 12:49:23.0
+- author: richvdh
+  body: |-
+    I reproduced this.
+
+    The client *did* know that the call had been answered, but kept ringing anyway.
+
+    Steps to reproduce:
+    * Place 1-1 call from another account (client was vector)
+    * Both android and web console start ringing. Android device opens "Incoming call" screen
+    * Answer call from web console
+    * Android closes "Incoming call" screen but keeps ringing
+    * Hang up call (from web console)
+    * Android finally stops ringing
+  created: 2015-11-05 09:59:42.0
+  id: '12326'
+  issue: '12067'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-05 09:59:42.0
+- author: richvdh
+  body: Seems to be fixed in build 258.
+  created: 2015-11-06 11:54:39.0
+  id: '12346'
+  issue: '12067'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-06 11:54:39.0

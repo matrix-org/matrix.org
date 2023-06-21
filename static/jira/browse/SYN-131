@@ -1,0 +1,64 @@
+---
+summary: What is event.prev_content.prev?
+---
+created: 2014-11-07 00:35:20.0
+creator: matthew
+description: |-
+  Looking at the JSON for "Nov 6 23:36 @irc_Ara4n:matrix.org joined", i'm confused that it has a prev_content.prev field of value "join".  What is this?
+
+   {
+    "age": 2458971,
+    "content": {
+      "avatar_url": null,
+      "displayname": null,
+      "membership": "join"
+    },
+    "event_id": "kxKRhjLvOu@matrix.org",
+    "membership": "join",
+    "origin_server_ts": 1415317009839,
+    "prev_content": {
+      "membership": "leave",
+      "prev": "join"
+    },
+    "prev_state": "ZswAptMmjb@matrix.org",
+    "room_id": "!XqBunHwQIXUiqCaoxq:matrix.org",
+    "state_key": "@irc_Ara4n:matrix.org",
+    "type": "m.room.member",
+    "user_id": "@irc_Ara4n:matrix.org",
+    "changedKey": "membership"
+  }
+id: '10627'
+key: SYN-131
+number: '131'
+priority: '2'
+project: '10000'
+reporter: matthew
+resolution: '1'
+resolutiondate: 2014-11-26 14:34:46.0
+status: '5'
+type: '1'
+updated: 2014-12-19 18:11:39.0
+votes: '0'
+watches: '2'
+workflowId: '10727'
+---
+actions:
+- author: erikj
+  body: |-
+    A "prev" key in the membership content is the previous membership value. This (seemingly) also appears in the prev_content of membership events. This is deprecated and will be removed.
+
+    The actual literal answer to the question is: It's the value of the membership field two events "ago" (for a definition of "ago")
+  created: 2014-11-08 21:36:07.0
+  id: '10749'
+  issue: '10627'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-08 21:36:07.0
+- author: erikj
+  body: This should be removed now that (as far as I'm aware) no client depends on it.
+  created: 2014-11-08 21:36:37.0
+  id: '10750'
+  issue: '10627'
+  type: comment
+  updateauthor: erikj
+  updated: 2014-11-08 21:36:37.0

@@ -1,0 +1,32 @@
+---
+summary: bridged IRC users should quit the target network if they are not on any channels
+---
+created: 2015-08-20 21:17:08.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  or offer some other way to quit the network. satdav claims he's still on moznet despite having left all the moznet channels
+id: '11813'
+key: BOTS-94
+number: '94'
+priority: '3'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:55:28.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:55:28.0
+votes: '0'
+watches: '3'
+workflowId: '11916'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/57
+  created: 2016-06-02 10:55:28.0
+  id: '12972'
+  issue: '11813'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:55:28.0

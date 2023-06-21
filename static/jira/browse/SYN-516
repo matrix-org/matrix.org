@@ -1,0 +1,41 @@
+---
+summary: calling /sync twice causes a 500 error
+---
+assignee: richvdh
+created: 2015-11-09 16:25:35.0
+creator: neb
+description: |-
+  Submitted by @richvdh:matrix.org
+  /sync modifies the results returned by the ReceiptEventSource and TypingNotifcationEventSource; those results are cached so the second call gets bogus results
+id: '12099'
+key: SYN-516
+number: '516'
+priority: '3'
+project: '10000'
+reporter: neb
+resolution: '1'
+resolutiondate: 2015-11-10 17:26:37.0
+status: '5'
+type: '1'
+updated: 2015-11-10 17:26:37.0
+votes: '0'
+watches: '2'
+workflowId: '12202'
+---
+actions:
+- author: richvdh
+  body: actually the TypingNotifcationEventSource doesn't cache its results, so this actually only affects read receipts
+  created: 2015-11-09 17:12:27.0
+  id: '12357'
+  issue: '12099'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-09 17:12:27.0
+- author: richvdh
+  body: This is fixed by https://github.com/matrix-org/synapse/pull/357 in build 4330ish
+  created: 2015-11-10 17:26:37.0
+  id: '12360'
+  issue: '12099'
+  type: comment
+  updateauthor: richvdh
+  updated: 2015-11-10 17:26:37.0

@@ -1,0 +1,39 @@
+---
+summary: Signups from iOS like vitalyster's don't seem to create a 3PID mapping in synapse.
+---
+assignee: matthew
+created: 2015-08-29 20:11:31.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  The sydent 3PID mapping is correct, but the users_threepids table in synapse is empty for the user
+id: '11835'
+key: SYN-461
+number: '461'
+priority: '1'
+project: '10000'
+reporter: neb
+status: '10200'
+type: '1'
+updated: 2016-11-07 18:28:18.0
+votes: '0'
+watches: '3'
+workflowId: '11938'
+---
+actions:
+- author: erikj
+  body: What request is it making?
+  created: 2016-01-05 16:17:04.0
+  id: '12515'
+  issue: '11835'
+  type: comment
+  updateauthor: erikj
+  updated: 2016-01-05 16:17:04.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1365'
+  created: 2016-11-07 18:28:18.0
+  id: '13686'
+  issue: '11835'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:18.0

@@ -1,0 +1,31 @@
+---
+summary: Test client-side data persistence
+---
+assignee: leonerd
+created: 2015-09-29 15:34:07.0
+creator: leonerd
+description: ''
+id: '11974'
+key: SYT-30
+number: '30'
+priority: '1'
+project: '10300'
+reporter: leonerd
+resolution: '1'
+resolutiondate: 2015-12-02 18:45:50.0
+status: '5'
+type: '2'
+updated: 2015-12-02 18:45:50.0
+votes: '0'
+watches: '1'
+workflowId: '12077'
+---
+actions:
+- author: leonerd
+  body: https://github.com/matrix-org/sytest/pull/82
+  created: 2015-11-20 14:11:21.0
+  id: '12377'
+  issue: '11974'
+  type: comment
+  updateauthor: leonerd
+  updated: 2015-11-20 14:11:21.0

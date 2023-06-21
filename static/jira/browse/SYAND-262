@@ -1,0 +1,24 @@
+---
+summary: The android SDK project cant build in AS
+---
+created: 2016-10-16 07:27:24.0
+creator: wjh
+description: |-
+  The build erorr:
+
+  Error:Execution failed for task ':matrix-sdk:processDebugResources'.
+  > com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command 'C:\Users\New\AppData\Local\Android\Sdk\build-tools\21.0.0\aapt.exe'' finished with non-zero exit value -1073741819
+id: '12945'
+key: SYAND-262
+number: '262'
+priority: '1'
+project: '10201'
+reporter: wjh
+status: '10100'
+type: '1'
+updated: 2016-10-16 07:27:24.0
+votes: '0'
+watches: '1'
+workflowId: '13045'
+---
+actions: null

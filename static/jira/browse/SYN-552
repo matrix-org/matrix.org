@@ -1,0 +1,348 @@
+---
+summary: /sync getting events for rooms I've left
+---
+created: 2015-12-16 14:54:11.0
+creator: kegan
+description: |-
+  I am not in the room {{#mozilla_#rust:matrix.org}} but I am getting events for it.
+
+  My {{/sync}} without any {{?since=}} param produces the following (related bit only):
+
+  Request:
+  {code}
+  GET https://matrix.org/_matrix/client/v2_alpha/sync?filter=5&timeout=30000&access_token=<redacted>
+  {code}
+
+  {code}
+  "rooms": {
+    "invite": {},
+    "leave": {},
+    "join": {
+      "!PcCidzjUKXHKImhTrB:matrix.org": {
+          "account_data": {
+              "events": [
+                  {
+                      "content": {
+                          "tags": {
+                              "m.lowpriority": {}
+                          }
+                      },
+                      "type": "m.tag"
+                  }
+              ]
+          },
+          "ephemeral": {
+              "events": [
+                  {
+                      "type": "m.receipt",
+                      "content": {
+                          "$1444907859441799YEfHK:matrix.org": {
+                              "read": {
+                                  "@erikj:jki.re": {
+                                      "ts": 1444909725097
+                                  }
+                              }
+                          },
+                          "$1444929057457876mvDpt:matrix.org": {
+                              "read": {
+                                  "@kegan:matrix.org": {
+                                      "ts": 1444929270669
+                                  }
+                              }
+                          },
+                          [...]
+                      }
+                  }
+              ]
+          },
+          "state": {
+              "events": [
+                  [...],
+                  {
+                      "content": {
+                          "creator": "@kegan:matrix.org"
+                      },
+                      "event_id": "$143524675924483oEHqk:matrix.org",
+                      "origin_server_ts": 1435246759283,
+                      "sender": "@kegan:matrix.org",
+                      "state_key": "",
+                      "type": "m.room.create",
+                      "unsigned": {
+                          "age": 15029426794
+                      }
+                  },
+                  [...],
+                  {
+                      "content": {
+                          "aliases": [
+                              "#mozilla_#rust:matrix.org"
+                          ]
+                      },
+                      "event_id": "$143524675924488mxivV:matrix.org",
+                      "origin_server_ts": 1435246759678,
+                      "sender": "@kegan:matrix.org",
+                      "state_key": "matrix.org",
+                      "type": "m.room.aliases",
+                      "unsigned": {
+                          "age": 15029426399
+                      }
+                  },
+                  [...],
+                  {
+                      "content": {
+                          "membership": "leave"
+                      },
+                      "event_id": "$1438068632152181SIWsE:matrix.org",
+                      "origin_server_ts": 1438068632211,
+                      "sender": "@kegan:matrix.org",
+                      "state_key": "@kegan:matrix.org",
+                      "type": "m.room.member",
+                      "unsigned": {
+                          "age": 12207553866,
+                          "replaces_state": "$14352522671614HlgPR:matrix.org"
+                      }
+                  },
+                  [...],
+                  {
+                      "content": {
+                          "ban": 50,
+                          "events": {
+                              "m.room.name": 100,
+                              "m.room.power_levels": 100
+                          },
+                          "events_default": 0,
+                          "invite": 0,
+                          "kick": 50,
+                          "redact": 50,
+                          "state_default": 50,
+                          "users": {
+                              "@appservice-irc:matrix.org": 100,
+                              "@erikj:jki.re": 100,
+                              "@kegan:matrix.org": 100
+                          },
+                          "users_default": 0
+                      },
+                      "event_id": "$1435247407180UkcVT:matrix.org",
+                      "origin_server_ts": 1435247407432,
+                      "sender": "@kegan:matrix.org",
+                      "state_key": "",
+                      "type": "m.room.power_levels",
+                      "unsigned": {
+                          "age": 15028778645,
+                          "replaces_state": "$1435247387170HyuCB:matrix.org"
+                      }
+                  },
+                  {
+                      "content": {
+                          "join_rule": "public"
+                      },
+                      "event_id": "$143524675924487ENJWh:matrix.org",
+                      "origin_server_ts": 1435246759524,
+                      "sender": "@kegan:matrix.org",
+                      "state_key": "",
+                      "type": "m.room.join_rules",
+                      "unsigned": {
+                          "age": 15029426553
+                      }
+                  },
+                  [...]
+              ]
+          },
+          "timeline": {
+              "limited": true,
+              "prev_batch": "t336664-8507948_66289_11392_260697_2660",
+              "events": [
+                  {
+                      "content": {
+                          "body": "does it make a difference if I use --release or not?",
+                          "msgtype": "m.text"
+                      },
+                      "event_id": "$145027524191739jloZh:matrix.org",
+                      "origin_server_ts": 1450275241913,
+                      "sender": "@mozilla_bhsausabsha:matrix.org",
+                      "type": "m.room.message",
+                      "unsigned": {
+                          "age": 944164
+                      }
+                  },
+                  {
+                      "content": {
+                          "body": "--release takes longer :3",
+                          "msgtype": "m.text"
+                      },
+                      "event_id": "$145027532091869CkvbE:matrix.org",
+                      "origin_server_ts": 1450275320584,
+                      "sender": "@mozilla_Xirdus:matrix.org",
+                      "type": "m.room.message",
+                      "unsigned": {
+                          "age": 865493
+                      }
+                  },
+                  [...]
+                  {
+                      "content": {
+                          "body": "In Rust, is there a type that is comparable to C#'s Double42?",
+                          "msgtype": "m.text"
+                      },
+                      "event_id": "$145027613592902jpCNG:matrix.org",
+                      "origin_server_ts": 1450276135572,
+                      "sender": "@mozilla_ErHong:matrix.org",
+                      "type": "m.room.message",
+                      "unsigned": {
+                          "age": 50505
+                      }
+                  }
+              ]
+          }
+    }
+  }
+  {code}
+
+  My filter {{5}} produces:
+
+  Request:
+  {code}
+  GET https://matrix.org/_matrix/client/v2_alpha/user/@kegan:matrix.org/filter/5?access_token=<redacted>
+  {code}
+
+  {code}
+  {
+      "room": {
+          "timeline": {
+              "limit": 8
+          }
+      }
+  }
+  {code}
+
+  The {{/sync}} response looks wrong because it is in {{join}} when my {{membership}} is {{leave}}. I'm guessing (hoping) that the same problem is making it appear in {{join}} and making live events for this room come down.
+
+  Example live response:
+
+  {code}
+  GET https://matrix.org/_matrix/client/v2_alpha/sync?filter=5&timeout=30000&since=s8510534_67913_11769_261007_2660&access_token=<redacted>
+  {code}
+
+  {code}
+  {
+    "next_batch":"s8510541_67916_11770_261007_2660",
+    "account_data":{
+      "events":[]
+    },
+    "rooms":{
+      "leave":{},
+      "join":{
+        "!PcCidzjUKXHKImhTrB:matrix.org":{
+          "timeline":{
+            "limited":false,
+            "prev_batch":"t336689-8510540_67916_11770_261007_2660",
+            "events":[
+              {
+                "origin_server_ts":1450277357446,
+                "sender":"@mozilla_bhsausabsha:matrix.org",
+                "event_id":"$145027735794325sJXOm:matrix.org",
+                "unsigned":{
+                  "age":164
+                },
+                "content":{
+                  "body":"*the main crate",
+                  "msgtype":"m.text"
+                },
+                "type":"m.room.message"
+              }
+            ]
+          },
+          "state":{
+            "events":[]
+          },
+          "ephemeral":{
+            "events":[]
+          },
+          "account_data":{
+            "events":[]
+          }
+        }
+      },
+      "invite":{}
+    },
+    "presence":{
+      "events":[]
+    }
+  }
+  {code}
+id: '12217'
+key: SYN-552
+number: '552'
+priority: '1'
+project: '10000'
+reporter: kegan
+status: '10001'
+type: '1'
+updated: 2016-11-07 18:28:44.0
+votes: '0'
+watches: '3'
+workflowId: '12320'
+---
+actions:
+- author: markjh
+  body: |-
+    {code}
+    select origin_server_ts, e.event_id, membership from events as e join room_memberships as m on e.event_id = m.event_id where m.room_id = '!PcCidzjUKXHKImhTrB:matrix.org' and user_id = '@kegan:matrix.org' order by origin_server_ts;
+     origin_server_ts |             event_id              | membership 
+    ------------------+-----------------------------------+------------
+        1435246759312 | $143524675924484UPVfM:matrix.org  | join
+        1435252267045 | $14352522671614HlgPR:matrix.org   | join
+        1438068632211 | $1438068632152181SIWsE:matrix.org | leave
+        1438614565606 | $14386145652310OXZzN:matrix.org   | join
+        1438897834613 | $1438897834192376KWpIJ:matrix.org | leave
+        1439198697102 | $1439198697319472xTZrN:matrix.org | join
+        1439211973906 | $14392119739431ESAPJ:matrix.org   | leave
+        1439373037727 | $143937303726681HOwZP:matrix.org  | join
+        1439373086587 | $143937308626695ankKB:matrix.org  | leave
+        1439383109186 | $143938310930013UoAsK:matrix.org  | join
+        1439388374713 | $14393883741199UOWWU:matrix.org   | leave
+        1439819915315 | $14398199155696ONYFW:matrix.org   | join
+    {code}
+
+    {code}
+    select * from current_state_events as c join room_memberships as m on c.event_id = m.event_id where m.room_id = '!PcCidzjUKXHKImhTrB:matrix.org' and user_id = '@kegan:matrix.org';
+                event_id             |            room_id             |     type      |     state_key     |            event_id             |      user_id      |      sender       |            room_id             | membership | forgotten 
+    ---------------------------------+--------------------------------+---------------+-------------------+---------------------------------+-------------------+-------------------+--------------------------------+------------+-----------
+     $14398199155696ONYFW:matrix.org | !PcCidzjUKXHKImhTrB:matrix.org | m.room.member | @kegan:matrix.org | $14398199155696ONYFW:matrix.org | @kegan:matrix.org | @kegan:matrix.org | !PcCidzjUKXHKImhTrB:matrix.org | join       |         0
+    {code}
+  created: 2015-12-16 15:50:32.0
+  id: '12478'
+  issue: '12217'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-12-16 15:50:32.0
+- author: markjh
+  body: |-
+    {code}
+    select b.event_id, c.membership from event_to_state_groups as a join state_groups_state as b on a.state_group = b.state_group join room_memberships as c on b.event_id =c.event_id where a.event_id = '$145027524191739jloZh:matrix.org' and b.state_key='@kegan:matrix.org';
+                 event_id              | membership 
+    -----------------------------------+------------
+     $1438068632152181SIWsE:matrix.org | leave
+    {code}
+  created: 2015-12-16 16:26:53.0
+  id: '12479'
+  issue: '12217'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-12-16 16:26:53.0
+- author: markjh
+  body: It looks like the state from "event_to_state_groups" and the state from "current_state" have got out of sync somehow.
+  created: 2015-12-16 16:33:03.0
+  id: '12480'
+  issue: '12217'
+  type: comment
+  updateauthor: markjh
+  updated: 2015-12-16 16:33:03.0
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1448'
+  created: 2016-11-07 18:28:44.0
+  id: '13751'
+  issue: '12217'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:28:44.0

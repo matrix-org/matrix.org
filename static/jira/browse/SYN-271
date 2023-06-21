@@ -1,0 +1,28 @@
+---
+summary: GCM support for pushers
+---
+created: 2015-02-13 14:00:07.0
+creator: dbkr
+description: ''
+id: '11045'
+key: SYN-271
+number: '271'
+priority: '3'
+project: '10000'
+reporter: dbkr
+status: '1'
+type: '1'
+updated: 2016-11-07 18:27:44.0
+votes: '0'
+watches: '2'
+workflowId: '11145'
+---
+actions:
+- author: richvdh
+  body: 'Migrated to github: https://github.com/matrix-org/synapse/issues/1285'
+  created: 2016-11-07 18:27:44.0
+  id: '13604'
+  issue: '11045'
+  type: comment
+  updateauthor: richvdh
+  updated: 2016-11-07 18:27:44.0

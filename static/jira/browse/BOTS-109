@@ -1,0 +1,30 @@
+---
+summary: Need a way to tell Matrix users when an IRC user they are PMing has disconnected
+---
+created: 2015-09-18 22:05:12.0
+creator: neb
+description: Submitted by @matthew:matrix.org
+id: '11887'
+key: BOTS-109
+number: '109'
+priority: '2'
+project: '10101'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-06-02 10:21:04.0
+status: '5'
+type: '1'
+updated: 2016-06-02 10:21:04.0
+votes: '0'
+watches: '2'
+workflowId: '11990'
+---
+actions:
+- author: kegan
+  body: https://github.com/matrix-org/matrix-appservice-irc/issues/43
+  created: 2016-06-02 10:21:04.0
+  id: '12949'
+  issue: '11887'
+  type: comment
+  updateauthor: kegan
+  updated: 2016-06-02 10:21:04.0

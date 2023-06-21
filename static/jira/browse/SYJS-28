@@ -1,0 +1,57 @@
+---
+summary: SDK tracks last_active_ago from presence events, but not when the event was received.
+---
+assignee: kegan
+created: 2015-09-24 00:26:46.0
+creator: neb
+description: |-
+  Submitted by @matthew:matrix.org
+  This makes last_active_ago less than useful.
+id: '11937'
+key: SYJS-28
+number: '28'
+priority: '2'
+project: '10204'
+reporter: neb
+resolution: '1'
+resolutiondate: 2016-04-18 01:41:51.0
+status: '5'
+type: '1'
+updated: 2016-04-18 01:41:51.0
+votes: '0'
+watches: '3'
+workflowId: '12040'
+---
+actions:
+- author: kegan
+  body: What would you prefer? I assume by "event was received" you mean {{origin_server_ts}} rather than anything else? We cannot say "timestamp when you get the event from the server and use that" because that will say everyone was active 0 seconds ago on the first sync.
+  created: 2015-11-03 10:30:57.0
+  id: '12302'
+  issue: '11937'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 10:30:57.0
+- author: matthew
+  body: My point is that we track a relative timestamp (last_active_ago), but we don't track what it's relative to.  If we track wallclock at the point we receive the presence event from the server, then at least when we revisit the event later (when rendering the UI a few hours later) we know what 'last_active_ago' was actually relative to.
+  created: 2015-11-03 10:54:52.0
+  id: '12308'
+  issue: '11937'
+  type: comment
+  updateauthor: matthew
+  updated: 2015-11-03 10:54:52.0
+- author: kegan
+  body: Ahhh I see what you mean now. {{last_active_ago}} returns the number of milliseconds since they were online/offline and that is relative to when the event comes down your stream. We should be stamping at that point so we can add an additional offset to determine the last active time a few hours later. Gotcha.
+  created: 2015-11-03 11:01:59.0
+  id: '12312'
+  issue: '11937'
+  type: comment
+  updateauthor: kegan
+  updated: 2015-11-03 11:01:59.0
+- author: matthew
+  body: fixed by https://github.com/matrix-org/matrix-js-sdk/pull/128
+  created: 2016-04-18 01:41:44.0
+  id: '12828'
+  issue: '11937'
+  type: comment
+  updateauthor: matthew
+  updated: 2016-04-18 01:41:44.0
