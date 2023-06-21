@@ -1,0 +1,5 @@
+[files]
+extend-exclude = [
+	"*.js*", "*.json", "*.svg",
+	"/static/jira"
+]
