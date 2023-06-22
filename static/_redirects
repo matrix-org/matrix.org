@@ -107,6 +107,9 @@
 # Dynamic old "latest" spec doc requests to the equivalent page in the new spec docs
 /docs/spec/rooms/* https://spec.matrix.org/latest/rooms/:splat
 
+# Rewrite old "latest" spec doc requests to the new spec docs
+/docs/spec/client_server/latest/* https://spec.matrix.org/latest/client-server-api/
+
 # Dynamic old landing page for the spec to the new spec docs
 /docs/spec/* https://spec.matrix.org/legacy/:splat
 
