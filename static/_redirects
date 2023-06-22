@@ -118,3 +118,4 @@
 /blog/faq/* /faq
 /docs/howtos/* /docs/legacy/:splat
 /docs/projects/clients/:client_placeholder /ecosystem/clients/:client_placeholder
+/myblog/* /other/blog/
