@@ -81,7 +81,7 @@ to Matrix conversations.
 }}
 
 You now have an account, and are using the web version of Element. We recommend
-you to [download the desktop version of Element](https://element.io/get-started#download),
+you to [download the desktop version of Element](https://element.io/download),
 which makes following Matrix links much easier. If you don't want to download a
 desktop app you can carry on with the web version.
 

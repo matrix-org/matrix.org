@@ -15,7 +15,7 @@ Community Managers can then tweak the Space to their needs.
 
 We strongly recommend getting familiar with Matrix as an individual. It's easy
 to use and to get started, but the amount of clients and providers in the wild
-can make things overwhelming for newcomers. Follow [the users documentation](/docs/users)
+can make things overwhelming for newcomers. Follow [the users documentation](/docs/chat_basics)
 to get started using Matrix as an individual.
 
 For this tutorial we're going to assume your provider (homeserver) is
@@ -130,7 +130,7 @@ you want for your community.
 
 For a good overview of what are roles, power levels, redactions, and how to keep
 a group safe at the room level, please head to
-[the group chat documentation](/docs/users/desktop/private-group-chat#keeping-the-group-safe).
+[the group chat documentation](/docs/chat_basics/private-group-chat/#keeping-the-group-safe).
 
 ## Advanced moderation
 
