@@ -85,8 +85,9 @@ doesn't accept bridges to new private systems.
 Finally, relying on bridges hosted by the Matrix.org Foundation creates
 unnecessary centralisation around it: if either the Matrix.org homeserver or the
 bridge hosted by the Matrix.org Foundation are down, you temporarily lose access
-to this system. To understand why, please check the [How It Works section of
-the bridges page](#).
+to this system. To understand why, please read the [app services](/docs/matrix-concepts/elements-of-matrix/#appservice-bridges-and-some-bots)
+and [room](/docs/matrix-concepts/rooms_and_events/) sections of the Matrix
+Concepts documentation.
 
 You can find a list of the systems that can be bridged to Matrix on the
 [bridges section](/ecosystem/bridges) of this website.
