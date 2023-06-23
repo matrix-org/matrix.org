@@ -1,4 +1,4 @@
-## Static redirects (2000 limit) ##
+## Static redirects (2000 limit, first match wins) ##
 
 # Redirect /packages to packages.matrix.org
 /packages https://packages.matrix.org
@@ -13,7 +13,9 @@
 /blog/home.html /
 /blog/try-matrix-now /try-matrix
 /blog/feed /atom.xml
+/blog/feed/ /atom.xml
 /blog/category/security/feed /category/security/atom.xml
+/blog/category/security/feed/ /category/security/atom.xml
 
 # Rewrite old landing page for the spec to the new spec docs
 /docs/spec https://spec.matrix.org
@@ -74,14 +76,24 @@
 
 # Static redirects for the zola rewrite
 /docs/guides/faq /faq
+/docs/guides/faq.html /faq
 /docs/guides/ /docs/legacy
+/clients /ecosystem/clients/
 /clients/ /ecosystem/clients/
+/bots /ecosystem/integrations/
 /bots/ /ecosystem/integrations/
+/sdks /ecosystem/sdks/
 /sdks/ /ecosystem/sdks/
+/bridges /ecosystem/bridges/
 /bridges/ /ecosystem/bridges/
+/hosting /ecosystem/hosting
 /hosting/ /ecosystem/hosting
+/otwsu /podcasts/otwsu
 /otwsu/ /podcasts/otwsu
 /twim /category/this-week-in-matrix/
+/twim/ /category/this-week-in-matrix/
+/docs/develop /docs/matrix-concepts/elements-of-matrix/
+/docs/develop/ /docs/matrix-concepts/elements-of-matrix/
 
 # GIT
 /code https://github.com/matrix-org
@@ -92,7 +104,7 @@
 /docs/spec/olm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/olm.md
 /docs/spec/megolm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/megolm.md
 
-## Dynamic redirects (100 limit) ##
+## Dynamic redirects (100 limit, first match wins) ##
 ## Keep these below the static redirects ##
 
 # Dynamic redirect /packages/X to packages.matrix.org/X
@@ -102,7 +114,25 @@
 /federationtester/* https://federationtester.matrix.org/:splat
 
 # Dynamic app specific rewrites that depend on the deployed version
-/blog/try-matrix-now/* /try-matrix/:splat
+/blog/try-matrix-now/* /try-matrix/
+
+# Blog feeds
+/blog/feed/* /atom.xml
+/blog/category/security/feed/* /category/security/atom.xml
+
+# Dynamic old "unstable" spec doc requests to the new spec docs
+/docs/spec/client_server/unstable/* https://spec.matrix.org/unstable/client-server-api
+/docs/spec/server_server/unstable/* https://spec.matrix.org/unstable/server-server-api
+/docs/spec/application_service/unstable/* https://spec.matrix.org/unstable/application-service-api
+/docs/spec/identity_service/unstable/* https://spec.matrix.org/unstable/identity-service-api
+/docs/spec/push_gateway/unstable/* https://spec.matrix.org/unstable/push-gateway-api
+
+# Dynamic old "latest" spec doc requests to the new spec docs
+/docs/spec/client_server/latest/* https://spec.matrix.org/latest/client-server-api
+/docs/spec/server_server/latest/* https://spec.matrix.org/latest/server-server-api
+/docs/spec/application_service/latest/* https://spec.matrix.org/latest/application-service-api
+/docs/spec/identity_service/latest/* https://spec.matrix.org/latest/identity-service-api
+/docs/spec/push_gateway/latest/* https://spec.matrix.org/latest/push-gateway-api
 
 # Dynamic old "latest" spec doc requests to the equivalent page in the new spec docs
 /docs/spec/rooms/* https://spec.matrix.org/latest/rooms/:splat
