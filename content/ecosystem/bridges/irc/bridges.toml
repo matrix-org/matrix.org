@@ -1,5 +1,5 @@
 [[bridges]]
-name = "mautrix-appservice-irc"
+name = "matrix-appservice-irc"
 maintainer = "The Matrix.org Foundation"
 summary = """
 An application service gateway from Matrix.org for bridging between IRC networks
