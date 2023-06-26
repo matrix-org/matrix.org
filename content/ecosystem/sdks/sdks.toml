@@ -382,7 +382,7 @@ featured_in = []
 [[sdks]]
 name = "Trixnity"
 maintainer = "Trixnity Team"
-maturity = "Beta"
+maturity = "Stable"
 language = "Kotlin"
 licence = "Apache-2.0"
 repository = "https://gitlab.com/trixnity/trixnity"
