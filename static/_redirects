@@ -104,6 +104,9 @@
 # Dynamic app specific rewrites that depend on the deployed version
 /blog/try-matrix-now/* /try-matrix/:splat
 
+# Unbreaking Synapse links, see https://github.com/matrix-org/synapse/issues/15825
+/docs/projects/try-matrix-now.html /ecosystem/clients
+
 # Dynamic old "latest" spec doc requests to the equivalent page in the new spec docs
 /docs/spec/rooms/* https://spec.matrix.org/latest/rooms/:splat
 
