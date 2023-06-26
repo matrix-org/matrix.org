@@ -1,6 +1,6 @@
 [[bridges]]
-name = "mautrix-linkedin"
-maintainer = "sumner"
+name = "go-skype-bridge"
+maintainer = "kelaresg"
 summary = """
 A library for bridging matrix and skype，api lib using
 [go-skypeapi](https://github.com/kelaresg/go-skypeapi).
