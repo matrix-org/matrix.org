@@ -569,3 +569,16 @@ featured_in = []
 description = """
 Matrix client library for MicroPython.
 """
+
+[[sdks]]
+name = "matrix-communication-client"
+maintainer = "Réda Housni Alaoui"
+maturity = "Stable"
+language = "Java"
+licence = "MIT"
+repository = "https://github.com/Cosium/matrix-communication-client"
+purpose = ["client", "bot"]
+featured_in = []
+description = """
+A java client for the Matrix protocol.
+"""
