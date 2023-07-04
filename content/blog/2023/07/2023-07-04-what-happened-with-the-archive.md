@@ -66,16 +66,16 @@ out there but is commonly used in the Matrix community. The visibility settings
 described above are translated as follows in Element, by decreasing order of
 openness:
 
-![A screenshot of matrix.to showing a preview of Matrix HQ](./1-matrix-hq.png)
+![A screenshot of matrix.to showing a preview of Matrix HQ](/blog/img/1-matrix-hq.png)
 
 An example of a world-readable room (with history visibility set to "Anyone" in
 Element) is [Matrix HQ](https://matrix.to/#/#matrix:matrix.org). When trying to
 reach it via [matrix.to](https://matrix.to), you can pick Element in a browser,
 and it will show you a preview of the conversation.
 
-![A screenshot of matrix.to asking which client to use](./2-continue-in-browser.png)
+![A screenshot of matrix.to asking which client to use](/blog/img/2-continue-in-browser.png)
 
-![A screenshot of Element Web showing the history of the Matrix HQ room](./3-room-history.png)
+![A screenshot of Element Web showing the history of the Matrix HQ room](/blog/img/3-room-history.png)
 
 What is not necessarily obvious here is that Element Web creates a guest user
 _who never joins the room _in order to peek into it. Indeed, the guest is only
@@ -123,7 +123,7 @@ configuration. The Matrix user needs to specify which is the IRC network and
 channel they want to bridge to, and the nick of the IRC op who can approve that
 request.
 
-!["A screenshot of a widget offering to plumb a Matrix room to IRC"](./4-irc-link-widget.png)
+!["A screenshot of a widget offering to plumb a Matrix room to IRC"](/blog/img/4-irc-link-widget.png)
 
 Plumbing a room in this fashion requires someone with sufficient privileges in
 the IRC channel to approve the request. In plumbed rooms, the Matrix user who
