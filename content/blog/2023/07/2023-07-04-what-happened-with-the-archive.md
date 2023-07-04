@@ -5,9 +5,6 @@ title = "What happened with archive.matrix.org"
 [taxonomies]
 author = ["Matthew", "Thib"]
 category = ["General"]
-
-[extra]
-image = "https://matrix.org/blog/img/matrix-logo.png"
 +++
 
 We launched the Matrix Public Archive [publicly on June 2nd](https://www.youtube.com/watch?v=ULbvBIwiGEI)

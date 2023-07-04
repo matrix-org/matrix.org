@@ -5,9 +5,6 @@ title = "Deportalling from Libera Chat"
 [taxonomies]
 author = ["Neil Johnson"]
 category = ["Bridges"]
-
-[extra]
-image = "https://matrix.org/blog/img/matrix-logo.png"
 +++
 
 On Monday 3rd July, the Libera.Chat IRC network shared that [they would no longer accept portalled rooms over the Matrix.org &lt;> Libera.Chat bridge](https://libera.chat/news/matrix-deportalling).
