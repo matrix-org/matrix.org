@@ -152,3 +152,5 @@ conversation.
 Likewise, the folks at Libera are keen to stress that this is not necessarily a
 permanent change, and that in future, they would be open to reconsidering the
 move should the support burden of the bridge reduce.
+
+So that’s it, we’ll be working with the community over the coming month to help with the transition.
