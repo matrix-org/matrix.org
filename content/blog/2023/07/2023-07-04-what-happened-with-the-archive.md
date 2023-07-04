@@ -1,5 +1,5 @@
 +++
-date = "2023-07-04T14:00:00Z"
+date = "2023-07-04T14:24:00Z"
 title = "What happened with archive.matrix.org"
 
 [taxonomies]
