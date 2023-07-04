@@ -4,7 +4,7 @@ title = "Deportalling from Libera Chat"
 
 [taxonomies]
 author = ["Neil Johnson"]
-category = ["General"]
+category = ["Bridges"]
 
 [extra]
 image = "https://matrix.org/blog/img/matrix-logo.png"
