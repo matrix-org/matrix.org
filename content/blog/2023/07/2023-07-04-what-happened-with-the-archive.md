@@ -66,7 +66,7 @@ out there but is commonly used in the Matrix community. The visibility settings
 described above are translated as follows in Element, by decreasing order of
 openness:
 
-![A screenshot of matrix.to showing a preview of Matrix HQ](/blog/img/1-matrix-hq.png)
+![A screenshot of Element history visibility settings](/blog/img/element-visibility-settings.png)
 
 An example of a world-readable room (with history visibility set to "Anyone" in
 Element) is [Matrix HQ](https://matrix.to/#/#matrix:matrix.org). When trying to
@@ -75,7 +75,7 @@ and it will show you a preview of the conversation.
 
 ![A screenshot of matrix.to asking which client to use](/blog/img/2-continue-in-browser.png)
 
-![A screenshot of Element Web showing the history of the Matrix HQ room](/blog/img/3-room-history.png)
+![A screenshot of matrix.to showing a preview of Matrix HQ](/blog/img/3-room-history.png)
 
 What is not necessarily obvious here is that Element Web creates a guest user
 _who never joins the room _in order to peek into it. Indeed, the guest is only
