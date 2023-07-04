@@ -1,6 +1,6 @@
 +++
 title = "Matrix Foundation Privacy Policy"
-version = "3.0.0"
+version = "3.1.0"
 +++
 
 Please read this document carefully before accessing or using this service.
@@ -261,6 +261,15 @@ You can access all that we collect about you by using any compatible Matrix clie
 
 In unencrypted and encrypted rooms, users connecting to the matrix.org homeserver (directly or over federation) will be able to see messages and files according to the access permissions configuration of the relevant room. This data is stored in the format it was received on our servers, and can be viewed by Element engineers (employees and contractors) under the conditions outlined below.
 
+Rooms have different visibility settings which are determined by the room administrators. The history visibility possibilities are the following, by increasing order of openness (least open first):
+
+- `joined`: people need to join the room to see the history, and will only see the messages sent after they joined. +
+- `invited`: people can only see messages sent after they were joined, no history is visible before that point.
+- `shared`: people need to join the room to see the history, but will then see the history up to when this visibility setting was set (the change is not retroactive).
+- `world_readable`: everyone can see the room history without even joining the room.
+
+If you share information in a room set to world_readable this might be available to people outside the Matrix ecosystem and indexed by search engines, via projects such as [archive.matrix.org](archive.matrix.org). Please ensure that you double check the settings of each room before you participate and always avoid sharing personal and sensitive data in unencrypted rooms.
+
 In encrypted rooms, the data is stored in our databases but the encryption keys are stored only on your devices or by yourself. Users can optionally backup an encrypted copy of their keys on the Service to aid recovery if they lose all their keys and devices. This key backup is encrypted by a recovery key that only the user has access to. Element (the company, employees, and contractors) are unable to read your message content in our database. If you lose access to your encryption keys, you lose access to your messages forever.
 
 We use HTTPS to transfer all data. End-to-end encrypted messaging data is stored encrypted using AES-256, using message keys generated using the Olm and Megolm cryptographic ratchets.
@@ -325,5 +334,6 @@ If you want to make a complaint about the way we have processed your personal in
 - 2.1.0 - clarifications on processors - November 2022
 - 3.0.0 - annual review and updates to processors - June 2023
 - 3.0.1 - minor clarification of 2.12 - June 2023
+- 3.1.0 - include references to archive.matrix.org and room visibility settings - July 2023
 
 **A note to other startups**: this document was heavily inspired by Balsamiq's plain English ToS document. We were impressed by their championing of plain English, and wanted to reproduce that as much as possible in our own legal documentation. Feel free to draw similar inspiration from this document, though be sure to get any documents you produce checked over by a lawyer. Good luck!
