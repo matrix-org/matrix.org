@@ -80,6 +80,6 @@ licence-{{ client.licence | slugify }}
 {% if packages.google_play_store or packages.f_droid %}<div class="platform-pill">Android</div>{% endif %}
 {% if packages.windows_installer %}<div class="platform-pill">Windows</div>{% endif %}
 {% if packages.macos_installer %}<div class="platform-pill">macOS</div>{% endif %}
-{% if packages.flathub %}<div class="platform-pill">Linux</div>{% endif %}
+{% if packages.flathub or packages.other_linux_link %}<div class="platform-pill">Linux</div>{% endif %}
 {% if packages.webapp %}<div class="platform-pill">Web</div>{% endif %}
 {% endmacro %}
