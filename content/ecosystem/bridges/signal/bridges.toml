@@ -8,7 +8,7 @@ Communicates with Signal using [signald](https://gitlab.com/signald/signald).
 maturity = "Beta"
 language = "Python"
 license = "AGPL-3.0-or-later"
-docs = "https://docs.mau.fi/bridges/python/setup.html?bridge=telegram"
+docs = "https://docs.mau.fi/bridges/python/setup.html?bridge=signal"
 repo = "https://github.com/mautrix/signal"
 room = "#signal:maunium.net"
 featured = true

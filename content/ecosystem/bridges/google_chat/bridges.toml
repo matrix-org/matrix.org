@@ -5,7 +5,7 @@ summary = "A Matrix-Google Chat puppeting bridge"
 maturity = "Beta"
 language = "Python"
 license = "AGPL-3.0-or-later"
-docs = "https://docs.mau.fi/bridges/python/googlechat/index.html"
+docs = "https://docs.mau.fi/bridges/python/setup.html?bridge=googlechat"
 repo = "https://github.com/mautrix/googlechat"
 room = "#googlechat:maunium.net"
 featured = true
