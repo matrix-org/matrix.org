@@ -7,8 +7,8 @@ author = ["Matthew", "Thib"]
 category = ["General"]
 +++
 
-We launched the Matrix Public Archive [publicly on June 2nd](https://www.youtube.com/watch?v=ULbvBIwiGEI)
-2023. We decided to take it down on Sunday June 25 out of precaution after a
+We launched the Matrix Public Archive [publicly on June 2nd, 2023](https://www.youtube.com/watch?v=ULbvBIwiGEI).
+We decided to take it down on Sunday, June 25th out of precaution after a
 member of OFTC staff warned us that the archive made the content of two OFTC IRC
 channels bridged to Matrix available on the Internet.
 
@@ -75,7 +75,7 @@ and it will show you a preview of the conversation.
 ![A screenshot of matrix.to showing a preview of Matrix HQ](/blog/img/3-room-history.png)
 
 What is not necessarily obvious here is that Element Web creates a guest user
-_who never joins the room _in order to peek into it. Indeed, the guest is only
+_who never joins the room_ in order to peek into it. Indeed, the guest is only
 created to be able to use Element, and then the guest is looking at a preview of
 the room (as defined in the [Room Previews section of the spec](https://spec.matrix.org/v1.7/client-server-api/#room-previews)):
 they're able to read the history without ever joining. All of this is defined
@@ -158,9 +158,9 @@ surprise for them that their room history was in the Matrix Public Archive at
 all.
 
 When matrix.to was introduced, some room administrators also set up their rooms
-to world_readable so potential joiners could peek at what was happening in the
+to `world_readable` so potential joiners could peek at what was happening in the
 room. Earlier in Matrix history, guest accounts were popular in some communities
-and people also made their room world_readable to onboard guests more easily.
+and people also made their room `world_readable` to onboard guests more easily.
 All of this leads us to the same two issues today.
 
 First, it should be made clearer in the UI of archive.matrix.org on *why* a room
@@ -182,7 +182,7 @@ the whole history of the room.
 
 In retrospect, this was a thinko - `shared` history doesn't mean you expect
 anonymous users to be able to read history (otherwise you'd have set it
-world_readable), and we've subsequently [merged a fix](https://github.com/matrix-org/matrix-public-archive/pull/239)
+`world_readable`), and we've subsequently [merged a fix](https://github.com/matrix-org/matrix-public-archive/pull/239)
 kindly provided by tulir to address this.
 
 ## Next up
@@ -196,7 +196,7 @@ setting.
 
 Looking at [Libera Chat's Public logging policy](https://libera.chat/policies/#public-logging)
 there might be a way to make the bridge change the topic to be explicit about
-the channel being publicly logged when the Matrix room is world_readable. This
+the channel being publicly logged when the Matrix room is `world_readable`. This
 feature doesn't exist yet, so we would rather prevent the archive from logging
 any room bridged to their network.
 
@@ -205,7 +205,7 @@ We're investigating:
 - Making it clear in the archive.matrix.org UI why a given room is world
   readable (and thus showing up in the interface)
 - Renaming the archive (as Matrix Viewer?)
-- Avoiding bots ever joining rooms on behalf of the system; world_readable
+- Avoiding bots ever joining rooms on behalf of the system; `world_readable`
   privileges should mean by definition that nothing needs to join the room.
 - MSC2291 to act like [web's Robots Exclusion Protocol](https://en.wikipedia.org/wiki/Robots.txt),
   at the room level
