@@ -1,7 +1,7 @@
 +++
 title = "Introducing P2P Matrix"
 path = "/blog/2020/06/02/introducing-p2p-matrix"
-
+aliases = ["/blog/2020/06/02/introducing-p-2-p-matrix/"]
 [taxonomies]
 author = ["Matthew Hodgson"]
 category = ["General"]
