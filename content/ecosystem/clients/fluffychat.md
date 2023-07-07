@@ -27,7 +27,7 @@ google_play_store.app_id = "chat.fluffy.fluffychat"
 f_droid.app_id = "chat.fluffy.fluffychat"
 apple_app_store = { app_id = "id1551469600", org = "fluffychat" }
 flathub.app_id = "im.fluffychat.Fluffychat"
-webapp = "https://fluffychat.im"
+webapp = "https://fluffychat.im/web"
 +++
 
 Cute instant messaging app for all platforms.
