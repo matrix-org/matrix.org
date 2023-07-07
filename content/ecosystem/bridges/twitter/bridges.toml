@@ -22,4 +22,4 @@ redactions = true
 reactions = true
 presence = false
 typing_notifications = false
-read_receipts = false
+read_receipts = true

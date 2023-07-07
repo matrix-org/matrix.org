@@ -2,7 +2,7 @@
 title = "gomuks"
 [extra]
 maintainer = "Tulir"
-licence = "AGPL-3.0"
+licence = "AGPL-3.0-or-later"
 language = "Go"
 last_release = "2022-11-19"
 maturity = "Beta"
@@ -18,11 +18,10 @@ widgets = false
 threads = false
 sso = true
 multi_account = false
-multi_language = true
+multi_language = false
 [extra.packages]
 other_linux_link = "https://github.com/tulir/gomuks/releases"
-windows_installer = "https://github.com/tulir/gomuks/releases"
-maxos_installer = "https://github.com/tulir/gomuks/releases"
+macos_installer = "https://github.com/tulir/gomuks/releases"
 +++
 
 A terminal Matrix client written in Go.

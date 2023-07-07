@@ -16,12 +16,10 @@ privilege.platform = "User" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
 [bridges.supports]
 dm = true
-channels = true
+groups = true
 message_media = true
 mentions = true
 redactions = true
-editing = true
 reactions = true
-presence = true
 typing_notifications = true
-read_receipts = false
+read_receipts = true

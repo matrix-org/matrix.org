@@ -16,6 +16,7 @@ privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, Non
 [bridges.supports]
 dm = true
 groups = true
+communities = true
 message_media = true
 mentions = true
 redactions = true

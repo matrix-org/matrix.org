@@ -21,6 +21,30 @@ group_chats = true
 history_from_android = true
 
 [[bridges]]
+name = "mautrix-gmessages"
+maintainer = "Tulir"
+summary = "A Matrix-Google Messages puppeting bridge"
+maturity = "Alpha"
+language = "Go"
+license = "AGPL-3.0-or-later"
+docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=gmessages"
+repo = "https://github.com/mautrix/gmessages"
+room = "#gmessages:maunium.net"
+featured = true
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+sms = true
+mms = true
+rcs = true
+reactions = false
+replies = false
+typing_notifications = false
+read_receipts = false
+group_chats = true
+history_from_android = true
+
+[[bridges]]
 name = "matrix-sms-bridge"
 maintainer = "benkuly"
 summary = """
