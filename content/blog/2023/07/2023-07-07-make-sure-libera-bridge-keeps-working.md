@@ -75,10 +75,9 @@ need to:
 2. Plumb it to the IRC channel it was bridged to
 3. Redirect the users of the portalled room to the new plumbed room.
 
-The third step can be done automatically by sending a “tombstone” in the Matrix
-room, which will make the room read only and redirect all its current members to
-the new room.
-
+The third step can will be done automatically by the bridge in portalled rooms.
+On July 31st, it will make the room read only and list the public rooms which
+are plumbed to the same IRC channel.
 
 ### Create a brand new room
 
