@@ -26,8 +26,8 @@
         <updated>{{ page.updated | default(value=page.date) | date(format="%+") }}</updated>
         <author>
           <name>
-            {%- if page.authors -%}
-              {{ page.authors[0] }}
+            {%- if page.taxonomies.authors -%}
+              {{ page.taxonomies.authors[0] }}
             {%- elif config.author -%}
               {{ config.author }}
             {%- else -%}
