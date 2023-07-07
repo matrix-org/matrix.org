@@ -16,6 +16,7 @@ need to be turned into plumbed rooms before July 31st**. All of this might be a
 bit obscure, so let’s walk together through these concepts and give you the
 tools to make sure the bridge keeps working for you.
 
+<!-- more -->
 
 ## Am I concerned?
 
