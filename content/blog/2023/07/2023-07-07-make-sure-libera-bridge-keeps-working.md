@@ -62,7 +62,7 @@ channels” section.
 ![](/blog/img/libera-widget-linked-section.png)
 
 If you see results in that section, the room is plumbed, and it will keep
-working. If you don’t see any result in that section, the room is plumbed and
+working. If you don’t see any result in that section, the room is portalled and
 the bridge will stop working by July 31st.
 
 
