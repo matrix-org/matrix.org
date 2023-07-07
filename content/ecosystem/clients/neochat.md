@@ -24,7 +24,7 @@ multi_language = true
 windows_installer = "https://www.microsoft.com/store/apps/9PNXWVNRC29H"
 macos_installer = "https://binary-factory.kde.org/search/?q=neochat"
 #f_droid.app_id = "" https://community.kde.org/Android/FDroid
-flathub.app_id = "org.kde.NeoChat"
+flathub.app_id = "org.kde.neochat"
 +++
 
 A Matrix client for desktop and mobile
