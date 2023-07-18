@@ -29,9 +29,9 @@ We have been working on integrating MLS into Matrix since 2020 to take advantage
 
 With other interested parties, we’re continuing to develop best practices for MLS that will work without modification in a decentralized environment which should be available for testing later this year.
 
-We should also highlight that much of the work to create and use MLS in a decentralized environment comes from a commercial arrangement between BWI and Element to create ‘MLS over Matrix’ for use by the German Armed Forces, to further secure its own solution BwMessenger and to make it interoperable with other messaging products.
+We should also highlight that much of the work to create and use MLS in a decentralized environment comes from a commercial arrangement between BWI and Element to create ‘Matrix over MLS’ for use by the German Armed Forces, to further secure its own solution BwMessenger and to make it interoperable with other messaging products.
 
-BWI’s funding of Element’s open source development of MLS has massively accelerated support for MLS over Matrix. It’s why commercial arrangements with vendors building on Matrix are so important for Element, who employs the majority of the Matrix core team. Matrix vendors can also now directly financially support The Matrix.org Foundation as paying members too.
+BWI’s funding of Element’s open source development of MLS has massively accelerated support for Matrix over MLS. It’s why commercial arrangements with vendors building on Matrix are so important for Element, who employs the majority of the Matrix core team. Matrix vendors can also now directly financially support The Matrix.org Foundation as paying members too.
 
 You can keep track of our progress at [https://arewemlsyet.com](https://arewemlsyet.com)
 
