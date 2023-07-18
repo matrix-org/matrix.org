@@ -6,6 +6,9 @@ path = "/blog/2023/07/a-giant-leap-with-mls"
 [taxonomies]
 author = ["Matthew", "Hubert"]
 category = ["Encryption"]
+
+[extra]
+image = "https://matrix.org/blog/img/mls-matrix.png"
 +++
 
 Hi all,
