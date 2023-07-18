@@ -2,9 +2,10 @@
 
 ## New Post Checklist
 
--   [ ] Links are linkified
-  -   [ ] Bare links are surrounded by `<>` (required since Zola follows commonmark strictly)
-  -   [ ] Links with names are of the pattern `[Name](URL)`
--   [ ] The frontmatter is valid
-  -   [ ] `date` frontmatter contains a time with timezone (This ensures that posts are properly ordered in Feed Readers)
-  -   [ ] A `category` and an `author` taxonomy are set
+- [ ] Links are linkified
+  - [ ] Bare links are surrounded by `<>` (required since Zola follows commonmark strictly)
+  - [ ] Links with names are of the pattern `[Name](URL)`
+- [ ] The frontmatter is valid
+  - [ ] `date` frontmatter contains a time with timezone (This ensures that posts are properly ordered in Feed Readers)
+  - [ ] A `category` and an `author` taxonomy are set
+    - [ ] Check at https://matrix.org/author/ for already existing author naming conventions to avoid duplicate authors
