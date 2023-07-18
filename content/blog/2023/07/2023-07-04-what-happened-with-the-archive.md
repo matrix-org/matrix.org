@@ -3,7 +3,7 @@ date = "2023-07-04T14:24:00Z"
 title = "What happened with archive.matrix.org"
 
 [taxonomies]
-author = ["Matthew", "Thib"]
+author = ["Matthew Hodgson", "Thib"]
 category = ["General"]
 +++
 

@@ -4,7 +4,7 @@ date = "2022-08-31T18:13:45Z"
 path = "/blog/2022/08/31/security-releases-matrix-js-sdk-19-4-0-and-matrix-react-sdk-3-53-0"
 
 [taxonomies]
-author = ["Denis Kasak (dkasak)"]
+author = ["Denis Kasak"]
 category = ["Releases", "Security"]
 +++
 

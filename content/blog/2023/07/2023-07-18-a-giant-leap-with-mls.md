@@ -4,7 +4,7 @@ title = "A giant leap forwards for encryption with MLS"
 path = "/blog/2023/07/a-giant-leap-with-mls"
 
 [taxonomies]
-author = ["Matthew", "Hubert"]
+author = ["Matthew Hodgson", "Hubert Chathi"]
 category = ["Encryption"]
 
 [extra]
