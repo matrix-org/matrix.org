@@ -32,7 +32,7 @@ with us first.
 On receipt, the security team will:
 
 - Review the report, verify the vulnerability and respond with confirmation
-  and/or further information requests; we typically reply within 24 hours.
+  and/or further information requests.
 - Once the reported security bug has been addressed we will notify the
   Researcher, who is then welcome to optionally disclose publicly.
 
