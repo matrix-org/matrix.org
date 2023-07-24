@@ -90,7 +90,7 @@ behaviour.
 ### Plumb it to IRC
 
 In Element, make sure you’re in the room you have just created, and click on the
-top right `i` icon to open the right panel. Then at thebottom click on “Add
+top right `i` icon to open the right panel. Then at the bottom click on “Add
 widgets, bridges & bots” like you did in the portalled room.
 
 In the “Bridges” section, click on “IRC Bridge (Libera.chat)” and “Add”. Scroll
