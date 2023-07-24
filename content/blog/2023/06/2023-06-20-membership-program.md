@@ -3,7 +3,7 @@ title = "Announcing the Matrix.org Foundation Membership program!"
 date = "2023-06-20T13:00:00Z"
 
 [taxonomies]
-author = ["Amandine"]
+author = ["Amandine Le Pape"]
 category = ["Foundation"]
 
 [extra]

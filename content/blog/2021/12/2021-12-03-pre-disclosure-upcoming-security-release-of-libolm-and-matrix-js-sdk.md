@@ -3,7 +3,7 @@ title = "Pre-disclosure: upcoming security release of libolm and matrix-js-sdk"
 path = "/blog/2021/12/03/pre-disclosure-upcoming-security-release-of-libolm-and-matrix-js-sdk"
 
 [taxonomies]
-author = ["Matrix Security"]
+author = ["Matrix Security Team"]
 category = ["Security"]
 +++
 

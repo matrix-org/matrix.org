@@ -3,7 +3,7 @@ title = "Synapse 0.22.0 released!"
 path = "/blog/2017/07/06/synapse-0-22-0-released"
 
 [taxonomies]
-author = ["Tom Lant"]
+author = ["Thomas Lant"]
 category = ["Tech"]
 +++
 

@@ -3,7 +3,7 @@ title = "Matrix.org homeserver privacy policy and terms of use being enforced to
 path = "/blog/2018/05/29/matrix-org-homeserver-privacy-policy-and-terms-of-use-being-enforced-today"
 
 [taxonomies]
-author = ["Tom Lant"]
+author = ["Thomas Lant"]
 category = ["Privacy"]
 +++
 

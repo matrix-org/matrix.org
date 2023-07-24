@@ -3,7 +3,7 @@ title = "GDPR on matrix.org"
 path = "/blog/2018/05/25/gdpr-on-matrix-org"
 
 [taxonomies]
-author = ["Tom Lant"]
+author = ["Thomas Lant"]
 category = ["Privacy"]
 +++
 

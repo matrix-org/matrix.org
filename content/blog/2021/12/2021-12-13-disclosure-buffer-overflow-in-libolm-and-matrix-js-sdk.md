@@ -5,7 +5,7 @@ updated = "2021-12-13T16:11:07Z"
 path = "/blog/2021/12/13/disclosure-buffer-overflow-in-libolm-and-matrix-js-sdk"
 
 [taxonomies]
-author = ["Matrix Security"]
+author = ["Matrix Security Team"]
 category = ["Security"]
 +++
 

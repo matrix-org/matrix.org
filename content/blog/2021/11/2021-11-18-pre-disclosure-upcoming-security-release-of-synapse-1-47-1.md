@@ -3,7 +3,7 @@ title = "Pre-disclosure: upcoming security release of Synapse 1.47.1"
 path = "/blog/2021/11/18/pre-disclosure-upcoming-security-release-of-synapse-1-47-1"
 
 [taxonomies]
-author = ["Matrix Security"]
+author = ["Matrix Security Team"]
 category = ["Security"]
 +++
 

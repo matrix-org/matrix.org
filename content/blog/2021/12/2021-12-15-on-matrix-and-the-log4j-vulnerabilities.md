@@ -4,7 +4,7 @@ date = "2021-12-15T12:58:02Z"
 path = "/blog/2021/12/15/on-matrix-and-the-log4j-vulnerabilities"
 
 [taxonomies]
-author = ["Matrix Security"]
+author = ["Matrix Security Team"]
 category = ["Security"]
 +++
 

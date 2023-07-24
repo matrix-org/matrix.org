@@ -5,7 +5,7 @@ updated = "2023-05-24T13:36:50Z"
 path = "/blog/2023/05/24/disclosing-synapse-security-advisories"
 
 [taxonomies]
-author = ["Denis Kasak (dkasak)"]
+author = ["Denis Kasak"]
 category = ["Security"]
 +++
 

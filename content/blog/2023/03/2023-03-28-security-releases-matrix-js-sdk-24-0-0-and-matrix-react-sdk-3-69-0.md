@@ -3,7 +3,7 @@ title = "Security releases: matrix-js-sdk 24.0.0 and matrix-react-sdk 3.69.0"
 path = "/blog/2023/03/28/security-releases-matrix-js-sdk-24-0-0-and-matrix-react-sdk-3-69-0"
 
 [taxonomies]
-author = ["Denis Kasak (dkasak)"]
+author = ["Denis Kasak"]
 category = ["Releases", "Security"]
 +++
 

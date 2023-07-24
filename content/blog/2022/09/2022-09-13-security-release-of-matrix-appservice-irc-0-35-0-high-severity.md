@@ -4,7 +4,7 @@ date = "2022-09-13T16:56:43Z"
 path = "/blog/2022/09/13/security-release-of-matrix-appservice-irc-0-35-0-high-severity"
 
 [taxonomies]
-author = ["Denis Kasak (dkasak)"]
+author = ["Denis Kasak"]
 category = ["Releases", "Security"]
 +++
 

@@ -4,7 +4,7 @@ date = "2022-09-23T14:53:12Z"
 path = "/blog/2022/09/23/pre-disclosure-upcoming-critical-security-release-of-matrix-sd-ks-and-clients"
 
 [taxonomies]
-author = ["Matrix Security"]
+author = ["Matrix Security Team"]
 category = ["Security"]
 +++
 

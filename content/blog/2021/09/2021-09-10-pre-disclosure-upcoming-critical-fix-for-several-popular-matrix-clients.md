@@ -4,7 +4,7 @@ date = "2021-09-10T16:43:49Z"
 path = "/blog/2021/09/10/pre-disclosure-upcoming-critical-fix-for-several-popular-matrix-clients"
 
 [taxonomies]
-author = ["Matrix Security"]
+author = ["Matrix Security Team"]
 category = ["Security"]
 +++
 
