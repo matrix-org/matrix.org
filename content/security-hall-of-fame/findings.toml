@@ -1,4 +1,22 @@
 [[findings]]
+date = "2023-03-04"
+reporter.name = "Sleroq"
+reporter.link = "https://github.com/sleroq"
+summary = """
+Discovered a DoS attack on Dendrite by sending a specially crafted event, making it spend a lot of CPU.
+"""
+project = "Dendrite"
+
+[[findings]]
+date = "2023-02-10"
+reporter.name = "Dirk Klimpel - BWI GmbH"
+reporter.link = "https://github.com/dklimpel"
+summary = """
+Discovered a deactivated user could still log in in certain situations.
+"""
+project = "Synapse"
+
+[[findings]]
 date = "2022-10-18"
 reporter.name = "aoxsin"
 reporter.link = "https://twitter.com/aoxsin"
@@ -45,6 +63,15 @@ Discovered issue with PIN screen being bypassable by opening the application in
 landscape mode. Fixed in [Element iOS 1.9.1](https://github.com/vector-im/element-ios/releases/tag/v1.9.1).
 """
 project = "Element iOS"
+
+[[findings]]
+date = "2022-06-23"
+reporter.name = "Ethan Reynolds"
+reporter.link = "https://github.com/reynoldsme/"
+summary = """
+Discovered a way to crash the bridge by sending a message into a bridged voice room.
+"""
+project = "matrix-appservice-discord"
 
 [[findings]]
 date = "2022-06-06"
