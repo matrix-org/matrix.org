@@ -119,6 +119,9 @@
 # Blog feeds
 /blog/feed/* /atom.xml
 /blog/category/security/feed/* /category/security/atom.xml
+/blog/category/:category_id /category/:category_id
+/blog/category/:category_id/ /category/:category_id
+/blog/category/:category_id/atom.xml /category/:category_id/atom.xml
 
 # Dynamic old "unstable" spec doc requests to the new spec docs
 /docs/spec/client_server/unstable/* https://spec.matrix.org/unstable/client-server-api
