@@ -1,0 +1,132 @@
+{% extends "page.html" %}
+{% block head_extra %}
+<meta name="description" content="{{ page.extra.summary }}">
+<script type="module" src="/js/public-instances.js"></script>
+{% endblock head_extra %}
+{% block content %}
+<div class="page-header">
+    <div class="hero-block">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.extra.summary }}</p>
+    </div>
+</div>
+
+<div class="content public-instances">
+
+    <div class="total-and-filters">
+        <div class="total">All servers (90)</div>
+        <div class="filters">
+            <div class="filter-wrap">
+                <button id="filter-structure" class="filter">
+                    Structure
+                    <div class="divider"></div>
+                    <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
+                </button>
+                <div id="filter-structure-menu" class="filter-menu">
+                    <div class="filter-option">
+                        <input type="checkbox" id="structure-individual" checked>
+                        <label for="structure-individual">Individual administrator</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" checked id="structure-nonprofit">
+                        <label for="structure-nonprofit">Non-profit</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="structure-paid" checked>
+                        <label for="structure-paid">Paid with support</label>
+                    </div>
+                    <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+                </div>
+            </div>
+            <div class="filter-wrap">
+                <button id="filter-signup" class="filter">
+                    Registration
+                    <div class="divider"></div>
+                    <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
+                </button>
+                <div id="filter-signup-menu" class="filter-menu">
+                    <div class="filter-option">
+                        <input type="checkbox" checked id="signup-open">
+                        <label for="signup-open">Unfiltered registrations</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" checked id="signup-conditional">
+                        <label for="signup-confitional">Conditional</label>
+                    </div>
+                    <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+                </div>
+            </div>
+            <div class="filter-wrap">
+                <button id="filter-location" class="filter">
+                    Location
+                    <div class="divider"></div>
+                    <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
+                </button>
+                <div id="filter-location-menu" class="filter-menu">
+                    <div class="filter-option">
+                        <input type="checkbox" checked id="location-denmark">
+                        <label for="location-denmark">Denmark</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" checked="" id="location-germany">
+                        <label for="location-germany">Germany</label>
+                    </div>
+                    <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="filters-overlay"></div>
+    <div id="all-instances" class="projects-card-deck">
+        <a href="" class="project-card instance">
+            <div class="image-container">
+                <img src="{{ current_path }}/logos/matrix.org.svg" alt="Matrix.org Logo">
+            </div>
+            <h3>Matrix.org</h3>
+            <p>The largest open net work for secure, decentralised communication.</p>
+            <ul class="details">
+                <li>Public</li>
+                <li>Open Registration</li>
+                <li>UK</li>
+            </ul>
+        </a>
+        <a href="" class="project-card instance">
+            <div class="image-container">
+                <img src="{{ current_path }}/logos/matrix.org.svg" alt="Matrix.org Logo">
+            </div>
+            <h3>Matrix.org</h3>
+            <p>The largest open net work for secure, decentralised communication.</p>
+            <ul class="details">
+                <li>Public</li>
+                <li>Open Registration</li>
+                <li>UK</li>
+            </ul>
+        </a>
+        <a href="" class="project-card instance">
+            <div class="image-container">
+                <img src="{{ current_path }}/logos/matrix.org.svg" alt="Matrix.org Logo">
+            </div>
+            <h3>Matrix.org</h3>
+            <p>The largest open net work for secure, decentralised communication.</p>
+            <ul class="details">
+                <li>Public</li>
+                <li>Open Registration</li>
+                <li>UK</li>
+            </ul>
+        </a>
+        <a href="" class="project-card instance">
+            <div class="image-container">
+                <img src="{{ current_path }}/logos/matrix.org.svg" alt="Matrix.org Logo">
+            </div>
+            <h3>Matrix.org</h3>
+            <p>The largest open net work for secure, decentralised communication.</p>
+            <ul class="details">
+                <li>Public</li>
+                <li>Open Registration</li>
+                <li>UK</li>
+            </ul>
+        </a>
+    </div>
+</div>
+{% endblock content %}
