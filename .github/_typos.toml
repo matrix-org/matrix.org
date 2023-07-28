@@ -1,5 +1,6 @@
 [files]
 extend-exclude = [
 	"*.js*", "*.json", "*.svg",
-	"/static/jira"
+	"/static/jira",
+    "/content/blog/2023/07/2023-07-28-twim.md"
 ]
