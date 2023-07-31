@@ -21,7 +21,7 @@ All mentioned bridges are affected by a vulnerability in the provisioning interf
 <!-- more -->
 
 * [IRC bridge config](https://github.com/matrix-org/matrix-appservice-irc/blob/develop/config.sample.yaml#L520-L522)
-    * Set `provisioning.enabled`` to false.
+    * Set `provisioning.enabled` to false.
 * [Slack bridge config](https://github.com/matrix-org/matrix-appservice-slack/blob/a9f555308fb7485ebb1df98e6c327808915f816f/config/config.sample.yaml#L163) 
     * Set `provisioning.enabled` to false.
 * [Hookshot config](https://github.com/matrix-org/matrix-hookshot/blob/main/config.sample.yml#L192)
