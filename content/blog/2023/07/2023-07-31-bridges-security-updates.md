@@ -29,7 +29,7 @@ All mentioned bridges are affected by a vulnerability in the provisioning interf
 
 The IRC bridge is also affected by two additional vulnerabilities. In this case, we would recommend upgrading **immediately** rather than working around the problems.
 
-Disclosures for these vulnerabilities, as well as CVE numbers will be out in one weeks time (6th)
+Disclosures for these vulnerabilities, as well as CVE numbers will be out in three days (Thursday 3).
 
 **We advise to upgrade as soon as possible.**
 
