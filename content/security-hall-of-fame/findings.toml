@@ -1,4 +1,14 @@
 [[findings]]
+date = "2023-07-31"
+reporter.name = "Martin Schobert, Pentagrid AG"
+reporter.link = "https://www.pentagrid.ch/"
+summary = """
+Discovered that Sydent would not verify its configured SMTP server's certificates when sending emails using TLS.
+"""
+project = "Sydent"
+
+
+[[findings]]
 date = "2023-03-04"
 reporter.name = "Sleroq"
 reporter.link = "https://github.com/sleroq"
