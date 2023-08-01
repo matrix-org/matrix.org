@@ -104,8 +104,13 @@
 /docs/spec/olm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/olm.md
 /docs/spec/megolm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/megolm.md
 
+# Unbreaking Synapse links, see https://github.com/matrix-org/synapse/issues/15825
+/docs/projects/try-matrix-now.html /ecosystem/clients
+
+#####################################################
 ## Dynamic redirects (100 limit, first match wins) ##
-## Keep these below the static redirects ##
+##      Keep these below the static redirects      ##
+#####################################################
 
 # Dynamic redirect /packages/X to packages.matrix.org/X
 /packages/* https://packages.matrix.org/:splat
@@ -136,9 +141,6 @@
 /docs/spec/application_service/latest/* https://spec.matrix.org/latest/application-service-api
 /docs/spec/identity_service/latest/* https://spec.matrix.org/latest/identity-service-api
 /docs/spec/push_gateway/latest/* https://spec.matrix.org/latest/push-gateway-api
-
-# Unbreaking Synapse links, see https://github.com/matrix-org/synapse/issues/15825
-/docs/projects/try-matrix-now.html /ecosystem/clients
 
 # Dynamic old "latest" spec doc requests to the equivalent page in the new spec docs
 /docs/spec/rooms/* https://spec.matrix.org/latest/rooms/:splat
