@@ -10,9 +10,9 @@ category = ["Bridges", "Security"]
 
 Today we are announcing security updates for several of our bridges.
 
-* matrix-appservice-irc [1.0.1](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/1.0.1) affected by GHSA-vc7j-h8xg-fv5x, GHSA-3pmj-jqqp-2mj3, and GHSA-c7hh-3v6c-fj4q
-* matrix-hookshot [4.4.1](https://github.com/matrix-org/matrix-hookshot/releases/tag/4.4.1) affected by GHSA-vc7j-h8xg-fv5x
-* matrix-appservice-slack [2.1.2](https://github.com/matrix-org/matrix-appservice-slack/releases/tag/2.1.2) affected by GHSA-vc7j-h8xg-fv5x
+* matrix-appservice-irc [1.0.1](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/1.0.1) affected by GHSA-vc7j-h8xg-fv5x [CVE-2023-38691](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-38691), GHSA-3pmj-jqqp-2mj3 / [CVE-2023-38690](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-38690), and GHSA-c7hh-3v6c-fj4q
+* matrix-hookshot [4.4.1](https://github.com/matrix-org/matrix-hookshot/releases/tag/4.4.1) affected by GHSA-vc7j-h8xg-fv5x / [CVE-2023-38691](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-38691)
+* matrix-appservice-slack [2.1.2](https://github.com/matrix-org/matrix-appservice-slack/releases/tag/2.1.2) affected by GHSA-vc7j-h8xg-fv5x / [CVE-2023-38691](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-38691)
 
 In addition we have released matrix-appservice-bridge [9.0.1](https://github.com/matrix-org/matrix-appservice-bridge/releases/tag/9.0.1) (and backported to [8.1.2](https://github.com/matrix-org/matrix-appservice-bridge/releases/tag/8.1.2)) which patches GHSA-vc7j-h8xg-fv5x.
 
@@ -29,7 +29,7 @@ All mentioned bridges are affected by a vulnerability in the provisioning interf
 
 The IRC bridge is also affected by two additional vulnerabilities. In this case, we would recommend upgrading **immediately** rather than working around the problems.
 
-Disclosures for these vulnerabilities, as well as CVE numbers will be out in three days (Thursday 3).
+Disclosures for these vulnerabilities, as well as CVE numbers will be out in three days (Thursday 3rd).
 
 **We advise to upgrade as soon as possible.**
 
