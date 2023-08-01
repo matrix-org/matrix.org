@@ -569,3 +569,16 @@ featured_in = []
 description = """
 Matrix client library for MicroPython.
 """
+
+[[sdks]]
+name = "Matrix.swift"
+maintainer = "cvwright"
+maturity = "Alpha"
+language = "Swift"
+license = "Apache-2.0"
+repository = "https://gitlab.futo.org/circles/matrix.swift"
+purpose = ["client"]
+featured_in = []
+description = """
+Matrix client SDK in Swift
+"""
