@@ -57,5 +57,5 @@ operating_since = "2022"
 description = """
 - Hosted Homeservers
 
-Federated Computer provides Element and Matrix hosting in the context of a team platform including integrated SSO. For $39/m>
+Federated Computer provides Element and Matrix hosting as part of a team collaboration suite (including Nextcloud, Jitsi, Listmonk, Vaultwarden, Baserow, Gitea, Caddy, Castopod, Wireguard, and single-sign-on LDAP).
 """
