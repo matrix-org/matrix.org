@@ -1,20 +1,23 @@
-{% extends "page.html" %}
+{% extends "section.html" %}
+{% import "macros/public_instances.html" as instanceutils %}
 {% block head_extra %}
-<meta name="description" content="{{ page.extra.summary }}">
+<meta name="description" content="{{ section.extra.summary }}">
 <script type="module" src="/js/public-instances.js"></script>
 {% endblock head_extra %}
 {% block content %}
 <div class="page-header">
     <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.extra.summary }}</p>
     </div>
 </div>
 
 <div class="content public-instances">
 
+    {% set instances = section.pages %}
+
     <div class="total-and-filters">
-        <div class="total">All servers (90)</div>
+        <div class="total">All servers ({{ section.pages | length }})</div>
         <div class="filters">
             <div class="filter-wrap">
                 <button id="filter-structure" class="filter">
@@ -79,54 +82,20 @@
 
     <div id="filters-overlay"></div>
     <div id="all-instances" class="projects-card-deck">
-        <a href="" class="project-card instance">
+        {% for instance in instances %}
+        <a href="{{ instance.path }}" class="project-card instance">
             <div class="image-container">
-                <img src="{{ current_path }}/logos/matrix.org.svg" alt="Matrix.org Logo">
+                <img src="/{{ instance.relative_path | trim_end_matches(pat=".md") }}.svg" alt="{{ instance.title }}">
             </div>
-            <h3>Matrix.org</h3>
-            <p>The largest open net work for secure, decentralised communication.</p>
+            <h3>{{ instance.title }}</h3>
+            <p>{{ instance.content | safe }}</p>
             <ul class="details">
-                <li>Public</li>
-                <li>Open Registration</li>
-                <li>UK</li>
+                <li>{{ instanceutils::country_name(code=instance.extra.location) }}</li>
+                <li>{{ instanceutils::registration_label(type=instance.extra.registration) }}</li>
+                <li>{{ instanceutils::structure_label(type=instance.extra.structure) }}</li>
             </ul>
         </a>
-        <a href="" class="project-card instance">
-            <div class="image-container">
-                <img src="{{ current_path }}/logos/matrix.org.svg" alt="Matrix.org Logo">
-            </div>
-            <h3>Matrix.org</h3>
-            <p>The largest open net work for secure, decentralised communication.</p>
-            <ul class="details">
-                <li>Public</li>
-                <li>Open Registration</li>
-                <li>UK</li>
-            </ul>
-        </a>
-        <a href="" class="project-card instance">
-            <div class="image-container">
-                <img src="{{ current_path }}/logos/matrix.org.svg" alt="Matrix.org Logo">
-            </div>
-            <h3>Matrix.org</h3>
-            <p>The largest open net work for secure, decentralised communication.</p>
-            <ul class="details">
-                <li>Public</li>
-                <li>Open Registration</li>
-                <li>UK</li>
-            </ul>
-        </a>
-        <a href="" class="project-card instance">
-            <div class="image-container">
-                <img src="{{ current_path }}/logos/matrix.org.svg" alt="Matrix.org Logo">
-            </div>
-            <h3>Matrix.org</h3>
-            <p>The largest open net work for secure, decentralised communication.</p>
-            <ul class="details">
-                <li>Public</li>
-                <li>Open Registration</li>
-                <li>UK</li>
-            </ul>
-        </a>
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}

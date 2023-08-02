@@ -1,0 +1,514 @@
+{% macro registration_label(type) %}
+{% if type == "unfiltered" %}
+Unfiltered
+{% elif type == "conditional" %}
+Conditional
+{% endif %}
+{% endmacro %}
+
+{% macro country_name(code) %}
+{% if code | upper == "AD" %}
+Andorra
+{% elif code | upper == "AE" %}
+United Arab Emirates
+{% elif code | upper == "AF" %}
+Afghanistan
+{% elif code | upper == "AG" %}
+Antigua and Barbuda
+{% elif code | upper == "AI" %}
+Anguilla
+{% elif code | upper == "AL" %}
+Albania
+{% elif code | upper == "AM" %}
+Armenia
+{% elif code | upper == "AO" %}
+Angola
+{% elif code | upper == "AQ" %}
+Antarctica
+{% elif code | upper == "AR" %}
+Argentina
+{% elif code | upper == "AS" %}
+American Samoa
+{% elif code | upper == "AT" %}
+Austria
+{% elif code | upper == "AU" %}
+Australia
+{% elif code | upper == "AW" %}
+Aruba
+{% elif code | upper == "AZ" %}
+Azerbaijan
+{% elif code | upper == "BA" %}
+Bosnia and Herzegovina
+{% elif code | upper == "BB" %}
+Barbados
+{% elif code | upper == "BD" %}
+Bangladesh
+{% elif code | upper == "BE" %}
+Belgium
+{% elif code | upper == "BF" %}
+Burkina Faso
+{% elif code | upper == "BG" %}
+Bulgaria
+{% elif code | upper == "BH" %}
+Bahrain
+{% elif code | upper == "BI" %}
+Burundi
+{% elif code | upper == "BJ" %}
+Benin
+{% elif code | upper == "BL" %}
+Saint Barthélemy
+{% elif code | upper == "BM" %}
+Bermuda
+{% elif code | upper == "BN" %}
+Brunei
+{% elif code | upper == "BO" %}
+Bolivia
+{% elif code | upper == "BQ" %}
+Caribbean Netherlands
+{% elif code | upper == "BR" %}
+Brazil
+{% elif code | upper == "BS" %}
+The Bahamas
+{% elif code | upper == "BT" %}
+Bhutan
+{% elif code | upper == "BV" %}
+Bouvet Island
+{% elif code | upper == "BW" %}
+Botswana
+{% elif code | upper == "BY" %}
+Belarus
+{% elif code | upper == "BZ" %}
+Belize
+{% elif code | upper == "CA" %}
+Canada
+{% elif code | upper == "CC" %}
+Cocos (Keeling) Islands
+{% elif code | upper == "CD" %}
+Democratic Republic of the Congo
+{% elif code | upper == "CF" %}
+Central African Republic
+{% elif code | upper == "CG" %}
+Republic of the Congo
+{% elif code | upper == "CH" %}
+Switzerland
+{% elif code | upper == "CK" %}
+Cook Islands
+{% elif code | upper == "CL" %}
+Chile
+{% elif code | upper == "CM" %}
+Cameroon
+{% elif code | upper == "CN" %}
+China
+{% elif code | upper == "CO" %}
+Colombia
+{% elif code | upper == "CR" %}
+Costa Rica
+{% elif code | upper == "CU" %}
+Cuba
+{% elif code | upper == "CV" %}
+Cape Verde
+{% elif code | upper == "CW" %}
+Curaçao
+{% elif code | upper == "CX" %}
+Christmas Island
+{% elif code | upper == "CY" %}
+Cyprus
+{% elif code | upper == "CZ" %}
+Czech Republic
+{% elif code | upper == "DE" %}
+Germany
+{% elif code | upper == "DJ" %}
+Djibouti
+{% elif code | upper == "DK" %}
+Denmark
+{% elif code | upper == "DM" %}
+Dominica
+{% elif code | upper == "DO" %}
+Dominican Republic
+{% elif code | upper == "DZ" %}
+Algeria
+{% elif code | upper == "EC" %}
+Ecuador
+{% elif code | upper == "EE" %}
+Estonia
+{% elif code | upper == "EG" %}
+Egypt
+{% elif code | upper == "EH" %}
+Western Sahara
+{% elif code | upper == "ER" %}
+Eritrea
+{% elif code | upper == "ES" %}
+Spain
+{% elif code | upper == "ET" %}
+Ethiopia
+{% elif code | upper == "FI" %}
+Finland
+{% elif code | upper == "FJ" %}
+Fiji
+{% elif code | upper == "FK" %}
+Falkland Islands
+{% elif code | upper == "FM" %}
+Federated States of Micronesia
+{% elif code | upper == "FO" %}
+Faroe Islands
+{% elif code | upper == "FR" %}
+France
+{% elif code | upper == "GA" %}
+Gabon
+{% elif code | upper == "GB" %}
+United Kingdom
+{% elif code | upper == "GD" %}
+Grenada
+{% elif code | upper == "GE" %}
+Georgia
+{% elif code | upper == "GF" %}
+French Guiana
+{% elif code | upper == "GG" %}
+Bailiwick of Guernsey
+{% elif code | upper == "GH" %}
+Ghana
+{% elif code | upper == "GI" %}
+Gibraltar
+{% elif code | upper == "GL" %}
+Greenland
+{% elif code | upper == "GM" %}
+Gambia
+{% elif code | upper == "GN" %}
+Guinea
+{% elif code | upper == "GP" %}
+Guadeloupe
+{% elif code | upper == "GQ" %}
+Equatorial Guinea
+{% elif code | upper == "GR" %}
+Greece
+{% elif code | upper == "GS" %}
+South Georgia and the South Sandwich Islands
+{% elif code | upper == "GT" %}
+Guatemala
+{% elif code | upper == "GU" %}
+Guam
+{% elif code | upper == "GW" %}
+Guinea-Bissau
+{% elif code | upper == "GY" %}
+Guyana
+{% elif code | upper == "HK" %}
+Hong Kong
+{% elif code | upper == "HM" %}
+Heard Island and McDonald Islands
+{% elif code | upper == "HN" %}
+Honduras
+{% elif code | upper == "HR" %}
+Croatia
+{% elif code | upper == "HT" %}
+Haiti
+{% elif code | upper == "HU" %}
+Hungary
+{% elif code | upper == "ID" %}
+Indonesia
+{% elif code | upper == "IE" %}
+Republic of Ireland
+{% elif code | upper == "IL" %}
+Israel
+{% elif code | upper == "IM" %}
+Isle of Man
+{% elif code | upper == "IN" %}
+India
+{% elif code | upper == "IO" %}
+British Indian Ocean Territory
+{% elif code | upper == "IQ" %}
+Iraq
+{% elif code | upper == "IR" %}
+Iran
+{% elif code | upper == "IS" %}
+Iceland
+{% elif code | upper == "IT" %}
+Italy
+{% elif code | upper == "JE" %}
+Jersey
+{% elif code | upper == "JM" %}
+Jamaica
+{% elif code | upper == "JO" %}
+Jordan
+{% elif code | upper == "JP" %}
+Japan
+{% elif code | upper == "KE" %}
+Kenya
+{% elif code | upper == "KG" %}
+Kyrgyzstan
+{% elif code | upper == "KH" %}
+Cambodia
+{% elif code | upper == "KI" %}
+Kiribati
+{% elif code | upper == "KM" %}
+Comoros
+{% elif code | upper == "KN" %}
+Saint Kitts and Nevis
+{% elif code | upper == "KP" %}
+North Korea
+{% elif code | upper == "KR" %}
+South Korea
+{% elif code | upper == "KW" %}
+Kuwait
+{% elif code | upper == "KY" %}
+Cayman Islands
+{% elif code | upper == "KZ" %}
+Kazakhstan
+{% elif code | upper == "LA" %}
+Laos
+{% elif code | upper == "LB" %}
+Lebanon
+{% elif code | upper == "LC" %}
+Saint Lucia
+{% elif code | upper == "LI" %}
+Liechtenstein
+{% elif code | upper == "LK" %}
+Sri Lanka
+{% elif code | upper == "LR" %}
+Liberia
+{% elif code | upper == "LS" %}
+Lesotho
+{% elif code | upper == "LT" %}
+Lithuania
+{% elif code | upper == "LU" %}
+Luxembourg
+{% elif code | upper == "LV" %}
+Latvia
+{% elif code | upper == "LY" %}
+Libya
+{% elif code | upper == "MA" %}
+Morocco
+{% elif code | upper == "MC" %}
+Monaco
+{% elif code | upper == "MD" %}
+Moldova
+{% elif code | upper == "ME" %}
+Montenegro
+{% elif code | upper == "MF" %}
+Collectivity of Saint Martin
+{% elif code | upper == "MG" %}
+Madagascar
+{% elif code | upper == "MH" %}
+Marshall Islands
+{% elif code | upper == "MK" %}
+North Macedonia
+{% elif code | upper == "ML" %}
+Mali
+{% elif code | upper == "MM" %}
+Myanmar
+{% elif code | upper == "MN" %}
+Mongolia
+{% elif code | upper == "MO" %}
+Macau
+{% elif code | upper == "MP" %}
+Northern Mariana Islands
+{% elif code | upper == "MQ" %}
+Martinique
+{% elif code | upper == "MR" %}
+Mauritania
+{% elif code | upper == "MS" %}
+Montserrat
+{% elif code | upper == "MT" %}
+Malta
+{% elif code | upper == "MU" %}
+Mauritius
+{% elif code | upper == "MV" %}
+Maldives
+{% elif code | upper == "MW" %}
+Malawi
+{% elif code | upper == "MX" %}
+Mexico
+{% elif code | upper == "MY" %}
+Malaysia
+{% elif code | upper == "MZ" %}
+Mozambique
+{% elif code | upper == "NA" %}
+Namibia
+{% elif code | upper == "NC" %}
+New Caledonia
+{% elif code | upper == "NE" %}
+Niger
+{% elif code | upper == "NF" %}
+Norfolk Island
+{% elif code | upper == "NG" %}
+Nigeria
+{% elif code | upper == "NI" %}
+Nicaragua
+{% elif code | upper == "NL" %}
+Kingdom of the Netherlands
+{% elif code | upper == "NO" %}
+Norway
+{% elif code | upper == "NP" %}
+Nepal
+{% elif code | upper == "NR" %}
+Nauru
+{% elif code | upper == "NU" %}
+Niue
+{% elif code | upper == "NZ" %}
+New Zealand
+{% elif code | upper == "OM" %}
+Oman
+{% elif code | upper == "PA" %}
+Panama
+{% elif code | upper == "PE" %}
+Peru
+{% elif code | upper == "PF" %}
+French Polynesia
+{% elif code | upper == "PG" %}
+Papua New Guinea
+{% elif code | upper == "PH" %}
+Philippines
+{% elif code | upper == "PK" %}
+Pakistan
+{% elif code | upper == "PL" %}
+Poland
+{% elif code | upper == "PM" %}
+Saint Pierre and Miquelon
+{% elif code | upper == "PN" %}
+Pitcairn Islands
+{% elif code | upper == "PR" %}
+Puerto Rico
+{% elif code | upper == "PT" %}
+Portugal
+{% elif code | upper == "PW" %}
+Palau
+{% elif code | upper == "PY" %}
+Paraguay
+{% elif code | upper == "QA" %}
+Qatar
+{% elif code | upper == "RO" %}
+Romania
+{% elif code | upper == "RS" %}
+Serbia
+{% elif code | upper == "RU" %}
+Russia
+{% elif code | upper == "RW" %}
+Rwanda
+{% elif code | upper == "SA" %}
+Saudi Arabia
+{% elif code | upper == "SB" %}
+Solomon Islands
+{% elif code | upper == "SC" %}
+Seychelles
+{% elif code | upper == "SD" %}
+Sudan
+{% elif code | upper == "SE" %}
+Sweden
+{% elif code | upper == "SG" %}
+Singapore
+{% elif code | upper == "SH" %}
+Saint Helena, Ascension and Tristan da Cunha
+{% elif code | upper == "SI" %}
+Slovenia
+{% elif code | upper == "SJ" %}
+Svalbard and Jan Mayen
+{% elif code | upper == "SK" %}
+Slovakia
+{% elif code | upper == "SL" %}
+Sierra Leone
+{% elif code | upper == "SM" %}
+San Marino
+{% elif code | upper == "SN" %}
+Senegal
+{% elif code | upper == "SO" %}
+Somalia
+{% elif code | upper == "SR" %}
+Suriname
+{% elif code | upper == "SS" %}
+South Sudan
+{% elif code | upper == "ST" %}
+São Tomé and Príncipe
+{% elif code | upper == "SV" %}
+El Salvador
+{% elif code | upper == "SX" %}
+Sint Maarten
+{% elif code | upper == "SY" %}
+Syria
+{% elif code | upper == "SZ" %}
+Eswatini
+{% elif code | upper == "TC" %}
+Turks and Caicos Islands
+{% elif code | upper == "TD" %}
+Chad
+{% elif code | upper == "TF" %}
+French Southern and Antarctic Lands
+{% elif code | upper == "TG" %}
+Togo
+{% elif code | upper == "TH" %}
+Thailand
+{% elif code | upper == "TJ" %}
+Tajikistan
+{% elif code | upper == "TK" %}
+Tokelau
+{% elif code | upper == "TL" %}
+East Timor
+{% elif code | upper == "TM" %}
+Turkmenistan
+{% elif code | upper == "TN" %}
+Tunisia
+{% elif code | upper == "TO" %}
+Tonga
+{% elif code | upper == "TR" %}
+Türkiye
+{% elif code | upper == "TT" %}
+Trinidad and Tobago
+{% elif code | upper == "TV" %}
+Tuvalu
+{% elif code | upper == "TW" %}
+Taiwan
+{% elif code | upper == "TZ" %}
+Tanzania
+{% elif code | upper == "UA" %}
+Ukraine
+{% elif code | upper == "UG" %}
+Uganda
+{% elif code | upper == "UM" %}
+United States Minor Outlying Islands
+{% elif code | upper == "US" %}
+United States
+{% elif code | upper == "UY" %}
+Uruguay
+{% elif code | upper == "UZ" %}
+Uzbekistan
+{% elif code | upper == "VA" %}
+Vatican City
+{% elif code | upper == "VC" %}
+Saint Vincent and the Grenadines
+{% elif code | upper == "VE" %}
+Venezuela
+{% elif code | upper == "VG" %}
+British Virgin Islands
+{% elif code | upper == "VI" %}
+United States Virgin Islands
+{% elif code | upper == "VN" %}
+Vietnam
+{% elif code | upper == "VU" %}
+Vanuatu
+{% elif code | upper == "WF" %}
+Wallis and Futuna
+{% elif code | upper == "WS" %}
+Samoa
+{% elif code | upper == "YE" %}
+Yemen
+{% elif code | upper == "YT" %}
+Mayotte
+{% elif code | upper == "ZA" %}
+South Africa
+{% elif code | upper == "ZM" %}
+Zambia
+{% elif code | upper == "ZW" %}
+Zimbabwe
+{% endif %}
+{% endmacro %}
+
+{% macro structure_label(type) %}
+{% if type == "individual" %}
+Individual
+{% elif type == "non-profit" %}
+Non-profit
+{% elif type == "paid-support" %}
+Paid
+{% endif %}
+{% endmacro %}
+
+{% macro classes(instance) %}
+{% endmacro %}
