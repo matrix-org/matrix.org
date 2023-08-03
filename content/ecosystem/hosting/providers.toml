@@ -48,3 +48,14 @@ description = """
 
 Ossrox is a company from Germany dedicated to hosting open-source services. Not only has the company name been derived from the motto "Open-Source Software Rocks", but also their corporate culture. The three most important principles of the company are security, privacy and sustainability - thanks to open-source software. In addition to Matrix, Ossrox also provides many other solutions e.g. in the messaging, groupware and web meeting segments.
 """
+
+[[providers]]
+name = "Federated Computer"
+image = "federated.png"
+website = "https://federated.computer"
+operating_since = "2022"
+description = """
+- Hosted Homeservers
+
+Federated Computer provides Element and Matrix hosting as part of a team collaboration suite (including Nextcloud, Jitsi, Listmonk, Vaultwarden, Baserow, Gitea, Caddy, Castopod, Wireguard, and single-sign-on LDAP).
+"""
