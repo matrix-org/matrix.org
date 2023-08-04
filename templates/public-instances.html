@@ -2,7 +2,7 @@
 {% import "macros/public_instances.html" as instanceutils %}
 {% block head_extra %}
 <meta name="description" content="{{ section.extra.summary }}">
-<script type="module" src="/js/public-instances.js"></script>
+<!-- <script type="module" src="/js/public-instances.js"></script> -->
 {% endblock head_extra %}
 {% block content %}
 <div class="page-header">
@@ -15,6 +15,14 @@
 <div class="content public-instances">
 
     {% set instances = section.pages %}
+    {% set software = [] %}
+    {% set locations = [] %}
+    {% for instance in instances %}
+    {% set_global software = software | concat(with=instance.extra.software ~ " " ~ instance.extra.version) %}
+    {% set_global locations = locations | concat(with=instance.extra.location) %}
+    {% endfor %}
+    {% set_global software = software | unique | sort %}
+    {% set_global locations = locations | unique | sort %}
 
     <div class="total-and-filters">
         <div class="total">All servers ({{ section.pages | length }})</div>
@@ -66,14 +74,28 @@
                     <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
                 </button>
                 <div id="filter-location-menu" class="filter-menu">
+                    {% for location in locations %}
                     <div class="filter-option">
-                        <input type="checkbox" checked id="location-denmark">
-                        <label for="location-denmark">Denmark</label>
+                        <input type="checkbox" checked id="location-{{ location | lower }}">
+                        <label for="location-{{ location | lower }}">{{ instanceutils::country_name(code=location) }}</label>
                     </div>
+                    {% endfor %}
+                    <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+                </div>
+            </div>
+            <div class="filter-wrap">
+                <button id="filter-software" class="filter">
+                    Software
+                    <div class="divider"></div>
+                    <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
+                </button>
+                <div id="filter-software-menu" class="filter-menu">
+                    {% for software_version in software %}
                     <div class="filter-option">
-                        <input type="checkbox" checked="" id="location-germany">
-                        <label for="location-germany">Germany</label>
+                        <input type="checkbox" id="software-{{ software_version | slugify }}" checked>
+                        <label for="software-{{ software_version | slugify }}">{{ software_version }}</label>
                     </div>
+                    {% endfor %}
                     <div class="reset-links">Select <button>all</button> - <button>none</button></div>
                 </div>
             </div>
@@ -83,9 +105,19 @@
     <div id="filters-overlay"></div>
     <div id="all-instances" class="projects-card-deck">
         {% for instance in instances %}
-        <a href="{{ instance.path }}" class="project-card instance">
+        <div>
+        <a href="{{ instance.path }}" class="project-card instance {{ instanceutils::classes(instance=instance) }}">
             <div class="image-container">
+                {% set logo_path = instance.relative_path | trim_end_matches(pat=".md") %}
+                {% set logo_path = "/" ~ logo_path~".svg" %}
+                {% set file_exists = load_data(path="/"~logo_path, required=false) %}
+                {% if file_exists %}
                 <img src="/{{ instance.relative_path | trim_end_matches(pat=".md") }}.svg" alt="{{ instance.title }}">
+                {% else %}
+                <div class="avatar">
+                    {{ instance.title | truncate(length=1, end="") }}
+                </div>
+                {% endif %}
             </div>
             <h3>{{ instance.title }}</h3>
             <p>{{ instance.content | safe }}</p>
@@ -93,8 +125,10 @@
                 <li>{{ instanceutils::country_name(code=instance.extra.location) }}</li>
                 <li>{{ instanceutils::registration_label(type=instance.extra.registration) }}</li>
                 <li>{{ instanceutils::structure_label(type=instance.extra.structure) }}</li>
+                <li>{{ instance.extra.software | capitalize }} {{ instance.extra.version }}</li>
             </ul>
         </a>
+        </div>
         {% endfor %}
     </div>
 </div>

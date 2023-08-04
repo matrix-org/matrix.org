@@ -511,4 +511,9 @@ Paid
 {% endmacro %}
 
 {% macro classes(instance) %}
+{% set software_version = instance.extra.software ~ " " ~ instance.extra.version %}
+location-{{ instance.extra.location | lower }}
+registration-{{ instance.extra.registration | lower }}
+structure-{{ instance.extra.structure | lower }}
+software-{{ software_version | slugify }}
 {% endmacro %}
