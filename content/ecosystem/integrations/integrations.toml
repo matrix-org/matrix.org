@@ -138,3 +138,11 @@ language = "TypeScript"
 licence = "Apache-2.0"
 repository = "https://github.com/nordeck/matrix-barcamp"
 room = "#nordeck:matrix.org"
+
+[[integrations]]
+name = "Matrix Communication Plugin for Jenkins"
+description = "A plugin allowing Jenkins to communicate with a Matrix server"
+maintainer = "Réda Housni Alaoui"
+language = "Java"
+licence = "MIT"
+repository = "https://github.com/jenkinsci/matrix-communication-plugin"
