@@ -19,7 +19,7 @@ voip_jitsi = false
 widgets = false
 threads = true
 sso = true
-multi_account = true
+multi_account = false
 multi_language = true
 [extra.packages]
 windows_installer = "https://github.com/Nheko-Reborn/nheko/releases"
