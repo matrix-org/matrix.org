@@ -1,5 +1,5 @@
 [[bridges]]
-name = "mautrix-twitter"
+name = "matrix-twitter"
 maintainer = "Tulir"
 summary = """
 A Matrix-Twitter DM puppeting bridge. Written in Python using
