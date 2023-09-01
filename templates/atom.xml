@@ -1,3 +1,4 @@
+{% import "macros/atom.html" as atom %}
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
     <title>{{ config.title }}
@@ -19,25 +20,14 @@
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>{{ last_updated | date(format="%+") }}</updated>
     <id>{{ feed_url | safe }}</id>
+    {% set pageslen = pages | length %}
+    {% if pageslen > 15 %}
+    {% for i in range(end=15) %}
+    {{ atom::entry(page=pages[i]) }}
+    {% endfor %}
+    {% else %}
     {%- for page in pages %}
-    <entry xml:lang="{{ page.lang }}">
-        <title>{{ page.title }}</title>
-        <published>{{ page.date | date(format="%+") }}</published>
-        <updated>{{ page.updated | default(value=page.date) | date(format="%+") }}</updated>
-        <author>
-          <name>
-            {%- if page.authors -%}
-              {{ page.authors[0] }}
-            {%- elif config.author -%}
-              {{ config.author }}
-            {%- else -%}
-              Unknown
-            {%- endif -%}
-          </name>
-        </author>
-        <link rel="alternate" href="{{ page.permalink | safe }}" type="text/html"/>
-        <id>{{ page.permalink | safe }}</id>
-        <content type="html">{{ page.content }}</content>
-    </entry>
+    {{ atom::entry(page=page) }}
     {%- endfor %}
+    {% endif %}
 </feed>
