@@ -22,7 +22,7 @@
     <id>{{ feed_url | safe }}</id>
     {% set pageslen = pages | length %}
     {% if pageslen > 15 %}
-    {% for i in range(end=15) %}
+    {% for i in range(end=1) %}
     {{ atom::entry(page=pages[i]) }}
     {% endfor %}
     {% else %}
