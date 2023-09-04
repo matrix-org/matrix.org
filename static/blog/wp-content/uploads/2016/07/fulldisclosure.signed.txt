@@ -1,0 +1,38 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+We've been made aware of a critical security issue in Synapse present in versions 0.12 through 0.16.1 inclusive which can allow users' accounts to be accessed by other unauthorized users on the same server. The issue was reported at 14:40 UTC on 2016-07-07 by Patrik Oldsberg at Ericsson (many thanks Patrik for discovering the issue and swiftly informing us). The source of the issue was identified, and a patch was created and distributed to package maintainers at roughly 16:30 UTC the same day.
+
+We are not aware of any exploit in the wild, but it is critical for all synapse homeservers later than v0.12 to be upgraded immediately.
+
+The github repository, as well as major 3rd party packages, have been updated with patched versions.
+
+If an update is not available for your system you should manually apply the security patch that is included below. (This can be done by running patch -p1 sec.patch in the synapse source directory.)
+
+The git commit SHA of the fix is: 067596d341a661e008195f7f3a6887ade7cafa32.
+
+Whilst Synapse (and Matrix) is still in beta, we nonetheless take such security issues seriously. In the coming days we will be reviewing how this vulnerability was introduced, and any steps that could have been taken to prevent the issue. We will also be auditing the remaining access control system to ensure there are no other existing issues. The full findings will be published when completed.
+
+We apologise for the inconvenience of this emergency upgrade.
+
+Thank you for your continued support,
+The Matrix Team
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQIcBAEBAgAGBQJXf6U4AAoJEDraBu3HU9EeJJkP/isBSEqi9dXAcOMuBJS3w6jB
+hFYy2G6LFjTJI14HU5973a8Q/hMV5zorUlL47tJB6P0m9P1YTMHx//PRJZHNLpIw
+5V59Q+LGHWdTvazG2lytsnLOH9d89e3kBhMcmyAFicE7XL59hX8Y6P68lQKqPLGA
+ZMo5eZsrBW+3+HUHFaKLwWjWHMMjP04WOSpT9zaSO5P4b4pMMAvXd2Lp4X7ir2/U
+DAr65lLpWmUkaVkN3rxH8tgV48VTtb8g/IPsL196l6P9DyVIm09kX/iPPie39y+n
+qFPdA5nHIqB+tWACvNRcWqKyqHiKoXV6IkGwhdEuY44CcCNhpqIzYHPjyYZ4FnDT
+ZmoHjRpxKFlQ7PbVzabeWrTQ3TmtHdStyVZeq5xQzKQ3FHUKxQ2xvBIi4I16+Z6C
+6qQmj45NpBOXOq/RFbpS0X6CvR+ASLrfyn87JXFPrLG49U2bQnoLAFLT3UIpVJ1r
+HFnWyaVVd6D+6qsrrbbsAqgh8Wy+MJE3cKmr1Ry2d4JByCoV8FCTxOWm0ZiWbEh8
+YM0d2UPbcV1fa9zVsoEly1Yc73nHZqWf58izmx9mLQheCNiml7BSLWu9ptVFEHjw
+zNgCPt0Xfyfutc8OS0Mm37Rp2MnkgWrBH2MQ/6vUQxYBCOFvxlblX6pPt1VWKmMH
+9+aIZZnrxrlj1SotEAu6
+=c0Kv
+-----END PGP SIGNATURE-----
