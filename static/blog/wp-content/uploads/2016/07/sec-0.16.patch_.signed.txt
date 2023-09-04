@@ -1,0 +1,69 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+diff --git a/synapse/api/auth.py b/synapse/api/auth.py
+index 31e1abb..a4d658a 100644
+- --- a/synapse/api/auth.py
++++ b/synapse/api/auth.py
+@@ -637,17 +637,22 @@ class Auth(object):
+         try:
+             macaroon = pymacaroons.Macaroon.deserialize(macaroon_str)
+ 
+- -            self.validate_macaroon(macaroon, rights, self.hs.config.expire_access_token)
+- -
+             user_prefix = "user_id = "
+             user = None
++            user_id = None
+             guest = False
+             for caveat in macaroon.caveats:
+                 if caveat.caveat_id.startswith(user_prefix):
+- -                    user = UserID.from_string(caveat.caveat_id[len(user_prefix):])
++                    user_id = caveat.caveat_id[len(user_prefix):]
++                    user = UserID.from_string(user_id)
+                 elif caveat.caveat_id == "guest = true":
+                     guest = True
+ 
++            self.validate_macaroon(
++                macaroon, rights, self.hs.config.expire_access_token,
++                user_id=user_id,
++            )
++
+             if user is None:
+                 raise AuthError(
+                     self.TOKEN_NOT_FOUND_HTTP_STATUS, "No user caveat in macaroon",
+@@ -692,7 +697,7 @@ class Auth(object):
+                 errcode=Codes.UNKNOWN_TOKEN
+             )
+ 
+- -    def validate_macaroon(self, macaroon, type_string, verify_expiry):
++    def validate_macaroon(self, macaroon, type_string, verify_expiry, user_id):
+         """
+         validate that a Macaroon is understood by and was signed by this server.
+ 
+@@ -707,7 +712,7 @@ class Auth(object):
+         v = pymacaroons.Verifier()
+         v.satisfy_exact("gen = 1")
+         v.satisfy_exact("type = " + type_string)
+- -        v.satisfy_general(lambda c: c.startswith("user_id = "))
++        v.satisfy_exact("user_id = %s" % user_id)
+         v.satisfy_exact("guest = true")
+         if verify_expiry:
+             v.satisfy_general(self._verify_expiry)
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQIcBAEBAgAGBQJXf6Y+AAoJEDraBu3HU9EeH8oP/iIO2Q1uL1uCMIIUIpeL6BH3
+KpLU/1IT87jtOJu4+t4m2pLqJ4p3zGChqGTRhNty+UuuVQo9f0oFBP1T1Ryrumap
+/N3EFh7ck2T5Ke7m+Qe4k42nax8fb7/RCRchFdHBh+2R/dw8toR7rNYAOgYZ+mE2
+QE/4+3zqiFZB0bmXjRuc1wMNoORdshp2p2/h4E3I52Ljzq+zv87Ong5rfxyEB5Yy
+XDD2a5l/bg5QrSLAGzcvpKHd3mexVvDwIc4NO5YFPtEg7DwCqQ1b7iLeqzD9uV3D
+kgYfBL1pZelSljGM0Aou9DLR1vKaAfsrmoFCOky/NvgxMz8XUtOD5DkUSR3MiFbu
+DHx+yWTRDgeql7Iop2xJPGBV1DkiQsYc/QFmm3OK32Xmrp9pBd7qJvsGEQOxp2wV
+Pj900oY2mr52UGAug2vrETvFtlDLg1+MCe8niD0EsNJJAMgtI5mw966RSB2JbmTp
+aPfD9IkCCrTdPW/0jwsEyz5MVvRxZSCyxCbKZknHA1om/U8/Dr5z9BZ+MJoa36Ee
+YnHhfUlB0xGQJewQJIHZt9yfnYlbI1IG0xH/1VlW5gLBdeYo2+mI5giJLEyXX3zz
+bERWaQZqMDet+Xe4sRafd0iXhABTsAceX/raBzosjKT7uc9OITUYkbmaSvt2Qu4F
+opKr6DN3sb+vfb/Clniv
+=Mq2V
+-----END PGP SIGNATURE-----
