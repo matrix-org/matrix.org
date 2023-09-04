@@ -117,3 +117,13 @@ maturity = "Obsolete"
 language = "TypeScript"
 licence = "Apache-2.0"
 repository = "https://github.com/bettiah/transform"
+
+[[servers]]
+name = "Telodendria"
+description = "Telodendria is an open source Matrix homeserver implementation written from scratch in ANSI C and designed to be lightweight and simple, yet functional."
+author = "Jordan Bancino"
+maturity = "Alpha"
+language = "C"
+licence = "MIT"
+repository = "https://github.com/Telodendria/Telodendria"
+room = "#telodendria-general:bancino.net"
