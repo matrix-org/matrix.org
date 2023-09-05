@@ -9,7 +9,7 @@ category = ["Foundation"]
 
 Hi all,
 
-Today is a big day! As you know, over the last few months we’ve been searching for a [Managing Director](https://www.linkedin.com/jobs/view/matrix-org-foundation-managing-director-at-element-3575179991) to join the [Matrix.org Foundation](https://matrix.org/foundation) full-time, focused on managing the Foundation’s finances, organising the Foundation’s [membership programme](https://matrix.org/blog/2023/06/membership-program/), helping raise funding to support Foundation work, working with the Guardians to ensure the Foundation stays on mission, and ensuring the Foundation can operate successfully as a fully independent entity.
+Today is a big day! As you know, over the last few months we’ve been searching for a [Managing Director](https://opensourcejobs.com/?id=225) to join the [Matrix.org Foundation](https://matrix.org/foundation) full-time, focused on managing the Foundation’s finances, organising the Foundation’s [membership programme](https://matrix.org/blog/2023/06/membership-program/), helping raise funding to support Foundation work, working with the Guardians to ensure the Foundation stays on mission, and ensuring the Foundation can operate successfully as a fully independent entity.
 
 <!-- more -->
 
