@@ -14,11 +14,14 @@ Brought to you by the creators of Matrix, who have been running the biggest home
 name = "Ungleich.ch"
 image = "ungleich_zerocarbonmatrix.jpg"
 website = "https://matrix.zerocarbon.shop"
-operating_since = "TBC"
+operating_since = "2020"
 description = """
-- Hosted Homeservers
+* Hosted Homeservers
+* Bridge solutions: bridging Slack, Telegram, Whatsapp, IRC and more (Add Matterbridge link:https://ungleich.ch/en-us/cms/matterbridge-matrix/)
+* Customised Matrix development: Custom Authentication/Login, Integration into private networks
+(https://ungleich.ch/u/products/matrix-custom-development/)
 
-Service provided by [ungleich.ch](https://ungleich.ch/) in their own datacenter in Linthal, Switzerland. They use an old building, second-hand servers, passive cooling and are directly plugged into an on-site hydroelectric power plant!
+Zero Carbon Matrix is provided by ungleich.ch in Switzerland, in their own Datacenter (datacenterlight.ch) with a strong focus on sustainability. Operating within a repurposed historic building, they utilise pre-owned server systems, passive cooling techniques, and 100% renewable energy. ungleich.ch also specialises in customised Matrix development for communities and organisations.
 """
 
 [[providers]]
