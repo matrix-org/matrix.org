@@ -1,6 +1,7 @@
 +++
 date = "2023-09-05"
 title = "Welcoming Josh Simmons as Managing Director of the Matrix.org Foundation!"
+aliases = ["/blog/2023/09/introducing-josh-simmons-mnaging-director/"]
 
 [taxonomies]
 author = ["Matthew Hodgson", "Amandine Le Pape"]
