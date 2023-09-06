@@ -3,7 +3,7 @@ title =  "archaeo.social"
 [extra]
 domain = "matrix.archaeo.social"
 location = "CH"
-registration = "unfiltered"
+signup = "unfiltered"
 structure = "non-profit"
 terms_of_service = "https://archaeo.social/about"
 software = "Synapse"

@@ -3,7 +3,7 @@ title = "Matrix.org"
 [extra]
 domain = "matrix.org"
 location = "GB"
-registration = "unfiltered"
+signup = "unfiltered"
 structure = "non-profit"
 software = "Synapse"
 version = "1.89.0"

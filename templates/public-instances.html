@@ -2,7 +2,7 @@
 {% import "macros/public_instances.html" as instanceutils %}
 {% block head_extra %}
 <meta name="description" content="{{ section.extra.summary }}">
-<!-- <script type="module" src="/js/public-instances.js"></script> -->
+<script type="module" src="/js/public-instances.js"></script>
 {% endblock head_extra %}
 {% block content %}
 <div class="page-header">
@@ -39,8 +39,8 @@
                         <label for="structure-individual">Individual administrator</label>
                     </div>
                     <div class="filter-option">
-                        <input type="checkbox" checked id="structure-nonprofit">
-                        <label for="structure-nonprofit">Non-profit</label>
+                        <input type="checkbox" checked id="structure-non-profit">
+                        <label for="structure-non-profit">Non-profit</label>
                     </div>
                     <div class="filter-option">
                         <input type="checkbox" id="structure-paid" checked>
@@ -57,8 +57,8 @@
                 </button>
                 <div id="filter-signup-menu" class="filter-menu">
                     <div class="filter-option">
-                        <input type="checkbox" checked id="signup-open">
-                        <label for="signup-open">Unfiltered registrations</label>
+                        <input type="checkbox" checked id="signup-unfiltered">
+                        <label for="signup-unfiltered">Unfiltered registrations</label>
                     </div>
                     <div class="filter-option">
                         <input type="checkbox" checked id="signup-conditional">
@@ -123,7 +123,7 @@
             <p>{{ instance.content | safe }}</p>
             <ul class="details">
                 <li>{{ instanceutils::country_name(code=instance.extra.location) }}</li>
-                <li>{{ instanceutils::registration_label(type=instance.extra.registration) }}</li>
+                <li>{{ instanceutils::registration_label(type=instance.extra.signup) }}</li>
                 <li>{{ instanceutils::structure_label(type=instance.extra.structure) }}</li>
                 <li>{{ instance.extra.software | capitalize }} {{ instance.extra.version }}</li>
             </ul>
