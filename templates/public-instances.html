@@ -13,13 +13,14 @@
 </div>
 
 <div class="content public-instances">
+    {% set instances_data = load_data(path="/content/public-instances/instances.toml") %}
 
-    {% set instances = section.pages %}
+    {% set instances = instances_data.instances %}
     {% set software = [] %}
     {% set locations = [] %}
     {% for instance in instances %}
-    {% set_global software = software | concat(with=instance.extra.software ~ " " ~ instance.extra.version) %}
-    {% set_global locations = locations | concat(with=instance.extra.location) %}
+    {% set_global software = software | concat(with=instance.software ~ " " ~ instance.version) %}
+    {% set_global locations = locations | concat(with=instance.location) %}
     {% endfor %}
     {% set_global software = software | unique | sort %}
     {% set_global locations = locations | unique | sort %}
@@ -58,7 +59,7 @@
                 <div id="filter-signup-menu" class="filter-menu">
                     <div class="filter-option">
                         <input type="checkbox" checked id="signup-unfiltered">
-                        <label for="signup-unfiltered">Unfiltered registrations</label>
+                        <label for="signup-unfiltered">Open to all</label>
                     </div>
                     <div class="filter-option">
                         <input type="checkbox" checked id="signup-conditional">
@@ -106,30 +107,79 @@
     <div id="all-instances" class="projects-card-deck">
         {% for instance in instances %}
         <div>
-        <a href="{{ instance.path }}" class="project-card instance {{ instanceutils::classes(instance=instance) }}">
-            <div class="image-container">
-                {% set logo_path = instance.relative_path | trim_end_matches(pat=".md") %}
-                {% set logo_path = "/" ~ logo_path~".svg" %}
-                {% set file_exists = load_data(path="/"~logo_path, required=false) %}
-                {% if file_exists %}
-                <img src="/{{ instance.relative_path | trim_end_matches(pat=".md") }}.svg" alt="{{ instance.title }}">
-                {% else %}
-                <div class="avatar">
-                    {{ instance.title | truncate(length=1, end="") }}
-                </div>
-                {% endif %}
+        <a id="{{ instance.title | slugify }}" class="project-card instance {{ instanceutils::classes(instance=instance) }}">
+            <div class="avatar">
+                {{ instance.title | truncate(length=1, end="") }}
             </div>
             <h3>{{ instance.title }}</h3>
-            <p>{{ instance.content | safe }}</p>
+            <p>{{ instance.description | safe }}</p>
             <ul class="details">
-                <li>{{ instanceutils::country_name(code=instance.extra.location) }}</li>
-                <li>{{ instanceutils::registration_label(type=instance.extra.signup) }}</li>
-                <li>{{ instanceutils::structure_label(type=instance.extra.structure) }}</li>
-                <li>{{ instance.extra.software | capitalize }} {{ instance.extra.version }}</li>
+                <li>{{ instanceutils::country_name(code=instance.location) }}</li>
+                <li>{{ instanceutils::registration_label(type=instance.signup) }}</li>
+                <li>{{ instanceutils::structure_label(type=instance.structure) }}</li>
+                <li>{{ instance.software | capitalize }} {{ instance.version }}</li>
             </ul>
         </a>
         </div>
         {% endfor %}
     </div>
+    {% for instance in instances %}
+    <dialog id="{{ instance.title | slugify }}-modal">
+        <form method="dialog"><button class="close-button"><img src="/assets/close.svg"></button></form>
+        <header class="instance-header">
+            <div class="avatar">
+                {{ instance.title | truncate(length=1, end="") }}
+            </div>
+            <div>
+                <div class="title-row">
+                    <h1>{{ instance.title }}</h1>
+                    <ul class="details">
+                        <li>{{ instanceutils::country_name(code=instance.location) }}</li>
+                        <li>{{ instanceutils::structure_label(type=instance.structure) }}</li>
+                    </ul>
+                </div>
+                <p>{{ instance.description }}</p>
+            </div>
+        </header>
+        <main class="instance-body">
+            <section>
+                <h2>Details</h2>
+                <ul>
+                    <li>Hosted by {{ instance.hoster }}</li>
+                    <li>Located in {{ instanceutils::country_name(code=instance.location) }}</li>
+                    <li>Created on {{ instance.creation_date | date(format="%e %B %Y") }}</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Join information</h2>
+                <ul>
+                    {% if instance.signup.requires_email == true %}
+                    <li>Requires email verification</li>
+                    {% else %}
+                    <li>Doesn't require email verification</li>
+                    {% endif %}
+                    {% if instance.signup.requires_captcha == true %}
+                    <li>Requires captcha</li>
+                    {% else %}
+                    <li>Doesn't require captcha</li>
+                    {% endif %}
+                    {% if instance.privacy_policy %}
+                    <li><a href="{{ instance.privacy_policy }}">Privacy policy</a></li>
+                    {% else %}
+                    <li>No privacy policy</li>
+                    {% endif %}
+                    {% if instance.terms_of_service %}
+                    <li><a href="{{ instance.terms_of_service }}">Terms of service</a></li>
+                    {% else %}
+                    <li>No terms of service</li>
+                    {% endif %}
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>Register against the domain {{ instance.domain }} using <a href="/ecosystem/clients">a Matrix client</a>.</p>
+        </footer>
+    </dialog>
+    {% endfor %}
 </div>
 {% endblock content %}

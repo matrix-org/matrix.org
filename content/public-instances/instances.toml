@@ -1,0 +1,50 @@
+[[instances]]
+title = "0wnz.at"
+domain = "0wnz.at"
+location = "AT"
+signup.requires_email = true
+signup.requires_captcha = true
+hoster = "0wnz.at"
+structure = "individual"
+software = "Synapse"
+version = "1.89.0"
+creation_date = "2014-01-01"
+description = """
+Some description that fits the server
+"""
+
+
+[[instances]]
+title =  "archaeo.social"
+domain = "archaeo.social"
+location = "CH"
+signup.requires_email = true
+signup.requires_captcha = true
+hoster = "The archaeo social collective"
+structure = "non-profit"
+terms_of_service = "https://archaeo.social/about"
+software = "Synapse"
+version = "1.87.0"
+creation_date = "1950-01-01"
+description = """
+An archaeology oriented instance.
+"""
+
+
+[[instances]]
+title = "Matrix.org"
+domain = "matrix.org"
+location = "GB"
+signup.requires_email = true
+signup.requires_captcha = true
+hoster = "The Matrix.org Foundation"
+structure = "non-profit"
+software = "Synapse"
+version = "1.89.0"
+privacy_policy = "https://matrix.org/legal/privacy-notice/"
+terms_of_service = "https://matrix.org/legal/terms-and-conditions/"
+creation_date = "2014-09-01"
+description = """
+The largest open network for secure, decentralised communications.
+"""
+

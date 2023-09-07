@@ -1,8 +1,8 @@
 {% macro registration_label(type) %}
-{% if type == "unfiltered" %}
-Unfiltered
-{% elif type == "conditional" %}
+{% if type.conditional %}
 Conditional
+{% else %}
+Open to all
 {% endif %}
 {% endmacro %}
 
@@ -511,9 +511,13 @@ Paid
 {% endmacro %}
 
 {% macro classes(instance) %}
-{% set software_version = instance.extra.software ~ " " ~ instance.extra.version %}
-location-{{ instance.extra.location | lower }}
-signup-{{ instance.extra.signup | lower }}
-structure-{{ instance.extra.structure | lower }}
+{% set software_version = instance.software ~ " " ~ instance.version %}
+location-{{ instance.location | lower }}
+{%if instance.signup.restriction %}
+signup-conditional
+{% else %}
+signup-unfiltered
+{% endif %}
+structure-{{ instance.structure | lower }}
 software-{{ software_version | slugify }}
 {% endmacro %}

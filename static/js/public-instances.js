@@ -17,4 +17,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     for (const filter of filters) {
         filter.refreshActiveState();
     }
+
+    const dialogOpeners = document.querySelectorAll("#all-instances > div > a");
+    const overlay = document.getElementById("filters-overlay");
+    for(var opener of dialogOpeners) {
+        const modal = document.getElementById(opener.id + "-modal");
+        opener.addEventListener('click', () => {
+            modal.showModal();
+            overlay.classList.add("display");
+        });
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) {
+                modal.close();
+            }
+        });
+        modal.addEventListener('close', () => {
+            console.log("Closed");
+            const overlay = document.getElementById("filters-overlay");
+            overlay.classList.remove("display");
+        });
+    }
 })
