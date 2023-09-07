@@ -25,19 +25,6 @@ Matrix Client-Server SDK for JavaScript.
 """
 
 [[sdks]]
-name = "Matrix.org React SDK"
-maintainer = "Matrix.org team"
-maturity = "Stable"
-language = "JavaScript"
-licence = "Apache-2.0"
-repository = "https://github.com/matrix-org/matrix-react-sdk"
-purpose = ["client"]
-featured_in = []
-description = """
-Matrix SDK for React Javascript.
-"""
-
-[[sdks]]
 name = "MatrixBot .NET Core SDK"
 maintainer = "enimatek-nl"
 maturity = "Stable"
