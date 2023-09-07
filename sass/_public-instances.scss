@@ -106,6 +106,10 @@
             gap: 1rem;
             margin-inline-end: 4rem;
 
+            .avatar {
+                margin-block: auto;
+            }
+
             .title-row {
                 display: flex;
                 justify-content: flex-start;
