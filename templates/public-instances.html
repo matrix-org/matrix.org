@@ -124,8 +124,8 @@
         {% endfor %}
     </div>
     {% for instance in instances %}
-    <dialog id="{{ instance.title | slugify }}-modal">
-        <form method="dialog"><button class="close-button"><img src="/assets/close.svg"></button></form>
+    <div id="{{ instance.title | slugify }}-modal" class="dialog">
+        <button class="close-button"><img src="/assets/close.svg"></button>
         <header class="instance-header">
             <div class="avatar">
                 {{ instance.title | truncate(length=1, end="") }}
@@ -179,7 +179,7 @@
         <footer>
             <p>Register against the domain {{ instance.domain }} using <a href="/ecosystem/clients">a Matrix client</a>.</p>
         </footer>
-    </dialog>
+    </div>
     {% endfor %}
 </div>
 {% endblock content %}

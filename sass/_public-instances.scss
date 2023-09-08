@@ -65,13 +65,33 @@
         clip-path: circle(30px);
     }
 
-    dialog {
-        border-color: #d2d2d2;
-        border-width: 2px;
+    .dialog {
+        display: none;
+        background-color: #fff;;
+        border: 2px solid #d2d2d2;
         border-radius: 20px;
-        position: relative;
+        position: fixed;
         padding: 2.5rem 1.5rem;
-        min-width: min(37.5rem, 50vw);
+        z-index: 200;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        overflow: auto;
+
+        @media (max-width: 767px) {
+            left: -2px;
+            right: -2px;
+            top: 20%;
+            bottom: -20px;
+            padding-block-end: calc(2.5rem + 20px);
+            transform: unset;
+        }
+
+        &.display {
+            display: block;
+        }
 
         a {
             color: #000;
@@ -114,6 +134,7 @@
                 display: flex;
                 justify-content: flex-start;
                 gap: 1rem;
+                flex-wrap: wrap;
 
                 ul.details {
                     margin-block: auto;
@@ -124,8 +145,11 @@
         .instance-body {
             padding-block: 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            @media (max-width: 767px) {
+                grid-template-columns: 1fr;
+            }
+            gap: 2rem;
 
             h2 {
                 font-size: 1.1rem;

@@ -22,19 +22,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const overlay = document.getElementById("filters-overlay");
     for(var opener of dialogOpeners) {
         const modal = document.getElementById(opener.id + "-modal");
+        const closers = modal.getElementsByClassName("close-button");
+        for(const closer of closers) {
+            closer.addEventListener('click', () => {
+                modal.classList.remove("display");
+                overlay.classList.remove("display");
+            });
+        }
         opener.addEventListener('click', () => {
-            modal.showModal();
+            modal.classList.add("display");
             overlay.classList.add("display");
         });
-        modal.addEventListener('click', (e) => {
-            if(e.target === modal) {
-                modal.close();
+        overlay.addEventListener('click', () => {
+            modal.classList.remove("display");
+        });
+        document.addEventListener('keydown', (e) => {
+            if(e.key == "Escape") {
+                modal.classList.remove("display");
             }
-        });
-        modal.addEventListener('close', () => {
-            console.log("Closed");
-            const overlay = document.getElementById("filters-overlay");
-            overlay.classList.remove("display");
-        });
+        })
     }
 })
