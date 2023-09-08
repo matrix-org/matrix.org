@@ -127,19 +127,17 @@
     <div id="{{ instance.title | slugify }}-modal" class="dialog">
         <button class="close-button"><img src="/assets/close.svg"></button>
         <header class="instance-header">
-            <div class="avatar">
-                {{ instance.title | truncate(length=1, end="") }}
-            </div>
-            <div>
-                <div class="title-row">
-                    <h1>{{ instance.title }}</h1>
-                    <ul class="details">
-                        <li>{{ instanceutils::country_name(code=instance.location) }}</li>
-                        <li>{{ instanceutils::structure_label(type=instance.structure) }}</li>
-                    </ul>
+            <div class="title-row">
+                <div class="avatar">
+                    {{ instance.title | truncate(length=1, end="") }}
                 </div>
-                <p>{{ instance.description }}</p>
+                <h1>{{ instance.title }}</h1>
+                <ul class="details">
+                    <li>{{ instanceutils::country_name(code=instance.location) }}</li>
+                    <li>{{ instanceutils::structure_label(type=instance.structure) }}</li>
+                </ul>
             </div>
+            <p>{{ instance.description }}</p>
         </header>
         <main class="instance-body">
             <section>

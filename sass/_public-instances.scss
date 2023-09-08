@@ -124,7 +124,8 @@
         .instance-header {
             display: flex;
             gap: 1rem;
-            margin-inline-end: 4rem;
+            margin-inline-end: 3rem;
+            flex-wrap: wrap;
 
             .avatar {
                 margin-block: auto;
