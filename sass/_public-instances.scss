@@ -163,5 +163,14 @@
                 padding-inline-start: 1em;
             }
         }
+
+        footer {
+            margin-block-start: 2rem;
+
+            .domain {
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: 700;
+            }
+        }
     }
 }
