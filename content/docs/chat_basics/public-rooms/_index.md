@@ -11,6 +11,7 @@ Matrix is often use for public online discussions. Being an interoperable
 protocol, it allows people using different providers to talk together online,
 safely.
 """
+insert_anchor_links = "left"
 +++
 
 When you want to join larger public conversations, you have three major options

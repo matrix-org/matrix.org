@@ -7,4 +7,5 @@ render = false
 emoji = "🧑"
 tile = "Learn the basics on how to chat on Matrix, for individuals"
 updated = "2022-10-18T16:00:00Z"
+insert_anchor_links = "left"
 +++

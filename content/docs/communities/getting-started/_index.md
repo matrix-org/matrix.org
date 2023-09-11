@@ -11,6 +11,7 @@ meta_description = """
 Everyone can start their community on Matrix by creating a Matrix Space.
 Community Managers can then tweak the Space to their needs.
 """
+insert_anchor_links = "left"
 +++
 
 We strongly recommend getting familiar with Matrix as an individual. It's easy

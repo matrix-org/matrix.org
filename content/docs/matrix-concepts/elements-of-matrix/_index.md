@@ -10,6 +10,7 @@ Matrix relies on homeservers to connect clients together. Appservices are
 pieces of software that can bridge Matrix and third-party platforms together.
 The Matrix Specification defines the interactions between all those.
 """
+insert_anchor_links = "left"
 +++
 
 {{ howitworks() }}

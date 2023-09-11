@@ -11,6 +11,7 @@ meta_description = """
 This section contains all the documentation previously published that is no
 longer relevant or maintained. It is kept online for archive purposes.
 """
+insert_anchor_links = "left"
 +++
 
 This section contains all the outdated documentation from the former matrix.org

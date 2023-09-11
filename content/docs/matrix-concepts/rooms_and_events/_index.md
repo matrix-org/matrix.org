@@ -9,6 +9,7 @@ Matrix relies on rooms to distribute events across servers and clients. Rooms
 have a hierarchy based on power levels. Each homeserver has its own copy of all
 the rooms all their users belong to.
 """
+insert_anchor_links = "left"
 +++
 
 Users on a server can send *events* into *rooms*. An event is a particular json

@@ -11,6 +11,7 @@ Matrix allows communities to stay safe thanks to moderation tools. Mjolnir is
 the recommended solution for community managers who want to fight abuse on
 Matrix.
 """
+insert_anchor_links = "left"
 +++
 
 ## Power levels

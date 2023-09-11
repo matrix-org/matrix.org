@@ -9,4 +9,5 @@ The Matrix.org Foundation blog is where the Matrix Foundation and Community
 post updates on their activity. Every Friday evening they publish This Week In
 Matrix, a digest of the past week activity.
 """
+insert_anchor_links = "left"
 +++

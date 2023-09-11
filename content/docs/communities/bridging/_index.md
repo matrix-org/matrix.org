@@ -6,6 +6,7 @@ weight = 400
 emoji = "🌉"
 tile = "I want to bridge my community from another platform with Matrix"
 updated = "2022-11-18T09:50:00Z"
+insert_anchor_links = "left"
 +++
 
 The easiest way to bridge your Matrix community with you Discord one is to rely

@@ -7,4 +7,5 @@ extra.summary = """
 The Matrix ecosystem is vibrant. Whatever platform you use, someone has probably
 already developed a client for it. 
 """
+insert_anchor_links = "left"
 +++

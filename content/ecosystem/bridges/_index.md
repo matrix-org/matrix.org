@@ -6,6 +6,7 @@ extra.summary = """
 Bridges allow you to connect Matrix to a third-party platform, and interact
 seamlessly.
 """
+insert_anchor_links = "left"
 +++
 
 An important idea in Matrix is Interoperability. This means that Matrix is open
