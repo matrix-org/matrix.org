@@ -18,13 +18,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: 'thibaultamartin/public-instances-updater'
-          path: 'pui'
+          path: 'piu'
 
       - name: Update public instance data on the runner
         run: |
-          cp morg/content/public-instances/instances.toml pui/instances.toml
-          yarn && yarn run update
-          cp pui/instances.toml morg/content/public-instances/instances.toml
+          cp morg/content/public-instances/instances.toml piu/instances.toml
+          cd piu && yarn && yarn run update && cd ..
+          cp piu/instances.toml morg/content/public-instances/instances.toml
 
       - name: Commit and push data
         run: |
