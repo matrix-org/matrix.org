@@ -22,9 +22,9 @@ jobs:
 
       - name: Update public instance data on the runner
         run: |
-          cp morg/ecosystem/public-instances/instances.toml pui/instances.toml
+          cp morg/content/ecosystem/public-instances/instances.toml pui/instances.toml
           yarn && yarn run update
-          cp pui/instances.toml morg/ecosystem/public-instances/instances.toml
+          cp pui/instances.toml morg/content/ecosystem/public-instances/instances.toml
 
       - name: Commit and push data
         run: |
