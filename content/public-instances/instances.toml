@@ -1,20 +1,4 @@
 [[instances]]
-title = "0wnz.at"
-domain = "0wnz.at"
-location = "AT"
-signup.requires_email = true
-signup.requires_captcha = true
-hoster = "0wnz.at"
-structure = "individual"
-software = "Synapse"
-version = "1.89.0"
-creation_date = "2014-01-01"
-description = """
-Some description that fits the server
-"""
-
-
-[[instances]]
 title =  "archaeo.social"
 domain = "archaeo.social"
 location = "CH"
