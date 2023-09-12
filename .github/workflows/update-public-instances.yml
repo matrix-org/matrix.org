@@ -1,0 +1,36 @@
+name: Update public instances
+on:
+  push:
+    branches:
+      - instance-picker
+
+jobs:
+  run:
+    name: Update public instances
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout matrix.org source
+        uses: actions/checkout@v4
+        with:
+          path: 'morg'
+
+      - name: Checkout the public instance updater
+        uses: actions/checkout@v4
+        with:
+          repository: 'thibaultamartin/public-instances-updater'
+          path: 'pui'
+
+      - name: Update public instance data on the runner
+        run: |
+          cp morg/ecosystem/public-instances/instances.toml pui/instances.toml
+          yarn && yarn run update
+          cp pui/instances.toml morg/ecosystem/public-instances/instances.toml
+
+      - name: Commit and push data
+        run: |
+          cd morg
+          git config --global user.name "GitHub CI"
+          git config --global user.email "noreply@matrix.org"
+          git add ecosystem/public-instances/instances.toml
+          git commit -m "Update instances.toml"
+          git push
