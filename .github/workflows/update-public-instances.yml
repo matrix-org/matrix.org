@@ -31,7 +31,7 @@ jobs:
         run: |
           git config --global user.name "GitHub CI"
           git config --global user.email "noreply@matrix.org"
-          git switch ${ github.ref_name }
+          git switch $GITHUB_REF_NAME
           git add public-instances/instances.toml
           git commit -m "Update instances.toml"
           git push
