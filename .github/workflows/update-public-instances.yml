@@ -3,7 +3,7 @@ on:
   # Delete push: and replace with schedule before merging to main
   push:
     branches:
-      - main
+      - instance-picker
 
 jobs:
   run:
