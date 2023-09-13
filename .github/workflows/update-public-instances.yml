@@ -38,7 +38,7 @@ jobs:
         working-directory: morg
 
       - name: Commit and push data (scheduled)
-        if: ${{ github.event_name == 'schedule' }}
+        if: github.event_name == 'schedule'
         run: |
           git config --global user.name "GitHub CI"
           git config --global user.email "noreply@matrix.org"
