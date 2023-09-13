@@ -1,13 +1,9 @@
 name: Update public instances
 on:
-  # Delete push: and replace with schedule before merging to main
-  push:
-    branches:
-      - instance-picker
+  schedule: [{cron: "0 0 * * *"}]
 
 jobs:
   run:
-    # Delete with: ref: instance-picker before merging to main
     name: Update public instances
     runs-on: ubuntu-latest
     steps:
@@ -15,7 +11,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: 'morg'
-          ref: instance-picker
 
       - name: Checkout the public instance updater
         uses: actions/checkout@v4
@@ -31,7 +26,6 @@ jobs:
 
       # Delete the if before merging to main
       - name: Commit and push data (scheduled)
-        if: github.event_name == 'schedule'
         run: |
           git config --global user.name "GitHub CI"
           git config --global user.email "noreply@matrix.org"
