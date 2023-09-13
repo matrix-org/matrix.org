@@ -29,24 +29,13 @@ jobs:
           cd piu && yarn && yarn run update && cd ..
           cp piu/instances.toml morg/content/public-instances/instances.toml
 
-      # Delete this step before merging to main
-      - name: Commit and push data (within PR)
-        run: |
-          git config --global user.name "GitHub CI"
-          git config --global user.email "noreply@matrix.org"
-          git switch instance-picker
-          git add content/public-instances/instances.toml
-          git commit -m "Update instances.toml"
-          git push
-        working-directory: morg
-
       # Delete the if before merging to main
       - name: Commit and push data (scheduled)
         if: github.event_name == 'schedule'
         run: |
           git config --global user.name "GitHub CI"
           git config --global user.email "noreply@matrix.org"
-          git add public-instances/instances.toml
+          git add content/public-instances/instances.toml
           git commit -m "Update instances.toml"
           git push
         working-directory: morg
