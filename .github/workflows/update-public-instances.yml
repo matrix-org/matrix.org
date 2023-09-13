@@ -35,7 +35,7 @@ jobs:
           git config --global user.name "GitHub CI"
           git config --global user.email "noreply@matrix.org"
           git switch instance-picker
-          git add public-instances/instances.toml
+          git add content/public-instances/instances.toml
           git commit -m "Update instances.toml"
           git push
         working-directory: morg
