@@ -27,7 +27,7 @@ jobs:
           cp piu/instances.toml morg/content/public-instances/instances.toml
 
       - name: Commit and push data (within PR)
-        if: ${{ github.event_name == 'pull_request' }}
+        if: github.event_name == 'pull_request'
         run: |
           git config --global user.name "GitHub CI"
           git config --global user.email "noreply@matrix.org"
