@@ -31,7 +31,6 @@ jobs:
 
       # Delete this step before merging to main
       - name: Commit and push data (within PR)
-        if: github.event_name == 'pull_request'
         run: |
           git config --global user.name "GitHub CI"
           git config --global user.email "noreply@matrix.org"
