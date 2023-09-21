@@ -157,3 +157,14 @@ maintainer = "Réda Housni Alaoui"
 language = "Java"
 licence = "MIT"
 repository = "https://github.com/jenkinsci/matrix-communication-plugin"
+
+[[integrations]]
+name = "radicale-auth-matrix"
+description = """
+Matrix authentication plugin for Radicale
+"""
+maintainer = "etke.cc"
+language = "Python"
+licence = "AGPL-3.0-only"
+repository = "https://gitlab.com/etke.cc/radicale-auth-matrix"
+room = "#source:etke.cc"
