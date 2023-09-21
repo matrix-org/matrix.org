@@ -157,3 +157,15 @@ maintainer = "Réda Housni Alaoui"
 language = "Java"
 licence = "MIT"
 repository = "https://github.com/jenkinsci/matrix-communication-plugin"
+
+[[integrations]]
+name = "Time-to-Matrix"
+description = """
+A time-like command that will send end of an arbitrary command output 
+and some other info (like exit status) to matrix room.
+"""
+maintainer = "etke.cc"
+language = "Go"
+licence = "MIT"
+repository = "https://gitlab.com/etke.cc/ttm"
+room = "#ttm:etke.cc"
