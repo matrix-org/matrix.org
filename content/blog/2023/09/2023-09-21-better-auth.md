@@ -1,5 +1,5 @@
 +++
-date = "2023-09-21"
+date = "2023-09-21T14:00:00Z"
 title = "Better authentication, session management and permissions in Matrix"
 
 [taxonomies]
