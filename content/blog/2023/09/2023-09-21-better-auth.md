@@ -10,6 +10,8 @@ category = ["General"]
 image = "https://matrix.org/blog/img/matrix-oidc.png"
 +++
 
+Before we explain all about our new authentication system - don't panic! This change is part of Matrix 2.0, the next step for Matrix that will be introduced in a blog post later today.
+
 ## Nothing breaks
 
 Matrix 2.0 is a reference to Matthew’s FOSDEM talk [Matrix 2.0](https://archive.fosdem.org/2023/schedule/event/matrix20/), itself a reference to the name he coined in the [Matrix Summer Special 2022](https://matrix.org/blog/2022/08/15/the-matrix-summer-special-2022/#matrix-2-0): evolutions of the spec that are making the Matrix experience so much better it almost feels like a different protocol. One of the major changes in this bundle is the introduction of OpenID Connect-native Matrix and its implementation [matrix-authentication-service](https://github.com/matrix-org/matrix-authentication-service/) (MAS).
@@ -31,7 +33,7 @@ While this approach has served Matrix well, the Matrix Access Token method is re
 
 [MSC3861](https://github.com/matrix-org/matrix-spec-proposals/pull/3861), which proposes the adoption of OIDC in Matrix, is all about embracing the best of OIDC to make Matrix even better. By adopting the standard OIDC flows we allow Matrix to stand on the shoulders of another battle-tested industry standard. Not only does it improve security overall, it also unlocks new use cases for Matrix.
 
-![](/blog/img/20230921-classic-token.png)
+![](/blog/img/20230921-oidc-token.png)
 
 
 ## Unlocking use cases
