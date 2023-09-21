@@ -11,6 +11,17 @@ repository = "https://github.com/vranki/hemppa"
 room = "#hemppa:hacklab.fi"
 
 [[integrations]]
+name = "Honoroit"
+description = """
+A Matrix helpdesk bot
+"""
+maintainer = "etke.cc"
+language = "Go"
+licence = "AGPL-3.0-only"
+repository = "https://gitlab.com/etke.cc/honoroit"
+room = "#honoroit:etke.cc"
+
+[[integrations]]
 name = "matrix-email-bot"
 description = """
 Posts links to emails in Matrix rooms. Ideal for newsletter distribution.
