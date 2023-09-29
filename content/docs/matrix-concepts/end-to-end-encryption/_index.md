@@ -1,6 +1,16 @@
 +++
 title = "End-to-End Encryption implementation guide"
-aliases = ["/docs/guides/end-to-end-encryption-implementation-guide"]
+weight = 900
+template = "docs/with_menu.html"
+aliases = ["/docs/guides/end-to-end-encryption-implementation-guide", "/docs/legacy/e2e-implementation/"]
+
+[extra]
+updated = "2023-02-08T08:00:00Z"
+meta_description = """
+This guide is intended for authors of Matrix clients who wish to add support for
+end-to-end encryption. It is highly recommended that readers be familiar with
+the Matrix protocol and the use of access tokens before proceeding.
+"""
 +++
 
 ## Implementing End-to-End Encryption in Matrix clients
