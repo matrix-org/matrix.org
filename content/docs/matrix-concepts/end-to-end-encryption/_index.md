@@ -1,6 +1,16 @@
 +++
 title = "End-to-End Encryption implementation guide"
-aliases = ["/docs/guides/end-to-end-encryption-implementation-guide"]
+weight = 900
+template = "docs/with_menu.html"
+aliases = ["/docs/guides/end-to-end-encryption-implementation-guide", "/docs/legacy/e2e-implementation/"]
+
+[extra]
+updated = "2023-02-08T08:00:00Z"
+meta_description = """
+This guide is intended for authors of Matrix clients who wish to add support for
+end-to-end encryption. It is highly recommended that readers be familiar with
+the Matrix protocol and the use of access tokens before proceeding.
+"""
 +++
 
 ## Implementing End-to-End Encryption in Matrix clients
@@ -9,14 +19,9 @@ This guide is intended for authors of Matrix clients who wish to add support for
 end-to-end encryption. It is highly recommended that readers be familiar with
 the Matrix protocol and the use of access tokens before proceeding.
 
-### The libolm library
+### Olm/Megolm implementations
 
-End-to-end encryption in Matrix is based on the Olm and Megolm cryptographic
-ratchets. The recommended starting point for any client authors is with the
-[libolm](https://matrix.org/git/olm) library, which contains implementations of
-all of the cryptographic primitives required. The library itself is written in
-C/C++, but is architected in a way which makes it easy to write wrappers for
-higher-level languages.
+End-to-end encryption in Matrix is based on the Olm and Megolm cryptographic ratchets. The recommended starting point for any client authors is with the [vodozemac](https://github.com/matrix-org/vodozemac/), which contains implementations of all the cryptographic methods required.  [libolm](https://gitlab.matrix.org/matrix-org/olm) is also available.
 
 ### Devices
 
