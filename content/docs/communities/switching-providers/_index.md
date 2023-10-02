@@ -11,6 +11,7 @@ Even after creating a community on a provider, it's possible to switch to
 another one. This allows communities to get more sovereignty on their
 conversations, and to connect them to their own systems.
 """
+insert_anchor_links = "left"
 +++
 
 ## Why switching providers?

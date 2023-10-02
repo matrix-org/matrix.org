@@ -11,6 +11,7 @@ Matrix can be used to create small private group chats. It can be used to send
 messages, invite others, but it also has moderation features to keep the group
 safe.
 """
+insert_anchor_links = "left"
 +++
 
 The simplest way to get started is to create a private group chat so you can

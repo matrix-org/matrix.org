@@ -9,6 +9,7 @@ meta_description = """
 Matrix is an open protocol many apps can use for secure, decentralised
 communications. Your first steps with Matrix start here.
 """
+insert_anchor_links = "left"
 +++
 
 ## What is it?

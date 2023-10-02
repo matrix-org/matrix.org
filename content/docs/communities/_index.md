@@ -7,4 +7,5 @@ render = false
 emoji = "👪"
 tile = "Create a cozy place on Matrix for your community or organisation"
 updated = "2022-11-18T09:50:00Z"
+insert_anchor_links = "left"
 +++
