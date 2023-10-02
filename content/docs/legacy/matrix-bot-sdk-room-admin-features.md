@@ -1,6 +1,7 @@
 +++
 title = "matrix-bot-sdk Room Admin Features"
 aliases = ["/docs/guides/matrix-bot-sdk-room-admin-features"]
+extra.new_doc = "https://turt2live.github.io/matrix-bot-sdk/index.html"
 +++
 
 ## Intro

@@ -1,6 +1,7 @@
 +++
 title = "Usage of matrix-bot-sdk"
 aliases = ["/docs/guides/usage-of-matrix-bot-sdk"]
+extra.new_doc = "https://turt2live.github.io/matrix-bot-sdk/index.html"
 +++
 
 This article concerns [matrix-bot-sdk], a TypeScript client SDK for Matrix.

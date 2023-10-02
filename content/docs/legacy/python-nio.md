@@ -1,6 +1,7 @@
 +++
 title = "Usage of matrix-nio (Python Matrix client library)"
 aliases = ["/docs/guides/usage-of-matrix-nio"]
+extra.new_doc = "https://matrix-nio.readthedocs.io/en/latest"
 +++
 
 This article concerns [matrix-nio](https://github.com/poljar/matrix-nio), and

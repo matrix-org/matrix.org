@@ -2,6 +2,7 @@
 title = "Moderation in Matrix"
 aliases = ["/docs/guides/moderation"]
 extra.updated = "2022-10-18T16:00:00Z"
+extra.new_doc = "/docs/communities/moderation/"
 +++
 
 ## Introduction
