@@ -1,4 +1,16 @@
 [[integrations]]
+name = "emm"
+description = """
+emm stands for Export Matrix Messages
+A CLI tool that joins the room and exports last N messages to the file(-s) you specified.
+"""
+maintainer = "etke.cc"
+language = "Go"
+licence = "GPL-3.0-or-later"
+repository = "https://gitlab.com/etke.cc/emm"
+room = "#emm:etke.cc"
+
+[[integrations]]
 name = "Hemppa"
 description = """
 Generic modular Matrix bot, a super easy platform to write Matrix bot
