@@ -3,10 +3,17 @@
 <article class="content">
     <header>
         <div class="legacy-doc-warning {% if page.extra.new_doc %}outdated{% endif %}">
-            <h2>Old documentation</h2>
+            <h2>
+                {% if page.extra.new_doc %}
+                Outdated
+                {% else %}
+                Old
+                {% endif %}
+                documentation
+            </h2>
             <p>
                 This documentation hasn't been updated in a while. Some
-                information might no longer be valid outdated.
+                information might no longer be valid.
             </p>
 
             <p>
