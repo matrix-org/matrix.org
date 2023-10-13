@@ -75,9 +75,14 @@
             <header>
                 <h1>{{ section.title }}</h1>
                 {% set iso_date = section.extra.updated | date(format = '%Y-%m-%d') %}
-                <span class="last-updated">
+                <div class="metadata">
                     Last updated: <time datetime="{{ iso_date }}"> {{ iso_date }}</time>
-                </span>
+                </div>
+                {% if section.author %}
+                <div class="metadata">
+                    Author: {{ section.author }}
+                </div>
+                {% endif %}
             </header>
 
             {{ section.content | markdown | safe }}

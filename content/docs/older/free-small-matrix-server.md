@@ -1,6 +1,6 @@
 +++
 title = "Free Matrix Server using Oracle Cloud"
-author = "Paul Tötterman <paul.totterman@iki.fi>"
+extra.author = "Paul Tötterman <paul.totterman@iki.fi>"
 aliases = ["/docs/guides/free-small-matrix-server"]
 +++
 

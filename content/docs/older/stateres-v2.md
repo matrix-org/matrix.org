@@ -1,6 +1,6 @@
 +++
 title = "State Resolution v2 for the Hopelessly Unmathematical"
-author = "Neil Alexander Twigg"
+extra.author = "Neil Alexander Twigg"
 aliases = ["/docs/guides/implementing-stateres"]
 +++
 

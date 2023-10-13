@@ -1,6 +1,6 @@
 +++
 title = "Implementing more advanced e2ee features, such as cross-signing"
-author = "Sorunome"
+extra.author = "Sorunome"
 aliases = ["/docs/guides/implementing-more-advanced-e-2-ee-features-such-as-cross-signing"]
 +++
 
