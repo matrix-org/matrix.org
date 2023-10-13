@@ -3,6 +3,7 @@
 <script src="/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="/js/d3.v3.min.js"></script>
 <script src="/js/how-it-works.js"></script>
+<script src="/js/docs.js"></script>
 {% endblock scripts %}
 {% block content %}
 
@@ -17,8 +18,6 @@
 {% endif %}
 
 <div class="docs-body">
-    <input id="docs-menu-checkbox" type="checkbox" aria-hidden="true" />
-
     <div class="docs-menu">
         <div class="docs-menu-inner">
             {% for doc_section_path in docs_sections.subsections %}
@@ -37,11 +36,11 @@
                 <ul class="section-submenu-wrap">
                     {% for h2 in doc_section.toc %}
                     <li>
-                        <a href="{{ h2.permalink }}">{{ h2.title }}</a>
+                        <a href="{{ h2.permalink }}" class="toclink">{{ h2.title }}</a>
                         {% if h2.children %}
                         <ul>
                             {% for h3 in h2.children %}
-                            <a href="{{ h3.permalink }}">
+                            <a href="{{ h3.permalink }}" class="toclink">
                                 <li>{{ h3.title }}</li>
                             </a>
                             {% endfor %}
@@ -52,10 +51,10 @@
                     {% for doc_subsection_path in doc_section.subsections %}
                     {% set doc_subsection = get_section(path=doc_subsection_path) %}
                     <li>
-                        <a href="{{ doc_subsection.path }}">{{ doc_subsection.title }}</a>
+                        <a href="{{ doc_subsection.path }}" class="toclink">{{ doc_subsection.title }}</a>
                         <ul>
                             {% for h3 in doc_subsection.toc %}
-                            <a href="{{ h3.permalink }}">
+                            <a href="{{ h3.permalink }}" class="toclink">
                                 <li>{{ h3.title }}</li>
                             </a>
                             {% endfor %}
@@ -85,5 +84,5 @@
         </article>
     </div>
 </div>
-<label for="docs-menu-checkbox" id="docs-menu-button">Table of Contents</label>
+<button id="docs-menu-button">Table of Contents</button>
 {% endblock content %}

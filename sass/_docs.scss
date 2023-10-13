@@ -19,19 +19,23 @@ header {
 }
 
 .docs-menu {
-    padding: 1em;
+    position: fixed;
+    padding-block-start: var(--navbar-height);
+    inset-block: 0;
+    inset-inline-start: 0;
+    overflow-y: auto;
     border-right: 1px solid var(--borders-color);
     max-width: var(--docs-menu-width);
 
     .docs-menu-inner {
-        position: sticky;
-        top: calc(var(--navbar-height) + 1rem);
-        overflow-y: auto;
+        padding: 1.5rem;
     }
 
     @media (max-width: 767px) {
         border-right: unset;
         background-color: #fff;
+        inset-inline: 0;
+        max-width: unset;
         padding-bottom: 5rem;
     }
 
@@ -99,7 +103,7 @@ header {
 }
 
 .docs-content {
-    flex: 1;
+    padding-inline-start: calc(var(--docs-menu-width) + 3rem + .5rem);
 
     @media (max-width: 767px) {
         margin-inline: auto;
@@ -112,12 +116,8 @@ header {
     }
 }
 
-#docs-menu-checkbox {
-    display: none;
-}
-
 #docs-menu-button {
-    position: sticky;
+    position: fixed;
     display: none;
     z-index: 900;
 
@@ -131,10 +131,10 @@ header {
 
     background-color: #000;
     color: #fff;
+    border: transparent;
     border-radius: 9999px;
     padding: .5rem 2rem;
     box-shadow: 0 2px 2px #666;
-    cursor: pointer;
 }
 
 #docs-menu-checkbox:checked~#docs-menu-button {
@@ -181,4 +181,8 @@ figure {
         font-size: .8rem;
         text-align: center;
     }
+}
+
+.hidden {
+    display: none;
 }
