@@ -89,3 +89,30 @@ editing = true
 reactions = true
 presence = false
 typing_notifications = true
+
+[[bridges]]
+name = "Out Of Your Element"
+maintainer = "Cadence"
+summary = "Modern Matrix-to-Discord appservice bridge."
+maturity = "Beta"
+language = "Javscript"
+license = "AGPL-3.0-or-later"
+docs = "https://gitdab.com/cadence/out-of-your-element/src/branch/main/docs"
+repo = "https://gitdab.com/cadence/out-of-your-element"
+room = "#out-of-your-element:cadence.moe"
+featured = false
+privilege.platform = "Manage Server role" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = false
+channels = true
+formatted_text = true
+message_media = true
+replies = true
+mentions = true
+threads = true
+redactions = true
+editing = true
+reactions = true
+presence = true
+typing_notifications = false
