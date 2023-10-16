@@ -26,6 +26,7 @@ header {
     overflow-y: auto;
     border-right: 1px solid var(--borders-color);
     max-width: var(--docs-menu-width);
+    min-height: 100dvh;
 
     .docs-menu-inner {
         padding: 1.5rem;
