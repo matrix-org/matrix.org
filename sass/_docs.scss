@@ -21,10 +21,10 @@ header {
 .docs-menu {
     position: fixed;
     padding-block-start: var(--navbar-height);
-    padding-block-end: 30px;
-    inset-block: 0 -30px;
+    inset-block: 0;
     inset-inline-start: 0;
     overflow-y: auto;
+    background-color: #fff;
     border-right: 1px solid var(--borders-color);
     max-width: var(--docs-menu-width);
 
@@ -33,11 +33,17 @@ header {
     }
 
     @media (max-width: 767px) {
+        /*
+        This trick is added because Chrome on Android doesn't re-calculate the
+        height of the viewport before the user stops scrolling. We're
+        artificially making the panel higher than it is
+        */
+        --panel-bottom-trick: 300px;
         border-right: unset;
-        background-color: #fff;
-        inset-inline: 0;
         max-width: unset;
-        padding-bottom: 5rem;
+        inset-inline-end: 0;
+        inset-block-end: calc(-1 * var(--panel-bottom-trick));
+        padding-block-end: calc(var(--panel-bottom-trick) + 5rem);
         z-index: 990;
     }
 
