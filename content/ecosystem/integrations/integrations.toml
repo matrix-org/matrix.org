@@ -76,6 +76,19 @@ repository = "https://github.com/moan0s/matrix-registration-bot/"
 room = "#matrix-registration-bot:hyteck.de"
 
 [[integrations]]
+name = "Matrix Rooms Search API"
+description = """
+A fully-featured, standalone, matrix rooms search service.
+
+Demo instance: https://matrixrooms.info
+"""
+maintainer = "etke.cc"
+language = "Go"
+licence = "GPL-3.0-only"
+repository = "https://gitlab.com/etke.cc/mrs/api"
+room = "#mrs:etke.cc"
+
+[[integrations]]
 name = "matrix-rss-bridge"
 description = "matrix-rss-bridge is a bridge for reading RSS feeds in Matrix rooms."
 author = "Isaac Beverly"
