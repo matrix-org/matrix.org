@@ -25,7 +25,6 @@
 html {
     scroll-snap-type: y proximity;
     scroll-padding-top: 1.875rem; // obtained by fine tuning
-    scroll-behavior: smooth;
 }
 
 body {
