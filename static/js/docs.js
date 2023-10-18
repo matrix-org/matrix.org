@@ -1,4 +1,4 @@
-var contentScrollPos = window.scrollY;
+let contentScrollPos = window.scrollY;
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const responsiveMQ = window.matchMedia('(max-width: 767px)');
