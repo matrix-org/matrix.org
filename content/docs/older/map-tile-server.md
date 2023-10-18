@@ -1,6 +1,6 @@
 +++
 title = "Self-hosting a map tile server for location sharing"
-author = "Andy Balaam"
+extra.author = "Andy Balaam"
 aliases = ["/docs/guides/map-tile-server"]
 +++
 
