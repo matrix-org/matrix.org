@@ -294,3 +294,39 @@ a>code {
         filter: invert(1);
     }
 }
+
+.youtube_placeholder div {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    color: #fff;
+    padding: 1.5rem;
+    gap: 1.5rem;
+
+    img {
+        margin-inline: auto;
+    }
+
+    p {
+        max-width: 30rem;
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    button {
+        max-width: fit-content;
+        margin-inline: auto;
+        padding: .5rem 1rem;
+        border-radius: 9999px;
+        background-color: #fff;
+        border: 1px solid transparent;
+        color: #000;
+        cursor: pointer;
+
+        &:hover {
+            border: 1px solid #fff;
+            color: #fff;
+            background-color: #333;
+        }
+    }
+}

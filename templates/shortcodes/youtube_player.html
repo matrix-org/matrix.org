@@ -1,0 +1,28 @@
+<div id="{{ video_id | slugify }}" class="youtube_placeholder">
+    <div>
+        <img src="/assets/youtube-red.svg" width=159 height=110 alt="The YouTube logo">
+        <p>Clicking the "Load Player" button will load the YouTube Player and its cookies.</p>
+        <button id="button_{{ video_id | slugify }}">Load Player</button>
+    </div>
+</div>
+<script>
+    console.log("Loading");
+    const ytConsent = localStorage.getItem("ytConsent") ?? false;
+    if (ytConsent) {
+        loadPlayer();
+    }
+
+    const consentButton = document.getElementById('button_{{ video_id | slugify }}');
+    consentButton.addEventListener('click', consent);
+
+    function consent() {
+        localStorage.setItem("ytConsent", true);
+        loadPlayer();
+    }
+
+    function loadPlayer() {
+        const placeholder = document.getElementById('{{ video_id | slugify }}');
+        placeholder.replaceChildren();
+        placeholder.innerHTML = '<iframe src="https://www.youtube.com/embed/{{ video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    }
+</script>
