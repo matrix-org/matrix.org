@@ -1,28 +1,28 @@
-<div id="{{ video_id | slugify }}" class="youtube_placeholder">
+<div id="{{ video_id | replace(from="-", to="_" ) }}" class="youtube_placeholder" data-video-id="{{ video_id }}">
     <div>
         <img src="/assets/youtube-red.svg" width=159 height=110 alt="The YouTube logo">
         <p>Clicking the "Load Player" button will load the YouTube Player and its cookies.</p>
-        <button id="button_{{ video_id | slugify }}">Load Player</button>
+        <button id="button_{{ video_id | replace(from="-", to="_" ) }}">Load Player</button>
     </div>
 </div>
 <script>
-    console.log("Loading");
-    const ytConsent = localStorage.getItem("ytConsent") ?? false;
-    if (ytConsent) {
-        loadPlayer();
+    if (localStorage.getItem("ytConsent") ?? false) {
+        loadPlayers();
     }
 
-    const consentButton = document.getElementById('button_{{ video_id | slugify }}');
-    consentButton.addEventListener('click', consent);
+    document.getElementById('button_{{ video_id | replace(from="-", to="_") }}').addEventListener('click', (event) => consent(event));
 
-    function consent() {
+    function consent(event) {
         localStorage.setItem("ytConsent", true);
-        loadPlayer();
+        loadPlayers();
     }
 
-    function loadPlayer() {
-        const placeholder = document.getElementById('{{ video_id | slugify }}');
-        placeholder.replaceChildren();
-        placeholder.innerHTML = '<iframe src="https://www.youtube.com/embed/{{ video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    function loadPlayers() {
+        const placeholders = document.getElementsByClassName("youtube_placeholder");
+        for(const placeholder of placeholders) {
+            const videoId = placeholder.getAttribute("data-video-id")
+            placeholder.replaceChildren();
+            placeholder.innerHTML = '<iframe src="https://www.youtube.com/embed/'+videoId+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        }
     }
 </script>
