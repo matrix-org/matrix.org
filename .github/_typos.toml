@@ -6,5 +6,5 @@ extend-exclude = [
 
 [default]
 extend-ignore-words-re = [
-    "{{ youtube_player\\(video_id=\"[^\"]+\"\\) }}"
+    "\\{\\{ youtube_player\\(video_id=\"[^\"]+\"\\) \\}\\}"
 ]
