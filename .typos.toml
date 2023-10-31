@@ -1,5 +1,7 @@
 [files]
 extend-exclude = [
+    "*.js*", "*.json", "*.svg",
+	"/static/jira",
     # external typo that must be replicated for technical correctness
     "content/blog/2020/09/2020-09-04-this-week-in-matrix-2020-09-04.md",
     # contains non-English
@@ -18,6 +20,9 @@ extend-exclude = [
 ]
 
 [default]
+extend-ignore-re = [
+    "\\{\\{ youtube_player\\(video_id=\"[^\"]+\"\\) \\}\\}"
+]
 
 [default.extend-words]
 requestor = "requestor" # valid spelling variant
