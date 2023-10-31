@@ -1,5 +1,7 @@
 [files]
 extend-exclude = [
+    "*.js*", "*.json", "*.svg",
+    "/static/jira",
     # external typo that must be replicated for technical correctness
     "content/blog/2020/09/2020-09-04-this-week-in-matrix-2020-09-04.md",
     # contains non-English
@@ -7,6 +9,7 @@ extend-exclude = [
     "content/blog/2021/09/2021-09-17-this-week-in-matrix-2021-09-17.md",
     # Username wrongly detected as typo
     "content/blog/2023/04/2023-04-14-this-week-in-matrix-2023-04-14.md",
+    "content/blog/2023/07/2023-07-28-twim.md",
     # Tries to parse svg and image files
     "static/blog/img/",
     "static/js/",
@@ -17,6 +20,9 @@ extend-exclude = [
 ]
 
 [default]
+extend-ignore-re = [
+    "\\{\\{ youtube_player\\(video_id=\"[^\"]+\"\\) \\}\\}"
+]
 
 [default.extend-words]
 requestor = "requestor" # valid spelling variant

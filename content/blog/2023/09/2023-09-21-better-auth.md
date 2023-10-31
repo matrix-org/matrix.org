@@ -65,7 +65,7 @@ From the developer perspective, neither clients nor servers have to add support 
 
 Element has been spearheading the effort to implement [MSC3861](https://github.com/matrix-org/matrix-spec-proposals/pull/3861) and matrix-authentication-service, and Element X is the first client to support them. Here is how the authentication flow and account management look like as seen from Element X iOS.
 
-<iframe src="https://www.youtube.com/embed/COCMi6sAghw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="COCMi6sAghw") }}
 
 
 ### Token rotation

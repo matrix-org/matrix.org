@@ -10,7 +10,7 @@ category = ["This Week in Matrix"]
 
 ## Matrix Live 🎙
 
-<iframe src="https://www.youtube.com/embed/wFSmDn-PlYg" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="wFSmDn-PlYg") }}
 
 A short Matrix Live where we can see the goodness coming to Element very shortly!
 
