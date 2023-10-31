@@ -5,6 +5,6 @@ extend-exclude = [
 ]
 
 [default]
-extend-ignore-words-re = [
+extend-ignore-re = [
     "\\{\\{ youtube_player\\(video_id=(.+)\\) \\}\\}"
 ]
