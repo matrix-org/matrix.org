@@ -15,5 +15,3 @@ jobs:
 
     - name: Check spelling
       uses: crate-ci/typos@v1.15.0
-      with:
-        config: ${{github.workspace}}/.github/_typos.toml
