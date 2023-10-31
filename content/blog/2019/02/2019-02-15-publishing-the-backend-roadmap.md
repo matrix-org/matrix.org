@@ -74,7 +74,7 @@ Not at all (it's written in board marker). This is simply a way to express our p
 
 Here is a video of myself and Matthew to talk you through the projects
 
-<iframe src="https://www.youtube.com/embed/LfyQ6cNGbLk" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
+{{ youtube_player(video_id="LfyQ6cNGbLk") }}
 
 ### Interesting, but I have questions ...
 

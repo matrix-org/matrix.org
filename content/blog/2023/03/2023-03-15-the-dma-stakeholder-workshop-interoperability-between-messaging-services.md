@@ -32,7 +32,7 @@ All of the workshop proceeds were livestreamed and archived by European Commissi
 
 The first panel focused on setting up the scene and highlighting the challenges expected during the implementation phase, featuring [Simonetta Vezzoso](https://www.soi.unitn.it/staff/simonetta-vezzoso/) (Professor of Economics at The University of Trento), [Chiara Caccinelli](https://www.linkedin.com/in/chiaracaccinelli) (Co-chair - Digital Markets WG at [BEREC](https://www.berec.europa.eu/)), [Suzanne Blohm](https://www.vzbv.de/en/policy-work/experts) (Policy officer at [Verbraucherzentrale Bundesverbands (VZBV)](https://www.vzbv.de/)) and [Jan Penfrat](https://www.linkedin.com/in/jan-penfrat) (Senior Policy Advisor at [EDRi](https://edri.org/)). There was a lot of emphasis around the risks of gatekeepers dragging their feet, or choosing the solution which makes it harder for SMEs or self-hosters to interoperate, as well as the challenge of introducing the new paradigm of interoperability for messaging without losing the usability aspect - see below for the full scope:
 
-<iframe src="https://www.youtube.com/embed/yoKjXN3G8a8" title="DMA &amp; messaging services interoperability - Legal framework of article 7, tradeoff &amp; challenges" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{ youtube_player(video_id="yoKjXN3G8a8") }}
 
 <br/>
 
@@ -138,7 +138,7 @@ You can see the whole panel split into the various sections below:
 
 Finally, we launched into the third and final session of the day - a second technical panel to dig into questions of identity, usability, data privacy, consent and anti-abuse in a DMA world.  Relative to the second panel, there were more questions than answers here, as the panellists discussed whether users would need to consent or opt-in/opt-out of interoperability, and debated the various data privacy implications of DMA.  The panel starred Stephen Hurley from Meta again, [Lucas Verney](https://www.linkedin.com/in/lucas-verney) from [PEReN](https://www.peren.gouv.fr), Markus Klein from [Bundesnetzagentur](https://www.bundesnetzagentur.de/) and [Rohan Mahy](https://rohan.com/) from [Wire](https://wire.com) introducing the [MIMI working group](https://datatracker.ietf.org/group/mimi) at IETF.
 
-<iframe src="https://www.youtube.com/embed/ZtRmAaHUxWw" title="DMA &amp; messaging services interoperability - Metadata, cross-certification of users, and UI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{ youtube_player(video_id="ZtRmAaHUxWw") }}
 
 <br/>
 

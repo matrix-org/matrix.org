@@ -42,7 +42,7 @@ end of the year](https://matrix.org/blog/2022/08/15/the-matrix-summer-special-20
 and had far too much giving the mother of all demos to a packed room of nearly
 1500 people.
 
-<iframe src="https://www.youtube.com/embed/eUPJ9zFV5IE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="eUPJ9zFV5IE") }}
 
 ## The first ever in-person Matrix devroom
 
@@ -59,19 +59,19 @@ the gap very quickly.
 
 The devroom started with a quick intro to Matrix from Matthew & Amandine.
 
-<iframe src="https://www.youtube.com/embed/dPgYy-Y4f7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="dPgYy-Y4f7w") }}
 
 Florian followed with a talk about MatrixRTC to explore what Matrix can do
 beyond instant messaging
 
-<iframe src="https://www.youtube.com/embed/P--LwIB3deA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="P--LwIB3deA") }}
 
 
 Then Matthew did an awesome demo of Third Room and “3D widgets” (user generated
 content) that can be embedded into its worlds. Of course with a nice “The Matrix
 in Matrix” scene.
 
-<iframe src="https://www.youtube.com/embed/nG8qJ4on00Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="nG8qJ4on00Y") }}
 
 Stunning 3D worlds are great, but the most popular use case for Matrix today is
 instant messaging. And we did a lot as the Matrix Foundation to significantly
@@ -81,17 +81,17 @@ respectively, while Mauro showed us how Element X, the first client to use it,
 doesn’t stop here and goes way beyond to provide a snappy, sturdy, polished
 client.
 
-<iframe src="https://www.youtube.com/embed/5iIs1zWuVOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="5iIs1zWuVOU") }}
 
 Kim and Oliver from Nordeck made an interesting presentation about how widgets
 can make Matrix a rich app creation environment.
 
-<iframe src="https://www.youtube.com/embed/hhEUe414scU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="hhEUe414scU") }}
 
 The Trixnity project then introduced their fast, multi-purpose, well-tested SDK.
 A talk you don’t want to miss, particularly if you’re into Kotlin.
 
-<iframe src="https://www.youtube.com/embed/zDftIZm-DZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="zDftIZm-DZ0") }}
 
 Pierre from Technostructures introduced us to [Kazarma](https://technostructures.org/projects/kazarma/)
 a bridge between Matrix and ActivityPub. In Pierre’s own words: “we talked a lot
@@ -99,7 +99,7 @@ about interoperability, and we found it sad that we talked about
 interoperability for proprietary platforms, not with alternative decentralised
 networks, so we tried doing that”. And they did. Bravo Pierre and the team!
 
-<iframe src="https://www.youtube.com/embed/D3olH1aUCkQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="D3olH1aUCkQ") }}
 
 Finally Yan concluded the in-person devroom with a speedrun of all the Matrix
 projects he could find around. The video is not out yet, so we’ll add it to the

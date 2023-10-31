@@ -100,7 +100,7 @@ there is no further configuration needed.
 
 ## Demo!
 
-<iframe src="https://www.youtube.com/embed/edSgP2dEZ1o" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+{{ youtube_player(video_id="edSgP2dEZ1o") }}
 
 [installing-synapse]: https://matrix.org/docs/guides/installing-synapse
 [mautrix-whatsapp]: https://github.com/tulir/mautrix-whatsapp

@@ -36,6 +36,4 @@ So, exciting times ahead - needless to say we’ll be doing everything we can to
 
 Aaron from Rocket.Chat just published an [excellent guide & video tour](https://geekgonecrazy.com/2022/05/30/rocketchat-and-the-matrix-protocol/) for how to actually set up your Rocket.Chat instance with Dendrite to get talking Matrix!
 
-<div style="text-align: center">
-<iframe src="https://www.youtube.com/embed/oQhIH8kql9I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+{{ youtube_player(video_id="oQhIH8kql9I") }}

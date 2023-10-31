@@ -9,7 +9,7 @@ category = ["This Week in Matrix"]
 
 ## Matrix Live 🎙
 
-<iframe src="https://www.youtube.com/embed/RzhMDi1aNEM" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="RzhMDi1aNEM") }}
 
 <!-- more -->
 
@@ -172,7 +172,7 @@ A multi purpose multi platform bridge, formerly known as matrix-github
 > 
 > Want to work with us at Beeper? We are hiring 100% remote backend, iOS and Android developers. Send me a message @eric:beeper.com. And if you want to develop an open source bridge, we will fund it with up to $5,000.
 > 
-> <iframe src="https://www.youtube.com/embed/IY5zOevr08I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+> {{ youtube_player(video_id="IY5zOevr08I") }}
 
 ### Nheko ([website](https://nheko-reborn.github.io))
 

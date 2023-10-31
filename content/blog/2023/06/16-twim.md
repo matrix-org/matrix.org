@@ -13,7 +13,7 @@ image = "https://matrix.org/blog/img/matrix-logo.png"
 
 ## Matrix Live
 
-<iframe src="https://www.youtube.com/embed/kJPQc0QqVMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="kJPQc0QqVMg") }}
 
 
 ## Dept of Spec 📜
