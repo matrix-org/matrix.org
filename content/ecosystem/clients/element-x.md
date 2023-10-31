@@ -25,4 +25,4 @@ google_play_store.app_id = "io.element.android.x"
 apple_app_store = { app_id = "id1631335820", org = "vector" }
 +++
 
-Element X is prioneering the Matrix 2.0 implementation, notably supporting fast sync with sliding sync.
+Element X is pioneering the Matrix 2.0 implementation, notably supporting fast sync with sliding sync.
