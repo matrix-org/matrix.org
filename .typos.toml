@@ -1,7 +1,7 @@
 [files]
 extend-exclude = [
     "*.js*", "*.json", "*.svg",
-	"/static/jira",
+    "/static/jira",
     # external typo that must be replicated for technical correctness
     "content/blog/2020/09/2020-09-04-this-week-in-matrix-2020-09-04.md",
     # contains non-English
