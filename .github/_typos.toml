@@ -3,3 +3,8 @@ extend-exclude = [
 	"*.js*", "*.json", "*.svg",
 	"/static/jira"
 ]
+
+[default]
+extend-ignore-words-re = [
+    "{{ youtube_player(video_id="[^"]+") }}"
+]
