@@ -51,6 +51,11 @@ class YoutubePlayer extends HTMLElement {
                 color: #fff;
                 background-color: #333;
             }
+
+            iframe {
+                aspect-ratio: 16/9;
+                width: 100%;
+            }
             `;
         shadow.appendChild(style);
 
