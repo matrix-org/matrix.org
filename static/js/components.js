@@ -108,21 +108,3 @@ class YoutubePlayer extends HTMLElement {
 }
 
 customElements.define("youtube-player", YoutubePlayer);
-
-// if (localStorage.getItem("ytConsent") ?? false) {
-//     loadPlayers();
-// }
-
-// document.getElementById('button_{{ video_id | replace(from="-", to="_") }}').addEventListener('click', (event) => consent(event));
-// function consent(event) {
-//     localStorage.setItem("ytConsent", true);
-//     loadPlayers();
-// }
-// function loadPlayers() {
-//     const placeholders = document.getElementsByClassName("youtube_placeholder");
-//     for (const placeholder of placeholders) {
-//         const videoId = placeholder.getAttribute("data-video-id")
-//         placeholder.replaceChildren();
-//         placeholder.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-//     }
-// }
