@@ -113,7 +113,7 @@ pair. This is done by calling `olm_create_account` in libolm. The
 account should be stored for future use.
 
 It should then publish these keys to the homeserver, which is done by using the
-`device_keys` property of the
+`device_keys` property of the 
 [/keys/upload](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-upload)
 endpoint.
 
@@ -345,12 +345,12 @@ Otherwise the client stores the information about this device.
 
 ### Sending an encrypted message event
 
-When sending a message in a room [configured to use encryption]
-(#configuring-a-room-to-use-encryption), a client first checks to see if it has
-an active outbound Megolm session. If not, it first [creates one as per below]
-(#starting-a-megolm-session). If an outbound session exists, it should check if
-it is time to[rotate](#rotating-megolm-sessions) it, and create a new one if
-so.
+When sending a message in a room 
+[configured to use encryption](#configuring-a-room-to-use-encryption), a client
+first checks to see if it has an active outbound Megolm session. If not, it first 
+[creates one as per below](#starting-a-megolm-session). If an outbound session
+exists, it should check if it is time to [rotate](#rotating-megolm-sessions) it,
+and create a new one if so.
 
 The client then builds an encryption payload as follows:
 
@@ -390,8 +390,8 @@ and store the details of the outbound session for future use.
 The client should then call `olm_outbound_group_session_id` to get the unique ID
 of the new session, and `olm_outbound_group_session_key` to retrieve the
 current ratchet key and index. It should store these details as an inbound
-session, just as it would when [receiving them via an m.room_key event]
-(#handling-an-mroom_key-event).
+session, just as it would when 
+[receiving them via an m.room_key event](#handling-an-mroom_key-event).
 
 The client must then share the keys for this session with each device in the
 room. It must therefore [download the device list](#downloading-the-device-list-for-users-in-the-room) if it hasn't already done
