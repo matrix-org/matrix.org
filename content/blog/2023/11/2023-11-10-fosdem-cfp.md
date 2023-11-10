@@ -1,6 +1,6 @@
 +++
 date = "2023-11-10"
-title = "Call for Participation for the FOSDEM 2024 Matrix Devroom"
+title = "Call for Participation to the FOSDEM 2024 Matrix Devroom"
 
 [taxonomies]
 author = ["Thib"]
