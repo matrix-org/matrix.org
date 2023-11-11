@@ -9,7 +9,7 @@ category = ["This Week in Matrix"]
 
 ## Matrix Live
 
-<iframe src="https://www.youtube.com/embed/9uwd35KhWsw" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="9uwd35KhWsw") }}
 
 <!-- more -->
 
@@ -130,7 +130,7 @@ A multi purpose multi platform bridge, formerly known as matrix-github
 > having to leave your client. This includes the ability to log debug messages and read them back later!
 >
 >
-> <iframe src="https://www.youtube.com/embed/DStAgLhmZqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+> {{ youtube_player(video_id="DStAgLhmZqs") }}
 >
 >
 > Secondly, we're adding some new sci-fi functions to the scripting environment. The first of which will allow you to **embed images / videos** into the message output, with a

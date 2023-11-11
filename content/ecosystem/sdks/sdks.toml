@@ -25,19 +25,6 @@ Matrix Client-Server SDK for JavaScript.
 """
 
 [[sdks]]
-name = "Matrix.org React SDK"
-maintainer = "Matrix.org team"
-maturity = "Stable"
-language = "JavaScript"
-licence = "Apache-2.0"
-repository = "https://github.com/matrix-org/matrix-react-sdk"
-purpose = ["client"]
-featured_in = []
-description = """
-Matrix SDK for React Javascript.
-"""
-
-[[sdks]]
 name = "MatrixBot .NET Core SDK"
 maintainer = "enimatek-nl"
 maturity = "Stable"
@@ -389,7 +376,20 @@ repository = "https://gitlab.com/trixnity/trixnity"
 purpose = ["client", "bot", "bridge"]
 featured_in = []
 description = """
-Multiplatform Kotlin SDK for Matrix.
+Multiplatform Kotlin SDK for developing Clients, Bots, Appservices and Servers.
+"""
+
+[[sdks]]
+name = "Trixnity Messenger"
+maintainer = "connect2x GmbH"
+maturity = "Beta"
+language = "Kotlin"
+licence = "AGPL-3.0"
+repository = "https://gitlab.com/connect2x/trixnity-messenger"
+purpose = ["client"]
+featured_in = []
+description = """
+Multiplatform Kotlin SDK for developing messengers on top of Trixnity
 """
 
 [[sdks]]

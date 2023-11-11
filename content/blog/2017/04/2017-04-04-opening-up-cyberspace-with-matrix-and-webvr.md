@@ -51,7 +51,7 @@ Needless to say, the demo's open sourced under the Apache License like all thing
 
 The demo is quite high-bandwidth and hardware intensive, so here's a video of it in action, just in case:
 
-<iframe src="https://www.youtube.com/embed/nk0nMlVXkbk" frameBorder="0" allowFullScreen="allowfullscreen"></iframe>
+{{ youtube_player(video_id="nk0nMlVXkbk") }}
 
 Now, it's important to understand that here we're using Matrix as a standard communications API for VR, but we're not using Matrix to store any VR world data (yet).  The demo uses plain A-Frame via aframe-react to render its world: we are not providing an API which exposes the world itself onto the network for folks to interact with and extend.  This is because Matrix is currently optimised for storing and synchronising two types of data structure: decentralised timelines of conversation data, and arbitrary decentralised key-value data (e.g. room names, membership, topics).
 

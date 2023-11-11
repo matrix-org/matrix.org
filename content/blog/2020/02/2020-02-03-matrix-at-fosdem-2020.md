@@ -25,15 +25,15 @@ We'll do a proper blog write-up on enabling E2E encryption by default, cross-sig
 
 So, until then, please take a look at the videos if you missed the livestream or weren't at the event!
 
-<iframe src="https://www.youtube.com/embed/PUg574WphuQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="PUg574WphuQ") }}
 
 <br/>
 
-<iframe src="https://www.youtube.com/embed/nZBKzQzH2NA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="nZBKzQzH2NA") }}
 
 <br/>
 
-<iframe src="https://www.youtube.com/embed/B2vCFAeSUpw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="B2vCFAeSUpw") }}
 
 The FOSDEM video recording lost the slides for the bridging talk - but luckily the presentation itself is a [Matrix client](https://github.com/Half-Shot/matrix-presents) and so you can [view the slides yourself right here!](https://presents.half-shot.uk/slides/!mfikNYyXndTTDgQjAu:half-shot.uk/).
 

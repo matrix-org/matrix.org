@@ -21,14 +21,14 @@ It turns out that all the demo excitement was worth it in the end, as the jury s
 
 Meanwhile, the slides from the demo presentation can be found here: <a href="/blog/wp-content/uploads/2015/05/2015-05-12-Matrix-Demo-Miami.pdf">Building bridges between islands of communication</a>, and you can see the full video of our Demo here:
 
-<iframe src="https://www.youtube.com/embed/OMzDklvDS3c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="OMzDklvDS3c") }}
 
 ...and the actual video stream that the drone transmitted before I crashed it (recorded on Janus) is at...
 
-<iframe src="https://www.youtube.com/embed/NpBStIIq6fM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="NpBStIIq6fM") }}
 
 Finally, our grand finale was meant to be combining the two demos, and showing OpenWebRTC decoding the H.264 from the Drone in hardware on an iPhone - using Matrix of course to set up the call and control the drone.  Alas a TURN-related bug got in the way of this working, but we just fixed it up in the office this morning, and I'm proud to show the first ever Parrot Bebop -> Janus -> Matrix -> OpenWebRTC video stream!! (and very exciting it is too...)
 
-<iframe src="https://www.youtube.com/embed/KsJOqLcpzNM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="KsJOqLcpzNM") }}
 
 Huge thanks again to Dave for doing the Matrix integration with Janus, Stefan and Rob from OpenWebRTC for all the help on the OWR side, and Manu & Giom for porting the OpenWebRTC pull request to MatrixKit and landing it in iOS Console Develop for the demo!

@@ -5,17 +5,17 @@ thumbnail = "matrix-commander.svg"
 maintainer = "8go"
 licence = "GPL-3.0-or-later"
 language = "Python"
-last_release = "2023-04-20"
+last_release = "2023-10-12"
 maturity = "Stable"
 repo = "https://github.com/8go/matrix-commander"
 featured = false
 [extra.features]
-e2ee = false
+e2ee = true
 spaces = false
 voip_1to1 = false
 voip_jitsi = false
 widgets = false
-sso = false
+sso = true
 multi_account = false
 multi_language = false
 [extra.packages]

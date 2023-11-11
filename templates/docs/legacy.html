@@ -2,15 +2,37 @@
 {% block content %}
 <article class="content">
     <header>
-        <div class="legacy-doc-warning">
-            <h2>Outdated documentation</h2>
+        <div class="legacy-doc-warning {% if page.extra.new_doc %}outdated{% endif %}">
+            <h2>
+                {% if page.extra.new_doc %}
+                Outdated
+                {% else %}
+                Older
+                {% endif %}
+                documentation
+            </h2>
             <p>
-                This article is not actively maintained anymore, it may be
-                outdated. There may be more current information in
+                This documentation hasn't been updated in a while. Some
+                information might no longer be valid.
+            </p>
+
+            <p>
+                {% if page.extra.new_doc %}
+                You can find the latest version of the documentation at
+                <a href="{{ page.extra.new_doc }}">{{ page.extra.new_doc }}</a>
+                {% else %}
+                There may be more up to date information in
                 <a href="/docs">the new documentation section</a>.
+                {% endif %}
             </p>
         </div>
         <h1>{{ page.title }}</h1>
+
+        {% if page.extra.author %}
+        <div class="metadata">
+            Author: {{ page.extra.author }}
+        </div>
+        {% endif %}
     </header>
     {{ page.content | safe }}
 </article>

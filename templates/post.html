@@ -15,6 +15,19 @@
     {% if page.updated %}
     "dateModified": "{{ page.updated | date(format="%Y-%m-%dT%H:%M+00:00") }}",
     {% endif %}
+    {% if page.extra.image %}
+    "image": [
+        "{{ page.extra.image }}"
+    ],
+    {% elif section.extra.image %}
+    "image": [
+        "{{ section.extra.image }}"
+    ],
+    {% else %}
+    "image": [
+        "https://matrix.org/blog/img/matrix-logo.png"
+    ],
+    {% endif %}
     "author": [
     {% for author in page.taxonomies.author %}
     {

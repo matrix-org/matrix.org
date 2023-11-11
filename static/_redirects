@@ -77,7 +77,7 @@
 # Static redirects for the zola rewrite
 /docs/guides/faq /faq
 /docs/guides/faq.html /faq
-/docs/guides/ /docs/legacy
+/docs/guides/ /docs/older
 /clients /ecosystem/clients/
 /clients/ /ecosystem/clients/
 /bots /ecosystem/integrations/
@@ -154,5 +154,6 @@
 # Dynamic redirects for the zola rewrite
 /clients/* /ecosystem/clients/:splat
 /blog/faq/* /faq
-/docs/howtos/* /docs/legacy/:splat
+/docs/howtos/* /docs/older/:splat
+/docs/legacy/* /docs/older/:splat
 /docs/projects/clients/:client_placeholder /ecosystem/clients/:client_placeholder

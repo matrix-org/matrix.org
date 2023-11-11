@@ -84,7 +84,7 @@ Element X itself is shaping up to be a showcase of just how snappy and performan
 
 Finally, in terms of usability, there have been leaps and bounds forwards across Matrix - particularly with Element’s mobile UI being [entirely refreshed](https://element.io/blog/an-unrecognisable-improvement-elements-new-design-is-here/) by the design team in September as a stepping stone to the forthcoming final Element X design.  Any remaining UX quirks should be flushed out with Element X, but the visuals are already a clear step forwards towards an excellent alternative to the centralised encumbents.
 
-<iframe src="https://www.youtube.com/embed/kjZCD14qMK0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="kjZCD14qMK0") }}
 
 ### Encryption
 

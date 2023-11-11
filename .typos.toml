@@ -1,57 +1,64 @@
 [files]
 extend-exclude = [
+    # files thta make no sense to be searched for typos
+    "*.jpg", "*.js*", "*.json", "*.mov", "*.png", "*.svg",
+    "/static/jira",
     # external typo that must be replicated for technical correctness
     "content/blog/2020/09/2020-09-04-this-week-in-matrix-2020-09-04.md",
     # contains non-English
     "content/blog/2021/07/2021-07-02-this-week-in-matrix-2021-07-02.md",
     "content/blog/2021/09/2021-09-17-this-week-in-matrix-2021-09-17.md",
-    # Username wrongly detected as typo
-    "content/blog/2023/04/2023-04-14-this-week-in-matrix-2023-04-14.md",
-    # Tries to parse svg and image files
-    "static/blog/img/",
-    "static/js/",
-    # contains German
     "content/blog/2023/06/16-twim.md",
-    # German and hyphenated-word
-    "content/blog/2023/08/2023-08-11-twim.md"
+    "content/blog/2023/07/2023-07-28-twim.md",
+    # contains username that is also a common typo
+    "content/blog/2023/04/2023-04-14-this-week-in-matrix-2023-04-14.md",
 ]
 
 [default]
+extend-ignore-re = [
+    # youtube embed in articles
+    "\\{\\{ youtube_player\\(video_id=\"[^\"]+\"\\) \\}\\}",
+
+    # slang
+    "tha'",
+    "Wee!",
+
+    # multi-word terms where an individual word is detected as a typo
+    # such as user names, project names, domain names
+    "Big Sur",
+    "Fuj'ehr",
+    "VaiTon",
+    "WeeChat",
+
+    "add-ons",
+    "json-clos",
+    "new-morg\\.png",
+    "whos-in-this-room",
+
+    "inex\\.rocks",
+    "raim\\.ist",
+    "loca\\.lt",
+    "programm\\.fr",
+    "supercable\\.onl",
+
+    # weird things hard or impossible to catch with heuristics
+    "ERRORs",
+    "H5atH-tbeRo", # can't get more general regex for otwsu.toml working
+    "KSVTtGsolBXtfsLTeAciXnBc\\.png",
+    "MESSAGEs",
+    "\\`Ther\\`",
+    "\\[ba685b7\\]",
+    "\\[96e9afe6\\]",
+]
 
 [default.extend-words]
 requestor = "requestor" # valid spelling variant
-tha = "tha" # intentional, followed by apostrophe
-morg = "morg" # abbreviation for matrix.org, used in filename
 
 Allo = "Allo" # Google Allo
 CSAE = "CSAE" # abbreviation
 Flate = "Flate" # compression algorithm
 Konversation = "Konversation"
-Ther = "Ther" # intentionally not a complete word
 Twosday = "Twosday" # quoted, portmanteau
-
-# https://github.com/crate-ci/typos/issues/399
-ERRO = "ERRO"
-MESSAG = "MESSAG"
-
-# part of base64 or similar strings
-afe = "afe"
-ba = "ba"
-tbe = "tbe"
-Aci = "Aci"
-Nd = "Nd"
-
-# everything below should be whitelisted as inter-punct but that's
-# not possible yet – https://github.com/crate-ci/typos/issues/400
-clos = "clos" # json-clos
-ehr = "ehr" # Fuj'ehr
-inex = "inex" # inex.rocks
-ist = "ist" # raim.ist
-loca = "loca" # loca.lt
-onl = "onl" # supercable.onl
-ons = "ons" # add-ons
-Vai = "Vai" # VaiTon
-whos = "whos" # whos-in-this-room
 
 # (user)names
 feld = "feld"

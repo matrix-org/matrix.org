@@ -5,11 +5,10 @@ title = "Security Disclosure Policy"
 Matrix.org greatly appreciates investigative work into security vulnerabilities
 carried out by well-intentioned, ethical security researchers. We follow the
 practice of [responsible disclosure](https://en.wikipedia.org/wiki/Responsible_disclosure)
-in order to best protect Matrix’s user base from the impact of security issues.
+in order to best protect Matrix's user base from the impact of security issues.
 On our side, this means:
 
-We will respond to security incidents as a priority.
-
+- We will respond to security incidents as a priority.
 - We will work with you to establish a disclosure time frame for the reported
   vulnerability. During this time frame, we will either work on a fix or decide
   to accept the risk, after which we will disclose the vulnerability.
