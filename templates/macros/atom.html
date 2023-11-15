@@ -7,6 +7,8 @@
       <name>
         {%- if page.authors -%}
           {{ page.authors[0] }}
+        {%- elif page.taxonomies.author -}
+          {{ page.taxonomies.author[0] }}
         {%- elif config.author -%}
           {{ config.author }}
         {%- else -%}
