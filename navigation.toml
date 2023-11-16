@@ -6,14 +6,15 @@ header = [
     { title = "Ecosystem", section = "ecosystem" },
     { title = "Podcasts", href = "/podcasts/" },
     { title = "Shop", href = "https://shop.matrix.org" },
+    { title = "Support", href="/support" },
     { title = "Try Matrix", href = "/try-matrix/", primary = true },
 ]
 
 footer_internal = [
-    { title = "FAQs", href = "/faq" },
+    { title = "Support", href = "/support" },
     { title = "Security Disclosure Policy", href = "/security-disclosure-policy" },
     { title = "Security Hall of Fame", href = "/security-hall-of-fame" },
-    { title = "Code of Conduct for Matrix.org", href = "/legal/code-of-conduct" },
+    { title = "Code of Conduct", href = "/legal/code-of-conduct" },
     { title = "Legal", href = "/legal" },
     { title = "Contact", href = "/contact" },
     { title = "Site Source", href = "https://github.com/matrix-org/matrix.org/" },
