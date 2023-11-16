@@ -2,6 +2,10 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     overflow: hidden;
 }
 
+.client-title {
+    text-align: center;
+}
+
 .clients_page {
     padding-top: 3rem;
 
