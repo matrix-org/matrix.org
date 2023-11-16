@@ -41,6 +41,8 @@
                 #}
                 <img src="{{ client.extra.thumbnail }}" alt="{{ client.title }} Logo">
                 <h3>{{ client.title }}</h3>
+                <div class="maturity {{ client.extra.maturity | lower }}">{{ client.extra.maturity }}
+                </div>
                 <span>{{ client.content | safe }}</span>
                 <div class="platform-links">
                     {{ clients::platforms(packages=client.extra.packages) }}
@@ -202,7 +204,9 @@
         <div>
             <a href="{{ client.path }}" class="project-card client {{ clients::classes(client=client.extra) }}">
                 <img src="./{{ thumbnail }}" alt="{{ client.title }} Logo">
-                <h3>{{ client.title }}</h3>
+                <h3 class="client-title">{{ client.title }}</h3>
+                <div class="maturity {{ client.extra.maturity | lower }}">{{ client.extra.maturity }}
+                </div>
                 <span>{{ client.content | safe }}</span>
                 <div class="platform-links">
                     {{ clients::platforms(packages=client.extra.packages) }}
