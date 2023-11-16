@@ -65,6 +65,21 @@
     <div class="post-main">
         <div class="post-content">
             {{ page.content | safe | markdown | safe }}
+            <div class="callout">
+                <h2>The Foundation needs you</h2>
+                <p>
+                    The Matrix.org Foundation is a non-profit and only relies on donations to operate. Its core mission
+                    is to maintain the Matrix Specification, but it does much more than that.
+                </p>
+                <p>
+                    It maintains the matrix.org homeserver and hosts several bridges for free. It fights for our
+                    collective rights to digital privacy and dignity. <a href="/roadmap">Consult our roadmap</a> for a
+                    full vision
+                    of
+                    what we are working on.
+                </p>
+                <a class="call-to-action" href="/support">Support us</a>
+            </div>
         </div>
         {% if page.toc %}
         <aside>

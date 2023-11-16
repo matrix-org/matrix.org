@@ -77,6 +77,31 @@ article.post {
     align-items: flex-start;
     align-self: center;
 
+    .callout {
+        h2 {
+            margin-block-start: 0;
+        }
+
+        padding: 1rem;
+        background-color: rgba(34, 109, 227, 20%);
+        border-inline-start: 3px solid rgba(34, 109, 227);
+
+        a {
+            color: rgba(34, 109, 227);
+        }
+
+        .call-to-action {
+            display: inline-block;
+            font-size: 1.125rem;
+            font-weight: 700;
+            background-color: rgba(34, 109, 227);
+            padding: .5em 1em;
+            border-radius: 9999px;
+            color: #fff;
+            margin-block-start: 1rem;
+        }
+    }
+
     aside {
         @media (max-width: 1023px) {
             display: none;
@@ -100,7 +125,6 @@ article.post {
 
         flex: 1 1;
         max-width: 320px;
-        margin-top: 1rem;
         margin-left: 4rem;
         padding: 1.5rem;
         background-color: #f4f4f4;
