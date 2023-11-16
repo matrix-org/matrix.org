@@ -1,25 +1,3 @@
-<div id="{{ video_id | replace(from="-", to="_" ) }}" class="youtube_placeholder" data-video-id="{{ video_id }}">
-    <div>
-        <img src="/assets/youtube-red.svg" width=159 height=110 alt="The YouTube logo">
-        <p>Clicking the "Load Player" button will load the YouTube Player and its cookies.</p>
-        <button id="button_{{ video_id | replace(from="-", to="_" ) }}">Load Player</button>
-    </div>
-</div>
-<script>
-    if (localStorage.getItem("ytConsent") ?? false) {
-        loadPlayers();
-    }
-    document.getElementById('button_{{ video_id | replace(from="-", to="_") }}').addEventListener('click', (event) => consent(event));
-    function consent(event) {
-        localStorage.setItem("ytConsent", true);
-        loadPlayers();
-    }
-    function loadPlayers() {
-        const placeholders = document.getElementsByClassName("youtube_placeholder");
-        for (const placeholder of placeholders) {
-            const videoId = placeholder.getAttribute("data-video-id")
-            placeholder.replaceChildren();
-            placeholder.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-        }
-    }
-</script>
+<noscript>Today's Matrix Live: <a href="https://youtube.com/watch?v={{ video_id }}">https://youtube.com/watch?v={{
+        video_id }}</a></noscript>
+<youtube-player video-id="{{ video_id }}"></youtube-player>
