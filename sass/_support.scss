@@ -64,6 +64,39 @@
         }
     }
 
+    #supporters {
+        max-width: var(--page-max-width);
+        margin-inline: auto;
+
+        h2 {
+            text-align: center;
+        }
+
+        ul {
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, var(--logo-width));
+            gap: 1rem;
+            border: 1px solid blue;
+
+            li {
+                list-style: none;
+                border: 1px solid var(--borders-color);
+                border-radius: 16px;
+                display: grid;
+                align-content: center;
+            }
+        }
+
+        .gold-supporters-grid {
+            --logo-width: 250px;
+        }
+
+        .silver-supporters-grid {
+            --logo-width: 150px;
+        }
+    }
+
     #the-spec {
         background-color: #fafafa;
 
