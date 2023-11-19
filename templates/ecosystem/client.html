@@ -1,7 +1,7 @@
 {% extends "page.html" %}
 {% import "macros/clients.html" as clients %}
 {% block head_extra %}
-<meta name="description" content="{{ page.content | replace(from="<p>", to="") | replace(from="</p>", to="") }}">
+<meta name="description" content="{{ page.content | replace(from=" <p>", to="") | replace(from="</p>", to="") }}">
 {% endblock head_extra %}
 {% block content %}
 {% if page.extra.thumbnail %}
@@ -21,6 +21,12 @@
             </div>
             <p class="summary">{{ page.content | markdown | safe }}</p>
             <div class="project-links">
+                {% if page.extra.website %}
+                <a href="{{ page.extra.website }}" class="pill">
+                    {{ load_data(path="/assets/home.svg") | safe }}
+                    Homepage
+                </a>
+                {% endif %}
                 {% if page.extra.docs %}
                 <a href="{{ page.extra.docs }}" class="pill">
                     {{ load_data(path="/assets/documentation.svg") | safe }}

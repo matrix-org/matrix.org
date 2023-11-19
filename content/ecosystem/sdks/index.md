@@ -19,6 +19,6 @@ will find below SDKs by type of product you may want to create (namely: clients,
 bots, bridges). Don't be surprised if a same SDK appears in several sections!
 
 If you are a developer and are not sure what the difference between clients and
-appservices, please head to [the developers documentation](/docs/developers/).
+appservices, please head to [the developers documentation](/docs/matrix-concepts/).
 
 {{ sdk_deck() }}
