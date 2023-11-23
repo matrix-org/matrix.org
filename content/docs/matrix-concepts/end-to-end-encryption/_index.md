@@ -391,7 +391,7 @@ The client should then call `olm_outbound_group_session_id` to get the unique ID
 of the new session, and `olm_outbound_group_session_key` to retrieve the
 current ratchet key and index. It should store these details as an inbound
 session, just as it would when 
-[receiving them via an m.room_key event](#handling-an-mroom_key-event).
+[receiving them via an m.room_key event](#handling-an-m-room-key-event).
 
 The client must then share the keys for this session with each device in the
 room. It must therefore [download the device list](#downloading-the-device-list-for-users-in-the-room) if it hasn't already done
