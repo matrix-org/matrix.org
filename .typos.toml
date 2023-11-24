@@ -12,6 +12,8 @@ extend-exclude = [
     "content/blog/2023/07/2023-07-28-twim.md",
     # contains username that is also a common typo
     "content/blog/2023/04/2023-04-14-this-week-in-matrix-2023-04-14.md",
+    # contains OTKs
+    "content/blog/2023/11/2023-11-24-twim.md",
 ]
 
 [default]
