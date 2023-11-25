@@ -35,17 +35,22 @@ class YoutubePlayer extends HTMLElement {
                 color: #fff;
             }
 
+            a.button,
             button {
-                max-width: fit-content;
-                margin-inline: auto;
-                padding: .5rem 1rem;
-                border-radius: 9999px;
                 background-color: #fff;
                 border: 1px solid transparent;
+                border-radius: 9999px;
                 color: #000;
                 cursor: pointer;
+                font-size: 1rem;
+                max-width: fit-content;
+                margin-inline: auto;
+                padding: 0.5rem 1rem;
+                line-height: 1.5rem;
+                text-decoration: none;
             }
 
+            a.button:hover,
             button:hover {
                 border: 1px solid #fff;
                 color: #fff;
@@ -87,6 +92,16 @@ class YoutubePlayer extends HTMLElement {
                 this.dispatchEvent(new CustomEvent("ytConsentChanged", { bubbles: true }));
             });
 
+            const videoId = this.getAttribute("video-id")
+            const openInYoutube = document.createElement("a");
+            openInYoutube.textContent = "Open in Youtube";
+            openInYoutube.classList.add("button");
+            openInYoutube.setAttribute(
+                "href",
+                `https://youtube.com/watch?v=${videoId}`
+            );
+            openInYoutube.setAttribute("target", "_blank");
+            placeholDiv.appendChild(openInYoutube);
 
             placeholder.appendChild(placeholDiv);
             shadow.appendChild(placeholder);
@@ -98,6 +113,7 @@ class YoutubePlayer extends HTMLElement {
             }
         });
     }
+
 
     loadPlayer() {
         const videoId = this.getAttribute("video-id")
