@@ -23,3 +23,30 @@ editing = true
 reactions = false
 presence = false
 typing_notifications = false
+
+[[bridges]]
+name = "matrix-as-mm"
+maintainer = "Mattermost / Jan Ostgren"
+summary = "Improved fork of original matrix-appservice-mattermost project"
+maturity = "Beta"
+language = "TypeScript"
+license = "MIT"
+docs = "https://github.com/mattermost/matrix-as-mm/tree/master/documentation"
+repo = "https://github.com/mattermost/matrix-as-mm"
+featured = false
+privilege.platform = "Admin" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+channels = true
+formatted_text = true
+message_media = true
+replies = true
+mentions = true
+threads = false
+redactions = true
+editing = true
+reactions = true
+presence = false
+typing_notifications = false # Mattermost->matrix only
+
