@@ -35,21 +35,37 @@ class YoutubePlayer extends HTMLElement {
                 color: #fff;
             }
 
+            a.button,
             button {
-                max-width: fit-content;
-                margin-inline: auto;
-                padding: .5rem 1rem;
-                border-radius: 9999px;
                 background-color: #fff;
                 border: 1px solid transparent;
+                border-radius: 9999px;
                 color: #000;
                 cursor: pointer;
+                font-size: 1rem;
+                min-width: fit-content;
+                max-width: fit-content;
+                margin-inline: 4px;
+                padding: 0.5rem 1rem;
+                line-height: 1.5rem;
+                text-decoration: none;
             }
 
+            a.button:hover,
             button:hover {
                 border: 1px solid #fff;
                 color: #fff;
                 background-color: #333;
+            }
+
+            .button-group {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .button-group > * {
+                margin: 4px;
             }
 
             iframe {
@@ -79,15 +95,29 @@ class YoutubePlayer extends HTMLElement {
             disclaimer.textContent = "Clicking the \"Load Player\" button will load the YouTube Player and its cookies.";
             placeholDiv.appendChild(disclaimer);
 
+            const buttonGroup = document.createElement("div");
+            buttonGroup.classList.add("button-group");
+
             const consentButton = document.createElement("button");
             consentButton.textContent = "Load Player";
-            placeholDiv.appendChild(consentButton);
+            buttonGroup.appendChild(consentButton);
             consentButton.addEventListener("click", () => {
                 window.localStorage.setItem("ytConsent", true);
                 this.dispatchEvent(new CustomEvent("ytConsentChanged", { bubbles: true }));
             });
 
+            const videoId = this.getAttribute("video-id")
+            const openInYoutube = document.createElement("a");
+            openInYoutube.textContent = "Open in Youtube";
+            openInYoutube.classList.add("button");
+            openInYoutube.setAttribute(
+                "href",
+                `https://youtube.com/watch?v=${videoId}`
+            );
+            openInYoutube.setAttribute("target", "_blank");
+            buttonGroup.appendChild(openInYoutube);
 
+            placeholDiv.appendChild(buttonGroup);
             placeholder.appendChild(placeholDiv);
             shadow.appendChild(placeholder);
         }
@@ -98,6 +128,7 @@ class YoutubePlayer extends HTMLElement {
             }
         });
     }
+
 
     loadPlayer() {
         const videoId = this.getAttribute("video-id")
