@@ -26,11 +26,17 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 }
 
+.projects-card-deck {
+    grid-template-columns: repeat(2, 10fr);
+}
+
 .projects-card-deck.clients {
+    grid-template-columns: repeat(2, 10fr);
     margin-bottom: 5rem;
 }
 
 .project-card.client {
+    grid-template-columns: subgrid;
     color: var(--color-text);
     cursor: pointer;
 }
