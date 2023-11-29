@@ -5,7 +5,7 @@ thumbnail = "neochat.svg"
 maintainer = "Carl Schwan, Tobias Fella"
 licence = "GPL-3.0-only"
 language = "C++"
-last_release = "2023-04-12"
+last_release = "2023-11-09"
 maturity = "Beta"
 repo = "https://invent.kde.org/network/neochat"
 website = "https://apps.kde.org/neochat"
@@ -13,7 +13,7 @@ matrix_room = "#neochat:kde.org"
 featured = false
 [extra.features]
 e2ee = true
-spaces = false
+spaces = true
 voip_1to1 = false
 voip_jitsi = false
 widgets = false
