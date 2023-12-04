@@ -287,7 +287,7 @@ Next-gen crypto-included SDK for developing Clients, Bots and Appservices; writt
 > 
 > ️👉️ Wanna hack on matrix rust? Go check out our [`help wanted` tagged issues](https://github.com/matrix-org/matrix-rust-sdk/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and join our matrix channel at Matrix Rust SDK.
 
-### Matrix Dart SDK ([website](https://gitlab.com/famedly/company/frontend/famedlysdk))
+### Matrix Dart SDK ([website](https://github.com/famedly/matrix-dart-sdk))
 
 Matrix SDK written in pure Dart.
 
