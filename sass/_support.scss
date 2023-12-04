@@ -210,6 +210,10 @@
         }
     }
 
+    .membership-tiers {
+        margin-block-end: 4rem;
+    }
+
     .tiers-row {
         display: grid;
         grid-template-columns: repeat(4, 15rem);
@@ -267,16 +271,5 @@
                 z-index: -1;
             }
         }
-    }
-
-    .call-to-action {
-        display: block;
-        max-width: fit-content;
-        font-weight: 600;
-        background-color: #000;
-        color: #fff;
-        border-radius: 9999px;
-        padding: .5rem 2rem;
-        margin: 2rem auto;
     }
 }
