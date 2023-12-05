@@ -151,16 +151,10 @@
         }
 
         .call-to-action {
-            background-color: #000;
-            color: #fff;
-            border-radius: 9999px;
-            padding: .5rem 2rem;
-            font-weight: 600;
-
-            @media (max-width: 767px) {
-                text-align: center;
-                align-self: stretch;
-            }
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: .6rem 1.5rem;
         }
     }
 }
