@@ -12,7 +12,7 @@ website = "https://apps.kde.org/neochat"
 matrix_room = "#neochat:kde.org"
 featured = false
 [extra.features]
-e2ee = true
+e2ee = false
 spaces = true
 voip_1to1 = false
 voip_jitsi = false
