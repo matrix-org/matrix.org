@@ -244,23 +244,5 @@
                 }
             }
         }
-
-        #most-popular {
-            position: relative;
-            border: 2px solid #000;
-
-            &::before {
-                content: "MOST POPULAR";
-                position: absolute;
-                top: -2em;
-                right: -2px;
-                background-color: #000;
-                color: #fff;
-                border-radius: 8px;
-                font-size: .8rem;
-                padding: .2em 1em 2em 1em;
-                z-index: -1;
-            }
-        }
     }
 }
