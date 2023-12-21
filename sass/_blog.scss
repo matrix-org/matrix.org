@@ -78,13 +78,34 @@ article.post {
     align-self: center;
 
     .callout {
-        h2 {
-            margin-block-start: 0;
+
+        display: grid;
+        grid-template-columns: 300px auto;
+        color: #fff;
+        background-color: #000;
+
+        @media (max-width: 767px) {
+            grid-template-columns: auto;
+            grid-template-rows: 10rem auto;
         }
 
-        padding: 1rem;
-        background-color: rgba(34, 109, 227, 20%);
-        border-inline-start: 3px solid rgba(34, 109, 227);
+        .left-col {
+            display: grid;
+            place-content: center;
+            background-image: url("/assets/mandala.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            h2 {
+                margin: 2rem;
+                text-align: center;
+            }
+        }
+
+        .right-col {
+            padding: 2rem;
+        }
 
         a {
             color: rgba(34, 109, 227);
@@ -95,7 +116,7 @@ article.post {
             font-size: 1.125rem;
             font-weight: 700;
             background-color: rgba(34, 109, 227);
-            padding: .5em 1em;
+            padding: .5rem 1.5rem;
             border-radius: 9999px;
             color: #fff;
             margin-block-start: 1rem;
