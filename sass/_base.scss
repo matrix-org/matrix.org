@@ -343,3 +343,56 @@ a>code {
         }
     }
 }
+
+.call-to-action {
+    background-color: #000;
+    border: 2px solid #000;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 1000px;
+    padding: .6em 2em;
+
+    &.inverted {
+        border: 2px solid #fff;
+        background-color: #fff;
+        color: #000;
+
+        &.secondary {
+            background-color: #000;
+            color: #fff;
+
+            &:hover {
+                background-color: #fff;
+                color: #000
+            }
+        }
+    }
+
+    &.secondary {
+        background-color: #fff;
+        color: #000;
+
+        &:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}
+
+.cta-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    row-gap: .5rem;
+}
+
+.cta-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+
+    align-items: center;
+}

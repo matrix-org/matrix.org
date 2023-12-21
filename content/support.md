@@ -1,6 +1,6 @@
 +++
 title = "Support Matrix"
-aliases = ["/supporters/"]
+aliases = ["/supporters/", "/donate"]
 template = "support.html"
 extra.summary = """
 As an individual, if you believe in our mission and want to contribute to Matrix

@@ -151,16 +151,10 @@
         }
 
         .call-to-action {
-            background-color: #000;
-            color: #fff;
-            border-radius: 9999px;
-            padding: .5rem 2rem;
-            font-weight: 600;
-
-            @media (max-width: 767px) {
-                text-align: center;
-                align-self: stretch;
-            }
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: .6rem 1.5rem;
         }
     }
 }
@@ -179,6 +173,7 @@
         display: flex;
         flex-direction: row;
         gap: 2rem;
+        margin-block: 2rem 3rem;
 
         @media (max-width: 767px) {
             flex-direction: column;
@@ -249,34 +244,5 @@
                 }
             }
         }
-
-        #most-popular {
-            position: relative;
-            border: 2px solid #000;
-
-            &::before {
-                content: "MOST POPULAR";
-                position: absolute;
-                top: -2em;
-                right: -2px;
-                background-color: #000;
-                color: #fff;
-                border-radius: 8px;
-                font-size: .8rem;
-                padding: .2em 1em 2em 1em;
-                z-index: -1;
-            }
-        }
-    }
-
-    .call-to-action {
-        display: block;
-        max-width: fit-content;
-        font-weight: 600;
-        background-color: #000;
-        color: #fff;
-        border-radius: 9999px;
-        padding: .5rem 2rem;
-        margin: 2rem auto;
     }
 }

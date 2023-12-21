@@ -4,13 +4,6 @@
         margin-block: 1.38rem 1rem;
     }
 
-    .call-to-action {
-        font-size: 1.125rem;
-        font-weight: 600;
-        border-radius: 1000px;
-        padding: .4em 2em;
-    }
-
     #hero {
         height: calc(100vh - var(--navbar-height));
         background-color: #000;
@@ -163,18 +156,6 @@
                     font-size: 2.125rem;
                 }
             }
-
-            .call-to-action {
-                background-color: #000;
-                color: #fff;
-                margin-left: 10%;
-
-                @media (max-width: 59rem) {
-                    margin-left: auto;
-                }
-
-                margin-right: auto;
-            }
         }
 
         img {
@@ -227,13 +208,7 @@
         }
 
         .call-to-action {
-            background-color: #fff;
-            color: #000;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border-radius: 1000px;
-            padding: .4em 2em;
-            margin: 2em auto 4em auto;
+            margin-block: 2em 4em;
         }
 
         img {
@@ -286,18 +261,6 @@
                 }
 
                 margin: 0 0 2rem 0;
-            }
-
-            .call-to-action {
-                background-color: #000;
-                color: #fff;
-                margin-left: 20%;
-
-                @media (max-width: 767px) {
-                    margin-left: auto;
-                }
-
-                margin-right: auto;
             }
         }
 
@@ -416,14 +379,6 @@
             align-items: center;
             gap: .5em;
 
-            background-color: #fff;
-            color: #000;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border-radius: 1000px;
-            padding: .4em 2em;
-            margin: 0 auto;
-
             img {
                 max-height: 1.5em;
             }
@@ -499,13 +454,7 @@
         }
 
         .call-to-action {
-            background-color: #000;
-            color: #fff;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border-radius: 1000px;
-            padding: .4em 2em;
-            margin: 1.5rem auto 0 auto;
+            margin-block-start: 2rem;
         }
     }
 }
