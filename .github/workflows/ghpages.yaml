@@ -1,0 +1,56 @@
+name: Deploy site
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build the site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository checkout
+        uses: actions/checkout@v4
+
+      - name: Download Zola
+        run: |
+          version='v0.17.2'
+          archive="zola-${version}-x86_64-unknown-linux-gnu.tar.gz"
+          curl -L "https://github.com/getzola/zola/releases/download/${version}/${archive}" -o "$archive"
+          tar xf "$archive"
+
+      - name: Build
+        run: |
+          ./zola build
+
+      - name: Package
+        run: |
+          tar --dereference --hard-dereference --directory ./public -cvf "$RUNNER_TEMP/artifact.tar" ./public
+
+      - name: Upload
+        id: upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'mo-ghpages'
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+      actions: read
+        # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
