@@ -9,7 +9,7 @@ To discuss maintenance of this site, please come talk to the team in
 
 ## Building the website
 
-Install [Zola](https://www.getzola.org), clone the repo, and from the root of the
+Install the latest version of [Zola](https://www.getzola.org), clone the repo, and from the root of the
 repo type
 
 ```
