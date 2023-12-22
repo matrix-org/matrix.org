@@ -22,7 +22,7 @@ jobs:
 
       - name: Build
         run: |
-          ./zola build
+          ./zola build --base-url "https://matrix-org.github.io/matrix.org"
 
       - name: Package
         run: |
