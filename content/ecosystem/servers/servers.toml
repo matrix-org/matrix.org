@@ -5,7 +5,7 @@ author = "Matrix.org team"
 maturity = "Stable"
 language = "Python"
 licence = "Apache-2.0"
-repository = "https://github.com/matrix-org/synapse/"
+repository = "https://github.com/element-hq/synapse"
 room = "#synapse:matrix.org"
 
 [[servers]]
