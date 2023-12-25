@@ -1,6 +1,7 @@
 +++
 title = "The Matrix Holiday Update 2023"
-path = "/blog/2022/12/25/the-matrix-holiday-update-2023"
+path = "/blog/2023/12/25/the-matrix-holiday-update-2023"
+aliases = ["/blog/2022/12/25/the-matrix-holiday-update-2023"]
 
 [taxonomies]
 author = ["Matthew Hodgson"]
