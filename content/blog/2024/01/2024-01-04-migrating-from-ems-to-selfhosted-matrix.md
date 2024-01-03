@@ -4,7 +4,7 @@ title = "Migrating from EMS to self-hosted Matrix"
 
 [taxonomies]
 author = ["Josh Simmons"]
-category = ["General"]
+category = ["Guides"]
 
 +++
 
