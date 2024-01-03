@@ -208,7 +208,7 @@ Here are a few of the additional things I've set up alongside my Synapse homeser
 
 I've also found the need to do some performance tuning – while the out-of-the-box setup on my homeserver could handle most rooms, it could not handle resource intensive rooms like Matrix HQ.
 
-However, I'm still working this out for myself. Performance tuning is a topic for another day and another blog post!
+However, I'm still working this out for myself. Performance tuning, such as enabling and tuning workers, is a topic for another day and another blog post. I'll be collaborating with Tom Foster on such a post in the near future!
 
 ## Acknowledgements
 
