@@ -54,7 +54,7 @@ Since this is a high stakes migration, let's also be clear on the order of opera
     1. If this goes badly wrong, restore DNS and fix.
 6. Turn your Synapse on. It'll roar to life and eat a bunch of CPU as it catches up, but that's fine.
 7. Wait for things to catch up. In this time, ask your key contacts to re-send any messages they may have sent while you've been offline.
-8. Also while waiting, import your media. The instructions below also cover this step.
+8. Also while waiting, import your media.
 9. If things look good after about 2-4 hours, cancel and delete your EMS homeserver (it'll now be too far behind to roll back to).
 10. Rotate your signing key at your convenience.
 
