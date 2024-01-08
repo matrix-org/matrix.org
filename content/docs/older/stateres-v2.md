@@ -266,7 +266,7 @@ running the following tests in order:
 1. The effective power level at **x** is greater than the effective power level
    at **y**
 2. The event origin server timestamp of **x** is less than the event origin
-   server timestamp of **y **(that is, event **x** is older than **y**)
+   server timestamp of **y** (that is, event **x** is older than **y**)
 3. The event ID of **x** is less than the event ID of **y**, as computed by a
    lexicographical comparison, as a fallback
 
