@@ -1,4 +1,59 @@
 [[findings]]
+date = "2023-"
+reporter.name = "Josh Qou"
+reporter.link = "https://github.com/joshqou"
+summary = """
+Discovered that the download endpoint of the matrix-media-repo was serving unsafe media inline
+([CVE-2023-41318](https://nvd.nist.gov/vuln/detail/CVE-2023-41318)/
+[GHSA-5crw-6j7v-xc72](https://github.com/turt2live/matrix-media-repo/security/advisories/GHSA-5crw-6j7v-xc72)).
+"""
+project = "matrix-media-repo"
+
+[[findings]]
+date = "2023-04-26"
+reporter.name = "Thimothé Maljean"
+reporter.link = "https://www.linkedin.com/in/thimoth%C3%A9-maljean/"
+summary = """
+Discovered temporary storage of plaintext passwords during password changes
+([CVE-2023-41335](https://nvd.nist.gov/vuln/detail/CVE-2023-41335)/
+[GHSA-4f74-84v3-j9q5](https://github.com/matrix-org/synapse/security/advisories/GHSA-4f74-84v3-j9q5)).
+"""
+project = "Synapse"
+
+[[findings]]
+date = "2023-04-25"
+reporter.name = "S1m"
+reporter.link = "https://github.com/p1gp1g/"
+summary = """
+Discovered an XSS vector for
+[CVE-2023-30609](https://nvd.nist.gov/vuln/detail/CVE-2023-30609)/
+[GHSA-xv83-x443-7rmw[(https://github.com/matrix-org/matrix-react-sdk/security/advisories/GHSA-xv83-x443-7rmw).
+"""
+project = "Matrix React SDK"
+
+[[findings]]
+date = "2023-04-10"
+reporter.name = "Cadence Ember"
+reporter.link = "https://cadence.moe/"
+summary = """
+Found an HTML injection via highlighting of search results
+([CVE-2023-30609](https://nvd.nist.gov/vuln/detail/CVE-2023-38690)/
+[GHSA-xv83-x443-7rmw[(https://github.com/matrix-org/matrix-react-sdk/security/advisories/GHSA-xv83-x443-7rmw)).
+"""
+project = "Matrix React SDK"
+
+[[findings]]
+date = "2023-02-18"
+reporter.name = "Val Lorentz"
+reporter.link = "https://valentin-lorentz.fr/"
+summary = """
+Discovered a IRC command injection via admin commands
+([CVE-2023-38690](https://nvd.nist.gov/vuln/detail/CVE-2023-38690)/
+[GHSA-3pmj-jqqp-2mj3](https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-3pmj-jqqp-2mj3)).
+"""
+project = "matrix-appservice-irc"
+
+[[findings]]
 date = "2023-07-31"
 reporter.name = "Martin Schobert, Pentagrid AG"
 reporter.link = "https://www.pentagrid.ch/"
