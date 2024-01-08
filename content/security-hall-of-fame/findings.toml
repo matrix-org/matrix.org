@@ -1,4 +1,13 @@
 [[findings]]
+date = "2023-07-31"
+reporter.name = "Martin Schobert, Pentagrid AG"
+reporter.link = "https://www.pentagrid.ch/"
+summary = """
+Discovered that Sydent would not verify its configured SMTP server's certificates when sending emails using TLS.
+"""
+project = "Sydent"
+
+[[findings]]
 date = "2023-05-27"
 reporter.name = "Josh Qou"
 reporter.link = "https://github.com/joshqou"
@@ -43,6 +52,15 @@ Found an HTML injection via highlighting of search results
 project = "Matrix React SDK"
 
 [[findings]]
+date = "2023-03-04"
+reporter.name = "Sleroq"
+reporter.link = "https://github.com/sleroq"
+summary = """
+Discovered a DoS attack on Dendrite by sending a specially crafted event, making it spend a lot of CPU.
+"""
+project = "Dendrite"
+
+[[findings]]
 date = "2023-02-18"
 reporter.name = "Val Lorentz"
 reporter.link = "https://valentin-lorentz.fr/"
@@ -52,25 +70,6 @@ Discovered a IRC command injection via admin commands
 [GHSA-3pmj-jqqp-2mj3](https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-3pmj-jqqp-2mj3)).
 """
 project = "matrix-appservice-irc"
-
-[[findings]]
-date = "2023-07-31"
-reporter.name = "Martin Schobert, Pentagrid AG"
-reporter.link = "https://www.pentagrid.ch/"
-summary = """
-Discovered that Sydent would not verify its configured SMTP server's certificates when sending emails using TLS.
-"""
-project = "Sydent"
-
-
-[[findings]]
-date = "2023-03-04"
-reporter.name = "Sleroq"
-reporter.link = "https://github.com/sleroq"
-summary = """
-Discovered a DoS attack on Dendrite by sending a specially crafted event, making it spend a lot of CPU.
-"""
-project = "Dendrite"
 
 [[findings]]
 date = "2023-02-10"
