@@ -7,7 +7,7 @@ author = ["Thib"]
 category = ["FOSDEM", "Conferences"]
 
 [extra]
-image = ""
+image = "https://matrix.org/blog/img/matrix-fosdem.png"
 +++
 
 This year again the Matrix Foundation and Community will have _plenty_ of opportunities to meet at FOSDEM! Together with our awesome community, we’re organising a FOSDEM Fringe Event before FOSDEM itself, we will have a booth to meet everyone and spread the word about Matrix, and a devroom to go more in depth on Matrix topics.
