@@ -41,6 +41,6 @@ You can find the [full schedule of the Matrix devroom on FOSDEM’s website](htt
 
 ## Main track talk
 
-Finally, Matthew submitted a talk to the main track with his Spec Core Team lead hat on, and it was accepted! The talk is not scheduled yet, but you will be able to hear him talk about how Matrix is “Busting open communication silos with Matrix 2.0 and the EU Digital Markets Act”
+Finally, Matthew submitted a talk to the main track with his Spec Core Team lead hat on, and it was accepted! On Sunday 5, at 10:00 in Janson you will be able to hear him talk about how Matrix is “Opening up communication silos with Matrix 2.0 and the EU Digital Markets Act”
 
 The team is looking forward to seeing you in Brussels!
