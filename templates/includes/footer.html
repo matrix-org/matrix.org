@@ -7,7 +7,7 @@
     <div class="external-links">
         <div>
             {% for link in navigation.footer_external %}
-            <a href="{{ link.href }}"><img src="/assets/{{ link.image }}" alt="{{ link.alt }}"></a>
+            <a href="{{ link.href }}" rel="me"><img src="/assets/{{ link.image }}" alt="{{ link.alt }}"></a>
             {% endfor %}
         </div>
     </div>
