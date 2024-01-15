@@ -213,6 +213,6 @@ A moderation tool for Matrix.
 """
 maintainer = "Gnuxie"
 language = "TypeScript"
-licence = "COOPERATIVE SOFTWARE LICENSE"
+licence = "AFL-3.0"
 repository = "https://github.com/the-draupnir-project/Draupnir"
 room = "#draupnir:matrix.org"
