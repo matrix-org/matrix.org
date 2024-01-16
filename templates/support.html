@@ -1,13 +1,13 @@
-{% extends "page.html" %}
+{% extends "section.html" %}
 {% block head_extra %}
-<meta name="description" content="{{ page.extra.summary }}">
+<meta name="description" content="{{ section.extra.summary }}">
 {% endblock head_extra %}
 {% block content %}
-{% set supporters = load_data(path="content/supporters/supporters.toml") %}
+{% set supporters = load_data(path="content/support/supporters.toml") %}
 <div class="page-header support">
     <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.extra.summary }}</p>
         <div class="donate-row">
             <a class="call-to-action" href="https://donorbox.org/keep-matrix-exciting">
                 <img src="/assets/donorbox-icon.svg" alt="" />
@@ -37,7 +37,7 @@
             {% for supporter in supporters.gold %}
             <li>
                 <a href="{{ supporter.website }}">
-                    <img src="/supporters/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <p>{{ supporter.name }}</p>
                 </a>
             </li>
@@ -48,7 +48,7 @@
             {% for supporter in supporters.silver %}
             <li>
                 <a href="{{ supporter.website }}">
-                    <img src="/supporters/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <p>{{ supporter.name }}</p>
                 </a>
             </li>
