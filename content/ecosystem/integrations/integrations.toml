@@ -186,7 +186,7 @@ repository = "https://github.com/jenkinsci/matrix-communication-plugin"
 [[integrations]]
 name = "Time-to-Matrix"
 description = """
-A time-like command that will send end of an arbitrary command output 
+A time-like command that will send end of an arbitrary command output
 and some other info (like exit status) to matrix room.
 """
 maintainer = "etke.cc"
@@ -205,3 +205,14 @@ language = "Python"
 licence = "AGPL-3.0-only"
 repository = "https://gitlab.com/etke.cc/radicale-auth-matrix"
 room = "#source:etke.cc"
+
+[[integrations]]
+name = "Draupnir"
+description = """
+A moderation tool for Matrix.
+"""
+maintainer = "Gnuxie"
+language = "TypeScript"
+licence = "AFL-3.0"
+repository = "https://github.com/the-draupnir-project/Draupnir"
+room = "#draupnir:matrix.org"
