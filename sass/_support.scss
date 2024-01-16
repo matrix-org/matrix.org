@@ -31,7 +31,7 @@
 .support.main {
 
     &>div {
-        padding-block: 5rem;
+        padding-block: 3rem;
 
         @media (max-width: 767px) {
             padding-block: 2rem;
@@ -73,18 +73,26 @@
         }
 
         ul {
+            margin-block-end: 2rem;
             padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, var(--logo-width));
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 1rem;
-            border: 1px solid blue;
 
             li {
+                width: var(--logo-width);
                 list-style: none;
+                padding: 1rem;
                 border: 1px solid var(--borders-color);
                 border-radius: 16px;
                 display: grid;
                 align-content: center;
+
+                a {
+                    text-align: center;
+                    font-size: 1.2rem;
+                }
             }
         }
 
