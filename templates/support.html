@@ -3,6 +3,7 @@
 <meta name="description" content="{{ page.extra.summary }}">
 {% endblock head_extra %}
 {% block content %}
+{% set supporters = load_data(path="content/supporters/supporters.toml") %}
 <div class="page-header support">
     <div class="hero-block">
         <h1>{{ page.title }}</h1>
@@ -33,63 +34,25 @@
     <div id="supporters">
         <h2>Gold supporters</h2>
         <ul class="gold-supporters-grid">
+            {% for supporter in supporters.gold %}
             <li>
-                <a href="https://beeper.com">
-                    <img src="/supporters/beeper.svg" alt="Beeper's logo">
-                    <p>Beeper</p>
+                <a href="{{ supporter.website }}">
+                    <img src="/supporters/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <p>{{ supporter.name }}</p>
                 </a>
             </li>
-            <li>
-                <a href="https://beeper.com">
-                    <img src="/supporters/beeper.svg" alt="Beeper's logo">
-                    <p>Beeper</p>
-                </a>
-            </li>
-            <li>
-                <a href="https://beeper.com">
-                    <img src="/supporters/beeper.svg" alt="Beeper's logo">
-                    <p>Beeper</p>
-                </a>
-            </li>
-            <li>
-                <a href="https://beeper.com">
-                    <img src="/supporters/beeper.svg" alt="Beeper's logo">
-                    <p>Beeper</p>
-                </a>
-            </li>
-            <li>
-                <a href="https://beeper.com">
-                    <img src="/supporters/beeper.svg" alt="Beeper's logo">
-                    <p>Beeper</p>
-                </a>
-            </li>
-            <li>
-                <a href="https://beeper.com">
-                    <img src="/supporters/beeper.svg" alt="Beeper's logo">
-                    <p>Beeper</p>
-                </a>
-            </li>
+            {% endfor %}
         </ul>
         <h2>Silver supporters</h2>
         <ul class="silver-supporters-grid">
+            {% for supporter in supporters.silver %}
             <li>
-                <a href="https://github.com/fractalnetworksco/">
-                    <img src="/supporters/fractal-networks.svg" alt="Fractal Networks logo">
-                    <p>Fractal Networks</p>
+                <a href="{{ supporter.website }}">
+                    <img src="/supporters/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <p>{{ supporter.name }}</p>
                 </a>
             </li>
-            <li>
-                <a href="https://beeper.com">
-                    <img src="/supporters/beeper.svg" alt="Beeper's logo">
-                    <p>Beeper</p>
-                </a>
-            </li>
-            <li>
-                <a href="https://beeper.com">
-                    <img src="/supporters/beeper.svg" alt="Beeper's logo">
-                    <p>Beeper</p>
-                </a>
-            </li>
+            {% endfor %}
         </ul>
     </div>
     <div id="the-spec">
