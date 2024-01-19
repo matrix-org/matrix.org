@@ -6,10 +6,10 @@ maturity = "Beta"
 language = "Python"
 license = "AGPL-3.0"
 repo = "https://github.com/GearKite/MatrixZulipBridge"
-#room = ""
+room = "#MatrixZulipBridge:shema.lv"
 featured = false
-privilege.platform = ""               # Free text
-privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+privilege.platform = ""                                    # Free text
+privilege.matrix = "Homeserver Admin"                      # Any of Homeserver Admin, Room Admin, None
 [bridges.supports]
 dm = false
 channels = true
