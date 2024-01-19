@@ -23,3 +23,27 @@ reactions = true
 presence = false
 typing_notifications = true
 read_receipts = true
+
+[[bridges]]
+name = "mautrix-meta"
+maintainer = "Tulir"
+summary = """
+A Matrix-Facebook Messenger and Instagram DM puppeting bridge.
+"""
+maturity = "Alpha"
+language = "Go"
+license = "AGPL-3.0-or-later"
+docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=meta"
+repo = "https://github.com/mautrix/meta"
+room = "#meta:maunium.net"
+featured = true
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+message_media = true
+redactions = true
+reactions = true
+presence = false
+typing_notifications = false
+read_receipts = false
