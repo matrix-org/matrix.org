@@ -5,9 +5,9 @@ thumbnail = "fractal.svg"
 maintainer = "Alexandre Franke, Kévin Commaille and Julian Sparber"
 licence = "GPL-3.0-or-later"
 language = "Rust"
-last_release = "2023-11-24"
+last_release = "2024-01-18"
 maturity = "Beta"
-repo = "https://gitlab.gnome.org/GNOME/fractal"
+repo = "https://gitlab.gnome.org/World/fractal"
 matrix_room = "#fractal:gnome.org"
 featured = false
 [extra.features]
@@ -25,4 +25,3 @@ flathub.app_id = "org.gnome.Fractal"
 +++
 
 A Matrix messaging app for GNOME, written in Rust. Its interface is optimized for collaboration in large groups, such as free software projects, and will fit all screens, big or small.
-
