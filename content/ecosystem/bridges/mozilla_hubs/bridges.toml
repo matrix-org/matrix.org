@@ -1,0 +1,28 @@
+[[bridges]]
+name = "GoHubsBot"
+maintainer = "ReK2"
+summary = "Library to create bots for mozilla hubs rooms and bridge mozilla hubs chat to matrix and viceversa"
+maturity = "Alpha"
+language = "Golang"
+license = "GPL-3.0-or-later"
+#docs = ""
+repo = "https://gitlab.com/rek2/gohubsbot"
+room = "#GoHubsBot:hispagatos.org"
+featured = false
+privilege.platform = "Admin" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+maintained = false
+[bridges.supports]
+dm = false
+channels = false
+formatted_text = false
+message_media = false
+replies = false
+mentions = false
+threads = false
+redactions = false
+editing = false
+reactions = false
+presence = false
+typing_notifications = false
+
