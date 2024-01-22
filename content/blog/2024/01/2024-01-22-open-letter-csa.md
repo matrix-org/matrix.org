@@ -1,7 +1,6 @@
 +++
 date = "2024-01-22"
-title = "This Week in Matrix 2024-01-22"
-path = "/blog/2024/01/22/this-week-in-matrix-2024-01-22"
+title = "Open letter to EU Member States on the proposed CSA Regulation"
 
 [taxonomies]
 author = ["Denise Almeida"]
