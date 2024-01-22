@@ -10,6 +10,12 @@ category = ["Foundation"]
 image = "https://matrix.org/blog/img/matrix-logo.png"
 +++
 
+We join our voices to technology companies, trade associations and other supporters in asking EU member states to align the Council's position on the CSA Regulation to the position agreed by the Parliament.
+
+Safeguarding encryption should be a priority in negotiations, ensuring the protection of rights and freedoms around privacy and security of communications.
+
+A copy of the open letter sent to ministers can be read below.
+
 ## Open letter to EU Member States on the proposed CSA Regulation
  
 Dear Ministers of the Interior, Justice, and Economy of EU Member States,
@@ -78,7 +84,8 @@ Trade associations and supporters:
 - Cyberstorm
 - Encryption Europe
 - ISOC-CAT
-- Privacy & Access Council of Canada SecureCrypt
+- Privacy & Access Council of Canada
+- SecureCrypt
 
 [^1]: A detailed summary of the proposal, drafted by the NGO EDRi, is available here: <https://edri.org/our-work/private-and-secure-communications-put-at-risk-by-european-commissions-latest-proposal/>
 
