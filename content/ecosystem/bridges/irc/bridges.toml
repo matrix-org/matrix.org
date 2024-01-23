@@ -42,3 +42,21 @@ privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, Non
 dm = true
 replies = true
 mentions = true
+
+[[bridges]]
+name = "gomatrix IRC bridge"
+maintainer = "Tor"
+summary = """
+Tor's IRC<->Matrix bridge written in the Go language
+"""
+maturity = "Obsolete"
+language = "Golang"
+license = "Proprietary"
+repo = "https://github.com/torhve/gomirc"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = false
+replies = false
+mentions = false

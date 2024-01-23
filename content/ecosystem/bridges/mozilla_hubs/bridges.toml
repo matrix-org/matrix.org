@@ -2,7 +2,7 @@
 name = "GoHubsBot"
 maintainer = "ReK2"
 summary = "Library to create bots for mozilla hubs rooms and bridge mozilla hubs chat to matrix and viceversa"
-maturity = "Alpha"
+maturity = "Obsolete"
 language = "Golang"
 license = "GPL-3.0-or-later"
 #docs = ""
@@ -11,7 +11,6 @@ room = "#GoHubsBot:hispagatos.org"
 featured = false
 privilege.platform = "Admin" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
-maintained = false
 [bridges.supports]
 dm = false
 channels = false

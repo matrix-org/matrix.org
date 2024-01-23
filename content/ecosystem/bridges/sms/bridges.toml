@@ -66,4 +66,43 @@ sms = true
 mms = false
 rcs = false
 group_chats = true
+
+[[bridges]]
+name = "SmsMatrix"
+maintainer = "Gerben Droogers"
+summary = """
+A simple Android SMS (text message) <--> Matrix bridge. With this bridge you can get all your text messages on Matrix and reply to them.
+"""
+maturity = "Obsolete"
+language = "Java"
+license = "GPL-3.0-or-later"
+repo = "https://github.com/tijder/SmsMatrix"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "User" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+sms = true
+mms = false
+rcs = false
+group_chats = false
+history_from_android = false
+
+[[bridges]]
+name = "VoipMS-SMS-Matrix"
+maintainer = "untidylamp"
+summary = """
+The goal for this is to be able to send and receive SMS messages with voip.ms.
+"""
+maturity = "Obsolete"
+language = "Python"
+license = "Unlicense"
+repo = "https://gitlab.com/untidylamp/VoipMS-SMS-Matrix/"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "User" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+sms = true
+mms = false
+rcs = false
+group_chats = false
 history_from_android = false
