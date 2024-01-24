@@ -17,7 +17,6 @@ e2ee = true
 spaces = true
 voip_1to1 = true
 voip_jitsi = true
-widgets = false
 threads = false
 sso = true
 multi_account = true
