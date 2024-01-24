@@ -8,7 +8,7 @@ maturity = "Stable"
 repo = "https://github.com/element-hq"
 matrix_room = "#element-web:matrix.org"
 licence = "Apache-2.0"
-last_release = "2022-11-02"
+latest_release = "2022-11-02"
 featured = true
 [extra.features]
 e2ee = true
