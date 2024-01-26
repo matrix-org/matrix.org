@@ -25,3 +25,23 @@ reactions = true
 presence = true
 typing_notifications = true
 read_receipts = true
+
+[[bridges]]
+name = "gupshup-matrix"
+maintainer = "Alejandro Herrera"
+summary = """
+A WhatsApp Matrix-Gupshup bridge.
+"""
+maturity = "Beta"
+language = "Python"
+license = "MIT"
+repo = "https://github.com/iKonoTelecomunicaciones/gupshup"
+room = "#gupshup-bridge:matrix.org"
+featured = false
+privilege.platform = "Gupshup User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+groups = false
+message_media = true
+presence = false
