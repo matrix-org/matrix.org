@@ -81,7 +81,7 @@ When DMA first became headline news last year, there was a lot of [very vocal co
 
 You can see the whole panel split into the various sections below:
 
-<iframe  src="https://www.youtube.com/embed/FDnUJXzVn3s" title="DMA &amp; messaging services interoperability - End to end Encryption and Security" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{ youtube_player(video_id="FDnUJXzVn3s") }}
 
 <br/>
 
