@@ -32,28 +32,28 @@
         <a href="/membership" class="call-to-action">Become a member</a>
     </div>
     <div id="supporters">
-        <h2>Gold supporters</h2>
-        <ul class="gold-supporters-grid">
-            {% for supporter in supporters.gold %}
-            <li>
-                <a href="{{ supporter.website }}">
+        <div class="supporters-section">
+            <h2>Gold supporters</h2>
+            <div class="cards">
+                {% for supporter in supporters.gold %}
+                <a href="{{ supporter.website }}" class="supporters-card">
                     <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
-                    <p>{{ supporter.name }}</p>
+                    <span>{{ supporter.name }}</span>
                 </a>
-            </li>
-            {% endfor %}
-        </ul>
-        <h2>Silver supporters</h2>
-        <ul class="silver-supporters-grid">
-            {% for supporter in supporters.silver %}
-            <li>
-                <a href="{{ supporter.website }}">
+                {% endfor %}
+            </div>
+        </div>
+        <div class="supporters-section">
+            <h2>Silver supporters</h2>
+            <div class="cards">
+                {% for supporter in supporters.silver %}
+                <a href="{{ supporter.website }}" class="supporters-card">
                     <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
-                    <p>{{ supporter.name }}</p>
+                    <span>{{ supporter.name }}</span>
                 </a>
-            </li>
-            {% endfor %}
-        </ul>
+                {% endfor %}
+            </div>
+        </div>
     </div>
     <div id="the-spec">
         <div class="content">

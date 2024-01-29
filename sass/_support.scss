@@ -65,43 +65,44 @@
     }
 
     #supporters {
+        display: flex;
+        flex-direction: column;
         max-width: var(--page-max-width);
         margin-inline: auto;
 
-        h2 {
-            text-align: center;
-        }
-
-        ul {
-            margin-block-end: 2rem;
-            padding: 0;
+        .supporters-section {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            flex-direction: column;
 
-            li {
-                width: var(--logo-width);
-                list-style: none;
-                padding: 1rem;
-                border: 1px solid var(--borders-color);
-                border-radius: 16px;
-                display: grid;
-                align-content: center;
+            h2 {
+                text-align: center;
+            }
 
-                a {
-                    text-align: center;
-                    font-size: 1.2rem;
+            .cards {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 1rem;
+
+                .supporters-card {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid var(--borders-color);
+                    border-radius: 16px;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+
+                    img {
+                        aspect-ratio: 1/1;
+                        object-fit: contain;
+                        width: 150px;
+                    }
                 }
             }
-        }
-
-        .gold-supporters-grid {
-            --logo-width: 250px;
-        }
-
-        .silver-supporters-grid {
-            --logo-width: 150px;
         }
     }
 
