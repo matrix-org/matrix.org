@@ -31,7 +31,7 @@
 .support.main {
 
     &>div {
-        padding-block: 5rem;
+        padding-block: 3rem;
 
         @media (max-width: 767px) {
             padding-block: 2rem;
@@ -61,6 +61,56 @@
             color: #fff;
             border-radius: 9999px;
             padding: .5rem 2rem;
+        }
+    }
+
+    #silver-supporters {
+        --logo-width: 150px;
+    }
+
+    #gold-supporters {
+        --logo-width: 250px;
+    }
+
+    #supporters {
+        display: flex;
+        flex-direction: column;
+        max-width: var(--page-max-width);
+        margin-inline: auto;
+
+        .supporters-section {
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+                text-align: center;
+            }
+
+            .cards {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 1rem;
+
+                .supporters-card {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid var(--borders-color);
+                    border-radius: 16px;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+
+                    img {
+                        aspect-ratio: 1/1;
+                        object-fit: contain;
+                        width: var(--logo-width, 150px);
+                    }
+                }
+            }
         }
     }
 

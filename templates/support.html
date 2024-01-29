@@ -1,12 +1,13 @@
-{% extends "page.html" %}
+{% extends "section.html" %}
 {% block head_extra %}
-<meta name="description" content="{{ page.extra.summary }}">
+<meta name="description" content="{{ section.extra.summary }}">
 {% endblock head_extra %}
 {% block content %}
+{% set supporters = load_data(path="content/support/supporters.toml") %}
 <div class="page-header support">
     <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.extra.summary }}</p>
         <div class="donate-row">
             <a class="call-to-action" href="https://donorbox.org/keep-matrix-exciting">
                 <img src="/assets/donorbox-icon.svg" alt="" />
@@ -29,6 +30,30 @@
             as a member and run for the governing board.
         </p>
         <a href="/membership" class="call-to-action">Become a member</a>
+    </div>
+    <div id="supporters">
+        <div class="supporters-section" id="gold-supporters">
+            <h2>Gold supporters</h2>
+            <div class="cards">
+                {% for supporter in supporters.gold %}
+                <a href="{{ supporter.website }}" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="supporters-section" id="silver-supporters">
+            <h2>Silver supporters</h2>
+            <div class="cards">
+                {% for supporter in supporters.silver %}
+                <a href="{{ supporter.website }}" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
     </div>
     <div id="the-spec">
         <div class="content">
