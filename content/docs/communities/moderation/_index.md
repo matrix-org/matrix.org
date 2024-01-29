@@ -333,7 +333,7 @@ in its control room
 ```
 
 For example to subscribe to the `#matrix-org-hs-tos-bl:matrix.org` ban list
-maintained by the Matrix Foundation, you would issue the following command
+maintained by the Matrix.org Foundation, you would issue the following command
 
 ```
 !mjolnir watch #matrix-org-hs-tos-bl:matrix.org
