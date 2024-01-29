@@ -64,6 +64,14 @@
         }
     }
 
+    #silver-supporters {
+        --logo-width: 150px;
+    }
+
+    #gold-supporters {
+        --logo-width: 250px;
+    }
+
     #supporters {
         display: flex;
         flex-direction: column;
@@ -99,7 +107,7 @@
                     img {
                         aspect-ratio: 1/1;
                         object-fit: contain;
-                        width: 150px;
+                        width: var(--logo-width, 150px);
                     }
                 }
             }
