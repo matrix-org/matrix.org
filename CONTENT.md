@@ -53,3 +53,73 @@ If you want to add your own, drop it in the PNG format in [`/static/blog/img`](h
 [extra]
 image = "https://matrix.org/blog/img/YOUR-IMAGE.png"
 ```
+
+## Adding new projects to the ecosystem
+
+All of the ecosystem projects information are in subdirectories of [`/content/ecosystem`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/).
+
+### Clients
+
+Matrix clients are listed in [`/content/ecosystem/clients`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/clients). Every client has its individual page, so every client is represented by a markdown file. Most of the information is living in the _frontmatter_, between the two `+++` rows in a `.md` file.
+
+To add a client, add your client's logo (ideally in SVG format) as `your-client-name.svg` and a markdown file as `your-client-name.md` file (no space allowed in the file name) under [`/content/ecosystem/clients`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/clients) and fill it with the following template:
+
+```
++++
+title = "My client name"
+template = "ecosystem/client.html"
+[extra]
+thumbnail = "your-client-name.svg"
+maintainer = "Your name or organisation"
+maturity = "PICK ONE" Stable OR Beta OR Alpha OR Obsolete"
+repo = "https://github.com/example-org/example-repo"
+matrix_room = "#your-matrix-room:example.com"
+licence = "PICK ONE"
+latest_release = "2022-11-02"
+featured = false
+
+[extra.features]
+e2ee = false
+spaces = false
+voip_1to1 = false
+voip_jitsi = false
+threads = false
+sso = false
+multi_account = false
+multi_language = false
+
+[extra.packages]
+windows_installer = "https://example.com/download"
+macos_installer = "https://example.com/download"
+google_play_store.app_id = "com.example.app"
+f_droid.app_id = "com.example.app"
+apple_app_store = { app_id = "id1234567890", org = "example" }
+flathub.app_id = "com.example.app"
+webapp = "https://chat.example.com"
++++
+
+Supercharge your communications with Example Client.
+```
+
+- For the `maturity`, please pick one of
+	- `Stable` if your software has been running in production for a little while and if you are confident in the sustainability of the project
+	- `Beta` if there are rough edges but people won't lose any data
+	- `Alpha` if your software is still experimental
+	- `Obsolete` if your software is no longer maintaines
+- `featured` should be left to false. We are working on [processes to formalise which project should be featured or not](https://github.com/matrix-org/matrix.org/issues/1584).
+- For the `licence`, please use [one of the identifiers listed by the SPDX](https://spdx.org/licenses/)
+- All of the properties under `extra.packages` are optional: only add the installation methods your project supports!
+### Bridges
+
+### Servers
+
+### Integrations
+
+### SDKs
+
+### Hosting providers
+
+## Adding documentation
+
+## Adding sponsors
+
