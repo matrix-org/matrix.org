@@ -14,7 +14,7 @@ We decided to use plain English as much as possible, to make our terms as clear 
 
 When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to the services made available at **Matrix.org** which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
 
-Where you read The Matrix.org Foundation C.I.C., The Matrix.org Foundation, or The Foundation, it refers to the Community Interest Company incorporated on 29 October 2018 to be the neutral custodian of the Matrix protocol: The Matrix.org Foundation C.I.C., and their agents.
+Where you read The Matrix.org Foundation C.I.C., The Matrix.org Foundation, The Matrix Foundation, or The Foundation, it refers to the Community Interest Company incorporated on 29 October 2018 to be the neutral custodian of the Matrix protocol: The Matrix.org Foundation C.I.C., and their agents.
 
 Where you read 'Element' below, it refers to Element, a trading name of New Vector Ltd., its French subsidiary: Element Software SARL, its U.S. subsidiary: Element Software Inc, its German subsidiary: Element Software GmbH, and their agents. Element is contracted by the Foundation to provide some Services on its behalf, such as the hosting, maintenance and monitoring of the Matrix.org homeserver.
 
