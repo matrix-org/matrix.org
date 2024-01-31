@@ -28,7 +28,7 @@ You'll find a full accounting of our 2023 activity and finances in our first Ann
 
 We are incredibly proud of what we've accomplished in the last year. As Matrix approaches its 10th anniversary, we are arriving at an inflection point. To continue on this trajectory, we need your help. 
 
-Element used to subsidize the vast majority of our activity, but we are paying our own bills now. While we managed a 400+% increase in revenue to £364K last year, at £440K our expenses exceeded our revenue. As we enter our first full year of paying our own bills, the full cost of operating the Foundation at its current scope is projected to stabilize somewhere north of £900K in 2024.
+Element used to subsidize our activity, and still donates upwards of £3M in core development annually, but we are paying our own bills now. While we managed a 400+% increase in revenue to £364K last year, at £440K our expenses exceeded our revenue. As we enter our first full year of paying our own bills, the full cost of operating the Foundation at its current scope is projected to stabilize somewhere north of £900K in 2024. And the more we can raise beyond £900K, the less dependent the ecosystem is on Element.
 
 As I get more settled in, we'll deliver more granular financial projections and reporting. For now, the rough breakdown of those projected expenses:
 
