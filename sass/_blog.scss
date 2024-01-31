@@ -83,6 +83,7 @@ article.post {
         grid-template-columns: 300px auto;
         color: #fff;
         background-color: #000;
+        border-radius: 16px;
 
         @media (max-width: 767px) {
             grid-template-columns: auto;
@@ -120,6 +121,11 @@ article.post {
             border-radius: 9999px;
             color: #fff;
             margin-block-start: 1rem;
+        }
+
+        .call-to-action:hover {
+            background-color: #fff;
+            color: rgba(34, 109, 227);
         }
     }
 
