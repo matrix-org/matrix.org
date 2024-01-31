@@ -126,7 +126,7 @@ Supercharge your communications with Example Client.
 	- `Stable` if your software has been running in production for a little while and if you are confident in the sustainability of the project
 	- `Beta` if there are rough edges but people won't lose any data
 	- `Alpha` if your software is still experimental
-	- `Obsolete` if your software is no longer maintaines
+	- `Obsolete` if your software is no longer maintained
 - `featured` should be left to false. We are working on [processes to formalise which project should be featured or not](https://github.com/matrix-org/matrix.org/issues/1584).
 - For the `licence`, please use [one of the identifiers listed by the SPDX](https://spdx.org/licenses/)
 - All of the properties under `extra.packages` are optional: only add the installation methods your project supports!
