@@ -43,6 +43,27 @@ We're excited to announce that our plan to conquer the world worked. We are ever
 We are privacy-centric and don't want to track people individually, but we want to make sure we still have a positive impact. In our apps, we allow people to express their frustration whenever something doesn't work.
 ```
 
+### Adding pictures in your post
+
+It is possible to add pictures to your posts in markdown. First you need to drop the pictures in [`/static/blog/img`](https://github.com/matrix-org/matrix.org/tree/main/static/blog/img). Then, in the markdown file itself add the following line
+
+```
+![A description of the picture](/blog/img/your-picture-name.png)
+```
+
+### Embedding a YouTube player
+
+Embedding the YouTube Player loads cookies from youtube.com. This is fairly invasive in terms of privacy, and breaches the GDPR since we don't have a cookie banner to get visitor's consent to do so.
+
+Whenever you want to add a YouTube video to a blog post, go to YouTube to view the video. The URL should look like `https://www.youtube.com/watch?v=S1nBXjWWHoU` at the minimum, and can look a bit more complex like `https://www.youtube.com/watch?v=S1nBXjWWHoU&list=PLl5dnxRMP1hWycy97GpncT3G3KaFn1MI6&index=2`.
+
+Copy the series of characters after the `v=` and before the first `&` that you meet in the URL. In our example, that is `S1nBXjWWHoU`. This is the id of the video on YouTube.
+
+In your markdown file, add this line to embed the YouTube player in a way that respects the user consent.
+
+```
+{{ youtube_player(video_id="S1nBXjWWHoU") }}
+```
 ### Adding a picture for the socials
 
 You know the cool previews that are generated on socials (Mastodon, LinkedIn, and others) when you paste a link? Matrix.org supports them! By default if you don't specify any, it is going to use [this placeholder](https://github.com/matrix-org/matrix.org/blob/main/static/blog/img/matrix-logo.png) image.
