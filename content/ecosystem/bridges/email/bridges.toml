@@ -19,3 +19,24 @@ sending_mail = true
 receiving_mail = true
 attachments = true
 multi_domain = true
+
+[[bridges]]
+name = "Matrix-EmailBridge"
+maintainer = "Jojii"
+summary = """
+A matrix-bridge written in Golang to let you read and write your emails in matrix. You can have multiple email accounts in different private rooms.
+"""
+maturity = "Obsolete"
+language = "Go"
+license = "BSD-2-Clause"
+repo = "https://gitlab.com/JojiiOfficial/Matrix-EmailBridge"
+room = "#jojiiMail:matrix.jojii.de"
+featured = false
+privilege.platform = "Admin" # Free text
+privilege.matrix = "None" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+sending_mail = true
+receiving_mail = true
+attachments = true
+multi_domain = true
+

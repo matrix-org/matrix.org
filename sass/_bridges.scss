@@ -95,7 +95,8 @@
     }
 
     .privileges,
-    .licence {
+    .licence,
+    .maintenance {
         display: flex;
         flex-wrap: wrap;
         gap: .5rem;
@@ -104,7 +105,8 @@
     }
 
     .privileges>div,
-    .licence>div {
+    .licence>div,
+    .maintenance>div {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

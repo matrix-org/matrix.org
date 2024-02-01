@@ -18,8 +18,15 @@
         {% for subsection_path in section.subsections %}
         {% set subsection = get_section(path=subsection_path) %}
         {% set bridges_data = load_data(path=subsection.path~"bridges.toml") %}
+        {% if not subsection.extra.hidden %}
         <a href="{{ subsection.path }}" class="platform">
+            <!-- See https://zola.discourse.group/t/function-to-check-if-a-file-exists/1767/2 for why this works -->
+            {%- set logo_svg_exists = load_data(path=subsection.path~"logo.svg", required=false) -%}
+            {% if logo_svg_exists %}
             <img src="{{ subsection.path }}logo.svg" alt="{{ subsection.title }} Logo" />
+            {% else %}
+            <img src="{{ subsection.path }}logo.png" alt="{{ subsection.title }} Logo" />
+            {% endif %}
             <div class="details">
                 <h2>{{ subsection.title }}</h2>
                 <p>
@@ -31,6 +38,7 @@
                 </p>
             </div>
         </a>
+        {% endif %}
         {% endfor %}
     </div>
 
