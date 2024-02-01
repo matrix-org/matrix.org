@@ -7,7 +7,7 @@ The best place to get information and connect is on Matrix itself - starting in
 
 However, if you prefer email, or have a need to be more direct:
 
-- [abuse@matrix.org]("mailto:abuse@matrix.org") if you need to urgently report
+- [abuse@matrix.org](mailto:abuse@matrix.org) if you need to urgently report
   abuse on the platform
 - [support@matrix.org](mailto:support@matrix.org) for more general support and
   commercial queries
