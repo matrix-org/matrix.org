@@ -24,3 +24,19 @@ editing = false
 reactions = true
 typing_notifications = true
 read_receipts = true
+
+[[bridges]]
+name = "matrix-puppet-imessage"
+maintainer = "Keyvan Fatehi"
+summary = """
+This is a Matrix bridge for Apple iMessage. It connects your homeserver to Messages.app
+"""
+maturity = "Obsolete"
+language = "Javascript"
+license = "Proprietary"
+repo = "https://github.com/matrix-hacks/matrix-puppet-imessage"
+room = "#matrix-puppet-bridge:matrix.org"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
