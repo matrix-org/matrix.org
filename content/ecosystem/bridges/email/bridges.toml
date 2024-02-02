@@ -40,3 +40,20 @@ receiving_mail = true
 attachments = true
 multi_domain = true
 
+[[bridges]]
+name = "matrix-appservice-email"
+maintainer = "Kamax"
+summary = """
+An application service gateway for bridging between Email and Matrix, written using Spring Boot (Java) using [matrix-java-sdk](https://github.com/kamax-io/matrix-java-sdk).
+"""
+maturity = "Obsolete"
+language = "Java"
+license = "AGPL-3.0-or-later"
+repo = "https://github.com/kamax-io/matrix-appservice-email"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+sending_mail = true
+receiving_mail = true
+multi_domain = false
