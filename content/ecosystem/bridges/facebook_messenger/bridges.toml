@@ -53,3 +53,24 @@ reactions = true
 presence = false
 read_receipts = false
 typing_notifications = false
+
+[[bridges]]
+name = "matrix-puppet-facebook"
+maintainer = "Keyvan Fatehi"
+summary = """
+This is a puppeted Facebook bridge for Matrix.
+"""
+maturity = "Obsolete"
+language = "Javascript"
+# Unclear licensing
+license = "Proprietary"
+repo = "https://github.com/matrix-hacks/matrix-puppet-facebook/"
+room = "#matrix-puppet-bridge:matrix.org"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+formatted_text = true
+message_media = true
+replies = false
