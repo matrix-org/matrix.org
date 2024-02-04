@@ -582,3 +582,17 @@ featured_in = []
 description = """
 A java client for the Matrix protocol.
 """
+
+[[sdks]]
+name = "Rory&::LibMatrix"
+maintainer = "Rory& and other contributors"
+maturity = "Beta"
+language = "C#"
+licence = "AGPL-3.0"
+repository = "https://cgit.rory.gay/matrix/LibMatrix.git"
+purpose = ["client", "bot", "bridge"]
+featured_in = ["client", "bot", "bridge"]
+description = """
+A .NET 8 library for interacting with Matrix.
+"""
+
