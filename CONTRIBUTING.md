@@ -80,6 +80,10 @@ The tools we have at our disposal are:
 
 ## How we take decisions
 
-## How to open an useful issue
+We try to keep a paper trail for all the decisions and implementation:
 
-## How to make sure your PR is reviewed
+- All of the changes on the website happen [through a Pull Request](https://github.com/matrix-org/matrix.org/pulls)
+- Pull Requests should fix a documented and accepted [issue](https://github.com/matrix-org/matrix.org/pulls)
+- Issues are reviewed by the maintainers of the project (@thibaultamartin and @MTRNord as of now). Some discussion can happen in [#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website:matrix.org) but all decisions are logged in the issues themselves.
+
+We keep this paper trail to avoid having to review Pull Requests "fixing" things we don't need or want to be fixed. Of course we try to remain flexible where it makes sense, but want to stick to this process as much as possible.
