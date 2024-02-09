@@ -12,3 +12,13 @@ logo = "fractal-networks.svg"
 name = "Gematik"
 website = "https://www.gematik.de/"
 logo = "gematik.png"
+
+[[silver]]
+name = "IndieHosters"
+website = "https://indie.host"
+logo = "indiehosters.svg"
+
+[[silver]]
+name = "XWiki"
+website = "https://www.xwiki.org/"
+logo = "xwiki.svg"
