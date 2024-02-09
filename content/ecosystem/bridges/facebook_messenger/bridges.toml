@@ -27,6 +27,7 @@ editing = false
 presence = true
 read_receipts = true
 typing_notifications = true
+encryption = false
 
 [[bridges]]
 name = "mautrix-meta"
@@ -55,3 +56,4 @@ editing = true
 presence = false
 read_receipts = true
 typing_notifications = true
+encryption = true
