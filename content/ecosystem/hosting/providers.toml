@@ -66,3 +66,15 @@ description = """
 
 Federated Computer provides Element and Matrix hosting as part of a team collaboration suite (including Nextcloud, Jitsi, Listmonk, Vaultwarden, Baserow, Gitea, Caddy, Castopod, Wireguard, and single-sign-on LDAP).
 """
+
+[[providers]]
+name = "IndieHosters"
+image = "indiehosters.png"
+website = "https://indiehosters.net"
+operating_since = "2016"
+description = """
+- Hosted Homeservers
+- Hosted collaborative tools 
+
+We are a French collective specialized in hosting FOSS software and aimed at building a digital common, with a particular emphasis on collaboration.
+"""
