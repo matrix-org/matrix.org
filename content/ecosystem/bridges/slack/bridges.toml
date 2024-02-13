@@ -93,7 +93,7 @@ presence = false
 typing_notifications = false
 
 [[bridges]]
-name = "mx-pupper-slack"
+name = "mx-puppet-slack"
 maintainer = "Sorunome"
 summary = """
 
