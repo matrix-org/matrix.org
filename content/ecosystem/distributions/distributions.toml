@@ -22,7 +22,7 @@ support_level = "Community"
 
 [[distributions]]
 name = "Element Server Suite"
-description = "Element Server Suite (ESS) is a professional backend for Matrix-based communications that supports self-hosted and fully managed deployments. "
+description = "Element Server Suite (ESS) is a professional backend for Matrix-based communications that supports self-hosted and fully managed deployments."
 vendor = "Element"
 maturity = "Stable"
 frameworks = ["Kubernetes"]
