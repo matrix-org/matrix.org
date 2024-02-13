@@ -1,0 +1,59 @@
+.distributions {
+    p {
+        text-align: center;
+        font-weight: 400;
+        font-size: 1.125rem;
+        line-height: 120%;
+        margin: 0 auto 4rem auto;
+    }
+}
+
+.distribution-links {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+
+        border: 1px solid #777;
+        border-radius: 999px;
+        padding-inline: .5rem;
+
+        font-size: .8rem;
+
+        svg {
+            width: 1.2em;
+            height: 1.2em;
+
+            * {
+                fill: #777;
+            }
+
+            line {
+                stroke: #777;
+            }
+        }
+    }
+
+    a:hover {
+        color: #fff;
+        background-color: #777;
+
+        svg {
+
+            * {
+                fill: #fff;
+            }
+
+            line {
+                stroke: #fff;
+            }
+        }
+    }
+}
