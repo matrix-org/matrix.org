@@ -1,0 +1,31 @@
+[[distributions]]
+name = "matrix-docker-ansible-deploy"
+description = "🐳 Matrix (An open network for secure, decentralized communication) server setup using Ansible and Docker"
+vendor = "Splanteev"
+maturity = "Stable"
+frameworks = ["Ansible", "Docker"]
+licence = "AGPL-3.0"
+repository = "https://github.com/spantaleev/matrix-docker-ansible-deploy"
+room = "#matrix-docker-ansible-deploy:devture.com"
+support_level = "Community"
+
+[[distributions]]
+name = "Ananace Helm Charts"
+description = "Kubernetes applications packaged into helm charts"
+vendor = "Ananace"
+maturity = "Stable"
+frameworks = ["Helm", "Kubernetes"]
+licence = "Apache-2.0"
+repository = "https://gitlab.com/ananace/charts"
+room = "#matrix-on-kubernetes:fiksel.info"
+support_level = "Community"
+
+[[distributions]]
+name = "Element Server Suite"
+description = "Element Server Suite (ESS) is a professional backend for Matrix-based communications that supports self-hosted and fully managed deployments. "
+vendor = "Element"
+maturity = "Stable"
+frameworks = ["Kubernetes"]
+licence = "Proprietary"
+repository = "https://element.io/server-suite"
+support_level = "Commercial"

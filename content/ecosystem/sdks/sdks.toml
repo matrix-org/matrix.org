@@ -595,4 +595,3 @@ featured_in = ["client", "bot", "bridge"]
 description = """
 A .NET 8 library for interacting with Matrix.
 """
-
