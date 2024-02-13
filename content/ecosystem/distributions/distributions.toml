@@ -29,3 +29,24 @@ frameworks = ["Kubernetes"]
 licence = "Proprietary"
 repository = "https://element.io/server-suite"
 support_level = "Commercial"
+
+[[distributions]]
+name = "synapse-operator"
+description = "The Synapse operator offers a convenient way to deploy and manage a Synapse server. It was built with operator-sdk."
+vendor = "Red Hat"
+maturity = "Stable"
+frameworks = ["Kubernetes"]
+licence = "Apache-2.0"
+repository = "https://github.com/opdev/synapse-operator"
+support_level = "Community"
+
+
+[[distributions]]
+name = "BundesMessenger"
+description = "The free & secure messenger for the public sector."
+vendor = "BWI GmbH"
+maturity = "Stable"
+frameworks = ["Helm", "Kubernetes"]
+licence = "Apache-2.0"
+repository = "https://gitlab.opencode.de/bwi/bundesmessenger/info"
+support_level = "Commercial"
