@@ -77,6 +77,7 @@
         flex-direction: column;
         max-width: var(--page-max-width);
         margin-inline: auto;
+        padding-inline: 1rem;
 
         .supporters-section {
             display: flex;
@@ -91,6 +92,10 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 gap: 1rem;
+
+                @media (max-width: 767px) {
+                    justify-content: center;
+                }
 
                 .supporters-card {
                     display: flex;

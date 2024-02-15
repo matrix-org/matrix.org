@@ -1,4 +1,23 @@
 [[providers]]
+name = "fairkom"
+image = "fairkom_4c_quer.svg"
+website = "https://fairkom.eu"
+operating_since = "2015"
+description = """
+- Hosting (large) homeservers
+- Consulting for Matrix based messenger solutions
+- Customization of clients and apps
+- Voice & video call integration
+- Standard and custom bridges
+- Scalable deployments on kubernetes
+- On premise deployment and operations support
+- Integration with Identity Management Systems
+
+fairkom has been building and hosting chat solutions with various open source frameworks. We are now focussing on Matrix based solutions as interoperability is a key demand of customers and users. Our largest deployment scales for half a million pupils, for whom we developed an app for smartphones with additional educational features. Hosting is climate neutral and GDPR compliant.
+[Try fairmatrix](https://www.fairkom.eu/fairmatrix)
+"""
+
+[[providers]]
 name = "Element Matrix Services"
 image = "logo-ems-primary.svg"
 website = "https://ems.element.io"
@@ -65,4 +84,16 @@ description = """
 - Hosted Homeservers
 
 Federated Computer provides Element and Matrix hosting as part of a team collaboration suite (including Nextcloud, Jitsi, Listmonk, Vaultwarden, Baserow, Gitea, Caddy, Castopod, Wireguard, and single-sign-on LDAP).
+"""
+
+[[providers]]
+name = "IndieHosters"
+image = "indiehosters.png"
+website = "https://indiehosters.net"
+operating_since = "2016"
+description = """
+- Hosted Homeservers
+- Hosted collaborative tools 
+
+We are a French collective specialized in hosting FOSS software and aimed at building a digital common, with a particular emphasis on collaboration.
 """

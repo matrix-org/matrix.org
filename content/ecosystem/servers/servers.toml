@@ -4,8 +4,8 @@ description = "Matrix.org homeserver"
 author = "Matrix.org team"
 maturity = "Stable"
 language = "Python"
-licence = "Apache-2.0"
-repository = "https://github.com/matrix-org/synapse/"
+licence = "AGPL-3.0-or-later"
+repository = "https://github.com/element-hq/synapse"
 room = "#synapse:matrix.org"
 
 [[servers]]
