@@ -65,12 +65,12 @@ A set of Rust crates for interacting with the Matrix chat network.
 
 [[sdks]]
 name = "gomatrix"
-maintainer = "Matrix.org"
+maintainer = "Tulir"
 maturity = "Stable"
 language = "Go"
-licence = "Apache-2.0"
-repository = "https://github.com/matrix-org/gomatrix"
-purpose = ["client"]
+licence = "MPL-2.0"
+repository = "https://github.com/mautrix/go"
+purpose = ["client", "bot", "bridge"]
 featured_in = []
 description = """
 A Golang Matrix client.
