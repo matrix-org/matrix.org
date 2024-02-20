@@ -1,4 +1,15 @@
 [[providers]]
+name = "Communick"
+image = "communick.png"
+website = "https://communick.com"
+operating_since = "2018"
+description = """
+  Communick is service provider for open source messaging and social media platforms. Hosted in Germany, it provides fully managed Synapse homeservers for those looking to be in control of their media presence and/or provides a flagship instance (at https://matrix.communick.com) for subscribers that value decentralization are just looking for a stable, less popular server. As a form to support open source, Communick pledges to give 20% of its profits to the open source projects that it offers, so by becoming a customer you'll be also directly ensuring the continued development of the Matrix ecosystem.
+
+For information about different hosting plans, please check our [Matrix service webpage](https://communick.com/services/matrix).
+"""
+
+[[providers]]
 name = "fairkom"
 image = "fairkom_4c_quer.svg"
 website = "https://fairkom.eu"
@@ -93,7 +104,7 @@ website = "https://indiehosters.net"
 operating_since = "2016"
 description = """
 - Hosted Homeservers
-- Hosted collaborative tools 
+- Hosted collaborative tools
 
 We are a French collective specialized in hosting FOSS software and aimed at building a digital common, with a particular emphasis on collaboration.
 """
