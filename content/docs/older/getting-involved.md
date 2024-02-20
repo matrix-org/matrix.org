@@ -38,7 +38,7 @@ Here is how:
 ### Running your own client:
 
 You can run your own Matrix client; there are
-[numerous clients available][/ecosystem/clients]. You can easily
+(numerous clients available)[/ecosystem/clients]. You can easily
 [run your own copy](https://github.com/vector-im/element-web#getting-started) 
 of the Element Web client.
 
@@ -55,7 +55,7 @@ the
 
 All the code that we at Matrix.org write is available from
 [our github](https://github.com/matrix-org) - and other servers and clients may
-also be open sourced - see [our list of all known Matrix-apps][/ecosystem].
+also be open sourced - see [our list of all known Matrix-apps](/ecosystem).
 
 You can also implement your own client or server - after all, Matrix is at its
 core "just" a specification of a protocol.
@@ -75,7 +75,7 @@ if you are running your own Synapse homeserver.
 
 2. Assuming the homeserver you are using allows logins by password, log in via the login API:
 
-```
+```bash
 curl -XPOST -d '{"type":"m.login.password", "user":"example", "password":"wordpass"}' \
 "http://localhost:8008/_matrix/client/api/v1/login"
 ```
@@ -94,13 +94,13 @@ curl -XPOST -d '{"type":"m.login.password", "user":"example", "password":"wordpa
 calls. Potentially the next step you want is to make a call to the sync API and
 get the last few events from each room your user is in:
 
-```
+```bash
 curl -XGET "http://localhost:8008/_matrix/client/r0/sync?access_token=YOUR_ACCESS_TOKEN"
 ```
 
 5. The above will return something like this:
 
-```
+```json
 {
     "next_batch": "s72595_4483_1934",
     "rooms": {
@@ -127,7 +127,7 @@ curl -XGET "http://localhost:8008/_matrix/client/r0/sync?access_token=YOUR_ACCES
 You can then use the "next_batch" token to start listening for new events like 
 so:
 
-```
+```bash
 curl -XGET "http://localhost:8008/_matrix/client/r0/sync?access_token=YOUR_ACCESS_TOKEN&since=s72595_4483_1934"
 ```
 
