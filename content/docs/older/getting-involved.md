@@ -38,7 +38,7 @@ Here is how:
 ### Running your own client:
 
 You can run your own Matrix client; there are
-(numerous clients available)[/ecosystem/clients]. You can easily
+[numerous clients available](/ecosystem/clients). You can easily
 [run your own copy](https://github.com/vector-im/element-web#getting-started) 
 of the Element Web client.
 
