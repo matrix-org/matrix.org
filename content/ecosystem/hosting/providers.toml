@@ -108,3 +108,16 @@ description = """
 
 We are a French collective specialized in hosting FOSS software and aimed at building a digital common, with a particular emphasis on collaboration.
 """
+
+[[providers]]
+name = "Acter"
+image = "Acter - Logo.webp"
+website = "https://acter.global/acter-app"
+operating_since = "2022"
+description = """
+- Hosted Homeserver, on-premise or managed
+- Hosted integrations
+- special hosting plugins for use of Acter
+
+We are a danish collectivively organized NGO building and hosting Acter, the effective organizing App build on Matrix. As part of our work we offer hosting and servicing Matrix homeserver instances for NGO's and large organization supporting the activism space.
+"""
