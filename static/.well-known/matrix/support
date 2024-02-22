@@ -1,0 +1,7 @@
+{
+  "support_page": "https://matrix.org/contact/",
+  "contacts": [
+    { "role": "m.role.admin", "email_address": "abuse@matrix.org" },
+    { "role": "m.role.security", "email_address": "security@matrix.org" }
+  ]
+}
