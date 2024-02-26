@@ -144,7 +144,12 @@ of the project and the definition of the Spec Core Team, which are [reproduced h
 
 ## Who We Are
 
-The ecosystem around Matrix is full of people who are enthusiastic about the mission to bring secure, interoperable, decentralised communication to the world. The Matrix.org Foundation, as the nonprofit that serves this ecosystem, is itself made up of many hard working people across several key groups that you can learn about on this page: [the staff of the Foundation](#the-staff-of-the-foundation), [the Spec Core Team](#the-spec-core-team), and [the Guardians](#the-guardians).
+The ecosystem around Matrix is full of people who are enthusiastic about the
+mission to bring secure, interoperable, decentralised communication to the world.
+The Matrix.org Foundation, as the nonprofit that serves this ecosystem, is itself
+made up of many hard working people across several key groups that you can learn
+about on this page: [the staff of the Foundation](#the-staff-of-the-foundation),
+[the Spec Core Team](#the-spec-core-team), and [the Guardians](#the-guardians).
 
 ### The Staff of the Foundation
 {{ staff() }}
