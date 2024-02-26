@@ -1,4 +1,5 @@
-.guardian {
+.guardian,
+.staff {
     display: flex;
     align-items: flex-start;
     margin: 2.5em 0;
@@ -18,7 +19,8 @@
     }
 }
 
-.guardian-name {
+.guardian-name,
+.staff-name {
     font-weight: bold;
     margin: 0 0 .5rem;
 }
