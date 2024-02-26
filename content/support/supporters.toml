@@ -4,6 +4,11 @@ website = "https://beeper.com"
 logo = "beeper.svg"
 
 [[silver]]
+name = "Fairkom"
+website = "https://www.fairkom.eu/"
+logo = "fairkom.svg"
+
+[[silver]]
 name = "Fractal Networks"
 website = "https://github.com/fractalnetworksco/"
 logo = "fractal-networks.svg"
@@ -12,3 +17,13 @@ logo = "fractal-networks.svg"
 name = "Gematik"
 website = "https://www.gematik.de/"
 logo = "gematik.png"
+
+[[silver]]
+name = "IndieHosters"
+website = "https://indie.host"
+logo = "indiehosters.png"
+
+[[silver]]
+name = "XWiki"
+website = "https://www.xwiki.org/"
+logo = "xwiki.png"

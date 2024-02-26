@@ -66,7 +66,7 @@ A set of Rust crates for interacting with the Matrix chat network.
 [[sdks]]
 name = "gomatrix"
 maintainer = "Matrix.org"
-maturity = "Stable"
+maturity = "Obsolete"
 language = "Go"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/gomatrix"
@@ -448,10 +448,10 @@ featured_in = []
 [[sdks]]
 name = "libkazv"
 maintainer = "The Kazv Project"
-maturity = "Alpha"
+maturity = "Beta"
 language = "C++"
 licence = "AGPL-3.0-or-later"
-repository = "https://lily.kazv.moe/kazv/libkazv"
+repository = "https://lily-is.land/kazv/libkazv"
 purpose = ["client", "bot"]
 featured_in = []
 description = """
@@ -595,4 +595,3 @@ featured_in = ["client", "bot", "bridge"]
 description = """
 A .NET 8 library for interacting with Matrix.
 """
-

@@ -192,8 +192,10 @@ The current Spec Core Team (and their domain areas) is:
 * [David Baker](https://github.com/dbkr) (Clients, IS API, Push API, Media)
 * [Hubert Chathi](https://github.com/uhoreg) (Cryptography, General)
 * [Andrew Morgan](https://github.com/anoadragon453) (Servers, AS API, Spec Process)
-* [Travis Ralston](https://github.com/turt2live) (Bots and Bridges & AS API, Media)
-* [Alexey Rusakov](https://github.com/KitsuneRal) (Clients on behalf of Community)
+* [Travis Ralston](https://github.com/turt2live) (Bots and Bridges, AS API, Media)
+* [Alexey Rusakov](https://github.com/KitsuneRal) (Clients)
+* [Tulir Asokan](https://github.com/tulir) (Bots and Bridges, AS API)
+* [Patrick Cloke](https://github.com/clokep) (Servers)
 
 ### The Guardians
 

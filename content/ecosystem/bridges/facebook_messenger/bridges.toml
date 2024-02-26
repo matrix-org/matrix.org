@@ -6,13 +6,13 @@ A Matrix-Facebook Messenger puppeting bridge. Written in Python using
 [maufbapi](https://github.com/mautrix/facebook/tree/master/maufbapi) and
 [mautrix-python](https://matrix.org/docs/projects/sdk/mautrix-python.html).
 """
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Python"
 license = "AGPL-3.0-or-later"
 docs = "https://docs.mau.fi/bridges/python/setup.html?bridge=facebook"
 repo = "https://github.com/mautrix/facebook"
 room = "#facebook:maunium.net"
-featured = true
+featured = false
 privilege.platform = "User" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
 [bridges.supports]
@@ -27,6 +27,7 @@ editing = false
 presence = true
 read_receipts = true
 typing_notifications = true
+encryption = false
 
 [[bridges]]
 name = "mautrix-meta"
@@ -55,3 +56,4 @@ editing = true
 presence = false
 read_receipts = true
 typing_notifications = true
+encryption = true
