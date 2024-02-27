@@ -152,6 +152,18 @@ about on this page: [the staff of the Foundation](#the-staff-of-the-foundation),
 [the Spec Core Team](#the-spec-core-team), and [the Guardians](#the-guardians).
 
 ### The Staff of the Foundation
+
+We have a small but mighty team of staffers who are responsible for the day-to-day
+operations of the Foundation. Because the organization doesn't yet have the capacity
+to take on employees directly, all of us are working under contract. We look forward
+to building the Foundation such that it can take on employees directly, in addition
+to being self-sustaining and more fully independent.
+
+In the interest of transparency, we think it's important for people to know that
+most of our staffers are employees of Element, working under a contract with, and
+funded by, the Foundation. The exception is our Managing Director who contracts
+directly with the Foundation.
+
 {{ staff() }}
 
 ### The Spec Core Team
