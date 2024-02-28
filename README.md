@@ -19,10 +19,3 @@ zola serve
 Zola will build the website and start a web server, usually at
 http://127.0.0.1:1111
 
-## Content license
-
-The code of the matrix.org website is under the Apache-2.0 license as specified
-in the LICENSE file at the root of this repository.
-
-The content (under the `content/` directory) is placed under the CC BY-SA
-license.
