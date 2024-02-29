@@ -95,7 +95,7 @@
                 --cards-gap: 1rem;
                 gap: var(--cards-gap);
 
-                @media (max-width: 767px) {
+                @media screen and (max-width: 1128px) {
                     justify-content: center;
                 }
 
