@@ -4,9 +4,9 @@
 {% block head_extra %}
 <meta name="description" content="{{ section.extra.summary }}">
 <noscript>
-    <link rel="stylesheet" href="/no-js.css" />
+    <link rel="stylesheet" href={{ get_url(path="/no-js.css" , cachebust=true) }} />
 </noscript>
-<script type="module" src="/js/clients.js"></script>
+<script type="module" src={{ get_url(path="/js/clients.js" , cachebust=true) }}></script>
 {% endblock head_extra%}
 {% block content %}
 {% set clients = section.pages %}

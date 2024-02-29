@@ -108,20 +108,6 @@ Articles of Association and Rules, and is enforced by the Guardians of Matrix:
 the directors of the Foundation appointed to provide a balance of independent
 experts and the founding Matrix team to ensure the project stays on track.
 
-### The Guardians
-
-The Guardians are the legal directors of the non-profit Foundation, and are
-responsible for ensuring that the Foundation (and by extension the Spec Core
-Team) keeps on mission and neutrally protects the development of Matrix.
-Guardians are typically independent of the commercial Matrix ecosystem and may
-even not be members of today's Matrix community, but are deeply aligned with
-the mission of the project. Guardians are selected to be respected and trusted
-by the wider community to uphold the guiding principles of the Foundation and
-keep the other Guardians honest.
-
-In alphabetical order:
-{{ guardians() }}
-
 ### Legal Details
 
 * The Matrix.org Foundation C.I.C is registered in the UK as Company 
@@ -154,8 +140,31 @@ The full history of the rules can be followed via:
 * [https://github.com/matrix-org/matrix-doc/pull/1779](https://github.com/matrix-org/matrix-doc/pull/1779)
 
 One of the most important items defined in the Rules are The Guiding Principles
-of the project and the definition of the Spec Core Team, which are reproduced
-below from MSC1779 for ease of reference.
+of the project and the definition of the Spec Core Team, which are [reproduced here](#the-spec-core-team) from MSC1779 for ease of reference.
+
+## Who We Are
+
+The ecosystem around Matrix is full of people who are enthusiastic about the
+mission to bring secure, interoperable, decentralised communication to the world.
+The Matrix.org Foundation, as the nonprofit that serves this ecosystem, is itself
+made up of many hard working people across several key groups that you can learn
+about on this page: [the staff of the Foundation](#the-staff-of-the-foundation),
+[the Spec Core Team](#the-spec-core-team), and [the Guardians](#the-guardians).
+
+### The Staff of the Foundation
+
+We have a small but mighty team of staffers who are responsible for the day-to-day
+operations of the Foundation. Because the organization doesn't yet have the capacity
+to take on employees directly, all of us are working under contract. We look forward
+to building the Foundation such that it can take on employees directly, in addition
+to being self-sustaining and more fully independent.
+
+In the interest of transparency, we think it's important for people to know that
+most of our staffers are employees of Element, working under a contract with, and
+funded by, the Foundation. The exception is our Managing Director who contracts
+directly with the Foundation.
+
+{{ staff() }}
 
 ### The Spec Core Team
 
@@ -204,3 +213,17 @@ The current Spec Core Team (and their domain areas) is:
 * [Alexey Rusakov](https://github.com/KitsuneRal) (Clients)
 * [Tulir Asokan](https://github.com/tulir) (Bots and Bridges, AS API)
 * [Patrick Cloke](https://github.com/clokep) (Servers)
+
+### The Guardians
+
+The Guardians are the legal directors of the non-profit Foundation, and are
+responsible for ensuring that the Foundation (and by extension the Spec Core
+Team) keeps on mission and neutrally protects the development of Matrix.
+Guardians are typically independent of the commercial Matrix ecosystem and may
+even not be members of today's Matrix community, but are deeply aligned with
+the mission of the project. Guardians are selected to be respected and trusted
+by the wider community to uphold the guiding principles of the Foundation and
+keep the other Guardians honest.
+
+In alphabetical order:
+{{ guardians() }}
