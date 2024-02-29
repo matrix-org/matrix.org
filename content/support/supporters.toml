@@ -9,6 +9,11 @@ website = "https://www.fairkom.eu/"
 logo = "fairkom.svg"
 
 [[silver]]
+name = "Famedly"
+website = "https://www.famedly.com/"
+logo = "famedly.svg"
+
+[[silver]]
 name = "Fractal Networks"
 website = "https://github.com/fractalnetworksco/"
 logo = "fractal-networks.svg"
