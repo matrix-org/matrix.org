@@ -2,6 +2,7 @@
 title = "Bridges"
 weight = 2
 template = "ecosystem/bridges.html"
+sort_by = "title"
 extra.summary = """
 Bridges allow you to connect Matrix to a third-party platform, and interact
 seamlessly.
