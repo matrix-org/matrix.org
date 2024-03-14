@@ -94,10 +94,7 @@
                 flex-wrap: wrap;
                 --cards-gap: 1rem;
                 gap: var(--cards-gap);
-
-                @media screen and (max-width: 1128px) {
-                    justify-content: center;
-                }
+                justify-content: center;
 
                 .supporters-card {
                     display: flex;
