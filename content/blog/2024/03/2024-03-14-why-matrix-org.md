@@ -1,5 +1,5 @@
 +++
-date = "2024-03-14"
+date = "2024-03-14T15:30:00Z"
 title = "Why the Matrix.org Homeserver Exists?"
 
 [taxonomies]
