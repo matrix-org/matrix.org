@@ -23,9 +23,7 @@
           <title>{{ page.title }}</title>
           <pubDate>{{ page.date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</pubDate>
           <author>
-            {%- if page.authors -%}
-              {{ page.authors[0] }}
-            {%- elif page.taxonomies.author -%}
+            {%- if page.taxonomies.author -%}
               {%- for author in page.taxonomies.author -%}
                 {{ author | default(value=["unknown author"]) }}{%- if not loop.last -%}, {% endif -%}
               {%- endfor -%}
