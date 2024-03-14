@@ -6,6 +6,10 @@
 {% endif %}
 #}
 
+{%- if page.authors | length > 0 or page.taxonomies.author is undefined -%}
+{{ throw(message="Please put author under the taxonomies area.") }}
+{%- endif -%}
+
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
