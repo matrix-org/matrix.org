@@ -54,7 +54,7 @@ To move to another homeserver, a user needs to be able to pick a homeserver and 
 
 ### Picking a homeserver
 
-Matrix community member Austin Huang created [servers.joinmatrix.org](servers.joinmatrix.org) to list all the servers with open registrations where people could find a new home. I am working on creating an official and curated version. We need the instance picker to work on Matrix.org's website, and provide data that the client apps can reuse and present to users who want to move away from Matrix.org.
+Matrix community member Austin Huang created [servers.joinmatrix.org](https://servers.joinmatrix.org) to list all the servers with open registrations where people could find a new home. I am working on creating an official and curated version. We need the instance picker to work on Matrix.org's website, and provide data that the client apps can reuse and present to users who want to move away from Matrix.org.
 
 
 ### Moving to the new homeserver
