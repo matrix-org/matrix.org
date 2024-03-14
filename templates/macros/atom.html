@@ -9,7 +9,7 @@
           {{ page.authors[0] }}
         {%- elif page.taxonomies.author -%}
           {%- for author in page.taxonomies.author -%}
-            {{ author | default(value=["unknown author"]) }}{%- if not loop.last -%}, {%- endif -%}
+            {{ author | default(value=["unknown author"]) }}{%- if not loop.last -%}, {% endif -%}
           {%- endfor -%}
         {%- elif config.author -%}
           {{ config.author }}
