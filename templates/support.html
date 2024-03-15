@@ -33,7 +33,7 @@
     </div>
     <div id="supporters">
         <div class="supporters-section" id="gold-supporters">
-            <h2>Gold supporters</h2>
+            <h2>Gold Members</h2>
             <div class="cards">
                 {% for supporter in supporters.gold %}
                 <a href="{{ supporter.website }}" class="supporters-card">
@@ -44,9 +44,20 @@
             </div>
         </div>
         <div class="supporters-section" id="silver-supporters">
-            <h2>Silver supporters</h2>
+            <h2>Silver Members</h2>
             <div class="cards">
                 {% for supporter in supporters.silver %}
+                <a href="{{ supporter.website }}" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="supporters-section" id="ecosystem-supporters">
+            <h2>Ecosystem Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.ecosystem %}
                 <a href="{{ supporter.website }}" class="supporters-card">
                     <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>
