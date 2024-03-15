@@ -34,6 +34,11 @@ website = "https://www.xwiki.org/"
 logo = "xwiki.png"
 
 [[ecosystem]]
+name = "Conduit"
+website = "https://conduit.rs/"
+logo = "conduit.svg"
+
+[[ecosystem]]
 name = "Draupnir"
 website = "https://github.com/the-draupnir-project/Draupnir"
 logo = "draupnir.png"
