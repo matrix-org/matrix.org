@@ -32,3 +32,8 @@ logo = "indiehosters.png"
 name = "XWiki"
 website = "https://www.xwiki.org/"
 logo = "xwiki.png"
+
+[[ecosystem]]
+name = "Thunderbird"
+website = "https://thunderbird.net/"
+logo = "thunderbird.svg"
