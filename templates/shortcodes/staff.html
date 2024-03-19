@@ -1,20 +1,17 @@
 <div>
     {% set staff_data = load_data(path="content/about/staff.toml") %}
     {% for staff in staff_data.staff %}
-    <div class="staff">
-        {% if loop.index % 2 == 0 %}
+    <div class="staff {% if loop.index % 2 != 0 %}reverse{% endif %}">
         <div class="staff-details">
             <h4 class="staff-name">{{ staff.name }}, {{ staff.title }}</h4>
             <p>{{ staff.bio }}</p>
+            <ul class="socials">
+                {% if staff.website %}<li><a href="{{ staff.website }}">Website</a></li>{% endif %}
+                {% if staff.linkedin %}<li><a href="{{staff.linkedin}}">LinkedIn</a></li>{% endif %}
+                {% if staff.fediverse %}<li><a href="{{ staff.fediverse }}">Fediverse</a></li>{% endif %}
+            </ul>
         </div>
         <img src="/about/{{ staff.picture }}" alt="Portrait of {{ staff.name }}" />
-        {% else %}
-        <img src="/about/{{ staff.picture }}" alt="Portrait of {{ staff.name }}" />
-        <div>
-            <h4 class="staff-name">{{ staff.name }}, {{ staff.title }}</h4>
-            <p>{{ staff.bio }}</p>
-        </div>
-        {% endif %}
     </div>
     {% endfor %}
 </div>
