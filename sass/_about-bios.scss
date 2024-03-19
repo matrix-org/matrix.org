@@ -10,6 +10,20 @@
         flex-direction: row-reverse;
     }
 
+    .staff-details {
+        p {
+            margin-block: 0;
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: row;
+            padding-inline: 0;
+            list-style: none;
+            gap: .6em
+        }
+    }
+
     img {
         width: 128px;
         max-width: 25vw;
