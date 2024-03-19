@@ -32,6 +32,8 @@ Thib has as many silent letters in his first name as regular ones. He is a chron
 name = "Travis Ralston"
 title = "Director of Standards Development"
 picture = "travis.jpg"
+linkedin = "https://www.linkedin.com/in/travisralston/"
+fediverse = "https://mstdn.ca/@travisr"
 bio = """
 Travis is an avid volunteer, free software developer, Spec Core Team (SCT) member, makerspace director, and collector of strange hobbies. Travis started writing PRs for Matrix in 2016 to support his local makerspace in switching away from IRC, and has continued contributing to Matrix since. Travis’ latest role supports the SCT in operating the Matrix Spec Change (MSC) process, and engages with other standards bodies to advocate for and support Matrix.
 """
