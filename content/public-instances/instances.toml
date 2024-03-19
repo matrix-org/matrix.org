@@ -1,0 +1,36 @@
+[[instances]]
+title = "archaeo.social"
+domain = "archaeo.social"
+location = "CH"
+hoster = "The archaeo social collective"
+structure = "non-profit"
+terms_of_service = "https://archaeo.social/about"
+software = "Synapse"
+version = "1.87.0"
+creation_date = "1950-01-01"
+description = """
+An archaeology oriented instance.
+"""
+
+  [instances.signup]
+  requires_email = true
+  requires_captcha = true
+
+[[instances]]
+title = "Matrix.org"
+domain = "matrix.org"
+location = "GB"
+hoster = "The Matrix.org Foundation"
+structure = "non-profit"
+software = "Synapse"
+version = "1.92.1 (b=matrix-org-hotfixes,3bb8cce692)"
+privacy_policy = "https://matrix.org/legal/privacy-notice/"
+terms_of_service = "https://matrix.org/legal/terms-and-conditions/"
+creation_date = "2014-09-01"
+description = """
+The largest open network for secure, decentralised communications.
+"""
+
+  [instances.signup]
+  requires_email = true
+  requires_captcha = true
