@@ -196,6 +196,17 @@ repository = "https://gitlab.com/etke.cc/ttm"
 room = "#ttm:etke.cc"
 
 [[integrations]]
+name = "pipe2matrix"
+description = """
+netcat for matrix: redirect a program's input/output into a matrix room.
+"""
+author = "Anton Molyboha"
+language = "Python"
+licence = "GPL-3.0-only"
+repository = "https://gitlab.com/anton.molyboha/pipe2matrix"
+room = "#pipe2matrix:rendezvous.anton.molyboha.me"
+
+[[integrations]]
 name = "radicale-auth-matrix"
 description = """
 Matrix authentication plugin for Radicale
