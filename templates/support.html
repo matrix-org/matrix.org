@@ -32,6 +32,17 @@
         <a href="/membership" class="call-to-action">Become a member</a>
     </div>
     <div id="supporters">
+        <div class="supporters-section" id="platinum-supporters">
+            <h2>Platinum Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.platinum %}
+                <a href="{{ supporter.website }}" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
         <div class="supporters-section" id="gold-supporters">
             <h2>Gold Members</h2>
             <div class="cards">

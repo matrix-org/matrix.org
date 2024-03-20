@@ -64,16 +64,20 @@
         }
     }
 
-    #ecosystem-supporters .supporters-card {
-        --cards-per-row: 5;
+    #platinum-supporters .supporters-card {
+        --cards-per-row: 4;
+    }
+
+    #gold-supporters .supporters-card {
+        --cards-per-row: 4;
     }
 
     #silver-supporters .supporters-card {
         --cards-per-row: 5;
     }
 
-    #gold-supporters .supporters-card {
-        --cards-per-row: 3;
+    #ecosystem-supporters .supporters-card {
+        --cards-per-row: 5;
     }
 
     #supporters {
