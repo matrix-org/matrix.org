@@ -47,3 +47,8 @@ logo = "draupnir.png"
 name = "Thunderbird"
 website = "https://thunderbird.net/"
 logo = "thunderbird.svg"
+
+[[ecosystem]]
+name = "Trixnity"
+website = "https://trixnity.gitlab.io/trixnity"
+logo = "trixnity.png"
