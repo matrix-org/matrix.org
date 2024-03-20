@@ -108,11 +108,12 @@
                     --supporters-card-border-width: 1px;
                     border: var(--supporters-card-border-width) solid var(--borders-color);
                     border-radius: 16px;
-                    padding-top: 4px;
-                    padding-bottom: 4px;
                     --supporters-card-hpadding: 8px;
-                    padding-left: var(--supporters-card-hpadding);
-                    padding-right: var(--supporters-card-hpadding);
+                    padding: var(--supporters-card-hpadding);
+                    // The whitespace of the text at the bottom visually adds to the padding so we account for this on the top a little.
+                    padding-top: calc(1.5 * var(--supporters-card-hpadding));
+                    // This adds some space between the text and the image
+                    gap: var(--supporters-card-hpadding);
 
                     img {
                         aspect-ratio: 1/1;
