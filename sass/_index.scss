@@ -324,54 +324,25 @@
         #bridge_visual {
             position: absolute;
             top: 100px;
-            left: 50px;
+            left: calc(60dvw - 800px);
 
             width: 240px;
             height: 287px;
-
-            @media (max-width: 767px) {
-                display: none;
-            }
         }
 
         #homeserver {
             position: absolute;
             bottom: 50px;
-            left: 150px;
+            left: calc(60dvw - 800px);
 
             width: 230px;
             height: 235px;
-
-            @media (max-width: 767px) {
-                display: none;
-            }
         }
 
         #federation_visual {
             position: absolute;
-            top: 50px;
-            right: 50px;
-
-            width: 425px;
-            height: 853px;
-
-            @media (max-width: 767px) {
-                display: none;
-            }
-        }
-
-        #federation_visual_mobile {
-            display: none;
-
-            @media (max-width: 767px) {
-                display: inline;
-                position: absolute;
-                bottom: 50px;
-                right: -3px;
-
-                width: 322px;
-                height: 324px,
-            }
+            top: calc(200px - 4dvw);
+            right: calc(60dvw - 800px);
         }
 
         .call-to-action {
