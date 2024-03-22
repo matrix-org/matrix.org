@@ -59,7 +59,7 @@ Matrix community member Austin Huang created [servers.joinmatrix.org](https://se
 
 ### Moving to the new homeserver
 
-The Foundation will implement an account migration tool to allow people to migrate to another server. A proper portable identity mechanism would be better,however, the Foundation had to pause its development due to a lack of funding. Such a mechanism would also rely on a new room version. It would only allow migrating conversations that happened after a room upgrade to that hypothetical new version, which results in data loss.
+The Foundation will implement an account migration tool to allow people to migrate to another server. A proper portable identity mechanism would be better - however, the Foundation had to pause its development due to a lack of funding. Such a mechanism would also rely on a new room version. It would only allow migrating conversations that happened after a room upgrade to that hypothetical new version, which results in data loss.
 
 
 ## The most reasonable solution
@@ -73,6 +73,6 @@ There are alternatives to a prominent onboarding homeserver like the Matrix.org 
 * Portable identities are very desirable but will take time to materialise.
 * P2P Matrix depends on a portable identity mechanism and is further away in the future.
 
-As you can see, we at the Foundation need to strike a balance as we pursue goals that are occasionally in tension with one another, and the Matrix.org homeserver is a prime example. We are committed both to making Matrix more accessible, and to doing the work to de-center the Matrix.org homeserver.
+As you can see, we at the Foundation need to strike a balance as we pursue goals that are occasionally in tension with one another, and the Matrix.org homeserver is a prime example. We are committed both to making Matrix more accessible, and to doing the work to decenter the Matrix.org homeserver.
 
 You can help us achieve both: the Foundation needs your support! If you can afford to, please consider [supporting us financially](/support/). If you want to contribute to the Foundation’s governance, consider [becoming a member](/membership/).
