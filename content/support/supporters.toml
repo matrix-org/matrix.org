@@ -49,6 +49,11 @@ website = "https://github.com/the-draupnir-project/Draupnir"
 logo = "draupnir.png"
 
 [[ecosystem]]
+name = "Nheko-Reborn"
+website = "https://nheko.im/nheko-reborn/nheko/"
+logo = "nheko.svg"
+
+[[ecosystem]]
 name = "Thunderbird"
 website = "https://thunderbird.net/"
 logo = "thunderbird.svg"
