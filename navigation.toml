@@ -2,15 +2,15 @@ header = [
     { title = "Spec", href = "https://spec.matrix.org" },
     { title = "About", href = "/about/" },
     { title = "Blog", href = "/blog/" },
-    { title = "Documentation", href="/docs/" },
+    { title = "Docs", href="/docs/" },
     { title = "Ecosystem", section = "ecosystem" },
-    { title = "Shop", href = "https://shop.matrix.org" },
     { title = "Donate", href="/support" },
     { title = "Try Matrix", href = "/try-matrix/", primary = true },
 ]
 
 footer_internal = [
     { title = "Donate", href = "/support" },
+    { title = "Shop", href = "https://shop.matrix.org" },
     { title = "Security Disclosure Policy", href = "/security-disclosure-policy" },
     { title = "Security Hall of Fame", href = "/security-hall-of-fame" },
     { title = "Code of Conduct", href = "/legal/code-of-conduct" },
