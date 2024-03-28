@@ -96,10 +96,10 @@
 
 
                 padding-inline: clamp(1em, 3dvw, 2em);
-                margin-top: 1.2rem;
                 margin-inline: .5rem;
 
                 @media screen and (max-width: 767px) {
+                    margin-top: 1.2rem;
                     text-align: center;
                 }
 
