@@ -1,6 +1,8 @@
 .site-header {
     position: fixed;
     z-index: 1000;
+    --header-padding: 1.5dvw;
+    --header-vertical-padding: 8px;
 
     display: flex;
     width: 100%;
@@ -70,8 +72,6 @@
         }
 
         a {
-            padding: 8px 24px;
-            margin: 8px 0;
             color: #fff;
             font-size: 1.125rem;
 
@@ -79,9 +79,7 @@
                 font-size: 1.5rem;
             }
 
-            @media screen and (min-width: 768px) and (max-width: 939px) {
-                padding: 8px 10px;
-            }
+            padding: var(--header-vertical-padding) var(--header-padding);
 
             &:hover {
                 color: #0082f3;
@@ -96,20 +94,15 @@
                 background-color: #fff;
                 color: #000 !important;
 
-                padding-left: 2em;
-                padding-right: 2em;
-                margin-left: .5rem;
-                margin-right: .5rem;
+
+                padding-inline: clamp(1em, 3dvw, 2em);
+                margin-top: 1.2rem;
+                margin-inline: .5rem;
 
                 @media screen and (max-width: 767px) {
                     text-align: center;
                 }
 
-                @media screen and (min-width: 768px) and (max-width: 939px) {
-                    padding-left: 1em;
-                    padding-right: 1em;
-                }
-                
                 @media screen and (min-width: 768px) {
                     &:not(:last-child) {
                         margin-right: 12px;
@@ -163,7 +156,8 @@
             }
 
             margin: auto 0;
-            padding: 8px 24px;
+
+            padding: var(--header-vertical-padding) var(--header-padding);
         }
 
         label {
