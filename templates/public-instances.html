@@ -1,0 +1,183 @@
+{% extends "section.html" %}
+{% import "macros/public_instances.html" as instanceutils %}
+{% block head_extra %}
+<meta name="description" content="{{ section.extra.summary }}">
+<script type="module" src="/js/public-instances.js"></script>
+{% endblock head_extra %}
+{% block content %}
+<div class="page-header">
+    <div class="hero-block">
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.extra.summary }}</p>
+    </div>
+</div>
+
+<div class="content public-instances">
+    {% set instances_data = load_data(path="/content/public-instances/instances.toml") %}
+
+    {% set instances = instances_data.instances %}
+    {% set software = [] %}
+    {% set locations = [] %}
+    {% for instance in instances %}
+    {% set_global software = software | concat(with=instance.software ~ " " ~ instance.version) %}
+    {% set_global locations = locations | concat(with=instance.location) %}
+    {% endfor %}
+    {% set_global software = software | unique | sort %}
+    {% set_global locations = locations | unique | sort %}
+
+    <div class="total-and-filters">
+        <div class="total">All servers ({{ section.pages | length }})</div>
+        <div class="filters">
+            <div class="filter-wrap">
+                <button id="filter-structure" class="filter">
+                    Structure
+                    <div class="divider"></div>
+                    <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
+                </button>
+                <div id="filter-structure-menu" class="filter-menu">
+                    <div class="filter-option">
+                        <input type="checkbox" id="structure-individual" checked>
+                        <label for="structure-individual">Individual administrator</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" checked id="structure-non-profit">
+                        <label for="structure-non-profit">Non-profit</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="structure-paid" checked>
+                        <label for="structure-paid">Paid with support</label>
+                    </div>
+                    <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+                </div>
+            </div>
+            <div class="filter-wrap">
+                <button id="filter-signup" class="filter">
+                    Registration
+                    <div class="divider"></div>
+                    <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
+                </button>
+                <div id="filter-signup-menu" class="filter-menu">
+                    <div class="filter-option">
+                        <input type="checkbox" checked id="signup-unfiltered">
+                        <label for="signup-unfiltered">Open to all</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" checked id="signup-conditional">
+                        <label for="signup-confitional">Conditional</label>
+                    </div>
+                    <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+                </div>
+            </div>
+            <div class="filter-wrap">
+                <button id="filter-location" class="filter">
+                    Location
+                    <div class="divider"></div>
+                    <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
+                </button>
+                <div id="filter-location-menu" class="filter-menu">
+                    {% for location in locations %}
+                    <div class="filter-option">
+                        <input type="checkbox" checked id="location-{{ location | lower }}">
+                        <label for="location-{{ location | lower }}">{{ instanceutils::country_name(code=location) }}</label>
+                    </div>
+                    {% endfor %}
+                    <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+                </div>
+            </div>
+            <div class="filter-wrap">
+                <button id="filter-software" class="filter">
+                    Software
+                    <div class="divider"></div>
+                    <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
+                </button>
+                <div id="filter-software-menu" class="filter-menu">
+                    {% for software_version in software %}
+                    <div class="filter-option">
+                        <input type="checkbox" id="software-{{ software_version | slugify }}" checked>
+                        <label for="software-{{ software_version | slugify }}">{{ software_version }}</label>
+                    </div>
+                    {% endfor %}
+                    <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="filters-overlay"></div>
+    <div id="all-instances" class="projects-card-deck">
+        {% for instance in instances %}
+        <div>
+        <a id="{{ instance.title | slugify }}" class="project-card instance {{ instanceutils::classes(instance=instance) }}">
+            <div class="avatar">
+                {{ instance.title | truncate(length=1, end="") }}
+            </div>
+            <h3>{{ instance.title }}</h3>
+            <p>{{ instance.description | safe }}</p>
+            <ul class="details">
+                <li>{{ instanceutils::country_name(code=instance.location) }}</li>
+                <li>{{ instanceutils::registration_label(type=instance.signup) }}</li>
+                <li>{{ instanceutils::structure_label(type=instance.structure) }}</li>
+                <li>{{ instance.software | capitalize }} {{ instance.version }}</li>
+            </ul>
+        </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% for instance in instances %}
+    <div id="{{ instance.title | slugify }}-modal" class="dialog">
+        <button class="close-button"><img src="/assets/close.svg"></button>
+        <header class="instance-header">
+            <div class="title-row">
+                <div class="avatar">
+                    {{ instance.title | truncate(length=1, end="") }}
+                </div>
+                <h1>{{ instance.title }}</h1>
+                <ul class="details">
+                    <li>{{ instanceutils::country_name(code=instance.location) }}</li>
+                    <li>{{ instanceutils::structure_label(type=instance.structure) }}</li>
+                </ul>
+            </div>
+            <p>{{ instance.description }}</p>
+        </header>
+        <main class="instance-body">
+            <section>
+                <h2>Details</h2>
+                <ul>
+                    <li>Hosted by {{ instance.hoster }}</li>
+                    <li>Located in {{ instanceutils::country_name(code=instance.location) }}</li>
+                    <li>Created on {{ instance.creation_date | date(format="%e %B %Y") }}</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Join information</h2>
+                <ul>
+                    {% if instance.signup.requires_email == true %}
+                    <li>Requires email verification</li>
+                    {% else %}
+                    <li>Doesn't require email verification</li>
+                    {% endif %}
+                    {% if instance.signup.requires_captcha == true %}
+                    <li>Requires captcha</li>
+                    {% else %}
+                    <li>Doesn't require captcha</li>
+                    {% endif %}
+                    {% if instance.privacy_policy %}
+                    <li><a href="{{ instance.privacy_policy }}">Privacy policy</a></li>
+                    {% else %}
+                    <li>No privacy policy</li>
+                    {% endif %}
+                    {% if instance.terms_of_service %}
+                    <li><a href="{{ instance.terms_of_service }}">Terms of service</a></li>
+                    {% else %}
+                    <li>No terms of service</li>
+                    {% endif %}
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>Register against the domain <span class="domain">{{ instance.domain }}</span> using <a href="/ecosystem/clients">a Matrix client</a>.</p>
+        </footer>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
