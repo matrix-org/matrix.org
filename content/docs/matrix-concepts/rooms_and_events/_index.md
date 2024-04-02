@@ -13,7 +13,7 @@ the rooms all their users belong to.
 
 Users on a server can send *events* into *rooms*. An event is a particular json
 object, describing what a user is trying to do (join a room, send a message,
-update a specific value…). An event will look like the following
+update a specific value…). An event will look like the following:
 
 ```json
 {
@@ -114,15 +114,15 @@ the copy is on example.com, matrix.org or ergaster.org.
 
 When someone else joins the room, whether they are on the same homeserver as the
 creator or another homeserver, by default they are assigned the power level 0.
-If Bob on ergaster.org joins `#goodfriends:example.com`, his server is going to
-ask Alice's example.com a local copy of the room, and stay in sync with it.
+If Bob on `ergaster.org` joins `#goodfriends:example.com`, his server is going to
+ask Alice's `example.com` a local copy of the room, and stay in sync with it.
 
 {{ figure(
     img="./room_join.svg",
     caption="Bob joins the room and automatically gets Power Level 0")
 }}
 
-If Carol joins from her homeserver matrix.org, she will also get the power level
+If Carol joins from her homeserver `matrix.org`, she will also get the power level
 0.
 
 {{ figure(
@@ -134,7 +134,7 @@ If Carol joins from her homeserver matrix.org, she will also get the power level
 ### Altering a local copy of the room
 
 Let's now consider Walter. Walter is the homeserver administrator of
-example.com, the homeserver Alice used to create the `#goodfriends:example.com`
+`example.com`, the homeserver Alice used to create the `#goodfriends:example.com`
 room.
 
 When he joins the room, Walter gets the power level 0 by default, as everyone
@@ -168,10 +168,8 @@ local copy of the room they will accept the change.
     caption="Alice's account is used by Synapse to give Walter the same power level")
 }}
 
-What if Walter was the homeserver administrator of ergaster.org instead? Every
-user of ergaster.org in this room have the Power Level 0. If Walter called this
-API, his homeserver would only be able to control a user with Power Level 0, and
-would not be able to promote him.
+What if Walter was the homeserver administrator of `ergaster.org` instead? Every
+user of `ergaster.org` in this room have the Power Level 0. If Walter called this API, his homeserver would only be able to control a user with Power Level 0, and would not be able to promote him.
 
 {{ figure(
     img="./walter_escalate_ko.svg",
