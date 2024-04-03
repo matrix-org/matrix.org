@@ -595,3 +595,16 @@ featured_in = ["client", "bot", "bridge"]
 description = """
 A .NET 8 library for interacting with Matrix.
 """
+
+[[sdks]]
+name = "libcmatrix"
+maintainer = ""
+maturity = "Beta"
+language = "C"
+licence = "GNU LGPLv2.1"
+repository = "https://source.puri.sm/Librem5/libcmatrix"
+purpose = ["client"]
+featured_in = ["client"]
+description = """
+A matrix client client library written in GObjectified C
+"""
