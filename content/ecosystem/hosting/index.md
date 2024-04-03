@@ -19,7 +19,7 @@ Matrix.org is the largest, free provider of Matrix accounts. Many people have an
 identifier like `@username:matrix.org`. This also means that the Matrix.org
 servers are crowded. Using your own provider **as an individual** can not only
 make your Matrix experience snappier, but also give you access to a set of
-pre-configured [bridges](#) to talk to friends on other networks such as Signal
+pre-configured [bridges](https://matrix.org/ecosystem/bridges/) to talk to friends on other networks such as Signal
 or WhatsApp.
 
 **Organisations and community managers** will be interested in providers for two
