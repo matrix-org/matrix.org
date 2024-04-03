@@ -62,3 +62,8 @@ logo = "thunderbird.svg"
 name = "Trixnity"
 website = "https://trixnity.gitlab.io/trixnity"
 logo = "trixnity.png"
+
+[[associate]]
+name = "Eclipse Foundation"
+website = "https://eclipse.org"
+logo = "eclipse.svg"
