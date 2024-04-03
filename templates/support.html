@@ -76,6 +76,17 @@
                 {% endfor %}
             </div>
         </div>
+        <div class="supporters-section" id="associate-supporters">
+            <h2>Associate Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.associate %}
+                <a href="{{ supporter.website }}" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
     </div>
     <div id="the-spec">
         <div class="content">
