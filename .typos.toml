@@ -15,6 +15,7 @@ extend-exclude = [
     "content/blog/2023/04/2023-04-14-this-week-in-matrix-2023-04-14.md",
     # contains OTKs
     "content/blog/2023/11/2023-11-24-twim.md",
+    "content/blog/open-source-publicly-funded-service.md"
 ]
 
 [default]
