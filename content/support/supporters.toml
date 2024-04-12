@@ -8,11 +8,6 @@ name = "Beeper"
 website = "https://beeper.com"
 logo = "beeper.svg"
 
-[[gold]]
-name = "Futurewei Technologies"
-website = "https://futurewei.com"
-logo = "futurewei.png"
-
 [[silver]]
 name = "Fairkom"
 website = "https://www.fairkom.eu/"
