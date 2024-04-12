@@ -8,6 +8,11 @@ name = "Beeper"
 website = "https://beeper.com"
 logo = "beeper.svg"
 
+[[gold]]
+name = "Futurewei Technologies"
+website = "https://futurewei.com"
+logo = "futurewei.png"
+
 [[silver]]
 name = "Fairkom"
 website = "https://www.fairkom.eu/"
@@ -67,3 +72,13 @@ logo = "trixnity.png"
 name = "Eclipse Foundation"
 website = "https://eclipse.org"
 logo = "eclipse.svg"
+
+[[associate]]
+name = "GNOME Foundation"
+website = "https://gnome.org"
+logo = "gnome.svg"
+
+[[associate]]
+name = "KDE e.V."
+website = "https://kde.org"
+logo = "kde.svg"
