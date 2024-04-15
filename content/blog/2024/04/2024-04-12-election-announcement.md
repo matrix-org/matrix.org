@@ -1,5 +1,5 @@
 +++
-date = "2024-04-12"
+date = "2024-04-12T14:00:00Z"
 title = "Announcing the 2024 Governing Board elections"
 path = "/blog/2024/04/12/election-announcement"
 
