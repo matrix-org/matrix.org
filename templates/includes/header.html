@@ -11,8 +11,8 @@
         {% set href = "/" ~ link.section ~ "/" %}
         {% set section = get_section(path=link.section ~ "/_index.md") %}
         <div class="section-wrap">
-            <input id="{{ link.section }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true"
-                {{ util::current_checked(if_path_starts_with="/" ~ link.section) }}>
+            <input id="{{ link.section }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" {{
+                util::current_checked(if_path_starts_with="/" ~ link.section) }}>
             <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">{{ link.title }} <div class="arrow">
                 </div></label>
 
