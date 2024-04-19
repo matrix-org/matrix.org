@@ -33,4 +33,13 @@ test.describe('accessibility', () => {
 
         expect(accessibilityScanResults.violations).toEqual([]);
     });
+
+    // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+    test.fixme('ecosystem should not have any automatically detectable accessibility issues', async ({ page }) => {
+        await page.goto('/ecosystem');
+
+        const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+        expect(accessibilityScanResults.violations).toEqual([]);
+    });
 });
