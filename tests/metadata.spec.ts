@@ -62,7 +62,7 @@ test.describe('accessibility', () => {
     });
 
     // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
-    // Also lists are not structured corectly - https://dequeuniversity.com/rules/axe/4.9/list
+    // Also lists are not structured correctly - https://dequeuniversity.com/rules/axe/4.9/list
     test.fixme('docs should not have any automatically detectable accessibility issues', async ({ page }) => {
         await page.goto('/docs/chat_basics/matrix-for-im/');
 
