@@ -28,8 +28,8 @@
             {% set current = false %}
             {% endif %}
             <div>
-                <input id="{{ doc_section.title }}-submenu-checkbox" type="checkbox" class="submenu-checkbox"
-                    aria-hidden="true" {% if current %}checked{% endif %}>
+                <input id="{{ doc_section.title }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" {% if
+                    current %}checked{% endif %}>
                 <label for="{{ doc_section.title }}-submenu-checkbox" class="submenu-title">{{ doc_section.title }}
                     <div class="arrow"></div>
                 </label>
