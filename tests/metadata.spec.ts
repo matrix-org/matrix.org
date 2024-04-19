@@ -23,4 +23,14 @@ test.describe('accessibility', () => {
 
         expect(accessibilityScanResults.violations).toEqual([]);
     });
+
+    // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+    // It also fails in some cases due to semantically incorrect header order - https://dequeuniversity.com/rules/axe/4.9/heading-order
+    test.fixme('blog should not have any automatically detectable accessibility issues', async ({ page }) => {
+        await page.goto('/blog');
+
+        const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+        expect(accessibilityScanResults.violations).toEqual([]);
+    });
 });
