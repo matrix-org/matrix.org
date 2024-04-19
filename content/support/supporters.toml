@@ -49,6 +49,11 @@ website = "https://www.xwiki.org/"
 logo = "xwiki.png"
 
 [[ecosystem]]
+name = "Community Moderation Effort"
+website = ""
+logo = "community-moderation-effort.png"
+
+[[ecosystem]]
 name = "Conduit"
 website = "https://conduit.rs/"
 logo = "conduit.svg"
