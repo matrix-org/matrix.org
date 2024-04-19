@@ -74,6 +74,7 @@
 /blog/2020/02/01/on-privacy-versus-freedom /blog/2020/01/02/on-privacy-versus-freedom
 /blog/2017/09/28/experiments-with-matrix-on-the-purism-librem5-starring-ubports-and-nheko/ /blog/2017/09/28/experiments-with-matrix-on-the-purism-librem-5-starring-ubports-and-nheko
 
+
 # Static redirects for the zola rewrite
 /docs/guides/faq /faq
 /docs/guides/faq.html /faq
