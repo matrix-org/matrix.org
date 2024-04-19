@@ -15,7 +15,7 @@ We’ll be doing our best to reach out to every constituent group to let them kn
 
 To learn about what the Governing Board is, what it does, and the context it operates in, read this [blog post from last December](https://matrix.org/blog/2023/12/electing-our-first-governing-board/). You are also welcome to read [the Governing Board’s current bylaws](https://matrix.org/media/2024-01-governing-board-terms-of-reference.pdf).
 
-[Go here for instructions on submitting a nomination!](#how-to-nominate)
+[Go here for instructions on submitting a nomination!](https://matrix.org/blog/2024/04/election-announcement/#how-to-nominate)
 
 <!-- more -->
 
