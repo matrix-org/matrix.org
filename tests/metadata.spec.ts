@@ -33,9 +33,47 @@ test.describe('accessibility', () => {
 
         expect(accessibilityScanResults.violations).toEqual([]);
     });
+
+    // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+    test.fixme('about should not have any automatically detectable accessibility issues', async ({ page }) => {
+        await page.goto('/about');
+
+        const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+        expect(accessibilityScanResults.violations).toEqual([]);
+    });
+
+    // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+    test.fixme('support should not have any automatically detectable accessibility issues', async ({ page }) => {
+        await page.goto('/support');
+
+        const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+        expect(accessibilityScanResults.violations).toEqual([]);
+    });
+
     // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
     test.fixme('try-matrix should not have any automatically detectable accessibility issues', async ({ page }) => {
         await page.goto('/try-matrix');
+
+        const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+        expect(accessibilityScanResults.violations).toEqual([]);
+    });
+
+    // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+    // Also lists are not structured corectly - https://dequeuniversity.com/rules/axe/4.9/list
+    test.fixme('docs should not have any automatically detectable accessibility issues', async ({ page }) => {
+        await page.goto('/docs/chat_basics/matrix-for-im/');
+
+        const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+        expect(accessibilityScanResults.violations).toEqual([]);
+    });
+
+    // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+    test.fixme('membership should not have any automatically detectable accessibility issues', async ({ page }) => {
+        await page.goto('/membership');
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
 
