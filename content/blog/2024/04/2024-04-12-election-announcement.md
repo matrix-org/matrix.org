@@ -15,6 +15,8 @@ We’ll be doing our best to reach out to every constituent group to let them kn
 
 To learn about what the Governing Board is, what it does, and the context it operates in, read this [blog post from last December](https://matrix.org/blog/2023/12/electing-our-first-governing-board/). You are also welcome to read [the Governing Board’s current bylaws](https://matrix.org/media/2024-01-governing-board-terms-of-reference.pdf).
 
+[Go here for instructions on submitting a nomination!](https://matrix.org/blog/2024/04/election-announcement/#how-to-nominate)
+
 <!-- more -->
 
 ## Election schedule
@@ -92,9 +94,9 @@ We intend to charter committees – such as for finance, which would review our 
 
 ## How to nominate
 
-We will update this blog post with a link to a nomination form and a template document on Friday, April 19th. We’ll be reaching out to everyone who is eligible and whose contact information we have to let them know. We’ll also be announcing it on our social channels.
+Please [use this Cryptpad form to nominate for the Governing Board elections](https://cryptpad.fr/form/#/2/form/view/Fjksk0AMwLWnp4T6t+tTsmNoWSMsJJg8jLXdPzIGkpc/). If you are unable to use the form, please refer to [this nomination document](https://matrix.org/media/2024-nomination-form.pdf) and email your responses to [elections@foundation.matrix.org](mailto:elections@foundation.matrix.org).
 
-All nominations should be submitted through the form, though anyone who has technical difficulties can fill out the template document and email it to [elections@foundation.matrix.org](mailto:elections@foundation.matrix.org).
+All nominations are subject to review in accordance with our bylaws. We will email you to confirm receipt within 2 business days, and we will publish our elections landing page with all of the nominees, and other details, by April 27th.
 
 Thank you for your ongoing support, and good luck to all the candidates in the upcoming elections!
 
