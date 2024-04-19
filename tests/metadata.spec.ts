@@ -34,12 +34,66 @@ test.describe('accessibility', () => {
         expect(accessibilityScanResults.violations).toEqual([]);
     });
 
-    // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
-    test.fixme('ecosystem should not have any automatically detectable accessibility issues', async ({ page }) => {
-        await page.goto('/ecosystem');
+    test.describe('Ecosystem', () => {
+        // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+        test.fixme('ecosystem should not have any automatically detectable accessibility issues', async ({ page }) => {
+            await page.goto('/ecosystem');
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+            const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
 
-        expect(accessibilityScanResults.violations).toEqual([]);
+            expect(accessibilityScanResults.violations).toEqual([]);
+        });
+
+        test('ecosystem/clients should not have any automatically detectable accessibility issues', async ({ page }) => {
+            await page.goto('/ecosystem/clients');
+
+            const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+            expect(accessibilityScanResults.violations).toEqual([]);
+        });
+
+        // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+        test.fixme('ecosystem/bridges should not have any automatically detectable accessibility issues', async ({ page }) => {
+            await page.goto('/ecosystem/bridges');
+
+            const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+            expect(accessibilityScanResults.violations).toEqual([]);
+        });
+
+        // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+        test.fixme('ecosystem/servers should not have any automatically detectable accessibility issues', async ({ page }) => {
+            await page.goto('/ecosystem/servers');
+
+            const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+            expect(accessibilityScanResults.violations).toEqual([]);
+        });
+
+        test('ecosystem/integrations should not have any automatically detectable accessibility issues', async ({ page }) => {
+            await page.goto('/ecosystem/integrations');
+
+            const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+            expect(accessibilityScanResults.violations).toEqual([]);
+        });
+
+        // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+        test.fixme('ecosystem/sdks should not have any automatically detectable accessibility issues', async ({ page }) => {
+            await page.goto('/ecosystem/sdks');
+
+            const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+            expect(accessibilityScanResults.violations).toEqual([]);
+        });
+
+        // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+        test.fixme('ecosystem/hosting should not have any automatically detectable accessibility issues', async ({ page }) => {
+            await page.goto('/ecosystem/hosting');
+
+            const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+            expect(accessibilityScanResults.violations).toEqual([]);
+        });
     });
 });
