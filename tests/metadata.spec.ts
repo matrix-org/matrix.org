@@ -90,21 +90,46 @@ test.describe('accessibility', () => {
             expect(accessibilityScanResults.violations).toEqual([]);
         });
 
-        test('ecosystem/clients should not have any automatically detectable accessibility issues', async ({ page }) => {
-            await page.goto('/ecosystem/clients');
+        test.describe("Clients", () => {
+            test('ecosystem/clients should not have any automatically detectable accessibility issues', async ({ page }) => {
+                await page.goto('/ecosystem/clients');
 
-            const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+                const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
 
-            expect(accessibilityScanResults.violations).toEqual([]);
+                expect(accessibilityScanResults.violations).toEqual([]);
+            });
+
+
+            // TODO: Parse the toml file to generate test cases for all sections
+            // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+            test('ecosystem/clients/$client should not have any automatically detectable accessibility issues', async ({ page }) => {
+                await page.goto('/ecosystem/clients/element');
+
+                const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+                expect(accessibilityScanResults.violations).toEqual([]);
+            });
         });
 
-        // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
-        test.fixme('ecosystem/bridges should not have any automatically detectable accessibility issues', async ({ page }) => {
-            await page.goto('/ecosystem/bridges');
+        test.describe("Bridges", () => {
+            // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+            test.fixme('ecosystem/bridges should not have any automatically detectable accessibility issues', async ({ page }) => {
+                await page.goto('/ecosystem/bridges');
 
-            const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+                const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
 
-            expect(accessibilityScanResults.violations).toEqual([]);
+                expect(accessibilityScanResults.violations).toEqual([]);
+            });
+
+            // TODO: Parse the toml file to generate test cases for all sections
+            // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
+            test.fixme('ecosystem/bridges/$bridge should not have any automatically detectable accessibility issues', async ({ page }) => {
+                await page.goto('/ecosystem/bridges/whatsapp');
+
+                const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+                expect(accessibilityScanResults.violations).toEqual([]);
+            });
         });
 
         // This fails to various contrast related issues - https://dequeuniversity.com/rules/axe/4.9/color-contrast
