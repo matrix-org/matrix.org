@@ -1,4 +1,29 @@
 {% extends "page.html" %}
+{% import "macros/nominee.html" as nominee %}
+{% block head_extra %}
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const nomineeSections = document.querySelectorAll('.nominees');
+        for (const nomineeSection of nomineeSections) {
+            const nomineesDetails = nomineeSection.querySelectorAll('details');
+
+            nomineeSection.querySelector('.expand-all')?.addEventListener('click', () => {
+                for (const nomineeDetail of nomineesDetails) {
+                    nomineeDetail.setAttribute("open", "");
+                    console.log(nomineeDetail);
+                }
+            });
+
+            nomineeSection.querySelector('.collapse-all')?.addEventListener('click', () => {
+                for (const nomineeDetail of nomineesDetails) {
+                    nomineeDetail.removeAttribute("open");
+                    console.log(nomineeDetail);
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}
 {% block content %}
 <article class="content">
     <header>
@@ -9,30 +34,78 @@
 
     {% set nominees_path = page.path ~ "nominees.toml" %}
     {% set nominees = load_data(path=nominees_path, format="toml") %}
-    {% if nominees.individual_members %}
-    <h3>Individuals Members</h3>
-    <div class="nominees-grid">
-    {% for individual in nominees.individual_members %}
-        <details class="nominee">
-            <summary>{{ individual.name }} ({{ individual.pronouns }})</summary>
-            <ul>
-                <li><a href="https://matrix.to/#/{{ individual.matrix_id }}">{{ individual.matrix_id }}</a></li>
-                <li><a href="mailto:{{ individual.email }}">{{ individual.email }}</a></li>
-                <li>{{ individual.bio }}</li>
-                <li>{{ individual.platform_statement }}</li>
-            </ul>
-        </details>
+
+    {% if nominees.platinum_members %}
+    <h3>Platinum Members</h3>
+    <div class="nominees">
+    {% for representative in nominees.platinum_members %}
+        {{ nominee::project(representative=representative) }}
+    {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if nominees.gold_members %}
+    <h3>Gold Members</h3>
+    <div class="nominees">
+    {% for representative in nominees.gold_members %}
+        {{ nominee::project(representative=representative) }}
+    {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if nominees.silver_members %}
+    <h3>Silver Members</h3>
+    <div class="nominees">
+    {% for representative in nominees.silver_members %}
+        {{ nominee::project(representative=representative) }}
+    {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if nominees.ecosystem_members %}
+    <h3>Ecosystem Members</h3>
+    <div class="nominees">
+    {% for representative in nominees.ecosystem_members %}
+        {{ nominee::project(representative=representative) }}
     {% endfor %}
     </div>
     {% endif %}
 
     {% if nominees.associate_members %}
     <h3>Associate Members</h3>
+    <div class="nominees">
+    {% for representative in nominees.associate_members %}
+        {{ nominee::project(representative=representative) }}
+    {% endfor %}
+    </div>
     {% endif %}
-    <!--
 
-    placeholders for nominees... ideally, mostly starting collapsed with just name of constituency and names of candidates, with a link to expand a whole section of nominee bios/platform statements at once
+    {% if nominees.individual_members %}
+    <h3>Individuals Members</h3>
+    <div class="nominees">
+        <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
+    {% for individual in nominees.individual_members %}
+        {{ nominee::individual(individual=individual) }}
+    {% endfor %}
+    </div>
+    {% endif %}
 
-    -->
+    {% if nominees.sct_members %}
+    <h3>Spec Core Team Members</h3>
+    <div class="nominees">
+    {% for representative in nominees.sct_members %}
+        {{ nominee::project(representative=representative) }}
+    {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if nominees.guardians %}
+    <h3>Guardians</h3>
+    <div class="nominees">
+    {% for guardian in nominees.guardian %}
+        {{ nominee::individual(indivudal=guardian) }}
+    {% endfor %}
+    <div class="nominees">
+    {% endif %}
 </article>
 {% endblock content %}
