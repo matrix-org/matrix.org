@@ -1,5 +1,6 @@
 +++
 date = "2024-04-12T14:00:00Z"
+updated = "2024-04-24T10:30:00Z"
 title = "Announcing the 2024 Governing Board elections"
 
 [taxonomies]
@@ -7,13 +8,19 @@ author = ["Josh Simmons"]
 category = ["Foundation", "Elections", "Governing Board"]
 +++
 
+_Update: the terms of the board have been updated with the follow changes:_
+* _Allow for filling vacancies by appointment or by-election at the discretion of the Managing Director and the Guardians, in consultation with a Governance Committee. (2.7.1)_
+* _Allow for the Governing Board to adopt voting mechanisms other than simple majority on a case-by-case basis. (5.5)_
+* _Disallow nominees from running for election in more than one constituency at a time. (2.4.1)_
+* _Change UTC to AOE in timeline. (2.3)_
+
 Welcome to the first ever Governing Board election season for the Matrix.org Foundation! We start with a one week nomination period that opens on Saturday, April 20th and closes on Friday, April 26th [AOE time](https://en.wikipedia.org/wiki/Anywhere_on_Earth).
 
 We’ll be doing our best to reach out to every constituent group to let them know they are eligible to nominate candidates for the election. That said, this is our first election and we don’t yet have contact information for everybody who is eligible, so we want your help getting the word out.
 
 **_If you are interested in nominating someone – or yourself – to be a candidate in this election, read this post in its entirety._**
 
-To learn about what the Governing Board is, what it does, and the context it operates in, read this [blog post from last December](https://matrix.org/blog/2023/12/electing-our-first-governing-board/). You are also welcome to read [the Governing Board’s current bylaws](https://matrix.org/media/2024-01-governing-board-terms-of-reference.pdf).
+To learn about what the Governing Board is, what it does, and the context it operates in, read this [blog post from last December](https://matrix.org/blog/2023/12/electing-our-first-governing-board/). You are also welcome to read [the Governing Board’s current bylaws](https://matrix.org/media/2024-04-governing-board-terms-of-reference.pdf).
 
 [Go here for instructions on submitting a nomination!](https://matrix.org/blog/2024/04/election-announcement/#how-to-nominate)
 
