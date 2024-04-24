@@ -38,6 +38,7 @@
     {% if nominees.platinum_members %}
     <h3>Platinum Members</h3>
     <div class="nominees">
+    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div></div>
     {% for representative in nominees.platinum_members %}
         {{ nominee::project(representative=representative) }}
     {% endfor %}
@@ -47,6 +48,7 @@
     {% if nominees.gold_members %}
     <h3>Gold Members</h3>
     <div class="nominees">
+    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
     {% for representative in nominees.gold_members %}
         {{ nominee::project(representative=representative) }}
     {% endfor %}
@@ -56,6 +58,7 @@
     {% if nominees.silver_members %}
     <h3>Silver Members</h3>
     <div class="nominees">
+    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
     {% for representative in nominees.silver_members %}
         {{ nominee::project(representative=representative) }}
     {% endfor %}
@@ -65,6 +68,7 @@
     {% if nominees.ecosystem_members %}
     <h3>Ecosystem Members</h3>
     <div class="nominees">
+    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
     {% for representative in nominees.ecosystem_members %}
         {{ nominee::project(representative=representative) }}
     {% endfor %}
@@ -74,6 +78,7 @@
     {% if nominees.associate_members %}
     <h3>Associate Members</h3>
     <div class="nominees">
+    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
     {% for representative in nominees.associate_members %}
         {{ nominee::project(representative=representative) }}
     {% endfor %}
@@ -83,7 +88,7 @@
     {% if nominees.individual_members %}
     <h3>Individuals Members</h3>
     <div class="nominees">
-        <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
+    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
     {% for individual in nominees.individual_members %}
         {{ nominee::individual(individual=individual) }}
     {% endfor %}
@@ -93,6 +98,7 @@
     {% if nominees.sct_members %}
     <h3>Spec Core Team Members</h3>
     <div class="nominees">
+    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
     {% for representative in nominees.sct_members %}
         {{ nominee::project(representative=representative) }}
     {% endfor %}
@@ -102,6 +108,7 @@
     {% if nominees.guardians %}
     <h3>Guardians</h3>
     <div class="nominees">
+    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
     {% for guardian in nominees.guardian %}
         {{ nominee::individual(indivudal=guardian) }}
     {% endfor %}
