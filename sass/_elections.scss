@@ -1,0 +1,15 @@
+#elections {
+    p:has(.call-to-action) {
+        margin-block: 1.5em;
+    }
+
+    .call-to-action:not(:hover) {
+        color: var(--color-text);
+    }
+
+    .nominees button {
+        border-radius: 9999px;
+        border-color: transparent;
+        padding: .1em .5em;
+    }
+}
