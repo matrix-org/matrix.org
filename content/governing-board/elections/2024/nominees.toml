@@ -8,6 +8,16 @@ platform_statement = """
 Matricise all the things!
 """
 
+[[individual_members]]
+name = "Alice Bob"
+pronouns = "They/them"
+matrix_id = "@alicebob:example.com"
+email = "alicebob@example.com"
+bio = "You don't know who I am"
+platform_statement = """
+Skabideese all the flatablop.
+"""
+
 [[ecosystem_members]]
 name = "Jane Doe"
 pronouns = "She/her"
