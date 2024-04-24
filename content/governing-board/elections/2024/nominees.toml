@@ -1,0 +1,20 @@
+[[individual_members]]
+name = "John Doe"
+pronouns = "They/them"
+matrix_id = "@johndoe:example.com"
+email = "johndoe@example.com"
+bio = "You know who I am"
+platform_statement = """
+Matricise all the things!
+"""
+
+[[ecosystem_members]]
+name = "Jane Doe"
+pronouns = "She/her"
+matrix_id = "@jane:example.com"
+email = "jane@example.com"
+project = "Example"
+bio = "I am Example project lead, have been involved in barring the foos since 1743."
+platform_statement = """
+With my advice, Matrix can take over the world and become the standard for instant messaging both in the public and private sector.
+"""

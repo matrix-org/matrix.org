@@ -1,0 +1,38 @@
+{% extends "page.html" %}
+{% block content %}
+<article class="content">
+    <header>
+        <h1>{{ page.title }}</h1>
+    </header>
+
+    {{ page.content | safe }}
+
+    {% set nominees_path = page.path ~ "nominees.toml" %}
+    {% set nominees = load_data(path=nominees_path, format="toml") %}
+    {% if nominees.individual_members %}
+    <h3>Individuals Members</h3>
+    <div class="nominees-grid">
+    {% for individual in nominees.individual_members %}
+        <details class="nominee">
+            <summary>{{ individual.name }} ({{ individual.pronouns }})</summary>
+            <ul>
+                <li><a href="https://matrix.to/#/{{ individual.matrix_id }}">{{ individual.matrix_id }}</a></li>
+                <li><a href="mailto:{{ individual.email }}">{{ individual.email }}</a></li>
+                <li>{{ individual.bio }}</li>
+                <li>{{ individual.platform_statement }}</li>
+            </ul>
+        </details>
+    {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if nominees.associate_members %}
+    <h3>Associate Members</h3>
+    {% endif %}
+    <!--
+
+    placeholders for nominees... ideally, mostly starting collapsed with just name of constituency and names of candidates, with a link to expand a whole section of nominee bios/platform statements at once
+
+    -->
+</article>
+{% endblock content %}
