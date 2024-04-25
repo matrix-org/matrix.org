@@ -36,7 +36,7 @@
             <h2>Platinum Members</h2>
             <div class="cards">
                 {% for supporter in supporters.platinum %}
-                <a href="{{ supporter.website }}" class="supporters-card">
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
                     <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>
                 </a>
@@ -47,7 +47,7 @@
             <h2>Gold Members</h2>
             <div class="cards">
                 {% for supporter in supporters.gold %}
-                <a href="{{ supporter.website }}" class="supporters-card">
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
                     <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>
                 </a>
@@ -58,7 +58,7 @@
             <h2>Silver Members</h2>
             <div class="cards">
                 {% for supporter in supporters.silver %}
-                <a href="{{ supporter.website }}" class="supporters-card">
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
                     <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>
                 </a>
@@ -69,7 +69,7 @@
             <h2>Ecosystem Members</h2>
             <div class="cards">
                 {% for supporter in supporters.ecosystem %}
-                <a href="{{ supporter.website }}" class="supporters-card">
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
                     <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>
                 </a>
