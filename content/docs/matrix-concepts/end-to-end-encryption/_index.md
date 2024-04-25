@@ -152,9 +152,8 @@ To generate new one-time keys:
     ```
 
 - Each key should be signed in the same way as the previous identity keys
-  payload, and uploaded using the `one_time_keys` property of the[/keys/upload]
-  (https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-upload)
-  endpoint.
+  payload, and uploaded using the `one_time_keys` property of the
+  [/keys/upload](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-upload) endpoint.
 
 - Call `olm_account_mark_keys_as_published` to tell the olm library not to
   return the same keys from a future call to `olm_account_one_time_keys`.
@@ -319,13 +318,13 @@ devices for each user in the room. This can be done proactively, or deferred
 until the first message is sent. The information is also required to allow
 users to verify or block devices.
 
-The client should use the[/keys/query
+The client should use the [/keys/query
 ](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-query)
 endpoint, passing the IDs of the members of the room in the `device_keys`
 property of the request.
 
 The client must first check the signatures on the `DeviceKeys` objects returned
-by[/keys/query
+by [/keys/query
 ](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-query).
 To do this, it should remove the `signatures` and `unsigned` properties, format
 the remainder as Canonical JSON, and pass the result into `olm_ed25519_verify`,
@@ -463,7 +462,7 @@ When a new member joins a room, the client should first [download the device
 list](#downloading-the-device-list-for-users-in-the-room) for the new member,
 if it doesn't already have it.
 
-After giving the user an opportunity to[block
+After giving the user an opportunity to [block
 ](https://matrix.org/docs/spec/client_server/r0.4.0.html#device-verification)
 any suspicious devices, the client should share the keys for the outbound
 Megolm session with all the new member's devices. This is done in the same way
@@ -480,14 +479,13 @@ devices in any rooms with encryption enabled are aware of the new device, so
 that they can share their outbound sessions with it as they would with a new
 member.
 
-The device tracking process which should be implemented is documented[in the
-spec
-](https://matrix.org/docs/spec/client_server/r0.4.0.html#tracking-the-device-list-for-a-user).
+The device tracking process which should be implemented is documented [in the
+spec](https://matrix.org/docs/spec/client_server/r0.4.0.html#tracking-the-device-list-for-a-user).
 
 ### Blocking / Verifying devices
 
 It should be possible for a user to mark each device belonging to another user
-as 'Blocked' or 'Verified', through a process detailed[in the spec
+as 'Blocked' or 'Verified', through a process detailed [in the spec
 ](https://matrix.org/docs/spec/client_server/r0.4.0.html#sending-encrypted-attachments).
 
 When a user chooses to block a device, this means that no further encrypted

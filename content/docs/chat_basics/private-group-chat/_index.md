@@ -27,7 +27,7 @@ private room so we can experiment safely without anyone watching:
 * No need to fiddle with advanced settings for now, we can click the "Create
   room" button.
 
-An empty private room will be create with only you inside. The room is secured
+An empty private room will be created with only you inside. The room is secured
 using a method called "end-to-end encryption" to prevent anyone else than the
 members of this room from deciphering the messages. The math and cryptography
 behind it is quite complex, but fortunately you don't need to understand any of
@@ -86,7 +86,7 @@ message for everyone else in the room.
 
 But now you realise… this message doesn't add much to the conversation. Maybe
 it's worth removing it entirely? To do so, hover the mouse over the message you
-want to remomve, and click on the bin.
+want to remove, and click on the bin.
 
 ![](experiment-hover-and-bin.png)
 
@@ -94,12 +94,12 @@ There are other fun ways to handle a conversation in Matrix, such as replies or
 threads. We suggest you to play around with the interface of this room: be bold,
 you can't break anything!
 
-But it starts to feel a little lonely here. How about inviting friends in this
+But it starts to feel a little lonely here. How about inviting friends to this
 group chat?
 
 ### Inviting people
 
-To invite friends in your group chat, click on the circled `i` on the top right
+To invite friends to your group chat, click on the circled `i` on the top right
 corner. It opens the right panel. Click on "People" to display the list of
 members of this room: you should be the only one there for now.
 
@@ -139,7 +139,7 @@ of the right panel and click on "Remove recent messages".
 ![](redact-redact-all.png)
 
 But sometimes removing the messages is not enough, and the troublemaker doesn't
-want to be reasoned with. In such case, you can remove them from the private
+want to be reasoned with. In such a case, you can remove them from the private
 group chat. To do so, click on their avatar in the timeline, scroll to the
 bottom of the right panel, and click on "Remove from room".
 
@@ -156,9 +156,9 @@ Element defines two other roles: "Moderator" and "Admin".
 
 ![](role.png)
 
-If you promote someone "Moderator", they will be able to redact other people's
-messages and remove them from the room. You can demote the moderators back to 
-the default role whenever you want.
+If you promote someone to "Moderator", they will be able to redact other people's
+messages and remove them from the room. You can demote the moderators back
+to the default role whenever you want.
 
-If you promote someone "Admin", they become co-owners of the room with you, and
-you cannot take it back! Be very careful who you promote administrator.
+If you promote someone to "Admin", they become co-owners of the room with you,
+and you cannot take it back! Be very careful who you promote to administrator.
