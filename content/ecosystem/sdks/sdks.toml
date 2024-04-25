@@ -597,6 +597,19 @@ A .NET 8 library for interacting with Matrix.
 """
 
 [[sdks]]
+name = "mxbt"
+maintainer = "kulebyaka"
+maturity = "Beta"
+language = "Python"
+licence = "GPL-3.0"
+repository = "https://codeberg.org/librehub/mxbt"
+purpose = ["bot"]
+featured_in = ["bot"]
+description = """
+Yet another matrix bot library.
+"""
+
+[[sdks]]
 name = "Elm SDK"
 maintainer = "Bram Noordstar"
 maturity = "Beta"
