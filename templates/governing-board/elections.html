@@ -10,14 +10,12 @@
             nomineeSection.querySelector('.expand-all')?.addEventListener('click', () => {
                 for (const nomineeDetail of nomineesDetails) {
                     nomineeDetail.setAttribute("open", "");
-                    console.log(nomineeDetail);
                 }
             });
 
             nomineeSection.querySelector('.collapse-all')?.addEventListener('click', () => {
                 for (const nomineeDetail of nomineesDetails) {
                     nomineeDetail.removeAttribute("open");
-                    console.log(nomineeDetail);
                 }
             });
         }
