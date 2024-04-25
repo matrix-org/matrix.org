@@ -74,6 +74,11 @@ website = "https://fluffychat.im/"
 logo = "fluffychat.svg"
 
 [[ecosystem]]
+name = "Fractal"
+website = "https://gitlab.gnome.org/World/fractal"
+logo = "fractal.svg"
+
+[[ecosystem]]
 name = "Matrix Community Events"
 website = "https://matrix.to/#/#community-events:matrix.org"
 logo = "matrix-community-events.png"
