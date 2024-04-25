@@ -26,6 +26,9 @@ extend-ignore-re = [
     # youtube embed in articles
     "\\{\\{ youtube_player\\(video_id=\"[^\"]+\"\\) \\}\\}",
 
+    # Matrix
+    "morg", # shorthand for m.org or matrix.org
+
     # slang
     "tha'",
     "Wee!",
