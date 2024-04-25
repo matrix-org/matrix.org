@@ -110,7 +110,7 @@ We're hoping to get looking at this (at last!) once Groups are done.
 <ul>
  	<li><em>Maturing and polishing the spec (we are way overdue a new release)</em></li>
 </ul>
-You'll have noticed that in the “how many people work on Matrix?” stats above, we didn't mention anyone working on the Spec.  Because right now there isn't anyone explicitly maintaining it, unfortunately; updates are done best-effort when everyone's primary responsibilities allow it.  That said, there's quite a lot of good stuff currently <a href="/speculator/spec/HEAD/client_server/unstable.html">unreleased on HEAD.</a> This is something which is obviously critical to fix once we have sustainable funding sorted again.  We can only apologise to folks like the <a href="http://ruma.io">Ruma</a> developers who have suffered from the spec lag. :(
+You'll have noticed that in the “how many people work on Matrix?” stats above, we didn't mention anyone working on the Spec.  Because right now there isn't anyone explicitly maintaining it, unfortunately; updates are done best-effort when everyone's primary responsibilities allow it.  That said, there's quite a lot of good stuff currently <a href="/speculator/spec/HEAD/client_server/unstable.html">unreleased on HEAD.</a> This is something which is obviously critical to fix once we have sustainable funding sorted again.  We can only apologise to folks like the <a href="https://ruma.dev/">Ruma</a> developers who have suffered from the spec lag. :(
 <ul>
  	<li><em>Improving VoIP – especially conferencing.</em></li>
 </ul>

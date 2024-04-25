@@ -5,7 +5,7 @@ thumbnail = "kazv.png"
 maintainer = "The Kazv Project"
 licence = "AGPL-3.0-or-later"
 language = "C++"
-latest_release = "2024-02-25"
+latest_release = "2024-03-02"
 maturity = "Beta"
 repo = "https://lily-is.land/kazv/kazv"
 website = "https://kazv.chat"
@@ -20,7 +20,8 @@ sso = false
 multi_account = false
 multi_language = true
 [extra.packages]
-other_linux_link = "https://lily-is.land/kazv/kazv#compiled-executables"
+windows_installer = "https://lily-is.land/kazv/kazv/-/releases"
+other_linux_link = "https://lily-is.land/kazv/kazv/-/releases"
 +++
 
 A convergent Matrix client and secure messaging app

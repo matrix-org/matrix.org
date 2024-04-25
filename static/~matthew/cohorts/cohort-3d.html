@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<title>Graph 3D demo</title>
+
+<style>
+html {
+    height: 100%;
+}
+
+body {
+    font: 10pt arial;
+    height: 100%;
+}
+</style>
+
+<script type="text/javascript" src="vis.js"></script>
+
+<script type="text/javascript">
+
+    // Called when the Visualization API is loaded.
+    function drawVisualization() {
+        var query = window.location.search.substring(1) || "ios";
+        fetch("./cohort-3d-" + query + ".csv").then((res)=>{
+            res.text().then((body)=>{
+                draw(body);    
+            });
+        });
+    }
+
+    function draw(csv) {
+        var data = null;
+        var graph = null;
+
+        // Create and populate a data table.
+        data = new vis.DataSet();
+
+        var counter = 0;
+        var now = new Date().getTime();
+
+        lines = csv.split("\n");
+        for (var i in lines) {
+            var line = lines[i];
+            // 2016-09-27,1,0.8923
+            var match = line.match(/^(.*?),(.*?),(.*?)$/);
+
+            if (!match) continue;
+            if (match[1] === "2017-07-11" || match[1] === "2017-07-27") continue;
+
+            var parts = match[1].split("-");
+            var date = new Date(parts[0], parts[1]-1, parts[2]);
+
+            var x = (date.getTime() - now) / (24 * 60 * 60 * 1000);
+            var y = parseInt(match[2]);
+            var z = parseFloat(match[3]);
+
+            if (z) {
+                data.add({
+                    id: counter++,
+                    x: x,
+                    y: -y,
+                    z: z,
+                    style: z,
+                });
+            }
+        }
+
+        // specify options
+        var options = {
+            width: document.getElementById('body').offsetWidth + "px",
+            height: document.getElementById('body').offsetHeight + "px",
+            style: "surface",
+            showPerspective: false,
+            showGrid: true,
+            showShadow: false,
+            keepAspectRatio: true,
+            verticalRatio: 0.5,
+            xLabel: "Date",
+            yLabel: "Duration of retention (days)",
+            zLabel: "Percentage retained users   ",
+            xCenter: "50%",
+            yCenter: "50%",
+            zCenter: "50%",
+            dotSizeRatio: 0.005,
+            xValueLabel: function(value) {
+                return vis.moment().add(value, 'days').format('MMM YYYY');
+            },
+            yValueLabel: function(value) {
+                return -value + "d";
+            },
+            zValueLabel: function(value) {
+                return value * 100 + '%';
+            },
+        };
+
+        // Instantiate our graph object.
+        var container = document.getElementById('mygraph');
+        graph = new vis.Graph3d(container, data, options);
+        graph.setCameraPosition({
+            horizontal: 0.0,
+            vertical: 0.0,
+            distance: 2.0,
+        });
+    }
+</script>
+
+</head>
+
+<body id="body" onload="drawVisualization();">
+<div id="mygraph"></div>
+
+<div id="info"></div>
+</body>
+</html>

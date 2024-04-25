@@ -608,3 +608,16 @@ featured_in = ["bot"]
 description = """
 Yet another matrix bot library.
 """
+
+[[sdks]]
+name = "Elm SDK"
+maintainer = "Bram Noordstar"
+maturity = "Beta"
+language = "Elm"
+licence = "EUPL-1.2"
+repository = "https://github.com/noordstar/elm-matrix-sdk-beta"
+purpose = ["client"]
+featured_in = ["client"]
+description = """
+A more consistent alternative to the matrix-js-sdk written in Elm.
+"""

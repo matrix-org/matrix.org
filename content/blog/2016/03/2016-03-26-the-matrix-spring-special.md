@@ -41,7 +41,7 @@ The whole point of Dendron is to provide an architecture where we can split apar
 
 #### Ruma
 
-<a href="https://www.ruma.io/">Ruma</a> has also seen some progress over the last few months - Ruma is an independent Rust language homeserver project led by Jimmy Cuadra, and whilst in early development still (currently focusing on the user login and registration system) shows a lot of promise.  Lots of work has ended up going into the required Rust dependencies rather than the Matrix code itself, but if you're interested in Rust then please drop by <a href="https://vector.im/beta/#/room/#ruma:matrix.org">#ruma:matrix.org</a> or #ruma on Freenode and say hi!
+<a href="https://ruma.dev/">Ruma</a> has also seen some progress over the last few months - Ruma is an independent Rust language homeserver project led by Jimmy Cuadra, and whilst in early development still (currently focusing on the user login and registration system) shows a lot of promise.  Lots of work has ended up going into the required Rust dependencies rather than the Matrix code itself, but if you're interested in Rust then please drop by <a href="https://vector.im/beta/#/room/#ruma:matrix.org">#ruma:matrix.org</a> or #ruma on Freenode and say hi!
 
 <br/>
 

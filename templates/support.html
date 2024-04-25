@@ -32,11 +32,22 @@
         <a href="/membership" class="call-to-action">Become a member</a>
     </div>
     <div id="supporters">
+        <div class="supporters-section" id="platinum-supporters">
+            <h2>Platinum Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.platinum %}
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
         <div class="supporters-section" id="gold-supporters">
-            <h2>Gold supporters</h2>
+            <h2>Gold Members</h2>
             <div class="cards">
                 {% for supporter in supporters.gold %}
-                <a href="{{ supporter.website }}" class="supporters-card">
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
                     <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>
                 </a>
@@ -44,9 +55,31 @@
             </div>
         </div>
         <div class="supporters-section" id="silver-supporters">
-            <h2>Silver supporters</h2>
+            <h2>Silver Members</h2>
             <div class="cards">
                 {% for supporter in supporters.silver %}
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="supporters-section" id="ecosystem-supporters">
+            <h2>Ecosystem Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.ecosystem %}
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="supporters-section" id="associate-supporters">
+            <h2>Associate Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.associate %}
                 <a href="{{ supporter.website }}" class="supporters-card">
                     <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>

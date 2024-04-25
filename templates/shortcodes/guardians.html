@@ -1,20 +1,12 @@
 <div>
     {% set guardians_data = load_data(path="content/about/guardians.toml") %}
     {% for guardian in guardians_data.guardians %}
-    <div class="guardian">
-        {% if loop.index % 2 == 0 %}
+    <div class="guardian {% if loop.index % 2 != 0 %}reverse{% endif %}">
         <div class="guardian-details">
             <h4 class="guardian-name">{{ guardian.name }}</h4>
             <p>{{ guardian.bio }}</p>
         </div>
         <img src="/about/{{ guardian.picture }}" alt="Portrait of {{ guardian.name }}" />
-        {% else %}
-        <img src="/about/{{ guardian.picture }}" alt="Portrait of {{ guardian.name }}" />
-        <div>
-            <h4 class="guardian-name">{{ guardian.name }}</h4>
-            <p>{{ guardian.bio }}</p>
-        </div>
-        {% endif %}
     </div>
     {% endfor %}
 </div>
