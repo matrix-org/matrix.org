@@ -8,7 +8,7 @@ category = ["Foundation"]
 +++
 
 
-The Matrix.org homeserver suffered from an outage on Monday 22 May, between 08:00 UTC and 10:00 UTC, followed by slowness for the next 2 hours.
+The Matrix.org homeserver suffered from an outage on Monday 22 April, between 08:00 UTC and 10:00 UTC, followed by slowness for the next 2 hours.
 
 The outage occurred during scheduled maintenance with no expected downtime. It included upgrading the base OS of the machines running Matrix.org’s deployment.
 
