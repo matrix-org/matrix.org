@@ -45,7 +45,9 @@ can be an issue if you want to preserve the anonymity of your Trust & Safety
 team for their own security. The moderation bot mjolnir brings a good answer to
 this.
 
-If you're taking over a community  previously managed by someone with a high level of technical expertise in Matrix and strongly opinionated on power levels, the roles may not be the same. In that case, we recommend you to email
+If you're taking over a community  previously managed by someone with a high
+level of technical expertise in Matrix and strongly opinionated on power levels, the
+roles may not be the same. In that case, we recommend you to email
 [support@matrix.org](mailto:support@matrix.org) for help.
 
 ## Your community's security guard

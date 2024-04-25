@@ -169,7 +169,9 @@ local copy of the room they will accept the change.
 }}
 
 What if Walter was the homeserver administrator of `ergaster.org` instead? Every
-user of `ergaster.org` in this room have the Power Level 0. If Walter called this API, his homeserver would only be able to control a user with Power Level 0, and would not be able to promote him.
+user of `ergaster.org` in this room have the Power Level 0. If Walter called this API,
+his homeserver would only be able to control a user with Power Level 0,
+and would not be able to promote him.
 
 {{ figure(
     img="./walter_escalate_ko.svg",

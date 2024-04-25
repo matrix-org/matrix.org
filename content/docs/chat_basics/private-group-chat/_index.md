@@ -156,6 +156,9 @@ Element defines two other roles: "Moderator" and "Admin".
 
 ![](role.png)
 
-If you promote someone to "Moderator", they will be able to redact other people's messages and remove them from the room. You can demote the moderators back to the default role whenever you want.
+If you promote someone to "Moderator", they will be able to redact other people's
+messages and remove them from the room. You can demote the moderators back
+to the default role whenever you want.
 
-If you promote someone to "Admin", they become co-owners of the room with you, and you cannot take it back! Be very careful who you promote to administrator.
+If you promote someone to "Admin", they become co-owners of the room with you,
+and you cannot take it back! Be very careful who you promote to administrator.

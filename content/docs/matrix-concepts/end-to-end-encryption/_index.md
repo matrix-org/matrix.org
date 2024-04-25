@@ -152,7 +152,8 @@ To generate new one-time keys:
     ```
 
 - Each key should be signed in the same way as the previous identity keys
-  payload, and uploaded using the `one_time_keys` property of the [/keys/upload](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-upload) endpoint.
+  payload, and uploaded using the `one_time_keys` property of the
+  [/keys/upload](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-upload) endpoint.
 
 - Call `olm_account_mark_keys_as_published` to tell the olm library not to
   return the same keys from a future call to `olm_account_one_time_keys`.
