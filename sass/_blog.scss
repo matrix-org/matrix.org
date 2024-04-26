@@ -2,6 +2,10 @@ article.post {
     width: 100%;
     word-break: break-word;
 
+    h2:first-of-type {
+        margin-block-start: 0;
+    }
+
     &:not(:last-of-type) {
         padding-bottom: 1rem;
         margin-bottom: 2.5rem;

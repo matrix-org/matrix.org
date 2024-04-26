@@ -1,0 +1,19 @@
+{% macro individual(individual) %}
+<details class="nominee">
+    <summary>{{ individual.name }} ({{ individual.pronouns }})</summary>
+    <ul>
+        <li>{{ individual.bio }}</li>
+        <li>{{ individual.platform_statement }}</li>
+    </ul>
+</details>
+{% endmacro %}
+
+{% macro project(representative) %}
+<details class="nominee">
+    <summary>{{ representative.name }} ({{ representative.pronouns }}) - {{ representative.project }}</summary>
+    <ul>
+        <li>{{ representative.bio }}</li>
+        <li>{{ representative.platform_statement }}</li>
+    </ul>
+</details>
+{% endmacro %}
