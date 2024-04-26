@@ -6,15 +6,7 @@ The list of candidates and their information.
 """
 +++
 
-## General information
-
-dates, links to blog posts, terms of reference, membership page, and the elections@ email address
-
-* https://matrix.org/blog/2023/12/electing-our-first-governing-board/
-* https://matrix.org/blog/2024/04/election-announcement/
-* elections@matrix.org
-* Terms of reference https://matrix.org/media/2024-04-governing-board-terms-of-reference.pdf
-* Membership page /membership
+You will find all the information about nominees in the [nominees section below](#nominees).
 
 ## Schedule
 
@@ -27,7 +19,7 @@ This April, [we kickstarted the Elections](https://matrix.org/blog/2024/04/elect
 
 You must be a member of one of the constituency groups in order to nominate yourself or someone else to be a candidate in the election. By far our largest constituency group are Individual Members, who number in the 100’s. If you have donated at least $60 USD to the Foundation since April 20, 2023, on any of Donorbox, Patreon, or Liberapay, then you are eligible to nominate and vote.
 
-Eligible members can proceed to nominations using the Cryptpad below, or download [this PDF nomination form](https://matrix.org/media/2024-nomination-form.pdf) and send it to [elections@matrix.org](mailto:elections@matrix.org).
+Eligible members can proceed to nominations using the Cryptpad below, or download [this PDF nomination form](https://matrix.org/media/2024-nomination-form.pdf) and send it to [elections@foundation.matrix.org](mailto:elections@foundation.matrix.org).
 
 All nominations are subject to review in accordance with our bylaws. We will email you to confirm receipt within 2 business days, and we will publish our elections landing page with all of the nominees, and other details, by April 27th.
 
