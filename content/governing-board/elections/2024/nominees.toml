@@ -7,28 +7,3 @@
 # [[individual_members]]
 # [[sct_members]]
 # [[guardians]]
-
-[[individual_members]]
-name = "John Doe"
-pronouns = "They/them"
-bio = "You know who I am"
-platform_statement = """
-Matricise all the things!
-"""
-
-[[individual_members]]
-name = "Alice Bob"
-pronouns = "They/them"
-bio = "You don't know who I am"
-platform_statement = """
-Skabideese all the flatablop.
-"""
-
-[[ecosystem_members]]
-name = "Jane Doe"
-pronouns = "She/her"
-project = "Example"
-bio = "I am Example project lead, have been involved in barring the foos since 1743."
-platform_statement = """
-With my advice, Matrix can take over the world and become the standard for instant messaging both in the public and private sector.
-"""

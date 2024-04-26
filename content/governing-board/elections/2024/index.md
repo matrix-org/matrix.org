@@ -6,14 +6,37 @@ The list of candidates and their information.
 """
 +++
 
-You will find all the information about nominees in the [nominees section below](#nominees).
+Election announcements are made on our blog, our social channels, as well as in the [Office of the Matrix.org Foundation](https://matrix.to/#/#foundation-office:matrix.org) room and the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room.
+
+You will find all the information about nominees posted in the [nominees section below](#nominees) within 24 hours after the nomination period closes at end of day April 26.
+
+## What is the Governing Board
+
+The Governing Board is an advisory board that is made up of elected representatives from all across the Matrix ecosystem.
+
+We encourage you to read our [membership page](/membership/) and announcements (from [December](/blog/2023/12/electing-our-first-governing-board/) and from [April](/blog/2024/04/election-announcement/)) for a full background on the Governing Board.
+
+There are nine different constituency groups that are allocated seats on the Governing Board, across three categories:
+
+* Community representatives
+  * 4x Individual Members – these are people who currently provide financial support to the Foundation.
+  * 3x Ecosystem Members – these are FOSS projects that use or build on Matrix.
+  * 2x Associate Members – these are FOSS foundations, academic institutions, and other communities that are aligned with key parts of our mission.
+* Funder representatives
+  * 4x Platinum Members – these organisations sponsor at the highest level.
+  * 3x Gold Members — these organisations sponsor at a high level.
+  * 2x Silver Members — these organisations sponsor at a level commensurate with the size of their organisation.
+* Foundation representatives
+  * 3x Guardians – these are the members of the Foundation's board of directors.
+  * 2x Spec Core Team – these are the members of the Spec Core Team that looks after the spec.
+  * Managing Director – this is the Foundation's head of staff.
 
 ## Schedule
 
 ### Announcement (April 15)
 
 We [announced last December](/blog/2023/12/electing-our-first-governing-board/) that we were adding a new organ, the Governing Board, to the Foundation's governance.
-This April, [we kickstarted the Elections](https://matrix.org/blog/2024/04/election-announcement/) the election process in a blog post announcing the schedule, eligibility, and conditions of the vote.
+This April, [we kickstarted the Elections](/blog/2024/04/election-announcement/) the election process in a blog post announcing the schedule, eligibility, and conditions of the vote.
 
 ### Nominations (April 20)
 
@@ -21,7 +44,7 @@ You must be a member of one of the constituency groups in order to nominate your
 
 Eligible members can proceed to nominations using the Cryptpad below, or download [this PDF nomination form](https://matrix.org/media/2024-nomination-form.pdf) and send it to [elections@foundation.matrix.org](mailto:elections@foundation.matrix.org).
 
-All nominations are subject to review in accordance with our bylaws. We will email you to confirm receipt within 2 business days, and we will publish our elections landing page with all of the nominees, and other details, by April 27th.
+All nominations are subject to review in accordance with our bylaws. We will email you to confirm receipt within 2 business days, and we will publish our elections landing page with all of the nominees, and other details, on April 27th.
 
 If you want to be a candidate in the election, there are a few things you should know:
 
@@ -36,7 +59,7 @@ If you want to be a candidate in the election, there are a few things you should
 
 ### Campaigning (April 27)
 
-TODO
+The campaign period is an opportunity for candidates to share more about themselves and their priorities. We encourage candidates to engage with the rest of the ecosystem, and in particular those who are part of the same constituency group.
 
 ### Voting (May 18)
 
@@ -63,3 +86,5 @@ While the Governing Board is an advisory board, members are encouraged to play a
 We intend to charter committees – such as for finance, which would review our annual budget in detail – who will meet in between Governing Board meetings and present their assessments and recommendations to the Governing Board. These committees are where the bulk of the activity will take place since the board, which may have up to 24 members, is quite large. 
 
 ## Nominees
+
+Stay tuned! We'll post the nominees after the nomination period closes. We'll announce the update on our social channels as well as in the [Office of the Matrix.org Foundation](https://matrix.to/#/#foundation-office:matrix.org) room and the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room.
