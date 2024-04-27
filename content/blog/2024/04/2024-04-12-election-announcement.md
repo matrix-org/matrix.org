@@ -70,7 +70,7 @@ All members of each constituency group are entitled to vote on the candidates wi
 
 We will hold an election for every constituency even if a given constituency has fewer candidates than there are seats allocated for them on the Governing Board. This is, effectively, as a vote of confidence.
 
-If you believe you are eligible to participate but have not heard from us or [OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections – by May 10th, [please email us promptly](mailto:elections@foundation.matrix.org). We cannot change our voter rolls after voting begins on May 17th!
+If you believe you are eligible to participate but have not heard from us or [OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections – by May 10th, [please email us promptly](mailto:elections@foundation.matrix.org). We build our voter rolls on May 17th and can't change them after that!
 
 All of the candidates will be listed on an elections page here on our website which we’ll publish on April 29th.
 
