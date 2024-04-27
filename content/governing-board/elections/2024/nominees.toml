@@ -55,6 +55,11 @@ While no protocol is ever complete, Matrix has achieved a substantial set of fea
 As a young nonprofit, the Matrix Foundation should focus on sustainability. The Foundation should maintain a narrow focus and practice a transparent and collaborative approach to governance."""
 
 [[individual_members]]
+name = "Oleg Fiksel"
+bio = """Oleg is a working as an engineer by day and is hacking on open source by night. Being an open source intusiast for all of his professional career and the Matrix ambassador for Germany since 2018 he wants Matrix to succeed in the the current siloed world of messengers. By conducting inspiring talks at several open source conferences and organizing Matrix Devroom at the FrOSCon every year he spreads Matrix awareness in Germany."""
+platform_statement = """I believe in bright future for Matrix. I spend much time spreading the word about Matrix and was involved in the community. I want to be more involved in forming it's future. And I will do my best to make Matrix more successful in every way!"""
+
+[[individual_members]]
 name = "Reid Anderson"
 pronouns = "he/him"
 bio = "Reid is a software engineer that has closely followed open-source software for 15 years, Matrix since 2018, and has donated monthly to the Matrix Foundation since 2021. He started as a developer building extensions and making small code contributions to Mozilla products. He unfortunately saw first-hand the danger in depending on a single business for an open-source product as a community contributor to Songbird, a now-defunct open-source music player whose corporate sponsor went out of business. He has managed development teams and currently works as a principal software engineer for a large logistics company."
