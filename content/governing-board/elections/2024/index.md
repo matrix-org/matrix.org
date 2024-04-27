@@ -87,4 +87,6 @@ We intend to charter committees – such as for finance, which would review our 
 
 ## Nominees
 
-Stay tuned! We'll post the nominees after the nomination period closes. We'll announce the update on our social channels as well as in the [Office of the Matrix.org Foundation](https://matrix.to/#/#foundation-office:matrix.org) room and the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room.
+We are honored to present the nominees for the first ever Governing Board elections, and are grateful to everyone who has raised their hands. We are positively overwhelmed by the enthusiasm and vision expressed by our nominees.
+
+There may be a few updates to the list of nominees, pending a few outstanding questions.
