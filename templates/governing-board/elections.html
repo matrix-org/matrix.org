@@ -36,7 +36,7 @@
     {% if nominees.platinum_members %}
     <h3 id="platinum-nominees">Platinum Members</h3>
     <div class="nominees">
-    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div></div>
+    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
     {% for representative in nominees.platinum_members %}
         {{ nominee::project(representative=representative) }}
     {% endfor %}
