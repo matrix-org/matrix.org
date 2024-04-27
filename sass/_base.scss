@@ -11,7 +11,7 @@
         --color-text-light: #595959;
     }
 
-    --color-link: #0098d4;
+    --color-link: #00719d;
 
     --page-header-height: 15rem;
 
@@ -59,7 +59,7 @@ main {
 
 a {
     color: var(--color-link);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 ul,
