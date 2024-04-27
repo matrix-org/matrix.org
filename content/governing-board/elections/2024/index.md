@@ -8,7 +8,7 @@ The list of candidates and their information.
 
 Election announcements are made on our blog, our social channels, as well as in the [Office of the Matrix.org Foundation](https://matrix.to/#/#foundation-office:matrix.org) room and the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room.
 
-You will find all the information about nominees posted in the [nominees section below](#nominees) within 24 hours after the nomination period closes at end of day April 26.
+You can find all the information about nominees posted in the [nominees section below](#nominees).
 
 ## What is the Governing Board
 
