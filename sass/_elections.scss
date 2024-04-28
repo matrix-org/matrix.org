@@ -7,10 +7,27 @@
         color: var(--color-text);
     }
 
-    .nominees button {
-        border-radius: 9999px;
-        border-color: transparent;
-        padding: .1em .5em;
+    .nominees {
+        button {
+            border-radius: 9999px;
+            border-color: transparent;
+            padding: .1em .5em;
+        }
+
+        .nominee {
+            summary {
+                font-size: 1.25rem;
+                scroll-margin-top: 74px;
+                margin-block: 1.38rem .5rem;
+                font-weight: 700;
+                line-height: 1.3;
+            }
+
+            /* The summary cant take h4 but we made it artificially look like h4. Hence we need to make h4 look like h5 */
+            h4 {
+                font-size: 0.8rem;
+            }
+        }
     }
 }
 

@@ -33,84 +33,103 @@
     {% set nominees_path = page.path ~ "nominees.toml" %}
     {% set nominees = load_data(path=nominees_path, format="toml") %}
 
-    {% if nominees.platinum_members %}
-    <h3 id="platinum-nominees">Platinum Members</h3>
+    {% if nominees.individual_members %}
+    <h3 id="individual-nominees">Individual Members (Max. 4 Seats)</h3>
     <div class="nominees">
-    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
-    {% for representative in nominees.platinum_members %}
-        {{ nominee::project(representative=representative) }}
-    {% endfor %}
+        <div class="nominees-buttons-row">
+            <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
+        </div>
+        {% for individual in nominees.individual_members %}
+        {{ nominee::individual(individual=individual) }}
+        {% endfor %}
     </div>
     {% endif %}
 
-    {% if nominees.gold_members %}
-    <h3 id="gold-nominees">Gold Members</h3>
-    <div class="nominees">
-    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
-    {% for representative in nominees.gold_members %}
-        {{ nominee::project(representative=representative) }}
-    {% endfor %}
-    </div>
-    {% endif %}
-
-    {% if nominees.silver_members %}
-    <h3 id="silver-nominees">Silver Members</h3>
-    <div class="nominees">
-    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
-    {% for representative in nominees.silver_members %}
-        {{ nominee::project(representative=representative) }}
-    {% endfor %}
-    </div>
-    {% endif %}
 
     {% if nominees.ecosystem_members %}
-    <h3 id="ecosystem-nominees">Ecosystem Members</h3>
+    <h3 id="ecosystem-nominees">Ecosystem Members (Max. 3 Seats)</h3>
     <div class="nominees">
-    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
-    {% for representative in nominees.ecosystem_members %}
+        <div class="nominees-buttons-row">
+            <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
+        </div>
+        {% for representative in nominees.ecosystem_members %}
         {{ nominee::project(representative=representative) }}
-    {% endfor %}
+        {% endfor %}
     </div>
     {% endif %}
 
     {% if nominees.associate_members %}
-    <h3 id="associate-nominees">Associate Members</h3>
+    <h3 id="associate-nominees">Associate Members (Max. 2 Seats)</h3>
     <div class="nominees">
-    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
-    {% for representative in nominees.associate_members %}
+        <div class="nominees-buttons-row">
+            <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
+        </div>
+        {% for representative in nominees.associate_members %}
         {{ nominee::project(representative=representative) }}
-    {% endfor %}
+        {% endfor %}
     </div>
     {% endif %}
 
-    {% if nominees.individual_members %}
-    <h3 id="individual-nominees">Individual Members</h3>
+    {% if nominees.platinum_members %}
+    <h3 id="platinum-nominees">Platinum Members (Max. 4 Seats)</h3>
     <div class="nominees">
-    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
-    {% for individual in nominees.individual_members %}
-        {{ nominee::individual(individual=individual) }}
-    {% endfor %}
+        <div class="nominees-buttons-row">
+            <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
+        </div>
+        {% for representative in nominees.platinum_members %}
+        {{ nominee::project(representative=representative) }}
+        {% endfor %}
     </div>
     {% endif %}
 
-    {% if nominees.sct_members %}
-    <h3 id="sct-nominees">Spec Core Team Members</h3>
+    {% if nominees.gold_members %}
+    <h3 id="gold-nominees">Gold Members (Max. 3 Seats)</h3>
     <div class="nominees">
-    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
-    {% for individual in nominees.sct_members %}
-        {{ nominee::individual(individual=individual) }}
-    {% endfor %}
+        <div class="nominees-buttons-row">
+            <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
+        </div>
+        {% for representative in nominees.gold_members %}
+        {{ nominee::project(representative=representative) }}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if nominees.silver_members %}
+    <h3 id="silver-nominees">Silver Members (Max. 2 Seats)</h3>
+    <div class="nominees">
+        <div class="nominees-buttons-row">
+            <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
+        </div>
+        {% for representative in nominees.silver_members %}
+        {{ nominee::project(representative=representative) }}
+        {% endfor %}
     </div>
     {% endif %}
 
     {% if nominees.guardians %}
-    <h3 id="guardian-nominees">Guardians</h3>
+    <h3 id="guardian-nominees">Guardians (Max. 3 Seats)</h3>
     <div class="nominees">
-    <div class="nominees-buttons-row"><button class="expand-all">Expand all</button> - <button class="collapse-all">Collapse all</button></div>
-    {% for guardian in nominees.guardians %}
+        <div class="nominees-buttons-row">
+            <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
+        </div>
+        {% for guardian in nominees.guardians %}
         {{ nominee::individual(individual=guardian) }}
-    {% endfor %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if nominees.sct_members %}
+    <h3 id="sct-nominees">Spec Core Team Members (Max. 2 Seats)</h3>
     <div class="nominees">
+        <div class="nominees-buttons-row">
+            <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">
+                Collapse all
+            </button>
+        </div>
+        {% for individual in nominees.sct_members %}
+        {{ nominee::individual(individual=individual) }}
+        {% endfor %}
+    </div>
     {% endif %}
 </article>
 {% endblock content %}
