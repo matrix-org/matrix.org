@@ -56,7 +56,7 @@ As a young nonprofit, the Matrix Foundation should focus on sustainability. The 
 
 [[individual_members]]
 name = "Oleg Fiksel"
-bio = """Oleg is working as an engineer by day and is hacking on open source by night. Being an open source ennthusiast for all of his professional career and the Matrix ambassador for Germany since 2018 he wants Matrix to succeed in the the current siloed world of messengers. By conducting inspiring talks at several open source conferences and organizing Matrix Devroom at the FrOSCon every year he spreads Matrix awareness in Germany."""
+bio = """Oleg is working as an engineer by day and is hacking on open source by night. Being an open source ennthusiast for all of his professional career and the Matrix ambassador for Germany since 2018 he wants Matrix to succeed in the current siloed world of messengers. By conducting inspiring talks at several open source conferences and organizing Matrix Devroom at the FrOSCon every year he spreads Matrix awareness in Germany."""
 platform_statement = """I believe in bright future for Matrix. I spend much time spreading the word about Matrix and was involved in the community. I want to be more involved in forming it's future. And I will do my best to make Matrix more successful in every way!"""
 
 [[individual_members]]
@@ -162,17 +162,18 @@ name = "Cat"
 pronouns = "he/him"
 project = "Community Moderation Effort"
 bio = "I'm Cat a feline that works on Trust and Safety together with deployment of Draupnir. And I am a long time member of the Community Moderation Effort and a long time federation member."
-platform_statement = "So who is Cat the candidate? Well I seek to represent the T&S needs that our community has not only because I am the candidate from the Community Moderation Effort but because it's been a thing since day one for me on mMtrix. But learning about why one should vote for me or shouldn't is probably best done by simply interacting with me as a candidate on Matrix. So take this as an invite to ask away in the regular forums on Matrix."
+platform_statement = "So who is Cat the candidate? Well I seek to represent the T&S needs that our community has not only because I am the candidate from the Community Moderation Effort but because it's been a thing since day one for me on Matrix. But learning about why one should vote for me or shouldn't is probably best done by simply interacting with me as a candidate on Matrix. So take this as an invite to ask away in the regular forums on Matrix."
 
 [[ecosystem_members]]
 name = "Emma"
+pronouns = "it/its"
 project = "Rory&::LibMatrix"
-bio = "Hi, I'm Emma, the main maintainer of the Rory&::LibMatrix suite of SDKs, tools and bots. The Rory&::LibMatrix SDKs are focussed on C# (.NET) and aim to provide solid (not hard!) type mappings in order to obtain a consistent yet extensible (and enjoyable) developer experience, and to empower end users to create their own tools and harness the power of Matrix' flexibility."
-platform_statement = """
-Some of our priorities are to increase consistency between servers (eg. admin APIs, server features such as /state/x/y?format=event, etc.), bringing more powerful features for bots (buttons data-driven interactions, anyone?), and attempting to better define/refine existing client behavior (eg. rendering and interpreting of HTML elements, such as tables, codeblocks etc.), in order to create a more consistent user experience.
+bio = """Hi, I'm Emma, the main maintainer of the [Rory&::LibMatrix](https://cgit.rory.gay/matrix) suite of SDKs, tools and bots. The Rory&::LibMatrix SDKs are focussed on C# (.NET) and aim to provide solid (not hard!) type mappings in order to obtain a consistent yet extensible (and enjoyable) developer experience, and to empower end users to create their own tools and harness the power of Matrix' flexibility.
 
-While I might be a newer member to the scene, I feel like I have a fairly solid grasp on interacting with Matrix, both as a developer and as a user, and a solid group of longer-term Matrix users around.
-"""
+While I might be a newer member to the scene, I feel like I have a fairly solid grasp on interacting with Matrix, both as a developer and as a user, and have a solid group of longer-term Matrix users around me."""
+platform_statement = """The Rory&::LibMatrix suite of projects aim to empower end users to turn their Matrix experience to fit their needs.
+
+Some of our priorities are to increase consistency between servers (eg. admin APIs, server features such as [`/state/x/y?format=event`](https://github.com/matrix-org/matrix-spec/issues/1047), etc.), bringing more powerful features for bots (~~buttons~~ data-driven interactions, anyone?), and attempting to better define/refine existing client behavior (eg. rendering and interpreting of HTML elements, such as tables, codeblocks etc.), in order to create a more consistent user experience."""
 
 [[ecosystem_members]]
 name = "Kim Brose (HarHarLinks)"
