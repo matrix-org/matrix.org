@@ -318,7 +318,7 @@ database:
 ```
 
 
-We can save the file. Let’s edit out docker-compose.yaml file to add Synapse,
+We can save the file. Let’s edit our docker-compose.yaml file to add Synapse,
 and give it the volumes it needs to persist data:
 
 
