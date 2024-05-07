@@ -222,11 +222,17 @@ In the end I want people to enjoy using Matrix and work on that needs to cover a
 
 
 
-
 [[associate_members]]
 name = "Cleodevan Menezes Santos Junior (Cleo Menezes Jr.)"
 pronouns = "he/him"
 project = "GNOME Foundation"
+bio = """
+Cleo is a developer who loves free software and advocates not only for the user's freedom to be empowered by the right to choose, but also for the freedom of the maintainers and their mental health. Today, one of his passions is being able to contribute to projects linked to GNOME. This collects several contributions to various projects such as GNOME Web, Weather, Builder, Secrets etc. Maintain GNOME Weather O'Clock and Auto Activities extensions. He is also the creator and maintainer of apps such as Escambo and Aurea. In addition to actively contributing to Firefox GNOME Theme.
+In 2023, he participated in GNOME LATAM, where he talked on the topic "How to become a contributor".
+"""
+platform_statement="""
+My vision for Matrix is to fortify its stance against platform abuse while preserving its core value of privacy. I believe that in order to thrive and compete effectively in the messaging landscape, Matrix must evolve beyond its current status as a niche platform primarily accessible to tech-savvy individuals. As a candidate, I am committed to initiatives that prioritize user safety and inclusivity, making Matrix a welcoming space for all while maintaining robust privacy features. I aim to spearhead efforts to enhance the platform's user experience, ensuring it becomes more intuitive and appealing to a broader audience. Together, we can propel Matrix into a new era of accessibility, competitiveness, and resilience against abuse, all while upholding its commitment to privacy and security.
+"""
 
 [[associate_members]]
 name = "Tobias Fella"
@@ -250,9 +256,9 @@ Finally, there's a large non-technical aspect to this: Making Matrix the go-to p
 name = "Neil Johnson"
 pronouns = "he/him"
 project = "Element"
-bio = """Neil has been a Matrix community member since before launch in 2014. From 2017, he has held the role of VP of Engineering Management at Element. 
+bio = """Neil has been a Matrix community member since before launch in 2014. From 2017, he has held the role of VP of Engineering Management at Element.
 
-In this capacity, he has grown and supported the Element engineering organisation, which makes up the bulk of the Matrix Core Team, and has been involved in all aspects of Element’s technical contribution to Matrix overall. 
+In this capacity, he has grown and supported the Element engineering organisation, which makes up the bulk of the Matrix Core Team, and has been involved in all aspects of Element’s technical contribution to Matrix overall.
 
 Before that, he held various engineering leadership roles, starting his career as a software engineer with a focus on messaging and telephony."""
 platform_statement = """Element wants to see Matrix have the same impact on the world in the next 50 years as email has had on the previous 50.
@@ -311,17 +317,17 @@ In summary, gematik's TI-Messenger represents a significant leap forward in Germ
 [[silver_members]]
 name = "Thor Arne Johansen"
 project = "Verji Tech AS"
-bio = """Thor Arne Johansen is CTO and co-founder of Verji Tech AS, a Norwegian company building Verji, a communications solution based on Matrix. 
+bio = """Thor Arne Johansen is CTO and co-founder of Verji Tech AS, a Norwegian company building Verji, a communications solution based on Matrix.
 
-Thor Arne is passionate about technology, and thrives where people, technology, and business meet. 
-After graduating from California State University his professional career involve: Developing hardware, recovering data from crashed hard drives, and developing commercial software for school management. 
+Thor Arne is passionate about technology, and thrives where people, technology, and business meet.
+After graduating from California State University his professional career involve: Developing hardware, recovering data from crashed hard drives, and developing commercial software for school management.
 
-Currently Thor Arne is heading up the tech. efforts in the startup Verji Tech. 
+Currently Thor Arne is heading up the tech. efforts in the startup Verji Tech.
 
 Privately Thor Arne enjoys the great outdoors with his family, sci-fi, series binging, and hanging out with friends."""
 platform_statement = """While the Matrix ecosystem in general embrace FOSS, we truly believe that FOSS is very much "compatible" with for-profit businesses. As a commercial for-profit company building on Matrix, we have a vested interest in the success and sustainability of Matrix. We believe that a key factor will be to ensure that commercial businesses can reap concrete and quantifiable benefits by contributing to Matrix. The challenge of course is to have the companies contribute in a way that aligns with Matrix’ vision, and to ensure contributions don’t compromise the integrity of the foundation, and the community.
 
-Many things need to come together to achieve this, and we certainly don't have all the answers and fixes. The current direction of the community and the foundation is essential. Clarifying the roles of the most influential  stakeholders in the community is IMO an absolute requirement for a "climate" conducive to businesses and commercial stakeholders. Equally important for companies is to strike a good balance between resources spent, benefits, and competitive advantages. 
+Many things need to come together to achieve this, and we certainly don't have all the answers and fixes. The current direction of the community and the foundation is essential. Clarifying the roles of the most influential  stakeholders in the community is IMO an absolute requirement for a "climate" conducive to businesses and commercial stakeholders. Equally important for companies is to strike a good balance between resources spent, benefits, and competitive advantages.
 
 We hope to bring the viewpoint of a for-profit company into the GB and help make the Matrix attractive for commercial businesses for the mutual benefit of the companies, and the community."""
 
@@ -353,7 +359,7 @@ pronouns = "he/him"
 bio = """Ross is EFF's first Senior Fellow for Decentralization and a Guardian of the Matrix Foundation. He is a policy technologist that has dealt with a wide range of issues, from net neutrality to online surveillance, over the course of his career. His personal passion has always been decentralization, however. Prior to EFF he worked at New America's Open Technology Institute. He has also worked in the past at the Center for Democracy and Technology, the Computer and Communications Industry Association, and in Congress in various capacities.
 
 Ross has a J.D. from American University and a B.A. in computer science from Brandeis University."""
-platform_statement = """As a Guardian on the Governing Board, I will focus on expanding awareness and usage of Matrix tools to a broader audience amongst the general public. I will ensure that specification development serves first and foremost the end-users of the Matrix ecosystem. I will also work to make sure that the protocol remains maximally protective of the privacy and other rights of its users. In doing so I will call upon my many years studying privacy, surveillance, and security. 
+platform_statement = """As a Guardian on the Governing Board, I will focus on expanding awareness and usage of Matrix tools to a broader audience amongst the general public. I will ensure that specification development serves first and foremost the end-users of the Matrix ecosystem. I will also work to make sure that the protocol remains maximally protective of the privacy and other rights of its users. In doing so I will call upon my many years studying privacy, surveillance, and security.
 
 Finally, I will focus on developing the Matrix Foundation itself so that it has a sustainable future and adequate funding to achieve its goals, and serves as an open and safe home for the flagship Matrix server and a responsible steward of the specification."""
 
@@ -373,7 +379,7 @@ pronouns = "he/him"
 bio = """I joined the Matrix Project in 2015 and was part of the founding "Matrix Core Team" that formed New Vector in 2017. Since then, I have worked as a software engineer in a number of areas: in particular Synapse, Element Web and Cryptography, and have played a significant role in the evolution of the Matrix protocol.
 
 I have over 20 years of experience as a software engineer, mostly working on internet and communications applications. I believe in developing well-designed but pragmatic solutions to engineering problems."""
-platform_statement = """Since the Governing Board will be guiding the Spec Core Team in its priorities, I believe it is important to have good technical expertise on that board to help with the prioritisation process. If elected to the Governing Board, I will use my extensive experience of the Matrix protocol, including federation and the room structure, to help guide members of the Board. 
+platform_statement = """Since the Governing Board will be guiding the Spec Core Team in its priorities, I believe it is important to have good technical expertise on that board to help with the prioritisation process. If elected to the Governing Board, I will use my extensive experience of the Matrix protocol, including federation and the room structure, to help guide members of the Board.
 
 I am passionate about the Matrix Foundation, and the Matrix Specification in particular. I believe that without this organisation, and the specification it maintains, Element is just creating another siloed communication protocol. It is by ensuring that the protocol is well-specified that we encourage a diversity of intercompatible implementations, which is one of the unique selling points of Matrix."""
 
