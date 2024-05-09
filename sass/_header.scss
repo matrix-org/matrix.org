@@ -186,10 +186,14 @@
             background: #fff;
             border: 1px solid #f4f4f4;
             border-radius: 6px;
+            padding-inline: 1rem;
+            padding-block: 0.75rem;
 
             a {
                 white-space: nowrap;
                 color: #000;
+                // The parent already provides the padding
+                padding: 0;
             }
         }
     }
