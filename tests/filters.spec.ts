@@ -13,16 +13,16 @@ test('can select filters on ecosystem pages', async ({ page }) => {
     await page.locator("#filter-platform-menu").isVisible()
 
     // Check if platform filter can be used
-    await page.locator("div.reset-links:nth-child(9) > button:nth-child(1)").click()
-    await page.locator("#filters-overlay").click()
+    await page.getByRole('button', { name: 'all' }).click()
+    await page.locator("#filter-platform").click()
     const clients = await page.locator("#all-clients").all()
     for (const client of clients) {
         await client.isHidden()
     }
 
     await page.locator("#filter-platform").click()
-    await page.locator("div.reset-links:nth-child(9) > button:nth-child(2)").click()
-    await page.locator("#filters-overlay").click()
+    await page.getByRole('button', { name: 'none' }).click()
+    await page.locator("#filter-platform").click()
     for (const client of clients) {
         await client.isVisible()
     }
