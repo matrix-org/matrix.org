@@ -121,7 +121,6 @@ ol:last-child {
 
     a {
         color: #999;
-        text-decoration: none;
         margin-inline: .8rem;
     }
 
@@ -355,6 +354,8 @@ a>code {
     font-weight: 600;
     border-radius: 1000px;
     padding: .6em 2em;
+
+    text-decoration: none;
 
     &.inverted {
         border: 2px solid #fff;
