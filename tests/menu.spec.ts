@@ -5,14 +5,9 @@ test('can select hovermenu', async ({ page }) => {
     await page.goto('/');
 
     await page.getByLabel('Ecosystem').hover();
-    const elements = [
-        page.locator(".section-submenu > a:nth-child(1)"),
-        page.locator(".section-submenu > a:nth-child(2)"),
-        page.locator(".section-submenu > a:nth-child(3)"),
-        page.locator(".section-submenu > a:nth-child(4)"),
-        page.locator(".section-submenu > a:nth-child(5)"),
-        page.locator(".section-submenu > a:nth-child(6)"),
-    ]
+    const submenu = page.locator(".section-submenu");
+
+    const elements = await submenu.all();
 
     await expect(page.locator(".section-submenu")).toBeVisible()
     for (const element of elements) {
