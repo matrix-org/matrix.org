@@ -1,9 +1,11 @@
 +++
 title = "Governing Board Elections 2024"
 template = "governing-board/elections.html"
+aliases = ["/governing-board/elections/2024"]
 extra.summary = """
 The list of candidates and their information.
 """
+weight = 2
 +++
 
 Election announcements are made on our blog, our social channels, as well as in the [Office of the Matrix.org Foundation](https://matrix.to/#/#foundation-office:matrix.org) room and the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room.
@@ -63,7 +65,7 @@ The campaign period is an opportunity for candidates to share more about themsel
 
 ### Voting (May 18)
 
-All members of each constituency group are entitled to vote on the candidates within that constituency group. We will be reaching out to everyone we have contact information for, to ensure we have our voter rolls together before voting begins in May. 
+All members of each constituency group are entitled to vote on the candidates within that constituency group. We will be reaching out to everyone we have contact information for, to ensure we have our voter rolls together before voting begins in May.
 
 We will hold an election for every constituency even if a given constituency has fewer candidates than there are seats allocated for them on the Governing Board. This is, effectively, as a vote of confidence.
 
@@ -83,7 +85,7 @@ You are likely to receive a packet of materials before each meeting which you wi
 
 While the Governing Board is an advisory board, members are encouraged to play a role in helping to carry out the activities that support the staff in delivering on the Foundation’s collective remit, such as coalescing priorities to share with the Spec Core Team and connecting with contributors and funders to implement proposals.
 
-We intend to charter committees – such as for finance, which would review our annual budget in detail – who will meet in between Governing Board meetings and present their assessments and recommendations to the Governing Board. These committees are where the bulk of the activity will take place since the board, which may have up to 24 members, is quite large. 
+We intend to charter committees – such as for finance, which would review our annual budget in detail – who will meet in between Governing Board meetings and present their assessments and recommendations to the Governing Board. These committees are where the bulk of the activity will take place since the board, which may have up to 24 members, is quite large.
 
 ## Nominees
 
