@@ -223,7 +223,7 @@ In the end I want people to enjoy using Matrix and work on that needs to cover a
 
 
 [[associate_members]]
-name = "Cleodevan Menezes Santos Junior (Cleo Menezes Jr.)"
+name = "Cleo Menezes Jr."
 pronouns = "he/him"
 project = "GNOME Foundation"
 bio = """
@@ -332,10 +332,11 @@ Many things need to come together to achieve this, and we certainly don't have a
 We hope to bring the viewpoint of a for-profit company into the GB and help make the Matrix attractive for commercial businesses for the mutual benefit of the companies, and the community."""
 
 [[silver_members]]
-name = "[placeholder]"
+name = "Jan Krammer"
+pronouns = "he/him"
 project = "fairkom society"
-bio = "This is a placeholder which will be replaced with the actual nominee's information, pending an outstanding question."
-
+bio = "After my first FOSS experience with Firefox and Linux at an early age, there was no going back. When I was young and needed the money (while studying physics), I started working for our university and got more into servers, hosting and deploying FOSS stacks like Jitsi and Matrix. I then became independent while still working closely together with fairkom and universities focusing on opensource. I am a Sci-fi nerd who loves jazz piano and I am currently enjoying my thirties in Vienna."
+platform_statement = "As a heavy FOSS user and advocate, who tries to reduce dependencies of institutions on big companies by helping them with their own opensource solutions, I strongly believe that public funds should also equate to public code, thereby promoting transparency, shared knowledge and the nurture of the community. With the Matrix ecosystem, we have a great chance of replacing existing but proprietary communication silos with a healthy ecosystem for everyone. All that is doable without sacrificing usability, nence, privacy or security, as we can already see the roots starting to take hold in the german sector. However there is still work do be done to make it easy for everyone to use Matrix, be it directly or indirectly."
 
 
 
