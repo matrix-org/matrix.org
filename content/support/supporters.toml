@@ -49,6 +49,11 @@ website = "https://www.xwiki.org/"
 logo = "xwiki.png"
 
 [[ecosystem]]
+name = "Cinny"
+website = "https://cinny.in/"
+logo = "cinny.svg"
+
+[[ecosystem]]
 name = "Community Moderation Effort"
 website = ""
 logo = "community-moderation-effort.png"
@@ -82,6 +87,11 @@ logo = "fractal.svg"
 name = "Matrix Community Events"
 website = "https://matrix.to/#/#community-events:matrix.org"
 logo = "matrix-community-events.png"
+
+[[ecosystem]]
+name = "NeoChat"
+website = "https://apps.kde.org/neochat/"
+logo = "neochat.svg"
 
 [[ecosystem]]
 name = "Nheko-Reborn"
