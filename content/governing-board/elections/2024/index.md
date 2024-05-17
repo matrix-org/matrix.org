@@ -68,7 +68,7 @@ The campaign period is an opportunity for candidates to share more about themsel
 
 ### Voting (May 18)
 
-[Voting has begun](/blog/2024/05/17/voting-begins) and runs till May 31. All eligible voters should have received an email from [OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections.
+[Voting has begun](/blog/2024/05/voting-begins) and runs till May 31. All eligible voters should have received an email from [OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections.
 
 All members of each constituency group are entitled to vote on the candidates within that constituency group. If you believe you are eligible to participate but have not heard from us, first check the inbox and spam folders of the email address you have on file with us (such as through Donorbox or Patreon). [Please email us](mailto:elections@foundation.matrix.org) if you have any questions.
 
