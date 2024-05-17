@@ -1,5 +1,5 @@
 +++
-title = "Writing a good \"This week in Matrix\" entry"
+title = "Writing a good \"This Week in Matrix\" entry"
 +++
 
 This week in Matrix, which usually gets called TWIM, is a concept of posting
@@ -20,7 +20,7 @@ can decline entries related to dangerous or unethical software.
 
 For publishing to TWIM all you need is a Matrix account and participate in the
 [#thisweekinmatrix:matrix.org](https://matrix.to/#/#thisweekinmatrix:matrix.org)
-matrix room.
+Matrix room.
 
 After joining you should start your post with a mention of the user "TWIM".
 Easiest to do this is to use your client's mention completion feature.
@@ -57,7 +57,7 @@ It also can help getting people interested in your project.
 ### Contact info and Source link
 
 Many times people will ask about things published in TWIM. Often times people will
-use the TWIM matrix room itself to do that. However often time it would have been a better
+use the TWIM Matrix room itself to do that. However often time it would have been a better
 choice to instead ask inside of a project room where the devs are present.
 
 ### Correct usage of Headers
