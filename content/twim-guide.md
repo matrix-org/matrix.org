@@ -78,5 +78,5 @@ want to highlight the links.
 ### Correct linking
 
 Due to the static site generator matrix.org is using we require bare links to be
-sorrounded by `<>`. Most matrix clients dont do this. If you are able to add those around
+surrounded by `<>`. Most matrix clients dont do this. If you are able to add those around
 links it would help us.
