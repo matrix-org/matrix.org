@@ -35,7 +35,7 @@ to the correct entry and not on another project of yours.
 
 ## How to make it a good entry
 
-Making a good entry can have some challanges. Below are some recommendations
+Making a good entry can have some challenges. Below are some recommendations
 which work well in TWIM and which help the authors to lower their workload when
 publishing the post.
 
@@ -74,3 +74,9 @@ at all.
 
 Additionally please do not use headers for links but instead use bold links if you
 want to highlight the links.
+
+### Correct linking
+
+Due to the static site generator matrix.org is using we require bare links to be
+sorrounded by `<>`. Most matrix clients dont do this. If you are able to add those around
+links it would help us.
