@@ -1,5 +1,5 @@
 +++
-title = "Writing a good \"This week in Matrix\" entry and guidelines"
+title = "Writing a good \"This week in Matrix\" entry"
 +++
 
 This week in Matrix, which usually gets called TWIM, is a concept of posting
