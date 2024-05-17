@@ -81,7 +81,7 @@ links it would help us.
 ## Reactions and adding a project to the bot
 
 For regular projects the bot can additionally to emoji reactions also recognise projects.
-This helps because there will be a short project descirption as well as a link to the project
+This helps because there will be a short project description as well as a link to the project
 at the start of the entry.
 
 To add your project to this list please head over to [the configuration file](https://github.com/matrix-org/twim-config/blob/master/charts/files/config.toml)
