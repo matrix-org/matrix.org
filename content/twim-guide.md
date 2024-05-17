@@ -77,3 +77,18 @@ want to highlight the links.
 Due to the static site generator matrix.org is using we require bare links to be
 surrounded by `<>`. Most matrix clients dont do this. If you are able to add those around
 links it would help us.
+
+## Reactions and adding a project to the bot
+
+For regular projects the bot can additionally to emoji reactions also recognise projects.
+This helps because there will be a short project descirption as well as a link to the project
+at the start of the entry.
+
+To add your project to this list please head over to [the configuration file](https://github.com/matrix-org/twim-config/blob/master/charts/files/config.toml)
+which holds this information. Please be aware that it may take some time for changes
+to get reflected in the room.
+
+You can also take a look at the same configuration file to see which reaction has
+which meaning. It can help us to also choose the correct category for your project.
+However note that ultimately the TWIM authors are the ones deciding
+on the category for a project.
