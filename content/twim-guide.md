@@ -9,14 +9,12 @@ progress in the Matrix ecosystem.
 
 ## Prerequisites
 
-With that there are some guidelines you should be aware of before publishing your
+There are some guidelines you should be aware of before publishing your
 update to TWIM:
 
-Like all things on matrix.org your Post has to follow and comply with the
-[Matrix.org Code of Conduct](/legal/code-of-conduct). Additionally the Authors
-hold the right to not accept entries of software which seem potetially dangerous
-or unethical. These things also get cleared with T&S as required to get an unbiased
-second opinion.
+Like all things on matrix.org your post has to follow and comply with the
+[Matrix.org Code of Conduct](/legal/code-of-conduct). Additionally the authors
+can decline entries related to dangerous or unethical software.
 
 ## Publishing
 
@@ -27,7 +25,7 @@ matrix room.
 After joining you should start your post with a mention of the user "TWIM".
 Easiest to do this is to use your client's mention completion feature.
 After that mention everything contained in the message will be part of the entry.
-If you want to post more than one project please split each into an individual entry.
+If you want to post more than one project please split each into individual entries.
 
 Images and other media are supported as well. To add them you should react with
 `⭕` on your media file. Please make sure to do this after your entry so it gets added
@@ -36,8 +34,7 @@ to the correct entry and not on another project of yours.
 ## How to make it a good entry
 
 Making a good entry can have some challenges. Below are some recommendations
-which work well in TWIM and which help the authors to lower their workload when
-publishing the post.
+to help the authors to lower their workload when publishing the post.
 
 ### Markdown
 
@@ -50,7 +47,7 @@ it will add manual work for the post by a human.
 Copying a Changelog is easy but not what TWIM is about. Ideally we prefer posts
 which are a few paragraphs long outlining features which were added or changed
 over a bulletpoint list. This makes it more readable to humans. You may still of course
-link to the changelog
+link to the changelog.
 
 ### Add images or videos
 
