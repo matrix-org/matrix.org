@@ -9,7 +9,7 @@ category = ["Foundation", "Elections", "Governing Board"]
 
 Voting has started for the Governing Board elections and runs till May 31! This is our first election and we are very excited. All of the results will be published on June 3.
 
-You can learn about all of the [candidates](/governing-board/elections/2024) on our [2024 election page](/governing-board/elections/2024). All eligible voters should have received an email from [OpaVote](https://www.opavote.com/), the election system we have chosen for this year’s elections.
+You can learn about all of the [candidates](/governing-board/elections/2024/#nominees) on our [2024 election page](/governing-board/elections/2024). All eligible voters should have received an email from [OpaVote](https://www.opavote.com/), the election system we have chosen for this year’s elections.
 
 If you believe you are eligible to participate but have not heard from us, first check the inbox and spam folders of the email address you have on file with us (such as through Donorbox or Patreon). Please [email us](mailto:elections@foundation.matrix.org) if you have any questions.
 
