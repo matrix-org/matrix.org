@@ -1,7 +1,6 @@
 +++
 date = "2024-05-17"
 title = "Voting has begun in the Governing Board elections"
-path = "/blog/2024/05/17/voting-begins"
 
 [taxonomies]
 author = ["Josh Simmons"]
