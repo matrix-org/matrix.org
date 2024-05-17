@@ -7,7 +7,7 @@ author = ["Josh Simmons"]
 category = ["Foundation", "Elections", "Governing Board"]
 +++
 
-Voting has started for the Governing Board elections and runs till May 31! This is our first election and we are very excited. All of the results will be published on June 3.
+Voting has started for the Governing Board elections and runs till May 31! This is our first election and we are very excited. All of the results will be published here on the blog on June 3.
 
 You can learn about all of the [candidates](/governing-board/elections/2024/#nominees) on our [2024 election page](/governing-board/elections/2024). All eligible voters should have received an email from [OpaVote](https://www.opavote.com/), the election system we have chosen for this year’s elections.
 

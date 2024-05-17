@@ -12,7 +12,7 @@ We encourage you to read our [membership page](/membership/) and announcements:
 
 * 2023-12 [The Governing Board, our next big step in open governance](/blog/2023/12/electing-our-first-governing-board)
 * 2024-04 [Announcing the 2024 Governing Board elections](/blog/2024/04/election-announcement)
-* 2024-05 [Voting has begun in the Governing Board elections](/blog/2024/05/17/voting-begins)
+* 2024-05 [Voting has begun in the Governing Board elections](/blog/2024/05/voting-begins)
 
 Read on for our [election schedule](#schedule), all of [nominees](#nominees), and a brief overview of the Governing Board.
 
