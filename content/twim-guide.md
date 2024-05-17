@@ -68,7 +68,7 @@ choice to instead ask inside of a project room where the devs are present.
 As the [TWIM helper bot](https://github.com/haecker-felix/hebbot) takes messages
 as verbatism it is helpful to the authors to use the right header level.
 
-We recommend `H3` (`###` in markdown) for the project title and `H4`(`####`in markdown)
+We recommend `H3` (`###` in markdown) for the project title and `H4` (`####`in markdown)
 for all titles below it. This way there is only minor human interaction necessary or none
 at all.
 
