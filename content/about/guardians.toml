@@ -25,12 +25,3 @@ picture = "ross.jpg"
 bio = """
 Ross Schulman is a senior counsel and senior policy technologist at New America’s Open Technology Institute, where he focuses on internet measurement, emerging technologies, surveillance, and decentralization. Prior to joining OTI, Ross worked for Google. Ross brings a unique perspective as a tech- and decentralisation-savvy lawyer to the Foundation, as well as being one of the first non-developers in the Matrix community to run his own homeserver. Ross has been known to walk around Mozfest clutching a battery-powered Synapse in a box, promoting decentralised communication for all.
 """
-
-[[guardians]]
-name = "Dr. Jutta Steiner"
-picture = "jutta.jpg"
-bio = """
-As co-founder and CEO of Parity Technologies, Dr. Jutta Steiner is dedicated to building a better internet - Web 3.0 - where users’ privacy & control come first. Parity Technologies is a leader in the blockchain space – known to many as the creator of one of the most popular Ethereum clients, it is also the creator of two ambitious new blockchain technlogies, Polkadot and Substrate, that make it easier to experiment and innovate on scalability, encryption and governance.
-
-Parity Technologies have been pioneering Matrix enterprise use since the moment they decided to rely on Matrix for their internal and external communication back in 2016 and now run their own high-volume deployment, with end-to-end encryption enabled by default. Jutta represents organisations who are professionally dependent on Matrix day-to-day, as well as bringing her unique experiences around decentralisation and ensuring that Web 3.0 will be a fair web for all.
-"""
