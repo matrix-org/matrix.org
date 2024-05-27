@@ -15,7 +15,7 @@
 {% set_global licences = licences | concat(with=client.extra.licence) %}
 {% endfor %}
 {% set licences = licences | unique | sort %}
-<div class="page-header">
+<div class="page-hero">
     <div class="hero-block">
         <h1>{{ section.title }}</h1>
         <p>{{ section.extra.summary }}</p>

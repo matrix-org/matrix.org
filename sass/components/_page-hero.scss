@@ -1,0 +1,48 @@
+@use "../helpers/media";
+
+/* The black block on pages at the top. */
+.page-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 5.625rem;
+
+    /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
+    @media (width <=media.$mobile) {
+        padding-inline: 2rem;
+    }
+
+    padding-bottom: calc(var(--navbar-height) / 2);
+    min-height: var(--page-hero-height);
+    background-color: #000;
+    overflow: hidden;
+    background-image: url("/assets/page-header-bg.svg");
+    background-size: 90% 100%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+
+    @media (width <=media.$mobile) {
+        background-size: 250% 100%;
+        background-position-x: -533px;
+    }
+
+    .hero-block {
+        h1 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 2.8rem;
+            line-height: 120%;
+            color: #FFF;
+        }
+
+        p {
+            font-style: normal;
+            font-size: 1.4rem;
+            line-height: 120%;
+            display: flex;
+            align-items: center;
+            color: #FFF;
+            word-wrap: normal;
+        }
+    }
+}
