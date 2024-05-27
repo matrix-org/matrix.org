@@ -1,4 +1,6 @@
 /public
 .DS_Store
 gatsby
-
+package.json
+pnpm-lock.yaml
+node_modules
