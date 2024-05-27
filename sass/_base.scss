@@ -163,37 +163,6 @@ ol:last-child {
     }
 }
 
-pre {
-    padding: 1rem;
-    overflow: auto;
-    border-radius: 4px;
-}
-
-// The line numbers already provide some kind of left/right padding
-pre[data-linenos] {
-    padding: 1rem 0;
-}
-
-pre table td {
-    padding: 0;
-}
-
-// The line number cells
-pre table td:nth-of-type(1) {
-    text-align: center;
-    user-select: none;
-}
-
-pre mark {
-    display: block;
-    background-color: rgb(254 252 232 / 90%);
-}
-
-pre table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
 /* The black block on pages at the top. */
 .page-header {
     display: flex;
@@ -240,18 +209,6 @@ pre table {
     }
 }
 
-:not(pre)>code {
-    color: #f54029;
-    border: 1px solid #f54029;
-    border-radius: 4px;
-    padding: 0 .4rem;
-}
-
-a>code {
-    border-color: var(--color-link);
-    color: var(--color-link);
-}
-
 .page_card {
     background-color: #000;
     border-radius: 16px;
@@ -291,49 +248,5 @@ a>code {
         margin: auto 0 auto .5rem;
         transform: rotate(-90deg);
         filter: invert(1);
-    }
-}
-
-.youtube_placeholder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    aspect-ratio: 16/9;
-    width: 100%;
-    background-color: #333;
-
-    div {
-        display: flex;
-        flex-direction: column;
-        color: #fff;
-        padding: 1.5rem;
-        gap: 1.5rem;
-
-        img {
-            margin-inline: auto;
-        }
-
-        p {
-            max-width: 30rem;
-            text-align: center;
-            margin-inline: auto;
-        }
-
-        button {
-            max-width: fit-content;
-            margin-inline: auto;
-            padding: .5rem 1rem;
-            border-radius: 9999px;
-            background-color: #fff;
-            border: 1px solid transparent;
-            color: #000;
-            cursor: pointer;
-
-            &:hover {
-                border: 1px solid #fff;
-                color: #fff;
-                background-color: #333;
-            }
-        }
     }
 }

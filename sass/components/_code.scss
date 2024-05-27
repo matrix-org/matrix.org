@@ -1,0 +1,46 @@
+/**
+ * This is anything relevant to codeblocks
+ */
+
+pre {
+    padding: 1rem;
+    overflow: auto;
+    border-radius: 4px;
+}
+
+// The line numbers already provide some kind of left/right padding
+pre[data-linenos] {
+    padding: 1rem 0;
+}
+
+pre table td {
+    padding: 0;
+}
+
+// The line number cells
+pre table td:nth-of-type(1) {
+    text-align: center;
+    user-select: none;
+}
+
+pre mark {
+    display: block;
+    background-color: rgb(254 252 232 / 90%);
+}
+
+pre table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+:not(pre)>code {
+    color: #f54029;
+    border: 1px solid #f54029;
+    border-radius: 4px;
+    padding: 0 .4rem;
+}
+
+a>code {
+    border-color: var(--color-link);
+    color: var(--color-link);
+}
