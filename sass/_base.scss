@@ -1,3 +1,5 @@
+@use "./helpers/media";
+
 :root {
     --page-max-width: 57rem;
     --page-with-toc-max-width: 81rem;
@@ -123,7 +125,9 @@ ol:last-child {
         justify-content: space-between;
         flex-wrap: wrap;
 
-        @media (width <= 767px) {
+
+        /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
+        @media (width <=media.$mobile) {
             flex-direction: column;
             text-align: center;
         }
@@ -197,7 +201,7 @@ pre table {
     justify-content: center;
     padding-inline: 5.625rem;
 
-    @media (width <= 767px) {
+    @media (width <=767px) {
         padding-inline: 2rem;
     }
 
@@ -210,7 +214,7 @@ pre table {
     background-position: bottom right;
     background-repeat: no-repeat;
 
-    @media (width <= 767px) {
+    @media (width <=767px) {
         background-size: 250% 100%;
         background-position-x: -533px;
     }
@@ -332,55 +336,4 @@ a>code {
             }
         }
     }
-}
-
-.call-to-action {
-    background-color: #000;
-    border: 2px solid #000;
-    color: #fff;
-    font-size: 1.125rem;
-    font-weight: 600;
-    border-radius: 1000px;
-    padding: .6em 2em;
-
-    &.inverted {
-        border: 2px solid #fff;
-        background-color: #fff;
-        color: #000;
-
-        &.secondary {
-            background-color: #000;
-            color: #fff;
-
-            &:hover {
-                background-color: #fff;
-                color: #000
-            }
-        }
-    }
-
-    &.secondary {
-        background-color: #fff;
-        color: #000;
-
-        &:hover {
-            background-color: #000;
-            color: #fff;
-        }
-    }
-}
-
-.cta-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: .5rem 1rem;
-}
-
-.cta-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    row-gap: 1rem;
-    align-items: center;
 }
