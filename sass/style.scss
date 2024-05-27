@@ -1,33 +1,33 @@
-@import 'helpers';
-@import 'fonts';
-@import 'base';
+@use 'helpers';
+@use 'fonts';
+@use 'base';
 
 // Anything that is a dedicated component
-@import 'components';
+@use 'components';
 
 // All the page specifics
-@import 'pages';
+@use 'pages';
 
 
 
 // Old structure
-@import 'header';
-@import 'index';
-@import 'blog';
-@import 'pagination';
-@import 'taxonomies';
-@import 'projects';
-@import 'clients';
-@import 'bridges';
-@import 'servers';
-@import 'sdks';
-@import 'otwsu';
-@import 'about-bios';
-@import 'legacy-docs';
-@import 'docs';
-@import 'security-hall-of-fame';
-@import 'hosting';
-@import 'try-matrix';
-@import 'support';
-@import 'howitworks';
-@import 'elections';
+@use 'header';
+@use 'index';
+@use 'blog';
+@use 'pagination';
+@use 'taxonomies';
+@use 'projects';
+@use 'clients';
+@use 'bridges';
+@use 'servers';
+@use 'sdks';
+@use 'otwsu';
+@use 'about-bios';
+@use 'legacy-docs';
+@use 'docs';
+@use 'security-hall-of-fame';
+@use 'hosting';
+@use 'try-matrix';
+@use 'support';
+@use 'howitworks';
+@use 'elections';
