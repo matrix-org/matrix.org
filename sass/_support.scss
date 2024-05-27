@@ -1,11 +1,10 @@
 .page-header.support {
-
     .donate-row {
         display: flex;
         gap: 1rem;
         margin-block-start: 2rem;
 
-        @media (max-width: 767px) {
+        @media (width <= 767px) {
             flex-direction: column;
         }
     }
@@ -18,22 +17,20 @@
         color: #000;
         border-radius: 9999px;
         padding: .5rem 1rem;
-
         font-size: 1.125rem;
         font-weight: 600;
 
-        @media (max-width: 767px) {
+        @media (width <= 767px) {
             justify-content: center;
         }
     }
 }
 
 .support.main {
-
     &>div {
         padding-block: 3rem;
 
-        @media (max-width: 767px) {
+        @media (width <= 767px) {
             padding-block: 2rem;
         }
     }
@@ -89,7 +86,9 @@
         flex-direction: column;
         max-width: var(--page-max-width);
         margin-inline: auto;
+
         --supporters-padding-inline: 1rem;
+
         padding-inline: var(--supporters-padding-inline);
 
         .supporters-section {
@@ -102,9 +101,10 @@
 
             .cards {
                 display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
+                flex-flow: row wrap;
+
                 --cards-gap: 1rem;
+
                 gap: var(--cards-gap);
                 justify-content: center;
 
@@ -113,13 +113,19 @@
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
+
                     --supporters-card-border-width: 1px;
+
                     border: var(--supporters-card-border-width) solid var(--borders-color);
                     border-radius: 16px;
+
                     --supporters-card-hpadding: 8px;
+
                     padding: var(--supporters-card-hpadding);
+
                     // The whitespace of the text at the bottom visually adds to the padding so we account for this on the top a little.
                     padding-top: calc(1.5 * var(--supporters-card-hpadding));
+
                     // This adds some space between the text and the image
                     gap: var(--supporters-card-hpadding);
 
@@ -141,7 +147,7 @@
             flex-direction: row;
             gap: 3rem;
 
-            @media (max-width: 767px) {
+            @media (width <= 767px) {
                 flex-direction: column-reverse;
             }
 
@@ -161,14 +167,13 @@
             flex-direction: row;
             gap: 3rem;
 
-            @media (max-width: 767px) {
+            @media (width <= 767px) {
                 flex-direction: column;
             }
         }
     }
 
     #all-your-comms {
-
         .content {
             display: flex;
             flex-direction: row;
@@ -183,7 +188,7 @@
                 min-width: 0;
             }
 
-            @media (max-width: 767px) {
+            @media (width <= 767px) {
                 flex-direction: column-reverse;
             }
         }
@@ -208,7 +213,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
 
-            @media (max-width: 767px) {
+            @media (width <= 767px) {
                 grid-template-columns: 1fr;
             }
 
@@ -229,7 +234,6 @@
 }
 
 .membership {
-
     max-width: 65rem;
     padding-inline: 1rem;
     margin-inline: auto;
@@ -244,7 +248,7 @@
         gap: 2rem;
         margin-block: 2rem 3rem;
 
-        @media (max-width: 767px) {
+        @media (width <= 767px) {
             flex-direction: column;
         }
     }
@@ -286,7 +290,6 @@
             border: 1px solid var(--borders-color);
             border-radius: 16px;
             background-color: #fff;
-
             display: flex;
             flex-direction: column;
             padding: 1em;

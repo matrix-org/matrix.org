@@ -1,8 +1,9 @@
 .hosting_page {
     margin: 0 auto;
-    padding: 5.625rem 0 2rem 0;
-    @media (max-width: 767px) {
-        padding: 5.625rem 32px 2rem 32px;
+    padding: 5.625rem 0 2rem;
+
+    @media (width <= 767px) {
+        padding: 5.625rem 32px 2rem;
     }
 
     h2 {
@@ -14,21 +15,19 @@
 
     .hosting_providers {
         display: flex;
-        flex-direction: row;
+        flex-flow: row wrap;
         justify-content: center;
-        flex-wrap: wrap;
         gap: 3.125rem;
 
         .provider_card {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-
             padding: 24px;
-
             flex: 1 0 400px;
             max-width: 400px;
-            @media (max-width: 767px) {
+
+            @media (width <= 767px) {
                 flex: 1 0 300px;
                 max-width: 300px;
             }
@@ -48,7 +47,6 @@
                     height: 5rem;
                     margin: 0;
                     text-align: center;
-
                     font-style: normal;
                     font-weight: 700;
                     font-size: 2rem;

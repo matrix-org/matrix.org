@@ -1,10 +1,10 @@
 #taxonomy-list {
     h4 {
-        margin-top: 0px;
+        margin-top: 0;
     }
 
     h3 {
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 }
 
@@ -16,7 +16,7 @@
             position: relative;
             margin-bottom: 10px;
 
-            &:after {
+            &::after {
                 content: "";
                 height: 1px;
                 width: 70px;
@@ -24,16 +24,16 @@
                 bottom: -10px;
                 left: 24px;
                 margin-left: -25px;
-                background: rgba(0, 0, 0, 0.25) none repeat scroll 0% 0%;
+                background: rgb(0 0 0 / 25%) none repeat scroll 0% 0%;
             }
 
             h2 {
-                margin-top: 0px;
-                margin-bottom: 0px;
+                margin-top: 0;
+                margin-bottom: 0;
             }
 
             h1 {
-                margin-bottom: 0px;
+                margin-bottom: 0;
             }
         }
 

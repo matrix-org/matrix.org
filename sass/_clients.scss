@@ -17,7 +17,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         font-weight: 400;
         font-size: 1.125rem;
         line-height: 120%;
-        margin: 0 auto 4rem auto;
+        margin: 0 auto 4rem;
         max-width: 40rem;
     }
 }
@@ -33,23 +33,21 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 
 .platform-links {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: flex-start;
     justify-content: center;
     gap: 16px 4px;
-    flex-wrap: wrap;
 }
 
 .platform-pill {
     background: #E9E9E9;
     border-radius: 16px;
     padding: .375rem .625rem;
-
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
     line-height: 120%;
-    color: #000000;
+    color: #000;
 }
 
 .client-details {
@@ -57,7 +55,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     display: grid;
     grid-template-columns: 2fr 1fr;
 
-    @media (max-width: 767px) {
+    @media (width <= 767px) {
         grid-template-columns: 1fr;
     }
 
@@ -79,7 +77,6 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
             margin: 0 auto;
             align-items: center;
             justify-content: center;
-
             font-style: normal;
             font-weight: 700;
             font-size: 2rem;
@@ -115,11 +112,8 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     &:checked~.client-details-overlay {
         position: fixed;
         z-index: 150;
-        top: var(--navbar-height);
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, .5);
+        inset: var(--navbar-height) 0 0 0;
+        background-color: rgb(0 0 0 / 50%);
     }
 
     &:not(:checked)~.client-details-overlay {

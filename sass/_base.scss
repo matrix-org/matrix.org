@@ -2,7 +2,6 @@
     --page-max-width: 57rem;
     --page-with-toc-max-width: 81rem;
     --navbar-height: 5.937rem;
-
     --color-text: #333;
     --color-text-light: #757575;
 
@@ -12,9 +11,7 @@
     }
 
     --color-link: #0098d4;
-
     --page-header-height: 15rem;
-
     --borders-color: #ddd;
 }
 
@@ -34,9 +31,8 @@ body {
     flex-direction: column;
     background-color: #fff;
     color: var(--color-text);
-
     font-family: "Helvetica Neue",
-        "Helvetica",
+        Helvetica,
         Arial,
         -apple-system,
         BlinkMacSystemFont,
@@ -48,7 +44,6 @@ body {
         "Segoe UI Emoji",
         /* Emojis*/
         "Segoe UI Symbol";
-
     line-height: 1.75;
 }
 
@@ -64,7 +59,7 @@ a {
 
 ul,
 ol {
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 10px;
     padding-left: 40px;
 }
@@ -85,7 +80,6 @@ ol:last-child {
 .content {
     width: 100%;
     max-width: var(--page-max-width);
-
     margin: 1rem auto;
     padding-inline: 1rem;
 
@@ -129,7 +123,7 @@ ol:last-child {
         justify-content: space-between;
         flex-wrap: wrap;
 
-        @media (max-width: 767px) {
+        @media (width <= 767px) {
             flex-direction: column;
             text-align: center;
         }
@@ -188,7 +182,7 @@ pre table td:nth-of-type(1) {
 
 pre mark {
     display: block;
-    background-color: rgba(254, 252, 232, 0.9);
+    background-color: rgb(254 252 232 / 90%);
 }
 
 pre table {
@@ -203,22 +197,20 @@ pre table {
     justify-content: center;
     padding-inline: 5.625rem;
 
-    @media (max-width: 767px) {
+    @media (width <= 767px) {
         padding-inline: 2rem;
     }
 
     padding-bottom: calc(var(--navbar-height)/2);
-
     min-height: var(--page-header-height);
-    background-color: #000000;
+    background-color: #000;
     overflow: hidden;
-
-    background-image: url(/assets/page-header-bg.svg);
+    background-image: url("/assets/page-header-bg.svg");
     background-size: 90% 100%;
     background-position: bottom right;
     background-repeat: no-repeat;
 
-    @media (max-width: 767px) {
+    @media (width <= 767px) {
         background-size: 250% 100%;
         background-position-x: -533px;
     }
@@ -229,18 +221,16 @@ pre table {
             font-weight: 700;
             font-size: 2.8rem;
             line-height: 120%;
-            color: #FFFFFF;
+            color: #FFF;
         }
 
         p {
             font-style: normal;
             font-size: 1.4rem;
             line-height: 120%;
-
             display: flex;
             align-items: center;
-
-            color: #FFFFFF;
+            color: #FFF;
             word-wrap: normal;
         }
     }
@@ -265,7 +255,6 @@ a>code {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     padding: 1rem;
-
     max-width: 23rem;
 
     .wrapper {
@@ -281,7 +270,7 @@ a>code {
             font-size: 1.125rem;
             font-weight: 700;
             padding: 0;
-            margin: 0 0 1rem 0;
+            margin: 0 0 1rem;
         }
 
         p {
@@ -385,8 +374,7 @@ a>code {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    column-gap: 1rem;
-    row-gap: .5rem;
+    gap: .5rem 1rem;
 }
 
 .cta-col {
@@ -394,6 +382,5 @@ a>code {
     flex-direction: column;
     justify-content: center;
     row-gap: 1rem;
-
     align-items: center;
 }

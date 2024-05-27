@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 17.6rem);
 
-    @media (max-width: 767px) {
+    @media (width <= 767px) {
         max-width: 17.6rem;
     }
 
@@ -22,9 +22,7 @@
     align-items: center;
     padding: 24px;
     gap: 1rem;
-
     min-height: 100%;
-
     border: 1px solid #D2D2D2;
     border-radius: 16px;
 
@@ -37,7 +35,6 @@
 
     h3 {
         margin: 0;
-
         font-style: normal;
         font-weight: 700;
         font-size: 1.8rem;
@@ -75,10 +72,9 @@
 
 .filters {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     max-width: 40rem;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 2rem;
     justify-content: center;
     gap: 1rem;
 
@@ -92,14 +88,11 @@
             justify-content: space-between;
             gap: .8rem;
             z-index: 100;
-
             padding: .5rem .8rem;
-
             background-color: #fafafa;
             color: #000;
             border: 1px solid #d2d2d2;
             border-radius: 1000px;
-
             cursor: pointer;
             user-select: none;
 
@@ -136,9 +129,7 @@
             min-width: 15rem;
             max-width: 20rem;
             z-index: 200;
-
             padding: .5rem 1rem;
-
             background-color: #fafafa;
             border: 1px solid var(--borders-color);
             border-radius: 16px;
@@ -227,13 +218,9 @@
 
 #filters-overlay {
     position: fixed;
-    top: var(--navbar-height);
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: var(--navbar-height) 0 0 0;
     z-index: 100;
-
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgb(0 0 0 / 50%);
 
     &:not(.display) {
         display: none;
@@ -244,14 +231,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: .3rem;
-
     margin-bottom: 1rem;
 
     .pill {
         display: flex;
         align-items: center;
         gap: .2rem;
-
         border: 1px solid var(--color-text);
         color: var(--color-text);
         border-radius: 9999px;
@@ -283,7 +268,6 @@
 }
 
 .features-matrix {
-
     ul {
         border: 1px solid var(--borders-color);
         border-radius: 16px;

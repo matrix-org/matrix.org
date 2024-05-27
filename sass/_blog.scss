@@ -64,7 +64,7 @@ article.post {
     }
 
     blockquote {
-        margin: 0 0 10px 0;
+        margin: 0 0 10px;
         padding: 10px 20px;
         border-left: 5px solid #E2E2E2;
     }
@@ -82,14 +82,13 @@ article.post {
     align-self: center;
 
     .callout {
-
         display: grid;
         grid-template-columns: 300px auto;
         color: #fff;
         background-color: #000;
         border-radius: 16px;
 
-        @media (max-width: 767px) {
+        @media (width <= 767px) {
             grid-template-columns: auto;
             grid-template-rows: 10rem auto;
         }
@@ -113,14 +112,14 @@ article.post {
         }
 
         a {
-            color: rgba(34, 109, 227);
+            color: rgb(34 109 227);
         }
 
         .call-to-action {
             display: inline-block;
             font-size: 1.125rem;
             font-weight: 700;
-            background-color: rgba(34, 109, 227);
+            background-color: rgb(34 109 227);
             padding: .5rem 1.5rem;
             border-radius: 9999px;
             color: #fff;
@@ -129,20 +128,20 @@ article.post {
 
         .call-to-action:hover {
             background-color: #fff;
-            color: rgba(34, 109, 227);
+            color: rgb(34 109 227);
         }
     }
 
     aside {
-        @media (max-width: 1023px) {
+        @media (width <= 1023px) {
             display: none;
         }
 
         a {
-            color: rgb(51, 51, 51);
+            color: rgb(51 51 51);
 
             &:hover {
-                color: rgb(0, 152, 212);
+                color: rgb(0 152 212);
             }
         }
 
@@ -165,6 +164,7 @@ article.post {
 .post-content {
     // Use all of the space not taken by the sidebar
     flex: 3;
+
     // Necessary to allow the pre to scroll on overflow
     min-width: 0;
 
