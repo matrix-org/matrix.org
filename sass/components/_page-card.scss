@@ -1,0 +1,45 @@
+/**
+ * These are link cards commonly used on the docs page
+ */
+
+.page_card {
+    background-color: #000;
+    border-radius: 16px;
+    background-image: url("/assets/frontpage/hero_dancing_lines.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 1rem;
+    max-width: 23rem;
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card_content {
+        color: #fff;
+
+        h4 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            padding: 0;
+            margin: 0 0 1rem;
+        }
+
+        p {
+            font-size: .9rem;
+        }
+    }
+
+    .arrow {
+        background-image: url("/assets/down-arrow.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 3rem;
+        height: 3rem;
+        margin: auto 0 auto .5rem;
+        transform: rotate(-90deg);
+        filter: invert(1);
+    }
+}
