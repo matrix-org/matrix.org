@@ -1,6 +1,16 @@
-@import 'normalize';
+@import 'helpers';
 @import 'fonts';
 @import 'base';
+
+// Anything that is a dedicated component
+@import 'components';
+
+// All the page specifics
+@import 'pages';
+
+
+
+// Old structure
 @import 'header';
 @import 'index';
 @import 'blog';
