@@ -4,7 +4,7 @@
         gap: 1rem;
         margin-block-start: 2rem;
 
-        @media (width <= 767px) {
+        @media (width <=767px) {
             flex-direction: column;
         }
     }
@@ -20,7 +20,7 @@
         font-size: 1.125rem;
         font-weight: 600;
 
-        @media (width <= 767px) {
+        @media (width <=767px) {
             justify-content: center;
         }
     }
@@ -30,7 +30,7 @@
     &>div {
         padding-block: 3rem;
 
-        @media (width <= 767px) {
+        @media (width <=767px) {
             padding-block: 2rem;
         }
     }
@@ -132,7 +132,7 @@
                     img {
                         aspect-ratio: 1/1;
                         object-fit: contain;
-                        width: calc((var(--page-max-width) - 2* var(--supporters-padding-inline) - calc(var(--cards-per-row) - 1)* var(--cards-gap)) / var(--cards-per-row) - 2* var(--supporters-card-hpadding) - 2* var(--supporters-card-border-width));
+                        width: calc((var(--page-max-width) - 2 * var(--supporters-padding-inline) - calc(var(--cards-per-row) - 1) * var(--cards-gap)) / var(--cards-per-row) - 2 * var(--supporters-card-hpadding) - 2 * var(--supporters-card-border-width));
                     }
                 }
             }
@@ -147,7 +147,7 @@
             flex-direction: row;
             gap: 3rem;
 
-            @media (width <= 767px) {
+            @media (width <=767px) {
                 flex-direction: column-reverse;
             }
 
@@ -167,7 +167,7 @@
             flex-direction: row;
             gap: 3rem;
 
-            @media (width <= 767px) {
+            @media (width <=767px) {
                 flex-direction: column;
             }
         }
@@ -188,7 +188,7 @@
                 min-width: 0;
             }
 
-            @media (width <= 767px) {
+            @media (width <=767px) {
                 flex-direction: column-reverse;
             }
         }
@@ -213,7 +213,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
 
-            @media (width <= 767px) {
+            @media (width <=767px) {
                 grid-template-columns: 1fr;
             }
 
@@ -248,7 +248,7 @@
         gap: 2rem;
         margin-block: 2rem 3rem;
 
-        @media (width <= 767px) {
+        @media (width <=767px) {
             flex-direction: column;
         }
     }

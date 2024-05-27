@@ -201,7 +201,7 @@ pre table {
         padding-inline: 2rem;
     }
 
-    padding-bottom: calc(var(--navbar-height)/2);
+    padding-bottom: calc(var(--navbar-height) / 2);
     min-height: var(--page-header-height);
     background-color: #000;
     overflow: hidden;
