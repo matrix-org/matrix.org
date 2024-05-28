@@ -45,6 +45,7 @@
         display: flex;
         align-items: center;
 
+        /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
         @media screen and (width >=media.$mobile) {
             display: none;
         }
@@ -53,6 +54,7 @@
     nav {
         display: flex;
 
+        /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
         @media screen and (width <=media.$mobile) {
             position: fixed;
             z-index: 800;
@@ -65,6 +67,7 @@
             overflow-y: auto;
         }
 
+        /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
         @media screen and (width >=media.$mobile) {
             align-items: center;
         }
@@ -73,6 +76,7 @@
             color: #fff;
             font-size: 1.125rem;
 
+            /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
             @media screen and (width <=media.$mobile) {
                 font-size: 1.5rem;
             }
@@ -94,11 +98,13 @@
                 padding-inline: clamp(1em, 3dvw, 2em);
                 margin-inline: .5rem;
 
+                /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
                 @media screen and (width <=media.$mobile) {
                     margin-top: 1.2rem;
                     text-align: center;
                 }
 
+                /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
                 @media screen and (width >=media.$mobile) {
                     &:not(:last-child) {
                         margin-right: 12px;
@@ -111,6 +117,7 @@
             opacity: 0;
             position: absolute;
 
+            /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
             @media screen and (width <=media.$mobile) {
                 &:not(:checked)~.section-submenu-wrap {
                     display: none;
@@ -139,6 +146,8 @@
         }
 
         .submenu-title {
+
+            /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
             @media screen and (width <=media.$mobile) {
                 display: flex;
                 flex-direction: row;
@@ -159,6 +168,7 @@
         }
     }
 
+    /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
     @media screen and (width >=media.$mobile) {
         .section-wrap {
             position: relative;
@@ -187,6 +197,7 @@
         }
     }
 
+    /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
     @media screen and (width <=media.$mobile) {
         .section-submenu {
             padding-left: 1em;
@@ -207,6 +218,7 @@
 #site-header-dropdown-checkbox {
     display: none;
 
+    /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
     @media screen and (width <=media.$mobile) {
         &:checked~.dropdown-button {
             background-color: #000;

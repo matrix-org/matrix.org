@@ -21,6 +21,7 @@
     background-position: bottom right;
     background-repeat: no-repeat;
 
+    /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
     @media (width <=media.$mobile) {
         background-size: 250% 100%;
         background-position-x: -533px;
