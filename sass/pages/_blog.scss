@@ -1,4 +1,6 @@
-article.post {
+@use "../helpers/media";
+
+article .post {
     width: 100%;
     word-break: break-word;
 
@@ -88,7 +90,8 @@ article.post {
         background-color: #000;
         border-radius: 16px;
 
-        @media (width <= 767px) {
+        /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
+        @media (width <=media.$mobile) {
             grid-template-columns: auto;
             grid-template-rows: 10rem auto;
         }
@@ -133,7 +136,9 @@ article.post {
     }
 
     aside {
-        @media (width <= 1023px) {
+
+        /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
+        @media (width <=media.$tablet) {
             display: none;
         }
 
