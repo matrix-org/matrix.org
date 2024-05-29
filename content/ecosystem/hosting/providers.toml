@@ -62,17 +62,20 @@ specialises in customised Matrix development for communities and organisations.
 name = "etke.cc"
 image = "etke.cc.png"
 website = "https://etke.cc"
-operating_since = "TBC"
+operating_since = "2021"
 description = """
-- Setup of hosted Homeserver on any hosting by your choice
-- Setup of hosted integrations (full list available on website)
-- Setup of additional services (wireguard, languagetool, miniflux, etc.)
-- Ongoing maintenance of host & Matrix components
-- Email services for your domain
+- Hosted Homeservers
+- Cloud or on-premises (BYOS)
+- Fully [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) (based on [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy)). See [our code](https://gitlab.com/etke.cc)
+- [Per-complexity](https://etke.cc/news/lnyorh4ggeh9xadrob_rtuuqu_jj-s-ojfvvfzlmxpm/#pricing-model-changes) pricing (not per-user)
+- 15+ [Matrix bridges & bots](https://etke.cc/order/#matrix-bridges)
+- [Matrix addons](https://etke.cc/order/#matrix-addons) (S3, SSO, workers, etc.)
+- 15+ [Non-Matrix addons](https://etke.cc/order/#non-matrix-addons) (email, VPN, etc.)
+- Fully-managed, but still yours (root SSH)
 
-That service will create your Matrix Homeserver on your domain and server (doesn't matter if it's cloud provider or on an old laptop in the corner of your room), (optional) maintains it (server's system updates, cleanup, security adjustments, tuning, etc.; Matrix Homeserver updates & maintenance) and (optional) provide full-featured email service for your domain.
+etke.cc is the only fully FOSS-based Matrix Hosting service. It's operated by a [team](https://etke.cc/about/) of active members of the self-hosting community. Based on [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy), but hassle-free (SaaS) and contains improvements, extra addons and [support](https://etke.cc/services/support/). Get hosted on rented servers or use your own infra (on any provider) in a non-vendor-lock-in way.
 
-[Matrix Space](https://matrix.to/#/#service:etke.cc)  | [Announcements on Matrix](https://matrix.to/#/#announcements:etke.cc)
+[Matrix Space](https://matrix.to/#/#service:etke.cc) | [Announcements on Matrix](https://matrix.to/#/#news:etke.cc)
 """
 
 [[providers]]
