@@ -10,7 +10,7 @@ matrix_room = "#ement.el:matrix.org"
 licence = "GPL-3.0-or-later"
 language = "Emacs Lisp"
 latest_release = "2024-04-16"
-featured = true
+featured = false
 [extra.features]
 e2ee = false
 spaces = true
