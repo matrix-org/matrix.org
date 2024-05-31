@@ -111,3 +111,19 @@ description = """
 
 We are a French collective specialized in hosting FOSS software and aimed at building a digital common, with a particular emphasis on collaboration.
 """
+
+[[providers]]
+name = "Syncloud"
+image = "syncloud.png"
+website = "https://syncloud.org"
+operating_since = "2015"
+description = """
+- Personal Self-Hosted Homeservers
+- Easy to setup device
+- Domain name
+- Automatic HTTPS
+- More applications like Nextcloud, Bitwarden and Mastodon
+- Support
+
+Syncloud is a for-profit open source company with the goal helping non-tech users maintaining their privacy by making self-hosting of the mainstream open-source apps easy
+"""
