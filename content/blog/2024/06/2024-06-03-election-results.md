@@ -1,5 +1,5 @@
 +++
-date = "2024-06-03"
+date = "2024-06-03T19:00:00Z"
 title = "Introducing our first elected Governing Board"
 
 [taxonomies]
