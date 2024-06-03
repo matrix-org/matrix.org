@@ -13,8 +13,9 @@ We encourage you to read our [membership page](/membership/) and announcements:
 * 2023-12 [The Governing Board, our next big step in open governance](/blog/2023/12/electing-our-first-governing-board)
 * 2024-04 [Announcing the 2024 Governing Board elections](/blog/2024/04/election-announcement)
 * 2024-05 [Voting has begun in the Governing Board elections](/blog/2024/05/voting-begins)
+* 2024-06 [Introducing our first elected Governing Board](/blog/2024/06/election-results)
 
-Read on for our [election schedule](#schedule), all of [nominees](#nominees), and a brief overview of the Governing Board.
+Read on for our [election schedule](#schedule), our current [elected representatives](#elected-representatives), all of [nominees](#nominees), and a brief overview of the Governing Board.
 
 ## What is the Governing Board
 
@@ -68,7 +69,7 @@ The campaign period is an opportunity for candidates to share more about themsel
 
 ### Voting (May 18)
 
-[Voting has begun](/blog/2024/05/voting-begins) and runs till May 31. All eligible voters should have received an email from [OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections.
+[Voting is complete](/blog/2024/05/voting-begins) and ran till May 31. All eligible voters should have received an email from [OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections.
 
 All members of each constituency group are entitled to vote on the candidates within that constituency group. If you believe you are eligible to participate but have not heard from us, first check the inbox and spam folders of the email address you have on file with us (such as through Donorbox or Patreon). [Please email us](mailto:elections@foundation.matrix.org) if you have any questions.
 
@@ -78,7 +79,7 @@ We will hold an election for every constituency even if a given constituency has
 
 ### Results (June 3)
 
-All of the winners will be announced on June 3rd, but since the elections conclude on May 31st, you may get an email with the results of the election you participated in before June 3rd.
+[All of the winners were announced](/blog/2024/06/election-results) on June 3rd.
 
 All elected representatives will be added to a private mailing list and Matrix room so that they can introduce themselves and communicate in between meetings. I will be reaching out to every elected representative to meet one-on-one, get acquainted, and answer questions before we convene for our first Governing Board meeting. Given the size of the board and the international nature of our ecosystem, those one-on-one meetings will likely happen over the course of a couple months.
 
@@ -89,6 +90,32 @@ You are likely to receive a packet of materials before each meeting which you wi
 While the Governing Board is an advisory board, members are encouraged to play a role in helping to carry out the activities that support the staff in delivering on the Foundation’s collective remit, such as coalescing priorities to share with the Spec Core Team and connecting with contributors and funders to implement proposals.
 
 We intend to charter committees – such as for finance, which would review our annual budget in detail – who will meet in between Governing Board meetings and present their assessments and recommendations to the Governing Board. These committees are where the bulk of the activity will take place since the board, which may have up to 24 members, is quite large. 
+
+## Elected representatives
+
+These are the candidates who are now elected representatives:
+
+- Andy Balaam (he/him), Individual Member
+- Greg Sutcliffe (he/him), Individual Member
+- J.B. Crawford (they/them), Individual Member
+- Sumner Evans, Individual Member
+- Bram van den Heuvel (he/they), Elm SDK, Ecosystem Member
+- Kim Brose (he/him), Matrix Community Events, Ecosystem Member
+- Nicolas Werner (he/him), Nheko-Reborn, Ecosystem Member
+- Cleo Menenez Jr. (he/him), GNOME Foundation, Associate Member
+- Tobias Fella (he/him), KDE e.V., Associate Member
+- Neil Johnson (he/him), Element, Platinum Member
+- Brad Murray (he/him), Beeper, Gold Member
+- Kevin Boos (he/him), Futurewei Technologies, Gold Member
+- Jan Kohnert (he/him), Gematik GmbH, Silver Member
+- Thor Arne Johansen, Verji Tech AS, Silver Member
+- Amandine Le Pape (she/her), Guardian
+- Matthew Hodgson (he/him), Guardian
+- Ross Schulman, Guardian
+- Richard van der Hoff (he/him), Spec Core Team
+- Travis Ralston (he/him), Spec Core Team
+
+And these elected representatives are joined by the Foundation's Managing Director, Josh Simmons (he/they), who represents the Foundation in an ex officio capacity.
 
 ## Nominees
 
