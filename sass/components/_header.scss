@@ -1,4 +1,5 @@
 @use "../helpers/media";
+@use "../helpers/colors";
 
 .site-header {
     position: fixed;
@@ -14,8 +15,8 @@
     align-items: center;
     margin-bottom: 0;
     font-size: 1.125rem;
-    color: #fff;
-    background-color: #000;
+    color: colors.$white;
+    background-color: colors.$black;
 
     @media screen and (width >=768px) {
         padding-right: 10px;
@@ -84,17 +85,17 @@
             padding: var(--header-vertical-padding) var(--header-padding);
 
             &:hover {
-                color: #0082f3;
+                color: colors.$linkHoverBlue;
             }
 
             &.current {
-                color: #0082f3;
+                color: colors.$linkHoverBlue;
             }
 
             &.primary {
                 border-radius: 60px;
                 background-color: #fff;
-                color: #000 !important;
+                color: colors.$linkBlue !important;
                 padding-inline: clamp(1em, 3dvw, 2em);
                 margin-inline: .5rem;
 
@@ -156,7 +157,7 @@
             }
 
             label:hover {
-                color: #0082f3;
+                color: colors.$linkHoverBlue;
             }
 
             margin: auto 0;
@@ -187,12 +188,12 @@
         }
 
         .section-submenu {
-            background: #fff;
-            border: 1px solid #f4f4f4;
+            background: colors.$white;
+            border: 1px solid colors.$submenuBorderColor;
             border-radius: 6px;
 
             a {
-                color: #000;
+                color: colors.$black;
             }
         }
     }
@@ -221,7 +222,7 @@
     /* stylelint-disable-next-line media-feature-name-no-unknown -- namespaced imports make stylelint rule unhappy */
     @media screen and (width <=media.$mobile) {
         &:checked~.dropdown-button {
-            background-color: #000;
+            background-color: colors.$black;
         }
 
         &:checked~.page-overlay {
