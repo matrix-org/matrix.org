@@ -1,35 +1,37 @@
+@use "../helpers/colors";
+
 .call-to-action {
-    background-color: #000;
-    border: 2px solid #000;
-    color: #fff;
+    background-color: colors.$black;
+    border: 2px solid colors.$black;
+    color: colors.$white;
     font-size: 1.125rem;
     font-weight: 600;
     border-radius: 1000px;
     padding: .6em 2em;
 
     &.inverted {
-        border: 2px solid #fff;
-        background-color: #fff;
-        color: #000;
+        border: 2px solid colors.$white;
+        background-color: colors.$white;
+        color: colors.$black;
 
         &.secondary {
-            background-color: #000;
-            color: #fff;
+            background-color: colors.$black;
+            color: colors.$white;
 
             &:hover {
-                background-color: #fff;
-                color: #000
+                background-color: colors.$white;
+                color: colors.$black;
             }
         }
     }
 
     &.secondary {
-        background-color: #fff;
-        color: #000;
+        background-color: colors.$white;
+        color: colors.$black;
 
         &:hover {
-            background-color: #000;
-            color: #fff;
+            background-color: colors.$black;
+            color: colors.$white;
         }
     }
 }
