@@ -1,3 +1,5 @@
+@use "../helpers/colors";
+
 /**
  * This is anything relevant to codeblocks
  */
@@ -34,8 +36,8 @@ pre table {
 }
 
 :not(pre)>code {
-    color: #f54029;
-    border: 1px solid #f54029;
+    color: colors.$codeblock;
+    border: 1px solid colors.$codeblock;
     border-radius: 4px;
     padding: 0 .4rem;
 }
