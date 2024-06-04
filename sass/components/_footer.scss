@@ -1,9 +1,10 @@
 @use "../helpers/media";
+@use "../helpers/colors";
 
 .site-footer {
     position: relative;
     z-index: 1;
-    background-color: #000;
+    background-color: colors.$black;
     width: 100%;
     display: flex;
     align-items: center;
@@ -11,7 +12,7 @@
     padding: 30px 40px;
 
     a {
-        color: #999;
+        color: colors.$footer-grey;
         text-decoration: none;
         margin-inline: .8rem;
     }
@@ -53,11 +54,11 @@
     }
 
     a:hover {
-        color: #fff;
+        color: colors.$white;
     }
 
     p {
         margin-top: 20px;
-        color: #999;
+        color: colors.$footer-grey;
     }
 }
