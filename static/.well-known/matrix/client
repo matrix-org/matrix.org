@@ -7,5 +7,11 @@
     },
     "org.matrix.msc3575.proxy": {
         "url": "https://slidingsync.lab.matrix.org"
-    }
+    },
+    "org.matrix.rtc_foci": [
+        {
+            "type":"livekit",
+            "livekit_service_url":"https://livekit-jwt.call.element.io"
+        }
+    ]
 }
