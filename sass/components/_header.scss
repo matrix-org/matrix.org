@@ -85,17 +85,17 @@
             padding: var(--header-vertical-padding) var(--header-padding);
 
             &:hover {
-                color: colors.$linkHoverBlue;
+                color: colors.$link-hover-blue;
             }
 
             &.current {
-                color: colors.$linkHoverBlue;
+                color: colors.$link-hover-blue;
             }
 
             &.primary {
                 border-radius: 60px;
                 background-color: #fff;
-                color: colors.$linkBlue !important;
+                color: colors.$link-blue !important;
                 padding-inline: clamp(1em, 3dvw, 2em);
                 margin-inline: .5rem;
 
@@ -157,7 +157,7 @@
             }
 
             label:hover {
-                color: colors.$linkHoverBlue;
+                color: colors.$link-hover-blue;
             }
 
             margin: auto 0;
@@ -189,7 +189,7 @@
 
         .section-submenu {
             background: colors.$white;
-            border: 1px solid colors.$submenuBorderColor;
+            border: 1px solid colors.$submenu-border-color;
             border-radius: 6px;
 
             a {
