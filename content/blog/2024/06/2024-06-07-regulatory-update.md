@@ -41,4 +41,4 @@ Things have definitely progressed in the portability space, and chat export is n
 
 For the next post in this series we will continue discussing the EU policy landscape, although from a different perspective. We will be going through the digital services package (which includes the DSA and DMA) and what does it all mean for Matrix now that we have reached implementation stage.
 
-As always, we remain open to your feedback and thoughts. If there is anything you would like to hear more about or have a suggestion for a future blog in this series please feel free to reach out to [dpo@matrix.org](mailto:dpo@matrix.org) via email or Matrix DM to @gdpr:matrix.org. 
+As always, we remain open to your feedback and thoughts. If there is anything you would like to hear more about or have a suggestion for a future blog in this series please feel free to reach out to [dpo@matrix.org](mailto:dpo@matrix.org) via email or Matrix DM to [@gdpr:matrix.org](https://matrix.to/#/@gdpr:matrix.org). 
