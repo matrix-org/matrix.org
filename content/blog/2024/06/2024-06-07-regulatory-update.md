@@ -11,9 +11,9 @@ If you have been following the matrix.org blog for some time, you will know that
 
 Each blog post in the series will focus on a given theme or piece of law, as well as its relevant jurisdiction. We will start this series by taking a deep dive into EU regulation, starting with the General Data Protection Regulation (GDPR). Future blog posts in the series will cover the digital services package (DMA and DSA), the incoming CRA and the highly controversial CSAM regulation. These will be followed by a series dedicated to the UK, particularly UK applications of European law such as the GDPR and ePrivacy directive, as well as the Online Safety Act and the IPA amendment bill. Finally, we will conclude the series by looking across the pond and diving into the Cloud Act, as well as KOSA and other existing proposals. 
 
-## EU
+<!-- more -->
 
-### The big one
+## The big one
 
 Over the last decade the most impactful - in terms of grassroots led change, not necessarily enforcement - piece of legislation was probably the GDPR. Although its initial enforcement date (May 2018) was a couple of years before I joined Element and the Matrix.org Foundation, I know that preparing for GDPR was a huge effort that led to a lot of deep thinking about the ins and outs of Matrix. 
 
