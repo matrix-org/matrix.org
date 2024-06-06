@@ -597,6 +597,18 @@ A .NET 8 library for interacting with Matrix.
 """
 
 [[sdks]]
+name = "libcmatrix"
+maintainer = ""
+maturity = "Beta"
+language = "C"
+licence = "LGPL-2.1-only"
+repository = "https://source.puri.sm/Librem5/libcmatrix"
+purpose = ["client"]
+featured_in = ["client"]
+description = """
+A matrix client client library written in GObjectified C
+
+[[sdks]]
 name = "mxbt"
 maintainer = "kulebyaka"
 maturity = "Beta"
@@ -620,4 +632,3 @@ purpose = ["client"]
 featured_in = ["client"]
 description = """
 A more consistent alternative to the matrix-js-sdk written in Elm.
-"""
