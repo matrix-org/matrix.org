@@ -99,7 +99,7 @@
                 margin-inline: .5rem;
 
                 @media screen and (max-width: 767px) {
-                    margin-top: 1.2rem;
+                    margin-block: 1.2rem;
                     text-align: center;
                 }
 
@@ -179,8 +179,7 @@
 
         .section-submenu-wrap {
             position: absolute;
-            top: 60px;
-            padding-top: 4px;
+            top: 47.5px;
         }
 
         .section-submenu {

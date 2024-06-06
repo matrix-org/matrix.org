@@ -2,6 +2,7 @@
 name = "Josh Simmons"
 title = "Managing Director"
 picture = "josh.jpg"
+email = "josh@foundation.matrix.org"
 website = "https://joshsimmons.com/"
 linkedin = "https://www.linkedin.com/in/joshsimmons/"
 fediverse = "https://josh.tel/@josh"

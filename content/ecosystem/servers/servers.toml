@@ -71,6 +71,7 @@ author = "Swarmcom"
 language = "Java"
 maturity = "Obsolete"
 licence = "Apache-2.0"
+repository = "https://github.com/swarmcom/jSynapse"
 
 [[servers]]
 name = "Maelstrom"
@@ -127,3 +128,13 @@ language = "C"
 licence = "MIT"
 repository = "https://git.telodendria.io/Telodendria/Telodendria"
 room = "#telodendria-general:bancino.net"
+
+[[servers]]
+name = "conduwuit"
+description = "conduwuit is a well-maintained, hard-fork of Conduit with tons of new features, many bug fixes, huge performance improvements, quality of life enhancements, moderation tools, and much more!"
+author = "strawberry"
+maturity = "Beta"
+language = "Rust"
+licence = "Apache-2.0"
+repository = "https://github.com/girlbossceo/conduwuit"
+room = "#conduwuit:puppygock.gay"

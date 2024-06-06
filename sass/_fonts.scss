@@ -38,11 +38,12 @@ h1 {
 
 h2 {
     font-size: 1.953rem;
-    margin-block: 1.5rem .5rem;
+    margin-block: 2rem .5rem;
 }
 
 h3 {
     font-size: 1.563rem;
+    margin-block: 1.5rem .5rem;
 }
 
 h4 {
@@ -54,5 +55,5 @@ h5 {
 }
 
 h2+h3 {
-    margin-block-start: .5rem;
+    margin-block-start: 1rem;
 }

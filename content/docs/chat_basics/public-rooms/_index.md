@@ -16,7 +16,7 @@ safely.
 When you want to join larger public conversations, you have three major options
 at hand:
 
-1. Joining a specific room from its address / alias or from a matrix.to link
+1. Joining a specific room from its address / alias or from a `matrix.to` link
 2. Browsing a public directory to find rooms of interest
 3. Joining a room that was listed in a Space
 

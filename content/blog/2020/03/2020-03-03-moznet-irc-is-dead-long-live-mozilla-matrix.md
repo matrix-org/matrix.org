@@ -40,7 +40,7 @@ The immediate priorities include:
  * Better educating users to connect to the mozilla.modular.im if using a random app.
 
 Finally, it's worth noting that the [matrix-ircd](https://github.com/matrix-org/matrix-ircd) project is
-seeing some commits again, many thanks to jplatte from the [Ruma](https://ruma.io) project - so if you are
+seeing some commits again, many thanks to jplatte from the [Ruma](https://ruma.dev/) project - so if you are
 currently despairing the demise of moznet, never fear: you may yet be able to connect to the Mozilla matrix
 server [via IRC](https://xkcd.com/1782/) (authing via Mozilla IAM, of course) and pretend that none of this newfangled Matrix stuff
 exists :D

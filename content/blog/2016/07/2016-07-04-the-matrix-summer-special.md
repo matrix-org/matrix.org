@@ -48,9 +48,9 @@ We're in the middle of the second half of GSoC right now, with our GSoC students
 
 ### Ruma
 
-Lots of exciting stuff has been happening recently over at <a href="https://ruma.io">Ruma.io</a> - an independent Matrix homeserver implementation written in Rust.  Over the last few weeks Jimmy and friends have got into the real meat of implementing e<a href="https://github.com/ruma/ruma/commit/8a2fe269196dfd5b629c6e301e8d78e19ae6d279">vents</a> and the core of the Matrix CS API, and as of the time of writing they're the <a href="https://news.ycombinator.com/item?id=12028475">topmost link</a> on HackerNews!  There's a lot of work involved in writing a homeserver, but Ruma is looking incredibly promising and the feedback from their team has been incredibly helpful in keeping us honest on the Matrix spec and ensuring that it's fit for purpose for 3rd party server implementers.
+Lots of exciting stuff has been happening recently over at <a href="https://ruma.dev/">Ruma.io</a> - an independent Matrix homeserver implementation written in Rust.  Over the last few weeks Jimmy and friends have got into the real meat of implementing e<a href="https://github.com/ruma/ruma/commit/8a2fe269196dfd5b629c6e301e8d78e19ae6d279">vents</a> and the core of the Matrix CS API, and as of the time of writing they're the <a href="https://news.ycombinator.com/item?id=12028475">topmost link</a> on HackerNews!  There's a lot of work involved in writing a homeserver, but Ruma is looking incredibly promising and the feedback from their team has been incredibly helpful in keeping us honest on the Matrix spec and ensuring that it's fit for purpose for 3rd party server implementers.
 
-Also, Ruma just released some <a href="https://www.ruma.io/docs/matrix">truly excellent documentation</a> as a high-level introduction to Matrix (thanks to Leah and Jimmy) - much better than anything we have on the official Matrix.org site.  Go check it out if you haven't already!
+Also, Ruma just released some <a href="https://ruma.dev/docs/matrix">truly excellent documentation</a> as a high-level introduction to Matrix (thanks to Leah and Jimmy) - much better than anything we have on the official Matrix.org site.  Go check it out if you haven't already!
 
 ### End to End Encryption
 
@@ -118,7 +118,7 @@ I'm sure there's a lot of stuff missing from the quick summary above - suffice i
  	<li>Improving VoIP, especially for conferencing, especially on Mobile</li>
  	<li>Threading</li>
  	<li>Editable messages</li>
- 	<li>Synapse scaling and stability - this is massively improved, but there's still work to be done.  Meanwhile projects like <a href="https://ruma.io">Ruma</a> give us hope for light at the end of the Synapse tunnel!</li>
+ 	<li>Synapse scaling and stability - this is massively improved, but there's still work to be done.  Meanwhile projects like <a href="https://ruma.dev/">Ruma</a> give us hope for light at the end of the Synapse tunnel!</li>
  	<li>Spec refinements - there are still a <a href="/jira/browse/SPEC">lot of open spec bugs</a> which we need to resolve so we can declare the spec (and thus Matrix!) out of beta.</li>
  	<li>More clients - especially desktop ones; helping out with <a href="https://github.com/Fxrh/Quaternion">Quaternion</a>, <a href="https://github.com/davidar/tensor">Tensor</a>, <a href="https://pto.im">PTO</a>, etc.</li>
 </ul>
