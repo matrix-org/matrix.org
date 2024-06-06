@@ -607,6 +607,7 @@ purpose = ["client"]
 featured_in = ["client"]
 description = """
 A matrix client client library written in GObjectified C
+"""
 
 [[sdks]]
 name = "mxbt"
@@ -632,3 +633,4 @@ purpose = ["client"]
 featured_in = ["client"]
 description = """
 A more consistent alternative to the matrix-js-sdk written in Elm.
+"""
