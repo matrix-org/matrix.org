@@ -1,4 +1,4 @@
 <figure>
     <img src="{{ img }}" alt="{{ caption }}" />
-    <figcaption>{{ caption }}</figcaption>
+    <figcaption>{{ caption | markdown | safe }}</figcaption>
 </figure>
