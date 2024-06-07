@@ -1,6 +1,6 @@
 +++
 date = "2024-06-06T07:00:00Z"
-title = "Policy and regulatory update 2024: the GDPR"
+title = "Policy and regulation update 2024: Matrix and the GDPR"
 
 [taxonomies]
 author = ["Denise Almeida"]
@@ -17,7 +17,7 @@ Each blog post in the series will focus on a given theme or piece of law, as wel
 
 Over the last decade the most impactful - in terms of grassroots led change, not necessarily enforcement - piece of legislation was probably the GDPR. Although its initial enforcement date (May 2018) was a couple of years before I joined Element and the Matrix.org Foundation, I know that preparing for GDPR was a huge effort that led to a lot of deep thinking about the ins and outs of Matrix. 
 
-These have been certainly years of learning, iterating and evolving our approach to this fascinating piece of law, and [just like 4 years ago](https://www.matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix), we keep receiving questions and feedback about how the GDPR applies to the Matrix protocol and how server administrators can remain compliant.
+These have been certainly years of learning, iterating and evolving our approach to this fascinating piece of law, and [just like 6 years ago](https://www.matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix), we keep receiving questions and feedback about how the GDPR applies to the Matrix protocol and how server administrators can remain compliant.
 
 We maintain the view that the GDPR was not built for a decentralised digital world, after all we are (for now!) the exception, not the rule. This does not mean, however, that we don’t make every effort possible to comply with the spirit and the letter of the law. Most organisations using the Matrix protocol will be running strictly closed federations or single servers in closed federation, which they fully control (or appoint others to support them with that control). Compliance is a lot more straightforward in this sense, so for now we will focus on those using Matrix to interact with open federation.
 
@@ -41,4 +41,4 @@ Things have definitely progressed in the portability space, and chat export is n
 
 For the next post in this series we will continue discussing the EU policy landscape, although from a different perspective. We will be going through the digital services package (which includes the DSA and DMA) and what does it all mean for Matrix now that we have reached implementation stage.
 
-As always, we remain open to your feedback and thoughts. If there is anything you would like to hear more about or have a suggestion for a future blog in this series please feel free to reach out to [dpo@matrix.org](mailto:dpo@matrix.org) via email or Matrix DM to [@gdpr:matrix.org](https://matrix.to/#/@gdpr:matrix.org). 
+As always, we remain open to your feedback and thoughts. If there is anything you would like to hear more about or have a suggestion for a future blog in this series please feel free to reach out to [dpo@matrix.org](mailto:dpo@matrix.org) via email, DM to @gpdr:matrix.org or chat to us in the [Office of the Matrix.org Foundation room](https://matrix.to/#/#foundation-office:matrix.org). 
