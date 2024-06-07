@@ -1,6 +1,6 @@
 +++
 date = "2024-06-06T07:00:00Z"
-title = "Matrix and the GDPR, 2024 edition"
+title = "Policy and regulatory update 2024: the GDPR"
 
 [taxonomies]
 author = ["Denise Almeida"]
