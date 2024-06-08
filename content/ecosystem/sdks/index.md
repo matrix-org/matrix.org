@@ -16,9 +16,9 @@ the website is probably not for you.
 There are two fundamental types of SDKs: clients and appservices. This
 distinction is quite academical, and we went for a more pragmatic approach. You
 will find below SDKs by type of product you may want to create (namely: clients,
-bots, bridges). Don't be surprised if a same SDK appears in several sections!
+bots, bridges). Don't be surprised if the same SDK appears in several sections!
 
 If you are a developer and are not sure what the difference between clients and
-appservices, please head to [the developers documentation](/docs/matrix-concepts/).
+appservices is, please head to [the developers documentation](/docs/matrix-concepts/).
 
 {{ sdk_deck() }}
