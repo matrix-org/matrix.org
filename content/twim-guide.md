@@ -5,9 +5,10 @@ title = "Writing a good \"This Week in Matrix\" entry"
 This Week in Matrix (TWIM) is a weeekly digest on the blog in which
 anyone can post small concise updates about their Matrix projects, events
 and happenings.
-Those updates are collected in a digest, published every Friday on
-the [matrix.org blog](/blog/twim). It aims to allow the community to show off their
-progress in the Matrix ecosystem.
+Those updates are collected through the Matrix room
+[#thisweekinmatrix:matrix.org](https://matrix.to/#/%23thisweekinmatrix%3Amatrix.org)
+and published every Friday on the [matrix.org blog](/blog/twim).
+It aims to allow the community to show off their work in the Matrix ecosystem.
 
 ## Prerequisites
 
