@@ -41,7 +41,7 @@ to help the editors to lower their workload when publishing the post.
 ### Markdown
 
 The bot expects markdown as part of the plaintext event body. Please use a client which
-does include the markdown in the plaintext. While we currently accept other formats as well
+sends the markdown formatted text in the "plaintext" body. While we currently accept other formats as well
 it will add manual work for the post by a human.
 
 ### Do not treat it as a Changelog
