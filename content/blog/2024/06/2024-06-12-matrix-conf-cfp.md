@@ -25,4 +25,4 @@ We are doing our best to make the event as inclusive as possible. The ticket pri
 
 We will post more about booths, and sponsorship packages both on our blog and on socials soon. We need a little time to put the final touches on the conference website and sponsor brochure!
 
-In the meantime, you can submit your talk, workshop and sprint proposals on [cfp.matrix.org](cfp.matrix.org). We’re interested in short (20min + 10min Q&A) or long (45min + 10min Q&A) talks on all the topics related to Matrix. Please submit your proposals before Wednesday 26 June 2024 09:59 AM [AOE](https://en.wikipedia.org/wiki/Anywhere_on_Earth), 23:59 CEST (Berlin time).
+In the meantime, you can submit your talk, workshop and sprint proposals on [cfp.matrix.org](https://cfp.matrix.org). We’re interested in short (20min + 10min Q&A) or long (45min + 10min Q&A) talks on all the topics related to Matrix. Please submit your proposals before Wednesday 26 June 2024 09:59 AM [AOE](https://en.wikipedia.org/wiki/Anywhere_on_Earth), 23:59 CEST (Berlin time).
