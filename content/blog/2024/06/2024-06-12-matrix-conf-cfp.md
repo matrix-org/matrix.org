@@ -5,6 +5,9 @@ title = "Call for Proposals for the Matrix Conference"
 [taxonomies]
 author = ["Thib"]
 category = ["Conference"]
+
+[extra]
+image = "https://matrix.org/img/matrix-conference-opengraph.png"
 +++
 
 The Matrix.org Foundation is happy to launch the first Matrix Conference, this September 19th to 22nd in Berlin, Germany, at [Mitosis Labs](https://mitosis.co/en/)!
