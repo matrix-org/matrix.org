@@ -14,7 +14,7 @@ image = "https://matrix.org/img/matrix-conference-opengraph.png"
 The Matrix.org Foundation is happy to [launch the first Matrix Conference](https://2024.matrix.org), this September 19th to 22nd in Berlin, Germany, at [Mitosis Labs](https://mitosis.co/en/)! Click on the picture bellow to learn more!
 
 <a style="display: block; max-width: 600px; margin-inline: auto;" href="https://2024.matrix.org">
- <img src="/img/matrix-conference-opengraph.png" alt="An picture with an abstract backgroudn made of lines, and the matrix conference logo that looks like the regular matrix logo.">
+ <img src="/img/matrix-conference-opengraph.png" alt="An picture with an abstract background made of lines, and the matrix conference logo that looks like the regular matrix logo.">
 </a>
 
 Building on the success of the Matrix Community Summit, the Foundation is joining forces with the Summit team to open the conference to wider audiences. This is the event that policy makers, public and private sector leaders, open source enthusiasts, and technologists attend to share knowledge and learn what’s next in the decentralised and secure communications sector.
