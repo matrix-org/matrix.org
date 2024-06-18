@@ -1,6 +1,7 @@
 +++
 date = "2024-06-12T13:15:00Z"
-title = "Call for Proposals for the Matrix Conference"
+title = "Announcing The Matrix Conference"
+updated = "2024-06-18T15:00:00Z"
 
 [taxonomies]
 author = ["Thib"]
@@ -10,7 +11,11 @@ category = ["Conference"]
 image = "https://matrix.org/img/matrix-conference-opengraph.png"
 +++
 
-The Matrix.org Foundation is happy to launch the first Matrix Conference, this September 19th to 22nd in Berlin, Germany, at [Mitosis Labs](https://mitosis.co/en/)!
+The Matrix.org Foundation is happy to [launch the first Matrix Conference](https://2024.matrix.org), this September 19th to 22nd in Berlin, Germany, at [Mitosis Labs](https://mitosis.co/en/)! Click on the picture bellow to learn more!
+
+<a style="display: block; max-width: 600px; margin-inline: auto;" href="https://2024.matrix.org">
+ <img src="/img/matrix-conference-opengraph.png" alt="An picture with an abstract backgroudn made of lines, and the matrix conference logo that looks like the regular matrix logo.">
+</a>
 
 Building on the success of the Matrix Community Summit, the Foundation is joining forces with the Summit team to open the conference to wider audiences. This is the event that policy makers, public and private sector leaders, open source enthusiasts, and technologists attend to share knowledge and learn what’s next in the decentralised and secure communications sector.
 
@@ -28,6 +33,6 @@ We are doing our best to make the event as inclusive as possible. The ticket pri
 
 Further, we are taking care to make sure the event venue is accessible, dietary requirements are satisfied, and to implement a robust Health & Safety policy alongside our Code of Conduct.
 
-We will post more about booths, and sponsorship packages both on our blog and on socials soon. We need a little time to put the final touches on the conference website and sponsor brochure!
+For more information about the venue, health & safety policy, sponsorship packages and more, please visit [The Matrix Conference Website](https://2024.matrix.org).
 
 In the meantime, you can submit your talk, workshop and sprint proposals on [cfp.matrix.org](https://cfp.matrix.org). We’re interested in short (20min + 10min Q&A) or long (45min + 10min Q&A) talks on all the topics related to Matrix. Please submit your proposals before Wednesday 26 June 2024 09:59 AM [AOE](https://en.wikipedia.org/wiki/Anywhere_on_Earth), 23:59 CEST (Berlin time).
