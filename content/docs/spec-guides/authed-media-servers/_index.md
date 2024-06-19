@@ -61,7 +61,7 @@ Location: https://cdn.example.org/ab/c1/2345.txt
 --gc0p4Jq0M2Yt08jU534c0p
 ```
 
-Note that the second example uses a Location header to point to the file instead.
+Note that the second example uses a `Location` header to point to the file instead.
 Servers will need to make a regular GET request to the provided URL to fetch the
 media - `Content-Type` and `Content-Disposition` headers will be present on that
 URL instead of in the headers on the part.
