@@ -22,8 +22,8 @@ With Matrix 1.11 (via [MSC3916]), there are new media download endpoints to repl
 * [`GET /_matrix/federation/v1/media/download/{mediaId}`]
 * [`GET /_matrix/federation/v1/media/thumbnail/{mediaId}`]
 
-Note that the media [`/upload[/{serverName}/{mediaId}]`] and [`/create`] endpoints
-are not yet moved over to this new namespace. A future spec release will do that.
+Note that the media [`/upload`] and [`/create`] endpoints are not yet moved over
+to this new namespace. A future spec release will do that.
 
 The Client-Server API endpoints should be largely the same as their deprecated
 counterparts with a few minor parameter changes. The Federation API endpoints are
@@ -86,6 +86,6 @@ non-existent.
 [`GET /_matrix/client/v1/media/config`]: https://spec.matrix.org/unstable/client-server-api/#get_matrixclientv1mediaconfig
 [`GET /_matrix/client/v1/media/preview_url`]: https://spec.matrix.org/unstable/client-server-api/#get_matrixclientv1mediapreview_url
 [`/create`]: https://spec.matrix.org/unstable/client-server-api/#post_matrixmediav1create
-[`/upload[/{serverName}/{mediaId}]`]: https://spec.matrix.org/unstable/client-server-api/#post_matrixmediav3upload
+[`/upload`]: https://spec.matrix.org/unstable/client-server-api/#post_matrixmediav3upload
 [`GET /_matrix/federation/v1/media/download/{mediaId}`]: https://spec.matrix.org/unstable/server-server-api/#get_matrixfederationv1mediadownloadmediaid
 [`GET /_matrix/federation/v1/media/thumbnail/{mediaId}`]: https://spec.matrix.org/unstable/server-server-api/#get_matrixfederationv1mediathumbnailmediaid
