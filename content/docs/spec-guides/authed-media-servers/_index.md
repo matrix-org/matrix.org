@@ -80,12 +80,12 @@ non-existent.
 <!-- Link tree -->
 [MSC3911]: https://github.com/matrix-org/matrix-spec-proposals/pull/3911
 [MSC3916]: https://github.com/matrix-org/matrix-spec-proposals/pull/3916
-[`GET /_matrix/client/v1/media/download/{serverName}/{mediaId}`]: https://spec.matrix.org/unstable/client-server-api/#get_matrixclientv1mediadownloadservernamemediaid
-[`GET /_matrix/client/v1/media/download/{serverName}/{mediaId}/{fileName}`]: https://spec.matrix.org/unstable/client-server-api/#get_matrixclientv1mediadownloadservernamemediaidfilename
-[`GET /_matrix/client/v1/media/thumbnail/{serverName}/{mediaId}`]: https://spec.matrix.org/unstable/client-server-api/#get_matrixclientv1mediathumbnailservernamemediaid
-[`GET /_matrix/client/v1/media/config`]: https://spec.matrix.org/unstable/client-server-api/#get_matrixclientv1mediaconfig
-[`GET /_matrix/client/v1/media/preview_url`]: https://spec.matrix.org/unstable/client-server-api/#get_matrixclientv1mediapreview_url
-[`/create`]: https://spec.matrix.org/unstable/client-server-api/#post_matrixmediav1create
-[`/upload`]: https://spec.matrix.org/unstable/client-server-api/#post_matrixmediav3upload
-[`GET /_matrix/federation/v1/media/download/{mediaId}`]: https://spec.matrix.org/unstable/server-server-api/#get_matrixfederationv1mediadownloadmediaid
-[`GET /_matrix/federation/v1/media/thumbnail/{mediaId}`]: https://spec.matrix.org/unstable/server-server-api/#get_matrixfederationv1mediathumbnailmediaid
+[`GET /_matrix/client/v1/media/download/{serverName}/{mediaId}`]: https://spec.matrix.org/v1.11/client-server-api/#get_matrixclientv1mediadownloadservernamemediaid
+[`GET /_matrix/client/v1/media/download/{serverName}/{mediaId}/{fileName}`]: https://spec.matrix.org/v1.11/client-server-api/#get_matrixclientv1mediadownloadservernamemediaidfilename
+[`GET /_matrix/client/v1/media/thumbnail/{serverName}/{mediaId}`]: https://spec.matrix.org/v1.11/client-server-api/#get_matrixclientv1mediathumbnailservernamemediaid
+[`GET /_matrix/client/v1/media/config`]: https://spec.matrix.org/v1.11/client-server-api/#get_matrixclientv1mediaconfig
+[`GET /_matrix/client/v1/media/preview_url`]: https://spec.matrix.org/v1.11/client-server-api/#get_matrixclientv1mediapreview_url
+[`/create`]: https://spec.matrix.org/v1.11/client-server-api/#post_matrixmediav1create
+[`/upload`]: https://spec.matrix.org/v1.11/client-server-api/#post_matrixmediav3upload
+[`GET /_matrix/federation/v1/media/download/{mediaId}`]: https://spec.matrix.org/v1.11/server-server-api/#get_matrixfederationv1mediadownloadmediaid
+[`GET /_matrix/federation/v1/media/thumbnail/{mediaId}`]: https://spec.matrix.org/v1.11/server-server-api/#get_matrixfederationv1mediathumbnailmediaid
