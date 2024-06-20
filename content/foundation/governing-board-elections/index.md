@@ -71,15 +71,9 @@ The campaign period is an opportunity for candidates to share more about themsel
 
 ### Voting (May 18)
 
-<<<<<<< HEAD:content/foundation/governing-board-elections/index.md
-All members of each constituency group are entitled to vote on the candidates within that constituency group. We will be reaching out to everyone we have contact information for, to ensure we have our voter rolls together before voting begins in May.
-||||||| df38f5015:content/governing-board/elections/2024/index.md
-All members of each constituency group are entitled to vote on the candidates within that constituency group. We will be reaching out to everyone we have contact information for, to ensure we have our voter rolls together before voting begins in May. 
-=======
 [Voting is complete](/blog/2024/05/voting-begins) and ran till May 31. All eligible voters should have received an email from [OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections.
 
 All members of each constituency group are entitled to vote on the candidates within that constituency group. If you believe you are eligible to participate but have not heard from us, first check the inbox and spam folders of the email address you have on file with us (such as through Donorbox or Patreon). [Please email us](mailto:elections@foundation.matrix.org) if you have any questions.
->>>>>>> main:content/governing-board/elections/2024/index.md
 
 We will hold an election for every constituency even if a given constituency has fewer candidates than there are seats allocated for them on the Governing Board. This is, effectively, as a vote of confidence.
 
