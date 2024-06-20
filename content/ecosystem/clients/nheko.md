@@ -10,7 +10,7 @@ maturity = "Beta"
 repo = "https://github.com/Nheko-Reborn/nheko"
 website = "https://nheko-reborn.github.io/"
 matrix_room = "#nheko-reborn:matrix.org"
-featured = false
+featured = true
 [extra.features]
 e2ee = true
 spaces = true
