@@ -1,8 +1,9 @@
+@use "./helpers/media";
+
 :root {
     --page-max-width: 57rem;
     --page-with-toc-max-width: 81rem;
     --navbar-height: 5.937rem;
-
     --color-text: #333;
     --color-text-light: #757575;
 
@@ -12,9 +13,7 @@
     }
 
     --color-link: #0098d4;
-
-    --page-header-height: 15rem;
-
+    --page-hero-height: 15rem;
     --borders-color: #ddd;
 }
 
@@ -34,9 +33,8 @@ body {
     flex-direction: column;
     background-color: #fff;
     color: var(--color-text);
-
     font-family: "Helvetica Neue",
-        "Helvetica",
+        Helvetica,
         Arial,
         -apple-system,
         BlinkMacSystemFont,
@@ -48,7 +46,6 @@ body {
         "Segoe UI Emoji",
         /* Emojis*/
         "Segoe UI Symbol";
-
     line-height: 1.75;
 }
 
@@ -64,7 +61,7 @@ a {
 
 ul,
 ol {
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 10px;
     padding-left: 40px;
 }
@@ -85,7 +82,6 @@ ol:last-child {
 .content {
     width: 100%;
     max-width: var(--page-max-width);
-
     margin: 1rem auto;
     padding-inline: 1rem;
 
@@ -103,297 +99,4 @@ ol:last-child {
 
 .content.with-sidebar {
     max-width: var(--page-with-toc-max-width);
-}
-
-.site-footer {
-    position: relative;
-    z-index: 1;
-    background-color: #000;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px 40px;
-
-    a {
-        color: #999;
-        text-decoration: none;
-        margin-inline: .8rem;
-    }
-
-    .internal-links {
-        width: 100%;
-        padding-bottom: 20px;
-        max-width: 960px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        @media (max-width: 767px) {
-            flex-direction: column;
-            text-align: center;
-        }
-    }
-
-    .external-links {
-        display: flex;
-        width: 100%;
-        max-width: 960px;
-        justify-content: center;
-
-        a {
-            max-width: 100%;
-            display: inline-block;
-
-            img {
-                margin-inline: .625rem;
-            }
-
-            img:hover {
-                filter: brightness(0) invert(1);
-            }
-        }
-    }
-
-    a:hover {
-        color: #fff;
-    }
-
-    p {
-        margin-top: 20px;
-        color: #999;
-    }
-}
-
-pre {
-    padding: 1rem;
-    overflow: auto;
-    border-radius: 4px;
-}
-
-// The line numbers already provide some kind of left/right padding
-pre[data-linenos] {
-    padding: 1rem 0;
-}
-
-pre table td {
-    padding: 0;
-}
-
-// The line number cells
-pre table td:nth-of-type(1) {
-    text-align: center;
-    user-select: none;
-}
-
-pre mark {
-    display: block;
-    background-color: rgba(254, 252, 232, 0.9);
-}
-
-pre table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-/* The black block on pages at the top. */
-.page-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-inline: 5.625rem;
-
-    @media (max-width: 767px) {
-        padding-inline: 2rem;
-    }
-
-    padding-bottom: calc(var(--navbar-height)/2);
-
-    min-height: var(--page-header-height);
-    background-color: #000000;
-    overflow: hidden;
-
-    background-image: url(/assets/page-header-bg.svg);
-    background-size: 90% 100%;
-    background-position: bottom right;
-    background-repeat: no-repeat;
-
-    @media (max-width: 767px) {
-        background-size: 250% 100%;
-        background-position-x: -533px;
-    }
-
-    .hero-block {
-        h1 {
-            font-style: normal;
-            font-weight: 700;
-            font-size: 2.8rem;
-            line-height: 120%;
-            color: #FFFFFF;
-        }
-
-        p {
-            font-style: normal;
-            font-size: 1.4rem;
-            line-height: 120%;
-
-            display: flex;
-            align-items: center;
-
-            color: #FFFFFF;
-            word-wrap: normal;
-        }
-    }
-}
-
-:not(pre)>code {
-    color: #f54029;
-    border: 1px solid #f54029;
-    border-radius: 4px;
-    padding: 0 .4rem;
-}
-
-a>code {
-    border-color: var(--color-link);
-    color: var(--color-link);
-}
-
-.page_card {
-    background-color: #000;
-    border-radius: 16px;
-    background-image: url("/assets/frontpage/hero_dancing_lines.svg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    padding: 1rem;
-
-    max-width: 23rem;
-
-    .wrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .card_content {
-        color: #fff;
-
-        h4 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            padding: 0;
-            margin: 0 0 1rem 0;
-        }
-
-        p {
-            font-size: .9rem;
-        }
-    }
-
-    .arrow {
-        background-image: url("/assets/down-arrow.svg");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        width: 3rem;
-        height: 3rem;
-        margin: auto 0 auto .5rem;
-        transform: rotate(-90deg);
-        filter: invert(1);
-    }
-}
-
-.youtube_placeholder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    aspect-ratio: 16/9;
-    width: 100%;
-    background-color: #333;
-
-    div {
-        display: flex;
-        flex-direction: column;
-        color: #fff;
-        padding: 1.5rem;
-        gap: 1.5rem;
-
-        img {
-            margin-inline: auto;
-        }
-
-        p {
-            max-width: 30rem;
-            text-align: center;
-            margin-inline: auto;
-        }
-
-        button {
-            max-width: fit-content;
-            margin-inline: auto;
-            padding: .5rem 1rem;
-            border-radius: 9999px;
-            background-color: #fff;
-            border: 1px solid transparent;
-            color: #000;
-            cursor: pointer;
-
-            &:hover {
-                border: 1px solid #fff;
-                color: #fff;
-                background-color: #333;
-            }
-        }
-    }
-}
-
-.call-to-action {
-    background-color: #000;
-    border: 2px solid #000;
-    color: #fff;
-    font-size: 1.125rem;
-    font-weight: 600;
-    border-radius: 1000px;
-    padding: .6em 2em;
-
-    &.inverted {
-        border: 2px solid #fff;
-        background-color: #fff;
-        color: #000;
-
-        &.secondary {
-            background-color: #000;
-            color: #fff;
-
-            &:hover {
-                background-color: #fff;
-                color: #000
-            }
-        }
-    }
-
-    &.secondary {
-        background-color: #fff;
-        color: #000;
-
-        &:hover {
-            background-color: #000;
-            color: #fff;
-        }
-    }
-}
-
-.cta-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    column-gap: 1rem;
-    row-gap: .5rem;
-}
-
-.cta-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    row-gap: 1rem;
-
-    align-items: center;
 }

@@ -1,0 +1,17 @@
+{
+    "extends": "stylelint-config-standard-scss",
+    "rules": {
+        "no-descending-specificity": null,
+        "selector-class-pattern": "[a-zA-Z]+(_[a-zA-Z]+)*",
+        "selector-id-pattern": "[a-zA-Z]+(_[a-zA-Z]+)*",
+        "scss/partial-no-import": true,
+        "font-family-no-missing-generic-family-keyword": [
+            true,
+            {
+                "ignoreFontFamilies": [
+                    "webflow-icons"
+                ]
+            }
+        ]
+    }
+}

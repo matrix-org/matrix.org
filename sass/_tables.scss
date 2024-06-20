@@ -1,5 +1,5 @@
 table {
-    @media (max-width: 991px) {
+    @media (width <= 991px) {
         display: block;
         overflow-x: auto;
         width: fit-content;

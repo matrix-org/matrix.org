@@ -1,8 +1,10 @@
 .podcasts-content {
     display: flex;
-    @media (max-width: 767px) {
+
+    @media (width <= 767px) {
         flex-direction: column;
     }
+
     max-width: 1200px;
     margin: 0 auto 2em;
 }
@@ -50,7 +52,7 @@
     }
 
 
-    @media screen and (max-width: 703px) {
+    @media screen and (width <= 703px) {
         img {
             margin: -1em 0 1em;
             width: 100%;
@@ -60,7 +62,7 @@
         }
     }
 
-    @media screen and (min-width: 704px) {
+    @media screen and (width >= 704px) {
         img {
             margin: 0 0 .5em 1em;
             float: right;

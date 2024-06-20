@@ -32,13 +32,14 @@ header {
         padding: 1.5rem;
     }
 
-    @media (max-width: 767px) {
+    @media (width <= 767px) {
         /*
         This trick is added because Chrome on Android doesn't re-calculate the
         height of the viewport before the user stops scrolling. We're
         artificially making the panel higher than it is
         */
         --panel-bottom-trick: 300px;
+
         border-right: unset;
         max-width: unset;
         inset-inline-end: 0;
@@ -77,10 +78,8 @@ header {
         display: flex;
         flex-direction: row;
         gap: .8rem;
-
         font-size: 1.2rem;
         font-weight: 700;
-
         cursor: pointer;
         user-select: none;
     }
@@ -113,7 +112,7 @@ header {
 .docs-content {
     padding-inline-start: calc(var(--docs-menu-width) + 3rem + .5rem);
 
-    @media (max-width: 767px) {
+    @media (width <= 767px) {
         margin-inline: auto;
         padding-inline: .5rem;
     }
@@ -129,14 +128,13 @@ header {
     display: none;
     z-index: 991;
 
-    @media (max-width: 767px) {
+    @media (width <= 767px) {
         display: inline-block;
     }
 
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-
     background-color: #000;
     color: #fff;
     border: transparent;
@@ -150,22 +148,22 @@ header {
 }
 
 #docs-menu-checkbox:not(:checked)~.docs-menu {
-    @media (max-width: 767px) {
+    @media (width <= 767px) {
         display: none;
     }
 }
 
 #docs-menu-checkbox:checked~.docs-content {
-    @media (max-width: 767px) {
+    @media (width <= 767px) {
         display: none;
     }
 }
 
 .mjolnir_button {
-    border: 1px solid rgb(217, 217, 217);
+    border: 1px solid rgb(217 217 217);
     border-radius: 1000px;
     padding: 0 .4rem;
-    background-color: rgb(242, 247, 252);
+    background-color: rgb(242 247 252);
 }
 
 figure {
@@ -173,10 +171,8 @@ figure {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-
     margin-inline: 0;
     padding: 1rem;
-
     border: 1px solid #dedede;
     border-radius: 4px;
 

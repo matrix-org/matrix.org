@@ -5,7 +5,7 @@
     .step-background {
         padding: 5rem 5.625rem;
 
-        @media (max-width: 767px) {
+        @media (width <= 767px) {
             padding: 1rem;
         }
 
@@ -19,7 +19,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
 
-        @media (max-width: 767px) {
+        @media (width <= 767px) {
             grid-template-columns: 1fr;
         }
 
@@ -28,7 +28,6 @@
         .instructions {
             display: flex;
             flex-direction: column;
-
             padding-block: 1rem;
 
             h3 {
@@ -44,10 +43,9 @@
         img {
             max-height: 220px;
             max-width: 360px;
-
             margin: auto;
 
-            @media (max-width: 767px) {
+            @media (width <= 767px) {
                 margin-block: 2rem;
                 max-width: calc(100% - 2rem);
             }
