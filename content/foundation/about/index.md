@@ -1,11 +1,12 @@
 +++
 title = "About Matrix"
-aliases = ["/foundation/"]
+aliases = ["/foundation/", "/about/"]
 extra.meta_description = """
 The Matrix.org Foundation is overseen by its Guardians. The Spec Core Team works
 on maintaining the Matrix Specification in accordance with the Foundation rules
 and manifesto.
 """
+weight = 1
 +++
 
 Matrix is an open protocol for decentralised, secure communications.
@@ -96,8 +97,8 @@ standard protocol) shall not be accepted, either.
 ## Governance
 
 The evolution of Matrix is managed through an open governance process, looked
-after by The Matrix.org Foundation - a non-profit UK Community Interest Company, 
-incorporated to act as the neutral guardian of the standard on behalf of the 
+after by The Matrix.org Foundation - a non-profit UK Community Interest Company,
+incorporated to act as the neutral guardian of the standard on behalf of the
 whole Matrix community.
 
 The Foundation defines the manifesto, mission and values of the project, the
@@ -110,7 +111,7 @@ experts and the founding Matrix team to ensure the project stays on track.
 
 ### Legal Details
 
-* The Matrix.org Foundation C.I.C is registered in the UK as Company 
+* The Matrix.org Foundation C.I.C is registered in the UK as Company
   [#11648710](https://beta.companieshouse.gov.uk/company/11648710)
 * The official articles of association of the Foundation may be
   downloaded [here](/media/2019-06-10%20-%20Matrix.org%20Foundation%20CIC%20Articles%20of%20Association.pdf)
@@ -123,7 +124,7 @@ Association, which define its legal structure and processes, and its Rules,
 which define the scope and mechanisms of its day-to-day activity.
 
 The Rules were originally drafted through the open [Matrix Specification Change](https://spec.matrix.org/proposals/)
-proposal process in order to provide full transparency and review from the 
+proposal process in order to provide full transparency and review from the
 wider community. The result was [MSC1779](https://github.com/matrix-org/matrix-doc/pull/1779) -  [Proposal for Open Governance of Matrix.org](https://github.com/matrix-org/matrix-doc/tree/master/proposals/1779-open-governance.md),
 providing a comprehensive overview of the whole governance process.
 
@@ -134,6 +135,7 @@ which is canonically versioned in [this Google Doc](https://docs.google.com/docu
 rulebook referred to by the Foundation's Articles.
 
 The full history of the rules can be followed via:
+
 * [https://matrix.org/blog/2018/06/20/towards-open-governance-for-matrix-org](https://matrix.org/blog/2018/06/20/towards-open-governance-for-matrix-org)
 * [https://github.com/matrix-org/matrix-doc/issues/1318](https://github.com/matrix-org/matrix-doc/issues/1318) (v1 proposal)
 * [https://matrix.org/blog/2018/10/29/introducing-the-matrix-org-foundation-part-1-of-2](https://matrix.org/blog/2018/10/29/introducing-the-matrix-org-foundation-part-1-of-2)
